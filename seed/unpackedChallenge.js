@@ -2,7 +2,7 @@
 import fs from 'fs-extra';
 import path from 'path';
 import _ from 'lodash';
-import { dasherize } from '../common/utils';
+import { dasherize } from './utils';
 
 const jsonLinePrefix = '//--JSON:';
 const paragraphBreak = '<!--break-->';
@@ -199,8 +199,8 @@ class UnpackedChallenge {
     text.push('</head>');
     text.push('<body>');
     text.push(`<h1>${this.challenge.title}</h1>`);
-    text.push(`<p>This is the <b>unpacked</b> version of 
-        <code>${this.superBlockName}/${this.challengeBlockName}</code> 
+    text.push(`<p>This is the <b>unpacked</b> version of
+        <code>${this.superBlockName}/${this.challengeBlockName}</code>
         (challenge id <code>${this.challenge.id}</code>).</p>`);
     text.push('<p>Open the JavaScript console to see test results.</p>');
 
@@ -279,7 +279,7 @@ class UnpackedChallenge {
     text.push('/*--tests--*/');
     text.push(this.expandedTests(this.challenge.tests).join('\n'));
     text.push('/*--end--*/');
-    text.push('});')
+    text.push('});');
     text.push('</script>');
 
     text.push('');

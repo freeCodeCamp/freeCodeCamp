@@ -5,101 +5,6 @@
   "helpRoom": "HelpJavaScript",
   "challenges": [
     {
-      "id": "bd7158d2c442eddfbeb5bd1f",
-      "title": "Get Set for our Algorithm Lessons",
-      "description": [
-        [
-          "",
-          "",
-          "freeCodeCamp's algorithm challenges will teach you how to think like a programmer.",
-          ""
-        ],
-        [
-          "",
-          "",
-          "The previous lessons introduced you to programming concepts. But for these algorithm lessons, you'll now need to apply what you learned to solve open-ended problems.",
-          ""
-        ],
-        [
-          "",
-          "",
-          "These algorithm lessons are hard. Some of them may take you several hours to solve. You may get frustrated. But don't quit.",
-          ""
-        ],
-        [
-          "",
-          "",
-          "When you get stuck, just use the Read-Search-Ask methodology.<br>Don't worry - you've got this!",
-          ""
-        ]
-      ],
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {
-        "es": {
-          "title": "Prepárate para nuestros Desafíos sobre Algoritmos",
-          "description": [
-            [
-              "https://i.imgur.com/sJkp30a.png",
-              "Una imagen de un desafio sobre algoritmos que presenta instrucciones, pruebas y el editor de código.",
-              "Nuestros desafios sobre algoritmos te enseñarán como pensar como un programador.",
-              ""
-            ],
-            [
-              "https://i.imgur.com/d8LuRNh.png",
-              "Una mamá pájaro saca un bebé pájaro fuer de su nido.",
-              "Nuestros desafios anteriores te introdujeron a los conceptos de programación. Pero para estos desafios sobre algoritmos, ahora necesitarás aplicar lo que has aprendido y resolver problemas de respuesta abierta",
-              ""
-            ],
-            [
-              "https://i.imgur.com/WBetuBa.jpg",
-              "Un programador frustado golpeando la pantalla de su computador.",
-              "Nuestros desafíos sobre algortimos son difíciles.  Algunos pueden requerir muchas horas para resolverse.  Podrás frustarte, pero no te rindas.",
-              ""
-            ],
-            [
-              "https://i.imgur.com/p2TpOQd.jpg",
-              "Un tierno perro que salta sobre un obstáculo, pica el ojo y te apunta con su pata.",
-              "Cuando te atasques, usa la metodología Leer-Buscar-Preguntar.<br>No te preocupes -  ya lo has entendido.",
-              ""
-            ]
-          ]
-        },
-        "pt-br": {
-          "title": "Prepare-se para nossos desafios de algoritmos",
-          "description": [
-            [
-              "https://i.imgur.com/sJkp30a.png",
-              "Uma imagem de um desafio de algoritmo mostrando instruções, testes e o editor de código.",
-              "Nossos desafios de algoritmos vão te ensinar a pensar como um programador.",
-              ""
-            ],
-            [
-              "https://i.imgur.com/d8LuRNh.png",
-              "Uma mãe pássaro expulsa seu filhote do ninho.",
-              "Os desafios anteriores te apresentaram os conceitos de programação. Mas para esses desafios de algoritmos, você terá que aplicar o que aprendeu para resolver problemas abertos.",
-              ""
-            ],
-            [
-              "https://i.imgur.com/WBetuBa.jpg",
-              "Um programador frustrado atravessando a tela de seu laptop com um soco.",
-              "Os desafios de algoritmos são difíceis. Você pode levar várias horas para resolver alguns deles. Você vai ficar frustado. Mas não desista.",
-              ""
-            ],
-            [
-              "https://i.imgur.com/p2TpOQd.jpg",
-              "Um cachorro fofo pulando sobre um obstáculo, piscando e apontando a pata na sua direção.",
-              "Quando ficar travado, use a metodologia Ler-Pesquisar-Perguntar.<br>Não se preocupe - você consegue.",
-              ""
-            ]
-          ]
-        }
-      }
-    },
-    {
       "id": "56533eb9ac21ba0edf2244b3",
       "title": "Convert Celsius to Fahrenheit",
       "description": [
@@ -108,24 +13,34 @@
         "Don't worry too much about the function and return statements as they will be covered in future challenges. For now, only use operators that you have already learned."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [
-        "function convertToF(celsius) {",
-        "  let fahrenheit;",
-        "  return fahrenheit;",
-        "}",
-        "",
-        "convertToF(30);"
-      ],
       "solutions": [
         "function convertToF(celsius) {\n  let fahrenheit = celsius * 9/5 + 32;\n\n  return fahrenheit;\n}\n\nconvertToF(30);\n"
       ],
       "tests": [
-        "assert(typeof convertToF(0) === 'number', 'message: <code>convertToF(0)</code> should return a number');",
-        "assert(convertToF(-30) === -22, 'message: <code>convertToF(-30)</code> should return a value of <code>-22</code>');",
-        "assert(convertToF(-10) === 14, 'message: <code>convertToF(-10)</code> should return a value of <code>14</code>');",
-        "assert(convertToF(0) === 32, 'message: <code>convertToF(0)</code> should return a value of <code>32</code>');",
-        "assert(convertToF(20) === 68, 'message: <code>convertToF(20)</code> should return a value of <code>68</code>');",
-        "assert(convertToF(30) === 86, 'message: <code>convertToF(30)</code> should return a value of <code>86</code>');"
+        {
+          "text": "<code>convertToF(0)</code> should return a number",
+          "testString": "assert(typeof convertToF(0) === 'number', '<code>convertToF(0)</code> should return a number');"
+        },
+        {
+          "text": "<code>convertToF(-30)</code> should return a value of <code>-22</code>",
+          "testString": "assert(convertToF(-30) === -22, '<code>convertToF(-30)</code> should return a value of <code>-22</code>');"
+        },
+        {
+          "text": "<code>convertToF(-10)</code> should return a value of <code>14</code>",
+          "testString": "assert(convertToF(-10) === 14, '<code>convertToF(-10)</code> should return a value of <code>14</code>');"
+        },
+        {
+          "text": "<code>convertToF(0)</code> should return a value of <code>32</code>",
+          "testString": "assert(convertToF(0) === 32, '<code>convertToF(0)</code> should return a value of <code>32</code>');"
+        },
+        {
+          "text": "<code>convertToF(20)</code> should return a value of <code>68</code>",
+          "testString": "assert(convertToF(20) === 68, '<code>convertToF(20)</code> should return a value of <code>68</code>');"
+        },
+        {
+          "text": "<code>convertToF(30)</code> should return a value of <code>86</code>",
+          "testString": "assert(convertToF(30) === 86, '<code>convertToF(30)</code> should return a value of <code>86</code>');"
+        }
       ],
       "type": "checkpoint",
       "challengeType": 1,
@@ -146,6 +61,23 @@
             "Você recebe uma variável <code>celsius</code> representando uma temperatura em Celsius. Use a variável <code>fahrenheit</code> já definida e aplique o algoritmo para atribuir a ela a temperatura correspondente em Fahrenheit."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function convertToF(celsius) {",
+            "  let fahrenheit;",
+            "  return fahrenheit;",
+            "}",
+            "",
+            "convertToF(30);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -157,18 +89,23 @@
         "Your result must be a string.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function reverseString(str) {",
-        "  return str;",
-        "}",
-        "",
-        "reverseString(\"hello\");"
-      ],
       "tests": [
-        "assert(typeof reverseString(\"hello\") === \"string\", 'message: <code>reverseString(\"hello\")</code> should return a string.');",
-        "assert(reverseString(\"hello\") === \"olleh\", 'message: <code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');",
-        "assert(reverseString(\"Howdy\") === \"ydwoH\", 'message: <code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.');",
-        "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", 'message: <code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
+        {
+          "text": "<code>reverseString(\"hello\")</code> should return a string.",
+          "testString": "assert(typeof reverseString(\"hello\") === \"string\", '<code>reverseString(\"hello\")</code> should return a string.');"
+        },
+        {
+          "text": "<code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.",
+          "testString": "assert(reverseString(\"hello\") === \"olleh\", '<code>reverseString(\"hello\")</code> should become <code>\"olleh\"</code>.');"
+        },
+        {
+          "text": "<code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.",
+          "testString": "assert(reverseString(\"Howdy\") === \"ydwoH\", '<code>reverseString(\"Howdy\")</code> should become <code>\"ydwoH\"</code>.');"
+        },
+        {
+          "text": "<code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.",
+          "testString": "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", '<code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -201,6 +138,22 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function reverseString(str) {",
+            "  return str;",
+            "}",
+            "",
+            "reverseString(\"hello\");"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -214,19 +167,27 @@
         "Only integers greater than or equal to zero will be supplied to the function.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function factorialize(num) {",
-        "  return num;",
-        "}",
-        "",
-        "factorialize(5);"
-      ],
       "tests": [
-        "assert(typeof factorialize(5) === 'number', 'message: <code>factorialize(5)</code> should return a number.');",
-        "assert(factorialize(5) === 120, 'message: <code>factorialize(5)</code> should return 120.');",
-        "assert(factorialize(10) === 3628800, 'message: <code>factorialize(10)</code> should return 3628800.');",
-        "assert(factorialize(20) === 2432902008176640000, 'message: <code>factorialize(20)</code> should return 2432902008176640000.');",
-        "assert(factorialize(0) === 1, 'message: <code>factorialize(0)</code> should return 1.');"
+        {
+          "text": "<code>factorialize(5)</code> should return a number.",
+          "testString": "assert(typeof factorialize(5) === 'number', '<code>factorialize(5)</code> should return a number.');"
+        },
+        {
+          "text": "<code>factorialize(5)</code> should return 120.",
+          "testString": "assert(factorialize(5) === 120, '<code>factorialize(5)</code> should return 120.');"
+        },
+        {
+          "text": "<code>factorialize(10)</code> should return 3628800.",
+          "testString": "assert(factorialize(10) === 3628800, '<code>factorialize(10)</code> should return 3628800.');"
+        },
+        {
+          "text": "<code>factorialize(20)</code> should return 2432902008176640000.",
+          "testString": "assert(factorialize(20) === 2432902008176640000, '<code>factorialize(20)</code> should return 2432902008176640000.');"
+        },
+        {
+          "text": "<code>factorialize(0)</code> should return 1.",
+          "testString": "assert(factorialize(0) === 1, '<code>factorialize(0)</code> should return 1.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -258,6 +219,22 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function factorialize(num) {",
+            "  return num;",
+            "}",
+            "",
+            "factorialize(5);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -268,20 +245,31 @@
         "Your response should be a number.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function findLongestWordLength(str) {",
-        "  return str.length;",
-        "}",
-        "",
-        "findLongestWordLength(\"The quick brown fox jumped over the lazy dog\");"
-      ],
       "tests": [
-        "assert(typeof findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === \"number\", 'message: <code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.');",
-        "assert(findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === 6, 'message: <code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.');",
-        "assert(findLongestWordLength(\"May the force be with you\") === 5, 'message: <code>findLongestWordLength(\"May the force be with you\")</code> should return 5.');",
-        "assert(findLongestWordLength(\"Google do a barrel roll\") === 6, 'message: <code>findLongestWordLength(\"Google do a barrel roll\")</code> should return 6.');",
-        "assert(findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\") === 8, 'message: <code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.');",
-        "assert(findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\") === 19, 'message: <code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.');"
+        {
+          "text": "<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.",
+          "testString": "assert(typeof findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === \"number\", '<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return a number.');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.",
+          "testString": "assert(findLongestWordLength(\"The quick brown fox jumped over the lazy dog\") === 6, '<code>findLongestWordLength(\"The quick brown fox jumped over the lazy dog\")</code> should return 6.');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"May the force be with you\")</code> should return 5.",
+          "testString": "assert(findLongestWordLength(\"May the force be with you\") === 5, '<code>findLongestWordLength(\"May the force be with you\")</code> should return 5.');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"Google do a barrel roll\")</code> should return 6.",
+          "testString": "assert(findLongestWordLength(\"Google do a barrel roll\") === 6, '<code>findLongestWordLength(\"Google do a barrel roll\")</code> should return 6.');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.",
+          "testString": "assert(findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\") === 8, '<code>findLongestWordLength(\"What is the average airspeed velocity of an unladen swallow\")</code> should return 8.');"
+        },
+        {
+          "text": "<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.",
+          "testString": "assert(findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\") === 19, '<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -310,6 +298,22 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function findLongestWordLength(str) {",
+            "  return str.length;",
+            "}",
+            "",
+            "findLongestWordLength(\"The quick brown fox jumped over the lazy dog\");"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -320,19 +324,23 @@
         "Remember, you can iterate through an array with a simple for loop, and access each member with array syntax <code>arr[i]</code>.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function largestOfFour(arr) {",
-        "  // You can do this!",
-        "  return arr;",
-        "}",
-        "",
-        "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
-      ],
       "tests": [
-        "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, 'message: <code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.');",
-        "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27, 5, 39, 1001], 'message: <code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27, 5, 39, 1001]</code>.');",
-        "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9, 35, 97, 1000000], 'message: <code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.');",
-        "assert.deepEqual(largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]), [25, 48, 21, -3], 'message: <code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> should return <code>[25, 48, 21, -3]</code>.');"
+        {
+          "text": "<code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.",
+          "testString": "assert(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]).constructor === Array, '<code>largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return an array.');"
+        },
+        {
+          "text": "<code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27, 5, 39, 1001]</code>.",
+          "testString": "assert.deepEqual(largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]]), [27, 5, 39, 1001], '<code>largestOfFour([[13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1]])</code> should return <code>[27, 5, 39, 1001]</code>.');"
+        },
+        {
+          "text": "<code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.",
+          "testString": "assert.deepEqual(largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]]), [9, 35, 97, 1000000], '<code>largestOfFour([[4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 97, 39], [1000000, 1001, 857, 1]])</code> should return <code>[9, 35, 97, 1000000]</code>.');"
+        },
+        {
+          "text": "<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> should return <code>[25, 48, 21, -3]</code>.",
+          "testString": "assert.deepEqual(largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]), [25, 48, 21, -3], '<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> should return <code>[25, 48, 21, -3]</code>.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -361,6 +369,23 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function largestOfFour(arr) {",
+            "  // You can do this!",
+            "  return arr;",
+            "}",
+            "",
+            "largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -371,27 +396,51 @@
         "This challenge <em>can</em> be solved with the <code>.endsWith()</code> method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function confirmEnding(str, target) {",
-        "  // \"Never give up and good luck will find you.\"",
-        "  // -- Falcor",
-        "  return str;",
-        "}",
-        "",
-        "confirmEnding(\"Bastian\", \"n\");"
-      ],
       "tests": [
-        "assert(confirmEnding(\"Bastian\", \"n\") === true, 'message: <code>confirmEnding(\"Bastian\", \"n\")</code> should return true.');",
-        "assert(confirmEnding(\"Congratulation\", \"on\") === true, 'message: <code>confirmEnding(\"Congratulation\", \"on\")</code> should return true.');",
-        "assert(confirmEnding(\"Connor\", \"n\") === false, 'message: <code>confirmEnding(\"Connor\", \"n\")</code> should return false.');",
-        "assert(confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, 'message: <code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');",
-        "assert(confirmEnding(\"He has to give me a new name\", \"name\") === true, 'message: <code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.');",
-        "assert(confirmEnding(\"Open sesame\", \"same\") === true, 'message: <code>confirmEnding(\"Open sesame\", \"same\")</code> should return true.');",
-        "assert(confirmEnding(\"Open sesame\", \"pen\") === false, 'message: <code>confirmEnding(\"Open sesame\", \"pen\")</code> should return false.');",
-        "assert(confirmEnding(\"Open sesame\", \"game\") === false, 'message: <code>confirmEnding(\"Open sesame\", \"game\")</code> should return false.');",
-        "assert(confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, 'message: <code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');",
-        "assert(confirmEnding(\"Abstraction\", \"action\") === true, 'message: <code>confirmEnding(\"Abstraction\", \"action\")</code> should return true.');",
-        "assert(!(/\\.endsWith\\(.*?\\)\\s*?;?/.test(code)) && !(/\\['endsWith'\\]/.test(code)), 'message: Do not use the built-in method <code>.endsWith()</code> to solve the challenge.');"
+        {
+          "text": "<code>confirmEnding(\"Bastian\", \"n\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"Bastian\", \"n\") === true, '<code>confirmEnding(\"Bastian\", \"n\")</code> should return true.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Congratulation\", \"on\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"Congratulation\", \"on\") === true, '<code>confirmEnding(\"Congratulation\", \"on\")</code> should return true.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Connor\", \"n\")</code> should return false.",
+          "testString": "assert(confirmEnding(\"Connor\", \"n\") === false, '<code>confirmEnding(\"Connor\", \"n\")</code> should return false.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.",
+          "testString": "assert(confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\", \"specification\") === false, '<code>confirmEnding(\"Walking on water and developing software from a specification are easy if both are frozen\"&#44; \"specification\"&#41;</code> should return false.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"He has to give me a new name\", \"name\") === true, '<code>confirmEnding(\"He has to give me a new name\", \"name\")</code> should return true.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Open sesame\", \"same\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"same\") === true, '<code>confirmEnding(\"Open sesame\", \"same\")</code> should return true.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Open sesame\", \"pen\")</code> should return false.",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"pen\") === false, '<code>confirmEnding(\"Open sesame\", \"pen\")</code> should return false.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Open sesame\", \"game\")</code> should return false.",
+          "testString": "assert(confirmEnding(\"Open sesame\", \"game\") === false, '<code>confirmEnding(\"Open sesame\", \"game\")</code> should return false.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.",
+          "testString": "assert(confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\") === false, '<code>confirmEnding(\"If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing\", \"mountain\")</code> should return false.');"
+        },
+        {
+          "text": "<code>confirmEnding(\"Abstraction\", \"action\")</code> should return true.",
+          "testString": "assert(confirmEnding(\"Abstraction\", \"action\") === true, '<code>confirmEnding(\"Abstraction\", \"action\")</code> should return true.');"
+        },
+        {
+          "text": "Do not use the built-in method <code>.endsWith()</code> to solve the challenge.",
+          "testString": "assert(!(/\\.endsWith\\(.*?\\)\\s*?;?/.test(code)) && !(/\\['endsWith'\\]/.test(code)), 'Do not use the built-in method <code>.endsWith()</code> to solve the challenge.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -419,6 +468,24 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function confirmEnding(str, target) {",
+            "  // \"Never give up and good luck will find you.\"",
+            "  // -- Falcor",
+            "  return str;",
+            "}",
+            "",
+            "confirmEnding(\"Bastian\", \"n\");"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -428,22 +495,35 @@
         "Repeat a given string <code>str</code> (first argument) for <code>num</code> times (second argument). Return an empty string if <code>num</code> is not a positive number.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function repeatStringNumTimes(str, num) {",
-        "  // repeat after me",
-        "  return str;",
-        "}",
-        "",
-        "repeatStringNumTimes(\"abc\", 3);"
-      ],
       "tests": [
-        "assert(repeatStringNumTimes(\"*\", 3) === \"***\", 'message: <code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.');",
-        "assert(repeatStringNumTimes(\"abc\", 3) === \"abcabcabc\", 'message: <code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');",
-        "assert(repeatStringNumTimes(\"abc\", 4) === \"abcabcabcabc\", 'message: <code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');",
-        "assert(repeatStringNumTimes(\"abc\", 1) === \"abc\", 'message: <code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.');",
-        "assert(repeatStringNumTimes(\"*\", 8) === \"********\", 'message: <code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.');",
-        "assert(repeatStringNumTimes(\"abc\", -2) === \"\", 'message: <code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.');",
-        "assert(!/\\.repeat/g.test(code), 'message: The built-in <code>repeat()</code>-method should not be used');"
+        {
+          "text": "<code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"*\", 3) === \"***\", '<code>repeatStringNumTimes(\"*\", 3)</code> should return <code>\"***\"</code>.');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 3) === \"abcabcabc\", '<code>repeatStringNumTimes(\"abc\", 3)</code> should return <code>\"abcabcabc\"</code>.');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 4) === \"abcabcabcabc\", '<code>repeatStringNumTimes(\"abc\", 4)</code> should return <code>\"abcabcabcabc\"</code>.');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"abc\", 1) === \"abc\", '<code>repeatStringNumTimes(\"abc\", 1)</code> should return <code>\"abc\"</code>.');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"*\", 8) === \"********\", '<code>repeatStringNumTimes(\"*\", 8)</code> should return <code>\"********\"</code>.');"
+        },
+        {
+          "text": "<code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.",
+          "testString": "assert(repeatStringNumTimes(\"abc\", -2) === \"\", '<code>repeatStringNumTimes(\"abc\", -2)</code> should return <code>\"\"</code>.');"
+        },
+        {
+          "text": "The built-in <code>repeat()</code>-method should not be used",
+          "testString": "assert(!/\\.repeat/g.test(code), 'The built-in <code>repeat()</code>-method should not be used');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -469,6 +549,23 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function repeatStringNumTimes(str, num) {",
+            "  // repeat after me",
+            "  return str;",
+            "}",
+            "",
+            "repeatStringNumTimes(\"abc\", 3);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -478,21 +575,31 @@
         "Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a <code>...</code> ending.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function truncateString(str, num) {",
-        "  // Clear out that junk in your trunk",
-        "  return str;",
-        "}",
-        "",
-        "truncateString(\"A-tisket a-tasket A green and yellow basket\", 8);"
-      ],
       "tests": [
-        "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", 8) === \"A-tisket...\", 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> should return \"A-tisket...\".');",
-        "assert(truncateString(\"Peter Piper picked a peck of pickled peppers\", 11) === \"Peter Piper...\", 'message: <code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> should return \"Peter Piper...\".');",
-        "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
-        "assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', 'message: <code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');",
-        "assert(truncateString(\"A-\", 1) === \"A...\", 'message: <code>truncateString(\"A-\", 1)</code> should return \"A...\".');",
-        "assert(truncateString(\"Absolutely Longer\", 2) === \"Ab...\", 'message: <code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
+        {
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> should return \"A-tisket...\".",
+          "testString": "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", 8) === \"A-tisket...\", '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", 8)</code> should return \"A-tisket...\".');"
+        },
+        {
+          "text": "<code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> should return \"Peter Piper...\".",
+          "testString": "assert(truncateString(\"Peter Piper picked a peck of pickled peppers\", 11) === \"Peter Piper...\", '<code>truncateString(\"Peter Piper picked a peck of pickled peppers\", 11)</code> should return \"Peter Piper...\".');"
+        },
+        {
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".",
+          "testString": "assert(truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length) === \"A-tisket a-tasket A green and yellow basket\", '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length)</code> should return \"A-tisket a-tasket A green and yellow basket\".');"
+        },
+        {
+          "text": "<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".",
+          "testString": "assert(truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length + 2) === 'A-tisket a-tasket A green and yellow basket', '<code>truncateString(\"A-tisket a-tasket A green and yellow basket\", \"A-tisket a-tasket A green and yellow basket\".length + 2)</code> should return \"A-tisket a-tasket A green and yellow basket\".');"
+        },
+        {
+          "text": "<code>truncateString(\"A-\", 1)</code> should return \"A...\".",
+          "testString": "assert(truncateString(\"A-\", 1) === \"A...\", '<code>truncateString(\"A-\", 1)</code> should return \"A...\".');"
+        },
+        {
+          "text": "<code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".",
+          "testString": "assert(truncateString(\"Absolutely Longer\", 2) === \"Ab...\", '<code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -518,6 +625,23 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function truncateString(str, num) {",
+            "  // Clear out that junk in your trunk",
+            "  return str;",
+            "}",
+            "",
+            "truncateString(\"A-tisket a-tasket A green and yellow basket\", 8);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -527,20 +651,18 @@
         "Create a function that looks through an array (first argument) and returns the first element in the array that passes a truth test (second argument). If no element passes the test, return undefined.",
         "Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "challengeSeed": [
-        "function findElement(arr, func) {",
-        "  let num = 0;",
-        "  return num;",
-        "}",
-        "",
-        "findElement([1, 2, 3, 4], num => num % 2 === 0);"
-      ],
       "solutions": [
         "function findElement(arr, func) {\n  let num;\n\n  arr.some(e => {\n    if (func(e)) {\n      num = e;\n      return true;\n    }\n  });\n\n  return num;\n}\n\nfindElement([1, 2, 3, 4], num => num % 2 === 0);\n"
       ],
       "tests": [
-        "assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, 'message: <code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');",
-        "assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, 'message: <code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
+        {
+          "text": "<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.",
+          "testString": "assert.strictEqual(findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; }), 8, '<code>findElement([1, 3, 5, 8, 9, 10], function(num) { return num % 2 === 0; })</code> should return 8.');"
+        },
+        {
+          "text": "<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.",
+          "testString": "assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, '<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
+        }
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -570,6 +692,23 @@
             "N'oublie pas d'utiliser <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function findElement(arr, func) {",
+            "  let num = 0;",
+            "  return num;",
+            "}",
+            "",
+            "findElement([1, 2, 3, 4], num => num % 2 === 0);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -580,28 +719,50 @@
         "Boolean primitives are true and false.",
         "Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "challengeSeed": [
-        "function booWho(bool) {",
-        "  // What is the new fad diet for ghost developers? The Boolean.",
-        "  return bool;",
-        "}",
-        "",
-        "booWho(null);"
-      ],
       "solutions": [
         "function booWho(bool) {\n  return typeof bool === \"boolean\";\n}\n\nbooWho(null);"
       ],
       "tests": [
-        "assert.strictEqual(booWho(true), true, 'message: <code>booWho(true)</code> should return true.');",
-        "assert.strictEqual(booWho(false), true, 'message: <code>booWho(false)</code> should return true.');",
-        "assert.strictEqual(booWho([1, 2, 3]), false, 'message: <code>booWho([1, 2, 3])</code> should return false.');",
-        "assert.strictEqual(booWho([].slice), false, 'message: <code>booWho([].slice)</code> should return false.');",
-        "assert.strictEqual(booWho({ \"a\": 1 }), false, 'message: <code>booWho({ \"a\": 1 })</code> should return false.');",
-        "assert.strictEqual(booWho(1), false, 'message: <code>booWho(1)</code> should return false.');",
-        "assert.strictEqual(booWho(NaN), false, 'message: <code>booWho(NaN)</code> should return false.');",
-        "assert.strictEqual(booWho(\"a\"), false, 'message: <code>booWho(\"a\")</code> should return false.');",
-        "assert.strictEqual(booWho(\"true\"), false, 'message: <code>booWho(\"true\")</code> should return false.');",
-        "assert.strictEqual(booWho(\"false\"), false, 'message: <code>booWho(\"false\")</code> should return false.');"
+        {
+          "text": "<code>booWho(true)</code> should return true.",
+          "testString": "assert.strictEqual(booWho(true), true, '<code>booWho(true)</code> should return true.');"
+        },
+        {
+          "text": "<code>booWho(false)</code> should return true.",
+          "testString": "assert.strictEqual(booWho(false), true, '<code>booWho(false)</code> should return true.');"
+        },
+        {
+          "text": "<code>booWho([1, 2, 3])</code> should return false.",
+          "testString": "assert.strictEqual(booWho([1, 2, 3]), false, '<code>booWho([1, 2, 3])</code> should return false.');"
+        },
+        {
+          "text": "<code>booWho([].slice)</code> should return false.",
+          "testString": "assert.strictEqual(booWho([].slice), false, '<code>booWho([].slice)</code> should return false.');"
+        },
+        {
+          "text": "<code>booWho({ \"a\": 1 })</code> should return false.",
+          "testString": "assert.strictEqual(booWho({ \"a\": 1 }), false, '<code>booWho({ \"a\": 1 })</code> should return false.');"
+        },
+        {
+          "text": "<code>booWho(1)</code> should return false.",
+          "testString": "assert.strictEqual(booWho(1), false, '<code>booWho(1)</code> should return false.');"
+        },
+        {
+          "text": "<code>booWho(NaN)</code> should return false.",
+          "testString": "assert.strictEqual(booWho(NaN), false, '<code>booWho(NaN)</code> should return false.');"
+        },
+        {
+          "text": "<code>booWho(\"a\")</code> should return false.",
+          "testString": "assert.strictEqual(booWho(\"a\"), false, '<code>booWho(\"a\")</code> should return false.');"
+        },
+        {
+          "text": "<code>booWho(\"true\")</code> should return false.",
+          "testString": "assert.strictEqual(booWho(\"true\"), false, '<code>booWho(\"true\")</code> should return false.');"
+        },
+        {
+          "text": "<code>booWho(\"false\")</code> should return false.",
+          "testString": "assert.strictEqual(booWho(\"false\"), false, '<code>booWho(\"false\")</code> should return false.');"
+        }
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -634,6 +795,23 @@
             "N'oublie pas d'utiliser <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Lire-Chercher-Demander</a> si tu es bloqué. Essaye de trouver un partenaire. Écris ton propre code."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function booWho(bool) {",
+            "  // What is the new fad diet for ghost developers? The Boolean.",
+            "  return bool;",
+            "}",
+            "",
+            "booWho(null);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -644,18 +822,23 @@
         "For the purpose of this exercise, you should also capitalize connecting words like \"the\" and \"of\".",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function titleCase(str) {",
-        "  return str;",
-        "}",
-        "",
-        "titleCase(\"I'm a little tea pot\");"
-      ],
       "tests": [
-        "assert(typeof titleCase(\"I'm a little tea pot\") === \"string\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.');",
-        "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", 'message: <code>titleCase(\"I&#39;m a little tea pot\")</code> should return <code>I&#39;m A Little Tea Pot</code>.');",
-        "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", 'message: <code>titleCase(\"sHoRt AnD sToUt\")</code> should return <code>Short And Stout</code>.');",
-        "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", 'message: <code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return <code>Here Is My Handle Here Is My Spout</code>.');"
+        {
+          "text": "<code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.",
+          "testString": "assert(typeof titleCase(\"I'm a little tea pot\") === \"string\", '<code>titleCase(\"I&#39;m a little tea pot\")</code> should return a string.');"
+        },
+        {
+          "text": "<code>titleCase(\"I&#39;m a little tea pot\")</code> should return <code>I&#39;m A Little Tea Pot</code>.",
+          "testString": "assert(titleCase(\"I'm a little tea pot\") === \"I'm A Little Tea Pot\", '<code>titleCase(\"I&#39;m a little tea pot\")</code> should return <code>I&#39;m A Little Tea Pot</code>.');"
+        },
+        {
+          "text": "<code>titleCase(\"sHoRt AnD sToUt\")</code> should return <code>Short And Stout</code>.",
+          "testString": "assert(titleCase(\"sHoRt AnD sToUt\") === \"Short And Stout\", '<code>titleCase(\"sHoRt AnD sToUt\")</code> should return <code>Short And Stout</code>.');"
+        },
+        {
+          "text": "<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return <code>Here Is My Handle Here Is My Spout</code>.",
+          "testString": "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return <code>Here Is My Handle Here Is My Spout</code>.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -683,6 +866,22 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function titleCase(str) {",
+            "  return str;",
+            "}",
+            "",
+            "titleCase(\"I'm a little tea pot\");"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -695,25 +894,31 @@
         "Return the resulting array. The input arrays should remain the same after the function runs.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function frankenSplice(arr1, arr2, n) {",
-        "  // It's alive. It's alive!",
-        "  return arr2;",
-        "}",
-        "",
-        "frankenSplice([1, 2, 3], [4, 5, 6], 1);"
-      ],
-      "tail": [
-        "let testArr1 = [1, 2];",
-        "let testArr2 = [\"a\", \"b\"];"
-      ],
       "tests": [
-        "assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5], 'message: <code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.');",
-        "assert.deepEqual(frankenSplice(testArr1, testArr2, 1), [\"a\", 1, 2, \"b\"], 'message: <code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.');",
-        "assert.deepEqual(frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2), [\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"], 'message: <code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.');",
-        "assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], 'message: All elements from the first array should be added to the second array in their original order.');",
-        "assert(testArr1[0] === 1 && testArr1[1] === 2, 'message: The first array should remain the same after the function runs.');",
-        "assert(testArr2[0] === \"a\" && testArr2[1] === \"b\", 'message: The second array should remain the same after the function runs.');"
+        {
+          "text": "<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.",
+          "testString": "assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5], '<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.');"
+        },
+        {
+          "text": "<code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.",
+          "testString": "assert.deepEqual(frankenSplice(testArr1, testArr2, 1), [\"a\", 1, 2, \"b\"], '<code>frankenSplice([1, 2], [\"a\", \"b\"], 1)</code> should return <code>[\"a\", 1, 2, \"b\"]</code>.');"
+        },
+        {
+          "text": "<code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.",
+          "testString": "assert.deepEqual(frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2), [\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"], '<code>frankenSplice([\"claw\", \"tentacle\"], [\"head\", \"shoulders\", \"knees\", \"toes\"], 2)</code> should return <code>[\"head\", \"shoulders\", \"claw\", \"tentacle\", \"knees\", \"toes\"]</code>.');"
+        },
+        {
+          "text": "All elements from the first array should be added to the second array in their original order.",
+          "testString": "assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], 'All elements from the first array should be added to the second array in their original order.');"
+        },
+        {
+          "text": "The first array should remain the same after the function runs.",
+          "testString": "assert(testArr1[0] === 1 && testArr1[1] === 2, 'The first array should remain the same after the function runs.');"
+        },
+        {
+          "text": "The second array should remain the same after the function runs.",
+          "testString": "assert(testArr2[0] === \"a\" && testArr2[1] === \"b\", 'The second array should remain the same after the function runs.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -736,6 +941,26 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function frankenSplice(arr1, arr2, n) {",
+            "  // It's alive. It's alive!",
+            "  return arr2;",
+            "}",
+            "",
+            "frankenSplice([1, 2, 3], [4, 5, 6], 1);"
+          ],
+          "head": [],
+          "tail": [
+            "let testArr1 = [1, 2];",
+            "let testArr2 = [\"a\", \"b\"];"
+          ]
+        }
       }
     },
     {
@@ -747,19 +972,23 @@
         "Hint: Try converting each value to a Boolean.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function bouncer(arr) {",
-        "  // Don't show a false ID to this bouncer.",
-        "  return arr;",
-        "}",
-        "",
-        "bouncer([7, \"ate\", \"\", false, 9]);"
-      ],
       "tests": [
-        "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], 'message: <code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');",
-        "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], 'message: <code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');",
-        "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, \"\"]), [], 'message: <code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.');",
-        "assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], 'message: <code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.');"
+        {
+          "text": "<code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.",
+          "testString": "assert.deepEqual(bouncer([7, \"ate\", \"\", false, 9]), [7, \"ate\", 9], '<code>bouncer([7, \"ate\", \"\", false, 9])</code> should return <code>[7, \"ate\", 9]</code>.');"
+        },
+        {
+          "text": "<code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.",
+          "testString": "assert.deepEqual(bouncer([\"a\", \"b\", \"c\"]), [\"a\", \"b\", \"c\"], '<code>bouncer([\"a\", \"b\", \"c\"])</code> should return <code>[\"a\", \"b\", \"c\"]</code>.');"
+        },
+        {
+          "text": "<code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.",
+          "testString": "assert.deepEqual(bouncer([false, null, 0, NaN, undefined, \"\"]), [], '<code>bouncer([false, null, 0, NaN, undefined, \"\"])</code> should return <code>[]</code>.');"
+        },
+        {
+          "text": "<code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.",
+          "testString": "assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], '<code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -789,6 +1018,23 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function bouncer(arr) {",
+            "  // Don't show a false ID to this bouncer.",
+            "  return arr;",
+            "}",
+            "",
+            "bouncer([7, \"ate\", \"\", false, 9]);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -800,31 +1046,71 @@
         "Likewise, <code>getIndexToIns([20,3,5], 19)</code> should return <code>2</code> because once the array has been sorted it will look like <code>[3,5,20]</code> and <code>19</code> is less than <code>20</code> (index 2) and greater than <code>5</code> (index 1).",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function getIndexToIns(arr, num) {",
-        "  // Find my place in this sorted array.",
-        "  return num;",
-        "}",
-        "",
-        "getIndexToIns([40, 60], 50);"
-      ],
       "tests": [
-        "assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3, 'message: <code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');",
-        "assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 35)) === \"number\", 'message: <code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return a number.');",
-        "assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2, 'message: <code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');",
-        "assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 30)) === \"number\", 'message: <code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return a number.');",
-        "assert(getIndexToIns([40, 60], 50) === 1, 'message: <code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.');",
-        "assert(typeof(getIndexToIns([40, 60], 50)) === \"number\", 'message: <code>getIndexToIns([40, 60], 50)</code> should return a number.');",
-        "assert(getIndexToIns([3, 10, 5], 3) === 0, 'message: <code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.');",
-        "assert(typeof(getIndexToIns([3, 10, 5], 3)) === \"number\", 'message: <code>getIndexToIns([3, 10, 5], 3)</code> should return a number.');",
-        "assert(getIndexToIns([5, 3, 20, 3], 5) === 2, 'message: <code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.');",
-        "assert(typeof(getIndexToIns([5, 3, 20, 3], 5)) === \"number\", 'message: <code>getIndexToIns([5, 3, 20, 3], 5)</code> should return a number.');",
-        "assert(getIndexToIns([2, 20, 10], 19) === 2, 'message: <code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.');",
-        "assert(typeof(getIndexToIns([2, 20, 10], 19)) === \"number\", 'message: <code>getIndexToIns([2, 20, 10], 19)</code> should return a number.');",
-        "assert(getIndexToIns([2, 5, 10], 15) === 3, 'message: <code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.');",
-        "assert(typeof(getIndexToIns([2, 5, 10], 15)) === \"number\", 'message: <code>getIndexToIns([2, 5, 10], 15)</code> should return a number.');",
-        "assert(getIndexToIns([], 1) === 0, 'message: <code>getIndexToIns([], 1)</code> should return <code>0</code>.');",
-        "assert(typeof(getIndexToIns([], 1)) === \"number\", 'message: <code>getIndexToIns([], 1)</code> should return a number.');"
+        {
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.",
+          "testString": "assert(getIndexToIns([10, 20, 30, 40, 50], 35) === 3, '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return <code>3</code>.');"
+        },
+        {
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 35)) === \"number\", '<code>getIndexToIns([10, 20, 30, 40, 50], 35)</code> should return a number.');"
+        },
+        {
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.",
+          "testString": "assert(getIndexToIns([10, 20, 30, 40, 50], 30) === 2, '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return <code>2</code>.');"
+        },
+        {
+          "text": "<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([10, 20, 30, 40, 50], 30)) === \"number\", '<code>getIndexToIns([10, 20, 30, 40, 50], 30)</code> should return a number.');"
+        },
+        {
+          "text": "<code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.",
+          "testString": "assert(getIndexToIns([40, 60], 50) === 1, '<code>getIndexToIns([40, 60], 50)</code> should return <code>1</code>.');"
+        },
+        {
+          "text": "<code>getIndexToIns([40, 60], 50)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([40, 60], 50)) === \"number\", '<code>getIndexToIns([40, 60], 50)</code> should return a number.');"
+        },
+        {
+          "text": "<code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.",
+          "testString": "assert(getIndexToIns([3, 10, 5], 3) === 0, '<code>getIndexToIns([3, 10, 5], 3)</code> should return <code>0</code>.');"
+        },
+        {
+          "text": "<code>getIndexToIns([3, 10, 5], 3)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([3, 10, 5], 3)) === \"number\", '<code>getIndexToIns([3, 10, 5], 3)</code> should return a number.');"
+        },
+        {
+          "text": "<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.",
+          "testString": "assert(getIndexToIns([5, 3, 20, 3], 5) === 2, '<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return <code>2</code>.');"
+        },
+        {
+          "text": "<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([5, 3, 20, 3], 5)) === \"number\", '<code>getIndexToIns([5, 3, 20, 3], 5)</code> should return a number.');"
+        },
+        {
+          "text": "<code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.",
+          "testString": "assert(getIndexToIns([2, 20, 10], 19) === 2, '<code>getIndexToIns([2, 20, 10], 19)</code> should return <code>2</code>.');"
+        },
+        {
+          "text": "<code>getIndexToIns([2, 20, 10], 19)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([2, 20, 10], 19)) === \"number\", '<code>getIndexToIns([2, 20, 10], 19)</code> should return a number.');"
+        },
+        {
+          "text": "<code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.",
+          "testString": "assert(getIndexToIns([2, 5, 10], 15) === 3, '<code>getIndexToIns([2, 5, 10], 15)</code> should return <code>3</code>.');"
+        },
+        {
+          "text": "<code>getIndexToIns([2, 5, 10], 15)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([2, 5, 10], 15)) === \"number\", '<code>getIndexToIns([2, 5, 10], 15)</code> should return a number.');"
+        },
+        {
+          "text": "<code>getIndexToIns([], 1)</code> should return <code>0</code>.",
+          "testString": "assert(getIndexToIns([], 1) === 0, '<code>getIndexToIns([], 1)</code> should return <code>0</code>.');"
+        },
+        {
+          "text": "<code>getIndexToIns([], 1)</code> should return a number.",
+          "testString": "assert(typeof(getIndexToIns([], 1)) === \"number\", '<code>getIndexToIns([], 1)</code> should return a number.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -854,6 +1140,23 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function getIndexToIns(arr, num) {",
+            "  // Find my place in this sorted array.",
+            "  return num;",
+            "}",
+            "",
+            "getIndexToIns([40, 60], 50);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -866,23 +1169,43 @@
         "Lastly, <code>[\"Alien\", \"line\"]</code>, should return true because all of the letters in \"line\" are present in \"Alien\".",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function mutation(arr) {",
-        "  return arr;",
-        "}",
-        "",
-        "mutation([\"hello\", \"hey\"]);"
-      ],
       "tests": [
-        "assert(mutation([\"hello\", \"hey\"]) === false, 'message: <code>mutation([\"hello\", \"hey\"])</code> should return false.');",
-        "assert(mutation([\"hello\", \"Hello\"]) === true, 'message: <code>mutation([\"hello\", \"Hello\"])</code> should return true.');",
-        "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, 'message: <code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.');",
-        "assert(mutation([\"Mary\", \"Army\"]) === true, 'message: <code>mutation([\"Mary\", \"Army\"])</code> should return true.');",
-        "assert(mutation([\"Mary\", \"Aarmy\"]) === true, 'message: <code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.');",
-        "assert(mutation([\"Alien\", \"line\"]) === true, 'message: <code>mutation([\"Alien\", \"line\"])</code> should return true.');",
-        "assert(mutation([\"floor\", \"for\"]) === true, 'message: <code>mutation([\"floor\", \"for\"])</code> should return true.');",
-        "assert(mutation([\"hello\", \"neo\"]) === false, 'message: <code>mutation([\"hello\", \"neo\"])</code> should return false.');",
-        "assert(mutation([\"voodoo\", \"no\"]) === false, 'message: <code>mutation([\"voodoo\", \"no\"])</code> should return false.');"
+        {
+          "text": "<code>mutation([\"hello\", \"hey\"])</code> should return false.",
+          "testString": "assert(mutation([\"hello\", \"hey\"]) === false, '<code>mutation([\"hello\", \"hey\"])</code> should return false.');"
+        },
+        {
+          "text": "<code>mutation([\"hello\", \"Hello\"])</code> should return true.",
+          "testString": "assert(mutation([\"hello\", \"Hello\"]) === true, '<code>mutation([\"hello\", \"Hello\"])</code> should return true.');"
+        },
+        {
+          "text": "<code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.",
+          "testString": "assert(mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"]) === true, '<code>mutation([\"zyxwvutsrqponmlkjihgfedcba\", \"qrstu\"])</code> should return true.');"
+        },
+        {
+          "text": "<code>mutation([\"Mary\", \"Army\"])</code> should return true.",
+          "testString": "assert(mutation([\"Mary\", \"Army\"]) === true, '<code>mutation([\"Mary\", \"Army\"])</code> should return true.');"
+        },
+        {
+          "text": "<code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.",
+          "testString": "assert(mutation([\"Mary\", \"Aarmy\"]) === true, '<code>mutation([\"Mary\", \"Aarmy\"])</code> should return true.');"
+        },
+        {
+          "text": "<code>mutation([\"Alien\", \"line\"])</code> should return true.",
+          "testString": "assert(mutation([\"Alien\", \"line\"]) === true, '<code>mutation([\"Alien\", \"line\"])</code> should return true.');"
+        },
+        {
+          "text": "<code>mutation([\"floor\", \"for\"])</code> should return true.",
+          "testString": "assert(mutation([\"floor\", \"for\"]) === true, '<code>mutation([\"floor\", \"for\"])</code> should return true.');"
+        },
+        {
+          "text": "<code>mutation([\"hello\", \"neo\"])</code> should return false.",
+          "testString": "assert(mutation([\"hello\", \"neo\"]) === false, '<code>mutation([\"hello\", \"neo\"])</code> should return false.');"
+        },
+        {
+          "text": "<code>mutation([\"voodoo\", \"no\"])</code> should return false.",
+          "testString": "assert(mutation([\"voodoo\", \"no\"]) === false, '<code>mutation([\"voodoo\", \"no\"])</code> should return false.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -914,6 +1237,22 @@
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function mutation(arr) {",
+            "  return arr;",
+            "}",
+            "",
+            "mutation([\"hello\", \"hey\"]);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -923,22 +1262,35 @@
         "Write a function that splits an array (first argument) into groups the length of <code>size</code> (second argument) and returns them as a two-dimensional array.",
         "Remember to use <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Read-Search-Ask</a> if you get stuck. Write your own code."
       ],
-      "challengeSeed": [
-        "function chunkArrayInGroups(arr, size) {",
-        "  // Break it up.",
-        "  return arr;",
-        "}",
-        "",
-        "chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2);"
-      ],
       "tests": [
-        "assert.deepEqual(chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], 'message: <code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');",
-        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');",
-        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');",
-        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');",
-        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [[0, 1, 2], [3, 4, 5], [6]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.');",
-        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.');",
-        "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [[0, 1], [2, 3], [4, 5], [6, 7], [8]], 'message: <code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.');"
+        {
+          "text": "<code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2), [[\"a\", \"b\"], [\"c\", \"d\"]], '<code>chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2)</code> should return <code>[[\"a\", \"b\"], [\"c\", \"d\"]]</code>.');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3), [[0, 1, 2], [3, 4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5]]</code>.');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2), [[0, 1], [2, 3], [4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5]]</code>.');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4), [[0, 1, 2, 3], [4, 5]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5]]</code>.');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3), [[0, 1, 2], [3, 4, 5], [6]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3)</code> should return <code>[[0, 1, 2], [3, 4, 5], [6]]</code>.');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4), [[0, 1, 2, 3], [4, 5, 6, 7], [8]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4)</code> should return <code>[[0, 1, 2, 3], [4, 5, 6, 7], [8]]</code>.');"
+        },
+        {
+          "text": "<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.",
+          "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [[0, 1], [2, 3], [4, 5], [6, 7], [8]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.');"
+        }
       ],
       "type": "bonfire",
       "isRequired": true,
@@ -964,6 +1316,23 @@
             "Escreva uma função que divide um array (primeiro argumento) em grupos de comprimento <code>size</code> (segundo argumento) e retorna esses grupos num array bidimensional.",
             "Lembre-se de <a href=\"http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514\" target=\"_blank\">Ler-Pesquisar-Perguntar</a> se ficar travado. Escreva seu próprio código."
           ]
+        }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function chunkArrayInGroups(arr, size) {",
+            "  // Break it up.",
+            "  return arr;",
+            "}",
+            "",
+            "chunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2);"
+          ],
+          "head": [],
+          "tail": []
         }
       }
     }

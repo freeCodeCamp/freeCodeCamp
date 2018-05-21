@@ -40,12 +40,20 @@
             "// Define the store here:",
             "",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(typeof store.getState === 'function', 'message: The redux store exists.');",
-        "assert(store.getState()=== 5, 'message: The redux store has a value of 5 for the state.');"
+        {
+          "text": "The redux store exists.",
+          "testString": "assert(typeof store.getState === 'function', 'The redux store exists.');"
+        },
+        {
+          "text": "The redux store has a value of 5 for the state.",
+          "testString": "assert(store.getState()=== 5, 'The redux store has a value of 5 for the state.');"
+        }
       ],
       "solutions": [
         "const reducer = (state = 5) => {\n  return state;\n}\n\n// Redux methods are available from a Redux object\n// For example: Redux.createStore()\n// Define the store here:\n\nconst store = Redux.createStore(reducer);"
@@ -76,12 +84,20 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(store.getState()===5, 'message: The redux store should have a value of 5 for the initial state.');",
-        "getUserInput => assert(currentState === 5 && getUserInput('index').includes('store.getState()'), 'message: A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.');"
+        {
+          "text": "The redux store should have a value of 5 for the initial state.",
+          "testString": "assert(store.getState()===5, 'The redux store should have a value of 5 for the initial state.');"
+        },
+        {
+          "text": "A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.",
+          "testString": "getUserInput => assert(currentState === 5 && getUserInput('index').includes('store.getState()'), 'A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.');"
+        }
       ],
       "solutions": [
         "const store = Redux.createStore(\n  (state = 5) => state\n);\n\n// change code below this line\nconst currentState = store.getState();"
@@ -109,12 +125,20 @@
           "contents": [
             "// Define an action here:",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { return typeof action === 'object' })(), 'message: An action object should exist.');",
-        "assert((function() { return action.type === 'LOGIN' })(), 'message: The action should have a key property type with value <code>LOGIN</code>.');"
+        {
+          "text": "An action object should exist.",
+          "testString": "assert((function() { return typeof action === 'object' })(), 'An action object should exist.');"
+        },
+        {
+          "text": "The action should have a key property type with value <code>LOGIN</code>.",
+          "testString": "assert((function() { return action.type === 'LOGIN' })(), 'The action should have a key property type with value <code>LOGIN</code>.');"
+        }
       ],
       "solutions": [
         "const action = {\n  type: 'LOGIN'\n}"
@@ -144,13 +168,24 @@
             "}",
             "// Define an action creator here:",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(typeof actionCreator === 'function', 'message: The function <code>actionCreator</code> should exist.');",
-        "assert(typeof action === 'object', 'message: Running the <code>actionCreator</code> function should return the action object.');",
-        "assert(action.type === 'LOGIN', 'message: The returned action should have a key property type with value <code>LOGIN</code>.');"
+        {
+          "text": "The function <code>actionCreator</code> should exist.",
+          "testString": "assert(typeof actionCreator === 'function', 'The function <code>actionCreator</code> should exist.');"
+        },
+        {
+          "text": "Running the <code>actionCreator</code> function should return the action object.",
+          "testString": "assert(typeof action === 'object', 'Running the <code>actionCreator</code> function should return the action object.');"
+        },
+        {
+          "text": "The returned action should have a key property type with value <code>LOGIN</code>.",
+          "testString": "assert(action.type === 'LOGIN', 'The returned action should have a key property type with value <code>LOGIN</code>.');"
+        }
       ],
       "solutions": [
         "const action = {\n  type: 'LOGIN'\n}\n// Define an action creator here:\nconst actionCreator = () => {\n  return action;\n};"
@@ -189,13 +224,24 @@
             "",
             "// Dispatch the action here:",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(loginAction().type === 'LOGIN', 'message: Calling the function <code>loginAction</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.');",
-        "assert(store.getState().login === false, 'message: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');",
-        "getUserInput => assert((function() {  let noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('store.dispatch(loginAction())') || noWhiteSpace.includes('store.dispatch({type: \\'LOGIN\\'})') === true })(), 'message: The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.');"
+        {
+          "text": "Calling the function <code>loginAction</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.",
+          "testString": "assert(loginAction().type === 'LOGIN', 'Calling the function <code>loginAction</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.');"
+        },
+        {
+          "text": "The store should be initialized with an object with property <code>login</code> set to <code>false</code>.",
+          "testString": "assert(store.getState().login === false, 'The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');"
+        },
+        {
+          "text": "The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.",
+          "testString": "getUserInput => assert((function() {  let noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('store.dispatch(loginAction())') || noWhiteSpace.includes('store.dispatch({type: \\'LOGIN\\'})') === true })(), 'The <code>store.dispatch()</code> method should be used to dispatch an action of type <code>LOGIN</code>.');"
+        }
       ],
       "solutions": [
         "const store = Redux.createStore(\n  (state = {login: false}) => state\n);\n\nconst loginAction = () => {\n  return {\n    type: 'LOGIN'\n  }\n};\n\n// Dispatch the action here:\nstore.dispatch(loginAction());"
@@ -238,14 +284,28 @@
             "    type: 'LOGIN'",
             "  }",
             "};"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(loginAction().type === 'LOGIN', 'message: Calling the function <code>loginAction</code> should return an object with type property set to the string <code>LOGIN</code>.');",
-        "assert(store.getState().login === false, 'message: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');",
-        "assert((function() {  const initialState = store.getState(); store.dispatch(loginAction()); const afterState = store.getState(); return initialState.login === false && afterState.login === true })(), 'message: Dispatching <code>loginAction</code> should update the <code>login</code> property in the store state to <code>true</code>.');",
-        "assert((function() { store.dispatch({type: '__TEST__ACTION__'}); let afterTest = store.getState(); return typeof afterTest === 'object' && afterTest.hasOwnProperty('login') })(), 'message: If the action is not of type <code>LOGIN</code>, the store should return the current state.');"
+        {
+          "text": "Calling the function <code>loginAction</code> should return an object with type property set to the string <code>LOGIN</code>.",
+          "testString": "assert(loginAction().type === 'LOGIN', 'Calling the function <code>loginAction</code> should return an object with type property set to the string <code>LOGIN</code>.');"
+        },
+        {
+          "text": "The store should be initialized with an object with property <code>login</code> set to <code>false</code>.",
+          "testString": "assert(store.getState().login === false, 'The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');"
+        },
+        {
+          "text": "Dispatching <code>loginAction</code> should update the <code>login</code> property in the store state to <code>true</code>.",
+          "testString": "assert((function() {  const initialState = store.getState(); store.dispatch(loginAction()); const afterState = store.getState(); return initialState.login === false && afterState.login === true })(), 'Dispatching <code>loginAction</code> should update the <code>login</code> property in the store state to <code>true</code>.');"
+        },
+        {
+          "text": "If the action is not of type <code>LOGIN</code>, the store should return the current state.",
+          "testString": "assert((function() { store.dispatch({type: '__TEST__ACTION__'}); let afterTest = store.getState(); return typeof afterTest === 'object' && afterTest.hasOwnProperty('login') })(), 'If the action is not of type <code>LOGIN</code>, the store should return the current state.');"
+        }
       ],
       "solutions": [
         "const defaultState = {\n  login: false\n};\n\nconst reducer = (state = defaultState, action) => {\n\n  if (action.type === 'LOGIN') {\n    return {login: true}\n  }\n\n  else {\n    return state\n  }\n\n};\n\nconst store = Redux.createStore(reducer);\n\nconst loginAction = () => {\n  return {\n    type: 'LOGIN'\n  }\n};"
@@ -294,16 +354,36 @@
             "    type: 'LOGOUT'",
             "  }",
             "};"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(loginUser().type === 'LOGIN', 'message: Calling the function <code>loginUser</code> should return an object with type property set to the string <code>LOGIN</code>.');",
-        "assert(logoutUser().type === 'LOGOUT', 'message: Calling the function <code>logoutUser</code> should return an object with type property set to the string <code>LOGOUT</code>.');",
-        "assert(store.getState().authenticated === false, 'message: The store should be initialized with an object with an <code>authenticated</code> property set to <code>false</code>.');",
-        "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'message: Dispatching <code>loginUser</code> should update the <code>authenticated</code> property in the store state to <code>true</code>.');",
-        "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })(), 'message: Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.');",
-        "getUserInput => assert( getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default'), 'message: The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.');"
+        {
+          "text": "Calling the function <code>loginUser</code> should return an object with type property set to the string <code>LOGIN</code>.",
+          "testString": "assert(loginUser().type === 'LOGIN', 'Calling the function <code>loginUser</code> should return an object with type property set to the string <code>LOGIN</code>.');"
+        },
+        {
+          "text": "Calling the function <code>logoutUser</code> should return an object with type property set to the string <code>LOGOUT</code>.",
+          "testString": "assert(logoutUser().type === 'LOGOUT', 'Calling the function <code>logoutUser</code> should return an object with type property set to the string <code>LOGOUT</code>.');"
+        },
+        {
+          "text": "The store should be initialized with an object with an <code>authenticated</code> property set to <code>false</code>.",
+          "testString": "assert(store.getState().authenticated === false, 'The store should be initialized with an object with an <code>authenticated</code> property set to <code>false</code>.');"
+        },
+        {
+          "text": "Dispatching <code>loginUser</code> should update the <code>authenticated</code> property in the store state to <code>true</code>.",
+          "testString": "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'Dispatching <code>loginUser</code> should update the <code>authenticated</code> property in the store state to <code>true</code>.');"
+        },
+        {
+          "text": "Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.",
+          "testString": "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false  })(), 'Dispatching <code>logoutUser</code> should update the <code>authenticated</code> property in the store state to <code>false</code>.');"
+        },
+        {
+          "text": "The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.",
+          "testString": "getUserInput => assert( getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default'), 'The <code>authReducer</code> function should handle multiple action types with a <code>switch</code> statement.');"
+        }
       ],
       "solutions": [
         "const defaultState = {\n  authenticated: false\n};\n\nconst authReducer = (state = defaultState, action) => {\n\n  switch (action.type) {\n\n    case 'LOGIN':\n      return {\n        authenticated: true\n      }\n\n    case 'LOGOUT':\n      return {\n        authenticated: false\n      }\n\n    default:\n      return state;\n\n  }\n\n};\n\nconst store = Redux.createStore(authReducer);\n\nconst loginUser = () => {\n  return {\n    type: 'LOGIN'\n  }\n};\n\nconst logoutUser = () => {\n  return {\n    type: 'LOGOUT'\n  }\n};"
@@ -371,18 +451,44 @@
             "    type: 'LOGOUT'",
             "  }",
             "};"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(loginUser().type === 'LOGIN', 'message: Calling the function <code>loginUser</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.');",
-        "assert(logoutUser().type === 'LOGOUT', 'message: Calling the function <code>logoutUser</code> should return an object with <code>type</code> property set to the string <code>LOGOUT</code>.');",
-        "assert(store.getState().authenticated === false, 'message: The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');",
-        "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'message: Dispatching <code>loginUser</code> should update the <code>login</code> property in the store state to <code>true</code>.');",
-        "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false })(), 'message: Dispatching <code>logoutUser</code> should update the <code>login</code> property in the store state to <code>false</code>.');",
-        "getUserInput => assert((function() { return typeof authReducer === 'function' && getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default') })(), 'message: The <code>authReducer</code> function should handle multiple action types with a switch statement.');",
-        "getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').toString().replace(/\\s/g,''); return (noWhiteSpace.includes('constLOGIN=\\'LOGIN\\'') || noWhiteSpace.includes('constLOGIN=\"LOGIN\"')) && (noWhiteSpace.includes('constLOGOUT=\\'LOGOUT\\'') || noWhiteSpace.includes('constLOGOUT=\"LOGOUT\"')) })(), 'message: <code>LOGIN</code> and <code>LOGOUT</code> should be declared as <code>const</code> values and should be assigned strings of <code>LOGIN</code>and <code>LOGOUT</code>.');",
-        "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').toString().replace(/\\s/g,''); return noWhiteSpace.includes('caseLOGIN:') && noWhiteSpace.includes('caseLOGOUT:') && noWhiteSpace.includes('type:LOGIN') && noWhiteSpace.includes('type:LOGOUT') })(), 'message: The action creators and the reducer should reference the <code>LOGIN</code> and <code>LOGOUT</code> constants.');"
+        {
+          "text": "Calling the function <code>loginUser</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.",
+          "testString": "assert(loginUser().type === 'LOGIN', 'Calling the function <code>loginUser</code> should return an object with <code>type</code> property set to the string <code>LOGIN</code>.');"
+        },
+        {
+          "text": "Calling the function <code>logoutUser</code> should return an object with <code>type</code> property set to the string <code>LOGOUT</code>.",
+          "testString": "assert(logoutUser().type === 'LOGOUT', 'Calling the function <code>logoutUser</code> should return an object with <code>type</code> property set to the string <code>LOGOUT</code>.');"
+        },
+        {
+          "text": "The store should be initialized with an object with property <code>login</code> set to <code>false</code>.",
+          "testString": "assert(store.getState().authenticated === false, 'The store should be initialized with an object with property <code>login</code> set to <code>false</code>.');"
+        },
+        {
+          "text": "Dispatching <code>loginUser</code> should update the <code>login</code> property in the store state to <code>true</code>.",
+          "testString": "assert((function() {  const initialState = store.getState(); store.dispatch(loginUser()); const afterLogin = store.getState(); return initialState.authenticated === false && afterLogin.authenticated === true })(), 'Dispatching <code>loginUser</code> should update the <code>login</code> property in the store state to <code>true</code>.');"
+        },
+        {
+          "text": "Dispatching <code>logoutUser</code> should update the <code>login</code> property in the store state to <code>false</code>.",
+          "testString": "assert((function() {  store.dispatch(loginUser()); const loggedIn = store.getState(); store.dispatch(logoutUser()); const afterLogout = store.getState(); return loggedIn.authenticated === true && afterLogout.authenticated === false })(), 'Dispatching <code>logoutUser</code> should update the <code>login</code> property in the store state to <code>false</code>.');"
+        },
+        {
+          "text": "The <code>authReducer</code> function should handle multiple action types with a switch statement.",
+          "testString": "getUserInput => assert((function() { return typeof authReducer === 'function' && getUserInput('index').toString().includes('switch') && getUserInput('index').toString().includes('case') && getUserInput('index').toString().includes('default') })(), 'The <code>authReducer</code> function should handle multiple action types with a switch statement.');"
+        },
+        {
+          "text": "<code>LOGIN</code> and <code>LOGOUT</code> should be declared as <code>const</code> values and should be assigned strings of <code>LOGIN</code>and <code>LOGOUT</code>.",
+          "testString": "getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').toString().replace(/\\s/g,''); return (noWhiteSpace.includes('constLOGIN=\\'LOGIN\\'') || noWhiteSpace.includes('constLOGIN=\"LOGIN\"')) && (noWhiteSpace.includes('constLOGOUT=\\'LOGOUT\\'') || noWhiteSpace.includes('constLOGOUT=\"LOGOUT\"')) })(), '<code>LOGIN</code> and <code>LOGOUT</code> should be declared as <code>const</code> values and should be assigned strings of <code>LOGIN</code>and <code>LOGOUT</code>.');"
+        },
+        {
+          "text": "The action creators and the reducer should reference the <code>LOGIN</code> and <code>LOGOUT</code> constants.",
+          "testString": "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').toString().replace(/\\s/g,''); return noWhiteSpace.includes('caseLOGIN:') && noWhiteSpace.includes('caseLOGOUT:') && noWhiteSpace.includes('type:LOGIN') && noWhiteSpace.includes('type:LOGOUT') })(), 'The action creators and the reducer should reference the <code>LOGIN</code> and <code>LOGOUT</code> constants.');"
+        }
       ],
       "solutions": [
         "const LOGIN = 'LOGIN';\nconst LOGOUT = 'LOGOUT';\n\nconst defaultState = {\n  authenticated: false\n};\n\nconst authReducer = (state = defaultState, action) => {\n\n  switch (action.type) {\n\n    case LOGIN:\n      return {\n        authenticated: true\n      }\n\n    case LOGOUT:\n      return {\n        authenticated: false\n      }\n\n    default:\n      return state;\n\n  }\n\n};\n\nconst store = Redux.createStore(authReducer);\n\nconst loginUser = () => {\n  return {\n    type: LOGIN\n  }\n};\n\nconst logoutUser = () => {\n  return {\n    type: LOGOUT\n  }\n};"
@@ -436,13 +542,23 @@
             "console.log(count);",
             "store.dispatch({type: ADD});",
             "console.log(count);"
-          ]
+          ],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { const initialState = store.getState(); store.dispatch({ type: 'ADD' }); const newState = store.getState(); return newState === (initialState + 1); })(), 'message: Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.');",
-        "getUserInput => assert(getUserInput('index').includes('store.subscribe('), 'message: There should be a listener function subscribed to the store using <code>store.subscribe</code>.');",
-        "assert(store.getState() === count, 'message: The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.');"
+        {
+          "text": "Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.",
+          "testString": "assert((function() { const initialState = store.getState(); store.dispatch({ type: 'ADD' }); const newState = store.getState(); return newState === (initialState + 1); })(), 'Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.');"
+        },
+        {
+          "text": "There should be a listener function subscribed to the store using <code>store.subscribe</code>.",
+          "testString": "getUserInput => assert(getUserInput('index').includes('store.subscribe('), 'There should be a listener function subscribed to the store using <code>store.subscribe</code>.');"
+        },
+        {
+          "text": "The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.",
+          "testString": "assert(store.getState() === count, 'The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.');"
+        }
       ],
       "solutions": [
         "const ADD = 'ADD';\n\nconst reducer = (state = 0, action) => {\n  switch(action.type) {\n    case ADD:\n      return state + 1;\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(reducer);\n let count = 0; \n// change code below this line\n\nstore.subscribe( () =>\n { \n count++; \n } \n);\n\n// change code above this line\n\nstore.dispatch({type: ADD});\nstore.dispatch({type: ADD});\nstore.dispatch({type: ADD});"
@@ -507,14 +623,28 @@
             "",
             "const store = Redux.createStore(rootReducer);",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { const initalState = store.getState().count; store.dispatch({type: INCREMENT}); store.dispatch({type: INCREMENT}); const firstState = store.getState().count; store.dispatch({type: DECREMENT}); const secondState = store.getState().count; return firstState === initalState + 2 && secondState === firstState - 1  })(), 'message: The <code>counterReducer</code> should increment and decrement the <code>state</code>.');",
-        "assert((function() {  store.dispatch({type: LOGIN}); const loggedIn = store.getState().auth.authenticated; store.dispatch({type: LOGOUT}); const loggedOut = store.getState().auth.authenticated; return loggedIn === true && loggedOut === false  })(), 'message: The <code>authReducer</code> should toggle the <code>state</code> of <code>authenticated</code> between <code>true</code> and <code>false</code>.');",
-        "assert((function() { const state = store.getState(); return typeof state.auth === 'object' && typeof state.auth.authenticated === 'boolean' && typeof state.count === 'number' })(), 'message: The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.');",
-        "getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return typeof rootReducer === 'function' && noWhiteSpace.includes('Redux.combineReducers')  })(), 'message: The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.');"
+        {
+          "text": "The <code>counterReducer</code> should increment and decrement the <code>state</code>.",
+          "testString": "assert((function() { const initalState = store.getState().count; store.dispatch({type: INCREMENT}); store.dispatch({type: INCREMENT}); const firstState = store.getState().count; store.dispatch({type: DECREMENT}); const secondState = store.getState().count; return firstState === initalState + 2 && secondState === firstState - 1  })(), 'The <code>counterReducer</code> should increment and decrement the <code>state</code>.');"
+        },
+        {
+          "text": "The <code>authReducer</code> should toggle the <code>state</code> of <code>authenticated</code> between <code>true</code> and <code>false</code>.",
+          "testString": "assert((function() {  store.dispatch({type: LOGIN}); const loggedIn = store.getState().auth.authenticated; store.dispatch({type: LOGOUT}); const loggedOut = store.getState().auth.authenticated; return loggedIn === true && loggedOut === false  })(), 'The <code>authReducer</code> should toggle the <code>state</code> of <code>authenticated</code> between <code>true</code> and <code>false</code>.');"
+        },
+        {
+          "text": "The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.",
+          "testString": "assert((function() { const state = store.getState(); return typeof state.auth === 'object' && typeof state.auth.authenticated === 'boolean' && typeof state.count === 'number' })(), 'The store <code>state</code> should have two keys: <code>count</code>, which holds a number, and <code>auth</code>, which holds an object. The <code>auth</code> object should have a property of <code>authenticated</code>, which holds a boolean.');"
+        },
+        {
+          "text": "The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.",
+          "testString": "getUserInput => assert((function() {  const noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return typeof rootReducer === 'function' && noWhiteSpace.includes('Redux.combineReducers')  })(), 'The <code>rootReducer</code> should be a function that combines the <code>counterReducer</code> and the <code>authReducer</code>.');"
+        }
       ],
       "solutions": [
         "const INCREMENT = 'INCREMENT';\nconst DECREMENT = 'DECREMENT';\n\nconst counterReducer = (state = 0, action) => {\n  switch(action.type) {\n    case INCREMENT:\n      return state + 1;\n    case DECREMENT:\n      return state - 1;\n    default:\n      return state;\n  }\n};\n\nconst LOGIN = 'LOGIN';\nconst LOGOUT = 'LOGOUT';\n\nconst authReducer = (state = {authenticated: false}, action) => {\n  switch(action.type) {\n    case LOGIN:\n      return {\n        authenticated: true\n      }\n    case LOGOUT:\n      return {\n        authenticated: false\n      }\n    default:\n      return state;\n  }\n};\n\nconst rootReducer = Redux.combineReducers({\n  count: counterReducer,\n  auth: authReducer\n});\n\nconst store = Redux.createStore(rootReducer);"
@@ -564,12 +694,20 @@
             "console.log(store.getState());",
             "store.dispatch(addNoteText('Hello!'));",
             "console.log(store.getState());"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { const addNoteFn = addNoteText('__TEST__NOTE'); return addNoteFn.type === ADD_NOTE && addNoteFn.text === '__TEST__NOTE' })(), 'message: The action creator <code>addNoteText</code> should return an object with keys <code>type</code> and <code>text</code>.');",
-        "assert((function() { const initialState = store.getState(); store.dispatch(addNoteText('__TEST__NOTE')); const newState = store.getState(); return initialState !== newState && newState === '__TEST__NOTE' })(), 'message: Dispatching an action of type <code>ADD_NOTE</code> with the <code>addNoteText</code> action creator should update the <code>state</code> to the string passed to the action creator.');"
+        {
+          "text": "The action creator <code>addNoteText</code> should return an object with keys <code>type</code> and <code>text</code>.",
+          "testString": "assert((function() { const addNoteFn = addNoteText('__TEST__NOTE'); return addNoteFn.type === ADD_NOTE && addNoteFn.text === '__TEST__NOTE' })(), 'The action creator <code>addNoteText</code> should return an object with keys <code>type</code> and <code>text</code>.');"
+        },
+        {
+          "text": "Dispatching an action of type <code>ADD_NOTE</code> with the <code>addNoteText</code> action creator should update the <code>state</code> to the string passed to the action creator.",
+          "testString": "assert((function() { const initialState = store.getState(); store.dispatch(addNoteText('__TEST__NOTE')); const newState = store.getState(); return initialState !== newState && newState === '__TEST__NOTE' })(), 'Dispatching an action of type <code>ADD_NOTE</code> with the <code>addNoteText</code> action creator should update the <code>state</code> to the string passed to the action creator.');"
+        }
       ],
       "solutions": [
         "const ADD_NOTE = 'ADD_NOTE';\n\nconst notesReducer = (state = 'Initial State', action) => {\n  switch(action.type) {\n    // change code below this line\n    case ADD_NOTE:\n      return action.text;\n    // change code above this line\n    default:\n      return state;\n  }\n};\n\nconst addNoteText = (note) => {\n  // change code below this line\n  return {\n    type: ADD_NOTE,\n    text: note\n  }\n  // change code above this line\n};\n\nconst store = Redux.createStore(notesReducer);\n\nconsole.log(store.getState());\nstore.dispatch(addNoteText('Hello Redux!'));\nconsole.log(store.getState());"
@@ -643,15 +781,32 @@
             "  asyncDataReducer,",
             "  Redux.applyMiddleware(ReduxThunk.default)",
             ");"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(requestingData().type === REQUESTING_DATA, 'message: The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.');",
-        "assert(receivedData('data').type === RECEIVED_DATA, 'message: The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.');",
-        "assert(typeof asyncDataReducer === 'function', 'message: <code>asyncDataReducer</code> should be a function.');",
-        "assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })(), 'message: Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.');",
-        "assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\\s/g,''); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })(), 'message: Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.');"
+        {
+          "text": "The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.",
+          "testString": "assert(requestingData().type === REQUESTING_DATA, 'The <code>requestingData</code> action creator should return an object of type equal to the value of <code>REQUESTING_DATA</code>.');"
+        },
+        {
+          "text": "The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.",
+          "testString": "assert(receivedData('data').type === RECEIVED_DATA, 'The <code>receivedData</code> action creator should return an object of type equal to the value of <code>RECEIVED_DATA</code>.');"
+        },
+        {
+          "text": "<code>asyncDataReducer</code> should be a function.",
+          "testString": "assert(typeof asyncDataReducer === 'function', '<code>asyncDataReducer</code> should be a function.');"
+        },
+        {
+          "text": "Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.",
+          "testString": "assert((function() { const initialState = store.getState(); store.dispatch(requestingData()); const reqState = store.getState(); return initialState.fetching === false && reqState.fetching === true })(), 'Dispatching the requestingData action creator should update the store <code>state</code> property of fetching to <code>true</code>.');"
+        },
+        {
+          "text": "Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.",
+          "testString": "assert((function() { const noWhiteSpace = handleAsync.toString().replace(/\\s/g,''); return noWhiteSpace.includes('dispatch(requestingData())') === true && noWhiteSpace.includes('dispatch(receivedData(data))') === true })(), 'Dispatching <code>handleAsync</code> should dispatch the data request action and then dispatch the received data action after a delay.');"
+        }
       ],
       "solutions": [
         "const REQUESTING_DATA = 'REQUESTING_DATA'\nconst RECEIVED_DATA = 'RECEIVED_DATA'\n\nconst requestingData = () => { return {type: REQUESTING_DATA} }\nconst receivedData = (data) => { return {type: RECEIVED_DATA, users: data.users} }\n\nconst handleAsync = () => {\n  return function(dispatch) {\n    dispatch(requestingData());\n    setTimeout(function() {\n      let data = {\n        users: ['Jeff', 'William', 'Alice']\n      }\n      dispatch(receivedData(data));\n    }, 2500);\n  }\n};\n\nconst defaultState = {\n  fetching: false,\n  users: []\n};\n\nconst asyncDataReducer = (state = defaultState, action) => {\n  switch(action.type) {\n    case REQUESTING_DATA:\n      return {\n        fetching: true,\n        users: []\n      }\n    case RECEIVED_DATA:\n      return {\n        fetching: false,\n        users: action.users\n      }\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(\n  asyncDataReducer,\n  Redux.applyMiddleware(ReduxThunk.default)\n);"
@@ -686,16 +841,36 @@
             "const decAction = null; // define an action creator for decrementing",
             "",
             "const store = null; // define the Redux store here, passing in your reducers"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(incAction().type ===INCREMENT, 'message: The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>');",
-        "assert(decAction().type === DECREMENT, 'message: The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>');",
-        "assert(store.getState() === 0, 'message: The Redux store should initialize with a <code>state</code> of 0.');",
-        "assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })(), 'message: Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.');",
-        "assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })(), 'message: Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.');",
-        "assert(typeof counterReducer === 'function', 'message: <code>counterReducer</code> should be a function');"
+        {
+          "text": "The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>",
+          "testString": "assert(incAction().type ===INCREMENT, 'The action creator <code>incAction</code> should return an action object with <code>type</code> equal to the value of <code>INCREMENT</code>');"
+        },
+        {
+          "text": "The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>",
+          "testString": "assert(decAction().type === DECREMENT, 'The action creator <code>decAction</code> should return an action object with <code>type</code> equal to the value of <code>DECREMENT</code>');"
+        },
+        {
+          "text": "The Redux store should initialize with a <code>state</code> of 0.",
+          "testString": "assert(store.getState() === 0, 'The Redux store should initialize with a <code>state</code> of 0.');"
+        },
+        {
+          "text": "Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.",
+          "testString": "assert((function() { const initialState = store.getState(); store.dispatch(incAction()); const incState = store.getState(); return initialState + 1 === incState })(), 'Dispatching <code>incAction</code> on the Redux store should increment the <code>state</code> by 1.');"
+        },
+        {
+          "text": "Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.",
+          "testString": "assert((function() { const initialState = store.getState(); store.dispatch(decAction()); const decState = store.getState(); return initialState - 1 === decState })(), 'Dispatching <code>decAction</code> on the Redux store should decrement the <code>state</code> by 1.');"
+        },
+        {
+          "text": "<code>counterReducer</code> should be a function",
+          "testString": "assert(typeof counterReducer === 'function', '<code>counterReducer</code> should be a function');"
+        }
       ],
       "solutions": [
         "const INCREMENT = 'INCREMENT';\nconst DECREMENT = 'DECREMENT';\n\nconst counterReducer = (state = 0, action) => {\n  switch(action.type) {\n    case INCREMENT:\n      return state + 1;\n    case DECREMENT:\n      return state - 1;\n    default:\n      return state;\n  }\n};\n\nconst incAction = () => {\n  return {\n    type: INCREMENT\n  }\n};\n\nconst decAction = () => {\n  return {\n    type: DECREMENT\n  }\n};\n\nconst store = Redux.createStore(counterReducer);"
@@ -751,13 +926,24 @@
             "}",
             "",
             "const store = Redux.createStore(immutableReducer);"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { const todos = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code' ]; const initialState = store.getState(); return Array.isArray(initialState) && initialState.join(',') === todos.join(','); })(), 'message: The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.');",
-        "assert(typeof addToDo === 'function' && typeof immutableReducer === 'function', 'message: <code>addToDo</code> and <code>immutableReducer</code> both should be functions.');",
-        "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo('__TEST__TO__DO__')); const finalState = store.getState(); const expectedState = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code', '__TEST__TO__DO__' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), 'message: Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.');"
+        {
+          "text": "The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.",
+          "testString": "assert((function() { const todos = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code' ]; const initialState = store.getState(); return Array.isArray(initialState) && initialState.join(',') === todos.join(','); })(), 'The Redux store should exist and initialize with a state equal to the <code>todos</code> array in the code editor.');"
+        },
+        {
+          "text": "<code>addToDo</code> and <code>immutableReducer</code> both should be functions.",
+          "testString": "assert(typeof addToDo === 'function' && typeof immutableReducer === 'function', '<code>addToDo</code> and <code>immutableReducer</code> both should be functions.');"
+        },
+        {
+          "text": "Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.",
+          "testString": "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo('__TEST__TO__DO__')); const finalState = store.getState(); const expectedState = [ 'Go to the store', 'Clean the house', 'Cook dinner', 'Learn to code', '__TEST__TO__DO__' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), 'Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.');"
+        }
       ],
       "solutions": [
         "const ADD_TO_DO = 'ADD_TO_DO';\n\n// A list of strings representing tasks to do:\nconst todos = [\n  'Go to the store',\n  'Clean the house',\n  'Cook dinner',\n  'Learn to code',\n];\n\nconst immutableReducer = (state = todos, action) => {\n  switch(action.type) {\n    case ADD_TO_DO:\n      return state.concat(action.todo);\n    default:\n      return state;\n  }\n};\n\n// an example todo argument would be 'Learn React',\nconst addToDo = (todo) => {\n  return {\n    type: ADD_TO_DO,\n    todo\n  }\n}\n\nconst store = Redux.createStore(immutableReducer);"
@@ -802,14 +988,28 @@
             "}",
             "",
             "const store = Redux.createStore(immutableReducer);"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { const initialState = store.getState(); return ( Array.isArray(initialState) === true && initialState[0] === 'Do not mutate state!'); })(), 'message: The Redux store should exist and initialize with a state equal to <code>[Do not mutate state!]</code>.');",
-        "assert(typeof addToDo === 'function' && typeof immutableReducer === 'function', 'message: <code>addToDo</code> and <code>immutableReducer</code> both should be functions.');",
-        "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo('__TEST__TO__DO__')); const finalState = store.getState(); const expectedState = [ 'Do not mutate state!', '__TEST__TO__DO__' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), 'message: Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.');",
-        "getUserInput => assert(getUserInput('index').includes('...state'), 'message: The spread operator should be used to return new state.');"
+        {
+          "text": "The Redux store should exist and initialize with a state equal to <code>[Do not mutate state!]</code>.",
+          "testString": "assert((function() { const initialState = store.getState(); return ( Array.isArray(initialState) === true && initialState[0] === 'Do not mutate state!'); })(), 'The Redux store should exist and initialize with a state equal to <code>[Do not mutate state!]</code>.');"
+        },
+        {
+          "text": "<code>addToDo</code> and <code>immutableReducer</code> both should be functions.",
+          "testString": "assert(typeof addToDo === 'function' && typeof immutableReducer === 'function', '<code>addToDo</code> and <code>immutableReducer</code> both should be functions.');"
+        },
+        {
+          "text": "Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.",
+          "testString": "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo('__TEST__TO__DO__')); const finalState = store.getState(); const expectedState = [ 'Do not mutate state!', '__TEST__TO__DO__' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), 'Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.');"
+        },
+        {
+          "text": "The spread operator should be used to return new state.",
+          "testString": "getUserInput => assert(getUserInput('index').includes('...state'), 'The spread operator should be used to return new state.');"
+        }
       ],
       "solutions": [
         "const immutableReducer = (state = ['Do not mutate state!'], action) => {\n  switch(action.type) {\n    case 'ADD_TO_DO':\n      return [\n        ...state,\n        action.todo\n      ];\n    default:\n      return state;\n  }\n};\n\nconst addToDo = (todo) => {\n  return {\n    type: 'ADD_TO_DO',\n    todo\n  }\n}\n\nconst store = Redux.createStore(immutableReducer);"
@@ -852,13 +1052,24 @@
             "}",
             "",
             "const store = Redux.createStore(immutableReducer);"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { const initialState = store.getState(); return (Array.isArray(initialState) === true && DeepEqual(initialState, [0, 1, 2, 3, 4, 5])); })(), 'message: The Redux store should exist and initialize with a state equal to <code>[0,1,2,3,4,5]</code>');",
-        "assert(typeof removeItem === 'function' && typeof immutableReducer === 'function', 'message: <code>removeItem</code> and <code>immutableReducer</code> both should be functions.');",
-        "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(removeItem(3)); const state_1 = store.getState(); store.dispatch(removeItem(2)); const state_2 = store.getState(); store.dispatch(removeItem(0)); store.dispatch(removeItem(0)); store.dispatch(removeItem(0)); const state_3 = store.getState(); return isFrozen && DeepEqual(state_1, [0, 1, 2, 4, 5]) && DeepEqual(state_2, [0, 1, 4, 5]) && DeepEqual(state_3, [5]); })(), 'message: Dispatching the <code>removeItem</code> action creator should remove items from the state and should NOT mutate state.');"
+        {
+          "text": "The Redux store should exist and initialize with a state equal to <code>[0,1,2,3,4,5]</code>",
+          "testString": "assert((function() { const initialState = store.getState(); return (Array.isArray(initialState) === true && DeepEqual(initialState, [0, 1, 2, 3, 4, 5])); })(), 'The Redux store should exist and initialize with a state equal to <code>[0,1,2,3,4,5]</code>');"
+        },
+        {
+          "text": "<code>removeItem</code> and <code>immutableReducer</code> both should be functions.",
+          "testString": "assert(typeof removeItem === 'function' && typeof immutableReducer === 'function', '<code>removeItem</code> and <code>immutableReducer</code> both should be functions.');"
+        },
+        {
+          "text": "Dispatching the <code>removeItem</code> action creator should remove items from the state and should NOT mutate state.",
+          "testString": "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(removeItem(3)); const state_1 = store.getState(); store.dispatch(removeItem(2)); const state_2 = store.getState(); store.dispatch(removeItem(0)); store.dispatch(removeItem(0)); store.dispatch(removeItem(0)); const state_3 = store.getState(); return isFrozen && DeepEqual(state_1, [0, 1, 2, 4, 5]) && DeepEqual(state_2, [0, 1, 4, 5]) && DeepEqual(state_3, [5]); })(), 'Dispatching the <code>removeItem</code> action creator should remove items from the state and should NOT mutate state.');"
+        }
       ],
       "solutions": [
         "const immutableReducer = (state = [0,1,2,3,4,5], action) => {\n  switch(action.type) {\n    case 'REMOVE_ITEM':\n      return [\n        ...state.slice(0, action.index),\n        ...state.slice(action.index + 1)\n      ];\n    default:\n      return state;\n  }\n};\n\nconst removeItem = (index) => {\n  return {\n    type: 'REMOVE_ITEM',\n    index\n  }\n}\n\nconst store = Redux.createStore(immutableReducer);"
@@ -909,14 +1120,28 @@
             "};",
             "",
             "const store = Redux.createStore(immutableReducer);"
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { const expectedState = { user: 'CamperBot', status: 'offline', friends: '732,982', community: 'freeCodeCamp' }; const initialState = store.getState(); return DeepEqual(expectedState, initialState); })(), 'message: The Redux store should exist and initialize with a state that is equivalent to the <code>defaultState</code> object declared on line 1.');",
-        "assert(typeof wakeUp === 'function' && typeof immutableReducer === 'function', 'message: <code>wakeUp</code> and <code>immutableReducer</code> both should be functions.');",
-        "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch({type: 'ONLINE'}); const finalState = store.getState(); const expectedState = { user: 'CamperBot', status: 'online', friends: '732,982', community: 'freeCodeCamp' }; return isFrozen && DeepEqual(finalState, expectedState); })(), 'message: Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.');",
-        "getUserInput => assert(getUserInput('index').includes('Object.assign'), 'message: <code>Object.assign</code> should be used to return new state.');"
+        {
+          "text": "The Redux store should exist and initialize with a state that is equivalent to the <code>defaultState</code> object declared on line 1.",
+          "testString": "assert((function() { const expectedState = { user: 'CamperBot', status: 'offline', friends: '732,982', community: 'freeCodeCamp' }; const initialState = store.getState(); return DeepEqual(expectedState, initialState); })(), 'The Redux store should exist and initialize with a state that is equivalent to the <code>defaultState</code> object declared on line 1.');"
+        },
+        {
+          "text": "<code>wakeUp</code> and <code>immutableReducer</code> both should be functions.",
+          "testString": "assert(typeof wakeUp === 'function' && typeof immutableReducer === 'function', '<code>wakeUp</code> and <code>immutableReducer</code> both should be functions.');"
+        },
+        {
+          "text": "Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.",
+          "testString": "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch({type: 'ONLINE'}); const finalState = store.getState(); const expectedState = { user: 'CamperBot', status: 'online', friends: '732,982', community: 'freeCodeCamp' }; return isFrozen && DeepEqual(finalState, expectedState); })(), 'Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.');"
+        },
+        {
+          "text": "<code>Object.assign</code> should be used to return new state.",
+          "testString": "getUserInput => assert(getUserInput('index').includes('Object.assign'), '<code>Object.assign</code> should be used to return new state.');"
+        }
       ],
       "solutions": [
         "const defaultState = {\n  user: 'CamperBot',\n  status: 'offline',\n  friends: '732,982',\n  community: 'freeCodeCamp'\n};\n\nconst immutableReducer = (state = defaultState, action) => {\n  switch(action.type) {\n    case 'ONLINE':\n      return Object.assign({}, state, {\n        status: 'online'\n      });\n    default:\n      return state;\n  }\n};\n\nconst wakeUp = () => {\n  return {\n    type: 'ONLINE'\n  }\n};\n\nconst store = Redux.createStore(immutableReducer);"

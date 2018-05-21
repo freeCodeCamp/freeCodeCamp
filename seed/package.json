@@ -1,0 +1,54 @@
+{
+  "name": "@freecodecamp/curriculum",
+  "version": "1.0.0",
+  "description": "freeCodeCamp's curriculum seed files",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm run build:js && npm run build:json",
+    "build:json": "gulp json:minify",
+    "build:js": "gulp babel",
+    "prepack": "npm run build",
+    "unpack": "babel-node ./unpack.js",
+    "repack": "babel-node ./repack.js",
+    "test": "babel-node ./test-challenges.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freecodecamp/freecodecamp.git"
+  },
+  "keywords": [
+    "freecodecamp",
+    "curriculum",
+    "challenges",
+    "javascript",
+    "interview",
+    "json"
+  ],
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
+  "bugs": {
+    "url": "https://github.com/freecodecamp/freecodecamp/issues"
+  },
+  "homepage": "https://github.com/freecodecamp/freecodecamp#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-standalone": "^6.26.0",
+    "browserify": "^16.2.2",
+    "fs-extra": "^6.0.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-json-minify": "^1.2.2",
+    "gulp-rename": "^1.2.3",
+    "gulp-util": "^3.0.8",
+    "joi": "^13.3.0",
+    "joi-objectid": "^2.0.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.10",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.9.0",
+    "validator": "^10.2.0"
+  },
+  "dependencies": {}
+}

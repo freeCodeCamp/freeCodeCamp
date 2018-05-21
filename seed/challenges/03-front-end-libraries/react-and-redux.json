@@ -45,13 +45,25 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<DisplayMessages />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<DisplayMessages />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })(), 'message: The <code>DisplayMessages</code> component should render an empty <code>div</code> element.');",
-        "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'message: The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === 'object' && initialState.input === '' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), 'message: The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: \"\", messages: []}</code>.');"
+        {
+          "text": "The <code>DisplayMessages</code> component should render an empty <code>div</code> element.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); return mockedComponent.find('div').text() === '' })(), 'The <code>DisplayMessages</code> component should render an empty <code>div</code> element.');"
+        },
+        {
+          "text": "The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.",
+          "testString": "getUserInput => assert((function() { const noWhiteSpace = getUserInput('index').replace(/\\s/g,''); return noWhiteSpace.includes('constructor(props)') && noWhiteSpace.includes('super(props'); })(), 'The <code>DisplayMessages</code> constructor should be called properly with <code>super</code>, passing in <code>props</code>.');"
+        },
+        {
+          "text": "The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: \"\", messages: []}</code>.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return typeof initialState === 'object' && initialState.input === '' && Array.isArray(initialState.messages) && initialState.messages.length === 0; })(), 'The <code>DisplayMessages</code> component should have an initial state equal to <code>{input: \"\", messages: []}</code>.');"
+        }
       ],
       "solutions": [
         "class DisplayMessages extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n  }\n  render() {\n    return <div/>\n  }\n};"
@@ -100,16 +112,37 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<DisplayMessages />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<DisplayMessages />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && initialState.input === '' && initialState.messages.length === 0); })(), 'message: The <code>DisplayMessages</code> component should initialize with a state equal to <code>{ input: \"\", messages: [] }</code>.');",
-        "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const state = () => { mockedComponent.setState({messages: ['__TEST__MESSAGE']}); return waitForIt(() => mockedComponent )}; const updated = await state(); assert(updated.find('div').length === 1 && updated.find('h2').length === 1 && updated.find('button').length === 1 && updated.find('ul').length === 1, 'message: The <code>DisplayMessages</code> component should render a <code>div</code> containing an <code>h2</code> element, a <code>button</code> element, a <code>ul</code> element, and <code>li</code> elements as children.'); }; ",
-        "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const testValue = '__TEST__EVENT__INPUT'; const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); assert(updated.find('input').props().value === testValue, 'message: The <code>input</code> element should render the value of <code>input</code> in local state.'); }; ",
-        "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = '__TEST__EVENT__MESSAGE__'; const changed = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const afterInput = await changed(); assert(initialState.input === '' && afterInput.state().input === '__TEST__EVENT__MESSAGE__', 'message: Calling the method <code>handleChange</code> should update the <code>input</code> value in state to the current input.');  }; ",
-        "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage_1 = '__FIRST__MESSAGE__'; const firstChange = () => { causeChange(mockedComponent, testMessage_1); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit_1 = await firstSubmit(); const submitState_1 = afterSubmit_1.state(); const testMessage_2 = '__SECOND__MESSAGE__'; const secondChange = () => { causeChange(mockedComponent, testMessage_2); return waitForIt(() => mockedComponent )}; const secondResult = await secondChange(); const secondSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit_2 = await secondSubmit(); const submitState_2 = afterSubmit_2.state(); assert(initialState.messages.length === 0 && submitState_1.messages.length === 1 && submitState_2.messages.length === 2 && submitState_2.messages[1] === testMessage_2, 'message: Clicking the <code>Add message</code> button should call the method <code>submitMessage</code> which should add the current <code>input</code> to the <code>messages</code> array in state.'); }; ",
-        "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = '__FIRST__MESSAGE__'; const firstChange = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstState = firstResult.state(); const firstSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit = await firstSubmit(); const submitState = afterSubmit.state(); assert(firstState.input === testMessage && submitState.input === '', 'message: The <code>submitMessage</code> method should clear the current input.'); }; "
+        {
+          "text": "The <code>DisplayMessages</code> component should initialize with a state equal to <code>{ input: \"\", messages: [] }</code>.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return ( typeof initialState === 'object' && initialState.input === '' && initialState.messages.length === 0); })(), 'The <code>DisplayMessages</code> component should initialize with a state equal to <code>{ input: \"\", messages: [] }</code>.');"
+        },
+        {
+          "text": "The <code>DisplayMessages</code> component should render a <code>div</code> containing an <code>h2</code> element, a <code>button</code> element, a <code>ul</code> element, and <code>li</code> elements as children.",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const state = () => { mockedComponent.setState({messages: ['__TEST__MESSAGE']}); return waitForIt(() => mockedComponent )}; const updated = await state(); assert(updated.find('div').length === 1 && updated.find('h2').length === 1 && updated.find('button').length === 1 && updated.find('ul').length === 1, 'The <code>DisplayMessages</code> component should render a <code>div</code> containing an <code>h2</code> element, a <code>button</code> element, a <code>ul</code> element, and <code>li</code> elements as children.'); }; "
+        },
+        {
+          "text": "The <code>input</code> element should render the value of <code>input</code> in local state.",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const testValue = '__TEST__EVENT__INPUT'; const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); assert(updated.find('input').props().value === testValue, 'The <code>input</code> element should render the value of <code>input</code> in local state.'); }; "
+        },
+        {
+          "text": "Calling the method <code>handleChange</code> should update the <code>input</code> value in state to the current input.",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = '__TEST__EVENT__MESSAGE__'; const changed = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const afterInput = await changed(); assert(initialState.input === '' && afterInput.state().input === '__TEST__EVENT__MESSAGE__', 'Calling the method <code>handleChange</code> should update the <code>input</code> value in state to the current input.');  }; "
+        },
+        {
+          "text": "Clicking the <code>Add message</code> button should call the method <code>submitMessage</code> which should add the current <code>input</code> to the <code>messages</code> array in state.",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage_1 = '__FIRST__MESSAGE__'; const firstChange = () => { causeChange(mockedComponent, testMessage_1); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit_1 = await firstSubmit(); const submitState_1 = afterSubmit_1.state(); const testMessage_2 = '__SECOND__MESSAGE__'; const secondChange = () => { causeChange(mockedComponent, testMessage_2); return waitForIt(() => mockedComponent )}; const secondResult = await secondChange(); const secondSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit_2 = await secondSubmit(); const submitState_2 = afterSubmit_2.state(); assert(initialState.messages.length === 0 && submitState_1.messages.length === 1 && submitState_2.messages.length === 2 && submitState_2.messages[1] === testMessage_2, 'Clicking the <code>Add message</code> button should call the method <code>submitMessage</code> which should add the current <code>input</code> to the <code>messages</code> array in state.'); }; "
+        },
+        {
+          "text": "The <code>submitMessage</code> method should clear the current input.",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const initialState = mockedComponent.state(); const testMessage = '__FIRST__MESSAGE__'; const firstChange = () => { causeChange(mockedComponent, testMessage); return waitForIt(() => mockedComponent )}; const firstResult = await firstChange(); const firstState = firstResult.state(); const firstSubmit = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterSubmit = await firstSubmit(); const submitState = afterSubmit.state(); assert(firstState.input === testMessage && submitState.input === '', 'The <code>submitMessage</code> method should clear the current input.'); }; "
+        }
       ],
       "solutions": [
         "class DisplayMessages extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n this.handleChange = this.handleChange.bind(this); \n   this.submitMessage = this.submitMessage.bind(this);  \n }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    const currentMessage = this.state.input;\n    this.setState({\n      input: '',\n      messages: this.state.messages.concat(currentMessage)\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.state.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};"
@@ -137,16 +170,36 @@
           "contents": [
             "// define ADD, addMessage(), messageReducer(), and store here:",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(ADD === 'ADD', 'message: The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>');",
-        "assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })(), 'message: The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.');",
-        "assert(typeof messageReducer === 'function', 'message: <code>messageReducer</code> should be a function.');",
-        "assert((function() { const initialState = store.getState(); return typeof store === 'object' && initialState.length === 0; })(), 'message: The store should exist and have an initial state set to an empty array.');",
-        "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })(), 'message: Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.');",
-        "assert((function() { const addState = store.getState(); store.dispatch({type: 'FAKE_ACTION'}); const testState = store.getState(); return (addState === testState); })(), 'message: The <code>messageReducer</code> should return the current state if called with any other actions.');"
+        {
+          "text": "The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>",
+          "testString": "assert(ADD === 'ADD', 'The const <code>ADD</code> should exist and hold a value equal to the string <code>ADD</code>');"
+        },
+        {
+          "text": "The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.",
+          "testString": "assert((function() { const addAction = addMessage('__TEST__MESSAGE__'); return addAction.type === ADD && addAction.message === '__TEST__MESSAGE__'; })(), 'The action creator <code>addMessage</code> should return an object with <code>type</code> equal to <code>ADD</code> and message equal to the message that is passed in.');"
+        },
+        {
+          "text": "<code>messageReducer</code> should be a function.",
+          "testString": "assert(typeof messageReducer === 'function', '<code>messageReducer</code> should be a function.');"
+        },
+        {
+          "text": "The store should exist and have an initial state set to an empty array.",
+          "testString": "assert((function() { const initialState = store.getState(); return typeof store === 'object' && initialState.length === 0; })(), 'The store should exist and have an initial state set to an empty array.');"
+        },
+        {
+          "text": "Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.",
+          "testString": "assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addMessage('__A__TEST__MESSAGE')); const addState = store.getState(); return (isFrozen && addState[0] === '__A__TEST__MESSAGE'); })(), 'Dispatching <code>addMessage</code> against the store should immutably add a new message to the array of messages held in state.');"
+        },
+        {
+          "text": "The <code>messageReducer</code> should return the current state if called with any other actions.",
+          "testString": "assert((function() { const addState = store.getState(); store.dispatch({type: 'FAKE_ACTION'}); const testState = store.getState(); return (addState === testState); })(), 'The <code>messageReducer</code> should return the current state if called with any other actions.');"
+        }
       ],
       "solutions": [
         "const ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);"
@@ -253,14 +306,29 @@
             "  // change code above this line",
             "};"
           ],
-          "tail": "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'message: The <code>AppWrapper</code> should render.');",
-        "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\\s/g,'').includes('<Providerstore={store}>'); })(), 'message: The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })(), 'message: <code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })(), 'message: The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.');"
+        {
+          "text": "The <code>AppWrapper</code> should render.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'The <code>AppWrapper</code> should render.');"
+        },
+        {
+          "text": "The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.",
+          "testString": "getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\\s/g,'').includes('<Providerstore={store}>'); })(), 'The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.');"
+        },
+        {
+          "text": "<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })(), '<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.');"
+        },
+        {
+          "text": "The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })(), 'The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.');"
+        }
       ],
       "solutions": [
         "// Redux Code:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React Code:\n\nclass DisplayMessages extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n this.handleChange = this.handleChange.bind(this); \n this.submitMessage = this.submitMessage.bind(this); \n }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    const currentMessage = this.state.input;\n    this.setState({\n      input: '',\n      messages: this.state.messages.concat(currentMessage)\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.state.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n\nconst Provider = ReactRedux.Provider;\n\nclass AppWrapper extends React.Component {\n  // change code below this line\n  render() {\n    return (\n      <Provider store = {store}>\n        <DisplayMessages/>\n      </Provider>\n    );\n  }\n  // change code above this line\n};"
@@ -291,14 +359,28 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(Array.isArray(state) && state.length === 0, 'message: The const <code>state</code> should be an empty array.');",
-        "assert(typeof mapStateToProps === 'function', 'message: <code>mapStateToProps</code> should be a function.');",
-        "assert(typeof mapStateToProps() === 'object', 'message: <code>mapStateToProps</code> should return an object.');",
-        "assert(mapStateToProps(['messages']).messages.pop() === 'messages', 'message: Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.');"
+        {
+          "text": "The const <code>state</code> should be an empty array.",
+          "testString": "assert(Array.isArray(state) && state.length === 0, 'The const <code>state</code> should be an empty array.');"
+        },
+        {
+          "text": "<code>mapStateToProps</code> should be a function.",
+          "testString": "assert(typeof mapStateToProps === 'function', '<code>mapStateToProps</code> should be a function.');"
+        },
+        {
+          "text": "<code>mapStateToProps</code> should return an object.",
+          "testString": "assert(typeof mapStateToProps() === 'object', '<code>mapStateToProps</code> should return an object.');"
+        },
+        {
+          "text": "Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.",
+          "testString": "assert(mapStateToProps(['messages']).messages.pop() === 'messages', 'Passing an array as state to <code>mapStateToProps</code> should return this array assigned to a key of <code>messages</code>.');"
+        }
       ],
       "solutions": [
         "const state = [];\n\n// change code below this line\n\nconst mapStateToProps = (state) => {\n  return {\n    messages: state\n  }\n};"
@@ -334,14 +416,28 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty('type') && addMessageTest.hasOwnProperty('message')); })(), 'message: <code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.');",
-        "assert(typeof mapDispatchToProps === 'function', 'message: <code>mapDispatchToProps</code> should be a function.');",
-        "assert(typeof mapDispatchToProps() === 'object', 'message: <code>mapDispatchToProps</code> should return an object.');",
-        "assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage('__TEST__MESSAGE__'); return (testAction.type === 'ADD' && testAction.message === '__TEST__MESSAGE__'); })(), 'message: Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.');"
+        {
+          "text": "<code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.",
+          "testString": "assert((function() { const addMessageTest = addMessage(); return ( addMessageTest.hasOwnProperty('type') && addMessageTest.hasOwnProperty('message')); })(), '<code>addMessage</code> should return an object with keys <code>type</code> and <code>message</code>.');"
+        },
+        {
+          "text": "<code>mapDispatchToProps</code> should be a function.",
+          "testString": "assert(typeof mapDispatchToProps === 'function', '<code>mapDispatchToProps</code> should be a function.');"
+        },
+        {
+          "text": "<code>mapDispatchToProps</code> should return an object.",
+          "testString": "assert(typeof mapDispatchToProps() === 'object', '<code>mapDispatchToProps</code> should return an object.');"
+        },
+        {
+          "text": "Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.",
+          "testString": "assert((function() { let testAction; const dispatch = (fn) => { testAction = fn; }; let dispatchFn = mapDispatchToProps(dispatch); dispatchFn.submitNewMessage('__TEST__MESSAGE__'); return (testAction.type === 'ADD' && testAction.message === '__TEST__MESSAGE__'); })(), 'Dispatching <code>addMessage</code> with <code>submitNewMessage</code> from <code>mapDispatchToProps</code> should return a message to the dispatch function.');"
+        }
       ],
       "solutions": [
         "const addMessage = (message) => {\n  return {\n    type: 'ADD',\n    message: message\n  }\n};\n\n// change code below this line\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: function(message) {\n      dispatch(addMessage(message));\n    }\n  }\n};"
@@ -418,13 +514,23 @@
             "  }",
             "};",
             "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
-          ]
+          ],
+          "head": []
         }
       },
       "tests": [
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'message: The <code>Presentational</code> component should render.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })(), 'message: The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })(), 'message: The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.');"
+        {
+          "text": "The <code>Presentational</code> component should render.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'The <code>Presentational</code> component should render.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return props.messages === '__INITIAL__STATE__'; })(), 'The <code>Presentational</code> component should receive a prop <code>messages</code> via <code>connect</code>.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const props = mockedComponent.find('Presentational').props(); return typeof props.submitNewMessage === 'function'; })(), 'The <code>Presentational</code> component should receive a prop <code>submitNewMessage</code> via <code>connect</code>.');"
+        }
       ],
       "solutions": [
         "const addMessage = (message) => {\n  return {\n    type: 'ADD',\n    message: message\n  }\n};\n\nconst mapStateToProps = (state) => {\n  return {\n    messages: state\n  }\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message));\n    }\n  }\n};\n\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <h3>This is a Presentational Component</h3>\n  }\n};\n\nconst connect = ReactRedux.connect;\n// change code below this line\n\nconst ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(Presentational); \n"
@@ -547,15 +653,33 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'message: The <code>AppWrapper</code> should render to the page.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'message: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })(), 'message: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), 'message: The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), 'message: The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.');"
+        {
+          "text": "The <code>AppWrapper</code> should render to the page.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'The <code>AppWrapper</code> should render to the page.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })(), 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), 'The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), 'The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.');"
+        }
       ],
       "solutions": [
         "// Redux:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message: message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React:\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: '',\n      messages: []\n    }\n this.handleChange = this.handleChange.bind(this); \n this.submitMessage = this.submitMessage.bind(this); \n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    const currentMessage = this.state.input;\n    this.setState({\n      input: '',\n      messages: this.state.messages.concat(currentMessage)\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.state.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n\n// React-Redux:\nconst mapStateToProps = (state) => {\n  return { messages: state }\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (newMessage) => {\n       dispatch(addMessage(newMessage))\n    }\n  }\n};\n\nconst Provider = ReactRedux.Provider;\nconst connect = ReactRedux.connect;\n\n// define the Container component here:\nconst Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);\n\nclass AppWrapper extends React.Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    // complete the return statement:\n    return (\n      <Provider store={store}>\n        <Container/>\n      </Provider>\n    );\n  }\n};"
@@ -677,19 +801,49 @@
             "  }",
             "};"
           ],
-          "tail": "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          "tail": [
+            "ReactDOM.render(<AppWrapper />, document.getElementById('root'))"
+          ],
+          "head": []
         }
       },
       "tests": [
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'message: The <code>AppWrapper</code> should render to the page.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'message: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })(), 'message: The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), 'message: The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), 'message: The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.');",
-        "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalState = mockedComponent.find('Presentational').instance().state; return typeof PresentationalState.input === 'string' && Object.keys(PresentationalState).length === 1; })(), 'message: The state of the <code>Presentational</code> component should contain one property, <code>input</code>, which is initialized to an empty string.');",
-        "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const testValue = '__MOCK__INPUT__'; const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); let initialInput = mockedComponent.find('Presentational').find('input'); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); const updatedInput = updated.find('Presentational').find('input'); assert(initialInput.props().value === '' && updatedInput.props().value === '__MOCK__INPUT__', 'message: Typing in the <code>input</code> element should update the state of the <code>Presentational</code> component.'); }; ",
-        "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); let beforeProps = mockedComponent.find('Presentational').props(); const testValue = '__TEST__EVENT__INPUT__'; const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const clickButton = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterChange = await changed(); const afterChangeInput = afterChange.find('input').props().value; const afterClick = await clickButton(); const afterProps = mockedComponent.find('Presentational').props(); assert(beforeProps.messages.length === 0 && afterChangeInput === testValue && afterProps.messages.pop() === testValue && afterClick.find('input').props().value === '', 'message: Dispatching the <code>submitMessage</code> on the <code>Presentational</code> component should update Redux store and clear the input in local state.'); }; ",
-        "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); let beforeProps = mockedComponent.find('Presentational').props(); const testValue = '__TEST__EVENT__INPUT__'; const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const clickButton = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterChange = await changed(); const afterChangeInput = afterChange.find('input').props().value; const afterClick = await clickButton(); const afterProps = mockedComponent.find('Presentational').props(); assert(beforeProps.messages.length === 0 && afterChangeInput === testValue && afterProps.messages.pop() === testValue && afterClick.find('input').props().value === '' && afterClick.find('ul').childAt(0).text() === testValue, 'message: The <code>Presentational</code> component should render the <code>messages</code> from the Redux store.'); }; "
+        {
+          "text": "The <code>AppWrapper</code> should render to the page.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'The <code>AppWrapper</code> should render to the page.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('Presentational').length === 1; })(), 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); return ( PresentationalComponent.find('div').length === 1 && PresentationalComponent.find('h2').length === 1 && PresentationalComponent.find('button').length === 1 && PresentationalComponent.find('ul').length === 1 ); })(), 'The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), 'The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.');"
+        },
+        {
+          "text": "The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find('Presentational'); const props = PresentationalComponent.props(); return typeof props.submitNewMessage === 'function'; })(), 'The <code>Presentational</code> component should receive the <code>submitMessage</code> action creator as a prop.');"
+        },
+        {
+          "text": "The state of the <code>Presentational</code> component should contain one property, <code>input</code>, which is initialized to an empty string.",
+          "testString": "assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalState = mockedComponent.find('Presentational').instance().state; return typeof PresentationalState.input === 'string' && Object.keys(PresentationalState).length === 1; })(), 'The state of the <code>Presentational</code> component should contain one property, <code>input</code>, which is initialized to an empty string.');"
+        },
+        {
+          "text": "Typing in the <code>input</code> element should update the state of the <code>Presentational</code> component.",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const testValue = '__MOCK__INPUT__'; const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); let initialInput = mockedComponent.find('Presentational').find('input'); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const updated = await changed(); const updatedInput = updated.find('Presentational').find('input'); assert(initialInput.props().value === '' && updatedInput.props().value === '__MOCK__INPUT__', 'Typing in the <code>input</code> element should update the state of the <code>Presentational</code> component.'); }; "
+        },
+        {
+          "text": "Dispatching the <code>submitMessage</code> on the <code>Presentational</code> component should update Redux store and clear the input in local state.",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); let beforeProps = mockedComponent.find('Presentational').props(); const testValue = '__TEST__EVENT__INPUT__'; const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const clickButton = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterChange = await changed(); const afterChangeInput = afterChange.find('input').props().value; const afterClick = await clickButton(); const afterProps = mockedComponent.find('Presentational').props(); assert(beforeProps.messages.length === 0 && afterChangeInput === testValue && afterProps.messages.pop() === testValue && afterClick.find('input').props().value === '', 'Dispatching the <code>submitMessage</code> on the <code>Presentational</code> component should update Redux store and clear the input in local state.'); }; "
+        },
+        {
+          "text": "The <code>Presentational</code> component should render the <code>messages</code> from the Redux store.",
+          "testString": "async () => { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); let beforeProps = mockedComponent.find('Presentational').props(); const testValue = '__TEST__EVENT__INPUT__'; const causeChange = (c, v) => c.find('input').simulate('change', { target: { value: v }}); const changed = () => { causeChange(mockedComponent, testValue); return waitForIt(() => mockedComponent )}; const clickButton = () => { mockedComponent.find('button').simulate('click'); return waitForIt(() => mockedComponent )}; const afterChange = await changed(); const afterChangeInput = afterChange.find('input').props().value; const afterClick = await clickButton(); const afterProps = mockedComponent.find('Presentational').props(); assert(beforeProps.messages.length === 0 && afterChangeInput === testValue && afterProps.messages.pop() === testValue && afterClick.find('input').props().value === '' && afterClick.find('ul').childAt(0).text() === testValue, 'The <code>Presentational</code> component should render the <code>messages</code> from the Redux store.'); }; "
+        }
       ],
       "solutions": [
         "// Redux:\nconst ADD = 'ADD';\n\nconst addMessage = (message) => {\n  return {\n    type: ADD,\n    message: message\n  }\n};\n\nconst messageReducer = (state = [], action) => {\n  switch (action.type) {\n    case ADD:\n      return [\n        ...state,\n        action.message\n      ];\n    default:\n      return state;\n  }\n};\n\nconst store = Redux.createStore(messageReducer);\n\n// React:\nconst Provider = ReactRedux.Provider;\nconst connect = ReactRedux.connect;\n\n// Change code below this line\nclass Presentational extends React.Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      input: ''\n    }\n this.handleChange = this.handleChange.bind(this); \n this.submitMessage = this.submitMessage.bind(this); \n  }\n  handleChange(event) {\n    this.setState({\n      input: event.target.value\n    });\n  }\n  submitMessage() {\n    this.props.submitNewMessage(this.state.input);\n    this.setState({\n      input: ''\n    });\n  }\n  render() {\n    return (\n      <div>\n        <h2>Type in a new Message:</h2>\n        <input\n          value={this.state.input}\n          onChange={this.handleChange}/><br/>\n        <button onClick={this.submitMessage}>Submit</button>\n        <ul>\n          {this.props.messages.map( (message, idx) => {\n              return (\n                 <li key={idx}>{message}</li>\n              )\n            })\n          }\n        </ul>\n      </div>\n    );\n  }\n};\n// Change code above this line\n\nconst mapStateToProps = (state) => {\n  return {messages: state}\n};\n\nconst mapDispatchToProps = (dispatch) => {\n  return {\n    submitNewMessage: (message) => {\n      dispatch(addMessage(message))\n    }\n  }\n};\n\nconst Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);\n\nclass AppWrapper extends React.Component {\n  render() {\n    return (\n      <Provider store={store}>\n        <Container/>\n      </Provider>\n    );\n  }\n};"
@@ -740,11 +894,16 @@
             "",
             "// change code below this line",
             ""
-          ]
+          ],
+          "head": [],
+          "tail": []
         }
       },
       "tests": [
-        "assert(editor.getValue().includes('console.log(\"Now I know React and Redux!\")') || editor.getValue().includes('console.log(\\'Now I know React and Redux!\\')'), 'message: The message <code>Now I know React and Redux!</code> should be logged to the console.');"
+        {
+          "text": "The message <code>Now I know React and Redux!</code> should be logged to the console.",
+          "testString": "assert(editor.getValue().includes('console.log(\"Now I know React and Redux!\")') || editor.getValue().includes('console.log(\\'Now I know React and Redux!\\')'), 'The message <code>Now I know React and Redux!</code> should be logged to the console.');"
+        }
       ],
       "solutions": [
         "console.log('Now I know React and Redux!');"

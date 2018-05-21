@@ -1,0 +1,7 @@
+node_modules
+
+dist
+unpacked/
+
+*.log
+*.tgz

@@ -5,25 +5,6 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7dac367417b2b2512b72",
-      "title": "Introduction to the Object Oriented Programming Challenges",
-      "description": [
-        [
-          "",
-          "",
-          "At its core, software development solves a problem or achieves a result with computation. The software development process first defines a problem, then presents a solution. Object oriented programming is one of several major approaches to the software development process.<br><br>As its name implies, object oriented programming organizes code into object definitions. These are sometimes called classes, and they group together data with related behavior. The data is an object's attributes, and the behavior (or functions) are methods.<br><br>The object structure makes it flexible within a program. Objects can transfer information by calling and passing data to another object's methods. Also, new classes can receive, or inherit, all the features from a base or parent class. This helps to reduce repeated code.<br><br>Your choice of programming approach depends on a few factors. These include the type of problem, as well as how you want to structure your data and algorithms. This section covers object oriented programming principles in JavaScript.",
-          ""
-        ]
-      ],
-      "releasedOn": "Feb 17, 2017",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {}
-    },
-    {
       "id": "587d7dac367417b2b2512b73",
       "title": "Create a Basic JavaScript Object",
       "description": [
@@ -36,15 +17,19 @@
         "<hr>",
         "Create a <code>dog</code> <code>object</code> with <code>name</code> and <code>numLegs</code> properties, and set them to a string and a number, respectively."
       ],
-      "challengeSeed": [
-        "let dog = {",
-        "  ",
-        "};"
-      ],
       "tests": [
-        "assert(typeof(dog) === 'object', 'message: <code>dog</code> should be an <code>object</code>.');",
-        "assert(typeof(dog.name) === 'string', 'message: <code>dog</code> should have a <code>name</code> property set to a <code>string</code>.');",
-        "assert(typeof(dog.numLegs) === 'number', 'message: <code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.');"
+        {
+          "text": "<code>dog</code> should be an <code>object</code>.",
+          "testString": "assert(typeof(dog) === 'object', '<code>dog</code> should be an <code>object</code>.');"
+        },
+        {
+          "text": "<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.",
+          "testString": "assert(typeof(dog.name) === 'string', '<code>dog</code> should have a <code>name</code> property set to a <code>string</code>.');"
+        },
+        {
+          "text": "<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.",
+          "testString": "assert(typeof(dog.numLegs) === 'number', '<code>dog</code> should have a <code>numLegs</code> property set to a <code>number</code>.');"
+        }
       ],
       "solutions": [
         "let dog = {\n  name: '',\n  numLegs: 4\n};"
@@ -53,7 +38,21 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let dog = {",
+            "  ",
+            "};"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dac367417b2b2512b74",
@@ -65,18 +64,15 @@
         "<hr>",
         "Print both <code>properties</code> of the <code>dog</code> object below to your console."
       ],
-      "challengeSeed": [
-        "let dog = {",
-        "  name: \"Spot\",",
-        "  numLegs: 4",
-        "};",
-        "// Add your code below this line",
-        "",
-        ""
-      ],
       "tests": [
-        "assert(/console.log\\(.*dog\\.name.*\\)/g.test(code), 'message: Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.');",
-        "assert(/console.log\\(.*dog\\.numLegs.*\\)/g.test(code), 'message: Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.');"
+        {
+          "text": "Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.",
+          "testString": "assert(/console.log\\(.*dog\\.name.*\\)/g.test(code), 'Your should use <code>console.log</code> to print the value for the <code>name</code> property of the <code>dog</code> object.');"
+        },
+        {
+          "text": "Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.",
+          "testString": "assert(/console.log\\(.*dog\\.numLegs.*\\)/g.test(code), 'Your should use <code>console.log</code> to print the value for the <code>numLegs</code> property of the <code>dog</code> object.');"
+        }
       ],
       "solutions": [
         "let dog = {\n  name: \"Spot\",\n  numLegs: 4\n};\nconsole.log(dog.name);\nconsole.log(dog.numLegs);"
@@ -85,7 +81,25 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let dog = {",
+            "  name: \"Spot\",",
+            "  numLegs: 4",
+            "};",
+            "// Add your code below this line",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dad367417b2b2512b75",
@@ -99,18 +113,15 @@
         "<hr>",
         "Using the <code>dog</code> <code>object</code>, give it a method called <code>sayLegs</code>. The method should return the sentence \"This dog has 4 legs.\""
       ],
-      "challengeSeed": [
-        "let dog = {",
-        "  name: \"Spot\",",
-        "  numLegs: 4,",
-        "  ",
-        "};",
-        "",
-        "dog.sayLegs();"
-      ],
       "tests": [
-        "assert(typeof(dog.sayLegs) === 'function', 'message: <code>dog.sayLegs()</code> should be a function.');",
-        "assert(dog.sayLegs() === 'This dog has 4 legs.', 'message: <code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.');"
+        {
+          "text": "<code>dog.sayLegs()</code> should be a function.",
+          "testString": "assert(typeof(dog.sayLegs) === 'function', '<code>dog.sayLegs()</code> should be a function.');"
+        },
+        {
+          "text": "<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.",
+          "testString": "assert(dog.sayLegs() === 'This dog has 4 legs.', '<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.');"
+        }
       ],
       "solutions": [
         "let dog = {\n  name: \"Spot\",\n  numLegs: 4,\n  sayLegs () {\n    return 'This dog has ' + this.numLegs + ' legs.';\n  }\n};\n\ndog.sayLegs();"
@@ -119,7 +130,25 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let dog = {",
+            "  name: \"Spot\",",
+            "  numLegs: 4,",
+            "  ",
+            "};",
+            "",
+            "dog.sayLegs();"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dad367417b2b2512b76",
@@ -135,18 +164,15 @@
         "<hr>",
         "Modify the <code>dog.sayLegs</code> method to remove any references to <code>dog</code>. Use the <code>duck</code> example for guidance."
       ],
-      "challengeSeed": [
-        "let dog = {",
-        "  name: \"Spot\",",
-        "  numLegs: 4,",
-        "  sayLegs: function() {return \"This dog has \" + dog.numLegs + \" legs.\";}",
-        "};",
-        "",
-        "dog.sayLegs();"
-      ],
       "tests": [
-        "assert(dog.sayLegs() === 'This dog has 4 legs.', 'message: <code>dog.sayLegs()</code> should return the given string.');",
-        "assert(code.match(/this\\.numLegs/g), 'message: Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.');"
+        {
+          "text": "<code>dog.sayLegs()</code> should return the given string.",
+          "testString": "assert(dog.sayLegs() === 'This dog has 4 legs.', '<code>dog.sayLegs()</code> should return the given string.');"
+        },
+        {
+          "text": "Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.",
+          "testString": "assert(code.match(/this\\.numLegs/g), 'Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.');"
+        }
       ],
       "solutions": [
         "let dog = {\n  name: \"Spot\",\n  numLegs: 4,\n  sayLegs () {\n    return 'This dog has ' + this.numLegs + ' legs.';\n  }\n};\n\ndog.sayLegs();"
@@ -155,7 +181,25 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let dog = {",
+            "  name: \"Spot\",",
+            "  numLegs: 4,",
+            "  sayLegs: function() {return \"This dog has \" + dog.numLegs + \" legs.\";}",
+            "};",
+            "",
+            "dog.sayLegs();"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dad367417b2b2512b77",
@@ -170,11 +214,19 @@
         "<hr>",
         "Create a <code>constructor</code>, <code>Dog</code>, with properties <code>name</code>, <code>color</code>, and <code>numLegs</code> that are set to a string, a string, and a number, respectively."
       ],
-      "challengeSeed": [],
       "tests": [
-        "assert(typeof (new Dog()).name === 'string', 'message: <code>Dog</code> should have a <code>name</code> property set to a string.');",
-        "assert(typeof (new Dog()).color === 'string', 'message: <code>Dog</code> should have a <code>color</code> property set to a string.');",
-        "assert(typeof (new Dog()).numLegs === 'number', 'message: <code>Dog</code> should have a <code>numLegs</code> property set to a number.');"
+        {
+          "text": "<code>Dog</code> should have a <code>name</code> property set to a string.",
+          "testString": "assert(typeof (new Dog()).name === 'string', '<code>Dog</code> should have a <code>name</code> property set to a string.');"
+        },
+        {
+          "text": "<code>Dog</code> should have a <code>color</code> property set to a string.",
+          "testString": "assert(typeof (new Dog()).color === 'string', '<code>Dog</code> should have a <code>color</code> property set to a string.');"
+        },
+        {
+          "text": "<code>Dog</code> should have a <code>numLegs</code> property set to a number.",
+          "testString": "assert(typeof (new Dog()).numLegs === 'number', '<code>Dog</code> should have a <code>numLegs</code> property set to a number.');"
+        }
       ],
       "solutions": [
         "function Dog (name, color, numLegs) {\n  this.name = 'name';\n  this.color = 'color';\n  this.numLegs = 4;\n}"
@@ -183,7 +235,17 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dad367417b2b2512b78",
@@ -199,19 +261,15 @@
         "<hr>",
         "Use the <code>Dog</code> constructor from the last lesson to create a new instance of <code>Dog</code>, assigning it to a variable <code>hound</code>."
       ],
-      "challengeSeed": [
-        "function Dog() {",
-        "  this.name = \"Rupert\";",
-        "  this.color = \"brown\";",
-        "  this.numLegs = 4;",
-        "}",
-        "// Add your code below this line",
-        "",
-        ""
-      ],
       "tests": [
-        "assert(hound instanceof Dog, 'message: <code>hound</code> should be created using the <code>Dog</code> constructor.');",
-        "assert(code.match(/new/g), 'message: Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.');"
+        {
+          "text": "<code>hound</code> should be created using the <code>Dog</code> constructor.",
+          "testString": "assert(hound instanceof Dog, '<code>hound</code> should be created using the <code>Dog</code> constructor.');"
+        },
+        {
+          "text": "Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.",
+          "testString": "assert(code.match(/new/g), 'Your code should use the <code>new</code> operator to create an <code>instance</code> of <code>Dog</code>.');"
+        }
       ],
       "solutions": [
         "function Dog() {\n  this.name = \"Rupert\";\n  this.color = \"brown\";\n  this.numLegs = 4;\n}\nconst hound = new Dog();"
@@ -220,7 +278,26 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog() {",
+            "  this.name = \"Rupert\";",
+            "  this.color = \"brown\";",
+            "  this.numLegs = 4;",
+            "}",
+            "// Add your code below this line",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dae367417b2b2512b79",
@@ -240,18 +317,23 @@
         "<hr>",
         "Create another <code>Dog</code> constructor. This time, set it up to take the parameters <code>name</code> and <code>color</code>, and have the property <code>numLegs</code> fixed at 4. Then create a new <code>Dog</code> saved in a variable <code>terrier</code>. Pass it two strings as arguments for the <code>name</code> and <code>color</code> properties."
       ],
-      "challengeSeed": [
-        "function Dog() {",
-        "  ",
-        "}",
-        "",
-        ""
-      ],
       "tests": [
-        "assert((new Dog('Clifford')).name === 'Clifford', 'message: <code>Dog</code> should receive an argument for <code>name</code>.');",
-        "assert((new Dog('Clifford', 'yellow')).color === 'yellow', 'message: <code>Dog</code> should receive an argument for <code>color</code>.');",
-        "assert((new Dog('Clifford')).numLegs === 4, 'message: <code>Dog</code> should have property <code>numLegs</code> set to 4.');",
-        "assert(terrier instanceof Dog, 'message: <code>terrier</code> should be created using the <code>Dog</code> constructor.');"
+        {
+          "text": "<code>Dog</code> should receive an argument for <code>name</code>.",
+          "testString": "assert((new Dog('Clifford')).name === 'Clifford', '<code>Dog</code> should receive an argument for <code>name</code>.');"
+        },
+        {
+          "text": "<code>Dog</code> should receive an argument for <code>color</code>.",
+          "testString": "assert((new Dog('Clifford', 'yellow')).color === 'yellow', '<code>Dog</code> should receive an argument for <code>color</code>.');"
+        },
+        {
+          "text": "<code>Dog</code> should have property <code>numLegs</code> set to 4.",
+          "testString": "assert((new Dog('Clifford')).numLegs === 4, '<code>Dog</code> should have property <code>numLegs</code> set to 4.');"
+        },
+        {
+          "text": "<code>terrier</code> should be created using the <code>Dog</code> constructor.",
+          "testString": "assert(terrier instanceof Dog, '<code>terrier</code> should be created using the <code>Dog</code> constructor.');"
+        }
       ],
       "solutions": [
         "function Dog (name, color) {\n  this.numLegs = 4;\n  this.name = name;\n  this.color = color;\n}\n\nconst terrier = new Dog();"
@@ -260,7 +342,23 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog() {",
+            "  ",
+            "}",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dae367417b2b2512b7a",
@@ -273,21 +371,15 @@
         "<hr>",
         "Create a new instance of the <code>House</code> constructor, calling it <code>myHouse</code> and passing a number of bedrooms. Then, use <code>instanceof</code> to verify that it is an instance of <code>House</code>."
       ],
-      "challengeSeed": [
-        "/* jshint expr: true */",
-        "",
-        "function House(numBedrooms) {",
-        "  this.numBedrooms = numBedrooms;",
-        "}",
-        "",
-        "// Add your code below this line",
-        "",
-        "",
-        ""
-      ],
       "tests": [
-        "assert(typeof myHouse.numBedrooms === 'number', 'message: <code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.');",
-        "assert(/myHouse\\s*instanceof\\s*House/.test(code), 'message: Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.');"
+        {
+          "text": "<code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.",
+          "testString": "assert(typeof myHouse.numBedrooms === 'number', '<code>myHouse</code> should have a <code>numBedrooms</code> attribute set to a number.');"
+        },
+        {
+          "text": "Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.",
+          "testString": "assert(/myHouse\\s*instanceof\\s*House/.test(code), 'Be sure to verify that <code>myHouse</code> is an instance of <code>House</code> using the <code>instanceof</code> operator.');"
+        }
       ],
       "solutions": [
         "function House(numBedrooms) {\n  this.numBedrooms = numBedrooms;\n}\nconst myHouse = new House(4);\nconsole.log(myHouse instanceof House);"
@@ -296,7 +388,28 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "/* jshint expr: true */",
+            "",
+            "function House(numBedrooms) {",
+            "  this.numBedrooms = numBedrooms;",
+            "}",
+            "",
+            "// Add your code below this line",
+            "",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dae367417b2b2512b7b",
@@ -311,22 +424,15 @@
         "<hr>",
         "Add the <code>own</code> properties of <code>canary</code> to the array <code>ownProps</code>."
       ],
-      "challengeSeed": [
-        "function Bird(name) {",
-        "  this.name = name;",
-        "  this.numLegs = 2;",
-        "}",
-        "",
-        "let canary = new Bird(\"Tweety\");",
-        "let ownProps = [];",
-        "// Add your code below this line",
-        "",
-        "",
-        ""
-      ],
       "tests": [
-        "assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1, 'message: <code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');",
-        "assert(!/\\Object.keys/.test(code), 'message: Solve this challenge without using the built in method <code>Object.keys()</code>.');"
+        {
+          "text": "<code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.",
+          "testString": "assert(ownProps.indexOf('name') !== -1 && ownProps.indexOf('numLegs') !== -1, '<code>ownProps</code> should include the values <code>\"numLegs\"</code> and <code>\"name\"</code>.');"
+        },
+        {
+          "text": "Solve this challenge without using the built in method <code>Object.keys()</code>.",
+          "testString": "assert(!/\\Object.keys/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.');"
+        }
       ],
       "solutions": [
         "function Bird(name) {\n  this.name = name;\n  this.numLegs = 2;\n}\n\nlet canary = new Bird(\"Tweety\");\nfunction getOwnProps (obj) {\n  const props = [];\n  \n  for (let prop in obj) {\n    if (obj.hasOwnProperty(prop)) {\n      props.push(prop);\n    }\n  }\n  \n  return props;\n}\n\nconst ownProps = getOwnProps(canary);"
@@ -335,7 +441,29 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Bird(name) {",
+            "  this.name = name;",
+            "  this.numLegs = 2;",
+            "}",
+            "",
+            "let canary = new Bird(\"Tweety\");",
+            "let ownProps = [];",
+            "// Add your code below this line",
+            "",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dae367417b2b2512b7c",
@@ -352,20 +480,19 @@
         "<hr>",
         "Add a <code>numLegs</code> property to the <code>prototype</code> of <code>Dog</code>"
       ],
-      "challengeSeed": [
-        "function Dog(name) {",
-        "  this.name = name;",
-        "}",
-        "",
-        "",
-        "",
-        "// Add your code above this line",
-        "let beagle = new Dog(\"Snoopy\");"
-      ],
       "tests": [
-        "assert(beagle.numLegs !== undefined, 'message: <code>beagle</code> should have a <code>numLegs</code> property.');",
-        "assert(typeof(beagle.numLegs) === 'number' , 'message: <code>beagle.numLegs</code> should be a number.');",
-        "assert(beagle.hasOwnProperty('numLegs') === false, 'message: <code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.');"
+        {
+          "text": "<code>beagle</code> should have a <code>numLegs</code> property.",
+          "testString": "assert(beagle.numLegs !== undefined, '<code>beagle</code> should have a <code>numLegs</code> property.');"
+        },
+        {
+          "text": "<code>beagle.numLegs</code> should be a number.",
+          "testString": "assert(typeof(beagle.numLegs) === 'number' , '<code>beagle.numLegs</code> should be a number.');"
+        },
+        {
+          "text": "<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.",
+          "testString": "assert(beagle.hasOwnProperty('numLegs') === false, '<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.');"
+        }
       ],
       "solutions": [
         "function Dog (name) {\n  this.name = name;\n}\nDog.prototype.numLegs = 4;\nlet beagle = new Dog(\"Snoopy\");"
@@ -374,7 +501,26 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog(name) {",
+            "  this.name = name;",
+            "}",
+            "",
+            "",
+            "",
+            "// Add your code above this line",
+            "let beagle = new Dog(\"Snoopy\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7daf367417b2b2512b7d",
@@ -387,27 +533,19 @@
         "<hr>",
         "Add all of the <code>own</code> properties of <code>beagle</code> to the array <code>ownProps</code>. Add all of the <code>prototype</code> properties of <code>Dog</code> to the array <code>prototypeProps</code>."
       ],
-      "challengeSeed": [
-        "function Dog(name) {",
-        "  this.name = name;",
-        "}",
-        "",
-        "Dog.prototype.numLegs = 4;",
-        "",
-        "let beagle = new Dog(\"Snoopy\");",
-        "",
-        "let ownProps = [];",
-        "let prototypeProps = [];",
-        "",
-        "// Add your code below this line ",
-        "",
-        "",
-        ""
-      ],
       "tests": [
-        "assert(ownProps.indexOf('name') !== -1, 'message: The <code>ownProps</code> array should include <code>\"name\"</code>.');",
-        "assert(prototypeProps.indexOf('numLegs') !== -1, 'message: The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.');",
-        "assert(!/\\Object.keys/.test(code), 'message: Solve this challenge without using the built in method <code>Object.keys()</code>.');"
+        {
+          "text": "The <code>ownProps</code> array should include <code>\"name\"</code>.",
+          "testString": "assert(ownProps.indexOf('name') !== -1, 'The <code>ownProps</code> array should include <code>\"name\"</code>.');"
+        },
+        {
+          "text": "The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.",
+          "testString": "assert(prototypeProps.indexOf('numLegs') !== -1, 'The <code>prototypeProps</code> array should include <code>\"numLegs\"</code>.');"
+        },
+        {
+          "text": "Solve this challenge without using the built in method <code>Object.keys()</code>.",
+          "testString": "assert(!/\\Object.keys/.test(code), 'Solve this challenge without using the built in method <code>Object.keys()</code>.');"
+        }
       ],
       "solutions": [
         "function Dog(name) {\n  this.name = name;\n}\n\nDog.prototype.numLegs = 4;\n\nlet beagle = new Dog(\"Snoopy\");\n\nlet ownProps = [];\nlet prototypeProps = [];\nfor (let prop in beagle) {\n  if (beagle.hasOwnProperty(prop)) {\n    ownProps.push(prop);\n  } else {\n    prototypeProps.push(prop);\n  }\n}"
@@ -416,7 +554,33 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog(name) {",
+            "  this.name = name;",
+            "}",
+            "",
+            "Dog.prototype.numLegs = 4;",
+            "",
+            "let beagle = new Dog(\"Snoopy\");",
+            "",
+            "let ownProps = [];",
+            "let prototypeProps = [];",
+            "",
+            "// Add your code below this line ",
+            "",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7daf367417b2b2512b7e",
@@ -431,21 +595,19 @@
         "<hr>",
         "Write a <code>joinDogFraternity</code> function that takes a <code>candidate</code> parameter and, using the <code>constructor</code> property, return <code>true</code> if the candidate is a <code>Dog</code>, otherwise return <code>false</code>."
       ],
-      "challengeSeed": [
-        "function Dog(name) {",
-        "  this.name = name;",
-        "}",
-        "",
-        "// Add your code below this line",
-        "function joinDogFraternity(candidate) {",
-        "  ",
-        "}",
-        ""
-      ],
       "tests": [
-        "assert(typeof(joinDogFraternity) === 'function', 'message: <code>joinDogFraternity</code> should be defined as a function.');",
-        "assert(joinDogFraternity(new Dog(\"\")) === true, 'message: <code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.');",
-        "assert(/\\.constructor/.test(code) && !/instanceof/.test(code), 'message: <code>joinDogFraternity</code> should use the <code>constructor</code> property.');"
+        {
+          "text": "<code>joinDogFraternity</code> should be defined as a function.",
+          "testString": "assert(typeof(joinDogFraternity) === 'function', '<code>joinDogFraternity</code> should be defined as a function.');"
+        },
+        {
+          "text": "<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.",
+          "testString": "assert(joinDogFraternity(new Dog(\"\")) === true, '<code>joinDogFraternity</code> should return true if<code>candidate</code> is an instance of <code>Dog</code>.');"
+        },
+        {
+          "text": "<code>joinDogFraternity</code> should use the <code>constructor</code> property.",
+          "testString": "assert(/\\.constructor/.test(code) && !/instanceof/.test(code), '<code>joinDogFraternity</code> should use the <code>constructor</code> property.');"
+        }
       ],
       "solutions": [
         "function Dog(name) {\n  this.name = name;\n}\nfunction joinDogFraternity(candidate) {\n  return candidate.constructor === Dog;\n}"
@@ -454,7 +616,27 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog(name) {",
+            "  this.name = name;",
+            "}",
+            "",
+            "// Add your code below this line",
+            "function joinDogFraternity(candidate) {",
+            "  ",
+            "}",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7daf367417b2b2512b7f",
@@ -469,21 +651,23 @@
         "<hr>",
         "Add the property <code>numLegs</code> and the two methods <code>eat()</code> and <code>describe()</code> to the <code>prototype</code> of <code>Dog</code> by setting the <code>prototype</code> to a new object."
       ],
-      "challengeSeed": [
-        "function Dog(name) {",
-        "  this.name = name; ",
-        "}",
-        "",
-        "Dog.prototype = {",
-        "  // Add your code below this line",
-        "  ",
-        "};"
-      ],
       "tests": [
-        "assert((/Dog\\.prototype\\s*?=\\s*?{/).test(code), 'message: <code>Dog.prototype</code> should be set to a new object.');",
-        "assert(Dog.prototype.numLegs !== undefined, 'message: <code>Dog.prototype</code> should have the property <code>numLegs</code>.');",
-        "assert(typeof Dog.prototype.eat === 'function', 'message: <code>Dog.prototype</code> should have the method <code>eat()</code>.'); ",
-        "assert(typeof Dog.prototype.describe === 'function', 'message: <code>Dog.prototype</code> should have the method <code>describe()</code>.'); "
+        {
+          "text": "<code>Dog.prototype</code> should be set to a new object.",
+          "testString": "assert((/Dog\\.prototype\\s*?=\\s*?{/).test(code), '<code>Dog.prototype</code> should be set to a new object.');"
+        },
+        {
+          "text": "<code>Dog.prototype</code> should have the property <code>numLegs</code>.",
+          "testString": "assert(Dog.prototype.numLegs !== undefined, '<code>Dog.prototype</code> should have the property <code>numLegs</code>.');"
+        },
+        {
+          "text": "<code>Dog.prototype</code> should have the method <code>eat()</code>.",
+          "testString": "assert(typeof Dog.prototype.eat === 'function', '<code>Dog.prototype</code> should have the method <code>eat()</code>.'); "
+        },
+        {
+          "text": "<code>Dog.prototype</code> should have the method <code>describe()</code>.",
+          "testString": "assert(typeof Dog.prototype.describe === 'function', '<code>Dog.prototype</code> should have the method <code>describe()</code>.'); "
+        }
       ],
       "solutions": [
         "function Dog(name) {\n  this.name = name; \n}\nDog.prototype = {\nnumLegs: 4,\n  eat () {\n    console.log('nom nom nom');\n  },\n  describe () {\n    console.log('My name is ' + this.name);\n  }\n};"
@@ -492,7 +676,26 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog(name) {",
+            "  this.name = name; ",
+            "}",
+            "",
+            "Dog.prototype = {",
+            "  // Add your code below this line",
+            "  ",
+            "};"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7daf367417b2b2512b80",
@@ -505,25 +708,11 @@
         "<hr>",
         "Define the <code>constructor</code> property on the <code>Dog</code> <code>prototype</code>."
       ],
-      "challengeSeed": [
-        "function Dog(name) {",
-        "  this.name = name; ",
-        "}",
-        "",
-        "// Modify the code below this line",
-        "Dog.prototype = {",
-        "  ",
-        "  numLegs: 2, ",
-        "  eat: function() {",
-        "    console.log(\"nom nom nom\"); ",
-        "  }, ",
-        "  describe: function() {",
-        "    console.log(\"My name is \" + this.name); ",
-        "  }",
-        "};"
-      ],
       "tests": [
-        "assert(Dog.prototype.constructor === Dog, 'message: <code>Dog.prototype</code> should set the <code>constructor</code> property.');"
+        {
+          "text": "<code>Dog.prototype</code> should set the <code>constructor</code> property.",
+          "testString": "assert(Dog.prototype.constructor === Dog, '<code>Dog.prototype</code> should set the <code>constructor</code> property.');"
+        }
       ],
       "solutions": [
         "function Dog(name) {\n  this.name = name; \n}\nDog.prototype = {\n  constructor: Dog,\n  numLegs: 2, \n  eat: function() {\n    console.log(\"nom nom nom\"); \n  }, \n  describe: function() {\n    console.log(\"My name is \" + this.name); \n  }\n};"
@@ -532,7 +721,33 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog(name) {",
+            "  this.name = name; ",
+            "}",
+            "",
+            "// Modify the code below this line",
+            "Dog.prototype = {",
+            "  ",
+            "  numLegs: 2, ",
+            "  eat: function() {",
+            "    console.log(\"nom nom nom\"); ",
+            "  }, ",
+            "  describe: function() {",
+            "    console.log(\"My name is \" + this.name); ",
+            "  }",
+            "};"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db0367417b2b2512b81",
@@ -545,19 +760,11 @@
         "<hr>",
         "Use <code>isPrototypeOf</code> to check the <code>prototype</code> of <code>beagle</code>."
       ],
-      "challengeSeed": [
-        "function Dog(name) {",
-        "  this.name = name;",
-        "}",
-        "",
-        "let beagle = new Dog(\"Snoopy\");",
-        "",
-        "// Add your code below this line",
-        "",
-        ""
-      ],
       "tests": [
-        "assert(/Dog\\.prototype\\.isPrototypeOf\\(beagle\\)/.test(code), 'message: Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>');"
+        {
+          "text": "Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>",
+          "testString": "assert(/Dog\\.prototype\\.isPrototypeOf\\(beagle\\)/.test(code), 'Show that <code>Dog.prototype</code> is the <code>prototype</code> of <code>beagle</code>');"
+        }
       ],
       "solutions": [
         "function Dog(name) {\n  this.name = name;\n}\nlet beagle = new Dog(\"Snoopy\");\nDog.prototype.isPrototypeOf(beagle);"
@@ -566,7 +773,27 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog(name) {",
+            "  this.name = name;",
+            "}",
+            "",
+            "let beagle = new Dog(\"Snoopy\");",
+            "",
+            "// Add your code below this line",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db0367417b2b2512b82",
@@ -584,21 +811,11 @@
         "<hr>",
         "Modify the code to show the correct prototype chain."
       ],
-      "challengeSeed": [
-        "function Dog(name) {",
-        "  this.name = name;",
-        "}",
-        "",
-        "let beagle = new Dog(\"Snoopy\");",
-        "",
-        "Dog.prototype.isPrototypeOf(beagle);  // => true",
-        "",
-        "// Fix the code below so that it evaluates to true",
-        "???.isPrototypeOf(Dog.prototype);",
-        ""
-      ],
       "tests": [
-        "assert(/Object\\.prototype\\.isPrototypeOf/.test(code), \"message: Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>\");"
+        {
+          "text": "Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>\")",
+          "testString": "assert(/Object\\.prototype\\.isPrototypeOf/.test(code), \"Your code should show that <code>Object.prototype</code> is the prototype of <code>Dog.prototype</code>\");"
+        }
       ],
       "solutions": [
         "function Dog(name) {\n  this.name = name;\n}\nlet beagle = new Dog(\"Snoopy\");\nDog.prototype.isPrototypeOf(beagle);\nObject.prototype.isPrototypeOf(Dog.prototype);"
@@ -607,7 +824,29 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Dog(name) {",
+            "  this.name = name;",
+            "}",
+            "",
+            "let beagle = new Dog(\"Snoopy\");",
+            "",
+            "Dog.prototype.isPrototypeOf(beagle);  // => true",
+            "",
+            "// Fix the code below so that it evaluates to true",
+            "???.isPrototypeOf(Dog.prototype);",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db0367417b2b2512b83",
@@ -623,40 +862,19 @@
         "<hr>",
         "The <code>eat</code> method is repeated in both <code>Cat</code> and <code>Bear</code>. Edit the code in the spirit of <code>DRY</code> by moving the <code>eat</code> method to the <code>Animal</code> <code>supertype</code>."
       ],
-      "challengeSeed": [
-        "function Cat(name) {",
-        "  this.name = name; ",
-        "}",
-        "",
-        "Cat.prototype = {",
-        "  constructor: Cat, ",
-        "  eat: function() {",
-        "    console.log(\"nom nom nom\");",
-        "  }",
-        "};",
-        "",
-        "function Bear(name) {",
-        "  this.name = name; ",
-        "}",
-        "",
-        "Bear.prototype = {",
-        "  constructor: Bear, ",
-        "  eat: function() {",
-        "    console.log(\"nom nom nom\");",
-        "  }",
-        "};",
-        "",
-        "function Animal() { }",
-        "",
-        "Animal.prototype = {",
-        "  constructor: Animal,",
-        "  ",
-        "};"
-      ],
       "tests": [
-        "assert(Animal.prototype.hasOwnProperty('eat'), 'message: <code>Animal.prototype</code> should have the <code>eat</code> property.');",
-        "assert(!(Bear.prototype.hasOwnProperty('eat')), 'message: <code>Bear.prototype</code> should not have the <code>eat</code> property.');",
-        "assert(!(Cat.prototype.hasOwnProperty('eat')), 'message: <code>Cat.prototype</code> should not have the <code>eat</code> property.');"
+        {
+          "text": "<code>Animal.prototype</code> should have the <code>eat</code> property.",
+          "testString": "assert(Animal.prototype.hasOwnProperty('eat'), '<code>Animal.prototype</code> should have the <code>eat</code> property.');"
+        },
+        {
+          "text": "<code>Bear.prototype</code> should not have the <code>eat</code> property.",
+          "testString": "assert(!(Bear.prototype.hasOwnProperty('eat')), '<code>Bear.prototype</code> should not have the <code>eat</code> property.');"
+        },
+        {
+          "text": "<code>Cat.prototype</code> should not have the <code>eat</code> property.",
+          "testString": "assert(!(Cat.prototype.hasOwnProperty('eat')), '<code>Cat.prototype</code> should not have the <code>eat</code> property.');"
+        }
       ],
       "solutions": [
         "function Cat(name) {\n  this.name = name; \n}\n\nCat.prototype = {\n  constructor: Cat\n};\n\nfunction Bear(name) {\n  this.name = name; \n}\n\nBear.prototype = {\n  constructor: Bear\n};\n\nfunction Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal,\n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};"
@@ -665,7 +883,46 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Cat(name) {",
+            "  this.name = name; ",
+            "}",
+            "",
+            "Cat.prototype = {",
+            "  constructor: Cat, ",
+            "  eat: function() {",
+            "    console.log(\"nom nom nom\");",
+            "  }",
+            "};",
+            "",
+            "function Bear(name) {",
+            "  this.name = name; ",
+            "}",
+            "",
+            "Bear.prototype = {",
+            "  constructor: Bear, ",
+            "  eat: function() {",
+            "    console.log(\"nom nom nom\");",
+            "  }",
+            "};",
+            "",
+            "function Animal() { }",
+            "",
+            "Animal.prototype = {",
+            "  constructor: Animal,",
+            "  ",
+            "};"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db0367417b2b2512b84",
@@ -684,29 +941,23 @@
         "<hr>",
         "Use <code>Object.create</code> to make two instances of <code>Animal</code> named <code>duck</code> and <code>beagle</code>."
       ],
-      "challengeSeed": [
-        "function Animal() { }",
-        "",
-        "Animal.prototype = {",
-        "  constructor: Animal, ",
-        "  eat: function() {",
-        "    console.log(\"nom nom nom\");",
-        "  }",
-        "};",
-        "",
-        "// Add your code below this line",
-        "",
-        "let duck; // Change this line",
-        "let beagle; // Change this line",
-        "",
-        "duck.eat(); // Should print \"nom nom nom\"",
-        "beagle.eat(); // Should print \"nom nom nom\" "
-      ],
       "tests": [
-        "assert(typeof duck !== \"undefined\", 'message: The <code>duck</code> variable should be defined.');",
-        "assert(typeof beagle !== \"undefined\", 'message: The <code>beagle</code> variable should be defined.');",
-        "assert(duck instanceof Animal, 'message: <code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.');",
-        "assert(beagle instanceof Animal, 'message: <code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.');"
+        {
+          "text": "The <code>duck</code> variable should be defined.",
+          "testString": "assert(typeof duck !== \"undefined\", 'The <code>duck</code> variable should be defined.');"
+        },
+        {
+          "text": "The <code>beagle</code> variable should be defined.",
+          "testString": "assert(typeof beagle !== \"undefined\", 'The <code>beagle</code> variable should be defined.');"
+        },
+        {
+          "text": "<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.",
+          "testString": "assert(duck instanceof Animal, '<code>duck</code> should have a <code>prototype</code> of <code>Animal</code>.');"
+        },
+        {
+          "text": "<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.",
+          "testString": "assert(beagle instanceof Animal, '<code>beagle</code> should have a <code>prototype</code> of <code>Animal</code>.');"
+        }
       ],
       "solutions": [
         "function Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal, \n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};\nlet duck = Object.create(Animal.prototype);\nlet beagle = Object.create(Animal.prototype);\n\nduck.eat();\nbeagle.eat();"
@@ -715,7 +966,34 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Animal() { }",
+            "",
+            "Animal.prototype = {",
+            "  constructor: Animal, ",
+            "  eat: function() {",
+            "    console.log(\"nom nom nom\");",
+            "  }",
+            "};",
+            "",
+            "// Add your code below this line",
+            "",
+            "let duck; // Change this line",
+            "let beagle; // Change this line",
+            "",
+            "duck.eat(); // Should print \"nom nom nom\"",
+            "beagle.eat(); // Should print \"nom nom nom\" "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db1367417b2b2512b85",
@@ -730,26 +1008,11 @@
         "<hr>",
         "Modify the code so that instances of <code>Dog</code> inherit from <code>Animal</code>."
       ],
-      "challengeSeed": [
-        "function Animal() { }",
-        "",
-        "Animal.prototype = {",
-        "  constructor: Animal,",
-        "  eat: function() {",
-        "    console.log(\"nom nom nom\");",
-        "  }",
-        "};",
-        "",
-        "function Dog() { }",
-        "",
-        "// Add your code below this line",
-        "",
-        "",
-        "let beagle = new Dog();",
-        "beagle.eat();  // Should print \"nom nom nom\""
-      ],
       "tests": [
-        "assert(Animal.prototype.isPrototypeOf(Dog.prototype), 'message: <code>Dog.prototype</code> should be an instance of <code>Animal</code>.');"
+        {
+          "text": "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.",
+          "testString": "assert(Animal.prototype.isPrototypeOf(Dog.prototype), '<code>Dog.prototype</code> should be an instance of <code>Animal</code>.');"
+        }
       ],
       "solutions": [
         "function Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal,\n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};\n\nfunction Dog() { }\nDog.prototype = Object.create(Animal.prototype);\n\nlet beagle = new Dog();\nbeagle.eat();"
@@ -758,7 +1021,34 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Animal() { }",
+            "",
+            "Animal.prototype = {",
+            "  constructor: Animal,",
+            "  eat: function() {",
+            "    console.log(\"nom nom nom\");",
+            "  }",
+            "};",
+            "",
+            "function Dog() { }",
+            "",
+            "// Add your code below this line",
+            "",
+            "",
+            "let beagle = new Dog();",
+            "beagle.eat();  // Should print \"nom nom nom\""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db1367417b2b2512b86",
@@ -772,26 +1062,23 @@
         "<hr>",
         "Fix the code so <code>duck.constructor</code> and <code>beagle.constructor</code> return their respective constructors."
       ],
-      "challengeSeed": [
-        "function Animal() { }",
-        "function Bird() { }",
-        "function Dog() { }",
-        "",
-        "Bird.prototype = Object.create(Animal.prototype);",
-        "Dog.prototype = Object.create(Animal.prototype);",
-        "",
-        "// Add your code below this line",
-        "",
-        "",
-        "",
-        "let duck = new Bird();",
-        "let beagle = new Dog();"
-      ],
       "tests": [
-        "assert(Animal.prototype.isPrototypeOf(Bird.prototype), 'message: <code>Bird.prototype</code> should be an instance of <code>Animal</code>.');",
-        "assert(duck.constructor === Bird, 'message: <code>duck.constructor</code> should return <code>Bird</code>.');",
-        "assert(Animal.prototype.isPrototypeOf(Dog.prototype), 'message: <code>Dog.prototype</code> should be an instance of <code>Animal</code>.');",
-        "assert(beagle.constructor === Dog, 'message: <code>beagle.constructor</code> should return <code>Dog</code>.');"
+        {
+          "text": "<code>Bird.prototype</code> should be an instance of <code>Animal</code>.",
+          "testString": "assert(Animal.prototype.isPrototypeOf(Bird.prototype), '<code>Bird.prototype</code> should be an instance of <code>Animal</code>.');"
+        },
+        {
+          "text": "<code>duck.constructor</code> should return <code>Bird</code>.",
+          "testString": "assert(duck.constructor === Bird, '<code>duck.constructor</code> should return <code>Bird</code>.');"
+        },
+        {
+          "text": "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.",
+          "testString": "assert(Animal.prototype.isPrototypeOf(Dog.prototype), '<code>Dog.prototype</code> should be an instance of <code>Animal</code>.');"
+        },
+        {
+          "text": "<code>beagle.constructor</code> should return <code>Dog</code>.",
+          "testString": "assert(beagle.constructor === Dog, '<code>beagle.constructor</code> should return <code>Dog</code>.');"
+        }
       ],
       "solutions": [
         "function Animal() { }\nfunction Bird() { }\nfunction Dog() { }\nBird.prototype = Object.create(Animal.prototype);\nDog.prototype = Object.create(Animal.prototype);\nDog.prototype.constructor = Dog;\nBird.prototype.constructor = Bird;\nlet duck = new Bird();\nlet beagle = new Dog();"
@@ -800,7 +1087,31 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Animal() { }",
+            "function Bird() { }",
+            "function Dog() { }",
+            "",
+            "Bird.prototype = Object.create(Animal.prototype);",
+            "Dog.prototype = Object.create(Animal.prototype);",
+            "",
+            "// Add your code below this line",
+            "",
+            "",
+            "",
+            "let duck = new Bird();",
+            "let beagle = new Dog();"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db1367417b2b2512b87",
@@ -816,30 +1127,27 @@
         "<hr>",
         "Add all necessary code so the <code>Dog</code> object inherits from <code>Animal</code> and the <code>Dog's</code> <code>prototype</code> constructor is set to Dog. Then add a <code>bark()</code> method to the <code>Dog</code> object so that <code>beagle</code> can both <code>eat()</code> and <code>bark()</code>. The <code>bark()</code> method should print \"Woof!\" to the console."
       ],
-      "challengeSeed": [
-        "function Animal() { }",
-        "Animal.prototype.eat = function() { console.log(\"nom nom nom\"); };",
-        "",
-        "function Dog() { }",
-        "",
-        "// Add your code below this line",
-        "",
-        "",
-        "",
-        "",
-        "// Add your code above this line",
-        "",
-        "let beagle = new Dog();",
-        "",
-        "beagle.eat(); // Should print \"nom nom nom\"",
-        "beagle.bark(); // Should print \"Woof!\""
-      ],
       "tests": [
-        "assert(typeof Animal.prototype.bark == \"undefined\", 'message: <code>Animal</code> should not respond to the <code>bark()</code> method.');",
-        "assert(typeof Dog.prototype.eat == \"function\", 'message: <code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.');",
-        "assert(Dog.prototype.hasOwnProperty('bark'), 'message: <code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.');",
-        "assert(beagle instanceof Animal, 'message: <code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.');",
-        "assert(beagle.constructor === Dog, 'message: The constructor for <code>beagle</code> should be set to <code>Dog</code>.');"
+        {
+          "text": "<code>Animal</code> should not respond to the <code>bark()</code> method.",
+          "testString": "assert(typeof Animal.prototype.bark == \"undefined\", '<code>Animal</code> should not respond to the <code>bark()</code> method.');"
+        },
+        {
+          "text": "<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.",
+          "testString": "assert(typeof Dog.prototype.eat == \"function\", '<code>Dog</code> should inherit the <code>eat()</code> method from <code>Animal</code>.');"
+        },
+        {
+          "text": "<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.",
+          "testString": "assert(Dog.prototype.hasOwnProperty('bark'), '<code>Dog</code> should have the <code>bark()</code> method as an <code>own</code> property.');"
+        },
+        {
+          "text": "<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.",
+          "testString": "assert(beagle instanceof Animal, '<code>beagle</code> should be an <code>instanceof</code> <code>Animal</code>.');"
+        },
+        {
+          "text": "The constructor for <code>beagle</code> should be set to <code>Dog</code>.",
+          "testString": "assert(beagle.constructor === Dog, 'The constructor for <code>beagle</code> should be set to <code>Dog</code>.');"
+        }
       ],
       "solutions": [
         "function Animal() { }\nAnimal.prototype.eat = function() { console.log(\"nom nom nom\"); };\n\nfunction Dog() { }\nDog.prototype = Object.create(Animal.prototype);\nDog.prototype.constructor = Dog;\nDog.prototype.bark = function () {\n  console.log('Woof!');\n};\nlet beagle = new Dog();\n\nbeagle.eat();\nbeagle.bark();"
@@ -850,7 +1158,34 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Animal() { }",
+            "Animal.prototype.eat = function() { console.log(\"nom nom nom\"); };",
+            "",
+            "function Dog() { }",
+            "",
+            "// Add your code below this line",
+            "",
+            "",
+            "",
+            "",
+            "// Add your code above this line",
+            "",
+            "let beagle = new Dog();",
+            "",
+            "beagle.eat(); // Should print \"nom nom nom\"",
+            "beagle.bark(); // Should print \"Woof!\""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db1367417b2b2512b88",
@@ -871,27 +1206,15 @@
         "<hr>",
         "Override the <code>fly()</code> method for <code>Penguin</code> so that it returns \"Alas, this is a flightless bird.\""
       ],
-      "challengeSeed": [
-        "function Bird() { }",
-        "",
-        "Bird.prototype.fly = function() { return \"I am flying!\"; };",
-        "",
-        "function Penguin() { }",
-        "Penguin.prototype = Object.create(Bird.prototype);",
-        "Penguin.prototype.constructor = Penguin;",
-        "",
-        "// Add your code below this line",
-        "",
-        "",
-        "",
-        "// Add your code above this line",
-        "",
-        "let penguin = new Penguin();",
-        "console.log(penguin.fly());"
-      ],
       "tests": [
-        "assert(penguin.fly() === \"Alas, this is a flightless bird.\", 'message: <code>penguin.fly()</code> should return the string \"Alas, this is a flightless bird.\"');",
-        "assert((new Bird()).fly() === \"I am flying!\", 'message: The <code>bird.fly()</code> method should return \"I am flying!\"');"
+        {
+          "text": "<code>penguin.fly()</code> should return the string \"Alas, this is a flightless bird.\"",
+          "testString": "assert(penguin.fly() === \"Alas, this is a flightless bird.\", '<code>penguin.fly()</code> should return the string \"Alas, this is a flightless bird.\"');"
+        },
+        {
+          "text": "The <code>bird.fly()</code> method should return \"I am flying!\"",
+          "testString": "assert((new Bird()).fly() === \"I am flying!\", 'The <code>bird.fly()</code> method should return \"I am flying!\"');"
+        }
       ],
       "solutions": [
         "function Bird() { }\n\nBird.prototype.fly = function() { return \"I am flying!\"; };\n\nfunction Penguin() { }\nPenguin.prototype = Object.create(Bird.prototype);\nPenguin.prototype.constructor = Penguin;\nPenguin.prototype.fly = () => 'Alas, this is a flightless bird.';\nlet penguin = new Penguin();\nconsole.log(penguin.fly());"
@@ -900,7 +1223,34 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Bird() { }",
+            "",
+            "Bird.prototype.fly = function() { return \"I am flying!\"; };",
+            "",
+            "function Penguin() { }",
+            "Penguin.prototype = Object.create(Bird.prototype);",
+            "Penguin.prototype.constructor = Penguin;",
+            "",
+            "// Add your code below this line",
+            "",
+            "",
+            "",
+            "// Add your code above this line",
+            "",
+            "let penguin = new Penguin();",
+            "console.log(penguin.fly());"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db2367417b2b2512b89",
@@ -917,29 +1267,19 @@
         "<hr>",
         "Create a <code>mixin</code> named <code>glideMixin</code> that defines a method named <code>glide</code>. Then use the <code>glideMixin</code> to give both <code>bird</code> and <code>boat</code> the ability to glide."
       ],
-      "challengeSeed": [
-        "let bird = {",
-        "  name: \"Donald\",",
-        "  numLegs: 2",
-        "};",
-        "",
-        "let boat = {",
-        "  name: \"Warrior\",",
-        "  type: \"race-boat\"",
-        "};",
-        "",
-        "// Add your code below this line",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
-      ],
       "tests": [
-        "assert(typeof glideMixin === \"function\", 'message: Your code should declare a <code>glideMixin</code> variable that is a function.');",
-        "assert(typeof bird.glide === \"function\", 'message: Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.');",
-        "assert(typeof boat.glide === \"function\", 'message: Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.');"
+        {
+          "text": "Your code should declare a <code>glideMixin</code> variable that is a function.",
+          "testString": "assert(typeof glideMixin === \"function\", 'Your code should declare a <code>glideMixin</code> variable that is a function.');"
+        },
+        {
+          "text": "Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.",
+          "testString": "assert(typeof bird.glide === \"function\", 'Your code should use the <code>glideMixin</code> on the <code>bird</code> object to give it the <code>glide</code> method.');"
+        },
+        {
+          "text": "Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.",
+          "testString": "assert(typeof boat.glide === \"function\", 'Your code should use the <code>glideMixin</code> on the <code>boat</code> object to give it the <code>glide</code> method.');"
+        }
       ],
       "solutions": [
         "let bird = {\n  name: \"Donald\",\n  numLegs: 2\n};\n\nlet boat = {\n  name: \"Warrior\",\n  type: \"race-boat\"\n};\nfunction glideMixin (obj) {\n  obj.glide = () => 'Gliding!';\n}\n\nglideMixin(bird);\nglideMixin(boat);"
@@ -948,7 +1288,35 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let bird = {",
+            "  name: \"Donald\",",
+            "  numLegs: 2",
+            "};",
+            "",
+            "let boat = {",
+            "  name: \"Warrior\",",
+            "  type: \"race-boat\"",
+            "};",
+            "",
+            "// Add your code below this line",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db2367417b2b2512b8a",
@@ -963,17 +1331,15 @@
         "<hr>",
         "Change how <code>weight</code> is declared in the <code>Bird</code> function so it is a private variable. Then, create a method <code>getWeight</code> that returns the value of <code>weight</code>."
       ],
-      "challengeSeed": [
-        "function Bird() {",
-        "  this.weight = 15;",
-        "  ",
-        "  ",
-        "}",
-        ""
-      ],
       "tests": [
-        "assert(!code.match(/this\\.weight/g), 'message: The <code>weight</code> property should be a private variable.');",
-        "assert((new Bird()).getWeight() === 15, 'message: Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.');"
+        {
+          "text": "The <code>weight</code> property should be a private variable.",
+          "testString": "assert(!code.match(/this\\.weight/g), 'The <code>weight</code> property should be a private variable.');"
+        },
+        {
+          "text": "Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.",
+          "testString": "assert((new Bird()).getWeight() === 15, 'Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.');"
+        }
       ],
       "solutions": [
         "function Bird() {\n  let weight = 15;\n  \n  this.getWeight = () => weight;\n}"
@@ -982,7 +1348,24 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function Bird() {",
+            "  this.weight = 15;",
+            "  ",
+            "  ",
+            "}",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db2367417b2b2512b8b",
@@ -994,16 +1377,15 @@
         "<hr>",
         "Rewrite the function <code>makeNest</code> and remove its call so instead it's an anonymous <code>immediately invoked function expression</code> (<code>IIFE</code>)."
       ],
-      "challengeSeed": [
-        "function makeNest() {",
-        "  console.log(\"A cozy nest is ready\");",
-        "}",
-        "",
-        "makeNest(); "
-      ],
       "tests": [
-        "assert(/\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?{/.test(code), 'message: The function should be anonymous.');",
-        "assert(/}\\s*?\\)\\s*?\\(\\s*?\\)/.test(code), 'message: Your function should have parentheses at the end of the expression to call it immediately.');"
+        {
+          "text": "The function should be anonymous.",
+          "testString": "assert(/\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?{/.test(code), 'The function should be anonymous.');"
+        },
+        {
+          "text": "Your function should have parentheses at the end of the expression to call it immediately.",
+          "testString": "assert(/}\\s*?\\)\\s*?\\(\\s*?\\)/.test(code), 'Your function should have parentheses at the end of the expression to call it immediately.');"
+        }
       ],
       "solutions": [
         "(function () {\n  console.log(\"A cozy nest is ready\");\n})();"
@@ -1012,7 +1394,23 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function makeNest() {",
+            "  console.log(\"A cozy nest is ready\");",
+            "}",
+            "",
+            "makeNest(); "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db2367417b2b2512b8c",
@@ -1028,22 +1426,19 @@
         "<hr>",
         "Create a <code>module</code> named <code>funModule</code> to wrap the two <code>mixins</code> <code>isCuteMixin</code> and <code>singMixin</code>. <code>funModule</code> should return an object."
       ],
-      "challengeSeed": [
-        "let isCuteMixin = function(obj) {",
-        "  obj.isCute = function() {",
-        "    return true;",
-        "  };",
-        "};",
-        "let singMixin = function(obj) {",
-        "  obj.sing = function() {",
-        "    console.log(\"Singing to an awesome tune\");",
-        "  };",
-        "};"
-      ],
       "tests": [
-        "assert(typeof funModule === \"object\", 'message: <code>funModule</code> should be defined and return an object.');",
-        "assert(typeof funModule.isCuteMixin === \"function\", 'message: <code>funModule.isCuteMixin</code> should access a function.');",
-        "assert(typeof funModule.singMixin === \"function\", 'message: <code>funModule.singMixin</code> should access a function.');"
+        {
+          "text": "<code>funModule</code> should be defined and return an object.",
+          "testString": "assert(typeof funModule === \"object\", '<code>funModule</code> should be defined and return an object.');"
+        },
+        {
+          "text": "<code>funModule.isCuteMixin</code> should access a function.",
+          "testString": "assert(typeof funModule.isCuteMixin === \"function\", '<code>funModule.isCuteMixin</code> should access a function.');"
+        },
+        {
+          "text": "<code>funModule.singMixin</code> should access a function.",
+          "testString": "assert(typeof funModule.singMixin === \"function\", '<code>funModule.singMixin</code> should access a function.');"
+        }
       ],
       "solutions": [
         "const funModule = (function () {\n  return {\n    isCuteMixin: obj => {\n      obj.isCute = () => true;\n    },\n    singMixin: obj => {\n      obj.sing = () => console.log(\"Singing to an awesome tune\");\n    }\n  };\n})();"
@@ -1052,7 +1447,28 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let isCuteMixin = function(obj) {",
+            "  obj.isCute = function() {",
+            "    return true;",
+            "  };",
+            "};",
+            "let singMixin = function(obj) {",
+            "  obj.sing = function() {",
+            "    console.log(\"Singing to an awesome tune\");",
+            "  };",
+            "};"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     }
   ]
 }

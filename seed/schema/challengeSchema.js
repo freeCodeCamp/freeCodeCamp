@@ -11,24 +11,7 @@ const schema = Joi.object().keys({
   checksum: Joi.number(),
   dashedName: Joi.string(),
   description: Joi.array().items(
-
-    // classic/modern challenges
-    Joi.string().allow(''),
-
-    // step challenges
-    Joi.array().items(
-      Joi.string().allow('')
-    ).length(4),
-
-    // quiz challenges
-    Joi.object().keys({
-      subtitle: Joi.string(),
-      question: Joi.string(),
-      choices: Joi.array(),
-      answer: Joi.number(),
-      explanation: Joi.string()
-    })
-
+    Joi.string().allow('')
   ).required(),
   fileName: Joi.string(),
   files: Joi.object().pattern(
@@ -39,7 +22,7 @@ const schema = Joi.object().keys({
       name: Joi.string(),
       head: Joi.string().allow(''),
       tail: Joi.string().allow(''),
-      contents: Joi.string()
+      contents: Joi.string().allow('')
     })
   ),
   guideUrl: Joi.string().uri({ scheme: 'https' }),
@@ -73,14 +56,9 @@ const schema = Joi.object().keys({
     Joi.string().allow('')
   ),
   tests: Joi.array().items(
-    Joi.string().min(2),
     Joi.object().keys({
       text: Joi.string().required(),
       testString: Joi.string().allow('').required()
-    }),
-    Joi.object().keys({
-      id: Joi.objectId().required(),
-      title: Joi.string().required()
     })
   ),
   template: Joi.string(),

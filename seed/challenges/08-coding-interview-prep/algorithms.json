@@ -1,5 +1,5 @@
 {
-  "name": "Coding Interview Algorithm Questions",
+  "name": "Algorithms",
   "order": 1,
   "time": "",
   "helpRoom": "HelpJavaScript",
@@ -12,31 +12,66 @@
         "Given two sets (for example set <code>A = {1, 2, 3}</code> and set <code>B = {2, 3, 4}</code>), the mathematical term \"symmetric difference\" of two sets is the set of elements which are in either of the two sets, but not in both (<code>A &xutri; B = C = {1, 4}</code>). For every additional symmetric difference you take (say on a set <code>D = {2, 3}</code>), you should get the set with elements which are in either of the two the sets but not both (<code>C &xutri; D = {1, 4} &xutri; {2, 3} = {1, 2, 3, 4}</code>). The resulting array must contain only unique values (<em>no duplicates</em>).",
         "Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "challengeSeed": [
-        "function sym(args) {",
-        "  return args;",
-        "}",
-        "",
-        "sym([1, 2, 3], [5, 2, 1, 4]);"
-      ],
       "solutions": [
         "function sym() {\n  var arrays = [].slice.call(arguments);\n  return arrays.reduce(function (symDiff, arr) {\n    return symDiff.concat(arr).filter(function (val, idx, theArr) {\n      return theArr.indexOf(val) === idx \n        && (symDiff.indexOf(val) === -1 || arr.indexOf(val) === -1);\n    });\n  });\n}\nsym([1, 2, 3], [5, 2, 1, 4]);\n"
       ],
       "tests": [
-        "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');",
-        "assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3, 'message: <code>sym([1, 2, 3], [5, 2, 1, 4])</code> should contain only three elements.');",
-        "assert.sameMembers(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5], 'message: <code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');",
-        "assert.equal(sym([1, 2, 3, 3], [5, 2, 1, 4]).length, 3, 'message: <code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should contain only three elements.');",
-        "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5], 'message: <code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should return <code>[3, 4, 5]</code>.');",
-        "assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3, 'message: <code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should contain only three elements.');",
-        "assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>');",
-        "assert.equal(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).length, 3, 'message: <code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should contain only three elements.');",
-        "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.');",
-        "assert.equal(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).length, 3, 'message: <code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should contain only three elements.');",
-        "assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]), [2, 3, 4, 6, 7], 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should return <code>[2, 3, 4, 6, 7]</code>.');",
-        "assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]).length, 5, 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should contain only five elements.');",
-        "assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]), [1, 2, 4, 5, 6, 7, 8, 9], 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should return <code>[1, 2, 4, 5, 6, 7, 8, 9]</code>.');",
-        "assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]).length, 8, 'message: <code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should contain only eight elements.');"
+        {
+          "text": "<code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.",
+          "testString": "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4]), [3, 4, 5], '<code>sym([1, 2, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');"
+        },
+        {
+          "text": "<code>sym([1, 2, 3], [5, 2, 1, 4])</code> should contain only three elements.",
+          "testString": "assert.equal(sym([1, 2, 3], [5, 2, 1, 4]).length, 3, '<code>sym([1, 2, 3], [5, 2, 1, 4])</code> should contain only three elements.');"
+        },
+        {
+          "text": "<code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.",
+          "testString": "assert.sameMembers(sym([1, 2, 3, 3], [5, 2, 1, 4]), [3, 4, 5], '<code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should return <code>[3, 4, 5]</code>.');"
+        },
+        {
+          "text": "<code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should contain only three elements.",
+          "testString": "assert.equal(sym([1, 2, 3, 3], [5, 2, 1, 4]).length, 3, '<code>sym([1, 2, 3, 3], [5, 2, 1, 4])</code> should contain only three elements.');"
+        },
+        {
+          "text": "<code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should return <code>[3, 4, 5]</code>.",
+          "testString": "assert.sameMembers(sym([1, 2, 3], [5, 2, 1, 4, 5]), [3, 4, 5], '<code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should return <code>[3, 4, 5]</code>.');"
+        },
+        {
+          "text": "<code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should contain only three elements.",
+          "testString": "assert.equal(sym([1, 2, 3], [5, 2, 1, 4, 5]).length, 3, '<code>sym([1, 2, 3], [5, 2, 1, 4, 5])</code> should contain only three elements.');"
+        },
+        {
+          "text": "<code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>",
+          "testString": "assert.sameMembers(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]), [1, 4, 5], '<code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should return <code>[1, 4, 5]</code>');"
+        },
+        {
+          "text": "<code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should contain only three elements.",
+          "testString": "assert.equal(sym([1, 2, 5], [2, 3, 5], [3, 4, 5]).length, 3, '<code>sym([1, 2, 5], [2, 3, 5], [3, 4, 5])</code> should contain only three elements.');"
+        },
+        {
+          "text": "<code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.",
+          "testString": "assert.sameMembers(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]), [1, 4, 5], '<code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should return <code>[1, 4, 5]</code>.');"
+        },
+        {
+          "text": "<code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should contain only three elements.",
+          "testString": "assert.equal(sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]).length, 3, '<code>sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5])</code> should contain only three elements.');"
+        },
+        {
+          "text": "<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should return <code>[2, 3, 4, 6, 7]</code>.",
+          "testString": "assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]), [2, 3, 4, 6, 7], '<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should return <code>[2, 3, 4, 6, 7]</code>.');"
+        },
+        {
+          "text": "<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should contain only five elements.",
+          "testString": "assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3]).length, 5, '<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3])</code> should contain only five elements.');"
+        },
+        {
+          "text": "<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should return <code>[1, 2, 4, 5, 6, 7, 8, 9]</code>.",
+          "testString": "assert.sameMembers(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]), [1, 2, 4, 5, 6, 7, 8, 9], '<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should return <code>[1, 2, 4, 5, 6, 7, 8, 9]</code>.');"
+        },
+        {
+          "text": "<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should contain only eight elements.",
+          "testString": "assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]).length, 8, '<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should contain only eight elements.');"
+        }
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -69,6 +104,22 @@
             "Lembre-se de usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function sym(args) {",
+            "  return args;",
+            "}",
+            "",
+            "sym([1, 2, 3], [5, 2, 1, 4]);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -78,39 +129,34 @@
         "Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities (in <code>arr1</code>). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by item.",
         "Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "challengeSeed": [
-        "function updateInventory(arr1, arr2) {",
-        "    // All inventory must be accounted for or you're fired!",
-        "    return arr1;",
-        "}",
-        "",
-        "// Example inventory lists",
-        "var curInv = [",
-        "    [21, \"Bowling Ball\"],",
-        "    [2, \"Dirty Sock\"],",
-        "    [1, \"Hair Pin\"],",
-        "    [5, \"Microphone\"]",
-        "];",
-        "",
-        "var newInv = [",
-        "    [2, \"Hair Pin\"],",
-        "    [3, \"Half-Eaten Apple\"],",
-        "    [67, \"Bowling Ball\"],",
-        "    [7, \"Toothpaste\"]",
-        "];",
-        "",
-        "updateInventory(curInv, newInv);"
-      ],
       "solutions": [
         "function updateInventory(arr1, arr2) {\n  arr2.forEach(function(item) {\n    createOrUpdate(arr1, item);\n  });\n  // All inventory must be accounted for or you're fired!\n  return arr1;\n}\n\nfunction createOrUpdate(arr1, item) {\n  var index = -1;\n  while (++index < arr1.length) {\n    if (arr1[index][1] === item[1]) {\n      arr1[index][0] += item[0];\n      return;\n    }\n    if (arr1[index][1] > item[1]) {\n      break;\n    }\n  }\n  arr1.splice(index, 0, item);\n}\n\n// Example inventory lists\nvar curInv = [\n    [21, 'Bowling Ball'],\n    [2, 'Dirty Sock'],\n    [1, 'Hair Pin'],\n    [5, 'Microphone']\n];\n\nvar newInv = [\n    [2, 'Hair Pin'],\n    [3, 'Half-Eaten Apple'],\n    [67, 'Bowling Ball'],\n    [7, 'Toothpaste']\n];\n\nupdateInventory(curInv, newInv);\n"
       ],
       "tests": [
-        "assert.isArray(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), 'message: The function <code>updateInventory</code> should return an array.');",
-        "assert.equal(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]).length, 6, 'message: <code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return an array with a length of 6.');",
-        "assert.deepEqual(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), [[88, \"Bowling Ball\"], [2, \"Dirty Sock\"], [3, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [5, \"Microphone\"], [7, \"Toothpaste\"]], 'message: <code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return <code>[[88, \"Bowling Ball\"], [2, \"Dirty Sock\"], [3, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [5, \"Microphone\"], [7, \"Toothpaste\"]]</code>.');",
-        "assert.deepEqual(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], []), [[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], 'message: <code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [])</code> should return <code>[[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]]</code>.');",
-        "assert.deepEqual(updateInventory([], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), [[67, \"Bowling Ball\"], [2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [7, \"Toothpaste\"]], 'message: <code>updateInventory([], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return <code>[[67, \"Bowling Ball\"], [2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [7, \"Toothpaste\"]]</code>.');",
-        "assert.deepEqual(updateInventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]]), [[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]], 'message: <code>updateInventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]])</code> should return <code>[[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]]</code>.');"
+        {
+          "text": "The function <code>updateInventory</code> should return an array.",
+          "testString": "assert.isArray(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), 'The function <code>updateInventory</code> should return an array.');"
+        },
+        {
+          "text": "<code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return an array with a length of 6.",
+          "testString": "assert.equal(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]).length, 6, '<code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return an array with a length of 6.');"
+        },
+        {
+          "text": "<code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return <code>[[88, \"Bowling Ball\"], [2, \"Dirty Sock\"], [3, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [5, \"Microphone\"], [7, \"Toothpaste\"]]</code>.",
+          "testString": "assert.deepEqual(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), [[88, \"Bowling Ball\"], [2, \"Dirty Sock\"], [3, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [5, \"Microphone\"], [7, \"Toothpaste\"]], '<code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return <code>[[88, \"Bowling Ball\"], [2, \"Dirty Sock\"], [3, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [5, \"Microphone\"], [7, \"Toothpaste\"]]</code>.');"
+        },
+        {
+          "text": "<code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [])</code> should return <code>[[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]]</code>.",
+          "testString": "assert.deepEqual(updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], []), [[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], '<code>updateInventory([[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]], [])</code> should return <code>[[21, \"Bowling Ball\"], [2, \"Dirty Sock\"], [1, \"Hair Pin\"], [5, \"Microphone\"]]</code>.');"
+        },
+        {
+          "text": "<code>updateInventory([], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return <code>[[67, \"Bowling Ball\"], [2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [7, \"Toothpaste\"]]</code>.",
+          "testString": "assert.deepEqual(updateInventory([], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]]), [[67, \"Bowling Ball\"], [2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [7, \"Toothpaste\"]], '<code>updateInventory([], [[2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [67, \"Bowling Ball\"], [7, \"Toothpaste\"]])</code> should return <code>[[67, \"Bowling Ball\"], [2, \"Hair Pin\"], [3, \"Half-Eaten Apple\"], [7, \"Toothpaste\"]]</code>.');"
+        },
+        {
+          "text": "<code>updateInventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]])</code> should return <code>[[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]]</code>.",
+          "testString": "assert.deepEqual(updateInventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]]), [[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]], '<code>updateInventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]])</code> should return <code>[[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]]</code>.');"
+        }
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -139,6 +185,38 @@
             "Lembre-se de usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function updateInventory(arr1, arr2) {",
+            "    // All inventory must be accounted for or you're fired!",
+            "    return arr1;",
+            "}",
+            "",
+            "// Example inventory lists",
+            "var curInv = [",
+            "    [21, \"Bowling Ball\"],",
+            "    [2, \"Dirty Sock\"],",
+            "    [1, \"Hair Pin\"],",
+            "    [5, \"Microphone\"]",
+            "];",
+            "",
+            "var newInv = [",
+            "    [2, \"Hair Pin\"],",
+            "    [3, \"Half-Eaten Apple\"],",
+            "    [67, \"Bowling Ball\"],",
+            "    [7, \"Toothpaste\"]",
+            "];",
+            "",
+            "updateInventory(curInv, newInv);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -149,27 +227,50 @@
         "For example, <code>aab</code> should return 2 because it has 6 total permutations (<code>aab</code>, <code>aab</code>, <code>aba</code>, <code>aba</code>, <code>baa</code>, <code>baa</code>), but only 2 of them (<code>aba</code> and <code>aba</code>) don't have the same letter (in this case <code>a</code>) repeating.",
         "Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "challengeSeed": [
-        "function permAlone(str) {",
-        "  return str;",
-        "}",
-        "",
-        "permAlone('aab');"
-      ],
       "solutions": [
         "function permAlone(str) {\n  return permutor(str).filter(function(perm) {\n    return !perm.match(/(.)\\1/g);\n  }).length;\n}\n\nfunction permutor(str) {\n  // http://staff.roguecc.edu/JMiller/JavaScript/permute.html\n  //permArr: Global array which holds the list of permutations\n  //usedChars: Global utility array which holds a list of \"currently-in-use\" characters\n  var permArr = [], usedChars = [];\n  function permute(input) {\n    //convert input into a char array (one element for each character)\n    var i, ch, chars = input.split(\"\");\n    for (i = 0; i < chars.length; i++) {\n      //get and remove character at index \"i\" from char array\n      ch = chars.splice(i, 1);\n      //add removed character to the end of used characters\n      usedChars.push(ch);\n      //when there are no more characters left in char array to add, add used chars to list of permutations\n      if (chars.length === 0) permArr[permArr.length] = usedChars.join(\"\");\n      //send characters (minus the removed one from above) from char array to be permuted\n      permute(chars.join(\"\"));\n      //add removed character back into char array in original position\n      chars.splice(i, 0, ch);\n      //remove the last character used off the end of used characters array\n      usedChars.pop();\n    }\n  }\n  permute(str);\n  return permArr;\n}\n\npermAlone('aab');\n"
       ],
       "tests": [
-        "assert.isNumber(permAlone('aab'), 'message: <code>permAlone(\"aab\")</code> should return a number.');",
-        "assert.strictEqual(permAlone('aab'), 2, 'message: <code>permAlone(\"aab\")</code> should return 2.');",
-        "assert.strictEqual(permAlone('aaa'), 0, 'message: <code>permAlone(\"aaa\")</code> should return 0.');",
-        "assert.strictEqual(permAlone('aabb'), 8, 'message: <code>permAlone(\"aabb\")</code> should return 8.');",
-        "assert.strictEqual(permAlone('abcdefa'), 3600, 'message: <code>permAlone(\"abcdefa\")</code> should return 3600.');",
-        "assert.strictEqual(permAlone('abfdefa'), 2640, 'message: <code>permAlone(\"abfdefa\")</code> should return 2640.');",
-        "assert.strictEqual(permAlone('zzzzzzzz'), 0, 'message: <code>permAlone(\"zzzzzzzz\")</code> should return 0.');",
-        "assert.strictEqual(permAlone('a'), 1, 'message: <code>permAlone(\"a\")</code> should return 1.');",
-        "assert.strictEqual(permAlone('aaab'), 0, 'message: <code>permAlone(\"aaab\")</code> should return 0.');",
-        "assert.strictEqual(permAlone('aaabb'), 12, 'message: <code>permAlone(\"aaabb\")</code> should return 12.');"
+        {
+          "text": "<code>permAlone(\"aab\")</code> should return a number.",
+          "testString": "assert.isNumber(permAlone('aab'), '<code>permAlone(\"aab\")</code> should return a number.');"
+        },
+        {
+          "text": "<code>permAlone(\"aab\")</code> should return 2.",
+          "testString": "assert.strictEqual(permAlone('aab'), 2, '<code>permAlone(\"aab\")</code> should return 2.');"
+        },
+        {
+          "text": "<code>permAlone(\"aaa\")</code> should return 0.",
+          "testString": "assert.strictEqual(permAlone('aaa'), 0, '<code>permAlone(\"aaa\")</code> should return 0.');"
+        },
+        {
+          "text": "<code>permAlone(\"aabb\")</code> should return 8.",
+          "testString": "assert.strictEqual(permAlone('aabb'), 8, '<code>permAlone(\"aabb\")</code> should return 8.');"
+        },
+        {
+          "text": "<code>permAlone(\"abcdefa\")</code> should return 3600.",
+          "testString": "assert.strictEqual(permAlone('abcdefa'), 3600, '<code>permAlone(\"abcdefa\")</code> should return 3600.');"
+        },
+        {
+          "text": "<code>permAlone(\"abfdefa\")</code> should return 2640.",
+          "testString": "assert.strictEqual(permAlone('abfdefa'), 2640, '<code>permAlone(\"abfdefa\")</code> should return 2640.');"
+        },
+        {
+          "text": "<code>permAlone(\"zzzzzzzz\")</code> should return 0.",
+          "testString": "assert.strictEqual(permAlone('zzzzzzzz'), 0, '<code>permAlone(\"zzzzzzzz\")</code> should return 0.');"
+        },
+        {
+          "text": "<code>permAlone(\"a\")</code> should return 1.",
+          "testString": "assert.strictEqual(permAlone('a'), 1, '<code>permAlone(\"a\")</code> should return 1.');"
+        },
+        {
+          "text": "<code>permAlone(\"aaab\")</code> should return 0.",
+          "testString": "assert.strictEqual(permAlone('aaab'), 0, '<code>permAlone(\"aaab\")</code> should return 0.');"
+        },
+        {
+          "text": "<code>permAlone(\"aaabb\")</code> should return 12.",
+          "testString": "assert.strictEqual(permAlone('aaabb'), 12, '<code>permAlone(\"aaabb\")</code> should return 12.');"
+        }
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -202,6 +303,22 @@
             "Lembre-se de usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function permAlone(str) {",
+            "  return str;",
+            "}",
+            "",
+            "permAlone('aab');"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -216,22 +333,30 @@
         "7 + 13 = 20 &#8594; Indices 0 + 3 = 3<br>9 + 11 = 20 &#8594; Indices 1 + 2 = 3<br>3 + 3 = 6 &#8594 Return <code>6</code>",
         "Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> if you get stuck. Try to pair program. Write your own code."
       ],
-      "challengeSeed": [
-        "function pairwise(arr, arg) {",
-        "  return arg;",
-        "}",
-        "",
-        "pairwise([1,4,2,3,0,5], 7);"
-      ],
       "solutions": [
         "function pairwise(arr, arg) {\n  var sum = 0;\n  arr.forEach(function(e, i, a) {\n    if (e != null) {      \n      var diff = arg-e;\n      a[i] = null;\n      var dix = a.indexOf(diff);\n      if (dix !== -1) {\n        sum += dix;\n        sum += i;\n        a[dix] = null;\n      }  \n    }\n  });\n  return sum;\n}\n\npairwise([1,4,2,3,0,5], 7);\n"
       ],
       "tests": [
-        "assert.deepEqual(pairwise([1, 4, 2, 3, 0, 5], 7), 11, 'message: <code>pairwise([1, 4, 2, 3, 0, 5], 7)</code> should return 11.');",
-        "assert.deepEqual(pairwise([1, 3, 2, 4], 4), 1, 'message: <code>pairwise([1, 3, 2, 4], 4)</code> should return 1.');",
-        "assert.deepEqual(pairwise([1, 1, 1], 2), 1, 'message: <code>pairwise([1, 1, 1], 2)</code> should return 1.');",
-        "assert.deepEqual(pairwise([0, 0, 0, 0, 1, 1], 1), 10, 'message: <code>pairwise([0, 0, 0, 0, 1, 1], 1)</code> should return 10.');",
-        "assert.deepEqual(pairwise([], 100), 0, 'message: <code>pairwise([], 100)</code> should return 0.');"
+        {
+          "text": "<code>pairwise([1, 4, 2, 3, 0, 5], 7)</code> should return 11.",
+          "testString": "assert.deepEqual(pairwise([1, 4, 2, 3, 0, 5], 7), 11, '<code>pairwise([1, 4, 2, 3, 0, 5], 7)</code> should return 11.');"
+        },
+        {
+          "text": "<code>pairwise([1, 3, 2, 4], 4)</code> should return 1.",
+          "testString": "assert.deepEqual(pairwise([1, 3, 2, 4], 4), 1, '<code>pairwise([1, 3, 2, 4], 4)</code> should return 1.');"
+        },
+        {
+          "text": "<code>pairwise([1, 1, 1], 2)</code> should return 1.",
+          "testString": "assert.deepEqual(pairwise([1, 1, 1], 2), 1, '<code>pairwise([1, 1, 1], 2)</code> should return 1.');"
+        },
+        {
+          "text": "<code>pairwise([0, 0, 0, 0, 1, 1], 1)</code> should return 10.",
+          "testString": "assert.deepEqual(pairwise([0, 0, 0, 0, 1, 1], 1), 10, '<code>pairwise([0, 0, 0, 0, 1, 1], 1)</code> should return 10.');"
+        },
+        {
+          "text": "<code>pairwise([], 100)</code> should return 0.",
+          "testString": "assert.deepEqual(pairwise([], 100), 0, '<code>pairwise([], 100)</code> should return 0.');"
+        }
       ],
       "type": "bonfire",
       "MDNlinks": [
@@ -272,6 +397,22 @@
             "Lembre-se de usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Ler-Procurar-Perguntar</a> se você ficar preso. Tente programar em par. Escreva seu próprio código."
           ]
         }
+      },
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function pairwise(arr, arg) {",
+            "  return arg;",
+            "}",
+            "",
+            "pairwise([1,4,2,3,0,5], 7);"
+          ],
+          "head": [],
+          "tail": []
+        }
       }
     },
     {
@@ -284,34 +425,54 @@
         "<strong>Instructions:</strong> Write a function <code>bubbleSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
         "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
-      "challengeSeed": [
-        "function bubbleSort(array) {",
-        "  // change code below this line",
-        "",
-        "  // change code above this line",
-        "  return array;",
-        "}",
-        "",
-        "// test array:",
-        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
-      ],
-      "tail": [
-        "function isSorted(arr) {",
-        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
-        "  return check(0);",
-        "};"
-      ],
       "tests": [
-        "assert(typeof bubbleSort == 'function', 'message: <code>bubbleSort</code> is a function.');",
-        "assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>bubbleSort</code> returns a sorted array (least to greatest).');",
-        "assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>bubbleSort</code> returns an array that is unchanged except for order.');",
-        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.');"
+        {
+          "text": "<code>bubbleSort</code> is a function.",
+          "testString": "assert(typeof bubbleSort == 'function', '<code>bubbleSort</code> is a function.');"
+        },
+        {
+          "text": "<code>bubbleSort</code> returns a sorted array (least to greatest).",
+          "testString": "assert(isSorted(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>bubbleSort</code> returns a sorted array (least to greatest).');"
+        },
+        {
+          "text": "<code>bubbleSort</code> returns an array that is unchanged except for order.",
+          "testString": "assert.sameMembers(bubbleSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>bubbleSort</code> returns an array that is unchanged except for order.');"
+        },
+        {
+          "text": "<code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.",
+          "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.');"
+        }
       ],
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
-      "releasedOn": "February 17, 2017"
+      "releasedOn": "February 17, 2017",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function bubbleSort(array) {",
+            "  // change code below this line",
+            "",
+            "  // change code above this line",
+            "  return array;",
+            "}",
+            "",
+            "// test array:",
+            "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
+          ],
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
+        }
+      }
     },
     {
       "id": "587d8259367417b2b2512c85",
@@ -321,34 +482,54 @@
         "<strong>Instructions</strong>: Write a function <code>selectionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
         "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
-      "challengeSeed": [
-        "function selectionSort(array) {",
-        "  // change code below this line",
-        "",
-        "  // change code above this line",
-        "  return array;",
-        "}",
-        "",
-        "// test array:",
-        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
-      ],
-      "tail": [
-        "function isSorted(arr) {",
-        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
-        "  return check(0);",
-        "};"
-      ],
       "tests": [
-        "assert(typeof selectionSort == 'function', 'message: <code>selectionSort</code> is a function.');",
-        "assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>selectionSort</code> returns a sorted array (least to greatest).');",
-        "assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>selectionSort</code> returns an array that is unchanged except for order.');",
-        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>selectionSort</code> should not use the built-in <code>.sort()</code> method.');"
+        {
+          "text": "<code>selectionSort</code> is a function.",
+          "testString": "assert(typeof selectionSort == 'function', '<code>selectionSort</code> is a function.');"
+        },
+        {
+          "text": "<code>selectionSort</code> returns a sorted array (least to greatest).",
+          "testString": "assert(isSorted(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>selectionSort</code> returns a sorted array (least to greatest).');"
+        },
+        {
+          "text": "<code>selectionSort</code> returns an array that is unchanged except for order.",
+          "testString": "assert.sameMembers(selectionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>selectionSort</code> returns an array that is unchanged except for order.');"
+        },
+        {
+          "text": "<code>selectionSort</code> should not use the built-in <code>.sort()</code> method.",
+          "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>selectionSort</code> should not use the built-in <code>.sort()</code> method.');"
+        }
       ],
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
-      "releasedOn": "February 17, 2017"
+      "releasedOn": "February 17, 2017",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function selectionSort(array) {",
+            "  // change code below this line",
+            "",
+            "  // change code above this line",
+            "  return array;",
+            "}",
+            "",
+            "// test array:",
+            "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
+          ],
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
+        }
+      }
     },
     {
       "id": "587d8259367417b2b2512c86",
@@ -358,34 +539,54 @@
         "<strong>Instructions:</strong> Write a function <code>insertionSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest.",
         "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
-      "challengeSeed": [
-        "function insertionSort(array) {",
-        "  // change code below this line",
-        "",
-        "  // change code above this line",
-        "  return array;",
-        "}",
-        "",
-        "// test array:",
-        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
-      ],
-      "tail": [
-        "function isSorted(arr) {",
-        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
-        "  return check(0);",
-        "};"
-      ],
       "tests": [
-        "assert(typeof insertionSort == 'function', 'message: <code>insertionSort</code> is a function.');",
-        "assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>insertionSort</code> returns a sorted array (least to greatest).');",
-        "assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>insertionSort</code> returns an array that is unchanged except for order.');",
-        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>insertionSort</code> should not use the built-in <code>.sort()</code> method.');"
+        {
+          "text": "<code>insertionSort</code> is a function.",
+          "testString": "assert(typeof insertionSort == 'function', '<code>insertionSort</code> is a function.');"
+        },
+        {
+          "text": "<code>insertionSort</code> returns a sorted array (least to greatest).",
+          "testString": "assert(isSorted(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>insertionSort</code> returns a sorted array (least to greatest).');"
+        },
+        {
+          "text": "<code>insertionSort</code> returns an array that is unchanged except for order.",
+          "testString": "assert.sameMembers(insertionSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>insertionSort</code> returns an array that is unchanged except for order.');"
+        },
+        {
+          "text": "<code>insertionSort</code> should not use the built-in <code>.sort()</code> method.",
+          "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>insertionSort</code> should not use the built-in <code>.sort()</code> method.');"
+        }
       ],
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
-      "releasedOn": "February 17, 2017"
+      "releasedOn": "February 17, 2017",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function insertionSort(array) {",
+            "  // change code below this line",
+            "",
+            "  // change code above this line",
+            "  return array;",
+            "}",
+            "",
+            "// test array:",
+            "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
+          ],
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
+        }
+      }
     },
     {
       "id": "587d825a367417b2b2512c89",
@@ -396,34 +597,54 @@
         "<strong>Instructions:</strong> Write a function <code>quickSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. While the choice of the pivot value is important, any pivot will do for our purposes here. For simplicity, the first or last element could be used.",
         "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
-      "challengeSeed": [
-        "function quickSort(array) {",
-        "  // change code below this line",
-        "",
-        "  // change code above this line",
-        "  return array;",
-        "}",
-        "",
-        "// test array:",
-        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
-      ],
       "tests": [
-        "assert(typeof quickSort == 'function', 'message: <code>quickSort</code> is a function.');",
-        "assert(isSorted(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>quickSort</code> returns a sorted array (least to greatest).');",
-        "assert.sameMembers(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>quickSort</code> returns an array that is unchanged except for order.');",
-        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>quickSort</code> should not use the built-in <code>.sort()</code> method.');"
-      ],
-      "tail": [
-        "function isSorted(arr) {",
-        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
-        "  return check(0);",
-        "};"
+        {
+          "text": "<code>quickSort</code> is a function.",
+          "testString": "assert(typeof quickSort == 'function', '<code>quickSort</code> is a function.');"
+        },
+        {
+          "text": "<code>quickSort</code> returns a sorted array (least to greatest).",
+          "testString": "assert(isSorted(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>quickSort</code> returns a sorted array (least to greatest).');"
+        },
+        {
+          "text": "<code>quickSort</code> returns an array that is unchanged except for order.",
+          "testString": "assert.sameMembers(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>quickSort</code> returns an array that is unchanged except for order.');"
+        },
+        {
+          "text": "<code>quickSort</code> should not use the built-in <code>.sort()</code> method.",
+          "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>quickSort</code> should not use the built-in <code>.sort()</code> method.');"
+        }
       ],
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
-      "releasedOn": "February 17, 2017"
+      "releasedOn": "February 17, 2017",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function quickSort(array) {",
+            "  // change code below this line",
+            "",
+            "  // change code above this line",
+            "  return array;",
+            "}",
+            "",
+            "// test array:",
+            "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
+          ],
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
+        }
+      }
     },
     {
       "id": "587d825c367417b2b2512c8f",
@@ -437,34 +658,54 @@
         "<strong>Instructions:</strong> Write a function <code>mergeSort</code> which takes an array of integers as input and returns an array of these integers in sorted order from least to greatest. A good way to implement this is to write one function, for instance <code>merge</code>, which is responsible for merging two sorted arrays, and another function, for instance <code>mergeSort</code>, which is responsible for the recursion that produces single-item arrays to feed into merge. Good luck!",
         "<strong>Note:</strong><br>We are calling this function from behind the scenes; the test array we are using is commented out in the editor. Try logging <code>array</code> to see your sorting algorithm in action!"
       ],
-      "challengeSeed": [
-        "function mergeSort(array) {",
-        "  // change code below this line",
-        "",
-        "  // change code above this line",
-        "  return array;",
-        "}",
-        "",
-        "// test array:",
-        "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
-      ],
       "tests": [
-        "assert(typeof mergeSort == 'function', 'message: <code>mergeSort</code> is a function.');",
-        "assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), 'message: <code>mergeSort</code> returns a sorted array (least to greatest).');",
-        "assert.sameMembers(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], 'message: <code>mergeSort</code> returns an array that is unchanged except for order.');",
-        "assert.strictEqual(code.search(/\\.sort\\(/), -1, 'message: <code>mergeSort</code> should not use the built-in <code>.sort()</code> method.');"
-      ],
-      "tail": [
-        "function isSorted(arr) {",
-        "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
-        "  return check(0);",
-        "};"
+        {
+          "text": "<code>mergeSort</code> is a function.",
+          "testString": "assert(typeof mergeSort == 'function', '<code>mergeSort</code> is a function.');"
+        },
+        {
+          "text": "<code>mergeSort</code> returns a sorted array (least to greatest).",
+          "testString": "assert(isSorted(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92])), '<code>mergeSort</code> returns a sorted array (least to greatest).');"
+        },
+        {
+          "text": "<code>mergeSort</code> returns an array that is unchanged except for order.",
+          "testString": "assert.sameMembers(mergeSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]), [1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92], '<code>mergeSort</code> returns an array that is unchanged except for order.');"
+        },
+        {
+          "text": "<code>mergeSort</code> should not use the built-in <code>.sort()</code> method.",
+          "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>mergeSort</code> should not use the built-in <code>.sort()</code> method.');"
+        }
       ],
       "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
-      "releasedOn": "February 17, 2017"
+      "releasedOn": "February 17, 2017",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function mergeSort(array) {",
+            "  // change code below this line",
+            "",
+            "  // change code above this line",
+            "  return array;",
+            "}",
+            "",
+            "// test array:",
+            "// [1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]"
+          ],
+          "head": [],
+          "tail": [
+            "function isSorted(arr) {",
+            "  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);",
+            "  return check(0);",
+            "};"
+          ]
+        }
+      }
     }
   ]
 }

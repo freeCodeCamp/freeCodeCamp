@@ -5,25 +5,6 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "58af0b4b4bbe015e85a91dbe",
-      "title": "Quality Assurance Introduction",
-      "description": [
-        [
-          "",
-          "",
-          "As your programs become more complex, you need to test them often to make sure any new code you add doesn't break the program's original functionality. Chai is a JavaScript testing library that helps you check that your program still behaves the way you expect it to after you make changes. Using Chai, you can write tests that describe your program's requirements and see if your program meets them.<br><br>Working on these challenges will involve you writing your code on Glitch on our starter project. After completing each challenge you can copy your public glitch url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!",
-          ""
-        ]
-      ],
-      "releasedOn": "Feb 17, 2017",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {}
-    },
-    {
       "id": "587d824a367417b2b2512c46",
       "title": "Learn How JavaScript Assertions Work",
       "description": [
