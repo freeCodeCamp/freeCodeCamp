@@ -119,31 +119,33 @@ export default function setupPassport(app) {
         passport.authenticate(
           strategy,
           { session: false },
-          (err, user) => {
+          (err, user, userInfo) => {
+
             if (err) {
               return next(err);
             }
 
-            if (!user) {
+            if (!user || !userInfo) {
               return res.redirect(config.failureRedirect);
             }
             let redirect = url.parse(successRedirect(req), true);
 
             delete redirect.search;
 
-            req.flash(
-              'success',
-              'Success! You have signed in to your account. Happy Coding!'
-            );
-
-            // redirect.query = {
-            //   /* eslint-disable camelcase */
-            //   access_token: info.accessToken.id,
-            //   /* eslint-enable camelcase */
-            //   userId: user.id.toString()
-            // };
-
-            user.loginByRequest(req, res);
+            const { accessToken } = userInfo;
+            if (accessToken && accessToken.id) {
+              req.flash(
+                'success',
+                'Success! You have signed in to your account. Happy Coding!'
+              );
+              const cookieConfig = {
+                signed: !!req.signedCookies,
+                maxAge: accessToken.ttl
+              };
+              res.cookie('access_token', accessToken.id, cookieConfig);
+              res.cookie('userId', accessToken.userId, cookieConfig);
+              req.login(user);
+            }
 
             redirect = url.format(redirect);
             return res.redirect(redirect);
