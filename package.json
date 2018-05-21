@@ -1,8 +1,11 @@
 {
   "name": "@freecodecamp/curriculum",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "freeCodeCamp's curriculum seed files",
   "main": "dist/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "npm run build:js && npm run build:json",
     "build:json": "gulp json:minify",
@@ -10,7 +13,8 @@
     "prepack": "npm run build",
     "unpack": "babel-node ./unpack.js",
     "repack": "babel-node ./repack.js",
-    "test": "babel-node ./test-challenges.js | tap-spec"
+    "test": "babel-node ./test-challenges.js | tap-spec",
+    "release": "np"
   },
   "repository": {
     "type": "git",
@@ -46,6 +50,7 @@
     "joi-objectid": "^2.0.0",
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
+    "np": "*",
     "tap-spec": "^4.1.1",
     "tape": "^4.9.0",
     "validator": "^10.2.0"
