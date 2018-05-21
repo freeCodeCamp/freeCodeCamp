@@ -53,13 +53,30 @@ export default function(UserIdent) {
       const email = profile.emails[0].value;
       return User.findOne$({ where: { email } })
         .flatMap(user => {
+          const createToken = observeQuery(
+            AccessToken,
+            'create',
+            {
+              userId: user.id,
+              created: new Date(),
+              ttl: user.constructor.settings.ttl
+            }
+          );
           if (!user) {
-            return User.create$({ email });
+            return Observable.combineLatest(
+              User.create$({ email }),
+              createToken,
+              (user, token) => ({ user, token })
+            );
           }
-          return Observable.of(user);
+          return Observable.combineLatest(
+            Observable.of(user),
+            createToken,
+            (user, token) => ({ user, token })
+          );
         })
         .subscribe(
-          ( user ) => cb(null, user, null, null),
+          ({ user, token }) => cb(null, user, null, token),
           cb
         );
 
