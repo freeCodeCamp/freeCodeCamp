@@ -14,6 +14,13 @@ header {
   border: none;
   display: flex;
   justify-content: space-between;
+  padding: 0 30px 0 15px;
+}
+
+@media screen, (max-width: 630px) {
+  #top-nav {
+    padding: 0;
+  }
 }
 
 #top-nav .home-link {
@@ -22,7 +29,7 @@ header {
 }
 
 #top-nav img {
-  max-height: 36px;
+  max-height: 25px;
   margin: 0 5px 0 10px;
 }
 
@@ -41,9 +48,23 @@ header {
 #top-right-nav li > a {
   color:#fff;
   font-size: 17px;
+  font-weight: 700;
 }
 
 #top-right-nav li > a:hover, #top-right-nav li > a:focus {
   text-decoration: none;
   font-weight: 700;
+}
+
+
+/* Search bar */
+.fcc_searchBar {
+  flex-grow: 0.8;
+  padding: 2px 10px 0;
+}
+.ais-SearchBox-form {
+  margin-bottom: 0;
+}
+.ais-Hits {
+  background-color: #fff;
 }

@@ -35,8 +35,10 @@
     "react": "16",
     "react-bootstrap": "^0.32.1",
     "react-dom": "16",
+    "react-freecodecamp-search": "^2.0.2",
     "react-ga": "^2.5.2",
     "react-helmet": "^5.2.0",
+    "react-media": "^1.8.0",
     "react-monaco-editor": "^0.14.1",
     "react-redux": "^5.0.7",
     "react-reflex": "^2.2.1",
@@ -84,6 +86,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-freecodecamp": "^1.1.1",
