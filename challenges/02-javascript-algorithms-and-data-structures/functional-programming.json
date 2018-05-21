@@ -5,24 +5,6 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7b8d367417b2b2512b5a",
-      "title": "Introduction to the Functional Programming Challenges",
-      "description": [
-        [
-          "",
-          "",
-          "Functional programming is an approach to software development based around the evaluation of functions. Like mathematics, functions in programming map input to output to produce a result. You can combine basic functions in many ways to build more and more complex programs.<br><br>Functional programming follows a few core principles:<br><br><ul><li>Functions are independent from the state of the program or global variables. They only depend on the arguments passed into them to make a calculation</li><br><li>Functions try to limit any changes to the state of the program and avoid changes to the global objects holding data</li><br><li>Functions have minimal side effects in the program</li></ul><br><br>The functional programming software development approach breaks a program into small, testable parts. This section covers basic functional programming principles in JavaScript.",
-          ""
-        ]
-      ],
-      "releasedOn": "",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "isRequired": false
-    },
-    {
       "id": "587d7b8d367417b2b2512b5b",
       "title": "Learn About Functional Programming",
       "description": [
@@ -36,46 +18,61 @@
         "The members of freeCodeCamp happen to love tea.",
         "In the code editor, the <code>prepareTea</code> and <code>getTea</code> functions are already defined for you. Call the <code>getTea</code> function to get 40 cups of tea for the team, and store them in the <code>tea4TeamFCC</code> variable."
       ],
-      "challengeSeed": [
-        "/**",
-        " * A long process to prepare tea.",
-        " * @return {string} A cup of tea.",
-        " **/",
-        "const prepareTea = () => 'greenTea';",
-        "",
-        "/**",
-        " * Get given number of cups of tea.",
-        " * @param {number} numOfCups Number of required cups of tea.",
-        " * @return {Array<string>} Given amount of tea cups.",
-        " **/",
-        "const getTea = (numOfCups) => {",
-        "  const teaCups = [];",
-        "  ",
-        "  for(let cups = 1; cups <= numOfCups; cups += 1) {",
-        "    const teaCup = prepareTea();",
-        "    teaCups.push(teaCup);",
-        "  }",
-        "",
-        "  return teaCups;",
-        "};",
-        "",
-        "// Add your code below this line",
-        "",
-        "const tea4TeamFCC = null; // :(",
-        "",
-        "// Add your code above this line",
-        "",
-        "console.log(tea4TeamFCC);"
-      ],
       "tests": [
-        "assert(tea4TeamFCC.length === 40, 'message: The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.');",
-        "assert(tea4TeamFCC[0] === 'greenTea', 'message: The <code>tea4TeamFCC</code> variable should hold cups of green tea.');"
+        {
+          "text": "The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.",
+          "testString": "assert(tea4TeamFCC.length === 40, 'The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.');"
+        },
+        {
+          "text": "The <code>tea4TeamFCC</code> variable should hold cups of green tea.",
+          "testString": "assert(tea4TeamFCC[0] === 'greenTea', 'The <code>tea4TeamFCC</code> variable should hold cups of green tea.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "/**",
+            " * A long process to prepare tea.",
+            " * @return {string} A cup of tea.",
+            " **/",
+            "const prepareTea = () => 'greenTea';",
+            "",
+            "/**",
+            " * Get given number of cups of tea.",
+            " * @param {number} numOfCups Number of required cups of tea.",
+            " * @return {Array<string>} Given amount of tea cups.",
+            " **/",
+            "const getTea = (numOfCups) => {",
+            "  const teaCups = [];",
+            "  ",
+            "  for(let cups = 1; cups <= numOfCups; cups += 1) {",
+            "    const teaCup = prepareTea();",
+            "    teaCups.push(teaCup);",
+            "  }",
+            "",
+            "  return teaCups;",
+            "};",
+            "",
+            "// Add your code below this line",
+            "",
+            "const tea4TeamFCC = null; // :(",
+            "",
+            "// Add your code above this line",
+            "",
+            "console.log(tea4TeamFCC);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8e367417b2b2512b5c",
@@ -92,59 +89,80 @@
         "Prepare 27 cups of green tea and 13 cups of black tea and store them in <code>tea4GreenTeamFCC</code> and <code>tea4BlackTeamFCC</code> variables, respectively. Note that the <code>getTea</code> function has been modified so it now takes a function as the first argument.",
         "Note: The data (the number of cups of tea) is supplied as the last argument. We'll discuss this more in later lessons."
       ],
-      "challengeSeed": [
-        "/**",
-        " * A long process to prepare green tea.",
-        " * @return {string} A cup of green tea.",
-        " **/",
-        "const prepareGreenTea = () => 'greenTea';",
-        "",
-        "/**",
-        " * A long process to prepare black tea.",
-        " * @return {string} A cup of black tea.",
-        " **/",
-        "const prepareBlackTea = () => 'blackTea';",
-        "",
-        "/**",
-        " * Get given number of cups of tea.",
-        " * @param {function():string} prepareTea The type of tea preparing function.",
-        " * @param {number} numOfCups Number of required cups of tea.",
-        " * @return {Array<string>} Given amount of tea cups.",
-        " **/",
-        "const getTea = (prepareTea, numOfCups) => {",
-        "  const teaCups = [];",
-        "",
-        "  for(let cups = 1; cups <= numOfCups; cups += 1) {",
-        "    const teaCup = prepareTea();",
-        "    teaCups.push(teaCup);",
-        "  }",
-        "",
-        "  return teaCups;",
-        "};",
-        "",
-        "// Add your code below this line",
-        "",
-        "const tea4GreenTeamFCC = null; // :(",
-        "const tea4BlackTeamFCC = null; // :(",
-        "",
-        "// Add your code above this line",
-        "",
-        "console.log(",
-        "  tea4GreenTeamFCC,",
-        "  tea4BlackTeamFCC",
-        ");"
-      ],
       "tests": [
-        "assert(tea4GreenTeamFCC.length === 27, 'message: The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.');",
-        "assert(tea4GreenTeamFCC[0] === 'greenTea', 'message: The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.');",
-        "assert(tea4BlackTeamFCC.length === 13, 'message: The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.');",
-        "assert(tea4BlackTeamFCC[0] === 'blackTea', 'message: The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.');"
+        {
+          "text": "The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.",
+          "testString": "assert(tea4GreenTeamFCC.length === 27, 'The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.');"
+        },
+        {
+          "text": "The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.",
+          "testString": "assert(tea4GreenTeamFCC[0] === 'greenTea', 'The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.');"
+        },
+        {
+          "text": "The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.",
+          "testString": "assert(tea4BlackTeamFCC.length === 13, 'The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.');"
+        },
+        {
+          "text": "The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.",
+          "testString": "assert(tea4BlackTeamFCC[0] === 'blackTea', 'The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "/**",
+            " * A long process to prepare green tea.",
+            " * @return {string} A cup of green tea.",
+            " **/",
+            "const prepareGreenTea = () => 'greenTea';",
+            "",
+            "/**",
+            " * A long process to prepare black tea.",
+            " * @return {string} A cup of black tea.",
+            " **/",
+            "const prepareBlackTea = () => 'blackTea';",
+            "",
+            "/**",
+            " * Get given number of cups of tea.",
+            " * @param {function():string} prepareTea The type of tea preparing function.",
+            " * @param {number} numOfCups Number of required cups of tea.",
+            " * @return {Array<string>} Given amount of tea cups.",
+            " **/",
+            "const getTea = (prepareTea, numOfCups) => {",
+            "  const teaCups = [];",
+            "",
+            "  for(let cups = 1; cups <= numOfCups; cups += 1) {",
+            "    const teaCup = prepareTea();",
+            "    teaCups.push(teaCup);",
+            "  }",
+            "",
+            "  return teaCups;",
+            "};",
+            "",
+            "// Add your code below this line",
+            "",
+            "const tea4GreenTeamFCC = null; // :(",
+            "const tea4BlackTeamFCC = null; // :(",
+            "",
+            "// Add your code above this line",
+            "",
+            "console.log(",
+            "  tea4GreenTeamFCC,",
+            "  tea4BlackTeamFCC",
+            ");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8e367417b2b2512b5d",
@@ -162,54 +180,66 @@
         "Run the code in the editor. It's using a method that has side effects in the program, causing incorrect output. The final list of open tabs should be <code>['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium', 'new tab', 'Netflix', 'YouTube', 'Vine', 'GMail', 'Work mail', 'Docs', 'freeCodeCamp', 'new tab']</code> but the output will be slightly different.",
         "Work through the code and see if you can figure out the problem, then advance to the next challenge to learn more."
       ],
-      "challengeSeed": [
-        "// tabs is an array of titles of each site open within the window",
-        "var Window = function(tabs) {",
-        "  this.tabs = tabs; // we keep a record of the array inside the object",
-        "};",
-        "",
-        "// When you join two windows into one window",
-        "Window.prototype.join = function (otherWindow) {",
-        "  this.tabs = this.tabs.concat(otherWindow.tabs);",
-        "  return this;",
-        "};",
-        "",
-        "// When you open a new tab at the end",
-        "Window.prototype.tabOpen = function (tab) {",
-        "  this.tabs.push('new tab'); // let's open a new tab for now",
-        "  return this;",
-        "};",
-        "",
-        "// When you close a tab",
-        "Window.prototype.tabClose = function (index) {",
-        "  var tabsBeforeIndex = this.tabs.splice(0, index); // get the tabs before the tab",
-        "  var tabsAfterIndex = this.tabs.splice(index); // get the tabs after the tab",
-        "",
-        "  this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // join them together ",
-        "  return this;",
-        " };",
-        "",
-        "// Let's create three browser windows",
-        "var workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']); // Your mailbox, drive, and other work sites",
-        "var socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // Social sites",
-        "var videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); //  Entertainment sites",
-        "",
-        "// Now perform the tab opening, closing, and other operations",
-        "var finalTabs = socialWindow",
-        "                    .tabOpen() // Open a new tab for cat memes",
-        "                    .join(videoWindow.tabClose(2)) // Close third tab in video window, and join",
-        "                    .join(workWindow.tabClose(1).tabOpen());",
-        "",
-        "alert(finalTabs.tabs);"
-      ],
       "tests": [
-        "assert(true, 'message: Move ahead to understand the error.');"
+        {
+          "text": "Move ahead to understand the error.",
+          "testString": "assert(true, 'Move ahead to understand the error.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// tabs is an array of titles of each site open within the window",
+            "var Window = function(tabs) {",
+            "  this.tabs = tabs; // we keep a record of the array inside the object",
+            "};",
+            "",
+            "// When you join two windows into one window",
+            "Window.prototype.join = function (otherWindow) {",
+            "  this.tabs = this.tabs.concat(otherWindow.tabs);",
+            "  return this;",
+            "};",
+            "",
+            "// When you open a new tab at the end",
+            "Window.prototype.tabOpen = function (tab) {",
+            "  this.tabs.push('new tab'); // let's open a new tab for now",
+            "  return this;",
+            "};",
+            "",
+            "// When you close a tab",
+            "Window.prototype.tabClose = function (index) {",
+            "  var tabsBeforeIndex = this.tabs.splice(0, index); // get the tabs before the tab",
+            "  var tabsAfterIndex = this.tabs.splice(index); // get the tabs after the tab",
+            "",
+            "  this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // join them together ",
+            "  return this;",
+            " };",
+            "",
+            "// Let's create three browser windows",
+            "var workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']); // Your mailbox, drive, and other work sites",
+            "var socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']); // Social sites",
+            "var videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); //  Entertainment sites",
+            "",
+            "// Now perform the tab opening, closing, and other operations",
+            "var finalTabs = socialWindow",
+            "                    .tabOpen() // Open a new tab for cat memes",
+            "                    .join(videoWindow.tabClose(2)) // Close third tab in video window, and join",
+            "                    .join(workWindow.tabClose(1).tabOpen());",
+            "",
+            "alert(finalTabs.tabs);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8e367417b2b2512b5e",
@@ -224,29 +254,44 @@
         "<hr>",
         "Fill in the code for the function <code>incrementer</code> so it returns the value of the global variable <code>fixedValue</code> increased by one."
       ],
-      "challengeSeed": [
-        "// the global variable",
-        "var fixedValue = 4;",
-        "",
-        "function incrementer () {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "",
-        "var newValue = incrementer(); // Should equal 5",
-        "console.log(fixedValue); // Should print 4"
-      ],
       "tests": [
-        "assert(fixedValue === 4, 'message: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');",
-        "assert(newValue === 5, 'message: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
+        {
+          "text": "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.",
+          "testString": "assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');"
+        },
+        {
+          "text": "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.",
+          "testString": "assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global variable",
+            "var fixedValue = 4;",
+            "",
+            "function incrementer () {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "",
+            "var newValue = incrementer(); // Should equal 5",
+            "console.log(fixedValue); // Should print 4"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8e367417b2b2512b5f",
@@ -262,30 +307,48 @@
         "Let's update the <code>incrementer</code> function to clearly declare its dependencies.",
         "Write the <code>incrementer</code> function so it takes an argument, and then increases the value by one."
       ],
-      "challengeSeed": [
-        "// the global variable",
-        "var fixedValue = 4;",
-        "",
-        "// Add your code below this line",
-        "function incrementer () {",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "",
-        "var newValue = incrementer(fixedValue); // Should equal 5",
-        "console.log(fixedValue); // Should print 4"
-      ],
       "tests": [
-        "assert(fixedValue === 4, 'message: Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');",
-        "assert(code.match(/function\\s+?incrementer\\s*?\\(.+?\\)/g), 'message: Your <code>incrementer</code> function should take a parameter.');",
-        "assert(newValue === 5, 'message: Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
+        {
+          "text": "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.",
+          "testString": "assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');"
+        },
+        {
+          "text": "Your <code>incrementer</code> function should take a parameter.",
+          "testString": "assert(code.match(/function\\s+?incrementer\\s*?\\(.+?\\)/g), 'Your <code>incrementer</code> function should take a parameter.');"
+        },
+        {
+          "text": "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.",
+          "testString": "assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global variable",
+            "var fixedValue = 4;",
+            "",
+            "// Add your code below this line",
+            "function incrementer () {",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "",
+            "var newValue = incrementer(fixedValue); // Should equal 5",
+            "console.log(fixedValue); // Should print 4"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8f367417b2b2512b60",
@@ -298,45 +361,23 @@
         "<hr>",
         "Refactor (rewrite) the code so the global array <code>bookList</code> is not changed inside either function. The <code>add</code> function should add the given <code>bookName</code> to the end of an array. The <code>remove</code> function should remove the given <code>bookName</code> from an array. Both functions should return an array, and any new parameters should be added before the <code>bookName</code> one."
       ],
-      "challengeSeed": [
-        "// the global variable",
-        "var bookList = [\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"];",
-        "",
-        "/* This function should add a book to the list and return the list */",
-        "// New parameters should come before the bookName one",
-        "",
-        "// Add your code below this line",
-        "function add (bookName) {",
-        "  ",
-        "  return bookList.push(bookName);",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "",
-        "/* This function should remove a book from the list and return the list */",
-        "// New parameters should come before the bookName one",
-        "",
-        "// Add your code below this line",
-        "function remove (bookName) {",
-        "  if (bookList.indexOf(bookName) >= 0) {",
-        "    ",
-        "    return bookList.splice(0, 1, bookName);",
-        "    ",
-        "    // Add your code above this line",
-        "    }",
-        "}",
-        "",
-        "var newBookList = add(bookList, 'A Brief History of Time');",
-        "var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');",
-        "var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');",
-        "",
-        "console.log(bookList);"
-      ],
       "tests": [
-        "assert(JSON.stringify(bookList) === JSON.stringify([\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]), 'message: <code>bookList</code> should not change and still equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');",
-        "assert(JSON.stringify(newBookList) === JSON.stringify(['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), 'message: <code>newBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');",
-        "assert(JSON.stringify(newerBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']), 'message: <code>newerBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');",
-        "assert(JSON.stringify(newestBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), 'message: <code>newestBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
+        {
+          "text": "<code>bookList</code> should not change and still equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.",
+          "testString": "assert(JSON.stringify(bookList) === JSON.stringify([\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]), '<code>bookList</code> should not change and still equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');"
+        },
+        {
+          "text": "<code>newBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.",
+          "testString": "assert(JSON.stringify(newBookList) === JSON.stringify(['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
+        },
+        {
+          "text": "<code>newerBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.",
+          "testString": "assert(JSON.stringify(newerBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']), '<code>newerBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');"
+        },
+        {
+          "text": "<code>newestBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.",
+          "testString": "assert(JSON.stringify(newestBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newestBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [
@@ -346,7 +387,50 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global variable",
+            "var bookList = [\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"];",
+            "",
+            "/* This function should add a book to the list and return the list */",
+            "// New parameters should come before the bookName one",
+            "",
+            "// Add your code below this line",
+            "function add (bookName) {",
+            "  ",
+            "  return bookList.push(bookName);",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "",
+            "/* This function should remove a book from the list and return the list */",
+            "// New parameters should come before the bookName one",
+            "",
+            "// Add your code below this line",
+            "function remove (bookName) {",
+            "  if (bookList.indexOf(bookName) >= 0) {",
+            "    ",
+            "    return bookList.splice(0, 1, bookName);",
+            "    ",
+            "    // Add your code above this line",
+            "    }",
+            "}",
+            "",
+            "var newBookList = add(bookList, 'A Brief History of Time');",
+            "var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');",
+            "var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');",
+            "",
+            "console.log(bookList);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8f367417b2b2512b61",
@@ -360,143 +444,164 @@
         "<hr>",
         "The <code>watchList</code> array holds objects with information on several movies. Use <code>map</code> to pull the title and rating from <code>watchList</code> and save the new array in the <code>rating</code> variable. The code in the editor currently uses a <code>for</code> loop to do this, replace the loop functionality with your <code>map</code> expression."
       ],
-      "challengeSeed": [
-        "// the global variable",
-        "var watchList = [",
-        "                 {  ",
-        "                   \"Title\": \"Inception\",",
-        "                   \"Year\": \"2010\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"16 Jul 2010\",",
-        "                   \"Runtime\": \"148 min\",",
-        "                   \"Genre\": \"Action, Adventure, Crime\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Christopher Nolan\",",
-        "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
-        "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
-        "                   \"Language\": \"English, Japanese, French\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"74\",",
-        "                   \"imdbRating\": \"8.8\",",
-        "                   \"imdbVotes\": \"1,446,708\",",
-        "                   \"imdbID\": \"tt1375666\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {  ",
-        "                   \"Title\": \"Interstellar\",",
-        "                   \"Year\": \"2014\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"07 Nov 2014\",",
-        "                   \"Runtime\": \"169 min\",",
-        "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
-        "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
-        "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
-        "                   \"Language\": \"English\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"74\",",
-        "                   \"imdbRating\": \"8.6\",",
-        "                   \"imdbVotes\": \"910,366\",",
-        "                   \"imdbID\": \"tt0816692\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {",
-        "                   \"Title\": \"The Dark Knight\",",
-        "                   \"Year\": \"2008\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"18 Jul 2008\",",
-        "                   \"Runtime\": \"152 min\",",
-        "                   \"Genre\": \"Action, Adventure, Crime\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
-        "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
-        "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
-        "                   \"Language\": \"English, Mandarin\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"82\",",
-        "                   \"imdbRating\": \"9.0\",",
-        "                   \"imdbVotes\": \"1,652,832\",",
-        "                   \"imdbID\": \"tt0468569\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {  ",
-        "                   \"Title\": \"Batman Begins\",",
-        "                   \"Year\": \"2005\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"15 Jun 2005\",",
-        "                   \"Runtime\": \"140 min\",",
-        "                   \"Genre\": \"Action, Adventure\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
-        "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
-        "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
-        "                   \"Language\": \"English, Urdu, Mandarin\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"70\",",
-        "                   \"imdbRating\": \"8.3\",",
-        "                   \"imdbVotes\": \"972,584\",",
-        "                   \"imdbID\": \"tt0372784\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {",
-        "                   \"Title\": \"Avatar\",",
-        "                   \"Year\": \"2009\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"18 Dec 2009\",",
-        "                   \"Runtime\": \"162 min\",",
-        "                   \"Genre\": \"Action, Adventure, Fantasy\",",
-        "                   \"Director\": \"James Cameron\",",
-        "                   \"Writer\": \"James Cameron\",",
-        "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
-        "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
-        "                   \"Language\": \"English, Spanish\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"83\",",
-        "                   \"imdbRating\": \"7.9\",",
-        "                   \"imdbVotes\": \"876,575\",",
-        "                   \"imdbID\": \"tt0499549\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                }",
-        "];",
-        "",
-        "// Add your code below this line",
-        "",
-        "var rating = [];",
-        "for(var i=0; i < watchList.length; i++){",
-        "  rating.push({title: watchList[i][\"Title\"],  rating: watchList[i][\"imdbRating\"]});",
-        "}",
-        "",
-        "// Add your code above this line",
-        "",
-        "console.log(rating); "
-      ],
       "tests": [
-        "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'message: The <code>watchList</code> variable should not change.');",
-        "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'message: Your code should not use a <code>for</code> loop.');",
-        "assert(code.match(/\\.map/g), 'message: Your code should use the <code>map</code> method.');",
-        "assert(JSON.stringify(rating) === JSON.stringify([{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]), 'message: <code>rating</code> should equal <code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.');"
+        {
+          "text": "The <code>watchList</code> variable should not change.",
+          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
+        },
+        {
+          "text": "Your code should not use a <code>for</code> loop.",
+          "testString": "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'Your code should not use a <code>for</code> loop.');"
+        },
+        {
+          "text": "Your code should use the <code>map</code> method.",
+          "testString": "assert(code.match(/\\.map/g), 'Your code should use the <code>map</code> method.');"
+        },
+        {
+          "text": "<code>rating</code> should equal <code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.",
+          "testString": "assert(JSON.stringify(rating) === JSON.stringify([{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]), '<code>rating</code> should equal <code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global variable",
+            "var watchList = [",
+            "                 {  ",
+            "                   \"Title\": \"Inception\",",
+            "                   \"Year\": \"2010\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"16 Jul 2010\",",
+            "                   \"Runtime\": \"148 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Christopher Nolan\",",
+            "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+            "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+            "                   \"Language\": \"English, Japanese, French\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.8\",",
+            "                   \"imdbVotes\": \"1,446,708\",",
+            "                   \"imdbID\": \"tt1375666\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Interstellar\",",
+            "                   \"Year\": \"2014\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"07 Nov 2014\",",
+            "                   \"Runtime\": \"169 min\",",
+            "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+            "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+            "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+            "                   \"Language\": \"English\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.6\",",
+            "                   \"imdbVotes\": \"910,366\",",
+            "                   \"imdbID\": \"tt0816692\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"The Dark Knight\",",
+            "                   \"Year\": \"2008\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Jul 2008\",",
+            "                   \"Runtime\": \"152 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+            "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+            "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+            "                   \"Language\": \"English, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"82\",",
+            "                   \"imdbRating\": \"9.0\",",
+            "                   \"imdbVotes\": \"1,652,832\",",
+            "                   \"imdbID\": \"tt0468569\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Batman Begins\",",
+            "                   \"Year\": \"2005\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"15 Jun 2005\",",
+            "                   \"Runtime\": \"140 min\",",
+            "                   \"Genre\": \"Action, Adventure\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+            "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+            "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+            "                   \"Language\": \"English, Urdu, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"70\",",
+            "                   \"imdbRating\": \"8.3\",",
+            "                   \"imdbVotes\": \"972,584\",",
+            "                   \"imdbID\": \"tt0372784\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"Avatar\",",
+            "                   \"Year\": \"2009\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Dec 2009\",",
+            "                   \"Runtime\": \"162 min\",",
+            "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+            "                   \"Director\": \"James Cameron\",",
+            "                   \"Writer\": \"James Cameron\",",
+            "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+            "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+            "                   \"Language\": \"English, Spanish\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"83\",",
+            "                   \"imdbRating\": \"7.9\",",
+            "                   \"imdbVotes\": \"876,575\",",
+            "                   \"imdbID\": \"tt0499549\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                }",
+            "];",
+            "",
+            "// Add your code below this line",
+            "",
+            "var rating = [];",
+            "for(var i=0; i < watchList.length; i++){",
+            "  rating.push({title: watchList[i][\"Title\"],  rating: watchList[i][\"imdbRating\"]});",
+            "}",
+            "",
+            "// Add your code above this line",
+            "",
+            "console.log(rating); "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8f367417b2b2512b62",
@@ -509,32 +614,47 @@
         "<hr>",
         "Write your own <code>Array.prototype.myMap()</code>, which should behave exactly like <code>Array.prototype.map()</code>. You may use a <code>for</code> loop or the <code>forEach</code> method."
       ],
-      "challengeSeed": [
-        "// the global Array",
-        "var s = [23, 65, 98, 5];",
-        "",
-        "Array.prototype.myMap = function(callback){",
-        "  var newArray = [];",
-        "  // Add your code below this line",
-        "  ",
-        "  // Add your code above this line",
-        "  return newArray;",
-        "",
-        "};",
-        "",
-        "var new_s = s.myMap(function(item){",
-        "  return item * 2;",
-        "});"
-      ],
       "tests": [
-        "assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]), 'message: <code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.');",
-        "assert(!code.match(/\\.map/g), 'message: Your code should not use the <code>map</code> method.');"
+        {
+          "text": "<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.",
+          "testString": "assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]), '<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.');"
+        },
+        {
+          "text": "Your code should not use the <code>map</code> method.",
+          "testString": "assert(!code.match(/\\.map/g), 'Your code should not use the <code>map</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global Array",
+            "var s = [23, 65, 98, 5];",
+            "",
+            "Array.prototype.myMap = function(callback){",
+            "  var newArray = [];",
+            "  // Add your code below this line",
+            "  ",
+            "  // Add your code above this line",
+            "  return newArray;",
+            "",
+            "};",
+            "",
+            "var new_s = s.myMap(function(item){",
+            "  return item * 2;",
+            "});"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8f367417b2b2512b63",
@@ -545,140 +665,161 @@
         "<hr>",
         "The variable <code>watchList</code> holds an array of objects with information on several movies. Use a combination of <code>filter</code> and <code>map</code> to return a new array of objects with only <code>title</code> and <code>rating</code> keys, but where <code>imdbRating</code> is greater than or equal to 8.0. Note that the rating values are saved as strings in the object and you may want to convert them into numbers to perform mathematical operations on them."
       ],
-      "challengeSeed": [
-        "// the global variable",
-        "var watchList = [",
-        "                 {  ",
-        "                   \"Title\": \"Inception\",",
-        "                   \"Year\": \"2010\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"16 Jul 2010\",",
-        "                   \"Runtime\": \"148 min\",",
-        "                   \"Genre\": \"Action, Adventure, Crime\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Christopher Nolan\",",
-        "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
-        "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
-        "                   \"Language\": \"English, Japanese, French\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"74\",",
-        "                   \"imdbRating\": \"8.8\",",
-        "                   \"imdbVotes\": \"1,446,708\",",
-        "                   \"imdbID\": \"tt1375666\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {  ",
-        "                   \"Title\": \"Interstellar\",",
-        "                   \"Year\": \"2014\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"07 Nov 2014\",",
-        "                   \"Runtime\": \"169 min\",",
-        "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
-        "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
-        "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
-        "                   \"Language\": \"English\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"74\",",
-        "                   \"imdbRating\": \"8.6\",",
-        "                   \"imdbVotes\": \"910,366\",",
-        "                   \"imdbID\": \"tt0816692\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {",
-        "                   \"Title\": \"The Dark Knight\",",
-        "                   \"Year\": \"2008\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"18 Jul 2008\",",
-        "                   \"Runtime\": \"152 min\",",
-        "                   \"Genre\": \"Action, Adventure, Crime\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
-        "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
-        "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
-        "                   \"Language\": \"English, Mandarin\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"82\",",
-        "                   \"imdbRating\": \"9.0\",",
-        "                   \"imdbVotes\": \"1,652,832\",",
-        "                   \"imdbID\": \"tt0468569\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {  ",
-        "                   \"Title\": \"Batman Begins\",",
-        "                   \"Year\": \"2005\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"15 Jun 2005\",",
-        "                   \"Runtime\": \"140 min\",",
-        "                   \"Genre\": \"Action, Adventure\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
-        "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
-        "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
-        "                   \"Language\": \"English, Urdu, Mandarin\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"70\",",
-        "                   \"imdbRating\": \"8.3\",",
-        "                   \"imdbVotes\": \"972,584\",",
-        "                   \"imdbID\": \"tt0372784\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {",
-        "                   \"Title\": \"Avatar\",",
-        "                   \"Year\": \"2009\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"18 Dec 2009\",",
-        "                   \"Runtime\": \"162 min\",",
-        "                   \"Genre\": \"Action, Adventure, Fantasy\",",
-        "                   \"Director\": \"James Cameron\",",
-        "                   \"Writer\": \"James Cameron\",",
-        "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
-        "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
-        "                   \"Language\": \"English, Spanish\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"83\",",
-        "                   \"imdbRating\": \"7.9\",",
-        "                   \"imdbVotes\": \"876,575\",",
-        "                   \"imdbID\": \"tt0499549\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                }",
-        "];",
-        "",
-        "// Add your code below this line",
-        "",
-        "var filteredList;",
-        "",
-        "// Add your code above this line",
-        "",
-        "console.log(filteredList); "
-      ],
       "tests": [
-        "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'message: The <code>watchList</code> variable should not change.');",
-        "assert(code.match(/\\.filter/g), 'message: Your code should use the <code>filter</code> method.');",
-        "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'message: Your code should not use a <code>for</code> loop.');",
-        "assert.deepEqual(filteredList, [{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}], 'message: <code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.');"
+        {
+          "text": "The <code>watchList</code> variable should not change.",
+          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
+        },
+        {
+          "text": "Your code should use the <code>filter</code> method.",
+          "testString": "assert(code.match(/\\.filter/g), 'Your code should use the <code>filter</code> method.');"
+        },
+        {
+          "text": "Your code should not use a <code>for</code> loop.",
+          "testString": "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'Your code should not use a <code>for</code> loop.');"
+        },
+        {
+          "text": "<code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.",
+          "testString": "assert.deepEqual(filteredList, [{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}], '<code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global variable",
+            "var watchList = [",
+            "                 {  ",
+            "                   \"Title\": \"Inception\",",
+            "                   \"Year\": \"2010\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"16 Jul 2010\",",
+            "                   \"Runtime\": \"148 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Christopher Nolan\",",
+            "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+            "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+            "                   \"Language\": \"English, Japanese, French\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.8\",",
+            "                   \"imdbVotes\": \"1,446,708\",",
+            "                   \"imdbID\": \"tt1375666\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Interstellar\",",
+            "                   \"Year\": \"2014\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"07 Nov 2014\",",
+            "                   \"Runtime\": \"169 min\",",
+            "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+            "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+            "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+            "                   \"Language\": \"English\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.6\",",
+            "                   \"imdbVotes\": \"910,366\",",
+            "                   \"imdbID\": \"tt0816692\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"The Dark Knight\",",
+            "                   \"Year\": \"2008\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Jul 2008\",",
+            "                   \"Runtime\": \"152 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+            "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+            "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+            "                   \"Language\": \"English, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"82\",",
+            "                   \"imdbRating\": \"9.0\",",
+            "                   \"imdbVotes\": \"1,652,832\",",
+            "                   \"imdbID\": \"tt0468569\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Batman Begins\",",
+            "                   \"Year\": \"2005\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"15 Jun 2005\",",
+            "                   \"Runtime\": \"140 min\",",
+            "                   \"Genre\": \"Action, Adventure\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+            "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+            "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+            "                   \"Language\": \"English, Urdu, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"70\",",
+            "                   \"imdbRating\": \"8.3\",",
+            "                   \"imdbVotes\": \"972,584\",",
+            "                   \"imdbID\": \"tt0372784\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"Avatar\",",
+            "                   \"Year\": \"2009\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Dec 2009\",",
+            "                   \"Runtime\": \"162 min\",",
+            "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+            "                   \"Director\": \"James Cameron\",",
+            "                   \"Writer\": \"James Cameron\",",
+            "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+            "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+            "                   \"Language\": \"English, Spanish\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"83\",",
+            "                   \"imdbRating\": \"7.9\",",
+            "                   \"imdbVotes\": \"876,575\",",
+            "                   \"imdbID\": \"tt0499549\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                }",
+            "];",
+            "",
+            "// Add your code below this line",
+            "",
+            "var filteredList;",
+            "",
+            "// Add your code above this line",
+            "",
+            "console.log(filteredList); "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b8f367417b2b2512b64",
@@ -689,32 +830,47 @@
         "<hr>",
         "Write your own <code>Array.prototype.myFilter()</code>, which should behave exactly like <code>Array.prototype.filter()</code>. You may use a <code>for</code> loop or the <code>Array.prototype.forEach()</code> method."
       ],
-      "challengeSeed": [
-        "// the global Array",
-        "var s = [23, 65, 98, 5];",
-        "",
-        "Array.prototype.myFilter = function(callback){",
-        "  var newArray = [];",
-        "  // Add your code below this line",
-        "  ",
-        "  // Add your code above this line",
-        "  return newArray;",
-        "",
-        "};",
-        "",
-        "var new_s = s.myFilter(function(item){",
-        "  return item % 2 === 1;",
-        "});"
-      ],
       "tests": [
-        "assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]), 'message: <code>new_s</code> should equal <code>[23, 65, 5]</code>.');",
-        "assert(!code.match(/\\.filter/g), 'message: Your code should not use the <code>filter</code> method.');"
+        {
+          "text": "<code>new_s</code> should equal <code>[23, 65, 5]</code>.",
+          "testString": "assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]), '<code>new_s</code> should equal <code>[23, 65, 5]</code>.');"
+        },
+        {
+          "text": "Your code should not use the <code>filter</code> method.",
+          "testString": "assert(!code.match(/\\.filter/g), 'Your code should not use the <code>filter</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global Array",
+            "var s = [23, 65, 98, 5];",
+            "",
+            "Array.prototype.myFilter = function(callback){",
+            "  var newArray = [];",
+            "  // Add your code below this line",
+            "  ",
+            "  // Add your code above this line",
+            "  return newArray;",
+            "",
+            "};",
+            "",
+            "var new_s = s.myFilter(function(item){",
+            "  return item % 2 === 1;",
+            "});"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b90367417b2b2512b65",
@@ -726,28 +882,52 @@
         "<hr>",
         "Use the <code>slice</code> method in the <code>sliceArray</code> function to return part of the <code>anim</code> array given the provided <code>beginSlice</code> and <code>endSlice</code> indices. The function should return an array."
       ],
-      "challengeSeed": [
-        "function sliceArray(anim, beginSlice, endSlice) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "var inputAnim = [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"];",
-        "sliceArray(inputAnim, 1, 3);"
-      ],
       "tests": [
-        "assert(code.match(/\\.slice/g), 'message: Your code should use the <code>slice</code> method.');",
-        "assert(JSON.stringify(inputAnim) === JSON.stringify([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"]), 'message: The <code>inputAnim</code> variable should not change.');",
-        "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)) === JSON.stringify([\"Dog\", \"Tiger\"]), 'message: <code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code> should return <code>[\"Dog\", \"Tiger\"]</code>.');",
-        "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)) === JSON.stringify([\"Cat\"]), 'message: <code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code> should return <code>[\"Cat\"]</code>.');",
-        "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)) === JSON.stringify([\"Dog\", \"Tiger\", \"Zebra\"]), 'message: <code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code> should return <code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>.');"
+        {
+          "text": "Your code should use the <code>slice</code> method.",
+          "testString": "assert(code.match(/\\.slice/g), 'Your code should use the <code>slice</code> method.');"
+        },
+        {
+          "text": "The <code>inputAnim</code> variable should not change.",
+          "testString": "assert(JSON.stringify(inputAnim) === JSON.stringify([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"]), 'The <code>inputAnim</code> variable should not change.');"
+        },
+        {
+          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code> should return <code>[\"Dog\", \"Tiger\"]</code>.",
+          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)) === JSON.stringify([\"Dog\", \"Tiger\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code> should return <code>[\"Dog\", \"Tiger\"]</code>.');"
+        },
+        {
+          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code> should return <code>[\"Cat\"]</code>.",
+          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)) === JSON.stringify([\"Cat\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code> should return <code>[\"Cat\"]</code>.');"
+        },
+        {
+          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code> should return <code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>.",
+          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)) === JSON.stringify([\"Dog\", \"Tiger\", \"Zebra\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code> should return <code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function sliceArray(anim, beginSlice, endSlice) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "var inputAnim = [\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"];",
+            "sliceArray(inputAnim, 1, 3);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "9d7123c8c441eeafaeb5bdef",
@@ -760,27 +940,48 @@
         "Rewrite the function <code>nonMutatingSplice</code> by using <code>slice</code> instead of <code>splice</code>. It should limit the provided <code>cities</code> array to a length of 3, and return a new array with only the first three items.",
         "Do not mutate the original array provided to the function."
       ],
-      "challengeSeed": [
-        "function nonMutatingSplice(cities) {",
-        "  // Add your code below this line",
-        "  return cities.splice(3);",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "var inputCities = [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"];",
-        "nonMutatingSplice(inputCities);"
-      ],
       "tests": [
-        "assert(code.match(/\\.slice/g), 'message: Your code should use the <code>slice</code> method.');",
-        "assert(!code.match(/\\.splice/g), 'message: Your code should not use the <code>splice</code> method.');",
-        "assert(JSON.stringify(inputCities) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"]), 'message: The <code>inputCities</code> array should not change.');",
-        "assert(JSON.stringify(nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\"]), 'message: <code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code> should return <code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>.');"
+        {
+          "text": "Your code should use the <code>slice</code> method.",
+          "testString": "assert(code.match(/\\.slice/g), 'Your code should use the <code>slice</code> method.');"
+        },
+        {
+          "text": "Your code should not use the <code>splice</code> method.",
+          "testString": "assert(!code.match(/\\.splice/g), 'Your code should not use the <code>splice</code> method.');"
+        },
+        {
+          "text": "The <code>inputCities</code> array should not change.",
+          "testString": "assert(JSON.stringify(inputCities) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"]), 'The <code>inputCities</code> array should not change.');"
+        },
+        {
+          "text": "<code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code> should return <code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>.",
+          "testString": "assert(JSON.stringify(nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\"]), '<code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code> should return <code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function nonMutatingSplice(cities) {",
+            "  // Add your code below this line",
+            "  return cities.splice(3);",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "var inputCities = [\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"];",
+            "nonMutatingSplice(inputCities);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7da9367417b2b2512b66",
@@ -791,28 +992,49 @@
         "<hr>",
         "Use the <code>concat</code> method in the <code>nonMutatingConcat</code> function to concatenate <code>attach</code> to the end of <code>original</code>. The function should return the concatenated array."
       ],
-      "challengeSeed": [
-        "function nonMutatingConcat(original, attach) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "var first = [1, 2, 3];",
-        "var second = [4, 5];",
-        "nonMutatingConcat(first, second);"
-      ],
       "tests": [
-        "assert(code.match(/\\.concat/g), 'message: Your code should use the <code>concat</code> method.');",
-        "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), 'message: The <code>first</code> array should not change.');",
-        "assert(JSON.stringify(second) === JSON.stringify([4, 5]), 'message: The <code>second</code> array should not change.');",
-        "assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), 'message: <code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.');"
+        {
+          "text": "Your code should use the <code>concat</code> method.",
+          "testString": "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
+        },
+        {
+          "text": "The <code>first</code> array should not change.",
+          "testString": "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), 'The <code>first</code> array should not change.');"
+        },
+        {
+          "text": "The <code>second</code> array should not change.",
+          "testString": "assert(JSON.stringify(second) === JSON.stringify([4, 5]), 'The <code>second</code> array should not change.');"
+        },
+        {
+          "text": "<code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.",
+          "testString": "assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), '<code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function nonMutatingConcat(original, attach) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "var first = [1, 2, 3];",
+            "var second = [4, 5];",
+            "nonMutatingConcat(first, second);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7da9367417b2b2512b67",
@@ -825,29 +1047,53 @@
         "<hr>",
         "Change the <code>nonMutatingPush</code> function so it uses <code>concat</code> to add <code>newItem</code> to the end of <code>original</code> instead of <code>push</code>. The function should return an array."
       ],
-      "challengeSeed": [
-        "function nonMutatingPush(original, newItem) {",
-        "  // Add your code below this line",
-        "  return original.push(newItem);",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "var first = [1, 2, 3];",
-        "var second = [4, 5];",
-        "nonMutatingPush(first, second);"
-      ],
       "tests": [
-        "assert(code.match(/\\.concat/g), 'message: Your code should use the <code>concat</code> method.');",
-        "assert(!code.match(/\\.push/g), 'message: Your code should not use the <code>push</code> method.');",
-        "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), 'message: The <code>first</code> array should not change.');",
-        "assert(JSON.stringify(second) === JSON.stringify([4, 5]), 'message: The <code>second</code> array should not change.');",
-        "assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), 'message: <code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.');"
+        {
+          "text": "Your code should use the <code>concat</code> method.",
+          "testString": "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
+        },
+        {
+          "text": "Your code should not use the <code>push</code> method.",
+          "testString": "assert(!code.match(/\\.push/g), 'Your code should not use the <code>push</code> method.');"
+        },
+        {
+          "text": "The <code>first</code> array should not change.",
+          "testString": "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), 'The <code>first</code> array should not change.');"
+        },
+        {
+          "text": "The <code>second</code> array should not change.",
+          "testString": "assert(JSON.stringify(second) === JSON.stringify([4, 5]), 'The <code>second</code> array should not change.');"
+        },
+        {
+          "text": "<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.",
+          "testString": "assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), '<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function nonMutatingPush(original, newItem) {",
+            "  // Add your code below this line",
+            "  return original.push(newItem);",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "var first = [1, 2, 3];",
+            "var second = [4, 5];",
+            "nonMutatingPush(first, second);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7da9367417b2b2512b68",
@@ -860,134 +1106,23 @@
         "<hr>",
         "The variable <code>watchList</code> holds an array of objects with information on several movies. Use <code>reduce</code> to find the average IMDB rating of the movies directed by Christopher Nolan. Recall from prior challenges how to <code>filter</code> data and <code>map</code> over it to pull what you need. You may need to create other variables, but save the final average into the variable <code>averageRating</code>. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations."
       ],
-      "challengeSeed": [
-        "// the global variable",
-        "var watchList = [",
-        "                 {  ",
-        "                   \"Title\": \"Inception\",",
-        "                   \"Year\": \"2010\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"16 Jul 2010\",",
-        "                   \"Runtime\": \"148 min\",",
-        "                   \"Genre\": \"Action, Adventure, Crime\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Christopher Nolan\",",
-        "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
-        "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
-        "                   \"Language\": \"English, Japanese, French\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"74\",",
-        "                   \"imdbRating\": \"8.8\",",
-        "                   \"imdbVotes\": \"1,446,708\",",
-        "                   \"imdbID\": \"tt1375666\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {  ",
-        "                   \"Title\": \"Interstellar\",",
-        "                   \"Year\": \"2014\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"07 Nov 2014\",",
-        "                   \"Runtime\": \"169 min\",",
-        "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
-        "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
-        "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
-        "                   \"Language\": \"English\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"74\",",
-        "                   \"imdbRating\": \"8.6\",",
-        "                   \"imdbVotes\": \"910,366\",",
-        "                   \"imdbID\": \"tt0816692\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {",
-        "                   \"Title\": \"The Dark Knight\",",
-        "                   \"Year\": \"2008\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"18 Jul 2008\",",
-        "                   \"Runtime\": \"152 min\",",
-        "                   \"Genre\": \"Action, Adventure, Crime\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
-        "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
-        "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
-        "                   \"Language\": \"English, Mandarin\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"82\",",
-        "                   \"imdbRating\": \"9.0\",",
-        "                   \"imdbVotes\": \"1,652,832\",",
-        "                   \"imdbID\": \"tt0468569\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {  ",
-        "                   \"Title\": \"Batman Begins\",",
-        "                   \"Year\": \"2005\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"15 Jun 2005\",",
-        "                   \"Runtime\": \"140 min\",",
-        "                   \"Genre\": \"Action, Adventure\",",
-        "                   \"Director\": \"Christopher Nolan\",",
-        "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
-        "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
-        "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
-        "                   \"Language\": \"English, Urdu, Mandarin\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"70\",",
-        "                   \"imdbRating\": \"8.3\",",
-        "                   \"imdbVotes\": \"972,584\",",
-        "                   \"imdbID\": \"tt0372784\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                },",
-        "                {",
-        "                   \"Title\": \"Avatar\",",
-        "                   \"Year\": \"2009\",",
-        "                   \"Rated\": \"PG-13\",",
-        "                   \"Released\": \"18 Dec 2009\",",
-        "                   \"Runtime\": \"162 min\",",
-        "                   \"Genre\": \"Action, Adventure, Fantasy\",",
-        "                   \"Director\": \"James Cameron\",",
-        "                   \"Writer\": \"James Cameron\",",
-        "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
-        "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
-        "                   \"Language\": \"English, Spanish\",",
-        "                   \"Country\": \"USA, UK\",",
-        "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
-        "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
-        "                   \"Metascore\": \"83\",",
-        "                   \"imdbRating\": \"7.9\",",
-        "                   \"imdbVotes\": \"876,575\",",
-        "                   \"imdbID\": \"tt0499549\",",
-        "                   \"Type\": \"movie\",",
-        "                   \"Response\": \"True\"",
-        "                }",
-        "];",
-        "",
-        "// Add your code below this line",
-        "",
-        "var averageRating;",
-        "",
-        "// Add your code above this line",
-        "",
-        "console.log(averageRating); "
-      ],
       "tests": [
-        "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'message: The <code>watchList</code> variable should not change.');",
-        "assert(code.match(/\\.reduce/g), 'message: Your code should use the <code>reduce</code> method.');",
-        "assert(averageRating == 8.675, 'message: The <code>averageRating</code> should equal 8.675.');",
-        "assert(!code.match(/for\\s*?\\(.*\\)/g), 'message: Your code should not use a <code>for</code> loop.');"
+        {
+          "text": "The <code>watchList</code> variable should not change.",
+          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
+        },
+        {
+          "text": "Your code should use the <code>reduce</code> method.",
+          "testString": "assert(code.match(/\\.reduce/g), 'Your code should use the <code>reduce</code> method.');"
+        },
+        {
+          "text": "The <code>averageRating</code> should equal 8.675.",
+          "testString": "assert(averageRating == 8.675, 'The <code>averageRating</code> should equal 8.675.');"
+        },
+        {
+          "text": "Your code should not use a <code>for</code> loop.",
+          "testString": "assert(!code.match(/for\\s*?\\(.*\\)/g), 'Your code should not use a <code>for</code> loop.');"
+        }
       ],
       "solutions": [],
       "hints": [
@@ -997,7 +1132,139 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global variable",
+            "var watchList = [",
+            "                 {  ",
+            "                   \"Title\": \"Inception\",",
+            "                   \"Year\": \"2010\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"16 Jul 2010\",",
+            "                   \"Runtime\": \"148 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Christopher Nolan\",",
+            "                   \"Actors\": \"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy\",",
+            "                   \"Plot\": \"A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.\",",
+            "                   \"Language\": \"English, Japanese, French\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 4 Oscars. Another 143 wins & 198 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.8\",",
+            "                   \"imdbVotes\": \"1,446,708\",",
+            "                   \"imdbID\": \"tt1375666\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Interstellar\",",
+            "                   \"Year\": \"2014\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"07 Nov 2014\",",
+            "                   \"Runtime\": \"169 min\",",
+            "                   \"Genre\": \"Adventure, Drama, Sci-Fi\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan, Christopher Nolan\",",
+            "                   \"Actors\": \"Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow\",",
+            "                   \"Plot\": \"A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.\",",
+            "                   \"Language\": \"English\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 1 Oscar. Another 39 wins & 132 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"74\",",
+            "                   \"imdbRating\": \"8.6\",",
+            "                   \"imdbVotes\": \"910,366\",",
+            "                   \"imdbID\": \"tt0816692\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"The Dark Knight\",",
+            "                   \"Year\": \"2008\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Jul 2008\",",
+            "                   \"Runtime\": \"152 min\",",
+            "                   \"Genre\": \"Action, Adventure, Crime\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)\",",
+            "                   \"Actors\": \"Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine\",",
+            "                   \"Plot\": \"When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.\",",
+            "                   \"Language\": \"English, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 2 Oscars. Another 146 wins & 142 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"82\",",
+            "                   \"imdbRating\": \"9.0\",",
+            "                   \"imdbVotes\": \"1,652,832\",",
+            "                   \"imdbID\": \"tt0468569\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {  ",
+            "                   \"Title\": \"Batman Begins\",",
+            "                   \"Year\": \"2005\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"15 Jun 2005\",",
+            "                   \"Runtime\": \"140 min\",",
+            "                   \"Genre\": \"Action, Adventure\",",
+            "                   \"Director\": \"Christopher Nolan\",",
+            "                   \"Writer\": \"Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)\",",
+            "                   \"Actors\": \"Christian Bale, Michael Caine, Liam Neeson, Katie Holmes\",",
+            "                   \"Plot\": \"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.\",",
+            "                   \"Language\": \"English, Urdu, Mandarin\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Nominated for 1 Oscar. Another 15 wins & 66 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"70\",",
+            "                   \"imdbRating\": \"8.3\",",
+            "                   \"imdbVotes\": \"972,584\",",
+            "                   \"imdbID\": \"tt0372784\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                },",
+            "                {",
+            "                   \"Title\": \"Avatar\",",
+            "                   \"Year\": \"2009\",",
+            "                   \"Rated\": \"PG-13\",",
+            "                   \"Released\": \"18 Dec 2009\",",
+            "                   \"Runtime\": \"162 min\",",
+            "                   \"Genre\": \"Action, Adventure, Fantasy\",",
+            "                   \"Director\": \"James Cameron\",",
+            "                   \"Writer\": \"James Cameron\",",
+            "                   \"Actors\": \"Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang\",",
+            "                   \"Plot\": \"A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.\",",
+            "                   \"Language\": \"English, Spanish\",",
+            "                   \"Country\": \"USA, UK\",",
+            "                   \"Awards\": \"Won 3 Oscars. Another 80 wins & 121 nominations.\",",
+            "                   \"Poster\": \"http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg\",",
+            "                   \"Metascore\": \"83\",",
+            "                   \"imdbRating\": \"7.9\",",
+            "                   \"imdbVotes\": \"876,575\",",
+            "                   \"imdbID\": \"tt0499549\",",
+            "                   \"Type\": \"movie\",",
+            "                   \"Response\": \"True\"",
+            "                }",
+            "];",
+            "",
+            "// Add your code below this line",
+            "",
+            "var averageRating;",
+            "",
+            "// Add your code above this line",
+            "",
+            "console.log(averageRating); "
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7da9367417b2b2512b69",
@@ -1010,26 +1277,47 @@
         "<hr>",
         "Use the <code>sort</code> method in the <code>alphabeticalOrder</code> function to sort the elements of <code>arr</code> in alphabetical order."
       ],
-      "challengeSeed": [
-        "function alphabeticalOrder(arr) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"]);"
-      ],
       "tests": [
-        "assert(code.match(/\\.sort/g), 'message: Your code should use the <code>sort</code> method.');",
-        "assert(JSON.stringify(alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])) === JSON.stringify([\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]), 'message: <code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code> should return <code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>.');",
-        "assert(JSON.stringify(alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])) === JSON.stringify([\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]), 'message: <code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code> should return <code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>.');",
-        "assert(JSON.stringify(alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])) === JSON.stringify([\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]), 'message: <code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code> should return <code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>.');"
+        {
+          "text": "Your code should use the <code>sort</code> method.",
+          "testString": "assert(code.match(/\\.sort/g), 'Your code should use the <code>sort</code> method.');"
+        },
+        {
+          "text": "<code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code> should return <code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>.",
+          "testString": "assert(JSON.stringify(alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])) === JSON.stringify([\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]), '<code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code> should return <code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>.');"
+        },
+        {
+          "text": "<code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code> should return <code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>.",
+          "testString": "assert(JSON.stringify(alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])) === JSON.stringify([\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]), '<code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code> should return <code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>.');"
+        },
+        {
+          "text": "<code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code> should return <code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>.",
+          "testString": "assert(JSON.stringify(alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])) === JSON.stringify([\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]), '<code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code> should return <code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function alphabeticalOrder(arr) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7da9367417b2b2512b6a",
@@ -1039,27 +1327,48 @@
         "<hr>",
         "Use the <code>sort</code> method in the <code>nonMutatingSort</code> function to sort the elements of an array in ascending order. The function should return a new array, and not mutate the <code>globalArray</code> variable."
       ],
-      "challengeSeed": [
-        "var globalArray = [5, 6, 3, 2, 9];",
-        "function nonMutatingSort(arr) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "nonMutatingSort(globalArray);"
-      ],
       "tests": [
-        "assert(code.match(/\\.sort/g), 'message: Your code should use the <code>sort</code> method.');",
-        "assert(code.match(/\\.concat/g), 'message: Your code should use the <code>concat</code> method.');",
-        "assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), 'message: The <code>globalArray</code> variable should not change.');",
-        "assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]), 'message: <code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.');"
+        {
+          "text": "Your code should use the <code>sort</code> method.",
+          "testString": "assert(code.match(/\\.sort/g), 'Your code should use the <code>sort</code> method.');"
+        },
+        {
+          "text": "Your code should use the <code>concat</code> method.",
+          "testString": "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
+        },
+        {
+          "text": "The <code>globalArray</code> variable should not change.",
+          "testString": "assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), 'The <code>globalArray</code> variable should not change.');"
+        },
+        {
+          "text": "<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.",
+          "testString": "assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]), '<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "var globalArray = [5, 6, 3, 2, 9];",
+            "function nonMutatingSort(arr) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "nonMutatingSort(globalArray);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7daa367417b2b2512b6b",
@@ -1072,20 +1381,23 @@
         "<hr>",
         "Use the <code>split</code> method inside the <code>splitify</code> function to split <code>str</code> into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation."
       ],
-      "challengeSeed": [
-        "function splitify(str) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "splitify(\"Hello World,I-am code\");"
-      ],
       "tests": [
-        "assert(code.match(/\\.split/g), 'message: Your code should use the <code>split</code> method.');",
-        "assert(JSON.stringify(splitify(\"Hello World,I-am code\")) === JSON.stringify([\"Hello\", \"World\", \"I\", \"am\", \"code\"]), 'message: <code>splitify(\"Hello World,I-am code\")</code> should return <code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>.');",
-        "assert(JSON.stringify(splitify(\"Earth-is-our home\")) === JSON.stringify([\"Earth\", \"is\", \"our\", \"home\"]), 'message: <code>splitify(\"Earth-is-our home\")</code> should return <code>[\"Earth\", \"is\", \"our\", \"home\"]</code>.');",
-        "assert(JSON.stringify(splitify(\"This.is.a-sentence\")) === JSON.stringify([\"This\", \"is\", \"a\", \"sentence\"]), 'message: <code>splitify(\"This.is.a-sentence\")</code> should return <code>[\"This\", \"is\", \"a\", \"sentence\"]</code>.');"
+        {
+          "text": "Your code should use the <code>split</code> method.",
+          "testString": "assert(code.match(/\\.split/g), 'Your code should use the <code>split</code> method.');"
+        },
+        {
+          "text": "<code>splitify(\"Hello World,I-am code\")</code> should return <code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>.",
+          "testString": "assert(JSON.stringify(splitify(\"Hello World,I-am code\")) === JSON.stringify([\"Hello\", \"World\", \"I\", \"am\", \"code\"]), '<code>splitify(\"Hello World,I-am code\")</code> should return <code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>.');"
+        },
+        {
+          "text": "<code>splitify(\"Earth-is-our home\")</code> should return <code>[\"Earth\", \"is\", \"our\", \"home\"]</code>.",
+          "testString": "assert(JSON.stringify(splitify(\"Earth-is-our home\")) === JSON.stringify([\"Earth\", \"is\", \"our\", \"home\"]), '<code>splitify(\"Earth-is-our home\")</code> should return <code>[\"Earth\", \"is\", \"our\", \"home\"]</code>.');"
+        },
+        {
+          "text": "<code>splitify(\"This.is.a-sentence\")</code> should return <code>[\"This\", \"is\", \"a\", \"sentence\"]</code>.",
+          "testString": "assert(JSON.stringify(splitify(\"This.is.a-sentence\")) === JSON.stringify([\"This\", \"is\", \"a\", \"sentence\"]), '<code>splitify(\"This.is.a-sentence\")</code> should return <code>[\"This\", \"is\", \"a\", \"sentence\"]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [
@@ -1093,7 +1405,25 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function splitify(str) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "splitify(\"Hello World,I-am code\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7daa367417b2b2512b6c",
@@ -1105,22 +1435,31 @@
         "<hr>",
         "Use the <code>join</code> method (among others) inside the <code>sentensify</code> function to make a sentence from the words in the string <code>str</code>. The function should return a string. For example, \"I-like-Star-Wars\" would be converted to \"I like Star Wars\". For this challenge, do not use the <code>replace</code> method."
       ],
-      "challengeSeed": [
-        "function sentensify(str) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "sentensify(\"May-the-force-be-with-you\");"
-      ],
       "tests": [
-        "assert(code.match(/\\.join/g), 'message: Your code should use the <code>join</code> method.');",
-        "assert(!code.match(/\\.replace/g), 'message: Your code should not use the <code>replace</code> method.');",
-        "assert(typeof sentensify(\"May-the-force-be-with-you\") === \"string\", 'message: <code>sentensify(\"May-the-force-be-with-you\")</code> should return a string.');",
-        "assert(sentensify(\"May-the-force-be-with-you\") === \"May the force be with you\", 'message: <code>sentensify(\"May-the-force-be-with-you\")</code> should return <code>\"May the force be with you\"</code>.');",
-        "assert(sentensify(\"The.force.is.strong.with.this.one\") === \"The force is strong with this one\", 'message: <code>sentensify(\"The.force.is.strong.with.this.one\")</code> should return <code>\"The force is strong with this one\"</code>.');",
-        "assert(sentensify(\"There,has,been,an,awakening\") === \"There has been an awakening\", 'message: <code>sentensify(\"There,has,been,an,awakening\")</code> should return <code>\"There has been an awakening\"</code>.');"
+        {
+          "text": "Your code should use the <code>join</code> method.",
+          "testString": "assert(code.match(/\\.join/g), 'Your code should use the <code>join</code> method.');"
+        },
+        {
+          "text": "Your code should not use the <code>replace</code> method.",
+          "testString": "assert(!code.match(/\\.replace/g), 'Your code should not use the <code>replace</code> method.');"
+        },
+        {
+          "text": "<code>sentensify(\"May-the-force-be-with-you\")</code> should return a string.",
+          "testString": "assert(typeof sentensify(\"May-the-force-be-with-you\") === \"string\", '<code>sentensify(\"May-the-force-be-with-you\")</code> should return a string.');"
+        },
+        {
+          "text": "<code>sentensify(\"May-the-force-be-with-you\")</code> should return <code>\"May the force be with you\"</code>.",
+          "testString": "assert(sentensify(\"May-the-force-be-with-you\") === \"May the force be with you\", '<code>sentensify(\"May-the-force-be-with-you\")</code> should return <code>\"May the force be with you\"</code>.');"
+        },
+        {
+          "text": "<code>sentensify(\"The.force.is.strong.with.this.one\")</code> should return <code>\"The force is strong with this one\"</code>.",
+          "testString": "assert(sentensify(\"The.force.is.strong.with.this.one\") === \"The force is strong with this one\", '<code>sentensify(\"The.force.is.strong.with.this.one\")</code> should return <code>\"The force is strong with this one\"</code>.');"
+        },
+        {
+          "text": "<code>sentensify(\"There,has,been,an,awakening\")</code> should return <code>\"There has been an awakening\"</code>.",
+          "testString": "assert(sentensify(\"There,has,been,an,awakening\") === \"There has been an awakening\", '<code>sentensify(\"There,has,been,an,awakening\")</code> should return <code>\"There has been an awakening\"</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [
@@ -1128,7 +1467,25 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function sentensify(str) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "sentensify(\"May-the-force-be-with-you\");"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dab367417b2b2512b6d",
@@ -1144,26 +1501,31 @@
         "The output should be all lower-cased letters",
         "The output should not have any spaces"
       ],
-      "challengeSeed": [
-        "// the global variable",
-        "var globalTitle = \"Winter Is Coming\";",
-        "",
-        "// Add your code below this line",
-        "function urlSlug(title) {",
-        "  ",
-        "  ",
-        "}",
-        "// Add your code above this line",
-        "",
-        "var winterComing = urlSlug(globalTitle); // Should be \"winter-is-coming\""
-      ],
       "tests": [
-        "assert(globalTitle === \"Winter Is Coming\", 'message: The <code>globalTitle</code> variable should not change.');",
-        "assert(!code.match(/\\.replace/g), 'message: Your code should not use the <code>replace</code> method for this challenge.');",
-        "assert(urlSlug(\"Winter Is Coming\") === \"winter-is-coming\", 'message: <code>urlSlug(\"Winter Is Coming\")</code> should return <code>\"winter-is-coming\"</code>.');",
-        "assert(urlSlug(\" Winter Is  Coming\") === \"winter-is-coming\", 'message: <code>urlSlug(\" Winter Is  &nbsp;Coming\")</code> should return <code>\"winter-is-coming\"</code>.');",
-        "assert(urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\") === \"a-mind-needs-books-like-a-sword-needs-a-whetstone\", 'message: <code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code> should return <code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>.');",
-        "assert(urlSlug(\"Hold The Door\") === \"hold-the-door\", 'message: <code>urlSlug(\"Hold The Door\")</code> should return <code>\"hold-the-door\"</code>.');"
+        {
+          "text": "The <code>globalTitle</code> variable should not change.",
+          "testString": "assert(globalTitle === \"Winter Is Coming\", 'The <code>globalTitle</code> variable should not change.');"
+        },
+        {
+          "text": "Your code should not use the <code>replace</code> method for this challenge.",
+          "testString": "assert(!code.match(/\\.replace/g), 'Your code should not use the <code>replace</code> method for this challenge.');"
+        },
+        {
+          "text": "<code>urlSlug(\"Winter Is Coming\")</code> should return <code>\"winter-is-coming\"</code>.",
+          "testString": "assert(urlSlug(\"Winter Is Coming\") === \"winter-is-coming\", '<code>urlSlug(\"Winter Is Coming\")</code> should return <code>\"winter-is-coming\"</code>.');"
+        },
+        {
+          "text": "<code>urlSlug(\" Winter Is  &nbsp;Coming\")</code> should return <code>\"winter-is-coming\"</code>.",
+          "testString": "assert(urlSlug(\" Winter Is  Coming\") === \"winter-is-coming\", '<code>urlSlug(\" Winter Is  &nbsp;Coming\")</code> should return <code>\"winter-is-coming\"</code>.');"
+        },
+        {
+          "text": "<code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code> should return <code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>.",
+          "testString": "assert(urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\") === \"a-mind-needs-books-like-a-sword-needs-a-whetstone\", '<code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code> should return <code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>.');"
+        },
+        {
+          "text": "<code>urlSlug(\"Hold The Door\")</code> should return <code>\"hold-the-door\"</code>.",
+          "testString": "assert(urlSlug(\"Hold The Door\") === \"hold-the-door\", '<code>urlSlug(\"Hold The Door\")</code> should return <code>\"hold-the-door\"</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [
@@ -1172,7 +1534,29 @@
       ],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// the global variable",
+            "var globalTitle = \"Winter Is Coming\";",
+            "",
+            "// Add your code below this line",
+            "function urlSlug(title) {",
+            "  ",
+            "  ",
+            "}",
+            "// Add your code above this line",
+            "",
+            "var winterComing = urlSlug(globalTitle); // Should be \"winter-is-coming\""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dab367417b2b2512b6e",
@@ -1184,26 +1568,47 @@
         "<hr>",
         "Use the <code>every</code> method inside the <code>checkPositive</code> function to check if every element in <code>arr</code> is positive. The function should return a Boolean value."
       ],
-      "challengeSeed": [
-        "function checkPositive(arr) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "checkPositive([1, 2, 3, -4, 5]);"
-      ],
       "tests": [
-        "assert(code.match(/\\.every/g), 'message: Your code should use the <code>every</code> method.');",
-        "assert(!checkPositive([1, 2, 3, -4, 5]), 'message: <code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.');",
-        "assert(checkPositive([1, 2, 3, 4, 5]), 'message: <code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');",
-        "assert(!checkPositive([1, -2, 3, -4, 5]), 'message: <code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.');"
+        {
+          "text": "Your code should use the <code>every</code> method.",
+          "testString": "assert(code.match(/\\.every/g), 'Your code should use the <code>every</code> method.');"
+        },
+        {
+          "text": "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.",
+          "testString": "assert(!checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.');"
+        },
+        {
+          "text": "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.",
+          "testString": "assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.",
+          "testString": "assert(!checkPositive([1, -2, 3, -4, 5]), '<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function checkPositive(arr) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "checkPositive([1, 2, 3, -4, 5]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dab367417b2b2512b6f",
@@ -1215,26 +1620,47 @@
         "<hr>",
         "Use the <code>some</code> method inside the <code>checkPositive</code> function to check if any element in <code>arr</code> is positive. The function should return a Boolean value."
       ],
-      "challengeSeed": [
-        "function checkPositive(arr) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "checkPositive([1, 2, 3, -4, 5]);"
-      ],
       "tests": [
-        "assert(code.match(/\\.some/g), 'message: Your code should use the <code>some</code> method.');",
-        "assert(checkPositive([1, 2, 3, -4, 5]), 'message: <code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.');",
-        "assert(checkPositive([1, 2, 3, 4, 5]), 'message: <code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');",
-        "assert(!checkPositive([-1, -2, -3, -4, -5]), 'message: <code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.');"
+        {
+          "text": "Your code should use the <code>some</code> method.",
+          "testString": "assert(code.match(/\\.some/g), 'Your code should use the <code>some</code> method.');"
+        },
+        {
+          "text": "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.",
+          "testString": "assert(checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.",
+          "testString": "assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.",
+          "testString": "assert(!checkPositive([-1, -2, -3, -4, -5]), '<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function checkPositive(arr) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "checkPositive([1, 2, 3, -4, 5]);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dab367417b2b2512b70",
@@ -1252,26 +1678,47 @@
         "<hr>",
         "Fill in the body of the <code>add</code> function so it uses currying to add parameters <code>x</code>, <code>y</code>, and <code>z</code>."
       ],
-      "challengeSeed": [
-        "function add(x) {",
-        "  // Add your code below this line",
-        "  ",
-        "  ",
-        "  // Add your code above this line",
-        "}",
-        "add(10)(20)(30);"
-      ],
       "tests": [
-        "assert(add(10)(20)(30) === 60, 'message: <code>add(10)(20)(30)</code> should return <code>60</code>.');",
-        "assert(add(1)(2)(3) === 6, 'message: <code>add(1)(2)(3)</code> should return <code>6</code>.');",
-        "assert(add(11)(22)(33) === 66, 'message: <code>add(11)(22)(33)</code> should return <code>66</code>.');",
-        "assert(code.match(/[xyz]\\s*?\\+\\s*?[xyz]\\s*?\\+\\s*?[xyz]/g), 'message: Your code should include a final statement that returns <code>x + y + z</code>.');"
+        {
+          "text": "<code>add(10)(20)(30)</code> should return <code>60</code>.",
+          "testString": "assert(add(10)(20)(30) === 60, '<code>add(10)(20)(30)</code> should return <code>60</code>.');"
+        },
+        {
+          "text": "<code>add(1)(2)(3)</code> should return <code>6</code>.",
+          "testString": "assert(add(1)(2)(3) === 6, '<code>add(1)(2)(3)</code> should return <code>6</code>.');"
+        },
+        {
+          "text": "<code>add(11)(22)(33)</code> should return <code>66</code>.",
+          "testString": "assert(add(11)(22)(33) === 66, '<code>add(11)(22)(33)</code> should return <code>66</code>.');"
+        },
+        {
+          "text": "Your code should include a final statement that returns <code>x + y + z</code>.",
+          "testString": "assert(code.match(/[xyz]\\s*?\\+\\s*?[xyz]\\s*?\\+\\s*?[xyz]/g), 'Your code should include a final statement that returns <code>x + y + z</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function add(x) {",
+            "  // Add your code below this line",
+            "  ",
+            "  ",
+            "  // Add your code above this line",
+            "}",
+            "add(10)(20)(30);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     }
   ]
 }

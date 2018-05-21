@@ -5,25 +5,6 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7db3367417b2b2512b8d",
-      "title": "Introduction to the Regular Expression Challenges",
-      "description": [
-        [
-          "",
-          "",
-          "Regular expressions are special strings that represent a search pattern. Also known as \"regex\" or \"regexp\", they help programmers match, search, and replace text. Regular expressions can appear cryptic because a few characters have special meaning. The goal is to combine the symbols and text into a pattern that matches what you want, but only what you want. This section will cover the characters, a few shortcuts, and the common uses for writing regular expressions.",
-          ""
-        ]
-      ],
-      "releasedOn": "Feb 17, 2017",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {}
-    },
-    {
       "id": "587d7db3367417b2b2512b8e",
       "title": "Using the Test Method",
       "description": [
@@ -34,21 +15,36 @@
         "<hr>",
         "Apply the regex <code>myRegex</code> on the string <code>myString</code> using the <code>.test()</code> method."
       ],
-      "challengeSeed": [
-        "let myString = \"Hello, World!\";",
-        "let myRegex = /Hello/;",
-        "let result = myRegex; // Change this line"
-      ],
       "tests": [
-        "assert(code.match(/myRegex.test\\(\\s*myString\\s*\\)/), 'message: You should use <code>.test()</code> to test the regex.');",
-        "assert(result === true, 'message: Your result should return <code>true</code>.');"
+        {
+          "text": "You should use <code>.test()</code> to test the regex.",
+          "testString": "assert(code.match(/myRegex.test\\(\\s*myString\\s*\\)/), 'You should use <code>.test()</code> to test the regex.');"
+        },
+        {
+          "text": "Your result should return <code>true</code>.",
+          "testString": "assert(result === true, 'Your result should return <code>true</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let myString = \"Hello, World!\";",
+            "let myRegex = /Hello/;",
+            "let result = myRegex; // Change this line"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db3367417b2b2512b8f",
@@ -62,22 +58,40 @@
         "<hr>",
         "Complete the regex <code>waldoRegex</code> to find <code>\"Waldo\"</code> in the string <code>waldoIsHiding</code> with a literal match."
       ],
-      "challengeSeed": [
-        "let waldoIsHiding = \"Somewhere Waldo is hiding in this text.\";",
-        "let waldoRegex = /search/; // Change this line",
-        "let result = waldoRegex.test(waldoIsHiding);"
-      ],
       "tests": [
-        "assert(waldoRegex.test(waldoIsHiding), 'message: Your regex <code>waldoRegex</code> should find <code>\"Waldo\"</code>');",
-        "assert(!waldoRegex.test('Somewhere is hiding in this text.'), 'message: Your regex <code>waldoRegex</code> should not search for anything else.');",
-        "assert(!/\\/.*\\/i/.test(code), 'message: You should perform a literal string match with your regex.');"
+        {
+          "text": "Your regex <code>waldoRegex</code> should find <code>\"Waldo\"</code>",
+          "testString": "assert(waldoRegex.test(waldoIsHiding), 'Your regex <code>waldoRegex</code> should find <code>\"Waldo\"</code>');"
+        },
+        {
+          "text": "Your regex <code>waldoRegex</code> should not search for anything else.",
+          "testString": "assert(!waldoRegex.test('Somewhere is hiding in this text.'), 'Your regex <code>waldoRegex</code> should not search for anything else.');"
+        },
+        {
+          "text": "You should perform a literal string match with your regex.",
+          "testString": "assert(!/\\/.*\\/i/.test(code), 'You should perform a literal string match with your regex.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let waldoIsHiding = \"Somewhere Waldo is hiding in this text.\";",
+            "let waldoRegex = /search/; // Change this line",
+            "let result = waldoRegex.test(waldoIsHiding);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db4367417b2b2512b90",
@@ -90,26 +104,56 @@
         "<hr>",
         "Complete the regex <code>petRegex</code> to match the pets <code>\"dog\"</code>, <code>\"cat\"</code>, <code>\"bird\"</code>, or <code>\"fish\"</code>."
       ],
-      "challengeSeed": [
-        "let petString = \"James has a pet cat.\";",
-        "let petRegex = /change/; // Change this line",
-        "let result = petRegex.test(petString);"
-      ],
       "tests": [
-        "assert(petRegex.test('John has a pet dog.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"John has a pet dog.\"</code>');",
-        "assert(!petRegex.test('Emma has a pet rock.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Emma has a pet rock.\"</code>');",
-        "assert(petRegex.test('Emma has a pet bird.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Emma has a pet bird.\"</code>');",
-        "assert(petRegex.test('Liz has a pet cat.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Liz has a pet cat.\"</code>');",
-        "assert(!petRegex.test('Kara has a pet dolphin.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Kara has a pet dolphin.\"</code>');",
-        "assert(petRegex.test('Alice has a pet fish.'), 'message: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Alice has a pet fish.\"</code>');",
-        "assert(!petRegex.test('Jimmy has a pet computer.'), 'message: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Jimmy has a pet computer.\"</code>');"
+        {
+          "text": "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"John has a pet dog.\"</code>",
+          "testString": "assert(petRegex.test('John has a pet dog.'), 'Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"John has a pet dog.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Emma has a pet rock.\"</code>",
+          "testString": "assert(!petRegex.test('Emma has a pet rock.'), 'Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Emma has a pet rock.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Emma has a pet bird.\"</code>",
+          "testString": "assert(petRegex.test('Emma has a pet bird.'), 'Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Emma has a pet bird.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Liz has a pet cat.\"</code>",
+          "testString": "assert(petRegex.test('Liz has a pet cat.'), 'Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Liz has a pet cat.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Kara has a pet dolphin.\"</code>",
+          "testString": "assert(!petRegex.test('Kara has a pet dolphin.'), 'Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Kara has a pet dolphin.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Alice has a pet fish.\"</code>",
+          "testString": "assert(petRegex.test('Alice has a pet fish.'), 'Your regex <code>petRegex</code> should return <code>true</code> for the string <code>\"Alice has a pet fish.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Jimmy has a pet computer.\"</code>",
+          "testString": "assert(!petRegex.test('Jimmy has a pet computer.'), 'Your regex <code>petRegex</code> should return <code>false</code> for the string <code>\"Jimmy has a pet computer.\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let petString = \"James has a pet cat.\";",
+            "let petRegex = /change/; // Change this line",
+            "let result = petRegex.test(petString);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db4367417b2b2512b91",
@@ -121,29 +165,68 @@
         "<hr>",
         "Write a regex <code>fccRegex</code> to match <code>\"freeCodeCamp\"</code>, no matter its case. Your regex should not match any abbreviations or variations with spaces."
       ],
-      "challengeSeed": [
-        "let myString = \"freeCodeCamp\";",
-        "let fccRegex = /change/; // Change this line",
-        "let result = fccRegex.test(myString);"
-      ],
       "tests": [
-        "assert(fccRegex.test('freeCodeCamp'), 'message: Your regex should match <code>freeCodeCamp</code>');",
-        "assert(fccRegex.test('FreeCodeCamp'), 'message: Your regex should match <code>FreeCodeCamp</code>');",
-        "assert(fccRegex.test('FreecodeCamp'), 'message: Your regex should match <code>FreecodeCamp</code>');",
-        "assert(fccRegex.test('FreeCodecamp'), 'message: Your regex should match <code>FreeCodecamp</code>');",
-        "assert(!fccRegex.test('Free Code Camp'), 'message: Your regex should not match <code>Free Code Camp</code>');",
-        "assert(fccRegex.test('FreeCOdeCamp'), 'message: Your regex should match <code>FreeCOdeCamp</code>');",
-        "assert(!fccRegex.test('FCC'), 'message: Your regex should not match <code>FCC</code>');",
-        "assert(fccRegex.test('FrEeCoDeCamp'), 'message: Your regex should match <code>FrEeCoDeCamp</code>');",
-        "assert(fccRegex.test('FrEeCodECamp'), 'message: Your regex should match <code>FrEeCodECamp</code>');",
-        "assert(fccRegex.test('FReeCodeCAmp'), 'message: Your regex should match <code>FReeCodeCAmp</code>');"
+        {
+          "text": "Your regex should match <code>freeCodeCamp</code>",
+          "testString": "assert(fccRegex.test('freeCodeCamp'), 'Your regex should match <code>freeCodeCamp</code>');"
+        },
+        {
+          "text": "Your regex should match <code>FreeCodeCamp</code>",
+          "testString": "assert(fccRegex.test('FreeCodeCamp'), 'Your regex should match <code>FreeCodeCamp</code>');"
+        },
+        {
+          "text": "Your regex should match <code>FreecodeCamp</code>",
+          "testString": "assert(fccRegex.test('FreecodeCamp'), 'Your regex should match <code>FreecodeCamp</code>');"
+        },
+        {
+          "text": "Your regex should match <code>FreeCodecamp</code>",
+          "testString": "assert(fccRegex.test('FreeCodecamp'), 'Your regex should match <code>FreeCodecamp</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>Free Code Camp</code>",
+          "testString": "assert(!fccRegex.test('Free Code Camp'), 'Your regex should not match <code>Free Code Camp</code>');"
+        },
+        {
+          "text": "Your regex should match <code>FreeCOdeCamp</code>",
+          "testString": "assert(fccRegex.test('FreeCOdeCamp'), 'Your regex should match <code>FreeCOdeCamp</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>FCC</code>",
+          "testString": "assert(!fccRegex.test('FCC'), 'Your regex should not match <code>FCC</code>');"
+        },
+        {
+          "text": "Your regex should match <code>FrEeCoDeCamp</code>",
+          "testString": "assert(fccRegex.test('FrEeCoDeCamp'), 'Your regex should match <code>FrEeCoDeCamp</code>');"
+        },
+        {
+          "text": "Your regex should match <code>FrEeCodECamp</code>",
+          "testString": "assert(fccRegex.test('FrEeCodECamp'), 'Your regex should match <code>FrEeCodECamp</code>');"
+        },
+        {
+          "text": "Your regex should match <code>FReeCodeCAmp</code>",
+          "testString": "assert(fccRegex.test('FReeCodeCAmp'), 'Your regex should match <code>FReeCodeCAmp</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let myString = \"freeCodeCamp\";",
+            "let fccRegex = /change/; // Change this line",
+            "let result = fccRegex.test(myString);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db4367417b2b2512b92",
@@ -155,22 +238,40 @@
         "<hr>",
         "Apply the <code>.match()</code> method to extract the word <code>coding</code>."
       ],
-      "challengeSeed": [
-        "let extractStr = \"Extract the word 'coding' from this string.\";",
-        "let codingRegex = /change/; // Change this line",
-        "let result = extractStr; // Change this line"
-      ],
       "tests": [
-        "assert(result.join() === \"coding\", 'message: The <code>result</code> should have the word <code>coding</code>');",
-        "assert(codingRegex.source === \"coding\", 'message: Your regex <code>codingRegex</code> should search for <code>coding</code>');",
-        "assert(code.match(/\\.match\\(.*\\)/), 'message: You should use the <code>.match()</code> method.');"
+        {
+          "text": "The <code>result</code> should have the word <code>coding</code>",
+          "testString": "assert(result.join() === \"coding\", 'The <code>result</code> should have the word <code>coding</code>');"
+        },
+        {
+          "text": "Your regex <code>codingRegex</code> should search for <code>coding</code>",
+          "testString": "assert(codingRegex.source === \"coding\", 'Your regex <code>codingRegex</code> should search for <code>coding</code>');"
+        },
+        {
+          "text": "You should use the <code>.match()</code> method.",
+          "testString": "assert(code.match(/\\.match\\(.*\\)/), 'You should use the <code>.match()</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let extractStr = \"Extract the word 'coding' from this string.\";",
+            "let codingRegex = /change/; // Change this line",
+            "let result = extractStr; // Change this line"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db4367417b2b2512b93",
@@ -184,23 +285,44 @@
         "Using the regex <code>starRegex</code>, find and extract both <code>\"Twinkle\"</code> words from the string <code>twinkleStar</code>.",
         "<strong>Note</strong><br>You can have multiple flags on your regex like <code>/search/gi</code>"
       ],
-      "challengeSeed": [
-        "let twinkleStar = \"Twinkle, twinkle, little star\";",
-        "let starRegex = /change/; // Change this line",
-        "let result = twinkleStar; // Change this line"
-      ],
       "tests": [
-        "assert(starRegex.flags.match(/g/).length == 1, 'message: Your regex <code>starRegex</code> should use the global flag <code>g</code>');",
-        "assert(starRegex.flags.match(/i/).length == 1, 'message: Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>');",
-        "assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join(), 'message: Your match should match both occurrences of the word <code>\"Twinkle\"</code>');",
-        "assert(result.length == 2, 'message: Your match <code>result</code> should have two elements in it.');"
+        {
+          "text": "Your regex <code>starRegex</code> should use the global flag <code>g</code>",
+          "testString": "assert(starRegex.flags.match(/g/).length == 1, 'Your regex <code>starRegex</code> should use the global flag <code>g</code>');"
+        },
+        {
+          "text": "Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>",
+          "testString": "assert(starRegex.flags.match(/i/).length == 1, 'Your regex <code>starRegex</code> should use the case insensitive flag <code>i</code>');"
+        },
+        {
+          "text": "Your match should match both occurrences of the word <code>\"Twinkle\"</code>",
+          "testString": "assert(result.sort().join() == twinkleStar.match(/twinkle/gi).sort().join(), 'Your match should match both occurrences of the word <code>\"Twinkle\"</code>');"
+        },
+        {
+          "text": "Your match <code>result</code> should have two elements in it.",
+          "testString": "assert(result.length == 2, 'Your match <code>result</code> should have two elements in it.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let twinkleStar = \"Twinkle, twinkle, little star\";",
+            "let starRegex = /change/; // Change this line",
+            "let result = twinkleStar; // Change this line"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db5367417b2b2512b94",
@@ -212,29 +334,68 @@
         "<hr>",
         "Complete the regex <code>unRegex</code> so that it matches the strings <code>\"run\"</code>, <code>\"sun\"</code>, <code>\"fun\"</code>, <code>\"pun\"</code>, <code>\"nun\"</code>, and <code>\"bun\"</code>. Your regex should use the wildcard character."
       ],
-      "challengeSeed": [
-        "let exampleStr = \"Let's have fun with regular expressions!\";",
-        "let unRegex = /change/; // Change this line",
-        "let result = unRegex.test(exampleStr);"
-      ],
       "tests": [
-        "assert(code.match(/\\.test\\(.*\\)/), 'message: You should use the <code>.test()</code> method.');",
-        "assert(/\\./.test(unRegex.source), 'message: You should use the wildcard character in your regex <code>unRegex</code>');",
-        "assert(unRegex.test(\"Let us go on a run.\"), 'message: Your regex <code>unRegex</code> should match <code>\"run\"</code> in <code>\"Let us go on a run.\"</code>');",
-        "assert(unRegex.test(\"The sun is out today.\"), 'message: Your regex <code>unRegex</code> should match <code>\"sun\"</code> in <code>\"The sun is out today.\"</code>');",
-        "assert(unRegex.test(\"Coding is a lot of fun.\"), 'message: Your regex <code>unRegex</code> should match <code>\"fun\"</code> in <code>\"Coding is a lot of fun.\"</code>');",
-        "assert(unRegex.test(\"Seven days without a pun makes one weak.\"), 'message: Your regex <code>unRegex</code> should match <code>\"pun\"</code> in <code>\"Seven days without a pun makes one weak.\"</code>');",
-        "assert(unRegex.test(\"One takes a vow to be a nun.\"), 'message: Your regex <code>unRegex</code> should match <code>\"nun\"</code> in <code>\"One takes a vow to be a nun.\"</code>');",
-        "assert(unRegex.test(\"She got fired from the hot dog stand for putting her hair in a bun.\"), 'message: Your regex <code>unRegex</code> should match <code>\"bun\"</code> in <code>\"She got fired from the hot dog stand for putting her hair in a bun.\"</code>');",
-        "assert(!unRegex.test(\"There is a bug in my code.\"), 'message: Your regex <code>unRegex</code> should not match <code>\"There is a bug in my code.\"</code>');",
-        "assert(!unRegex.test(\"Can me if you can.\"), 'message: Your regex <code>unRegex</code> should not match <code>\"Catch me if you can.\"</code>');"
+        {
+          "text": "You should use the <code>.test()</code> method.",
+          "testString": "assert(code.match(/\\.test\\(.*\\)/), 'You should use the <code>.test()</code> method.');"
+        },
+        {
+          "text": "You should use the wildcard character in your regex <code>unRegex</code>",
+          "testString": "assert(/\\./.test(unRegex.source), 'You should use the wildcard character in your regex <code>unRegex</code>');"
+        },
+        {
+          "text": "Your regex <code>unRegex</code> should match <code>\"run\"</code> in <code>\"Let us go on a run.\"</code>",
+          "testString": "assert(unRegex.test(\"Let us go on a run.\"), 'Your regex <code>unRegex</code> should match <code>\"run\"</code> in <code>\"Let us go on a run.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>unRegex</code> should match <code>\"sun\"</code> in <code>\"The sun is out today.\"</code>",
+          "testString": "assert(unRegex.test(\"The sun is out today.\"), 'Your regex <code>unRegex</code> should match <code>\"sun\"</code> in <code>\"The sun is out today.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>unRegex</code> should match <code>\"fun\"</code> in <code>\"Coding is a lot of fun.\"</code>",
+          "testString": "assert(unRegex.test(\"Coding is a lot of fun.\"), 'Your regex <code>unRegex</code> should match <code>\"fun\"</code> in <code>\"Coding is a lot of fun.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>unRegex</code> should match <code>\"pun\"</code> in <code>\"Seven days without a pun makes one weak.\"</code>",
+          "testString": "assert(unRegex.test(\"Seven days without a pun makes one weak.\"), 'Your regex <code>unRegex</code> should match <code>\"pun\"</code> in <code>\"Seven days without a pun makes one weak.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>unRegex</code> should match <code>\"nun\"</code> in <code>\"One takes a vow to be a nun.\"</code>",
+          "testString": "assert(unRegex.test(\"One takes a vow to be a nun.\"), 'Your regex <code>unRegex</code> should match <code>\"nun\"</code> in <code>\"One takes a vow to be a nun.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>unRegex</code> should match <code>\"bun\"</code> in <code>\"She got fired from the hot dog stand for putting her hair in a bun.\"</code>",
+          "testString": "assert(unRegex.test(\"She got fired from the hot dog stand for putting her hair in a bun.\"), 'Your regex <code>unRegex</code> should match <code>\"bun\"</code> in <code>\"She got fired from the hot dog stand for putting her hair in a bun.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>unRegex</code> should not match <code>\"There is a bug in my code.\"</code>",
+          "testString": "assert(!unRegex.test(\"There is a bug in my code.\"), 'Your regex <code>unRegex</code> should not match <code>\"There is a bug in my code.\"</code>');"
+        },
+        {
+          "text": "Your regex <code>unRegex</code> should not match <code>\"Catch me if you can.\"</code>",
+          "testString": "assert(!unRegex.test(\"Can me if you can.\"), 'Your regex <code>unRegex</code> should not match <code>\"Catch me if you can.\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let exampleStr = \"Let's have fun with regular expressions!\";",
+            "let unRegex = /change/; // Change this line",
+            "let result = unRegex.test(exampleStr);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db5367417b2b2512b95",
@@ -248,24 +409,48 @@
         "Use a character class with vowels (<code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code>) in your regex <code>vowelRegex</code> to find all the vowels in the string <code>quoteSample</code>.",
         "<strong>Note</strong><br>Be sure to match both upper- and lowercase vowels."
       ],
-      "challengeSeed": [
-        "let quoteSample = \"Beware of bugs in the above code; I have only proved it correct, not tried it.\";",
-        "let vowelRegex = /change/; // Change this line",
-        "let result = vowelRegex; // Change this line"
-      ],
       "tests": [
-        "assert(result.length == 25, 'message: You should find all 25 vowels.');",
-        "assert(/\\[.*\\]/.test(vowelRegex.source), 'message: Your regex <code>vowelRegex</code> should use a character class.');",
-        "assert(vowelRegex.flags.match(/g/).length == 1, 'message: Your regex <code>vowelRegex</code> should use the global flag.');",
-        "assert(vowelRegex.flags.match(/i/).length == 1, 'message: Your regex <code>vowelRegex</code> should use the case insensitive flag.');",
-        "assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()), 'message: Your regex should not match any consonants.');"
+        {
+          "text": "You should find all 25 vowels.",
+          "testString": "assert(result.length == 25, 'You should find all 25 vowels.');"
+        },
+        {
+          "text": "Your regex <code>vowelRegex</code> should use a character class.",
+          "testString": "assert(/\\[.*\\]/.test(vowelRegex.source), 'Your regex <code>vowelRegex</code> should use a character class.');"
+        },
+        {
+          "text": "Your regex <code>vowelRegex</code> should use the global flag.",
+          "testString": "assert(vowelRegex.flags.match(/g/).length == 1, 'Your regex <code>vowelRegex</code> should use the global flag.');"
+        },
+        {
+          "text": "Your regex <code>vowelRegex</code> should use the case insensitive flag.",
+          "testString": "assert(vowelRegex.flags.match(/i/).length == 1, 'Your regex <code>vowelRegex</code> should use the case insensitive flag.');"
+        },
+        {
+          "text": "Your regex should not match any consonants.",
+          "testString": "assert(!/[b-df-hj-np-tv-z]/gi.test(result.join()), 'Your regex should not match any consonants.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let quoteSample = \"Beware of bugs in the above code; I have only proved it correct, not tried it.\";",
+            "let vowelRegex = /change/; // Change this line",
+            "let result = vowelRegex; // Change this line"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db5367417b2b2512b96",
@@ -279,22 +464,40 @@
         "Match all the letters in the string <code>quoteSample</code>.",
         "<strong>Note</strong><br>Be sure to match both upper- and lowercase <strong>letters<strong>."
       ],
-      "challengeSeed": [
-        "let quoteSample = \"The quick brown fox jumps over the lazy dog.\";",
-        "let alphabetRegex = /change/; // Change this line",
-        "let result = alphabetRegex; // Change this line"
-      ],
       "tests": [
-        "assert(result.length == 35, 'message: Your regex <code>alphabetRegex</code> should match 35 items.');",
-        "assert(alphabetRegex.flags.match(/g/).length == 1, 'message: Your regex <code>alphabetRegex</code> should use the global flag.');",
-        "assert(alphabetRegex.flags.match(/i/).length == 1, 'message: Your regex <code>alphabetRegex</code> should use the case insensitive flag.');"
+        {
+          "text": "Your regex <code>alphabetRegex</code> should match 35 items.",
+          "testString": "assert(result.length == 35, 'Your regex <code>alphabetRegex</code> should match 35 items.');"
+        },
+        {
+          "text": "Your regex <code>alphabetRegex</code> should use the global flag.",
+          "testString": "assert(alphabetRegex.flags.match(/g/).length == 1, 'Your regex <code>alphabetRegex</code> should use the global flag.');"
+        },
+        {
+          "text": "Your regex <code>alphabetRegex</code> should use the case insensitive flag.",
+          "testString": "assert(alphabetRegex.flags.match(/i/).length == 1, 'Your regex <code>alphabetRegex</code> should use the case insensitive flag.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let quoteSample = \"The quick brown fox jumps over the lazy dog.\";",
+            "let alphabetRegex = /change/; // Change this line",
+            "let result = alphabetRegex; // Change this line"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db5367417b2b2512b97",
@@ -307,22 +510,40 @@
         "<hr>",
         "Create a single regex that matches a range of letters between <code>h</code> and <code>s</code>, and a range of numbers between <code>2</code> and <code>6</code>. Remember to include the appropriate flags in the regex."
       ],
-      "challengeSeed": [
-        "let quoteSample = \"Blueberry 3.141592653s are delicious.\";",
-        "let myRegex = /change/; // Change this line",
-        "let result = myRegex; // Change this line"
-      ],
       "tests": [
-        "assert(result.length == 17, 'message: Your regex <code>myRegex</code> should match 17 items.');",
-        "assert(myRegex.flags.match(/g/).length == 1, 'message: Your regex <code>myRegex</code> should use the global flag.');",
-        "assert(myRegex.flags.match(/i/).length == 1, 'message: Your regex <code>myRegex</code> should use the case insensitive flag.');"
+        {
+          "text": "Your regex <code>myRegex</code> should match 17 items.",
+          "testString": "assert(result.length == 17, 'Your regex <code>myRegex</code> should match 17 items.');"
+        },
+        {
+          "text": "Your regex <code>myRegex</code> should use the global flag.",
+          "testString": "assert(myRegex.flags.match(/g/).length == 1, 'Your regex <code>myRegex</code> should use the global flag.');"
+        },
+        {
+          "text": "Your regex <code>myRegex</code> should use the case insensitive flag.",
+          "testString": "assert(myRegex.flags.match(/i/).length == 1, 'Your regex <code>myRegex</code> should use the case insensitive flag.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let quoteSample = \"Blueberry 3.141592653s are delicious.\";",
+            "let myRegex = /change/; // Change this line",
+            "let result = myRegex; // Change this line"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db6367417b2b2512b98",
@@ -334,22 +555,40 @@
         "<hr>",
         "Create a single regex that matches all characters that are not a number or a vowel. Remember to include the appropriate flags in the regex."
       ],
-      "challengeSeed": [
-        "let quoteSample = \"3 blind mice.\";",
-        "let myRegex = /change/; // Change this line",
-        "let result = myRegex; // Change this line"
-      ],
       "tests": [
-        "assert(result.length == 9, 'message: Your regex <code>myRegex</code> should match 9 items.');",
-        "assert(myRegex.flags.match(/g/).length == 1, 'message: Your regex <code>myRegex</code> should use the global flag.');",
-        "assert(myRegex.flags.match(/i/).length == 1, 'message: Your regex <code>myRegex</code> should use the case insensitive flag.');"
+        {
+          "text": "Your regex <code>myRegex</code> should match 9 items.",
+          "testString": "assert(result.length == 9, 'Your regex <code>myRegex</code> should match 9 items.');"
+        },
+        {
+          "text": "Your regex <code>myRegex</code> should use the global flag.",
+          "testString": "assert(myRegex.flags.match(/g/).length == 1, 'Your regex <code>myRegex</code> should use the global flag.');"
+        },
+        {
+          "text": "Your regex <code>myRegex</code> should use the case insensitive flag.",
+          "testString": "assert(myRegex.flags.match(/i/).length == 1, 'Your regex <code>myRegex</code> should use the case insensitive flag.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let quoteSample = \"3 blind mice.\";",
+            "let myRegex = /change/; // Change this line",
+            "let result = myRegex; // Change this line"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db6367417b2b2512b99",
@@ -362,22 +601,40 @@
         "<hr>",
         "You want to find matches when the letter <code>s</code> occurs one or more times in <code>\"Mississippi\"</code>. Write a regex that uses the <code>+</code> sign."
       ],
-      "challengeSeed": [
-        "let difficultSpelling = \"Mississippi\";",
-        "let myRegex = /change/; // Change this line",
-        "let result = difficultSpelling.match(myRegex);"
-      ],
       "tests": [
-        "assert(/\\+/.test(myRegex.source), 'message: Your regex <code>myRegex</code> should use the <code>+</code> sign to match one or more <code>s</code> characters.');",
-        "assert(result.length == 2, 'message: Your regex <code>myRegex</code> should match 2 items.');",
-        "assert(result[0] == 'ss' && result[1] == 'ss', 'message: The <code>result</code> variable should be an array with two matches of <code>\"ss\"</code>');"
+        {
+          "text": "Your regex <code>myRegex</code> should use the <code>+</code> sign to match one or more <code>s</code> characters.",
+          "testString": "assert(/\\+/.test(myRegex.source), 'Your regex <code>myRegex</code> should use the <code>+</code> sign to match one or more <code>s</code> characters.');"
+        },
+        {
+          "text": "Your regex <code>myRegex</code> should match 2 items.",
+          "testString": "assert(result.length == 2, 'Your regex <code>myRegex</code> should match 2 items.');"
+        },
+        {
+          "text": "The <code>result</code> variable should be an array with two matches of <code>\"ss\"</code>",
+          "testString": "assert(result[0] == 'ss' && result[1] == 'ss', 'The <code>result</code> variable should be an array with two matches of <code>\"ss\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let difficultSpelling = \"Mississippi\";",
+            "let myRegex = /change/; // Change this line",
+            "let result = difficultSpelling.match(myRegex);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db6367417b2b2512b9a",
@@ -389,24 +646,48 @@
         "<hr>",
         "Create a regex <code>chewieRegex</code> that uses the <code>*</code> character to match all the upper and lower<code>\"a\"</code> characters in <code>chewieQuote</code>. Your regex does not need flags, and it should not match any of the other quotes."
       ],
-      "challengeSeed": [
-        "let chewieQuote = \"Aaaaaaaaaaaaaaaarrrgh!\";",
-        "let chewieRegex = /change/; // Change this line",
-        "let result = chewieQuote.match(chewieRegex);"
-      ],
       "tests": [
-        "assert(/\\*/.test(chewieRegex.source), 'message: Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.');",
-        "assert(result[0].length === 16, 'message: Your regex <code>chewieRegex</code> should match 16 characters.');",
-        "assert(result[0] === 'Aaaaaaaaaaaaaaaa', 'message: Your regex should match <code>\"Aaaaaaaaaaaaaaaa\"</code>.');",
-        "assert(!\"He made a fair move. Screaming about it can\\'t help you.\".match(chewieRegex), 'message: Your regex should not match any characters in <code>\"He made a fair move. Screaming about it can&#39t help you.\"</code>');",
-        "assert(!\"Let him have it. It\\'s not wise to upset a Wookiee.\".match(chewieRegex), 'message: Your regex should not match any characters in <code>\"Let him have it. It&#39s not wise to upset a Wookiee.\"</code>');"
+        {
+          "text": "Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.",
+          "testString": "assert(/\\*/.test(chewieRegex.source), 'Your regex <code>chewieRegex</code> should use the <code>*</code> character to match zero or more <code>a</code> characters.');"
+        },
+        {
+          "text": "Your regex <code>chewieRegex</code> should match 16 characters.",
+          "testString": "assert(result[0].length === 16, 'Your regex <code>chewieRegex</code> should match 16 characters.');"
+        },
+        {
+          "text": "Your regex should match <code>\"Aaaaaaaaaaaaaaaa\"</code>.",
+          "testString": "assert(result[0] === 'Aaaaaaaaaaaaaaaa', 'Your regex should match <code>\"Aaaaaaaaaaaaaaaa\"</code>.');"
+        },
+        {
+          "text": "Your regex should not match any characters in <code>\"He made a fair move. Screaming about it can&#39t help you.\"</code>",
+          "testString": "assert(!\"He made a fair move. Screaming about it can\\'t help you.\".match(chewieRegex), 'Your regex should not match any characters in <code>\"He made a fair move. Screaming about it can&#39t help you.\"</code>');"
+        },
+        {
+          "text": "Your regex should not match any characters in <code>\"Let him have it. It&#39s not wise to upset a Wookiee.\"</code>",
+          "testString": "assert(!\"Let him have it. It\\'s not wise to upset a Wookiee.\".match(chewieRegex), 'Your regex should not match any characters in <code>\"Let him have it. It&#39s not wise to upset a Wookiee.\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let chewieQuote = \"Aaaaaaaaaaaaaaaarrrgh!\";",
+            "let chewieRegex = /change/; // Change this line",
+            "let result = chewieQuote.match(chewieRegex);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db6367417b2b2512b9b",
@@ -419,20 +700,32 @@
         "<hr>",
         "Fix the regex <code>/&lt;.*&gt;/</code> to return the HTML tag <code>&lt;h1&gt;</code> and not the text <code>\"&lt;h1&gt;Winter is coming&lt;/h1&gt;\"</code>. Remember the wildcard <code>.</code> in a regular expression matches any character."
       ],
-      "challengeSeed": [
-        "let text = \"<h1>Winter is coming</h1>\";",
-        "let myRegex = /<.*>/; // Change this line",
-        "let result = text.match(myRegex);"
-      ],
       "tests": [
-        "assert(result[0] == '<h1>', 'message: The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it');"
+        {
+          "text": "The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it",
+          "testString": "assert(result[0] == '<h1>', 'The <code>result</code> variable should be an array with <code>&lt;h1&gt;</code> in it');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let text = \"<h1>Winter is coming</h1>\";",
+            "let myRegex = /<.*>/; // Change this line",
+            "let result = text.match(myRegex);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db7367417b2b2512b9c",
@@ -447,30 +740,60 @@
         "<hr>",
         "Write a <code>greedy</code> regex that finds one or more criminals within a group of other people. A criminal is represented by the capital letter <code>C</code>."
       ],
-      "challengeSeed": [
-        "// example crowd gathering",
-        "let crowd = 'P1P2P3P4P5P6CCCP7P8P9';",
-        "",
-        "let reCriminals = /./; // Change this line",
-        "",
-        "let matchedCriminals = crowd.match(reCriminals);",
-        "console.log(matchedCriminals);"
-      ],
       "tests": [
-        "assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C', 'message: Your regex should match <em>one</em> criminal (\"<code>C</code>\") in <code>\"C\"</code>');",
-        "assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC', 'message: Your regex should match <em>two</em> criminals (\"<code>CC</code>\") in <code>\"CC\"</code>');",
-        "assert('P1P5P4CCCP2P6P3'.match(reCriminals) && 'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC', 'message: Your regex should match <em>three</em> criminals (\"<code>CCC</code>\") in <code>\"P1P5P4CCCP2P6P3\"</code>');",
-        "assert('P6P2P7P4P5CCCCCP3P1'.match(reCriminals) && 'P6P2P7P4P5CCCCCP3P1'.match(reCriminals)[0] == 'CCCCC', 'message: Your regex should match <em>five</em> criminals (\"<code>CCCCC</code>\") in <code>\"P6P2P7P4P5CCCCCP3P1\"</code>');",
-        "assert(!reCriminals.test(''), 'message: Your regex should not match any criminals in <code>\"\"</code>');",
-        "assert(!reCriminals.test('P1P2P3'), 'message: Your regex should not match any criminals in <code>\"P1P2P3\"</code>');",
-        "assert('P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals) && 'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals)[0] == \"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\", 'message: Your regex should match <em>fifty</em> criminals (\"<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>\") in <code>\"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3\"</code>.');"
+        {
+          "text": "Your regex should match <em>one</em> criminal (\"<code>C</code>\") in <code>\"C\"</code>",
+          "testString": "assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C', 'Your regex should match <em>one</em> criminal (\"<code>C</code>\") in <code>\"C\"</code>');"
+        },
+        {
+          "text": "Your regex should match <em>two</em> criminals (\"<code>CC</code>\") in <code>\"CC\"</code>",
+          "testString": "assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC', 'Your regex should match <em>two</em> criminals (\"<code>CC</code>\") in <code>\"CC\"</code>');"
+        },
+        {
+          "text": "Your regex should match <em>three</em> criminals (\"<code>CCC</code>\") in <code>\"P1P5P4CCCP2P6P3\"</code>",
+          "testString": "assert('P1P5P4CCCP2P6P3'.match(reCriminals) && 'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC', 'Your regex should match <em>three</em> criminals (\"<code>CCC</code>\") in <code>\"P1P5P4CCCP2P6P3\"</code>');"
+        },
+        {
+          "text": "Your regex should match <em>five</em> criminals (\"<code>CCCCC</code>\") in <code>\"P6P2P7P4P5CCCCCP3P1\"</code>",
+          "testString": "assert('P6P2P7P4P5CCCCCP3P1'.match(reCriminals) && 'P6P2P7P4P5CCCCCP3P1'.match(reCriminals)[0] == 'CCCCC', 'Your regex should match <em>five</em> criminals (\"<code>CCCCC</code>\") in <code>\"P6P2P7P4P5CCCCCP3P1\"</code>');"
+        },
+        {
+          "text": "Your regex should not match any criminals in <code>\"\"</code>",
+          "testString": "assert(!reCriminals.test(''), 'Your regex should not match any criminals in <code>\"\"</code>');"
+        },
+        {
+          "text": "Your regex should not match any criminals in <code>\"P1P2P3\"</code>",
+          "testString": "assert(!reCriminals.test('P1P2P3'), 'Your regex should not match any criminals in <code>\"P1P2P3\"</code>');"
+        },
+        {
+          "text": "Your regex should match <em>fifty</em> criminals (\"<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>\") in <code>\"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3\"</code>.",
+          "testString": "assert('P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals) && 'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals)[0] == \"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\", 'Your regex should match <em>fifty</em> criminals (\"<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>\") in <code>\"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3\"</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// example crowd gathering",
+            "let crowd = 'P1P2P3P4P5P6CCCP7P8P9';",
+            "",
+            "let reCriminals = /./; // Change this line",
+            "",
+            "let matchedCriminals = crowd.match(reCriminals);",
+            "console.log(matchedCriminals);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db7367417b2b2512b9d",
@@ -482,23 +805,44 @@
         "<hr>",
         "Use the <code>caret</code> character in a regex to find <code>\"Cal\"</code> only in the beginning of the string <code>rickyAndCal</code>."
       ],
-      "challengeSeed": [
-        "let rickyAndCal = \"Cal and Ricky both like racing.\";",
-        "let calRegex = /change/; // Change this line",
-        "let result = calRegex.test(rickyAndCal);"
-      ],
       "tests": [
-        "assert(calRegex.source == \"^Cal\", 'message: Your regex should search for <code>\"Cal\"</code> with a capital letter.');",
-        "assert(calRegex.flags == \"\", 'message: Your regex should not use any flags.');",
-        "assert(calRegex.test(\"Cal and Ricky both like racing.\"), 'message: Your regex should match <code>\"Cal\"</code> at the beginning of the string.');",
-        "assert(!calRegex.test(\"Ricky and Cal both like racing.\"), 'message: Your regex should not match <code>\"Cal\"</code> in the middle of a string.');"
+        {
+          "text": "Your regex should search for <code>\"Cal\"</code> with a capital letter.",
+          "testString": "assert(calRegex.source == \"^Cal\", 'Your regex should search for <code>\"Cal\"</code> with a capital letter.');"
+        },
+        {
+          "text": "Your regex should not use any flags.",
+          "testString": "assert(calRegex.flags == \"\", 'Your regex should not use any flags.');"
+        },
+        {
+          "text": "Your regex should match <code>\"Cal\"</code> at the beginning of the string.",
+          "testString": "assert(calRegex.test(\"Cal and Ricky both like racing.\"), 'Your regex should match <code>\"Cal\"</code> at the beginning of the string.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Cal\"</code> in the middle of a string.",
+          "testString": "assert(!calRegex.test(\"Ricky and Cal both like racing.\"), 'Your regex should not match <code>\"Cal\"</code> in the middle of a string.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let rickyAndCal = \"Cal and Ricky both like racing.\";",
+            "let calRegex = /change/; // Change this line",
+            "let result = calRegex.test(rickyAndCal);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db7367417b2b2512b9e",
@@ -510,22 +854,40 @@
         "<hr>",
         "Use the anchor character (<code>$</code>) to match the string <code>\"caboose\"</code> at the end of the string <code>caboose</code>."
       ],
-      "challengeSeed": [
-        "let caboose = \"The last car on a train is the caboose\";",
-        "let lastRegex = /change/; // Change this line",
-        "let result = lastRegex.test(caboose);"
-      ],
       "tests": [
-        "assert(lastRegex.source == \"caboose$\", 'message: You should search for <code>\"caboose\"</code> with the dollar sign <code>$</code> anchor in your regex.');",
-        "assert(lastRegex.flags == \"\", 'message: Your regex should not use any flags.');",
-        "assert(lastRegex.test(\"The last car on a train is the caboose\"), 'message: You should match <code>\"caboose\"</code> at the end of the string <code>\"The last car on a train is the caboose\"</code>');"
+        {
+          "text": "You should search for <code>\"caboose\"</code> with the dollar sign <code>$</code> anchor in your regex.",
+          "testString": "assert(lastRegex.source == \"caboose$\", 'You should search for <code>\"caboose\"</code> with the dollar sign <code>$</code> anchor in your regex.');"
+        },
+        {
+          "text": "Your regex should not use any flags.",
+          "testString": "assert(lastRegex.flags == \"\", 'Your regex should not use any flags.');"
+        },
+        {
+          "text": "You should match <code>\"caboose\"</code> at the end of the string <code>\"The last car on a train is the caboose\"</code>",
+          "testString": "assert(lastRegex.test(\"The last car on a train is the caboose\"), 'You should match <code>\"caboose\"</code> at the end of the string <code>\"The last car on a train is the caboose\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let caboose = \"The last car on a train is the caboose\";",
+            "let lastRegex = /change/; // Change this line",
+            "let result = lastRegex.test(caboose);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db7367417b2b2512b9f",
@@ -538,24 +900,48 @@
         "<hr>",
         "Use the shorthand character class <code>\\w</code> to count the number of alphanumeric characters in various quotes and strings."
       ],
-      "challengeSeed": [
-        "let quoteSample = \"The five boxing wizards jump quickly.\";",
-        "let alphabetRegexV2 = /change/; // Change this line",
-        "let result = quoteSample.match(alphabetRegexV2).length;"
-      ],
       "tests": [
-        "assert(alphabetRegexV2.global, 'message: Your regex should use the global flag.');",
-        "assert(\"The five boxing wizards jump quickly.\".match(alphabetRegexV2).length === 31, 'message: Your regex should find 31 alphanumeric characters in <code>\"The five boxing wizards jump quickly.\"</code>');",
-        "assert(\"Pack my box with five dozen liquor jugs.\".match(alphabetRegexV2).length === 32, 'message: Your regex should find 32 alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>');",
-        "assert(\"How vexingly quick daft zebras jump!\".match(alphabetRegexV2).length === 30, 'message: Your regex should find 30 alphanumeric characters in <code>\"How vexingly quick daft zebras jump!\"</code>');",
-        "assert(\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\".match(alphabetRegexV2).length === 36, 'message: Your regex should find 36 alphanumeric characters in <code>\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\"</code>');"
+        {
+          "text": "Your regex should use the global flag.",
+          "testString": "assert(alphabetRegexV2.global, 'Your regex should use the global flag.');"
+        },
+        {
+          "text": "Your regex should find 31 alphanumeric characters in <code>\"The five boxing wizards jump quickly.\"</code>",
+          "testString": "assert(\"The five boxing wizards jump quickly.\".match(alphabetRegexV2).length === 31, 'Your regex should find 31 alphanumeric characters in <code>\"The five boxing wizards jump quickly.\"</code>');"
+        },
+        {
+          "text": "Your regex should find 32 alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>",
+          "testString": "assert(\"Pack my box with five dozen liquor jugs.\".match(alphabetRegexV2).length === 32, 'Your regex should find 32 alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>');"
+        },
+        {
+          "text": "Your regex should find 30 alphanumeric characters in <code>\"How vexingly quick daft zebras jump!\"</code>",
+          "testString": "assert(\"How vexingly quick daft zebras jump!\".match(alphabetRegexV2).length === 30, 'Your regex should find 30 alphanumeric characters in <code>\"How vexingly quick daft zebras jump!\"</code>');"
+        },
+        {
+          "text": "Your regex should find 36 alphanumeric characters in <code>\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\"</code>",
+          "testString": "assert(\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\".match(alphabetRegexV2).length === 36, 'Your regex should find 36 alphanumeric characters in <code>\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let quoteSample = \"The five boxing wizards jump quickly.\";",
+            "let alphabetRegexV2 = /change/; // Change this line",
+            "let result = quoteSample.match(alphabetRegexV2).length;"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db8367417b2b2512ba0",
@@ -567,24 +953,48 @@
         "<hr>",
         "Use the shorthand character class <code>\\W</code> to count the number of non-alphanumeric characters in various quotes and strings."
       ],
-      "challengeSeed": [
-        "let quoteSample = \"The five boxing wizards jump quickly.\";",
-        "let nonAlphabetRegex = /change/; // Change this line",
-        "let result = quoteSample.match(nonAlphabetRegex).length;"
-      ],
       "tests": [
-        "assert(nonAlphabetRegex.global, 'message: Your regex should use the global flag.');",
-        "assert(\"The five boxing wizards jump quickly.\".match(nonAlphabetRegex).length == 6, 'message: Your regex should find 6 non-alphanumeric characters in <code>\"The five boxing wizards jump quickly.\"</code>.');",
-        "assert(\"Pack my box with five dozen liquor jugs.\".match(nonAlphabetRegex).length == 8, 'message: Your regex should find 8 non-alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>');",
-        "assert(\"How vexingly quick daft zebras jump!\".match(nonAlphabetRegex).length == 6, 'message: Your regex should find 6 non-alphanumeric characters in <code>\"How vexingly quick daft zebras jump!\"</code>');",
-        "assert(\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\".match(nonAlphabetRegex).length == 12, 'message: Your regex should find 12 non-alphanumeric characters in <code>\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\"</code>');"
+        {
+          "text": "Your regex should use the global flag.",
+          "testString": "assert(nonAlphabetRegex.global, 'Your regex should use the global flag.');"
+        },
+        {
+          "text": "Your regex should find 6 non-alphanumeric characters in <code>\"The five boxing wizards jump quickly.\"</code>.",
+          "testString": "assert(\"The five boxing wizards jump quickly.\".match(nonAlphabetRegex).length == 6, 'Your regex should find 6 non-alphanumeric characters in <code>\"The five boxing wizards jump quickly.\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 8 non-alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>",
+          "testString": "assert(\"Pack my box with five dozen liquor jugs.\".match(nonAlphabetRegex).length == 8, 'Your regex should find 8 non-alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>');"
+        },
+        {
+          "text": "Your regex should find 6 non-alphanumeric characters in <code>\"How vexingly quick daft zebras jump!\"</code>",
+          "testString": "assert(\"How vexingly quick daft zebras jump!\".match(nonAlphabetRegex).length == 6, 'Your regex should find 6 non-alphanumeric characters in <code>\"How vexingly quick daft zebras jump!\"</code>');"
+        },
+        {
+          "text": "Your regex should find 12 non-alphanumeric characters in <code>\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\"</code>",
+          "testString": "assert(\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\".match(nonAlphabetRegex).length == 12, 'Your regex should find 12 non-alphanumeric characters in <code>\"123 456 7890 ABC def GHI jkl MNO pqr STU vwx YZ.\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let quoteSample = \"The five boxing wizards jump quickly.\";",
+            "let nonAlphabetRegex = /change/; // Change this line",
+            "let result = quoteSample.match(nonAlphabetRegex).length;"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "5d712346c441eddfaeb5bdef",
@@ -595,27 +1005,60 @@
         "<hr>",
         "Use the shorthand character class <code>\\d</code> to count how many digits are in movie titles. Written out numbers (\"six\" instead of 6) do not count."
       ],
-      "challengeSeed": [
-        "let numString = \"Your sandwich will be $5.00\";",
-        "let numRegex = /change/; // Change this line",
-        "let result = numString.match(numRegex).length;"
-      ],
       "tests": [
-        "assert(/\\\\d/.test(numRegex.source), 'message: Your regex should use the shortcut character to match digit characters');",
-        "assert(numRegex.global, 'message: Your regex should use the global flag.');",
-        "assert(\"9\".match(numRegex).length == 1, 'message: Your regex should find 1 digit in <code>\"9\"</code>.');",
-        "assert(\"Catch 22\".match(numRegex).length == 2, 'message: Your regex should find 2 digits in <code>\"Catch 22\"</code>.');",
-        "assert(\"101 Dalmatians\".match(numRegex).length == 3, 'message: Your regex should find 3 digits in <code>\"101 Dalmatians\"</code>.');",
-        "assert(\"One, Two, Three\".match(numRegex) == null, 'message: Your regex should find no digits in <code>\"One, Two, Three\"</code>.');",
-        "assert(\"21 Jump Street\".match(numRegex).length == 2, 'message: Your regex should find 2 digits in <code>\"21 Jump Street\"</code>.');",
-        "assert(\"2001: A Space Odyssey\".match(numRegex).length == 4, 'message: Your regex should find 4 digits in <code>\"2001: A Space Odyssey\"</code>.');"
+        {
+          "text": "Your regex should use the shortcut character to match digit characters",
+          "testString": "assert(/\\\\d/.test(numRegex.source), 'Your regex should use the shortcut character to match digit characters');"
+        },
+        {
+          "text": "Your regex should use the global flag.",
+          "testString": "assert(numRegex.global, 'Your regex should use the global flag.');"
+        },
+        {
+          "text": "Your regex should find 1 digit in <code>\"9\"</code>.",
+          "testString": "assert(\"9\".match(numRegex).length == 1, 'Your regex should find 1 digit in <code>\"9\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 2 digits in <code>\"Catch 22\"</code>.",
+          "testString": "assert(\"Catch 22\".match(numRegex).length == 2, 'Your regex should find 2 digits in <code>\"Catch 22\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 3 digits in <code>\"101 Dalmatians\"</code>.",
+          "testString": "assert(\"101 Dalmatians\".match(numRegex).length == 3, 'Your regex should find 3 digits in <code>\"101 Dalmatians\"</code>.');"
+        },
+        {
+          "text": "Your regex should find no digits in <code>\"One, Two, Three\"</code>.",
+          "testString": "assert(\"One, Two, Three\".match(numRegex) == null, 'Your regex should find no digits in <code>\"One, Two, Three\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 2 digits in <code>\"21 Jump Street\"</code>.",
+          "testString": "assert(\"21 Jump Street\".match(numRegex).length == 2, 'Your regex should find 2 digits in <code>\"21 Jump Street\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 4 digits in <code>\"2001: A Space Odyssey\"</code>.",
+          "testString": "assert(\"2001: A Space Odyssey\".match(numRegex).length == 4, 'Your regex should find 4 digits in <code>\"2001: A Space Odyssey\"</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let numString = \"Your sandwich will be $5.00\";",
+            "let numRegex = /change/; // Change this line",
+            "let result = numString.match(numRegex).length;"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db8367417b2b2512ba1",
@@ -626,27 +1069,60 @@
         "<hr>",
         "Use the shorthand character class for non-digits <code>\\D</code> to count how many non-digits are in movie titles."
       ],
-      "challengeSeed": [
-        "let numString = \"Your sandwich will be $5.00\";",
-        "let noNumRegex = /change/; // Change this line",
-        "let result = numString.match(noNumRegex).length;"
-      ],
       "tests": [
-        "assert(/\\\\D/.test(noNumRegex.source), 'message: Your regex should use the shortcut character to match non-digit characters');",
-        "assert(noNumRegex.global, 'message: Your regex should use the global flag.');",
-        "assert(\"9\".match(noNumRegex) == null, 'message: Your regex should find no non-digits in <code>\"9\"</code>.');",
-        "assert(\"Catch 22\".match(noNumRegex).length == 6, 'message: Your regex should find 6 non-digits in <code>\"Catch 22\"</code>.');",
-        "assert(\"101 Dalmatians\".match(noNumRegex).length == 11, 'message: Your regex should find 11 non-digits in <code>\"101 Dalmatians\"</code>.');",
-        "assert(\"One, Two, Three\".match(noNumRegex).length == 15, 'message: Your regex should find 15 non-digits in <code>\"One, Two, Three\"</code>.');",
-        "assert(\"21 Jump Street\".match(noNumRegex).length == 12, 'message: Your regex should find 12 non-digits in <code>\"21 Jump Street\"</code>.');",
-        "assert(\"2001: A Space Odyssey\".match(noNumRegex).length == 17, 'message: Your regex should find 17 non-digits in <code>\"2001: A Space Odyssey\"</code>.');"
+        {
+          "text": "Your regex should use the shortcut character to match non-digit characters",
+          "testString": "assert(/\\\\D/.test(noNumRegex.source), 'Your regex should use the shortcut character to match non-digit characters');"
+        },
+        {
+          "text": "Your regex should use the global flag.",
+          "testString": "assert(noNumRegex.global, 'Your regex should use the global flag.');"
+        },
+        {
+          "text": "Your regex should find no non-digits in <code>\"9\"</code>.",
+          "testString": "assert(\"9\".match(noNumRegex) == null, 'Your regex should find no non-digits in <code>\"9\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 6 non-digits in <code>\"Catch 22\"</code>.",
+          "testString": "assert(\"Catch 22\".match(noNumRegex).length == 6, 'Your regex should find 6 non-digits in <code>\"Catch 22\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 11 non-digits in <code>\"101 Dalmatians\"</code>.",
+          "testString": "assert(\"101 Dalmatians\".match(noNumRegex).length == 11, 'Your regex should find 11 non-digits in <code>\"101 Dalmatians\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 15 non-digits in <code>\"One, Two, Three\"</code>.",
+          "testString": "assert(\"One, Two, Three\".match(noNumRegex).length == 15, 'Your regex should find 15 non-digits in <code>\"One, Two, Three\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 12 non-digits in <code>\"21 Jump Street\"</code>.",
+          "testString": "assert(\"21 Jump Street\".match(noNumRegex).length == 12, 'Your regex should find 12 non-digits in <code>\"21 Jump Street\"</code>.');"
+        },
+        {
+          "text": "Your regex should find 17 non-digits in <code>\"2001: A Space Odyssey\"</code>.",
+          "testString": "assert(\"2001: A Space Odyssey\".match(noNumRegex).length == 17, 'Your regex should find 17 non-digits in <code>\"2001: A Space Odyssey\"</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let numString = \"Your sandwich will be $5.00\";",
+            "let noNumRegex = /change/; // Change this line",
+            "let result = numString.match(noNumRegex).length;"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db8367417b2b2512ba2",
@@ -660,25 +1136,52 @@
         "<hr>",
         "Change the regex <code>userCheck</code> to fit the constraints listed above."
       ],
-      "challengeSeed": [
-        "let username = \"JackOfAllTrades\";",
-        "let userCheck = /change/; // Change this line",
-        "let result = userCheck.test(username);"
-      ],
       "tests": [
-        "assert(userCheck.test(\"JACK\"), 'message: Your regex should match <code>JACK</code>');",
-        "assert(!userCheck.test(\"J\"), 'message: Your regex should not match <code>J</code>');",
-        "assert(userCheck.test(\"Oceans11\"), 'message: Your regex should match <code>Oceans11</code>');",
-        "assert(userCheck.test(\"RegexGuru\"), 'message: Your regex should match <code>RegexGuru</code>');",
-        "assert(!userCheck.test(\"007\"), 'message: Your regex should not match <code>007</code>');",
-        "assert(!userCheck.test(\"9\"), 'message: Your regex should not match <code>9</code>');"
+        {
+          "text": "Your regex should match <code>JACK</code>",
+          "testString": "assert(userCheck.test(\"JACK\"), 'Your regex should match <code>JACK</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>J</code>",
+          "testString": "assert(!userCheck.test(\"J\"), 'Your regex should not match <code>J</code>');"
+        },
+        {
+          "text": "Your regex should match <code>Oceans11</code>",
+          "testString": "assert(userCheck.test(\"Oceans11\"), 'Your regex should match <code>Oceans11</code>');"
+        },
+        {
+          "text": "Your regex should match <code>RegexGuru</code>",
+          "testString": "assert(userCheck.test(\"RegexGuru\"), 'Your regex should match <code>RegexGuru</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>007</code>",
+          "testString": "assert(!userCheck.test(\"007\"), 'Your regex should not match <code>007</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>9</code>",
+          "testString": "assert(!userCheck.test(\"9\"), 'Your regex should not match <code>9</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let username = \"JackOfAllTrades\";",
+            "let userCheck = /change/; // Change this line",
+            "let result = userCheck.test(username);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db8367417b2b2512ba3",
@@ -690,23 +1193,44 @@
         "<hr>",
         "Change the regex <code>countWhiteSpace</code> to look for multiple whitespace characters in a string."
       ],
-      "challengeSeed": [
-        "let sample = \"Whitespace is important in separating words\";",
-        "let countWhiteSpace = /change/; // Change this line",
-        "let result = sample.match(countWhiteSpace);"
-      ],
       "tests": [
-        "assert(countWhiteSpace.global, 'message: Your regex should use the global flag.');",
-        "assert(\"Men are from Mars and women are from Venus.\".match(countWhiteSpace).length == 8, 'message: Your regex should find eight spaces in <code>\"Men are from Mars and women are from Venus.\"</code>');",
-        "assert(\"Space: the final frontier.\".match(countWhiteSpace).length == 3, 'message: Your regex should find three spaces in <code>\"Space: the final frontier.\"</code>');",
-        "assert(\"MindYourPersonalSpace\".match(countWhiteSpace) == null, 'message: Your regex should find no spaces in <code>\"MindYourPersonalSpace\"</code>');"
+        {
+          "text": "Your regex should use the global flag.",
+          "testString": "assert(countWhiteSpace.global, 'Your regex should use the global flag.');"
+        },
+        {
+          "text": "Your regex should find eight spaces in <code>\"Men are from Mars and women are from Venus.\"</code>",
+          "testString": "assert(\"Men are from Mars and women are from Venus.\".match(countWhiteSpace).length == 8, 'Your regex should find eight spaces in <code>\"Men are from Mars and women are from Venus.\"</code>');"
+        },
+        {
+          "text": "Your regex should find three spaces in <code>\"Space: the final frontier.\"</code>",
+          "testString": "assert(\"Space: the final frontier.\".match(countWhiteSpace).length == 3, 'Your regex should find three spaces in <code>\"Space: the final frontier.\"</code>');"
+        },
+        {
+          "text": "Your regex should find no spaces in <code>\"MindYourPersonalSpace\"</code>",
+          "testString": "assert(\"MindYourPersonalSpace\".match(countWhiteSpace) == null, 'Your regex should find no spaces in <code>\"MindYourPersonalSpace\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let sample = \"Whitespace is important in separating words\";",
+            "let countWhiteSpace = /change/; // Change this line",
+            "let result = sample.match(countWhiteSpace);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db9367417b2b2512ba4",
@@ -718,23 +1242,44 @@
         "<hr>",
         "Change the regex <code>countNonWhiteSpace</code> to look for multiple non-whitespace characters in a string."
       ],
-      "challengeSeed": [
-        "let sample = \"Whitespace is important in separating words\";",
-        "let countNonWhiteSpace = /change/; // Change this line",
-        "let result = sample.match(countNonWhiteSpace);"
-      ],
       "tests": [
-        "assert(countNonWhiteSpace.global, 'message: Your regex should use the global flag.');",
-        "assert(\"Men are from Mars and women are from Venus.\".match(countNonWhiteSpace).length == 35, 'message: Your regex should find 35 non-spaces in <code>\"Men are from Mars and women are from Venus.\"</code>');",
-        "assert(\"Space: the final frontier.\".match(countNonWhiteSpace).length == 23, 'message: Your regex should find 23 non-spaces in <code>\"Space: the final frontier.\"</code>');",
-        "assert(\"MindYourPersonalSpace\".match(countNonWhiteSpace).length == 21, 'message: Your regex should find 21 non-spaces in <code>\"MindYourPersonalSpace\"</code>');"
+        {
+          "text": "Your regex should use the global flag.",
+          "testString": "assert(countNonWhiteSpace.global, 'Your regex should use the global flag.');"
+        },
+        {
+          "text": "Your regex should find 35 non-spaces in <code>\"Men are from Mars and women are from Venus.\"</code>",
+          "testString": "assert(\"Men are from Mars and women are from Venus.\".match(countNonWhiteSpace).length == 35, 'Your regex should find 35 non-spaces in <code>\"Men are from Mars and women are from Venus.\"</code>');"
+        },
+        {
+          "text": "Your regex should find 23 non-spaces in <code>\"Space: the final frontier.\"</code>",
+          "testString": "assert(\"Space: the final frontier.\".match(countNonWhiteSpace).length == 23, 'Your regex should find 23 non-spaces in <code>\"Space: the final frontier.\"</code>');"
+        },
+        {
+          "text": "Your regex should find 21 non-spaces in <code>\"MindYourPersonalSpace\"</code>",
+          "testString": "assert(\"MindYourPersonalSpace\".match(countNonWhiteSpace).length == 21, 'Your regex should find 21 non-spaces in <code>\"MindYourPersonalSpace\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let sample = \"Whitespace is important in separating words\";",
+            "let countNonWhiteSpace = /change/; // Change this line",
+            "let result = sample.match(countNonWhiteSpace);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db9367417b2b2512ba5",
@@ -747,26 +1292,56 @@
         "<hr>",
         "Change the regex <code>ohRegex</code> to match only <code>3</code> to <code>6</code> letter <code>h</code>'s in the word <code>\"Oh no\"</code>."
       ],
-      "challengeSeed": [
-        "let ohStr = \"Ohhh no\";",
-        "let ohRegex = /change/; // Change this line",
-        "let result = ohRegex.test(ohStr);"
-      ],
       "tests": [
-        "assert(ohRegex.source.match(/{.*?}/).length > 0, 'message: Your regex should use curly brackets.');",
-        "assert(!ohRegex.test(\"Ohh no\"), 'message: Your regex should not match <code>\"Ohh no\"</code>');",
-        "assert(ohRegex.test(\"Ohhh no\"), 'message: Your regex should match <code>\"Ohhh no\"</code>');",
-        "assert(ohRegex.test(\"Ohhhh no\"), 'message: Your regex should match <code>\"Ohhhh no\"</code>');",
-        "assert(ohRegex.test(\"Ohhhhh no\"), 'message: Your regex should match <code>\"Ohhhhh no\"</code>');",
-        "assert(ohRegex.test(\"Ohhhhhh no\"), 'message: Your regex should match <code>\"Ohhhhhh no\"</code>');",
-        "assert(!ohRegex.test(\"Ohhhhhhh no\"), 'message: Your regex should not match <code>\"Ohhhhhhh no\"</code>');"
+        {
+          "text": "Your regex should use curly brackets.",
+          "testString": "assert(ohRegex.source.match(/{.*?}/).length > 0, 'Your regex should use curly brackets.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Ohh no\"</code>",
+          "testString": "assert(!ohRegex.test(\"Ohh no\"), 'Your regex should not match <code>\"Ohh no\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Ohhh no\"</code>",
+          "testString": "assert(ohRegex.test(\"Ohhh no\"), 'Your regex should match <code>\"Ohhh no\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Ohhhh no\"</code>",
+          "testString": "assert(ohRegex.test(\"Ohhhh no\"), 'Your regex should match <code>\"Ohhhh no\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Ohhhhh no\"</code>",
+          "testString": "assert(ohRegex.test(\"Ohhhhh no\"), 'Your regex should match <code>\"Ohhhhh no\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Ohhhhhh no\"</code>",
+          "testString": "assert(ohRegex.test(\"Ohhhhhh no\"), 'Your regex should match <code>\"Ohhhhhh no\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Ohhhhhhh no\"</code>",
+          "testString": "assert(!ohRegex.test(\"Ohhhhhhh no\"), 'Your regex should not match <code>\"Ohhhhhhh no\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let ohStr = \"Ohhh no\";",
+            "let ohRegex = /change/; // Change this line",
+            "let result = ohRegex.test(ohStr);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db9367417b2b2512ba6",
@@ -779,26 +1354,56 @@
         "<hr>",
         "Change the regex <code>haRegex</code> to match the word <code>\"Hazzah\"</code> only when it has four or more letter <code>z</code>'s."
       ],
-      "challengeSeed": [
-        "let haStr = \"Hazzzzah\";",
-        "let haRegex = /change/; // Change this line",
-        "let result = haRegex.test(haStr);"
-      ],
       "tests": [
-        "assert(haRegex.source.match(/{.*?}/).length > 0, 'message: Your regex should use curly brackets.');",
-        "assert(!haRegex.test(\"Hazzah\"), 'message: Your regex should not match <code>\"Hazzah\"</code>');",
-        "assert(!haRegex.test(\"Hazzzah\"), 'message: Your regex should not match <code>\"Hazzzah\"</code>');",
-        "assert(haRegex.test(\"Hazzzzah\"), 'message: Your regex should match <code>\"Hazzzzah\"</code>');",
-        "assert(haRegex.test(\"Hazzzzzah\"), 'message: Your regex should match <code>\"Hazzzzzah\"</code>');",
-        "assert(haRegex.test(\"Hazzzzzzah\"), 'message: Your regex should match <code>\"Hazzzzzzah\"</code>');",
-        "assert(haRegex.test(\"Ha\" + \"z\".repeat(30) + \"ah\"), 'message: Your regex should match <code>\"Hazzah\"</code> with 30 <code>z</code>\\'s in it.');"
+        {
+          "text": "Your regex should use curly brackets.",
+          "testString": "assert(haRegex.source.match(/{.*?}/).length > 0, 'Your regex should use curly brackets.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Hazzah\"</code>",
+          "testString": "assert(!haRegex.test(\"Hazzah\"), 'Your regex should not match <code>\"Hazzah\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Hazzzah\"</code>",
+          "testString": "assert(!haRegex.test(\"Hazzzah\"), 'Your regex should not match <code>\"Hazzzah\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Hazzzzah\"</code>",
+          "testString": "assert(haRegex.test(\"Hazzzzah\"), 'Your regex should match <code>\"Hazzzzah\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Hazzzzzah\"</code>",
+          "testString": "assert(haRegex.test(\"Hazzzzzah\"), 'Your regex should match <code>\"Hazzzzzah\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Hazzzzzzah\"</code>",
+          "testString": "assert(haRegex.test(\"Hazzzzzzah\"), 'Your regex should match <code>\"Hazzzzzzah\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Hazzah\"</code> with 30 <code>z</code>\\'s in it.",
+          "testString": "assert(haRegex.test(\"Ha\" + \"z\".repeat(30) + \"ah\"), 'Your regex should match <code>\"Hazzah\"</code> with 30 <code>z</code>\\'s in it.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let haStr = \"Hazzzzah\";",
+            "let haRegex = /change/; // Change this line",
+            "let result = haRegex.test(haStr);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7db9367417b2b2512ba7",
@@ -811,25 +1416,52 @@
         "<hr>",
         "Change the regex <code>timRegex</code> to match the word <code>\"Timber\"</code> only when it has four letter <code>m</code>'s."
       ],
-      "challengeSeed": [
-        "let timStr = \"Timmmmber\";",
-        "let timRegex = /change/; // Change this line",
-        "let result = timRegex.test(timStr);"
-      ],
       "tests": [
-        "assert(timRegex.source.match(/{.*?}/).length > 0, 'message: Your regex should use curly brackets.');",
-        "assert(!timRegex.test(\"Timber\"), 'message: Your regex should not match <code>\"Timber\"</code>');",
-        "assert(!timRegex.test(\"Timmber\"), 'message: Your regex should not match <code>\"Timmber\"</code>');",
-        "assert(!timRegex.test(\"Timmmber\"), 'message: Your regex should not match <code>\"Timmmber\"</code>');",
-        "assert(timRegex.test(\"Timmmmber\"), 'message: Your regex should match <code>\"Timmmmber\"</code>');",
-        "assert(!timRegex.test(\"Ti\" + \"m\".repeat(30) + \"ber\"), 'message: Your regex should not match <code>\"Timber\"</code> with 30 <code>m</code>\\'s in it.');"
+        {
+          "text": "Your regex should use curly brackets.",
+          "testString": "assert(timRegex.source.match(/{.*?}/).length > 0, 'Your regex should use curly brackets.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Timber\"</code>",
+          "testString": "assert(!timRegex.test(\"Timber\"), 'Your regex should not match <code>\"Timber\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Timmber\"</code>",
+          "testString": "assert(!timRegex.test(\"Timmber\"), 'Your regex should not match <code>\"Timmber\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Timmmber\"</code>",
+          "testString": "assert(!timRegex.test(\"Timmmber\"), 'Your regex should not match <code>\"Timmmber\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"Timmmmber\"</code>",
+          "testString": "assert(timRegex.test(\"Timmmmber\"), 'Your regex should match <code>\"Timmmmber\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"Timber\"</code> with 30 <code>m</code>\\'s in it.",
+          "testString": "assert(!timRegex.test(\"Ti\" + \"m\".repeat(30) + \"ber\"), 'Your regex should not match <code>\"Timber\"</code> with 30 <code>m</code>\\'s in it.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let timStr = \"Timmmmber\";",
+            "let timRegex = /change/; // Change this line",
+            "let result = timRegex.test(timStr);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dba367417b2b2512ba8",
@@ -842,23 +1474,44 @@
         "<hr>",
         "Change the regex <code>favRegex</code> to match both the American English (favorite) and the British English (favourite) version of the word."
       ],
-      "challengeSeed": [
-        "let favWord = \"favorite\";",
-        "let favRegex = /change/; // Change this line",
-        "let result = favRegex.test(favWord);"
-      ],
       "tests": [
-        "assert(favRegex.source.match(/\\?/).length > 0, 'message: Your regex should use the optional symbol, <code>?</code>.');",
-        "assert(favRegex.test(\"favorite\"), 'message: Your regex should match <code>\"favorite\"</code>');",
-        "assert(favRegex.test(\"favourite\"), 'message: Your regex should match <code>\"favourite\"</code>');",
-        "assert(!favRegex.test(\"fav\"), 'message: Your regex should not match <code>\"fav\"</code>');"
+        {
+          "text": "Your regex should use the optional symbol, <code>?</code>.",
+          "testString": "assert(favRegex.source.match(/\\?/).length > 0, 'Your regex should use the optional symbol, <code>?</code>.');"
+        },
+        {
+          "text": "Your regex should match <code>\"favorite\"</code>",
+          "testString": "assert(favRegex.test(\"favorite\"), 'Your regex should match <code>\"favorite\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"favourite\"</code>",
+          "testString": "assert(favRegex.test(\"favourite\"), 'Your regex should match <code>\"favourite\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"fav\"</code>",
+          "testString": "assert(!favRegex.test(\"fav\"), 'Your regex should not match <code>\"fav\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let favWord = \"favorite\";",
+            "let favRegex = /change/; // Change this line",
+            "let result = favRegex.test(favWord);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dba367417b2b2512ba9",
@@ -875,26 +1528,56 @@
         "<hr>",
         "Use <code>lookaheads</code> in the <code>pwRegex</code> to match passwords that are greater than 5 characters long and have two consecutive digits."
       ],
-      "challengeSeed": [
-        "let sampleWord = \"astronaut\";",
-        "let pwRegex = /change/; // Change this line",
-        "let result = pwRegex.test(sampleWord);"
-      ],
       "tests": [
-        "assert(pwRegex.source.match(/\\(\\?=.*?\\)\\(\\?=.*?\\)/) !== null, 'message: Your regex should use two positive <code>lookaheads</code>.');",
-        "assert(!pwRegex.test(\"astronaut\"), 'message: Your regex should not match <code>\"astronaut\"</code>');",
-        "assert(!pwRegex.test(\"airplanes\"), 'message: Your regex should not match <code>\"airplanes\"</code>');",
-        "assert(pwRegex.test(\"bana12\"), 'message: Your regex should match <code>\"bana12\"</code>');",
-        "assert(pwRegex.test(\"abc123\"), 'message: Your regex should match <code>\"abc123\"</code>');",
-        "assert(!pwRegex.test(\"123\"), 'message: Your regex should not match <code>\"123\"</code>');",
-        "assert(!pwRegex.test(\"1234\"), 'message: Your regex should not match <code>\"1234\"</code>');"
+        {
+          "text": "Your regex should use two positive <code>lookaheads</code>.",
+          "testString": "assert(pwRegex.source.match(/\\(\\?=.*?\\)\\(\\?=.*?\\)/) !== null, 'Your regex should use two positive <code>lookaheads</code>.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"astronaut\"</code>",
+          "testString": "assert(!pwRegex.test(\"astronaut\"), 'Your regex should not match <code>\"astronaut\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"airplanes\"</code>",
+          "testString": "assert(!pwRegex.test(\"airplanes\"), 'Your regex should not match <code>\"airplanes\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"bana12\"</code>",
+          "testString": "assert(pwRegex.test(\"bana12\"), 'Your regex should match <code>\"bana12\"</code>');"
+        },
+        {
+          "text": "Your regex should match <code>\"abc123\"</code>",
+          "testString": "assert(pwRegex.test(\"abc123\"), 'Your regex should match <code>\"abc123\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"123\"</code>",
+          "testString": "assert(!pwRegex.test(\"123\"), 'Your regex should not match <code>\"123\"</code>');"
+        },
+        {
+          "text": "Your regex should not match <code>\"1234\"</code>",
+          "testString": "assert(!pwRegex.test(\"1234\"), 'Your regex should not match <code>\"1234\"</code>');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let sampleWord = \"astronaut\";",
+            "let pwRegex = /change/; // Change this line",
+            "let result = pwRegex.test(sampleWord);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dbb367417b2b2512baa",
@@ -909,29 +1592,68 @@
         "<hr>",
         "Use <code>capture groups</code> in <code>reRegex</code> to match numbers that are repeated only three times in a string, each separated by a space."
       ],
-      "challengeSeed": [
-        "let repeatNum = \"42 42 42\";",
-        "let reRegex = /change/; // Change this line",
-        "let result = reRegex.test(repeatNum);"
-      ],
       "tests": [
-        "assert(reRegex.source.match(/\\\\d/), 'message: Your regex should use the shorthand character class for digits.');",
-        "assert(reRegex.source.match(/\\\\\\d/g).length === 2, 'message: Your regex should reuse the capture group twice.');",
-        "assert(reRegex.source.match(/\\\\s/g).length === 2, 'message: Your regex should have two spaces separating the three numbers.');",
-        "assert(reRegex.test(\"42 42 42\"), 'message: Your regex should match <code>\"42 42 42\"</code>.');",
-        "assert(reRegex.test(\"100 100 100\"), 'message: Your regex should match <code>\"100 100 100\"</code>.');",
-        "assert.equal((\"42 42 42 42\").match(reRegex.source), null, 'message: Your regex should not match <code>\"42 42 42 42\"</code>.');",
-        "assert.equal((\"42 42\").match(reRegex.source), null, 'message: Your regex should not match <code>\"42 42\"</code>.');",
-        "assert(!reRegex.test(\"101 102 103\"), 'message: Your regex should not match <code>\"101 102 103\"</code>.');",
-        "assert(!reRegex.test(\"1 2 3\"), 'message: Your regex should not match <code>\"1 2 3\"</code>.');",
-        "assert(reRegex.test(\"10 10 10\"), 'message: Your regex should match <code>\"10 10 10\"</code>.');"
+        {
+          "text": "Your regex should use the shorthand character class for digits.",
+          "testString": "assert(reRegex.source.match(/\\\\d/), 'Your regex should use the shorthand character class for digits.');"
+        },
+        {
+          "text": "Your regex should reuse the capture group twice.",
+          "testString": "assert(reRegex.source.match(/\\\\\\d/g).length === 2, 'Your regex should reuse the capture group twice.');"
+        },
+        {
+          "text": "Your regex should have two spaces separating the three numbers.",
+          "testString": "assert(reRegex.source.match(/\\\\s/g).length === 2, 'Your regex should have two spaces separating the three numbers.');"
+        },
+        {
+          "text": "Your regex should match <code>\"42 42 42\"</code>.",
+          "testString": "assert(reRegex.test(\"42 42 42\"), 'Your regex should match <code>\"42 42 42\"</code>.');"
+        },
+        {
+          "text": "Your regex should match <code>\"100 100 100\"</code>.",
+          "testString": "assert(reRegex.test(\"100 100 100\"), 'Your regex should match <code>\"100 100 100\"</code>.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"42 42 42 42\"</code>.",
+          "testString": "assert.equal((\"42 42 42 42\").match(reRegex.source), null, 'Your regex should not match <code>\"42 42 42 42\"</code>.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"42 42\"</code>.",
+          "testString": "assert.equal((\"42 42\").match(reRegex.source), null, 'Your regex should not match <code>\"42 42\"</code>.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"101 102 103\"</code>.",
+          "testString": "assert(!reRegex.test(\"101 102 103\"), 'Your regex should not match <code>\"101 102 103\"</code>.');"
+        },
+        {
+          "text": "Your regex should not match <code>\"1 2 3\"</code>.",
+          "testString": "assert(!reRegex.test(\"1 2 3\"), 'Your regex should not match <code>\"1 2 3\"</code>.');"
+        },
+        {
+          "text": "Your regex should match <code>\"10 10 10\"</code>.",
+          "testString": "assert(reRegex.test(\"10 10 10\"), 'Your regex should match <code>\"10 10 10\"</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let repeatNum = \"42 42 42\";",
+            "let reRegex = /change/; // Change this line",
+            "let result = reRegex.test(repeatNum);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dbb367417b2b2512bab",
@@ -945,23 +1667,41 @@
         "<hr>",
         "Write a regex so that it will search for the string <code>\"good\"</code>. Then update the <code>replaceText</code> variable to replace <code>\"good\"</code> with <code>\"okey-dokey\"</code>."
       ],
-      "challengeSeed": [
-        "let huhText = \"This sandwich is good.\";",
-        "let fixRegex = /change/; // Change this line",
-        "let replaceText = \"\"; // Change this line",
-        "let result = huhText.replace(fixRegex, replaceText);"
-      ],
       "tests": [
-        "assert(code.match(/\\.replace\\(.*\\)/), 'message: You should use <code>.replace()</code> to search and replace.');",
-        "assert(result == \"This sandwich is okey-dokey.\" && replaceText === \"okey-dokey\", 'message: Your regex should change <code>\"This sandwich is good.\"</code> to <code>\"This sandwich is okey-dokey.\"</code>');",
-        "assert(code.match(/result\\s*=\\s*huhText\\.replace\\(.*?\\)/), 'message: You should not change the last line.');"
+        {
+          "text": "You should use <code>.replace()</code> to search and replace.",
+          "testString": "assert(code.match(/\\.replace\\(.*\\)/), 'You should use <code>.replace()</code> to search and replace.');"
+        },
+        {
+          "text": "Your regex should change <code>\"This sandwich is good.\"</code> to <code>\"This sandwich is okey-dokey.\"</code>",
+          "testString": "assert(result == \"This sandwich is okey-dokey.\" && replaceText === \"okey-dokey\", 'Your regex should change <code>\"This sandwich is good.\"</code> to <code>\"This sandwich is okey-dokey.\"</code>');"
+        },
+        {
+          "text": "You should not change the last line.",
+          "testString": "assert(code.match(/result\\s*=\\s*huhText\\.replace\\(.*?\\)/), 'You should not change the last line.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let huhText = \"This sandwich is good.\";",
+            "let fixRegex = /change/; // Change this line",
+            "let replaceText = \"\"; // Change this line",
+            "let result = huhText.replace(fixRegex, replaceText);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7dbb367417b2b2512bac",
@@ -972,15 +1712,19 @@
         "Write a regex and use the appropriate string methods to remove whitespace at the beginning and end of strings.",
         "<strong>Note</strong><br>The <code>.trim()</code> method would work here, but you'll need to complete this challenge using regular expressions."
       ],
-      "challengeSeed": [
-        "let hello = \"   Hello, World!  \";",
-        "let wsRegex = /change/; // Change this line",
-        "let result = hello; // Change this line"
-      ],
       "tests": [
-        "assert(result == \"Hello, World!\", 'message: <code>result</code> should equal to <code>\"Hello, World!\"</code>');",
-        "assert(!code.match(/\\.trim\\(.*?\\)/), 'message: You should not use the <code>.trim()</code> method.');",
-        "assert(!code.match(/result\\s*=\\s*\".*?\"/), 'message: The <code>result</code> variable should not be set equal to a string.');"
+        {
+          "text": "<code>result</code> should equal to <code>\"Hello, World!\"</code>",
+          "testString": "assert(result == \"Hello, World!\", '<code>result</code> should equal to <code>\"Hello, World!\"</code>');"
+        },
+        {
+          "text": "You should not use the <code>.trim()</code> method.",
+          "testString": "assert(!code.match(/\\.trim\\(.*?\\)/), 'You should not use the <code>.trim()</code> method.');"
+        },
+        {
+          "text": "The <code>result</code> variable should not be set equal to a string.",
+          "testString": "assert(!code.match(/result\\s*=\\s*\".*?\"/), 'The <code>result</code> variable should not be set equal to a string.');"
+        }
       ],
       "solutions": [],
       "hints": [
@@ -989,7 +1733,21 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let hello = \"   Hello, World!  \";",
+            "let wsRegex = /change/; // Change this line",
+            "let result = hello; // Change this line"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     }
   ]
 }

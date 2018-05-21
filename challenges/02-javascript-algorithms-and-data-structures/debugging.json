@@ -5,37 +5,6 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7b83367417b2b2512b32",
-      "title": "Introduction to the Debugging Challenges",
-      "description": [
-        [
-          "",
-          "",
-          "Debugging is a valuable and (unfortunately) necessary tool for programmers. It follows the testing phase of checking if your code works as intended, and discovering it does not. Debugging is the process of finding exactly what isn't working and fixing it.",
-          ""
-        ],
-        [
-          "",
-          "",
-          "After spending time creating a brilliant block of code, it is tough realizing it may have errors. These issues generally come in three forms: 1) syntax errors that prevent a program from running, 2) runtime errors when code fails to execute or has unexpected behavior, and 3) semantic (or logical) errors when code doesn't do what it's meant to.<br><br>Modern code editors (and experience) can help identify syntax errors. Semantic and runtime errors are harder to find. They may cause your program to crash, make it run forever, or give incorrect output. Think of debugging as trying to understand why your code is behaving the way it is.<br><br>Example of a syntax error - often detected by the code editor:<br><br><blockquote>funtion willNotWork( {<br>&nbsp;&nbsp;console.log(\"Yuck\");<br>}<br>// \"function\" keyword is misspelled and there's a missing parenthesis</blockquote><br><br>Here's an example of a runtime error - often detected while the program executes:<br><br><blockquote>function loopy() {<br>&nbsp;&nbsp;while(true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"Hello, world!\");<br>&nbsp;&nbsp;}<br>}<br>// Calling loopy starts an infinite loop, which may crash your browser</blockquote><br><br>Example of a semantic error - often detected after testing code output:<br><br><blockquote>function calcAreaOfRect(w, h) {<br>&nbsp;&nbsp;return w + h; // This should be w * h<br>}<br>let myRectArea = calcAreaOfRect(2, 3);<br>// Correct syntax and the program executes, but this gives the wrong answer</blockquote>",
-          ""
-        ],
-        [
-          "",
-          "",
-          "Debugging is frustrating, but it helps to develop (and follow) a step-by-step approach to review your code. This means checking the intermediate values and types of variables to see if they are what they should be. You can start with a simple process of elimination.<br><br>For example, if function A works and returns what it's supposed to, then function B may have the issue. Or start checking values in a block of code from the middle to try to cut the search space in half. A problem in one spot indicates a bug in the first half of the code. If not, it's likely in the second.<br><br>This section will cover a couple helpful tools to find bugs, and some of the common forms they take. Fortunately, debugging is a learnable skill that just requires a little patience and practice to master.",
-          ""
-        ]
-      ],
-      "releasedOn": "Feb 17, 2017",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {}
-    },
-    {
       "id": "587d7b83367417b2b2512b33",
       "title": "Use the JavaScript Console to Check the Value of a Variable",
       "description": [
@@ -47,25 +16,37 @@
         "<hr>",
         "Use the <code>console.log()</code> method to print the value of the variable <code>a</code> where noted in the code."
       ],
-      "challengeSeed": [
-        "let a = 5;",
-        "let b = 1;",
-        "a++;",
-        "// Add your code below this line",
-        "",
-        "",
-        "let sumAB = a + b;",
-        "console.log(sumAB);"
-      ],
       "tests": [
-        "assert(code.match(/console\\.log\\(a\\)/g), 'message: Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.');"
+        {
+          "text": "Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.",
+          "testString": "assert(code.match(/console\\.log\\(a\\)/g), 'Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let a = 5;",
+            "let b = 1;",
+            "a++;",
+            "// Add your code below this line",
+            "",
+            "",
+            "let sumAB = a + b;",
+            "console.log(sumAB);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b83367417b2b2512b37",
@@ -81,31 +62,49 @@
         "Use <code>console.log()</code> to print the variables in the code where indicated.",
         ""
       ],
-      "challengeSeed": [
-        "// Open your browser console",
-        "let outputTwo = \"This will print to the browser console 2 times\";",
-        "// Use console.log() to print the outputTwo variable",
-        "",
-        "",
-        "let outputOne = \"Try to get this to log only once to the browser console\";",
-        "// Use console.clear() in the next line to print the outputOne only once",
-        "",
-        "",
-        "// Use console.log() to print the outputOne variable",
-        "",
-        ""
-      ],
       "tests": [
-        "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.');",
-        "assert(code.match(/console\\.log\\(outputOne\\)/g), 'message: Use <code>console.log()</code> to print the <code>outputOne</code> variable.');",
-        "assert(code.match(/(?<!\\/\\/ Use )console\\.clear\\(\\)/g), 'message: Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
+        {
+          "text": "Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.",
+          "testString": "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.');"
+        },
+        {
+          "text": "Use <code>console.log()</code> to print the <code>outputOne</code> variable.",
+          "testString": "assert(code.match(/console\\.log\\(outputOne\\)/g), 'Use <code>console.log()</code> to print the <code>outputOne</code> variable.');"
+        },
+        {
+          "text": "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.",
+          "testString": "assert(code.match(/(?<!\\/\\/ Use )console\\.clear\\(\\)/g), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// Open your browser console",
+            "let outputTwo = \"This will print to the browser console 2 times\";",
+            "// Use console.log() to print the outputTwo variable",
+            "",
+            "",
+            "let outputOne = \"Try to get this to log only once to the browser console\";",
+            "// Use console.clear() in the next line to print the outputOne only once",
+            "",
+            "",
+            "// Use console.log() to print the outputOne variable",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b84367417b2b2512b34",
@@ -118,24 +117,42 @@
         "<hr>",
         "Add two <code>console.log()</code> statements to check the <code>typeof</code> each of the two variables <code>seven</code> and <code>three</code> in the code."
       ],
-      "challengeSeed": [
-        "let seven = 7;",
-        "let three = \"3\";",
-        "console.log(seven + three);",
-        "// Add your code below this line",
-        ""
-      ],
       "tests": [
-        "assert(code.match(/console\\.log\\(typeof[\\( ].*\\)?\\)/g).length == 2, 'message: Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.');",
-        "assert(code.match(/typeof[\\( ]seven\\)?/g), 'message: Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.');",
-        "assert(code.match(/typeof[\\( ]three\\)?/g), 'message: Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.');"
+        {
+          "text": "Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.",
+          "testString": "assert(code.match(/console\\.log\\(typeof[\\( ].*\\)?\\)/g).length == 2, 'Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.');"
+        },
+        {
+          "text": "Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.",
+          "testString": "assert(code.match(/typeof[\\( ]seven\\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.');"
+        },
+        {
+          "text": "Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.",
+          "testString": "assert(code.match(/typeof[\\( ]three\\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let seven = 7;",
+            "let three = \"3\";",
+            "console.log(seven + three);",
+            "// Add your code below this line",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b84367417b2b2512b35",
@@ -146,25 +163,49 @@
         "<hr>",
         "Fix the two spelling errors in the code so the <code>netWorkingCapital</code> calculation works."
       ],
-      "challengeSeed": [
-        "let receivables = 10;",
-        "let payables = 8;",
-        "let netWorkingCapital = recievables - payable;",
-        "console.log(`Net working capital is: ${netWorkingCapital}`);"
-      ],
       "tests": [
-        "assert(netWorkingCapital === 2, 'message: Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".');",
-        "assert(!code.match(/recievables/g), 'message: There should be no instances of mis-spelled variables in the code.');",
-        "assert(code.match(/receivables/g).length == 2, 'message: The <code>receivables</code> variable should be declared and used properly in the code.');",
-        "assert(!code.match(/payable;/g), 'message: There should be no instances of mis-spelled variables in the code.');",
-        "assert(code.match(/payables/g).length == 2, 'message: The <code>payables</code> variable should be declared and used properly in the code.');"
+        {
+          "text": "Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".",
+          "testString": "assert(netWorkingCapital === 2, 'Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".');"
+        },
+        {
+          "text": "There should be no instances of mis-spelled variables in the code.",
+          "testString": "assert(!code.match(/recievables/g), 'There should be no instances of mis-spelled variables in the code.');"
+        },
+        {
+          "text": "The <code>receivables</code> variable should be declared and used properly in the code.",
+          "testString": "assert(code.match(/receivables/g).length == 2, 'The <code>receivables</code> variable should be declared and used properly in the code.');"
+        },
+        {
+          "text": "There should be no instances of mis-spelled variables in the code.",
+          "testString": "assert(!code.match(/payable;/g), 'There should be no instances of mis-spelled variables in the code.');"
+        },
+        {
+          "text": "The <code>payables</code> variable should be declared and used properly in the code.",
+          "testString": "assert(code.match(/payables/g).length == 2, 'The <code>payables</code> variable should be declared and used properly in the code.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let receivables = 10;",
+            "let payables = 8;",
+            "let netWorkingCapital = recievables - payable;",
+            "console.log(`Net working capital is: ${netWorkingCapital}`);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b84367417b2b2512b36",
@@ -175,21 +216,36 @@
         "<hr>",
         "Fix the two pair errors in the code."
       ],
-      "challengeSeed": [
-        "let myArray = [1, 2, 3;",
-        "let arraySum = myArray.reduce((previous, current =>  previous + current);",
-        "console.log(`Sum of array values is: ${arraySum}`);"
-      ],
       "tests": [
-        "assert(code.match(/myArray\\s*?=\\s*?\\[\\s*?1\\s*?,\\s*?2\\s*?,\\s*?3\\s*?\\];/g), 'message: Your code should fix the missing piece of the array.');",
-        "assert(arraySum === 6, 'message: Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".');"
+        {
+          "text": "Your code should fix the missing piece of the array.",
+          "testString": "assert(code.match(/myArray\\s*?=\\s*?\\[\\s*?1\\s*?,\\s*?2\\s*?,\\s*?3\\s*?\\];/g), 'Your code should fix the missing piece of the array.');"
+        },
+        {
+          "text": "Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".",
+          "testString": "assert(arraySum === 6, 'Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let myArray = [1, 2, 3;",
+            "let arraySum = myArray.reduce((previous, current =>  previous + current);",
+            "console.log(`Sum of array values is: ${arraySum}`);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b84367417b2b2512b37",
@@ -204,20 +260,35 @@
         "<hr>",
         "Fix the string so it either uses different quotes for the <code>href</code> value, or escape the existing ones. Keep the double quote marks around the entire string."
       ],
-      "challengeSeed": [
-        "let innerHtml = \"<p>Click here to <a href=\"#Home\">return home</a></p>\";",
-        "console.log(innerHtml);"
-      ],
       "tests": [
-        "assert(code.match(/<a href=\\s*?('|\\\\\")#Home\\1\\s*?>/g), 'message: Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.');",
-        "assert(code.match(/\"<p>.*?<\\/p>\";/g), 'message: Your code should keep the double quotes around the entire string.');"
+        {
+          "text": "Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.",
+          "testString": "assert(code.match(/<a href=\\s*?('|\\\\\")#Home\\1\\s*?>/g), 'Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.');"
+        },
+        {
+          "text": "Your code should keep the double quotes around the entire string.",
+          "testString": "assert(code.match(/\"<p>.*?<\\/p>\";/g), 'Your code should keep the double quotes around the entire string.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let innerHtml = \"<p>Click here to <a href=\"#Home\">return home</a></p>\";",
+            "console.log(innerHtml);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b85367417b2b2512b38",
@@ -231,29 +302,44 @@
         "<hr>",
         "Fix the condition so the program runs the right branch, and the appropriate value is assigned to <code>result</code>."
       ],
-      "challengeSeed": [
-        "let x = 7;",
-        "let y = 9;",
-        "let result = \"to come\";",
-        "",
-        "if(x = y) {",
-        "  result = \"Equal!\";",
-        "} else {",
-        "  result = \"Not equal!\";",
-        "}",
-        "",
-        "console.log(result);"
-      ],
       "tests": [
-        "assert(result == \"Not equal!\", 'message: Your code should fix the condition so it checks for equality, instead of using assignment.');",
-        "assert(code.match(/x\\s*?===?\\s*?y/g), 'message: The condition can use either <code>==</code> or <code>===</code> to test for equality.');"
+        {
+          "text": "Your code should fix the condition so it checks for equality, instead of using assignment.",
+          "testString": "assert(result == \"Not equal!\", 'Your code should fix the condition so it checks for equality, instead of using assignment.');"
+        },
+        {
+          "text": "The condition can use either <code>==</code> or <code>===</code> to test for equality.",
+          "testString": "assert(code.match(/x\\s*?===?\\s*?y/g), 'The condition can use either <code>==</code> or <code>===</code> to test for equality.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let x = 7;",
+            "let y = 9;",
+            "let result = \"to come\";",
+            "",
+            "if(x = y) {",
+            "  result = \"Equal!\";",
+            "} else {",
+            "  result = \"Not equal!\";",
+            "}",
+            "",
+            "console.log(result);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b85367417b2b2512b39",
@@ -265,26 +351,41 @@
         "<hr>",
         "Fix the code so the variable <code>result</code> is set to the value returned from calling the function <code>getNine</code>."
       ],
-      "challengeSeed": [
-        "function getNine() {",
-        "  let x = 6;",
-        "  let y = 3;",
-        "  return x + y;",
-        "}",
-        "",
-        "let result = getNine;",
-        "console.log(result);"
-      ],
       "tests": [
-        "assert(result == 9, 'message: Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.');",
-        "assert(code.match(/getNine\\(\\)/g).length == 2, 'message: Your code should call the <code>getNine</code> function.');"
+        {
+          "text": "Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.",
+          "testString": "assert(result == 9, 'Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.');"
+        },
+        {
+          "text": "Your code should call the <code>getNine</code> function.",
+          "testString": "assert(code.match(/getNine\\(\\)/g).length == 2, 'Your code should call the <code>getNine</code> function.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function getNine() {",
+            "  let x = 6;",
+            "  let y = 3;",
+            "  return x + y;",
+            "}",
+            "",
+            "let result = getNine;",
+            "console.log(result);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b85367417b2b2512b3a",
@@ -294,26 +395,41 @@
         "<hr>",
         "The function <code>raiseToPower</code> raises a base to an exponent. Unfortunately, it's not called properly - fix the code so the value of <code>power</code> is the expected 8."
       ],
-      "challengeSeed": [
-        "function raiseToPower(b, e) {",
-        "  return Math.pow(b, e);",
-        "}",
-        "",
-        "let base = 2;",
-        "let exp = 3;",
-        "let power = raiseToPower(exp, base);",
-        "console.log(power);"
-      ],
       "tests": [
-        "assert(power == 8, 'message: Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');",
-        "assert(code.match(/raiseToPower\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'message: Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.');"
+        {
+          "text": "Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.",
+          "testString": "assert(power == 8, 'Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');"
+        },
+        {
+          "text": "Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.",
+          "testString": "assert(code.match(/raiseToPower\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function raiseToPower(b, e) {",
+            "  return Math.pow(b, e);",
+            "}",
+            "",
+            "let base = 2;",
+            "let exp = 3;",
+            "let power = raiseToPower(exp, base);",
+            "console.log(power);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b86367417b2b2512b3b",
@@ -325,31 +441,52 @@
         "<hr>",
         "Fix the two indexing errors in the following function so all the numbers 1 through 5 are printed to the console."
       ],
-      "challengeSeed": [
-        "function countToFive() {",
-        "  let firstFive = \"12345\";",
-        "  let len = firstFive.length;",
-        "  // Fix the line below",
-        "  for (let i = 1; i <= len; i++) {",
-        "  // Do not alter code below this line",
-        "    console.log(firstFive[i]);",
-        "  }",
-        "}",
-        "",
-        "countToFive();"
-      ],
       "tests": [
-        "assert(code.match(/i\\s*?=\\s*?0\\s*?;/g).length == 1, 'message: Your code should set the initial condition of the loop so it starts at the first index.');",
-        "assert(!code.match(/i\\s?=\\s*?1\\s*?;/g), 'message: Your code should fix the initial condition of the loop so that the index starts at 0.');",
-        "assert(code.match(/i\\s*?<\\s*?len\\s*?;/g).length == 1, 'message: Your code should set the terminal condition of the loop so it stops at the last index.');",
-        "assert(!code.match(/i\\s*?<=\\s*?len;/g), 'message: Your code should fix the terminal condition of the loop so that it stops at 1 before the length.');"
+        {
+          "text": "Your code should set the initial condition of the loop so it starts at the first index.",
+          "testString": "assert(code.match(/i\\s*?=\\s*?0\\s*?;/g).length == 1, 'Your code should set the initial condition of the loop so it starts at the first index.');"
+        },
+        {
+          "text": "Your code should fix the initial condition of the loop so that the index starts at 0.",
+          "testString": "assert(!code.match(/i\\s?=\\s*?1\\s*?;/g), 'Your code should fix the initial condition of the loop so that the index starts at 0.');"
+        },
+        {
+          "text": "Your code should set the terminal condition of the loop so it stops at the last index.",
+          "testString": "assert(code.match(/i\\s*?<\\s*?len\\s*?;/g).length == 1, 'Your code should set the terminal condition of the loop so it stops at the last index.');"
+        },
+        {
+          "text": "Your code should fix the terminal condition of the loop so that it stops at 1 before the length.",
+          "testString": "assert(!code.match(/i\\s*?<=\\s*?len;/g), 'Your code should fix the terminal condition of the loop so that it stops at 1 before the length.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function countToFive() {",
+            "  let firstFive = \"12345\";",
+            "  let len = firstFive.length;",
+            "  // Fix the line below",
+            "  for (let i = 1; i <= len; i++) {",
+            "  // Do not alter code below this line",
+            "    console.log(firstFive[i]);",
+            "  }",
+            "}",
+            "",
+            "countToFive();"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b86367417b2b2512b3c",
@@ -360,38 +497,56 @@
         "<hr>",
         "The following function is supposed to create a two-dimensional array with <code>m</code> rows and <code>n</code> columns of zeroes. Unfortunately, it's not producing the expected output because the <code>row</code> variable isn't being reinitialized (set back to an empty array) in the outer loop. Fix the code so it returns a correct 3x2 array of zeroes, which looks like <code>[[0, 0], [0, 0], [0, 0]]</code>."
       ],
-      "challengeSeed": [
-        "function zeroArray(m, n) {",
-        "  // Creates a 2-D array with m rows and n columns of zeroes",
-        "  let newArray = [];",
-        "  let row = [];",
-        "  for (let i = 0; i < m; i++) {",
-        "    // Adds the m-th row into newArray",
-        "    ",
-        "    for (let j = 0; j < n; j++) {",
-        "      // Pushes n zeroes into the current row to create the columns",
-        "      row.push(0);",
-        "    }",
-        "    // Pushes the current row, which now has n zeroes in it, to the array",
-        "    newArray.push(row);",
-        "  }",
-        "  return newArray;",
-        "}",
-        "",
-        "let matrix = zeroArray(3, 2);",
-        "console.log(matrix);"
-      ],
       "tests": [
-        "assert(JSON.stringify(matrix) == \"[[0,0],[0,0],[0,0]]\", 'message: Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.');",
-        "assert(matrix.length == 3, 'message: The <code>matrix</code> variable should have 3 rows.');",
-        "assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'message: The <code>matrix</code> variable should have 2 columns in each row.');"
+        {
+          "text": "Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.",
+          "testString": "assert(JSON.stringify(matrix) == \"[[0,0],[0,0],[0,0]]\", 'Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.');"
+        },
+        {
+          "text": "The <code>matrix</code> variable should have 3 rows.",
+          "testString": "assert(matrix.length == 3, 'The <code>matrix</code> variable should have 3 rows.');"
+        },
+        {
+          "text": "The <code>matrix</code> variable should have 2 columns in each row.",
+          "testString": "assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'The <code>matrix</code> variable should have 2 columns in each row.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function zeroArray(m, n) {",
+            "  // Creates a 2-D array with m rows and n columns of zeroes",
+            "  let newArray = [];",
+            "  let row = [];",
+            "  for (let i = 0; i < m; i++) {",
+            "    // Adds the m-th row into newArray",
+            "    ",
+            "    for (let j = 0; j < n; j++) {",
+            "      // Pushes n zeroes into the current row to create the columns",
+            "      row.push(0);",
+            "    }",
+            "    // Pushes the current row, which now has n zeroes in it, to the array",
+            "    newArray.push(row);",
+            "  }",
+            "  return newArray;",
+            "}",
+            "",
+            "let matrix = zeroArray(3, 2);",
+            "console.log(matrix);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7b86367417b2b2512b3d",
@@ -404,23 +559,38 @@
         "<hr>",
         "The <code>myFunc()</code> function contains an infinite loop because the terminal condition <code>i != 4</code> will never evaluate to <code>false</code> (and break the looping) - <code>i</code> will increment by 2 each pass, and jump right over 4 since <code>i</code> is odd to start. Fix the comparison operator in the terminal condition so the loop only runs for <code>i</code> less than or equal to 4."
       ],
-      "challengeSeed": [
-        "function myFunc() {",
-        "  for (let i = 1; i != 4; i += 2) {",
-        "    console.log(\"Still going!\");",
-        "  }",
-        "}"
-      ],
       "tests": [
-        "assert(code.match(/i\\s*?<=\\s*?4;/g).length == 1, 'message: Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.');",
-        "assert(!code.match(/i\\s*?!=\\s*?4;/g), 'message: Your code should fix the comparison operator in the terminal condition of the loop.');"
+        {
+          "text": "Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.",
+          "testString": "assert(code.match(/i\\s*?<=\\s*?4;/g).length == 1, 'Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.');"
+        },
+        {
+          "text": "Your code should fix the comparison operator in the terminal condition of the loop.",
+          "testString": "assert(!code.match(/i\\s*?!=\\s*?4;/g), 'Your code should fix the comparison operator in the terminal condition of the loop.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function myFunc() {",
+            "  for (let i = 1; i != 4; i += 2) {",
+            "    console.log(\"Still going!\");",
+            "  }",
+            "}"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     }
   ]
 }

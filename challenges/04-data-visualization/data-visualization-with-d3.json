@@ -5,25 +5,6 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7fa6367417b2b2512bc1",
-      "title": "Introduction to the Data Visualization with D3 Challenges",
-      "description": [
-        [
-          "",
-          "",
-          "D3.js, or D3, stands for Data Driven Documents. D3 is a JavaScript library to create dynamic and interactive data visualizations in the browser. It's built to work with common web standards, namely HTML, CSS, and Scalable Vector Graphics (SVG).<br><br>D3 takes input data and maps it into a visual representation of that data. It supports many different data formats. D3 lets you bind (or attach) the data to the Document Object Model (DOM). You use HTML or SVG elements with D3's built-in methods to transform the data into a visualization.<br><br>D3 gives you a lot of control over the presentation of data. This section covers the basic functionality and how to create visualizations with the D3 library.",
-          ""
-        ]
-      ],
-      "releasedOn": "Feb 17, 2017",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {}
-    },
-    {
       "id": "587d7fa6367417b2b2512bc2",
       "title": "Add Document Elements with D3",
       "required": [
@@ -45,31 +26,58 @@
         "<hr>",
         "Use the <code>select</code> method to select the <code>body</code> tag in the document. Then <code>append</code> an <code>h1</code> tag to it, and add the text \"Learning D3\" into the <code>h1</code> element."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    // Add your code below this line",
-        "    ",
-        "    ",
-        "    ",
-        "    // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('body').children('h1').length == 1, 'message: The <code>body</code> should have one <code>h1</code> element.');",
-        "assert($('h1').text() == \"Learning D3\", 'message: The <code>h1</code> element should have the text \"Learning D3\" in it.');",
-        "assert(code.match(/d3/g), 'message: Your code should access the <code>d3</code> object.');",
-        "assert(code.match(/\\.select/g), 'message: Your code should use the <code>select</code> method.');",
-        "assert(code.match(/\\.append/g), 'message: Your code should use the <code>append</code> method.');",
-        "assert(code.match(/\\.text/g), 'message: Your code should use the <code>text</code> method.');"
+        {
+          "text": "The <code>body</code> should have one <code>h1</code> element.",
+          "testString": "assert($('body').children('h1').length == 1, 'The <code>body</code> should have one <code>h1</code> element.');"
+        },
+        {
+          "text": "The <code>h1</code> element should have the text \"Learning D3\" in it.",
+          "testString": "assert($('h1').text() == \"Learning D3\", 'The <code>h1</code> element should have the text \"Learning D3\" in it.');"
+        },
+        {
+          "text": "Your code should access the <code>d3</code> object.",
+          "testString": "assert(code.match(/d3/g), 'Your code should access the <code>d3</code> object.');"
+        },
+        {
+          "text": "Your code should use the <code>select</code> method.",
+          "testString": "assert(code.match(/\\.select/g), 'Your code should use the <code>select</code> method.');"
+        },
+        {
+          "text": "Your code should use the <code>append</code> method.",
+          "testString": "assert(code.match(/\\.append/g), 'Your code should use the <code>append</code> method.');"
+        },
+        {
+          "text": "Your code should use the <code>text</code> method.",
+          "testString": "assert(code.match(/\\.text/g), 'Your code should use the <code>text</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    // Add your code below this line",
+            "    ",
+            "    ",
+            "    ",
+            "    // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa6367417b2b2512bc3",
@@ -86,33 +94,51 @@
         "<hr>",
         "Select all of the <code>li</code> tags in the document, and change their text to \"list item\" by chaining the <code>.text()</code> method."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <ul>",
-        "    <li>Example</li>",
-        "    <li>Example</li>",
-        "    <li>Example</li>",
-        "  </ul>",
-        "  <script>",
-        "    // Add your code below this line",
-        "    ",
-        "    ",
-        "    ",
-        "    // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('li').text().match(/list item/g).length == 3, 'message: There should be 3 <code>li</code> elements on the page, and the text in each one should say \"list item\". Capitalization and spacing should match exactly.');",
-        "assert(code.match(/d3/g), 'message: Your code should access the <code>d3</code> object.');",
-        "assert(code.match(/\\.selectAll/g), 'message: Your code should use the <code>selectAll</code> method.');"
+        {
+          "text": "There should be 3 <code>li</code> elements on the page, and the text in each one should say \"list item\". Capitalization and spacing should match exactly.",
+          "testString": "assert($('li').text().match(/list item/g).length == 3, 'There should be 3 <code>li</code> elements on the page, and the text in each one should say \"list item\". Capitalization and spacing should match exactly.');"
+        },
+        {
+          "text": "Your code should access the <code>d3</code> object.",
+          "testString": "assert(code.match(/d3/g), 'Your code should access the <code>d3</code> object.');"
+        },
+        {
+          "text": "Your code should use the <code>selectAll</code> method.",
+          "testString": "assert(code.match(/\\.selectAll/g), 'Your code should use the <code>selectAll</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <ul>",
+            "    <li>Example</li>",
+            "    <li>Example</li>",
+            "    <li>Example</li>",
+            "  </ul>",
+            "  <script>",
+            "    // Add your code below this line",
+            "    ",
+            "    ",
+            "    ",
+            "    // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa7367417b2b2512bc4",
@@ -133,31 +159,52 @@
         "<hr>",
         "Select the <code>body</code> node, then select all <code>h2</code> elements. Have D3 create and append an <code>h2</code> tag for each item in the <code>dataset</code> array. The text in the <code>h2</code> should say \"New Title\". Your code should use the <code>data()</code> and <code>enter()</code> methods."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    // Add your code below this line",
-        "    ",
-        "    ",
-        "    ",
-        "    // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('h2').length == 9, 'message: Your document should have 9 <code>h2</code> elements.');",
-        "assert($('h2').text().match(/New Title/g).length == 9, 'message: The text in the <code>h2</code> elements should say \"New Title\". The capitalization and spacing should match exactly.');",
-        "assert(code.match(/\\.data/g), 'message: Your code should use the <code>data()</code> method.');",
-        "assert(code.match(/\\.enter/g), 'message: Your code should use the <code>enter()</code> method.');"
+        {
+          "text": "Your document should have 9 <code>h2</code> elements.",
+          "testString": "assert($('h2').length == 9, 'Your document should have 9 <code>h2</code> elements.');"
+        },
+        {
+          "text": "The text in the <code>h2</code> elements should say \"New Title\". The capitalization and spacing should match exactly.",
+          "testString": "assert($('h2').text().match(/New Title/g).length == 9, 'The text in the <code>h2</code> elements should say \"New Title\". The capitalization and spacing should match exactly.');"
+        },
+        {
+          "text": "Your code should use the <code>data()</code> method.",
+          "testString": "assert(code.match(/\\.data/g), 'Your code should use the <code>data()</code> method.');"
+        },
+        {
+          "text": "Your code should use the <code>enter()</code> method.",
+          "testString": "assert(code.match(/\\.enter/g), 'Your code should use the <code>enter()</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    // Add your code below this line",
+            "    ",
+            "    ",
+            "    ",
+            "    // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa7367417b2b2512bc5",
@@ -177,40 +224,76 @@
         "<hr>",
         "Change the <code>text()</code> method so that each <code>h2</code> element displays the corresponding value from the <code>dataset</code> array with a single space and \"USD\". For example, the first heading should be \"12 USD\"."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    d3.select(\"body\").selectAll(\"h2\")",
-        "      .data(dataset)",
-        "      .enter()",
-        "      .append(\"h2\")",
-        "      // Add your code below this line",
-        "      ",
-        "      .text(\"New Title\");",
-        "      ",
-        "      // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('h2').eq(0).text() == \"12 USD\", 'message: The first <code>h2</code> should have the text \"12 USD\".');",
-        "assert($('h2').eq(1).text() == \"31 USD\", 'message: The second <code>h2</code> should have the text \"31 USD\".');",
-        "assert($('h2').eq(2).text() == \"22 USD\", 'message: The third <code>h2</code> should have the text \"22 USD\".');",
-        "assert($('h2').eq(3).text() == \"17 USD\", 'message: The fourth <code>h2</code> should have the text \"17 USD\".');",
-        "assert($('h2').eq(4).text() == \"25 USD\", 'message: The fifth <code>h2</code> should have the text \"25 USD\".');",
-        "assert($('h2').eq(5).text() == \"18 USD\", 'message: The sixth <code>h2</code> should have the text \"18 USD\".');",
-        "assert($('h2').eq(6).text() == \"29 USD\", 'message: The seventh <code>h2</code> should have the text \"29 USD\".');",
-        "assert($('h2').eq(7).text() == \"14 USD\", 'message: The eighth <code>h2</code> should have the text \"14 USD\".');",
-        "assert($('h2').eq(8).text() == \"9 USD\", 'message: The ninth <code>h2</code> should have the text \"9 USD\".');"
+        {
+          "text": "The first <code>h2</code> should have the text \"12 USD\".",
+          "testString": "assert($('h2').eq(0).text() == \"12 USD\", 'The first <code>h2</code> should have the text \"12 USD\".');"
+        },
+        {
+          "text": "The second <code>h2</code> should have the text \"31 USD\".",
+          "testString": "assert($('h2').eq(1).text() == \"31 USD\", 'The second <code>h2</code> should have the text \"31 USD\".');"
+        },
+        {
+          "text": "The third <code>h2</code> should have the text \"22 USD\".",
+          "testString": "assert($('h2').eq(2).text() == \"22 USD\", 'The third <code>h2</code> should have the text \"22 USD\".');"
+        },
+        {
+          "text": "The fourth <code>h2</code> should have the text \"17 USD\".",
+          "testString": "assert($('h2').eq(3).text() == \"17 USD\", 'The fourth <code>h2</code> should have the text \"17 USD\".');"
+        },
+        {
+          "text": "The fifth <code>h2</code> should have the text \"25 USD\".",
+          "testString": "assert($('h2').eq(4).text() == \"25 USD\", 'The fifth <code>h2</code> should have the text \"25 USD\".');"
+        },
+        {
+          "text": "The sixth <code>h2</code> should have the text \"18 USD\".",
+          "testString": "assert($('h2').eq(5).text() == \"18 USD\", 'The sixth <code>h2</code> should have the text \"18 USD\".');"
+        },
+        {
+          "text": "The seventh <code>h2</code> should have the text \"29 USD\".",
+          "testString": "assert($('h2').eq(6).text() == \"29 USD\", 'The seventh <code>h2</code> should have the text \"29 USD\".');"
+        },
+        {
+          "text": "The eighth <code>h2</code> should have the text \"14 USD\".",
+          "testString": "assert($('h2').eq(7).text() == \"14 USD\", 'The eighth <code>h2</code> should have the text \"14 USD\".');"
+        },
+        {
+          "text": "The ninth <code>h2</code> should have the text \"9 USD\".",
+          "testString": "assert($('h2').eq(8).text() == \"9 USD\", 'The ninth <code>h2</code> should have the text \"9 USD\".');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    d3.select(\"body\").selectAll(\"h2\")",
+            "      .data(dataset)",
+            "      .enter()",
+            "      .append(\"h2\")",
+            "      // Add your code below this line",
+            "      ",
+            "      .text(\"New Title\");",
+            "      ",
+            "      // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa7367417b2b2512bc6",
@@ -227,34 +310,49 @@
         "<hr>",
         "Add the <code>style()</code> method to the code in the editor to make all the displayed text have a <code>font-family</code> of <code>verdana</code>."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    d3.select(\"body\").selectAll(\"h2\")",
-        "      .data(dataset)",
-        "      .enter()",
-        "      .append(\"h2\")",
-        "      .text((d) => (d + \" USD\"))",
-        "      // Add your code below this line",
-        "      ",
-        "      ",
-        "      ",
-        "      // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('h2').css('font-family') == 'verdana', 'message: Your <code>h2</code> elements should have a <code>font-family</code> of verdana.');",
-        "assert(code.match(/\\.style/g), 'message: Your code should use the <code>style()</code> method.');"
+        {
+          "text": "Your <code>h2</code> elements should have a <code>font-family</code> of verdana.",
+          "testString": "assert($('h2').css('font-family') == 'verdana', 'Your <code>h2</code> elements should have a <code>font-family</code> of verdana.');"
+        },
+        {
+          "text": "Your code should use the <code>style()</code> method.",
+          "testString": "assert(code.match(/\\.style/g), 'Your code should use the <code>style()</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    d3.select(\"body\").selectAll(\"h2\")",
+            "      .data(dataset)",
+            "      .enter()",
+            "      .append(\"h2\")",
+            "      .text((d) => (d + \" USD\"))",
+            "      // Add your code below this line",
+            "      ",
+            "      ",
+            "      ",
+            "      // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa7367417b2b2512bc7",
@@ -273,41 +371,77 @@
         "Add the <code>style()</code> method to the code in the editor to set the <code>color</code> of the <code>h2</code> elements conditionally. Write the callback function so if the data value is less than 20, it returns \"red\", otherwise it returns \"green\".",
         "<strong>Note</strong><br>You can use if-else logic, or the ternary operator."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    d3.select(\"body\").selectAll(\"h2\")",
-        "      .data(dataset)",
-        "      .enter()",
-        "      .append(\"h2\")",
-        "      .text((d) => (d + \" USD\"))",
-        "      // Add your code below this line",
-        "      ",
-        "      ",
-        "      ",
-        "      // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('h2').eq(0).css('color') == \"rgb(255, 0, 0)\", 'message: The first <code>h2</code> should have a <code>color</code> of red.');",
-        "assert($('h2').eq(1).css('color') == \"rgb(0, 128, 0)\", 'message: The second <code>h2</code> should have a <code>color</code> of green.');",
-        "assert($('h2').eq(2).css('color') == \"rgb(0, 128, 0)\", 'message: The third <code>h2</code> should have a <code>color</code> of green.');",
-        "assert($('h2').eq(3).css('color') == \"rgb(255, 0, 0)\", 'message: The fourth <code>h2</code> should have a <code>color</code> of red.');",
-        "assert($('h2').eq(4).css('color') == \"rgb(0, 128, 0)\", 'message: The fifth <code>h2</code> should have a <code>color</code> of green.');",
-        "assert($('h2').eq(5).css('color') == \"rgb(255, 0, 0)\", 'message: The sixth <code>h2</code> should have a <code>color</code> of red.');",
-        "assert($('h2').eq(6).css('color') == \"rgb(0, 128, 0)\", 'message: The seventh <code>h2</code> should have a <code>color</code> of green.');",
-        "assert($('h2').eq(7).css('color') == \"rgb(255, 0, 0)\", 'message: The eighth <code>h2</code> should have a <code>color</code> of red.');",
-        "assert($('h2').eq(8).css('color') == \"rgb(255, 0, 0)\", 'message: The ninth <code>h2</code> should have a <code>color</code> of red.');"
+        {
+          "text": "The first <code>h2</code> should have a <code>color</code> of red.",
+          "testString": "assert($('h2').eq(0).css('color') == \"rgb(255, 0, 0)\", 'The first <code>h2</code> should have a <code>color</code> of red.');"
+        },
+        {
+          "text": "The second <code>h2</code> should have a <code>color</code> of green.",
+          "testString": "assert($('h2').eq(1).css('color') == \"rgb(0, 128, 0)\", 'The second <code>h2</code> should have a <code>color</code> of green.');"
+        },
+        {
+          "text": "The third <code>h2</code> should have a <code>color</code> of green.",
+          "testString": "assert($('h2').eq(2).css('color') == \"rgb(0, 128, 0)\", 'The third <code>h2</code> should have a <code>color</code> of green.');"
+        },
+        {
+          "text": "The fourth <code>h2</code> should have a <code>color</code> of red.",
+          "testString": "assert($('h2').eq(3).css('color') == \"rgb(255, 0, 0)\", 'The fourth <code>h2</code> should have a <code>color</code> of red.');"
+        },
+        {
+          "text": "The fifth <code>h2</code> should have a <code>color</code> of green.",
+          "testString": "assert($('h2').eq(4).css('color') == \"rgb(0, 128, 0)\", 'The fifth <code>h2</code> should have a <code>color</code> of green.');"
+        },
+        {
+          "text": "The sixth <code>h2</code> should have a <code>color</code> of red.",
+          "testString": "assert($('h2').eq(5).css('color') == \"rgb(255, 0, 0)\", 'The sixth <code>h2</code> should have a <code>color</code> of red.');"
+        },
+        {
+          "text": "The seventh <code>h2</code> should have a <code>color</code> of green.",
+          "testString": "assert($('h2').eq(6).css('color') == \"rgb(0, 128, 0)\", 'The seventh <code>h2</code> should have a <code>color</code> of green.');"
+        },
+        {
+          "text": "The eighth <code>h2</code> should have a <code>color</code> of red.",
+          "testString": "assert($('h2').eq(7).css('color') == \"rgb(255, 0, 0)\", 'The eighth <code>h2</code> should have a <code>color</code> of red.');"
+        },
+        {
+          "text": "The ninth <code>h2</code> should have a <code>color</code> of red.",
+          "testString": "assert($('h2').eq(8).css('color') == \"rgb(255, 0, 0)\", 'The ninth <code>h2</code> should have a <code>color</code> of red.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    d3.select(\"body\").selectAll(\"h2\")",
+            "      .data(dataset)",
+            "      .enter()",
+            "      .append(\"h2\")",
+            "      .text((d) => (d + \" USD\"))",
+            "      // Add your code below this line",
+            "      ",
+            "      ",
+            "      ",
+            "      // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa7367417b2b2512bc8",
@@ -324,41 +458,56 @@
         "<hr>",
         "Add the <code>attr()</code> method to the code in the editor and put a class of <code>bar</code> on the <code>div</code> elements."
       ],
-      "challengeSeed": [
-        "<style>",
-        "  .bar {",
-        "    width: 25px;",
-        "    height: 100px;",
-        "    display: inline-block;",
-        "    background-color: blue;",
-        "  }",
-        "</style>",
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    d3.select(\"body\").selectAll(\"div\")",
-        "      .data(dataset)",
-        "      .enter()",
-        "      .append(\"div\")",
-        "      // Add your code below this line",
-        "      ",
-        "      ",
-        "      ",
-        "      // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('div').attr('class') == \"bar\", 'message: Your <code>div</code> elements should have a class of <code>bar</code>.');",
-        "assert(code.match(/\\.attr/g), 'message: Your code should use the <code>attr()</code> method.');"
+        {
+          "text": "Your <code>div</code> elements should have a class of <code>bar</code>.",
+          "testString": "assert($('div').attr('class') == \"bar\", 'Your <code>div</code> elements should have a class of <code>bar</code>.');"
+        },
+        {
+          "text": "Your code should use the <code>attr()</code> method.",
+          "testString": "assert(code.match(/\\.attr/g), 'Your code should use the <code>attr()</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .bar {",
+            "    width: 25px;",
+            "    height: 100px;",
+            "    display: inline-block;",
+            "    background-color: blue;",
+            "  }",
+            "</style>",
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    d3.select(\"body\").selectAll(\"div\")",
+            "      .data(dataset)",
+            "      .enter()",
+            "      .append(\"div\")",
+            "      // Add your code below this line",
+            "      ",
+            "      ",
+            "      ",
+            "      // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa8367417b2b2512bc9",
@@ -377,49 +526,85 @@
         "<hr>",
         "Add the <code>style()</code> method to the code in the editor to set the <code>height</code> property for each element. Use a callback function to return the value of the data point with the string \"px\" added to it."
       ],
-      "challengeSeed": [
-        "<style>",
-        "  .bar {",
-        "    width: 25px;",
-        "    height: 100px;",
-        "    display: inline-block;",
-        "    background-color: blue;",
-        "  }",
-        "</style>",
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    d3.select(\"body\").selectAll(\"div\")",
-        "      .data(dataset)",
-        "      .enter()",
-        "      .append(\"div\")",
-        "      .attr(\"class\", \"bar\")",
-        "      // Add your code below this line",
-        "      ",
-        "      ",
-        "      ",
-        "      // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('div').eq(0).css('height') == '12px', 'message: The first <code>div</code> should have a <code>height</code> of 12 pixels.');",
-        "assert($('div').eq(1).css('height') == '31px', 'message: The second <code>div</code> should have a <code>height</code> of 31 pixels.');",
-        "assert($('div').eq(2).css('height') == '22px', 'message: The third <code>div</code> should have a <code>height</code> of 22 pixels.');",
-        "assert($('div').eq(3).css('height') == '17px', 'message: The fourth <code>div</code> should have a <code>height</code> of 17 pixels.');",
-        "assert($('div').eq(4).css('height') == '25px', 'message: The fifth <code>div</code> should have a <code>height</code> of 25 pixels.');",
-        "assert($('div').eq(5).css('height') == '18px', 'message: The sixth <code>div</code> should have a <code>height</code> of 18 pixels.');",
-        "assert($('div').eq(6).css('height') == '29px', 'message: The seventh <code>div</code> should have a <code>height</code> of 29 pixels.');",
-        "assert($('div').eq(7).css('height') == '14px', 'message: The eighth <code>div</code> should have a <code>height</code> of 14 pixels.');",
-        "assert($('div').eq(8).css('height') == '9px', 'message: The ninth <code>div</code> should have a <code>height</code> of 9 pixels.');"
+        {
+          "text": "The first <code>div</code> should have a <code>height</code> of 12 pixels.",
+          "testString": "assert($('div').eq(0).css('height') == '12px', 'The first <code>div</code> should have a <code>height</code> of 12 pixels.');"
+        },
+        {
+          "text": "The second <code>div</code> should have a <code>height</code> of 31 pixels.",
+          "testString": "assert($('div').eq(1).css('height') == '31px', 'The second <code>div</code> should have a <code>height</code> of 31 pixels.');"
+        },
+        {
+          "text": "The third <code>div</code> should have a <code>height</code> of 22 pixels.",
+          "testString": "assert($('div').eq(2).css('height') == '22px', 'The third <code>div</code> should have a <code>height</code> of 22 pixels.');"
+        },
+        {
+          "text": "The fourth <code>div</code> should have a <code>height</code> of 17 pixels.",
+          "testString": "assert($('div').eq(3).css('height') == '17px', 'The fourth <code>div</code> should have a <code>height</code> of 17 pixels.');"
+        },
+        {
+          "text": "The fifth <code>div</code> should have a <code>height</code> of 25 pixels.",
+          "testString": "assert($('div').eq(4).css('height') == '25px', 'The fifth <code>div</code> should have a <code>height</code> of 25 pixels.');"
+        },
+        {
+          "text": "The sixth <code>div</code> should have a <code>height</code> of 18 pixels.",
+          "testString": "assert($('div').eq(5).css('height') == '18px', 'The sixth <code>div</code> should have a <code>height</code> of 18 pixels.');"
+        },
+        {
+          "text": "The seventh <code>div</code> should have a <code>height</code> of 29 pixels.",
+          "testString": "assert($('div').eq(6).css('height') == '29px', 'The seventh <code>div</code> should have a <code>height</code> of 29 pixels.');"
+        },
+        {
+          "text": "The eighth <code>div</code> should have a <code>height</code> of 14 pixels.",
+          "testString": "assert($('div').eq(7).css('height') == '14px', 'The eighth <code>div</code> should have a <code>height</code> of 14 pixels.');"
+        },
+        {
+          "text": "The ninth <code>div</code> should have a <code>height</code> of 9 pixels.",
+          "testString": "assert($('div').eq(8).css('height') == '9px', 'The ninth <code>div</code> should have a <code>height</code> of 9 pixels.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .bar {",
+            "    width: 25px;",
+            "    height: 100px;",
+            "    display: inline-block;",
+            "    background-color: blue;",
+            "  }",
+            "</style>",
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    d3.select(\"body\").selectAll(\"div\")",
+            "      .data(dataset)",
+            "      .enter()",
+            "      .append(\"div\")",
+            "      .attr(\"class\", \"bar\")",
+            "      // Add your code below this line",
+            "      ",
+            "      ",
+            "      ",
+            "      // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa8367417b2b2512bca",
@@ -437,51 +622,87 @@
         "First, add a <code>margin</code> of 2px to the <code>bar</code> class in the <code>style</code> tag. Next, change the callback function in the <code>style()</code> method so it returns a value 10 times the original data value (plus the \"px\").",
         "<strong>Note</strong><br>Multiplying each data point by the <em>same</em> constant only alters the scale. It's like zooming in, and it doesn't change the meaning of the underlying data."
       ],
-      "challengeSeed": [
-        "<style>",
-        "  .bar {",
-        "    width: 25px;",
-        "    height: 100px;",
-        "    /* Add your code below this line */",
-        "    ",
-        "    /* Add your code above this line */",
-        "    display: inline-block;",
-        "    background-color: blue;",
-        "  }",
-        "</style>",
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    d3.select(\"body\").selectAll(\"div\")",
-        "      .data(dataset)",
-        "      .enter()",
-        "      .append(\"div\")",
-        "      .attr(\"class\", \"bar\")",
-        "      // Add your code below this line",
-        "      .style(\"height\", (d) => (d + \"px\"))",
-        "      ",
-        "      // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('div').eq(0).css('height') == '120px' && $('div').eq(0).css('margin-right') == '2px', 'message: The first <code>div</code> should have a <code>height</code> of 120 pixels and a <code>margin</code> of 2 pixels.');",
-        "assert($('div').eq(1).css('height') == '310px' && $('div').eq(1).css('margin-right') == '2px', 'message: The second <code>div</code> should have a <code>height</code> of 310 pixels and a <code>margin</code> of 2 pixels.');",
-        "assert($('div').eq(2).css('height') == '220px' && $('div').eq(2).css('margin-right') == '2px', 'message: The third <code>div</code> should have a <code>height</code> of 220 pixels and a <code>margin</code> of 2 pixels.');",
-        "assert($('div').eq(3).css('height') == '170px' && $('div').eq(3).css('margin-right') == '2px', 'message: The fourth <code>div</code> should have a <code>height</code> of 170 pixels and a <code>margin</code> of 2 pixels.');",
-        "assert($('div').eq(4).css('height') == '250px' && $('div').eq(4).css('margin-right') == '2px', 'message: The fifth <code>div</code> should have a <code>height</code> of 250 pixels and a <code>margin</code> of 2 pixels.');",
-        "assert($('div').eq(5).css('height') == '180px' && $('div').eq(5).css('margin-right') == '2px', 'message: The sixth <code>div</code> should have a <code>height</code> of 180 pixels and a <code>margin</code> of 2 pixels.');",
-        "assert($('div').eq(6).css('height') == '290px' && $('div').eq(6).css('margin-right') == '2px', 'message: The seventh <code>div</code> should have a <code>height</code> of 290 pixels and a <code>margin</code> of 2 pixels.');",
-        "assert($('div').eq(7).css('height') == '140px' && $('div').eq(7).css('margin-right') == '2px', 'message: The eighth <code>div</code> should have a <code>height</code> of 140 pixels and a <code>margin</code> of 2 pixels.');",
-        "assert($('div').eq(8).css('height') == '90px' && $('div').eq(8).css('margin-right') == '2px', 'message: The ninth <code>div</code> should have a <code>height</code> of 90 pixels and a <code>margin</code> of 2 pixels.');"
+        {
+          "text": "The first <code>div</code> should have a <code>height</code> of 120 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(0).css('height') == '120px' && $('div').eq(0).css('margin-right') == '2px', 'The first <code>div</code> should have a <code>height</code> of 120 pixels and a <code>margin</code> of 2 pixels.');"
+        },
+        {
+          "text": "The second <code>div</code> should have a <code>height</code> of 310 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(1).css('height') == '310px' && $('div').eq(1).css('margin-right') == '2px', 'The second <code>div</code> should have a <code>height</code> of 310 pixels and a <code>margin</code> of 2 pixels.');"
+        },
+        {
+          "text": "The third <code>div</code> should have a <code>height</code> of 220 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(2).css('height') == '220px' && $('div').eq(2).css('margin-right') == '2px', 'The third <code>div</code> should have a <code>height</code> of 220 pixels and a <code>margin</code> of 2 pixels.');"
+        },
+        {
+          "text": "The fourth <code>div</code> should have a <code>height</code> of 170 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(3).css('height') == '170px' && $('div').eq(3).css('margin-right') == '2px', 'The fourth <code>div</code> should have a <code>height</code> of 170 pixels and a <code>margin</code> of 2 pixels.');"
+        },
+        {
+          "text": "The fifth <code>div</code> should have a <code>height</code> of 250 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(4).css('height') == '250px' && $('div').eq(4).css('margin-right') == '2px', 'The fifth <code>div</code> should have a <code>height</code> of 250 pixels and a <code>margin</code> of 2 pixels.');"
+        },
+        {
+          "text": "The sixth <code>div</code> should have a <code>height</code> of 180 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(5).css('height') == '180px' && $('div').eq(5).css('margin-right') == '2px', 'The sixth <code>div</code> should have a <code>height</code> of 180 pixels and a <code>margin</code> of 2 pixels.');"
+        },
+        {
+          "text": "The seventh <code>div</code> should have a <code>height</code> of 290 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(6).css('height') == '290px' && $('div').eq(6).css('margin-right') == '2px', 'The seventh <code>div</code> should have a <code>height</code> of 290 pixels and a <code>margin</code> of 2 pixels.');"
+        },
+        {
+          "text": "The eighth <code>div</code> should have a <code>height</code> of 140 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(7).css('height') == '140px' && $('div').eq(7).css('margin-right') == '2px', 'The eighth <code>div</code> should have a <code>height</code> of 140 pixels and a <code>margin</code> of 2 pixels.');"
+        },
+        {
+          "text": "The ninth <code>div</code> should have a <code>height</code> of 90 pixels and a <code>margin</code> of 2 pixels.",
+          "testString": "assert($('div').eq(8).css('height') == '90px' && $('div').eq(8).css('margin-right') == '2px', 'The ninth <code>div</code> should have a <code>height</code> of 90 pixels and a <code>margin</code> of 2 pixels.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .bar {",
+            "    width: 25px;",
+            "    height: 100px;",
+            "    /* Add your code below this line */",
+            "    ",
+            "    /* Add your code above this line */",
+            "    display: inline-block;",
+            "    background-color: blue;",
+            "  }",
+            "</style>",
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    d3.select(\"body\").selectAll(\"div\")",
+            "      .data(dataset)",
+            "      .enter()",
+            "      .append(\"div\")",
+            "      .attr(\"class\", \"bar\")",
+            "      // Add your code below this line",
+            "      .style(\"height\", (d) => (d + \"px\"))",
+            "      ",
+            "      // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa8367417b2b2512bcb",
@@ -500,39 +721,57 @@
         "Add an <code>svg</code> node to the <code>body</code> using <code>append()</code>. Give it a <code>width</code> attribute set to the provided <code>w</code> constant and a <code>height</code> attribute set to the provided <code>h</code> constant using the <code>attr()</code> method for each. You'll see it in the output because there's a <code>background-color</code> of pink applied to it in the <code>style</code> tag.",
         "<strong>Note</strong><br>Width and height attributes do not have units. This is the building block of scaling - the element will always have a 5:1 width to height ratio, no matter what the zoom level is."
       ],
-      "challengeSeed": [
-        "<style>",
-        "  svg {",
-        "    background-color: pink;",
-        "  }",
-        "</style>",
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  // Add your code below this line",
-        "                  ",
-        "                  ",
-        "                  ",
-        "                  // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('svg').length == 1, 'message: Your document should have 1 <code>svg</code> element.');",
-        "assert($('svg').attr('width') == '500', 'message: The <code>svg</code> element should have a <code>width</code> attribute set to 500.');",
-        "assert($('svg').attr('height') == '100', 'message: The <code>svg</code> element should have a <code>height</code> attribute set to 100.');"
+        {
+          "text": "Your document should have 1 <code>svg</code> element.",
+          "testString": "assert($('svg').length == 1, 'Your document should have 1 <code>svg</code> element.');"
+        },
+        {
+          "text": "The <code>svg</code> element should have a <code>width</code> attribute set to 500.",
+          "testString": "assert($('svg').attr('width') == '500', 'The <code>svg</code> element should have a <code>width</code> attribute set to 500.');"
+        },
+        {
+          "text": "The <code>svg</code> element should have a <code>height</code> attribute set to 100.",
+          "testString": "assert($('svg').attr('height') == '100', 'The <code>svg</code> element should have a <code>height</code> attribute set to 100.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  svg {",
+            "    background-color: pink;",
+            "  }",
+            "</style>",
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  // Add your code below this line",
+            "                  ",
+            "                  ",
+            "                  ",
+            "                  // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa8367417b2b2512bcc",
@@ -551,39 +790,63 @@
         "<hr>",
         "Add a <code>rect</code> shape to the <code>svg</code> using <code>append()</code>, and give it a <code>width</code> attribute of 25 and <code>height</code> attribute of 100. Also, give the <code>rect</code> <code>x</code> and <code>y</code> attributes each set to 0."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h)",
-        "                  // Add your code below this line",
-        "                  ",
-        "                  ",
-        "                  ",
-        "                  // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('rect').length == 1, 'message: Your document should have 1 <code>rect</code> element.');",
-        "assert($('rect').attr('width') == '25', 'message: The <code>rect</code> element should have a <code>width</code> attribute set to 25.');",
-        "assert($('rect').attr('height') == '100', 'message: The <code>rect</code> element should have a <code>height</code> attribute set to 100.');",
-        "assert($('rect').attr('x') == '0', 'message: The <code>rect</code> element should have an <code>x</code> attribute set to 0.');",
-        "assert($('rect').attr('y') == '0', 'message: The <code>rect</code> element should have a <code>y</code> attribute set to 0.');"
+        {
+          "text": "Your document should have 1 <code>rect</code> element.",
+          "testString": "assert($('rect').length == 1, 'Your document should have 1 <code>rect</code> element.');"
+        },
+        {
+          "text": "The <code>rect</code> element should have a <code>width</code> attribute set to 25.",
+          "testString": "assert($('rect').attr('width') == '25', 'The <code>rect</code> element should have a <code>width</code> attribute set to 25.');"
+        },
+        {
+          "text": "The <code>rect</code> element should have a <code>height</code> attribute set to 100.",
+          "testString": "assert($('rect').attr('height') == '100', 'The <code>rect</code> element should have a <code>height</code> attribute set to 100.');"
+        },
+        {
+          "text": "The <code>rect</code> element should have an <code>x</code> attribute set to 0.",
+          "testString": "assert($('rect').attr('x') == '0', 'The <code>rect</code> element should have an <code>x</code> attribute set to 0.');"
+        },
+        {
+          "text": "The <code>rect</code> element should have a <code>y</code> attribute set to 0.",
+          "testString": "assert($('rect').attr('y') == '0', 'The <code>rect</code> element should have a <code>y</code> attribute set to 0.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h)",
+            "                  // Add your code below this line",
+            "                  ",
+            "                  ",
+            "                  ",
+            "                  // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa8367417b2b2512bcd",
@@ -601,44 +864,65 @@
         "<hr>",
         "Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to create and append a <code>rect</code> for each item in <code>dataset</code>. The bars should display all on top of each other, this will be fixed in the next challenge."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "       .attr(\"x\", 0)",
-        "       .attr(\"y\", 0)",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", 100);",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('rect').length == 9, 'message: Your document should have 9 <code>rect</code> elements.');",
-        "assert(code.match(/\\.data/g), 'message: Your code should use the <code>data()</code> method.');",
-        "assert(code.match(/\\.enter/g), 'message: Your code should use the <code>enter()</code> method.');",
-        "assert(code.match(/\\.append/g), 'message: Your code should use the <code>append()</code> method.');"
+        {
+          "text": "Your document should have 9 <code>rect</code> elements.",
+          "testString": "assert($('rect').length == 9, 'Your document should have 9 <code>rect</code> elements.');"
+        },
+        {
+          "text": "Your code should use the <code>data()</code> method.",
+          "testString": "assert(code.match(/\\.data/g), 'Your code should use the <code>data()</code> method.');"
+        },
+        {
+          "text": "Your code should use the <code>enter()</code> method.",
+          "testString": "assert(code.match(/\\.enter/g), 'Your code should use the <code>enter()</code> method.');"
+        },
+        {
+          "text": "Your code should use the <code>append()</code> method.",
+          "testString": "assert(code.match(/\\.append/g), 'Your code should use the <code>append()</code> method.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "       .attr(\"x\", 0)",
+            "       .attr(\"y\", 0)",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", 100);",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa9367417b2b2512bce",
@@ -659,53 +943,89 @@
         "Change the <code>x</code> attribute callback function so it returns the index times 30.",
         "<strong>Note</strong><br>Each bar has a width of 25, so increasing each <code>x</code> value by 30 adds some space between the bars. Any value greater than 25 would work in this example."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"rect\")",
-        "       .attr(\"x\", (d, i) => {",
-        "         // Add your code below this line",
-        "         ",
-        "         ",
-        "         ",
-        "         // Add your code above this line",
-        "       })",
-        "       .attr(\"y\", 0)",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", 100);",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('rect').eq(0).attr('x') == '0', 'message: The first <code>rect</code> should have an <code>x</code> value of 0.');",
-        "assert($('rect').eq(1).attr('x') == '30', 'message: The second <code>rect</code> should have an <code>x</code> value of 30.');",
-        "assert($('rect').eq(2).attr('x') == '60', 'message: The third <code>rect</code> should have an <code>x</code> value of 60.');",
-        "assert($('rect').eq(3).attr('x') == '90', 'message: The fourth <code>rect</code> should have an <code>x</code> value of 90.');",
-        "assert($('rect').eq(4).attr('x') == '120', 'message: The fifth <code>rect</code> should have an <code>x</code> value of 120.');",
-        "assert($('rect').eq(5).attr('x') == '150', 'message: The sixth <code>rect</code> should have an <code>x</code> value of 150.');",
-        "assert($('rect').eq(6).attr('x') == '180', 'message: The seventh <code>rect</code> should have an <code>x</code> value of 180.');",
-        "assert($('rect').eq(7).attr('x') == '210', 'message: The eighth <code>rect</code> should have an <code>x</code> value of 210.');",
-        "assert($('rect').eq(8).attr('x') == '240', 'message: The ninth <code>rect</code> should have an <code>x</code> value of 240.');"
+        {
+          "text": "The first <code>rect</code> should have an <code>x</code> value of 0.",
+          "testString": "assert($('rect').eq(0).attr('x') == '0', 'The first <code>rect</code> should have an <code>x</code> value of 0.');"
+        },
+        {
+          "text": "The second <code>rect</code> should have an <code>x</code> value of 30.",
+          "testString": "assert($('rect').eq(1).attr('x') == '30', 'The second <code>rect</code> should have an <code>x</code> value of 30.');"
+        },
+        {
+          "text": "The third <code>rect</code> should have an <code>x</code> value of 60.",
+          "testString": "assert($('rect').eq(2).attr('x') == '60', 'The third <code>rect</code> should have an <code>x</code> value of 60.');"
+        },
+        {
+          "text": "The fourth <code>rect</code> should have an <code>x</code> value of 90.",
+          "testString": "assert($('rect').eq(3).attr('x') == '90', 'The fourth <code>rect</code> should have an <code>x</code> value of 90.');"
+        },
+        {
+          "text": "The fifth <code>rect</code> should have an <code>x</code> value of 120.",
+          "testString": "assert($('rect').eq(4).attr('x') == '120', 'The fifth <code>rect</code> should have an <code>x</code> value of 120.');"
+        },
+        {
+          "text": "The sixth <code>rect</code> should have an <code>x</code> value of 150.",
+          "testString": "assert($('rect').eq(5).attr('x') == '150', 'The sixth <code>rect</code> should have an <code>x</code> value of 150.');"
+        },
+        {
+          "text": "The seventh <code>rect</code> should have an <code>x</code> value of 180.",
+          "testString": "assert($('rect').eq(6).attr('x') == '180', 'The seventh <code>rect</code> should have an <code>x</code> value of 180.');"
+        },
+        {
+          "text": "The eighth <code>rect</code> should have an <code>x</code> value of 210.",
+          "testString": "assert($('rect').eq(7).attr('x') == '210', 'The eighth <code>rect</code> should have an <code>x</code> value of 210.');"
+        },
+        {
+          "text": "The ninth <code>rect</code> should have an <code>x</code> value of 240.",
+          "testString": "assert($('rect').eq(8).attr('x') == '240', 'The ninth <code>rect</code> should have an <code>x</code> value of 240.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"rect\")",
+            "       .attr(\"x\", (d, i) => {",
+            "         // Add your code below this line",
+            "         ",
+            "         ",
+            "         ",
+            "         // Add your code above this line",
+            "       })",
+            "       .attr(\"y\", 0)",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", 100);",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa9367417b2b2512bcf",
@@ -722,53 +1042,89 @@
         "Change the callback function for the <code>height</code> attribute to return the data value times 3.",
         "<strong>Note</strong><br>Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"rect\")",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", 0)",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", (d, i) => {",
-        "         // Add your code below this line",
-        "         ",
-        "         ",
-        "         ",
-        "         // Add your code above this line",
-        "       });",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('rect').eq(0).attr('height') == '36', 'message: The first <code>rect</code> should have a <code>height</code> of 36.');",
-        "assert($('rect').eq(1).attr('height') == '93', 'message: The second <code>rect</code> should have a <code>height</code> of 93.');",
-        "assert($('rect').eq(2).attr('height') == '66', 'message: The third <code>rect</code> should have a <code>height</code> of 66.');",
-        "assert($('rect').eq(3).attr('height') == '51', 'message: The fourth <code>rect</code> should have a <code>height</code> of 51.');",
-        "assert($('rect').eq(4).attr('height') == '75', 'message: The fifth <code>rect</code> should have a <code>height</code> of 75.');",
-        "assert($('rect').eq(5).attr('height') == '54', 'message: The sixth <code>rect</code> should have a <code>height</code> of 54.');",
-        "assert($('rect').eq(6).attr('height') == '87', 'message: The seventh <code>rect</code> should have a <code>height</code> of 87.');",
-        "assert($('rect').eq(7).attr('height') == '42', 'message: The eighth <code>rect</code> should have a <code>height</code> of 42.');",
-        "assert($('rect').eq(8).attr('height') == '27', 'message: The ninth <code>rect</code> should have a <code>height</code> of 27.');"
+        {
+          "text": "The first <code>rect</code> should have a <code>height</code> of 36.",
+          "testString": "assert($('rect').eq(0).attr('height') == '36', 'The first <code>rect</code> should have a <code>height</code> of 36.');"
+        },
+        {
+          "text": "The second <code>rect</code> should have a <code>height</code> of 93.",
+          "testString": "assert($('rect').eq(1).attr('height') == '93', 'The second <code>rect</code> should have a <code>height</code> of 93.');"
+        },
+        {
+          "text": "The third <code>rect</code> should have a <code>height</code> of 66.",
+          "testString": "assert($('rect').eq(2).attr('height') == '66', 'The third <code>rect</code> should have a <code>height</code> of 66.');"
+        },
+        {
+          "text": "The fourth <code>rect</code> should have a <code>height</code> of 51.",
+          "testString": "assert($('rect').eq(3).attr('height') == '51', 'The fourth <code>rect</code> should have a <code>height</code> of 51.');"
+        },
+        {
+          "text": "The fifth <code>rect</code> should have a <code>height</code> of 75.",
+          "testString": "assert($('rect').eq(4).attr('height') == '75', 'The fifth <code>rect</code> should have a <code>height</code> of 75.');"
+        },
+        {
+          "text": "The sixth <code>rect</code> should have a <code>height</code> of 54.",
+          "testString": "assert($('rect').eq(5).attr('height') == '54', 'The sixth <code>rect</code> should have a <code>height</code> of 54.');"
+        },
+        {
+          "text": "The seventh <code>rect</code> should have a <code>height</code> of 87.",
+          "testString": "assert($('rect').eq(6).attr('height') == '87', 'The seventh <code>rect</code> should have a <code>height</code> of 87.');"
+        },
+        {
+          "text": "The eighth <code>rect</code> should have a <code>height</code> of 42.",
+          "testString": "assert($('rect').eq(7).attr('height') == '42', 'The eighth <code>rect</code> should have a <code>height</code> of 42.');"
+        },
+        {
+          "text": "The ninth <code>rect</code> should have a <code>height</code> of 27.",
+          "testString": "assert($('rect').eq(8).attr('height') == '27', 'The ninth <code>rect</code> should have a <code>height</code> of 27.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"rect\")",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", 0)",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", (d, i) => {",
+            "         // Add your code below this line",
+            "         ",
+            "         ",
+            "         ",
+            "         // Add your code above this line",
+            "       });",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa9367417b2b2512bd0",
@@ -788,53 +1144,89 @@
         "Change the callback function for the <code>y</code> attribute to set the bars right-side-up. Remember that the <code>height</code> of the bar is 3 times the data value <code>d</code>.",
         "<strong>Note</strong><br>In general, the relationship is <code>y = h - m * d</code>, where <code>m</code> is the constant that scales the data points."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"rect\")",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => {",
-        "         // Add your code below this line",
-        "         ",
-        "         ",
-        "         ",
-        "         // Add your code above this line",
-        "       })",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", (d, i) => 3 * d);",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('rect').eq(0).attr('y') == h - (dataset[0] * 3), 'message: The first <code>rect</code> should have a <code>y</code> value of 64.');",
-        "assert($('rect').eq(1).attr('y') == h - (dataset[1] * 3), 'message: The second <code>rect</code> should have a <code>y</code> value of 7.');",
-        "assert($('rect').eq(2).attr('y') == h - (dataset[2] * 3), 'message: The third <code>rect</code> should have a <code>y</code> value of 34.');",
-        "assert($('rect').eq(3).attr('y') == h - (dataset[3] * 3), 'message: The fourth <code>rect</code> should have a <code>y</code> value of 49.');",
-        "assert($('rect').eq(4).attr('y') == h - (dataset[4] * 3), 'message: The fifth <code>rect</code> should have a <code>y</code> value of 25.');",
-        "assert($('rect').eq(5).attr('y') == h - (dataset[5] * 3), 'message: The sixth <code>rect</code> should have a <code>y</code> value of 46.');",
-        "assert($('rect').eq(6).attr('y') == h - (dataset[6] * 3), 'message: The seventh <code>rect</code> should have a <code>y</code> value of 13.');",
-        "assert($('rect').eq(7).attr('y') == h - (dataset[7] * 3), 'message: The eighth <code>rect</code> should have a <code>y</code> value of 58.');",
-        "assert($('rect').eq(8).attr('y') == h - (dataset[8] * 3), 'message: The ninth <code>rect</code> should have a <code>y</code> value of 73.');"
+        {
+          "text": "The first <code>rect</code> should have a <code>y</code> value of 64.",
+          "testString": "assert($('rect').eq(0).attr('y') == h - (dataset[0] * 3), 'The first <code>rect</code> should have a <code>y</code> value of 64.');"
+        },
+        {
+          "text": "The second <code>rect</code> should have a <code>y</code> value of 7.",
+          "testString": "assert($('rect').eq(1).attr('y') == h - (dataset[1] * 3), 'The second <code>rect</code> should have a <code>y</code> value of 7.');"
+        },
+        {
+          "text": "The third <code>rect</code> should have a <code>y</code> value of 34.",
+          "testString": "assert($('rect').eq(2).attr('y') == h - (dataset[2] * 3), 'The third <code>rect</code> should have a <code>y</code> value of 34.');"
+        },
+        {
+          "text": "The fourth <code>rect</code> should have a <code>y</code> value of 49.",
+          "testString": "assert($('rect').eq(3).attr('y') == h - (dataset[3] * 3), 'The fourth <code>rect</code> should have a <code>y</code> value of 49.');"
+        },
+        {
+          "text": "The fifth <code>rect</code> should have a <code>y</code> value of 25.",
+          "testString": "assert($('rect').eq(4).attr('y') == h - (dataset[4] * 3), 'The fifth <code>rect</code> should have a <code>y</code> value of 25.');"
+        },
+        {
+          "text": "The sixth <code>rect</code> should have a <code>y</code> value of 46.",
+          "testString": "assert($('rect').eq(5).attr('y') == h - (dataset[5] * 3), 'The sixth <code>rect</code> should have a <code>y</code> value of 46.');"
+        },
+        {
+          "text": "The seventh <code>rect</code> should have a <code>y</code> value of 13.",
+          "testString": "assert($('rect').eq(6).attr('y') == h - (dataset[6] * 3), 'The seventh <code>rect</code> should have a <code>y</code> value of 13.');"
+        },
+        {
+          "text": "The eighth <code>rect</code> should have a <code>y</code> value of 58.",
+          "testString": "assert($('rect').eq(7).attr('y') == h - (dataset[7] * 3), 'The eighth <code>rect</code> should have a <code>y</code> value of 58.');"
+        },
+        {
+          "text": "The ninth <code>rect</code> should have a <code>y</code> value of 73.",
+          "testString": "assert($('rect').eq(8).attr('y') == h - (dataset[8] * 3), 'The ninth <code>rect</code> should have a <code>y</code> value of 73.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"rect\")",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => {",
+            "         // Add your code below this line",
+            "         ",
+            "         ",
+            "         ",
+            "         // Add your code above this line",
+            "       })",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", (d, i) => 3 * d);",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fa9367417b2b2512bd1",
@@ -850,44 +1242,56 @@
         "<hr>",
         "Add an <code>attr()</code> method to set the \"fill\" of all the bars to the color \"navy\"."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"rect\")",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => h - 3 * d)",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", (d, i) => 3 * d)",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('rect').css('fill') == \"rgb(0, 0, 128)\", 'message: The bars should all have a <code>fill</code> color of navy.');"
+        {
+          "text": "The bars should all have a <code>fill</code> color of navy.",
+          "testString": "assert($('rect').css('fill') == \"rgb(0, 0, 128)\", 'The bars should all have a <code>fill</code> color of navy.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"rect\")",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => h - 3 * d)",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", (d, i) => 3 * d)",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7faa367417b2b2512bd2",
@@ -905,58 +1309,94 @@
         "The code in the editor already binds the data to each new <code>text</code> element. First, append <code>text</code> nodes to the <code>svg</code>. Next, add attributes for the <code>x</code> and <code>y</code> coordinates. They should be calculated the same way as the <code>rect</code> ones, except the <code>y</code> value for the <code>text</code> should make the label sit 3 units higher than the bar. Finally, use the D3 <code>text()</code> method to set the label equal to the data point value.",
         "<strong>Note</strong><br>For the label to sit higher than the bar, decide if the <code>y</code> value for the <code>text</code> should be 3 greater or 3 less than the <code>y</code> value for the bar."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"rect\")",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => h - 3 * d)",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", (d, i) => 3 * d)",
-        "       .attr(\"fill\", \"navy\");",
-        "    ",
-        "    svg.selectAll(\"text\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "  </script>",
-        "<body>"
-      ],
       "tests": [
-        "assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61', 'message: The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.');",
-        "assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4', 'message: The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.');",
-        "assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31', 'message: The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.');",
-        "assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46', 'message: The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.');",
-        "assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22', 'message: The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.');",
-        "assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43', 'message: The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.');",
-        "assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10', 'message: The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.');",
-        "assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55', 'message: The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.');",
-        "assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70', 'message: The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.');"
+        {
+          "text": "The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.",
+          "testString": "assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61', 'The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.');"
+        },
+        {
+          "text": "The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.",
+          "testString": "assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4', 'The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.');"
+        },
+        {
+          "text": "The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.",
+          "testString": "assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31', 'The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.');"
+        },
+        {
+          "text": "The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.",
+          "testString": "assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46', 'The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.');"
+        },
+        {
+          "text": "The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.",
+          "testString": "assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22', 'The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.');"
+        },
+        {
+          "text": "The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.",
+          "testString": "assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43', 'The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.');"
+        },
+        {
+          "text": "The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.",
+          "testString": "assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10', 'The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.');"
+        },
+        {
+          "text": "The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.",
+          "testString": "assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55', 'The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.');"
+        },
+        {
+          "text": "The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.",
+          "testString": "assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70', 'The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"rect\")",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => h - 3 * d)",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", (d, i) => 3 * d)",
+            "       .attr(\"fill\", \"navy\");",
+            "    ",
+            "    svg.selectAll(\"text\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "  </script>",
+            "<body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7faa367417b2b2512bd3",
@@ -971,54 +1411,69 @@
         "<hr>",
         "Set the <code>font-size</code> of the <code>text</code> elements to 25px, and the color of the text to red."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"rect\")",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => h - 3 * d)",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", (d, i) => d * 3)",
-        "       .attr(\"fill\", \"navy\");",
-        "    ",
-        "    svg.selectAll(\"text\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"text\")",
-        "       .text((d) => d)",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => h - (3 * d) - 3)",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('text').css('fill') == 'rgb(255, 0, 0)', 'message: The labels should all have a <code>fill</code> color of red.');",
-        "assert($('text').css('font-size') == '25px', 'message: The labels should all have a <code>font-size</code> of 25 pixels.');"
+        {
+          "text": "The labels should all have a <code>fill</code> color of red.",
+          "testString": "assert($('text').css('fill') == 'rgb(255, 0, 0)', 'The labels should all have a <code>fill</code> color of red.');"
+        },
+        {
+          "text": "The labels should all have a <code>font-size</code> of 25 pixels.",
+          "testString": "assert($('text').css('font-size') == '25px', 'The labels should all have a <code>font-size</code> of 25 pixels.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"rect\")",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => h - 3 * d)",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", (d, i) => d * 3)",
+            "       .attr(\"fill\", \"navy\");",
+            "    ",
+            "    svg.selectAll(\"text\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"text\")",
+            "       .text((d) => d)",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => h - (3 * d) - 3)",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7faa367417b2b2512bd4",
@@ -1034,59 +1489,71 @@
         "<hr>",
         "Use the <code>attr()</code> method to add a class of <code>bar</code> to all the <code>rect</code> elements. This changes the <code>fill</code> color of the bar to brown when you mouse over it."
       ],
-      "challengeSeed": [
-        "<style>",
-        "  .bar:hover {",
-        "    fill: brown;",
-        "  }",
-        "</style>",
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"rect\")",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => h - 3 * d)",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", (d, i) => 3 * d)",
-        "       .attr(\"fill\", \"navy\")",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "    ",
-        "    svg.selectAll(\"text\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"text\")",
-        "       .text((d) => d)",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => h - (3 * d) - 3);",
-        "       ",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('rect').attr('class') == \"bar\", 'message: Your <code>rect</code> elements should have a class of <code>bar</code>.');"
+        {
+          "text": "Your <code>rect</code> elements should have a class of <code>bar</code>.",
+          "testString": "assert($('rect').attr('class') == \"bar\", 'Your <code>rect</code> elements should have a class of <code>bar</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .bar:hover {",
+            "    fill: brown;",
+            "  }",
+            "</style>",
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"rect\")",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => h - 3 * d)",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", (d, i) => 3 * d)",
+            "       .attr(\"fill\", \"navy\")",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "    ",
+            "    svg.selectAll(\"text\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"text\")",
+            "       .text((d) => d)",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => h - (3 * d) - 3);",
+            "       ",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7faa367417b2b2512bd6",
@@ -1102,69 +1569,108 @@
         "<hr>",
         "Append a <code>title</code> element under each <code>rect</code> node. Then call the <code>text()</code> method with a callback function so the text displays the data value."
       ],
-      "challengeSeed": [
-        "<style>",
-        "  .bar:hover {",
-        "    fill: brown;",
-        "  }",
-        "</style>",
-        "<body>",
-        "  <script>",
-        "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 100;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"rect\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"rect\")",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => h - 3 * d)",
-        "       .attr(\"width\", 25)",
-        "       .attr(\"height\", (d, i) => d * 3)",
-        "       .attr(\"fill\", \"navy\")",
-        "       .attr(\"class\", \"bar\")",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "    ",
-        "    svg.selectAll(\"text\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"text\")",
-        "       .text((d) => d)",
-        "       .attr(\"x\", (d, i) => i * 30)",
-        "       .attr(\"y\", (d, i) => h - (d * 3 + 3))   ",
-        "    ",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('title').length == 9, 'message: Your code should have 9 <code>title</code> elements.');",
-        "assert($('title').eq(0).text() == '12', 'message: The first <code>title</code> element should have tooltip text of 12.');",
-        "assert($('title').eq(1).text() == '31', 'message: The second <code>title</code> element should have tooltip text of 31.');",
-        "assert($('title').eq(2).text() == '22', 'message: The third <code>title</code> element should have tooltip text of 22.');",
-        "assert($('title').eq(3).text() == '17', 'message: The fourth <code>title</code> element should have tooltip text of 17.');",
-        "assert($('title').eq(4).text() == '25', 'message: The fifth <code>title</code> element should have tooltip text of 25.');",
-        "assert($('title').eq(5).text() == '18', 'message: The sixth <code>title</code> element should have tooltip text of 18.');",
-        "assert($('title').eq(6).text() == '29', 'message: The seventh <code>title</code> element should have tooltip text of 29.');",
-        "assert($('title').eq(7).text() == '14', 'message: The eighth <code>title</code> element should have tooltip text of 14.');",
-        "assert($('title').eq(8).text() == '9', 'message: The ninth <code>title</code> element should have tooltip text of 9.');"
+        {
+          "text": "Your code should have 9 <code>title</code> elements.",
+          "testString": "assert($('title').length == 9, 'Your code should have 9 <code>title</code> elements.');"
+        },
+        {
+          "text": "The first <code>title</code> element should have tooltip text of 12.",
+          "testString": "assert($('title').eq(0).text() == '12', 'The first <code>title</code> element should have tooltip text of 12.');"
+        },
+        {
+          "text": "The second <code>title</code> element should have tooltip text of 31.",
+          "testString": "assert($('title').eq(1).text() == '31', 'The second <code>title</code> element should have tooltip text of 31.');"
+        },
+        {
+          "text": "The third <code>title</code> element should have tooltip text of 22.",
+          "testString": "assert($('title').eq(2).text() == '22', 'The third <code>title</code> element should have tooltip text of 22.');"
+        },
+        {
+          "text": "The fourth <code>title</code> element should have tooltip text of 17.",
+          "testString": "assert($('title').eq(3).text() == '17', 'The fourth <code>title</code> element should have tooltip text of 17.');"
+        },
+        {
+          "text": "The fifth <code>title</code> element should have tooltip text of 25.",
+          "testString": "assert($('title').eq(4).text() == '25', 'The fifth <code>title</code> element should have tooltip text of 25.');"
+        },
+        {
+          "text": "The sixth <code>title</code> element should have tooltip text of 18.",
+          "testString": "assert($('title').eq(5).text() == '18', 'The sixth <code>title</code> element should have tooltip text of 18.');"
+        },
+        {
+          "text": "The seventh <code>title</code> element should have tooltip text of 29.",
+          "testString": "assert($('title').eq(6).text() == '29', 'The seventh <code>title</code> element should have tooltip text of 29.');"
+        },
+        {
+          "text": "The eighth <code>title</code> element should have tooltip text of 14.",
+          "testString": "assert($('title').eq(7).text() == '14', 'The eighth <code>title</code> element should have tooltip text of 14.');"
+        },
+        {
+          "text": "The ninth <code>title</code> element should have tooltip text of 9.",
+          "testString": "assert($('title').eq(8).text() == '9', 'The ninth <code>title</code> element should have tooltip text of 9.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  .bar:hover {",
+            "    fill: brown;",
+            "  }",
+            "</style>",
+            "<body>",
+            "  <script>",
+            "    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 100;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"rect\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"rect\")",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => h - 3 * d)",
+            "       .attr(\"width\", 25)",
+            "       .attr(\"height\", (d, i) => d * 3)",
+            "       .attr(\"fill\", \"navy\")",
+            "       .attr(\"class\", \"bar\")",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "    ",
+            "    svg.selectAll(\"text\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"text\")",
+            "       .text((d) => d)",
+            "       .attr(\"x\", (d, i) => i * 30)",
+            "       .attr(\"y\", (d, i) => h - (d * 3 + 3))   ",
+            "    ",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fab367417b2b2512bd7",
@@ -1180,50 +1686,62 @@
         "<hr>",
         "Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to bind <code>dataset</code> to new <code>circle</code> elements that are appended to the SVG canvas."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [",
-        "                  [ 34,    78 ],",
-        "                  [ 109,   280 ],",
-        "                  [ 310,   120 ],",
-        "                  [ 79,    411 ],",
-        "                  [ 420,   220 ],",
-        "                  [ 233,   145 ],",
-        "                  [ 333,   96 ],",
-        "                  [ 222,   333 ],",
-        "                  [ 78,    320 ],",
-        "                  [ 21,    123 ]",
-        "                ];",
-        "    ",
-        "    ",
-        "    const w = 500;",
-        "    const h = 500;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"circle\")",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "  ",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('circle').length == 10, 'message: Your code should have 10 <code>circle</code> elements.');"
+        {
+          "text": "Your code should have 10 <code>circle</code> elements.",
+          "testString": "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [",
+            "                  [ 34,    78 ],",
+            "                  [ 109,   280 ],",
+            "                  [ 310,   120 ],",
+            "                  [ 79,    411 ],",
+            "                  [ 420,   220 ],",
+            "                  [ 233,   145 ],",
+            "                  [ 333,   96 ],",
+            "                  [ 222,   333 ],",
+            "                  [ 78,    320 ],",
+            "                  [ 21,    123 ]",
+            "                ];",
+            "    ",
+            "    ",
+            "    const w = 500;",
+            "    const h = 500;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"circle\")",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "  ",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fab367417b2b2512bd8",
@@ -1241,56 +1759,51 @@
         "<hr>",
         "Add <code>cx</code>, <code>cy</code>, and <code>r</code> attributes to the <code>circle</code> elements. The <code>cx</code> value should be the first number in the array for each item in <code>dataset</code>. The <code>cy</code> value should be based off the second number in the array, but make sure to show the chart right-side-up and not inverted. The <code>r</code> value should be 5 for all circles."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [",
-        "                  [ 34,    78 ],",
-        "                  [ 109,   280 ],",
-        "                  [ 310,   120 ],",
-        "                  [ 79,    411 ],",
-        "                  [ 420,   220 ],",
-        "                  [ 233,   145 ],",
-        "                  [ 333,   96 ],",
-        "                  [ 222,   333 ],",
-        "                  [ 78,    320 ],",
-        "                  [ 21,    123 ]",
-        "                ];",
-        "    ",
-        "    ",
-        "    const w = 500;",
-        "    const h = 500;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"circle\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"circle\")",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "  ",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('circle').length == 10, 'message: Your code should have 10 <code>circle</code> elements.');",
-        "assert($('circle').eq(0).attr('cx') == '34' && $('circle').eq(0).attr('cy') == '422' && $('circle').eq(0).attr('r') == '5', 'message: The first <code>circle</code> element should have a <code>cx</code> value of 34, a <code>cy</code> value of 422, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(1).attr('cx') == '109' && $('circle').eq(1).attr('cy') == '220' && $('circle').eq(1).attr('r') == '5', 'message: The second <code>circle</code> element should have a <code>cx</code> value of 109, a <code>cy</code> value of 220, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(2).attr('cx') == '310' && $('circle').eq(2).attr('cy') == '380' && $('circle').eq(2).attr('r') == '5', 'message: The third <code>circle</code> element should have a <code>cx</code> value of 310, a <code>cy</code> value of 380, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(3).attr('cx') == '79' && $('circle').eq(3).attr('cy') == '89' && $('circle').eq(3).attr('r') == '5', 'message: The fourth <code>circle</code> element should have a <code>cx</code> value of 79, a <code>cy</code> value of 89, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(4).attr('cx') == '420' && $('circle').eq(4).attr('cy') == '280' && $('circle').eq(4).attr('r') == '5', 'message: The fifth <code>circle</code> element should have a <code>cx</code> value of 420, a <code>cy</code> value of 280, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(5).attr('cx') == '233' && $('circle').eq(5).attr('cy') == '355' && $('circle').eq(5).attr('r') == '5', 'message: The sixth <code>circle</code> element should have a <code>cx</code> value of 233, a <code>cy</code> value of 355, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(6).attr('cx') == '333' && $('circle').eq(6).attr('cy') == '404' && $('circle').eq(6).attr('r') == '5', 'message: The seventh <code>circle</code> element should have a <code>cx</code> value of 333, a <code>cy</code> value of 404, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(7).attr('cx') == '222' && $('circle').eq(7).attr('cy') == '167' && $('circle').eq(7).attr('r') == '5', 'message: The eighth <code>circle</code> element should have a <code>cx</code> value of 222, a <code>cy</code> value of 167, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(8).attr('cx') == '78' && $('circle').eq(8).attr('cy') == '180' && $('circle').eq(8).attr('r') == '5', 'message: The ninth <code>circle</code> element should have a <code>cx</code> value of 78, a <code>cy</code> value of 180, and an <code>r</code> value of 5.');",
-        "assert($('circle').eq(9).attr('cx') == '21' && $('circle').eq(9).attr('cy') == '377' && $('circle').eq(9).attr('r') == '5', 'message: The tenth <code>circle</code> element should have a <code>cx</code> value of 21, a <code>cy</code> value of 377, and an <code>r</code> value of 5.');"
+        {
+          "text": "Your code should have 10 <code>circle</code> elements.",
+          "testString": "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
+        },
+        {
+          "text": "The first <code>circle</code> element should have a <code>cx</code> value of 34, a <code>cy</code> value of 422, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(0).attr('cx') == '34' && $('circle').eq(0).attr('cy') == '422' && $('circle').eq(0).attr('r') == '5', 'The first <code>circle</code> element should have a <code>cx</code> value of 34, a <code>cy</code> value of 422, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The second <code>circle</code> element should have a <code>cx</code> value of 109, a <code>cy</code> value of 220, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(1).attr('cx') == '109' && $('circle').eq(1).attr('cy') == '220' && $('circle').eq(1).attr('r') == '5', 'The second <code>circle</code> element should have a <code>cx</code> value of 109, a <code>cy</code> value of 220, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The third <code>circle</code> element should have a <code>cx</code> value of 310, a <code>cy</code> value of 380, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(2).attr('cx') == '310' && $('circle').eq(2).attr('cy') == '380' && $('circle').eq(2).attr('r') == '5', 'The third <code>circle</code> element should have a <code>cx</code> value of 310, a <code>cy</code> value of 380, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The fourth <code>circle</code> element should have a <code>cx</code> value of 79, a <code>cy</code> value of 89, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(3).attr('cx') == '79' && $('circle').eq(3).attr('cy') == '89' && $('circle').eq(3).attr('r') == '5', 'The fourth <code>circle</code> element should have a <code>cx</code> value of 79, a <code>cy</code> value of 89, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The fifth <code>circle</code> element should have a <code>cx</code> value of 420, a <code>cy</code> value of 280, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(4).attr('cx') == '420' && $('circle').eq(4).attr('cy') == '280' && $('circle').eq(4).attr('r') == '5', 'The fifth <code>circle</code> element should have a <code>cx</code> value of 420, a <code>cy</code> value of 280, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The sixth <code>circle</code> element should have a <code>cx</code> value of 233, a <code>cy</code> value of 355, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(5).attr('cx') == '233' && $('circle').eq(5).attr('cy') == '355' && $('circle').eq(5).attr('r') == '5', 'The sixth <code>circle</code> element should have a <code>cx</code> value of 233, a <code>cy</code> value of 355, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The seventh <code>circle</code> element should have a <code>cx</code> value of 333, a <code>cy</code> value of 404, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(6).attr('cx') == '333' && $('circle').eq(6).attr('cy') == '404' && $('circle').eq(6).attr('r') == '5', 'The seventh <code>circle</code> element should have a <code>cx</code> value of 333, a <code>cy</code> value of 404, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The eighth <code>circle</code> element should have a <code>cx</code> value of 222, a <code>cy</code> value of 167, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(7).attr('cx') == '222' && $('circle').eq(7).attr('cy') == '167' && $('circle').eq(7).attr('r') == '5', 'The eighth <code>circle</code> element should have a <code>cx</code> value of 222, a <code>cy</code> value of 167, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The ninth <code>circle</code> element should have a <code>cx</code> value of 78, a <code>cy</code> value of 180, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(8).attr('cx') == '78' && $('circle').eq(8).attr('cy') == '180' && $('circle').eq(8).attr('r') == '5', 'The ninth <code>circle</code> element should have a <code>cx</code> value of 78, a <code>cy</code> value of 180, and an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The tenth <code>circle</code> element should have a <code>cx</code> value of 21, a <code>cy</code> value of 377, and an <code>r</code> value of 5.",
+          "testString": "assert($('circle').eq(9).attr('cx') == '21' && $('circle').eq(9).attr('cy') == '377' && $('circle').eq(9).attr('r') == '5', 'The tenth <code>circle</code> element should have a <code>cx</code> value of 21, a <code>cy</code> value of 377, and an <code>r</code> value of 5.');"
+        }
       ],
       "solutions": [],
       "hints": [
@@ -1299,7 +1812,54 @@
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [",
+            "                  [ 34,    78 ],",
+            "                  [ 109,   280 ],",
+            "                  [ 310,   120 ],",
+            "                  [ 79,    411 ],",
+            "                  [ 420,   220 ],",
+            "                  [ 233,   145 ],",
+            "                  [ 333,   96 ],",
+            "                  [ 222,   333 ],",
+            "                  [ 78,    320 ],",
+            "                  [ 21,    123 ]",
+            "                ];",
+            "    ",
+            "    ",
+            "    const w = 500;",
+            "    const h = 500;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"circle\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"circle\")",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "  ",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fab367417b2b2512bd9",
@@ -1316,70 +1876,112 @@
         "<hr>",
         "Label each point on the scatter plot using the <code>text</code> elements. The text of the label should be the two values separated by a comma and a space. For example, the label for the first point is \"34, 78\". Set the <code>x</code> attribute so it's 5 units more than the value you used for the <code>cx</code> attribute on the <code>circle</code>. Set the <code>y</code> attribute the same way that's used for the <code>cy</code> value on the <code>circle</code>."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [",
-        "                  [ 34,    78 ],",
-        "                  [ 109,   280 ],",
-        "                  [ 310,   120 ],",
-        "                  [ 79,    411 ],",
-        "                  [ 420,   220 ],",
-        "                  [ 233,   145 ],",
-        "                  [ 333,   96 ],",
-        "                  [ 222,   333 ],",
-        "                  [ 78,    320 ],",
-        "                  [ 21,    123 ]",
-        "                ];",
-        "    ",
-        "    ",
-        "    const w = 500;",
-        "    const h = 500;",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"circle\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"circle\")",
-        "       .attr(\"cx\", (d, i) => d[0])",
-        "       .attr(\"cy\", (d, i) => h - d[1])",
-        "       .attr(\"r\", 5);",
-        "    ",
-        "    svg.selectAll(\"text\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"text\")",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('text').length == 10, 'message: Your code should have 10 <code>text</code> elements.');",
-        "assert($('text').eq(0).text() == '34, 78' && $('text').eq(0).attr('x') == '39' && $('text').eq(0).attr('y') == '422', 'message: The first label should have text of \"34, 78\", an <code>x</code> value of 39, and a <code>y</code> value of 422.');",
-        "assert($('text').eq(1).text() == '109, 280' && $('text').eq(1).attr('x') == '114' && $('text').eq(1).attr('y') == '220', 'message: The second label should have text of \"109, 280\", an <code>x</code> value of 114, and a <code>y</code> value of 220.');",
-        "assert($('text').eq(2).text() == '310, 120' && $('text').eq(2).attr('x') == '315' && $('text').eq(2).attr('y') == '380', 'message: The third label should have text of \"310, 120\", an <code>x</code> value of 315, and a <code>y</code> value of 380.');",
-        "assert($('text').eq(3).text() == '79, 411' && $('text').eq(3).attr('x') == '84' && $('text').eq(3).attr('y') == '89', 'message: The fourth label should have text of \"79, 411\", an <code>x</code> value of 84, and a <code>y</code> value of 89.');",
-        "assert($('text').eq(4).text() == '420, 220' && $('text').eq(4).attr('x') == '425' && $('text').eq(4).attr('y') == '280', 'message: The fifth label should have text of \"420, 220\", an <code>x</code> value of 425, and a <code>y</code> value of 280.');",
-        "assert($('text').eq(5).text() == '233, 145' && $('text').eq(5).attr('x') == '238' && $('text').eq(5).attr('y') == '355', 'message: The sixth label should have text of \"233, 145\", an <code>x</code> value of 238, and a <code>y</code> value of 355.');",
-        "assert($('text').eq(6).text() == '333, 96' && $('text').eq(6).attr('x') == '338' && $('text').eq(6).attr('y') == '404', 'message: The seventh label should have text of \"333, 96\", an <code>x</code> value of 338, and a <code>y</code> value of 404.');",
-        "assert($('text').eq(7).text() == '222, 333' && $('text').eq(7).attr('x') == '227' && $('text').eq(7).attr('y') == '167', 'message: The eighth label should have text of \"222, 333\", an <code>x</code> value of 227, and a <code>y</code> value of 167.');",
-        "assert($('text').eq(8).text() == '78, 320' && $('text').eq(8).attr('x') == '83' && $('text').eq(8).attr('y') == '180', 'message: The ninth label should have text of \"78, 320\", an <code>x</code> value of 83, and a <code>y</code> value of 180.');",
-        "assert($('text').eq(9).text() == '21, 123' && $('text').eq(9).attr('x') == '26' && $('text').eq(9).attr('y') == '377', 'message: The tenth label should have text of \"21, 123\", an <code>x</code> value of 26, and a <code>y</code> value of 377.');"
+        {
+          "text": "Your code should have 10 <code>text</code> elements.",
+          "testString": "assert($('text').length == 10, 'Your code should have 10 <code>text</code> elements.');"
+        },
+        {
+          "text": "The first label should have text of \"34, 78\", an <code>x</code> value of 39, and a <code>y</code> value of 422.",
+          "testString": "assert($('text').eq(0).text() == '34, 78' && $('text').eq(0).attr('x') == '39' && $('text').eq(0).attr('y') == '422', 'The first label should have text of \"34, 78\", an <code>x</code> value of 39, and a <code>y</code> value of 422.');"
+        },
+        {
+          "text": "The second label should have text of \"109, 280\", an <code>x</code> value of 114, and a <code>y</code> value of 220.",
+          "testString": "assert($('text').eq(1).text() == '109, 280' && $('text').eq(1).attr('x') == '114' && $('text').eq(1).attr('y') == '220', 'The second label should have text of \"109, 280\", an <code>x</code> value of 114, and a <code>y</code> value of 220.');"
+        },
+        {
+          "text": "The third label should have text of \"310, 120\", an <code>x</code> value of 315, and a <code>y</code> value of 380.",
+          "testString": "assert($('text').eq(2).text() == '310, 120' && $('text').eq(2).attr('x') == '315' && $('text').eq(2).attr('y') == '380', 'The third label should have text of \"310, 120\", an <code>x</code> value of 315, and a <code>y</code> value of 380.');"
+        },
+        {
+          "text": "The fourth label should have text of \"79, 411\", an <code>x</code> value of 84, and a <code>y</code> value of 89.",
+          "testString": "assert($('text').eq(3).text() == '79, 411' && $('text').eq(3).attr('x') == '84' && $('text').eq(3).attr('y') == '89', 'The fourth label should have text of \"79, 411\", an <code>x</code> value of 84, and a <code>y</code> value of 89.');"
+        },
+        {
+          "text": "The fifth label should have text of \"420, 220\", an <code>x</code> value of 425, and a <code>y</code> value of 280.",
+          "testString": "assert($('text').eq(4).text() == '420, 220' && $('text').eq(4).attr('x') == '425' && $('text').eq(4).attr('y') == '280', 'The fifth label should have text of \"420, 220\", an <code>x</code> value of 425, and a <code>y</code> value of 280.');"
+        },
+        {
+          "text": "The sixth label should have text of \"233, 145\", an <code>x</code> value of 238, and a <code>y</code> value of 355.",
+          "testString": "assert($('text').eq(5).text() == '233, 145' && $('text').eq(5).attr('x') == '238' && $('text').eq(5).attr('y') == '355', 'The sixth label should have text of \"233, 145\", an <code>x</code> value of 238, and a <code>y</code> value of 355.');"
+        },
+        {
+          "text": "The seventh label should have text of \"333, 96\", an <code>x</code> value of 338, and a <code>y</code> value of 404.",
+          "testString": "assert($('text').eq(6).text() == '333, 96' && $('text').eq(6).attr('x') == '338' && $('text').eq(6).attr('y') == '404', 'The seventh label should have text of \"333, 96\", an <code>x</code> value of 338, and a <code>y</code> value of 404.');"
+        },
+        {
+          "text": "The eighth label should have text of \"222, 333\", an <code>x</code> value of 227, and a <code>y</code> value of 167.",
+          "testString": "assert($('text').eq(7).text() == '222, 333' && $('text').eq(7).attr('x') == '227' && $('text').eq(7).attr('y') == '167', 'The eighth label should have text of \"222, 333\", an <code>x</code> value of 227, and a <code>y</code> value of 167.');"
+        },
+        {
+          "text": "The ninth label should have text of \"78, 320\", an <code>x</code> value of 83, and a <code>y</code> value of 180.",
+          "testString": "assert($('text').eq(8).text() == '78, 320' && $('text').eq(8).attr('x') == '83' && $('text').eq(8).attr('y') == '180', 'The ninth label should have text of \"78, 320\", an <code>x</code> value of 83, and a <code>y</code> value of 180.');"
+        },
+        {
+          "text": "The tenth label should have text of \"21, 123\", an <code>x</code> value of 26, and a <code>y</code> value of 377.",
+          "testString": "assert($('text').eq(9).text() == '21, 123' && $('text').eq(9).attr('x') == '26' && $('text').eq(9).attr('y') == '377', 'The tenth label should have text of \"21, 123\", an <code>x</code> value of 26, and a <code>y</code> value of 377.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [",
+            "                  [ 34,    78 ],",
+            "                  [ 109,   280 ],",
+            "                  [ 310,   120 ],",
+            "                  [ 79,    411 ],",
+            "                  [ 420,   220 ],",
+            "                  [ 233,   145 ],",
+            "                  [ 333,   96 ],",
+            "                  [ 222,   333 ],",
+            "                  [ 78,    320 ],",
+            "                  [ 21,    123 ]",
+            "                ];",
+            "    ",
+            "    ",
+            "    const w = 500;",
+            "    const h = 500;",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"circle\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"circle\")",
+            "       .attr(\"cx\", (d, i) => d[0])",
+            "       .attr(\"cy\", (d, i) => h - d[1])",
+            "       .attr(\"r\", 5);",
+            "    ",
+            "    svg.selectAll(\"text\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"text\")",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fab367417b2b2512bda",
@@ -1400,34 +2002,52 @@
         "<hr>",
         "Change the <code>scale</code> variable to create a linear scale. Then set the <code>output</code> variable to the scale called with an input argument of 50."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    // Add your code below this line",
-        "    ",
-        "    const scale = undefined; // Create the scale here",
-        "    const output = scale(); // Call the scale with an argument here",
-        "    ",
-        "    // Add your code above this line",
-        "    ",
-        "    d3.select(\"body\")",
-        "      .append(\"h2\")",
-        "      .text(output);",
-        "  ",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('h2').text() == '50', 'message: The text in the <code>h2</code> should be 50.');",
-        "assert(code.match(/\\.scaleLinear/g), 'message: Your code should use the <code>scaleLinear()</code> method.');",
-        "assert(output == 50 && code.match(/scale\\(\\s*?50\\s*?\\)/g), 'message: The <code>output</code> variable should call <code>scale</code> with an argument of 50.');"
+        {
+          "text": "The text in the <code>h2</code> should be 50.",
+          "testString": "assert($('h2').text() == '50', 'The text in the <code>h2</code> should be 50.');"
+        },
+        {
+          "text": "Your code should use the <code>scaleLinear()</code> method.",
+          "testString": "assert(code.match(/\\.scaleLinear/g), 'Your code should use the <code>scaleLinear()</code> method.');"
+        },
+        {
+          "text": "The <code>output</code> variable should call <code>scale</code> with an argument of 50.",
+          "testString": "assert(output == 50 && code.match(/scale\\(\\s*?50\\s*?\\)/g), 'The <code>output</code> variable should call <code>scale</code> with an argument of 50.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    // Add your code below this line",
+            "    ",
+            "    const scale = undefined; // Create the scale here",
+            "    const output = scale(); // Call the scale with an argument here",
+            "    ",
+            "    // Add your code above this line",
+            "    ",
+            "    d3.select(\"body\")",
+            "      .append(\"h2\")",
+            "      .text(output);",
+            "  ",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fac367417b2b2512bdb",
@@ -1448,35 +2068,59 @@
         "Create a scale and set its domain to <code>[250, 500]</code> and range to <code>[10, 150]</code>.",
         "<strong>Note</strong><br>You can chain the <code>domain()</code> and <code>range()</code> methods onto the <code>scale</code> variable."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    // Add your code below this line",
-        "    const scale = d3.scaleLinear();",
-        "    ",
-        "    ",
-        "    ",
-        "    // Add your code above this line",
-        "    const output = scale(50);",
-        "    d3.select(\"body\")",
-        "      .append(\"h2\")",
-        "      .text(output);",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert(code.match(/\\.domain/g), 'message: Your code should use the <code>domain()</code> method.');",
-        "assert(JSON.stringify(scale.domain()) == JSON.stringify([250, 500]), 'message: The <code>domain()</code> of the scale should be set to <code>[250, 500]</code>.');",
-        "assert(code.match(/\\.range/g), 'message: Your code should use the <code>range()</code> method.');",
-        "assert(JSON.stringify(scale.range()) == JSON.stringify([10, 150]), 'message: The <code>range()</code> of the scale should be set to <code>[10, 150]</code>.');",
-        "assert($('h2').text() == '-102', 'message: The text in the <code>h2</code> should be -102.');"
+        {
+          "text": "Your code should use the <code>domain()</code> method.",
+          "testString": "assert(code.match(/\\.domain/g), 'Your code should use the <code>domain()</code> method.');"
+        },
+        {
+          "text": "The <code>domain()</code> of the scale should be set to <code>[250, 500]</code>.",
+          "testString": "assert(JSON.stringify(scale.domain()) == JSON.stringify([250, 500]), 'The <code>domain()</code> of the scale should be set to <code>[250, 500]</code>.');"
+        },
+        {
+          "text": "Your code should use the <code>range()</code> method.",
+          "testString": "assert(code.match(/\\.range/g), 'Your code should use the <code>range()</code> method.');"
+        },
+        {
+          "text": "The <code>range()</code> of the scale should be set to <code>[10, 150]</code>.",
+          "testString": "assert(JSON.stringify(scale.range()) == JSON.stringify([10, 150]), 'The <code>range()</code> of the scale should be set to <code>[10, 150]</code>.');"
+        },
+        {
+          "text": "The text in the <code>h2</code> should be -102.",
+          "testString": "assert($('h2').text() == '-102', 'The text in the <code>h2</code> should be -102.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    // Add your code below this line",
+            "    const scale = d3.scaleLinear();",
+            "    ",
+            "    ",
+            "    ",
+            "    // Add your code above this line",
+            "    const output = scale(50);",
+            "    d3.select(\"body\")",
+            "      .append(\"h2\")",
+            "      .text(output);",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fac367417b2b2512bdc",
@@ -1499,32 +2143,47 @@
         "The <code>positionData</code> variable holds a 3-dimensional (3D) array. Use a D3 method to find the maximum value of the z coordinate (the third value) from the arrays and save it in the <code>output</code> variable.",
         "<strong>Note</strong><br>Fun fact - D3 can plot 3D arrays."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]",
-        "    // Add your code below this line",
-        "    ",
-        "    const output = undefined; // Change this line",
-        "    ",
-        "    // Add your code above this line",
-        "    ",
-        "    d3.select(\"body\")",
-        "      .append(\"h2\")",
-        "      .text(output)",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert(output == 8 && $('h2').text() == '8', 'message: The text in the <code>h2</code> should be 8.');",
-        "assert(code.match(/\\.max/g), 'message: Your code should use the <code>max()</code> method.')"
+        {
+          "text": "The text in the <code>h2</code> should be 8.",
+          "testString": "assert(output == 8 && $('h2').text() == '8', 'The text in the <code>h2</code> should be 8.');"
+        },
+        {
+          "text": "Your code should use the <code>max()</code> method.",
+          "testString": "assert(code.match(/\\.max/g), 'Your code should use the <code>max()</code> method.')"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]",
+            "    // Add your code below this line",
+            "    ",
+            "    const output = undefined; // Change this line",
+            "    ",
+            "    // Add your code above this line",
+            "    ",
+            "    d3.select(\"body\")",
+            "      .append(\"h2\")",
+            "      .text(output)",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fac367417b2b2512bdd",
@@ -1545,59 +2204,77 @@
         "Use the <code>yScale</code> variable to create a linear y-axis scale. The domain should start at zero and go to the maximum y value in the set. The range should use the SVG height (<code>h</code>) and include padding.",
         "<strong>Note</strong><br>Remember to keep the plot right-side-up. When you set the range for the y coordinates, the higher value (height minus padding) is the first argument, and the lower value is the second argument."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [",
-        "                  [ 34,    78 ],",
-        "                  [ 109,   280 ],",
-        "                  [ 310,   120 ],",
-        "                  [ 79,    411 ],",
-        "                  [ 420,   220 ],",
-        "                  [ 233,   145 ],",
-        "                  [ 333,   96 ],",
-        "                  [ 222,   333 ],",
-        "                  [ 78,    320 ],",
-        "                  [ 21,    123 ]",
-        "                ];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 500;",
-        "    ",
-        "    // Padding between the SVG canvas boundary and the plot",
-        "    const padding = 30;",
-        "    ",
-        "    // Create an x and y scale",
-        "    ",
-        "    const xScale = d3.scaleLinear()",
-        "                    .domain([0, d3.max(dataset, (d) => d[0])])",
-        "                    .range([padding, w - padding]);",
-        "    ",
-        "    // Add your code below this line",
-        "    ",
-        "    const yScale = undefined;",
-        "                     ",
-        "                     ",
-        "    // Add your code above this line",
-        "    ",
-        "    const output = yScale(411); // Returns 30",
-        "    d3.select(\"body\")",
-        "      .append(\"h2\")",
-        "      .text(output)",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert(output == 30 && $('h2').text() == '30', 'message: The text in the <code>h2</code> should be 30.');",
-        "assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]), 'message: The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.');",
-        "assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]), 'message: The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.');"
+        {
+          "text": "The text in the <code>h2</code> should be 30.",
+          "testString": "assert(output == 30 && $('h2').text() == '30', 'The text in the <code>h2</code> should be 30.');"
+        },
+        {
+          "text": "The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.",
+          "testString": "assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]), 'The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.');"
+        },
+        {
+          "text": "The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.",
+          "testString": "assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]), 'The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [",
+            "                  [ 34,    78 ],",
+            "                  [ 109,   280 ],",
+            "                  [ 310,   120 ],",
+            "                  [ 79,    411 ],",
+            "                  [ 420,   220 ],",
+            "                  [ 233,   145 ],",
+            "                  [ 333,   96 ],",
+            "                  [ 222,   333 ],",
+            "                  [ 78,    320 ],",
+            "                  [ 21,    123 ]",
+            "                ];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 500;",
+            "    ",
+            "    // Padding between the SVG canvas boundary and the plot",
+            "    const padding = 30;",
+            "    ",
+            "    // Create an x and y scale",
+            "    ",
+            "    const xScale = d3.scaleLinear()",
+            "                    .domain([0, d3.max(dataset, (d) => d[0])])",
+            "                    .range([padding, w - padding]);",
+            "    ",
+            "    // Add your code below this line",
+            "    ",
+            "    const yScale = undefined;",
+            "                     ",
+            "                     ",
+            "    // Add your code above this line",
+            "    ",
+            "    const output = yScale(411); // Returns 30",
+            "    d3.select(\"body\")",
+            "      .append(\"h2\")",
+            "      .text(output)",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fac367417b2b2512bde",
@@ -1616,93 +2293,168 @@
         "Use <code>xScale</code> and <code>yScale</code> to position both the <code>circle</code> and <code>text</code> shapes onto the SVG canvas. For the <code>circles</code>, apply the scales to set the <code>cx</code> and <code>cy</code> attributes. Give them a radius of 5 units, too.",
         "For the <code>text</code> elements, apply the scales to set the <code>x</code> and <code>y</code> attributes. The labels should be offset to the right of the dots. To do this, add 10 units to the x data value before passing it to the <code>xScale</code>."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [",
-        "                  [ 34,     78 ],",
-        "                  [ 109,   280 ],",
-        "                  [ 310,   120 ],",
-        "                  [ 79,   411 ],",
-        "                  [ 420,   220 ],",
-        "                  [ 233,   145 ],",
-        "                  [ 333,   96 ],",
-        "                  [ 222,    333 ],",
-        "                  [ 78,    320 ],",
-        "                  [ 21,   123 ]",
-        "                ];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 500;",
-        "    const padding = 60;",
-        "    ",
-        "    const xScale = d3.scaleLinear()",
-        "                     .domain([0, d3.max(dataset, (d) => d[0])])",
-        "                     .range([padding, w - padding]);",
-        "    ",
-        "    const yScale = d3.scaleLinear()",
-        "                     .domain([0, d3.max(dataset, (d) => d[1])])",
-        "                     .range([h - padding, padding]);",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"circle\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"circle\")",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "       ",
-        "    svg.selectAll(\"text\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"text\")",
-        "       .text((d) =>  (d[0] + \", \"",
-        " + d[1]))",
-        "       // Add your code below this line",
-        "       ",
-        "       ",
-        "       ",
-        "       // Add your code above this line",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert($('circle').length == 10, 'message: Your code should have 10 <code>circle</code> elements.');",
-        "assert(Math.round($('circle').eq(0).attr('cx')) == '91' && Math.round($('circle').eq(0).attr('cy')) == '368' && $('circle').eq(0).attr('r') == '5', 'message: The first <code>circle</code> element should have a <code>cx</code> value of approximately 91 and a <code>cy</code> value of approximately 368 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(1).attr('cx')) == '159' && Math.round($('circle').eq(1).attr('cy')) == '181' && $('circle').eq(1).attr('r') == '5', 'message: The second <code>circle</code> element should have a <code>cx</code> value of approximately 159 and a <code>cy</code> value of approximately 181 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(2).attr('cx')) == '340' && Math.round($('circle').eq(2).attr('cy')) == '329' && $('circle').eq(2).attr('r') == '5', 'message: The third <code>circle</code> element should have a <code>cx</code> value of approximately 340 and a <code>cy</code> value of approximately 329 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(3).attr('cx')) == '131' && Math.round($('circle').eq(3).attr('cy')) == '60' && $('circle').eq(3).attr('r') == '5', 'message: The fourth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 60 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(4).attr('cx')) == '440' && Math.round($('circle').eq(4).attr('cy')) == '237' && $('circle').eq(4).attr('r') == '5', 'message: The fifth <code>circle</code> element should have a <code>cx</code> value of approximately 440 and a <code>cy</code> value of approximately 237 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(5).attr('cx')) == '271' && Math.round($('circle').eq(5).attr('cy')) == '306' && $('circle').eq(5).attr('r') == '5', 'message: The sixth <code>circle</code> element should have a <code>cx</code> value of approximately 271 and a <code>cy</code> value of approximately 306 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(6).attr('cx')) == '361' && Math.round($('circle').eq(6).attr('cy')) == '351' && $('circle').eq(6).attr('r') == '5', 'message: The seventh <code>circle</code> element should have a <code>cx</code> value of approximately 361 and a <code>cy</code> value of approximately 351 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(7).attr('cx')) == '261' && Math.round($('circle').eq(7).attr('cy')) == '132' && $('circle').eq(7).attr('r') == '5', 'message: The eighth <code>circle</code> element should have a <code>cx</code> value of approximately 261 and a <code>cy</code> value of approximately 132 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(8).attr('cx')) == '131' && Math.round($('circle').eq(8).attr('cy')) == '144' && $('circle').eq(8).attr('r') == '5', 'message: The ninth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 144 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert(Math.round($('circle').eq(9).attr('cx')) == '79' && Math.round($('circle').eq(9).attr('cy')) == '326' && $('circle').eq(9).attr('r') == '5', 'message: The tenth <code>circle</code> element should have a <code>cx</code> value of approximately 79 and a <code>cy</code> value of approximately 326 after applying the scales. It should also have an <code>r</code> value of 5.');",
-        "assert($('text').length == 10, 'message: Your code should have 10 <code>text</code> elements.');",
-        "assert(Math.round($('text').eq(0).attr('x')) == '100' && Math.round($('text').eq(0).attr('y')) == '368', 'message: The first label should have an <code>x</code> value of approximately 100 and a <code>y</code> value of approximately 368 after applying the scales.');",
-        "assert(Math.round($('text').eq(1).attr('x')) == '168' && Math.round($('text').eq(1).attr('y')) == '181', 'message: The second label should have an <code>x</code> value of approximately 168 and a <code>y</code> value of approximately 181 after applying the scales.');",
-        "assert(Math.round($('text').eq(2).attr('x')) == '350' && Math.round($('text').eq(2).attr('y')) == '329', 'message: The third label should have an <code>x</code> value of approximately 350 and a <code>y</code> value of approximately 329 after applying the scales.');",
-        "assert(Math.round($('text').eq(3).attr('x')) == '141' && Math.round($('text').eq(3).attr('y')) == '60', 'message: The fourth label should have an <code>x</code> value of approximately 141 and a <code>y</code> value of approximately 60 after applying the scales.');",
-        "assert(Math.round($('text').eq(4).attr('x')) == '449' && Math.round($('text').eq(4).attr('y')) == '237', 'message: The fifth label should have an <code>x</code> value of approximately 449 and a <code>y</code> value of approximately 237 after applying the scales.');",
-        "assert(Math.round($('text').eq(5).attr('x')) == '280' && Math.round($('text').eq(5).attr('y')) == '306', 'message: The sixth label should have an <code>x</code> value of approximately 280 and a <code>y</code> value of approximately 306 after applying the scales.');",
-        "assert(Math.round($('text').eq(6).attr('x')) == '370' && Math.round($('text').eq(6).attr('y')) == '351', 'message: The seventh label should have an <code>x</code> value of approximately 370 and a <code>y</code> value of approximately 351 after applying the scales.');",
-        "assert(Math.round($('text').eq(7).attr('x')) == '270' && Math.round($('text').eq(7).attr('y')) == '132', 'message: The eighth label should have an <code>x</code> value of approximately 270 and a <code>y</code> value of approximately 132 after applying the scales.');",
-        "assert(Math.round($('text').eq(8).attr('x')) == '140' && Math.round($('text').eq(8).attr('y')) == '144', 'message: The ninth label should have an <code>x</code> value of approximately 140 and a <code>y</code> value of approximately 144 after applying the scales.');",
-        "assert(Math.round($('text').eq(9).attr('x')) == '88' && Math.round($('text').eq(9).attr('y')) == '326', 'message: The tenth label should have an <code>x</code> value of approximately 88 and a <code>y</code> value of approximately 326 after applying the scales.');"
+        {
+          "text": "Your code should have 10 <code>circle</code> elements.",
+          "testString": "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
+        },
+        {
+          "text": "The first <code>circle</code> element should have a <code>cx</code> value of approximately 91 and a <code>cy</code> value of approximately 368 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(0).attr('cx')) == '91' && Math.round($('circle').eq(0).attr('cy')) == '368' && $('circle').eq(0).attr('r') == '5', 'The first <code>circle</code> element should have a <code>cx</code> value of approximately 91 and a <code>cy</code> value of approximately 368 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The second <code>circle</code> element should have a <code>cx</code> value of approximately 159 and a <code>cy</code> value of approximately 181 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(1).attr('cx')) == '159' && Math.round($('circle').eq(1).attr('cy')) == '181' && $('circle').eq(1).attr('r') == '5', 'The second <code>circle</code> element should have a <code>cx</code> value of approximately 159 and a <code>cy</code> value of approximately 181 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The third <code>circle</code> element should have a <code>cx</code> value of approximately 340 and a <code>cy</code> value of approximately 329 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(2).attr('cx')) == '340' && Math.round($('circle').eq(2).attr('cy')) == '329' && $('circle').eq(2).attr('r') == '5', 'The third <code>circle</code> element should have a <code>cx</code> value of approximately 340 and a <code>cy</code> value of approximately 329 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The fourth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 60 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(3).attr('cx')) == '131' && Math.round($('circle').eq(3).attr('cy')) == '60' && $('circle').eq(3).attr('r') == '5', 'The fourth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 60 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The fifth <code>circle</code> element should have a <code>cx</code> value of approximately 440 and a <code>cy</code> value of approximately 237 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(4).attr('cx')) == '440' && Math.round($('circle').eq(4).attr('cy')) == '237' && $('circle').eq(4).attr('r') == '5', 'The fifth <code>circle</code> element should have a <code>cx</code> value of approximately 440 and a <code>cy</code> value of approximately 237 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The sixth <code>circle</code> element should have a <code>cx</code> value of approximately 271 and a <code>cy</code> value of approximately 306 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(5).attr('cx')) == '271' && Math.round($('circle').eq(5).attr('cy')) == '306' && $('circle').eq(5).attr('r') == '5', 'The sixth <code>circle</code> element should have a <code>cx</code> value of approximately 271 and a <code>cy</code> value of approximately 306 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The seventh <code>circle</code> element should have a <code>cx</code> value of approximately 361 and a <code>cy</code> value of approximately 351 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(6).attr('cx')) == '361' && Math.round($('circle').eq(6).attr('cy')) == '351' && $('circle').eq(6).attr('r') == '5', 'The seventh <code>circle</code> element should have a <code>cx</code> value of approximately 361 and a <code>cy</code> value of approximately 351 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The eighth <code>circle</code> element should have a <code>cx</code> value of approximately 261 and a <code>cy</code> value of approximately 132 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(7).attr('cx')) == '261' && Math.round($('circle').eq(7).attr('cy')) == '132' && $('circle').eq(7).attr('r') == '5', 'The eighth <code>circle</code> element should have a <code>cx</code> value of approximately 261 and a <code>cy</code> value of approximately 132 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The ninth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 144 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(8).attr('cx')) == '131' && Math.round($('circle').eq(8).attr('cy')) == '144' && $('circle').eq(8).attr('r') == '5', 'The ninth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 144 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "The tenth <code>circle</code> element should have a <code>cx</code> value of approximately 79 and a <code>cy</code> value of approximately 326 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString": "assert(Math.round($('circle').eq(9).attr('cx')) == '79' && Math.round($('circle').eq(9).attr('cy')) == '326' && $('circle').eq(9).attr('r') == '5', 'The tenth <code>circle</code> element should have a <code>cx</code> value of approximately 79 and a <code>cy</code> value of approximately 326 after applying the scales. It should also have an <code>r</code> value of 5.');"
+        },
+        {
+          "text": "Your code should have 10 <code>text</code> elements.",
+          "testString": "assert($('text').length == 10, 'Your code should have 10 <code>text</code> elements.');"
+        },
+        {
+          "text": "The first label should have an <code>x</code> value of approximately 100 and a <code>y</code> value of approximately 368 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(0).attr('x')) == '100' && Math.round($('text').eq(0).attr('y')) == '368', 'The first label should have an <code>x</code> value of approximately 100 and a <code>y</code> value of approximately 368 after applying the scales.');"
+        },
+        {
+          "text": "The second label should have an <code>x</code> value of approximately 168 and a <code>y</code> value of approximately 181 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(1).attr('x')) == '168' && Math.round($('text').eq(1).attr('y')) == '181', 'The second label should have an <code>x</code> value of approximately 168 and a <code>y</code> value of approximately 181 after applying the scales.');"
+        },
+        {
+          "text": "The third label should have an <code>x</code> value of approximately 350 and a <code>y</code> value of approximately 329 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(2).attr('x')) == '350' && Math.round($('text').eq(2).attr('y')) == '329', 'The third label should have an <code>x</code> value of approximately 350 and a <code>y</code> value of approximately 329 after applying the scales.');"
+        },
+        {
+          "text": "The fourth label should have an <code>x</code> value of approximately 141 and a <code>y</code> value of approximately 60 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(3).attr('x')) == '141' && Math.round($('text').eq(3).attr('y')) == '60', 'The fourth label should have an <code>x</code> value of approximately 141 and a <code>y</code> value of approximately 60 after applying the scales.');"
+        },
+        {
+          "text": "The fifth label should have an <code>x</code> value of approximately 449 and a <code>y</code> value of approximately 237 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(4).attr('x')) == '449' && Math.round($('text').eq(4).attr('y')) == '237', 'The fifth label should have an <code>x</code> value of approximately 449 and a <code>y</code> value of approximately 237 after applying the scales.');"
+        },
+        {
+          "text": "The sixth label should have an <code>x</code> value of approximately 280 and a <code>y</code> value of approximately 306 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(5).attr('x')) == '280' && Math.round($('text').eq(5).attr('y')) == '306', 'The sixth label should have an <code>x</code> value of approximately 280 and a <code>y</code> value of approximately 306 after applying the scales.');"
+        },
+        {
+          "text": "The seventh label should have an <code>x</code> value of approximately 370 and a <code>y</code> value of approximately 351 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(6).attr('x')) == '370' && Math.round($('text').eq(6).attr('y')) == '351', 'The seventh label should have an <code>x</code> value of approximately 370 and a <code>y</code> value of approximately 351 after applying the scales.');"
+        },
+        {
+          "text": "The eighth label should have an <code>x</code> value of approximately 270 and a <code>y</code> value of approximately 132 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(7).attr('x')) == '270' && Math.round($('text').eq(7).attr('y')) == '132', 'The eighth label should have an <code>x</code> value of approximately 270 and a <code>y</code> value of approximately 132 after applying the scales.');"
+        },
+        {
+          "text": "The ninth label should have an <code>x</code> value of approximately 140 and a <code>y</code> value of approximately 144 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(8).attr('x')) == '140' && Math.round($('text').eq(8).attr('y')) == '144', 'The ninth label should have an <code>x</code> value of approximately 140 and a <code>y</code> value of approximately 144 after applying the scales.');"
+        },
+        {
+          "text": "The tenth label should have an <code>x</code> value of approximately 88 and a <code>y</code> value of approximately 326 after applying the scales.",
+          "testString": "assert(Math.round($('text').eq(9).attr('x')) == '88' && Math.round($('text').eq(9).attr('y')) == '326', 'The tenth label should have an <code>x</code> value of approximately 88 and a <code>y</code> value of approximately 326 after applying the scales.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [",
+            "                  [ 34,     78 ],",
+            "                  [ 109,   280 ],",
+            "                  [ 310,   120 ],",
+            "                  [ 79,   411 ],",
+            "                  [ 420,   220 ],",
+            "                  [ 233,   145 ],",
+            "                  [ 333,   96 ],",
+            "                  [ 222,    333 ],",
+            "                  [ 78,    320 ],",
+            "                  [ 21,   123 ]",
+            "                ];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 500;",
+            "    const padding = 60;",
+            "    ",
+            "    const xScale = d3.scaleLinear()",
+            "                     .domain([0, d3.max(dataset, (d) => d[0])])",
+            "                     .range([padding, w - padding]);",
+            "    ",
+            "    const yScale = d3.scaleLinear()",
+            "                     .domain([0, d3.max(dataset, (d) => d[1])])",
+            "                     .range([h - padding, padding]);",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"circle\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"circle\")",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "       ",
+            "    svg.selectAll(\"text\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"text\")",
+            "       .text((d) =>  (d[0] + \", \"",
+            " + d[1]))",
+            "       // Add your code below this line",
+            "       ",
+            "       ",
+            "       ",
+            "       // Add your code above this line",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     },
     {
       "id": "587d7fad367417b2b2512bdf",
@@ -1726,81 +2478,99 @@
         "<hr>",
         "The scatter plot now has an x-axis. Create a y-axis in a variable named <code>yAxis</code> using the <code>axisLeft()</code> method. Then render the axis using a <code>g</code> element. Make sure to use a <code>transform</code> attribute to translate the axis by the amount of padding units right, and 0 units down. Remember to <code>call()</code> the axis."
       ],
-      "challengeSeed": [
-        "<body>",
-        "  <script>",
-        "    const dataset = [",
-        "                  [ 34,     78 ],",
-        "                  [ 109,   280 ],",
-        "                  [ 310,   120 ],",
-        "                  [ 79,   411 ],",
-        "                  [ 420,   220 ],",
-        "                  [ 233,   145 ],",
-        "                  [ 333,   96 ],",
-        "                  [ 222,    333 ],",
-        "                  [ 78,    320 ],",
-        "                  [ 21,   123 ]",
-        "                ];",
-        "    ",
-        "    const w = 500;",
-        "    const h = 500;",
-        "    const padding = 60;",
-        "    ",
-        "    const xScale = d3.scaleLinear()",
-        "                     .domain([0, d3.max(dataset, (d) => d[0])])",
-        "                     .range([padding, w - padding]);",
-        "    ",
-        "    const yScale = d3.scaleLinear()",
-        "                     .domain([0, d3.max(dataset, (d) => d[1])])",
-        "                     .range([h - padding, padding]);",
-        "    ",
-        "    const svg = d3.select(\"body\")",
-        "                  .append(\"svg\")",
-        "                  .attr(\"width\", w)",
-        "                  .attr(\"height\", h);",
-        "    ",
-        "    svg.selectAll(\"circle\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"circle\")",
-        "       .attr(\"cx\", (d) => xScale(d[0]))",
-        "       .attr(\"cy\",(d) => yScale(d[1]))",
-        "       .attr(\"r\", (d) => 5);",
-        "    ",
-        "    svg.selectAll(\"text\")",
-        "       .data(dataset)",
-        "       .enter()",
-        "       .append(\"text\")",
-        "       .text((d) =>  (d[0] + \",\" + d[1]))",
-        "       .attr(\"x\", (d) => xScale(d[0] + 10))",
-        "       .attr(\"y\", (d) => yScale(d[1]))",
-        "    ",
-        "    const xAxis = d3.axisBottom(xScale);",
-        "    ",
-        "    svg.append(\"g\")",
-        "       .attr(\"transform\", \"translate(0,\" + (h - padding) + \")\")",
-        "       .call(xAxis);",
-        "    ",
-        "    // Add your code below this line",
-        "    ",
-        "    ",
-        "    ",
-        "    // Add your code above this line",
-        "  ",
-        "  </script>",
-        "</body>"
-      ],
       "tests": [
-        "assert(code.match(/\\.axisLeft\\(yScale\\)/g), 'message: Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.');",
-        "assert($('g').eq(1).attr('transform').match(/translate\\(60\\s*?,\\s*?0\\)/g), 'message: The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).');",
-        "assert(code.match(/\\.call\\(yAxis\\)/g), 'message: Your code should call the <code>yAxis</code>.');"
+        {
+          "text": "Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.",
+          "testString": "assert(code.match(/\\.axisLeft\\(yScale\\)/g), 'Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.');"
+        },
+        {
+          "text": "The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).",
+          "testString": "assert($('g').eq(1).attr('transform').match(/translate\\(60\\s*?,\\s*?0\\)/g), 'The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).');"
+        },
+        {
+          "text": "Your code should call the <code>yAxis</code>.",
+          "testString": "assert(code.match(/\\.call\\(yAxis\\)/g), 'Your code should call the <code>yAxis</code>.');"
+        }
       ],
       "solutions": [],
       "hints": [],
       "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
-      "translations": {}
+      "translations": {},
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<body>",
+            "  <script>",
+            "    const dataset = [",
+            "                  [ 34,     78 ],",
+            "                  [ 109,   280 ],",
+            "                  [ 310,   120 ],",
+            "                  [ 79,   411 ],",
+            "                  [ 420,   220 ],",
+            "                  [ 233,   145 ],",
+            "                  [ 333,   96 ],",
+            "                  [ 222,    333 ],",
+            "                  [ 78,    320 ],",
+            "                  [ 21,   123 ]",
+            "                ];",
+            "    ",
+            "    const w = 500;",
+            "    const h = 500;",
+            "    const padding = 60;",
+            "    ",
+            "    const xScale = d3.scaleLinear()",
+            "                     .domain([0, d3.max(dataset, (d) => d[0])])",
+            "                     .range([padding, w - padding]);",
+            "    ",
+            "    const yScale = d3.scaleLinear()",
+            "                     .domain([0, d3.max(dataset, (d) => d[1])])",
+            "                     .range([h - padding, padding]);",
+            "    ",
+            "    const svg = d3.select(\"body\")",
+            "                  .append(\"svg\")",
+            "                  .attr(\"width\", w)",
+            "                  .attr(\"height\", h);",
+            "    ",
+            "    svg.selectAll(\"circle\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"circle\")",
+            "       .attr(\"cx\", (d) => xScale(d[0]))",
+            "       .attr(\"cy\",(d) => yScale(d[1]))",
+            "       .attr(\"r\", (d) => 5);",
+            "    ",
+            "    svg.selectAll(\"text\")",
+            "       .data(dataset)",
+            "       .enter()",
+            "       .append(\"text\")",
+            "       .text((d) =>  (d[0] + \",\" + d[1]))",
+            "       .attr(\"x\", (d) => xScale(d[0] + 10))",
+            "       .attr(\"y\", (d) => yScale(d[1]))",
+            "    ",
+            "    const xAxis = d3.axisBottom(xScale);",
+            "    ",
+            "    svg.append(\"g\")",
+            "       .attr(\"transform\", \"translate(0,\" + (h - padding) + \")\")",
+            "       .call(xAxis);",
+            "    ",
+            "    // Add your code below this line",
+            "    ",
+            "    ",
+            "    ",
+            "    // Add your code above this line",
+            "  ",
+            "  </script>",
+            "</body>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
     }
   ]
 }

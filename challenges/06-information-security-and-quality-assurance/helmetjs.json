@@ -5,25 +5,6 @@
   "helpRoom": "HelpBackend",
   "challenges": [
     {
-      "id": "58af07504bbe015e85a91dbd",
-      "title": "Introduction to Information Security with HelmetJS Challenges",
-      "description": [
-        [
-          "",
-          "",
-          "HelmetJS is a type of middleware for Express-based applications that automatically sets HTTP headers to prevent sensitive information from unintentially being passed between the server and client. While HelmetJS does not account for all situations, it does include support for common ones like Content Security Policy, XSS Filtering, and HTTP Strict Transport Security, among others. HelmetJS can be installed on an Express project from npm, after which each layer of protection can be configured to best fit the project.<br><br>Working on these challenges will involve you writing your code on Glitch on our starter project. After completing each challenge you can copy your public glitch url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!",
-          ""
-        ]
-      ],
-      "releasedOn": "Feb 17, 2017",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {}
-    },
-    {
       "id": "587d8247367417b2b2512c36",
       "title": "Install and Require Helmet",
       "description": [
@@ -277,24 +258,6 @@
       "challengeType": 2,
       "releasedOn": "Feb 17, 2017",
       "translations": {}
-    },
-    {
-      "id": "58a25bcef9fc0f352b528e7b",
-      "title": "Protect Your Data with BCrypt",
-      "description": [
-        [
-          "",
-          "",
-          "The safest way to protect a password is to never even store it- even encrypted. The solution to this security problem is hashing. Unlike encryptions, hashes cannot be transformed back into the original data. So how do you use a hash? A hash is used to verify data like a password again at a later point in time without actually knowing what it is in the future by hashing the entered password in the same manner as the original and comparing the results; if they match then you can be sure it is the same data. A widely used library for this is <em>BCrypt</em>. With how easy BCrypt is to implement into your web applications, you should never have any excuse to store a plain text password in your databases.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-bcrypt/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-bcrypt/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe.",
-          ""
-        ]
-      ],
-      "releasedOn": "",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "Waypoint",
-      "challengeType": 7,
-      "isRequired": false
     },
     {
       "id": "58a25bcef9fc0f352b528e7c",
