@@ -39,11 +39,12 @@ module.exports = function(app, done) {
     const homePage = user ? 'userHome' : 'noUserHome';
     const { quote, author} = getRandomQuote();
     const title = user ?
-      `Welcome back ${user.name ? user.name : 'Camper'}` :
+      `Welcome, ${user.name ? user.name : 'Camper'}!` :
       'Learn to Code and Help Nonprofits';
     const completedChallengeCount = user && user.completedChallengeCount || 0;
     const completedProjectCount = user && user.completedProjectCount || 0;
     const completedCertCount = user && user.completedCertCount || 0;
+    const completedLegacyCertCount = user && user.completedLegacyCertCount || 0;
     Promise.all([
       // news.getFeed(),
       About.getActiveUsersForRendering()
@@ -60,6 +61,7 @@ module.exports = function(app, done) {
           completedChallengeCount,
           completedProjectCount,
           completedCertCount,
+          completedLegacyCertCount,
           // feed,
           quote,
           title

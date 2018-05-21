@@ -12,7 +12,6 @@ import { FullWidthRow, Spacer } from '../../../helperComponents';
 import ThemeSettings from './ThemeSettings.jsx';
 import Camper from './Camper.jsx';
 import UsernameSettings from './UsernameSettings.jsx';
-import SectionHeader from './SectionHeader.jsx';
 import { userSelector, toggleNightMode } from '../../../redux';
 import { updateUserBackend } from '../redux';
 import {
@@ -165,9 +164,6 @@ class AboutSettings extends PureComponent {
     const toggleTheme = () => toggleNightMode(username, currentTheme);
     return (
       <div className='about-settings'>
-        <SectionHeader>
-          About Settings
-        </SectionHeader>
         <UsernameSettings username={ username }/>
         <FullWidthRow>
           <Nav

@@ -22,7 +22,14 @@ function getCompletedCertCount(user) {
     'isJsAlgoDataStructCert',
     'isRespWebDesignCert'
   ].reduce((sum, key) => user[key] ? sum + 1 : sum, 0);
+}
 
+function getLegacyCertCount(user) {
+  return [
+    'isFrontEndCert',
+    'isBackEndCert',
+    'isDataVisCert'
+  ].reduce((sum, key) => user[key] ? sum + 1 : sum, 0);
 }
 
 PassportConfigurator.prototype.init = function passportInit(noSession) {
@@ -72,6 +79,7 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
           user.completedChallengeCount = completedChallengeCount;
           user.completedProjectCount = completedProjectCount;
           user.completedCertCount = getCompletedCertCount(user);
+          user.completedLegacyCertCount = getLegacyCertCount(user);
           user.completedChallenges = [];
           return done(null, user);
         });

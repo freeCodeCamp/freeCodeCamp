@@ -1,5 +1,5 @@
 const policy = [
-  'Before you can claim a verified certificate, you must accept the ' +
+  'Before you can claim a verified certification, you must accept the ' +
   'Academic Honesty Policy below.',
   'I understand that plagiarism means copying someone else’s work and ' +
   'presenting the work as if it were my own, without clearly attributing ' +

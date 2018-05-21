@@ -138,7 +138,7 @@ function sendCertifiedEmail(
     from: 'team@freeCodeCamp.org',
     subject: dedent`
       Congratulations on completing all of the
-      freeCodeCamp certificates!
+      freeCodeCamp certifications!
     `,
     text: renderCertifedEmail({
       username,
@@ -190,16 +190,16 @@ export default function certificate(app) {
     verifyCert
   );
   router.get(
-    '/certificates/:username/:cert',
+    '/certification/:username/:cert',
     showCert
   );
 
   app.use(router);
 
   const noNameMessage = dedent`
-  We need your name so we can put it on your certificate.
+  We need your name so we can put it on your certification.
   Add your name to your account settings and click the save button.
-  Then we can issue your certificate.
+  Then we can issue your certification.
   `;
 
   const notCertifiedMessage = name => dedent`

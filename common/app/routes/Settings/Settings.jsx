@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Button } from 'react-bootstrap';
-import FA from 'react-fontawesome';
 
 import ns from './ns.json';
 import { FullWidthRow, Spacer, Loader } from '../../helperComponents';
@@ -85,8 +84,7 @@ export class Settings extends React.Component {
               bsStyle='primary'
               className='btn-link-social'
               >
-              <FA name='user' />
-              Show me my public profile
+              Show me my public portfolio
             </Button>
           </Link>
           <Button

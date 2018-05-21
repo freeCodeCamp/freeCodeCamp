@@ -9,6 +9,8 @@ import {
   Col
 } from 'react-bootstrap';
 
+import { FullWidthRow } from '../../../helperComponents';
+
 import { userByNameSelector } from '../../../redux';
 
 const mapStateToProps = createSelector(
@@ -40,59 +42,59 @@ const mapStateToProps = createSelector(
     currentCerts: [
       {
         show: is2018FullStackCert,
-        title: 'Full Stack Certificate:',
+        title: 'Full Stack Certification:',
         showURL: '2018-full-stack'
       },
       {
         show: isRespWebDesignCert,
-        title: 'Responsive Web Design Certificate:',
+        title: 'Responsive Web Design Certification:',
         showURL: 'responsive-web-design'
       },
       {
         show: isJsAlgoDataStructCert,
-        title: 'JavaScript Algorithms and Data Structures Certificate:',
+        title: 'JavaScript Algorithms and Data Structures Certification:',
         showURL: 'javascript-algorithms-and-data-structures'
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Front End Libraries Certificate:',
+        title: 'Front End Libraries Certification:',
         showURL: 'front-end-libraries'
       },
       {
         show: is2018DataVisCert,
-        title: 'Data Visualization Certificate:',
+        title: 'Data Visualization Certification:',
         showURL: 'data-visualization'
       },
       {
         show: isApisMicroservicesCert,
-        title: 'APIs and Microservices Certificate:',
+        title: 'APIs and Microservices Certification:',
         showURL: 'apis-and-microservices'
       },
       {
         show: isInfosecQaCert,
-        title: 'Information Security and Quality Assurance Certificate:',
+        title: 'Information Security and Quality Assurance Certification:',
         showURL: 'information-security-and-quality-assurance'
       }
     ],
     legacyCerts: [
       {
         show: isFullStackCert,
-        title: 'Full Stack Certificate:',
+        title: 'Full Stack Certification:',
         showURL: 'legacy-full-stack'
       },
       {
         show: isFrontEndCert,
-        title: 'Front End Certificate:',
+        title: 'Front End Certification:',
         showURL: 'legacy-front-end'
       },
       {
         show: isBackEndCert,
-        title: 'Back End Certificate:',
+        title: 'Back End Certification:',
         showURL: 'legacy-back-end'
       },
       {
         show: isDataVisCert,
-        title: 'Data Visualization Certificate:',
+        title: 'Data Visualization Certification:',
         showURL: 'legacy-data-visualization'
       }
     ]
@@ -123,7 +125,7 @@ function renderCertShow(username, cert) {
   return cert.show ? (
     <Row key={ cert.showURL }>
       <Col sm={ 8 }>
-        <p>
+        <p className='bigger-text'>
           <strong>
             { cert.title }
           </strong>
@@ -134,7 +136,7 @@ function renderCertShow(username, cert) {
           block={ true }
           bsSize='lg'
           bsStyle='primary'
-          href={ `/certificates/${username}/${cert.showURL}`}
+          href={ `/certification/${username}/${cert.showURL}`}
           >
           Show
         </Button>
@@ -154,25 +156,27 @@ function Certificates({
   const renderCertShowWithUsername = _.curry(renderCertShow)(username);
   return (
     <div>
-      <h2 className='text-center'>freeCodeCamp Certificates</h2>
-      <br />
-      {
-        hasModernCert ?
-        currentCerts.map(renderCertShowWithUsername) :
-        <p className='text-center' >
-          No certificates have been earned under the current curriculum
-        </p>
-      }
-      {
-        hasLegacyCert ?
-        <div>
-          <h3>Legacy Certifications</h3>
-          {
-            legacyCerts.map(renderCertShowWithUsername)
-          }
-        </div> :
-        null
-      }
+      <FullWidthRow>
+        <h2 className='text-center'>freeCodeCamp Certifications</h2>
+        <br />
+        {
+          hasModernCert ?
+          currentCerts.map(renderCertShowWithUsername) :
+          <p className='text-center' >
+            No certifications have been earned under the current curriculum
+          </p>
+        }
+        {
+          hasLegacyCert ?
+          <div>
+            <h3>Legacy Certifications</h3>
+            {
+              legacyCerts.map(renderCertShowWithUsername)
+            }
+          </div> :
+          null
+        }
+      </FullWidthRow>
       <hr />
     </div>
   );

@@ -43,7 +43,7 @@ class JSAlgoAndDSForm extends PureComponent {
     e.preventDefault();
     const { username, superBlock, isCertClaimed } = this.props;
     if (isCertClaimed) {
-      return this.props.hardGoTo(`/certificates/${username}/${superBlock}`);
+      return this.props.hardGoTo(`/certification/${username}/${superBlock}`);
     }
     return this.props.claimCert(superBlock);
   }
@@ -107,7 +107,7 @@ class JSAlgoAndDSForm extends PureComponent {
           Object.keys(jsProjects).length === completeCount ?
           <form onSubmit={ this.handleSubmit }>
             <BlockSaveButton>
-              { isCertClaimed ? 'Show' : 'Claim'} Certificate
+              { isCertClaimed ? 'Show' : 'Claim'} Certification
             </BlockSaveButton>
           </form> :
           null
