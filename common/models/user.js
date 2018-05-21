@@ -375,7 +375,8 @@ module.exports = function(User) {
       .do(accessToken => {
         const config = {
           signed: !!req.signedCookies,
-          maxAge: accessToken.ttl
+          maxAge: accessToken.ttl,
+          domain: '.freecodecamp.org'
         };
         if (accessToken && accessToken.id) {
           res.cookie('access_token', accessToken.id, config);
