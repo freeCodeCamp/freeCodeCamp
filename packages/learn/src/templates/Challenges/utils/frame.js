@@ -1,7 +1,7 @@
 import { toString, flow } from 'lodash';
 import Rx, { Observable } from 'rxjs';
 import { ShallowWrapper, ReactWrapper } from 'enzyme';
-import Adapter15 from 'enzyme-adapter-react-15';
+import Adapter16 from 'enzyme-adapter-react-16';
 import { isJSEnabledSelector } from '../redux';
 import 'chai';
 
@@ -98,12 +98,12 @@ const writeTestDepsToDocument = frameReady => ctx => {
     shallow: (node, options) =>
       new ShallowWrapper(node, null, {
         ...options,
-        adapter: new Adapter15()
+        adapter: new Adapter16()
       }),
     mount: (node, options) =>
       new ReactWrapper(node, null, {
         ...options,
-        adapter: new Adapter15()
+        adapter: new Adapter16()
       })
   };
   // default for classic challenges
