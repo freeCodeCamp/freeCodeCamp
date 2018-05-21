@@ -1,6 +1,5 @@
-.editor{
+.editor {
   height: 100%;
-  margin-bottom: 1.45rem;
 }
 
 .instructions-panel {
@@ -12,6 +11,7 @@
   height: 100%;
   display: flex;
   align-items: end;
+  overflow: hidden;
 }
 
 .monaco-menu .action-label { 

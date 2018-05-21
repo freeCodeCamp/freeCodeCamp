@@ -142,14 +142,14 @@ class ShowClassic extends PureComponent {
     const editors = Object.keys(files)
       .map(key => files[key])
       .map((file, index) => (
-        <Fragment key={file.key + index}>
+        <ReflexContainer orientation='horizontal' key={file.key + index}>
           {index !== 0 && <ReflexSplitter />}
-          <ReflexElement flex={1}>
+          <ReflexElement flex={1} propagateDimensions={true} renderOnResize={true} renderOnResizeRate={20}>
             <Editor {...file} fileKey={file.key} />
           </ReflexElement>
-          {index + 1 === Object.keys(files).length && <ReflexSplitter />}
+          {index + 1 === Object.keys(files).length && <ReflexSplitter propagate={true} />}
           {index + 1 === Object.keys(files).length ? (
-            <ReflexElement flex={0.25}>
+            <ReflexElement flex={0.25} propagateDimensions={true} renderOnResize={true} renderOnResizeRate={20}>
               <Output
                 defaultOutput={`
 /**
@@ -162,9 +162,8 @@ class ShowClassic extends PureComponent {
               />
             </ReflexElement>
           ) : null}
-        </Fragment>
+        </ReflexContainer>
       ));
-
     const showPreview =
       challengeType === challengeTypes.html ||
       challengeType === challengeTypes.modern;
@@ -184,9 +183,7 @@ class ShowClassic extends PureComponent {
           </ReflexElement>
           <ReflexSplitter />
           <ReflexElement flex={1}>
-            <ReflexContainer orientation='horizontal'>
-              {editors}
-            </ReflexContainer>
+            {editors}
           </ReflexElement>
           <ReflexSplitter />
           <ReflexElement flex={0.5}>

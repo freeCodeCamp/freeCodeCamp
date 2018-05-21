@@ -8,6 +8,7 @@ import { executeChallenge, updateFile } from '../redux';
 
 const propTypes = {
   contents: PropTypes.string,
+  dimensions: PropTypes.object,
   executeChallenge: PropTypes.func.isRequired,
   ext: PropTypes.string,
   fileKey: PropTypes.string,
@@ -78,6 +79,12 @@ class Editor extends PureComponent {
   onChange(editorValue) {
     const { updateFile, fileKey } = this.props;
     updateFile({ key: fileKey, editorValue });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.dimensions !== prevProps.dimensions && this._editor) {
+      this._editor.layout();
+    }
   }
 
   render() {
