@@ -140,7 +140,8 @@ export default function setupPassport(app) {
               );
               const cookieConfig = {
                 signed: !!req.signedCookies,
-                maxAge: accessToken.ttl
+                maxAge: accessToken.ttl,
+                domain: process.env.COOKIE_DOMAIN || 'localhost'
               };
               res.cookie('access_token', accessToken.id, cookieConfig);
               res.cookie('userId', accessToken.userId, cookieConfig);
