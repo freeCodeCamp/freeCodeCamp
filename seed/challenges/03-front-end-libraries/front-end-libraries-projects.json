@@ -27,7 +27,6 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {
@@ -60,7 +59,6 @@
       ],
       "releasedOn": "January 10, 2017",
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {
@@ -92,7 +90,6 @@
       ],
       "releasedOn": "February 17, 2017",
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {
@@ -133,7 +130,6 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": true,
       "translations": {
@@ -182,7 +178,6 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {

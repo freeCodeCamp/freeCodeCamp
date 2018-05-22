@@ -35,7 +35,6 @@
           "testString": "assert(code.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -140,7 +139,6 @@
           "testString": "assert(code.match(/\\$\\(document\\)\\.ready\\(function.*(\\s|\\n)*.*button.*.addClass.*\\);/g), 'Your jQuery code should be within the <code>$(document).ready();</code> function.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -246,7 +244,6 @@
           "testString": "assert(!code.match(/class\\.\\*animated/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -357,7 +354,6 @@
           "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -471,7 +467,6 @@
           "testString": "assert(code.match(/<\\/script>/g) && code.match(/<script/g) && code.match(/<\\/script>/g).length === code.match(/<script/g).length, 'Leave your <code>script</code> element closing tag intact.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -583,7 +578,6 @@
           "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -688,7 +682,6 @@
           "testString": "assert(code.match(/\\.[\\v\\s]*removeClass[\\s\\v]*\\([\\s\\v]*('|\")\\s*btn-default\\s*('|\")[\\s\\v]*\\)/gm), 'Only remove the <code>btn-default</code> class.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -790,7 +783,6 @@
           "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -900,7 +892,6 @@
           "testString": "assert(!code.match(/disabled[^<]*>/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1015,7 +1006,6 @@
           "testString": "assert(code.match(/\\$\\(\\s*?(\\\"|\\')#target4(\\\"|\\')\\s*?\\)\\.html\\(/), 'Make sure to select <code>button id=\"target4\"</code> with jQuery.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1101,7 +1091,6 @@
           "testString": "assert(code.match(/id=\"target4/g) && !code.match(/<!--.*id=\"target4\".*-->/g) && $(\"#right-well\").length > 0, 'Only use jQuery to remove this element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1188,7 +1177,6 @@
           "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to move these elements.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1281,7 +1269,6 @@
           "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to move these elements.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1381,7 +1368,6 @@
           "testString": "assert(code.match(/<div class=\"well\" id=\"left-well\">/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1480,7 +1466,6 @@
           "testString": "assert(code.match(/<div class=\"well\" id=\"right-well\">/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1587,7 +1572,6 @@
           "testString": "assert(code.match(/\\$\\(\".target:nth-child\\(2\\)\"\\)/g) || code.match(/\\$\\('.target:nth-child\\(2\\)'\\)/g) || code.match(/\\$\\(\".target\"\\).filter\\(\":nth-child\\(2\\)\"\\)/g) || code.match(/\\$\\('.target'\\).filter\\(':nth-child\\(2\\)'\\)/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1690,7 +1674,6 @@
           "testString": "assert(code.match(/\\$\\(\".target:even\"\\)/g) || code.match(/\\$\\('.target:even'\\)/g) || code.match(/\\$\\(\".target\"\\).filter\\(\":even\"\\)/g) || code.match(/\\$\\('.target'\\).filter\\(':even'\\)/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1783,7 +1766,6 @@
           "testString": "assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {

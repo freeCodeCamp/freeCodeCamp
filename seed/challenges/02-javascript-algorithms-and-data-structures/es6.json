@@ -37,7 +37,6 @@
           "testString": "assert(quote === \"Oliver says Meow!\", '<code>quote</code> should be <code>\"Oliver says Meow!\"</code>');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -96,7 +95,6 @@
           "testString": "assert(checkScope() === \"function scope\", '<code>checkScope()</code> should return \"function scope\"');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -147,7 +145,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/(let i)/g), '<code>i</code> should be a variable only defined within the for loop scope (by using<code>let</code>).');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -207,7 +204,6 @@
           "testString": "assert.deepEqual(s, [2, 5, 7], '<code>s</code> should be equal to <code>[2, 5, 7]</code>.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -261,7 +257,6 @@
           "testString": "assert(PI === 3.14, '<code>PI</code> equals <code>3.14</code>.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Aug 12, 2017",
       "challengeType": 1,
       "translations": {},
@@ -331,7 +326,6 @@
           "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -383,7 +377,6 @@
           "testString": "getUserInput => assert(!getUserInput('index').match(/function/g), '<code>function</code> keyword was not used.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -449,7 +442,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/map|filter|reduce/g), '<code>map</code>, <code>filter</code>, or <code>reduce</code> should be used');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -501,7 +493,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/value\\s*=\\s*1/g), 'default parameter <code>1</code> was used for <code>value</code>.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -558,7 +549,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/function\\s+sum\\s*\\(\\s*...args\\s*\\)\\s*{/g), 'The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -612,7 +602,6 @@
           "testString": "assert((arr1, arr2) => {arr1.push('JUN'); return arr2.length < arr1.length},'<code>arr2</code> remains unchanged when <code>arr1</code> is changed.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -665,7 +654,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*length\\s*:\\s*len\\s*}\\s*=\\s*str/g),'destructuring with reassignment was used');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -714,7 +702,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/\\{\\s*tomorrow\\s*:\\s*\\{\\s*max\\s*:\\s*maxOfTomorrow\\s*\\}\\s*\\}\\s*=\\s*forecast/g),'nested destructuring was used');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -772,7 +759,6 @@
           "testString": "// assert(/\\[\\s*(\\w)\\s*,\\s*(\\w)\\s*\\]\\s*=\\s*\\[\\s*\\2\\s*,\\s*\\1\\s*\\]/g.test(code), 'Use array destructuring to swap a and b.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -823,7 +809,6 @@
           "testString": "getUserInput => assert(!getUserInput('index').match(/Array.slice/g), '<code>Array.slice()</code> was not used.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -878,7 +863,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/\\(\\s*\\{\\s*\\w+\\s*,\\s*\\w+\\s*\\}\\s*\\)/g), 'Destructuring was used.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -943,7 +927,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/\\`<li class=\"text-warning\">\\$\\{\\w+\\}<\\/li>\\`/g), 'Template strings were used');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1004,7 +987,6 @@
           "testString": "getUserInput => assert(!getUserInput('index').match(/:/g), 'No <code>:</code> were used.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1052,7 +1034,6 @@
           "testString": "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), 'Declarative function was used.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1108,7 +1089,6 @@
           "testString": "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';},'<code>Vegetable</code> can be instantiated.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1168,7 +1148,6 @@
           "testString": "assert(() => {const t = new Thermostat(32); return typeof t === 'object' && t.temperature === 0;}, '<code>Thermostat</code> can be instantiated.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1219,7 +1198,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+\"string_functions\"/g), 'valid <code>import</code> statement');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1266,7 +1244,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/g), '<code>bar</code> is exported.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1306,7 +1283,6 @@
           "testString": "assert(code.match(/import\\s+\\*\\s+as\\s+[a-zA-Z0-9_$]+\\s+from\\s*\"\\s*capitalize_strings\\s*\"\\s*;/gi), 'Properly uses <code>import * as</code> syntax.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1348,7 +1324,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+default\\s+function\\s+subtract\\(x,y\\)\\s+{return\\s+x\\s-\\s+y;}/g), 'Proper used of <code>export</code> fallback.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1385,7 +1360,6 @@
           "testString": "getUserInput => assert(getUserInput('index').match(/import\\s+subtract\\s+from\\s+\"math_functions\"/g), 'Properly imports <code>export default</code> method.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},

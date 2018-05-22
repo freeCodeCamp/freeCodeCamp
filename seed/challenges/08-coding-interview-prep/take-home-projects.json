@@ -19,9 +19,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": false,
       "translations": {
@@ -73,9 +71,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": false,
       "translations": {
@@ -116,9 +112,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": false,
       "translations": {
@@ -173,11 +167,9 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Glitch.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
       "isRequired": true,
       "releasedOn": "January 1, 2016",
-      "type": "basejump",
       "challengeType": 4,
       "translations": {
         "es": {
@@ -208,9 +200,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": false,
       "translations": {
@@ -248,9 +238,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": false,
       "translations": {
@@ -291,9 +279,7 @@
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": false,
       "challengeType": 3,
       "translations": {
@@ -347,9 +333,7 @@
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": false,
       "challengeType": 3,
       "translations": {
@@ -410,9 +394,7 @@
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": false,
       "challengeType": 3,
       "translations": {
@@ -478,9 +460,7 @@
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": false,
       "challengeType": 3,
       "translations": {
@@ -543,9 +523,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your Glitch App.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": false,
       "releasedOn": "January 1, 2016"
@@ -564,11 +542,9 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
       "isRequired": false,
       "releasedOn": "January 1, 2016",
-      "type": "zipline",
       "challengeType": 3,
       "translations": {
         "es": {
@@ -605,11 +581,9 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen. ",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
       "isRequired": false,
       "releasedOn": "January 1, 2016",
-      "type": "zipline",
       "challengeType": 3,
       "translations": {
         "es": {
@@ -643,9 +617,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "basejump",
       "challengeType": 4,
       "translations": {
         "es": {
@@ -680,9 +652,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "basejump",
       "challengeType": 4,
       "translations": {
         "es": {
@@ -719,11 +689,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "Gei7QfPmcMw"
-      ],
       "tests": [],
-      "type": "basejump",
       "challengeType": 4,
       "isRequired": true,
       "translations": {
@@ -757,11 +723,7 @@
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [
-        "CENs50cnRgM"
-      ],
       "tests": [],
-      "type": "basejump",
       "challengeType": 4,
       "isRequired": true,
       "translations": {
@@ -797,12 +759,7 @@
         "<strong>User Story:</strong> As an authenticated user, if I don't like the options on a poll, I can create a new option.",
         "Once you've finished implementing these user stories, click the \"I've completed this challenge\" button and enter the URLs for both your GitHub repository and your live app running on Heroku.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
-      ],
-      "challengeSeed": [
-        "JBKnbY_fdg4"
-      ],
-      "tests": [],
-      "type": "basejump",
+      ],"tests": [],
       "challengeType": 4,
       "isRequired": true,
       "translations": {
@@ -840,9 +797,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": false
     },
@@ -863,9 +818,7 @@
         "When you are finished, click the \"I've completed this challenge\" button and include a link to your CodePen.",
         "You can get feedback on your project by sharing it with your friends on Facebook."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "challengeType": 3,
       "isRequired": false
     }

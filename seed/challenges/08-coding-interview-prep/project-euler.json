@@ -7,7 +7,6 @@
     {
       "id": "5900f36e1000cf542c50fe80",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 1: Multiples of 3 and 5",
       "tests": [
         {
@@ -56,7 +55,6 @@
     {
       "id": "5900f36e1000cf542c50fe81",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 2: Even Fibonacci Numbers",
       "tests": [
         {
@@ -110,7 +108,6 @@
     {
       "id": "5900f36f1000cf542c50fe82",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 3: Largest prime factor",
       "tests": [
         {
@@ -167,7 +164,6 @@
     {
       "id": "5900f3701000cf542c50fe83",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 4: Largest palindrome product",
       "tests": [
         {
@@ -208,7 +204,6 @@
     {
       "id": "5900f3711000cf542c50fe84",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 5: Smallest multiple",
       "tests": [
         {
@@ -253,7 +248,6 @@
     {
       "id": "5900f3721000cf542c50fe85",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 6: Sum square difference",
       "tests": [
         {
@@ -302,7 +296,6 @@
     {
       "id": "5900f3731000cf542c50fe86",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 7: 10001st prime",
       "tests": [
         {
@@ -355,7 +348,6 @@
     {
       "id": "5900f3741000cf542c50fe87",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 8: Largest product in a series",
       "tests": [
         {
@@ -418,7 +410,6 @@
     {
       "id": "5900f3761000cf542c50fe88",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 9: Special Pythagorean triplet",
       "tests": [
         {
@@ -466,7 +457,6 @@
     {
       "id": "5900f3761000cf542c50fe89",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 10: Summation of primes",
       "tests": [
         {
@@ -515,7 +505,6 @@
     {
       "id": "5900f3781000cf542c50fe8a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 11: Largest product in a grid",
       "tests": [
         {
@@ -610,7 +599,6 @@
     {
       "id": "5900f3781000cf542c50fe8b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 12: Highly divisible triangular number",
       "tests": [
         {
@@ -665,7 +653,6 @@
     {
       "id": "5900f37a1000cf542c50fe8c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 13: Large sum",
       "tests": [
         {
@@ -921,7 +908,6 @@
     {
       "id": "5900f37a1000cf542c50fe8d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 14: Longest Collatz sequence",
       "tests": [
         {
@@ -971,7 +957,6 @@
     {
       "id": "5900f37b1000cf542c50fe8e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 15: Lattice paths",
       "tests": [
         {
@@ -1019,7 +1004,6 @@
     {
       "id": "5900f37d1000cf542c50fe8f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 16: Power digit sum",
       "tests": [
         {
@@ -1064,7 +1048,6 @@
     {
       "id": "5900f37d1000cf542c50fe90",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 17: Number letter counts",
       "tests": [
         {
@@ -1110,7 +1093,6 @@
     {
       "id": "5900f37e1000cf542c50fe91",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 18: Maximum path sum I",
       "tests": [
         {
@@ -1162,7 +1144,6 @@
     {
       "id": "5900f37f1000cf542c50fe92",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 19: Counting Sundays",
       "tests": [
         {
@@ -1215,7 +1196,6 @@
     {
       "id": "5900f3801000cf542c50fe93",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 20: Factorial digit sum",
       "tests": [
         {
@@ -1267,7 +1247,6 @@
     {
       "id": "5900f3811000cf542c50fe94",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 21: Amicable numbers",
       "tests": [
         {
@@ -1316,7 +1295,6 @@
     {
       "id": "5a51eabcad78bf416f316e2a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 22: Names scores",
       "tests": [
         {
@@ -1366,7 +1344,6 @@
     {
       "id": "5900f3831000cf542c50fe96",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 23: Non-abundant sums",
       "tests": [
         {
@@ -1416,7 +1393,6 @@
     {
       "id": "5900f3841000cf542c50fe97",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 24: Lexicographic permutations",
       "tests": [
         {
@@ -1464,7 +1440,6 @@
     {
       "id": "5900f3851000cf542c50fe98",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 25: 1000-digit Fibonacci number",
       "tests": [
         {
@@ -1526,7 +1501,6 @@
     {
       "id": "5900f3861000cf542c50fe99",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 26: Reciprocal cycles",
       "tests": [
         {
@@ -1585,7 +1559,6 @@
     {
       "id": "5900f3871000cf542c50fe9a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 27: Quadratic primes",
       "tests": [
         {
@@ -1639,7 +1612,6 @@
     {
       "id": "5900f3881000cf542c50fe9b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 28: Number spiral diagonals",
       "tests": [
         {
@@ -1692,7 +1664,6 @@
     {
       "id": "5900f3891000cf542c50fe9c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 29: Distinct powers",
       "tests": [
         {
@@ -1745,7 +1716,6 @@
     {
       "id": "5900f38a1000cf542c50fe9d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 30: Digit n powers",
       "tests": [
         {
@@ -1797,7 +1767,6 @@
     {
       "id": "5900f38b1000cf542c50fe9e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 31: Coin sums",
       "tests": [
         {
@@ -1847,7 +1816,6 @@
     {
       "id": "5900f38c1000cf542c50fe9f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 32: Pandigital products",
       "tests": [
         {
@@ -1893,7 +1861,6 @@
     {
       "id": "5900f38d1000cf542c50fea0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 33: Digit cancelling fractions",
       "tests": [
         {
@@ -1932,7 +1899,6 @@
     {
       "id": "5900f38e1000cf542c50fea1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 34: Digit factorials",
       "tests": [
         {
@@ -1970,7 +1936,6 @@
     {
       "id": "5900f38f1000cf542c50fea2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 35: Circular primes",
       "tests": [
         {
@@ -2026,7 +1991,6 @@
     {
       "id": "5900f3901000cf542c50fea3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 36: Double-base palindromes",
       "tests": [
         {
@@ -2074,7 +2038,6 @@
     {
       "id": "5900f3911000cf542c50fea4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 37: Truncatable primes",
       "tests": [
         {
@@ -2122,7 +2085,6 @@
     {
       "id": "5900f3931000cf542c50fea5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 38: Pandigital multiples",
       "tests": [
         {
@@ -2164,7 +2126,6 @@
     {
       "id": "5900f3931000cf542c50fea6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 39: Integer right triangles",
       "tests": [
         {
@@ -2212,7 +2173,6 @@
     {
       "id": "5900f3941000cf542c50fea7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 40: Champernowne's constant",
       "tests": [
         {
@@ -2260,7 +2220,6 @@
     {
       "id": "5900f3951000cf542c50fea8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 41: Pandigital prime",
       "tests": [
         {
@@ -2301,7 +2260,6 @@
     {
       "id": "5900f3961000cf542c50fea9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 42: Coded triangle numbers",
       "tests": [
         {
@@ -2353,7 +2311,6 @@
     {
       "id": "5900f3971000cf542c50feaa",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 43: Sub-string divisibility",
       "tests": [
         {
@@ -2396,7 +2353,6 @@
     {
       "id": "5900f3981000cf542c50feab",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 44: Pentagon numbers",
       "tests": [
         {
@@ -2435,7 +2391,6 @@
     {
       "id": "5900f3991000cf542c50feac",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 45: Triangular, pentagonal, and hexagonal",
       "tests": [
         {
@@ -2476,7 +2431,6 @@
     {
       "id": "5900f39a1000cf542c50fead",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 46: Goldbach's other conjecture",
       "tests": [
         {
@@ -2520,7 +2474,6 @@
     {
       "id": "5900f39c1000cf542c50feae",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 47: Distinct primes factors",
       "tests": [
         {
@@ -2571,7 +2524,6 @@
     {
       "id": "5900f39c1000cf542c50feaf",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 48: Self powers",
       "tests": [
         {
@@ -2620,7 +2572,6 @@
     {
       "id": "5900f39d1000cf542c50feb0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 49: Prime permutations",
       "tests": [
         {
@@ -2658,7 +2609,6 @@
     {
       "id": "5900f39e1000cf542c50feb1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 50: Consecutive prime sum",
       "tests": [
         {
@@ -2702,7 +2652,6 @@
     {
       "id": "5900f39f1000cf542c50feb2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 51: Prime digit replacements",
       "tests": [
         {
@@ -2738,7 +2687,6 @@
     {
       "id": "5900f3a01000cf542c50feb3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 52: Permuted multiples",
       "tests": [
         {
@@ -2773,7 +2721,6 @@
     {
       "id": "5900f3a11000cf542c50feb4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 53: Combinatoric selections",
       "tests": [
         {
@@ -2817,7 +2764,6 @@
     {
       "id": "5900f3a21000cf542c50feb5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 54: Poker hands",
       "tests": [
         {
@@ -2874,7 +2820,6 @@
     {
       "id": "5900f3a31000cf542c50feb6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 55: Lychrel numbers",
       "tests": [
         {
@@ -2917,7 +2862,6 @@
     {
       "id": "5900f3a41000cf542c50feb7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 56: Powerful digit sum",
       "tests": [
         {
@@ -2952,7 +2896,6 @@
     {
       "id": "5900f3a51000cf542c50feb8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 57: Square root convergents",
       "tests": [
         {
@@ -2994,7 +2937,6 @@
     {
       "id": "5900f3a61000cf542c50feb9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 58: Spiral primes",
       "tests": [
         {
@@ -3036,7 +2978,6 @@
     {
       "id": "5900f3a81000cf542c50feba",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 59: XOR decryption",
       "tests": [
         {
@@ -3074,7 +3015,6 @@
     {
       "id": "5900f3a81000cf542c50febb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 60: Prime pair sets",
       "tests": [
         {
@@ -3109,7 +3049,6 @@
     {
       "id": "5900f3a91000cf542c50febc",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 61: Cyclical figurate numbers",
       "tests": [
         {
@@ -3178,7 +3117,6 @@
     {
       "id": "5900f3aa1000cf542c50febd",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 62: Cubic permutations",
       "tests": [
         {
@@ -3213,7 +3151,6 @@
     {
       "id": "5900f3ab1000cf542c50febe",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 63: Powerful digit counts",
       "tests": [
         {
@@ -3248,7 +3185,6 @@
     {
       "id": "5900f3ac1000cf542c50febf",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 64: Odd period square roots",
       "tests": [
         {
@@ -3405,7 +3341,6 @@
     {
       "id": "5900f3ad1000cf542c50fec0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 65: Convergents of e",
       "tests": [
         {
@@ -3528,7 +3463,6 @@
     {
       "id": "5900f3ae1000cf542c50fec1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 66: Diophantine equation",
       "tests": [
         {
@@ -3572,7 +3506,6 @@
     {
       "id": "5900f3b01000cf542c50fec2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 67: Maximum path sum II",
       "tests": [
         {
@@ -3612,7 +3545,6 @@
     {
       "id": "5900f3b01000cf542c50fec3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 68: Magic 5-gon ring",
       "tests": [
         {
@@ -3663,7 +3595,6 @@
     {
       "id": "5900f3b11000cf542c50fec4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 69: Totient maximum",
       "tests": [
         {
@@ -3741,7 +3672,6 @@
     {
       "id": "5900f3b21000cf542c50fec5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 70: Totient permutation",
       "tests": [
         {
@@ -3777,7 +3707,6 @@
     {
       "id": "5900f3b31000cf542c50fec6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 71: Ordered fractions",
       "tests": [
         {
@@ -3815,7 +3744,6 @@
     {
       "id": "5900f3b41000cf542c50fec7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 72: Counting fractions",
       "tests": [
         {
@@ -3853,7 +3781,6 @@
     {
       "id": "5900f3b61000cf542c50fec8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 73: Counting fractions in a range",
       "tests": [
         {
@@ -3891,7 +3818,6 @@
     {
       "id": "5900f3b61000cf542c50fec9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 74: Digit factorial chains",
       "tests": [
         {
@@ -3936,7 +3862,6 @@
     {
       "id": "5900f3b71000cf542c50feca",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 75: Singular integer right triangles",
       "tests": [
         {
@@ -3974,7 +3899,6 @@
     {
       "id": "5900f3b81000cf542c50fecb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 76: Counting summations",
       "tests": [
         {
@@ -4015,7 +3939,6 @@
     {
       "id": "5900f3b91000cf542c50fecc",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 77: Prime summations",
       "tests": [
         {
@@ -4055,7 +3978,6 @@
     {
       "id": "5900f3ba1000cf542c50fecd",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 78: Coin partitions",
       "tests": [
         {
@@ -4099,7 +4021,6 @@
     {
       "id": "5900f3bb1000cf542c50fece",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 79: Passcode derivation",
       "tests": [
         {
@@ -4135,7 +4056,6 @@
     {
       "id": "5900f3bc1000cf542c50fecf",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 80: Square root digital expansion",
       "tests": [
         {
@@ -4171,7 +4091,6 @@
     {
       "id": "5900f3bd1000cf542c50fed0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 81: Path sum: two ways",
       "tests": [
         {
@@ -4217,7 +4136,6 @@
     {
       "id": "5900f3be1000cf542c50fed1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 82: Path sum: three ways",
       "tests": [
         {
@@ -4264,7 +4182,6 @@
     {
       "id": "5900f3bf1000cf542c50fed2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 83: Path sum: four ways",
       "tests": [
         {
@@ -4312,7 +4229,6 @@
     {
       "id": "5900f3c11000cf542c50fed3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 84: Monopoly odds",
       "tests": [
         {
@@ -4420,7 +4336,6 @@
     {
       "id": "5900f3c11000cf542c50fed4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 85: Counting rectangles",
       "tests": [
         {
@@ -4457,7 +4372,6 @@
     {
       "id": "5900f3c31000cf542c50fed5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 86: Cuboid route",
       "tests": [
         {
@@ -4496,7 +4410,6 @@
     {
       "id": "5900f3c51000cf542c50fed8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 87: Prime power triples",
       "tests": [
         {
@@ -4535,7 +4448,6 @@
     {
       "id": "5900f3c51000cf542c50fed6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 88: Product-sum numbers",
       "tests": [
         {
@@ -4575,7 +4487,6 @@
     {
       "id": "5900f3c51000cf542c50fed7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 89: Roman numerals",
       "tests": [
         {
@@ -4620,7 +4531,6 @@
     {
       "id": "5900f3c61000cf542c50fed9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 90: Cube digit pairs",
       "tests": [
         {
@@ -4674,7 +4584,6 @@
     {
       "id": "5900f3c71000cf542c50feda",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 91: Right triangles with integer coordinates",
       "tests": [
         {
@@ -4718,7 +4627,6 @@
     {
       "id": "5900f3c81000cf542c50fedb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 92: Square digit chains",
       "tests": [
         {
@@ -4757,7 +4665,6 @@
     {
       "id": "5900f3ca1000cf542c50fedc",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 93: Arithmetic expressions",
       "tests": [
         {
@@ -4799,7 +4706,6 @@
     {
       "id": "5900f3ca1000cf542c50fedd",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 94: Almost equilateral triangles",
       "tests": [
         {
@@ -4835,7 +4741,6 @@
     {
       "id": "5900f3cc1000cf542c50fede",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 95: Amicable chains",
       "tests": [
         {
@@ -4874,7 +4779,6 @@
     {
       "id": "5900f3cc1000cf542c50fedf",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 96: Su Doku",
       "tests": [
         {
@@ -4936,7 +4840,6 @@
     {
       "id": "5900f3ce1000cf542c50fee0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 97: Large non-Mersenne prime",
       "tests": [
         {
@@ -4972,7 +4875,6 @@
     {
       "id": "5900f3cf1000cf542c50fee1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 98: Anagramic squares",
       "tests": [
         {
@@ -5009,7 +4911,6 @@
     {
       "id": "5900f3d01000cf542c50fee2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 99: Largest exponential",
       "tests": [
         {
@@ -5046,7 +4947,6 @@
     {
       "id": "5900f3d01000cf542c50fee3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 100: Arranged probability",
       "tests": [
         {
@@ -5082,7 +4982,6 @@
     {
       "id": "5900f3d21000cf542c50fee4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 101: Optimum polynomial",
       "tests": [
         {
@@ -5136,7 +5035,6 @@
     {
       "id": "5900f3d21000cf542c50fee5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 102: Triangle containment",
       "tests": [
         {
@@ -5176,7 +5074,6 @@
     {
       "id": "5900f3d61000cf542c50fee7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 103: Special subset sums: optimum",
       "tests": [
         {
@@ -5218,7 +5115,6 @@
     {
       "id": "5900f3d51000cf542c50fee6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 104: Pandigital Fibonacci ends",
       "tests": [
         {
@@ -5255,7 +5151,6 @@
     {
       "id": "5900f3d61000cf542c50fee8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 105: Special subset sums: testing",
       "tests": [
         {
@@ -5294,7 +5189,6 @@
     {
       "id": "5900f3d71000cf542c50fee9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 106: Special subset sums: meta-testing",
       "tests": [
         {
@@ -5334,7 +5228,6 @@
     {
       "id": "5900f3d91000cf542c50feea",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 107: Minimal network",
       "tests": [
         {
@@ -5383,7 +5276,6 @@
     {
       "id": "5900f3d91000cf542c50feeb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 108: Diophantine Reciprocals I",
       "tests": [
         {
@@ -5421,7 +5313,6 @@
     {
       "id": "5900f3db1000cf542c50feec",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 109: Darts",
       "tests": [
         {
@@ -5501,7 +5392,6 @@
     {
       "id": "5900f3db1000cf542c50feed",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 110: Diophantine Reciprocals II",
       "tests": [
         {
@@ -5538,7 +5428,6 @@
     {
       "id": "5900f3db1000cf542c50feee",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 111: Primes with runs",
       "tests": [
         {
@@ -5624,7 +5513,6 @@
     {
       "id": "5900f3dd1000cf542c50feef",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 112: Bouncy numbers",
       "tests": [
         {
@@ -5663,7 +5551,6 @@
     {
       "id": "5900f3dd1000cf542c50fef0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 113: Non-bouncy numbers",
       "tests": [
         {
@@ -5701,7 +5588,6 @@
     {
       "id": "5900f3e01000cf542c50fef2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 114: Counting block combinations I",
       "tests": [
         {
@@ -5838,7 +5724,6 @@
     {
       "id": "5900f3df1000cf542c50fef1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 115: Counting block combinations II",
       "tests": [
         {
@@ -5878,7 +5763,6 @@
     {
       "id": "5900f3e01000cf542c50fef3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 116: Red, green or blue tiles",
       "tests": [
         {
@@ -5985,7 +5869,6 @@
     {
       "id": "5900f3e21000cf542c50fef4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 117: Red, green, and blue tiles",
       "tests": [
         {
@@ -6100,7 +5983,6 @@
     {
       "id": "5900f3e21000cf542c50fef5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 118: Pandigital prime sets",
       "tests": [
         {
@@ -6135,7 +6017,6 @@
     {
       "id": "5900f3e41000cf542c50fef6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 119: Digit power sum",
       "tests": [
         {
@@ -6172,7 +6053,6 @@
     {
       "id": "5900f3e41000cf542c50fef7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 120: Square remainders",
       "tests": [
         {
@@ -6208,7 +6088,6 @@
     {
       "id": "5900f3e51000cf542c50fef8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 121: Disc game prize fund",
       "tests": [
         {
@@ -6245,7 +6124,6 @@
     {
       "id": "5900f3e61000cf542c50fef9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 122: Efficient exponentiation",
       "tests": [
         {
@@ -6286,7 +6164,6 @@
     {
       "id": "5900f3e71000cf542c50fefa",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 123: Prime square remainders",
       "tests": [
         {
@@ -6323,7 +6200,6 @@
     {
       "id": "5900f3e81000cf542c50fefb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 124: Ordered radicals",
       "tests": [
         {
@@ -6399,7 +6275,6 @@
     {
       "id": "5900f3e91000cf542c50fefc",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 125: Palindromic sums",
       "tests": [
         {
@@ -6435,7 +6310,6 @@
     {
       "id": "5900f3ea1000cf542c50fefd",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 126: Cuboid layers",
       "tests": [
         {
@@ -6476,7 +6350,6 @@
     {
       "id": "5900f3ec1000cf542c50fefe",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 127: abc-hits",
       "tests": [
         {
@@ -6522,7 +6395,6 @@
     {
       "id": "5900f3ec1000cf542c50feff",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 128: Hexagonal tile differences",
       "tests": [
         {
@@ -6565,7 +6437,6 @@
     {
       "id": "5900f3ef1000cf542c50ff01",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 129: Repunit divisibility",
       "tests": [
         {
@@ -6602,7 +6473,6 @@
     {
       "id": "5900f3ee1000cf542c50ff00",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 130: Composites with prime repunit property",
       "tests": [
         {
@@ -6640,7 +6510,6 @@
     {
       "id": "5900f3ef1000cf542c50ff02",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 131: Prime cube partnership",
       "tests": [
         {
@@ -6677,7 +6546,6 @@
     {
       "id": "5900f3f11000cf542c50ff03",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 132: Large repunit factors",
       "tests": [
         {
@@ -6713,7 +6581,6 @@
     {
       "id": "5900f3f21000cf542c50ff04",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 133: Repunit nonfactors",
       "tests": [
         {
@@ -6750,7 +6617,6 @@
     {
       "id": "5900f3f21000cf542c50ff05",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 134: Prime pair connection",
       "tests": [
         {
@@ -6786,7 +6652,6 @@
     {
       "id": "5900f3f31000cf542c50ff06",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 135: Same differences",
       "tests": [
         {
@@ -6823,7 +6688,6 @@
     {
       "id": "5900f3f51000cf542c50ff07",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 136: Singleton difference",
       "tests": [
         {
@@ -6860,7 +6724,6 @@
     {
       "id": "5900f3f51000cf542c50ff08",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 137: Fibonacci golden nuggets",
       "tests": [
         {
@@ -6915,7 +6778,6 @@
     {
       "id": "5900f3f61000cf542c50ff09",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 138: Special isosceles triangles",
       "tests": [
         {
@@ -6954,7 +6816,6 @@
     {
       "id": "5900f3f71000cf542c50ff0a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 139: Pythagorean tiles",
       "tests": [
         {
@@ -6993,7 +6854,6 @@
     {
       "id": "5900f3fa1000cf542c50ff0c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 140: Modified Fibonacci golden nuggets",
       "tests": [
         {
@@ -7039,7 +6899,6 @@
     {
       "id": "5900f3f91000cf542c50ff0b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 141: Investigating progressive numbers, n, which are also square",
       "tests": [
         {
@@ -7077,7 +6936,6 @@
     {
       "id": "5900f3fa1000cf542c50ff0d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 142: Perfect Square Collection",
       "tests": [
         {
@@ -7111,7 +6969,6 @@
     {
       "id": "5900f3fc1000cf542c50ff0e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 143: Investigating the Torricelli point of a triangle",
       "tests": [
         {
@@ -7150,7 +7007,6 @@
     {
       "id": "5900f3fc1000cf542c50ff0f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 144: Investigating multiple reflections of a laser beam",
       "tests": [
         {
@@ -7193,7 +7049,6 @@
     {
       "id": "5900f3fd1000cf542c50ff10",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 145: How many reversible numbers are there below one-billion?",
       "tests": [
         {
@@ -7231,7 +7086,6 @@
     {
       "id": "5900f3fe1000cf542c50ff11",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 146: Investigating a Prime Pattern",
       "tests": [
         {
@@ -7267,7 +7121,6 @@
     {
       "id": "5900f3ff1000cf542c50ff12",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 147: Rectangles in cross-hatched grids",
       "tests": [
         {
@@ -7312,7 +7165,6 @@
     {
       "id": "5900f4021000cf542c50ff14",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 148: Exploring Pascal's triangle",
       "tests": [
         {
@@ -7419,7 +7271,6 @@
     {
       "id": "5900f4021000cf542c50ff13",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 149: Searching for a maximum-sum subsequence",
       "tests": [
         {
@@ -7469,7 +7320,6 @@
     {
       "id": "5900f4031000cf542c50ff15",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 150: Searching a triangular array for a sub-triangle having minimum-sum",
       "tests": [
         {
@@ -7528,7 +7378,6 @@
     {
       "id": "5900f4031000cf542c50ff16",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 151: Paper sheets of standard sizes: an expected-value problem",
       "tests": [
         {
@@ -7569,7 +7418,6 @@
     {
       "id": "5900f4041000cf542c50ff17",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 152: Writing 1/2 as a sum of inverse squares",
       "tests": [
         {
@@ -7607,7 +7455,6 @@
     {
       "id": "5900f4051000cf542c50ff18",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 153: Investigating Gaussian Integers",
       "tests": [
         {
@@ -7685,7 +7532,6 @@
     {
       "id": "5900f4071000cf542c50ff19",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 154: Exploring Pascal's pyramid",
       "tests": [
         {
@@ -7726,7 +7572,6 @@
     {
       "id": "5900f4081000cf542c50ff1a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 155: Counting Capacitor Circuits",
       "tests": [
         {
@@ -7769,7 +7614,6 @@
     {
       "id": "5900f4091000cf542c50ff1b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 156: Counting Digits",
       "tests": [
         {
@@ -7835,7 +7679,6 @@
     {
       "id": "5900f4091000cf542c50ff1c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 157: Solving the diophantine equation 1/a+1/b= p/10n",
       "tests": [
         {
@@ -7891,7 +7734,6 @@
     {
       "id": "5900f40a1000cf542c50ff1d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 158: Exploring strings for which only one character comes lexicographically after its neighbour to the left",
       "tests": [
         {
@@ -7932,7 +7774,6 @@
     {
       "id": "5900f40c1000cf542c50ff1e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 159: Digital root sums of factorisations",
       "tests": [
         {
@@ -7991,7 +7832,6 @@
     {
       "id": "5900f40d1000cf542c50ff1f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 160: Factorial trailing digits",
       "tests": [
         {
@@ -8030,7 +7870,6 @@
     {
       "id": "5900f40d1000cf542c50ff20",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 161: Triominoes",
       "tests": [
         {
@@ -8078,7 +7917,6 @@
     {
       "id": "5900f40e1000cf542c50ff21",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 162: Hexadecimal numbers",
       "tests": [
         {
@@ -8119,7 +7957,6 @@
     {
       "id": "5900f40f1000cf542c50ff22",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 163: Cross-hatched triangles",
       "tests": [
         {
@@ -8160,7 +7997,6 @@
     {
       "id": "5900f4111000cf542c50ff23",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 164: Numbers for which no three consecutive digits have a sum greater than a given value",
       "tests": [
         {
@@ -8194,7 +8030,6 @@
     {
       "id": "5900f4111000cf542c50ff24",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 165: Intersections",
       "tests": [
         {
@@ -8245,7 +8080,6 @@
     {
       "id": "5900f4131000cf542c50ff25",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 166: Criss Cross",
       "tests": [
         {
@@ -8291,7 +8125,6 @@
     {
       "id": "5900f4141000cf542c50ff26",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 167: Investigating Ulam sequences",
       "tests": [
         {
@@ -8330,7 +8163,6 @@
     {
       "id": "5900f4151000cf542c50ff27",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 168: Number Rotations",
       "tests": [
         {
@@ -8367,7 +8199,6 @@
     {
       "id": "5900f4151000cf542c50ff28",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 169: Exploring the number of different ways a number can be expressed as a sum of powers of 2",
       "tests": [
         {
@@ -8407,7 +8238,6 @@
     {
       "id": "5900f4161000cf542c50ff29",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 170: Find the largest 0 to 9 pandigital that can be formed by concatenating products",
       "tests": [
         {
@@ -8450,7 +8280,6 @@
     {
       "id": "5900f4181000cf542c50ff2a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 171: Finding numbers for which the sum of the squares of the digits is a square",
       "tests": [
         {
@@ -8488,7 +8317,6 @@
     {
       "id": "5900f4181000cf542c50ff2b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 172: Investigating numbers with few repeated digits",
       "tests": [
         {
@@ -8522,7 +8350,6 @@
     {
       "id": "5900f41a1000cf542c50ff2c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 173: Using up to one million tiles how many different \"hollow\" square laminae can be formed?",
       "tests": [
         {
@@ -8560,7 +8387,6 @@
     {
       "id": "5900f41a1000cf542c50ff2d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 174: Counting the number of \"hollow\" square laminae that can form one, two, three, ... distinct arrangements",
       "tests": [
         {
@@ -8600,7 +8426,6 @@
     {
       "id": "5900f41c1000cf542c50ff2e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 175: Fractions involving the number of different ways a number can be expressed as a sum of powers of 2",
       "tests": [
         {
@@ -8643,7 +8468,6 @@
     {
       "id": "5900f41c1000cf542c50ff2f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 176: Right-angled triangles that share a cathetus",
       "tests": [
         {
@@ -8678,7 +8502,6 @@
     {
       "id": "5900f41e1000cf542c50ff30",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 177: Integer angled Quadrilaterals",
       "tests": [
         {
@@ -8717,7 +8540,6 @@
     {
       "id": "5900f41e1000cf542c50ff31",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 178: Step Numbers",
       "tests": [
         {
@@ -8756,7 +8578,6 @@
     {
       "id": "5900f41f1000cf542c50ff32",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 179: Consecutive positive divisors",
       "tests": [
         {
@@ -8790,7 +8611,6 @@
     {
       "id": "5900f4201000cf542c50ff33",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 180: Rational zeros of a function of three variables",
       "tests": [
         {
@@ -8832,7 +8652,6 @@
     {
       "id": "5900f4231000cf542c50ff34",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 181: Investigating in how many ways objects of two different colours can be grouped",
       "tests": [
         {
@@ -8869,7 +8688,6 @@
     {
       "id": "5900f4231000cf542c50ff35",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 182: RSA encryption",
       "tests": [
         {
@@ -8917,7 +8735,6 @@
     {
       "id": "5900f4231000cf542c50ff36",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 183: Maximum product of parts",
       "tests": [
         {
@@ -8966,7 +8783,6 @@
     {
       "id": "5900f4241000cf542c50ff37",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 184: Triangles containing the origin",
       "tests": [
         {
@@ -9006,7 +8822,6 @@
     {
       "id": "5900f4251000cf542c50ff38",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 185: Number Mind",
       "tests": [
         {
@@ -9077,7 +8892,6 @@
     {
       "id": "5900f4281000cf542c50ff39",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 186: Connectedness of a network",
       "tests": [
         {
@@ -9123,7 +8937,6 @@
     {
       "id": "5900f4291000cf542c50ff3a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 187: Semiprimes",
       "tests": [
         {
@@ -9162,7 +8975,6 @@
     {
       "id": "5900f4291000cf542c50ff3b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 188: The hyperexponentiation of a number",
       "tests": [
         {
@@ -9201,7 +9013,6 @@
     {
       "id": "5900f4291000cf542c50ff3c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 189: Tri-colouring a triangular grid",
       "tests": [
         {
@@ -9247,7 +9058,6 @@
     {
       "id": "5900f42b1000cf542c50ff3d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 190: Maximising a weighted product",
       "tests": [
         {
@@ -9285,7 +9095,6 @@
     {
       "id": "5900f42b1000cf542c50ff3e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 191: Prize Strings",
       "tests": [
         {
@@ -9331,7 +9140,6 @@
     {
       "id": "5900f42c1000cf542c50ff3f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 192: Best Approximations",
       "tests": [
         {
@@ -9372,7 +9180,6 @@
     {
       "id": "5900f42f1000cf542c50ff41",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 193: Squarefree Numbers",
       "tests": [
         {
@@ -9408,7 +9215,6 @@
     {
       "id": "5900f42f1000cf542c50ff40",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 194: Coloured Configurations",
       "tests": [
         {
@@ -9452,7 +9258,6 @@
     {
       "id": "5900f4311000cf542c50ff43",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 195: Inscribed circles of triangles with one angle of 60 degrees",
       "tests": [
         {
@@ -9492,7 +9297,6 @@
     {
       "id": "5900f4301000cf542c50ff42",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 196: Prime triplets",
       "tests": [
         {
@@ -9552,7 +9356,6 @@
     {
       "id": "5900f4311000cf542c50ff44",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 197: Investigating the behaviour of a recursively defined sequence",
       "tests": [
         {
@@ -9590,7 +9393,6 @@
     {
       "id": "5900f4331000cf542c50ff45",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 198: Ambiguous Numbers",
       "tests": [
         {
@@ -9630,7 +9432,6 @@
     {
       "id": "5900f4341000cf542c50ff46",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 199: Iterative Circle Packing",
       "tests": [
         {
@@ -9672,7 +9473,6 @@
     {
       "id": "5900f4351000cf542c50ff47",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 200: Find the 200th prime-proof sqube containing the contiguous sub-string \"200\"",
       "tests": [
         {
@@ -9713,7 +9513,6 @@
     {
       "id": "5900f4361000cf542c50ff48",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 201: Subsets with a unique sum",
       "tests": [
         {
@@ -9778,7 +9577,6 @@
     {
       "id": "5900f4371000cf542c50ff49",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 202: Laserbeam",
       "tests": [
         {
@@ -9821,7 +9619,6 @@
     {
       "id": "5900f4381000cf542c50ff4a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 203: Squarefree Binomial Coefficients",
       "tests": [
         {
@@ -9868,7 +9665,6 @@
     {
       "id": "5900f4381000cf542c50ff4b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 204: Generalised Hamming Numbers",
       "tests": [
         {
@@ -9909,7 +9705,6 @@
     {
       "id": "5900f4391000cf542c50ff4c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 205: Dice Game",
       "tests": [
         {
@@ -9948,7 +9743,6 @@
     {
       "id": "5900f43a1000cf542c50ff4d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 206: Concealed Square",
       "tests": [
         {
@@ -9982,7 +9776,6 @@
     {
       "id": "5900f43c1000cf542c50ff4e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 207: Integer partition equations",
       "tests": [
         {
@@ -10037,7 +9830,6 @@
     {
       "id": "5900f43f1000cf542c50ff51",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 208: Robot Walks",
       "tests": [
         {
@@ -10078,7 +9870,6 @@
     {
       "id": "5900f43e1000cf542c50ff4f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 209: Circular Logic",
       "tests": [
         {
@@ -10122,7 +9913,6 @@
     {
       "id": "5900f43e1000cf542c50ff50",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 210: Obtuse Angled Triangles",
       "tests": [
         {
@@ -10161,7 +9951,6 @@
     {
       "id": "5900f43f1000cf542c50ff52",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 211: Divisor Square Sum",
       "tests": [
         {
@@ -10197,7 +9986,6 @@
     {
       "id": "5900f4411000cf542c50ff53",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 212: Combined Volume of Cuboids",
       "tests": [
         {
@@ -10245,7 +10033,6 @@
     {
       "id": "5900f4411000cf542c50ff54",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 213: Flea Circus",
       "tests": [
         {
@@ -10282,7 +10069,6 @@
     {
       "id": "5900f4421000cf542c50ff55",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 214: Totient Chains",
       "tests": [
         {
@@ -10335,7 +10121,6 @@
     {
       "id": "5900f4431000cf542c50ff56",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 215: Crack-free Walls",
       "tests": [
         {
@@ -10378,7 +10163,6 @@
     {
       "id": "5900f4451000cf542c50ff57",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 216: Investigating the primality of numbers of the form 2n2-1",
       "tests": [
         {
@@ -10417,7 +10201,6 @@
     {
       "id": "5900f4461000cf542c50ff58",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 217: Balanced Numbers",
       "tests": [
         {
@@ -10455,7 +10238,6 @@
     {
       "id": "5900f4461000cf542c50ff59",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 218: Perfect right-angled triangles",
       "tests": [
         {
@@ -10503,7 +10285,6 @@
     {
       "id": "5900f4481000cf542c50ff5a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 219: Skew-cost coding",
       "tests": [
         {
@@ -10549,7 +10330,6 @@
     {
       "id": "5900f4481000cf542c50ff5b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 220: Heighway Dragon",
       "tests": [
         {
@@ -10598,7 +10378,6 @@
     {
       "id": "5900f4491000cf542c50ff5c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 221: Alexandrian Integers",
       "tests": [
         {
@@ -10651,7 +10430,6 @@
     {
       "id": "5900f44b1000cf542c50ff5d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 222: Sphere Packing",
       "tests": [
         {
@@ -10687,7 +10465,6 @@
     {
       "id": "5900f44b1000cf542c50ff5e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 223: Almost right-angled triangles I",
       "tests": [
         {
@@ -10723,7 +10500,6 @@
     {
       "id": "5900f44e1000cf542c50ff5f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 224: Almost right-angled triangles II",
       "tests": [
         {
@@ -10759,7 +10535,6 @@
     {
       "id": "5900f44e1000cf542c50ff60",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 225: Tribonacci non-divisors",
       "tests": [
         {
@@ -10799,7 +10574,6 @@
     {
       "id": "5900f4511000cf542c50ff62",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 226: A Scoop of Blancmange",
       "tests": [
         {
@@ -10842,7 +10616,6 @@
     {
       "id": "5900f44f1000cf542c50ff61",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 227: The Chase",
       "tests": [
         {
@@ -10883,7 +10656,6 @@
     {
       "id": "5900f4511000cf542c50ff63",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 228: Minkowski Sums",
       "tests": [
         {
@@ -10939,7 +10711,6 @@
     {
       "id": "5900f4521000cf542c50ff64",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 229: Four Representations using Squares",
       "tests": [
         {
@@ -10991,7 +10762,6 @@
     {
       "id": "5900f4531000cf542c50ff65",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 230: Fibonacci Words",
       "tests": [
         {
@@ -11051,7 +10821,6 @@
     {
       "id": "5900f4531000cf542c50ff66",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 231: The prime factorisation of binomial coefficients",
       "tests": [
         {
@@ -11089,7 +10858,6 @@
     {
       "id": "5900f4551000cf542c50ff67",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 232: The Race",
       "tests": [
         {
@@ -11129,7 +10897,6 @@
     {
       "id": "5900f4551000cf542c50ff68",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 233: Lattice points on a circle",
       "tests": [
         {
@@ -11166,7 +10933,6 @@
     {
       "id": "5900f4571000cf542c50ff69",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 234: Semidivisible numbers",
       "tests": [
         {
@@ -11207,7 +10973,6 @@
     {
       "id": "5900f4571000cf542c50ff6a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 235: An Arithmetic Geometric sequence",
       "tests": [
         {
@@ -11248,7 +11013,6 @@
     {
       "id": "5900f4591000cf542c50ff6b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 236: Luxury Hampers",
       "tests": [
         {
@@ -11294,7 +11058,6 @@
     {
       "id": "5900f4591000cf542c50ff6c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 237: Tours on a 4 x n playing board",
       "tests": [
         {
@@ -11338,7 +11101,6 @@
     {
       "id": "5900f45b1000cf542c50ff6d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 238: Infinite string tour",
       "tests": [
         {
@@ -11405,7 +11167,6 @@
     {
       "id": "5900f45c1000cf542c50ff6e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 239: Twenty-two Foolish Primes",
       "tests": [
         {
@@ -11444,7 +11205,6 @@
     {
       "id": "5900f45d1000cf542c50ff6f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 240: Top Dice",
       "tests": [
         {
@@ -11489,7 +11249,6 @@
     {
       "id": "5900f45d1000cf542c50ff70",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 241: Perfection Quotients",
       "tests": [
         {
@@ -11531,7 +11290,6 @@
     {
       "id": "5900f45f1000cf542c50ff71",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 242: Odd Triplets",
       "tests": [
         {
@@ -11573,7 +11331,6 @@
     {
       "id": "5900f4601000cf542c50ff73",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 243: Resilience",
       "tests": [
         {
@@ -11615,7 +11372,6 @@
     {
       "id": "5900f4601000cf542c50ff72",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 244: Sliders",
       "tests": [
         {
@@ -11674,7 +11430,6 @@
     {
       "id": "5900f4621000cf542c50ff74",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 245: Coresilience",
       "tests": [
         {
@@ -11718,7 +11473,6 @@
     {
       "id": "5900f4621000cf542c50ff75",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 246: Tangents to an ellipse",
       "tests": [
         {
@@ -11770,7 +11524,6 @@
     {
       "id": "5900f4641000cf542c50ff76",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 247: Squares under a hyperbola",
       "tests": [
         {
@@ -11819,7 +11572,6 @@
     {
       "id": "5900f4651000cf542c50ff77",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 248: Numbers for which Euler’s totient function equals 13!",
       "tests": [
         {
@@ -11854,7 +11606,6 @@
     {
       "id": "5900f4671000cf542c50ff79",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 249: Prime Subset Sums",
       "tests": [
         {
@@ -11890,7 +11641,6 @@
     {
       "id": "5900f4661000cf542c50ff78",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 250: 250250",
       "tests": [
         {
@@ -11924,7 +11674,6 @@
     {
       "id": "5900f4671000cf542c50ff7a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 251: Cardano Triplets",
       "tests": [
         {
@@ -11968,7 +11717,6 @@
     {
       "id": "5900f4691000cf542c50ff7b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 252: Convex Holes",
       "tests": [
         {
@@ -12028,7 +11776,6 @@
     {
       "id": "5900f4691000cf542c50ff7c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 253: Tidying up",
       "tests": [
         {
@@ -12080,7 +11827,6 @@
     {
       "id": "5900f46b1000cf542c50ff7d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 254: Sums of Digit Factorials",
       "tests": [
         {
@@ -12124,7 +11870,6 @@
     {
       "id": "5900f46d1000cf542c50ff7f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 255: Rounded Square Roots",
       "tests": [
         {
@@ -12181,7 +11926,6 @@
     {
       "id": "5900f46c1000cf542c50ff7e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 256: Tatami-Free Rooms",
       "tests": [
         {
@@ -12240,7 +11984,6 @@
     {
       "id": "5900f46e1000cf542c50ff80",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 257: Angular Bisectors",
       "tests": [
         {
@@ -12286,7 +12029,6 @@
     {
       "id": "5900f46e1000cf542c50ff81",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 258: A lagged Fibonacci sequence",
       "tests": [
         {
@@ -12324,7 +12066,6 @@
     {
       "id": "5900f4701000cf542c50ff82",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 259: Reachable Numbers",
       "tests": [
         {
@@ -12368,7 +12109,6 @@
     {
       "id": "5900f4701000cf542c50ff83",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 260: Stone Game",
       "tests": [
         {
@@ -12421,7 +12161,6 @@
     {
       "id": "5900f4711000cf542c50ff84",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 261: Pivotal Square Sums",
       "tests": [
         {
@@ -12464,7 +12203,6 @@
     {
       "id": "5900f4731000cf542c50ff85",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 262: Mountain Range",
       "tests": [
         {
@@ -12513,7 +12251,6 @@
     {
       "id": "5900f4741000cf542c50ff86",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 263: An engineers' dream come true",
       "tests": [
         {
@@ -12566,7 +12303,6 @@
     {
       "id": "5900f4751000cf542c50ff87",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 264: Triangle Centres",
       "tests": [
         {
@@ -12620,7 +12356,6 @@
     {
       "id": "5900f4761000cf542c50ff88",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 265: Binary Circles",
       "tests": [
         {
@@ -12667,7 +12402,6 @@
     {
       "id": "5900f4771000cf542c50ff89",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 266: Pseudo Square Root",
       "tests": [
         {
@@ -12708,7 +12442,6 @@
     {
       "id": "5900f4771000cf542c50ff8a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 267: Billionaire",
       "tests": [
         {
@@ -12747,7 +12480,6 @@
     {
       "id": "5900f4791000cf542c50ff8b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 268: Counting numbers with at least four distinct prime factors less than 100",
       "tests": [
         {
@@ -12783,7 +12515,6 @@
     {
       "id": "5900f4791000cf542c50ff8c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 269: Polynomials with at least one integer root",
       "tests": [
         {
@@ -12827,7 +12558,6 @@
     {
       "id": "5900f47c1000cf542c50ff8e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 270: Cutting Squares",
       "tests": [
         {
@@ -12868,7 +12598,6 @@
     {
       "id": "5900f47b1000cf542c50ff8d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 271: Modular Cubes, part 1",
       "tests": [
         {
@@ -12908,7 +12637,6 @@
     {
       "id": "5900f47d1000cf542c50ff8f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 272: Modular Cubes, part 2",
       "tests": [
         {
@@ -12948,7 +12676,6 @@
     {
       "id": "5900f47e1000cf542c50ff90",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 273: Sum of Squares",
       "tests": [
         {
@@ -12988,7 +12715,6 @@
     {
       "id": "5900f47f1000cf542c50ff91",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 274: Divisibility Multipliers",
       "tests": [
         {
@@ -13034,7 +12760,6 @@
     {
       "id": "5900f4801000cf542c50ff92",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 275: Balanced Sculptures",
       "tests": [
         {
@@ -13076,7 +12801,6 @@
     {
       "id": "5900f4801000cf542c50ff93",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 276: Primitive Triangles",
       "tests": [
         {
@@ -13112,7 +12836,6 @@
     {
       "id": "5900f4811000cf542c50ff94",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 277: A Modified Collatz sequence",
       "tests": [
         {
@@ -13170,7 +12893,6 @@
     {
       "id": "5900f4831000cf542c50ff95",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 278: Linear Combinations of Semiprimes",
       "tests": [
         {
@@ -13214,7 +12936,6 @@
     {
       "id": "5900f4841000cf542c50ff96",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 279: Triangles with integral sides and an integral angle",
       "tests": [
         {
@@ -13248,7 +12969,6 @@
     {
       "id": "5900f4841000cf542c50ff97",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 280: Ant and seeds",
       "tests": [
         {
@@ -13287,7 +13007,6 @@
     {
       "id": "5900f4861000cf542c50ff98",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 281: Pizza Toppings",
       "tests": [
         {
@@ -13329,7 +13048,6 @@
     {
       "id": "5900f4861000cf542c50ff99",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 282: The Ackermann function",
       "tests": [
         {
@@ -13370,7 +13088,6 @@
     {
       "id": "5900f4881000cf542c50ff9a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 283: Integer sided triangles for which the  area/perimeter ratio is integral",
       "tests": [
         {
@@ -13410,7 +13127,6 @@
     {
       "id": "5900f4891000cf542c50ff9b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 284: Steady Squares",
       "tests": [
         {
@@ -13451,7 +13167,6 @@
     {
       "id": "5900f48a1000cf542c50ff9c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 285: Pythagorean odds",
       "tests": [
         {
@@ -13494,7 +13209,6 @@
     {
       "id": "5900f48a1000cf542c50ff9d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 286: Scoring probabilities",
       "tests": [
         {
@@ -13532,7 +13246,6 @@
     {
       "id": "5900f48b1000cf542c50ff9e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 287: Quadtree encoding (a simple compression algorithm)",
       "tests": [
         {
@@ -13581,7 +13294,6 @@
     {
       "id": "5900f48d1000cf542c50ff9f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 288: An enormous factorial",
       "tests": [
         {
@@ -13630,7 +13342,6 @@
     {
       "id": "5900f48d1000cf542c50ffa0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 289: Eulerian Cycles",
       "tests": [
         {
@@ -13678,7 +13389,6 @@
     {
       "id": "5900f48f1000cf542c50ffa1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 290: Digital Signature",
       "tests": [
         {
@@ -13712,7 +13422,6 @@
     {
       "id": "5900f48f1000cf542c50ffa2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 291: Panaitopol Primes",
       "tests": [
         {
@@ -13749,7 +13458,6 @@
     {
       "id": "5900f4911000cf542c50ffa3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 292: Pythagorean Polygons",
       "tests": [
         {
@@ -13790,7 +13498,6 @@
     {
       "id": "5900f4931000cf542c50ffa4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 293: Pseudo-Fortunate Numbers",
       "tests": [
         {
@@ -13836,7 +13543,6 @@
     {
       "id": "5900f4931000cf542c50ffa5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 294: Sum of digits - experience #23",
       "tests": [
         {
@@ -13881,7 +13587,6 @@
     {
       "id": "5900f4931000cf542c50ffa6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 295: Lenticular holes",
       "tests": [
         {
@@ -13937,7 +13642,6 @@
     {
       "id": "5900f4941000cf542c50ffa7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 296: Angular Bisector and Tangent",
       "tests": [
         {
@@ -13976,7 +13680,6 @@
     {
       "id": "5900f4951000cf542c50ffa8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 297: Zeckendorf Representation",
       "tests": [
         {
@@ -14020,7 +13723,6 @@
     {
       "id": "5900f4971000cf542c50ffa9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 298: Selective Amnesia",
       "tests": [
         {
@@ -14128,7 +13830,6 @@
     {
       "id": "5900f4971000cf542c50ffaa",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 299: Three similar triangles",
       "tests": [
         {
@@ -14175,7 +13876,6 @@
     {
       "id": "5900f49a1000cf542c50ffac",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 300: Protein folding",
       "tests": [
         {
@@ -14226,7 +13926,6 @@
     {
       "id": "5900f4991000cf542c50ffab",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 301: Nim",
       "tests": [
         {
@@ -14275,7 +13974,6 @@
     {
       "id": "5900f49b1000cf542c50ffad",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 302: Strong Achilles Numbers",
       "tests": [
         {
@@ -14327,7 +14025,6 @@
     {
       "id": "5900f49b1000cf542c50ffae",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 303: Multiples with small digits",
       "tests": [
         {
@@ -14365,7 +14062,6 @@
     {
       "id": "5900f49d1000cf542c50ffaf",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 304: Primonacci",
       "tests": [
         {
@@ -14414,7 +14110,6 @@
     {
       "id": "5900f49d1000cf542c50ffb0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 305: Reflexive Position",
       "tests": [
         {
@@ -14459,7 +14154,6 @@
     {
       "id": "5900f49f1000cf542c50ffb1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 306: Paper-strip Game",
       "tests": [
         {
@@ -14510,7 +14204,6 @@
     {
       "id": "5900f4a01000cf542c50ffb2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 307: Chip Defects",
       "tests": [
         {
@@ -14551,7 +14244,6 @@
     {
       "id": "5900f4a11000cf542c50ffb3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 308: An amazing Prime-generating Automaton",
       "tests": [
         {
@@ -14623,7 +14315,6 @@
     {
       "id": "5900f4a11000cf542c50ffb4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 309: Integer Ladders",
       "tests": [
         {
@@ -14667,7 +14358,6 @@
     {
       "id": "5900f4a21000cf542c50ffb5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 310: Nim Square",
       "tests": [
         {
@@ -14707,7 +14397,6 @@
     {
       "id": "5900f4a31000cf542c50ffb6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 311: Biclinic Integral Quadrilaterals",
       "tests": [
         {
@@ -14755,7 +14444,6 @@
     {
       "id": "5900f4a51000cf542c50ffb7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 312: Cyclic paths on Sierpiński graphs",
       "tests": [
         {
@@ -14807,7 +14495,6 @@
     {
       "id": "5900f4a61000cf542c50ffb8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 313: Sliding game",
       "tests": [
         {
@@ -14851,7 +14538,6 @@
     {
       "id": "5900f4a71000cf542c50ffb9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 314: The Mouse on the Moon",
       "tests": [
         {
@@ -14902,7 +14588,6 @@
     {
       "id": "5900f4a71000cf542c50ffba",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 315: Digital root clocks",
       "tests": [
         {
@@ -14982,7 +14667,6 @@
     {
       "id": "5900f4a81000cf542c50ffbb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 316: Numbers in decimal expansions",
       "tests": [
         {
@@ -15030,7 +14714,6 @@
     {
       "id": "5900f4aa1000cf542c50ffbc",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 317: Firecracker",
       "tests": [
         {
@@ -15071,7 +14754,6 @@
     {
       "id": "5900f4ab1000cf542c50ffbd",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 318: 2011 nines",
       "tests": [
         {
@@ -15131,7 +14813,6 @@
     {
       "id": "5900f4ab1000cf542c50ffbe",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 319: Bounded Sequences",
       "tests": [
         {
@@ -15180,7 +14861,6 @@
     {
       "id": "5900f4ae1000cf542c50ffbf",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 320: Factorials divisible by a huge integer",
       "tests": [
         {
@@ -15222,7 +14902,6 @@
     {
       "id": "5900f4ae1000cf542c50ffc0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 321: Swapping Counters",
       "tests": [
         {
@@ -15270,7 +14949,6 @@
     {
       "id": "5900f4af1000cf542c50ffc1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 322: Binomial coefficients divisible by 10",
       "tests": [
         {
@@ -15308,7 +14986,6 @@
     {
       "id": "5900f4b01000cf542c50ffc2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 323: Bitwise-OR operations on random integers",
       "tests": [
         {
@@ -15349,7 +15026,6 @@
     {
       "id": "5900f4b11000cf542c50ffc3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 324: Building a tower",
       "tests": [
         {
@@ -15386,7 +15062,6 @@
     {
       "id": "5900f4b11000cf542c50ffc4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 325: Stone Game II",
       "tests": [
         {
@@ -15444,7 +15119,6 @@
     {
       "id": "5900f4b21000cf542c50ffc5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 326: Modulo Summations",
       "tests": [
         {
@@ -15491,7 +15165,6 @@
     {
       "id": "5900f4b31000cf542c50ffc6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 327: Rooms of Doom",
       "tests": [
         {
@@ -15546,7 +15219,6 @@
     {
       "id": "5900f4b41000cf542c50ffc7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 328: Lowest-cost Search",
       "tests": [
         {
@@ -15602,7 +15274,6 @@
     {
       "id": "5900f4b51000cf542c50ffc8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 329: Prime Frog",
       "tests": [
         {
@@ -15647,7 +15318,6 @@
     {
       "id": "5900f4b71000cf542c50ffc9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 330: Euler's Number",
       "tests": [
         {
@@ -15721,7 +15391,6 @@
     {
       "id": "5900f4b71000cf542c50ffca",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 331: Cross flips",
       "tests": [
         {
@@ -15772,7 +15441,6 @@
     {
       "id": "5900f4b91000cf542c50ffcb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 332: Spherical triangles",
       "tests": [
         {
@@ -15819,7 +15487,6 @@
     {
       "id": "5900f4b91000cf542c50ffcc",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 333: Special partitions",
       "tests": [
         {
@@ -15868,7 +15535,6 @@
     {
       "id": "5900f4ba1000cf542c50ffcd",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 334: Spilling the beans",
       "tests": [
         {
@@ -15956,7 +15622,6 @@
     {
       "id": "5900f4bd1000cf542c50ffce",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 335: Gathering the beans",
       "tests": [
         {
@@ -15998,7 +15663,6 @@
     {
       "id": "5900f4bd1000cf542c50ffcf",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 336: Maximix Arrangements",
       "tests": [
         {
@@ -16045,7 +15709,6 @@
     {
       "id": "5900f4be1000cf542c50ffd0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 337: Totient Stairstep Sequences",
       "tests": [
         {
@@ -16088,7 +15751,6 @@
     {
       "id": "5900f4be1000cf542c50ffd1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 338: Cutting Rectangular Grid Paper",
       "tests": [
         {
@@ -16139,7 +15801,6 @@
     {
       "id": "5900f4c01000cf542c50ffd2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 339: Peredur fab Efrawg",
       "tests": [
         {
@@ -16182,7 +15843,6 @@
     {
       "id": "5900f4c21000cf542c50ffd4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 340: Crazy Function",
       "tests": [
         {
@@ -16228,7 +15888,6 @@
     {
       "id": "5900f4c11000cf542c50ffd3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 341: Golomb's self-describing sequence",
       "tests": [
         {
@@ -16270,7 +15929,6 @@
     {
       "id": "5900f4c31000cf542c50ffd5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 342: The totient of a square is a cube",
       "tests": [
         {
@@ -16312,7 +15970,6 @@
     {
       "id": "5900f4c41000cf542c50ffd6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 343: Fractional Sequences",
       "tests": [
         {
@@ -16367,7 +16024,6 @@
     {
       "id": "5900f4c51000cf542c50ffd7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 344: Silver dollar game",
       "tests": [
         {
@@ -16421,7 +16077,6 @@
     {
       "id": "5900f4c81000cf542c50ffda",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 345: Matrix Sum",
       "tests": [
         {
@@ -16480,7 +16135,6 @@
     {
       "id": "5900f4c71000cf542c50ffd8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 346: Strong Repunits",
       "tests": [
         {
@@ -16519,7 +16173,6 @@
     {
       "id": "5900f4c81000cf542c50ffd9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 347: Largest integer divisible by two primes",
       "tests": [
         {
@@ -16567,7 +16220,6 @@
     {
       "id": "5900f4c81000cf542c50ffdb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 348: Sum of a square and a cube",
       "tests": [
         {
@@ -16610,7 +16262,6 @@
     {
       "id": "5900f4ca1000cf542c50ffdc",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 349: Langton's ant",
       "tests": [
         {
@@ -16649,7 +16300,6 @@
     {
       "id": "5900f4cb1000cf542c50ffdd",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 350: Constraining the least greatest and the greatest least",
       "tests": [
         {
@@ -16696,7 +16346,6 @@
     {
       "id": "5900f4cb1000cf542c50ffde",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 351: Hexagonal orchards",
       "tests": [
         {
@@ -16749,7 +16398,6 @@
     {
       "id": "5900f4cd1000cf542c50ffdf",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 352: Blood tests",
       "tests": [
         {
@@ -16820,7 +16468,6 @@
     {
       "id": "5900f4cd1000cf542c50ffe0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 353: Risky moon",
       "tests": [
         {
@@ -16882,7 +16529,6 @@
     {
       "id": "5900f4cf1000cf542c50ffe1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 354: Distances in a bee's honeycomb",
       "tests": [
         {
@@ -16927,7 +16573,6 @@
     {
       "id": "5900f4d01000cf542c50ffe2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 355: Maximal coprime subset",
       "tests": [
         {
@@ -16968,7 +16613,6 @@
     {
       "id": "5900f4d01000cf542c50ffe3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 356: Largest roots of cubic polynomials",
       "tests": [
         {
@@ -17009,7 +16653,6 @@
     {
       "id": "5900f4d11000cf542c50ffe4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 357: Prime generating integers",
       "tests": [
         {
@@ -17048,7 +16691,6 @@
     {
       "id": "5900f4d21000cf542c50ffe5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 358: Cyclic numbers",
       "tests": [
         {
@@ -17110,7 +16752,6 @@
     {
       "id": "5900f4d31000cf542c50ffe6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 359: Hilbert's New Hotel",
       "tests": [
         {
@@ -17173,7 +16814,6 @@
     {
       "id": "5900f4d41000cf542c50ffe7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 360: Scary Sphere",
       "tests": [
         {
@@ -17218,7 +16858,6 @@
     {
       "id": "5900f4d51000cf542c50ffe8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 361: Subsequence of Thue-Morse sequence",
       "tests": [
         {
@@ -17277,7 +16916,6 @@
     {
       "id": "5900f4d61000cf542c50ffe9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 362: Squarefree factors",
       "tests": [
         {
@@ -17327,7 +16965,6 @@
     {
       "id": "5900f4d91000cf542c50ffeb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 363: Bézier Curves",
       "tests": [
         {
@@ -17382,7 +17019,6 @@
     {
       "id": "5900f4d91000cf542c50ffea",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 364: Comfortable distance",
       "tests": [
         {
@@ -17428,7 +17064,6 @@
     {
       "id": "5900f4da1000cf542c50ffec",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 365: A huge binomial coefficient",
       "tests": [
         {
@@ -17468,7 +17103,6 @@
     {
       "id": "5900f4da1000cf542c50ffed",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 366: Stone Game III",
       "tests": [
         {
@@ -17525,7 +17159,6 @@
     {
       "id": "5900f4db1000cf542c50ffee",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 367: Bozo sort",
       "tests": [
         {
@@ -17575,7 +17208,6 @@
     {
       "id": "5900f4dd1000cf542c50ffef",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 368: A Kempner-like series",
       "tests": [
         {
@@ -17622,7 +17254,6 @@
     {
       "id": "5900f4de1000cf542c50fff0",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 369: Badugi",
       "tests": [
         {
@@ -17660,7 +17291,6 @@
     {
       "id": "5900f4de1000cf542c50fff1",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 370: Geometric triangles",
       "tests": [
         {
@@ -17700,7 +17330,6 @@
     {
       "id": "5900f4e01000cf542c50fff2",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 371: Licence plates",
       "tests": [
         {
@@ -17746,7 +17375,6 @@
     {
       "id": "5900f4e11000cf542c50fff3",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 372: Pencils of rays",
       "tests": [
         {
@@ -17786,7 +17414,6 @@
     {
       "id": "5900f4e11000cf542c50fff4",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 373: Circumscribed Circles",
       "tests": [
         {
@@ -17829,7 +17456,6 @@
     {
       "id": "5900f4e51000cf542c50fff6",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 374: Maximum Integer Partition Product",
       "tests": [
         {
@@ -17882,7 +17508,6 @@
     {
       "id": "5900f4e41000cf542c50fff5",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 375: Minimum of subsequences",
       "tests": [
         {
@@ -17931,7 +17556,6 @@
     {
       "id": "5900f4e51000cf542c50fff7",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 376: Nontransitive sets of dice",
       "tests": [
         {
@@ -18001,7 +17625,6 @@
     {
       "id": "5900f4e51000cf542c50fff8",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 377: Sum of digits, experience 13",
       "tests": [
         {
@@ -18044,7 +17667,6 @@
     {
       "id": "5900f4e61000cf542c50fff9",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 378: Triangle Triples",
       "tests": [
         {
@@ -18096,7 +17718,6 @@
     {
       "id": "5900f4e81000cf542c50fffa",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 379: Least common multiple count",
       "tests": [
         {
@@ -18140,7 +17761,6 @@
     {
       "id": "5900f4e81000cf542c50fffb",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 380: Amazing Mazes!",
       "tests": [
         {
@@ -18187,7 +17807,6 @@
     {
       "id": "5900f4ea1000cf542c50fffc",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 381: (prime-k) factorial",
       "tests": [
         {
@@ -18232,7 +17851,6 @@
     {
       "id": "5900f4eb1000cf542c50fffd",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 382: Generating polygons",
       "tests": [
         {
@@ -18289,7 +17907,6 @@
     {
       "id": "5900f4ed1000cf542c50ffff",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 383: Divisibility comparison between factorials",
       "tests": [
         {
@@ -18333,7 +17950,6 @@
     {
       "id": "5900f4ed1000cf542c50fffe",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 384: Rudin-Shapiro sequence",
       "tests": [
         {
@@ -18391,7 +18007,6 @@
     {
       "id": "5900f4ee1000cf542c510000",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 385: Ellipses inside triangles",
       "tests": [
         {
@@ -18445,7 +18060,6 @@
     {
       "id": "5900f4ef1000cf542c510001",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 386: Maximum length of an antichain",
       "tests": [
         {
@@ -18489,7 +18103,6 @@
     {
       "id": "5900f4f11000cf542c510003",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 387: Harshad Numbers",
       "tests": [
         {
@@ -18539,7 +18152,6 @@
     {
       "id": "5900f4f11000cf542c510002",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 388: Distinct Lines",
       "tests": [
         {
@@ -18582,7 +18194,6 @@
     {
       "id": "5900f4f21000cf542c510004",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 389: Platonic Dice",
       "tests": [
         {
@@ -18617,7 +18228,6 @@
     {
       "id": "5900f4f21000cf542c510005",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 390: Triangles with non rational sides and integral area",
       "tests": [
         {
@@ -18660,7 +18270,6 @@
     {
       "id": "5900f4f31000cf542c510006",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 391: Hopping Game",
       "tests": [
         {
@@ -18721,7 +18330,6 @@
     {
       "id": "5900f4f41000cf542c510007",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 392: Enmeshed unit circle",
       "tests": [
         {
@@ -18771,7 +18379,6 @@
     {
       "id": "5900f4f61000cf542c510008",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 393: Migrating ants",
       "tests": [
         {
@@ -18811,7 +18418,6 @@
     {
       "id": "5900f4f71000cf542c510009",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 394: Eating pie",
       "tests": [
         {
@@ -18861,7 +18467,6 @@
     {
       "id": "5900f4f71000cf542c51000a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 395: Pythagorean tree",
       "tests": [
         {
@@ -18913,7 +18518,6 @@
     {
       "id": "5900f4f81000cf542c51000b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 396: Weak Goodstein sequence",
       "tests": [
         {
@@ -18971,7 +18575,6 @@
     {
       "id": "5900f4f91000cf542c51000c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 397: Triangle on parabola",
       "tests": [
         {
@@ -19012,7 +18615,6 @@
     {
       "id": "5900f4fa1000cf542c51000d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 398: Cutting rope",
       "tests": [
         {
@@ -19055,7 +18657,6 @@
     {
       "id": "5900f4fc1000cf542c51000e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 399: Squarefree Fibonacci Numbers",
       "tests": [
         {
@@ -19110,7 +18711,6 @@
     {
       "id": "5900f4fe1000cf542c510010",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 400: Fibonacci tree game",
       "tests": [
         {
@@ -19165,7 +18765,6 @@
     {
       "id": "5900f4fd1000cf542c51000f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 401: Sum of squares of divisors",
       "tests": [
         {
@@ -19210,7 +18809,6 @@
     {
       "id": "5900f4ff1000cf542c510011",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 402: Integer-valued polynomials",
       "tests": [
         {
@@ -19261,7 +18859,6 @@
     {
       "id": "5900f5001000cf542c510013",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 403: Lattice points enclosed by parabola and line",
       "tests": [
         {
@@ -19306,7 +18903,6 @@
     {
       "id": "5900f5001000cf542c510012",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 404: Crisscross Ellipses",
       "tests": [
         {
@@ -19359,7 +18955,6 @@
     {
       "id": "5900f5021000cf542c510014",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 405: A rectangular tiling",
       "tests": [
         {
@@ -19414,7 +19009,6 @@
     {
       "id": "5900f5021000cf542c510015",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 406: Guessing Game",
       "tests": [
         {
@@ -19471,7 +19065,6 @@
     {
       "id": "5900f5041000cf542c510016",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 407: Idempotents",
       "tests": [
         {
@@ -19513,7 +19106,6 @@
     {
       "id": "5900f5091000cf542c51001b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 408: Admissible paths through a grid",
       "tests": [
         {
@@ -19556,7 +19148,6 @@
     {
       "id": "5900f5061000cf542c510017",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 409: Nim Extreme",
       "tests": [
         {
@@ -19596,7 +19187,6 @@
     {
       "id": "5900f5071000cf542c510018",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 410: Circle and tangent line",
       "tests": [
         {
@@ -19637,7 +19227,6 @@
     {
       "id": "5900f5081000cf542c510019",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 411: Uphill paths",
       "tests": [
         {
@@ -19683,7 +19272,6 @@
     {
       "id": "5900f5081000cf542c51001a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 412: Gnomon numbering",
       "tests": [
         {
@@ -19731,7 +19319,6 @@
     {
       "id": "5900f50a1000cf542c51001c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 413: One-child Numbers",
       "tests": [
         {
@@ -19774,7 +19361,6 @@
     {
       "id": "5900f50b1000cf542c51001d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 414: Kaprekar constant",
       "tests": [
         {
@@ -19839,7 +19425,6 @@
     {
       "id": "5900f50c1000cf542c51001e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 415: Titanic sets",
       "tests": [
         {
@@ -19882,7 +19467,6 @@
     {
       "id": "5900f50e1000cf542c510020",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 416: A frog's trip",
       "tests": [
         {
@@ -19921,7 +19505,6 @@
     {
       "id": "5900f50d1000cf542c51001f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 417: Reciprocal cycles II",
       "tests": [
         {
@@ -19977,7 +19560,6 @@
     {
       "id": "5900f50f1000cf542c510021",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 418: Factorisation triples",
       "tests": [
         {
@@ -20020,7 +19602,6 @@
     {
       "id": "5900f5101000cf542c510022",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 419: Look and say sequence",
       "tests": [
         {
@@ -20071,7 +19652,6 @@
     {
       "id": "5900f5111000cf542c510023",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 420: 2x2 positive integer matrix",
       "tests": [
         {
@@ -20117,7 +19697,6 @@
     {
       "id": "5900f5131000cf542c510024",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 421: Prime factors of n15+1",
       "tests": [
         {
@@ -20159,7 +19738,6 @@
     {
       "id": "5900f5131000cf542c510025",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 422: Sequence of points on a hyperbola",
       "tests": [
         {
@@ -20205,7 +19783,6 @@
     {
       "id": "5900f5141000cf542c510027",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 423: Consecutive die throws",
       "tests": [
         {
@@ -20256,7 +19833,6 @@
     {
       "id": "5900f5141000cf542c510026",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 424: Kakuro",
       "tests": [
         {
@@ -20310,7 +19886,6 @@
     {
       "id": "5900f5151000cf542c510028",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 425: Prime connection",
       "tests": [
         {
@@ -20361,7 +19936,6 @@
     {
       "id": "5900f5171000cf542c510029",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 426: Box-ball system",
       "tests": [
         {
@@ -20424,7 +19998,6 @@
     {
       "id": "5900f5181000cf542c51002a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 427: n-sequences",
       "tests": [
         {
@@ -20468,7 +20041,6 @@
     {
       "id": "5900f5191000cf542c51002b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 428: Necklace of Circles",
       "tests": [
         {
@@ -20515,7 +20087,6 @@
     {
       "id": "5900f5191000cf542c51002c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 429: Sum of squares of unitary divisors",
       "tests": [
         {
@@ -20557,7 +20128,6 @@
     {
       "id": "5900f51a1000cf542c51002d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 430: Range flips",
       "tests": [
         {
@@ -20605,7 +20175,6 @@
     {
       "id": "5900f51b1000cf542c51002e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 431: Square Space Silo",
       "tests": [
         {
@@ -20650,7 +20219,6 @@
     {
       "id": "5900f51e1000cf542c510030",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 432: Totient sum",
       "tests": [
         {
@@ -20689,7 +20257,6 @@
     {
       "id": "5900f51d1000cf542c51002f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 433: Steps in Euclid's algorithm",
       "tests": [
         {
@@ -20734,7 +20301,6 @@
     {
       "id": "5900f51f1000cf542c510031",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 434: Rigid graphs",
       "tests": [
         {
@@ -20783,7 +20349,6 @@
     {
       "id": "5900f5201000cf542c510032",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 435: Polynomials of Fibonacci numbers",
       "tests": [
         {
@@ -20820,7 +20385,6 @@
     {
       "id": "5900f5221000cf542c510033",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 436: Unfair wager",
       "tests": [
         {
@@ -20868,7 +20432,6 @@
     {
       "id": "5900f5241000cf542c510036",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 437: Fibonacci primitive roots",
       "tests": [
         {
@@ -20920,7 +20483,6 @@
     {
       "id": "5900f5231000cf542c510034",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 438: Integer part of polynomial equation's solutions",
       "tests": [
         {
@@ -20966,7 +20528,6 @@
     {
       "id": "5900f5231000cf542c510035",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 439: Sum of sum of divisors",
       "tests": [
         {
@@ -21005,7 +20566,6 @@
     {
       "id": "5900f5241000cf542c510037",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 440: GCD and Tiling",
       "tests": [
         {
@@ -21053,7 +20613,6 @@
     {
       "id": "5900f5261000cf542c510038",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 441: The inverse summation of coprime couples",
       "tests": [
         {
@@ -21097,7 +20656,6 @@
     {
       "id": "5900f5271000cf542c510039",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 442: Eleven-free integers",
       "tests": [
         {
@@ -21137,7 +20695,6 @@
     {
       "id": "5900f5271000cf542c51003a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 443: GCD sequence",
       "tests": [
         {
@@ -21183,7 +20740,6 @@
     {
       "id": "5900f52a1000cf542c51003b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 444: The Roundtable Lottery",
       "tests": [
         {
@@ -21233,7 +20789,6 @@
     {
       "id": "5900f52a1000cf542c51003c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 445: Retractions A",
       "tests": [
         {
@@ -21278,7 +20833,6 @@
     {
       "id": "5900f52c1000cf542c51003d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 446: Retractions B",
       "tests": [
         {
@@ -21321,7 +20875,6 @@
     {
       "id": "5900f52c1000cf542c51003e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 447: Retractions C",
       "tests": [
         {
@@ -21365,7 +20918,6 @@
     {
       "id": "5900f52c1000cf542c51003f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 448: Average least common multiple",
       "tests": [
         {
@@ -21407,7 +20959,6 @@
     {
       "id": "5900f52d1000cf542c510040",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 449: Chocolate covered candy",
       "tests": [
         {
@@ -21453,7 +21004,6 @@
     {
       "id": "5900f52e1000cf542c510041",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 450: Hypocycloid and Lattice points",
       "tests": [
         {
@@ -21515,7 +21065,6 @@
     {
       "id": "5900f5311000cf542c510042",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 451: Modular inverses",
       "tests": [
         {
@@ -21564,7 +21113,6 @@
     {
       "id": "5900f5311000cf542c510043",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 452: Long Products",
       "tests": [
         {
@@ -21601,7 +21149,6 @@
     {
       "id": "5900f5311000cf542c510044",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 453: Lattice Quadrilaterals",
       "tests": [
         {
@@ -21643,7 +21190,6 @@
     {
       "id": "5900f5331000cf542c510045",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 454: Diophantine reciprocals III",
       "tests": [
         {
@@ -21688,7 +21234,6 @@
     {
       "id": "5900f5331000cf542c510046",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 455: Powers With Trailing Digits",
       "tests": [
         {
@@ -21730,7 +21275,6 @@
     {
       "id": "5900f5351000cf542c510047",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 456: Triangles containing the origin II",
       "tests": [
         {
@@ -21779,7 +21323,6 @@
     {
       "id": "5900f5361000cf542c510048",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 457: A polynomial modulo the square of a prime",
       "tests": [
         {
@@ -21821,7 +21364,6 @@
     {
       "id": "5900f5361000cf542c510049",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 458: Permutations of Project",
       "tests": [
         {
@@ -21861,7 +21403,6 @@
     {
       "id": "5900f5371000cf542c51004a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 459: Flipping game",
       "tests": [
         {
@@ -21915,7 +21456,6 @@
     {
       "id": "5900f5381000cf542c51004b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 460: An ant on the move",
       "tests": [
         {
@@ -21969,7 +21509,6 @@
     {
       "id": "5900f53a1000cf542c51004c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 461: Almost Pi",
       "tests": [
         {
@@ -22009,7 +21548,6 @@
     {
       "id": "5900f53b1000cf542c51004d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 462: Permutation of 3-smooth numbers",
       "tests": [
         {
@@ -22057,7 +21595,6 @@
     {
       "id": "5900f53c1000cf542c51004e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 463: A weird recurrence relation",
       "tests": [
         {
@@ -22100,7 +21637,6 @@
     {
       "id": "5900f53d1000cf542c51004f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 464: Möbius function and intervals",
       "tests": [
         {
@@ -22153,7 +21689,6 @@
     {
       "id": "5900f53d1000cf542c510050",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 465: Polar polygons",
       "tests": [
         {
@@ -22203,7 +21738,6 @@
     {
       "id": "5900f53e1000cf542c510051",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 466: Distinct terms in a multiplication table",
       "tests": [
         {
@@ -22252,7 +21786,6 @@
     {
       "id": "5900f5411000cf542c510052",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 467: Superinteger",
       "tests": [
         {
@@ -22304,7 +21837,6 @@
     {
       "id": "5900f5411000cf542c510054",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 468: Smooth divisors of binomial coefficients",
       "tests": [
         {
@@ -22352,7 +21884,6 @@
     {
       "id": "5900f5411000cf542c510053",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 469: Empty chairs",
       "tests": [
         {
@@ -22396,7 +21927,6 @@
     {
       "id": "5900f5431000cf542c510055",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 470: Super Ramvok",
       "tests": [
         {
@@ -22442,7 +21972,6 @@
     {
       "id": "5900f5431000cf542c510056",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 471: Triangle inscribed in ellipse",
       "tests": [
         {
@@ -22485,7 +22014,6 @@
     {
       "id": "5900f5451000cf542c510057",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 472: Comfortable Distance II",
       "tests": [
         {
@@ -22536,7 +22064,6 @@
     {
       "id": "5900f5461000cf542c510058",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 473: Phigital number base",
       "tests": [
         {
@@ -22587,7 +22114,6 @@
     {
       "id": "5900f5471000cf542c510059",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 474: Last digits of divisors",
       "tests": [
         {
@@ -22628,7 +22154,6 @@
     {
       "id": "5900f5481000cf542c51005a",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 475: Music festival",
       "tests": [
         {
@@ -22669,7 +22194,6 @@
     {
       "id": "5900f5481000cf542c51005b",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 476: Circle Packing II",
       "tests": [
         {
@@ -22706,7 +22230,6 @@
     {
       "id": "5900f54a1000cf542c51005c",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 477: Number Sequence Game",
       "tests": [
         {
@@ -22754,7 +22277,6 @@
     {
       "id": "5900f54c1000cf542c51005e",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 478: Mixtures",
       "tests": [
         {
@@ -22808,7 +22330,6 @@
     {
       "id": "5900f54b1000cf542c51005d",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 479: Roots on the Rise",
       "tests": [
         {
@@ -22850,7 +22371,6 @@
     {
       "id": "5900f54c1000cf542c51005f",
       "challengeType": 5,
-      "type": "bonfire",
       "title": "Problem 480: The Last Question",
       "tests": [
         {

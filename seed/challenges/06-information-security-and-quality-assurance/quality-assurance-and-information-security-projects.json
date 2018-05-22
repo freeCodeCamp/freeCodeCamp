@@ -12,7 +12,6 @@
         "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
         "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-metricimpconverter/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-metricimpconverter/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "I will prevent the client from trying to guess(sniff) the MIME type.",
@@ -82,7 +81,6 @@
         "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
         "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-issuetracker/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-issuetracker/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Prevent cross site scripting (XSS) attacks.",
@@ -132,7 +130,6 @@
         "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but must be publicly visible for our testing.",
         "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-library/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-library/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Nothing from my website will be cached in my client.",
@@ -190,7 +187,6 @@
         "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but must be publicly visible for our testing.",
         "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-stockchecker/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-stockchecker/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Set the content security policies to only allow loading of scripts and css from your server.",
@@ -236,7 +232,6 @@
         "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
         "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-messageboard/'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-messageboard/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Only allow your site to be loading in an iFrame on your own pages.",

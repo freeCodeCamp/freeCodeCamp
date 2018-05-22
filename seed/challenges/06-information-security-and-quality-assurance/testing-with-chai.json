@@ -11,7 +11,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Use assert.isNull() or assert.isNotNull() to make the tests pass."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -39,7 +38,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "Use assert.isDefined() or assert.isUndefined() to make the tests pass"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -72,7 +70,6 @@
         "Use assert.isOk() or assert.isNotOk() to make the tests pass.",
         ".isOk(truthy) and .isNotOk(falsey) will pass."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -106,7 +103,6 @@
         ".isTrue(true) and .isNotTrue(everything else) will pass.",
         ".isFalse() and .isNotFalse() also exist."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -139,7 +135,6 @@
         ".equal(), .notEqual()",
         ".equal() compares objects using '=='"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -176,7 +171,6 @@
         ".strictEqual(), .notStrictEqual()",
         ".strictEqual() compares objects using '==='"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -213,7 +207,6 @@
         ".deepEqual(), .notDeepEqual()",
         ".deepEqual() asserts that two object are deep equal"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -241,7 +234,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".isAbove() => a > b , .isAtMost() => a <= b"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -277,7 +269,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         ".isBelow() => a < b , .isAtLeast =>  a >= b"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -317,7 +308,6 @@
         "Choose the minimum range (3rd parameter) to make the test always pass",
         "it should be less than 1"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -344,7 +334,6 @@
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -371,7 +360,6 @@
       "description": [
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -399,7 +387,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a>.",
         "#isString asserts that the actual value is a string."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -432,7 +419,6 @@
         "#include (on #notInclude ) works for strings too !!",
         "It asserts that the actual string contains the expected substring"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -461,7 +447,6 @@
         "#match Asserts that the actual value",
         "matches the second argument regular expression."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -490,7 +475,6 @@
         "#property asserts that the actual object has a given property.",
         "Use #property or #notProperty where appropriate"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -523,7 +507,6 @@
         "#typeOf asserts that value’s type is the given string, as determined by Object.prototype.toString.",
         "Use #typeOf or #notTypeOf where appropriate"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -564,7 +547,6 @@
         "#instanceOf asserts that an object is an instance of a constructor.",
         "Use #instanceOf or #notInstanceOf where appropriate"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -601,7 +583,6 @@
         "Replace assert.fail(). Test the status and the text.response. Make the test pass.",
         "Don't send a name in the query, the endpoint with responds with 'hello Guest'."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -630,7 +611,6 @@
         "Replace assert.fail(). Test the status and the text.response. Make the test pass.",
         "Send you name in the query appending ?name=<your_name>, the endpoint with responds with 'hello <your_name>'."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -667,7 +647,6 @@
         "Check for 1) status, 2) type, 3) body.name, 4) body.surname",
         "Follow the assertion order above, We rely on it."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -706,7 +685,6 @@
         "Check for 1) status, 2) type, 3) body.name, 4) body.surname",
         "Follow the assertion order above, We rely on it."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -745,7 +723,6 @@
         "For these challenges we are using Zombie.JS. It's a lightweight browser which is totally based on JS, without relying on additional binaries to be installed. This feature makes it usable in an environment such as Glitch. There are many other (more powerful) options.<br>",
         "Look at the examples in the code for the exercise directions Follow the assertions order, We rely on it."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",
@@ -782,7 +759,6 @@
         "This exercise is similar to the preceding.",
         "Look at  the code for directions. Follow the assertions order, We rely on it."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All tests should pass",

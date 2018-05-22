@@ -11,7 +11,6 @@
         "During the development process, it is important to be able to check what’s going on in your code. Node is just a JavaScript environment. Like client side JavaScript, you can use the console to display useful debug information. On your local machine, you would see the console output in a terminal. On Glitch you can open the logs in the lower part of the screen. You can toggle the log panel with the button ‘Logs’ (top-left, under the app name).",
         "To get started, just print the classic \"Hello World\" in the console. We recommend to keep the log panel open while working at these challenges. Reading the logs you can be aware of the nature of the errors that may occur."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "<code>\"Hello World\"</code> should be in the console",
@@ -34,7 +33,6 @@
         "will serve the string 'Response String'.",
         "Use the <code>app.get()</code> method to serve the string Hello Express, to GET requests matching the / root path. Be sure that your code works by looking at the logs, then see the results in your browser, clicking the button ‘Show Live’ in the Glitch UI."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Your app should serve the string 'Hello Express'",
@@ -56,7 +54,6 @@
         "The file to send is <code>/views/index.html</code>. Try to ‘Show Live’ your app, you should see a big HTML heading (and a form that we will use later…), with no style applied.",
         "Note: You can edit the solution of the previous challenge, or create a new one. If you create a new solution, keep in mind that Express evaluates the routes from top to bottom. It executes the handler for the first match. You have to comment out the preceding solution, or the server will keep responding with a string."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Your app should serve the file views/index.html",
@@ -76,7 +73,6 @@
         "Mount the <code>express.static()</code> middleware for all the requests with <code>app.use()</code>. The absolute path to the assets folder is <code>__dirname + /public</code>.",
         "Now your app should be able to serve a CSS stylesheet. From outside the public folder will appear mounted to the root directory. Your front-page should look a little better now!"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Your app should serve asset files from the <code>/public</code> directory",
@@ -96,7 +92,6 @@
         "Let's create a simple API by creating a route that responds with JSON at the path <code>/json</code>. You can do it as usual, with the <code>app.get()</code> method. Inside the route handler use the method <code>res.json()</code>, passing in an object as an argument. This method closes the request-response loop, returning the data. Behind the scenes it converts a valid JavaScript object into a string, then sets the appropriate headers to tell your browser that you are serving JSON, and sends the data back. A valid object has the usual structure <code>{key: data}</code>. Data can ba a number, a string, a nested object or an array. Data can also be a variable or the result of a function call; in which case it will be evaluated before being converted into a string.",
         "Serve the object <code>{\"message\": \"Hello json\"}</code> as a response in JSON format, to the GET requests to the route <code>/json</code>. Then point your browser to your-app-url/json, you should see the message on the screen."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "The endpoint <code>/json</code> should serve the json object <code>{\"message\": \"Hello json\"}</code>",
@@ -116,7 +111,6 @@
         "The environment variables are accessible from the app as <code>process.env.VAR_NAME</code>. The <code>process.env</code> object is a global Node object, and variables are passed as strings. By convention, the variable names are all uppercase, with words separated by an underscore. The <code>.env</code> is a shell file, so you don’t need to wrap names or values in quotes. It is also important to note that there cannot be space around the equals sign when you are assigning values to your variables, e.g. <code>VAR_NAME=value</code>. Usually, you will put each variable definition on a separate line.",
         "Let's add an environment variable as a configuration option. Store the variable <code>MESSAGE_STYLE=uppercase</code> in the <code>.env</code> file. Then tell the GET <code>/json</code> route handler that you created in the last challenge to transform the response object’s message to uppercase if <code>process.env.MESSAGE_STYLE</code> equals <code>uppercase</code>. The response object should become <code>{\"message\": \"HELLO JSON\"}</code>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "The response of the endpoint <code>/json</code> should change according to the environment variable <code>MESSAGE_STYLE</code>",
@@ -140,7 +134,6 @@
         "Build a simple logger. For every request, it should log in the console a string taking the following format: <code>method path - ip</code>. An example would look like: <code>GET /json - ::ffff:127.0.0.1</code>. Note that there is a space between <code>method</code> and <code>path</code> and that the dash separating <code>path</code> and <code>ip</code> is surrounded by a space on either side. You can get the request method (http verb), the relative route path, and the caller’s ip from the request object, using <code>req.method</code>, <code>req.path</code> and <code>req.ip</code>. Remember to call <code>next()</code> when you are done, or your server will be stuck forever. Be sure to have the ‘Logs’ opened, and see what happens when some request arrives…",
         "Hint: Express evaluates functions in the order they appear in the code. This is true for middleware too. If you want it to work for all the routes, it should be mounted before them."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Root level logger middleware should be active",
@@ -163,7 +156,6 @@
         "In the route <code>app.get('/now', ...)</code> chain a middleware function and the final handler. In the middleware function you should add the current time to the request object in the <code>req.time</code> key. You can use <code>new Date().toString()</code>. In the handler, respond with a JSON object, taking the structure <code>{time: req.time}</code>.",
         "Hint: The test will not pass if you don’t chain the middleware. If you mount the function somewhere else, the test will fail, even if the output result is correct."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "The /now endpoint should have mounted middleware",
@@ -187,7 +179,6 @@
         "<blockquote>route_path: '/user/:userId/book/:bookId'<br>actual_request_URL: '/user/546/book/6754' <br>req.params: {userId: '546', bookId: '6754'}</blockquote>",
         "Build an echo server, mounted at the route <code>GET /:word/echo</code>. Respond with a JSON object, taking the structure <code>{echo: word}</code>. You can find the word to be repeated at <code>req.params.word</code>. You can test your route from your browser's address bar, visiting some matching routes, e.g. your-app-rootpath/freecodecamp/echo"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Test 1 : Your echo server should repeat words correctly",
@@ -212,7 +203,6 @@
         "Build an API endpoint, mounted at <code>GET /name</code>. Respond with a JSON document, taking the structure <code>{ name: 'firstname lastname'}</code>. The first and last name parameters should be encoded in a query string e.g. <code>?first=firstname&last=lastname</code>.",
         "TIP: In the following exercise we are going to receive data from a POST request, at the same <code>/name</code> route path. If you want you can use the method <code>app.route(path).get(handler).post(handler)</code>. This syntax allows you to chain different verb handlers on the same path route. You can save a bit of typing, and have cleaner code."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Test 1 : Your API endpoint should respond with the correct name",
@@ -241,7 +231,6 @@
         "Install the body-parser module in your package.json. Then require it at the top of the file. Store it in a variable named bodyParser.",
         "The middleware to handle url encoded data is returned by <code>bodyParser.urlencoded({extended: false})</code>. <code>extended=false</code> is a configuration option that tells the parser to use the classic encoding. When using it, values can be only strings or arrays. The extended version allows more data flexibility, but it is outmatched by JSON. Pass to <code>app.use()</code> the function returned by the previous method call. As usual, the middleware must be mounted before all the routes which need it."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "The 'body-parser' middleware should be mounted",
@@ -267,7 +256,6 @@
         "DELETE => Delete a resource.",
         "There are also a couple of other methods which are used to negotiate a connection with the server. Except from GET, all the other methods listed above can have a payload (i.e. the data into the request body). The body-parser middleware works with these methods as well."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Test 1 : Your API endpoint should respond with the correct name",

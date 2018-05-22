@@ -35,7 +35,6 @@
         "let dog = {\n  name: '',\n  numLegs: 4\n};"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -78,7 +77,6 @@
         "let dog = {\n  name: \"Spot\",\n  numLegs: 4\n};\nconsole.log(dog.name);\nconsole.log(dog.numLegs);"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -127,7 +125,6 @@
         "let dog = {\n  name: \"Spot\",\n  numLegs: 4,\n  sayLegs () {\n    return 'This dog has ' + this.numLegs + ' legs.';\n  }\n};\n\ndog.sayLegs();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -178,7 +175,6 @@
         "let dog = {\n  name: \"Spot\",\n  numLegs: 4,\n  sayLegs () {\n    return 'This dog has ' + this.numLegs + ' legs.';\n  }\n};\n\ndog.sayLegs();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -232,7 +228,6 @@
         "function Dog (name, color, numLegs) {\n  this.name = 'name';\n  this.color = 'color';\n  this.numLegs = 4;\n}"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -275,7 +270,6 @@
         "function Dog() {\n  this.name = \"Rupert\";\n  this.color = \"brown\";\n  this.numLegs = 4;\n}\nconst hound = new Dog();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -339,7 +333,6 @@
         "function Dog (name, color) {\n  this.numLegs = 4;\n  this.name = name;\n  this.color = color;\n}\n\nconst terrier = new Dog();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -385,7 +378,6 @@
         "function House(numBedrooms) {\n  this.numBedrooms = numBedrooms;\n}\nconst myHouse = new House(4);\nconsole.log(myHouse instanceof House);"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -438,7 +430,6 @@
         "function Bird(name) {\n  this.name = name;\n  this.numLegs = 2;\n}\n\nlet canary = new Bird(\"Tweety\");\nfunction getOwnProps (obj) {\n  const props = [];\n  \n  for (let prop in obj) {\n    if (obj.hasOwnProperty(prop)) {\n      props.push(prop);\n    }\n  }\n  \n  return props;\n}\n\nconst ownProps = getOwnProps(canary);"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -498,7 +489,6 @@
         "function Dog (name) {\n  this.name = name;\n}\nDog.prototype.numLegs = 4;\nlet beagle = new Dog(\"Snoopy\");"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -551,7 +541,6 @@
         "function Dog(name) {\n  this.name = name;\n}\n\nDog.prototype.numLegs = 4;\n\nlet beagle = new Dog(\"Snoopy\");\n\nlet ownProps = [];\nlet prototypeProps = [];\nfor (let prop in beagle) {\n  if (beagle.hasOwnProperty(prop)) {\n    ownProps.push(prop);\n  } else {\n    prototypeProps.push(prop);\n  }\n}"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -613,7 +602,6 @@
         "function Dog(name) {\n  this.name = name;\n}\nfunction joinDogFraternity(candidate) {\n  return candidate.constructor === Dog;\n}"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -673,7 +661,6 @@
         "function Dog(name) {\n  this.name = name; \n}\nDog.prototype = {\nnumLegs: 4,\n  eat () {\n    console.log('nom nom nom');\n  },\n  describe () {\n    console.log('My name is ' + this.name);\n  }\n};"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -718,7 +705,6 @@
         "function Dog(name) {\n  this.name = name; \n}\nDog.prototype = {\n  constructor: Dog,\n  numLegs: 2, \n  eat: function() {\n    console.log(\"nom nom nom\"); \n  }, \n  describe: function() {\n    console.log(\"My name is \" + this.name); \n  }\n};"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -770,7 +756,6 @@
         "function Dog(name) {\n  this.name = name;\n}\nlet beagle = new Dog(\"Snoopy\");\nDog.prototype.isPrototypeOf(beagle);"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -821,7 +806,6 @@
         "function Dog(name) {\n  this.name = name;\n}\nlet beagle = new Dog(\"Snoopy\");\nDog.prototype.isPrototypeOf(beagle);\nObject.prototype.isPrototypeOf(Dog.prototype);"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -880,7 +864,6 @@
         "function Cat(name) {\n  this.name = name; \n}\n\nCat.prototype = {\n  constructor: Cat\n};\n\nfunction Bear(name) {\n  this.name = name; \n}\n\nBear.prototype = {\n  constructor: Bear\n};\n\nfunction Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal,\n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -963,7 +946,6 @@
         "function Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal, \n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};\nlet duck = Object.create(Animal.prototype);\nlet beagle = Object.create(Animal.prototype);\n\nduck.eat();\nbeagle.eat();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1018,7 +1000,6 @@
         "function Animal() { }\n\nAnimal.prototype = {\n  constructor: Animal,\n  eat: function() {\n    console.log(\"nom nom nom\");\n  }\n};\n\nfunction Dog() { }\nDog.prototype = Object.create(Animal.prototype);\n\nlet beagle = new Dog();\nbeagle.eat();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1084,7 +1065,6 @@
         "function Animal() { }\nfunction Bird() { }\nfunction Dog() { }\nBird.prototype = Object.create(Animal.prototype);\nDog.prototype = Object.create(Animal.prototype);\nDog.prototype.constructor = Dog;\nBird.prototype.constructor = Bird;\nlet duck = new Bird();\nlet beagle = new Dog();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1155,7 +1135,6 @@
       "hints": [
         "Objects inherit methods from other objects by cloning their prototype. The Object.create method will come in handy, and don't forget to reset the constructor property afterward!"
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1220,7 +1199,6 @@
         "function Bird() { }\n\nBird.prototype.fly = function() { return \"I am flying!\"; };\n\nfunction Penguin() { }\nPenguin.prototype = Object.create(Bird.prototype);\nPenguin.prototype.constructor = Penguin;\nPenguin.prototype.fly = () => 'Alas, this is a flightless bird.';\nlet penguin = new Penguin();\nconsole.log(penguin.fly());"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1285,7 +1263,6 @@
         "let bird = {\n  name: \"Donald\",\n  numLegs: 2\n};\n\nlet boat = {\n  name: \"Warrior\",\n  type: \"race-boat\"\n};\nfunction glideMixin (obj) {\n  obj.glide = () => 'Gliding!';\n}\n\nglideMixin(bird);\nglideMixin(boat);"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1345,7 +1322,6 @@
         "function Bird() {\n  let weight = 15;\n  \n  this.getWeight = () => weight;\n}"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1391,7 +1367,6 @@
         "(function () {\n  console.log(\"A cozy nest is ready\");\n})();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1444,7 +1419,6 @@
         "const funModule = (function () {\n  return {\n    isCuteMixin: obj => {\n      obj.isCute = () => true;\n    },\n    singMixin: obj => {\n      obj.sing = () => console.log(\"Singing to an awesome tune\");\n    }\n  };\n})();"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},

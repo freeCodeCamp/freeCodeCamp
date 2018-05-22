@@ -15,7 +15,6 @@
         "Lastly, you should change your response to the request for the index route to <code>res.render</code> with the path to the view <em>views/pug/index.pug</em>.",
         "If all went as planned, you should refresh your apps home page and see a small message saying you're successfully rending the Pug from our Pug file! Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Pug is a dependency",
@@ -48,7 +47,6 @@
         "It should look like: <code>res.render(process.cwd() + '/views/pug/index', {title: 'Hello', message: 'Please login'});</code>",
         "Now refresh your page and you should see those values rendered in your view in the correct spot as laid out in your index.pug file! Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Pug render variables correct",
@@ -74,7 +72,6 @@
         "As well you can go ahead and tell your express app to <b>use</b> 'passport.initialize()' and 'passport.session()'. (For example, <code>app.use(passport.initialize());</code>)",
         "Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/338a9c5a326923c3826a666d430e65c3'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Passort and Express-session are dependencies",
@@ -110,7 +107,6 @@
         "NOTE: This deserializeUser will throw an error until we set up the DB in the next step so comment out the whole block and just call <code>done(null, null)</code> in the function deserializeUser.",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Serialize user function correct",
@@ -146,7 +142,6 @@
         "You can now uncomment the block in deserializeUser and remove your <code>done(null, null)</code>. Be sure to set <em>DATABASE</em> in your .env file to your database's connection string (for example: <code>DATABASE=mongodb://admin:pass@mlab.com:12345/my-project</code>). You can set up a free database on <a href='https://mlab.com/welcome/'>mLab</a>. Congratulations- you've finished setting up serialization!",
         "Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/e192e809a1d27cb80dc2c6d3467b7477'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Database connection is present",
@@ -173,7 +168,6 @@
         "Many strategies are set up using different settings, general it is easy to set it up based on the README in that strategies repository though. A good example of this is the Github strategy where we don't need to worry about a username or password because the user will be sent to Github's auth page to authenticate and as long as they are logged in and agree then Github returns their profile for us to use.",
         "In the next step we will set up how to actually call the authentication strategy to validate a user based on form data! Submit your page when you think you've got it right up to this point."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Passport-local is a dependency",
@@ -201,7 +195,6 @@
         "Now at this point if you enter a username and password in the form, it should redirect to the home page <em>/</em> and in the console of your server should be 'User {USERNAME} attempted to log in.' since we currently cannot login a user who isn't registered.",
         "Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/8a335d1a68ed9170da02bb9d8f5b71d5'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "All steps correctly implemented in the server.js",
@@ -229,7 +222,6 @@
         "<pre>app.route('/profile')\n  .get(ensureAuthenticated, (req,res) => {\n       res.render(process.cwd() + '/views/pug/profile');\n  });</pre>",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Middleware ensureAuthenticated should be implemented and on our /profile route",
@@ -255,7 +247,6 @@
         "Also in the profile, add a link to <em>/logout</em>. That route will host the logic to unauthenticate a user. <code>a(href='/logout') Logout</code>",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Correctly added a Pug render variable to /profile",
@@ -279,7 +270,6 @@
         "<pre>app.use((req, res, next) => {\n  res.status(404)\n    .type('text')\n    .send('Not Found');\n});</pre>",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Logout route",
@@ -306,7 +296,6 @@
         "<pre>app.route('/register')\n  .post((req, res, next) => {\n      db.collection('users').findOne({ username: req.body.username }, function (err, user) {\n          if(err) {\n              next(err);\n          } else if (user) {\n              res.redirect('/');\n          } else {\n              db.collection('users').insertOne(\n                {username: req.body.username,\n                 password: req.body.password},\n                (err, doc) => {\n                    if(err) {\n                        res.redirect('/');\n                    } else {\n                        next(null, user);\n                    }\n                }\n              )\n          }\n      })},\n    passport.authenticate('local', { failureRedirect: '/' }),\n    (req, res, next) => {\n        res.redirect('/profile');\n    }\n);</pre>",
         "Submit your page when you think you've got it right. If you're running into errors, you can check out the project completed up to this point <a href='https://gist.github.com/JosephLivengood/6c47bee7df34df9f11820803608071ed'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Register route and display on home",
@@ -345,7 +334,6 @@
         "Finally on our authentication strategy we check for the following in our code before completing the process: <code>if (password !== user.password) { return done(null, false); }</code>. After making the previous changes, now <code>user.password</code> is a hash. Before making a change to the existing code, notice how the statement is checking if the password is NOT equal then return non-authenticated. With this in mind your code could look as follows to properly check the password entered against the hash: <code>if (!bcrypt.compare(password, user.password)) { return done(null, false); }</code>",
         "That is all it takes to implement one of the most important security features when you have to store passwords! Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "BCrypt is a dependency",
@@ -376,7 +364,6 @@
         "Now do the same thing in your auth.js file with all of the things related to authentication such as the serialization and the setting up of the local strategy and erase them from your server file. Be sure to add the dependencies in and call <code>auth(app,db)</code> in the server in the same spot. Be sure to have <code>auth(app, db)</code> before <code>routes(app, db)</code> since our registration route depends on passport being initiated!",
         "Congratulations- you're at the end of this section of Advanced Node and Express and have some beautiful code to show for it! Submit your page when you think you've got it right. If you're running into errors, you can check out an example of the completed project <a href='https://glitch.com/#!/project/delicious-herring'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Modules present",
@@ -400,7 +387,6 @@
         "An example of how '/auth/github/callback' should look is similar to how we handled a normal login in our last project: <pre>app.route('/login')\n  .post(passport.authenticate('local', { failureRedirect: '/' }), (req,res) => { \n    res.redirect('/profile'); \n  });</pre>",
         "Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/28ea2cae7e1dc6a53d7f0c42d987313b'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Route /auth/github correct",
@@ -427,7 +413,6 @@
         "Your authentication won't be successful yet, and actually throw an error, without the database logic and callback, but it should log to your console your Github profile if you try it!",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Dependency added",
@@ -457,7 +442,6 @@
         "With a findAndModify, it allows you to search for an object and update it, as well as upsert the object if it doesn't exist and receive the new object back each time in our callback function. In this example, we always set the last_login as now, we always increment the login_count by 1, and only when we insert a new object(new user) do we populate the majority of the fields. Something to notice also is the use of default values. Sometimes a profile returned won't have all the information filled out or it will have been chosen by the user to remain private; so in this case we have to handle it to prevent an error.",
         "You should be able to login to your app now- try it! Submit your page when you think you've got it right. If you're running into errors, you can check out an example of this mini-project's finished code <a href='https://glitch.com/#!/project/guttural-birch'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Github strategy setup complete",
@@ -482,7 +466,6 @@
         "<strong>Note</strong><br><code>io()</code> works only when connecting to a socket hosted on the same url/server. For connecting to an external socket hosted elsewhere, you would use <code>io.connect('URL');</code>.",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Socket.IO is a dependency",
@@ -519,7 +502,6 @@
         "Now try loading up your app and authenticate and you should see in your client console '1' representing the current user count! Try loading more clients up and authenticating to see the number go up.",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "currentUsers is defined",
@@ -550,7 +532,6 @@
         "<strong>Note</strong><br>Just like 'disconnect', all other events that a socket can emit to the server should be handled within the connecting listener where we have 'socket' defined.",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Server handles the event disconnect from a socket",
@@ -577,7 +558,6 @@
         "The user object is now accessible on your socket object as <code>socket.request.user</code>. For example, now you can add the following: <code>console.log('user ' + socket.request.user.name + ' connected');</code> and it will log to the server console who has connected!",
         "Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/a9e69ff91337500d5171e29324e1ff35'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "passportSocketIo is a dependency",
@@ -608,7 +588,6 @@
         "An implementation of this could look like the following:<pre>socket.on('user', function(data){\n  $('#num-users').text(data.currentUsers+' users online');\n  var message = data.name;\n  if(data.connected) {\n    message += ' has joined the chat.';\n  } else {\n    message += ' has left the chat.';\n  }\n  $('#messages').append($('&#60;li&#62;').html('&#60;b&#62;'+ message +'&#60;\\/b&#62;'));\n});</pre>",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Event 'user' is emitted with name, currentUsers, and connected",
@@ -635,7 +614,6 @@
         "On your client now again, you should now listen for event 'chat message' and when received, append a list item to <code>#messages</code> with the name a colon and the message!",
         "At this point the chat should be fully functional and sending messages across all clients! Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/3e4b7750f6cd42feaa2768458d682136'>here for the server</a> and <a href='https://gist.github.com/JosephLivengood/41ba76348df3013b7870dc64861de744'>here for the client</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Server listens for 'chat message' then emits it properly",
