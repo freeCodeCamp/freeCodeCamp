@@ -2,6 +2,7 @@
 // no import here as this runs without babel
 const fs = require('fs');
 const path = require('path');
+const omit = require('lodash/omit');
 
 const hiddenFile = /(^(\.|\/\.))|(.md$)/g;
 
@@ -52,6 +53,24 @@ module.exports = function getChallenges(challengesDir) {
       challengeSpec.fileName = data.file;
       challengeSpec.superBlock = superInfo.name;
       challengeSpec.superOrder = superInfo.order;
+      challengeSpec.challenges = challengeSpec.challenges
+        .map(challenge => omit(
+          challenge,
+          [
+            'betaSolutions',
+            'betaTests',
+            'hints',
+            'MDNlinks',
+            'null',
+            'rawSolutions',
+            'react',
+            'reactRedux',
+            'redux',
+            'releasedOn',
+            'translations',
+            'type'
+          ]
+        ));
       return challengeSpec;
     });
 };
