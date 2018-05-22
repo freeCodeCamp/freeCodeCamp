@@ -29,16 +29,16 @@ module.exports = function enableAuthentication(app) {
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
 
-  router.get('/signup', (req, res) => res.redirect(301, '/login'));
-  router.get('/email-signin', (req, res) => res.redirect(301, '/login'));
-  router.get('/signin', (req, res) => res.redirect(301, '/login'));
-  router.get('/signout', (req, res) => res.redirect(301, '/logout'));
+  router.get('/signup', (req, res) => res.redirect(301, '/signin'));
+  router.get('/email-signin', (req, res) => res.redirect(301, '/signin'));
+  router.get('/login', (req, res) => res.redirect(301, '/signin'));
+  router.get('/logout', (req, res) => res.redirect(301, '/signout'));
 
-  router.get('/login',
+  router.get('/signin',
   ifUserRedirect,
   (req, res) => res.redirect(301, '/auth/auth0'));
 
-  router.get('/logout', (req, res) => {
+  router.get('/signout', (req, res) => {
     req.logout();
     res.redirect('/');
   });

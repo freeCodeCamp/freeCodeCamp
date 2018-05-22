@@ -53,6 +53,24 @@ export default function(UserIdent) {
       const email = profile.emails[0].value;
       return User.findOne$({ where: { email } })
         .flatMap(user => {
+          return user ?
+            Observable.of(user) :
+            User.create$({ email }).toPromise();
+        })
+        .flatMap(user => {
+          if (!user) {
+            throw wrapHandledError(
+              new Error('could not find or create a user'),
+              {
+                message: dedent`
+                  Oops... something is not right. We could not find or create a
+                  user with that email.
+                `,
+                type: 'info',
+                redirectTo: '/'
+              }
+            );
+          }
           const createToken = observeQuery(
             AccessToken,
             'create',
@@ -62,17 +80,16 @@ export default function(UserIdent) {
               ttl: user.constructor.settings.ttl
             }
           );
-          if (!user) {
-            return Observable.combineLatest(
-              User.create$({ email }),
-              createToken,
-              (user, token) => ({ user, token })
-            );
-          }
+          const updateUser = user.update$({
+            emailVerified: true,
+            emailAuthLinkTTL: null,
+            emailVerifyTTL: null
+          });
           return Observable.combineLatest(
             Observable.of(user),
             createToken,
-            (user, token) => ({ user, token })
+            updateUser,
+            (user, token) => ({user, token})
           );
         })
         .subscribe(
@@ -90,10 +107,9 @@ export default function(UserIdent) {
               {
                 message: dedent`
                   New accounts can only be created using an email address.
-                  Please create an account below
                 `,
                 type: 'info',
-                redirectTo: '/signup'
+                redirectTo: '/'
               }
             );
           }
@@ -113,7 +129,7 @@ export default function(UserIdent) {
                   new Error('user identity is not associated with a user'),
                   {
                     type: 'info',
-                    redirectTo: '/signup',
+                    redirectTo: '/',
                     message: dedent`
     The user account associated with the ${provider} user ${username || 'Anon'}
     no longer exists.
