@@ -4,9 +4,6 @@ Joi.objectId = require('joi-objectid')(Joi);
 const schema = Joi.object().keys({
   block: Joi.string(),
   blockId: Joi.objectId(),
-  challengeSeed: Joi.array().items(
-    Joi.string().allow('')
-  ),
   challengeType: Joi.number().min(0).max(9).required(),
   checksum: Joi.number(),
   dashedName: Joi.string(),
@@ -20,15 +17,21 @@ const schema = Joi.object().keys({
       key: Joi.string(),
       ext: Joi.string(),
       name: Joi.string(),
-      head: Joi.string().allow(''),
-      tail: Joi.string().allow(''),
-      contents: Joi.string().allow('')
+      head: [
+        Joi.array().items(Joi.string().allow('')),
+        Joi.string().allow('')
+      ],
+      tail: [
+        Joi.array().items(Joi.string().allow('')),
+        Joi.string().allow('')
+      ],
+      contents: [
+        Joi.array().items(Joi.string().allow('')),
+        Joi.string().allow('')
+      ]
     })
   ),
   guideUrl: Joi.string().uri({ scheme: 'https' }),
-  head: Joi.array().items(
-    Joi.string().allow('')
-  ),
   helpRoom: Joi.string(),
   id: Joi.objectId().required(),
   isBeta: Joi.bool(),
@@ -52,13 +55,16 @@ const schema = Joi.object().keys({
   superBlock: Joi.string(),
   superOrder: Joi.number(),
   suborder: Joi.number(),
-  tail: Joi.array().items(
-    Joi.string().allow('')
-  ),
   tests: Joi.array().items(
+    // public challenges
     Joi.object().keys({
       text: Joi.string().required(),
       testString: Joi.string().allow('').required()
+    }),
+    // our tests used in certification verification
+    Joi.object().keys({
+      id: Joi.string().required(),
+      title: Joi.string().required()
     })
   ),
   template: Joi.string(),
