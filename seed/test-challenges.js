@@ -8,6 +8,7 @@ import getChallenges from './getChallenges';
 import MongoIds from './mongoIds';
 import ChallengeTitles from './challengeTitles';
 import addAssertsToTapTest from './addAssertsToTapTest';
+import { validateChallenge } from './schema/challengeSchema';
 
 // modern challengeType
 const modern = 6;
@@ -203,6 +204,15 @@ function createTest({
 }
 
 Observable.from(getChallenges())
+  .do(({ challenges }) => {
+    challenges.forEach(challenge => {
+      const result = validateChallenge(challenge);
+      if (result.error) {
+        console.log(result.value);
+        throw new Error(result.error);
+      }
+    });
+  })
   .flatMap(challengeSpec => {
     return Observable.from(challengeSpec.challenges);
   })
