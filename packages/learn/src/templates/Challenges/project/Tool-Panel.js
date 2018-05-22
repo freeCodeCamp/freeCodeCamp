@@ -31,7 +31,11 @@ export class ToolPanel extends PureComponent {
     return (
       <div className='tool-panel'>
         <div id='left-tool-panel sub-panel'>
-          <Button bsStyle='default' onClick={toggleMapModal}>
+          <Button
+            bsStyle='primary'
+            className='btn-primary-invert'
+            onClick={toggleMapModal}
+            >
             View the Curriculum
           </Button>
         </div>
@@ -41,7 +45,7 @@ export class ToolPanel extends PureComponent {
             <Button
               block={true}
               bsStyle='primary'
-              className='btn-primary-ghost btn-big'
+              className='btn-primary-invert'
               href={guideUrl}
               target='_blank'
               >
@@ -51,10 +55,10 @@ export class ToolPanel extends PureComponent {
           <Button
             block={true}
             bsStyle='primary'
-            className='btn-primary-ghost btn-big'
+            className='btn-primary-invert'
             onClick={openHelpModal}
             >
-            Ask for help on the forum
+            Ask for help
           </Button>
         </div>
       </div>

@@ -634,3 +634,22 @@ pre tt:after {
   font-size: 28px;
   text-shadow: none;
 }
+
+.btn-primary-invert {
+  color: #006400;
+  background-color: #fff;
+  border-color: #006400;
+}
+
+.btn-primary-invert:hover, .btn-primary-invert:focus, .btn-primary-invert:active {
+  color: #006400;
+  border-color: #006400;
+}
+
+.btn-primary-invert.btn-primary:hover {
+  color: #fff;
+}
+
+.btn-primary-link > a {
+  color: #fff;
+}

@@ -7,6 +7,16 @@
   background-color: #99C199;
 }
 
-.centre-tool-panel {
+#centre-tool-panel {
   width: 300px;
+}
+
+#right-tool-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#right-tool-panel a, #right-tool-panel .btn-block {
+  margin: 0;
 }

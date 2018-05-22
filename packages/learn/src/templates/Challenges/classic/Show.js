@@ -171,13 +171,12 @@ class ShowClassic extends PureComponent {
     return (
       <Fragment>
         <Helmet title={`${blockNameTitle} | Learn freeCodeCamp`} />
-        <ToolPanel />
+        <ToolPanel guideUrl={guideUrl} />
         <ReflexContainer orientation='vertical'>
           <ReflexElement flex={1}>
             <SidePanel
               className='full-height'
               description={description}
-              guideUrl={guideUrl}
               title={blockNameTitle}
             />
           </ReflexElement>

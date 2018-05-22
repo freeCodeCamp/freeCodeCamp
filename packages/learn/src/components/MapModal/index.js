@@ -45,7 +45,7 @@ function MapModal({ introNodes, nodes, show, toggleMapModal }) {
       >
       <Modal.Header className='map-modal-header fcc-modal' closeButton={true}>
         <Modal.Title className='text-center'>
-          A Map to Learn to Code
+          A Curriculum to Learn to Code
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>

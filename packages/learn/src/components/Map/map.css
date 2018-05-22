@@ -23,3 +23,7 @@
 li.open > .map-title svg {
   transform: rotate(90deg);
 }
+
+.map-challenge-title {
+  margin-bottom: 0.25rem;
+}

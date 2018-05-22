@@ -14,6 +14,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
       executeChallenge,
+      openHelpModal: () => openModal('help'),
       openResetModal: () => openModal('reset'),
       toggleMapModal
     },
@@ -22,19 +23,31 @@ const mapDispatchToProps = dispatch =>
 
 const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
+  guideUrl: PropTypes.string,
+  openHelpModal: PropTypes.func.isRequired,
   openResetModal: PropTypes.func.isRequired,
   toggleMapModal: PropTypes.func.isRequired
 };
 
-function ToolPanel({ executeChallenge, openResetModal, toggleMapModal }) {
+function ToolPanel({
+  executeChallenge,
+  openHelpModal,
+  openResetModal,
+  toggleMapModal,
+  guideUrl
+}) {
   return (
     <div className='tool-panel'>
-      <div id='left-tool-panel sub-panel'>
-        <Button bsStyle='default' onClick={toggleMapModal}>
+      <div id='left-tool-panel'>
+        <Button
+          bsStyle='primary'
+          className='btn-primary-invert'
+          onClick={toggleMapModal}
+          >
           View the Curriculum
         </Button>
       </div>
-      <div id='centre-tool-panel sub-panel'>
+      <div id='centre-tool-panel'>
         <Button bsStyle='primary' onClick={executeChallenge}>
           Run the Tests
         </Button>
@@ -42,7 +55,27 @@ function ToolPanel({ executeChallenge, openResetModal, toggleMapModal }) {
           Reset All Code
         </Button>
       </div>
-      <div id='right-tool-panel sub-panel' />
+      <div id='right-tool-panel'>
+        {guideUrl ? (
+          <Button
+            block={true}
+            bsStyle='primary'
+            className='btn-primary-invert'
+            href={guideUrl}
+            target='_blank'
+            >
+            Get a hint
+          </Button>
+        ) : null}
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-primary-invert'
+          onClick={openHelpModal}
+          >
+          Ask for help
+        </Button>
+      </div>
     </div>
   );
 }

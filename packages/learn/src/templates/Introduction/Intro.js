@@ -55,15 +55,19 @@ function IntroductionPage({
         />
       </FullWidthRow>
       <FullWidthRow>
-        <Link to={firstLessonPath}>
-          <Button block={true} bsSize='lg' bsStyle='primary'>
-            Go to the first lesson
-          </Button>
+        <Link className='btn btn-lg btn-primary btn-block' to={firstLessonPath}>
+          Go to the first lesson
         </Link>
         <ButtonSpacer />
-        <Button block={true} bsSize='sm' onClick={toggleMapModal}>
+        <Button
+          block={true}
+          bsSize='lg'
+          className='btn-primary-invert'
+          onClick={toggleMapModal}
+          >
           View the curriculum
         </Button>
+        <ButtonSpacer />
         <hr />
       </FullWidthRow>
       <FullWidthRow>
