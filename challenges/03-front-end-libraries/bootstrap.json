@@ -35,7 +35,6 @@
           "testString": "assert($(\".container-fluid\").children().length >= 8, 'Make sure you have nested all HTML elements after the closing <code>style</code> tag in <code>.container-fluid</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -159,7 +158,6 @@
           "testString": "assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2, 'Make sure your new <code>img</code> element has a closing angle bracket.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -267,7 +265,6 @@
           "testString": "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should still have the class <code>red-text</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -377,7 +374,6 @@
           "testString": "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -494,7 +490,6 @@
           "testString": "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -620,7 +615,6 @@
           "testString": "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -736,7 +730,6 @@
           "testString": "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -852,7 +845,6 @@
           "testString": "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -972,7 +964,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -1104,7 +1095,6 @@
           "testString": "assert($(\".img-responsive\").length > 1, 'Add the <code>img-responsive</code> class to your top image.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -1239,7 +1229,6 @@
           "testString": "assert(code.match(/<\\/span>/g) && code.match(/<span/g) && code.match(/<\\/span>/g).length === code.match(/<span/g).length, 'Make sure your <code>span</code> element has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -1365,7 +1354,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -1498,7 +1486,6 @@
           "testString": "assert(code.match(/<\\/i>|<\\/span>/g), 'Make sure your icon element has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -1623,7 +1610,6 @@
           "testString": "assert(code.match(/<\\/i>|<\\/span/g) && code.match(/<\\/i|<\\/span>/g).length > 2 && ($(\".btn-primary > i\").is(\".fa.fa-thumbs-up\") || $(\".btn-primary > span\").is(\".fa.fa-thumbs-up\")), 'Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class=\"fa fa-thumbs-up\"&#62;&#60;/i&#62;</code> is in your like button element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -1738,7 +1724,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -1852,7 +1837,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -1979,7 +1963,6 @@
           "testString": "assert(code.match(/<\\/i>/g) && code.match(/<\\/i/g).length > 3, 'Make sure each of your <code>i</code> elements has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2113,7 +2096,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'Make sure each of your <code>div</code> elements has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2248,7 +2230,6 @@
           "testString": "assert.isTrue((/jquery(\\s)+playground/gi).test($(\"h3\").text()), 'Your <code>h3</code> element should have the text <code>jQuery Playground</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2302,7 +2283,6 @@
           "testString": "assert($(\"div\").children(\"h3\").length >0, 'Nest your <code>h3</code> element inside a <code>div</code> element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2360,7 +2340,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'Make sure your <code>div</code> element has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2412,7 +2391,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2470,7 +2448,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<div/g) && code.match(/<\\/div>/g).length === code.match(/<div/g).length, 'Make sure all your <code>div</code> elements have closing tags.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2532,7 +2509,6 @@
           "testString": "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'Make sure all your <code>button</code> elements have closing tags.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2598,7 +2574,6 @@
           "testString": "assert($(\".btn-default\").length > 5, 'Apply the <code>btn-default</code> class to each of your <code>button</code> elements.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2661,7 +2636,6 @@
           "testString": "assert($(\".target\").length > 5, 'Apply the <code>target</code> class to each of your <code>button</code> elements.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2731,7 +2705,6 @@
           "testString": "assert($(\".col-xs-6\").children(\"#right-well\") && $(\".col-xs-6\").children(\"#right-well\").length > 0, 'Give your right <code>well</code> the id of <code>right-well</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2814,7 +2787,6 @@
           "testString": "assert(code.match(/<\\/h4>/g) && code.match(/<h4/g) && code.match(/<\\/h4>/g).length === code.match(/<h4/g).length, 'Make sure all your <code>h4</code> elements have closing tags.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2901,7 +2873,6 @@
           "testString": "assert($(\"#right-well\").children(\"#target6\") && $(\"#right-well\").children(\"#target6\").length > 0, 'One <code>button</code> element should have the id <code>target6</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -2987,7 +2958,6 @@
           "testString": "assert(new RegExp(\"#target6\",\"gi\").test($(\"#target6\").text()), 'Give your <code>button</code> element with the id <code>target6</code> the text <code>#target6</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {
@@ -3065,7 +3035,6 @@
           "testString": "assert(code.match(/<!--/g).length === code.match(/-->/g).length, 'You should have the same number of comment openers and closers.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "es": {

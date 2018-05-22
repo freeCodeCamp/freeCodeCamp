@@ -19,7 +19,6 @@
         "All field-names must use double-quotes (\"), e.g. \"author\"",
         "All fields must be separated with a comma (,)"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"author\" key",
@@ -43,7 +42,6 @@
         "Add a description to the package.json in your Glitch project.",
         "Remember to use double-quotes for field-names (\") and commas (,) to separate fields."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"description\" key",
@@ -67,7 +65,6 @@
         "Add an array of suitable strings to the keywords-field in the package.json of your Glitch project.",
         "One of the keywords should be freecodecamp."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"keywords\" key",
@@ -100,7 +97,6 @@
         "Instructions",
         "Fill the license-field in the package.json of your Glitch project as you find suitable."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"license\" key",
@@ -122,7 +118,6 @@
         "Instructions",
         "Add a version to the package.json in your Glitch project."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"version\" key",
@@ -148,7 +143,6 @@
         "Add version 2.14.0 of the package moment to the dependencies-field of your package.json",
         "Moment is a handy library for working with time and dates."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
@@ -183,7 +177,6 @@
         "Instructions",
         "In the dependencies-section of your package.json, change the version of moment to match MAJOR version 2, MINOR version 10 and PATCH version 2"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
@@ -211,7 +204,6 @@
         "Use the tilde-character (~) to prefix the version of moment in your dependencies and allow npm to update it to any new PATCH release.",
         "Note that the version numbers themselves not should be changed."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
@@ -239,7 +231,6 @@
         "Use the caret-character (^) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.",
         "Note that the version numbers themselves not should be changed."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
@@ -266,7 +257,6 @@
         "Remove the package moment from your dependencies.",
         "Make sure you have the right amount of commas after removing it."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should not include \"moment\"",

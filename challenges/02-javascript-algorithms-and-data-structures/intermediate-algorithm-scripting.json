@@ -42,7 +42,6 @@
           "testString": "assert.deepEqual(sumAll([10, 5]), 45, '<code>sumAll([10, 5])</code> should return 45.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Math.max()",
         "Math.min()",
@@ -158,7 +157,6 @@
           "testString": "assert(diffArray([1, \"calf\", 3, \"piglet\"], [7, \"filly\"]).length === 6, '<code>[1, \"calf\", 3, \"piglet\"], [7, \"filly\"]</code> should return an array with six items.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Comparison Operators",
         "Array.prototype.slice()",
@@ -237,7 +235,6 @@
           "testString": "assert.deepEqual(destroyer([\"possum\", \"trollo\", 12, \"safari\", \"hotdog\", 92, 65, \"grandma\", \"bugati\", \"trojan\", \"yacht\"], \"yacht\", \"possum\", \"trollo\", \"safari\", \"hotdog\", \"grandma\", \"bugati\", \"trojan\"), [12,92,65], '<code>destroyer([\"possum\", \"trollo\", 12, \"safari\", \"hotdog\", 92, 65, \"grandma\", \"bugati\", \"trojan\", \"yacht\"], \"yacht\", \"possum\", \"trollo\", \"safari\", \"hotdog\", \"grandma\", \"bugati\", \"trojan\")</code> should return <code>[12,92,65]</code>.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function destroyer(arr) {\n  var hash = Object.create(null);\n  [].slice.call(arguments, 1).forEach(function(e) {\n    hash[e] = true;\n  });\n  // Remove all the values\n  return arr.filter(function(e) { return !(e in hash);});\n}\n\ndestroyer([1, 2, 3, 1, 2, 3], 2, 3);\n"
@@ -319,7 +316,6 @@
           "testString": "assert.deepEqual(whatIsInAName([{ \"a\": 1, \"b\": 2, \"c\": 3 }], { \"a\": 1, \"b\": 9999, \"c\": 3 }), [], '<code>whatIsInAName([{\"a\": 1, \"b\": 2, \"c\": 3}], {\"a\": 1, \"b\": 9999, \"c\": 3})</code> should return <code>[]</code>');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Global Object",
         "Object.prototype.hasOwnProperty()",
@@ -400,7 +396,6 @@
           "testString": "assert.strictEqual(spinalCase(\"AllThe-small Things\"), \"all-the-small-things\", '<code>spinalCase(\"AllThe-small Things\")</code> should return <code>\"all-the-small-things\"</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "RegExp",
         "String.prototype.replace()"
@@ -485,7 +480,6 @@
           "testString": "assert.deepEqual(translatePigLatin(\"rhythm\"), \"rhythmay\", 'Should handle words without vowels.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Array.prototype.indexOf()",
         "Array.prototype.push()",
@@ -570,7 +564,6 @@
           "testString": "assert.deepEqual(myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\"), \"Let us get back to more Algorithms\", '<code>myReplace(\"Let us get back to more Coding\", \"Coding\", \"algorithms\")</code> should return \"Let us get back to more Algorithms\".');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Array.prototype.splice()",
         "String.prototype.replace()",
@@ -647,7 +640,6 @@
           "testString": "assert.deepEqual(pairElement(\"CTCTA\"),[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]], '<code>pairElement(\"CTCTA\")</code> should return <code>[[\"C\",\"G\"],[\"T\",\"A\"],[\"C\",\"G\"],[\"T\",\"A\"],[\"A\",\"T\"]]</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Array.prototype.push()",
         "String.prototype.split()"
@@ -728,7 +720,6 @@
           "testString": "assert.isUndefined(fearNotLetter('abcdefghijklmnopqrstuvwxyz'), '<code>fearNotLetter(\"abcdefghijklmnopqrstuvwxyz\")</code> should return undefined.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "String.prototype.charCodeAt()",
         "String.fromCharCode()"
@@ -801,7 +792,6 @@
           "testString": "assert.deepEqual(uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]), [1, 2, 3, 5, 4, 6, 7, 8], '<code>uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])</code> should return <code>[1, 2, 3, 5, 4, 6, 7, 8]</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Arguments object",
         "Array.prototype.reduce()"
@@ -887,7 +877,6 @@
           "testString": "assert.strictEqual(convertHTML('abc'), 'abc', '<code>convertHTML(\"abc\")</code> should return <code>abc</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "RegExp",
         "HTML Entities",
@@ -967,7 +956,6 @@
           "testString": "assert(sumFibs(75025) === 135721, '<code>sumFibs(75025)</code> should return 135721.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Remainder"
       ],
@@ -1036,7 +1024,6 @@
           "testString": "assert.deepEqual(sumPrimes(977), 73156, '<code>sumPrimes(977)</code> should return 73156.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "For Loops",
         "Array.prototype.push()"
@@ -1118,7 +1105,6 @@
           "testString": "assert.deepEqual(smallestCommons([23, 18]), 6056820, '<code>smallestCommons([23, 18])</code> should return 6056820.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Smallest Common Multiple"
       ],
@@ -1199,7 +1185,6 @@
           "testString": "assert.deepEqual(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}), [3, 9, 2], '<code>dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;})</code> should return <code>[3, 9, 2]</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Arguments object",
         "Array.prototype.shift()",
@@ -1271,7 +1256,6 @@
           "testString": "assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4], '<code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Array.isArray()"
       ],
@@ -1332,7 +1316,6 @@
           "testString": "assert.deepEqual(binaryAgent('01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001'), \"I love FreeCodeCamp!\", '<code>binaryAgent(\"01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001\")</code> should return \"I love FreeCodeCamp!\"');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "String.prototype.charCodeAt()",
         "String.fromCharCode()"
@@ -1426,7 +1409,6 @@
         }
       ],
       "isRequired": true,
-      "type": "bonfire",
       "MDNlinks": [
         "Truthy",
         "Falsy"
@@ -1505,7 +1487,6 @@
           "testString": "assert.isUndefined(addTogether(2)([3]), '<code>addTogether(2)([3])</code> should return undefined.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Closures",
         "Arguments object"
@@ -1620,7 +1601,6 @@
           "testString": "assert.strictEqual((function () { bob.setFullName(\"Haskell Curry\"); return bob.getLastName(); })(), 'Curry', '<code>bob.getLastName()</code> should return \"Curry\" after <code>bob.setFullName(\"Haskell Curry\")</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Closures",
         "Details of the Object Model"
@@ -1707,7 +1687,6 @@
           "testString": "assert.deepEqual(orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}]), [{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}], '<code>orbitalPeriod([{name: \"iss\", avgAlt: 413.6}, {name: \"hubble\", avgAlt: 556.7}, {name: \"moon\", avgAlt: 378632.553}])</code> should return <code>[{name : \"iss\", orbitalPeriod: 5557}, {name: \"hubble\", orbitalPeriod: 5734}, {name: \"moon\", orbitalPeriod: 2377399}]</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Math.pow()"
       ],

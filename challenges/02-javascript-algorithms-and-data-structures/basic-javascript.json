@@ -31,7 +31,6 @@
           "testString": "assert(code.match(/(\\/\\*)([^\\*\\/]{5,})(?=\\*\\/)/gm), 'Create a <code>/* */</code> style comment that contains at least five letters.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -98,7 +97,6 @@
           "testString": "assert(/var\\s+myName\\s*;/.test(code), 'You should declare <code>myName</code> with the <code>var</code> keyword, ending with a semicolon');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -183,7 +181,6 @@
           "testString": "assert(/b\\s*=\\s*a\\s*;/g.test(code), '<code>a</code> should be assigned to <code>b</code> with <code>=</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -248,7 +245,6 @@
           "testString": "assert(/var\\s+a\\s*=\\s*9\\s*/.test(code), 'Initialize <code>a</code> to a value of <code>9</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -311,7 +307,6 @@
           "testString": "assert(/a = a \\+ 1;/.test(code) && /b = b \\+ 5;/.test(code) && /c = c \\+ \" String!\";/.test(code), 'Do not change code below the line');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -391,7 +386,6 @@
           "testString": "assert(code.match(/titleCaseOver/g).length === 2, '<code>titleCaseOver</code> should use camelCase in both declaration and assignment sections.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -454,7 +448,6 @@
           "testString": "assert(/\\+/.test(code), 'Use the <code>+</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -508,7 +501,6 @@
           "testString": "assert(/var\\s*difference\\s*=\\s*45\\s*-\\s*[0-9]*;(?!\\s*[a-zA-Z0-9]+)/.test(code),'Only subtract one number from 45.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -563,7 +555,6 @@
           "testString": "assert(/\\*/.test(code), 'Use the <code>*</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -618,7 +609,6 @@
           "testString": "assert(/\\d+\\s*\\/\\s*\\d+/.test(code), 'Use the <code>/</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -682,7 +672,6 @@
           "testString": "assert(/var myVar = 87;/.test(code), 'Do not change code above the line');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -751,7 +740,6 @@
           "testString": "assert(/var myVar = 11;/.test(code), 'Do not change code above the line');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -808,7 +796,6 @@
           "testString": "assert(myDecimal % 1 != 0, '<code>myDecimal</code> should have a decimal point'); "
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -862,7 +849,6 @@
           "testString": "assert(/\\*/.test(code), 'You should use the <code>*</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -915,7 +901,6 @@
           "testString": "assert(code.match(/quotient/g).length === 1, 'The quotient variable should only be assigned once');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -975,7 +960,6 @@
           "testString": "assert(/\\s+?remainder\\s*?=\\s*?.*%.*;/.test(code), 'You should use the <code>%</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1048,7 +1032,6 @@
           "testString": "assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), 'Do not modify the code above the line');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1125,7 +1108,6 @@
           "testString": "assert(/var a = 11;/.test(code) && /var b = 9;/.test(code) && /var c = 3;/.test(code), 'Do not modify the code above the line');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1202,7 +1184,6 @@
           "testString": "assert(/var a = 5;/.test(code) && /var b = 12;/.test(code) && /var c = 4\\.6;/.test(code), 'Do not modify the code above the line');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1279,7 +1260,6 @@
           "testString": "assert(/var a = 48;/.test(code) && /var b = 108;/.test(code) && /var c = 33;/.test(code), 'Do not modify the code above the line');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1341,7 +1321,6 @@
           "testString": "assert((function(){if(typeof myLastName !== \"undefined\" && typeof myLastName === \"string\" && myLastName.length > 0){return true;}else{return false;}})(), '<code>myLastName</code> should be a string with at least one character in it.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1400,7 +1379,6 @@
           "testString": "assert(myStr === \"I am a \\\"double quoted\\\" string inside \\\"double quotes\\\".\", 'Variable myStr should contain the string: <code>I am a \"double quoted\" string inside \"double quotes\".</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1470,7 +1448,6 @@
           "testString": "assert(code.match(/\"/g).length === 4 && code.match(/'/g).length === 2, 'You should have two single quotes <code>&#39;</code> and four double quotes <code>&quot;</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1546,7 +1523,6 @@
           "testString": "assert(/SecondLine\\nThirdLine/.test(myStr), 'There should be a newline character between <code>SecondLine</code> and <code>ThirdLine</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1612,7 +1588,6 @@
           "testString": "assert(/myStr\\s*=/.test(code), 'Make sure to assign the result to the <code>myStr</code> variable.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1678,7 +1653,6 @@
           "testString": "assert(code.match(/\\w\\s*\\+=\\s*[\"']/g).length > 1 && code.match(/\\w\\s*\\=\\s*[\"']/g).length > 1, 'Use the <code>+=</code> operator to build <code>myStr</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1742,7 +1716,6 @@
           "testString": "assert(code.match(/[\"']\\s*\\+\\s*myName\\s*\\+\\s*[\"']/g).length > 0, 'Use two <code>+</code> operators to build <code>myStr</code> with <code>myName</code> inside it');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1812,7 +1785,6 @@
           "testString": "assert(code.match(/myStr\\s*\\+=\\s*someAdjective\\s*/).length > 0, 'Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1885,7 +1857,6 @@
           "testString": "assert((function(){if(code.match(/\\.length/gi) && code.match(/\\.length/gi).length >= 2 && code.match(/var lastNameLength \\= 0;/gi) && code.match(/var lastNameLength \\= 0;/gi).length >= 1){return true;}else{return false;}})(), 'You should be getting the length of <code>lastName</code> by using <code>.length</code> like this: <code>lastName.length</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -1950,7 +1921,6 @@
           "testString": "assert(code.match(/firstLetterOfLastName\\s*?=\\s*?lastName\\[.*?\\]/), 'You should use bracket notation.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2018,7 +1988,6 @@
           "testString": "assert(/myStr = \"Jello World\"/.test(code), 'Do not change the code above the line');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2079,7 +2048,6 @@
           "testString": "assert(code.match(/thirdLetterOfLastName\\s*?=\\s*?lastName\\[.*?\\]/), 'You should use bracket notation.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2141,7 +2109,6 @@
           "testString": "assert(code.match(/\\.length/g).length === 2, 'You have to use <code>.length</code> to get the last letter.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2203,7 +2170,6 @@
           "testString": "assert(code.match(/\\.length/g).length === 2, 'You have to use <code>.length</code> to get the second last letter.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2273,7 +2239,6 @@
           "testString": "assert(/\\bcat\\b/.test(test2) && /\\blittle\\b/.test(test2) && /\\bhit\\b/.test(test2) && /\\bslowly\\b/.test(test2),'<code>wordBlanks(\"cat\", \"little\", \"hit\", \"slowly\")</code> should contain all of the passed in words separated by non-word characters (and any additional words in your madlib).');"
         }
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2339,7 +2304,6 @@
           "testString": "assert(typeof myArray[1] !== 'undefined' && typeof myArray[1] == 'number', 'The second item in <code>myArray</code> should be a <code>number</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2390,7 +2354,6 @@
           "testString": "assert(Array.isArray(myArray) && myArray.some(Array.isArray), '<code>myArray</code> should have at least one array nested within another array.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2447,7 +2410,6 @@
           "testString": "assert((function(){if(code.match(/\\s*=\\s*myArray\\[0\\]/g)){return true;}else{return false;}})(), 'The data in variable <code>myArray</code> should be accessed using bracket notation.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2512,7 +2474,6 @@
           "testString": "assert((function(){if(code.match(/myArray\\[0\\]\\s*=\\s*/g)){return true;}else{return false;}})(), 'You should be using correct index to modify the value in <code>myArray</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2576,7 +2537,6 @@
           "testString": "assert(/myArray\\[2\\]\\[1\\]/g.test(code) && !/myData\\s*=\\s*(?:.*[-+*/%]|\\d)/g.test(code), 'You should be using bracket notation to read the correct value from <code>myArray</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2630,7 +2590,6 @@
           "testString": "assert((function(d){if(d[2] != undefined && d[0][0] == 'John' && d[0][1] === 23 && d[2][0] == 'dog' && d[2][1] === 3 && d[2].length == 2){return true;}else{return false;}})(myArray), '<code>myArray</code> should now equal <code>[[\"John\", 23], [\"cat\", 2], [\"dog\", 3]]</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2695,7 +2654,6 @@
           "testString": "assert((function(d){if(d[0] == 'cat' && d[1] === 2 && d[2] == undefined){return true;}else{return false;}})(removedFromMyArray), '<code>removedFromMyArray</code> should only contain <code>[\"cat\", 2]</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2757,7 +2715,6 @@
           "testString": "assert((function(d){if(d[0] == 'John' && d[1] === 23 && typeof removedFromMyArray === 'object'){return true;}else{return false;}})(removedFromMyArray), '<code>removedFromMyArray</code> should contain <code>[\"John\", 23]</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2814,7 +2771,6 @@
           "testString": "assert((function(d){if(typeof d[0] === \"object\" && d[0][0] == 'Paul' && d[0][1] === 35 && d[1][0] != undefined && d[1][0] == 'dog' && d[1][1] != undefined && d[1][1] == 3){return true;}else{return false;}})(myArray), '<code>myArray</code> should now have [[\"Paul\", 35], [\"dog\", 3]].');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2885,7 +2841,6 @@
           "testString": "assert(count > 4, 'You must have at least 5 items in your list');"
         }
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -2970,7 +2925,6 @@
           "testString": "assert(/^\\s*reusableFunction\\(\\)\\s*;/m.test(code), 'Call <code>reusableFunction</code> after you define it');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3073,7 +3027,6 @@
           "testString": "assert(/^\\s*functionWithArgs\\s*\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)\\s*;/m.test(code), 'Call <code>functionWithArgs</code> with two numbers after you define it.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3172,7 +3125,6 @@
           "testString": "assert(typeof oopsGlobal != \"undefined\" && oopsGlobal === 5, '<code>oopsGlobal</code> should be a global variable and have a value of <code>5</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3269,7 +3221,6 @@
           "testString": "assert(/var\\s+myVar/.test(code), 'Add a local <code>myVar</code> variable');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3361,7 +3312,6 @@
           "testString": "assert(/return outerWear/.test(code), 'Do not change the return statement');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3438,7 +3388,6 @@
           "testString": "assert(timesFive(0) === 0, '<code>timesFive(0)</code> should return <code>0</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3508,7 +3457,6 @@
           "testString": "assert(code.match(/(sum\\s*\\=\\s*sum\\s*\\+\\s*5)|(sum\\s*\\+\\=\\s*5)/g).length === 1, 'Inside of your functions, add 5 to the <code>sum</code> variable');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -3565,7 +3513,6 @@
           "testString": "assert(/processed\\s*=\\s*processArg\\(\\s*7\\s*\\)\\s*;/.test(code), 'You should assign <code>processArg</code> to <code>processed</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3649,7 +3596,6 @@
           "testString": "nextInLine(testArr, 10); assert(testArr[4] === 10, 'After <code>nextInLine(testArr, 10)</code>, <code>testArr[4]</code> should be <code>10</code>');"
         }
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3732,7 +3678,6 @@
           "testString": "assert(welcomeToBooleans() === true, '<code>welcomeToBooleans()</code> should return true.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3806,7 +3751,6 @@
           "testString": "assert(trueOrFalse(false) === \"No, that was false\", '<code>trueOrFalse(false)</code> should return \"No, that was false\"');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3894,7 +3838,6 @@
           "testString": "assert(code.match(/==/g) && !code.match(/===/g), 'You should use the <code>==</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -3967,7 +3910,6 @@
           "testString": "assert(code.match(/(val\\s*===\\s*\\d+)|(\\d+\\s*===\\s*val)/g).length > 0, 'You should use the <code>===</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4035,7 +3977,6 @@
           "testString": "assert(code.match(/===/g), 'You should use the <code>===</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -4100,7 +4041,6 @@
           "testString": "assert(code.match(/(?!!==)!=/), 'You should use the <code>!=</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4175,7 +4115,6 @@
           "testString": "assert(code.match(/(val\\s*!==\\s*\\d+)|(\\d+\\s*!==\\s*val)/g).length > 0, 'You should use the <code>!==</code> operator');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4265,7 +4204,6 @@
           "testString": "assert(code.match(/val\\s*>\\s*('|\")*\\d+('|\")*/g).length > 1, 'You should use the <code>&gt;</code> operator at least twice');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4355,7 +4293,6 @@
           "testString": "assert(code.match(/val\\s*>=\\s*('|\")*\\d+('|\")*/g).length > 1, 'You should use the <code>&gt;=</code> operator at least twice');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4440,7 +4377,6 @@
           "testString": "assert(code.match(/val\\s*<\\s*('|\")*\\d+('|\")*/g).length > 1, 'You should use the <code>&lt;</code> operator at least twice');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4528,7 +4464,6 @@
           "testString": "assert(code.match(/val\\s*<=\\s*('|\")*\\d+('|\")*/g).length > 1, 'You should use the <code>&lt;=</code> operator at least twice');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4627,7 +4562,6 @@
           "testString": "assert(testLogicalAnd(80) === \"No\", '<code>testLogicalAnd(80)</code> should return \"No\"');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4729,7 +4663,6 @@
           "testString": "assert(testLogicalOr(25) === \"Outside\", '<code>testLogicalOr(25)</code> should return \"Outside\"');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4817,7 +4750,6 @@
           "testString": "assert(/var result = \"\";/.test(code) && /return result;/.test(code), 'Do not change the code above or below the lines.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4904,7 +4836,6 @@
           "testString": "assert(testElseIf(12) === \"Greater than 10\", '<code>testElseIf(12)</code> should return \"Greater than 10\"');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -4977,7 +4908,6 @@
           "testString": "assert(orderMyLogic(11) === \"Greater than or equal to 10\", '<code>orderMyLogic(11)</code> should return \"Greater than or equal to 10\"');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5089,7 +5019,6 @@
           "testString": "assert(testSize(25) === \"Huge\", '<code>testSize(25)</code> should return \"Huge\"');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5184,7 +5113,6 @@
           "testString": "assert(golfScore(5, 9) === \"Go Home!\", '<code>golfScore(5, 9)</code> should return \"Go Home!\"');"
         }
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5261,7 +5189,6 @@
           "testString": "assert(code.match(/break/g).length > 2, 'You should have at least 3 <code>break</code> statements');"
         }
       ],
-      "type": "waypoint",
       "MDNlinks": [
         "Switch Statement"
       ],
@@ -5352,7 +5279,6 @@
           "testString": "assert(code.match(/break/g).length > 2, 'You should have at least 3 <code>break</code> statements');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5453,7 +5379,6 @@
           "testString": "assert(code.match(/case/g).length === 9, 'You should have nine <code>case</code> statements');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5550,7 +5475,6 @@
           "testString": "assert(chainToSwitch(156) === \"\", '<code>chainToSwitch(156)</code> should be \"\" (empty string)');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5630,7 +5554,6 @@
           "testString": "assert(!/if|else/g.test(code), 'You should not use any <code>if</code> or <code>else</code> statements');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5711,7 +5634,6 @@
           "testString": "assert(abTest(3,3) === 12 , '<code>abTest(3,3)</code> should return <code>12</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5797,7 +5719,6 @@
           "testString": "assert((function(){ count = 0; cc(3);cc(2);cc('A');cc(10);var out = cc('K'); if(out === \"-1 Hold\") {return true;} return false; })(), 'Cards Sequence 3, 2, A, 10, K should return <code>-1 Hold</code>');"
         }
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5877,7 +5798,6 @@
           "testString": "assert((function(z){return Object.keys(z).length === 4;})(myDog), '<code>myDog</code> should only contain all the given properties.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -5965,7 +5885,6 @@
           "testString": "assert(code.match(/testObj\\.\\w+/g).length > 1, 'You should use dot notation twice');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6043,7 +5962,6 @@
           "testString": "assert(code.match(/testObj\\s*?\\[('|\")[^'\"]+\\1\\]/g).length > 1, 'You should use bracket notation twice');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6127,7 +6045,6 @@
           "testString": "assert(/testObj\\s*?\\[\\s*playerNumber\\s*\\]/.test(code),'You should be using the variable <code>playerNumber</code> in your bracket notation');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6197,7 +6114,6 @@
           "testString": "assert(/\"name\": \"Coder\"/.test(code), 'Do not edit the <code>myDog</code> definition');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6280,7 +6196,6 @@
           "testString": "assert(!/bark[^\\n]:/.test(code), 'Do not add <code>\"bark\"</code> to the setup section');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6351,7 +6266,6 @@
           "testString": "assert(code.match(/\"tails\": 1/g).length > 1, 'Do not modify the <code>myDog</code> setup');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6453,7 +6367,6 @@
           "testString": "assert(!/case|switch|if/g.test(code), 'You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6538,7 +6451,6 @@
           "testString": "assert(checkObj(\"house\") === \"Not Found\", '<code>checkObj(\"house\")</code> should return  <code>\"Not Found\"</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6636,7 +6548,6 @@
           "testString": "assert(myMusic[1].formats.every(function(item) { return (typeof item === \"string\")}) && myMusic[1].formats.length > 1, '<code>formats</code> should be an array of strings with at least two elements');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6705,7 +6616,6 @@
           "testString": "assert(/=\\s*myStorage\\.car\\.inside\\[\\s*(\"|')glove box\\1\\s*\\]/g.test(code), 'Use dot and bracket notation to access <code>myStorage</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6778,7 +6688,6 @@
           "testString": "assert(/=\\s*myPlants\\[1\\].list\\[1\\]/.test(code), 'Use dot and bracket notation to access <code>myPlants</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6886,7 +6795,6 @@
           "testString": "assert(updateRecords(1245, \"album\", \"Riptide\")[1245][\"album\"] === \"Riptide\", 'After <code>updateRecords(1245, \"album\", \"Riptide\")</code>, <code>album</code> should be <code>\"Riptide\"</code>');"
         }
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -6980,7 +6888,6 @@
           "testString": "assert.deepEqual(myArray, [0,1,2,3,4], '<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7050,7 +6957,6 @@
           "testString": "assert.deepEqual(myArray, [1,2,3,4,5], '<code>myArray</code> should equal <code>[1,2,3,4,5]</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7126,7 +7032,6 @@
           "testString": "assert.deepEqual(myArray, [1,3,5,7,9], '<code>myArray</code> should equal <code>[1,3,5,7,9]</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7202,7 +7107,6 @@
           "testString": "assert.deepEqual(myArray, [9,7,5,3,1], '<code>myArray</code> should equal <code>[9,7,5,3,1]</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7281,7 +7185,6 @@
           "testString": "assert(!code.match(/total[\\s\\+\\-]*=\\s*(\\d(?!\\s*[;,])|[1-9])/g), 'Do not set <code>total</code> to 20 directly');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7351,7 +7254,6 @@
           "testString": "assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, '<code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])</code> should return <code>54</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7424,7 +7326,6 @@
           "testString": "assert.deepEqual(i, 11, '<code>i</code> should equal <code>11</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -7493,7 +7394,6 @@
           "testString": "assert(lookUpProfile(\"Akira\", \"address\") === \"No such property\", '<code>\"Akira\", \"address\"</code> should return \"No such property\"');"
         }
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7585,7 +7485,6 @@
           "testString": "assert(code.match(/Math\\.random/g).length >= 0, 'You should be using <code>Math.random</code> to generate the random decimal number.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7655,7 +7554,6 @@
           "testString": "assert(code.match(/Math.floor/g).length > 1, 'You should use <code>Math.floor</code> to remove the decimal part of the number.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7729,7 +7627,6 @@
           "testString": "assert((function(){if(code.match(/myMax/g).length > 1 && code.match(/myMin/g).length > 2 && code.match(/Math.floor/g) && code.match(/Math.random/g)){return true;}else{return false;}})(), '<code>randomRange</code> should use both <code>myMax</code> and <code>myMin</code>, and return a random number in your range.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {
         "es": {
@@ -7823,7 +7720,6 @@
           "testString": "assert.isNaN(convertToInteger(\"JamesBond\"), '<code>convertToInteger(\"JamesBond\")</code> should return NaN');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "releasedOn": "February 17, 2017",
@@ -7880,7 +7776,6 @@
           "testString": "assert.isNaN(convertToInteger(\"JamesBond\"), '<code>convertToInteger(\"JamesBond\")</code> should return NaN');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "releasedOn": "February 17, 2017",
       "translations": {},
@@ -7934,7 +7829,6 @@
           "testString": "assert(checkEqual(1, -1) === false, '<code>checkEqual(1, -1)</code> should return false');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "releasedOn": "February 17, 2017",
       "translations": {},
@@ -7986,7 +7880,6 @@
           "testString": "assert(checkSign(0) === 'zero', '<code>checkSign(0)</code> should return \"zero\". Note that capitalization matters');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "releasedOn": "February 17, 2017",
       "translations": {},

@@ -30,7 +30,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -109,7 +108,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -188,7 +186,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -266,7 +263,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -323,7 +319,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -385,7 +380,6 @@
         "Consider using the concat method instead of push.",
         "The slice method returns a new array without modifying the original."
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -464,7 +458,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -626,7 +619,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -685,7 +677,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -842,7 +833,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -906,7 +896,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -960,7 +949,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1012,7 +1000,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1071,7 +1058,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1130,7 +1116,6 @@
         "Try using .map() to return an array of ratings.",
         "You can use Number() to convert a string into a number."
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1297,7 +1282,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1347,7 +1331,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1403,7 +1386,6 @@
       "hints": [
         "The regex pre-defined character class for non-alphanumerics is \\W."
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1465,7 +1447,6 @@
       "hints": [
         "First try to split the given string before applying the join method."
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1532,7 +1513,6 @@
         "When several spaces in a row are split by space, it puts an empty string in the array.",
         "You can use the .toLowerCase() method to make the title all lower case."
       ],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1588,7 +1568,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1640,7 +1619,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1698,7 +1676,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "challengeType": 1,
       "translations": {},
       "files": {

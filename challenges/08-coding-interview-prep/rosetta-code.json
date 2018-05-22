@@ -7,7 +7,6 @@
   "challenges": [
     {
       "title": "100 doors",
-      "type": "Waypoint",
       "description": [
         "<p>There are 100 doors in a row that are all initially closed. You make 100 passes by the doors. The first time through, visit every door and 'toggle' the door (if the door is closed, open it; if it is open, close it). The second time, only visit every 2nd door (i.e., door #2, #4, #6, ...) and toggle it. The third time, visit every 3rd door (i.e., door #3, #6, #9, ...), etc., until you only visit the 100th door.</p>",
         "<p>Implement a function to determine the state of the doors after the last pass. Return the final result in an array, with only the door number included in the array if it is open.</p>"
@@ -51,7 +50,6 @@
     },
     {
       "title": "24 game",
-      "type": "Waypoint",
       "description": [
         "<p>Implement a function that takes a string of four digits as its argument, with each digit from 1 ──► 9 (inclusive) with repetitions allowed, and returns an arithmetic expression that evaluates to the number 24. If no such solution exists, return \"no solution exists.\"</p>",
         "<p>Rules:</p>",
@@ -135,7 +133,6 @@
     },
     {
       "title": "9 billion names of God the integer",
-      "type": "Waypoint",
       "description": [
         "<p>This task is a variation of the <a href=\"https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary\" title=\"wp: The Nine Billion Names of God#Plot_summary\">short story by Arthur C. Clarke</a>.</p>",
         "<p>(Solvers should be aware of the consequences of completing this task.)</p>",
@@ -213,7 +210,6 @@
     },
     {
       "title": "ABC Problem",
-      "type": "Waypoint",
       "description": [
         "<p>You are given a collection of ABC blocks (e.g., childhood alphabet blocks). There are 20 blocks with two letters on each block. A complete alphabet is guaranteed amongst all sides of the blocks. The sample collection of blocks:</p>",
         "<p>(B O)</p>",
@@ -300,7 +296,6 @@
     },
     {
       "title": "Abundant, deficient and perfect number classifications",
-      "type": "Waypoint",
       "description": [
         "<p>These define three classifications of positive integers based on their <a href=\"http://rosettacode.org/wiki/Proper divisors\" title=\"Proper divisors\">proper divisors</a>.</p>",
         "<p>Let $P(n)$ be the sum of the proper divisors of n where proper divisors are all positive integers n other than n itself.</p>",
@@ -355,7 +350,6 @@
     },
     {
       "title": "Accumulator factory",
-      "type": "Waypoint",
       "description": [
         "<p>Create a function that takes a single (numeric) argument and returns another function that is an accumulator. The returned accumulator function in turn also takes a single numeric argument, and returns the sum of all the numeric values passed in so far to that accumulator (including the initial value passed when the accumulator was created).</p>",
         "<p>Rules:</p>",
@@ -410,7 +404,6 @@
     },
     {
       "title": "Ackermann function",
-      "type": "Waypoint",
       "description": [
         "<p>The Ackermann function is a classic example of a recursive function, notable especially because it is not a primitive recursive function. It grows very quickly in value, as does the size of its call tree.</p>",
         "<p>The Ackermann function is usually defined as follows:</p>",
@@ -467,7 +460,6 @@
     },
     {
       "title": "Align columns",
-      "type": "Waypoint",
       "description": [
         "<p>Given a text file of many lines, where fields within a line are delineated by a single <code>$</code> character, write a program that aligns each column of fields by ensuring that words in each column are separated by at least one space. Further, allow for each word in a column to be either left justified, right justified, or center justified within its column.</p>",
         "<p>Use the following text to test your programs:</p>",
@@ -591,7 +583,6 @@
     },
     {
       "title": "Amicable pairs",
-      "type": "Waypoint",
       "description": [
         "Two integers $N$ and $M$ are said to be <a href=\"https://en.wikipedia.org/wiki/Amicable numbers\" title=\"wp: Amicable numbers\">amicable pairs</a> if $N \\neq M$ and the sum of the <a href=\"http://rosettacode.org/wiki/Proper divisors\" title=\"Proper divisors\">proper divisors</a> of $N$ ($\\mathrm{sum}(\\mathrm{propDivs}(N))$) $= M$ as well as $\\mathrm{sum}(\\mathrm{propDivs}(M)) = N$.",
         "Example:",
@@ -664,7 +655,6 @@
     },
     {
       "title": "Averages/Mode",
-      "type": "Waypoint",
       "description": [
         "<p>Write a program to find the <a href=\"https://en.wikipedia.org/wiki/Mode (statistics)\" title=\"wp: Mode (statistics)\">mode</a> value of a collection.</p><p>The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.</p><p>If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.</p>"
       ],
@@ -709,7 +699,6 @@
     },
     {
       "title": "Averages/Pythagorean means",
-      "type": "Waypoint",
       "description": [
         "<p class='rosetta__paragraph'>Compute all three of the <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Pythagorean means' title='wp: Pythagorean means'>Pythagorean means</a> of the set of integers <big>1</big> through <big>10</big> (inclusive).</p><p class='rosetta__paragraph'>Show that <big>$A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$</big> for this set of positive integers.</p> The most common of the three means, the <a class='rosetta__link--rosetta' href='http://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean'>arithmetic mean</a>, is the sum of the list divided by its length: <big>$ A(x_1, \\ldots, x_n) = \\frac{x_1 + \\cdots + x_n}{n}$</big>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean'>geometric mean</a> is the $n$th root of the product of the list: <big>$ G(x_1, \\ldots, x_n) = \\sqrt[n]{x_1 \\cdots x_n} $</big>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list: <big>$ H(x_1, \\ldots, x_n) = \\frac{n}{\\frac{1}{x_1} + \\cdots + \\frac{1}{x_n}} $</big>",
         "<p class='rosetta__paragraph'>Assume the input is an ordered array of all inclusive numbers.</p>",
@@ -769,7 +758,6 @@
     },
     {
       "title": "Averages/Root mean square",
-      "type": "Waypoint",
       "description": [
         "<p>Compute the  <a href=\"https://en.wikipedia.org/wiki/Root mean square\" title=\"wp: Root mean square\">Root mean square</a>  of the numbers 1 through 10 inclusive.</p>",
         "<p>The  root mean square  is also known by its initials RMS (or rms), and as the quadratic mean.</p><p>The RMS is calculated as the mean of the squares of the numbers, square-rooted:</p>",
@@ -811,7 +799,6 @@
     },
     {
       "title": "Babbage problem",
-      "type": "Waypoint",
       "description": [
         "<p><a href=\"https://en.wikipedia.org/wiki/Charles_Babbage\" title=\"wp: Charles_Babbage\">Charles Babbage</a>, looking ahead to the sorts of problems his Analytical Engine would be able to solve, gave this example:</p>",
         "<blockquote>What is the smallest positive integer whose square ends in the digits 269,696?</blockquote>",
@@ -858,7 +845,6 @@
     },
     {
       "title": "Balanced brackets",
-      "type": "Waypoint",
       "description": [
         "<p>Determine whether a generated string of brackets is balanced; that is, whether it consists entirely of pairs of opening/closing brackets (in that order), none of which mis-nest.</p>",
         "Examples:",
@@ -993,7 +979,6 @@
     },
     {
       "title": "Circles of given radius through two points",
-      "type": "Waypoint",
       "description": [
         "<p>Given two points on a plane and a radius, usually two circles of given radius can be drawn through the points.</p>",
         "Exceptions:",
@@ -1083,7 +1068,6 @@
     },
     {
       "title": "Closest-pair problem",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Provide a function to find the closest two points among a set of given points in two dimensions,  i.e. to solve the  <a href=\"https://en.wikipedia.org/wiki/Closest pair of points problem\" title=\"wp: Closest pair of points problem\">Closest pair of points problem</a>  in the  planar  case.</p><p>The straightforward solution is a  O(n<sup>2</sup>)  algorithm  (which we can call brute-force algorithm);  the pseudo-code (using indexes) could be simply:</p>",
@@ -1306,7 +1290,6 @@
     },
     {
       "title": "Combinations",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Given non-negative integers  <big> m </big>  and  <big> n</big>,  generate all size  <big> m </big>  <a href=\"http://mathworld.wolfram.com/Combination.html\" title=\"link: http://mathworld.wolfram.com/Combination.html\">combinations</a>  of the integers from  <big> 0</big>  (zero)  to  <big> n-1 </big>  in sorted order  (each combination is sorted and the entire table is sorted).</p>",
@@ -1369,7 +1352,6 @@
     },
     {
       "title": "Comma quibbling",
-      "type": "Waypoint",
       "description": [
         "<p>Comma quibbling is a task originally set by Eric Lippert in his <a href=\"http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx\" title=\"link: http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx\">blog</a>.</p>",
         "Task:<p>Write a function to generate a string output which is the concatenation of input words from a list/sequence where:</p>",
@@ -1437,7 +1419,6 @@
     },
     {
       "title": "Compare a list of strings",
-      "type": "Waypoint",
       "description": [
         "<p>Given a  <a href=\"https://en.wikipedia.org/wiki/List_(abstract_data_type)\" title=\"wp: List_(abstract_data_type)\">list</a>  of arbitrarily many strings, implement a function for each of the following conditions:</p> test if they are all lexically equal",
         " test if every string is lexically less than the one after it  (i.e. whether the list is in strict ascending order)"
@@ -1523,7 +1504,6 @@
     },
     {
       "title": "Convert seconds to compound duration",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Implement a function which:</p>",
@@ -1634,7 +1614,6 @@
     },
     {
       "title": "Count occurrences of a substring",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Create a function,  or show a built-in function,  to count the number of non-overlapping occurrences of a substring inside a string.</p><p>The function should take two arguments:</p>",
@@ -1689,7 +1668,6 @@
     },
     {
       "title": "Count the coins",
-      "type": "Waypoint",
       "description": [
         "<p>There are four types of common coins in <a href=\"https://en.wikipedia.org/wiki/United_States\" title=\"link: https://en.wikipedia.org/wiki/United_States\">US</a> currency:</p>",
         "quarters (25 cents)",
@@ -1742,7 +1720,6 @@
     },
     {
       "title": "Cramer's rule",
-      "type": "Waypoint",
       "description": [
         "<p>In <a href=\"https://en.wikipedia.org/wiki/linear algebra\" title=\"wp: linear algebra\">linear algebra</a>, <a href=\"https://en.wikipedia.org/wiki/Cramer's rule\" title=\"wp: Cramer's rule\">Cramer's rule</a> is an explicit formula for the solution of a <a href=\"https://en.wikipedia.org/wiki/system of linear equations\" title=\"wp: system of linear equations\">system of linear equations</a> with as many equations as unknowns, valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and of matrices obtained from it by replacing one column by the vector of right hand sides of the equations.</p>",
         "<p>Given</p>",
@@ -1819,7 +1796,6 @@
     },
     {
       "title": "Date format",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Return an array with the current date in the formats:</p>",
@@ -1881,7 +1857,6 @@
     },
     {
       "title": "Date manipulation",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Given a date string in EST, output the given date as a string with 12 hours added to the time. </p>",
@@ -1960,7 +1935,6 @@
     },
     {
       "title": "Day of the week",
-      "type": "Waypoint",
       "description": [
         "<p>A company decides that whenever Xmas falls on a Sunday they will give their workers all extra paid holidays so that, together with any public holidays, workers will not have to work the following week (between the 25th of December and the first of January).</p>",
         "<p>Task:</p>",
@@ -2011,7 +1985,6 @@
     },
     {
       "title": "Deal cards for FreeCell",
-      "type": "Waypoint",
       "description": [
         "<p>Free Cell is the solitaire card game that Paul Alfille introduced to the PLATO system in 1978. Jim Horne, at Microsoft, changed the name to FreeCell and reimplemented the game for <a href=\"http://rosettacode.org/wiki/DOS\" title=\"DOS\">DOS</a>, then <a href=\"http://rosettacode.org/wiki/Windows\" title=\"Windows\">Windows</a>. </p>",
         "<p>This version introduced 32000 numbered deals. (The <a href=\"http://www.solitairelaboratory.com/fcfaq.html\" title=\"link: http://www.solitairelaboratory.com/fcfaq.html\">FreeCell FAQ</a> tells this history.)</p><p>As the game became popular, Jim Horne disclosed <a href=\"http://www.solitairelaboratory.com/mshuffle.txt\" title=\"link: http://www.solitairelaboratory.com/mshuffle.txt\">the algorithm</a>, and other implementations of FreeCell began to reproduce the Microsoft deals. </p>",
@@ -2128,7 +2101,6 @@
     },
     {
       "title": "Deepcopy",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Write a function that returns a deep copy of a given object.</p>",
@@ -2196,7 +2168,6 @@
     },
     {
       "title": "Define a primitive data type",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Define a type that behaves like an integer but has a lowest valid value of 1 and a highest valid value of 10.</p>",
@@ -2288,7 +2259,6 @@
     },
     {
       "title": "Department Numbers",
-      "type": "Waypoint",
       "description": [
         "<p>There is a highly organized city that has decided to assign a number to each of their departments:</p>",
         "Police department",
@@ -2374,7 +2344,6 @@
     },
     {
       "title": "Discordian date",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Convert a given date from the  <a href=\"https://en.wikipedia.org/wiki/Gregorian calendar\" title=\"wp: Gregorian calendar\">Gregorian calendar</a>  to the  <a href=\"https://en.wikipedia.org/wiki/Discordian calendar\" title=\"wp: Discordian calendar\">Discordian calendar</a>.</p>"
@@ -2437,7 +2406,6 @@
     },
     {
       "title": "Element-wise operations",
-      "type": "Waypoint",
       "description": [
         "<p>Implement basic element-wise matrix-matrix and scalar-matrix operations.</p><p>Implement:</p>",
         "<p>::*  addition</p>",
@@ -2504,7 +2472,6 @@
     },
     {
       "title": "Emirp primes",
-      "type": "Waypoint",
       "description": [
         "<p>An  emirp  (prime spelled backwards)  are primes that when reversed  (in their decimal representation)  are a different prime.</p>",
         "<p>Write a function that should be able to : Show the first <b>n</b> eprimes numbers.Show the eprimes numbers in a range.Show the number of eprimes in a range.Show the <b>n<sup>th</sup></b> eprimes number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the eprimes as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array or a number."
@@ -2555,7 +2522,6 @@
     },
     {
       "title": "Entropy",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Calculate the Shannon entropy  H  of a given input string.</p><p>Given the discreet random variable $X$ that is a string of $N$ \"symbols\" (total characters) consisting of $n$ different characters (n=2 for binary), the Shannon entropy of X in bits/symbol is :</p>",
@@ -2614,7 +2580,6 @@
     },
     {
       "title": "Equilibrium index",
-      "type": "Waypoint",
       "description": [
         "<p>An equilibrium index of a sequence is an index into the sequence such that the sum of elements at lower indices is equal to the sum of elements at higher indices.</p>",
         "<p>For example, in a sequence  <big>$A$</big>:</p><p>::::  <big>$A_0 = -7$</big></p>",
@@ -2689,7 +2654,6 @@
     },
     {
       "title": "Ethiopian multiplication",
-      "type": "Waypoint",
       "description": [
         "<p>Ethiopian multiplication is a method of multiplying integers using only addition, doubling, and halving.</p>",
         "<p>Method: </p>",
@@ -2783,7 +2747,6 @@
     },
     {
       "title": "Euler method",
-      "type": "Waypoint",
       "description": [
         "<p>Euler's method numerically approximates solutions of first-order ordinary differential equations (ODEs) with a given initial value.  It is an explicit method for solving initial value problems (IVPs), as described in <a href=\"https://en.wikipedia.org/wiki/Euler method\" title=\"wp: Euler method\">the wikipedia page</a>.</p><p>The ODE has to be provided in the following form:</p><p>:: <big>$\\frac{dy(t)}{dt} = f(t,y(t))$</big></p><p>with an initial value</p><p>:: <big>$y(t_0) = y_0$</big></p><p>To get a numeric solution, we replace the derivative on the  LHS  with a finite difference approximation:</p><p>:: <big>$\\frac{dy(t)}{dt}  \\approx \\frac{y(t+h)-y(t)}{h}$</big></p><p>then solve for $y(t+h)$:</p><p>:: <big>$y(t+h) \\approx y(t) + h \\, \\frac{dy(t)}{dt}$</big></p><p>which is the same as</p><p>:: <big>$y(t+h) \\approx y(t) + h \\, f(t,y(t))$</big></p><p>The iterative solution rule is then:</p><p>:: <big>$y_{n+1} = y_n + h \\, f(t_n, y_n)$</big></p><p>where  <big>$h$</big>  is the step size, the most relevant parameter for accuracy of the solution.  A smaller step size increases accuracy but also the computation cost, so it has always has to be hand-picked according to the problem at hand.</p>",
         "<p>Example: Newton's Cooling Law</p><p>Newton's cooling law describes how an object of initial temperature  <big>$T(t_0) = T_0$</big>  cools down in an environment of temperature  <big>$T_R$</big>:</p><p>:: <big>$\\frac{dT(t)}{dt} = -k \\, \\Delta T$</big></p>",
@@ -2848,7 +2811,6 @@
     },
     {
       "title": "Evaluate binomial coefficients",
-      "type": "Waypoint",
       "description": [
         "<p>Write a function to calculate the binomial coefficient for the given value of n and k.</p><p>This formula is recommended:</p>",
         "$\\binom{n}{k} = \\frac{n!}{(n-k)!k!} = \\frac{n(n-1)(n-2)\\ldots(n-k+1)}{k(k-1)(k-2)\\ldots 1}$"
@@ -2902,7 +2864,6 @@
     },
     {
       "title": "Execute a Markov algorithm",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Create an interpreter for a <a href=\"https://en.wikipedia.org/wiki/Markov algorithm\" title=\"wp: Markov algorithm\">Markov Algorithm</a>.</p><p>Rules have the syntax:</p>",
@@ -3059,7 +3020,6 @@
     },
     {
       "title": "Execute Brain****",
-      "type": "Waypoint",
       "description": [
         "<p>Write a function to implement a Brain**** interpreter. The function will take a string as a parameter and should return a string as the output. More details are given below : </p>",
         "<p>RCBF is a set of <a href=\"http://rosettacode.org/wiki/Brainf***\" title=\"Brainf***\">Brainf***</a> compilers and interpreters written for Rosetta Code in a variety of languages.</p><p>Below are links to each of the versions of RCBF.</p><p>An implementation need only properly implement the following instructions:</p>",
@@ -3135,7 +3095,6 @@
     },
     {
       "title": "Extensible prime generator",
-      "type": "Waypoint",
       "description": [
         "<p>Write a generator of prime numbers, in order, that will automatically adjust to accommodate the generation of any reasonably high prime.</p> The generator should be able to : Show the first <b>n</b> prime numbers.Show the prime numbers in a range.Show the number of primes in a range.Show the <b>n<sup>th</sup></b> prime number.<p>The function should have two parameters. The first will receive <b>n</b> or the range as an array. The second will receive a boolean, that specifies if the function returns the prime numbers as an array or a single number(the number of primes in the range or the <b>n<sup>th</sup></b> prime). According to the parameters the function should return an array."
       ],
@@ -3184,7 +3143,6 @@
     },
     {
       "title": "Factorial",
-      "type": "Waypoint",
       "description": [
         "<p>Write a function to return the factorial of a number.</p>",
         "<p>Factorial of a number is given by : </p>",
@@ -3245,7 +3203,6 @@
     },
     {
       "title": "Factors of a Mersenne number",
-      "type": "Waypoint",
       "description": [
         "<p>A Mersenne number is a number in the form of 2<sup>P</sup>-1.</p><p>If P is prime, the Mersenne number may be a Mersenne prime</p>",
         "<p>(if P is not prime, the Mersenne number is also not prime).</p><p>In the search for Mersenne prime numbers it is advantageous to eliminate exponents by finding a small factor before starting a,  potentially lengthy, <a href=\"http://rosettacode.org/wiki/Lucas-Lehmer test\" title=\"Lucas-Lehmer test\">Lucas-Lehmer test</a>.</p><p>There are very efficient algorithms for determining if a number divides 2<sup>P</sup>-1 (or equivalently, if 2<sup>P</sup> mod (the number) = 1).</p>",
@@ -3324,7 +3281,6 @@
     },
     {
       "title": "Factors of an integer",
-      "type": "Waypoint",
       "description": [
         "<p>Write a function that returns the factors  of a positive integer.</p><p>These factors are the positive integers by which the number being factored can be divided to yield a positive integer result.</p>",
         "///"
@@ -3372,7 +3328,6 @@
     },
     {
       "title": "Farey sequence",
-      "type": "Waypoint",
       "description": [
         "<p>Write a function that returns the Farey sequence of order n. The function should have one parameter that is n. It should return the sequence as an array. Read the following for more details : </p><p>The  <a href=\"https://en.wikipedia.org/wiki/Farey sequence\" title=\"wp: Farey sequence\">Farey sequence</a>   F<sub>n</sub>  of order  n  is the sequence of completely reduced fractions between  0  and  1  which, when in lowest terms, have denominators less than or equal to  n,  arranged in order of increasing size.</p><p>The  Farey sequence  is sometimes incorrectly called a  Farey series.</p>",
         "<p>Each Farey sequence:</p>",
@@ -3433,7 +3388,6 @@
     },
     {
       "title": "Fibonacci n-step number sequences",
-      "type": "Waypoint",
       "description": [
         "<p>Write a function to generate Fibonacci n-step number sequences and Lucas sequences. The first parameter will be n. The second parameter will be the number of elements to be returned. The third parameter will specify whether to output the Fibonacci sequence or the Lucas sequence. If the parameter is \"f\" then return the Fibonacci sequence and if it is \"l\", then return the Lucas sequence. The sequences must be returned as an array. More details are given below : </p><p>These number series are an expansion of the ordinary <a href=\"http://rosettacode.org/wiki/Fibonacci sequence\" title=\"Fibonacci sequence\">Fibonacci sequence</a> where:</p>",
         "For $n = 2$ we have the Fibonacci sequence; with initial values $[1, 1]$ and $F_k^2 = F_{k-1}^2 + F_{k-2}^2$",
@@ -3530,7 +3484,6 @@
     },
     {
       "title": "Fibonacci sequence",
-      "type": "Waypoint",
       "description": [
         "<p>Write a function to generate the  <big> n<sup>th</sup> </big>  Fibonacci number.</p>",
         "///<p>The <big> n<sup>th</sup> </big>  Fibonacci number is given by :",
@@ -3584,7 +3537,6 @@
     },
     {
       "title": "Fibonacci word",
-      "type": "Waypoint",
       "description": [
         "<p>Write a function to return the Fibonacci Words upto N. N will be provided as a parameter to the function. The function should return an array of objects. The objects should be of the form : { N: 1, Length: 1, Entropy: 0, Word: '1' }. More details are given below : </p><p>The  Fibonacci Word  may be created in a manner analogous to the  Fibonacci Sequence   <a href=\"http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf\" title=\"link: http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf\">as described here</a>:</p><p>Define  F_Word<sub>1</sub>  as  1</p>",
         "<p>Define  F_Word<sub>2</sub>  as  0</p>",
@@ -3638,7 +3590,6 @@
     },
     {
       "title": "Hailstone sequence",
-      "type": "Waypoint",
       "description": [
         "<p>The Hailstone sequence of numbers can be generated from a starting positive integer,  n  by:</p>",
         " If  n  is   1   then the sequence ends.",
@@ -3690,7 +3641,6 @@
     },
     {
       "title": "Happy numbers",
-      "type": "Waypoint",
       "description": [
         "<p>A happy number is defined by the following process:</p>",
         "<p>Starting with any positive integer, replace the number by the sum of the squares of its digits, and repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. Those numbers for which this process ends in 1 are happy numbers, while those that do not end in 1 are unhappy numbers.</p>",
@@ -3773,7 +3723,6 @@
     },
     {
       "title": "Harshad or Niven series",
-      "type": "Waypoint",
       "description": [
         "<p>The <a href=\"http://mathworld.wolfram.com/HarshadNumber.html\" title=\"link: http://mathworld.wolfram.com/HarshadNumber.html\">Harshad</a> or Niven numbers are positive integers ≥ 1 that are divisible by the sum of their digits.</p><p>For example,  42  is a <a href=\"http://rosettacode.org/wiki/oeis:A005349\" title=\"oeis:A005349\">Harshad number</a> as  42  is divisible by  (4 + 2)  without remainder.</p>",
         "Assume that the series is defined as the numbers in increasing order.",
@@ -3824,7 +3773,6 @@
     },
     {
       "title": "Hash from two arrays",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Using two Arrays of equal length, create a Hash object where the elements from one array (the keys) are linked to the elements of the other (the values)</p>",
@@ -3903,7 +3851,6 @@
     },
     {
       "title": "Hash join",
-      "type": "Waypoint",
       "description": [
         "<p>An <a href=\"https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join\" title=\"wp: Join_(SQL)#Inner_join\">inner join</a> is an operation that combines two data tables into one table, based on matching column values. The simplest way of implementing this operation is the <a href=\"https://en.wikipedia.org/wiki/Nested loop join\" title=\"wp: Nested loop join\">nested loop join</a> algorithm, but a more scalable alternative is the <a href=\"https://en.wikipedia.org/wiki/hash join\" title=\"wp: hash join\">hash join</a> algorithm.</p>",
         "<p>Implement the \"hash join\" algorithm, and demonstrate that it passes the test-case listed below.</p><p>You should represent the tables as data structures that feel natural in your programming language.</p>",
@@ -4123,7 +4070,6 @@
     },
     {
       "title": "Heronian triangles",
-      "type": "Waypoint",
       "description": [
         "<p><a href=\"https://en.wikipedia.org/wiki/Heron's formula\" title=\"wp: Heron's formula\">Hero's formula</a> for the area of a triangle given the length of its three sides  <big> a,</big>  <big>b,</big>  and  <big>c</big>  is given by:</p><p><big>$$A = \\sqrt{s(s-a)(s-b)(s-c)},$$</big></p><p>where  <big>s</big>  is half the perimeter of the triangle; that is,</p><p><big>$$s=\\frac{a+b+c}{2}.$$</big></p>",
         "<p><a href=\"http://www.had2know.com/academics/heronian-triangles-generator-calculator.html\" title=\"link: http://www.had2know.com/academics/heronian-triangles-generator-calculator.html\">Heronian triangles</a> are triangles whose sides and area are all integers.</p>",
@@ -4190,7 +4136,6 @@
     },
     {
       "title": "Hofstadter Figure-Figure sequences",
-      "type": "Waypoint",
       "description": [
         "<p>These two sequences of positive integers are defined as:</p>",
         "<p><big>$$R(1)=1\\ ;\\ S(1)=2 \\\\R(n)=R(n-1)+S(n-1), \\quad n>1.$$</big></p>",
@@ -4287,7 +4232,6 @@
     },
     {
       "title": "Hofstadter Q sequence",
-      "type": "Waypoint",
       "description": [
         "<p>The <a href=\"https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence\" title=\"wp: Hofstadter_sequence#Hofstadter_Q_sequence\">Hofstadter Q sequence</a> is defined as:</p>",
         "<p>$Q(1)=Q(2)=1, \\\\ Q(n)=Q\\big(n-Q(n-1)\\big)+Q\\big(n-Q(n-2)), \\quad n>2.$</p>",
@@ -4348,7 +4292,6 @@
     },
     {
       "title": "Sailors, coconuts and a monkey problem",
-      "type": "Waypoint",
       "description": [
         " <p>",
         "   Five sailors are shipwrecked on an island and",
@@ -4452,7 +4395,6 @@
     },
     {
       "title": "SEDOLs",
-      "type": "Waypoint",
       "null": [],
       "description": [
         "    Task:",
@@ -4534,7 +4476,6 @@
     },
     {
       "title": "S-Expressions",
-      "type": "Waypoint",
       "description": [
         "<p>",
         "<a href=\"https://en.wikipedia.org/wiki/S-Expression\" title=\"wp: S-Expression\">S-Expressions</a> are one convenient way to parse and store data.",
@@ -4620,7 +4561,6 @@
     },
     {
       "title": "Taxicab numbers",
-      "type": "Waypoint",
       "description": [
         "A &nbsp; <a href=\"https://en.wikipedia.org/wiki/Hardy–Ramanujan number\" title=\"wp: Hardy–Ramanujan number\">taxicab number</a>",
         "&nbsp; (the definition that is being used here) &nbsp; is a positive integer that can be expressed as the sum of two positive cubes in more than one way.",
@@ -4700,7 +4640,6 @@
     },
     {
       "title": "Tokenize a string with escaping",
-      "type": "Waypoint",
       "description": [
         "<p>",
         "Write a function or program that can split a string at each non-escaped occurrence of a separator character.",
@@ -4776,7 +4715,6 @@
     },
     {
       "title": "Topological sort",
-      "type": "Waypoint",
       "description": [
         "<p>",
         "Given a mapping between items, and items they depend on, a ",
@@ -4919,7 +4857,6 @@
     },
     {
       "title": "Top rank per group",
-      "type": "Waypoint",
       "description": [
         "Task:",
         "<p>Find the top N ranked data in each group, where N  is provided as a parameter. Name of the rank and the group are also provided as parameter.</p>",
@@ -5041,7 +4978,6 @@
     },
     {
       "title": "Towers of Hanoi",
-      "type": "Waypoint",
       "description": [
         "    Task:",
         "<p>Solve the <a href=\"https://en.wikipedia.org/wiki/Towers_of_Hanoi\" title=\"wp: Towers_of_Hanoi\">Towers of Hanoi</a>  problem.</p>",
@@ -5106,7 +5042,6 @@
     },
     {
       "title": "Vector cross product",
-      "type": "Waypoint",
       "description": [
         "A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: &nbsp; (X, Y, Z).",
         "<p>",
@@ -5160,7 +5095,6 @@
     },
     {
       "title": "Vector dot product",
-      "type": "Waypoint",
       "description": [
         "<p>",
         "A vector is defined as having three dimensions as being represented by an ordered collection of three numbers: &nbsp; (X, Y, Z).",
@@ -5223,7 +5157,6 @@
     },
     {
       "title": "Word wrap",
-      "type": "Waypoint",
       "description": [
         "<p>",
         "Even today, with proportional fonts and complex layouts, there are still",
@@ -5314,7 +5247,6 @@
     },
     {
       "title": "Y combinator",
-      "type": "Waypoint",
       "description": [
         "<p>",
         "In strict ",
@@ -5396,7 +5328,6 @@
     },
     {
       "title": "Zeckendorf number representation",
-      "type": "Waypoint",
       "description": [
         "<p>",
         "Just as numbers can be represented in a",
@@ -5471,7 +5402,6 @@
     },
     {
       "title": "Zhang-Suen thinning algorithm",
-      "type": "Waypoint",
       "description": [
         "This is an algorithm used to thin a black and white i.e. one bit per pixel images.",
         "For example, with an input image of:",
@@ -5652,7 +5582,6 @@
     },
     {
       "title": "Zig-zag matrix",
-      "type": "Waypoint",
       "description": [
         "A &nbsp; ''zig-zag'' &nbsp; array is a square arrangement of the first &nbsp;",
         "$N^2$ &nbsp; integers, &nbsp; where the",

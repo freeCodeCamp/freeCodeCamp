@@ -69,7 +69,6 @@
           "testString": "assert(palindrome(\"five|\\_/|four\") === false, '<code>palindrome(\"five|\\_/|four\")</code> should return false.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function palindrome(str) {\n  var string = str.toLowerCase().split(/[^A-Za-z0-9]/gi).join('');\n  var aux = string.split('');\n  if (aux.join('') === aux.reverse().join('')){\n    return true;\n  }\n\n  return false;\n}"
@@ -240,7 +239,6 @@
           "testString": "assert.deepEqual(convertToRoman(3999), \"MMMCMXCIX\", '<code>convertToRoman(3999)</code> should return \"MMMCMXCIX\"');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Roman Numerals",
         "Array.prototype.splice()",
@@ -315,7 +313,6 @@
           "testString": "assert(rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\") === \"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.\", '<code>rot13(\"GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.\")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "String.prototype.charCodeAt()",
         "String.fromCharCode()"
@@ -487,7 +484,6 @@
           "testString": "assert(telephoneCheck(\"(555)5(55?)-5555\") === false, '<code>telephoneCheck(\"(555)5(55?)-5555\")</code> should return false.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "RegExp"
       ],
@@ -585,7 +581,6 @@
           "testString": "assert.deepEqual(checkCashRegister(19.5, 20, [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]), {status: \"CLOSED\", change: [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]}, '<code>checkCashRegister(19.5, 20, [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]])</code> should return <code>{status: \"CLOSED\", change: [[\"PENNY\", 0.5], [\"NICKEL\", 0], [\"DIME\", 0], [\"QUARTER\", 0], [\"ONE\", 0], [\"FIVE\", 0], [\"TEN\", 0], [\"TWENTY\", 0], [\"ONE HUNDRED\", 0]]}</code>.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "MDNlinks": [
         "Global Object",
