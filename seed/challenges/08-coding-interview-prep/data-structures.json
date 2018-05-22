@@ -39,7 +39,6 @@
           "testString": "assert(i32View.length === 16, 'Your <code>i32View</code> view of your buffer should be 16 elements long.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "var buffer = new ArrayBuffer(64);\nvar i32View = new Int32Array(buffer);"
@@ -93,7 +92,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -163,7 +161,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -238,7 +235,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -305,7 +301,6 @@
           "testString": "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 5]); test.enqueue(['B', 5]); test.enqueue(['C', 5]); test.enqueue(['D', 3]); test.enqueue(['E', 1]); test.enqueue(['F', 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join('') === 'EDABCF';}()), 'The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function PriorityQueue () { \n this.collection = []; \n this.printCollection = function(){ \n console.log(this.collection); \n }; \n this.size = function() { \n return this.collection.length; \n }; \n this.isEmpty = function() { \n return this.size() > 0 ? false : true; \n }; \n this.enqueue = function (newitem) {\n  if (this.isEmpty()) {\n    return this.collection.push(newitem);\n  }\n\n  this.collection = this.collection.reverse();\n  var found_index = this.collection.findIndex(function (item) {\n    return newitem[1] >= item[1];\n  });\n  if (found_index === -1) {\n    this.collection.push(newitem);\n  } else {\n    this.collection.splice(found_index, 0, newitem);\n  }\n  this.collection = this.collection.reverse();\n}; \n this.dequeue = function() { \n if (!this.isEmpty()) { \n return this.collection.shift()[0]; \n } else { \n return 'The queue is empty.' \n } \n }; \n }"
@@ -373,7 +368,6 @@
           "testString": "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); return test.dequeue() === 17 && test.dequeue() === 32 && test.dequeue() === 591 && test.dequeue() === null && test.dequeue() === null && test.dequeue() === null && test.dequeue() === null && test.enqueue(100) === 100 && test.dequeue() === 100; })(), 'Trying to dequeue past the write pointer returns <code>null</code> and does not advance the write pointer.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "class CircularQueue { \n constructor(size) { \n this.queue = []; \n this.read = 0; \n this.write = 0; \n this.max = size - 1; \n while (size > 0) { \n this.queue.push(null); \n size--; \n } \n } \n print() { \n return this.queue; \n } \n enqueue(item) { \n if (this.queue[this.write] === null) { \n this.queue[this.write] = item; \n if (this.write === this.max) { \n this.write = 0; \n } else { \n this.write++; \n } \n return item; \n } \n return null; \n } \n dequeue() { \n if (this.queue[this.read] !== null) { \n var item = this.queue[this.read]; \n this.queue[this.read] = null; \n if (this.read === this.max) { \n this.read = 0; \n } else { \n this.read++; \n } \n return item; \n } else { \n return null; \n } \n } \n }"
@@ -453,7 +447,6 @@
           "testString": "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'Your <code>add</code> method should return <code>false</code> when a duplicate value is added.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};}"
@@ -506,7 +499,6 @@
           "testString": "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'Your <code>remove</code> method should remove the given item from the set.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};}"
@@ -563,7 +555,6 @@
           "testString": "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()), 'The <code>size</code> method should return the number of elements in the collection.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};}"
@@ -630,7 +621,6 @@
           "testString": "assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'The proper collection was returned');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};}"
@@ -702,7 +692,6 @@
           "testString": "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')}, 'The proper collection was returned');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};}"
@@ -786,7 +775,6 @@
           "testString": "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ 'a', 'b' ])}, 'The proper collection was returned');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};}"
@@ -897,7 +885,6 @@
           "testString": "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"<code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>\");"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};this.subset = function(set) {var isSubset = true;var c = this.values();c.forEach(function(e){if(!set.has(e)) isSubset = false;});return isSubset;};}"
@@ -1010,7 +997,6 @@
           "testString": "assert(function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');}, 'Your <code>Set</code> should only contains the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function checkSet(){var set = new Set([1,2,3,'Taco','Cat','Awesome']);\nreturn set;}"
@@ -1057,7 +1043,6 @@
           "testString": "assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, 'Your Set should contain the values 1, 3, & 4');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function checkSet(){\nvar set = new Set([1,2,3,4,5]);\nset.delete(2);\nset.delete(5);\nreturn set;}"
@@ -1103,7 +1088,6 @@
           "testString": "assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, '<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function checkSet(arrToBeSet, checkValue){\nvar set = new Set(arrToBeSet);\nvar result = [\nset.has(checkValue),\nset.size\n];\nreturn result;\n}"
@@ -1149,7 +1133,6 @@
           "testString": "assert(function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ]}, 'Your Set was returned correctly!');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function checkSet(set){\nreturn [...set];}"
@@ -1218,7 +1201,6 @@
           "testString": "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('b','b'); test.add('c','d'); test.remove('asdfas'); var init = test.size(); test.clear(); return (init == 2 && test.size() == 0)})(), 'The clear method empties the map and the size method returns the number of items present in the map.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -1264,7 +1246,6 @@
           "testString": "assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -1326,7 +1307,6 @@
           "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('1key','value2'); test.add('ke1y','value3'); return (test.lookup('key1') === 'value1' && test.lookup('1key') == 'value2' && test.lookup('ke1y') == 'value3')})(), 'The hash table handles collisions.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -1385,7 +1365,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1446,7 +1425,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1520,7 +1498,6 @@
         "class Node {\n  constructor (element) {\n    this.element = element;\n    this.next = null;\n  }\n}\n\nclass LinkedList {\n  constructor () {\n    this._length = 0;\n    this._head = null;\n  }\n\n  head () {\n    return this._head;\n  }\n\n  size () {\n    return this._length;\n  }\n\n  add (element) {\n    const node = new Node(element);\n\n    if (this._head === null) {\n      this._head = node;\n    } else {\n      let current = this._head;\n\n      while (current.next !== null) {\n        current = current.next;\n      }\n\n      current.next = node; \n    }\n    \n    ++this._length;\n  }\n  \n  remove (element) {\n    if (this._head === null) return;\n    \n    let previous;\n    let current = this._head;\n    \n    while (current.next !== null && current.element !== element) {\n      previous = current;\n      current = current.next;\n    }\n    \n    if (previous) {\n      previous.next = current.next;\n    } else {\n      this._head = current.next;\n    }\n    \n    --this._length;\n  }\n}"
       ],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1610,7 +1587,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1718,7 +1694,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1817,7 +1792,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
       "translations": {},
@@ -1916,7 +1890,6 @@
           "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(60); return ( test.print().join('') == '2535' ) })(), 'The last item can be removed from the list.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2007,7 +1980,6 @@
           "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.reverse(); return (test.printReverse().join('') == '112233'); })(), 'The next and previous references are correctly maintained when a list is reversed.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2120,7 +2092,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMin !== 'function') { return false; }; if (typeof test.findMax !== 'function') { return false; }; return (test.findMin() == null && test.findMax() == null) })(), 'The <code>findMin</code> and <code>findMax</code> methods return <code>null</code> for an empty tree.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2205,7 +2176,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); return test.add(4) == null; })(), 'Adding an element that already exists returns <code>null</code>');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2289,7 +2259,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })(), '<code>isPresent</code> handles cases where the tree is empty.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2391,7 +2360,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced(); })(), 'The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2504,7 +2472,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.postorder !== 'function') { return false; }; return (test.postorder() == null); })(), 'The <code>postorder</code> method returns <code>null</code> for an empty tree.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2601,7 +2568,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; return (test.reverseLevelOrder() == null); })(), 'The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2694,7 +2660,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'The <code>remove</code> method removes leaf nodes from the tree');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -2835,7 +2800,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return (test.inorder().join('') == '27'); })(), 'Removing the root in a tree with two nodes sets the second to be the root.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -3026,7 +2990,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(100); test.add(50); test.add(300); test.remove(100); return (test.inorder().join('') == 50300); })(), 'The root can be removed on a tree of three nodes.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -3209,7 +3172,6 @@
           "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; return (test.invert() == null); })(), 'Inverting an empty tree returns <code>null</code>.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -3318,7 +3280,6 @@
           "testString": "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('hop'); test.add('hops'); test.add('hopped'); test.add('hoppy'); test.add('hope'); return (test.isWord('hop') && !test.isWord('ho') && test.isWord('hopped') && !test.isWord('hopp') && test.isWord('hoppy') && !test.isWord('hoping')); }()), 'The isWord method returns true only for words added to the trie and false for all other words.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -3389,7 +3350,6 @@
           "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })(), 'The insert method adds elements according to the max heap property.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -3442,7 +3402,6 @@
           "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(30); test.insert(300); test.insert(500); test.insert(10); let result = []; result.push(test.remove()); result.push(test.remove()); result.push(test.remove()); result.push(test.remove());  return (result.join('') == '5003003010') })(), 'The remove method removes the greatest element from the max heap while maintaining the max heap property.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -3493,7 +3452,6 @@
           "testString": "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; test.insert(3); test.insert(12); test.insert(5); test.insert(10); test.insert(1); test.insert(27); test.insert(42); test.insert(57); test.insert(5); var result = test.sort(); return (isSorted(result)); })(), 'The sort method returns an array containing all items added to the min heap in sorted order.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [],
       "challengeType": 1,
@@ -3558,7 +3516,6 @@
           "testString": "assert(undirectedAdjList.Jeff.indexOf(\"Jenny\") !== -1 && undirectedAdjList.Jenny.indexOf(\"Jeff\") !== -1, 'There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "var undirectedAdjList = {\n\"James\": [\"Jeff\"],\"Jill\": [\"Jenny\"],\"Jenny\": [\"Jill\", \"Jeff\"],\n\"Jeff\": [\"James\", \"Jenny\"]\n};"
@@ -3618,7 +3575,6 @@
           "testString": "assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'There should be an edge between the fourth and fifth node.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "var adjMatUndirected = [[0, 0, 1, 1, 0],[0, 0, 0, 0, 0],[1, 0, 0, 0, 1],[1, 0, 0, 0, 1],[0, 0, 1, 1, 0]];"
@@ -3681,7 +3637,6 @@
           "testString": "assert((incMatUndirected[1][3] === 1) && (incMatUndirected[3][3] === 1), 'There should be a fourth edge between the second and fourth node.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "var incMatUndirected = [[1, 0, 0, 0],[1, 1, 0, 1],[0, 1, 1, 0],[0, 0, 0, 1],[0, 0, 1, 0]];"
@@ -3738,7 +3693,6 @@
           "testString": "assert((function() { var graph = [[0, 1], [1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1})})(), 'The input graph <code>[[0, 1], [1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1}</code>');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function bfs(graph, root) {\n// Distance object returned\nvar nodesLen = {};\n// Set all distances to infinity\nfor (var i = 0; i < graph.length; i++) {\nnodesLen[i] = Infinity;\n}\nnodesLen[root] = 0; // ...except root node\nvar queue = [root]; // Keep track of nodes to visit\nvar current; // Current node traversing\n// Keep on going until no more nodes to traverse\nwhile (queue.length !== 0) {\ncurrent = queue.shift();\n// Get adjacent nodes from current node\nvar curConnected = graph[current]; // Get layer of edges from current\nvar neighborIdx = []; // List of nodes with edges\nvar idx = curConnected.indexOf(1); // Get first edge connection\nwhile (idx !== -1) {\nneighborIdx.push(idx); // Add to list of neighbors\nidx = curConnected.indexOf(1, idx + 1); // Keep on searching\n}\n// Loop through neighbors and get lengths\nfor (var j = 0; j < neighborIdx.length; j++) {\n// Increment distance for nodes traversed\nif (nodesLen[neighborIdx[j]] === Infinity) {\nnodesLen[neighborIdx[j]] = nodesLen[current] + 1;\nqueue.push(neighborIdx[j]); // Add new neighbors to queue\n}\n}\n}\nreturn nodesLen;}"
@@ -3842,7 +3796,6 @@
           "testString": "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 0);})().length === 2, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with two elements.');"
         }
       ],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "solutions": [
         "function dfs(graph, root) { var stack = []; var tempV; var visited = []; var tempVNeighbors = []; stack.push(root); while (stack.length > 0) { tempV = stack.pop(); if (visited.indexOf(tempV) == -1) { visited.push(tempV); tempVNeighbors = graph[tempV]; for (var i = 0; i < tempVNeighbors.length; i++) { if (tempVNeighbors[i] == 1) { stack.push(i); }}}} return visited;}"

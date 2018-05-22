@@ -24,9 +24,7 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "releasedOn": "January 1, 2016",
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {
@@ -69,9 +67,7 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "releasedOn": "January 15, 2017",
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {}
@@ -103,9 +99,7 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "releasedOn": "January 15, 2017",
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {}
@@ -137,9 +131,7 @@
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
       "releasedOn": "January 15, 2017",
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {}
@@ -166,9 +158,7 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "challengeSeed": [],
       "tests": [],
-      "type": "zipline",
       "isRequired": true,
       "challengeType": 3,
       "translations": {

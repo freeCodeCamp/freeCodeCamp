@@ -11,7 +11,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.",
         "Helmet helps you secure your Express apps by setting various HTTP headers. Install the package, then require it."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"helmet\" dependency should be in package.json",
@@ -31,7 +30,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.",
         "Hackers can exploit known vulnerabilities in Express/Node if they see that your site is powered by Express. X-Powered-By: Express is sent in every request coming from Express by default. The helmet.hidePoweredBy() middleware will remove the X-Powered-By header. You can also explicitly set the header to something else, to throw people off. e.g. app.use(helmet.hidePoweredBy({ setTo: 'PHP 4.2.0' }))"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.hidePoweredBy() middleware should be mounted correctly",
@@ -52,7 +50,6 @@
         "Your page could be put in a <frame> or <iframe> without your consent. This can result in clickjacking attacks, among other things. Clickjacking is a technique of tricking a user into interacting with a page different from what the user thinks it is. This can be obtained executing your page in a malicious context, by mean of iframing. In that context a hacker can put a hidden layer over your page. Hidden buttons can be used to run bad scripts. This middleware sets the X-Frame-Options header. It restricts who can put your site in a frame. It has three modes: DENY, SAMEORIGIN, and ALLOW-FROM.",
         "We don’t need our app to be framed. You should use helmet.frameguard() passing with the configuration object {action: 'deny'}."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.frameguard() middleware should be mounted correctly",
@@ -80,7 +77,6 @@
         "The X-XSS-Protection HTTP header is a basic protection. The browser detects a potential injected script using a heuristic filter. If the header is enabled, the browser changes the script code, neutralizing it.",
         "It still has limited support."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.xssFilter() middleware should be mounted correctly",
@@ -100,7 +96,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.",
         "Browsers can use content or MIME sniffing to adapt to different datatypes coming from a response. They override the Content-Type headers to guess and process the data. While this can be convenient in some scenarios, it can also lead to some dangerous attacks. This middleware sets the X-Content-Type-Options header to nosniff. This instructs the browser to not bypass the provided Content-Type."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.noSniff() middleware should be mounted correctly",
@@ -120,7 +115,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.",
         "Some web applications will serve untrusted HTML for download. Some versions of Internet Explorer by default open those HTML files in the context of your site. This means that an untrusted HTML page could start doing bad things in the context of your pages. This middleware sets the X-Download-Options header to noopen. This will prevent IE users from executing downloads in the trusted site’s context."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.ieNoOpen() middleware should be mounted correctly",
@@ -142,7 +136,6 @@
         "Configure helmet.hsts() to use HTTPS for the next 90 days. Pass the config object {maxAge: timeInMilliseconds, force: true}. Glitch already has hsts enabled. To override its settings you need to set the field \"force\" to true in the config object. We will intercept and restore the Glitch header, after inspecting it for testing.",
         "Note: Configuring HTTPS on a custom website requires the acquisition of a domain, and a SSL/TSL Certificate."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.hsts() middleware should be mounted correctly",
@@ -166,7 +159,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.",
         "To improve performance, most browsers prefetch DNS records for the links in a page. In that way the destination ip is already known when the user clicks on a link. This may lead to over-use of the DNS service (if you own a big website, visited by millions people…), privacy issues (one eavesdropper could infer that you are on a certain page), or page statistics alteration (some links may appear visited even if they are not). If you have high security needs you can disable DNS prefetching, at the cost of a performance penalty."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.dnsPrefetchControl() middleware should be mounted correctly",
@@ -186,7 +178,6 @@
         "As a reminder, this project is being built upon the following starter project on <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>Glitch</a>, or cloned from <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a>.",
         "If you are releasing an update for your website, and you want the users to always download the newer version, you can (try to) disable caching on client’s browser. It can be useful in development too. Caching has performance benefits, which you will lose, so only use this option when there is a real need."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.noCache() middleware should be mounted correctly",
@@ -208,7 +199,6 @@
         "By default, directives are wide open, so it’s important to set the defaultSrc directive as a fallback. Helmet supports both defaultSrc and default-src naming styles. The fallback applies for most of the unspecified directives. In this exercise, use helmet.contentSecurityPolicy(), and configure it setting the defaultSrc directive to [\"self\"] (the list of allowed sources must be in an array), in order to trust only your website address by default. Set also the scriptSrc directive so that you will allow scripts to be downloaded from your website, and from the domain 'trusted-cdn.com'.",
         "Hint: in the \"'self'\" keyword, the single quotes are part of the keyword itself, so it needs to be enclosed in double quotes to be working."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "helmet.csp() middleware should be mounted correctly",
@@ -246,7 +236,6 @@
         "<code>}))</code>",
         "We introduced each middleware separately for teaching purpose, and for ease of testing. Using the ‘parent’ helmet() middleware is easiest, and cleaner, for a real project."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "no tests - it's a descriptive challenge",
@@ -269,7 +258,6 @@
         "<hr>To begin using BCrypt, add it as a dependency in your project and require it as 'bcrypt' in your server.",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "BCyrpt is a dependency",
@@ -297,7 +285,6 @@
         "<pre>bcrypt.hash('passw0rd!', 13, (err, hash) => {\n  console.log(hash); //$2a$12$Y.PHPE15wR25qrrtgGkiYe2sXo98cjuMCG1YwSI5rJW1DSJp0gEYS\n  bcrypt.compare('passw0rd!', hash, (err, res) => {\n      console.log(res); //true\n  });\n});</pre>",
         "Submit your page when you think you've got it right."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Async hash generated and correctly compared",
@@ -320,7 +307,6 @@
         "Now to compare a password input with the new sync hash, you would use the compareSync method: <code>var result = bcrypt.compareSync(myPlaintextPassword, hash);</code> with the result being a boolean true or false. Add this function in and log to the console the result to see it working.",
         "Submit your page when you think you've got it right. If you ran into errors during these challenges you can take a look at the example completed code <a href='https://gist.github.com/JosephLivengood/9a2698fb63e42d9d8b4b84235c08b4c4'>here</a>."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Sync hash generated and correctly compared",

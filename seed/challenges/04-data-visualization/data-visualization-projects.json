@@ -29,11 +29,9 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "challengeSeed": [],
       "tests": [],
       "isRequired": true,
       "releasedOn": "January 1, 2016",
-      "type": "zipline",
       "challengeType": 3,
       "translations": {
         "es": {
@@ -68,11 +66,9 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "challengeSeed": [],
       "tests": [],
       "isRequired": true,
       "releasedOn": "January 1, 2016",
-      "type": "zipline",
       "challengeType": 3,
       "translations": {
         "es": {
@@ -109,11 +105,9 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "challengeSeed": [],
       "tests": [],
       "isRequired": true,
       "releasedOn": "January 1, 2016",
-      "type": "zipline",
       "challengeType": 3,
       "translations": {
         "es": {
@@ -144,11 +138,9 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "challengeSeed": [],
       "tests": [],
       "isRequired": true,
       "releasedOn": "February 17, 2017",
-      "type": "zipline",
       "challengeType": 3,
       "translations": {}
     },
@@ -175,11 +167,9 @@
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
-      "challengeSeed": [],
       "tests": [],
       "isRequired": true,
       "releasedOn": "February 17, 2017",
-      "type": "zipline",
       "challengeType": 3,
       "translations": {}
     }

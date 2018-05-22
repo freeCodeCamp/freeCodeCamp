@@ -10,7 +10,6 @@
       "description": [
         "Add mongodb and mongoose to the project’s package.json. Then require mongoose. Store your mLab database URI in the private .env file as MONGO_URI. Connect to the database using mongoose.connect(<Your URI>)"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"mongodb\" dependency should be in package.json",
@@ -56,7 +55,6 @@
         "<code>  done(null, result);</code>",
         "<code>};</code>"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Creating an instance from a mongoose schema should succeed",
@@ -79,7 +77,6 @@
         "<code>//   ...do your stuff here...</code>",
         "<code>});</code>"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Creating and saving a db item should succeed",
@@ -97,7 +94,6 @@
       "description": [
         "Sometimes you need to create many instances of your models, e.g. when seeding a database with initial data. Model.create() takes an array of objects like [{name: 'John', ...}, {...}, ...] as the first argument, and saves them all in the db. Create many people with Model.create(), using the function argument arrayOfPeople."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Creating many db items at once should succeed",
@@ -116,7 +112,6 @@
         "Find all the people having a given name, using Model.find() -> [Person]",
         "In its simplest usage, Model.find() accepts a query document (a JSON object ) as the first argument, then a callback. It returns an array of matches. It supports an extremely wide range of search options. Check it in the docs. Use the function argument personName as search key."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Find all items corresponding to a criteria should succeed",
@@ -134,7 +129,6 @@
       "description": [
         "Model.findOne() behaves like .find(), but it returns only one document (not an array), even if there are items. It is especially useful when searching by properties that you have declared as unique. Find just one person which has a certain food in her favorites, using Model.findOne() -> Person. Use the function argument food as search key."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Find one item should succeed",
@@ -152,7 +146,6 @@
       "description": [
         "When saving a document, mongodb automatically adds the field _id, and set it to a unique alphanumeric key. Searching by _id is an extremely frequent operation, so moongose provides a dedicated method for it. Find the (only!!) person having a given _id, using Model.findById() -> Person. Use the function argument personId as search key."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Find an item by Id should succeed",
@@ -172,7 +165,6 @@
         "Find a person by _id ( use any of the above methods ) with the parameter personId as search key. Add “hamburger” to the list of her favoriteFoods (you can use Array.push()). Then - inside the find callback - save() the updated Person.",
         "[*] Hint: This may be tricky if in your Schema you declared favoriteFoods as an Array, without specifying the type (i.e. [String]). In that casefavoriteFoods defaults to Mixed type, and you have to manually mark it as edited using document.markModified('edited-field'). (http://mongoosejs.com/docs/schematypes.html - #Mixed )"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Find-edit-update an item should succeed",
@@ -192,7 +184,6 @@
         "Find a person by Name and set her age to 20. Use the function parameter personName as search key.",
         "Hint: We want you to return the updated document. o do that you need to pass the options document { new: true } as the 3rd argument to findOneAndUpdate(). By default these methods return the unmodified object."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "findOneAndUpdate an item should succeed",
@@ -210,7 +201,6 @@
       "description": [
         "Delete one person by her _id. You should use one of the methods findByIdAndRemove() or findOneAndRemove(). They are like the previous update methods. They pass the removed document to the cb. As usual, use the function argument personId as search key."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Deleting an item should succeed",
@@ -229,7 +219,6 @@
         "Model.remove() is useful to delete all the documents matching given criteria. Delete all the people whose name is “Mary”, using Model.remove(). Pass to it a query ducument with the “name” field set, and of course a callback.",
         "Note: Model.remove() doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the done() callback, since we use it in tests."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Deleting many items at once should succeed",
@@ -248,7 +237,6 @@
         "If you don’t pass the callback as the last argument to Model.find() (or to the other search methods), the query is not executed. You can store the query in a variable for later use. This kind of object enables you to build up a query using chaining syntax. The actual db search is executed when you finally chain the method .exec(). Pass your callback to this last method. There are many query helpers, here we’ll use the most ‘famous’ ones.",
         "Find people who like \"burrito\". Sort them by name, limit the results to two documents, and hide their age. Chain .find(), .sort(), .limit(), .select(), and then .exec(). Pass the done(err, data) callback to exec()."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "Chaining query helpers should succeed",

@@ -27,7 +27,6 @@
           "testString": "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/),' Your <code>style</code> declaration should end with a <code>;</code> .');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -158,7 +157,6 @@
           "testString": "assert(code.match(/<\\/style>/g) && code.match(/<\\/style>/g).length === (code.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'Make sure all your <code>style</code> elements are valid and have a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -298,7 +296,6 @@
           "testString": "assert($(\"h2\").attr(\"style\") === undefined, 'Do not use inline style declarations like <code>style=\"color&#58; red\"</code> in your <code>h2</code> element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -442,7 +439,6 @@
           "testString": "assert($(\"p:eq(0)\").hasClass(\"red-text\"), 'Your first <code>p</code> element should have the class <code>red-text</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -559,7 +555,6 @@
           "testString": "assert(code.match(/p\\s*{\\s*font-size\\s*:\\s*16\\s*px\\s*;\\s*}/i), 'Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -665,7 +660,6 @@
           "testString": "assert($(\"p\").not(\".red-text\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> elements should use the font <code>monospace</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -796,7 +790,6 @@
           "testString": "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> element should still use the font <code>monospace</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -931,7 +924,6 @@
           "testString": "assert(new RegExp(\"[^fc]-->\", \"gi\").test(code), 'Be sure to close your comment by adding <code>--&#62;</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1060,7 +1052,6 @@
           "testString": "assert($(\"img\").width() === 100, 'Your image should be 100 pixels wide. Browser zoom should be at 100%.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1203,7 +1194,6 @@
           "testString": "assert($(\"img\").css(\"border-left-color\") === \"rgb(0, 128, 0)\", 'The border around your <code>img</code> element should be green.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1343,7 +1333,6 @@
           "testString": "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 8, 'Your image should have a border radius of <code>10px</code>');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1471,7 +1460,6 @@
           "testString": "assert(code.match(/50%/g), 'Be sure to use a percentage value of <code>50%</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1597,7 +1585,6 @@
           "testString": "assert($(\"div\").css(\"background-color\") === \"rgb(192, 192, 192)\", 'Your <code>div</code> element should have a silver background.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1731,7 +1718,6 @@
           "testString": "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1887,7 +1873,6 @@
           "testString": "assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), 'Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2030,7 +2015,6 @@
           "testString": "assert($(\".blue-box\").css(\"padding-top\") === \"20px\", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2150,7 +2134,6 @@
           "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"20px\", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2261,7 +2244,6 @@
           "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"-15px\", 'Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2382,7 +2364,6 @@
           "testString": "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2500,7 +2481,6 @@
           "testString": "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2622,7 +2602,6 @@
           "testString": "assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'You should use the clockwise notation to set the padding of <code>blue-box</code> class.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2742,7 +2721,6 @@
           "testString": "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2864,7 +2842,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {},
@@ -2963,7 +2940,6 @@
           "testString": "assert(code.match(/\\.red-box\\s*?{\\s*?.*?\\s*?.*?\\s*?padding:\\s*?1\\.5em/gi), 'Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {},
       "files": {
@@ -3038,7 +3014,6 @@
           "testString": "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule ends with a semi-colon.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -3144,7 +3119,6 @@
           "testString": "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -3235,7 +3209,6 @@
           "testString": "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -3333,7 +3306,6 @@
           "testString": "assert($(\"h1\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h1</code> element should be blue.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -3461,7 +3433,6 @@
           "testString": "assert($(\"h1\").css(\"color\") === \"rgb(255, 165, 0)\", 'Your <code>h1</code> element should be orange.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -3582,7 +3553,6 @@
           "testString": "assert($(\"h1\").css(\"color\") === \"rgb(255, 255, 255)\", 'Your <code>h1</code> element should be white.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -3698,7 +3668,6 @@
           "testString": "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -3804,7 +3773,6 @@
           "testString": "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), 'Use the <code>hex code</code> for the color black instead of the word <code>black</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -3912,7 +3880,6 @@
           "testString": "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -4031,7 +3998,6 @@
           "testString": "assert(code.match(/\\.fuchsia-text\\s*?{\\s*?color:\\s*?#F0F\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -4135,7 +4101,6 @@
           "testString": "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element a color of black.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -4255,7 +4220,6 @@
           "testString": "assert(code.match(/\\.sienna-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?160\\s*?,\\s*?82\\s*?,\\s*?45\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color sienna.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -4350,7 +4314,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Mar 15, 2018",
       "challengeType": 0,
       "translations": {},
@@ -4585,7 +4548,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Mar 15, 2018",
       "challengeType": 0,
       "translations": {},
@@ -4829,7 +4791,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Mar 15, 2018",
       "challengeType": 0,
       "translations": {},
@@ -5079,7 +5040,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Mar 15, 2018",
       "challengeType": 0,
       "translations": {},
@@ -5318,7 +5278,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Mar 15, 2018",
       "challengeType": 0,
       "translations": {},
@@ -5553,7 +5512,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Mar 15, 2018",
       "challengeType": 0,
       "translations": {},
@@ -5794,7 +5752,6 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "waypoint",
       "releasedOn": "Mar 15, 2018",
       "challengeType": 0,
       "translations": {},

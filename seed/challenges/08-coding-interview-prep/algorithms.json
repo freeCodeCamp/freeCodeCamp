@@ -73,7 +73,6 @@
           "testString": "assert.equal(sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1]).length, 8, '<code>sym([3, 3, 3, 2, 5], [2, 1, 5, 7], [3, 4, 6, 6], [1, 2, 3], [5, 3, 9, 8], [1])</code> should contain only eight elements.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Array.prototype.reduce()",
         "Symmetric Difference"
@@ -158,7 +157,6 @@
           "testString": "assert.deepEqual(updateInventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]]), [[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]], '<code>updateInventory([[0, \"Bowling Ball\"], [0, \"Dirty Sock\"], [0, \"Hair Pin\"], [0, \"Microphone\"]], [[1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [1, \"Bowling Ball\"], [1, \"Toothpaste\"]])</code> should return <code>[[1, \"Bowling Ball\"], [0, \"Dirty Sock\"], [1, \"Hair Pin\"], [1, \"Half-Eaten Apple\"], [0, \"Microphone\"], [1, \"Toothpaste\"]]</code>.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Global Array Object"
       ],
@@ -272,7 +270,6 @@
           "testString": "assert.strictEqual(permAlone('aaabb'), 12, '<code>permAlone(\"aaabb\")</code> should return 12.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Permutations",
         "RegExp"
@@ -358,7 +355,6 @@
           "testString": "assert.deepEqual(pairwise([], 100), 0, '<code>pairwise([], 100)</code> should return 0.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Array.prototype.reduce()"
       ],
@@ -443,7 +439,6 @@
           "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>bubbleSort</code> should not use the built-in <code>.sort()</code> method.');"
         }
       ],
-      "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
@@ -500,7 +495,6 @@
           "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>selectionSort</code> should not use the built-in <code>.sort()</code> method.');"
         }
       ],
-      "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
@@ -557,7 +551,6 @@
           "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>insertionSort</code> should not use the built-in <code>.sort()</code> method.');"
         }
       ],
-      "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
@@ -615,7 +608,6 @@
           "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>quickSort</code> should not use the built-in <code>.sort()</code> method.');"
         }
       ],
-      "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},
@@ -676,7 +668,6 @@
           "testString": "assert.strictEqual(code.search(/\\.sort\\(/), -1, '<code>mergeSort</code> should not use the built-in <code>.sort()</code> method.');"
         }
       ],
-      "type": "waypoint",
       "solutions": [],
       "challengeType": 1,
       "translations": {},

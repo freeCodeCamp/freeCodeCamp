@@ -42,7 +42,6 @@
           "testString": "assert(convertToF(30) === 86, '<code>convertToF(30)</code> should return a value of <code>86</code>');"
         }
       ],
-      "type": "checkpoint",
       "challengeType": 1,
       "isRequired": true,
       "translations": {
@@ -107,7 +106,6 @@
           "testString": "assert(reverseString(\"Greetings from Earth\") === \"htraE morf sgniteerG\", '<code>reverseString(\"Greetings from Earth\")</code> should return <code>\"htraE morf sgniteerG\"</code>.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function reverseString(str) {\n  return str.split('').reverse().join('');\n}\n\nreverseString(\"hello\");\n"
@@ -189,7 +187,6 @@
           "testString": "assert(factorialize(0) === 1, '<code>factorialize(0)</code> should return 1.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function factorialize(num) {\n  return num < 1 ? 1 : num * factorialize(num - 1);\n}\n\nfactorialize(5);\n"
@@ -271,7 +268,6 @@
           "testString": "assert(findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\") === 19, '<code>findLongestWordLength(\"What if we try a super-long word such as otorhinolaryngology\")</code> should return 19.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function findLongestWordLength(str) {\n  return str.split(' ').sort((a, b) => b.length - a.length)[0].length;\n}\n\nfindLongestWordLength(\"The quick brown fox jumped over the lazy dog\");\n"
@@ -342,7 +338,6 @@
           "testString": "assert.deepEqual(largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]]), [25, 48, 21, -3], '<code>largestOfFour([[17, 23, 25, 12], [25, 7, 34, 48], [4, -10, 18, 21], [-72, -3, -17, -10]])</code> should return <code>[25, 48, 21, -3]</code>.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function largestOfFour(arr) {\n  return arr.map(subArr => Math.max.apply(null, subArr));\n}\n\nlargestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]);\n"
@@ -442,7 +437,6 @@
           "testString": "assert(!(/\\.endsWith\\(.*?\\)\\s*?;?/.test(code)) && !(/\\['endsWith'\\]/.test(code)), 'Do not use the built-in method <code>.endsWith()</code> to solve the challenge.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function confirmEnding(str, target) {\n  return str.substring(str.length - target.length) === target;\n}\n\nconfirmEnding(\"Bastian\", \"n\");\n"
@@ -525,7 +519,6 @@
           "testString": "assert(!/\\.repeat/g.test(code), 'The built-in <code>repeat()</code>-method should not be used');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function repeatStringNumTimes(str, num) {\n  if (num < 0) return '';\n  return num === 1 ? str : str + repeatStringNumTimes(str, num-1);\n}\n\nrepeatStringNumTimes(\"abc\", 3);\n"
@@ -601,7 +594,6 @@
           "testString": "assert(truncateString(\"Absolutely Longer\", 2) === \"Ab...\", '<code>truncateString(\"Absolutely Longer\", 2)</code> should return \"Ab...\".');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function truncateString(str, num) {\n  if (num >= str.length) {\n    return str;\n  }\n\n  return str.slice(0, num) + '...';\n}\n\ntruncateString(\"A-tisket a-tasket A green and yellow basket\", 8);\n"
@@ -664,7 +656,6 @@
           "testString": "assert.strictEqual(findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; }), undefined, '<code>findElement([1, 3, 5, 9], function(num) { return num % 2 === 0; })</code> should return undefined.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Array.prototype.filter()"
       ],
@@ -764,7 +755,6 @@
           "testString": "assert.strictEqual(booWho(\"false\"), false, '<code>booWho(\"false\")</code> should return false.');"
         }
       ],
-      "type": "bonfire",
       "MDNlinks": [
         "Boolean Objects"
       ],
@@ -840,7 +830,6 @@
           "testString": "assert(titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\") === \"Here Is My Handle Here Is My Spout\", '<code>titleCase(\"HERE IS MY HANDLE HERE IS MY SPOUT\")</code> should return <code>Here Is My Handle Here Is My Spout</code>.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function titleCase(str) {\n  return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.substring(1).toLowerCase()).join(' ');\n}\n\ntitleCase(\"I'm a little tea pot\");\n"
@@ -920,7 +909,6 @@
           "testString": "assert(testArr2[0] === \"a\" && testArr2[1] === \"b\", 'The second array should remain the same after the function runs.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "isBeta": true,
       "solutions": [
@@ -990,7 +978,6 @@
           "testString": "assert.deepEqual(bouncer([1, null, NaN, 2, undefined]), [1, 2], '<code>bouncer([1, null, NaN, 2, undefined])</code> should return <code>[1, 2]</code>.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function bouncer(arr) {\n  return arr.filter(e => e);\n}\n\nbouncer([7, \"ate\", \"\", false, 9]);\n"
@@ -1112,7 +1099,6 @@
           "testString": "assert(typeof(getIndexToIns([], 1)) === \"number\", '<code>getIndexToIns([], 1)</code> should return a number.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function getIndexToIns(arr, num) {\n  arr = arr.sort((a, b) => a - b);\n\n  for (let i = 0; i < arr.length; i++) {\n    if (arr[i] >= num) {\n      return i;\n    }\n  }\n\n  return arr.length;\n}\n\ngetIndexToIns([40, 60], 50);\n"
@@ -1207,7 +1193,6 @@
           "testString": "assert(mutation([\"voodoo\", \"no\"]) === false, '<code>mutation([\"voodoo\", \"no\"])</code> should return false.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function mutation(arr) {\n  let hash = Object.create(null);\n\n  arr[0].toLowerCase().split('').forEach(c => hash[c] = true);\n\n  return !arr[1].toLowerCase().split('').filter(c => !hash[c]).length;\n}\n\nmutation([\"hello\", \"hey\"]);\n"
@@ -1292,7 +1277,6 @@
           "testString": "assert.deepEqual(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2), [[0, 1], [2, 3], [4, 5], [6, 7], [8]], '<code>chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2)</code> should return <code>[[0, 1], [2, 3], [4, 5], [6, 7], [8]]</code>.');"
         }
       ],
-      "type": "bonfire",
       "isRequired": true,
       "solutions": [
         "function chunkArrayInGroups(arr, size) {\n  let out = [];\n\n  for (let i = 0; i < arr.length; i += size) {\n    out.push(arr.slice(i, i + size));\n  }\n\n  return out;\n}\n\nchunkArrayInGroups([\"a\", \"b\", \"c\", \"d\"], 2);\n"

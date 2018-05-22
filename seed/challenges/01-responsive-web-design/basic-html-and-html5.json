@@ -27,7 +27,6 @@
           "testString": "assert.isTrue((/hello(\\s)+world/gi).test($('h1').text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -141,7 +140,6 @@
           "testString": "assert.isTrue((/hello(\\s)+world/gi).test($(\"h1\").text()), 'Your <code>h1</code> element should have the text \"Hello World\".');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -225,7 +223,6 @@
           "testString": "assert(code.match(/<\\/p>/g) && code.match(/<\\/p>/g).length === code.match(/<p/g).length, 'Make sure your <code>p</code> element has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -298,7 +295,6 @@
           "testString": "assert.isTrue((/Kitty(\\s)+ipsum/gi).test($(\"p\").text()), 'Your <code>p</code> element should contain the first few words of the provided <code>kitty ipsum text</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -386,7 +382,6 @@
           "testString": "assert(!/[^fc]-->/gi.test(code.replace(/ *<!--[^fc]*\\n/g,'')), 'Be sure to delete all trailing comment tags&#44; i.e. <code>--&#62;</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -479,7 +474,6 @@
           "testString": "assert((code.match(/<([a-z0-9]){1,2}>/g)[0]===\"<h1>\" && code.match(/<([a-z0-9]){1,2}>/g)[1]===\"<h2>\" && code.match(/<([a-z0-9]){1,2}>/g)[2]===\"<p>\") , 'Do not change the order of the <code>h1</code> <code>h2</code> or <code>p</code> in the code.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -560,7 +554,6 @@
           "testString": "assert(($(\"p\").length > 0), 'Leave your <code>p</code> element on the page.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -658,7 +651,6 @@
           "testString": "assert(code.match(/<\\/p>\\s*?<\\/main>/g), 'The closing <code>main</code> tag should come after the second closing paragraph tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "pt-br": {
@@ -723,7 +715,6 @@
           "testString": "assert(code.match(/alt\\s*?=\\s*?(\\\"|\\').*(\\\"|\\')/), 'Your image element <strong>must</strong> have an <code>alt</code> attribute.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -826,7 +817,6 @@
           "testString": "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'Make sure your <code>a</code> element has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -940,7 +930,6 @@
           "testString": "assert($('footer').eq(0).attr('id') == \"footer\", 'The <code>footer</code> tag should have an <code>id</code> attribute set to \"footer\".');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "pt-br": {
@@ -1036,7 +1025,6 @@
           "testString": "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1126,7 +1114,6 @@
           "testString": "assert($(\"a\").attr(\"href\") === \"#\", 'Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to \"#\".');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1213,7 +1200,6 @@
           "testString": "assert(code.match(/<\\/a>/g) && code.match(/<a/g) && code.match(/<\\/a>/g).length === code.match(/<a/g).length, 'Make sure each of your <code>a</code> elements has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1313,7 +1299,6 @@
           "testString": "assert(code.match(/<\\/li>/gi) && code.match(/<li[\\s>]/gi) && code.match(/<\\/li>/gi).length === code.match(/<li[\\s>]/gi).length, 'Make sure your <code>li</code> elements have closing tags.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1436,7 +1421,6 @@
           "testString": "assert(code.match(/<\\/li>/g) && code.match(/<li>/g) && code.match(/<\\/li>/g).length === code.match(/<li>/g).length, 'Make sure your <code>li</code> element has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1533,7 +1517,6 @@
           "testString": "assert($(\"input[type=text]\").length > 0, 'Your app should have an <code>input</code> element of type <code>text</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1642,7 +1625,6 @@
           "testString": "assert($(\"input[type=text]\").length > 0 && code.match(/<input((\\s+\\w+(\\s*=\\s*(?:\".*?\"|'.*?'|[\\^'\">\\s]+))?)+\\s*|\\s*)\\/?>/gi), 'The finished <code>input</code> element should have valid syntax.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1743,7 +1725,6 @@
           "testString": "assert(code.match(/<\\/form>/g) && code.match(/<form [^<]*>/g) && code.match(/<\\/form>/g).length === code.match(/<form [^<]*>/g).length, 'Make sure your <code>form</code> element has well-formed open and close tags.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1847,7 +1828,6 @@
           "testString": "assert(code.match(/<\\/button>/g) && code.match(/<button/g) && code.match(/<\\/button>/g).length === code.match(/<button/g).length, 'Make sure your <code>button</code> element has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -1942,7 +1922,6 @@
           "testString": "assert($(\"input\").prop(\"required\"), 'Your text <code>input</code> element should have the <code>required</code> attribute.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2070,7 +2049,6 @@
           "testString": "assert($(\"label\").parent().get(0).tagName.match('FORM'), 'Each of your radio button elements should be added within the <code>form</code> tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2192,7 +2170,6 @@
           "testString": "assert($('label > input[type=\"checkbox\"]').filter(\"[name='personality']\").length > 2, 'Give your checkboxes the <code>name</code> attribute of <code>personality</code>.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2305,7 +2282,6 @@
           "testString": "assert($('input[type=\"checkbox\"]').prop(\"checked\"), 'Your first checkbox on your form should be checked by default.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2418,7 +2394,6 @@
           "testString": "assert(code.match(/<\\/div>/g) && code.match(/<\\/div>/g).length === code.match(/<div>/g).length, 'Make sure your <code>div</code> element has a closing tag.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "de": {
@@ -2535,7 +2510,6 @@
           "testString": "assert(code.match(/<html>\\s*?<h1>\\s*?.*?\\s*?<\\/h1>\\s*?<\\/html>/gi), 'The <code>html</code> tags should wrap around one <code>h1</code> element.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "pt-br": {
@@ -2601,7 +2575,6 @@
           "testString": "assert($('body').children('h1').length == 1 && $('body').children('p').length == 1, 'The <code>body</code> element should wrap around both the <code>h1</code> and <code>p</code> elements.');"
         }
       ],
-      "type": "waypoint",
       "challengeType": 0,
       "translations": {
         "pt-br": {
