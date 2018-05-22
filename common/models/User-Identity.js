@@ -60,11 +60,11 @@ export default function(UserIdent) {
         .flatMap(user => {
           if (!user) {
             throw wrapHandledError(
-              new Error('could not find or create an user'),
+              new Error('could not find or create a user'),
               {
                 message: dedent`
-                  Oops... something is not right. We could not find create
-                  an user with that email.
+                  Oops... something is not right. We could not find or create a
+                  user with that email.
                 `,
                 type: 'info',
                 redirectTo: '/'
