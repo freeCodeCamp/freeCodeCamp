@@ -13,5 +13,7 @@ export default function bootServices(app) {
   Fetchr.registerFetcher(mapUi);
   Fetchr.registerFetcher(user);
 
-  app.use('/services', Fetchr.middleware());
+  const middleware = Fetchr.middleware();
+  app.use('/services', middleware);
+  app.use('/external/services', middleware);
 }

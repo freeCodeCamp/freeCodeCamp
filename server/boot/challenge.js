@@ -20,7 +20,7 @@ function buildUserUpdate(
   timezone
 ) {
   let finalChallenge;
-  const updateData = { $set: {}, $push: {} };
+  const updateData = { $push: {} };
   const { timezone: userTimezone, completedChallenges = [] } = user;
 
   const oldChallenge = _.find(
@@ -127,13 +127,12 @@ export default function(app) {
   router.get('/map', redirectToLearn);
 
   app.use(api);
+  app.use('/external', api);
   app.use(router);
 
   function modernChallengeCompleted(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
     req.checkBody('id', 'id must be an ObjectId').isMongoId();
-    req.checkBody('files', 'files must be an object with polyvinyls for keys')
-      .isFiles();
 
     const errors = req.validationErrors(true);
     if (errors) {
