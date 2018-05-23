@@ -5500,7 +5500,7 @@
       "title": "Change a variable for a specific area",
       "description": [
         "When you create your variables in <code>:root</code> they will set the value of that variable for the whole page.",
-        "You can then over-write these valuables by setting them again within a specific element.",
+        "You can then over-write these variables by setting them again within a specific element.",
         "<hr>",
         "Change the value of <code>--penguin-belly</code> to <code>white</code> in the <code>penguin</code> class."
       ],
