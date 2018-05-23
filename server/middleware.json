@@ -55,7 +55,8 @@
     "./middlewares/csp": {},
     "./middlewares/jade-helpers": {},
     "./middlewares/flash-cheaters": {},
-    "./middlewares/passport-login": {}
+    "./middlewares/passport-login": {},
+    "./middlewares/jwt-authorization": {}
   },
   "files": {},
   "final:after": {

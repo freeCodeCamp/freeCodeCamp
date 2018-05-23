@@ -84,6 +84,7 @@
     "jquery": "~3.1.1",
     "jshint": "~2.9.4",
     "jsonlint-cli": "^1.0.1",
+    "jsonwebtoken": "^8.2.1",
     "lightbox2": "~2.8.2",
     "lodash": "^4.1.0",
     "loopback": "^3.11.1",

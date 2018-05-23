@@ -8,6 +8,7 @@ import path from 'path';
 import loopback from 'loopback';
 import _ from 'lodash';
 import { ObjectId } from 'mongodb';
+import jwt from 'jsonwebtoken';
 
 import { themes } from '../utils/themes';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
@@ -379,6 +380,8 @@ module.exports = function(User) {
           domain: process.env.COOKIE_DOMAIN || 'localhost'
         };
         if (accessToken && accessToken.id) {
+          const jwtAccess = jwt.sign({accessToken}, process.env.JWT_SECRET);
+          res.cookie('jwt_access_token', jwtAccess, config);
           res.cookie('access_token', accessToken.id, config);
           res.cookie('userId', accessToken.userId, config);
         }

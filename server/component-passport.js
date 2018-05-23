@@ -3,6 +3,7 @@ import { PassportConfigurator } from
  '@freecodecamp/loopback-component-passport';
 import passportProviders from './passport-providers';
 import url from 'url';
+import jwt from 'jsonwebtoken';
 
 const passportOptions = {
   emailOptional: true,
@@ -143,6 +144,8 @@ export default function setupPassport(app) {
                 maxAge: accessToken.ttl,
                 domain: process.env.COOKIE_DOMAIN || 'localhost'
               };
+              const jwtAccess = jwt.sign({accessToken}, process.env.JWT_SECRET);
+              res.cookie('jwt_access_token', jwtAccess, cookieConfig);
               res.cookie('access_token', accessToken.id, cookieConfig);
               res.cookie('userId', accessToken.userId, cookieConfig);
               req.login(user);
