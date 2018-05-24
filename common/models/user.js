@@ -683,8 +683,7 @@ module.exports = function(User) {
         will introduce a change in this user.
         `
       )
-        .do(console.log)
-        .map(() => dedent`Your settings have not been updated.`);
+       .map(() => dedent`Your settings have not been updated.`);
     }
     return Observable.from(valuesToUpdate)
       .flatMap(flag => Observable.of({ flag, newValue: values[flag] }))
