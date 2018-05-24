@@ -21,7 +21,7 @@
     "prelint-js": "npm run create-rev && gulp generate-migration-map",
     "pretest": "npm run create-rev && npm run lint",
     "prestart-production": "gulp build -p",
-    "seed": "node seed",
+    "seed": "node seed/index.js",
     "snyk-protect": "snyk protect",
     "start": "babel-node server/server.js",
     "start-production": "node pm2Start",
