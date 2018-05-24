@@ -21,7 +21,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 |---|---|
 | `npm run test` |  run all JS tests in the system, including client, server, lint and challenge tests |
 | `npm run test-challenges` | run all challenge tests (for each challenge JSON file, run all `tests` against all `solutions`) |
-| `npm run seed` <br>&nbsp;&nbsp;(<small>or</small> `node seed`) | parses all the challenge JSON files and saves them into MongoDB (code is inside [seed/index.js](seed/index.js)) |
+| `npm run seed` <br>&nbsp;&nbsp;(<small>or</small> `node seed/index.js`) | parses all the challenge JSON files and saves them into MongoDB (code is inside [seed/index.js](seed/index.js)) |
 | `npm run commit` | interactive tool to help you build a good commit message |
 | `npm run unpack` | extract challenges from `seed/challenges` into `unpacked` subdirectory, one HTML page per challenge - see [Unpack and Repack](#unpack-and-repack) |
 | `npm run repack` | repack challenges from `unpacked` subdirectory into `seed/challenges` |
@@ -246,7 +246,7 @@ mailhog
 
 #### Using MailHog
 
-Once you have installed MailHog and started it running you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025). 
+Once you have installed MailHog and started it running you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025).
 You should now see a screen like below:
 
 ![MailHog Screenshot 1](docs/images/1.jpg)
@@ -381,9 +381,9 @@ room when you are not certain of any thing specific in the code.
 
 The challenges are stored inside the `seed` directory (and its various subdirectories).
 
-The `seed` directory contains all the challenges that appear on the freeCodeCamp learning platform. 
+The `seed` directory contains all the challenges that appear on the freeCodeCamp learning platform.
 
-For each challenge section, there is a JSON file (fields documented below) containing its name, seed HTML, tests, and so on. 
+For each challenge section, there is a JSON file (fields documented below) containing its name, seed HTML, tests, and so on.
 
 For more about creating challenges, see [seed/README](seed/README.md) and [seed/challenge-style-guide.md](seed/challenge-style-guide.md).
 
@@ -449,7 +449,7 @@ Instance of freeCodeCamp](#maintaining-your-fork).
         $ git status
         On branch staging
         Your branch is up-to-date with 'origin/staging'.
-        
+
         nothing to commit, working directory clean
 
 3.  If you are not on staging or your working directory is not clean, resolve
@@ -458,7 +458,7 @@ Instance of freeCodeCamp](#maintaining-your-fork).
 4.  Create a branch off of `staging` with git: `git checkout -B
     branch/name-here` **Note:** Branch naming is important. Use a name like
     `fix/short-fix-description` or `feature/short-feature-description`.
-    
+
 5.  Edit your file(s) locally with the editor of your choice. To edit challenges, you may want to use `unpack` and `repack` -- see [Unpack and Repack](#unpack-and-repack) for instructions.
 
 4.  Check your `git status` to see unstaged files.
@@ -643,9 +643,9 @@ Be sure to post in the PR conversation that you have made the requested changes.
 * Miscellaneous:
 
     -   [How to clone the freeCodeCamp website on a Windows PC](http://forum.freecodecamp.org/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
-    
+
     -   [How to log in to your local freeCodeCamp site using GitHub](http://forum.freecodecamp.org/t/how-to-log-in-to-your-local-instance-of-free-code-camp/19552)
-    
+
     -   [Writing great git commit messages](http://forum.freecodecamp.org/t/writing-good-git-commit-messages/13210)
-         
+
     -   [Contributor Chat Support](https://gitter.im/FreeCodeCamp/Contributors)  - for the freeCodeCamp repositories, and running a local instance
