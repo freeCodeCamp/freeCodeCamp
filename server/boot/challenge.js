@@ -20,7 +20,7 @@ function buildUserUpdate(
   timezone
 ) {
   let finalChallenge;
-  const updateData = { $push: {} };
+  const updateData = {};
   const { timezone: userTimezone, completedChallenges = [] } = user;
 
   const oldChallenge = _.find(
@@ -44,9 +44,11 @@ function buildUserUpdate(
     };
   }
 
-  updateData.$push = {
-    ...updateData.$push,
-    completedChallenges: finalChallenge
+  updateData.$set = {
+    completedChallenges: _.uniqBy(
+      [finalChallenge, ...completedChallenges],
+      'id'
+    )
   };
 
   if (

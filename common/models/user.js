@@ -46,24 +46,20 @@ function destroyAll(id, Model) {
 function buildCompletedChallengesUpdate(completedChallenges, project) {
   const key = Object.keys(project)[0];
   const solutions = project[key];
+  const solutionKeys = Object.keys(solutions);
   const currentCompletedChallenges = [ ...completedChallenges ];
   const currentCompletedProjects = currentCompletedChallenges
-    .filter(({id}) => Object.keys(solutions).includes(id));
+    .filter(({id}) => solutionKeys.includes(id));
   const now = Date.now();
-  const update = Object.keys(solutions).reduce((update, currentId) => {
+  const update = solutionKeys.reduce((update, currentId) => {
     const indexOfCurrentId = _.findIndex(
-      currentCompletedProjects,
+      update,
       ({id}) => id === currentId
     );
     const isCurrentlyCompleted = indexOfCurrentId !== -1;
-    if (
-      isCurrentlyCompleted &&
-      currentCompletedProjects[
-        indexOfCurrentId
-      ].solution !== solutions[currentId]
-    ) {
+    if (isCurrentlyCompleted) {
       update[indexOfCurrentId] = {
-        ...update[indexOfCurrentId],
+        ..._.find(update, ({id}) => id === currentId).__data,
         solution: solutions[currentId]
       };
     }
@@ -87,7 +83,11 @@ function buildCompletedChallengesUpdate(completedChallenges, project) {
     ],
     'id'
   );
-  return updatedExisting;
+  return {
+    updated: updatedExisting,
+    isNewCompletionCount:
+      updatedExisting.length - completedChallenges.length
+  };
 }
 
 function isTheSame(val1, val2) {
@@ -735,13 +735,26 @@ module.exports = function(User) {
     };
 
   User.prototype.updateMyProjects = function updateMyProjects(project) {
-    const updateData = {};
+    const updateData = { $set: {} };
     return this.getCompletedChallenges$()
-      .flatMap(completedChallenges => {
-        updateData.completedChallenges = buildCompletedChallengesUpdate(
-          completedChallenges,
+      .flatMap(() => {
+        const {
+          updated,
+          isNewCompletionCount
+        } = buildCompletedChallengesUpdate(
+          this.completedChallenges,
           project
         );
+        updateData.$set.completedChallenges = updated;
+        if (isNewCompletionCount) {
+          let points = [];
+          // give points a length of isNewCompletionCount
+          points[isNewCompletionCount - 1] = true;
+          updateData.$push = {};
+          updateData.$push.progressTimestamps = {
+            $each: points.map(() => Date.now())
+          };
+        }
         return this.update$(updateData);
       })
       .do(() => Object.assign(this, updateData))
