@@ -2,12 +2,12 @@
 require('babel-register');
 require('dotenv').load();
 const adler32 = require('adler32');
-
+const { getChallenges } = require('@freecodecamp/curriculum');
 const Rx = require('rxjs');
 const _ = require('lodash');
-const utils = require('../utils');
-const getChallenges = require('./getChallenges');
 const createDebugger = require('debug');
+
+const utils = require('../utils');
 
 const log = createDebugger('fcc:seed');
 // force logger to always output

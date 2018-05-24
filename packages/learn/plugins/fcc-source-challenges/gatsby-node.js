@@ -1,24 +1,7 @@
 const chokidar = require('chokidar');
-const fs = require('fs-extra');
-
 const { createChallengeNodes } = require('./create-Challenge-nodes');
 
 exports.sourceNodes = ({ boundActionCreators, reporter }, pluginOptions) => {
-  if (!(pluginOptions && pluginOptions.path)) {
-    reporter.panic(`
-"path" is a required option for gatsby-source-filesystem
-See docs here - https://www.gatsbyjs.org/packages/gatsby-source-filesystem/
-    `);
-  }
-
-  // Validate that the path exists.
-  if (!fs.existsSync(pluginOptions.path)) {
-    reporter.panic(`
-The path passed to fcc-source-challenges does not exist on your file system:
-${pluginOptions.path}
-Please use the path to the seed directory.
-      `);
-  }
 
   if (typeof pluginOptions.source !== 'function') {
     reporter.panic(`
