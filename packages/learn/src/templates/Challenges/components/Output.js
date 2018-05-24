@@ -48,10 +48,10 @@ class Output extends PureComponent {
         <base href='/' />
         <MonacoEditor
           className='challenge-output'
+          editorDidMount={::this.editorDidMount}
           height={height}
           options={options}
           value={output ? output : defaultOutput}
-          editorDidMount={::this.editorDidMount}
         />
       </Fragment>
     );

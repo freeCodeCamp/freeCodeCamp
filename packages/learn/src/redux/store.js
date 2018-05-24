@@ -15,6 +15,14 @@ import {
   epics as challengeEpics
 } from '../templates/Challenges/redux';
 import { reducer as map } from '../components/Map/redux';
+import servicesCreator from './createServices';
+import { _csrf } from './cookieVaules';
+
+const serviceOptions = {
+  context: _csrf ? { _csrf } : {},
+  xhrPath: '/external/services',
+  xhrTimeout: 15000
+};
 
 const rootReducer = combineReducers({
   app,
@@ -29,7 +37,8 @@ const rootEpic = combineEpics(analyticsEpic, ...appEpics, ...challengeEpics);
 const epicMiddleware = createEpicMiddleware(rootEpic, {
   dependencies: {
     window: typeof window !== 'undefined' ? window : {},
-    document: typeof window !== 'undefined' ? document : {}
+    document: typeof window !== 'undefined' ? document : {},
+    services: servicesCreator(serviceOptions)
   }
 });
 

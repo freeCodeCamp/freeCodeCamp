@@ -45,7 +45,7 @@ header {
   margin: 0px 10px;
 }
 
-#top-right-nav li > a {
+#top-right-nav li > a, #top-right-nav li > span {
   color:#fff;
   font-size: 17px;
   font-weight: 700;

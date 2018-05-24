@@ -92,12 +92,14 @@ class ShowClassic extends PureComponent {
       initTests,
       updateChallengeMeta,
       updateSuccessMessage,
-      data: { challengeNode: { files, title, fields: { tests } } },
+      data: {
+        challengeNode: { files, title, fields: { tests }, challengeType }
+      },
       pathContext: { challengeMeta }
     } = this.props;
     createFiles(files);
     initTests(tests);
-    updateChallengeMeta({ ...challengeMeta, title });
+    updateChallengeMeta({ ...challengeMeta, title, challengeType });
     updateSuccessMessage(randomCompliment());
     challengeMounted(challengeMeta.id);
   }
@@ -111,7 +113,12 @@ class ShowClassic extends PureComponent {
       updateChallengeMeta,
       updateSuccessMessage,
       data: {
-        challengeNode: { files, title: currentTitle, fields: { tests } }
+        challengeNode: {
+          files,
+          title: currentTitle,
+          fields: { tests },
+          challengeType
+        }
       },
       pathContext: { challengeMeta }
     } = this.props;
@@ -119,7 +126,11 @@ class ShowClassic extends PureComponent {
       updateSuccessMessage(randomCompliment());
       createFiles(files);
       initTests(tests);
-      updateChallengeMeta({ ...challengeMeta, title: currentTitle });
+      updateChallengeMeta({
+        ...challengeMeta,
+        title: currentTitle,
+        challengeType
+      });
       challengeMounted(challengeMeta.id);
     }
   }
@@ -142,14 +153,26 @@ class ShowClassic extends PureComponent {
     const editors = Object.keys(files)
       .map(key => files[key])
       .map((file, index) => (
-        <ReflexContainer orientation='horizontal' key={file.key + index}>
+        <ReflexContainer key={file.key + index} orientation='horizontal'>
           {index !== 0 && <ReflexSplitter />}
-          <ReflexElement flex={1} propagateDimensions={true} renderOnResize={true} renderOnResizeRate={20}>
+          <ReflexElement
+            flex={1}
+            propagateDimensions={true}
+            renderOnResize={true}
+            renderOnResizeRate={20}
+            >
             <Editor {...file} fileKey={file.key} />
           </ReflexElement>
-          {index + 1 === Object.keys(files).length && <ReflexSplitter propagate={true} />}
+          {index + 1 === Object.keys(files).length && (
+            <ReflexSplitter propagate={true} />
+          )}
           {index + 1 === Object.keys(files).length ? (
-            <ReflexElement flex={0.25} propagateDimensions={true} renderOnResize={true} renderOnResizeRate={20}>
+            <ReflexElement
+              flex={0.25}
+              propagateDimensions={true}
+              renderOnResize={true}
+              renderOnResizeRate={20}
+              >
               <Output
                 defaultOutput={`
 /**
@@ -181,9 +204,7 @@ class ShowClassic extends PureComponent {
             />
           </ReflexElement>
           <ReflexSplitter />
-          <ReflexElement flex={1}>
-            {editors}
-          </ReflexElement>
+          <ReflexElement flex={1}>{editors}</ReflexElement>
           <ReflexSplitter />
           <ReflexElement flex={0.5}>
             {showPreview ? <Preview className='full-height' /> : null}

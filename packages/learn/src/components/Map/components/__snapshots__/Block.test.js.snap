@@ -50,6 +50,17 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
       >
         Challenge One
       </Unknown>
+      <span
+        className="badge map-badge"
+      >
+        <GreenPass
+          style={
+            Object {
+              "height": "15px",
+            }
+          }
+        />
+      </span>
     </li>
     <li
       className="map-challenge-title"
@@ -80,6 +91,17 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
       >
         Challenge Two
       </Unknown>
+      <span
+        className="badge map-badge"
+      >
+        <GreenPass
+          style={
+            Object {
+              "height": "15px",
+            }
+          }
+        />
+      </span>
     </li>
   </ul>
 </li>

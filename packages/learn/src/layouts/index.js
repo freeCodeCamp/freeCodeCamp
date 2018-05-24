@@ -1,6 +1,8 @@
 /* global graphql */
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Helmet from 'react-helmet';
 
 import ga from '../analytics';
@@ -8,6 +10,7 @@ import ga from '../analytics';
 import { AllChallengeNode } from '../redux/propTypes';
 import Header from '../components/Header';
 import MapModal from '../components/MapModal';
+import { fetchUser } from '../redux/app';
 
 import './global.css';
 import 'react-reflex/styles.css';
@@ -37,11 +40,22 @@ const metaKeywords = [
   'programming'
 ];
 
+const mapStateToProps = () => ({});
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ fetchUser }, dispatch);
+
+const propTypes = {
+  children: PropTypes.func,
+  data: AllChallengeNode,
+  fetchUser: PropTypes.func.isRequired
+};
+
 class Layout extends PureComponent {
   state = {
     location: ''
   };
   componentDidMount() {
+    this.props.fetchUser();
     const url = window.location.pathname + window.location.search;
     ga.pageview(url);
     /* eslint-disable react/no-did-mount-set-state */
@@ -99,12 +113,9 @@ class Layout extends PureComponent {
   }
 }
 
-Layout.propTypes = {
-  children: PropTypes.func,
-  data: AllChallengeNode
-};
+Layout.propTypes = propTypes;
 
-export default Layout;
+export default connect(mapStateToProps, mapDispatchToProps)(Layout);
 
 export const query = graphql`
   query LayoutQuery {
@@ -118,6 +129,7 @@ export const query = graphql`
             slug
             blockName
           }
+          id
           block
           title
           isRequired

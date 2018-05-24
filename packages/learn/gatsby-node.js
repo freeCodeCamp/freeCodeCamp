@@ -102,7 +102,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   });
 };
 
-const webpack = require('webpack');
 const generateBabelConfig = require('gatsby/dist/utils/babel-config');
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
@@ -135,13 +134,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         }
       ]
     ]);
-    config.plugin('DefinePlugin', webpack.DefinePlugin, [
-      {
-        AUTH0_DOMAIN: JSON.stringify(process.env.AUTH0_DOMAIN),
-        AUTH0_CLIENT_ID: JSON.stringify(process.env.AUTH0_CLIENT_ID),
-        AUTH0_NAMESPACE: JSON.stringify(process.env.AUTH0_NAMESPACE)
-      }
-    ]);
   });
 };
 /* eslint-disable prefer-object-spread/prefer-object-spread */
@@ -151,6 +143,7 @@ exports.modifyBabelrc = ({ babelrc }) =>
       [
         'transform-es2015-arrow-functions',
         'transform-imports',
+        'transform-function-bind',
         {
           'react-bootstrap': {
             transform: 'react-bootstrap/lib/${member}',

@@ -1,34 +1,12 @@
 import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes } from '../../../utils/stateManagment';
+import { types as challenge } from '../../templates/Challenges/redux';
+import fecthUserEpic from './fetch-user-epic';
 
 const ns = 'app';
 
-function userIdentReplacer(state) {
-  return {
-    ...state,
-    [ns]: {
-      ...state[ns],
-      user: {
-        ...state[ns].user,
-        about: '**blank**',
-        email: '**blank**',
-        facebook: '**blank**',
-        githubProfile: '**blank**',
-        linkedin: '**blank**',
-        location: '**blank**',
-        name: '**blank**',
-        picture: '**blank**',
-        portfolio: '**blank**',
-        twitter: '**blank**',
-        username: '**blank**',
-        website: '**blank**'
-      }
-    }
-  };
-}
-
-export const epics = [];
+export const epics = [fecthUserEpic];
 
 export const types = createTypes(
   [
@@ -42,6 +20,7 @@ export const types = createTypes(
 );
 
 const initialState = {
+  appUsername: '',
   isSignedIn: false,
   user: {},
   showMapModal: false
@@ -57,15 +36,20 @@ export const updateUserSignedIn = createAction(types.updateUserSignedIn);
 
 export const isMapModalOpenSelector = state => state[ns].showMapModal;
 export const isSignedInSelector = state => state[ns].isSignedIn;
-export const userSelector = state => state[ns].user;
-
-export const allAppDataSelector = state => userIdentReplacer(state);
+export const userSelector = state => state[ns].user || {};
+export const completedChallengesSelector = state =>
+  state[ns].user.completedChallenges || [];
 
 export const reducer = handleActions(
   {
-    [types.fetchUserComplete]: (state, { payload }) => ({
+    [types.fetchUserComplete]: (
+      state,
+      { payload: { entities: { user }, result } }
+    ) => ({
       ...state,
-      user: payload
+      appUsername: result,
+      user: user[result],
+      isSignedIn: !!Object.keys(user).length
     }),
     [types.toggleMapModal]: state => ({
       ...state,
@@ -74,6 +58,16 @@ export const reducer = handleActions(
     [types.updateUserSignedIn]: (state, { payload }) => ({
       ...state,
       isSignedIn: payload
+    }),
+    [challenge.submitComplete]: (state, { payload: { points, id } }) => ({
+      ...state,
+      user: {
+        ...state.user,
+        completedChallenges:
+          points === state.user.points
+            ? state.user.completedChallenges
+            : [...state.user.completedChallengesSelector, { id }]
+      }
     })
   },
   initialState

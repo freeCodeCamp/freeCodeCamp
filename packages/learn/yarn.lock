@@ -93,8 +93,8 @@
     to-fast-properties "^2.0.0"
 
 "@freecodecamp/curriculum@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@freecodecamp/curriculum/-/curriculum-1.0.0.tgz#5631db2fc7e28e77b996d8048ccf481e167e808e"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@freecodecamp/curriculum/-/curriculum-1.0.1.tgz#e78ce190fac848cf78ea577d394440fbda7f066e"
 
 "@sinonjs/formatio@^2.0.0":
   version "2.0.0"
@@ -1706,6 +1706,10 @@ braces@^2.3.1:
 brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
+
+browser-cookies@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/browser-cookies/-/browser-cookies-1.2.0.tgz#fca3ffb9b6a63aadc4d8c0999c6b57d0fa7d29b5"
 
 browser-process-hrtime@^0.1.2:
   version "0.1.2"
@@ -3319,7 +3323,7 @@ es6-promise@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-3.2.1.tgz#ec56233868032909207170c39448e24449dd1fc4"
 
-es6-promise@^4.0.5, es6-promise@^4.1.0:
+es6-promise@^4.0.2, es6-promise@^4.0.5, es6-promise@^4.1.0:
   version "4.2.4"
   resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
 
@@ -3783,6 +3787,17 @@ fbjs@^0.8.14, fbjs@^0.8.16, fbjs@^0.8.9:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
+fetchr@^0.5.37:
+  version "0.5.37"
+  resolved "https://registry.yarnpkg.com/fetchr/-/fetchr-0.5.37.tgz#484dee9f47215a27d5f19b96165be24e0248de62"
+  dependencies:
+    debug "^2.6.3"
+    es6-promise "^4.0.2"
+    fumble "^0.1.0"
+    lodash "^4.0.1"
+    object-assign "^4.0.1"
+    xhr "^2.4.0"
+
 figures@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-2.0.0.tgz#3ab1a2d2a62c8bfb431a0c94cb797a2fce27c962"
@@ -4091,6 +4106,13 @@ fstream@^1.0.0, fstream@^1.0.10, fstream@^1.0.2:
     inherits "~2.0.0"
     mkdirp ">=0.5 0"
     rimraf "2"
+
+fumble@^0.1.0:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/fumble/-/fumble-0.1.3.tgz#00c7a97041b85fabcdc2c3bab730b3c90c3b4084"
+  dependencies:
+    camelcase "^3.0.0"
+    http-status "^0.2.0"
 
 function-bind@^1.0.2, function-bind@^1.1.0, function-bind@^1.1.1:
   version "1.1.1"
@@ -5041,6 +5063,10 @@ http-signature@~1.2.0:
     assert-plus "^1.0.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+http-status@^0.2.0:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/http-status/-/http-status-0.2.5.tgz#976f91077ea7bfc15277cbcf8c80c4d5c51b49b0"
 
 https-browserify@0.0.1:
   version "0.0.1"
@@ -6481,6 +6507,10 @@ lodash@4, lodash@^4.0.0, lodash@^4.1.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^
 lodash@4.11.1:
   version "4.11.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.11.1.tgz#a32106eb8e2ec8e82c241611414773c9df15f8bc"
+
+lodash@^4.0.1:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
 log-symbols@^1.0.2:
   version "1.0.2"
@@ -11489,7 +11519,7 @@ xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
 
-xhr@^2.4.1:
+xhr@^2.4.0, xhr@^2.4.1:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/xhr/-/xhr-2.5.0.tgz#bed8d1676d5ca36108667692b74b316c496e49dd"
   dependencies:

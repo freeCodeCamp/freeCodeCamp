@@ -145,7 +145,6 @@ export function setError(error, poly) {
     error
   );
   checkPoly(poly);
-  console.log('SET ERROR!!!!!!!!!!!!!!!!!');
   return {
     ...poly,
     error

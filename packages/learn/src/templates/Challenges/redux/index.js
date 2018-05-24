@@ -27,6 +27,7 @@ const initialState = {
     help: false,
     reset: false
   },
+  projectFormVaules: {},
   successMessage: 'Happy Coding!'
 };
 
@@ -49,6 +50,7 @@ export const types = createTypes(
     'updateChallengeMeta',
     'updateFile',
     'updateJSEnabled',
+    'updateProjectFormValues',
     'updateSuccessMessage',
     'updateTests',
 
@@ -95,6 +97,9 @@ export const updateChallengeMeta = createAction(types.updateChallengeMeta);
 export const updateFile = createAction(types.updateFile);
 export const updateConsole = createAction(types.updateConsole);
 export const updateJSEnabled = createAction(types.updateJSEnabled);
+export const updateProjectFormValues = createAction(
+  types.updateProjectFormValues
+);
 export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 
 export const lockCode = createAction(types.lockCode);
@@ -116,7 +121,6 @@ export const resetChallenge = createAction(types.resetChallenge);
 export const submitChallenge = createAction(types.submitChallenge);
 export const submitComplete = createAction(types.submitComplete);
 
-export const backendFormValuesSelector = state => state.form[backendNS];
 export const challengeFilesSelector = state => state[ns].challengeFiles;
 export const challengeMetaSelector = state => state[ns].challengeMeta;
 export const challengeTestsSelector = state => state[ns].challengeTests;
@@ -128,6 +132,10 @@ export const isHelpModalOpenSelector = state => state[ns].modal.help;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isJSEnabledSelector = state => state[ns].isJSEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
+
+export const backendFormValuesSelector = state => state.form[backendNS];
+export const projectFormVaulesSelector = state =>
+  state[ns].projectFormVaules || {};
 
 export const reducer = handleActions(
   {
@@ -194,6 +202,10 @@ export const reducer = handleActions(
         testString
       })),
       consoleOut: ''
+    }),
+    [types.updateProjectFormValues]: (state, { payload }) => ({
+      ...state,
+      projectFormVaules: payload
     }),
 
     [types.lockCode]: state => ({

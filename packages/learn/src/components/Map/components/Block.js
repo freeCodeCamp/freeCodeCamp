@@ -7,15 +7,22 @@ import Link, { navigateTo } from 'gatsby-link';
 
 import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { toggleMapModal } from '../../../redux/app';
+import { toggleMapModal, userSelector } from '../../../redux/app';
 import Caret from '../../icons/Caret';
-
+/* eslint-disable max-len */
+import GreenPass from '../../../templates/Challenges/components/icons/GreenPass';
+/* eslint-enable max-len */
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
 
-  return createSelector(expandedSelector, isExpanded => ({ isExpanded }))(
-    state
-  );
+  return createSelector(
+    expandedSelector,
+    userSelector,
+    (isExpanded, { completedChallenges = [] }) => ({
+      isExpanded,
+      completedChallenges: completedChallenges.map(({ id }) => id)
+    })
+  )(state);
 };
 
 const mapDispatchToProps = dispatch =>
@@ -24,6 +31,7 @@ const mapDispatchToProps = dispatch =>
 const propTypes = {
   blockDashedName: PropTypes.string,
   challenges: PropTypes.array,
+  completedChallenges: PropTypes.arrayOf(PropTypes.string),
   intro: PropTypes.shape({
     fields: PropTypes.shape({ slug: PropTypes.string.isRequired }),
     frontmatter: PropTypes.shape({
@@ -82,20 +90,36 @@ export class Block extends PureComponent {
           >
           {challenge.title || challenge.frontmatter.title}
         </Link>
+        {challenge.isCompleted ? (
+          <span className='badge map-badge'>
+            <GreenPass style={{ height: '15px' }} />
+          </span>
+        ) : null}
       </li>
     ));
   }
 
   render() {
-    const { challenges, isExpanded, intro } = this.props;
+    const { completedChallenges, challenges, isExpanded, intro } = this.props;
     const { blockName } = challenges[0].fields;
+    const challengesWithCompleted = challenges.map(challenge => {
+      const { id } = challenge;
+      const isCompleted = completedChallenges.some(
+        completedId => id === completedId
+      );
+      return { ...challenge, isCompleted };
+    });
     return (
       <li className={`block ${isExpanded ? 'open' : ''}`}>
         <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
           <h5>{blockName}</h5>
         </div>
-        <ul>{isExpanded ? this.renderChallenges(intro, challenges) : null}</ul>
+        <ul>
+          {isExpanded
+            ? this.renderChallenges(intro, challengesWithCompleted)
+            : null}
+        </ul>
       </li>
     );
   }

@@ -4,6 +4,7 @@ export default [
       slug: '/super-block-one/block-a/challenge-one',
       blockName: 'Block A'
     },
+    id: 'a',
     block: 'block-a',
     title: 'Challenge One',
     isRequired: false,
@@ -16,6 +17,7 @@ export default [
       slug: '/super-block-one/block-a/challenge-two',
       blockName: 'Block A'
     },
+    id: 'b',
     block: 'block-a',
     title: 'Challenge Two',
     isRequired: false,
@@ -28,6 +30,7 @@ export default [
       slug: '/super-block-one/block-b/challenge-one',
       blockName: 'Block B'
     },
+    id: 'c',
     block: 'block-b',
     title: 'Challenge One',
     isRequired: false,
@@ -40,6 +43,8 @@ export default [
       slug: '/super-block-one/block-b/challenge-two',
       blockName: 'Block B'
     },
+
+    id: 'd',
     block: 'block-b',
     title: 'Challenge Two',
     isRequired: false,
@@ -52,6 +57,7 @@ export default [
       slug: '/super-block-one/block-c/challenge-one',
       blockName: 'Block C'
     },
+    id: 'e',
     block: 'block-c',
     title: 'Challenge One',
     isRequired: false,
@@ -64,6 +70,7 @@ export default [
       slug: '/super-block-one/block-a/challenge-one',
       blockName: 'Block A'
     },
+    id: 'f',
     block: 'block-a',
     title: 'Challenge One',
     isRequired: false,
@@ -76,6 +83,7 @@ export default [
       slug: '/super-block-one/block-a/challenge-two',
       blockName: 'Block A'
     },
+    id: 'g',
     block: 'block-a',
     title: 'Challenge Two',
     isRequired: false,
@@ -88,6 +96,7 @@ export default [
       slug: '/super-block-one/block-b/challenge-one',
       blockName: 'Block B'
     },
+    id: 'h',
     block: 'block-b',
     title: 'Challenge One',
     isRequired: false,
@@ -100,6 +109,7 @@ export default [
       slug: '/super-block-one/block-b/challenge-two',
       blockName: 'Block B'
     },
+    id: 'i',
     block: 'block-b',
     title: 'Challenge Two',
     isRequired: false,

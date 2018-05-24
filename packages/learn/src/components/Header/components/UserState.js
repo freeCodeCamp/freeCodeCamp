@@ -1,64 +1,30 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { auth } from '../../../auth';
-import {
-  fetchUserComplete,
-  isSignedInSelector,
-  userSelector,
-  updateUserSignedIn
-} from '../../../redux/app';
+import { isSignedInSelector } from '../../../redux/app';
 import Login from './Login';
 import SignedIn from './SignedIn';
 
-const mapStateToProps = createSelector(
-  isSignedInSelector,
-  userSelector,
-  (isSignedIn, { name, email }) => ({ isSignedIn, name, email })
-);
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ updateUserSignedIn, fetchUserComplete }, dispatch);
+const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
+  isSignedIn
+}));
 
 const propTypes = {
   email: PropTypes.string,
-  fetchUserComplete: PropTypes.func.isRequired,
   isSignedIn: PropTypes.bool,
-  name: PropTypes.string,
-  updateUserSignedIn: PropTypes.func.isRequired
+  name: PropTypes.string
 };
 
 class UserState extends PureComponent {
-  componentDidMount() {
-    const isAuth = auth.isAuthenticated();
-    if (isAuth) {
-      this.props.fetchUserComplete(auth.getUser());
-    }
-    this.props.updateUserSignedIn(isAuth);
-  }
-
-  componentDidUpdate(prevProps) {
-    const isAuth = auth.isAuthenticated();
-    if (prevProps.isSignedIn && !isAuth) {
-      this.props.fetchUserComplete(auth.getUser());
-      this.props.updateUserSignedIn(isAuth);
-    }
-  }
-
   render() {
-    const { isSignedIn, name, email } = this.props;
-    return isSignedIn && (name || email) ? (
-      <SignedIn email={email} logout={auth.logout} name={name} />
-    ) : (
-      <Login login={auth.login} />
-    );
+    const { isSignedIn } = this.props;
+    return isSignedIn ? <SignedIn /> : <Login />;
   }
 }
 
 UserState.displayName = 'UserState';
 UserState.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserState);
+export default connect(mapStateToProps)(UserState);

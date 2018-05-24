@@ -18,6 +18,7 @@
 
 import debugFactory from 'debug';
 import { Observable, noop } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 const debug = debugFactory('fcc:ajax$');
 const root = typeof window !== 'undefined' ? window : {};
@@ -279,7 +280,7 @@ export function postJSON$(url, body) {
       Accept: 'application/json'
     },
     normalizeError: (e, xhr) => parseXhrResponse('json', xhr)
-  }).map(({ response }) => response);
+  }).pipe(map(({ response }) => response));
 }
 
 // Creates an observable sequence from an Ajax GET Request with the body.

@@ -9,7 +9,7 @@ module.exports = {
     siteUrl: 'https://learn.freecodecamp.org'
   },
   proxy: {
-    prefix: '/api',
+    prefix: '/external',
     url: 'http://localhost:3000'
   },
   plugins: [
