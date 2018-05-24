@@ -29,7 +29,9 @@
     "./middlewares/sessions.js": {}
   },
   "auth:before": {
-    "./middlewares/add-return-to": {}
+    "./middlewares/add-return-to": {},
+    "./middlewares/cookie-parser": {},
+    "./middlewares/jwt-authorization": {}
   },
   "parse": {
     "body-parser#json": {},
@@ -38,8 +40,8 @@
         "extended": true
       }
     },
-    "method-override": {},
-    "./middlewares/cookie-parser": {}
+    "method-override": {}
+
   },
   "parse:after": {
     "./middlewares/validator": {}
@@ -55,8 +57,7 @@
     "./middlewares/csp": {},
     "./middlewares/jade-helpers": {},
     "./middlewares/flash-cheaters": {},
-    "./middlewares/passport-login": {},
-    "./middlewares/jwt-authorization": {}
+    "./middlewares/passport-login": {}
   },
   "files": {},
   "final:after": {

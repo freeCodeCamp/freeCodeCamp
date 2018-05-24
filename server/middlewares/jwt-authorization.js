@@ -1,11 +1,14 @@
+import loopback from 'loopback';
 import jwt from 'jsonwebtoken';
 import { isBefore } from 'date-fns';
+
 import { wrapHandledError } from '../utils/create-handled-error';
 
 export default () => function authorizeByJWT(req, res, next) {
   const path = req.path.split('/')[1];
   if (/external/.test(path)) {
-    const cookie = req.signedCookies && req.signedCookies['jwt_access_token'];
+    const cookie = req.signedCookies && req.signedCookies['jwt_access_token'] ||
+      req.cookie && req.cookie['jwt_access_token'];
     if (!cookie) {
       throw wrapHandledError(
         new Error('Access token is required for this request'),
@@ -31,7 +34,7 @@ export default () => function authorizeByJWT(req, res, next) {
         }
       );
     }
-    const { accessToken: {created, ttl }} = token;
+    const { accessToken: {created, ttl, userId }} = token;
     const valid = isBefore(Date.now(), Date.parse(created) + ttl);
     if (!valid) {
       throw wrapHandledError(
@@ -44,7 +47,20 @@ export default () => function authorizeByJWT(req, res, next) {
         }
       );
     }
-    return next();
+    if (!req.user) {
+      const User = loopback.getModelByType('User');
+      return User.findById(userId)
+      .then(user => {
+        if (user) {
+          req.user = user;
+        }
+        return;
+      })
+      .then(next)
+      .catch(next);
+    } else {
+      return next();
+    }
   }
   return next();
 };
