@@ -52,6 +52,7 @@ export default () => function authorizeByJWT(req, res, next) {
       return User.findById(userId)
       .then(user => {
         if (user) {
+          user.points = user.progressTimestamps.length;
           req.user = user;
         }
         return;
