@@ -1,6 +1,6 @@
 {
   "name": "@freecodecamp/curriculum",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "freeCodeCamp's curriculum seed files",
   "main": "dist/index.js",
   "publishConfig": {
