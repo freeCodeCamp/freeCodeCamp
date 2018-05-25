@@ -5,19 +5,19 @@
   "helpRoom": "Help",
   "required": [
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/react/16.1.1/umd/react.development.js"
+      "src":"https://unpkg.com/react@16.4.0/umd/react.production.min.js"
     },
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.1/umd/react-dom.development.js"
+      "src":"https://unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js"
     },
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"
     },
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.6/react-redux.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/react-redux/5.0.7/react-redux.min.js"
     }
   ],
-  "template": "<body><div id='root'></div>${ source }</body>",
+  "template": "<body><div id='root'></div>${ source || '' }</body>",
   "challenges": [
     {
       "id": "5a24c314108439a4d4036141",
