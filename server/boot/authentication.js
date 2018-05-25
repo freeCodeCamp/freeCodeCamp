@@ -38,9 +38,33 @@ module.exports = function enableAuthentication(app) {
   ifUserRedirect,
   (req, res) => res.redirect(301, '/auth/auth0'));
 
+  router.get(
+    '/update-email',
+    ifNoUserRedirectHome,
+    (req, res) => res.render('account/update-email', {
+      title: 'Update your email'
+    })
+  );
+
   router.get('/signout', (req, res) => {
     req.logout();
-    res.redirect('/');
+    req.session.destroy( (err) => {
+      if (err) {
+        throw wrapHandledError(
+          new Error('could not destroy session'),
+          {
+            type: 'info',
+            message: 'Oops, something is not right.',
+            redirectTo: '/'
+          }
+        );
+      }
+      res.clearCookie('jwt_access_token');
+      res.clearCookie('access_token');
+      res.clearCookie('userId');
+      res.clearCookie('_csrf');
+      res.redirect('/');
+   });
   });
 
   router.get(

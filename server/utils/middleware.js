@@ -32,7 +32,7 @@ export function ifNoUser401(req, res, next) {
   return res.status(401).end();
 }
 
-export function ifNotVerifiedRedirectToSettings(req, res, next) {
+export function ifNotVerifiedRedirectToUpdateEmail(req, res, next) {
   const { user } = req;
   if (!user) {
     return next();
