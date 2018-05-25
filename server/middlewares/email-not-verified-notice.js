@@ -4,7 +4,7 @@ const ALLOWED_METHODS = ['GET'];
 const EXCLUDED_PATHS = [
   '/api/flyers/findOne',
   '/signout',
-  '/update-email'
+  '/settings/update-email'
 ];
 
 export default function emailNotVerifiedNotice() {
@@ -23,7 +23,7 @@ export default function emailNotVerifiedNotice() {
   confirm.
           `
         );
-        res.redirect('/update-email');
+        res.redirect('/settings/update-email');
         return next;
       }
     }

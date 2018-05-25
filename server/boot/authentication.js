@@ -38,14 +38,6 @@ module.exports = function enableAuthentication(app) {
   ifUserRedirect,
   (req, res) => res.redirect(301, '/auth/auth0'));
 
-  router.get(
-    '/update-email',
-    ifNoUserRedirectHome,
-    (req, res) => res.render('account/update-email', {
-      title: 'Update your email'
-    })
-  );
-
   router.get('/signout', (req, res) => {
     req.logout();
     req.session.destroy( (err) => {

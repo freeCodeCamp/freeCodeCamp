@@ -8,7 +8,7 @@ block content
                     span.ion-close-circled#flash-close
                 #flash-content
   h2.text-center Update your email address here:
-  form.form-horizontal.update-email(method='POST', action='/api/users/#{user.id}/update-email', name="updateEmailForm")
+  form.form-horizontal.update-email(method='POST', action='/update-my-email', name="updateEmailForm")
     .row
       .col-sm-6.col-sm-offset-3
         input(type='hidden', name='_csrf', value=_csrf)
