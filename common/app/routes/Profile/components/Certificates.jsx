@@ -42,59 +42,59 @@ const mapStateToProps = createSelector(
     currentCerts: [
       {
         show: is2018FullStackCert,
-        title: 'Full Stack Certification:',
+        title: 'Full Stack Certification',
         showURL: '2018-full-stack'
       },
       {
         show: isRespWebDesignCert,
-        title: 'Responsive Web Design Certification:',
+        title: 'Responsive Web Design Certification',
         showURL: 'responsive-web-design'
       },
       {
         show: isJsAlgoDataStructCert,
-        title: 'JavaScript Algorithms and Data Structures Certification:',
+        title: 'JavaScript Algorithms and Data Structures Certification',
         showURL: 'javascript-algorithms-and-data-structures'
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Front End Libraries Certification:',
+        title: 'Front End Libraries Certification',
         showURL: 'front-end-libraries'
       },
       {
         show: is2018DataVisCert,
-        title: 'Data Visualization Certification:',
+        title: 'Data Visualization Certification',
         showURL: 'data-visualization'
       },
       {
         show: isApisMicroservicesCert,
-        title: 'APIs and Microservices Certification:',
+        title: 'APIs and Microservices Certification',
         showURL: 'apis-and-microservices'
       },
       {
         show: isInfosecQaCert,
-        title: 'Information Security and Quality Assurance Certification:',
+        title: 'Information Security and Quality Assurance Certification',
         showURL: 'information-security-and-quality-assurance'
       }
     ],
     legacyCerts: [
       {
         show: isFullStackCert,
-        title: 'Full Stack Certification:',
+        title: 'Full Stack Certification',
         showURL: 'legacy-full-stack'
       },
       {
         show: isFrontEndCert,
-        title: 'Front End Certification:',
+        title: 'Front End Certification',
         showURL: 'legacy-front-end'
       },
       {
         show: isBackEndCert,
-        title: 'Back End Certification:',
+        title: 'Back End Certification',
         showURL: 'legacy-back-end'
       },
       {
         show: isDataVisCert,
-        title: 'Data Visualization Certification:',
+        title: 'Data Visualization Certification',
         showURL: 'legacy-data-visualization'
       }
     ]
@@ -124,21 +124,14 @@ const propTypes = {
 function renderCertShow(username, cert) {
   return cert.show ? (
     <Row key={ cert.showURL }>
-      <Col sm={ 8 }>
-        <p className='bigger-text'>
-          <strong>
-            { cert.title }
-          </strong>
-        </p>
-      </Col>
-      <Col sm={ 2 } smPush={ 2 }>
+      <Col sm={ 10 } smPush={ 1 }>
         <Button
           block={ true }
           bsSize='lg'
           bsStyle='primary'
           href={ `/certification/${username}/${cert.showURL}`}
           >
-          Show
+          View {cert.title}
         </Button>
       </Col>
     </Row>

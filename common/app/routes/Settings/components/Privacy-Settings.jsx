@@ -57,43 +57,58 @@ function PrivacySettings(props) {
       <FullWidthRow>
       <p>
         The settings in this section enable you to control what is show on{' '}
-        your freeCodeCamp public profile.
+        your freeCodeCamp public portfolio.
       </p>
       <ToggleSetting
         action='Make my profile completely private'
-        explain='Your certifications will be disabled'
+        explain={
+          'While your profile is completely private, no one will be able to ' +
+          'see your certifications'
+        }
         flag={ isLocked }
         flagName='isLocked'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('isLocked') }
       />
       <ToggleSetting
         action='Make my name completely private'
         flag={ !showName }
         flagName='name'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('showName') }
       />
       <ToggleSetting
         action='Make my location completely private'
         flag={ !showLocation }
         flagName='showLocation'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('showLocation') }
       />
       <ToggleSetting
         action='Make my "about me" completely private'
         flag={ !showAbout }
         flagName='showAbout'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('showAbout') }
       />
       <ToggleSetting
         action='Make my points completely private'
         flag={ !showPoints }
         flagName='showPoints'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('showPoints') }
       />
       <ToggleSetting
         action='Make my heat map completely private'
         flag={ !showHeatMap }
         flagName='showHeatMap'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('showHeatMap') }
       />
       <ToggleSetting
@@ -101,18 +116,24 @@ function PrivacySettings(props) {
         explain='Your certifications will be disabled'
         flag={ !showCerts }
         flagName='showCerts'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('showCerts') }
       />
       <ToggleSetting
         action='Make my portfolio completely private'
         flag={ !showPortfolio }
         flagName='showPortfolio'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('showPortfolio') }
       />
       <ToggleSetting
         action='Make my time line completely private'
         flag={ !showTimeLine }
         flagName='showTimeLine'
+        offLabel='Public'
+        onLabel='Private'
         toggleFlag={ toggleFlag('showTimeLine') }
       />
       </FullWidthRow>

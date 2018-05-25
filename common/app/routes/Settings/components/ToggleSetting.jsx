@@ -21,12 +21,13 @@ export default function ToggleSetting({
   explain,
   flag,
   flagName,
-  toggleFlag
+  toggleFlag,
+  ...restProps
 }) {
   return (
     <Row className='inline-form'>
       <Col sm={ 8 } xs={ 12 }>
-        <ControlLabel htmlFor={ flagName }>
+        <ControlLabel className='toggle-label' htmlFor={ flagName }>
           <p>
             <strong>
               { action }
@@ -43,6 +44,7 @@ export default function ToggleSetting({
           name={ flagName }
           onChange={ toggleFlag }
           value={ flag }
+          {...restProps}
         />
       </Col>
     </Row>
