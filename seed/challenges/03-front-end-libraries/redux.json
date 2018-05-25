@@ -5,10 +5,10 @@
   "helpRoom": "Help",
   "required": [
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"
     },
     {
-      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.2.0/redux-thunk.js"
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.2.0/redux-thunk.min.js"
     }
   ],
   "challenges": [
