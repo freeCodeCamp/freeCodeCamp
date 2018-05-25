@@ -6,14 +6,18 @@ import ns from './ns.json';
 
 const propTypes = {
   name: PropTypes.string.isRequired,
+  offLabel: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  onLabel: PropTypes.string,
   value: PropTypes.bool.isRequired
 };
 
 export default function ToggleButton({
   name,
   onChange,
-  value
+  value,
+  onLabel = 'On',
+  offLabel = 'Off'
 }) {
   return (
     <div className={ `${ns}-container` }>
@@ -30,7 +34,7 @@ export default function ToggleButton({
           type='radio'
           value={ 1 }
           >
-          On
+          { onLabel }
         </TB>
         <TB
           bsSize='lg'
@@ -40,7 +44,7 @@ export default function ToggleButton({
           type='radio'
           value={ 2 }
           >
-          Off
+          { offLabel }
         </TB>
       </BSBG>
     </div>

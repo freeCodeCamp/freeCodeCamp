@@ -45,7 +45,7 @@ class Honesty extends PureComponent {
     const isHonestAgreed = (
       <Panel bsStyle='info'>
         <p>
-          You have accepted our Academic Honesty Policy
+          You have accepted our Academic Honesty Policy.
         </p>
       </Panel>
     );
