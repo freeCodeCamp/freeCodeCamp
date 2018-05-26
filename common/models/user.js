@@ -407,10 +407,15 @@ module.exports = function(User) {
     );
   };
 
-  User.afterRemote('logout', function(ctx, result, next) {
-    var res = ctx.res;
-    res.clearCookie('access_token');
-    res.clearCookie('userId');
+  User.afterRemote('logout', function({req, res}, result, next) {
+    const config = {
+      signed: !!req.signedCookies,
+      domain: process.env.COOKIE_DOMAIN || 'localhost'
+    };
+    res.clearCookie('jwt_access_token', config);
+    res.clearCookie('access_token', config);
+    res.clearCookie('userId', config);
+    res.clearCookie('_csrf', config);
     next();
   });
 

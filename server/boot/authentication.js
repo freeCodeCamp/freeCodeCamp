@@ -59,10 +59,14 @@ module.exports = function enableAuthentication(app) {
           }
         );
       }
-      res.clearCookie('jwt_access_token');
-      res.clearCookie('access_token');
-      res.clearCookie('userId');
-      res.clearCookie('_csrf');
+      const config = {
+        signed: !!req.signedCookies,
+        domain: process.env.COOKIE_DOMAIN || 'localhost'
+      };
+      res.clearCookie('jwt_access_token', config);
+      res.clearCookie('access_token', config);
+      res.clearCookie('userId', config);
+      res.clearCookie('_csrf', config);
       res.redirect('/');
    });
   });
