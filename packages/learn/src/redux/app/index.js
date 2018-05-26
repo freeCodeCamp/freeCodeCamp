@@ -39,6 +39,8 @@ export const isSignedInSelector = state => state[ns].isSignedIn;
 export const userSelector = state => state[ns].user || {};
 export const completedChallengesSelector = state =>
   state[ns].user.completedChallenges || [];
+export const currentChallengeIdSelector = state =>
+  userSelector(state).currentChallengeId || '';
 
 export const reducer = handleActions(
   {

@@ -8,6 +8,7 @@ import executeChallengeEpic from './execute-challenge-epic';
 import codeLockEpic from './code-lock-epic';
 import createQuestionEpic from './create-question-epic';
 import codeStorageEpic from './code-storage-epic';
+import currentChallengeEpic from './current-challenge-epic';
 
 const ns = 'challenge';
 export const backendNS = 'backendChallenge';
@@ -37,7 +38,8 @@ export const epics = [
   completionEpic,
   createQuestionEpic,
   executeChallengeEpic,
-  codeStorageEpic
+  codeStorageEpic,
+  currentChallengeEpic
 ];
 
 export const types = createTypes(
