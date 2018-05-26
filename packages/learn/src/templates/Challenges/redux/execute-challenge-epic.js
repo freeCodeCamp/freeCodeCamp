@@ -9,7 +9,12 @@ import {
   map,
   filter,
   pluck,
-  concat
+  concat,
+  tap,
+  catchError,
+  ignoreElements,
+  startWith,
+  delay
 } from 'rxjs/operators';
 import { ofType, combineEpics } from 'redux-observable';
 import { overEvery, isString } from 'lodash';
@@ -22,7 +27,8 @@ import {
   updateConsole,
   checkChallenge,
   updateTests,
-  disableJSOnError
+  disableJSOnError,
+  isJSEnabledSelector
 } from './';
 import { buildFromFiles, buildBackendChallenge } from '../utils/build';
 import {
@@ -49,10 +55,11 @@ function updateMainEpic(actions, { getState }, { document }) {
         ),
         debounceTime(executeDebounceTimeout),
         switchMap(() =>
-          buildFromFiles(getState(), true)
-            .map(frameMain)
-            .ignoreElements()
-            .catch(() => of({ type: 'NULL' }))
+          buildFromFiles(getState(), true).pipe(
+            map(frameMain),
+            ignoreElements(),
+            catchError(err => of(disableJSOnError(err)))
+          )
         )
       );
       return merge(buildAndFrameMain, proxyLogger.map(updateConsole));
@@ -76,40 +83,41 @@ function executeChallengeEpic(action$, { getState }, { document }) {
           const postTests = of(
             updateConsole('// tests completed'),
             checkChallenge(checkChallengePayload)
-          ).delay(250);
-          // run the tests within the test iframe
-          return runTestsInTestFrame(document, tests)
-            .flatMap(tests => {
+          ).pipe(delay(250));
+          return runTestsInTestFrame(document, tests).pipe(
+            switchMap(tests => {
               return from(tests).pipe(
                 map(({ message }) => message),
                 filter(overEvery(isString, Boolean)),
                 map(updateConsole),
                 concat(of(updateTests(tests)))
               );
-            })
-            .concat(postTests);
+            }),
+            concat(postTests)
+          );
         })
       );
       const buildAndFrameChallenge = action$.pipe(
         ofType(types.executeChallenge),
         debounceTime(executeDebounceTimeout),
-        // if isCodeLocked do not run challenges
-        // .filter(() => !codeLockedSelector(getState()))
+        filter(() => isJSEnabledSelector(getState())),
         switchMap(() => {
           const state = getState();
           const { challengeType } = challengeMetaSelector(state);
           if (challengeType === backend) {
-            return buildBackendChallenge(state)
-              .do(frameTests)
-              .ignoreElements()
-              .startWith(initConsole('// running test'))
-              .catch(err => disableJSOnError(err));
+            return buildBackendChallenge(state).pipe(
+              tap(frameTests),
+              ignoreElements(),
+              startWith(initConsole('// running test')),
+              catchError(err => of(disableJSOnError(err)))
+            );
           }
-          return buildFromFiles(state, false)
-            .do(frameTests)
-            .ignoreElements()
-            .startWith(initConsole('// running test'))
-            .catch(err => disableJSOnError(err));
+          return buildFromFiles(state, false).pipe(
+            tap(frameTests),
+            ignoreElements(),
+            startWith(initConsole('// running test')),
+            catchError(err => of(disableJSOnError(err)))
+          );
         })
       );
       return merge(buildAndFrameChallenge, challengeResults);

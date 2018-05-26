@@ -82,10 +82,12 @@ function tryTransform(wrap = identity) {
   return function transformWrappedPoly(source) {
     const result = attempt(wrap, source);
     if (isError(result)) {
-      const friendlyError = `${result}`
-        .match(/[\w\W]+?\n/)[0]
-        .replace(' unknown:', '');
-      throw new Error(friendlyError);
+      console.error(result);
+      // note(Bouncey): Error thrown here to collapse the build pipeline
+      // At the minute, it will not bubble up
+      // We collapse the pipeline so the app doesn't fall over trying
+      // parse bad code (syntax/type errors etc...)
+      throw new Error();
     }
     return result;
   };
@@ -110,12 +112,7 @@ export const sassTransformer = cond([
   [stubTrue, identity]
 ]);
 
-export const _transformers = [
-  // addLoopProtectHtmlJsJsx,
-  replaceNBSP,
-  babelTransformer,
-  sassTransformer
-];
+export const _transformers = [replaceNBSP, babelTransformer, sassTransformer];
 
 export function applyTransformers(file, transformers = _transformers) {
   return transformers.reduce((obs, transformer) => {

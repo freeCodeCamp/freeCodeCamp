@@ -104,10 +104,13 @@ export const updateSuccessMessage = createAction(types.updateSuccessMessage);
 
 export const lockCode = createAction(types.lockCode);
 export const unlockCode = createAction(types.unlockCode);
-export const disableJSOnError = createAction(types.disableJSOnError, err => {
-  console.error(err);
-  return {};
-});
+export const disableJSOnError = createAction(
+  types.disableJSOnError,
+  ({ payload }) => {
+    console.error(JSON.stringify(payload));
+    return null;
+  }
+);
 export const storedCodeFound = createAction(types.storedCodeFound);
 export const noStoredCodeFound = createAction(types.noStoredCodeFound);
 

@@ -8,7 +8,6 @@ import {
   challengeFilesSelector,
   isJSEnabledSelector,
   challengeMetaSelector,
-  disableJSOnError,
   backendFormValuesSelector
 } from '../redux';
 import {
@@ -55,8 +54,7 @@ export function buildFromFiles(state, shouldProxyConsole) {
     ::pipe(shouldProxyConsole ? proxyLoggerTransformer : identity)
     ::pipe(jsToHtml)
     ::pipe(cssToHtml)
-    ::concatHtml(finalRequires, template)
-    .catch(err => disableJSOnError(err));
+    ::concatHtml(finalRequires, template);
 }
 
 export function buildBackendChallenge(state) {
