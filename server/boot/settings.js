@@ -172,6 +172,13 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post(
+    '/external/update-my-current-challenge',
+    ifNoUser401,
+    updateMyCurrentChallengeValidators,
+    createValidatorErrorHandler(alertTypes.danger),
+    updateMyCurrentChallenge
+  );
+  api.post(
     '/update-my-portfolio',
     ifNoUser401,
     updateMyPortfolio
