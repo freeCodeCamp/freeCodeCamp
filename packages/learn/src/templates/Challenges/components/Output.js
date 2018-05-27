@@ -39,8 +39,6 @@ class Output extends PureComponent {
     }
   }
 
-  resizeOutput = () => this._editor.layout();
-
   render() {
     const { output, defaultOutput, height } = this.props;
     return (

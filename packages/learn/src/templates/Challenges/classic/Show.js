@@ -85,6 +85,27 @@ const propTypes = {
 };
 
 class ShowClassic extends PureComponent {
+  constructor() {
+    super()
+
+    this.resizeProps = {
+      onStopResize: this.onStopResize.bind(this),
+      onResize: this.onResize.bind(this)
+    }
+
+    this.state = {
+      resizing: false
+    }
+  }
+
+  onResize() {
+    this.setState({ resizing: true });
+  }
+
+  onStopResize() {
+    this.setState({ resizing: false });
+  }
+
   componentDidMount() {
     const {
       challengeMounted,
@@ -136,6 +157,7 @@ class ShowClassic extends PureComponent {
   }
 
   render() {
+    // console.log(this.state)
     const {
       data: {
         challengeNode: {
@@ -154,17 +176,18 @@ class ShowClassic extends PureComponent {
       .map(key => files[key])
       .map((file, index) => (
         <ReflexContainer key={file.key + index} orientation='horizontal'>
-          {index !== 0 && <ReflexSplitter />}
+          {index !== 0 && <ReflexSplitter propagate={true} {...this.resizeProps} />}
           <ReflexElement
             flex={1}
             propagateDimensions={true}
             renderOnResize={true}
             renderOnResizeRate={20}
+            {...this.resizeProps}
             >
             <Editor {...file} fileKey={file.key} />
           </ReflexElement>
           {index + 1 === Object.keys(files).length && (
-            <ReflexSplitter propagate={true} />
+            <ReflexSplitter propagate={true} {...this.resizeProps} />
           )}
           {index + 1 === Object.keys(files).length ? (
             <ReflexElement
@@ -172,6 +195,7 @@ class ShowClassic extends PureComponent {
               propagateDimensions={true}
               renderOnResize={true}
               renderOnResizeRate={20}
+              {...this.resizeProps}
               >
               <Output
                 defaultOutput={`
@@ -196,18 +220,18 @@ class ShowClassic extends PureComponent {
         <Helmet title={`${blockNameTitle} | Learn freeCodeCamp`} />
         <ToolPanel guideUrl={guideUrl} />
         <ReflexContainer orientation='vertical'>
-          <ReflexElement flex={1}>
+          <ReflexElement flex={1} {...this.resizeProps}>
             <SidePanel
               className='full-height'
               description={description}
               title={blockNameTitle}
             />
           </ReflexElement>
-          <ReflexSplitter />
-          <ReflexElement flex={1}>{editors}</ReflexElement>
-          <ReflexSplitter />
-          <ReflexElement flex={0.5}>
-            {showPreview ? <Preview className='full-height' /> : null}
+          <ReflexSplitter propagate={true} {...this.resizeProps} />
+          <ReflexElement flex={1} {...this.resizeProps}>{editors}</ReflexElement>
+          <ReflexSplitter propagate={true} {...this.resizeProps} />
+          <ReflexElement flex={0.5} {...this.resizeProps}>
+            {showPreview ? <Preview className='full-height' disableIframe={this.state.resizing} /> : null}
             <Spacer />
             <TestSuite tests={tests} />
           </ReflexElement>

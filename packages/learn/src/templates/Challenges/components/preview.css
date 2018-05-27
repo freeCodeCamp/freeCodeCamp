@@ -11,3 +11,11 @@
   padding: 0;
   margin: 0;
 }
+
+.enable-iframe {
+  pointer-events: auto;
+}
+
+.disable-iframe {
+  pointer-events: none;
+}
