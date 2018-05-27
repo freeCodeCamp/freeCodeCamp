@@ -45,7 +45,7 @@ function Camper({
       {
         typeof points === 'number' ? (
           <p className='text-center points'>
-            { `${points} ${pluralise('point', points > 1)}` }
+            { `${points} ${pluralise('point', points !== 1)}` }
           </p>
         ) : null
       }
