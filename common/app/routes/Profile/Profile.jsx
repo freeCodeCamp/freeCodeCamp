@@ -225,6 +225,7 @@ class Profile extends Component {
             block={ true }
             bsSize='lg'
             bsStyle='primary'
+            className='btn-link-social'
             >
             Update my settings
           </Button>
