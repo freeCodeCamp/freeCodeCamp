@@ -5,7 +5,8 @@ const EXCLUDED_PATHS = [
   '/api/flyers/findOne',
   '/signout',
   '/update-email',
-  '/passwordless-change'
+  '/passwordless-change',
+  '/external/services/user'
 ];
 
 export default function emailNotVerifiedNotice() {
