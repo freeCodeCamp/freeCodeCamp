@@ -12,9 +12,8 @@ module.exports = function(app) {
   router.get('/api/github', githubCalls);
   router.get('/chat', chat);
   router.get('/twitch', twitch);
-  router.get('/unsubscribe/:email', unsubscribeAll);
-  router.get('/unsubscribe-notifications/:email', unsubscribeAll);
-  router.get('/unsubscribe-quincy/:email', unsubscribeAll);
+  router.get('/u/:email', unsubscribe);
+  router.get('/unsubscribe/:email', unsubscribe);
   router.get('/submit-cat-photo', submitCatPhoto);
   router.get(
     '/the-fastest-web-page-on-the-internet',
@@ -121,30 +120,51 @@ module.exports = function(app) {
     res.redirect('https://twitch.tv/freecodecamp');
   }
 
-  function unsubscribeAll(req, res, next) {
-    req.checkParams('email', 'Must send a valid email').isEmail();
-    var query = { email: req.params.email };
-    var params = {
-      sendQuincyEmail: false,
-      sendMonthlyEmail: false,
-      sendNotificationEmail: false
-    };
-    return User.updateAll(query, params, function(err, info) {
-      if (err) { return next(err); }
-      if (info.count === 0) {
-        req.flash(
-          'info',
-          'Email address not found. ' +
-            'Please update your Email preferences from your profile.'
-        );
-        return res.redirect('/map');
-      } else {
-        req.flash(
-          'info',
-          'We\'ve successfully updated your Email preferences.'
-        );
-        return res.redirect('/unsubscribed');
+  function unsubscribe(req, res, next) {
+    req.checkParams(
+      'email',
+      `"${req.params.email}" isn't a valid email address.`
+    ).isEmail();
+    const errors = req.validationErrors(true);
+    if (errors) {
+      req.flash('error', { msg: errors.email.msg });
+      return res.redirect('/');
+    }
+    return User.find({
+      where: {
+        email: req.params.email
       }
+    }, (err, users) => {
+      if (err) { return next(err); }
+      if (!users.length) {
+        req.flash('info', {
+          msg: 'Email address not found. Please update your Email ' +
+            'preferences from your settings.'
+        });
+        return res.redirect('/');
+      }
+
+      const updates = users.map(user => {
+        return new Promise((resolve, reject) =>
+          user.updateAttributes({
+            sendQuincyEmail: false
+          }, (err) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve();
+            }
+          })
+        );
+      });
+      return Promise.all(updates)
+        .then(() => {
+          req.flash('info', {
+            msg: 'We\'ve successfully updated your Email preferences.'
+          });
+          return res.redirect('/unsubscribed/' + req.params.email);
+        })
+        .catch(next);
     });
   }
 
