@@ -106,9 +106,8 @@ export default function setupPassport(app) {
     // https://stackoverflow.com/q/37430452
     let successRedirect = (req) => {
       if (!!req && req.session && req.session.returnTo) {
-        let returnTo = req.session.returnTo;
         delete req.session.returnTo;
-        return returnTo;
+        return '/';
       }
       return config.successRedirect || '';
     };

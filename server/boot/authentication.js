@@ -193,21 +193,11 @@ module.exports = function enableAuthentication(app) {
       // update user and log them in
       .map(user => user.loginByRequest(req, res))
       .do(() => {
-        let redirectTo = '/';
-
-        if (
-          req.session &&
-          req.session.returnTo
-        ) {
-          redirectTo = req.session.returnTo;
-        }
-
         req.flash(
           'success',
           'Success! You have signed in to your account. Happy Coding!'
         );
-
-        return res.redirect(redirectTo);
+        return res.redirect('/');
       })
       .subscribe(
         () => {},
