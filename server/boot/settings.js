@@ -1,5 +1,4 @@
 import { check } from 'express-validator/check';
-
 import {
   ifNoUser401,
   createValidatorErrorHandler
@@ -146,6 +145,36 @@ export default function settingsController(app) {
       next
     );
   }
+
+  const updatePrivacyTerms = (req, res, next) => {
+    const {
+      user,
+      body: { quincyemails }
+    } = req;
+    const update = {
+      acceptedPrivacyTerms: true,
+      sendQuincyEmail: !!quincyemails
+    };
+    return user.update$(update)
+      .do(() => {
+        req.user = Object.assign(req.user, update);
+      })
+      .subscribe(
+        () => {
+          res.status(200).json({
+            message: 'We have updated your preferences. ' +
+              'You can now continue using freeCodeCamp.'
+          });
+        },
+        next
+      );
+  };
+
+  api.post(
+    '/update-privacy-terms',
+    ifNoUser401,
+    updatePrivacyTerms
+  );
 
   api.post(
     '/refetch-user-completed-challenges',

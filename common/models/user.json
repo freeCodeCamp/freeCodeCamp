@@ -99,6 +99,10 @@
     "twitter": {
       "type": "string"
     },
+    "acceptedPrivacyTerms": {
+      "type": "boolean",
+      "default": false
+    },
     "sendQuincyEmail": {
       "type": "boolean",
       "default": true

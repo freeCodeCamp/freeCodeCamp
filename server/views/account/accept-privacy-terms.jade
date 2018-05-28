@@ -1,0 +1,123 @@
+extends ../layout
+block content
+  .container
+    .row.flashMessage.negative-30
+        .col-sm-6.col-sm-offset-3
+            #flash-board.alert.fade.in(style='display: none;')
+                button.close(type='button', data-dismiss='alert')
+                    span.ion-close-circled#flash-close
+                #flash-content
+    .col-xs-12
+      #accept-privacy-terms
+        .row
+          .text-center
+              h3 Please review our privacy policy and the terms of service.
+              br
+        .row
+          .col-sm-6.col-sm-offset-3
+            form(method='POST', action='/update-privacy-terms')
+              input(type='hidden', name='_csrf', value=_csrf)
+              .checkbox
+                label
+                  input(id='terms', name='privacy', type='checkbox')
+                  span.cr
+                    i.cr-icon.fa.fa-check
+                  |  I accept the 
+                  a(href='https://www.freecodecamp.org/terms' target='_blank') terms of service
+                  |  (required).
+              .checkbox
+                label
+                  input(id='privacy', name='privacy', type='checkbox')
+                  span.cr
+                    i.cr-icon.fa.fa-check
+                  |  I accept the 
+                  a(href='https://www.freecodecamp.org/privacy' target='_blank') privacy policy
+                  |  (required).
+              .checkbox
+                label
+                  input(id='quincyemails', name='quincyemails', type='checkbox')
+                  span.cr
+                    i.cr-icon.fa.fa-check
+                  |  I want weekly emails from Quincy (freeCodeCamp.org's founder)
+              .button-spacer
+              button.btn.btn-primary.btn-lg.btn-block(id='submit-button', type='submit')
+      .row
+        .col-sm-6.col-sm-offset-3
+          a.btn.btn-primary.btn-lg.btn-block(id='continue-button', href='/', style='display: none;')
+            | Continue to freeCodeCamp
+                  
+    script.
+      $(document).ready(function() {
+      
+        var checkedBoxCount = 0;
+        function disableContinueButtonForAgreement(isLaunched) {
+           if (isLaunched) {
+             $('#submit-button').prop('disabled', true).html(
+               '<span style="color:#E0E0E0;">Submit<\/span>');
+             return;
+           }
+           
+           if (!isLaunched && checkedBoxCount === 2){
+             $('#submit-button').prop('disabled', false).html(
+               '<span>Submit<\/span>');
+           }
+        }
+        disableContinueButtonForAgreement(true);
+
+        $('#terms').click(function() {
+          if (this.checked) {
+            checkedBoxCount++;
+            disableContinueButtonForAgreement(false);
+          } else {
+            checkedBoxCount--;
+            disableContinueButtonForAgreement(true);
+          }
+        });
+
+        $('#privacy').click(function() {
+          if (this.checked) {
+            checkedBoxCount++;
+            disableContinueButtonForAgreement(false);
+          } else {
+            checkedBoxCount--;
+            disableContinueButtonForAgreement(true);
+          }
+        });
+        
+        $('form').submit(function(event){
+          event.preventDefault();
+          $('#flash-board').hide();
+          var $form = $(event.target);
+          $.ajax({
+              type        : 'POST',
+              url         : $form.attr('action'),
+              data        : $form.serialize(),
+              dataType    : 'json',
+              encode      : true,
+              xhrFields   : { withCredentials:  true }
+          })
+          .fail(error => {
+            if (error.responseText){
+                var data = JSON.parse(error.responseText);
+                if(data.message)
+                $('#flash-content').html(data.message);
+                $('#flash-board')
+                  .removeClass('alert-success')
+                  .addClass('alert-info')
+                  .fadeIn();
+              }
+          })
+          .done(data =>{
+            if(data && data.message){
+              $('#flash-content').html(data.message);
+              $('#flash-board')
+                  .removeClass('alert-info')
+                  .addClass('alert-success')
+                  .fadeIn();
+              
+              $('#accept-privacy-terms').hide();  
+              $('#continue-button').show();
+            }
+          });
+        });
+      });

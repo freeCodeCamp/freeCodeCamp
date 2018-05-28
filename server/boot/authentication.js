@@ -51,6 +51,20 @@ module.exports = function enableAuthentication(app) {
     })
   );
 
+  router.get(
+    '/accept-privacy-terms',
+    ifNoUserRedirectHome,
+    (req, res) => {
+      const { user } = req;
+      if (user && !user.acceptedPrivacyTerms) {
+        return res.render('account/accept-privacy-terms', {
+          title: 'Privacy Policy and Terms of Service'
+        });
+      }
+      return res.redirect('/settings');
+    }
+  );
+
   const defaultErrorMsg = dedent`
     Oops, something is not right,
     please request a fresh link to sign in / sign up.
