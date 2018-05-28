@@ -576,14 +576,9 @@ module.exports = function(User) {
           this.update$({ emailAuthLinkTTL })
         );
       })
-      .map(() => isSignUp ?
+      .map(() =>
         dedent`
-          We created a new account for you!
-          Check your email and click the sign in link we sent you.
-        ` :
-        dedent`
-          We found your existing account.
-          Check your email and click the sign in link we sent you.
+          Check your email and click the link we sent you to confirm you email.
         `
       );
   }
