@@ -37,9 +37,13 @@ export default function settingsController(app) {
       .withMessage('Email format is invalid.')
   ];
 
-  function updateMyEmail(req, res) {
+  function updateMyEmail(req, res, next) {
     const { user, body: { email } } = req;
-    return res.json({ message: user.requestUpdateEmail(email) } );
+    return user.requestUpdateEmail(email)
+      .subscribe(
+        (message) => res.json({ message: message }),
+        next
+      );
   }
 
   const updateMyCurrentChallengeValidators = [
