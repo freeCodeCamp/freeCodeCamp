@@ -1,15 +1,6 @@
 require('dotenv').load();
 require('./utils/webpack-code-split-polyfill');
 
-if (process.env.OPBEAT_ID) {
-  console.log('loading opbeat');
-  require('opbeat').start({
-    appId: process.env.OPBEAT_ID,
-    organizationId: process.env.OPBEAT_ORG_ID,
-    secretToken: process.env.OPBEAT_SECRET
-  });
-}
-
 const _ = require('lodash');
 const Rx = require('rx');
 const loopback = require('loopback');
