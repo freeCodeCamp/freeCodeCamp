@@ -4,6 +4,7 @@ const ALLOWED_METHODS = ['GET'];
 const EXCLUDED_PATHS = [
   '/api/flyers/findOne',
   '/signout',
+  '/accept-privacy-terms',
   '/update-email',
   '/passwordless-change',
   '/external/services/user'

@@ -661,9 +661,11 @@ module.exports = function(User) {
         return Observable.forkJoin(
           this.update$(updateConfig),
           this.requestAuthEmail(false, newEmail),
-          (user, message) => ({ user, message })
+          (_, message) => message
         )
-        .map(({ message }) => message);
+        .do(() => {
+          Object.assign(this, updateConfig);
+        });
       });
 
     } else {

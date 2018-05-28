@@ -41,7 +41,7 @@ export default function settingsController(app) {
     const { user, body: { email } } = req;
     return user.requestUpdateEmail(email)
       .subscribe(
-        (message) => res.json({ message: message }),
+        message => res.json({ message }),
         next
       );
   }
