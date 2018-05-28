@@ -41,6 +41,7 @@ export const userPropsForSession = [
   ...publicUserProps,
   'currentChallengeId',
   'email',
+  'emailVerified',
   'id',
   'sendQuincyEmail',
   'theme'
