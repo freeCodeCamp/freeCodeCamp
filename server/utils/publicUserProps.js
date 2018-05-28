@@ -41,6 +41,7 @@ export const userPropsForSession = [
   ...publicUserProps,
   'currentChallengeId',
   'email',
+  'emailVerified',
   'id',
   'sendQuincyEmail',
   'theme'
@@ -50,14 +51,14 @@ export function normaliseUserFields(user) {
   const about = user.bio && !user.about ? user.bio : user.about;
   const picture = user.picture || addPlaceholderImage(user.username);
   const twitter = user.twitter && isURL(user.twitter) ?
-    user.twitter :
-    user.twitter && `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
+  user.twitter :
+  user.twitter && `https://www.twitter.com/${user.twitter.replace(/^@/, '')}`;
   return { about, picture, twitter };
 }
 
 export function getProgress(progressTimestamps, timezone = 'EST') {
   const calendar = progressTimestamps
-    .filter(Boolean)
+  .filter(Boolean)
     .reduce((data, timestamp) => {
       data[Math.floor(timestamp / 1000)] = 1;
       return data;
