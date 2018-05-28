@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { Button } from 'react-bootstrap';
 
 import { updateMyProfileUI } from '../redux';
 import { userSelector } from '../../../redux';
 
-import { FullWidthRow } from '../../../helperComponents';
+import { FullWidthRow, Spacer } from '../../../helperComponents';
 import SectionHeader from './SectionHeader.jsx';
 import ToggleSetting from './ToggleSetting.jsx';
 
 const mapStateToProps = createSelector(
   userSelector,
-  ({
-    profileUI = {}
-  }) => ({
-    ...profileUI
+  user => ({
+    ...user.profileUI,
+    user
   })
 );
 
@@ -33,7 +33,8 @@ const propTypes = {
   showPoints: PropTypes.bool,
   showPortfolio: PropTypes.bool,
   showTimeLine: PropTypes.bool,
-  updateMyProfileUI: PropTypes.func.isRequired
+  updateMyProfileUI: PropTypes.func.isRequired,
+  user: PropTypes.object
 };
 
 function PrivacySettings(props) {
@@ -47,7 +48,8 @@ function PrivacySettings(props) {
     showPoints,
     showPortfolio,
     showTimeLine,
-    updateMyProfileUI
+    updateMyProfileUI,
+    user
   } = props;
   const toggleFlag = flag =>
     () => updateMyProfileUI({ profileUI: { [flag]: !props[flag] } });
@@ -56,9 +58,10 @@ function PrivacySettings(props) {
       <SectionHeader>Privacy Settings</SectionHeader>
       <FullWidthRow>
       <p>
-        The settings in this section enable you to control what is show on{' '}
+        The settings in this section enable you to control what is shown on{' '}
         your freeCodeCamp public portfolio.
       </p>
+      <p>There is also a button to see what data we hold on your account</p>
       <ToggleSetting
         action='Make my profile completely private'
         explain={
@@ -136,6 +139,22 @@ function PrivacySettings(props) {
         onLabel='Private'
         toggleFlag={ toggleFlag('showTimeLine') }
       />
+      </FullWidthRow>
+      <FullWidthRow>
+        <Spacer />
+        <Button
+          block={true}
+          bsSize='lg'
+          bsStyle='primary'
+          download={`${user.username}.json`}
+          href={
+            `data:text/json;charset=utf-8,${
+              encodeURIComponent(JSON.stringify(user))
+            }`
+          }
+          >
+          Download all your data
+        </Button>
       </FullWidthRow>
     </div>
   );
