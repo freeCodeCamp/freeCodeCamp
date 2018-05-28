@@ -407,10 +407,15 @@ module.exports = function(User) {
     );
   };
 
-  User.afterRemote('logout', function(ctx, result, next) {
-    var res = ctx.res;
-    res.clearCookie('access_token');
-    res.clearCookie('userId');
+  User.afterRemote('logout', function({req, res}, result, next) {
+    const config = {
+      signed: !!req.signedCookies,
+      domain: process.env.COOKIE_DOMAIN || 'localhost'
+    };
+    res.clearCookie('jwt_access_token', config);
+    res.clearCookie('access_token', config);
+    res.clearCookie('userId', config);
+    res.clearCookie('_csrf', config);
     next();
   });
 
@@ -571,14 +576,9 @@ module.exports = function(User) {
           this.update$({ emailAuthLinkTTL })
         );
       })
-      .map(() => isSignUp ?
+      .map(() =>
         dedent`
-          We created a new account for you!
-          Check your email and click the sign in link we sent you.
-        ` :
-        dedent`
-          We found your existing account.
-          Check your email and click the sign in link we sent you.
+          Check your email and click the link we sent you to confirm you email.
         `
       );
   }
@@ -586,60 +586,60 @@ module.exports = function(User) {
   User.prototype.requestAuthEmail = requestAuthEmail;
 
   User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
+
     const currentEmail = this.email;
-    return Observable.defer(() => {
-      const isOwnEmail = isTheSame(newEmail, currentEmail);
-      const sameUpdate = isTheSame(newEmail, this.newEmail);
-      const messageOrNull = getWaitMessage(this.emailVerifyTTL);
-      if (isOwnEmail) {
-        if (this.emailVerified) {
-          // email is already associated and verified with this account
-          throw wrapHandledError(
-            new Error('email is already verified'),
-            {
-              type: 'info',
-              message: `${newEmail} is already associated with this account.`
-            }
-          );
-        } else if (!this.emailVerified && messageOrNull) {
-            // email is associated but unverified and
-            // email is within time limit
-            throw wrapHandledError(
-              new Error(),
-              {
-                type: 'info',
-                message: messageOrNull
-              }
-            );
-          }
-      }
-      if (sameUpdate && messageOrNull) {
-        // trying to update with the same newEmail and
-        // confirmation email is still valid
-        throw wrapHandledError(
-          new Error(),
-          {
-            type: 'info',
-            message: dedent`
-            We have already sent an email confirmation request to ${newEmail}.
-            Please check your inbox.`
-          }
-        );
-      }
-      if (!isEmail('' + newEmail)) {
-        throw createEmailError();
-      }
-      // newEmail is not associated with this user, and
-      // this attempt to change email is the first or
-      // previous attempts have expired
-      return Observable.if(
-        () => isOwnEmail || (sameUpdate && messageOrNull),
-        Observable.empty(),
-        // defer prevents the promise from firing prematurely (before subscribe)
-        Observable.defer(() => User.doesExist(null, newEmail))
-      )
+    const isOwnEmail = isTheSame(newEmail, currentEmail);
+    const isResendUpdateToSameEmail = isTheSame(newEmail, this.newEmail);
+    const isLinkSentWithinLimit = getWaitMessage(this.emailVerifyTTL);
+    const isVerifiedEmail = this.emailVerified;
+
+    if (isOwnEmail && isVerifiedEmail) {
+      // email is already associated and verified with this account
+      throw wrapHandledError(
+        new Error('email is already verified'),
+        {
+          type: 'info',
+          message: `
+            ${newEmail} is already associated with this account.
+            You can update a new email address instead.`
+        }
+      );
+    }
+    if (isResendUpdateToSameEmail && isLinkSentWithinLimit) {
+      // trying to update with the same newEmail and
+      // confirmation email is still valid
+      throw wrapHandledError(
+        new Error(),
+        {
+          type: 'info',
+          message: dedent`
+          We have already sent an email confirmation request to ${newEmail}.
+          ${isLinkSentWithinLimit}`
+        }
+      );
+    }
+    if (!isEmail('' + newEmail)) {
+      throw createEmailError();
+    }
+
+    // newEmail is not associated with this user, and
+    // this attempt to change email is the first or
+    // previous attempts have expired
+    if (
+        !isOwnEmail ||
+        (isOwnEmail && !isVerifiedEmail) ||
+        (isResendUpdateToSameEmail && !isLinkSentWithinLimit)
+      ) {
+      const updateConfig = {
+        newEmail,
+        emailVerified: false,
+        emailVerifyTTL: new Date()
+      };
+
+      // defer prevents the promise from firing prematurely (before subscribe)
+      return Observable.defer(() => User.doesExist(null, newEmail))
       .do(exists => {
-        if (exists) {
+        if (exists && !isOwnEmail) {
           // newEmail is not associated with this account,
           // but is associated with different account
           throw wrapHandledError(
@@ -652,17 +652,20 @@ module.exports = function(User) {
           );
         }
       })
-      .flatMap(() => {
-        const update = {
-            newEmail,
-            emailVerified: false,
-            emailVerifyTTL: new Date()
-          };
-        return this.update$(update)
-          .do(() => Object.assign(this, update))
-          .flatMap(() => this.requestAuthEmail(false, newEmail));
+      .flatMap(()=>{
+        return Observable.forkJoin(
+          this.update$(updateConfig),
+          this.requestAuthEmail(false, newEmail),
+          (_, message) => message
+        )
+        .do(() => {
+          Object.assign(this, updateConfig);
+        });
       });
-    });
+
+    } else {
+      return 'Something unexpected happened whilst updating your email.';
+    }
   };
 
   function requestCompletedChallenges() {

@@ -1,12 +1,12 @@
 extends ../layout
 block content
-  .container
-    .row.flashMessage.negative-30
-        .col-sm-6.col-sm-offset-3
-            #flash-board.alert.fade.in(style='display: none;')
-                button.close(type='button', data-dismiss='alert')
-                    span.ion-close-circled#flash-close
-                #flash-content
+  .row.flashMessage.negative-30
+    .col-xs-12.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+      #flash-board.alert.fade.in(style='display: none;')
+          button.close(type='button', data-dismiss='alert')
+              span.ion-close-circled#flash-close
+          #flash-content
+  .row
     .col-xs-12
       #accept-privacy-terms
         .row

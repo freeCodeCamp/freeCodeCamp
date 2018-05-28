@@ -5,12 +5,12 @@ import { curry } from 'lodash';
 import {
   ifNoUser401,
   ifNoUserRedirectTo,
-  ifNotVerifiedRedirectToSettings
+  ifNotVerifiedRedirectToUpdateEmail
 } from '../utils/middleware';
 
 const debug = debugFactory('fcc:boot:user');
-const sendNonUserToMap = ifNoUserRedirectTo('/map');
-const sendNonUserToMapWithMessage = curry(ifNoUserRedirectTo, 2)('/map');
+const sendNonUserToHome = ifNoUserRedirectTo('/');
+const sendNonUserToHomeWithMessage = curry(ifNoUserRedirectTo, 2)('/');
 
 module.exports = function(app) {
   const router = app.loopback.Router();
@@ -24,7 +24,7 @@ module.exports = function(app) {
   );
   api.get(
     '/account',
-    sendNonUserToMap,
+    sendNonUserToHome,
     getAccount
   );
   api.post(
@@ -34,15 +34,15 @@ module.exports = function(app) {
   );
   api.get(
     '/account/unlink/:social',
-    sendNonUserToMap,
+    sendNonUserToHome,
     getUnlinkSocial
   );
 
   // Ensure these are the last routes!
   router.get(
     '/user/:username/report-user/',
-    sendNonUserToMapWithMessage('You must be signed in to report a user'),
-    ifNotVerifiedRedirectToSettings,
+    sendNonUserToHomeWithMessage('You must be signed in to report a user'),
+    ifNotVerifiedRedirectToUpdateEmail,
     getReportUserProfile
   );
 
@@ -119,6 +119,14 @@ module.exports = function(app) {
       if (err) { return next(err); }
       req.logout();
       req.flash('success', 'You have successfully deleted your account.');
+      const config = {
+        signed: !!req.signedCookies,
+        domain: process.env.COOKIE_DOMAIN || 'localhost'
+      };
+      res.clearCookie('jwt_access_token', config);
+      res.clearCookie('access_token', config);
+      res.clearCookie('userId', config);
+      res.clearCookie('_csrf', config);
       return res.status(200).end();
     });
   }
