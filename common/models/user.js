@@ -640,12 +640,31 @@ module.exports = function(User) {
         emailVerified: false,
         emailVerifyTTL: new Date()
       };
-      return Observable.forkJoin(
-        this.update$(updateConfig),
-        this.requestAuthEmail(false, newEmail),
-        (user, message) => ({ user, message })
-      )
-      .map(({ message }) => message);
+
+      // defer prevents the promise from firing prematurely (before subscribe)
+      return Observable.defer(() => User.doesExist(null, newEmail))
+      .do(exists => {
+        if (exists && !isOwnEmail) {
+          // newEmail is not associated with this account,
+          // but is associated with different account
+          throw wrapHandledError(
+            new Error('email already in use'),
+            {
+              type: 'info',
+              message:
+              `${newEmail} is already associated with another account.`
+            }
+          );
+        }
+      })
+      .flatMap(()=>{
+        return Observable.forkJoin(
+          this.update$(updateConfig),
+          this.requestAuthEmail(false, newEmail),
+          (user, message) => ({ user, message })
+        )
+        .map(({ message }) => message);
+      });
 
     } else {
       return 'Something unexpected happened whilst updating your email.';
