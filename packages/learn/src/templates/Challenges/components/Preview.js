@@ -12,16 +12,16 @@ const propTypes = {
 
 class Preview extends PureComponent {
   constructor(...props) {
-    super(...props)
+    super(...props);
 
     this.state = {
       iframeStatus: this.props.disableIframe
-    }
+    };
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.disableIframe !== nextProps.disableIframe) {
-      this.setState({ iframeStatus: !this.state.iframeStatus })
+      this.setState({ iframeStatus: !this.state.iframeStatus });
     }
   }
 

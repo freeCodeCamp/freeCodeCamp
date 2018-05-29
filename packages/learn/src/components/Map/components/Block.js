@@ -11,6 +11,7 @@ import { toggleMapModal, userSelector } from '../../../redux/app';
 import Caret from '../../icons/Caret';
 /* eslint-disable max-len */
 import GreenPass from '../../../templates/Challenges/components/icons/GreenPass';
+import GreenNotCompleted from '../../../templates/Challenges/components/icons/GreenNotCompleted';
 /* eslint-enable max-len */
 const mapStateToProps = (state, ownProps) => {
   const expandedSelector = makeExpandedBlockSelector(ownProps.blockDashedName);
@@ -43,6 +44,8 @@ const propTypes = {
   toggleBlock: PropTypes.func.isRequired,
   toggleMapModal: PropTypes.func.isRequired
 };
+
+const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
 
 export class Block extends PureComponent {
   constructor(...props) {
@@ -79,24 +82,36 @@ export class Block extends PureComponent {
 
   renderChallenges(intro, challenges) {
     // TODO: Split this into a Challenge Component and add tests
-    return [intro].concat(challenges).map(challenge => (
-      <li
-        className='map-challenge-title'
-        key={'map-challenge' + challenge.fields.slug}
-        >
-        <Link
-          onClick={this.handleChallengeClick(challenge.fields.slug)}
-          to={challenge.fields.slug}
+    // TODO: The styles badge and map-badge on the completion span do not exist
+    return [intro].concat(challenges).map(challenge => {
+      const completedClass = challenge.isCompleted
+        ? ' map-challenge-title-completed'
+        : '';
+      return (
+        <li
+          className={'map-challenge-title' + completedClass}
+          key={'map-challenge' + challenge.fields.slug}
           >
-          {challenge.title || challenge.frontmatter.title}
-        </Link>
-        {challenge.isCompleted ? (
           <span className='badge map-badge'>
-            <GreenPass style={{ height: '15px' }} />
+            {challenge.isCompleted ? (
+              <GreenPass
+                style={ mapIconStyle }
+              />
+            ) : (
+              <GreenNotCompleted
+                style={ mapIconStyle }
+              />
+            )}
           </span>
-        ) : null}
-      </li>
-    ));
+          <Link
+            onClick={this.handleChallengeClick(challenge.fields.slug)}
+            to={challenge.fields.slug}
+            >
+            {challenge.title || challenge.frontmatter.title}
+          </Link>
+        </li>
+      );
+    });
   }
 
   render() {

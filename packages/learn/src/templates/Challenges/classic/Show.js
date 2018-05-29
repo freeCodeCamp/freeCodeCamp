@@ -86,16 +86,16 @@ const propTypes = {
 
 class ShowClassic extends PureComponent {
   constructor() {
-    super()
+    super();
 
     this.resizeProps = {
       onStopResize: this.onStopResize.bind(this),
       onResize: this.onResize.bind(this)
-    }
+    };
 
     this.state = {
       resizing: false
-    }
+    };
   }
 
   onResize() {
@@ -176,7 +176,9 @@ class ShowClassic extends PureComponent {
       .map(key => files[key])
       .map((file, index) => (
         <ReflexContainer key={file.key + index} orientation='horizontal'>
-          {index !== 0 && <ReflexSplitter propagate={true} {...this.resizeProps} />}
+          {index !== 0 && (
+            <ReflexSplitter propagate={true} {...this.resizeProps} />
+          )}
           <ReflexElement
             flex={1}
             propagateDimensions={true}
@@ -228,10 +230,17 @@ class ShowClassic extends PureComponent {
             />
           </ReflexElement>
           <ReflexSplitter propagate={true} {...this.resizeProps} />
-          <ReflexElement flex={1} {...this.resizeProps}>{editors}</ReflexElement>
+          <ReflexElement flex={1} {...this.resizeProps}>
+            {editors}
+          </ReflexElement>
           <ReflexSplitter propagate={true} {...this.resizeProps} />
           <ReflexElement flex={0.5} {...this.resizeProps}>
-            {showPreview ? <Preview className='full-height' disableIframe={this.state.resizing} /> : null}
+            {showPreview ? (
+              <Preview
+                className='full-height'
+                disableIframe={this.state.resizing}
+              />
+            ) : null}
             <Spacer />
             <TestSuite tests={tests} />
           </ReflexElement>
