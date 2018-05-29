@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import format from 'date-fns/format';
-import { reverse, sortBy } from 'lodash';
+import { find, reverse, sortBy } from 'lodash';
 import {
   Button,
   Modal,
@@ -11,11 +11,11 @@ import {
 } from 'react-bootstrap';
 
 import { challengeIdToNameMapSelector } from '../../../entities';
-import { userByNameSelector, fetchChallenges } from '../../../redux';
+import { userByNameSelector } from '../../../redux';
 import { homeURL } from '../../../../utils/constantStrings.json';
 import blockNameify from '../../../utils/blockNameify';
-import { FullWidthRow } from '../../../helperComponents';
 import { Link } from '../../../Router';
+import { FullWidthRow } from '../../../helperComponents';
 import SolutionViewer from '../../Settings/components/SolutionViewer.jsx';
 
 const mapStateToProps = createSelector(
@@ -23,7 +23,7 @@ const mapStateToProps = createSelector(
   userByNameSelector,
   (
     idToNameMap,
-    { challengeMap: completedMap = {}, username }
+    { completedChallenges: completedMap = [], username }
   ) => ({
     completedMap,
     idToNameMap,
@@ -31,15 +31,19 @@ const mapStateToProps = createSelector(
   })
 );
 
-const mapDispatchToProps = { fetchChallenges };
-
 const propTypes = {
-  completedMap: PropTypes.shape({
-    id: PropTypes.string,
-    completedDate: PropTypes.number,
-    lastUpdated: PropTypes.number
-  }),
-  fetchChallenges: PropTypes.func.isRequired,
+  completedMap: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      completedDate: PropTypes.number,
+      challengeType: PropTypes.number,
+      solution: PropTypes.string,
+      files: PropTypes.shape({
+        ext: PropTypes.string,
+        contents: PropTypes.string
+      })
+    })
+  ),
   idToNameMap: PropTypes.objectOf(PropTypes.string),
   username: PropTypes.string
 };
@@ -58,53 +62,49 @@ class Timeline extends PureComponent {
     this.viewSolution = this.viewSolution.bind(this);
   }
 
-  componentDidMount() {
-    if (!Object.keys(this.props.idToNameMap).length) {
-      this.props.fetchChallenges();
-    }
-  }
-
   renderCompletion(completed) {
     const { idToNameMap } = this.props;
-    const { id, completedDate, lastUpdated, files } = completed;
+    const { id, completedDate, solution, files } = completed;
+    const challengeDashedName = idToNameMap[id];
     return (
         <tr key={ id }>
-          <td>{ blockNameify(idToNameMap[id]) }</td>
           <td>
+            <a href={`/challenges/${challengeDashedName}`}>
+              { blockNameify(challengeDashedName) }
+            </a>
+          </td>
+          <td className='text-center'>
             <time dateTime={ format(completedDate, 'YYYY-MM-DDTHH:MM:SSZ') }>
               {
-                format(completedDate, 'MMMM DD YYYY')
+                format(completedDate, 'MMMM D, YYYY')
               }
             </time>
           </td>
           <td>
-            {
-              lastUpdated ?
-              <time dateTime={ format(lastUpdated, 'YYYY-MM-DDTHH:MM:SSZ') }>
-                {
-                  format(lastUpdated, 'MMMM DD YYYY')
-                }
-              </time> :
-              ''
-            }
-          </td>
-          <td>
-            {
-              files ?
-                <Button
-                  block={ true }
-                  bsStyle='primary'
-                  onClick={ () => this.viewSolution(id) }
-                  >
-                  View&nbsp;Solution
-                </Button> :
-                ''
-            }
-          </td>
+          {/* eslint-disable no-nested-ternary */
+            files ? (
+              <Button
+                block={ true }
+                bsStyle='primary'
+                onClick={ () => this.viewSolution(id) }
+                >
+                View&nbsp;Solution
+              </Button>
+              ) : solution ? (
+                  <Button
+                    block={ true }
+                    bsStyle='primary'
+                    href={solution}
+                    target='_blank'
+                    >
+                    View&nbsp;Solution
+                  </Button>
+                  ) : ''
+          }
+        </td>
         </tr>
       );
   }
-
   viewSolution(id) {
     this.setState(state => ({
       ...state,
@@ -131,7 +131,7 @@ class Timeline extends PureComponent {
       <FullWidthRow>
         <h2 className='text-center'>Timeline</h2>
         {
-          Object.keys(completedMap).length === 0 ?
+          completedMap.length === 0 ?
           <p className='text-center'>
             No challenges have been completed yet.&nbsp;
             <Link to={ homeURL }>
@@ -142,20 +142,16 @@ class Timeline extends PureComponent {
             <thead>
               <tr>
                 <th>Challenge</th>
-                <th>First Completed</th>
-                <th>Last Changed</th>
-                <th />
+                <th className='text-center'>First Completed</th>
               </tr>
             </thead>
             <tbody>
               {
                 reverse(
                   sortBy(
-                    Object.keys(completedMap)
-                      .filter(key => key in idToNameMap)
-                      .map(key => completedMap[key]),
+                    completedMap,
                     [ 'completedDate' ]
-                  )
+                  ).filter(({id}) => id in idToNameMap)
                 )
                 .map(this.renderCompletion)
               }
@@ -175,7 +171,11 @@ class Timeline extends PureComponent {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <SolutionViewer files={ completedMap[id].files }/>
+              <SolutionViewer
+                solution={
+                  find(completedMap, ({id: completedId}) => completedId === id)
+                }
+              />
             </Modal.Body>
             <Modal.Footer>
               <Button onClick={this.closeSolution}>Close</Button>
@@ -191,4 +191,4 @@ class Timeline extends PureComponent {
 Timeline.displayName = 'Timeline';
 Timeline.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Timeline);
+export default connect(mapStateToProps)(Timeline);

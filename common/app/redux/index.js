@@ -8,41 +8,25 @@ import {
   handleActions
 } from 'berkeleys-redux-utils';
 import { createSelector } from 'reselect';
-import debug from 'debug';
 
 import fetchUserEpic from './fetch-user-epic.js';
-import updateMyCurrentChallengeEpic from './update-my-challenge-epic.js';
-import fetchChallengesEpic from './fetch-challenges-epic.js';
 import nightModeEpic from './night-mode-epic.js';
 
 import {
   updateThemeMetacreator,
-  entitiesSelector,
-  fullBlocksSelector
+  entitiesSelector
 } from '../entities';
 import { utils } from '../Flash/redux';
 import { paramsSelector } from '../Router/redux';
-import { types as challenges } from '../routes/Challenges/redux';
 import { types as map } from '../Map/redux';
-import {
-  createCurrentChallengeMeta,
-  challengeToFilesMetaCreator,
-  getFirstChallengeOfNextBlock,
-  getFirstChallengeOfNextSuperBlock,
-  getNextChallenge
-} from '../routes/Challenges/utils';
 
 import ns from '../ns.json';
 
 import { themes, invertTheme } from '../../utils/themes.js';
 
-const isDev = debug.enabled('fcc:*');
-
 export const epics = [
-  fetchChallengesEpic,
   fetchUserEpic,
-  nightModeEpic,
-  updateMyCurrentChallengeEpic
+  nightModeEpic
 ];
 
 export const types = createTypes([
@@ -52,9 +36,6 @@ export const types = createTypes([
   'analytics',
   'updateTitle',
 
-  createAsyncTypes('fetchChallenge'),
-  createAsyncTypes('fetchChallenges'),
-  createAsyncTypes('fetchNewBlock'),
   createAsyncTypes('fetchOtherUser'),
   createAsyncTypes('fetchUser'),
   'showSignIn',
@@ -107,29 +88,6 @@ export function createEventMetaCreator({
 
 export const onRouteHome = createAction(types.onRouteHome);
 export const appMounted = createAction(types.appMounted);
-export const fetchChallenge = createAction(
-  '' + types.fetchChallenge,
-  (dashedName, block) => ({ dashedName, block })
-);
-export const fetchChallengeCompleted = createAction(
-  types.fetchChallenge.complete,
-  null,
-  meta => ({
-    ...meta,
-    ...challengeToFilesMetaCreator(meta.challenge)
-  })
-);
-export const fetchChallenges = createAction('' + types.fetchChallenges);
-export const fetchChallengesCompleted = createAction(
-  types.fetchChallenges.complete
-);
-
-export const fetchNewBlock = createAction(types.fetchNewBlock.start);
-export const fetchNewBlockComplete = createAction(
-  types.fetchNewBlock.complete,
-  ({ entities }) => ({ entities }),
-  ({ meta: { challenge } }) => ({ ...createCurrentChallengeMeta(challenge) })
-);
 
 // updateTitle(title: String) => Action
 export const updateTitle = createAction(types.updateTitle);
@@ -202,8 +160,6 @@ const defaultState = {
   isSignInAttempted: false,
   user: '',
   csrfToken: '',
-  // eventually this should be only in the user object
-  currentChallenge: '',
   superBlocks: []
 };
 
@@ -211,8 +167,6 @@ export const getNS = state => state[ns];
 export const csrfSelector = state => getNS(state).csrfToken;
 export const titleSelector = state => getNS(state).title;
 
-export const currentChallengeSelector = state => getNS(state).currentChallenge;
-export const superBlocksSelector = state => getNS(state).superBlocks;
 export const signInLoadingSelector = state => !getNS(state).isSignInAttempted;
 
 export const usernameSelector = state => getNS(state).user || '';
@@ -235,92 +189,6 @@ export const themeSelector = flow(
 
 export const isSignedInSelector = state => !!userSelector(state).username;
 
-export const challengeSelector = state => {
-  const challengeName = currentChallengeSelector(state);
-  const challengeMap = entitiesSelector(state).challenge || {};
-  return challengeMap[challengeName] || firstChallengeSelector(state);
-};
-
-export const isCurrentBlockCompleteSelector = state => {
-  const { block } = paramsSelector(state);
-  const fullBlocks = fullBlocksSelector(state);
-  return fullBlocks.includes(block);
-};
-
-export const previousSolutionSelector = state => {
-  const { id } = challengeSelector(state);
-  const { challengeMap = {} } = userSelector(state);
-  return challengeMap[id];
-};
-
-export const firstChallengeSelector = createSelector(
-  entitiesSelector,
-  superBlocksSelector,
-  (
-    {
-      challenge: challengeMap,
-      block: blockMap,
-      superBlock: superBlockMap
-    },
-    superBlocks
-  ) => {
-    if (
-      !challengeMap ||
-      !blockMap ||
-      !superBlockMap ||
-      !superBlocks
-    ) {
-      return {};
-    }
-    try {
-      return challengeMap[
-        blockMap[
-          superBlockMap[
-            superBlocks[0]
-          ].blocks[0]
-        ].challenges[0]
-      ];
-    } catch (err) {
-      console.error(err);
-      return {};
-    }
-  }
-);
-
-export const nextChallengeSelector = state => {
-  let nextChallenge = {};
-  let isNewBlock = false;
-  let isNewSuperBlock = false;
-  const challenge = currentChallengeSelector(state);
-  const superBlocks = superBlocksSelector(state);
-  const entities = entitiesSelector(state);
-  nextChallenge = getNextChallenge(challenge, entities, { isDev });
-  // block completed.
-  if (!nextChallenge) {
-    isNewBlock = true;
-    nextChallenge = getFirstChallengeOfNextBlock(
-      challenge,
-      entities,
-      { isDev }
-    );
-  }
-  // superBlock completed
-  if (!nextChallenge) {
-    isNewSuperBlock = true;
-    nextChallenge = getFirstChallengeOfNextSuperBlock(
-      challenge,
-      entities,
-      superBlocks,
-      { isDev }
-    );
-  }
-  return {
-    nextChallenge,
-    isNewBlock,
-    isNewSuperBlock
-  };
-};
-
 export default handleActions(
   () => ({
     [types.updateTitle]: (state, { payload = 'Learn To Code' }) => ({
@@ -332,27 +200,15 @@ export default handleActions(
       ...state,
       user
     }),
-    [combineActions(
-      types.fetchChallenge.complete,
-      map.fetchMapUi.complete
-    )]: (state, { payload }) => ({
+    [map.fetchMapUi.complete]: (state, { payload }) => ({
       ...state,
       superBlocks: payload.result.superBlocks
-    }),
-    [challenges.onRouteChallenges]: (state, { payload: { dashedName } }) => ({
-      ...state,
-      currentChallenge: dashedName
     }),
     [
       combineActions(types.showSignIn, types.fetchUser.complete)
     ]: state => ({
       ...state,
       isSignInAttempted: true
-    }),
-
-    [types.challengeSaved]: (state, { payload: { points = 0 } }) => ({
-      ...state,
-      points
     }),
     [types.delayedRedirect]: (state, { payload }) => ({
       ...state,

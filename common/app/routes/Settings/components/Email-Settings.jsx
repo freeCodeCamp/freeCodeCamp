@@ -13,12 +13,28 @@ import {
 } from 'react-bootstrap';
 
 import TB from '../Toggle-Button';
-import EmailForm from './EmailForm.jsx';
+// import EmailForm from './EmailForm.jsx';
 import { Link } from '../../../Router';
-import { FullWidthRow, Spacer } from '../../../helperComponents';
+import { FullWidthRow } from '../../../helperComponents';
 import SectionHeader from './SectionHeader.jsx';
 import { userSelector } from '../../../redux';
 import { onRouteUpdateEmail, updateMyEmail, updateUserBackend } from '../redux';
+
+/**
+  Removed functionality until we can update auth0 at the same time
+
+  <FullWidthRow>
+    <UpdateEmailButton />
+  </FullWidthRow>
+
+
+  <FullWidthRow>
+    <EmailForm
+      initialValues={{ email, confrimEmail: ''}}
+    />
+  </FullWidthRow>
+  <Spacer />
+ */
 
 const mapStateToProps = createSelector(
   userSelector,
@@ -101,9 +117,8 @@ class EmailSettings extends PureComponent {
               You do not have an email associated with this account.
             </p>
           </FullWidthRow>
-          <FullWidthRow>
-            <UpdateEmailButton />
-          </FullWidthRow>
+
+
         </div>
       );
     }
@@ -117,19 +132,15 @@ class EmailSettings extends PureComponent {
           <FullWidthRow>
             <HelpBlock>
               <Alert bsStyle='info'>
-              A change of email address has not been verified.
-              To use your new email, you must verify it first using the link
-              we sent you.
+              Your email has not been verified.
+              To use your email, you must
+              <a href='/update-email'> verify it here first</a>.
               </Alert>
             </HelpBlock>
           </FullWidthRow>
         }
-        <FullWidthRow>
-          <EmailForm
-            initialValues={{ email, confrimEmail: ''}}
-          />
-        </FullWidthRow>
-        <Spacer />
+
+
         <FullWidthRow>
           <Row className='inline-form-field' key='sendQuincyEmail'>
             <Col sm={ 8 }>

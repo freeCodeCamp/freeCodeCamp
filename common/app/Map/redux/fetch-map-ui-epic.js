@@ -3,18 +3,16 @@ import debug from 'debug';
 
 import {
   types as appTypes,
-  createErrorObservable,
-  currentChallengeSelector
+  createErrorObservable
 } from '../../redux';
 import { types, fetchMapUiComplete } from './';
-import { langSelector } from '../../Router/redux';
 import { shapeChallenges } from '../../redux/utils';
 
 const isDev = debug.enabled('fcc:*');
 
 export default function fetchMapUiEpic(
   actions,
-  { getState },
+  _,
   { services }
 ) {
   return actions::ofType(
@@ -22,9 +20,7 @@ export default function fetchMapUiEpic(
     types.fetchMapUi.start
   )
     .flatMapLatest(() => {
-      const lang = langSelector(getState());
       const options = {
-        params: { lang },
         service: 'map-ui'
       };
       return services.readService$(options)
@@ -34,7 +30,6 @@ export default function fetchMapUiEpic(
             entities,
             isDev
           ),
-          initialNode: currentChallengeSelector(getState()),
           ...res
         }))
         .map(fetchMapUiComplete)

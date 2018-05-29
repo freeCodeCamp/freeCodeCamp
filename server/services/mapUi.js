@@ -1,23 +1,17 @@
 import debug from 'debug';
 import { Observable } from 'rx';
 
-import { cachedMap, getMapForLang } from '../utils/map';
+import { cachedMap } from '../utils/map';
 
 const log = debug('fcc:services:mapUi');
 
 
 export default function mapUiService(app) {
-  const supportedLangMap = {};
   const challengeMap = cachedMap(app.models);
   return {
     name: 'map-ui',
-    read: function readMapUi(req, resource, { lang = 'en' } = {}, config, cb) {
-      log(`generating mapUi for ${lang}`);
-      if (lang in supportedLangMap) {
-        log(`using cache for ${lang} map`);
-        return cb(null, supportedLangMap[lang]);
-      }
-      return challengeMap.map(getMapForLang(lang))
+    read: function readMapUi(req, resource, _, config, cb) {
+      return challengeMap
         .flatMap(({
           result: { superBlocks },
           entities: {
@@ -82,7 +76,6 @@ export default function mapUiService(app) {
               challenge: challengeMap
             }
           };
-          supportedLangMap[lang] = mapUi;
           return Observable.of(mapUi);
         }).subscribe(
           mapUi => cb(null, mapUi ),

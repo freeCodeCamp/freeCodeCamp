@@ -2,14 +2,14 @@ import { combineReducers } from 'berkeleys-redux-utils';
 
 import app from './redux';
 import entities from './entities';
-import form from './redux-form-reducer';
+import { reducer as form } from 'redux-form';
 import map from './Map/redux';
 import nav from './Nav/redux';
 import routes from './routes/redux';
 import toasts from './Toasts/redux';
-import files from './files';
 import flash from './Flash/redux';
 
+form.toString = () => 'form';
 
 export default combineReducers(
   app,
@@ -18,7 +18,6 @@ export default combineReducers(
   nav,
   routes,
   toasts,
-  files,
   flash,
   form
 );

@@ -5,31 +5,6 @@
   "helpRoom": "Help",
   "challenges": [
     {
-      "id": "587d7fb3367417b2b2512bfa",
-      "title": "Introduction to the Managing Packages with npm Challenges",
-      "description": [
-        [
-          "",
-          "",
-          "The Node Package Manager (npm) is a command-line tool used by developers to share and control modules (or packages) of JavaScript code written for use with Node.js.<br><br>When starting a new project, npm generates a <code>package.json</code> file. This file lists the package dependencies for your project. Since npm packages are regularly updated, the <code>package.json</code> file allows you to set specific version numbers for each dependency. This ensures that updates to a package don't break your project.<br><br>npm saves packages in a folder named <code>node_modules</code>. These packages can be installed in two ways:<br><br><ol><li>globally in a root <code>node_modules</code> folder, accessible by all projects.</li><li>locally within a project's own <code>node_modules</code> folder, accessible only to that project.</li></ol><br>Most developers prefer to install packages local to each project to create a separation between the dependencies of different projects.",
-          ""
-        ],
-        [
-          "",
-          "",
-          "Working on these challenges will involve you writing your code on Glitch on our starter project. After completing each challenge you can copy your public Glitch url (to the homepage of your app) into the challenge screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.<br>Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-npm'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-npm/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!",
-          ""
-        ]
-      ],
-      "releasedOn": "Feb 17, 2017",
-      "challengeSeed": [],
-      "tests": [],
-      "type": "waypoint",
-      "challengeType": 7,
-      "isRequired": false,
-      "translations": {}
-    },
-    {
       "id": "587d7fb3367417b2b2512bfb",
       "title": "How to Use package.json, the Core of Any Node.js Project or npm Package",
       "description": [
@@ -44,7 +19,6 @@
         "All field-names must use double-quotes (\"), e.g. \"author\"",
         "All fields must be separated with a comma (,)"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"author\" key",
@@ -68,7 +42,6 @@
         "Add a description to the package.json in your Glitch project.",
         "Remember to use double-quotes for field-names (\") and commas (,) to separate fields."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"description\" key",
@@ -92,7 +65,6 @@
         "Add an array of suitable strings to the keywords-field in the package.json of your Glitch project.",
         "One of the keywords should be freecodecamp."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"keywords\" key",
@@ -125,7 +97,6 @@
         "Instructions",
         "Fill the license-field in the package.json of your Glitch project as you find suitable."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"license\" key",
@@ -147,7 +118,6 @@
         "Instructions",
         "Add a version to the package.json in your Glitch project."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "package.json should have a valid \"version\" key",
@@ -173,7 +143,6 @@
         "Add version 2.14.0 of the package moment to the dependencies-field of your package.json",
         "Moment is a handy library for working with time and dates."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
@@ -208,7 +177,6 @@
         "Instructions",
         "In the dependencies-section of your package.json, change the version of moment to match MAJOR version 2, MINOR version 10 and PATCH version 2"
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
@@ -236,7 +204,6 @@
         "Use the tilde-character (~) to prefix the version of moment in your dependencies and allow npm to update it to any new PATCH release.",
         "Note that the version numbers themselves not should be changed."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
@@ -264,7 +231,6 @@
         "Use the caret-character (^) to prefix the version of moment in your dependencies and allow npm to update it to any new MINOR release.",
         "Note that the version numbers themselves not should be changed."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should include \"moment\"",
@@ -291,7 +257,6 @@
         "Remove the package moment from your dependencies.",
         "Make sure you have the right amount of commas after removing it."
       ],
-      "challengeSeed": [],
       "tests": [
         {
           "text": "\"dependencies\" should not include \"moment\"",

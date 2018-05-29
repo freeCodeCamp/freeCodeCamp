@@ -13,21 +13,26 @@ import { updateUserBackend } from '../redux';
 const mapStateToProps = createSelector(
   userSelector,
   ({
-    githubURL = '',
+    githubProfile = '',
     linkedin = '',
     twitter = '',
     website = ''
   }) => ({
     initialValues: {
-      githubURL,
+      githubProfile,
       linkedin,
       twitter,
-      website
+      personalWebsite: website
     }
   })
 );
 
-const formFields = [ 'githubURL', 'linkedin', 'twitter', 'website' ];
+const formFields = [
+  'githubProfile',
+  'linkedin',
+  'twitter',
+  'personalWebsite'
+];
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
@@ -37,13 +42,13 @@ function mapDispatchToProps(dispatch) {
 
 const propTypes = {
   fields: PropTypes.object,
-  githubURL: PropTypes.string,
+  githubProfile: PropTypes.string,
   handleSubmit: PropTypes.func.isRequired,
   linkedin: PropTypes.string,
+  personalWebsite: PropTypes.string,
   twitter: PropTypes.string,
   updateUserBackend: PropTypes.func.isRequired,
-  username: PropTypes.string,
-  website: PropTypes.string
+  username: PropTypes.string
 };
 
 class InternetSettings extends PureComponent {
@@ -53,8 +58,8 @@ class InternetSettings extends PureComponent {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(values) {
-    this.props.updateUserBackend(values);
+  handleSubmit({personalWebsite, ...others}) {
+    this.props.updateUserBackend({ ...others, website: personalWebsite });
   }
 
   render() {

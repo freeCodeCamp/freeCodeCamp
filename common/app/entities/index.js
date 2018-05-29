@@ -1,7 +1,6 @@
-import { findIndex, property, merge, union } from 'lodash';
+import { findIndex, property, merge } from 'lodash';
 import uuid from 'uuid/v4';
 import {
-  combineActions,
   composeReducers,
   createAction,
   createTypes,
@@ -9,8 +8,7 @@ import {
 } from 'berkeleys-redux-utils';
 
 import { themes } from '../../utils/themes';
-import { usernameSelector, types as app } from '../redux';
-import { types as challenges } from '../routes/Challenges/redux';
+import { usernameSelector } from '../redux';
 import { types as map } from '../Map/redux';
 import legacyProjects from '../../utils/legacyProjectData';
 
@@ -22,6 +20,7 @@ export const types = createTypes([
   'optoUpdatePortfolio',
   'regresPortfolio',
   'resetFullBlocks',
+  'updateLocalProfileUI',
   'updateMultipleUserFlags',
   'updateTheme',
   'updateUserFlag',
@@ -57,6 +56,8 @@ export const updateUserLang = createAction(
   types.updateUserLang,
   (username, lang) => ({ username, languageTag: lang })
 );
+
+export const updateLocalProfileUI = createAction(types.updateLocalProfileUI);
 
 export const resetFullBlocks = createAction(types.resetFullBlocks);
 
@@ -120,7 +121,9 @@ export function projectsSelector(state) {
   );
   return Object.keys(blocks)
     .filter(key =>
-      key.includes('projects') && !key.includes('coding-interview')
+      key.includes('projects') && !(
+        key.includes('coding-interview') || key.includes('take-home')
+      )
     )
     .map(key => blocks[key])
     .concat(legacyWithDashedNames)
@@ -204,36 +207,8 @@ export default composeReducers(
   },
   handleActions(
     () => ({
-      [
-        combineActions(
-          app.fetchNewBlock.complete,
-          map.fetchMapUi.complete
-        )
-      ]: (state, { payload: { entities } }) => merge({}, state, entities),
-      [app.fetchNewBlock.complete]: (
-        state,
-        { payload: { entities: { block } } }
-      ) => ({
-        ...state,
-        fullBlocks: union(state.fullBlocks, [ Object.keys(block)[0] ])
-      }),
-      [types.resetFullBlocks]: state => ({ ...state, fullBlocks: [] }),
-      [
-        challenges.submitChallenge.complete
-      ]: (state, { payload: { username, points, challengeInfo } }) => ({
-        ...state,
-        user: {
-          ...state.user,
-          [username]: {
-            ...state.user[username],
-            points,
-            challengeMap: {
-              ...state.user[username].challengeMap,
-              [challengeInfo.id]: challengeInfo
-            }
-          }
-        }
-      }),
+      [map.fetchMapUi.complete]: (state, { payload: { entities } }) =>
+        merge({}, state, entities),
       [types.addPortfolioItem]: (state, { payload: username }) => ({
         ...state,
         user: {
@@ -325,19 +300,20 @@ export default composeReducers(
           }
         }
       }),
-      [types.updateUserCurrentChallenge]:
+      [types.updateLocalProfileUI]:
       (
         state,
-        {
-          payload: { username, currentChallengeId }
-        }
+        { payload: { username, profileUI } }
       ) => ({
         ...state,
         user: {
           ...state.user,
           [username]: {
             ...state.user[username],
-            currentChallengeId
+            profileUI: {
+              ...state.user[username].profileUI,
+              ...profileUI
+            }
           }
         }
       })

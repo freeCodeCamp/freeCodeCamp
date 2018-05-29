@@ -40,8 +40,14 @@ const renderCertifedEmail = loopback.template(path.join(
   'certified.ejs'
 ));
 
-function isCertified(ids, challengeMap = {}) {
-  return _.every(ids, ({ id }) => _.has(challengeMap, id));
+function isCertified(ids, completedChallenges = []) {
+  return _.every(
+    ids,
+    ({ id }) => _.find(
+      completedChallenges,
+      ({ id: completedId }) => completedId === id
+    )
+  );
 }
 
 const certIds = {
@@ -73,17 +79,17 @@ const certViews = {
 };
 
 const certText = {
-  [certTypes.frontEnd]: 'Legacy Front End certified',
-  [certTypes.backEnd]: 'Legacy Back End Certified',
-  [certTypes.dataVis]: 'Legacy Data Visualization Certified',
-  [certTypes.fullStack]: 'Legacy Full Stack Certified',
-  [certTypes.respWebDesign]: 'Responsive Web Design Certified',
-  [certTypes.frontEndLibs]: 'Front End Libraries Certified',
+  [certTypes.frontEnd]: 'Legacy Front End',
+  [certTypes.backEnd]: 'Legacy Back End',
+  [certTypes.dataVis]: 'Legacy Data Visualization',
+  [certTypes.fullStack]: 'Legacy Full Stack',
+  [certTypes.respWebDesign]: 'Responsive Web Design',
+  [certTypes.frontEndLibs]: 'Front End Libraries',
   [certTypes.jsAlgoDataStruct]:
-  'JavaScript Algorithms and Data Structures Certified',
-  [certTypes.dataVis2018]: 'Data Visualization Certified',
-  [certTypes.apisMicroservices]: 'APIs and Microservices Certified',
-  [certTypes.infosecQa]: 'Information Security and Quality Assurance Certified'
+  'JavaScript Algorithms and Data Structures',
+  [certTypes.dataVis2018]: 'Data Visualization',
+  [certTypes.apisMicroservices]: 'APIs and Microservices',
+  [certTypes.infosecQa]: 'Information Security and Quality Assurance'
 };
 
 function getIdsForCert$(id, Challenge) {
@@ -101,19 +107,6 @@ function getIdsForCert$(id, Challenge) {
     .shareReplay();
 }
 
-// sendCertifiedEmail(
-//   {
-//     email: String,
-//     username: String,
-//     isRespWebDesignCert: Boolean,
-//     isFrontEndLibsCert: Boolean,
-//     isJsAlgoDataStructCert: Boolean,
-//     isDataVisCert: Boolean,
-//     isApisMicroservicesCert: Boolean,
-//     isInfosecQaCert: Boolean
-//   },
-//   send$: Observable
-// ) => Observable
 function sendCertifiedEmail(
   {
     email,
@@ -145,7 +138,7 @@ function sendCertifiedEmail(
     from: 'team@freeCodeCamp.org',
     subject: dedent`
       Congratulations on completing all of the
-      freeCodeCamp certificates!
+      freeCodeCamp certifications!
     `,
     text: renderCertifedEmail({
       username,
@@ -197,16 +190,16 @@ export default function certificate(app) {
     verifyCert
   );
   router.get(
-    '/certificates/:username/:cert',
+    '/certification/:username/:cert',
     showCert
   );
 
   app.use(router);
 
   const noNameMessage = dedent`
-  We need your name so we can put it on your certificate.
+  We need your name so we can put it on your certification.
   Add your name to your account settings and click the save button.
-  Then we can issue your certificate.
+  Then we can issue your certification.
   `;
 
   const notCertifiedMessage = name => dedent`
@@ -230,46 +223,49 @@ export default function certificate(app) {
     log(superBlock);
     let certType = superBlockCertTypeMap[superBlock];
     log(certType);
-    return user.getChallengeMap$()
+    return user.getCompletedChallenges$()
       .flatMap(() => certTypeIds[certType])
       .flatMap(challenge => {
         const {
           id,
           tests,
-          name,
           challengeType
         } = challenge;
+        const certName = certText[certType];
         if (user[certType]) {
-          return Observable.just(alreadyClaimedMessage(name));
+          return Observable.just(alreadyClaimedMessage(certName));
         }
-        if (!user[certType] && !isCertified(tests, user.challengeMap)) {
-          return Observable.just(notCertifiedMessage(name));
+        if (!user[certType] && !isCertified(tests, user.completedChallenges)) {
+          return Observable.just(notCertifiedMessage(certName));
         }
         if (!user.name) {
           return Observable.just(noNameMessage);
         }
         const updateData = {
-          $set: {
-            [`challengeMap.${id}`]: {
+          $push: {
+            completedChallenges: {
               id,
-              name,
               completedDate: new Date(),
               challengeType
-            },
+            }
+          },
+          $set: {
             [certType]: true
           }
         };
         // set here so sendCertifiedEmail works properly
         // not used otherwise
         user[certType] = true;
-        user.challengeMap[id] = { completedDate: new Date() };
+        user.completedChallenges[
+          user.completedChallenges.length - 1
+        ] = { id, completedDate: new Date() };
         return Observable.combineLatest(
           // update user data
           user.update$(updateData),
           // If user has committed to nonprofit,
           // this will complete their pledge
           completeCommitment$(user),
-          // sends notification email is user has all three certs
+          // sends notification email is user has all 6 certs
           // if not it noop
           sendCertifiedEmail(user, Email.send$),
           ({ count }, pledgeOrMessage) => ({ count, pledgeOrMessage })
@@ -280,7 +276,7 @@ export default function certificate(app) {
                 log(pledgeOrMessage);
               }
               log(`${count} documents updated`);
-              return successMessage(user.username, name);
+              return successMessage(user.username, certName);
             }
           );
         })
@@ -312,7 +308,6 @@ export default function certificate(app) {
       username,
       {
         isCheater: true,
-        isLocked: true,
         isFrontEndCert: true,
         isBackEndCert: true,
         isFullStackCert: true,
@@ -326,12 +321,14 @@ export default function certificate(app) {
         isHonest: true,
         username: true,
         name: true,
-        challengeMap: true
+        completedChallenges: true,
+        profileUI: true
       }
     )
     .subscribe(
       user => {
-        const profile = `/${user.username}`;
+        const { isLocked, showCerts } = user.profileUI;
+        const profile = `/portfolio/${user.username}`;
         if (!user) {
           req.flash(
             'danger',
@@ -345,23 +342,35 @@ export default function certificate(app) {
             'danger',
             dedent`
               This user needs to add their name to their account
-              in order for others to be able to view their certificate.
+              in order for others to be able to view their certification.
             `
           );
           return res.redirect(profile);
         }
 
         if (user.isCheater) {
-          return res.redirect(`/${user.username}`);
+          return res.redirect(profile);
         }
 
-        if (user.isLocked) {
+        if (isLocked) {
           req.flash(
             'danger',
             dedent`
               ${username} has chosen to make their profile
                 private. They will need to make their profile public
-                in order for others to be able to view their certificate.
+                in order for others to be able to view their certification.
+            `
+          );
+          return res.redirect('/');
+        }
+
+        if (!showCerts) {
+          req.flash(
+            'danger',
+            dedent`
+              ${username} has chosen to make their certifications
+                private. They will need to make their certifications public
+                in order for others to be able to view them.
             `
           );
           return res.redirect('/');
@@ -378,8 +387,10 @@ export default function certificate(app) {
         }
 
         if (user[certType]) {
-          const { challengeMap = {} } = user;
-          const { completedDate = new Date() } = challengeMap[certId] || {};
+          const { completedChallenges = {} } = user;
+          const { completedDate = new Date() } = _.find(
+            completedChallenges, ({ id }) => certId === id
+          ) || {};
 
           return res.render(
             certViews[certType],
@@ -392,7 +403,7 @@ export default function certificate(app) {
         }
         req.flash(
           'danger',
-          `Looks like user ${username} is not ${certText[certType]}`
+          `Looks like user ${username} is not ${certText[certType]} certified`
         );
         return res.redirect(profile);
       },

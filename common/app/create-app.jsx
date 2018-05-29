@@ -7,12 +7,8 @@ import { combineReducers } from 'berkeleys-redux-utils';
 import { createEpic } from 'redux-epic';
 import appReducer from './reducer.js';
 import routesMap from './routes-map.js';
-import createPanesMap from './create-panes-map.js';
-import createPanesAspects from './Panes/redux';
-import addLangToRoutesEnhancer from './Router/redux/add-lang-enhancer.js';
 import epics from './epics';
 
-import { onBeforeChange } from './utils/redux-first-router.js';
 import servicesCreator from '../utils/services-creator';
 
 const debug = createDebugger('fcc:app:createApp');
@@ -50,21 +46,14 @@ export default function createApp({
     reducer: routesReducer,
     middleware: routesMiddleware,
     enhancer: routesEnhancer
-  } = connectRoutes(history, routesMap, { onBeforeChange });
+  } = connectRoutes(history, routesMap);
 
   routesReducer.toString = () => 'location';
 
-  const {
-    reducer: panesReducer,
-    middleware: panesMiddleware
-  } = createPanesAspects({ createPanesMap });
-
   const enhancer = compose(
-    addLangToRoutesEnhancer(routesMap),
     routesEnhancer,
     applyMiddleware(
       routesMiddleware,
-      panesMiddleware,
       epicMiddleware,
       ...sideMiddlewares
     ),
@@ -75,7 +64,6 @@ export default function createApp({
 
   const reducer = combineReducers(
     appReducer,
-    panesReducer,
     routesReducer
   );
 
@@ -95,7 +83,6 @@ export default function createApp({
         debug('hot reloading reducers');
         store.replaceReducer(combineReducers(
           require('./reducer.js').default,
-          panesReducer,
           routesReducer
         ));
       });

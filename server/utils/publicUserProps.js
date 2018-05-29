@@ -10,8 +10,8 @@ import {
 export const publicUserProps = [
   'about',
   'calendar',
-  'challengeMap',
-  'githubURL',
+  'completedChallenges',
+  'githubProfile',
   'isApisMicroservicesCert',
   'isBackEndCert',
   'isCheater',
@@ -20,17 +20,16 @@ export const publicUserProps = [
   'isFrontEndCert',
   'isFullStackCert',
   'isFrontEndLibsCert',
-  'isGithubCool',
   'isHonest',
   'isInfosecQaCert',
   'isJsAlgoDataStructCert',
-  'isLocked',
   'isRespWebDesignCert',
   'linkedin',
   'location',
   'name',
   'points',
   'portfolio',
+  'profileUI',
   'projects',
   'streak',
   'twitter',
@@ -42,8 +41,8 @@ export const userPropsForSession = [
   ...publicUserProps,
   'currentChallengeId',
   'email',
+  'emailVerified',
   'id',
-  'languageTag',
   'sendQuincyEmail',
   'theme'
 ];
@@ -59,25 +58,12 @@ export function normaliseUserFields(user) {
 
 export function getProgress(progressTimestamps, timezone = 'EST') {
   const calendar = progressTimestamps
-  .map((objOrNum) => {
-    return typeof objOrNum === 'number' ?
-    objOrNum :
-      objOrNum.timestamp;
-    })
-    .filter((timestamp) => {
-      return !!timestamp;
-    })
-    .reduce((data, timeStamp) => {
-      data[Math.floor(timeStamp / 1000)] = 1;
+    .filter(Boolean)
+    .reduce((data, timestamp) => {
+      data[Math.floor(timestamp / 1000)] = 1;
       return data;
   }, {});
-  const timestamps = progressTimestamps
-    .map(objOrNum => {
-      return typeof objOrNum === 'number' ?
-        objOrNum :
-        objOrNum.timestamp;
-    });
-  const uniqueHours = prepUniqueDaysByHours(timestamps, timezone);
+  const uniqueHours = prepUniqueDaysByHours(progressTimestamps, timezone);
   const streak = {
     longest: calcLongestStreak(uniqueHours, timezone),
     current: calcCurrentStreak(uniqueHours, timezone)

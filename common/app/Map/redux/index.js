@@ -8,12 +8,13 @@ import { createSelector } from 'reselect';
 import { capitalize, noop } from 'lodash';
 
 import * as utils from './utils.js';
-import ns from '../ns.json';
 import {
   createEventMetaCreator
 } from '../../redux';
 
 import fetchMapUiEpic from './fetch-map-ui-epic';
+
+const ns = 'map';
 
 export const epics = [ fetchMapUiEpic ];
 

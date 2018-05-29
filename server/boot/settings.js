@@ -1,10 +1,8 @@
 import { check } from 'express-validator/check';
-
 import {
   ifNoUser401,
   createValidatorErrorHandler
 } from '../utils/middleware';
-import supportedLanguages from '../../common/utils/supported-languages.js';
 import { themes } from '../../common/utils/themes.js';
 import { alertTypes } from '../../common/utils/flash.js';
 
@@ -24,11 +22,11 @@ export default function settingsController(app) {
       );
   };
 
-  function refetchChallengeMap(req, res, next) {
+  function refetchCompletedChallenges(req, res, next) {
     const { user } = req;
-    return user.requestChallengeMap()
+    return user.requestCompletedChallenges()
       .subscribe(
-        challengeMap => res.json({ challengeMap }),
+        completedChallenges => res.json({ completedChallenges }),
         next
       );
   }
@@ -44,29 +42,6 @@ export default function settingsController(app) {
     return user.requestUpdateEmail(email)
       .subscribe(
         message => res.json({ message }),
-        next
-      );
-  }
-
-  function updateMyLang(req, res, next) {
-    const { user, body: { lang } = {} } = req;
-    const langName = supportedLanguages[lang];
-    const update = { languageTag: lang };
-    if (!supportedLanguages[lang]) {
-      return res.json({
-        message: `${lang} is currently unsupported`
-      });
-    }
-    if (user.languageTag === lang) {
-      return res.json({
-        message: `Your language is already set to ${langName}`
-      });
-    }
-    return user.update$(update)
-      .subscribe(
-        () => res.json({
-          message: `Your language has been updated to '${langName}'`
-        }),
         next
       );
   }
@@ -138,6 +113,18 @@ export default function settingsController(app) {
       );
     }
 
+  function updateMyProfileUI(req, res, next) {
+    const {
+      user,
+      body: { profileUI }
+    } = req;
+    return user.updateMyProfileUI(profileUI)
+      .subscribe(
+        message => res.json({ message }),
+        next
+      );
+  }
+
   function updateMyProjects(req, res, next) {
     const {
       user,
@@ -159,10 +146,40 @@ export default function settingsController(app) {
     );
   }
 
+  const updatePrivacyTerms = (req, res, next) => {
+    const {
+      user,
+      body: { quincyemails }
+    } = req;
+    const update = {
+      acceptedPrivacyTerms: true,
+      sendQuincyEmail: !!quincyemails
+    };
+    return user.update$(update)
+      .do(() => {
+        req.user = Object.assign(req.user, update);
+      })
+      .subscribe(
+        () => {
+          res.status(200).json({
+            message: 'We have updated your preferences. ' +
+              'You can now continue using freeCodeCamp.'
+          });
+        },
+        next
+      );
+  };
+
   api.post(
-    '/refetch-user-challenge-map',
+    '/update-privacy-terms',
     ifNoUser401,
-    refetchChallengeMap
+    updatePrivacyTerms
+  );
+
+  api.post(
+    '/refetch-user-completed-challenges',
+    ifNoUser401,
+    refetchCompletedChallenges
   );
   api.post(
     '/update-flags',
@@ -184,14 +201,21 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post(
-    '/update-my-lang',
+    '/external/update-my-current-challenge',
     ifNoUser401,
-    updateMyLang
+    updateMyCurrentChallengeValidators,
+    createValidatorErrorHandler(alertTypes.danger),
+    updateMyCurrentChallenge
   );
   api.post(
     '/update-my-portfolio',
     ifNoUser401,
     updateMyPortfolio
+  );
+  api.post(
+    '/update-my-profile-ui',
+    ifNoUser401,
+    updateMyProfileUI
   );
   api.post(
     '/update-my-projects',

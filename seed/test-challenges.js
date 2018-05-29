@@ -4,18 +4,29 @@ import {Observable} from 'rx';
 import tape from 'tape';
 
 import getChallenges from './getChallenges';
-import { modern } from '../common/app/utils/challengeTypes';
+
 import MongoIds from './mongoIds';
 import ChallengeTitles from './challengeTitles';
 import addAssertsToTapTest from './addAssertsToTapTest';
+import { validateChallenge } from './schema/challengeSchema';
+
+// modern challengeType
+const modern = 6;
 
 let mongoIds = new MongoIds();
 let challengeTitles = new ChallengeTitles();
 
-function evaluateTest(solution, assert,
-  react, redux, reactRedux,
-  head, tail,
-  test, tapTest) {
+function evaluateTest(
+  solution,
+  assert,
+  react,
+  redux,
+  reactRedux,
+  head,
+  tail,
+  test,
+  tapTest
+) {
 
   let code = solution;
 
@@ -94,14 +105,22 @@ function evaluateTest(solution, assert,
   try {
     (() => {
       return eval(
-        head + '\n;;' +
-        solution + '\n;;' +
-        tail + '\n;;' +
-        test
+        head + '\n' +
+        solution + '\n' +
+        tail + '\n' +
+        test.testString
       );
     })();
   } catch (e) {
+    console.log(
+      head + '\n' +
+      solution + '\n' +
+      tail + '\n' +
+      test.testString
+    );
+    console.log(e);
     tapTest.fail(e);
+    process.exit(1);
   }
 }
 
@@ -110,8 +129,7 @@ function createTest({
   id = '',
   tests = [],
   solutions = [],
-  head = [],
-  tail = [],
+  files = [],
   react = false,
   redux = false,
   reactRedux = false
@@ -128,12 +146,18 @@ function createTest({
     console.log(`Replacing Async Tests for Challenge ${title}`);
     tests = tests.map(challengeTestSource =>
       isAsync(challengeTestSource) ?
-        "assert(true, 'message: great');" :
-        challengeTestSource);
-  }
-
-  head = head.join('\n');
-  tail = tail.join('\n');
+      "assert(true, 'message: great');" :
+      challengeTestSource);
+    }
+  const { head, tail } = Object.keys(files)
+    .map(key => files[key])
+    .reduce(
+      (result, file) => ({
+        head: result.head + ';' + file.head.join('\n'),
+        tail: result.tail + ';' + file.tail.join('\n')
+      }),
+      { head: '', tail: '' }
+    );
   const plan = tests.length;
   if (!plan) {
     return Observable.just({
@@ -161,8 +185,17 @@ function createTest({
         .doOnNext(assert => {
           solutions.forEach(solution => {
             tests.forEach(test => {
-              evaluateTest(solution, assert, react, redux, reactRedux,
-                head, tail, test, tapTest);
+              evaluateTest(
+                solution,
+                assert,
+                react,
+                redux,
+                reactRedux,
+                head,
+                tail,
+                test,
+                tapTest
+              );
             });
           });
         })
@@ -171,6 +204,15 @@ function createTest({
 }
 
 Observable.from(getChallenges())
+  .do(({ challenges }) => {
+    challenges.forEach(challenge => {
+      const result = validateChallenge(challenge);
+      if (result.error) {
+        console.log(result.value);
+        throw new Error(result.error);
+      }
+    });
+  })
   .flatMap(challengeSpec => {
     return Observable.from(challengeSpec.challenges);
   })
