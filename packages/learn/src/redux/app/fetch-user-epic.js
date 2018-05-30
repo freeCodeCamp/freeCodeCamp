@@ -23,7 +23,7 @@ function fetchUserEpic(action$, _, { services }) {
           if (!user[result].emailVerified) {
             return hardGoTo(HOME_PATH);
           }
-          return fetchUserComplete(result);
+          return fetchUserComplete(response);
         }),
         defaultIfEmpty({ type: 'no-user' }),
         catchError(err => {
