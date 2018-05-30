@@ -12,8 +12,9 @@ import Header from '../components/Header';
 import MapModal from '../components/MapModal';
 import { fetchUser } from '../redux/app';
 
-import './global.css';
+import 'prismjs/themes/prism.css';
 import 'react-reflex/styles.css';
+import './global.css';
 import './layout.css';
 
 const metaKeywords = [
