@@ -37,6 +37,7 @@ const rootEpic = combineEpics(analyticsEpic, ...appEpics, ...challengeEpics);
 const epicMiddleware = createEpicMiddleware(rootEpic, {
   dependencies: {
     window: typeof window !== 'undefined' ? window : {},
+    location: typeof window !== 'undefined' ? window.location : {},
     document: typeof window !== 'undefined' ? document : {},
     services: servicesCreator(serviceOptions)
   }

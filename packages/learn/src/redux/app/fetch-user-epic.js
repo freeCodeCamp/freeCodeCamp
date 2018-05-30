@@ -1,6 +1,7 @@
+/* global HOME_PATH */
 import { of } from 'rxjs/observable/of';
 import { ofType } from 'redux-observable';
-import { types, fetchUserComplete } from './';
+import { types, fetchUserComplete, hardGoTo } from './';
 import {
   switchMap,
   filter,
@@ -17,7 +18,13 @@ function fetchUserEpic(action$, _, { services }) {
     switchMap(() => {
       return services.readService$({ service: 'user' }).pipe(
         filter(({ entities, result }) => entities && !!result),
-        map(fetchUserComplete),
+        map(response => {
+          const { entities: { user }, result } = response;
+          if (!user[result].emailVerified) {
+            return hardGoTo(HOME_PATH);
+          }
+          return fetchUserComplete(result);
+        }),
         defaultIfEmpty({ type: 'no-user' }),
         catchError(err => {
           console.log(err);

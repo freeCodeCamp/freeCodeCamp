@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -102,6 +103,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   });
 };
 
+const webpack = require('webpack');
 const generateBabelConfig = require('gatsby/dist/utils/babel-config');
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
@@ -134,6 +136,14 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
         }
       ]
     ]);
+    config.plugin('DefinePlugin', webpack.DefinePlugin, [
+      {
+        HOME_PATH: JSON.stringify(
+          process.env.HOME_PATH ||
+          'http://localhost:3000'
+        )
+      }
+]);
   });
 };
 /* eslint-disable prefer-object-spread/prefer-object-spread */

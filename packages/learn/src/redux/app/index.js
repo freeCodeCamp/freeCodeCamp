@@ -3,16 +3,18 @@ import { createAction, handleActions } from 'redux-actions';
 import { createTypes } from '../../../utils/stateManagment';
 import { types as challenge } from '../../templates/Challenges/redux';
 import fecthUserEpic from './fetch-user-epic';
+import hardGoToEpic from './hard-go-to-epic';
 
 const ns = 'app';
 
-export const epics = [fecthUserEpic];
+export const epics = [fecthUserEpic, hardGoToEpic];
 
 export const types = createTypes(
   [
     'fetchUser',
     'fetchUserComplete',
     'fetchUserError',
+    'hardGoTo',
     'updateUserSignedIn',
     'toggleMapModal'
   ],
@@ -29,6 +31,8 @@ const initialState = {
 export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(types.fetchUserComplete);
 export const fecthUserError = createAction(types.fetchUserError);
+
+export const hardGoTo = createAction(types.hardGoTo);
 
 export const toggleMapModal = createAction(types.toggleMapModal);
 
