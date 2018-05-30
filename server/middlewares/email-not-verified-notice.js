@@ -19,7 +19,7 @@ export default function emailNotVerifiedNotice() {
       const { user } = req;
       if (user && (!user.email || user.email === '' || !user.emailVerified)) {
         req.flash(
-          'danger',
+          'info',
           dedent`
   New privacy laws now require that we have an email address where we can reach
   you. Please verify your email address below and click the link we send you to
