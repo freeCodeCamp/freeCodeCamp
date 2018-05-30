@@ -1,7 +1,8 @@
+/* global HOME_PATH */
 import React from 'react';
 
 function SignedIn() {
-  return <a href='https://beta.freecodecamp.org/settings'>Settings</a>;
+  return <a href={HOME_PATH + '/settings'}>Settings</a>;
 }
 
 SignedIn.displayName = 'SignedIn';
