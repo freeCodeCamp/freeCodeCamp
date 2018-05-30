@@ -9,6 +9,7 @@ import { Button } from 'react-bootstrap';
 
 import { ChallengeNode } from '../redux/propTypes';
 import { toggleMapModal } from '../redux/app';
+import Spacer from '../components/util/Spacer';
 
 import './index.css';
 
@@ -30,10 +31,12 @@ const IndexPage = ({
 }) => (
   <div className='index-page-wrapper'>
     <Helmet title='Welcome to learn.freeCodeCamp!' />
-    <h1>Welcome to learn.freeCodeCamp.org</h1>
+    <Spacer />
+    <Spacer />
+    <h2>Welcome to the freeCodeCamp curriculum</h2>
     <p>We have thousands of coding lessons to help you improve your skills.</p>
     <p>
-      You can earn verified certifications by completing each sections 5
+      You can earn verified certifications by completing each sections 6
       required projects.
     </p>
     <p>

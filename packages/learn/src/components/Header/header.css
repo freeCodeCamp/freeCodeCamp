@@ -39,6 +39,20 @@ header {
   list-style: none;
 }
 
+#top-right-nav a, #top-right-nav img {
+  max-height: 40px;
+}
+
+#top-right-nav a.btn-cta {
+  background-color: #ffac33;
+  background-image: linear-gradient(#ffcc4d, #ffac33);
+  border-color: #f1a02a;
+  color: #292f33 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  max-height: 38px;
+  padding: 4px 12px;
+}
+
 #top-right-nav li {
   display: flex;
   align-items: center;
@@ -48,12 +62,12 @@ header {
 #top-right-nav li > a, #top-right-nav li > span {
   color:#fff;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 #top-right-nav li > a:hover, #top-right-nav li > a:focus {
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 

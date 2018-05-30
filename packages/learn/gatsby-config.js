@@ -65,7 +65,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Lato:400,400i,700']
+        fonts: ['Lato:400,400i,500']
       }
     },
     'gatsby-plugin-sitemap',

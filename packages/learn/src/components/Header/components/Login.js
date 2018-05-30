@@ -1,11 +1,17 @@
 /* global HOME_PATH */
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 function Login() {
   return (
-    <a href={HOME_PATH + '/signin'} target='_blank'>
-      Login
-    </a>
+    <Button
+      bsStyle='default'
+      className='btn-cta'
+      href={HOME_PATH + '/signin'}
+      target='_blank'
+      >
+      Sign In
+    </Button>
   );
 }
 

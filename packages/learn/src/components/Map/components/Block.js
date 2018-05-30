@@ -94,13 +94,9 @@ export class Block extends PureComponent {
           >
           <span className='badge map-badge'>
             {challenge.isCompleted ? (
-              <GreenPass
-                style={ mapIconStyle }
-              />
+              <GreenPass style={mapIconStyle} />
             ) : (
-              <GreenNotCompleted
-                style={ mapIconStyle }
-              />
+              <GreenNotCompleted style={mapIconStyle} />
             )}
           </span>
           <Link
