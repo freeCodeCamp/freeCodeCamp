@@ -518,11 +518,11 @@ module.exports = function(User) {
     )({ ttl });
   };
 
-  User.prototype.getEncodedEmail = function getEncodedEmail() {
-    if (!this.email) {
+  User.prototype.getEncodedEmail = function getEncodedEmail(email) {
+    if (!email) {
       return null;
     }
-    return Buffer(this.email).toString('base64');
+    return Buffer(email).toString('base64');
   };
 
   User.decodeEmail = email => Buffer(email, 'base64').toString();
