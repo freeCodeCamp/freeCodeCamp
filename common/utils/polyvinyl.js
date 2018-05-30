@@ -1,7 +1,32 @@
-// originally base off of https://github.com/gulpjs/vinyl
+// originally based off of https://github.com/gulpjs/vinyl
 import invariant from 'invariant';
+import { Observable } from 'rx';
+import castToObservable from '../app/utils/cast-to-observable.js';
+
+
+// createFileStream(
+//   files: [...PolyVinyl]
+// ) => Observable[...Observable[...PolyVinyl]]
+export function createFileStream(files = []) {
+  return Observable.of(
+    Observable.from(files)
+  );
+}
+
+// Observable::pipe(
+//  project(
+//    file: PolyVinyl
+//  ) => PolyVinyl|Observable[PolyVinyl]|Promise[PolyVinyl]
+// ) => Observable[...Observable[...PolyVinyl]]
+export function pipe(project) {
+  const source = this;
+  return source.map(
+    files => files.flatMap(file => castToObservable(project(file)))
+  );
+}
 
 // interface PolyVinyl {
+//   source: String,
 //   contents: String,
 //   name: String,
 //   ext: String,
@@ -10,9 +35,9 @@ import invariant from 'invariant';
 //   head: String,
 //   tail: String,
 //   history: [...String],
-//   error: Null|Object
+//   error: Null|Object|Error
 // }
-//
+
 // createPoly({
 //   name: String,
 //   ext: String,
@@ -80,15 +105,18 @@ export function isEmpty(poly) {
   return !!poly.contents;
 }
 
-// updateContents(contents: String, poly: PolyVinyl) => PolyVinyl
-export function updateContents(contents, poly) {
+// setContent(contents: String, poly: PolyVinyl) => PolyVinyl
+// setContent will loose source if set
+export function setContent(contents, poly) {
   checkPoly(poly);
   return {
     ...poly,
-    contents
+    contents,
+    source: null
   };
 }
 
+// setExt(ext: String, poly: PolyVinyl) => PolyVinyl
 export function setExt(ext, poly) {
   checkPoly(poly);
   const newPoly = {
@@ -101,6 +129,7 @@ export function setExt(ext, poly) {
   return newPoly;
 }
 
+// setName(name: String, poly: PolyVinyl) => PolyVinyl
 export function setName(name, poly) {
   checkPoly(poly);
   const newPoly = {
@@ -113,6 +142,7 @@ export function setName(name, poly) {
   return newPoly;
 }
 
+// setError(error: Object, poly: PolyVinyl) => PolyVinyl
 export function setError(error, poly) {
   invariant(
     typeof error === 'object',
@@ -124,4 +154,72 @@ export function setError(error, poly) {
     ...poly,
     error
   };
+}
+
+// clearHeadTail(poly: PolyVinyl) => PolyVinyl
+export function clearHeadTail(poly) {
+  checkPoly(poly);
+  return {
+    ...poly,
+    head: '',
+    tail: ''
+  };
+}
+
+// appendToTail (tail: String, poly: PolyVinyl) => PolyVinyl
+export function appendToTail(tail, poly) {
+  checkPoly(poly);
+  return {
+    ...poly,
+    tail: poly.tail.concat(tail)
+  };
+}
+
+// compileHeadTail(padding: String, poly: PolyVinyl) => PolyVinyl
+export function compileHeadTail(padding = '', poly) {
+  return clearHeadTail(transformContents(
+    () => [ poly.head, poly.contents, poly.tail ].join(padding),
+    poly
+  ));
+}
+
+// transformContents(
+//   wrap: (contents: String) => String,
+//   poly: PolyVinyl
+// ) => PolyVinyl
+// transformContents will keep a copy of the original
+// code in the `source` property. If the original polyvinyl
+// already contains a source, this version will continue as
+// the source property
+export function transformContents(wrap, poly) {
+  const newPoly = setContent(
+    wrap(poly.contents),
+    poly
+  );
+  // if no source exist, set the original contents as source
+  newPoly.source = poly.source || poly.contents;
+  return newPoly;
+}
+
+// transformHeadTailAndContents(
+//   wrap: (source: String) => String,
+//   poly: PolyVinyl
+// ) => PolyVinyl
+export function transformHeadTailAndContents(wrap, poly) {
+  return {
+    ...transformContents(
+      wrap,
+      poly
+    ),
+    head: wrap(poly.head),
+    tail: wrap(poly.tail)
+  };
+}
+
+export function testContents(predicate, poly) {
+  return !!predicate(poly.contents);
+}
+
+export function updateFileFromSpec(spec, poly) {
+  return setContent(poly.contents, createPoly(spec));
 }

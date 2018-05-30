@@ -1,4 +1,4 @@
-import { makeToast } from '../../common/app/toasts/redux/actions';
+import { makeToast } from '../../common/app/Toasts/redux';
 
 export default function flashToToast(flash) {
   return Object.keys(flash)

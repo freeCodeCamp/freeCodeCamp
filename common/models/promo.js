@@ -41,7 +41,10 @@ export default function promo(Promo) {
           .then(function({ count = 0 } = {}) {
             log('job', count);
             if (count) {
-              return Object.assign({}, promo, { name: `${code} Discount` });
+              return {
+                ...promo,
+                name: `${code} Discount`
+              };
             }
             return Promise.reject(new Error(
               `Job ${id} not found`

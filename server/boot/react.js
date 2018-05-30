@@ -1,25 +1,32 @@
-import React from 'react';
-import { RouterContext } from 'react-router';
 import debug from 'debug';
+import { renderToString } from 'react-dom/server';
+import createMemoryHistory from 'history/createMemoryHistory';
+import { NOT_FOUND } from 'redux-first-router';
+import devtoolsEnhancer from 'remote-redux-devtools';
 
-import { renderToString } from 'redux-epic';
-import provideStore from '../../common/app/provide-store';
-
-import createApp from '../../common/app';
+import {
+  errorThrowerMiddleware
+} from '../utils/react.js';
+import { createApp, provideStore, App } from '../../common/app';
+import waitForEpics from '../../common/utils/wait-for-epics.js';
+import { titleSelector } from '../../common/app/redux';
 
 const log = debug('fcc:react-server');
+const isDev = process.env.NODE_ENV !== 'production';
 
 // add routes here as they slowly get reactified
 // remove their individual controllers
 const routes = [
-  '/challenges',
-  '/challenges/*',
-  '/map',
   '/settings',
-  '/settings/*'
+  '/settings/*',
+  '/portfolio/:username'
 ];
 
 const devRoutes = [];
+
+const middlewares = isDev ? [errorThrowerMiddleware] : [];
+
+const markupMap = {};
 
 export default function reactSubRouter(app) {
   var router = app.loopback.Router();
@@ -41,62 +48,66 @@ export default function reactSubRouter(app) {
     });
   }
 
-  app.use('/:lang', router);
+  app.use(router);
 
   function serveReactApp(req, res, next) {
-    const { lang } = req;
     const serviceOptions = { req };
-    createApp({
+    if (req.originalUrl in markupMap) {
+      log('sending markup from cache');
+      const { state, title, markup } = markupMap[req.originalUrl];
+      res.expose(state, 'data', { isJSON: true });
+      // note(berks): we render without express-flash dumping our messages
+      // the app will query for these on load
+      return res.renderWithoutFlash('layout-react', { markup, title });
+    }
+    return createApp({
       serviceOptions,
-      location: req.originalUrl,
-      initialState: { app: { lang } }
+      middlewares,
+      enhancers: [
+        devtoolsEnhancer({ name: 'server' })
+      ],
+      history: createMemoryHistory({ initialEntries: [ req.originalUrl ] }),
+      defaultState: {}
     })
-      // if react-router does not find a route send down the chain
-      .filter(({ redirect, props }) => {
-        if (!props && redirect) {
-          log('react router found a redirect');
-          return res.redirect(redirect.pathname + redirect.search);
-        }
-        if (!props) {
-          log(`react tried to find ${req.path} but got 404`);
-          return next();
-        }
-        return !!props;
-      })
-      .flatMap(({ props, store, epic }) => {
-        log('render react markup and pre-fetch data');
-
-        return renderToString(
-          provideStore(React.createElement(RouterContext, props), store),
-          epic
-        )
-          .map(({ markup }) => ({ markup, store, epic }));
-      })
-      .filter(({ store, epic }) => {
-        const { delayedRedirect } = store.getState().app;
-        if (delayedRedirect) {
-          res.redirect(delayedRedirect);
-          epic.dispose();
+      .filter(({
+        location: {
+          type,
+          kind,
+          pathname
+        } = {}
+      }) => {
+        if (kind === 'redirect') {
+          log('react found a redirect');
+          res.redirect(pathname);
           return false;
         }
+
+        if (type === NOT_FOUND) {
+          log(`react tried to find ${req.path} but got 404`);
+          next();
+          return false;
+        }
+
         return true;
       })
-      .flatMap(function({ markup, store, epic }) {
+      .flatMap(({ store, epic }) => {
+        return waitForEpics(epic)
+          .map(() => renderToString(
+            provideStore(App, store)
+          ))
+          .map((markup) => ({ markup, store, epic }));
+      })
+      .do(({ markup, store, epic }) => {
         log('react markup rendered, data fetched');
         const state = store.getState();
-        const { title } = state.app;
+        const title = titleSelector(state);
         epic.dispose();
-        res.expose(state, 'data');
-        res.expose(req.flash(), 'flash');
-        return res.render$(
-          'layout-react',
-          { markup, title }
-        );
+        res.expose(state, 'data', { isJSON: true });
+        // note(berks): we render without express-flash dumping our messages
+        // the app will query for these on load
+        res.renderWithoutFlash('layout-react', { markup, title });
+        markupMap[req.originalUrl] = { markup, state, title };
       })
-      .doOnNext(markup => res.send(markup))
-      .subscribe(
-        () => log('html rendered and ready to send'),
-        next
-      );
+      .subscribe(() => log('html rendered and sent'), next);
   }
 }

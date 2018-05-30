@@ -1,35 +1,23 @@
 require('dotenv').load();
-var pmx = require('pmx');
+require('./utils/webpack-code-split-polyfill');
 
-pmx.init();
+const _ = require('lodash');
+const Rx = require('rx');
+const loopback = require('loopback');
+const boot = require('loopback-boot');
+const expressState = require('express-state');
+const path = require('path');
+const setupPassport = require('./component-passport');
+const createDebugger = require('debug');
 
-var _ = require('lodash'),
-    Rx = require('rx'),
-    loopback = require('loopback'),
-    boot = require('loopback-boot'),
-    expressState = require('express-state'),
-    path = require('path'),
-    setupPassport = require('./component-passport');
+const log = createDebugger('fcc:server');
+// force logger to always output
+// this may be brittle
+log.enabled = true;
 
-// polyfill for webpack bundle splitting
-const requireProto = Object.getPrototypeOf(require);
-if (!requireProto.hasOwnProperty('ensure')) {
-  Object.defineProperties(
-    requireProto,
-    {
-      ensure: {
-        value: function ensure(modules, callback) {
-          callback(this);
-        },
-        writable: false,
-        enumarble: false
-      }
-    }
-  );
-}
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
-var app = loopback();
-var isBeta = !!process.env.BETA;
+const app = loopback();
+const isBeta = !!process.env.BETA;
 
 expressState.extend(app);
 app.set('state namespace', '__fcc__');
@@ -46,17 +34,36 @@ boot(app, {
 
 setupPassport(app);
 
+const { db } = app.datasources;
+db.on('connected', _.once(() => log('db connected')));
 app.start = _.once(function() {
-  app.listen(app.get('port'), function() {
+  const server = app.listen(app.get('port'), function() {
     app.emit('started');
-    console.log(
-      'FreeCodeCamp server listening on port %d in %s',
+    log(
+      'freeCodeCamp server listening on port %d in %s',
       app.get('port'),
       app.get('env')
     );
     if (isBeta) {
-      console.log('Free Code Camp is in beta mode');
+      log('freeCodeCamp is in beta mode');
     }
+    log(`connecting to db at ${db.settings.url}`);
+  });
+
+  process.on('SIGINT', () => {
+    log('Shutting down server');
+    server.close(() => {
+      log('Server is closed');
+    });
+    log('closing db connection');
+    db.disconnect()
+      .then(() => {
+        log('DB connection closed');
+        // exit process
+        // this may close kept alive sockets
+        // eslint-disable-next-line no-process-exit
+        process.exit(0);
+      });
   });
 });
 

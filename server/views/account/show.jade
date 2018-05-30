@@ -1,33 +1,29 @@
 extends ../layout
 block content
     include ../partials/flyer
-    script(src="/bower_components/cal-heatmap/cal-heatmap.min.js")
+    .app-content.app-centered
     script.
         var challengeName = 'Profile View';
     if (user && user.username === username)
       .row
-        if (!user.isGithubCool)
-          a.btn.btn-lg.btn-block.btn-github.btn-link-social(href='/link/github')
-              i.fa.fa-github
-              | Link my GitHub to unlock my portfolio
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/settings')
-                | Update your settings
+                | Update my settings
         .col-xs-12
             a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='/signout')
-                | Sign me out of Free Code Camp
+                | Sign me out of freeCodeCamp
         .col-xs-12
-            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.com')
-                | Email us at team@freecodecamp.com
+            a.btn.btn-lg.btn-block.btn-primary.btn-link-social(href='mailto:team@freecodecamp.org')
+                | Email us at team@freecodecamp.org
         .spacer
     h1.text-center #{username}'s code portfolio
     hr
     .row
         .col-xs-12.col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2.text-center
             if picture
-                img.img-center.img-responsive.public-profile-img(src=picture)
+                img.img-center.img-responsive.public-profile-img.border-radius-5(src=picture)
             else
-                img.img-center.img-responsive.public-profile-img(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
+                img.img-center.img-responsive.public-profile-img.border-radius-5(src='https://s3.amazonaws.com/freecodecamp/camper-image-placeholder.png')
             h1.text-center.negative-5.profile-social-icons
                 if (twitter)
                     a.fa.fa-twitter-square.text-primary(title="@#{username}'s Twitter Profile", href='https://twitter.com/' + twitter, target='_blank')
@@ -43,7 +39,7 @@ block content
                 .spacer
                   h4
                     | This camper has committed to giving $#{pledge.amount} to
-                    a(href='#{pledge.donateUrl}?ref=freecodecamp.com' target='_blank')  #{pledge.displayName}
+                    a(href='#{pledge.donateUrl}?ref=freecodecamp.org' target='_blank')  #{pledge.displayName}
                     |  each month until they have completed their #{pledge.goal}.
                 .spacer
             .row
@@ -56,6 +52,28 @@ block content
                     if isBackEndCert
                         .button-spacer
                         a.btn.btn-primary.btn-block(href='/' + username + '/back-end-certification') View My Back End Development Certification
+                    if isRespWebDesignCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/responsive-web-design-certification') View My Responsive Web Design Certification
+                    if isFrontEndLibsCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/front-end-libraries-certification') View My Front End Libraries Certification
+                    if isJsAlgoDataStructCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/javascript-algorithms-data-structures-certification') View My JavaScript Algorithms Data Structures Certification
+                    if isApisMicroservicesCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/apis-microservices-certification') View My APIs Microservices Certification
+                    if isInfosecQaCert
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/information-security-quality-assurance-certification') View My Information Sequrity Quality Assurance Certification
+                    if (user && user.username != username)
+                        .button-spacer
+                        a.btn.btn-primary.btn-block(href='/' + username + '/report-user/') Report this user's profile for abuse
+    .row
+      .col-xs-12.text-center
+        if (badges.coreTeam && badges.coreTeam.length)
+            h4 Core Team #{badges.coreTeam.reverse().join(', ')}
 
     .spacer
     .col-md-12
@@ -64,6 +82,8 @@ block content
                 $(document).ready(function () {
                     var cal = new CalHeatMap();
                     var calendar = !{JSON.stringify(calender)};
+                    var rectSelector = "#cal-heatmap > svg > svg.graph-legend > g > rect.r";
+                    var calLegendTitles = ["0 items", "1 item", "2 items", "3 or more items"]
                     cal.init({
                         itemSelector: "#cal-heatmap",
                         domain: "month",
@@ -82,6 +102,9 @@ block content
                         label: {
                             position: "top"
                         }
+                    });
+                    calLegendTitles.forEach(function(title, i) {
+                        document.querySelector(rectSelector + (i + 1).toString() + '> title').innerHTML = title;
                     });
                 });
         .row

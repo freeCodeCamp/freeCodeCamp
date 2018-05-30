@@ -1,3 +1,8 @@
+import dedent from 'dedent';
+import { validationResult } from 'express-validator/check';
+
+import { createValidatorErrorFormatter } from './create-handled-error.js';
+
 export function ifNoUserRedirectTo(url, message, type = 'errors') {
   return function(req, res, next) {
     const { path } = req;
@@ -5,9 +10,7 @@ export function ifNoUserRedirectTo(url, message, type = 'errors') {
       return next();
     }
 
-    req.flash(type, {
-      msg: message || `You must be signed in to access ${path}`
-    });
+    req.flash(type, message || `You must be signed in to access ${path}`);
 
     return res.redirect(url);
   };
@@ -29,21 +32,43 @@ export function ifNoUser401(req, res, next) {
   return res.status(401).end();
 }
 
-export function flashIfNotVerified(req, res, next) {
-  return next();
-  /*
-  // disabled until authorized required bug is fixed
-  const user = req.user;
+export function ifNotVerifiedRedirectToUpdateEmail(req, res, next) {
+  const { user } = req;
   if (!user) {
     return next();
   }
-  const email = req.user.email;
-  const emailVerified = req.user.emailVerified;
-  if (!email || !emailVerified) {
-    req.flash('info', {
-      msg: 'Please verify your email address ' +
-      '<a href="/update-email">here</a>.'
-    });
+  if (!user.emailVerified) {
+    req.flash(
+      'danger',
+      dedent`
+        We do not have your verified email address on record,
+        please add it in the settings to continue with your request.
+      `
+    );
+    return res.redirect('/settings');
   }
-  */
+  return next();
 }
+
+export function ifUserRedirectTo(path = '/', status) {
+  status = status === 302 ? 302 : 301;
+  return (req, res, next) => {
+    if (req.user) {
+      return res.status(status).redirect(path);
+    }
+    return next();
+  };
+}
+
+// for use with express-validator error formatter
+export const createValidatorErrorHandler = (...args) => (req, res, next) => {
+  const validation = validationResult(req)
+    .formatWith(createValidatorErrorFormatter(...args));
+
+  if (!validation.isEmpty()) {
+    const errors = validation.array();
+    return next(errors.pop());
+  }
+
+  return next();
+};

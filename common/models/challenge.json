@@ -20,9 +20,6 @@
     "title": {
       "type": "string"
     },
-    "type": {
-      "type": "string"
-    },
     "order": {
       "type": "number"
     },
@@ -51,11 +48,6 @@
       "type": "number",
       "description": "Used to determine super block order, set by prepending two digit number to super block folder name"
     },
-    "hint": {
-      "type": "array",
-      "description": "hints must be a single line of plain text",
-      "default": []
-    },
     "block": {
       "type": "string"
     },
@@ -65,17 +57,20 @@
     "description": {
       "type": "array"
     },
+    "image": {
+      "type": "string"
+    },
     "tests": {
       "type": "array"
     },
     "head": {
       "type": "array",
-      "description": "appended to user code",
+      "description": "Appended to user code",
       "default": []
     },
     "tail": {
       "type": "array",
-      "description": "prepended to user code",
+      "description": "Prepended to user code",
       "default": []
     },
     "helpRoom": {
@@ -85,7 +80,7 @@
     },
     "fileName": {
       "type": "string",
-      "description": "filename challenge comes from. Used in dev mode"
+      "description": "Filename challenge comes from. Used in dev mode"
     },
     "challengeSeed": {
       "type": "array"
@@ -93,38 +88,38 @@
     "challengeType": {
       "type": "number"
     },
-    "MDNlinks": {
-      "type": "array"
-    },
     "solutions": {
       "type": "array",
       "default": []
     },
-    "releasedOn": {
-      "type": "string"
-    },
-    "translations": {
-      "type": "object",
-      "default": "{}"
+    "guideUrl" : {
+      "type": "string",
+      "description": "Used to link to an article in the FCC guide"
     },
     "required": {
-      "type": [{
-        "type": {
-          "link": {
-            "type": "string",
-            "description": "Used for css files"
-          },
-          "src": {
-            "type": "string",
-            "description": "Used for script files"
-          },
-          "crossDomain": {
-            "type": "boolean",
-            "description": "Files coming from FreeCodeCamp must mark this true"
+      "type": [
+        {
+          "type": {
+            "link": {
+              "type": "string",
+              "description": "Used for css files"
+            },
+            "src": {
+              "type": "string",
+              "description": "Used for script files"
+            },
+            "crossDomain": {
+              "type": "boolean",
+              "description": "Files coming from FreeCodeCamp must mark this true"
+            }
           }
         }
-      }],
+      ],
       "default": []
+    },
+    "template": {
+      "type": "string",
+      "description": "A template to render the compiled challenge source into. This template uses template literal delimiter, i.e. ${ foo }"
     }
   },
   "validations": [],

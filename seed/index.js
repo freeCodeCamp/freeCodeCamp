@@ -1,28 +1,38 @@
 /* eslint-disable no-process-exit */
 require('babel-register');
 require('dotenv').load();
-var adler32 = require('adler32');
+const adler32 = require('adler32');
 
-var Rx = require('rx'),
-    _ = require('lodash'),
-    utils = require('../server/utils'),
-    getChallenges = require('./getChallenges'),
-    app = require('../server/server');
+const Rx = require('rx');
+const _ = require('lodash');
+const createDebugger = require('debug');
+const utils = require('../server/utils');
+const getChallenges = require('./getChallenges');
+const { validateChallenge } = require(
+  './schema/challengeSchema'
+);
+const app = require('../server/server');
 
+const log = createDebugger('fcc:seed');
+// force logger to always output
+// this may be brittle
+log.enabled = true;
 
-var dasherize = utils.dasherize;
-var nameify = utils.nameify;
-var Observable = Rx.Observable;
-var Challenge = app.models.Challenge;
+const dasherize = utils.dasherize;
+const nameify = utils.nameify;
+const Observable = Rx.Observable;
+const Challenge = app.models.Challenge;
 
-var destroyChallenges =
+const destroyChallenges =
   Observable.fromNodeCallback(Challenge.destroyAll, Challenge);
-var createChallenges =
+const createChallenges =
   Observable.fromNodeCallback(Challenge.create, Challenge);
 
-var Block = app.models.Block;
-var destroyBlocks = Observable.fromNodeCallback(Block.destroyAll, Block);
-var createBlocks = Observable.fromNodeCallback(Block.create, Block);
+const Block = app.models.Block;
+const destroyBlocks = Observable.fromNodeCallback(Block.destroyAll, Block);
+const createBlocks = Observable.fromNodeCallback(Block.create, Block);
+const arrToString = arr =>
+  Array.isArray(arr) ? arr.join('\n') : _.toString(arr);
 
 Observable.combineLatest(
   destroyChallenges(),
@@ -31,41 +41,44 @@ Observable.combineLatest(
   .last()
   .flatMap(function() { return Observable.from(getChallenges()); })
   .flatMap(function(challengeSpec) {
-    var order = challengeSpec.order;
-    var blockName = challengeSpec.name;
-    var superBlock = challengeSpec.superBlock;
-    var superOrder = challengeSpec.superOrder;
-    var isBeta = !!challengeSpec.isBeta;
-    var isComingSoon = !!challengeSpec.isComingSoon;
-    var fileName = challengeSpec.fileName;
-    var helpRoom = challengeSpec.helpRoom || 'Help';
-    var time = challengeSpec.time || 'N/A';
-    var isLocked = !!challengeSpec.isLocked;
-    var message = challengeSpec.message;
-    var required = challengeSpec.required || [];
+    const order = challengeSpec.order;
+    const blockName = challengeSpec.name;
+    const superBlock = challengeSpec.superBlock;
+    const superOrder = challengeSpec.superOrder;
+    const isBeta = !!challengeSpec.isBeta;
+    const isComingSoon = !!challengeSpec.isComingSoon;
+    const fileName = challengeSpec.fileName;
+    const helpRoom = challengeSpec.helpRoom || 'Help';
+    const time = challengeSpec.time;
+    const isLocked = !!challengeSpec.isLocked;
+    const message = challengeSpec.message;
+    const required = challengeSpec.required || [];
+    const template = challengeSpec.template;
+    const isPrivate = !!challengeSpec.isPrivate;
 
-    console.log('parsed %s successfully', blockName);
+    log('parsed %s successfully', blockName);
 
     // challenge file has no challenges...
     if (challengeSpec.challenges.length === 0) {
       return Rx.Observable.just([{ block: 'empty ' + blockName }]);
     }
 
-    var block = {
+    const block = {
       title: blockName,
       name: nameify(blockName),
       dashedName: dasherize(blockName),
-      superOrder: superOrder,
-      superBlock: superBlock,
+      superOrder,
+      superBlock,
       superBlockMessage: message,
-      order: order,
-      time: time,
-      isLocked: isLocked
+      order,
+      time,
+      isLocked,
+      isPrivate
     };
 
     return createBlocks(block)
       .map(block => {
-        console.log('successfully created %s block', block.name);
+        log('successfully created %s block', block.name);
 
         return challengeSpec.challenges
           .map(function(challenge, index) {
@@ -82,15 +95,27 @@ Observable.combineLatest(
               )
             );
 
+            if (challenge.files) {
+              challenge.files = _.reduce(challenge.files, (map, file) => {
+                map[file.key] = {
+                  ...file,
+                  head: arrToString(file.head),
+                  contents: arrToString(file.contents),
+                  tail: arrToString(file.tail)
+                };
+                return map;
+              }, {});
+            }
             challenge.fileName = fileName;
             challenge.helpRoom = helpRoom;
             challenge.order = order;
             challenge.suborder = index + 1;
             challenge.block = dasherize(blockName);
-            challenge.blockId = block.id;
+            challenge.blockId = '' + block.id;
             challenge.isBeta = challenge.isBeta || isBeta;
             challenge.isComingSoon = challenge.isComingSoon || isComingSoon;
             challenge.isLocked = challenge.isLocked || isLocked;
+            challenge.isPrivate = challenge.isPrivate || isPrivate;
             challenge.time = challengeSpec.time;
             challenge.superOrder = superOrder;
             challenge.superBlock = superBlock
@@ -100,19 +125,44 @@ Observable.combineLatest(
               })
               .join(' ');
             challenge.required = (challenge.required || []).concat(required);
-
-            return challenge;
+            challenge.template = challenge.template || template;
+            return _.omit(
+              challenge,
+              [
+                'betaSolutions',
+                'betaTests',
+                'hints',
+                'MDNlinks',
+                'null',
+                'rawSolutions',
+                'react',
+                'reactRedux',
+                'redux',
+                'releasedOn',
+                'translations',
+                'type'
+              ]
+            );
           });
       })
-      .flatMap(challenges => createChallenges(challenges));
+      .flatMap(challenges => {
+        challenges.forEach(challenge => {
+          const result = validateChallenge(challenge);
+          if (result.error) {
+            console.log(result.value);
+            throw new Error(result.error);
+          }
+        });
+        return createChallenges(challenges);
+      });
   })
   .subscribe(
     function(challenges) {
-      console.log('%s successfully saved', challenges[0].block);
+      log('%s successfully saved', challenges[0].block);
     },
     function(err) { throw err; },
     function() {
-      console.log('challenge seed completed');
+      log('challenge seed completed');
       process.exit(0);
     }
   );

@@ -9,12 +9,12 @@
     "superBlock": {
       "type": "string",
       "required": true,
-      "description": "The super block that this block belongs too"
+      "description": "The super block that this block belongs to"
     },
     "order": {
       "type": "number",
       "required": true,
-      "description": "the order in which this block appears"
+      "description": "The order in which this block appears"
     },
     "name": {
       "type": "string",
@@ -37,7 +37,7 @@
     },
     "time": {
       "type": "string",
-      "required": true
+      "required": false
     }
   },
   "validations": [],

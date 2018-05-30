@@ -1,0 +1,136 @@
+// should be the same as the filename and ./ns.json
+@ns: settings;
+
+@skeleton-gray: #b0bdb7;
+
+.night .@{ns}-container {
+
+  .btn-group {
+
+    label:disabled, label[disabled] {
+      border: 1px solid #999;
+      background-color: #999;
+      color: #333;
+    }
+  }
+  .panel {
+    color:#333333;
+    background-color: #cccccc;
+    a {
+      color: @brand-primary;
+      &:hover {
+        color: #001800;
+      }
+    }
+  }
+  .nav-tabs > li > a:hover {
+    color: #333333;
+  }
+}
+
+.@{ns}-container {
+  .center(@value: @container-xl, @padding: @grid-gutter-width);
+
+  button:disabled, button[disabled] {
+    border: 1px solid #999;
+    background-color: #999;
+    color: #333;
+  }
+
+  a:hover {
+    text-decoration: none;
+    text-decoration-line: none;
+  }
+
+  .panel {
+    background-color: #fff;
+  }
+
+  .solution-list {
+    padding-left:  0px;
+  }
+
+  .solution-list-item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-weight: bold;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.privacy-settings {
+
+  .toggle-label {
+    margin: 0;
+
+    p {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+
+  .inline-form {
+    display: flex;
+    align-items: center;
+    .btn-group > label {
+      margin: 10px 0;
+    }
+  }
+
+  label {
+
+    em {
+      font-weight: 400;
+    }
+  }
+}
+
+.@{ns}-email-container {
+  .below(sm, {
+    text-align: center;
+  })
+}
+
+.inline-form-field {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+
+  input, textarea {
+    background-color: #fff;
+  }
+}
+.edit-preview-tabs {
+
+  li {
+    padding-bottom: 0px;
+  }
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.portfolio-settings-intro {
+  display: flex;
+  justify-content: space-around;
+
+  .p-intro {
+    font-size: 18px;
+  }
+}
+
+.danger-zone-panel {
+  background-color: #fff;
+  .panel-heading {
+    background-color: #880000;
+    color: #fff;
+  }
+}

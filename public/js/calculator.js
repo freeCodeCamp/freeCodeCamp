@@ -183,7 +183,7 @@ $(document).ready(function () {
           return y1Scale(d.label);
         })
         .attr("x", 0)
-        .attr("height", y1Scale.rangeBand())
+        .attr("height", y1Scale.rangeBand());
     }
 
     function transitionStacked() {
@@ -200,7 +200,7 @@ $(document).ready(function () {
         .attr("y", function (d) {
           return y0Scale(d.label);
         })
-        .attr("height", y0Scale.rangeBand())
+        .attr("height", y0Scale.rangeBand());
     }
 
     //axes
@@ -243,7 +243,7 @@ $(document).ready(function () {
             d3.format(",")(d.value ? d.value : d.x1 - d.x0);
         }
       });
-      $(this).popover('show')
+      $(this).popover('show');
     }
 
     //legends

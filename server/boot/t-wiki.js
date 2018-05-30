@@ -6,7 +6,7 @@ module.exports = function(app) {
 
   function showForum(req, res) {
     res.redirect(
-      'http://forum.freecodecamp.com/'
+      'http://forum.freecodecamp.org/'
     );
   }
 };

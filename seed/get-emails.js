@@ -13,7 +13,7 @@ MongoClient.connect(secrets.db, function(err, database) {
     {$match: { 'email': { $exists: true } } },
     {$match: { 'email': { $ne: '' } } },
     {$match: { 'email': { $ne: null } } },
-    {$match: { 'sendMonthlyEmail': true } },
+    {$match: { 'sendQuincyEmail': true } },
     {$match: { 'email': { $not: /(test|fake)/i } } },
     {$group: { '_id': 1, 'emails': {$addToSet: '$email' } } }
   ], function(err, results) {

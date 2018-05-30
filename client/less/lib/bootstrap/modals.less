@@ -67,6 +67,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 1030;
   background-color: @modal-backdrop-bg;
   // Fade for backdrop
   &.fade { .opacity(0); }
@@ -79,10 +80,6 @@
   padding: @modal-title-padding;
   border-bottom: 1px solid @modal-header-border-color;
   min-height: (@modal-title-padding + @modal-title-line-height);
-}
-// Close icon
-.modal-header .close {
-  margin-top: -2px;
 }
 
 // Title text within header

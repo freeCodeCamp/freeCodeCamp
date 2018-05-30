@@ -1,7 +1,5 @@
+import _ from 'lodash';
 import manifest from '../rev-manifest';
-/* eslint-disable import/default */
-import config from '../../webpack.config';
-/* eslint-enable import/default */
 
 let chunkManifest;
 try {
@@ -15,11 +13,11 @@ chunkManifest = Object.keys(chunkManifest).reduce((manifest, key) => {
   return manifest;
 }, {});
 
-const __DEV__ = process.env.NODE_ENV !== 'production';
+const isDev = process.env.NODE_ENV !== 'production';
 const challengesRegex = /^(bonfire|waypoint|zipline|basejump|checkpoint):\s/i;
 
 function rev(scopedPrepend, asset) {
-  if (__DEV__) {
+  if (isDev) {
     // do not use revision in dev mode
     return `${scopedPrepend}/${asset}`;
   }
@@ -30,27 +28,32 @@ function removeOldTerms(str = '') {
   return str.replace(challengesRegex, '');
 }
 
-function getBundleLocation() {
-  return __DEV__ ?
-    config.output.publicPath + '/bundle.js' :
-    rev('/js', 'bundle.js');
-}
+const cacheBreaker = isDev ?
+  // add cacheBreaker in dev instead of rev manifest
+  asset => `${asset}?cacheBreaker=${Math.random()}` :
+  _.identity;
 
 export default function jadeHelpers() {
   return function jadeHelpersMiddleware(req, res, next) {
-    res.locals.removeOldTerms = removeOldTerms;
-    res.locals.getBundleLocation = getBundleLocation;
-    res.locals.rev = rev;
-    // static data
-    res.locals.user = req.user;
-    res.locals.chunkManifest = chunkManifest;
-    res.locals._csrf = req.csrfToken ? req.csrfToken() : null;
+    Object.assign(
+      res.locals,
+      {
+        removeOldTerms,
+        rev,
+        cacheBreaker,
+        // static data
+        user: req.user,
+        chunkManifest,
+        _csrf: req.csrfToken ? req.csrfToken() : null,
+        theme: req.user &&
+          req.user.theme ||
+          req.cookies.theme ||
+          'default'
+      }
+    );
     if (req.csrfToken) {
       res.expose({ token: res.locals._csrf }, 'csrf');
     }
-    res.locals.theme = req.user && req.user.theme ||
-      req.cookies.theme ||
-      'default';
     next();
   };
 }

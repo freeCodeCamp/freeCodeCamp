@@ -1,0 +1,12 @@
+[
+  {
+    "content": "Learn",
+    "link": "https://learn.freecodecamp.org",
+    "target": "_blank"
+  },
+  {
+    "content": "Forum",
+    "link": "https://forum.freecodecamp.org/",
+    "target": "_blank"
+  }
+]

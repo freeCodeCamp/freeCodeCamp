@@ -4,10 +4,8 @@
   "port": 3000,
   "legacyExplorer": false,
   "remoting": {
-    "context": {
-      "enableHttpContext": false
-    },
     "rest": {
+      "handleErrors": false,
       "normalizeHttpPath": false,
       "xml": false
     },
@@ -19,12 +17,6 @@
       "extended": true,
       "limit": "100kb"
     },
-    "cors": {
-      "origin": true,
-      "credentials": true
-    },
-    "errorHandler": {
-      "disableStackTrace": false
-    }
+    "cors": false
   }
 }

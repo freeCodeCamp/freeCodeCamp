@@ -1,69 +1,62 @@
-import debug from 'debug';
+import { Observable } from 'rx';
 import _ from 'lodash';
 
-const publicUserProps = [
-  'id',
-  'name',
-  'username',
-  'bio',
-  'theme',
-  'picture',
-  'points',
-  'email',
-  'languageTag',
-
-  'isCheater',
-  'isGithubCool',
-
-  'isLocked',
-  'isFrontEndCert',
-  'isBackEndCert',
-  'isDataVisCert',
-  'isFullStackCert',
-
-  'githubURL',
-  'sendMonthlyEmail',
-  'sendNotificationEmail',
-  'sendQuincyEmail',
-
-  'currentChallengeId',
-  'challengeMap'
-];
-const log = debug('fcc:services:user');
+import {
+  getProgress,
+  normaliseUserFields,
+  userPropsForSession
+} from '../utils/publicUserProps';
 
 export default function userServices() {
   return {
     name: 'user',
-    read: (req, resource, params, config, cb) => {
-      let { user } = req;
-      if (user) {
-        log('user is signed in');
-        return user.getChallengeMap$()
-          .map(challengeMap => ({ ...user.toJSON(), challengeMap }))
-          .subscribe(
-            user => cb(
-              null,
-              {
-                entities: {
-                  user: {
-                    [user.username]: {
-                      ..._.pick(user, publicUserProps),
-                      isTwitter: !!user.twitter,
-                      isLinkedIn: !!user.linkedIn
-                    }
+    read: function readUserService(
+      req,
+      resource,
+      params,
+      config,
+      cb) {
+      const queryUser = req.user;
+      const source = queryUser && Observable.forkJoin(
+        queryUser.getCompletedChallenges$(),
+        queryUser.getPoints$(),
+        (completedChallenges, progressTimestamps) => ({
+          completedChallenges,
+          progress: getProgress(progressTimestamps, queryUser.timezone)
+        })
+      );
+      Observable.if(
+        () => !queryUser,
+        Observable.of({}),
+        Observable.defer(() => source)
+          .map(({ completedChallenges, progress }) => ({
+            ...queryUser.toJSON(),
+            ...progress,
+            completedChallenges
+          }))
+          .map(
+            user => ({
+              entities: {
+                user: {
+                  [user.username]: {
+                    ..._.pick(user, userPropsForSession),
+                    isEmailVerified: !!user.emailVerified,
+                    isGithub: !!user.githubProfile,
+                    isLinkedIn: !!user.linkedIn,
+                    isTwitter: !!user.twitter,
+                    isWebsite: !!user.website,
+                    ...normaliseUserFields(user)
                   }
-                },
-                result: user.username
-              }
-            ),
-            cb
-          );
-      }
-      debug('user is not signed in');
-      // Zalgo!!!
-      return process.nextTick(() => {
-        cb(null, {});
-      });
+                }
+              },
+              result: user.username
+            })
+          )
+        )
+        .subscribe(
+          user => cb(null, user),
+          cb
+        );
     }
   };
 }

@@ -1,17 +1,128 @@
 import { Observable } from 'rx';
-import uuid from 'node-uuid';
+import uuid from 'uuid/v4';
 import moment from 'moment';
 import dedent from 'dedent';
 import debugFactory from 'debug';
 import { isEmail } from 'validator';
 import path from 'path';
+import loopback from 'loopback';
+import _ from 'lodash';
+import { ObjectId } from 'mongodb';
+import jwt from 'jsonwebtoken';
 
-import { saveUser, observeMethod } from '../../server/utils/rx';
-import { blacklistedUsernames } from '../../server/utils/constants';
+import { themes } from '../utils/themes';
+import { saveUser, observeMethod } from '../../server/utils/rx.js';
+import { blacklistedUsernames } from '../../server/utils/constants.js';
+import { wrapHandledError } from '../../server/utils/create-handled-error.js';
+import {
+  getServerFullURL,
+  getEmailSender
+} from '../../server/utils/url-utils.js';
+import {
+  normaliseUserFields,
+  getProgress,
+  publicUserProps
+} from '../../server/utils/publicUserProps';
 
-const debug = debugFactory('fcc:user:remote');
+const debug = debugFactory('fcc:models:user');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
-const isDev = process.env.NODE_ENV !== 'production';
+
+const createEmailError = redirectTo => wrapHandledError(
+  new Error('email format is invalid'),
+  {
+    type: 'info',
+    message: 'Please check to make sure the email is a valid email address.',
+    redirectTo
+  }
+);
+
+function destroyAll(id, Model) {
+  return Observable.fromNodeCallback(
+    Model.destroyAll,
+    Model
+  )({ userId: id });
+}
+
+function buildCompletedChallengesUpdate(completedChallenges, project) {
+  const key = Object.keys(project)[0];
+  const solutions = project[key];
+  const solutionKeys = Object.keys(solutions);
+  const currentCompletedChallenges = [ ...completedChallenges ];
+  const currentCompletedProjects = currentCompletedChallenges
+    .filter(({id}) => solutionKeys.includes(id));
+  const now = Date.now();
+  const update = solutionKeys.reduce((update, currentId) => {
+    const indexOfCurrentId = _.findIndex(
+      update,
+      ({id}) => id === currentId
+    );
+    const isCurrentlyCompleted = indexOfCurrentId !== -1;
+    if (isCurrentlyCompleted) {
+      update[indexOfCurrentId] = {
+        ..._.find(update, ({id}) => id === currentId).__data,
+        solution: solutions[currentId]
+      };
+    }
+    if (!isCurrentlyCompleted) {
+      return [
+        ...update,
+        {
+          id: currentId,
+          solution: solutions[currentId],
+          challengeType: 3,
+          completedDate: now
+        }
+      ];
+    }
+    return update;
+  }, currentCompletedProjects);
+  const updatedExisting = _.uniqBy(
+    [
+      ...update,
+      ...currentCompletedChallenges
+    ],
+    'id'
+  );
+  return {
+    updated: updatedExisting,
+    isNewCompletionCount:
+      updatedExisting.length - completedChallenges.length
+  };
+}
+
+function isTheSame(val1, val2) {
+  return val1 === val2;
+}
+
+const renderSignUpEmail = loopback.template(path.join(
+  __dirname,
+  '..',
+  '..',
+  'server',
+  'views',
+  'emails',
+  'user-request-sign-up.ejs'
+));
+
+const renderSignInEmail = loopback.template(path.join(
+  __dirname,
+  '..',
+  '..',
+  'server',
+  'views',
+  'emails',
+  'user-request-sign-in.ejs'
+));
+
+const renderEmailChangeEmail = loopback.template(path.join(
+  __dirname,
+  '..',
+  '..',
+  'server',
+  'views',
+  'emails',
+  'user-request-update-email.ejs'
+));
 
 function getAboutProfile({
   username,
@@ -31,12 +142,36 @@ function nextTick(fn) {
   return process.nextTick(fn);
 }
 
+function getWaitPeriod(ttl) {
+  const fiveMinutesAgo = moment().subtract(5, 'minutes');
+  const lastEmailSentAt = moment(new Date(ttl || null));
+  const isWaitPeriodOver = ttl ?
+    lastEmailSentAt.isBefore(fiveMinutesAgo) : true;
+
+  if (!isWaitPeriodOver) {
+    const minutesLeft = 5 -
+      (moment().minutes() - lastEmailSentAt.minutes());
+    return minutesLeft;
+  }
+
+  return 0;
+}
+
+function getWaitMessage(ttl) {
+  const minutesLeft = getWaitPeriod(ttl);
+  if (minutesLeft <= 0) {
+    return null;
+  }
+  const timeToWait = minutesLeft ?
+    `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
+    'a few seconds';
+
+  return dedent`
+    Please wait ${timeToWait} to resend an authentication link.
+  `;
+}
+
 module.exports = function(User) {
-  // NOTE(berks): user email validation currently not needed but build in. This
-  // work around should let us sneak by
-  // see:
-  // https://github.com/strongloop/loopback/issues/1137#issuecomment-109200135
-  delete User.validations.email;
   // set salt factor for passwords
   User.settings.saltWorkFactor = 5;
   // set user.rand to random number
@@ -61,231 +196,226 @@ module.exports = function(User) {
     User.findOne$ = Observable.fromNodeCallback(User.findOne, User);
     User.update$ = Observable.fromNodeCallback(User.updateAll, User);
     User.count$ = Observable.fromNodeCallback(User.count, User);
+    User.create$ = Observable.fromNodeCallback(
+      User.create.bind(User)
+    );
+    User.prototype.createAccessToken$ = Observable.fromNodeCallback(
+      User.prototype.createAccessToken
+    );
   });
 
-  User.observe('before save', function({ instance: user }, next) {
-    if (user) {
-      if (user.email && !isEmail(user.email)) {
-        return next(new Error('Email format is not valid'));
-      }
-      user.username = user.username.trim().toLowerCase();
-      user.email = typeof user.email === 'string' ?
-        user.email.trim().toLowerCase() :
-        user.email;
+  User.observe('before save', function(ctx) {
+    const beforeCreate = Observable.of(ctx)
+      .filter(({ isNewInstance }) => isNewInstance)
+      // User.create
+      .map(({ instance }) => instance)
+      .flatMap(user => {
+        // note(berks): we now require all new users to supply an email
+        // this was not always the case
+        if (
+          typeof user.email !== 'string' ||
+          !isEmail(user.email)
+        ) {
+          throw createEmailError();
+        }
+        // assign random username to new users
+        // actual usernames will come from github
+        // use full uuid to ensure uniqueness
+        user.username = 'fcc' + uuid();
 
-      if (!user.progressTimestamps) {
-        user.progressTimestamps = [];
-      }
+        if (!user.externalId) {
+          user.externalId = uuid();
+        }
+        if (!user.unsubscribeId) {
+          user.unsubscribeId = new ObjectId();
+        }
 
-      if (user.progressTimestamps.length === 0) {
-        user.progressTimestamps.push({ timestamp: Date.now() });
-      }
-      // this is workaround for preventing a server crash
-      // refer strongloop/loopback/#1364
-      if (user.password === '') {
-        user.password = null;
-      }
+        if (!user.progressTimestamps) {
+          user.progressTimestamps = [];
+        }
+
+        if (user.progressTimestamps.length === 0) {
+          user.progressTimestamps.push({ timestamp: Date.now() });
+        }
+        return Observable.fromPromise(User.doesExist(null, user.email))
+          .do(exists => {
+            if (exists) {
+              throw wrapHandledError(
+                new Error('user already exists'),
+                {
+                  redirectTo: '/signin',
+                  message: dedent`
+        The ${user.email} email address is already associated with an account.
+        Try signing in with it here instead.
+                  `
+                }
+              );
+            }
+          });
+      })
+      .ignoreElements();
+
+    const updateOrSave = Observable.of(ctx)
+      // not new
+      .filter(({ isNewInstance }) => !isNewInstance)
+      .map(({ instance }) => instance)
+      // is update or save user
+      .filter(Boolean)
+      .do(user => {
+        // Some old accounts will not have emails associated with theme
+        // we verify only if the email field is populated
+        if (user.email && !isEmail(user.email)) {
+          throw createEmailError();
+        }
+
+        user.username = user.username.trim().toLowerCase();
+        user.email = typeof user.email === 'string' ?
+          user.email.trim().toLowerCase() :
+          user.email;
+
+        if (!user.progressTimestamps) {
+          user.progressTimestamps = [];
+        }
+
+        if (user.progressTimestamps.length === 0) {
+          user.progressTimestamps.push(Date.now());
+        }
+
+        if (!user.externalId) {
+          user.externalId = uuid();
+        }
+
+        if (!user.unsubscribeId) {
+          user.unsubscribeId = new ObjectId();
+        }
+      })
+      .ignoreElements();
+    return Observable.merge(beforeCreate, updateOrSave)
+      .toPromise();
+  });
+
+  // remove lingering user identities before deleting user
+  User.observe('before delete', function(ctx, next) {
+    const UserIdentity = User.app.models.UserIdentity;
+    const UserCredential = User.app.models.UserCredential;
+    debug('removing user', ctx.where);
+    var id = ctx.where && ctx.where.id ? ctx.where.id : null;
+    if (!id) {
+      return next();
     }
-    return next();
+    return Observable.combineLatest(
+      destroyAll(id, UserIdentity),
+      destroyAll(id, UserCredential),
+      function(identData, credData) {
+        return {
+          identData: identData,
+          credData: credData
+        };
+      }
+    )
+      .subscribe(
+        function(data) {
+          debug('deleted', data);
+        },
+        function(err) {
+          debug('error deleting user %s stuff', id, err);
+          next(err);
+        },
+        function() {
+          debug('user stuff deleted for user %s', id);
+          next();
+        }
+      );
   });
 
   debug('setting up user hooks');
-
-  User.beforeRemote('confirm', function(ctx, _, next) {
-
-    if (!ctx.req.query) {
-      return ctx.res.redirect('/');
-    }
-
-    const uid = ctx.req.query.uid;
-    const token = ctx.req.query.token;
-    const redirect = ctx.req.query.redirect;
-
-    return User.findById(uid, (err, user) => {
-
-        if (err || !user) {
-          ctx.req.flash('error', {
-            msg: dedent`Oops, something went wrong, please try again later`
-          });
-          return ctx.res.redirect('/');
+  // overwrite lb confirm
+  User.confirm = function(uid, token, redirectTo) {
+    return this.findById(uid)
+      .then(user => {
+        if (!user) {
+          throw wrapHandledError(
+            new Error(`User not found: ${uid}`),
+            {
+              // standard oops
+              type: 'info',
+              redirectTo
+            }
+          );
         }
-
-        if (!user.verificationToken && !user.emailVerified) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like we have your email. But you haven't
-             verified it yet, please login and request a fresh verification
-             link.`
-          });
-          return ctx.res.redirect(redirect);
+        if (user.verificationToken !== token) {
+          throw wrapHandledError(
+            new Error(`Invalid token: ${token}`),
+            {
+              type: 'info',
+              message: dedent`
+                Looks like you have clicked an invalid link.
+                Please sign in and request a fresh one.
+              `,
+              redirectTo
+            }
+          );
         }
-
-        if (!user.verificationToken && user.emailVerified) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like you have already verified your email.
-             Please login to continue.`
-          });
-          return ctx.res.redirect(redirect);
-        }
-
-        if (user.verificationToken && user.verificationToken !== token) {
-          ctx.req.flash('info', {
-            msg: dedent`Looks like you have clicked an invalid link.
-             Please login and request a fresh one.`
-          });
-          return ctx.res.redirect(redirect);
-        }
-
-        return next();
-    });
-  });
-
-  User.afterRemote('confirm', function(ctx) {
-    if (!ctx.req.query) {
-      return ctx.res.redirect('/');
-    }
-    const redirect = ctx.req.query.redirect;
-    ctx.req.flash('success', {
-      msg: [
-        'Your email has been confirmed!'
-      ]
-    });
-    return ctx.res.redirect(redirect);
-  });
-
-  User.beforeRemote('create', function({ req, res }, _, next) {
-    req.body.username = 'fcc' + uuid.v4().slice(0, 8);
-    if (!req.body.email) {
-      return next();
-    }
-    if (!isEmail(req.body.email)) {
-      return next(new Error('Email format is not valid'));
-    }
-    return User.doesExist(null, req.body.email)
-      .then(exists => {
-        if (!exists) {
-          return next();
-        }
-
-        req.flash('error', {
-          msg: dedent`
-      The ${req.body.email} email address is already associated with an account.
-      Try signing in with it here instead.
-          `
-        });
-
-        return res.redirect('/email-signin');
-      })
-      .catch(err => {
-        console.error(err);
-        req.flash('error', {
-          msg: 'Oops, something went wrong, please try again later'
-        });
-        return res.redirect('/email-signup');
+        return user.update$({
+          email: user.newEmail,
+          emailVerified: true,
+          emailVerifyTTL: null,
+          newEmail: null,
+          verificationToken: null
+        }).toPromise();
       });
-  });
+  };
 
-  User.on('resetPasswordRequest', function(info) {
-    if (!isEmail(info.email)) {
-      console.error(new Error('Email format is not valid'));
-      return null;
-    }
-    let url;
-    const host = User.app.get('host');
-    const { id: token } = info.accessToken;
-    if (process.env.NODE_ENV === 'development') {
-      const port = User.app.get('port');
-      url = `http://${host}:${port}/reset-password?access_token=${token}`;
-    } else {
-      url =
-        `http://freecodecamp.com/reset-password?access_token=${token}`;
-    }
-
-    // the email of the requested user
-    debug(info.email);
-    // the temp access token to allow password reset
-    debug(info.accessToken.id);
-    // requires AccessToken.belongsTo(User)
-    var mailOptions = {
-      to: info.email,
-      from: 'Team@freecodecamp.com',
-      subject: 'Password Reset Request',
-      text: `
-        Hello,\n\n
-        This email is confirming that you requested to
-        reset your password for your Free Code Camp account.
-        This is your email: ${ info.email }.
-        Go to ${ url } to reset your password.
-        \n
-        Happy Coding!
-        \n
-      `
-    };
-
-    return User.app.models.Email.send(mailOptions, function(err) {
-      if (err) { console.error(err); }
-      debug('email reset sent');
-    });
-  });
-
-  User.beforeRemote('login', function(ctx, notUsed, next) {
-    const { body } = ctx.req;
-    if (body && typeof body.email === 'string') {
-      if (!isEmail(body.email)) {
-        return next(new Error('Email format is not valid'));
+  User.prototype.loginByRequest = function loginByRequest(req, res) {
+    const {
+      query: {
+        emailChange
       }
-      body.email = body.email.toLowerCase();
-    }
-    return next();
-  });
-
-  User.afterRemote('login', function(ctx, accessToken, next) {
-    var res = ctx.res;
-    var req = ctx.req;
-    // var args = ctx.args;
-
-    var config = {
-      signed: !!req.signedCookies,
-      maxAge: accessToken.ttl
-    };
-
-    if (accessToken && accessToken.id) {
-      debug('setting cookies');
-      res.cookie('access_token', accessToken.id, config);
-      res.cookie('userId', accessToken.userId, config);
-    }
-
-    return req.logIn({ id: accessToken.userId.toString() }, function(err) {
-      if (err) { return next(err); }
-
-      debug('user logged in');
-
-      if (req.session && req.session.returnTo) {
-        var redirectTo = req.session.returnTo;
-        if (redirectTo === '/map-aside') {
-          redirectTo = '/map';
+    } = req;
+    const createToken = this.createAccessToken$()
+      .do(accessToken => {
+        const config = {
+          signed: !!req.signedCookies,
+          maxAge: accessToken.ttl,
+          domain: process.env.COOKIE_DOMAIN || 'localhost'
+        };
+        if (accessToken && accessToken.id) {
+          const jwtAccess = jwt.sign({accessToken}, process.env.JWT_SECRET);
+          res.cookie('jwt_access_token', jwtAccess, config);
+          res.cookie('access_token', accessToken.id, config);
+          res.cookie('userId', accessToken.userId, config);
         }
-        return res.redirect(redirectTo);
-      }
+      });
+    let data = {
+      emailVerified: true,
+      emailAuthLinkTTL: null,
+      emailVerifyTTL: null
+    };
+    if (emailChange && this.newEmail) {
+      data = {
+        ...data,
+        email: this.newEmail,
+        newEmail: null
+      };
+    }
+    const updateUser = this.update$(data);
+    return Observable.combineLatest(
+      createToken,
+      updateUser,
+      req.logIn(this),
+      (accessToken) => accessToken,
+    );
+  };
 
-      req.flash('success', { msg: 'Success! You are now logged in.' });
-      return res.redirect('/');
-    });
-  });
-
-  User.afterRemoteError('login', function(ctx) {
-    var res = ctx.res;
-    var req = ctx.req;
-
-    req.flash('errors', {
-      msg: 'Invalid username or password.'
-    });
-    return res.redirect('/email-signin');
-  });
-
-  User.afterRemote('logout', function(ctx, result, next) {
-    var res = ctx.res;
-    res.clearCookie('access_token');
-    res.clearCookie('userId');
+  User.afterRemote('logout', function({req, res}, result, next) {
+    const config = {
+      signed: !!req.signedCookies,
+      domain: process.env.COOKIE_DOMAIN || 'localhost'
+    };
+    res.clearCookie('jwt_access_token', config);
+    res.clearCookie('access_token', config);
+    res.clearCookie('userId', config);
+    res.clearCookie('_csrf', config);
     next();
   });
 
@@ -382,86 +512,358 @@ module.exports = function(User) {
     }
   );
 
-  User.prototype.updateEmail = function updateEmail(email) {
-    const fiveMinutesAgo = moment().subtract(5, 'minutes');
-    const lastEmailSentAt = moment(new Date(this.emailVerifyTTL || null));
-    const ownEmail = email === this.email;
-    const isWaitPeriodOver = this.emailVerifyTTL ?
-      lastEmailSentAt.isBefore(fiveMinutesAgo) :
-      true;
+  User.prototype.createAuthToken = function createAuthToken({ ttl } = {}) {
+    return Observable.fromNodeCallback(
+      this.authTokens.create.bind(this.authTokens)
+    )({ ttl });
+  };
 
-    if (!isEmail('' + email)) {
-      return Observable.throw(
-        new Error('The submitted email not valid.')
-      );
+  User.prototype.getEncodedEmail = function getEncodedEmail() {
+    if (!this.email) {
+      return null;
     }
-    // email is already associated and verified with this account
-    if (ownEmail && this.emailVerified) {
-      return Observable.throw(new Error(
-        `${email} is already associated with this account.`
-      ));
-    }
+    return Buffer(this.email).toString('base64');
+  };
 
-    if (ownEmail && !isWaitPeriodOver) {
-      const minutesLeft = 5 -
-        (moment().minutes() - lastEmailSentAt.minutes());
+  User.decodeEmail = email => Buffer(email, 'base64').toString();
 
-      const timeToWait = minutesLeft ?
-        `${minutesLeft} minute${minutesLeft > 1 ? 's' : ''}` :
-        'a few seconds';
+  function requestAuthEmail(isSignUp, newEmail) {
+    return Observable.defer(() => {
+      const messageOrNull = getWaitMessage(this.emailAuthLinkTTL);
+      if (messageOrNull) {
+        throw wrapHandledError(
+          new Error('request is throttled'),
+          {
+            type: 'info',
+            message: messageOrNull
+          }
+        );
+      }
 
-      return Observable.throw(new Error(
-        `Please wait ${timeToWait} to resend email verification.`
-      ));
-    }
-
-    return Observable.fromPromise(User.doesExist(null, email))
-      .flatMap(exists => {
-        // not associated with this account, but is associated with another
-        if (!ownEmail && exists) {
-          return Promise.reject(
-            new Error(`${email} is already associated with another account.`)
-          );
+      // create a temporary access token with ttl for 15 minutes
+      return this.createAuthToken({ ttl: 15 * 60 * 1000 });
+    })
+      .flatMap(token => {
+        let renderAuthEmail = renderSignInEmail;
+        let subject = 'Your sign in link for freeCodeCamp.org';
+        if (isSignUp) {
+          renderAuthEmail = renderSignUpEmail;
+          subject = 'Your sign in link for your new freeCodeCamp.org account';
         }
-
-        const emailVerified = false;
-        return this.update$({
-          email,
-          emailVerified,
-          emailVerifyTTL: new Date()
-        })
-        .do(() => {
-          this.email = email;
-          this.emailVerified = emailVerified;
-          this.emailVerifyTTL = new Date();
-        });
-      })
-      .flatMap(() => {
+        if (newEmail) {
+          renderAuthEmail = renderEmailChangeEmail;
+          subject = dedent`
+            Please confirm your updated email address for freeCodeCamp.org
+          `;
+        }
+        const { id: loginToken, created: emailAuthLinkTTL } = token;
+        const loginEmail = this.getEncodedEmail(newEmail ? newEmail : null);
+        const host = getServerFullURL();
         const mailOptions = {
           type: 'email',
-          to: email,
-          from: 'Team@freecodecamp.com',
-          subject: 'Welcome to Free Code Camp!',
-          protocol: isDev ? null : 'https',
-          host: isDev ? 'localhost' : 'freecodecamp.com',
-          port: isDev ? null : 443,
-          template: path.join(
-            __dirname,
-            '..',
-            '..',
-            'server',
-            'views',
-            'emails',
-            'user-email-verify.ejs'
-          )
+          to: newEmail ? newEmail : this.email,
+          from: getEmailSender(),
+          subject,
+          text: renderAuthEmail({
+            host,
+            loginEmail,
+            loginToken,
+            emailChange: !!newEmail
+          })
         };
-        return this.verify(mailOptions);
+        return Observable.forkJoin(
+          User.email.send$(mailOptions),
+          this.update$({ emailAuthLinkTTL })
+        );
+      })
+      .map(() =>
+        dedent`
+          Check your email and click the link we sent you to confirm you email.
+        `
+      );
+  }
+
+  User.prototype.requestAuthEmail = requestAuthEmail;
+
+  User.prototype.requestUpdateEmail = function requestUpdateEmail(newEmail) {
+
+    const currentEmail = this.email;
+    const isOwnEmail = isTheSame(newEmail, currentEmail);
+    const isResendUpdateToSameEmail = isTheSame(newEmail, this.newEmail);
+    const isLinkSentWithinLimit = getWaitMessage(this.emailVerifyTTL);
+    const isVerifiedEmail = this.emailVerified;
+
+    if (isOwnEmail && isVerifiedEmail) {
+      // email is already associated and verified with this account
+      throw wrapHandledError(
+        new Error('email is already verified'),
+        {
+          type: 'info',
+          message: `
+            ${newEmail} is already associated with this account.
+            You can update a new email address instead.`
+        }
+      );
+    }
+    if (isResendUpdateToSameEmail && isLinkSentWithinLimit) {
+      // trying to update with the same newEmail and
+      // confirmation email is still valid
+      throw wrapHandledError(
+        new Error(),
+        {
+          type: 'info',
+          message: dedent`
+          We have already sent an email confirmation request to ${newEmail}.
+          ${isLinkSentWithinLimit}`
+        }
+      );
+    }
+    if (!isEmail('' + newEmail)) {
+      throw createEmailError();
+    }
+
+    // newEmail is not associated with this user, and
+    // this attempt to change email is the first or
+    // previous attempts have expired
+    if (
+        !isOwnEmail ||
+        (isOwnEmail && !isVerifiedEmail) ||
+        (isResendUpdateToSameEmail && !isLinkSentWithinLimit)
+      ) {
+      const updateConfig = {
+        newEmail,
+        emailVerified: false,
+        emailVerifyTTL: new Date()
+      };
+
+      // defer prevents the promise from firing prematurely (before subscribe)
+      return Observable.defer(() => User.doesExist(null, newEmail))
+      .do(exists => {
+        if (exists && !isOwnEmail) {
+          // newEmail is not associated with this account,
+          // but is associated with different account
+          throw wrapHandledError(
+            new Error('email already in use'),
+            {
+              type: 'info',
+              message:
+              `${newEmail} is already associated with another account.`
+            }
+          );
+        }
+      })
+      .flatMap(()=>{
+        return Observable.forkJoin(
+          this.update$(updateConfig),
+          this.requestAuthEmail(false, newEmail),
+          (_, message) => message
+        )
+        .do(() => {
+          Object.assign(this, updateConfig);
+        });
+      });
+
+    } else {
+      return 'Something unexpected happened whilst updating your email.';
+    }
+  };
+
+  function requestCompletedChallenges() {
+    return this.getCompletedChallenges$();
+  }
+
+  User.prototype.requestCompletedChallenges = requestCompletedChallenges;
+
+  User.prototype.requestUpdateFlags = function requestUpdateFlags(values) {
+    const flagsToCheck = Object.keys(values);
+    const valuesToCheck = _.pick({ ...this }, flagsToCheck);
+    const valuesToUpdate = flagsToCheck
+      .filter(flag => !isTheSame(values[flag], valuesToCheck[flag]));
+    if (!valuesToUpdate.length) {
+      return Observable.of(dedent`
+        No property in
+        ${JSON.stringify(flagsToCheck, null, 2)}
+        will introduce a change in this user.
+        `
+      )
+       .map(() => dedent`Your settings have not been updated.`);
+    }
+    return Observable.from(valuesToUpdate)
+      .flatMap(flag => Observable.of({ flag, newValue: values[flag] }))
+      .toArray()
+      .flatMap(updates => {
+        return Observable.forkJoin(
+          Observable.from(updates)
+            .flatMap(({ flag, newValue }) => {
+              return Observable.fromPromise(User.doesExist(null, this.email))
+                .flatMap(() => {
+                  return this.update$({ [flag]: newValue })
+                  .do(() => {
+                    this[flag] = newValue;
+                  });
+                });
+            })
+        );
       })
       .map(() => dedent`
-        Please check your email.
-        We sent you a link that you can click to verify your email address.
+        We have successfully updated your account.
       `);
   };
+
+  User.prototype.updateMyPortfolio =
+    function updateMyPortfolio(portfolioItem, deleteRequest) {
+      const currentPortfolio = this.portfolio.slice(0);
+      const pIndex = _.findIndex(
+        currentPortfolio,
+        p => p.id === portfolioItem.id
+      );
+      let updatedPortfolio = [];
+      if (deleteRequest) {
+        updatedPortfolio = currentPortfolio.filter(
+          p => p.id !== portfolioItem.id
+        );
+      } else if (pIndex === -1) {
+        updatedPortfolio = currentPortfolio.concat([ portfolioItem ]);
+      } else {
+        updatedPortfolio = [ ...currentPortfolio ];
+        updatedPortfolio[pIndex] = { ...portfolioItem };
+      }
+      return this.update$({ portfolio: updatedPortfolio })
+        .do(() => {
+          this.portfolio = updatedPortfolio;
+        })
+        .map(() => dedent`
+          Your portfolio has been updated.
+        `);
+    };
+
+  User.prototype.updateMyProjects = function updateMyProjects(project) {
+    const updateData = { $set: {} };
+    return this.getCompletedChallenges$()
+      .flatMap(() => {
+        const {
+          updated,
+          isNewCompletionCount
+        } = buildCompletedChallengesUpdate(
+          this.completedChallenges,
+          project
+        );
+        updateData.$set.completedChallenges = updated;
+        if (isNewCompletionCount) {
+          let points = [];
+          // give points a length of isNewCompletionCount
+          points[isNewCompletionCount - 1] = true;
+          updateData.$push = {};
+          updateData.$push.progressTimestamps = {
+            $each: points.map(() => Date.now())
+          };
+        }
+        return this.update$(updateData);
+      })
+      .do(() => Object.assign(this, updateData))
+      .map(() => dedent`
+        Your projects have been updated.
+      `);
+  };
+
+  User.prototype.updateMyProfileUI = function updateMyProfileUI(profileUI) {
+    const oldUI = { ...this.profileUI };
+    const update = {
+      profileUI: {
+        ...oldUI,
+        ...profileUI
+      }
+    };
+
+    return this.update$(update)
+      .do(() => Object.assign(this, update))
+      .map(() => dedent`
+        Your privacy settings have been updated.
+      `);
+  };
+
+  User.prototype.updateMyUsername = function updateMyUsername(newUsername) {
+    return Observable.defer(
+      () => {
+        const isOwnUsername = isTheSame(newUsername, this.username);
+        if (isOwnUsername) {
+          return Observable.of(dedent`
+          ${newUsername} is already associated with this account.
+          `);
+        }
+        return Observable.fromPromise(User.doesExist(newUsername));
+      }
+    )
+    .flatMap(boolOrMessage => {
+      if (typeof boolOrMessage === 'string') {
+        return Observable.of(boolOrMessage);
+      }
+      if (boolOrMessage) {
+        return Observable.of(dedent`
+        ${newUsername} is already associated with a different account.
+        `);
+      }
+
+      return this.update$({ username: newUsername })
+        .do(() => {
+          this.username = newUsername;
+        })
+        .map(() => dedent`
+        Your username has been updated successfully.
+        `);
+    });
+  };
+
+  User.getPublicProfile = function getPublicProfile(username, cb) {
+    return User.findOne$({ where: { username }})
+      .flatMap(user => {
+        if (!user) {
+          return Observable.of({});
+        }
+        const { completedChallenges, progressTimestamps, timezone } = user;
+        return Observable.of({
+          entities: {
+            user: {
+              [user.username]: {
+                ..._.pick(user, publicUserProps),
+                isGithub: !!user.githubProfile,
+                isLinkedIn: !!user.linkedIn,
+                isTwitter: !!user.twitter,
+                isWebsite: !!user.website,
+                points: progressTimestamps.length,
+                completedChallenges,
+                ...getProgress(progressTimestamps, timezone),
+                ...normaliseUserFields(user)
+              }
+            }
+          },
+          result: user.username
+        });
+      })
+      .subscribe(
+        user => cb(null, user),
+        cb
+      );
+  };
+
+  User.remoteMethod('getPublicProfile', {
+    accepts: {
+      arg: 'username',
+      type: 'string',
+      required: true
+    },
+    returns: [
+      {
+        arg: 'user',
+        type: 'object',
+        root: true
+      }
+    ],
+    http: {
+      path: '/get-public-profile',
+      verb: 'GET'
+    }
+  });
 
   User.giveBrowniePoints =
     function giveBrowniePoints(receiver, giver, data = {}, dev = false, cb) {
@@ -580,30 +982,26 @@ module.exports = function(User) {
     }
   );
 
-  User.themes = {
-    night: true,
-    default: true
-  };
+  User.themes = themes;
 
   User.prototype.updateTheme = function updateTheme(theme) {
     if (!this.constructor.themes[theme]) {
-      const err = new Error(
-        'Theme is not valid.'
+      const err = wrapHandledError(
+        new Error('Theme is not valid.'),
+        {
+          Type: 'info',
+          message: err.message
+        }
       );
-      err.messageType = 'info';
-      err.userMessage = err.message;
       return Promise.reject(err);
     }
-    return this.update$({ theme })
-      .map({ updatedTo: theme })
-      .toPromise();
+    return this.update$({ theme }).toPromise();
   };
 
   // deprecated. remove once live
   User.remoteMethod(
     'updateTheme',
     {
-      isStatic: false,
       description: 'updates the users chosen theme',
       accepts: [
         {
@@ -655,16 +1053,37 @@ module.exports = function(User) {
         return user.progressTimestamps;
       });
   };
-  User.prototype.getChallengeMap$ = function getChallengeMap$() {
+  User.prototype.getCompletedChallenges$ = function getCompletedChallenges$() {
     const id = this.getId();
     const filter = {
       where: { id },
-      fields: { challengeMap: true }
+      fields: { completedChallenges: true }
     };
     return this.constructor.findOne$(filter)
       .map(user => {
-        this.challengeMap = user.challengeMap;
-        return user.challengeMap;
+        this.completedChallenges = user.completedChallenges;
+        return user.completedChallenges;
       });
   };
+
+  User.getMessages = messages => Promise.resolve(messages);
+
+  User.remoteMethod('getMessages', {
+    http: {
+      verb: 'get',
+      path: '/get-messages'
+    },
+    accepts: {
+      arg: 'messages',
+      type: 'object',
+      http: ctx => ctx.req.flash()
+    },
+    returns: [
+      {
+        arg: 'messages',
+        type: 'object',
+        root: true
+      }
+    ]
+  });
 };

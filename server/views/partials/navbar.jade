@@ -1,30 +1,20 @@
-nav.navbar.navbar-default.navbar-fixed-top.nav-height
+nav.navbar.navbar-default.navbar-static-top.nav-height
+
     .navbar-header
         button.hamburger.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
             .col-xs-12
                 span.hamburger-text Menu
-        a.navbar-brand(href='/challenges/current-challenge')
-            img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at Free Code Camp logo')
+        a.navbar-brand(href='/')
+            img.img-responsive.nav-logo(src='https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg', alt='learn to code javascript at freeCodeCamp logo')
     .collapse.navbar-collapse
         ul.nav.navbar-nav.navbar-right.hamburger-dropdown
             li
-                a(href='/map') Map
-            li.hidden-xs
-                a#nav-chat-btn(href='//gitter.im/freecodecamp/freecodecamp' onclick="if (!(event.ctrlKey || event.metaKey)) {return false;}") Chat
-            li.visible-xs
-                a(href="//gitter.im/freecodecamp/freecodecamp" target="_blank") Chat
+                a(href='https://learn.freecodecamp.org' target='_blank' rel='noopener') Learn
             li
-                a(href='http://forum.freecodecamp.com', target='_blank') Forum
-            li
-                a(href='/about') About
-            li
-                a(href='/shop') Shop
+                a(href='https://forum.freecodecamp.org', target='_blank' rel='noopener') Forum
             if !user
                 li
-                    a(href='/signup') Sign Up
+                    a(href='/signin') Sign in
             else
-                li.brownie-points-nav
-                    a(href='/settings') [&thinsp;#{user.points}&thinsp;]
-                li.hidden-xs.hidden-sm.avatar
-                    a(href='/settings')
-                        img.profile-picture.float-right(src='#{user.picture}')
+                li
+                  a(href='/settings') Settings

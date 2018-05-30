@@ -1,4 +1,5 @@
 lib-cov
+*~
 *.seed
 *.log
 *.csv
@@ -17,6 +18,7 @@ logs
 results
 tmp
 .ds_store
+.vscode
 
 npm-debug.log
 node_modules
@@ -33,6 +35,7 @@ coverage
 
 server/*.bundle.js
 public/js/bundle*
+seed/unpacked
 
 *.map
 
@@ -40,6 +43,7 @@ public/js/bundle*
 server/rev-manifest.json
 server/manifests/*
 !server/manifests/README.md
+server/resources/pathMigration.json
 
 public/js/main*
 public/js/commonFramework*
@@ -51,5 +55,6 @@ public/js/vendor*
 public/js/faux*
 public/js/frame-runner*
 public/css/main*
-
+webpack-bundle-stats.html
 server/rev-manifest.json
+google-credentials.json

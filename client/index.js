@@ -1,88 +1,72 @@
-import './es6-shims';
 import Rx from 'rx';
-import React from 'react';
 import debug from 'debug';
-import { Router } from 'react-router';
-import {
-  routerMiddleware,
-  routerReducer as routing,
-  syncHistoryWithStore
-} from 'react-router-redux';
 import { render } from 'redux-epic';
-import { createHistory } from 'history';
-import useLangRoutes from './utils/use-lang-routes';
+import createHistory from 'history/createBrowserHistory';
 import sendPageAnalytics from './utils/send-page-analytics';
-import flashToToast from './utils/flash-to-toast';
 
-import createApp from '../common/app';
-import provideStore from '../common/app/provide-store';
+import { App, createApp, provideStore } from '../common/app';
 
-// client specific sagas
-import sagas from './sagas';
-
-import {
-  isColdStored,
-  getColdStorage,
-  saveToColdStorage
-} from './cold-reload';
+// client specific epics
+import epics from './epics';
 
 const isDev = Rx.config.longStackSupport = debug.enabled('fcc:*');
 const log = debug('fcc:client');
-const hotReloadTimeout = 5000;
-const csrfToken = window.__fcc__.csrf.token;
-const DOMContainer = document.getElementById('fcc');
-const initialState = isColdStored() ?
-  getColdStorage() :
-  window.__fcc__.data;
-initialState.app.csrfToken = csrfToken;
-initialState.toasts = flashToToast(window.__fcc__.flash);
-
-delete window.__fcc__;
-
-const serviceOptions = { xhrPath: '/services', context: { _csrf: csrfToken } };
-
-const history = useLangRoutes(createHistory)();
-sendPageAnalytics(history, window.ga);
-
-const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f;
-const adjustUrlOnReplay = !!window.devToolsExtension;
-
-const sagaOptions = {
+const hotReloadTimeout = 2000;
+const {
+  devToolsExtension,
+  location,
+  history: _history,
+  document,
+  ga,
+  __fcc__: {
+    data: defaultState = {},
+    csrf: {
+      token: csrfToken
+    } = {}
+  }
+} = window;
+const epicOptions = {
   isDev,
   window,
-  document: window.document,
-  location: window.location,
-  history: window.history
+  document,
+  location,
+  history: _history
 };
+
+const DOMContainer = document.getElementById('fcc');
+
+defaultState.app.csrfToken = csrfToken;
+
+const serviceOptions = {
+  context: { _csrf: csrfToken },
+  xhrPath: '/services',
+  xhrTimeout: 15000
+};
+
+const history = createHistory();
+sendPageAnalytics(history, ga);
 
 createApp({
     history,
-    syncHistoryWithStore,
-    syncOptions: { adjustUrlOnReplay },
     serviceOptions,
-    initialState,
-    middlewares: [ routerMiddleware(history) ],
-    sagas: [...sagas ],
-    sagaOptions,
-    reducers: { routing },
-    enhancers: [ devTools ]
+    defaultState,
+    epics,
+    epicOptions,
+    enhancers: isDev && devToolsExtension && [ devToolsExtension() ]
   })
-  .doOnNext(({ store }) => {
+  .doOnNext(() => {
     if (module.hot && typeof module.hot.accept === 'function') {
-      module.hot.accept('../common/app', function() {
-        saveToColdStorage(store.getState());
-        setTimeout(() => window.location.reload(), hotReloadTimeout);
+      module.hot.accept(() => {
+        // note(berks): not sure this ever runs anymore after adding
+        // RHR?
+        log('saving state and refreshing.');
+        log('ignore react ssr warning.');
+        setTimeout(() => location.reload(), hotReloadTimeout);
       });
     }
   })
-  .doOnNext(() => log('rendering'))
-  .flatMap(
-    ({ props, store }) => render(
-      provideStore(React.createElement(Router, props), store),
-      DOMContainer
-    ),
-    ({ store }) => store
-  )
+  .do(() => log('rendering'))
+  .flatMap(({ store }) => render(provideStore(App, store), DOMContainer))
   .subscribe(
     () => debug('react rendered'),
     err => { throw err; },

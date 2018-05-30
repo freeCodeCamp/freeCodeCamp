@@ -1,3 +1,4 @@
+import omit from 'lodash/omit';
 import normalizeUrl from 'normalize-url';
 import { isURL } from 'validator';
 
@@ -64,7 +65,30 @@ export function getValidationState(field) {
     return null;
   }
 
+  if ((/https?:\/\/glitch\.com\/edit\/#!\/.*/g).test(field.value)) {
+    return 'glitch-warning';
+  }
+
   return field.error ?
     'error' :
     'success';
+}
+
+// this should filter out none-dom props to silence React warnings
+export function DOMOnlyProps(field) {
+  return omit(field, [
+    'initialValue',
+    'autofill',
+    'autocompleted',
+    'onUpdate',
+    'valid',
+    'invalid',
+    'dirty',
+    'pristine',
+    'active',
+    'touched',
+    'visited',
+    'autofilled',
+    'error'
+  ]);
 }

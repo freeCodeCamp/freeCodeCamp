@@ -1,7 +1,9 @@
-var webpack = require('webpack');
-var path = require('path');
-var ManifestPlugin = require('webpack-manifest-plugin');
-var ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const ManifestPlugin = require('webpack-manifest-plugin');
+const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
+const Visualizer = require('webpack-visualizer-plugin');
+const UglifyPlugin = require('uglifyjs-webpack-plugin');
 
 var __DEV__ = process.env.NODE_ENV !== 'production';
 
@@ -9,7 +11,7 @@ module.exports = {
   entry: {
     bundle: './client'
   },
-  devtool: __DEV__ ? 'inline-source-map' : null,
+  devtool: __DEV__ ? 'inline-source-map' : 'source-map',
   node: {
     // Mock Node.js modules that Babel require()s but that we don't
     // particularly care about.
@@ -18,32 +20,31 @@ module.exports = {
     net: 'empty'
   },
   output: {
-    filename: __DEV__ ? 'bundle.js' : 'bundle-[hash].js',
+    filename: __DEV__ ? '[name].js' : '[name]-[hash].js',
     chunkFilename: __DEV__ ?
-      'bundle-[name].js' :
-      'bundle-[name]-[chunkhash].js',
+      '[name].js' :
+      '[name]-[chunkhash].js',
     path: path.join(__dirname, '/public/js'),
-    publicPath: __DEV__ ? 'http://localhost:2999/js' : '/js'
+    publicPath: '/js'
+  },
+  resolve: {
+    alias: {
+      'dist/rx.all.js': 'rx/dist/rx.all.js'
+    }
   },
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        include: [
-          path.join(__dirname, 'client/'),
-          path.join(__dirname, 'common/')
-        ],
-        loaders: [
-          'babel-loader'
-        ]
-      },
-      {
-        test: /\.json$/,
-        loaders: [
-          'json-loader'
-        ]
-      }
-    ]
+    rules: [{
+      test: /\.jsx?$/,
+      include: [
+        path.join(__dirname, 'client/'),
+        path.join(__dirname, 'common/'),
+        path.join(__dirname, 'server/')
+      ],
+      use: [
+        __DEV__ && 'react-hot-loader',
+        'babel-loader'
+      ].filter(Boolean)
+    }]
   },
   externals: {
     codemirror: 'CodeMirror',
@@ -59,15 +60,18 @@ module.exports = {
     // Use browser version of visionmedia-debug
     new webpack.NormalModuleReplacementPlugin(
       /debug\/node/,
-      'debug/browser'
-    ),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(true)
+      'debug/src/browser'
+    )
   ]
 };
 
 if (!__DEV__) {
   module.exports.plugins.push(
+    new UglifyPlugin({
+      test: /\.js($|\?)/i,
+      cache: true,
+      sourceMap: true
+    }),
     new ManifestPlugin({ fileName: 'react-manifest.json' }),
     new ChunkManifestPlugin({
       filename: 'chunk-manifest.json',
@@ -77,6 +81,8 @@ if (!__DEV__) {
 } else {
   module.exports.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    // this will output a .html file in output.path
+    new Visualizer({ filename: 'webpack-bundle-stats.html' })
   );
 }

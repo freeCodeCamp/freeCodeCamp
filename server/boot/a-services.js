@@ -1,18 +1,19 @@
 import Fetchr from 'fetchr';
-import getHikesService from '../services/hikes';
-import getJobServices from '../services/job';
 import getUserServices from '../services/user';
-import getMapServices from '../services/map';
+import getMapUiServices from '../services/mapUi';
+import getChallengesForBlockService from '../services/challenge';
 
 export default function bootServices(app) {
-  const hikesService = getHikesService(app);
-  const jobServices = getJobServices(app);
-  const userServices = getUserServices(app);
-  const mapServices = getMapServices(app);
 
-  Fetchr.registerFetcher(hikesService);
-  Fetchr.registerFetcher(jobServices);
-  Fetchr.registerFetcher(userServices);
-  Fetchr.registerFetcher(mapServices);
-  app.use('/services', Fetchr.middleware());
+  const challenge = getChallengesForBlockService(app);
+  const mapUi = getMapUiServices(app);
+  const user = getUserServices(app);
+
+  Fetchr.registerFetcher(challenge);
+  Fetchr.registerFetcher(mapUi);
+  Fetchr.registerFetcher(user);
+
+  const middleware = Fetchr.middleware();
+  app.use('/services', middleware);
+  app.use('/external/services', middleware);
 }

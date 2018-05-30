@@ -1,8 +1,9 @@
-@import "lib/bootstrap/bootstrap";
-@import "lib/bootstrap-social/bootstrap-social";
-@import "lib/ionicons/ionicons";
-@import "lib/animate";
-@import "lib/bootstrap/variables";
+@import "./lib/bootstrap/bootstrap";
+@import "./lib/bootstrap-social/bootstrap-social";
+@import "./lib/ionicons/ionicons";
+@import "./lib/animate";
+@import "./lib/bootstrap/variables";
+@import "./flexgrid.less";
 
 html,body,div,span,a,li,td,th {
   font-family: 'Lato', sans-serif;
@@ -34,46 +35,61 @@ pre.wrappable {
   word-wrap: break-word;      /* IE 5+ */
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-  // hack to prevent horizontal overflow problem on showHTML view
-  overflow-x: hidden;
+.checkbox label:after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
-//input[type=checkbox] {
-//  /* Double-sized Checkboxes */
-//  -ms-transform: scale(2); /* IE */
-//  -moz-transform: scale(2); /* FF */
-//  -webkit-transform: scale(2); /* Safari and Chrome */
-//  -o-transform: scale(2); /* Opera */
-//  padding: 10px;
-//}
+.checkbox .cr {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #a9a9a9;
+  border-radius: .25em;
+  width: 1.3em;
+  height: 1.3em;
+  float: left;
+  margin-right: .5em;
+}
+
+.checkbox .cr .cr-icon {
+  position: absolute;
+  font-size: .8em;
+  line-height: 0;
+  top: 50%;
+  left: 15%;
+}
+
+.checkbox label input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox label input[type="checkbox"]+.cr>.cr-icon {
+  opacity: 0;
+}
+
+.checkbox label input[type="checkbox"]:checked+.cr>.cr-icon {
+  opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled+.cr {
+  opacity: .5;
+}
 
 .btn-group {
   border-color: @brand-primary;
 }
 
-body.full-screen-body-background {
+.btn-group-vertical {
+  width: 100%;
+}
+
+.full-screen-body-background {
   background-color: @body-bg;
 }
 
-body.top-and-bottom-margins {
-  padding-top: 80px;
-  margin-bottom: 60px;
-}
-
-body.no-top-and-bottom-margins {
+.no-top-and-bottom-margins {
   margin: 75px 20px 0px 20px;
-}
-
-body.react-layout {
-  margin-top: 75px;
-  margin-bottom: 15px;
-  width: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-  min-height: 650px;
 }
 
 h1, h2 {
@@ -91,6 +107,16 @@ h1, h2, h3, h4, h5, h6, p, li {
 
 .alert {
   margin-top: 20px;
+}
+
+.not-found, .not-found .btn-primary {
+  display: grid;
+  margin: auto;
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+  }
 }
 
 // Thumbnails
@@ -132,10 +158,6 @@ h1, h2, h3, h4, h5, h6, p, li {
   box-shadow:         2px 4px 1px rgba(0, 0, 0, 0.3);
 }
 
-.btn-nav {
-  margin-top: 10px;
-}
-
 .large-li > li {
   list-style: none;
 }
@@ -150,24 +172,34 @@ h1, h2, h3, h4, h5, h6, p, li {
   margin: 2px;
 }
 
-.navbar-brand {
-  font-size: 26px;
-}
-
-.navbar > .container {
-  width: auto;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.nav-height {
-  height: 50px;
-  border: none;
+.hide-test-frame {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  visibility: hidden;
 }
 
 .landing-icon {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
+}
+
+p.stats {
+  font-size: 2rem;
+}
+
+.green-text {
+  color: #006400;
+}
+
+.more-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    flex-grow: 1;
+  }
 }
 
 .completion-icon {
@@ -280,46 +312,6 @@ h1, h2, h3, h4, h5, h6, p, li {
   display: none;
 }
 
-.nav-logo {
-  height: 40px;
-  margin-top: -10px;
-
-  @media (max-width: 397px) {
-    height: 30px;
-    margin-top: -5px;
-  }
-  @media (max-width: 335px) {
-    height: 25px;
-    margin-top: -2px;
-  }
-}
-
-.navbar-right {
-  @media (min-width: 767px) {
-    margin-right:0;
-  }
-  @media (max-width: 991px) and (min-width: 767px) {
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin-right: 0px;
-    white-space: nowrap;
-  }
-  background-color: @brand-primary;
-  text-align: center;
-}
-.navbar {
-  white-space: nowrap;
-  border: none;
-  line-height: 1;
-  @media (min-width: 767px) {
-    padding-left: 15px;
-    padding-right: 30px;
-  }
-}
-
-li.avatar, li.avatar > a { padding:0; margin:0 }
-
 .thin-progress-bar {
   height: 8px;
   margin-top: 3px;
@@ -338,7 +330,8 @@ li.avatar, li.avatar > a { padding:0; margin:0 }
 }
 
 .btn-social {
-  width: 250px;
+  width: 100%;
+  max-width: 260px;
   margin: auto;
 }
 
@@ -348,27 +341,17 @@ li.avatar, li.avatar > a { padding:0; margin:0 }
   margin-bottom: 10px;
 }
 
-.navbar {
-  background-color: @brand-primary;
-}
-
 a {
   font-weight: bold;
+  font-size : 15px;
 }
 
 p {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .map-aside-body p {
   line-height: 1.8;
-}
-
-.navbar-nav > li > a {
-  color: @body-bg;
-  &:hover {
-    color: @brand-primary;
-  }
 }
 
 .hug-top {
@@ -412,6 +395,10 @@ p {
 .btn-big {
   font-size: 20px;
   border-radius: 6px;
+}
+
+.btn-big.btn-primary[disabled] {
+  color: rgb(141, 139, 132)
 }
 
 .btn-bigger {
@@ -468,52 +455,6 @@ thead {
   margin-bottom: 50px;
 }
 
-.profile-picture {
-  height: 50px;
-  width: 50px;
-}
-
-.brownie-points-nav {
-  @media (min-width: 991px) and (max-width: 999px) {
-    margin-right: -10px;
-  }
-}
-
-.navbar-nav a {
-  color: @body-bg;
-  font-size: 20px;
-  margin-top: -5px;
-  margin-bottom: -5px;
-}
-
-.navbar-toggle {
-  color: @body-bg;
-
-  &:hover,
-  &:focus {
-    color: #4a2b0f;
-  }
-}
-
-
-.signup-btn-nav {
-  margin-top: -2px !important;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  margin-right: -12px;
-  @media (min-width: 991px) and (max-width: 1010px) {
-    margin-left: -10px;
-    margin-right: -5px;
-  }
-}
-
-a[href="/email-signup"], a[href="/email-signin"] {
-  &.btn-social.btn-lg > :first-child {
-    line-height:43px;
-    font-size:26px;
-  }
-}
-
 form.update-email .btn{
   margin:0;
   width:40%;
@@ -521,19 +462,6 @@ form.update-email .btn{
   &:last-child {
     float:right;
   }
-}
-
-.public-profile-img {
-  height: 200px;
-  width: 200px;
-  border-radius: 5px;
-}
-
-.ng-invalid.ng-dirty {
-  border-color: #FA787E;
-}
-.ng-valid.ng-dirty {
-  border-color: #78FA89;
 }
 
 .flat-top {
@@ -602,7 +530,6 @@ form.update-email .btn{
   color: #009900
 }
 
-
 .default-border-radius {
   border-radius: 5px;
 }
@@ -616,7 +543,7 @@ form.update-email .btn{
 }
 
 .testimonial-copy {
-  text-align: justify;
+  text-align: center;
   font-size: 18px !important;
   margin-left: 20px;
   margin-right: 20px;
@@ -641,11 +568,7 @@ form.update-email .btn{
   }
 }
 
-.navbar-collapse {
-  border-top: 0;
-}
-
-.challenge-list-header {
+.challenges-list-header {
   background-color: @brand-primary;
   color: @gray-lighter;
   font-size: 36px;
@@ -661,51 +584,8 @@ form.update-email .btn{
   text-align: right;
 }
 
-.fcc-footer {
-  width: 100%;
-  height: 50px;
-  text-align: center;
-  background-color: @brand-primary;
-  padding: 12px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  a {
-    font-size: 20px;
-    color: @gray-lighter;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 14px;
-    padding-bottom: 12px;
-    &:hover {
-      color: @brand-primary;
-      background-color: @gray-lighter;
-      text-decoration: none;
-    }
-  }
-}
-
-.embed-responsive-twitch-chat {
-  padding-bottom: 117%;
-}
-
 .graph-rect {
   fill: #ddd !important
-}
-
-.scroll-locker {
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-
-.test-vertical-center {
-  margin-top: 8px;
-}
-
-.courseware-height {
-  min-height: 650px;
 }
 
 .btn {
@@ -743,65 +623,6 @@ form.update-email .btn{
       width:95px;
     }
   }
-}
-
-@media (max-width: 991px) {
-  .navbar-header {
-    float: none;
-  }
-
-  .navbar-toggle {
-    display: block;
-  }
-
-  .navbar-collapse.collapse {
-    display: none !important;
-  }
-
-  .navbar-nav {
-    margin-top: 0;
-  }
-
-  .navbar-nav > li {
-    float: none;
-  }
-
-  .navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-
-  .navbar-text {
-    float: none;
-    margin: 15px 0;
-  }
-
-  /* since 3.1.0 */
-  .navbar-collapse.collapse.in {
-    display: block !important;
-  }
-
-  .collapsing {
-    overflow: hidden !important;
-    position: absolute;
-    left: 0;
-    right: 0;
-  }
-}
-
-.navbar-toggle {
-  width: 80px;
-  padding-left: 0;
-  padding-right: 8px;
-  margin: 7px 2px 7px 0;
-  text-align: left;
-  font-size: 10px;
-}
-
-.hamburger-text {
-  line-height: 0.75em;
-  margin-top: 10px;
-  font-size: 18px;
 }
 
 .story-list {
@@ -893,9 +714,18 @@ hr {
   padding-top: 5px;
 }
 
+.night .map-challenge-title.selectedChallenge, .map-challenge-title.selectedChallenge {
+  background-color:rgb(236, 234, 234);
+}
+
 .checklist-element {
-    margin-left: -60px;
-    margin-right: -20px;
+  margin-left: -60px;
+  margin-right: -20px;
+}
+
+.public-profile-img {
+  height: 200px;
+  width: 200px;
 }
 
 .profile-social-icons {
@@ -932,7 +762,6 @@ code {
 .gitter-chat-embed {
  z-index: 20000 !important;
 }
-
 
 //uncomment this to see the dimensions of all elements outlined in red
 //* {
@@ -1047,21 +876,36 @@ code {
   color: @night-text-color;
   .btn-group,
   .text-success,
-  .challenge-list-header,
+  .challenges-list-header,
   .fcc-footer {
     background-color: @night-body-bg;
   }
   hr {
     background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
   }
-  .navbar-default .navbar-nav > li > a {
-    color: #CCC;
-    &:hover {
-      background-color: #666;
+  .modal-dialog {
+    .modal-content {
+      background-color: @gray;
+      .btn-success,
+      .btn-danger {
+        background: #FFFFFF;
+      }
+      .btn-danger:hover,
+      .btn-danger:focus,
+      .btn-danger:active {
+        background: #d9534f !important;
+      }
+    }
+    .modal-header,
+    .modal-footer {
+      border: none;
+    }
+    .fa-check-circle {
+      color: darken(@brand-primary, 5%);
     }
   }
   a, .input-group-addon, .challenge-instructions a, .challenge-instructions #MDN-links a {
-    color: #CCC;
+    color: #f8f8f8;
   }
   .fa-github-square {
     color: @brand-primary;
@@ -1073,8 +917,8 @@ code {
     color:#111;
   }
   code {
-    background-color: #999;
-    color: @brand-primary;
+    background-color: #242424;
+    color: #02a902;
   }
   .fcc-footer {
     a {
@@ -1085,7 +929,7 @@ code {
   }
   .btn-primary {
     background-color: @brand-primary;
-    border-color: #292929;
+    border-color: #777;
     color:#CCC;
     transition: color 0.2s, background-color 0.2s;
     &:hover {
@@ -1106,6 +950,12 @@ code {
   }
   .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     border-color: @night-text-color;
+  }
+  .btn-toggle {
+    background-color: transparent;
+  }
+  .btn-toggle.active {
+    background-color: @brand-primary;
   }
 }
 
@@ -1129,10 +979,84 @@ and (max-width : 400px)  {
   font-size: 17px;
 }
 
-@import "chat.less";
-@import "jobs.less";
-@import 'code-mirror.less';
-@import "challenge.less";
-@import "toastr.less";
-@import "map.less";
-@import "drawers.less";
+
+.editorScrollDiv {
+  -webkit-overflow-scrolling: touch;
+}
+
+// Account Modal Styles
+.modal-dialog {
+  margin: 80px;
+  bottom: 48px;
+
+  .modal-content {
+    background-color: #f9f9f9;
+
+    .btn-success:hover,
+    .btn-success:focus,
+    .btn-success:active {
+      background: #457E86;
+    }
+  }
+
+  .modal-header .close {
+    font-size: 30px;
+    padding-left: 10px;
+  }
+
+  .modal-header {
+    text-align: center;
+    padding: 5px 20px;
+  }
+
+  .modal-footer {
+    .spacer {
+      padding: 8px 0 8px 0;
+    }
+
+    .btn {
+      padding: 12px;
+    }
+
+    .btn-success {
+      color: darkgreen;
+      border-color: darkgreen;
+    }
+
+    .btn-success:hover,
+    .btn-success:focus,
+    .btn-success:active {
+      color: #eee;
+      background-color: #208e36;
+      border-color: darkgreen;
+    }
+
+    .modal-textarea {
+      width: 100%;
+      max-width: 590px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 620px;
+    margin: 150px auto;
+  }
+}
+
+.full-size {
+  height: 100%;
+  width: 100%;
+}
+
+// surrounding downstream import with &{}
+// creates locally scoped imports
+// and prevents vaiables from overwriting each other
+&{ @import "./code-mirror.less"; }
+&{ @import "./toastr.less"; }
+&{ @import "../../common/index.less"; }
+&{ @import "./userHome.less"; }

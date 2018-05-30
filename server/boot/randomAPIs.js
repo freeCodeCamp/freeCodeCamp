@@ -8,21 +8,17 @@ const githubSecret = process.env.GITHUB_SECRET;
 module.exports = function(app) {
   const router = app.loopback.Router();
   const User = app.models.User;
-  const noLangRouter = app.loopback.Router();
-  noLangRouter.get('/api/github', githubCalls);
-  noLangRouter.get('/chat', chat);
-  noLangRouter.get('/twitch', twitch);
-  noLangRouter.get('/unsubscribe/:email', unsubscribeAll);
-  noLangRouter.get('/unsubscribe-notifications/:email', unsubscribeAll);
-  noLangRouter.get('/unsubscribe-quincy/:email', unsubscribeAll);
-  noLangRouter.get('/submit-cat-photo', submitCatPhoto);
-  noLangRouter.get(
+
+  router.get('/api/github', githubCalls);
+  router.get('/chat', chat);
+  router.get('/twitch', twitch);
+  router.get('/u/:email', unsubscribe);
+  router.get('/unsubscribe/:email', unsubscribe);
+  router.get('/submit-cat-photo', submitCatPhoto);
+  router.get(
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
   );
-  noLangRouter.get('/shop/cancel-stickers', cancelStickers);
-  noLangRouter.get('/shop/confirm-stickers', confirmStickers);
-
   router.get('/unsubscribed', unsubscribed);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
@@ -30,53 +26,30 @@ module.exports = function(app) {
   router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
   router.get('/stories', showTestimonials);
-  router.get('/shop', showShop);
   router.get('/all-stories', showAllTestimonials);
-  router.get('/terms', terms);
-  router.get('/privacy', privacy);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get(
       '/software-resources-for-nonprofits',
       softwareResourcesForNonprofits
   );
-  router.get('/code-of-conduct', codeOfConduct);
   router.get('/academic-honesty', academicHonesty);
 
-  app.use(noLangRouter);
-  app.use('/:lang', router);
+  app.use(router);
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
   }
 
-  function terms(req, res) {
-      res.render('resources/terms-of-service', {
-            title: 'Terms of Service'
-      });
-  }
-
-  function privacy(req, res) {
-      res.render('resources/privacy', {
-          title: 'Privacy policy'
-      });
-  }
-
   function howNonprofitProjectsWork(req, res) {
-      res.render('resources/how-nonprofit-projects-work', {
-          title: 'How our nonprofit projects work'
-      });
+      res.redirect(301,
+        'https://medium.freecodecamp.com/open-source-for-good-1a0ea9f32d5a');
+
   }
 
   function softwareResourcesForNonprofits(req, res) {
     res.render('resources/software-resources-for-nonprofits', {
       title: 'Software Resources for Nonprofits'
     });
-  }
-
-  function codeOfConduct(req, res) {
-      res.render('resources/code-of-conduct', {
-          title: 'Code of Conduct'
-      });
   }
 
   function academicHonesty(req, res) {
@@ -93,7 +66,7 @@ module.exports = function(app) {
 
   function showTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy Free Code Camp Students ' +
+      title: 'Testimonials from Happy freeCodeCamp Students ' +
         'who got Software Engineer Jobs',
       stories: testimonials.slice(0, 72),
       moreStories: true
@@ -102,35 +75,13 @@ module.exports = function(app) {
 
   function showAllTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy Free Code Camp Students ' +
+      title: 'Testimonials from Happy freeCodeCamp Students ' +
         'who got Software Engineer Jobs',
       stories: testimonials,
       moreStories: false
     });
   }
 
-  function showShop(req, res) {
-    res.render('resources/shop', {
-      title: 'Support Free Code Camp by Buying t-shirts, ' +
-        'stickers, and other goodies'
-    });
-  }
-
-  function confirmStickers(req, res) {
-    req.flash('success', {
-      msg: 'Thank you for supporting our community! You should receive ' +
-        'your stickers in the mail soon!'
-    });
-    res.redirect('/shop');
-  }
-
-  function cancelStickers(req, res) {
-      req.flash('info', {
-        msg: 'You\'ve cancelled your purchase of our stickers. You can ' +
-          'support our community any time by buying some.'
-      });
-      res.redirect('/shop');
-  }
   function submitCatPhoto(req, res) {
     res.send('Submitted!');
   }
@@ -169,28 +120,51 @@ module.exports = function(app) {
     res.redirect('https://twitch.tv/freecodecamp');
   }
 
-  function unsubscribeAll(req, res, next) {
-    req.checkParams('email', 'Must send a valid email').isEmail();
-    return User.findOne({ where: { email: req.params.email } }, (err, user) => {
-      if (err) { return next(err); }
-      if (!user) {
-        req.flash('info', {
-          msg: 'Email address not found. ' +
-          'Please update your Email preferences from your profile.'
-        });
-        return res.redirect('/map');
+  function unsubscribe(req, res, next) {
+    req.checkParams(
+      'email',
+      `"${req.params.email}" isn't a valid email address.`
+    ).isEmail();
+    const errors = req.validationErrors(true);
+    if (errors) {
+      req.flash('error', { msg: errors.email.msg });
+      return res.redirect('/');
+    }
+    return User.find({
+      where: {
+        email: req.params.email
       }
-      return user.updateAttributes({
-        sendQuincyEmail: false,
-        sendMonthlyEmail: false,
-        sendNotificationEmail: false
-      }, (err) => {
-        if (err) { return next(err); }
+    }, (err, users) => {
+      if (err) { return next(err); }
+      if (!users.length) {
         req.flash('info', {
-          msg: 'We\'ve successfully updated your Email preferences.'
+          msg: 'Email address not found. Please update your Email ' +
+            'preferences from your settings.'
         });
-        return res.redirect('/unsubscribed');
+        return res.redirect('/');
+      }
+
+      const updates = users.map(user => {
+        return new Promise((resolve, reject) =>
+          user.updateAttributes({
+            sendQuincyEmail: false
+          }, (err) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve();
+            }
+          })
+        );
       });
+      return Promise.all(updates)
+        .then(() => {
+          req.flash('info', {
+            msg: 'We\'ve successfully updated your Email preferences.'
+          });
+          return res.redirect('/unsubscribed/' + req.params.email);
+        })
+        .catch(next);
     });
   }
 

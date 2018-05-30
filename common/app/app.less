@@ -1,0 +1,26 @@
+// should match ./ns.json value and filename
+@ns: app;
+
+.@{ns}-container {
+  // we invert the nav and content since
+  // the content needs to render first
+  // Here we invert the order in which
+  // they are painted using css so the
+  // nav is on top again
+  .grid(@direction: column; @wrap: nowrap);
+  height: 100%;
+  width: 100%;
+}
+
+.@{ns}-content {
+  // makes the initial content height 0px
+  // then lets it grow to fit the rest of the space
+  flex: 1 0 0px;
+  // allow content to adapt to screen size
+  display: flex;
+}
+
+.@{ns}-centered {
+  .center(@value: @container-xl, @padding: @grid-gutter-width);
+  margin-top: @navbar-margin-bottom;
+}

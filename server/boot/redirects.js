@@ -4,7 +4,7 @@ module.exports = function(app) {
   router.get('/nonprofit-project-instructions', function(req, res) {
     res.redirect(
       301,
-      'http://forum.freecodecamp.com/t/'
+      'http://forum.freecodecamp.org/t/'
       + 'how-free-code-camps-nonprofits-projects-work/19547'
     );
   });
@@ -16,7 +16,7 @@ module.exports = function(app) {
   router.get('/privacy', function(req, res) {
     res.redirect(
       301,
-      'http://forum.freecodecamp.com/t/free-code-camp-privacy-policy/19545'
+      'http://forum.freecodecamp.org/t/free-code-camp-privacy-policy/19545'
     );
   });
 
@@ -25,7 +25,7 @@ module.exports = function(app) {
   });
 
   router.get('/field-guide/*', function(req, res) {
-    res.redirect(302, 'http://forum.freecodecamp.com');
+    res.redirect(302, 'http://forum.freecodecamp.org');
   });
 
   app.use(router);

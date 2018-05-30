@@ -1,28 +1,64 @@
-import _ from 'lodash';
+import compose from 'lodash/fp/compose';
+import map from 'lodash/fp/map';
+import sortBy from 'lodash/fp/sortBy';
+import trans from 'lodash/fp/transform';
+import last from 'lodash/fp/last';
+import forEachRight from 'lodash/fp/forEachRight';
 import moment from 'moment-timezone';
 import { dayCount } from '../utils/date-utils';
 
-const daysBetween = 1.5;
+const transform = trans.convert({ cap: false });
 
-export function prepUniqueDays(cals, tz = 'UTC') {
+const hoursBetween = 24;
+const hoursDay = 24;
 
-  return _(cals)
-    .map(ts => moment(ts).tz(tz).startOf('day').valueOf())
-    .uniq()
-    .sort()
-    .value();
+export function prepUniqueDaysByHours(cals, tz = 'UTC') {
+
+  let prev = null;
+
+  // compose goes bottom to top (map > sortBy > transform)
+  return compose(
+    transform((data, cur, i) => {
+      if (i < 1) {
+        data.push(cur);
+        prev = cur;
+      } else if (
+        moment(cur)
+          .tz(tz)
+          .diff(moment(prev).tz(tz).startOf('day'), 'hours')
+        >= hoursDay
+      ) {
+        data.push(cur);
+        prev = cur;
+      }
+    }, []),
+    sortBy(e => e),
+    map(ts => moment(ts).tz(tz).startOf('hours').valueOf())
+  )(cals);
 }
 
 export function calcCurrentStreak(cals, tz = 'UTC') {
 
-  let prev = _.last(cals);
-  if (moment().tz(tz).startOf('day').diff(prev, 'days') > daysBetween) {
+  let prev = last(cals);
+  if (
+    moment()
+      .tz(tz)
+      .startOf('day')
+      .diff(moment(prev).tz(tz), 'hours')
+    > hoursBetween
+  ) {
     return 0;
   }
   let currentStreak = 0;
   let streakContinues = true;
-  _.forEachRight(cals, cur => {
-    if (moment(prev).diff(cur, 'days') < daysBetween) {
+  forEachRight(cur => {
+    if (
+      moment(prev)
+        .tz(tz)
+        .startOf('day')
+        .diff(moment(cur).tz(tz), 'hours')
+      <= hoursBetween
+    ) {
       prev = cur;
       currentStreak++;
     } else {
@@ -30,7 +66,7 @@ export function calcCurrentStreak(cals, tz = 'UTC') {
       streakContinues = false;
     }
     return streakContinues;
-  });
+  })(cals);
 
   return currentStreak;
 }
@@ -41,7 +77,8 @@ export function calcLongestStreak(cals, tz = 'UTC') {
   const longest = cals.reduce((longest, head, index) => {
     const last = cals[index === 0 ? 0 : index - 1];
     // is streak broken
-    if (moment(head).tz(tz).diff(moment(last).tz(tz), 'days') > daysBetween) {
+    if (moment(head).tz(tz).startOf('day').diff(moment(last).tz(tz), 'hours')
+        > hoursBetween) {
       tail = head;
     }
     if (dayCount(longest, tz) < dayCount([head, tail], tz)) {

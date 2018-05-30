@@ -16,11 +16,30 @@
         }
       }
     },
+    "newEmail": {
+      "type": "string"
+    },
     "emailVerifyTTL": {
       "type": "date"
     },
+    "emailVerified": {
+      "type": "boolean",
+      "default": false
+    },
+    "emailAuthLinkTTL": {
+      "type": "date"
+    },
+    "externalId": {
+      "type": "string",
+      "description": "A uuid/v4 used to identify user accounts"
+    },
+    "unsubscribeId": {
+      "type": "string",
+      "description": "An ObjectId used to unsubscribe users from the mailing list(s)"
+    },
     "password": {
-      "type": "string"
+      "type": "string",
+      "description": "No longer used for new accounts"
     },
     "progressTimestamps": {
       "type": "array",
@@ -33,28 +52,17 @@
     },
     "isCheater": {
       "type": "boolean",
-      "description": "Users who are confirmed to break academic honesty policy are marked as cheaters",
+      "description": "Users who are confirmed to have broken academic honesty policy are marked as cheaters",
       "default": false
     },
-    "isGithubCool": {
-      "type": "boolean",
-      "default": false
-    },
-    "githubId": {
+    "githubProfile": {
       "type": "string"
     },
-    "githubURL": {
+    "website": {
       "type": "string"
     },
-    "githubEmail": {
+    "_csrf": {
       "type": "string"
-    },
-    "joinedGithubOn": {
-      "type": "date"
-    },
-    "isMigrationGrandfathered": {
-      "type": "boolean",
-      "default": false
     },
     "username": {
       "type": "string",
@@ -66,15 +74,11 @@
       },
       "require": true
     },
-    "bio": {
+    "about": {
       "type": "string",
       "default": ""
     },
     "name": {
-      "type": "string",
-      "default": ""
-    },
-    "gender": {
       "type": "string",
       "default": ""
     },
@@ -95,44 +99,18 @@
     "twitter": {
       "type": "string"
     },
-    "currentStreak": {
-      "type": "number",
-      "default": 0
-    },
-    "longestStreak": {
-      "type": "number",
-      "default": 0
-    },
-    "sendMonthlyEmail": {
+    "acceptedPrivacyTerms": {
       "type": "boolean",
-      "default": true
-    },
-    "sendNotificationEmail": {
-      "type": "boolean",
-      "default": true
+      "default": false
     },
     "sendQuincyEmail": {
       "type": "boolean",
       "default": true
     },
-    "isLocked": {
-      "type": "boolean",
-      "description": "Campers profile does not show challenges/certificates to the public",
-      "default": false
-    },
     "currentChallengeId": {
       "type": "string",
-      "default": "",
-      "description": "the challenge last visited by the user"
-    },
-    "currentChallenge": {
-      "type": {},
-      "description": "deprecated"
-    },
-    "isUniqMigrated": {
-      "type": "boolean",
-      "description": "Campers completedChallenges array is free of duplicates",
-      "default": false
+      "description": "The challenge last visited by the user",
+      "default": ""
     },
     "isHonest": {
       "type": "boolean",
@@ -142,12 +120,12 @@
     "isFrontEndCert": {
       "type": "boolean",
       "description": "Camper is front end certified",
-      "defaut": false
+      "default": false
     },
     "isDataVisCert": {
       "type": "boolean",
       "description": "Camper is data visualization certified",
-      "defaut": false
+      "default": false
     },
     "isBackEndCert": {
       "type": "boolean",
@@ -159,41 +137,66 @@
       "description": "Campers is full stack certified",
       "default": false
     },
-    "isChallengeMapMigrated": {
+    "isRespWebDesignCert": {
       "type": "boolean",
-      "description": "Migrate completedChallenges array to challenge map",
+      "description": "Camper is responsive web design certified",
       "default": false
     },
-    "challengeMap": {
-      "type": "object",
-      "description": "A map by id of all the user completed challenges",
-      "default": {}
+    "is2018DataVisCert": {
+      "type": "boolean",
+      "description": "Camper is data visualization certified (2018)",
+      "default": false
+    },
+    "isFrontEndLibsCert": {
+      "type": "boolean",
+      "description": "Camper is front end libraries certified",
+      "default": false
+    },
+    "isJsAlgoDataStructCert": {
+      "type": "boolean",
+      "description": "Camper is javascript algorithms and data structures certified",
+      "default": false
+    },
+    "isApisMicroservicesCert": {
+      "type": "boolean",
+      "description": "Camper is apis and microservices certified",
+      "default": false
+    },
+    "isInfosecQaCert": {
+      "type": "boolean",
+      "description": "Camper is information security and quality assurance certified",
+      "default": false
+    },
+    "completedChallengeCount": {
+      "type": "number",
+      "description": "generated per request, not held in db"
+    },
+    "completedCertCount": {
+      "type": "number",
+      "description": "generated per request, not held in db"
+    },
+    "completedProjectCount": {
+      "type": "number",
+      "description": "generated per request, not held in db"
     },
     "completedChallenges": {
       "type": [
         {
           "completedDate": "number",
-          "lastUpdated": "number",
           "id": "string",
-          "name": "string",
-          "completedWith": "string",
           "solution": "string",
-          "githubLink": "string",
-          "verified": "boolean",
-          "challengeType": {
-            "type": "number",
-            "default": 0
-          }
+          "challengeType": "number"
         }
       ],
+      "default": []
+    },
+    "portfolio": {
+      "type": "array",
       "default": []
     },
     "rand": {
       "type": "number",
       "index": true
-    },
-    "tshirtVote": {
-      "type": "number"
     },
     "timezone": {
       "type": "string"
@@ -202,10 +205,63 @@
       "type": "string",
       "default": "default"
     },
-    "languageTag": {
-      "type": "string",
-      "description": "A IETF language tag",
-      "default": "en"
+    "profileUI": {
+      "type": {
+        "isLocked": {
+          "type": "boolean",
+          "description": "Campers profile shows only their username and avatar to the public",
+          "default": true
+        },
+        "showAbout": {
+          "type": "boolean",
+          "description": "For granular control of what is shown to the public",
+          "default": false
+        },
+        "showCerts": {
+          "type": "boolean",
+          "description": "For granular control of what is shown to the public",
+          "default": false
+        },
+        "showHeatMap": {
+          "type": "boolean",
+          "description": "For granular control of what is shown to the public",
+          "default": false
+        },
+        "showLocation": {
+          "type": "boolean",
+          "description": "For granular control of what is shown to the public",
+          "default": false
+        },
+        "showName": {
+          "type": "boolean",
+          "description": "For granular control of what is shown to the public",
+          "default": false
+        },
+        "showPoints": {
+          "type": "boolean",
+          "description": "For granular control of what is shown to the public",
+          "default": false
+        },
+        "showPortfolio": {
+          "type": "boolean",
+          "description": "For granular control of what is shown to the public",
+          "default": false
+        },
+        "showTimeLine": {
+          "type": "boolean",
+          "description": "For granular control of what is shown to the public",
+          "default": false
+        }
+      }
+    },
+    "badges": {
+      "type": {
+        "coreTeam": {
+          "type": "array",
+          "default": []
+        }
+      },
+      "default": {}
     }
   },
   "validations": [],
@@ -224,6 +280,14 @@
       "type": "hasOne",
       "model": "pledge",
       "foreignKey": ""
+    },
+    "authTokens": {
+      "type": "hasMany",
+      "model": "AuthToken",
+      "foreignKey": "userId",
+      "options": {
+        "disableInclude": true
+      }
     }
   },
   "acls": [
@@ -232,6 +296,32 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "DENY"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "create"
+    },
+    {
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "login"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "verify"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "property": "resetPassword"
     },
     {
       "accessType": "EXECUTE",
@@ -252,14 +342,14 @@
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "giveBrowniePoints"
+      "property": "getPublicProfile"
     },
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "$owner",
+      "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "updateEmail"
+      "property": "giveBrowniePoints"
     },
     {
       "accessType": "EXECUTE",
@@ -271,9 +361,9 @@
     {
       "accessType": "EXECUTE",
       "principalType": "ROLE",
-      "principalId": "$owner",
+      "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "updateLanguage"
+      "property": "getMessages"
     }
   ],
   "methods": {}

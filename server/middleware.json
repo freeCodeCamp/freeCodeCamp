@@ -15,14 +15,23 @@
   "initial": {
     "compression": {},
     "morgan": {
-      "params": ":status :method :response-time ms - :url"
+      "params": ":date[iso] :status :method :response-time ms - :url"
+    },
+    "cors": {
+      "params": {
+        "origin": true,
+        "credentials": true,
+        "maxAge": 86400
+      }
     }
   },
   "session": {
     "./middlewares/sessions.js": {}
   },
   "auth:before": {
-    "./middlewares/add-return-to": {}
+    "./middlewares/add-return-to": {},
+    "./middlewares/cookie-parser": {},
+    "./middlewares/jwt-authorization": {}
   },
   "parse": {
     "body-parser#json": {},
@@ -31,13 +40,14 @@
         "extended": true
       }
     },
-    "method-override": {},
-    "./middlewares/cookie-parser": {}
+    "method-override": {}
+
   },
   "parse:after": {
     "./middlewares/validator": {}
   },
   "routes:before": {
+    "./middlewares/express-extensions": {},
     "express-flash": {},
     "helmet#xssFilter": {},
     "helmet#noSniff": {},
@@ -45,15 +55,21 @@
     "./middlewares/csurf": {},
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
-    "./middlewares/express-rx": {},
     "./middlewares/jade-helpers": {},
-    "./middlewares/migrate-completed-challenges": {},
-    "./middlewares/add-lang": {},
-    "./middlewares/flash-cheaters": {}
+    "./middlewares/flash-cheaters": {},
+    "./middlewares/passport-login": {},
+    "./middlewares/email-not-verified-notice": {},
+    "./middlewares/privacy-terms-notice": {}
   },
   "files": {},
   "final:after": {
-    "./middlewares/keymetrics": {},
-    "./middlewares/error-handlers": {}
+    "./middlewares/error-reporter": {},
+    "./middlewares/error-handlers": {},
+    "strong-error-handler": {
+      "params": {
+        "debug": false,
+        "log": true
+      }
+    }
   }
 }

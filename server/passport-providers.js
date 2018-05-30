@@ -1,6 +1,7 @@
-var successRedirect = '/';
-var failureRedirect = '/signin';
-var linkFailureRedirect = '/account';
+const successRedirect = '/';
+const failureRedirect = '/';
+const linkSuccessRedirect = '/settings';
+const linkFailureRedirect = '/settings';
 
 export default {
   local: {
@@ -10,7 +11,7 @@ export default {
     passwordField: 'password',
     authPath: '/auth/local',
     successRedirect: successRedirect,
-    failureRedirect: '/email-signin',
+    failureRedirect: failureRedirect,
     session: true,
     failureFlash: true
   },
@@ -35,7 +36,7 @@ export default {
     authPath: '/link/facebook',
     callbackURL: '/link/facebook/callback',
     callbackPath: '/link/facebook/callback',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     scope: ['email', 'user_likes'],
     link: true,
@@ -64,7 +65,7 @@ export default {
     authPath: '/link/google',
     callbackURL: '/link/google/callback',
     callbackPath: '/link/google/callback',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     scope: ['email', 'profile'],
     link: true,
@@ -90,7 +91,7 @@ export default {
     authPath: '/link/twitter',
     callbackURL: '/link/twitter/callback',
     callbackPath: '/link/twitter/callback',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     consumerKey: process.env.TWITTER_KEY,
     consumerSecret: process.env.TWITTER_SECRET,
@@ -108,6 +109,7 @@ export default {
     failureRedirect: failureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
+    profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE
@@ -121,10 +123,11 @@ export default {
     authPath: '/link/linkedin',
     callbackURL: '/link/linkedin/callback',
     callbackPath: '/link/linkedin/callback',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     clientID: process.env.LINKEDIN_ID,
     clientSecret: process.env.LINKEDIN_SECRET,
+    profileFields: ['public-profile-url'],
     scope: ['r_basicprofile', 'r_emailaddress'],
     authOptions: {
       state: process.env.LINKEDIN_STATE
@@ -143,7 +146,6 @@ export default {
     failureRedirect: failureRedirect,
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
-    scope: ['email'],
     failureFlash: true
   },
   'github-link': {
@@ -153,12 +155,31 @@ export default {
     authPath: '/link/github',
     callbackURL: '/auth/github/callback/link',
     callbackPath: '/auth/github/callback/link',
-    successRedirect: successRedirect,
+    successRedirect: linkSuccessRedirect,
     failureRedirect: linkFailureRedirect,
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
-    scope: ['email'],
     link: true,
+    failureFlash: true,
+    successFlash: [
+      'We\'ve updated your profile based ',
+      'on your your GitHub account.'
+    ].join('')
+  },
+  'auth0-login': {
+    provider: 'auth0',
+    module: 'passport-auth0',
+    clientID: process.env.AUTH0_CLIENT_ID,
+    clientSecret: process.env.AUTH0_CLIENT_SECRET,
+    domain: process.env.AUTH0_DOMAIN,
+    cookieDomain: 'freeCodeCamp.org',
+    callbackURL: '/auth/auth0/callback',
+    authPath: '/auth/auth0',
+    callbackPath: '/auth/auth0/callback',
+    useCustomCallback: true,
+    successRedirect: successRedirect,
+    failureRedirect: failureRedirect,
+    scope: ['openid email'],
     failureFlash: true
   }
 };

@@ -15,15 +15,12 @@ export function jsonp$(options) {
   }
 
   return new AnonymousObservable(function(o) {
-    const settings = Object.assign(
-      {},
-      {
-        jsonp: 'JSONPCallback',
-        async: true,
-        jsonpCallback: 'rxjsjsonpCallbackscallback_' + (id++).toString(36)
-      },
-      options
-    );
+    const settings = {
+      jsonp: 'JSONPCallback',
+      async: true,
+      jsonpCallback: 'rxjsjsonpCallbackscallback_' + (id++).toString(36),
+      ...options
+    };
 
     let script = root.document.createElement('script');
     script.type = 'text/javascript';
