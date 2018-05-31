@@ -4,7 +4,8 @@ block content
     .col-xs-12
       .row
         .text-center
-            h3 Sign in with one of these options if you used them as your original sign up methods :
+            br
+            h4 Select from the following deprecated sign in methods to access your account and add a valid email address to it.
             br
             a.btn.btn-lg.btn-block.btn-social.btn-github(href='/auth/github')
                 i.fa.fa-github
@@ -21,43 +22,3 @@ block content
             a.btn.btn-lg.btn-block.btn-social.btn-twitter(href='/auth/twitter')
                 i.fa.fa-twitter
                 | Sign in with Twitter
-            br
-            h3
-             | We are unable to create new accounts using these methods
-            h4 If you haven't updated your email with us, you should do that as soon as possible,
-             | after you login here, to avoid losing access to your account.
-            br
-            p
-              a(href="/signin") Or click here to go back.
-
-    script.
-      $(document).ready(function() {
-        var method = localStorage.getItem('lastSigninMethodDeprecated'),
-          btnSelector = 'a.btn.btn-lg.btn-block.btn-social';
-        if (method) {
-          try {
-            var obj = JSON.parse(method);
-          } catch(e) {
-            console.error('Invalid sign in object stored', method);
-            return;
-          }
-          $.each($(btnSelector), function(i, item) {
-            if (
-              $(item).attr('href') === obj.methodLink &&
-              $(item).hasClass(obj.methodClass)
-            ) {
-              $(item).addClass('active');
-              $(item).attr('title', 'This is your last signin method');
-              return false;
-            }
-          });
-        }
-
-        $(btnSelector).click(function() {
-          var obj = {};
-          $(this).removeClass('active');
-          obj.methodClass = $(this).attr('class').split(' ').pop();
-          obj.methodLink = $(this).attr('href');
-          localStorage.setItem('lastSigninMethodDeprecated', JSON.stringify(obj));
-        });
-      });
