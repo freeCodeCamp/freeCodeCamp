@@ -4,6 +4,7 @@ import { PassportConfigurator } from
 import passportProviders from './passport-providers';
 import url from 'url';
 import jwt from 'jsonwebtoken';
+import dedent from 'dedent';
 
 const passportOptions = {
   emailOptional: true,
@@ -133,11 +134,24 @@ export default function setupPassport(app) {
             delete redirect.search;
 
             const { accessToken } = userInfo;
+            const { provider } = config;
             if (accessToken && accessToken.id) {
-              req.flash(
-                'success',
-                'Success! You have signed in to your account. Happy Coding!'
-              );
+              if (provider === 'auth0') {
+                req.flash(
+                  'success',
+                  dedent`
+                    Success! You have signed in to your account. Happy Coding!
+                  `
+                );
+              } else if (user.email) {
+                req.flash(
+                  'info',
+                  dedent`
+  We are moving away from social authentication for privacy reasons. Next time
+  we recommend using your email address: ${user.email} to sign in instead.
+                  `
+                );
+              }
               const cookieConfig = {
                 signed: !!req.signedCookies,
                 maxAge: accessToken.ttl,
