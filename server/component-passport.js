@@ -71,7 +71,7 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
             user.completedChallenges.forEach(item => {
               if (
                 'challengeType' in item &&
-                (item.challengeType === 3 || item.challengeType === 4)
+                (item.challengeType === 3 || item.challengeType === 4 || item.challengeType === 5)
               ) {
                 completedProjectCount++;
               }
