@@ -17,7 +17,7 @@ function Header() {
         <FCCSearch />
         <ul id='top-right-nav'>
           <li>
-            <a href='https://learn.freecodecamp.org'>Learn</a>
+            <Link to='/'>Curriculum</Link>
           </li>
           <li>
             <a href='https://forum.freecodecamp.org'>Forum</a>

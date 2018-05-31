@@ -119,7 +119,6 @@ export class BackEnd extends PureComponent {
     const blockNameTitle = `${blockName} - ${title}`;
     return (
       <Row>
-        <ProjectToolPanel />
         <Col xs={6} xsOffset={3}>
           <Spacer />
           <div>
@@ -134,6 +133,7 @@ export class BackEnd extends PureComponent {
               options={options}
               submit={executeChallenge}
             />
+            <ProjectToolPanel />
           </div>
           <div>
             <br />

@@ -24,6 +24,7 @@ import {
 import { frontEndProject } from '../../../../utils/challengeTypes';
 
 import './project.css';
+import Spacer from '../../../components/util/Spacer';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
@@ -106,7 +107,6 @@ export class Project extends PureComponent {
     return (
       <Fragment>
         <Helmet title={`${blockNameTitle} | Learn freeCodeCamp}`} />
-        <ToolPanel />
         <div className='project-show-wrapper'>
           <SidePanel
             className='full-height'
@@ -119,6 +119,8 @@ export class Project extends PureComponent {
             openModal={openCompletionModal}
             updateProjectForm={updateProjectFormValues}
           />
+          <ToolPanel />
+          <Spacer />
         </div>
         <CompletionModal />
         <HelpModal />

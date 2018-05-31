@@ -27,40 +27,28 @@ const propTypes = {
 
 export class ToolPanel extends PureComponent {
   render() {
-    const { guideUrl, openHelpModal, toggleMapModal } = this.props;
+    const { guideUrl, openHelpModal } = this.props;
     return (
-      <div className='tool-panel'>
-        <div id='left-tool-panel sub-panel'>
-          <Button
-            bsStyle='primary'
-            className='btn-primary-invert'
-            onClick={toggleMapModal}
-            >
-            View the Curriculum
-          </Button>
-        </div>
-        <div id='centre-tool-panel sub-panel' />
-        <div id='right-tool-panel sub-panel'>
-          {guideUrl && (
-            <Button
-              block={true}
-              bsStyle='primary'
-              className='btn-primary-invert'
-              href={guideUrl}
-              target='_blank'
-              >
-              Get a hint
-            </Button>
-          )}
+      <div className='tool-panel-group project-tool-panel'>
+        {guideUrl && (
           <Button
             block={true}
             bsStyle='primary'
             className='btn-primary-invert'
-            onClick={openHelpModal}
+            href={guideUrl}
+            target='_blank'
             >
-            Ask for help
+            Get a hint
           </Button>
-        </div>
+        )}
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-primary-invert'
+          onClick={openHelpModal}
+          >
+          Ask for help
+        </Button>
       </div>
     );
   }

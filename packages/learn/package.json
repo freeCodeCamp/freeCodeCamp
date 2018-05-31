@@ -23,7 +23,6 @@
     "gatsby": "^1.9.243",
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-google-fonts": "^0.0.4",
-    "gatsby-plugin-offline": "^1.0.15",
     "gatsby-plugin-react-helmet": "^2.0.8",
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sitemap": "^1.2.21",
@@ -48,6 +47,7 @@
     "react-redux": "^5.0.7",
     "react-reflex": "^2.2.1",
     "react-router-redux": "^5.0.0-alpha.9",
+    "react-spinkit": "^3.0.0",
     "react-test-renderer": "^16.3.1",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
@@ -57,7 +57,8 @@
     "rxjs": "^5.5.7",
     "store": "^2.0.12",
     "uglifyjs-webpack-plugin": "^1.2.4",
-    "validator": "^9.4.1"
+    "validator": "^9.4.1",
+    "webpack-remove-serviceworker-plugin": "^1.0.0"
   },
   "keywords": [
     "gatsby"
@@ -77,7 +78,8 @@
     "lint:src": "eslint ./src . --fix",
     "lint:utils": "eslint ./utils . --fix",
     "pretty": "yarn format && yarn lint",
-    "test": "yarn format && jest src",
+    "test": "jest src",
+    "test:ci": "yarn format && jest src",
     "test:watch": "jest --watch src"
   },
   "jest": {

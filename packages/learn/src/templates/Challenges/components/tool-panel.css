@@ -1,22 +1,8 @@
-.tool-panel {
-  height: 40px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  background-color: #99C199;
+.tool-panel-group button, .tool-panel-group a {
+  font-size: 1.1rem;
 }
 
-#centre-tool-panel {
-  width: 300px;
-}
-
-#right-tool-panel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#right-tool-panel a, #right-tool-panel .btn-block {
-  margin: 0;
+.project-tool-panel {
+  width: 100%;
+  padding: 0 15px;
 }

@@ -63,3 +63,11 @@ export const AllChallengeNode = PropTypes.shape({
     })
   )
 });
+
+export const AllMarkdownRemark = PropTypes.shape({
+  edges: PropTypes.arrayOf(
+    PropTypes.shape({
+      node: MarkdownRemark
+    })
+  )
+});

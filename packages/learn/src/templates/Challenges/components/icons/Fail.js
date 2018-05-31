@@ -1,7 +1,5 @@
 import React from 'react';
 
-const propTypes = {};
-
 function RedFail() {
   return (
     <svg
@@ -15,9 +13,9 @@ function RedFail() {
         <circle
           cx='100'
           cy='99'
-          fill='#ff0000'
+          fill='#555'
           r='95'
-          stroke='#ff0000'
+          stroke='#555'
           strokeDasharray='null'
           strokeLinecap='null'
           strokeLinejoin='null'
@@ -52,6 +50,5 @@ function RedFail() {
 }
 
 RedFail.displayName = 'RedFail';
-RedFail.propTypes = propTypes;
 
 export default RedFail;

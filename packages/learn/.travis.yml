@@ -6,3 +6,4 @@ node_js:
 cache:
   directories:
   - "node_modules"
+script: "yarn test:ci"

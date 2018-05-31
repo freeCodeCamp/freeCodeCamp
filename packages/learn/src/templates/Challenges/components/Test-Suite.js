@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import GreenPass from './icons/GreenPass';
-import RedFail from './icons/RedFail';
+import Fail from './icons/Fail';
+import Initial from './icons/Initial';
 
 import './test-suite.css';
 
@@ -28,6 +29,8 @@ function TestSuite({ tests }) {
   return (
     <div className='challenge-test-suite'>
       {tests.map(({ err, pass = false, text = '' }, index) => {
+        const isInitial = !pass && !err;
+        const statusIcon = pass && !err ? <GreenPass /> : <Fail />;
         return (
           <div
             aria-label={getAccessibleText(err, pass, text)}
@@ -36,7 +39,7 @@ function TestSuite({ tests }) {
             tabIndex='0'
             >
             <div className='test-status-icon'>
-              {pass ? <GreenPass /> : <RedFail />}
+              {isInitial ? <Initial /> : statusIcon}
             </div>
             <div
               aria-hidden='true'

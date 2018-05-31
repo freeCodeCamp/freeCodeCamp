@@ -6,3 +6,7 @@
   max-width: 960px;
   margin: 0 auto;
 }
+
+.index-page-wrapper p {
+  margin-bottom: 0.75rem;
+}

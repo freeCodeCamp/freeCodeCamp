@@ -68,7 +68,6 @@ module.exports = {
         fonts: ['Lato:400,400i,500']
       }
     },
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-offline'
+    'gatsby-plugin-sitemap'
   ]
 };

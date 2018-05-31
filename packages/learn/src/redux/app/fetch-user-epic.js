@@ -1,18 +1,26 @@
 /* global HOME_PATH */
 import { of } from 'rxjs/observable/of';
+import { merge } from 'rxjs/observable/merge';
 import { ofType } from 'redux-observable';
-import { types, fetchUserComplete, hardGoTo } from './';
+import {
+  types,
+  fetchUserComplete,
+  fetchUserError,
+  noUserFound,
+  hardGoTo
+} from './';
 import {
   switchMap,
   filter,
   map,
   catchError,
-  defaultIfEmpty
+  defaultIfEmpty,
+  mapTo
 } from 'rxjs/operators';
 import { jwt } from '../cookieVaules';
 
 function fetchUserEpic(action$, _, { services }) {
-  return action$.pipe(
+  const fetchUser = action$.pipe(
     ofType(types.fetchUser),
     filter(() => !!jwt),
     switchMap(() => {
@@ -25,14 +33,20 @@ function fetchUserEpic(action$, _, { services }) {
           }
           return fetchUserComplete(response);
         }),
-        defaultIfEmpty({ type: 'no-user' }),
-        catchError(err => {
-          console.log(err);
-          return of({ type: 'fetch-user-error' });
+        defaultIfEmpty(noUserFound()),
+        catchError(() => {
+          return of(fetchUserError());
         })
       );
     })
   );
+  const isLoadingRequired = action$.pipe(
+    ofType(types.fetchUser),
+    filter(() => !jwt),
+    mapTo(noUserFound())
+  );
+
+  return merge(fetchUser, isLoadingRequired);
 }
 
 export default fetchUserEpic;

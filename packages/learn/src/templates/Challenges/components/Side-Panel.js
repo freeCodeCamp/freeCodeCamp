@@ -6,11 +6,16 @@ import { bindActionCreators } from 'redux';
 
 import ChallengeTitle from './Challenge-Title';
 import ChallengeDescription from './Challenge-Description';
+import ToolPanel from './Tool-Panel';
+import TestSuite from './Test-Suite';
 import Spacer from '../../../components/util/Spacer';
 
-import { initConsole } from '../redux';
+import { initConsole, challengeTestsSelector } from '../redux';
+import { createSelector } from 'reselect';
 
-const mapStateToProps = () => ({});
+const mapStateToProps = createSelector(challengeTestsSelector, tests => ({
+  tests
+}));
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
@@ -22,7 +27,9 @@ const mapDispatchToProps = dispatch =>
 
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
+  guideUrl: PropTypes.string,
   initConsole: PropTypes.func.isRequired,
+  tests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string
 };
 
@@ -52,7 +59,7 @@ export class SidePanel extends PureComponent {
   }
 
   render() {
-    const { title, description } = this.props;
+    const { title, description, guideUrl, tests } = this.props;
     return (
       <div className='instructions-panel' role='complementary'>
         <div ref={this.bindTopDiv} />
@@ -61,7 +68,9 @@ export class SidePanel extends PureComponent {
           <ChallengeTitle>{title}</ChallengeTitle>
           <ChallengeDescription description={description} />
         </div>
-        <Spacer />
+        <hr />
+        <ToolPanel guideUrl={guideUrl} />
+        <TestSuite tests={tests} />
       </div>
     );
   }

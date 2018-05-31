@@ -104,6 +104,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 };
 
 const webpack = require('webpack');
+const RmServiceWorkerPlugin = require('webpack-remove-serviceworker-plugin');
 const generateBabelConfig = require('gatsby/dist/utils/babel-config');
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
@@ -142,6 +143,9 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
           process.env.HOME_PATH || 'http://localhost:3000'
         )
       }
+    ]);
+    config.plugin('RemoveServiceWorkerPlugin', RmServiceWorkerPlugin, [
+      { filename: 'sw.js' }
     ]);
   });
 };

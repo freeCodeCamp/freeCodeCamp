@@ -70,6 +70,13 @@ header {
   font-weight: 500;
 }
 
+.user-state-spinner {
+  height: 40px;
+}
+
+.user-state-spinner > div {
+  animation-duration: 1.5s !important;
+}
 
 /* Search bar */
 .fcc_searchBar {

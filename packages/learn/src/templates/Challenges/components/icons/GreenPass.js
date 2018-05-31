@@ -1,7 +1,5 @@
 import React from 'react';
 
-const propTypes = {};
-
 function GreenPass(props) {
   return (
     <svg
@@ -53,6 +51,5 @@ function GreenPass(props) {
 }
 
 GreenPass.displayName = 'GreenPass';
-GreenPass.propTypes = propTypes;
 
 export default GreenPass;

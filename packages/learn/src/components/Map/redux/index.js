@@ -8,8 +8,12 @@ export const getNS = () => ns;
 
 const initialState = {
   expandedState: {
-    superBlock: {},
-    block: {}
+    superBlock: {
+      'Responsive Web Design': true
+    },
+    block: {
+      'basic-html-and-html5': true
+    }
   }
 };
 

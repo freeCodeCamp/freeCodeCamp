@@ -45,6 +45,14 @@ const propTypes = {
   toggleSuperBlock: PropTypes.func.isRequired
 };
 
+const codingPrepRE = new RegExp('Interview Prep');
+
+function createSuperBlockTitle(str) {
+  return codingPrepRE.test(str)
+    ? `${str} (Thousands of hours of challenges)`
+    : `${str} Certification (300 hours)`;
+}
+
 export class SuperBlock extends PureComponent {
   renderBlock(superBlock) {
     const { nodes, introNodes } = this.props;
@@ -54,7 +62,6 @@ export class SuperBlock extends PureComponent {
     const blockDashedNames = uniq(
       blocksForSuperBlock.map(({ block }) => block)
     );
-
     return (
       <ul>
         {blockDashedNames.map(blockDashedName => (
@@ -84,7 +91,7 @@ export class SuperBlock extends PureComponent {
       <li className={`superblock ${isExpanded ? 'open' : ''}`}>
         <div className='map-title' onClick={() => toggleSuperBlock(superBlock)}>
           <Caret />
-          <h4>{superBlock}</h4>
+          <h4>{createSuperBlockTitle(superBlock)}</h4>
         </div>
         {isExpanded ? this.renderBlock(superBlock) : null}
       </li>

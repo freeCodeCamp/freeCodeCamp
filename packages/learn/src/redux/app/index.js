@@ -14,6 +14,7 @@ export const types = createTypes(
     'fetchUser',
     'fetchUserComplete',
     'fetchUserError',
+    'noUserFound',
     'hardGoTo',
     'updateUserSignedIn',
     'toggleMapModal'
@@ -23,6 +24,7 @@ export const types = createTypes(
 
 const initialState = {
   appUsername: '',
+  showLoading: true,
   isSignedIn: false,
   user: {},
   showMapModal: false
@@ -30,7 +32,8 @@ const initialState = {
 
 export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(types.fetchUserComplete);
-export const fecthUserError = createAction(types.fetchUserError);
+export const fetchUserError = createAction(types.fetchUserError);
+export const noUserFound = createAction(types.noUserFound);
 
 export const hardGoTo = createAction(types.hardGoTo);
 
@@ -41,6 +44,7 @@ export const updateUserSignedIn = createAction(types.updateUserSignedIn);
 export const isMapModalOpenSelector = state => state[ns].showMapModal;
 export const isSignedInSelector = state => state[ns].isSignedIn;
 export const userSelector = state => state[ns].user || {};
+export const userStateLoadingSelector = state => state[ns].showLoading;
 export const completedChallengesSelector = state =>
   state[ns].user.completedChallenges || [];
 export const currentChallengeIdSelector = state =>
@@ -55,8 +59,11 @@ export const reducer = handleActions(
       ...state,
       appUsername: result,
       user: user[result],
+      showLoading: false,
       isSignedIn: !!Object.keys(user).length
     }),
+    [types.fetchUserError]: state => ({ ...state, showLoading: false }),
+    [types.noUserFound]: state => ({ ...state, showLoading: false }),
     [types.toggleMapModal]: state => ({
       ...state,
       showMapModal: !state.showMapModal

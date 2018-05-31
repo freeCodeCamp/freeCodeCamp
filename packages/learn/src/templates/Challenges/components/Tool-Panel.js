@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -7,7 +7,6 @@ import { Button } from 'react-bootstrap';
 
 import './tool-panel.css';
 import { openModal, executeChallenge } from '../redux';
-import { toggleMapModal } from '../../../redux/app';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
@@ -15,8 +14,7 @@ const mapDispatchToProps = dispatch =>
     {
       executeChallenge,
       openHelpModal: () => openModal('help'),
-      openResetModal: () => openModal('reset'),
-      toggleMapModal
+      openResetModal: () => openModal('reset')
     },
     dispatch
   );
@@ -25,37 +23,29 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
   openHelpModal: PropTypes.func.isRequired,
-  openResetModal: PropTypes.func.isRequired,
-  toggleMapModal: PropTypes.func.isRequired
+  openResetModal: PropTypes.func.isRequired
 };
 
 function ToolPanel({
   executeChallenge,
   openHelpModal,
   openResetModal,
-  toggleMapModal,
   guideUrl
 }) {
   return (
-    <div className='tool-panel'>
-      <div id='left-tool-panel'>
-        <Button
-          bsStyle='primary'
-          className='btn-primary-invert'
-          onClick={toggleMapModal}
-          >
-          View the Curriculum
-        </Button>
-      </div>
-      <div id='centre-tool-panel'>
-        <Button bsStyle='primary' onClick={executeChallenge}>
+    <Fragment>
+      <div className='tool-panel-group'>
+        <Button block={true} bsStyle='primary' onClick={executeChallenge}>
           Run the Tests
         </Button>
-        <Button bsStyle='default' onClick={openResetModal}>
+        <Button
+          block={true}
+          bsStyle='primary'
+          className='btn-primary-invert'
+          onClick={openResetModal}
+          >
           Reset All Code
         </Button>
-      </div>
-      <div id='right-tool-panel'>
         {guideUrl ? (
           <Button
             block={true}
@@ -76,7 +66,7 @@ function ToolPanel({
           Ask for help
         </Button>
       </div>
-    </div>
+    </Fragment>
   );
 }
 

@@ -10,7 +10,6 @@ import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import Editor from './Editor';
 import Preview from '../components/Preview';
 import SidePanel from '../components/Side-Panel';
-import TestSuite from '../components/Test-Suite';
 import Output from '../components/Output';
 import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
@@ -32,8 +31,6 @@ import {
 } from '../redux';
 
 import './classic.css';
-import ToolPanel from '../components/Tool-Panel';
-import Spacer from '../../../components/util/Spacer';
 
 const mapStateToProps = createSelector(
   challengeFilesSelector,
@@ -157,7 +154,6 @@ class ShowClassic extends PureComponent {
   }
 
   render() {
-    // console.log(this.state)
     const {
       data: {
         challengeNode: {
@@ -169,7 +165,6 @@ class ShowClassic extends PureComponent {
         }
       },
       files,
-      tests,
       output
     } = this.props;
     const editors = Object.keys(files)
@@ -202,9 +197,7 @@ class ShowClassic extends PureComponent {
               <Output
                 defaultOutput={`
 /**
-* Your output will go here.
-* Any console.log() statements
-* will appear in here as well.
+* Your test output will go here.
 */
 `}
                 output={output}
@@ -220,12 +213,12 @@ class ShowClassic extends PureComponent {
     return (
       <Fragment>
         <Helmet title={`${blockNameTitle} | Learn freeCodeCamp`} />
-        <ToolPanel guideUrl={guideUrl} />
         <ReflexContainer orientation='vertical'>
           <ReflexElement flex={1} {...this.resizeProps}>
             <SidePanel
               className='full-height'
               description={description}
+              guideUrl={guideUrl}
               title={blockNameTitle}
             />
           </ReflexElement>
@@ -234,16 +227,14 @@ class ShowClassic extends PureComponent {
             {editors}
           </ReflexElement>
           <ReflexSplitter propagate={true} {...this.resizeProps} />
-          <ReflexElement flex={0.5} {...this.resizeProps}>
-            {showPreview ? (
+          {showPreview ? (
+            <ReflexElement flex={0.7} {...this.resizeProps}>
               <Preview
                 className='full-height'
                 disableIframe={this.state.resizing}
               />
-            ) : null}
-            <Spacer />
-            <TestSuite tests={tests} />
-          </ReflexElement>
+            </ReflexElement>
+          ) : null}
         </ReflexContainer>
 
         <CompletionModal />
