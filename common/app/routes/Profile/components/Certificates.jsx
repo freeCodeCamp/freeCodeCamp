@@ -162,7 +162,9 @@ function Certificates({
         {
           hasLegacyCert ?
           <div>
-            <h3>Legacy Certifications</h3>
+            <br />
+            <h3 className='text-center'>Legacy Certifications</h3>
+            <br />
             {
               legacyCerts.map(renderCertShowWithUsername)
             }
