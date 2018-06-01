@@ -41,6 +41,9 @@ export default function errrorReporter() {
     if (isHandledError(err) || err.statusCode || err.status) {
       return next(err);
     }
+    // logging the error provides us with more information,
+    // i.e isAuthenticatedUser, req.route
+    console.error(errTemplate(err, req));
     return rollbar.error(err.message, err);
   };
 }
