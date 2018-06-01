@@ -1,5 +1,5 @@
 import { defaultProfileImage } from '../../common/utils/constantStrings.json';
-import { getRandomQuote } from '../../common/app/utils/quotes';
+import { randomQuote } from '../../common/app/utils/get-words';
 import { cachedMap } from '../utils/map';
 // import NewsFeed from '../rss';
 
@@ -37,7 +37,7 @@ module.exports = function(app, done) {
   function index(req, res) {
     const { user } = req;
     const homePage = user ? 'userHome' : 'noUserHome';
-    const { quote, author} = getRandomQuote();
+    const { quote, author} = randomQuote();
     const title = user ?
       `Welcome, ${user.name ? user.name : 'Camper'}!` :
       'Learn to Code and Help Nonprofits';
