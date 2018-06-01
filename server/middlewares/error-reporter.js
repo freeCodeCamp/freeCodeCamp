@@ -34,8 +34,13 @@ export default function errrorReporter() {
     };
   }
   return (err, req, res, next) => {
-    console.error(errTemplate(err, req));
-    rollbar.error(err.message, err);
-    next(err);
+    // handled errors do not need to be reported,
+    // they report a message and maybe redirect the user
+    // errors with status codes shouldn't be reported
+    // as they are usually user messages
+    if (isHandledError(err) || err.statusCode || err.status) {
+      return next(err);
+    }
+    return rollbar.error(err.message, err);
   };
 }
