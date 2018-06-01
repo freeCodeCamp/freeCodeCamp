@@ -19,7 +19,7 @@
         "<strong>User Story #6:</strong> I should see an element with a corresponding <code>id=\"tribute-info\"</code>, which contains textual content describing the subject of the tribute page.",
         "<strong>User Story #7:</strong> I  should see an <code>a</code> element with a corresponding <code>id=\"tribute-link\"</code>, which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of <code>target</code> and set it to <code>_blank</code> in order for your link to open in a new tab (i.e. <code>target=\"_blank\"</code>).",
         "<strong>User Story #8:</strong> The <code>img</code> element should responsively resize, relative to the width of its parent element, without exceeding its original size.",
-        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>.",
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
@@ -62,7 +62,7 @@
         "<strong>User Story #14:</strong> Inside the form element, I can select several fields from a series of checkboxes, each of which must have a <code>value</code> attribute.",
         "<strong>User Story #15:</strong> Inside the form element, I am presented with a <code>textarea</code> at the end for additional comments.",
         "<strong>User Story #16:</strong> Inside the form element, I am presented with a button with <code>id=\"submit\"</code> to submit all my inputs.",
-        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
@@ -94,7 +94,7 @@
         "<strong>User Story #13:</strong> The navbar should always be at the top of the viewport.",
         "<strong>User Story #14:</strong> My product landing page should have at least one media query.",
         "<strong>User Story #15:</strong> My product landing page should utilize CSS flexbox at least once.",
-        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/full/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/full/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
@@ -126,7 +126,7 @@
         "<strong>User Story #13:</strong> When I click on a navbar element, the page should navigate to the corresponding section of the <code>main-doc</code> element (e.g. If I click on a <code>nav-link</code> element that contains the text \"Hello world\", the page navigates to a <code>section</code> element that has that id and contains the corresponding <code>header</code>.",
         "<strong>User Story #14:</strong> On regular sized devices (laptops, desktops), the element with <code>id=\"navbar\"</code> should be shown on the left side of the screen and should always be visible to the user.",
         "<strong>User Story #15:</strong> My Technical Documentation page should use at least one media query.",
-        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
@@ -154,7 +154,7 @@
         "<strong>User Story #9:</strong> My portfolio should have at least one media query.",
         "<strong>User Story #10:</strong> The height of the welcome section should be equal to the height of the viewport.",
         "<strong>User Story #11:</strong> The navbar should always be at the top of the viewport.",
-        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
       ],
