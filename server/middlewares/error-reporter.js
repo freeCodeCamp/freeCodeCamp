@@ -34,8 +34,16 @@ export default function errrorReporter() {
     };
   }
   return (err, req, res, next) => {
+    // handled errors do not need to be reported,
+    // they report a message and maybe redirect the user
+    // errors with status codes shouldn't be reported
+    // as they are usually user messages
+    if (isHandledError(err) || err.statusCode || err.status) {
+      return next(err);
+    }
+    // logging the error provides us with more information,
+    // i.e isAuthenticatedUser, req.route
     console.error(errTemplate(err, req));
-    rollbar.error(err.message, err);
-    next(err);
+    return rollbar.error(err.message, err);
   };
 }
