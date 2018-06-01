@@ -36,17 +36,7 @@ exports[`<Block expanded snapshot: block-expanded 1`] = `
     >
       <span
         className="badge map-badge"
-      >
-        <GreenNotCompleted
-          style={
-            Object {
-              "height": "15px",
-              "marginRight": "10px",
-              "width": "15px",
-            }
-          }
-        />
-      </span>
+      />
       <Unknown
         onClick={[Function]}
         to="/super-block-one/block-a"

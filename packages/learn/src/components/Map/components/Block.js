@@ -75,10 +75,18 @@ export class Block extends PureComponent {
     };
   }
 
+  renderCheckMark(isCompleted) {
+    return isCompleted ? (
+      <GreenPass style={mapIconStyle} />
+    ) : (
+      <GreenNotCompleted style={mapIconStyle} />
+    );
+  }
+
   renderChallenges(intro = {}, challenges = []) {
     // TODO: Split this into a Challenge Component and add tests
     // TODO: The styles badge and map-badge on the completion span do not exist
-    return [intro].concat(challenges).map(challenge => {
+    return [intro].concat(challenges).map((challenge, i) => {
       const completedClass = challenge.isCompleted
         ? ' map-challenge-title-completed'
         : '';
@@ -88,11 +96,7 @@ export class Block extends PureComponent {
           key={'map-challenge' + challenge.fields.slug}
           >
           <span className='badge map-badge'>
-            {challenge.isCompleted ? (
-              <GreenPass style={mapIconStyle} />
-            ) : (
-              <GreenNotCompleted style={mapIconStyle} />
-            )}
+            {i !== 0 && this.renderCheckMark(challenge.isCompleted)}
           </span>
           <Link
             onClick={this.handleChallengeClick(challenge.fields.slug)}
