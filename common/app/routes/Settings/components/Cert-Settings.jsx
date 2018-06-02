@@ -51,13 +51,13 @@ const mapStateToProps = createSelector(
         ...current
       }), {}),
     blockNameIsCertMap: {
-      'Applied Responsive Web Design Projects': isRespWebDesignCert,
+      'Responsive Web Design Projects': isRespWebDesignCert,
       /* eslint-disable max-len */
       'JavaScript Algorithms and Data Structures Projects': isJsAlgoDataStructCert,
       /* eslint-enable max-len */
       'Front End Libraries Projects': isFrontEndLibsCert,
       'Data Visualization Projects': is2018DataVisCert,
-      'API and Microservice Projects': isApisMicroservicesCert,
+      'APIs and Microservices Projects': isApisMicroservicesCert,
       'Information Security and Quality Assurance Projects': isInfosecQaCert,
       'Legacy Front End Projects': isFrontEndCert,
       'Legacy Back End Projects': isBackEndCert,
