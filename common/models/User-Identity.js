@@ -106,7 +106,9 @@ export default function(UserIdent) {
               new Error('user identity account not found'),
               {
                 message: dedent`
-                  New accounts can only be created using an email address.
+    We cannot create new user accounts with the deprecated social sign in
+    methods. If you already have an account with us, please sign in with your
+    email address instead.
                 `,
                 type: 'info',
                 redirectTo: '/'
