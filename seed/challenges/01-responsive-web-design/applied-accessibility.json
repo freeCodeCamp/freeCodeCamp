@@ -494,7 +494,7 @@
         },
         {
           "text": "Make sure your <code>audio</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/audio>/g) && code.match(/<audio controls>/g) && code.match(/<\\/audio>/g).length === code.match(/<audio controls>/g).length, 'Make sure your <code>audio</code> element has a closing tag.');"
+          "testString": "assert(code.match(/<\\/audio>/g), 'Make sure your <code>audio</code> element has a closing tag.');"
         },
         {
           "text": "The <code>audio</code> tag should have the <code>controls</code> attribute.",
