@@ -4,7 +4,7 @@ Joi.objectId = require('joi-objectid')(Joi);
 const schema = Joi.object().keys({
   block: Joi.string(),
   blockId: Joi.objectId(),
-  challengeType: Joi.number().min(0).max(9).required(),
+  challengeType: Joi.number().integer().min(0).max(9).required().options({ convert: false }),
   checksum: Joi.number(),
   dashedName: Joi.string(),
   description: Joi.array().items(
@@ -40,7 +40,7 @@ const schema = Joi.object().keys({
   isPrivate: Joi.bool(),
   isRequired: Joi.bool(),
   name: Joi.string(),
-  order: Joi.number(),
+  order: Joi.number().options({ convert: false }),
   required: Joi.array().items(
     Joi.object().keys({
       link: Joi.string(),
@@ -53,8 +53,8 @@ const schema = Joi.object().keys({
     Joi.string().optional()
   ),
   superBlock: Joi.string(),
-  superOrder: Joi.number(),
-  suborder: Joi.number(),
+  superOrder: Joi.number().options({ convert: false }),
+  suborder: Joi.number().options({ convert: false }),
   tests: Joi.array().items(
     // public challenges
     Joi.object().keys({
