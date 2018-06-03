@@ -3633,7 +3633,7 @@
         }
       ],
       "id": "5a7dad05be01840e1778a0d1",
-      "challengeType": "3",
+      "challengeType": 3,
       "releasedOn": "May 31, 2018",
       "files": {
         "indexjs": {
@@ -4404,7 +4404,7 @@
         }
       ],
       "id": "5a23c84252665b21eecc7e76",
-      "challengeType": "3",
+      "challengeType": 3,
       "releasedOn": "June 1, 2018",
       "files": {
         "indexjs": {
