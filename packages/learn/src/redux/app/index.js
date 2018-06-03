@@ -1,4 +1,5 @@
 import { createAction, handleActions } from 'redux-actions';
+import { uniqBy } from 'lodash';
 
 import { createTypes } from '../../../utils/stateManagment';
 import { types as challenge } from '../../templates/Challenges/redux';
@@ -72,14 +73,14 @@ export const reducer = handleActions(
       ...state,
       isSignedIn: payload
     }),
-    [challenge.submitComplete]: (state, { payload: { points, id } }) => ({
+    [challenge.submitComplete]: (state, { payload: { id } }) => ({
       ...state,
       user: {
         ...state.user,
-        completedChallenges:
-          points === state.user.points
-            ? state.user.completedChallenges
-            : [...state.user.completedChallengesSelector, { id }]
+        completedChallenges: uniqBy(
+          [...state.user.completedChallenges, { id }],
+          'id'
+        )
       }
     })
   },
