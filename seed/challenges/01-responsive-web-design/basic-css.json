@@ -4773,12 +4773,12 @@
       ],
       "tests": [
         {
-          "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-top</code> class.",
-          "testString": "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-top</code> class.');"
+          "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.",
+          "testString": "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.');"
         },
         {
-          "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-bottom</code> class.",
-          "testString": "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-bottom</code> class.');"
+          "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.",
+          "testString": "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
         },
         {
           "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.",
@@ -5031,11 +5031,11 @@
       "tests": [
         {
           "text": "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.",
-          "testString": "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
+          "testString": "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--penguin-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
         },
         {
           "text": "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.",
-          "testString": "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
+          "testString": "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--penguin-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
         }
       ],
       "solutions": [],
@@ -5067,7 +5067,7 @@
             "    left: 25%;",
             "  ",
             "    /* change code below */",
-            "    background: var(--pengiun-skin);",
+            "    background: var(--penguin-skin);",
             "    /* change code above */",
             "  ",
             "    width: 50%;",
@@ -5080,7 +5080,7 @@
             "    left: 23.5%;",
             "  ",
             "    /* change code below */",
-            "    background: var(--pengiun-skin);",
+            "    background: var(--penguin-skin);",
             "    /* change code above */",
             "  ",
             "    width: 53%;",
