@@ -823,7 +823,7 @@
             "  \"use strict\";",
             "  // change code below this line",
             "  arr = list; // change this",
-            "  // change code below this line",
+            "  // don't change code below this line",
             "  return arr;",
             "}",
             "const arr = removeFirstTwo(source);",
