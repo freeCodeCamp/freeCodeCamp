@@ -25,7 +25,7 @@
         },
         {
           "text": "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.",
-          "testString": "assert(code.match(/@media\\s?\\(max-height:\\s*?800px\\)/g), 'Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');"
+          "testString": "assert(code.match(/@media\\s?\\(max-height:\\s*?800px\\)/gi), 'Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -83,7 +83,7 @@
       "tests": [
         {
           "text": "Your <code>img</code> tag should have a <code>max-width</code> set to 100%.",
-          "testString": "assert(code.match(/max-width:\\s*?100%;/g), 'Your <code>img</code> tag should have a <code>max-width</code> set to 100%.');"
+          "testString": "assert(code.match(/max-width:\\s*?100%;/gi), 'Your <code>img</code> tag should have a <code>max-width</code> set to 100%.');"
         },
         {
           "text": "Your <code>img</code> tag should have a <code>display</code> set to block.",
@@ -91,7 +91,7 @@
         },
         {
           "text": "Your <code>img</code> tag should have a <code>height</code> set to auto.",
-          "testString": "assert(code.match(/height:\\s*?auto;/g), 'Your <code>img</code> tag should have a <code>height</code> set to auto.');"
+          "testString": "assert(code.match(/height:\\s*?auto;/gi), 'Your <code>img</code> tag should have a <code>height</code> set to auto.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -195,11 +195,11 @@
       "tests": [
         {
           "text": "Your <code>h2</code> tag should have a <code>width</code> of 80vw.",
-          "testString": "assert(code.match(/h2\\s*?{\\s*?width:\\s*?80vw;\\s*?}/g), 'Your <code>h2</code> tag should have a <code>width</code> of 80vw.');"
+          "testString": "assert(code.match(/h2\\s*?{\\s*?width:\\s*?80vw;\\s*?}/gi), 'Your <code>h2</code> tag should have a <code>width</code> of 80vw.');"
         },
         {
           "text": "Your <code>p</code> tag should have a <code>width</code> of 75vmin.",
-          "testString": "assert(code.match(/p\\s*?{\\s*?width:\\s*?75vmin;\\s*?}/g), 'Your <code>p</code> tag should have a <code>width</code> of 75vmin.');"
+          "testString": "assert(code.match(/p\\s*?{\\s*?width:\\s*?75vmin;\\s*?}/gi), 'Your <code>p</code> tag should have a <code>width</code> of 75vmin.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
