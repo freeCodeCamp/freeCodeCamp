@@ -9,19 +9,22 @@ module.exports = function(app, done) {
   const { About } = app.models;
   const router = app.loopback.Router();
   let challengeCount = 0;
-  cachedMap(app.models)
-    .do(({ entities: { challenge } }) => {
-      challengeCount = Object.keys(challenge).length;
-    })
-    .subscribe(
-      () => {},
-      err => {throw new Error(err);},
-      () => {
-        router.get('/', addDefaultImage, index);
-        app.use(router);
-        done();
-      }
-    );
+
+  if (!process.env.SEEDING) {
+    cachedMap(app.models)
+      .do(({ entities: { challenge } }) => {
+        challengeCount = Object.keys(challenge).length;
+      })
+      .subscribe(
+        () => {},
+        err => {throw new Error(err);},
+        () => {
+          router.get('/', addDefaultImage, index);
+          app.use(router);
+          done();
+        }
+      );
+  }
 
   function addDefaultImage(req, res, next) {
     if (!req.user || req.user.picture) {
