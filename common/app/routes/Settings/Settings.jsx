@@ -77,7 +77,7 @@ export class Settings extends React.Component {
     return (
       <div className={ `${ns}-container` }>
         <FullWidthRow>
-          <Link to={ `/portfolio/${username}` }>
+          <Link to={ `/${username}` }>
             <Button
               block={ true }
               bsSize='lg'
