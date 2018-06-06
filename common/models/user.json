@@ -262,10 +262,20 @@
         }
       },
       "default": {}
+    },
+    "isDonating": {
+      "type": "boolean",
+      "default": false,
+      "description": "Does the camper have an active donation"
     }
   },
   "validations": [],
   "relations": {
+    "donations": {
+      "type": "hasMany",
+      "modal": "donation",
+      "foreignKey": ""
+    },
     "credentials": {
       "type": "hasMany",
       "model": "userCredential",

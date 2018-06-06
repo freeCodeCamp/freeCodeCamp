@@ -518,6 +518,14 @@ module.exports = function(User) {
     )({ ttl });
   };
 
+  User.prototype.createDonation = function createDonation(donation = {}) {
+    return Observable.fromNodeCallback(
+      this.donations.create.bind(this.donations)
+    )(donation)
+    .do(() => this.update$({isDonating: true }))
+    .do(() => {this.isDonating = true;});
+  };
+
   User.prototype.getEncodedEmail = function getEncodedEmail(email) {
     if (!email) {
       return null;
