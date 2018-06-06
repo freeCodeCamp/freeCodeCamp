@@ -3666,6 +3666,295 @@
       }
     },
     {
+      "title": "Gamma function",
+      "description": [
+        "Implement one algorithm (or more) to compute the <a href=\"https://en.wikipedia.org/wiki/Gamma function\">Gamma</a> ($\\Gamma$) function (in the real field only).",
+        "The Gamma function can be defined as:",
+        "<div style='padding-left: 4em;'><big><big>$\\Gamma(x) = \\displaystyle\\int_0^\\infty t^{x-1}e^{-t} dt$</big></big></div>"
+      ],
+      "solutions": [
+        "function gamma(x) {\n  var p = [0.99999999999980993, 676.5203681218851, -1259.1392167224028,\n  771.32342877765313, -176.61502916214059, 12.507343278686905,\n  -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7\n  ];\n   \n  var g = 7;\n  if (x < 0.5) {\n    return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));\n  }\n\n  x -= 1;\n  var a = p[0];\n  var t = x + g + 0.5;\n  for (var i = 1; i < p.length; i++) {\n  a += p[i] / (x + i);\n  }\n   \n  var result=Math.sqrt(2 * Math.PI) * Math.pow(t, x + 0.5) * Math.exp(-t) * a;\n\n  return result;\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "<code>gamma</code> should be a function.",
+          "testString": "assert(typeof gamma=='function','<code>gamma</code> should be a function.')"
+        },
+        {
+          "text": "<code>gamma('+tests[0]+')</code> should return a number.",
+          "testString": "assert(typeof gamma(tests[0])=='number','<code>gamma('+tests[0]+')</code> should return a number.')"
+        },
+        {
+          "text": "<code>gamma('+tests[0]+')</code> should return <code>'+results[0]+'</code>.",
+          "testString": "assert.equal(gamma(tests[0]),results[0],'<code>gamma('+tests[0]+')</code> should return <code>'+results[0]+'</code>.')"
+        },
+        {
+          "text": "<code>gamma('+tests[1]+')</code> should return <code>'+results[1]+'</code>.",
+          "testString": "assert.equal(gamma(tests[1]),results[1],'<code>gamma('+tests[1]+')</code> should return <code>'+results[1]+'</code>.')"
+        },
+        {
+          "text": "<code>gamma('+tests[2]+')</code> should return <code>'+results[2]+'</code>.",
+          "testString": "assert.equal(gamma(tests[2]),results[2],'<code>gamma('+tests[2]+')</code> should return <code>'+results[2]+'</code>.')"
+        },
+        {
+          "text": "<code>gamma('+tests[3]+')</code> should return <code>'+results[3]+'</code>.",
+          "testString": "assert.equal(gamma(tests[3]),results[3],'<code>gamma('+tests[3]+')</code> should return <code>'+results[3]+'</code>.')"
+        },
+        {
+          "text": "<code>gamma('+tests[4]+')</code> should return <code>'+results[4]+'</code>.",
+          "testString": "assert.equal(gamma(tests[4]),results[4],'<code>gamma('+tests[4]+')</code> should return <code>'+results[4]+'</code>.')"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7e76",
+      "challengeType": 5,
+      "releasedOn": "June 1, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function gamma (x) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "let tests=[.1,.2,.3,.4,.5];",
+            "let results=[",
+            "  9.513507698668736,",
+            "  4.590843711998803,",
+            "  2.9915689876875904,",
+            "  2.218159543757687,",
+            "  1.7724538509055159",
+            "];"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Gaussian elimination",
+      "description": [
+        "Write a function to solve \\(A.x = b\\) using Gaussian elimination then backwards substitution. \\(A\\) being an \\(n \\times n\\) matrix. Also, \\(x\\) and \\(b\\) are \\(n\\) by 1 vectors. To improve accuracy, please use partial pivoting and scaling."
+      ],
+      "solutions": [
+        "function gaussianElimination(A, b) {\n  // Lower Upper Decomposition\n  function ludcmp(A) {\n  \t// A is a matrix that we want to decompose into Lower and Upper matrices.\n  \tvar d = true\n  \tvar n = A.length\n  \tvar idx = new Array(n) // Output vector with row permutations from partial pivoting\n  \tvar vv = new Array(n) // Scaling information\n   \n  \tfor (var i=0; i<n; i++) {\n  \t\tvar max = 0\n  \t\tfor (var j=0; j<n; j++) {\n  \t\t\tvar temp = Math.abs(A[i][j])\n  \t\t\tif (temp > max) max = temp\n  \t\t}\n  \t\tif (max == 0) return // Singular Matrix!\n  \t\tvv[i] = 1 / max // Scaling\n  \t}\n   \n\t\tvar Acpy = new Array(n)\n\t\tfor (var i=0; i<n; i++) {\n\t\t\tvar Ai = A[i]\n\t\t\tlet Acpyi = new Array(Ai.length)\n\t\t\tfor (j=0; j<Ai.length; j+=1) Acpyi[j] = Ai[j]\n\t\t\tAcpy[i] = Acpyi\n\t\t}\n\t\tA = Acpy\n   \n  \tvar tiny = 1e-20 // in case pivot element is zero\n  \tfor (var i=0; ; i++) {\n  \t\tfor (var j=0; j<i; j++) {\n  \t\t\tvar sum = A[j][i]\n  \t\t\tfor (var k=0; k<j; k++) sum -= A[j][k] * A[k][i];\n  \t\t\tA[j][i] = sum\n  \t\t}\n  \t\tvar jmax = 0\n  \t\tvar max = 0;\n  \t\tfor (var j=i; j<n; j++) {\n  \t\t\tvar sum = A[j][i]\n  \t\t\tfor (var k=0; k<i; k++) sum -= A[j][k] * A[k][i];\n  \t\t\tA[j][i] = sum\n  \t\t\tvar temp = vv[j] * Math.abs(sum)\n  \t\t\tif (temp >= max) {\n  \t\t\t\tmax = temp\n  \t\t\t\tjmax = j\n  \t\t\t}\n  \t\t}\n  \t\tif (i <= jmax) {\n  \t\t\tfor (var j=0; j<n; j++) {\n  \t\t\t\tvar temp = A[jmax][j]\n  \t\t\t\tA[jmax][j] = A[i][j]\n  \t\t\t\tA[i][j] = temp\n  \t\t\t}\n  \t\t\td = !d;\n  \t\t\tvv[jmax] = vv[i]\n  \t\t}\n  \t\tidx[i] = jmax;\n  \t\tif (i == n-1) break;\n  \t\tvar temp = A[i][i]\n  \t\tif (temp == 0) A[i][i] = temp = tiny\n  \t\ttemp = 1 / temp\n  \t\tfor (var j=i+1; j<n; j++) A[j][i] *= temp\n  \t}\n  \treturn {A:A, idx:idx, d:d}\n  }\n   \n  // Lower Upper Back Substitution\n  function lubksb(lu, b) {\n  \t// solves the set of n linear equations A*x = b.\n  \t// lu is the object containing A, idx and d as determined by the routine ludcmp.\n  \tvar A = lu.A\n  \tvar idx = lu.idx\n  \tvar n = idx.length\n\n\t\tvar bcpy = new Array(n)\n\t\tfor (var i=0; i<b.length; i+=1) bcpy[i] = b[i]\n\t\tb = bcpy\n   \n  \tfor (var ii=-1, i=0; i<n; i++) {\n  \t\tvar ix = idx[i]\n  \t\tvar sum = b[ix]\n  \t\tb[ix] = b[i]\n  \t\tif (ii > -1)\n  \t\t\tfor (var j=ii; j<i; j++) sum -= A[i][j] * b[j]\n  \t\telse if (sum)\n  \t\t\tii = i\n  \t\tb[i] = sum\n  \t}\n  \tfor (var i=n-1; i>=0; i--) {\n  \t\tvar sum = b[i]\n  \t\tfor (var j=i+1; j<n; j++) sum -= A[i][j] * b[j]\n  \t\tb[i] = sum / A[i][i]\n  \t}\n  \treturn b // solution vector x\n  }\n\n\tvar lu = ludcmp(A)\n\tif (lu === undefined) return // Singular Matrix!\n\treturn lubksb(lu, b)\n}\n\n\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>gaussianElimination</code> should be a function.'",
+          "testString": "assert(typeof gaussianElimination=='function','<code>gaussianElimination</code> should be a function.');"
+        },
+        {
+          "text": "'<code>gaussianElimination('+JSON.stringify(tests[0][0])+','+JSON.stringify(tests[0][1])+')</code> should return an array.'",
+          "testString": "assert(Array.isArray(gaussianElimination(tests[0][0],tests[0][1])),'<code>gaussianElimination('+JSON.stringify(tests[0][0])+','+JSON.stringify(tests[0][1])+')</code> should return an array.');"
+        },
+        {
+          "text": "'<code>gaussianElimination('+JSON.stringify(tests[0][0])+','+JSON.stringify(tests[0][1])+')</code> should return <code>'+JSON.stringify(results[0])+'</code>.'",
+          "testString": "assert.deepEqual(gaussianElimination(tests[0][0],tests[0][1]),results[0],'<code>gaussianElimination('+JSON.stringify(tests[0][0])+','+JSON.stringify(tests[0][1])+')</code> should return <code>'+JSON.stringify(results[0])+'</code>.');"
+        },
+        {
+          "text": "'<code>gaussianElimination('+JSON.stringify(tests[1][0])+','+JSON.stringify(tests[1][1])+')</code> should return <code>'+JSON.stringify(results[1])+'</code>.'",
+          "testString": "assert.deepEqual(gaussianElimination(tests[1][0],tests[1][1]),results[1],'<code>gaussianElimination('+JSON.stringify(tests[1][0])+','+JSON.stringify(tests[1][1])+')</code> should return <code>'+JSON.stringify(results[1])+'</code>.');"
+        },
+        {
+          "text": "'<code>gaussianElimination('+JSON.stringify(tests[2][0])+','+JSON.stringify(tests[2][1])+')</code> should return <code>'+JSON.stringify(results[2])+'</code>.'",
+          "testString": "assert.deepEqual(gaussianElimination(tests[2][0],tests[2][1]),results[2],'<code>gaussianElimination('+JSON.stringify(tests[2][0])+','+JSON.stringify(tests[2][1])+')</code> should return <code>'+JSON.stringify(results[2])+'</code>.');"
+        },
+        {
+          "text": "'<code>gaussianElimination('+JSON.stringify(tests[3][0])+','+JSON.stringify(tests[3][1])+')</code> should return <code>'+JSON.stringify(results[3])+'</code>.'",
+          "testString": "assert.deepEqual(gaussianElimination(tests[3][0],tests[3][1]),results[3],'<code>gaussianElimination('+JSON.stringify(tests[3][0])+','+JSON.stringify(tests[3][1])+')</code> should return <code>'+JSON.stringify(results[3])+'</code>.');"
+        },
+        {
+          "text": "'<code>gaussianElimination('+JSON.stringify(tests[4][0])+','+JSON.stringify(tests[4][1])+')</code> should return <code>'+JSON.stringify(results[4])+'</code>.'",
+          "testString": "assert.deepEqual(gaussianElimination(tests[4][0],tests[4][1]),results[4],'<code>gaussianElimination('+JSON.stringify(tests[4][0])+','+JSON.stringify(tests[4][1])+')</code> should return <code>'+JSON.stringify(results[4])+'</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7e77",
+      "challengeType": 5,
+      "releasedOn": "June 2, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function gaussianElimination (A,b) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "let tests=[",
+            "  [ [[1,1],[1,-1]] , [5,1] ],",
+            "  [ [[2,3],[2,1]] , [8,4] ],",
+            "  [ [[1,3],[5,-2]] , [14,19] ],",
+            "  [ [[1,1],[5,-1]] , [10,14] ],",
+            "  [ [[1,2,3],[4,5,6],[7,8,8]] , [6,15,23] ]",
+            "];",
+            "let results=[",
+            "  [ 3, 2 ],",
+            "  [ 1, 2 ],",
+            "  [ 5, 3 ],",
+            "  [ 4, 6 ],",
+            "  [ 1, 1, 1 ]",
+            "]"
+          ]
+        }
+      }
+    },
+    {
+      "title": "General FizzBuzz",
+"description": [
+        "Write a generalized version of <a href=\"http://rosettacode.org/wiki/FizzBuzz\">FizzBuzz</a> that works for any list of factors, along with their words.",
+        "This is basically a \"fizzbuzz\" implementation where the rules of the game are supplied to the user. Create a function to implement this. The function should take two parameters.",
+        "The first will be an array with the FizzBuzz rules. For example: <code>[ [3,\"Fizz\"] , [5,\"Buzz\"] ]</code>.",
+        "This indcates that <code>Fizz</code> should be printed if the number is a multiple of 3 and <code>Buzz</code> if it is a multiple of 5. If it is a multiple of both then the strings should be concatenated in the order specified in the array. In this case, <code>FizzBuzz</code> if the number is a multiple of 3 and 5.",
+        "The second parameter is the number for which the function should return a string as stated above."
+      ],
+      "solutions": [
+        "function genFizzBuzz(rules, num) {\n  let res='';\n  rules.forEach(function (e) {\n    if(num % e[0] == 0)\n      res+=e[1];\n  })\n\n  if(res==''){\n    res=num.toString();\n  }\n\n  return res;\n}\n\n\n\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>genFizzBuzz</code> should be a function.'",
+          "testString": "assert(typeof genFizzBuzz=='function','<code>genFizzBuzz</code> should be a function.');"
+        },
+        {
+          "text": "'<code>genFizzBuzz('+JSON.stringify(tests[0][0])+','+tests[0][1]+')</code> should return a type.'",
+          "testString": "assert(typeof genFizzBuzz(tests[0][0],tests[0][1])=='string','<code>genFizzBuzz('+JSON.stringify(tests[0][0])+','+tests[0][1]+')</code> should return a type.');"
+        },
+        {
+          "text": "'<code>genFizzBuzz('+JSON.stringify(tests[0][0])+','+tests[0][1]+')</code> should return <code>\"'+results[0]+'\"</code>.'",
+          "testString": "assert.equal(genFizzBuzz(tests[0][0],tests[0][1]),results[0],'<code>genFizzBuzz('+JSON.stringify(tests[0][0])+','+tests[0][1]+')</code> should return <code>\"'+results[0]+'\"</code>.');"
+        },
+        {
+          "text": "'<code>genFizzBuzz('+JSON.stringify(tests[1][0])+','+tests[1][1]+')</code> should return <code>\"'+results[1]+'\"</code>.'",
+          "testString": "assert.equal(genFizzBuzz(tests[1][0],tests[1][1]),results[1],'<code>genFizzBuzz('+JSON.stringify(tests[1][0])+','+tests[1][1]+')</code> should return <code>\"'+results[1]+'\"</code>.');"
+        },
+        {
+          "text": "'<code>genFizzBuzz('+JSON.stringify(tests[2][0])+','+tests[2][1]+')</code> should return <code>\"'+results[2]+'\"</code>.'",
+          "testString": "assert.equal(genFizzBuzz(tests[2][0],tests[2][1]),results[2],'<code>genFizzBuzz('+JSON.stringify(tests[2][0])+','+tests[2][1]+')</code> should return <code>\"'+results[2]+'\"</code>.');"
+        },
+        {
+          "text": "'<code>genFizzBuzz('+JSON.stringify(tests[3][0])+','+tests[3][1]+')</code> should return <code>\"'+results[3]+'\"</code>.'",
+          "testString": "assert.equal(genFizzBuzz(tests[3][0],tests[3][1]),results[3],'<code>genFizzBuzz('+JSON.stringify(tests[3][0])+','+tests[3][1]+')</code> should return <code>\"'+results[3]+'\"</code>.');"
+        },
+        {
+          "text": "'<code>genFizzBuzz('+JSON.stringify(tests[4][0])+','+tests[4][1]+')</code> should return <code>\"'+results[4]+'\"</code>.'",
+          "testString": "assert.equal(genFizzBuzz(tests[4][0],tests[4][1]),results[4],'<code>genFizzBuzz('+JSON.stringify(tests[4][0])+','+tests[4][1]+')</code> should return <code>\"'+results[4]+'\"</code>.');"
+        },
+        {
+          "text": "'<code>genFizzBuzz('+JSON.stringify(tests[5][0])+','+tests[5][1]+')</code> should return <code>\"'+results[5]+'\"</code>.'",
+          "testString": "assert.equal(genFizzBuzz(tests[5][0],tests[5][1]),results[5],'<code>genFizzBuzz('+JSON.stringify(tests[5][0])+','+tests[5][1]+')</code> should return <code>\"'+results[5]+'\"</code>.');"
+        },
+        {
+          "text": "'<code>genFizzBuzz('+JSON.stringify(tests[6][0])+','+tests[6][1]+')</code> should return <code>\"'+results[6]+'\"</code>.'",
+          "testString": "assert.equal(genFizzBuzz(tests[6][0],tests[6][1]),results[6],'<code>genFizzBuzz('+JSON.stringify(tests[6][0])+','+tests[6][1]+')</code> should return <code>\"'+results[6]+'\"</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7e78",
+      "challengeType": 5,
+      "releasedOn": "June 2, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function genFizzBuzz (rules, num) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "let tests=[",
+            "  [ [[3, 'Fizz'],[5, 'Buzz']], 6 ],",
+            "  [ [[3, 'Fizz'],[5, 'Buzz']], 10 ],",
+            "  [ [[3, 'Buzz'],[5, 'Fizz']], 12 ],",
+            "  [ [[3, 'Buzz'],[5, 'Fizz']], 13 ],",
+            "  [ [[3, 'Buzz'],[5, 'Fizz']], 15 ],",
+            "  [ [[3, 'Fizz'],[5, 'Buzz']], 15 ],",
+            "  [ [[3, 'Fizz'],[5, 'Buzz'],[7, 'Baxx']], 105 ],",
+            "]",
+            "let results=[",
+            "  \"Fizz\",",
+            "  \"Buzz\",",
+            "  \"Buzz\",",
+            "  \"13\",",
+            "  \"BuzzFizz\",",
+            "  \"FizzBuzz\",",
+            "  \"FizzBuzzBaxx\"",
+            "]"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Generate lower case ASCII alphabet",
+      "description": [
+        "Write a function to generate an array of lower case ASCII characters, for a given range. For example: for range 1 to 4 the function should return <code>['a','b','c','d']</code>."
+      ],
+      "solutions": [
+        "function lascii(cFrom, cTo) {\n\n  function cRange(cFrom, cTo) {\n    var iStart = cFrom.charCodeAt(0);\n\n    return Array.apply(\n      null, Array(cTo.charCodeAt(0) - iStart + 1)\n    ).map(function (_, i) {\n\n      return String.fromCharCode(iStart + i);\n\n    });\n  }\n\n  return cRange(cFrom, cTo);\n\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>lascii</code> should be a function.'",
+          "testString": "assert(typeof lascii=='function','<code>lascii</code> should be a function.');"
+        },
+        {
+          "text": "'<code>lascii(\"a\",\"d\")</code> should return an array.'",
+          "testString": "assert(Array.isArray(lascii('a','d')),'<code>lascii(\"a\",\"d\")</code> should return an array.');"
+        },
+        {
+          "text": "\"<code>lascii('a','d')</code> should return <code>[ 'a', 'b', 'c', 'd' ]</code>.\"",
+          "testString": "assert.deepEqual(lascii(\"a\",\"d\"),results[0],\"<code>lascii('a','d')</code> should return <code>[ 'a', 'b', 'c', 'd' ]</code>.\");"
+        },
+        {
+          "text": "\"<code>lascii('c','i')</code> should return <code>[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]</code>.\"",
+          "testString": "assert.deepEqual(lascii(\"c\",\"i\"),results[1],\"<code>lascii('c','i')</code> should return <code>[ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ]</code>.\");"
+        },
+        {
+          "text": "\"<code>lascii('m','q')</code> should return <code>[ 'm', 'n', 'o', 'p', 'q' ]</code>.\"",
+          "testString": "assert.deepEqual(lascii(\"m\",\"q\"),results[2],\"<code>lascii('m','q')</code> should return <code>[ 'm', 'n', 'o', 'p', 'q' ]</code>.\");"
+        },
+        {
+          "text": "\"<code>lascii('k','n')</code> should return <code>[ 'k', 'l', 'm', 'n' ]</code>.\")",
+          "testString": "assert.deepEqual(lascii(\"k\",\"n\"),results[3],\"<code>lascii('k','n')</code> should return <code>[ 'k', 'l', 'm', 'n' ]</code>.\");"
+        },
+        {
+          "text": "\"<code>lascii('t','z')</code> should return <code>[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]</code>.\"",
+          "testString": "assert.deepEqual(lascii(\"t\",\"z\"),results[4],\"<code>lascii('t','z')</code> should return <code>[ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]</code>.\");"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7e7a",
+      "challengeType": 5,
+      "releasedOn": "June 2, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function lascii (cFrom, cTo) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "let results=[",
+            "  [ 'a', 'b', 'c', 'd' ],",
+            "  [ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ],",
+            "  [ 'm', 'n', 'o', 'p', 'q' ],",
+            "  [ 'k', 'l', 'm', 'n' ],",
+            "  [ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]",
+            "]"
+          ]
+        }
+      }
+    },
+    {
       "title": "Hailstone sequence",
       "description": [
         "<p>The Hailstone sequence of numbers can be generated from a starting positive integer,  n  by:</p>",
@@ -4363,69 +4652,6 @@
           "tail": [
             "const testCase = [1000, 1500, 2000, 2500];",
             "const res = [502, 755, 1005, 1261];"
-          ]
-        }
-      }
-    },
-    {
-      "title": "Gamma function",
-      "description": ["<div class=\"rosetta\"><p class=\"rosetta__paragraph\">Implement one algorithm (or more) to compute the <a class=\"rosetta__link--wiki\" href=\"https://en.wikipedia.org/wiki/Gamma function\" title=\"wp: Gamma function\">Gamma</a> ($\\Gamma$) function (in the real field only).</p><p class=\"rosetta__paragraph\">The Gamma function can be defined as:</p><br/><p class=\"rosetta__paragraph\"><span class=\"rosetta__text--indented\">::::: <big><big> $\\Gamma(x) = \\displaystyle\\int_0^\\infty t^{x-1}e^{-t} dt$</big></big></span></p></div>"],
-      "solutions": [
-        "function gamma(x) {\n  var p = [0.99999999999980993, 676.5203681218851, -1259.1392167224028,\n  771.32342877765313, -176.61502916214059, 12.507343278686905,\n  -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7\n  ];\n   \n  var g = 7;\n  if (x < 0.5) {\n    return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));\n  }\n\n  x -= 1;\n  var a = p[0];\n  var t = x + g + 0.5;\n  for (var i = 1; i < p.length; i++) {\n  a += p[i] / (x + i);\n  }\n   \n  var result=Math.sqrt(2 * Math.PI) * Math.pow(t, x + 0.5) * Math.exp(-t) * a;\n\n  return result;\n}\n"
-      ],
-      "tests": [
-        {
-          "text": "<code>gamma</code> should be a function.",
-          "testString": "assert(typeof gamma=='function','<code>gamma</code> should be a function.')"
-        },
-        {
-          "text": "<code>gamma('+tests[0]+')</code> should return a number.",
-          "testString": "assert(typeof gamma(tests[0])=='number','<code>gamma('+tests[0]+')</code> should return a number.')"
-        },
-        {
-          "text": "<code>gamma('+tests[0]+')</code> should return <code>'+results[0]+'</code>.",
-          "testString": "assert.equal(gamma(tests[0]),results[0],'<code>gamma('+tests[0]+')</code> should return <code>'+results[0]+'</code>.')"
-        },
-        {
-          "text": "<code>gamma('+tests[1]+')</code> should return <code>'+results[1]+'</code>.",
-          "testString": "assert.equal(gamma(tests[1]),results[1],'<code>gamma('+tests[1]+')</code> should return <code>'+results[1]+'</code>.')"
-        },
-        {
-          "text": "<code>gamma('+tests[2]+')</code> should return <code>'+results[2]+'</code>.",
-          "testString": "assert.equal(gamma(tests[2]),results[2],'<code>gamma('+tests[2]+')</code> should return <code>'+results[2]+'</code>.')"
-        },
-        {
-          "text": "<code>gamma('+tests[3]+')</code> should return <code>'+results[3]+'</code>.",
-          "testString": "assert.equal(gamma(tests[3]),results[3],'<code>gamma('+tests[3]+')</code> should return <code>'+results[3]+'</code>.')"
-        },
-        {
-          "text": "<code>gamma('+tests[4]+')</code> should return <code>'+results[4]+'</code>.",
-          "testString": "assert.equal(gamma(tests[4]),results[4],'<code>gamma('+tests[4]+')</code> should return <code>'+results[4]+'</code>.')"
-        }
-      ],
-      "id": "5a23c84252665b21eecc7e76",
-      "challengeType": 3,
-      "releasedOn": "June 1, 2018",
-      "files": {
-        "indexjs": {
-          "key": "indexjs",
-          "ext": "js",
-          "name": "index",
-          "contents": [
-            "function gaussianElimination (A,b) {",
-            "  // Good luck!",
-            "}"
-          ],
-          "head": [],
-          "tail": [
-            "let tests=[.1,.2,.3,.4,.5];",
-            "let results=[",
-            "  9.513507698668736,",
-            "  4.590843711998803,",
-            "  2.9915689876875904,",
-            "  2.218159543757687,",
-            "  1.7724538509055159",
-            "];"
           ]
         }
       }
