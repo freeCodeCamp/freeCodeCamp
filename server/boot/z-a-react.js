@@ -19,7 +19,7 @@ const isDev = process.env.NODE_ENV !== 'production';
 const routes = [
   '/settings',
   '/settings/*',
-  '/portfolio/:username'
+  '/:username'
 ];
 
 const devRoutes = [];
@@ -35,6 +35,11 @@ export default function reactSubRouter(app) {
   router.get(
     '/videos/:dashedName',
     (req, res) => res.redirect(`/challenges/${req.params.dashedName}`)
+  );
+
+  router.get(
+    '/portfolio/:redirectUsername',
+    (req, res) => res.redirect(`/${req.params.redirectUsername}`)
   );
 
   // These routes are in production
