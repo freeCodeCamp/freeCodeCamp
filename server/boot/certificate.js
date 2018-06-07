@@ -183,6 +183,34 @@ export default function certificate(app) {
 
   const superBlocks = Object.keys(superBlockCertTypeMap);
 
+  router.get(
+    '/:username/front-end-certification',
+    (req, res) => res.redirect(
+      `/certification/${req.params.username}/legacy-front-end`
+    )
+  );
+
+  router.get(
+    '/:username/data-visualization-certification',
+    (req, res) => res.redirect(
+      `/certification/${req.params.username}/legacy-data-visualization`
+    )
+  );
+
+  router.get(
+    '/:username/back-end-certification',
+    (req, res) => res.redirect(
+      `/certification/${req.params.username}/legacy-back-end`
+    )
+  );
+
+  router.get(
+    '/:username/full-stack-certification',
+    (req, res) => res.redirect(
+      `/certification/${req.params.username}/legacy-full-stack`
+    )
+  );
+
   router.post(
     '/certificate/verify',
     ifNoUser401,
