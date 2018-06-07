@@ -1,0 +1,68 @@
+{
+  "name": "Donation",
+  "plural": "donations",
+  "description": "A representaion of a donation to freeCodeCamp",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+    },
+  "properties": {
+    "email": {
+      "type": "string",
+      "required": true,
+      "description": "The email used to create the donation"
+    },
+    "provider": {
+      "type": "string",
+      "required": true,
+      "description": "The payment handler, paypal/stripe etc..."
+    },
+    "amount": {
+      "type": "number",
+      "required": true,
+      "description": "The donation amount in cents"
+    },
+    "startDate": {
+      "type": "DateString",
+      "required": true
+    },
+    "endDate": {
+      "type": "DateString"
+    },
+    "subscriptionId": {
+      "type": "string",
+      "required": true,
+      "description": "The donation subscription id returned from the provider"
+    },
+    "customerId": {
+      "type": "string",
+      "required": true,
+      "description": "The providers reference for the donator"
+    }
+  },
+  "hidden": [],
+  "validations": [
+    {
+      "amount": {
+        "type": "number",
+        "description": "Amount should be >= $1 (100c)",
+        "min": 100
+      }
+    }
+  ],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "scopes": {},
+  "indexes" : {},
+  "methods": [],
+  "remoting": {},
+  "http": {}
+}
+

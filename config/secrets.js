@@ -44,5 +44,10 @@ module.exports = {
   },
   slackHook: process.env.SLACK_WEBHOOK,
 
-  cookieSecret: process.env.COOKIE_SECRET
+  cookieSecret: process.env.COOKIE_SECRET,
+
+  stripe: {
+    public: process.env.STRIPE_PUBLIC,
+    secret: process.env.STRIPE_SECRET
+  }
 };

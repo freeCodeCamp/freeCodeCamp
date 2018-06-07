@@ -148,6 +148,7 @@
     "sanitize-html": "^1.11.1",
     "snyk": "^1.68.1",
     "store": "git+https://github.com/berkeleytrue/store.js.git#feature/noop-server",
+    "stripe": "^6.1.0",
     "uuid": "^3.0.1",
     "validator": "^9.4.0"
   },
