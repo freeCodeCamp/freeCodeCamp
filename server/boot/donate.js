@@ -69,6 +69,7 @@ export default function donateBoot(app) {
 
     let donatingUser = {};
     let donation = {
+      email,
       amount,
       provider: 'stripe',
       startDate: new Date(Date.now()).toISOString()

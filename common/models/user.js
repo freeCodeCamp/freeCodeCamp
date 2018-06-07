@@ -522,8 +522,19 @@ module.exports = function(User) {
     return Observable.fromNodeCallback(
       this.donations.create.bind(this.donations)
     )(donation)
-    .do(() => this.update$({isDonating: true }))
-    .do(() => {this.isDonating = true;});
+    .do(() => this.update$({
+      $set: {
+        isDonating: true
+      },
+      $push: {
+        donationEmails: donation.email
+        }
+      })
+    )
+    .do(() => {
+      this.isDonating = true;
+      this.donationEmails = [ ...this.donationEmails, donation.email ];
+    });
   };
 
   User.prototype.getEncodedEmail = function getEncodedEmail(email) {

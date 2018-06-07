@@ -263,6 +263,7 @@
       },
       "default": {}
     },
+    "donationEmails": [ "string" ],
     "isDonating": {
       "type": "boolean",
       "default": false,

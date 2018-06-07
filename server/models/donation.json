@@ -8,6 +8,11 @@
     "validateUpsert": true
     },
   "properties": {
+    "email": {
+      "type": "string",
+      "required": true,
+      "description": "The email used to create the donation"
+    },
     "provider": {
       "type": "string",
       "required": true,
