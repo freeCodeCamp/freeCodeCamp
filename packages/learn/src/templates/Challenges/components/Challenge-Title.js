@@ -15,11 +15,10 @@ function ChallengeTitle({ children, isCompleted }) {
     );
   }
   return (
-    <h4 className='text-center challenge-title'>
+    <h2 className='text-center challenge-title'>
       {children || 'Happy Coding!'}
       {icon}
-      <hr />
-    </h4>
+    </h2>
   );
 }
 

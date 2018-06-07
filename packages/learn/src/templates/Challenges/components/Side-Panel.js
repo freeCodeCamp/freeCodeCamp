@@ -68,7 +68,6 @@ export class SidePanel extends PureComponent {
           <ChallengeTitle>{title}</ChallengeTitle>
           <ChallengeDescription description={description} />
         </div>
-        <hr />
         <ToolPanel guideUrl={guideUrl} />
         <TestSuite tests={tests} />
       </div>

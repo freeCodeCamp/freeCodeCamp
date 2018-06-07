@@ -209,7 +209,7 @@ class ShowClassic extends PureComponent {
     const showPreview =
       challengeType === challengeTypes.html ||
       challengeType === challengeTypes.modern;
-    const blockNameTitle = `${blockName} - ${title}`;
+    const blockNameTitle = `${blockName}: ${title}`;
     return (
       <Fragment>
         <Helmet title={`${blockNameTitle} | Learn freeCodeCamp`} />
