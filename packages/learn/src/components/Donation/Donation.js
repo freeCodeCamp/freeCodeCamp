@@ -38,7 +38,7 @@ const propTypes = {
   show: PropTypes.bool
 };
 
-const stripeKey = 'pk_test_R38mgr7bpfGqZy5vyMAJieka';
+const stripeKey = 'pk_live_E6Z6xPM8pEsJziHW905zpAvF';
 
 class DonationModal extends PureComponent {
   constructor(...props) {
