@@ -4,8 +4,6 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
-// import { submittingSelector } from './redux';
-import { toggleMapModal } from '../../../redux/app';
 import { openModal } from '../redux';
 
 const mapStateToProps = () => ({});
@@ -13,16 +11,14 @@ const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      openHelpModal: () => openModal('help'),
-      toggleMapModal
+      openHelpModal: () => openModal('help')
     },
     dispatch
   );
 
 const propTypes = {
   guideUrl: PropTypes.string,
-  openHelpModal: PropTypes.func.isRequired,
-  toggleMapModal: PropTypes.func.isRequired
+  openHelpModal: PropTypes.func.isRequired
 };
 
 export class ToolPanel extends PureComponent {

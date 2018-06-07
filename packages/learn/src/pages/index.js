@@ -4,7 +4,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import {
@@ -12,7 +11,6 @@ import {
   AllChallengeNode,
   AllMarkdownRemark
 } from '../redux/propTypes';
-import { toggleMapModal } from '../redux/app';
 import Spacer from '../components/util/Spacer';
 import Map from '../components/Map';
 
@@ -20,16 +18,12 @@ import './index.css';
 
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleMapModal }, dispatch);
-
 const propTypes = {
   data: PropTypes.shape({
     challengeNode: ChallengeNode,
     allChallengeNode: AllChallengeNode,
     allMarkdownRemark: AllMarkdownRemark
-  }),
-  toggleMapModal: PropTypes.func.isRequired
+  })
 };
 
 const IndexPage = ({
@@ -70,7 +64,7 @@ const IndexPage = ({
 IndexPage.displayName = 'IndexPage';
 IndexPage.propTypes = propTypes;
 
-export default connect(mapStateToProps, mapDispatchToProps)(IndexPage);
+export default connect(mapStateToProps)(IndexPage);
 
 export const query = graphql`
   query FirstChallenge {

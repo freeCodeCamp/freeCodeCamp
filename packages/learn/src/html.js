@@ -55,6 +55,7 @@ function HTML(props) {
           key={'body'}
         />
         {postBodyComponents}
+        <script async={true} id='stripe-js' src='https://js.stripe.com/v3/' />
       </body>
     </html>
   );

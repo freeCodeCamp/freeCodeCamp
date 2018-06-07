@@ -15,6 +15,7 @@
     "browser-cookies": "^1.2.0",
     "chai": "^4.1.2",
     "copy-webpack-plugin": "^4.5.1",
+    "date-fns": "^1.29.0",
     "debug": "^3.1.0",
     "dotenv": "^5.0.1",
     "enzyme": "^3.3.0",
@@ -48,6 +49,7 @@
     "react-reflex": "^2.2.1",
     "react-router-redux": "^5.0.0-alpha.9",
     "react-spinkit": "^3.0.0",
+    "react-stripe-elements": "^2.0.0",
     "react-test-renderer": "^16.3.1",
     "redux": "^3.7.2",
     "redux-actions": "^2.3.0",
@@ -57,7 +59,7 @@
     "rxjs": "^5.5.7",
     "store": "^2.0.12",
     "uglifyjs-webpack-plugin": "^1.2.4",
-    "validator": "^9.4.1",
+    "validator": "^10.3.0",
     "webpack-remove-serviceworker-plugin": "^1.0.0"
   },
   "keywords": [

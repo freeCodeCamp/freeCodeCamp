@@ -7,7 +7,7 @@ import Link from 'gatsby-link';
 
 import ga from '../../../analytics';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
-import { toggleMapModal, userSelector } from '../../../redux/app';
+import { userSelector } from '../../../redux/app';
 import Caret from '../../icons/Caret';
 /* eslint-disable max-len */
 import GreenPass from '../../../templates/Challenges/components/icons/GreenPass';
@@ -27,7 +27,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ toggleBlock, toggleMapModal }, dispatch);
+  bindActionCreators({ toggleBlock }, dispatch);
 
 const propTypes = {
   blockDashedName: PropTypes.string,
@@ -41,8 +41,7 @@ const propTypes = {
     })
   }),
   isExpanded: PropTypes.bool,
-  toggleBlock: PropTypes.func.isRequired,
-  toggleMapModal: PropTypes.func.isRequired
+  toggleBlock: PropTypes.func.isRequired
 };
 
 const mapIconStyle = { height: '15px', marginRight: '10px', width: '15px' };
@@ -67,7 +66,6 @@ export class Block extends PureComponent {
 
   handleChallengeClick(slug) {
     return () => {
-      this.props.toggleMapModal();
       return ga.event({
         category: 'Map Challenge Click',
         action: slug

@@ -22,7 +22,12 @@ import {
   challengeTestsSelector,
   closeModal
 } from './';
-import { userSelector, isSignedInSelector } from '../../../redux/app';
+import {
+  userSelector,
+  isSignedInSelector,
+  openDonationModal,
+  shouldShowDonationSelector
+} from '../../../redux/app';
 
 import { postJSON$ } from '../utils/ajax-stream';
 import { challengeTypes, submitTypes } from '../../../../utils/challengeTypes';
@@ -117,14 +122,20 @@ const submitters = {
   'project.backEnd': submitProject
 };
 
+function shouldShowDonate(state) {
+  return shouldShowDonationSelector(state) ? of(openDonationModal()) : empty();
+}
+
 export default function completionEpic(action$, { getState }) {
   return action$.pipe(
     ofType(types.submitChallenge),
     switchMap(({ type }) => {
       const state = getState();
       const meta = challengeMetaSelector(state);
+      const { isDonating } = userSelector(state);
       const { nextChallengePath, introPath, challengeType } = meta;
       const next = of(push(introPath ? introPath : nextChallengePath));
+      const showDonate = isDonating ? empty() : shouldShowDonate(state);
       const closeChallengeModal = of(closeModal('completion'));
       let submitter = () => of({ type: 'no-user-signed-in' });
       if (
@@ -143,6 +154,7 @@ export default function completionEpic(action$, { getState }) {
       return submitter(type, state).pipe(
         concat(next),
         concat(closeChallengeModal),
+        concat(showDonate),
         filter(Boolean)
       );
     })
