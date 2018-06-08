@@ -1,5 +1,7 @@
 ## freeCodeCamp Curriculum
 
+[![Build Status](https://travis-ci.org/freeCodeCamp/curriculum.svg?branch=master)](https://travis-ci.org/freeCodeCamp/curriculum)
+
 This package contains the "seed" files used in the freeCodeCamp Curriculum.
 
 ### Installation
@@ -20,7 +22,7 @@ getChallenges() // will provide an array of blocks i.e. basic CSS, functional pr
 ```
 #### `block` Structure
 
-```json
+```js
 {
   "name": "ES6",
   "order": 2,
@@ -35,7 +37,7 @@ getChallenges() // will provide an array of blocks i.e. basic CSS, functional pr
 
 #### `challenge` Structure
 
-```json
+```js
 {
   "id": "ObjectId()",
   "title": "Declare a Read-Only Variable with the const Keyword",
@@ -70,4 +72,3 @@ getChallenges() // will provide an array of blocks i.e. basic CSS, functional pr
   }
 },
 ```
-
