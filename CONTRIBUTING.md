@@ -1,20 +1,23 @@
 # Contributor's Guide
 
-We welcome pull requests from freeCodeCamp campers (our students) and seasoned JavaScript developers alike! Follow these steps to contribute:
+We welcome pull requests from members of the freeCodeCamp community and from veteran developers alike! Please follow these steps to contribute:
 
-1. Find an issue that needs assistance by searching for the [Help Wanted](https://github.com/freeCodeCamp/freeCodeCamp/labels/help%20wanted) tag.
+## Steps
 
-2. Let us know you are working on it by posting a comment on the issue.
+1. 🍴 [Fork this repo](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
+2. 👀️ Follow the contributing guidelines outlined below.
+3. 🔧 Make some awesome changes!
+4. 👉 [Make a pull request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
+5. 🎉 Get your pull request approved - success!
 
-3. Follow the instructions in this guide to start working on the issue.
+Or, If you've found a issue that is not on the board, [follow these steps](README.md#found-a-bug).
 
-Remember to feel free to ask for help in our [Contributors](https://gitter.im/FreeCodeCamp/Contributors) Gitter room.
+Feel free to ask for help in our public [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors). We are excited to help you contribute to any of the projects that you would like to work on.
 
 Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
 
-###### If you've found a bug that is not on the board, [follow these steps](README.md#found-a-bug).
+----
 
---------------------------------------------------------------------------------
 ## Quick Reference
 
 |command|description|
@@ -30,6 +33,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 ## Table of Contents
 
 ### [Setup](#setup)
+
 - [Prerequisites](#prerequisites)
 - [Forking the Project](#forking-the-project)
 - [Create a Branch](#create-a-branch)
@@ -38,11 +42,13 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 - [Set Up freeCodeCamp](#set-up-freecodecamp)
 
 ### [Make Changes](#make-changes)
+
 - [Unpack and Repack](#unpack-and-repack)
 - [Challenge Template](#challenge-template)
 - [Run The Test Suite](#run-the-test-suite)
 
 ### Submit
+
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Common Steps](#common-steps)
 - [How We Review and Merge Pull Requests](#how-we-review-and-merge-pull-requests)
@@ -50,56 +56,32 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 - [Next Steps](#next-steps)
 - [Other Resources](#other-resources)
 
-## Setup
-### Prerequisites
-
-| Prerequisite                                | Version |
-| ------------------------------------------- | ------- |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `~ ^3`  |
-| [MailHog](https://github.com/mailhog/MailHog) | `~ ^1` |
-| [Node.js](http://nodejs.org)                | `~ ^8.9.3`  |
-| npm (comes with Node)                       | `~ ^5`  |
-
-> _Updating to the latest releases is recommended_.
-
-If Node.js or MongoDB is already installed on your machine, run the following commands to validate the versions:
-
-```shell
-node -v
-mongo --version
-```
-
-To check your MongoDB version on Windows, you have to locate the installation directory. It is probably located at something like `C:\Program Files\MongoDB\Server\3.4\` where 3.4 is your version number.
-
-If your versions are lower than the prerequisite versions, you should update.
-
-Platform-specific guides to setting up a development environment:
-- [How to clone and setup the freeCodeCamp website on a Windows pc](https://forum.freecodecamp.org/t/how-to-clone-and-setup-the-free-code-camp-website-on-a-windows-pc/19366)
-- [How to Clone and Setup the freeCodeCamp Website on a Mac](https://forum.freecodecamp.org/t/how-to-clone-and-setup-the-freecodecamp-website-on-a-mac/78450)
-
-### Forking the Project
+### Getting a copy the freeCodeCamp Project
 
 #### Setting Up Your System
 
-1. Install [Git](https://git-scm.com/) or your favorite Git client.
-2. (Optional) [Setup an SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub.
+1. [Install Git](https://git-scm.com/) or your favorite Git client.
+2. [Setup a SSH Key](https://help.github.com/articles/generating-an-ssh-key/) for GitHub. (Optional)
 
 #### Forking freeCodeCamp
 
-1. Go to the top level freeCodeCamp repository: <https://github.com/freeCodeCamp/freeCodeCamp>
-2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
-3. After the repository (repo) has been forked, you will be taken to your copy of the freeCodeCamp repo at <https://github.com/yourUsername/freeCodeCamp>
+1. Go to the top level freeCodeCamp repository: [`https://github.com/freeCodeCamp/freeCodeCamp`](https://github.com/freeCodeCamp/freeCodeCamp)
+2. Click the "Fork" Button in the upper right hand corner of the interface ([learn more](https://help.github.com/articles/fork-a-repo/))
+3. After the repository (repo) has been forked, you will be taken to your copy of the freeCodeCamp repo at `https://github.com/`**`yourUsername`**`/freeCodeCamp`
 
-#### Cloning Your Fork
+This is your copy of freeCodeCamp on GitHub.
+
+#### Cloning your fork
 
 1. Open a Terminal / Command Line / Bash Shell in your projects directory (_i.e.: `/yourprojectdirectory/`_)
 2. Clone your fork of freeCodeCamp
 
-```shell
-$ git clone https://github.com/yourUsername/freeCodeCamp.git
-```
+    ```shell
+    git clone https://github.com/yourUsername/freeCodeCamp.git
+    ```
 
-**(make sure to replace `yourUsername` with your GitHub username)**
+> **Note:**
+> Make sure to replace **`yourUsername`** with your GitHub username
 
 This will download the entire freeCodeCamp repo to your projects directory.
 
@@ -108,46 +90,59 @@ This will download the entire freeCodeCamp repo to your projects directory.
 1. Change directory to the new freeCodeCamp directory (`cd freeCodeCamp`)
 2. Add a remote to the official freeCodeCamp repo:
 
-```shell
-$ git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
-```
+    ```shell
+    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+    ```
 
-Congratulations, you now have a local copy of the freeCodeCamp repo!
+3. Confirm the available remotes:
+
+    ```shell
+    git remote -v
+
+    ## Result
+    origin git@github.com:yourUsername/curriculum.git (fetch)
+    origin git@github.com:yourUsername/curriculum.git (push)
+    upstream https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+    upstream https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+    ```
+
+_Congratulations, you now have a local copy of the freeCodeCamp repo!_
 
 #### Maintaining Your Fork
 
 Now that you have a copy of your fork, there is work you will need to do to keep it current.
 
-##### Rebasing from Upstream
+### Rebasing from Upstream
 
 Do this prior to every time you create a branch for a PR:
 
 1. Make sure you are on the `staging` branch
 
-```shell
-$ git status
-On branch staging
-Your branch is up-to-date with 'origin/staging'.
-```
-If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
+    ```shell
+    $ git status
+    On branch staging
+    Your branch is up-to-date with 'origin/staging'.
+    ```
 
-```shell
-$ git checkout staging
-```
+    If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
+
+    ```shell
+    git checkout staging
+    ```
 
 2. Do a pull with rebase against `upstream`
 
-```shell
-$ git pull --rebase upstream staging
-```
+    ```shell
+    git pull --rebase upstream staging
+    ```
 
-This will pull down all of the changes to the official staging branch, without making an additional commit in your local repo.
+    This will pull down all of the changes to the official staging branch, without making an additional commit in your local repo.
 
 3. (_Optional_) Force push your updated staging branch to your GitHub fork
 
-```shell
-$ git push origin staging --force
-```
+    ```shell
+    git push origin staging --force
+    ```
 
 This will overwrite the staging branch of your fork.
 
@@ -157,29 +152,70 @@ Before you start working, you will need to create a separate branch specific to 
 
 #### Naming Your Branch
 
-Name the branch something like `fix/xxx` or `feature/xxx` where `xxx` is a short description of the changes or feature you are attempting to add. For example `fix/email-login` would be a branch where you fix something specific to email login.
+Name the branch something like `fix/xxx-yyy-zzz` or `feat/xxx-yyy-zzz` where `xxx-yyy-zzz` is **a short description** of the changes or feature you are attempting to add. For example `fix/email-login` would be a branch where you fix something specific to email login.
 
 #### Adding Your Branch
 
 To create a branch on your local machine (and switch to this branch):
 
 ```shell
-$ git checkout -b [name_of_your_new_branch]
+git checkout -b fix/name-of-your-branch
 ```
 
 and to push to GitHub:
 
 ```shell
-$ git push origin [name_of_your_new_branch]
+git push origin fix/name-of-your-branch
 ```
 
-**If you need more help with branching, take a look at [this](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).**
+**If you need more help with branching, take a look at [this article](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).**
 
-### Set Up Linting
+### Configure Linting
 
 You should have [ESLint running in your editor](http://eslint.org/docs/user-guide/integrations.html), and it will highlight anything doesn't conform to [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121) (you can find a summary of those rules [here](https://github.com/freeCodeCamp/freeCodeCamp/blob/staging/.eslintrc)).
 
 > Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base.
+
+## Setup (Primary method)
+
+### Installing Prerequisites
+
+Start by installing the following prerequisites for the development environment. These are some common tools that you would use when developing applications in JavaScript (Node.js).
+
+| Prerequisite                                | Version |
+| ------------------------------------------- | ------- |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `^3.6.x`  |
+| [MailHog](https://github.com/mailhog/MailHog) | `^1` |
+| [Node.js](http://nodejs.org)                | `^8.11.x` |
+| npm (comes with Node)                       | `^5.8.x` |
+
+> **Note:**
+> Updating to the latest stable releases is highly recommended.
+> These are often called Long Term Support (LTS) versions and are considered stable for production use.
+
+#### Checking the installed prerequisites
+
+**Linux/macOS:**
+
+If Node.js or MongoDB is already installed on your machine, run the following commands to validate the versions:
+
+```shell
+node -v
+mongo --version
+```
+
+**Windows:**
+
+The installer for Node.js usually updates your path. So the same commands from the Linux/macOS setup should work.
+
+To check your MongoDB version on Windows, you have to locate the installation directory. It is probably located at something like `C:\Program Files\MongoDB\Server\3.6\` where `3.6` is your version number.
+
+You may also want to add it to your System Environment `PATH` variable if not already, to access CLI tools like `mongo`
+
+> **Note:**
+> If your versions are lower than the prerequisite versions, you should update MongoDB and Node.js as needed.
+>
+> For any issues with the setup of prerequisites, please take a look at StackOverflow, which is an excellent resource to debug installations.
 
 ### Set Up MailHog
 
@@ -194,7 +230,7 @@ To be able to create a user and log into your development copy, you need to set 
 
 Here is how to set up MailHog on macOS with [Homebrew](https://brew.sh/):
 
-```bash
+```shell
 brew install mailhog
 brew services start mailhog
 ```
@@ -213,24 +249,25 @@ First install Go.
 
 For Debian-based systems like Ubuntu and Linux Mint, run:
 
-```bash
+```shell
 sudo apt-get install golang
 ```
 
 For CentOS, Fedora, Red Hat Linux, and other RPM-based systems, run:
 
-```bash
+```shell
 sudo dnf install golang
 ```
 
 Or:
 
-```bash
+```shell
 sudo yum install golang
 ```
 
 Set the path for Go:
-```bash
+
+```shell
 echo "export GOPATH=$HOME/go" >> ~/.profile
 echo 'export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.profile
 source ~/.profile
@@ -238,7 +275,7 @@ source ~/.profile
 
 Then install and run MailHog:
 
-```bash
+```shell
 go get github.com/mailhog/MailHog
 sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
@@ -246,7 +283,7 @@ mailhog
 
 #### Using MailHog
 
-Once you have installed MailHog and started it running you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [http://localhost:8025](http://localhost:8025).
+Once you have installed MailHog and started it running you need to open your MailHog inbox in your browser, open a new tab or window and navigate to [`http://localhost:8025`](http://localhost:8025).
 You should now see a screen like below:
 
 ![MailHog Screenshot 1](docs/images/1.jpg)
@@ -267,14 +304,14 @@ For any other questions related to MailHog or for instructions on custom configu
 
 Once you have freeCodeCamp cloned, before you start the application, you first need to install all of the dependencies:
 
-```bash
+```shell
 # Install NPM dependencies
 npm install
 ```
 
 Then you need to add the private environment variables (API Keys):
 
-```bash
+```shell
 # Create a copy of the "sample.env" and name it as ".env".
 # Populate it with the necessary API keys and secrets:
 
@@ -284,6 +321,7 @@ cp sample.env .env
 # Windows
 copy sample.env .env
 ```
+
 Then edit the `.env` file and modify the API keys only for services that you will use.
 
 Note: Not all keys are required, to run the app locally, however `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the sample.env should work fine.
@@ -292,7 +330,7 @@ You can leave the other keys as they are. Keep in mind if you want to use more s
 
 Now you will need to start MongoDB, and then seed the database, then you can start the application:
 
-```bash
+```shell
 # Start the mongo server in a separate terminal
 # On OS X:
 mongod
@@ -316,7 +354,7 @@ Otherwise, let us know by asking in the [Contributors chat room](https://gitter.
 
 If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following:
 
-```bash
+```shell
 # Remove all installed node modules
 rm -rf node_modules
 
@@ -330,54 +368,55 @@ node seed
 npm run develop
 ```
 
-### Setup freeCodeCamp using Docker
-#### Isolated
+## Setup using Docker (Alternative Method)
+
+### Isolated
+
 Use this if you just want to work on freeCodeCamp.
 
 You will need to have [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) installed before executing the commands below.
 
 Setup:
-```bash
+
+```shell
 docker-compose run --rm freecodecamp npm install
 docker-compose run --rm freecodecamp npm run only-once
 ```
 
 Run:
-```bash
+
+```shell
 docker-compose up
 ```
 
-#### Shared
+### Shared
+
 Use this if you want to work on other services that will run alongside
 of freeCodeCamp, using the  database directly. An example is the [open-api](https://github.com/freeCodeCamp/open-api) project.
 
-```bash
+```shell
 docker-compose -f docker-compose.yml -f docker-compose-shared.yml up
 ```
 
-
 ### Creating a New User
-To create a new user, you will need to perform the following steps:
-* run MailHog if you haven't set up yet check [set-up-mailhog](#set-up-mailhog)
-* run `npm run develop` and navigated to [http://localhost:3000](http://localhost:3000/)
-* Click over the Sign-Up link situated on the right corner of the navigation bar.
-* Write your email over the input and press the button "get a sign in link" this will send an email with the login URL into MailHog.
-* The last step is to check your inbox in MailHog for a new email from "team@freecodecamp.org" click over the URL inside of it you will be redirected and logged in into the app.
 
-### Make Changes
+To create a new user, you will need to perform the following steps:
+
+- run MailHog if you haven't set up yet check [set-up-mailhog](#set-up-mailhog)
+- run `npm run develop` and navigated to [http://localhost:3000](http://localhost:3000/)
+- Click over the Sign-Up link situated on the right corner of the navigation bar.
+- Write your email over the input and press the button "get a sign in link" this will send an email with the login URL into MailHog.
+- The last step is to check your inbox in MailHog for a new email from "team@freecodecamp.org" click over the URL inside of it you will be redirected and logged in into the app.
+
+## Make Changes
 
 This bit is up to you!
 
-#### How to find the code in the freeCodeCamp codebase to fix/edit
+### How to find the code in the freeCodeCamp codebase to fix/edit
 
-The best way to find out any code you wish to change/add or remove is using
-the GitHub search bar at the top of the repository page. For example, you could
-search for a challenge name and the results will display all the files along
-with line numbers. Then you can proceed to the files and verify this is the area
-that you were looking forward to edit. Always feel free to reach out to the chat
-room when you are not certain of any thing specific in the code.
+The best way to find out any code you wish to change/add or remove is using the GitHub search bar at the top of the repository page. For example, you could search for a challenge name and the results will display all the files along with line numbers. Then you can proceed to the files and verify this is the area that you were looking forward to edit. Always feel free to reach out to the chat room when you are not certain of any thing specific in the code.
 
-#### Adding or Editing Challenges
+### Adding or Editing Challenges
 
 The challenges are stored inside the `seed` directory (and its various subdirectories).
 
@@ -387,16 +426,15 @@ For each challenge section, there is a JSON file (fields documented below) conta
 
 For more about creating challenges, see [seed/README](seed/README.md) and [seed/challenge-style-guide.md](seed/challenge-style-guide.md).
 
-#### Changes to the seed files
+### Changes to the seed files
 
-If you made changes to any file in the `/seed` directory, you then need to stop the server by typing CTRL-C, then you need to run
+If you made changes to any file in the `/seed` directory, you then need to stop the server by typing CTRL-C, then you need to run:
+
 ```shell
-$ node seed
+npm run seed
+npm run develop
 ```
-Then run
-```shell
-$ npm run develop
-```
+
 in order to restart the server and see the changes you just made to the files.
 
 ### Run The Test Suite
@@ -404,10 +442,12 @@ in order to restart the server and see the changes you just made to the files.
 When you're ready to share your code, run the test suite:
 
 ```shell
-$ npm test
+npm run test
 ```
 
 and ensure all tests pass.
+
+if you see some tests failing you can run:
 
 ### Creating a Pull Request
 
@@ -425,11 +465,7 @@ related issues in our [Contributors chat room](https://gitter.im/FreeCodeCamp/Co
 
 #### Important: ALWAYS EDIT ON A BRANCH
 
-Take away only one thing from this document: Never, **EVER**
-make edits to the `staging` branch. ALWAYS make a new branch BEFORE you edit
-files. This is critical, because if your PR is not accepted, your copy of
-staging will be forever sullied and the only way to fix it is to delete your
-fork and re-fork.
+Take away only one thing from this document: Never, **EVER** make edits to the `staging` branch. ALWAYS make a new branch BEFORE you edit files. This is critical, because if your PR is not accepted, your copy of staging will be forever sullied and the only way to fix it is to delete your fork and re-fork.
 
 #### Methods
 
