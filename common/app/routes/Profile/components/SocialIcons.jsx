@@ -6,7 +6,8 @@ import {
   Row,
   Col
 } from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
+import FontAwesome from '@fortawesome/react-fontawesome';
+// see https://github.com/FortAwesome/react-fontawesome#external-loading
 
 import { userByNameSelector } from '../../../redux';
 
@@ -55,7 +56,7 @@ function LinkedInIcon(linkedIn) {
   return (
     <a href={ linkedIn } rel='no-follow' target='_blank'>
       <FontAwesome
-        name='linkedin'
+        icon={['fab', 'linkedin']}
         size='2x'
       />
     </a>
@@ -66,7 +67,7 @@ function githubIcon(ghURL) {
   return (
     <a href={ ghURL } rel='no-follow' target='_blank'>
       <FontAwesome
-        name='github'
+        icon={['fab', 'linkedin']}
         size='2x'
       />
     </a>
@@ -77,7 +78,7 @@ function WebsiteIcon(website) {
   return (
     <a href={ website } rel='no-follow' target='_blank'>
       <FontAwesome
-        name='link'
+        icon='link'
         size='2x'
       />
     </a>
@@ -88,7 +89,7 @@ function TwitterIcon(handle) {
   return (
     <a href={ handle } rel='no-follow' target='_blank' >
       <FontAwesome
-        name='twitter'
+        icon={['fab', 'twitter']}
         size='2x'
       />
     </a>

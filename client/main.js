@@ -38,7 +38,7 @@ $(document).ready(function() {
     return $('.flashMessage').append($(`
       <div class='alert ${type}'>
         <button class='close' type='button', data-dismiss='alert'>
-          <span class='ion-close-circled' />
+          <i class="fas fa-times-circle" />
         </Button>
         <div>${message}</div>
       </div>

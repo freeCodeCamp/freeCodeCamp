@@ -4,18 +4,18 @@
             if messages.danger
               .alert.alert-danger.fade.in
                 button.close(type='button', data-dismiss='alert')
-                  span.ion-close-circled
+                  i.fas.fa-times-circle
                 for msg in messages.danger
                   div!= msg
             if messages.info
               .alert.alert-info.fade.in
                 button.close(type='button', data-dismiss='alert')
-                  span.ion-close-circled
+                  i.fas.fa-times-circle
                 for msg in messages.info
                   div!= msg
             if messages.success
               .alert.alert-success.fade.in
                 button.close(type='button', data-dismiss='alert')
-                  span.ion-close-circled
+                  i.fas.fa-times-circle
                 for msg in messages.success
                   div!= msg
