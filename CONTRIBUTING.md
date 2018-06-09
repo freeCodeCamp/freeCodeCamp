@@ -286,7 +286,7 @@ copy sample.env .env
 ```
 Then edit the `.env` file and modify the API keys only for services that you will use.
 
-Note: Not all keys are required, to run the app locally, however `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the sample.env should work fine.
+Note: Not all keys are required, to run the app locally, however `STRIP_PUBLIC`, `STRIPE_SECRET` and `MONGOHQ_URL` are the most important ones. Unless you have MongoDB running in a setup different than the defaults, the URL in the sample.env should work fine.
 
 You can leave the other keys as they are. Keep in mind if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the .env file.
 
