@@ -84,7 +84,7 @@ Observable.combineLatest(
           .map(function(challenge, index) {
             challenge.name = nameify(challenge.title);
 
-            challenge.dashedName = dasherize(challenge.name);
+            challenge.dashedName = dasherize(challenge.title);
 
             challenge.checksum = adler32.sum(
               Buffer(
