@@ -4031,7 +4031,7 @@
           "key": "indexjs",
           "ext": "js",
           "name": "index",
-          "contents": ["function gray (enc, number) {", " // Good luck!", "}"],
+          "contents": ["function gray(enc, number) {", " // Good luck!", "}"],
           "head": [],
           "tail": []
         }
