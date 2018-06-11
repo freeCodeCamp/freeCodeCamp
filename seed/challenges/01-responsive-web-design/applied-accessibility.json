@@ -1261,7 +1261,7 @@
         },
         {
           "text": "Make sure your <code>a</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a href=\"\">/g).length, 'Make sure your <code>a</code> element has a closing tag.');"
+          "testString": "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a href=[\'\"][\'\"]>/g).length, 'Make sure your <code>a</code> element has a closing tag.');"
         }
       ],
       "solutions": [],
