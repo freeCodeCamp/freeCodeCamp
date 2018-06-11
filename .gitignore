@@ -5,3 +5,4 @@ unpacked/
 
 *.log
 *.tgz
+*.patch
