@@ -15,7 +15,7 @@ Our full stack web development curriculum is completely free and self-paced. We 
 
 freeCodeCamp offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take beginner programmers around 300 hours to earn.
 
-Each of these 30 project in the freeCodeCamp curriculum has its own agile user stories and  automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before submitting it.
+Each of these 30 project in the freeCodeCamp curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before submitting it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local development environment.
 
@@ -33,8 +33,8 @@ Here are our six core certifications:
 - Applied Accessibility
 - Responsive Web Design Principles
 - CSS Flexbox
-- CSS Grid
-** Projects **: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
+- CSS Grid <br />
+  **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
 #### 2. JavaScript Algorithms and Data Structures Certification
 
@@ -45,8 +45,8 @@ Here are our six core certifications:
 - Basic Data Structures
 - Algorithm Scripting
 - Object Oriented Programming
-- Functional Programming
-** Projects **: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
+- Functional Programming <br />
+  **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
 
@@ -55,28 +55,28 @@ Here are our six core certifications:
 - Sass
 - React
 - Redux
-- React and Redux
-** Projects **: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
+- React and Redux <br />
+  **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
 #### 4. Data Visualization Certification
 
 - Data Visualization with D3
-- JSON APIs and Ajax
-** Projects **: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
+- JSON APIs and Ajax <br />
+  **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
 
 #### 5. APIs and Microservices Certification
 
 - Managing Packages with Npm
 - Basic Node and Express
-- MongoDB and Mongoose
-** Projects **: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
+- MongoDB and Mongoose <br />
+  **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
 
 #### 6. Information Security and Quality Assurance Certification
 
 - Information Security with HelmetJS
 - Quality Assurance and Testing with Chai
-- Advanced Node and Express
-** Projects **: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
+- Advanced Node and Express <br />
+  **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
 
 #### Full Stack Development Certification
 
@@ -85,17 +85,19 @@ Once you earn all 6 of these certifications, you'll be able to claim your freeCo
 #### Legacy Certifications
 
 We also have 3 legacy certifications from our 2015 curriculum, which are still available. All of the required projects for these legacy certifications will remain available on freeCodeCamp.
+
 - Legacy Front End Development Certification
 - Legacy Data Visualization Certification
 - Legacy Back End Development Certification
 
 ### The Learning Platform
 
-This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org). 
+This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
 Our community also has:
+
 - a super active [forum](https://forum.freecodecamp.org)
-- thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person 
+- thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
 - A popular [YouTube channel](https://youtube.com/freecodecamp)
 - and a comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org)
@@ -119,5 +121,6 @@ We welcome pull requests from members of the freeCodeCamp community and from vet
 Copyright (c) 2018 freeCodeCamp.
 
 The content of this repository bound by the following licenses:
+
 - The computer software is licensed under the [BSD-3-Clause](./LICENSE.md).
 - The curricular content in the [`/seed`](/seed) and subdirectories are licensed under the [CC-BY-SA-4.0](./seed/LICENSE.md)
