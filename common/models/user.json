@@ -173,6 +173,7 @@
           "completedDate": "number",
           "id": "string",
           "solution": "string",
+          "githubLink": "string",
           "challengeType": "number",
           "files": {
             "type": [

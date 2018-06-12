@@ -21,7 +21,7 @@ export function buildUserProjectsMap(projectBlock, completedChallenges) {
       if (completed) {
         solution = 'solution' in completed ?
           completed.solution :
-          completed.files;
+          completed.files || '';
       }
       return {
         ...solutions,

@@ -21,29 +21,43 @@ const log = debug('fcc:boot:challenges');
 
 const learnURL = 'https://learn.freecodecamp.org';
 
+const jsProjects = [
+'aaa48de84e1ecc7c742e1124',
+'a7f4d8f2483413a6ce226cac',
+'56533eb9ac21ba0edf2244e2',
+'aff0395860f5d3034dc0bfc9',
+'aa2e6f85cab2ab736c9a9b24'
+];
+
 function buildUserUpdate(
   user,
   challengeId,
   _completedChallenge,
   timezone
 ) {
-  const { files = {} } = _completedChallenge;
-  const completedChallenge = {
-    ..._completedChallenge,
-    files: Object.keys(files)
-      .map(key => files[key])
-      .map(file => _.pick(
-        file,
-        [
-          'contents',
-          'key',
-          'index',
-          'name',
-          'path',
-          'ext'
-        ]
-      ))
-  };
+  const { files } = _completedChallenge;
+  let completedChallenge = {};
+
+  if (jsProjects.includes(challengeId)) {
+    completedChallenge = {
+      ..._completedChallenge,
+      files: Object.keys(files)
+        .map(key => files[key])
+        .map(file => _.pick(
+          file,
+          [
+            'contents',
+            'key',
+            'index',
+            'name',
+            'path',
+            'ext'
+          ]
+        ))
+    };
+  } else {
+    completedChallenge = _.omit(_completedChallenge, ['files']);
+  }
   let finalChallenge;
   const updateData = {};
   const { timezone: userTimezone, completedChallenges = [] } = user;

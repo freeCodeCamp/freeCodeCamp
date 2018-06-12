@@ -64,7 +64,7 @@ class Timeline extends PureComponent {
 
   renderCompletion(completed) {
     const { idToNameMap } = this.props;
-    const { id, completedDate, solution, files } = completed;
+    const { id, completedDate } = completed;
     const challengeDashedName = idToNameMap[id];
     return (
         <tr key={ id }>
@@ -80,28 +80,7 @@ class Timeline extends PureComponent {
               }
             </time>
           </td>
-          <td>
-          {/* eslint-disable no-nested-ternary */
-            files ? (
-              <Button
-                block={ true }
-                bsStyle='primary'
-                onClick={ () => this.viewSolution(id) }
-                >
-                View&nbsp;Solution
-              </Button>
-              ) : solution ? (
-                  <Button
-                    block={ true }
-                    bsStyle='primary'
-                    href={solution}
-                    target='_blank'
-                    >
-                    View&nbsp;Solution
-                  </Button>
-                  ) : ''
-          }
-        </td>
+          <td/>
         </tr>
       );
   }
@@ -142,7 +121,7 @@ class Timeline extends PureComponent {
             <thead>
               <tr>
                 <th>Challenge</th>
-                <th className='text-center'>First Completed</th>
+                <th className='text-center'>Completed</th>
               </tr>
             </thead>
             <tbody>
