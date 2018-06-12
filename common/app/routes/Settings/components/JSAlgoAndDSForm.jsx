@@ -13,7 +13,12 @@ const jsFormPropTypes = {
   claimCert: PropTypes.func.isRequired,
   hardGoTo: PropTypes.func.isRequired,
   isCertClaimed: PropTypes.bool,
-  jsProjects: PropTypes.objectOf(PropTypes.object),
+  jsProjects: PropTypes.objectOf(
+    PropTypes.oneOfType(
+      PropTypes.arrayOf(PropTypes.object),
+      PropTypes.string
+    )
+  ),
   projectBlockName: PropTypes.string,
   superBlock: PropTypes.string,
   username: PropTypes.string
