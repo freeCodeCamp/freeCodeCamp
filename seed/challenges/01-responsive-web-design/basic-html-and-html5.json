@@ -2010,14 +2010,14 @@
       "description": [
         "You can use <code>radio buttons</code> for questions where you want the user to only give you one answer out of multiple options.",
         "Radio buttons are a type of <code>input</code>.",
-        "Each of your radio buttons should be nested within its own <code>label</code> element. Wrapping an <code>input</code> element inside of a <code>label</code> element makes the label text clickable.",
-        "All related radio buttons should have the same <code>name</code> attribute.",
+        "Each of your radio buttons can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will autoatically associate the radio button input with the label element surrounding it.",
+        "All related radio buttons should have the same <code>name</code> attribute to create a radio button group. By creating a radio group, selecting any single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.",
         "Here's an example of a radio button:",
         "<blockquote>&#60;label&#62; <br> &#60;input type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
         "It is considered best practice to set a <code>for</code> attribute on the <code>label</code> element, with a value that matches the value of the <code>id</code> attribute of the <code>input</code> element. This allows assistive technologies to create a linked relationship between the label and the child <code>input</code> element. For example:",
         "<blockquote>&#60;label for=\"indoor\"&#62; <br> &#60;input id=\"indoor\" type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
         "<hr>",
-        "Add a pair of radio buttons to your form. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>. Both should share the <code>name</code> attribute of <code>indoor-outdoor</code>."
+        "Add a pair of radio buttons to your form, each nested in its own label element. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>. Both should share the <code>name</code> attribute of <code>indoor-outdoor</code> to create a radio group."
       ],
       "tests": [
         {
@@ -2145,8 +2145,9 @@
       "description": [
         "Forms commonly use <code>checkboxes</code> for questions that may have more than one answer.",
         "Checkboxes are a type of <code>input</code>",
-        "Each of your checkboxes should be nested within its own <code>label</code> element.",
+        "Each of your checkboxes can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will autoatically associate the checkbox input with the label element surrounding it.",
         "All related checkbox inputs should have the same <code>name</code> attribute.",
+        "It is considered best practice to explicitly define the relationship between a checkbox <code>input</code> and its corresponding <code>label</code> by setting the <code>for</code> attribute on the <code>label</code> element to match the <code>id</code> attribute of the associated <code>input</code> element.",
         "Here's an example of a checkbox:",
         "<code>&#60;label for=\"loving\"&#62;&#60;input id=\"loving\" type=\"checkbox\" name=\"personality\"&#62; Loving&#60;/label&#62;</code>",
         "<hr>",
