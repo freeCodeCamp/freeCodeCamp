@@ -415,7 +415,7 @@ export default function certificate(app) {
         }
 
         if (user[certType]) {
-          const { completedChallenges = {} } = user;
+          const { completedChallenges = [] } = user;
           const { completedDate = new Date() } = _.find(
             completedChallenges, ({ id }) => certId === id
           ) || {};

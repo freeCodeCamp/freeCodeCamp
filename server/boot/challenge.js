@@ -1,3 +1,10 @@
+/**
+ *
+ * Any ref to fixCompletedChallengesItem should be removed post
+ * a db migration to fix all completedChallenges
+ *
+ */
+
 import _ from 'lodash';
 import debug from 'debug';
 import accepts from 'accepts';
@@ -8,6 +15,7 @@ import { getChallengeById, cachedMap } from '../utils/map';
 import { dasherize } from '../utils';
 
 import pathMigrations from '../resources/pathMigration.json';
+import { fixCompletedChallengeItem } from '../../common/utils';
 
 const log = debug('fcc:boot:challenges');
 
@@ -16,9 +24,26 @@ const learnURL = 'https://learn.freecodecamp.org';
 function buildUserUpdate(
   user,
   challengeId,
-  completedChallenge,
+  _completedChallenge,
   timezone
 ) {
+  const { files = {} } = _completedChallenge;
+  const completedChallenge = {
+    ..._completedChallenge,
+    files: Object.keys(files)
+      .map(key => files[key])
+      .map(file => _.pick(
+        file,
+        [
+          'contents',
+          'key',
+          'index',
+          'name',
+          'path',
+          'ext'
+        ]
+      ))
+  };
   let finalChallenge;
   const updateData = {};
   const { timezone: userTimezone, completedChallenges = [] } = user;
@@ -46,7 +71,7 @@ function buildUserUpdate(
 
   updateData.$set = {
     completedChallenges: _.uniqBy(
-      [finalChallenge, ...completedChallenges],
+      [finalChallenge, ...completedChallenges.map(fixCompletedChallengeItem)],
       'id'
     )
   };
@@ -167,6 +192,7 @@ export default function(app) {
         const points = alreadyCompleted ? user.points : user.points + 1;
 
         return user.update$(updateData)
+          .doOnNext(() => user.manualReload())
           .doOnNext(({ count }) => log('%s documents updated', count))
           .map(() => {
             if (type === 'json') {
@@ -199,7 +225,7 @@ export default function(app) {
     return req.user.getCompletedChallenges$()
       .flatMap(() => {
         const completedDate = Date.now();
-        const { id, solution, timezone } = req.body;
+        const { id, solution, timezone, files } = req.body;
 
         const {
           alreadyCompleted,
@@ -207,7 +233,7 @@ export default function(app) {
         } = buildUserUpdate(
           req.user,
           id,
-          { id, solution, completedDate },
+          { id, solution, completedDate, files },
           timezone
         );
 
@@ -250,7 +276,7 @@ export default function(app) {
 
     const completedChallenge = _.pick(
       body,
-      [ 'id', 'solution', 'githubLink', 'challengeType' ]
+      [ 'id', 'solution', 'githubLink', 'challengeType', 'files' ]
     );
     completedChallenge.completedDate = Date.now();
 
@@ -278,6 +304,7 @@ export default function(app) {
         } = buildUserUpdate(user, completedChallenge.id, completedChallenge);
 
         return user.update$(updateData)
+          .doOnNext(() => user.manualReload())
           .doOnNext(({ count }) => log('%s documents updated', count))
           .doOnNext(() => {
             if (type === 'json') {
