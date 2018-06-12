@@ -20,7 +20,8 @@ import {
   types,
   challengeMetaSelector,
   challengeTestsSelector,
-  closeModal
+  closeModal,
+  challengeFilesSelector
 } from './';
 import {
   userSelector,
@@ -60,13 +61,15 @@ function submitModern(type, state) {
 
     if (type === types.submitChallenge) {
       const { id } = challengeMetaSelector(state);
+      const files = challengeFilesSelector(state);
       const { username } = userSelector(state);
       return postChallenge(
         '/external/modern-challenge-completed',
         username,
         csrfToken,
         {
-          id
+          id,
+          files
         }
       );
     }
