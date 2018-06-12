@@ -355,8 +355,6 @@ export default function certificate(app) {
     )
     .subscribe(
       user => {
-        const { isLocked, showCerts } = user.profileUI;
-        const profile = `/portfolio/${user.username}`;
         if (!user) {
           req.flash(
             'danger',
@@ -364,6 +362,8 @@ export default function certificate(app) {
           );
           return res.redirect('/');
         }
+        const { isLocked, showCerts } = user.profileUI;
+        const profile = `/portfolio/${user.username}`;
 
         if (!user.name) {
           req.flash(
