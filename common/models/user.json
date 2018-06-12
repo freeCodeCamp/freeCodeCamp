@@ -167,25 +167,37 @@
       "description": "Camper is information security and quality assurance certified",
       "default": false
     },
-    "completedChallengeCount": {
-      "type": "number",
-      "description": "generated per request, not held in db"
-    },
-    "completedCertCount": {
-      "type": "number",
-      "description": "generated per request, not held in db"
-    },
-    "completedProjectCount": {
-      "type": "number",
-      "description": "generated per request, not held in db"
-    },
     "completedChallenges": {
       "type": [
         {
           "completedDate": "number",
           "id": "string",
           "solution": "string",
-          "challengeType": "number"
+          "githubLink": "string",
+          "challengeType": "number",
+          "files": {
+            "type": [
+              {
+                "contents": {
+                  "type": "string",
+                  "default": ""
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "path": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "key": {
+                  "type": "string"
+                }
+              }
+            ],
+            "default": []
+          }
         }
       ],
       "default": []

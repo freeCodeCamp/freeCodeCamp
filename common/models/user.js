@@ -1,3 +1,10 @@
+/**
+ *
+ * Any ref to fixCompletedChallengesItem should be removed post
+ * a db migration to fix all completedChallenges
+ *
+ */
+
 import { Observable } from 'rx';
 import uuid from 'uuid/v4';
 import moment from 'moment';
@@ -10,6 +17,7 @@ import _ from 'lodash';
 import { ObjectId } from 'mongodb';
 import jwt from 'jsonwebtoken';
 
+import { fixCompletedChallengeItem } from '../utils';
 import { themes } from '../utils/themes';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
@@ -24,7 +32,7 @@ import {
   publicUserProps
 } from '../../server/utils/publicUserProps';
 
-const debug = debugFactory('fcc:models:user');
+const log = debugFactory('fcc:models:user');
 const BROWNIEPOINTS_TIMEOUT = [1, 'hour'];
 
 const createEmailError = redirectTo => wrapHandledError(
@@ -47,7 +55,9 @@ function buildCompletedChallengesUpdate(completedChallenges, project) {
   const key = Object.keys(project)[0];
   const solutions = project[key];
   const solutionKeys = Object.keys(solutions);
-  const currentCompletedChallenges = [ ...completedChallenges ];
+  const currentCompletedChallenges = [
+    ...completedChallenges.map(fixCompletedChallengeItem)
+  ];
   const currentCompletedProjects = currentCompletedChallenges
     .filter(({id}) => solutionKeys.includes(id));
   const now = Date.now();
@@ -59,7 +69,7 @@ function buildCompletedChallengesUpdate(completedChallenges, project) {
     const isCurrentlyCompleted = indexOfCurrentId !== -1;
     if (isCurrentlyCompleted) {
       update[indexOfCurrentId] = {
-        ..._.find(update, ({id}) => id === currentId).__data,
+        ..._.find(update, ({id}) => id === currentId),
         solution: solutions[currentId]
       };
     }
@@ -298,7 +308,7 @@ module.exports = function(User) {
   User.observe('before delete', function(ctx, next) {
     const UserIdentity = User.app.models.UserIdentity;
     const UserCredential = User.app.models.UserCredential;
-    debug('removing user', ctx.where);
+    log('removing user', ctx.where);
     var id = ctx.where && ctx.where.id ? ctx.where.id : null;
     if (!id) {
       return next();
@@ -315,20 +325,20 @@ module.exports = function(User) {
     )
       .subscribe(
         function(data) {
-          debug('deleted', data);
+          log('deleted', data);
         },
         function(err) {
-          debug('error deleting user %s stuff', id, err);
+          log('error deleting user %s stuff', id, err);
           next(err);
         },
         function() {
-          debug('user stuff deleted for user %s', id);
+          log('user stuff deleted for user %s', id);
           next();
         }
       );
   });
 
-  debug('setting up user hooks');
+  log('setting up user hooks');
   // overwrite lb confirm
   User.confirm = function(uid, token, redirectTo) {
     return this.findById(uid)
@@ -365,6 +375,17 @@ module.exports = function(User) {
         }).toPromise();
       });
   };
+
+  function manualReload() {
+    this.reload((err, instance) => {
+      if (err) {
+        throw Error('failed to reload user instance');
+      }
+      Object.assign(this, instance);
+      log('user reloaded from db');
+    });
+  }
+  User.prototype.manualReload = manualReload;
 
   User.prototype.loginByRequest = function loginByRequest(req, res) {
     const {
@@ -423,7 +444,7 @@ module.exports = function(User) {
     if (!username && (!email || !isEmail(email))) {
       return Promise.resolve(false);
     }
-    debug('checking existence');
+    log('checking existence');
 
     // check to see if username is on blacklist
     if (username && blacklistedUsernames.indexOf(username) !== -1) {
@@ -436,7 +457,7 @@ module.exports = function(User) {
     } else {
       where.email = email ? email.toLowerCase() : email;
     }
-    debug('where', where);
+    log('where', where);
     return User.count(where)
     .then(count => count > 0);
   };
@@ -531,10 +552,7 @@ module.exports = function(User) {
         }
       })
     )
-    .do(() => {
-      this.isDonating = true;
-      this.donationEmails = [ ...this.donationEmails, donation.email ];
-    });
+    .do(() => this.manualReload());
   };
 
   User.prototype.getEncodedEmail = function getEncodedEmail(email) {
@@ -677,9 +695,7 @@ module.exports = function(User) {
           this.requestAuthEmail(false, newEmail),
           (_, message) => message
         )
-        .do(() => {
-          Object.assign(this, updateConfig);
-        });
+        .doOnNext(() => this.manualReload());
       });
 
     } else {
@@ -715,15 +731,11 @@ module.exports = function(User) {
           Observable.from(updates)
             .flatMap(({ flag, newValue }) => {
               return Observable.fromPromise(User.doesExist(null, this.email))
-                .flatMap(() => {
-                  return this.update$({ [flag]: newValue })
-                  .do(() => {
-                    this[flag] = newValue;
-                  });
-                });
+                .flatMap(() => this.update$({ [flag]: newValue }));
             })
         );
       })
+      .doOnNext(() => this.manualReload())
       .map(() => dedent`
         We have successfully updated your account.
       `);
@@ -748,9 +760,7 @@ module.exports = function(User) {
         updatedPortfolio[pIndex] = { ...portfolioItem };
       }
       return this.update$({ portfolio: updatedPortfolio })
-        .do(() => {
-          this.portfolio = updatedPortfolio;
-        })
+        .do(() => this.manualReload())
         .map(() => dedent`
           Your portfolio has been updated.
         `);
@@ -779,7 +789,7 @@ module.exports = function(User) {
         }
         return this.update$(updateData);
       })
-      .do(() => Object.assign(this, updateData))
+      .doOnNext(() => this.manualReload() )
       .map(() => dedent`
         Your projects have been updated.
       `);
@@ -795,7 +805,7 @@ module.exports = function(User) {
     };
 
     return this.update$(update)
-      .do(() => Object.assign(this, update))
+      .doOnNext(() => this.manualReload())
       .map(() => dedent`
         Your privacy settings have been updated.
       `);
@@ -824,9 +834,7 @@ module.exports = function(User) {
       }
 
       return this.update$({ username: newUsername })
-        .do(() => {
-          this.username = newUsername;
-        })
+        .do(() => this.manualReload())
         .map(() => dedent`
         Your username has been updated successfully.
         `);
@@ -955,7 +963,7 @@ module.exports = function(User) {
           },
           (e) => cb(e, null, dev ? { giver, receiver, data } : null),
           () => {
-            debug('brownie points assigned completed');
+            log('brownie points assigned completed');
           }
         );
     };
@@ -1014,7 +1022,9 @@ module.exports = function(User) {
       );
       return Promise.reject(err);
     }
-    return this.update$({ theme }).toPromise();
+    return this.update$({ theme })
+      .doOnNext(() => this.manualReload())
+      .toPromise();
   };
 
   // deprecated. remove once live

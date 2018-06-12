@@ -100,12 +100,15 @@ const propTypes = {
   superBlock: PropTypes.string,
   updateUserBackend: PropTypes.func.isRequired,
   userProjects: PropTypes.objectOf(
-    PropTypes.objectOf(PropTypes.oneOfType(
+    PropTypes.oneOfType(
       [
+        // this is really messy, it should be addressed
+        // in completedChallenges migration to unify to one type
         PropTypes.string,
+        PropTypes.arrayOf(PropTypes.object),
         PropTypes.object
       ]
-    ))
+    )
   ),
   username: PropTypes.string
 };
@@ -113,7 +116,6 @@ const propTypes = {
 class CertificationSettings extends PureComponent {
   constructor(props) {
     super(props);
-
     this.buildProjectForms = this.buildProjectForms.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }

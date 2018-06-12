@@ -1,3 +1,10 @@
+/**
+ *
+ * Any ref to fixCompletedChallengesItem should be removed post
+ * a db migration to fix all completedChallenges
+ *
+ */
+
 import { Observable } from 'rx';
 import _ from 'lodash';
 
@@ -6,6 +13,7 @@ import {
   normaliseUserFields,
   userPropsForSession
 } from '../utils/publicUserProps';
+import { fixCompletedChallengeItem } from '../../common/utils';
 
 export default function userServices() {
   return {
@@ -32,7 +40,9 @@ export default function userServices() {
           .map(({ completedChallenges, progress }) => ({
             ...queryUser.toJSON(),
             ...progress,
-            completedChallenges
+            completedChallenges: completedChallenges.map(
+              fixCompletedChallengeItem
+            )
           }))
           .map(
             user => ({

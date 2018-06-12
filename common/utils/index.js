@@ -1,3 +1,5 @@
+import { pick } from 'lodash';
+
 export function dashify(str) {
   return ('' + str)
     .toLowerCase()
@@ -8,3 +10,8 @@ export function dashify(str) {
 // todo: unify with server/utils/index.js:dasherize
 const dasherize = dashify;
 export { dasherize };
+
+export const fixCompletedChallengeItem = obj => pick(
+  obj,
+  [ 'id', 'completedDate', 'solution', 'githubLink', 'challengeType', 'files' ]
+);
