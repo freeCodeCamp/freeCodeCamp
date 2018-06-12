@@ -237,11 +237,11 @@
       "id": "598f48a36c8c40764b4e52b3",
       "title": "Prevent Object Mutation",
       "description": [
-        "As seen in previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
-        "Once the object is freezed, you can no longer add/update/delete properties from it. Any attempt at changing the object will be rejected without any error.",
-        "<blockquote>\nlet obj = {\n  name:\"FreeCodeCamp\"\n  review:\"Awesome\"\n};\nObject.freeze(obj);\nobj.review = \"bad\"; //will be ignored. Mutation not allowed\nobj.newProp = \"Test\"; // will be ignored. Mutation not allowed\nconsole.log(obj); \n// { name: \"FreeCodeCamp\", review:\"Awesome\"}\n</blockquote>",
+        "As seen in the previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
+        "Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error.",
+        "<blockquote><br>let obj = {<br>  name:\"FreeCodeCamp\"<br>  review:\"Awesome\"<br>};<br>Object.freeze(obj);<br>obj.review = \"bad\"; //will be ignored. Mutation not allowed<br>obj.newProp = \"Test\"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: \"FreeCodeCamp\", review:\"Awesome\"}<br></blockquote>",
         "<hr>",
-        "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze <code>MATH_CONSTANTS</code> object so that noone is able alter the value of <code>PI</code> or add any more properties to it."
+        "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able alter the value of <code>PI</code>, add, or delete properties ."
       ],
       "tests": [
         {
