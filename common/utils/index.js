@@ -13,5 +13,5 @@ export { dasherize };
 
 export const fixCompletedChallengeItem = obj => pick(
   obj,
-  [ 'id', 'completedDate', 'solution', 'challengeType', 'files' ]
+  [ 'id', 'completedDate', 'solution', 'githubLink', 'challengeType', 'files' ]
 );
