@@ -11,6 +11,10 @@ const prismLang = {
   html: 'markup'
 };
 
+function getContentString(file) {
+  return file.trim() || '// We do not have the solution to this challenge';
+}
+
 function SolutionViewer({ files }) {
   const solutions = files && Array.isArray(files) ?
     files.map(file => (
@@ -44,7 +48,7 @@ function SolutionViewer({ files }) {
           className='language-markup'
             dangerouslySetInnerHTML={{
               __html: Prism.highlight(
-                files.trim(),
+                getContentString(files),
                 Prism.languages.js
               )
             }}
