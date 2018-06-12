@@ -417,10 +417,6 @@
         {
           "text": "Your code should have an opening and closing <code>footer</code> tag.",
           "testString": "assert(code.match(/<footer>\\s*&copy; 2016 Camper Cat\\s*<\\/footer>/g), 'Your code should have an opening and closing <code>footer</code> tag.');"
-        },
-        {
-          "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
         }
       ],
       "solutions": [],
