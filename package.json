@@ -3,15 +3,15 @@
   "description": "freeCodeCamp's curriculum seed files",
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "author": "freeCodeCamp <team@freecodecamp.org>",
-  "homepage": "https://github.com/freecodecamp/freecodecamp#readme",
+  "homepage": "https://github.com/freeCodeCamp/curriculum#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freecodecamp/freecodecamp.git"
+    "url": "git+https://github.com/freeCodeCamp/curriculum.git"
   },
   "bugs": {
-    "url": "https://github.com/freecodecamp/freecodecamp/issues"
+    "url": "https://github.com/freeCodeCamp/curriculum/issues"
   },
-  "version": "1.0.2",
+  "version": "1.1.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run build:js && npm run build:json",
