@@ -6,12 +6,12 @@
   "homepage": "https://github.com/freeCodeCamp/curriculum#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freeCodeCamp/curriculum.git"
+    "url": "https://github.com/freeCodeCamp/curriculum.git"
   },
   "bugs": {
     "url": "https://github.com/freeCodeCamp/curriculum/issues"
   },
-  "version": "1.1.1",
+  "version": "0.0.0-development",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run build:js && npm run build:json",
@@ -23,8 +23,8 @@
     "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
     "lint": "eslint ./**/*.js --fix",
     "prepack": "npm run build",
-    "release": "np",
     "repack": "babel-node ./repack.js",
+    "semantic-release": "semantic-release",
     "test": "babel-node ./test-challenges.js | tap-spec",
     "unpack": "babel-node ./unpack.js"
   },
@@ -70,10 +70,10 @@
     "jquery": "^3.3.1",
     "lint-staged": "^7.2.0",
     "lodash": "^4.17.10",
-    "np": "*",
     "prettier": "^1.13.5",
     "prettier-package-json": "^1.6.0",
     "rx": "^4.1.0",
+    "semantic-release": "^15.5.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.9.0",
     "validator": "^10.2.0"

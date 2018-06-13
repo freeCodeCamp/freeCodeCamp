@@ -1,6 +1,6 @@
 /* eslint-disable no-eval, no-process-exit, no-unused-vars */
 
-import {Observable} from 'rx';
+import { Observable } from 'rx';
 import tape from 'tape';
 
 import getChallenges from './getChallenges';
@@ -27,36 +27,27 @@ function evaluateTest(
   test,
   tapTest
 ) {
-
   let code = solution;
 
   /* NOTE: Provide dependencies for React/Redux challenges
                * and configure testing environment
                */
-  let React,
-    ReactDOM,
-    Redux,
-    ReduxThunk,
-    ReactRedux,
-    Enzyme,
-    document;
+  let React, ReactDOM, Redux, ReduxThunk, ReactRedux, Enzyme, document;
 
   // Fake Deep Equal dependency
-  const DeepEqual = (a, b) =>
-    JSON.stringify(a) === JSON.stringify(b);
+  const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
   // Hardcode Deep Freeze dependency
-  const DeepFreeze = (o) => {
+  const DeepFreeze = o => {
     Object.freeze(o);
     Object.getOwnPropertyNames(o).forEach(function(prop) {
-      if (o.hasOwnProperty(prop)
-        && o[ prop ] !== null
-        && (
-          typeof o[ prop ] === 'object' ||
-          typeof o[ prop ] === 'function'
-        )
-        && !Object.isFrozen(o[ prop ])) {
-        DeepFreeze(o[ prop ]);
+      if (
+        o.hasOwnProperty(prop) &&
+        o[prop] !== null &&
+        (typeof o[prop] === 'object' || typeof o[prop] === 'function') &&
+        !Object.isFrozen(o[prop])
+      ) {
+        DeepFreeze(o[prop]);
       }
     });
     return o;
@@ -76,7 +67,7 @@ function evaluateTest(
     /* Transpile ALL the code
                  * (we may use JSX in head or tail or tests, too): */
     const transform = require('babel-standalone').transform;
-    const options = { presets: [ 'es2015', 'react' ] };
+    const options = { presets: ['es2015', 'react'] };
 
     head = transform(head, options).code;
     solution = transform(solution, options).code;
@@ -98,26 +89,17 @@ function evaluateTest(
     document = window.document;
     global.window = window;
     global.document = window.document;
-
   }
 
   /* eslint-enable no-unused-vars */
   try {
     (() => {
       return eval(
-        head + '\n' +
-        solution + '\n' +
-        tail + '\n' +
-        test.testString
+        head + '\n' + solution + '\n' + tail + '\n' + test.testString
       );
     })();
   } catch (e) {
-    console.log(
-      head + '\n' +
-      solution + '\n' +
-      tail + '\n' +
-      test.testString
-    );
+    console.log(head + '\n' + solution + '\n' + tail + '\n' + test.testString);
     console.log(e);
     tapTest.fail(e);
     process.exit(1);
@@ -144,11 +126,13 @@ function createTest({
   const isAsync = s => s.includes('(async () => ');
   if (isAsync(tests.join(''))) {
     console.log(`Replacing Async Tests for Challenge ${title}`);
-    tests = tests.map(challengeTestSource =>
-      isAsync(challengeTestSource) ?
-      "assert(true, 'message: great');" :
-      challengeTestSource);
-    }
+    tests = tests.map(
+      challengeTestSource =>
+        isAsync(challengeTestSource)
+          ? "assert(true, 'message: great');"
+          : challengeTestSource
+    );
+  }
   const { head, tail } = Object.keys(files)
     .map(key => files[key])
     .reduce(
@@ -167,39 +151,41 @@ function createTest({
   }
 
   return Observable.fromCallback(tape)(title)
-    .doOnNext(tapTest =>
-      solutions.length ? tapTest.plan(plan) : tapTest.end())
+    .doOnNext(
+      tapTest => (solutions.length ? tapTest.plan(plan) : tapTest.end())
+    )
     .flatMap(tapTest => {
       if (solutions.length <= 0) {
-        tapTest.comment('No solutions for ' + title);
         return Observable.just({
           title,
           type: 'missing'
         });
       }
 
-      return Observable.just(tapTest)
-        .map(addAssertsToTapTest)
-        /* eslint-disable no-unused-vars */
-        // assert and code used within the eval
-        .doOnNext(assert => {
-          solutions.forEach(solution => {
-            tests.forEach(test => {
-              evaluateTest(
-                solution,
-                assert,
-                react,
-                redux,
-                reactRedux,
-                head,
-                tail,
-                test,
-                tapTest
-              );
+      return (
+        Observable.just(tapTest)
+          .map(addAssertsToTapTest)
+          /* eslint-disable no-unused-vars */
+          // assert and code used within the eval
+          .doOnNext(assert => {
+            solutions.forEach(solution => {
+              tests.forEach(test => {
+                evaluateTest(
+                  solution,
+                  assert,
+                  react,
+                  redux,
+                  reactRedux,
+                  head,
+                  tail,
+                  test,
+                  tapTest
+                );
+              });
             });
-          });
-        })
-        .map(() => ({ title }));
+          })
+          .map(() => ({ title }))
+      );
     });
 }
 
@@ -229,11 +215,11 @@ Observable.from(getChallenges())
   .filter(title => !!title)
   .toArray()
   .subscribe(
-    (noSolutions) => {
+    noSolutions => {
       if (noSolutions) {
         console.log(
           '# These challenges have no solutions\n- [ ] ' +
-          noSolutions.join('\n- [ ] ')
+            noSolutions.join('\n- [ ] ')
         );
       }
     },

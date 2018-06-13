@@ -5,8 +5,27 @@ node_js:
 
 cache:
   directories:
+    - ~/.npm
     - node_modules
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
 script:
   - npm run lint
   - npm run test
+  - npm run build
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - npx semantic-release
+
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
+
 sudo: false
