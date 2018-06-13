@@ -1245,7 +1245,7 @@
         },
         {
           "text": "<code>bar</code> is exported.",
-          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+boo\\s+=+\\s\"far\"/g), '<code>bar</code> is exported.');"
+          "testString": "getUserInput => assert(getUserInput('index').match(/export\\s+const\\s+bar\\s+=+\\s\"foo\"/g), '<code>bar</code> is exported.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1259,7 +1259,7 @@
           "contents": [
             "\"use strict\";",
             "const foo = \"bar\";",
-            "const boo = \"far\";"
+            "const bar= \"foo\";"
           ],
           "head": [
             "window.exports = function(){};"
