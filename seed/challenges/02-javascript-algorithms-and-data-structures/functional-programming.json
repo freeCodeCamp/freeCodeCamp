@@ -1102,8 +1102,8 @@
           "testString": "assert(code.match(/\\.reduce/g), 'Your code should use the <code>reduce</code> method.');"
         },
         {
-          "text": "The <code>averageRating</code> should equal 8.675.",
-          "testString": "assert(averageRating == 8.675, 'The <code>averageRating</code> should equal 8.675.');"
+          "text": "The <code>averageRating</code> should equal 8.52.",
+          "testString": "assert(averageRating == 8.52, 'The <code>averageRating</code> should equal 8.52.');"
         },
         {
           "text": "Your code should not use a <code>for</code> loop.",
