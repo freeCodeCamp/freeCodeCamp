@@ -503,7 +503,16 @@ module.exports = function(User) {
         return cb(err);
       }
       if (!user || user.username !== username) {
-        return cb(new Error(`no user found for ${ username }`));
+        throw wrapHandledError(
+          new Error(`no user found for ${username}`),
+          {
+            type: 'info',
+            message: dedent`
+            There is no user account associated with ${username}.
+            `,
+            redirectTo: '/'
+          }
+        );
       }
       const aboutUser = getAboutProfile(user);
       return cb(null, aboutUser);
