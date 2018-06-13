@@ -16,7 +16,6 @@ notifications:
 script:
   - npm run lint
   - npm run test
-  - npm run build
 
 deploy:
   provider: script
