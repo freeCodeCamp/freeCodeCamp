@@ -5,6 +5,15 @@ superBlock: JavaScript Algorithms and Data Structures
 ---
 ## Introduction to the JavaScript Algorithms and Data Structures Projects
 
-This introduction is a stub
+Time to put your new JavaScript skills to work! These challenges will be similar to the algorithm scripting challenges but more difficult. This will allow you to prove how much you have learned.
 
-Help us make it real on [GitHub](https://github.com/freeCodeCamp/learn/tree/master/src/introductions).
+In this section you will create the following small JavaScript programs:
+ * Palindrome Checker
+ * Roman Numeral Converter
+ * Caesars Cipher
+ * Telephone Number Validator
+ * Cash Register
+
+Have fun and remember to use the [Read-Search-Ask](https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514) method if you get stuck.
+
+Good Luck!
