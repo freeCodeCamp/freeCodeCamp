@@ -30,13 +30,16 @@ header {
 
 #top-nav img {
   max-height: 25px;
+  min-width: 35px;
   margin: 0 5px 0 10px;
 }
 
 #top-right-nav {
   display: flex;
+  width: 270px;
   margin: 0;
   list-style: none;
+  justify-content: space-around;
 }
 
 #top-right-nav a, #top-right-nav img {
@@ -55,8 +58,11 @@ header {
 
 #top-right-nav li {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 0px 10px;
+  height: 100%;
+  margin: 0 3px;
 }
 
 #top-right-nav li > a, #top-right-nav li > span {
