@@ -1,9 +1,16 @@
+.reflex-element {
+  overflow: hidden !important;
+}
+
 .editor {
   height: 100%;
 }
 
 .instructions-panel {
   padding: 0 10px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .react-monaco-editor-container {
@@ -13,7 +20,7 @@
   align-items: end;
 }
 
-.monaco-menu .action-label { 
+.monaco-menu .action-label {
   color: #a2bd9b;
   letter-spacing: 0.02em;
 }

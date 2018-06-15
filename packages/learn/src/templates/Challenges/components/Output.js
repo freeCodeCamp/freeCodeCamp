@@ -15,11 +15,13 @@ const options = {
     enabled: false
   },
   readOnly: true,
+  wordWrap: 'on',
+  scrollBeyondLastLine: false,
   scrollbar: {
-    vertical: 'hidden',
-    horizontal: 'hidden'
+    horizontal: 'hidden',
+    vertical: 'visible',
+    verticalHasArrows: true
   },
-  wordWrap: 'on'
 };
 
 class Output extends PureComponent {

@@ -42,7 +42,12 @@ class Editor extends PureComponent {
         enabled: false
       },
       selectOnLineNumbers: true,
-      wordWrap: 'on'
+      wordWrap: 'on',
+      scrollbar: {
+        horizontal: 'hidden',
+        vertical: 'visible',
+        verticalHasArrows: true
+      }
     };
 
     this._editor = null;
