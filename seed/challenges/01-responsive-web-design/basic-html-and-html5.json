@@ -2013,9 +2013,9 @@
         "Each of your radio buttons can be nested within its own <code>label</code> element. By wrapping an <code>input</code> element inside of a <code>label</code> element it will autoatically associate the radio button input with the label element surrounding it.",
         "All related radio buttons should have the same <code>name</code> attribute to create a radio button group. By creating a radio group, selecting any single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.",
         "Here's an example of a radio button:",
-        "<blockquote>&#60;label&#62; <br> &#60;input type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
+        "<blockquote>&#60;label&#62; <br>&nbsp;&nbsp;&#60;input type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
         "It is considered best practice to set a <code>for</code> attribute on the <code>label</code> element, with a value that matches the value of the <code>id</code> attribute of the <code>input</code> element. This allows assistive technologies to create a linked relationship between the label and the child <code>input</code> element. For example:",
-        "<blockquote>&#60;label for=\"indoor\"&#62; <br> &#60;input id=\"indoor\" type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
+        "<blockquote>&#60;label for=\"indoor\"&#62; <br>&nbsp;&nbsp;&#60;input id=\"indoor\" type=\"radio\" name=\"indoor-outdoor\"&#62;Indoor <br>&#60;/label&#62;</blockquote>",
         "<hr>",
         "Add a pair of radio buttons to your form, each nested in its own label element. One should have the option of <code>indoor</code> and the other should have the option of <code>outdoor</code>. Both should share the <code>name</code> attribute of <code>indoor-outdoor</code> to create a radio group."
       ],
@@ -2493,7 +2493,7 @@
         "The <code>!</code> and uppercase <code>DOCTYPE</code> is important, especially for older browsers. The <code>html</code> is not case sensitive.",
         "Next, the rest of your HTML code needs to be wrapped in <code>html</code> tags. The opening <code>&lt;html&gt;</code> goes directly below the <code>&lt;!DOCTYPE html&gt;</code> line, and the closing <code>&lt;/html&gt;</code> goes at the end of the page.",
         "Here's an example of the page structure:",
-        "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;!-- Your HTML code goes here --&gt;<br>&lt;/html&gt;</blockquote>",
+        "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;!-- Your HTML code goes here --&gt;<br>&lt;/html&gt;</blockquote>",
         "<hr>",
         "Add a <code>DOCTYPE</code> tag for HTML5 to the top of the blank HTML document in the code editor. Under it, add opening and closing <code>html</code> tags, which wrap around an <code>h1</code> element. The heading can include any text."
       ],
@@ -2522,7 +2522,7 @@
             "O <code>!</code> e o <code>DOCTYPE</code> todo em maiúsculas são importantes, especialmente para navegadores mais velhos. O <code>html</code> não é sensível a maiúsculas e minúsculas.",
             "Em seguida, o resto do seu código HTML deve estar delimitado por tags <code>html</code>. A tag <code>&lt;html&gt;</code> vai diretamente abaixo da linha <code>&lt;!DOCTYPE html&gt;</code>, e a tag <code>&lt;/html&gt;</code> vai no final da página.",
             "Aqui está um exemplo da estrutura de uma página:",
-            "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;!-- Seu código HTML vai aqui --&gt;<br>&lt;/html&gt;</blockquote>",
+            "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;!-- Seu código HTML vai aqui --&gt;<br>&lt;/html&gt;</blockquote>",
             "<hr>",
             "Adicione uma tag <code>DOCTYPE</code> para HTML5 no topo do documento HTML em branco no editor de texto. Abaixo dela, adicione tags <code>html</code> de abertura e fechamento, ao redor de um elemento <code>h1</code>. O texto do <code>h1</code> pode ser qualquer um."
           ]
@@ -2546,7 +2546,7 @@
         "You can add another level of organization in your HTML document within the <code>html</code> tags with the <code>head</code> and <code>body</code> elements. Any markup with information about your page would go into the <code>head</code> tag. Then any markup with the content of the page (what displays for a user) would go into the <code>body</code> tag.",
         "Metadata elements, such as <code>link</code>, <code>meta</code>, <code>title</code>, and <code>style</code>, typically go inside the <code>head</code> element.",
         "Here's an example of a page's layout:",
-        "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- metadata elements --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- page contents --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
+        "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- metadata elements --&gt;<br>&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- page contents --&gt;<br>&nbsp;&nbsp;&lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
         "<hr>",
         "Edit the markup so there's a <code>head</code> and a <code>body</code>. The <code>head</code> element should only include the <code>title</code>, and the <code>body</code> element should only include the <code>h1</code> and <code>p</code>."
       ],
@@ -2584,7 +2584,7 @@
             "Você pode adicionar mais um nível de organização ao seu documento HTML dentro da tag <code>html</code> com os elementos <code>head</code> (cabeça) e <code>body</code> (corpo). Qualquer código com informações sobre a sua página deve estar dentro da tag <code>head</code>. Assim, qualquer código com o conteúdo da sua página (o que aparece para o usuário) deve estar dentro da tag <code>body</code>.",
             "Elementos de metadados, como <code>link</code>, <code>meta</code>, <code>title</code> e <code>style</code>, tipicamente aparecem dentro do elemento <code>head</code>.",
             "Aqui está um exemplo da estrutura de uma página:",
-            "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>  &lt;head&gt;<br>    &lt;!-- elementos de metadados --&gt;<br>  &lt;/head&gt;<br>  &lt;body&gt;<br>    &lt;!-- conteúdo da página --&gt;<br>  &lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
+            "<blockquote>&lt;!DOCTYPE html&gt;<br>&lt;html&gt;<br>&nbsp;&nbsp;&lt;head&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- elementos de metadados --&gt;<br>&nbsp;&nbsp;&lt;/head&gt;<br>&nbsp;&nbsp;&lt;body&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;!-- conteúdo da página --&gt;<br>&nbsp;&nbsp;&lt;/body&gt;<br>&lt;/html&gt;</blockquote>",
             "<hr>",
             "Edite o código para que tenha uma <code>head</code> e um <code>body</code>. O elemento <code>head</code> deve incluir apenas o <code>title</code>, e o elemento <code>body</code> deve conter apenas o <code>h1</code> e o <code>p</code>."
           ]

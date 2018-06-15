@@ -12,7 +12,7 @@
         "<blockquote>let simpleArray = ['one', 2, 'three’, true, false, undefined, null];<br>console.log(simpleArray.length);<br>// logs 7</blockquote>",
         "All array's have a length property, which as shown above, can be very easily accessed with the syntax <code>Array.length</code>.",
         "A more complex implementation of an array can be seen below. This is known as a <dfn>multi-dimensional array</dfn>, or an array that contains other arrays. Notice that this array also contains JavaScript <dfn>objects</dfn>, which we will examine very closely in our next section, but for now, all you need to know is that arrays are also capable of storing complex objects.",
-        "<blockquote>let complexArray = [<br>  [<br>    {<br>      one: 1,<br>      two: 2<br>    },<br>    {<br>      three: 3,<br>      four: 4<br>    }<br>  ],<br>  [<br>    {<br>      a: \"a\",<br>      b: \"b\"<br>    },<br>    {<br>      c: \"c\",<br>      d: “d”<br>    }<br>  ]<br>];</blockquote>",
+        "<blockquote>let complexArray = [<br>&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;one: 1,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;two: 2<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;three: 3,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;four: 4<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;[<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a: \"a\",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b: \"b\"<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c: \"c\",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d: “d”<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;]<br>];</blockquote>",
         "<hr>",
         "We have defined a variable called <code>yourArray</code>. Complete the statement by assigning an array of at least 5 elements in length to the <code>yourArray</code> variable. Your array should contain at least one <dfn>string</dfn>, one <dfn>number</dfn>, and one <dfn>boolean</dfn>."
       ],
@@ -641,7 +641,7 @@
       "title": "Add Key-Value Pairs to JavaScript Objects",
       "description": [
         "At their most basic, objects are just collections of <dfn>key-value pairs</dfn>, or in other words, pieces of data mapped to unique identifiers that we call <dfn>properties</dfn> or <dfn>keys</dfn>. Let's take a look at a very simple example:",
-        "<blockquote>let FCC_User = {<br>  username: 'awesome_coder',<br>  followers: 572,<br>  points: 1741,<br>  completedProjects: 15<br>};</blockquote>",
+        "<blockquote>let FCC_User = {<br>&nbsp;&nbsp;username: 'awesome_coder',<br>&nbsp;&nbsp;followers: 572,<br>&nbsp;&nbsp;points: 1741,<br>&nbsp;&nbsp;completedProjects: 15<br>};</blockquote>",
         "The above code defines an object called <code>FCC_User</code> that has four <dfn>properties</dfn>, each of which map to a specific value. If we wanted to know the number of <code>followers</code> <code>FCC_User</code> has, we can access that property by writing:",
         "<blockquote>let userData = FCC_User.followers;<br>// userData equals 572</blockquote>",
         "This is called <dfn>dot notation</dfn>. Alternatively, we can also access the property with brackets, like so:",
@@ -704,7 +704,7 @@
       "title": "Modify an Object Nested Within an Object",
       "description": [
         "Now let's take a look at a slightly more complex object. Object properties can be nested to an arbitrary depth, and their values can be any type of data supported by JavaScript, including arrays and even other objects. Consider the following:",
-        "<blockquote>let nestedObject = {<br>  id: 28802695164,<br>  date: 'December 31, 2016',<br>  data: {<br>    totalUsers: 99,<br>    online: 80,<br>    onlineStatus: {<br>      active: 67,<br>      away: 13<br>    }<br>  }<br>};</blockquote>",
+        "<blockquote>let nestedObject = {<br>&nbsp;&nbsp;id: 28802695164,<br>&nbsp;&nbsp;date: 'December 31, 2016',<br>&nbsp;&nbsp;data: {<br>&nbsp;&nbsp;&nbsp;&nbsp;totalUsers: 99,<br>&nbsp;&nbsp;&nbsp;&nbsp;online: 80,<br>&nbsp;&nbsp;&nbsp;&nbsp;onlineStatus: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;active: 67,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;away: 13<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>};</blockquote>",
         "<code>nestedObject</code> has three unique keys: <code>id</code>, whose value is a number, <code>date</code> whose value is a string, and <code>data</code>, whose value is an object which has yet another object nested within it. While structures can quickly become complex, we can still use the same notations to access the information we need.",
         "<hr>",
         "Here we've defined an object, <code>userActivity</code>, which includes another object nested within it. You can modify properties on this nested object in the same way you modified properties in the last challenge. Set the value of the <code>online</code> key to <code>45</code>."
@@ -943,7 +943,7 @@
       "title": " Iterate Through the Keys of an Object with a for...in Statement",
       "description": [
         "Sometimes you may need to iterate through all the keys within an object. This requires a specific syntax in JavaScript called a <dfn>for...in</dfn> statement. For our <code>users</code> object, this could look like:",
-        "<blockquote>for (let user in users) {<br>  console.log(user);<br>};<br><br>// logs:<br>Alan<br>Jeff<br>Sarah<br>Ryan</blockquote>",
+        "<blockquote>for (let user in users) {<br>&nbsp;&nbsp;console.log(user);<br>};<br><br>// logs:<br>Alan<br>Jeff<br>Sarah<br>Ryan</blockquote>",
         "In this statement, we defined a variable <code>user</code>, and as you can see, this variable was reset during each iteration to each of the object's keys as the statement looped through the object, resulting in each user's name being printed to the console.",
         "<strong>NOTE:</strong><br>Objects do not maintain an ordering to stored keys like arrays do; thus a keys position on an object, or the relative order in which it appears, is irrelevant when referencing or accessing that key.",
         "<hr>",
