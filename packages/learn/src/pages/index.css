@@ -7,6 +7,12 @@
   margin: 0 auto;
 }
 
+@media screen, (max-width: 630px) {
+  .index-page-wrapper {
+    padding: 0px 25px 0px 25px;
+  }
+}
+
 .index-page-wrapper p {
   margin-bottom: 0.75rem;
 }

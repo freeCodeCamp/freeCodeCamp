@@ -4,6 +4,12 @@
   margin-left: 35px;
 }
 
+@media screen, (max-width: 630px) {
+  .map-ui {
+    margin: 0 auto;
+  }
+}
+
 .map-ui ul {
   list-style: none;
   color: #006400;
