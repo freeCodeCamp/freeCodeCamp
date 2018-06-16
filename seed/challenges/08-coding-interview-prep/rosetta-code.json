@@ -4966,7 +4966,7 @@
         "where the diagonal elements are all <b>1</b>s (ones),",
         "and all the other elements are all <b>0</b>s (zeroes).",
         "\\begin{bmatrix} 1 & 0 & 0 \\cr 0 & 1 & 0 \\cr 0 & 0 & 1 \\cr \\end{bmatrix}",
-        "Write a function that takes a number 'n' as a parameter and returns the identity matrix of order n x n.",
+        "Write a function that takes a number 'n' as a parameter and returns the identity matrix of order n x n."
       ],
       "solutions": [
         "function idMatrix (n) {\n\treturn Array.apply(null, new Array(n)).map(function (x, i, xs) {\n\t\treturn xs.map(function (_, k) {\n\t\t\treturn i === k ? 1 : 0;\n\t\t})\n\t});\n}\n"
