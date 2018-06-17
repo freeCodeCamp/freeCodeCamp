@@ -2822,7 +2822,7 @@
         "You have been giving <code>id</code> or <code>class</code> attributes to elements that you wish to specifically style. These are known as ID and class selectors. There are other CSS Selectors you can use to select custom groups of elements to style.",
         "Let's bring out CatPhotoApp again to practice using CSS Selectors.",
         "For this challenge, you will use the <code>[attr=value]</code> attribute selector to style the checkboxes in CatPhotoApp. This selector matches and styles elements with a specific attribute value. For example, the below code changes the margins of all elements with the attribute <code>type</code> and a corresponding value of <code>radio</code>:",
-        "<blockquote>[type='radio'] {<br>  margin: 20px 0px 20px 0px;<br>}</blockquote>",
+        "<blockquote>[type='radio'] {<br>&nbsp;&nbsp;margin: 20px 0px 20px 0px;<br>}</blockquote>",
         "<hr>",
         "Using the <code>type</code> attribute selector, try to give the checkboxes in CatPhotoApp a top margin of 10px and a bottom margin of 15px."
       ],
@@ -3759,7 +3759,7 @@
         "Did you know there are other ways to represent colors in CSS? One of these ways is called hexadecimal code, or <code>hex code</code> for short.",
         "We usually use <code>decimals</code>, or base 10 numbers, which use the symbols 0 to 9 for each digit. <code>Hexadecimals</code> (or <code>hex</code>) are base 16 numbers. This means it uses sixteen distinct symbols. Like decimals, the symbols 0-9 represent the values zero to nine. Then A,B,C,D,E,F represent the values ten to fifteen. Altogether, 0 to F can represent a digit in <code>hexadecimal</code>, giving us 16 total possible values. You can find more information about <a target='_blank' href='https://en.wikipedia.org/wiki/Hexadecimal'>hexadecimal numbers here</a>.",
         "In CSS, we can use 6 hexadecimal digits to represent colors, two each for the red (R), green (G), and blue (B) components. For example, <code>#000000</code> is black and is also the lowest possible value. You can find more information about the <a target='_blank' href='https://en.wikipedia.org/wiki/RGB_color_model'>RGB color system here</a>.",
-        "<blockquote>body {<br>  color: #000000;<br>}</blockquote>",
+        "<blockquote>body {<br>&nbsp;&nbsp;color: #000000;<br>}</blockquote>",
         "<hr>",
         "Replace the word <code>black</code> in our <code>body</code> element's background-color with its <code>hex code</code> representation, <code>#000000</code>."
       ],
@@ -4087,7 +4087,7 @@
         "Instead of using six hexadecimal digits like you do with hex code, with <code>RGB</code> you specify the brightness of each color with a number between 0 and 255.",
         "If you do the math, the two digits for one color equal 16 times 16, which gives us 256 total values. So <code>RGB</code>, which starts counting from zero, has the exact same number of possible values as hex code.",
         "Here's an example of how you'd change the body background to orange using its RGB code.",
-        "<blockquote>body {<br>  background-color: rgb(255, 165, 0);<br>}</blockquote>",
+        "<blockquote>body {<br>&nbsp;&nbsp;background-color: rgb(255, 165, 0);<br>}</blockquote>",
         "<hr>",
         "Let's replace the hex code in our <code>body</code> element's background color with the RGB value for black: <code>rgb(0, 0, 0)</code>"
       ],

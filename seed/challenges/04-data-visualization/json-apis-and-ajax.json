@@ -180,7 +180,7 @@
         "These properties and their values are often referred to as \"key-value pairs\".",
         "However, JSON transmitted by APIs are sent as <code>bytes</code>, and your application receives it as a <code>string</code>. These can be converted into JavaScript objects, but they are not JavaScript objects by default. The <code>JSON.parse</code> method parses the string and constructs the JavaScript object described by it.",
         "You can request the JSON from freeCodeCamp's Cat Photo API. Here's the code you can put in your click event to do this:",
-        "<blockquote>req=new XMLHttpRequest();<br>req.open(\"GET\",'/json/cats.json',true);<br>req.send();<br>req.onload=function(){<br>  json=JSON.parse(req.responseText);<br>  document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);<br>};</blockquote>",
+        "<blockquote>req=new XMLHttpRequest();<br>req.open(\"GET\",'/json/cats.json',true);<br>req.send();<br>req.onload=function(){<br>&nbsp;&nbsp;json=JSON.parse(req.responseText);<br>&nbsp;&nbsp;document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);<br>};</blockquote>",
         "Here's a review of what each piece is doing. The JavaScript <code>XMLHttpRequest</code> object has a number of properties and methods that are used to transfer data. First, an instance of the <code>XMLHttpRequest</code> object is created and saved in the <code>req</code> variable.",
         "Next, the <code>open</code> method initializes a request - this example is requesting data from an API, therefore is a \"GET\" request. The second argument for <code>open</code> is the URL of the API you are requesting data from. The third argument is a Boolean value where <code>true</code> makes it an asynchronous request.",
         "The <code>send</code> method sends the request. Finally, the <code>onload</code> event handler parses the returned data and applies the <code>JSON.stringify</code> method to convert the JavaScript object into a string. This string is then inserted as the message text.",
@@ -376,11 +376,11 @@
         "First, declare an html variable with <code>var html = \"\";</code>.",
         "Then, loop through the JSON, adding HTML to the variable that wraps the key names in <code>strong</code> tags, followed by the value. When the loop is finished, you render it.",
         "Here's the code that does this:",
-        "<blockquote>json.forEach(function(val) {</br>  var keys = Object.keys(val);</br>  html += \"&lt;div class = 'cat'&gt;\";</br>  keys.forEach(function(key) {</br>    html += \"&lt;strong&gt;\" + key + \"&lt;/strong&gt;: \" + val[key] + \"&lt;br&gt;\";</br>  });</br>  html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>",
+        "<blockquote>json.forEach(function(val) {</br>&nbsp;&nbsp;var keys = Object.keys(val);</br>&nbsp;&nbsp;html += \"&lt;div class = 'cat'&gt;\";</br>&nbsp;&nbsp;keys.forEach(function(key) {</br>&nbsp;&nbsp;&nbsp;&nbsp;html += \"&lt;strong&gt;\" + key + \"&lt;/strong&gt;: \" + val[key] + \"&lt;br&gt;\";</br>&nbsp;&nbsp;});</br>&nbsp;&nbsp;html += \"&lt;/div&gt;&lt;br&gt;\";</br>});</blockquote>",
         "<hr>",
         "Add a <code>forEach</code> method to loop over the JSON data and create the HTML elements to display it.",
         "Here is some example JSON",
-        "<blockquote>[</br>  {</br>    \"id\":0,</br>    \"imageLink\":\"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg\",</br>    \"altText\":\"A white cat wearing a green helmet shaped melon on its head. \",</br>    \"codeNames\":[</br>      \"Juggernaut\",</br>      \"Mrs. Wallace\",</br>      \"Buttercup\"</br>    ]</br>  }</br>]</blockquote>"
+        "<blockquote>[</br>&nbsp;&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;\"id\":0,</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"imageLink\":\"https://s3.amazonaws.com/freecodecamp/funny-cat.jpg\",</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"altText\":\"A white cat wearing a green helmet shaped melon on its head. \",</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"codeNames\":[ \"Juggernaut\", \"Mrs. Wallace\", \"Buttercup\"</br>&nbsp;&nbsp;&nbsp;&nbsp;]</br>&nbsp;&nbsp;}</br>]</blockquote>"
       ],
       "tests": [
         {
@@ -565,7 +565,7 @@
         "If you don't want to render every cat photo you get from the freeCodeCamp Cat Photo API, you can pre-filter the JSON before looping through it.",
         "Given that the JSON data is stored in an array, you can use the <code>filter</code> method to filter out the cat whose \"id\" key has a value of 1.",
         "Here's the code to do this:",
-        "<blockquote>json = json.filter(function(val) {<br>  return (val.id !== 1);<br>});</blockquote>",
+        "<blockquote>json = json.filter(function(val) {<br>&nbsp;&nbsp;return (val.id !== 1);<br>});</blockquote>",
         "<hr>",
         "Add code to <code>filter</code> the json data to remove the cat with the \"id\" value of 1."
       ],
@@ -661,7 +661,7 @@
         "You will see a prompt to allow or block this site from knowing your current location. The challenge can be completed either way, as long as the code is correct.",
         "By selecting allow, you will see the text on the output phone change to your latitude and longitude.",
         "Here's code that does this:",
-        "<blockquote>if (navigator.geolocation){<br>  navigator.geolocation.getCurrentPosition(function(position) {<br>    document.getElementById('data').innerHTML=\"latitude: \"+ position.coords.latitude +  \"&lt;br&gt;longitude: \" +  position.coords.longitude;<br>  });<br>}</blockquote>",
+        "<blockquote>if (navigator.geolocation){<br>&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(function(position) {<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementById('data').innerHTML=\"latitude: \"+ position.coords.latitude +  \"&lt;br&gt;longitude: \" +  position.coords.longitude;<br>&nbsp;&nbsp;});<br>}</blockquote>",
         "First, it checks if the <code>navigator.geolocation</code> object exists. If it does, the <code>getCurrentPosition</code> method on that object is called, which initiates an asynchronous request for the user's position. If the request is successful, the callback function in the method runs. This function accesses the <code>position</code> object's values for latitude and longitude using dot notation and updates the HTML.",
         "<hr>",
         "Add the example code inside the <code>script</code> tags to check a user's current location and insert it into the HTML."
@@ -717,7 +717,7 @@
       "description": [
         "In the previous examples, you received data from an external resource. You can also send data to an external resource, as long as that resource supports AJAX requests and you know the URL.",
         "JavaScript's <code>XMLHttpRequest</code> method is also used to post data to a server. Here's an example:",
-        "<blockquote>req=new XMLHttpRequest();<br>req.open(\"POST\",url,true);<br>req.setRequestHeader('Content-Type','text/plain');<br>req.onreadystatechange=function(){<br>  if(req.readyState==4 && req.status==200){<br>    document.getElementsByClassName('message')[0].innerHTML=req.responseText;<br>  }<br>};<br>req.send(userName);</blockquote>",
+        "<blockquote>req=new XMLHttpRequest();<br>req.open(\"POST\",url,true);<br>req.setRequestHeader('Content-Type','text/plain');<br>req.onreadystatechange=function(){<br>&nbsp;&nbsp;if(req.readyState==4 && req.status==200){<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementsByClassName('message')[0].innerHTML=req.responseText;<br>&nbsp;&nbsp;}<br>};<br>req.send(userName);</blockquote>",
         "You've seen several of these methods before. Here the <code>open</code> method initializes the request as a \"POST\" to the given URL of the external resource, and uses the <code>true</code> Boolean to make it asynchronous.",
         "The <code>setRequestHeader</code> method sets the value of an HTTP request header, which contains information about the sender and the request. It must be called after the <code>open</code> method, but before the <code>send</code> method. The two parameters are the name of the header and the value to set as the body of that header.",
         "Next, the <code>onreadystatechange</code> event listener handles a change in the state of the request. A <code>readyState</code> of 4 means the operation is complete, and a <code>status</code> of 200 means it was a successful request. The document's HTML can be updated.",

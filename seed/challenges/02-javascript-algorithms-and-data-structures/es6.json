@@ -69,13 +69,13 @@
         "When you declare a variable with the <code>var</code> keyword, it is declared globally, or locally if declared inside a function.",
         "The <code>let</code> keyword behaves similarly, but with some extra features. When you declare a variable with the <code>let</code> keyword inside a block, statement, or expression, its scope is limited to that block, statement, or expression.",
         "For example:",
-        "<blockquote>var numArray = [];<br>for (var i = 0; i < 3; i++) {<br>  numArray.push(i);<br>}<br>console.log(numArray);<br>// returns [0, 1, 2]<br>console.log(i);<br>// returns 3</blockquote>",
+        "<blockquote>var numArray = [];<br>for (var i = 0; i < 3; i++) {<br>&nbsp;&nbsp;numArray.push(i);<br>}<br>console.log(numArray);<br>// returns [0, 1, 2]<br>console.log(i);<br>// returns 3</blockquote>",
         "With the <code>var</code> keyword, <code>i</code> is declared globally. So when <code>i++</code> is executed, it updates the global variable. This code is similar to the following:",
-        "<blockquote>var numArray = [];<br>var i;<br>for (i = 0; i < 3; i++) {<br>  numArray.push(i);<br>}<br>console.log(numArray);<br>// returns [0, 1, 2]<br>console.log(i);<br>// returns 3</blockquote>",
+        "<blockquote>var numArray = [];<br>var i;<br>for (i = 0; i < 3; i++) {<br>&nbsp;&nbsp;numArray.push(i);<br>}<br>console.log(numArray);<br>// returns [0, 1, 2]<br>console.log(i);<br>// returns 3</blockquote>",
         "This behavior will cause problems if you were to create a function and store it for later use inside a for loop that uses the <code>i</code> variable. This is because the stored function will always refer to the value of the updated global <code>i</code> variable.",
-        "<blockquote>var printNumTwo;<br>for (var i = 0; i < 3; i++) {<br>  if(i === 2){<br>    printNumTwo = function() {<br>      return i;<br>    };<br>  }<br>}<br>console.log(printNumTwo());<br>// returns 3</blockquote>",
+        "<blockquote>var printNumTwo;<br>for (var i = 0; i < 3; i++) {<br>&nbsp;&nbsp;if(i === 2){<br>&nbsp;&nbsp;&nbsp;&nbsp;printNumTwo = function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i;<br>&nbsp;&nbsp;&nbsp;&nbsp;};<br>&nbsp;&nbsp;}<br>}<br>console.log(printNumTwo());<br>// returns 3</blockquote>",
         "As you can see, <code>printNumTwo()</code> prints 3 and not 2. This is because the value assigned to <code>i</code> was updated and the <code>printNumTwo()</code> returns the global <code>i</code> and not the value <code>i</code> had when the function was created in the for loop. The <code>let</code> keyword does not follow this behavior:",
-        "<blockquote>'use strict';<br>let printNumTwo;<br>for (let i = 0; i < 3; i++) {<br>  if (i === 2) {<br>    printNumTwo = function() {<br>      return i;<br>    };<br>  }<br>}<br>console.log(printNumTwo());<br>// returns 2<br>console.log(i);<br>// returns \"i is not defined\"</blockquote>",
+        "<blockquote>'use strict';<br>let printNumTwo;<br>for (let i = 0; i < 3; i++) {<br>&nbsp;&nbsp;if (i === 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;printNumTwo = function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return i;<br>&nbsp;&nbsp;&nbsp;&nbsp;};<br>&nbsp;&nbsp;}<br>}<br>console.log(printNumTwo());<br>// returns 2<br>console.log(i);<br>// returns \"i is not defined\"</blockquote>",
         "<code>i</code> is not defined because it was not declared in the global scope. It is only declared within the for loop statement. <code>printNumTwo()</code> returned the correct value because three different <code>i</code> variables with unique values (0, 1, and 2) were created by the <code>let</code> keyword within the loop statement.",
         "<hr>",
         "Fix the code so that <code>i</code> declared in the if statement is a separate variable than <code>i</code> declared in the first line of the function. Be certain not to use the <code>var</code> keyword anywhere in your code.",
@@ -239,7 +239,7 @@
       "description": [
         "As seen in the previous challenge, <code>const</code> declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <code>Object.freeze</code> to prevent data mutation.",
         "Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error.",
-        "<blockquote><br>let obj = {<br>  name:\"FreeCodeCamp\"<br>  review:\"Awesome\"<br>};<br>Object.freeze(obj);<br>obj.review = \"bad\"; //will be ignored. Mutation not allowed<br>obj.newProp = \"Test\"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: \"FreeCodeCamp\", review:\"Awesome\"}<br></blockquote>",
+        "<blockquote><br>let obj = {<br>&nbsp;&nbsp;name:\"FreeCodeCamp\"<br>&nbsp;&nbsp;review:\"Awesome\"<br>};<br>Object.freeze(obj);<br>obj.review = \"bad\"; //will be ignored. Mutation not allowed<br>obj.newProp = \"Test\"; // will be ignored. Mutation not allowed<br>console.log(obj); <br>// { name: \"FreeCodeCamp\", review:\"Awesome\"}<br></blockquote>",
         "<hr>",
         "In this challenge you are going to use <code>Object.freeze</code> to prevent mathematical constants from changing. You need to freeze the <code>MATH_CONSTANTS</code> object so that no one is able alter the value of <code>PI</code>, add, or delete properties ."
       ],
@@ -299,9 +299,9 @@
       "description": [
         "In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.",
         "To achieve this, we often use the following syntax:",
-        "<blockquote>const myFunc = function() {<br>  const myVar = \"value\";<br>  return myVar;<br>}</blockquote>",
+        "<blockquote>const myFunc = function() {<br>&nbsp;&nbsp;const myVar = \"value\";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>",
         "ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use <strong>arrow function syntax</strong>:",
-        "<blockquote>const myFunc = () => {<br>  const myVar = \"value\";<br>  return myVar;<br>}</blockquote>",
+        "<blockquote>const myFunc = () => {<br>&nbsp;&nbsp;const myVar = \"value\";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>",
         "When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword <code>return</code> as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:",
         "<blockquote>const myFunc= () => \"value\"</blockquote>",
         "This code will still return <code>value</code> by default.",
@@ -409,7 +409,7 @@
         "It's time we see how powerful arrow functions are when processing data.",
         "Arrow functions work really well with higher order functions, such as <code>map()</code>, <code>filter()</code>, and <code>reduce()</code>, that take other functions as arguments for processing collections of data.",
         "Read the following code:",
-        "<blockquote>FBPosts.filter(function(post) {<br>  return post.thumbnail !== null && post.shares > 100 && post.likes > 500;<br>})</blockquote>",
+        "<blockquote>FBPosts.filter(function(post) {<br>&nbsp;&nbsp;return post.thumbnail !== null && post.shares > 100 && post.likes > 500;<br>})</blockquote>",
         "We have written this with <code>filter()</code> to at least make it somewhat readable. Now compare it to the following code which uses arrow function syntax instead:",
         "<blockquote>FBPosts.filter((post) => post.thumbnail !== null && post.shares > 100 && post.likes > 500)</blockquote>",
         "This code is more succinct and accomplishes the same task with fewer lines of code.",
@@ -478,7 +478,7 @@
       "description": [
         "In order to help us create more flexible functions, ES6 introduces <dfn>default parameters</dfn> for functions.",
         "Check out this code:",
-        "<blockquote>function greeting(name = \"Anonymous\") {<br>  return \"Hello \" + name;<br>}<br>console.log(greeting(\"John\")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>",
+        "<blockquote>function greeting(name = \"Anonymous\") {<br>&nbsp;&nbsp;return \"Hello \" + name;<br>}<br>console.log(greeting(\"John\")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>",
         "The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter <code>name</code> will receive its default value <code>\"Anonymous\"</code> when you do not provide a value for the parameter. You can add default values for as many parameters as you want.",
         "<hr>",
         "Modify the function <code>increment</code> by adding default parameters so that it will add 1 to <code>number</code> if <code>value</code> is not specified."
@@ -526,7 +526,7 @@
       "description": [
         "In order to help us create more flexible functions, ES6 introduces the <dfn>rest operator</dfn> for function parameters. With the rest operator, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.",
         "Check out this code:",
-        "<blockquote>function howMany(...args) {<br>  return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>",
+        "<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return \"You have passed \" + args.length + \" arguments.\";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany(\"string\", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>",
         "The rest operator eliminates the need to check the <code>args</code> array and allows us to apply <code>map()</code>, <code>filter()</code> and <code>reduce()</code> on the parameters array.",
         "<hr>",
         "Modify the function <code>sum</code> so that it uses the rest operator and it works in the same way with any number of parameters."
@@ -691,7 +691,7 @@
       "description": [
         "We can similarly destructure <em>nested</em> objects into variables.",
         "Consider the following code:",
-        "<blockquote>const a = {<br>  start: { x: 5, y: 6},<br>  end: { x: 6, y: -9 }<br>};<br>const { start : { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote>",
+        "<blockquote>const a = {<br>&nbsp;&nbsp;start: { x: 5, y: 6},<br>&nbsp;&nbsp;end: { x: 6, y: -9 }<br>};<br>const { start : { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote>",
         "In the example above, the variable <code>start</code> is assigned the value of <code>a.start</code>, which is also an object.",
         "<hr>",
         "Use destructuring assignment to obtain <code>max</code> of <code>forecast.tomorrow</code> and assign it to <code>maxOfTomorrow</code>."
@@ -845,9 +845,9 @@
       "description": [
         "In some cases, you can destructure the object in a function argument itself.",
         "Consider the code below:",
-        "<blockquote>const profileUpdate = (profileData) => {<br>  const { name, age, nationality, location } = profileData;<br>  // do something with these variables<br>}</blockquote>",
+        "<blockquote>const profileUpdate = (profileData) => {<br>&nbsp;&nbsp;const { name, age, nationality, location } = profileData;<br>&nbsp;&nbsp;// do something with these variables<br>}</blockquote>",
         "This effectively destructures the object sent into the function. This can also be done in-place:",
-        "<blockquote>const profileUpdate = ({ name, age, nationality, location }) => {<br>  /* do something with these fields */<br>}</blockquote>",
+        "<blockquote>const profileUpdate = ({ name, age, nationality, location }) => {<br>&nbsp;&nbsp;/* do something with these fields */<br>}</blockquote>",
         "This removes some extra lines and makes our code look neat.",
         "This has the added benefit of not having to manipulate an entire object in a function; only the fields that are needed are copied inside the function.",
         "<hr>",
@@ -909,7 +909,7 @@
       "description": [
         "A new feature of ES6 is the <dfn>template literal</dfn>. This is a special type of string that allows you to use string interpolation features to create strings.",
         "Consider the code below:",
-        "<blockquote>const person = {<br>  name: \"Zodiac Hasbro\",<br>  age: 56<br>};<br><br>// string interpolation<br>const greeting = `Hello, my name is ${person.name}!<br>I am ${person.age} years old.`;<br><br>console.log(greeting); // prints<br>// Hello, my name is Zodiac Hasbro!<br>// I am 56 years old.<br></blockquote>",
+        "<blockquote>const person = {<br>&nbsp;&nbsp;name: \"Zodiac Hasbro\",<br>&nbsp;&nbsp;age: 56<br>};<br><br>// string interpolation<br>const greeting = `Hello, my name is ${person.name}!<br>I am ${person.age} years old.`;<br><br>console.log(greeting); // prints<br>// Hello, my name is Zodiac Hasbro!<br>// I am 56 years old.<br></blockquote>",
         "A lot of things happened there.",
         "Firstly, the <code>${variable}</code> syntax used above is a place holder. Basically, you won't have to use concatenation with the <code>+</code> operator anymore. To add variables to strings, you just drop the variable in a template string and wrap it with <code>${</code> and <code>}</code>.",
         "Secondly, the example uses backticks (<code>`</code>), not quotes (<code>'</code> or <code>\"</code>), to wrap the string. Notice that the string is multi-line.",
@@ -973,7 +973,7 @@
       "description": [
         "ES6 adds some nice support for easily defining object literals.",
         "Consider the following code:",
-        "<blockquote>const getMousePosition = (x, y) => ({<br>  x: x,<br>  y: y<br>});</blockquote>",
+        "<blockquote>const getMousePosition = (x, y) => ({<br>&nbsp;&nbsp;x: x,<br>&nbsp;&nbsp;y: y<br>});</blockquote>",
         "<code>getMousePosition</code> is a simple function that returns an object containing two fields.",
         "ES6 provides the syntactic sugar to eliminate the redundancy of having to write <code>x: x</code>. You can simply write <code>x</code> once, and it will be converted to<code>x: x</code> (or something equivalent) under the hood.",
         "Here is the same function from above rewritten to use this new syntax:",
@@ -1022,9 +1022,9 @@
       "title": "Write Concise Declarative Functions with ES6",
       "description": [
         "When defining functions within objects in ES5, we have to use the keyword <code>function</code> as follows:",
-        "<blockquote>const person = {<br>  name: \"Taylor\",<br>  sayHello: function() {<br>    return `Hello! My name is ${this.name}.`;<br>  }<br>};</blockquote>",
+        "<blockquote>const person = {<br>&nbsp;&nbsp;name: \"Taylor\",<br>&nbsp;&nbsp;sayHello: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return `Hello! My name is ${this.name}.`;<br>&nbsp;&nbsp;}<br>};</blockquote>",
         "With ES6, You can remove the <code>function</code> keyword and colon altogether when defining functions in objects. Here's an example of this syntax:",
-        "<blockquote>const person = {<br>  name: \"Taylor\",<br>  sayHello() {<br>    return `Hello! My name is ${this.name}.`;<br>  }<br>};</blockquote>",
+        "<blockquote>const person = {<br>&nbsp;&nbsp;name: \"Taylor\",<br>&nbsp;&nbsp;sayHello() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return `Hello! My name is ${this.name}.`;<br>&nbsp;&nbsp;}<br>};</blockquote>",
         "<hr>",
         "Refactor the function <code>setGear</code> inside the object <code>bicycle</code> to use the shorthand syntax described above."
       ],
@@ -1071,9 +1071,9 @@
         "ES6 provides a new syntax to help create objects, using the keyword <dfn>class</dfn>.",
         "This is to be noted, that the <code>class</code> syntax is just a syntax, and not a full-fledged class based implementation of object oriented paradigm, unlike in languages like Java, or Python, or Ruby etc.",
         "In ES5, we usually define a constructor function, and use the <code>new</code> keyword to instantiate an object.",
-        "<blockquote>var SpaceShuttle = function(targetPlanet){<br>  this.targetPlanet = targetPlanet;<br>}<br>var zeus = new SpaceShuttle('Jupiter');</blockquote>",
+        "<blockquote>var SpaceShuttle = function(targetPlanet){<br>&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>}<br>var zeus = new SpaceShuttle('Jupiter');</blockquote>",
         "The class syntax simply replaces the constructor function creation:",
-        "<blockquote>class SpaceShuttle {<br>  constructor(targetPlanet){<br>    this.targetPlanet = targetPlanet;<br>  }<br>}<br>const zeus = new SpaceShuttle('Jupiter');</blockquote>",
+        "<blockquote>class SpaceShuttle {<br>&nbsp;&nbsp;constructor(targetPlanet){<br>&nbsp;&nbsp;&nbsp;&nbsp;this.targetPlanet = targetPlanet;<br>&nbsp;&nbsp;}<br>}<br>const zeus = new SpaceShuttle('Jupiter');</blockquote>",
         "Notice that the <code>class</code> keyword declares a new function, and a constructor was added, which would be invoked when <code>new</code> is called - to create a new object.",
         "<hr>",
         "Use <code>class</code> keyword and write a proper constructor to create the <code>Vegetable</code> class.",
@@ -1126,7 +1126,7 @@
         "These are classically called <dfn>getters</dfn> and <dfn>setters</dfn>.",
         "Getter functions are meant to simply return (get) the value of an object's private variable to the user without the user directly accessing the private variable.",
         "Setter functions are meant to modify (set) the value of an object's private variable based on the value passed into the setter function. This change could involve calculations, or even overwriting the previous value completely.",
-        "<blockquote>class Book {<br>  constructor(author) {<br>    this._author = author;<br>  }<br>  // getter<br>  get writer(){<br>    return this._author;<br>  }<br>  // setter<br>  set writer(updatedAuthor){<br>    this._author = updatedAuthor;<br>  }<br>}<br>const lol = new Book('anonymous');<br>console.log(lol.writer);<br>lol.writer = 'wut';<br>console.log(lol.writer);</blockquote>",
+        "<blockquote>class Book {<br>&nbsp;&nbsp;constructor(author) {<br>&nbsp;&nbsp;&nbsp;&nbsp;this._author = author;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;// getter<br>&nbsp;&nbsp;get writer(){<br>&nbsp;&nbsp;&nbsp;&nbsp;return this._author;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;// setter<br>&nbsp;&nbsp;set writer(updatedAuthor){<br>&nbsp;&nbsp;&nbsp;&nbsp;this._author = updatedAuthor;<br>&nbsp;&nbsp;}<br>}<br>const lol = new Book('anonymous');<br>console.log(lol.writer);<br>lol.writer = 'wut';<br>console.log(lol.writer);</blockquote>",
         "Notice the syntax we are using to invoke the getter and setter - as if they are not even functions.",
         "Getters and setters are important, because they hide internal implementation details.",
         "<hr>",
@@ -1231,9 +1231,9 @@
       "description": [
         "In the previous challenge, you learned about <code>import</code> and how it can be leveraged to import small amounts of code from large files. In order for this to work, though, we must utilize one of the statements that goes with <code>import</code>, known as <dfn>export</dfn>. When we want some code - a function, or a variable - to be usable in another file, we must export it in order to import it into another file. Like <code>import</code>, <code>export</code> is a non-browser feature.",
         "The following is what we refer to as a <dfn>named export</dfn>. With this, we can import any code we export into another file with the <code>import</code> syntax you learned in the last lesson. Here's an example:",
-        "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>export { capitalizeString } //How to export functions.<br>export const foo = \"bar\"; //How to export variables.</blockquote>",
+        "<blockquote>const capitalizeString = (string) => {<br>&nbsp;&nbsp;return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>export { capitalizeString } //How to export functions.<br>export const foo = \"bar\"; //How to export variables.</blockquote>",
         "Alternatively, if you would like to compact all your <code>export</code> statements into one line, you can take this approach:",
-        "<blockquote>const capitalizeString = (string) => {<br>  return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>const foo = \"bar\";<br>export { capitalizeString, foo }</blockquote>",
+        "<blockquote>const capitalizeString = (string) => {<br>&nbsp;&nbsp;return string.charAt(0).toUpperCase() + string.slice(1);<br>}<br>const foo = \"bar\";<br>export { capitalizeString, foo }</blockquote>",
         "Either approach is perfectly acceptable.",
         "<hr>",
         "Below are two variables that I want to make available for other files to use. Utilizing the first way I demonstrated <code>export</code>, export the two variables."
@@ -1317,7 +1317,7 @@
         "In the <code>export</code> lesson, you learned about the syntax referred to as a <dfn>named export</dfn>. This allowed you to make multiple functions and variables available for use in other files.",
         "There is another <code>export</code> syntax you need to know, known as <dfn>export default</dfn>. Usually you will use this syntax if only one value is being exported from a file. It is also used to create a fallback value for a file or module.",
         "Here is a quick example of <code>export default</code>:",
-        "<blockquote>export default function add(x,y) {<br>  return x + y;<br>}</blockquote>",
+        "<blockquote>export default function add(x,y) {<br>&nbsp;&nbsp;return x + y;<br>}</blockquote>",
         "Note: Since <code>export default</code> is used to declare a fallback value for a module or file, you can only have one value be a default export in each module or file. Additionally, you cannot use <code>export default</code> with <code>var</code>, <code>let</code>, or <code>const</code>",
         "<hr>",
         "The following function should be the fallback value for the module. Please add the necessary code to do so."

@@ -82,7 +82,7 @@
       "title": "Adjust the Width of an Element Using the width Property",
       "description": [
         "You can specify the width of an element using the <code>width</code> property in CSS. Values can be given in relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:",
-        "<blockquote>img {<br>  width: 220px;<br>}</blockquote>",
+        "<blockquote>img {<br>&nbsp;&nbsp;width: 220px;<br>}</blockquote>",
         "<hr>",
         "Add a <code>width</code> property to the entire card and set it to an absolute value of 245px. Use the <code>fullCard</code> class to select the element."
       ],
@@ -148,7 +148,7 @@
       "title": "Adjust the Height of an Element Using the height Property",
       "description": [
         "You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:",
-        "<blockquote>img {<br>  height: 20px;<br>}</blockquote>",
+        "<blockquote>img {<br>&nbsp;&nbsp;height: 20px;<br>}</blockquote>",
         "<hr>",
         "Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px."
       ],
@@ -595,7 +595,7 @@
       "title": "Adjust the background-color Property of Text",
       "description": [
         "Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a <code>background-color</code> to the element holding the text you want to emphasize. This challenge uses <code>rgba()</code> instead of <code>hex</code> codes or normal <code>rgb()</code>.",
-        "<blockquote>rgba stands for:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha/level of opacity</blockquote>",
+        "<blockquote>rgba stands for:<br>&nbsp;&nbsp;r = red<br>&nbsp;&nbsp;g = green<br>&nbsp;&nbsp;b = blue<br>&nbsp;&nbsp;a = alpha/level of opacity</blockquote>",
         "The RGB values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. <code>rgba()</code> is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.",
         "You'll use <code>background-color: rgba(45, 45, 45, 0.1)</code> for this challenge. It produces a dark gray color that is nearly transparent given the low opacity value of 0.1.",
         "<hr>",
@@ -1223,7 +1223,7 @@
       "description": [
         "This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.",
         "For example, the styling of an anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector. Here's the CSS to change the <code>color</code> of the anchor tag to red during its hover state:",
-        "<blockquote>a:hover {<br>  color: red;<br>}</blockquote>",
+        "<blockquote>a:hover {<br>&nbsp;&nbsp;color: red;<br>}</blockquote>",
         "<hr>",
         "The code editor has a CSS rule to style all <code>a</code> tags black. Add a rule so that when the user hovers over the <code>a</code> tag, the <code>color</code> is blue."
       ],
@@ -1269,7 +1269,7 @@
       "description": [
         "CSS treats each HTML element as its own box, which is usually referred to as the <code>CSS Box Model</code>. Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline items sit within surrounding content (like images or spans). The default layout of elements in this way is called the <code>normal flow</code> of a document, but CSS offers the position property to override it.",
         "When the position of an element is set to <code>relative</code>, it allows you to specify how CSS should move it <i>relative</i> to its current position in the normal flow of the page. It pairs with the CSS offset properties of <code>left</code> or <code>right</code>, and <code>top</code> or <code>bottom</code>. These say how many pixels, percentages, or ems to move the item <i>away</i> from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:",
-        "<blockquote>p {<br>  position: relative;<br>  bottom: 10px;<br>}</blockquote>",
+        "<blockquote>p {<br>&nbsp;&nbsp;position: relative;<br>&nbsp;&nbsp;bottom: 10px;<br>}</blockquote>",
         "Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were in its default position.",
         "<strong>Note</strong><br>Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.",
         "<hr>",
@@ -2185,7 +2185,7 @@
       "title": "Use the CSS Transform scale Property to Change the Size of an Element",
       "description": [
         "To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:",
-        "<blockquote>p {<br>  transform:scale(2);<br>}</blockquote>",
+        "<blockquote>p {<br>&nbsp;&nbsp;transform:scale(2);<br>}</blockquote>",
         "<hr>",
         "Increase the size of the element with the id of <code>ball2</code> to 1.5 times its original size."
       ],
@@ -2244,7 +2244,7 @@
       "description": [
         "The <code>transform</code> property has a variety of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
         "Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:",
-        "<blockquote>p:hover {<br>  transform: scale(2.1);<br>}</blockquote>",
+        "<blockquote>p:hover {<br>&nbsp;&nbsp;transform: scale(2.1);<br>}</blockquote>",
         "<hr>",
         "Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use the <code>transform</code> property to scale the <code>div</code> element to 1.1 times its original size when a user hovers over it."
       ],
@@ -2296,7 +2296,7 @@
       "description": [
         "The next function of the <code>transform</code> property is <code>skewX()</code>, which skews the selected element along its X (horizontal) axis by a given degree.",
         "The following code skews the paragraph element by -32 degrees along the X-axis.",
-        "<blockquote>p {<br>  transform: skewX(-32deg);<br>}</blockquote>",
+        "<blockquote>p {<br>&nbsp;&nbsp;transform: skewX(-32deg);<br>}</blockquote>",
         "<hr>",
         "Skew the element with the id of <code>bottom</code> by 24 degrees along the X-axis by using the <code>transform</code> property."
       ],
@@ -2457,7 +2457,7 @@
       "title": "Create a More Complex Shape Using CSS and HTML",
       "description": [
         "One of the most popular shapes in the world is the heart shape, and this challenge creates it with raw CSS. But first, you need to understand the <code>:before</code> and <code>:after</code> selectors. These selectors are used to add something before or after a selected element. In the following example, a <code>:before</code> selector is used to add a rectangle to an element with the class <code>heart</code>:",
-        "<blockquote>.heart:before {<br>  content: \"\";<br>  background-color: yellow;<br>  border-radius: 25%;<br>  position: absolute;<br>  height: 50px;<br>  width: 70px;<br>  top: -50px;<br>  left: 5px;<br>}</blockquote>",
+        "<blockquote>.heart:before {<br>&nbsp;&nbsp;content: \"\";<br>&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;border-radius: 25%;<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;height: 50px;<br>&nbsp;&nbsp;width: 70px;<br>&nbsp;&nbsp;top: -50px;<br>&nbsp;&nbsp;left: 5px;<br>}</blockquote>",
         "For the <code>:before</code> and <code>:after</code> selectors to function properly, they must have a defined <code>content</code> property. It usually has content such as a photo or text. When the <code>:before</code> and <code>:after</code> selectors add shapes, the <code>content</code> property is still required, but it's set to an empty string.",
         "In the above example, the element with the class of <code>heart</code> has a <code>:before</code> selector that produces a yellow rectangle with <code>height</code> and <code>width</code> of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the <code>left</code> and 50px above the <code>top</code> of the element.",
         "<hr>",
@@ -2543,7 +2543,7 @@
         "<code>animation-name</code> sets the name of the animation, which is later used by <code>@keyframes</code> to tell CSS which rules go with which animations.",
         "<code>animation-duration</code> sets the length of time for the animation.",
         "<code>@keyframes</code> is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific \"frames\" during the animation, with percentages ranging from 0% to 100%. If you compare this to a movie, the CSS properties for 0% is how the element displays in the opening scene. The CSS properties for 100% is how the element appears at the end, right before the credits roll. Then CSS applies the magic to transition the element over the given duration to act out the scene. Here's an example to illustrate the usage of <code>@keyframes</code> and the animation properties:",
-        "<blockquote>#anim {<br>  animation-name: colorful;<br>  animation-duration: 3s;<br>}<br>@keyframes colorful {<br>  0% {<br>   background-color: blue;<br>  }<br>  100% {<br>    background-color: yellow;<br>  }<br>}</blockquote>",
+        "<blockquote>#anim {<br>&nbsp;&nbsp;animation-name: colorful;<br>&nbsp;&nbsp;animation-duration: 3s;<br>}<br>@keyframes colorful {<br>&nbsp;&nbsp;0% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "For the element with the <code>anim</code> id, the code snippet above sets the <code>animation-name</code> to <code>colorful</code> and sets the <code>animation-duration</code> to 3 seconds. Then the <code>@keyframes</code> rule links to the animation properties with the name <code>colorful</code>. It sets the color to blue at the beginning of the animation (0%) which will transition to yellow by the end of the animation (100%). You aren't limited to only beginning-end transitions, you can set properties for the element for any percentage between 0% and 100%.",
         "<hr>",
         "Create an animation for the element with the id <code>rect</code>, by setting the <code>animation-name</code> to rainbow and the <code>animation-duration</code> to 4 seconds. Next, declare a <code>@keyframes</code> rule, and set the <code>background-color</code> at the beginning of the animation (<code>0%</code>) to blue, the middle of the animation (<code>50%</code>) to green, and the end of the animation (<code>100%</code>) to yellow."
@@ -2618,7 +2618,7 @@
       "description": [
         "You can use CSS <code>@keyframes</code> to change the color of a button in its hover state.",
         "Here's an example of changing the width of an image on hover:",
-        "<blockquote>&lt;style&gt;<br>  img:hover {<br>    animation-name: width;<br>    animation-duration: 500ms;<br>  }<br><br>  @keyframes width {<br>    100% {<br>      width: 40px;<br>    }<br>  }<br>&lt;/style&gt;<br><br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
+        "<blockquote>&lt;style&gt;<br>&nbsp;&nbsp;img:hover {<br>&nbsp;&nbsp;&nbsp;&nbsp;animation-name: width;<br>&nbsp;&nbsp;&nbsp;&nbsp;animation-duration: 500ms;<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;@keyframes width {<br>&nbsp;&nbsp;&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 40px;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>&lt;/style&gt;<br><br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
         "<hr>",
         "Note that <code>ms</code> stands for milliseconds, where 1000ms is equal to 1s.",
         "Use CSS <code>@keyframes</code> to change the <code>background-color</code> of the <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>."
@@ -2726,7 +2726,7 @@
       "description": [
         "When elements have a specified <code>position</code>, such as <code>fixed</code> or <code>relative</code>, the CSS offset properties <code>right</code>, <code>left</code>, <code>top</code>, and <code>bottom</code> can be used in animation rules to create movement.",
         "As shown in the example below, you can push the item downwards then upwards by setting the <code>top</code> property of the <code>50%</code> keyframe to 50px, but having it set to 0px for the first (<code>0%</code>) and the last (<code>100%</code>) keyframe.",
-        "<blockquote>@keyframes rainbow {<br>  0% {<br>    background-color: blue;<br>    top: 0px;<br>  }<br>  50% {<br>    background-color: green;<br>    top: 50px;<br>  }<br>  100% {<br>    background-color: yellow;<br>    top: 0px;<br>  }<br>}</blockquote>",
+        "<blockquote>@keyframes rainbow {<br>&nbsp;&nbsp;0% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;50% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: green;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 50px;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "<hr>",
         "Add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>. Don't replace the <code>top</code> property in the editor - the animation should have both vertical and horizontal motion."
       ],

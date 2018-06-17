@@ -13,7 +13,7 @@
         "Using <code>//</code> will tell JavaScript to ignore the remainder of the text on the current line:",
         "<blockquote>// This is an in-line comment.</blockquote>",
         "You can make a multi-line comment beginning with <code>/*</code> and ending with <code>*/</code>:",
-        "<blockquote>/* This is a <br>   multi-line comment */</blockquote>",
+        "<blockquote>/* This is a<br>multi-line comment */</blockquote>",
         "<strong>Best Practice</strong><br>As you write code, you should regularly add comments to clarify the function of parts of your code. Good commenting can help communicate the intent of your code&mdash;both for others <em>and</em> for your future self.",
         "<hr>",
         "Try creating one of each type of comment."
@@ -2518,7 +2518,7 @@
       "description": [
         "One way to think of a <dfn>multi-dimensional</dfn> array, is as an <em>array of arrays</em>. When you use brackets to access your array, the first set of brackets refers to the entries in the outer-most (the first level) array, and each additional pair of brackets refers to the next level of entries inside.",
         "<strong>Example</strong>",
-        "<blockquote>var arr = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br>arr[3]; // equals [[10,11,12], 13, 14]<br>arr[3][0]; // equals [10,11,12]<br>arr[3][0][1]; // equals 11</blockquote>",
+        "<blockquote>var arr = [<br>&nbsp;&nbsp;[1,2,3],<br>&nbsp;&nbsp;[4,5,6],<br>&nbsp;&nbsp;[7,8,9],<br>&nbsp;&nbsp;[[10,11,12], 13, 14]<br>];<br>arr[3]; // equals [[10,11,12], 13, 14]<br>arr[3][0]; // equals [10,11,12]<br>arr[3][0][1]; // equals 11</blockquote>",
         "<strong>Note</strong><br>There shouldn't be any spaces between the array name and the square brackets, like <code>array [0][0]</code> and even this <code>array [0] [0]</code> is not allowed. Although JavaScript is able to process this correctly, this may confuse other programmers reading your code.",
         "<hr>",
         "Using bracket notation select an element from <code>myArray</code> such that <code>myData</code> is equal to <code>8</code>."
@@ -2544,7 +2544,7 @@
           "description": [
             "Una manera de pensar un vector <dfn>multi-dimensional</dfn>, es como un <em>vector de vectores</em>. Cuando usas corchetes para acceder a tu vector, el primer conjunto de brackets se refiere a las entradas en el vector más externo y cada nivel subsecuente de brackets se refiere al siguiente nivel de vectores internos.",
             "<strong>Ejemplo</strong>",
-            "<blockquote>var vec = [<br>    [1,2,3],<br>    [4,5,6],<br>    [7,8,9],<br>    [[10,11,12], 13, 14]<br>];<br>vec[0]; // es igual [1,2,3]<br>vec[1][2]; // es igual 6<br>vec[3][0][1]; // es igual 11</blockquote>",
+            "<blockquote>var vec = [<br>&nbsp;&nbsp;[1,2,3],<br>&nbsp;&nbsp;[4,5,6],<br>&nbsp;&nbsp;[7,8,9],<br>&nbsp;&nbsp;[[10,11,12], 13, 14]<br>];<br>vec[0]; // es igual [1,2,3]<br>vec[1][2]; // es igual 6<br>vec[3][0][1]; // es igual 11</blockquote>",
             "<h4>Instrucciones</h4>",
             "Lee de <code>myArray</code> usando la notación corchete de modo que myData sea igual a <code>8</code>"
           ]
@@ -2901,7 +2901,7 @@
       "description": [
         "In JavaScript, we can divide up our code into reusable parts called <dfn>functions</dfn>.",
         "Here's an example of a function:",
-        "<blockquote>function functionName() {<br>  console.log(\"Hello World\");<br>}</blockquote>",
+        "<blockquote>function functionName() {<br>&nbsp;&nbsp;console.log(\"Hello World\");<br>}</blockquote>",
         "You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:",
         "<code>functionName();</code>",
         "Each time the function is called it will print out the message <code>\"Hello World\"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.",
@@ -2998,7 +2998,7 @@
       "description": [
         "<dfn>Parameters</dfn> are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or <dfn>\"passed\"</dfn>) into a function when it is called are known as <dfn>arguments</dfn>.",
         "Here is a function with two parameters, <code>param1</code> and <code>param2</code>:",
-        "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
+        "<blockquote>function testFun(param1, param2) {<br>&nbsp;&nbsp;console.log(param1, param2);<br>}</blockquote>",
         "Then we can call <code>testFun</code>:",
         "<code>testFun(\"Hello\", \"World\");</code>",
         "We have passed two arguments, <code>\"Hello\"</code> and <code>\"World\"</code>. Inside the function, <code>param1</code> will equal \"Hello\" and <code>param2</code> will equal \"World\". Note that you could call <code>testFun</code> again with different arguments and the parameters would take on the value of the new arguments.",
@@ -3034,7 +3034,7 @@
           "description": [
             "Los <dfn>parámetros</dfn> son variables que actúan como marcadores de lugar para los valores que han de ser entrada para una función cuando esta es llamada. Cuando una función es definida, es típicamente definida con uno o más parámetros. Los valores actuales que son entrada (or <dfn>\"pasados\"</dfn>) dentro de una función cuando esta es llamada son concidos como <dfn>argumentos</dfn>.",
             "Aquí hay una función con dos parámetros, <code>param1</code> y <code>param2</code>:",
-            "<blockquote>function testFun(param1, param2) {<br>  console.log(param1, param2);<br>}</blockquote>",
+            "<blockquote>function testFun(param1, param2) {<br>&nbsp;&nbsp;console.log(param1, param2);<br>}</blockquote>",
             "Entonces nosotros podemos llamar <code>testFun</code>:",
             "<code>testFun(\"Hello\", \"World\");</code>",
             "Nosotros hemos pasado dos argumentos, <code>\"Hello\"</code> y <code>\"World\"</code>. Dentro de la función, <code>param1</code> será igual a \"Hello\" y <code>param2</code> será igual a \"World\". Nota que puedes llamar <code>testFun</code> otra vez con argumentos diferentes y los parámetros asumirían el valor de los nuevos argumentos.",
@@ -3201,7 +3201,7 @@
       "description": [
         "Variables which are declared within a function, as well as the function parameters have <dfn>local</dfn> scope. That means, they are only visible within that function.",
         "Here is a function <code>myTest</code> with a local variable called <code>loc</code>.",
-        "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // logs \"foo\"<br>console.log(loc); // loc is not defined</blockquote>",
+        "<blockquote>function myTest() {<br>&nbsp;&nbsp;var loc = \"foo\";<br>&nbsp;&nbsp;console.log(loc);<br>}<br>myTest(); // logs \"foo\"<br>console.log(loc); // loc is not defined</blockquote>",
         "<code>loc</code> is not defined outside of the function.",
         "<hr>",
         "Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Run the tests and then follow the instructions commented out in the editor.",
@@ -3228,7 +3228,7 @@
           "description": [
             "Las variables que son declaradas dentro de una función, así como los parámetros de la función tienen alcance <dfn>local</dfn>. Eso significa que solo son visibles dentro de esa función.",
             "Aquí está una función <code>myTest</code> con una variable local llamada <code>loc</code>.",
-            "<blockquote>function myTest() {<br>  var loc = \"foo\";<br>  console.log(loc);<br>}<br>myTest(); // \"foo\"<br>console.log(loc); // \"undefined\"</blockquote>",
+            "<blockquote>function myTest() {<br>&nbsp;&nbsp;var loc = \"foo\";<br>&nbsp;&nbsp;console.log(loc);<br>}<br>myTest(); // \"foo\"<br>console.log(loc); // \"undefined\"</blockquote>",
             "<code>loc</code> no está definida fuera de la función.",
             "<h4>Instrucciones</h4>",
             "Declara una variable local <code>myVar</code> dentro de <code>myLocalScope</code>"
@@ -3289,7 +3289,7 @@
       "description": [
         "It is possible to have both <dfn>local</dfn> and <dfn>global</dfn> variables with the same name. When you do this, the <code>local</code> variable takes precedence over the <code>global</code> variable.",
         "In this example:",
-        "<blockquote>var someVar = \"Hat\";<br>function myFun() {<br>  var someVar = \"Head\";<br>  return someVar;<br>}</blockquote>",
+        "<blockquote>var someVar = \"Hat\";<br>function myFun() {<br>&nbsp;&nbsp;var someVar = \"Head\";<br>&nbsp;&nbsp;return someVar;<br>}</blockquote>",
         "The function <code>myFun</code> will return <code>\"Head\"</code> because the <code>local</code> version of the variable is present.",
         "<hr>",
         "Add a local variable to <code>myOutfit</code> function to override the value of <code>outerWear</code> with <code>\"sweater\"</code>."
@@ -3319,7 +3319,7 @@
           "description": [
             "Es posible tener variables <dfn>locales</dfn> y <dfn>globales</dfn> con el mismo nombre. Cuando tu haces esto, la variable <code>local</code> toma precedencia sobre la variable <code>global</code>.",
             "En este ejemplo:",
-            "<blockquote>var algunaVar = \"Sombrero\";<br>function miFun() {<br>  var algunaVar = \"Cabeza\";<br>  return algunaVar;<br>}</blockquote>",
+            "<blockquote>var algunaVar = \"Sombrero\";<br>function miFun() {<br>&nbsp;&nbsp;var algunaVar = \"Cabeza\";<br>&nbsp;&nbsp;return algunaVar;<br>}</blockquote>",
             "La función <code>miFun</code> regresará <code>\"Cabeza\"</code> porque la versión <code>local</code> de la variable tiene precedencia.",
             "<h4>Instrucciones</h4>",
             "Agrega una variable local a <code>myOutfit</code> para sobreescribir el valor de <code>outerWear</code> con <code>\"sweater\"</code>."
@@ -3357,7 +3357,7 @@
       "description": [
         "We can pass values into a function with <dfn>arguments</dfn>. You can use a <code>return</code> statement to send a value back out of a function.",
         "<strong>Example</strong>",
-        "<blockquote>function plusThree(num) {<br>  return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote>",
+        "<blockquote>function plusThree(num) {<br>&nbsp;&nbsp;return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote>",
         "<code>plusThree</code> takes an <dfn>argument</dfn> for <code>num</code> and returns a value equal to <code>num + 3</code>.",
         "<hr>",
         "Create a function <code>timesFive</code> that accepts one argument, multiplies it by <code>5</code>, and returns the new value. See the last line in the editor for an example of how you can test your <code>timesFive</code> function."
@@ -3395,7 +3395,7 @@
           "description": [
             "Podemos pasar valores a una función mediante los <dfn>argumentos</dfn>. Puedes usar una sentencia <code>return</code> para enviar un valor de vuelta de una función.",
             "<strong>Ejemplo</strong>",
-            "<blockquote>function masTres(num) {<br>  return num + 3;<br>}<br>var respuesta = masTres(5); // 8</blockquote>",
+            "<blockquote>function masTres(num) {<br>&nbsp;&nbsp;return num + 3;<br>}<br>var respuesta = masTres(5); // 8</blockquote>",
             "<code>masTres</code> toma un <dfn>argumento</dfn> que es <code>num</code> y retorna un valor igual a <code>num + 3</code>.",
             "<h4>Instrucciones</h4>",
             "Crea una función <code>timesFive</code> que acepte un argumento, lo multiplique por <code>5</code> y retorne el nuevo valor."
@@ -3430,7 +3430,7 @@
       "description": [
         "A function can include the <code>return</code> statement but it does not have to. In the case that the function doesn't have a <code>return</code> statement, when you call it, the function processes the inner code but the returned value is <code>undefined</code>.",
         "<strong>Example</strong>",
-        "<blockquote>var sum = 0;<br>function addSum(num) {<br>  sum = sum + num;<br>}<br>var returnedValue = addSum(3); // sum will be modified but returned value is undefined</blockquote>",
+        "<blockquote>var sum = 0;<br>function addSum(num) {<br>&nbsp;&nbsp;sum = sum + num;<br>}<br>var returnedValue = addSum(3); // sum will be modified but returned value is undefined</blockquote>",
         "<code>addSum</code> is a function without a <code>return</code> statement. The function will change the global <code>sum</code> variable but the returned value of the function is <code>undefined</code>",
         "<hr>",
         "Create a function <code>addFive</code> without any arguments. This function adds 5 to the <code>sum</code> variable, but its returned value is <code>undefined</code>."
@@ -3719,9 +3719,9 @@
         "<code>If</code> statements are used to make decisions in code. The keyword <code>if</code> tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as <code>Boolean</code> conditions and they may only be <code>true</code> or <code>false</code>.",
         "When the condition evaluates to <code>true</code>, the program executes the statement inside the curly braces. When the Boolean condition evaluates to <code>false</code>, the statement inside the curly braces will not execute.",
         "<strong>Pseudocode</strong>",
-        "<blockquote>if (<i>condition is true</i>) {<br>  <i>statement is executed</i><br>}</blockquote>",
+        "<blockquote>if (<i>condition is true</i>) {<br>&nbsp;&nbsp;<i>statement is executed</i><br>}</blockquote>",
         "<strong>Example</strong>",
-        "<blockquote>function test (myCondition) {<br>  if (myCondition) {<br>     return \"It was true\";<br>  }<br>  return \"It was false\";<br>}<br>test(true);  // returns \"It was true\"<br>test(false); // returns \"It was false\"</blockquote>",
+        "<blockquote>function test (myCondition) {<br>&nbsp;&nbsp;if (myCondition) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return \"It was true\";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return \"It was false\";<br>}<br>test(true);  // returns \"It was true\"<br>test(false); // returns \"It was false\"</blockquote>",
         "When <code>test</code> is called with a value of <code>true</code>, the <code>if</code> statement evaluates <code>myCondition</code> to see if it is <code>true</code> or not. Since it is <code>true</code>, the function returns <code>\"It was true\"</code>. When we call <code>test</code> with a value of <code>false</code>, <code>myCondition</code> is <em>not</em> <code>true</code> and the statement in the curly braces is not executed and the function returns <code>\"It was false\"</code>.",
         "<hr>",
         "Create an <code>if</code> statement inside the function to return <code>\"Yes, that was true\"</code> if the parameter <code>wasThatTrue</code> is <code>true</code> and return <code>\"No, that was false\"</code> otherwise."
@@ -3809,10 +3809,10 @@
       "description": [
         "There are many <dfn>Comparison Operators</dfn> in JavaScript. All of these operators return a boolean <code>true</code> or <code>false</code> value.",
         "The most basic operator is the equality operator <code>==</code>. The equality operator compares two values and returns <code>true</code> if they're equivalent or <code>false</code> if they are not. Note that equality is different from assignment (<code>=</code>), which assigns the value at the right of the operator to a variable in the left.",
-        "<blockquote>function equalityTest(myVal) {<br>  if (myVal == 10) {<br>     return \"Equal\";<br>  }<br>  return \"Not Equal\";<br>}</blockquote>",
+        "<blockquote>function equalityTest(myVal) {<br>&nbsp;&nbsp;if (myVal == 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return \"Equal\";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return \"Not Equal\";<br>}</blockquote>",
         "If <code>myVal</code> is equal to <code>10</code>, the equality operator returns <code>true</code>, so the code in the curly braces will execute, and the function will return <code>\"Equal\"</code>. Otherwise, the function will return <code>\"Not Equal\"</code>.",
         "In order for JavaScript to compare two different <code>data types</code> (for example, <code>numbers</code> and <code>strings</code>), it must convert one type to another. This is known as \"Type Coercion\". Once it does, however, it can compare terms as follows:",
-        "<blockquote>   1   ==  1    // true<br>   1   ==  2    // false<br>   1   == '1'   // true<br>  \"3\"  ==  3    // true</blockquote>",
+        "<blockquote>1   ==  1    // true<br>1   ==  2    // false<br>1   == '1'   // true<br>\"3\"  ==  3    // true</blockquote>",
         "<hr>",
         "Add the <code>equality operator</code> to the indicated line so that the function will return \"Equal\" when <code>val</code> is equivalent to <code>12</code>"
       ],
@@ -3845,10 +3845,10 @@
           "description": [
             "Hay muchos <dfn>Operadores de Comparación</dfn> en JavaScript. Todos estos operadores retornan un valor booleano <code>true</code>(verdadero) o <code>false</code>(falso).",
             "El operador más básico es el operador de igualdad <code>==</code>. El operador de igualdad compara dos valores y retorna <code>true</code> si son equivalentes o <code>false</code> si no lo son. Nota que la igualdad es diferente de la asignación (<code>=</code>), la cual asigna el valor a la derecha del operador a la variable en la izquierda.",
-            "<blockquote>function pruebaIgualdad(miVal) {<br>  if (miVal == 10) {<br>     return \"Igual\";<br>  }<br>  return \"No Es Igual\";<br>}</blockquote>",
+            "<blockquote>function pruebaIgualdad(miVal) {<br>&nbsp;&nbsp;if (miVal == 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp; return \"Igual\";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;return \"No Es Igual\";<br>}</blockquote>",
             "Si <code>miVal</code> es igual a <code>10</code>, el operador de igualdad retornará <code>true</code>(verdadero), así el código entre llaves será ejecutado y la función retornará <code>\"Equal\"</code>. De otra manera, la función retornará <code>\"Not Equal\"</code>.",
             "Para que JavaScript pueda comparar dos <code>tipos de datos</code> diferentes (por ejemplo, <code>números</code> y <code>cadenas de texto</code>), debe convertir un tipo a otro. Una vez que lo hace, sin embargo, puede comparar términos de la siguiente manera:",
-            "<blockquote>   1   ==  1    // true<br>   1   ==  2    // false<br>   1   == '1'   // true<br>  \"3\"  ==  3    // true</blockquote>",
+            "<blockquote>1   ==  1    // true<br>1   ==  2    // false<br>1   == '1'   // true<br>\"3\"  ==  3    // true</blockquote>",
             "<h4>Instrucciones</h4>",
             "Agrega el <code>operador de igualdad</code> a la línea indicada de manera que la función retornará \"Equal\" cuando <code>val</code> sea equivalente a <code>12</code>"
           ]
@@ -4339,7 +4339,7 @@
       "description": [
         "The <dfn>less than</dfn> operator (<code>&lt;</code>) compares the values of two numbers. If the number to the left is less than the number to the right, it returns <code>true</code>. Otherwise, it returns <code>false</code>. Like the equality operator, <dfn>less than</dfn> operator converts data types while comparing.",
         "<strong>Examples</strong>",
-        "<blockquote>  2 &lt; 5  // true<br>'3' &lt; 7  // true<br>  5 &lt; 5  // false<br>  3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote>",
+        "<blockquote>2 &lt; 5  // true<br>'3' &lt; 7  // true<br>5 &lt; 5  // false<br>3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote>",
         "<hr>",
         "Add the <code>less than</code> operator to the indicated lines so that the return statements make sense."
       ],
@@ -4384,7 +4384,7 @@
           "description": [
             "El operador <dfn>menor que</dfn> (<code>&lt;</code>) compara los valores de dos números. Si el número a la izquierda es menor que el número de la derecha, este retorna <code>true</code>(verdadero). De otra manera, este retorna <code>false</code>(falso). Como el operador de igualdad, el operador <dfn>menor que</dfn> convierte tipos de datos mientra compara.",
             "<strong>Ejemplos</strong>",
-            "<blockquote>  2 &lt; 5  // true<br>'3' &lt; 7  // true<br>  5 &lt; 5  // false<br>  3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote>",
+            "<blockquote>2 &lt; 5  // true<br>'3' &lt; 7  // true<br>5 &lt; 5  // false<br>3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote>",
             "<h4>Instrucciones</h4>",
             "Agregar el operador <code>menor que</code> a las líneas indicadas de modo que las sentencias de retorno tengan sentido."
           ]
@@ -4422,7 +4422,7 @@
       "description": [
         "The <code>less than or equal to</code> operator (<code>&lt;=</code>) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns <code>true</code>. If the number on the left is greater than the number on the right, it returns <code>false</code>. Like the equality operator, <code>less than or equal to</code> converts data types.",
         "<strong>Examples</strong>",
-        "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>  5 &lt;= 5  // true<br>  3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
+        "<blockquote>4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>5 &lt;= 5  // true<br>3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
         "<hr>",
         "Add the <code>less than or equal to</code> operator to the indicated lines so that the return statements make sense."
       ],
@@ -4471,7 +4471,7 @@
           "description": [
             "El operador <code>menor o igual</code> (<code>&lt;=</code>) compara los valores de dos números. Si el número a la izquierda es menor o igual que el número de la derecha, este retorna <code>true</code>(verdadero). Si el número a la izquierda es mayor que el número de la derecha, este retorna <code>false</code>(falso). Al igual que el operador de igualdad, <code>menor o igual</code> convierte tipos de datos.",
             "<strong>Ejemplos</strong>",
-            "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>  5 &lt;= 5  // true<br>  3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
+            "<blockquote>  4 &lt;= 5  // true<br>'7' &lt;= 7  // true<br>&nbsp;&nbsp;5 &lt;= 5  // true<br>&nbsp;&nbsp;3 &lt;= 2  // false<br>'8' &lt;= 4  // false</blockquote>",
             "<h4>Instrucciones</h4>",
             "Agrega el operador <code>menor o igual</code> a las líneas indicadas de modo que las sentencias de retorno tengan sentido."
           ]
@@ -4510,9 +4510,9 @@
       "description": [
         "Sometimes you will need to test more than one thing at a time. The <dfn>logical and</dfn> operator (<code>&&</code>) returns <code>true</code> if and only if the <dfn>operands</dfn> to the left and right of it are true.",
         "The same effect could be achieved by nesting an if statement inside another if:",
-        "<blockquote>if (num > 5) {<br>  if (num < 10) {<br>    return \"Yes\";<br>  }<br>}<br>return \"No\";</blockquote>",
+        "<blockquote>if (num > 5) {<br>&nbsp;&nbsp;if (num < 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Yes\";<br>&nbsp;&nbsp;}<br>}<br>return \"No\";</blockquote>",
         "will only return \"Yes\" if <code>num</code> is greater than <code>5</code> and less than <code>10</code>. The same logic can be written as:",
-        "<blockquote>if (num > 5 && num < 10) {<br>  return \"Yes\";<br>}<br>return \"No\";</blockquote>",
+        "<blockquote>if (num > 5 && num < 10) {<br>&nbsp;&nbsp;return \"Yes\";<br>}<br>return \"No\";</blockquote>",
         "<hr>",
         "Combine the two if statements into one statement which will return <code>\"Yes\"</code> if <code>val</code> is less than or equal to <code>50</code> and greater than or equal to <code>25</code>. Otherwise, will return <code>\"No\"</code>."
       ],
@@ -4569,9 +4569,9 @@
           "description": [
             "A veces necesitarás probar más de una cosa a la vez. El operador <dfn>lógico y</dfn> (<code>&&</code>) retorna <code>true</code>(verdadero) si y solo si los <dfn>operandos</dfn> a la izquierda y derecha de este son verdaderos.",
             "El mismo efecto podría lograrse anidando una sentencia if dentro de otro if:",
-            "<blockquote>if (num > 5) {<br>  if (num < 10) {<br>    return \"Yes\";<br>  }<br>}<br>return \"No\";</blockquote>",
+            "<blockquote>if (num > 5) {<br>&nbsp;&nbsp;if (num < 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Yes\";<br>&nbsp;&nbsp;}<br>}<br>return \"No\";</blockquote>",
             "solo retornará \"Yes\" si <code>num</code> está entre <code>6</code> y <code>9</code> (6 y 9 incluidos). La misma lógica puede ser escrita como:",
-            "<blockquote>if (num > 5 && num < 10) {<br>  return \"Yes\";<br>}<br>return \"No\";</blockquote>",
+            "<blockquote>if (num > 5 && num < 10) {<br>&nbsp;&nbsp;return \"Yes\";<br>}<br>return \"No\";</blockquote>",
             "<h4>Instrucciones</h4>",
             "Combina las dos sentencias if dentro de una sentencia la cual retornará <code>\"Yes\"</code> si <code>val</code> es menor o igual a <code>50</code> y mayor o igual a <code>25</code>. De otra manera, retornará <code>\"No\"</code>."
           ]
@@ -4611,9 +4611,9 @@
         "The <dfn>logical or</dfn> operator (<code>||</code>) returns <code>true</code> if either of the <dfn>operands</dfn> is <code>true</code>. Otherwise, it returns <code>false</code>.",
         "The <dfn>logical or</dfn> operator is composed of two pipe symbols (<code>|</code>). This can typically be found between your Backspace and Enter keys.",
         "The pattern below should look familiar from prior waypoints:",
-        "<blockquote>if (num > 10) {<br>  return \"No\";<br>}<br>if (num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
+        "<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>if (num < 5) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "will return \"Yes\" only if <code>num</code> is between <code>5</code> and <code>10</code> (5 and 10 included). The same logic can be written as:",
-        "<blockquote>if (num > 10 || num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
+        "<blockquote>if (num > 10 || num < 5) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>return \"Yes\";</blockquote>",
         "<hr>",
         "Combine the two <code>if</code> statements into one statement which returns <code>\"Outside\"</code> if <code>val</code> is not between <code>10</code> and <code>20</code>, inclusive. Otherwise, return <code>\"Inside\"</code>."
       ],
@@ -4670,9 +4670,9 @@
           "description": [
             "El operador <dfn>lógico o</dfn> (<code>||</code>) retorna <code>true</code>(verdadero) si cualquiera de los <dfn>operandos</dfn> es <code>true</code>(verdadero). De otra manera, este retorna <code>false</code>(falso).",
             "El patrón de abajo debería ser familiar de los puntos de referencia anteriores:",
-            "<blockquote>if (num > 10) {<br>  return \"No\";<br>}<br>if (num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
+            "<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>if (num < 5) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>return \"Yes\";</blockquote>",
             "retornará \"Yes\" solo si <code>num</code> está entre <code>5</code> y <code>10</code> (5 y 10 incluidos). La misma lógica puede ser escrita como:",
-            "<blockquote>if (num > 10 || num < 5) {<br>  return \"No\";<br>}<br>return \"Yes\";</blockquote>",
+            "<blockquote>if (num > 10 || num < 5) {<br>&nbsp;&nbsp;return \"No\";<br>}<br>return \"Yes\";</blockquote>",
             "<h4>Instrucciones</h4>",
             "Combina las dos sentencias <code>if</code> dentro de una sentencia la cual retorne <code>\"Outside\"</code> si <code>val</code> no está entre <code>10</code> y <code>20</code>, inclusive. De otra manera, retorna <code>\"Inside\"</code>."
           ]
@@ -4712,7 +4712,7 @@
       "title": "Introducing Else Statements",
       "description": [
         "When a condition for an <code>if</code> statement is true, the block of code following it is executed. What about when that condition is false?  Normally nothing would happen. With an <code>else</code> statement, an alternate block of code can be executed.",
-        "<blockquote>if (num > 10) {<br>  return \"Bigger than 10\";<br>} else {<br>  return \"10 or Less\";<br>}</blockquote>",
+        "<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return \"Bigger than 10\";<br>} else {<br>&nbsp;&nbsp;return \"10 or Less\";<br>}</blockquote>",
         "<hr>",
         "Combine the <code>if</code> statements into a single <code>if/else</code> statement."
       ],
@@ -4756,7 +4756,7 @@
           "title": "Introducción de las sentencias else",
           "description": [
             "Cuando una condición de una sentencia <code>if</code> es verdadera, el siguiente bloque de código es ejecutado. ¿Y cuando esa condición es falsa? Normalmente nada pasaría. Con una sentencia <code>else</code>(además), un bloque alternativo de código puede ser ejecutado.",
-            "<blockquote>if (num > 10) {<br>  return \"Más grande que 10\";<br>} else {<br>  return \"10 o Menos\";<br>}</blockquote>",
+            "<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return \"Más grande que 10\";<br>} else {<br>&nbsp;&nbsp;return \"10 o Menos\";<br>}</blockquote>",
             "<h4>Instrucciones</h4>",
             "Combina las sentencias <code>if</code> dentro de una sola sentencia <code>if/else</code>."
           ]
@@ -4798,7 +4798,7 @@
       "title": "Introducing Else If Statements",
       "description": [
         "If you have multiple conditions that need to be addressed, you can chain <code>if</code> statements together with <code>else if</code> statements.",
-        "<blockquote>if (num > 15) {<br>  return \"Bigger than 15\";<br>} else if (num < 5) {<br>  return \"Smaller than 5\";<br>} else {<br>  return \"Between 5 and 15\";<br>}</blockquote>",
+        "<blockquote>if (num > 15) {<br>&nbsp;&nbsp;return \"Bigger than 15\";<br>} else if (num < 5) {<br>&nbsp;&nbsp;return \"Smaller than 5\";<br>} else {<br>&nbsp;&nbsp;return \"Between 5 and 15\";<br>}</blockquote>",
         "<hr>",
         "Convert the logic to use <code>else if</code> statements."
       ],
@@ -4842,7 +4842,7 @@
           "title": "Introducción de las sentencias else if",
           "description": [
             "Si tienes múltiples condiciones que deben abordarse, puedes encadenar sentencias <code>if</code> juntas con sentencias <code>else if</code>.",
-            "<blockquote>if (num > 15) {<br>  return \"Más grande que 15\";<br>} else if (num < 5) {<br>  return \"Más pequeño que 5\";<br>} else {<br>  return \"Entre 5 y 15\";<br>}</blockquote>",
+            "<blockquote>if (num > 15) {<br>&nbsp;&nbsp;return \"Más grande que 15\";<br>} else if (num < 5) {<br>&nbsp;&nbsp;return \"Más pequeño que 5\";<br>} else {<br>&nbsp;&nbsp;return \"Entre 5 y 15\";<br>}</blockquote>",
             "<h4>Instrucciones</h4>",
             "Convierte la lógica para usar sentencias <code>else if</code>."
           ]
@@ -4883,9 +4883,9 @@
         "The function is executed from top to bottom so you will want to be careful of what statement comes first.",
         "Take these two functions as an example.",
         "Here's the first:",
-        "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Less than one\";<br>  } else if (x < 2) {<br>    return \"Less than two\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "<blockquote>function foo(x) {<br>&nbsp;&nbsp;if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Less than one\";<br>&nbsp;&nbsp;} else if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Less than two\";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Greater than or equal to two\";<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "And the second just switches the order of the statements:",
-        "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Less than two\";<br>  } else if (x < 1) {<br>    return \"Less than one\";<br>  } else {<br>    return \"Greater than or equal to two\";<br>  }<br>}</blockquote>",
+        "<blockquote>function bar(x) {<br>&nbsp;&nbsp;if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Less than two\";<br>&nbsp;&nbsp;} else if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Less than one\";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Greater than or equal to two\";<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "While these two functions look nearly identical if we pass a number to both we get different outputs.",
         "<blockquote>foo(0) // \"Less than one\"<br>bar(0) // \"Less than two\"</blockquote>",
         "<hr>",
@@ -4917,9 +4917,9 @@
             "El ciclo es ejecutado de arriba hacia abajo por lo que tendrás que ser cuidadoso de cual sentencia va primero.",
             "Toma estas dos funciones como ejemplo.",
             "Aquí está la primera:",
-            "<blockquote>function foo(x) {<br>  if (x < 1) {<br>    return \"Menor que uno\";<br>  } else if (x < 2) {<br>    return \"Menor que dos\";<br>  } else {<br>    return \"Mayor o igual a dos\";<br>  }<br>}</blockquote>",
+            "<blockquote>function foo(x) {<br>&nbsp;&nbsp;if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Menor que uno\";<br>&nbsp;&nbsp;} else if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Menor que dos\";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Mayor o igual a dos\";<br>&nbsp;&nbsp;}<br>}</blockquote>",
             "Y el segundo solo cambia el orden de las sentencias:",
-            "<blockquote>function bar(x) {<br>  if (x < 2) {<br>    return \"Menor que dos\";<br>  } else if (x < 1) {<br>    return \"Menor que uno\";<br>  } else {<br>    return \"Mayor o igual a dos\";<br>  }<br>}</blockquote>",
+            "<blockquote>function bar(x) {<br>&nbsp;&nbsp;if (x < 2) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Menor que dos\";<br>&nbsp;&nbsp;} else if (x < 1) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Menor que uno\";<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"Mayor o igual a dos\";<br>&nbsp;&nbsp;}<br>}</blockquote>",
             "Mientras esas dos funciones parecen casi idénticas, si nosotros pasamos un número a ambas obtendremos diferentes salidas.",
             "<blockquote>foo(0) // \"Menor que uno\"<br>bar(0) // \"Menor que dos\"</blockquote>",
             "<h4>Instrucciones</h4>",
@@ -4956,7 +4956,7 @@
       "title": "Chaining If Else Statements",
       "description": [
         "<code>if/else</code> statements can be chained together for complex logic. Here is <dfn>pseudocode</dfn> of multiple chained <code>if</code> / <code>else if</code> statements:",
-        "<blockquote>if (<em>condition1</em>) {<br>  <em>statement1</em><br>} else if (<em>condition2</em>) {<br>  <em>statement2</em><br>} else if (<em>condition3</em>) {<br>  <em>statement3</em><br>. . .<br>} else {<br>  <em>statementN</em><br>}</blockquote>",
+        "<blockquote>if (<em>condition1</em>) {<br>&nbsp;&nbsp;<em>statement1</em><br>} else if (<em>condition2</em>) {<br>&nbsp;&nbsp;<em>statement2</em><br>} else if (<em>condition3</em>) {<br>&nbsp;&nbsp;<em>statement3</em><br>. . .<br>} else {<br>&nbsp;&nbsp;<em>statementN</em><br>}</blockquote>",
         "<hr>",
         "Write chained <code>if</code>/<code>else if</code> statements to fulfill the following conditions:",
         "<code>num &lt;   5</code> - return \"Tiny\"<br><code>num &lt;  10</code> - return \"Small\"<br><code>num &lt; 15</code> - return \"Medium\"<br><code>num &lt; 20</code> - return \"Large\"<br><code>num >= 20</code>  - return \"Huge\""
@@ -5025,7 +5025,7 @@
           "title": "Encadenamiento de sentencias else if",
           "description": [
             "Las sentencias <code>if/else</code>(si/de lo contrario) pueden ser encadenadas juntas por una lógica compleja. Aquí está el <dfn>pseudocódigo</dfn> de múltiples sentencias <code>if</code> / <code>else if</code> encadenadas:",
-            "<blockquote>if (<em>condicion1</em>) {<br>  <em>sentencias1</em><br>} else if (<em>condicion2</em>) {<br>  <em>sentencias2</em><br>} else if (<em>condicion3</em>) {<br>  <em>sentencias3</em><br>. . .<br>} else {<br>  <em>sentenciasN</em><br>}</blockquote>",
+            "<blockquote>if (<em>condicion1</em>) {<br>&nbsp;&nbsp;<em>sentencias1</em><br>} else if (<em>condicion2</em>) {<br>&nbsp;&nbsp;<em>sentencias2</em><br>} else if (<em>condicion3</em>) {<br>&nbsp;&nbsp;<em>sentencias3</em><br>. . .<br>} else {<br>&nbsp;&nbsp;<em>sentenciasN</em><br>}</blockquote>",
             "<h4>Instrucciones</h4>",
             "Escribe sentencias <code>if</code>/<code>else if</code> encadenadas para cumplir las siguientes condiciones:",
             "<code>num &lt;   5</code> - retorna \"Tiny\"<br><code>num &lt;  10</code> - retorna \"Small\"<br><code>num &lt; 15</code> - retorna \"Medium\"<br><code>num &lt; 20</code> - retorna \"Large\"<br><code>num >= 20</code>  - retorna \"Huge\""
@@ -5154,7 +5154,7 @@
       "description": [
         "If you have many options to choose from, use a <code>switch</code> statement. A <code>switch</code> statement tests a value and can have many <code>case</code> statements which define various possible values. Statements are executed from the first matched <code>case</code> value until a <code>break</code> is encountered.",
         "Here is a <dfn>pseudocode</dfn> example:",
-        "<blockquote>switch(num) {<br>  case value1:<br>    statement1;<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  case valueN:<br>    statementN;<br>    break;<br>}</blockquote>",
+        "<blockquote>switch(num) {<br>&nbsp;&nbsp;case value1:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement1;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case value2:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement2;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>...<br>&nbsp;&nbsp;case valueN:<br>&nbsp;&nbsp;&nbsp;&nbsp;statementN;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>}</blockquote>",
         "<code>case</code> values are tested with strict equality (<code>===</code>). The <code>break</code> tells JavaScript to stop executing statements. If the <code>break</code> is omitted, the next statement will be executed.",
         "<hr>",
         "Write a switch statement which tests <code>val</code> and sets <code>answer</code> for the following conditions:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
@@ -5199,7 +5199,7 @@
           "description": [
             "Si tienes varias opciones para elegir, usa una sentencia <code>switch</code>. Una sentencia <code>switch</code> prueba un valor y puede tener varias sentencias <code>case</code> las cuales definen varios posibles valores. Las sentencias son ejecutadas desde el primer valor <code>case</code> igualado hasta que se encuentr un <code>break</code>.",
             "Aquí hay un <dfn>pseudocódigo</dfn> de ejemplo:",
-            "<blockquote>switch(num) {<br>  case valor1:<br>    sentencia1;<br>    break;<br>  case valor2:<br>    sentencia2;<br>    break;<br>...<br>  case valorN:<br>    sentenciaN;<br>    break;<br>}</blockquote>",
+            "<blockquote>switch(num) {<br>&nbsp;&nbsp;case valor1:<br>&nbsp;&nbsp;&nbsp;&nbsp;sentencia1;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case valor2:<br>&nbsp;&nbsp;&nbsp;&nbsp;sentencia2;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>...<br>&nbsp;&nbsp;case valorN:<br>&nbsp;&nbsp;&nbsp;&nbsp;sentenciaN;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>}</blockquote>",
             "Los valores <code>case</code> son probados con estricta igualdad (<code>===</code>). El <code>break</code> le dice a JavaScript que pare la ejecución del bloque de sentencias en el que está. Si se omite <code>break</code>, se ejecutará la siguiente sentencia.",
             "<h4>Instrucciones</h4>",
             "Escribe una sentencia <code>switch</code> que pruebe <code>val</code> y establezca <code>answer</code> para las siguientes condiciones:<br><code>1</code> - \"alpha\"<br><code>2</code> - \"beta\"<br><code>3</code> - \"gamma\"<br><code>4</code> - \"delta\""
@@ -5237,7 +5237,7 @@
       "description": [
         "In a <code>switch</code> statement you may not be able to specify all possible values as <code>case</code> statements. Instead, you can add the <code>default</code> statement which will be executed if no matching <code>case</code> statements are found. Think of it like the final <code>else</code> statement in an <code>if/else</code> chain.",
         "A <code>default</code> statement should be the last case.",
-        "<blockquote>switch (num) {<br>  case value1:<br>    statement1;<br>    break;<br>  case value2:<br>    statement2;<br>    break;<br>...<br>  default:<br>    defaultStatement;<br>    break;<br>}</blockquote>",
+        "<blockquote>switch (num) {<br>&nbsp;&nbsp;case value1:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement1;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case value2:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement2;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>...<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;defaultStatement;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>}</blockquote>",
         "<hr>",
         "Write a switch statement to set <code>answer</code> for the following conditions:<br><code>\"a\"</code> - \"apple\"<br><code>\"b\"</code> - \"bird\"<br><code>\"c\"</code> - \"cat\"<br><code>default</code> - \"stuff\""
       ],
@@ -5286,7 +5286,7 @@
           "description": [
             "En una sentencia <code>switch</code> puede que no seas capaz de especificar todos los posibles valores en las sentencias <code>case</code>. En su lugar, puedes agregar la sentencia <code>default</code> la cual será ejecutada si no es encontrada ninguna coincidencia con alguna sentencia <code>case</code>. Piensa en esto como la última sentencia <code>else</code> en una cadena <code>if/else</code>.",
             "Una sentencia <code>default</code> debería ser el último caso.",
-            "<blockquote>switch(num) {<br>  case valor1:<br>    sentencia1;<br>    break;<br>  case valor2:<br>    sentencia2;<br>    break;<br>...<br>  default:<br>    sentenciaDefault;<br>}</blockquote>",
+            "<blockquote>switch(num) {<br>&nbsp;&nbsp;case valor1:<br>&nbsp;&nbsp;&nbsp;&nbsp;sentencia1;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case valor2:<br>&nbsp;&nbsp;&nbsp;&nbsp;sentencia2;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>...<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;sentenciaDefault;<br>}</blockquote>",
             "<h4>Instrucciones</h4>",
             "Escribe una sentencia switch para establecer <code>answer</code> para las siguientes condiciones:<br><code>\"a\"</code> - \"apple\"<br><code>\"b\"</code> - \"bird\"<br><code>\"c\"</code> - \"cat\"<br><code>default</code> - \"stuff\""
           ]
@@ -5323,7 +5323,7 @@
       "title": "Multiple Identical Options in Switch Statements",
       "description": [
         "If the <code>break</code> statement is omitted from a <code>switch</code> statement's <code>case</code>, the following <code>case</code> statement(s) are executed until a <code>break</code> is encountered. If you have multiple inputs with the same output, you can represent them in a <code>switch</code> statement like this:",
-        "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
+        "<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;case 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = \"1, 2, or 3\";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 4:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = \"4 alone\";<br>}</blockquote>",
         "Cases for 1, 2, and 3 will all produce the same result.",
         "<hr>",
         "Write a switch statement to set <code>answer</code> for the following ranges:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
@@ -5385,7 +5385,7 @@
           "title": "Múltiples opciones idénticas en una sentencias switch",
           "description": [
             "Si la sentencia <code>break</code> es omitida de una sentencia <code>case</code> de un <code>switch</code>, las siguientes sentencias <code>case</code> son ejecutadas hasta que sea encontrado un <code>break</code>. Si tienes multiples entradas con la misma salida, puede representarlas en una sentencia <code>switch</code> así:",
-            "<blockquote>switch(val) {<br>  case 1:<br>  case 2:<br>  case 3:<br>    result = \"1, 2, or 3\";<br>    break;<br>  case 4:<br>    result = \"4 alone\";<br>}</blockquote>",
+            "<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;case 3:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = \"1, 2, or 3\";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 4:<br>&nbsp;&nbsp;&nbsp;&nbsp;result = \"4 alone\";<br>}</blockquote>",
             "Los casos 1, 2, y 3 producirán el mismo resultado.",
             "<h4>Instrucciones</h4>",
             "Escribe una sentencia <code>switch</code> para establecer <code>answer</code> para los siguientes rangos:<br><code>1-3</code> - \"Low\"<br><code>4-6</code> - \"Mid\"<br><code>7-9</code> - \"High\"",
@@ -5423,9 +5423,9 @@
       "title": "Replacing If Else Chains with Switch",
       "description": [
         "If you have many options to choose from, a <code>switch</code> statement can be easier to write than many chained <code>if</code>/<code>else if</code> statements. The following:",
-        "<blockquote>if (val === 1) {<br>  answer = \"a\";<br>} else if (val === 2) {<br>  answer = \"b\";<br>} else {<br>  answer = \"c\";<br>}</blockquote>",
+        "<blockquote>if (val === 1) {<br>&nbsp;&nbsp;answer = \"a\";<br>} else if (val === 2) {<br>&nbsp;&nbsp;answer = \"b\";<br>} else {<br>&nbsp;&nbsp;answer = \"c\";<br>}</blockquote>",
         "can be replaced with:",
-        "<blockquote>switch(val) {<br>  case 1:<br>    answer = \"a\";<br>    break;<br>  case 2:<br>    answer = \"b\";<br>    break;<br>  default:<br>    answer = \"c\";<br>}</blockquote>",
+        "<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = \"a\";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = \"b\";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = \"c\";<br>}</blockquote>",
         "<hr>",
         "Change the chained <code>if</code>/<code>else if</code> statements into a <code>switch</code> statement."
       ],
@@ -5481,9 +5481,9 @@
           "title": "Reemplazar cadenas if else con switch",
           "description": [
             "Si tienes varias opciones para elegir, una sentencia <code>switch</code> puede ser más fácil de escribir que varias sentencias <code>if</code>/<code>if else</code> anidadas. Lo siguiente:",
-            "<blockquote>if (val === 1) {<br>  respuesta = \"a\";<br>} else if (val === 2) {<br>  respuesta = \"b\";<br>} else {<br>  respuesta = \"c\";<br>}</blockquote>",
+            "<blockquote>if (val === 1) {<br>&nbsp;&nbsp;respuesta = \"a\";<br>} else if (val === 2) {<br>&nbsp;&nbsp;respuesta = \"b\";<br>} else {<br>&nbsp;&nbsp;respuesta = \"c\";<br>}</blockquote>",
             "puede ser reemplazado con:",
-            "<blockquote>switch(val) {<br>  case 1:<br>    respuesta = \"a\";<br>    break;<br>  case 2:<br>    respuesta = \"b\";<br>    break;<br>  default:<br>    respuesta = \"c\";<br>}</blockquote>",
+            "<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;respuesta = \"a\";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;respuesta = \"b\";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;respuesta = \"c\";<br>}</blockquote>",
             "<h4>Instrucciones</h4>",
             "Cambia las sentencias <code>if</code>/<code>if else</code> anidadas dentro de una sentencia <code>switch</code>."
           ]
@@ -5530,9 +5530,9 @@
       "description": [
         "You may recall from <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">Comparison with the Equality Operator</a> that all comparison operators return a boolean <code>true</code> or <code>false</code> value.",
         "Sometimes people use an if/else statement to do a comparison, like this:",
-        "<blockquote>function isEqual(a,b) {<br>  if (a === b) {<br>    return true;<br>  } else {<br>    return false;<br>  }<br>}</blockquote>",
+        "<blockquote>function isEqual(a,b) {<br>&nbsp;&nbsp;if (a === b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return true;<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "But there's a better way to do this. Since <code>===</code> returns <code>true</code> or <code>false</code>, we can return the result of the comparison:",
-        "<blockquote>function isEqual(a,b) {<br>  return a === b;<br>}</blockquote>",
+        "<blockquote>function isEqual(a,b) {<br>&nbsp;&nbsp;return a === b;<br>}</blockquote>",
         "<hr>",
         "Fix the function <code>isLess</code> to remove the <code>if/else</code> statements."
       ],
@@ -5561,9 +5561,9 @@
           "description": [
             "Tal vez recuerdes de <a href=\"waypoint-comparison-with-the-equality-operator\" target=\"_blank\">La comparación con el operador de igualdad</a> que todos los operadores de comparación retornan un valor booleano <code>true</code> (verdadero) o <code>false</code> (falso).",
             "Un <dfn>anti-patrón</dfn> común es usar una sentencia <code>if/else</code> para hacer una comparación y entonces retornar <code>true</code> o <code>false</code>:",
-            "<blockquote>function sonIguales(a,b) {<br>  if (a === b) {<br>    return true;<br>  } else {<br>    return false;<br>  }<br>}</blockquote>",
+            "<blockquote>function sonIguales(a,b) {<br>&nbsp;&nbsp;if (a === b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return true;<br>&nbsp;&nbsp;} else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return false;<br>&nbsp;&nbsp;}<br>}</blockquote>",
             "Ya que <code>===</code> returna <code>true</code> (verdadero) o <code>false</code> (falso), podemos simplemente retornar el resultado de la comparación:",
-            "<blockquote>function sonIguales(a,b) {<br>  return a === b;<br>}</blockquote>",
+            "<blockquote>function sonIguales(a,b) {<br>&nbsp;&nbsp;return a === b;<br>}</blockquote>",
             "<h4>Instrucciones</h4>",
             "Arregla la función <code>isLess</code> para remover las sentencias <code>if/else</code>."
           ]
@@ -5598,7 +5598,7 @@
       "description": [
         "When a <code>return</code> statement is reached, the execution of the current function stops and control returns to the calling location.",
         "<strong>Example</strong>",
-        "<blockquote>function myFun() {<br>  console.log(\"Hello\");<br>  return \"World\";<br>  console.log(\"byebye\")<br>}<br>myFun();</blockquote>",
+        "<blockquote>function myFun() {<br>&nbsp;&nbsp;console.log(\"Hello\");<br>&nbsp;&nbsp;return \"World\";<br>&nbsp;&nbsp;console.log(\"byebye\")<br>}<br>myFun();</blockquote>",
         "The above outputs \"Hello\" to the console, returns \"World\", but <code>\"byebye\"</code> is never output, because the function exits at the <code>return</code> statement.",
         "<hr>",
         "Modify the function <code>abTest</code> so that if <code>a</code> or <code>b</code> are less than <code>0</code> the function will immediately exit with a value of <code>undefined</code>.",
@@ -5641,7 +5641,7 @@
           "description": [
             "Cuando se alcanza una sentencia <code>return</code>, la ejecución de la presente función se detiene y el control la retorna a la ubicación de la llamada.",
             "<strong>Ejemplo</strong>",
-            "<blockquote>function miFuncion() {<br>  console.log(\"Hola\");<br>  return \"Mundo\";<br>  console.log(\"chaochao\")<br>}<br>miFuncion();</blockquote>",
+            "<blockquote>function miFuncion() {<br>&nbsp;&nbsp;console.log(\"Hola\");<br>&nbsp;&nbsp;return \"Mundo\";<br>&nbsp;&nbsp;console.log(\"chaochao\")<br>}<br>miFuncion();</blockquote>",
             "Esta presenta en consola \"Hola\", retorna \"Mundo\", pero <code>\"chaochao\"</code> nunca se presenta, porque la función sale con la sentencia <code>return</code>.",
             "<h4>Instrucciones</h4>",
             "Modifica la función <code>abTest</code> de manera que si <code>a</code> o <code>b</code> son menores que <code>0</code> la función saldrá inmediatamente con un valor <code>undefined</code>.",
@@ -5765,9 +5765,9 @@
         "Objects are similar to <code>arrays</code>, except that instead of using indexes to access and modify their data, you access the data in objects through what are called <code>properties</code>.",
         "Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.",
         "Here's a sample cat object:",
-        "<blockquote>var cat = {<br>  \"name\": \"Whiskers\",<br>  \"legs\": 4,<br>  \"tails\": 1,<br>  \"enemies\": [\"Water\", \"Dogs\"]<br>};</blockquote>",
+        "<blockquote>var cat = {<br>&nbsp;&nbsp;\"name\": \"Whiskers\",<br>&nbsp;&nbsp;\"legs\": 4,<br>&nbsp;&nbsp;\"tails\": 1,<br>&nbsp;&nbsp;\"enemies\": [\"Water\", \"Dogs\"]<br>};</blockquote>",
         "In this example, all the properties are stored as strings, such as - <code>\"name\"</code>, <code>\"legs\"</code>, and <code>\"tails\"</code>. However, you can also use numbers as properties. You can even omit the quotes for single-word string properties, as follows:",
-        "<blockquote>var anotherObject = {<br>  make: \"Ford\",<br>  5: \"five\",<br>  \"model\": \"focus\"<br>};</blockquote>",
+        "<blockquote>var anotherObject = {<br>&nbsp;&nbsp;make: \"Ford\",<br>&nbsp;&nbsp;5: \"five\",<br>&nbsp;&nbsp;\"model\": \"focus\"<br>};</blockquote>",
         "However, if your object has any non-string properties, JavaScript will automatically typecast them as strings.",
         "<hr>",
         "Make an object that represents a dog called <code>myDog</code> which contains the properties <code>\"name\"</code> (a string), <code>\"legs\"</code>, <code>\"tails\"</code> and <code>\"friends\"</code>.",
@@ -5855,7 +5855,7 @@
         "There are two ways to access the properties of an object: dot notation (<code>.</code>) and bracket notation (<code>[]</code>), similar to an array.",
         "Dot notation is what you use when you know the name of the property you're trying to access ahead of time.",
         "Here is a sample of using dot notation (<code>.</code>) to read an object's property:",
-        "<blockquote>var myObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>var prop1val = myObj.prop1; // val1<br>var prop2val = myObj.prop2; // val2</blockquote>",
+        "<blockquote>var myObj = {<br>&nbsp;&nbsp;prop1: \"val1\",<br>&nbsp;&nbsp;prop2: \"val2\"<br>};<br>var prop1val = myObj.prop1; // val1<br>var prop2val = myObj.prop2; // val2</blockquote>",
         "<hr>",
         "Read in the property values of <code>testObj</code> using dot notation. Set the variable <code>hatValue</code> equal to the object's property <code>hat</code> and set the variable <code>shirtValue</code> equal to the object's property <code>shirt</code>."
       ],
@@ -5893,7 +5893,7 @@
             "Hay dos maneras de acceder a las propiedades de un objeto: con el operador punto (<code>.</code>) y con la notación corchete (<code>[]</code>), similar al caso de un vector.",
             "El operador punto es el que usas cuando de antemano sabes el nombre de la propiedad que estás intentando acceder.",
             "Aquí está un ejemplo del uso del operador punto (<code>.</code>) para leer una propiedad de un objeto:",
-            "<blockquote>var miObj = {<br>  prop1: \"val1\",<br>  prop2: \"val2\"<br>};<br>var prop1val = miObj.prop1; // val1<br>var prop2val = miObj.prop2; // val2</blockquote>",
+            "<blockquote>var miObj = {<br>&nbsp;&nbsp;prop1: \"val1\",<br>&nbsp;&nbsp;prop2: \"val2\"<br>};<br>var prop1val = miObj.prop1; // val1<br>var prop2val = miObj.prop2; // val2</blockquote>",
             "<h4>Instrucciones</h4>",
             "Lee los valores de propiedades de <code>testObj</code> usando notación punto. Asigna la variable <code>hatValue</code> igual a la propiedad objeto <code>hat</code> y asigna la variable <code>shirtValue</code> igual a la propiedad objeto <code>shirt</code>."
           ]
@@ -5931,7 +5931,7 @@
         "The second way to access the properties of an object is bracket notation (<code>[]</code>). If the property of the object you are trying to access has a space in its name, you will need to use bracket notation.",
         "However, you can still use bracket notation on object properties without spaces.",
         "Here is a sample of using bracket notation to read an object's property:",
-        "<blockquote>var myObj = {<br>  \"Space Name\": \"Kirk\",<br>  \"More Space\": \"Spock\",<br>  \"NoSpace\": \"USS Enterprise\"<br>};<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock<br>myObj[\"NoSpace\"];    // USS Enterprise</blockquote>",
+        "<blockquote>var myObj = {<br>&nbsp;&nbsp;\"Space Name\": \"Kirk\",<br>&nbsp;&nbsp;\"More Space\": \"Spock\",<br>&nbsp;&nbsp;\"NoSpace\": \"USS Enterprise\"<br>};<br>myObj[\"Space Name\"]; // Kirk<br>myObj['More Space']; // Spock<br>myObj[\"NoSpace\"];    // USS Enterprise</blockquote>",
         "Note that property names with spaces in them must be in quotes (single or double).",
         "<hr>",
         "Read the values of the properties <code>\"an entree\"</code> and <code>\"the drink\"</code> of <code>testObj</code> using bracket notation and assign them to <code>entreeValue</code> and <code>drinkValue</code> respectively."
@@ -5969,7 +5969,7 @@
           "description": [
             "La segunda manera de acceder a las propiedades de un objeto es con la notación corchete (<code>[]</code>). Si el nombre de la propiedad del objeto que estás intentando acceder tiene un espacio, necesitarás usar la notación corchete.",
             "Aquí está un ejemplo del uso de la notación corchete para leer una propiedad de un objeto:",
-            "<blockquote>var miObj = {<br>  \"Nombre con espacio\": \"Kirk\",<br>  \"Mas espacio\": \"Spock\"<br>};<br>miObj[\"Nombre con espacio\"]; // Kirk<br>miObj['Mas espacio']; // Spock</blockquote>",
+            "<blockquote>var miObj = {<br>&nbsp;&nbsp;\"Nombre con espacio\": \"Kirk\",<br>&nbsp;&nbsp;\"Mas espacio\": \"Spock\"<br>};<br>miObj[\"Nombre con espacio\"]; // Kirk<br>miObj['Mas espacio']; // Spock</blockquote>",
             "Nota que los nombres de propiedades con espacios tienen que estar entre comillas (apóstrofes o comillas).",
             "<h4>Instrucciones</h4>",
             "Lee los valores de las propiedades <code>\"an entree\"</code> y <code>\"the drink\"</code> de <code>testObj</code> usando la notación corchete."
@@ -6008,9 +6008,9 @@
       "description": [
         "Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.",
         "Here is an example of using a variable to access a property:",
-        "<blockquote>var dogs = {<br>  Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br>};<br>var myDog = \"Hunter\";<br>var myBreed = dogs[myDog];<br>console.log(myBreed); // \"Doberman\"</blockquote>",
+        "<blockquote>var dogs = {<br>&nbsp;&nbsp;Fido: \"Mutt\",\n  Hunter: \"Doberman\",\n  Snoopie: \"Beagle\"<br>};<br>var myDog = \"Hunter\";<br>var myBreed = dogs[myDog];<br>console.log(myBreed); // \"Doberman\"</blockquote>",
         "Another way you can use this concept is when the property's name is collected dynamically during the program execution, as follows:",
-        "<blockquote>var someObj = {<br>  propName: \"John\"<br>};<br>function propPrefix(str) {<br>  var s = \"prop\";<br>  return s + str;<br>}<br>var someProp = propPrefix(\"Name\"); // someProp now holds the value 'propName'<br>console.log(someObj[someProp]); // \"John\"</blockquote>",
+        "<blockquote>var someObj = {<br>&nbsp;&nbsp;propName: \"John\"<br>};<br>function propPrefix(str) {<br>&nbsp;&nbsp;var s = \"prop\";<br>&nbsp;&nbsp;return s + str;<br>}<br>var someProp = propPrefix(\"Name\"); // someProp now holds the value 'propName'<br>console.log(someObj[someProp]); // \"John\"</blockquote>",
         "Note that we do <em>not</em> use quotes around the variable name when using it to access the property because we are using the <em>value</em> of the variable, not the <em>name</em>.",
         "<hr>",
         "Use the <code>playerNumber</code> variable to look up player <code>16</code> in <code>testObj</code> using bracket notation. Then assign that name to the <code>player</code> variable."
@@ -6052,9 +6052,9 @@
           "description": [
             "Otro uso de la notación corchete sobre objetos es usar una variable para acceder a una propiedad. Esto puede ser muy útil en iteraciones sobre la lista de propiedades de un objetos o para hacer operaciones de búsqueda.",
             "Aquí está un ejemplo del uso de una variable para acceder a una propiedad:",
-            "<blockquote>var algunaProp = \"propNombre\";<br>var miObj = {<br>  propNombre: \"Algún valor\"<br >}<br>miObj[algunaProp]; // \"Algún valor\"</blockquote>",
+            "<blockquote>var algunaProp = \"propNombre\";<br>var miObj = {<br>&nbsp;&nbsp;propNombre: \"Algún valor\"<br >}<br>miObj[algunaProp]; // \"Algún valor\"</blockquote>",
             "Aquí hay uno más:",
-            "<blockquote>var miPerro = \"Cazador\";<br>var perros = {<br>  Fido: \"Mutt\",\n  Cazador: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var raza = perros[miPerro]; // \"Cazador\"<br>console.log(raza)// \"Doberman\"</blockquote>",
+            "<blockquote>var miPerro = \"Cazador\";<br>var perros = {<br>&nbsp;&nbsp;Fido: \"Mutt\",\n  Cazador: \"Doberman\",\n  Snoopie: \"Beagle\"<br >}<br>var raza = perros[miPerro]; // \"Cazador\"<br>console.log(raza)// \"Doberman\"</blockquote>",
             "Nota que <em>no</em> usamos comillas alrededor del nombre de la variable (<code>miPerro</code>) cuando la usamos para acceder a la propiedad (<code>perros[miPerro]</code> porque estamos usando el <em>valor</em> de la variable y no su <em>nombre</em>",
             "<h4>Instrucciones</h4>",
             "Usa la variable <code>playerNumber</code> para buscar y asignar a <code>player</code> el jugador <code>16</code> de <code>testObj</code>, usa la notación corchete."
@@ -6093,7 +6093,7 @@
       "description": [
         "After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.",
         "For example, let's look at <code>ourDog</code>:",
-        "<blockquote>var ourDog = {<br>  \"name\": \"Camper\",<br>  \"legs\": 4,<br>  \"tails\": 1,<br>  \"friends\": [\"everything!\"]<br>};</blockquote>",
+        "<blockquote>var ourDog = {<br>&nbsp;&nbsp;\"name\": \"Camper\",<br>&nbsp;&nbsp;\"legs\": 4,<br>&nbsp;&nbsp;\"tails\": 1,<br>&nbsp;&nbsp;\"friends\": [\"everything!\"]<br>};</blockquote>",
         "Since he's a particularly happy dog, let's change his name to \"Happy Camper\". Here's how we update his object's name property:",
         "<code>ourDog.name = \"Happy Camper\";</code> or",
         "<code>ourDog[\"name\"] = \"Happy Camper\";</code>",
@@ -6321,7 +6321,7 @@
       "description": [
         "Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to \"lookup\" values rather than a <code>switch</code> statement or an <code>if/else</code> chain. This is most useful when you know that your input data is limited to a certain range.",
         "Here is an example of a simple reverse alphabet lookup:",
-        "<blockquote>var alpha = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>  4:\"W\",<br>  ...<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"<br><br>var value = 2;<br>alpha[value]; // \"Y\"</blockquote>",
+        "<blockquote>var alpha = {<br>&nbsp;&nbsp;1:\"Z\",<br>&nbsp;&nbsp;2:\"Y\",<br>&nbsp;&nbsp;3:\"X\",<br>&nbsp;&nbsp;4:\"W\",<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;24:\"C\",<br>&nbsp;&nbsp;25:\"B\",<br>&nbsp;&nbsp;26:\"A\"<br>};<br>alpha[2]; // \"Y\"<br>alpha[24]; // \"C\"<br><br>var value = 2;<br>alpha[value]; // \"Y\"</blockquote>",
         "<hr>",
         "Convert the switch statement into an object called <code>lookup</code>. Use it to look up <code>val</code> and assign the associated string to the <code>result</code> variable."
       ],
@@ -6374,7 +6374,7 @@
           "description": [
             "Los objetos pueden ser considerados como un almacenamiento llave/valor, como un diccionario. Si tienes datos tabulados, puedes almacenarlos en un objeto para después \"buscar\" valores, en lugar de emplear una sentencia <code>switch</code> o una secuencia de <code>if/else</code>. Esto es más útil cuando sabes que tus datos de entrada son limitados a un cierto rango.",
             "Aquí está un ejemplo de una simple búsqueda inversa de alfabeto:",
-            "<blockquote>var alfa = {<br>  1:\"Z\",<br>  2:\"Y\",<br>  3:\"X\",<br>  4:\"W\",<br>  ...<br>  24:\"C\",<br>  25:\"B\",<br>  26:\"A\"<br>};<br>alfa[2]; // \"Y\"<br>alfa[24]; // \"C\"<br><br>var valor = 2;<br>alfa[valor]; // \"Y\"</blockquote>",
+            "<blockquote>var alfa = {<br>&nbsp;&nbsp;1:\"Z\",<br>&nbsp;&nbsp;2:\"Y\",<br>&nbsp;&nbsp;3:\"X\",<br>&nbsp;&nbsp;4:\"W\",<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;24:\"C\",<br>&nbsp;&nbsp;25:\"B\",<br>&nbsp;&nbsp;26:\"A\"<br>};<br>alfa[2]; // \"Y\"<br>alfa[24]; // \"C\"<br><br>var valor = 2;<br>alfa[valor]; // \"Y\"</blockquote>",
             "<h4>Instrucciones</h4>",
             "Convierte la sentencia switch en una tabla de búsqueda llamada <code>lookup</code>. Usala para buscar <code>val</code> y asigna la cadena asociada a la variable <code>result</code>."
           ]
@@ -6429,7 +6429,7 @@
       "description": [
         "Sometimes it is useful to check if the property of a given object exists or not. We can use the <code>.hasOwnProperty(propname)</code> method of objects to determine if that object has the given property name. <code>.hasOwnProperty()</code> returns <code>true</code> or <code>false</code> if the property is found or not.",
         "<strong>Example</strong>",
-        "<blockquote>var myObj = {<br>  top: \"hat\",<br>  bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"top\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
+        "<blockquote>var myObj = {<br>&nbsp;&nbsp;top: \"hat\",<br>&nbsp;&nbsp;bottom: \"pants\"<br>};<br>myObj.hasOwnProperty(\"top\");    // true<br>myObj.hasOwnProperty(\"middle\"); // false</blockquote>",
         "<hr>",
         "Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>checkProp</code>. If the property is found, return that property's value. If not, return <code>\"Not Found\"</code>."
       ],
@@ -6458,7 +6458,7 @@
           "description": [
             "A veces es útil revisar si cierta propiedad existe o no en un objeto dado. Podemos usar el método de objetos <code>.hasOwnProperty(nomprop)</code> para determinar si un objeto tiene la propiedad <code>nomprop</code>. <code>.hasOwnProperty()</code> retorna <code>true</code> o <code>false</code> si la propiedad es encontrada o no.",
             "<strong>Ejemplo</strong>",
-            "<blockquote>var miObj = {<br>  arriba: \"sombrero\",<br>  abajo: \"pantalones\"<br>};<br>miObj.hasOwnProperty(\"arriba\");    // true<br>miObj.hasOwnProperty(\"medio\"); // false</blockquote>",
+            "<blockquote>var miObj = {<br>&nbsp;&nbsp;arriba: \"sombrero\",<br>&nbsp;&nbsp;abajo: \"pantalones\"<br>};<br>miObj.hasOwnProperty(\"arriba\");    // true<br>miObj.hasOwnProperty(\"medio\"); // false</blockquote>",
             "<h4>Instrucciones</h4>",
             "Modifica la función <code>checkObj</code> que prueba si <code>myObj</code> tiene la propiedad <code>checkProp</code>. Si la propiedad es encontrada, retorna el valor de esa propiedad. Si no, retorna <code>\"Not Found\"</code>."
           ]
@@ -6497,11 +6497,11 @@
       "description": [
         "Sometimes you may want to store data in a flexible <dfn>Data Structure</dfn>. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of <dfn>strings</dfn>, <dfn>numbers</dfn>, <dfn>booleans</dfn>, <dfn>arrays</dfn>, <dfn>functions</dfn>, and <dfn>objects</dfn>.",
         "Here's an example of a complex data structure:",
-        "<blockquote>var ourMusic = [<br>  {<br>    \"artist\": \"Daft Punk\",<br>    \"title\": \"Homework\",<br>    \"release_year\": 1997,<br>    \"formats\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\"<br>    ],<br>    \"gold\": true<br>  }<br>];</blockquote>",
+        "<blockquote>var ourMusic = [<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;\"artist\": \"Daft Punk\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"title\": \"Homework\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"release_year\": 1997,<br>&nbsp;&nbsp;&nbsp;&nbsp;\"formats\": [ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"CD\", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"Cassette\", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"LP\"<br>&nbsp;&nbsp;&nbsp;&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;\"gold\": true<br>&nbsp;&nbsp;}<br>];</blockquote>",
         "This is an array which contains one object inside. The object has various pieces of <dfn>metadata</dfn> about an album. It also has a nested <code>\"formats\"</code> array. If you want to add more album records, you can do this by adding records to the top level array.",
         "Objects hold data in a property, which has a key-value format. In the example above, <code>\"artist\": \"Daft Punk\"</code> is a property that has a key of <code>\"artist\"</code> and a value of <code>\"Daft Punk\"</code>.",
         "<a href='http://www.json.org/' target=_blank>JavaScript Object Notation</a> or <code>JSON</code> is a related data interchange format used to store data.",
-        "<blockquote>{<br>  \"artist\": \"Daft Punk\",<br>  \"title\": \"Homework\",<br>  \"release_year\": 1997,<br>  \"formats\": [ <br>    \"CD\",<br>    \"Cassette\",<br>    \"LP\"<br>  ],<br>  \"gold\": true<br>}</blockquote>",
+        "<blockquote>{<br>&nbsp;&nbsp;\"artist\": \"Daft Punk\",<br>&nbsp;&nbsp;\"title\": \"Homework\",<br>&nbsp;&nbsp;\"release_year\": 1997,<br>&nbsp;&nbsp;\"formats\": [ <br>&nbsp;&nbsp;&nbsp;&nbsp;\"CD\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Cassette\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"LP\"<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;\"gold\": true<br>}</blockquote>",
         "<strong>Note</strong><br>You will need to place a comma after every object in the array, unless it is the last object in the array.",
         "<hr>",
         "Add a new album to the <code>myMusic</code> array. Add <code>artist</code> and <code>title</code> strings, <code>release_year</code> number, and a <code>formats</code> array of strings."
@@ -6555,7 +6555,7 @@
           "description": [
             "Los objetos JavaScript son flexibles porque permiten <dfn>Estructuras de Datos</dfn> con combinaciones arbitrarias de <dfn>cadenas</dfn>, <dfn>números</dfn>, <dfn>booleanos</dfn>, <dfn>vectores</dfn>, <dfn>funciones</dfn>, y <dfn>objetos</dfn>.",
             "Aquí está un ejemplo de un objeto complicado:",
-            "<blockquote>var nuestraMusica = [<br>  {<br>    \"artista\": \"Daft Punk\",<br>    \"titulo\": \"Homework\",<br>    \"año_publicacion\": 1997,<br>    \"formatos\": [ <br>      \"CD\", <br>      \"Cassette\", <br>      \"LP\" ],<br>    \"oro\": true<br>  }<br>];</blockquote>",
+            "<blockquote>var nuestraMusica = [<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;\"artista\": \"Daft Punk\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"titulo\": \"Homework\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"año_publicacion\": 1997,<br>&nbsp;&nbsp;&nbsp;&nbsp;\"formatos\": [ <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"CD\", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"Cassette\", <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"LP\" ],<br>&nbsp;&nbsp;&nbsp;&nbsp;\"oro\": true<br>&nbsp;&nbsp;}<br>];</blockquote>",
             "Este es un vector de objetos con diversos <dfn>metadatos</dfn> acerca de un álbum musical. Además tiene anidado un vector <code>formatos</code>. En el vector de nivel superior, pueden añadirse otros registros del álbum.",
             "<strong>Nota</strong><br>En vectores que tengan más de un objeto, necesitarás separar un objeto de otro mediante comas.",
             "<h4>Instrucciones</h4>",
@@ -6598,7 +6598,7 @@
       "description": [
         "The sub-properties of objects can be accessed by chaining together the dot or bracket notation.",
         "Here is a nested object:",
-        "<blockquote>var ourStorage = {<br>  \"desk\": {<br>    \"drawer\": \"stapler\"<br>  },<br>  \"cabinet\": {<br>    \"top drawer\": { <br>      \"folder1\": \"a file\",<br>      \"folder2\": \"secrets\"<br>    },<br>    \"bottom drawer\": \"soda\"<br>  }<br>};<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
+        "<blockquote>var ourStorage = {<br>&nbsp;&nbsp;\"desk\": {<br>&nbsp;&nbsp;&nbsp;&nbsp;\"drawer\": \"stapler\"<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;\"cabinet\": {<br>&nbsp;&nbsp;&nbsp;&nbsp;\"top drawer\": { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"folder1\": \"a file\",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"folder2\": \"secrets\"<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;\"bottom drawer\": \"soda\"<br>&nbsp;&nbsp;}<br>};<br>ourStorage.cabinet[\"top drawer\"].folder2;  // \"secrets\"<br>ourStorage.desk.drawer; // \"stapler\"</blockquote>",
         "<hr>",
         "Access the <code>myStorage</code> object and assign the contents of the <code>glove box</code> property to the <code>gloveBoxContents</code> variable. Use bracket notation for properties with a space in their name."
       ],
@@ -6623,7 +6623,7 @@
           "description": [
             "Las sub-propiedades de los objetos pueden ser accesadas mediante encadenamiento de la notación punto o corchete.",
             "Aquí está un objeto anidado:",
-            "<blockquote>var nuestroAlmacen = {<br>  \"escritorio\": {<br>    \"cajon\": \"grapadora\"<br>  },<br>  \"armario\": {<br>    \"cajón superior\": { <br>      \"legajador1\": \"un archivo\",<br>      \"legajador2\": \"secretos\"<br>    },<br>    \"cajón inferior\": \"gaseosa\"<br>  }<br>}<br>nuestroAlmacen.armario[\"cajón superior\"].legajador2;  // \"secretos\"<br>nuestroAlmacen.escritorio.cajon; // \"grapadora\"</blockquote>",
+            "<blockquote>var nuestroAlmacen = {<br>&nbsp;&nbsp;\"escritorio\": {<br>&nbsp;&nbsp;&nbsp;&nbsp;\"cajon\": \"grapadora\"<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;\"armario\": {<br>&nbsp;&nbsp;&nbsp;&nbsp;\"cajón superior\": { <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"legajador1\": \"un archivo\",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"legajador2\": \"secretos\"<br>&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;\"cajón inferior\": \"gaseosa\"<br>&nbsp;&nbsp;}<br>}<br>nuestroAlmacen.armario[\"cajón superior\"].legajador2;  // \"secretos\"<br>nuestroAlmacen.escritorio.cajon; // \"grapadora\"</blockquote>",
             "<h4>Instrucciones</h4>",
             "Accede al objeto <code>myStorage</code> para recuperar el contenido de <code>glove box</code>. Usa notación corchete para las propiedades con un espacio en su nombre."
           ]
@@ -6670,7 +6670,7 @@
       "description": [
         "As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.",
         "Here is an example of how to access a nested array:",
-        "<blockquote>var ourPets = [<br>  {<br>    animalType: \"cat\",<br>    names: [<br>      \"Meowzer\",<br>      \"Fluffy\",<br>      \"Kit-Cat\"<br>    ]<br>  },<br>  {<br>    animalType: \"dog\",<br>    names: [<br>      \"Spot\",<br>      \"Bowser\",<br>      \"Frankie\"<br>    ]<br>  }<br>];<br>ourPets[0].names[1]; // \"Fluffy\"<br>ourPets[1].names[0]; // \"Spot\"</blockquote>",
+        "<blockquote>var ourPets = [<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;animalType: \"cat\",<br>&nbsp;&nbsp;&nbsp;&nbsp;names: [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"Meowzer\",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"Fluffy\",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"Kit-Cat\"<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;animalType: \"dog\",<br>&nbsp;&nbsp;&nbsp;&nbsp;names: [<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"Spot\",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"Bowser\",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"Frankie\"<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>&nbsp;&nbsp;}<br>];<br>ourPets[0].names[1]; // \"Fluffy\"<br>ourPets[1].names[0]; // \"Spot\"</blockquote>",
         "<hr>",
         "Retrieve the second tree from the variable <code>myPlants</code> using object dot and array bracket notation."
       ],
@@ -6695,7 +6695,7 @@
           "description": [
             "Como hemos visto en ejemplos anteriores, los objetos pueden contener objetos anidados y vectores anidados. De forma similar a acceder a objetos anidados, la notación corchete en vectores puede ser encadenada para acceder a vectores anidados.",
             "Aquí está un ejemplo de como acceder a un vector anidado:",
-            "<blockquote>var nuestrasMascotas = { <br>  \"gatos\": [<br>    \"Maullador\",<br>    \"Blandito\",<br>    \"Kit-Cat\"<br>  ],<br>  \"perros\": [<br>    \"Mancha\",<br>    \"Bowser\",<br>    \"Frankie\"<br>  ]<br>};<br>nuestrasMascotas.cats[1]; // \"Blandito\"<br>nuestrasMascotas.dogs[0]; // \"Mancha\"</blockquote>",
+            "<blockquote>var nuestrasMascotas = { <br>&nbsp;&nbsp;\"gatos\": [<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Maullador\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Blandito\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Kit-Cat\"<br>&nbsp;&nbsp;],<br>&nbsp;&nbsp;\"perros\": [<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Mancha\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Bowser\",<br>&nbsp;&nbsp;&nbsp;&nbsp;\"Frankie\"<br>&nbsp;&nbsp;]<br>};<br>nuestrasMascotas.cats[1]; // \"Blandito\"<br>nuestrasMascotas.dogs[0]; // \"Mancha\"</blockquote>",
             "<h4>Instrucciones</h4>",
             "Recupera el segundo arbol de la variable <code>myPlants</code> usando notación punto para objetos y notación corchete para vectores."
           ]
@@ -6870,7 +6870,7 @@
       "description": [
         "You can run the same code multiple times by using a loop.",
         "The first type of loop we will learn is called a \"<code>while</code>\" loop because it runs \"while\" a specified condition is true and stops once that condition is no longer true.",
-        "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
+        "<blockquote>var ourArray = [];<br>var i = 0;<br>while(i &#60; 5) {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>}</blockquote>",
         "Let's try getting a while loop to work by pushing values to an array.",
         "<hr>",
         "Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> loop."
@@ -6939,7 +6939,7 @@
         "The <code>condition</code> statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to <code>true</code>. When <code>condition</code> is <code>false</code> at the start of the iteration, the loop will stop executing. This means if <code>condition</code> starts as <code>false</code>, your loop will never execute.",
         "The <code>final-expression</code> is executed at the end of each loop iteration, prior to the next <code>condition</code> check and is usually used to increment or decrement your loop counter.",
         "In the following example we initialize with <code>i = 0</code> and iterate while our condition <code>i &#60; 5</code> is true. We'll increment <code>i</code> by <code>1</code> in each loop iteration with <code>i++</code> as our <code>final-expression</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 5; i++) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 5; i++) {<br>&nbsp;&nbsp;ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,1,2,3,4]</code>.",
         "<hr>",
         "Use a <code>for</code> loop to work to push the values 1 through 5 onto <code>myArray</code>."
@@ -7013,7 +7013,7 @@
       "description": [
         "For loops don't have to iterate one at a time. By changing our <code>final-expression</code>, we can count by even numbers.",
         "We'll start at <code>i = 0</code> and loop while <code>i &#60; 10</code>. We'll increment <code>i</code> by 2 each loop with <code>i += 2</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 10; i += 2) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "<blockquote>var ourArray = [];<br>for (var i = 0; i &#60; 10; i += 2) {<br>&nbsp;&nbsp;ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[0,2,4,6,8]</code>.",
         "Let's change our <code>initialization</code> so we can count by odd numbers.",
         "<hr>",
@@ -7084,7 +7084,7 @@
         "A for loop can also count backwards, so long as we can define the right conditions.",
         "In order to count backwards by twos, we'll need to change our <code>initialization</code>, <code>condition</code>, and <code>final-expression</code>.",
         "We'll start at <code>i = 10</code> and loop while <code>i &#62; 0</code>. We'll decrement <code>i</code> by 2 each loop with <code>i -= 2</code>.",
-        "<blockquote>var ourArray = [];<br>for (var i=10; i &#62; 0; i-=2) {<br>  ourArray.push(i);<br>}</blockquote>",
+        "<blockquote>var ourArray = [];<br>for (var i=10; i &#62; 0; i-=2) {<br>&nbsp;&nbsp;ourArray.push(i);<br>}</blockquote>",
         "<code>ourArray</code> will now contain <code>[10,8,6,4,2]</code>.",
         "Let's change our <code>initialization</code> and <code>final-expression</code> so we can count backward by twos by odd numbers.",
         "<hr>",
@@ -7158,7 +7158,7 @@
       "title": "Iterate Through an Array with a For Loop",
       "description": [
         "A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a <code>for</code> loop. This code will output each element of the array <code>arr</code> to the console:",
-        "<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
+        "<blockquote>var arr = [10,9,8,7,6];<br>for (var i = 0; i < arr.length; i++) {<br>&nbsp;&nbsp; console.log(arr[i]);<br>}</blockquote>",
         "Remember that Arrays have zero-based numbering, which means the last index of the array is length - 1. Our <dfn>condition</dfn> for this loop is <code>i < arr.length</code>, which stops when <code>i</code> is at length - 1.",
         "<hr>",
         "Declare and initialize a variable <code>total</code> to <code>0</code>. Use a <code>for</code> loop to add the value of each element of the <code>myArr</code> array to <code>total</code>."
@@ -7191,7 +7191,7 @@
           "title": "Iterar a través de un vector con un ciclo for",
           "description": [
             "Una tarea común en JavaScript es iterar a traves del contenido de un vector. Una manera de hacerlo es con un ciclo <code>for</code>. Este código imprimirá cada elemento del vector <code>arr</code> en la consola:",
-            "<blockquote>var arr = [10,9,8,7,6];<br>for (var i=0; i < arr.length; i++) {<br>   console.log(arr[i]);<br>}</blockquote>",
+            "<blockquote>var arr = [10,9,8,7,6];<br>for (var i=0; i < arr.length; i++) {<br>&nbsp;&nbsp; console.log(arr[i]);<br>}</blockquote>",
             "Recuerda que los vectores tienen numeración que comienza en cero, la cual significa que el último índice del vector es su longitud - 1. Nuestra <dfn>condición</dfn> para este ciclo es <code>i < arr.length</code>, que lo detendrá cuando <code>i</code> sea la longitud - 1.",
             "<h4>Instrucciones</h4>",
             "Declara e inicializa una variable <code>total</code> en <code>0</code>. Usa un ciclo <code>for</code> para añadir el valor de cada elemento del vector <code>myArr</code> a <code>total</code>."
@@ -7231,7 +7231,7 @@
       "title": "Nesting For Loops",
       "description": [
         "If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:",
-        "<blockquote>var arr = [<br>  [1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>  for (var j=0; j &lt; arr[i].length; j++) {<br>    console.log(arr[i][j]);<br>  }<br>}</blockquote>",
+        "<blockquote>var arr = [<br>&nbsp;&nbsp;[1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>&nbsp;&nbsp;for (var j=0; j &lt; arr[i].length; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(arr[i][j]);<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "This outputs each sub-element in <code>arr</code> one at a time. Note that for the inner loop, we are checking the <code>.length</code> of <code>arr[i]</code>, since <code>arr[i]</code> is itself an array.",
         "<hr>",
         "Modify function <code>multiplyAll</code> so that it multiplies the <code>product</code> variable by each number in the sub-arrays of <code>arr</code>"
@@ -7260,7 +7260,7 @@
           "title": "Anidar ciclos for",
           "description": [
             "Si tienes una matriz multi-dimensional, puedes usar la misma lógica del punto anterior para iterar a través de un vector y cualquier sub-vector. Aquí está un ejemplo:",
-            "<blockquote>var arr = [<br>  [1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>  for (var j=0; j &lt; arr[i].length; j++) {<br>    console.log(arr[i][j]);<br>  }<br>}</blockquote>",
+            "<blockquote>var arr = [<br>&nbsp;&nbsp;[1,2], [3,4], [5,6]<br>];<br>for (var i=0; i &lt; arr.length; i++) {<br>&nbsp;&nbsp;for (var j=0; j &lt; arr[i].length; j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(arr[i][j]);<br>&nbsp;&nbsp;}<br>}</blockquote>",
             "Esto imprime cada sub-elemento en <code>arr</code> uno a la vez. Nota que en el ciclo interior, estamos comprobando la longitud <code>.length</code> de <code>arr[i]</code>, ya que <code>arr[i]</code> es por si mismo un vector.",
             "<h4>Instrucciones</h4>",
             "Modifica la función <code>multiplyAll</code> de manera que esta multiplique la variable <code>product</code> por cada número en los sub-vectores de <code>arr</code>"
@@ -7296,13 +7296,13 @@
       "description": [
         "You can run the same code multiple times by using a loop.",
         "The next type of loop you will learn is called a \"<code>do...while</code>\" loop because it first will \"<code>do</code>\" one pass of the code inside the loop no matter what, and then it runs \"<code>while</code>\" a specified condition is true and stops once that condition is no longer true. Let's look at an example.",
-        "<blockquote>var ourArray = [];<br>var i = 0;<br>do {<br>  ourArray.push(i);<br>  i++;<br>} while (i < 5);</blockquote>",
+        "<blockquote>var ourArray = [];<br>var i = 0;<br>do {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>} while (i < 5);</blockquote>",
         "This behaves just as you would expect with any other type of loop, and the resulting array will look like <code>[0, 1, 2, 3, 4]</code>. However, what makes the <code>do...while</code> different from other loops is how it behaves when the condition fails on the first check. Let's see this in action.",
         "Here is a regular while loop that will run the code in the loop as long as <code>i < 5</code>.",
-        "<blockquote>var ourArray = []; <br>var i = 5;<br>while (i < 5) {<br>  ourArray.push(i);<br>  i++;<br>}</blockquote>",
+        "<blockquote>var ourArray = []; <br>var i = 5;<br>while (i < 5) {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>}</blockquote>",
         "Notice that we initialize the value of <code>i</code> to be 5. When we execute the next line, we notice that <code>i</code> is not less than 5. So we do not execute the code inside the loop. The result is that <code>ourArray</code> will end up with nothing added to it, so it will still look like this <code>[]</code> when all the code in the example above finishes running.",
         "Now, take a look at a <code>do...while</code> loop.",
-        "<blockquote>var ourArray = []; <br>var i = 5;<br>do {<br>  ourArray.push(i);<br>  i++;<br>} while (i < 5);</blockquote>",
+        "<blockquote>var ourArray = []; <br>var i = 5;<br>do {<br>&nbsp;&nbsp;ourArray.push(i);<br>&nbsp;&nbsp;i++;<br>} while (i < 5);</blockquote>",
         "In this case, we initialize the value of <code>i</code> as 5, just like we did with the while loop. When we get to the next line, there is no check for the value of <code>i</code>, so we go to the code inside the curly braces and execute it. We will add one element to the array and increment <code>i</code> before we get to the condition check. Then, when we get to checking if <code>i < 5</code> see that <code>i</code> is now 6, which fails the conditional check. So we exit the loop and are done. At the end of the above example, the value of <code>ourArray</code> is <code>[5]</code>.",
         "Essentially, a <code>do...while</code> loop ensures that the code inside the loop will run at least once.",
         "Let's try getting a <code>do...while</code> loop to work by pushing values to an array.",
@@ -7804,9 +7804,9 @@
         "The syntax is:",
         "<code>condition ? statement-if-true : statement-if-false;</code>",
         "The following function uses an if-else statement to check a condition:",
-        "<blockquote>function findGreater(a, b) {<br>  if(a > b) {<br>    return \"a is greater\";<br>  }<br>  else {<br>    return \"b is greater\";<br>  }<br>}</blockquote>",
+        "<blockquote>function findGreater(a, b) {<br>&nbsp;&nbsp;if(a > b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"a is greater\";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"b is greater\";<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "This can be re-written using the <code>conditional operator</code>:",
-        "<blockquote>function findGreater(a, b) {<br>  return a > b ? \"a is greater\" : \"b is greater\";<br>}</blockquote>",
+        "<blockquote>function findGreater(a, b) {<br>&nbsp;&nbsp;return a > b ? \"a is greater\" : \"b is greater\";<br>}</blockquote>",
         "<hr>",
         "Use the <code>conditional operator</code> in the <code>checkEqual</code> function to check if two numbers are equal or not. The function should return either true or false."
       ],
@@ -7855,9 +7855,9 @@
       "description": [
         "In the previous challenge, you used a single <code>conditional operator</code>. You can also chain them together to check for multiple conditions.",
         "The following function uses if, else if, and else statements to check multiple conditions:",
-        "<blockquote>function findGreaterOrEqual(a, b) {<br>  if(a === b) {<br>    return \"a and b are equal\";<br>  }<br>  else if(a > b) {<br>    return \"a is greater\";<br>  }<br>  else {<br>    return \"b is greater\";<br>  }<br>}</blockquote>",
+        "<blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;if(a === b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"a and b are equal\";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else if(a > b) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"a is greater\";<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;else {<br>&nbsp;&nbsp;&nbsp;&nbsp;return \"b is greater\";<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "The above function can be re-written using multiple <code>conditional operators</code>:",
-        "<blockquote>function findGreaterOrEqual(a, b) {<br>  return (a === b) ? \"a and b are equal\" : (a > b) ? \"a is greater\" : \"b is greater\";<br>}</blockquote>",
+        "<blockquote>function findGreaterOrEqual(a, b) {<br>&nbsp;&nbsp;return (a === b) ? \"a and b are equal\" : (a > b) ? \"a is greater\" : \"b is greater\";<br>}</blockquote>",
         "<hr>",
         "Use multiple <code>conditional operators</code> in the <code>checkSign</code> function to check if a number is positive, negative or zero."
       ],

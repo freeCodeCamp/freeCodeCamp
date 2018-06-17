@@ -71,7 +71,7 @@
         "For instance, several JSX elements written as siblings with no parent wrapper element will not transpile.",
         "Here's an example:",
         "<b>Valid JSX:</b>",
-        "<blockquote>&lt;div&gt;<br>  &lt;p&gt;Paragraph One&lt;/p&gt;<br>  &lt;p&gt;Paragraph Two&lt;/p&gt;<br>  &lt;p&gt;Paragraph Three&lt;/p&gt;<br>&lt;/div&gt;</blockquote>",
+        "<blockquote>&lt;div&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph One&lt;/p&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph Two&lt;/p&gt;<br>&nbsp;&nbsp;&lt;p&gt;Paragraph Three&lt;/p&gt;<br>&lt;/div&gt;</blockquote>",
         "<b>Invalid JSX:</b>",
         "<blockquote>&lt;p&gt;Paragraph One&lt;/p&gt;<br>&lt;p&gt;Paragraph Two&lt;/p&gt;<br>&lt;p&gt;Paragraph Three&lt;/p&gt;<br></blockquote>",
         "<hr>",
@@ -349,7 +349,7 @@
         "Components are the core of React. Everything in React is a component and here you will learn how to create one.",
         "There are two ways to create a React component. The first way is to use a JavaScript function. Defining a component in this way creates a <em>stateless functional component</em>. The concept of state in an application will be covered in later challenges. For now, think of a stateless component as one that can receive data and render it, but does not manage or track changes to that data. (We'll cover the second way to create a React component in the next challenge.)",
         "To create a component with a function, you simply write a JavaScript function that returns either JSX or <code>null</code>. One important thing to note is that React requires your function name to begin with a capital letter. Here's an example of a stateless functional component that assigns an HTML class in JSX:",
-        "<blockquote>// After being transpiled, the &lt;div&gt; will have a CSS class of 'customClass'<br>const DemoComponent = function() {<br>  return (<br>    &lt;div className='customClass' /&gt;<br>  );<br>};</blockquote>",
+        "<blockquote>// After being transpiled, the &lt;div&gt; will have a CSS class of 'customClass'<br>const DemoComponent = function() {<br>&nbsp;&nbsp;return (<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;div className='customClass' /&gt;<br>&nbsp;&nbsp;);<br>};</blockquote>",
         "Because a JSX component represents HTML, you could put several components together to create a more complex HTML page. This is one of the key advantages of the component architecture React provides. It allows you to compose your UI from many separate, isolated components. This makes it easier to build and maintain complex user interfaces.",
         "<hr>",
         "The code editor has a function called <code>MyComponent</code>. Complete this function so it returns a single <code>div</code> element which contains some string of text.",
@@ -403,7 +403,7 @@
       "releasedOn": "December 25, 2017",
       "description": [
         "The other way to define a React component is with the ES6 <code>class</code> syntax. In the following example, <code>Kitten</code> extends <code>React.Component</code>:",
-        "<blockquote>class Kitten extends React.Component {<br>  constructor(props) {<br>    super(props);<br>  }<br><br>  render() {<br>    return (<br>      &lt;h1&gt;Hi&lt;/h1&gt;<br>    );<br>  }<br>}</blockquote>",
+        "<blockquote>class Kitten extends React.Component {<br>&nbsp;&nbsp;constructor(props) {<br>&nbsp;&nbsp;&nbsp;&nbsp;super(props);<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;render() {<br>&nbsp;&nbsp;&nbsp;&nbsp;return (<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hi&lt;/h1&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;);<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "This creates an ES6 class <code>Kitten</code> which extends the <code>React.Component</code> class. So the <code>Kitten</code> class now has access to many useful React features, such as local state and lifecycle hooks. Don't worry if you aren't familiar with these terms yet, they will be covered in greater detail in later challenges.",
         "Also notice the <code>Kitten</code> class has a <code>constructor</code> defined within it that calls <code>super()</code>. It uses <code>super()</code> to call the constructor of the parent class, in this case <code>React.Component</code>. The constructor is a special method used during the initialization of objects that are created with the <code>class</code> keyword. It is best practice to call a component's <code>constructor</code> with <code>super</code>, and pass <code>props</code> to both. This makes sure the component is initialized properly. For now, know that it is standard for this code to be included. Soon you will see other uses for the constructor as well as <code>props</code>.",
         "<hr>",
@@ -464,7 +464,7 @@
       "description": [
         "Now we will look at how we can compose multiple React components together. Imagine you are building an App and have created three components, a <code>Navbar</code>, <code>Dashboard</code>, and <code>Footer</code>.",
         "To compose these components together, you could create an <code>App</code> <i>parent</i> component which renders each of these three components as <i>children</i>. To render a component as a child in a React component, you include the component name written as a custom HTML tag in the JSX. For example, in the <code>render</code> method you could write:",
-        "<blockquote>return (<br> &lt;App&gt;<br>  &lt;Navbar /&gt;<br>  &lt;Dashboard /&gt;<br>  &lt;Footer /&gt;<br> &lt;/App&gt;<br>)</blockquote>",
+        "<blockquote>return (<br> &lt;App&gt;<br>&nbsp;&nbsp;&lt;Navbar /&gt;<br>&nbsp;&nbsp;&lt;Dashboard /&gt;<br>&nbsp;&nbsp;&lt;Footer /&gt;<br> &lt;/App&gt;<br>)</blockquote>",
         "When React encounters a custom HTML tag that references another component (a component name wrapped in <code>&lt; /&gt;</code> like in this example), it renders the markup for that component in the location of the tag. This should illustrate the parent/child relationship between the <code>App</code> component and the <code>Navbar</code>, <code>Dashboard</code>, and <code>Footer</code>.",
         "<hr>",
         "In the code editor, there is a simple functional component called <code>ChildComponent</code> and a React component called <code>ParentComponent</code>. Compose the two together by rendering the <code>ChildComponent</code> within the <code>ParentComponent</code>. Make sure to close the <code>ChildComponent</code> tag with a forward slash.",
@@ -898,7 +898,7 @@
       "releasedOn": "December 25, 2017",
       "description": [
         "The previous challenges covered a lot about creating and composing JSX elements, functional components, and ES6 style class components in React. With this foundation, it's time to look at another feature very common in React: <b>props</b>. In React, you can pass props, or properties, to child components. Say you have an <code>App</code> component which renders a child component called <code>Welcome</code> that is a stateless functional component. You can pass <code>Welcome</code> a <code>user</code> property by writing:",
-        "<blockquote>&lt;App&gt;<br>  &lt;Welcome user='Mark' /&gt;<br>&lt;/App&gt;</blockquote>",
+        "<blockquote>&lt;App&gt;<br>&nbsp;&nbsp;&lt;Welcome user='Mark' /&gt;<br>&lt;/App&gt;</blockquote>",
         "You use <strong>custom HTML attributes</strong> that React provides support for to pass the property <code>user</code> to the component <code>Welcome</code>. Since <code>Welcome</code> is a stateless functional component, it has access to this value like so:",
         "<blockquote>const Welcome = (props) => &lt;h1&gt;Hello, {props.user}!&lt;/h1&gt;</blockquote>",
         "It is standard to call this value <code>props</code> and when dealing with stateless functional components, you basically consider it as an argument to a function which returns JSX. You can access the value of the argument in the function body. With class components, you will see this is a little different.",
@@ -980,7 +980,7 @@
       "releasedOn": "December 25, 2017",
       "description": [
         "The last challenge demonstrated how to pass information from a parent component to a child component as <code>props</code> or properties. This challenge looks at how arrays can be passed as <code>props</code>.  To pass an array to a JSX element, it must be treated as JavaScript and wrapped in curly braces.",
-        "<blockquote>&lt;ParentComponent&gt;<br>  &lt;ChildComponent colors={[\"green\", \"blue\", \"red\"]} /&gt;<br>&lt;/ParentComponent&gt;</blockquote>",
+        "<blockquote>&lt;ParentComponent&gt;<br>&nbsp;&nbsp;&lt;ChildComponent colors={[\"green\", \"blue\", \"red\"]} /&gt;<br>&lt;/ParentComponent&gt;</blockquote>",
         "The child component then has access to the array property <code>colors</code>.  Array methods such as <code>join()</code> can be used when accessing the property.",
         "<code>const ChildComponent = (props) => &lt;p&gt{props.colors.join(', ')}&lt;/p&gt</code>",
         "This will join all <code>colors</code> array items into a comma separated string and produce:",
@@ -1416,7 +1416,7 @@
       "description": [
         "One of the most important topics in React is <code>state</code>. State consists of any data your application needs to know about, that can change over time. You want your apps to respond to state changes and present an updated UI when necessary. React offers a nice solution for the state management of modern web applications.",
         "You create state in a React component by declaring a <code>state</code> property on the component class in its <code>constructor</code>. This initializes the component with <code>state</code> when it is created. The <code>state</code> property must be set to a JavaScript <code>object</code>. Declaring it looks like this:",
-        "<blockquote>this.state = {<br>  // describe your state here<br>}</code>",
+        "<blockquote>this.state = {<br>&nbsp;&nbsp;// describe your state here<br>}</code>",
         "You have access to the <code>state</code> object throughout the life of your component. You can update it, render it in your UI, and pass it as props to child components. The <code>state</code> object can be as complex or as simple as you need it to be. Note that you must create a class component by extending <code>React.Component</code> in order to create <code>state</code> like this.",
         "<hr>",
         "There is a component in the code editor that is trying to render a <code>name</code> property from its <code>state</code>. However, there is no <code>state</code> defined. Initialize the component with <code>state</code> in the <code>constructor</code> and assign your name to a property of <code>name</code>."
@@ -1615,7 +1615,7 @@
       "releasedOn": "December 25, 2017",
       "description": [
         "The previous challenges covered component <code>state</code> and how to initialize state in the <code>constructor</code>. There is also a way to change the component's <code>state</code>. React provides a method for updating component <code>state</code> called <code>setState</code>. You call the <code>setState</code> method within your component class like so: <code>this.setState()</code>, passing in an object with key-value pairs. The keys are your state properties and the values are the updated state data. For instance, if we were storing a <code>username</code> in state and wanted to update it, it would look like this:",
-        "<blockquote>this.setState({<br> username: 'Lewis'<br>});</blockquote>",
+        "<blockquote>this.setState({<br>&nbsp;&nbsp;username: 'Lewis'<br>});</blockquote>",
         "React expects you to never modify <code>state</code> directly, instead always use <code>this.setState()</code> when state changes occur. Also, you should note that React may batch multiple state updates in order to improve performance. What this means is that state updates through the <code>setState</code> method can be asynchronous. There is an alternative syntax for the <code>setState</code> method which provides a way around this problem. This is rarely needed but it's good to keep it in mind! Please consult the <a target=\"_blank\" href=\"https://facebook.github.io/react/docs/state-and-lifecycle.html\">React documentation</a> for further details.",
         "<hr>",
         "There is a <code>button</code> element in the code editor which has an <code>onClick()</code> handler. This handler is triggered when the <code>button</code> receives a click event in the browser, and runs the <code>handleClick</code> method defined on <code>MyComponent</code>. Within the <code>handleClick</code> method, update the component <code>state</code> using <code>this.setState()</code>. Set the <code>name</code> property in <code>state</code> to equal the string <code>React Rocks!</code>.",
