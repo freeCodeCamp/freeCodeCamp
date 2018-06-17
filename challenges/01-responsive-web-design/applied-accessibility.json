@@ -6,7 +6,8 @@
   "challenges": [
     {
       "id": "587d774c367417b2b2512a9c",
-      "title": "Add a Text Alternative to Images for Visually Impaired Accessibility",
+      "title":
+        "Add a Text Alternative to Images for Visually Impaired Accessibility",
       "description": [
         "It's likely you've seen an <code>alt</code> attribute on an <code>img</code> tag in other challenges. <code>Alt</code> text describes the content of the image and provides a text-alternative. This helps in case the image fails to load or can't be seen by a user. It's also used by search engines to understand what an image contains to include it in search results. Here's an example:",
         "<code>&lt;img src=&quot;importantLogo.jpeg&quot; alt=&quot;Company logo&quot;&gt;</code>",
@@ -17,8 +18,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.",
-          "testString": "assert($('img').attr('alt'), 'Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.');"
+          "text":
+            "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.",
+          "testString":
+            "assert($('img').attr('alt'), 'Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.');"
         }
       ],
       "solutions": [],
@@ -26,15 +29,14 @@
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {},
-      "guideUrl": "https://guide.freecodecamp.org/certificates/add-alt-text-to-an-image-for-accessibility",
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-alt-text-to-an-image-for-accessibility",
       "files": {
         "indexhtml": {
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
-          "contents": [
-            "<img src=\"doingKarateWow.jpeg\">"
-          ],
+          "contents": ["<img src=\"doingKarateWow.jpeg\">"],
           "head": [],
           "tail": []
         }
@@ -54,12 +56,16 @@
       ],
       "tests": [
         {
-          "text": "Your <code>img</code> tag should have an <code>alt</code> attribute.",
-          "testString": "assert(!($('img').attr('alt') == undefined), 'Your <code>img</code> tag should have an <code>alt</code> attribute.');"
+          "text":
+            "Your <code>img</code> tag should have an <code>alt</code> attribute.",
+          "testString":
+            "assert(!($('img').attr('alt') == undefined), 'Your <code>img</code> tag should have an <code>alt</code> attribute.');"
         },
         {
-          "text": "The <code>alt</code> attribute should be set to an empty string.",
-          "testString": "assert($('img').attr('alt') == '', 'The <code>alt</code> attribute should be set to an empty string.');"
+          "text":
+            "The <code>alt</code> attribute should be set to an empty string.",
+          "testString":
+            "assert($('img').attr('alt') == '', 'The <code>alt</code> attribute should be set to an empty string.');"
         }
       ],
       "solutions": [],
@@ -107,11 +113,13 @@
       "tests": [
         {
           "text": "Your code should have six <code>h3</code> tags.",
-          "testString": "assert($('h3').length === 6, 'Your code should have six <code>h3</code> tags.');"
+          "testString":
+            "assert($('h3').length === 6, 'Your code should have six <code>h3</code> tags.');"
         },
         {
           "text": "Your code should not have any <code>h5</code> tags.",
-          "testString": "assert($('h5').length === 0, 'Your code should not have any <code>h5</code> tags.');"
+          "testString":
+            "assert($('h5').length === 0, 'Your code should not have any <code>h5</code> tags.');"
         }
       ],
       "solutions": [],
@@ -161,11 +169,14 @@
       "tests": [
         {
           "text": "Your code should have one <code>main</code> tag.",
-          "testString": "assert($('main').length == 1, 'Your code should have one <code>main</code> tag.');"
+          "testString":
+            "assert($('main').length == 1, 'Your code should have one <code>main</code> tag.');"
         },
         {
-          "text": "The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.",
-          "testString": "assert(code.match(/<\\/header>\\s*?<main>\\s*?<\\/main>/gi), 'The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.');"
+          "text":
+            "The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.",
+          "testString":
+            "assert(code.match(/<\\/header>\\s*?<main>\\s*?<\\/main>/gi), 'The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.');"
         }
       ],
       "solutions": [],
@@ -207,11 +218,13 @@
       "tests": [
         {
           "text": "Your code should have three <code>article</code> tags.",
-          "testString": "assert($('article').length == 3, 'Your code should have three <code>article</code> tags.');"
+          "testString":
+            "assert($('article').length == 3, 'Your code should have three <code>article</code> tags.');"
         },
         {
           "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "testString":
+            "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
         }
       ],
       "solutions": [],
@@ -265,19 +278,25 @@
       "tests": [
         {
           "text": "Your code should have one <code>header</code> tag.",
-          "testString": "assert($('header').length == 1, 'Your code should have one <code>header</code> tag.');"
+          "testString":
+            "assert($('header').length == 1, 'Your code should have one <code>header</code> tag.');"
         },
         {
-          "text": "Your <code>header</code> tags should wrap around the <code>h1</code>.",
-          "testString": "assert($('header').children('h1').length == 1, 'Your <code>header</code> tags should wrap around the <code>h1</code>.');"
+          "text":
+            "Your <code>header</code> tags should wrap around the <code>h1</code>.",
+          "testString":
+            "assert($('header').children('h1').length == 1, 'Your <code>header</code> tags should wrap around the <code>h1</code>.');"
         },
         {
           "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "testString":
+            "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
         },
         {
-          "text": "Make sure your <code>header</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/header>/g) && code.match(/<\\/header>/g).length === code.match(/<header>/g).length, 'Make sure your <code>header</code> element has a closing tag.');"
+          "text":
+            "Make sure your <code>header</code> element has a closing tag.",
+          "testString":
+            "assert(code.match(/<\\/header>/g) && code.match(/<\\/header>/g).length === code.match(/<header>/g).length, 'Make sure your <code>header</code> element has a closing tag.');"
         }
       ],
       "solutions": [],
@@ -334,19 +353,24 @@
       "tests": [
         {
           "text": "Your code should have one <code>nav</code> tag.",
-          "testString": "assert($('nav').length == 1, 'Your code should have one <code>nav</code> tag.');"
+          "testString":
+            "assert($('nav').length == 1, 'Your code should have one <code>nav</code> tag.');"
         },
         {
-          "text": "Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.",
-          "testString": "assert($('nav').children('ul').length == 1, 'Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.');"
+          "text":
+            "Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.",
+          "testString":
+            "assert($('nav').children('ul').length == 1, 'Your <code>nav</code> tags should wrap around the <code>ul</code> and its list items.');"
         },
         {
           "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "testString":
+            "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
         },
         {
           "text": "Make sure your <code>nav</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/nav>/g) && code.match(/<\\/nav>/g).length === code.match(/<nav>/g).length, 'Make sure your <code>nav</code> element has a closing tag.');"
+          "testString":
+            "assert(code.match(/<\\/nav>/g) && code.match(/<\\/nav>/g).length === code.match(/<nav>/g).length, 'Make sure your <code>nav</code> element has a closing tag.');"
         }
       ],
       "solutions": [],
@@ -408,15 +432,19 @@
       "tests": [
         {
           "text": "Your code should have one <code>footer</code> tag.",
-          "testString": "assert($('footer').length == 1, 'Your code should have one <code>footer</code> tag.');"
+          "testString":
+            "assert($('footer').length == 1, 'Your code should have one <code>footer</code> tag.');"
         },
         {
           "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "testString":
+            "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
         },
         {
-          "text": "Your code should have an opening and closing <code>footer</code> tag.",
-          "testString": "assert(code.match(/<footer>\\s*&copy; 2016 Camper Cat\\s*<\\/footer>/g), 'Your code should have an opening and closing <code>footer</code> tag.');"
+          "text":
+            "Your code should have an opening and closing <code>footer</code> tag.",
+          "testString":
+            "assert(code.match(/<footer>\\s*&copy; 2016 Camper Cat\\s*<\\/footer>/g), 'Your code should have an opening and closing <code>footer</code> tag.');"
         }
       ],
       "solutions": [],
@@ -477,7 +505,7 @@
         "HTML5's <code>audio</code> element gives semantic meaning when it wraps sound or audio stream content in your markup. Audio content also needs a text alternative to be accessible to people who are deaf or hard of hearing. This can be done with nearby text on the page or a link to a transcript.",
         "The <code>audio</code> tag supports the <code>controls</code> attribute. This shows the browser default play, pause, and other controls, and supports keyboard functionality. This is a boolean attribute, meaning it doesn't need a value, its presence on the tag turns the setting on.",
         "Here's an example:",
-        "<blockquote>&lt;audio id=&quot;meowClip&quot; controls&gt;<br>    &lt;source src=&quot;audio/meow.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;<br>    &lt;source src=&quot;audio/meow.ogg&quot; type=&quot;audio/ogg&quot; /&gt;<br>&lt;/audio&gt;<br></blockquote>",
+        "<blockquote>&lt;audio id=&quot;meowClip&quot; controls&gt;<br>&nbsp;&nbsp;&lt;source src=&quot;audio/meow.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;<br>&nbsp;&nbsp;&lt;source src=&quot;audio/meow.ogg&quot; type=&quot;audio/ogg&quot; /&gt;<br>&lt;/audio&gt;<br></blockquote>",
         "<strong>Note</strong><br>Multimedia content usually has both visual and auditory components. It needs synchronized captions and a transcript so users with visual and/or auditory impairments can access it. Generally, a web developer is not responsible for creating the captions or transcript, but needs to know to include them.",
         "<hr>",
         "Time to take a break from Camper Cat and meet fellow camper Zersiax (@zersiax), a champion of accessibility and a screen reader user. To hear a clip of his screen reader in action, add an <code>audio</code> element after the <code>p</code>. Include the <code>controls</code> attribute. Then place a <code>source</code> tag inside the <code>audio</code> tags with the <code>src</code> attribute set to \"https://s3.amazonaws.com/freecodecamp/screen-reader.mp3\" and <code>type</code> attribute set to \"audio/mpeg\".",
@@ -486,31 +514,43 @@
       "tests": [
         {
           "text": "Your code should have one <code>audio</code> tag.",
-          "testString": "assert($('audio').length === 1, 'Your code should have one <code>audio</code> tag.');"
+          "testString":
+            "assert($('audio').length === 1, 'Your code should have one <code>audio</code> tag.');"
         },
         {
-          "text": "Make sure your <code>audio</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/audio>/g) && code.match(/<audio controls>/g) && code.match(/<\\/audio>/g).length === code.match(/<audio controls>/g).length, 'Make sure your <code>audio</code> element has a closing tag.');"
+          "text":
+            "Make sure your <code>audio</code> element has a closing tag.",
+          "testString":
+            "assert(code.match(/<\\/audio>/g) && code.match(/<audio controls>/g) && code.match(/<\\/audio>/g).length === code.match(/<audio controls>/g).length, 'Make sure your <code>audio</code> element has a closing tag.');"
         },
         {
-          "text": "The <code>audio</code> tag should have the <code>controls</code> attribute.",
-          "testString": "assert($('audio').attr('controls'), 'The <code>audio</code> tag should have the <code>controls</code> attribute.');"
+          "text":
+            "The <code>audio</code> tag should have the <code>controls</code> attribute.",
+          "testString":
+            "assert($('audio').attr('controls'), 'The <code>audio</code> tag should have the <code>controls</code> attribute.');"
         },
         {
           "text": "Your code should have one <code>source</code> tag.",
-          "testString": "assert($('source').length === 1, 'Your code should have one <code>source</code> tag.');"
+          "testString":
+            "assert($('source').length === 1, 'Your code should have one <code>source</code> tag.');"
         },
         {
-          "text": "Your <code>source</code> tag should be inside the <code>audio</code> tags.",
-          "testString": "assert($('audio').children('source').length === 1, 'Your <code>source</code> tag should be inside the <code>audio</code> tags.');"
+          "text":
+            "Your <code>source</code> tag should be inside the <code>audio</code> tags.",
+          "testString":
+            "assert($('audio').children('source').length === 1, 'Your <code>source</code> tag should be inside the <code>audio</code> tags.');"
         },
         {
-          "text": "The value for the <code>src</code> attribute on the <code>source</code> tag should match the link in the instructions exactly.",
-          "testString": "assert($('source').attr('src') === 'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3', 'The value for the <code>src</code> attribute on the <code>source</code> tag should match the link in the instructions exactly.');"
+          "text":
+            "The value for the <code>src</code> attribute on the <code>source</code> tag should match the link in the instructions exactly.",
+          "testString":
+            "assert($('source').attr('src') === 'https://s3.amazonaws.com/freecodecamp/screen-reader.mp3', 'The value for the <code>src</code> attribute on the <code>source</code> tag should match the link in the instructions exactly.');"
         },
         {
-          "text": "Your code should include a <code>type</code> attribute on the <code>source</code> tag with a value of audio/mpeg.",
-          "testString": "assert($('source').attr('type') === 'audio/mpeg', 'Your code should include a <code>type</code> attribute on the <code>source</code> tag with a value of audio/mpeg.');"
+          "text":
+            "Your code should include a <code>type</code> attribute on the <code>source</code> tag with a value of audio/mpeg.",
+          "testString":
+            "assert($('source').attr('type') === 'audio/mpeg', 'Your code should include a <code>type</code> attribute on the <code>source</code> tag with a value of audio/mpeg.');"
         }
       ],
       "solutions": [],
@@ -548,34 +588,42 @@
         "HTML5 introduced the <code>figure</code> element, along with the related <code>figcaption</code>. Used together, these items wrap a visual representation (like an image, diagram, or chart) along with its caption. This gives a two-fold accessibility boost by both semantically grouping related content, and providing a text alternative that explains the <code>figure</code>.",
         "For data visualizations like charts, the caption can be used to briefly note the trends or conclusions for users with visual impairments. Another challenge covers how to move a table version of the chart's data off-screen (using CSS) for screen reader users.",
         "Here's an example - note that the <code>figcaption</code> goes inside the <code>figure</code> tags and can be combined with other elements:",
-        "<blockquote>&lt;figure&gt;<br>  &lt;img src=&quot;roundhouseDestruction.jpeg&quot; alt=&quot;Photo of Camper Cat executing a roundhouse kick&quot;&gt;<br>  &lt;br&gt;<br>  &lt;figcaption&gt;<br>    Master Camper Cat demonstrates proper form of a roundhouse kick.<br>  &lt;/figcaption&gt;<br>&lt;/figure&gt;<br></blockquote>",
+        "<blockquote>&lt;figure&gt;<br>&nbsp;&nbsp;&lt;img src=&quot;roundhouseDestruction.jpeg&quot; alt=&quot;Photo of Camper Cat executing a roundhouse kick&quot;&gt;<br>&nbsp;&nbsp;&lt;br&gt;<br>&nbsp;&nbsp;&lt;figcaption&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;Master Camper Cat demonstrates proper form of a roundhouse kick.<br>&nbsp;&nbsp;&lt;/figcaption&gt;<br>&lt;/figure&gt;<br></blockquote>",
         "<hr>",
         "Camper Cat is hard at work creating a stacked bar chart showing the amount of time per week to spend training in stealth, combat, and weapons. Help him structure his page better by changing the <code>div</code> tag he used to a <code>figure</code> tag, and the <code>p</code> tag that surrounds the caption to a <code>figcaption</code> tag."
       ],
       "tests": [
         {
           "text": "Your code should have one <code>figure</code> tag.",
-          "testString": "assert($('figure').length == 1, 'Your code should have one <code>figure</code> tag.');"
+          "testString":
+            "assert($('figure').length == 1, 'Your code should have one <code>figure</code> tag.');"
         },
         {
           "text": "Your code should have one <code>figcaption</code> tag.",
-          "testString": "assert($('figcaption').length == 1, 'Your code should have one <code>figcaption</code> tag.');"
+          "testString":
+            "assert($('figcaption').length == 1, 'Your code should have one <code>figcaption</code> tag.');"
         },
         {
           "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "testString":
+            "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
         },
         {
           "text": "Your code should not have any <code>p</code> tags.",
-          "testString": "assert($('p').length == 0, 'Your code should not have any <code>p</code> tags.');"
+          "testString":
+            "assert($('p').length == 0, 'Your code should not have any <code>p</code> tags.');"
         },
         {
-          "text": "The <code>figcaption</code> should be a child of the <code>figure</code> tag.",
-          "testString": "assert($('figure').children('figcaption').length == 1, 'The <code>figcaption</code> should be a child of the <code>figure</code> tag.');"
+          "text":
+            "The <code>figcaption</code> should be a child of the <code>figure</code> tag.",
+          "testString":
+            "assert($('figure').children('figcaption').length == 1, 'The <code>figcaption</code> should be a child of the <code>figure</code> tag.');"
         },
         {
-          "text": "Make sure your <code>figure</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/figure>/g) && code.match(/<\\/figure>/g).length === code.match(/<figure>/g).length, 'Make sure your <code>figure</code> element has a closing tag.');"
+          "text":
+            "Make sure your <code>figure</code> element has a closing tag.",
+          "testString":
+            "assert(code.match(/<\\/figure>/g) && code.match(/<\\/figure>/g).length === code.match(/<figure>/g).length, 'Make sure your <code>figure</code> element has a closing tag.');"
         }
       ],
       "solutions": [],
@@ -644,18 +692,22 @@
         "The <code>label</code> tag wraps the text for a specific form control item, usually the name or label for a choice. This ties meaning to the item and makes the form more readable. The <code>for</code> attribute on a <code>label</code> tag explicitly associates that <code>label</code> with the form control and is used by screen readers.",
         "You learned about radio buttons and their labels in a lesson in the Basic HTML section. In that lesson, we wrapped the radio button input element inside a <code>label</code> element along with the label text in order to make the text clickable. Another way to achieve this is by using the <code>for</code> attribute as explained in this lesson.",
         "The value of the <code>for</code> attribute must be the same as the value of the <code>id</code> attribute of the form control. Here's an example:",
-        "<blockquote>&lt;form&gt;<br>  &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;<br>  &lt;input type=&quottext&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;<br>&lt;/form&gt;<br></blockquote>",
+        "<blockquote>&lt;form&gt;<br>&nbsp;&nbsp;&lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt;<br>&nbsp;&nbsp;&lt;input type=&quottext&quot; id=&quot;name&quot; name=&quot;name&quot;&gt;<br>&lt;/form&gt;<br></blockquote>",
         "<hr>",
         "Camper Cat expects a lot of interest in his thoughtful blog posts, and wants to include an email sign up form. Add a <code>for</code> attribute on the email <code>label</code> that matches the <code>id</code> on its <code>input</code> field."
       ],
       "tests": [
         {
-          "text": "Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.",
-          "testString": "assert($('label').attr('for'), 'Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.');"
+          "text":
+            "Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.",
+          "testString":
+            "assert($('label').attr('for'), 'Your code should have a <code>for</code> attribute on the <code>label</code> tag that is not empty.');"
         },
         {
-          "text": "Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.",
-          "testString": "assert($('label').attr('for') == 'email', 'Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.');"
+          "text":
+            "Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.",
+          "testString":
+            "assert($('label').attr('for') == 'email', 'Your <code>for</code> attribute value should match the <code>id</code> value on the email <code>input</code>.');"
         }
       ],
       "solutions": [],
@@ -709,36 +761,46 @@
     },
     {
       "id": "587d778b367417b2b2512aa7",
-      "title": "Wrap Radio Buttons in a fieldset Element for Better Accessibility",
+      "title":
+        "Wrap Radio Buttons in a fieldset Element for Better Accessibility",
       "description": [
         "The next form topic covers accessibility of radio buttons. Each choice is given a <code>label</code> with a <code>for</code> attribute tying to the <code>id</code> of the corresponding item as covered in the last challenge. Since radio buttons often come in a group where the user must choose one, there's a way to semantically show the choices are part of a set.",
         "The <code>fieldset</code> tag surrounds the entire grouping of radio buttons to achieve this. It often uses a <code>legend</code> tag to provide a description for the grouping, which is read by screen readers for each choice in the <code>fieldset</code> element.",
         "The <code>fieldset</code> wrapper and <code>legend</code> tag are not necessary when the choices are self-explanatory, like a gender selection. Using a <code>label</code> with the <code>for</code> attribute for each radio button is sufficient.",
         "Here's an example:",
-        "<blockquote>&lt;form&gt;<br>  &lt;fieldset&gt;<br>    &lt;legend&gt;Choose one of these three items:&lt;/legend&gt;<br>    &lt;input id=&quot;one&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;one&quot;&gt;<br>    &lt;label for=&quot;one&quot;&gt;Choice One&lt;/label&gt;&lt;br&gt;<br>    &lt;input id=&quot;two&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;two&quot;&gt;<br>    &lt;label for=&quot;two&quot;&gt;Choice Two&lt;/label&gt;&lt;br&gt;<br>    &lt;input id=&quot;three&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;three&quot;&gt;<br>    &lt;label for=&quot;three&quot;&gt;Choice Three&lt;/label&gt;<br>  &lt;/fieldset&gt;<br>&lt;/form&gt;<br></blockquote>",
+        "<blockquote>&lt;form&gt;<br>&nbsp;&nbsp;&lt;fieldset&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;legend&gt;Choose one of these three items:&lt;/legend&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;one&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;one&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;one&quot;&gt;Choice One&lt;/label&gt;&lt;br&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;two&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;two&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;two&quot;&gt;Choice Two&lt;/label&gt;&lt;br&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;input id=&quot;three&quot; type=&quot;radio&quot; name=&quot;items&quot; value=&quot;three&quot;&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;label for=&quot;three&quot;&gt;Choice Three&lt;/label&gt;<br>&nbsp;&nbsp;&lt;/fieldset&gt;<br>&lt;/form&gt;<br></blockquote>",
         "<hr>",
         "Camper Cat wants information about the ninja level of his users when they sign up for his email list. He's added a set of radio buttons, and learned from our last lesson to use label tags with <code>for</code> attributes for each choice. Go Camper Cat! However, his code still needs some help. Change the div tag surrounding the radio buttons to a fieldset tag, and change the p tag inside it to a legend."
       ],
       "tests": [
         {
-          "text": "Your code should have a <code>fieldset</code> tag around the radio button set.",
-          "testString": "assert($('fieldset').length == 1, 'Your code should have a <code>fieldset</code> tag around the radio button set.');"
+          "text":
+            "Your code should have a <code>fieldset</code> tag around the radio button set.",
+          "testString":
+            "assert($('fieldset').length == 1, 'Your code should have a <code>fieldset</code> tag around the radio button set.');"
         },
         {
-          "text": "Make sure your <code>fieldset</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/fieldset>/g) && code.match(/<\\/fieldset>/g).length === code.match(/<fieldset>/g).length, 'Make sure your <code>fieldset</code> element has a closing tag.');"
+          "text":
+            "Make sure your <code>fieldset</code> element has a closing tag.",
+          "testString":
+            "assert(code.match(/<\\/fieldset>/g) && code.match(/<\\/fieldset>/g).length === code.match(/<fieldset>/g).length, 'Make sure your <code>fieldset</code> element has a closing tag.');"
         },
         {
-          "text": "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.",
-          "testString": "assert($('legend').length == 1, 'Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.');"
+          "text":
+            "Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.",
+          "testString":
+            "assert($('legend').length == 1, 'Your code should have a <code>legend</code> tag around the text asking what level ninja a user is.');"
         },
         {
           "text": "Your code should not have any <code>div</code> tags.",
-          "testString": "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
+          "testString":
+            "assert($('div').length == 0, 'Your code should not have any <code>div</code> tags.');"
         },
         {
-          "text": "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.",
-          "testString": "assert($('p').length == 4, 'Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.');"
+          "text":
+            "Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.",
+          "testString":
+            "assert($('p').length == 4, 'Your code should no longer have a <code>p</code> tag around the text asking what level ninja a user is.');"
         }
       ],
       "solutions": [],
@@ -815,20 +877,28 @@
       ],
       "tests": [
         {
-          "text": "Your code should add one <code>input</code> tag for the date selector field.",
-          "testString": "assert($('input').length == 2, 'Your code should add one <code>input</code> tag for the date selector field.');"
+          "text":
+            "Your code should add one <code>input</code> tag for the date selector field.",
+          "testString":
+            "assert($('input').length == 2, 'Your code should add one <code>input</code> tag for the date selector field.');"
         },
         {
-          "text": "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.",
-          "testString": "assert($('input').attr('type') == 'date', 'Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.');"
+          "text":
+            "Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.",
+          "testString":
+            "assert($('input').attr('type') == 'date', 'Your <code>input</code> tag should have a <code>type</code> attribute with a value of date.');"
         },
         {
-          "text": "Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.",
-          "testString": "assert($('input').attr('id') == 'pickdate', 'Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.');"
+          "text":
+            "Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.",
+          "testString":
+            "assert($('input').attr('id') == 'pickdate', 'Your <code>input</code> tag should have an <code>id</code> attribute with a value of pickdate.');"
         },
         {
-          "text": "Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.",
-          "testString": "assert($('input').attr('name') == 'date', 'Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.');"
+          "text":
+            "Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.",
+          "testString":
+            "assert($('input').attr('name') == 'date', 'Your <code>input</code> tag should have a <code>name</code> attribute with a value of date.');"
         }
       ],
       "solutions": [],
@@ -883,20 +953,27 @@
       ],
       "tests": [
         {
-          "text": "Your <code>time</code> tags should wrap around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\".",
-          "testString": "assert($('time').text().match(/Thursday, September 15th/g), 'Your <code>time</code> tags should wrap around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\".');"
+          "text":
+            "Your <code>time</code> tags should wrap around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\".",
+          "testString":
+            "assert($('time').text().match(/Thursday, September 15th/g), 'Your <code>time</code> tags should wrap around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\".');"
         },
         {
-          "text": "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.",
-          "testString": "assert($('time').attr('datetime'), 'Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.');"
+          "text":
+            "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.",
+          "testString":
+            "assert($('time').attr('datetime'), 'Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.');"
         },
         {
-          "text": "Your <code>datetime</code> attribute should be set to a value of 2016-09-15.",
-          "testString": "assert($('time').attr('datetime') === \"2016-09-15\", 'Your <code>datetime</code> attribute should be set to a value of 2016-09-15.');"
+          "text":
+            "Your <code>datetime</code> attribute should be set to a value of 2016-09-15.",
+          "testString":
+            "assert($('time').attr('datetime') === \"2016-09-15\", 'Your <code>datetime</code> attribute should be set to a value of 2016-09-15.');"
         },
         {
           "text": "Make sure your <code>time</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/time>/g) && code.match(/<\\/time>/g).length === 4, 'Make sure your <code>time</code> element has a closing tag.');"
+          "testString":
+            "assert(code.match(/<\\/time>/g) && code.match(/<\\/time>/g).length === 4, 'Make sure your <code>time</code> element has a closing tag.');"
         }
       ],
       "solutions": [],
@@ -949,12 +1026,13 @@
     },
     {
       "id": "587d778d367417b2b2512aaa",
-      "title": "Make Elements Only Visible to a Screen Reader by Using Custom CSS",
+      "title":
+        "Make Elements Only Visible to a Screen Reader by Using Custom CSS",
       "description": [
         "Have you noticed that all of the applied accessibility challenges so far haven't used any CSS? This is to show the importance of a logical document outline, and using semantically meaningful tags around your content before introducing the visual design aspect.",
         "However, CSS's magic can also improve accessibility on your page when you want to visually hide content meant only for screen readers. This happens when information is in a visual format (like a chart), but screen reader users need an alternative presentation (like a table) to access the data. CSS is used to position the screen reader-only elements off the visual area of the browser window.",
         "Here's an example of the CSS rules that accomplish this:",
-        "<blockquote>.sr-only {<br>  position: absolute;<br>  left: -10000px;<br>  width: 1px;<br>  height: 1px;<br>  top: auto;<br>  overflow: hidden;<br>}</blockquote>",
+        "<blockquote>.sr-only {<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;left: -10000px;<br>&nbsp;&nbsp;width: 1px;<br>&nbsp;&nbsp;height: 1px;<br>&nbsp;&nbsp;top: auto;<br>&nbsp;&nbsp;overflow: hidden;<br>}</blockquote>",
         "<strong>Note</strong><br>The following CSS approaches will NOT do the same thing:",
         "<ul>",
         "<li><code>display: none;</code> or <code>visibility: hidden;</code> hides content for everyone, including screen reader users</li>",
@@ -965,20 +1043,28 @@
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.",
-          "testString": "assert($('.sr-only').css('position') == 'absolute', 'Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.');"
+          "text":
+            "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.",
+          "testString":
+            "assert($('.sr-only').css('position') == 'absolute', 'Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.');"
         },
         {
-          "text": "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.",
-          "testString": "assert($('.sr-only').css('left') == '-10000px', 'Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.');"
+          "text":
+            "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.",
+          "testString":
+            "assert($('.sr-only').css('left') == '-10000px', 'Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.');"
         },
         {
-          "text": "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.",
-          "testString": "assert(code.match(/width:\\s*?1px/gi), 'Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.');"
+          "text":
+            "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.",
+          "testString":
+            "assert(code.match(/width:\\s*?1px/gi), 'Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.');"
         },
         {
-          "text": "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.",
-          "testString": "assert(code.match(/height:\\s*?1px/gi), 'Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.');"
+          "text":
+            "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.",
+          "testString":
+            "assert(code.match(/height:\\s*?1px/gi), 'Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.');"
         }
       ],
       "solutions": [],
@@ -1093,12 +1179,16 @@
       ],
       "tests": [
         {
-          "text": "Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.",
-          "testString": "assert($('body').css('color') == 'rgb(99, 99, 99)', 'Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.');"
+          "text":
+            "Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.",
+          "testString":
+            "assert($('body').css('color') == 'rgb(99, 99, 99)', 'Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.');"
         },
         {
-          "text": "Your code should not change the <code>background-color</code> for the <code>body</code>.",
-          "testString": "assert($('body').css('background-color') == 'rgb(255, 255, 255)', 'Your code should not change the <code>background-color</code> for the <code>body</code>.');"
+          "text":
+            "Your code should not change the <code>background-color</code> for the <code>body</code>.",
+          "testString":
+            "assert($('body').css('background-color') == 'rgb(255, 255, 255)', 'Your code should not change the <code>background-color</code> for the <code>body</code>.');"
         }
       ],
       "solutions": [],
@@ -1149,12 +1239,16 @@
       ],
       "tests": [
         {
-          "text": "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.",
-          "testString": "assert(code.match(/color:\\s*?hsl\\(0,\\s*?55%,\\s*?15%\\)/gi), 'Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.');"
+          "text":
+            "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.",
+          "testString":
+            "assert(code.match(/color:\\s*?hsl\\(0,\\s*?55%,\\s*?15%\\)/gi), 'Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.');"
         },
         {
-          "text": "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.",
-          "testString": "assert(code.match(/background-color:\\s*?hsl\\(120,\\s*?25%,\\s*?55%\\)/gi), 'Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.');"
+          "text":
+            "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.",
+          "testString":
+            "assert(code.match(/background-color:\\s*?hsl\\(120,\\s*?25%,\\s*?55%\\)/gi), 'Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.');"
         }
       ],
       "solutions": [],
@@ -1194,7 +1288,8 @@
     },
     {
       "id": "587d778f367417b2b2512aad",
-      "title": "Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information",
+      "title":
+        "Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information",
       "description": [
         "There are various forms of colorblindness. These can range from a reduced sensitivity to a certain wavelength of light to the inability to see color at all. The most common form is a reduced sensitivity to detect greens.",
         "For example, if two similar green colors are the foreground and background color of your content, a colorblind user may not be able to distinguish them. Close colors can be thought of as neighbors on the color wheel, and those combinations should be avoided when conveying important information.",
@@ -1204,8 +1299,10 @@
       ],
       "tests": [
         {
-          "text": "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.",
-          "testString": "assert($('button').css('color') == 'rgb(0, 51, 102)', 'Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.');"
+          "text":
+            "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.",
+          "testString":
+            "assert($('button').css('color') == 'rgb(0, 51, 102)', 'Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.');"
         }
       ],
       "solutions": [],
@@ -1252,12 +1349,15 @@
       ],
       "tests": [
         {
-          "text": "Your code should move the anchor <code>a</code> tags from around the words \"Click here\" to wrap around the words \"information about batteries\".",
-          "testString": "assert($('a').text().match(/^(information about batteries)$/g), 'Your code should move the anchor <code>a</code> tags from around the words \"Click here\" to wrap around the words \"information about batteries\".');"
+          "text":
+            "Your code should move the anchor <code>a</code> tags from around the words \"Click here\" to wrap around the words \"information about batteries\".",
+          "testString":
+            "assert($('a').text().match(/^(information about batteries)$/g), 'Your code should move the anchor <code>a</code> tags from around the words \"Click here\" to wrap around the words \"information about batteries\".');"
         },
         {
           "text": "Make sure your <code>a</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a href=(''|\"\")>/g).length, 'Make sure your <code>a</code> element has a closing tag.');"
+          "testString":
+            "assert(code.match(/<\\/a>/g) && code.match(/<\\/a>/g).length === code.match(/<a href=(''|\"\")>/g).length, 'Make sure your <code>a</code> element has a closing tag.');"
         }
       ],
       "solutions": [],
@@ -1299,20 +1399,28 @@
       ],
       "tests": [
         {
-          "text": "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"first\".",
-          "testString": "assert($('#first').attr('accesskey'), 'Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"first\".');"
+          "text":
+            "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"first\".",
+          "testString":
+            "assert($('#first').attr('accesskey'), 'Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"first\".');"
         },
         {
-          "text": "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"second\".",
-          "testString": "assert($('#second').attr('accesskey'), 'Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"second\".');"
+          "text":
+            "Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"second\".",
+          "testString":
+            "assert($('#second').attr('accesskey'), 'Your code should add an <code>accesskey</code> attribute to the <code>a</code> tag with the <code>id</code> of \"second\".');"
         },
         {
-          "text": "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"first\" to \"g\". Note that case matters.",
-          "testString": "assert($('#first').attr('accesskey') == 'g', 'Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"first\" to \"g\". Note that case matters.');"
+          "text":
+            "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"first\" to \"g\". Note that case matters.",
+          "testString":
+            "assert($('#first').attr('accesskey') == 'g', 'Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"first\" to \"g\". Note that case matters.');"
         },
         {
-          "text": "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"second\" to \"c\". Note that case matters.",
-          "testString": "assert($('#second').attr('accesskey') == 'c', 'Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"second\" to \"c\". Note that case matters.');"
+          "text":
+            "Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"second\" to \"c\". Note that case matters.",
+          "testString":
+            "assert($('#second').attr('accesskey') == 'c', 'Your code should set the <code>accesskey</code> attribute on the <code>a</code> tag with the <code>id</code> of \"second\" to \"c\". Note that case matters.');"
         }
       ],
       "solutions": [],
@@ -1367,12 +1475,16 @@
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.",
-          "testString": "assert($('p').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.');"
+          "text":
+            "Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.",
+          "testString":
+            "assert($('p').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.');"
         },
         {
-          "text": "Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.",
-          "testString": "assert($('p').attr('tabindex') == '0', 'Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.');"
+          "text":
+            "Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.",
+          "testString":
+            "assert($('p').attr('tabindex') == '0', 'Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.');"
         }
       ],
       "solutions": [],
@@ -1441,7 +1553,8 @@
     },
     {
       "id": "587d7790367417b2b2512ab1",
-      "title": "Use tabindex to Specify the Order of Keyboard Focus for Several Elements",
+      "title":
+        "Use tabindex to Specify the Order of Keyboard Focus for Several Elements",
       "description": [
         "The <code>tabindex</code> attribute also specifies the exact tab order of elements. This is achieved when the value of the attribute is set to a positive number of 1 or higher.",
         "Setting a tabindex=\"1\" will bring keyboard focus to that element first. Then it cycles through the sequence of specified <code>tabindex</code> values (2, 3, etc.), before moving to default and <code>tabindex=\"0\"</code> items.",
@@ -1454,20 +1567,28 @@
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.",
-          "testString": "assert($('#search').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.');"
+          "text":
+            "Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.",
+          "testString":
+            "assert($('#search').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.');"
         },
         {
-          "text": "Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.",
-          "testString": "assert($('#submit').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.');"
+          "text":
+            "Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.",
+          "testString":
+            "assert($('#submit').attr('tabindex'), 'Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.');"
         },
         {
-          "text": "Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.",
-          "testString": "assert($('#search').attr('tabindex') == '1', 'Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.');"
+          "text":
+            "Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.",
+          "testString":
+            "assert($('#search').attr('tabindex') == '1', 'Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.');"
         },
         {
-          "text": "Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.",
-          "testString": "assert($('#submit').attr('tabindex') == '2', 'Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.');"
+          "text":
+            "Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.",
+          "testString":
+            "assert($('#submit').attr('tabindex') == '2', 'Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.');"
         }
       ],
       "solutions": [],

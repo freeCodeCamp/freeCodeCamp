@@ -21,35 +21,43 @@
         "The <code>append()</code> method takes an argument for the element you want to add to the document. It appends an HTML node to a selected item, and returns a handle to that node.",
         "The <code>text()</code> method either sets the text of the selected node, or gets the current text. To set the value, you pass a string as an argument inside the parentheses of the method.",
         "Here's an example that selects an unordered list, appends a list item, and adds text:",
-        "<blockquote>d3.select(\"ul\")<br>    .append(\"li\")<br>    .text(\"Very important item\");</blockquote>",
+        "<blockquote>d3.select(\"ul\")<br>&nbsp;&nbsp;.append(\"li\")<br>&nbsp;&nbsp;.text(\"Very important item\");</blockquote>",
         "D3 allows you to chain several methods together with periods to perform a number of actions in a row.",
         "<hr>",
         "Use the <code>select</code> method to select the <code>body</code> tag in the document. Then <code>append</code> an <code>h1</code> tag to it, and add the text \"Learning D3\" into the <code>h1</code> element."
       ],
       "tests": [
         {
-          "text": "The <code>body</code> should have one <code>h1</code> element.",
-          "testString": "assert($('body').children('h1').length == 1, 'The <code>body</code> should have one <code>h1</code> element.');"
+          "text":
+            "The <code>body</code> should have one <code>h1</code> element.",
+          "testString":
+            "assert($('body').children('h1').length == 1, 'The <code>body</code> should have one <code>h1</code> element.');"
         },
         {
-          "text": "The <code>h1</code> element should have the text \"Learning D3\" in it.",
-          "testString": "assert($('h1').text() == \"Learning D3\", 'The <code>h1</code> element should have the text \"Learning D3\" in it.');"
+          "text":
+            "The <code>h1</code> element should have the text \"Learning D3\" in it.",
+          "testString":
+            "assert($('h1').text() == \"Learning D3\", 'The <code>h1</code> element should have the text \"Learning D3\" in it.');"
         },
         {
           "text": "Your code should access the <code>d3</code> object.",
-          "testString": "assert(code.match(/d3/g), 'Your code should access the <code>d3</code> object.');"
+          "testString":
+            "assert(code.match(/d3/g), 'Your code should access the <code>d3</code> object.');"
         },
         {
           "text": "Your code should use the <code>select</code> method.",
-          "testString": "assert(code.match(/\\.select/g), 'Your code should use the <code>select</code> method.');"
+          "testString":
+            "assert(code.match(/\\.select/g), 'Your code should use the <code>select</code> method.');"
         },
         {
           "text": "Your code should use the <code>append</code> method.",
-          "testString": "assert(code.match(/\\.append/g), 'Your code should use the <code>append</code> method.');"
+          "testString":
+            "assert(code.match(/\\.append/g), 'Your code should use the <code>append</code> method.');"
         },
         {
           "text": "Your code should use the <code>text</code> method.",
-          "testString": "assert(code.match(/\\.text/g), 'Your code should use the <code>text</code> method.');"
+          "testString":
+            "assert(code.match(/\\.text/g), 'Your code should use the <code>text</code> method.');"
         }
       ],
       "solutions": [],
@@ -95,16 +103,20 @@
       ],
       "tests": [
         {
-          "text": "There should be 3 <code>li</code> elements on the page, and the text in each one should say \"list item\". Capitalization and spacing should match exactly.",
-          "testString": "assert($('li').text().match(/list item/g).length == 3, 'There should be 3 <code>li</code> elements on the page, and the text in each one should say \"list item\". Capitalization and spacing should match exactly.');"
+          "text":
+            "There should be 3 <code>li</code> elements on the page, and the text in each one should say \"list item\". Capitalization and spacing should match exactly.",
+          "testString":
+            "assert($('li').text().match(/list item/g).length == 3, 'There should be 3 <code>li</code> elements on the page, and the text in each one should say \"list item\". Capitalization and spacing should match exactly.');"
         },
         {
           "text": "Your code should access the <code>d3</code> object.",
-          "testString": "assert(code.match(/d3/g), 'Your code should access the <code>d3</code> object.');"
+          "testString":
+            "assert(code.match(/d3/g), 'Your code should access the <code>d3</code> object.');"
         },
         {
           "text": "Your code should use the <code>selectAll</code> method.",
-          "testString": "assert(code.match(/\\.selectAll/g), 'Your code should use the <code>selectAll</code> method.');"
+          "testString":
+            "assert(code.match(/\\.selectAll/g), 'Your code should use the <code>selectAll</code> method.');"
         }
       ],
       "solutions": [],
@@ -152,7 +164,7 @@
         "A common workflow pattern is to create a new element in the document for each piece of data in the set. D3 has the <code>enter()</code> method for this purpose.",
         "When <code>enter()</code> is combined with the <code>data()</code> method, it looks at the selected elements from the page and compares them to the number of data items in the set. If there are fewer elements than data items, it creates the missing elements.",
         "Here is an example that selects a <code>ul</code> element and creates a new list item based on the number of entries in the array:",
-        "<blockquote>&lt;body&gt;<br>  &lt;ul&gt;&lt;/ul&gt;<br>  &lt;script&gt;<br>    const dataset = [\"a\", \"b\", \"c\"];<br>    d3.select(\"ul\").selectAll(\"li\")<br>      .data(dataset)<br>      .enter()<br>      .append(\"li\")<br>      .text(\"New item\");<br>  &lt;/script&gt;<br>&lt;/body&gt;</blockquote>",
+        "<blockquote>&lt;body&gt;<br>&nbsp;&nbsp;&lt;ul&gt;&lt;/ul&gt;<br>&nbsp;&nbsp;&lt;script&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;const dataset = [\"a\", \"b\", \"c\"];<br>&nbsp;&nbsp;&nbsp;&nbsp;d3.select(\"ul\").selectAll(\"li\")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.data(dataset)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.enter()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.append(\"li\")<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.text(\"New item\");<br>&nbsp;&nbsp;&lt;/script&gt;<br>&lt;/body&gt;</blockquote>",
         "It may seem confusing to select elements that don't exist yet. This code is telling D3 to first select the <code>ul</code> on the page. Next, select all list items, which returns an empty selection. Then the <code>data()</code> method reviews the dataset and runs the following code three times, once for each item in the array. The <code>enter()</code> method sees there are no <code>li</code> elements on the page, but it needs 3 (one for each piece of data in <code>dataset</code>). New <code>li</code> elements are appended to the <code>ul</code> and have the text \"New item\".",
         "<hr>",
         "Select the <code>body</code> node, then select all <code>h2</code> elements. Have D3 create and append an <code>h2</code> tag for each item in the <code>dataset</code> array. The text in the <code>h2</code> should say \"New Title\". Your code should use the <code>data()</code> and <code>enter()</code> methods."
@@ -160,19 +172,24 @@
       "tests": [
         {
           "text": "Your document should have 9 <code>h2</code> elements.",
-          "testString": "assert($('h2').length == 9, 'Your document should have 9 <code>h2</code> elements.');"
+          "testString":
+            "assert($('h2').length == 9, 'Your document should have 9 <code>h2</code> elements.');"
         },
         {
-          "text": "The text in the <code>h2</code> elements should say \"New Title\". The capitalization and spacing should match exactly.",
-          "testString": "assert($('h2').text().match(/New Title/g).length == 9, 'The text in the <code>h2</code> elements should say \"New Title\". The capitalization and spacing should match exactly.');"
+          "text":
+            "The text in the <code>h2</code> elements should say \"New Title\". The capitalization and spacing should match exactly.",
+          "testString":
+            "assert($('h2').text().match(/New Title/g).length == 9, 'The text in the <code>h2</code> elements should say \"New Title\". The capitalization and spacing should match exactly.');"
         },
         {
           "text": "Your code should use the <code>data()</code> method.",
-          "testString": "assert(code.match(/\\.data/g), 'Your code should use the <code>data()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.data/g), 'Your code should use the <code>data()</code> method.');"
         },
         {
           "text": "Your code should use the <code>enter()</code> method.",
-          "testString": "assert(code.match(/\\.enter/g), 'Your code should use the <code>enter()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.enter/g), 'Your code should use the <code>enter()</code> method.');"
         }
       ],
       "solutions": [],
@@ -224,39 +241,49 @@
       "tests": [
         {
           "text": "The first <code>h2</code> should have the text \"12 USD\".",
-          "testString": "assert($('h2').eq(0).text() == \"12 USD\", 'The first <code>h2</code> should have the text \"12 USD\".');"
+          "testString":
+            "assert($('h2').eq(0).text() == \"12 USD\", 'The first <code>h2</code> should have the text \"12 USD\".');"
         },
         {
           "text": "The second <code>h2</code> should have the text \"31 USD\".",
-          "testString": "assert($('h2').eq(1).text() == \"31 USD\", 'The second <code>h2</code> should have the text \"31 USD\".');"
+          "testString":
+            "assert($('h2').eq(1).text() == \"31 USD\", 'The second <code>h2</code> should have the text \"31 USD\".');"
         },
         {
           "text": "The third <code>h2</code> should have the text \"22 USD\".",
-          "testString": "assert($('h2').eq(2).text() == \"22 USD\", 'The third <code>h2</code> should have the text \"22 USD\".');"
+          "testString":
+            "assert($('h2').eq(2).text() == \"22 USD\", 'The third <code>h2</code> should have the text \"22 USD\".');"
         },
         {
           "text": "The fourth <code>h2</code> should have the text \"17 USD\".",
-          "testString": "assert($('h2').eq(3).text() == \"17 USD\", 'The fourth <code>h2</code> should have the text \"17 USD\".');"
+          "testString":
+            "assert($('h2').eq(3).text() == \"17 USD\", 'The fourth <code>h2</code> should have the text \"17 USD\".');"
         },
         {
           "text": "The fifth <code>h2</code> should have the text \"25 USD\".",
-          "testString": "assert($('h2').eq(4).text() == \"25 USD\", 'The fifth <code>h2</code> should have the text \"25 USD\".');"
+          "testString":
+            "assert($('h2').eq(4).text() == \"25 USD\", 'The fifth <code>h2</code> should have the text \"25 USD\".');"
         },
         {
           "text": "The sixth <code>h2</code> should have the text \"18 USD\".",
-          "testString": "assert($('h2').eq(5).text() == \"18 USD\", 'The sixth <code>h2</code> should have the text \"18 USD\".');"
+          "testString":
+            "assert($('h2').eq(5).text() == \"18 USD\", 'The sixth <code>h2</code> should have the text \"18 USD\".');"
         },
         {
-          "text": "The seventh <code>h2</code> should have the text \"29 USD\".",
-          "testString": "assert($('h2').eq(6).text() == \"29 USD\", 'The seventh <code>h2</code> should have the text \"29 USD\".');"
+          "text":
+            "The seventh <code>h2</code> should have the text \"29 USD\".",
+          "testString":
+            "assert($('h2').eq(6).text() == \"29 USD\", 'The seventh <code>h2</code> should have the text \"29 USD\".');"
         },
         {
           "text": "The eighth <code>h2</code> should have the text \"14 USD\".",
-          "testString": "assert($('h2').eq(7).text() == \"14 USD\", 'The eighth <code>h2</code> should have the text \"14 USD\".');"
+          "testString":
+            "assert($('h2').eq(7).text() == \"14 USD\", 'The eighth <code>h2</code> should have the text \"14 USD\".');"
         },
         {
           "text": "The ninth <code>h2</code> should have the text \"9 USD\".",
-          "testString": "assert($('h2').eq(8).text() == \"9 USD\", 'The ninth <code>h2</code> should have the text \"9 USD\".');"
+          "testString":
+            "assert($('h2').eq(8).text() == \"9 USD\", 'The ninth <code>h2</code> should have the text \"9 USD\".');"
         }
       ],
       "solutions": [],
@@ -308,12 +335,15 @@
       ],
       "tests": [
         {
-          "text": "Your <code>h2</code> elements should have a <code>font-family</code> of verdana.",
-          "testString": "assert($('h2').css('font-family') == 'verdana', 'Your <code>h2</code> elements should have a <code>font-family</code> of verdana.');"
+          "text":
+            "Your <code>h2</code> elements should have a <code>font-family</code> of verdana.",
+          "testString":
+            "assert($('h2').css('font-family') == 'verdana', 'Your <code>h2</code> elements should have a <code>font-family</code> of verdana.');"
         },
         {
           "text": "Your code should use the <code>style()</code> method.",
-          "testString": "assert(code.match(/\\.style/g), 'Your code should use the <code>style()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.style/g), 'Your code should use the <code>style()</code> method.');"
         }
       ],
       "solutions": [],
@@ -360,7 +390,7 @@
       "description": [
         "D3 is about visualization and presentation of data. It's likely you'll want to change the styling of elements based on the data. You can use a callback function in the <code>style()</code> method to change the styling for different elements.",
         "For example, you may want to color a data point blue if has a value less than 20, and red otherwise. You can use a callback function in the <code>style()</code> method and include the conditional logic. The callback function uses the <code>d</code> parameter to represent the data point:",
-        "<blockquote>selection.style(\"color\", (d) => {<br>  /* Logic that returns the color based on a condition */<br>});</blockquote>",
+        "<blockquote>selection.style(\"color\", (d) => {<br>&nbsp;&nbsp;/* Logic that returns the color based on a condition */<br>});</blockquote>",
         "The <code>style()</code> method is not limited to setting the <code>color</code> - it can be used with other CSS properties as well.",
         "<hr>",
         "Add the <code>style()</code> method to the code in the editor to set the <code>color</code> of the <code>h2</code> elements conditionally. Write the callback function so if the data value is less than 20, it returns \"red\", otherwise it returns \"green\".",
@@ -368,40 +398,58 @@
       ],
       "tests": [
         {
-          "text": "The first <code>h2</code> should have a <code>color</code> of red.",
-          "testString": "assert($('h2').eq(0).css('color') == \"rgb(255, 0, 0)\", 'The first <code>h2</code> should have a <code>color</code> of red.');"
+          "text":
+            "The first <code>h2</code> should have a <code>color</code> of red.",
+          "testString":
+            "assert($('h2').eq(0).css('color') == \"rgb(255, 0, 0)\", 'The first <code>h2</code> should have a <code>color</code> of red.');"
         },
         {
-          "text": "The second <code>h2</code> should have a <code>color</code> of green.",
-          "testString": "assert($('h2').eq(1).css('color') == \"rgb(0, 128, 0)\", 'The second <code>h2</code> should have a <code>color</code> of green.');"
+          "text":
+            "The second <code>h2</code> should have a <code>color</code> of green.",
+          "testString":
+            "assert($('h2').eq(1).css('color') == \"rgb(0, 128, 0)\", 'The second <code>h2</code> should have a <code>color</code> of green.');"
         },
         {
-          "text": "The third <code>h2</code> should have a <code>color</code> of green.",
-          "testString": "assert($('h2').eq(2).css('color') == \"rgb(0, 128, 0)\", 'The third <code>h2</code> should have a <code>color</code> of green.');"
+          "text":
+            "The third <code>h2</code> should have a <code>color</code> of green.",
+          "testString":
+            "assert($('h2').eq(2).css('color') == \"rgb(0, 128, 0)\", 'The third <code>h2</code> should have a <code>color</code> of green.');"
         },
         {
-          "text": "The fourth <code>h2</code> should have a <code>color</code> of red.",
-          "testString": "assert($('h2').eq(3).css('color') == \"rgb(255, 0, 0)\", 'The fourth <code>h2</code> should have a <code>color</code> of red.');"
+          "text":
+            "The fourth <code>h2</code> should have a <code>color</code> of red.",
+          "testString":
+            "assert($('h2').eq(3).css('color') == \"rgb(255, 0, 0)\", 'The fourth <code>h2</code> should have a <code>color</code> of red.');"
         },
         {
-          "text": "The fifth <code>h2</code> should have a <code>color</code> of green.",
-          "testString": "assert($('h2').eq(4).css('color') == \"rgb(0, 128, 0)\", 'The fifth <code>h2</code> should have a <code>color</code> of green.');"
+          "text":
+            "The fifth <code>h2</code> should have a <code>color</code> of green.",
+          "testString":
+            "assert($('h2').eq(4).css('color') == \"rgb(0, 128, 0)\", 'The fifth <code>h2</code> should have a <code>color</code> of green.');"
         },
         {
-          "text": "The sixth <code>h2</code> should have a <code>color</code> of red.",
-          "testString": "assert($('h2').eq(5).css('color') == \"rgb(255, 0, 0)\", 'The sixth <code>h2</code> should have a <code>color</code> of red.');"
+          "text":
+            "The sixth <code>h2</code> should have a <code>color</code> of red.",
+          "testString":
+            "assert($('h2').eq(5).css('color') == \"rgb(255, 0, 0)\", 'The sixth <code>h2</code> should have a <code>color</code> of red.');"
         },
         {
-          "text": "The seventh <code>h2</code> should have a <code>color</code> of green.",
-          "testString": "assert($('h2').eq(6).css('color') == \"rgb(0, 128, 0)\", 'The seventh <code>h2</code> should have a <code>color</code> of green.');"
+          "text":
+            "The seventh <code>h2</code> should have a <code>color</code> of green.",
+          "testString":
+            "assert($('h2').eq(6).css('color') == \"rgb(0, 128, 0)\", 'The seventh <code>h2</code> should have a <code>color</code> of green.');"
         },
         {
-          "text": "The eighth <code>h2</code> should have a <code>color</code> of red.",
-          "testString": "assert($('h2').eq(7).css('color') == \"rgb(255, 0, 0)\", 'The eighth <code>h2</code> should have a <code>color</code> of red.');"
+          "text":
+            "The eighth <code>h2</code> should have a <code>color</code> of red.",
+          "testString":
+            "assert($('h2').eq(7).css('color') == \"rgb(255, 0, 0)\", 'The eighth <code>h2</code> should have a <code>color</code> of red.');"
         },
         {
-          "text": "The ninth <code>h2</code> should have a <code>color</code> of red.",
-          "testString": "assert($('h2').eq(8).css('color') == \"rgb(255, 0, 0)\", 'The ninth <code>h2</code> should have a <code>color</code> of red.');"
+          "text":
+            "The ninth <code>h2</code> should have a <code>color</code> of red.",
+          "testString":
+            "assert($('h2').eq(8).css('color') == \"rgb(255, 0, 0)\", 'The ninth <code>h2</code> should have a <code>color</code> of red.');"
         }
       ],
       "solutions": [],
@@ -454,12 +502,15 @@
       ],
       "tests": [
         {
-          "text": "Your <code>div</code> elements should have a class of <code>bar</code>.",
-          "testString": "assert($('div').attr('class') == \"bar\", 'Your <code>div</code> elements should have a class of <code>bar</code>.');"
+          "text":
+            "Your <code>div</code> elements should have a class of <code>bar</code>.",
+          "testString":
+            "assert($('div').attr('class') == \"bar\", 'Your <code>div</code> elements should have a class of <code>bar</code>.');"
         },
         {
           "text": "Your code should use the <code>attr()</code> method.",
-          "testString": "assert(code.match(/\\.attr/g), 'Your code should use the <code>attr()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.attr/g), 'Your code should use the <code>attr()</code> method.');"
         }
       ],
       "solutions": [],
@@ -521,40 +572,58 @@
       ],
       "tests": [
         {
-          "text": "The first <code>div</code> should have a <code>height</code> of 12 pixels.",
-          "testString": "assert($('div').eq(0).css('height') == '12px', 'The first <code>div</code> should have a <code>height</code> of 12 pixels.');"
+          "text":
+            "The first <code>div</code> should have a <code>height</code> of 12 pixels.",
+          "testString":
+            "assert($('div').eq(0).css('height') == '12px', 'The first <code>div</code> should have a <code>height</code> of 12 pixels.');"
         },
         {
-          "text": "The second <code>div</code> should have a <code>height</code> of 31 pixels.",
-          "testString": "assert($('div').eq(1).css('height') == '31px', 'The second <code>div</code> should have a <code>height</code> of 31 pixels.');"
+          "text":
+            "The second <code>div</code> should have a <code>height</code> of 31 pixels.",
+          "testString":
+            "assert($('div').eq(1).css('height') == '31px', 'The second <code>div</code> should have a <code>height</code> of 31 pixels.');"
         },
         {
-          "text": "The third <code>div</code> should have a <code>height</code> of 22 pixels.",
-          "testString": "assert($('div').eq(2).css('height') == '22px', 'The third <code>div</code> should have a <code>height</code> of 22 pixels.');"
+          "text":
+            "The third <code>div</code> should have a <code>height</code> of 22 pixels.",
+          "testString":
+            "assert($('div').eq(2).css('height') == '22px', 'The third <code>div</code> should have a <code>height</code> of 22 pixels.');"
         },
         {
-          "text": "The fourth <code>div</code> should have a <code>height</code> of 17 pixels.",
-          "testString": "assert($('div').eq(3).css('height') == '17px', 'The fourth <code>div</code> should have a <code>height</code> of 17 pixels.');"
+          "text":
+            "The fourth <code>div</code> should have a <code>height</code> of 17 pixels.",
+          "testString":
+            "assert($('div').eq(3).css('height') == '17px', 'The fourth <code>div</code> should have a <code>height</code> of 17 pixels.');"
         },
         {
-          "text": "The fifth <code>div</code> should have a <code>height</code> of 25 pixels.",
-          "testString": "assert($('div').eq(4).css('height') == '25px', 'The fifth <code>div</code> should have a <code>height</code> of 25 pixels.');"
+          "text":
+            "The fifth <code>div</code> should have a <code>height</code> of 25 pixels.",
+          "testString":
+            "assert($('div').eq(4).css('height') == '25px', 'The fifth <code>div</code> should have a <code>height</code> of 25 pixels.');"
         },
         {
-          "text": "The sixth <code>div</code> should have a <code>height</code> of 18 pixels.",
-          "testString": "assert($('div').eq(5).css('height') == '18px', 'The sixth <code>div</code> should have a <code>height</code> of 18 pixels.');"
+          "text":
+            "The sixth <code>div</code> should have a <code>height</code> of 18 pixels.",
+          "testString":
+            "assert($('div').eq(5).css('height') == '18px', 'The sixth <code>div</code> should have a <code>height</code> of 18 pixels.');"
         },
         {
-          "text": "The seventh <code>div</code> should have a <code>height</code> of 29 pixels.",
-          "testString": "assert($('div').eq(6).css('height') == '29px', 'The seventh <code>div</code> should have a <code>height</code> of 29 pixels.');"
+          "text":
+            "The seventh <code>div</code> should have a <code>height</code> of 29 pixels.",
+          "testString":
+            "assert($('div').eq(6).css('height') == '29px', 'The seventh <code>div</code> should have a <code>height</code> of 29 pixels.');"
         },
         {
-          "text": "The eighth <code>div</code> should have a <code>height</code> of 14 pixels.",
-          "testString": "assert($('div').eq(7).css('height') == '14px', 'The eighth <code>div</code> should have a <code>height</code> of 14 pixels.');"
+          "text":
+            "The eighth <code>div</code> should have a <code>height</code> of 14 pixels.",
+          "testString":
+            "assert($('div').eq(7).css('height') == '14px', 'The eighth <code>div</code> should have a <code>height</code> of 14 pixels.');"
         },
         {
-          "text": "The ninth <code>div</code> should have a <code>height</code> of 9 pixels.",
-          "testString": "assert($('div').eq(8).css('height') == '9px', 'The ninth <code>div</code> should have a <code>height</code> of 9 pixels.');"
+          "text":
+            "The ninth <code>div</code> should have a <code>height</code> of 9 pixels.",
+          "testString":
+            "assert($('div').eq(8).css('height') == '9px', 'The ninth <code>div</code> should have a <code>height</code> of 9 pixels.');"
         }
       ],
       "solutions": [],
@@ -616,40 +685,58 @@
       ],
       "tests": [
         {
-          "text": "The first <code>div</code> should have a <code>height</code> of 120 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(0).css('height') == '120px' && $('div').eq(0).css('margin-right') == '2px', 'The first <code>div</code> should have a <code>height</code> of 120 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The first <code>div</code> should have a <code>height</code> of 120 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(0).css('height') == '120px' && $('div').eq(0).css('margin-right') == '2px', 'The first <code>div</code> should have a <code>height</code> of 120 pixels and a <code>margin</code> of 2 pixels.');"
         },
         {
-          "text": "The second <code>div</code> should have a <code>height</code> of 310 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(1).css('height') == '310px' && $('div').eq(1).css('margin-right') == '2px', 'The second <code>div</code> should have a <code>height</code> of 310 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The second <code>div</code> should have a <code>height</code> of 310 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(1).css('height') == '310px' && $('div').eq(1).css('margin-right') == '2px', 'The second <code>div</code> should have a <code>height</code> of 310 pixels and a <code>margin</code> of 2 pixels.');"
         },
         {
-          "text": "The third <code>div</code> should have a <code>height</code> of 220 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(2).css('height') == '220px' && $('div').eq(2).css('margin-right') == '2px', 'The third <code>div</code> should have a <code>height</code> of 220 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The third <code>div</code> should have a <code>height</code> of 220 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(2).css('height') == '220px' && $('div').eq(2).css('margin-right') == '2px', 'The third <code>div</code> should have a <code>height</code> of 220 pixels and a <code>margin</code> of 2 pixels.');"
         },
         {
-          "text": "The fourth <code>div</code> should have a <code>height</code> of 170 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(3).css('height') == '170px' && $('div').eq(3).css('margin-right') == '2px', 'The fourth <code>div</code> should have a <code>height</code> of 170 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The fourth <code>div</code> should have a <code>height</code> of 170 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(3).css('height') == '170px' && $('div').eq(3).css('margin-right') == '2px', 'The fourth <code>div</code> should have a <code>height</code> of 170 pixels and a <code>margin</code> of 2 pixels.');"
         },
         {
-          "text": "The fifth <code>div</code> should have a <code>height</code> of 250 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(4).css('height') == '250px' && $('div').eq(4).css('margin-right') == '2px', 'The fifth <code>div</code> should have a <code>height</code> of 250 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The fifth <code>div</code> should have a <code>height</code> of 250 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(4).css('height') == '250px' && $('div').eq(4).css('margin-right') == '2px', 'The fifth <code>div</code> should have a <code>height</code> of 250 pixels and a <code>margin</code> of 2 pixels.');"
         },
         {
-          "text": "The sixth <code>div</code> should have a <code>height</code> of 180 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(5).css('height') == '180px' && $('div').eq(5).css('margin-right') == '2px', 'The sixth <code>div</code> should have a <code>height</code> of 180 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The sixth <code>div</code> should have a <code>height</code> of 180 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(5).css('height') == '180px' && $('div').eq(5).css('margin-right') == '2px', 'The sixth <code>div</code> should have a <code>height</code> of 180 pixels and a <code>margin</code> of 2 pixels.');"
         },
         {
-          "text": "The seventh <code>div</code> should have a <code>height</code> of 290 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(6).css('height') == '290px' && $('div').eq(6).css('margin-right') == '2px', 'The seventh <code>div</code> should have a <code>height</code> of 290 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The seventh <code>div</code> should have a <code>height</code> of 290 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(6).css('height') == '290px' && $('div').eq(6).css('margin-right') == '2px', 'The seventh <code>div</code> should have a <code>height</code> of 290 pixels and a <code>margin</code> of 2 pixels.');"
         },
         {
-          "text": "The eighth <code>div</code> should have a <code>height</code> of 140 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(7).css('height') == '140px' && $('div').eq(7).css('margin-right') == '2px', 'The eighth <code>div</code> should have a <code>height</code> of 140 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The eighth <code>div</code> should have a <code>height</code> of 140 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(7).css('height') == '140px' && $('div').eq(7).css('margin-right') == '2px', 'The eighth <code>div</code> should have a <code>height</code> of 140 pixels and a <code>margin</code> of 2 pixels.');"
         },
         {
-          "text": "The ninth <code>div</code> should have a <code>height</code> of 90 pixels and a <code>margin</code> of 2 pixels.",
-          "testString": "assert($('div').eq(8).css('height') == '90px' && $('div').eq(8).css('margin-right') == '2px', 'The ninth <code>div</code> should have a <code>height</code> of 90 pixels and a <code>margin</code> of 2 pixels.');"
+          "text":
+            "The ninth <code>div</code> should have a <code>height</code> of 90 pixels and a <code>margin</code> of 2 pixels.",
+          "testString":
+            "assert($('div').eq(8).css('height') == '90px' && $('div').eq(8).css('margin-right') == '2px', 'The ninth <code>div</code> should have a <code>height</code> of 90 pixels and a <code>margin</code> of 2 pixels.');"
         }
       ],
       "solutions": [],
@@ -715,15 +802,20 @@
       "tests": [
         {
           "text": "Your document should have 1 <code>svg</code> element.",
-          "testString": "assert($('svg').length == 1, 'Your document should have 1 <code>svg</code> element.');"
+          "testString":
+            "assert($('svg').length == 1, 'Your document should have 1 <code>svg</code> element.');"
         },
         {
-          "text": "The <code>svg</code> element should have a <code>width</code> attribute set to 500.",
-          "testString": "assert($('svg').attr('width') == '500', 'The <code>svg</code> element should have a <code>width</code> attribute set to 500.');"
+          "text":
+            "The <code>svg</code> element should have a <code>width</code> attribute set to 500.",
+          "testString":
+            "assert($('svg').attr('width') == '500', 'The <code>svg</code> element should have a <code>width</code> attribute set to 500.');"
         },
         {
-          "text": "The <code>svg</code> element should have a <code>height</code> attribute set to 100.",
-          "testString": "assert($('svg').attr('height') == '100', 'The <code>svg</code> element should have a <code>height</code> attribute set to 100.');"
+          "text":
+            "The <code>svg</code> element should have a <code>height</code> attribute set to 100.",
+          "testString":
+            "assert($('svg').attr('height') == '100', 'The <code>svg</code> element should have a <code>height</code> attribute set to 100.');"
         }
       ],
       "solutions": [],
@@ -783,23 +875,32 @@
       "tests": [
         {
           "text": "Your document should have 1 <code>rect</code> element.",
-          "testString": "assert($('rect').length == 1, 'Your document should have 1 <code>rect</code> element.');"
+          "testString":
+            "assert($('rect').length == 1, 'Your document should have 1 <code>rect</code> element.');"
         },
         {
-          "text": "The <code>rect</code> element should have a <code>width</code> attribute set to 25.",
-          "testString": "assert($('rect').attr('width') == '25', 'The <code>rect</code> element should have a <code>width</code> attribute set to 25.');"
+          "text":
+            "The <code>rect</code> element should have a <code>width</code> attribute set to 25.",
+          "testString":
+            "assert($('rect').attr('width') == '25', 'The <code>rect</code> element should have a <code>width</code> attribute set to 25.');"
         },
         {
-          "text": "The <code>rect</code> element should have a <code>height</code> attribute set to 100.",
-          "testString": "assert($('rect').attr('height') == '100', 'The <code>rect</code> element should have a <code>height</code> attribute set to 100.');"
+          "text":
+            "The <code>rect</code> element should have a <code>height</code> attribute set to 100.",
+          "testString":
+            "assert($('rect').attr('height') == '100', 'The <code>rect</code> element should have a <code>height</code> attribute set to 100.');"
         },
         {
-          "text": "The <code>rect</code> element should have an <code>x</code> attribute set to 0.",
-          "testString": "assert($('rect').attr('x') == '0', 'The <code>rect</code> element should have an <code>x</code> attribute set to 0.');"
+          "text":
+            "The <code>rect</code> element should have an <code>x</code> attribute set to 0.",
+          "testString":
+            "assert($('rect').attr('x') == '0', 'The <code>rect</code> element should have an <code>x</code> attribute set to 0.');"
         },
         {
-          "text": "The <code>rect</code> element should have a <code>y</code> attribute set to 0.",
-          "testString": "assert($('rect').attr('y') == '0', 'The <code>rect</code> element should have a <code>y</code> attribute set to 0.');"
+          "text":
+            "The <code>rect</code> element should have a <code>y</code> attribute set to 0.",
+          "testString":
+            "assert($('rect').attr('y') == '0', 'The <code>rect</code> element should have a <code>y</code> attribute set to 0.');"
         }
       ],
       "solutions": [],
@@ -848,7 +949,7 @@
       "description": [
         "The last challenge added only one rectangle to the <code>svg</code> element to represent a bar. Here, you'll combine what you've learned so far about <code>data()</code>, <code>enter()</code>, and SVG shapes to create and append a rectangle for each data point in <code>dataset</code>.",
         "A previous challenge showed the format for how to create and append a <code>div</code> for each item in <code>dataset</code>:",
-        "<blockquote>d3.select(\"body\").selectAll(\"div\")<br>  .data(dataset)<br>  .enter()<br>  .append(\"div\")</blockquote>",
+        "<blockquote>d3.select(\"body\").selectAll(\"div\")<br>&nbsp;&nbsp;.data(dataset)<br>&nbsp;&nbsp;.enter()<br>&nbsp;&nbsp;.append(\"div\")</blockquote>",
         "There are a few differences working with <code>rect</code> elements instead of <code>divs</code>. The <code>rects</code> must be appended to an <code>svg</code> element, not directly to the <code>body</code>. Also, you need to tell D3 where to place each <code>rect</code> within the <code>svg</code> area. The bar placement will be covered in the next challenge.",
         "<hr>",
         "Use the <code>data()</code>, <code>enter()</code>, and <code>append()</code> methods to create and append a <code>rect</code> for each item in <code>dataset</code>. The bars should display all on top of each other, this will be fixed in the next challenge."
@@ -856,19 +957,23 @@
       "tests": [
         {
           "text": "Your document should have 9 <code>rect</code> elements.",
-          "testString": "assert($('rect').length == 9, 'Your document should have 9 <code>rect</code> elements.');"
+          "testString":
+            "assert($('rect').length == 9, 'Your document should have 9 <code>rect</code> elements.');"
         },
         {
           "text": "Your code should use the <code>data()</code> method.",
-          "testString": "assert(code.match(/\\.data/g), 'Your code should use the <code>data()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.data/g), 'Your code should use the <code>data()</code> method.');"
         },
         {
           "text": "Your code should use the <code>enter()</code> method.",
-          "testString": "assert(code.match(/\\.enter/g), 'Your code should use the <code>enter()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.enter/g), 'Your code should use the <code>enter()</code> method.');"
         },
         {
           "text": "Your code should use the <code>append()</code> method.",
-          "testString": "assert(code.match(/\\.append/g), 'Your code should use the <code>append()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.append/g), 'Your code should use the <code>append()</code> method.');"
         }
       ],
       "solutions": [],
@@ -925,7 +1030,7 @@
         "The placement of a rectangle is handled by the <code>x</code> and <code>y</code> attributes. They tell D3 where to start drawing the shape in the <code>svg</code> area. The last challenge set them each to 0, so every bar was placed in the upper-left corner.",
         "For a bar chart, all of the bars should sit on the same vertical level, which means the <code>y</code> value stays the same (at 0) for all bars. The <code>x</code> value, however, needs to change as you add new bars. Remember that larger <code>x</code> values push items farther to the right. As you go through the array elements in <code>dataset</code>, the x value should increase.",
         "The <code>attr()</code> method in D3 accepts a callback function to dynamically set that attribute. The callback function takes two arguments, one for the data point itself (usually <code>d</code>) and one for the index of the data point in the array. The second argument for the index is optional. Here's the format:",
-        "<blockquote>selection.attr(\"property\", (d, i) => {<br>  /* <br>  * d is the data point value<br>  * i is the index of the data point in the array<br>  */<br>})</blockquote>",
+        "<blockquote>selection.attr(\"property\", (d, i) => {<br>&nbsp;&nbsp;/* <br>&nbsp;&nbsp;* d is the data point value<br>&nbsp;&nbsp;* i is the index of the data point in the array<br>&nbsp;&nbsp;*/<br>})</blockquote>",
         "It's important to note that you do NOT need to write a <code>for</code> loop or use <code>forEach()</code> to iterate over the items in the data set. Recall that the <code>data()</code> method parses the data set, and any method that's chained after <code>data()</code> is run once for each item in the data set.",
         "<hr>",
         "Change the <code>x</code> attribute callback function so it returns the index times 30.",
@@ -933,40 +1038,58 @@
       ],
       "tests": [
         {
-          "text": "The first <code>rect</code> should have an <code>x</code> value of 0.",
-          "testString": "assert($('rect').eq(0).attr('x') == '0', 'The first <code>rect</code> should have an <code>x</code> value of 0.');"
+          "text":
+            "The first <code>rect</code> should have an <code>x</code> value of 0.",
+          "testString":
+            "assert($('rect').eq(0).attr('x') == '0', 'The first <code>rect</code> should have an <code>x</code> value of 0.');"
         },
         {
-          "text": "The second <code>rect</code> should have an <code>x</code> value of 30.",
-          "testString": "assert($('rect').eq(1).attr('x') == '30', 'The second <code>rect</code> should have an <code>x</code> value of 30.');"
+          "text":
+            "The second <code>rect</code> should have an <code>x</code> value of 30.",
+          "testString":
+            "assert($('rect').eq(1).attr('x') == '30', 'The second <code>rect</code> should have an <code>x</code> value of 30.');"
         },
         {
-          "text": "The third <code>rect</code> should have an <code>x</code> value of 60.",
-          "testString": "assert($('rect').eq(2).attr('x') == '60', 'The third <code>rect</code> should have an <code>x</code> value of 60.');"
+          "text":
+            "The third <code>rect</code> should have an <code>x</code> value of 60.",
+          "testString":
+            "assert($('rect').eq(2).attr('x') == '60', 'The third <code>rect</code> should have an <code>x</code> value of 60.');"
         },
         {
-          "text": "The fourth <code>rect</code> should have an <code>x</code> value of 90.",
-          "testString": "assert($('rect').eq(3).attr('x') == '90', 'The fourth <code>rect</code> should have an <code>x</code> value of 90.');"
+          "text":
+            "The fourth <code>rect</code> should have an <code>x</code> value of 90.",
+          "testString":
+            "assert($('rect').eq(3).attr('x') == '90', 'The fourth <code>rect</code> should have an <code>x</code> value of 90.');"
         },
         {
-          "text": "The fifth <code>rect</code> should have an <code>x</code> value of 120.",
-          "testString": "assert($('rect').eq(4).attr('x') == '120', 'The fifth <code>rect</code> should have an <code>x</code> value of 120.');"
+          "text":
+            "The fifth <code>rect</code> should have an <code>x</code> value of 120.",
+          "testString":
+            "assert($('rect').eq(4).attr('x') == '120', 'The fifth <code>rect</code> should have an <code>x</code> value of 120.');"
         },
         {
-          "text": "The sixth <code>rect</code> should have an <code>x</code> value of 150.",
-          "testString": "assert($('rect').eq(5).attr('x') == '150', 'The sixth <code>rect</code> should have an <code>x</code> value of 150.');"
+          "text":
+            "The sixth <code>rect</code> should have an <code>x</code> value of 150.",
+          "testString":
+            "assert($('rect').eq(5).attr('x') == '150', 'The sixth <code>rect</code> should have an <code>x</code> value of 150.');"
         },
         {
-          "text": "The seventh <code>rect</code> should have an <code>x</code> value of 180.",
-          "testString": "assert($('rect').eq(6).attr('x') == '180', 'The seventh <code>rect</code> should have an <code>x</code> value of 180.');"
+          "text":
+            "The seventh <code>rect</code> should have an <code>x</code> value of 180.",
+          "testString":
+            "assert($('rect').eq(6).attr('x') == '180', 'The seventh <code>rect</code> should have an <code>x</code> value of 180.');"
         },
         {
-          "text": "The eighth <code>rect</code> should have an <code>x</code> value of 210.",
-          "testString": "assert($('rect').eq(7).attr('x') == '210', 'The eighth <code>rect</code> should have an <code>x</code> value of 210.');"
+          "text":
+            "The eighth <code>rect</code> should have an <code>x</code> value of 210.",
+          "testString":
+            "assert($('rect').eq(7).attr('x') == '210', 'The eighth <code>rect</code> should have an <code>x</code> value of 210.');"
         },
         {
-          "text": "The ninth <code>rect</code> should have an <code>x</code> value of 240.",
-          "testString": "assert($('rect').eq(8).attr('x') == '240', 'The ninth <code>rect</code> should have an <code>x</code> value of 240.');"
+          "text":
+            "The ninth <code>rect</code> should have an <code>x</code> value of 240.",
+          "testString":
+            "assert($('rect').eq(8).attr('x') == '240', 'The ninth <code>rect</code> should have an <code>x</code> value of 240.');"
         }
       ],
       "solutions": [],
@@ -1024,47 +1147,65 @@
       ],
       "description": [
         "The height of each bar can be set to the value of the data point in the array, similar to how the <code>x</code> value was set dynamically.",
-        "<blockquote>selection.attr(\"property\", (d, i) => {<br>  /* <br>  * d is the data point value<br>  * i is the index of the data point in the array<br>  */<br>})</blockquote>",
+        "<blockquote>selection.attr(\"property\", (d, i) => {<br>&nbsp;&nbsp;/* <br>&nbsp;&nbsp;* d is the data point value<br>&nbsp;&nbsp;* i is the index of the data point in the array<br>&nbsp;&nbsp;*/<br>})</blockquote>",
         "<hr>",
         "Change the callback function for the <code>height</code> attribute to return the data value times 3.",
         "<strong>Note</strong><br>Remember that multiplying all data points by the same constant scales the data (like zooming in). It helps to see the differences between bar values in this example."
       ],
       "tests": [
         {
-          "text": "The first <code>rect</code> should have a <code>height</code> of 36.",
-          "testString": "assert($('rect').eq(0).attr('height') == '36', 'The first <code>rect</code> should have a <code>height</code> of 36.');"
+          "text":
+            "The first <code>rect</code> should have a <code>height</code> of 36.",
+          "testString":
+            "assert($('rect').eq(0).attr('height') == '36', 'The first <code>rect</code> should have a <code>height</code> of 36.');"
         },
         {
-          "text": "The second <code>rect</code> should have a <code>height</code> of 93.",
-          "testString": "assert($('rect').eq(1).attr('height') == '93', 'The second <code>rect</code> should have a <code>height</code> of 93.');"
+          "text":
+            "The second <code>rect</code> should have a <code>height</code> of 93.",
+          "testString":
+            "assert($('rect').eq(1).attr('height') == '93', 'The second <code>rect</code> should have a <code>height</code> of 93.');"
         },
         {
-          "text": "The third <code>rect</code> should have a <code>height</code> of 66.",
-          "testString": "assert($('rect').eq(2).attr('height') == '66', 'The third <code>rect</code> should have a <code>height</code> of 66.');"
+          "text":
+            "The third <code>rect</code> should have a <code>height</code> of 66.",
+          "testString":
+            "assert($('rect').eq(2).attr('height') == '66', 'The third <code>rect</code> should have a <code>height</code> of 66.');"
         },
         {
-          "text": "The fourth <code>rect</code> should have a <code>height</code> of 51.",
-          "testString": "assert($('rect').eq(3).attr('height') == '51', 'The fourth <code>rect</code> should have a <code>height</code> of 51.');"
+          "text":
+            "The fourth <code>rect</code> should have a <code>height</code> of 51.",
+          "testString":
+            "assert($('rect').eq(3).attr('height') == '51', 'The fourth <code>rect</code> should have a <code>height</code> of 51.');"
         },
         {
-          "text": "The fifth <code>rect</code> should have a <code>height</code> of 75.",
-          "testString": "assert($('rect').eq(4).attr('height') == '75', 'The fifth <code>rect</code> should have a <code>height</code> of 75.');"
+          "text":
+            "The fifth <code>rect</code> should have a <code>height</code> of 75.",
+          "testString":
+            "assert($('rect').eq(4).attr('height') == '75', 'The fifth <code>rect</code> should have a <code>height</code> of 75.');"
         },
         {
-          "text": "The sixth <code>rect</code> should have a <code>height</code> of 54.",
-          "testString": "assert($('rect').eq(5).attr('height') == '54', 'The sixth <code>rect</code> should have a <code>height</code> of 54.');"
+          "text":
+            "The sixth <code>rect</code> should have a <code>height</code> of 54.",
+          "testString":
+            "assert($('rect').eq(5).attr('height') == '54', 'The sixth <code>rect</code> should have a <code>height</code> of 54.');"
         },
         {
-          "text": "The seventh <code>rect</code> should have a <code>height</code> of 87.",
-          "testString": "assert($('rect').eq(6).attr('height') == '87', 'The seventh <code>rect</code> should have a <code>height</code> of 87.');"
+          "text":
+            "The seventh <code>rect</code> should have a <code>height</code> of 87.",
+          "testString":
+            "assert($('rect').eq(6).attr('height') == '87', 'The seventh <code>rect</code> should have a <code>height</code> of 87.');"
         },
         {
-          "text": "The eighth <code>rect</code> should have a <code>height</code> of 42.",
-          "testString": "assert($('rect').eq(7).attr('height') == '42', 'The eighth <code>rect</code> should have a <code>height</code> of 42.');"
+          "text":
+            "The eighth <code>rect</code> should have a <code>height</code> of 42.",
+          "testString":
+            "assert($('rect').eq(7).attr('height') == '42', 'The eighth <code>rect</code> should have a <code>height</code> of 42.');"
         },
         {
-          "text": "The ninth <code>rect</code> should have a <code>height</code> of 27.",
-          "testString": "assert($('rect').eq(8).attr('height') == '27', 'The ninth <code>rect</code> should have a <code>height</code> of 27.');"
+          "text":
+            "The ninth <code>rect</code> should have a <code>height</code> of 27.",
+          "testString":
+            "assert($('rect').eq(8).attr('height') == '27', 'The ninth <code>rect</code> should have a <code>height</code> of 27.');"
         }
       ],
       "solutions": [],
@@ -1132,40 +1273,58 @@
       ],
       "tests": [
         {
-          "text": "The first <code>rect</code> should have a <code>y</code> value of 64.",
-          "testString": "assert($('rect').eq(0).attr('y') == h - (dataset[0] * 3), 'The first <code>rect</code> should have a <code>y</code> value of 64.');"
+          "text":
+            "The first <code>rect</code> should have a <code>y</code> value of 64.",
+          "testString":
+            "assert($('rect').eq(0).attr('y') == h - (dataset[0] * 3), 'The first <code>rect</code> should have a <code>y</code> value of 64.');"
         },
         {
-          "text": "The second <code>rect</code> should have a <code>y</code> value of 7.",
-          "testString": "assert($('rect').eq(1).attr('y') == h - (dataset[1] * 3), 'The second <code>rect</code> should have a <code>y</code> value of 7.');"
+          "text":
+            "The second <code>rect</code> should have a <code>y</code> value of 7.",
+          "testString":
+            "assert($('rect').eq(1).attr('y') == h - (dataset[1] * 3), 'The second <code>rect</code> should have a <code>y</code> value of 7.');"
         },
         {
-          "text": "The third <code>rect</code> should have a <code>y</code> value of 34.",
-          "testString": "assert($('rect').eq(2).attr('y') == h - (dataset[2] * 3), 'The third <code>rect</code> should have a <code>y</code> value of 34.');"
+          "text":
+            "The third <code>rect</code> should have a <code>y</code> value of 34.",
+          "testString":
+            "assert($('rect').eq(2).attr('y') == h - (dataset[2] * 3), 'The third <code>rect</code> should have a <code>y</code> value of 34.');"
         },
         {
-          "text": "The fourth <code>rect</code> should have a <code>y</code> value of 49.",
-          "testString": "assert($('rect').eq(3).attr('y') == h - (dataset[3] * 3), 'The fourth <code>rect</code> should have a <code>y</code> value of 49.');"
+          "text":
+            "The fourth <code>rect</code> should have a <code>y</code> value of 49.",
+          "testString":
+            "assert($('rect').eq(3).attr('y') == h - (dataset[3] * 3), 'The fourth <code>rect</code> should have a <code>y</code> value of 49.');"
         },
         {
-          "text": "The fifth <code>rect</code> should have a <code>y</code> value of 25.",
-          "testString": "assert($('rect').eq(4).attr('y') == h - (dataset[4] * 3), 'The fifth <code>rect</code> should have a <code>y</code> value of 25.');"
+          "text":
+            "The fifth <code>rect</code> should have a <code>y</code> value of 25.",
+          "testString":
+            "assert($('rect').eq(4).attr('y') == h - (dataset[4] * 3), 'The fifth <code>rect</code> should have a <code>y</code> value of 25.');"
         },
         {
-          "text": "The sixth <code>rect</code> should have a <code>y</code> value of 46.",
-          "testString": "assert($('rect').eq(5).attr('y') == h - (dataset[5] * 3), 'The sixth <code>rect</code> should have a <code>y</code> value of 46.');"
+          "text":
+            "The sixth <code>rect</code> should have a <code>y</code> value of 46.",
+          "testString":
+            "assert($('rect').eq(5).attr('y') == h - (dataset[5] * 3), 'The sixth <code>rect</code> should have a <code>y</code> value of 46.');"
         },
         {
-          "text": "The seventh <code>rect</code> should have a <code>y</code> value of 13.",
-          "testString": "assert($('rect').eq(6).attr('y') == h - (dataset[6] * 3), 'The seventh <code>rect</code> should have a <code>y</code> value of 13.');"
+          "text":
+            "The seventh <code>rect</code> should have a <code>y</code> value of 13.",
+          "testString":
+            "assert($('rect').eq(6).attr('y') == h - (dataset[6] * 3), 'The seventh <code>rect</code> should have a <code>y</code> value of 13.');"
         },
         {
-          "text": "The eighth <code>rect</code> should have a <code>y</code> value of 58.",
-          "testString": "assert($('rect').eq(7).attr('y') == h - (dataset[7] * 3), 'The eighth <code>rect</code> should have a <code>y</code> value of 58.');"
+          "text":
+            "The eighth <code>rect</code> should have a <code>y</code> value of 58.",
+          "testString":
+            "assert($('rect').eq(7).attr('y') == h - (dataset[7] * 3), 'The eighth <code>rect</code> should have a <code>y</code> value of 58.');"
         },
         {
-          "text": "The ninth <code>rect</code> should have a <code>y</code> value of 73.",
-          "testString": "assert($('rect').eq(8).attr('y') == h - (dataset[8] * 3), 'The ninth <code>rect</code> should have a <code>y</code> value of 73.');"
+          "text":
+            "The ninth <code>rect</code> should have a <code>y</code> value of 73.",
+          "testString":
+            "assert($('rect').eq(8).attr('y') == h - (dataset[8] * 3), 'The ninth <code>rect</code> should have a <code>y</code> value of 73.');"
         }
       ],
       "solutions": [],
@@ -1230,7 +1389,8 @@
       "tests": [
         {
           "text": "The bars should all have a <code>fill</code> color of navy.",
-          "testString": "assert($('rect').css('fill') == \"rgb(0, 0, 128)\", 'The bars should all have a <code>fill</code> color of navy.');"
+          "testString":
+            "assert($('rect').css('fill') == \"rgb(0, 0, 128)\", 'The bars should all have a <code>fill</code> color of navy.');"
         }
       ],
       "solutions": [],
@@ -1295,40 +1455,58 @@
       ],
       "tests": [
         {
-          "text": "The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.",
-          "testString": "assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61', 'The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.');"
+          "text":
+            "The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.",
+          "testString":
+            "assert($('text').eq(0).text() == '12' && $('text').eq(0).attr('y') == '61', 'The first <code>text</code> element should have a label of 12 and a <code>y</code> value of 61.');"
         },
         {
-          "text": "The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.",
-          "testString": "assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4', 'The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.');"
+          "text":
+            "The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.",
+          "testString":
+            "assert($('text').eq(1).text() == '31' && $('text').eq(1).attr('y') == '4', 'The second <code>text</code> element should have a label of 31 and a <code>y</code> value of 4.');"
         },
         {
-          "text": "The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.",
-          "testString": "assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31', 'The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.');"
+          "text":
+            "The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.",
+          "testString":
+            "assert($('text').eq(2).text() == '22' && $('text').eq(2).attr('y') == '31', 'The third <code>text</code> element should have a label of 22 and a <code>y</code> value of 31.');"
         },
         {
-          "text": "The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.",
-          "testString": "assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46', 'The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.');"
+          "text":
+            "The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.",
+          "testString":
+            "assert($('text').eq(3).text() == '17' && $('text').eq(3).attr('y') == '46', 'The fourth <code>text</code> element should have a label of 17 and a <code>y</code> value of 46.');"
         },
         {
-          "text": "The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.",
-          "testString": "assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22', 'The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.');"
+          "text":
+            "The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.",
+          "testString":
+            "assert($('text').eq(4).text() == '25' && $('text').eq(4).attr('y') == '22', 'The fifth <code>text</code> element should have a label of 25 and a <code>y</code> value of 22.');"
         },
         {
-          "text": "The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.",
-          "testString": "assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43', 'The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.');"
+          "text":
+            "The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.",
+          "testString":
+            "assert($('text').eq(5).text() == '18' && $('text').eq(5).attr('y') == '43', 'The sixth <code>text</code> element should have a label of 18 and a <code>y</code> value of 43.');"
         },
         {
-          "text": "The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.",
-          "testString": "assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10', 'The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.');"
+          "text":
+            "The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.",
+          "testString":
+            "assert($('text').eq(6).text() == '29' && $('text').eq(6).attr('y') == '10', 'The seventh <code>text</code> element should have a label of 29 and a <code>y</code> value of 10.');"
         },
         {
-          "text": "The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.",
-          "testString": "assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55', 'The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.');"
+          "text":
+            "The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.",
+          "testString":
+            "assert($('text').eq(7).text() == '14' && $('text').eq(7).attr('y') == '55', 'The eighth <code>text</code> element should have a label of 14 and a <code>y</code> value of 55.');"
         },
         {
-          "text": "The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.",
-          "testString": "assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70', 'The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.');"
+          "text":
+            "The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.",
+          "testString":
+            "assert($('text').eq(8).text() == '9' && $('text').eq(8).attr('y') == '70', 'The ninth <code>text</code> element should have a label of 9 and a <code>y</code> value of 70.');"
         }
       ],
       "solutions": [],
@@ -1396,12 +1574,16 @@
       ],
       "tests": [
         {
-          "text": "The labels should all have a <code>fill</code> color of red.",
-          "testString": "assert($('text').css('fill') == 'rgb(255, 0, 0)', 'The labels should all have a <code>fill</code> color of red.');"
+          "text":
+            "The labels should all have a <code>fill</code> color of red.",
+          "testString":
+            "assert($('text').css('fill') == 'rgb(255, 0, 0)', 'The labels should all have a <code>fill</code> color of red.');"
         },
         {
-          "text": "The labels should all have a <code>font-size</code> of 25 pixels.",
-          "testString": "assert($('text').css('font-size') == '25px', 'The labels should all have a <code>font-size</code> of 25 pixels.');"
+          "text":
+            "The labels should all have a <code>font-size</code> of 25 pixels.",
+          "testString":
+            "assert($('text').css('font-size') == '25px', 'The labels should all have a <code>font-size</code> of 25 pixels.');"
         }
       ],
       "solutions": [],
@@ -1473,8 +1655,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>rect</code> elements should have a class of <code>bar</code>.",
-          "testString": "assert($('rect').attr('class') == \"bar\", 'Your <code>rect</code> elements should have a class of <code>bar</code>.');"
+          "text":
+            "Your <code>rect</code> elements should have a class of <code>bar</code>.",
+          "testString":
+            "assert($('rect').attr('class') == \"bar\", 'Your <code>rect</code> elements should have a class of <code>bar</code>.');"
         }
       ],
       "solutions": [],
@@ -1553,43 +1737,62 @@
       "tests": [
         {
           "text": "Your code should have 9 <code>title</code> elements.",
-          "testString": "assert($('title').length == 9, 'Your code should have 9 <code>title</code> elements.');"
+          "testString":
+            "assert($('title').length == 9, 'Your code should have 9 <code>title</code> elements.');"
         },
         {
-          "text": "The first <code>title</code> element should have tooltip text of 12.",
-          "testString": "assert($('title').eq(0).text() == '12', 'The first <code>title</code> element should have tooltip text of 12.');"
+          "text":
+            "The first <code>title</code> element should have tooltip text of 12.",
+          "testString":
+            "assert($('title').eq(0).text() == '12', 'The first <code>title</code> element should have tooltip text of 12.');"
         },
         {
-          "text": "The second <code>title</code> element should have tooltip text of 31.",
-          "testString": "assert($('title').eq(1).text() == '31', 'The second <code>title</code> element should have tooltip text of 31.');"
+          "text":
+            "The second <code>title</code> element should have tooltip text of 31.",
+          "testString":
+            "assert($('title').eq(1).text() == '31', 'The second <code>title</code> element should have tooltip text of 31.');"
         },
         {
-          "text": "The third <code>title</code> element should have tooltip text of 22.",
-          "testString": "assert($('title').eq(2).text() == '22', 'The third <code>title</code> element should have tooltip text of 22.');"
+          "text":
+            "The third <code>title</code> element should have tooltip text of 22.",
+          "testString":
+            "assert($('title').eq(2).text() == '22', 'The third <code>title</code> element should have tooltip text of 22.');"
         },
         {
-          "text": "The fourth <code>title</code> element should have tooltip text of 17.",
-          "testString": "assert($('title').eq(3).text() == '17', 'The fourth <code>title</code> element should have tooltip text of 17.');"
+          "text":
+            "The fourth <code>title</code> element should have tooltip text of 17.",
+          "testString":
+            "assert($('title').eq(3).text() == '17', 'The fourth <code>title</code> element should have tooltip text of 17.');"
         },
         {
-          "text": "The fifth <code>title</code> element should have tooltip text of 25.",
-          "testString": "assert($('title').eq(4).text() == '25', 'The fifth <code>title</code> element should have tooltip text of 25.');"
+          "text":
+            "The fifth <code>title</code> element should have tooltip text of 25.",
+          "testString":
+            "assert($('title').eq(4).text() == '25', 'The fifth <code>title</code> element should have tooltip text of 25.');"
         },
         {
-          "text": "The sixth <code>title</code> element should have tooltip text of 18.",
-          "testString": "assert($('title').eq(5).text() == '18', 'The sixth <code>title</code> element should have tooltip text of 18.');"
+          "text":
+            "The sixth <code>title</code> element should have tooltip text of 18.",
+          "testString":
+            "assert($('title').eq(5).text() == '18', 'The sixth <code>title</code> element should have tooltip text of 18.');"
         },
         {
-          "text": "The seventh <code>title</code> element should have tooltip text of 29.",
-          "testString": "assert($('title').eq(6).text() == '29', 'The seventh <code>title</code> element should have tooltip text of 29.');"
+          "text":
+            "The seventh <code>title</code> element should have tooltip text of 29.",
+          "testString":
+            "assert($('title').eq(6).text() == '29', 'The seventh <code>title</code> element should have tooltip text of 29.');"
         },
         {
-          "text": "The eighth <code>title</code> element should have tooltip text of 14.",
-          "testString": "assert($('title').eq(7).text() == '14', 'The eighth <code>title</code> element should have tooltip text of 14.');"
+          "text":
+            "The eighth <code>title</code> element should have tooltip text of 14.",
+          "testString":
+            "assert($('title').eq(7).text() == '14', 'The eighth <code>title</code> element should have tooltip text of 14.');"
         },
         {
-          "text": "The ninth <code>title</code> element should have tooltip text of 9.",
-          "testString": "assert($('title').eq(8).text() == '9', 'The ninth <code>title</code> element should have tooltip text of 9.');"
+          "text":
+            "The ninth <code>title</code> element should have tooltip text of 9.",
+          "testString":
+            "assert($('title').eq(8).text() == '9', 'The ninth <code>title</code> element should have tooltip text of 9.');"
         }
       ],
       "solutions": [],
@@ -1669,7 +1872,8 @@
       "tests": [
         {
           "text": "Your code should have 10 <code>circle</code> elements.",
-          "testString": "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
+          "testString":
+            "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
         }
       ],
       "solutions": [],
@@ -1741,47 +1945,68 @@
       "tests": [
         {
           "text": "Your code should have 10 <code>circle</code> elements.",
-          "testString": "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
+          "testString":
+            "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
         },
         {
-          "text": "The first <code>circle</code> element should have a <code>cx</code> value of 34, a <code>cy</code> value of 422, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(0).attr('cx') == '34' && $('circle').eq(0).attr('cy') == '422' && $('circle').eq(0).attr('r') == '5', 'The first <code>circle</code> element should have a <code>cx</code> value of 34, a <code>cy</code> value of 422, and an <code>r</code> value of 5.');"
+          "text":
+            "The first <code>circle</code> element should have a <code>cx</code> value of 34, a <code>cy</code> value of 422, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(0).attr('cx') == '34' && $('circle').eq(0).attr('cy') == '422' && $('circle').eq(0).attr('r') == '5', 'The first <code>circle</code> element should have a <code>cx</code> value of 34, a <code>cy</code> value of 422, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The second <code>circle</code> element should have a <code>cx</code> value of 109, a <code>cy</code> value of 220, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(1).attr('cx') == '109' && $('circle').eq(1).attr('cy') == '220' && $('circle').eq(1).attr('r') == '5', 'The second <code>circle</code> element should have a <code>cx</code> value of 109, a <code>cy</code> value of 220, and an <code>r</code> value of 5.');"
+          "text":
+            "The second <code>circle</code> element should have a <code>cx</code> value of 109, a <code>cy</code> value of 220, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(1).attr('cx') == '109' && $('circle').eq(1).attr('cy') == '220' && $('circle').eq(1).attr('r') == '5', 'The second <code>circle</code> element should have a <code>cx</code> value of 109, a <code>cy</code> value of 220, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The third <code>circle</code> element should have a <code>cx</code> value of 310, a <code>cy</code> value of 380, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(2).attr('cx') == '310' && $('circle').eq(2).attr('cy') == '380' && $('circle').eq(2).attr('r') == '5', 'The third <code>circle</code> element should have a <code>cx</code> value of 310, a <code>cy</code> value of 380, and an <code>r</code> value of 5.');"
+          "text":
+            "The third <code>circle</code> element should have a <code>cx</code> value of 310, a <code>cy</code> value of 380, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(2).attr('cx') == '310' && $('circle').eq(2).attr('cy') == '380' && $('circle').eq(2).attr('r') == '5', 'The third <code>circle</code> element should have a <code>cx</code> value of 310, a <code>cy</code> value of 380, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The fourth <code>circle</code> element should have a <code>cx</code> value of 79, a <code>cy</code> value of 89, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(3).attr('cx') == '79' && $('circle').eq(3).attr('cy') == '89' && $('circle').eq(3).attr('r') == '5', 'The fourth <code>circle</code> element should have a <code>cx</code> value of 79, a <code>cy</code> value of 89, and an <code>r</code> value of 5.');"
+          "text":
+            "The fourth <code>circle</code> element should have a <code>cx</code> value of 79, a <code>cy</code> value of 89, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(3).attr('cx') == '79' && $('circle').eq(3).attr('cy') == '89' && $('circle').eq(3).attr('r') == '5', 'The fourth <code>circle</code> element should have a <code>cx</code> value of 79, a <code>cy</code> value of 89, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The fifth <code>circle</code> element should have a <code>cx</code> value of 420, a <code>cy</code> value of 280, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(4).attr('cx') == '420' && $('circle').eq(4).attr('cy') == '280' && $('circle').eq(4).attr('r') == '5', 'The fifth <code>circle</code> element should have a <code>cx</code> value of 420, a <code>cy</code> value of 280, and an <code>r</code> value of 5.');"
+          "text":
+            "The fifth <code>circle</code> element should have a <code>cx</code> value of 420, a <code>cy</code> value of 280, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(4).attr('cx') == '420' && $('circle').eq(4).attr('cy') == '280' && $('circle').eq(4).attr('r') == '5', 'The fifth <code>circle</code> element should have a <code>cx</code> value of 420, a <code>cy</code> value of 280, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The sixth <code>circle</code> element should have a <code>cx</code> value of 233, a <code>cy</code> value of 355, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(5).attr('cx') == '233' && $('circle').eq(5).attr('cy') == '355' && $('circle').eq(5).attr('r') == '5', 'The sixth <code>circle</code> element should have a <code>cx</code> value of 233, a <code>cy</code> value of 355, and an <code>r</code> value of 5.');"
+          "text":
+            "The sixth <code>circle</code> element should have a <code>cx</code> value of 233, a <code>cy</code> value of 355, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(5).attr('cx') == '233' && $('circle').eq(5).attr('cy') == '355' && $('circle').eq(5).attr('r') == '5', 'The sixth <code>circle</code> element should have a <code>cx</code> value of 233, a <code>cy</code> value of 355, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The seventh <code>circle</code> element should have a <code>cx</code> value of 333, a <code>cy</code> value of 404, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(6).attr('cx') == '333' && $('circle').eq(6).attr('cy') == '404' && $('circle').eq(6).attr('r') == '5', 'The seventh <code>circle</code> element should have a <code>cx</code> value of 333, a <code>cy</code> value of 404, and an <code>r</code> value of 5.');"
+          "text":
+            "The seventh <code>circle</code> element should have a <code>cx</code> value of 333, a <code>cy</code> value of 404, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(6).attr('cx') == '333' && $('circle').eq(6).attr('cy') == '404' && $('circle').eq(6).attr('r') == '5', 'The seventh <code>circle</code> element should have a <code>cx</code> value of 333, a <code>cy</code> value of 404, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The eighth <code>circle</code> element should have a <code>cx</code> value of 222, a <code>cy</code> value of 167, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(7).attr('cx') == '222' && $('circle').eq(7).attr('cy') == '167' && $('circle').eq(7).attr('r') == '5', 'The eighth <code>circle</code> element should have a <code>cx</code> value of 222, a <code>cy</code> value of 167, and an <code>r</code> value of 5.');"
+          "text":
+            "The eighth <code>circle</code> element should have a <code>cx</code> value of 222, a <code>cy</code> value of 167, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(7).attr('cx') == '222' && $('circle').eq(7).attr('cy') == '167' && $('circle').eq(7).attr('r') == '5', 'The eighth <code>circle</code> element should have a <code>cx</code> value of 222, a <code>cy</code> value of 167, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The ninth <code>circle</code> element should have a <code>cx</code> value of 78, a <code>cy</code> value of 180, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(8).attr('cx') == '78' && $('circle').eq(8).attr('cy') == '180' && $('circle').eq(8).attr('r') == '5', 'The ninth <code>circle</code> element should have a <code>cx</code> value of 78, a <code>cy</code> value of 180, and an <code>r</code> value of 5.');"
+          "text":
+            "The ninth <code>circle</code> element should have a <code>cx</code> value of 78, a <code>cy</code> value of 180, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(8).attr('cx') == '78' && $('circle').eq(8).attr('cy') == '180' && $('circle').eq(8).attr('r') == '5', 'The ninth <code>circle</code> element should have a <code>cx</code> value of 78, a <code>cy</code> value of 180, and an <code>r</code> value of 5.');"
         },
         {
-          "text": "The tenth <code>circle</code> element should have a <code>cx</code> value of 21, a <code>cy</code> value of 377, and an <code>r</code> value of 5.",
-          "testString": "assert($('circle').eq(9).attr('cx') == '21' && $('circle').eq(9).attr('cy') == '377' && $('circle').eq(9).attr('r') == '5', 'The tenth <code>circle</code> element should have a <code>cx</code> value of 21, a <code>cy</code> value of 377, and an <code>r</code> value of 5.');"
+          "text":
+            "The tenth <code>circle</code> element should have a <code>cx</code> value of 21, a <code>cy</code> value of 377, and an <code>r</code> value of 5.",
+          "testString":
+            "assert($('circle').eq(9).attr('cx') == '21' && $('circle').eq(9).attr('cy') == '377' && $('circle').eq(9).attr('r') == '5', 'The tenth <code>circle</code> element should have a <code>cx</code> value of 21, a <code>cy</code> value of 377, and an <code>r</code> value of 5.');"
         }
       ],
       "solutions": [],
@@ -1857,47 +2082,68 @@
       "tests": [
         {
           "text": "Your code should have 10 <code>text</code> elements.",
-          "testString": "assert($('text').length == 10, 'Your code should have 10 <code>text</code> elements.');"
+          "testString":
+            "assert($('text').length == 10, 'Your code should have 10 <code>text</code> elements.');"
         },
         {
-          "text": "The first label should have text of \"34, 78\", an <code>x</code> value of 39, and a <code>y</code> value of 422.",
-          "testString": "assert($('text').eq(0).text() == '34, 78' && $('text').eq(0).attr('x') == '39' && $('text').eq(0).attr('y') == '422', 'The first label should have text of \"34, 78\", an <code>x</code> value of 39, and a <code>y</code> value of 422.');"
+          "text":
+            "The first label should have text of \"34, 78\", an <code>x</code> value of 39, and a <code>y</code> value of 422.",
+          "testString":
+            "assert($('text').eq(0).text() == '34, 78' && $('text').eq(0).attr('x') == '39' && $('text').eq(0).attr('y') == '422', 'The first label should have text of \"34, 78\", an <code>x</code> value of 39, and a <code>y</code> value of 422.');"
         },
         {
-          "text": "The second label should have text of \"109, 280\", an <code>x</code> value of 114, and a <code>y</code> value of 220.",
-          "testString": "assert($('text').eq(1).text() == '109, 280' && $('text').eq(1).attr('x') == '114' && $('text').eq(1).attr('y') == '220', 'The second label should have text of \"109, 280\", an <code>x</code> value of 114, and a <code>y</code> value of 220.');"
+          "text":
+            "The second label should have text of \"109, 280\", an <code>x</code> value of 114, and a <code>y</code> value of 220.",
+          "testString":
+            "assert($('text').eq(1).text() == '109, 280' && $('text').eq(1).attr('x') == '114' && $('text').eq(1).attr('y') == '220', 'The second label should have text of \"109, 280\", an <code>x</code> value of 114, and a <code>y</code> value of 220.');"
         },
         {
-          "text": "The third label should have text of \"310, 120\", an <code>x</code> value of 315, and a <code>y</code> value of 380.",
-          "testString": "assert($('text').eq(2).text() == '310, 120' && $('text').eq(2).attr('x') == '315' && $('text').eq(2).attr('y') == '380', 'The third label should have text of \"310, 120\", an <code>x</code> value of 315, and a <code>y</code> value of 380.');"
+          "text":
+            "The third label should have text of \"310, 120\", an <code>x</code> value of 315, and a <code>y</code> value of 380.",
+          "testString":
+            "assert($('text').eq(2).text() == '310, 120' && $('text').eq(2).attr('x') == '315' && $('text').eq(2).attr('y') == '380', 'The third label should have text of \"310, 120\", an <code>x</code> value of 315, and a <code>y</code> value of 380.');"
         },
         {
-          "text": "The fourth label should have text of \"79, 411\", an <code>x</code> value of 84, and a <code>y</code> value of 89.",
-          "testString": "assert($('text').eq(3).text() == '79, 411' && $('text').eq(3).attr('x') == '84' && $('text').eq(3).attr('y') == '89', 'The fourth label should have text of \"79, 411\", an <code>x</code> value of 84, and a <code>y</code> value of 89.');"
+          "text":
+            "The fourth label should have text of \"79, 411\", an <code>x</code> value of 84, and a <code>y</code> value of 89.",
+          "testString":
+            "assert($('text').eq(3).text() == '79, 411' && $('text').eq(3).attr('x') == '84' && $('text').eq(3).attr('y') == '89', 'The fourth label should have text of \"79, 411\", an <code>x</code> value of 84, and a <code>y</code> value of 89.');"
         },
         {
-          "text": "The fifth label should have text of \"420, 220\", an <code>x</code> value of 425, and a <code>y</code> value of 280.",
-          "testString": "assert($('text').eq(4).text() == '420, 220' && $('text').eq(4).attr('x') == '425' && $('text').eq(4).attr('y') == '280', 'The fifth label should have text of \"420, 220\", an <code>x</code> value of 425, and a <code>y</code> value of 280.');"
+          "text":
+            "The fifth label should have text of \"420, 220\", an <code>x</code> value of 425, and a <code>y</code> value of 280.",
+          "testString":
+            "assert($('text').eq(4).text() == '420, 220' && $('text').eq(4).attr('x') == '425' && $('text').eq(4).attr('y') == '280', 'The fifth label should have text of \"420, 220\", an <code>x</code> value of 425, and a <code>y</code> value of 280.');"
         },
         {
-          "text": "The sixth label should have text of \"233, 145\", an <code>x</code> value of 238, and a <code>y</code> value of 355.",
-          "testString": "assert($('text').eq(5).text() == '233, 145' && $('text').eq(5).attr('x') == '238' && $('text').eq(5).attr('y') == '355', 'The sixth label should have text of \"233, 145\", an <code>x</code> value of 238, and a <code>y</code> value of 355.');"
+          "text":
+            "The sixth label should have text of \"233, 145\", an <code>x</code> value of 238, and a <code>y</code> value of 355.",
+          "testString":
+            "assert($('text').eq(5).text() == '233, 145' && $('text').eq(5).attr('x') == '238' && $('text').eq(5).attr('y') == '355', 'The sixth label should have text of \"233, 145\", an <code>x</code> value of 238, and a <code>y</code> value of 355.');"
         },
         {
-          "text": "The seventh label should have text of \"333, 96\", an <code>x</code> value of 338, and a <code>y</code> value of 404.",
-          "testString": "assert($('text').eq(6).text() == '333, 96' && $('text').eq(6).attr('x') == '338' && $('text').eq(6).attr('y') == '404', 'The seventh label should have text of \"333, 96\", an <code>x</code> value of 338, and a <code>y</code> value of 404.');"
+          "text":
+            "The seventh label should have text of \"333, 96\", an <code>x</code> value of 338, and a <code>y</code> value of 404.",
+          "testString":
+            "assert($('text').eq(6).text() == '333, 96' && $('text').eq(6).attr('x') == '338' && $('text').eq(6).attr('y') == '404', 'The seventh label should have text of \"333, 96\", an <code>x</code> value of 338, and a <code>y</code> value of 404.');"
         },
         {
-          "text": "The eighth label should have text of \"222, 333\", an <code>x</code> value of 227, and a <code>y</code> value of 167.",
-          "testString": "assert($('text').eq(7).text() == '222, 333' && $('text').eq(7).attr('x') == '227' && $('text').eq(7).attr('y') == '167', 'The eighth label should have text of \"222, 333\", an <code>x</code> value of 227, and a <code>y</code> value of 167.');"
+          "text":
+            "The eighth label should have text of \"222, 333\", an <code>x</code> value of 227, and a <code>y</code> value of 167.",
+          "testString":
+            "assert($('text').eq(7).text() == '222, 333' && $('text').eq(7).attr('x') == '227' && $('text').eq(7).attr('y') == '167', 'The eighth label should have text of \"222, 333\", an <code>x</code> value of 227, and a <code>y</code> value of 167.');"
         },
         {
-          "text": "The ninth label should have text of \"78, 320\", an <code>x</code> value of 83, and a <code>y</code> value of 180.",
-          "testString": "assert($('text').eq(8).text() == '78, 320' && $('text').eq(8).attr('x') == '83' && $('text').eq(8).attr('y') == '180', 'The ninth label should have text of \"78, 320\", an <code>x</code> value of 83, and a <code>y</code> value of 180.');"
+          "text":
+            "The ninth label should have text of \"78, 320\", an <code>x</code> value of 83, and a <code>y</code> value of 180.",
+          "testString":
+            "assert($('text').eq(8).text() == '78, 320' && $('text').eq(8).attr('x') == '83' && $('text').eq(8).attr('y') == '180', 'The ninth label should have text of \"78, 320\", an <code>x</code> value of 83, and a <code>y</code> value of 180.');"
         },
         {
-          "text": "The tenth label should have text of \"21, 123\", an <code>x</code> value of 26, and a <code>y</code> value of 377.",
-          "testString": "assert($('text').eq(9).text() == '21, 123' && $('text').eq(9).attr('x') == '26' && $('text').eq(9).attr('y') == '377', 'The tenth label should have text of \"21, 123\", an <code>x</code> value of 26, and a <code>y</code> value of 377.');"
+          "text":
+            "The tenth label should have text of \"21, 123\", an <code>x</code> value of 26, and a <code>y</code> value of 377.",
+          "testString":
+            "assert($('text').eq(9).text() == '21, 123' && $('text').eq(9).attr('x') == '26' && $('text').eq(9).attr('y') == '377', 'The tenth label should have text of \"21, 123\", an <code>x</code> value of 26, and a <code>y</code> value of 377.');"
         }
       ],
       "solutions": [],
@@ -1982,15 +2228,19 @@
       "tests": [
         {
           "text": "The text in the <code>h2</code> should be 50.",
-          "testString": "assert($('h2').text() == '50', 'The text in the <code>h2</code> should be 50.');"
+          "testString":
+            "assert($('h2').text() == '50', 'The text in the <code>h2</code> should be 50.');"
         },
         {
           "text": "Your code should use the <code>scaleLinear()</code> method.",
-          "testString": "assert(code.match(/\\.scaleLinear/g), 'Your code should use the <code>scaleLinear()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.scaleLinear/g), 'Your code should use the <code>scaleLinear()</code> method.');"
         },
         {
-          "text": "The <code>output</code> variable should call <code>scale</code> with an argument of 50.",
-          "testString": "assert(output == 50 && code.match(/scale\\(\\s*?50\\s*?\\)/g), 'The <code>output</code> variable should call <code>scale</code> with an argument of 50.');"
+          "text":
+            "The <code>output</code> variable should call <code>scale</code> with an argument of 50.",
+          "testString":
+            "assert(output == 50 && code.match(/scale\\(\\s*?50\\s*?\\)/g), 'The <code>output</code> variable should call <code>scale</code> with an argument of 50.');"
         }
       ],
       "solutions": [],
@@ -2047,23 +2297,30 @@
       "tests": [
         {
           "text": "Your code should use the <code>domain()</code> method.",
-          "testString": "assert(code.match(/\\.domain/g), 'Your code should use the <code>domain()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.domain/g), 'Your code should use the <code>domain()</code> method.');"
         },
         {
-          "text": "The <code>domain()</code> of the scale should be set to <code>[250, 500]</code>.",
-          "testString": "assert(JSON.stringify(scale.domain()) == JSON.stringify([250, 500]), 'The <code>domain()</code> of the scale should be set to <code>[250, 500]</code>.');"
+          "text":
+            "The <code>domain()</code> of the scale should be set to <code>[250, 500]</code>.",
+          "testString":
+            "assert(JSON.stringify(scale.domain()) == JSON.stringify([250, 500]), 'The <code>domain()</code> of the scale should be set to <code>[250, 500]</code>.');"
         },
         {
           "text": "Your code should use the <code>range()</code> method.",
-          "testString": "assert(code.match(/\\.range/g), 'Your code should use the <code>range()</code> method.');"
+          "testString":
+            "assert(code.match(/\\.range/g), 'Your code should use the <code>range()</code> method.');"
         },
         {
-          "text": "The <code>range()</code> of the scale should be set to <code>[10, 150]</code>.",
-          "testString": "assert(JSON.stringify(scale.range()) == JSON.stringify([10, 150]), 'The <code>range()</code> of the scale should be set to <code>[10, 150]</code>.');"
+          "text":
+            "The <code>range()</code> of the scale should be set to <code>[10, 150]</code>.",
+          "testString":
+            "assert(JSON.stringify(scale.range()) == JSON.stringify([10, 150]), 'The <code>range()</code> of the scale should be set to <code>[10, 150]</code>.');"
         },
         {
           "text": "The text in the <code>h2</code> should be -102.",
-          "testString": "assert($('h2').text() == '-102', 'The text in the <code>h2</code> should be -102.');"
+          "testString":
+            "assert($('h2').text() == '-102', 'The text in the <code>h2</code> should be -102.');"
         }
       ],
       "solutions": [],
@@ -2099,7 +2356,8 @@
     },
     {
       "id": "587d7fac367417b2b2512bdc",
-      "title": "Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset",
+      "title":
+        "Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset",
       "required": [
         {
           "src": "https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js"
@@ -2121,11 +2379,13 @@
       "tests": [
         {
           "text": "The text in the <code>h2</code> should be 8.",
-          "testString": "assert(output == 8 && $('h2').text() == '8', 'The text in the <code>h2</code> should be 8.');"
+          "testString":
+            "assert(output == 8 && $('h2').text() == '8', 'The text in the <code>h2</code> should be 8.');"
         },
         {
           "text": "Your code should use the <code>max()</code> method.",
-          "testString": "assert(code.match(/\\.max/g), 'Your code should use the <code>max()</code> method.')"
+          "testString":
+            "assert(code.match(/\\.max/g), 'Your code should use the <code>max()</code> method.')"
         }
       ],
       "solutions": [],
@@ -2172,7 +2432,7 @@
         "Given a complex data set, one priority is to set the scale so the visualization fits the SVG container's width and height. You want all the data plotted inside the SVG canvas so it's visible on the web page.",
         "The example below sets the x-axis scale for scatter plot data. The <code>domain()</code> method passes information to the scale about the raw data values for the plot. The <code>range()</code> method gives it information about the actual space on the web page for the visualization.",
         "In the example, the domain goes from 0 to the maximum in the set. It uses the <code>max()</code> method with a callback function based on the x values in the arrays. The range uses the SVG canvas' width (<code>w</code>), but it includes some padding, too. This puts space between the scatter plot dots and the edge of the SVG canvas.",
-        "<blockquote>const dataset = [<br>                  [ 34,    78 ],<br>                  [ 109,   280 ],<br>                  [ 310,   120 ],<br>                  [ 79,    411 ],<br>                  [ 420,   220 ],<br>                  [ 233,   145 ],<br>                  [ 333,   96 ],<br>                  [ 222,   333 ],<br>                  [ 78,    320 ],<br>                  [ 21,    123 ]<br>                ];<br>const w = 500;<br>const h = 500;<br><br>// Padding between the SVG canvas boundary and the plot<br>const padding = 30;<br>const xScale = d3.scaleLinear()<br>                 .domain([0, d3.max(dataset, (d) => d[0])])<br>                 .range([padding, w - padding]);</blockquote>",
+        "<blockquote>const dataset = [<br>&nbsp;&nbsp;[ 34,    78 ],<br>&nbsp;&nbsp;[ 109,   280 ],<br>&nbsp;&nbsp;[ 310,   120 ],<br>&nbsp;&nbsp;[ 79,    411 ],<br>&nbsp;&nbsp;[ 420,   220 ],<br>&nbsp;&nbsp;[ 233,   145 ],<br>&nbsp;&nbsp;[ 333,   96 ],<br>&nbsp;&nbsp;[ 222,   333 ],<br>&nbsp;&nbsp;[ 78,    320 ],<br>&nbsp;&nbsp;[ 21,    123 ]<br>];<br>const w = 500;<br>const h = 500;<br><br>// Padding between the SVG canvas boundary and the plot<br>const padding = 30;<br>const xScale = d3.scaleLinear()<br>&nbsp;&nbsp;.domain([0, d3.max(dataset, (d) => d[0])])<br>&nbsp;&nbsp;.range([padding, w - padding]);</blockquote>",
         "The padding may be confusing at first. Picture the x-axis as a horizontal line from 0 to 500 (the width value for the SVG canvas). Including the padding in the <code>range()</code> method forces the plot to start at 30 along that line (instead of 0), and end at 470 (instead of 500).",
         "<hr>",
         "Use the <code>yScale</code> variable to create a linear y-axis scale. The domain should start at zero and go to the maximum y value in the set. The range should use the SVG height (<code>h</code>) and include padding.",
@@ -2181,15 +2441,20 @@
       "tests": [
         {
           "text": "The text in the <code>h2</code> should be 30.",
-          "testString": "assert(output == 30 && $('h2').text() == '30', 'The text in the <code>h2</code> should be 30.');"
+          "testString":
+            "assert(output == 30 && $('h2').text() == '30', 'The text in the <code>h2</code> should be 30.');"
         },
         {
-          "text": "The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.",
-          "testString": "assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]), 'The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.');"
+          "text":
+            "The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.",
+          "testString":
+            "assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]), 'The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.');"
         },
         {
-          "text": "The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.",
-          "testString": "assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]), 'The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.');"
+          "text":
+            "The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.",
+          "testString":
+            "assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]), 'The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.');"
         }
       ],
       "solutions": [],
@@ -2260,7 +2525,7 @@
       "description": [
         "With the scales set up, it's time to map the scatter plot again. The scales are like processing functions that turn the x and y raw data into values that fit and render correctly on the SVG canvas. They keep the data within the screen's plotting area.",
         "You set the coordinate attribute values for an SVG shape with the scaling function. This includes <code>x</code> and <code>y</code> attributes for <code>rect</code> or <code>text</code> elements, or <code>cx</code> and <code>cy</code> for <code>circles</code>. Here's an example:",
-        "<blockquote>shape<br>  .attr(\"x\", (d) => xScale(d[0]))</blockquote>",
+        "<blockquote>shape<br>&nbsp;&nbsp;.attr(\"x\", (d) => xScale(d[0]))</blockquote>",
         "Scales set shape coordinate attributes to place the data points onto the SVG canvas. You don't need to apply scales when you display the actual data value, for example, in the <code>text()</code> method for a tooltip or label.",
         "<hr>",
         "Use <code>xScale</code> and <code>yScale</code> to position both the <code>circle</code> and <code>text</code> shapes onto the SVG canvas. For the <code>circles</code>, apply the scales to set the <code>cx</code> and <code>cy</code> attributes. Give them a radius of 5 units, too.",
@@ -2269,91 +2534,133 @@
       "tests": [
         {
           "text": "Your code should have 10 <code>circle</code> elements.",
-          "testString": "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
+          "testString":
+            "assert($('circle').length == 10, 'Your code should have 10 <code>circle</code> elements.');"
         },
         {
-          "text": "The first <code>circle</code> element should have a <code>cx</code> value of approximately 91 and a <code>cy</code> value of approximately 368 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(0).attr('cx')) == '91' && Math.round($('circle').eq(0).attr('cy')) == '368' && $('circle').eq(0).attr('r') == '5', 'The first <code>circle</code> element should have a <code>cx</code> value of approximately 91 and a <code>cy</code> value of approximately 368 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The first <code>circle</code> element should have a <code>cx</code> value of approximately 91 and a <code>cy</code> value of approximately 368 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(0).attr('cx')) == '91' && Math.round($('circle').eq(0).attr('cy')) == '368' && $('circle').eq(0).attr('r') == '5', 'The first <code>circle</code> element should have a <code>cx</code> value of approximately 91 and a <code>cy</code> value of approximately 368 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The second <code>circle</code> element should have a <code>cx</code> value of approximately 159 and a <code>cy</code> value of approximately 181 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(1).attr('cx')) == '159' && Math.round($('circle').eq(1).attr('cy')) == '181' && $('circle').eq(1).attr('r') == '5', 'The second <code>circle</code> element should have a <code>cx</code> value of approximately 159 and a <code>cy</code> value of approximately 181 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The second <code>circle</code> element should have a <code>cx</code> value of approximately 159 and a <code>cy</code> value of approximately 181 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(1).attr('cx')) == '159' && Math.round($('circle').eq(1).attr('cy')) == '181' && $('circle').eq(1).attr('r') == '5', 'The second <code>circle</code> element should have a <code>cx</code> value of approximately 159 and a <code>cy</code> value of approximately 181 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The third <code>circle</code> element should have a <code>cx</code> value of approximately 340 and a <code>cy</code> value of approximately 329 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(2).attr('cx')) == '340' && Math.round($('circle').eq(2).attr('cy')) == '329' && $('circle').eq(2).attr('r') == '5', 'The third <code>circle</code> element should have a <code>cx</code> value of approximately 340 and a <code>cy</code> value of approximately 329 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The third <code>circle</code> element should have a <code>cx</code> value of approximately 340 and a <code>cy</code> value of approximately 329 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(2).attr('cx')) == '340' && Math.round($('circle').eq(2).attr('cy')) == '329' && $('circle').eq(2).attr('r') == '5', 'The third <code>circle</code> element should have a <code>cx</code> value of approximately 340 and a <code>cy</code> value of approximately 329 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The fourth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 60 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(3).attr('cx')) == '131' && Math.round($('circle').eq(3).attr('cy')) == '60' && $('circle').eq(3).attr('r') == '5', 'The fourth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 60 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The fourth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 60 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(3).attr('cx')) == '131' && Math.round($('circle').eq(3).attr('cy')) == '60' && $('circle').eq(3).attr('r') == '5', 'The fourth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 60 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The fifth <code>circle</code> element should have a <code>cx</code> value of approximately 440 and a <code>cy</code> value of approximately 237 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(4).attr('cx')) == '440' && Math.round($('circle').eq(4).attr('cy')) == '237' && $('circle').eq(4).attr('r') == '5', 'The fifth <code>circle</code> element should have a <code>cx</code> value of approximately 440 and a <code>cy</code> value of approximately 237 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The fifth <code>circle</code> element should have a <code>cx</code> value of approximately 440 and a <code>cy</code> value of approximately 237 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(4).attr('cx')) == '440' && Math.round($('circle').eq(4).attr('cy')) == '237' && $('circle').eq(4).attr('r') == '5', 'The fifth <code>circle</code> element should have a <code>cx</code> value of approximately 440 and a <code>cy</code> value of approximately 237 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The sixth <code>circle</code> element should have a <code>cx</code> value of approximately 271 and a <code>cy</code> value of approximately 306 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(5).attr('cx')) == '271' && Math.round($('circle').eq(5).attr('cy')) == '306' && $('circle').eq(5).attr('r') == '5', 'The sixth <code>circle</code> element should have a <code>cx</code> value of approximately 271 and a <code>cy</code> value of approximately 306 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The sixth <code>circle</code> element should have a <code>cx</code> value of approximately 271 and a <code>cy</code> value of approximately 306 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(5).attr('cx')) == '271' && Math.round($('circle').eq(5).attr('cy')) == '306' && $('circle').eq(5).attr('r') == '5', 'The sixth <code>circle</code> element should have a <code>cx</code> value of approximately 271 and a <code>cy</code> value of approximately 306 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The seventh <code>circle</code> element should have a <code>cx</code> value of approximately 361 and a <code>cy</code> value of approximately 351 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(6).attr('cx')) == '361' && Math.round($('circle').eq(6).attr('cy')) == '351' && $('circle').eq(6).attr('r') == '5', 'The seventh <code>circle</code> element should have a <code>cx</code> value of approximately 361 and a <code>cy</code> value of approximately 351 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The seventh <code>circle</code> element should have a <code>cx</code> value of approximately 361 and a <code>cy</code> value of approximately 351 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(6).attr('cx')) == '361' && Math.round($('circle').eq(6).attr('cy')) == '351' && $('circle').eq(6).attr('r') == '5', 'The seventh <code>circle</code> element should have a <code>cx</code> value of approximately 361 and a <code>cy</code> value of approximately 351 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The eighth <code>circle</code> element should have a <code>cx</code> value of approximately 261 and a <code>cy</code> value of approximately 132 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(7).attr('cx')) == '261' && Math.round($('circle').eq(7).attr('cy')) == '132' && $('circle').eq(7).attr('r') == '5', 'The eighth <code>circle</code> element should have a <code>cx</code> value of approximately 261 and a <code>cy</code> value of approximately 132 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The eighth <code>circle</code> element should have a <code>cx</code> value of approximately 261 and a <code>cy</code> value of approximately 132 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(7).attr('cx')) == '261' && Math.round($('circle').eq(7).attr('cy')) == '132' && $('circle').eq(7).attr('r') == '5', 'The eighth <code>circle</code> element should have a <code>cx</code> value of approximately 261 and a <code>cy</code> value of approximately 132 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The ninth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 144 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(8).attr('cx')) == '131' && Math.round($('circle').eq(8).attr('cy')) == '144' && $('circle').eq(8).attr('r') == '5', 'The ninth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 144 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The ninth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 144 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(8).attr('cx')) == '131' && Math.round($('circle').eq(8).attr('cy')) == '144' && $('circle').eq(8).attr('r') == '5', 'The ninth <code>circle</code> element should have a <code>cx</code> value of approximately 131 and a <code>cy</code> value of approximately 144 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
-          "text": "The tenth <code>circle</code> element should have a <code>cx</code> value of approximately 79 and a <code>cy</code> value of approximately 326 after applying the scales. It should also have an <code>r</code> value of 5.",
-          "testString": "assert(Math.round($('circle').eq(9).attr('cx')) == '79' && Math.round($('circle').eq(9).attr('cy')) == '326' && $('circle').eq(9).attr('r') == '5', 'The tenth <code>circle</code> element should have a <code>cx</code> value of approximately 79 and a <code>cy</code> value of approximately 326 after applying the scales. It should also have an <code>r</code> value of 5.');"
+          "text":
+            "The tenth <code>circle</code> element should have a <code>cx</code> value of approximately 79 and a <code>cy</code> value of approximately 326 after applying the scales. It should also have an <code>r</code> value of 5.",
+          "testString":
+            "assert(Math.round($('circle').eq(9).attr('cx')) == '79' && Math.round($('circle').eq(9).attr('cy')) == '326' && $('circle').eq(9).attr('r') == '5', 'The tenth <code>circle</code> element should have a <code>cx</code> value of approximately 79 and a <code>cy</code> value of approximately 326 after applying the scales. It should also have an <code>r</code> value of 5.');"
         },
         {
           "text": "Your code should have 10 <code>text</code> elements.",
-          "testString": "assert($('text').length == 10, 'Your code should have 10 <code>text</code> elements.');"
+          "testString":
+            "assert($('text').length == 10, 'Your code should have 10 <code>text</code> elements.');"
         },
         {
-          "text": "The first label should have an <code>x</code> value of approximately 100 and a <code>y</code> value of approximately 368 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(0).attr('x')) == '100' && Math.round($('text').eq(0).attr('y')) == '368', 'The first label should have an <code>x</code> value of approximately 100 and a <code>y</code> value of approximately 368 after applying the scales.');"
+          "text":
+            "The first label should have an <code>x</code> value of approximately 100 and a <code>y</code> value of approximately 368 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(0).attr('x')) == '100' && Math.round($('text').eq(0).attr('y')) == '368', 'The first label should have an <code>x</code> value of approximately 100 and a <code>y</code> value of approximately 368 after applying the scales.');"
         },
         {
-          "text": "The second label should have an <code>x</code> value of approximately 168 and a <code>y</code> value of approximately 181 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(1).attr('x')) == '168' && Math.round($('text').eq(1).attr('y')) == '181', 'The second label should have an <code>x</code> value of approximately 168 and a <code>y</code> value of approximately 181 after applying the scales.');"
+          "text":
+            "The second label should have an <code>x</code> value of approximately 168 and a <code>y</code> value of approximately 181 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(1).attr('x')) == '168' && Math.round($('text').eq(1).attr('y')) == '181', 'The second label should have an <code>x</code> value of approximately 168 and a <code>y</code> value of approximately 181 after applying the scales.');"
         },
         {
-          "text": "The third label should have an <code>x</code> value of approximately 350 and a <code>y</code> value of approximately 329 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(2).attr('x')) == '350' && Math.round($('text').eq(2).attr('y')) == '329', 'The third label should have an <code>x</code> value of approximately 350 and a <code>y</code> value of approximately 329 after applying the scales.');"
+          "text":
+            "The third label should have an <code>x</code> value of approximately 350 and a <code>y</code> value of approximately 329 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(2).attr('x')) == '350' && Math.round($('text').eq(2).attr('y')) == '329', 'The third label should have an <code>x</code> value of approximately 350 and a <code>y</code> value of approximately 329 after applying the scales.');"
         },
         {
-          "text": "The fourth label should have an <code>x</code> value of approximately 141 and a <code>y</code> value of approximately 60 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(3).attr('x')) == '141' && Math.round($('text').eq(3).attr('y')) == '60', 'The fourth label should have an <code>x</code> value of approximately 141 and a <code>y</code> value of approximately 60 after applying the scales.');"
+          "text":
+            "The fourth label should have an <code>x</code> value of approximately 141 and a <code>y</code> value of approximately 60 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(3).attr('x')) == '141' && Math.round($('text').eq(3).attr('y')) == '60', 'The fourth label should have an <code>x</code> value of approximately 141 and a <code>y</code> value of approximately 60 after applying the scales.');"
         },
         {
-          "text": "The fifth label should have an <code>x</code> value of approximately 449 and a <code>y</code> value of approximately 237 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(4).attr('x')) == '449' && Math.round($('text').eq(4).attr('y')) == '237', 'The fifth label should have an <code>x</code> value of approximately 449 and a <code>y</code> value of approximately 237 after applying the scales.');"
+          "text":
+            "The fifth label should have an <code>x</code> value of approximately 449 and a <code>y</code> value of approximately 237 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(4).attr('x')) == '449' && Math.round($('text').eq(4).attr('y')) == '237', 'The fifth label should have an <code>x</code> value of approximately 449 and a <code>y</code> value of approximately 237 after applying the scales.');"
         },
         {
-          "text": "The sixth label should have an <code>x</code> value of approximately 280 and a <code>y</code> value of approximately 306 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(5).attr('x')) == '280' && Math.round($('text').eq(5).attr('y')) == '306', 'The sixth label should have an <code>x</code> value of approximately 280 and a <code>y</code> value of approximately 306 after applying the scales.');"
+          "text":
+            "The sixth label should have an <code>x</code> value of approximately 280 and a <code>y</code> value of approximately 306 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(5).attr('x')) == '280' && Math.round($('text').eq(5).attr('y')) == '306', 'The sixth label should have an <code>x</code> value of approximately 280 and a <code>y</code> value of approximately 306 after applying the scales.');"
         },
         {
-          "text": "The seventh label should have an <code>x</code> value of approximately 370 and a <code>y</code> value of approximately 351 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(6).attr('x')) == '370' && Math.round($('text').eq(6).attr('y')) == '351', 'The seventh label should have an <code>x</code> value of approximately 370 and a <code>y</code> value of approximately 351 after applying the scales.');"
+          "text":
+            "The seventh label should have an <code>x</code> value of approximately 370 and a <code>y</code> value of approximately 351 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(6).attr('x')) == '370' && Math.round($('text').eq(6).attr('y')) == '351', 'The seventh label should have an <code>x</code> value of approximately 370 and a <code>y</code> value of approximately 351 after applying the scales.');"
         },
         {
-          "text": "The eighth label should have an <code>x</code> value of approximately 270 and a <code>y</code> value of approximately 132 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(7).attr('x')) == '270' && Math.round($('text').eq(7).attr('y')) == '132', 'The eighth label should have an <code>x</code> value of approximately 270 and a <code>y</code> value of approximately 132 after applying the scales.');"
+          "text":
+            "The eighth label should have an <code>x</code> value of approximately 270 and a <code>y</code> value of approximately 132 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(7).attr('x')) == '270' && Math.round($('text').eq(7).attr('y')) == '132', 'The eighth label should have an <code>x</code> value of approximately 270 and a <code>y</code> value of approximately 132 after applying the scales.');"
         },
         {
-          "text": "The ninth label should have an <code>x</code> value of approximately 140 and a <code>y</code> value of approximately 144 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(8).attr('x')) == '140' && Math.round($('text').eq(8).attr('y')) == '144', 'The ninth label should have an <code>x</code> value of approximately 140 and a <code>y</code> value of approximately 144 after applying the scales.');"
+          "text":
+            "The ninth label should have an <code>x</code> value of approximately 140 and a <code>y</code> value of approximately 144 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(8).attr('x')) == '140' && Math.round($('text').eq(8).attr('y')) == '144', 'The ninth label should have an <code>x</code> value of approximately 140 and a <code>y</code> value of approximately 144 after applying the scales.');"
         },
         {
-          "text": "The tenth label should have an <code>x</code> value of approximately 88 and a <code>y</code> value of approximately 326 after applying the scales.",
-          "testString": "assert(Math.round($('text').eq(9).attr('x')) == '88' && Math.round($('text').eq(9).attr('y')) == '326', 'The tenth label should have an <code>x</code> value of approximately 88 and a <code>y</code> value of approximately 326 after applying the scales.');"
+          "text":
+            "The tenth label should have an <code>x</code> value of approximately 88 and a <code>y</code> value of approximately 326 after applying the scales.",
+          "testString":
+            "assert(Math.round($('text').eq(9).attr('x')) == '88' && Math.round($('text').eq(9).attr('y')) == '326', 'The tenth label should have an <code>x</code> value of approximately 88 and a <code>y</code> value of approximately 326 after applying the scales.');"
         }
       ],
       "solutions": [],
@@ -2444,7 +2751,7 @@
         "Unlike <code>rect</code>, <code>circle</code>, and <code>text</code>, an axis is just a straight line when it's rendered. Because it is a simple shape, using <code>g</code> works.",
         "The last step is to apply a <code>transform</code> attribute to position the axis on the SVG canvas in the right place. Otherwise, the line would render along the border of SVG canvas and wouldn't be visible.",
         "SVG supports different types of <code>transforms</code>, but positioning an axis needs <code>translate</code>. When it's applied to the <code>g</code> element, it moves the whole group over and down by the given amounts. Here's an example:",
-        "<blockquote>const xAxis = d3.axisBottom(xScale);<br><br>svg.append(\"g\")<br>   .attr(\"transform\", \"translate(0, \" + (h - padding) + \")\")<br>   .call(xAxis);</blockquote>",
+        "<blockquote>const xAxis = d3.axisBottom(xScale);<br><br>svg.append(\"g\")<br>&nbsp;&nbsp; .attr(\"transform\", \"translate(0, \" + (h - padding) + \")\")<br>&nbsp;&nbsp; .call(xAxis);</blockquote>",
         "The above code places the x-axis at the bottom of the SVG canvas. Then it's passed as an argument to the <code>call()</code> method.",
         "The y-axis works is the same way, except the <code>translate</code> argument is in the form (x, 0). Because <code>translate</code> is a string in the <code>attr()</code> method above, you can use concatenation to include variable values for its arguments.",
         "<hr>",
@@ -2452,16 +2759,21 @@
       ],
       "tests": [
         {
-          "text": "Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.",
-          "testString": "assert(code.match(/\\.axisLeft\\(yScale\\)/g), 'Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.');"
+          "text":
+            "Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.",
+          "testString":
+            "assert(code.match(/\\.axisLeft\\(yScale\\)/g), 'Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.');"
         },
         {
-          "text": "The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).",
-          "testString": "assert($('g').eq(1).attr('transform').match(/translate\\(60\\s*?,\\s*?0\\)/g), 'The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).');"
+          "text":
+            "The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).",
+          "testString":
+            "assert($('g').eq(1).attr('transform').match(/translate\\(60\\s*?,\\s*?0\\)/g), 'The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).');"
         },
         {
           "text": "Your code should call the <code>yAxis</code>.",
-          "testString": "assert(code.match(/\\.call\\(yAxis\\)/g), 'Your code should call the <code>yAxis</code>.');"
+          "testString":
+            "assert(code.match(/\\.call\\(yAxis\\)/g), 'Your code should call the <code>yAxis</code>.');"
         }
       ],
       "solutions": [],

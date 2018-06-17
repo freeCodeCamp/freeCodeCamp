@@ -19,12 +19,16 @@
       ],
       "tests": [
         {
-          "text": "Your code should use the text-align property on the <code>h4</code> tag to set it to center.",
-          "testString": "assert($('h4').css('text-align') == 'center', 'Your code should use the text-align property on the <code>h4</code> tag to set it to center.');"
+          "text":
+            "Your code should use the text-align property on the <code>h4</code> tag to set it to center.",
+          "testString":
+            "assert($('h4').css('text-align') == 'center', 'Your code should use the text-align property on the <code>h4</code> tag to set it to center.');"
         },
         {
-          "text": "Your code should use the text-align property on the <code>p</code> tag to set it to justify.",
-          "testString": "assert($('p').css('text-align') == 'justify', 'Your code should use the text-align property on the <code>p</code> tag to set it to justify.');"
+          "text":
+            "Your code should use the text-align property on the <code>p</code> tag to set it to justify.",
+          "testString":
+            "assert($('p').css('text-align') == 'justify', 'Your code should use the text-align property on the <code>p</code> tag to set it to justify.');"
         }
       ],
       "solutions": [],
@@ -82,14 +86,16 @@
       "title": "Adjust the Width of an Element Using the width Property",
       "description": [
         "You can specify the width of an element using the <code>width</code> property in CSS. Values can be given in relative length units (such as em), absolute length units (such as px), or as a percentage of its containing parent element. Here's an example that changes the width of an image to 220px:",
-        "<blockquote>img {<br>  width: 220px;<br>}</blockquote>",
+        "<blockquote>img {<br>&nbsp;&nbsp;width: 220px;<br>}</blockquote>",
         "<hr>",
         "Add a <code>width</code> property to the entire card and set it to an absolute value of 245px. Use the <code>fullCard</code> class to select the element."
       ],
       "tests": [
         {
-          "text": "Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.",
-          "testString": "assert(code.match(/.fullCard\\s*{[\\s\\S][^}]*\\n*^\\s*width\\s*:\\s*245px\\s*;/gm), 'Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.');"
+          "text":
+            "Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.",
+          "testString":
+            "assert(code.match(/.fullCard\\s*{[\\s\\S][^}]*\\n*^\\s*width\\s*:\\s*245px\\s*;/gm), 'Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.');"
         }
       ],
       "solutions": [],
@@ -148,14 +154,16 @@
       "title": "Adjust the Height of an Element Using the height Property",
       "description": [
         "You can specify the height of an element using the <code>height</code> property in CSS, similar to the <code>width</code> property. Here's an example that changes the height of an image to 20px:",
-        "<blockquote>img {<br>  height: 20px;<br>}</blockquote>",
+        "<blockquote>img {<br>&nbsp;&nbsp;height: 20px;<br>}</blockquote>",
         "<hr>",
         "Add a <code>height</code> property to the <code>h4</code> tag and set it to 25px."
       ],
       "tests": [
         {
-          "text": "Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.",
-          "testString": "assert($('h4').css('height') == '25px', 'Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.');"
+          "text":
+            "Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.",
+          "testString":
+            "assert($('h4').css('height') == '25px', 'Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.');"
         }
       ],
       "solutions": [],
@@ -220,16 +228,22 @@
       ],
       "tests": [
         {
-          "text": "Your code should add one <code>strong</code> tag to the markup.",
-          "testString": "assert($('strong').length == 1, 'Your code should add one <code>strong</code> tag to the markup.');"
+          "text":
+            "Your code should add one <code>strong</code> tag to the markup.",
+          "testString":
+            "assert($('strong').length == 1, 'Your code should add one <code>strong</code> tag to the markup.');"
         },
         {
-          "text": "The <code>strong</code> tag should be inside the <code>p</code> tag.",
-          "testString": "assert($('p').children('strong').length == 1, 'The <code>strong</code> tag should be inside the <code>p</code> tag.');"
+          "text":
+            "The <code>strong</code> tag should be inside the <code>p</code> tag.",
+          "testString":
+            "assert($('p').children('strong').length == 1, 'The <code>strong</code> tag should be inside the <code>p</code> tag.');"
         },
         {
-          "text": "The <code>strong</code> tag should wrap around the words \"Stanford University\".",
-          "testString": "assert($('strong').text().match(/Stanford University/gi), 'The <code>strong</code> tag should wrap around the words \"Stanford University\".');"
+          "text":
+            "The <code>strong</code> tag should wrap around the words \"Stanford University\".",
+          "testString":
+            "assert($('strong').text().match(/Stanford University/gi), 'The <code>strong</code> tag should wrap around the words \"Stanford University\".');"
         }
       ],
       "solutions": [],
@@ -299,15 +313,20 @@
       "tests": [
         {
           "text": "Your code should add a <code>u</code> tag to the markup.",
-          "testString": "assert($('u').length === 1, 'Your code should add a <code>u</code> tag to the markup.');"
+          "testString":
+            "assert($('u').length === 1, 'Your code should add a <code>u</code> tag to the markup.');"
         },
         {
-          "text": "The <code>u</code> tag should wrap around the text \"Ph.D. students\".",
-          "testString": "assert($('u').text() === 'Ph.D. students', 'The <code>u</code> tag should wrap around the text \"Ph.D. students\".');"
+          "text":
+            "The <code>u</code> tag should wrap around the text \"Ph.D. students\".",
+          "testString":
+            "assert($('u').text() === 'Ph.D. students', 'The <code>u</code> tag should wrap around the text \"Ph.D. students\".');"
         },
         {
-          "text": "The <code>u</code> tag should not wrap around the parent <code>div</code> tag.",
-          "testString": "assert($('u').children('div').length === 0, 'The <code>u</code> tag should not wrap around the parent <code>div</code> tag.');"
+          "text":
+            "The <code>u</code> tag should not wrap around the parent <code>div</code> tag.",
+          "testString":
+            "assert($('u').children('div').length === 0, 'The <code>u</code> tag should not wrap around the parent <code>div</code> tag.');"
         }
       ],
       "solutions": [],
@@ -376,11 +395,14 @@
       "tests": [
         {
           "text": "Your code should add an <code>em</code> tag to the markup.",
-          "testString": "assert($('em').length == 1, 'Your code should add an <code>em</code> tag to the markup.');"
+          "testString":
+            "assert($('em').length == 1, 'Your code should add an <code>em</code> tag to the markup.');"
         },
         {
-          "text": "The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.",
-          "testString": "assert($('p').children().length == 1 && $('em').children().length == 2, 'The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.');"
+          "text":
+            "The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.",
+          "testString":
+            "assert($('p').children().length == 1 && $('em').children().length == 2, 'The <code>em</code> tag should wrap around the contents of the <code>p</code> tag but not the <code>p</code> tag itself.');"
         }
       ],
       "solutions": [],
@@ -448,16 +470,22 @@
       ],
       "tests": [
         {
-          "text": "Your code should add one <code>del</code> tag to the markup.",
-          "testString": "assert($('del').length == 1, 'Your code should add one <code>del</code> tag to the markup.');"
+          "text":
+            "Your code should add one <code>del</code> tag to the markup.",
+          "testString":
+            "assert($('del').length == 1, 'Your code should add one <code>del</code> tag to the markup.');"
         },
         {
-          "text": "A <code>del</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.",
-          "testString": "assert($('del').text().match(/Google/gi) && !$('del').text().match(/Alphabet/gi), 'A <code>del</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.');"
+          "text":
+            "A <code>del</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.",
+          "testString":
+            "assert($('del').text().match(/Google/gi) && !$('del').text().match(/Alphabet/gi), 'A <code>del</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.');"
         },
         {
-          "text": "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.",
-          "testString": "assert($('h4').html().match(/Alphabet/gi), 'Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.');"
+          "text":
+            "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.",
+          "testString":
+            "assert($('h4').html().match(/Alphabet/gi), 'Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.');"
         }
       ],
       "solutions": [],
@@ -527,11 +555,14 @@
       "tests": [
         {
           "text": "Your code should add an <code>hr</code> tag to the markup.",
-          "testString": "assert($('hr').length == 1, 'Your code should add an <code>hr</code> tag to the markup.');"
+          "testString":
+            "assert($('hr').length == 1, 'Your code should add an <code>hr</code> tag to the markup.');"
         },
         {
-          "text": "The <code>hr</code> tag should come between the title and the paragraph.",
-          "testString": "assert(code.match(/<\\/h4>\\s*?<hr(>|\\s*?\\/>)\\s*?<em>/gi), 'The <code>hr</code> tag should come between the title and the paragraph.');"
+          "text":
+            "The <code>hr</code> tag should come between the title and the paragraph.",
+          "testString":
+            "assert(code.match(/<\\/h4>\\s*?<hr(>|\\s*?\\/>)\\s*?<em>/gi), 'The <code>hr</code> tag should come between the title and the paragraph.');"
         }
       ],
       "solutions": [],
@@ -595,7 +626,7 @@
       "title": "Adjust the background-color Property of Text",
       "description": [
         "Instead of adjusting your overall background or the color of the text to make the foreground easily readable, you can add a <code>background-color</code> to the element holding the text you want to emphasize. This challenge uses <code>rgba()</code> instead of <code>hex</code> codes or normal <code>rgb()</code>.",
-        "<blockquote>rgba stands for:<br>  r = red<br>  g = green<br>  b = blue<br>  a = alpha/level of opacity</blockquote>",
+        "<blockquote>rgba stands for:<br>&nbsp;&nbsp;r = red<br>&nbsp;&nbsp;g = green<br>&nbsp;&nbsp;b = blue<br>&nbsp;&nbsp;a = alpha/level of opacity</blockquote>",
         "The RGB values can range from 0 to 255. The alpha value can range from 1, which is fully opaque or a solid color, to 0, which is fully transparent or clear. <code>rgba()</code> is great to use in this case, as it allows you to adjust the opacity. This means you don't have to completely block out the background.",
         "You'll use <code>background-color: rgba(45, 45, 45, 0.1)</code> for this challenge. It produces a dark gray color that is nearly transparent given the low opacity value of 0.1.",
         "<hr>",
@@ -604,16 +635,22 @@
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.",
-          "testString": "assert(code.match(/background-color:\\s*?rgba\\(\\s*?45\\s*?,\\s*?45\\s*?,\\s*?45\\s*?,\\s*?0?\\.1\\s*?\\)/gi), 'Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.');"
+          "text":
+            "Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.",
+          "testString":
+            "assert(code.match(/background-color:\\s*?rgba\\(\\s*?45\\s*?,\\s*?45\\s*?,\\s*?45\\s*?,\\s*?0?\\.1\\s*?\\)/gi), 'Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.');"
         },
         {
-          "text": "Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.",
-          "testString": "assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px', 'Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.');"
+          "text":
+            "Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.",
+          "testString":
+            "assert($('h4').css('padding-top') == '10px' && $('h4').css('padding-right') == '10px' && $('h4').css('padding-bottom') == '10px' && $('h4').css('padding-left') == '10px', 'Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.');"
         },
         {
-          "text": "The <code>height</code> property on the <code>h4</code> element should be removed.",
-          "testString": "assert(!($('h4').css('height') == '25px'), 'The <code>height</code> property on the <code>h4</code> element should be removed.');"
+          "text":
+            "The <code>height</code> property on the <code>h4</code> element should be removed.",
+          "testString":
+            "assert(!($('h4').css('height') == '25px'), 'The <code>height</code> property on the <code>h4</code> element should be removed.');"
         }
       ],
       "solutions": [],
@@ -684,8 +721,10 @@
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.",
-          "testString": "assert($('h4').css('font-size') == '27px', 'Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.');"
+          "text":
+            "Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.",
+          "testString":
+            "assert($('h4').css('font-size') == '27px', 'Your code should add a <code>font-size</code> property to the <code>h4</code> element set to 27 pixels.');"
         }
       ],
       "solutions": [],
@@ -759,12 +798,16 @@
       ],
       "tests": [
         {
-          "text": "Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.",
-          "testString": "assert(code.match(/#thumbnail\\s*?{\\s*?box-shadow/g), 'Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.');"
+          "text":
+            "Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.",
+          "testString":
+            "assert(code.match(/#thumbnail\\s*?{\\s*?box-shadow/g), 'Your code should add a <code>box-shadow</code> property for the <code>thumbnail</code> id.');"
         },
         {
-          "text": "You should use the given CSS for the <code>box-shadow</code> value.",
-          "testString": "assert(code.match(/box-shadow:\\s*?0\\s+?10px\\s+?20px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.19\\),\\s*?0\\s+?6px\\s+?6px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.23\\)/gi), 'You should use the given CSS for the <code>box-shadow</code> value.');"
+          "text":
+            "You should use the given CSS for the <code>box-shadow</code> value.",
+          "testString":
+            "assert(code.match(/box-shadow:\\s*?0\\s+?10px\\s+?20px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.19\\),\\s*?0\\s+?6px\\s+?6px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.23\\)/gi), 'You should use the given CSS for the <code>box-shadow</code> value.');"
         }
       ],
       "solutions": [],
@@ -840,8 +883,10 @@
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.",
-          "testString": "assert.approximately(parseFloat($('.links').css('opacity')), 0.7, 0.1, 'Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.');"
+          "text":
+            "Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.",
+          "testString":
+            "assert.approximately(parseFloat($('.links').css('opacity')), 0.7, 0.1, 'Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.');"
         }
       ],
       "solutions": [],
@@ -919,11 +964,13 @@
       "tests": [
         {
           "text": "The <code>h4</code> text should be uppercase.",
-          "testString": "assert($('h4').css('text-transform') === 'uppercase', 'The <code>h4</code> text should be uppercase.');"
+          "testString":
+            "assert($('h4').css('text-transform') === 'uppercase', 'The <code>h4</code> text should be uppercase.');"
         },
         {
           "text": "The original text of the h4 should not be changed.",
-          "testString": "assert(($('h4').text() !== $('h4').text().toUpperCase()), 'The original text of the h4 should not be changed.');"
+          "testString":
+            "assert(($('h4').text() !== $('h4').text().toUpperCase()), 'The original text of the h4 should not be changed.');"
         }
       ],
       "solutions": [],
@@ -999,28 +1046,40 @@
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.",
-          "testString": "assert($('h1').css('font-size') == '68px', 'Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.');"
+          "text":
+            "Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.",
+          "testString":
+            "assert($('h1').css('font-size') == '68px', 'Your code should set the <code>font-size</code> property for the <code>h1</code> tag to 68 pixels.');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.",
-          "testString": "assert($('h2').css('font-size') == '52px', 'Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.');"
+          "text":
+            "Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.",
+          "testString":
+            "assert($('h2').css('font-size') == '52px', 'Your code should set the <code>font-size</code> property for the <code>h2</code> tag to 52 pixels.');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.",
-          "testString": "assert($('h3').css('font-size') == '40px', 'Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.');"
+          "text":
+            "Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.",
+          "testString":
+            "assert($('h3').css('font-size') == '40px', 'Your code should set the <code>font-size</code> property for the <code>h3</code> tag to 40 pixels.');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.",
-          "testString": "assert($('h4').css('font-size') == '32px', 'Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.');"
+          "text":
+            "Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.",
+          "testString":
+            "assert($('h4').css('font-size') == '32px', 'Your code should set the <code>font-size</code> property for the <code>h4</code> tag to 32 pixels.');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.",
-          "testString": "assert($('h5').css('font-size') == '21px', 'Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.');"
+          "text":
+            "Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.",
+          "testString":
+            "assert($('h5').css('font-size') == '21px', 'Your code should set the <code>font-size</code> property for the <code>h5</code> tag to 21 pixels.');"
         },
         {
-          "text": "Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.",
-          "testString": "assert($('h6').css('font-size') == '14px', 'Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.');"
+          "text":
+            "Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.",
+          "testString":
+            "assert($('h6').css('font-size') == '14px', 'Your code should set the <code>font-size</code> property for the <code>h6</code> tag to 14 pixels.');"
         }
       ],
       "solutions": [],
@@ -1065,28 +1124,40 @@
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.",
-          "testString": "assert($('h1').css('font-weight') == '800', 'Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.');"
+          "text":
+            "Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.",
+          "testString":
+            "assert($('h1').css('font-weight') == '800', 'Your code should set the <code>font-weight</code> property for the <code>h1</code> tag to 800.');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.",
-          "testString": "assert($('h2').css('font-weight') == '600', 'Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.');"
+          "text":
+            "Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.",
+          "testString":
+            "assert($('h2').css('font-weight') == '600', 'Your code should set the <code>font-weight</code> property for the <code>h2</code> tag to 600.');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.",
-          "testString": "assert($('h3').css('font-weight') == '500', 'Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.');"
+          "text":
+            "Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.",
+          "testString":
+            "assert($('h3').css('font-weight') == '500', 'Your code should set the <code>font-weight</code> property for the <code>h3</code> tag to 500.');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.",
-          "testString": "assert($('h4').css('font-weight') == '400', 'Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.');"
+          "text":
+            "Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.",
+          "testString":
+            "assert($('h4').css('font-weight') == '400', 'Your code should set the <code>font-weight</code> property for the <code>h4</code> tag to 400.');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.",
-          "testString": "assert($('h5').css('font-weight') == '300', 'Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.');"
+          "text":
+            "Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.",
+          "testString":
+            "assert($('h5').css('font-weight') == '300', 'Your code should set the <code>font-weight</code> property for the <code>h5</code> tag to 300.');"
         },
         {
-          "text": "Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.",
-          "testString": "assert($('h6').css('font-weight') == '200', 'Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.');"
+          "text":
+            "Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.",
+          "testString":
+            "assert($('h6').css('font-weight') == '200', 'Your code should set the <code>font-weight</code> property for the <code>h6</code> tag to 200.');"
         }
       ],
       "solutions": [],
@@ -1148,8 +1219,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.",
-          "testString": "assert($('p').css('font-size') == '16px', 'Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.');"
+          "text":
+            "Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.",
+          "testString":
+            "assert($('p').css('font-size') == '16px', 'Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.');"
         }
       ],
       "solutions": [],
@@ -1187,8 +1260,10 @@
       ],
       "tests": [
         {
-          "text": "Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.",
-          "testString": "assert($('p').css('line-height') == '25px', 'Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.');"
+          "text":
+            "Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.",
+          "testString":
+            "assert($('p').css('line-height') == '25px', 'Your code should set the <code>line-height</code> of the <code>p</code> tag to 25 pixels.');"
         }
       ],
       "solutions": [],
@@ -1223,18 +1298,22 @@
       "description": [
         "This challenge will touch on the usage of pseudo-classes. A pseudo-class is a keyword that can be added to selectors, in order to select a specific state of the element.",
         "For example, the styling of an anchor tag can be changed for its hover state using the <code>:hover</code> pseudo-class selector. Here's the CSS to change the <code>color</code> of the anchor tag to red during its hover state:",
-        "<blockquote>a:hover {<br>  color: red;<br>}</blockquote>",
+        "<blockquote>a:hover {<br>&nbsp;&nbsp;color: red;<br>}</blockquote>",
         "<hr>",
         "The code editor has a CSS rule to style all <code>a</code> tags black. Add a rule so that when the user hovers over the <code>a</code> tag, the <code>color</code> is blue."
       ],
       "tests": [
         {
-          "text": "The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.",
-          "testString": "assert($('a').css('color') == 'rgb(0, 0, 0)', 'The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');"
+          "text":
+            "The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.",
+          "testString":
+            "assert($('a').css('color') == 'rgb(0, 0, 0)', 'The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.');"
         },
         {
-          "text": "The anchor tag should have a <code>color</code> of blue on hover.",
-          "testString": "assert(code.match(/a:hover\\s*?{\\s*?color:\\s*?blue;\\s*?}/gi), 'The anchor tag should have a <code>color</code> of blue on hover.');"
+          "text":
+            "The anchor tag should have a <code>color</code> of blue on hover.",
+          "testString":
+            "assert(code.match(/a:hover\\s*?{\\s*?color:\\s*?blue;\\s*?}/gi), 'The anchor tag should have a <code>color</code> of blue on hover.');"
         }
       ],
       "solutions": [],
@@ -1269,7 +1348,7 @@
       "description": [
         "CSS treats each HTML element as its own box, which is usually referred to as the <code>CSS Box Model</code>. Block-level items automatically start on a new line (think headings, paragraphs, and divs) while inline items sit within surrounding content (like images or spans). The default layout of elements in this way is called the <code>normal flow</code> of a document, but CSS offers the position property to override it.",
         "When the position of an element is set to <code>relative</code>, it allows you to specify how CSS should move it <i>relative</i> to its current position in the normal flow of the page. It pairs with the CSS offset properties of <code>left</code> or <code>right</code>, and <code>top</code> or <code>bottom</code>. These say how many pixels, percentages, or ems to move the item <i>away</i> from where it is normally positioned. The following example moves the paragraph 10 pixels away from the bottom:",
-        "<blockquote>p {<br>  position: relative;<br>  bottom: 10px;<br>}</blockquote>",
+        "<blockquote>p {<br>&nbsp;&nbsp;position: relative;<br>&nbsp;&nbsp;bottom: 10px;<br>}</blockquote>",
         "Changing an element's position to relative does not remove it from the normal flow - other elements around it still behave as if that item were in its default position.",
         "<strong>Note</strong><br>Positioning gives you a lot of flexibility and power over the visual layout of a page. It's good to remember that no matter the position of elements, the underlying HTML markup should be organized and make sense when read from top to bottom. This is how users with visual impairments (who rely on assistive devices like screen readers) access your content.",
         "<hr>",
@@ -1277,12 +1356,16 @@
       ],
       "tests": [
         {
-          "text": "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.",
-          "testString": "assert($('h2').css('position') == 'relative', 'The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.');"
+          "text":
+            "The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.",
+          "testString":
+            "assert($('h2').css('position') == 'relative', 'The <code>h2</code> element should have a <code>position</code> property set to <code>relative</code>.');"
         },
         {
-          "text": "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.",
-          "testString": "assert($('h2').css('top') == '15px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.');"
+          "text":
+            "Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.",
+          "testString":
+            "assert($('h2').css('top') == '15px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 15px away from the <code>top</code> of where it normally sits.');"
         }
       ],
       "solutions": [],
@@ -1324,12 +1407,16 @@
       ],
       "tests": [
         {
-          "text": "Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.",
-          "testString": "assert($('h2').css('bottom') == '10px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.');"
+          "text":
+            "Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.",
+          "testString":
+            "assert($('h2').css('bottom') == '10px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 10px upwards. In other words, move it 10px away from the <code>bottom</code> of where it normally sits.');"
         },
         {
-          "text": "Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.",
-          "testString": "assert($('h2').css('left') == '15px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.');"
+          "text":
+            "Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.",
+          "testString":
+            "assert($('h2').css('left') == '15px', 'Your code should use a CSS offset to relatively position the <code>h2</code> 15px towards the right. In other words, move it 15px away from the <code>left</code> of where it normally sits.');"
         }
       ],
       "solutions": [],
@@ -1374,16 +1461,22 @@
       ],
       "tests": [
         {
-          "text": "The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.",
-          "testString": "assert($('#searchbar').css('position') == 'absolute', 'The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.');"
+          "text":
+            "The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.",
+          "testString":
+            "assert($('#searchbar').css('position') == 'absolute', 'The <code>#searchbar</code> element should have a <code>position</code> set to <code>absolute</code>.');"
         },
         {
-          "text": "Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.",
-          "testString": "assert($('#searchbar').css('top') == '50px', 'Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
+          "text":
+            "Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.",
+          "testString":
+            "assert($('#searchbar').css('top') == '50px', 'Your code should use the <code>top</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
         },
         {
-          "text": "Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.",
-          "testString": "assert($('#searchbar').css('right') == '50px', 'Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
+          "text":
+            "Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.",
+          "testString":
+            "assert($('#searchbar').css('right') == '50px', 'Your code should use the <code>right</code> CSS offset of 50 pixels on the <code>#searchbar</code> element.');"
         }
       ],
       "solutions": [],
@@ -1434,16 +1527,22 @@
       ],
       "tests": [
         {
-          "text": "The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.",
-          "testString": "assert($('#navbar').css('position') == 'fixed', 'The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.');"
+          "text":
+            "The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.",
+          "testString":
+            "assert($('#navbar').css('position') == 'fixed', 'The <code>#navbar</code> element should have a <code>position</code> set to <code>fixed</code>.');"
         },
         {
-          "text": "Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.",
-          "testString": "assert($('#navbar').css('top') == '0px', 'Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');"
+          "text":
+            "Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.",
+          "testString":
+            "assert($('#navbar').css('top') == '0px', 'Your code should use the <code>top</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');"
         },
         {
-          "text": "Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.",
-          "testString": "assert($('#navbar').css('left') == '0px', 'Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');"
+          "text":
+            "Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.",
+          "testString":
+            "assert($('#navbar').css('left') == '0px', 'Your code should use the <code>left</code> CSS offset of 0 pixels on the <code>#navbar</code> element.');"
         }
       ],
       "solutions": [],
@@ -1505,12 +1604,16 @@
       ],
       "tests": [
         {
-          "text": "The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.",
-          "testString": "assert($('#left').css('float') == 'left', 'The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.');"
+          "text":
+            "The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.",
+          "testString":
+            "assert($('#left').css('float') == 'left', 'The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.');"
         },
         {
-          "text": "The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.",
-          "testString": "assert($('#right').css('float') == 'right', 'The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.');"
+          "text":
+            "The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.",
+          "testString":
+            "assert($('#right').css('float') == 'right', 'The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.');"
         }
       ],
       "solutions": [],
@@ -1561,7 +1664,8 @@
     },
     {
       "id": "587d78a3367417b2b2512acf",
-      "title": "Change the Position of Overlapping Elements with the z-index Property",
+      "title":
+        "Change the Position of Overlapping Elements with the z-index Property",
       "description": [
         "When elements are positioned to overlap, the element coming later in the HTML markup will, by default, appear on the top of the other elements. However, the <code>z-index</code> property can specify the order of how elements are stacked on top of one another. It must be an integer (i.e. a whole number and not a decimal), and higher values for the <code>z-index</code> property of an element move it higher in the stack than those with lower values.",
         "<hr>",
@@ -1569,8 +1673,10 @@
       ],
       "tests": [
         {
-          "text": "The element with class <code>first</code> should have a <code>z-index</code> value of 2.",
-          "testString": "assert($('.first').css('z-index') == '2', 'The element with class <code>first</code> should have a <code>z-index</code> value of 2.');"
+          "text":
+            "The element with class <code>first</code> should have a <code>z-index</code> value of 2.",
+          "testString":
+            "assert($('.first').css('z-index') == '2', 'The element with class <code>first</code> should have a <code>z-index</code> value of 2.');"
         }
       ],
       "solutions": [],
@@ -1624,8 +1730,10 @@
       ],
       "tests": [
         {
-          "text": "The <code>div</code> should have a <code>margin</code> set to auto.",
-          "testString": "assert(code.match(/margin:\\s*?auto;/g), 'The <code>div</code> should have a <code>margin</code> set to auto.');"
+          "text":
+            "The <code>div</code> should have a <code>margin</code> set to auto.",
+          "testString":
+            "assert(code.match(/margin:\\s*?auto;/g), 'The <code>div</code> should have a <code>margin</code> set to auto.');"
         }
       ],
       "solutions": [],
@@ -1669,12 +1777,16 @@
       ],
       "tests": [
         {
-          "text": "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.",
-          "testString": "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');"
+          "text":
+            "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.",
+          "testString":
+            "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');"
         },
         {
-          "text": "The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.",
-          "testString": "assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.');"
+          "text":
+            "The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.",
+          "testString":
+            "assert($('.yellow').css('background-color') == 'rgb(255, 255, 0)', 'The <code>div</code> element with class <code>yellow</code> should have a <code>background-color</code> of yellow.');"
         }
       ],
       "solutions": [],
@@ -1726,16 +1838,22 @@
       ],
       "tests": [
         {
-          "text": "The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.",
-          "testString": "assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');"
+          "text":
+            "The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.",
+          "testString":
+            "assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');"
         },
         {
-          "text": "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.",
-          "testString": "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');"
+          "text":
+            "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.",
+          "testString":
+            "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');"
         },
         {
-          "text": "The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.",
-          "testString": "assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');"
+          "text":
+            "The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.",
+          "testString":
+            "assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');"
         }
       ],
       "solutions": [],
@@ -1792,20 +1910,28 @@
       ],
       "tests": [
         {
-          "text": "The <code>header</code> element should have a <code>background-color</code> of #09A7A1.",
-          "testString": "assert($('header').css('background-color') == 'rgb(9, 167, 161)', 'The <code>header</code> element should have a <code>background-color</code> of #09A7A1.');"
+          "text":
+            "The <code>header</code> element should have a <code>background-color</code> of #09A7A1.",
+          "testString":
+            "assert($('header').css('background-color') == 'rgb(9, 167, 161)', 'The <code>header</code> element should have a <code>background-color</code> of #09A7A1.');"
         },
         {
-          "text": "The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.",
-          "testString": "assert($('footer').css('background-color') == 'rgb(9, 167, 161)', 'The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.');"
+          "text":
+            "The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.",
+          "testString":
+            "assert($('footer').css('background-color') == 'rgb(9, 167, 161)', 'The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.');"
         },
         {
-          "text": "The <code>h2</code> element should have a <code>color</code> of #09A7A1.",
-          "testString": "assert($('h2').css('color') == 'rgb(9, 167, 161)', 'The <code>h2</code> element should have a <code>color</code> of #09A7A1.');"
+          "text":
+            "The <code>h2</code> element should have a <code>color</code> of #09A7A1.",
+          "testString":
+            "assert($('h2').css('color') == 'rgb(9, 167, 161)', 'The <code>h2</code> element should have a <code>color</code> of #09A7A1.');"
         },
         {
-          "text": "The <code>button</code> element should have a <code>background-color</code> of #FF790E.",
-          "testString": "assert($('button').css('background-color') == 'rgb(255, 121, 14)', 'The <code>button</code> element should have a <code>background-color</code> of #FF790E.');"
+          "text":
+            "The <code>button</code> element should have a <code>background-color</code> of #FF790E.",
+          "testString":
+            "assert($('button').css('background-color') == 'rgb(255, 121, 14)', 'The <code>button</code> element should have a <code>background-color</code> of #FF790E.');"
         }
       ],
       "solutions": [],
@@ -1878,28 +2004,40 @@
       ],
       "tests": [
         {
-          "text": "Your code should use the <code>hsl()</code> property to declare the color green.",
-          "testString": "assert(code.match(/\\.green\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color green.');"
+          "text":
+            "Your code should use the <code>hsl()</code> property to declare the color green.",
+          "testString":
+            "assert(code.match(/\\.green\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color green.');"
         },
         {
-          "text": "Your code should use the <code>hsl()</code> property to declare the color cyan.",
-          "testString": "assert(code.match(/\\.cyan\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color cyan.');"
+          "text":
+            "Your code should use the <code>hsl()</code> property to declare the color cyan.",
+          "testString":
+            "assert(code.match(/\\.cyan\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color cyan.');"
         },
         {
-          "text": "Your code should use the <code>hsl()</code> property to declare the color blue.",
-          "testString": "assert(code.match(/\\.blue\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color blue.');"
+          "text":
+            "Your code should use the <code>hsl()</code> property to declare the color blue.",
+          "testString":
+            "assert(code.match(/\\.blue\\s*?{\\s*?background-color:\\s*?hsl/gi), 'Your code should use the <code>hsl()</code> property to declare the color blue.');"
         },
         {
-          "text": "The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.",
-          "testString": "assert($('.green').css('background-color') == 'rgb(0, 255, 0)', 'The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.');"
+          "text":
+            "The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.",
+          "testString":
+            "assert($('.green').css('background-color') == 'rgb(0, 255, 0)', 'The <code>div</code> element with class <code>green</code> should have a <code>background-color</code> of green.');"
         },
         {
-          "text": "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.",
-          "testString": "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');"
+          "text":
+            "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.",
+          "testString":
+            "assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');"
         },
         {
-          "text": "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.",
-          "testString": "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');"
+          "text":
+            "The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.",
+          "testString":
+            "assert($('.blue').css('background-color') == 'rgb(0, 0, 255)', 'The <code>div</code> element with class <code>blue</code> should have a <code>background-color</code> of blue.');"
         }
       ],
       "solutions": [],
@@ -1956,8 +2094,10 @@
       ],
       "tests": [
         {
-          "text": "The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.",
-          "testString": "assert(code.match(/nav\\s*?{\\s*?background-color:\\s*?hsl\\(180,\\s*?80%,\\s*?25%\\)/gi), 'The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.');"
+          "text":
+            "The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.",
+          "testString":
+            "assert(code.match(/nav\\s*?{\\s*?background-color:\\s*?hsl\\(180,\\s*?80%,\\s*?25%\\)/gi), 'The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.');"
         }
       ],
       "solutions": [],
@@ -2033,8 +2173,10 @@
       ],
       "tests": [
         {
-          "text": "The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.",
-          "testString": "assert(code.match(/background:\\s*?linear-gradient\\(35deg,\\s*?(#CCFFFF|#CFF),\\s*?(#FFCCCC|#FCC)\\);/gi), 'The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');"
+          "text":
+            "The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.",
+          "testString":
+            "assert(code.match(/background:\\s*?linear-gradient\\(35deg,\\s*?(#CCFFFF|#CFF),\\s*?(#FFCCCC|#FCC)\\);/gi), 'The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');"
         }
       ],
       "solutions": [],
@@ -2082,28 +2224,38 @@
       ],
       "tests": [
         {
-          "text": "The angle of the <code>repeating-linear-gradient()</code> should be 45deg.",
-          "testString": "assert(code.match(/background:\\s*?repeating-linear-gradient\\(\\s*?45deg/gi), 'The angle of the <code>repeating-linear-gradient()</code> should be 45deg.');"
+          "text":
+            "The angle of the <code>repeating-linear-gradient()</code> should be 45deg.",
+          "testString":
+            "assert(code.match(/background:\\s*?repeating-linear-gradient\\(\\s*?45deg/gi), 'The angle of the <code>repeating-linear-gradient()</code> should be 45deg.');"
         },
         {
-          "text": "The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg",
-          "testString": "assert(!code.match(/90deg/gi), 'The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg');"
+          "text":
+            "The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg",
+          "testString":
+            "assert(!code.match(/90deg/gi), 'The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg');"
         },
         {
           "text": "The color stop at 0 pixels should be <code>yellow</code>.",
-          "testString": "assert(code.match(/yellow\\s+?0px/gi), 'The color stop at 0 pixels should be <code>yellow</code>.');"
+          "testString":
+            "assert(code.match(/yellow\\s+?0px/gi), 'The color stop at 0 pixels should be <code>yellow</code>.');"
         },
         {
           "text": "One color stop at 40 pixels should be <code>yellow</code>.",
-          "testString": "assert(code.match(/yellow\\s+?40px/gi), 'One color stop at 40 pixels should be <code>yellow</code>.');"
+          "testString":
+            "assert(code.match(/yellow\\s+?40px/gi), 'One color stop at 40 pixels should be <code>yellow</code>.');"
         },
         {
-          "text": "The second color stop at 40 pixels should be <code>black</code>.",
-          "testString": "assert(code.match(/yellow\\s+?40px,\\s*?black\\s+?40px/gi), 'The second color stop at 40 pixels should be <code>black</code>.');"
+          "text":
+            "The second color stop at 40 pixels should be <code>black</code>.",
+          "testString":
+            "assert(code.match(/yellow\\s+?40px,\\s*?black\\s+?40px/gi), 'The second color stop at 40 pixels should be <code>black</code>.');"
         },
         {
-          "text": "The last color stop at 80 pixels should be <code>black</code>.",
-          "testString": "assert(code.match(/black\\s+?80px/gi), 'The last color stop at 80 pixels should be <code>black</code>.');"
+          "text":
+            "The last color stop at 80 pixels should be <code>black</code>.",
+          "testString":
+            "assert(code.match(/black\\s+?80px/gi), 'The last color stop at 80 pixels should be <code>black</code>.');"
         }
       ],
       "solutions": [],
@@ -2144,7 +2296,8 @@
     },
     {
       "id": "587d78a5367417b2b2512ad8",
-      "title": "Create Texture by Adding a Subtle Pattern as a Background Image",
+      "title":
+        "Create Texture by Adding a Subtle Pattern as a Background Image",
       "description": [
         "One way to add texture and interest to a background and have it stand out more is to add a subtle pattern. The key is balance, as you don't want the background to stand out too much, and take away from the foreground. The <code>background</code> property supports the <code>url()</code> function in order to link to an image of the chosen texture or pattern. The link address is wrapped in quotes inside the parentheses.",
         "<hr>",
@@ -2152,8 +2305,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.",
-          "testString": "assert(code.match(/background:\\s*?url\\((\"|')https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png(\"|')\\)/gi), 'Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.');"
+          "text":
+            "Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.",
+          "testString":
+            "assert(code.match(/background:\\s*?url\\((\"|')https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png(\"|')\\)/gi), 'Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.');"
         }
       ],
       "solutions": [],
@@ -2168,13 +2323,7 @@
           "key": "indexhtml",
           "ext": "html",
           "name": "index",
-          "contents": [
-            "<style>",
-            "  body {",
-            "    ",
-            "  }",
-            "</style>"
-          ],
+          "contents": ["<style>", "  body {", "    ", "  }", "</style>"],
           "head": [],
           "tail": []
         }
@@ -2182,17 +2331,20 @@
     },
     {
       "id": "587d78a5367417b2b2512ad9",
-      "title": "Use the CSS Transform scale Property to Change the Size of an Element",
+      "title":
+        "Use the CSS Transform scale Property to Change the Size of an Element",
       "description": [
         "To change the scale of an element, CSS has the <code>transform</code> property, along with its <code>scale()</code> function. The following code example doubles the size of all the paragraph elements on the page:",
-        "<blockquote>p {<br>  transform:scale(2);<br>}</blockquote>",
+        "<blockquote>p {<br>&nbsp;&nbsp;transform:scale(2);<br>}</blockquote>",
         "<hr>",
         "Increase the size of the element with the id of <code>ball2</code> to 1.5 times its original size."
       ],
       "tests": [
         {
-          "text": "Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.",
-          "testString": "assert(code.match(/#ball2\\s*?{\\s*?left:\\s*?65%;\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?}|#ball2\\s*?{\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?left:\\s*?65%;\\s*?}/gi), 'Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.');"
+          "text":
+            "Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.",
+          "testString":
+            "assert(code.match(/#ball2\\s*?{\\s*?left:\\s*?65%;\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?}|#ball2\\s*?{\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?left:\\s*?65%;\\s*?}/gi), 'Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.');"
         }
       ],
       "solutions": [],
@@ -2240,18 +2392,21 @@
     },
     {
       "id": "587d78a5367417b2b2512ada",
-      "title": "Use the CSS Transform scale Property to Scale an Element on Hover",
+      "title":
+        "Use the CSS Transform scale Property to Scale an Element on Hover",
       "description": [
         "The <code>transform</code> property has a variety of functions that lets you scale, move, rotate, skew, etc., your elements. When used with pseudo-classes such as <code>:hover</code> that specify a certain state of an element, the <code>transform</code> property can easily add interactivity to your elements.",
         "Here's an example to scale the paragraph elements to 2.1 times their original size when a user hovers over them:",
-        "<blockquote>p:hover {<br>  transform: scale(2.1);<br>}</blockquote>",
+        "<blockquote>p:hover {<br>&nbsp;&nbsp;transform: scale(2.1);<br>}</blockquote>",
         "<hr>",
         "Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use the <code>transform</code> property to scale the <code>div</code> element to 1.1 times its original size when a user hovers over it."
       ],
       "tests": [
         {
-          "text": "The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.",
-          "testString": "assert(code.match(/div:hover\\s*?{\\s*?transform:\\s*?scale\\(1\\.1\\);/gi), 'The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.');"
+          "text":
+            "The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.",
+          "testString":
+            "assert(code.match(/div:hover\\s*?{\\s*?transform:\\s*?scale\\(1\\.1\\);/gi), 'The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.');"
         }
       ],
       "solutions": [],
@@ -2292,18 +2447,21 @@
     },
     {
       "id": "587d78a6367417b2b2512adb",
-      "title": "Use the CSS Transform Property skewX to Skew an Element Along the X-Axis",
+      "title":
+        "Use the CSS Transform Property skewX to Skew an Element Along the X-Axis",
       "description": [
         "The next function of the <code>transform</code> property is <code>skewX()</code>, which skews the selected element along its X (horizontal) axis by a given degree.",
         "The following code skews the paragraph element by -32 degrees along the X-axis.",
-        "<blockquote>p {<br>  transform: skewX(-32deg);<br>}</blockquote>",
+        "<blockquote>p {<br>&nbsp;&nbsp;transform: skewX(-32deg);<br>}</blockquote>",
         "<hr>",
         "Skew the element with the id of <code>bottom</code> by 24 degrees along the X-axis by using the <code>transform</code> property."
       ],
       "tests": [
         {
-          "text": "The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.",
-          "testString": "assert(code.match(/#bottom\\s*?{\\s*?.*?\\s*?transform:\\s*?skewX\\(24deg\\);/g), 'The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.');"
+          "text":
+            "The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.",
+          "testString":
+            "assert(code.match(/#bottom\\s*?{\\s*?.*?\\s*?transform:\\s*?skewX\\(24deg\\);/g), 'The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.');"
         }
       ],
       "solutions": [],
@@ -2344,7 +2502,8 @@
     },
     {
       "id": "587d78a6367417b2b2512adc",
-      "title": "Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis",
+      "title":
+        "Use the CSS Transform Property skewY to Skew an Element Along the Y-Axis",
       "description": [
         "Given that the <code>skewX()</code> function skews the selected element along the X-axis by a given degree, it is no surprise that the <code>skewY()</code> property skews an element along the Y (vertical) axis.",
         "<hr>",
@@ -2352,8 +2511,10 @@
       ],
       "tests": [
         {
-          "text": "The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.",
-          "testString": "assert(code.match(/#top\\s*?{\\s*?.*?\\s*?transform:\\s*?skewY\\(-10deg\\);/g), 'The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.');"
+          "text":
+            "The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.",
+          "testString":
+            "assert(code.match(/#top\\s*?{\\s*?.*?\\s*?transform:\\s*?skewY\\(-10deg\\);/g), 'The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.');"
         }
       ],
       "solutions": [],
@@ -2404,16 +2565,22 @@
       ],
       "tests": [
         {
-          "text": "The value of the <code>background-color</code> property should be set to <code>transparent</code>.",
-          "testString": "assert(code.match(/background-color:\\s*?transparent;/gi), 'The value of the <code>background-color</code> property should be set to <code>transparent</code>.');"
+          "text":
+            "The value of the <code>background-color</code> property should be set to <code>transparent</code>.",
+          "testString":
+            "assert(code.match(/background-color:\\s*?transparent;/gi), 'The value of the <code>background-color</code> property should be set to <code>transparent</code>.');"
         },
         {
-          "text": "The value of the <code>border-radius</code> property should be set to <code>50%</code>.",
-          "testString": "assert(code.match(/border-radius:\\s*?50%;/gi), 'The value of the <code>border-radius</code> property should be set to <code>50%</code>.');"
+          "text":
+            "The value of the <code>border-radius</code> property should be set to <code>50%</code>.",
+          "testString":
+            "assert(code.match(/border-radius:\\s*?50%;/gi), 'The value of the <code>border-radius</code> property should be set to <code>50%</code>.');"
         },
         {
-          "text": "The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.",
-          "testString": "assert(code.match(/box-shadow:\\s*?25px\\s+?10px\\s+?0(px)?\\s+?0(px)?\\s+?blue\\s*?;/gi), 'The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.');"
+          "text":
+            "The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.",
+          "testString":
+            "assert(code.match(/box-shadow:\\s*?25px\\s+?10px\\s+?0(px)?\\s+?0(px)?\\s+?blue\\s*?;/gi), 'The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.');"
         }
       ],
       "solutions": [],
@@ -2457,7 +2624,7 @@
       "title": "Create a More Complex Shape Using CSS and HTML",
       "description": [
         "One of the most popular shapes in the world is the heart shape, and this challenge creates it with raw CSS. But first, you need to understand the <code>:before</code> and <code>:after</code> selectors. These selectors are used to add something before or after a selected element. In the following example, a <code>:before</code> selector is used to add a rectangle to an element with the class <code>heart</code>:",
-        "<blockquote>.heart:before {<br>  content: \"\";<br>  background-color: yellow;<br>  border-radius: 25%;<br>  position: absolute;<br>  height: 50px;<br>  width: 70px;<br>  top: -50px;<br>  left: 5px;<br>}</blockquote>",
+        "<blockquote>.heart:before {<br>&nbsp;&nbsp;content: \"\";<br>&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;border-radius: 25%;<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;height: 50px;<br>&nbsp;&nbsp;width: 70px;<br>&nbsp;&nbsp;top: -50px;<br>&nbsp;&nbsp;left: 5px;<br>}</blockquote>",
         "For the <code>:before</code> and <code>:after</code> selectors to function properly, they must have a defined <code>content</code> property. It usually has content such as a photo or text. When the <code>:before</code> and <code>:after</code> selectors add shapes, the <code>content</code> property is still required, but it's set to an empty string.",
         "In the above example, the element with the class of <code>heart</code> has a <code>:before</code> selector that produces a yellow rectangle with <code>height</code> and <code>width</code> of 50px and 70px, respectively. This rectangle has round corners due to its 25% border radius and is positioned absolutely at 5px from the <code>left</code> and 50px above the <code>top</code> of the element.",
         "<hr>",
@@ -2467,20 +2634,28 @@
       ],
       "tests": [
         {
-          "text": "The <code>background-color</code> property of the <code>heart:after</code> selector should be pink.",
-          "testString": "assert(code.match(/\\.heart:after\\s*?{\\s*?background-color:\\s*?pink;/gi), 'The <code>background-color</code> property of the <code>heart:after</code> selector should be pink.');"
+          "text":
+            "The <code>background-color</code> property of the <code>heart:after</code> selector should be pink.",
+          "testString":
+            "assert(code.match(/\\.heart:after\\s*?{\\s*?background-color:\\s*?pink;/gi), 'The <code>background-color</code> property of the <code>heart:after</code> selector should be pink.');"
         },
         {
-          "text": "The <code>border-radius</code> of the <code>heart:after</code> selector should be 50%.",
-          "testString": "assert(code.match(/border-radius:\\s*?50%/gi).length == 2, 'The <code>border-radius</code> of the <code>heart:after</code> selector should be 50%.');"
+          "text":
+            "The <code>border-radius</code> of the <code>heart:after</code> selector should be 50%.",
+          "testString":
+            "assert(code.match(/border-radius:\\s*?50%/gi).length == 2, 'The <code>border-radius</code> of the <code>heart:after</code> selector should be 50%.');"
         },
         {
-          "text": "The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.",
-          "testString": "assert(code.match(/transform:\\s*?rotate\\(-45deg\\)/gi), 'The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.');"
+          "text":
+            "The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.",
+          "testString":
+            "assert(code.match(/transform:\\s*?rotate\\(-45deg\\)/gi), 'The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.');"
         },
         {
-          "text": "The <code>content</code> of the <code>heart:before</code> selector should be an empty string.",
-          "testString": "assert(code.match(/\\.heart:before\\s*?{\\s*?content:\\s*?(\"|')\\1;/gi), 'The <code>content</code> of the <code>heart:before</code> selector should be an empty string.');"
+          "text":
+            "The <code>content</code> of the <code>heart:before</code> selector should be an empty string.",
+          "testString":
+            "assert(code.match(/\\.heart:before\\s*?{\\s*?content:\\s*?(\"|')\\1;/gi), 'The <code>content</code> of the <code>heart:before</code> selector should be an empty string.');"
         }
       ],
       "solutions": [],
@@ -2543,41 +2718,51 @@
         "<code>animation-name</code> sets the name of the animation, which is later used by <code>@keyframes</code> to tell CSS which rules go with which animations.",
         "<code>animation-duration</code> sets the length of time for the animation.",
         "<code>@keyframes</code> is how to specify exactly what happens within the animation over the duration. This is done by giving CSS properties for specific \"frames\" during the animation, with percentages ranging from 0% to 100%. If you compare this to a movie, the CSS properties for 0% is how the element displays in the opening scene. The CSS properties for 100% is how the element appears at the end, right before the credits roll. Then CSS applies the magic to transition the element over the given duration to act out the scene. Here's an example to illustrate the usage of <code>@keyframes</code> and the animation properties:",
-        "<blockquote>#anim {<br>  animation-name: colorful;<br>  animation-duration: 3s;<br>}<br>@keyframes colorful {<br>  0% {<br>   background-color: blue;<br>  }<br>  100% {<br>    background-color: yellow;<br>  }<br>}</blockquote>",
+        "<blockquote>#anim {<br>&nbsp;&nbsp;animation-name: colorful;<br>&nbsp;&nbsp;animation-duration: 3s;<br>}<br>@keyframes colorful {<br>&nbsp;&nbsp;0% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "For the element with the <code>anim</code> id, the code snippet above sets the <code>animation-name</code> to <code>colorful</code> and sets the <code>animation-duration</code> to 3 seconds. Then the <code>@keyframes</code> rule links to the animation properties with the name <code>colorful</code>. It sets the color to blue at the beginning of the animation (0%) which will transition to yellow by the end of the animation (100%). You aren't limited to only beginning-end transitions, you can set properties for the element for any percentage between 0% and 100%.",
         "<hr>",
         "Create an animation for the element with the id <code>rect</code>, by setting the <code>animation-name</code> to rainbow and the <code>animation-duration</code> to 4 seconds. Next, declare a <code>@keyframes</code> rule, and set the <code>background-color</code> at the beginning of the animation (<code>0%</code>) to blue, the middle of the animation (<code>50%</code>) to green, and the end of the animation (<code>100%</code>) to yellow."
       ],
       "tests": [
         {
-          "text": "The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.",
-          "testString": "assert($('#rect').css('animation-name') == 'rainbow', 'The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.');"
+          "text":
+            "The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.",
+          "testString":
+            "assert($('#rect').css('animation-name') == 'rainbow', 'The element with id of <code>rect</code> should have an <code>animation-name</code> property with a value of rainbow.');"
         },
         {
-          "text": "The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.",
-          "testString": "assert($('#rect').css('animation-duration') == '4s', 'The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.');"
+          "text":
+            "The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.",
+          "testString":
+            "assert($('#rect').css('animation-duration') == '4s', 'The element with id of <code>rect</code> should have an <code>animation-duration</code> property with a value of 4s.');"
         },
         {
-          "text": "The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.",
-          "testString": "assert(code.match(/@keyframes\\s+?rainbow\\s*?{/g), 'The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.');"
+          "text":
+            "The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.",
+          "testString":
+            "assert(code.match(/@keyframes\\s+?rainbow\\s*?{/g), 'The <code>@keyframes</code> rule should use the <code>animation-name</code> of rainbow.');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.",
-          "testString": "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.');"
+          "text":
+            "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.",
+          "testString":
+            "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of blue at 0%.');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.",
-          "testString": "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.');"
+          "text":
+            "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.",
+          "testString":
+            "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of green at 50%.');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.",
-          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.');"
+          "text":
+            "The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.",
+          "testString":
+            "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?}/gi), 'The <code>@keyframes</code> rule for rainbow should use a <code>background-color</code> of yellow at 100%.');"
         }
       ],
       "solutions": [],
-      "hints": [
-        "Make sure the @keyframes rule links to the animation-name."
-      ],
+      "hints": ["Make sure the @keyframes rule links to the animation-name."],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
       "translations": {},
@@ -2618,19 +2803,23 @@
       "description": [
         "You can use CSS <code>@keyframes</code> to change the color of a button in its hover state.",
         "Here's an example of changing the width of an image on hover:",
-        "<blockquote>&lt;style&gt;<br>  img:hover {<br>    animation-name: width;<br>    animation-duration: 500ms;<br>  }<br><br>  @keyframes width {<br>    100% {<br>      width: 40px;<br>    }<br>  }<br>&lt;/style&gt;<br><br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
+        "<blockquote>&lt;style&gt;<br>&nbsp;&nbsp;img:hover {<br>&nbsp;&nbsp;&nbsp;&nbsp;animation-name: width;<br>&nbsp;&nbsp;&nbsp;&nbsp;animation-duration: 500ms;<br>&nbsp;&nbsp;}<br><br>&nbsp;&nbsp;@keyframes width {<br>&nbsp;&nbsp;&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: 40px;<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;}<br>&lt;/style&gt;<br><br>&lt;img src=&quot;https://bit.ly/smallgooglelogo&quot; alt=&quot;Google's Logo&quot; /&gt;</blockquote>",
         "<hr>",
         "Note that <code>ms</code> stands for milliseconds, where 1000ms is equal to 1s.",
         "Use CSS <code>@keyframes</code> to change the <code>background-color</code> of the <code>button</code> element so it becomes <code>#4791d0</code> when a user hovers over it. The <code>@keyframes</code> rule should only have an entry for <code>100%</code>."
       ],
       "tests": [
         {
-          "text": "The @keyframes rule should use the <code>animation-name</code> background-color.",
-          "testString": "assert(code.match(/@keyframes\\s+?background-color\\s*?{/g), 'The @keyframes rule should use the <code>animation-name</code> background-color.');"
+          "text":
+            "The @keyframes rule should use the <code>animation-name</code> background-color.",
+          "testString":
+            "assert(code.match(/@keyframes\\s+?background-color\\s*?{/g), 'The @keyframes rule should use the <code>animation-name</code> background-color.');"
         },
         {
-          "text": "There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.",
-          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?#4791d0;\\s*?}/gi), 'There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.');"
+          "text":
+            "There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.",
+          "testString":
+            "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?#4791d0;\\s*?}/gi), 'There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.');"
         }
       ],
       "solutions": [],
@@ -2679,8 +2868,10 @@
       ],
       "tests": [
         {
-          "text": "<code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.",
-          "testString": "assert(code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-fill-mode\\s*?:\\s*?forwards\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-name\\s*?:\\s*?background-color\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-duration\\s*?:\\s*?500ms\\s*?;[\\s\\S]*}/gi), '<code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.');"
+          "text":
+            "<code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.",
+          "testString":
+            "assert(code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-fill-mode\\s*?:\\s*?forwards\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-name\\s*?:\\s*?background-color\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-duration\\s*?:\\s*?500ms\\s*?;[\\s\\S]*}/gi), '<code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.');"
         }
       ],
       "solutions": [],
@@ -2726,22 +2917,28 @@
       "description": [
         "When elements have a specified <code>position</code>, such as <code>fixed</code> or <code>relative</code>, the CSS offset properties <code>right</code>, <code>left</code>, <code>top</code>, and <code>bottom</code> can be used in animation rules to create movement.",
         "As shown in the example below, you can push the item downwards then upwards by setting the <code>top</code> property of the <code>50%</code> keyframe to 50px, but having it set to 0px for the first (<code>0%</code>) and the last (<code>100%</code>) keyframe.",
-        "<blockquote>@keyframes rainbow {<br>  0% {<br>    background-color: blue;<br>    top: 0px;<br>  }<br>  50% {<br>    background-color: green;<br>    top: 50px;<br>  }<br>  100% {<br>    background-color: yellow;<br>    top: 0px;<br>  }<br>}</blockquote>",
+        "<blockquote>@keyframes rainbow {<br>&nbsp;&nbsp;0% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: blue;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;50% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: green;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 50px;<br>&nbsp;&nbsp;}<br>&nbsp;&nbsp;100% {<br>&nbsp;&nbsp;&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;&nbsp;&nbsp;top: 0px;<br>&nbsp;&nbsp;}<br>}</blockquote>",
         "<hr>",
         "Add a horizontal motion to the <code>div</code> animation. Using the <code>left</code> offset property, add to the <code>@keyframes</code> rule so rainbow starts at 0 pixels at <code>0%</code>, moves to 25 pixels at <code>50%</code>, and ends at -25 pixels at <code>100%</code>. Don't replace the <code>top</code> property in the editor - the animation should have both vertical and horizontal motion."
       ],
       "tests": [
         {
-          "text": "The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.",
-          "testString": "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?top:\\s*?0px;\\s*?left:\\s*?0px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.');"
+          "text":
+            "The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.",
+          "testString":
+            "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?top:\\s*?0px;\\s*?left:\\s*?0px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.",
-          "testString": "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?top:\\s*?50px;\\s*?left:\\s*?25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.');"
+          "text":
+            "The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.",
+          "testString":
+            "assert(code.match(/50%\\s*?{\\s*?background-color:\\s*?green;\\s*?top:\\s*?50px;\\s*?left:\\s*?25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>50%</code> should use the <code>left</code> offset of 25px.');"
         },
         {
-          "text": "The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.",
-          "testString": "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?top:\\s*?0px;\\s*?left:\\s*?-25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.');"
+          "text":
+            "The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.",
+          "testString":
+            "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?top:\\s*?0px;\\s*?left:\\s*?-25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.');"
         }
       ],
       "solutions": [],
@@ -2798,7 +2995,8 @@
     },
     {
       "id": "587d78a7367417b2b2512ae2",
-      "title": "Create Visual Direction by Fading an Element from Left to Right",
+      "title":
+        "Create Visual Direction by Fading an Element from Left to Right",
       "description": [
         "For this challenge, you'll change the <code>opacity</code> of an animated element so it gradually fades as it reaches the right side of the screen.",
         "In the displayed animation, the round element with the gradient background moves to the right by the 50% mark of the animation per the <code>@keyframes</code> rule.",
@@ -2807,8 +3005,10 @@
       ],
       "tests": [
         {
-          "text": "The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.",
-          "testString": "assert(code.match(/@keyframes fade\\s*?{\\s*?50%\\s*?{\\s*?(?:left:\\s*?60%;\\s*?opacity:\\s*?0?\\.1;|opacity:\\s*?0?\\.1;\\s*?left:\\s*?60%;)/gi), 'The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
+          "text":
+            "The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.",
+          "testString":
+            "assert(code.match(/@keyframes fade\\s*?{\\s*?50%\\s*?{\\s*?(?:left:\\s*?60%;\\s*?opacity:\\s*?0?\\.1;|opacity:\\s*?0?\\.1;\\s*?left:\\s*?60%;)/gi), 'The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
         }
       ],
       "solutions": [],
@@ -2868,8 +3068,10 @@
       ],
       "tests": [
         {
-          "text": "The <code>animation-iteration-count</code> property should have a value of infinite.",
-          "testString": "assert($('#ball').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property should have a value of infinite.');"
+          "text":
+            "The <code>animation-iteration-count</code> property should have a value of infinite.",
+          "testString":
+            "assert($('#ball').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property should have a value of infinite.');"
         }
       ],
       "solutions": [],
@@ -2933,12 +3135,16 @@
       ],
       "tests": [
         {
-          "text": "The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.",
-          "testString": "assert($('.heart').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.');"
+          "text":
+            "The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.",
+          "testString":
+            "assert($('.heart').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property for the <code>heart</code> class should have a value of infinite.');"
         },
         {
-          "text": "The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.",
-          "testString": "assert($('.back').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.');"
+          "text":
+            "The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.",
+          "testString":
+            "assert($('.back').css('animation-iteration-count') == 'infinite', 'The <code>animation-iteration-count</code> property for the <code>back</code> class should have a value of infinite.');"
         }
       ],
       "solutions": [],
@@ -3038,8 +3244,10 @@
       ],
       "tests": [
         {
-          "text": "The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.",
-          "testString": "assert(code.match(/twinkle-1\\s*?{\\s*?50%/g), 'The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.');"
+          "text":
+            "The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.",
+          "testString":
+            "assert(code.match(/twinkle-1\\s*?{\\s*?50%/g), 'The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.');"
         }
       ],
       "solutions": [],
@@ -3124,16 +3332,22 @@
       ],
       "tests": [
         {
-          "text": "The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.",
-          "testString": "assert($('.star-1').css('animation-duration') == '1s', 'The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.');"
+          "text":
+            "The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.",
+          "testString":
+            "assert($('.star-1').css('animation-duration') == '1s', 'The <code>animation-duration</code> property for the star with class <code>star-1</code> should remain at 1s.');"
         },
         {
-          "text": "The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.",
-          "testString": "assert($('.star-2').css('animation-duration') == '0.9s', 'The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.');"
+          "text":
+            "The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.",
+          "testString":
+            "assert($('.star-2').css('animation-duration') == '0.9s', 'The <code>animation-duration</code> property for the star with class <code>star-2</code> should be 0.9s.');"
         },
         {
-          "text": "The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.",
-          "testString": "assert($('.star-3').css('animation-duration') == '1.1s', 'The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.');"
+          "text":
+            "The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.",
+          "testString":
+            "assert($('.star-3').css('animation-duration') == '1.1s', 'The <code>animation-duration</code> property for the star with class <code>star-3</code> should be 1.1s.');"
         }
       ],
       "solutions": [],
@@ -3217,12 +3431,16 @@
       ],
       "tests": [
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.",
-          "testString": "assert($('#ball1').css('animation-timing-function') == 'linear', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.');"
+          "text":
+            "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.",
+          "testString":
+            "assert($('#ball1').css('animation-timing-function') == 'linear', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be linear.');"
         },
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.",
-          "testString": "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.');"
+          "text":
+            "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.",
+          "testString":
+            "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should be ease-out.');"
         }
       ],
       "solutions": [],
@@ -3295,12 +3513,16 @@
       ],
       "tests": [
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.",
-          "testString": "assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.');"
+          "text":
+            "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.",
+          "testString":
+            "assert($('#ball1').css('animation-timing-function') == 'cubic-bezier(0.25, 0.25, 0.75, 0.75)', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.');"
         },
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.",
-          "testString": "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.');"
+          "text":
+            "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.",
+          "testString":
+            "assert($('#ball2').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.');"
         }
       ],
       "solutions": [],
@@ -3372,16 +3594,22 @@
       ],
       "tests": [
         {
-          "text": "The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .",
-          "testString": "assert($('#red').css('animation-timing-function') == 'cubic-bezier(0, 0, 0.58, 1)', 'The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .');"
+          "text":
+            "The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .",
+          "testString":
+            "assert($('#red').css('animation-timing-function') == 'cubic-bezier(0, 0, 0.58, 1)', 'The value of the <code>animation-timing-function</code> property of the element with the id <code>red</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values set respectively to 0, 0, 0.58, 1 .');"
         },
         {
-          "text": "The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.",
-          "testString": "assert($('#red').css('animation-timing-function') !== 'linear', 'The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.');"
+          "text":
+            "The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.",
+          "testString":
+            "assert($('#red').css('animation-timing-function') !== 'linear', 'The element with the id <code>red</code> should no longer have the <code>animation-timing-function</code> property of linear.');"
         },
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.",
-          "testString": "assert($('#blue').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.');"
+          "text":
+            "The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.",
+          "testString":
+            "assert($('#blue').css('animation-timing-function') == 'ease-out', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>blue</code> should not change.');"
         }
       ],
       "solutions": [],
@@ -3447,8 +3675,10 @@
       ],
       "tests": [
         {
-          "text": "The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.",
-          "testString": "assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.');"
+          "text":
+            "The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.",
+          "testString":
+            "assert($('#green').css('animation-timing-function') == 'cubic-bezier(0.311, 0.441, 0.444, 1.649)', 'The value of the <code>animation-timing-function</code> property for the element with the id <code>green</code> should be a <code>cubic-bezier</code> function with x1, y1, x2, y2 values as specified.');"
         }
       ],
       "solutions": [],
