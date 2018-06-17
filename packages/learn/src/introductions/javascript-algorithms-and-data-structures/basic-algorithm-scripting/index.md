@@ -9,6 +9,7 @@ Algorithms is the process used to solve problems, this process first include und
 
 In this lesson we will learn to solve the very basic algorithm problems using JavaScript which will help you to improve your problem solving skills and in future it will help you to jump into the complex problems. First part is always to fully understand the problem and then after that solve each chunk one by one.
 
-**Tip: ** Use `console.log()` to debug whenever you feel stuck in the process of solving the problem. 
+#### Note
+Use `console.log()` to debug whenever you feel stuck in the process of solving the problem. 
 
 Help us to improve the description on [GitHub](https://github.com/freeCodeCamp/learn/tree/master/src/introductions).
