@@ -228,7 +228,8 @@ class ShowClassic extends PureComponent {
           <ReflexElement flex={1} {...this.resizeProps}>
             {editors}
           </ReflexElement>
-          <ReflexSplitter propagate={true} {...this.resizeProps} />
+          {showPreview &&
+            <ReflexSplitter propagate={true} {...this.resizeProps} />}
           {showPreview ? (
             <ReflexElement flex={0.7} {...this.resizeProps}>
               <Preview
