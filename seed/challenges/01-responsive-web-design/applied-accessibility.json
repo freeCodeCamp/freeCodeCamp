@@ -811,7 +811,7 @@
         "Here's an example:",
         "<blockquote>&lt;label for=&quot;input1&quot;&gt;Enter a date:&lt;/label&gt;<br>&lt;input type=&quot;date&quot; id=&quot;input1&quot; name=&quot;input1&quot;&gt;<br></blockquote>",
         "<hr>",
-        "Camper Cat is setting up a mortal combat tournament and wants to ask his competitors to see what date works best. Add an <code>input</code> tag with a <code>type</code> attribute of \"date\", an <code>id</code> attribute of \"pickdate\", and a <code>name</code> attribute of \"date\"."
+        "Camper Cat is setting up a Mortal Kombat tournament and wants to ask his competitors to see what date works best. Add an <code>input</code> tag with a <code>type</code> attribute of \"date\", an <code>id</code> attribute of \"pickdate\", and a <code>name</code> attribute of \"date\"."
       ],
       "tests": [
         {
@@ -848,7 +848,7 @@
             "  </header>",
             "  <main>",
             "    <section>",
-            "      <h2>Mortal Combat Tournament Survey</h2>",
+            "      <h2>Mortal Kombat Tournament Survey</h2>",
             "      <form>",
             "        <p>Tell us the best date for the competition</p>",
             "        <label for=\"pickdate\">Preferred Date:</label>",
@@ -879,7 +879,7 @@
         "Here's an example:",
         "<code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code>",
         "<hr>",
-        "Camper Cat's mortal combat survey results are in! Wrap a <code>time</code> tag around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\" and add a <code>datetime</code> attribute to it set to \"2016-09-15\"."
+        "Camper Cat's Mortal Kombat survey results are in! Wrap a <code>time</code> tag around the text \"Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;\" and add a <code>datetime</code> attribute to it set to \"2016-09-15\"."
       ],
       "tests": [
         {
@@ -915,11 +915,11 @@
             "    <h1>Tournaments</h1>",
             "  </header>",
             "  <article>",
-            "    <h2>Mortal Combat Tournament Survey Results</h2>",
+            "    <h2>Mortal Kombat Tournament Survey Results</h2>",
             "    ",
             "    <!-- Add your code below this line -->",
             "    ",
-            "    <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Combat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>",
+            "    <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>",
             "    ",
             "    <!-- Add your code above this line -->",
             "    ",
