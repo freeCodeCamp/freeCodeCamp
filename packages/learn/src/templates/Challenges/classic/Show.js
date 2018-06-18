@@ -32,6 +32,8 @@ import {
 
 import './classic.css';
 
+import decodeHTMLEntities from '../../../../utils/decodeHTMLEntities';
+
 const mapStateToProps = createSelector(
   challengeFilesSelector,
   challengeTestsSelector,
@@ -200,7 +202,7 @@ class ShowClassic extends PureComponent {
 * Your test output will go here.
 */
 `}
-                output={output}
+                output={decodeHTMLEntities(output)}
               />
             </ReflexElement>
           ) : null}
