@@ -80,9 +80,19 @@ class EmailForm extends PureComponent {
     return (
       <form id='email-form' onSubmit={ handleSubmit(this.handleSubmit) }>
         <Row className='inline-form-field'>
+          <Col sm={ 3 } xs={ 12 }>
+            Current Email
+          </Col>
+          <Col sm={ 9 } xs={ 12 }>
+            <h4>
+              { this.props.email }
+            </h4>
+          </Col>
+        </Row>
+        <Row className='inline-form-field'>
             <Col sm={ 3 } xs={ 12 }>
               <ControlLabel htmlFor='email'>
-                Email
+                New Email
               </ControlLabel>
             </Col>
             <Col sm={ 9 } xs={ 12 }>
@@ -111,7 +121,7 @@ class EmailForm extends PureComponent {
           <Row className='inline-form-field'>
             <Col sm={ 3 } xs={ 12 }>
               <ControlLabel htmlFor='confirm-email'>
-                Confirm Email
+                Confirm New Email
               </ControlLabel>
             </Col>
             <Col sm={ 9 } xs={ 12 }>
