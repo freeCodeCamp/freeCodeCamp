@@ -13,7 +13,7 @@ const propTypes = {
 function SectionHeader({ children }) {
   return (
     <FullWidthRow>
-      <h2>{ children }</h2>
+      <h2 className='text-center'>{ children }</h2>
       <hr />
     </FullWidthRow>
   );
