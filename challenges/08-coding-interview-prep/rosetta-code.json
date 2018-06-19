@@ -4826,6 +4826,474 @@
       }
     },
     {
+      "title": "I before E except after C",
+      "description": [
+        "The phrase   <a href=\"https://en.wikipedia.org/wiki/I before E except after C\"> \"I before E, except after C\"</a> is a widely known mnemonic which is supposed to help when spelling English words.",
+        "Using the words provided, check if the two sub-clauses of the phrase are plausible individually:",
+        "<ol><li style='margin-bottom: 5px;'><i>\"I before E when not preceded by C\".</i></li><li><i>\"E before I when preceded by C\".</i></li></ol>",
+        "If both sub-phrases are plausible then the original phrase can be said to be plausible.",
+        "Write a function that accepts a word and check if the word follows this rule. The function should return true if it follows the rule otherwise false."
+      ],
+      "solutions": [
+        "function IBeforeExceptC (word)\n{\n\tif(word.indexOf(\"c\")==-1 && word.indexOf(\"ie\")!=-1)\n\t\treturn true;\n\telse if(word.indexOf(\"cei\")!=-1)\n\t\treturn true;\n\treturn false;\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>IBeforeExceptC</code> should be a function.'",
+          "testString": "assert(typeof IBeforeExceptC=='function','<code>IBeforeExceptC</code> should be a function.');"
+        }, 
+        {
+          "text": "'<code>IBeforeExceptC(\"receive\")</code> should return a boolean.'",
+          "testString": "assert(typeof IBeforeExceptC(\"receive\")=='boolean','<code>IBeforeExceptC(\"receive\")</code> should return a boolean.');"
+        }, 
+        {
+          "text": "'<code>IBeforeExceptC(\"receive\")</code> should return <code>true</code>.'",
+          "testString": "assert.equal(IBeforeExceptC(\"receive\"),true,'<code>IBeforeExceptC(\"receive\")</code> should return <code>true</code>.');"
+        }, 
+        {
+          "text": "'<code>IBeforeExceptC(\"science\")</code> should return <code>false</code>.'",
+          "testString": "assert.equal(IBeforeExceptC(\"science\"),false,'<code>IBeforeExceptC(\"science\")</code> should return <code>false</code>.');"
+        }, 
+        {
+          "text": "'<code>IBeforeExceptC(\"imperceivable\")</code> should return <code>true</code>.'",
+          "testString": "assert.equal(IBeforeExceptC(\"imperceivable\"),true,'<code>IBeforeExceptC(\"imperceivable\")</code> should return <code>true</code>.');"
+        }, 
+        {
+          "text": "'<code>IBeforeExceptC(\"inconceivable\")</code> should return <code>true</code>.'",
+          "testString": "assert.equal(IBeforeExceptC(\"inconceivable\"),true,'<code>IBeforeExceptC(\"inconceivable\")</code> should return <code>true</code>.');"
+        }, 
+        {
+          "text": "'<code>IBeforeExceptC(\"insufficient\")</code> should return <code>false</code>.'",
+          "testString": "assert.equal(IBeforeExceptC(\"insufficient\"),false,'<code>IBeforeExceptC(\"insufficient\")</code> should return <code>false</code>.');"
+        }, 
+        {
+          "text": "'<code>IBeforeExceptC(\"omniscient\")</code> should return <code>false</code>.'",
+          "testString": "assert.equal(IBeforeExceptC(\"omniscient\"),false,'<code>IBeforeExceptC(\"omniscient\")</code> should return <code>false</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7eb0",
+      "challengeType": 5,
+      "releasedOn": "June 8, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function IBeforeExceptC (word) {", 
+            "  // Good luck!", 
+            "}"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "title": "IBAN",
+      "description": [
+        "The  <a href=\"https://en.wikipedia.org/wiki/International_Bank_Account_Number\">International Bank Account Number (IBAN)</a>  is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating <a href=\"https://en.wikipedia.org/wiki/Transcription_error\">transcription errors</a>.", 
+        "The IBAN consists of up to 34 alphanumeric characters:", "<ul>", 
+        "<li>first the two-letter ISO 3166-1 alpha-2 country code</li>", 
+        "<li>then two check digits, and</li>", 
+        "<li>finally a country-specific Basic Bank Account Number (BBAN).</li>", "</ul>", 
+        "The check digits enable a sanity check of the bank account number to confirm its integrity even before submitting a transaction.", 
+        "Write a function that takes IBAN string as parameter. If it is valid return true. Otherwise, return false."
+      ],
+      "solutions": [
+        "function isValid (iban) {\n  var ibanLen = {\n  \tNO:15, BE:16, DK:18, FI:18, FO:18, GL:18, NL:18, MK:19,\n  \tSI:19, AT:20, BA:20, EE:20, KZ:20, LT:20, LU:20, CR:21,\n  \tCH:21, HR:21, LI:21, LV:21, BG:22, BH:22, DE:22, GB:22,\n  \tGE:22, IE:22, ME:22, RS:22, AE:23, GI:23, IL:23, AD:24,\n  \tCZ:24, ES:24, MD:24, PK:24, RO:24, SA:24, SE:24, SK:24,\n  \tVG:24, TN:24, PT:25, IS:26, TR:26, FR:27, GR:27, IT:27,\n  \tMC:27, MR:27, SM:27, AL:28, AZ:28, CY:28, DO:28, GT:28,\n  \tHU:28, LB:28, PL:28, BR:29, PS:29, KW:30, MU:30, MT:31\n  }\n\tiban = iban.replace(/\\s/g, '')\n\tif (!iban.match(/^[\\dA-Z]+$/)) return false\n\tvar len = iban.length\n\tif (len != ibanLen[iban.substr(0,2)]) return false\n\tiban = iban.substr(4) + iban.substr(0,4)\n\tfor (var s='', i=0; i<len; i+=1) s+=parseInt(iban.charAt(i),36)\n\tfor (var m=s.substr(0,15)%97, s=s.substr(15); s; s=s.substr(13)) m=(m+s.substr(0,13))%97\n\treturn m == 1\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>isValid</code> should be a function.'",
+          "testString": "assert(typeof isValid=='function','<code>isValid</code> should be a function.');"
+        }, 
+        {
+          "text": "'<code>isValid(\"'+tests[0]+'\")</code> should return a boolean.'",
+          "testString": "assert(typeof isValid(tests[0])=='boolean','<code>isValid(\"'+tests[0]+'\")</code> should return a boolean.');"
+        }, 
+        {
+          "text": "'<code>isValid(\"'+tests[0]+'\")</code> should return <code>true</code>.'",
+          "testString": "assert.equal(isValid(tests[0]),true,'<code>isValid(\"'+tests[0]+'\")</code> should return <code>true</code>.');"
+        }, 
+        {
+          "text": "'<code>isValid(\"'+tests[1]+'\")</code> should return <code>false</code>.'",
+          "testString": "assert.equal(isValid(tests[1]),false,'<code>isValid(\"'+tests[1]+'\")</code> should return <code>false</code>.');"
+        }, 
+        {
+          "text": "'<code>isValid(\"'+tests[2]+'\")</code> should return <code>false</code>.'",
+          "testString": "assert.equal(isValid(tests[2]),false,'<code>isValid(\"'+tests[2]+'\")</code> should return <code>false</code>.');"
+        }, 
+        {
+          "text": "'<code>isValid(\"'+tests[3]+'\")</code> should return <code>false</code>.'",
+          "testString": "assert.equal(isValid(tests[3]),false,'<code>isValid(\"'+tests[3]+'\")</code> should return <code>false</code>.');"
+        }, 
+        {
+          "text": "'<code>isValid(\"'+tests[4]+'\")</code> should return <code>true</code>.'",
+          "testString": "assert.equal(isValid(tests[4]),true,'<code>isValid(\"'+tests[4]+'\")</code> should return <code>true</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7eaf",
+      "challengeType": 5,
+      "releasedOn": "June 8, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function isValid (iban) {", 
+            "  // Good luck!", 
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "let tests=[", 
+            "'GB82 WEST 1234 5698 7654 32',", 
+            "'GB82 WEST 1.34 5698 7654 32',",
+            "'GB82 WEST 1234 5698 7654 325',", 
+            "'GB82 TEST 1234 5698 7654 32',", 
+            "'SA03 8000 0000 6080 1016 7519'", 
+            "]"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Identity matrix",
+      "description": [
+        "An <i>identity matrix</i> is a square matrix of size \\( n \\times n \\),",
+        "where the diagonal elements are all <b>1</b>s (ones),",
+        "and all the other elements are all <b>0</b>s (zeroes).",
+        "\\begin{bmatrix} 1 & 0 & 0 \\cr 0 & 1 & 0 \\cr 0 & 0 & 1 \\cr \\end{bmatrix}",
+        "Write a function that takes a number 'n' as a parameter and returns the identity matrix of order n x n."
+      ],
+      "solutions": [
+        "function idMatrix (n) {\n\treturn Array.apply(null, new Array(n)).map(function (x, i, xs) {\n\t\treturn xs.map(function (_, k) {\n\t\t\treturn i === k ? 1 : 0;\n\t\t})\n\t});\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>idMatrix</code> should be a function.'",
+          "testString": "assert(typeof idMatrix=='function','<code>idMatrix</code> should be a function.');"
+        },
+        {
+          "text": "'<code>idMatrix(1)</code> should return an array.'",
+          "testString": "assert(Array.isArray(idMatrix(1)),'<code>idMatrix(1)</code> should return an array.');"
+        },
+        {
+          "text": "'<code>idMatrix(1)</code> should return <code>'+JSON.stringify(results[0])+'</code>.'",
+          "testString": "assert.deepEqual(idMatrix(1),results[0],'<code>idMatrix(1)</code> should return <code>'+JSON.stringify(results[0])+'</code>.');"
+        },
+        {
+          "text": "'<code>idMatrix(2)</code> should return <code>'+JSON.stringify(results[1])+'</code>.'",
+          "testString": "assert.deepEqual(idMatrix(2),results[1],'<code>idMatrix(2)</code> should return <code>'+JSON.stringify(results[1])+'</code>.');"
+        },
+        {
+          "text": "'<code>idMatrix(3)</code> should return <code>'+JSON.stringify(results[2])+'</code>.'",
+          "testString": "assert.deepEqual(idMatrix(3),results[2],'<code>idMatrix(3)</code> should return <code>'+JSON.stringify(results[2])+'</code>.');"
+        },
+        {
+          "text": "'<code>idMatrix(4)</code> should return <code>'+JSON.stringify(results[3])+'</code>.'",
+          "testString": "assert.deepEqual(idMatrix(4),results[3],'<code>idMatrix(4)</code> should return <code>'+JSON.stringify(results[3])+'</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7eb1",
+      "challengeType": 5,
+      "releasedOn": "June 8, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function idMatrix (n) {", "  // Good luck!", "}"
+          ],
+          "head": [],
+          "tail": [
+            "let results=[[ [ 1 ] ],", 
+            "[ [ 1, 0 ], [ 0, 1 ] ],", 
+            "[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ],", 
+            "[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]]"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Iterated digits squaring",
+      "description": [
+        "If you add the square of the digits of a Natural number (an integer bigger than zero), you always end with either 1 or 89:",
+        "<pre>15 -> 26 -> 40 -> 16 -> 37 -> 58 -> 89",
+        "7 -> 49 -> 97 -> 130 -> 10 -> 1</pre>",
+        "Write a function that takes a number as a parameter and returns 1 or 89 after performing the mentioned process."
+      ],
+      "solutions": [
+        "function iteratedSquare (n) {\n\tvar total;\n\twhile (n != 89 && n != 1) {\n\t\ttotal = 0;\n\t\twhile (n > 0) {\n\t\t\ttotal += Math.pow(n % 10, 2);\n\t\t\tn = Math.floor(n/10);\n\t\t}\n\t\tn = total;\n\t}\n\treturn n;\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>iteratedSquare</code> should be a function.'",
+          "testString": "assert(typeof iteratedSquare=='function','<code>iteratedSquare</code> should be a function.');"
+        }, 
+        {
+          "text": "'<code>iteratedSquare(4)</code> should return a number.'",
+          "testString": "assert(typeof iteratedSquare(4)=='number','<code>iteratedSquare(4)</code> should return a number.');"
+        }, 
+        {
+          "text": "'<code>iteratedSquare(4)</code> should return <code>89</code>.'",
+          "testString": "assert.equal(iteratedSquare(4),89,'<code>iteratedSquare(4)</code> should return <code>89</code>.');"
+        }, 
+        {
+          "text": "'<code>iteratedSquare(7)</code> should return <code>1</code>.'",
+          "testString": "assert.equal(iteratedSquare(7),1,'<code>iteratedSquare(7)</code> should return <code>1</code>.');"
+        }, 
+        {
+          "text": "'<code>iteratedSquare(15)</code> should return <code>89</code>.'",
+          "testString": "assert.equal(iteratedSquare(15),89,'<code>iteratedSquare(15)</code> should return <code>89</code>.');"
+        }, 
+        {
+          "text": "'<code>iteratedSquare(20)</code> should return <code>89</code>.'",
+          "testString": "assert.equal(iteratedSquare(20),89,'<code>iteratedSquare(20)</code> should return <code>89</code>.');"
+        }, 
+        {
+          "text": "'<code>iteratedSquare(70)</code> should return <code>1</code>.'",
+          "testString": "assert.equal(iteratedSquare(70),1,'<code>iteratedSquare(70)</code> should return <code>1</code>.');"
+        }, 
+        {
+          "text": "'<code>iteratedSquare(100)</code> should return <code>1</code>.'",
+          "testString": "assert.equal(iteratedSquare(100),1,'<code>iteratedSquare(100)</code> should return <code>1</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ec1",
+      "challengeType": 5,
+      "releasedOn": "June 8, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function iteratedSquare (n) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "title": "Jaro distance",
+      "description": [
+        "The Jaro distance is a measure of similarity between two strings. The higher the Jaro distance for two strings is, the more similar the strings are. The score is normalized such that  <b>0</b>  equates to no similarity and  <b>1</b>  is an exact match. Definition The Jaro distance  \\( d_j \\)  of two given strings  \\(s_1\\)  and  \\(s_2\\) is",
+        "\\begin{align}d_j = \\begin{cases}0&amp;  & \\text{if }m=0 \\\\\\\\{\\frac {1}{3}}\\left({\\frac {m}{|s_{1}|}}+{\\frac {m}{|s_{2}|}}+{\\frac {m-t}{m}}\\right)&amp; & \\text{otherwise}\\end{cases}\\end{align}",
+        "  Where: <ul><li>\\(m\\)   is the number of <i>matching characters</i>;</li><li> \\(t\\)   is half the number of <i>transpositions</i>.</li></uL>",
+        "Two characters from  \\(s_1\\)   and  \\(s_2\\)   respectively, are considered <i>matching</i> only if they are the same and not farther than  \\(\\left\\lfloor\\frac{\\max(|s_1|,|s_2|)}{2}\\right\\rfloor-1\\).",
+        "Each character of  \\(s_1\\)   is compared with all its matching characters in  \\(s_2\\) . The number of matching (but different sequence order) characters divided by 2 defines the number of <i>transpositions</i>.",
+        "<b>Example</b>",
+        "Given the strings  \\(s_1\\)   <i>DWAYNE</i>  and  \\(s_2\\)   <i>DUANE</i>  we find:",
+        "<ul><li>\\(m = 4\\)</li><li>\\(|s_1| = 6\\) </li><li>\\(|s_2| = 5\\) </li><li>\\(t = 0\\) </li></ul>",
+        "We find a Jaro score of: \\(d_j = \\frac{1}{3}\\left(\\frac{4}{6} + \\frac{4}{5} + \\frac{4-0}{4}\\right) = 0.822\\).",
+        "Write a function a that takes two strings as parameters and returns the associated Jaro distance."
+      ],
+      "solutions": [
+        "function jaro (s, t) {\n  var s_len = s.length;\n  var t_len = t.length;\n\n  if (s_len == 0 && t_len == 0) return 1;\n\n  var match_distance = Math.max(s_len, t_len) / 2 - 1;\n\n  var s_matches = new Array(s_len);\n  var t_matches = new Array(t_len);\n\n  var matches = 0;\n  var transpositions = 0;\n\n  for (var i = 0; i < s_len; i++) {\n    var start = Math.max(0, i - match_distance);\n    var end = Math.min(i + match_distance + 1, t_len);\n\n    for (var j = start; j < end; j++) {\n      if (t_matches[j]) continue;\n      if (s.charAt(i) != t.charAt(j)) continue;\n      s_matches[i] = true;\n      t_matches[j] = true;\n      matches++;\n      break;\n    }\n  }\n\n  if (matches == 0) return 0;\n\n  var k = 0;\n  for (var i = 0; i < s_len; i++) {\n    if (!s_matches[i]) continue;\n    while (!t_matches[k]) k++;\n    if (s.charAt(i) != t.charAt(k)) transpositions++;\n    k++;\n  }\n\n  return ((matches / s_len) +\n    (matches / t_len) +\n    ((matches - transpositions / 2.0) / matches)) / 3.0;\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>jaro</code> should be a function.'",
+          "testString": "assert(typeof jaro=='function','<code>jaro</code> should be a function.');"
+        }, 
+        {
+          "text": "'<code>jaro(\"'+tests[0][0]+'\",\"'+tests[0][1]+'\")</code> should return a number.'",
+          "testString": "assert(typeof jaro(tests[0][0],tests[0][1])=='number','<code>jaro()</code> should return a number.');"
+        }, 
+        {
+          "text": "'<code>jaro(\"'+tests[0][0]+'\",\"'+tests[0][1]+'\")</code> should return <code>'+results[0]+'</code>.'",
+          "testString": "assert.equal(jaro(tests[0][0],tests[0][1]),results[0],'<code>jaro(\"'+tests[0][0]+'\",\"'+tests[0][1]+'\")</code> should return <code>'+results[0]+'</code>.');"
+        }, 
+        {
+          "text": "'<code>jaro(\"'+tests[1][0]+'\",\"'+tests[1][1]+'\")</code> should return <code>'+results[1]+'</code>.'",
+          "testString": "assert.equal(jaro(tests[1][0],tests[1][1]),results[1],'<code>jaro(\"'+tests[1][0]+'\",\"'+tests[1][1]+'\")</code> should return <code>'+results[1]+'</code>.');"
+        }, 
+        {
+          "text": "'<code>jaro(\"'+tests[2][0]+'\",\"'+tests[2][1]+'\")</code> should return <code>'+results[2]+'</code>.'",
+          "testString": "assert.equal(jaro(tests[2][0],tests[2][1]),results[2],'<code>jaro(\"'+tests[2][0]+'\",\"'+tests[2][1]+'\")</code> should return <code>'+results[2]+'</code>.');"
+        }, 
+        {
+          "text": "'<code>jaro(\"'+tests[3][0]+'\",\"'+tests[3][1]+'\")</code> should return <code>'+results[3]+'</code>.'",
+          "testString": "assert.equal(jaro(tests[3][0],tests[3][1]),results[3],'<code>jaro(\"'+tests[3][0]+'\",\"'+tests[3][1]+'\")</code> should return <code>'+results[3]+'</code>.');"
+        }, 
+        {
+          "text": "'<code>jaro(\"'+tests[4][0]+'\",\"'+tests[4][1]+'\")</code> should return <code>'+results[4]+'</code>.'",
+          "testString": "assert.equal(jaro(tests[4][0],tests[4][1]),results[4],'<code>jaro(\"'+tests[4][0]+'\",\"'+tests[4][1]+'\")</code> should return <code>'+results[4]+'</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ec2",
+      "challengeType": 5,
+      "releasedOn": "June 9, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function jaro (s, t) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "let tests=[",
+            "[\"MARTHA\", \"MARHTA\"],",
+            "[\"DIXON\", \"DICKSONX\"],",
+            "[\"JELLYFISH\", \"SMELLYFISH\"],",
+            "[\"HELLOS\", \"CHELLO\"],",
+            "[\"ABCD\", \"BCDA\"]",
+            "]",
+            "let results=[",
+            "0.9444444444444445,",
+            "0.7666666666666666,",
+            "0.8962962962962964,",
+            "0.888888888888889,",
+            "0.8333333333333334",
+            "]"
+          ]
+        }
+      }
+    },
+    {
+      "title": "JortSort",
+      "description": [
+        "jortSort is a sorting toolset that makes the user do the work and guarantees efficiency because you don't have to sort ever again. It was originally presented by Jenn \"Moneydollars\" Schiffer at the prestigious <a href=\"https://www.youtube.com/watch?v=pj4U_W0OFoE\">JSConf</a>.",
+        "jortSort is a function that takes a single array of comparable objects as its argument. It then sorts the array in ascending order and compares the sorted array to the originally provided array. If the arrays match (i.e. the original array was already sorted), the function returns true. If the arrays do not match (i.e. the original array was not sorted), the function returns false."
+      ],
+      "solutions": [
+        "function jortsort (array) {\n  // sort the array\n  var originalArray = array.slice(0);\n  array.sort( function(a,b){return a - b} );\n\n  // compare to see if it was originally sorted\n  for (var i = 0; i < originalArray.length; ++i) {\n    if (originalArray[i] !== array[i]) return false;\n  }\n\n  return true;\n};\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>jortsort</code> should be a function.'",
+          "testString": "assert(typeof jortsort=='function','<code>jortsort</code> should be a function.');"
+        },
+        {
+          "text": "'<code>jortsort('+JSON.stringify(tests[0])+')</code> should return a boolean.'",
+          "testString": "assert(typeof jortsort(tests[0].slice())=='boolean','<code>jortsort('+JSON.stringify(tests[0])+')</code> should return a boolean.');"
+        },
+        {
+          "text": "'<code>jortsort('+JSON.stringify(tests[0])+')</code> should return <code>true</code>.'",
+          "testString": "assert.equal(jortsort(tests[0].slice()),true,'<code>jortsort('+JSON.stringify(tests[0])+')</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "'<code>jortsort('+JSON.stringify(tests[1])+')</code> should return <code>false</code>.'",
+          "testString": "assert.equal(jortsort(tests[1].slice()),false,'<code>jortsort('+JSON.stringify(tests[1])+')</code> should return <code>false</code>.');"
+        },
+        {
+          "text": "'<code>jortsort('+JSON.stringify(tests[2])+')</code> should return <code>false</code>.'",
+          "testString": "assert.equal(jortsort(tests[2].slice()),false,'<code>jortsort('+JSON.stringify(tests[2])+')</code> should return <code>false</code>.');"
+        },
+        {
+          "text": "'<code>jortsort('+JSON.stringify(tests[3])+')</code> should return <code>true</code>.'",
+          "testString": "assert.equal(jortsort(tests[3].slice()),true,'<code>jortsort('+JSON.stringify(tests[3])+')</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "'<code>jortsort('+JSON.stringify(tests[4])+')</code> should return <code>false</code>.'",
+          "testString": "assert.equal(jortsort(tests[4].slice()),false,'<code>jortsort('+JSON.stringify(tests[4])+')</code> should return <code>false</code>.');"
+        },
+        {
+          "text": "'<code>jortsort('+JSON.stringify(tests[5])+')</code> should return <code>true</code>.'",
+          "testString": "assert.equal(jortsort(tests[5].slice()),true,'<code>jortsort('+JSON.stringify(tests[5])+')</code> should return <code>true</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ec4",
+      "challengeType": 5,
+      "releasedOn": "June 9, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function jortsort (array) {", 
+            "  // Good luck!", 
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "let tests=[[1,2,3,4,5],",
+            "[1,2,13,4,5],",
+            "[12,4,51,2,4],",
+            "[1,2],",
+            "[5,4,3,2,1],",
+            "[1,1,1,1,1]]"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Josephus problem",
+      "description": [
+        "<a href=\"https://en.wikipedia.org/wiki/Josephus problem\">Josephus problem</a> is a math puzzle with a grim description: $n$ prisoners are standing on a circle, sequentially numbered from $0$ to $n-1$.",
+        "An executioner walks along the circle, starting from prisoner $0$, removing every $k$-th prisoner and killing him.",
+        "As the process goes on, the circle becomes smaller and smaller, until only one prisoner remains, who is then freed.",
+        "For example, if there are $n=5$ prisoners and $k=2$, the order the prisoners are killed in (let's call it the \"killing sequence\") will be 1, 3, 0, and 4, and the survivor will be #2.",
+        "Given any  <big>$n, k > 0$</big>,  find out which prisoner will be the final survivor.",
+        "In one such incident, there were 41 prisoners and every 3<sup>rd</sup> prisoner was being killed  (<big>$k=3$</big>).",
+        "Among them was a clever chap name Josephus who worked out the problem, stood at the surviving position, and lived on to tell the tale.",
+        "Which number was he?",
+        "Write a function that takes the initial number of prisoners and 'k' as parameter and returns the number of the prisoner that survives."
+      ],
+      "solutions": [
+        "function josephus (init, kill) {\n  var Josephus = {\n    init: function(n) {\n      this.head = {};\n      var current = this.head;\n      for (var i = 0; i < n - 1; i++) {\n        current.label = i + 1;\n        current.next = {\n          prev: current\n        };\n        current = current.next;\n      }\n      current.label = n;\n      current.next = this.head;\n      this.head.prev = current;\n      return this;\n    },\n    kill: function(spacing) {\n      var current = this.head;\n      while (current.next !== current) {\n        for (var i = 0; i < spacing - 1; i++) {\n          current = current.next;\n        }\n        current.prev.next = current.next;\n        current.next.prev = current.prev;\n        current = current.next;\n      }\n      return current.label;\n    }\n  }\n\n  return Josephus.init(init).kill(kill)\n}\n\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>josephus</code> should be a function.'",
+          "testString": "assert(typeof josephus=='function','<code>josephus</code> should be a function.');"
+        },
+        {
+          "text": "'<code>josephus(30,3)</code> should return a number.'",
+          "testString": "assert(typeof josephus(30,3)=='number','<code>josephus(30,3)</code> should return a number.');"
+        },
+        {
+          "text": "'<code>josephus(30,3)</code> should return <code>29</code>.'",
+          "testString": "assert.equal(josephus(30,3),29,'<code>josephus(30,3)</code> should return <code>29</code>.');"
+        },
+        {
+          "text": "'<code>josephus(30,5)</code> should return <code>3</code>.'",
+          "testString": "assert.equal(josephus(30,5),3,'<code>josephus(30,5)</code> should return <code>3</code>.');"
+        },
+        {
+          "text": "'<code>josephus(20,2)</code> should return <code>9</code>.'",
+          "testString": "assert.equal(josephus(20,2),9,'<code>josephus(20,2)</code> should return <code>9</code>.');"
+        },
+        {
+          "text": "'<code>josephus(17,6)</code> should return <code>2</code>.'",
+          "testString": "assert.equal(josephus(17,6),2,'<code>josephus(17,6)</code> should return <code>2</code>.');"
+        },
+        {
+          "text": "'<code>josephus(29,4)</code> should return <code>2</code>.'",
+          "testString": "assert.equal(josephus(29,4),2,'<code>josephus(29,4)</code> should return <code>2</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ec5",
+      "challengeType": 5,
+      "releasedOn": "June 9, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function josephus (init, kill) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
       "title": "Sailors, coconuts and a monkey problem",
       "description": [
         " <p>",
