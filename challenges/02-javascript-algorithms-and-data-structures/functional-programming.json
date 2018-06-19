@@ -1090,7 +1090,7 @@
         "The <code>reduce</code> method allows for more general forms of array processing, and it's possible to show that both <code>filter</code> and <code>map</code> can be derived as a special application of <code>reduce</code>.",
         "However, before we get there, let's practice using <code>reduce</code> first.",
         "<hr>",
-        "The variable <code>watchList</code> holds an array of objects with information on several movies. Use <code>reduce</code> to find the average IMDB rating of the movies directed by Christopher Nolan. Recall from prior challenges how to <code>filter</code> data and <code>map</code> over it to pull what you need. You may need to create other variables, but save the final average into the variable <code>averageRating</code>. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations."
+        "The variable <code>watchList</code> holds an array of objects with information on several movies. Use <code>reduce</code> to find the average IMDB rating of the movies <strong>directed by Christopher Nolan</strong>. Recall from prior challenges how to <code>filter</code> data and <code>map</code> over it to pull what you need. You may need to create other variables, but save the final average into the variable <code>averageRating</code>. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations."
       ],
       "tests": [
         {
