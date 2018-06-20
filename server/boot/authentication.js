@@ -32,11 +32,15 @@ module.exports = function enableAuthentication(app) {
   router.get('/signup', (req, res) => res.redirect(301, '/signin'));
   router.get('/email-signin', (req, res) => res.redirect(301, '/signin'));
   router.get('/login', (req, res) => res.redirect(301, '/signin'));
+  router.get('/deprecated-signin', (req, res) => res.redirect(301, '/signin'));
   router.get('/logout', (req, res) => res.redirect(301, '/signout'));
 
   router.get('/signin',
-  ifUserRedirect,
-  (req, res) => res.redirect(301, '/auth/auth0'));
+    ifUserRedirect,
+    (req, res) => res.render('account/signin', {
+      title: 'Sign in to freeCodeCamp'
+    })
+  );
 
   router.get(
     '/update-email',
@@ -70,14 +74,6 @@ module.exports = function enableAuthentication(app) {
       res.redirect('/');
    });
   });
-
-  router.get(
-    '/deprecated-signin',
-    ifUserRedirect,
-    (req, res) => res.render('account/deprecated-signin', {
-      title: 'Sign in to freeCodeCamp using a Deprecated Login'
-    })
-  );
 
   router.get(
     '/accept-privacy-terms',

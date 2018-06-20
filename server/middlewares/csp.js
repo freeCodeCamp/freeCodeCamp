@@ -3,7 +3,9 @@ import helmet from 'helmet';
 let trusted = [
   "'self'",
   'https://search.freecodecamp.org',
-  'https://*.algolianet.com'
+  'https://*.algolianet.com',
+  'https://cdn.auth0.com',
+  'https://freecodecamp.auth0.com'
 ];
 
 const host = process.env.HOST || 'localhost';
@@ -20,8 +22,7 @@ export default function csp() {
     directives: {
       defaultSrc: trusted.concat([
         'https://*.cloudflare.com',
-        '*.cloudflare.com',
-        'https://*.optimizely.com'
+        '*.cloudflare.com'
       ]),
       connectSrc: trusted.concat([
         'https://glitch.com',
@@ -44,8 +45,7 @@ export default function csp() {
         '*.twimg.com',
         'https://*.twimg.com',
         '*.youtube.com',
-        '*.ytimg.com',
-        'https://*.optimizely.com'
+        '*.ytimg.com'
       ].concat(trusted),
       styleSrc: [
         "'unsafe-inline'",
@@ -54,8 +54,7 @@ export default function csp() {
         '*.bootstrapcdn.com',
         'https://*.bootstrapcdn.com',
         '*.cloudflare.com',
-        'https://*.cloudflare.com',
-        'https://*.optimizely.com'
+        'https://*.cloudflare.com'
       ].concat(trusted),
       fontSrc: [
         '*.cloudflare.com',
@@ -63,8 +62,7 @@ export default function csp() {
         '*.bootstrapcdn.com',
         '*.googleapis.com',
         '*.gstatic.com',
-        'https://*.bootstrapcdn.com',
-        'https://*.optimizely.com'
+        'https://*.bootstrapcdn.com'
       ].concat(trusted),
       imgSrc: [
         // allow all input since we have user submitted images for
