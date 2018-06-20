@@ -54,11 +54,11 @@ function CamperHOC({
   return (
     <div>
       <Camper
-        about={ showAbout && about }
-        location={ showLocation && location }
-        name={ showName && name }
+        about={ showAbout ? about : '' }
+        location={ showLocation ? location : '' }
+        name={ showName ? name : '' }
         picture={ picture }
-        points={ showPoints ? points : 0 }
+        points={ showPoints ? points : null }
         username={ username }
       />
       <hr />
