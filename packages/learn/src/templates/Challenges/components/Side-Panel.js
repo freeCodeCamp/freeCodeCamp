@@ -24,9 +24,9 @@ const mapDispatchToProps = dispatch =>
       initConsole
     },
     dispatch
-	);
+  );
 
-const MathJax = global.MathJax;
+// const MathJax = global.MathJax;
 
 const propTypes = {
   description: PropTypes.arrayOf(PropTypes.string),
@@ -39,19 +39,21 @@ const propTypes = {
 export class SidePanel extends PureComponent {
   constructor(props) {
     super(props);
-		this.bindTopDiv = this.bindTopDiv.bind(this);
-		MathJax.Hub.Config({
-      tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
-    });
+    this.bindTopDiv = this.bindTopDiv.bind(this);
+    // MathJax.Hub.Config({
+    //   tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
+    // });
   }
 
   componentDidMount() {
-		MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.querySelector('.challenge-instructions')]);
+    // MathJax.Hub.Queue(['Typeset', MathJax.Hub,
+    // document.querySelector('.challenge-instructions')]);
     this.props.initConsole('');
   }
 
   componentDidUpdate(prevProps) {
-    MathJax.Hub.Queue(['Typeset', MathJax.Hub, document.querySelector('.challenge-instructions')]);
+    // MathJax.Hub.Queue(['Typeset', MathJax.Hub,
+    // document.querySelector('.challenge-instructions')]);
     const { title, initConsole } = this.props;
     if (title !== prevProps.title) {
       initConsole('');
