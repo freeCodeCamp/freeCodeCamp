@@ -98,7 +98,7 @@ export class Settings extends React.Component {
           </Button>
         </FullWidthRow>
         <h1 className='text-center'>{ `Account Settings for ${username}` }</h1>
-        <div className="offset-negative-row">
+        <div className='offset-negative-row'>
         <AboutSettings />
         <Spacer />
         <PrivacySettings />
