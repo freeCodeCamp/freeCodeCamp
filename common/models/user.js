@@ -841,26 +841,83 @@ module.exports = function(User) {
     });
   };
 
+  function prepUserForPublish(user, profileUI) {
+    const {
+      about,
+      calendar,
+      completedChallenges,
+      isDonating,
+      location,
+      name,
+      points,
+      portfolio,
+      streak,
+      username
+    } = user;
+    const {
+      isLocked = true,
+      showAbout = false,
+      showCerts = false,
+      showDonation = false,
+      showHeatMap = false,
+      showLocation = false,
+      showName = false,
+      showPoints = false,
+      showPortfolio = false,
+      showTimeLine = false
+    } = profileUI;
+
+    if (isLocked) {
+      return {
+        isLocked,
+        username
+      };
+    }
+    return {
+      ...user,
+      about: showAbout ? about : '',
+      calendar: showHeatMap ? calendar : {},
+      completedChallenges: showCerts && showTimeLine ? completedChallenges : [],
+      isDonating: showDonation ? isDonating : null,
+      location: showLocation ? location : '',
+      name: showName ? name : '',
+      points: showPoints ? points : null,
+      portfolio: showPortfolio ? portfolio : [],
+      streak: showHeatMap ? streak : {}
+    };
+  }
+
   User.getPublicProfile = function getPublicProfile(username, cb) {
     return User.findOne$({ where: { username }})
       .flatMap(user => {
         if (!user) {
           return Observable.of({});
         }
-        const { completedChallenges, progressTimestamps, timezone } = user;
+        const {
+          completedChallenges,
+          progressTimestamps,
+          timezone,
+          profileUI
+        } = user;
+        const allUser = {
+          ..._.pick(user, publicUserProps),
+          isGithub: !!user.githubProfile,
+          isLinkedIn: !!user.linkedIn,
+          isTwitter: !!user.twitter,
+          isWebsite: !!user.website,
+          points: progressTimestamps.length,
+          completedChallenges,
+          ...getProgress(progressTimestamps, timezone),
+          ...normaliseUserFields(user)
+        };
+
+        const publicUser = prepUserForPublish(allUser, profileUI);
+
         return Observable.of({
           entities: {
             user: {
               [user.username]: {
-                ..._.pick(user, publicUserProps),
-                isGithub: !!user.githubProfile,
-                isLinkedIn: !!user.linkedIn,
-                isTwitter: !!user.twitter,
-                isWebsite: !!user.website,
-                points: progressTimestamps.length,
-                completedChallenges,
-                ...getProgress(progressTimestamps, timezone),
-                ...normaliseUserFields(user)
+                ...publicUser
               }
             }
           },
