@@ -22,12 +22,10 @@ export default function emailNotVerifiedNotice() {
           'info',
           dedent`
   New privacy laws now require that we have an email address where we can reach
-  you. Please verify your email address below and click the link we send you to
-  confirm.
+  you. Please update your email address in the <a href='/settings'>settings</a>
+  and click the link we send you to confirm.
           `
         );
-        res.redirect('/update-email');
-        return next;
       }
     }
     return next();
