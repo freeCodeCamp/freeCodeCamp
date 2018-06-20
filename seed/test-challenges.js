@@ -3,7 +3,7 @@
 import {Observable} from 'rx';
 import tape from 'tape';
 
-import getChallenges from './getChallenges';
+import { getChallenges } from '@freecodecamp/curriculum';
 
 import MongoIds from './mongoIds';
 import ChallengeTitles from './challengeTitles';
