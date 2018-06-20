@@ -1158,7 +1158,7 @@
       "id": "5a94fe5469fb03452672e461",
       "title": "Create Flexible Layouts Using auto-fill",
       "description": [
-        "The repeat function comes with a option called <dfn>auto-fill</dfn>. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>.",
+        "The repeat function comes with an option called <dfn>auto-fill</dfn>. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>.",
         "In the preview, <code>grid-template-columns</code> is set to",
         "<blockquote>repeat(auto-fill, minmax(60px, 1fr));</blockquote>",
         "When the container changes size, this setup keeps inserting 60px columns and stretching them until it can insert another one.",
