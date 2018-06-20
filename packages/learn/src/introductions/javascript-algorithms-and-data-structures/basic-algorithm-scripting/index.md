@@ -5,11 +5,11 @@ superBlock: JavaScript Algorithms and Data Structures
 ---
 ## Introduction to Basic Algorithm Scripting
 
-Algorithms is the process used to solve problems, this process first include understanding the problem and then solve it with coding. We solve problems by dividing them in to many chunks and then solving each chunk one by one. For example if we have to build a calculator then instead of thinking about the problem as a whole we first consider how to take inputs, then consider each arithematic operation one by one and then finally we will display the results.
+A computer algorithm is a sequence of steps that is followed to achieve a particular outcome. To write an algorithm, you must first understand a problem, and then solve it with coding. 
 
-In this lesson we will learn to solve the very basic algorithm problems using JavaScript which will help you to improve your problem solving skills and in future it will help you to jump into the complex problems. First part is always to fully understand the problem and then after that solve each chunk one by one.
+To make solving problems eaiser, it can be helpful to break them down into many chuncks. Then, each chunk can be solved one by one. For example, if you are building a calculator, don't try to solve the problem as a whole. First, consider how to get inputs. Then, determine each arithematic operation one by one. Finally, display the results.
 
-#### Note
-Use `console.log()` to debug whenever you feel stuck in the process of solving the problem. 
+In this section we will learn to solve basic algorithm problems using JavaScript. This will help you improve your problem solving skills and prepare you to later solve more complex problems. 
 
-Help us to improve the description on [GitHub](https://github.com/freeCodeCamp/learn/tree/master/src/introductions).
+#### Hint
+If you get stuck, try using `console.log()` to log variable values to the console. This will help to debug problems. 
