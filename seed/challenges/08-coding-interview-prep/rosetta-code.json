@@ -4841,31 +4841,31 @@
         {
           "text": "'<code>IBeforeExceptC</code> should be a function.'",
           "testString": "assert(typeof IBeforeExceptC=='function','<code>IBeforeExceptC</code> should be a function.');"
-        }, 
+        },
         {
           "text": "'<code>IBeforeExceptC(\"receive\")</code> should return a boolean.'",
           "testString": "assert(typeof IBeforeExceptC(\"receive\")=='boolean','<code>IBeforeExceptC(\"receive\")</code> should return a boolean.');"
-        }, 
+        },
         {
           "text": "'<code>IBeforeExceptC(\"receive\")</code> should return <code>true</code>.'",
           "testString": "assert.equal(IBeforeExceptC(\"receive\"),true,'<code>IBeforeExceptC(\"receive\")</code> should return <code>true</code>.');"
-        }, 
+        },
         {
           "text": "'<code>IBeforeExceptC(\"science\")</code> should return <code>false</code>.'",
           "testString": "assert.equal(IBeforeExceptC(\"science\"),false,'<code>IBeforeExceptC(\"science\")</code> should return <code>false</code>.');"
-        }, 
+        },
         {
           "text": "'<code>IBeforeExceptC(\"imperceivable\")</code> should return <code>true</code>.'",
           "testString": "assert.equal(IBeforeExceptC(\"imperceivable\"),true,'<code>IBeforeExceptC(\"imperceivable\")</code> should return <code>true</code>.');"
-        }, 
+        },
         {
           "text": "'<code>IBeforeExceptC(\"inconceivable\")</code> should return <code>true</code>.'",
           "testString": "assert.equal(IBeforeExceptC(\"inconceivable\"),true,'<code>IBeforeExceptC(\"inconceivable\")</code> should return <code>true</code>.');"
-        }, 
+        },
         {
           "text": "'<code>IBeforeExceptC(\"insufficient\")</code> should return <code>false</code>.'",
           "testString": "assert.equal(IBeforeExceptC(\"insufficient\"),false,'<code>IBeforeExceptC(\"insufficient\")</code> should return <code>false</code>.');"
-        }, 
+        },
         {
           "text": "'<code>IBeforeExceptC(\"omniscient\")</code> should return <code>false</code>.'",
           "testString": "assert.equal(IBeforeExceptC(\"omniscient\"),false,'<code>IBeforeExceptC(\"omniscient\")</code> should return <code>false</code>.');"
@@ -4880,8 +4880,8 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "function IBeforeExceptC (word) {", 
-            "  // Good luck!", 
+            "function IBeforeExceptC (word) {",
+            "  // Good luck!",
             "}"
           ],
           "head": [],
@@ -4892,12 +4892,12 @@
     {
       "title": "IBAN",
       "description": [
-        "The  <a href=\"https://en.wikipedia.org/wiki/International_Bank_Account_Number\">International Bank Account Number (IBAN)</a>  is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating <a href=\"https://en.wikipedia.org/wiki/Transcription_error\">transcription errors</a>.", 
-        "The IBAN consists of up to 34 alphanumeric characters:", "<ul>", 
-        "<li>first the two-letter ISO 3166-1 alpha-2 country code</li>", 
-        "<li>then two check digits, and</li>", 
-        "<li>finally a country-specific Basic Bank Account Number (BBAN).</li>", "</ul>", 
-        "The check digits enable a sanity check of the bank account number to confirm its integrity even before submitting a transaction.", 
+        "The  <a href=\"https://en.wikipedia.org/wiki/International_Bank_Account_Number\">International Bank Account Number (IBAN)</a>  is an internationally agreed means of identifying bank accounts across national borders with a reduced risk of propagating <a href=\"https://en.wikipedia.org/wiki/Transcription_error\">transcription errors</a>.",
+        "The IBAN consists of up to 34 alphanumeric characters:", "<ul>",
+        "<li>first the two-letter ISO 3166-1 alpha-2 country code</li>",
+        "<li>then two check digits, and</li>",
+        "<li>finally a country-specific Basic Bank Account Number (BBAN).</li>", "</ul>",
+        "The check digits enable a sanity check of the bank account number to confirm its integrity even before submitting a transaction.",
         "Write a function that takes IBAN string as parameter. If it is valid return true. Otherwise, return false."
       ],
       "solutions": [
@@ -4907,27 +4907,27 @@
         {
           "text": "'<code>isValid</code> should be a function.'",
           "testString": "assert(typeof isValid=='function','<code>isValid</code> should be a function.');"
-        }, 
+        },
         {
           "text": "'<code>isValid(\"'+tests[0]+'\")</code> should return a boolean.'",
           "testString": "assert(typeof isValid(tests[0])=='boolean','<code>isValid(\"'+tests[0]+'\")</code> should return a boolean.');"
-        }, 
+        },
         {
           "text": "'<code>isValid(\"'+tests[0]+'\")</code> should return <code>true</code>.'",
           "testString": "assert.equal(isValid(tests[0]),true,'<code>isValid(\"'+tests[0]+'\")</code> should return <code>true</code>.');"
-        }, 
+        },
         {
           "text": "'<code>isValid(\"'+tests[1]+'\")</code> should return <code>false</code>.'",
           "testString": "assert.equal(isValid(tests[1]),false,'<code>isValid(\"'+tests[1]+'\")</code> should return <code>false</code>.');"
-        }, 
+        },
         {
           "text": "'<code>isValid(\"'+tests[2]+'\")</code> should return <code>false</code>.'",
           "testString": "assert.equal(isValid(tests[2]),false,'<code>isValid(\"'+tests[2]+'\")</code> should return <code>false</code>.');"
-        }, 
+        },
         {
           "text": "'<code>isValid(\"'+tests[3]+'\")</code> should return <code>false</code>.'",
           "testString": "assert.equal(isValid(tests[3]),false,'<code>isValid(\"'+tests[3]+'\")</code> should return <code>false</code>.');"
-        }, 
+        },
         {
           "text": "'<code>isValid(\"'+tests[4]+'\")</code> should return <code>true</code>.'",
           "testString": "assert.equal(isValid(tests[4]),true,'<code>isValid(\"'+tests[4]+'\")</code> should return <code>true</code>.');"
@@ -4942,18 +4942,18 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "function isValid (iban) {", 
-            "  // Good luck!", 
+            "function isValid (iban) {",
+            "  // Good luck!",
             "}"
           ],
           "head": [],
           "tail": [
-            "let tests=[", 
-            "'GB82 WEST 1234 5698 7654 32',", 
+            "let tests=[",
+            "'GB82 WEST 1234 5698 7654 32',",
             "'GB82 WEST 1.34 5698 7654 32',",
-            "'GB82 WEST 1234 5698 7654 325',", 
-            "'GB82 TEST 1234 5698 7654 32',", 
-            "'SA03 8000 0000 6080 1016 7519'", 
+            "'GB82 WEST 1234 5698 7654 325',",
+            "'GB82 TEST 1234 5698 7654 32',",
+            "'SA03 8000 0000 6080 1016 7519'",
             "]"
           ]
         }
@@ -5010,9 +5010,9 @@
           ],
           "head": [],
           "tail": [
-            "let results=[[ [ 1 ] ],", 
-            "[ [ 1, 0 ], [ 0, 1 ] ],", 
-            "[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ],", 
+            "let results=[[ [ 1 ] ],",
+            "[ [ 1, 0 ], [ 0, 1 ] ],",
+            "[ [ 1, 0, 0 ], [ 0, 1, 0 ], [ 0, 0, 1 ] ],",
             "[ [ 1, 0, 0, 0 ], [ 0, 1, 0, 0 ], [ 0, 0, 1, 0 ], [ 0, 0, 0, 1 ] ]]"
           ]
         }
@@ -5033,31 +5033,31 @@
         {
           "text": "'<code>iteratedSquare</code> should be a function.'",
           "testString": "assert(typeof iteratedSquare=='function','<code>iteratedSquare</code> should be a function.');"
-        }, 
+        },
         {
           "text": "'<code>iteratedSquare(4)</code> should return a number.'",
           "testString": "assert(typeof iteratedSquare(4)=='number','<code>iteratedSquare(4)</code> should return a number.');"
-        }, 
+        },
         {
           "text": "'<code>iteratedSquare(4)</code> should return <code>89</code>.'",
           "testString": "assert.equal(iteratedSquare(4),89,'<code>iteratedSquare(4)</code> should return <code>89</code>.');"
-        }, 
+        },
         {
           "text": "'<code>iteratedSquare(7)</code> should return <code>1</code>.'",
           "testString": "assert.equal(iteratedSquare(7),1,'<code>iteratedSquare(7)</code> should return <code>1</code>.');"
-        }, 
+        },
         {
           "text": "'<code>iteratedSquare(15)</code> should return <code>89</code>.'",
           "testString": "assert.equal(iteratedSquare(15),89,'<code>iteratedSquare(15)</code> should return <code>89</code>.');"
-        }, 
+        },
         {
           "text": "'<code>iteratedSquare(20)</code> should return <code>89</code>.'",
           "testString": "assert.equal(iteratedSquare(20),89,'<code>iteratedSquare(20)</code> should return <code>89</code>.');"
-        }, 
+        },
         {
           "text": "'<code>iteratedSquare(70)</code> should return <code>1</code>.'",
           "testString": "assert.equal(iteratedSquare(70),1,'<code>iteratedSquare(70)</code> should return <code>1</code>.');"
-        }, 
+        },
         {
           "text": "'<code>iteratedSquare(100)</code> should return <code>1</code>.'",
           "testString": "assert.equal(iteratedSquare(100),1,'<code>iteratedSquare(100)</code> should return <code>1</code>.');"
@@ -5102,27 +5102,27 @@
         {
           "text": "'<code>jaro</code> should be a function.'",
           "testString": "assert(typeof jaro=='function','<code>jaro</code> should be a function.');"
-        }, 
+        },
         {
           "text": "'<code>jaro(\"'+tests[0][0]+'\",\"'+tests[0][1]+'\")</code> should return a number.'",
           "testString": "assert(typeof jaro(tests[0][0],tests[0][1])=='number','<code>jaro()</code> should return a number.');"
-        }, 
+        },
         {
           "text": "'<code>jaro(\"'+tests[0][0]+'\",\"'+tests[0][1]+'\")</code> should return <code>'+results[0]+'</code>.'",
           "testString": "assert.equal(jaro(tests[0][0],tests[0][1]),results[0],'<code>jaro(\"'+tests[0][0]+'\",\"'+tests[0][1]+'\")</code> should return <code>'+results[0]+'</code>.');"
-        }, 
+        },
         {
           "text": "'<code>jaro(\"'+tests[1][0]+'\",\"'+tests[1][1]+'\")</code> should return <code>'+results[1]+'</code>.'",
           "testString": "assert.equal(jaro(tests[1][0],tests[1][1]),results[1],'<code>jaro(\"'+tests[1][0]+'\",\"'+tests[1][1]+'\")</code> should return <code>'+results[1]+'</code>.');"
-        }, 
+        },
         {
           "text": "'<code>jaro(\"'+tests[2][0]+'\",\"'+tests[2][1]+'\")</code> should return <code>'+results[2]+'</code>.'",
           "testString": "assert.equal(jaro(tests[2][0],tests[2][1]),results[2],'<code>jaro(\"'+tests[2][0]+'\",\"'+tests[2][1]+'\")</code> should return <code>'+results[2]+'</code>.');"
-        }, 
+        },
         {
           "text": "'<code>jaro(\"'+tests[3][0]+'\",\"'+tests[3][1]+'\")</code> should return <code>'+results[3]+'</code>.'",
           "testString": "assert.equal(jaro(tests[3][0],tests[3][1]),results[3],'<code>jaro(\"'+tests[3][0]+'\",\"'+tests[3][1]+'\")</code> should return <code>'+results[3]+'</code>.');"
-        }, 
+        },
         {
           "text": "'<code>jaro(\"'+tests[4][0]+'\",\"'+tests[4][1]+'\")</code> should return <code>'+results[4]+'</code>.'",
           "testString": "assert.equal(jaro(tests[4][0],tests[4][1]),results[4],'<code>jaro(\"'+tests[4][0]+'\",\"'+tests[4][1]+'\")</code> should return <code>'+results[4]+'</code>.');"
@@ -5213,8 +5213,8 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "function jortsort (array) {", 
-            "  // Good luck!", 
+            "function jortsort (array) {",
+            "  // Good luck!",
             "}"
           ],
           "head": [],
@@ -5290,6 +5290,455 @@
           ],
           "head": [],
           "tail": []
+        }
+      }
+    },
+    {
+      "title": "K-d tree",
+      "description": [
+        "A k-d tree (short for <i>k</i>-dimensional tree) is a space-partitioning data structure for organizing points in a k-dimensional space. k-d trees are a useful data structure for several applications, such as searches involving a multidimensional search key (e.g. range searches and nearest neighbor searches).",
+        "k-d trees are a special case of binary space partitioning trees.",
+        "k-d trees are not suitable, however, for efficiently finding the nearest neighbor in high dimensional spaces. As a general rule, if the dimensionality is <i>k</i>, the number of points in the data, <i>N</i>, should be <i>N</i> ≫ 2<sup><i>k</i></sup>.",
+        "Otherwise, when k-d trees are used with high-dimensional data, most of the points in the tree will be evaluated and the efficiency is no better than exhaustive search, and other methods such as approximate nearest-neighbor are used instead.",
+        "Write a function to perform a nearest neighbour search using k-d tree. The function takes two parameters, an array of k-dimensional points and a single k-dimensional point whose nearest neighbour should be returned by the function. A k-dimensional point will be given as an array of k elements."
+      ],
+      "solutions": [
+        "function kdNN (fpoints, fpoint) {\n  function Node(obj, dimension, parent) {\n    this.obj = obj;\n    this.left = null;\n    this.right = null;\n    this.parent = parent;\n    this.dimension = dimension;\n  }\n\n  function kdTree(points, metric, dimensions) {\n\n    var self = this;\n\n    function buildTree(points, depth, parent) {\n      var dim = depth % dimensions.length,\n      median,\n      node;\n\n      if (points.length === 0) {\n        return null;\n      }\n      if (points.length === 1) {\n        return new Node(points[0], dim, parent);\n      }\n\n      points.sort(function (a, b) {\n        return a[dimensions[dim]] - b[dimensions[dim]];\n      });\n\n      median = Math.floor(points.length / 2);\n      node = new Node(points[median], dim, parent);\n      node.left = buildTree(points.slice(0, median), depth + 1, node);\n      node.right = buildTree(points.slice(median + 1), depth + 1, node);\n\n      return node;\n    }\n\n    this.root = buildTree(points, 0, null);\n\n    this.insert = function (point) {\n      function innerSearch(node, parent) {\n\n        if (node === null) {\n          return parent;\n        }\n\n        var dimension = dimensions[node.dimension];\n        if (point[dimension] < node.obj[dimension]) {\n          return innerSearch(node.left, node);\n        } else {\n          return innerSearch(node.right, node);\n        }\n      }\n\n      var insertPosition = innerSearch(this.root, null),\n      newNode,\n      dimension;\n\n      if (insertPosition === null) {\n        this.root = new Node(point, 0, null);\n        return;\n      }\n\n      newNode = new Node(point, (insertPosition.dimension + 1) % dimensions.length, insertPosition);\n      dimension = dimensions[insertPosition.dimension];\n\n      if (point[dimension] < insertPosition.obj[dimension]) {\n        insertPosition.left = newNode;\n      } else {\n        insertPosition.right = newNode;\n      }\n    };\n\n    this.nearest = function (point, maxNodes, maxDistance) {\n      var i,\n      result,\n      bestNodes;\n\n      bestNodes = new BinaryHeap(\n        function (e) { return -e[1]; }\n      );\n\n      function nearestSearch(node) {\n        var bestChild,\n        dimension = dimensions[node.dimension],\n        ownDistance = metric(point, node.obj),\n        linearPoint = {},\n        linearDistance,\n        otherChild,\n        i;\n\n        function saveNode(node, distance) {\n          bestNodes.push([node, distance]);\n          if (bestNodes.size() > maxNodes) {\n            bestNodes.pop();\n          }\n        }\n\n        for (i = 0; i < dimensions.length; i += 1) {\n          if (i === node.dimension) {\n            linearPoint[dimensions[i]] = point[dimensions[i]];\n          } else {\n            linearPoint[dimensions[i]] = node.obj[dimensions[i]];\n          }\n        }\n\n        linearDistance = metric(linearPoint, node.obj);\n\n        if (node.right === null && node.left === null) {\n          if (bestNodes.size() < maxNodes || ownDistance < bestNodes.peek()[1]) {\n            saveNode(node, ownDistance);\n          }\n          return;\n        }\n\n        if (node.right === null) {\n          bestChild = node.left;\n        } else if (node.left === null) {\n          bestChild = node.right;\n        } else {\n          if (point[dimension] < node.obj[dimension]) {\n            bestChild = node.left;\n          } else {\n            bestChild = node.right;\n          }\n        }\n\n        nearestSearch(bestChild);\n\n        if (bestNodes.size() < maxNodes || ownDistance < bestNodes.peek()[1]) {\n          saveNode(node, ownDistance);\n        }\n\n        if (bestNodes.size() < maxNodes || Math.abs(linearDistance) < bestNodes.peek()[1]) {\n          if (bestChild === node.left) {\n            otherChild = node.right;\n          } else {\n            otherChild = node.left;\n          }\n          if (otherChild !== null) {\n            nearestSearch(otherChild);\n          }\n        }\n      }\n\n      if (maxDistance) {\n        for (i = 0; i < maxNodes; i += 1) {\n          bestNodes.push([null, maxDistance]);\n        }\n      }\n\n      if(self.root)\n      nearestSearch(self.root);\n\n      result = [];\n\n      for (i = 0; i < Math.min(maxNodes, bestNodes.content.length); i += 1) {\n        if (bestNodes.content[i][0]) {\n          result.push([bestNodes.content[i][0].obj, bestNodes.content[i][1]]);\n        }\n      }\n      return result;\n    };\n  }\n\n  function BinaryHeap(scoreFunction){\n    this.content = [];\n    this.scoreFunction = scoreFunction;\n  }\n\n  BinaryHeap.prototype = {\n    push: function(element) {\n      // Add the new element to the end of the array.\n      this.content.push(element);\n      // Allow it to bubble up.\n      this.bubbleUp(this.content.length - 1);\n    },\n\n    pop: function() {\n      // Store the first element so we can return it later.\n      var result = this.content[0];\n      // Get the element at the end of the array.\n      var end = this.content.pop();\n      // If there are any elements left, put the end element at the\n      // start, and let it sink down.\n      if (this.content.length > 0) {\n        this.content[0] = end;\n        this.sinkDown(0);\n      }\n      return result;\n    },\n\n    peek: function() {\n      return this.content[0];\n    },\n\n    size: function() {\n      return this.content.length;\n    },\n\n    bubbleUp: function(n) {\n      // Fetch the element that has to be moved.\n      var element = this.content[n];\n      // When at 0, an element can not go up any further.\n      while (n > 0) {\n        // Compute the parent element's index, and fetch it.\n        var parentN = Math.floor((n + 1) / 2) - 1,\n        parent = this.content[parentN];\n        // Swap the elements if the parent is greater.\n        if (this.scoreFunction(element) < this.scoreFunction(parent)) {\n          this.content[parentN] = element;\n          this.content[n] = parent;\n          // Update 'n' to continue at the new position.\n          n = parentN;\n        }\n        // Found a parent that is less, no need to move it further.\n        else {\n          break;\n        }\n      }\n    },\n\n    sinkDown: function(n) {\n      // Look up the target element and its score.\n      var length = this.content.length,\n      element = this.content[n],\n      elemScore = this.scoreFunction(element);\n\n      while(true) {\n        // Compute the indices of the child elements.\n        var child2N = (n + 1) * 2, child1N = child2N - 1;\n        // This is used to store the new position of the element,\n        // if any.\n        var swap = null;\n        // If the first child exists (is inside the array)...\n        if (child1N < length) {\n          // Look it up and compute its score.\n          var child1 = this.content[child1N],\n          child1Score = this.scoreFunction(child1);\n          // If the score is less than our element's, we need to swap.\n          if (child1Score < elemScore)\n          swap = child1N;\n        }\n        // Do the same checks for the other child.\n        if (child2N < length) {\n          var child2 = this.content[child2N],\n          child2Score = this.scoreFunction(child2);\n          if (child2Score < (swap == null ? elemScore : child1Score)){\n            swap = child2N;\n          }\n        }\n\n        // If the element needs to be moved, swap it, and continue.\n        if (swap != null) {\n          this.content[n] = this.content[swap];\n          this.content[swap] = element;\n          n = swap;\n        }\n        // Otherwise, we are done.\n        else {\n          break;\n        }\n      }\n    }\n  };\n\n  var dims=[]\n\n  for(var i=0;i<fpoint.length;i++) dims.push(i)\n\n  var tree=new kdTree(fpoints,function (e1,e2) {\n    var d=0;\n    var e3=e1;\n    if(!Array.isArray(e1)){\n      e3=[]\n      for(var key in e1)\n        e3.push(e1[key])\n\n      e1=e3\n    }\n    e1.forEach(function(e,i){\n      var sqd=(e1[i]-e2[i]);\n      d+=sqd*sqd;\n    })\n    return d;\n  },dims)\n\n  return tree.nearest(fpoint, 1, 1000)[0][0];\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>kdNN</code> should be a function.'",
+          "testString": "assert(typeof kdNN=='function','<code>kdNN</code> should be a function.');"
+        },
+        {
+          "text": "'<code>kdNN('+JSON.stringify(points[0])+','+JSON.stringify(point[0])+')</code> should return an array.'",
+          "testString": "assert(Array.isArray(kdNN(points[0],point[0])),'<code>kdNN('+JSON.stringify(points[0])+','+JSON.stringify(point[0])+')</code> should return an array.');"
+        },
+        {
+          "text": "'<code>kdNN('+JSON.stringify(points[0])+','+JSON.stringify(point[0])+')</code> should return <code>'+JSON.stringify(results[0])+'</code>.'",
+          "testString": "assert.deepEqual(kdNN(points[0],point[0]),results[0],'<code>kdNN('+JSON.stringify(points[0])+','+JSON.stringify(point[0])+')</code> should return <code>'+JSON.stringify(results[0])+'</code>.');"
+        },
+        {
+          "text": "'<code>kdNN('+JSON.stringify(points[0])+','+JSON.stringify(point[1])+')</code> should return <code>'+JSON.stringify(results[1])+'</code>.'",
+          "testString": "assert.deepEqual(kdNN(points[0],point[1]),results[1],'<code>kdNN('+JSON.stringify(points[0])+','+JSON.stringify(point[1])+')</code> should return <code>'+JSON.stringify(results[1])+'</code>.');"
+        },
+        {
+          "text": "'<code>kdNN('+JSON.stringify(points[0])+','+JSON.stringify(point[2])+')</code> should return <code>'+JSON.stringify(results[2])+'</code>.'",
+          "testString": "assert.deepEqual(kdNN(points[0],point[2]),results[2],'<code>kdNN('+JSON.stringify(points[0])+','+JSON.stringify(point[2])+')</code> should return <code>'+JSON.stringify(results[2])+'</code>.');"
+        },
+        {
+          "text": "'<code>kdNN('+JSON.stringify(points[1])+','+JSON.stringify(point[3])+')</code> should return <code>'+JSON.stringify(results[3])+'</code>.'",
+          "testString": "assert.deepEqual(kdNN(points[1],point[3]),results[3],'<code>kdNN('+JSON.stringify(points[1])+','+JSON.stringify(point[3])+')</code> should return <code>'+JSON.stringify(results[3])+'</code>.');"
+        },
+        {
+          "text": "'<code>kdNN('+JSON.stringify(points[1])+','+JSON.stringify(point[4])+')</code> should return <code>'+JSON.stringify(results[4])+'</code>.'",
+          "testString": "assert.deepEqual(kdNN(points[1],point[4]),results[4],'<code>kdNN('+JSON.stringify(points[1])+','+JSON.stringify(point[4])+')</code> should return <code>'+JSON.stringify(results[4])+'</code>.');"
+        },
+        {
+          "text": "'<code>kdNN('+JSON.stringify(points[1])+','+JSON.stringify(point[5])+')</code> should return <code>'+JSON.stringify(results[5])+'</code>.'",
+          "testString": "assert.deepEqual(kdNN(points[1],point[5]),results[5],'<code>kdNN('+JSON.stringify(points[1])+','+JSON.stringify(point[5])+')</code> should return <code>'+JSON.stringify(results[5])+'</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ecb",
+      "challengeType": 5,
+      "releasedOn": "June 16, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function kdNN (fpoints, fpoint) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "var points=[[[2, 3], [5, 4], [9, 6], [4, 7], [8, 1], [7, 2]],",
+            "[[2,3,1],[9,4,5],[4,6,7],[1,2,5],[7,8,9],[3,6,1]]]",
+            "var point=[[9,2],[7,1],[3,2],[1,2,3],[4,5,6],[8,8,8]]",
+            "var results=[[ 8, 1 ],",
+            "[ 8, 1 ],",
+            "[ 2, 3 ],",
+            "[ 1, 2, 5 ],",
+            "[ 4, 6, 7 ],",
+            "[ 7, 8, 9 ]]"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Kaprekar numbers",
+      "description": [
+        "A positive integer is a <a href=\"https://en.wikipedia.org/wiki/Kaprekar number\">Kaprekar number</a> if:",
+        "<ul><li>It is 1</li><li>The decimal representation of its square may be split once into two parts consisting of positive integers which sum to the original number. </li></ul>",
+        "Note that a split resulting in a part consisting purely of 0s is not valid, as 0 is not considered positive.Example Kaprekar numbers:",
+        "<ul><li>$2223$ is a Kaprekar number, as $2223 * 2223 = 4941729$, $4941729$ may be split to $494$ and $1729$, and $494 + 1729 = 2223$.</li><li>The series of Kaprekar numbers is known as <a href=\"http://rosettacode.org/wiki/oeis:A006886\">A006886</a>, and begins as $1, 9, 45, 55, ...$.</li></ul>",
+        "Write a function that takes a number $n$, a base $bs$ and returns true if the number is a Kaprekar number for the given base else returns false."
+      ],
+      "solutions": [
+        "function isKaprekar (n, bs) {\n\tif ( n < 1 ) return false\n\tif ( n == 1 ) return true\n\tfor (var a=n*n, b=0, s=1; a; s*=bs) {\n\t\tb += a%bs*s\n\t\ta = Math.floor(a/bs)\n\t\tif (b && a + b == n) return true\n\t}\n\treturn false\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>isKaprekar</code> should be a function.'",
+          "testString": "assert(typeof isKaprekar=='function','<code>isKaprekar</code> should be a function.');"
+        },
+        {
+          "text": "'<code>isKaprekar(1,10)</code> should return a boolean.'",
+          "testString": "assert(typeof isKaprekar(1,10)=='boolean','<code>isKaprekar(1,10)</code> should return a boolean.');"
+        },
+        {
+          "text": "'<code>isKaprekar(1,10)</code> should return <code>true</code>.'",
+          "testString": "assert.equal(isKaprekar(1,10),true,'<code>isKaprekar(1,10)</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "'<code>isKaprekar(9,10)</code> should return <code>true</code>.'",
+          "testString": "assert.equal(isKaprekar(9,10),true,'<code>isKaprekar(9,10)</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "'<code>isKaprekar(2223,10)</code> should return <code>true</code>.'",
+          "testString": "assert.equal(isKaprekar(2223,10),true,'<code>isKaprekar(2223,10)</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "'<code>isKaprekar(22823,10)</code> should return <code>false</code>.'",
+          "testString": "assert.equal(isKaprekar(22823,10),false,'<code>isKaprekar(22823,10)</code> should return <code>false</code>.');"
+        },
+        {
+          "text": "'<code>isKaprekar(9,17)</code> should return <code>false</code>.'",
+          "testString": "assert.equal(isKaprekar(9,17),false,'<code>isKaprekar(9,17)</code> should return <code>false</code>.');"
+        },
+        {
+          "text": "'<code>isKaprekar(225,17)</code> should return <code>true</code>.'",
+          "testString": "assert.equal(isKaprekar(225,17),true,'<code>isKaprekar(225,17)</code> should return <code>true</code>.');"
+        },
+        {
+          "text": "'<code>isKaprekar(999,17)</code> should return <code>false</code>.'",
+          "testString": "assert.equal(isKaprekar(999,17),false,'<code>isKaprekar(999,17)</code> should return <code>false</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7eca",
+      "challengeType": 5,
+      "releasedOn": "June 16, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function isKaprekar (n, bs) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "title": "Knapsack problem/0-1",
+      "description": [
+        "Write a function that solves the knapsack problem that is as follows:",
+        "You are given an array of objects representing items to be put in a knapsack. The objects have 3 attributes: name, weight and value. The items need to be selected so that the total weight do not exceed the maximum weight and the value is maximized.",
+        "The function is given the array of objects and the maximum weight as parameters. It should return the maximum total value possible."
+      ],
+      "solutions": [
+        "function knapsack (items, maxweight) {\n  var _={\n    max:function(e){\n      var mx=e[0];\n      e.forEach(function(f){\n        if(mx<f)\n          mx=f;\n      })\n      return mx;\n    },\n    map:function(array,func){\n      return array.map(func)\n    },\n    isUndefined:function (a) {\n      if(a){\n        return false;\n      }\n      return true;\n    },\n    range:function(start,end,step) {\n      var a=[]\n      var f= f=(i,end)=>i<end\n      if(start>end)\n        f=(i,end)=>i>end\n\n      for(var i=start;f(i,end);i+=step)\n        a.push(i)\n      return a\n    }\n  }\n\n  var valuefn=(e)=>e.value\n  var weightfn=(e)=>e.weight\n  var _epsilon = 0.01;\n  var _p = _.max(_.map(items,valuefn));\n  var _k = _epsilon * _p / items.length;\n\n  var _memo = (function(){\n    var _mem = {};\n    var _key = function(i, w) {\n      return i + '::' + w;\n    };\n    return {\n      get: function(i, w) {\n        return _mem[_key(i,w)];\n      },\n      put: function(i, w, r) {\n        _mem[_key(i,w)]=r;\n        return r;\n      }\n    };\n  })();\n\n  var _m = function(i, w) {\n\n    i = Math.round(i);\n    w = Math.round(w);\n\n\n    if (i < 0 || w === 0) {\n      // empty base case\n      return {items: [], totalWeight: 0, totalValue: 0};\n    }\n\n    var mm = _memo.get(i,w);\n    if (!_.isUndefined(mm)) {\n      return mm;\n    }\n\n    var item = items[i];\n    if (weightfn(item) > w) {\n      //item does not fit, try the next item\n      return _memo.put(i, w, _m(i-1, w));\n    }\n    // this item could fit.\n    // are we better off excluding it?\n    var excluded = _m(i-1, w);\n    // or including it?\n    var included = _m(i-1, w - weightfn(item));\n    if (included.totalValue + Math.floor(valuefn(item)/_k) > excluded.totalValue) {\n      // better off including it\n      // make a copy of the list\n      var i1 = included.items.slice();\n      i1.push(item);\n      return _memo.put(i, w,\n        {items: i1,\n         totalWeight: included.totalWeight + weightfn(item),\n         totalValue: included.totalValue + Math.floor(valuefn(item)/_k)});\n    }\n    //better off excluding it\n    return _memo.put(i,w, excluded);\n  };\n  var scaled = _m(items.length - 1, maxweight);\n\n  var val=0;\n  scaled.items.forEach(function (e) {\n    val+=e.value\n  })\n  return val;\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>knapsack</code> should be a function.'",
+          "testString": "assert(typeof knapsack=='function','<code>knapsack</code> should be a function.');"
+        },
+        {
+          "text": "'<code>knapsack('+JSON.stringify(tests[0])+',100)</code> should return a number.'",
+          "testString": "assert(typeof knapsack(tests[0],100)=='number','<code>knapsack('+JSON.stringify(tests[0])+',100)</code> should return a number.');"
+        },
+        {
+          "text": "'<code>knapsack('+JSON.stringify(tests[0])+',100)</code> should return <code>'+JSON.stringify(results[0])+'</code>.'",
+          "testString": "assert.equal(knapsack(tests[0],100),results[0],'<code>knapsack('+JSON.stringify(tests[0])+',100)</code> should return <code>'+JSON.stringify(results[0])+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsack('+JSON.stringify(tests[0])+',200)</code> should return <code>'+JSON.stringify(results[1])+'</code>.'",
+          "testString": "assert.equal(knapsack(tests[0],200),results[1],'<code>knapsack('+JSON.stringify(tests[0])+',200)</code> should return <code>'+JSON.stringify(results[1])+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsack('+JSON.stringify(tests[1])+',100)</code> should return <code>'+JSON.stringify(results[2])+'</code>.'",
+          "testString": "assert.equal(knapsack(tests[1],100),results[2],'<code>knapsack('+JSON.stringify(tests[1])+',100)</code> should return <code>'+JSON.stringify(results[2])+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsack('+JSON.stringify(tests[1])+',200)</code> should return <code>'+JSON.stringify(results[3])+'</code>.'",
+          "testString": "assert.equal(knapsack(tests[1],200),results[3],'<code>knapsack('+JSON.stringify(tests[1])+',200)</code> should return <code>'+JSON.stringify(results[3])+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsack('+JSON.stringify(tests[2])+',100)</code> should return <code>'+JSON.stringify(results[4])+'</code>.'",
+          "testString": "assert.equal(knapsack(tests[2],100),results[4],'<code>knapsack('+JSON.stringify(tests[2])+',100)</code> should return <code>'+JSON.stringify(results[4])+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsack('+JSON.stringify(tests[2])+',200)</code> should return <code>'+JSON.stringify(results[5])+'</code>.')",
+          "testString": "assert.equal(knapsack(tests[2],200),results[5],'<code>knapsack('+JSON.stringify(tests[2])+',200)</code> should return <code>'+JSON.stringify(results[5])+'</code>.');;"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ed1",
+      "challengeType": 5,
+      "releasedOn": "June 16, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function knapsack (items, maxweight) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "var tests =[",
+            "[",
+            "{name:\"map\", weight:9, value: 150},",
+            "{name:\"compass\", weight:13, value: 35},",
+            "{name:\"water\", weight:153, value: 200},",
+            "{name:\"sandwich\", weight: 50, value: 160},",
+            "{name:\"glucose\", weight:15, value: 60},",
+            "{name:\"tin\", weight:68, value: 45},",
+            "{name:\"banana\", weight:27, value: 60},",
+            "{name:\"apple\", weight:39, value: 40}",
+            "],",
+            "[",
+            "{name:\"cheese\", weight:23, value: 30},",
+            "{name:\"beer\", weight:52, value: 10},",
+            "{name:\"suntan cream\", weight:11, value: 70},",
+            "{name:\"camera\", weight:32, value: 30},",
+            "{name:\"T-shirt\", weight:24, value: 15},",
+            "{name:\"trousers\", weight:48, value: 10},",
+            "{name:\"umbrella\", weight:73, value: 40}",
+            "],",
+            "[",
+            "{name:\"waterproof trousers\", weight:42, value: 70},",
+            "{name:\"waterproof overclothes\", weight:43, value: 75},",
+            "{name:\"note-case\", weight:22, value: 80},",
+            "{name:\"sunglasses\", weight:7, value: 20},",
+            "{name:\"towel\", weight:18, value: 12},",
+            "{name:\"socks\", weight:4, value: 50},",
+            "{name:\"book\", weight:30, value: 10}",
+            "]",
+            "];",
+            "var results=[ 405, 510, 145, 185, 237, 317 ]"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Knapsack problem/Bounded",
+      "description": [
+        "Write a function that solves the knapsack problem that is as follows:",
+        "You are given an array of objects representing items to be put in a knapsack. The objects have 4 attributes: name, pieces (the number of the particular item), weight and value. The items need to be selected so that the total weight do not exceed the maximum weight and the value is maximized.",
+        "The function is given the array of objects and the maximum weight as parameters. It should return the maximum total value possible."
+      ],
+      "solutions": [
+        "function findBestPack (data, maxweight) {\n  var m = [\n    [0]\n  ]; // maximum pack value found so far\n  var b = [\n    [0]\n  ]; // best combination found so far\n  var opts = [0]; // item index for 0 of item 0\n  var P = [1]; // item encoding for 0 of item 0\n  var choose = 0;\n  for (var j = 0; j < data.length; j++) {\n    opts[j + 1] = opts[j] + data[j].pieces; // item index for 0 of item j+1\n    P[j + 1] = P[j] * (1 + data[j].pieces); // item encoding for 0 of item j+1\n  }\n  for (var j = 0; j < opts[data.length]; j++) {\n    m[0][j + 1] = b[0][j + 1] = 0; // best values and combos for empty pack: nothing\n  }\n  for (var w = 1; w <= maxweight; w++) {\n    m[w] = [0];\n    b[w] = [0];\n    for (var j = 0; j < data.length; j++) {\n      var N = data[j].pieces; // how many of these can we have?\n      var base = opts[j]; // what is the item index for 0 of these?\n      for (var n = 1; n <= N; n++) {\n        var W = n * data[j].weight; // how much do these items weigh?\n        var s = w >= W ? 1 : 0; // can we carry this many?\n        var v = s * n * data[j].value; // how much are they worth?\n        var I = base + n; // what is the item number for this many?\n        var wN = w - s * W; // how much other stuff can we be carrying?\n        var C = n * P[j] + b[wN][base]; // encoded combination\n        m[w][I] = Math.max(m[w][I - 1], v + m[wN][base]); // best value\n        choose = b[w][I] = m[w][I] > m[w][I - 1] ? C : b[w][I - 1];\n      }\n    }\n  }\n\n  var best = [];\n  for (var j = data.length - 1; j >= 0; j--) {\n    best[j] = Math.floor(choose / P[j]);\n    choose -= best[j] * P[j];\n  }\n\n  var wgt = 0;\n  var val = 0;\n  for (var i = 0; i < best.length; i++) {\n    if (0 == best[i]) continue;\n    wgt += best[i] * data[i].weight;\n    val += best[i] * data[i].value;\n  }\n\n  return val;\n}\n\n"
+      ],
+      "tests": [
+        {
+          "text": "assert(typeof findBestPack == 'function', '<code>findBestPack</code> should be a function.'",
+          "testString": "assert(typeof findBestPack == 'function', '<code>findBestPack</code> should be a function.');"
+        },
+        {
+          "text": "'<code>findBestPack(' + JSON.stringify(items) + ',300)</code> should return a number.'",
+          "testString": "assert(typeof findBestPack(items, 300) == 'number','<code>findBestPack(' + JSON.stringify(items) + ',300)</code> should return a number.');"
+        },
+        {
+          "text": "'<code>findBestPack(' + JSON.stringify(items) + ',300)</code> should return <code>755</code>.'",
+          "testString": "assert.equal(findBestPack(items, 300), 755,'<code>findBestPack(' + JSON.stringify(items) + ',300)</code> should return <code>755</code>.');"
+        },
+        {
+          "text": "'<code>findBestPack(' + JSON.stringify(items) + ',400)</code> should return <code>875</code>.'",
+          "testString": "assert.equal(findBestPack(items, 400), 875,'<code>findBestPack(' + JSON.stringify(items) + ',400)</code> should return <code>875</code>.');"
+        },
+        {
+          "text": "'<code>findBestPack(' + JSON.stringify(items) + ',500)</code> should return <code>1015</code>.'",
+          "testString": "assert.equal(findBestPack(items, 500), 1015,'<code>findBestPack(' + JSON.stringify(items) + ',500)</code> should return <code>1015</code>.');"
+        },
+        {
+          "text": "'<code>findBestPack(' + JSON.stringify(items) + ',600)</code> should return <code>1120</code>.'",
+          "testString": "assert.equal(findBestPack(items, 600), 1120,'<code>findBestPack(' + JSON.stringify(items) + ',600)</code> should return <code>1120</code>.');"
+        },
+        {
+          "text": "'<code>findBestPack(' + JSON.stringify(items) + ',700)</code> should return <code>1225</code>.'",
+          "testString": "assert.equal(findBestPack(items, 700), 1225,'<code>findBestPack(' + JSON.stringify(items) + ',700)</code> should return <code>1225</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ed2",
+      "challengeType": 5,
+      "releasedOn": "June 16, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function findBestPack (data, maxweight) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "var items = [",
+            "{name: 'map',weight: 9,value: 150,pieces: 1},",
+            "{name: 'compass',weight: 13,value: 35,pieces: 1},",
+            "{name: 'water',weight: 153,value: 200,pieces: 2},",
+            "{name: 'sandwich',weight: 50,value: 60,pieces: 2},",
+            "{name: 'glucose',weight: 15,value: 60,pieces: 2},",
+            "{name: 'tin',weight: 68,value: 45,pieces: 3},",
+            "{name: 'banana',weight: 27,value: 60,pieces: 3},",
+            "{name: 'apple',weight: 39,value: 40,pieces: 3},",
+            "{name: 'cheese',weight: 23,value: 30,pieces: 1},",
+            "{name: 'beer',weight: 52,value: 10,pieces: 3},",
+            "{name: 'suntan, cream',weight: 11,value: 70,pieces: 1},",
+            "{name: 'camera',weight: 32,value: 30,pieces: 1},",
+            "{name: 'T-shirt',weight: 24,value: 15,pieces: 2}",
+            "];"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Knapsack problem/Continuous",
+      "description": [
+        "A thief burgles a butcher's shop, where he can select from some items.",
+        "The thief knows the weights and prices of each items.  Because he has a knapsack with a limit on the maximum weight that it can carry, he wants to select the items such that he would have his profit maximized.  He may cut the items;  the item has a reduced price after cutting that is proportional to the original price by the ratio of masses.  That means:  half of an item has half the price of the original.",
+        "Write a function that takes the array of objects having the information of the items available in the shop. The object has 3 attributes: name, weight and value. The function also takes the maximum weight as a parameter. The function should return the maximum value possible after optimal selection of items and the total weight of the selected items should not exceed the maximum weight."
+      ],
+      "solutions": [
+        "function knapContinuous (items, maxweight) {\n  function item_cmp(a,b)\n  {\n  \tvar ua = a.value / a.weight, ub = b.value / b.weight;\n  \treturn ua < ub ? -1 : ua > ub;\n  }\n\n  items.sort(item_cmp)\n\n  var n=items.length\n  var val=0,it;\n\tfor (it = n-1; it >=0 && maxweight > 0; it--){\n\t\tif (maxweight >= items[it].weight){\n      val+=items[it].value*items[it].weight\n\t\t}else{\n      val+=maxweight*items[it].value\n    }\n    maxweight -= items[it].weight;\n  }\n  return val;\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>knapContinuous</code> should be a function.'",
+          "testString": "assert(typeof knapContinuous=='function','<code>knapContinuous</code> should be a function.');"
+        },
+        {
+          "text": "'<code>knapContinuous('+JSON.stringify(items)+',10)</code> should return a number.'",
+          "testString": "assert(typeof knapContinuous(items,10)=='number','<code>knapContinuous('+JSON.stringify(items)+',10)</code> should return a number.');"
+        },
+        {
+          "text": "'<code>knapContinuous('+JSON.stringify(items)+',10)</code> should return <code>789.5</code>.'",
+          "testString": "assert.equal(knapContinuous(items,10),789.5,'<code>knapContinuous('+JSON.stringify(items)+',10)</code> should return <code>789.5</code>.');"
+        },
+        {
+          "text": "'<code>knapContinuous('+JSON.stringify(items)+',12)</code> should return <code>890.5</code>.'",
+          "testString": "assert.equal(knapContinuous(items,12),890.5,'<code>knapContinuous('+JSON.stringify(items)+',12)</code> should return <code>890.5</code>.');"
+        },
+        {
+          "text": "'<code>knapContinuous('+JSON.stringify(items)+',15)</code> should return <code>1091.5</code>.'",
+          "testString": "assert.equal(knapContinuous(items,15),1091.5,'<code>knapContinuous('+JSON.stringify(items)+',15)</code> should return <code>1091.5</code>.');"
+        },
+        {
+          "text": "'<code>knapContinuous('+JSON.stringify(items)+',22)</code> should return <code>1715.5</code>.'",
+          "testString": "assert.equal(knapContinuous(items,22),1715.5,'<code>knapContinuous('+JSON.stringify(items)+',22)</code> should return <code>1715.5</code>.');"
+        },
+        {
+          "text": "'<code>knapContinuous('+JSON.stringify(items)+',24)</code> should return <code>1787.5</code>.'",
+          "testString": "assert.equal(knapContinuous(items,24),1787.5,'<code>knapContinuous('+JSON.stringify(items)+',24)</code> should return <code>1787.5</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ed3",
+      "challengeType": 5,
+      "releasedOn": "June 16, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function knapContinuous (items, maxweight) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "var items = [",
+            "\t{ \"weight\":3.8, \"value\":36, name:\"beef\" },",
+            "\t{ \"weight\":5.4, \"value\":43, name:\"pork\" },",
+            "\t{ \"weight\":3.6, \"value\":90, name:\"ham\" },",
+            "\t{ \"weight\":2.4, \"value\":45, name:\"greaves\" },",
+            "\t{ \"weight\":4.0, \"value\":30, name:\"flitch\" },",
+            "\t{ \"weight\":2.5, \"value\":56, name:\"brawn\" },",
+            "\t{ \"weight\":3.7, \"value\":67, name:\"welt\" },",
+            "\t{ \"weight\":3.0, \"value\":95, name:\"salami\" },",
+            "\t{ \"weight\":5.9, \"value\":98, name:\"sausage\" },",
+            "];"
+          ]
+        }
+      }
+    },
+    {
+      "title": "Knapsack problem/Unbounded",
+      "description": [
+        "// A traveler gets diverted and has to make an unscheduled stop in what turns out to be Shangri La.  Opting to leave, he is allowed to take as much as he likes of the items available there, so long as it will fit in his knapsack, and he can carry it.",
+        "// He knows that he can carry no more than  a particalar value of maximum weight in total;  and that the capacity of his knapsack has limited volume.",
+        "// Looking just above the bar codes on the items he finds their weights and volumes.  He digs out his recent copy of a  financial paper and gets the value of each item.",
+        "// He can only take whole units of any item, but there is much more of any item than he could ever carry.",
+        "// Write a function that takes an array of objects, maximum weight and maximum volume as parameters and returns the maximum value of items the traveller can take with him. Each object has 4 attributes: name, value, weight and volume."
+      ],
+      "solutions": [
+        "function knapsackUnbounded (items, maxweight, maxvolume) {\n  var n=items.length;\n  var best_value=0;\n  var count=new Array(n)\n  var best=new Array(n)\n  function recurseKnapsack(i, value, weight, volume) {\n    var j, m1, m2, m;\n    if (i == n) {\n        if (value > best_value) {\n            best_value = value;\n            for (j = 0; j < n; j++) {\n                best[j] = count[j];\n            }\n        }\n        return;\n    }\n    m1 = Math.floor(weight / items[i].weight);\n    m2 = Math.floor(volume / items[i].volume);\n    m = m1 < m2 ? m1 : m2;\n    for (count[i] = m; count[i] >= 0; count[i]--) {\n        recurseKnapsack(\n            i + 1,\n            value + count[i] * items[i].value,\n            weight - count[i] * items[i].weight,\n            volume - count[i] * items[i].volume\n        );\n    }\n  }\n\n  recurseKnapsack(0, 0, maxweight, maxvolume);\n  return best_value;\n}\n"
+      ],
+      "tests": [
+        {
+          "text": "'<code>knapsackUnbounded</code> should be a function.'",
+          "testString": "assert(typeof knapsackUnbounded=='function','<code>knapsackUnbounded</code> should be a function.');"
+        },
+        {
+          "text": "'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[0]+','+volumes[0]+')</code> should return a number.'",
+          "testString": "assert(typeof knapsackUnbounded(items,weights[0],volumes[0])=='number','<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[0]+','+volumes[0]+')</code> should return a number.');"
+        },
+        {
+          "text": "'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[0]+','+volumes[0]+')</code> should return <code>'+results[0]+'</code>.'",
+          "testString": "assert.equal(knapsackUnbounded(items,weights[0],volumes[0]),results[0],'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[0]+','+volumes[0]+')</code> should return <code>'+results[0]+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[1]+','+volumes[1]+')</code> should return <code>'+results[1]+'</code>.'",
+          "testString": "assert.equal(knapsackUnbounded(items,weights[1],volumes[1]),results[1],'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[1]+','+volumes[1]+')</code> should return <code>'+results[1]+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[2]+','+volumes[2]+')</code> should return <code>'+results[2]+'</code>.'",
+          "testString": "assert.equal(knapsackUnbounded(items,weights[2],volumes[2]),results[2],'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[2]+','+volumes[2]+')</code> should return <code>'+results[2]+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[3]+','+volumes[3]+')</code> should return <code>'+results[3]+'</code>.'",
+          "testString": "assert.equal(knapsackUnbounded(items,weights[3],volumes[3]),results[3],'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[3]+','+volumes[3]+')</code> should return <code>'+results[3]+'</code>.');"
+        },
+        {
+          "text": "'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[4]+','+volumes[4]+')</code> should return <code>'+results[4]+'</code>.'",
+          "testString": "assert.equal(knapsackUnbounded(items,weights[4],volumes[4]),results[4],'<code>knapsackUnbounded('+JSON.stringify(items)+','+weights[4]+','+volumes[4]+')</code> should return <code>'+results[4]+'</code>.');"
+        }
+      ],
+      "id": "5a23c84252665b21eecc7ed4",
+      "challengeType": 5,
+      "releasedOn": "June 16, 2018",
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function knapsackUnbounded (items, maxweight, maxvolume) {",
+            "  // Good luck!",
+            "}"
+          ],
+          "head": [],
+          "tail": [
+            "var items = [",
+            "{name:\"panacea\",value: 3000, weight:0.3, volume:0.025},",
+            "{name:\"ichor\",value: 1800, weight:0.2, volume:0.015},",
+            "{name:\"gold\",value: 2500, weight:2, volume:0.002}",
+            "]",
+            "let weights=[25,55,25,35,15]",
+            "let volumes=[0.25,0.25,0.15,0.35,0.25]",
+            "let results=[54500,88400,42500,75300,43200]"
+          ]
         }
       }
     },
