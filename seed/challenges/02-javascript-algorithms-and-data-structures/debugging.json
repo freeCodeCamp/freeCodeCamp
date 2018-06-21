@@ -72,7 +72,7 @@
         },
         {
           "text": "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.",
-          "testString": "assert(code.match(/(?<!\\/\\/ Use )console\\.clear\\(\\)/g), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
+          "testString": "assert(code.match(/^(\\s*console.clear\\(\\);?\\s*)$/gm), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
         }
       ],
       "solutions": [],
