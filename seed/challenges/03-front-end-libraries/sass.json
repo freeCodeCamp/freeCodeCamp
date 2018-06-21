@@ -164,7 +164,7 @@
       "tests": [
         {
           "text": "Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.",
-          "testString": "assert(code.match(/@mixin\\s+?border-radius\\(\\s*?\\$radius\\s*?\\)\\s*?{/gi), 'Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.');"
+          "testString": "assert(code.match(/@mixin\\s+?border-radius\\s*?\\(\\s*?\\$radius\\s*?\\)\\s*?{/gi), 'Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.');"
         },
         {
           "text": "Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.",
