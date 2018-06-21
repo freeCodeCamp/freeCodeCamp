@@ -190,7 +190,9 @@
         "The four different viewport units are:",
         "<ul><li><code>vw: 10vw</code> would be 10% of the viewport's width.</li><li><code>vh: 3vh</code> would be 3% of the viewport's height.</li><li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension (height vs. width).</li><li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension (height vs. width).</li></ul>",
         "<hr>",
-        "Set the <code>width</code> of the <code>h2</code> tag to 80% of the viewport's width and the <code>width</code> of the paragraph as 75% of the viewport's smaller dimension."
+        "Set the <code>width</code> of the <code>h2</code> tag to 80% of the viewport's width and the <code>width</code> of the paragraph as 75% of the viewport's smaller dimension.",
+        "An example of how to use these viewport units to set the width is as follows:",
+        "<code>p { width: 10vw; }</code>"
       ],
       "tests": [
         {
