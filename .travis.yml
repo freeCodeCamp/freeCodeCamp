@@ -14,6 +14,7 @@ notifications:
     on_failure: always
 
 script:
+  - commitlint-travis
   - npm run lint
   - npm run test
 

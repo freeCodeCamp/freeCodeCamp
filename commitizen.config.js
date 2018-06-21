@@ -3,41 +3,30 @@
 const types = [
   {
     value: 'feat',
-    name: 'feat:     A new feature'
+    name: 'feat:     A new challenge or feature is being added.'
   },
   {
     value: 'fix',
-    name: 'fix:      A bug fix'
+    name: `fix:      Modifying an existing challenge, fixing a bug, text, 
+            or updating challenge tests.`
   },
   {
     value: 'docs',
-    name: 'docs:     Documentation only changes'
-  },
-  {
-    value: 'style',
-    name: `style:    Changes that do not affect the meaning of the code
-            (white-space, formatting, missing semi-colons, etc)`
-  },
-  {
-    value: 'refactor',
-    name: 'refactor: A code change that neither fixes a bug nor adds a feature'
-  },
-  {
-    value: 'perf',
-    name: 'perf:     A code change that improves performance'
+    name: 'docs:     Documentation only changes to readme, guides, etc.'
   },
   {
     value: 'test',
-    name: 'test:     Adding missing tests'
+    name: `test:     Adding missing tests to tooling (NOT to be used for tests 
+            inside challenges).`
   },
   {
     value: 'chore',
     name: `chore:    Changes to the build process or auxiliary tools
-            and libraries such as documentation generation`
+            and libraries such as documentation generation.`
   },
   {
     value: 'revert',
-    name: 'revert:   Revert a commit'
+    name: 'revert:   Revert a commit.'
   }
 ];
 
