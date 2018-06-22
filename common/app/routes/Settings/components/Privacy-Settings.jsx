@@ -27,6 +27,7 @@ const propTypes = {
   isLocked: PropTypes.bool,
   showAbout: PropTypes.bool,
   showCerts: PropTypes.bool,
+  showDonation: PropTypes.bool,
   showHeatMap: PropTypes.bool,
   showLocation: PropTypes.bool,
   showName: PropTypes.bool,
@@ -39,15 +40,16 @@ const propTypes = {
 
 function PrivacySettings(props) {
   const {
-    isLocked,
-    showAbout,
-    showCerts,
-    showHeatMap,
-    showLocation,
-    showName,
-    showPoints,
-    showPortfolio,
-    showTimeLine,
+    isLocked = true,
+    showAbout = false,
+    showCerts = false,
+    showDonation = false,
+    showHeatMap = false,
+    showLocation = false,
+    showName = false,
+    showPoints = false,
+    showPortfolio = false,
+    showTimeLine = false,
     updateMyProfileUI,
     user
   } = props;
@@ -63,7 +65,7 @@ function PrivacySettings(props) {
       </p>
       <p>There is also a button to see what data we hold on your account</p>
       <ToggleSetting
-        action='Make my profile completely private'
+        action='My profile'
         explain={
           'While your profile is completely private, no one will be able to ' +
           'see your certifications'
@@ -75,7 +77,7 @@ function PrivacySettings(props) {
         toggleFlag={ toggleFlag('isLocked') }
       />
       <ToggleSetting
-        action='Make my name completely private'
+        action='My name'
         flag={ !showName }
         flagName='name'
         offLabel='Public'
@@ -83,7 +85,7 @@ function PrivacySettings(props) {
         toggleFlag={ toggleFlag('showName') }
       />
       <ToggleSetting
-        action='Make my location completely private'
+        action='My location'
         flag={ !showLocation }
         flagName='showLocation'
         offLabel='Public'
@@ -91,7 +93,7 @@ function PrivacySettings(props) {
         toggleFlag={ toggleFlag('showLocation') }
       />
       <ToggleSetting
-        action='Make my "about me" completely private'
+        action='My "about me"'
         flag={ !showAbout }
         flagName='showAbout'
         offLabel='Public'
@@ -99,7 +101,7 @@ function PrivacySettings(props) {
         toggleFlag={ toggleFlag('showAbout') }
       />
       <ToggleSetting
-        action='Make my points completely private'
+        action='My points'
         flag={ !showPoints }
         flagName='showPoints'
         offLabel='Public'
@@ -107,7 +109,7 @@ function PrivacySettings(props) {
         toggleFlag={ toggleFlag('showPoints') }
       />
       <ToggleSetting
-        action='Make my heat map completely private'
+        action='My heat map'
         flag={ !showHeatMap }
         flagName='showHeatMap'
         offLabel='Public'
@@ -115,7 +117,7 @@ function PrivacySettings(props) {
         toggleFlag={ toggleFlag('showHeatMap') }
       />
       <ToggleSetting
-        action='Make my certifications completely private'
+        action='My certifications'
         explain='Your certifications will be disabled'
         flag={ !showCerts }
         flagName='showCerts'
@@ -124,7 +126,7 @@ function PrivacySettings(props) {
         toggleFlag={ toggleFlag('showCerts') }
       />
       <ToggleSetting
-        action='Make my portfolio completely private'
+        action='My portfolio'
         flag={ !showPortfolio }
         flagName='showPortfolio'
         offLabel='Public'
@@ -132,12 +134,21 @@ function PrivacySettings(props) {
         toggleFlag={ toggleFlag('showPortfolio') }
       />
       <ToggleSetting
-        action='Make my time line completely private'
+        action='My time line'
+        explain='Your certifications will be disabled'
         flag={ !showTimeLine }
         flagName='showTimeLine'
         offLabel='Public'
         onLabel='Private'
         toggleFlag={ toggleFlag('showTimeLine') }
+      />
+      <ToggleSetting
+        action='My donations'
+        flag={ !showDonation }
+        flagName='showPortfolio'
+        offLabel='Public'
+        onLabel='Private'
+        toggleFlag={ toggleFlag('showDonation') }
       />
       </FullWidthRow>
       <FullWidthRow>

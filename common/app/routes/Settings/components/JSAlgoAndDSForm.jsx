@@ -90,7 +90,11 @@ class JSAlgoAndDSForm extends PureComponent {
                         { this.state[challenge] ? 'Hide' : 'Show' } Solution
                       </Button>
                     </div> :
-                    <Link to={`${jsProjectPath}${kebabCase(challenge)}`}>
+                    <Link
+                      rel='noopener noreferrer'
+                      target='_blank'
+                      to={`${jsProjectPath}${kebabCase(challenge)}`}
+                      >
                       <Button
                         bsSize='lg'
                         bsStyle='primary'
