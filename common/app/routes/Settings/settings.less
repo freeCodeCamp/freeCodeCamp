@@ -28,6 +28,11 @@
   }
 }
 
+.offset-negative-row{
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
 .@{ns}-container {
   .center(@value: @container-xl, @padding: @grid-gutter-width);
 
@@ -81,6 +86,10 @@
     .btn-group > label {
       margin: 10px 0;
     }
+    @media (max-width: 450px){
+      flex-wrap: wrap;
+      border-bottom: 1px solid #e0e0e0;
+    }
   }
 
   label {
@@ -104,6 +113,10 @@
 
   input, textarea {
     background-color: #fff;
+    margin: 5px 0;
+  }
+  @media (max-width: 450px) {
+    flex-wrap: wrap;
   }
 }
 .edit-preview-tabs {

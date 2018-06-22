@@ -337,6 +337,9 @@ p.stats {
   max-width: 400px;
   margin: auto;
   margin-bottom: 10px;
+  @media (max-width: 450px) {
+    max-width: 90vw;
+  }
 }
 
 a {
@@ -676,6 +679,12 @@ hr {
 .d3-centered {
   width: 771px;
   margin: 0 auto;
+}
+
+#cal-heatmap-container{
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .cal-heatmap-container {
