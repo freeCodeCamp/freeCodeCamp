@@ -160,7 +160,7 @@
           "text":
             "<code>console.log</code> should be changed to print the <code>SENTENCE</code> variable.",
           "testString":
-            "getUserInput => assert(getUserInput('index').match(/console.log/(/s*?SENTENCE/s*?/)/s*?;/g), '<code>console.log</code> should be adjusted to print the variable <code>SENTENCE</code>.');"
+            "getUserInput => assert(getUserInput('index').match(/console\\.log\\(\\s*SENTENCE\\s*\\)\\s*;?/g), '<code>console.log</code> should be adjusted to print the variable <code>SENTENCE</code>.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
