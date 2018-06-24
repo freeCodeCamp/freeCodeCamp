@@ -42,7 +42,7 @@
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/react-fontawesome": "0.0.20",
-    "@freecodecamp/curriculum": "^1.2.1",
+    "@freecodecamp/curriculum": "^2.0.0",
     "@freecodecamp/loopback-component-passport": "^1.0.0",
     "accepts": "^1.3.0",
     "auth0-js": "^9.5.1",
