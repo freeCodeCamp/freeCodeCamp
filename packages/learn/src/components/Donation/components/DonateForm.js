@@ -69,7 +69,7 @@ class DonateForm extends PureComponent {
         donationState: {
           ...state.donationState,
           error:
-            'We need a valid email address to send your donation tax reciept to'
+            'We need a valid email address to send your donation tax receipt to'
         }
       }));
     }
@@ -169,7 +169,7 @@ class DonateForm extends PureComponent {
     return (
       <div className='donation-email-container'>
         <label>
-          Email where we should send your donation tax reciept:
+          Email where we should send your donation tax receipt:
           <input
             onChange={this.handleEmailChange}
             placeholder='email@example.com'
