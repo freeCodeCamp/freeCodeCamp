@@ -1,3 +1,22 @@
+# [2.0.0](https://github.com/freeCodeCamp/curriculum/compare/v1.2.1...v2.0.0) (2018-06-24)
+
+
+### Bug Fixes
+
+* **challenges:** Correct a regex in ES6 read-only challenge ([#41](https://github.com/freeCodeCamp/curriculum/issues/41)) ([cf9336a](https://github.com/freeCodeCamp/curriculum/commit/cf9336a))
+* **challenges:** fix responsive web design cert claim ([6e02f9d](https://github.com/freeCodeCamp/curriculum/commit/6e02f9d))
+* **interview-prep:** Remove duplicates ([816be51](https://github.com/freeCodeCamp/curriculum/commit/816be51))
+
+
+### Features
+
+* **interview-prep:** Porting Rosetta problems ([#17537](https://github.com/freeCodeCamp/curriculum/issues/17537)) ([21930a8](https://github.com/freeCodeCamp/curriculum/commit/21930a8))
+
+
+### BREAKING CHANGES
+
+* **challenges:** none
+
 ## [1.2.1](https://github.com/freeCodeCamp/curriculum/compare/v1.2.0...v1.2.1) (2018-06-21)
 
 
