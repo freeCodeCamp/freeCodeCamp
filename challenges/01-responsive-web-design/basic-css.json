@@ -5325,9 +5325,9 @@
           "contents": [
             "<style>",
             "  .penguin {",
-            "    --penguin-skin: gray;",
-            "    --penguin-belly: white;",
-            "    --penguin-beak: orange;",
+            "    --penguin-skin: black;",
+            "    --penguin-belly: gray;",
+            "    --penguin-beak: yellow;",
             "    position: relative;",
             "    margin: auto;",
             "    display: block;",
