@@ -493,9 +493,7 @@ module.exports = function(User) {
     if (!username) {
       // Zalgo!!
       return nextTick(() => {
-        cb(new TypeError(
-            `username should be a string but got ${ username }`
-        ));
+        cb(null, {});
       });
     }
     return User.findOne({ where: { username } }, (err, user) => {
@@ -503,7 +501,7 @@ module.exports = function(User) {
         return cb(err);
       }
       if (!user || user.username !== username) {
-        return cb(new Error(`no user found for ${ username }`));
+        return cb(null, {});
       }
       const aboutUser = getAboutProfile(user);
       return cb(null, aboutUser);
