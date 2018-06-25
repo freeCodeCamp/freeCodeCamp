@@ -101,44 +101,6 @@ export default {
     link: true,
     failureFlash: true
   },
-  'linkedin-login': {
-    provider: 'linkedin',
-    authScheme: 'oauth2',
-    module: 'passport-linkedin-oauth2',
-    authPath: '/auth/linkedin',
-    callbackURL: '/auth/linkedin/callback',
-    callbackPath: '/auth/linkedin/callback',
-    useCustomCallback: true,
-    successRedirect: successRedirect,
-    failureRedirect: failureRedirect,
-    clientID: process.env.LINKEDIN_ID,
-    clientSecret: process.env.LINKEDIN_SECRET,
-    profileFields: ['public-profile-url'],
-    scope: ['r_basicprofile', 'r_emailaddress'],
-    authOptions: {
-      state: process.env.LINKEDIN_STATE
-    },
-    failureFlash: true
-  },
-  'linkedin-link': {
-    provider: 'linkedin',
-    authScheme: 'oauth2',
-    module: 'passport-linkedin-oauth2',
-    authPath: '/link/linkedin',
-    callbackURL: '/link/linkedin/callback',
-    callbackPath: '/link/linkedin/callback',
-    successRedirect: linkSuccessRedirect,
-    failureRedirect: linkFailureRedirect,
-    clientID: process.env.LINKEDIN_ID,
-    clientSecret: process.env.LINKEDIN_SECRET,
-    profileFields: ['public-profile-url'],
-    scope: ['r_basicprofile', 'r_emailaddress'],
-    authOptions: {
-      state: process.env.LINKEDIN_STATE
-    },
-    link: true,
-    failureFlash: true
-  },
   'github-login': {
     provider: 'github',
     authScheme: 'oauth2',
