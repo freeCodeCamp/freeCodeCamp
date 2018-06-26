@@ -1,7 +1,5 @@
 const successRedirect = '/';
 const failureRedirect = '/';
-const linkSuccessRedirect = '/settings';
-const linkFailureRedirect = '/settings';
 
 export default {
   local: {
@@ -29,20 +27,6 @@ export default {
     scope: ['email'],
     failureFlash: true
   },
-  'facebook-link': {
-    provider: 'facebook',
-    module: 'passport-facebook',
-    clientID: process.env.FACEBOOK_ID,
-    clientSecret: process.env.FACEBOOK_SECRET,
-    authPath: '/link/facebook',
-    callbackURL: '/link/facebook/callback',
-    callbackPath: '/link/facebook/callback',
-    successRedirect: linkSuccessRedirect,
-    failureRedirect: linkFailureRedirect,
-    scope: ['email', 'user_likes'],
-    link: true,
-    failureFlash: true
-  },
   'google-login': {
     provider: 'google',
     authScheme: 'oauth2',
@@ -56,21 +40,6 @@ export default {
     successRedirect: successRedirect,
     failureRedirect: failureRedirect,
     scope: ['email', 'profile'],
-    failureFlash: true
-  },
-  'google-link': {
-    provider: 'google',
-    authScheme: 'oauth2',
-    module: 'passport-google-oauth2',
-    clientID: process.env.GOOGLE_ID,
-    clientSecret: process.env.GOOGLE_SECRET,
-    authPath: '/link/google',
-    callbackURL: '/link/google/callback',
-    callbackPath: '/link/google/callback',
-    successRedirect: linkSuccessRedirect,
-    failureRedirect: linkFailureRedirect,
-    scope: ['email', 'profile'],
-    link: true,
     failureFlash: true
   },
   'twitter-login': {
@@ -87,20 +56,6 @@ export default {
     consumerSecret: process.env.TWITTER_SECRET,
     failureFlash: true
   },
-  'twitter-link': {
-    provider: 'twitter',
-    authScheme: 'oauth',
-    module: 'passport-twitter',
-    authPath: '/link/twitter',
-    callbackURL: '/link/twitter/callback',
-    callbackPath: '/link/twitter/callback',
-    successRedirect: linkSuccessRedirect,
-    failureRedirect: linkFailureRedirect,
-    consumerKey: process.env.TWITTER_KEY,
-    consumerSecret: process.env.TWITTER_SECRET,
-    link: true,
-    failureFlash: true
-  },
   'github-login': {
     provider: 'github',
     authScheme: 'oauth2',
@@ -114,24 +69,6 @@ export default {
     clientID: process.env.GITHUB_ID,
     clientSecret: process.env.GITHUB_SECRET,
     failureFlash: true
-  },
-  'github-link': {
-    provider: 'github',
-    authScheme: 'oauth2',
-    module: 'passport-github',
-    authPath: '/link/github',
-    callbackURL: '/auth/github/callback/link',
-    callbackPath: '/auth/github/callback/link',
-    successRedirect: linkSuccessRedirect,
-    failureRedirect: linkFailureRedirect,
-    clientID: process.env.GITHUB_ID,
-    clientSecret: process.env.GITHUB_SECRET,
-    link: true,
-    failureFlash: true,
-    successFlash: [
-      'We\'ve updated your profile based ',
-      'on your your GitHub account.'
-    ].join('')
   },
   'auth0-login': {
     provider: 'auth0',
