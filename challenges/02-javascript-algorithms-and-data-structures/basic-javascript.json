@@ -30,7 +30,7 @@
           "text":
             "Create a <code>/* */</code> style comment that contains at least five letters.",
           "testString":
-            "assert(code.match(/(\\/\\*)([^\\*\\/]{5,})(?=\\*\\/)/gm), 'Create a <code>/* */</code> style comment that contains at least five letters.');"
+            "assert(code.match(/(\\/\\*)([^\\/]{5,})(?=\\*\\/)/gm), 'Create a <code>/* */</code> style comment that contains at least five letters.');"
         }
       ],
       "challengeType": 1,
