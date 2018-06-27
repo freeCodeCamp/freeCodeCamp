@@ -806,20 +806,12 @@
       "description": [
         "The last challenge introduced the <code>align-items</code> property and gave an example. This property can be applied to a few tweet embed elements to align the flex items inside them.",
         "<hr>",
-        "Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element, the header's <code>h3</code>, and the header's <code>h4</code>. Set the value to center."
+        "Add the CSS property <code>align-items</code> to the header's <code>.follow-btn</code> element. Set the value to center."
       ],
       "tests": [
         {
           "text": "The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.",
           "testString": "assert($('.follow-btn').css('align-items') == 'center', 'The <code>.follow-btn</code> element should have the <code>align-items</code> property set to a value of center.');"
-        },
-        {
-          "text": "The <code>h3</code> element should have the <code>align-items</code> property set to a value of center.",
-          "testString": "assert($('h3').css('align-items') == 'center', 'The <code>h3</code> element should have the <code>align-items</code> property set to a value of center.');"
-        },
-        {
-          "text": "The <code>h4</code> element should have the <code>align-items</code> property set to a value of center.",
-          "testString": "assert($('h4').css('align-items') == 'center', 'The <code>h4</code> element should have the <code>align-items</code> property set to a value of center.');"
         }
       ],
       "solutions": [],
