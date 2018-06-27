@@ -20,7 +20,7 @@ error Command failed with exit code 1.
 2. Clone locally
 3. `yarn install`
 4. `git checkout -b <your-branch-name>`
-6. `yarn develop` (Be sure you have `freeCodeCamp` running locally as well)
-7. Make your changes
-8. Make a PR
-9. Bask in the glory of your accomplishments
+5. `yarn develop` (Be sure you have `freeCodeCamp` running locally as well)
+6. Make your changes
+7. Make a PR
+8. Bask in the glory of your accomplishments
