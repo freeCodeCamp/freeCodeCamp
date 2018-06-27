@@ -101,7 +101,7 @@
     },
     "acceptedPrivacyTerms": {
       "type": "boolean",
-      "default": false
+      "default": true
     },
     "sendQuincyEmail": {
       "type": "boolean",
