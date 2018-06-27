@@ -1278,7 +1278,7 @@
       "id": "5a94fe6269fb03452672e462",
       "title": "Create Flexible Layouts Using auto-fit",
       "description": [
-        "<code>auto-fit</code> works almost identical to <code>auto-fill</code>. The only difference is that when the container's size exceeds the size of all the items combined, <code>auto-fill</code> keeps inserting empty rows or columns and pushes your items to the side, while <code>auto-fit</code> collapses those empty rows or columns and stretches your items to fit the size of the container.",
+        "<code>auto-fit</code> works almost identically to <code>auto-fill</code>. The only difference is that when the container's size exceeds the size of all the items combined, <code>auto-fill</code> keeps inserting empty rows or columns and pushes your items to the side, while <code>auto-fit</code> collapses those empty rows or columns and stretches your items to fit the size of the container.",
         "<strong>Note</strong><br>If your container can't fit all your items on one row, it will move them down to a new one.",
         "<hr>",
         "In the second grid, use <code>auto-fit</code> with <code>repeat</code> to fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>. Then resize the preview to see the difference."
