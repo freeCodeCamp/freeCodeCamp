@@ -21,7 +21,7 @@ if (isSignUpDisabled) {
 
 module.exports = function enableAuthentication(app) {
   // enable loopback access control authentication. see:
-  //  loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
+  // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
   const ifNoUserRedirectHome = ifNoUserRedirectTo(homeURL);
@@ -32,11 +32,14 @@ module.exports = function enableAuthentication(app) {
   router.get('/signup', (req, res) => res.redirect(301, '/signin'));
   router.get('/email-signin', (req, res) => res.redirect(301, '/signin'));
   router.get('/login', (req, res) => res.redirect(301, '/signin'));
+  router.get('/deprecated-signin', (req, res) => res.redirect(301, '/signin'));
+
   router.get('/logout', (req, res) => res.redirect(301, '/signout'));
 
   router.get('/signin',
-  ifUserRedirect,
-  (req, res) => res.redirect(301, '/auth/auth0'));
+    ifUserRedirect,
+    (req, res) => res.redirect('/auth/auth0')
+  );
 
   router.get(
     '/update-email',
@@ -70,14 +73,6 @@ module.exports = function enableAuthentication(app) {
       res.redirect('/');
    });
   });
-
-  router.get(
-    '/deprecated-signin',
-    ifUserRedirect,
-    (req, res) => res.render('account/deprecated-signin', {
-      title: 'Sign in to freeCodeCamp using a Deprecated Login'
-    })
-  );
 
   router.get(
     '/accept-privacy-terms',

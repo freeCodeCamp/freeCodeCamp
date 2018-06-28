@@ -3,7 +3,8 @@ import helmet from 'helmet';
 let trusted = [
   "'self'",
   'https://search.freecodecamp.org',
-  'https://*.algolianet.com'
+  'https://*.algolianet.com',
+  'https://' + process.env.AUTH0_DOMAIN
 ];
 
 const host = process.env.HOST || 'localhost';
