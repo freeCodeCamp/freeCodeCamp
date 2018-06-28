@@ -61,6 +61,7 @@ class Editor extends PureComponent {
 
   editorDidMount(editor, monaco) {
     this._editor = editor;
+    this._editor.focus();
     document.addEventListener('keyup', this.focusEditor);
     this._editor.addAction({
       id: 'execute-challenge',
