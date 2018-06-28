@@ -9,6 +9,11 @@ main {
   Note(Bouncey): removing height: 100% makes the element 100% high ¯\_(ツ)_/¯
   */
   height: auto;
+  /*
+  Note(renojvarghese): had to put a max-height because max-height was removed from app-wrapper (has background of #333 in night mode)
+  */
+  max-height: calc(100vh - 38px);
+  overflow-y: scroll;
 }
 
 .reflex-layout.vertical .reflex-splitter:hover {
@@ -17,11 +22,10 @@ main {
   background-color: #006400;
 }
 
-.reflex-layout.vertical > .reflex-splitter{
+.reflex-layout.vertical > .reflex-splitter {
   width: 5px;
 }
 
 .app-wrapper {
   margin-top: 38px;
-  height: calc(100vh - 38px);
 }

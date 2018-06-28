@@ -657,3 +657,229 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary-link > a {
   color: #fff;
 }
+.night {
+  background-color: #333333;
+  color: #ccc;
+}
+.night .btn-group,
+.night .text-success,
+.night .challenges-list-header,
+.night .fcc-footer {
+  background-color: #333333;
+}
+.night hr {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0)
+  );
+}
+.night .modal-dialog .modal-content {
+  background-color: #555555;
+}
+.night .modal-dialog .modal-content .btn-success,
+.night .modal-dialog .modal-content .btn-danger {
+  background: #ffffff;
+}
+.night .modal-dialog .modal-content .btn-danger:hover,
+.night .modal-dialog .modal-content .btn-danger:focus,
+.night .modal-dialog .modal-content .btn-danger:active {
+  background: #d9534f !important;
+}
+.night .modal-dialog .modal-header,
+.night .modal-dialog .modal-footer {
+  border: none;
+}
+.night .modal-dialog .fa-check-circle {
+  color: #004a00;
+}
+.night a,
+.night .input-group-addon,
+.night .challenge-instructions a,
+.night .challenge-instructions #MDN-links a {
+  color: #f8f8f8;
+}
+.night .fa-github-square {
+  color: darkgreen;
+}
+.night .fa-github-square:hover {
+  color: #ccc;
+}
+.night .black-text {
+  color: #111;
+}
+.night .green-text {
+  color: #8cca33;
+}
+.night code {
+  background-color: #242424;
+  color: #02a902;
+}
+.night .fcc-footer ahover {
+  background-color: #333333;
+}
+.night .btn-primary {
+  background-color: darkgreen;
+  border-color: #777;
+  color: #ccc;
+  transition: color 0.2s, background-color 0.2s;
+}
+.night .btn-primary:hover {
+  background-color: #ababab !important;
+  color: #333333 !important;
+}
+.night .cal-heatmap-container {
+  background-color: #333333;
+}
+.night .graph-rect {
+  fill: #ccc !important;
+}
+.night .table-striped > tbody > tr:nth-child(odd) {
+  background-color: #555555;
+}
+.night .table > thead > tr > th,
+.night .table > tbody > tr > th,
+.night .table > tfoot > tr > th,
+.night .table > thead > tr > td,
+.night .table > tbody > tr > td,
+.night .table > tfoot > tr > td {
+  border-color: #ccc;
+}
+.night .btn-toggle {
+  background-color: transparent;
+}
+.night .btn-toggle.active {
+  background-color: darkgreen;
+}
+.night .map-ui ul {
+  color: #fff;
+}
+.night {
+  color: #fff;
+}
+.night .view-lines {
+  background: #333333;
+  color: #fff;
+}
+.night .margin-view-overlays {
+  background: #333333;
+  color: #fff;
+  border-left: 1px solid #555555;
+}
+.night .test-result:nth-child(odd) {
+  color: #333;
+}
+.night .monaco-editor .margin-view-overlays .line-numbers {
+  color: #fff;
+}
+.night .mtk1 {
+  color: #e0e0e0;
+}
+
+.night .mtk2 {
+  color: #f5f5f5;
+}
+
+.night .mtk3 {
+  color: #d49494;
+}
+
+.night .mtk4 {
+  color: #c7bbec;
+}
+
+.night .mtk5 {
+  color: #ecb29b;
+}
+
+.night .mtk6 {
+  color: #bce0aa;
+}
+
+.night .mtk7 {
+  color: #9ac9f7;
+}
+
+.night .mtk8 {
+  color: #6fd4ce;
+}
+
+.night .mtk9 {
+  color: #dcdcdc;
+}
+
+.night .mtk10 {
+  color: #a0a0a0;
+}
+
+.night .mtk11 {
+  color: #f44747;
+}
+
+.night .mtk12 {
+  color: #e697e0;
+}
+
+.night .mtk13 {
+  color: #a79873;
+}
+
+.night .mtk14 {
+  color: #f97c7c;
+}
+
+.night .mtk15 {
+  color: #7ed0b6;
+}
+
+.night .mtk16 {
+  color: #979797;
+}
+
+.night .mtk17 {
+  color: #7780a0;
+}
+
+.night .mtk18 {
+  color: #f7c1f7;
+}
+
+.night .mtk19 {
+  color: #b46695;
+}
+
+.night .mtk20 {
+  color: #e4b32f;
+}
+
+.night .mtk21 {
+  color: #6992cc;
+}
+
+.night .mtk22 {
+  color: #65e4ce;
+}
+
+.night .mtk23 {
+  color: #80b8e4;
+}
+
+.night .mtk24 {
+  color: #bcc7e4;
+}
+
+.night .mtki {
+  font-style: italic;
+}
+
+.night .mtkb {
+  font-weight: bold;
+}
+
+.night .mtku {
+  text-decoration: underline;
+}
+.night .challenge-preview {
+  background: #fff;
+}

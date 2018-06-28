@@ -1,6 +1,5 @@
 .map-ui {
   height: 100%;
-  max-height: calc(100vh - (45px + 1.45rem));
   margin-left: 35px;
 }
 
