@@ -27,6 +27,7 @@ import {
   Form
 } from '../../../components/formHelpers';
 import Spacer from '../../../components/util/Spacer';
+import { createGuideUrl } from '../utils';
 
 // provided by redux form
 const reduxFormPropTypes = {
@@ -105,7 +106,9 @@ export class BackEnd extends PureComponent {
 
   render() {
     const {
-      data: { challengeNode: { fields: { blockName }, title, description } },
+      data: {
+        challengeNode: { fields: { blockName, slug }, title, description }
+      },
       output,
       tests,
       submitting,
@@ -133,7 +136,7 @@ export class BackEnd extends PureComponent {
               options={options}
               submit={executeChallenge}
             />
-            <ProjectToolPanel />
+            <ProjectToolPanel guideUrl={createGuideUrl(slug)} />
           </div>
           <div>
             <br />
@@ -181,6 +184,7 @@ export const query = graphql`
       challengeType
       fields {
         blockName
+        slug
         tests {
           text
           testString

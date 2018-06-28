@@ -16,7 +16,7 @@ import HelpModal from '../components/HelpModal';
 import ResetModal from '../components/ResetModal';
 
 import { randomCompliment } from '../utils/get-words';
-
+import { createGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
 import {
@@ -160,10 +160,9 @@ class ShowClassic extends PureComponent {
       data: {
         challengeNode: {
           challengeType,
-          fields: { blockName },
+          fields: { blockName, slug },
           title,
-          description,
-          guideUrl
+          description
         }
       },
       files,
@@ -220,7 +219,7 @@ class ShowClassic extends PureComponent {
             <SidePanel
               className='full-height'
               description={description}
-              guideUrl={guideUrl}
+              guideUrl={createGuideUrl(slug)}
               title={blockNameTitle}
             />
           </ReflexElement>
@@ -228,8 +227,9 @@ class ShowClassic extends PureComponent {
           <ReflexElement flex={1} {...this.resizeProps}>
             {editors}
           </ReflexElement>
-          {showPreview &&
-            <ReflexSplitter propagate={true} {...this.resizeProps} />}
+          {showPreview && (
+            <ReflexSplitter propagate={true} {...this.resizeProps} />
+          )}
           {showPreview ? (
             <ReflexElement flex={0.7} {...this.resizeProps}>
               <Preview
@@ -257,10 +257,10 @@ export const query = graphql`
   query ClassicChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
-      guideUrl
       description
       challengeType
       fields {
+        slug
         blockName
         tests {
           text

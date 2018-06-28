@@ -63,30 +63,34 @@ export class ProjectForm extends PureComponent {
   handleKeyDown(e) {
     if (e.key === 'Control') {
       this.setState(state => ({
-        ...state, keysDown: { ...state.keysDown, Control: true }
+        ...state,
+        keysDown: { ...state.keysDown, Control: true }
       }));
     }
     if (e.key === 'Enter') {
       this.setState(state => ({
-        ...state, keysDown: { ...state.keysDown, Enter: true }
+        ...state,
+        keysDown: { ...state.keysDown, Enter: true }
       }));
     }
   }
   handleKeyUp(e) {
     if (e.key === 'Control') {
       this.setState(state => ({
-        ...state, keysDown: { ...state.keysDown, Control: false }
+        ...state,
+        keysDown: { ...state.keysDown, Control: false }
       }));
     }
     if (e.key === 'Enter') {
       this.setState(state => ({
-        ...state, keysDown: { ...state.keysDown, Enter: false }
+        ...state,
+        keysDown: { ...state.keysDown, Enter: false }
       }));
     }
   }
   handleSubmit(values) {
     const { keysDown: { Control, Enter } } = this.state;
-    if (Control && Enter || !Enter) {
+    if ((Control && Enter) || !Enter) {
       this.props.openModal('completion');
       this.props.updateProjectForm(values);
     }

@@ -25,6 +25,7 @@ import { frontEndProject } from '../../../../utils/challengeTypes';
 
 import './project.css';
 import Spacer from '../../../components/util/Spacer';
+import { createGuideUrl } from '../utils';
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch =>
@@ -92,7 +93,7 @@ export class Project extends PureComponent {
       data: {
         challengeNode: {
           challengeType,
-          fields: { blockName },
+          fields: { blockName, slug },
           title,
           description,
           guideUrl
@@ -119,7 +120,7 @@ export class Project extends PureComponent {
             openModal={openCompletionModal}
             updateProjectForm={updateProjectFormValues}
           />
-          <ToolPanel />
+          <ToolPanel guideUrl={createGuideUrl(slug)} />
           <Spacer />
         </div>
         <CompletionModal />
@@ -138,11 +139,11 @@ export const query = graphql`
   query ProjectChallenge($slug: String!) {
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
-      guideUrl
       description
       challengeType
       fields {
         blockName
+        slug
       }
     }
   }

@@ -21,7 +21,7 @@ const options = {
     horizontal: 'hidden',
     vertical: 'visible',
     verticalHasArrows: true
-  },
+  }
 };
 
 class Output extends PureComponent {
