@@ -28,4 +28,5 @@ main {
 
 .app-wrapper {
   margin-top: 38px;
+  min-height: calc(100vh - 38px);
 }
