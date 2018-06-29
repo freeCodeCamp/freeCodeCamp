@@ -74,3 +74,11 @@ getChallenges()
   }
 },
 ```
+
+## Contributing
+
+1. 🍴 Fork this repo
+2. 👀️ Follow the contributing guidelines outlined in [Contributing Guidelines](docs/CONTRIBUTING.md).
+3. 🔧 Make some awesome changes!
+4. 👉 [Make a pull request](https://github.com/freeCodeCamp/learn/compare)
+5. 🎉 Get your pull request approved - success!
