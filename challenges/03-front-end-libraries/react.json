@@ -3168,10 +3168,10 @@
       "title": "Render with an If/Else Condition",
       "releasedOn": "December 25, 2017",
       "description": [
-        "Another application of using JavaScript to control your rendered view is to tie the elements that are rendered to a condition. When the condition is true, one view renders, when it's false, it's a different view. You can do this with a standard <code>if/else</code> statement in the <code>render()</code> method of a React component.",
+        "Another application of using JavaScript to control your rendered view is to tie the elements that are rendered to a condition. When the condition is true, one view renders. When it's false, it's a different view. You can do this with a standard <code>if/else</code> statement in the <code>render()</code> method of a React component.",
         "<hr>",
         "MyComponent contains a <code>boolean</code> in its state which tracks whether you want to display some element in the UI or not. The <code>button</code> toggles the state of this value. Currently, it renders the same UI every time. Rewrite the <code>render()</code> method with an <code>if/else</code> statement so that if <code>display</code> is <code>true</code>, you return the current markup. Otherwise, return the markup without the <code>h1</code> element.",
-        "<strong>Note:</strong>&nbsp;You must write an <code>if/else</code> to pass the tests, use of the ternary operator will not pass here."
+        "<strong>Note:</strong>&nbsp;You must write an <code>if/else</code> to pass the tests. Use of the ternary operator will not pass here."
       ],
       "files": {
         "indexjsx": {

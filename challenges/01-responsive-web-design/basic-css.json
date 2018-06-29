@@ -4555,21 +4555,21 @@
       "tests": [
         {
           "text":
-            "<code>penguin</code> class should declar the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
+            "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
           "testString":
-            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declar the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
         },
         {
           "text":
-            "<code>penguin</code> class should declar the <code>--penguin-skin</code> variable and assign it to <code>white</code>.",
+            "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>white</code>.",
           "testString":
-            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declar the <code>--penguin-skin</code> variable and assign it to <code>white</code>.');"
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>white</code>.');"
         },
         {
           "text":
-            "<code>penguin</code> class should declar the <code>--penguin-skin</code> variable and assign it to <code>orange</code>.",
+            "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>orange</code>.",
           "testString":
-            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-beak\\s*?:\\s*?orange\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declar the <code>--penguin-skin</code> variable and assign it to <code>orange</code>.');"
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-beak\\s*?:\\s*?orange\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>orange</code>.');"
         }
       ],
       "solutions": [],
@@ -4803,9 +4803,9 @@
       "tests": [
         {
           "text":
-            "<code>penguin</code> class should declar the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
+            "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
           "testString":
-            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declar the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
         }
       ],
       "solutions": [],
@@ -5036,15 +5036,15 @@
       "tests": [
         {
           "text":
-            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-top</code> class.",
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.",
           "testString":
-            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-top</code> class.');"
+            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.');"
         },
         {
           "text":
-            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-bottom</code> class.",
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.",
           "testString":
-            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>pengiun-bottom</code> class.');"
+            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
         },
         {
           "text":
@@ -5303,13 +5303,13 @@
           "text":
             "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.",
           "testString":
-            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
+            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--penguin-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
         },
         {
           "text":
             "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.",
           "testString":
-            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
+            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--penguin-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
         }
       ],
       "solutions": [],
@@ -5341,7 +5341,7 @@
             "    left: 25%;",
             "  ",
             "    /* change code below */",
-            "    background: var(--pengiun-skin);",
+            "    background: var(--penguin-skin);",
             "    /* change code above */",
             "  ",
             "    width: 50%;",
@@ -5354,7 +5354,7 @@
             "    left: 23.5%;",
             "  ",
             "    /* change code below */",
-            "    background: var(--pengiun-skin);",
+            "    background: var(--penguin-skin);",
             "    /* change code above */",
             "  ",
             "    width: 53%;",
