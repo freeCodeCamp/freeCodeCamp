@@ -33,8 +33,7 @@ export default function(UserIdent) {
     // get the social provider data and the external id from auth0
     profile.id = profile.id || profile.openid;
     const auth0IdString = '' + profile.id;
-    const socialExtId = auth0IdString.substring(auth0IdString.indexOf('|') + 1);
-    const provider = auth0IdString.substring(0, auth0IdString.indexOf('|'));
+    const [ provider, socialExtId ] = auth0IdString.split('|');
     const query = {
       where: {
         provider: provider,
