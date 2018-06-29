@@ -305,7 +305,7 @@ A pull request (PR) is a method of submitting proposed changes to the freeCodeCa
 2.  By default, all pull requests should be against the freeCodeCamp Curriculum repo’s `dev` branch.
     **Make sure that your Base Fork is set to freeCodeCamp/curriculum when raising a pull request.**
 
-    ![pr-fork-instructions](docs/images/pr-fork-instructions.png)
+    ![pr-fork-instructions](images/pr-fork-instructions.png)
 
 3.  Submit a [pull request](http://forum.freecodecamp.org/t/how-to-contribute-via-a-pull-request/19368) from your branch to the freeCodeCamp Curriculum `dev` branch.
 
