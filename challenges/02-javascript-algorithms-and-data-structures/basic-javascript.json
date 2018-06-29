@@ -3491,12 +3491,6 @@
             "assert(typeof timesFive === 'function', '<code>timesFive</code> should be a function');"
         },
         {
-          "text":
-            "function <code>timesFive</code> should be called with a number",
-          "testString":
-            "assert(code.match(/timesFive\\(\\s*\\d+\\s*\\)/g), 'function <code>timesFive</code> should be called with a number');"
-        },
-        {
           "text": "<code>timesFive(5)</code> should return <code>25</code>",
           "testString":
             "assert(timesFive(5) === 25, '<code>timesFive(5)</code> should return <code>25</code>');"
