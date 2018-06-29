@@ -1,8 +1,12 @@
+![freeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
+
 # freeCodeCamp Curriculum
 
 [![Build Status](https://travis-ci.org/freeCodeCamp/curriculum.svg?branch=master)](https://travis-ci.org/freeCodeCamp/curriculum) [![npm (scoped)](https://img.shields.io/npm/v/@freecodecamp/curriculum.svg)](https://www.npmjs.com/package/@freecodecamp/curriculum)
+[![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
+[![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 
-> This package contains the "seed" files used in the freeCodeCamp Curriculum.
+> This package contains the "challenge" files used in the freeCodeCamp Curriculum.
 
 ## Installation
 
@@ -82,3 +86,9 @@ getChallenges()
 3. 🔧 Make some awesome changes!
 4. 👉 [Make a pull request](https://github.com/freeCodeCamp/learn/compare)
 5. 🎉 Get your pull request approved - success!
+
+## License
+
+Copyright (c) 2018 freeCodeCamp.
+
+The curricular content in this repo is licensed under the [CC-BY-SA-4.0](LICENSE.md)
