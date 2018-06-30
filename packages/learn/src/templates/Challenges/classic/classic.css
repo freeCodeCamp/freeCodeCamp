@@ -8,7 +8,7 @@
 
 .instructions-panel {
   padding: 0 10px;
-  height: 100%;
+  height: calc(100vh - 38px);
   overflow-x: hidden;
   overflow-y: auto;
 }
