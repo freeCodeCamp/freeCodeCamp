@@ -1,3 +1,15 @@
+## [3.0.1](https://github.com/freeCodeCamp/curriculum/compare/v3.0.0...v3.0.1) (2018-06-30)
+
+
+### Bug Fixes
+
+* **challenges:** change comment to make it clearer ([#72](https://github.com/freeCodeCamp/curriculum/issues/72)) ([46fcf43](https://github.com/freeCodeCamp/curriculum/commit/46fcf43))
+* **challenges:** fix a test case in an Applied Accessibility ([4c0d587](https://github.com/freeCodeCamp/curriculum/commit/4c0d587))
+* **challenges:** remove unnecessary test cases ([17af3dd](https://github.com/freeCodeCamp/curriculum/commit/17af3dd))
+* **challenges:** removed a test in basic javascript challenge ([#76](https://github.com/freeCodeCamp/curriculum/issues/76)) ([ff26697](https://github.com/freeCodeCamp/curriculum/commit/ff26697)), closes [#73](https://github.com/freeCodeCamp/curriculum/issues/73)
+* **challenges:** removed comment in the seed ([6a8a9db](https://github.com/freeCodeCamp/curriculum/commit/6a8a9db))
+* **challenges:** removed redundant text from challenge ([c37a1e8](https://github.com/freeCodeCamp/curriculum/commit/c37a1e8)), closes [#36](https://github.com/freeCodeCamp/curriculum/issues/36)
+
 # [3.0.0](https://github.com/freeCodeCamp/curriculum/compare/v2.0.0...v3.0.0) (2018-06-29)
 
 
