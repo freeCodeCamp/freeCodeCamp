@@ -700,6 +700,9 @@ h1, h2, h3, h4, h5, h6 {
 .night .challenge-instructions #MDN-links a {
   color: #f8f8f8;
 }
+.night .intro-toc a {
+  color: #006400;
+}
 .night .fa-github-square {
   color: darkgreen;
 }
