@@ -1015,7 +1015,7 @@
         {
           "text": "Template strings were used",
           "testString":
-            "getUserInput => assert(getUserInput('index').match(/\\`<li \\s*class\\s*=\\s*(\"\\s*text-warning\\s*\"|\\'\\s*text-warning\\s*\\')\\s*>\\s*\\$\\s*\\{(\\s*\\w+\\s*|\\s*\\w+\\s*\\[\\s*[\\w]+\\s*\\]\\s*)\\}\\s*<\\s*/li\\s*>\\`/g), 'Template strings were used');"
+            "getUserInput => assert(getUserInput('index').match(/`<li \\s*class\\s*=\\s*(\"\\s*text-warning\\s*\"|'\\s*text-warning\\s*')\\s*>\\s*\\$\\s*\\{(\\s*\\w+\\s*|\\s*\\w+\\s*\\[\\s*[\\w]+\\s*\\]\\s*)\\}\\s*<\\s*\\/li\\s*>`/g), 'Template strings were used');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
