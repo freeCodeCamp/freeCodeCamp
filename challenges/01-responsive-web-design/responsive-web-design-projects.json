@@ -19,6 +19,7 @@
         "<strong>User Story #6:</strong> I should see an element with a corresponding <code>id=\"tribute-info\"</code>, which contains textual content describing the subject of the tribute page.",
         "<strong>User Story #7:</strong> I  should see an <code>a</code> element with a corresponding <code>id=\"tribute-link\"</code>, which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of <code>target</code> and set it to <code>_blank</code> in order for your link to open in a new tab (i.e. <code>target=\"_blank\"</code>).",
         "<strong>User Story #8:</strong> The <code>img</code> element should responsively resize, relative to the width of its parent element, without exceeding its original size.",
+        "<strong>User Story #9:</strong> The <code>img</code> element should be centered within its parent element.",
         "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js</code>.",
         "Once you're done, submit the URL to your working project with all its tests passing.",
         "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
