@@ -627,6 +627,9 @@ pre tt:after {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
+code[class*="language-"],pre[class*="language-"] {
+    text-shadow: none;
+}
 
 .fcc-modal {
   background-color: #006400;
@@ -885,4 +888,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .night .challenge-preview {
   background: #fff;
+}
+.night code, .night pre, .night blockquote, .night .challenge-instructions blockquote{
+    background: #222;
+}
+.night pre, .night blockquote, .night .challenge-instructions blockquote {
+    border: 1px solid #111;
+}
+.night blockquote, .night .challenge-instructions blockquote, .night .token.property, .night .token.tag, .night .token.boolean, .night .token.number, .night .token.constant, .night .token.symbol, .night .token.deleted {
+    color: #f55764;
 }
