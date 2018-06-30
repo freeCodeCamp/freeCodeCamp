@@ -36,6 +36,9 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Unpacked challenge files
+unpacked/
+
 # TypeScript v1 declaration files
 typings/
 
@@ -65,3 +68,4 @@ typings/
 *.iml
 .DS_Store
 Thumbs.db
+.vscode/
