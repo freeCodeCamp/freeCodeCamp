@@ -462,24 +462,23 @@
     },
     {
       "id": "587d781b367417b2b2512aba",
-      "title": "Use the del Tag to Strikethrough Text",
+      "title": "Use the s Tag to Strikethrough Text",
       "description": [
-        "To strikethrough text, which is when a horizontal line cuts across the characters, you can use the <code>del</code> tag. It shows that a section of text is no longer valid. With the <code>del</code> tag, the browser applies the CSS of <code>text-decoration: line-through;</code> to the element.",
+        "To strikethrough text, which is when a horizontal line cuts across the characters, you can use the <code>s</code> tag. It shows that a section of text is no longer valid. With the <code>s</code> tag, the browser applies the CSS of <code>text-decoration: line-through;</code> to the element.",
         "<hr>",
-        "Wrap the <code>del</code> tag around \"Google\" inside the <code>h4</code> tag and then add the word Alphabet beside it, which should not have the strikethrough formatting."
+        "Wrap the <code>s</code> tag around \"Google\" inside the <code>h4</code> tag and then add the word Alphabet beside it, which should not have the strikethrough formatting."
       ],
       "tests": [
         {
-          "text":
-            "Your code should add one <code>del</code> tag to the markup.",
+          "text": "Your code should add one <code>s</code> tag to the markup.",
           "testString":
-            "assert($('del').length == 1, 'Your code should add one <code>del</code> tag to the markup.');"
+            "assert($('s').length == 1, 'Your code should add one <code>s</code> tag to the markup.');"
         },
         {
           "text":
-            "A <code>del</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.",
+            "A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.",
           "testString":
-            "assert($('del').text().match(/Google/gi) && !$('del').text().match(/Alphabet/gi), 'A <code>del</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.');"
+            "assert($('s').text().match(/Google/gi) && !$('s').text().match(/Alphabet/gi), 'A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.');"
         },
         {
           "text":
@@ -605,7 +604,7 @@
             "<div class=\"fullCard\">",
             "  <div class=\"cardContent\">",
             "    <div class=\"cardText\">",
-            "      <h4><del>Google</del>Alphabet</h4>",
+            "      <h4><s>Google</s>Alphabet</h4>",
             "      ",
             "      <em><p>Google was founded by Larry Page and Sergey Brin while they were <u>Ph.D. students</u> at <strong>Stanford University</strong>.</p></em>",
             "    </div>",
