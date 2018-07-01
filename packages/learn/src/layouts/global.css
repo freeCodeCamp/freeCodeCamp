@@ -896,5 +896,5 @@ code[class*="language-"],pre[class*="language-"] {
     border: 1px solid #111;
 }
 .night blockquote, .night .challenge-instructions blockquote, .night .token.property, .night .token.tag, .night .token.boolean, .night .token.number, .night .token.constant, .night .token.symbol, .night .token.deleted {
-    color: #f55764;
+    color: #00bfb0;
 }
