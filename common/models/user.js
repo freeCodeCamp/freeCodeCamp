@@ -245,7 +245,7 @@ module.exports = function(User) {
         }
 
         if (user.progressTimestamps.length === 0) {
-          user.progressTimestamps.push({ timestamp: Date.now() });
+          user.progressTimestamps.push(Date.now());
         }
         return Observable.fromPromise(User.doesExist(null, user.email))
           .do(exists => {
