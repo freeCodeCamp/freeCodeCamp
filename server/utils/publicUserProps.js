@@ -35,7 +35,8 @@ export const publicUserProps = [
   'streak',
   'twitter',
   'username',
-  'website'
+  'website',
+  'yearsTopContributor'
 ];
 
 export const userPropsForSession = [

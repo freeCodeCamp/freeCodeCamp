@@ -14,14 +14,16 @@ const mapStateToProps = createSelector(
     location,
     points,
     picture,
-    about
+    about,
+    yearsTopContributor
   }) => ({
     name,
     username,
     location,
     points,
     picture,
-    about
+    about,
+    yearsTopContributor
   })
 );
 
@@ -35,7 +37,8 @@ const propTypes = {
   showLocation: PropTypes.bool,
   showName: PropTypes.bool,
   showPoints: PropTypes.bool,
-  username: PropTypes.string
+  username: PropTypes.string,
+  yearsTopContributor: PropTypes.array
 };
 
 function CamperHOC({
@@ -45,6 +48,7 @@ function CamperHOC({
   points,
   picture,
   about,
+  yearsTopContributor,
   showAbout,
   showLocation,
   showName,
@@ -60,6 +64,7 @@ function CamperHOC({
         picture={ picture }
         points={ showPoints ? points : null }
         username={ username }
+        yearsTopContributor={ yearsTopContributor }
       />
       <hr />
     </div>
