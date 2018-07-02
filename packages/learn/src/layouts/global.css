@@ -764,128 +764,12 @@ code[class*="language-"],pre[class*="language-"] {
 .night {
   color: #fff;
 }
-.night .view-lines {
-  background: #333333;
-  color: #fff;
-}
-.night .margin-view-overlays {
-  background: #333333;
-  color: #fff;
-  border-left: 1px solid #555555;
-}
-.night .test-result:nth-child(odd) {
-  color: #333;
-}
-.night .monaco-editor .margin-view-overlays .line-numbers {
-  color: #fff;
-}
-.night .mtk1 {
-  color: #e0e0e0;
-}
 
-.night .mtk2 {
-  color: #f5f5f5;
-}
+.night .test-result:nth-child(odd) { 
+  color: #fff; 
+  background: #2A2A2A; 
+} 
 
-.night .mtk3 {
-  color: #d49494;
-}
-
-.night .mtk4 {
-  color: #c7bbec;
-}
-
-.night .mtk5 {
-  color: #ecb29b;
-}
-
-.night .mtk6 {
-  color: #bce0aa;
-}
-
-.night .mtk7 {
-  color: #9ac9f7;
-}
-
-.night .mtk8 {
-  color: #6fd4ce;
-}
-
-.night .mtk9 {
-  color: #dcdcdc;
-}
-
-.night .mtk10 {
-  color: #a0a0a0;
-}
-
-.night .mtk11 {
-  color: #f44747;
-}
-
-.night .mtk12 {
-  color: #e697e0;
-}
-
-.night .mtk13 {
-  color: #a79873;
-}
-
-.night .mtk14 {
-  color: #f97c7c;
-}
-
-.night .mtk15 {
-  color: #7ed0b6;
-}
-
-.night .mtk16 {
-  color: #979797;
-}
-
-.night .mtk17 {
-  color: #7780a0;
-}
-
-.night .mtk18 {
-  color: #f7c1f7;
-}
-
-.night .mtk19 {
-  color: #b46695;
-}
-
-.night .mtk20 {
-  color: #e4b32f;
-}
-
-.night .mtk21 {
-  color: #6992cc;
-}
-
-.night .mtk22 {
-  color: #65e4ce;
-}
-
-.night .mtk23 {
-  color: #80b8e4;
-}
-
-.night .mtk24 {
-  color: #bcc7e4;
-}
-
-.night .mtki {
-  font-style: italic;
-}
-
-.night .mtkb {
-  font-weight: bold;
-}
-
-.night .mtku {
-  text-decoration: underline;
-}
 .night .challenge-preview {
   background: #fff;
 }
@@ -895,6 +779,6 @@ code[class*="language-"],pre[class*="language-"] {
 .night pre, .night blockquote, .night .challenge-instructions blockquote {
     border: 1px solid #111;
 }
-.night blockquote, .night .challenge-instructions blockquote, .night .token.property, .night .token.tag, .night .token.boolean, .night .token.number, .night .token.constant, .night .token.symbol, .night .token.deleted {
+.night blockquote, .night .challenge-instructions blockquote {
     color: #00bfb0;
 }
