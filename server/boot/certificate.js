@@ -109,7 +109,7 @@ function getIdsForCert$(id, Challenge) {
 
 function sendCertifiedEmail(
   {
-    email,
+    email = '',
     name,
     username,
     isRespWebDesignCert,
