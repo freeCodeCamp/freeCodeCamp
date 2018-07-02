@@ -221,7 +221,7 @@
         {
           "text": "A POST request to /login correctly redirects to /",
           "testString":
-            "getUserInput => $.post(getUserInput('url')+ '/login') .then(data => { assert.match(data, /Home page/gi, 'A login attempt at this point should redirect to the homepage since we do not have any registered users'); }, xhr => { throw new Error(xhr.statusText); })"
+            "getUserInput => $.post(getUserInput('url')+ '/login') .then(data => { assert.match(data, /Looks like this page is being rendered from Pug into HTML!/gi, 'A login attempt at this point should redirect to the homepage since we do not have any registered users'); }, xhr => { throw new Error(xhr.statusText); })"
         }
       ],
       "solutions": [],
