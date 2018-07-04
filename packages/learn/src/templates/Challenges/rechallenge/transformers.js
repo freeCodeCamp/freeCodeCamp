@@ -87,7 +87,7 @@ function tryTransform(wrap = identity) {
       // At the minute, it will not bubble up
       // We collapse the pipeline so the app doesn't fall over trying
       // parse bad code (syntax/type errors etc...)
-      throw new Error();
+      throw result;
     }
     return result;
   };

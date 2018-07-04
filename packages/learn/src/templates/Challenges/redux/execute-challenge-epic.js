@@ -50,7 +50,6 @@ function updateMainEpic(actions, { getState }, { document }) {
       const buildAndFrameMain = actions.pipe(
         ofType(
           types.updateFile,
-          types.executeChallenge,
           types.challengeMounted
         ),
         debounceTime(executeDebounceTimeout),
@@ -58,6 +57,7 @@ function updateMainEpic(actions, { getState }, { document }) {
           buildFromFiles(getState(), true).pipe(
             map(frameMain),
             ignoreElements(),
+            startWith(initConsole('')),
             catchError(err => of(disableJSOnError(err)))
           )
         )
