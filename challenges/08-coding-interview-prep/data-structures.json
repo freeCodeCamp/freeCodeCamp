@@ -171,7 +171,7 @@
           "name": "index",
           "contents": [
             "function Stack() { ",
-            "    collection = [];",
+            "    var collection = [];",
             "    this.print = function() {",
             "        console.log(collection);",
             "    };",
@@ -245,7 +245,7 @@
           "name": "index",
           "contents": [
             "function Queue () { ",
-            "    collection = [];",
+            "    var collection = [];",
             "    this.print = function() {",
             "        console.log(collection);",
             "    };",
