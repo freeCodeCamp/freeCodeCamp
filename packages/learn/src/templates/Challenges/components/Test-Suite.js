@@ -13,6 +13,7 @@ const propTypes = {
 
 function getAccessibleText(err, pass, text) {
   let accessibleText = 'Waiting';
+  const cleanText = text.replace(/<\/?code>/g, '');
 
   // Determine test status (i.e. icon)
   if (err) {
@@ -22,7 +23,7 @@ function getAccessibleText(err, pass, text) {
   }
 
   // Append the text itself
-  return accessibleText + ' - ' + text;
+  return accessibleText + ' - ' + cleanText;
 }
 
 function TestSuite({ tests }) {
