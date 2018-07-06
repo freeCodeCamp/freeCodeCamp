@@ -2,6 +2,10 @@
   margin-top: 1.45rem;
 }
 
+.intro-toc .list-group-item {
+  margin: 5px auto;
+}
+
 .intro-toc .list-group-item:hover {
   background-color: #eee;
 }

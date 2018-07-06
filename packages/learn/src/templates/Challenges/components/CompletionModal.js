@@ -8,19 +8,27 @@ import { Button, Modal } from 'react-bootstrap';
 import ga from '../../../analytics';
 import GreenPass from './icons/GreenPass';
 
+import { dasherize } from '../../../../utils';
+
 import './completion-modal.css';
 
 import {
   closeModal,
   submitChallenge,
   isCompletionModalOpenSelector,
-  successMessageSelector
+  successMessageSelector,
+  challengeFilesSelector,
+  challengeMetaSelector
 } from '../redux';
 
 const mapStateToProps = createSelector(
+  challengeFilesSelector,
+  challengeMetaSelector,
   isCompletionModalOpenSelector,
   successMessageSelector,
-  (isOpen, message) => ({
+  (files, { title }, isOpen, message) => ({
+    files,
+    title,
     isOpen,
     message
   })
@@ -43,10 +51,12 @@ const mapDispatchToProps = function(dispatch) {
 
 const propTypes = {
   close: PropTypes.func.isRequired,
+  files: PropTypes.object.isRequired,
   handleKeypress: PropTypes.func.isRequired,
   isOpen: PropTypes.bool,
   message: PropTypes.string,
-  submitChallenge: PropTypes.func.isRequired
+  submitChallenge: PropTypes.func.isRequired,
+  title: PropTypes.string
 };
 
 export class CompletionModal extends PureComponent {
@@ -56,11 +66,21 @@ export class CompletionModal extends PureComponent {
       isOpen,
       submitChallenge,
       handleKeypress,
-      message
+      message,
+      files = {},
+      title
     } = this.props;
     if (isOpen) {
       ga.modalview('/completion-modal');
     }
+    const showDownloadButton = Object.keys(files).length;
+    const filesForDownload = Object.keys(files)
+      .map(key => files[key])
+      .reduce((allFiles, { path, contents }) => ({
+        ...allFiles,
+        [path]: contents
+      }), {});
+    const dashedName = dasherize(title);
     return (
       <Modal
         animation={false}
@@ -91,6 +111,21 @@ export class CompletionModal extends PureComponent {
             >
             Submit and go to next challenge (Ctrl + Enter)
           </Button>
+          {showDownloadButton
+            ? <Button
+                block={true}
+                bsSize='lg'
+                bsStyle='primary'
+                className='btn-primary-invert'
+                download={`${dashedName}.json`}
+                href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                  JSON.stringify(filesForDownload)
+                )}`}
+                >
+                Download my solution
+              </Button>
+            : null
+          }
         </Modal.Footer>
       </Modal>
     );
