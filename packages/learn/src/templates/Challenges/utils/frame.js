@@ -83,7 +83,7 @@ const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
   ctx.window.__console = {};
   ctx.window.__console.log = function proxyConsole(...args) {
-    proxyLogger.onNext(args);
+    proxyLogger.next(args);
     return oldLog(...args);
   };
   return ctx;
