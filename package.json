@@ -212,6 +212,10 @@
     "yargs": "^7.0.1"
   },
   "snyk": true,
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://freecodecamp.org",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-freecodecamp"
