@@ -5,6 +5,4 @@ superBlock: Coding Interview Prep
 ---
 ## Introduction to the Coding Interview Data Structure Questions
 
-This introduction is a stub
-
-Help us make it real on [GitHub](https://github.com/freeCodeCamp/learn/tree/master/src/introductions).
+These excercises are meant to help you deal with large or complex data by using many different data types other than your standard objects or arrays. 
