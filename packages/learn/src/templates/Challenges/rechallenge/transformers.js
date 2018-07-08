@@ -35,29 +35,10 @@ const console$logReg = /(?:\b)console(\.log\S+)/g;
 const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
 const isJS = matchesProperty('ext', 'js');
-const testHTMLJS = overSome(isJS, matchesProperty('ext', 'html'));
+const testHTML = matchesProperty('ext', 'html');
+const testHTMLJS = overSome(isJS, testHTML);
 export const testJS$JSX = overSome(isJS, matchesProperty('ext', 'jsx'));
 
-// work around the absence of multi-flile editing
-// this can be replaced with `matchesProperty('ext', 'sass')`
-// when the time comes
-const sassRE = /type='text\/sass'/i;
-const testSASS = file => sassRE.test(file.contents);
-// This can be done in the transformer when we have multi-file editing
-const browserSassCompiler = `
-  <script>
-    var styleTags = [ ...document.querySelectorAll('style') ];
-    [].slice.call(styleTags, 1).forEach(
-      function compileSass(tag) {
-        var scss = tag.innerHTML;
-        Sass.compile(scss, function(result) {
-          tag.type = 'text/css';
-          tag.innerHTML = result.text;
-        });
-      }
-    )
-  </script>
-`;
 // if shouldProxyConsole then we change instances of console log
 // to `window.__console.log`
 // this let's us tap into logging into the console.
@@ -107,12 +88,37 @@ export const babelTransformer = cond([
   [stubTrue, identity]
 ]);
 
-export const sassTransformer = cond([
-  [testSASS, partial(vinyl.appendToTail, browserSassCompiler)],
+const htmlSassTransformCode = file => {
+  let doc = document.implementation.createHTMLDocument();
+  doc.body.innerHTML = file.contents;
+  let styleTags = [].filter.call(
+      doc.querySelectorAll('style'),
+      style => style.type === 'text/sass'
+  );
+  if (styleTags.length === 0 || typeof Sass === 'undefined') {
+    return vinyl.transformContents(() => doc.body.innerHTML, file);
+  }
+  return styleTags.reduce((obs, style) => {
+    return obs.flatMap(file => new Promise(resolve => {
+      window.Sass.compile(style.innerHTML, function(result) {
+        style.type = 'text/css';
+        style.innerHTML = result.text;
+        resolve(vinyl.transformContents(() => doc.body.innerHTML, file));
+      });
+    }));
+  }, Observable.of(file));
+};
+
+export const htmlSassTransformer = cond([
+  [testHTML, htmlSassTransformCode],
   [stubTrue, identity]
 ]);
 
-export const _transformers = [replaceNBSP, babelTransformer, sassTransformer];
+export const _transformers = [
+  replaceNBSP,
+  babelTransformer,
+  htmlSassTransformer
+];
 
 export function applyTransformers(file, transformers = _transformers) {
   return transformers.reduce((obs, transformer) => {
