@@ -13,15 +13,18 @@
       "tests": [
         {
           "text": "\"mongodb\" dependency should be in package.json",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/file/package.json').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongodb'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/_api/file/package.json').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongodb'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"mongoose\" dependency should be in package.json",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/file/package.json').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongoose'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/_api/file/package.json').then(data => { var packJson = JSON.parse(data);     assert.property(packJson.dependencies, 'mongoose'); }, xhr => { throw new Error(xhr.responseText); })"
         },
         {
           "text": "\"mongoose\" should be connected to a database",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/is-mongoose-ok').then(data => {assert.isTrue(data.isMongooseOk, 'mongoose is not connected')}, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/_api/is-mongoose-ok').then(data => {assert.isTrue(data.isMongooseOk, 'mongoose is not connected')}, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -58,7 +61,8 @@
       "tests": [
         {
           "text": "Creating an instance from a mongoose schema should succeed",
-          "testString": "getUserInput => $.post(getUserInput('url') + '/_api/mongoose-model', {name: 'Mike', age: 28, favoriteFoods: ['pizza', 'cheese']}).then(data => { assert.equal(data.name, 'Mike', '\"model.name\" is not what expected'); assert.equal(data.age, '28', '\"model.age\" is not what expected'); assert.isArray(data.favoriteFoods, '\"model.favoriteFoods\" is not an Array'); assert.include(data.favoriteFoods, 'pizza', '\"model.favoriteFoods\" does not include the expected items'); assert.include(data.favoriteFoods, 'cheese', '\"model.favoriteFoods\" does not include the expected items'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.post(getUserInput('url') + '/_api/mongoose-model', {name: 'Mike', age: 28, favoriteFoods: ['pizza', 'cheese']}).then(data => { assert.equal(data.name, 'Mike', '\"model.name\" is not what expected'); assert.equal(data.age, '28', '\"model.age\" is not what expected'); assert.isArray(data.favoriteFoods, '\"model.favoriteFoods\" is not an Array'); assert.include(data.favoriteFoods, 'pizza', '\"model.favoriteFoods\" does not include the expected items'); assert.include(data.favoriteFoods, 'cheese', '\"model.favoriteFoods\" does not include the expected items'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -80,7 +84,8 @@
       "tests": [
         {
           "text": "Creating and saving a db item should succeed",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/create-and-save-person').then(data => { assert.isString(data.name, '\"item.name\" should be a String'); assert.isNumber(data.age, '28', '\"item.age\" should be a Number'); assert.isArray(data.favoriteFoods, '\"item.favoriteFoods\" should be an Array'); assert.equal(data.__v, 0, 'The db item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/_api/create-and-save-person').then(data => { assert.isString(data.name, '\"item.name\" should be a String'); assert.isNumber(data.age, '28', '\"item.age\" should be a Number'); assert.isArray(data.favoriteFoods, '\"item.favoriteFoods\" should be an Array'); assert.equal(data.__v, 0, 'The db item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -97,7 +102,8 @@
       "tests": [
         {
           "text": "Creating many db items at once should succeed",
-          "testString": "getUserInput => $.ajax({url: getUserInput('url') + '/_api/create-many-people', type: 'POST', contentType:'application/json', data: JSON.stringify([{name: 'John', age: 24, favoriteFoods: ['pizza', 'salad']}, {name: 'Mary', age: 21, favoriteFoods: ['onions', 'chicken']}])}).then(data => { assert.isArray(data, 'the response should be an array'); assert.equal(data.length, 2, 'the response does not contain the expected number of items'); assert.equal(data[0].name, 'John', 'The first item is not correct'); assert.equal(data[0].__v, 0, 'The first item should be not previously edited'); assert.equal(data[1].name, 'Mary', 'The second item is not correct'); assert.equal(data[1].__v, 0, 'The second item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.ajax({url: getUserInput('url') + '/_api/create-many-people', type: 'POST', contentType:'application/json', data: JSON.stringify([{name: 'John', age: 24, favoriteFoods: ['pizza', 'salad']}, {name: 'Mary', age: 21, favoriteFoods: ['onions', 'chicken']}])}).then(data => { assert.isArray(data, 'the response should be an array'); assert.equal(data.length, 2, 'the response does not contain the expected number of items'); assert.equal(data[0].name, 'John', 'The first item is not correct'); assert.equal(data[0].__v, 0, 'The first item should be not previously edited'); assert.equal(data[1].name, 'Mary', 'The second item is not correct'); assert.equal(data[1].__v, 0, 'The second item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -115,7 +121,8 @@
       "tests": [
         {
           "text": "Find all items corresponding to a criteria should succeed",
-          "testString": "getUserInput => $.post(getUserInput('url') + '/_api/find-all-by-name', {name: 'r@nd0mN4m3', age: 24, favoriteFoods: ['pizza']}).then(data => { assert.isArray(data, 'the response should be an Array');  assert.equal(data[0].name, 'r@nd0mN4m3', 'item.name is not what expected'); assert.equal(data[0].__v, 0, 'The item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.post(getUserInput('url') + '/_api/find-all-by-name', {name: 'r@nd0mN4m3', age: 24, favoriteFoods: ['pizza']}).then(data => { assert.isArray(data, 'the response should be an Array');  assert.equal(data[0].name, 'r@nd0mN4m3', 'item.name is not what expected'); assert.equal(data[0].__v, 0, 'The item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -125,14 +132,16 @@
     },
     {
       "id": "587d7fb7367417b2b2512c0c",
-      "title": "Use model.findOne() to Return a Single Matching Document from Your Database",
+      "title":
+        "Use model.findOne() to Return a Single Matching Document from Your Database",
       "description": [
         "Model.findOne() behaves like .find(), but it returns only one document (not an array), even if there are items. It is especially useful when searching by properties that you have declared as unique. Find just one person which has a certain food in her favorites, using Model.findOne() -> Person. Use the function argument food as search key."
       ],
       "tests": [
         {
           "text": "Find one item should succeed",
-          "testString": "getUserInput => $.post(getUserInput('url') + '/_api/find-one-by-food', {name: 'Gary', age: 46, favoriteFoods: ['chicken salad']}).then(data => { assert.equal(data.name, 'Gary', 'item.name is not what expected'); assert.deepEqual(data.favoriteFoods, ['chicken salad'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0, 'The item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.post(getUserInput('url') + '/_api/find-one-by-food', {name: 'Gary', age: 46, favoriteFoods: ['chicken salad']}).then(data => { assert.equal(data.name, 'Gary', 'item.name is not what expected'); assert.deepEqual(data.favoriteFoods, ['chicken salad'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0, 'The item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -149,7 +158,8 @@
       "tests": [
         {
           "text": "Find an item by Id should succeed",
-          "testString": "getUserInput => $.get(getUserInput('url') + '/_api/find-by-id').then(data => { assert.equal(data.name, 'test', 'item.name is not what expected'); assert.equal(data.age, 0, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['none'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0, 'The item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/_api/find-by-id').then(data => { assert.equal(data.name, 'test', 'item.name is not what expected'); assert.equal(data.age, 0, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['none'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0, 'The item should be not previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -168,7 +178,8 @@
       "tests": [
         {
           "text": "Find-edit-update an item should succeed",
-          "testString": "getUserInput => $.post(getUserInput('url') + '/_api/find-edit-save', {name:'Poldo', age: 40, favoriteFoods:['spaghetti']}).then(data => { assert.equal(data.name, 'Poldo', 'item.name is not what expected'); assert.equal(data.age, 40, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['spaghetti', 'hamburger'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 1, 'The item should be previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.post(getUserInput('url') + '/_api/find-edit-save', {name:'Poldo', age: 40, favoriteFoods:['spaghetti']}).then(data => { assert.equal(data.name, 'Poldo', 'item.name is not what expected'); assert.equal(data.age, 40, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['spaghetti', 'hamburger'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 1, 'The item should be previously edited'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -178,16 +189,18 @@
     },
     {
       "id": "587d7fb8367417b2b2512c0f",
-      "title": "Perform New Updates on a Document Using model.findOneAndUpdate()",
+      "title":
+        "Perform New Updates on a Document Using model.findOneAndUpdate()",
       "description": [
         "Recent versions of mongoose have methods to simplify documents updating. Some more advanced features (i.e. pre/post hooks, validation) behave differently with this approach, so the Classic method is still useful in many situations. findByIdAndUpdate() can be used when searching by Id.",
         "Find a person by Name and set her age to 20. Use the function parameter personName as search key.",
-        "Hint: We want you to return the updated document. o do that you need to pass the options document { new: true } as the 3rd argument to findOneAndUpdate(). By default these methods return the unmodified object."
+        "Hint: We want you to return the updated document. To do that you need to pass the options document { new: true } as the 3rd argument to findOneAndUpdate(). By default these methods return the unmodified object."
       ],
       "tests": [
         {
           "text": "findOneAndUpdate an item should succeed",
-          "testString": "getUserInput => $.post(getUserInput('url') + '/_api/find-one-update', {name:'Dorian Gray', age: 35, favoriteFoods:['unknown']}).then(data => { assert.equal(data.name, 'Dorian Gray', 'item.name is not what expected'); assert.equal(data.age, 20, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['unknown'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0, 'findOneAndUpdate does not increment version by design !!!'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.post(getUserInput('url') + '/_api/find-one-update', {name:'Dorian Gray', age: 35, favoriteFoods:['unknown']}).then(data => { assert.equal(data.name, 'Dorian Gray', 'item.name is not what expected'); assert.equal(data.age, 20, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['unknown'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0, 'findOneAndUpdate does not increment version by design !!!'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -204,7 +217,8 @@
       "tests": [
         {
           "text": "Deleting an item should succeed",
-          "testString": "getUserInput => $.post(getUserInput('url') + '/_api/remove-one-person', {name:'Jason Bourne', age: 36, favoriteFoods:['apples']}).then(data => { assert.equal(data.name, 'Jason Bourne', 'item.name is not what expected'); assert.equal(data.age, 36, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['apples'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0); assert.equal(data.count, 0, 'the db items count is not what expected'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.post(getUserInput('url') + '/_api/remove-one-person', {name:'Jason Bourne', age: 36, favoriteFoods:['apples']}).then(data => { assert.equal(data.name, 'Jason Bourne', 'item.name is not what expected'); assert.equal(data.age, 36, 'item.age is not what expected'); assert.deepEqual(data.favoriteFoods, ['apples'], 'item.favoriteFoods is not what expected'); assert.equal(data.__v, 0); assert.equal(data.count, 0, 'the db items count is not what expected'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -222,7 +236,8 @@
       "tests": [
         {
           "text": "Deleting many items at once should succeed",
-          "testString": "getUserInput => $.ajax({url: getUserInput('url') + '/_api/remove-many-people', type: 'POST', contentType:'application/json', data: JSON.stringify([{name: 'Mary', age: 16, favoriteFoods: ['lollipop']}, {name: 'Mary', age: 21, favoriteFoods: ['steak']}])}).then(data => { assert.isTrue(!!data.ok, 'The mongo stats are not what expected'); assert.equal(data.n, 2, 'The number of items affected is not what expected'); assert.equal(data.count, 0, 'the db items count is not what expected'); }, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.ajax({url: getUserInput('url') + '/_api/remove-many-people', type: 'POST', contentType:'application/json', data: JSON.stringify([{name: 'Mary', age: 16, favoriteFoods: ['lollipop']}, {name: 'Mary', age: 21, favoriteFoods: ['steak']}])}).then(data => { assert.isTrue(!!data.ok, 'The mongo stats are not what expected'); assert.equal(data.n, 2, 'The number of items affected is not what expected'); assert.equal(data.count, 0, 'the db items count is not what expected'); }, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
@@ -240,7 +255,8 @@
       "tests": [
         {
           "text": "Chaining query helpers should succeed",
-          "testString": "getUserInput => $.ajax({url: getUserInput('url') + '/_api/query-tools', type: 'POST', contentType:'application/json', data: JSON.stringify([{name: 'Pablo', age: 26, favoriteFoods: ['burrito', 'hot-dog']}, {name: 'Ashley', age: 32, favoriteFoods: ['steak', 'burrito']}, {name: 'Mario', age: 51, favoriteFoods: ['burrito', 'prosciutto']} ]) }).then(data => { assert.isArray(data, 'the response should be an Array'); assert.equal(data.length, 2, 'the data array length is not what expected'); assert.notProperty(data[0], 'age', 'The returned first item has too many properties'); assert.equal(data[0].name, 'Ashley', 'The returned first item name is not what expected'); assert.notProperty(data[1], 'age', 'The returned second item has too many properties'); assert.equal(data[1].name, 'Mario', 'The returned second item name is not what expected');}, xhr => { throw new Error(xhr.responseText); })"
+          "testString":
+            "getUserInput => $.ajax({url: getUserInput('url') + '/_api/query-tools', type: 'POST', contentType:'application/json', data: JSON.stringify([{name: 'Pablo', age: 26, favoriteFoods: ['burrito', 'hot-dog']}, {name: 'Ashley', age: 32, favoriteFoods: ['steak', 'burrito']}, {name: 'Mario', age: 51, favoriteFoods: ['burrito', 'prosciutto']} ]) }).then(data => { assert.isArray(data, 'the response should be an Array'); assert.equal(data.length, 2, 'the data array length is not what expected'); assert.notProperty(data[0], 'age', 'The returned first item has too many properties'); assert.equal(data[0].name, 'Ashley', 'The returned first item name is not what expected'); assert.notProperty(data[1], 'age', 'The returned second item has too many properties'); assert.equal(data[1].name, 'Mario', 'The returned second item name is not what expected');}, xhr => { throw new Error(xhr.responseText); })"
         }
       ],
       "solutions": [],
