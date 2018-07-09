@@ -5296,20 +5296,21 @@
         "This will set background to black if there is a problem with your variable.",
         "Note that this can be useful for debugging.",
         "<hr>",
-        "Add a fallback value of <code>black</code> to the <code>background</code> property of <code>penguin-top</code> and <code>penguin-bottom</code> classes. This style will be applied because of a typo in the variable name."
+        "Add a fallback value of <code>black</code> to the <code>background</code> property of <code>penguin-top</code> and <code>penguin-bottom</code> classes.",
+        "<strong>Note</strong>: The above style will be applied because of a typo in the CSS variable name."
       ],
       "tests": [
         {
           "text":
             "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.",
           "testString":
-            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--penguin-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
+            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
         },
         {
           "text":
             "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.",
           "testString":
-            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--penguin-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
+            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
         }
       ],
       "solutions": [],
@@ -5341,7 +5342,7 @@
             "    left: 25%;",
             "  ",
             "    /* change code below */",
-            "    background: var(--penguin-skin);",
+            "    background: var(--pengiun-skin);",
             "    /* change code above */",
             "  ",
             "    width: 50%;",
@@ -5354,7 +5355,7 @@
             "    left: 23.5%;",
             "  ",
             "    /* change code below */",
-            "    background: var(--penguin-skin);",
+            "    background: var(--pengiun-skin);",
             "    /* change code above */",
             "  ",
             "    width: 53%;",
