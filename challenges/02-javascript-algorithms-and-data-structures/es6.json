@@ -1301,7 +1301,7 @@
         {
           "text": "valid <code>import</code> statement",
           "testString":
-            "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s?capitalizeString\\s?\\}\\s+from\\s+(\"|')string_functions\\1/g), 'valid <code>import</code> statement');"
+            "getUserInput => assert(getUserInput('index').match(/import\\s+\\{\\s*capitalizeString\\s*\\}\\s+from\\s+(\"|')string_functions\\1/g), 'valid <code>import</code> statement');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
