@@ -25,6 +25,9 @@ import {
   challengeTestsSelector,
   initConsole,
   updateConsole,
+  initLogs,
+  updateLogs,
+  logsToConsole,
   checkChallenge,
   updateTests,
   disableJSOnError,
@@ -72,7 +75,13 @@ function executeChallengeEpic(action$, { getState }, { document }) {
     filter(Boolean),
     switchMap(() => {
       const frameReady = new Subject();
-      const frameTests = createTestFramer(document, getState, frameReady);
+      const proxyLogger = new Subject();
+      const frameTests = createTestFramer(
+        document,
+        getState,
+        frameReady,
+        proxyLogger
+      );
       const challengeResults = frameReady.pipe(
         pluck('checkChallengePayload'),
         map(checkChallengePayload => ({
@@ -82,6 +91,7 @@ function executeChallengeEpic(action$, { getState }, { document }) {
         switchMap(({ checkChallengePayload, tests }) => {
           const postTests = of(
             updateConsole('// tests completed'),
+            logsToConsole('// console output'),
             checkChallenge(checkChallengePayload)
           ).pipe(delay(250));
           return runTestsInTestFrame(document, tests).pipe(
@@ -104,23 +114,24 @@ function executeChallengeEpic(action$, { getState }, { document }) {
         switchMap(() => {
           const state = getState();
           const { challengeType } = challengeMetaSelector(state);
-          if (challengeType === backend) {
-            return buildBackendChallenge(state).pipe(
-              tap(frameTests),
-              ignoreElements(),
-              startWith(initConsole('// running test')),
-              catchError(err => of(disableJSOnError(err)))
-            );
-          }
-          return buildFromFiles(state, false).pipe(
+          const build =
+            challengeType === backend
+              ? buildBackendChallenge(state)
+              : buildFromFiles(state, true);
+          return build.pipe(
             tap(frameTests),
             ignoreElements(),
-            startWith(initConsole('// running test')),
+            startWith(initLogs()),
+            startWith(initConsole('// running tests')),
             catchError(err => of(disableJSOnError(err)))
           );
         })
       );
-      return merge(buildAndFrameChallenge, challengeResults);
+      return merge(
+        buildAndFrameChallenge,
+        challengeResults,
+        proxyLogger.map(updateLogs)
+      );
     })
   );
 }
