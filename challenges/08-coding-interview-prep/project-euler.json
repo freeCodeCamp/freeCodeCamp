@@ -2895,12 +2895,33 @@
       "title": "Problem 53: Combinatoric selections",
       "tests": [
         {
-          "text": "<code>euler53()</code> should return 4075.",
+          "text":
+            "<code>combinatoricSelections(1000)</code> should return 4626.",
           "testString":
-            "assert.strictEqual(euler53(), 4075, '<code>euler53()</code> should return 4075.');"
+            "assert.strictEqual(combinatoricSelections(1000), 4626, '<code>combinatoricSelections(1000)</code> should return 4626.');"
+        },
+        {
+          "text":
+            "<code>combinatoricSelections(10000)</code> should return 4431.",
+          "testString":
+            "assert.strictEqual(combinatoricSelections(10000), 4431, '<code>combinatoricSelections(10000)</code> should return 4431.');"
+        },
+        {
+          "text":
+            "<code>combinatoricSelections(100000)</code> should return 4255.",
+          "testString":
+            "assert.strictEqual(combinatoricSelections(100000), 4255, '<code>combinatoricSelections(100000)</code> should return 4255.');"
+        },
+        {
+          "text":
+            "<code>combinatoricSelections(1000000)</code> should return 4075.",
+          "testString":
+            "assert.strictEqual(combinatoricSelections(1000000), 4075, '<code>combinatoricSelections(1000000)</code> should return 4075.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "function combinatoricSelections(limit) {\n    const factorial = n => \n        Array.apply(null, { length: n })\n            .map((_, i) => i + 1)\n            .reduce((p, c) => p * c, 1);\n\n    let result = 0;\n    const nMax = 100;\n\n    for (let n = 1; n <= nMax; n++) {\n        for (let r = 0; r <= n; r++) {\n            if (factorial(n) / (factorial(r) * factorial(n - r)) >= limit)\n                result++;\n        }\n    }\n\n    return result;\n}"
+      ],
       "translations": {},
       "description": [
         "There are exactly ten ways of selecting three from five, 12345:",
@@ -2921,12 +2942,12 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "function euler53() {",
+            "function combinatoricSelections(limit) {",
             "  // Good luck!",
-            "  return true;",
+            "  return 1;",
             "}",
             "",
-            "euler53();"
+            "combinatoricSelections(1000000);"
           ],
           "head": [],
           "tail": []
