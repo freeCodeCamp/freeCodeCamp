@@ -19,7 +19,7 @@ import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
 import { createFileStream, pipe } from './polyvinyl';
 
 const jQuery = {
-  src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
+  src: 'https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'
 };
 const frameRunner = {
   src: '/js/frame-runner.js',
