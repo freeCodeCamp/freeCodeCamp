@@ -866,7 +866,7 @@
       "description": [
         "The last challenge created an <code>svg</code> element with a given width and height, which was visible because it had a <code>background-color</code> applied to it in the <code>style</code> tag. The code made space for the given width and height.",
         "The next step is to create a shape to put in the <code>svg</code> area. There are a number of supported shapes in SVG, such as rectangles and circles. They are used to display data. For example, a rectangle (<code>&lt;rect&gt;</code>) SVG shape could create a bar in a bar chart.",
-        "When you place a shape into the <code>svg</code> area, you can specify where it goes with <code>x</code> and <code>y</code> coordinates. The origin point of (0, 0) is in the upper-left corner. Positive vales for <code>x</code> push the shape to the right, and positive values for <code>y</code> push the shape down from the origin point.",
+        "When you place a shape into the <code>svg</code> area, you can specify where it goes with <code>x</code> and <code>y</code> coordinates. The origin point of (0, 0) is in the upper-left corner. Positive values for <code>x</code> push the shape to the right, and positive values for <code>y</code> push the shape down from the origin point.",
         "To place a shape in the middle of the 500 (width) x 100 (height) <code>svg</code> from last challenge, the <code>x</code> coordinate would be 250 and the <code>y</code> coordinate would be 50.",
         "An SVG <code>rect</code> has four attributes. There are the <code>x</code> and <code>y</code> coordinates for where it is placed in the <code>svg</code> area. It also has a <code>height</code> and <code>width</code> to specify the size.",
         "<hr>",
