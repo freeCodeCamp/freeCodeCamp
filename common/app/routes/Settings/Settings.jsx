@@ -2,12 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-
 import { Button } from 'react-bootstrap';
-
 import ns from './ns.json';
 import { FullWidthRow, Spacer, Loader } from '../../helperComponents';
-import { Link } from '../../Router';
 import AboutSettings from './components/About-Settings.jsx';
 import InternetSettings from './components/Internet-Settings.jsx';
 import EmailSettings from './components/Email-Settings.jsx';
@@ -77,16 +74,15 @@ export class Settings extends React.Component {
     return (
       <div className={ `${ns}-container` }>
         <FullWidthRow>
-          <Link to={ `/${username}` }>
             <Button
               block={ true }
               bsSize='lg'
               bsStyle='primary'
               className='btn-link-social'
+              href={ `/${username}`}
               >
               Show me my public portfolio
             </Button>
-          </Link>
           <Button
             block={ true }
             bsSize='lg'
