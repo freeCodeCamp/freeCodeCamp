@@ -24,7 +24,7 @@
         "<hr>",
         "The Redux <code>store</code> is an object which holds and manages application <code>state</code>. There is a method called <code>createStore()</code> on the Redux object, which you use to create the Redux <code>store</code>. This method takes a <code>reducer</code> function as a required argument. The <code>reducer</code> function is covered in a later challenge, and is already defined for you in the code editor. It simply takes <code>state</code> as an argument and returns <code>state</code>.",
         "Declare a <code>store</code> variable and assign it to the <code>createStore()</code> method, passing in the <code>reducer</code> as an argument.",
-        "<strong>Note:</strong>&nbsp;The code in the editor uses ES6 default argument syntax to initialize this state to hold a value of <code>5</code>. If you're not familiar with default arguments, you can refer to the <a target=\"_blank\" href=\"http://beta.freecodecamp.com/en/challenges/es6/set-default-parameters-for-your-functions\">ES6 section in the Beta Curriculum</a> which covers this topic."
+        "<strong>Note:</strong>&nbsp;The code in the editor uses ES6 default argument syntax to initialize this state to hold a value of <code>5</code>. If you're not familiar with default arguments, you can refer to the <a target=\"_blank\" href=\"https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions\">ES6 section in the Curriculum</a> which covers this topic."
       ],
       "files": {
         "indexjsx": {
