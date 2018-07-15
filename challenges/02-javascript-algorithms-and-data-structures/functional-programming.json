@@ -20,12 +20,16 @@
       ],
       "tests": [
         {
-          "text": "The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.",
-          "testString": "assert(tea4TeamFCC.length === 40, 'The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.');"
+          "text":
+            "The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.",
+          "testString":
+            "assert(tea4TeamFCC.length === 40, 'The <code>tea4TeamFCC</code> variable should hold 40 cups of tea for the team.');"
         },
         {
-          "text": "The <code>tea4TeamFCC</code> variable should hold cups of green tea.",
-          "testString": "assert(tea4TeamFCC[0] === 'greenTea', 'The <code>tea4TeamFCC</code> variable should hold cups of green tea.');"
+          "text":
+            "The <code>tea4TeamFCC</code> variable should hold cups of green tea.",
+          "testString":
+            "assert(tea4TeamFCC[0] === 'greenTea', 'The <code>tea4TeamFCC</code> variable should hold cups of green tea.');"
         }
       ],
       "solutions": [],
@@ -90,20 +94,28 @@
       ],
       "tests": [
         {
-          "text": "The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.",
-          "testString": "assert(tea4GreenTeamFCC.length === 27, 'The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.');"
+          "text":
+            "The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.",
+          "testString":
+            "assert(tea4GreenTeamFCC.length === 27, 'The <code>tea4GreenTeamFCC</code> variable should hold 27 cups of green tea for the team.');"
         },
         {
-          "text": "The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.",
-          "testString": "assert(tea4GreenTeamFCC[0] === 'greenTea', 'The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.');"
+          "text":
+            "The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.",
+          "testString":
+            "assert(tea4GreenTeamFCC[0] === 'greenTea', 'The <code>tea4GreenTeamFCC</code> variable should hold cups of green tea.');"
         },
         {
-          "text": "The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.",
-          "testString": "assert(tea4BlackTeamFCC.length === 13, 'The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.');"
+          "text":
+            "The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.",
+          "testString":
+            "assert(tea4BlackTeamFCC.length === 13, 'The <code>tea4BlackTeamFCC</code> variable should hold 13 cups of black tea.');"
         },
         {
-          "text": "The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.",
-          "testString": "assert(tea4BlackTeamFCC[0] === 'blackTea', 'The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.');"
+          "text":
+            "The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.",
+          "testString":
+            "assert(tea4BlackTeamFCC[0] === 'blackTea', 'The <code>tea4BlackTeamFCC</code> variable should hold cups of black tea.');"
         }
       ],
       "solutions": [],
@@ -253,12 +265,16 @@
       ],
       "tests": [
         {
-          "text": "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.",
-          "testString": "assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');"
+          "text":
+            "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.",
+          "testString":
+            "assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');"
         },
         {
-          "text": "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.",
-          "testString": "assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
+          "text":
+            "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.",
+          "testString":
+            "assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
         }
       ],
       "solutions": [],
@@ -305,16 +321,22 @@
       ],
       "tests": [
         {
-          "text": "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.",
-          "testString": "assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');"
+          "text":
+            "Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.",
+          "testString":
+            "assert(fixedValue === 4, 'Your function <code>incrementer</code> should not change the value of <code>fixedValue</code>.');"
         },
         {
-          "text": "Your <code>incrementer</code> function should take a parameter.",
-          "testString": "assert(code.match(/function\\s+?incrementer\\s*?\\(.+?\\)/g), 'Your <code>incrementer</code> function should take a parameter.');"
+          "text":
+            "Your <code>incrementer</code> function should take a parameter.",
+          "testString":
+            "assert(code.match(/function\\s+?incrementer\\s*?\\(.+?\\)/g), 'Your <code>incrementer</code> function should take a parameter.');"
         },
         {
-          "text": "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.",
-          "testString": "assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
+          "text":
+            "Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.",
+          "testString":
+            "assert(newValue === 5, 'Your <code>incrementer</code> function should return a value that is one larger than the <code>fixedValue</code> value.');"
         }
       ],
       "solutions": [],
@@ -358,20 +380,28 @@
       ],
       "tests": [
         {
-          "text": "<code>bookList</code> should not change and still equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.",
-          "testString": "assert(JSON.stringify(bookList) === JSON.stringify([\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]), '<code>bookList</code> should not change and still equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');"
+          "text":
+            "<code>bookList</code> should not change and still equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(bookList) === JSON.stringify([\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]), '<code>bookList</code> should not change and still equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');"
         },
         {
-          "text": "<code>newBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.",
-          "testString": "assert(JSON.stringify(newBookList) === JSON.stringify(['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
+          "text":
+            "<code>newBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(newBookList) === JSON.stringify(['The Hound of the Baskervilles', 'On The Electrodynamics of Moving Bodies', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"On The Electrodynamics of Moving Bodies\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
         },
         {
-          "text": "<code>newerBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.",
-          "testString": "assert(JSON.stringify(newerBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']), '<code>newerBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');"
+          "text":
+            "<code>newerBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(newerBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae']), '<code>newerBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\"]</code>.');"
         },
         {
-          "text": "<code>newestBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.",
-          "testString": "assert(JSON.stringify(newestBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newestBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
+          "text":
+            "<code>newestBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(newestBookList) === JSON.stringify(['The Hound of the Baskervilles', 'Philosophiæ Naturalis Principia Mathematica', 'Disquisitiones Arithmeticae', 'A Brief History of Time']), '<code>newestBookList</code> should equal <code>[\"The Hound of the Baskervilles\", \"Philosophiæ Naturalis Principia Mathematica\", \"Disquisitiones Arithmeticae\", \"A Brief History of Time\"]</code>.');"
         }
       ],
       "solutions": [],
@@ -441,19 +471,24 @@
       "tests": [
         {
           "text": "The <code>watchList</code> variable should not change.",
-          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
+          "testString":
+            "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
         },
         {
           "text": "Your code should not use a <code>for</code> loop.",
-          "testString": "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'Your code should not use a <code>for</code> loop.');"
+          "testString":
+            "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'Your code should not use a <code>for</code> loop.');"
         },
         {
           "text": "Your code should use the <code>map</code> method.",
-          "testString": "assert(code.match(/\\.map/g), 'Your code should use the <code>map</code> method.');"
+          "testString":
+            "assert(code.match(/\\.map/g), 'Your code should use the <code>map</code> method.');"
         },
         {
-          "text": "<code>rating</code> should equal <code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.",
-          "testString": "assert(JSON.stringify(rating) === JSON.stringify([{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]), '<code>rating</code> should equal <code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.');"
+          "text":
+            "<code>rating</code> should equal <code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.",
+          "testString":
+            "assert(JSON.stringify(rating) === JSON.stringify([{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]), '<code>rating</code> should equal <code>[{\"title\":\"Inception\",\"rating\":\"8.8\"},{\"title\":\"Interstellar\",\"rating\":\"8.6\"},{\"title\":\"The Dark Knight\",\"rating\":\"9.0\"},{\"title\":\"Batman Begins\",\"rating\":\"8.3\"},{\"title\":\"Avatar\",\"rating\":\"7.9\"}]</code>.');"
         }
       ],
       "solutions": [],
@@ -609,12 +644,15 @@
       ],
       "tests": [
         {
-          "text": "<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.",
-          "testString": "assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]), '<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.');"
+          "text":
+            "<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.",
+          "testString":
+            "assert(JSON.stringify(new_s) === JSON.stringify([46, 130, 196, 10]), '<code>new_s</code> should equal <code>[46, 130, 196, 10]</code>.');"
         },
         {
           "text": "Your code should not use the <code>map</code> method.",
-          "testString": "assert(!code.match(/\\.map/g), 'Your code should not use the <code>map</code> method.');"
+          "testString":
+            "assert(!code.match(/\\.map/g), 'Your code should not use the <code>map</code> method.');"
         }
       ],
       "solutions": [],
@@ -660,19 +698,24 @@
       "tests": [
         {
           "text": "The <code>watchList</code> variable should not change.",
-          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
+          "testString":
+            "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
         },
         {
           "text": "Your code should use the <code>filter</code> method.",
-          "testString": "assert(code.match(/\\.filter/g), 'Your code should use the <code>filter</code> method.');"
+          "testString":
+            "assert(code.match(/\\.filter/g), 'Your code should use the <code>filter</code> method.');"
         },
         {
           "text": "Your code should not use a <code>for</code> loop.",
-          "testString": "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'Your code should not use a <code>for</code> loop.');"
+          "testString":
+            "assert(!code.match(/for\\s*?\\(.+?\\)/g), 'Your code should not use a <code>for</code> loop.');"
         },
         {
-          "text": "<code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.",
-          "testString": "assert.deepEqual(filteredList, [{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}], '<code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.');"
+          "text":
+            "<code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.",
+          "testString":
+            "assert.deepEqual(filteredList, [{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}], '<code>filteredList</code> should equal <code>[{\"title\": \"Inception\",\"rating\": \"8.8\"},{\"title\": \"Interstellar\",\"rating\": \"8.6\"},{\"title\": \"The Dark Knight\",\"rating\": \"9.0\"},{\"title\": \"Batman Begins\",\"rating\": \"8.3\"}]</code>.');"
         }
       ],
       "solutions": [],
@@ -824,11 +867,13 @@
       "tests": [
         {
           "text": "<code>new_s</code> should equal <code>[23, 65, 5]</code>.",
-          "testString": "assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]), '<code>new_s</code> should equal <code>[23, 65, 5]</code>.');"
+          "testString":
+            "assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]), '<code>new_s</code> should equal <code>[23, 65, 5]</code>.');"
         },
         {
           "text": "Your code should not use the <code>filter</code> method.",
-          "testString": "assert(!code.match(/\\.filter/g), 'Your code should not use the <code>filter</code> method.');"
+          "testString":
+            "assert(!code.match(/\\.filter/g), 'Your code should not use the <code>filter</code> method.');"
         }
       ],
       "solutions": [],
@@ -875,23 +920,31 @@
       "tests": [
         {
           "text": "Your code should use the <code>slice</code> method.",
-          "testString": "assert(code.match(/\\.slice/g), 'Your code should use the <code>slice</code> method.');"
+          "testString":
+            "assert(code.match(/\\.slice/g), 'Your code should use the <code>slice</code> method.');"
         },
         {
           "text": "The <code>inputAnim</code> variable should not change.",
-          "testString": "assert(JSON.stringify(inputAnim) === JSON.stringify([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"]), 'The <code>inputAnim</code> variable should not change.');"
+          "testString":
+            "assert(JSON.stringify(inputAnim) === JSON.stringify([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"]), 'The <code>inputAnim</code> variable should not change.');"
         },
         {
-          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code> should return <code>[\"Dog\", \"Tiger\"]</code>.",
-          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)) === JSON.stringify([\"Dog\", \"Tiger\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code> should return <code>[\"Dog\", \"Tiger\"]</code>.');"
+          "text":
+            "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code> should return <code>[\"Dog\", \"Tiger\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)) === JSON.stringify([\"Dog\", \"Tiger\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 3)</code> should return <code>[\"Dog\", \"Tiger\"]</code>.');"
         },
         {
-          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code> should return <code>[\"Cat\"]</code>.",
-          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)) === JSON.stringify([\"Cat\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code> should return <code>[\"Cat\"]</code>.');"
+          "text":
+            "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code> should return <code>[\"Cat\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)) === JSON.stringify([\"Cat\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 0, 1)</code> should return <code>[\"Cat\"]</code>.');"
         },
         {
-          "text": "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code> should return <code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>.",
-          "testString": "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)) === JSON.stringify([\"Dog\", \"Tiger\", \"Zebra\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code> should return <code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>.');"
+          "text":
+            "<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code> should return <code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)) === JSON.stringify([\"Dog\", \"Tiger\", \"Zebra\"]), '<code>sliceArray([\"Cat\", \"Dog\", \"Tiger\", \"Zebra\", \"Ant\"], 1, 4)</code> should return <code>[\"Dog\", \"Tiger\", \"Zebra\"]</code>.');"
         }
       ],
       "solutions": [],
@@ -932,19 +985,24 @@
       "tests": [
         {
           "text": "Your code should use the <code>slice</code> method.",
-          "testString": "assert(code.match(/\\.slice/g), 'Your code should use the <code>slice</code> method.');"
+          "testString":
+            "assert(code.match(/\\.slice/g), 'Your code should use the <code>slice</code> method.');"
         },
         {
           "text": "Your code should not use the <code>splice</code> method.",
-          "testString": "assert(!code.match(/\\.splice/g), 'Your code should not use the <code>splice</code> method.');"
+          "testString":
+            "assert(!code.match(/\\.splice/g), 'Your code should not use the <code>splice</code> method.');"
         },
         {
           "text": "The <code>inputCities</code> array should not change.",
-          "testString": "assert(JSON.stringify(inputCities) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"]), 'The <code>inputCities</code> array should not change.');"
+          "testString":
+            "assert(JSON.stringify(inputCities) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"]), 'The <code>inputCities</code> array should not change.');"
         },
         {
-          "text": "<code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code> should return <code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>.",
-          "testString": "assert(JSON.stringify(nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\"]), '<code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code> should return <code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>.');"
+          "text":
+            "<code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code> should return <code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])) === JSON.stringify([\"Chicago\", \"Delhi\", \"Islamabad\"]), '<code>nonMutatingSplice([\"Chicago\", \"Delhi\", \"Islamabad\", \"London\", \"Berlin\"])</code> should return <code>[\"Chicago\", \"Delhi\", \"Islamabad\"]</code>.');"
         }
       ],
       "solutions": [],
@@ -983,19 +1041,24 @@
       "tests": [
         {
           "text": "Your code should use the <code>concat</code> method.",
-          "testString": "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
+          "testString":
+            "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
         },
         {
           "text": "The <code>first</code> array should not change.",
-          "testString": "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), 'The <code>first</code> array should not change.');"
+          "testString":
+            "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), 'The <code>first</code> array should not change.');"
         },
         {
           "text": "The <code>second</code> array should not change.",
-          "testString": "assert(JSON.stringify(second) === JSON.stringify([4, 5]), 'The <code>second</code> array should not change.');"
+          "testString":
+            "assert(JSON.stringify(second) === JSON.stringify([4, 5]), 'The <code>second</code> array should not change.');"
         },
         {
-          "text": "<code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.",
-          "testString": "assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), '<code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.');"
+          "text":
+            "<code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.",
+          "testString":
+            "assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), '<code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.');"
         }
       ],
       "solutions": [],
@@ -1025,7 +1088,8 @@
     },
     {
       "id": "587d7da9367417b2b2512b67",
-      "title": "Add Elements to the End of an Array Using concat Instead of push",
+      "title":
+        "Add Elements to the End of an Array Using concat Instead of push",
       "description": [
         "Functional programming is all about creating and using non-mutating functions.",
         "The last challenge introduced the <code>concat</code> method as a way to combine arrays into a new one without mutating the original arrays. Compare <code>concat</code> to the <code>push</code> method. <code>Push</code> adds an item to the end of the same array it is called on, which mutates that array. Here's an example:",
@@ -1037,23 +1101,29 @@
       "tests": [
         {
           "text": "Your code should use the <code>concat</code> method.",
-          "testString": "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
+          "testString":
+            "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
         },
         {
           "text": "Your code should not use the <code>push</code> method.",
-          "testString": "assert(!code.match(/\\.push/g), 'Your code should not use the <code>push</code> method.');"
+          "testString":
+            "assert(!code.match(/\\.push/g), 'Your code should not use the <code>push</code> method.');"
         },
         {
           "text": "The <code>first</code> array should not change.",
-          "testString": "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), 'The <code>first</code> array should not change.');"
+          "testString":
+            "assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), 'The <code>first</code> array should not change.');"
         },
         {
           "text": "The <code>second</code> array should not change.",
-          "testString": "assert(JSON.stringify(second) === JSON.stringify([4, 5]), 'The <code>second</code> array should not change.');"
+          "testString":
+            "assert(JSON.stringify(second) === JSON.stringify([4, 5]), 'The <code>second</code> array should not change.');"
         },
         {
-          "text": "<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.",
-          "testString": "assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), '<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.');"
+          "text":
+            "<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.",
+          "testString":
+            "assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), '<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.');"
         }
       ],
       "solutions": [],
@@ -1095,19 +1165,23 @@
       "tests": [
         {
           "text": "The <code>watchList</code> variable should not change.",
-          "testString": "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
+          "testString":
+            "assert(watchList[0].Title === \"Inception\" && watchList[4].Director == \"James Cameron\", 'The <code>watchList</code> variable should not change.');"
         },
         {
           "text": "Your code should use the <code>reduce</code> method.",
-          "testString": "assert(code.match(/\\.reduce/g), 'Your code should use the <code>reduce</code> method.');"
+          "testString":
+            "assert(code.match(/\\.reduce/g), 'Your code should use the <code>reduce</code> method.');"
         },
         {
           "text": "The <code>averageRating</code> should equal 8.675.",
-          "testString": "assert(averageRating == 8.675, 'The <code>averageRating</code> should equal 8.675.');"
+          "testString":
+            "assert(averageRating == 8.675, 'The <code>averageRating</code> should equal 8.675.');"
         },
         {
           "text": "Your code should not use a <code>for</code> loop.",
-          "testString": "assert(!code.match(/for\\s*?\\(.*\\)/g), 'Your code should not use a <code>for</code> loop.');"
+          "testString":
+            "assert(!code.match(/for\\s*?\\(.*\\)/g), 'Your code should not use a <code>for</code> loop.');"
         }
       ],
       "solutions": [],
@@ -1265,19 +1339,26 @@
       "tests": [
         {
           "text": "Your code should use the <code>sort</code> method.",
-          "testString": "assert(code.match(/\\.sort/g), 'Your code should use the <code>sort</code> method.');"
+          "testString":
+            "assert(code.match(/\\.sort/g), 'Your code should use the <code>sort</code> method.');"
         },
         {
-          "text": "<code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code> should return <code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>.",
-          "testString": "assert(JSON.stringify(alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])) === JSON.stringify([\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]), '<code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code> should return <code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>.');"
+          "text":
+            "<code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code> should return <code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])) === JSON.stringify([\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]), '<code>alphabeticalOrder([\"a\", \"d\", \"c\", \"a\", \"z\", \"g\"])</code> should return <code>[\"a\", \"a\", \"c\", \"d\", \"g\", \"z\"]</code>.');"
         },
         {
-          "text": "<code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code> should return <code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>.",
-          "testString": "assert(JSON.stringify(alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])) === JSON.stringify([\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]), '<code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code> should return <code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>.');"
+          "text":
+            "<code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code> should return <code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])) === JSON.stringify([\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]), '<code>alphabeticalOrder([\"x\", \"h\", \"a\", \"m\", \"n\", \"m\"])</code> should return <code>[\"a\", \"h\", \"m\", \"m\", \"n\", \"x\"]</code>.');"
         },
         {
-          "text": "<code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code> should return <code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>.",
-          "testString": "assert(JSON.stringify(alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])) === JSON.stringify([\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]), '<code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code> should return <code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>.');"
+          "text":
+            "<code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code> should return <code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])) === JSON.stringify([\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]), '<code>alphabeticalOrder([\"a\", \"a\", \"a\", \"a\", \"x\", \"t\"])</code> should return <code>[\"a\", \"a\", \"a\", \"a\", \"t\", \"x\"]</code>.');"
         }
       ],
       "solutions": [],
@@ -1314,19 +1395,24 @@
       "tests": [
         {
           "text": "Your code should use the <code>sort</code> method.",
-          "testString": "assert(code.match(/\\.sort/g), 'Your code should use the <code>sort</code> method.');"
+          "testString":
+            "assert(code.match(/\\.sort/g), 'Your code should use the <code>sort</code> method.');"
         },
         {
           "text": "Your code should use the <code>concat</code> method.",
-          "testString": "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
+          "testString":
+            "assert(code.match(/\\.concat/g), 'Your code should use the <code>concat</code> method.');"
         },
         {
           "text": "The <code>globalArray</code> variable should not change.",
-          "testString": "assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), 'The <code>globalArray</code> variable should not change.');"
+          "testString":
+            "assert(JSON.stringify(globalArray) === JSON.stringify([5, 6, 3, 2, 9]), 'The <code>globalArray</code> variable should not change.');"
         },
         {
-          "text": "<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.",
-          "testString": "assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]), '<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.');"
+          "text":
+            "<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.",
+          "testString":
+            "assert(JSON.stringify(nonMutatingSort(globalArray)) === JSON.stringify([2, 3, 5, 6, 9]), '<code>nonMutatingSort(globalArray)</code> should return <code>[2, 3, 5, 6, 9]</code>.');"
         }
       ],
       "solutions": [],
@@ -1359,7 +1445,7 @@
       "description": [
         "The <code>split</code> method splits a string into an array of strings. It takes an argument for the delimiter, which can be a character to use to break up the string or a regular expression. For example, if the delimiter is a space, you get an array of words, and if the delimiter is an empty string, you get an array of each character in the string.",
         "Here are two examples that split one string by spaces, then another by digits using a regular expression:",
-        "<blockquote>var str = \"Hello World\";<br>var bySpace = str.split(\" \");<br>// Sets bySpace to [\"Hello\", \"World\"]<br><br>var otherString = \"How9are7you2today\";<br>var byDigits = str.split(/\\d/);<br>// Sets byDigits to [\"How\", \"are\", \"you\", \"today\"]</blockquote>",
+        "<blockquote>var str = \"Hello World\";<br>var bySpace = str.split(\" \");<br>// Sets bySpace to [\"Hello\", \"World\"]<br><br>var otherString = \"How9are7you2today\";<br>var byDigits = otherString.split(/\\d/);<br>// Sets byDigits to [\"How\", \"are\", \"you\", \"today\"]</blockquote>",
         "Since strings are immutable, the <code>split</code> method makes it easier to work with them.",
         "<hr>",
         "Use the <code>split</code> method inside the <code>splitify</code> function to split <code>str</code> into an array of words. The function should return the array. Note that the words are not always separated by spaces, and the array should not contain punctuation."
@@ -1367,19 +1453,26 @@
       "tests": [
         {
           "text": "Your code should use the <code>split</code> method.",
-          "testString": "assert(code.match(/\\.split/g), 'Your code should use the <code>split</code> method.');"
+          "testString":
+            "assert(code.match(/\\.split/g), 'Your code should use the <code>split</code> method.');"
         },
         {
-          "text": "<code>splitify(\"Hello World,I-am code\")</code> should return <code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>.",
-          "testString": "assert(JSON.stringify(splitify(\"Hello World,I-am code\")) === JSON.stringify([\"Hello\", \"World\", \"I\", \"am\", \"code\"]), '<code>splitify(\"Hello World,I-am code\")</code> should return <code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>.');"
+          "text":
+            "<code>splitify(\"Hello World,I-am code\")</code> should return <code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(splitify(\"Hello World,I-am code\")) === JSON.stringify([\"Hello\", \"World\", \"I\", \"am\", \"code\"]), '<code>splitify(\"Hello World,I-am code\")</code> should return <code>[\"Hello\", \"World\", \"I\", \"am\", \"code\"]</code>.');"
         },
         {
-          "text": "<code>splitify(\"Earth-is-our home\")</code> should return <code>[\"Earth\", \"is\", \"our\", \"home\"]</code>.",
-          "testString": "assert(JSON.stringify(splitify(\"Earth-is-our home\")) === JSON.stringify([\"Earth\", \"is\", \"our\", \"home\"]), '<code>splitify(\"Earth-is-our home\")</code> should return <code>[\"Earth\", \"is\", \"our\", \"home\"]</code>.');"
+          "text":
+            "<code>splitify(\"Earth-is-our home\")</code> should return <code>[\"Earth\", \"is\", \"our\", \"home\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(splitify(\"Earth-is-our home\")) === JSON.stringify([\"Earth\", \"is\", \"our\", \"home\"]), '<code>splitify(\"Earth-is-our home\")</code> should return <code>[\"Earth\", \"is\", \"our\", \"home\"]</code>.');"
         },
         {
-          "text": "<code>splitify(\"This.is.a-sentence\")</code> should return <code>[\"This\", \"is\", \"a\", \"sentence\"]</code>.",
-          "testString": "assert(JSON.stringify(splitify(\"This.is.a-sentence\")) === JSON.stringify([\"This\", \"is\", \"a\", \"sentence\"]), '<code>splitify(\"This.is.a-sentence\")</code> should return <code>[\"This\", \"is\", \"a\", \"sentence\"]</code>.');"
+          "text":
+            "<code>splitify(\"This.is.a-sentence\")</code> should return <code>[\"This\", \"is\", \"a\", \"sentence\"]</code>.",
+          "testString":
+            "assert(JSON.stringify(splitify(\"This.is.a-sentence\")) === JSON.stringify([\"This\", \"is\", \"a\", \"sentence\"]), '<code>splitify(\"This.is.a-sentence\")</code> should return <code>[\"This\", \"is\", \"a\", \"sentence\"]</code>.');"
         }
       ],
       "solutions": [],
@@ -1420,27 +1513,37 @@
       "tests": [
         {
           "text": "Your code should use the <code>join</code> method.",
-          "testString": "assert(code.match(/\\.join/g), 'Your code should use the <code>join</code> method.');"
+          "testString":
+            "assert(code.match(/\\.join/g), 'Your code should use the <code>join</code> method.');"
         },
         {
           "text": "Your code should not use the <code>replace</code> method.",
-          "testString": "assert(!code.match(/\\.replace/g), 'Your code should not use the <code>replace</code> method.');"
+          "testString":
+            "assert(!code.match(/\\.replace/g), 'Your code should not use the <code>replace</code> method.');"
         },
         {
-          "text": "<code>sentensify(\"May-the-force-be-with-you\")</code> should return a string.",
-          "testString": "assert(typeof sentensify(\"May-the-force-be-with-you\") === \"string\", '<code>sentensify(\"May-the-force-be-with-you\")</code> should return a string.');"
+          "text":
+            "<code>sentensify(\"May-the-force-be-with-you\")</code> should return a string.",
+          "testString":
+            "assert(typeof sentensify(\"May-the-force-be-with-you\") === \"string\", '<code>sentensify(\"May-the-force-be-with-you\")</code> should return a string.');"
         },
         {
-          "text": "<code>sentensify(\"May-the-force-be-with-you\")</code> should return <code>\"May the force be with you\"</code>.",
-          "testString": "assert(sentensify(\"May-the-force-be-with-you\") === \"May the force be with you\", '<code>sentensify(\"May-the-force-be-with-you\")</code> should return <code>\"May the force be with you\"</code>.');"
+          "text":
+            "<code>sentensify(\"May-the-force-be-with-you\")</code> should return <code>\"May the force be with you\"</code>.",
+          "testString":
+            "assert(sentensify(\"May-the-force-be-with-you\") === \"May the force be with you\", '<code>sentensify(\"May-the-force-be-with-you\")</code> should return <code>\"May the force be with you\"</code>.');"
         },
         {
-          "text": "<code>sentensify(\"The.force.is.strong.with.this.one\")</code> should return <code>\"The force is strong with this one\"</code>.",
-          "testString": "assert(sentensify(\"The.force.is.strong.with.this.one\") === \"The force is strong with this one\", '<code>sentensify(\"The.force.is.strong.with.this.one\")</code> should return <code>\"The force is strong with this one\"</code>.');"
+          "text":
+            "<code>sentensify(\"The.force.is.strong.with.this.one\")</code> should return <code>\"The force is strong with this one\"</code>.",
+          "testString":
+            "assert(sentensify(\"The.force.is.strong.with.this.one\") === \"The force is strong with this one\", '<code>sentensify(\"The.force.is.strong.with.this.one\")</code> should return <code>\"The force is strong with this one\"</code>.');"
         },
         {
-          "text": "<code>sentensify(\"There,has,been,an,awakening\")</code> should return <code>\"There has been an awakening\"</code>.",
-          "testString": "assert(sentensify(\"There,has,been,an,awakening\") === \"There has been an awakening\", '<code>sentensify(\"There,has,been,an,awakening\")</code> should return <code>\"There has been an awakening\"</code>.');"
+          "text":
+            "<code>sentensify(\"There,has,been,an,awakening\")</code> should return <code>\"There has been an awakening\"</code>.",
+          "testString":
+            "assert(sentensify(\"There,has,been,an,awakening\") === \"There has been an awakening\", '<code>sentensify(\"There,has,been,an,awakening\")</code> should return <code>\"There has been an awakening\"</code>.');"
         }
       ],
       "solutions": [],
@@ -1485,27 +1588,38 @@
       "tests": [
         {
           "text": "The <code>globalTitle</code> variable should not change.",
-          "testString": "assert(globalTitle === \"Winter Is Coming\", 'The <code>globalTitle</code> variable should not change.');"
+          "testString":
+            "assert(globalTitle === \"Winter Is Coming\", 'The <code>globalTitle</code> variable should not change.');"
         },
         {
-          "text": "Your code should not use the <code>replace</code> method for this challenge.",
-          "testString": "assert(!code.match(/\\.replace/g), 'Your code should not use the <code>replace</code> method for this challenge.');"
+          "text":
+            "Your code should not use the <code>replace</code> method for this challenge.",
+          "testString":
+            "assert(!code.match(/\\.replace/g), 'Your code should not use the <code>replace</code> method for this challenge.');"
         },
         {
-          "text": "<code>urlSlug(\"Winter Is Coming\")</code> should return <code>\"winter-is-coming\"</code>.",
-          "testString": "assert(urlSlug(\"Winter Is Coming\") === \"winter-is-coming\", '<code>urlSlug(\"Winter Is Coming\")</code> should return <code>\"winter-is-coming\"</code>.');"
+          "text":
+            "<code>urlSlug(\"Winter Is Coming\")</code> should return <code>\"winter-is-coming\"</code>.",
+          "testString":
+            "assert(urlSlug(\"Winter Is Coming\") === \"winter-is-coming\", '<code>urlSlug(\"Winter Is Coming\")</code> should return <code>\"winter-is-coming\"</code>.');"
         },
         {
-          "text": "<code>urlSlug(\" Winter Is  &nbsp;Coming\")</code> should return <code>\"winter-is-coming\"</code>.",
-          "testString": "assert(urlSlug(\" Winter Is  Coming\") === \"winter-is-coming\", '<code>urlSlug(\" Winter Is  &nbsp;Coming\")</code> should return <code>\"winter-is-coming\"</code>.');"
+          "text":
+            "<code>urlSlug(\" Winter Is  &nbsp;Coming\")</code> should return <code>\"winter-is-coming\"</code>.",
+          "testString":
+            "assert(urlSlug(\" Winter Is  Coming\") === \"winter-is-coming\", '<code>urlSlug(\" Winter Is  &nbsp;Coming\")</code> should return <code>\"winter-is-coming\"</code>.');"
         },
         {
-          "text": "<code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code> should return <code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>.",
-          "testString": "assert(urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\") === \"a-mind-needs-books-like-a-sword-needs-a-whetstone\", '<code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code> should return <code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>.');"
+          "text":
+            "<code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code> should return <code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>.",
+          "testString":
+            "assert(urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\") === \"a-mind-needs-books-like-a-sword-needs-a-whetstone\", '<code>urlSlug(\"A Mind Needs Books Like A Sword Needs A Whetstone\")</code> should return <code>\"a-mind-needs-books-like-a-sword-needs-a-whetstone\"</code>.');"
         },
         {
-          "text": "<code>urlSlug(\"Hold The Door\")</code> should return <code>\"hold-the-door\"</code>.",
-          "testString": "assert(urlSlug(\"Hold The Door\") === \"hold-the-door\", '<code>urlSlug(\"Hold The Door\")</code> should return <code>\"hold-the-door\"</code>.');"
+          "text":
+            "<code>urlSlug(\"Hold The Door\")</code> should return <code>\"hold-the-door\"</code>.",
+          "testString":
+            "assert(urlSlug(\"Hold The Door\") === \"hold-the-door\", '<code>urlSlug(\"Hold The Door\")</code> should return <code>\"hold-the-door\"</code>.');"
         }
       ],
       "solutions": [],
@@ -1540,7 +1654,8 @@
     },
     {
       "id": "587d7dab367417b2b2512b6e",
-      "title": "Use the every Method to Check that Every Element in an Array Meets a Criteria",
+      "title":
+        "Use the every Method to Check that Every Element in an Array Meets a Criteria",
       "description": [
         "The <code>every</code> method works with arrays to check if <em>every</em> element passes a particular test. It returns a Boolean value - <code>true</code> if all values meet the criteria, <code>false</code> if not.",
         "For example, the following code would check if every element in the <code>numbers</code> array is less than 10:",
@@ -1551,19 +1666,26 @@
       "tests": [
         {
           "text": "Your code should use the <code>every</code> method.",
-          "testString": "assert(code.match(/\\.every/g), 'Your code should use the <code>every</code> method.');"
+          "testString":
+            "assert(code.match(/\\.every/g), 'Your code should use the <code>every</code> method.');"
         },
         {
-          "text": "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.",
-          "testString": "assert(!checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.');"
+          "text":
+            "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.",
+          "testString":
+            "assert(!checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>false</code>.');"
         },
         {
-          "text": "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.",
-          "testString": "assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');"
+          "text":
+            "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.",
+          "testString":
+            "assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');"
         },
         {
-          "text": "<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.",
-          "testString": "assert(!checkPositive([1, -2, 3, -4, 5]), '<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.');"
+          "text":
+            "<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.",
+          "testString":
+            "assert(!checkPositive([1, -2, 3, -4, 5]), '<code>checkPositive([1, -2, 3, -4, 5])</code> should return <code>false</code>.');"
         }
       ],
       "solutions": [],
@@ -1591,7 +1713,8 @@
     },
     {
       "id": "587d7dab367417b2b2512b6f",
-      "title": "Use the some Method to Check that Any Elements in an Array Meet a Criteria",
+      "title":
+        "Use the some Method to Check that Any Elements in an Array Meet a Criteria",
       "description": [
         "The <code>some</code> method works with arrays to check if <em>any</em> element passes a particular test. It returns a Boolean value - <code>true</code> if any of the values meet the criteria, <code>false</code> if not.",
         "For example, the following code would check if any element in the <code>numbers</code> array is less than 10:",
@@ -1602,19 +1725,26 @@
       "tests": [
         {
           "text": "Your code should use the <code>some</code> method.",
-          "testString": "assert(code.match(/\\.some/g), 'Your code should use the <code>some</code> method.');"
+          "testString":
+            "assert(code.match(/\\.some/g), 'Your code should use the <code>some</code> method.');"
         },
         {
-          "text": "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.",
-          "testString": "assert(checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.');"
+          "text":
+            "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.",
+          "testString":
+            "assert(checkPositive([1, 2, 3, -4, 5]), '<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.');"
         },
         {
-          "text": "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.",
-          "testString": "assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');"
+          "text":
+            "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.",
+          "testString":
+            "assert(checkPositive([1, 2, 3, 4, 5]), '<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.');"
         },
         {
-          "text": "<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.",
-          "testString": "assert(!checkPositive([-1, -2, -3, -4, -5]), '<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.');"
+          "text":
+            "<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.",
+          "testString":
+            "assert(!checkPositive([-1, -2, -3, -4, -5]), '<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.');"
         }
       ],
       "solutions": [],
@@ -1659,19 +1789,24 @@
       "tests": [
         {
           "text": "<code>add(10)(20)(30)</code> should return <code>60</code>.",
-          "testString": "assert(add(10)(20)(30) === 60, '<code>add(10)(20)(30)</code> should return <code>60</code>.');"
+          "testString":
+            "assert(add(10)(20)(30) === 60, '<code>add(10)(20)(30)</code> should return <code>60</code>.');"
         },
         {
           "text": "<code>add(1)(2)(3)</code> should return <code>6</code>.",
-          "testString": "assert(add(1)(2)(3) === 6, '<code>add(1)(2)(3)</code> should return <code>6</code>.');"
+          "testString":
+            "assert(add(1)(2)(3) === 6, '<code>add(1)(2)(3)</code> should return <code>6</code>.');"
         },
         {
           "text": "<code>add(11)(22)(33)</code> should return <code>66</code>.",
-          "testString": "assert(add(11)(22)(33) === 66, '<code>add(11)(22)(33)</code> should return <code>66</code>.');"
+          "testString":
+            "assert(add(11)(22)(33) === 66, '<code>add(11)(22)(33)</code> should return <code>66</code>.');"
         },
         {
-          "text": "Your code should include a final statement that returns <code>x + y + z</code>.",
-          "testString": "assert(code.match(/[xyz]\\s*?\\+\\s*?[xyz]\\s*?\\+\\s*?[xyz]/g), 'Your code should include a final statement that returns <code>x + y + z</code>.');"
+          "text":
+            "Your code should include a final statement that returns <code>x + y + z</code>.",
+          "testString":
+            "assert(code.match(/[xyz]\\s*?\\+\\s*?[xyz]\\s*?\\+\\s*?[xyz]/g), 'Your code should include a final statement that returns <code>x + y + z</code>.');"
         }
       ],
       "solutions": [],
