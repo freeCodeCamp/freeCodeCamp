@@ -782,3 +782,11 @@ code[class*="language-"],pre[class*="language-"] {
 .night blockquote, .night .challenge-instructions blockquote {
     color: #00bfb0;
 }
+
+.night .notfound-page-wrapper .quote-wrapper {
+  background-color: #222;
+}
+
+.night .notfound-page-wrapper .btn-curriculum {
+  color: #292f33;
+}
