@@ -1120,15 +1120,20 @@
       ],
       "tests": [
         {
-          "text":
-            "<code>setGear</code> is a function and changes the <code>gear</code> variable.",
+          "text": "Traditional function expression was not used.",
           "testString":
-            "assert(() => { bicycle.setGear(48); return bicycle.gear === 48 }, '<code>setGear</code> is a function and changes the <code>gear</code> variable.');"
+            "assert(!getUserInput('index').match(/function/),'Traditional <code>function</code> expression was not used.');"
         },
         {
-          "text": "Declarative function was used.",
+          "text": "<code>setGear</code> is a declarative function.",
           "testString":
-            "getUserInput => assert(!getUserInput('index').match(/:\\s*function\\s*\\(\\)/g), 'Declarative function was used.');"
+            "assert(typeof bicycle.setGear === 'function' && getUserInput('index').match(/setGear\\s*\\(.+\\)\\s*\\{/), '<code>setGear</code> is a declarative function.');"
+        },
+        {
+          "text":
+            "<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.",
+          "testString":
+            "assert((new bicycle.setGear(48)).gear === 48, '<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
