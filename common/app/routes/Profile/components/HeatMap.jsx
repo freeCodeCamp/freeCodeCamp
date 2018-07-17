@@ -57,7 +57,10 @@ class HeatMap extends Component {
     const rectSelector = '#cal-heatmap > svg > svg.graph-legend > g > rect.r';
     const calLegendTitles = ['0 items', '1 item', '2 items', '3 or more items'];
     const firstTS = Object.keys(calendar)[0];
-    let start = new Date(firstTS * 1000);
+    // start should not be earlier than 7 months before now:
+    let start = (firstTS * 1000 + 1000 * 60 * 60 * 24 * 210 < Date.now())
+      ? new Date(Date.now() - 1000 * 60 * 60 * 24 * 210)
+      : new Date(firstTS * 1000);
     const monthsSinceFirstActive = differenceInCalendarMonths(
       today,
       start
