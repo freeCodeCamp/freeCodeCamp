@@ -40,11 +40,8 @@ export class SidePanel extends PureComponent {
   constructor(props) {
     super(props);
     this.bindTopDiv = this.bindTopDiv.bind(this);
-    // MathJax.Hub.Config({
-    //   tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] }
-    // });
     MathJax.Hub.Config({
-      tex2jax: { inlineMath: [['$$', '$$']] }
+      tex2jax: { inlineMath: [['$inlineMath$', '$inlineMath$']] }
     });
   }
 
