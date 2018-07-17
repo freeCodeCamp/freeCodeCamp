@@ -71,10 +71,10 @@ function SolutionViewer({ files }) {
 
 SolutionViewer.displayName = 'SolutionViewer';
 SolutionViewer.propTypes = {
-  files: PropTypes.oneOfType(
+  files: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
     PropTypes.string
-  )
+  ])
 };
 
 export default SolutionViewer;

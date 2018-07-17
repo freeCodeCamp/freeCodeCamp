@@ -14,10 +14,10 @@ const jsFormPropTypes = {
   hardGoTo: PropTypes.func.isRequired,
   isCertClaimed: PropTypes.bool,
   jsProjects: PropTypes.objectOf(
-    PropTypes.oneOfType(
+    PropTypes.oneOfType([
       PropTypes.arrayOf(PropTypes.object),
       PropTypes.string
-    )
+    ])
   ),
   projectBlockName: PropTypes.string,
   superBlock: PropTypes.string,
