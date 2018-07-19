@@ -19,7 +19,11 @@ const propTypes = {
       value: PropTypes.string.isRequired
     })
   ).isRequired,
+<<<<<<< HEAD
   formId: PropTypes.string,
+=======
+  formId: PropTypes.string.isRequired,
+>>>>>>> 699c7f3e21aa126be2322dfb212c189e2b70d13b
   options: PropTypes.shape({
     errors: PropTypes.objectOf(
       PropTypes.oneOfType([
@@ -49,9 +53,13 @@ function FormFields(props) {
         .filter(field => !ignored.includes(field))
         .map(key => fields[key])
         .map(({ name, onChange, value, pristine }) => {
+<<<<<<< HEAD
           const key = formId ?
             `${formId}_${_.kebabCase(name)}` :
             _.kebabCase(name);
+=======
+          const key = `${formId}_${_.kebabCase(name)}`;
+>>>>>>> 699c7f3e21aa126be2322dfb212c189e2b70d13b
           const type = name in types ? types[name] : 'text';
           return (
           <Row className='inline-form-field' key={ key }>
