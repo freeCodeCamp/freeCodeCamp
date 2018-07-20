@@ -2237,7 +2237,7 @@
         {
           "text": "The color stop at 0 pixels should be <code>yellow</code>.",
           "testString":
-            "assert(code.match(/yellow\\s+?0px/gi), 'The color stop at 0 pixels should be <code>yellow</code>.');"
+            "assert(code.match(/yellow\\s+?0(px)?/gi), 'The color stop at 0 pixels should be <code>yellow</code>.');"
         },
         {
           "text": "One color stop at 40 pixels should be <code>yellow</code>.",
@@ -2925,7 +2925,7 @@
           "text":
             "The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.",
           "testString":
-            "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?top:\\s*?0px;\\s*?left:\\s*?0px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.');"
+            "assert(code.match(/0%\\s*?{\\s*?background-color:\\s*?blue;\\s*?top:\\s*?0(px)?;\\s*?left:\\s*?0(px)?;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>0%</code> should use the <code>left</code> offset of 0px.');"
         },
         {
           "text":
@@ -2937,7 +2937,7 @@
           "text":
             "The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.",
           "testString":
-            "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?top:\\s*?0px;\\s*?left:\\s*?-25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.');"
+            "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?top:\\s*?0(px)?;\\s*?left:\\s*?-25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.');"
         }
       ],
       "solutions": [],
