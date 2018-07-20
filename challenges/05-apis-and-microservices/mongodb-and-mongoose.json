@@ -230,7 +230,7 @@
       "id": "587d7fb8367417b2b2512c11",
       "title": "Delete Many Documents with model.remove()",
       "description": [
-        "Model.remove() is useful to delete all the documents matching given criteria. Delete all the people whose name is “Mary”, using Model.remove(). Pass to it a query ducument with the “name” field set, and of course a callback.",
+        "Model.remove() is useful to delete all the documents matching given criteria. Delete all the people whose name is “Mary”, using Model.remove(). Pass it to a query document with the “name” field set, and of course a callback.",
         "Note: Model.remove() doesn’t return the deleted document, but a JSON object containing the outcome of the operation, and the number of items affected. Don’t forget to pass it to the done() callback, since we use it in tests."
       ],
       "tests": [
