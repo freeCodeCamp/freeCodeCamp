@@ -19,6 +19,7 @@ const propTypes = {
       value: PropTypes.string.isRequired
     })
   ).isRequired,
+  formId: PropTypes.string,
   options: PropTypes.shape({
     errors: PropTypes.objectOf(
       PropTypes.oneOfType([
@@ -34,7 +35,7 @@ const propTypes = {
 };
 
 function FormFields(props) {
-  const { errors = {}, fields, options = {} } = props;
+  const { errors = {}, fields, formId, options = {} } = props;
   const {
     ignored = [],
     placeholder = true,
@@ -48,7 +49,9 @@ function FormFields(props) {
         .filter(field => !ignored.includes(field))
         .map(key => fields[key])
         .map(({ name, onChange, value, pristine }) => {
-          const key = _.kebabCase(name);
+          const key = formId ?
+            `${formId}_${_.kebabCase(name)}` :
+            _.kebabCase(name);
           const type = name in types ? types[name] : 'text';
           return (
           <Row className='inline-form-field' key={ key }>
