@@ -3115,7 +3115,7 @@
             "",
             "  .green-box {",
             "    background-color: green;",
-            "    margin: 40px 20px 20px 40px;",
+            "    margin: 20px 40px 20px 40px;",
             "  }",
             "</style>",
             "<h5 class=\"injected-text\">margin</h5>",
