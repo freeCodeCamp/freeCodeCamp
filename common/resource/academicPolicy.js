@@ -10,17 +10,17 @@ const policy = [
   'Aside from using open source libraries such as jQuery and Bootstrap, ' +
   'and short snippets of code which are clearly attributed to their ' +
   'original author, 100% of the code in my projects was written by me, or ' +
-  'along with another camper with whom I was pair programming in real time.',
-  'I pledge that I did not plagiarize any of my freeCodeCamp work. ' +
-  'I understand that freeCodeCamp’s team will audit my projects ' +
+  'along with another coder with whom I was pair programming in real time.',
+  'I pledge that I did not plagiarize any of my Spiraladder work. ' +
+  'I understand that the Spiraladder team will audit my projects ' +
   'to confirm this.',
   'In the situations where we discover instances of unambiguous plagiarism, ' +
-  'we will replace the camper in question’s certification with a message ' +
+  'we will replace the coder in question’s certification with a message ' +
   'that "Upon review, this account has been flagged for academic dishonesty."',
   'As an academic institution that grants achievement-based certifications, ' +
   'we take academic honesty very seriously. If you have any questions about ' +
   'this policy, or suspect that someone has violated it, you can email ' +
-  '<a href="mailto:team@freecodecamp.org">team@freecodecamp.org</a> and we ' +
+  '<a href="mailto:team@spiraladder.com">team@spiraladder.com</a> and we ' +
   'will investigate.'
 ];
 

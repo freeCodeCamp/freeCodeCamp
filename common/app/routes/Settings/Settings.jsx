@@ -91,7 +91,7 @@ export class Settings extends React.Component {
             className='btn-link-social'
             href={ '/signout' }
             >
-            Sign me out of freeCodeCamp
+            Sign me out of Spiraladder
           </Button>
         </FullWidthRow>
         <h1 className='text-center'>{ `Account Settings for ${username}` }</h1>

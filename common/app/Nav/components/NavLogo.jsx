@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { NavbarBrand } from 'react-bootstrap';
 import Media from 'react-media';
 
-const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
+const fCClogo =
+  'https://dl.dropbox.com/s/axj20gzbebk3pio/teencodecamp_logo.png?raw=1';
 const fCCglyph = 'https://s3.amazonaws.com/freecodecamp/FFCFire.png';
 
 const propTypes = {
@@ -21,13 +22,13 @@ function NavLogo({ clickOnLogo }) {
           {
             matches => matches ? (
               <img
-                alt='learn to code javascript at freeCodeCamp logo'
+                alt='learn to code javascript at Spiraladder logo'
                 className='nav-logo logo'
                 src={ fCClogo }
               />
             ) : (
               <img
-                alt='learn to code javascript at freeCodeCamp logo'
+                alt='learn to code javascript at Spiraladder logo'
                 className='nav-logo logo'
                 src={ fCCglyph }
               />

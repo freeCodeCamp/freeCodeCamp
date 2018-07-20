@@ -135,7 +135,7 @@ class EmailSettings extends PureComponent {
           <Row className='inline-form-field' key='sendQuincyEmail'>
             <Col sm={ 8 }>
               <ControlLabel htmlFor='sendQuincyEmail'>
-                Send me Quincy&apos;s weekly email
+                Send me the Spiraladder weekly email
               </ControlLabel>
             </Col>
             <Col sm={ 4 }>

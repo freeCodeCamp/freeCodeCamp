@@ -61,7 +61,7 @@ function PrivacySettings(props) {
       <FullWidthRow>
       <p>
         The settings in this section enable you to control what is shown on{' '}
-        your freeCodeCamp public portfolio.
+        your Spiraladder public portfolio.
       </p>
       <p>There is also a button to see what data we hold on your account</p>
       <ToggleSetting

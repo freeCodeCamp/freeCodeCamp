@@ -1,6 +1,6 @@
 require('babel-register');
 
-const { getChallenges } = require('@freecodecamp/curriculum');
+const { getChallenges } = require('spiraladder-curriculum');
 const fs = require('fs');
 const path = require('path');
 const { Observable } = require('rx');

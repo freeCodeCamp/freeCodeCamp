@@ -143,6 +143,7 @@
     "sanitize-html": "^1.11.1",
     "shortid": "^2.2.12",
     "snyk": "^1.69.1",
+    "spiraladder-curriculum": "^3.0.1",
     "stripe": "^6.1.0",
     "uuid": "^3.0.1",
     "validator": "^9.4.1"

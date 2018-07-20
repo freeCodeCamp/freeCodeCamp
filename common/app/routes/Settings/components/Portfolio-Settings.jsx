@@ -147,7 +147,7 @@ class PortfolioSettings extends PureComponent {
         <FullWidthRow>
         <div className='portfolio-settings-intro'>
           <p className='p-intro'>
-            Share your non-FreeCodeCamp projects, articles or accepted
+            Share your non-Spiraladder projects, articles or accepted
             pull requests.
           </p>
         </div>
