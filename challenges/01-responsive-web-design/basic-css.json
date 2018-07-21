@@ -3710,7 +3710,7 @@
         "There are other ways that you can override CSS. Do you remember inline styles?",
         "<hr>",
         "Use an <code>inline style</code> to try to make our <code>h1</code> element white. Remember, in line styles look like this:",
-        "<code>&#60;h1 style=\"color: green\"&#62;</code>",
+        "<code>&#60;h1 style=\"color: green;\"&#62;</code>",
         "Leave the <code>blue-text</code> and <code>pink-text</code> classes on your <code>h1</code> element."
       ],
       "tests": [
@@ -3752,7 +3752,7 @@
             "Es gibt noch andere Wege CSS zu überschreiben. Erinnerst du dich an Inline Styles?",
             "<hr>",
             "Benutze <code>inline style</code> um dein <code>h1</code> Element weiß zu machen. Vergiss nicht, Inline Styles sehen so aus:",
-            "<code>&#60;h1 style=\"color: green\"&#62;</code>",
+            "<code>&#60;h1 style=\"color: green;\"&#62;</code>",
             "Lasse die <code>blue-text</code> und <code>pink-text</code> Klassen auf deinem <code>h1</code> Element."
           ]
         },
@@ -3763,7 +3763,7 @@
             "Hay otras maneras en las que puedes anular CSS. ¿Te acuerdas de los estilos en línea?",
             "<hr>",
             "Utiliza un <code>estilo en línea</code> para tratar de hacer blanco nuestro elemento <code>h1</code>. Recuerda, los estilos en línea se ven así: ",
-            "<code>&#60;h1 style=\"color: green\"&#62;</code>",
+            "<code>&#60;h1 style=\"color: green;\"&#62;</code>",
             "Deja las clases <code>blue-text</code> y <code>pink-text</code> en tu elemento <code>h1</code>."
           ]
         },
@@ -3774,7 +3774,7 @@
             "Existem outras formas em que você pode sobrepor CSS. Você se lembra de estilos inline?",
             "<hr>",
             "Use um estilo <code>inline</code> para tentar fazer com que nosso elemento <code>h1</code> tenha a cor branca. Relembre que estilos inline são assim:",
-            "<code>&#60;h1 style=\"color: green\"&#62;</code>",
+            "<code>&#60;h1 style=\"color: green;\"&#62;</code>",
             "Deixe as classes <code>blue-text</code> e <code>pink-text</code> em seu elemento <code>h1</code>."
           ]
         },
@@ -3786,7 +3786,7 @@
             "Есть и другие способы переопределения CSS. Помните встроенные стили?",
             "<hr>",
             "Используйте <code>встроенный стиль</code>, чтобы попробовать сделать наш элемент <code>h1</code> белым. Помните, что встроенные стили выглядят следующим образом:",
-            "<code>&#60;h1 style=\"color: green\"&#62;</code>",
+            "<code>&#60;h1 style=\"color: green;\"&#62;</code>",
             "Оставьте классы <code>blue-text</code> и <code>pink-text</code> назначенными вашему элементу <code>h1</code>."
           ]
         }
