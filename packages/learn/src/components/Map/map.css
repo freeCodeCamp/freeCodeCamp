@@ -18,6 +18,9 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 .map-title>svg {
