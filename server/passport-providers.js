@@ -1,3 +1,11 @@
+import { cookie, auth0 } from '../config/secrets';
+
+const {
+  clientID,
+  clientSecret,
+  domain
+} = auth0;
+
 const successRedirect = '/';
 const failureRedirect = '/';
 
@@ -16,10 +24,10 @@ export default {
   'auth0-login': {
     provider: 'auth0',
     module: 'passport-auth0',
-    clientID: process.env.AUTH0_CLIENT_ID,
-    clientSecret: process.env.AUTH0_CLIENT_SECRET,
-    domain: process.env.AUTH0_DOMAIN,
-    cookieDomain: 'freeCodeCamp.org',
+    clientID,
+    clientSecret,
+    domain,
+    cookieDomain: cookie.domain,
     callbackURL: '/auth/auth0/callback',
     authPath: '/auth/auth0',
     callbackPath: '/auth/auth0/callback',

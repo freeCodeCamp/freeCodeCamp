@@ -17,6 +17,8 @@ import _ from 'lodash';
 import { ObjectId } from 'mongodb';
 import jwt from 'jsonwebtoken';
 
+import { cookie, jwt as jwtConfig } from '../../config/secrets';
+
 import { fixCompletedChallengeItem } from '../utils';
 import { themes } from '../utils/themes';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
@@ -398,10 +400,10 @@ module.exports = function(User) {
         const config = {
           signed: !!req.signedCookies,
           maxAge: accessToken.ttl,
-          domain: process.env.COOKIE_DOMAIN || 'localhost'
+          domain: cookie.domain || 'localhost'
         };
         if (accessToken && accessToken.id) {
-          const jwtAccess = jwt.sign({accessToken}, process.env.JWT_SECRET);
+          const jwtAccess = jwt.sign({accessToken}, jwtConfig.secret);
           res.cookie('jwt_access_token', jwtAccess, config);
           res.cookie('access_token', accessToken.id, config);
           res.cookie('userId', accessToken.userId, config);
@@ -431,7 +433,7 @@ module.exports = function(User) {
   User.afterRemote('logout', function({req, res}, result, next) {
     const config = {
       signed: !!req.signedCookies,
-      domain: process.env.COOKIE_DOMAIN || 'localhost'
+      domain: cookie.domain || 'localhost'
     };
     res.clearCookie('jwt_access_token', config);
     res.clearCookie('access_token', config);

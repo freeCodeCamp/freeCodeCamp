@@ -17,7 +17,6 @@ log.enabled = true;
 
 Rx.config.longStackSupport = process.env.NODE_DEBUG !== 'production';
 const app = loopback();
-const isBeta = !!process.env.BETA;
 
 expressState.extend(app);
 app.set('state namespace', '__fcc__');
@@ -44,9 +43,6 @@ app.start = _.once(function() {
       app.get('port'),
       app.get('env')
     );
-    if (isBeta) {
-      log('freeCodeCamp is in beta mode');
-    }
     log(`connecting to db at ${db.settings.url}`);
   });
 
