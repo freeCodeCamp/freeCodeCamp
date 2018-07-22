@@ -50,7 +50,7 @@ export function ifNotVerifiedRedirectToUpdateEmail(req, res, next) {
   return next();
 }
 
-export function ifUserRedirectTo(path = '/', status) {
+export function ifUserRedirectTo(path = '/welcome', status) {
   status = status === 302 ? 302 : 301;
   return (req, res, next) => {
     if (req.user) {

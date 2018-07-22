@@ -10,6 +10,8 @@ import debug from 'debug';
 import accepts from 'accepts';
 import dedent from 'dedent';
 
+import { homeLocation } from '../../config/env';
+
 import { ifNoUserSend } from '../utils/middleware';
 import { getChallengeById, cachedMap } from '../utils/map';
 import { dasherize } from '../utils';
@@ -19,7 +21,7 @@ import { fixCompletedChallengeItem } from '../../common/utils';
 
 const log = debug('fcc:boot:challenges');
 
-const learnURL = 'https://learn.freecodecamp.org';
+const learnURL = `${homeLocation}/learn`;
 
 const jsProjects = [
 'aaa48de84e1ecc7c742e1124',
@@ -408,8 +410,8 @@ export default function(app) {
     const maybeChallenge = _.last(req.path.split('/'));
     if (maybeChallenge in pathMigrations) {
       const redirectPath = pathMigrations[maybeChallenge];
-      return res.status(302).redirect(`${learnURL}${redirectPath}`);
+      return res.status(301).redirect(`${learnURL}${redirectPath}`);
     }
-    return res.status(302).redirect(learnURL);
+    return res.status(301).redirect(learnURL);
   }
 }

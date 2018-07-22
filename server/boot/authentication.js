@@ -5,6 +5,7 @@ import dedent from 'dedent';
 import { isEmail } from 'validator';
 import { check } from 'express-validator/check';
 
+import { homeLocation } from '../../config/env';
 import { cookie } from '../../config/secrets';
 
 import {
@@ -13,7 +14,6 @@ import {
   createValidatorErrorHandler
 } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
-import { homeURL } from '../../common/utils/constantStrings.json';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 // const debug = debugFactory('fcc:boot:auth');
@@ -26,7 +26,7 @@ module.exports = function enableAuthentication(app) {
   // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
-  const ifNoUserRedirectHome = ifNoUserRedirectTo(homeURL);
+  const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
   const router = app.loopback.Router();
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
