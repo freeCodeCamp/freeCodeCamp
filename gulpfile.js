@@ -16,9 +16,6 @@ const Rx = require('rx'),
   notify = require('gulp-notify'),
   gutil = require('gulp-util'),
   reduce = require('gulp-reduce-file'),
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
-  merge = require('merge-stream'),
   sourcemaps = require('gulp-sourcemaps'),
 
   // react app
@@ -27,7 +24,6 @@ const Rx = require('rx'),
   webpackDevMiddleware = require('webpack-dev-middleware'),
   webpackHotMiddleware = require('webpack-hot-middleware'),
   webpackConfig = require('./webpack.config.js'),
-  webpackFrameConfig = require('./webpack.frame-runner.js'),
 
   // server process
   nodemon = require('gulp-nodemon'),
@@ -45,18 +41,11 @@ const Rx = require('rx'),
 Rx.config.longStackSupport = true;
 const sync = browserSync.create('fcc-sync-server');
 
-function resolve(filepath, thisString, withThisString) {
-  const newPath = require.resolve(filepath);
-  if (thisString && withThisString) {
-    return newPath.replace(thisString, withThisString);
-  }
-  return newPath;
-}
 
 // user definable
 const __DEV__ = !yargs.argv.p;
 const host = process.env.HOST || 'localhost';
-const port = yargs.argv.port || process.env.PORT || '3001';
+const port = yargs.argv.port || process.env.PORT || '3010';
 const syncPort = yargs.argv['sync-port'] || process.env.SYNC_PORT || '3000';
 
 // make sure sync ui port does not interfere with proxy port
@@ -79,50 +68,10 @@ const paths = {
   publicJs: './public/js',
   css: 'public/css',
 
-  loopback: {
-    client: './client/loopbackClient',
-    root: path.join(__dirname, 'client/'),
-    clientName: 'lbApp'
-  },
-
   client: {
     src: './client',
     dest: 'public/js'
   },
-
-  vendorChallenges: [
-    resolve('jshint', 'src', 'dist'),
-    resolve('chai', 'index.js', 'chai.js'),
-    resolve('codemirror'),
-    resolve('codemirror', 'lib/codemirror.js', 'addon/comment/comment.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'addon/edit/closebrackets.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'addon/edit/matchbrackets.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'addon/lint/lint.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'addon/lint/javascript-lint.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'mode/javascript/javascript.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'mode/jsx/jsx.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'mode/xml/xml.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'mode/css/css.js'),
-    resolve('codemirror', 'lib/codemirror.js', 'mode/htmlmixed/htmlmixed.js'),
-    resolve('emmet-codemirror'),
-    'public/js/lib/loop-protect/loop-protect.js'
-  ],
-
-  vendorMain: [
-    resolve('jquery', '.js', '.min.js'),
-    resolve('bootstrap', 'npm.js', 'bootstrap.min.js'),
-    resolve('d3', '.js', '.min.js'),
-    resolve('cal-heatmap'),
-    resolve('moment', '.js', '.min.js'),
-    resolve(
-      'moment-timezone',
-      'index.js',
-      'builds/moment-timezone-with-data.min.js'
-    ),
-    resolve('mousetrap', '.js', '.min.js'),
-    resolve('lightbox2', '.js', '.min.js'),
-    resolve('rx', 'index.js', 'dist/rx.all.min.js')
-  ],
 
   less: './client/less/main.less',
   lessFiles: [
@@ -211,7 +160,6 @@ gulp.task('serve', function(cb) {
 
 const syncDepenedents = [
   'serve',
-  'js',
   'less'
 ];
 
@@ -254,18 +202,6 @@ gulp.task('pack-client', function() {
   return gulp.src(webpackConfig.entry.bundle)
     .pipe(plumber({ errorHandler }))
     .pipe(webpackStream(webpackConfig))
-    .pipe(gulp.dest(dest));
-});
-
-gulp.task('pack-frame-runner', function() {
-  if (!__DEV__) { console.log('\n\nbundling frame production\n\n'); }
-
-
-  const dest = webpackFrameConfig.output.path;
-
-  return gulp.src(webpackFrameConfig.entry)
-    .pipe(plumber({ errorHandler }))
-    .pipe(webpackStream(webpackFrameConfig))
     .pipe(gulp.dest(dest));
 });
 
@@ -321,61 +257,6 @@ gulp.task('less', function() {
     .pipe(__DEV__ ? gutil.noop() : gulp.dest(paths.manifest));
 });
 
-function getFilesGlob(files) {
-  if (!__DEV__) {
-    return files;
-  }
-  return files.map(function(file) {
-    return file
-      .replace('.min.', '.')
-      // moment breaks the pattern
-      .replace('/min/', '/');
-  });
-}
-
-gulp.task('js', function() {
-  const manifestName = 'js-manifest.json';
-  const dest = paths.publicJs;
-
-  const jsFiles = merge(
-
-    gulp.src(getFilesGlob(paths.vendorMain))
-      .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
-      .pipe(concat('vendor-main.js'))
-      .pipe(
-        __DEV__ ?
-          sourcemaps.write({ sourceRoot: '/vendor' }) :
-          gutil.noop()
-      ),
-
-    gulp.src(paths.vendorChallenges)
-      .pipe(__DEV__ ? sourcemaps.init() : gutil.noop())
-      .pipe(__DEV__ ? gutil.noop() : uglify())
-      .pipe(concat('vendor-challenges.js'))
-      .pipe(
-        __DEV__ ?
-          sourcemaps.write({ sourceRoot: '/vendor' }) :
-          gutil.noop()
-      )
-  );
-
-  return jsFiles
-    .pipe(gulp.dest(dest))
-    // create registry file
-    .pipe(__DEV__ ? gutil.noop() : rev())
-    // copy revisioned assets to dest
-    .pipe(__DEV__ ? gutil.noop() : gulp.dest(dest))
-    // create manifest file
-    .pipe(__DEV__ ? gutil.noop() : rev.manifest(manifestName))
-    .pipe(__DEV__ ? gutil.noop() : delRev(
-      dest,
-      manifestName
-    ))
-    // copy manifest file to dest
-    .pipe(__DEV__ ? gutil.noop() : gulp.dest(paths.manifest));
-});
-
-
 const collector = (file, memo) =>
   Object.assign(memo, JSON.parse(file.contents));
 
@@ -385,7 +266,6 @@ function done(manifest) {
 
 const buildDependents = [
   'less',
-  'js',
   'pack-client',
   'move-webpack-manifest'
 ];
@@ -402,9 +282,7 @@ gulp.task('generate-migration-map', done => {
 
 gulp.task('build', [
   'less',
-  'js',
   'pack-client',
-  'pack-frame-runner',
   'move-webpack-manifest',
   'clean-webpack-manifest',
   'build-manifest',
@@ -413,16 +291,12 @@ gulp.task('build', [
 
 const watchDependents = [
   'less',
-  'js',
   'serve',
-  'pack-frame-runner',
   'dev-server'
 ];
 
 gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.lessFiles, ['less']);
-  gulp.watch(paths.vendorChallenges, ['js']);
-  gulp.watch(webpackFrameConfig.entry, ['pack-frame-runner']);
 });
 
 gulp.task('default', [
@@ -430,6 +304,5 @@ gulp.task('default', [
   'serve',
   'watch',
   'dev-server',
-  'pack-frame-runner',
   'generate-migration-map'
 ]);
