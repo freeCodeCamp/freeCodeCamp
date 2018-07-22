@@ -6,7 +6,8 @@ import { descriptionRegex } from '../../../../utils';
 import './challenge-description.css';
 
 const propTypes = {
-  description: PropTypes.arrayOf(PropTypes.string)
+  description: PropTypes.arrayOf(PropTypes.string),
+  section: PropTypes.string
 };
 
 function renderDescription(description) {
@@ -32,11 +33,11 @@ function renderDescription(description) {
   });
 }
 
-function ChallengeDescription({ description }) {
+function ChallengeDescription({ description, section }) {
   // TODO: Remove bootstrap
   return (
     <Row>
-      <Col className='challenge-instructions' xs={12}>
+      <Col className={`challenge-instructions ${section}`} xs={12}>
         {renderDescription(description)}
       </Col>
     </Row>

@@ -19,6 +19,7 @@ import { randomCompliment } from '../utils/get-words';
 import { createGuideUrl } from '../utils';
 import { challengeTypes } from '../../../../utils/challengeTypes';
 import { ChallengeNode } from '../../../redux/propTypes';
+import { dasherize } from '../../../../utils';
 import {
   createFiles,
   challengeFilesSelector,
@@ -220,6 +221,7 @@ class ShowClassic extends PureComponent {
               className='full-height'
               description={description}
               guideUrl={createGuideUrl(slug)}
+              section={dasherize(blockName)}
               title={blockNameTitle}
             />
           </ReflexElement>
