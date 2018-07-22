@@ -67,9 +67,9 @@
       "tests": [
         {
           "text":
-            "Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.",
+            "Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.",
           "testString":
-            "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'Use <code>console.log()</code> to print the <code>outputTwice</code> variable.  In your Browser Console this should print out the value of the variable two times.');"
+            "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.');"
         },
         {
           "text":
