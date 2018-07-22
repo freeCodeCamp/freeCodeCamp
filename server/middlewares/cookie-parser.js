@@ -1,4 +1,7 @@
 import cookieParser from 'cookie-parser';
 
-const cookieSecret = process.env.COOKIE_SECRET;
-export default cookieParser.bind(cookieParser, cookieSecret);
+import { cookie as cookieConfig } from '../../config/secrets';
+
+const { secret } = cookieConfig;
+
+export default cookieParser.bind(cookieParser, secret);

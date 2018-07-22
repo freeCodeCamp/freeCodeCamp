@@ -1,9 +1,10 @@
 import session from 'express-session';
 import MongoStoreFactory from 'connect-mongo';
 
+import { db, sessionSecret } from '../../config/secrets';
+
 const MongoStore = MongoStoreFactory(session);
-const sessionSecret = process.env.SESSION_SECRET;
-const url = process.env.MONGODB || process.env.MONGOHQ_URL;
+const url = db;
 
 export default function sessionsMiddleware() {
   return session({

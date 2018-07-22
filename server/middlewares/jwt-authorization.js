@@ -2,6 +2,8 @@ import loopback from 'loopback';
 import jwt from 'jsonwebtoken';
 import { isBefore } from 'date-fns';
 
+import { jwt as jwtConfig } from '../../config/secrets';
+
 import { wrapHandledError } from '../utils/create-handled-error';
 
 export default () => function authorizeByJWT(req, res, next) {
@@ -22,7 +24,7 @@ export default () => function authorizeByJWT(req, res, next) {
     }
     let token;
     try {
-      token = jwt.verify(cookie, process.env.JWT_SECRET);
+      token = jwt.verify(cookie, jwtConfig.secret);
     } catch (err) {
       throw wrapHandledError(
         new Error(err.message),

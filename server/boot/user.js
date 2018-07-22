@@ -2,6 +2,8 @@ import dedent from 'dedent';
 import debugFactory from 'debug';
 import { curry } from 'lodash';
 
+import { cookie } from '../../config/secrets';
+
 import {
   ifNoUser401,
   ifNoUserRedirectTo,
@@ -121,7 +123,7 @@ module.exports = function(app) {
       req.flash('success', 'You have successfully deleted your account.');
       const config = {
         signed: !!req.signedCookies,
-        domain: process.env.COOKIE_DOMAIN || 'localhost'
+        domain: cookie.domain || 'localhost'
       };
       res.clearCookie('jwt_access_token', config);
       res.clearCookie('access_token', config);
