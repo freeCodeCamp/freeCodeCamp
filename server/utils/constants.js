@@ -59,6 +59,7 @@ export const blacklistedUsernames = [
   'signout',
   'sitemap.xml',
   'software-resources-for-nonprofits',
+  'status',
   'stories',
   'terms',
   'the-fastest-web-page-on-the-internet',
