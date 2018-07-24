@@ -37,7 +37,10 @@ function createQuestionEpic(action$, { getState }, { window }) {
     tap(() => {
       const state = getState();
       const files = challengeFilesSelector(state);
-      const { title: challengeTitle } = challengeMetaSelector(state);
+      const {
+        title: challengeTitle,
+        challengeType: challengeType
+      } = challengeMetaSelector(state);
       const { navigator: { userAgent }, location: { href } } = window;
       const textMessage = [
         "**Tell us what's happening:**\n\n\n\n",
@@ -50,10 +53,11 @@ function createQuestionEpic(action$, { getState }, { window }) {
         '**Link to the challenge:**\n',
         href
       ].join('');
-
+      const categories = ['HTML-CSS', 'JavaScript'];
       window.open(
         'https://forum.freecodecamp.org/new-topic' +
-          '?category=help' +
+          '?category=' +
+          window.encodeURIComponent(categories[challengeType] || 'Help') +
           '&title=' +
           window.encodeURIComponent(challengeTitle) +
           '&body=' +
