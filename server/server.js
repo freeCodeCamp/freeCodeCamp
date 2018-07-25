@@ -1,5 +1,4 @@
 require('dotenv').load();
-require('./utils/webpack-code-split-polyfill');
 
 const _ = require('lodash');
 const Rx = require('rx');
