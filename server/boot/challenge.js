@@ -19,7 +19,7 @@ import { fixCompletedChallengeItem } from '../../common/utils';
 
 const log = debug('fcc:boot:challenges');
 
-const learnURL = 'https://learn.freecodecamp.org';
+const learnURL = process.env.LEARN_URL || 'https://learn.freecodecamp.org';
 
 const jsProjects = [
 'aaa48de84e1ecc7c742e1124',
