@@ -135,7 +135,7 @@
       "title":
         "Use model.findOne() to Return a Single Matching Document from Your Database",
       "description": [
-        "Model.findOne() behaves like .find(), but it returns only one document (not an array), even if there are items. It is especially useful when searching by properties that you have declared as unique. Find just one person which has a certain food in her favorites, using Model.findOne() -> Person. Use the function argument food as search key."
+        "Model.findOne() behaves like .find(), but it returns only one document (not an array), even if there are multiple items. It is especially useful when searching by properties that you have declared as unique. Find just one person which has a certain food in her favorites, using Model.findOne() -> Person. Use the function argument food as search key."
       ],
       "tests": [
         {
