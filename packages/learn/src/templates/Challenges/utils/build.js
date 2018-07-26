@@ -19,7 +19,7 @@ import { createFileStream, pipe } from './polyvinyl';
 const jQuery = {
   src: 'https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js'
 };
-const frameRunner = {
+export const frameRunner = {
   src: '/js/frame-runner.js',
   crossDomain: false,
   cacheBreaker: true

@@ -5,10 +5,17 @@ import { createTypes } from '../../../utils/stateManagement';
 import { types as challenge } from '../../templates/Challenges/redux';
 import fetchUserEpic from './fetch-user-epic';
 import hardGoToEpic from './hard-go-to-epic';
+import failedUpdatesEpic from './failed-updates-epic';
+import updateCompleteEpic from './update-complete-epic';
 
 const ns = 'app';
 
-export const epics = [fetchUserEpic, hardGoToEpic];
+export const epics = [
+  fetchUserEpic,
+  hardGoToEpic,
+  failedUpdatesEpic,
+  updateCompleteEpic
+];
 
 export const types = createTypes(
   [
@@ -19,7 +26,12 @@ export const types = createTypes(
     'hardGoTo',
     'updateUserSignedIn',
     'openDonationModal',
-    'closeDonationModal'
+    'closeDonationModal',
+
+    'onlineStatusChange',
+
+    'updateComplete',
+    'updateFailed'
   ],
   ns
 );
@@ -30,7 +42,8 @@ const initialState = {
   showLoading: true,
   isSignedIn: false,
   user: {},
-  showDonationModal: false
+  showDonationModal: false,
+  isOnline: true
 };
 
 export const fetchUser = createAction(types.fetchUser);
@@ -45,9 +58,17 @@ export const closeDonationModal = createAction(types.closeDonationModal);
 
 export const updateUserSignedIn = createAction(types.updateUserSignedIn);
 
+export const onlineStatusChange = createAction(types.onlineStatusChange);
+
+export const updateComplete = createAction(types.updateComplete);
+export const updateFailed = createAction(types.updateFailed);
+
 export const completionCountSelector = state => state[ns].completionCount;
 export const isDonationModalOpenSelector = state => state[ns].showDonationModal;
 export const isSignedInSelector = state => state[ns].isSignedIn;
+
+export const isOnlineSelector = state => state[ns].isOnline;
+
 export const userSelector = state => state[ns].user || {};
 export const userStateLoadingSelector = state => state[ns].showLoading;
 export const completedChallengesSelector = state =>
@@ -100,6 +121,12 @@ export const reducer = handleActions(
       ...state,
       isSignedIn: payload
     }),
+
+    [types.onlineStatusChange]: (state, { payload: isOnline }) => ({
+      ...state,
+      isOnline
+    }),
+
     [challenge.submitComplete]: (state, { payload: { id } }) => ({
       ...state,
       completionCount: state.completionCount + 1,

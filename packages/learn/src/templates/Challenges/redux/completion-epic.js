@@ -1,9 +1,9 @@
 import { of } from 'rxjs/observable/of';
+import { _if } from 'rxjs/observable/if';
 import { empty } from 'rxjs/observable/empty';
 import {
   switchMap,
   retry,
-  map,
   catchError,
   concat,
   filter,
@@ -11,8 +11,6 @@ import {
 } from 'rxjs/operators';
 import { ofType } from 'redux-observable';
 import { navigate } from 'gatsby';
-
-import { _csrf as csrfToken } from '../../../redux/cookieValues';
 
 import {
   backendFormValuesSelector,
@@ -29,26 +27,34 @@ import {
   userSelector,
   isSignedInSelector,
   openDonationModal,
-  shouldShowDonationSelector
+  shouldShowDonationSelector,
+  updateComplete,
+  updateFailed,
+  isOnlineSelector
 } from '../../../redux/app';
 
-import { postJSON$ } from '../utils/ajax-stream';
+import postUpdate$ from '../utils/postUpdate$';
 import { challengeTypes, submitTypes } from '../../../../utils/challengeTypes';
 
-function postChallenge(url, username, _csrf, challengeInfo) {
-  const body = { ...challengeInfo, _csrf };
-  const saveChallenge = postJSON$(url, body).pipe(
+function postChallenge(update, username) {
+  const saveChallenge = postUpdate$(update).pipe(
     retry(3),
-    map(({ points }) =>
-      submitComplete({
-        username,
-        points,
-        ...challengeInfo
-      })
+    switchMap(({ points }) =>
+      of(
+        submitComplete({
+          username,
+          points,
+          ...update.payload
+        }),
+        updateComplete()
+      )
     ),
-    catchError(err => {
-      console.error(err);
-      return of({ type: 'here is an error' });
+    catchError(({ _body, _endpoint }) => {
+      let payload = _body;
+      if (typeof _body === 'string') {
+        payload = JSON.parse(_body);
+      }
+      return of(updateFailed({ endpoint: _endpoint, payload }));
     })
   );
   return saveChallenge;
@@ -65,14 +71,18 @@ function submitModern(type, state) {
       const { id } = challengeMetaSelector(state);
       const files = challengeFilesSelector(state);
       const { username } = userSelector(state);
-      return postChallenge(
-        '/external/modern-challenge-completed',
-        username,
-        csrfToken,
-        {
-          id,
-          files
-        }
+      const challengeInfo = {
+        id,
+        files
+      };
+      const update = {
+        endpoint: '/external/modern-challenge-completed',
+        payload: challengeInfo
+      };
+      return _if(
+        () => isOnlineSelector(state),
+        postChallenge(update, username),
+        of(updateFailed(update))
       );
     }
   }
@@ -91,13 +101,17 @@ function submitProject(type, state) {
   if (challengeType === challengeTypes.backEndProject) {
     challengeInfo.githubLink = githubLink;
   }
-  return postChallenge(
-    '/external/project-completed',
-    username,
-    csrfToken,
-    challengeInfo
-  ).pipe(
-    concat(of(updateProjectFormValues({})))
+
+  const update = {
+    endpoint: '/external/project-completed',
+    payload: challengeInfo
+  };
+  return _if(
+    () => isOnlineSelector(state),
+    postChallenge(update, username).pipe(
+      concat(of(updateProjectFormValues({})))
+    ),
+    of(updateFailed(update))
   );
 }
 
@@ -111,11 +125,15 @@ function submitBackendChallenge(type, state) {
         state
       );
       const challengeInfo = { id, solution };
-      return postChallenge(
-        '/external/backend-challenge-completed',
-        username,
-        csrfToken,
-        challengeInfo
+
+      const update = {
+        endpoint: '/external/backend-challenge-completed',
+        payload: challengeInfo
+      };
+      return _if(
+        () => isOnlineSelector(state),
+        postChallenge(update, username),
+        of(updateFailed(update))
       );
     }
   }

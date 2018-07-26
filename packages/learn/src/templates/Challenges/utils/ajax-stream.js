@@ -93,15 +93,24 @@ function normalizeAjaxSuccessEvent(e, xhr, settings) {
   };
 }
 
-function normalizeAjaxErrorEvent(e, xhr, type) {
-  return {
+function createNormalizeAjaxErrorEvent(options) {
+  let _body = {};
+  let _endpoint = '';
+  if (typeof options === 'string') {
+    _endpoint = options;
+  } else {
+    _body = options.body;
+    _endpoint = options.url;
+  }
+  return (e, xhr, type) => ({
+    _body,
+    _endpoint,
     type: type,
     status: xhr.status,
     xhr: xhr,
     originalEvent: e
-  };
+  });
 }
-
 /*
  * Creates an observable for an Ajax request with either a settings object
  * with url, headers, etc or a string for a URL.
@@ -131,7 +140,7 @@ export function ajax$(options) {
     createXHR: function() {
       return this.crossDomain ? getCORSRequest() : getXMLHttpRequest();
     },
-    normalizeError: normalizeAjaxErrorEvent,
+    normalizeError: createNormalizeAjaxErrorEvent(options),
     normalizeSuccess: normalizeAjaxSuccessEvent
   };
 
@@ -144,9 +153,7 @@ export function ajax$(options) {
       }
     }
   }
-
-  var normalizeError = settings.normalizeError;
-  var normalizeSuccess = settings.normalizeSuccess;
+  const { normalizeError, normalizeSuccess } = settings;
 
   if (!settings.crossDomain && !settings.headers['X-Requested-With']) {
     settings.headers['X-Requested-With'] = 'XMLHttpRequest';
@@ -157,6 +164,12 @@ export function ajax$(options) {
     var isDone = false;
     var xhr;
 
+    const throwWithMeta = err => {
+      err._body = options.body || {};
+      err._endpoint = options.url;
+      observer.error(err);
+    };
+
     var processResponse = function(xhr, e) {
       var status = xhr.status === 1223 ? 204 : xhr.status;
       if ((status >= 200 && status <= 300) || status === 0 || status === '') {
@@ -164,7 +177,7 @@ export function ajax$(options) {
           observer.next(normalizeSuccess(e, xhr, settings));
           observer.complete();
         } catch (err) {
-          observer.error(err);
+          throwWithMeta(err);
         }
       } else {
         observer.error(normalizeError(e, xhr, 'error'));
@@ -175,7 +188,7 @@ export function ajax$(options) {
     try {
       xhr = settings.createXHR();
     } catch (err) {
-      observer.error(err);
+      throwWithMeta(err);
     }
 
     try {
@@ -239,7 +252,7 @@ export function ajax$(options) {
       debug('ajax$ sending content', settings.hasContent && settings.body);
       xhr.send((settings.hasContent && settings.body) || null);
     } catch (err) {
-      observer.error(err);
+      throwWithMeta(err);
     }
 
     return function() {
