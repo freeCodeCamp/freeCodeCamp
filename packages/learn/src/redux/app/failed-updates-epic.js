@@ -14,6 +14,7 @@ import uuid from 'uuid/v4';
 
 import { types, onlineStatusChange, isOnlineSelector } from './';
 import postUpdate$ from '../../templates/Challenges/utils/postUpdate$';
+import { isGoodXHRStatus } from '../../templates/Challenges/utils';
 
 const key = 'fcc-failed-updates';
 
@@ -24,10 +25,12 @@ function delay(time = 0, fn) {
 function failedUpdateEpic(action$, { getState }) {
   const storeUpdates = action$.pipe(
     ofType(types.updateFailed),
-    tap(({ payload }) => {
-      const failures = store.get(key) || [];
-      payload.id = uuid();
-      store.set(key, [...failures, payload]);
+    tap(({ payload = {} }) => {
+      if ('endpoint' in payload && 'payload' in payload) {
+        const failures = store.get(key) || [];
+        payload.id = uuid();
+        store.set(key, [...failures, payload]);
+      }
     }),
     map(() => onlineStatusChange(false))
   );
@@ -46,7 +49,11 @@ function failedUpdateEpic(action$, { getState }) {
           postUpdate$(update)
             .pipe(
               switchMap(response => {
-                if (response && response.message) {
+                if (
+                  response &&
+                  (response.message || isGoodXHRStatus(response.status))
+                ) {
+                  console.info(`${update.id} succeeded`);
                   // the request completed successfully
                   const failures = store.get(key) || [];
                   const newFailures = failures.filter(x => x.id !== update.id);
