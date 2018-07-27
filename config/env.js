@@ -1,3 +1,3 @@
 module.exports = {
-  homeLocation: process.env.HOME_URL || 'localhost:4545'
+  homeLocation: process.env.HOME_URL || 'http://localhost:4545'
 };
