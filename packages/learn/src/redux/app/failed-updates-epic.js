@@ -41,10 +41,19 @@ function failedUpdateEpic(action$, { getState }) {
     filter(() => isOnlineSelector(getState())),
     tap(() => {
       const failures = store.get(key) || [];
-      let delayTime = 0;
-      const batch = failures.map(update => {
-        delayTime += 300;
+      let delayTime = 100;
+      const batch = failures.map((update, i) => {
         // we stagger the updates here so we don't hammer the server
+        // *********************************************************
+        // progressivly increase additional delay by the amount of updates
+        // 1st: 100ms delay
+        // 2nd: 200ms delay
+        // 3rd: 400ms delay
+        // 4th: 700ms delay
+        // 5th: 1100ms delay
+        // 6th: 1600ms delay
+        // and so-on
+        delayTime += 100 * i;
         return delay(delayTime, () =>
           postUpdate$(update)
             .pipe(
