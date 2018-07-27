@@ -20,7 +20,7 @@ export function getHost() {
   if (isDev) {
     return process.env.HOST || 'localhost';
   }
-  return isBeta ? 'beta.freecodecamp.org' : 'freecodecamp.org';
+  return isBeta ? 'beta.freecodecamp.org' : 'www.freecodecamp.org';
 }
 
 export function getServerFullURL() {
