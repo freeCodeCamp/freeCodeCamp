@@ -20,6 +20,8 @@ import debugFactory from 'debug';
 import { Observable, noop } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { isGoodXHRStatus } from './';
+
 const debug = debugFactory('fcc:ajax$');
 const root = typeof window !== 'undefined' ? window : {};
 
@@ -67,14 +69,19 @@ function getCORSRequest() {
 
 function parseXhrResponse(responseType, xhr) {
   switch (responseType) {
-    case 'json':
-      if ('response' in xhr) {
-        return xhr.responseType
-          ? xhr.response
-          : JSON.parse(xhr.response || xhr.responseText || 'null');
+    case 'json': {
+      if (isGoodXHRStatus(xhr.status)) {
+        if ('response' in xhr) {
+          return xhr.responseType
+            ? xhr.response
+            : JSON.parse(xhr.response || xhr.responseText || 'null');
+        } else {
+          return JSON.parse(xhr.responseText || 'null');
+        }
       } else {
-        return JSON.parse(xhr.responseText || 'null');
+        return null;
       }
+    }
     case 'xml':
       return xhr.responseXML;
     case 'text':
@@ -293,7 +300,7 @@ export function postJSON$(url, body) {
       Accept: 'application/json'
     },
     normalizeError: (e, xhr) => parseXhrResponse('json', xhr)
-  }).pipe(map(({ response }) => response));
+  });
 }
 
 // Creates an observable sequence from an Ajax GET Request with the body.
@@ -318,5 +325,5 @@ export function getJSON$(url) {
       Accept: 'application/json'
     },
     normalizeError: (e, xhr) => parseXhrResponse('json', xhr)
-  }).map(({ response }) => response);
+  }).pipe(map(({ response }) => response));
 }

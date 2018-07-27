@@ -1,5 +1,4 @@
 import { of } from 'rxjs/observable/of';
-import { _if } from 'rxjs/observable/if';
 import { empty } from 'rxjs/observable/empty';
 import {
   switchMap,
@@ -29,8 +28,7 @@ import {
   openDonationModal,
   shouldShowDonationSelector,
   updateComplete,
-  updateFailed,
-  isOnlineSelector
+  updateFailed
 } from '../../../redux/app';
 
 import postUpdate$ from '../utils/postUpdate$';
@@ -49,13 +47,7 @@ function postChallenge(update, username) {
         updateComplete()
       )
     ),
-    catchError(({ _body, _endpoint }) => {
-      let payload = _body;
-      if (typeof _body === 'string') {
-        payload = JSON.parse(_body);
-      }
-      return of(updateFailed({ endpoint: _endpoint, payload }));
-    })
+    catchError(() => of(updateFailed(update)))
   );
   return saveChallenge;
 }
@@ -79,11 +71,7 @@ function submitModern(type, state) {
         endpoint: '/external/modern-challenge-completed',
         payload: challengeInfo
       };
-      return _if(
-        () => isOnlineSelector(state),
-        postChallenge(update, username),
-        of(updateFailed(update))
-      );
+      return postChallenge(update, username);
     }
   }
   return empty();
@@ -106,12 +94,8 @@ function submitProject(type, state) {
     endpoint: '/external/project-completed',
     payload: challengeInfo
   };
-  return _if(
-    () => isOnlineSelector(state),
-    postChallenge(update, username).pipe(
-      concat(of(updateProjectFormValues({})))
-    ),
-    of(updateFailed(update))
+  return postChallenge(update, username).pipe(
+    concat(of(updateProjectFormValues({})))
   );
 }
 
@@ -130,11 +114,7 @@ function submitBackendChallenge(type, state) {
         endpoint: '/external/backend-challenge-completed',
         payload: challengeInfo
       };
-      return _if(
-        () => isOnlineSelector(state),
-        postChallenge(update, username),
-        of(updateFailed(update))
-      );
+      return postChallenge(update, username);
     }
   }
   return empty();

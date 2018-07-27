@@ -1,4 +1,3 @@
-import { _if } from 'rxjs/observable/if';
 import { of } from 'rxjs/observable/of';
 import { ofType } from 'redux-observable';
 
@@ -8,8 +7,7 @@ import {
   isSignedInSelector,
   currentChallengeIdSelector,
   updateComplete,
-  updateFailed,
-  isOnlineSelector
+  updateFailed
 } from '../../../redux/app';
 import postUpdate$ from '../utils/postUpdate$';
 
@@ -25,18 +23,10 @@ function currentChallengeEpic(action$, { getState }) {
           currentChallengeId: payload
         }
       };
-      return _if(
-        () => isOnlineSelector(getState()),
-        postUpdate$(update).pipe(mapTo(updateComplete())),
-        of(updateFailed(update))
-      );
-    }),
-    catchError(({ _body, _endpoint }) => {
-      let payload = _body;
-      if (typeof _body === 'string') {
-        payload = JSON.parse(_body);
-      }
-      return of(updateFailed({ endpoint: _endpoint, payload }));
+      return postUpdate$(update).pipe(
+          mapTo(updateComplete()),
+          catchError(() => of(updateFailed(update)))
+        );
     })
   );
 }
