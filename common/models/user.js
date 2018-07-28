@@ -18,6 +18,7 @@ import { ObjectId } from 'mongodb';
 import jwt from 'jsonwebtoken';
 
 import { cookie, jwt as jwtConfig } from '../../config/secrets';
+import { homeDomain } from '../../config/env';
 
 import { fixCompletedChallengeItem } from '../utils';
 import { themes } from '../utils/themes';
@@ -582,15 +583,15 @@ module.exports = function(User) {
     })
       .flatMap(token => {
         let renderAuthEmail = renderSignInEmail;
-        let subject = 'Your sign in link for freeCodeCamp.org';
+        let subject = `Your sign in link for ${homeDomain}`;
         if (isSignUp) {
           renderAuthEmail = renderSignUpEmail;
-          subject = 'Your sign in link for your new freeCodeCamp.org account';
+          subject = `Your sign in link for your new ${homeDomain} account`;
         }
         if (newEmail) {
           renderAuthEmail = renderEmailChangeEmail;
           subject = dedent`
-            Please confirm your updated email address for freeCodeCamp.org
+            Please confirm your updated email address for ${homeDomain}
           `;
         }
         const { id: loginToken, created: emailAuthLinkTTL } = token;

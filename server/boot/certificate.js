@@ -7,12 +7,12 @@ import { Observable } from 'rx';
 import debug from 'debug';
 import { isEmail } from 'validator';
 
+import { supportEmail } from '../../config/env';
+
 import {
   ifNoUser401
 } from '../utils/middleware';
-
 import { observeQuery } from '../utils/rx';
-
 import {
   legacyFrontEndChallengeId,
   legacyBackEndChallengeId,
@@ -122,6 +122,7 @@ function sendCertifiedEmail(
   send$
 ) {
   if (
+    !email ||
     !isEmail(email) ||
     !isRespWebDesignCert ||
     !isFrontEndLibsCert ||
@@ -135,7 +136,7 @@ function sendCertifiedEmail(
   const notifyUser = {
     type: 'email',
     to: email,
-    from: 'team@freeCodeCamp.org',
+    from: supportEmail,
     subject: dedent`
       Congratulations on completing all of the
       freeCodeCamp certifications!

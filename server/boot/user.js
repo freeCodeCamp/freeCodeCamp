@@ -3,6 +3,7 @@ import debugFactory from 'debug';
 import { curry } from 'lodash';
 
 import { cookie } from '../../config/secrets';
+import { supportEmail } from '../../config/env';
 
 import {
   ifNoUser401,
@@ -187,9 +188,9 @@ module.exports = function(app) {
 
     return Email.send$({
       type: 'email',
-      to: 'team@freecodecamp.org',
+      to: supportEmail,
       cc: user.email,
-      from: 'team@freecodecamp.org',
+      from: supportEmail,
       subject: 'Abuse Report : Reporting ' + username + '\'s profile.',
       text: dedent(`
         Hello Team,\n

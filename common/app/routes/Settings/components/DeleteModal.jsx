@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Button } from 'react-bootstrap';
 
+import { supportEmail } from '../../../../../config/env';
+
 const propTypes = {
   delete: PropTypes.func.isRequired,
   onHide: PropTypes.func.isRequired,
@@ -32,13 +34,15 @@ function DeleteModal(props) {
           We won't be able to recover any of it for you later,
           even if you change your mind.
         </p>
-        <p>
-          If there's something we could do better, send us an email instead and
-          we'll do our best: &thinsp;
-          <a href='mailto:team@freecodecamp.org' title='team@freecodecamp.org'>
-            team@freecodecamp.org
-          </a>
-        </p>
+        {supportEmail ? (
+          <p>
+            If there's something we could do better, send us an email instead
+            and we'll do our best:{' '}
+            <a href={`mailto:${supportEmail}`} title={supportEmail}>
+              {supportEmail}
+            </a>
+          </p>
+        ) : null}
         <hr />
         <Button
           block={ true }
