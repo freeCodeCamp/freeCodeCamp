@@ -8,19 +8,13 @@ header {
 #top-nav {
   background: #006400;
   margin-bottom: 0.45rem;
-  height: 38px;
+  height: 36px;
   margin-bottom: 0px;
   border-radius: 0;
   border: none;
   display: flex;
   justify-content: space-between;
   padding: 0 30px 0 15px;
-}
-
-@media screen, (max-width: 630px) {
-  #top-nav {
-    padding: 0;
-  }
 }
 
 #top-nav .home-link {
@@ -31,12 +25,12 @@ header {
 #top-nav img {
   max-height: 25px;
   min-width: 35px;
-  margin: 0 5px 0 10px;
+  margin: 0 5px 0 15px;
 }
 
 #top-right-nav {
   display: flex;
-  width: 270px;
+  width: auto;
   margin: 0;
   list-style: none;
   justify-content: space-around;
@@ -62,18 +56,34 @@ header {
   justify-content: center;
   align-items: center;
   height: 100%;
-  margin: 0 3px;
+  margin: 0;
+}
+
+#top-right-nav > li > a {
+  padding: 10px 15px;
+}
+
+.sign-in-btn {
+  padding: 10px 0 10px 15px;
 }
 
 #top-right-nav li > a, #top-right-nav li > span {
-  color:#fff;
-  font-size: 17px;
+  color:#eee;
+  font-size: 15px;
   font-weight: 500;
 }
 
 #top-right-nav li > a:hover, #top-right-nav li > a:focus {
   text-decoration: none;
   font-weight: 500;
+}
+
+.nav-btn:hover {
+  background-color: #eee;
+}
+
+#top-right-nav .nav-btn a:hover {
+  color: darkgreen;
 }
 
 .user-state-spinner {
@@ -86,8 +96,12 @@ header {
 
 /* Search bar */
 .fcc_searchBar {
-  flex-grow: 0.8;
-  padding: 2px 10px 0;
+  flex-grow: 0.4;
+  padding: 3px 10px 0;
+  margin-right: auto;
+}
+#fcc_instantsearch {
+  max-height: 30px;
 }
 .ais-SearchBox-form {
   margin-bottom: 0;

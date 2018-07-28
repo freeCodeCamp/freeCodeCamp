@@ -16,15 +16,15 @@ function Header() {
         </a>
         <FCCSearch />
         <ul id='top-right-nav'>
-          <li>
+          <li className='nav-btn'>
             <Link to='/'>Curriculum</Link>
           </li>
-          <li>
+          <li className='nav-btn'>
             <a href='https://forum.freecodecamp.org' target='_blank'>
               Forum
             </a>
           </li>
-          <li>
+          <li className='sign-in-btn'>
             <UserState />
           </li>
         </ul>
