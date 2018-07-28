@@ -1195,6 +1195,11 @@
           "text": "<code>Vegetable</code> can be instantiated.",
           "testString":
             "assert(() => {const a = new Vegetable(\"apple\"); return typeof a === 'object';},'<code>Vegetable</code> can be instantiated.');"
+        },
+        {
+          "text": "<code>carrot.name</code> should return <code>carrot</code>.",
+          "testString":
+            "assert(carrot.name=='carrot','<code>carrot.name</code> should return <code>carrot</code>.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
