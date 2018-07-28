@@ -4,6 +4,7 @@ const EXCLUDED_PATHS = [
   '/signout',
   '/accept-privacy-terms',
   '/update-email',
+  '/confirm-email',
   '/passwordless-change',
   '/external/services/user'
 ];
