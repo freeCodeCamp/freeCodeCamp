@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button } from 'react-bootstrap';
+
 import ns from './ns.json';
 import { FullWidthRow, Spacer, Loader } from '../../helperComponents';
 import AboutSettings from './components/About-Settings.jsx';
