@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/freeCodeCamp/curriculum/issues"
   },
-  "version": "3.1.0",
+  "version": "3.1.1",
   "main": "dist/index.js",
   "scripts": {
     "build": "npm run build:js && npm run build:json",

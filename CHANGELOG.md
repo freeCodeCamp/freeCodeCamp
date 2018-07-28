@@ -1,3 +1,10 @@
+## [3.1.1](https://github.com/freeCodeCamp/curriculum/compare/v3.1.0...v3.1.1) (2018-07-28)
+
+
+### Bug Fixes
+
+* **challenges:** improve test for mongodb and mongoose ([8ae372a](https://github.com/freeCodeCamp/curriculum/commit/8ae372a))
+
 # [3.1.0](https://github.com/freeCodeCamp/curriculum/compare/v3.0.1...v3.1.0) (2018-07-27)
 
 
