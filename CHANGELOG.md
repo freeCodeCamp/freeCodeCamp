@@ -45,7 +45,7 @@
 * **challenges:** improve template literal challenge instructions ([99f4b9f](https://github.com/freeCodeCamp/curriculum/commit/99f4b9f))
 * **challenges:** inline style semicolon consistency ([3557016](https://github.com/freeCodeCamp/curriculum/commit/3557016)), closes [#17909](https://github.com/freeCodeCamp/curriculum/issues/17909)
 * **challenges:** minor css grid typo ([f147430](https://github.com/freeCodeCamp/curriculum/commit/f147430))
-* **challenges:** moved the <em> tag inside the <p> tag ([128794d](https://github.com/freeCodeCamp/curriculum/commit/128794d))
+* **challenges:** moved the `<em>` tag inside the `<p>` tag ([128794d](https://github.com/freeCodeCamp/curriculum/commit/128794d))
 * **challenges:** remove obsolete mention of beta and update link [#144](https://github.com/freeCodeCamp/curriculum/issues/144) ([59d98b8](https://github.com/freeCodeCamp/curriculum/commit/59d98b8))
 * **challenges:** replace assertions in authentication with socket.io ([20e3617](https://github.com/freeCodeCamp/curriculum/commit/20e3617)), closes [#82](https://github.com/freeCodeCamp/curriculum/issues/82)
 * **challenges:** typo and grammatical error ([c1160c5](https://github.com/freeCodeCamp/curriculum/commit/c1160c5))
@@ -93,11 +93,6 @@
 * **challenges:** Typo errors ([#39](https://github.com/freeCodeCamp/curriculum/issues/39)) ([0c0702d](https://github.com/freeCodeCamp/curriculum/commit/0c0702d))
 * **challenges:** update regular expression that fails ([#56](https://github.com/freeCodeCamp/curriculum/issues/56)) ([9fa5907](https://github.com/freeCodeCamp/curriculum/commit/9fa5907)), closes [#55](https://github.com/freeCodeCamp/curriculum/issues/55)
 
-
-### BREAKING CHANGES
-
-* **challenges:** None
-
 # [2.0.0](https://github.com/freeCodeCamp/curriculum/compare/v1.2.1...v2.0.0) (2018-06-24)
 
 
@@ -112,13 +107,7 @@
 
 * **interview-prep:** Porting Rosetta problems ([#17537](https://github.com/freeCodeCamp/curriculum/issues/17537)) ([21930a8](https://github.com/freeCodeCamp/curriculum/commit/21930a8))
 
-
-### BREAKING CHANGES
-
-* **challenges:** none
-
 ## [1.2.1](https://github.com/freeCodeCamp/curriculum/compare/v1.2.0...v1.2.1) (2018-06-21)
-
 
 ### Bug Fixes
 
