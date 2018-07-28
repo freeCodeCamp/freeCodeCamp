@@ -210,6 +210,10 @@ module.exports = function enableAuthentication(app) {
 
   router.get(
     '/passwordless-change',
+    (req, res) => res.redirect(301, '/confirm-email')
+  );
+  router.get(
+    '/confirm-email',
     ifNoUserRedirectHome,
     passwordlessGetValidators,
     getPasswordlessAuth
