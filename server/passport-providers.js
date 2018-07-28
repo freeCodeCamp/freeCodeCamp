@@ -6,8 +6,8 @@ const {
   domain
 } = auth0;
 
-const successRedirect = '/';
-const failureRedirect = '/';
+const successRedirect = '/welcome';
+const failureRedirect = '/signin';
 
 export default {
   local: {

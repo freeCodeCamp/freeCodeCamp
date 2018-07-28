@@ -194,7 +194,7 @@ module.exports = function enableAuthentication(app) {
           'success',
           'Success! You have signed in to your account. Happy Coding!'
         );
-        return res.redirect('/');
+        return res.redirect('/welcome');
       })
       .subscribe(
         () => {},
