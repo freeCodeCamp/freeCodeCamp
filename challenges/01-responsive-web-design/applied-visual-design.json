@@ -561,7 +561,7 @@
           "text":
             "The <code>hr</code> tag should come between the title and the paragraph.",
           "testString":
-            "assert(code.match(/<\\/h4>\\s*?<hr(>|\\s*?\\/>)\\s*?<em>/gi), 'The <code>hr</code> tag should come between the title and the paragraph.');"
+            "assert(code.match(/<\\/h4>\\s*?<hr(>|\\s*?\\/>)\\s*?<p>/gi), 'The <code>hr</code> tag should come between the title and the paragraph.');"
         }
       ],
       "solutions": [],
