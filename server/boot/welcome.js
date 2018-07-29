@@ -5,6 +5,7 @@ import { randomQuote } from '../../common/app/utils/get-words';
 import { cachedMap } from '../utils/map';
 
 export default function bootWelcome(app, done) {
+  const router = app.loopback.Router();
   const { About } = app.models;
   let challengeCount = 0;
 
@@ -17,7 +18,10 @@ export default function bootWelcome(app, done) {
         () => {},
         err => {throw new Error(err);},
         () => {
-          app.get('/welcome', addDefaultImage, welcome);
+          router.get('/welcome', addDefaultImage, welcome);
+
+          app.use('/external', router);
+          app.use(router);
           done();
         }
       );
