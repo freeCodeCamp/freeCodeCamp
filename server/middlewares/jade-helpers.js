@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import manifest from '../rev-manifest';
 
+import { homeLocation } from '../../config/env';
+
 let chunkManifest;
 try {
   chunkManifest = require('../manifests/chunk-manifest.json');
@@ -48,7 +50,8 @@ export default function jadeHelpers() {
         theme: req.user &&
           req.user.theme ||
           req.cookies.theme ||
-          'default'
+          'default',
+        homeLocation
       }
     );
     if (req.csrfToken) {
