@@ -43,7 +43,10 @@ module.exports = function enableAuthentication(app) {
   router.get('/signup', (req, res) => res.redirect(301, signInLocation));
   router.get('/email-signin', (req, res) => res.redirect(301, signInLocation));
   router.get('/login', (req, res) => res.redirect(301, signInLocation));
-  router.get('/deprecated-signin', (req, res) => res.redirect(301, signInLocation));
+  router.get(
+    '/deprecated-signin',
+    (req, res) => res.redirect(301, signInLocation)
+  );
 
   router.get('/logout', (req, res) => res.redirect(301, signOutLocation));
 
