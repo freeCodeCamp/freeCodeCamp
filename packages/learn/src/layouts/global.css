@@ -698,10 +698,12 @@ code[class*="language-"],pre[class*="language-"] {
   color: #004a00;
 }
 .night a,
-.night .input-group-addon,
 .night .challenge-instructions a,
 .night .challenge-instructions #MDN-links a {
-  color: #f8f8f8;
+  color: #02a902;
+}
+.night .input-group-addon {
+    color: #f8f8f8;
 }
 .night .intro-toc a {
   color: #006400;
@@ -765,10 +767,10 @@ code[class*="language-"],pre[class*="language-"] {
   color: #fff;
 }
 
-.night .test-result:nth-child(odd) { 
-  color: #fff; 
-  background: #2A2A2A; 
-} 
+.night .test-result:nth-child(odd) {
+  color: #fff;
+  background: #2A2A2A;
+}
 
 .night .challenge-preview {
   background: #fff;

@@ -37,6 +37,10 @@ li.open > .map-title svg {
   margin-bottom: 0.25rem;
 }
 
+.map-challenge-title a  {
+    color: #f8f8f8;
+}
+
 .map-challenge-title-completed {
   opacity: 0.5;
 }
