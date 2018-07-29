@@ -109,13 +109,14 @@ function buildUserUpdate(
   };
 }
 
-export default function(app) {
+export default async function(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
   const map = cachedMap(app.models);
-  const redirectToCurrentChallenge = createRedirectToCurrentChallenge(map);
-  const redirectToLearn = createRedirectToLearn();
+  const redirectToCurrentChallenge =
+    await createRedirectToCurrentChallenge(map);
+  const redirectToLearn = createRedirectToLearn(_pathMigrations);
 
   api.post(
     '/modern-challenge-completed',
@@ -382,6 +383,7 @@ export default function(app) {
       })
       .subscribe(() => {}, next);
   }
+  done();
 }
 
 export async function createRedirectToCurrentChallenge(map) {
