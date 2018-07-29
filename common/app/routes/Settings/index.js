@@ -1,6 +1,6 @@
 import { types } from './redux';
 
-export { default } from './Show.jsx';
+export { default } from './ShowSettings.jsx';
 
 export const routes = {
   [types.onRouteSettings]: '/settings',

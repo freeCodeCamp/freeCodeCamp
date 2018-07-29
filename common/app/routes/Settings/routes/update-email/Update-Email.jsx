@@ -27,26 +27,32 @@ const fields = [
 ];
 const validateFields = ({ email, duplicate }) => {
   const errors = {};
+
   if (!isEmail('' + email)) {
     errors.email = 'This email is invalid.';
   }
+
   if (duplicate && email !== duplicate) {
     errors.duplicate = 'This email does not match the one above.';
   }
+
   return errors;
 };
+
 const mapStateToProps = state => {
   const {
     app: { user: username },
     entities: { user: userMap }
   } = state;
   const { email, emailVerified } = userMap[username] || {};
+
   return {
     initialValues: { email },
     isEmailThere: !!email,
     isVerified: !!emailVerified
   };
 };
+
 const propTypes = {
   fields: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,
@@ -61,6 +67,7 @@ export class UpdateEmail extends React.Component {
     super(...props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.handleSubmit(({ email }) => this.props.updateMyEmail(email))(e);

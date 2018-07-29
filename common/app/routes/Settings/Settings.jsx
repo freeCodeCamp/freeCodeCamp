@@ -2,10 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-
 import { Button } from 'react-bootstrap';
 
-import ns from './ns.json';
 import { FullWidthRow, Spacer, Loader } from '../../helperComponents';
 import { Link } from '../../Router';
 import AboutSettings from './components/About-Settings.jsx';
@@ -55,7 +53,6 @@ const propTypes = {
 };
 
 export class Settings extends React.Component {
-
   componentWillMount() {
     this.props.updateTitle('Settings');
   }
@@ -75,7 +72,7 @@ export class Settings extends React.Component {
       return <Loader />;
     }
     return (
-      <div className={ `${ns}-container` }>
+      <div>
         <FullWidthRow>
           <Link to={ `/${username}` }>
             <Button
@@ -98,7 +95,6 @@ export class Settings extends React.Component {
           </Button>
         </FullWidthRow>
         <h1 className='text-center'>{ `Account Settings for ${username}` }</h1>
-        <div className='offset-negative-row'>
         <AboutSettings />
         <Spacer />
         <PrivacySettings />
@@ -114,7 +110,6 @@ export class Settings extends React.Component {
         <CertificationSettings />
         <Spacer />
         <DangerZone />
-        </div>
       </div>
     );
   }
