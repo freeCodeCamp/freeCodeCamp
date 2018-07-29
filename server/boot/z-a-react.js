@@ -29,16 +29,6 @@ function makeAbsolutePath(path = '') {
 const log = debug('fcc:react-server');
 const isDev = process.env.NODE_ENV !== 'production';
 
-// add routes here as they slowly get reactified
-// remove their individual controllers
-const routes = [
-  '/settings',
-  '/settings/*',
-  '/:username'
-];
-
-const devRoutes = [];
-
 const middlewares = isDev ? [errorThrowerMiddleware] : [];
 
 const markupMap = {};
@@ -58,16 +48,9 @@ export default function reactSubRouter(app) {
     (req, res) => res.redirect(`${homeLocation}/${req.params.redirectUsername}`)
   );
 
-  // These routes are in production
-  routes.forEach((route) => {
-    router.get(route, serveReactApp);
-  });
-
-  if (process.env.NODE_ENV === 'development') {
-    devRoutes.forEach(function(route) {
-      router.get(route, serveReactApp);
-    });
-  }
+  router.get('/settings', serveReactApp);
+  router.get('/settings/*', serveReactApp);
+  router.get('/:username', serveReactApp);
 
   app.use(router);
   app.use('/external', router);
