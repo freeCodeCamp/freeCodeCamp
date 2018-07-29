@@ -4,12 +4,27 @@ import createMemoryHistory from 'history/createMemoryHistory';
 import { NOT_FOUND } from 'redux-first-router';
 import devtoolsEnhancer from 'remote-redux-devtools';
 
+import { homeLocation } from '../../config/env';
+
 import {
   errorThrowerMiddleware
 } from '../utils/react.js';
 import { createApp, provideStore, App } from '../../common/app';
 import waitForEpics from '../../common/utils/wait-for-epics.js';
 import { titleSelector } from '../../common/app/redux';
+
+const hasSchemeRE = /^https?:\/\//i;
+const isHomeRE = /^\/$/;
+
+function makeAbsolutePath(path = '') {
+  if (hasSchemeRE.test(path)) {
+    return path;
+  }
+  if (isHomeRE.test(path)) {
+    return homeLocation;
+  }
+  return `${homeLocation}${path}`;
+}
 
 const log = debug('fcc:react-server');
 const isDev = process.env.NODE_ENV !== 'production';
@@ -34,12 +49,13 @@ export default function reactSubRouter(app) {
   router.get('/videos', (req, res) => res.redirect('/map'));
   router.get(
     '/videos/:dashedName',
-    (req, res) => res.redirect(`/challenges/${req.params.dashedName}`)
+    (req, res) =>
+      res.redirect(`${homeLocation}/challenges/${req.params.dashedName}`)
   );
 
   router.get(
     '/portfolio/:redirectUsername',
-    (req, res) => res.redirect(`/${req.params.redirectUsername}`)
+    (req, res) => res.redirect(`${homeLocation}/${req.params.redirectUsername}`)
   );
 
   // These routes are in production
@@ -54,6 +70,7 @@ export default function reactSubRouter(app) {
   }
 
   app.use(router);
+  app.use('/external', router);
 
   function serveReactApp(req, res, next) {
     const serviceOptions = { req };
@@ -83,7 +100,7 @@ export default function reactSubRouter(app) {
       }) => {
         if (kind === 'redirect') {
           log('react found a redirect');
-          res.redirect(pathname);
+          res.redirect(makeAbsolutePath(pathname));
           return false;
         }
 

@@ -21,7 +21,7 @@ import { fixCompletedChallengeItem } from '../../common/utils';
 
 const log = debug('fcc:boot:challenges');
 
-const learnURL = `${homeLocation}/learn`;
+const learnLocation = `${homeLocation}/learn`;
 
 const jsProjects = [
 'aaa48de84e1ecc7c742e1124',
@@ -172,6 +172,7 @@ export default function(app) {
   app.use(api);
   app.use('/external', api);
   app.use(router);
+  app.use('/external', router);
 
   function modernChallengeCompleted(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
@@ -398,10 +399,12 @@ export default function(app) {
             db may not be properly seeded.
           `);
         }
-        return `${learnURL}/${dasherize(superBlock)}/${block}/${dashedName}`;
+        return `${
+          learnLocation
+        }/${dasherize(superBlock)}/${block}/${dashedName}`;
       })
       .subscribe(
-        redirect => res.redirect(redirect || learnURL),
+        redirect => res.redirect(redirect || learnLocation),
         next
       );
   }
@@ -410,8 +413,8 @@ export default function(app) {
     const maybeChallenge = _.last(req.path.split('/'));
     if (maybeChallenge in pathMigrations) {
       const redirectPath = pathMigrations[maybeChallenge];
-      return res.status(301).redirect(`${learnURL}${redirectPath}`);
+      return res.status(301).redirect(`${learnLocation}${redirectPath}`);
     }
-    return res.status(301).redirect(learnURL);
+    return res.status(301).redirect(learnLocation);
   }
 }

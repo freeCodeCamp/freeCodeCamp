@@ -1,4 +1,5 @@
 import { cookie, auth0 } from '../config/secrets';
+import { welcomeLocation, signInLocation } from './utils/localisedRedirects';
 
 const {
   clientID,
@@ -6,8 +7,8 @@ const {
   domain
 } = auth0;
 
-const successRedirect = '/welcome';
-const failureRedirect = '/signin';
+export const successRedirect = welcomeLocation;
+export const failureRedirect = signInLocation;
 
 export default {
   local: {

@@ -1,4 +1,6 @@
-module.exports = function(app) {
+import { learnLocation, agileLocation } from '../utils/localisedRedirects';
+
+export default function(app) {
   var router = app.loopback.Router();
 
   router.get('/nonprofit-project-instructions', function(req, res) {
@@ -10,7 +12,7 @@ module.exports = function(app) {
   });
 
   router.get('/agile', function(req, res) {
-    res.redirect(301, '/pmi-acp-agile-project-managers');
+    res.redirect(301, agileLocation);
   });
 
   router.get('/privacy', function(req, res) {
@@ -21,7 +23,7 @@ module.exports = function(app) {
   });
 
   router.get('/learn-to-code', function(req, res) {
-    res.redirect(301, '/map');
+    res.redirect(301, learnLocation);
   });
 
   router.get('/field-guide/*', function(req, res) {
@@ -29,4 +31,4 @@ module.exports = function(app) {
   });
 
   app.use(router);
-};
+}
