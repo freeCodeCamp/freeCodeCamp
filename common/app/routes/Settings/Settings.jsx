@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Button } from 'react-bootstrap';
 
-import ns from './ns.json';
 import { FullWidthRow, Spacer, Loader } from '../../helperComponents';
 import AboutSettings from './components/About-Settings.jsx';
 import InternetSettings from './components/Internet-Settings.jsx';
@@ -53,7 +52,6 @@ const propTypes = {
 };
 
 export class Settings extends React.Component {
-
   componentWillMount() {
     this.props.updateTitle('Settings');
   }
@@ -73,7 +71,7 @@ export class Settings extends React.Component {
       return <Loader />;
     }
     return (
-      <div className={ `${ns}-container` }>
+      <div>
         <FullWidthRow>
             <Button
               block={ true }
@@ -95,7 +93,6 @@ export class Settings extends React.Component {
           </Button>
         </FullWidthRow>
         <h1 className='text-center'>{ `Account Settings for ${username}` }</h1>
-        <div className='offset-negative-row'>
         <AboutSettings />
         <Spacer />
         <PrivacySettings />
@@ -111,7 +108,6 @@ export class Settings extends React.Component {
         <CertificationSettings />
         <Spacer />
         <DangerZone />
-        </div>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Grid } from 'react-bootstrap';
 
 import ns from './ns.json';
 import { showUpdateEmailViewSelector } from './redux';
@@ -11,28 +12,30 @@ import ChildContainer from '../../Child-Container.jsx';
 const mapStateToProps = state => ({
   showUpdateEmailView: showUpdateEmailViewSelector(state)
 });
-const mapDispatchToProps = null;
+
 const propTypes = {
   showUpdateEmailView: PropTypes.bool
 };
 
 export function ShowSettings({ showUpdateEmailView }) {
-  let Comp = Settings;
+  let ChildComponent = Settings;
+
   if (showUpdateEmailView) {
-    Comp = UpdateEmail;
+    ChildComponent = UpdateEmail;
   }
+
   return (
     <ChildContainer>
-      <div className={ `${ns}-container` }>
-        <Comp />
-      </div>
+      <Grid className={ `${ns}-container` }>
+        <ChildComponent />
+      </Grid>
     </ChildContainer>
   );
 }
+
 ShowSettings.displayName = 'ShowSettings';
 ShowSettings.propTypes = propTypes;
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(ShowSettings);
