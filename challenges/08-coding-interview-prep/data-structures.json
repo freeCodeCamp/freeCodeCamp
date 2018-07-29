@@ -2169,7 +2169,7 @@
         },
         {
           "text": "The add method adds elements according to the binary search tree rules.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.isBinarySearchTree()); })(), 'The add method adds elements according to the binary search tree rules.');"
+          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); const expectedResult = [ 1, 4, 7, 8, 34, 45, 73, 87 ]; const result = test.inOrder(); return (expectedResult.toString() === result.toString()); })(), 'The add method adds elements according to the binary search tree rules.');"
         },
         {
           "text": "Adding an element that already exists returns <code>null</code>",
@@ -2177,7 +2177,7 @@
         }
       ],
       "releasedOn": "Feb 17, 2017",
-      "solutions": [],
+      "solutions": ["function Node(value) { \n this.value = value; \n this.left = null; \n this.right = null; \n } \n function BinarySearchTree() { \n this.root = null; \n this.add = function (element) { \n let current = this.root; \n if (!current) { \n this.root = new Node(element) \n return; \n } else { \n const searchTree = function (current) { \n if (current.value > element) { \n if (current.left) { //si existe \n return searchTree(current.left) \n } else { \n current.left = new Node(element); \n return; \n } \n } else if (current.value < element) { \n  if (current.right) { \n return searchTree(current.right) \n } else { \n current.right = new Node(element) \n return; \n } \n } else { \n return null; \n } \n } \n return searchTree(current); \n } \n } \n }"],
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -2227,6 +2227,19 @@
             "            checkTree(this.root);",
             "            return check;",
             "        };",
+            "    }",
+            "};",
+            "BinarySearchTree.prototype = {",
+            "    inOrder() {",
+            "        if (!this.root) { return null; }",
+            "        var result = new Array();",
+            "        function traverseInOrder(node) {",
+            "             node.left && traverseInOrder(node.left);",
+            "             result.push(node.value);",
+            "             node.right && traverseInOrder(node.right);",
+            "        }",
+            "        traverseInOrder(this.root);",
+            "        return result;",
             "    }",
             "};"
           ]
