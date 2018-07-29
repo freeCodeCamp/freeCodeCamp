@@ -39,7 +39,7 @@ defaultState.app.csrfToken = csrfToken;
 
 const serviceOptions = {
   context: { _csrf: csrfToken },
-  xhrPath: '/services',
+  xhrPath: '/external/services',
   xhrTimeout: 15000
 };
 

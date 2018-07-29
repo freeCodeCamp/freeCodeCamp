@@ -56,7 +56,12 @@ export default function reactSubRouter(app) {
   app.use('/external', router);
 
   function serveReactApp(req, res, next) {
-    const serviceOptions = { req };
+    const serviceOptions = {
+      req,
+      xhrPath: '/external/services',
+      xhrTimeout: 15000
+    };
+
     if (req.originalUrl in markupMap) {
       log('sending markup from cache');
       const { state, title, markup } = markupMap[req.originalUrl];
