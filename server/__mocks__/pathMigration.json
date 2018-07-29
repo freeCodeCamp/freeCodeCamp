@@ -1,0 +1,10 @@
+{
+  "challenge-one": "/superblock-a/block-a/challenge-one",
+  "challenge-two": "/superblock-a/block-a/challenge-two",
+  "challenge-three": "/superblock-a/block-b/challenge-three",
+  "challenge-four": "/superblock-a/block-b/challenge-four",
+  "challenge-five": "/superblock-b/block-c/challenge-five",
+  "challenge-six": "/superblock-b/block-c/challenge-six",
+  "challenge-seven": "/superblock-b/block-d/challenge-seven",
+  "challenge-eight": "/superblock-b/block-d/challenge-eight"
+}

@@ -1,0 +1,415 @@
+{
+  "entities": {
+    "superBlock": {
+      "super-block-a": {
+        "title": "superblock A",
+        "order": 1,
+        "name": "superblock A",
+        "dashedName": "superblock-a",
+        "blocks": ["block-a", "block-b"]
+      },
+      "super-block-b": {
+        "title": "superblock B",
+        "order": 2,
+        "name": "superblock B",
+        "dashedName": "superblock-b",
+        "blocks": ["block-c", "block-d"]
+      }
+    },
+    "block": {
+      "block-a": {
+        "superBlock": "super-block-a",
+        "order": 0,
+        "name": "Block A",
+        "superOrder": 1,
+        "dashedName": "block-a",
+        "title": "Block A",
+        "time": "5 hours",
+        "id": "5b2cdfd3629a6f051a3f91bd",
+        "isLocked": false,
+        "isPrivate": false,
+        "challenges": ["challenge-one", "challenge-two"]
+      },
+      "block-b": {
+        "superBlock": "super-block-a",
+        "order": 1,
+        "name": "Block B",
+        "superOrder": 1,
+        "dashedName": "block-b",
+        "title": "Block B",
+        "time": "5 hours",
+        "id": "5b2cdfd3629a6f051a3f91bd",
+        "isLocked": false,
+        "isPrivate": false,
+        "challenges": ["challenge-three", "challenge-four"]
+      },
+      "block-c": {
+        "superBlock": "super-block-b",
+        "order": 0,
+        "name": "Block C",
+        "superOrder": 2,
+        "dashedName": "block-c",
+        "title": "Block C",
+        "time": "5 hours",
+        "id": "5b2cdfd3629a6f051a3f91bd",
+        "isLocked": false,
+        "isPrivate": false,
+        "challenges": ["challenge-five", "challenge-six"]
+      },
+      "block-d": {
+        "superBlock": "super-block-b",
+        "order": 1,
+        "name": "Block D",
+        "superOrder": 2,
+        "dashedName": "block-d",
+        "title": "Block D",
+        "time": "5 hours",
+        "id": "5b2cdfd3629a6f051a3f91bd",
+        "isLocked": false,
+        "isPrivate": false,
+        "challenges": ["challenge-seven", "challenge-eight"]
+      }
+    },
+    "challenge": {
+      "challenge-one": {
+        "id": "1",
+        "name": "Challenge One",
+        "title": "Challenge One",
+        "order": 0,
+        "suborder": 1,
+        "checksum": 760527477,
+        "isBeta": false,
+        "isComingSoon": false,
+        "dashedName": "challenge-one",
+        "superBlock": "superblock A",
+        "superOrder": 1,
+        "block": "block-a",
+        "description": ["Challenge one description"],
+        "tests": [
+          {
+            "text": "is true",
+            "testString": "assert.isTrue(true, 'is true');"
+          }
+        ],
+        "head": [],
+        "tail": [],
+        "helpRoom": "Help",
+
+        "challengeType": 0,
+        "solutions": [],
+        "required": [],
+        "blockId": "5b2cdfd3629a6f051a3f91bd",
+        "files": {
+          "indexhtml": {
+            "key": "indexhtml",
+            "ext": "html",
+            "name": "index",
+            "contents": "<h1>Hello</h1>",
+            "head": "",
+            "tail": ""
+          }
+        },
+        "isLocked": false,
+        "isPrivate": false,
+        "time": "5 hours"
+      },
+      "challenge-two": {
+        "id": "2",
+        "name": "Challenge Two",
+        "title": "Challenge Two",
+        "order": 1,
+        "suborder": 1,
+        "checksum": 760527477,
+        "isBeta": false,
+        "isComingSoon": false,
+        "dashedName": "challenge-two",
+        "superBlock": "superblock A",
+        "superOrder": 1,
+        "block": "block-a",
+        "description": ["Challenge two description"],
+        "tests": [
+          {
+            "text": "is true",
+            "testString": "assert.isTrue(true, 'is true');"
+          }
+        ],
+        "head": [],
+        "tail": [],
+        "helpRoom": "Help",
+
+        "challengeType": 0,
+        "solutions": [],
+        "required": [],
+        "blockId": "5b2cdfd3629a6f051a3f91bd",
+        "files": {
+          "indexhtml": {
+            "key": "indexhtml",
+            "ext": "html",
+            "name": "index",
+            "contents": "<h1>Hello</h1>",
+            "head": "",
+            "tail": ""
+          }
+        },
+        "isLocked": false,
+        "isPrivate": false,
+        "time": "5 hours"
+      },
+      "challenge-three": {
+        "id": "3",
+        "name": "Challenge Three",
+        "title": "Challenge Three",
+        "order": 1,
+        "suborder": 2,
+        "checksum": 760527477,
+        "isBeta": false,
+        "isComingSoon": false,
+        "dashedName": "challenge-three",
+        "superBlock": "superblock A",
+        "superOrder": 1,
+        "block": "block-b",
+        "description": ["Challenge three description"],
+        "tests": [
+          {
+            "text": "is true",
+            "testString": "assert.isTrue(true, 'is true');"
+          }
+        ],
+        "head": [],
+        "tail": [],
+        "helpRoom": "Help",
+
+        "challengeType": 0,
+        "solutions": [],
+        "required": [],
+        "blockId": "5b2cdfd3629a6f051a3f91bd",
+        "files": {
+          "indexhtml": {
+            "key": "indexhtml",
+            "ext": "html",
+            "name": "index",
+            "contents": "<h1>Hello</h1>",
+            "head": "",
+            "tail": ""
+          }
+        },
+        "isLocked": false,
+        "isPrivate": false,
+        "time": "5 hours"
+      },
+      "challenge-four": {
+        "id": "4",
+        "name": "Challenge Four",
+        "title": "Challenge Four",
+        "order": 2,
+        "suborder": 2,
+        "checksum": 760527477,
+        "isBeta": false,
+        "isComingSoon": false,
+        "dashedName": "challenge-four",
+        "superBlock": "superblock A",
+        "superOrder": 1,
+        "block": "block-b",
+        "description": ["Challenge four description"],
+        "tests": [
+          {
+            "text": "is true",
+            "testString": "assert.isTrue(true, 'is true');"
+          }
+        ],
+        "head": [],
+        "tail": [],
+        "helpRoom": "Help",
+
+        "challengeType": 0,
+        "solutions": [],
+        "required": [],
+        "blockId": "5b2cdfd3629a6f051a3f91bd",
+        "files": {
+          "indexhtml": {
+            "key": "indexhtml",
+            "ext": "html",
+            "name": "index",
+            "contents": "<h1>Hello</h1>",
+            "head": "",
+            "tail": ""
+          }
+        },
+        "isLocked": false,
+        "isPrivate": false,
+        "time": "5 hours"
+      },
+      "challenge-five": {
+        "id": "5",
+        "name": "Challenge Five",
+        "title": "Challenge Five",
+        "order": 0,
+        "suborder": 3,
+        "checksum": 760527477,
+        "isBeta": false,
+        "isComingSoon": false,
+        "dashedName": "challenge-five",
+        "superBlock": "superblock B",
+        "superOrder": 1,
+        "block": "block-c",
+        "description": ["Challenge five description"],
+        "tests": [
+          {
+            "text": "is true",
+            "testString": "assert.isTrue(true, 'is true');"
+          }
+        ],
+        "head": [],
+        "tail": [],
+        "helpRoom": "Help",
+
+        "challengeType": 0,
+        "solutions": [],
+        "required": [],
+        "blockId": "5b2cdfd3629a6f051a3f91bd",
+        "files": {
+          "indexhtml": {
+            "key": "indexhtml",
+            "ext": "html",
+            "name": "index",
+            "contents": "<h1>Hello</h1>",
+            "head": "",
+            "tail": ""
+          }
+        },
+        "isLocked": false,
+        "isPrivate": false,
+        "time": "5 hours"
+      },
+      "challenge-six": {
+        "id": "6",
+        "name": "Challenge Six",
+        "title": "Challenge Six",
+        "order": 0,
+        "suborder": 1,
+        "checksum": 760527477,
+        "isBeta": false,
+        "isComingSoon": false,
+        "dashedName": "challenge-six",
+        "superBlock": "superblock B",
+        "superOrder": 1,
+        "block": "block-c",
+        "description": ["Challenge six description"],
+        "tests": [
+          {
+            "text": "is true",
+            "testString": "assert.isTrue(true, 'is true');"
+          }
+        ],
+        "head": [],
+        "tail": [],
+        "helpRoom": "Help",
+
+        "challengeType": 0,
+        "solutions": [],
+        "required": [],
+        "blockId": "5b2cdfd3629a6f051a3f91bd",
+        "files": {
+          "indexhtml": {
+            "key": "indexhtml",
+            "ext": "html",
+            "name": "index",
+            "contents": "<h1>Hello</h1>",
+            "head": "",
+            "tail": ""
+          }
+        },
+        "isLocked": false,
+        "isPrivate": false,
+        "time": "5 hours"
+      },
+      "challenge-seven": {
+        "id": "7",
+        "name": "Challenge Seven",
+        "title": "Challenge seven",
+        "order": 0,
+        "suborder": 4,
+        "checksum": 760527477,
+        "isBeta": false,
+        "isComingSoon": false,
+        "dashedName": "challenge-seven",
+        "superBlock": "superblock B",
+        "superOrder": 1,
+        "block": "block-d",
+        "description": ["Challenge seven description"],
+        "tests": [
+          {
+            "text": "is true",
+            "testString": "assert.isTrue(true, 'is true');"
+          }
+        ],
+        "head": [],
+        "tail": [],
+        "helpRoom": "Help",
+
+        "challengeType": 0,
+        "solutions": [],
+        "required": [],
+        "blockId": "5b2cdfd3629a6f051a3f91bd",
+        "files": {
+          "indexhtml": {
+            "key": "indexhtml",
+            "ext": "html",
+            "name": "index",
+            "contents": "<h1>Hello</h1>",
+            "head": "",
+            "tail": ""
+          }
+        },
+        "isLocked": false,
+        "isPrivate": false,
+        "time": "5 hours"
+      },
+      "challenge-eight": {
+        "id": "8",
+        "name": "Challenge Eight",
+        "title": "Challenge Eight",
+        "order": 1,
+        "suborder": 4,
+        "checksum": 760527477,
+        "isBeta": false,
+        "isComingSoon": false,
+        "dashedName": "challenge-eight",
+        "superBlock": "superblock B",
+        "superOrder": 1,
+        "block": "block-d",
+        "description": ["Challenge eight description"],
+        "tests": [
+          {
+            "text": "is true",
+            "testString": "assert.isTrue(true, 'is true');"
+          }
+        ],
+        "head": [],
+        "tail": [],
+        "helpRoom": "Help",
+
+        "challengeType": 0,
+        "solutions": [],
+        "required": [],
+        "blockId": "5b2cdfd3629a6f051a3f91bd",
+        "files": {
+          "indexhtml": {
+            "key": "indexhtml",
+            "ext": "html",
+            "name": "index",
+            "contents": "<h1>Hello</h1>",
+            "head": "",
+            "tail": ""
+          }
+        },
+        "isLocked": false,
+        "isPrivate": false,
+        "time": "5 hours"
+      }
+    }
+  },
+  "result": {
+    "superBlocks": ["super-block-a", "super-block-b"]
+  }
+}

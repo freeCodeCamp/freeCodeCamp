@@ -9,26 +9,23 @@ import _ from 'lodash';
 import debug from 'debug';
 import accepts from 'accepts';
 import dedent from 'dedent';
-
-import { homeLocation } from '../../config/env';
+import { learnLocation } from '../utils/localisedRedirects';
 
 import { ifNoUserSend } from '../utils/middleware';
 import { getChallengeById, cachedMap } from '../utils/map';
 import { dasherize } from '../utils';
 
-import pathMigrations from '../resources/pathMigration.json';
+import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 
 const log = debug('fcc:boot:challenges');
 
-const learnLocation = `${homeLocation}/learn`;
-
 const jsProjects = [
-'aaa48de84e1ecc7c742e1124',
-'a7f4d8f2483413a6ce226cac',
-'56533eb9ac21ba0edf2244e2',
-'aff0395860f5d3034dc0bfc9',
-'aa2e6f85cab2ab736c9a9b24'
+  'aaa48de84e1ecc7c742e1124',
+  'a7f4d8f2483413a6ce226cac',
+  '56533eb9ac21ba0edf2244e2',
+  'aff0395860f5d3034dc0bfc9',
+  'aa2e6f85cab2ab736c9a9b24'
 ];
 
 function buildUserUpdate(
@@ -117,6 +114,8 @@ export default function(app) {
   const api = app.loopback.Router();
   const router = app.loopback.Router();
   const map = cachedMap(app.models);
+  const redirectToCurrentChallenge = createRedirectToCurrentChallenge(map);
+  const redirectToLearn = createRedirectToLearn();
 
   api.post(
     '/modern-challenge-completed',
@@ -383,23 +382,25 @@ export default function(app) {
       })
       .subscribe(() => {}, next);
   }
+}
 
-  function redirectToCurrentChallenge(req, res, next) {
+export async function createRedirectToCurrentChallenge(map) {
+  return function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
     const challengeId = user && user.currentChallengeId;
     return getChallengeById(map, challengeId)
-      .map(challenge => {
-        const { block, dashedName, superBlock } = challenge;
-        if (!dashedName || !block) {
-          // this should normally not be hit if database is properly seeded
-          throw new Error(dedent`
-            Attempted to find '${dashedName}'
-            from '${ challengeId || 'no challenge id found'}'
-            but came up empty.
-            db may not be properly seeded.
-          `);
-        }
-        return `${
+    .map(challenge => {
+      const { block, dashedName, superBlock } = challenge;
+      if (!dashedName || !block || !superBlock) {
+        // this should normally not be hit if database is properly seeded
+        throw new Error(dedent`
+        Attempted to find '${dashedName}'
+        from '${ challengeId || 'no challenge id found'}'
+        but came up empty.
+        db may not be properly seeded.
+        `);
+      }
+      return `${
           learnLocation
         }/${dasherize(superBlock)}/${block}/${dashedName}`;
       })
@@ -407,14 +408,16 @@ export default function(app) {
         redirect => res.redirect(redirect || learnLocation),
         next
       );
+    };
   }
 
-  function redirectToLearn(req, res) {
-    const maybeChallenge = _.last(req.path.split('/'));
-    if (maybeChallenge in pathMigrations) {
-      const redirectPath = pathMigrations[maybeChallenge];
-      return res.status(301).redirect(`${learnLocation}${redirectPath}`);
-    }
-    return res.status(301).redirect(learnLocation);
+  export function createRedirectToLearn(pathMigrations = _pathMigrations) {
+    return function redirectToLearn(req, res) {
+      const maybeChallenge = _.last(req.path.split('/'));
+      if (maybeChallenge in pathMigrations) {
+        const redirectPath = pathMigrations[maybeChallenge];
+        return res.status(301).redirect(`${learnLocation}${redirectPath}`);
+      }
+      return res.status(301).redirect(learnLocation);
+    };
   }
-}
