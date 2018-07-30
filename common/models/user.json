@@ -284,6 +284,11 @@
       "options": {
         "disableInclude": true
       }
+    },
+    "articles": {
+      "type": "hasMany",
+      "model": "article",
+      "foreignKey": "externalId"
     }
   },
   "acls": [
