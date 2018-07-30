@@ -68,7 +68,18 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "externalId"
+    },
+    "popularity": {
+      "type": "hasOne",
+      "model": "popularity",
+      "foreignKey": "popularityId"
+    }
+  },
   "acls": [],
   "methods": {}
 }
