@@ -1,8 +1,25 @@
 module.exports = {
-
+/** freeCodeCamp */
   db: process.env.MONGODB || process.env.MONGOHQ_URL,
 
   sessionSecret: process.env.SESSION_SECRET,
+
+  cookie: {
+    secret: process.env.COOKIE_SECRET,
+    domain: process.env.COOKIE_DOMAIN
+  },
+
+  jwt: {
+    secret: process.env.JWT_SECRET
+  },
+
+/** third party */
+
+  auth0: {
+    clientID: process.env.AUTH0_CLIENT_ID,
+    clientSecret: process.env.AUTH0_CLIENT_SECRET,
+    domain: process.env.AUTH0_DOMAIN
+  },
 
   facebook: {
     clientID: process.env.FACEBOOK_ID,
@@ -42,12 +59,10 @@ module.exports = {
     scope: ['r_basicprofile', 'r_emailaddress'],
     passReqToCallback: true
   },
-  slackHook: process.env.SLACK_WEBHOOK,
-
-  cookieSecret: process.env.COOKIE_SECRET,
 
   stripe: {
     public: process.env.STRIPE_PUBLIC,
     secret: process.env.STRIPE_SECRET
   }
+
 };

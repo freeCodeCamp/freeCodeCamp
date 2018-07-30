@@ -5,13 +5,24 @@ import dedent from 'dedent';
 import { isEmail } from 'validator';
 import { check } from 'express-validator/check';
 
+import { homeLocation } from '../../config/env';
+import { cookie } from '../../config/secrets';
+import {
+  settingsLocation,
+  signInLocation,
+  signOutLocation,
+  welcomeLocation
+} from '../utils/localisedRedirects';
+
 import {
   ifUserRedirectTo,
   ifNoUserRedirectTo,
   createValidatorErrorHandler
 } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
-import { homeURL } from '../../common/utils/constantStrings.json';
+
+import { successRedirect } from '../passport-providers';
+
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 // const debug = debugFactory('fcc:boot:auth');
@@ -24,17 +35,20 @@ module.exports = function enableAuthentication(app) {
   // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
-  const ifNoUserRedirectHome = ifNoUserRedirectTo(homeURL);
+  const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
   const router = app.loopback.Router();
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
 
-  router.get('/signup', (req, res) => res.redirect(301, '/signin'));
-  router.get('/email-signin', (req, res) => res.redirect(301, '/signin'));
-  router.get('/login', (req, res) => res.redirect(301, '/signin'));
-  router.get('/deprecated-signin', (req, res) => res.redirect(301, '/signin'));
+  router.get('/signup', (req, res) => res.redirect(301, signInLocation));
+  router.get('/email-signin', (req, res) => res.redirect(301, signInLocation));
+  router.get('/login', (req, res) => res.redirect(301, signInLocation));
+  router.get(
+    '/deprecated-signin',
+    (req, res) => res.redirect(301, signInLocation)
+  );
 
-  router.get('/logout', (req, res) => res.redirect(301, '/signout'));
+  router.get('/logout', (req, res) => res.redirect(301, signOutLocation));
 
   router.get('/signin',
     ifUserRedirect,
@@ -58,19 +72,19 @@ module.exports = function enableAuthentication(app) {
           {
             type: 'info',
             message: 'Oops, something is not right.',
-            redirectTo: '/'
+            redirectTo: homeLocation
           }
         );
       }
       const config = {
         signed: !!req.signedCookies,
-        domain: process.env.COOKIE_DOMAIN || 'localhost'
+        domain: cookie.domain || 'localhost'
       };
       res.clearCookie('jwt_access_token', config);
       res.clearCookie('access_token', config);
       res.clearCookie('userId', config);
       res.clearCookie('_csrf', config);
-      res.redirect('/');
+      res.redirect(homeLocation);
    });
   });
 
@@ -84,7 +98,7 @@ module.exports = function enableAuthentication(app) {
           title: 'Privacy Policy and Terms of Service'
         });
       }
-      return res.redirect('/settings');
+      return res.redirect(settingsLocation);
     }
   );
 
@@ -121,7 +135,7 @@ module.exports = function enableAuthentication(app) {
         {
           type: 'info',
           message: 'The email encoded in the link is incorrectly formatted',
-          redirectTo: '/signin'
+          redirectTo: signInLocation
         }
       ));
     }
@@ -134,7 +148,7 @@ module.exports = function enableAuthentication(app) {
             {
               type: 'info',
               message: defaultErrorMsg,
-              redirectTo: '/signin'
+              redirectTo: signInLocation
             }
           );
         }
@@ -148,7 +162,7 @@ module.exports = function enableAuthentication(app) {
                 {
                   type: 'info',
                   message: defaultErrorMsg,
-                  redirectTo: '/signin'
+                  redirectTo: signInLocation
                 }
               );
             }
@@ -159,7 +173,7 @@ module.exports = function enableAuthentication(app) {
                   {
                     type: 'info',
                     message: defaultErrorMsg,
-                    redirectTo: '/signin'
+                    redirectTo: signInLocation
                   }
                 );
               }
@@ -175,7 +189,7 @@ module.exports = function enableAuthentication(app) {
                         Looks like the link you clicked has expired,
                         please request a fresh link, to sign in.
                       `,
-                      redirectTo: '/signin'
+                      redirectTo: signInLocation
                     }
                   );
                 }
@@ -192,7 +206,7 @@ module.exports = function enableAuthentication(app) {
           'success',
           'Success! You have signed in to your account. Happy Coding!'
         );
-        return res.redirect('/');
+        return res.redirect(successRedirect);
       })
       .subscribe(
         () => {},
@@ -204,13 +218,13 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessGetValidators,
-    createValidatorErrorHandler('errors', '/signin'),
+    createValidatorErrorHandler('errors', signInLocation),
     getPasswordlessAuth
   );
 
   router.get(
     '/passwordless-change',
-    (req, res) => res.redirect(301, '/confirm-email')
+    (req, res) => res.redirect(301, `${homeLocation}/confirm-email`)
   );
   router.get(
     '/confirm-email',
@@ -237,7 +251,7 @@ module.exports = function enableAuthentication(app) {
         .flatMap(user => user.requestAuthEmail(!_user))
       )
       .do(msg => {
-        let redirectTo = '/';
+        let redirectTo = welcomeLocation;
 
         if (
           req.session &&
@@ -256,10 +270,11 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessPostValidators,
-    createValidatorErrorHandler('errors', '/signin'),
+    createValidatorErrorHandler('errors', signInLocation),
     postPasswordlessAuth
   );
 
   app.use(router);
+  app.use('/external', router);
   app.use(api);
 };

@@ -1,5 +1,7 @@
 import dedent from 'dedent';
 
+import { supportEmail } from '../../config/env';
+
 const ALLOWED_METHODS = ['GET'];
 const EXCLUDED_PATHS = [
   '/api/flyers/findOne',
@@ -21,7 +23,7 @@ export default function flashCheaters() {
         dedent`
           Upon review, this account has been flagged for academic
           dishonesty. If you’re the owner of this account contact
-          team@freecodecamp.org for details.
+          ${supportEmail} for details.
         `
       );
     }

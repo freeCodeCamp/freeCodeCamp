@@ -2,15 +2,18 @@ import dedent from 'dedent';
 import debugFactory from 'debug';
 import { curry } from 'lodash';
 
+import { cookie } from '../../config/secrets';
+import { supportEmail, homeLocation } from '../../config/env';
 import {
   ifNoUser401,
   ifNoUserRedirectTo,
   ifNotVerifiedRedirectToUpdateEmail
 } from '../utils/middleware';
+import { welcomeLocation } from '../utils/localisedRedirects';
 
 const debug = debugFactory('fcc:boot:user');
-const sendNonUserToHome = ifNoUserRedirectTo('/');
-const sendNonUserToHomeWithMessage = curry(ifNoUserRedirectTo, 2)('/');
+const sendNonUserToHome = ifNoUserRedirectTo(homeLocation);
+const sendNonUserToHomeWithMessage = curry(ifNoUserRedirectTo, 2)(homeLocation);
 
 module.exports = function(app) {
   const router = app.loopback.Router();
@@ -57,7 +60,7 @@ module.exports = function(app) {
 
   function getAccount(req, res) {
     const { username } = req.user;
-    return res.redirect('/' + username);
+    return res.redirect(`${homeLocation}/${username}`);
   }
 
   function getUnlinkSocial(req, res, next) {
@@ -67,19 +70,19 @@ module.exports = function(app) {
     let social = req.params.social;
     if (!social) {
       req.flash('danger', 'No social account found');
-      return res.redirect('/' + username);
+      return res.redirect(`${homeLocation}/${username}`);
     }
 
     social = social.toLowerCase();
     const validSocialAccounts = ['twitter', 'linkedin'];
     if (validSocialAccounts.indexOf(social) === -1) {
       req.flash('danger', 'Invalid social account');
-      return res.redirect('/' + username);
+      return res.redirect(`${homeLocation}/${username}`);
     }
 
     if (!user[social]) {
       req.flash('danger', `No ${social} account associated`);
-      return res.redirect('/' + username);
+      return res.redirect(`${homeLocation}/${username}`);
     }
 
     const query = {
@@ -95,7 +98,7 @@ module.exports = function(app) {
       let identity = identities.shift();
       if (!identity) {
         req.flash('danger', 'No social account found');
-        return res.redirect('/' + username);
+        return res.redirect(`${homeLocation}/${username}`);
       }
 
       return identity.destroy(function(err) {
@@ -108,7 +111,7 @@ module.exports = function(app) {
             debug(`${social} has been unlinked successfully`);
 
             req.flash('info', `You've successfully unlinked your ${social}.`);
-            return res.redirect('/' + username);
+            return res.redirect(`${homeLocation}/${username}`);
           }, next);
       });
     });
@@ -121,7 +124,7 @@ module.exports = function(app) {
       req.flash('success', 'You have successfully deleted your account.');
       const config = {
         signed: !!req.signedCookies,
-        domain: process.env.COOKIE_DOMAIN || 'localhost'
+        domain: cookie.domain || 'localhost'
       };
       res.clearCookie('jwt_access_token', config);
       res.clearCookie('access_token', config);
@@ -185,9 +188,9 @@ module.exports = function(app) {
 
     return Email.send$({
       type: 'email',
-      to: 'team@freecodecamp.org',
+      to: supportEmail,
       cc: user.email,
-      from: 'team@freecodecamp.org',
+      from: supportEmail,
       subject: 'Abuse Report : Reporting ' + username + '\'s profile.',
       text: dedent(`
         Hello Team,\n
@@ -203,7 +206,7 @@ module.exports = function(app) {
       `)
     }, err => {
       if (err) {
-        err.redirectTo = '/' + username;
+        err.redirectTo = `${homeLocation}/${username}`;
         return next(err);
       }
 
@@ -211,7 +214,7 @@ module.exports = function(app) {
         'info',
         `A report was sent to the team with ${user.email} in copy.`
       );
-      return res.redirect('/');
+      return res.redirect(welcomeLocation);
     });
   }
 

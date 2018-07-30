@@ -2,12 +2,13 @@ import request from 'request';
 import { isMongoId } from 'validator';
 import dedent from 'dedent';
 
+import { github } from '../../config/secrets';
+
 import constantStrings from '../utils/constantStrings.json';
 import testimonials from '../resources/testimonials.json';
 import { wrapHandledError } from '../utils/create-handled-error';
 
-const githubClient = process.env.GITHUB_ID;
-const githubSecret = process.env.GITHUB_SECRET;
+const { clientID: githubClient, clientSecret: githubSecret } = github;
 
 module.exports = function(app) {
   const router = app.loopback.Router();

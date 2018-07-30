@@ -2,7 +2,19 @@ import loopback from 'loopback';
 import jwt from 'jsonwebtoken';
 import { isBefore } from 'date-fns';
 
+import { jwt as jwtConfig } from '../../config/secrets';
+
+import { signInLocation, learnLocation } from '../utils/localisedRedirects';
+
 import { wrapHandledError } from '../utils/create-handled-error';
+
+function assignCorrectRedirect(path) {
+  const paths = path.split('/');
+  if (paths.includes('challenges') || paths.includes('map')) {
+    return learnLocation;
+  }
+  return signInLocation;
+}
 
 export default () => function authorizeByJWT(req, res, next) {
   const path = req.path.split('/')[1];
@@ -14,7 +26,7 @@ export default () => function authorizeByJWT(req, res, next) {
         new Error('Access token is required for this request'),
         {
           type: 'info',
-          redirect: '/signin',
+          redirect: assignCorrectRedirect(req.path),
           message: 'Access token is required for this request',
           status: 403
         }
@@ -22,13 +34,13 @@ export default () => function authorizeByJWT(req, res, next) {
     }
     let token;
     try {
-      token = jwt.verify(cookie, process.env.JWT_SECRET);
+      token = jwt.verify(cookie, jwtConfig.secret);
     } catch (err) {
       throw wrapHandledError(
         new Error(err.message),
         {
           type: 'info',
-          redirct: '/signin',
+          redirct: assignCorrectRedirect(req.path),
           message: 'Your access token is invalid',
           status: 403
         }
@@ -41,7 +53,7 @@ export default () => function authorizeByJWT(req, res, next) {
         new Error('Access token is no longer vaild'),
         {
           type: 'info',
-          redirect: '/signin',
+          redirect: assignCorrectRedirect(req.path),
           message: 'Access token is no longer vaild',
           status: 403
         }

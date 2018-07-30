@@ -21,15 +21,16 @@ import {
 import {
   ifNoUserRedirectTo
 } from '../utils/middleware';
+import { signInLocation, commitLocation } from '../utils/localisedRedirects';
 
 const sendNonUserToSignIn = ifNoUserRedirectTo(
-  '/signin',
+  signInLocation,
   'You must be signed in to commit to a nonprofit.',
   'info'
 );
 
 const sendNonUserToCommit = ifNoUserRedirectTo(
-  '/commit',
+  commitLocation,
   'You must be signed in to update commit',
   'info'
 );
@@ -82,6 +83,7 @@ export default function commit(app) {
   );
 
   app.use(api);
+  app.use('/external', api);
   app.use(router);
 
   function commitToNonprofit(req, res, next) {

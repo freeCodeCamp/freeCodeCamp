@@ -1,10 +1,12 @@
 import csurf from 'csurf';
 
+import { cookie } from '../../config/secrets';
+
 export default function() {
   const protection = csurf(
     {
       cookie: {
-        domain: process.env.COOKIE_DOMAIN || 'localhost'
+        domain: cookie.domain || 'localhost'
       }
     }
   );

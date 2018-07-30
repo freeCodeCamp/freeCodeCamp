@@ -10,9 +10,10 @@ import {
   Table
 } from 'react-bootstrap';
 
+import { homeLocation } from '../../../../../config/env';
+
 import { challengeIdToNameMapSelector } from '../../../entities';
 import { userByNameSelector } from '../../../redux';
-import { homeURL } from '../../../../utils/constantStrings.json';
 import blockNameify from '../../../utils/blockNameify';
 import { Link } from '../../../Router';
 import { FullWidthRow } from '../../../helperComponents';
@@ -113,7 +114,7 @@ class Timeline extends PureComponent {
           completedMap.length === 0 ?
           <p className='text-center'>
             No challenges have been completed yet.&nbsp;
-            <Link to={ homeURL }>
+            <Link to={ homeLocation }>
               Get started here.
             </Link>
           </p> :

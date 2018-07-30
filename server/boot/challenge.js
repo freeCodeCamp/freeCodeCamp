@@ -9,24 +9,23 @@ import _ from 'lodash';
 import debug from 'debug';
 import accepts from 'accepts';
 import dedent from 'dedent';
+import { learnLocation } from '../utils/localisedRedirects';
 
 import { ifNoUserSend } from '../utils/middleware';
 import { getChallengeById, cachedMap } from '../utils/map';
 import { dasherize } from '../utils';
 
-import pathMigrations from '../resources/pathMigration.json';
+import _pathMigrations from '../resources/pathMigration.json';
 import { fixCompletedChallengeItem } from '../../common/utils';
 
 const log = debug('fcc:boot:challenges');
 
-const learnURL = 'https://learn.freecodecamp.org';
-
 const jsProjects = [
-'aaa48de84e1ecc7c742e1124',
-'a7f4d8f2483413a6ce226cac',
-'56533eb9ac21ba0edf2244e2',
-'aff0395860f5d3034dc0bfc9',
-'aa2e6f85cab2ab736c9a9b24'
+  'aaa48de84e1ecc7c742e1124',
+  'a7f4d8f2483413a6ce226cac',
+  '56533eb9ac21ba0edf2244e2',
+  'aff0395860f5d3034dc0bfc9',
+  'aa2e6f85cab2ab736c9a9b24'
 ];
 
 function buildUserUpdate(
@@ -110,11 +109,14 @@ function buildUserUpdate(
   };
 }
 
-export default function(app) {
+export default async function(app, done) {
   const send200toNonUser = ifNoUserSend(true);
   const api = app.loopback.Router();
   const router = app.loopback.Router();
   const map = cachedMap(app.models);
+  const redirectToCurrentChallenge =
+    await createRedirectToCurrentChallenge(map);
+  const redirectToLearn = createRedirectToLearn(_pathMigrations);
 
   api.post(
     '/modern-challenge-completed',
@@ -170,6 +172,7 @@ export default function(app) {
   app.use(api);
   app.use('/external', api);
   app.use(router);
+  app.use('/external', router);
 
   function modernChallengeCompleted(req, res, next) {
     const type = accepts(req).type('html', 'json', 'text');
@@ -380,36 +383,43 @@ export default function(app) {
       })
       .subscribe(() => {}, next);
   }
+  done();
+}
 
-  function redirectToCurrentChallenge(req, res, next) {
+export async function createRedirectToCurrentChallenge(map) {
+  return function redirectToCurrentChallenge(req, res, next) {
     const { user } = req;
     const challengeId = user && user.currentChallengeId;
     return getChallengeById(map, challengeId)
-      .map(challenge => {
-        const { block, dashedName, superBlock } = challenge;
-        if (!dashedName || !block) {
-          // this should normally not be hit if database is properly seeded
-          throw new Error(dedent`
-            Attempted to find '${dashedName}'
-            from '${ challengeId || 'no challenge id found'}'
-            but came up empty.
-            db may not be properly seeded.
-          `);
-        }
-        return `${learnURL}/${dasherize(superBlock)}/${block}/${dashedName}`;
+    .map(challenge => {
+      const { block, dashedName, superBlock } = challenge;
+      if (!dashedName || !block || !superBlock) {
+        // this should normally not be hit if database is properly seeded
+        throw new Error(dedent`
+        Attempted to find '${dashedName}'
+        from '${ challengeId || 'no challenge id found'}'
+        but came up empty.
+        db may not be properly seeded.
+        `);
+      }
+      return `${
+          learnLocation
+        }/${dasherize(superBlock)}/${block}/${dashedName}`;
       })
       .subscribe(
-        redirect => res.redirect(redirect || learnURL),
+        redirect => res.redirect(redirect || learnLocation),
         next
       );
+    };
   }
 
-  function redirectToLearn(req, res) {
-    const maybeChallenge = _.last(req.path.split('/'));
-    if (maybeChallenge in pathMigrations) {
-      const redirectPath = pathMigrations[maybeChallenge];
-      return res.status(302).redirect(`${learnURL}${redirectPath}`);
-    }
-    return res.status(302).redirect(learnURL);
+  export function createRedirectToLearn(pathMigrations = _pathMigrations) {
+    return function redirectToLearn(req, res) {
+      const maybeChallenge = _.last(req.path.split('/'));
+      if (maybeChallenge in pathMigrations) {
+        const redirectPath = pathMigrations[maybeChallenge];
+        return res.status(301).redirect(`${learnLocation}${redirectPath}`);
+      }
+      return res.status(301).redirect(learnLocation);
+    };
   }
-}

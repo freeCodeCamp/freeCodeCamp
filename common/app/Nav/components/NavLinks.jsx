@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { MenuItem, NavDropdown, NavItem, Nav } from 'react-bootstrap';
 
-import navLinks from '../links.json';
+import navLinks from '../links';
 import SignUp from './Sign-Up.jsx';
 import { Link } from '../../Router';
 

@@ -1,3 +1,5 @@
+import { supportEmail } from '../../config/env';
+
 const policy = [
   'Before you can claim a verified certification, you must accept the ' +
   'Academic Honesty Policy below.',
@@ -20,7 +22,7 @@ const policy = [
   'As an academic institution that grants achievement-based certifications, ' +
   'we take academic honesty very seriously. If you have any questions about ' +
   'this policy, or suspect that someone has violated it, you can email ' +
-  '<a href="mailto:team@freecodecamp.org">team@freecodecamp.org</a> and we ' +
+  `<a href="${supportEmail}">${supportEmail}</a> and we ` +
   'will investigate.'
 ];
 

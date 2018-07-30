@@ -3,8 +3,9 @@ import { Scheduler, Observable } from 'rx';
 import { timeCache, observeQuery } from '../utils/rx';
 import { dasherize } from '../utils';
 
+import { homeLocation } from '../../config/env';
+
 const cacheTimeout = [ 24, 'hours' ];
-const appUrl = 'https://www.freecodecamp.org';
 
 // getCachedObservable(
 //   app: ExpressApp,
@@ -47,7 +48,7 @@ export default function sitemapRouter(app) {
         ({ challenges, stories }) => {
           res.header('Content-Type', 'application/xml');
           res.render('resources/sitemap', {
-            appUrl,
+            homeLocation,
             now,
             challenges,
             stories

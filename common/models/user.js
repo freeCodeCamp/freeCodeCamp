@@ -17,6 +17,9 @@ import _ from 'lodash';
 import { ObjectId } from 'mongodb';
 import jwt from 'jsonwebtoken';
 
+import { cookie, jwt as jwtConfig } from '../../config/secrets';
+import { homeDomain } from '../../config/env';
+
 import { fixCompletedChallengeItem } from '../utils';
 import { themes } from '../utils/themes';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
@@ -398,10 +401,10 @@ module.exports = function(User) {
         const config = {
           signed: !!req.signedCookies,
           maxAge: accessToken.ttl,
-          domain: process.env.COOKIE_DOMAIN || 'localhost'
+          domain: cookie.domain || 'localhost'
         };
         if (accessToken && accessToken.id) {
-          const jwtAccess = jwt.sign({accessToken}, process.env.JWT_SECRET);
+          const jwtAccess = jwt.sign({accessToken}, jwtConfig.secret);
           res.cookie('jwt_access_token', jwtAccess, config);
           res.cookie('access_token', accessToken.id, config);
           res.cookie('userId', accessToken.userId, config);
@@ -431,7 +434,7 @@ module.exports = function(User) {
   User.afterRemote('logout', function({req, res}, result, next) {
     const config = {
       signed: !!req.signedCookies,
-      domain: process.env.COOKIE_DOMAIN || 'localhost'
+      domain: cookie.domain || 'localhost'
     };
     res.clearCookie('jwt_access_token', config);
     res.clearCookie('access_token', config);
@@ -580,15 +583,15 @@ module.exports = function(User) {
     })
       .flatMap(token => {
         let renderAuthEmail = renderSignInEmail;
-        let subject = 'Your sign in link for freeCodeCamp.org';
+        let subject = `Your sign in link for ${homeDomain}`;
         if (isSignUp) {
           renderAuthEmail = renderSignUpEmail;
-          subject = 'Your sign in link for your new freeCodeCamp.org account';
+          subject = `Your sign in link for your new ${homeDomain} account`;
         }
         if (newEmail) {
           renderAuthEmail = renderEmailChangeEmail;
           subject = dedent`
-            Please confirm your updated email address for freeCodeCamp.org
+            Please confirm your updated email address for ${homeDomain}
           `;
         }
         const { id: loginToken, created: emailAuthLinkTTL } = token;

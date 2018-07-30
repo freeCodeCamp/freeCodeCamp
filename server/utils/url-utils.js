@@ -1,8 +1,9 @@
+import { supportEmail, homeLocation } from '../../config/env';
+
 const isDev = process.env.NODE_ENV !== 'production';
-const isBeta = !!process.env.BETA;
 
 export function getEmailSender() {
-  return process.env.SES_MAIL_FROM || 'team@freecodecamp.org';
+  return process.env.SES_MAIL_FROM || supportEmail;
 }
 
 export function getPort() {
@@ -20,7 +21,7 @@ export function getHost() {
   if (isDev) {
     return process.env.HOST || 'localhost';
   }
-  return isBeta ? 'beta.freecodecamp.org' : 'www.freecodecamp.org';
+  return homeLocation.replace(/^https?:\/\//i, '');
 }
 
 export function getServerFullURL() {

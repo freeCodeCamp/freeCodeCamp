@@ -7,12 +7,12 @@ import { Observable } from 'rx';
 import debug from 'debug';
 import { isEmail } from 'validator';
 
+import { supportEmail, homeLocation } from '../../config/env';
+
 import {
   ifNoUser401
 } from '../utils/middleware';
-
 import { observeQuery } from '../utils/rx';
-
 import {
   legacyFrontEndChallengeId,
   legacyBackEndChallengeId,
@@ -122,6 +122,7 @@ function sendCertifiedEmail(
   send$
 ) {
   if (
+    !email ||
     !isEmail(email) ||
     !isRespWebDesignCert ||
     !isFrontEndLibsCert ||
@@ -135,7 +136,7 @@ function sendCertifiedEmail(
   const notifyUser = {
     type: 'email',
     to: email,
-    from: 'team@freeCodeCamp.org',
+    from: supportEmail,
     subject: dedent`
       Congratulations on completing all of the
       freeCodeCamp certifications!
@@ -150,6 +151,8 @@ function sendCertifiedEmail(
 
 export default function certificate(app) {
   const router = app.loopback.Router();
+  const api = app.loopback.Router();
+
   const { Email, Challenge, User } = app.models;
 
   function findUserByUsername$(username, fields) {
@@ -186,32 +189,34 @@ export default function certificate(app) {
   router.get(
     '/:username/front-end-certification',
     (req, res) => res.redirect(
-      `/certification/${req.params.username}/legacy-front-end`
+      `${homeLocation}/certification/${req.params.username}/legacy-front-end`
     )
   );
 
   router.get(
     '/:username/data-visualization-certification',
     (req, res) => res.redirect(
-      `/certification/${req.params.username}/legacy-data-visualization`
+      `${
+        homeLocation
+      }/certification/${req.params.username}/legacy-data-visualization`
     )
   );
 
   router.get(
     '/:username/back-end-certification',
     (req, res) => res.redirect(
-      `/certification/${req.params.username}/legacy-back-end`
+      `${homeLocation}/certification/${req.params.username}/legacy-back-end`
     )
   );
 
   router.get(
     '/:username/full-stack-certification',
     (req, res) => res.redirect(
-      `/certification/${req.params.username}/legacy-full-stack`
+      `${homeLocation}/certification/${req.params.username}/legacy-full-stack`
     )
   );
 
-  router.post(
+  api.post(
     '/certificate/verify',
     ifNoUser401,
     ifNoSuperBlock404,
@@ -222,6 +227,7 @@ export default function certificate(app) {
     showCert
   );
 
+  app.use(api);
   app.use(router);
 
   const noNameMessage = dedent`
@@ -360,10 +366,10 @@ export default function certificate(app) {
             'danger',
             `We couldn't find a user with the username ${username}`
           );
-          return res.redirect('/');
+          return res.redirect(homeLocation);
         }
         const { isLocked, showCerts } = user.profileUI;
-        const profile = `/portfolio/${user.username}`;
+        const profile = `${homeLocation}/portfolio/${user.username}`;
 
         if (!user.name) {
           req.flash(
@@ -389,7 +395,7 @@ export default function certificate(app) {
                 in order for others to be able to view their certification.
             `
           );
-          return res.redirect('/');
+          return res.redirect(homeLocation);
         }
 
         if (!showCerts) {
@@ -401,7 +407,7 @@ export default function certificate(app) {
                 in order for others to be able to view them.
             `
           );
-          return res.redirect('/');
+          return res.redirect(homeLocation);
         }
 
         if (!user.isHonest) {
