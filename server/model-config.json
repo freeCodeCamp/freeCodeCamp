@@ -90,5 +90,9 @@
   "article": {
     "dataSource": "db",
     "public": true
+  },
+  "popularity": {
+    "dataSource": "db",
+    "public": true
   }
 }
