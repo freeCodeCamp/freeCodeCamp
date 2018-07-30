@@ -41,7 +41,6 @@
       }
     },
     "method-override": {}
-
   },
   "parse:after": {
     "./middlewares/validator": {}

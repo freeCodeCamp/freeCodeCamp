@@ -244,19 +244,23 @@
       },
       "default": {}
     },
-    "donationEmails": [ "string" ],
+    "donationEmails": {
+      "type": [
+        "string"
+      ]
+    },
     "isDonating": {
       "type": "boolean",
-      "default": false,
-      "description": "Does the camper have an active donation"
+      "description": "Does the camper have an active donation",
+      "default": false
     }
   },
   "validations": [],
   "relations": {
     "donations": {
       "type": "hasMany",
-      "modal": "donation",
-      "foreignKey": ""
+      "foreignKey": "",
+      "modal": "donation"
     },
     "credentials": {
       "type": "hasMany",

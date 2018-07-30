@@ -1,12 +1,17 @@
 {
   "name": "Donation",
-  "plural": "donations",
   "description": "A representaion of a donation to freeCodeCamp",
+  "plural": "donations",
   "base": "PersistedModel",
   "idInjection": true,
+  "scopes": {},
+  "indexes": {},
   "options": {
     "validateUpsert": true
-    },
+  },
+  "hidden": [],
+  "remoting": {},
+  "http": {},
   "properties": {
     "email": {
       "type": "string",
@@ -41,14 +46,14 @@
       "description": "The providers reference for the donator"
     }
   },
-  "hidden": [],
   "validations": [
     {
       "amount": {
         "type": "number",
         "description": "Amount should be >= $1 (100c)",
         "min": 100
-      }
+      },
+      "facetName": "server"
     }
   ],
   "relations": {
@@ -59,10 +64,5 @@
     }
   },
   "acls": [],
-  "scopes": {},
-  "indexes" : {},
-  "methods": [],
-  "remoting": {},
-  "http": {}
+  "methods": {}
 }
-
