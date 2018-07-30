@@ -1,0 +1,74 @@
+{
+  "name": "article",
+  "plural": "articles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "shortId": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "featureImage": {
+      "type": "string"
+    },
+    "draft": {
+      "type": "string",
+      "required": true
+    },
+    "renderableContent": {
+      "type": "string"
+    },
+    "published": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "featured": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "underReview": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "viewCount": {
+      "type": "number",
+      "required": true,
+      "default": 1
+    },
+    "createdDate": {
+      "type": "date",
+      "required": true
+    },
+    "lastEditedDate": {
+      "type": "date",
+      "required": true
+    },
+    "history": {
+      "type": [
+        "object"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

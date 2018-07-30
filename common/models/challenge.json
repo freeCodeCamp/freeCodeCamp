@@ -92,7 +92,7 @@
       "type": "array",
       "default": []
     },
-    "guideUrl" : {
+    "guideUrl": {
       "type": "string",
       "description": "Used to link to an article in the FCC guide"
     },
