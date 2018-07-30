@@ -153,4 +153,27 @@ describe('redirectToLearn', () => {
 
     return redirectToLearn(mockReq, mockRes, () => {});
   });
+
+  it('should redirect to learn when no challenge found in pathMap', done => {
+    const redirectToLearn = createRedirectToLearn(mockPathMigration);
+
+    const mockReq = {
+      path: '/challenges/challenge-doesnt-exist'
+    };
+
+    const mockRes = {
+      status() {
+        return {
+          redirect(location) {
+            expect(location).toEqual(
+              'http://localhost:4545/learn'
+            );
+            return done();
+          }
+        };
+      }
+    };
+
+    return redirectToLearn(mockReq, mockRes, () => {});
+  });
 });
