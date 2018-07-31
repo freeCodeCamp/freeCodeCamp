@@ -3,6 +3,8 @@ import helmet from 'helmet';
 let trusted = [
   "'self'",
   'https://search.freecodecamp.org',
+  'https://www.freecodecamp.rocks',
+  'https://api.freecodecamp.rocks',
   'https://*.algolianet.com',
   'https://' + process.env.AUTH0_DOMAIN
 ];
