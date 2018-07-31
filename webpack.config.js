@@ -25,8 +25,7 @@ module.exports = {
     chunkFilename: __DEV__ ?
       '[name].js' :
       '[name]-[chunkhash].js',
-    path: path.join(__dirname, '/public/js'),
-    publicPath: '/js'
+    path: path.join(__dirname, '/public/js/')
   },
   resolve: {
     alias: {
