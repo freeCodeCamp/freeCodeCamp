@@ -3,7 +3,7 @@ const path = require('path');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
-const UglifyPlugin = require('uglifyjs-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 var __DEV__ = process.env.NODE_ENV !== 'production';
 
@@ -59,16 +59,21 @@ module.exports = {
       /debug\/node/,
       'debug/src/browser'
     )
-  ]
+  ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        test: /\.js($|\?)/i,
+        cache: true,
+        sourceMap: true,
+        parallel: true
+      })
+    ]
+  }
 };
 
 if (!__DEV__) {
   module.exports.plugins.push(
-    new UglifyPlugin({
-      test: /\.js($|\?)/i,
-      cache: true,
-      sourceMap: true
-    }),
     new ManifestPlugin({ fileName: 'react-manifest.json' }),
     new ChunkManifestPlugin({
       filename: 'chunk-manifest.json',
