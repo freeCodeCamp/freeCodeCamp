@@ -7,5 +7,5 @@ html(lang='en')
       title freeCodeCamp
     include partials/react-stylesheets
   body
-    #news-app-mount
+    #news-app-mount!= markup
     script(src=cacheBreaker(rev('/js', 'news-app.js')))
