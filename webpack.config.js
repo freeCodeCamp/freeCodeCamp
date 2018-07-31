@@ -12,6 +12,7 @@ module.exports = {
     bundle: './client'
   },
   devtool: __DEV__ ? 'inline-source-map' : 'source-map',
+  mode: __DEV__ ? 'development' : 'production',
   node: {
     // Mock Node.js modules that Babel require()s but that we don't
     // particularly care about.
@@ -45,10 +46,6 @@ module.exports = {
         'babel-loader'
       ].filter(Boolean)
     }]
-  },
-  externals: {
-    codemirror: 'CodeMirror',
-    'loop-protect': 'loopProtect'
   },
   plugins: [
     new webpack.DefinePlugin({
