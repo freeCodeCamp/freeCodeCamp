@@ -9,7 +9,8 @@ var __DEV__ = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: {
-    bundle: './client'
+    client: './client/index.js',
+    news: './news/index.js'
   },
   devtool: __DEV__ ? 'inline-source-map' : 'source-map',
   mode: __DEV__ ? 'development' : 'production',
@@ -21,25 +22,17 @@ module.exports = {
     net: 'empty'
   },
   output: {
-    filename: __DEV__ ? '[name].js' : '[name]-[hash].js',
+    filename: __DEV__ ? '[name]-app.js' : '[name]-app-[hash].js',
     chunkFilename: __DEV__ ?
-      '[name].js' :
-      '[name]-[chunkhash].js',
-    path: path.join(__dirname, '/public/js/')
-  },
-  resolve: {
-    alias: {
-      'dist/rx.all.js': 'rx/dist/rx.all.js'
-    }
+      '[name]-chunk.js' :
+      '[name]-chunk-[chunkhash].js',
+    path: path.join(__dirname, '/public/js/'),
+    publicPath: '/js'
   },
   module: {
     rules: [{
       test: /\.jsx?$/,
-      include: [
-        path.join(__dirname, 'client/'),
-        path.join(__dirname, 'common/'),
-        path.join(__dirname, 'server/')
-      ],
+      exclude: /node_modules/,
       use: [
         __DEV__ && 'react-hot-loader',
         'babel-loader'

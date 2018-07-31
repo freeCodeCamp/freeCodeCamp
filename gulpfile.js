@@ -12,6 +12,7 @@ const Rx = require('rx'),
   del = require('del'),
   // utils
   plumber = require('gulp-plumber'),
+  named = require('vinyl-named'),
   notify = require('gulp-notify'),
   gutil = require('gulp-util'),
   reduce = require('gulp-reduce-file'),
@@ -76,6 +77,8 @@ const paths = {
     src: './client',
     dest: 'common/app'
   },
+
+  reactFiles: ['./client/**/*.js', './news/**/*.js', 'common/**/*.js'],
 
   syncWatch: ['public/**/*.*']
 };
@@ -146,10 +149,13 @@ gulp.task('serve', function(cb) {
 const syncDepenedents = ['serve', 'less'];
 
 gulp.task('dev-server', syncDepenedents, function() {
-  webpackConfig.entry.bundle = [
+  const devMiddleware = [
     'webpack/hot/dev-server',
     'webpack-hot-middleware/client'
-  ].concat(webpackConfig.entry.bundle);
+  ];
+  Object.keys(webpackConfig.entry).forEach(key => {
+    webpackConfig.entry[key] = [webpackConfig.entry[key]].concat(devMiddleware);
+  });
 
   const bundler = webpack(webpackConfig);
   sync.init(null, {
@@ -176,29 +182,33 @@ gulp.task('dev-server', syncDepenedents, function() {
   });
 });
 
-gulp.task('pack-client', function() {
+gulp.task('pack-apps', function() {
   if (!__DEV__) {
-    console.log('\n\nbundling www - production\n\n');
+    console.log('\n\nbundling apps - production\n\n');
   }
 
   const dest = webpackConfig.output.path;
+  const sources = Object.keys(webpackConfig.entry).map(
+    key => webpackConfig.entry[key]
+  );
 
   return gulp
-    .src(webpackConfig.entry.bundle)
+    .src(sources)
+    .pipe(named())
     .pipe(plumber({ errorHandler }))
     .pipe(webpackStream(webpackConfig))
     .pipe(gulp.dest(dest));
 });
 
 const webpackManifestFiles = ['react-manifest.json', 'chunk-manifest.json'];
-gulp.task('move-webpack-manifest', ['pack-client'], function() {
+gulp.task('move-webpack-manifest', ['pack-apps'], function() {
   const files = webpackManifestFiles.map(function(filename) {
     return path.join(webpackConfig.output.path, filename);
   });
   return gulp.src(files).pipe(gulp.dest(paths.manifest));
 });
 
-const cleanDeps = ['pack-client', 'move-webpack-manifest'];
+const cleanDeps = ['pack-apps', 'move-webpack-manifest'];
 gulp.task('clean-webpack-manifest', cleanDeps, function() {
   return del(
     webpackManifestFiles.map(function(filename) {
@@ -250,7 +260,7 @@ function done(manifest) {
   return sortKeys(manifest);
 }
 
-const buildDependents = ['less', 'pack-client', 'move-webpack-manifest'];
+const buildDependents = ['less', 'pack-apps', 'move-webpack-manifest'];
 
 gulp.task('build-manifest', buildDependents, function() {
   return gulp
@@ -265,7 +275,7 @@ gulp.task('generate-migration-map', done => {
 
 gulp.task('build', [
   'less',
-  'pack-client',
+  'pack-apps',
   'move-webpack-manifest',
   'clean-webpack-manifest',
   'build-manifest',
