@@ -13,8 +13,6 @@ script.
     global.main.isLoggedIn = !{JSON.stringify(!!user)};
     global.main.userId = !{JSON.stringify(user && user.id || false)};
   }(window))
-script(src=rev('/js', 'vendor-main.js'))
-script(src=rev('/js', 'main.js'))
 script(defer, src=rev('/js/lib/fontawesome', 'fa-brands.min.js'))
 script(defer, src=rev('/js/lib/fontawesome', 'fa-solid.min.js'))
 script(src=rev('/js/lib/fontawesome', 'fontawesome.min.js'))
