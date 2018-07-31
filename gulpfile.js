@@ -27,7 +27,6 @@ const Rx = require('rx'),
   webpackDevMiddleware = require('webpack-dev-middleware'),
   webpackHotMiddleware = require('webpack-hot-middleware'),
   webpackConfig = require('./webpack.config.js'),
-  webpackFrameConfig = require('./webpack.frame-runner.js'),
 
   // server process
   nodemon = require('gulp-nodemon'),
@@ -247,25 +246,13 @@ gulp.task('dev-server', syncDepenedents, function() {
 });
 
 gulp.task('pack-client', function() {
-  if (!__DEV__) { console.log('\n\nbundling production\n\n'); }
+  if (!__DEV__) { console.log('\n\nbundling www - production\n\n'); }
 
   const dest = webpackConfig.output.path;
 
   return gulp.src(webpackConfig.entry.bundle)
     .pipe(plumber({ errorHandler }))
     .pipe(webpackStream(webpackConfig))
-    .pipe(gulp.dest(dest));
-});
-
-gulp.task('pack-frame-runner', function() {
-  if (!__DEV__) { console.log('\n\nbundling frame production\n\n'); }
-
-
-  const dest = webpackFrameConfig.output.path;
-
-  return gulp.src(webpackFrameConfig.entry)
-    .pipe(plumber({ errorHandler }))
-    .pipe(webpackStream(webpackFrameConfig))
     .pipe(gulp.dest(dest));
 });
 
@@ -404,7 +391,6 @@ gulp.task('build', [
   'less',
   'js',
   'pack-client',
-  'pack-frame-runner',
   'move-webpack-manifest',
   'clean-webpack-manifest',
   'build-manifest',
@@ -415,14 +401,12 @@ const watchDependents = [
   'less',
   'js',
   'serve',
-  'pack-frame-runner',
   'dev-server'
 ];
 
 gulp.task('watch', watchDependents, function() {
   gulp.watch(paths.lessFiles, ['less']);
   gulp.watch(paths.vendorChallenges, ['js']);
-  gulp.watch(webpackFrameConfig.entry, ['pack-frame-runner']);
 });
 
 gulp.task('default', [
@@ -430,6 +414,5 @@ gulp.task('default', [
   'serve',
   'watch',
   'dev-server',
-  'pack-frame-runner',
   'generate-migration-map'
 ]);
