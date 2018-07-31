@@ -58,7 +58,8 @@ export default function csp() {
         'https://*.bootstrapcdn.com',
         '*.cloudflare.com',
         'https://*.cloudflare.com',
-        'https://*.optimizely.com'
+        'https://*.optimizely.com',
+        'https://use.fontawesome.com'
       ].concat(trusted),
       fontSrc: [
         '*.cloudflare.com',
