@@ -31,7 +31,7 @@ export default function addReturnToUrl() {
       req.method !== 'GET' ||
       pathsOfNoReturnRegex.test(path) ||
       !whiteListRegex.test(path) ||
-      (/news/i).test(path) && (/hot/i).test(req.path)
+      (/hot/i).test(req.path)
     ) {
       return next();
     }

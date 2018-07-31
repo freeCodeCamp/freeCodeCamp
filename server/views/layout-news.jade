@@ -1,0 +1,11 @@
+doctype html
+html(lang='en')
+  head
+    if title
+      title= title
+    else
+      title freeCodeCamp
+    include partials/react-stylesheets
+  body
+    #news-app-mount
+    script(src=cacheBreaker(rev('/js', 'news-app.js')))
