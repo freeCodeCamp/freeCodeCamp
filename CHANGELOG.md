@@ -1,3 +1,15 @@
+## [3.1.2](https://github.com/freeCodeCamp/curriculum/compare/v3.1.1...v3.1.2) (2018-07-31)
+
+
+### Bug Fixes
+
+* **challenges:** allow for omitted unit after zero values ([45b573b](https://github.com/freeCodeCamp/curriculum/commit/45b573b)), closes [#166](https://github.com/freeCodeCamp/curriculum/issues/166)
+* **challenges:** changed complementary color for blue to orange ([e41f078](https://github.com/freeCodeCamp/curriculum/commit/e41f078)), closes [#17934](https://github.com/freeCodeCamp/curriculum/issues/17934)
+* **challenges:** fix test in hr challenge ([#189](https://github.com/freeCodeCamp/curriculum/issues/189)) ([2edb306](https://github.com/freeCodeCamp/curriculum/commit/2edb306))
+* **challenges:** fix third test for template literals ([b8d004e](https://github.com/freeCodeCamp/curriculum/commit/b8d004e)), closes [#135](https://github.com/freeCodeCamp/curriculum/issues/135)
+* **challenges:** fixes escaping of ([fd8c9e4](https://github.com/freeCodeCamp/curriculum/commit/fd8c9e4))
+* **scripts:** fix unpack and repack scripts for the new challenge schema ([52ed7cf](https://github.com/freeCodeCamp/curriculum/commit/52ed7cf))
+
 ## [3.1.1](https://github.com/freeCodeCamp/curriculum/compare/v3.1.0...v3.1.1) (2018-07-28)
 
 
