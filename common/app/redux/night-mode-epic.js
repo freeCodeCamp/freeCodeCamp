@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { Observable } from 'rx';
 import { ofType } from 'redux-epic';
-import store from 'store';
+import store from '@freecodecamp/store';
 
 import { themes } from '../../utils/themes.js';
 import { postJSON$ } from '../../utils/ajax-stream.js';
