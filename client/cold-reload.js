@@ -1,4 +1,4 @@
-import store from 'store';
+import store from '@freecodecamp/store';
 
 const key = '__cold-storage__';
 export function isColdStored() {

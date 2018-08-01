@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { NotificationStack } from 'react-notification';
+import { NotificationStack } from '@freecodecamp/react-notification';
 
 import { removeToast } from './redux';
 
