@@ -10,7 +10,7 @@ var __DEV__ = process.env.NODE_ENV !== 'production';
 module.exports = {
   entry: {
     client: './client/index.js',
-    news: './news/index.js'
+    news: './news/client.js'
   },
   devtool: __DEV__ ? 'inline-source-map' : 'source-map',
   mode: __DEV__ ? 'development' : 'production',
@@ -23,21 +23,18 @@ module.exports = {
   },
   output: {
     filename: __DEV__ ? '[name]-app.js' : '[name]-app-[hash].js',
-    chunkFilename: __DEV__ ?
-      '[name]-chunk.js' :
-      '[name]-chunk-[chunkhash].js',
+    chunkFilename: __DEV__ ? '[name]-chunk.js' : '[name]-chunk-[chunkhash].js',
     path: path.join(__dirname, '/public/js/'),
     publicPath: '/js'
   },
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      use: [
-        __DEV__ && 'react-hot-loader',
-        'babel-loader'
-      ].filter(Boolean)
-    }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [__DEV__ && 'react-hot-loader', 'babel-loader'].filter(Boolean)
+      }
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({
