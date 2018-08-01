@@ -122,6 +122,7 @@
     "react-images": "^0.5.11",
     "react-media": "^1.8.0",
     "react-motion": "^0.4.8",
+    "react-no-ssr": "^1.0.1",
     "react-redux": "^4.4.8",
     "react-router-dom": "^4.3.1",
     "react-test-renderer": "^15.6.2",
