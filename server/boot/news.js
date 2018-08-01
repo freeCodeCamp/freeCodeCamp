@@ -1,15 +1,24 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router-dom';
 
 import NewsApp from '../../news/NewsApp';
+
+function serveNewsApp(req, res) {
+  const context = {};
+  const markup = renderToString(
+    <StaticRouter basename='/news' context={context} location={req.url}>
+      <NewsApp />
+    </StaticRouter>
+  );
+  return res.render('layout-news', { title: 'News | freeCodeCamp', markup });
+}
 
 export default function newsBoot(app) {
   const router = app.loopback.Router();
 
-  router.get('/', (req, res) => {
-    const markup = renderToString(<NewsApp />);
-    return res.render('layout-news', {title: 'Hello News?', markup});
-  });
+  router.get('/news', serveNewsApp);
+  router.get('/news/*', serveNewsApp);
 
-  app.use('/news', router);
+  app.use(router);
 }

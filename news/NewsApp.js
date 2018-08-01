@@ -1,10 +1,20 @@
 import React from 'react';
+import { Grid } from 'react-bootstrap';
+
+import { FullWidthRow } from '../common/app/helperComponents';
+import Nav from './components/Nav';
+import { routes } from './routes';
 
 const propTypes = {};
 
 function NewsApp() {
   return (
-    <h1>This is the news!</h1>
+    <div>
+      <Nav />
+      <Grid fluid={true}>
+        <FullWidthRow>{routes}</FullWidthRow>
+      </Grid>
+    </div>
   );
 }
 

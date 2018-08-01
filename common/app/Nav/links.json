@@ -7,5 +7,9 @@
     "content": "Forum",
     "link": "https://forum.freecodecamp.org/",
     "target": "_blank"
+  },
+  {
+    "content": "News",
+    "link": "https://www.freecodecamp.org/news"
   }
 ]
