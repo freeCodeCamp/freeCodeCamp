@@ -279,7 +279,9 @@
           "testString": "assert(code.match(/footer\\s*?{\\s*?.*?\\s*?.*?\\s*?flex-direction:\\s*?row;/g), 'The <code>footer</code> should have a <code>flex-direction</code> property set to row.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"header {flex-direction: row;} footer {flex-direction: row;}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -634,7 +636,9 @@
           "testString": "assert(code.match(/header\\s.profile-name\\s*{\\s*?.*?\\s*?.*?\\s*?\\s*?.*?\\s*?justify-content\\s*:\\s*(center|flex-start|flex-end|space-between|space-around)\\s*;/g), 'The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"header .profile-name {display: flex; flex-direction: column; justify-content: center; margin-left: 10px;}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,

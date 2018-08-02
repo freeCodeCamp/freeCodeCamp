@@ -1251,7 +1251,9 @@
             "assert(code.match(/background-color:\\s*?hsl\\(120,\\s*?25%,\\s*?55%\\)/gi), 'Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"body {color: hsl(0, 55%, 15%); background-color: hsl(120, 25%, 55%);}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,

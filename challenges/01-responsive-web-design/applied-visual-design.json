@@ -98,7 +98,9 @@
             "assert(code.match(/.fullCard\\s*{[\\s\\S][^}]*\\n*^\\s*width\\s*:\\s*245px\\s*;/gm), 'Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \".fullCard {\\nwidth: 245px; border: 1px solid #ccc; border-radius: 5px; margin: 10px 5px; padding: 4px;}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -809,7 +811,9 @@
             "assert(code.match(/box-shadow:\\s*?0\\s+?10px\\s+?20px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.19\\),\\s*?0\\s+?6px\\s+?6px\\s+?rgba\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0\\s*?,\\s*?0?\\.23\\)/gi), 'You should use the given CSS for the <code>box-shadow</code> value.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"#thumbnail {box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -1735,7 +1739,9 @@
             "assert(code.match(/margin:\\s*?auto;/g), 'The <code>div</code> should have a <code>margin</code> set to auto.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"div {background-color: blue; height: 100px; width: 100px; margin: auto;}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2099,7 +2105,9 @@
             "assert(code.match(/nav\\s*?{\\s*?background-color:\\s*?hsl\\(180,\\s*?80%,\\s*?25%\\)/gi), 'The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"nav {background-color: hsl(180, 80%, 25%);}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2178,7 +2186,9 @@
             "assert(code.match(/background:\\s*?linear-gradient\\(35deg,\\s*?(#CCFFFF|#CFF),\\s*?(#FFCCCC|#FCC)\\);/gi), 'The <code>div</code> element should have a <code>linear-gradient</code> <code>background</code> with the specified direction and colors.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"<style> div{border-radius: 20px; width: 70%; height: 400px; margin: 50px auto; background: linear-gradient(35deg, #cff, #fcc);}</style><div></div>\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2257,7 +2267,9 @@
             "assert(code.match(/black\\s+?80px/gi), 'The last color stop at 80 pixels should be <code>black</code>.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"background: repeating-linear-gradient(45deg, yellow 0px, yellow 40px, black 40px, black 80px);\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2310,7 +2322,9 @@
             "assert(code.match(/background:\\s*?url\\(\\s*(\"|'|)https:\\/\\/i\\.imgur\\.com\\/MJAkxbh\\.png\\1\\s*\\)/gi), 'Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"body {background: url('https://i.imgur.com/MJAkxbh.png')}\""
+      ],
       "hints": [
         "Remember to wrap the address in quotes within the url() function."
       ],
@@ -2346,7 +2360,9 @@
             "assert(code.match(/#ball2\\s*?{\\s*?left:\\s*?65%;\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?}|#ball2\\s*?{\\s*?transform:\\s*?scale\\(1\\.5\\);\\s*?left:\\s*?65%;\\s*?}/gi), 'Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"#ball2 {left: 65%; transform: scale(1.5);}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2408,7 +2424,7 @@
             "assert(code.match(/div:hover\\s*?{\\s*?transform:\\s*?scale\\(1\\.1\\);/gi), 'The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.');"
         }
       ],
-      "solutions": [],
+      "solutions": ["var code = \"div:hover {transform: scale(1.1);}\""],
       "hints": [
         "Make sure to apply the CSS rule to the hover state of the div, using div:hover"
       ],
@@ -2463,7 +2479,9 @@
             "assert(code.match(/#bottom\\s*?{\\s*?.*?\\s*?transform:\\s*?skewX\\(24deg\\);/g), 'The element with id <code>bottom</code> should be skewed by 24 degrees along its X-axis.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"#bottom {background-color: blue; transform: skewX(24deg);}\""
+      ],
       "hints": [
         "Notice that there is no space between the number and \"deg\" (-32deg) when declaring the degrees value."
       ],
@@ -2516,7 +2534,9 @@
             "assert(code.match(/#top\\s*?{\\s*?.*?\\s*?transform:\\s*?skewY\\(-10deg\\);/g), 'The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"#top {background-color: red; transform: skewY(-10deg);}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2582,7 +2602,9 @@
             "assert(code.match(/box-shadow:\\s*?25px\\s+?10px\\s+?0(px)?\\s+?0(px)?\\s+?blue\\s*?;/gi), 'The value of the <code>box-shadow</code> property should be set to 25px for <code>offset-x</code>, 10px for <code>offset-y</code>, 0 for <code>blur-radius</code>, 0 for <code>spread-radius</code>, and finally blue for the color.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \".center {background-color: transparent; border-radius: 50%; box-shadow: 25px 10px 0px 0 blue;}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2657,7 +2679,9 @@
             "assert(code.match(/\\.heart::before\\s*?{\\s*?content\\s*?:\\s*?(\"|')\\1\\s*?;/gi), 'The <code>content</code> of the <code>heart::before</code> selector should be an empty string.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \".heart {transform: rotate(-45deg);} .heart::after {background-color: pink; border-radius: 50%;} .heart::before {content: \\\"\\\"; border-radius: 50%;}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -2873,7 +2897,9 @@
             "assert(code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-fill-mode\\s*?:\\s*?forwards\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-name\\s*?:\\s*?background-color\\s*?;[\\s\\S]*}/gi) && code.match(/button\\s*?:\\s*?hover\\s*?{[\\s\\S]*animation-duration\\s*?:\\s*?500ms\\s*?;[\\s\\S]*}/gi), '<code>button:hover</code> should have a <code>animation-fill-mode</code> property with a value of <code>forwards</code>.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"button:hover {animation-name: background-color; animation-duration: 500ms; animation-fill-mode: forwards;}\""
+      ],
       "hints": [],
       "challengeType": 0,
       "translations": {},
@@ -2940,7 +2966,9 @@
             "assert(code.match(/100%\\s*?{\\s*?background-color:\\s*?yellow;\\s*?top:\\s*?0(px)?;\\s*?left:\\s*?-25px;\\s*?}/gi), 'The <code>@keyframes</code> rule for <code>100%</code> should use the <code>left</code> offset of -25px.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"@keyframes rainbow {0% {background-color: blue; top: 0px; left: 0px;} 50% {background-color: green; top: 50px; left: 25px;} 100% {background-color: yellow; top: 0px; left:-25px;}}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -3010,7 +3038,9 @@
             "assert(code.match(/@keyframes fade\\s*?{\\s*?50%\\s*?{\\s*?(?:left:\\s*?60%;\\s*?opacity:\\s*?0?\\.1;|opacity:\\s*?0?\\.1;\\s*?left:\\s*?60%;)/gi), 'The <code>keyframes</code> rule for fade should set the <code>opacity</code> property to 0.1 at 50%.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"@keyframes fade {50% { left: 60%; opacity: 0.1;}}\""
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 0,
@@ -3249,7 +3279,9 @@
             "assert(code.match(/twinkle-1\\s*?{\\s*?50%/g), 'The <code>@keyframes</code> rule for the <code>star-1</code> class should be 50%.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "var code = \"@keyframes twinkle-1 {50% {transform: scale(0.5); opacity: 0.5;}}\""
+      ],
       "hints": [
         "Check the animation-name declared in the star-1 class to find the right @keyframes rule to change."
       ],
