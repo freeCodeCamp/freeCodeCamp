@@ -5,17 +5,17 @@
               .alert.alert-danger.fade.in
                 button.close(type='button', data-dismiss='alert')
                   i.fas.fa-times-circle
-                for msg in messages.danger
-                  div!= msg
+                for danger in messages.danger
+                  div!= typeof danger === 'string' ? danger : danger.msg
             if messages.info
               .alert.alert-info.fade.in
                 button.close(type='button', data-dismiss='alert')
                   i.fas.fa-times-circle
-                for msg in messages.info
-                  div!= msg
+                for info in messages.info
+                  div!= typeof info === 'string' ? info : info.msg
             if messages.success
               .alert.alert-success.fade.in
                 button.close(type='button', data-dismiss='alert')
                   i.fas.fa-times-circle
-                for msg in messages.success
-                  div!= msg
+                for success in messages.success
+                  div!= typeof success === 'string' ? success : success.msg
