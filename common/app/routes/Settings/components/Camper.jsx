@@ -10,11 +10,25 @@ const propTypes = {
   name: PropTypes.string,
   picture: PropTypes.string,
   points: PropTypes.number,
-  username: PropTypes.string
+  username: PropTypes.string,
+  yearsTopContributor: PropTypes.array
 };
 
 function pluralise(word, condition) {
   return condition ? word + 's' : word;
+}
+function joinArray(array) {
+  return array.reduce((string, item, index, array) => {
+    if (string.length > 0) {
+      if (index === array.length - 1) {
+        return `${string} and ${item}`;
+      } else {
+        return `${string}, ${item}`;
+      }
+    } else {
+      return item;
+    }
+  });
 }
 
 function Camper({
@@ -23,7 +37,8 @@ function Camper({
   location,
   points,
   picture,
-  about
+  about,
+  yearsTopContributor
 }) {
 
   return (
@@ -48,6 +63,13 @@ function Camper({
             { `${points} ${pluralise('point', points !== 1)}` }
           </p>
         ) : null
+      }
+      { yearsTopContributor.length > 0 &&
+        (
+          <p className='text-center yearsTopContributor'>
+            Top Contributor of { joinArray(yearsTopContributor) }
+          </p>
+        )
       }
       <br/>
     </div>

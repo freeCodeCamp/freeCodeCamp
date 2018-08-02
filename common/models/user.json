@@ -206,6 +206,10 @@
       "type": "array",
       "default": []
     },
+    "yearsTopContributor": {
+      "type": "array",
+      "default": []
+    },
     "rand": {
       "type": "number",
       "index": true
