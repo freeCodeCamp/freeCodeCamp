@@ -1,10 +1,8 @@
 import request from 'request';
-import { isMongoId } from 'validator';
-import dedent from 'dedent';
+import { ObjectId } from 'mongodb';
 
 import constantStrings from '../utils/constantStrings.json';
 import testimonials from '../resources/testimonials.json';
-import { wrapHandledError } from '../utils/create-handled-error';
 
 const githubClient = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
@@ -18,12 +16,14 @@ module.exports = function(app) {
   router.get('/twitch', twitch);
   router.get('/u/:email', unsubscribe);
   router.get('/unsubscribe/:email', unsubscribe);
-  router.get('/z', unsubscribeAnon);
+  router.get('/ue/:unsubscribeId', unsubscribeById);
   router.get(
     '/the-fastest-web-page-on-the-internet',
     theFastestWebPageOnTheInternet
   );
+  router.get('/unsubscribed/:unsubscribeId', unsubscribedWithId);
   router.get('/unsubscribed', unsubscribed);
+  router.get('/resubscribe/:unsubscribeId', resubscribe);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
@@ -120,56 +120,6 @@ module.exports = function(app) {
     res.redirect('https://twitch.tv/freecodecamp');
   }
 
-  function unsubscribeAnon(req, res, next) {
-    const { query: { unsubscribeId } } = req;
-    const isValid = unsubscribeId && isMongoId(unsubscribeId);
-    if (!isValid) {
-      throw wrapHandledError(
-        new Error('unsubscribeId is not a mongo ObjectId'),
-        {
-          message: dedent`
-            Oops... something is not right. We could not unsubscribe that email
-            address
-          `,
-          type: 'danger',
-          redirectTo: '/'
-        }
-      );
-    }
-    User.findOne({
-      where: { unsubscribeId }
-    }, (err, user) => {
-      if (err) { return next(err); }
-      if (!user || !user.email) {
-        throw wrapHandledError(
-          new Error('No user or user email to unsubscribe'),
-          {
-            message: dedent`
-              We couldn't find a user account to unsubscribe, are you clicking
-              a link from an email we sent?
-            `,
-            type: 'info',
-            redirectTo: '/'
-          }
-        );
-      }
-      return user.update$({
-        sendQuincyEmail: false
-      }).subscribe(() => {
-        req.flash(
-          'info',
-          'We\'ve successfully updated your Email preferences.'
-        );
-        return res.redirect('/unsubscribed');
-      },
-        next,
-        () => {
-          return user.manualReload();
-        }
-      );
-    });
-  }
-
   function unsubscribe(req, res, next) {
     req.checkParams(
       'email',
@@ -212,9 +162,41 @@ module.exports = function(app) {
           req.flash('info', {
             msg: 'We\'ve successfully updated your Email preferences.'
           });
-          return res.redirect('/unsubscribed');
+          return res.redirect('/unsubscribed/');
         })
         .catch(next);
+    });
+  }
+
+  function unsubscribeById(req, res, next) {
+    const { unsubscribeId } = req.params;
+    return User.find({ where: { unsubscribeId } }, (err, users) => {
+      if (err || !users.length) {
+        req.flash('info', {
+          msg: 'We could not find an account to unsubscribe'
+        });
+        return res.redirect('/');
+
+      }
+      const [ user ] = users;
+    return new Promise((resolve, reject) =>
+      user.updateAttributes({
+        sendQuincyEmail: false,
+        unsubscribeId: unsubscribeId
+      }, (err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve();
+        }
+      })
+    ).then(() => {
+        req.flash('success', {
+          msg: 'We\'ve successfully updated your email preferences.'
+        });
+        return res.redirect(`/unsubscribed/${queryId}`);
+      })
+      .catch(next);
     });
   }
 
@@ -223,6 +205,58 @@ module.exports = function(app) {
       title: 'You have been unsubscribed'
     });
   }
+
+  function unsubscribedWithId(req, res) {
+    const { unsubscribeId } = req.params;
+    return res.render('resources/unsubscribed', {
+      title: 'You have been unsubscribed',
+      unsubscribeId
+    });
+  }
+
+  function resubscribe(req, res, next) {
+    const { unsubscribeId: queryId } = req.params;
+    return User.find({
+      where: {
+        or: [
+          { unsubscribeId: queryId },
+          { unsubscribeId: ObjectId(queryId).toString() },
+          { unsubscribeId: ObjectId(queryId) }
+        ]
+      }
+    },
+      (err, users) => {
+        if (err || !users.length) {
+          req.flash('info', {
+            msg: 'We could not find an account to unsubscribe'
+          });
+          return res.redirect('/');
+
+        }
+        const [ user ] = users;
+        return new Promise((resolve, reject) =>
+          user.updateAttributes({
+            sendQuincyEmail: true
+          }, (err) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve();
+            }
+          })
+        )
+        .then(() => {
+          req.flash('success', {
+            msg:
+            'We\'ve successfully updated your email preferences. Thank you ' +
+            'for resubscribing.'
+          });
+          return res.redirect('/');
+        })
+        .catch(next);
+    });
+  }
+
 
   function githubCalls(req, res, next) {
     var githubHeaders = {

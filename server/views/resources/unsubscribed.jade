@@ -4,3 +4,6 @@ block content
         .panel-body.text-center
             h1 You have successfully been unsubscribed.
             h2 Whatever you do, keep coding! :)
+    if unsubscribeId
+        .col-xs-12.col-md-8.col-md-offset-2
+            a.btn.btn-primary.btn-lg.btn-block(href='/resubscribe/#{unsubscribeId}') You can click here to resubscribe
