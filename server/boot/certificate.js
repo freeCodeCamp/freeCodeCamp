@@ -23,7 +23,8 @@ import {
   jsAlgoDataStructId,
   dataVis2018Id,
   apisMicroservicesId,
-  infosecQaId
+  infosecQaId,
+  fullStackId
 } from '../utils/constantStrings.json';
 import certTypes from '../utils/certTypes.json';
 import superBlockCertTypeMap from '../utils/superBlockCertTypeMap';
@@ -59,14 +60,14 @@ const certIds = {
   [certTypes.jsAlgoDataStruct]: jsAlgoDataStructId,
   [certTypes.dataVis2018]: dataVis2018Id,
   [certTypes.apisMicroservices]: apisMicroservicesId,
-  [certTypes.infosecQa]: infosecQaId
+  [certTypes.infosecQa]: infosecQaId,
+  [certTypes.fullStack]: fullStackId
 };
 
 const certViews = {
   [certTypes.frontEnd]: 'certificate/legacy/front-end.jade',
   [certTypes.backEnd]: 'certificate/legacy/back-end.jade',
   [certTypes.dataVis]: 'certificate/legacy/data-visualization.jade',
-  [certTypes.fullStack]: 'certificate/legacy/full-stack.jade',
 
   [certTypes.respWebDesign]: 'certificate/responsive-web-design.jade',
   [certTypes.frontEndLibs]: 'certificate/front-end-libraries.jade',
@@ -75,7 +76,8 @@ const certViews = {
   [certTypes.dataVis2018]: 'certificate/data-visualization.jade',
   [certTypes.apisMicroservices]: 'certificate/apis-and-microservices.jade',
   [certTypes.infosecQa]:
-  'certificate/information-security-and-quality-assurance.jade'
+  'certificate/information-security-and-quality-assurance.jade',
+  [certTypes.fullStack]: 'certificate/full-stack.jade'
 };
 
 const certText = {
@@ -178,7 +180,8 @@ export default function certificate(app) {
       apisMicroservicesId,
       Challenge
     ),
-    [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge)
+    [certTypes.infosecQa]: getIdsForCert$(infosecQaId, Challenge),
+    [certTypes.fullStack]: getIdsForCert$(fullStackId, Challenge)
   };
 
   const superBlocks = Object.keys(superBlockCertTypeMap);
@@ -207,7 +210,7 @@ export default function certificate(app) {
   router.get(
     '/:username/full-stack-certification',
     (req, res) => res.redirect(
-      `/certification/${req.params.username}/legacy-full-stack`
+      `/certification/${req.params.username}/full-stack`
     )
   );
 
@@ -254,39 +257,45 @@ export default function certificate(app) {
     return user.getCompletedChallenges$()
       .flatMap(() => certTypeIds[certType])
       .flatMap(challenge => {
-        const {
-          id,
-          tests,
-          challengeType
-        } = challenge;
         const certName = certText[certType];
         if (user[certType]) {
           return Observable.just(alreadyClaimedMessage(certName));
         }
-        if (!user[certType] && !isCertified(tests, user.completedChallenges)) {
-          return Observable.just(notCertifiedMessage(certName));
-        }
-        if (!user.name) {
-          return Observable.just(noNameMessage);
-        }
-        const updateData = {
-          $push: {
+
+        let updateData = {
+          $set: {
+            [certType]: true
+          }
+        };
+
+        if (challenge) {
+          const {
+            id,
+            tests,
+            challengeType
+          } = challenge;
+          if (!user[certType] &&
+            !isCertified(tests, user.completedChallenges)) {
+            return Observable.just(notCertifiedMessage(certName));
+          }
+          updateData['$push'] = {
             completedChallenges: {
               id,
               completedDate: new Date(),
               challengeType
             }
-          },
-          $set: {
-            [certType]: true
-          }
-        };
+          };
+          user.completedChallenges[
+            user.completedChallenges.length - 1
+          ] = { id, completedDate: new Date() };
+        }
+
+        if (!user.name) {
+          return Observable.just(noNameMessage);
+        }
         // set here so sendCertifiedEmail works properly
         // not used otherwise
         user[certType] = true;
-        user.completedChallenges[
-          user.completedChallenges.length - 1
-        ] = { id, completedDate: new Date() };
         return Observable.combineLatest(
           // update user data
           user.update$(updateData),

@@ -5,7 +5,6 @@ const superBlockCertTypeMap = {
   'legacy-front-end': certTypes.frontEnd,
   'legacy-back-end': certTypes.backEnd,
   'legacy-data-visualization': certTypes.dataVis,
-  'legacy-full-stack': certTypes.fullStack,
 
   // modern
   'responsive-web-design': certTypes.respWebDesign,
@@ -13,7 +12,8 @@ const superBlockCertTypeMap = {
   'front-end-libraries': certTypes.frontEndLibs,
   'data-visualization': certTypes.dataVis2018,
   'apis-and-microservices': certTypes.apisMicroservices,
-  'information-security-and-quality-assurance': certTypes.infosecQa
+  'information-security-and-quality-assurance': certTypes.infosecQa,
+  'full-stack': certTypes.fullStack
 };
 
 export default superBlockCertTypeMap;
