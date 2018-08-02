@@ -11,10 +11,15 @@ function serveNewsApp(req, res) {
       <NewsApp />
     </StaticRouter>
   );
+  if (context.url) {
+    // 'client-side' routing hit on a redirect
+    return res.redirect(context.url);
+  }
   return res.render('layout-news', { title: 'News | freeCodeCamp', markup });
 }
 
 export default function newsBoot(app) {
+
   const router = app.loopback.Router();
 
   router.get('/news', serveNewsApp);

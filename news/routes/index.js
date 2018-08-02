@@ -1,12 +1,13 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
-import EditArticle from './EditArticle';
+import Show from './Show';
 import Featured from './Featured';
 
 export const routes = [
   <Route component={Featured} exact={true} path='/' />,
-  <Route component={EditArticle} path='/new' />
-].map(
-  el => ({ ...el, key: el.props.path })
-);
+  <Route exact={true} path='/:username' render={() => <Redirect to='/' />} />,
+  <Route component={Show} path='/:username/:slug' />
+].map(el => ({ ...el, key: el.props.path }));
+
+// <Route component={EditArticle} path='/new' />

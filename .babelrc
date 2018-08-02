@@ -1,11 +1,12 @@
 {
-  "presets": [ "env", "react", "stage-0" ],
+  "presets": ["env", "react", "stage-0"],
   "plugins": [
     "transform-runtime",
     "babel-plugin-add-module-exports",
     "lodash",
     [
-      "transform-imports", {
+      "transform-imports",
+      {
         "react-bootstrap": {
           "transform": "react-bootstrap/lib/${member}",
           "preventFullImport": true
