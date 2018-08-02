@@ -122,3 +122,4 @@ Copyright (c) 2018 freeCodeCamp.
 The content of this repository bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](./LICENSE.md).
+- The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/seed`](/seed) and subdirectories are licensed under the [CC-BY-SA-4.0](https://github.com/freeCodeCamp/curriculum/blob/master/LICENSE.md).
