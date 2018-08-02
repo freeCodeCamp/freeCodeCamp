@@ -1518,6 +1518,10 @@
           "testString": "assert(!pwRegex.test(\"airplanes\"), 'Your regex should not match <code>\"airplanes\"</code>');"
         },
         {
+          "text": "Your regex should not match <code>\"banan1\"</code>",
+          "testString": "assert(!pwRegex.test(\"banan1\"), 'Your regex should not match <code>\"banan1\"</code>');"
+        },
+        {
           "text": "Your regex should match <code>\"bana12\"</code>",
           "testString": "assert(pwRegex.test(\"bana12\"), 'Your regex should match <code>\"bana12\"</code>');"
         },
@@ -1534,7 +1538,7 @@
           "testString": "assert(!pwRegex.test(\"1234\"), 'Your regex should not match <code>\"1234\"</code>');"
         }
       ],
-      "solutions": [],
+      "solutions": ["var pwRegex = /(?=\\w{5})(?=\\D*\\d{2})/;"],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
