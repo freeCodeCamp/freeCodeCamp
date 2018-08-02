@@ -119,6 +119,14 @@ export function projectsSelector(state) {
     ]),
     []
   );
+
+  blocks['full-stack-projects'] = {
+    dashedName: 'full-stack',
+    title: 'Full Stack Certification',
+    time: '1800 hours',
+    challenges: [],
+    superBlock: 'full-stack'
+  };
   return Object.keys(blocks)
     .filter(key =>
       key.includes('projects') && !(

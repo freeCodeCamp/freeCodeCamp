@@ -37,34 +37,41 @@ const mapStateToProps = createSelector(
       isFrontEndCert,
       isBackEndCert,
       isDataVisCert,
+      isFullStackCert,
       username
     },
     projects
-  ) => ({
-    allProjects: projects,
-    legacyProjects: projects.filter(p => p.superBlock.includes('legacy')),
-    modernProjects: projects.filter(p => !p.superBlock.includes('legacy')),
-    userProjects: projects
-      .map(block => buildUserProjectsMap(block, completedChallenges))
-      .reduce((projects, current) => ({
-        ...projects,
-        ...current
-      }), {}),
-    blockNameIsCertMap: {
-      'Responsive Web Design Projects': isRespWebDesignCert,
-      /* eslint-disable max-len */
-      'JavaScript Algorithms and Data Structures Projects': isJsAlgoDataStructCert,
-      /* eslint-enable max-len */
-      'Front End Libraries Projects': isFrontEndLibsCert,
-      'Data Visualization Projects': is2018DataVisCert,
-      'APIs and Microservices Projects': isApisMicroservicesCert,
-      'Information Security and Quality Assurance Projects': isInfosecQaCert,
-      'Legacy Front End Projects': isFrontEndCert,
-      'Legacy Back End Projects': isBackEndCert,
-      'Legacy Data Visualization Projects': isDataVisCert
-    },
-    username
-  })
+  ) => {
+    let modernProjects = projects.filter(p => !p.superBlock.includes('legacy'));
+    modernProjects.push(modernProjects.shift());
+
+    return {
+      allProjects: projects,
+      legacyProjects: projects.filter(p => p.superBlock.includes('legacy')),
+      modernProjects: modernProjects,
+      userProjects: projects
+        .map(block => buildUserProjectsMap(block, completedChallenges))
+        .reduce((projects, current) => ({
+          ...projects,
+          ...current
+        }), {}),
+      blockNameIsCertMap: {
+        'Responsive Web Design Projects': isRespWebDesignCert,
+        /* eslint-disable max-len */
+        'JavaScript Algorithms and Data Structures Projects': isJsAlgoDataStructCert,
+        /* eslint-enable max-len */
+        'Front End Libraries Projects': isFrontEndLibsCert,
+        'Data Visualization Projects': is2018DataVisCert,
+        'APIs and Microservices Projects': isApisMicroservicesCert,
+        'Information Security and Quality Assurance Projects': isInfosecQaCert,
+        'Full Stack Certification': isFullStackCert,
+        'Legacy Front End Projects': isFrontEndCert,
+        'Legacy Back End Projects': isBackEndCert,
+        'Legacy Data Visualization Projects': isDataVisCert
+      },
+      username
+    };
+  }
 );
 
 function mapDispatchToProps(dispatch) {
@@ -178,12 +185,40 @@ class CertificationSettings extends PureComponent {
       .length - 1;
 
     const fullForm = completedProjects === challengeTitles.length;
+
+    let isFullStack = superBlock === 'full-stack';
+    let isFullStackClaimable = false;
+    let description = '';
+    if (isFullStack) {
+      isFullStackClaimable = Object.keys(blockNameIsCertMap).every(function(e) {
+        if (e.indexOf('Full Stack') !== -1 || e.indexOf('Legacy') !== -1) {
+          return true;
+        }
+        return blockNameIsCertMap[e];
+      });
+
+      description = (<div>
+        Once you've earned the following freeCodeCamp certifications,
+         you'll be able to claim The Full Stack Developer Certification:
+        <ul>
+          <li>Responsive Web Design</li>
+          <li>Algorithms and Data Structures</li>
+          <li>Front End Libraries</li>
+          <li>Data Visualization</li>
+          <li>APIs and Microservices</li>
+          <li>Information Security and Quality Assurance</li>
+        </ul>
+      </div>);
+    }
+
     return (
       <FullWidthRow key={superBlock}>
         <h3 className='project-heading'>{ projectBlockName }</h3>
+        {description}
         <Form
-          buttonText={ fullForm ? 'Claim Certification' : 'Save Progress' }
-          enableSubmit={ fullForm }
+          buttonText={ fullForm || isFullStack
+            ? 'Claim Certification' : 'Save Progress' }
+          enableSubmit={ isFullStack ? isFullStackClaimable : fullForm }
           formFields={ challengeTitles.concat([ 'id' ]) }
           hideButton={isCertClaimed}
           id={ superBlock }
