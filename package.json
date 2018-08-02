@@ -102,6 +102,7 @@
     "mongodb": "^3.0.4",
     "morgan": "^1.6.1",
     "mousetrap": "~1.6.0",
+    "nanoid": "^1.1.0",
     "node-emoji": "^1.4.1",
     "nodemailer": "^2.1.0",
     "nodemailer-ses-transport": "^1.5.1",

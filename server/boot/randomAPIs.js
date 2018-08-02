@@ -1,5 +1,4 @@
 import request from 'request';
-import { ObjectId } from 'mongodb';
 
 import constantStrings from '../utils/constantStrings.json';
 import testimonials from '../resources/testimonials.json';
@@ -162,7 +161,7 @@ module.exports = function(app) {
           req.flash('info', {
             msg: 'We\'ve successfully updated your Email preferences.'
           });
-          return res.redirect('/unsubscribed/');
+          return res.redirect('/unsubscribed');
         })
         .catch(next);
     });
@@ -176,13 +175,11 @@ module.exports = function(app) {
           msg: 'We could not find an account to unsubscribe'
         });
         return res.redirect('/');
-
       }
       const [ user ] = users;
     return new Promise((resolve, reject) =>
       user.updateAttributes({
-        sendQuincyEmail: false,
-        unsubscribeId: unsubscribeId
+        sendQuincyEmail: false
       }, (err) => {
         if (err) {
           reject(err);
@@ -194,7 +191,7 @@ module.exports = function(app) {
         req.flash('success', {
           msg: 'We\'ve successfully updated your email preferences.'
         });
-        return res.redirect(`/unsubscribed/${queryId}`);
+        return res.redirect(`/unsubscribed/${unsubscribeId}`);
       })
       .catch(next);
     });
@@ -215,16 +212,8 @@ module.exports = function(app) {
   }
 
   function resubscribe(req, res, next) {
-    const { unsubscribeId: queryId } = req.params;
-    return User.find({
-      where: {
-        or: [
-          { unsubscribeId: queryId },
-          { unsubscribeId: ObjectId(queryId).toString() },
-          { unsubscribeId: ObjectId(queryId) }
-        ]
-      }
-    },
+    const { unsubscribeId } = req.params;
+    return User.find({ where: { unsubscribeId } },
       (err, users) => {
         if (err || !users.length) {
           req.flash('info', {
