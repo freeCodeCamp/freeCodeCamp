@@ -28,15 +28,20 @@
       "tests": [
         {
           "text": "Your <code>buffer</code> should be 64 bytes large.",
-          "testString": "assert(buffer.byteLength === 64, 'Your <code>buffer</code> should be 64 bytes large.');"
+          "testString":
+            "assert(buffer.byteLength === 64, 'Your <code>buffer</code> should be 64 bytes large.');"
         },
         {
-          "text": "Your <code>i32View</code> view of your buffer should be 64 bytes large.",
-          "testString": "assert(i32View.byteLength === 64, 'Your <code>i32View</code> view of your buffer should be 64 bytes large.');"
+          "text":
+            "Your <code>i32View</code> view of your buffer should be 64 bytes large.",
+          "testString":
+            "assert(i32View.byteLength === 64, 'Your <code>i32View</code> view of your buffer should be 64 bytes large.');"
         },
         {
-          "text": "Your <code>i32View</code> view of your buffer should be 16 elements long.",
-          "testString": "assert(i32View.length === 16, 'Your <code>i32View</code> view of your buffer should be 16 elements long.');"
+          "text":
+            "Your <code>i32View</code> view of your buffer should be 16 elements long.",
+          "testString":
+            "assert(i32View.length === 16, 'Your <code>i32View</code> view of your buffer should be 16 elements long.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -50,10 +55,7 @@
           "key": "indexjs",
           "ext": "js",
           "name": "index",
-          "contents": [
-            "var buffer;",
-            "var i32View;"
-          ],
+          "contents": ["var buffer;", "var i32View;"],
           "head": [],
           "tail": []
         }
@@ -75,19 +77,26 @@
       "tests": [
         {
           "text": "<code>homeworkStack</code> should only contain 4 elements.",
-          "testString": "assert(homeworkStack.length === 4, '<code>homeworkStack</code> should only contain 4 elements.');"
+          "testString":
+            "assert(homeworkStack.length === 4, '<code>homeworkStack</code> should only contain 4 elements.');"
         },
         {
-          "text": "The last element in <code>homeworkStack</code> should be <code>\"CS50\"</code>.",
-          "testString": "assert(homeworkStack[3] === 'CS50', 'The last element in <code>homeworkStack</code> should be <code>\"CS50\"</code>.');"
+          "text":
+            "The last element in <code>homeworkStack</code> should be <code>\"CS50\"</code>.",
+          "testString":
+            "assert(homeworkStack[3] === 'CS50', 'The last element in <code>homeworkStack</code> should be <code>\"CS50\"</code>.');"
         },
         {
-          "text": "<code>homeworkStack</code> should not contain <code>\"PSY44\"</code>.",
-          "testString": "assert(homeworkStack.indexOf('PSY44') === -1, '<code>homeworkStack</code> should not contain <code>\"PSY44\"</code>.');"
+          "text":
+            "<code>homeworkStack</code> should not contain <code>\"PSY44\"</code>.",
+          "testString":
+            "assert(homeworkStack.indexOf('PSY44') === -1, '<code>homeworkStack</code> should not contain <code>\"PSY44\"</code>.');"
         },
         {
-          "text": "The initial declaration of the <code>homeworkStack</code> should not be changed.",
-          "testString": "assert(code.match(/=/g).length === 1 && /homeworkStack\\s*=\\s*\\[\"BIO12\"\\s*,\\s*\"HIS80\"\\s*,\\s*\"MAT122\"\\s*,\\s*\"PSY44\"\\]/.test(code), 'The initial declaration of the <code>homeworkStack</code> should not be changed.');"
+          "text":
+            "The initial declaration of the <code>homeworkStack</code> should not be changed.",
+          "testString":
+            "assert(code.match(/=/g).length === 1 && /homeworkStack\\s*=\\s*\\[\"BIO12\"\\s*,\\s*\"HIS80\"\\s*,\\s*\"MAT122\"\\s*,\\s*\"PSY44\"\\]/.test(code), 'The initial declaration of the <code>homeworkStack</code> should not be changed.');"
         }
       ],
       "solutions": [],
@@ -123,40 +132,58 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Stack</code> class should have a <code>push</code> method.",
-          "testString": "assert((function(){var test = new Stack(); return (typeof test.push === 'function')}()), 'Your <code>Stack</code> class should have a <code>push</code> method.');"
+          "text":
+            "Your <code>Stack</code> class should have a <code>push</code> method.",
+          "testString":
+            "assert((function(){var test = new Stack(); return (typeof test.push === 'function')}()), 'Your <code>Stack</code> class should have a <code>push</code> method.');"
         },
         {
-          "text": "Your <code>Stack</code> class should have a <code>pop</code> method.",
-          "testString": "assert((function(){var test = new Stack(); return (typeof test.pop === 'function')}()), 'Your <code>Stack</code> class should have a <code>pop</code> method.');"
+          "text":
+            "Your <code>Stack</code> class should have a <code>pop</code> method.",
+          "testString":
+            "assert((function(){var test = new Stack(); return (typeof test.pop === 'function')}()), 'Your <code>Stack</code> class should have a <code>pop</code> method.');"
         },
         {
-          "text": "Your <code>Stack</code> class should have a <code>peek</code> method.",
-          "testString": "assert((function(){var test = new Stack(); return (typeof test.peek === 'function')}()), 'Your <code>Stack</code> class should have a <code>peek</code> method.');"
+          "text":
+            "Your <code>Stack</code> class should have a <code>peek</code> method.",
+          "testString":
+            "assert((function(){var test = new Stack(); return (typeof test.peek === 'function')}()), 'Your <code>Stack</code> class should have a <code>peek</code> method.');"
         },
         {
-          "text": "Your <code>Stack</code> class should have a <code>isEmpty</code> method.",
-          "testString": "assert((function(){var test = new Stack(); return (typeof test.isEmpty === 'function')}()), 'Your <code>Stack</code> class should have a <code>isEmpty</code> method.');"
+          "text":
+            "Your <code>Stack</code> class should have a <code>isEmpty</code> method.",
+          "testString":
+            "assert((function(){var test = new Stack(); return (typeof test.isEmpty === 'function')}()), 'Your <code>Stack</code> class should have a <code>isEmpty</code> method.');"
         },
         {
-          "text": "Your <code>Stack</code> class should have a <code>clear</code> method.",
-          "testString": "assert((function(){var test = new Stack(); return (typeof test.clear === 'function')}()), 'Your <code>Stack</code> class should have a <code>clear</code> method.');"
+          "text":
+            "Your <code>Stack</code> class should have a <code>clear</code> method.",
+          "testString":
+            "assert((function(){var test = new Stack(); return (typeof test.clear === 'function')}()), 'Your <code>Stack</code> class should have a <code>clear</code> method.');"
         },
         {
-          "text": "The <code>peek</code> method should return the top element of the stack",
-          "testString": "assert((function(){var test = new Stack();  test.push('CS50'); return (test.peek() === 'CS50')}()), 'The <code>peek</code> method should return the top element of the stack');"
+          "text":
+            "The <code>peek</code> method should return the top element of the stack",
+          "testString":
+            "assert((function(){var test = new Stack();  test.push('CS50'); return (test.peek() === 'CS50')}()), 'The <code>peek</code> method should return the top element of the stack');"
         },
         {
-          "text": "The <code>pop</code> method should remove and return the top element of the stack",
-          "testString": "assert((function(){var test = new Stack(); test.push('CS50'); return (test.pop() === 'CS50');}()), 'The <code>pop</code> method should remove and return the top element of the stack');"
+          "text":
+            "The <code>pop</code> method should remove and return the top element of the stack",
+          "testString":
+            "assert((function(){var test = new Stack(); test.push('CS50'); return (test.pop() === 'CS50');}()), 'The <code>pop</code> method should remove and return the top element of the stack');"
         },
         {
-          "text": "The <code>isEmpty</code> method should return true if a stack does not contain any elements",
-          "testString": "assert((function(){var test = new Stack(); return test.isEmpty()}()), 'The <code>isEmpty</code> method should return true if a stack does not contain any elements');"
+          "text":
+            "The <code>isEmpty</code> method should return true if a stack does not contain any elements",
+          "testString":
+            "assert((function(){var test = new Stack(); return test.isEmpty()}()), 'The <code>isEmpty</code> method should return true if a stack does not contain any elements');"
         },
         {
-          "text": "The <code>clear</code> method should remove all element from the stack",
-          "testString": "assert((function(){var test = new Stack();  test.push('CS50'); test.clear(); return (test.isEmpty())}()), 'The <code>clear</code> method should remove all element from the stack');"
+          "text":
+            "The <code>clear</code> method should remove all element from the stack",
+          "testString":
+            "assert((function(){var test = new Stack();  test.push('CS50'); test.clear(); return (test.isEmpty())}()), 'The <code>clear</code> method should remove all element from the stack');"
         }
       ],
       "solutions": [],
@@ -197,40 +224,58 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Queue</code> class should have a <code>enqueue</code> method.",
-          "testString": "assert((function(){var test = new Queue();  return (typeof test.enqueue === 'function')}()), 'Your <code>Queue</code> class should have a <code>enqueue</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have a <code>enqueue</code> method.",
+          "testString":
+            "assert((function(){var test = new Queue();  return (typeof test.enqueue === 'function')}()), 'Your <code>Queue</code> class should have a <code>enqueue</code> method.');"
         },
         {
-          "text": "Your <code>Queue</code> class should have a <code>dequeue</code> method.",
-          "testString": "assert((function(){var test = new Queue();  return (typeof test.dequeue === 'function')}()), 'Your <code>Queue</code> class should have a <code>dequeue</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have a <code>dequeue</code> method.",
+          "testString":
+            "assert((function(){var test = new Queue();  return (typeof test.dequeue === 'function')}()), 'Your <code>Queue</code> class should have a <code>dequeue</code> method.');"
         },
         {
-          "text": "Your <code>Queue</code> class should have a <code>front</code> method.",
-          "testString": "assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()), 'Your <code>Queue</code> class should have a <code>front</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have a <code>front</code> method.",
+          "testString":
+            "assert((function(){var test = new Queue();  return (typeof test.front === 'function')}()), 'Your <code>Queue</code> class should have a <code>front</code> method.');"
         },
         {
-          "text": "Your <code>Queue</code> class should have a <code>size</code> method.",
-          "testString": "assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()), 'Your <code>Queue</code> class should have a <code>size</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have a <code>size</code> method.",
+          "testString":
+            "assert((function(){var test = new Queue();  return (typeof test.size === 'function')}()), 'Your <code>Queue</code> class should have a <code>size</code> method.');"
         },
         {
-          "text": "Your <code>Queue</code> class should have an <code>isEmpty</code> method.",
-          "testString": "assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'Your <code>Queue</code> class should have an <code>isEmpty</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have an <code>isEmpty</code> method.",
+          "testString":
+            "assert((function(){var test = new Queue();  return (typeof test.isEmpty === 'function')}()), 'Your <code>Queue</code> class should have an <code>isEmpty</code> method.');"
         },
         {
-          "text": "The <code>dequeue</code> method should remove and return the front element of the queue",
-          "testString": "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.dequeue() === 'Smith')}()), 'The <code>dequeue</code> method should remove and return the front element of the queue');"
+          "text":
+            "The <code>dequeue</code> method should remove and return the front element of the queue",
+          "testString":
+            "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.dequeue() === 'Smith')}()), 'The <code>dequeue</code> method should remove and return the front element of the queue');"
         },
         {
-          "text": "The <code>front</code> method should return value of the front element of the queue",
-          "testString": "assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()), 'The <code>front</code> method should return value of the front element of the queue');"
+          "text":
+            "The <code>front</code> method should return value of the front element of the queue",
+          "testString":
+            "assert((function(){var test = new Queue();  test.enqueue('Smith'); test.enqueue('John'); return (test.front() === 'Smith')}()), 'The <code>front</code> method should return value of the front element of the queue');"
         },
         {
-          "text": "The <code>size</code> method should return the length of the queue",
-          "testString": "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()), 'The <code>size</code> method should return the length of the queue');"
+          "text":
+            "The <code>size</code> method should return the length of the queue",
+          "testString":
+            "assert((function(){var test = new Queue();  test.enqueue('Smith'); return (test.size() === 1)}()), 'The <code>size</code> method should return the length of the queue');"
         },
         {
-          "text": "The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue",
-          "testString": "assert((function(){var test = new Queue();  test.enqueue('Smith'); return !(test.isEmpty())}()), 'The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue');"
+          "text":
+            "The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue",
+          "testString":
+            "assert((function(){var test = new Queue();  test.enqueue('Smith'); return !(test.isEmpty())}()), 'The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue');"
         }
       ],
       "solutions": [],
@@ -273,32 +318,46 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Queue</code> class should have a <code>enqueue</code> method.",
-          "testString": "assert((function(){var test = new PriorityQueue();  return (typeof test.enqueue === 'function')}()), 'Your <code>Queue</code> class should have a <code>enqueue</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have a <code>enqueue</code> method.",
+          "testString":
+            "assert((function(){var test = new PriorityQueue();  return (typeof test.enqueue === 'function')}()), 'Your <code>Queue</code> class should have a <code>enqueue</code> method.');"
         },
         {
-          "text": "Your <code>Queue</code> class should have a <code>dequeue</code> method.",
-          "testString": "assert((function(){var test = new PriorityQueue();  return (typeof test.dequeue === 'function')}()), 'Your <code>Queue</code> class should have a <code>dequeue</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have a <code>dequeue</code> method.",
+          "testString":
+            "assert((function(){var test = new PriorityQueue();  return (typeof test.dequeue === 'function')}()), 'Your <code>Queue</code> class should have a <code>dequeue</code> method.');"
         },
         {
-          "text": "Your <code>Queue</code> class should have a <code>size</code> method.",
-          "testString": "assert((function(){var test = new PriorityQueue();  return (typeof test.size === 'function')}()), 'Your <code>Queue</code> class should have a <code>size</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have a <code>size</code> method.",
+          "testString":
+            "assert((function(){var test = new PriorityQueue();  return (typeof test.size === 'function')}()), 'Your <code>Queue</code> class should have a <code>size</code> method.');"
         },
         {
-          "text": "Your <code>Queue</code> class should have an <code>isEmpty</code> method.",
-          "testString": "assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()), 'Your <code>Queue</code> class should have an <code>isEmpty</code> method.');"
+          "text":
+            "Your <code>Queue</code> class should have an <code>isEmpty</code> method.",
+          "testString":
+            "assert((function(){var test = new PriorityQueue();  return (typeof test.isEmpty === 'function')}()), 'Your <code>Queue</code> class should have an <code>isEmpty</code> method.');"
         },
         {
-          "text": "Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.",
-          "testString": "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]); test.enqueue(['Jon Snow', 1]); var size1 = test.size(); test.dequeue(); var size2 = test.size(); test.enqueue(['A', 3]); test.enqueue(['B', 3]); test.enqueue(['C', 3]); return (size1 === 2 && size2 === 1 && test.size() === 4)}()), 'Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.');"
+          "text":
+            "Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.",
+          "testString":
+            "assert((function(){var test = new PriorityQueue(); test.enqueue(['David Brown', 2]); test.enqueue(['Jon Snow', 1]); var size1 = test.size(); test.dequeue(); var size2 = test.size(); test.enqueue(['A', 3]); test.enqueue(['B', 3]); test.enqueue(['C', 3]); return (size1 === 2 && size2 === 1 && test.size() === 4)}()), 'Your PriorityQueue should correctly keep track of the current number of items using the <code>size</code> method as items are enqueued and dequeued.');"
         },
         {
-          "text": "The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.",
-          "testString": "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 1]); test.enqueue(['B', 1]); test.dequeue(); var first = test.isEmpty(); test.dequeue(); return (!first && test.isEmpty()); }()), 'The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.');"
+          "text":
+            "The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.",
+          "testString":
+            "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 1]); test.enqueue(['B', 1]); test.dequeue(); var first = test.isEmpty(); test.dequeue(); return (!first && test.isEmpty()); }()), 'The <code>isEmpty</code> method should return <code>true</code> when the queue is empty.');"
         },
         {
-          "text": "The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.",
-          "testString": "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 5]); test.enqueue(['B', 5]); test.enqueue(['C', 5]); test.enqueue(['D', 3]); test.enqueue(['E', 1]); test.enqueue(['F', 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join('') === 'EDABCF';}()), 'The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.');"
+          "text":
+            "The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.",
+          "testString":
+            "assert((function(){var test = new PriorityQueue(); test.enqueue(['A', 5]); test.enqueue(['B', 5]); test.enqueue(['C', 5]); test.enqueue(['D', 3]); test.enqueue(['E', 1]); test.enqueue(['F', 7]); var result = []; result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); result.push(test.dequeue()); return result.join('') === 'EDABCF';}()), 'The priority queue should return items with a higher priority before items with a lower priority and return items in first-in-first-out order otherwise.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -348,24 +407,33 @@
       ],
       "tests": [
         {
-          "text": "The <code>enqueue</code> method adds items to the circular queue.",
-          "testString": "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); var print = test.print(); return print[0] === 17 && print[1] === 32 && print[2] === 591; })(), 'The <code>enqueue</code> method adds items to the circular queue.');"
+          "text":
+            "The <code>enqueue</code> method adds items to the circular queue.",
+          "testString":
+            "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); var print = test.print(); return print[0] === 17 && print[1] === 32 && print[2] === 591; })(), 'The <code>enqueue</code> method adds items to the circular queue.');"
         },
         {
           "text": "You cannot enqueue items past the read pointer.",
-          "testString": "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); test.enqueue(13); test.enqueue(25); test.enqueue(59); var print = test.print(); return print[0] === 17 && print[1] === 32 && print[2] === 591; })(), 'You cannot enqueue items past the read pointer.');"
+          "testString":
+            "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); test.enqueue(13); test.enqueue(25); test.enqueue(59); var print = test.print(); return print[0] === 17 && print[1] === 32 && print[2] === 591; })(), 'You cannot enqueue items past the read pointer.');"
         },
         {
-          "text": "The <code>dequeue</code> method dequeues items from the queue.",
-          "testString": "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); return test.dequeue() === 17 && test.dequeue() === 32 && test.dequeue() === 591; })(), 'The <code>dequeue</code> method dequeues items from the queue.');"
+          "text":
+            "The <code>dequeue</code> method dequeues items from the queue.",
+          "testString":
+            "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); return test.dequeue() === 17 && test.dequeue() === 32 && test.dequeue() === 591; })(), 'The <code>dequeue</code> method dequeues items from the queue.');"
         },
         {
-          "text": "After an item is dequeued its position in the queue should be reset to <code>null</code>.",
-          "testString": "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(672); test.dequeue(); test.dequeue(); var print = test.print(); return print[0] === null && print[1] === null && print[2] === 672; })(), 'After an item is dequeued its position in the queue should be reset to <code>null</code>.');"
+          "text":
+            "After an item is dequeued its position in the queue should be reset to <code>null</code>.",
+          "testString":
+            "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(672); test.dequeue(); test.dequeue(); var print = test.print(); return print[0] === null && print[1] === null && print[2] === 672; })(), 'After an item is dequeued its position in the queue should be reset to <code>null</code>.');"
         },
         {
-          "text": "Trying to dequeue past the write pointer returns <code>null</code> and does not advance the write pointer.",
-          "testString": "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); return test.dequeue() === 17 && test.dequeue() === 32 && test.dequeue() === 591 && test.dequeue() === null && test.dequeue() === null && test.dequeue() === null && test.dequeue() === null && test.enqueue(100) === 100 && test.dequeue() === 100; })(), 'Trying to dequeue past the write pointer returns <code>null</code> and does not advance the write pointer.');"
+          "text":
+            "Trying to dequeue past the write pointer returns <code>null</code> and does not advance the write pointer.",
+          "testString":
+            "assert((function(){ var test = new CircularQueue(3); test.enqueue(17); test.enqueue(32); test.enqueue(591); return test.dequeue() === 17 && test.dequeue() === 32 && test.dequeue() === 591 && test.dequeue() === null && test.dequeue() === null && test.dequeue() === null && test.dequeue() === null && test.enqueue(100) === 100 && test.dequeue() === 100; })(), 'Trying to dequeue past the write pointer returns <code>null</code> and does not advance the write pointer.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -431,20 +499,28 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Set</code> class should have an <code>add</code> method.",
-          "testString": "assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'Your <code>Set</code> class should have an <code>add</code> method.');"
+          "text":
+            "Your <code>Set</code> class should have an <code>add</code> method.",
+          "testString":
+            "assert((function(){var test = new Set(); return (typeof test.add === 'function')}()), 'Your <code>Set</code> class should have an <code>add</code> method.');"
         },
         {
-          "text": "Your <code>add</code> method should not add duplicate values.",
-          "testString": "assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'Your <code>add</code> method should not add duplicate values.');"
+          "text":
+            "Your <code>add</code> method should not add duplicate values.",
+          "testString":
+            "assert((function(){var test = new Set(); test.add('a'); test.add('b'); test.add('a'); var vals = test.values(); return (vals[0] === 'a' && vals[1] === 'b' && vals.length === 2)}()), 'Your <code>add</code> method should not add duplicate values.');"
         },
         {
-          "text": "Your <code>add</code> method should return <code>true</code> when a value has been successfully added.",
-          "testString": "assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'Your <code>add</code> method should return <code>true</code> when a value has been successfully added.');"
+          "text":
+            "Your <code>add</code> method should return <code>true</code> when a value has been successfully added.",
+          "testString":
+            "assert((function(){var test = new Set(); var result = test.add('a'); return (result != undefined) && (result === true);}()), 'Your <code>add</code> method should return <code>true</code> when a value has been successfully added.');"
         },
         {
-          "text": "Your <code>add</code> method should return <code>false</code> when a duplicate value is added.",
-          "testString": "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'Your <code>add</code> method should return <code>false</code> when a duplicate value is added.');"
+          "text":
+            "Your <code>add</code> method should return <code>false</code> when a duplicate value is added.",
+          "testString":
+            "assert((function(){var test = new Set(); test.add('a'); var result = test.add('a'); return (result != undefined) && (result === false);}()), 'Your <code>add</code> method should return <code>false</code> when a duplicate value is added.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -487,16 +563,22 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Set</code> class should have a <code>remove</code> method.",
-          "testString": "assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'Your <code>Set</code> class should have a <code>remove</code> method.');"
+          "text":
+            "Your <code>Set</code> class should have a <code>remove</code> method.",
+          "testString":
+            "assert((function(){var test = new Set(); return (typeof test.remove === 'function')}()), 'Your <code>Set</code> class should have a <code>remove</code> method.');"
         },
         {
-          "text": "Your <code>remove</code> method should only remove items that are present in the set.",
-          "testString": "assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b'], 'Your <code>remove</code> method should only remove items that are present in the set.');"
+          "text":
+            "Your <code>remove</code> method should only remove items that are present in the set.",
+          "testString":
+            "assert.deepEqual((function(){var test = new Set(); test.add('a');test.add('b');test.remove('c'); return test.values(); })(), ['a', 'b'], 'Your <code>remove</code> method should only remove items that are present in the set.');"
         },
         {
-          "text": "Your <code>remove</code> method should remove the given item from the set.",
-          "testString": "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'Your <code>remove</code> method should remove the given item from the set.');"
+          "text":
+            "Your <code>remove</code> method should remove the given item from the set.",
+          "testString":
+            "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a'); var vals = test.values(); return (vals[0] === 'b' && vals.length === 1)}()), 'Your <code>remove</code> method should remove the given item from the set.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -547,12 +629,16 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Set</code> class should have a <code>size</code> method.",
-          "testString": "assert((function(){var test = new Set(); return (typeof test.size === 'function')}()), 'Your <code>Set</code> class should have a <code>size</code> method.');"
+          "text":
+            "Your <code>Set</code> class should have a <code>size</code> method.",
+          "testString":
+            "assert((function(){var test = new Set(); return (typeof test.size === 'function')}()), 'Your <code>Set</code> class should have a <code>size</code> method.');"
         },
         {
-          "text": "The <code>size</code> method should return the number of elements in the collection.",
-          "testString": "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()), 'The <code>size</code> method should return the number of elements in the collection.');"
+          "text":
+            "The <code>size</code> method should return the number of elements in the collection.",
+          "testString":
+            "assert((function(){var test = new Set(); test.add('a');test.add('b');test.remove('a');return (test.size() === 1)}()), 'The <code>size</code> method should return the number of elements in the collection.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -613,12 +699,15 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Set</code> class should have a <code>union</code> method.",
-          "testString": "assert((function(){var test = new Set(); return (typeof test.union === 'function')})(), 'Your <code>Set</code> class should have a <code>union</code> method.');"
+          "text":
+            "Your <code>Set</code> class should have a <code>union</code> method.",
+          "testString":
+            "assert((function(){var test = new Set(); return (typeof test.union === 'function')})(), 'Your <code>Set</code> class should have a <code>union</code> method.');"
         },
         {
           "text": "The proper collection was returned",
-          "testString": "assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'The proper collection was returned');"
+          "testString":
+            "assert((function(){var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var unionSetAB = setA.union(setB); var final = unionSetAB.values(); return (final.indexOf('a') !== -1 && final.indexOf('b') !== -1 && final.indexOf('c') !== -1 && final.indexOf('d') !== -1 && final.length === 4)})(), 'The proper collection was returned');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -684,12 +773,15 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Set</code> class should have a <code>intersection</code> method.",
-          "testString": "assert(function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'Your <code>Set</code> class should have a <code>intersection</code> method.');"
+          "text":
+            "Your <code>Set</code> class should have a <code>intersection</code> method.",
+          "testString":
+            "assert(function(){var test = new Set(); return (typeof test.intersection === 'function')}, 'Your <code>Set</code> class should have a <code>intersection</code> method.');"
         },
         {
           "text": "The proper collection was returned",
-          "testString": "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')}, 'The proper collection was returned');"
+          "testString":
+            "assert(function(){  var setA = new Set();  var setB = new Set();  setA.add('a');  setA.add('b');  setA.add('c');  setB.add('c');  setB.add('d');  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === 'c')}, 'The proper collection was returned');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -767,12 +859,15 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Set</code> class should have a <code>difference</code> method.",
-          "testString": "assert(function(){var test = new Set(); return (typeof test.difference === 'function')}, 'Your <code>Set</code> class should have a <code>difference</code> method.');"
+          "text":
+            "Your <code>Set</code> class should have a <code>difference</code> method.",
+          "testString":
+            "assert(function(){var test = new Set(); return (typeof test.difference === 'function')}, 'Your <code>Set</code> class should have a <code>difference</code> method.');"
         },
         {
           "text": "The proper collection was returned",
-          "testString": "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ 'a', 'b' ])}, 'The proper collection was returned');"
+          "testString":
+            "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('c'); setB.add('d'); var differenceSetAB = setA.difference(setB); return (differenceSetAB.size() === 2) && (differenceSetAB.values() === [ 'a', 'b' ])}, 'The proper collection was returned');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -861,28 +956,38 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Set</code> class should have a <code>union</code> method.",
-          "testString": "assert(function(){var test = new Set(); return (typeof test.subset === 'function')}, 'Your <code>Set</code> class should have a <code>union</code> method.');"
+          "text":
+            "Your <code>Set</code> class should have a <code>union</code> method.",
+          "testString":
+            "assert(function(){var test = new Set(); return (typeof test.subset === 'function')}, 'Your <code>Set</code> class should have a <code>union</code> method.');"
         },
         {
           "text": "The first Set() was contained in the second Set",
-          "testString": "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)}, 'The first Set() was contained in the second Set');"
+          "testString":
+            "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setB.add('b'); setB.add('c'); setB.add('a'); setB.add('d'); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)}, 'The first Set() was contained in the second Set');"
         },
         {
-          "text": "<code>['a', 'b'].subset(['a', 'b', 'c', 'd'])</code> should return <code>true</code>\")",
-          "testString": "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('a'); setB.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, \"<code>['a', 'b'].subset(['a', 'b', 'c', 'd'])</code> should return <code>true</code>\");"
+          "text":
+            "<code>['a', 'b'].subset(['a', 'b', 'c', 'd'])</code> should return <code>true</code>\")",
+          "testString":
+            "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('a'); setB.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, \"<code>['a', 'b'].subset(['a', 'b', 'c', 'd'])</code> should return <code>true</code>\");"
         },
         {
-          "text": "<code>['a', 'b', 'c'].subset(['a', 'b'])</code> should return <code>false</code>\")",
-          "testString": "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('a'); setB.add('b'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"<code>['a', 'b', 'c'].subset(['a', 'b'])</code> should return <code>false</code>\");"
+          "text":
+            "<code>['a', 'b', 'c'].subset(['a', 'b'])</code> should return <code>false</code>\")",
+          "testString":
+            "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setA.add('c'); setB.add('a'); setB.add('b'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"<code>['a', 'b', 'c'].subset(['a', 'b'])</code> should return <code>false</code>\");"
         },
         {
           "text": "<code>[].subset([])</code> should return <code>true</code>",
-          "testString": "assert(function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, '<code>[].subset([])</code> should return <code>true</code>');"
+          "testString":
+            "assert(function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, '<code>[].subset([])</code> should return <code>true</code>');"
         },
         {
-          "text": "<code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>\")",
-          "testString": "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"<code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>\");"
+          "text":
+            "<code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>\")",
+          "testString":
+            "assert(function(){var setA = new Set(); var setB = new Set(); setA.add('a'); setA.add('b'); setB.add('c'); setB.add('d'); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, \"<code>['a', 'b'].subset(['c', 'd'])</code> should return <code>false</code>\");"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -993,8 +1098,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.",
-          "testString": "assert(function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');}, 'Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
+          "text":
+            "Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.",
+          "testString":
+            "assert(function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has('Taco') && test.has('Cat') && test.has('Awesome');}, 'Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1040,7 +1147,8 @@
       "tests": [
         {
           "text": "Your Set should contain the values 1, 3, & 4",
-          "testString": "assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, 'Your Set should contain the values 1, 3, & 4');"
+          "testString":
+            "assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, 'Your Set should contain the values 1, 3, & 4');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1084,8 +1192,10 @@
       ],
       "tests": [
         {
-          "text": "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]",
-          "testString": "assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, '<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]');"
+          "text":
+            "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]",
+          "testString":
+            "assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, '<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1130,13 +1240,12 @@
       "tests": [
         {
           "text": "Your Set was returned correctly!",
-          "testString": "assert(function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ]}, 'Your Set was returned correctly!');"
+          "testString":
+            "assert(function(){var test = checkSet(new Set([1,2,3,4,5,6,7])); test === [ 1, 2, 3, 4, 5, 6, 7 ]}, 'Your Set was returned correctly!');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
-      "solutions": [
-        "function checkSet(set){\nreturn [...set];}"
-      ],
+      "solutions": ["function checkSet(set){\nreturn [...set];}"],
       "challengeType": 1,
       "translations": {},
       "files": {
@@ -1163,42 +1272,56 @@
         "The next few challenges will cover maps and hash tables. Maps are data structures that store key-value pairs. In JavaScript, these are available to us as objects. Maps provide rapid lookup of stored items based on key values and are very common and useful data structures.",
         "Instructions: Let's get some practice creating our own map. Because JavaScript objects provide a much more efficient map structure than anything we could write here, this is intended primarily as a learning exercise. However, JavaScript objects only provide us with certain operations. What if we wanted to define custom operations?",
         "Use the <code>Map</code> object provided here as a wrapper around a JavaScript <code>object</code>. Create the following methods and operations on the Map object:",
-        "<code>add</code> accepts a <code>key, value</code> pair to add to the map",
-        "<code>remove</code> accepts a key and removes the associated <code>key, value</code> pair",
-        "<code>get</code> accepts a <code>key</code> and returns the stored <code>value</code>",
-        "<code>has</code> returns a <code>boolean</code> for the presence or absence of an item",
-        "<code>values</code> returns an array of all the values in the map",
-        "<code>size</code> returns the number of items in the map",
-        "<code>clear</code> empties the map"
+        "<ul>",
+        "<li><code>add</code> accepts a <code>key, value</code> pair to add to the map.</li>",
+        "<li><code>remove</code> accepts a key and removes the associated <code>key, value</code> pair</li>",
+        "<li><code>get</code> accepts a <code>key</code> and returns the stored <code>value</code></li>",
+        "<li><code>has</code> accepts a <code>key</code> and returns <dfn>true</dfn> if the key exists or <dfn>false</dfn> if it doesn't.</li>",
+        "<li><code>values</code> returns an array of all the values in the map</li>",
+        "<li><code>size</code> returns the number of items in the map</li>",
+        "<li><code>clear</code> empties the map</li>",
+        "</ul>"
       ],
       "tests": [
         {
           "text": "The Map data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test == 'object')})(), 'The Map data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test == 'object')})(), 'The Map data structure exists.');"
         },
         {
-          "text": "The Map object has the following methods: add, remove, get, has, values, clear, and size.",
-          "testString": "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test.add == 'function' && typeof test.remove == 'function' && typeof test.get == 'function' && typeof test.has == 'function' && typeof test.values == 'function' && typeof test.clear == 'function' && typeof test.size == 'function')})(), 'The Map object has the following methods: add, remove, get, has, values, clear, and size.');"
+          "text":
+            "The Map object has the following methods: add, remove, get, has, values, clear, and size.",
+          "testString":
+            "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; return (typeof test.add == 'function' && typeof test.remove == 'function' && typeof test.get == 'function' && typeof test.has == 'function' && typeof test.values == 'function' && typeof test.clear == 'function' && typeof test.size == 'function')})(), 'The Map object has the following methods: add, remove, get, has, values, clear, and size.');"
         },
         {
           "text": "The add method adds items to the map.",
-          "testString": "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add(5,6); test.add(2,3); test.add(2,5); return (test.size() == 2)})(), 'The add method adds items to the map.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add(5,6); test.add(2,3); test.add(2,5); return (test.size() == 2)})(), 'The add method adds items to the map.');"
         },
         {
-          "text": "The has method returns true for added items and false for absent items.",
-          "testString": "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('test','value'); return (test.has('test') && !test.has('false'))})(), 'The has method returns true for added items and false for absent items.');"
+          "text":
+            "The has method returns true for added items and false for absent items.",
+          "testString":
+            "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('test','value'); return (test.has('test') && !test.has('false'))})(), 'The has method returns true for added items and false for absent items.');"
         },
         {
-          "text": "The get method accepts keys as input and returns the associated values.",
-          "testString": "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('abc','def'); return (test.get('abc') == 'def')})(), 'The get method accepts keys as input and returns the associated values.');"
+          "text":
+            "The get method accepts keys as input and returns the associated values.",
+          "testString":
+            "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('abc','def'); return (test.get('abc') == 'def')})(), 'The get method accepts keys as input and returns the associated values.');"
         },
         {
-          "text": "The values method returns all the values stored in the map as strings in an array.",
-          "testString": "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('a','b'); test.add('c','d'); test.add('e','f'); var vals = test.values(); return (vals.indexOf('b') != -1 && vals.indexOf('d') != -1 && vals.indexOf('f') != -1)})(), 'The values method returns all the values stored in the map as strings in an array.');"
+          "text":
+            "The values method returns all the values stored in the map as strings in an array.",
+          "testString":
+            "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('a','b'); test.add('c','d'); test.add('e','f'); var vals = test.values(); return (vals.indexOf('b') != -1 && vals.indexOf('d') != -1 && vals.indexOf('f') != -1)})(), 'The values method returns all the values stored in the map as strings in an array.');"
         },
         {
-          "text": "The clear method empties the map and the size method returns the number of items present in the map.",
-          "testString": "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('b','b'); test.add('c','d'); test.remove('asdfas'); var init = test.size(); test.clear(); return (init == 2 && test.size() == 0)})(), 'The clear method empties the map and the size method returns the number of items present in the map.');"
+          "text":
+            "The clear method empties the map and the size method returns the number of items present in the map.",
+          "testString":
+            "assert((function() { var test = false; if (typeof Map !== 'undefined') { test = new Map() }; test.add('b','b'); test.add('c','d'); test.remove('asdfas'); var init = test.size(); test.clear(); return (init == 2 && test.size() == 0)})(), 'The clear method empties the map and the size method returns the number of items present in the map.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1239,11 +1362,14 @@
       "tests": [
         {
           "text": "The myMap object exists.",
-          "testString": "assert(typeof myMap === 'object', 'The myMap object exists.');"
+          "testString":
+            "assert(typeof myMap === 'object', 'The myMap object exists.');"
         },
         {
-          "text": "myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.",
-          "testString": "assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');"
+          "text":
+            "myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.",
+          "testString":
+            "assert(myMap.get('freeCodeCamp') === 'Awesome!', 'myMap contains the key value pair <code>freeCodeCamp</code>, <code>Awesome!</code>.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1255,9 +1381,7 @@
           "key": "indexjs",
           "ext": "js",
           "name": "index",
-          "contents": [
-            "// change code below this line"
-          ],
+          "contents": ["// change code below this line"],
           "head": [],
           "tail": []
         }
@@ -1276,35 +1400,45 @@
       "tests": [
         {
           "text": "The HashTable data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return (typeof test === 'object')})(), 'The HashTable data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return (typeof test === 'object')})(), 'The HashTable data structure exists.');"
         },
         {
           "text": "The HashTable has an add method.",
-          "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.add) === 'function')})(), 'The HashTable has an add method.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.add) === 'function')})(), 'The HashTable has an add method.');"
         },
         {
           "text": "The HashTable has an remove method.",
-          "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.remove) === 'function')})(), 'The HashTable has an remove method.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.remove) === 'function')})(), 'The HashTable has an remove method.');"
         },
         {
           "text": "The HashTable has an lookup method.",
-          "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.lookup) === 'function')})(), 'The HashTable has an lookup method.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; return ((typeof test.lookup) === 'function')})(), 'The HashTable has an lookup method.');"
         },
         {
-          "text": "The add method adds key value pairs and the lookup method returns the values associated with a given key.",
-          "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); return (test.lookup('key') === 'value')})(), 'The add method adds key value pairs and the lookup method returns the values associated with a given key.');"
+          "text":
+            "The add method adds key value pairs and the lookup method returns the values associated with a given key.",
+          "testString":
+            "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); return (test.lookup('key') === 'value')})(), 'The add method adds key value pairs and the lookup method returns the values associated with a given key.');"
         },
         {
-          "text": "The remove method accepts a key as input and removes the associated key value pair.",
-          "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); test.remove('key'); return (test.lookup('key') === null)})(), 'The remove method accepts a key as input and removes the associated key value pair.');"
+          "text":
+            "The remove method accepts a key as input and removes the associated key value pair.",
+          "testString":
+            "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; test.add('key', 'value'); test.remove('key'); return (test.lookup('key') === null)})(), 'The remove method accepts a key as input and removes the associated key value pair.');"
         },
         {
           "text": "Items are added using the hash function.",
-          "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('key2','value2'); test.add('key3','value3'); return (called === 3)})(), 'Items are added using the hash function.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('key2','value2'); test.add('key3','value3'); return (called === 3)})(), 'Items are added using the hash function.');"
         },
         {
           "text": "The hash table handles collisions.",
-          "testString": "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('1key','value2'); test.add('ke1y','value3'); return (test.lookup('key1') === 'value1' && test.lookup('1key') == 'value2' && test.lookup('ke1y') == 'value3')})(), 'The hash table handles collisions.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof HashTable !== 'undefined') { test = new HashTable() }; called = 0; test.add('key1','value1'); test.add('1key','value2'); test.add('ke1y','value3'); return (test.lookup('key1') === 'value1' && test.lookup('1key') == 'value2' && test.lookup('ke1y') == 'value3')})(), 'The hash table handles collisions.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1355,12 +1489,16 @@
       ],
       "tests": [
         {
-          "text": "Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.",
-          "testString": "assert(Puppy.next.element === \"Cat\", 'Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.');"
+          "text":
+            "Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.",
+          "testString":
+            "assert(Puppy.next.element === \"Cat\", 'Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.');"
         },
         {
-          "text": "Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.",
-          "testString": "assert(Cat.next.element === \"Dog\", 'Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.');"
+          "text":
+            "Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.",
+          "testString":
+            "assert(Cat.next.element === \"Dog\", 'Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.');"
         }
       ],
       "solutions": [],
@@ -1407,20 +1545,28 @@
       ],
       "tests": [
         {
-          "text": "Your <code>LinkedList</code> class should have a <code>add</code> method.",
-          "testString": "assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>add</code> method.');"
+          "text":
+            "Your <code>LinkedList</code> class should have a <code>add</code> method.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); return (typeof test.add === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>add</code> method.');"
         },
         {
-          "text": "Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); return test.head().element === 'cat'}()), 'Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.');"
+          "text":
+            "Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); return test.head().element === 'cat'}()), 'Your <code>LinkedList</code> class should assign <code>head</code> to the first node added.');"
         },
         {
-          "text": "The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.head().next.element === 'dog'}()), 'The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.');"
+          "text":
+            "The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.head().next.element === 'dog'}()), 'The previous <code>node</code> in your <code>LinkedList</code> class should have reference to the newest node created.');"
         },
         {
-          "text": "The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.size() === 2}()), 'The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.');"
+          "text":
+            "The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return test.size() === 2}()), 'The  <code>size</code> of your <code>LinkedList</code> class should equal the amount of nodes in the linked list.');"
         }
       ],
       "solutions": [],
@@ -1478,20 +1624,28 @@
       ],
       "tests": [
         {
-          "text": "Your <code>LinkedList</code> class should have a <code>remove</code> method.",
-          "testString": "assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>remove</code> method.');"
+          "text":
+            "Your <code>LinkedList</code> class should have a <code>remove</code> method.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>remove</code> method.');"
         },
         {
-          "text": "Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');"
+          "text":
+            "Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');"
         },
         {
-          "text": "Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.size() === 1})(), 'Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');"
+          "text":
+            "Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.size() === 1})(), 'Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');"
         },
         {
-          "text": "Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'})(), 'Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.');"
+          "text":
+            "Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'})(), 'Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.');"
         }
       ],
       "solutions": [
@@ -1565,24 +1719,34 @@
       ],
       "tests": [
         {
-          "text": "Your <code>LinkedList</code> class should have a <code>indexOf</code> method.",
-          "testString": "assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>indexOf</code> method.');"
+          "text":
+            "Your <code>LinkedList</code> class should have a <code>indexOf</code> method.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); return (typeof test.indexOf === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>indexOf</code> method.');"
         },
         {
-          "text": "Your <code>LinkedList</code> class should have a <code>elementAt</code> method.",
-          "testString": "assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>elementAt</code> method.');"
+          "text":
+            "Your <code>LinkedList</code> class should have a <code>elementAt</code> method.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); return (typeof test.elementAt === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>elementAt</code> method.');"
         },
         {
-          "text": "Your <code>size</code> method should return the length of the linked list",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()), 'Your <code>size</code> method should return the length of the linked list');"
+          "text":
+            "Your <code>size</code> method should return the length of the linked list",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.size() === 3}()), 'Your <code>size</code> method should return the length of the linked list');"
         },
         {
-          "text": "Your <code>indexOf</code> method should return the index of the given element.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()), 'Your <code>indexOf</code> method should return the index of the given element.');"
+          "text":
+            "Your <code>indexOf</code> method should return the index of the given element.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.indexOf('kitten') === 2}()), 'Your <code>indexOf</code> method should return the index of the given element.');"
         },
         {
-          "text": "Your <code>elementAt</code> method should return at element at a given index.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()), 'Your <code>elementAt</code> method should return at element at a given index.');"
+          "text":
+            "Your <code>elementAt</code> method should return at element at a given index.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); return test.elementAt(1) === 'dog'}()), 'Your <code>elementAt</code> method should return at element at a given index.');"
         }
       ],
       "solutions": [],
@@ -1672,24 +1836,34 @@
       ],
       "tests": [
         {
-          "text": "Your <code>LinkedList</code> class should have a <code>removeAt</code> method.",
-          "testString": "assert((function(){var test = new LinkedList(); return (typeof test.removeAt === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>removeAt</code> method.');"
+          "text":
+            "Your <code>LinkedList</code> class should have a <code>removeAt</code> method.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); return (typeof test.removeAt === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>removeAt</code> method.');"
         },
         {
-          "text": "Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.removeAt(1); return test.size() === 2}()), 'Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list');"
+          "text":
+            "Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten'); test.removeAt(1); return test.size() === 2}()), 'Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list');"
         },
         {
-          "text": "Your <code>removeAt</code> method should also return the element of the removed node.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return test.removeAt(1) === 'dog'}()), 'Your <code>removeAt</code> method should also return the element of the removed node.');"
+          "text":
+            "Your <code>removeAt</code> method should also return the element of the removed node.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return test.removeAt(1) === 'dog'}()), 'Your <code>removeAt</code> method should also return the element of the removed node.');"
         },
         {
-          "text": "Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return (test.removeAt(-1) === null)}()), 'Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>');"
+          "text":
+            "Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return (test.removeAt(-1) === null)}()), 'Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>');"
         },
         {
-          "text": "Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return (test.removeAt(3) === null)}()), 'Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.');"
+          "text":
+            "Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.add('kitten');  return (test.removeAt(3) === null)}()), 'Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.');"
         }
       ],
       "solutions": [],
@@ -1778,16 +1952,22 @@
       ],
       "tests": [
         {
-          "text": "Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.head().element === 'cat'}()), 'Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.');"
+          "text":
+            "Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.head().element === 'cat'}()), 'Your <code>addAt</code> method should reassign <code>head</code> to the new node when the given index is 0.');"
         },
         {
-          "text": "Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.size() === 3}()), 'Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.');"
+          "text":
+            "Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.addAt(0,'cat'); return test.size() === 3}()), 'Your <code>addAt</code> method should increase the length of the linked list by one for each new node added to the linked list.');"
         },
         {
-          "text": "Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.",
-          "testString": "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return (test.addAt(4,'cat') === false); }()), 'Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.');"
+          "text":
+            "Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.",
+          "testString":
+            "assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); return (test.addAt(4,'cat') === false); }()), 'Your <code>addAt</code> method should return <code>false</code> if a node was unable to be added.');"
         }
       ],
       "solutions": [],
@@ -1859,35 +2039,43 @@
       "tests": [
         {
           "text": "The DoublyLinkedList data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})(), 'The DoublyLinkedList data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})(), 'The DoublyLinkedList data structure exists.');"
         },
         {
           "text": "The DoublyLinkedList has a method called add.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == 'function')})(), 'The DoublyLinkedList has a method called add.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == 'function')})(), 'The DoublyLinkedList has a method called add.');"
         },
         {
           "text": "The DoublyLinkedList has a method called remove.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.remove == undefined) { return false; }; return (typeof test.remove == 'function')})(), 'The DoublyLinkedList has a method called remove.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.remove == undefined) { return false; }; return (typeof test.remove == 'function')})(), 'The DoublyLinkedList has a method called remove.');"
         },
         {
           "text": "Removing an item from an empty list returns null.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.remove(100) == null); })(), 'Removing an item from an empty list returns null.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.remove(100) == null); })(), 'Removing an item from an empty list returns null.');"
         },
         {
           "text": "The add method adds items to the list.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(5); test.add(6); test.add(723); return (test.print().join('') == '56723'); })(), 'The add method adds items to the list.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(5); test.add(6); test.add(723); return (test.print().join('') == '56723'); })(), 'The add method adds items to the list.');"
         },
         {
           "text": "Each node keeps track of the previous node.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(50); test.add(68); test.add(73); return (test.printReverse().join('') == '736850'); })(), 'Each node keeps track of the previous node.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(50); test.add(68); test.add(73); return (test.printReverse().join('') == '736850'); })(), 'Each node keeps track of the previous node.');"
         },
         {
           "text": "The first item can be removed from the list.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(25); return ( test.print().join('') == '3560' ) })(), 'The first item can be removed from the list.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(25); return ( test.print().join('') == '3560' ) })(), 'The first item can be removed from the list.');"
         },
         {
           "text": "The last item can be removed from the list.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(60); return ( test.print().join('') == '2535' ) })(), 'The last item can be removed from the list.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(25); test.add(35); test.add(60); test.remove(60); return ( test.print().join('') == '2535' ) })(), 'The last item can be removed from the list.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -1957,27 +2145,34 @@
       "tests": [
         {
           "text": "The DoublyLinkedList data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})(), 'The DoublyLinkedList data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (typeof test == 'object')})(), 'The DoublyLinkedList data structure exists.');"
         },
         {
           "text": "The DoublyLinkedList has a method called add.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == 'function')})(), 'The DoublyLinkedList has a method called add.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == 'function')})(), 'The DoublyLinkedList has a method called add.');"
         },
         {
           "text": "The DoublyLinkedList has a method called reverse.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.reverse == undefined) { return false; }; return (typeof test.reverse == 'function')})(), 'The DoublyLinkedList has a method called reverse.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; if (test.reverse == undefined) { return false; }; return (typeof test.reverse == 'function')})(), 'The DoublyLinkedList has a method called reverse.');"
         },
         {
           "text": "Reversing an empty list returns null.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.reverse() == null); })(), 'Reversing an empty list returns null.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; return (test.reverse() == null); })(), 'Reversing an empty list returns null.');"
         },
         {
           "text": "The reverse method reverses the list.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.reverse(); return (test.print().join('') == '326158'); })(), 'The reverse method reverses the list.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.reverse(); return (test.print().join('') == '326158'); })(), 'The reverse method reverses the list.');"
         },
         {
-          "text": "The next and previous references are correctly maintained when a list is reversed.",
-          "testString": "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.reverse(); return (test.printReverse().join('') == '112233'); })(), 'The next and previous references are correctly maintained when a list is reversed.');"
+          "text":
+            "The next and previous references are correctly maintained when a list is reversed.",
+          "testString":
+            "assert((function() { var test = false; if (typeof DoublyLinkedList !== 'undefined') { test = new DoublyLinkedList() }; test.add(11); test.add(22); test.add(33); test.reverse(); return (test.printReverse().join('') == '112233'); })(), 'The next and previous references are correctly maintained when a list is reversed.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2069,27 +2264,38 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>findMin</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMin == 'function')})(), 'The binary search tree has a method called <code>findMin</code>.');"
+          "text":
+            "The binary search tree has a method called <code>findMin</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMin == 'function')})(), 'The binary search tree has a method called <code>findMin</code>.');"
         },
         {
-          "text": "The binary search tree has a method called <code>findMax</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMax == 'function')})(), 'The binary search tree has a method called <code>findMax</code>.');"
+          "text":
+            "The binary search tree has a method called <code>findMax</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMax == 'function')})(), 'The binary search tree has a method called <code>findMax</code>.');"
         },
         {
-          "text": "The <code>findMin</code> method returns the minimum value in the binary search tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMin !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.findMin() == 1; })(), 'The <code>findMin</code> method returns the minimum value in the binary search tree.');"
+          "text":
+            "The <code>findMin</code> method returns the minimum value in the binary search tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMin !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.findMin() == 1; })(), 'The <code>findMin</code> method returns the minimum value in the binary search tree.');"
         },
         {
-          "text": "The <code>findMax</code> method returns the maximum value in the binary search tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMax !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.findMax() == 87; })(), 'The <code>findMax</code> method returns the maximum value in the binary search tree.');"
+          "text":
+            "The <code>findMax</code> method returns the maximum value in the binary search tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMax !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.findMax() == 87; })(), 'The <code>findMax</code> method returns the maximum value in the binary search tree.');"
         },
         {
-          "text": "The <code>findMin</code> and <code>findMax</code> methods return <code>null</code> for an empty tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMin !== 'function') { return false; }; if (typeof test.findMax !== 'function') { return false; }; return (test.findMin() == null && test.findMax() == null) })(), 'The <code>findMin</code> and <code>findMax</code> methods return <code>null</code> for an empty tree.');"
+          "text":
+            "The <code>findMin</code> and <code>findMax</code> methods return <code>null</code> for an empty tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMin !== 'function') { return false; }; if (typeof test.findMax !== 'function') { return false; }; return (test.findMin() == null && test.findMax() == null) })(), 'The <code>findMin</code> and <code>findMax</code> methods return <code>null</code> for an empty tree.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2161,19 +2367,26 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>add</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.add == 'function')})(), 'The binary search tree has a method called <code>add</code>.');"
+          "text":
+            "The binary search tree has a method called <code>add</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.add == 'function')})(), 'The binary search tree has a method called <code>add</code>.');"
         },
         {
-          "text": "The add method adds elements according to the binary search tree rules.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); const expectedResult = [ 1, 4, 7, 8, 34, 45, 73, 87 ]; const result = test.inOrder(); return (expectedResult.toString() === result.toString()); })(), 'The add method adds elements according to the binary search tree rules.');"
+          "text":
+            "The add method adds elements according to the binary search tree rules.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); const expectedResult = [ 1, 4, 7, 8, 34, 45, 73, 87 ]; const result = test.inOrder(); return (expectedResult.toString() === result.toString()); })(), 'The add method adds elements according to the binary search tree rules.');"
         },
         {
-          "text": "Adding an element that already exists returns <code>null</code>",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); return test.add(4) == null; })(), 'Adding an element that already exists returns <code>null</code>');"
+          "text":
+            "Adding an element that already exists returns <code>null</code>",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== 'function') { return false; }; test.add(4); return test.add(4) == null; })(), 'Adding an element that already exists returns <code>null</code>');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2257,19 +2470,26 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>isPresent</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isPresent == 'function')})(), 'The binary search tree has a method called <code>isPresent</code>.');"
+          "text":
+            "The binary search tree has a method called <code>isPresent</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isPresent == 'function')})(), 'The binary search tree has a method called <code>isPresent</code>.');"
         },
         {
-          "text": "The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; test.add(4); test.add(7); test.add(411); test.add(452); return ( test.isPresent(452) && test.isPresent(411) && test.isPresent(7) && !test.isPresent(100) ); })(), 'The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.');"
+          "text":
+            "The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; test.add(4); test.add(7); test.add(411); test.add(452); return ( test.isPresent(452) && test.isPresent(411) && test.isPresent(7) && !test.isPresent(100) ); })(), 'The <code>isPresent</code> method correctly checks for the presence or absence of elements added to the tree.');"
         },
         {
-          "text": "<code>isPresent</code> handles cases where the tree is empty.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })(), '<code>isPresent</code> handles cases where the tree is empty.');"
+          "text":
+            "<code>isPresent</code> handles cases where the tree is empty.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isPresent !== 'function') { return false; }; return test.isPresent(5) == false; })(), '<code>isPresent</code> handles cases where the tree is empty.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2342,35 +2562,49 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>findMinHeight</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMinHeight == 'function')})(), 'The binary search tree has a method called <code>findMinHeight</code>.');"
+          "text":
+            "The binary search tree has a method called <code>findMinHeight</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMinHeight == 'function')})(), 'The binary search tree has a method called <code>findMinHeight</code>.');"
         },
         {
-          "text": "The binary search tree has a method called <code>findMaxHeight</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMaxHeight == 'function')})(), 'The binary search tree has a method called <code>findMaxHeight</code>.');"
+          "text":
+            "The binary search tree has a method called <code>findMaxHeight</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMaxHeight == 'function')})(), 'The binary search tree has a method called <code>findMaxHeight</code>.');"
         },
         {
-          "text": "The binary search tree has a method called <code>isBalanced</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isBalanced == 'function')})(), 'The binary search tree has a method called <code>isBalanced</code>.');"
+          "text":
+            "The binary search tree has a method called <code>isBalanced</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isBalanced == 'function')})(), 'The binary search tree has a method called <code>isBalanced</code>.');"
         },
         {
-          "text": "The <code>findMinHeight</code> method returns the minimum height of the tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMinHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMinHeight() == 1); })(), 'The <code>findMinHeight</code> method returns the minimum height of the tree.');"
+          "text":
+            "The <code>findMinHeight</code> method returns the minimum height of the tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMinHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMinHeight() == 1); })(), 'The <code>findMinHeight</code> method returns the minimum height of the tree.');"
         },
         {
-          "text": "The <code>findMaxHeight</code> method returns the maximum height of the tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMaxHeight() == 5); })(), 'The <code>findMaxHeight</code> method returns the maximum height of the tree.');"
+          "text":
+            "The <code>findMaxHeight</code> method returns the maximum height of the tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMaxHeight() == 5); })(), 'The <code>findMaxHeight</code> method returns the maximum height of the tree.');"
         },
         {
           "text": "An empty tree returns a height of <code>-1</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; return (test.findMaxHeight() == -1); })(), 'An empty tree returns a height of <code>-1</code>.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; return (test.findMaxHeight() == -1); })(), 'An empty tree returns a height of <code>-1</code>.');"
         },
         {
-          "text": "The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced(); })(), 'The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.');"
+          "text":
+            "The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced(); })(), 'The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2446,43 +2680,62 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>inorder</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.inorder == 'function')})(), 'The binary search tree has a method called <code>inorder</code>.');"
+          "text":
+            "The binary search tree has a method called <code>inorder</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.inorder == 'function')})(), 'The binary search tree has a method called <code>inorder</code>.');"
         },
         {
-          "text": "The binary search tree has a method called <code>preorder</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.preorder == 'function')})(), 'The binary search tree has a method called <code>preorder</code>.');"
+          "text":
+            "The binary search tree has a method called <code>preorder</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.preorder == 'function')})(), 'The binary search tree has a method called <code>preorder</code>.');"
         },
         {
-          "text": "The binary search tree has a method called <code>postorder</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.postorder == 'function')})(), 'The binary search tree has a method called <code>postorder</code>.');"
+          "text":
+            "The binary search tree has a method called <code>postorder</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.postorder == 'function')})(), 'The binary search tree has a method called <code>postorder</code>.');"
         },
         {
-          "text": "The <code>inorder</code> method returns an array of the node values that result from an inorder traversal.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.inorder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.inorder().join('') == '012345678910'); })(), 'The <code>inorder</code> method returns an array of the node values that result from an inorder traversal.');"
+          "text":
+            "The <code>inorder</code> method returns an array of the node values that result from an inorder traversal.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.inorder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.inorder().join('') == '012345678910'); })(), 'The <code>inorder</code> method returns an array of the node values that result from an inorder traversal.');"
         },
         {
-          "text": "The <code>preorder</code> method returns an array of the node values that result from a preorder traversal.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.preorder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.preorder().join('') == '710325469810'); })(), 'The <code>preorder</code> method returns an array of the node values that result from a preorder traversal.');"
+          "text":
+            "The <code>preorder</code> method returns an array of the node values that result from a preorder traversal.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.preorder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.preorder().join('') == '710325469810'); })(), 'The <code>preorder</code> method returns an array of the node values that result from a preorder traversal.');"
         },
         {
-          "text": "The <code>postorder</code> method returns an array of the node values that result from a postorder traversal.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.postorder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.postorder().join('') == '024653181097'); })(), 'The <code>postorder</code> method returns an array of the node values that result from a postorder traversal.');"
+          "text":
+            "The <code>postorder</code> method returns an array of the node values that result from a postorder traversal.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.postorder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.postorder().join('') == '024653181097'); })(), 'The <code>postorder</code> method returns an array of the node values that result from a postorder traversal.');"
         },
         {
-          "text": "The <code>inorder</code> method returns <code>null</code> for an empty tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.inorder !== 'function') { return false; }; return (test.inorder() == null); })(), 'The <code>inorder</code> method returns <code>null</code> for an empty tree.');"
+          "text":
+            "The <code>inorder</code> method returns <code>null</code> for an empty tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.inorder !== 'function') { return false; }; return (test.inorder() == null); })(), 'The <code>inorder</code> method returns <code>null</code> for an empty tree.');"
         },
         {
-          "text": "The <code>preorder</code> method returns <code>null</code> for an empty tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.preorder !== 'function') { return false; }; return (test.preorder() == null); })(), 'The <code>preorder</code> method returns <code>null</code> for an empty tree.');"
+          "text":
+            "The <code>preorder</code> method returns <code>null</code> for an empty tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.preorder !== 'function') { return false; }; return (test.preorder() == null); })(), 'The <code>preorder</code> method returns <code>null</code> for an empty tree.');"
         },
         {
-          "text": "The <code>postorder</code> method returns <code>null</code> for an empty tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.postorder !== 'function') { return false; }; return (test.postorder() == null); })(), 'The <code>postorder</code> method returns <code>null</code> for an empty tree.');"
+          "text":
+            "The <code>postorder</code> method returns <code>null</code> for an empty tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.postorder !== 'function') { return false; }; return (test.postorder() == null); })(), 'The <code>postorder</code> method returns <code>null</code> for an empty tree.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2554,31 +2807,44 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>levelOrder</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.levelOrder == 'function')})(), 'The binary search tree has a method called <code>levelOrder</code>.');"
+          "text":
+            "The binary search tree has a method called <code>levelOrder</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.levelOrder == 'function')})(), 'The binary search tree has a method called <code>levelOrder</code>.');"
         },
         {
-          "text": "The binary search tree has a method called <code>reverseLevelOrder</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.reverseLevelOrder == 'function')})(), 'The binary search tree has a method called <code>reverseLevelOrder</code>.');"
+          "text":
+            "The binary search tree has a method called <code>reverseLevelOrder</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.reverseLevelOrder == 'function')})(), 'The binary search tree has a method called <code>reverseLevelOrder</code>.');"
         },
         {
-          "text": "The <code>levelOrder</code> method returns an array of the tree node values explored in level order.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.levelOrder().join('') == '719038102546'); })(), 'The <code>levelOrder</code> method returns an array of the tree node values explored in level order.');"
+          "text":
+            "The <code>levelOrder</code> method returns an array of the tree node values explored in level order.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.levelOrder().join('') == '719038102546'); })(), 'The <code>levelOrder</code> method returns an array of the tree node values explored in level order.');"
         },
         {
-          "text": "The <code>reverseLevelOrder</code> method returns an array of the tree node values explored in reverse level order.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.reverseLevelOrder().join('') == '791108305264'); })(), 'The <code>reverseLevelOrder</code> method returns an array of the tree node values explored in reverse level order.');"
+          "text":
+            "The <code>reverseLevelOrder</code> method returns an array of the tree node values explored in reverse level order.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; test.add(7); test.add(1); test.add(9); test.add(0); test.add(3); test.add(8); test.add(10); test.add(2); test.add(5); test.add(4); test.add(6); return (test.reverseLevelOrder().join('') == '791108305264'); })(), 'The <code>reverseLevelOrder</code> method returns an array of the tree node values explored in reverse level order.');"
         },
         {
-          "text": "The <code>levelOrder</code> method returns <code>null</code> for an empty tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== 'function') { return false; }; return (test.levelOrder() == null); })(), 'The <code>levelOrder</code> method returns <code>null</code> for an empty tree.');"
+          "text":
+            "The <code>levelOrder</code> method returns <code>null</code> for an empty tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.levelOrder !== 'function') { return false; }; return (test.levelOrder() == null); })(), 'The <code>levelOrder</code> method returns <code>null</code> for an empty tree.');"
         },
         {
-          "text": "The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; return (test.reverseLevelOrder() == null); })(), 'The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.');"
+          "text":
+            "The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.reverseLevelOrder !== 'function') { return false; }; return (test.reverseLevelOrder() == null); })(), 'The <code>reverseLevelOrder</code> method returns <code>null</code> for an empty tree.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2654,23 +2920,32 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>remove</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})(), 'The binary search tree has a method called <code>remove</code>.');"
+          "text":
+            "The binary search tree has a method called <code>remove</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})(), 'The binary search tree has a method called <code>remove</code>.');"
         },
         {
-          "text": "Trying to remove an element that does not exist returns <code>null</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })(), 'Trying to remove an element that does not exist returns <code>null</code>.');"
+          "text":
+            "Trying to remove an element that does not exist returns <code>null</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })(), 'Trying to remove an element that does not exist returns <code>null</code>.');"
         },
         {
-          "text": "If the root node has no children, deleting it sets the root to <code>null</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })(), 'If the root node has no children, deleting it sets the root to <code>null</code>.');"
+          "text":
+            "If the root node has no children, deleting it sets the root to <code>null</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })(), 'If the root node has no children, deleting it sets the root to <code>null</code>.');"
         },
         {
-          "text": "The <code>remove</code> method removes leaf nodes from the tree",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'The <code>remove</code> method removes leaf nodes from the tree');"
+          "text":
+            "The <code>remove</code> method removes leaf nodes from the tree",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'The <code>remove</code> method removes leaf nodes from the tree');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2786,31 +3061,44 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>remove</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})(), 'The binary search tree has a method called <code>remove</code>.');"
+          "text":
+            "The binary search tree has a method called <code>remove</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})(), 'The binary search tree has a method called <code>remove</code>.');"
         },
         {
-          "text": "Trying to remove an element that does not exist returns <code>null</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })(), 'Trying to remove an element that does not exist returns <code>null</code>.');"
+          "text":
+            "Trying to remove an element that does not exist returns <code>null</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; return (test.remove(100) == null); })(), 'Trying to remove an element that does not exist returns <code>null</code>.');"
         },
         {
-          "text": "If the root node has no children, deleting it sets the root to <code>null</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })(), 'If the root node has no children, deleting it sets the root to <code>null</code>.');"
+          "text":
+            "If the root node has no children, deleting it sets the root to <code>null</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })(), 'If the root node has no children, deleting it sets the root to <code>null</code>.');"
         },
         {
-          "text": "The <code>remove</code> method removes leaf nodes from the tree",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'The <code>remove</code> method removes leaf nodes from the tree');"
+          "text":
+            "The <code>remove</code> method removes leaf nodes from the tree",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join('') == '567'); })(), 'The <code>remove</code> method removes leaf nodes from the tree');"
         },
         {
-          "text": "The <code>remove</code> method removes nodes with one child.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return (test.inorder().join('') == '-1'); })(), 'The <code>remove</code> method removes nodes with one child.');"
+          "text":
+            "The <code>remove</code> method removes nodes with one child.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return (test.inorder().join('') == '-1'); })(), 'The <code>remove</code> method removes nodes with one child.');"
         },
         {
-          "text": "Removing the root in a tree with two nodes sets the second to be the root.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return (test.inorder().join('') == '27'); })(), 'Removing the root in a tree with two nodes sets the second to be the root.');"
+          "text":
+            "Removing the root in a tree with two nodes sets the second to be the root.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return (test.inorder().join('') == '27'); })(), 'Removing the root in a tree with two nodes sets the second to be the root.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -2968,39 +3256,55 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>remove</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})(), 'The binary search tree has a method called <code>remove</code>.');"
+          "text":
+            "The binary search tree has a method called <code>remove</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function')})(), 'The binary search tree has a method called <code>remove</code>.');"
         },
         {
-          "text": "Trying to remove an element that does not exist returns <code>null</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function') ? (test.remove(100) == null) : false})(), 'Trying to remove an element that does not exist returns <code>null</code>.');"
+          "text":
+            "Trying to remove an element that does not exist returns <code>null</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == 'function') ? (test.remove(100) == null) : false})(), 'Trying to remove an element that does not exist returns <code>null</code>.');"
         },
         {
-          "text": "If the root node has no children, deleting it sets the root to <code>null</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.add(500); test.remove(500); return (typeof test.remove == 'function') ? (test.inorder() == null) : false})(), 'If the root node has no children, deleting it sets the root to <code>null</code>.');"
+          "text":
+            "If the root node has no children, deleting it sets the root to <code>null</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.add(500); test.remove(500); return (typeof test.remove == 'function') ? (test.inorder() == null) : false})(), 'If the root node has no children, deleting it sets the root to <code>null</code>.');"
         },
         {
-          "text": "The <code>remove</code> method removes leaf nodes from the tree",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (typeof test.remove == 'function') ? (test.inorder().join('') == '567') : false})(), 'The <code>remove</code> method removes leaf nodes from the tree');"
+          "text":
+            "The <code>remove</code> method removes leaf nodes from the tree",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (typeof test.remove == 'function') ? (test.inorder().join('') == '567') : false})(), 'The <code>remove</code> method removes leaf nodes from the tree');"
         },
         {
-          "text": "The <code>remove</code> method removes nodes with one child.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return (test.inorder().join('') == '-1'); })(), 'The <code>remove</code> method removes nodes with one child.');"
+          "text":
+            "The <code>remove</code> method removes nodes with one child.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(-1); test.add(3); test.add(7); test.add(16); test.remove(16); test.remove(7); test.remove(3); return (test.inorder().join('') == '-1'); })(), 'The <code>remove</code> method removes nodes with one child.');"
         },
         {
-          "text": "Removing the root in a tree with two nodes sets the second to be the root.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return (test.inorder().join('') == '27'); })(), 'Removing the root in a tree with two nodes sets the second to be the root.');"
+          "text":
+            "Removing the root in a tree with two nodes sets the second to be the root.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(15); test.add(27); test.remove(15); return (test.inorder().join('') == '27'); })(), 'Removing the root in a tree with two nodes sets the second to be the root.');"
         },
         {
-          "text": "The <code>remove</code> method removes nodes with two children while maintaining the binary search tree structure.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(1); test.add(4); test.add(3); test.add(7); test.add(9); test.add(11); test.add(14); test.add(15); test.add(19); test.add(50); test.remove(9); if (!test.isBinarySearchTree()) { return false; }; test.remove(11); if (!test.isBinarySearchTree()) { return false; }; test.remove(14); if (!test.isBinarySearchTree()) { return false; }; test.remove(19); if (!test.isBinarySearchTree()) { return false; }; test.remove(3); if (!test.isBinarySearchTree()) { return false; }; test.remove(50); if (!test.isBinarySearchTree()) { return false; }; test.remove(15); if (!test.isBinarySearchTree()) { return false; }; return (test.inorder().join('') == '147'); })(), 'The <code>remove</code> method removes nodes with two children while maintaining the binary search tree structure.');"
+          "text":
+            "The <code>remove</code> method removes nodes with two children while maintaining the binary search tree structure.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(1); test.add(4); test.add(3); test.add(7); test.add(9); test.add(11); test.add(14); test.add(15); test.add(19); test.add(50); test.remove(9); if (!test.isBinarySearchTree()) { return false; }; test.remove(11); if (!test.isBinarySearchTree()) { return false; }; test.remove(14); if (!test.isBinarySearchTree()) { return false; }; test.remove(19); if (!test.isBinarySearchTree()) { return false; }; test.remove(3); if (!test.isBinarySearchTree()) { return false; }; test.remove(50); if (!test.isBinarySearchTree()) { return false; }; test.remove(15); if (!test.isBinarySearchTree()) { return false; }; return (test.inorder().join('') == '147'); })(), 'The <code>remove</code> method removes nodes with two children while maintaining the binary search tree structure.');"
         },
         {
           "text": "The root can be removed on a tree of three nodes.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(100); test.add(50); test.add(300); test.remove(100); return (test.inorder().join('') == 50300); })(), 'The root can be removed on a tree of three nodes.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== 'function') { return false; }; test.add(100); test.add(50); test.add(300); test.remove(100); return (test.inorder().join('') == 50300); })(), 'The root can be removed on a tree of three nodes.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3170,19 +3474,25 @@
       "tests": [
         {
           "text": "The <code>BinarySearchTree</code> data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');"
         },
         {
-          "text": "The binary search tree has a method called <code>invert</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.invert == 'function')})(), 'The binary search tree has a method called <code>invert</code>.');"
+          "text":
+            "The binary search tree has a method called <code>invert</code>.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.invert == 'function')})(), 'The binary search tree has a method called <code>invert</code>.');"
         },
         {
-          "text": "The <code>invert</code> method correctly inverts the tree structure.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); test.invert(); return test.inorder().join('') == '877345348741'; })(), 'The <code>invert</code> method correctly inverts the tree structure.');"
+          "text":
+            "The <code>invert</code> method correctly inverts the tree structure.",
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); test.invert(); return test.inorder().join('') == '877345348741'; })(), 'The <code>invert</code> method correctly inverts the tree structure.');"
         },
         {
           "text": "Inverting an empty tree returns <code>null</code>.",
-          "testString": "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; return (test.invert() == null); })(), 'Inverting an empty tree returns <code>null</code>.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.invert !== 'function') { return false; }; return (test.invert() == null); })(), 'Inverting an empty tree returns <code>null</code>.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3274,23 +3584,30 @@
       "tests": [
         {
           "text": "The Trie has an add method.",
-          "testString": "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.add == 'function') }()), 'The Trie has an add method.');"
+          "testString":
+            "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.add == 'function') }()), 'The Trie has an add method.');"
         },
         {
           "text": "The Trie has a print method.",
-          "testString": "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.print == 'function') }()), 'The Trie has a print method.');"
+          "testString":
+            "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.print == 'function') }()), 'The Trie has a print method.');"
         },
         {
           "text": "The Trie has an isWord method.",
-          "testString": "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.isWord == 'function') }()), 'The Trie has an isWord method.');"
+          "testString":
+            "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; return (typeof test.isWord == 'function') }()), 'The Trie has an isWord method.');"
         },
         {
-          "text": "The print method returns all items added to the trie as strings in an array.",
-          "testString": "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('jump'); test.add('jumps'); test.add('jumped'); test.add('house'); test.add('mouse'); var added = test.print(); return (added.indexOf('jump') != -1 && added.indexOf('jumps') != -1 && added.indexOf('jumped') != -1 && added.indexOf('house') != -1 && added.indexOf('mouse') != -1 && added.length == 5); }()), 'The print method returns all items added to the trie as strings in an array.');"
+          "text":
+            "The print method returns all items added to the trie as strings in an array.",
+          "testString":
+            "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('jump'); test.add('jumps'); test.add('jumped'); test.add('house'); test.add('mouse'); var added = test.print(); return (added.indexOf('jump') != -1 && added.indexOf('jumps') != -1 && added.indexOf('jumped') != -1 && added.indexOf('house') != -1 && added.indexOf('mouse') != -1 && added.length == 5); }()), 'The print method returns all items added to the trie as strings in an array.');"
         },
         {
-          "text": "The isWord method returns true only for words added to the trie and false for all other words.",
-          "testString": "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('hop'); test.add('hops'); test.add('hopped'); test.add('hoppy'); test.add('hope'); return (test.isWord('hop') && !test.isWord('ho') && test.isWord('hopped') && !test.isWord('hopp') && test.isWord('hoppy') && !test.isWord('hoping')); }()), 'The isWord method returns true only for words added to the trie and false for all other words.');"
+          "text":
+            "The isWord method returns true only for words added to the trie and false for all other words.",
+          "testString":
+            "assert((function testTrie() { var test = false; if (typeof Trie !== 'undefined') { test = new Trie() } else { return false; }; test.add('hop'); test.add('hops'); test.add('hopped'); test.add('hoppy'); test.add('hope'); return (test.isWord('hop') && !test.isWord('ho') && test.isWord('hopped') && !test.isWord('hopp') && test.isWord('hoppy') && !test.isWord('hoping')); }()), 'The isWord method returns true only for words added to the trie and false for all other words.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3348,19 +3665,24 @@
       "tests": [
         {
           "text": "The MaxHeap data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() }; return (typeof test == 'object')})(), 'The MaxHeap data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() }; return (typeof test == 'object')})(), 'The MaxHeap data structure exists.');"
         },
         {
           "text": "MaxHeap has a method called insert.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.insert == 'function')})(), 'MaxHeap has a method called insert.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.insert == 'function')})(), 'MaxHeap has a method called insert.');"
         },
         {
           "text": "MaxHeap has a method called print.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})(), 'MaxHeap has a method called print.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})(), 'MaxHeap has a method called print.');"
         },
         {
-          "text": "The insert method adds elements according to the max heap property.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })(), 'The insert method adds elements according to the max heap property.');"
+          "text":
+            "The insert method adds elements according to the max heap property.",
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(50); test.insert(100); test.insert(700); test.insert(32); test.insert(51); let result = test.print(); return ((result.length == 5) ? result[0] == 700 : result[1] == 700) })(), 'The insert method adds elements according to the max heap property.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3396,23 +3718,29 @@
       "tests": [
         {
           "text": "The MaxHeap data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() }; return (typeof test == 'object')})(), 'The MaxHeap data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() }; return (typeof test == 'object')})(), 'The MaxHeap data structure exists.');"
         },
         {
           "text": "MaxHeap has a method called print.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})(), 'MaxHeap has a method called print.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.print == 'function')})(), 'MaxHeap has a method called print.');"
         },
         {
           "text": "MaxHeap has a method called insert.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.insert == 'function')})(), 'MaxHeap has a method called insert.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.insert == 'function')})(), 'MaxHeap has a method called insert.');"
         },
         {
           "text": "MaxHeap has a method called remove.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.remove == 'function')})(), 'MaxHeap has a method called remove.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; return (typeof test.remove == 'function')})(), 'MaxHeap has a method called remove.');"
         },
         {
-          "text": "The remove method removes the greatest element from the max heap while maintaining the max heap property.",
-          "testString": "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(30); test.insert(300); test.insert(500); test.insert(10); let result = []; result.push(test.remove()); result.push(test.remove()); result.push(test.remove()); result.push(test.remove());  return (result.join('') == '5003003010') })(), 'The remove method removes the greatest element from the max heap while maintaining the max heap property.');"
+          "text":
+            "The remove method removes the greatest element from the max heap while maintaining the max heap property.",
+          "testString":
+            "assert((function() { var test = false; if (typeof MaxHeap !== 'undefined') { test = new MaxHeap() } else { return false; }; test.insert(30); test.insert(300); test.insert(500); test.insert(10); let result = []; result.push(test.remove()); result.push(test.remove()); result.push(test.remove()); result.push(test.remove());  return (result.join('') == '5003003010') })(), 'The remove method removes the greatest element from the max heap while maintaining the max heap property.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3446,23 +3774,29 @@
       "tests": [
         {
           "text": "The MinHeap data structure exists.",
-          "testString": "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() }; return (typeof test == 'object')})(), 'The MinHeap data structure exists.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() }; return (typeof test == 'object')})(), 'The MinHeap data structure exists.');"
         },
         {
           "text": "MinHeap has a method called insert.",
-          "testString": "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; return (typeof test.insert == 'function')})(), 'MinHeap has a method called insert.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; return (typeof test.insert == 'function')})(), 'MinHeap has a method called insert.');"
         },
         {
           "text": "MinHeap has a method called remove.",
-          "testString": "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; return (typeof test.remove == 'function')})(), 'MinHeap has a method called remove.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; return (typeof test.remove == 'function')})(), 'MinHeap has a method called remove.');"
         },
         {
           "text": "MinHeap has a method called sort.",
-          "testString": "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; return (typeof test.sort == 'function')})(), 'MinHeap has a method called sort.');"
+          "testString":
+            "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; return (typeof test.sort == 'function')})(), 'MinHeap has a method called sort.');"
         },
         {
-          "text": "The sort method returns an array containing all items added to the min heap in sorted order.",
-          "testString": "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; test.insert(3); test.insert(12); test.insert(5); test.insert(10); test.insert(1); test.insert(27); test.insert(42); test.insert(57); test.insert(5); var result = test.sort(); return (isSorted(result)); })(), 'The sort method returns an array containing all items added to the min heap in sorted order.');"
+          "text":
+            "The sort method returns an array containing all items added to the min heap in sorted order.",
+          "testString":
+            "assert((function() { var test = false; if (typeof MinHeap !== 'undefined') { test = new MinHeap() } else { return false; }; test.insert(3); test.insert(12); test.insert(5); test.insert(10); test.insert(1); test.insert(27); test.insert(42); test.insert(57); test.insert(5); var result = test.sort(); return (isSorted(result)); })(), 'The sort method returns an array containing all items added to the min heap in sorted order.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3513,20 +3847,28 @@
       ],
       "tests": [
         {
-          "text": "<code>undirectedAdjList</code> should only contain four nodes.",
-          "testString": "assert(Object.keys(undirectedAdjList).length === 4, '<code>undirectedAdjList</code> should only contain four nodes.');"
+          "text":
+            "<code>undirectedAdjList</code> should only contain four nodes.",
+          "testString":
+            "assert(Object.keys(undirectedAdjList).length === 4, '<code>undirectedAdjList</code> should only contain four nodes.');"
         },
         {
-          "text": "There should be an edge between <code>Jeff</code> and <code>James</code>.",
-          "testString": "assert(undirectedAdjList.James.indexOf(\"Jeff\") !== -1 && undirectedAdjList.Jeff.indexOf(\"James\") !== -1, 'There should be an edge between <code>Jeff</code> and <code>James</code>.');"
+          "text":
+            "There should be an edge between <code>Jeff</code> and <code>James</code>.",
+          "testString":
+            "assert(undirectedAdjList.James.indexOf(\"Jeff\") !== -1 && undirectedAdjList.Jeff.indexOf(\"James\") !== -1, 'There should be an edge between <code>Jeff</code> and <code>James</code>.');"
         },
         {
-          "text": "There should be an edge between <code>Jill</code> and <code>Jenny</code>.",
-          "testString": "assert(undirectedAdjList.Jill.indexOf(\"Jenny\") !== -1 && undirectedAdjList.Jill.indexOf(\"Jenny\") !== -1, 'There should be an edge between <code>Jill</code> and <code>Jenny</code>.');"
+          "text":
+            "There should be an edge between <code>Jill</code> and <code>Jenny</code>.",
+          "testString":
+            "assert(undirectedAdjList.Jill.indexOf(\"Jenny\") !== -1 && undirectedAdjList.Jill.indexOf(\"Jenny\") !== -1, 'There should be an edge between <code>Jill</code> and <code>Jenny</code>.');"
         },
         {
-          "text": "There should be an edge between <code>Jeff</code> and <code>Jenny</code>.",
-          "testString": "assert(undirectedAdjList.Jeff.indexOf(\"Jenny\") !== -1 && undirectedAdjList.Jenny.indexOf(\"Jeff\") !== -1, 'There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');"
+          "text":
+            "There should be an edge between <code>Jeff</code> and <code>Jenny</code>.",
+          "testString":
+            "assert(undirectedAdjList.Jeff.indexOf(\"Jenny\") !== -1 && undirectedAdjList.Jenny.indexOf(\"Jeff\") !== -1, 'There should be an edge between <code>Jeff</code> and <code>Jenny</code>.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3540,10 +3882,7 @@
           "key": "indexjs",
           "ext": "js",
           "name": "index",
-          "contents": [
-            "var undirectedAdjList = {",
-            "};"
-          ],
+          "contents": ["var undirectedAdjList = {", "};"],
           "head": [],
           "tail": []
         }
@@ -3568,24 +3907,30 @@
       ],
       "tests": [
         {
-          "text": "<code>undirectedAdjList</code> should only contain five nodes.",
-          "testString": "assert((adjMatUndirected.length === 5) && adjMatUndirected.map(function(x) { return x.length === 5 }).reduce(function(a, b) { return a && b }) , '<code>undirectedAdjList</code> should only contain five nodes.');"
+          "text":
+            "<code>undirectedAdjList</code> should only contain five nodes.",
+          "testString":
+            "assert((adjMatUndirected.length === 5) && adjMatUndirected.map(function(x) { return x.length === 5 }).reduce(function(a, b) { return a && b }) , '<code>undirectedAdjList</code> should only contain five nodes.');"
         },
         {
           "text": "There should be an edge between the first and fourth node.",
-          "testString": "assert((adjMatUndirected[0][3] === 1) && (adjMatUndirected[3][0] === 1), 'There should be an edge between the first and fourth node.');"
+          "testString":
+            "assert((adjMatUndirected[0][3] === 1) && (adjMatUndirected[3][0] === 1), 'There should be an edge between the first and fourth node.');"
         },
         {
           "text": "There should be an edge between the first and third node.",
-          "testString": "assert((adjMatUndirected[0][2] === 1) && (adjMatUndirected[2][0] === 1), 'There should be an edge between the first and third node.');"
+          "testString":
+            "assert((adjMatUndirected[0][2] === 1) && (adjMatUndirected[2][0] === 1), 'There should be an edge between the first and third node.');"
         },
         {
           "text": "There should be an edge between the third and fifth node.",
-          "testString": "assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1), 'There should be an edge between the third and fifth node.');"
+          "testString":
+            "assert((adjMatUndirected[2][4] === 1) && (adjMatUndirected[4][2] === 1), 'There should be an edge between the third and fifth node.');"
         },
         {
           "text": "There should be an edge between the fourth and fifth node.",
-          "testString": "assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'There should be an edge between the fourth and fifth node.');"
+          "testString":
+            "assert((adjMatUndirected[3][4] === 1) && (adjMatUndirected[4][3] === 1), 'There should be an edge between the fourth and fifth node.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3599,10 +3944,7 @@
           "key": "indexjs",
           "ext": "js",
           "name": "index",
-          "contents": [
-            "var adjMatUndirected = [",
-            "];"
-          ],
+          "contents": ["var adjMatUndirected = [", "];"],
           "head": [],
           "tail": []
         }
@@ -3630,24 +3972,34 @@
       ],
       "tests": [
         {
-          "text": "<code>incMatUndirected</code> should only contain five nodes.",
-          "testString": "assert((incMatUndirected.length === 5) && incMatUndirected.map(function(x) { return x.length === 4 }).reduce(function(a, b) { return a && b }) , '<code>incMatUndirected</code> should only contain five nodes.');"
+          "text":
+            "<code>incMatUndirected</code> should only contain five nodes.",
+          "testString":
+            "assert((incMatUndirected.length === 5) && incMatUndirected.map(function(x) { return x.length === 4 }).reduce(function(a, b) { return a && b }) , '<code>incMatUndirected</code> should only contain five nodes.');"
         },
         {
-          "text": "There should be a first edge between the first and second node.",
-          "testString": "assert((incMatUndirected[0][0] === 1) && (incMatUndirected[1][0] === 1), 'There should be a first edge between the first and second node.');"
+          "text":
+            "There should be a first edge between the first and second node.",
+          "testString":
+            "assert((incMatUndirected[0][0] === 1) && (incMatUndirected[1][0] === 1), 'There should be a first edge between the first and second node.');"
         },
         {
-          "text": "There should be a second edge between the second and third node.",
-          "testString": "assert((incMatUndirected[1][1] === 1) && (incMatUndirected[2][1] === 1), 'There should be a second edge between the second and third node.');"
+          "text":
+            "There should be a second edge between the second and third node.",
+          "testString":
+            "assert((incMatUndirected[1][1] === 1) && (incMatUndirected[2][1] === 1), 'There should be a second edge between the second and third node.');"
         },
         {
-          "text": "There should be a third edge between the third and fifth node.",
-          "testString": "assert((incMatUndirected[2][2] === 1) && (incMatUndirected[4][2] === 1), 'There should be a third edge between the third and fifth node.');"
+          "text":
+            "There should be a third edge between the third and fifth node.",
+          "testString":
+            "assert((incMatUndirected[2][2] === 1) && (incMatUndirected[4][2] === 1), 'There should be a third edge between the third and fifth node.');"
         },
         {
-          "text": "There should be a fourth edge between the second and fourth node.",
-          "testString": "assert((incMatUndirected[1][3] === 1) && (incMatUndirected[3][3] === 1), 'There should be a fourth edge between the second and fourth node.');"
+          "text":
+            "There should be a fourth edge between the second and fourth node.",
+          "testString":
+            "assert((incMatUndirected[1][3] === 1) && (incMatUndirected[3][3] === 1), 'There should be a fourth edge between the second and fourth node.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3661,11 +4013,7 @@
           "key": "indexjs",
           "ext": "js",
           "name": "index",
-          "contents": [
-            "var incMatUndirected = [",
-            "  ",
-            "];"
-          ],
+          "contents": ["var incMatUndirected = [", "  ", "];"],
           "head": [],
           "tail": []
         }
@@ -3690,20 +4038,28 @@
       ],
       "tests": [
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: 2}</code>",
-          "testString": "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; var results = bfs(graph, 1); return isEquivalent(results, {0: 1, 1: 0, 2: 1, 3: 2})})(), 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: 2}</code>');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: 2}</code>",
+          "testString":
+            "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; var results = bfs(graph, 1); return isEquivalent(results, {0: 1, 1: 0, 2: 1, 3: 2})})(), 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: 2}</code>');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: Infinity}</code>",
-          "testString": "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; var results = bfs(graph, 1); return isEquivalent(results, {0: 1, 1: 0, 2: 1, 3: Infinity})})(), 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: Infinity}</code>');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: Infinity}</code>",
+          "testString":
+            "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; var results = bfs(graph, 1); return isEquivalent(results, {0: 1, 1: 0, 2: 1, 3: Infinity})})(), 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>1</code> should return <code>{0: 1, 1: 0, 2: 1, 3: Infinity}</code>');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1, 2: 2, 3: 3}</code>",
-          "testString": "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1, 2: 2, 3: 3})})(), 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1, 2: 2, 3: 3}</code>');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1, 2: 2, 3: 3}</code>",
+          "testString":
+            "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1, 2: 2, 3: 3})})(), 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1, 2: 2, 3: 3}</code>');"
         },
         {
-          "text": "The input graph <code>[[0, 1], [1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1}</code>",
-          "testString": "assert((function() { var graph = [[0, 1], [1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1})})(), 'The input graph <code>[[0, 1], [1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1}</code>');"
+          "text":
+            "The input graph <code>[[0, 1], [1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1}</code>",
+          "testString":
+            "assert((function() { var graph = [[0, 1], [1, 0]]; var results = bfs(graph, 0); return isEquivalent(results, {0: 0, 1: 1})})(), 'The input graph <code>[[0, 1], [1, 0]]</code> with a start node of <code>0</code> should return <code>{0: 0, 1: 1}</code>');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
@@ -3777,36 +4133,52 @@
       ],
       "tests": [
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with <code>0</code>, <code>1</code>, <code>2</code>, and <code>3</code>.",
-          "testString": "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 1);})(), [0, 1, 2, 3], 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with <code>0</code>, <code>1</code>, <code>2</code>, and <code>3</code>.');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with <code>0</code>, <code>1</code>, <code>2</code>, and <code>3</code>.",
+          "testString":
+            "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 1);})(), [0, 1, 2, 3], 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with <code>0</code>, <code>1</code>, <code>2</code>, and <code>3</code>.');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with four elements.",
-          "testString": "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 1);})().length === 4, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with four elements.');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with four elements.",
+          "testString":
+            "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 1);})().length === 4, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>1</code> should return an array with four elements.');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with <code>3</code>.",
-          "testString": "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; return dfs(graph, 3);})(), [3], 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with <code>3</code>.');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with <code>3</code>.",
+          "testString":
+            "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; return dfs(graph, 3);})(), [3], 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with <code>3</code>.');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with one element.",
-          "testString": "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; return dfs(graph, 3);})().length === 1, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with one element.');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with one element.",
+          "testString":
+            "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]; return dfs(graph, 3);})().length === 1, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 1, 0], [0, 1, 0, 0], [0, 0, 0, 0]]</code> with a start node of <code>3</code> should return an array with one element.');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with <code>2</code> and <code>3</code>.",
-          "testString": "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 3);})(), [2, 3], 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with <code>2</code> and <code>3</code>.');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with <code>2</code> and <code>3</code>.",
+          "testString":
+            "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 3);})(), [2, 3], 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with <code>2</code> and <code>3</code>.');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with two elements.",
-          "testString": "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 3);})().length === 2, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with two elements.');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with two elements.",
+          "testString":
+            "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 3);})().length === 2, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>3</code> should return an array with two elements.');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with <code>0</code> and <code>1</code>.",
-          "testString": "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 0);})(), [0, 1], 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with <code>0</code> and <code>1</code>.');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with <code>0</code> and <code>1</code>.",
+          "testString":
+            "assert.sameMembers((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 0);})(), [0, 1], 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with <code>0</code> and <code>1</code>.');"
         },
         {
-          "text": "The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with two elements.",
-          "testString": "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 0);})().length === 2, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with two elements.');"
+          "text":
+            "The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with two elements.",
+          "testString":
+            "assert((function() { var graph = [[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]; return dfs(graph, 0);})().length === 2, 'The input graph <code>[[0, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 1], [0, 0, 1, 0]]</code> with a start node of <code>0</code> should return an array with two elements.');"
         }
       ],
       "releasedOn": "Feb 17, 2017",
