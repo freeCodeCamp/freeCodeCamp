@@ -13,6 +13,9 @@ const propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired
   }),
+  location: PropTypes.shape({
+    state: PropTypes.object
+  }),
   match: PropTypes.shape({
     params: PropTypes.shape({
       username: PropTypes.string,
@@ -29,17 +32,6 @@ const youtubeOpts = {
 };
 
 const styles = `
-  article figure {
-    width: calc(100vw - 30px);
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
   .feature-image-wrapper {
     padding-top: 32px;
@@ -91,6 +83,7 @@ class ShowArticle extends Component {
     }
     if (article) {
       const [, shortId] = slug.split('--');
+      /* eslint-disable react/no-did-mount-set-state */
       return this.setState(
         {
           fetchState: {
