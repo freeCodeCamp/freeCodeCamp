@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
+import ArticleMeta from '../../../components/ArticleMeta';
+
 const propTypes = {
-  author: PropTypes.objectOf(PropTypes.string)
+  article: PropTypes.shape({
+    author: PropTypes.objectOf(PropTypes.string)
+  })
 };
 
 const styles = `
@@ -33,7 +37,10 @@ const styles = `
   }
 `;
 
-function Author({ author: { name, avatar, bio } }) {
+function Author({ article }) {
+  const {
+    author: { avatar, bio }
+  } = article;
   return (
     <div className='author-block'>
       <Helmet>
@@ -41,9 +48,7 @@ function Author({ author: { name, avatar, bio } }) {
       </Helmet>
       <img height='50px' src={avatar} />
       <div className='author-bio'>
-        <a href='https://www.freecodecamp.org/quincylarson'>
-          <span>By {name}</span>
-        </a>
+        <ArticleMeta article={article} />
         <span>{bio.slice(0, 101)}</span>
       </div>
     </div>

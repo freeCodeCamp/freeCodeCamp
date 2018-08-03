@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Image } from 'react-bootstrap';
 import Helmet from 'react-helmet';
@@ -6,17 +7,36 @@ import Helmet from 'react-helmet';
 import { getFeaturedList } from '../../utils/ajax';
 import { Loader, Spacer } from '../../../common/app/helperComponents';
 import BannerWide from '../../components/BannerWide';
+import ArticleMeta from '../../components/ArticleMeta';
 
-const propTypes = {};
+const propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  })
+};
 
 const styles = `
   .featured-list {
     list-style: none;
     padding-left: 0;
+    margin-top: 40px;
+  }
+
+  .featured-list-item {
+    padding-bottom: 20px;
   }
 
   .featured-list-item .title {
     color: #333;
+    padding-bottom: 20px;
+  }
+
+  .featured-list-item a {
+    padding-top: 5px;
+  }
+
+  .featured-list-image {
+    margin: 0 auto;
   }
 
   .featured-list-item a:hover,
@@ -28,19 +48,6 @@ const styles = `
   .featured-list-item a:hover > .meta-wrapper,
   .featured-list-item a:focus > .meta-wrapper {
     color: #006400;
-  }
-
-  .meta-wrapper {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .meta-wrapper span {
-    font-size: 14px;
-  }
-
-  .meta-stats {
-    text-align: end;
   }
 `;
 
@@ -100,16 +107,24 @@ class Featured extends Component {
         '--',
         article.shortId
       );
-      const { featureImage, shortId, author, title, meta } = article;
+      const { featureImage, shortId, title } = article;
       return (
         <li className='featured-list-item' key={shortId}>
-          {featureImage && featureImage.src ? (<Image responsive={true} src={featureImage.src} />) : (<BannerWide />)}
-          <a href={slug} onClick={this.createHandleArticleClick(slug, article)}>
+          <a
+            href={'/news' + slug}
+            onClick={this.createHandleArticleClick(slug, article)}
+            >
             <h3 className='title'>{title}</h3>
-            <div className='meta-wrapper'>
-            <span>By {author.name}</span>
-            <span className='meta-stats'>{`${meta.readTime} minute read`}<br />{`${article.viewCount} views`}</span>
-            </div>
+            {featureImage && featureImage.src ? (
+              <Image
+                className='featured-list-image'
+                responsive={true}
+                src={featureImage.src}
+              />
+            ) : (
+              <BannerWide />
+            )}
+            <ArticleMeta article={article} />
           </a>
           <Spacer />
         </li>
@@ -134,12 +149,7 @@ class Featured extends Component {
         <Helmet>
           <style>{styles}</style>
         </Helmet>
-        <h2>Welcome to freeCodeCamp News</h2>
-        <hr />
-        <h2>Featured Articles</h2>
-        <ul className='featured-list'>
-          {this.renderFeatured(featuredList)}
-        </ul>
+        <ul className='featured-list'>{this.renderFeatured(featuredList)}</ul>
       </div>
     );
   }
