@@ -138,7 +138,11 @@ class Featured extends Component {
       featuredList
     } = this.state;
     if (pending || !complete) {
-      return <Loader />;
+      return (
+        <div className='full-size' style={{ position: 'fixed', left: 0 }}>
+          <Loader />
+        </div>
+      );
     }
 
     if (complete && errored) {
