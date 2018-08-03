@@ -18,9 +18,44 @@ function serveNewsApp(req, res) {
   return res.render('layout-news', { title: 'News | freeCodeCamp', markup });
 }
 
-export default function newsBoot(app) {
+function createReferralHandler(app) {
+  return function referralHandler(req, res, next) {
+    const { Article } = app.models;
+    const { shortId } = req.params;
+    if (!shortId) {
+      return res.redirect('/news');
+    }
+    console.log(shortId);
+    return Article.findOne(
+      {
+        where: {
+          or: [{ shortId }, { slugPart: shortId }]
+        }
+      },
+      (err, article) => {
+        if (err) {
+          next(err);
+        }
+        if (!article) {
+          return res.redirect('/news');
+        }
+        const {
+          slugPart,
+          shortId,
+          author: { username }
+        } = article;
+        const slug = `/news/${username}/${slugPart}--${shortId}`;
+        return res.redirect(slug);
+      }
+    );
+  };
+}
 
+export default function newsBoot(app) {
   const router = app.loopback.Router();
+
+  router.get('/n', (req, res) => res.redirect('/news'));
+  router.get('/n/:shortId', createReferralHandler(app));
 
   router.get('/news', serveNewsApp);
   router.get('/news/*', serveNewsApp);
