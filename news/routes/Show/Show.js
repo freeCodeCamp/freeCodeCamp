@@ -97,13 +97,13 @@ class ShowArticle extends Component {
     if (username && !slug) {
       return history.push('/');
     }
+    const [, shortId] = slug.split('--');
+    postPopularityEvent({
+      event: 'view',
+      timestamp: Date.now(),
+      shortId
+    });
     if (article) {
-      const [, shortId] = slug.split('--');
-      postPopularityEvent({
-        event: 'view',
-        timestamp: Date.now(),
-        shortId
-      });
       /* eslint-disable react/no-did-mount-set-state */
       return this.setState(
         {
