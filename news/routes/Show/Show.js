@@ -14,7 +14,8 @@ const propTypes = {
     push: PropTypes.func.isRequired
   }),
   location: PropTypes.shape({
-    state: PropTypes.object
+    state: PropTypes.object,
+    pathname: PropTypes.string
   }),
   match: PropTypes.shape({
     params: PropTypes.shape({
@@ -32,6 +33,20 @@ const youtubeOpts = {
 };
 
 const styles = `
+
+  .show-article figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .show-article figcaption > * {
+    font-size: 16px;
+  }
+
+  .show-article figcaption {
+    padding-top: 5px;
+  }
 
   .feature-image-wrapper {
     padding-top: 32px;
@@ -70,6 +85,7 @@ class ShowArticle extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     const {
       history,
       match: {
@@ -142,13 +158,8 @@ class ShowArticle extends Component {
   render() {
     const {
       fetchState: { pending, complete, errored },
-      currentArticle: {
-        title,
-        renderableContent,
-        youtubeId,
-        featureImage,
-        author
-      }
+      currentArticle: { title, renderableContent, youtubeId, featureImage },
+      currentArticle
     } = this.state;
     if (pending || !complete) {
       return <Loader />;
@@ -159,11 +170,11 @@ class ShowArticle extends Component {
     }
 
     return (
-      <article>
+      <article className='show-article'>
         <Helmet>
           <style>{styles}</style>
         </Helmet>
-        <Author author={author} />
+        <Author article={currentArticle} />
         <h2>{title}</h2>
         <div className='feature-image-wrapper'>
           <figure>
@@ -179,7 +190,6 @@ class ShowArticle extends Component {
             ) : null}
           </figure>
         </div>
-        <hr />
         <div dangerouslySetInnerHTML={{ __html: renderableContent }} />
         <div className='youtube-wrapper'>
           {youtubeId ? (
