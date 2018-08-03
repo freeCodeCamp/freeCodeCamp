@@ -7,7 +7,7 @@ import { Image } from 'react-bootstrap';
 
 import Author from './components/Author';
 import { Loader } from '../../../common/app/helperComponents';
-import { getArticleById } from '../../utils/ajax';
+import { getArticleById, postPopularityEvent } from '../../utils/ajax';
 
 const propTypes = {
   history: PropTypes.shape({
@@ -83,6 +83,11 @@ class ShowArticle extends Component {
     }
     if (article) {
       const [, shortId] = slug.split('--');
+      postPopularityEvent({
+        event: 'view',
+        timestamp: Date.now(),
+        shortId
+      });
       /* eslint-disable react/no-did-mount-set-state */
       return this.setState(
         {

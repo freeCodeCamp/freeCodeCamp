@@ -1,8 +1,29 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
+import { has } from 'lodash';
+import debug from 'debug';
 
 import NewsApp from '../../news/NewsApp';
+
+const routerLog = debug('fcc:boot:news:router');
+const apiLog = debug('fcc:boot:news:api');
+
+export default function newsBoot(app) {
+  const router = app.loopback.Router();
+  const api = app.loopback.Router();
+
+  router.get('/n', (req, res) => res.redirect('/news'));
+  router.get('/n/:shortId', createReferralHandler(app));
+
+  router.get('/news', serveNewsApp);
+  router.get('/news/*', serveNewsApp);
+
+  api.post('/p', createPopularityHandler(app));
+
+  app.use(api);
+  app.use(router);
+}
 
 function serveNewsApp(req, res) {
   const context = {};
@@ -12,20 +33,23 @@ function serveNewsApp(req, res) {
     </StaticRouter>
   );
   if (context.url) {
+    routerLog('redirect found in `renderToString`');
     // 'client-side' routing hit on a redirect
     return res.redirect(context.url);
   }
+  routerLog('news markup sending');
   return res.render('layout-news', { title: 'News | freeCodeCamp', markup });
 }
 
 function createReferralHandler(app) {
+  const { Article } = app.models;
+
   return function referralHandler(req, res, next) {
-    const { Article } = app.models;
     const { shortId } = req.params;
     if (!shortId) {
       return res.redirect('/news');
     }
-    console.log(shortId);
+    routerLog('shortId', shortId);
     return Article.findOne(
       {
         where: {
@@ -51,14 +75,77 @@ function createReferralHandler(app) {
   };
 }
 
-export default function newsBoot(app) {
-  const router = app.loopback.Router();
+function createPopularityHandler(app) {
+  const { Article, Popularity } = app.models;
 
-  router.get('/n', (req, res) => res.redirect('/news'));
-  router.get('/n/:shortId', createReferralHandler(app));
-
-  router.get('/news', serveNewsApp);
-  router.get('/news/*', serveNewsApp);
-
-  app.use(router);
+  return function handlePopularityStats(req, res, next) {
+    const { body, user } = req;
+    if (
+      !has(body, 'event') ||
+      !has(body, 'timestamp') ||
+      !has(body, 'shortId')
+    ) {
+      console.warn('Popularity event recieved from client is malformed');
+      console.log(JSON.stringify(body, null, 2));
+      // sending 200 because the client shouldn't care for this
+      return res.sendStatus(200);
+    }
+    res.sendStatus(200);
+    const { shortId } = body;
+    apiLog('shortId', shortId);
+    const populartiyUpdate = {
+      ...body,
+      byAuthenticatedUser: !!user
+    };
+    Popularity.findOne({ where: { articleId: shortId } }, (err, popularity) => {
+      if (err) {
+        apiLog(err);
+        return next(err);
+      }
+      if (popularity) {
+        return popularity.updateAttribute(
+          'events',
+          [populartiyUpdate, ...popularity.events],
+          err => {
+            if (err) {
+              apiLog(err);
+              return next(err);
+            }
+            return apiLog('poplarity updated');
+          }
+        );
+      }
+      return Popularity.create(
+        {
+          events: [populartiyUpdate],
+          articleId: shortId
+        },
+        err => {
+          if (err) {
+            apiLog(err);
+            return next(err);
+          }
+          return apiLog('poulartiy created');
+        }
+      );
+    });
+    return body.event === 'view'
+      ? Article.findOne({ where: { shortId } }, (err, article) => {
+          if (err) {
+            apiLog(err);
+            next(err);
+          }
+          return article.updateAttributes(
+            { viewCount: article.viewCount + 1 },
+            err => {
+              if (err) {
+                apiLog(err);
+                return next(err);
+              }
+              return apiLog('article views updated');
+            }
+          );
+        })
+      : null;
+  };
 }
