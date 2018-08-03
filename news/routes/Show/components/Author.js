@@ -21,11 +21,15 @@ const styles = `
   .author-bio {
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
+    margin-left: 30px;
   }
 
   .author-bio span {
     font-size: 16px;
+  }
+
+  .author-block {
+    text-decoration: none;
   }
 `;
 
@@ -38,7 +42,7 @@ function Author({ author: { name, avatar, bio } }) {
       <img height='50px' src={avatar} />
       <div className='author-bio'>
         <a href='https://www.freecodecamp.org/quincylarson'>
-          <span>{name}</span>
+          <span>By {name}</span>
         </a>
         <span>{bio.slice(0, 101)}</span>
       </div>

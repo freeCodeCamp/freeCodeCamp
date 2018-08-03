@@ -5,7 +5,7 @@ import { Row, Col } from 'react-bootstrap';
 function SlimWidthRow({ children, ...restProps }) {
   return (
     <Row {...restProps}>
-      <Col md={ 4 } mdOffset={ 4 } sm={ 12 }>
+      <Col md={ 6 } mdOffset={ 3 } sm={ 12 }>
         { children }
       </Col>
     </Row>
