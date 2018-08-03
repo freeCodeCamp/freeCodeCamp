@@ -14,7 +14,7 @@ export default function newsBoot(app) {
   const api = app.loopback.Router();
 
   router.get('/n', (req, res) => res.redirect('/news'));
-  router.get('/n/:shortId', createReferralHandler(app));
+  router.get('/n/:shortId', createShortLinkHandler(app));
 
   router.get('/news', serveNewsApp);
   router.get('/news/*', serveNewsApp);
@@ -41,11 +41,19 @@ function serveNewsApp(req, res) {
   return res.render('layout-news', { title: 'News | freeCodeCamp', markup });
 }
 
-function createReferralHandler(app) {
+function createShortLinkHandler(app) {
   const { Article } = app.models;
 
-  return function referralHandler(req, res, next) {
+  const referralHandler = createRerralHandler(app);
+
+  return function shortLinkHandler(req, res, next) {
+    const { query, user } = req;
     const { shortId } = req.params;
+
+    referralHandler(query, shortId, !!user);
+
+    routerLog(req.origin);
+    routerLog(query.refsource);
     if (!shortId) {
       return res.redirect('/news');
     }
@@ -80,6 +88,7 @@ function createPopularityHandler(app) {
 
   return function handlePopularityStats(req, res, next) {
     const { body, user } = req;
+
     if (
       !has(body, 'event') ||
       !has(body, 'timestamp') ||
@@ -147,5 +156,59 @@ function createPopularityHandler(app) {
           );
         })
       : null;
+  };
+}
+
+function createRerralHandler(app) {
+  const { Popularity } = app.models;
+
+  return function referralHandler(query, shortId, byAuthenticatedUser) {
+    if (!query.refsource) {
+      return null;
+    }
+    const eventUpdate = {
+      event: `referral - ${query.refsource}`,
+      timestamp: new Date(Date.now()),
+      byAuthenticatedUser
+    };
+    return Popularity.findOne(
+      { where: { articleId: shortId } },
+      (err, popularity) => {
+        if (err) {
+          console.error(
+            'Failed finding a `Popularity` in a referral handler',
+            err
+          );
+          return null;
+        }
+
+        if (popularity) {
+          return popularity.updateAttribute(
+            'events',
+            [eventUpdate, ...popularity.events],
+            err => {
+              if (err) {
+                console.error(
+                  'Failed in updating the `events` attribute of a `popularity`',
+                  err
+                );
+              }
+            }
+          );
+        }
+        return Popularity.create(
+          {
+            events: [eventUpdate],
+            articleId: shortId
+          },
+          err => {
+            if (err) {
+              return console.error('Failed creating a new `Popularity`', err);
+            }
+            return apiLog('poulartiy created');
+          }
+        );
+      }
+    );
   };
 }
