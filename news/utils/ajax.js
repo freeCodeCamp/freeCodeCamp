@@ -21,3 +21,7 @@ export function getFeaturedList(skip = 0) {
     })}`
   );
 }
+
+export function postPopularityEvent(event) {
+  return axios.post('/p', event);
+}
