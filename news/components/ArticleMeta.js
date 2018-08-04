@@ -34,7 +34,7 @@ function pluralise(singular, count) {
 function getTimeString(pubDate) {
   const now = new Date(Date.now());
   const minuteDiff = differenceInMinutes(now, pubDate);
-  console.log(typeof minuteDiff);
+
   if (minuteDiff < 60) {
     return `${minuteDiff} ${pluralise('minute', minuteDiff)} ago`;
   }
