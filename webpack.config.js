@@ -22,10 +22,9 @@ module.exports = {
     net: 'empty'
   },
   output: {
-    filename: __DEV__ ? '[name]-app.js' : '[name]-app-[hash].js',
-    chunkFilename: __DEV__ ? '[name]-chunk.js' : '[name]-chunk-[chunkhash].js',
-    path: path.join(__dirname, '/public/js/'),
-    publicPath: '/js'
+    filename: __DEV__ ? '[name].js' : '[name]-[hash].js',
+    chunkFilename: __DEV__ ? '[name].js' : '[name]-[chunkhash].js',
+    path: path.join(__dirname, '/public/js/')
   },
   module: {
     rules: [
