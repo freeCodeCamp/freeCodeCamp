@@ -14,6 +14,5 @@ const App = (
 
 render(
   App,
-  newsMountPoint,
-  () => console.log('react has rendered and is ready to go go go go go go!!')
+  newsMountPoint
 );
