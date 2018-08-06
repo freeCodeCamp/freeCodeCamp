@@ -26,6 +26,7 @@ const initialState = {
   modal: {
     completion: false,
     help: false,
+    video: false,
     reset: false
   },
   projectFormVaules: {},
@@ -136,6 +137,7 @@ export const isCodeLockedSelector = state => state[ns].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>
   state[ns].modal.completion;
 export const isHelpModalOpenSelector = state => state[ns].modal.help;
+export const isVideoModalOpenSelector = state => state[ns].modal.video;
 export const isResetModalOpenSelector = state => state[ns].modal.reset;
 export const isJSEnabledSelector = state => state[ns].isJSEnabled;
 export const successMessageSelector = state => state[ns].successMessage;

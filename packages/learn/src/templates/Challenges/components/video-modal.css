@@ -1,0 +1,10 @@
+.video-modal {
+    width: 90%;
+}
+
+.video-modal iframe {
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 0px;
+}
+

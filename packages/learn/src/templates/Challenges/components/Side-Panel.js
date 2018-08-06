@@ -34,7 +34,8 @@ const propTypes = {
   initConsole: PropTypes.func.isRequired,
   section: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string
+  title: PropTypes.string,
+  videoUrl: PropTypes.string
 };
 
 export class SidePanel extends PureComponent {
@@ -42,7 +43,7 @@ export class SidePanel extends PureComponent {
     super(props);
     this.bindTopDiv = this.bindTopDiv.bind(this);
     MathJax.Hub.Config({
-      tex2jax: { 
+      tex2jax: {
         inlineMath: [['$', '$'], ['\\(', '\\)']],
         processEscapes: true,
         processClass: 'rosetta-code'
@@ -74,16 +75,23 @@ export class SidePanel extends PureComponent {
   }
 
   render() {
-    const { title, description, guideUrl, tests, section } = this.props;
+    const {
+      title,
+      description,
+      guideUrl,
+      tests,
+      section,
+      videoUrl
+    } = this.props;
     return (
       <div className='instructions-panel' role='complementary'>
         <div ref={this.bindTopDiv} />
         <Spacer />
         <div>
           <ChallengeTitle>{title}</ChallengeTitle>
-          <ChallengeDescription section={section} description={description} />
+          <ChallengeDescription description={description} section={section} />
         </div>
-        <ToolPanel guideUrl={guideUrl} />
+        <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />
         <TestSuite tests={tests} />
       </div>
     );

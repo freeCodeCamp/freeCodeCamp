@@ -14,6 +14,7 @@ const mapDispatchToProps = dispatch =>
     {
       executeChallenge,
       openHelpModal: () => openModal('help'),
+      openVideoModal: () => openModal('video'),
       openResetModal: () => openModal('reset')
     },
     dispatch
@@ -23,14 +24,18 @@ const propTypes = {
   executeChallenge: PropTypes.func.isRequired,
   guideUrl: PropTypes.string,
   openHelpModal: PropTypes.func.isRequired,
-  openResetModal: PropTypes.func.isRequired
+  openResetModal: PropTypes.func.isRequired,
+  openVideoModal: PropTypes.func.isRequired,
+  videoUrl: PropTypes.string
 };
 
 function ToolPanel({
   executeChallenge,
   openHelpModal,
+  openVideoModal,
   openResetModal,
-  guideUrl
+  guideUrl,
+  videoUrl
 }) {
   return (
     <Fragment>
@@ -55,6 +60,16 @@ function ToolPanel({
             target='_blank'
             >
             Get a hint
+          </Button>
+        ) : null}
+        {videoUrl ? (
+          <Button
+            block={true}
+            bsStyle='primary'
+            className='btn-primary-invert'
+            onClick={openVideoModal}
+            >
+            Watch a video
           </Button>
         ) : null}
         <Button

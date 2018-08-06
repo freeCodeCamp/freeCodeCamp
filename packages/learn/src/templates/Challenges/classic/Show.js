@@ -13,6 +13,7 @@ import SidePanel from '../components/Side-Panel';
 import Output from '../components/Output';
 import CompletionModal from '../components/CompletionModal';
 import HelpModal from '../components/HelpModal';
+import VideoModal from '../components/VideoModal';
 import ResetModal from '../components/ResetModal';
 
 import { randomCompliment } from '../utils/get-words';
@@ -163,7 +164,8 @@ class ShowClassic extends PureComponent {
           challengeType,
           fields: { blockName, slug },
           title,
-          description
+          description,
+          videoUrl
         }
       },
       files,
@@ -223,6 +225,7 @@ class ShowClassic extends PureComponent {
               guideUrl={createGuideUrl(slug)}
               section={dasherize(blockName)}
               title={blockNameTitle}
+              videoUrl={videoUrl}
             />
           </ReflexElement>
           <ReflexSplitter propagate={true} {...this.resizeProps} />
@@ -244,6 +247,7 @@ class ShowClassic extends PureComponent {
 
         <CompletionModal />
         <HelpModal />
+        <VideoModal videoUrl={videoUrl}/>
         <ResetModal />
       </Fragment>
     );
@@ -261,6 +265,7 @@ export const query = graphql`
       title
       description
       challengeType
+      videoUrl
       fields {
         slug
         blockName

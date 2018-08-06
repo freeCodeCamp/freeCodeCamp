@@ -53,7 +53,8 @@ export const ChallengeNode = PropTypes.shape({
   superBlock: PropTypes.string,
   tail: PropTypes.arrayOf(PropTypes.string),
   time: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  videoUrl: PropTypes.string
 });
 
 export const AllChallengeNode = PropTypes.shape({
