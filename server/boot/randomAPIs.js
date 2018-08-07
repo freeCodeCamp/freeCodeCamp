@@ -169,6 +169,12 @@ module.exports = function(app) {
 
   function unsubscribeById(req, res, next) {
     const { unsubscribeId } = req.params;
+    if (!unsubscribeId) {
+      req.flash('info', {
+        msg: 'We could not find an account to unsubscribe'
+      });
+      return res.redirect('/');
+    }
     return User.find({ where: { unsubscribeId } }, (err, users) => {
       if (err || !users.length) {
         req.flash('info', {
@@ -176,24 +182,27 @@ module.exports = function(app) {
         });
         return res.redirect('/');
       }
-      const [ user ] = users;
-    return new Promise((resolve, reject) =>
-      user.updateAttributes({
-        sendQuincyEmail: false
-      }, (err) => {
-        if (err) {
-          reject(err);
-        } else {
-          resolve();
-        }
-      })
-    ).then(() => {
-        req.flash('success', {
-          msg: 'We\'ve successfully updated your email preferences.'
-        });
-        return res.redirect(`/unsubscribed/${unsubscribeId}`);
-      })
-      .catch(next);
+      const updates = users.map(user => {
+        return new Promise((resolve, reject) =>
+          user.updateAttributes({
+            sendQuincyEmail: false
+          }, (err) => {
+            if (err) {
+              reject(err);
+            } else {
+              resolve();
+            }
+          })
+        );
+      });
+      return Promise.all(updates)
+        .then(() => {
+          req.flash('success', {
+            msg: 'We\'ve successfully updated your email preferences.'
+          });
+          return res.redirect(`/unsubscribed/${unsubscribeId}`);
+        })
+        .catch(next);
     });
   }
 
