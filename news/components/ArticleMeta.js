@@ -5,6 +5,9 @@ import differenceInMinutes from 'date-fns/difference_in_minutes';
 import differenceInHours from 'date-fns/difference_in_hours';
 import differenceInDays from 'date-fns/difference_in_calendar_days';
 import format from 'date-fns/format';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faCalendarAlt, faClock } from '@fortawesome/free-regular-svg-icons';
+import { faFreeCodeCamp } from '@fortawesome/free-brands-svg-icons';
 
 const propTypes = {
   article: PropTypes.object
@@ -64,10 +67,17 @@ function ArticleMeta({
       </Helmet>
       <div className='meta-item-wrapper'>
         <span className='meta-item'>By {author.name}</span>
-        <span className='meta-item'>{getTimeString(firstPublishedDate)}</span>
-        <span className='meta-item'>{`${meta.readTime} minute read`}</span>
+        <span className='meta-item'>
+          <FontAwesomeIcon icon={faCalendarAlt} />{' '}
+          {getTimeString(firstPublishedDate)}
+        </span>
+        <span className='meta-item'>
+          <FontAwesomeIcon icon={faClock} /> {`${meta.readTime} minute read`}
+        </span>
         {viewCount >= 100 ? (
-          <span className='meta-item'>{`${viewCount} views`}</span>
+          <span className='meta-item'>
+            <FontAwesomeIcon icon={faFreeCodeCamp} /> {`${viewCount} views`}
+          </span>
         ) : null}
       </div>
     </div>

@@ -39,7 +39,7 @@ const styles = `
 
 function Author({ article }) {
   const {
-    author: { avatar, bio }
+    author: { avatar }
   } = article;
   return (
     <div className='author-block'>
@@ -49,7 +49,6 @@ function Author({ article }) {
       <img height='50px' src={avatar} />
       <div className='author-bio'>
         <ArticleMeta article={article} />
-        <span>{bio.slice(0, 101)}</span>
       </div>
     </div>
   );
