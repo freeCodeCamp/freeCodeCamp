@@ -174,7 +174,7 @@ gulp.task('dev-server', syncDepenedents, function() {
     open: false,
     middleware: [
       webpackDevMiddleware(bundler, {
-        publicPath: webpackConfig.output.publicPath,
+        publicPath: '/js',
         stats: 'errors-only'
       }),
       webpackHotMiddleware(bundler)

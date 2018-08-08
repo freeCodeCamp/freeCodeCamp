@@ -41,6 +41,10 @@
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-brands-svg-icons": "^5.2.0",
+    "@fortawesome/free-regular-svg-icons": "^5.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@fortawesome/react-fontawesome": "0.0.20",
     "@freecodecamp/curriculum": "^3.1.1",
     "@freecodecamp/loopback-component-passport": "^1.0.0",
