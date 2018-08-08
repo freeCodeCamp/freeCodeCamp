@@ -52,7 +52,7 @@ export default function userServices() {
                     ..._.pick(user, userPropsForSession),
                     isEmailVerified: !!user.emailVerified,
                     isGithub: !!user.githubProfile,
-                    isLinkedIn: !!user.linkedIn,
+                    isLinkedIn: !!user.linkedin,
                     isTwitter: !!user.twitter,
                     isWebsite: !!user.website,
                     ...normaliseUserFields(user)
