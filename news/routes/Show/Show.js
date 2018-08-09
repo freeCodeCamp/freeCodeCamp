@@ -6,7 +6,7 @@ import Youtube from 'react-youtube';
 import { Image } from 'react-bootstrap';
 
 import Author from './components/Author';
-import { Loader } from '../../../common/app/helperComponents';
+import { Loader, Spacer } from '../../../common/app/helperComponents';
 import { getArticleById, postPopularityEvent } from '../../utils/ajax';
 
 const propTypes = {
@@ -62,7 +62,7 @@ const styles = `
     position: absolute;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 95%;
   }
 `;
 
@@ -204,6 +204,7 @@ class ShowArticle extends Component {
             />
           ) : null}
         </div>
+        <Spacer />
       </article>
     );
   }
