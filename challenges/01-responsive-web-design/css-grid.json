@@ -15,8 +15,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*display\\s*?:\\s*?grid\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*display\\s*?:\\s*?grid\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>display</code> property with a value of <code>grid</code>.');"
         }
       ],
       "solutions": ["var code = \".container {display: grid;}\""],
@@ -74,8 +76,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?100px\\s*?100px\\s*?100px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?100px\\s*?100px\\s*?100px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.');"
         }
       ],
       "solutions": [
@@ -133,8 +137,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-rows\\s*?:\\s*?50px\\s*?50px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-rows\\s*?:\\s*?50px\\s*?50px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.');"
         }
       ],
       "solutions": [
@@ -199,8 +205,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?1fr\\s*?100px\\s*?2fr\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?1fr\\s*?100px\\s*?2fr\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.');"
         }
       ],
       "solutions": [
@@ -262,8 +270,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-column-gap\\s*?:\\s*?20px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-column-gap\\s*?:\\s*?20px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-column-gap</code> property that has the value of <code>20px</code>.');"
         }
       ],
       "solutions": ["var code = \".container {grid-column-gap: 20px;}\""],
@@ -322,8 +332,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-row-gap\\s*?:\\s*?5px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-row-gap\\s*?:\\s*?5px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.');"
         }
       ],
       "solutions": ["var code = \".container {grid-row-gap: 5px;}\""],
@@ -382,8 +394,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-gap\\s*?:\\s*?10px\\s*?20px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-gap\\s*?:\\s*?10px\\s*?20px\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-gap</code> property that introduces <code>10px</code> gap between the rows and <code>20px</code> gap between the columns.');"
         }
       ],
       "solutions": ["var code = \".container {grid-gap: 10px 20px;}\""],
@@ -448,8 +462,10 @@
       ],
       "tests": [
         {
-          "text": "<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.",
-          "testString": "assert(code.match(/.item5\\s*?{[\\s\\S]*grid-column\\s*?:\\s*?2\\s*?\\/\\s*?4\\s*?;[\\s\\S]*}/gi), '<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.');"
+          "text":
+            "<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.",
+          "testString":
+            "assert(code.match(/.item5\\s*?{[\\s\\S]*grid-column\\s*?:\\s*?2\\s*?\\/\\s*?4\\s*?;[\\s\\S]*}/gi), '<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.');"
         }
       ],
       "solutions": ["var code = \".item5 {grid-column: 2 / 4;}\""],
@@ -512,8 +528,10 @@
       ],
       "tests": [
         {
-          "text": "<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.",
-          "testString": "assert(code.match(/.item5\\s*?{[\\s\\S]*grid-row\\s*?:\\s*?2\\s*?\\/\\s*?4\\s*?;[\\s\\S]*}/gi), '<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.');"
+          "text":
+            "<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.",
+          "testString":
+            "assert(code.match(/.item5\\s*?{[\\s\\S]*grid-row\\s*?:\\s*?2\\s*?\\/\\s*?4\\s*?;[\\s\\S]*}/gi), '<code>item5</code> class should have a <code>grid-row</code> property that has the value of <code>2 / 4</code>.');"
         }
       ],
       "solutions": ["var code = \".item5 {grid-row: 2 / 4;}\""],
@@ -580,8 +598,10 @@
       ],
       "tests": [
         {
-          "text": "<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.",
-          "testString": "assert(code.match(/.item2\\s*?{[\\s\\S]*justify-self\\s*?:\\s*?center\\s*?;[\\s\\S]*}/gi), '<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.');"
+          "text":
+            "<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.",
+          "testString":
+            "assert(code.match(/.item2\\s*?{[\\s\\S]*justify-self\\s*?:\\s*?center\\s*?;[\\s\\S]*}/gi), '<code>item2</code> class should have a <code>justify-self</code> property that has the value of <code>center</code>.');"
         }
       ],
       "solutions": ["var code = \".item2 {justify-self: center;}\""],
@@ -645,8 +665,10 @@
       ],
       "tests": [
         {
-          "text": "<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.",
-          "testString": "assert(code.match(/.item3\\s*?{[\\s\\S]*align-self\\s*?:\\s*?end\\s*?;[\\s\\S]*}/gi), '<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.');"
+          "text":
+            "<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.",
+          "testString":
+            "assert(code.match(/.item3\\s*?{[\\s\\S]*align-self\\s*?:\\s*?end\\s*?;[\\s\\S]*}/gi), '<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.');"
         }
       ],
       "solutions": ["var code = \".item3 {align-self: end;}\""],
@@ -710,8 +732,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*justify-items\\s*?:\\s*?center\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*justify-items\\s*?:\\s*?center\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.');"
         }
       ],
       "solutions": ["var code = \".container {justify-items: center;}\""],
@@ -771,8 +795,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*align-items\\s*?:\\s*?end\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*align-items\\s*?:\\s*?end\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>align-items</code> property that has the value of <code>end</code>.');"
         }
       ],
       "solutions": ["var code = \".container {align-items: end;}\""],
@@ -836,8 +862,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-template-areas</code> property similar to the preview but has <code>.</code> instead of the <code>advert</code> area.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-areas\\s*?:\\s*?\"\\s*?header\\s*?header\\s*?header\\s*?\"\\s*?\"\\s*?.\\s*?content\\s*?content\\s*?\"\\s*?\"\\s*?footer\\s*?footer\\s*?footer\\s*?\"\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-areas</code> propertiy similar to the preview but has <code>.</code> instead of the <code>advert</code> area.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-template-areas</code> property similar to the preview but has <code>.</code> instead of the <code>advert</code> area.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-areas\\s*?:\\s*?\"\\s*?header\\s*?header\\s*?header\\s*?\"\\s*?\"\\s*?.\\s*?content\\s*?content\\s*?\"\\s*?\"\\s*?footer\\s*?footer\\s*?footer\\s*?\"\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-areas</code> propertiy similar to the preview but has <code>.</code> instead of the <code>advert</code> area.');"
         }
       ],
       "solutions": [
@@ -904,8 +932,10 @@
       ],
       "tests": [
         {
-          "text": "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.",
-          "testString": "assert(code.match(/.item5\\s*?{[\\s\\S]*grid-area\\s*?:\\s*?footer\\s*?;[\\s\\S]*}/gi), '<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.');"
+          "text":
+            "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.",
+          "testString":
+            "assert(code.match(/.item5\\s*?{[\\s\\S]*grid-area\\s*?:\\s*?footer\\s*?;[\\s\\S]*}/gi), '<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.');"
         }
       ],
       "solutions": ["var code = \".item5 {grid-area: footer;}\""],
@@ -976,8 +1006,10 @@
       ],
       "tests": [
         {
-          "text": "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.",
-          "testString": "assert(code.match(/.item5\\s*?{[\\s\\S]*grid-area\\s*?:\\s*?3\\s*?\\/\\s*?1\\s*?\\/\\s*?4\\s*?\\/\\s*?4\\s*?;[\\s\\S]*}/gi), '<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.');"
+          "text":
+            "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.",
+          "testString":
+            "assert(code.match(/.item5\\s*?{[\\s\\S]*grid-area\\s*?:\\s*?3\\s*?\\/\\s*?1\\s*?\\/\\s*?4\\s*?\\/\\s*?4\\s*?;[\\s\\S]*}/gi), '<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>3/1/4/4</code>.');"
         }
       ],
       "solutions": ["var code = \".item5 {grid-area: 3/1/4/4;}\""],
@@ -1048,8 +1080,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?repeat\\s*?\\(\\s*?3\\s*?,\\s*?1fr\\s*?\\)\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?repeat\\s*?\\(\\s*?3\\s*?,\\s*?1fr\\s*?\\)\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.');"
         }
       ],
       "solutions": [
@@ -1113,8 +1147,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the minimum width of <code>90px</code> and maximum width of <code>1fr</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?repeat\\s*?\\(\\s*?3\\s*?,\\s*?minmax\\s*?\\(\\s*?90px\\s*?,\\s*?1fr\\s*?\\)\\s*?\\)\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the minimum width of <code>90px</code> and maximum width of <code>1fr</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the minimum width of <code>90px</code> and maximum width of <code>1fr</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?repeat\\s*?\\(\\s*?3\\s*?,\\s*?minmax\\s*?\\(\\s*?90px\\s*?,\\s*?1fr\\s*?\\)\\s*?\\)\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the minimum width of <code>90px</code> and maximum width of <code>1fr</code>.');"
         }
       ],
       "solutions": [
@@ -1170,7 +1206,7 @@
       "id": "5a94fe5469fb03452672e461",
       "title": "Create Flexible Layouts Using auto-fill",
       "description": [
-        "The repeat function comes with a option called <dfn>auto-fill</dfn>. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>.",
+        "The repeat function comes with an option called <dfn>auto-fill</dfn>. This allows you to automatically insert as many rows or columns of your desired size as possible depending on the size of the container. You can create flexible layouts when combining <code>auto-fill</code> with <code>minmax</code>.",
         "In the preview, <code>grid-template-columns</code> is set to",
         "<blockquote>repeat(auto-fill, minmax(60px, 1fr));</blockquote>",
         "When the container changes size, this setup keeps inserting 60px columns and stretching them until it can insert another one.",
@@ -1180,8 +1216,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fill</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?repeat\\s*?\\(\\s*?auto-fill\\s*?,\\s*?minmax\\s*?\\(\\s*?60px\\s*?,\\s*?1fr\\s*?\\)\\s*?\\)\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fill</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.');"
+          "text":
+            "<code>container</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fill</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?repeat\\s*?\\(\\s*?auto-fill\\s*?,\\s*?minmax\\s*?\\(\\s*?60px\\s*?,\\s*?1fr\\s*?\\)\\s*?\\)\\s*?;[\\s\\S]*}/gi), '<code>container</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fill</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.');"
         }
       ],
       "solutions": [
@@ -1261,8 +1299,10 @@
       ],
       "tests": [
         {
-          "text": "<code>container2</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fit</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.",
-          "testString": "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?repeat\\s*?\\(\\s*?auto-fit\\s*?,\\s*?minmax\\s*?\\(\\s*?60px\\s*?,\\s*?1fr\\s*?\\)\\s*?\\)\\s*?;[\\s\\S]*}/gi), '<code>container2</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fit</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.');"
+          "text":
+            "<code>container2</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fit</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.",
+          "testString":
+            "assert(code.match(/.container\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?repeat\\s*?\\(\\s*?auto-fit\\s*?,\\s*?minmax\\s*?\\(\\s*?60px\\s*?,\\s*?1fr\\s*?\\)\\s*?\\)\\s*?;[\\s\\S]*}/gi), '<code>container2</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fit</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.');"
         }
       ],
       "solutions": [
@@ -1343,8 +1383,10 @@
       ],
       "tests": [
         {
-          "text": "When the viewport is <code>400px</code> or more, <code>container</code> class should have a <code>grid-template-areas</code> property in which the footer and header areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.",
-          "testString": "assert(code.match(/@media\\s*?\\(\\s*?min-width\\s*?:\\s*?400px\\s*?\\)[\\s\\S]*.container\\s*?{[\\s\\S]*grid-template-areas\\s*?:\\s*?\"\\s*?header\\s*?header\\s*?\"\\s*?\"\\s*?advert\\s*?content\\s*?\"\\s*?\"\\s*?footer\\s*?footer\\s*?\"\\s*?;[\\s\\S]*}/gi), 'When the viewport is <code>400px</code> or more, <code>container</code> class should have a <code>grid-template-areas</code> property in which the footer and header areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.');"
+          "text":
+            "When the viewport is <code>400px</code> or more, <code>container</code> class should have a <code>grid-template-areas</code> property in which the footer and header areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.",
+          "testString":
+            "assert(code.match(/@media\\s*?\\(\\s*?min-width\\s*?:\\s*?400px\\s*?\\)[\\s\\S]*.container\\s*?{[\\s\\S]*grid-template-areas\\s*?:\\s*?\"\\s*?header\\s*?header\\s*?\"\\s*?\"\\s*?advert\\s*?content\\s*?\"\\s*?\"\\s*?footer\\s*?footer\\s*?\"\\s*?;[\\s\\S]*}/gi), 'When the viewport is <code>400px</code> or more, <code>container</code> class should have a <code>grid-template-areas</code> property in which the footer and header areas occupy the top and bottom rows respectively and advert and content occupy the left and right columns of the middle row.');"
         }
       ],
       "solutions": [
@@ -1445,12 +1487,16 @@
       ],
       "tests": [
         {
-          "text": "<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.",
-          "testString": "assert(code.match(/.item3\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?auto\\s*?1fr\\s*?;[\\s\\S]*}/gi), '<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.');"
+          "text":
+            "<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.",
+          "testString":
+            "assert(code.match(/.item3\\s*?{[\\s\\S]*grid-template-columns\\s*?:\\s*?auto\\s*?1fr\\s*?;[\\s\\S]*}/gi), '<code>item3</code> class should have a <code>grid-template-columns</code> property with <code>auto</code> and <code>1fr</code> as values.');"
         },
         {
-          "text": "<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.",
-          "testString": "assert(code.match(/.item3\\s*?{[\\s\\S]*display\\s*?:\\s*?grid\\s*?;[\\s\\S]*}/gi), '<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.');"
+          "text":
+            "<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.",
+          "testString":
+            "assert(code.match(/.item3\\s*?{[\\s\\S]*display\\s*?:\\s*?grid\\s*?;[\\s\\S]*}/gi), '<code>item3</code> class should have a <code>display</code> property with the value of <code>grid</code>.');"
         }
       ],
       "solutions": [
