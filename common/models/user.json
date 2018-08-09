@@ -1,7 +1,7 @@
 {
   "name": "user",
   "base": "User",
-  "strict": true,
+  "strict": "filter",
   "idInjection": true,
   "emailVerificationRequired": false,
   "trackChanges": false,
@@ -165,6 +165,11 @@
     "isInfosecQaCert": {
       "type": "boolean",
       "description": "Camper is information security and quality assurance certified",
+      "default": false
+    },
+    "is2018FullStackCert": {
+      "type": "boolean",
+      "description": "Camper is full stack certified (2018)",
       "default": false
     },
     "completedChallenges": {
