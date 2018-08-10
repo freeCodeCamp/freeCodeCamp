@@ -275,9 +275,11 @@ $ git add path/to/filename.ext
 
 You can also run `git add .` to add all unstaged files. Take care, though, because you can accidentally add files you don't want added. Review your `git status` first.
 
-### Commit Your Changes 
+### Commit Your Changes
 
-We have a [tool](https://commitizen.github.io/cz-cli/) that helps you make standard commit messages. Execute `npm run commit` and follow the steps.
+We have a [tool](https://commitizen.github.io/cz-cli/) that helps you make standard commit messages. Execute `npm run commit` and follow the steps. This will generate a conventional commit message.  
+
+**Note**: Your pull request will fail the Travis CI build if your commits do not have conventional messages. [Click here](https://conventionalcommits.org/#why-use-conventional-commits) to read more about conventional commit messages.
 
 If you want to add/remove changes to previous commit, [add the files](#making-your-changes), and use `git commit --amend` or `git commit --amend --no-edit` (to keep the same commit message).
 
