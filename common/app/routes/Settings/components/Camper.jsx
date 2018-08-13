@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Col, Row } from 'react-bootstrap';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faAward } from '@fortawesome/free-solid-svg-icons';
 
 import SocialIcons from '../../Profile/components/SocialIcons.jsx';
 
@@ -67,7 +69,9 @@ function Camper({
       { yearsTopContributor.length > 0 &&
         (
           <p className='text-center yearsTopContributor'>
-            Top Contributor of { joinArray(yearsTopContributor) }
+            <FontAwesomeIcon
+              icon={faAward}
+            /> Top Contributor of { joinArray(yearsTopContributor) }
           </p>
         )
       }
