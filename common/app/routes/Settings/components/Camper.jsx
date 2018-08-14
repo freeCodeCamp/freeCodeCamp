@@ -66,13 +66,19 @@ function Camper({
           </p>
         ) : null
       }
-      { yearsTopContributor.length > 0 &&
+      { yearsTopContributor.filter(Boolean).length > 0 &&
         (
+          <div>
+          <br/>
           <p className='text-center yearsTopContributor'>
             <FontAwesomeIcon
               icon={faAward}
-            /> Top Contributor of { joinArray(yearsTopContributor) }
+            /> Top Contributor
           </p>
+          <p className='text-center'>
+          { joinArray(yearsTopContributor) }
+          </p>
+          </div>
         )
       }
       <br/>
