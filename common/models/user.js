@@ -871,6 +871,7 @@ module.exports = function(User) {
     if (isLocked) {
       return {
         isLocked,
+        profileUI,
         username
       };
     }
