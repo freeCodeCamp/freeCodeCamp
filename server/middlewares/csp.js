@@ -5,7 +5,6 @@ let trusted = [
   'https://search.freecodecamp.org',
   'https://www.freecodecamp.rocks',
   'https://api.freecodecamp.rocks',
-  'https://*.algolianet.com',
   'https://' + process.env.AUTH0_DOMAIN
 ];
 
@@ -29,7 +28,8 @@ export default function csp() {
         'https://glitch.com',
         'https://*.glitch.com',
         'https://*.glitch.me',
-        'https://*.cloudflare.com'
+        'https://*.cloudflare.com',
+        'https://*.algolia.net'
       ]),
       scriptSrc: [
         "'unsafe-eval'",
@@ -64,7 +64,8 @@ export default function csp() {
         '*.bootstrapcdn.com',
         '*.googleapis.com',
         '*.gstatic.com',
-        'https://*.bootstrapcdn.com'
+        'https://*.bootstrapcdn.com',
+        'https://use.fontawesome.com'
       ].concat(trusted),
       imgSrc: [
         // allow all input since we have user submitted images for
