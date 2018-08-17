@@ -20,11 +20,14 @@
       "tests": [
         {
           "text": "Your <code>h2</code> element should be red.",
-          "testString": "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.');"
+          "testString":
+            "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.');"
         },
         {
-          "text": "Your <code>style</code> declaration should end with a <code>;</code> .",
-          "testString": "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/),' Your <code>style</code> declaration should end with a <code>;</code> .');"
+          "text":
+            "Your <code>style</code> declaration should end with a <code>;</code> .",
+          "testString":
+            "assert(code.match(/<h2\\s+style\\s*=\\s*(\\'|\")\\s*color\\s*:\\s*(?:rgb\\(\\s*255\\s*,\\s*0\\s*,\\s*0\\s*\\)|rgb\\(\\s*100%\\s*,\\s*0%\\s*,\\s*0%\\s*\\)|red|#ff0000|#f00|hsl\\(\\s*0\\s*,\\s*100%\\s*,\\s*50%\\s*\\))\\s*\\;(\\'|\")>\\s*CatPhotoApp\\s*<\\/h2>/),' Your <code>style</code> declaration should end with a <code>;</code> .');"
         }
       ],
       "challengeType": 0,
@@ -137,24 +140,32 @@
       ],
       "tests": [
         {
-          "text": "Remove the style attribute from your <code>h2</code> element.",
-          "testString": "assert(!$(\"h2\").attr(\"style\"), 'Remove the style attribute from your <code>h2</code> element.');"
+          "text":
+            "Remove the style attribute from your <code>h2</code> element.",
+          "testString":
+            "assert(!$(\"h2\").attr(\"style\"), 'Remove the style attribute from your <code>h2</code> element.');"
         },
         {
           "text": "Create a <code>style</code> element.",
-          "testString": "assert($(\"style\") && $(\"style\").length > 1, 'Create a <code>style</code> element.');"
+          "testString":
+            "assert($(\"style\") && $(\"style\").length > 1, 'Create a <code>style</code> element.');"
         },
         {
           "text": "Your <code>h2</code> element should be blue.",
-          "testString": "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h2</code> element should be blue.');"
+          "testString":
+            "assert($(\"h2\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h2</code> element should be blue.');"
         },
         {
-          "text": "Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.",
-          "testString": "assert(code.match(/h2\\s*\\{\\s*color\\s*:.*;\\s*\\}/g), 'Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.');"
+          "text":
+            "Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.",
+          "testString":
+            "assert(code.match(/h2\\s*\\{\\s*color\\s*:.*;\\s*\\}/g), 'Ensure that your stylesheet <code>h2</code> declaration is valid with a semicolon and closing brace.');"
         },
         {
-          "text": "Make sure all your <code>style</code> elements are valid and have a closing tag.",
-          "testString": "assert(code.match(/<\\/style>/g) && code.match(/<\\/style>/g).length === (code.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'Make sure all your <code>style</code> elements are valid and have a closing tag.');"
+          "text":
+            "Make sure all your <code>style</code> elements are valid and have a closing tag.",
+          "testString":
+            "assert(code.match(/<\\/style>/g) && code.match(/<\\/style>/g).length === (code.match(/<style((\\s)*((type|media|scoped|title|disabled)=\"[^\"]*\")?(\\s)*)*>/g) || []).length, 'Make sure all your <code>style</code> elements are valid and have a closing tag.');"
         }
       ],
       "challengeType": 0,
@@ -281,19 +292,26 @@
       "tests": [
         {
           "text": "Your <code>h2</code> element should be red.",
-          "testString": "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.');"
+          "testString":
+            "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.');"
         },
         {
-          "text": "Your <code>h2</code> element should have the class <code>red-text</code>.",
-          "testString": "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class <code>red-text</code>.');"
+          "text":
+            "Your <code>h2</code> element should have the class <code>red-text</code>.",
+          "testString":
+            "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class <code>red-text</code>.');"
         },
         {
-          "text": "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.",
-          "testString": "assert(code.match(/\\.red-text\\s*\\{\\s*color\\s*:\\s*red;\\s*\\}/g), 'Your stylesheet should declare a <code>red-text</code> class and have its color set to red.');"
+          "text":
+            "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.",
+          "testString":
+            "assert(code.match(/\\.red-text\\s*\\{\\s*color\\s*:\\s*red;\\s*\\}/g), 'Your stylesheet should declare a <code>red-text</code> class and have its color set to red.');"
         },
         {
-          "text": "Do not use inline style declarations like <code>style=\"color&#58; red\"</code> in your <code>h2</code> element.",
-          "testString": "assert($(\"h2\").attr(\"style\") === undefined, 'Do not use inline style declarations like <code>style=\"color&#58; red\"</code> in your <code>h2</code> element.');"
+          "text":
+            "Do not use inline style declarations like <code>style=\"color&#58; red\"</code> in your <code>h2</code> element.",
+          "testString":
+            "assert($(\"h2\").attr(\"style\") === undefined, 'Do not use inline style declarations like <code>style=\"color&#58; red\"</code> in your <code>h2</code> element.');"
         }
       ],
       "challengeType": 0,
@@ -420,23 +438,31 @@
       "tests": [
         {
           "text": "Your <code>h2</code> element should be red.",
-          "testString": "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.');"
+          "testString":
+            "assert($(\"h2\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your <code>h2</code> element should be red.');"
         },
         {
-          "text": "Your <code>h2</code> element should have the class <code>red-text</code>.",
-          "testString": "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class <code>red-text</code>.');"
+          "text":
+            "Your <code>h2</code> element should have the class <code>red-text</code>.",
+          "testString":
+            "assert($(\"h2\").hasClass(\"red-text\"), 'Your <code>h2</code> element should have the class <code>red-text</code>.');"
         },
         {
           "text": "Your first <code>p</code> element should be red.",
-          "testString": "assert($(\"p:eq(0)\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your first <code>p</code> element should be red.');"
+          "testString":
+            "assert($(\"p:eq(0)\").css(\"color\") === \"rgb(255, 0, 0)\", 'Your first <code>p</code> element should be red.');"
         },
         {
-          "text": "Your second and third <code>p</code> elements should not be red.",
-          "testString": "assert(!($(\"p:eq(1)\").css(\"color\") === \"rgb(255, 0, 0)\") && !($(\"p:eq(2)\").css(\"color\") === \"rgb(255, 0, 0)\"), 'Your second and third <code>p</code> elements should not be red.');"
+          "text":
+            "Your second and third <code>p</code> elements should not be red.",
+          "testString":
+            "assert(!($(\"p:eq(1)\").css(\"color\") === \"rgb(255, 0, 0)\") && !($(\"p:eq(2)\").css(\"color\") === \"rgb(255, 0, 0)\"), 'Your second and third <code>p</code> elements should not be red.');"
         },
         {
-          "text": "Your first <code>p</code> element should have the class <code>red-text</code>.",
-          "testString": "assert($(\"p:eq(0)\").hasClass(\"red-text\"), 'Your first <code>p</code> element should have the class <code>red-text</code>.');"
+          "text":
+            "Your first <code>p</code> element should have the class <code>red-text</code>.",
+          "testString":
+            "assert($(\"p:eq(0)\").hasClass(\"red-text\"), 'Your first <code>p</code> element should have the class <code>red-text</code>.');"
         }
       ],
       "challengeType": 0,
@@ -551,8 +577,10 @@
       ],
       "tests": [
         {
-          "text": "Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.",
-          "testString": "assert(code.match(/p\\s*{\\s*font-size\\s*:\\s*16\\s*px\\s*;\\s*}/i), 'Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
+          "text":
+            "Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.",
+          "testString":
+            "assert(code.match(/p\\s*{\\s*font-size\\s*:\\s*16\\s*px\\s*;\\s*}/i), 'Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.');"
         }
       ],
       "challengeType": 0,
@@ -656,8 +684,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>p</code> elements should use the font <code>monospace</code>.",
-          "testString": "assert($(\"p\").not(\".red-text\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> elements should use the font <code>monospace</code>.');"
+          "text":
+            "Your <code>p</code> elements should use the font <code>monospace</code>.",
+          "testString":
+            "assert($(\"p\").not(\".red-text\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> elements should use the font <code>monospace</code>.');"
         }
       ],
       "challengeType": 0,
@@ -775,19 +805,25 @@
       "tests": [
         {
           "text": "Import the <code>Lobster</code> font.",
-          "testString": "assert(new RegExp(\"googleapis\", \"gi\").test(code), 'Import the <code>Lobster</code> font.');"
+          "testString":
+            "assert(new RegExp(\"googleapis\", \"gi\").test(code), 'Import the <code>Lobster</code> font.');"
         },
         {
-          "text": "Your <code>h2</code> element should use the font <code>Lobster</code>.",
-          "testString": "assert($(\"h2\").css(\"font-family\").match(/lobster/i), 'Your <code>h2</code> element should use the font <code>Lobster</code>.');"
+          "text":
+            "Your <code>h2</code> element should use the font <code>Lobster</code>.",
+          "testString":
+            "assert($(\"h2\").css(\"font-family\").match(/lobster/i), 'Your <code>h2</code> element should use the font <code>Lobster</code>.');"
         },
         {
           "text": "Use an <code>h2</code> CSS selector to change the font.",
-          "testString": "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?\\s*;\\s*\\}/gi.test(code), 'Use an <code>h2</code> CSS selector to change the font.');"
+          "testString":
+            "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?\\s*;\\s*\\}/gi.test(code), 'Use an <code>h2</code> CSS selector to change the font.');"
         },
         {
-          "text": "Your <code>p</code> element should still use the font <code>monospace</code>.",
-          "testString": "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> element should still use the font <code>monospace</code>.');"
+          "text":
+            "Your <code>p</code> element should still use the font <code>monospace</code>.",
+          "testString":
+            "assert($(\"p\").css(\"font-family\").match(/monospace/i), 'Your <code>p</code> element should still use the font <code>monospace</code>.');"
         }
       ],
       "challengeType": 0,
@@ -909,19 +945,26 @@
       "tests": [
         {
           "text": "Your h2 element should use the font <code>Lobster</code>.",
-          "testString": "assert($(\"h2\").css(\"font-family\").match(/^\"?lobster/i), 'Your h2 element should use the font <code>Lobster</code>.');"
+          "testString":
+            "assert($(\"h2\").css(\"font-family\").match(/^\"?lobster/i), 'Your h2 element should use the font <code>Lobster</code>.');"
         },
         {
-          "text": "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.",
-          "testString": "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?,\\s*monospace\\s*;\\s*\\}/gi.test(code), 'Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.');"
+          "text":
+            "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.",
+          "testString":
+            "assert(/\\s*h2\\s*\\{\\s*font-family\\:\\s*(\\'|\")?Lobster(\\'|\")?,\\s*monospace\\s*;\\s*\\}/gi.test(code), 'Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.');"
         },
         {
-          "text": "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.",
-          "testString": "assert(new RegExp(\"<!--[^fc]\", \"gi\").test(code), 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.');"
+          "text":
+            "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.",
+          "testString":
+            "assert(new RegExp(\"<!--[^fc]\", \"gi\").test(code), 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.');"
         },
         {
-          "text": "Be sure to close your comment by adding <code>--&#62;</code>.",
-          "testString": "assert(new RegExp(\"[^fc]-->\", \"gi\").test(code), 'Be sure to close your comment by adding <code>--&#62;</code>.');"
+          "text":
+            "Be sure to close your comment by adding <code>--&#62;</code>.",
+          "testString":
+            "assert(new RegExp(\"[^fc]-->\", \"gi\").test(code), 'Be sure to close your comment by adding <code>--&#62;</code>.');"
         }
       ],
       "challengeType": 0,
@@ -1044,12 +1087,16 @@
       ],
       "tests": [
         {
-          "text": "Your <code>img</code> element should have the class <code>smaller-image</code>.",
-          "testString": "assert($(\"img[src='https://bit.ly/fcc-relaxing-cat']\").attr('class') === \"smaller-image\", 'Your <code>img</code> element should have the class <code>smaller-image</code>.');"
+          "text":
+            "Your <code>img</code> element should have the class <code>smaller-image</code>.",
+          "testString":
+            "assert($(\"img[src='https://bit.ly/fcc-relaxing-cat']\").attr('class') === \"smaller-image\", 'Your <code>img</code> element should have the class <code>smaller-image</code>.');"
         },
         {
-          "text": "Your image should be 100 pixels wide. Browser zoom should be at 100%.",
-          "testString": "assert($(\"img\").width() === 100, 'Your image should be 100 pixels wide. Browser zoom should be at 100%.');"
+          "text":
+            "Your image should be 100 pixels wide. Browser zoom should be at 100%.",
+          "testString":
+            "assert($(\"img\").width() === 100, 'Your image should be 100 pixels wide. Browser zoom should be at 100%.');"
         }
       ],
       "challengeType": 0,
@@ -1174,24 +1221,32 @@
       ],
       "tests": [
         {
-          "text": "Your <code>img</code> element should have the class <code>smaller-image</code>.",
-          "testString": "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class <code>smaller-image</code>.');"
+          "text":
+            "Your <code>img</code> element should have the class <code>smaller-image</code>.",
+          "testString":
+            "assert($(\"img\").hasClass(\"smaller-image\"), 'Your <code>img</code> element should have the class <code>smaller-image</code>.');"
         },
         {
-          "text": "Your <code>img</code> element should have the class <code>thick-green-border</code>.",
-          "testString": "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your <code>img</code> element should have the class <code>thick-green-border</code>.');"
+          "text":
+            "Your <code>img</code> element should have the class <code>thick-green-border</code>.",
+          "testString":
+            "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your <code>img</code> element should have the class <code>thick-green-border</code>.');"
         },
         {
           "text": "Give your image a border width of <code>10px</code>.",
-          "testString": "assert($(\"img\").hasClass(\"thick-green-border\") && parseInt($(\"img\").css(\"border-top-width\"), 10) >= 8 && parseInt($(\"img\").css(\"border-top-width\"), 10) <= 12, 'Give your image a border width of <code>10px</code>.');"
+          "testString":
+            "assert($(\"img\").hasClass(\"thick-green-border\") && parseInt($(\"img\").css(\"border-top-width\"), 10) >= 8 && parseInt($(\"img\").css(\"border-top-width\"), 10) <= 12, 'Give your image a border width of <code>10px</code>.');"
         },
         {
           "text": "Give your image a border style of <code>solid</code>.",
-          "testString": "assert($(\"img\").css(\"border-right-style\") === \"solid\", 'Give your image a border style of <code>solid</code>.');"
+          "testString":
+            "assert($(\"img\").css(\"border-right-style\") === \"solid\", 'Give your image a border style of <code>solid</code>.');"
         },
         {
-          "text": "The border around your <code>img</code> element should be green.",
-          "testString": "assert($(\"img\").css(\"border-left-color\") === \"rgb(0, 128, 0)\", 'The border around your <code>img</code> element should be green.');"
+          "text":
+            "The border around your <code>img</code> element should be green.",
+          "testString":
+            "assert($(\"img\").css(\"border-left-color\") === \"rgb(0, 128, 0)\", 'The border around your <code>img</code> element should be green.');"
         }
       ],
       "challengeType": 0,
@@ -1250,7 +1305,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/add-borders-around-your-elements",
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-borders-around-your-elements",
       "files": {
         "indexhtml": {
           "key": "indexhtml",
@@ -1325,12 +1381,15 @@
       ],
       "tests": [
         {
-          "text": "Your image element should have the class \"thick-green-border\".",
-          "testString": "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your image element should have the class \"thick-green-border\".');"
+          "text":
+            "Your image element should have the class \"thick-green-border\".",
+          "testString":
+            "assert($(\"img\").hasClass(\"thick-green-border\"), 'Your image element should have the class \"thick-green-border\".');"
         },
         {
           "text": "Your image should have a border radius of <code>10px</code>",
-          "testString": "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 8, 'Your image should have a border radius of <code>10px</code>');"
+          "testString":
+            "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 8, 'Your image should have a border radius of <code>10px</code>');"
         }
       ],
       "challengeType": 0,
@@ -1372,7 +1431,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/add-rounded-corners-a-border-radius",
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-rounded-corners-a-border-radius",
       "files": {
         "indexhtml": {
           "key": "indexhtml",
@@ -1452,12 +1512,15 @@
       ],
       "tests": [
         {
-          "text": "Your image should have a border radius of <code>50%</code>, making it perfectly circular.",
-          "testString": "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 48, 'Your image should have a border radius of <code>50%</code>, making it perfectly circular.');"
+          "text":
+            "Your image should have a border radius of <code>50%</code>, making it perfectly circular.",
+          "testString":
+            "assert(parseInt($(\"img\").css(\"border-top-left-radius\")) > 48, 'Your image should have a border radius of <code>50%</code>, making it perfectly circular.');"
         },
         {
           "text": "Be sure to use a percentage value of <code>50%</code>.",
-          "testString": "assert(code.match(/50%/g), 'Be sure to use a percentage value of <code>50%</code>.');"
+          "testString":
+            "assert(code.match(/50%/g), 'Be sure to use a percentage value of <code>50%</code>.');"
         }
       ],
       "challengeType": 0,
@@ -1577,12 +1640,22 @@
       ],
       "tests": [
         {
-          "text": "Give your <code>div</code> element the class <code>silver-background</code>.",
-          "testString": "assert($(\"div\").hasClass(\"silver-background\"), 'Give your <code>div</code> element the class <code>silver-background</code>.');"
+          "text":
+            "Give your <code>div</code> element the class <code>silver-background</code>.",
+          "testString":
+            "assert($(\"div\").hasClass(\"silver-background\"), 'Give your <code>div</code> element the class <code>silver-background</code>.');"
         },
         {
-          "text": "Your <code>div</code> element should have a silver background.",
-          "testString": "assert($(\"div\").css(\"background-color\") === \"rgb(192, 192, 192)\", 'Your <code>div</code> element should have a silver background.');"
+          "text":
+            "Your <code>div</code> element should have a silver background.",
+          "testString":
+            "assert($(\"div\").css(\"background-color\") === \"rgb(192, 192, 192)\", 'Your <code>div</code> element should have a silver background.');"
+        },
+        {
+          "text":
+            "Define a class named <code>silver-background</code> within the <code>style</code> element and assign the value of <code>silver</code> to the <code>background-color</code> property.",
+          "testString":
+            "assert(code.match(/\\.silver-background\\s*{\\s*background-color:\\s*silver;\\s*}/), \"Define a class named <code>silver-background</code> within the <code>style</code> element and assign the value of <code>silver</code> to the <code>background-color</code> property.\");"
         }
       ],
       "challengeType": 0,
@@ -1714,8 +1787,10 @@
       ],
       "tests": [
         {
-          "text": "Give your <code>form</code> element the id of <code>cat-photo-form</code>.",
-          "testString": "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');"
+          "text":
+            "Give your <code>form</code> element the id of <code>cat-photo-form</code>.",
+          "testString":
+            "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');"
         }
       ],
       "challengeType": 0,
@@ -1857,20 +1932,28 @@
       ],
       "tests": [
         {
-          "text": "Give your <code>form</code> element the id of <code>cat-photo-form</code>.",
-          "testString": "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');"
+          "text":
+            "Give your <code>form</code> element the id of <code>cat-photo-form</code>.",
+          "testString":
+            "assert($(\"form\").attr(\"id\") === \"cat-photo-form\", 'Give your <code>form</code> element the id of <code>cat-photo-form</code>.');"
         },
         {
-          "text": "Your <code>form</code> element should have the <code>background-color</code> of green.",
-          "testString": "assert($(\"#cat-photo-form\").css(\"background-color\") === \"rgb(0, 128, 0)\", 'Your <code>form</code> element should have the <code>background-color</code> of green.');"
+          "text":
+            "Your <code>form</code> element should have the <code>background-color</code> of green.",
+          "testString":
+            "assert($(\"#cat-photo-form\").css(\"background-color\") === \"rgb(0, 128, 0)\", 'Your <code>form</code> element should have the <code>background-color</code> of green.');"
         },
         {
-          "text": "Make sure your <code>form</code> element has an <code>id</code> attribute.",
-          "testString": "assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, 'Make sure your <code>form</code> element has an <code>id</code> attribute.');"
+          "text":
+            "Make sure your <code>form</code> element has an <code>id</code> attribute.",
+          "testString":
+            "assert(code.match(/<form.*cat-photo-form.*>/gi) && code.match(/<form.*cat-photo-form.*>/gi).length > 0, 'Make sure your <code>form</code> element has an <code>id</code> attribute.');"
         },
         {
-          "text": "Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.",
-          "testString": "assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), 'Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.');"
+          "text":
+            "Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.",
+          "testString":
+            "assert(!code.match(/<form.*style.*>/gi) && !code.match(/<form.*class.*>/gi), 'Do not give your <code>form</code> any <code>class</code> or <code>style</code> attributes.');"
         }
       ],
       "challengeType": 0,
@@ -2011,8 +2094,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-top\") === \"20px\", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-top\") === \"20px\", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>padding</code>.');"
         }
       ],
       "challengeType": 0,
@@ -2069,7 +2154,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/adjust-the-padding-of-an-element",
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/adjust-the-padding-of-an-element",
       "files": {
         "indexhtml": {
           "key": "indexhtml",
@@ -2130,8 +2216,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"20px\", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-top\") === \"20px\", 'Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.');"
         }
       ],
       "challengeType": 0,
@@ -2177,7 +2265,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element",
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element",
       "files": {
         "indexhtml": {
           "key": "indexhtml",
@@ -2240,8 +2329,10 @@
       ],
       "tests": [
         {
-          "text": "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"-15px\", 'Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-top\") === \"-15px\", 'Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.');"
         }
       ],
       "challengeType": 0,
@@ -2287,7 +2378,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/add-a-negative-margin-to-an-element",
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-a-negative-margin-to-an-element",
       "files": {
         "indexhtml": {
           "key": "indexhtml",
@@ -2348,26 +2440,35 @@
       ],
       "tests": [
         {
-          "text": "Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.');"
         }
       ],
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Gib jeder Seite eines Elements einen unterschiedlichen Innenabstand",
+          "title":
+            "Gib jeder Seite eines Elements einen unterschiedlichen Innenabstand",
           "description": [
             "Manchmal wirst du einem Element auf jeder Seite unterschiedliche Innenabstände – also <code>padding</code> – geben wollen.",
             "CSS erlaubt dir den Innenabstand - <code>padding</code> - eines Elements auf allen Seiten einzeln mit den Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu steuern.",
@@ -2385,7 +2486,8 @@
           ]
         },
         "pt-br": {
-          "title": "Dê Valores Diferentes de Preenchimento a Cada Lado de um Elemento",
+          "title":
+            "Dê Valores Diferentes de Preenchimento a Cada Lado de um Elemento",
           "description": [
             "As vezes pode ser que você queira personalizar um elemento para que tenha um preenchimento (<code>padding</code>) diferente em cada um de seus lados.",
             "O CSS permite controlar o preenchimento (<code>padding</code>) de um elemento em todos os quatro lados: superior, direito, inferior e esquerdo, com as propriedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> e <code>padding-left</code>.",
@@ -2394,7 +2496,8 @@
           ]
         },
         "ru": {
-          "title": "Добавьте разный отступ содердимого с каждой стороны элемента",
+          "title":
+            "Добавьте разный отступ содердимого с каждой стороны элемента",
           "description": [
             "Иногда вам может потребоваться изменить элемент таким образом, чтобы отступ содержимого <code>padding</code> с каждой из сторон был разным.",
             "CSS позволяет вам контролировать значение свойства <code>padding</code> элемента со всех сторон с помощью свойств: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>.",
@@ -2403,7 +2506,8 @@
           ]
         }
       },
-      "guideUrl": "https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element",
+      "guideUrl":
+        "https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element",
       "files": {
         "indexhtml": {
           "key": "indexhtml",
@@ -2465,26 +2569,35 @@
       ],
       "tests": [
         {
-          "text": "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
         }
       ],
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Füge jeder Seite eines Elements einen unterschiedlichen Außenabstand hinzu",
+          "title":
+            "Füge jeder Seite eines Elements einen unterschiedlichen Außenabstand hinzu",
           "description": [
             "Manchmal wirst du einem Element auf jeder Seite einen unterschiedlichen Außenabstand - <code>margin</code> - geben wollen.",
             "CSS erlaubt dir ebenfalls den Außenabstand - <code>margin</code> - eines Elements auf jeder Seite einzeln mit den Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu steuern.",
@@ -2582,30 +2695,41 @@
       ],
       "tests": [
         {
-          "text": "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>padding</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>padding</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>padding</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.",
-          "testString": "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"padding-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>padding</code>.');"
         },
         {
-          "text": "You should use the clockwise notation to set the padding of <code>blue-box</code> class.",
-          "testString": "assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'You should use the clockwise notation to set the padding of <code>blue-box</code> class.');"
+          "text":
+            "You should use the clockwise notation to set the padding of <code>blue-box</code> class.",
+          "testString":
+            "assert(!/padding-top|padding-right|padding-bottom|padding-left/.test(code), 'You should use the clockwise notation to set the padding of <code>blue-box</code> class.');"
         }
       ],
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Nutze die Notation im Uhrzeigersinn um den Innenabstand eines Elements zu bestimmen",
+          "title":
+            "Nutze die Notation im Uhrzeigersinn um den Innenabstand eines Elements zu bestimmen",
           "description": [
             "Anstatt die Eigenschaften <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> und <code>padding-left</code> zu verwenden, kannst du sie alle in einer Zeile schreiben:",
             "<code>padding: 10px 20px 10px 20px;</code>",
@@ -2615,7 +2739,8 @@
           ]
         },
         "es": {
-          "title": "Utiliza notación en sentido horario para especificar el relleno de un elemento",
+          "title":
+            "Utiliza notación en sentido horario para especificar el relleno de un elemento",
           "description": [
             "En lugar de especificar las propiedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> y <code>padding-left</code> de un elemento, puedes especificar todas en una sóla línea, así: ",
             "<code>padding: 10px 20px 10px 20px;</code>",
@@ -2625,7 +2750,8 @@
           ]
         },
         "pt-br": {
-          "title": "Use Notação em Sentido Horário para Especificar o Preenchimento de um Elemento",
+          "title":
+            "Use Notação em Sentido Horário para Especificar o Preenchimento de um Elemento",
           "description": [
             "Ao invés de especificar as propriedades <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code> e <code>padding-left</code> de um elemento, você pode especificar todas elas em uma só linha, assim:",
             "<code>padding: 10px 20px 10px 20px;</code>",
@@ -2635,7 +2761,8 @@
           ]
         },
         "ru": {
-          "title": "Используйте систему ссылок по часовой стрелке для установки отступа содержмого элемента",
+          "title":
+            "Используйте систему ссылок по часовой стрелке для установки отступа содержмого элемента",
           "description": [
             "Вместо указания свойств элемента: <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>, вы можете указать их в строку, например:",
             "<code>padding: 10px 20px 10px 20px;</code>",
@@ -2705,26 +2832,35 @@
       ],
       "tests": [
         {
-          "text": "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-top\") === \"40px\", 'Your <code>blue-box</code> class should give the top of elements <code>40px</code> of <code>margin</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-right\") === \"20px\", 'Your <code>blue-box</code> class should give the right of elements <code>20px</code> of <code>margin</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-bottom\") === \"20px\", 'Your <code>blue-box</code> class should give the bottom of elements <code>20px</code> of <code>margin</code>.');"
         },
         {
-          "text": "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.",
-          "testString": "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
+          "text":
+            "Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.",
+          "testString":
+            "assert($(\".blue-box\").css(\"margin-left\") === \"40px\", 'Your <code>blue-box</code> class should give the left of elements <code>40px</code> of <code>margin</code>.');"
         }
       ],
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Nutze die Notation im Uhrzeigersinn um den Außenabstand eines Elements zu bestimmen",
+          "title":
+            "Nutze die Notation im Uhrzeigersinn um den Außenabstand eines Elements zu bestimmen",
           "description": [
             "Versuchen wir das noch einmal, aber diesmal mit dem Außenabstand – also <code>margin</code>.",
             "Anstatt die Eigenschaften <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code> und <code>margin-left</code> zu verwenden, kannst du alle in eine Zeile schreiben:",
@@ -2735,7 +2871,8 @@
           ]
         },
         "es": {
-          "title": "Utiliza notación en sentido horario para especificar el margen de un elemento",
+          "title":
+            "Utiliza notación en sentido horario para especificar el margen de un elemento",
           "description": [
             "Vamos a intentar esto de nuevo, pero esta vez con el margen (<code>margin</code>).",
             "En lugar de especificar las propiedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, y <code>margin-left</code> de un elemento, puedes especificarlas en una sóla línea así: ",
@@ -2746,7 +2883,8 @@
           ]
         },
         "pt-br": {
-          "title": "Use Notação em Sentido Horário para Especificar a Margem de um Elemento",
+          "title":
+            "Use Notação em Sentido Horário para Especificar a Margem de um Elemento",
           "description": [
             "Vamos praticar isso outra vez, mas desta vez será com a margem (<code>margin</code>).",
             "Ao invés de especificar as propriedades <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, e <code>margin-left</code> de um elemento, você pode especificar todas elas em apenas uma linha assim:",
@@ -2757,7 +2895,8 @@
           ]
         },
         "ru": {
-          "title": "Используйте систему ссылок по часовой стрелке для установки отступа элемента",
+          "title":
+            "Используйте систему ссылок по часовой стрелке для установки отступа элемента",
           "description": [
             "Давайте попробуем то же самое, но со свойством <code>margin</code> на этот раз.",
             "Вмето указания свойств элемента: <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>, вы можете указать их в строку, например:",
@@ -2828,16 +2967,20 @@
       ],
       "tests": [
         {
-          "text": "The <code>type</code> attribute selector should be used to select the checkboxes.",
-          "testString": "assert(code.match(/<style>[\\s\\S]*?\\[type=(\"|')checkbox\\1\\]\\s*?{[\\s\\S]*?}[\\s\\S]*?<\\/style>/gi),'The <code>type</code> attribute selector should be used to select the checkboxes.');"
+          "text":
+            "The <code>type</code> attribute selector should be used to select the checkboxes.",
+          "testString":
+            "assert(code.match(/<style>[\\s\\S]*?\\[type=(\"|')checkbox\\1\\]\\s*?{[\\s\\S]*?}[\\s\\S]*?<\\/style>/gi),'The <code>type</code> attribute selector should be used to select the checkboxes.');"
         },
         {
           "text": "The top margins of the checkboxes should be 10px.",
-          "testString": "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()),'The top margins of the checkboxes should be 10px.');"
+          "testString":
+            "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginTop') === '10px') {count++;}});return (count===3)}()),'The top margins of the checkboxes should be 10px.');"
         },
         {
           "text": "The bottom margins of the checkboxes should be 15px.",
-          "testString": "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()),'The bottom margins of the checkboxes should be 15px.');"
+          "testString":
+            "assert((function() {var count=0; $(\"[type='checkbox']\").each(function() { if($(this).css('marginBottom') === '15px') {count++;}});return (count===3)}()),'The bottom margins of the checkboxes should be 15px.');"
         }
       ],
       "solutions": [],
@@ -2932,12 +3075,16 @@
       ],
       "tests": [
         {
-          "text": "Your <code>red-box</code> class should have a <code>padding</code> property.",
-          "testString": "assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px', 'Your <code>red-box</code> class should have a <code>padding</code> property.');"
+          "text":
+            "Your <code>red-box</code> class should have a <code>padding</code> property.",
+          "testString":
+            "assert($('.red-box').css('padding-top') != '0px' && $('.red-box').css('padding-right') != '0px' && $('.red-box').css('padding-bottom') != '0px' && $('.red-box').css('padding-left') != '0px', 'Your <code>red-box</code> class should have a <code>padding</code> property.');"
         },
         {
-          "text": "Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.",
-          "testString": "assert(code.match(/\\.red-box\\s*?{\\s*?.*?\\s*?.*?\\s*?padding:\\s*?1\\.5em/gi), 'Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.');"
+          "text":
+            "Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.",
+          "testString":
+            "assert(code.match(/\\.red-box\\s*?{\\s*?.*?\\s*?.*?\\s*?padding:\\s*?1\\.5em/gi), 'Your <code>red-box</code> class should give elements 1.5em of <code>padding</code>.');"
         }
       ],
       "challengeType": 0,
@@ -3002,16 +3149,21 @@
       ],
       "tests": [
         {
-          "text": "Give your <code>body</code> element the <code>background-color</code> of black.",
-          "testString": "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.');"
+          "text":
+            "Give your <code>body</code> element the <code>background-color</code> of black.",
+          "testString":
+            "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the <code>background-color</code> of black.');"
         },
         {
-          "text": "Make sure your CSS rule is properly formatted with both opening and closing curly brackets.",
-          "testString": "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule is properly formatted with both opening and closing curly brackets.');"
+          "text":
+            "Make sure your CSS rule is properly formatted with both opening and closing curly brackets.",
+          "testString":
+            "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule is properly formatted with both opening and closing curly brackets.');"
         },
         {
           "text": "Make sure your CSS rule ends with a semi-colon.",
-          "testString": "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule ends with a semi-colon.');"
+          "testString":
+            "assert(code.match(/<style>\\s*body\\s*\\{\\s*background.*\\s*:\\s*.*;\\s*\\}\\s*<\\/style>/i), 'Make sure your CSS rule ends with a semi-colon.');"
         }
       ],
       "challengeType": 0,
@@ -3088,31 +3240,43 @@
       "tests": [
         {
           "text": "Create an <code>h1</code> element.",
-          "testString": "assert(($(\"h1\").length > 0), 'Create an <code>h1</code> element.');"
+          "testString":
+            "assert(($(\"h1\").length > 0), 'Create an <code>h1</code> element.');"
         },
         {
-          "text": "Your <code>h1</code> element should have the text <code>Hello World</code>.",
-          "testString": "assert(($(\"h1\").length > 0 && $(\"h1\").text().match(/hello world/i)), 'Your <code>h1</code> element should have the text <code>Hello World</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the text <code>Hello World</code>.",
+          "testString":
+            "assert(($(\"h1\").length > 0 && $(\"h1\").text().match(/hello world/i)), 'Your <code>h1</code> element should have the text <code>Hello World</code>.');"
         },
         {
           "text": "Make sure your <code>h1</code> element has a closing tag.",
-          "testString": "assert(code.match(/<\\/h1>/g) && code.match(/<h1/g) && code.match(/<\\/h1>/g).length === code.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.');"
+          "testString":
+            "assert(code.match(/<\\/h1>/g) && code.match(/<h1/g) && code.match(/<\\/h1>/g).length === code.match(/<h1/g).length, 'Make sure your <code>h1</code> element has a closing tag.');"
         },
         {
-          "text": "Give your <code>body</code> element the <code>color</code> property of <code>green</code>.",
-          "testString": "assert(($(\"body\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Give your <code>body</code> element the <code>color</code> property of <code>green</code>.');"
+          "text":
+            "Give your <code>body</code> element the <code>color</code> property of <code>green</code>.",
+          "testString":
+            "assert(($(\"body\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Give your <code>body</code> element the <code>color</code> property of <code>green</code>.');"
         },
         {
-          "text": "Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.",
-          "testString": "assert(($(\"body\").css(\"font-family\").match(/monospace/i)), 'Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.');"
+          "text":
+            "Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.",
+          "testString":
+            "assert(($(\"body\").css(\"font-family\").match(/monospace/i)), 'Give your <code>body</code> element the <code>font-family</code> property of <code>monospace</code>.');"
         },
         {
-          "text": "Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.",
-          "testString": "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"font-family\").match(/monospace/i)), 'Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.');"
+          "text":
+            "Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.",
+          "testString":
+            "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"font-family\").match(/monospace/i)), 'Your <code>h1</code> element should inherit the font <code>monospace</code> from your <code>body</code> element.');"
         },
         {
-          "text": "Your <code>h1</code> element should inherit the color green from your <code>body</code> element.",
-          "testString": "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.');"
+          "text":
+            "Your <code>h1</code> element should inherit the color green from your <code>body</code> element.",
+          "testString":
+            "assert(($(\"h1\").length > 0 && $(\"h1\").css(\"color\") === \"rgb(0, 128, 0)\"), 'Your <code>h1</code> element should inherit the color green from your <code>body</code> element.');"
         }
       ],
       "challengeType": 0,
@@ -3193,16 +3357,21 @@
       ],
       "tests": [
         {
-          "text": "Your <code>h1</code> element should have the class <code>pink-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
         },
         {
-          "text": "Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.",
-          "testString": "assert(code.match(/\\.pink-text\\s*\\{\\s*color\\s*:\\s*.+\\s*;\\s*\\}/g), 'Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.');"
+          "text":
+            "Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.",
+          "testString":
+            "assert(code.match(/\\.pink-text\\s*\\{\\s*color\\s*:\\s*.+\\s*;\\s*\\}/g), 'Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.');"
         },
         {
           "text": "Your <code>h1</code> element should be pink.",
-          "testString": "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.');"
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.');"
         }
       ],
       "challengeType": 0,
@@ -3286,20 +3455,27 @@
       ],
       "tests": [
         {
-          "text": "Your <code>h1</code> element should have the class <code>pink-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
         },
         {
-          "text": "Your <code>h1</code> element should have the class <code>blue-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>blue-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
         },
         {
-          "text": "Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.",
-          "testString": "assert($(\".pink-text\").hasClass(\"blue-text\"), 'Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.');"
+          "text":
+            "Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.",
+          "testString":
+            "assert($(\".pink-text\").hasClass(\"blue-text\"), 'Both <code>blue-text</code> and <code>pink-text</code> should belong to the same <code>h1</code> element.');"
         },
         {
           "text": "Your <code>h1</code> element should be blue.",
-          "testString": "assert($(\"h1\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h1</code> element should be blue.');"
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(0, 0, 255)\", 'Your <code>h1</code> element should be blue.');"
         }
       ],
       "challengeType": 0,
@@ -3401,38 +3577,51 @@
       ],
       "tests": [
         {
-          "text": "Your <code>h1</code> element should have the class <code>pink-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
         },
         {
-          "text": "Your <code>h1</code> element should have the class <code>blue-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>blue-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
         },
         {
-          "text": "Give your <code>h1</code> element the id of <code>orange-text</code>.",
-          "testString": "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Give your <code>h1</code> element the id of <code>orange-text</code>.');"
+          "text":
+            "Give your <code>h1</code> element the id of <code>orange-text</code>.",
+          "testString":
+            "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Give your <code>h1</code> element the id of <code>orange-text</code>.');"
         },
         {
           "text": "There should be only one <code>h1</code> element.",
-          "testString": "assert(($(\"h1\").length === 1), 'There should be only one <code>h1</code> element.');"
+          "testString":
+            "assert(($(\"h1\").length === 1), 'There should be only one <code>h1</code> element.');"
         },
         {
-          "text": "Create a CSS declaration for your <code>orange-text</code> id",
-          "testString": "assert(code.match(/#orange-text\\s*{/gi), 'Create a CSS declaration for your <code>orange-text</code> id');"
+          "text":
+            "Create a CSS declaration for your <code>orange-text</code> id",
+          "testString":
+            "assert(code.match(/#orange-text\\s*{/gi), 'Create a CSS declaration for your <code>orange-text</code> id');"
         },
         {
-          "text": "Do not give your <code>h1</code> any <code>style</code> attributes.",
-          "testString": "assert(!code.match(/<h1.*style.*>/gi), 'Do not give your <code>h1</code> any <code>style</code> attributes.');"
+          "text":
+            "Do not give your <code>h1</code> any <code>style</code> attributes.",
+          "testString":
+            "assert(!code.match(/<h1.*style.*>/gi), 'Do not give your <code>h1</code> any <code>style</code> attributes.');"
         },
         {
           "text": "Your <code>h1</code> element should be orange.",
-          "testString": "assert($(\"h1\").css(\"color\") === \"rgb(255, 165, 0)\", 'Your <code>h1</code> element should be orange.');"
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(255, 165, 0)\", 'Your <code>h1</code> element should be orange.');"
         }
       ],
       "challengeType": 0,
       "translations": {
         "de": {
-          "title": "Überschreibe Klassen Deklarationen mit Styling von ID Attributen",
+          "title":
+            "Überschreibe Klassen Deklarationen mit Styling von ID Attributen",
           "description": [
             "Wir haben gerade bewiesen, dass der Browser CSS von oben nach unten liest. Das bedeuted, dass im Falle eines Konflikts der Browser immer die letzte CSS Deklaration verwenden wird.",
             "Aber damit sind wir noch nicht fertig. Es gibt andere Wege um CSS zu überschreiben. Erinnerst du dich an Id Attribute?",
@@ -3446,7 +3635,8 @@
           ]
         },
         "es": {
-          "title": "Anula la declaración de clases dando estilo a los atributos ID",
+          "title":
+            "Anula la declaración de clases dando estilo a los atributos ID",
           "description": [
             "Acabamos de demostrar que los navegadores leen CSS de arriba hacia abajo. Eso significa que, en el caso de un conflicto, el navegador utilizará la última declaración CSS. ",
             "Pero no hemos terminado todavía. Hay otras maneras con las que puedes anular CSS. ¿Te acuerdas de los atributos id?",
@@ -3461,7 +3651,8 @@
           ]
         },
         "pt-br": {
-          "title": "Sobreponha a Declaração de Classes Estilizando Atributos ID",
+          "title":
+            "Sobreponha a Declaração de Classes Estilizando Atributos ID",
           "description": [
             "Acabamos de demonstrar que os navegadores fazem a leitura do CSS de cima para baixo. Isso significa que, em caso de um conflito, o navegador utilizará a última declaração CSS.",
             "Mas ainda não terminamos, pois existem outras formas para sobrepor CSS. Você se lembra dos atributos <code>id</code>?",
@@ -3475,7 +3666,8 @@
           ]
         },
         "ru": {
-          "title": "Переопределите значения свойств классов стилизацией атрибутов id",
+          "title":
+            "Переопределите значения свойств классов стилизацией атрибутов id",
           "description": [
             "Мы только что доказали, что браузеры читают CSS сверху-вниз. Это значит, что в случае конфликта значений будет установлено то, которое было объявлено в последнюю очередь.",
             "Но мы ещё не закончилил. Есть и другие способы переопределения CSS. Помните атрибуты id?",
@@ -3529,24 +3721,32 @@
       ],
       "tests": [
         {
-          "text": "Your <code>h1</code> element should have the class <code>pink-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
         },
         {
-          "text": "Your <code>h1</code> element should have the class <code>blue-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>blue-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
         },
         {
-          "text": "Your <code>h1</code> element should have the id of <code>orange-text</code>.",
-          "testString": "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the id of <code>orange-text</code>.",
+          "testString":
+            "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');"
         },
         {
           "text": "Give your <code>h1</code> element an inline style.",
-          "testString": "assert(document.querySelector('h1[style]'), 'Give your <code>h1</code> element an inline style.');"
+          "testString":
+            "assert(document.querySelector('h1[style]'), 'Give your <code>h1</code> element an inline style.');"
         },
         {
           "text": "Your <code>h1</code> element should be white.",
-          "testString": "assert($(\"h1\").css(\"color\") === \"rgb(255, 255, 255)\", 'Your <code>h1</code> element should be white.');"
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(255, 255, 255)\", 'Your <code>h1</code> element should be white.');"
         }
       ],
       "challengeType": 0,
@@ -3585,7 +3785,8 @@
           ]
         },
         "ru": {
-          "title": "Переопределите значения свойств классов встроенными стилями",
+          "title":
+            "Переопределите значения свойств классов встроенными стилями",
           "description": [
             "Итак, мы доказали, что объявление атрибута <code>id</code> переопределяет значения свойств, определённые в значениях атрибута <code>class</code>, независимо от того, были ли они объявлены в вашем элементе <code>style</code>.",
             "Есть и другие способы переопределения CSS. Помните встроенные стили?",
@@ -3640,28 +3841,39 @@
       ],
       "tests": [
         {
-          "text": "Your <code>h1</code> element should have the class <code>pink-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>pink-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"pink-text\"), 'Your <code>h1</code> element should have the class <code>pink-text</code>.');"
         },
         {
-          "text": "Your <code>h1</code> element should have the class <code>blue-text</code>.",
-          "testString": "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the class <code>blue-text</code>.",
+          "testString":
+            "assert($(\"h1\").hasClass(\"blue-text\"), 'Your <code>h1</code> element should have the class <code>blue-text</code>.');"
         },
         {
-          "text": "Your <code>h1</code> element should have the id of <code>orange-text</code>.",
-          "testString": "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the id of <code>orange-text</code>.",
+          "testString":
+            "assert($(\"h1\").attr(\"id\") === \"orange-text\", 'Your <code>h1</code> element should have the id of <code>orange-text</code>.');"
         },
         {
-          "text": "Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.",
-          "testString": "assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\\s*?:/gi), 'Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.');"
+          "text":
+            "Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.",
+          "testString":
+            "assert(code.match(/<h1.*style/gi) && code.match(/<h1.*style.*color\\s*?:/gi), 'Your <code>h1</code> element should have the inline style of <code>color&#58; white</code>.');"
         },
         {
-          "text": "Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.",
-          "testString": "assert(code.match(/\\.pink-text\\s*?\\{[\\s\\S]*?color:.*pink.*!important\\s*;?[^\\.]*\\}/g), 'Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.');"
+          "text":
+            "Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.",
+          "testString":
+            "assert(code.match(/\\.pink-text\\s*?\\{[\\s\\S]*?color:.*pink.*!important\\s*;?[^\\.]*\\}/g), 'Your <code>pink-text</code> class declaration should have the <code>!important</code> keyword to override all other declarations.');"
         },
         {
           "text": "Your <code>h1</code> element should be pink.",
-          "testString": "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.');"
+          "testString":
+            "assert($(\"h1\").css(\"color\") === \"rgb(255, 192, 203)\", 'Your <code>h1</code> element should be pink.');"
         }
       ],
       "challengeType": 0,
@@ -3761,12 +3973,16 @@
       ],
       "tests": [
         {
-          "text": "Give your <code>body</code> element the background-color of black.",
-          "testString": "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the background-color of black.');"
+          "text":
+            "Give your <code>body</code> element the background-color of black.",
+          "testString":
+            "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Give your <code>body</code> element the background-color of black.');"
         },
         {
-          "text": "Use the <code>hex code</code> for the color black instead of the word <code>black</code>.",
-          "testString": "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), 'Use the <code>hex code</code> for the color black instead of the word <code>black</code>.');"
+          "text":
+            "Use the <code>hex code</code> for the color black instead of the word <code>black</code>.",
+          "testString":
+            "assert(code.match(/body\\s*{(([\\s\\S]*;\\s*?)|\\s*?)background.*\\s*:\\s*?#000(000)?((\\s*})|(;[\\s\\S]*?}))/gi), 'Use the <code>hex code</code> for the color black instead of the word <code>black</code>.');"
         }
       ],
       "challengeType": 0,
@@ -3844,36 +4060,52 @@
       ],
       "tests": [
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
-          "testString": "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
+          "testString":
+            "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
         },
         {
-          "text": "Use the <code>hex code</code> for the color red instead of the word <code>red</code>.",
-          "testString": "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color red instead of the word <code>red</code>.');"
+          "text":
+            "Use the <code>hex code</code> for the color red instead of the word <code>red</code>.",
+          "testString":
+            "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#FF0000\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color red instead of the word <code>red</code>.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.",
-          "testString": "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.",
+          "testString":
+            "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');"
         },
         {
-          "text": "Use the <code>hex code</code> for the color green instead of the word <code>green</code>.",
-          "testString": "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color green instead of the word <code>green</code>.');"
+          "text":
+            "Use the <code>hex code</code> for the color green instead of the word <code>green</code>.",
+          "testString":
+            "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#00FF00\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color green instead of the word <code>green</code>.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.",
-          "testString": "assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)', 'Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.",
+          "testString":
+            "assert($('.dodger-blue-text').css('color') === 'rgb(30, 144, 255)', 'Give your <code>h1</code> element with the text <code>I am dodger blue!</code> the <code>color</code> dodger blue.');"
         },
         {
-          "text": "Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.",
-          "testString": "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#1E90FF\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');"
+          "text":
+            "Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.",
+          "testString":
+            "assert(code.match(/\\.dodger-blue-text\\s*?{\\s*?color:\\s*?#1E90FF\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color dodger blue instead of the word <code>dodgerblue</code>.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.",
-          "testString": "assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', 'Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.",
+          "testString":
+            "assert($('.orange-text').css('color') === 'rgb(255, 165, 0)', 'Give your <code>h1</code> element with the text <code>I am orange!</code> the <code>color</code> orange.');"
         },
         {
-          "text": "Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.",
-          "testString": "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');"
+          "text":
+            "Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.",
+          "testString":
+            "assert(code.match(/\\.orange-text\\s*?{\\s*?color:\\s*?#FFA500\\s*?;\\s*?}/gi), 'Use the <code>hex code</code> for the color orange instead of the word <code>orange</code>.');"
         }
       ],
       "challengeType": 0,
@@ -3962,36 +4194,52 @@
       ],
       "tests": [
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
-          "testString": "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
+          "testString":
+            "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
         },
         {
-          "text": "Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.",
-          "testString": "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#F00\\s*?;\\s*?}/gi), 'Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.');"
+          "text":
+            "Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.",
+          "testString":
+            "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?#F00\\s*?;\\s*?}/gi), 'Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.",
-          "testString": "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.",
+          "testString":
+            "assert($('.green-text').css('color') === 'rgb(0, 255, 0)', 'Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.');"
         },
         {
-          "text": "Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.",
-          "testString": "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#0F0\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.');"
+          "text":
+            "Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.",
+          "testString":
+            "assert(code.match(/\\.green-text\\s*?{\\s*?color:\\s*?#0F0\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.",
-          "testString": "assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)', 'Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.",
+          "testString":
+            "assert($('.cyan-text').css('color') === 'rgb(0, 255, 255)', 'Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.');"
         },
         {
-          "text": "Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.",
-          "testString": "assert(code.match(/\\.cyan-text\\s*?{\\s*?color:\\s*?#0FF\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.');"
+          "text":
+            "Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.",
+          "testString":
+            "assert(code.match(/\\.cyan-text\\s*?{\\s*?color:\\s*?#0FF\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.",
-          "testString": "assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)', 'Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.",
+          "testString":
+            "assert($('.fuchsia-text').css('color') === 'rgb(255, 0, 255)', 'Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.');"
         },
         {
-          "text": "Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.",
-          "testString": "assert(code.match(/\\.fuchsia-text\\s*?{\\s*?color:\\s*?#F0F\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.');"
+          "text":
+            "Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.",
+          "testString":
+            "assert(code.match(/\\.fuchsia-text\\s*?{\\s*?color:\\s*?#F0F\\s*?;\\s*?}/gi), 'Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.');"
         }
       ],
       "challengeType": 0,
@@ -4089,12 +4337,16 @@
       ],
       "tests": [
         {
-          "text": "Your <code>body</code> element should have a black background.",
-          "testString": "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Your <code>body</code> element should have a black background.');"
+          "text":
+            "Your <code>body</code> element should have a black background.",
+          "testString":
+            "assert($(\"body\").css(\"background-color\") === \"rgb(0, 0, 0)\", 'Your <code>body</code> element should have a black background.');"
         },
         {
-          "text": "Use <code>rgb</code> to give your <code>body</code> element a color of black.",
-          "testString": "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element a color of black.');"
+          "text":
+            "Use <code>rgb</code> to give your <code>body</code> element a color of black.",
+          "testString":
+            "assert(code.match(/rgb\\s*\\(\\s*0\\s*,\\s*0\\s*,\\s*0\\s*\\)/ig), 'Use <code>rgb</code> to give your <code>body</code> element a color of black.');"
         }
       ],
       "challengeType": 0,
@@ -4184,36 +4436,48 @@
       ],
       "tests": [
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
-          "testString": "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.",
+          "testString":
+            "assert($('.red-text').css('color') === 'rgb(255, 0, 0)', 'Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.');"
         },
         {
           "text": "Use <code>rgb</code> for the color red.",
-          "testString": "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?255\\s*?,\\s*?0\\s*?,\\s*?0\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color red.');"
+          "testString":
+            "assert(code.match(/\\.red-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?255\\s*?,\\s*?0\\s*?,\\s*?0\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color red.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am orchid!</code> the <code>color</code> orchid.",
-          "testString": "assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)', 'Give your <code>h1</code> element with the text <code>I am orchid!</code> the <code>color</code> orchid.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am orchid!</code> the <code>color</code> orchid.",
+          "testString":
+            "assert($('.orchid-text').css('color') === 'rgb(218, 112, 214)', 'Give your <code>h1</code> element with the text <code>I am orchid!</code> the <code>color</code> orchid.');"
         },
         {
           "text": "Use <code>rgb</code> for the color orchid.",
-          "testString": "assert(code.match(/\\.orchid-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?218\\s*?,\\s*?112\\s*?,\\s*?214\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color orchid.');"
+          "testString":
+            "assert(code.match(/\\.orchid-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?218\\s*?,\\s*?112\\s*?,\\s*?214\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color orchid.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am blue!</code> the <code>color</code> blue.",
-          "testString": "assert($('.blue-text').css('color') === 'rgb(0, 0, 255)', 'Give your <code>h1</code> element with the text <code>I am blue!</code> the <code>color</code> blue.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am blue!</code> the <code>color</code> blue.",
+          "testString":
+            "assert($('.blue-text').css('color') === 'rgb(0, 0, 255)', 'Give your <code>h1</code> element with the text <code>I am blue!</code> the <code>color</code> blue.');"
         },
         {
           "text": "Use <code>rgb</code> for the color blue.",
-          "testString": "assert(code.match(/\\.blue-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?255\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color blue.');"
+          "testString":
+            "assert(code.match(/\\.blue-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?0\\s*?,\\s*?0\\s*?,\\s*?255\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color blue.');"
         },
         {
-          "text": "Give your <code>h1</code> element with the text <code>I am sienna!</code> the <code>color</code> sienna.",
-          "testString": "assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)', 'Give your <code>h1</code> element with the text <code>I am sienna!</code> the <code>color</code> sienna.');"
+          "text":
+            "Give your <code>h1</code> element with the text <code>I am sienna!</code> the <code>color</code> sienna.",
+          "testString":
+            "assert($('.sienna-text').css('color') === 'rgb(160, 82, 45)', 'Give your <code>h1</code> element with the text <code>I am sienna!</code> the <code>color</code> sienna.');"
         },
         {
           "text": "Use <code>rgb</code> for the color sienna.",
-          "testString": "assert(code.match(/\\.sienna-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?160\\s*?,\\s*?82\\s*?,\\s*?45\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color sienna.');"
+          "testString":
+            "assert(code.match(/\\.sienna-text\\s*?{\\s*?color:\\s*?rgb\\(\\s*?160\\s*?,\\s*?82\\s*?,\\s*?45\\s*?\\)\\s*?;\\s*?}/gi), 'Use <code>rgb</code> for the color sienna.');"
         }
       ],
       "challengeType": 0,
@@ -4296,16 +4560,22 @@
       ],
       "tests": [
         {
-          "text": "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
-          "testString": "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
+          "text":
+            "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
         },
         {
-          "text": "<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.",
-          "testString": "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.');"
+          "text":
+            "<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-belly</code> variable and assign it to <code>white</code>.');"
         },
         {
-          "text": "<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.",
-          "testString": "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-beak\\s*?:\\s*?orange\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.');"
+          "text":
+            "<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-beak\\s*?:\\s*?orange\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-beak</code> variable and assign it to <code>orange</code>.');"
         }
       ],
       "solutions": [
@@ -4540,8 +4810,10 @@
       ],
       "tests": [
         {
-          "text": "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
-          "testString": "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
+          "text":
+            "<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?gray\\s*?;[\\s\\S]*}/gi), '<code>penguin</code> class should declare the <code>--penguin-skin</code> variable and assign it to <code>gray</code>.');"
         }
       ],
       "solutions": ["var code = \".penguin {--penguin-skin: gray;}\""],
@@ -4771,20 +5043,28 @@
       ],
       "tests": [
         {
-          "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.",
-          "testString": "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.');"
+          "text":
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.",
+          "testString":
+            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-top</code> class.');"
         },
         {
-          "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.",
-          "testString": "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
+          "text":
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.",
+          "testString":
+            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.right-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
         },
         {
-          "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.",
-          "testString": "assert(code.match(/.right-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.left-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.');"
+          "text":
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.",
+          "testString":
+            "assert(code.match(/.right-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.left-hand\\s{/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>right-hand</code> class.');"
         },
         {
-          "text": "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.",
-          "testString": "assert(code.match(/.left-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.');"
+          "text":
+            "Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.",
+          "testString":
+            "assert(code.match(/.left-hand\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\s*?\\(\\s*?--penguin-skin\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the <code>--penguin-skin</code> variable to the <code>background</code> property of the <code>left-hand</code> class.');"
         }
       ],
       "solutions": [
@@ -5031,12 +5311,16 @@
       ],
       "tests": [
         {
-          "text": "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.",
-          "testString": "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
+          "text":
+            "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.",
+          "testString":
+            "assert(code.match(/.penguin-top\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}[\\s\\S]*.penguin-bottom\\s{/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.');"
         },
         {
-          "text": "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.",
-          "testString": "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
+          "text":
+            "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.",
+          "testString":
+            "assert(code.match(/.penguin-bottom\\s*?{[\\s\\S]*background\\s*?:\\s*?var\\(\\s*?--pengiun-skin\\s*?,\\s*?black\\s*?\\)\\s*?;[\\s\\S]*}/gi), 'Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.');"
         }
       ],
       "solutions": [
@@ -5275,8 +5559,10 @@
       ],
       "tests": [
         {
-          "text": "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.",
-          "testString": "assert(code.match(/:root\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?pink\\s*?;[\\s\\S]*}/gi), 'declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.');"
+          "text":
+            "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.",
+          "testString":
+            "assert(code.match(/:root\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?pink\\s*?;[\\s\\S]*}/gi), 'declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.');"
         }
       ],
       "solutions": ["var code = \":root {--penguin-belly: pink;}\""],
@@ -5509,8 +5795,10 @@
       ],
       "tests": [
         {
-          "text": "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.",
-          "testString": "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), 'The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.');"
+          "text":
+            "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.",
+          "testString":
+            "assert(code.match(/.penguin\\s*?{[\\s\\S]*--penguin-belly\\s*?:\\s*?white\\s*?;[\\s\\S]*}/gi), 'The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.');"
         }
       ],
       "solutions": ["var code = \".penguin {--penguin-belly: white;}\""],
@@ -5745,12 +6033,16 @@
       ],
       "tests": [
         {
-          "text": "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.",
-          "testString": "assert(code.match(/media\\s*?\\(\\s*?max-width\\s*?:\\s*?350px\\s*?\\)\\s*?{[\\s\\S]*:root\\s*?{[\\s\\S]*--penguin-size\\s*?:\\s*?200px\\s*?;[\\s\\S]*}[\\s\\S]*}/gi), '<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.');"
+          "text":
+            "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.",
+          "testString":
+            "assert(code.match(/media\\s*?\\(\\s*?max-width\\s*?:\\s*?350px\\s*?\\)\\s*?{[\\s\\S]*:root\\s*?{[\\s\\S]*--penguin-size\\s*?:\\s*?200px\\s*?;[\\s\\S]*}[\\s\\S]*}/gi), '<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.');"
         },
         {
-          "text": "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.",
-          "testString": "assert(code.match(/media\\s*?\\(\\s*?max-width\\s*?:\\s*?350px\\s*?\\)\\s*?{[\\s\\S]*:root\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?black\\s*?;[\\s\\S]*}[\\s\\S]*}/gi), '<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.');"
+          "text":
+            "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.",
+          "testString":
+            "assert(code.match(/media\\s*?\\(\\s*?max-width\\s*?:\\s*?350px\\s*?\\)\\s*?{[\\s\\S]*:root\\s*?{[\\s\\S]*--penguin-skin\\s*?:\\s*?black\\s*?;[\\s\\S]*}[\\s\\S]*}/gi), '<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.');"
         }
       ],
       "solutions": [
