@@ -48,6 +48,10 @@ const styles = `
     padding-top: 5px;
   }
 
+  .show-article a {
+    text-decoration: underline;
+  }
+
   .feature-image-wrapper {
     padding-top: 32px;
   }
@@ -194,6 +198,7 @@ class ShowArticle extends Component {
             ) : null}
           </figure>
         </div>
+        <Spacer />
         <div dangerouslySetInnerHTML={{ __html: renderableContent }} />
         <div className='youtube-wrapper'>
           {youtubeId ? (
