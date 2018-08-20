@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.10.1
+version: v1.12.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -11,8 +11,6 @@ patch:
   'npm:minimatch:20160620':
     - gulp > vinyl-fs > glob-stream > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
-      jsonlint-cli > minimatch:
-        patched: '2018-06-30T14:27:04.475Z'
     - gulp > vinyl-fs > glob-stream > glob > minimatch:
         patched: '2016-07-09T00:55:04.882Z'
     - rev-del > mocha > glob > minimatch:
@@ -73,6 +71,26 @@ patch:
         patched: '2016-09-20T18:38:48.774Z'
     - jsonlint-cli > minimatch:
         patched: '2016-10-27T21:56:34.219Z'
+    - jsonlint-cli > minimatch:
+        patched: '2018-06-30T14:27:04.475Z'
+    - gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-stream > glob > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
+    - gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
+    - gulp-nodemon > gulp > vinyl-fs > glob-watcher > gaze > globule > glob > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
+    - jsonlint-cli > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
+    - rev-del > mocha > glob > minimatch:
+        patched: '2018-08-20T07:30:07.210Z'
   'npm:uglify-js:20151024':
     - jade > transformers > uglify-js:
         patched: '2018-06-30T14:27:04.475Z'
@@ -80,12 +98,41 @@ patch:
         patched: '2016-09-20T18:38:48.774Z'
     - jade > transformers > uglify-js:
         patched: '2018-01-18T00:49:18.512Z'
+    - jade > transformers > uglify-js:
+        patched: '2018-08-20T07:30:07.210Z'
   'npm:uglify-js:20150824':
     - jade > transformers > uglify-js:
         patched: '2018-06-30T14:27:04.475Z'
   'npm:ms:20170412':
     - compression > debug > ms:
         patched: '2017-05-25T00:47:03.990Z'
+    - rev-del > mocha > debug > ms:
+        patched: '2018-08-20T07:30:07.210Z'
   'npm:tunnel-agent:20170305':
     - jsonlint-cli > omni-fetch > caw > tunnel-agent:
         patched: '2018-06-30T14:27:04.475Z'
+    - istanbul-coveralls > coveralls > request > tunnel-agent:
+        patched: '2018-08-20T07:30:07.210Z'
+    - jsonlint-cli > omni-fetch > caw > tunnel-agent:
+        patched: '2018-08-20T07:30:07.210Z'
+  'npm:debug:20170905':
+    - browser-sync > localtunnel > debug:
+        patched: '2018-08-20T07:30:07.210Z'
+    - rev-del > mocha > debug:
+        patched: '2018-08-20T07:30:07.210Z'
+  'npm:hoek:20180212':
+    - istanbul-coveralls > coveralls > request > hawk > boom > hoek:
+        patched: '2018-08-20T07:30:07.210Z'
+    - istanbul-coveralls > coveralls > request > hawk > sntp > hoek:
+        patched: '2018-08-20T07:30:07.210Z'
+    - istanbul-coveralls > coveralls > request > hawk > cryptiles > boom > hoek:
+        patched: '2018-08-20T07:30:07.210Z'
+    - istanbul-coveralls > coveralls > request > hawk > hoek:
+        patched: '2018-08-20T07:30:07.210Z'
+  'npm:lodash:20180130':
+    - babel-istanbul > multi-glob > lodash:
+        patched: '2018-08-20T07:30:07.210Z'
+    - browser-sync > easy-extender > lodash:
+        patched: '2018-08-20T07:30:07.210Z'
+    - rev-del > lodash:
+        patched: '2018-08-20T07:30:07.210Z'
