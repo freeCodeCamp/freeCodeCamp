@@ -36,7 +36,8 @@
     "test-js-common": "tape -r babel-register \"common/**/*.test.js\" | tap-spec",
     "test-js-server": "tape -r babel-register \"server/**/*.test.js\" | tap-spec",
     "unpack": "babel-node seed/unpack.js",
-    "repack": "babel-node seed/repack.js"
+    "repack": "babel-node seed/repack.js",
+    "prepare": "npm run snyk-protect"
   },
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "dependencies": {
@@ -142,7 +143,7 @@
     "rx-dom": "^7.0.3",
     "sanitize-html": "^1.11.1",
     "shortid": "^2.2.12",
-    "snyk": "^1.69.1",
+    "snyk": "^1.92.3",
     "stripe": "^6.1.0",
     "uuid": "^3.0.1",
     "validator": "^9.4.1"
@@ -178,7 +179,7 @@
     "eslint-plugin-import": "^2.9.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.1",
-    "gulp-less": "^3.0.3",
+    "gulp-less": "^4.0.0",
     "gulp-nodemon": "^2.0.3",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.0.1",
@@ -192,8 +193,8 @@
     "joi-objectid": "^2.0.0",
     "jsdom": "^11.5.1",
     "json-loader": "~0.5.2",
-    "less": "^2.5.1",
-    "loopback-component-explorer": "^2.1.1",
+    "less": "^3.0.2",
+    "loopback-component-explorer": "^4.3.1",
     "pm2": "^3.0.3",
     "proxyquire": "^1.7.10",
     "react-hot-loader": "^1.3.0",
@@ -204,7 +205,7 @@
     "sort-keys": "^1.1.1",
     "style-loader": "^0.21.0",
     "tap-difflet": "^0.7.0",
-    "tap-spec": "^4.1.1",
+    "tap-spec": "^5.0.0",
     "tape": "^4.2.2",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "validate-commit-msg": "^2.12.2",
