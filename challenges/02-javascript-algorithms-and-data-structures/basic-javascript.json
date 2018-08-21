@@ -5067,6 +5067,12 @@
             "assert(code.match(/if/g).length > 1, 'You should have at least two <code>if</code> statements');"
         },
         {
+          "text":
+            "You should have closing and opening curly braces for each condition",
+          "testString":
+            "assert(code.match(/if\\s*\\((.+)\\)\\s*\\{[\\s\\S]+\\}\\s*else if\\s*\\((.+)\\)\\s*\\{[\\s\\S]+\\}\\s*else\\s*\\{[\\s\\S]+\\s*\\}/), 'You should have closing and opening curly braces for each condition in your if else statement');"
+        },
+        {
           "text": "<code>testElseIf(0)</code> should return \"Smaller than 5\"",
           "testString":
             "assert(testElseIf(0) === \"Smaller than 5\", '<code>testElseIf(0)</code> should return \"Smaller than 5\"');"
