@@ -11,7 +11,9 @@ block content
       #accept-privacy-terms
         .row
           .text-center
-              h3 Please review our privacy policy and the terms of service.
+              br
+              br
+              h3 Please review our updated privacy policy and the terms of service.
               br
         .row
           .col-sm-6.col-sm-offset-3
@@ -22,7 +24,7 @@ block content
                   input(id='terms', name='privacy', type='checkbox')
                   span.cr
                     i.cr-icon.fa.fa-check
-                  |  I accept the 
+                  |  I accept the &nbsp;
                   a(href='https://www.freecodecamp.org/terms' target='_blank') terms of service
                   |  (required).
               .checkbox
@@ -30,7 +32,7 @@ block content
                   input(id='privacy', name='privacy', type='checkbox')
                   span.cr
                     i.cr-icon.fa.fa-check
-                  |  I accept the 
+                  |  I accept the &nbsp;
                   a(href='https://www.freecodecamp.org/privacy' target='_blank') privacy policy
                   |  (required).
               .checkbox
@@ -38,7 +40,7 @@ block content
                   input(id='quincyemails', name='quincyemails', type='checkbox')
                   span.cr
                     i.cr-icon.fa.fa-check
-                  |  I want weekly emails from Quincy (freeCodeCamp.org's founder)
+                  |  I want weekly emails from Quincy (freeCodeCamp.org's founder).
               .button-spacer
               button.btn.btn-primary.btn-lg.btn-block(id='submit-button', type='submit')
       .row
@@ -46,10 +48,10 @@ block content
           a.btn.btn-primary.btn-lg.btn-block(id='continue-button', href='/', style='display: none;')
             | Continue to freeCodeCamp
 
-    include ../homePartials/scripts              
+    include ../homePartials/scripts
     script.
       $(document).ready(function() {
-      
+
         var checkedBoxCount = 0;
         function disableContinueButtonForAgreement(isLaunched) {
            if (isLaunched) {
@@ -57,7 +59,7 @@ block content
                '<span style="color:#E0E0E0;">Submit<\/span>');
              return;
            }
-           
+
            if (!isLaunched && checkedBoxCount === 2){
              $('#submit-button').prop('disabled', false).html(
                '<span>Submit<\/span>');
@@ -84,7 +86,7 @@ block content
             disableContinueButtonForAgreement(true);
           }
         });
-        
+
         $('form').submit(function(event){
           event.preventDefault();
           $('#flash-board').hide();
@@ -115,8 +117,8 @@ block content
                   .removeClass('alert-info')
                   .addClass('alert-success')
                   .fadeIn();
-              
-              $('#accept-privacy-terms').hide();  
+
+              $('#accept-privacy-terms').hide();
               $('#continue-button').show();
             }
           });
