@@ -414,24 +414,24 @@
         "<blockquote>FBPosts.filter((post) => post.thumbnail !== null && post.shares > 100 && post.likes > 500)</blockquote>",
         "This code is more succinct and accomplishes the same task with fewer lines of code.",
         "<hr>",
-        "Use arrow function syntax to compute the square of only the positive integers (fractions are not integers) in the array <code>realNumberArray</code> and store the new array in the variable <code>squaredIntegers</code>."
+        "Use arrow function syntax to compute the square of only the positive integers (decimal numbers are not integers) in the array <code>realNumberArray</code> and store the new array in the variable <code>squaredIntegers</code>."
       ],
       "tests": [
         {
-          "text": "User did replace <code>var</code> keyword.",
-          "testString": "getUserInput => assert(!getUserInput('index').match(/var/g), 'User did replace <code>var</code> keyword.');"
-        },
-        {
-          "text": "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).",
-          "testString": "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), '<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');"
+          "text":
+            "<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).",
+          "testString":
+            "getUserInput => assert(getUserInput('index').match(/const\\s+squaredIntegers/g), '<code>squaredIntegers</code> should be a constant variable (by using <code>const</code>).');"
         },
         {
           "text": "<code>squaredIntegers</code> should be an <code>array</code>",
           "testString": "assert(Array.isArray(squaredIntegers), '<code>squaredIntegers</code> should be an <code>array</code>');"
         },
         {
-          "text": "<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>",
-          "testString": "assert(squaredIntegers[0] === 16 && squaredIntegers[1] === 1764 && squaredIntegers[2] === 36, '<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');"
+          "text":
+            "<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>",
+          "testString":
+            "assert.deepStrictEqual(squaredIntegers, [16, 1764, 36], '<code>squaredIntegers</code> should be <code>[16, 1764, 36]</code>');"
         },
         {
           "text": "<code>function</code> keyword was not used.",
@@ -455,7 +455,7 @@
           "ext": "js",
           "name": "index",
           "contents": [
-            "const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34];",
+            "const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];",
             "const squareList = (arr) => {",
             "  \"use strict\";",
             "  // change code below this line",
