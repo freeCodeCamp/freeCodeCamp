@@ -5300,14 +5300,14 @@
       "id": "5a9d7286424fe3d0e10cad13",
       "title": "Attach a Fallback value to a CSS Variable",
       "description": [
-        "When using your variable as a CSS property value, you can attach a fallback value that your page will revert to if for some reason it can't get your variable to work.",
-        "It could be that someone is using an older browser that hasn't yet adopted CSS Variables, or perhaps their device doesn't support the value you gave the variable. Here's how you do it:",
+        "When using your variable as a CSS property value, you can attach a fallback value that your browser will revert to if the given variable is invalid.",
+        "<strong>Note:</strong> This fallback is not used to increase browser compatibilty, and it will not work on IE browsers. Rather, it is used so that the browser has a color to display if it cannot find your variable.",
+        "Here's how you do it:",
         "<blockquote>background: var(--penguin-skin, black);</blockquote>",
-        "This will set background to black if there is a problem with your variable.",
+        "This will set background to black if your variable wasn't set.",
         "Note that this can be useful for debugging.",
         "<hr>",
-        "Add a fallback value of <code>black</code> to the <code>background</code> property of <code>penguin-top</code> and <code>penguin-bottom</code> classes.",
-        "<strong>Note</strong>: The above style will be applied because of a typo in the CSS variable name."
+        "It looks there is a problem with the variables supplied to the <code>.penguin-top</code> and <code>.penguin-bottom</code> classes. Rather than fix the typo, add a fallback value of <code>black</code> to the <code>background</code> property of the <code>.penguin-top</code> and <code>.penguin-bottom</code> classes."
       ],
       "tests": [
         {
