@@ -51,7 +51,6 @@ block content
     include ../homePartials/scripts
     script.
       $(document).ready(function() {
-
         var checkedBoxCount = 0;
         function disableContinueButtonForAgreement(isLaunched) {
            if (isLaunched) {
@@ -66,7 +65,6 @@ block content
            }
         }
         disableContinueButtonForAgreement(true);
-
         $('#terms').click(function() {
           if (this.checked) {
             checkedBoxCount++;
@@ -76,7 +74,6 @@ block content
             disableContinueButtonForAgreement(true);
           }
         });
-
         $('#privacy').click(function() {
           if (this.checked) {
             checkedBoxCount++;
@@ -86,7 +83,6 @@ block content
             disableContinueButtonForAgreement(true);
           }
         });
-
         $('form').submit(function(event){
           event.preventDefault();
           $('#flash-board').hide();
@@ -117,7 +113,6 @@ block content
                   .removeClass('alert-info')
                   .addClass('alert-success')
                   .fadeIn();
-
               $('#accept-privacy-terms').hide();
               $('#continue-button').show();
             }
