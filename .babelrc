@@ -1,17 +1,11 @@
 {
-  "presets": ["env", "react", "stage-0"],
-  "plugins": [
-    "transform-runtime",
-    "babel-plugin-add-module-exports",
-    "lodash",
-    [
-      "transform-imports",
-      {
-        "react-bootstrap": {
-          "transform": "react-bootstrap/lib/${member}",
-          "preventFullImport": true
-        }
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "node": "8.11"
       }
-    ]
-  ]
+    }],
+    "@babel/preset-react"
+  ],
+  "plugins": ["transform-function-bind", "@babel/plugin-proposal-class-properties"]
 }
