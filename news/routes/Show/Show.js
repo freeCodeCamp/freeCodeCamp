@@ -177,10 +177,26 @@ class ShowArticle extends Component {
       return <h2>Oh noes!! Something went wrong!</h2>;
     }
 
+    // RegEx finds the first paragraph and groups the content
+    const description = renderableContent.match(/<p>(.*?)<\/p>/)[1];
+    const slug = this.props.location.pathname;
     return (
       <article className='show-article'>
         <Helmet>
           <style>{styles}</style>
+          <title>{`${title} | freeCodeCamp News`}</title>
+          <link
+            href={`https://www.freecodecamp.org/news${slug}`}
+            rel='canonical'
+          />
+          <meta
+            content={`https://www.freecodecamp.org/news${slug}`}
+            property='og:url'
+          />
+          <meta content={title} property='og:title' />
+          <meta content={description} property='og:description' />
+          <meta content={description} name='description' />
+          <meta content={featureImage.src} property='og:image' />
         </Helmet>
         <Author article={currentArticle} />
         <h2>{title}</h2>
