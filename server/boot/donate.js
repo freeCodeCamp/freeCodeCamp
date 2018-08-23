@@ -15,10 +15,10 @@ export default function donateBoot(app, done) {
         interval: 'month',
         product: {
           name:
-            'Monthly Donation to freeCodeCamp.org - ' +
+            'Monthly Subscription to Spiraladder.com - ' +
             `Thank you ($${current / 100})`
           },
-          currency: 'usd',
+          currency: 'brl',
           id: `monthly-donation-${current}`
       }
     }), {}
