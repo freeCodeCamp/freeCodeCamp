@@ -1,0 +1,254 @@
+[
+{
+  "name": "Hack Reactor",
+  "cost": "17780",
+  "housing": "500",
+  "weeks": "12",
+  "finance": true,
+  "cities": [
+    "new-york-city",
+    "san-francisco"
+  ]
+}, {
+  "name": "Hack Reactor Online",
+  "cost": "17780",
+  "housing": "0",
+  "weeks": "12",
+  "finance": true,
+  "cities": [
+    "online"
+  ]
+}, {
+  "name": "Hackbright Academy",
+  "cost": "15000",
+  "housing": "500",
+  "weeks": "10",
+  "finance": true,
+  "cities": [
+    "san-francisco"
+  ]
+}, {
+  "name": "Dev Bootcamp",
+  "cost": "13950",
+  "finance": true,
+  "housing": "500",
+  "weeks": "19",
+  "cities": [
+    "new-york-city",
+    "san-francisco",
+    "chicago"
+  ]
+}, {
+  "name": "General Asssembly",
+  "cost": "11500",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "washington-dc",
+    "austin",
+    "boston",
+    "chicago",
+    "hong-kong",
+    "london",
+    "los-angeles",
+    "melbourne",
+    "new-york-city",
+    "san-francisco",
+    "seattle",
+    "singapore"
+  ]
+}, {
+  "name": "Angel Hack",
+  "cost": "14250",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "san-francisco"
+  ]
+}, {
+  "name": "Bitmaker Labs",
+  "cost": "12000",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "toronto"
+  ]
+}, {
+  "name": "CoderVox",
+  "cost": "9980",
+  "housing": "400",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "austin"
+  ]
+}, {
+  "name": "Coding Dojo",
+  "cost": "12500",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "new-york-city",
+    "san-francisco",
+    "chicago"
+  ]
+}, {
+  "name": "DevMountain",
+  "cost": "8900",
+  "housing": "0",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "provo",
+    "salt-lake-city",
+    "dallas"
+  ]
+}, {
+  "name": "Epicodus",
+  "cost": "4500",
+  "housing": "400",
+  "finance": false,
+  "weeks": "15",
+  "cities": [
+    "portland"
+  ]
+}, {
+  "name": "Flat Iron School",
+  "cost": "15000",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "new-york-city"
+  ]
+}, {
+  "name": "Galvanize",
+  "cost": "21000",
+  "housing": "500",
+  "finance": true,
+  "weeks": "24",
+  "cities": [
+    "boulder",
+    "denver",
+    "seattle",
+    "san-francisco"
+  ]
+}, {
+  "name": "The Iron Yard",
+  "cost": "12000",
+  "housing": "500",
+  "finance": true,
+  "weeks": "19",
+  "cities": [
+    "austin",
+    "washington-dc",
+    "raleigh-durham",
+    "atlanta"
+  ]
+}, {
+  "name": "Launch Academy",
+  "cost": "12500",
+  "housing": "500",
+  "finance": true,
+  "weeks": "10",
+  "cities": [
+    "boston"
+  ]
+}, {
+  "name": "Maker Square",
+  "cost": "16920",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "los-angeles",
+    "san-francisco",
+    "austin"
+  ]
+}, {
+  "name": "Refactor U",
+  "cost": "13500",
+  "housing": "400",
+  "finance": true,
+  "weeks": "10",
+  "cities": [
+    "boulder"
+  ]
+}, {
+  "name": "Rocket U",
+  "cost": "12500",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "new-york-city",
+    "san-francisco",
+    "chicago"
+  ]
+}, {
+  "name": "Sabio",
+  "cost": "13450",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "los-angeles"
+  ]
+}, {
+  "name": "Shillington School",
+  "cost": "12950",
+  "housing": "500",
+  "finance": true,
+  "weeks": "12",
+  "cities": [
+    "new-york-city",
+    "sydney",
+    "brisbane",
+    "london",
+    "manchester",
+    "melbourne"
+  ]
+}, {
+  "name": "The Tech Academy",
+  "cost": "9000",
+  "housing": "400",
+  "finance": true,
+  "weeks": "20",
+  "cities": [
+    "portland"
+  ]
+},
+  {
+    "name": "Viking Code School",
+    "cost": "18000",
+    "housing": "0",
+    "finance": false,
+    "weeks": "16",
+    "cities": [
+      "online"
+    ]
+  },
+  {
+    "name": "App Academy",
+    "cost": "18000",
+    "housing": "500",
+    "finance": false,
+    "weeks": "12",
+    "cities": [
+      "san-francisco"
+    ]
+  },
+  {
+  "name": "Turing School",
+  "cost": "17500",
+  "housing": "400",
+  "finance": true,
+  "weeks": "27",
+  "cities": [
+    "denver"
+  ]
+}]

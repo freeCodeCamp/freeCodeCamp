@@ -89,7 +89,7 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
   });
 };
 
-export default function setupPassport(app) {
+export function setupPassport(app) {
   const configurator = new PassportConfigurator(app);
 
   configurator.setupModels({
