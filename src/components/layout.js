@@ -2,14 +2,19 @@ import React, { Fragment, Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { createSelector } from 'reselect';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { fetchUser } from '../redux';
+import { fetchUser, isSignedInSelector } from '../redux';
 import Header from './Header';
-import './layout.css';
 
-const mapStateToProps = () => ({});
+import './layout.css';
+import './global.css';
+
+const mapStateToProps = createSelector(isSignedInSelector, isSignedIn => ({
+  isSignedIn
+}));
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ fetchUser }, dispatch);
 
@@ -19,7 +24,9 @@ class Layout extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchUser();
+    if (!this.props.isSignedIn) {
+      this.props.fetchUser();
+    }
   }
 
   render() {
@@ -56,7 +63,8 @@ class Layout extends Component {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   disableSettings: PropTypes.bool,
-  fetchUser: PropTypes.func.isRequired
+  fetchUser: PropTypes.func.isRequired,
+  isSignedIn: PropTypes.bool
 };
 
 export default connect(

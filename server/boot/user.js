@@ -15,7 +15,7 @@ import {
   ifNotVerifiedRedirectToUpdateEmail
 } from '../utils/middleware';
 
-const debug = debugFactory('fcc:boot:user');
+const log = debugFactory('fcc:boot:user');
 const sendNonUserToHome = ifNoUserRedirectTo('/');
 const sendNonUserToHomeWithMessage = curry(ifNoUserRedirectTo, 2)('/');
 
@@ -49,6 +49,7 @@ module.exports = function bootUser(app) {
 
 function readSessionUser(req, res, next) {
   const queryUser = req.user;
+
   const source =
     queryUser &&
     Observable.forkJoin(
@@ -146,7 +147,7 @@ function getUnlinkSocial(req, res, next) {
       const updateData = { [social]: null };
 
       return user.update$(updateData).subscribe(() => {
-        debug(`${social} has been unlinked successfully`);
+        log(`${social} has been unlinked successfully`);
 
         req.flash('info', `You've successfully unlinked your ${social}.`);
         return res.redirect('/' + username);

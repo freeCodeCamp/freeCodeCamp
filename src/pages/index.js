@@ -29,7 +29,7 @@ const IndexPage = () => (
   <Layout disableSettings={true}>
     <Grid className='text-center'>
       <Row>
-        <h1 className='landing-heading'>Learn to code for free.</h1>
+        <h1 className='big-heading'>Learn to code for free.</h1>
         <Spacer />
         <Col md={4} sm={12}>
           <Image
