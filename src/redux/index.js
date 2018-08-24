@@ -2,6 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes, createAsyncTypes } from '../utils/createTypes';
 import { createFetchUserSaga } from './fetch-user-saga';
+import { createAcceptTermsSaga } from './accept-terms-saga';
 
 const ns = 'app';
 
@@ -16,13 +17,23 @@ const initialState = {
   user: {}
 };
 
-const types = createTypes([...createAsyncTypes('fetchUser')], ns);
+const types = createTypes(
+  [...createAsyncTypes('fetchUser'), ...createAsyncTypes('acceptTerms')],
+  ns
+);
 
-export const sagas = [...createFetchUserSaga(types)];
+export const sagas = [
+  ...createFetchUserSaga(types),
+  ...createAcceptTermsSaga(types)
+];
 
 export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(types.fetchUserComplete);
 export const fetchUserError = createAction(types.fetchUserError);
+
+export const acceptTerms = createAction(types.acceptTerms);
+export const acceptTermsComplete = createAction(types.acceptTermsComplete);
+export const acceptTermsError = createAction(types.acceptTermsError);
 
 export const isSignedInSelector = state => !!Object.keys(state[ns].user).length;
 export const userFetchStateSelector = state => state[ns].fetchState;

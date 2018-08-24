@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { navigateTo } from 'gatsby';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -19,6 +20,7 @@ const propTypes = {
     errored: PropTypes.bool
   }),
   user: PropTypes.shape({
+    acceptedPrivacyTerms: PropTypes.bool,
     username: PropTypes.string,
     completedChallengeCount: PropTypes.number,
     completedProjectCount: PropTypes.number,
@@ -37,11 +39,12 @@ const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 function Welcome({
   fetchState: { pending, complete },
   user: {
-    name,
-    completedChallengeCount,
-    completedProjectCount,
-    completedCertCount,
-    completedLegacyCertCount
+    acceptedPrivacyTerms,
+    name = '',
+    completedChallengeCount = 0,
+    completedProjectCount = 0,
+    completedCertCount = 0,
+    completedLegacyCertCount = 0
   }
 }) {
   if (pending && !complete) {
@@ -50,6 +53,11 @@ function Welcome({
         <Loader />
       </Layout>
     );
+  }
+
+  if (!acceptedPrivacyTerms) {
+    navigateTo('/accept-privacy-terms');
+    return null;
   }
 
   const { quote, author } = randomQuote();

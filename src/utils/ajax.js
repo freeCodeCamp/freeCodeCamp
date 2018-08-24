@@ -20,3 +20,7 @@ function sniff(things) {
 export function getSessionUser() {
   return get('/user/get-session-user').then(sniff);
 }
+
+export function putUserAcceptsTerms(quincyEmails) {
+  return put('/update-privacy-terms', {quincyEmails})
+}
