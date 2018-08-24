@@ -10,7 +10,8 @@ import Header from './Header';
 import './layout.css';
 
 const mapStateToProps = () => ({});
-const mapDispatchToProps = dispatch => bindActionCreators({fetchUser}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ fetchUser }, dispatch);
 
 class Layout extends Component {
   constructor(props) {
@@ -42,21 +43,9 @@ class Layout extends Component {
                 { name: 'keywords', content: 'sample, something' }
               ]}
               title={data.site.siteMetadata.title}
-              >
-              <html lang='en' />
-              <link href='https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' />
-            </Helmet>
-            <Header disableSettings={true} siteTitle={data.site.siteMetadata.title} />
-            <div
-              style={{
-                margin: '38px auto 0',
-                maxWidth: 960,
-                padding: '0px 1.0875rem 1.45rem',
-                paddingTop: 0
-              }}
-              >
-              {children}
-            </div>
+            />
+            <Header disableSettings={disableSettings} />
+            <div style={{ marginTop: '38px' }}>{children}</div>
           </Fragment>
         )}
       />
@@ -65,7 +54,12 @@ class Layout extends Component {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  disableSettings: PropTypes.bool,
+  fetchUser: PropTypes.func.isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Layout);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Layout);

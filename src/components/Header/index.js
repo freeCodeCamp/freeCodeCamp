@@ -15,7 +15,7 @@ function Header({ disableSettings }) {
         <a className='home-link' href='https://www.freecodecamp.org'>
           <NavLogo />
         </a>
-        <FCCSearch />
+        {disableSettings ? null : <FCCSearch />}
         <ul id='top-right-nav'>
           <li>
             <Link to='/'>Curriculum</Link>

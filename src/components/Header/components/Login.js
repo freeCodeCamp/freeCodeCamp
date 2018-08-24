@@ -1,19 +1,26 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 
-function Login() {
+import './login.css';
+
+function Login({ children, ...restProps }) {
   return (
     <Button
+      {...restProps}
       bsStyle='default'
-      className='btn-cta'
-      href='https://www.freecodecamp.org/signin'
+      className={(restProps.block ? 'btn-cta-big' : '') + ' signup-btn btn-cta'}
+      href='/signin'
       target='_blank'
       >
-      Sign In
+      {children || 'Sign In'}
     </Button>
   );
 }
 
 Login.displayName = 'Login';
+Login.propTypes = {
+  children: PropTypes.any
+};
 
 export default Login;
