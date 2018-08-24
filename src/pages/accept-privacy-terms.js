@@ -15,7 +15,7 @@ import Helmet from 'react-helmet';
 
 import Layout from '../components/layout';
 import { ButtonSpacer, Spacer } from '../components/helpers';
-import { acceptTerms, isSignedInSelector, userSelector } from '../redux';
+import { acceptTerms, userSelector } from '../redux';
 import { createSelector } from 'reselect';
 import { navigateTo } from 'gatsby';
 
@@ -26,10 +26,8 @@ const propTypes = {
 };
 
 const mapStateToProps = createSelector(
-  isSignedInSelector,
   userSelector,
-  (isSignedIn, { acceptedPrivacyTerms }) => ({
-    isSignedIn,
+  ({ acceptedPrivacyTerms }) => ({
     acceptedPrivacyTerms
   })
 );
@@ -66,9 +64,9 @@ class AcceptPrivacyTerms extends Component {
   }
 
   render() {
-    const { isSignedIn, acceptedPrivacyTerms } = this.props;
-    if (!isSignedIn || acceptedPrivacyTerms) {
-      navigateTo(isSignedIn ? '/welcome' : '/');
+    const { acceptedPrivacyTerms } = this.props;
+    if (acceptedPrivacyTerms) {
+      navigateTo('/welcome');
       return null;
     }
     const { privacyPolicy, termsOfService, quincyEmail } = this.state;
