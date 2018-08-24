@@ -309,11 +309,18 @@ mongod
 # This command should only be run once.
 npm run only-once
 
-# Start the application
+# Start the application without a backend server
 npm run develop
+
+# If you require the backend server to be operational (persisted user interations/api calls)
+# Use this command instead
+# Note: This command requires that you have a correctly seeded mongodb instance running
+# Note: If you are runnoing the backend server inside a docker container, use the command above
+npm run develop-server
+
 ```
 
-Now navigate to your browser and open <http://localhost:3000>. If the app loads, congratulations – you're all set.
+Now navigate to your browser and open <http://localhost:8000>. If the app loads, congratulations – you're all set.
 
 Otherwise, let us know by asking in the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter. There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
 
@@ -364,7 +371,7 @@ docker-compose -f docker-compose.yml -f docker-compose-shared.yml up
 To create a new user, you will need to perform the following steps:
 
 - run MailHog if you haven't set up yet check [set-up-mailhog](#set-up-mailhog)
-- run `npm run develop` and navigated to [http://localhost:3000](http://localhost:3000/)
+- run `npm run develop` and navigated to [http://localhost:8000](http://localhost:8000/)
 - Click over the Sign-Up link situated on the right corner of the navigation bar.
 - Write your email over the input and press the button "get a sign in link" this will send an email with the login URL into MailHog.
 - The last step is to check your inbox in MailHog for a new email from "team@freecodecamp.org" click over the URL inside of it you will be redirected and logged in into the app.
