@@ -8,6 +8,6 @@ const spawnOpts = {
 };
 
 // spawns loopback
-spawn('babel-node', ['./server/server.js'], spawnOpts);
+spawn('DEBUG=fcc* babel-node', ['./server/server.js'], spawnOpts);
 // spawns gatsby in development mode
 spawn('npm', ['run', 'develop'], spawnOpts);

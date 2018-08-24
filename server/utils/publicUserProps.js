@@ -46,7 +46,11 @@ export const userPropsForSession = [
   'emailVerified',
   'id',
   'sendQuincyEmail',
-  'theme'
+  'theme',
+  'completedChallengeCount',
+  'completedProjectCount',
+  'completedCertCount',
+  'completedLegacyCertCount'
 ];
 
 export function normaliseUserFields(user) {
