@@ -17,7 +17,6 @@ import './global.css';
 const propTypes = {
   children: PropTypes.node.isRequired,
   disableSettings: PropTypes.bool,
-  fetchUser: PropTypes.func.isRequired,
   flashMessages: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
