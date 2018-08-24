@@ -2575,7 +2575,7 @@
           "text":
             "The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>&apos;s state.",
           "testString":
-            "async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ activeUsers: 1237 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const second = () => { mockedComponent.setState({ activeUsers: 1000 }); return waitForIt(() => mockedComponent.find('h1').text()); }; const firstValue = await first(); const secondValue = await second(); assert(new RegExp('1237').test(firstValue) && new RegExp('1000').test(secondValue), 'The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>&apos;s state.'); }; "
+            "async () => { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ activeUsers: 1237 }); return mockedComponent.find('h1').text(); }; const second = () => { mockedComponent.setState({ activeUsers: 1000 }); return mockedComponent.find('h1').text(); }; assert(new RegExp('1237').test(first()) && new RegExp('1000').test(second()), 'The <code>h1</code> tag should render the <code>activeUsers</code> value from <code>MyComponent</code>&apos;s state.'); }; "
         }
       ],
       "solutions": [
