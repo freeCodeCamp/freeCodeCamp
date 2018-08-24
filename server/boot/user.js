@@ -49,6 +49,7 @@ module.exports = function bootUser(app) {
 
 function readSessionUser(req, res, next) {
   const queryUser = req.user;
+
   const source =
     queryUser &&
     Observable.forkJoin(
