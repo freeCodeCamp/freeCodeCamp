@@ -1,16 +1,14 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
+import { navigateTo } from 'gatsby';
 
 import { acceptTermsComplete, acceptTermsError } from './';
-
-import { putUserAcceptsTerms } from '../utils/ajax';
 import { createFlashMessage } from '../components/Flash/redux';
 
+import { putUserAcceptsTerms } from '../utils/ajax';
+
 function* acceptTermsSaga({ payload: quincyEmails }) {
-  console.log('hello?');
   try {
-    const {
-      data: response
-    } = yield call(putUserAcceptsTerms, quincyEmails);
+    const { data: response } = yield call(putUserAcceptsTerms, quincyEmails);
 
     yield put(acceptTermsComplete());
     yield put(createFlashMessage(response));
@@ -19,6 +17,13 @@ function* acceptTermsSaga({ payload: quincyEmails }) {
   }
 }
 
+function* acceptCompleteSaga() {
+  yield call(navigateTo, '/welcome');
+}
+
 export function createAcceptTermsSaga(types) {
-  return [takeEvery(types.acceptTerms, acceptTermsSaga)];
+  return [
+    takeEvery(types.acceptTerms, acceptTermsSaga),
+    takeEvery(types.acceptTermsComplete, acceptCompleteSaga)
+  ];
 }
