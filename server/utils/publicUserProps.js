@@ -50,7 +50,8 @@ export const userPropsForSession = [
   'completedChallengeCount',
   'completedProjectCount',
   'completedCertCount',
-  'completedLegacyCertCount'
+  'completedLegacyCertCount',
+  'acceptedPrivacyTerms'
 ];
 
 export function normaliseUserFields(user) {
