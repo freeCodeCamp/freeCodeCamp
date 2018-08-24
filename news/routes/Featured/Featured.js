@@ -152,6 +152,7 @@ class Featured extends Component {
       <div>
         <Helmet>
           <style>{styles}</style>
+          <title>Featured | freeCodeCamp News</title>
         </Helmet>
         <ul className='featured-list'>{this.renderFeatured(featuredList)}</ul>
       </div>
