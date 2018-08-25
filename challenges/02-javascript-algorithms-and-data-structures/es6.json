@@ -303,7 +303,7 @@
         "ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use <strong>arrow function syntax</strong>:",
         "<blockquote>const myFunc = () => {<br>&nbsp;&nbsp;const myVar = \"value\";<br>&nbsp;&nbsp;return myVar;<br>}</blockquote>",
         "When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword <code>return</code> as well as the brackets surrounding the code. This helps simplify smaller functions into one-line statements:",
-        "<blockquote>const myFunc= () => \"value\"</blockquote>",
+        "<blockquote>const myFunc = () => \"value\"</blockquote>",
         "This code will still return <code>value</code> by default.",
         "<hr>",
         "Rewrite the function assigned to the variable <code>magic</code> which returns a new <code>Date()</code> to use arrow function syntax. Also make sure nothing is defined using the keyword <code>var</code>."
