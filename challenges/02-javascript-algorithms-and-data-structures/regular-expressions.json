@@ -830,27 +830,27 @@
       "tests": [
         {
           "text":
-            "Your regex should match <em>one</em> criminal (\"<code>C</code>\") in <code>\"C\"</code>",
+            "Your regex should match <code>one</code> criminal (\"<code>C</code>\") in <code>\"C\"</code>",
           "testString":
-            "assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C', 'Your regex should match <em>one</em> criminal (\"<code>C</code>\") in <code>\"C\"</code>');"
+            "assert('C'.match(reCriminals) && 'C'.match(reCriminals)[0] == 'C', 'Your regex should match <code>one</code> criminal (\"<code>C</code>\") in <code>\"C\"</code>');"
         },
         {
           "text":
-            "Your regex should match <em>two</em> criminals (\"<code>CC</code>\") in <code>\"CC\"</code>",
+            "Your regex should match <code>two</code> criminals (\"<code>CC</code>\") in <code>\"CC\"</code>",
           "testString":
-            "assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC', 'Your regex should match <em>two</em> criminals (\"<code>CC</code>\") in <code>\"CC\"</code>');"
+            "assert('CC'.match(reCriminals) && 'CC'.match(reCriminals)[0] == 'CC', 'Your regex should match <code>two</code> criminals (\"<code>CC</code>\") in <code>\"CC\"</code>');"
         },
         {
           "text":
-            "Your regex should match <em>three</em> criminals (\"<code>CCC</code>\") in <code>\"P1P5P4CCCP2P6P3\"</code>",
+            "Your regex should match <code>three</code> criminals (\"<code>CCC</code>\") in <code>\"P1P5P4CCCP2P6P3\"</code>",
           "testString":
-            "assert('P1P5P4CCCP2P6P3'.match(reCriminals) && 'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC', 'Your regex should match <em>three</em> criminals (\"<code>CCC</code>\") in <code>\"P1P5P4CCCP2P6P3\"</code>');"
+            "assert('P1P5P4CCCP2P6P3'.match(reCriminals) && 'P1P5P4CCCP2P6P3'.match(reCriminals)[0] == 'CCC', 'Your regex should match <code>three</code> criminals (\"<code>CCC</code>\") in <code>\"P1P5P4CCCP2P6P3\"</code>');"
         },
         {
           "text":
-            "Your regex should match <em>five</em> criminals (\"<code>CCCCC</code>\") in <code>\"P6P2P7P4P5CCCCCP3P1\"</code>",
+            "Your regex should match <code>five</code> criminals (\"<code>CCCCC</code>\") in <code>\"P6P2P7P4P5CCCCCP3P1\"</code>",
           "testString":
-            "assert('P6P2P7P4P5CCCCCP3P1'.match(reCriminals) && 'P6P2P7P4P5CCCCCP3P1'.match(reCriminals)[0] == 'CCCCC', 'Your regex should match <em>five</em> criminals (\"<code>CCCCC</code>\") in <code>\"P6P2P7P4P5CCCCCP3P1\"</code>');"
+            "assert('P6P2P7P4P5CCCCCP3P1'.match(reCriminals) && 'P6P2P7P4P5CCCCCP3P1'.match(reCriminals)[0] == 'CCCCC', 'Your regex should match <code>five</code> criminals (\"<code>CCCCC</code>\") in <code>\"P6P2P7P4P5CCCCCP3P1\"</code>');"
         },
         {
           "text":
@@ -866,9 +866,9 @@
         },
         {
           "text":
-            "Your regex should match <em>fifty</em> criminals (\"<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>\") in <code>\"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3\"</code>.",
+            "Your regex should match <code>fifty</code> criminals (\"<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>\") in <code>\"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3\"</code>.",
           "testString":
-            "assert('P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals) && 'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals)[0] == \"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\", 'Your regex should match <em>fifty</em> criminals (\"<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>\") in <code>\"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3\"</code>.');"
+            "assert('P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals) && 'P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3'.match(reCriminals)[0] == \"CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC\", 'Your regex should match <code>fifty</code> criminals (\"<code>CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</code>\") in <code>\"P2P1P5P4CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCP3\"</code>.');"
         }
       ],
       "solutions": [],
@@ -1090,11 +1090,14 @@
         },
         {
           "text": "Your regex should use the shorthand character.",
-          "testString": "assert(/\\\\W/.test(nonAlphabetRegex.source), 'Your regex should use the shorthand character to match characters which are non-alphanumeric.');"
+          "testString":
+            "assert(/\\\\W/.test(nonAlphabetRegex.source), 'Your regex should use the shorthand character to match characters which are non-alphanumeric.');"
         },
         {
-          "text": "Your regex should find 8 non-alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>",
-          "testString": "assert(\"Pack my box with five dozen liquor jugs.\".match(nonAlphabetRegex).length == 8, 'Your regex should find 8 non-alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>');"
+          "text":
+            "Your regex should find 8 non-alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>",
+          "testString":
+            "assert(\"Pack my box with five dozen liquor jugs.\".match(nonAlphabetRegex).length == 8, 'Your regex should find 8 non-alphanumeric characters in <code>\"Pack my box with five dozen liquor jugs.\"</code>');"
         },
         {
           "text":
@@ -1754,7 +1757,8 @@
         },
         {
           "text": "Your regex should not match <code>\"banan1\"</code>",
-          "testString": "assert(!pwRegex.test(\"banan1\"), 'Your regex should not match <code>\"banan1\"</code>');"
+          "testString":
+            "assert(!pwRegex.test(\"banan1\"), 'Your regex should not match <code>\"banan1\"</code>');"
         },
         {
           "text": "Your regex should match <code>\"bana12\"</code>",
