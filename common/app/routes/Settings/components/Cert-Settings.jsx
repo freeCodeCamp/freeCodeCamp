@@ -197,18 +197,22 @@ class CertificationSettings extends PureComponent {
         return blockNameIsCertMap[e];
       });
 
-      description = (<div>
-        Once you've earned the following freeCodeCamp certifications,
-         you'll be able to claim The Full Stack Developer Certification:
-        <ul>
-          <li>Responsive Web Design</li>
-          <li>Algorithms and Data Structures</li>
-          <li>Front End Libraries</li>
-          <li>Data Visualization</li>
-          <li>APIs and Microservices</li>
-          <li>Information Security and Quality Assurance</li>
-        </ul>
-      </div>);
+      description = (
+        <div>
+          <p>
+            Once you've earned the following freeCodeCamp certifications,
+            you'll be able to claim The Full Stack Developer Certification:
+          </p>
+          <ul>
+            <li>Responsive Web Design</li>
+            <li>Algorithms and Data Structures</li>
+            <li>Front End Libraries</li>
+            <li>Data Visualization</li>
+            <li>APIs and Microservices</li>
+            <li>Information Security and Quality Assurance</li>
+          </ul>
+        </div>
+      );
     }
 
     return (
