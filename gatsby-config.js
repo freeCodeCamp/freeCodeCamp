@@ -3,7 +3,7 @@ module.exports = {
     title: 'Gatsby Default Starter'
   },
   proxy: {
-    prefix: '/external',
+    prefix: '/internal',
     url: 'http://localhost:3000'
   },
   plugins: [

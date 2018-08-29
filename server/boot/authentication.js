@@ -5,13 +5,14 @@ import dedent from 'dedent';
 import { isEmail } from 'validator';
 import { check } from 'express-validator/check';
 
+import { homeLocation } from '../../config/env';
+
 import {
   ifUserRedirectTo,
   ifNoUserRedirectTo,
   createValidatorErrorHandler
 } from '../utils/middleware';
 import { wrapHandledError } from '../utils/create-handled-error.js';
-import { homeURL } from '../../common/utils/constantStrings.json';
 
 const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
 // const debug = debugFactory('fcc:boot:auth');
@@ -24,43 +25,21 @@ module.exports = function enableAuthentication(app) {
   // loopback.io/doc/en/lb2/Authentication-authorization-and-permissions.html
   app.enableAuth();
   const ifUserRedirect = ifUserRedirectTo();
-  const ifNoUserRedirectHome = ifNoUserRedirectTo(homeURL);
-  const router = app.loopback.Router();
+  const ifNoUserRedirectHome = ifNoUserRedirectTo(homeLocation);
   const api = app.loopback.Router();
   const { AuthToken, User } = app.models;
 
-  router.get('/signup', (req, res) => res.redirect(301, '/signin'));
-  router.get('/email-signin', (req, res) => res.redirect(301, '/signin'));
-  router.get('/login', (req, res) => res.redirect(301, '/signin'));
-  router.get('/deprecated-signin', (req, res) => res.redirect(301, '/signin'));
+  api.get('/signin', ifUserRedirect, (req, res) => res.redirect('/auth/auth0'));
 
-  router.get('/logout', (req, res) => res.redirect(301, '/signout'));
-
-  router.get('/signin',
-    ifUserRedirect,
-    (req, res) => res.redirect('/auth/auth0')
-  );
-
-  router.get(
-    '/update-email',
-    ifNoUserRedirectHome,
-    (req, res) => res.render('account/update-email', {
-      title: 'Update your email'
-    })
-  );
-
-  router.get('/signout', (req, res) => {
+  api.get('/signout', (req, res) => {
     req.logout();
-    req.session.destroy( (err) => {
+    req.session.destroy(err => {
       if (err) {
-        throw wrapHandledError(
-          new Error('could not destroy session'),
-          {
-            type: 'info',
-            message: 'Oops, something is not right.',
-            redirectTo: '/'
-          }
-        );
+        throw wrapHandledError(new Error('could not destroy session'), {
+          type: 'info',
+          message: 'Oops, something is not right.',
+          redirectTo: homeLocation
+        });
       }
       const config = {
         signed: !!req.signedCookies,
@@ -70,8 +49,8 @@ module.exports = function enableAuthentication(app) {
       res.clearCookie('access_token', config);
       res.clearCookie('userId', config);
       res.clearCookie('_csrf', config);
-      res.redirect('/');
-   });
+      res.redirect(homeLocation);
+    });
   });
 
   const defaultErrorMsg = dedent`
@@ -93,112 +72,105 @@ module.exports = function enableAuthentication(app) {
 
   function getPasswordlessAuth(req, res, next) {
     const {
-      query: {
-        email: encodedEmail,
-        token: authTokenId,
-        emailChange
-      } = {}
+      query: { email: encodedEmail, token: authTokenId, emailChange } = {}
     } = req;
 
     const email = User.decodeEmail(encodedEmail);
     if (!isEmail(email)) {
-      return next(wrapHandledError(
-        new TypeError('decoded email is invalid'),
-        {
+      return next(
+        wrapHandledError(new TypeError('decoded email is invalid'), {
           type: 'info',
           message: 'The email encoded in the link is incorrectly formatted',
-          redirectTo: '/signin'
-        }
-      ));
+          redirectTo: `${homeLocation}/signin`
+        })
+      );
     }
     // first find
-    return AuthToken.findOne$({ where: { id: authTokenId } })
-      .flatMap(authToken => {
-        if (!authToken) {
-          throw wrapHandledError(
-            new Error(`no token found for id: ${authTokenId}`),
-            {
-              type: 'info',
-              message: defaultErrorMsg,
-              redirectTo: '/signin'
-            }
-          );
-        }
-        // find user then validate and destroy email validation token
-        // finally retun user instance
-        return User.findOne$({ where: { id: authToken.userId } })
-          .flatMap(user => {
-            if (!user) {
-              throw wrapHandledError(
-                new Error(`no user found for token: ${authTokenId}`),
-                {
-                  type: 'info',
-                  message: defaultErrorMsg,
-                  redirectTo: '/signin'
-                }
-              );
-            }
-            if (user.email !== email) {
-              if (!emailChange || (emailChange && user.newEmail !== email)) {
+    return (
+      AuthToken.findOne$({ where: { id: authTokenId } })
+        .flatMap(authToken => {
+          if (!authToken) {
+            throw wrapHandledError(
+              new Error(`no token found for id: ${authTokenId}`),
+              {
+                type: 'info',
+                message: defaultErrorMsg,
+                redirectTo: `${homeLocation}/signin`
+              }
+            );
+          }
+          // find user then validate and destroy email validation token
+          // finally retun user instance
+          return User.findOne$({ where: { id: authToken.userId } }).flatMap(
+            user => {
+              if (!user) {
                 throw wrapHandledError(
-                  new Error('user email does not match'),
+                  new Error(`no user found for token: ${authTokenId}`),
                   {
                     type: 'info',
                     message: defaultErrorMsg,
-                    redirectTo: '/signin'
+                    redirectTo: `${homeLocation}/signin`
                   }
                 );
               }
-            }
-            return authToken.validate$()
-              .map(isValid => {
-                if (!isValid) {
+              if (user.email !== email) {
+                if (!emailChange || (emailChange && user.newEmail !== email)) {
                   throw wrapHandledError(
-                    new Error('token is invalid'),
+                    new Error('user email does not match'),
                     {
+                      type: 'info',
+                      message: defaultErrorMsg,
+                      redirectTo: `${homeLocation}/signin`
+                    }
+                  );
+                }
+              }
+              return authToken
+                .validate$()
+                .map(isValid => {
+                  if (!isValid) {
+                    throw wrapHandledError(new Error('token is invalid'), {
                       type: 'info',
                       message: `
                         Looks like the link you clicked has expired,
                         please request a fresh link, to sign in.
                       `,
-                      redirectTo: '/signin'
-                    }
-                  );
-                }
-                return authToken.destroy$();
-              })
-              .map(() => user);
-          });
-      })
-      // at this point token has been validated and destroyed
-      // update user and log them in
-      .map(user => user.loginByRequest(req, res))
-      .do(() => {
-        req.flash(
-          'success',
-          'Success! You have signed in to your account. Happy Coding!'
-        );
-        return res.redirect('/');
-      })
-      .subscribe(
-        () => {},
-        next
-      );
+                      redirectTo: `${homeLocation}/signin`
+                    });
+                  }
+                  return authToken.destroy$();
+                })
+                .map(() => user);
+            }
+          );
+        })
+        // at this point token has been validated and destroyed
+        // update user and log them in
+        .map(user => user.loginByRequest(req, res))
+        .do(() => {
+          req.flash(
+            'success',
+            'Success! You have signed in to your account. Happy Coding!'
+          );
+          return res.redirect(homeLocation);
+        })
+        .subscribe(() => {}, next)
+    );
   }
 
-  router.get(
+  api.get(
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessGetValidators,
-    createValidatorErrorHandler('errors', '/signin'),
+    createValidatorErrorHandler('errors', `${homeLocation}/signin`),
     getPasswordlessAuth
   );
 
-  router.get(
-    '/passwordless-change',
-    (req, res) => res.redirect(301, '/confirm-email')
+  api.get('/passwordless-change', (req, res) =>
+    res.redirect(301, '/confirm-email')
   );
-  router.get(
+
+  api.get(
     '/confirm-email',
     ifNoUserRedirectHome,
     passwordlessGetValidators,
@@ -214,21 +186,18 @@ module.exports = function enableAuthentication(app) {
     const { body: { email } = {} } = req;
 
     return User.findOne$({ where: { email } })
-      .flatMap(_user => Observable.if(
+      .flatMap(_user =>
+        Observable.if(
           // if no user found create new user and save to db
           _.constant(_user),
           Observable.of(_user),
           User.create$({ email })
-        )
-        .flatMap(user => user.requestAuthEmail(!_user))
+        ).flatMap(user => user.requestAuthEmail(!_user))
       )
       .do(msg => {
-        let redirectTo = '/';
+        let redirectTo = homeLocation;
 
-        if (
-          req.session &&
-          req.session.returnTo
-        ) {
+        if (req.session && req.session.returnTo) {
           redirectTo = req.session.returnTo;
         }
 
@@ -242,10 +211,10 @@ module.exports = function enableAuthentication(app) {
     '/passwordless-auth',
     ifUserRedirect,
     passwordlessPostValidators,
-    createValidatorErrorHandler('errors', '/signin'),
+    createValidatorErrorHandler('errors', `${homeLocation}/signin`),
     postPasswordlessAuth
   );
 
-  app.use(router);
   app.use(api);
+  app.use('/internal', api);
 };

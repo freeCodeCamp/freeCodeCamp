@@ -1,6 +1,9 @@
 import { inspect } from 'util';
 import _ from 'lodash/fp';
 import accepts from 'accepts';
+
+import { homeLocation } from '../../config/env';
+
 import { unwrapHandledError } from '../utils/create-handled-error.js';
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -57,7 +60,7 @@ export default function prodErrorHandler() {
     const accept = accepts(req);
     const type = accept.type('html', 'json', 'text');
 
-    const redirectTo = handled.redirectTo || '/';
+    const redirectTo = handled.redirectTo || `${homeLocation}/`;
     const message = handled.message ||
       'Oops! Something went wrong. Please try again later';
 

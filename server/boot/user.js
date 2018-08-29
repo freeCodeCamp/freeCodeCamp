@@ -42,9 +42,9 @@ module.exports = function bootUser(app) {
     getReportUserProfile
   );
 
-
   app.use(router);
   app.use('/external', api);
+  app.use('/internal', api);
 };
 
 function readSessionUser(req, res, next) {
