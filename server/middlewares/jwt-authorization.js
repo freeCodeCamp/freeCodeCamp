@@ -2,11 +2,13 @@ import loopback from 'loopback';
 import jwt from 'jsonwebtoken';
 import { isBefore } from 'date-fns';
 
+import { homeLocation } from '../../config/env';
+
 import { wrapHandledError } from '../utils/create-handled-error';
 
 export default () => function authorizeByJWT(req, res, next) {
   const path = req.path.split('/')[1];
-  if (/external/.test(path)) {
+  if (/^external$|^internal$/.test(path)) {
     const cookie = req.signedCookies && req.signedCookies['jwt_access_token'] ||
       req.cookie && req.cookie['jwt_access_token'];
     if (!cookie) {
@@ -14,7 +16,7 @@ export default () => function authorizeByJWT(req, res, next) {
         new Error('Access token is required for this request'),
         {
           type: 'info',
-          redirect: '/signin',
+          redirect: `${homeLocation}/signin`,
           message: 'Access token is required for this request',
           status: 403
         }
@@ -28,7 +30,7 @@ export default () => function authorizeByJWT(req, res, next) {
         new Error(err.message),
         {
           type: 'info',
-          redirct: '/signin',
+          redirect: `${homeLocation}/signin`,
           message: 'Your access token is invalid',
           status: 403
         }
@@ -41,7 +43,7 @@ export default () => function authorizeByJWT(req, res, next) {
         new Error('Access token is no longer vaild'),
         {
           type: 'info',
-          redirect: '/signin',
+          redirect: `${homeLocation}/signin`,
           message: 'Access token is no longer vaild',
           status: 403
         }

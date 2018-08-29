@@ -175,7 +175,7 @@ export default function settingsController(app) {
     refetchCompletedChallenges
   );
   api.post('/update-flags', ifNoUser401, updateFlags);
-  api.post(
+  api.put(
     '/update-my-email',
     ifNoUser401,
     updateMyEmailValidators,
@@ -190,7 +190,7 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post(
-    '/external/update-my-current-challenge',
+    '/update-my-current-challenge',
     ifNoUser401,
     updateMyCurrentChallengeValidators,
     createValidatorErrorHandler(alertTypes.danger),
@@ -209,5 +209,6 @@ export default function settingsController(app) {
   api.post('/update-my-username', ifNoUser401, updateMyUsername);
 
   app.use('/external', api);
+  app.use('/internal', api);
   app.use(api);
 }

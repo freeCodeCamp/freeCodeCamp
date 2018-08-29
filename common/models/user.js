@@ -17,13 +17,14 @@ import _ from 'lodash';
 import jwt from 'jsonwebtoken';
 import generate from 'nanoid/generate';
 
+import { homeLocation } from '../../config/env';
+
 import { fixCompletedChallengeItem } from '../utils';
 import { themes } from '../utils/themes';
 import { saveUser, observeMethod } from '../../server/utils/rx.js';
 import { blacklistedUsernames } from '../../server/utils/constants.js';
 import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 import {
-  getServerFullURL,
   getEmailSender
 } from '../../server/utils/url-utils.js';
 import {
@@ -255,7 +256,7 @@ module.exports = function(User) {
               throw wrapHandledError(
                 new Error('user already exists'),
                 {
-                  redirectTo: '/signin',
+                  redirectTo: `${homeLocation}/signin`,
                   message: dedent`
         The ${user.email} email address is already associated with an account.
         Try signing in with it here instead.
@@ -595,7 +596,7 @@ module.exports = function(User) {
         }
         const { id: loginToken, created: emailAuthLinkTTL } = token;
         const loginEmail = this.getEncodedEmail(newEmail ? newEmail : null);
-        const host = getServerFullURL();
+        const host = homeLocation;
         const mailOptions = {
           type: 'email',
           to: newEmail ? newEmail : this.email,

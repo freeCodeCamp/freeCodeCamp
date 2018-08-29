@@ -16,4 +16,5 @@ export default function bootServices(app) {
   const middleware = Fetchr.middleware();
   app.use('/services', middleware);
   app.use('/external/services', middleware);
+  app.use('/internal/services', middleware);
 }
