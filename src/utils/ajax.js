@@ -14,13 +14,8 @@ function put(path, body) {
   return axios.put(`${base}${path}`, body);
 }
 
-function sniff(things) {
-  console.log(things);
-  return things;
-}
-
 export function getSessionUser() {
-  return get('/user/get-session-user').then(sniff);
+  return get('/user/get-session-user');
 }
 
 export function putUserAcceptsTerms(quincyEmails) {
