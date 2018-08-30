@@ -13,7 +13,7 @@ import {
 } from 'react-bootstrap';
 import Helmet from 'react-helmet';
 
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import { createSelector } from 'reselect';
