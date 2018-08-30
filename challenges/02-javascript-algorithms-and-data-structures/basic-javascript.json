@@ -6787,7 +6787,7 @@
           "text":
             "You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements",
           "testString":
-            "assert(!/case|switch|if/g.test(code), 'You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
+            "assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,'')), 'You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements'); "
         }
       ],
       "challengeType": 1,
