@@ -12,7 +12,7 @@ import {
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 
 import { Spacer } from '../components/helpers';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Login from '../components/Header/components/Login';
 
 import './index.css';
@@ -27,6 +27,8 @@ const BigCallToAction = () => (
 
 const IndexPage = () => (
   <Layout disableSettings={true}>
+    <Spacer />
+    <Spacer />
     <Grid className='text-center'>
       <Row>
         <h1 className='big-heading'>Learn to code for free.</h1>

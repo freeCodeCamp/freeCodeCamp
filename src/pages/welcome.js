@@ -7,7 +7,7 @@ import { createSelector } from 'reselect';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 
 import { Loader, Spacer } from '../components/helpers';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { userSelector, userFetchStateSelector } from '../redux';
 import { randomQuote } from '../utils/get-words';
 
@@ -38,6 +38,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
 function Welcome({
   fetchState: { pending, complete },
+  fetchState,
   user: {
     acceptedPrivacyTerms,
     name = '',
@@ -47,6 +48,7 @@ function Welcome({
     completedLegacyCertCount = 0
   }
 }) {
+  console.log(fetchState);
   if (pending && !complete) {
     return (
       <Layout>
