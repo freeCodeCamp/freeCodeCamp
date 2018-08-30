@@ -15,3 +15,7 @@ h5,
 h6 {
   font-weight: 400;
 }
+
+.text-center {
+  text-align: center !important;
+}

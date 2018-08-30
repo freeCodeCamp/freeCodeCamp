@@ -14,7 +14,7 @@ export default class HTML extends React.Component {
           />
           <link
             href={
-              'https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/' +
+              'https://cdn.freecodecamp.org/compiled/bootstrap/v3/css/' +
               'bootstrap.min.css'
             }
             rel='stylesheet'
