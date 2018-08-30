@@ -61,3 +61,5 @@ webpack-bundle-stats.html
 server/rev-manifest.json
 google-credentials.json
 .vs/*
+
+.vagrant/*
