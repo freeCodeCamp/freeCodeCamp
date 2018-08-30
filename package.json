@@ -4,10 +4,11 @@
   "repository": "freecodecamp/freecodecamp",
   "scripts": {
     "build": "NODE_ENV=production gatsby build",
+    "babel-dev-server": "babel-node ./server/server.js",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "develop": "gatsby develop",
-    "develop-server": "node ./development-server.js",
+    "develop-server": "DEBUG=fcc* node ./development-server.js",
     "ensure-env": "node ./config/ensure-env.js",
     "lint": "npm run lint-js && npm run lint-json",
     "lint-js": "eslint --ext=.js,.jsx gulpfile.js server/ common/ config/ client/",
