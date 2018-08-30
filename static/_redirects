@@ -1,9 +1,7 @@
-
-# signin redirects
+# auth redirects
 /signup                /signin 301
 /email-signin          /signin 301
 /login                 /signin 301
 /deprecated-signin     /signin 301
-
-# signout redirects
 /logout                /signout 301
+/passwordless-change   /confirm-email 301

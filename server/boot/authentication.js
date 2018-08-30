@@ -152,7 +152,7 @@ module.exports = function enableAuthentication(app) {
             'success',
             'Success! You have signed in to your account. Happy Coding!'
           );
-          return res.redirect(homeLocation);
+          return res.redirectWithFlash(`${homeLocation}/welcome`);
         })
         .subscribe(() => {}, next)
     );
