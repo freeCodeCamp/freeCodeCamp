@@ -17,7 +17,7 @@ import _ from 'lodash';
 import jwt from 'jsonwebtoken';
 import generate from 'nanoid/generate';
 
-import { homeLocation } from '../../config/env';
+import { homeLocation, apiLocation } from '../../config/env';
 
 import { fixCompletedChallengeItem } from '../utils';
 import { themes } from '../utils/themes';
@@ -596,7 +596,7 @@ module.exports = function(User) {
         }
         const { id: loginToken, created: emailAuthLinkTTL } = token;
         const loginEmail = this.getEncodedEmail(newEmail ? newEmail : null);
-        const host = homeLocation;
+        const host = apiLocation;
         const mailOptions = {
           type: 'email',
           to: newEmail ? newEmail : this.email,
