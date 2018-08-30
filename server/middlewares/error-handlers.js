@@ -69,22 +69,10 @@ export default function prodErrorHandler() {
     }
 
     if (type === 'html') {
-      if (isDev) {
-        return res.render(
-          'dev-error',
-          {
-            ...handled,
-            stack: createStackHtml(err),
-            errorTitle: createErrorTitle(err),
-            title: 'freeCodeCamp - Server Error',
-            status
-          }
-        );
-      }
       if (typeof req.flash === 'function') {
         req.flash(handled.type || 'danger', message);
       }
-      return res.redirect(redirectTo);
+      return res.redirectWithFlash(redirectTo);
       // json
     } else if (type === 'json') {
       res.setHeader('Content-Type', 'application/json');

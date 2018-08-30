@@ -1,14 +1,17 @@
-import { Observable } from 'rx';
+import qs from 'query-string';
 
 // add rx methods to express
 export default function() {
   return function expressExtensions(req, res, next) {
-    // express flash will overwrite render with one that will
-    // dump flash messages to locals on every call to render
-    // Use this when that behavior is not wanted
-    res.renderWithoutFlash = res.render;
-    // render to observable stream using build in render
-    res.render$ = Observable.fromNodeCallback(res.render, res);
+    res.redirectWithFlash = uri => {
+      const flash = req.flash();
+      res.redirect(
+        `${uri}?${qs.stringify(
+          { messages: qs.stringify(flash, { arrayFormat: 'index' }) },
+          { arrayFormat: 'index' }
+        )}`
+      );
+    };
     res.sendFlash = (type, message) => {
       if (type && message) {
         req.flash(type, message);
