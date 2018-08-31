@@ -1,0 +1,54 @@
+{
+  "name": "gatsby-starter-default",
+  "description": "Gatsby default starter",
+  "version": "1.0.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-brands-svg-icons": "^5.2.0",
+    "@fortawesome/free-regular-svg-icons": "^5.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/react-fontawesome": "0.0.20",
+    "axios": "^0.18.0",
+    "gatsby": "^2.0.0-rc.1",
+    "gatsby-link": "^2.0.0-rc.1",
+    "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-react-helmet": "next",
+    "gatsby-plugin-sitemap": "^2.0.0-rc.1",
+    "lodash": "^4.17.10",
+    "nanoid": "^1.2.2",
+    "query-string": "^6.1.0",
+    "react": "^16.4.2",
+    "react-bootstrap": "^0.32.3",
+    "react-dom": "^16.4.2",
+    "react-freecodecamp-search": "^2.0.2",
+    "react-helmet": "^5.2.0",
+    "react-media": "^1.8.0",
+    "react-redux": "^5.0.7",
+    "react-spinkit": "^3.0.0",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.6.1",
+    "redux-saga": "^0.16.0",
+    "reselect": "^3.0.1",
+    "validator": "^10.7.0"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write '**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-imports": "^1.5.0",
+    "prettier": "^1.14.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  }
+}
