@@ -1,5 +1,4 @@
 require('dotenv').load();
-require('./utils/webpack-code-split-polyfill');
 
 const _ = require('lodash');
 const Rx = require('rx');
@@ -7,8 +6,9 @@ const loopback = require('loopback');
 const boot = require('loopback-boot');
 const expressState = require('express-state');
 const path = require('path');
-const setupPassport = require('./component-passport');
 const createDebugger = require('debug');
+
+const { setupPassport } = require('./component-passport');
 
 const log = createDebugger('fcc:server');
 // force logger to always output
@@ -56,14 +56,13 @@ app.start = _.once(function() {
       log('Server is closed');
     });
     log('closing db connection');
-    db.disconnect()
-      .then(() => {
-        log('DB connection closed');
-        // exit process
-        // this may close kept alive sockets
-        // eslint-disable-next-line no-process-exit
-        process.exit(0);
-      });
+    db.disconnect().then(() => {
+      log('DB connection closed');
+      // exit process
+      // this may close kept alive sockets
+      // eslint-disable-next-line no-process-exit
+      process.exit(0);
+    });
   });
 });
 

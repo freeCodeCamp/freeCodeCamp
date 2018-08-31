@@ -1,6 +1,9 @@
 import { inspect } from 'util';
 import _ from 'lodash/fp';
 import accepts from 'accepts';
+
+import { homeLocation } from '../../config/env';
+
 import { unwrapHandledError } from '../utils/create-handled-error.js';
 
 const isDev = process.env.NODE_ENV !== 'production';
@@ -57,7 +60,7 @@ export default function prodErrorHandler() {
     const accept = accepts(req);
     const type = accept.type('html', 'json', 'text');
 
-    const redirectTo = handled.redirectTo || '/';
+    const redirectTo = handled.redirectTo || `${homeLocation}/`;
     const message = handled.message ||
       'Oops! Something went wrong. Please try again later';
 
@@ -66,22 +69,10 @@ export default function prodErrorHandler() {
     }
 
     if (type === 'html') {
-      if (isDev) {
-        return res.render(
-          'dev-error',
-          {
-            ...handled,
-            stack: createStackHtml(err),
-            errorTitle: createErrorTitle(err),
-            title: 'freeCodeCamp - Server Error',
-            status
-          }
-        );
-      }
       if (typeof req.flash === 'function') {
         req.flash(handled.type || 'danger', message);
       }
-      return res.redirect(redirectTo);
+      return res.redirectWithFlash(redirectTo);
       // json
     } else if (type === 'json') {
       res.setHeader('Content-Type', 'application/json');

@@ -3,6 +3,8 @@ import { Observable } from 'rx';
 import debugFactory from 'debug';
 import dedent from 'dedent';
 
+import { homeLocation } from '../../config/env';
+
 import nonprofits from '../utils/commit.json';
 import {
   commitGoals,
@@ -23,7 +25,7 @@ import {
 } from '../utils/middleware';
 
 const sendNonUserToSignIn = ifNoUserRedirectTo(
-  '/signin',
+  `${homeLocation}/signin`,
   'You must be signed in to commit to a nonprofit.',
   'info'
 );

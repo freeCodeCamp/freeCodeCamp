@@ -25,6 +25,7 @@ export default function userServices() {
       config,
       cb) {
       const queryUser = req.user;
+      console.log(queryUser.completedChallengeCount)
       const source = queryUser && Observable.forkJoin(
         queryUser.getCompletedChallenges$(),
         queryUser.getPoints$(),

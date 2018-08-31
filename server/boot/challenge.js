@@ -169,6 +169,7 @@ export default function(app) {
 
   app.use(api);
   app.use('/external', api);
+  app.use('/internal', api);
   app.use(router);
 
   function modernChallengeCompleted(req, res, next) {
