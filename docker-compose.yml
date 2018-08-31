@@ -18,7 +18,7 @@ services:
             - MAILHOG_HOST=mailhog
             - MONGOHQ_URL=mongodb://db:27017/freecodecamp
         volumes:
-            - .:/app
+            - ./api-server:/app
         working_dir: /app
         command:
             - npm
