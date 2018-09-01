@@ -16,7 +16,7 @@ nav.navbar.navbar-default.navbar-static-top.nav-height
                 a(href='/news', rel='noopener') News
             if !user
                 li
-                    a(href='/signin') Sign in
+                    a(href='/signin' onclick='gtag_report_conversion()') Sign in
             else
                 li
                   a(href='/settings') Settings

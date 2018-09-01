@@ -198,6 +198,15 @@ function headTemplate({ title, description, image }) {
         ga("require", "displayfeatures");
         ga("send", "pageview");
       </script>
+      <!-- Global site tag (gtag.js) - Google Ads: 795617839 -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-795617839"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+
+        gtag("config", "AW-795617839");
+      </script>
     `;
   /* eslint-enable max-len */
 }
