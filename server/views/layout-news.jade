@@ -1,11 +1,6 @@
 doctype html
 html(lang='en')
-  head
-    if title
-      title= title
-    else
-      title freeCodeCamp
-    include partials/react-stylesheets
+  head!= head
   body
     #news-app-mount!= markup
     script(src=cacheBreaker(rev('/js', 'news.js')))

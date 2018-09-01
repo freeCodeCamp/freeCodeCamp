@@ -3,6 +3,22 @@ html(lang='en')
   head
     include partials/meta
     include partials/stylesheets
+    //
+        Event snippet for Sign up conversion page
+        In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button.
+    script.
+        function gtag_report_conversion(url) {
+            var callback = function () {
+                if (typeof(url) != 'undefined') {
+                    window.location = url;
+                }
+            };
+            gtag('event', 'conversion', {
+            'send_to': 'AW-795617839/AmfiCKHHs4gBEK_UsPsC',
+            'event_callback': callback
+            });
+            return false;
+        }
   body.main-container(class=theme !== 'default' ? theme : '')
     include partials/scripts
     include partials/navbar
