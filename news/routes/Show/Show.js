@@ -193,7 +193,9 @@ class ShowArticle extends Component {
             content={`https://www.freecodecamp.org/news${slug}`}
             property='og:url'
           />
-          <meta content={title} property='og:title' />
+          <meta content={`${title} | freeCodeCamp News`} property='og:title' />
+          <meta content={`${title} | freeCodeCamp News`} property='twitter:title' />
+          <meta content={`${title} | freeCodeCamp News`} property='twitter:text:title' />
           <meta content={description} property='og:description' />
           <meta content={description} name='description' />
           <meta content={featureImage.src} property='og:image' />
