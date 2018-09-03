@@ -12,7 +12,7 @@ const mapStateToProps = createSelector(userSelector, ({ picture }) => ({
 function SignedIn({ picture }) {
   return (
     <a href='https://www.freecodecamp.org/settings'>
-      <img height='38px' src={picture} />
+      <img alt='' height='38px' src={picture} />
     </a>
   );
 }

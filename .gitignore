@@ -1,5 +1,7 @@
 node_modules
 
+.env
+
 *lib-cov
 *~
 *.seed

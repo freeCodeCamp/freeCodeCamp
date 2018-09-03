@@ -1,7 +1,7 @@
 // originally based off of https://github.com/gulpjs/vinyl
 import invariant from 'invariant';
 import { Observable } from 'rx';
-import castToObservable from '../app/utils/cast-to-observable.js';
+import castToObservable from '../../server/utils/cast-to-observable';
 
 
 // createFileStream(

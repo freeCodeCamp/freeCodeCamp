@@ -22,6 +22,7 @@ tmp
 
 npm-debug.log
 node_modules
+compiled
 .idea
 *.iml
 .DS_Store
