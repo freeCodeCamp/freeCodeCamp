@@ -2,8 +2,8 @@ import React from 'react';
 import { NavbarBrand } from 'react-bootstrap';
 import Media from 'react-media';
 
-const fCClogo = 'https://s3.amazonaws.com/freecodecamp/freecodecamp_logo.svg';
-const fCCglyph = 'https://s3.amazonaws.com/freecodecamp/FFCFire.png';
+const fCClogo = 'https://www.dropbox.com/s/4552naguuj98xpw/spiraladder-logo-150x25.png?raw=1';
+const fCCglyph = 'https://www.dropbox.com/s/n29l7rkjpuq22tb/spiraladder-icon-transparent-300x300.png?raw=1';
 
 const propTypes = {};
 
@@ -17,13 +17,13 @@ function NavLogo() {
           {
             matches => matches ? (
               <img
-                alt='learn to code javascript at freeCodeCamp logo'
+                alt='learn to code javascript at Spiraladder logo'
                 className='nav-logo logo'
                 src={ fCClogo }
               />
             ) : (
               <img
-                alt='learn to code javascript at freeCodeCamp logo'
+                alt='learn to code javascript at Spiraladder logo'
                 className='nav-logo logo'
                 src={ fCCglyph }
               />

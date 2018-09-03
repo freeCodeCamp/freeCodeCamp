@@ -4,8 +4,8 @@ import { NavbarBrand } from 'react-bootstrap';
 import Media from 'react-media';
 
 const fCClogo =
-  'https://dl.dropbox.com/s/axj20gzbebk3pio/teencodecamp_logo.png?raw=1';
-const fCCglyph = 'https://s3.amazonaws.com/freecodecamp/FFCFire.png';
+  'https://www.dropbox.com/s/4552naguuj98xpw/spiraladder-logo-150x25.png?raw=1';
+const fCCglyph = 'https://www.dropbox.com/s/n29l7rkjpuq22tb/spiraladder-icon-transparent-300x300.png?raw=1';
 
 const propTypes = {
   clickOnLogo: PropTypes.func.isRequired

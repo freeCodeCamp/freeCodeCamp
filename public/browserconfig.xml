@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <browserconfig>
-  <msapplication>
-    <tile>
-      <square70x70logo src="/mstile-70x70.png"/>
-      <square150x150logo src="/mstile-150x150.png"/>
-      <square310x310logo src="/mstile-310x310.png"/>
-      <wide310x150logo src="/mstile-310x150.png"/>
-      <TileColor>#492c14</TileColor>
-    </tile>
-  </msapplication>
+    <msapplication>
+        <tile>
+            <square70x70logo src="https://www.dropbox.com/s/tiza8ttvomzyc98/mstile-70x70.png?raw=1"/>
+            <square150x150logo src="https://www.dropbox.com/s/cy3eo3ecyc64la2/mstile-150x150.png?raw=1"/>
+            <square310x310logo src="https://www.dropbox.com/s/i7tqi89tmghn7fp/mstile-310x310.png?raw=1"/>
+            <wide310x150logo src="https://www.dropbox.com/s/g80nlrud2nej1d8/mstile-310x150.png?raw=1"/>
+            <TileColor>#ffaa2b</TileColor>
+        </tile>
+    </msapplication>
 </browserconfig>
