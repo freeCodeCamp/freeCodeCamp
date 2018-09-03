@@ -1,11 +1,13 @@
-require('dotenv').load();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env')});
+
+console.log(path.resolve(__dirname, '../.env'))
 
 const _ = require('lodash');
 const Rx = require('rx');
 const loopback = require('loopback');
 const boot = require('loopback-boot');
 const expressState = require('express-state');
-const path = require('path');
 const createDebugger = require('debug');
 
 const { setupPassport } = require('./component-passport');

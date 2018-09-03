@@ -310,13 +310,13 @@ mongod
 npm run only-once
 
 # Start the application without a backend server
-npm run develop
+cd ./client && npm run develop
 
 # If you require the backend server to be operational (persisted user interations/api calls)
 # Use this command instead
 # Note: This command requires that you have a correctly seeded mongodb instance running
 # Note: If you are runnoing the backend server inside a docker container, use the command above
-npm run develop-server
+node develop-client-server.js
 
 ```
 

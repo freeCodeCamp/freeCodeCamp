@@ -104,7 +104,11 @@ class AcceptPrivacyTerms extends Component {
                     onChange={this.createHandleChange('termsOfService')}
                     >
                     I accept the{' '}
-                    <a href='https://www.freecodecamp/terms' target='_blank'>
+                    <a
+                      href='https://www.freecodecamp/terms'
+                      rel='noopener noreferrer'
+                      target='_blank'
+                      >
                       terms of service
                     </a>{' '}
                     (required)
@@ -122,7 +126,11 @@ class AcceptPrivacyTerms extends Component {
                     onChange={this.createHandleChange('privacyPolicy')}
                     >
                     I accept the{' '}
-                    <a href='https://www.freecodecamp/privacy' target='_blank'>
+                    <a
+                      href='https://www.freecodecamp/privacy'
+                      rel='noopener noreferrer'
+                      target='_blank'
+                      >
                       privacy policy
                     </a>{' '}
                     (required)

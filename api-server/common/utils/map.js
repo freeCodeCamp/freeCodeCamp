@@ -1,4 +1,4 @@
-import emptyProtector from '../app/utils/empty-protector';
+import emptyProtector from './empty-protector';
 
 export function checkMapData(
   {

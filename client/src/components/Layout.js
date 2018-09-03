@@ -42,10 +42,6 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ fetchUser, removeFlashMessage }, dispatch);
 
 class Layout extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     if (!this.props.isSignedIn) {
       this.props.fetchUser();

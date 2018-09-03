@@ -37,7 +37,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ updateMyEmail }, dispatch);
 
-const maybeEmailRE = /[\w\.\+]*?@\w*?\.\w+?/;
+const maybeEmailRE = /[\w.+]*?@\w*?\.\w+?/;
 
 class UpdateEmail extends Component {
   constructor(props) {
