@@ -10,4 +10,4 @@
 /:username/front-end-certification            /certification/:username/legacy-front-end 301
 /:username/data-visualization-certification   /certification/:username/legacy-data-visualization 301
 /:username/back-end-certification             /certification/:username/legacy-back-end 301
-/:username/full-stack-certificatio            /certification/:username/full-stack 301
+/:username/full-stack-certification           /certification/:username/full-stack 301
