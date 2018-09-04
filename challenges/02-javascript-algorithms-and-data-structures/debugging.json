@@ -18,13 +18,11 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.",
-          "testString":
-            "assert(code.match(/console\\.log\\(a\\)/g), 'Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.');"
+          "text": "Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.",
+          "testString": "assert(code.match(/console\\.log\\(a\\)/g), 'Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.');"
         }
       ],
-      "solutions": [],
+      "solutions": ["var a = 5; console.log(a);"],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
@@ -51,8 +49,7 @@
     },
     {
       "id": "587d7b83367417b2b2512b37",
-      "title":
-        "Understanding the Differences between the freeCodeCamp and Browser Console",
+      "title": "Understanding the Differences between the freeCodeCamp and Browser Console",
       "description": [
         "You may have noticed that some freeCodeCamp JavaScript challenges include their own console.  This console behaves a little differently than the browser console you used in the last challenge.",
         "The following challenge is meant to highlight some of the differences between the freeCodeCamp console and the browser console.",
@@ -66,25 +63,21 @@
       ],
       "tests": [
         {
-          "text":
-            "Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.",
-          "testString":
-            "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.');"
+          "text": "Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.",
+          "testString": "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.');"
         },
         {
-          "text":
-            "Use <code>console.log()</code> to print the <code>outputOne</code> variable.",
-          "testString":
-            "assert(code.match(/console\\.log\\(outputOne\\)/g), 'Use <code>console.log()</code> to print the <code>outputOne</code> variable.');"
+          "text": "Use <code>console.log()</code> to print the <code>outputOne</code> variable.",
+          "testString": "assert(code.match(/console\\.log\\(outputOne\\)/g), 'Use <code>console.log()</code> to print the <code>outputOne</code> variable.');"
         },
         {
-          "text":
-            "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.",
-          "testString":
-            "assert(code.match(/^(\\s*console.clear\\(\\);?\\s*)$/gm), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
+          "text": "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.",
+          "testString": "assert(code.match(/^(\\s*console.clear\\(\\);?\\s*)$/gm), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "let outputTwo = \"This will print to the browser console 2 times\"; console.log(outputTwo); let outputOne = \"Try to get this to log only once to the browser console\";\nconsole.clear();\nconsole.log(outputOne);"
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
@@ -126,25 +119,21 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.",
-          "testString":
-            "assert(code.match(/console\\.log\\(typeof[\\( ].*\\)?\\)/g).length == 2, 'Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.');"
+          "text": "Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.",
+          "testString": "assert(code.match(/console\\.log\\(typeof[\\( ].*\\)?\\)/g).length == 2, 'Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.');"
         },
         {
-          "text":
-            "Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.",
-          "testString":
-            "assert(code.match(/typeof[\\( ]seven\\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.');"
+          "text": "Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.",
+          "testString": "assert(code.match(/typeof[\\( ]seven\\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.');"
         },
         {
-          "text":
-            "Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.",
-          "testString":
-            "assert(code.match(/typeof[\\( ]three\\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.');"
+          "text": "Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.",
+          "testString": "assert(code.match(/typeof[\\( ]three\\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "let seven = 7;let three = \"3\";console.log(typeof seven);\nconsole.log(typeof three);"
+      ],
       "hints": [],
       "releasedOn": "Feb 17, 2017",
       "challengeType": 1,
@@ -177,34 +166,24 @@
       ],
       "tests": [
         {
-          "text":
-            "Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".",
-          "testString":
-            "assert(netWorkingCapital === 2, 'Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".');"
+          "text": "Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".",
+          "testString": "assert(netWorkingCapital === 2, 'Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".');"
         },
         {
-          "text":
-            "There should be no instances of mis-spelled variables in the code.",
-          "testString":
-            "assert(!code.match(/recievables/g), 'There should be no instances of mis-spelled variables in the code.');"
+          "text": "There should be no instances of mis-spelled variables in the code.",
+          "testString": "assert(!code.match(/recievables/g), 'There should be no instances of mis-spelled variables in the code.');"
         },
         {
-          "text":
-            "The <code>receivables</code> variable should be declared and used properly in the code.",
-          "testString":
-            "assert(code.match(/receivables/g).length == 2, 'The <code>receivables</code> variable should be declared and used properly in the code.');"
+          "text": "The <code>receivables</code> variable should be declared and used properly in the code.",
+          "testString": "assert(code.match(/receivables/g).length == 2, 'The <code>receivables</code> variable should be declared and used properly in the code.');"
         },
         {
-          "text":
-            "There should be no instances of mis-spelled variables in the code.",
-          "testString":
-            "assert(!code.match(/payable;/g), 'There should be no instances of mis-spelled variables in the code.');"
+          "text": "There should be no instances of mis-spelled variables in the code.",
+          "testString": "assert(!code.match(/payable;/g), 'There should be no instances of mis-spelled variables in the code.');"
         },
         {
-          "text":
-            "The <code>payables</code> variable should be declared and used properly in the code.",
-          "testString":
-            "assert(code.match(/payables/g).length == 2, 'The <code>payables</code> variable should be declared and used properly in the code.');"
+          "text": "The <code>payables</code> variable should be declared and used properly in the code.",
+          "testString": "assert(code.match(/payables/g).length == 2, 'The <code>payables</code> variable should be declared and used properly in the code.');"
         }
       ],
       "solutions": [],
@@ -240,14 +219,11 @@
       "tests": [
         {
           "text": "Your code should fix the missing piece of the array.",
-          "testString":
-            "assert(code.match(/myArray\\s*?=\\s*?\\[\\s*?1\\s*?,\\s*?2\\s*?,\\s*?3\\s*?\\];/g), 'Your code should fix the missing piece of the array.');"
+          "testString": "assert(code.match(/myArray\\s*?=\\s*?\\[\\s*?1\\s*?,\\s*?2\\s*?,\\s*?3\\s*?\\];/g), 'Your code should fix the missing piece of the array.');"
         },
         {
-          "text":
-            "Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".",
-          "testString":
-            "assert(arraySum === 6, 'Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".');"
+          "text": "Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".",
+          "testString": "assert(arraySum === 6, 'Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".');"
         }
       ],
       "solutions": [],
@@ -285,16 +261,12 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.",
-          "testString":
-            "assert(code.match(/<a href=\\s*?('|\\\\\")#Home\\1\\s*?>/g), 'Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.');"
+          "text": "Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.",
+          "testString": "assert(code.match(/<a href=\\s*?('|\\\\\")#Home\\1\\s*?>/g), 'Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.');"
         },
         {
-          "text":
-            "Your code should keep the double quotes around the entire string.",
-          "testString":
-            "assert(code.match(/\"<p>.*?<\\/p>\";/g), 'Your code should keep the double quotes around the entire string.');"
+          "text": "Your code should keep the double quotes around the entire string.",
+          "testString": "assert(code.match(/\"<p>.*?<\\/p>\";/g), 'Your code should keep the double quotes around the entire string.');"
         }
       ],
       "solutions": [],
@@ -330,16 +302,12 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should fix the condition so it checks for equality, instead of using assignment.",
-          "testString":
-            "assert(result == \"Not equal!\", 'Your code should fix the condition so it checks for equality, instead of using assignment.');"
+          "text": "Your code should fix the condition so it checks for equality, instead of using assignment.",
+          "testString": "assert(result == \"Not equal!\", 'Your code should fix the condition so it checks for equality, instead of using assignment.');"
         },
         {
-          "text":
-            "The condition can use either <code>==</code> or <code>===</code> to test for equality.",
-          "testString":
-            "assert(code.match(/x\\s*?===?\\s*?y/g), 'The condition can use either <code>==</code> or <code>===</code> to test for equality.');"
+          "text": "The condition can use either <code>==</code> or <code>===</code> to test for equality.",
+          "testString": "assert(code.match(/x\\s*?===?\\s*?y/g), 'The condition can use either <code>==</code> or <code>===</code> to test for equality.');"
         }
       ],
       "solutions": [],
@@ -372,8 +340,7 @@
     },
     {
       "id": "587d7b85367417b2b2512b39",
-      "title":
-        "Catch Missing Open and Closing Parenthesis After a Function Call",
+      "title": "Catch Missing Open and Closing Parenthesis After a Function Call",
       "description": [
         "When a function or method doesn't take any arguments, you may forget to include the (empty) opening and closing parentheses when calling it. Often times the result of a function call is saved in a variable for other use in your code. This error can be detected by logging variable values (or their types) to the console and seeing that one is set to a function reference, instead of the expected value the function returns.",
         "The variables in the following example are different:",
@@ -383,15 +350,12 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.",
-          "testString":
-            "assert(result == 9, 'Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.');"
+          "text": "Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.",
+          "testString": "assert(result == 9, 'Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.');"
         },
         {
           "text": "Your code should call the <code>getNine</code> function.",
-          "testString":
-            "assert(code.match(/getNine\\(\\)/g).length == 2, 'Your code should call the <code>getNine</code> function.');"
+          "testString": "assert(code.match(/getNine\\(\\)/g).length == 2, 'Your code should call the <code>getNine</code> function.');"
         }
       ],
       "solutions": [],
@@ -421,8 +385,7 @@
     },
     {
       "id": "587d7b85367417b2b2512b3a",
-      "title":
-        "Catch Arguments Passed in the Wrong Order When Calling a Function",
+      "title": "Catch Arguments Passed in the Wrong Order When Calling a Function",
       "description": [
         "Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.",
         "<hr>",
@@ -430,16 +393,12 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.",
-          "testString":
-            "assert(power == 8, 'Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');"
+          "text": "Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.",
+          "testString": "assert(power == 8, 'Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');"
         },
         {
-          "text":
-            "Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.",
-          "testString":
-            "assert(code.match(/raiseToPower\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.');"
+          "text": "Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.",
+          "testString": "assert(code.match(/raiseToPower\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.');"
         }
       ],
       "solutions": [],
@@ -479,28 +438,20 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should set the initial condition of the loop so it starts at the first index.",
-          "testString":
-            "assert(code.match(/i\\s*?=\\s*?0\\s*?;/g).length == 1, 'Your code should set the initial condition of the loop so it starts at the first index.');"
+          "text": "Your code should set the initial condition of the loop so it starts at the first index.",
+          "testString": "assert(code.match(/i\\s*?=\\s*?0\\s*?;/g).length == 1, 'Your code should set the initial condition of the loop so it starts at the first index.');"
         },
         {
-          "text":
-            "Your code should fix the initial condition of the loop so that the index starts at 0.",
-          "testString":
-            "assert(!code.match(/i\\s?=\\s*?1\\s*?;/g), 'Your code should fix the initial condition of the loop so that the index starts at 0.');"
+          "text": "Your code should fix the initial condition of the loop so that the index starts at 0.",
+          "testString": "assert(!code.match(/i\\s?=\\s*?1\\s*?;/g), 'Your code should fix the initial condition of the loop so that the index starts at 0.');"
         },
         {
-          "text":
-            "Your code should set the terminal condition of the loop so it stops at the last index.",
-          "testString":
-            "assert(code.match(/i\\s*?<\\s*?len\\s*?;/g).length == 1, 'Your code should set the terminal condition of the loop so it stops at the last index.');"
+          "text": "Your code should set the terminal condition of the loop so it stops at the last index.",
+          "testString": "assert(code.match(/i\\s*?<\\s*?len\\s*?;/g).length == 1, 'Your code should set the terminal condition of the loop so it stops at the last index.');"
         },
         {
-          "text":
-            "Your code should fix the terminal condition of the loop so that it stops at 1 before the length.",
-          "testString":
-            "assert(!code.match(/i\\s*?<=\\s*?len;/g), 'Your code should fix the terminal condition of the loop so that it stops at 1 before the length.');"
+          "text": "Your code should fix the terminal condition of the loop so that it stops at 1 before the length.",
+          "testString": "assert(!code.match(/i\\s*?<=\\s*?len;/g), 'Your code should fix the terminal condition of the loop so that it stops at 1 before the length.');"
         }
       ],
       "solutions": [],
@@ -542,21 +493,16 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.",
-          "testString":
-            "assert(JSON.stringify(matrix) == \"[[0,0],[0,0],[0,0]]\", 'Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.');"
+          "text": "Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.",
+          "testString": "assert(JSON.stringify(matrix) == \"[[0,0],[0,0],[0,0]]\", 'Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.');"
         },
         {
           "text": "The <code>matrix</code> variable should have 3 rows.",
-          "testString":
-            "assert(matrix.length == 3, 'The <code>matrix</code> variable should have 3 rows.');"
+          "testString": "assert(matrix.length == 3, 'The <code>matrix</code> variable should have 3 rows.');"
         },
         {
-          "text":
-            "The <code>matrix</code> variable should have 2 columns in each row.",
-          "testString":
-            "assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'The <code>matrix</code> variable should have 2 columns in each row.');"
+          "text": "The <code>matrix</code> variable should have 2 columns in each row.",
+          "testString": "assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'The <code>matrix</code> variable should have 2 columns in each row.');"
         }
       ],
       "solutions": [],
@@ -608,16 +554,12 @@
       ],
       "tests": [
         {
-          "text":
-            "Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.",
-          "testString":
-            "assert(code.match(/i\\s*?<=\\s*?4;/g).length == 1, 'Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.');"
+          "text": "Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.",
+          "testString": "assert(code.match(/i\\s*?<=\\s*?4;/g).length == 1, 'Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.');"
         },
         {
-          "text":
-            "Your code should fix the comparison operator in the terminal condition of the loop.",
-          "testString":
-            "assert(!code.match(/i\\s*?!=\\s*?4;/g), 'Your code should fix the comparison operator in the terminal condition of the loop.');"
+          "text": "Your code should fix the comparison operator in the terminal condition of the loop.",
+          "testString": "assert(!code.match(/i\\s*?!=\\s*?4;/g), 'Your code should fix the comparison operator in the terminal condition of the loop.');"
         }
       ],
       "solutions": [],
