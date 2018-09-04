@@ -7,8 +7,10 @@
   margin: 0;
   padding: 0;
 }
-
-.certification-namespace .container {
+.certification-namespace h1 {
+  margin: 12px 0;
+}
+.certification-namespace.container {
   max-width: 1500px;
   width: 100%;
   padding: 30px;
@@ -24,8 +26,8 @@
   padding: 0;
 }
 
-.certification-namespace .certificate-wrapper {
-  top: 0;
+.certification-namespace.certificate-wrapper {
+  top: calc(100vh / 20);
   position: relative;
   font-family: 'Sax Mono', monospace;
 }
@@ -33,11 +35,8 @@
 .certification-namespace header {
   width: 100%;
   height: 140px;
-  /*background-image: url('https://i.imgur.com/1FK6aaN.png');
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;*/
   background-color: darkgreen;
+  position: relative;
 }
 
 .certification-namespace .logo {
@@ -178,7 +177,7 @@
 }
 
 @media screen and (max-width: 675px) {
-  .certification-namespace .container {
+  .certification-namespaces.issue-date {
     padding: 0;
     border: 0;
   }
