@@ -5,7 +5,8 @@
   "helpRoom": "Help",
   "required": [
     {
-      "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
+      "link":
+        "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
     }
   ],
   "challenges": [
@@ -23,19 +24,25 @@
       ],
       "tests": [
         {
-          "text": "Create a <code>script</code> element making sure it is valid and has a closing tag.",
-          "testString": "assert(code.match(/<\\/script\\s*>/g) && code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && code.match(/<\\/script\\s*>/g).length === code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'Create a <code>script</code> element making sure it is valid and has a closing tag.');"
+          "text":
+            "Create a <code>script</code> element making sure it is valid and has a closing tag.",
+          "testString":
+            "assert(code.match(/<\\/script\\s*>/g) && code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g) && code.match(/<\\/script\\s*>/g).length === code.match(/<script(\\sasync|\\sdefer)*(\\s(charset|src|type)\\s*=\\s*[\"\\']+[^\"\\']*[\"\\']+)*(\\sasync|\\sdefer)*\\s*>/g).length, 'Create a <code>script</code> element making sure it is valid and has a closing tag.');"
         },
         {
-          "text": "You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.",
-          "testString": "assert(code.match(/\\$\\s*?\\(\\s*?document\\s*?\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.');"
+          "text":
+            "You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.",
+          "testString":
+            "assert(code.match(/\\$\\s*?\\(\\s*?document\\s*?\\)\\.ready\\s*?\\(\\s*?function\\s*?\\(\\s*?\\)\\s*?\\{/g), 'You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.');"
         },
         {
-          "text": "Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>",
-          "testString": "assert(code.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>');"
+          "text":
+            "Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>",
+          "testString":
+            "assert(code.match(/\\n*?\\s*?\\}\\s*?\\);/g), 'Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Lerne, wie Script Tags und Document Ready funktionieren",
@@ -50,7 +57,8 @@
           ]
         },
         "es": {
-          "title": "Aprende cómo funcionan las etiquetas de programa y la función de documento listo.",
+          "title":
+            "Aprende cómo funcionan las etiquetas de programa y la función de documento listo.",
           "description": [
             "Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos. No te preocupes por JavaScript en si --lo cubriremos pronto.",
             "Antes de que podamos comenzar a usar jQuery, tenemos que añadir algunas cosas a nuestro HTML.",
@@ -62,7 +70,8 @@
           ]
         },
         "fr": {
-          "title": "Apprendre comment fonctionnent les balises Script et Document Ready",
+          "title":
+            "Apprendre comment fonctionnent les balises Script et Document Ready",
           "description": [
             "Nous sommes maintenant prêt à apprendre jQuery, l'outil JavaScript le plus populaire de tout les temps. Ne vous inquiétez pas à propos de JavaScript lui-même, nous y viendrons bientôt.",
             "Avant de pouvoir utiliser jQuery, nous avons besoin d'ajouter certaines choses à notre HTML.",
@@ -114,7 +123,8 @@
       "title": "Target HTML Elements with Selectors Using jQuery",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -127,19 +137,24 @@
       ],
       "tests": [
         {
-          "text": "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.",
-          "testString": "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.');"
+          "text":
+            "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.",
+          "testString":
+            "assert($(\"button\").hasClass(\"animated\") && $(\"button\").hasClass(\"bounce\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>bounce</code> to your <code>button</code> elements.');"
         },
         {
           "text": "Only use jQuery to add these colors to the element.",
-          "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these colors to the element.');"
+          "testString":
+            "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these colors to the element.');"
         },
         {
-          "text": "Your jQuery code should be within the <code>$(document).ready();</code> function.",
-          "testString": "assert(code.match(/\\$\\(document\\)\\.ready\\(function.*(\\s|\\n)*.*button.*.addClass.*\\);/g), 'Your jQuery code should be within the <code>$(document).ready();</code> function.');"
+          "text":
+            "Your jQuery code should be within the <code>$(document).ready();</code> function.",
+          "testString":
+            "assert(code.match(/\\$\\(document\\)\\.ready\\(function.*(\\s|\\n)*.*button.*.addClass.*\\);/g), 'Your jQuery code should be within the <code>$(document).ready();</code> function.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "HTML-Elemente mit Selektoren durch jQuery auswählen",
@@ -222,7 +237,8 @@
       "title": "Target Elements by Class Using jQuery",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -236,15 +252,18 @@
       ],
       "tests": [
         {
-          "text": "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.",
-          "testString": "assert($(\".well\").hasClass(\"animated\") && $(\".well\").hasClass(\"shake\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.');"
+          "text":
+            "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.",
+          "testString":
+            "assert($(\".well\").hasClass(\"animated\") && $(\".well\").hasClass(\"shake\"), 'Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(!code.match(/class\\.\\*animated/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(!code.match(/class\\.\\*animated/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Elemente anhand von Klassen mit jQuery auswählen",
@@ -329,7 +348,8 @@
       "title": "Target Elements by id Using jQuery",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -342,19 +362,24 @@
       ],
       "tests": [
         {
-          "text": "Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.",
-          "testString": "assert($(\"#target3\").hasClass(\"animated\"), 'Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.');"
+          "text":
+            "Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.",
+          "testString":
+            "assert($(\"#target3\").hasClass(\"animated\"), 'Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.');"
         },
         {
-          "text": "Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.",
-          "testString": "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && code.match(/\\$\\(\\s*.#target3.\\s*\\)/g), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.');"
+          "text":
+            "Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.",
+          "testString":
+            "assert(($(\"#target3\").hasClass(\"fadeOut\") || $(\"#target3\").hasClass(\"fadeout\"))  && code.match(/\\$\\(\\s*.#target3.\\s*\\)/g), 'Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Elemente anhand der id mit jQuery auswählen",
@@ -438,7 +463,8 @@
       "title": "Delete Your jQuery Functions",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -447,27 +473,35 @@
       ],
       "tests": [
         {
-          "text": "Delete all three of your jQuery functions from your <code>document ready function</code>.",
-          "testString": "assert(code.match(/\\{\\s*\\}\\);/g), 'Delete all three of your jQuery functions from your <code>document ready function</code>.');"
+          "text":
+            "Delete all three of your jQuery functions from your <code>document ready function</code>.",
+          "testString":
+            "assert(code.match(/\\{\\s*\\}\\);/g), 'Delete all three of your jQuery functions from your <code>document ready function</code>.');"
         },
         {
           "text": "Leave your <code>script</code> element intact.",
-          "testString": "assert(code.match(/<script>/g), 'Leave your <code>script</code> element intact.');"
+          "testString":
+            "assert(code.match(/<script>/g), 'Leave your <code>script</code> element intact.');"
         },
         {
-          "text": "Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.",
-          "testString": "assert(code.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.');"
+          "text":
+            "Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.",
+          "testString":
+            "assert(code.match(/\\$\\(document\\)\\.ready\\(function\\(\\)\\s?\\{/g), 'Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.');"
         },
         {
-          "text": "Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.",
-          "testString": "assert(code.match(/.*\\s*\\}\\);/g), 'Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.');"
+          "text":
+            "Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.",
+          "testString":
+            "assert(code.match(/.*\\s*\\}\\);/g), 'Leave your \"document ready function\" closing <code>&#125;&#41;</code> intact.');"
         },
         {
           "text": "Leave your <code>script</code> element closing tag intact.",
-          "testString": "assert(code.match(/<\\/script>/g) && code.match(/<script/g) && code.match(/<\\/script>/g).length === code.match(/<script/g).length, 'Leave your <code>script</code> element closing tag intact.');"
+          "testString":
+            "assert(code.match(/<\\/script>/g) && code.match(/<script/g) && code.match(/<\\/script>/g).length === code.match(/<script/g).length, 'Leave your <code>script</code> element closing tag intact.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Lösche deine jQuery Funktionen",
@@ -540,7 +574,8 @@
       "title": "Target the Same Element with Multiple jQuery Selectors",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -555,33 +590,41 @@
       "tests": [
         {
           "text": "Use the <code>$&#40\"button\"&#41</code> selector.",
-          "testString": "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"button\"&#41</code> selector.');"
+          "testString":
+            "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?button\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"button\"&#41</code> selector.');"
         },
         {
           "text": "Use the <code>$&#40\".btn\"&#41</code> selector.",
-          "testString": "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'Use the <code>$&#40\".btn\"&#41</code> selector.');"
+          "testString":
+            "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?\\.btn\\s*?(?:'|\")/gi), 'Use the <code>$&#40\".btn\"&#41</code> selector.');"
         },
         {
           "text": "Use the <code>$&#40\"#target1\"&#41</code> selector.",
-          "testString": "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"#target1\"&#41</code> selector.');"
+          "testString":
+            "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")/gi), 'Use the <code>$&#40\"#target1\"&#41</code> selector.');"
         },
         {
           "text": "Only add one class with each of your three selectors.",
-          "testString": "assert(code.match(/addClass/g) && code.match(/addClass\\s*?\\(\\s*?('|\")\\s*?[\\w-]+\\s*?\\1\\s*?\\)/g).length > 2, 'Only add one class with each of your three selectors.');"
+          "testString":
+            "assert(code.match(/addClass/g) && code.match(/addClass\\s*?\\(\\s*?('|\")\\s*?[\\w-]+\\s*?\\1\\s*?\\)/g).length > 2, 'Only add one class with each of your three selectors.');"
         },
         {
-          "text": "Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.",
-          "testString": "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.');"
+          "text":
+            "Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.",
+          "testString":
+            "assert($(\"#target1\").hasClass(\"animated\") && $(\"#target1\").hasClass(\"shake\") && $(\"#target1\").hasClass(\"btn-primary\"), 'Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
-          "title": "Wähle das gleiche Element mit mehreren jQuery Selektoren aus",
+          "title":
+            "Wähle das gleiche Element mit mehreren jQuery Selektoren aus",
           "description": [
             "Bis jetzt kennst du drei verschiedene Wege um Elemente auszuwählen: mit dem Element-Typ: <code>$(\"button\")</code>, mit der Element-Klasse: <code>$(\".btn\")</code>, und der Element-ID: <code>$(\"#target1\")</code>.",
             "Auch wenn es möglich ist, mehrere Klassen in einem einzigen <code>.addClass()</code> Aufruf hinzuzufügen, lass uns jetzt die Klassen in drei verschiedenen Wegen dem Element hinzufügen.",
@@ -659,7 +702,8 @@
       "title": "Remove Classes from an Element with jQuery",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -670,19 +714,23 @@
       ],
       "tests": [
         {
-          "text": "Remove the <code>btn-default</code> class from all of your <code>button</code> elements.",
-          "testString": "assert($(\".btn-default\").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.');"
+          "text":
+            "Remove the <code>btn-default</code> class from all of your <code>button</code> elements.",
+          "testString":
+            "assert($(\".btn-default\").length === 0, 'Remove the <code>btn-default</code> class from all of your <code>button</code> elements.');"
         },
         {
           "text": "Only use jQuery to remove this class from the element.",
-          "testString": "assert(code.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.');"
+          "testString":
+            "assert(code.match(/btn btn-default/g), 'Only use jQuery to remove this class from the element.');"
         },
         {
           "text": "Only remove the <code>btn-default</code> class.",
-          "testString": "assert(code.match(/\\.[\\v\\s]*removeClass[\\s\\v]*\\([\\s\\v]*('|\")\\s*btn-default\\s*('|\")[\\s\\v]*\\)/gm), 'Only remove the <code>btn-default</code> class.');"
+          "testString":
+            "assert(code.match(/\\.[\\v\\s]*removeClass[\\s\\v]*\\([\\s\\v]*('|\")\\s*btn-default\\s*('|\")[\\s\\v]*\\)/gm), 'Only remove the <code>btn-default</code> class.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Entferne Klassen von einem Element mit jQuery",
@@ -761,7 +809,8 @@
       "title": "Change the CSS of an Element Using jQuery",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -776,14 +825,16 @@
       "tests": [
         {
           "text": "Your <code>target1</code> element should have red text.",
-          "testString": "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'Your <code>target1</code> element should have red text.');"
+          "testString":
+            "assert($(\"#target1\").css(\"color\") === 'rgb(255, 0, 0)', 'Your <code>target1</code> element should have red text.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(!code.match(/class.*animated/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Das CSS eines Elements mit jQuery ändern",
@@ -881,18 +932,21 @@
       "tests": [
         {
           "text": "Disable your <code>target1</code> button.",
-          "testString": "assert($(\"#target1\") && $(\"#target1\").prop(\"disabled\") && code.match(/[\"']disabled[\"'],( true|true)/g), 'Disable your <code>target1</code> button.');"
+          "testString":
+            "assert($(\"#target1\") && $(\"#target1\").prop(\"disabled\") && code.match(/[\"']disabled[\"'],( true|true)/g), 'Disable your <code>target1</code> button.');"
         },
         {
           "text": "Do not disable any other buttons.",
-          "testString": "assert($(\"#target2\") && !$(\"#target2\").prop(\"disabled\"), 'Do not disable any other buttons.');"
+          "testString":
+            "assert($(\"#target2\") && !$(\"#target2\").prop(\"disabled\"), 'Do not disable any other buttons.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(!code.match(/disabled[^<]*>/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(!code.match(/disabled[^<]*>/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Elemente mit jQuery deaktivieren",
@@ -917,7 +971,8 @@
           ]
         },
         "fr": {
-          "title": "Changer le texte à l'intérieur d'un élément en utilisant jQuery",
+          "title":
+            "Changer le texte à l'intérieur d'un élément en utilisant jQuery",
           "description": [
             "En utilisant jQuery, vous pouvez changer le texte entre les balises ouvrante et fermante d'un élément. Vous pouvez même changer les balises HTML.",
             "jQuery dispose d'une fonction appelée <code>.html()</code> qui vous permet d'ajouter des balises HTML et du texte à l'intérieur d'un élément. Tout le contenu de l'élément sera alors remplacé par le contenu que vous indiquerez en utilisant la fonction.",
@@ -986,27 +1041,35 @@
       "releasedOn": "November 18, 2015",
       "tests": [
         {
-          "text": "Emphasize the text in your <code>target4</code> button by adding HTML tags.",
-          "testString": "assert.isTrue((/<em>|<i>\\s*#target4\\s*<\\/em>|<\\/i>/gi).test($(\"#target4\").html()), 'Emphasize the text in your <code>target4</code> button by adding HTML tags.');"
+          "text":
+            "Emphasize the text in your <code>target4</code> button by adding HTML tags.",
+          "testString":
+            "assert.isTrue((/<em>|<i>\\s*#target4\\s*<\\/em>|<\\/i>/gi).test($(\"#target4\").html()), 'Emphasize the text in your <code>target4</code> button by adding HTML tags.');"
         },
         {
           "text": "Make sure the text is otherwise unchanged.",
-          "testString": "assert($(\"#target4\") && $(\"#target4\").text().trim() === '#target4', 'Make sure the text is otherwise unchanged.');"
+          "testString":
+            "assert($(\"#target4\") && $(\"#target4\").text().trim() === '#target4', 'Make sure the text is otherwise unchanged.');"
         },
         {
           "text": "Do not alter any other text.",
-          "testString": "assert.isFalse((/<em>|<i>/gi).test($(\"h3\").html()), 'Do not alter any other text.');"
+          "testString":
+            "assert.isFalse((/<em>|<i>/gi).test($(\"h3\").html()), 'Do not alter any other text.');"
         },
         {
-          "text": "Make sure you are using <code>.html()</code> and not <code>.text()</code>.",
-          "testString": "assert(code.match(/\\.html\\(/g), 'Make sure you are using <code>.html()</code> and not <code>.text()</code>.');"
+          "text":
+            "Make sure you are using <code>.html()</code> and not <code>.text()</code>.",
+          "testString":
+            "assert(code.match(/\\.html\\(/g), 'Make sure you are using <code>.html()</code> and not <code>.text()</code>.');"
         },
         {
-          "text": "Make sure to select <code>button id=\"target4\"</code> with jQuery.",
-          "testString": "assert(code.match(/\\$\\(\\s*?(\\\"|\\')#target4(\\\"|\\')\\s*?\\)\\.html\\(/), 'Make sure to select <code>button id=\"target4\"</code> with jQuery.');"
+          "text":
+            "Make sure to select <code>button id=\"target4\"</code> with jQuery.",
+          "testString":
+            "assert(code.match(/\\$\\(\\s*?(\\\"|\\')#target4(\\\"|\\')\\s*?\\)\\.html\\(/), 'Make sure to select <code>button id=\"target4\"</code> with jQuery.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Ändere den Text innerhalb eines Elements mit jQuery",
@@ -1083,15 +1146,18 @@
       ],
       "tests": [
         {
-          "text": "Use jQuery to remove your <code>target4</code> element from your page.",
-          "testString": "assert($(\"#target4\").length === 0 && code.match(/\\$\\([\"']#target4[\"']\\).remove\\(\\)/g), 'Use jQuery to remove your <code>target4</code> element from your page.');"
+          "text":
+            "Use jQuery to remove your <code>target4</code> element from your page.",
+          "testString":
+            "assert($(\"#target4\").length === 0 && code.match(/\\$\\([\"']#target4[\"']\\).remove\\(\\)/g), 'Use jQuery to remove your <code>target4</code> element from your page.');"
         },
         {
           "text": "Only use jQuery to remove this element.",
-          "testString": "assert(code.match(/id=\"target4/g) && !code.match(/<!--.*id=\"target4\".*-->/g) && $(\"#right-well\").length > 0, 'Only use jQuery to remove this element.');"
+          "testString":
+            "assert(code.match(/id=\"target4/g) && !code.match(/<!--.*id=\"target4\".*-->/g) && $(\"#right-well\").length > 0, 'Only use jQuery to remove this element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Entferne ein Element mit jQuery",
@@ -1165,19 +1231,24 @@
       ],
       "tests": [
         {
-          "text": "Your <code>target2</code> element should not be inside your <code>left-well</code>.",
-          "testString": "assert($(\"#left-well\").children(\"#target2\").length === 0, 'Your <code>target2</code> element should not be inside your <code>left-well</code>.');"
+          "text":
+            "Your <code>target2</code> element should not be inside your <code>left-well</code>.",
+          "testString":
+            "assert($(\"#left-well\").children(\"#target2\").length === 0, 'Your <code>target2</code> element should not be inside your <code>left-well</code>.');"
         },
         {
-          "text": "Your <code>target2</code> element should be inside your <code>right-well</code>.",
-          "testString": "assert($(\"#right-well\").children(\"#target2\").length > 0, 'Your <code>target2</code> element should be inside your <code>right-well</code>.');"
+          "text":
+            "Your <code>target2</code> element should be inside your <code>right-well</code>.",
+          "testString":
+            "assert($(\"#right-well\").children(\"#target2\").length > 0, 'Your <code>target2</code> element should be inside your <code>right-well</code>.');"
         },
         {
           "text": "Only use jQuery to move these elements.",
-          "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to move these elements.');"
+          "testString":
+            "assert(!code.match(/class.*animated/g), 'Only use jQuery to move these elements.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Verwende appendTo um Elemente mit jQuery zu verschieben.",
@@ -1257,19 +1328,24 @@
       ],
       "tests": [
         {
-          "text": "Your <code>target5</code> element should be inside your <code>right-well</code>.",
-          "testString": "assert($(\"#right-well\").children(\"#target5\").length > 0, 'Your <code>target5</code> element should be inside your <code>right-well</code>.');"
+          "text":
+            "Your <code>target5</code> element should be inside your <code>right-well</code>.",
+          "testString":
+            "assert($(\"#right-well\").children(\"#target5\").length > 0, 'Your <code>target5</code> element should be inside your <code>right-well</code>.');"
         },
         {
-          "text": "A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.",
-          "testString": "assert($(\"#left-well\").children(\"#target5\").length > 0, 'A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.');"
+          "text":
+            "A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.",
+          "testString":
+            "assert($(\"#left-well\").children(\"#target5\").length > 0, 'A copy of your <code>target5</code> element should also be inside your <code>left-well</code>.');"
         },
         {
           "text": "Only use jQuery to move these elements.",
-          "testString": "assert(!code.match(/class.*animated/g), 'Only use jQuery to move these elements.');"
+          "testString":
+            "assert(!code.match(/class.*animated/g), 'Only use jQuery to move these elements.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Ein Element kopieren mit jQuery",
@@ -1352,23 +1428,30 @@
       ],
       "tests": [
         {
-          "text": "Your <code>left-well</code> element should have a red background.",
-          "testString": "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.');"
+          "text":
+            "Your <code>left-well</code> element should have a red background.",
+          "testString":
+            "assert($(\"#left-well\").css(\"background-color\") === 'red' || $(\"#left-well\").css(\"background-color\") === 'rgb(255, 0, 0)' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#ff0000' || $(\"#left-well\").css(\"background-color\").toLowerCase() === '#f00', 'Your <code>left-well</code> element should have a red background.');"
         },
         {
-          "text": "You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.",
-          "testString": "assert(code.match(/\\.parent\\s*\\(\\s*\\)\\s*\\.css/g), 'You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.');"
+          "text":
+            "You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.",
+          "testString":
+            "assert(code.match(/\\.parent\\s*\\(\\s*\\)\\s*\\.css/g), 'You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.');"
         },
         {
-          "text": "The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.",
-          "testString": "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")\\s*?\\)\\s*?\\.parent/gi), 'The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.');"
+          "text":
+            "The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.",
+          "testString":
+            "assert(code.match(/\\$\\s*?\\(\\s*?(?:'|\")\\s*?#target1\\s*?(?:'|\")\\s*?\\)\\s*?\\.parent/gi), 'The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(code.match(/<div class=\"well\" id=\"left-well\">/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(code.match(/<div class=\"well\" id=\"left-well\">/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Wähle das Eltern-Element mit jQuery aus",
@@ -1454,19 +1537,24 @@
       ],
       "tests": [
         {
-          "text": "All children of <code>#right-well</code> should have orange text.",
-          "testString": "assert($(\"#right-well\").children().css(\"color\") === 'rgb(255, 165, 0)', 'All children of <code>#right-well</code> should have orange text.');"
+          "text":
+            "All children of <code>#right-well</code> should have orange text.",
+          "testString":
+            "assert($(\"#right-well\").children().css(\"color\") === 'rgb(255, 165, 0)', 'All children of <code>#right-well</code> should have orange text.');"
         },
         {
-          "text": "You should use the <code>children&#40&#41</code> function to modify these elements.",
-          "testString": "assert(code.match(/\\.children\\(\\)\\.css/g), 'You should use the <code>children&#40&#41</code> function to modify these elements.');"
+          "text":
+            "You should use the <code>children&#40&#41</code> function to modify these elements.",
+          "testString":
+            "assert(code.match(/\\.children\\(\\)\\.css/g), 'You should use the <code>children&#40&#41</code> function to modify these elements.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(code.match(/<div class=\"well\" id=\"right-well\">/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(code.match(/<div class=\"well\" id=\"right-well\">/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Wähle Kinder-Elemente mit jQuery aus",
@@ -1543,7 +1631,8 @@
       "title": "Target a Specific Child of an Element Using jQuery",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -1556,23 +1645,29 @@
       ],
       "tests": [
         {
-          "text": "The second element in your <code>target</code> elements should bounce.",
-          "testString": "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in your <code>target</code> elements should bounce.');"
+          "text":
+            "The second element in your <code>target</code> elements should bounce.",
+          "testString":
+            "assert($(\".target:nth-child(2)\").hasClass(\"animated\") && $(\".target:nth-child(2)\").hasClass(\"bounce\"), 'The second element in your <code>target</code> elements should bounce.');"
         },
         {
           "text": "Only two elements should bounce.",
-          "testString": "assert($(\".animated.bounce\").length === 2, 'Only two elements should bounce.');"
+          "testString":
+            "assert($(\".animated.bounce\").length === 2, 'Only two elements should bounce.');"
         },
         {
-          "text": "You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.",
-          "testString": "assert(code.match(/\\:nth-child\\(/g), 'You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.');"
+          "text":
+            "You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.",
+          "testString":
+            "assert(code.match(/\\:nth-child\\(/g), 'You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(code.match(/\\$\\(\".target:nth-child\\(2\\)\"\\)/g) || code.match(/\\$\\('.target:nth-child\\(2\\)'\\)/g) || code.match(/\\$\\(\".target\"\\).filter\\(\":nth-child\\(2\\)\"\\)/g) || code.match(/\\$\\('.target'\\).filter\\(':nth-child\\(2\\)'\\)/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(code.match(/\\$\\(\".target:nth-child\\(2\\)\"\\)/g) || code.match(/\\$\\('.target:nth-child\\(2\\)'\\)/g) || code.match(/\\$\\(\".target\"\\).filter\\(\":nth-child\\(2\\)\"\\)/g) || code.match(/\\$\\('.target'\\).filter\\(':nth-child\\(2\\)'\\)/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Wähle ein spezifisches Kinder-Element mit jQuery aus",
@@ -1650,7 +1745,8 @@
       "title": "Target Even Elements Using jQuery",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -1662,19 +1758,24 @@
       ],
       "tests": [
         {
-          "text": "All of the <code>target</code> elements that jQuery considers to be even should shake.",
-          "testString": "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'All of the <code>target</code> elements that jQuery considers to be even should shake.');"
+          "text":
+            "All of the <code>target</code> elements that jQuery considers to be even should shake.",
+          "testString":
+            "assert($('.target:even').hasClass('animated') && $('.target:even').hasClass('shake'), 'All of the <code>target</code> elements that jQuery considers to be even should shake.');"
         },
         {
-          "text": "You should use the <code>&#58;even</code> selector to modify these elements.",
-          "testString": "assert(code.match(/\\:even/g), 'You should use the <code>&#58;even</code> selector to modify these elements.');"
+          "text":
+            "You should use the <code>&#58;even</code> selector to modify these elements.",
+          "testString":
+            "assert(code.match(/\\:even/g), 'You should use the <code>&#58;even</code> selector to modify these elements.');"
         },
         {
           "text": "Only use jQuery to add these classes to the element.",
-          "testString": "assert(code.match(/\\$\\(\".target:even\"\\)/g) || code.match(/\\$\\('.target:even'\\)/g) || code.match(/\\$\\(\".target\"\\).filter\\(\":even\"\\)/g) || code.match(/\\$\\('.target'\\).filter\\(':even'\\)/g), 'Only use jQuery to add these classes to the element.');"
+          "testString":
+            "assert(code.match(/\\$\\(\".target:even\"\\)/g) || code.match(/\\$\\('.target:even'\\)/g) || code.match(/\\$\\(\".target\"\\).filter\\(\":even\"\\)/g) || code.match(/\\$\\('.target'\\).filter\\(':even'\\)/g), 'Only use jQuery to add these classes to the element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Wähle gerade Zahlen mit jQuery aus",
@@ -1751,7 +1852,8 @@
       "title": "Use jQuery to Modify the Entire Page",
       "required": [
         {
-          "link": "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
+          "link":
+            "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css"
         }
       ],
       "description": [
@@ -1762,11 +1864,13 @@
       ],
       "tests": [
         {
-          "text": "Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.",
-          "testString": "assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.');"
+          "text":
+            "Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.",
+          "testString":
+            "assert($('body').hasClass('animated') && $('body').hasClass('hinge'), 'Add the classes <code>animated</code> and <code>hinge</code> to your <code>body</code> element.');"
         }
       ],
-      "challengeType": 0,
+      "challengeType": 6,
       "translations": {
         "de": {
           "title": "Mit jQuery die gesamte Seite modifizieren",
