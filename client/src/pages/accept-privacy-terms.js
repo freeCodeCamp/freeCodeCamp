@@ -10,7 +10,7 @@ import {
   FormGroup,
   ControlLabel,
   Checkbox
-} from 'react-bootstrap';
+} from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
