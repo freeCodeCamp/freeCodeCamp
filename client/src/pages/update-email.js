@@ -13,7 +13,7 @@ import {
   Row,
   Col,
   Button
-} from 'react-bootstrap';
+} from '@freecodecamp/react-bootstrap';
 
 import Layout from '../components/Layout';
 import { Spacer } from '../components/helpers';

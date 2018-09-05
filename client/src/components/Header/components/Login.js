@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
+import { Button } from '@freecodecamp/react-bootstrap';
 import { Link } from 'gatsby';
 
 import './login.css';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col, Image } from 'react-bootstrap';
+import { Grid, Row, Col, Image } from '@freecodecamp/react-bootstrap';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import {
   faHtml5,

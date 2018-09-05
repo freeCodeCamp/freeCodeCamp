@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Alert } from 'react-bootstrap';
+import { Alert } from '@freecodecamp/react-bootstrap';
 
 import './flash.css';
 

@@ -4,7 +4,7 @@ import { navigateTo } from 'gatsby';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
 
 import { Loader, Spacer } from '../components/helpers';
 import Layout from '../components/Layout';
