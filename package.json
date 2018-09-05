@@ -1,0 +1,7 @@
+{
+  "name": "@freecodecamp/freecodecamp",
+  "version": "0.0.1",
+  "devDependencies": {
+    "tree-kill": "^1.2.0"
+  }
+}
