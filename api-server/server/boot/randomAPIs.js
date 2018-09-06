@@ -1,5 +1,7 @@
 import request from 'request';
 
+import { homeLocation } from '../../../config/env';
+
 import constantStrings from '../utils/constantStrings.json';
 import testimonials from '../resources/testimonials.json';
 
@@ -8,13 +10,14 @@ const githubSecret = process.env.GITHUB_SECRET;
 
 module.exports = function(app) {
   const router = app.loopback.Router();
+  const api = app.loopback.Router();
   const User = app.models.User;
 
   router.get('/api/github', githubCalls);
   router.get('/chat', chat);
   router.get('/twitch', twitch);
-  router.get('/u/:email', unsubscribe);
-  router.get('/unsubscribe/:email', unsubscribe);
+  router.get('/u/:email', unsubscribeDepricated);
+  router.get('/unsubscribe/:email', unsubscribeDepricated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
   router.get(
     '/the-fastest-web-page-on-the-internet',
@@ -22,7 +25,7 @@ module.exports = function(app) {
   );
   router.get('/unsubscribed/:unsubscribeId', unsubscribedWithId);
   router.get('/unsubscribed', unsubscribed);
-  router.get('/resubscribe/:unsubscribeId', resubscribe);
+  api.get('/resubscribe/:unsubscribeId', resubscribe);
   router.get('/nonprofits', nonprofits);
   router.get('/nonprofits-form', nonprofitsForm);
   router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
@@ -32,21 +35,24 @@ module.exports = function(app) {
   router.get('/all-stories', showAllTestimonials);
   router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
   router.get(
-      '/software-resources-for-nonprofits',
-      softwareResourcesForNonprofits
+    '/software-resources-for-nonprofits',
+    softwareResourcesForNonprofits
   );
   router.get('/academic-honesty', academicHonesty);
 
   app.use(router);
+
+  app.use('/internal', api);
 
   function chat(req, res) {
     res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
   }
 
   function howNonprofitProjectsWork(req, res) {
-      res.redirect(301,
-        'https://medium.freecodecamp.com/open-source-for-good-1a0ea9f32d5a');
-
+    res.redirect(
+      301,
+      'https://medium.freecodecamp.com/open-source-for-good-1a0ea9f32d5a'
+    );
   }
 
   function softwareResourcesForNonprofits(req, res) {
@@ -56,9 +62,9 @@ module.exports = function(app) {
   }
 
   function academicHonesty(req, res) {
-      res.render('resources/academic-honesty', {
-          title: 'Academic Honesty policy'
-      });
+    res.render('resources/academic-honesty', {
+      title: 'Academic Honesty policy'
+    });
   }
 
   function theFastestWebPageOnTheInternet(req, res) {
@@ -69,7 +75,8 @@ module.exports = function(app) {
 
   function showTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy freeCodeCamp Students ' +
+      title:
+        'Testimonials from Happy freeCodeCamp Students ' +
         'who got Software Engineer Jobs',
       stories: testimonials.slice(0, 72),
       moreStories: true
@@ -78,7 +85,8 @@ module.exports = function(app) {
 
   function showAllTestimonials(req, res) {
     res.render('resources/stories', {
-      title: 'Testimonials from Happy freeCodeCamp Students ' +
+      title:
+        'Testimonials from Happy freeCodeCamp Students ' +
         'who got Software Engineer Jobs',
       stories: testimonials,
       moreStories: false
@@ -119,88 +127,51 @@ module.exports = function(app) {
     res.redirect('https://twitch.tv/freecodecamp');
   }
 
-  function unsubscribe(req, res, next) {
-    req.checkParams(
-      'email',
-      `"${req.params.email}" isn't a valid email address.`
-    ).isEmail();
-    const errors = req.validationErrors(true);
-    if (errors) {
-      req.flash('error', { msg: errors.email.msg });
-      return res.redirect('/');
-    }
-    return User.find({
-      where: {
-        email: req.params.email
-      }
-    }, (err, users) => {
-      if (err) { return next(err); }
-      if (!users.length) {
-        req.flash('info', {
-          msg: 'Email address not found. Please update your Email ' +
-            'preferences from your settings.'
-        });
-        return res.redirect('/');
-      }
-
-      const updates = users.map(user => {
-        return new Promise((resolve, reject) =>
-          user.updateAttributes({
-            sendQuincyEmail: false
-          }, (err) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve();
-            }
-          })
-        );
-      });
-      return Promise.all(updates)
-        .then(() => {
-          req.flash('info', {
-            msg: 'We\'ve successfully updated your Email preferences.'
-          });
-          return res.redirect('/unsubscribed');
-        })
-        .catch(next);
-    });
+  function unsubscribeDepricated(req, res) {
+    req.flash(
+      'info',
+      'We are no longer able to process this unsubscription request. ' +
+        'Please go to your settings to update your email preferences'
+    );
+    res.redirectWithFlash(homeLocation);
   }
 
   function unsubscribeById(req, res, next) {
     const { unsubscribeId } = req.params;
     if (!unsubscribeId) {
-      req.flash('info', {
-        msg: 'We could not find an account to unsubscribe'
-      });
-      return res.redirect('/');
+      req.flash('info', 'We could not find an account to unsubscribe');
+      return res.redirectWithFlash(homeLocation);
     }
     return User.find({ where: { unsubscribeId } }, (err, users) => {
       if (err || !users.length) {
-        req.flash('info', {
-          msg: 'We could not find an account to unsubscribe'
-        });
-        return res.redirect('/');
+        req.flash('info', 'We could not find an account to unsubscribe');
+        return res.redirectWithFlash(homeLocation);
       }
       const updates = users.map(user => {
         return new Promise((resolve, reject) =>
-          user.updateAttributes({
-            sendQuincyEmail: false
-          }, (err) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve();
+          user.updateAttributes(
+            {
+              sendQuincyEmail: false
+            },
+            err => {
+              if (err) {
+                reject(err);
+              } else {
+                resolve();
+              }
             }
-          })
+          )
         );
       });
       return Promise.all(updates)
         .then(() => {
-          req.flash('success', {
-            msg: 'We\'ve successfully updated your email preferences.'
-          });
-          return res.redirect(`/unsubscribed/${unsubscribeId}`);
+          req.flash(
+            'success',
+            "We've successfully updated your email preferences."
+          );
+          return res.redirectWithFlash(
+            `${homeLocation}/unsubscribed/${unsubscribeId}`
+          );
         })
         .catch(next);
     });
@@ -222,39 +193,44 @@ module.exports = function(app) {
 
   function resubscribe(req, res, next) {
     const { unsubscribeId } = req.params;
-    return User.find({ where: { unsubscribeId } },
-      (err, users) => {
-        if (err || !users.length) {
-          req.flash('info', {
-            msg: 'We could not find an account to unsubscribe'
-          });
-          return res.redirect('/');
-
-        }
-        const [ user ] = users;
-        return new Promise((resolve, reject) =>
-          user.updateAttributes({
+    if (!unsubscribeId) {
+      req.flash(
+        'info',
+        'We we unable to process this request, please check and try againÍ'
+      );
+      res.redirect(homeLocation);
+    }
+    return User.find({ where: { unsubscribeId } }, (err, users) => {
+      if (err || !users.length) {
+        req.flash('info', 'We could not find an account to resubscribe');
+        return res.redirectWithFlash(homeLocation);
+      }
+      const [user] = users;
+      return new Promise((resolve, reject) =>
+        user.updateAttributes(
+          {
             sendQuincyEmail: true
-          }, (err) => {
+          },
+          err => {
             if (err) {
               reject(err);
             } else {
               resolve();
             }
-          })
+          }
         )
+      )
         .then(() => {
-          req.flash('success', {
-            msg:
-            'We\'ve successfully updated your email preferences. Thank you ' +
-            'for resubscribing.'
-          });
-          return res.redirect('/');
+          req.flash(
+            'success',
+            "We've successfully updated your email preferences. Thank you " +
+              'for resubscribing.'
+          );
+          return res.redirectWithFlash(homeLocation);
         })
         .catch(next);
     });
   }
-
 
   function githubCalls(req, res, next) {
     var githubHeaders = {
@@ -273,10 +249,12 @@ module.exports = function(app) {
       ].join(''),
       githubHeaders,
       function(err, status1, pulls) {
-        if (err) { return next(err); }
-        pulls = pulls ?
-          Object.keys(JSON.parse(pulls)).length :
-          'Can\'t connect to github';
+        if (err) {
+          return next(err);
+        }
+        pulls = pulls
+          ? Object.keys(JSON.parse(pulls)).length
+          : "Can't connect to github";
 
         return request(
           [
@@ -288,10 +266,13 @@ module.exports = function(app) {
           ].join(''),
           githubHeaders,
           function(err, status2, issues) {
-            if (err) { return next(err); }
-            issues = ((pulls === parseInt(pulls, 10)) && issues) ?
-            Object.keys(JSON.parse(issues)).length - pulls :
-              "Can't connect to GitHub";
+            if (err) {
+              return next(err);
+            }
+            issues =
+              pulls === parseInt(pulls, 10) && issues
+                ? Object.keys(JSON.parse(issues)).length - pulls
+                : "Can't connect to GitHub";
             return res.send({
               issues: issues,
               pulls: pulls
