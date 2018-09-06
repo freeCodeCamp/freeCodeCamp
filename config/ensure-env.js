@@ -1,4 +1,4 @@
-const fs = require('fs-extra');
+const fs = require('fs');
 const path = require('path');
 
 const env = require('./env');
@@ -9,7 +9,7 @@ const clientPath = path.resolve(__dirname, '../client');
 fs.access(`${apiPath}/server/rev-manifest.json`, function(err) {
   if (err) {
     console.log('\n\ncreating manifest\n\n');
-    return fs.writeFileSync('./api-server/server/rev-manifest.json', '{}');
+    return fs.writeFileSync(`${apiPath}/server/rev-manifest.json`, '{}');
   }
   console.log('\n\nrev-manifest present\n\n');
   return null;
@@ -19,7 +19,7 @@ fs.access(`${apiPath}/server/resources/pathMigration.json`, err => {
   if (err) {
     console.log('\n\ncreating pathMigration\n\n');
     return fs.writeFileSync(
-      './api-server/server/resources/pathMigration.json',
+      `${apiPath}/server/resources/pathMigration.json`,
       '{}'
     );
   }
@@ -27,6 +27,5 @@ fs.access(`${apiPath}/server/resources/pathMigration.json`, err => {
   return null;
 });
 
-fs.ensureDir(`${clientPath}/config/`).then(() =>
-  fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env))
-);
+
+fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env))

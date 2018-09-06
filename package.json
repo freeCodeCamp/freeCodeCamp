@@ -8,7 +8,6 @@
     "tree-kill": "^1.2.0"
   },
   "dependencies": {
-    "dotenv": "^6.0.0",
-    "fs-extra": "^7.0.0"
+    "dotenv": "^6.0.0"
   }
 }
