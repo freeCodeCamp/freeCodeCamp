@@ -1,10 +1,12 @@
 import React from 'react'
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap'
 
-import { apiLocation } from '../../config/env.json'
+import env from '../../config/env.json'
 import Layout from '../components/Layout'
 import FullWidthRow from '../components/helpers/FullWidthRow'
 import { Spacer } from '../components/helpers'
+
+const { apiLocation } = env;
 
 function ShowUnsubscribed({ unsubscribeId }) {
   return (

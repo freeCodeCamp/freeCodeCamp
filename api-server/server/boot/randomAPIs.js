@@ -3,7 +3,6 @@ import request from 'request';
 import { homeLocation } from '../../../config/env';
 
 import constantStrings from '../utils/constantStrings.json';
-import testimonials from '../resources/testimonials.json';
 
 const githubClient = process.env.GITHUB_ID;
 const githubSecret = process.env.GITHUB_SECRET;
@@ -14,8 +13,6 @@ module.exports = function(app) {
   const User = app.models.User;
 
   router.get('/api/github', githubCalls);
-  router.get('/chat', chat);
-  router.get('/twitch', twitch);
   router.get('/u/:email', unsubscribeDepricated);
   router.get('/unsubscribe/:email', unsubscribeDepricated);
   router.get('/ue/:unsubscribeId', unsubscribeById);
@@ -27,69 +24,15 @@ module.exports = function(app) {
   router.get('/unsubscribed', unsubscribed);
   api.get('/resubscribe/:unsubscribeId', resubscribe);
   router.get('/nonprofits', nonprofits);
-  router.get('/nonprofits-form', nonprofitsForm);
-  router.get('/pmi-acp-agile-project-managers', agileProjectManagers);
-  router.get('/pmi-acp-agile-project-managers-form', agileProjectManagersForm);
   router.get('/coding-bootcamp-cost-calculator', bootcampCalculator);
-  router.get('/stories', showTestimonials);
-  router.get('/all-stories', showAllTestimonials);
-  router.get('/how-nonprofit-projects-work', howNonprofitProjectsWork);
-  router.get(
-    '/software-resources-for-nonprofits',
-    softwareResourcesForNonprofits
-  );
-  router.get('/academic-honesty', academicHonesty);
 
   app.use(router);
 
   app.use('/internal', api);
 
-  function chat(req, res) {
-    res.redirect('https://gitter.im/FreeCodeCamp/FreeCodeCamp');
-  }
-
-  function howNonprofitProjectsWork(req, res) {
-    res.redirect(
-      301,
-      'https://medium.freecodecamp.com/open-source-for-good-1a0ea9f32d5a'
-    );
-  }
-
-  function softwareResourcesForNonprofits(req, res) {
-    res.render('resources/software-resources-for-nonprofits', {
-      title: 'Software Resources for Nonprofits'
-    });
-  }
-
-  function academicHonesty(req, res) {
-    res.render('resources/academic-honesty', {
-      title: 'Academic Honesty policy'
-    });
-  }
-
   function theFastestWebPageOnTheInternet(req, res) {
     res.render('resources/the-fastest-web-page-on-the-internet', {
       title: 'This is the fastest web page on the internet'
-    });
-  }
-
-  function showTestimonials(req, res) {
-    res.render('resources/stories', {
-      title:
-        'Testimonials from Happy freeCodeCamp Students ' +
-        'who got Software Engineer Jobs',
-      stories: testimonials.slice(0, 72),
-      moreStories: true
-    });
-  }
-
-  function showAllTestimonials(req, res) {
-    res.render('resources/stories', {
-      title:
-        'Testimonials from Happy freeCodeCamp Students ' +
-        'who got Software Engineer Jobs',
-      stories: testimonials,
-      moreStories: false
     });
   }
 
@@ -103,28 +46,6 @@ module.exports = function(app) {
     res.render('resources/nonprofits', {
       title: 'Your Nonprofit Can Get Pro Bono Code'
     });
-  }
-
-  function nonprofitsForm(req, res) {
-    res.render('resources/nonprofits-form', {
-      title: 'Nonprofit Projects Proposal Form'
-    });
-  }
-
-  function agileProjectManagers(req, res) {
-    res.render('resources/pmi-acp-agile-project-managers', {
-      title: 'Get Agile Project Management Experience for the PMI-ACP'
-    });
-  }
-
-  function agileProjectManagersForm(req, res) {
-    res.render('resources/pmi-acp-agile-project-managers-form', {
-      title: 'Agile Project Management Program Application Form'
-    });
-  }
-
-  function twitch(req, res) {
-    res.redirect('https://twitch.tv/freecodecamp');
   }
 
   function unsubscribeDepricated(req, res) {
