@@ -1,7 +1,14 @@
 {
   "name": "@freecodecamp/freecodecamp",
   "version": "0.0.1",
+  "scripts": {
+    "develop": "node ./config/ensure-env.js && node develop-client-server.js"
+  },
   "devDependencies": {
     "tree-kill": "^1.2.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "fs-extra": "^7.0.0"
   }
 }
