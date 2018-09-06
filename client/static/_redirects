@@ -11,3 +11,8 @@
 /:username/data-visualization-certification   /certification/:username/legacy-data-visualization 301
 /:username/back-end-certification             /certification/:username/legacy-back-end 301
 /:username/full-stack-certification           /certification/:username/full-stack 301
+
+# unsunscribe redirects
+/u/*                https://api.freecodecamp.org/u/:splat
+/unsunscribe/*      https://api.freecodecamp.org/unsunscribe/:splat
+/ue/*               https://api.freecodecamp.org/ue/:splat
