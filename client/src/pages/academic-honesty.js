@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from 'react-bootstrap';
+import { Grid } from '@freecodecamp/react-bootstrap';
 
 import Layout from '../components/Layout';
 import Spacer from '../components/helpers/Spacer';
