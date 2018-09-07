@@ -3,24 +3,19 @@ import debugFactory from 'debug';
 import { curry, pick } from 'lodash';
 import { Observable } from 'rx';
 
+import { homeLocation } from '../../../config/env';
 import {
   getProgress,
   normaliseUserFields,
   userPropsForSession
 } from '../utils/publicUserProps';
 import { fixCompletedChallengeItem } from '../../common/utils';
-import {
-  ifNoUser401,
-  ifNoUserRedirectTo,
-  ifNotVerifiedRedirectToUpdateEmail
-} from '../utils/middleware';
+import { ifNoUser401, ifNoUserRedirectTo } from '../utils/middleware';
 
 const log = debugFactory('fcc:boot:user');
-const sendNonUserToHome = ifNoUserRedirectTo('/');
-const sendNonUserToHomeWithMessage = curry(ifNoUserRedirectTo, 2)('/');
+const sendNonUserToHome = ifNoUserRedirectTo(homeLocation);
 
 module.exports = function bootUser(app) {
-  const router = app.loopback.Router();
   const api = app.loopback.Router();
 
   api.get('/account', sendNonUserToHome, getAccount);
@@ -29,21 +24,8 @@ module.exports = function bootUser(app) {
 
   api.post('/account/delete', ifNoUser401, createPostDeleteAccount(app));
   api.post('/account/reset-progress', ifNoUser401, postResetProgress);
-  api.post(
-    '/user/:username/report-user/',
-    ifNoUser401,
-    createPostReportUserProfile(app)
-  );
+  api.post('/user/report-user/', ifNoUser401, createPostReportUserProfile(app));
 
-  router.get(
-    '/user/:username/report-user/',
-    sendNonUserToHomeWithMessage('You must be signed in to report a user'),
-    ifNotVerifiedRedirectToUpdateEmail,
-    getReportUserProfile
-  );
-
-  app.use(router);
-  app.use('/external', api);
   app.use('/internal', api);
 };
 
@@ -84,14 +66,6 @@ function readSessionUser(req, res, next) {
         result: user.username
       }))
   ).subscribe(user => res.json(user), next);
-}
-
-function getReportUserProfile(req, res) {
-  const username = req.params.username.toLowerCase();
-  return res.render('account/report-profile', {
-    title: 'Report User',
-    username
-  });
 }
 
 function getAccount(req, res) {
@@ -217,17 +191,19 @@ function createPostReportUserProfile(app) {
   const { Email } = app.models;
   return function postReportUserProfile(req, res, next) {
     const { user } = req;
-    const { username } = req.params;
+    const { username } = req.body;
     const report = req.sanitize('reportDescription').trimTags();
 
-    if (!username || !report || report === '') {
-      req.flash(
-        'danger',
-        'Oops, something is not right please re-check your submission.'
-      );
-      return next();
-    }
+    log(username);
+    log(report);
 
+    if (!username || !report || report === '') {
+      return res.json({
+        type: 'danger',
+        message:
+          'Oops, something is not right please re-check your submission.'
+      });
+    }
     return Email.send$(
       {
         type: 'email',
@@ -250,15 +226,14 @@ function createPostReportUserProfile(app) {
       },
       err => {
         if (err) {
-          err.redirectTo = '/' + username;
+          err.redirectTo = `${homeLocation}/${username}`;
           return next(err);
         }
 
-        req.flash(
-          'info',
-          `A report was sent to the team with ${user.email} in copy.`
-        );
-        return res.redirect('/');
+        return res.json({
+          typer: 'info',
+          message: `A report was sent to the team with ${user.email} in copy.`
+        });
       }
     );
   };
