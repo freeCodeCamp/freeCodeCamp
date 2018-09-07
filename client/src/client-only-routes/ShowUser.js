@@ -21,7 +21,6 @@ import {
 } from '../redux';
 import Layout from '../components/Layout';
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
-import { runInThisContext } from 'vm';
 
 const propTypes = {
   email: PropTypes.string,
