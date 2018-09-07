@@ -5,6 +5,7 @@
     "develop": "node ./config/ensure-env.js && node develop-client-server.js"
   },
   "devDependencies": {
+    "eslint-config-freecodecamp": "^1.1.1",
     "tree-kill": "^1.2.0"
   },
   "dependencies": {

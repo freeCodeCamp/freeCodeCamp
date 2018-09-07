@@ -5,7 +5,7 @@ import styles from './skeletonStyles';
 function SkeletonSprite() {
   return (
     <div className='sprite-container'>
-      <style dangerouslySetInnerHTML={ { __html: styles } } />
+      <style dangerouslySetInnerHTML={{ __html: styles }} />
       <svg className='sprite-svg'>
         <rect
           className='sprite'

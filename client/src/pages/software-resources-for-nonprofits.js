@@ -1,8 +1,8 @@
-import React from 'react'
-import { Grid } from '@freecodecamp/react-bootstrap'
+import React from 'react';
+import { Grid } from '@freecodecamp/react-bootstrap';
 
-import Layout from '../components/Layout'
-import FullWidthRow from '../components/helpers/FullWidthRow'
+import Layout from '../components/Layout';
+import FullWidthRow from '../components/helpers/FullWidthRow';
 import { Spacer } from '../components/helpers';
 
 function SoftwareResourcesForNonProfits() {
@@ -12,7 +12,7 @@ function SoftwareResourcesForNonProfits() {
       <Spacer />
       <Grid>
         <FullWidthRow>
-          <h2 className="text-center">Software Resources for Nonprofits</h2>
+          <h2 className='text-center'>Software Resources for Nonprofits</h2>
           <hr />
           <p>
             Please note that freeCodeCamp is not partnered with, nor do we
@@ -24,37 +24,37 @@ function SoftwareResourcesForNonProfits() {
           <ul>
             <li>
               <a
-                href="http://givecamp.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://givecamp.org/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Give Camp
               </a>
             </li>
             <li>
               <a
-                href="http://www.volunteermatch.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.volunteermatch.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Volunteer Match.com
               </a>
             </li>
             <li>
               <a
-                href="http://www.catchafire.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.catchafire.org'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Catchafire
               </a>
             </li>
             <li>
               <a
-                href="http://anyonecanhaveawebsite.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://anyonecanhaveawebsite.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Anyone Can Have A Website
               </a>
             </li>
@@ -63,47 +63,47 @@ function SoftwareResourcesForNonProfits() {
           <ul>
             <li>
               <a
-                href="https://www.youtube.com/watch?v=4AXDKWuY9QM"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://www.youtube.com/watch?v=4AXDKWuY9QM'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 How to build and deploy a website without writing any code for
                 free
               </a>
             </li>
             <li>
               <a
-                href="http://www.wix.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.wix.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Wix
               </a>
             </li>
             <li>
               <a
-                href="https://www.squarespace.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://www.squarespace.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Square Space
               </a>
             </li>
             <li>
               <a
-                href="https://wordpress.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://wordpress.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 WordPress
               </a>
             </li>
             <li>
               <a
-                href="https://xprs.imcreator.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://xprs.imcreator.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Imcreator.com
               </a>
             </li>
@@ -112,82 +112,82 @@ function SoftwareResourcesForNonProfits() {
           <ul>
             <li>
               <a
-                href="http://causesignal.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://causesignal.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Cause Signal
               </a>
             </li>
             <li>
               <a
-                href="https://www.thedatabank.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://www.thedatabank.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 The Data Bank
               </a>
             </li>
             <li>
               <a
-                href="http://www.donorsnap.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.donorsnap.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Donor Snap
               </a>
             </li>
             <li>
               <a
-                href="http://www.donorperfect.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.donorperfect.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Donor Perfect
               </a>
             </li>
             <li>
               <a
-                href="https://www.blackbaud.com/fundraising-crm/etapestry-donor-management"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://www.blackbaud.com/fundraising-crm/etapestry-donor-management'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 E Tapestry
               </a>
             </li>
             <li>
               <a
-                href="http://www.z2systems.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.z2systems.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Z2 Systems
               </a>
             </li>
             <li>
               <a
-                href="http://www.regpacks.com/volunteer-management"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.regpacks.com/volunteer-management'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Reg Packs
               </a>
             </li>
             <li>
               <a
-                href="http://sumac.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://sumac.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Sumac
               </a>
             </li>
             <li>
               <a
-                href="http://www.volgistics.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.volgistics.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Volgistics
               </a>
             </li>
@@ -196,28 +196,28 @@ function SoftwareResourcesForNonProfits() {
           <ul>
             <li>
               <a
-                href="https://www.ordoro.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://www.ordoro.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Ordoro
               </a>
             </li>
             <li>
               <a
-                href="http://www.unleashedsoftware.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.unleashedsoftware.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Unleashed Software
               </a>
             </li>
             <li>
               <a
-                href="https://www.ezofficeinventory.com/industries/non-profits"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://www.ezofficeinventory.com/industries/non-profits'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 EZ Office Inventory
               </a>
             </li>
@@ -226,37 +226,37 @@ function SoftwareResourcesForNonProfits() {
           <ul>
             <li>
               <a
-                href="http://www.dokeos.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.dokeos.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Dokeos
               </a>
             </li>
             <li>
               <a
-                href="http://www.efrontlearning.net/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.efrontlearning.net/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 E Front Learning
               </a>
             </li>
             <li>
               <a
-                href="https://moodle.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://moodle.org/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Moodle
               </a>
             </li>
             <li>
               <a
-                href="https://sakaiproject.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://sakaiproject.org/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Sakai Project
               </a>
             </li>
@@ -265,19 +265,19 @@ function SoftwareResourcesForNonProfits() {
           <ul>
             <li>
               <a
-                href="https://civicrm.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='https://civicrm.org/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 CiviCRM
               </a>
             </li>
             <li>
               <a
-                href="http://tcmgr.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://tcmgr.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Total Community Manager
               </a>
             </li>
@@ -286,19 +286,19 @@ function SoftwareResourcesForNonProfits() {
           <ul>
             <li>
               <a
-                href="http://www.google.com/forms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.google.com/forms'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Google Forms
               </a>
             </li>
             <li>
               <a
-                href="http://www.typeform.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+                href='http://www.typeform.com'
+                rel='noopener noreferrer'
+                target='_blank'
+                >
                 Typeform
               </a>
             </li>
@@ -306,9 +306,9 @@ function SoftwareResourcesForNonProfits() {
         </FullWidthRow>
       </Grid>
     </Layout>
-  )
+  );
 }
 
-SoftwareResourcesForNonProfits.displayName = 'SoftwareResourcesForNonProfits'
+SoftwareResourcesForNonProfits.displayName = 'SoftwareResourcesForNonProfits';
 
-export default SoftwareResourcesForNonProfits
+export default SoftwareResourcesForNonProfits;

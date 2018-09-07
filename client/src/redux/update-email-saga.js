@@ -17,7 +17,5 @@ function* updateMyEmailSaga({ payload: newEmail }) {
 }
 
 export function createUpdateMyEmailSaga(types) {
-  return [
-    takeEvery(types.updateMyEmail, updateMyEmailSaga)
-  ];
+  return [takeEvery(types.updateMyEmail, updateMyEmailSaga)];
 }

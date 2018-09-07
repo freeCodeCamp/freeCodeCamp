@@ -7,10 +7,7 @@ import rootSaga from './rootSaga';
 const sagaMiddleware = createSagaMiddleware();
 
 export const createStore = () => {
-  const store = reduxCreateStore(
-    rootReducer,
-    applyMiddleware(sagaMiddleware)
-  );
+  const store = reduxCreateStore(rootReducer, applyMiddleware(sagaMiddleware));
   sagaMiddleware.run(rootSaga);
   return store;
 };

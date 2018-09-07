@@ -6,7 +6,6 @@ import ShowCertification from '../client-only-routes/ShowCertification';
 
 import './certification.css';
 
-
 class Certification extends Component {
   render() {
     return (
