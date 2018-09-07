@@ -1,5 +1,5 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import { navigateTo } from 'gatsby';
+import { navigate } from 'gatsby';
 
 import { acceptTermsComplete, acceptTermsError } from './';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -18,7 +18,7 @@ function* acceptTermsSaga({ payload: quincyEmails }) {
 }
 
 function* acceptCompleteSaga() {
-  yield call(navigateTo, '/welcome');
+  yield call(navigate, '/welcome');
 }
 
 export function createAcceptTermsSaga(types) {

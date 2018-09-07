@@ -1,5 +1,5 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import { navigateTo } from 'gatsby';
+import { navigate } from 'gatsby';
 
 import { createFlashMessage } from '../components/Flash/redux';
 import { getShowCert } from '../utils/ajax';
@@ -13,7 +13,7 @@ function* getShowCertSaga({ payload: { username, certName: cert } }) {
       for (let i = 0; i < messages.length; i++) {
         yield put(createFlashMessage(messages[i]));
       }
-      yield call(navigateTo, '/');
+      yield call(navigate, '/');
       return;
     }
     yield put(showCertComplete(response));

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { navigateTo } from 'gatsby';
+import { navigate } from 'gatsby';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -52,13 +52,15 @@ function Welcome({
   if (pending && !complete) {
     return (
       <Layout>
-        <Loader />
+        <div className='loader-wrapper'>
+          <Loader />
+        </div>
       </Layout>
     );
   }
 
   if (!acceptedPrivacyTerms) {
-    navigateTo('/accept-privacy-terms');
+    navigate('/accept-privacy-terms');
     return null;
   }
 

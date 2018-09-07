@@ -17,7 +17,7 @@ import Layout from '../components/Layout';
 import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import { createSelector } from 'reselect';
-import { navigateTo } from 'gatsby';
+import { navigate } from 'gatsby';
 
 const propTypes = {
   acceptTerms: PropTypes.func.isRequired,
@@ -66,7 +66,7 @@ class AcceptPrivacyTerms extends Component {
   render() {
     const { acceptedPrivacyTerms } = this.props;
     if (acceptedPrivacyTerms) {
-      navigateTo('/welcome');
+      navigate('/welcome');
       return null;
     }
     const { privacyPolicy, termsOfService, quincyEmail } = this.state;
