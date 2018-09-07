@@ -4,7 +4,6 @@ import { fetchUserComplete, fetchUserError } from './';
 import { getSessionUser } from '../utils/ajax';
 
 function* fetchSessionUser() {
-  console.log('fetchSessionUser');
   try {
     const {
       data: { user = {}, result = '' }

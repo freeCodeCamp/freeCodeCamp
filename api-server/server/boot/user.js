@@ -1,6 +1,6 @@
 import dedent from 'dedent';
 import debugFactory from 'debug';
-import { curry, pick } from 'lodash';
+import { pick } from 'lodash';
 import { Observable } from 'rx';
 
 import { homeLocation } from '../../../config/env';
