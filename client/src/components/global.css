@@ -19,3 +19,7 @@ h6 {
 .text-center {
   text-align: center !important;
 }
+
+.green-text {
+  color: #006400;
+}

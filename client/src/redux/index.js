@@ -4,6 +4,7 @@ import { createTypes, createAsyncTypes } from '../utils/createTypes';
 import { createFetchUserSaga } from './fetch-user-saga';
 import { createAcceptTermsSaga } from './accept-terms-saga';
 import { createAppMountSaga } from './app-mount-saga';
+import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
 import { createUpdateMyEmailSaga } from './update-email-saga';
 
@@ -34,7 +35,8 @@ const types = createTypes(
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
-    ...createAsyncTypes('updateMyEmail')
+    ...createAsyncTypes('updateMyEmail'),
+    ...createAsyncTypes('reportUser')
   ],
   ns
 );
@@ -44,7 +46,8 @@ export const sagas = [
   ...createAppMountSaga(types),
   ...createFetchUserSaga(types),
   ...createUpdateMyEmailSaga(types),
-  ...createShowCertSaga(types)
+  ...createShowCertSaga(types),
+  ...createReportUserSaga(types)
 ];
 
 export const appMount = createAction(types.appMount);
@@ -56,6 +59,10 @@ export const acceptTermsError = createAction(types.acceptTermsError);
 export const fetchUser = createAction(types.fetchUser);
 export const fetchUserComplete = createAction(types.fetchUserComplete);
 export const fetchUserError = createAction(types.fetchUserError);
+
+export const reportUser = createAction(types.reportUser);
+export const reportUserComplete = createAction(types.reportUserComplete);
+export const reportUserError = createAction(types.reportUserError);
 
 export const showCert = createAction(types.showCert);
 export const showCertComplete = createAction(types.showCertComplete);
