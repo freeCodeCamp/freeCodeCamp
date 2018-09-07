@@ -7,10 +7,7 @@ function* fetchSessionUser() {
   console.log('fetchSessionUser');
   try {
     const {
-      data: {
-        user = {},
-        result = ''
-      }
+      data: { user = {}, result = '' }
     } = yield call(getSessionUser);
     const appUser = user[result];
     yield put(fetchUserComplete({ user: appUser, username: result }));

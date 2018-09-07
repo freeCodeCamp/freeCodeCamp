@@ -5,8 +5,8 @@ import { Row, Col } from '@freecodecamp/react-bootstrap';
 function FullWidthRow({ children }) {
   return (
     <Row>
-      <Col sm={ 8 } smOffset={ 2 } xs={ 12 }>
-        { children }
+      <Col sm={8} smOffset={2} xs={12}>
+        {children}
       </Col>
     </Row>
   );

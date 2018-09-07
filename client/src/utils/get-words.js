@@ -1,7 +1,7 @@
 import words from './words.json';
 
 function randomItem(arr) {
-  return arr[ Math.floor(Math.random() * arr.length) ];
+  return arr[Math.floor(Math.random() * arr.length)];
 }
 
 export function randomQuote() {

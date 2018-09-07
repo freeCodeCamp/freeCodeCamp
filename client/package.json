@@ -42,12 +42,18 @@
   "scripts": {
     "build": "node ../config/ensure-env.js && gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write '**/*.js'",
+    "format:gatsby": "prettier-eslint --write --trailing-comma none --single-quote './gatsby-*.js'",
+    "format:src": "prettier-eslint --write --trailing-comma none --single-quote './src/**/*.js'",
+    "format:utils": "prettier-eslint --write --trailing-comma none --single-quote './utils/**/*.js'",
+    "format": "npm run format:gatsby && npm run format:src && npm run format:utils",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "babel-plugin-transform-imports": "^1.5.0",
-    "prettier": "^1.14.2"
+    "eslint": "^5.5.0",
+    "eslint-config-freecodecamp": "^1.1.1",
+    "prettier": "^1.14.2",
+    "prettier-eslint-cli": "^4.7.1"
   },
   "repository": {
     "type": "git",
