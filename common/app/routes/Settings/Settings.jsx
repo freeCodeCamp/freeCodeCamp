@@ -13,6 +13,7 @@ import CertificationSettings from './components/Cert-Settings.jsx';
 import PortfolioSettings from './components/Portfolio-Settings.jsx';
 import PrivacySettings from './components/Privacy-Settings.jsx';
 import Honesty from './components/Honesty.jsx';
+import ClassroomSettings from './components/Classroom-Settings.jsx';
 
 import {
   toggleNightMode,
@@ -106,6 +107,8 @@ export class Settings extends React.Component {
         <Honesty />
         <Spacer />
         <CertificationSettings />
+        <Spacer />
+        <ClassroomSettings />
         <Spacer />
         <DangerZone />
       </div>
