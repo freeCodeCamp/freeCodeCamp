@@ -62,9 +62,15 @@ PassportConfigurator.prototype.init = function passportInit(noSession) {
         .aggregate([
           { $match: { _id: user.id } },
           { $project: { points: { $size: '$progressTimestamps' } } }
-        ], function(err, [{ points = 1 } = {}]) {
+        ], function(err, results) {
           if (err) { return done(err); }
+
+          let points = 1;
+          if (results && results.points) {
+            points = results.points;
+          }
           user.points = points;
+
           let completedChallengeCount = 0;
           let completedProjectCount = 0;
           if ('completedChallenges' in user) {
