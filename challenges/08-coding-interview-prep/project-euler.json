@@ -1768,7 +1768,9 @@
             "assert(spiralDiagonals(1001) == 669171001, '<code>spiralDiagonals(1001)</code> should return 669171001.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "const spiralDiagonals = (n) => {\n  const Sn2 = (n) => {\n    return n*(n+1)*(2*n+1)/6;\n  };\n  const Sn = (n) => {\n    return n*(n+1)/2;\n  };\n  let sum = (Sn2(n-1) + Sn(n-1) + n-1) + (Math.floor(n/2) + Sn2(n));\n  return sum;\n};"
+      ],
       "translations": {},
       "description": [
         "Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 spiral is formed as follows:",
@@ -1937,7 +1939,9 @@
             "assert(coinSums(200) == 73682, '<code>coinSums(200)</code> should return 73682.');"
         }
       ],
-      "solutions": [],
+      "solutions": [
+        "const coinSums = (n) => {\n  const getWays = (n, m=8, c=[1, 2, 5, 10, 20, 50, 100, 200]) => {\n    if (n === 0) return 1;\n    if (m === 0 || n < 0) return 0;\n    return getWays(n - c[m - 1], m, c) + getWays(n, m - 1, c);\n  };\n  return getWays(n);\n};"
+      ],
       "translations": {},
       "description": [
         "In England the currency is made up of pound, £, and pence, p, and there are eight coins in general circulation:",
