@@ -112,7 +112,7 @@ gulp.task('serve', function(cb) {
   // When in development we can spawn a node debugger
   // https://nodejs.org/en/docs/inspector/
   if (__DEV__) {
-    execParams = execParams + ' --inspect';
+    execParams = execParams + ' --inspect=0.0.0.0:9229';
   }
   const monitor = nodemon({
     script: paths.server,
