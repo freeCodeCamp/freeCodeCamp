@@ -66,7 +66,7 @@ export default function donateBoot(app, done) {
       return res.status(400).send({ error: 'Amount Required' });
     }
 
-    const { amount, token: {email, id} } = body;
+    const { amount, token: {email, id, coupon } } = body;
 
     const fccUser = user ?
             Promise.resolve(user) :
@@ -93,6 +93,7 @@ export default function donateBoot(app, done) {
       donation.customerId = customer.id;
       return stripe.subscriptions.create({
         customer: customer.id,
+        coupon: coupon,
         items: [
           {
             plan: `monthly-donation-${amount}`
