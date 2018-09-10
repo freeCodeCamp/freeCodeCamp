@@ -11,4 +11,4 @@ superBlock: Coding Interview Prep
 >
 > Although mathematics will help you arrive at elegant and efficient methods, the use of a computer and programming skills will be required to solve most problems.
 >
->_from the Project Euler [homepage](https://projecteuler.net/)_
+>_from the Project Euler <a href='https://projecteuler.net/' rel='noopener noreferrer'>home page</a>_
