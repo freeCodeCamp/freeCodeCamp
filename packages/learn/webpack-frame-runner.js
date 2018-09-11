@@ -5,6 +5,7 @@ const UglifyPlugin = require('uglifyjs-webpack-plugin');
 const __DEV__ = process.env.NODE_ENV !== 'production';
 
 module.exports = {
+  mode: __DEV__ ? 'development' : 'production',
   entry: './src/client/frame-runner.js',
   devtool: __DEV__ ? 'inline-source-map' : 'source-map',
   node: {
@@ -69,4 +70,3 @@ module.exports.plugins.push(
     sourceMap: true
   })
 );
-
