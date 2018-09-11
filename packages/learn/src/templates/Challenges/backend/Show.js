@@ -1,4 +1,3 @@
-/* global graphql */
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
@@ -83,7 +82,7 @@ export class BackEnd extends PureComponent {
       initTests,
       updateChallengeMeta,
       data: { challengeNode: { fields: { tests }, challengeType } },
-      pathContext: { challengeMeta }
+      pageContext: { challengeMeta }
     } = this.props;
     initTests(tests);
     updateChallengeMeta({ ...challengeMeta, challengeType });
@@ -97,7 +96,7 @@ export class BackEnd extends PureComponent {
       data: {
         challengeNode: { title: currentTitle, fields: { tests }, challengeType }
       },
-      pathContext: { challengeMeta }
+      pageContext: { challengeMeta }
     } = this.props;
     if (prevTitle !== currentTitle) {
       initTests(tests);

@@ -46,7 +46,7 @@ const propTypes = {
     challengeNode: ChallengeNode
   }),
   openCompletionModal: PropTypes.func.isRequired,
-  pathContext: PropTypes.shape({
+  pageContext: PropTypes.shape({
     challengeMeta: PropTypes.object
   }),
   updateChallengeMeta: PropTypes.func.isRequired,
@@ -59,7 +59,7 @@ export class Project extends PureComponent {
     const {
       createFiles,
       data: { challengeNode: { title, challengeType } },
-      pathContext: { challengeMeta },
+      pageContext: { challengeMeta },
       updateChallengeMeta,
       updateSuccessMessage
     } = this.props;
@@ -73,7 +73,7 @@ export class Project extends PureComponent {
     const {
       createFiles,
       data: { challengeNode: { title: currentTitle, challengeType } },
-      pathContext: { challengeMeta },
+      pageContext: { challengeMeta },
       updateChallengeMeta,
       updateSuccessMessage
     } = this.props;

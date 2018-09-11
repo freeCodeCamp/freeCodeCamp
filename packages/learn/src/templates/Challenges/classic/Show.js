@@ -70,7 +70,7 @@ const propTypes = {
   }),
   initTests: PropTypes.func.isRequired,
   output: PropTypes.string,
-  pathContext: PropTypes.shape({
+  pageContext: PropTypes.shape({
     challengeMeta: PropTypes.shape({
       nextchallengePath: PropTypes.string
     })
@@ -117,7 +117,7 @@ class ShowClassic extends PureComponent {
       data: {
         challengeNode: { files, title, fields: { tests }, challengeType }
       },
-      pathContext: { challengeMeta }
+      pageContext: { challengeMeta }
     } = this.props;
     createFiles(files);
     initTests(tests);
@@ -142,7 +142,7 @@ class ShowClassic extends PureComponent {
           challengeType
         }
       },
-      pathContext: { challengeMeta }
+      pageContext: { challengeMeta }
     } = this.props;
     if (prevTitle !== currentTitle) {
       updateSuccessMessage(randomCompliment());
