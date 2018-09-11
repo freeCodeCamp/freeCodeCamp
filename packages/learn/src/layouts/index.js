@@ -48,7 +48,7 @@ const mapDispatchToProps = dispatch =>
   bindActionCreators({ fetchUser }, dispatch);
 
 const propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object,
   fetchUser: PropTypes.func.isRequired,
   theme: PropTypes.string
 };
@@ -97,7 +97,7 @@ class Layout extends PureComponent {
         />
         <Header />
         <div className={'app-wrapper ' + theme}>
-          <main>{children()}</main>
+          <main>{children}</main>
         </div>
         <DonationModal />
       </Fragment>
