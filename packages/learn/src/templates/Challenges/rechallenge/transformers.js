@@ -10,9 +10,9 @@ import {
   stubTrue
 } from 'lodash';
 
-import * as Babel from 'babel-standalone';
-import presetEs2015 from 'babel-preset-es2015';
-import presetReact from 'babel-preset-react';
+import * as Babel from '@babel/standalone';
+import presetEnv from '@babel/preset-env';
+import presetReact from '@babel/preset-react';
 import { Observable } from 'rxjs';
 import protect from 'loop-protect';
 
@@ -25,7 +25,7 @@ Babel.registerPlugin('loopProtection', protect(protectTimeout));
 
 const babelOptions = {
   plugins: ['loopProtection'],
-  presets: [presetEs2015, presetReact]
+  presets: [presetEnv, presetReact]
 };
 const babelTransformCode = code => Babel.transform(code, babelOptions).code;
 

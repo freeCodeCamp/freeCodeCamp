@@ -3,7 +3,6 @@
 exports[`<DynamicForm /> snapshot 1`] = `
 <form
   id="dynamic-my-test-form"
-  onSubmit={undefined}
   style={
     Object {
       "width": "100%",

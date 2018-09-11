@@ -11,5 +11,12 @@ module.exports = {
   testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.cache/'],
   globals: {
     __PATH_PREFIX__: ''
-  }
+  },
+  verbose: true,
+  transform: {
+    '^.+\\.js$': '<rootDir>/jest.transform.js'
+  },
+  transformIgnorePatterns: [
+    'node_modules/(?!(gatsby)/)'
+  ]
 };

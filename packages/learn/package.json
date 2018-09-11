@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/standalone": "^7.0.0",
     "@freecodecamp/curriculum": "^3.2.1",
     "adler32": "^0.1.7",
     "auth0-js": "^9.5.1",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.4.3",
-    "babel-plugin-transform-imports": "^1.5.0",
-    "babel-standalone": "^6.26.0",
+    "babel-jest": "^23.6.0",
     "brace": "^0.11.1",
     "browser-cookies": "^1.2.0",
     "chai": "^4.1.2",
@@ -31,7 +31,7 @@
     "gatsby-source-mongodb": "next",
     "gatsby-transformer-json": "next",
     "gatsby-transformer-remark": "next",
-    "jest": "^22.4.3",
+    "jest": "^23.6.0",
     "lodash": "^4.17.5",
     "loop-protect": "^2.1.6",
     "mongodb": "^3.0.5",
@@ -83,19 +83,13 @@
     "test:ci": "yarn format && jest src",
     "test:watch": "jest --watch src"
   },
-  "jest": {
-    "verbose": true,
-    "transform": {
-      "^.+\\.js$": "babel-jest"
-    },
-    "moduleNameMapper": {
-      "^.+\\.(css|less)$": "<rootDir>/src/__mocks__/cssStub.js"
-    }
-  },
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "babel-core": "^7.0.0-0",
     "babel-eslint": "^8.2.2",
-    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
-    "babel-plugin-transform-function-bind": "^6.22.0",
+    "babel-plugin-transform-imports": "^1.5.1",
     "eslint": "^4.19.1",
     "eslint-config-freecodecamp": "^1.1.1",
     "eslint-plugin-import": "^2.9.0",
