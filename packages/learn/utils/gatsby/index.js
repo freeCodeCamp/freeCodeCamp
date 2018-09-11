@@ -1,4 +1,4 @@
-import { dasherize } from '..';
+const { dasherize } = require('..');
 
 const path = require('path');
 

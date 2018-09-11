@@ -1,22 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
 
 import { createStore } from './src/redux/store';
 
-exports.replaceRouterComponent = ({ history }) => {
-  const store = createStore(history || {});
+export const wrapRootElement = ({ element }) => {
+  const store = createStore();
 
-  const ConnectedRouterWrapper = ({ children }) => (
+  const ConnectedRootElement = (
     <Provider store={store}>
-      <ConnectedRouter history={history}>{children}</ConnectedRouter>
+      {element}
     </Provider>
   );
-  ConnectedRouterWrapper.displayName = 'ConnectedRouterWrapper';
-  ConnectedRouterWrapper.propTypes = {
-    children: PropTypes.node
-  };
 
-  return ConnectedRouterWrapper;
+  return ConnectedRootElement;
 };

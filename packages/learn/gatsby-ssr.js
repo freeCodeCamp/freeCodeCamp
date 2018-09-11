@@ -6,7 +6,7 @@ import headComponents from './src/head';
 
 import { createStore } from './src/redux/store';
 
-exports.replaceRenderer = ({
+export const replaceRenderer = ({
   history,
   bodyComponent,
   replaceBodyHTMLString
@@ -19,7 +19,7 @@ exports.replaceRenderer = ({
   replaceBodyHTMLString(renderToString(<ConnectedBody />));
 };
 
-exports.onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
+export const onRenderBody = ({ setHeadComponents, setPostBodyComponents }) => {
   setHeadComponents([...headComponents]);
   setPostBodyComponents([
     <script
