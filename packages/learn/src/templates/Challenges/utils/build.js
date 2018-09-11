@@ -1,6 +1,5 @@
 import { combineLatest } from 'rxjs/observable/combineLatest';
 import { map } from 'rxjs/operators/map';
-import identity from 'lodash/identity';
 
 import { fetchScript } from './fetch-and-cache.js';
 import throwers from '../rechallenge/throwers';
@@ -12,7 +11,6 @@ import {
 } from '../redux';
 import {
   applyTransformers,
-  proxyLoggerTransformer,
   testJS$JSX
 } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
@@ -40,7 +38,7 @@ function filterJSIfDisabled(state) {
   return file => !(testJS$JSX(file) && !isJSEnabled);
 }
 
-export function buildFromFiles(state, shouldProxyConsole) {
+export function buildFromFiles(state) {
   const files = challengeFilesSelector(state);
   const { required, template } = challengeMetaSelector(state);
   const finalRequires = [...globalRequires, ...required];
@@ -51,7 +49,6 @@ export function buildFromFiles(state, shouldProxyConsole) {
   return createFileStream(requiredFiles)
     ::pipe(throwers)
     ::pipe(applyTransformers)
-    ::pipe(shouldProxyConsole ? proxyLoggerTransformer : identity)
     ::pipe(jsToHtml)
     ::pipe(cssToHtml)
     ::concatHtml(finalRequires, template);

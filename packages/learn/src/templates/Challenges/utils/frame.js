@@ -84,8 +84,7 @@ const addDepsToDocument = ctx => {
 
 const buildProxyConsole = proxyLogger => ctx => {
   const oldLog = ctx.window.console.log.bind(ctx.window.console);
-  ctx.window.__console = {};
-  ctx.window.__console.log = function proxyConsole(...args) {
+  ctx.window.console.log = function proxyConsole(...args) {
     proxyLogger.next(args);
     return oldLog(...args);
   };
@@ -140,11 +139,12 @@ export const createMainFramer = (document, getState, proxyLogger) =>
     writeContentToFrame
   );
 
-export const createTestFramer = (document, getState, frameReady) =>
+export const createTestFramer = (document, getState, frameReady, proxyLogger) =>
   flow(
     createFrame(document, getState, testId),
     mountFrame(document),
     addDepsToDocument,
     writeTestDepsToDocument(frameReady),
+    buildProxyConsole(proxyLogger),
     writeContentToFrame
   );

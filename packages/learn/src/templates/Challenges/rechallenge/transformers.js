@@ -31,25 +31,12 @@ const babelTransformCode = code => Babel.transform(code, babelOptions).code;
 
 // const sourceReg =
 //  /(<!-- fcc-start-source -->)([\s\S]*?)(?=<!-- fcc-end-source -->)/g;
-const console$logReg = /(?:\b)console(\.log\S+)/g;
 const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
 const isJS = matchesProperty('ext', 'js');
 const testHTML = matchesProperty('ext', 'html');
 const testHTMLJS = overSome(isJS, testHTML);
 export const testJS$JSX = overSome(isJS, matchesProperty('ext', 'jsx'));
-
-// if shouldProxyConsole then we change instances of console log
-// to `window.__console.log`
-// this let's us tap into logging into the console.
-// currently we only do this to the main window and not the test window
-export const proxyLoggerTransformer = partial(
-  vinyl.transformHeadTailAndContents,
-  source =>
-    source.replace(console$logReg, (match, methodCall) => {
-      return 'window.__console' + methodCall;
-    })
-);
 
 export const replaceNBSP = cond([
   [
