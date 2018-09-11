@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { createSelector } from 'reselect';
 import { reduxForm } from 'redux-form';
 import { Col, Row } from 'react-bootstrap';
+import { graphql } from 'gatsby';
 
 import ChallengeTitle from '../components/Challenge-Title';
 import ChallengeDescription from '../components/Challenge-Description';

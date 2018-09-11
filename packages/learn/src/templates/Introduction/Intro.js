@@ -1,7 +1,6 @@
-/* global graphql */
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { Link, navigate } from 'gatsby';
+import { Link, graphql, navigate } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 

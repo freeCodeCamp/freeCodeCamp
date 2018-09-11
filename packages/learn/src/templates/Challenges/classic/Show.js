@@ -1,4 +1,3 @@
-/* global graphql */
 import React, { Fragment, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
@@ -6,6 +5,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
+import { graphql } from 'gatsby';
 
 import Editor from './Editor';
 import Preview from '../components/Preview';

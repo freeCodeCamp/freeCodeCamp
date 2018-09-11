@@ -1,7 +1,7 @@
-/* global graphql */
 import React, { PureComponent, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { graphql } from 'gatsby';
 
 import Helmet from 'react-helmet';
 

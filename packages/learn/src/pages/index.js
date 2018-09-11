@@ -1,8 +1,7 @@
-/* global graphql */
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 

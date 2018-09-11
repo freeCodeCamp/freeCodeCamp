@@ -1,7 +1,7 @@
-/* global graphql */
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
 
 import FullWidthRow from '../../components/util/FullWidthRow';
 import { MarkdownRemark } from '../../redux/propTypes';
