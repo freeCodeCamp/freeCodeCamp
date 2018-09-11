@@ -23,10 +23,10 @@
   border-bottom: 1px solid #e2e2e2;
 }
 
-.map-title>svg {
+.map-title > svg {
   width: 14px;
   margin-right: 5px;
-  flex-shrink: 0
+  flex-shrink: 0;
 }
 
 li.open > .map-title svg {
@@ -37,8 +37,8 @@ li.open > .map-title svg {
   margin-bottom: 0.25rem;
 }
 
-.map-challenge-title a  {
-    color: #f8f8f8;
+.night .map-challenge-title a {
+  color: #f8f8f8;
 }
 
 .map-challenge-title-completed {
