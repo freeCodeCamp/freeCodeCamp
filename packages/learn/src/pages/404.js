@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 
 import './404.css';
 import notFoundLogo from '../../static/img/freeCodeCamp-404.svg';

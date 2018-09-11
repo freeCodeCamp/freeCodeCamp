@@ -1,7 +1,7 @@
 /* global graphql */
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import Link, { navigateTo } from 'gatsby-link';
+import { Link, navigate } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 
@@ -27,7 +27,7 @@ function renderMenuItems({ edges = [] }) {
 }
 
 function handleCurriculumClick() {
-  return navigateTo('/');
+  return navigate('/');
 }
 
 function IntroductionPage({ data: { markdownRemark, allChallengeNode } }) {
