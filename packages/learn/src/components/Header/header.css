@@ -68,7 +68,7 @@ header {
   padding: 10px 0 10px 15px;
 }
 
-.sign-in-btn > a {
+#top-right-nav .sign-in-btn > a {
   padding-top: 0;
 }
 
