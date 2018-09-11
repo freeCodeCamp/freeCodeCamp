@@ -6,8 +6,8 @@ const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');
 const { createChallengePages, createIntroPages } = require('./utils/gatsby');
 
-exports.onCreateNode = function onCreateNode({ node, boundActionCreators }) {
-  const { createNodeField } = boundActionCreators;
+exports.onCreateNode = function onCreateNode({ node, actions }) {
+  const { createNodeField } = actions;
   if (node.internal.type === 'ChallengeNode') {
     const { tests = [], block, title, superBlock } = node;
 
@@ -35,8 +35,8 @@ exports.onCreateNode = function onCreateNode({ node, boundActionCreators }) {
   }
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
   return new Promise((resolve, reject) => {
     // Query for all markdown 'nodes' and for the slug we previously created.

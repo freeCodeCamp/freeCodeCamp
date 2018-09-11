@@ -1,7 +1,7 @@
 const chokidar = require('chokidar');
 const { createChallengeNodes } = require('./create-Challenge-nodes');
 
-exports.sourceNodes = ({ boundActionCreators, reporter }, pluginOptions) => {
+exports.sourceNodes = ({ actions, reporter }, pluginOptions) => {
 
   if (typeof pluginOptions.source !== 'function') {
     reporter.panic(`
@@ -10,7 +10,7 @@ that delivers challenge files to the plugin
       `);
   }
   // TODO: Add live seed updates
-  const { createNode } = boundActionCreators;
+  const { createNode } = actions;
 
   let ready = false;
 
