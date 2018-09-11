@@ -26,7 +26,6 @@ import {
   initConsole,
   updateConsole,
   initLogs,
-  updateLogs,
   logsToConsole,
   checkChallenge,
   updateTests,
@@ -51,10 +50,7 @@ function updateMainEpic(actions, { getState }, { document }) {
       const proxyLogger = new Subject();
       const frameMain = createMainFramer(document, getState, proxyLogger);
       const buildAndFrameMain = actions.pipe(
-        ofType(
-          types.updateFile,
-          types.challengeMounted
-        ),
+        ofType(types.updateFile, types.challengeMounted),
         debounceTime(executeDebounceTimeout),
         switchMap(() =>
           buildFromFiles(getState(), true).pipe(
@@ -75,12 +71,13 @@ function executeChallengeEpic(action$, { getState }, { document }) {
     filter(Boolean),
     switchMap(() => {
       const frameReady = new Subject();
-      const proxyLogger = new Subject();
+      // Removed for investigation into freeCodeCamp/Learn#291
+      // const proxyLogger = new Subject();
       const frameTests = createTestFramer(
         document,
         getState,
-        frameReady,
-        proxyLogger
+        frameReady
+        // proxyLogger
       );
       const challengeResults = frameReady.pipe(
         pluck('checkChallengePayload'),
@@ -117,7 +114,7 @@ function executeChallengeEpic(action$, { getState }, { document }) {
           const build =
             challengeType === backend
               ? buildBackendChallenge(state)
-              : buildFromFiles(state, true);
+              : buildFromFiles(state, false);
           return build.pipe(
             tap(frameTests),
             ignoreElements(),
@@ -127,11 +124,7 @@ function executeChallengeEpic(action$, { getState }, { document }) {
           );
         })
       );
-      return merge(
-        buildAndFrameChallenge,
-        challengeResults,
-        proxyLogger.map(updateLogs)
-      );
+      return merge(buildAndFrameChallenge, challengeResults);
     })
   );
 }

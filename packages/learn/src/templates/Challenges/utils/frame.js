@@ -140,12 +140,11 @@ export const createMainFramer = (document, getState, proxyLogger) =>
     writeContentToFrame
   );
 
-export const createTestFramer = (document, getState, frameReady, proxyLogger) =>
+export const createTestFramer = (document, getState, frameReady) =>
   flow(
     createFrame(document, getState, testId),
     mountFrame(document),
     addDepsToDocument,
     writeTestDepsToDocument(frameReady),
-    buildProxyConsole(proxyLogger),
     writeContentToFrame
   );
