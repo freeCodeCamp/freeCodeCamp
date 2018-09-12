@@ -102,6 +102,7 @@ exports.createPages = ({ graphql, actions }) => {
 };
 
 const RmServiceWorkerPlugin = require('webpack-remove-serviceworker-plugin');
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 exports.onCreateWebpackConfig = ({ rules, plugins, actions }) => {
   actions.setWebpackConfig({
@@ -130,7 +131,8 @@ exports.onCreateWebpackConfig = ({ rules, plugins, actions }) => {
         ),
         STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
       }),
-      new RmServiceWorkerPlugin()
+      new RmServiceWorkerPlugin(),
+      new MonacoWebpackPlugin()
     ]
   });
 };
