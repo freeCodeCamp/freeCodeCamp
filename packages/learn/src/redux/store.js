@@ -4,7 +4,6 @@ import {
   applyMiddleware
 } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
-import { routerReducer as router, routerMiddleware } from 'react-router-redux';
 
 import { reducer as formReducer } from 'redux-form';
 
@@ -27,8 +26,7 @@ const rootReducer = combineReducers({
   app,
   challenge,
   form: formReducer,
-  map,
-  router
+  map
 });
 
 const rootEpic = combineEpics(...appEpics, ...challengeEpics);
@@ -42,8 +40,8 @@ const epicMiddleware = createEpicMiddleware(rootEpic, {
   }
 });
 
-export const createStore = history =>
+export const createStore = () =>
   reduxCreateStore(
     rootReducer,
-    applyMiddleware(epicMiddleware, routerMiddleware(history))
+    applyMiddleware(epicMiddleware)
   );

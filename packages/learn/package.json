@@ -45,7 +45,6 @@
     "react-monaco-editor": "^0.18.0",
     "react-redux": "^5.0.7",
     "react-reflex": "^2.2.1",
-    "react-router-redux": "^5.0.0-alpha.9",
     "react-spinkit": "^3.0.0",
     "react-stripe-elements": "^2.0.0",
     "react-test-renderer": "^16.3.1",
