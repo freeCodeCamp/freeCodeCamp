@@ -56,7 +56,6 @@
     "reselect": "^3.0.1",
     "rxjs": "^5.5.7",
     "store": "^2.0.12",
-    "uglifyjs-webpack-plugin": "^1.2.4",
     "validator": "^10.3.0",
     "webpack-remove-serviceworker-plugin": "^1.0.0"
   },
@@ -66,9 +65,9 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn build:frame-runner && gatsby build",
-    "build:frame-runner": "webpack --config ./webpack-frame-runner.js",
-    "build:loop-protect": "webpack --config ./webpack-loop-protect.js",
-    "develop": "yarn build:frame-runner && gatsby develop",
+    "build:frame-runner": "webpack --env.production --config ./webpack-frame-runner.js",
+    "develop": "yarn develop:frame-runner && gatsby develop",
+    "develop:frame-runner": "webpack --config ./webpack-frame-runner.js",
     "format": "yarn format:gatsby && yarn format:src && yarn format:utils && yarn lint",
     "format:gatsby": "prettier --write './gatsby*.js'",
     "format:src": "prettier --write './src/**/*.js'",
