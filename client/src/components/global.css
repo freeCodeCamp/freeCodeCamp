@@ -23,3 +23,9 @@ h6 {
 .green-text {
   color: #006400;
 }
+
+.btn-invert {
+  background-color: #fff;
+  color: #006400;
+
+}

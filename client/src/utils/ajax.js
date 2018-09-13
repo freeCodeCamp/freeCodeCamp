@@ -28,6 +28,10 @@ export function getShowCert(username, cert) {
   return get(`/certificate/showCert/${username}/${cert}`);
 }
 
+export function getUsernameExists(username) {
+  return get(`/api/users/exists?username=${username}`);
+}
+
 /** POST **/
 
 export function postReportUser(body) {
@@ -35,6 +39,10 @@ export function postReportUser(body) {
 }
 
 /** PUT **/
+
+export function putUpdateMyUsername(username) {
+  return put('/update-my-username', { username });
+}
 
 export function putUserAcceptsTerms(quincyEmails) {
   return put('/update-privacy-terms', { quincyEmails });
