@@ -104,7 +104,7 @@ exports.createPages = ({ graphql, actions }) => {
 const RmServiceWorkerPlugin = require('webpack-remove-serviceworker-plugin');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
-exports.onCreateWebpackConfig = ({ rules, plugins, actions }) => {
+exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
   actions.setWebpackConfig({
     module: {
       rules: [rules.js({
@@ -131,10 +131,26 @@ exports.onCreateWebpackConfig = ({ rules, plugins, actions }) => {
         ),
         STRIPE_PUBLIC_KEY: JSON.stringify(process.env.STRIPE_PUBLIC_KEY || '')
       }),
-      new RmServiceWorkerPlugin(),
-      new MonacoWebpackPlugin()
+      new RmServiceWorkerPlugin()
     ]
   });
+  if (stage !== 'build-html') {
+    actions.setWebpackConfig({
+      plugins: [
+        new MonacoWebpackPlugin()
+      ]
+    });
+  }
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      plugins: [
+        plugins.normalModuleReplacement(
+          /react-monaco-editor/,
+          require.resolve('./src/__mocks__/monacoEditorMock.js')
+        )
+      ]
+    });
+  }
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {
