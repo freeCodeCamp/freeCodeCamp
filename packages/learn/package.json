@@ -96,6 +96,7 @@
     "eslint-plugin-react": "^7.7.0",
     "monaco-editor-webpack-plugin": "^1.5.2",
     "prettier": "^1.11.1",
+    "redux-devtools-extension": "^2.13.5",
     "sinon": "^4.5.0",
     "webpack-cli": "^3.1.0"
   }

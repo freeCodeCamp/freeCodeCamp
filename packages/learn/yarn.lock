@@ -9183,6 +9183,10 @@ redux-actions@^2.3.0:
     lodash-es "^4.17.4"
     reduce-reducers "^0.1.0"
 
+redux-devtools-extension@^2.13.5:
+  version "2.13.5"
+  resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
+
 redux-form@5:
   version "5.3.6"
   resolved "https://registry.yarnpkg.com/redux-form/-/redux-form-5.3.6.tgz#f77a81dbf38d44d26ea411100a23f19e29cd1946"

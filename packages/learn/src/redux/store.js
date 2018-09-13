@@ -6,6 +6,9 @@ import {
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 import { reducer as formReducer } from 'redux-form';
+import {
+  composeWithDevTools
+} from 'redux-devtools-extension/logOnlyInProduction';
 
 import { reducer as app, epics as appEpics } from './app';
 import {
@@ -40,8 +43,13 @@ const epicMiddleware = createEpicMiddleware(rootEpic, {
   }
 });
 
+const composeEnhancers = composeWithDevTools({
+  // options like actionSanitizer, stateSanitizer
+});
+
 export const createStore = () =>
   reduxCreateStore(
     rootReducer,
-    applyMiddleware(epicMiddleware)
-  );
+    composeEnhancers(
+      applyMiddleware(epicMiddleware)
+  ));
