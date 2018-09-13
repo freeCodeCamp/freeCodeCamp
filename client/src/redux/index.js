@@ -8,6 +8,8 @@ import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
 import { createUpdateMyEmailSaga } from './update-email-saga';
 
+import { types as settingsTypes } from './settings';
+
 const ns = 'app';
 
 const defaultFetchState = {
@@ -74,6 +76,9 @@ export const updateMyEmailError = createAction(types.updateMyEmailError);
 
 export const isSignedInSelector = state => !!Object.keys(state[ns].user).length;
 
+export const signInLoadingSelector = state =>
+  userFetchStateSelector(state).pending;
+
 export const showCertSelector = state => state[ns].showCert;
 export const showCertFetchStateSelector = state => state[ns].showCertFetchState;
 
@@ -83,7 +88,11 @@ export const userByNameSelector = username => state => {
 };
 export const userFetchStateSelector = state => state[ns].userFetchState;
 export const usernameSelector = state => state[ns].appUsername;
-export const userSelector = state => state[ns].user;
+export const userSelector = state => {
+  const username = usernameSelector(state);
+
+  return state[ns].user[username] || {};
+};
 
 export const reducer = handleActions(
   {
@@ -93,7 +102,10 @@ export const reducer = handleActions(
     }),
     [types.fetchUserComplete]: (state, { payload: { user, username } }) => ({
       ...state,
-      user,
+      user: {
+        ...state.user,
+        [username]: user
+      },
       appUsername: username,
       userFetchState: {
         pending: false,
@@ -135,7 +147,20 @@ export const reducer = handleActions(
         errored: true,
         error: payload
       }
-    })
+    }),
+    [settingsTypes.submitNewUsernameComplete]: (state, { payload }) =>
+      payload
+        ? {
+            ...state,
+            user: {
+              ...state.user,
+              [state.appUsername]: {
+                ...state.user[state.appUsername],
+                username: payload
+              }
+            }
+          }
+        : state
   },
   initialState
 );

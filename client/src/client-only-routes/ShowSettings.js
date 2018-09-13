@@ -92,7 +92,7 @@ function ShowSettings(props) {
         </FullWidthRow>
         <Spacer />
         <h1 className='text-center'>{`Account Settings for ${username}`}</h1>
-       {/* <About
+        <About
           about={about}
           currentTheme={theme}
           location={location}
@@ -102,7 +102,7 @@ function ShowSettings(props) {
           username={username}
         />
         <Spacer />
-         <PrivacySettings />
+        {/* <PrivacySettings />
         <Spacer />
         <EmailSettings />
         <Spacer />
