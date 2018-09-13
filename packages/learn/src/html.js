@@ -3,15 +3,6 @@ import PropTypes from 'prop-types';
 
 import preloads from './head/preloads';
 
-let stylesStr;
-if (process.env.NODE_ENV === 'production') {
-  try {
-    stylesStr = require('!raw-loader!../public/styles.css');
-  } catch (e) {
-    console.log(e);
-  }
-}
-
 // These props are coming from Gatsby, we shouldn't have to worry about them
 const propTypes = {
   body: PropTypes.any,
@@ -31,21 +22,11 @@ function HTML(props) {
     preBodyComponents,
     postBodyComponents
   } = props;
-  let css;
-  if (process.env.NODE_ENV === 'production') {
-    css = (
-      <style
-        dangerouslySetInnerHTML={{ __html: stylesStr }}
-        id='gatsby-inlined-css'
-      />
-    );
-  }
   return (
     <html {...htmlAttributes}>
       <head>
         {preloads}
         {headComponents}
-        {css}
       </head>
       <body {...bodyAttributes}>
         {preBodyComponents}
