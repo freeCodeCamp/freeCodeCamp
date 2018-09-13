@@ -10,6 +10,7 @@ import ChallengeDescription from '../components/Challenge-Description';
 import TestSuite from '../components/Test-Suite';
 import Output from '../components/Output';
 import CompletionModal from '../components/CompletionModal';
+import HelpModal from '../components/HelpModal';
 import ProjectToolPanel from '../project/Tool-Panel';
 import {
   executeChallenge,
@@ -28,6 +29,11 @@ import {
 } from '../../../components/formHelpers';
 import Spacer from '../../../components/util/Spacer';
 import { createGuideUrl } from '../utils';
+
+import '../components/tool-panel.css';
+import '../components/preview.css';
+import '../components/test-suite.css';
+import '../classic/classic.css';
 
 // provided by redux form
 const reduxFormPropTypes = {
@@ -157,6 +163,7 @@ export class BackEnd extends PureComponent {
           <Spacer />
         </Col>
         <CompletionModal />
+        <HelpModal />
       </Row>
     );
   }
