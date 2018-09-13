@@ -101,7 +101,6 @@ function Welcome({
           </Col>
         </Row>
         <Spacer />
-        <Spacer />
         <Row>
           <Col sm={8} smOffset={2} xs={12}>
             <p className='stats'>
@@ -125,7 +124,6 @@ function Welcome({
           </Col>
         </Row>
         <Spacer />
-        <Spacer />
         <Row>
           <Col sm={8} smOffset={2} xs={12}>
             <Button block={true} bsStyle='primary' className='btn-cta-big'>
@@ -133,11 +131,7 @@ function Welcome({
             </Button>
           </Col>
         </Row>
-        <Spacer />
-        <Spacer />
-        <Spacer />
-        <Spacer />
-        <Spacer />
+        <Spacer size={4}/>
       </Grid>
     </Layout>
   );
