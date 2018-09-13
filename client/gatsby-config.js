@@ -11,7 +11,14 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-create-client-paths',
-      options: { prefixes: ['/certification/*', '/unsubscribed/*', '/user/*'] }
+      options: {
+        prefixes: [
+          '/certification/*',
+          '/unsubscribed/*',
+          '/user/*',
+          '/settings/*'
+        ]
+      }
     },
     {
       resolve: 'gatsby-plugin-manifest',
