@@ -107,18 +107,19 @@ const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
   actions.setWebpackConfig({
     module: {
-      rules: [rules.js({
-        /* eslint-disable max-len */
-        exclude: modulePath => {
-          return (
-            /node_modules/.test(modulePath) &&
-            !(/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/).test(
-              modulePath
-            )
-          );
-        }
-        /* eslint-enable max-len*/
-      })
+      rules: [
+        rules.js({
+          /* eslint-disable max-len */
+          exclude: modulePath => {
+            return (
+              /node_modules/.test(modulePath) &&
+              !(/(ansi-styles|chalk|strict-uri-encode|react-freecodecamp-search)/).test(
+                modulePath
+              )
+            );
+          }
+          /* eslint-enable max-len*/
+        })
       ]
     },
     node: {
@@ -136,9 +137,7 @@ exports.onCreateWebpackConfig = ({ stage, rules, plugins, actions }) => {
   });
   if (stage !== 'build-html') {
     actions.setWebpackConfig({
-      plugins: [
-        new MonacoWebpackPlugin()
-      ]
+      plugins: [new MonacoWebpackPlugin()]
     });
   }
   if (stage === 'build-html') {

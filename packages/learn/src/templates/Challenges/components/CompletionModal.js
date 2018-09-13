@@ -76,10 +76,13 @@ export class CompletionModal extends PureComponent {
     const showDownloadButton = Object.keys(files).length;
     const filesForDownload = Object.keys(files)
       .map(key => files[key])
-      .reduce((allFiles, { path, contents }) => ({
-        ...allFiles,
-        [path]: contents
-      }), {});
+      .reduce(
+        (allFiles, { path, contents }) => ({
+          ...allFiles,
+          [path]: contents
+        }),
+        {}
+      );
     const dashedName = dasherize(title);
     return (
       <Modal
@@ -111,21 +114,20 @@ export class CompletionModal extends PureComponent {
             >
             Submit and go to next challenge (Ctrl + Enter)
           </Button>
-          {showDownloadButton
-            ? <Button
-                block={true}
-                bsSize='lg'
-                bsStyle='primary'
-                className='btn-primary-invert'
-                download={`${dashedName}.json`}
-                href={`data:text/json;charset=utf-8,${encodeURIComponent(
-                  JSON.stringify(filesForDownload)
-                )}`}
-                >
-                Download my solution
-              </Button>
-            : null
-          }
+          {showDownloadButton ? (
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-primary-invert'
+              download={`${dashedName}.json`}
+              href={`data:text/json;charset=utf-8,${encodeURIComponent(
+                JSON.stringify(filesForDownload)
+              )}`}
+              >
+              Download my solution
+            </Button>
+          ) : null}
         </Modal.Footer>
       </Modal>
     );

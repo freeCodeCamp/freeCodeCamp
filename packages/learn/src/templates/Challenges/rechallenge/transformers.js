@@ -92,20 +92,23 @@ const htmlSassTransformCode = file => {
   let doc = document.implementation.createHTMLDocument();
   doc.body.innerHTML = file.contents;
   let styleTags = [].filter.call(
-      doc.querySelectorAll('style'),
-      style => style.type === 'text/sass'
+    doc.querySelectorAll('style'),
+    style => style.type === 'text/sass'
   );
   if (styleTags.length === 0 || typeof Sass === 'undefined') {
     return vinyl.transformContents(() => doc.body.innerHTML, file);
   }
   return styleTags.reduce((obs, style) => {
-    return obs.flatMap(file => new Promise(resolve => {
-      window.Sass.compile(style.innerHTML, function(result) {
-        style.type = 'text/css';
-        style.innerHTML = result.text;
-        resolve(vinyl.transformContents(() => doc.body.innerHTML, file));
-      });
-    }));
+    return obs.flatMap(
+      file =>
+        new Promise(resolve => {
+          window.Sass.compile(style.innerHTML, function(result) {
+            style.type = 'text/css';
+            style.innerHTML = result.text;
+            resolve(vinyl.transformContents(() => doc.body.innerHTML, file));
+          });
+        })
+    );
   }, Observable.of(file));
 };
 

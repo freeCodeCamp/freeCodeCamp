@@ -1,3 +1,6 @@
+/* eslint-disable-next-line max-len */
+import { composeWithDevTools } from 'redux-devtools-extension/logOnlyInProduction';
+
 import {
   createStore as reduxCreateStore,
   combineReducers,
@@ -6,9 +9,6 @@ import {
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 import { reducer as formReducer } from 'redux-form';
-import {
-  composeWithDevTools
-} from 'redux-devtools-extension/logOnlyInProduction';
 
 import { reducer as app, epics as appEpics } from './app';
 import {
@@ -50,6 +50,5 @@ const composeEnhancers = composeWithDevTools({
 export const createStore = () =>
   reduxCreateStore(
     rootReducer,
-    composeEnhancers(
-      applyMiddleware(epicMiddleware)
-  ));
+    composeEnhancers(applyMiddleware(epicMiddleware))
+  );

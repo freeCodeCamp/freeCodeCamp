@@ -52,14 +52,20 @@ export class SidePanel extends PureComponent {
   }
 
   componentDidMount() {
-    MathJax.Hub.Queue(['Typeset', MathJax.Hub,
-    document.querySelector('.rosetta-code')]);
+    MathJax.Hub.Queue([
+      'Typeset',
+      MathJax.Hub,
+      document.querySelector('.rosetta-code')
+    ]);
     this.props.initConsole('');
   }
 
   componentDidUpdate(prevProps) {
-    MathJax.Hub.Queue(['Typeset', MathJax.Hub,
-    document.querySelector('.rosetta-code')]);
+    MathJax.Hub.Queue([
+      'Typeset',
+      MathJax.Hub,
+      document.querySelector('.rosetta-code')
+    ]);
     const { title, initConsole } = this.props;
     if (title !== prevProps.title) {
       initConsole('');

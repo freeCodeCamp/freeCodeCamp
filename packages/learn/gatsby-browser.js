@@ -6,11 +6,7 @@ import { createStore } from './src/redux/store';
 export const wrapRootElement = ({ element }) => {
   const store = createStore();
 
-  const ConnectedRootElement = (
-    <Provider store={store}>
-      {element}
-    </Provider>
-  );
+  const ConnectedRootElement = <Provider store={store}>{element}</Provider>;
 
   return ConnectedRootElement;
 };
