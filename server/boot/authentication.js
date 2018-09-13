@@ -70,7 +70,11 @@ module.exports = function enableAuthentication(app) {
       res.clearCookie('access_token', config);
       res.clearCookie('userId', config);
       res.clearCookie('_csrf', config);
-      res.redirect('/');
+      res.redirect(
+        'https://tchaffee.auth0.com/v2/logout' +
+        '?returnTo=https%3A%2F%2Fspiraladder.com' +
+        '&client_id=At3OENprORItSsSyYFYwDH2wfYa5SSIy'
+      );
    });
   });
 
