@@ -1,25 +1,24 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import {
-  Nav,
-  NavItem,
   FormGroup,
   ControlLabel,
   FormControl
 } from '@freecodecamp/react-bootstrap';
 
+import { submitNewAbout } from '../../redux/settings';
+
 import { FullWidthRow, Spacer } from '../helpers';
 import ThemeSettings from './Theme';
-import Camper from './Camper';
 import UsernameSettings from './Username';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
-import BlockSaveWrapper from '../helpers/form/BlockSaveWrapper';
 
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators({ submitNewAbout }, dispatch);
 
 const propTypes = {
   about: PropTypes.string,
@@ -28,6 +27,7 @@ const propTypes = {
   name: PropTypes.string,
   picture: PropTypes.string,
   points: PropTypes.number,
+  submitNewAbout: PropTypes.func.isRequired,
   username: PropTypes.string
 };
 
@@ -36,33 +36,58 @@ class AboutSettings extends Component {
     super(props);
 
     const { name = '', location = '', picture = '', about = '' } = props;
-
-    this.state = {
-      view: 'edit',
-      formValues: {
-        name,
-        location,
-        picture,
-        about
-      },
-      isFormPristine: true
+    const values = {
+      name,
+      location,
+      picture,
+      about
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleTabSelect = this.handleTabSelect.bind(this);
-    this.renderEdit = this.renderEdit.bind(this);
-    this.renderPreview = this.renderPreview.bind(this);
-    this.show = {
-      edit: this.renderEdit,
-      preview: this.renderPreview
+    this.state = {
+      formValues: { ...values },
+      originalValues: { ...values },
+      formClicked: false
     };
   }
 
-  handleSubmit(e) {
+  componentDidUpdate() {
+    const { name, location, picture, about } = this.props;
+    const { formValues, formClicked } = this.state;
+    if (
+      formClicked &&
+      name === formValues.name &&
+      location === formValues.location &&
+      picture === formValues.picture &&
+      about === formValues.about
+    ) {
+      /* eslint-disable-next-line react/no-did-update-set-state */
+      return this.setState({
+        originalValues: {
+          name,
+          location,
+          picture,
+          about
+        },
+        formClicked: false
+      });
+    }
+    return null;
+  }
+
+  isFormPristine = () => {
+    const { formValues, originalValues } = this.state;
+    return Object.keys(originalValues)
+      .map(key => originalValues[key] === formValues[key])
+      .every(bool => bool);
+  };
+
+  handleSubmit = e => {
     e.preventDefault();
     const { formValues } = this.state;
-    console.log(formValues)
-  }
+    const { submitNewAbout } = this.props;
+    return this.setState({ formClicked: true }, () =>
+      submitNewAbout(formValues)
+    );
+  };
 
   handleNameChange = e => {
     const value = e.target.value.slice(0);
@@ -104,106 +129,60 @@ class AboutSettings extends Component {
     }));
   };
 
-  handleTabSelect(key) {
-    return this.setState(state => ({
-      ...state,
-      view: key
-    }));
-  }
-
-  renderEdit() {
+  render() {
     const {
       formValues: { name, location, picture, about }
     } = this.state;
-    return (
-      <Fragment>
-        <FormGroup controlId='about-name'>
-          <ControlLabel>
-            <strong>Name</strong>
-          </ControlLabel>
-          <FormControl
-            onChange={this.handleNameChange}
-            type='text'
-            value={name}
-          />
-        </FormGroup>
-        <FormGroup controlId='about-location'>
-          <ControlLabel>
-            <strong>Location</strong>
-          </ControlLabel>
-          <FormControl
-            onChange={this.handleLocationChange}
-            type='text'
-            value={location}
-          />
-        </FormGroup>
-        <FormGroup controlId='about-picture'>
-          <ControlLabel>
-            <strong>Picture</strong>
-          </ControlLabel>
-          <FormControl
-            onChange={this.handlePictureChange}
-            required={true}
-            type='url'
-            value={picture}
-          />
-        </FormGroup>
-        <FormGroup controlId='about-about'>
-          <ControlLabel>
-            <strong>About</strong>
-          </ControlLabel>
-          <FormControl
-            componentClass='textarea'
-            onChange={this.handleAboutChange}
-            value={about}
-          />
-        </FormGroup>
-      </Fragment>
-    );
-  }
-
-  renderPreview() {
-    const { about, picture, points, username, name, location } = this.props;
-    return (
-      <Camper
-        about={about}
-        location={location}
-        name={name}
-        picture={picture}
-        points={points}
-        username={username}
-      />
-    );
-  }
-
-  render() {
     const { currentTheme, username } = this.props;
-    const { view, isFormPristine } = this.state;
-
     const toggleTheme = () => {};
     return (
       <div className='about-settings'>
         <UsernameSettings username={username} />
-        <FullWidthRow>
-          <Nav
-            activeKey={view}
-            bsStyle='tabs'
-            className='edit-preview-tabs'
-            onSelect={k => this.handleTabSelect(k)}
-            >
-            <NavItem eventKey='edit' title='Edit Bio'>
-              Edit Bio
-            </NavItem>
-            <NavItem eventKey='preview' title='Preview Bio'>
-              Preview Bio
-            </NavItem>
-          </Nav>
-        </FullWidthRow>
         <br />
         <FullWidthRow>
           <form id='camper-identity' onSubmit={this.handleSubmit}>
-            {this.show[view]()}
-            <BlockSaveButton disabled={isFormPristine} />
+            <FormGroup controlId='about-name'>
+              <ControlLabel>
+                <strong>Name</strong>
+              </ControlLabel>
+              <FormControl
+                onChange={this.handleNameChange}
+                type='text'
+                value={name}
+              />
+            </FormGroup>
+            <FormGroup controlId='about-location'>
+              <ControlLabel>
+                <strong>Location</strong>
+              </ControlLabel>
+              <FormControl
+                onChange={this.handleLocationChange}
+                type='text'
+                value={location}
+              />
+            </FormGroup>
+            <FormGroup controlId='about-picture'>
+              <ControlLabel>
+                <strong>Picture</strong>
+              </ControlLabel>
+              <FormControl
+                onChange={this.handlePictureChange}
+                required={true}
+                type='url'
+                value={picture}
+              />
+            </FormGroup>
+            <FormGroup controlId='about-about'>
+              <ControlLabel>
+                <strong>About</strong>
+              </ControlLabel>
+              <FormControl
+                componentClass='textarea'
+                onChange={this.handleAboutChange}
+                value={about}
+              />
+            </FormGroup>
+            <BlockSaveButton disabled={this.isFormPristine()} />
           </form>
         </FullWidthRow>
         <Spacer />

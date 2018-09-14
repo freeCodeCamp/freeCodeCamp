@@ -160,7 +160,18 @@ export const reducer = handleActions(
               }
             }
           }
-        : state
+        : state,
+    [settingsTypes.submitNewAboutComplete]: (state, {payload}) => payload ? {
+      ...state,
+      user: {
+        ...state.user,
+        [state.appUsername]: {
+          ...state.user[state.appUsername],
+          ...payload
+        }
+      }
+    }
+  : state
   },
   initialState
 );

@@ -40,6 +40,10 @@ export function postReportUser(body) {
 
 /** PUT **/
 
+export function putUpdateMyAbout(values) {
+  return put('/update-my-about', { ...values });
+}
+
 export function putUpdateMyUsername(username) {
   return put('/update-my-username', { username });
 }
