@@ -159,7 +159,7 @@ class ShowUser extends Component {
                 />
               </FormGroup>
               <Button block={true} bsStyle='primary' type='submit'>
-                Sumbit the report
+                Submit the report
               </Button>
             </form>
           </Col>
