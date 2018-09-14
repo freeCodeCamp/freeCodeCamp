@@ -26,7 +26,7 @@ const BigCallToAction = () => (
 );
 
 const IndexPage = () => (
-  <Layout disableSettings={true}>
+  <Layout disableSettings={true} landingPage={true}>
     <Spacer />
     <Spacer />
     <Grid className='text-center'>
