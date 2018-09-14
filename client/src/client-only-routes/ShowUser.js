@@ -12,6 +12,7 @@ import {
   Button,
   Col
 } from '@freecodecamp/react-bootstrap';
+import Helmet from 'react-helmet';
 
 import {
   isSignedInSelector,
@@ -134,6 +135,9 @@ class ShowUser extends Component {
 
     return (
       <Layout>
+        <Helmet>
+          <title>Report a users profile | freeCodeCamp.org</title>
+        </Helmet>
         <FullWidthRow>
           <Spacer />
           <Spacer />

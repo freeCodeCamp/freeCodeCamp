@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid } from '@freecodecamp/react-bootstrap';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
 import FullWidthRow from '../components/helpers/FullWidthRow';
@@ -8,6 +9,9 @@ import { Spacer } from '../components/helpers';
 function SoftwareResourcesForNonProfits() {
   return (
     <Layout>
+      <Helmet>
+        <title>Software Resources for Nonprofits | freeCodeCamp.org</title>
+      </Helmet>
       <Spacer />
       <Spacer />
       <Grid>
@@ -148,7 +152,10 @@ function SoftwareResourcesForNonProfits() {
             </li>
             <li>
               <a
-                href='https://www.blackbaud.com/fundraising-crm/etapestry-donor-management'
+                href={
+                  'https://www.blackbaud.com/fundraising-crm/etapestry-donor' +
+                  '-management'
+                }
                 rel='noopener noreferrer'
                 target='_blank'
                 >

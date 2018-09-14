@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
+import Helmet from 'react-helmet';
 
 import { signInLoadingSelector, userSelector } from '../redux';
 import { submitNewAbout, updateUserFlag } from '../redux/settings';
@@ -77,6 +78,9 @@ function ShowSettings(props) {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Settings | freeCodeCamp.org</title>
+      </Helmet>
       <Grid>
         <Spacer size={2} />
         <FullWidthRow>

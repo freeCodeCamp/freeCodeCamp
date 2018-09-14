@@ -73,7 +73,7 @@ class AcceptPrivacyTerms extends Component {
     return (
       <Layout>
         <Helmet>
-          <title>Privacy Policy and Terms of Service</title>
+          <title>Privacy Policy and Terms of Service | freeCodeCamp.org</title>
         </Helmet>
         <Grid>
           <Row>
