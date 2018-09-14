@@ -1,7 +1,11 @@
+import debug from 'debug';
 import { check } from 'express-validator/check';
+
 import { ifNoUser401, createValidatorErrorHandler } from '../utils/middleware';
 import { themes } from '../../common/utils/themes.js';
 import { alertTypes } from '../../common/utils/flash.js';
+
+const log = debug('fcc:boot:settings');
 
 export default function settingsController(app) {
   const api = app.loopback.Router();
@@ -47,6 +51,7 @@ export default function settingsController(app) {
     createValidatorErrorHandler(alertTypes.danger),
     updateMyTheme
   );
+  api.put('/update-my-about', ifNoUser401, updateMyAbout);
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
 
   app.use('/internal', api);
@@ -57,6 +62,11 @@ const standardErrorMessage = {
   type: 'danger',
   message:
     'Something went wrong updating your account. Please check and try again'
+};
+
+const standardSuccessMessage = {
+  type: 'success',
+  message: 'We have updated your preferences'
 };
 
 const toggleUserFlag = (flag, req, res, next) => {
@@ -178,6 +188,21 @@ function updateMyProjects(req, res, next) {
   return user
     .updateMyProjects(project)
     .subscribe(message => res.json({ message }), next);
+}
+
+function updateMyAbout(req, res, next) {
+  const {
+    user,
+    body: { name, location, about, picture }
+  } = req;
+  log(name, location, picture, about)
+  return user.updateAttributes({ name, location, about, picture }, err => {
+    if (err) {
+      res.status(500).json(standardErrorMessage);
+      return next(err);
+    }
+    return res.status(200).json(standardSuccessMessage);
+  });
 }
 
 function createUpdateMyUsername(app) {

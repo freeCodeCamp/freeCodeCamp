@@ -22,12 +22,20 @@ const initialState = {
 export const types = createTypes(
   [
     ...createAsyncTypes('validateUsername'),
+    ...createAsyncTypes('submitNewAbout'),
     ...createAsyncTypes('submitNewUsername')
   ],
   ns
 );
 
 export const sagas = [...createSettingsSagas(types)];
+
+export const submitNewAbout = createAction(types.submitNewAbout);
+export const submitNewAboutComplete = createAction(
+  types.submitNewAboutComplete,
+  ({ type, payload }) => (type === 'success' ? payload : null)
+);
+export const submitNewAboutError = createAction(types.submitNewAboutError);
 
 export const submitNewUsername = createAction(types.submitNewUsername);
 export const submitNewUsernameComplete = createAction(
