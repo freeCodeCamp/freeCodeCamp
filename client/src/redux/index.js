@@ -161,17 +161,32 @@ export const reducer = handleActions(
             }
           }
         : state,
-    [settingsTypes.submitNewAboutComplete]: (state, {payload}) => payload ? {
-      ...state,
-      user: {
-        ...state.user,
-        [state.appUsername]: {
-          ...state.user[state.appUsername],
-          ...payload
-        }
-      }
-    }
-  : state
+    [settingsTypes.submitNewAboutComplete]: (state, { payload }) =>
+      payload
+        ? {
+            ...state,
+            user: {
+              ...state.user,
+              [state.appUsername]: {
+                ...state.user[state.appUsername],
+                ...payload
+              }
+            }
+          }
+        : state,
+    [settingsTypes.updateUserFlagComplete]: (state, { payload }) =>
+      payload
+        ? {
+            ...state,
+            user: {
+              ...state.user,
+              [state.appUsername]: {
+                ...state.user[state.appUsername],
+                ...payload
+              }
+            }
+          }
+        : state
   },
   initialState
 );

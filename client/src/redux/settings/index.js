@@ -23,17 +23,20 @@ export const types = createTypes(
   [
     ...createAsyncTypes('validateUsername'),
     ...createAsyncTypes('submitNewAbout'),
-    ...createAsyncTypes('submitNewUsername')
+    ...createAsyncTypes('submitNewUsername'),
+    ...createAsyncTypes('updateUserFlag')
   ],
   ns
 );
+const checkForSuccessPayload = ({ type, payload }) =>
+  type === 'success' ? payload : null;
 
 export const sagas = [...createSettingsSagas(types)];
 
 export const submitNewAbout = createAction(types.submitNewAbout);
 export const submitNewAboutComplete = createAction(
   types.submitNewAboutComplete,
-  ({ type, payload }) => (type === 'success' ? payload : null)
+  checkForSuccessPayload
 );
 export const submitNewAboutError = createAction(types.submitNewAboutError);
 
@@ -45,6 +48,13 @@ export const submitNewUsernameComplete = createAction(
 export const submitNewUsernameError = createAction(
   types.submitNewUsernameError
 );
+
+export const updateUserFlag = createAction(types.updateUserFlag);
+export const updateUserFlagComplete = createAction(
+  types.updateUserFlagComplete,
+  checkForSuccessPayload
+);
+export const updateUserFlagError = createAction(types.updateUserFlagError);
 
 export const validateUsername = createAction(types.validateUsername);
 export const validateUsernameComplete = createAction(

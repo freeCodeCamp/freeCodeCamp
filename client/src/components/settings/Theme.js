@@ -19,7 +19,9 @@ export default function ThemeSettings({ currentTheme, toggleNightMode }) {
       </ControlLabel>
       <TB
         name='night-mode'
-        onChange={() => toggleNightMode(currentTheme)}
+        onChange={() =>
+          toggleNightMode(currentTheme === 'night' ? 'default' : 'night')
+        }
         value={currentTheme === 'night'}
       />
     </div>

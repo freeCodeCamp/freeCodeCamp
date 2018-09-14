@@ -19,14 +19,6 @@ export default function settingsController(app) {
     ifNoUser401,
     refetchCompletedChallenges
   );
-  api.post('/update-flags', ifNoUser401, updateFlags);
-  api.put(
-    '/update-my-email',
-    ifNoUser401,
-    updateMyEmailValidators,
-    createValidatorErrorHandler(alertTypes.danger),
-    updateMyEmail
-  );
   api.post(
     '/update-my-current-challenge',
     ifNoUser401,
@@ -51,8 +43,16 @@ export default function settingsController(app) {
     createValidatorErrorHandler(alertTypes.danger),
     updateMyTheme
   );
+  api.put(
+    '/update-my-email',
+    ifNoUser401,
+    updateMyEmailValidators,
+    createValidatorErrorHandler(alertTypes.danger),
+    updateMyEmail
+  );
   api.put('/update-my-about', ifNoUser401, updateMyAbout);
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
+  api.put('/update-user-flag', ifNoUser401, updateUserFlag);
 
   app.use('/internal', api);
   app.use(api);
@@ -67,19 +67,6 @@ const standardErrorMessage = {
 const standardSuccessMessage = {
   type: 'success',
   message: 'We have updated your preferences'
-};
-
-const toggleUserFlag = (flag, req, res, next) => {
-  const { user } = req;
-  const currentValue = user[flag];
-  return user.update$({ [flag]: !currentValue }).subscribe(
-    () =>
-      res.status(200).json({
-        flag,
-        value: !currentValue
-      }),
-    next
-  );
 };
 
 function refetchCompletedChallenges(req, res, next) {
@@ -142,20 +129,6 @@ function updateMyTheme(req, res, next) {
     );
 }
 
-function updateFlags(req, res, next) {
-  const {
-    user,
-    body: { values }
-  } = req;
-  const keys = Object.keys(values);
-  if (keys.length === 1 && typeof keys[0] === 'boolean') {
-    return toggleUserFlag(keys[0], req, res, next);
-  }
-  return user
-    .requestUpdateFlags(values)
-    .subscribe(message => res.json({ message }), next);
-}
-
 function updateMyPortfolio(req, res, next) {
   const {
     user,
@@ -195,7 +168,7 @@ function updateMyAbout(req, res, next) {
     user,
     body: { name, location, about, picture }
   } = req;
-  log(name, location, picture, about)
+  log(name, location, picture, about);
   return user.updateAttributes({ name, location, about, picture }, err => {
     if (err) {
       res.status(500).json(standardErrorMessage);
@@ -240,7 +213,7 @@ function createUpdateMyUsername(app) {
   };
 }
 
-const updatePrivacyTerms = (req, res) => {
+const updatePrivacyTerms = (req, res, next) => {
   const {
     user,
     body: { quincyEmails }
@@ -251,7 +224,8 @@ const updatePrivacyTerms = (req, res) => {
   };
   return user.updateAttributes(update, err => {
     if (err) {
-      return res.status(500).json(standardErrorMessage);
+      res.status(500).json(standardErrorMessage);
+      return next(err);
     }
     return res.status(200).json({
       type: 'success',
@@ -261,3 +235,14 @@ const updatePrivacyTerms = (req, res) => {
     });
   });
 };
+
+function updateUserFlag(req, res, next) {
+  const { user, body: update } = req;
+  user.updateAttributes(update, err => {
+    if (err) {
+      res.status(500).json(standardErrorMessage);
+      return next(err);
+    }
+    return res.status(200).json(standardSuccessMessage);
+  });
+}
