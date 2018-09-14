@@ -1,0 +1,16 @@
+.toggle-active.btn[disabled] {
+  background-color: #006400;
+  opacity: 1;
+}
+
+.toggle-not-active.btn-primary.active {
+  background-color: #006400;
+}
+
+.toggle-not-active {
+  background-color: #dedede;
+  color: rgb(0, 49, 0);
+}
+.toggle-not-active:hover, .toggle-not-active:focus {
+  background-color: #006400;
+}
