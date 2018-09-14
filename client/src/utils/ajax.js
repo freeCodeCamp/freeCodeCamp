@@ -48,6 +48,10 @@ export function putUpdateMyUsername(username) {
   return put('/update-my-username', { username });
 }
 
+export function putUpdateUserFlag(update) {
+  return put('/update-user-flag', update);
+}
+
 export function putUserAcceptsTerms(quincyEmails) {
   return put('/update-privacy-terms', { quincyEmails });
 }

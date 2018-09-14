@@ -19,6 +19,7 @@ const propTypes = {
   picture: PropTypes.string,
   points: PropTypes.number,
   submitNewAbout: PropTypes.func.isRequired,
+  toggleNightMode: PropTypes.func.isRequired,
   username: PropTypes.string
 };
 
@@ -124,8 +125,7 @@ class AboutSettings extends Component {
     const {
       formValues: { name, location, picture, about }
     } = this.state;
-    const { currentTheme, username } = this.props;
-    const toggleTheme = () => {};
+    const { currentTheme, username, toggleNightMode } = this.props;
     return (
       <div className='about-settings'>
         <UsernameSettings username={username} />
@@ -180,7 +180,7 @@ class AboutSettings extends Component {
         <FullWidthRow>
           <ThemeSettings
             currentTheme={currentTheme}
-            toggleNightMode={toggleTheme}
+            toggleNightMode={toggleNightMode}
           />
         </FullWidthRow>
       </div>

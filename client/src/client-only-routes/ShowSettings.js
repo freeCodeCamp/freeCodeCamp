@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
 
 import { signInLoadingSelector, userSelector } from '../redux';
-import { submitNewAbout } from '../redux/settings';
+import { submitNewAbout, updateUserFlag } from '../redux/settings';
 
 import Layout from '../components/Layout';
 import Spacer from '../components/helpers/Spacer';
@@ -23,6 +23,7 @@ const propTypes = {
   showLoading: PropTypes.bool,
   submitNewAbout: PropTypes.func.isRequired,
   theme: PropTypes.string,
+  toggleNightMode: PropTypes.func.isRequired,
   username: PropTypes.string
 };
 
@@ -45,7 +46,10 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = dispatch =>
-  bindActionCreators({ submitNewAbout }, dispatch);
+  bindActionCreators(
+    { submitNewAbout, toggleNightMode: theme => updateUserFlag({theme}) },
+    dispatch
+  );
 
 function ShowSettings(props) {
   const {
@@ -57,7 +61,8 @@ function ShowSettings(props) {
     theme,
     location,
     name,
-    submitNewAbout
+    submitNewAbout,
+    toggleNightMode
   } = props;
 
   if (showLoading) {
@@ -104,6 +109,7 @@ function ShowSettings(props) {
           picture={picture}
           points={points}
           submitNewAbout={submitNewAbout}
+          toggleNightMode={toggleNightMode}
           username={username}
         />
         <Spacer />

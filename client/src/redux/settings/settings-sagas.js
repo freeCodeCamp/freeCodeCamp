@@ -1,7 +1,9 @@
 import { delay } from 'redux-saga';
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest, takeEvery } from 'redux-saga/effects';
 
 import {
+  updateUserFlagComplete,
+  updateUserFlagError,
   validateUsernameComplete,
   validateUsernameError,
   submitNewAboutComplete,
@@ -12,7 +14,8 @@ import {
 import {
   getUsernameExists,
   putUpdateMyAbout,
-  putUpdateMyUsername
+  putUpdateMyUsername,
+  putUpdateUserFlag
 } from '../../utils/ajax';
 import { createFlashMessage } from '../../components/Flash/redux';
 
@@ -36,6 +39,16 @@ function* submitNewUsernameSaga({ payload: username }) {
   }
 }
 
+function* updateUserFlagSaga({ payload: update }) {
+  try {
+    const { data: response } = yield call(putUpdateUserFlag, update);
+    yield put(updateUserFlagComplete({ ...response, payload: update }));
+    yield put(createFlashMessage(response));
+  } catch (e) {
+    yield put(updateUserFlagError(e));
+  }
+}
+
 function* validateUsernameSaga({ payload }) {
   try {
     yield delay(500);
@@ -50,6 +63,7 @@ function* validateUsernameSaga({ payload }) {
 
 export function createSettingsSagas(types) {
   return [
+    takeEvery(types.updateUserFlag, updateUserFlagSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     takeLatest(types.validateUsername, validateUsernameSaga)
