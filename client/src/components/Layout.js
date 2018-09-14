@@ -11,12 +11,14 @@ import { flashMessagesSelector, removeFlashMessage } from './Flash/redux';
 import Flash from './Flash';
 import Header from './Header';
 
-import './layout.css';
 import './global.css';
+import './layout.css';
+import './night.css';
 
 const propTypes = {
   children: PropTypes.node.isRequired,
   disableSettings: PropTypes.bool,
+  fetchUser: PropTypes.func.isRequired,
   flashMessages: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
@@ -26,6 +28,7 @@ const propTypes = {
   ),
   hasMessages: PropTypes.bool,
   isSignedIn: PropTypes.bool,
+  landingPage: PropTypes.bool,
   removeFlashMessage: PropTypes.func.isRequired
 };
 
@@ -54,7 +57,8 @@ class Layout extends Component {
       disableSettings,
       hasMessages,
       flashMessages = [],
-      removeFlashMessage
+      removeFlashMessage,
+      landingPage
     } = this.props;
     return (
       <StaticQuery
@@ -77,12 +81,12 @@ class Layout extends Component {
               title={data.site.siteMetadata.title}
             />
             <Header disableSettings={disableSettings} />
-            <div style={{ marginTop: '38px' }}>
+            <main className={landingPage && 'landing-page'}>
               {hasMessages ? (
                 <Flash messages={flashMessages} onClose={removeFlashMessage} />
               ) : null}
               {children}
-            </div>
+            </main>
           </Fragment>
         )}
       />
