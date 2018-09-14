@@ -7,6 +7,7 @@ import { createAppMountSaga } from './app-mount-saga';
 import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
 import { createUpdateMyEmailSaga } from './update-email-saga';
+import { createNightModeSaga } from './night-mode-saga';
 
 import { types as settingsTypes } from './settings';
 
@@ -49,7 +50,8 @@ export const sagas = [
   ...createFetchUserSaga(types),
   ...createUpdateMyEmailSaga(types),
   ...createShowCertSaga(types),
-  ...createReportUserSaga(types)
+  ...createReportUserSaga(types),
+  ...createNightModeSaga({ ...types, ...settingsTypes })
 ];
 
 export const appMount = createAction(types.appMount);

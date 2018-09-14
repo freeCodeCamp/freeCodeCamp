@@ -33,6 +33,7 @@
     "redux-actions": "^2.6.1",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
+    "store": "^2.0.12",
     "validator": "^10.7.0"
   },
   "keywords": [
