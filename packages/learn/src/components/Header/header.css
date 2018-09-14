@@ -107,12 +107,14 @@ header {
   padding: 3px 10px 0;
   margin-right: auto;
 }
-#fcc_instantsearch {
+.ais-SearchBox-input {
   max-height: 30px;
 }
 .ais-SearchBox-form {
   margin-bottom: 0;
 }
 .ais-Hits {
-  background-color: #fff;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }

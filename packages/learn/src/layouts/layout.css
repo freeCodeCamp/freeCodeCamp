@@ -12,7 +12,7 @@ main {
   /*
   Note(renojvarghese): had to put a max-height because max-height was removed from app-wrapper (has background of #333 in night mode)
   */
-  max-height: calc(100vh - 38px);
+  max-height: calc(100vh - 36px);
   overflow-y: scroll;
 }
 
@@ -27,6 +27,6 @@ main {
 }
 
 .app-wrapper {
-  margin-top: 38px;
-  min-height: calc(100vh - 38px);
+  margin-top: 36px;
+  min-height: calc(100vh - 36px);
 }
