@@ -29,12 +29,16 @@ export default function csp() {
         'https://glitch.com',
         'https://*.glitch.com',
         'https://*.glitch.me',
-        'https://*.cloudflare.com'
+        'https://*.cloudflare.com',
+        'https://*.fullstory.com'
       ]),
       scriptSrc: [
         "'unsafe-eval'",
         "'unsafe-inline'",
         '*.google-analytics.com',
+        '*.heapanalytics.com',
+        'fullstory.com',
+        '*.fullstory.com',
         '*.gstatic.com',
         'https://*.cloudflare.com',
         '*.cloudflare.com',
@@ -59,6 +63,7 @@ export default function csp() {
         'https://use.fontawesome.com'
       ].concat(trusted),
       fontSrc: [
+        '\'self\' data:',
         '*.cloudflare.com',
         'https://*.cloudflare.com',
         '*.bootstrapcdn.com',
