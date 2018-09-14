@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
+import Helmet from 'react-helmet';
 
 import env from '../../config/env.json';
 import Layout from '../components/Layout';
@@ -11,6 +13,9 @@ const { apiLocation } = env;
 function ShowUnsubscribed({ unsubscribeId }) {
   return (
     <Layout>
+      <Helmet>
+        <title>You have been unsubscribed | freeCodeCamp.org</title>
+      </Helmet>
       <Grid>
         <FullWidthRow>
           <Spacer />
@@ -39,5 +44,8 @@ function ShowUnsubscribed({ unsubscribeId }) {
 }
 
 ShowUnsubscribed.displayName = 'ShowUnsubscribed';
+ShowUnsubscribed.propTypes = {
+  unsubscribeId: PropTypes.string
+};
 
 export default ShowUnsubscribed;

@@ -14,6 +14,7 @@ import {
   Col,
   Button
 } from '@freecodecamp/react-bootstrap';
+import Helmet from 'react-helmet';
 
 import Layout from '../components/Layout';
 import { Spacer } from '../components/helpers';
@@ -80,6 +81,9 @@ class UpdateEmail extends Component {
     const { isNewEmail, updateMyEmail } = this.props;
     return (
       <Layout>
+        <Helmet>
+          <title>Update your email address | freeCodeCamp.org</title>
+        </Helmet>
         <Spacer />
         <h2 className='text-center'>Update your email address here:</h2>
         <Grid>

@@ -10,6 +10,7 @@ import {
   faReact
 } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import Helmet from 'react-helmet';
 
 import { Spacer } from '../components/helpers';
 import Layout from '../components/Layout';
@@ -27,6 +28,9 @@ const BigCallToAction = () => (
 
 const IndexPage = () => (
   <Layout disableSettings={true} landingPage={true}>
+    <Helmet>
+      <title>Learn to code | freeCodeCamp.org</title>
+    </Helmet>
     <Spacer />
     <Spacer />
     <Grid className='text-center'>

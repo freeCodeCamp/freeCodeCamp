@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
+import Helmet from 'react-helmet';
 
 import { Loader, Spacer } from '../components/helpers';
 import Layout from '../components/Layout';
@@ -38,7 +39,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 
 function Welcome({
   fetchState: { pending, complete },
-  fetchState,
   user: {
     acceptedPrivacyTerms,
     name = '',
@@ -48,7 +48,6 @@ function Welcome({
     completedLegacyCertCount = 0
   }
 }) {
-  console.log(fetchState);
   if (pending && !complete) {
     return (
       <Layout>
@@ -67,6 +66,9 @@ function Welcome({
   const { quote, author } = randomQuote();
   return (
     <Layout>
+      <Helmet>
+        <title>Welcome {name ? name : 'Camper'} | freeCodeCamp.org</title>
+      </Helmet>
       <Grid className='text-center'>
         <Row>
           <Col xs={12}>
@@ -131,7 +133,7 @@ function Welcome({
             </Button>
           </Col>
         </Row>
-        <Spacer size={4}/>
+        <Spacer size={4} />
       </Grid>
     </Layout>
   );
