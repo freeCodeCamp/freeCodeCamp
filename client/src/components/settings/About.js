@@ -1,24 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import {
   FormGroup,
   ControlLabel,
   FormControl
 } from '@freecodecamp/react-bootstrap';
 
-import { submitNewAbout } from '../../redux/settings';
-
 import { FullWidthRow, Spacer } from '../helpers';
 import ThemeSettings from './Theme';
 import UsernameSettings from './Username';
 import BlockSaveButton from '../helpers/form/BlockSaveButton';
-
-const mapStateToProps = () => ({});
-
-const mapDispatchToProps = dispatch =>
-  bindActionCreators({ submitNewAbout }, dispatch);
 
 const propTypes = {
   about: PropTypes.string,
@@ -200,7 +191,4 @@ class AboutSettings extends Component {
 AboutSettings.displayName = 'AboutSettings';
 AboutSettings.propTypes = propTypes;
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AboutSettings);
+export default AboutSettings;
