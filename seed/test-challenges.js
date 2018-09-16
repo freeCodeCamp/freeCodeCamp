@@ -12,6 +12,7 @@ import { validateChallenge } from './schema/challengeSchema';
 
 // modern challengeType
 const modern = 6;
+const _ = require('lodash');
 
 let mongoIds = new MongoIds();
 let challengeTitles = new ChallengeTitles();
@@ -206,7 +207,14 @@ function createTest({
 Observable.from(getChallenges())
   .do(({ challenges }) => {
     challenges.forEach(challenge => {
-      const result = validateChallenge(challenge);
+      const preparedChallenge = _.omit(
+        challenge,
+        [
+          'releasedOn',
+          'translations'
+        ]
+      );
+      const result = validateChallenge(preparedChallenge);
       if (result.error) {
         console.log(result.value);
         throw new Error(result.error);

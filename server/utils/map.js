@@ -116,6 +116,7 @@ export function _cachedMap({ Block, Challenge }) {
 }
 
 export const cachedMap = _.once(_cachedMap);
+export const regenerateCachedMap = _cachedMap;
 
 // type ObjectId: String;
 // getChallengeById(

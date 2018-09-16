@@ -3,6 +3,9 @@
   "base": "PersistedModel",
   "idInjection": true,
   "trackChanges": false,
+  "options": {
+    "validateUpsert": true
+  },
   "properties": {
     "id": {
       "type": "string",
