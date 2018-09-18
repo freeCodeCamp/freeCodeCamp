@@ -14,6 +14,7 @@ import Spacer from '../components/helpers/Spacer';
 import Loader from '../components/helpers/Loader';
 import { FullWidthRow } from '../components/helpers';
 import About from '../components/settings/About';
+import Privacy from '../components/settings/Privacy';
 
 const propTypes = {
   about: PropTypes.string,
@@ -117,9 +118,9 @@ function ShowSettings(props) {
           username={username}
         />
         <Spacer />
-        {/* <PrivacySettings />
+        <Privacy />
         <Spacer />
-        <EmailSettings />
+        {/* <EmailSettings />
         <Spacer />
         <InternetSettings />
         <Spacer />

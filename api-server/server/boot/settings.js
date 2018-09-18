@@ -34,7 +34,6 @@ export default function settingsController(app) {
     updateMyCurrentChallenge
   );
   api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
-  api.post('/update-my-profile-ui', ifNoUser401, updateMyProfileUI);
   api.post('/update-my-projects', ifNoUser401, updateMyProjects);
   api.post(
     '/update-my-theme',
@@ -43,6 +42,7 @@ export default function settingsController(app) {
     createValidatorErrorHandler(alertTypes.danger),
     updateMyTheme
   );
+  api.put('/update-my-about', ifNoUser401, updateMyAbout);
   api.put(
     '/update-my-email',
     ifNoUser401,
@@ -50,7 +50,7 @@ export default function settingsController(app) {
     createValidatorErrorHandler(alertTypes.danger),
     updateMyEmail
   );
-  api.put('/update-my-about', ifNoUser401, updateMyAbout);
+  api.put('/update-my-profileui', ifNoUser401, updateMyProfileUI);
   api.put('/update-my-username', ifNoUser401, updateMyUsername);
   api.put('/update-user-flag', ifNoUser401, updateUserFlag);
 
@@ -67,6 +67,14 @@ const standardErrorMessage = {
 const standardSuccessMessage = {
   type: 'success',
   message: 'We have updated your preferences'
+};
+
+const createStandardHandler = (req, res, next) => err => {
+  if (err) {
+    res.status(500).json(standardErrorMessage);
+    return next(err);
+  }
+  return res.status(200).json(standardSuccessMessage);
 };
 
 function refetchCompletedChallenges(req, res, next) {
@@ -148,9 +156,11 @@ function updateMyProfileUI(req, res, next) {
     user,
     body: { profileUI }
   } = req;
-  return user
-    .updateMyProfileUI(profileUI)
-    .subscribe(message => res.json({ message }), next);
+  user.updateAttribute(
+    'profileUI',
+    profileUI,
+    createStandardHandler(req, res, next)
+  );
 }
 
 function updateMyProjects(req, res, next) {
@@ -169,13 +179,10 @@ function updateMyAbout(req, res, next) {
     body: { name, location, about, picture }
   } = req;
   log(name, location, picture, about);
-  return user.updateAttributes({ name, location, about, picture }, err => {
-    if (err) {
-      res.status(500).json(standardErrorMessage);
-      return next(err);
-    }
-    return res.status(200).json(standardSuccessMessage);
-  });
+  return user.updateAttributes(
+    { name, location, about, picture },
+    createStandardHandler(req, res, next)
+  );
 }
 
 function createUpdateMyUsername(app) {
@@ -238,11 +245,5 @@ const updatePrivacyTerms = (req, res, next) => {
 
 function updateUserFlag(req, res, next) {
   const { user, body: update } = req;
-  user.updateAttributes(update, err => {
-    if (err) {
-      res.status(500).json(standardErrorMessage);
-      return next(err);
-    }
-    return res.status(200).json(standardSuccessMessage);
-  });
+  user.updateAttributes(update, createStandardHandler(req, res, next));
 }

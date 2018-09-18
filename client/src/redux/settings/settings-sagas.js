@@ -9,11 +9,14 @@ import {
   submitNewAboutComplete,
   submitNewAboutError,
   submitNewUsernameComplete,
-  submitNewUsernameError
+  submitNewUsernameError,
+  submitProfileUIComplete,
+  submitProfileUIError
 } from './';
 import {
   getUsernameExists,
   putUpdateMyAbout,
+  putUpdateMyProfileUI,
   putUpdateMyUsername,
   putUpdateUserFlag
 } from '../../utils/ajax';
@@ -36,6 +39,16 @@ function* submitNewUsernameSaga({ payload: username }) {
     yield put(createFlashMessage(response));
   } catch (e) {
     yield put(submitNewUsernameError(e));
+  }
+}
+
+function* sumbitProfileUISaga({ payload }) {
+  try {
+    const { data: response } = yield call(putUpdateMyProfileUI, payload);
+    yield put(submitProfileUIComplete({ ...response, payload }));
+    yield put(createFlashMessage(response));
+  } catch (e) {
+    yield put(submitProfileUIError);
   }
 }
 
@@ -66,6 +79,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateUserFlag, updateUserFlagSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
-    takeLatest(types.validateUsername, validateUsernameSaga)
+    takeLatest(types.validateUsername, validateUsernameSaga),
+    takeLatest(types.submitProfileUI, sumbitProfileUISaga)
   ];
 }

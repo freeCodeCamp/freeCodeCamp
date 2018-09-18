@@ -48,6 +48,10 @@ export function putUpdateMyUsername(username) {
   return put('/update-my-username', { username });
 }
 
+export function putUpdateMyProfileUI(profileUI) {
+  return put('/update-my-profileui', { profileUI });
+}
+
 export function putUpdateUserFlag(update) {
   return put('/update-user-flag', update);
 }
