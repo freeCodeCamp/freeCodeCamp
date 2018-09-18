@@ -24,7 +24,8 @@ export const types = createTypes(
     ...createAsyncTypes('validateUsername'),
     ...createAsyncTypes('submitNewAbout'),
     ...createAsyncTypes('submitNewUsername'),
-    ...createAsyncTypes('updateUserFlag')
+    ...createAsyncTypes('updateUserFlag'),
+    ...createAsyncTypes('submitProfileUI')
   ],
   ns
 );
@@ -48,6 +49,13 @@ export const submitNewUsernameComplete = createAction(
 export const submitNewUsernameError = createAction(
   types.submitNewUsernameError
 );
+
+export const submitProfileUI = createAction(types.submitProfileUI);
+export const submitProfileUIComplete = createAction(
+  types.submitProfileUIComplete,
+  checkForSuccessPayload
+);
+export const submitProfileUIError = createAction(types.submitProfileUIError);
 
 export const updateUserFlag = createAction(types.updateUserFlag);
 export const updateUserFlagComplete = createAction(

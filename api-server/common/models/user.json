@@ -232,6 +232,7 @@
         "isLocked": true,
         "showAbout": false,
         "showCerts": false,
+        "showDonation": false,
         "showHeatMap": false,
         "showLocation": false,
         "showName": false,
