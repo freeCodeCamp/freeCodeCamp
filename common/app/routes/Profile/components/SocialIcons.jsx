@@ -20,7 +20,7 @@ const propTypes = {
   isLinkedIn: PropTypes.bool,
   isTwitter: PropTypes.bool,
   isWebsite: PropTypes.bool,
-  linkedIn: PropTypes.string,
+  linkedin: PropTypes.string,
   show: PropTypes.bool,
   twitter: PropTypes.string,
   website: PropTypes.string
@@ -34,7 +34,7 @@ const mapStateToProps = createSelector(
     isGithub,
     isTwitter,
     isWebsite,
-    linkedIn,
+    linkedin,
     twitter,
     website
   }) => ({
@@ -43,7 +43,7 @@ const mapStateToProps = createSelector(
     isGithub,
     isTwitter,
     isWebsite,
-    linkedIn,
+    linkedin,
     show: (isLinkedIn || isGithub || isTwitter || isWebsite),
     twitter,
     website
@@ -105,7 +105,7 @@ function SocialIcons(props) {
     isGithub,
     isTwitter,
     isWebsite,
-    linkedIn,
+    linkedin,
     show,
     twitter,
     website
@@ -113,6 +113,7 @@ function SocialIcons(props) {
   if (!show) {
     return null;
   }
+
   return (
     <Row>
       <Col
@@ -121,7 +122,7 @@ function SocialIcons(props) {
         smOffset={ 3 }
         >
         {
-          isLinkedIn ? LinkedInIcon(linkedIn) : null
+          isLinkedIn ? LinkedInIcon(linkedin) : null
         }
         {
           isGithub ? GithubIcon(githubProfile) : null
