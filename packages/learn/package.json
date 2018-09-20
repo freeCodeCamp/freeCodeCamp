@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@freecodecamp/curriculum": "3.1.1",
+    "@freecodecamp/curriculum": "^3.2.0",
     "adler32": "^0.1.7",
     "auth0-js": "^9.5.1",
     "babel-core": "^6.26.0",
