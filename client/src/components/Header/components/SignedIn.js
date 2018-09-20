@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
@@ -11,9 +12,9 @@ const mapStateToProps = createSelector(userSelector, ({ picture }) => ({
 
 function SignedIn({ picture }) {
   return (
-    <a href='https://www.freecodecamp.org/settings'>
+    <Link to='/settings'>
       <img alt='' height='38px' src={picture} />
-    </a>
+    </Link>
   );
 }
 
