@@ -614,10 +614,8 @@ module.exports = function(User) {
           this.update$({ emailAuthLinkTTL })
         );
       })
-      .map(() =>
-        dedent`
-          Check your email and click the link we sent you to confirm you email.
-        `
+      .map(() => 'Check your email and click the link we sent you to confirm' +
+        ' your new email address.'
       );
   }
 
@@ -691,12 +689,18 @@ module.exports = function(User) {
         }
       })
       .flatMap(()=>{
+        const updatePromise = new Promise((resolve, reject) =>
+        this.updateAttributes(updateConfig, err => {
+          if (err) {
+            return reject(err);
+          }
+          return resolve();
+        }));
         return Observable.forkJoin(
-          this.update$(updateConfig),
+          Observable.fromPromise(updatePromise),
           this.requestAuthEmail(false, newEmail),
           (_, message) => message
-        )
-        .doOnNext(() => this.manualReload());
+        );
       });
 
     } else {

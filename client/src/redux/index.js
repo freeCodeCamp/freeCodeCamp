@@ -6,7 +6,6 @@ import { createAcceptTermsSaga } from './accept-terms-saga';
 import { createAppMountSaga } from './app-mount-saga';
 import { createReportUserSaga } from './report-user-saga';
 import { createShowCertSaga } from './show-cert-saga';
-import { createUpdateMyEmailSaga } from './update-email-saga';
 import { createNightModeSaga } from './night-mode-saga';
 
 import { types as settingsTypes } from './settings';
@@ -38,7 +37,6 @@ const types = createTypes(
     ...createAsyncTypes('fetchUser'),
     ...createAsyncTypes('acceptTerms'),
     ...createAsyncTypes('showCert'),
-    ...createAsyncTypes('updateMyEmail'),
     ...createAsyncTypes('reportUser')
   ],
   ns
@@ -48,7 +46,6 @@ export const sagas = [
   ...createAcceptTermsSaga(types),
   ...createAppMountSaga(types),
   ...createFetchUserSaga(types),
-  ...createUpdateMyEmailSaga(types),
   ...createShowCertSaga(types),
   ...createReportUserSaga(types),
   ...createNightModeSaga({ ...types, ...settingsTypes })
@@ -72,10 +69,6 @@ export const showCert = createAction(types.showCert);
 export const showCertComplete = createAction(types.showCertComplete);
 export const showCertError = createAction(types.showCertError);
 
-export const updateMyEmail = createAction(types.updateMyEmail);
-export const updateMyEmailComplete = createAction(types.updateMyEmailComplete);
-export const updateMyEmailError = createAction(types.updateMyEmailError);
-
 export const isSignedInSelector = state => !!Object.keys(state[ns].user).length;
 
 export const signInLoadingSelector = state =>
@@ -95,6 +88,19 @@ export const userSelector = state => {
 
   return state[ns].user[username] || {};
 };
+
+function spreadThePayloadOnUser(state, payload) {
+  return {
+    ...state,
+    user: {
+      ...state.user,
+      [state.appUsername]: {
+        ...state.user[state.appUsername],
+        ...payload
+      }
+    }
+  };
+}
 
 export const reducer = handleActions(
   {
@@ -164,31 +170,11 @@ export const reducer = handleActions(
           }
         : state,
     [settingsTypes.submitNewAboutComplete]: (state, { payload }) =>
-      payload
-        ? {
-            ...state,
-            user: {
-              ...state.user,
-              [state.appUsername]: {
-                ...state.user[state.appUsername],
-                ...payload
-              }
-            }
-          }
-        : state,
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyEmailComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateUserFlagComplete]: (state, { payload }) =>
-      payload
-        ? {
-            ...state,
-            user: {
-              ...state.user,
-              [state.appUsername]: {
-                ...state.user[state.appUsername],
-                ...payload
-              }
-            }
-          }
-        : state
+      payload ? spreadThePayloadOnUser(state, payload) : state
   },
   initialState
 );

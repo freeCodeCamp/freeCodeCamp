@@ -15,13 +15,15 @@ import {
   Button
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
+import isEmail from 'validator/lib/isEmail';
+import { isString } from 'lodash';
 
 import Layout from '../components/Layout';
 import { Spacer } from '../components/helpers';
 import './update-email.css';
-import { userSelector, updateMyEmail } from '../redux';
-import { isString } from 'lodash';
-import isEmail from 'validator/lib/isEmail';
+import { userSelector } from '../redux';
+import { updateMyEmail } from '../redux/settings';
+import { maybeEmailRE } from '../utils';
 
 const propTypes = {
   isNewEmail: PropTypes.bool,
@@ -38,8 +40,6 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = dispatch =>
   bindActionCreators({ updateMyEmail }, dispatch);
 
-const maybeEmailRE = /[\w.+]*?@\w*?\.\w+?/;
-
 class UpdateEmail extends Component {
   constructor(props) {
     super(props);
@@ -48,16 +48,15 @@ class UpdateEmail extends Component {
       emailValue: ''
     };
 
-    // this.createSubmitHandler = this.createSubmitHandler.bind(this);
     this.onChange = this.onChange.bind(this);
   }
 
-  createSubmitHandler(fn) {
-    return e => {
-      e.preventDefault();
-      return fn(this.state.emailValue);
-    };
-  }
+  handleSubmit = e => {
+    e.preventDefault();
+    const { emailValue } = this.state;
+    const { updateMyEmail } = this.props;
+    return updateMyEmail(emailValue);
+  };
 
   onChange(e) {
     const change = e.target.value;
@@ -78,7 +77,7 @@ class UpdateEmail extends Component {
   }
 
   render() {
-    const { isNewEmail, updateMyEmail } = this.props;
+    const { isNewEmail } = this.props;
     return (
       <Layout>
         <Helmet>
@@ -90,10 +89,7 @@ class UpdateEmail extends Component {
           <Row>
             <Col sm={6} smOffset={3}>
               <Row>
-                <Form
-                  horizontal={true}
-                  onSubmit={this.createSubmitHandler(updateMyEmail)}
-                  >
+                <Form horizontal={true} onSubmit={this.handleSubmit}>
                   <FormGroup
                     controlId='emailInput'
                     validationState={this.getEmailValidationState()}

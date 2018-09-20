@@ -9,7 +9,6 @@ import { wrapHandledError } from '../../server/utils/create-handled-error.js';
 // const log = debug('fcc:models:userIdent');
 
 export default function(UserIdent) {
-
   UserIdent.on('dataSourceAttached', () => {
     UserIdent.findOne$ = observeMethod(UserIdent, 'findOne');
   });
@@ -33,7 +32,7 @@ export default function(UserIdent) {
     // get the social provider data and the external id from auth0
     profile.id = profile.id || profile.openid;
     const auth0IdString = '' + profile.id;
-    const [ provider, socialExtId ] = auth0IdString.split('|');
+    const [provider, socialExtId] = auth0IdString.split('|');
     const query = {
       where: {
         provider: provider,
@@ -42,8 +41,10 @@ export default function(UserIdent) {
       include: 'user'
     };
     // get the email from the auth0 (its expected from social providers)
-    const email = (profile && profile.emails && profile.emails[0]) ?
-                    profile.emails[0].value : '';
+    const email =
+      profile && profile.emails && profile.emails[0]
+        ? profile.emails[0].value
+        : '';
     if (!isEmail('' + email)) {
       throw wrapHandledError(
         new Error('invalid or empty email recieved from auth0'),
@@ -60,12 +61,11 @@ export default function(UserIdent) {
     }
 
     if (provider === 'email') {
-
       return User.findOne$({ where: { email } })
         .flatMap(user => {
-          return user ?
-            Observable.of(user) :
-            User.create$({ email }).toPromise();
+          return user
+            ? Observable.of(user)
+            : User.create$({ email }).toPromise();
         })
         .flatMap(user => {
           if (!user) {
@@ -81,56 +81,51 @@ export default function(UserIdent) {
               }
             );
           }
-          const createToken = observeQuery(
-            AccessToken,
-            'create',
-            {
-              userId: user.id,
-              created: new Date(),
-              ttl: user.constructor.settings.ttl
-            }
-          );
-          const updateUser = user.update$({
-            emailVerified: true,
-            emailAuthLinkTTL: null,
-            emailVerifyTTL: null
+          const createToken = observeQuery(AccessToken, 'create', {
+            userId: user.id,
+            created: new Date(),
+            ttl: user.constructor.settings.ttl
           });
+          const updateUserPromise = new Promise((resolve, reject) =>
+            user.updateAttributes(
+              {
+                emailVerified: true,
+                emailAuthLinkTTL: null,
+                emailVerifyTTL: null
+              },
+              err => {
+                if (err) {
+                  return reject(err);
+                }
+                return resolve();
+              }
+            )
+          );
           return Observable.combineLatest(
             Observable.of(user),
             createToken,
-            updateUser,
-            (user, token) => ({user, token})
+            Observable.fromPromise(updateUserPromise),
+            (user, token) => ({ user, token })
           );
         })
-        .subscribe(
-          ({ user, token }) => cb(null, user, null, token),
-          cb
-        );
-
+        .subscribe(({ user, token }) => cb(null, user, null, token), cb);
     } else {
-
       return UserIdent.findOne$(query)
         .flatMap(identity => {
-          return identity ?
-            Observable.of(identity.user()) :
-            User.findOne$({ where: { email } })
-              .flatMap(user => {
-                return user ?
-                  Observable.of(user) :
-                  User.create$({ email }).toPromise();
+          return identity
+            ? Observable.of(identity.user())
+            : User.findOne$({ where: { email } }).flatMap(user => {
+                return user
+                  ? Observable.of(user)
+                  : User.create$({ email }).toPromise();
               });
         })
         .flatMap(user => {
-
-          const createToken = observeQuery(
-            AccessToken,
-            'create',
-            {
-              userId: user.id,
-              created: new Date(),
-              ttl: user.constructor.settings.ttl
-            }
-          );
+          const createToken = observeQuery(AccessToken, 'create', {
+            userId: user.id,
+            created: new Date(),
+            ttl: user.constructor.settings.ttl
+          });
           const updateUser = user.update$({
             email: email,
             emailVerified: true,
@@ -144,11 +139,7 @@ export default function(UserIdent) {
             (user, token) => ({ user, token })
           );
         })
-        .subscribe(
-          ({ user, token }) => cb(null, user, null, token),
-          cb
-        );
-
+        .subscribe(({ user, token }) => cb(null, user, null, token), cb);
     }
   };
 }
