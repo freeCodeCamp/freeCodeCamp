@@ -1,3 +1,61 @@
+# [3.2.0](https://github.com/freeCodeCamp/curriculum/compare/v3.1.2...v3.2.0) (2018-09-20)
+
+
+### Bug Fixes
+
+* **challenges:** a sentence didn't make sense, so I modified it ([3d77920](https://github.com/freeCodeCamp/curriculum/commit/3d77920)), closes [#18046](https://github.com/freeCodeCamp/curriculum/issues/18046)
+* **challenges:** add missing test to check for for css class ([6e42f53](https://github.com/freeCodeCamp/curriculum/commit/6e42f53)), closes [#254](https://github.com/freeCodeCamp/curriculum/issues/254)
+* **challenges:** add note at bottom of description in d3 challenge ([c60d332](https://github.com/freeCodeCamp/curriculum/commit/c60d332)), closes [#17767](https://github.com/freeCodeCamp/curriculum/issues/17767)
+* **challenges:** add solution, test to project euler problems ([f572324](https://github.com/freeCodeCamp/curriculum/commit/f572324))
+* **challenges:** add solutions to first 3 debugging challenges ([c2e5794](https://github.com/freeCodeCamp/curriculum/commit/c2e5794))
+* **challenges:** add test to check user is using \W in Regex ([296cf44](https://github.com/freeCodeCamp/curriculum/commit/296cf44))
+* **challenges:** add test to lookahead regex challenge ([e044de4](https://github.com/freeCodeCamp/curriculum/commit/e044de4)), closes [#209](https://github.com/freeCodeCamp/curriculum/issues/209)
+* **challenges:** added code tags ([065036b](https://github.com/freeCodeCamp/curriculum/commit/065036b)), closes [#18054](https://github.com/freeCodeCamp/curriculum/issues/18054)
+* **challenges:** added solutions to project euler problems 28, 31 ([5e12499](https://github.com/freeCodeCamp/curriculum/commit/5e12499))
+* **challenges:** adding code tags to description ([57d5b55](https://github.com/freeCodeCamp/curriculum/commit/57d5b55)), closes [#17911](https://github.com/freeCodeCamp/curriculum/issues/17911)
+* **challenges:** adding negative integer to challenge to improve tests ([#211](https://github.com/freeCodeCamp/curriculum/issues/211)) ([2adc516](https://github.com/freeCodeCamp/curriculum/commit/2adc516))
+* **challenges:** allow user to comment out undesired code ([72c2407](https://github.com/freeCodeCamp/curriculum/commit/72c2407))
+* **challenges:** challenge description is formatted and concised ([dcd8e45](https://github.com/freeCodeCamp/curriculum/commit/dcd8e45))
+* **challenges:** change challengeType to fix help button ([ddcc661](https://github.com/freeCodeCamp/curriculum/commit/ddcc661))
+* **challenges:** change definition of complementary colors ([#299](https://github.com/freeCodeCamp/curriculum/issues/299)) ([c022dff](https://github.com/freeCodeCamp/curriculum/commit/c022dff))
+* **challenges:** check for shorthand character in regex ([#238](https://github.com/freeCodeCamp/curriculum/issues/238)) ([0bf8d32](https://github.com/freeCodeCamp/curriculum/commit/0bf8d32))
+* **challenges:** commented output was wrong ([3cb972e](https://github.com/freeCodeCamp/curriculum/commit/3cb972e))
+* **challenges:** converts delete html test to regex ([d80d98d](https://github.com/freeCodeCamp/curriculum/commit/d80d98d)), closes [#251](https://github.com/freeCodeCamp/curriculum/issues/251)
+* **challenges:** corrected challenge instructions ([159203a](https://github.com/freeCodeCamp/curriculum/commit/159203a))
+* **challenges:** fix [#17155](https://github.com/freeCodeCamp/curriculum/issues/17155) ([cb21e59](https://github.com/freeCodeCamp/curriculum/commit/cb21e59))
+* **challenges:** fix confusing destructuring es6 challenge ([1a4f6a8](https://github.com/freeCodeCamp/curriculum/commit/1a4f6a8)), closes [#213](https://github.com/freeCodeCamp/curriculum/issues/213)
+* **challenges:** fix description in css variable fallback challenge ([bc33a03](https://github.com/freeCodeCamp/curriculum/commit/bc33a03)), closes [freeCodeCamp/freeCodeCamp#17546](https://github.com/freeCodeCamp/freeCodeCamp/issues/17546)
+* **challenges:** fix flex direction row regex ([25ea07e](https://github.com/freeCodeCamp/curriculum/commit/25ea07e)), closes [#260](https://github.com/freeCodeCamp/curriculum/issues/260)
+* **challenges:** fix grammar and spelling errors ([#244](https://github.com/freeCodeCamp/curriculum/issues/244)) ([b0c0b74](https://github.com/freeCodeCamp/curriculum/commit/b0c0b74))
+* **challenges:** fix grid-gap shorthand regex ([#232](https://github.com/freeCodeCamp/curriculum/issues/232)) ([a49f45e](https://github.com/freeCodeCamp/curriculum/commit/a49f45e)), closes [#229](https://github.com/freeCodeCamp/curriculum/issues/229)
+* **challenges:** fix grid-gap shorthand regex ([#237](https://github.com/freeCodeCamp/curriculum/issues/237)) ([b369fa0](https://github.com/freeCodeCamp/curriculum/commit/b369fa0)), closes [#229](https://github.com/freeCodeCamp/curriculum/issues/229)
+* **challenges:** fix regex in a JS challenge ([#257](https://github.com/freeCodeCamp/curriculum/issues/257)) ([6058da3](https://github.com/freeCodeCamp/curriculum/commit/6058da3))
+* **challenges:** fix typo in wrap-reverse description ([434ea5c](https://github.com/freeCodeCamp/curriculum/commit/434ea5c))
+* **challenges:** fixed challenge accepted without any new code ([96b39c1](https://github.com/freeCodeCamp/curriculum/commit/96b39c1)), closes [#198](https://github.com/freeCodeCamp/curriculum/issues/198)
+* **challenges:** fixed esc chars in managing packages with npm lesson ([6335a15](https://github.com/freeCodeCamp/curriculum/commit/6335a15))
+* **challenges:** fixed tests to check for pre operators ([ded4705](https://github.com/freeCodeCamp/curriculum/commit/ded4705)), closes [#199](https://github.com/freeCodeCamp/curriculum/issues/199)
+* **challenges:** fixed typo in algorithms and ds ([31957a4](https://github.com/freeCodeCamp/curriculum/commit/31957a4))
+* **challenges:** Incorrect html closing tag ([a1464f0](https://github.com/freeCodeCamp/curriculum/commit/a1464f0))
+* **challenges:** insufficient objectives for javascript_algorithm/es6/19 ([7707b18](https://github.com/freeCodeCamp/curriculum/commit/7707b18))
+* **challenges:** missing space in code example ([c50cc4e](https://github.com/freeCodeCamp/curriculum/commit/c50cc4e))
+* **challenges:** remove race condition from react lifecycle challenge ([a20ac56](https://github.com/freeCodeCamp/curriculum/commit/a20ac56))
+* **challenges:** removed duplicate css top property ([0a79c58](https://github.com/freeCodeCamp/curriculum/commit/0a79c58))
+* **challenges:** rephrased wording in applied visual design ([#268](https://github.com/freeCodeCamp/curriculum/issues/268)) ([d560d58](https://github.com/freeCodeCamp/curriculum/commit/d560d58))
+* **challenges:** replaced em tags with code tags ([68daaf7](https://github.com/freeCodeCamp/curriculum/commit/68daaf7)), closes [#18048](https://github.com/freeCodeCamp/curriculum/issues/18048)
+* **challenges:** reword test text and improve test accuracy ([f834a98](https://github.com/freeCodeCamp/curriculum/commit/f834a98))
+* **challenges:** small edit to correct sematic issues ([322bf80](https://github.com/freeCodeCamp/curriculum/commit/322bf80))
+* clickjacking challenge description ([037990c](https://github.com/freeCodeCamp/curriculum/commit/037990c))
+* **challenges:** spelling and grammar errors addressed ([8f17adf](https://github.com/freeCodeCamp/curriculum/commit/8f17adf))
+* **challenges:** typo ([4f7faba](https://github.com/freeCodeCamp/curriculum/commit/4f7faba))
+* **challenges:** update test and add solution for DS challenge ([d1b2075](https://github.com/freeCodeCamp/curriculum/commit/d1b2075)), closes [#164](https://github.com/freeCodeCamp/curriculum/issues/164)
+* **challenges:** Update test to include whitespace ([#272](https://github.com/freeCodeCamp/curriculum/issues/272)) ([77689f4](https://github.com/freeCodeCamp/curriculum/commit/77689f4)), closes [#271](https://github.com/freeCodeCamp/curriculum/issues/271)
+* **schema:** change schema and unpack script ([b014b23](https://github.com/freeCodeCamp/curriculum/commit/b014b23))
+
+
+### Features
+
+* **challenges:** add browser fallback challenge ([b090e8b](https://github.com/freeCodeCamp/curriculum/commit/b090e8b)), closes [freeCodeCamp/freeCodeCamp#17546](https://github.com/freeCodeCamp/freeCodeCamp/issues/17546)
+
 ## [3.1.2](https://github.com/freeCodeCamp/curriculum/compare/v3.1.1...v3.1.2) (2018-07-31)
 
 
