@@ -12,20 +12,25 @@ import { submitNewAbout, updateUserFlag } from '../redux/settings';
 import Layout from '../components/Layout';
 import Spacer from '../components/helpers/Spacer';
 import Loader from '../components/helpers/Loader';
-import { FullWidthRow } from '../components/helpers';
+import FullWidthRow from '../components/helpers/FullWidthRow';
 import About from '../components/settings/About';
 import Privacy from '../components/settings/Privacy';
+import Email from '../components/settings/Email';
 
 const propTypes = {
   about: PropTypes.string,
+  email: PropTypes.string,
+  isEmailVerified: PropTypes.bool,
   location: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.string,
   points: PropTypes.number,
+  sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
   submitNewAbout: PropTypes.func.isRequired,
   theme: PropTypes.string,
   toggleNightMode: PropTypes.func.isRequired,
+  updateQuincyEmail: PropTypes.func.isRequired,
   username: PropTypes.string
 };
 
@@ -34,8 +39,22 @@ const mapStateToProps = createSelector(
   userSelector,
   (
     showLoading,
-    { username = '', about, picture, points, name, location, theme }
+    {
+      username = '',
+      about,
+      email,
+      sendQuincyEmail,
+      isEmailVerified,
+      picture,
+      points,
+      name,
+      location,
+      theme
+    }
   ) => ({
+    email,
+    sendQuincyEmail,
+    isEmailVerified,
     showLoading,
     username,
     about,
@@ -49,12 +68,19 @@ const mapStateToProps = createSelector(
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
-    { submitNewAbout, toggleNightMode: theme => updateUserFlag({theme}) },
+    {
+      submitNewAbout,
+      toggleNightMode: theme => updateUserFlag({ theme }),
+      updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail })
+    },
     dispatch
   );
 
 function ShowSettings(props) {
   const {
+    email,
+    isEmailVerified,
+    sendQuincyEmail,
     showLoading,
     username,
     about,
@@ -64,7 +90,8 @@ function ShowSettings(props) {
     location,
     name,
     submitNewAbout,
-    toggleNightMode
+    toggleNightMode,
+    updateQuincyEmail
   } = props;
 
   if (showLoading) {
@@ -120,9 +147,14 @@ function ShowSettings(props) {
         <Spacer />
         <Privacy />
         <Spacer />
-        {/* <EmailSettings />
+        <Email
+          email={email}
+          isEmailVerified={isEmailVerified}
+          sendQuincyEmail={sendQuincyEmail}
+          updateQuincyEmail={updateQuincyEmail}
+        />
         <Spacer />
-        <InternetSettings />
+        {/* <InternetSettings />
         <Spacer />
         <PortfolioSettings />
         <Spacer />

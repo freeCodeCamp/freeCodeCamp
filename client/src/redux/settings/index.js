@@ -2,6 +2,7 @@ import { createAction, handleActions } from 'redux-actions';
 
 import { createTypes, createAsyncTypes } from '../../utils/createTypes';
 import { createSettingsSagas } from './settings-sagas';
+import { createUpdateMyEmailSaga } from './update-email-saga';
 
 const ns = 'settings';
 
@@ -24,15 +25,20 @@ export const types = createTypes(
     ...createAsyncTypes('validateUsername'),
     ...createAsyncTypes('submitNewAbout'),
     ...createAsyncTypes('submitNewUsername'),
+    ...createAsyncTypes('updateMyEmail'),
     ...createAsyncTypes('updateUserFlag'),
     ...createAsyncTypes('submitProfileUI')
   ],
   ns
 );
+
+export const sagas = [
+  ...createSettingsSagas(types),
+  ...createUpdateMyEmailSaga(types)
+];
+
 const checkForSuccessPayload = ({ type, payload }) =>
   type === 'success' ? payload : null;
-
-export const sagas = [...createSettingsSagas(types)];
 
 export const submitNewAbout = createAction(types.submitNewAbout);
 export const submitNewAboutComplete = createAction(
@@ -56,6 +62,10 @@ export const submitProfileUIComplete = createAction(
   checkForSuccessPayload
 );
 export const submitProfileUIError = createAction(types.submitProfileUIError);
+
+export const updateMyEmail = createAction(types.updateMyEmail);
+export const updateMyEmailComplete = createAction(types.updateMyEmailComplete);
+export const updateMyEmailError = createAction(types.updateMyEmailError);
 
 export const updateUserFlag = createAction(types.updateUserFlag);
 export const updateUserFlagComplete = createAction(

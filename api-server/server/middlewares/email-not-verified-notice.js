@@ -2,14 +2,12 @@ import dedent from 'dedent';
 
 const ALLOWED_METHODS = ['GET'];
 const EXCLUDED_PATHS = [
-  '/api/flyers/findOne',
   '/signout',
   '/accept-privacy-terms',
   '/update-email',
   '/confirm-email',
-  '/passwordless-change',
-  '/external/services/user'
-];
+  '/passwordless-change'
+].reduce((list, item) => [...list, item, `/internal${item}`], []);
 
 export default function emailNotVerifiedNotice() {
   return function(req, res, next) {
