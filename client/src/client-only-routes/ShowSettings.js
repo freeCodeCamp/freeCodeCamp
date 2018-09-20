@@ -16,11 +16,14 @@ import FullWidthRow from '../components/helpers/FullWidthRow';
 import About from '../components/settings/About';
 import Privacy from '../components/settings/Privacy';
 import Email from '../components/settings/Email';
+import Internet from '../components/settings/Internet';
 
 const propTypes = {
   about: PropTypes.string,
   email: PropTypes.string,
+  githubProfile: PropTypes.string,
   isEmailVerified: PropTypes.bool,
+  linkedin: PropTypes.string,
   location: PropTypes.string,
   name: PropTypes.string,
   picture: PropTypes.string,
@@ -30,8 +33,11 @@ const propTypes = {
   submitNewAbout: PropTypes.func.isRequired,
   theme: PropTypes.string,
   toggleNightMode: PropTypes.func.isRequired,
+  twitter: PropTypes.string,
+  updateInternetSettings: PropTypes.func.isRequired,
   updateQuincyEmail: PropTypes.func.isRequired,
-  username: PropTypes.string
+  username: PropTypes.string,
+  website: PropTypes.string
 };
 
 const mapStateToProps = createSelector(
@@ -49,7 +55,11 @@ const mapStateToProps = createSelector(
       points,
       name,
       location,
-      theme
+      theme,
+      githubProfile,
+      linkedin,
+      twitter,
+      website
     }
   ) => ({
     email,
@@ -62,7 +72,11 @@ const mapStateToProps = createSelector(
     points,
     name,
     theme,
-    location
+    location,
+    githubProfile,
+    linkedin,
+    twitter,
+    website
   })
 );
 
@@ -71,6 +85,7 @@ const mapDispatchToProps = dispatch =>
     {
       submitNewAbout,
       toggleNightMode: theme => updateUserFlag({ theme }),
+      updateInternetSettings: updateUserFlag,
       updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail })
     },
     dispatch
@@ -91,7 +106,12 @@ function ShowSettings(props) {
     name,
     submitNewAbout,
     toggleNightMode,
-    updateQuincyEmail
+    updateQuincyEmail,
+    githubProfile,
+    linkedin,
+    twitter,
+    website,
+    updateInternetSettings
   } = props;
 
   if (showLoading) {
@@ -154,9 +174,15 @@ function ShowSettings(props) {
           updateQuincyEmail={updateQuincyEmail}
         />
         <Spacer />
-        {/* <InternetSettings />
+        <Internet
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          updateInternetSettings={updateInternetSettings}
+          website={website}
+        />
         <Spacer />
-        <PortfolioSettings />
+        {/* <PortfolioSettings />
         <Spacer />
         <Honesty />
         <Spacer />
