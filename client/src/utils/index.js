@@ -3,3 +3,4 @@
 // before we try to validate
 export const maybeEmailRE = /.*@.*\.\w\w/;
 export const maybeUrlRE = /https?:\/\/.*\..*/;
+export const hasProtocolRE = /^http/;

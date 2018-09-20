@@ -17,6 +17,7 @@ import About from '../components/settings/About';
 import Privacy from '../components/settings/Privacy';
 import Email from '../components/settings/Email';
 import Internet from '../components/settings/Internet';
+import Portfolio from '../components/settings/Portfolio';
 
 const propTypes = {
   about: PropTypes.string,
@@ -28,6 +29,15 @@ const propTypes = {
   name: PropTypes.string,
   picture: PropTypes.string,
   points: PropTypes.number,
+  portfolio: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string,
+      url: PropTypes.string,
+      image: PropTypes.string,
+      description: PropTypes.string
+    })
+  ),
   sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
   submitNewAbout: PropTypes.func.isRequired,
@@ -35,6 +45,7 @@ const propTypes = {
   toggleNightMode: PropTypes.func.isRequired,
   twitter: PropTypes.string,
   updateInternetSettings: PropTypes.func.isRequired,
+  updatePortfolio: PropTypes.func.isRequired,
   updateQuincyEmail: PropTypes.func.isRequired,
   username: PropTypes.string,
   website: PropTypes.string
@@ -59,7 +70,8 @@ const mapStateToProps = createSelector(
       githubProfile,
       linkedin,
       twitter,
-      website
+      website,
+      portfolio
     }
   ) => ({
     email,
@@ -76,7 +88,8 @@ const mapStateToProps = createSelector(
     githubProfile,
     linkedin,
     twitter,
-    website
+    website,
+    portfolio
   })
 );
 
@@ -86,6 +99,7 @@ const mapDispatchToProps = dispatch =>
       submitNewAbout,
       toggleNightMode: theme => updateUserFlag({ theme }),
       updateInternetSettings: updateUserFlag,
+      updatePortfolio: updateUserFlag,
       updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail })
     },
     dispatch
@@ -111,7 +125,9 @@ function ShowSettings(props) {
     linkedin,
     twitter,
     website,
-    updateInternetSettings
+    updateInternetSettings,
+    portfolio,
+    updatePortfolio
   } = props;
 
   if (showLoading) {
@@ -182,9 +198,9 @@ function ShowSettings(props) {
           website={website}
         />
         <Spacer />
-        {/* <PortfolioSettings />
+        <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
         <Spacer />
-        <Honesty />
+        {/* <Honesty />
         <Spacer />
         <CertificationSettings />
         <Spacer />
