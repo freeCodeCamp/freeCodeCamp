@@ -8,7 +8,6 @@ import { putUserUpdateEmail } from '../../utils/ajax';
 import reallyWeirdErrorMessage from '../../utils/reallyWeirdErrorMessage';
 
 function* updateMyEmailSaga({ payload: email = '' }) {
-  console.log('saga', email);
   if (!email || !isEmail(email)) {
     yield put(createFlashMessage(reallyWeirdErrorMessage));
     return;
