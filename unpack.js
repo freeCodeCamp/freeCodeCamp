@@ -3,13 +3,12 @@ import fs from 'fs-extra';
 import path from 'path';
 import browserify from 'browserify';
 import getChallenges from './getChallenges';
-import {UnpackedChallenge, ChallengeFile} from './unpackedChallenge';
+import { UnpackedChallenge, ChallengeFile } from './unpackedChallenge';
 
 // Unpack all challenges
 // from all seed/challenges/00-foo/bar.json files
 // into seed/unpacked/00-foo/bar/000-id.html files
 //
-// todo: unpack translations too
 // todo: use common/app/routes/Challenges/utils/index.js:15 maps
 // to determine format/style for non-JS tests
 // todo: figure out embedded images etc. served from elsewhere in the project
@@ -19,7 +18,7 @@ let unpackedDir = path.join(__dirname, 'unpacked');
 
 // bundle up the test-running JS
 function createUnpackedBundle() {
-  fs.mkdirp(unpackedDir, (err) => {
+  fs.mkdirp(unpackedDir, err => {
     if (err && err.code !== 'EEXIST') {
       console.log(err);
       throw err;
@@ -28,8 +27,7 @@ function createUnpackedBundle() {
     let unpackedFile = path.join(__dirname, 'unpacked.js');
     let b = browserify(unpackedFile).bundle();
     b.on('error', console.error);
-    let unpackedBundleFile =
-      path.join(unpackedDir, 'unpacked-bundle.js');
+    let unpackedBundleFile = path.join(unpackedDir, 'unpacked-bundle.js');
     const bundleFileStream = fs.createWriteStream(unpackedBundleFile);
     bundleFileStream.on('finish', () => {
       console.log('Wrote bundled JS into ' + unpackedBundleFile);
@@ -50,8 +48,9 @@ async function cleanUnpackedDir(unpackedChallengeBlockDir) {
     filePath = path.join(unpackedChallengeBlockDir, filePath);
     return new Promise(() => fs.unlink(filePath));
   };
-  let promises = fs.readdirSync(unpackedChallengeBlockDir)
-    .filter(filePath => (/\.html$/i).test(filePath))
+  let promises = fs
+    .readdirSync(unpackedChallengeBlockDir)
+    .filter(filePath => /\.html$/i.test(filePath))
     .map(promiseToDelete);
   await Promise.all(promises);
 }
@@ -64,7 +63,7 @@ function unpackChallengeBlock(challengeBlock) {
     challengeBlockPath.name
   );
 
-  fs.mkdirp(unpackedChallengeBlockDir, (err) => {
+  fs.mkdirp(unpackedChallengeBlockDir, err => {
     if (err && err.code !== 'EEXIST') {
       console.log(err);
       throw err;
@@ -83,11 +82,11 @@ function unpackChallengeBlock(challengeBlock) {
     delete challengeBlock.fileName;
     delete challengeBlock.superBlock;
     delete challengeBlock.superOrder;
-    let challengeBlockCopy =
-      new ChallengeFile(
-        unpackedChallengeBlockDir,
-        challengeBlockPath.name,
-        '.json');
+    let challengeBlockCopy = new ChallengeFile(
+      unpackedChallengeBlockDir,
+      challengeBlockPath.name,
+      '.json'
+    );
     challengeBlockCopy.write(JSON.stringify(challengeBlock, null, 2));
 
     // unpack each challenge into an HTML file
@@ -104,7 +103,7 @@ function unpackChallengeBlock(challengeBlock) {
 }
 
 createUnpackedBundle();
-let challenges = getChallenges();
+let challenges = getChallenges(null, true);
 challenges.forEach(challengeBlock => {
   unpackChallengeBlock(challengeBlock);
 });

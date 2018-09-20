@@ -358,14 +358,6 @@ class UnpackedChallenge {
     text.push('</div>');
 
     text.push('');
-    text.push('<h2>Released On</h2>');
-    text.push('<div class="unpacked">');
-    text.push('<!--releasedOn-->');
-    text.push(this.challenge.releasedOn);
-    text.push('<!--end-->');
-    text.push('</div>');
-
-    text.push('');
     text.push('<h2>Files</h2>');
     text.push(`
       <p>Format of file:</p>

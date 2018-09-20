@@ -42,7 +42,10 @@ function superblockInfo(filePath) {
   }
 }
 
-module.exports = function getChallenges(challengesDir) {
+// unpackFlag is an argument passed by the unpack script in unpack.js
+// which allows us to conditionall omit translations when running
+// the test suite and prevent schema related errors in the main fCC branch
+module.exports = function getChallenges(challengesDir, unpackFlag) {
   if (!challengesDir) {
     challengesDir = 'challenges';
   }
@@ -63,6 +66,8 @@ module.exports = function getChallenges(challengesDir) {
         'react',
         'reactRedux',
         'redux',
+        'releasedOn',
+        unpackFlag ? undefined : 'translations',
         'type'
       ])
     );
