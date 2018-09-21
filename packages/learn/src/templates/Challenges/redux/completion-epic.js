@@ -22,7 +22,8 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   closeModal,
-  challengeFilesSelector
+  challengeFilesSelector,
+  updateProjectFormValues
 } from './';
 import {
   userSelector,
@@ -95,6 +96,8 @@ function submitProject(type, state) {
     username,
     csrfToken,
     challengeInfo
+  ).pipe(
+    concat(of(updateProjectFormValues({})))
   );
 }
 

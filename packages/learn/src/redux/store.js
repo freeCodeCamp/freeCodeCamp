@@ -8,12 +8,11 @@ import {
 } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
-import { reducer as formReducer } from 'redux-form';
-
 import { reducer as app, epics as appEpics } from './app';
 import {
   reducer as challenge,
-  epics as challengeEpics
+  epics as challengeEpics,
+  formReducer
 } from '../templates/Challenges/redux';
 import { reducer as map } from '../components/Map/redux';
 import servicesCreator from './createServices';
