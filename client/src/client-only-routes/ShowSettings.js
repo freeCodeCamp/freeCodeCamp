@@ -18,12 +18,14 @@ import Privacy from '../components/settings/Privacy';
 import Email from '../components/settings/Email';
 import Internet from '../components/settings/Internet';
 import Portfolio from '../components/settings/Portfolio';
+import Honesty from '../components/settings/Honesty';
 
 const propTypes = {
   about: PropTypes.string,
   email: PropTypes.string,
   githubProfile: PropTypes.string,
   isEmailVerified: PropTypes.bool,
+  isHonest: PropTypes.bool,
   linkedin: PropTypes.string,
   location: PropTypes.string,
   name: PropTypes.string,
@@ -45,6 +47,7 @@ const propTypes = {
   toggleNightMode: PropTypes.func.isRequired,
   twitter: PropTypes.string,
   updateInternetSettings: PropTypes.func.isRequired,
+  updateIsHonest: PropTypes.func.isRequired,
   updatePortfolio: PropTypes.func.isRequired,
   updateQuincyEmail: PropTypes.func.isRequired,
   username: PropTypes.string,
@@ -62,6 +65,7 @@ const mapStateToProps = createSelector(
       email,
       sendQuincyEmail,
       isEmailVerified,
+      isHonest,
       picture,
       points,
       name,
@@ -77,6 +81,7 @@ const mapStateToProps = createSelector(
     email,
     sendQuincyEmail,
     isEmailVerified,
+    isHonest,
     showLoading,
     username,
     about,
@@ -99,6 +104,7 @@ const mapDispatchToProps = dispatch =>
       submitNewAbout,
       toggleNightMode: theme => updateUserFlag({ theme }),
       updateInternetSettings: updateUserFlag,
+      updateIsHonest: updateUserFlag,
       updatePortfolio: updateUserFlag,
       updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail })
     },
@@ -109,6 +115,7 @@ function ShowSettings(props) {
   const {
     email,
     isEmailVerified,
+    isHonest,
     sendQuincyEmail,
     showLoading,
     username,
@@ -127,7 +134,8 @@ function ShowSettings(props) {
     website,
     updateInternetSettings,
     portfolio,
-    updatePortfolio
+    updatePortfolio,
+    updateIsHonest
   } = props;
 
   if (showLoading) {
@@ -200,9 +208,9 @@ function ShowSettings(props) {
         <Spacer />
         <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
         <Spacer />
-        {/* <Honesty />
+        <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest}/>
         <Spacer />
-        <CertificationSettings />
+        {/* <CertificationSettings />
         <Spacer />
 <DangerZone /> */}
       </Grid>
