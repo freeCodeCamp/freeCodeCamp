@@ -6,6 +6,8 @@ import { Button } from 'react-bootstrap';
 
 import { openModal } from '../redux';
 
+import './tool-panel.css';
+
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch =>

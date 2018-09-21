@@ -30,10 +30,7 @@ import {
 import Spacer from '../../../components/util/Spacer';
 import { createGuideUrl } from '../utils';
 
-import '../components/tool-panel.css';
-import '../components/preview.css';
-import '../components/test-suite.css';
-import '../classic/classic.css';
+import '../components/test-frame.css';
 
 // provided by redux form
 const reduxFormPropTypes = {
