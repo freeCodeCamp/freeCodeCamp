@@ -3,9 +3,8 @@ import { NavItem, Nav } from 'react-bootstrap';
 import { startCase } from 'lodash';
 
 const urls = {
-  curriculum: 'https://learn.freecodecamp.org',
-  forum: 'https://forum.freecodecamp.org',
-  news: 'https://freecodecamp.org/news'
+  curriculum: 'https://learn.spiraladder.com',
+  forum: 'https://forum.spiraladder.com'
 };
 
 const Links = Object.keys(urls).map(key => (
