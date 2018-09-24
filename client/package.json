@@ -21,6 +21,7 @@
     "gatsby-plugin-sitemap": "^2.0.0-rc.1",
     "lodash": "^4.17.10",
     "nanoid": "^1.2.2",
+    "prismjs": "^1.15.0",
     "query-string": "^6.1.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

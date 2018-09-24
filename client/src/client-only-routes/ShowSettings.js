@@ -19,82 +19,70 @@ import Email from '../components/settings/Email';
 import Internet from '../components/settings/Internet';
 import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
+import Certification from '../components/settings/Certification';
 
 const propTypes = {
-  about: PropTypes.string,
-  email: PropTypes.string,
-  githubProfile: PropTypes.string,
-  isEmailVerified: PropTypes.bool,
-  isHonest: PropTypes.bool,
-  linkedin: PropTypes.string,
-  location: PropTypes.string,
-  name: PropTypes.string,
-  picture: PropTypes.string,
-  points: PropTypes.number,
-  portfolio: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string,
-      url: PropTypes.string,
-      image: PropTypes.string,
-      description: PropTypes.string
-    })
-  ),
-  sendQuincyEmail: PropTypes.bool,
   showLoading: PropTypes.bool,
   submitNewAbout: PropTypes.func.isRequired,
-  theme: PropTypes.string,
   toggleNightMode: PropTypes.func.isRequired,
-  twitter: PropTypes.string,
   updateInternetSettings: PropTypes.func.isRequired,
   updateIsHonest: PropTypes.func.isRequired,
   updatePortfolio: PropTypes.func.isRequired,
   updateQuincyEmail: PropTypes.func.isRequired,
-  username: PropTypes.string,
-  website: PropTypes.string
+  user: PropTypes.shape({
+    about: PropTypes.string,
+    completedChallenges: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        solution: PropTypes.string,
+        githubLink: PropTypes.string,
+        challengeType: PropTypes.number,
+        completedDate: PropTypes.number,
+        files: PropTypes.array
+      })
+    ),
+    email: PropTypes.string,
+    githubProfile: PropTypes.string,
+    is2018DataVisCert: PropTypes.bool,
+    isApisMicroservicesCert: PropTypes.bool,
+    isBackEndCert: PropTypes.bool,
+    isDataVisCert: PropTypes.bool,
+    isEmailVerified: PropTypes.bool,
+    isFrontEndCert: PropTypes.bool,
+    isFrontEndLibsCert: PropTypes.bool,
+    isFullStackCert: PropTypes.bool,
+    isHonest: PropTypes.bool,
+    isInfosecQaCert: PropTypes.bool,
+    isJsAlgoDataStructCert: PropTypes.bool,
+    isRespWebDesignCert: PropTypes.bool,
+    linkedin: PropTypes.string,
+    location: PropTypes.string,
+    name: PropTypes.string,
+    picture: PropTypes.string,
+    points: PropTypes.number,
+    portfolio: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        url: PropTypes.string,
+        image: PropTypes.string,
+        description: PropTypes.string
+      })
+    ),
+    sendQuincyEmail: PropTypes.bool,
+    theme: PropTypes.string,
+    twitter: PropTypes.string,
+    username: PropTypes.string,
+    website: PropTypes.string
+  })
 };
 
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
-  (
+  (showLoading, user) => ({
     showLoading,
-    {
-      username = '',
-      about,
-      email,
-      sendQuincyEmail,
-      isEmailVerified,
-      isHonest,
-      picture,
-      points,
-      name,
-      location,
-      theme,
-      githubProfile,
-      linkedin,
-      twitter,
-      website,
-      portfolio
-    }
-  ) => ({
-    email,
-    sendQuincyEmail,
-    isEmailVerified,
-    isHonest,
-    showLoading,
-    username,
-    about,
-    picture,
-    points,
-    name,
-    theme,
-    location,
-    githubProfile,
-    linkedin,
-    twitter,
-    website,
-    portfolio
+    user
   })
 );
 
@@ -113,27 +101,39 @@ const mapDispatchToProps = dispatch =>
 
 function ShowSettings(props) {
   const {
-    email,
-    isEmailVerified,
-    isHonest,
-    sendQuincyEmail,
-    showLoading,
-    username,
-    about,
-    picture,
-    points,
-    theme,
-    location,
-    name,
     submitNewAbout,
     toggleNightMode,
+    user: {
+      completedChallenges,
+      email,
+      is2018DataVisCert,
+      isApisMicroservicesCert,
+      isJsAlgoDataStructCert,
+      isBackEndCert,
+      isDataVisCert,
+      isFrontEndCert,
+      isInfosecQaCert,
+      isFrontEndLibsCert,
+      isFullStackCert,
+      isEmailVerified,
+      isHonest,
+      sendQuincyEmail,
+      username,
+      about,
+      picture,
+      points,
+      theme,
+      location,
+      name,
+      githubProfile,
+      linkedin,
+      twitter,
+      website,
+      portfolio
+    },
+    showLoading,
     updateQuincyEmail,
-    githubProfile,
-    linkedin,
-    twitter,
-    website,
     updateInternetSettings,
-    portfolio,
     updatePortfolio,
     updateIsHonest
   } = props;
@@ -208,11 +208,22 @@ function ShowSettings(props) {
         <Spacer />
         <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
         <Spacer />
-        <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest}/>
+        <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
         <Spacer />
-        {/* <CertificationSettings />
+        <Certification
+          completedChallenges={completedChallenges}
+          is2018DataVisCert={is2018DataVisCert}
+          isApisMicroservicesCert={isApisMicroservicesCert}
+          isBackEndCert={isBackEndCert}
+          isDataVisCert={isDataVisCert}
+          isFrontEndCert={isFrontEndCert}
+          isFrontEndLibsCert={isFrontEndLibsCert}
+          isFullStackCert={isFullStackCert}
+          isInfosecQaCert={isInfosecQaCert}
+          isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+        />
         <Spacer />
-<DangerZone /> */}
+        {/* <DangerZone /> */}
       </Grid>
     </Layout>
   );
