@@ -19,6 +19,9 @@
     "newEmail": {
       "type": "string"
     },
+    "classroomSetting": {
+      "type": "string"
+    },
     "emailVerifyTTL": {
       "type": "date"
     },
