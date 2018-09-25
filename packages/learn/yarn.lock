@@ -92,9 +92,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@freecodecamp/curriculum@^3.2.0":
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/@freecodecamp/curriculum/-/curriculum-3.2.0.tgz#0fc42911f51b292e7d31644ef7bf46125b761a2b"
+"@freecodecamp/curriculum@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@freecodecamp/curriculum/-/curriculum-3.2.1.tgz#9a487ff7175d15081d53f14aa400e0de13bd86f1"
 
 "@sinonjs/formatio@^2.0.0":
   version "2.0.0"
