@@ -29,6 +29,7 @@ const schema = Joi.object().keys({
     })
   ),
   guideUrl: Joi.string().uri({ scheme: 'https' }),
+  videoUrl: Joi.string().allow(''),
   helpRoom: Joi.string(),
   id: Joi.objectId().required(),
   isBeta: Joi.bool(),
