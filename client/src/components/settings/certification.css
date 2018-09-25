@@ -1,13 +1,13 @@
-#certifcation-settings .project-title {
-  display: flex;
+#certifcation-settings .solutions-dropdown,
+#certifcation-settings .solutions-dropdown .dropdown-menu,
+#certifcation-settings .solutions-dropdown .dropdown {
+  width: 100%;
 }
 
-#certifcation-settings .project-solution {
-  display: flex;
-
+#certifcation-settings tr {
+  height: 57px;
 }
 
-#certifcation-settings .project-row {
-  display: flex;
-
+#certifcation-settings .project-title > a {
+  line-height: 40px;
 }

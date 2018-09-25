@@ -11,14 +11,17 @@ import {
   submitNewUsernameComplete,
   submitNewUsernameError,
   submitProfileUIComplete,
-  submitProfileUIError
+  submitProfileUIError,
+  verifyCertComplete,
+  verifyCertError
 } from './';
 import {
   getUsernameExists,
   putUpdateMyAbout,
   putUpdateMyProfileUI,
   putUpdateMyUsername,
-  putUpdateUserFlag
+  putUpdateUserFlag,
+  putVerifyCert
 } from '../../utils/ajax';
 import { createFlashMessage } from '../../components/Flash/redux';
 
@@ -74,12 +77,25 @@ function* validateUsernameSaga({ payload }) {
   }
 }
 
+function* verifyCertificationSaga({ payload }) {
+  try {
+    const {
+      data: { response, isCertMap }
+    } = yield call(putVerifyCert, payload);
+    yield put(verifyCertComplete({ ...response, payload: isCertMap }));
+    yield put(createFlashMessage(response));
+  } catch (e) {
+    yield put(verifyCertError(e));
+  }
+}
+
 export function createSettingsSagas(types) {
   return [
     takeEvery(types.updateUserFlag, updateUserFlagSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     takeLatest(types.validateUsername, validateUsernameSaga),
-    takeLatest(types.submitProfileUI, sumbitProfileUISaga)
+    takeLatest(types.submitProfileUI, sumbitProfileUISaga),
+    takeEvery(types.verifyCert, verifyCertificationSaga)
   ];
 }

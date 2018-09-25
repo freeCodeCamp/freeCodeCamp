@@ -64,4 +64,8 @@ export function putUserUpdateEmail(email) {
   return put('/update-my-email', { email });
 }
 
+export function putVerifyCert(superBlock) {
+  return put('/certificate/verify', { superBlock });
+}
+
 /** DELETE **/

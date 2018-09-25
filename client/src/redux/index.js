@@ -174,6 +174,8 @@ export const reducer = handleActions(
     [settingsTypes.updateMyEmailComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateUserFlagComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.verifyCertComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state
   },
   initialState

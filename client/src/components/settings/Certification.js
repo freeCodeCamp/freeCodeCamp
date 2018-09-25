@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { find } from 'lodash';
+import { find, first } from 'lodash';
 import {
   Table,
   Button,
@@ -9,13 +9,16 @@ import {
   Modal
 } from '@freecodecamp/react-bootstrap';
 import { Link, navigate } from 'gatsby';
+import { createSelector } from 'reselect';
 
 import { projectMap } from '../../resources/certProjectMap';
 
 import SectionHeader from './SectionHeader';
 import SolutionViewer from './SolutionViewer';
-import { FullWidthRow } from '../helpers';
+import { FullWidthRow, Spacer } from '../helpers';
 import { maybeUrlRE } from '../../utils';
+
+import './certification.css';
 
 const propTypes = {
   completedChallenges: PropTypes.arrayOf(
@@ -27,10 +30,71 @@ const propTypes = {
       completedDate: PropTypes.number,
       files: PropTypes.array
     })
-  )
+  ),
+  createFlashMessage: PropTypes.func.isRequired,
+  is2018DataVisCert: PropTypes.bool,
+  isApisMicroservicesCert: PropTypes.bool,
+  isBackEndCert: PropTypes.bool,
+  isDataVisCert: PropTypes.bool,
+  isFrontEndCert: PropTypes.bool,
+  isFrontEndLibsCert: PropTypes.bool,
+  isFullStackCert: PropTypes.bool,
+  isHonest: PropTypes.bool,
+  isInfosecQaCert: PropTypes.bool,
+  isJsAlgoDataStructCert: PropTypes.bool,
+  isRespWebDesignCert: PropTypes.bool,
+  username: PropTypes.string,
+  verifyCert: PropTypes.func.isRequired
 };
 
 const certifications = Object.keys(projectMap);
+const isCertSelector = ({
+  is2018DataVisCert,
+  isApisMicroservicesCert,
+  isJsAlgoDataStructCert,
+  isBackEndCert,
+  isDataVisCert,
+  isFrontEndCert,
+  isInfosecQaCert,
+  isFrontEndLibsCert,
+  isFullStackCert,
+  isRespWebDesignCert
+}) => ({
+  is2018DataVisCert,
+  isApisMicroservicesCert,
+  isJsAlgoDataStructCert,
+  isBackEndCert,
+  isDataVisCert,
+  isFrontEndCert,
+  isInfosecQaCert,
+  isFrontEndLibsCert,
+  isFullStackCert,
+  isRespWebDesignCert
+});
+
+const isCertMapSelector = createSelector(
+  isCertSelector,
+  ({
+    is2018DataVisCert,
+    isApisMicroservicesCert,
+    isJsAlgoDataStructCert,
+    isBackEndCert,
+    isDataVisCert,
+    isFrontEndCert,
+    isInfosecQaCert,
+    isFrontEndLibsCert,
+    isFullStackCert,
+    isRespWebDesignCert
+  }) => ({
+    'Responsive Web Design': isRespWebDesignCert,
+    'JavaScript Algorithms and Data Structures': isJsAlgoDataStructCert,
+    'Front End Libraries': isFrontEndLibsCert,
+    'Data Visualization': is2018DataVisCert,
+    "API's and Microservices": isApisMicroservicesCert,
+    'Information Security And Quality Assurance': isInfosecQaCert
+  })
+);
+
 const initialState = {
   solutionViewer: {
     projectTitle: '',
@@ -51,7 +115,10 @@ class CertificationSettings extends Component {
     e.preventDefault();
     return navigate(to);
   };
+
   handleSolutionModalHide = () => this.setState({ ...initialState });
+
+  getUserIsCertMap = () => isCertMapSelector(this.props);
 
   getProjectSolution = (projectId, projectTitle) => {
     const { completedChallenges } = this.props;
@@ -75,6 +142,7 @@ class CertificationSettings extends Component {
     if (files && files.length) {
       return (
         <Button
+          block={true}
           bsStyle='primary'
           className='btn-invert'
           onClick={onClickHandler}
@@ -85,34 +153,38 @@ class CertificationSettings extends Component {
     }
     if (githubLink) {
       return (
-        <DropdownButton
-          bsStyle='primary'
-          className='btn-invert'
-          id={`dropdown-for-${projectId}`}
-          title='Show Solutions'
-          >
-          <MenuItem
+        <div className='solutions-dropdown'>
+          <DropdownButton
+            block={true}
             bsStyle='primary'
-            href={solution}
-            rel='noopener noreferrer'
-            target='_blank'
+            className='btn-invert'
+            id={`dropdown-for-${projectId}`}
+            title='Show Solutions'
             >
-            Front End
-          </MenuItem>
-          <MenuItem
-            bsStyle='primary'
-            href={githubLink}
-            rel='noopener noreferrer'
-            target='_blank'
-            >
-            Back End
-          </MenuItem>
-        </DropdownButton>
+            <MenuItem
+              bsStyle='primary'
+              href={solution}
+              rel='noopener noreferrer'
+              target='_blank'
+              >
+              Front End
+            </MenuItem>
+            <MenuItem
+              bsStyle='primary'
+              href={githubLink}
+              rel='noopener noreferrer'
+              target='_blank'
+              >
+              Back End
+            </MenuItem>
+          </DropdownButton>
+        </div>
       );
     }
     if (maybeUrlRE.test(solution)) {
       return (
         <Button
+          block={true}
           bsStyle='primary'
           className='btn-invert'
           href={solution}
@@ -124,7 +196,12 @@ class CertificationSettings extends Component {
       );
     }
     return (
-      <Button bsStyle='primary' className='btn-invert' onClick={onClickHandler}>
+      <Button
+        block={true}
+        bsStyle='primary'
+        className='btn-invert'
+        onClick={onClickHandler}
+        >
         Show Code
       </Button>
     );
@@ -132,6 +209,7 @@ class CertificationSettings extends Component {
 
   renderCertifications = certName => (
     <FullWidthRow key={certName}>
+      <Spacer />
       <h3>{certName}</h3>
       <Table>
         <thead>
@@ -140,22 +218,57 @@ class CertificationSettings extends Component {
             <th>Solution</th>
           </tr>
         </thead>
-        <tbody>{this.renderProjectsFor(certName)}</tbody>
+        <tbody>
+          {this.renderProjectsFor(certName, this.getUserIsCertMap()[certName])}
+        </tbody>
       </Table>
     </FullWidthRow>
   );
 
-  renderProjectsFor = certName =>
-    projectMap[certName].map(({ link, title, id }) => (
-      <tr className='project-row' key={id}>
-        <td className='project-title col-sm-8'>
-          <Link to={link}>{title}</Link>
-        </td>
-        <td className='project-solution col-sm-4'>
-          {this.getProjectSolution(id, title)}
-        </td>
-      </tr>
-    ));
+  renderProjectsFor = (certName, isCert) => {
+    const { username, isHonest, createFlashMessage, verifyCert } = this.props;
+    const { superBlock } = first(projectMap[certName]);
+    const certLocation = `/certification/${username}/${superBlock}`;
+    const createClickHandler = superBlock => e => {
+      e.preventDefault();
+      if (isCert) {
+        return navigate(certLocation);
+      }
+      return isHonest
+        ? verifyCert(superBlock)
+        : createFlashMessage({
+            type: 'info',
+            message:
+              'To claim a certification, you must first accept our acedemic ' +
+              'honesty policy'
+          });
+    };
+    return projectMap[certName]
+      .map(({ link, title, id }) => (
+        <tr className='project-row' key={id}>
+          <td className='project-title col-sm-8'>
+            <Link to={link}>{title}</Link>
+          </td>
+          <td className='project-solution col-sm-4'>
+            {this.getProjectSolution(id, title)}
+          </td>
+        </tr>
+      ))
+      .concat([
+        <tr key={`cert-${superBlock}-button`}>
+          <td colSpan={2}>
+            <Button
+              block={true}
+              bsStyle='primary'
+              href={certLocation}
+              onClick={createClickHandler(superBlock)}
+              >
+              {isCert ? 'Show Certification' : 'Claim Certification'}
+            </Button>
+          </td>
+        </tr>
+      ]);
+  };
 
   render() {
     const {
