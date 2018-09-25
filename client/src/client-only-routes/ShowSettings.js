@@ -7,7 +7,8 @@ import { Grid, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import { signInLoadingSelector, userSelector } from '../redux';
-import { submitNewAbout, updateUserFlag } from '../redux/settings';
+import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
+import { createFlashMessage } from '../components/Flash/redux';
 
 import Layout from '../components/Layout';
 import Spacer from '../components/helpers/Spacer';
@@ -22,6 +23,7 @@ import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
 
 const propTypes = {
+  createFlashMessage: PropTypes.func.isRequired,
   showLoading: PropTypes.bool,
   submitNewAbout: PropTypes.func.isRequired,
   toggleNightMode: PropTypes.func.isRequired,
@@ -74,7 +76,8 @@ const propTypes = {
     twitter: PropTypes.string,
     username: PropTypes.string,
     website: PropTypes.string
-  })
+  }),
+  verifyCert: PropTypes.func.isRequired
 };
 
 const mapStateToProps = createSelector(
@@ -89,18 +92,21 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
+      createFlashMessage,
       submitNewAbout,
       toggleNightMode: theme => updateUserFlag({ theme }),
       updateInternetSettings: updateUserFlag,
       updateIsHonest: updateUserFlag,
       updatePortfolio: updateUserFlag,
-      updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail })
+      updateQuincyEmail: sendQuincyEmail => updateUserFlag({ sendQuincyEmail }),
+      verifyCert
     },
     dispatch
   );
 
 function ShowSettings(props) {
   const {
+    createFlashMessage,
     submitNewAbout,
     toggleNightMode,
     user: {
@@ -115,6 +121,7 @@ function ShowSettings(props) {
       isInfosecQaCert,
       isFrontEndLibsCert,
       isFullStackCert,
+      isRespWebDesignCert,
       isEmailVerified,
       isHonest,
       sendQuincyEmail,
@@ -135,7 +142,8 @@ function ShowSettings(props) {
     updateQuincyEmail,
     updateInternetSettings,
     updatePortfolio,
-    updateIsHonest
+    updateIsHonest,
+    verifyCert
   } = props;
 
   if (showLoading) {
@@ -212,6 +220,7 @@ function ShowSettings(props) {
         <Spacer />
         <Certification
           completedChallenges={completedChallenges}
+          createFlashMessage={createFlashMessage}
           is2018DataVisCert={is2018DataVisCert}
           isApisMicroservicesCert={isApisMicroservicesCert}
           isBackEndCert={isBackEndCert}
@@ -219,8 +228,12 @@ function ShowSettings(props) {
           isFrontEndCert={isFrontEndCert}
           isFrontEndLibsCert={isFrontEndLibsCert}
           isFullStackCert={isFullStackCert}
+          isHonest={isHonest}
           isInfosecQaCert={isInfosecQaCert}
           isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+          isRespWebDesignCert={isRespWebDesignCert}
+          username={username}
+          verifyCert={verifyCert}
         />
         <Spacer />
         {/* <DangerZone /> */}

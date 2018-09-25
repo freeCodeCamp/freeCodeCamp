@@ -34,7 +34,7 @@ export default function bootCertificate(app) {
   const showCert = createShowCert(app);
   const verifyCert = createVerifyCert(certTypeIds, app);
 
-  api.post('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
+  api.put('/certificate/verify', ifNoUser401, ifNoSuperBlock404, verifyCert);
   api.get('/certificate/showCert/:username/:cert', showCert);
 
   app.use('/internal', api);
@@ -47,18 +47,18 @@ const noNameMessage = dedent`
   `;
 
 const notCertifiedMessage = name => dedent`
-  it looks like you have not completed the necessary steps.
-  Please complete the required challenges to claim the
-  ${name}
+  It looks like you have not completed the necessary steps.
+  Please complete the required projects to claim the
+  ${name} Certification
   `;
 
 const alreadyClaimedMessage = name => dedent`
-    It looks like you already have claimed the ${name}
+    It looks like you already have claimed the ${name} Certification
     `;
 
 const successMessage = (username, name) => dedent`
     @${username}, you have successfully claimed
-    the ${name}!
+    the ${name} Certification!
     Congratulations on behalf of the freeCodeCamp.org team!
     `;
 
@@ -194,6 +194,34 @@ function sendCertifiedEmail(
   return send$(notifyUser).map(() => true);
 }
 
+function getUserIsCertMap(user) {
+  const {
+    isRespWebDesignCert = false,
+    isJsAlgoDataStructCert = false,
+    isFrontEndLibsCert = false,
+    is2018DataVisCert = false,
+    isApisMicroservicesCert = false,
+    isInfosecQaCert = false,
+    isFrontEndCert = false,
+    isBackEndCert = false,
+    isDataVisCert = false,
+    isFullStackCert = false
+  } = user;
+
+  return {
+    isRespWebDesignCert,
+    isJsAlgoDataStructCert,
+    isFrontEndLibsCert,
+    is2018DataVisCert,
+    isApisMicroservicesCert,
+    isInfosecQaCert,
+    isFrontEndCert,
+    isBackEndCert,
+    isDataVisCert,
+    isFullStackCert
+  };
+}
+
 function createVerifyCert(certTypeIds, app) {
   const { Email } = app.models;
   return function verifyCert(req, res, next) {
@@ -264,8 +292,11 @@ function createVerifyCert(certTypeIds, app) {
       })
       .subscribe(message => {
         return res.status(200).json({
-          message,
-          success: message.includes('Congratulations')
+          response: {
+            type: message.includes('Congratulations') ? 'success' : 'info',
+            message
+          },
+          isCertMap: getUserIsCertMap(user)
         });
       }, next);
   };

@@ -27,7 +27,8 @@ export const types = createTypes(
     ...createAsyncTypes('submitNewUsername'),
     ...createAsyncTypes('updateMyEmail'),
     ...createAsyncTypes('updateUserFlag'),
-    ...createAsyncTypes('submitProfileUI')
+    ...createAsyncTypes('submitProfileUI'),
+    ...createAsyncTypes('verifyCert')
   ],
   ns
 );
@@ -79,6 +80,13 @@ export const validateUsernameComplete = createAction(
   types.validateUsernameComplete
 );
 export const validateUsernameError = createAction(types.validateUsernameError);
+
+export const verifyCert = createAction(types.verifyCert);
+export const verifyCertComplete = createAction(
+  types.verifyCertComplete,
+  checkForSuccessPayload
+);
+export const verifyCertError = createAction(types.verifyCertError);
 
 export const usernameValidationSelector = state => state[ns].usernameValidation;
 
