@@ -1,3 +1,10 @@
+## [3.2.1](https://github.com/freeCodeCamp/curriculum/compare/v3.2.0...v3.2.1) (2018-09-25)
+
+
+### Bug Fixes
+
+* Add videoUrl field ([#298](https://github.com/freeCodeCamp/curriculum/issues/298)) ([ce3cc22](https://github.com/freeCodeCamp/curriculum/commit/ce3cc22))
+
 # [3.2.0](https://github.com/freeCodeCamp/curriculum/compare/v3.1.2...v3.2.0) (2018-09-20)
 
 
