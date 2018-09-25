@@ -22,7 +22,7 @@
     "postseed": "gulp generate-migration-map",
     "prelint-js": "npm run ensure-env",
     "pretest": "npm run lint",
-    "prestart-production": "gulp build -p",
+    "prestart-production": "npm run build",
     "seed": "node seed/index.js",
     "snyk-protect": "snyk protect",
     "start": "babel-node server/server.js",

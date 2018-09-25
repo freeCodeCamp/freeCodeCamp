@@ -56,7 +56,10 @@ module.exports = {
         sourceMap: true,
         parallel: true
       })
-    ]
+    ],
+    splitChunks: {
+      chunks: 'all'
+    }
   }
 };
 
