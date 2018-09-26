@@ -5,6 +5,23 @@ node_js:
 
 cache:
   directories:
-    - node_modules
+  - "$HOME/.npm"
+
+env:
+  global:
+    - NO_UPDATE_NOTIFIER=1
+    - NODE_NO_WARNINGS=1
 
 sudo: false
+
+before_install:
+  - npm config set loglevel warn
+
+install: npm ci
+
+before_script:
+  - git config --global user.email team+camperbot@freeCodeCamp.org
+  - git config --global user.name "CamperBot"
+
+script:
+  - npm run test
