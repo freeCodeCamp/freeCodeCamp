@@ -42,46 +42,37 @@ function Camper({
   about,
   yearsTopContributor
 }) {
-
   return (
     <div>
       <Row>
-        <Col className='avatar-container' xs={ 12 }>
-            <img
-              alt={ username + '\'s profile picture' }
-              className='avatar'
-              src={ picture }
-            />
+        <Col className='avatar-container' xs={12}>
+          <img
+            alt={username + "'s profile picture"}
+            className='avatar'
+            src={picture}
+          />
         </Col>
       </Row>
       <SocialIcons />
-      <h2 className='text-center username'>@{ username }</h2>
-      { name && <p className='text-center name'>{ name }</p> }
-      { location && <p className='text-center location'>{ location }</p> }
-      { about && <p className='bio text-center'>{ about }</p> }
-      {
-        typeof points === 'number' ? (
-          <p className='text-center points'>
-            { `${points} ${pluralise('point', points !== 1)}` }
-          </p>
-        ) : null
-      }
-      { yearsTopContributor.filter(Boolean).length > 0 &&
-        (
-          <div>
-          <br/>
+      <h2 className='text-center username'>@{username}</h2>
+      {name && <p className='text-center name'>{name}</p>}
+      {location && <p className='text-center location'>{location}</p>}
+      {about && <p className='bio text-center'>{about}</p>}
+      {typeof points === 'number' ? (
+        <p className='text-center points'>
+          {`${points} ${pluralise('point', points !== 1)}`}
+        </p>
+      ) : null}
+      {yearsTopContributor.filter(Boolean).length > 0 && (
+        <div>
+          <br />
           <p className='text-center yearsTopContributor'>
-            <FontAwesomeIcon
-              icon={faAward}
-            /> Top Contributor
+            <FontAwesomeIcon icon={faAward} /> Top Contributor
           </p>
-          <p className='text-center'>
-          { joinArray(yearsTopContributor) }
-          </p>
-          </div>
-        )
-      }
-      <br/>
+          <p className='text-center'>{joinArray(yearsTopContributor)}</p>
+        </div>
+      )}
+      <br />
     </div>
   );
 }
