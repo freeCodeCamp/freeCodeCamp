@@ -6,6 +6,7 @@
   },
   "devDependencies": {
     "eslint-config-freecodecamp": "^1.1.1",
+    "lerna": "^3.4.0",
     "tree-kill": "^1.2.0"
   },
   "dependencies": {

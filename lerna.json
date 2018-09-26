@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "api-server",
+    "client",
+    "curriculum"
+  ],
+  "version": "independent"
+}
