@@ -1,0 +1,244 @@
+{
+  "name": "Responsive Web Design Principles",
+  "order": 4,
+  "time": "1 hour",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d78b0367417b2b2512b08",
+      "title": "Create a Media Query",
+      "description": [
+        "Media Queries are a new technique introduced in CSS3 that change the presentation of content based on different viewport sizes. The viewport is a user's visible area of a web page, and is different depending on the device used to access the site.",
+        "Media Queries consist of a media type, and if that media type matches the type of device the document is displayed on, the styles are applied. You can have as many selectors and styles inside your media query as you want.",
+        "Here's an example of a media query that returns the content when the device's width is less than or equal to 100px:",
+        "<code>@media (max-width: 100px) { /* CSS Rules */ }</code>",
+        "and the following media query returns the content when the device's height is more than or equal to 350px:",
+        "<code>@media (min-height: 350px) { /* CSS Rules */ }</code>",
+        "Remember, the CSS inside the media query is applied only if the media type matches that of the device being used.",
+        "<hr>",
+        "Add a media query, so that the <code>p</code> tag has a <code>font-size</code> of 10px when the device's height is less than or equal to 800px."
+      ],
+      "tests": [
+        {
+          "text": "Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.",
+          "testString": "assert($('p').css('font-size') == '10px', 'Your <code>p</code> element should have the <code>font-size</code> of 10px when the device <code>height</code> is less than or equal to 800px.');"
+        },
+        {
+          "text": "Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.",
+          "testString": "assert(code.match(/@media\\s*?\\(\\s*?max-height\\s*?:\\s*?800px\\s*?\\)/g), 'Declare a <code>@media</code> query for devices with a <code>height</code> less than or equal to 800px.');"
+        }
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "solutions": [],
+      "hints": [],
+      "challengeType": 0,
+      "translations": {
+        "pt-br": {
+          "title": "Criando uma Media Query",
+          "description": [
+            "Media Queries são uma nova técnica introduzida no CSS3 que mudam a apresentação do conteúdo de acordo com os diferentes tamanhos de janela de exibição. A janela de exibição é a área visível de uma página da web, e é diferente dependendo do dispositivo utilizado para acessar o site.",
+            "Media Queries consistem em um tipo de mídia, e se o tipo de mídia corresponder com o dispositivo no qual o documento está sendo exibido, os estilos são aplicados. Você pode colocar quantos seletores e estilos quanto desejar dentro de suas media queries.",
+            "Segue um exemplo de media query que retorna seu conteúdo quando a largura do dispositivo é menor que 100px:",
+            "<code>@media (max-width: 100px) { /* Regras do CSS  */ }</code>",
+            "Lembre-se, o CSS dentro da media query só é aplicado se o tipo de mídia corresponder ao dispositivo em uso.",
+            "<hr>",
+            "Adicione uma media query para que o tag <code>p</code> tenha um <code>font-size</code> de 10px quando a altura do dispositivo for menor ou igual a 800px."
+          ]
+        }
+      },
+      "videoUrl": "https://scrimba.com/p/pzrPu4/cqwKrtm",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  p {",
+            "    font-size: 20px;",
+            "  }",
+            "  ",
+            "  /* Add media query below */",
+            "  ",
+            "</style>",
+            "  ",
+            "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d78b1367417b2b2512b09",
+      "title": "Make an Image Responsive",
+      "description": [
+        "Making images responsive with CSS is actually very simple. Instead of applying an absolute width to an element:",
+        "<code>img { width: 720px; }</code>",
+        "You can use:",
+        "<blockquote>img {<br>&nbsp;&nbsp;max-width: 100%;<br>&nbsp;&nbsp;display: block;<br>&nbsp;&nbsp;height: auto;<br>}</blockquote>",
+        "The <code>max-width</code> property of 100% scales the image to fit the width of its container, but the image won't stretch wider than its original width. Setting the <code>display</code> property to block changes the image from an inline element (its default), to a block element on its own line. The <code>height</code> property of auto keeps the original aspect ratio of the image.",
+        "<hr>",
+        "Add style rules for the <code>img</code> tag to make it responsive to the size of its container. It should display as a block-level element, it should fit the full width of its container without stretching, and it should keep its original aspect ratio."
+      ],
+      "tests": [
+        {
+          "text": "Your <code>img</code> tag should have a <code>max-width</code> set to 100%.",
+          "testString": "assert(code.match(/max-width:\\s*?100%;/g), 'Your <code>img</code> tag should have a <code>max-width</code> set to 100%.');"
+        },
+        {
+          "text": "Your <code>img</code> tag should have a <code>display</code> set to block.",
+          "testString": "assert($('img').css('display') == 'block', 'Your <code>img</code> tag should have a <code>display</code> set to block.');"
+        },
+        {
+          "text": "Your <code>img</code> tag should have a <code>height</code> set to auto.",
+          "testString": "assert(code.match(/height:\\s*?auto;/g), 'Your <code>img</code> tag should have a <code>height</code> set to auto.');"
+        }
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 0,
+      "solutions": [],
+      "hints": [],
+      "translations": {
+        "pt-br": {
+          "title": "Torne uma Imagem Responsiva",
+          "description": [
+            "Fazer com que imagens sejam responsivas é muito simples com CSS. Ao invés de aplicar uma largura absoluta a um elemento:",
+            "<code>img { width: 720px; }</code>",
+            "Você pode usar:",
+            "<blockquote>img {<br>&nbsp;&nbsp;max-width: 100%;<br>&nbsp;&nbsp;display: block;<br>&nbsp;&nbsp;height: auto;<br>}</blockquote>",
+            "A propriedade <code>max-width</code> em 100% ajusta o tamanho da imagem para preencher a largura de seu container, mas a imagem não irá esticar mais que sua largura original. Ajustando a propriedade <code>display</code> como block muda imagem de elemento inline (o padrão) para um elemento block com uma linha própria. A propriedade <code>height</code> na configuração auto mantem a proporção original da imagem.",
+            "<hr>",
+            "Adicione regras de estilo para a tag <code>img</code> para torná-la responsiva com relação ao tamanho do seu container. Ela deve ser exibida como um elemento de nível block, e deve preencher toda a largura de seu container sem esticar, mantendo as proporções originais."
+          ]
+        }
+      },
+      "videoUrl": "https://scrimba.com/p/pzrPu4/cz763UD",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  ",
+            "</style>",
+            "",
+            "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickerPack.jpg\" alt=\"freeCodeCamp stickers set\">"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d78b1367417b2b2512b0a",
+      "title": "Use a Retina Image for Higher Resolution Displays",
+      "description": [
+        "The simplest way to make your images appear \"retina\" (and optimize them for retina displays) is to define their <code>width</code> and <code>height</code> values as only half of what the original file is.",
+        "Here is an example of an image that is only using half of the original height and width:",
+        "<blockquote>&lt;style&gt;<br>&nbsp;&nbsp;img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;A most excellent picture&quot;&gt;</blockquote>",
+        "<hr>",
+        "Set the <code>width</code> and <code>height</code> of the <code>img</code> tag to half of their original values. In this case, both the original <code>height</code> and the original <code>width</code> are 200px."
+      ],
+      "tests": [
+        {
+          "text": "Your <code>img</code> tag should have a <code>width</code> of 100 pixels.",
+          "testString": "assert($('img').css('width') == '100px', 'Your <code>img</code> tag should have a <code>width</code> of 100 pixels.');"
+        },
+        {
+          "text": "Your <code>img</code> tag should have a <code>height</code> of 100 pixels.",
+          "testString": "assert($('img').css('height') == '100px', 'Your <code>img</code> tag should have a <code>height</code> of 100 pixels.');"
+        }
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 0,
+      "solutions": [],
+      "hints": [],
+      "translations": {
+        "pt-br": {
+          "title": "Use uma Imagem Retina para Telas de Alta Resolução",
+          "description": [
+            "A maneira mais simples de fazer com que suas imagens tenham uma aparência \"retina\" (e otimizadas para telas retina) é definindo seus valores de <code>width</code> e <code>height</code> como somente metade do tamanho original dos arquivos.",
+            "Segue um exemplo de imagem que possui somente metade dos valores originais de altura e largura:",
+            "<blockquote>&lt;style&gt;<br>&nbsp;&nbsp;img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;A most excellent picture&quot;&gt;</blockquote>",
+            "<hr>",
+            "Configure os valores de <code>width</code> e <code>height</code> da tag <code>img</code> como metade do seu tamanho original. Nesse caso, o valor original de <code>height</code> e o valor original de <code>width</code> são de 200px."
+          ]
+        }
+      },
+      "videoUrl": "https://scrimba.com/p/pzrPu4/cVZ4Rfp",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  ",
+            "</style>",
+            "",
+            "<img src=\"https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg\" alt=\"freeCodeCamp sticker that says 'Because CamperBot Cares'\">"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d78b1367417b2b2512b0c",
+      "title": "Make Typography Responsive",
+      "description": [
+        "Instead of using <code>em</code> or <code>px</code> to size text, you can use viewport units for responsive typography. Viewport units, like percentages, are relative units, but they are based off different items. Viewport units are relative to the viewport dimensions (width or height) of a device, and percentages are relative to the size of the parent container element.",
+        "The four different viewport units are:",
+        "<ul><li><code>vw: 10vw</code> would be 10% of the viewport's width.</li><li><code>vh: 3vh</code> would be 3% of the viewport's height.</li><li><code>vmin: 70vmin</code> would be 70% of the viewport's smaller dimension (height vs. width).</li><li><code>vmax: 100vmax</code> would be 100% of the viewport's bigger dimension (height vs. width).</li></ul>",
+        "<hr>",
+        "Set the <code>width</code> of the <code>h2</code> tag to 80% of the viewport's width and the <code>width</code> of the paragraph as 75% of the viewport's smaller dimension."
+      ],
+      "tests": [
+        {
+          "text": "Your <code>h2</code> tag should have a <code>width</code> of 80vw.",
+          "testString": "assert(code.match(/h2\\s*?{\\s*?width:\\s*?80vw;\\s*?}/g), 'Your <code>h2</code> tag should have a <code>width</code> of 80vw.');"
+        },
+        {
+          "text": "Your <code>p</code> tag should have a <code>width</code> of 75vmin.",
+          "testString": "assert(code.match(/p\\s*?{\\s*?width:\\s*?75vmin;\\s*?}/g), 'Your <code>p</code> tag should have a <code>width</code> of 75vmin.');"
+        }
+      ],
+      "releasedOn": "Feb 17, 2017",
+      "solutions": ["var code = \"h2 {width: 80vw;} p {width: 75vmin;}\""],
+      "hints": [],
+      "challengeType": 0,
+      "translations": {
+        "pt-br": {
+          "title": "Torne a Tipografia Responsiva",
+          "description": [
+            "Ao invés de utilizar <code>em</code> ou <code>px</code> para alterar o tamanho do texto, você pode usar unidades da janela de exibição para obter tipografia responsiva. Unidades da janela de exibição, assim como porcentagens, são unidades relativas, mas que são baseadas em ítens diferentes. Unidades da janela de exibição são relativas às dimensões da janela de exibição (largura ou altura) de um dispositivo, enquanto que porcentagens são relativas ao tamanho do container do elemento pai.",
+            "As quatro unidades da janela de exibição são",
+            "<ul><li><code>vw: 10vw</code> seria 10% da largura da janela de exibição.</li><li><code>vh: 3vh</code> seria 3% da altura da janela de exibição.</li><li><code>vmin: 70vmin</code> seria 70% da menor dimensão da janela de exibição (largura ou altura).</li><li><code>vmax: 100vmax</code> seria 100% da maior dimensão da janela de exibição (largura ou altura).</li></ul>",
+            "<hr>",
+            "Ajuste o <code>width</code> da tag <code>h2</code> para 80% da largura da janela de exibição e a <code>width</code> do parágrafo para 75% da menor dimensão da janela de exibição."
+          ]
+        }
+      },
+      "videoUrl": "https://scrimba.com/p/pzrPu4/crzN7T8",
+      "files": {
+        "indexhtml": {
+          "key": "indexhtml",
+          "ext": "html",
+          "name": "index",
+          "contents": [
+            "<style>",
+            "  ",
+            "</style>",
+            "",
+            "<h2>Importantus Ipsum</h2>",
+            "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    }
+  ]
+}

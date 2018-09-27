@@ -1,0 +1,178 @@
+{
+  "name": "Responsive Web Design Projects",
+  "order": 7,
+  "time": "150 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "bd7158d8c442eddfaeb5bd18",
+      "title": "Build a Tribute Page",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/zNqgVx' target='_blank'>https://codepen.io/freeCodeCamp/full/zNqgVx</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
+        "<strong>User Story #1:</strong> My tribute page should have an element with a corresponding <code>id=\"main\"</code>, which contains all other elements.",
+        "<strong>User Story #2:</strong> I should see an element with a corresponding <code>id=\"title\"</code>, which contains a string (i.e. text) that describes the subject of the tribute page (e.g. \"Dr. Norman Borlaug\").",
+        "<strong>User Story #3:</strong> I should see a <code>div</code> element with a corresponding <code>id=\"img-div\"</code>.",
+        "<strong>User Story #4:</strong> Within the <code>img-div</code> element, I should see an <code>img</code> element with a corresponding <code>id=\"image\"</code>.",
+        "<strong>User Story #5:</strong> Within the <code>img-div</code> element, I should see an element with a corresponding <code>id=\"img-caption\"</code> that contains textual content describing the image shown in <code>img-div</code>.",
+        "<strong>User Story #6:</strong> I should see an element with a corresponding <code>id=\"tribute-info\"</code>, which contains textual content describing the subject of the tribute page.",
+        "<strong>User Story #7:</strong> I  should see an <code>a</code> element with a corresponding <code>id=\"tribute-link\"</code>, which links to an outside site that contains additional information about the subject of the tribute page. HINT: You must give your element an attribute of <code>target</code> and set it to <code>_blank</code> in order for your link to open in a new tab (i.e. <code>target=\"_blank\"</code>).",
+        "<strong>User Story #8:</strong> The <code>img</code> element should responsively resize, relative to the width of its parent element, without exceeding its original size.",
+        "<strong>User Story #9:</strong> The <code>img</code> element should be centered within its parent element.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>.",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "releasedOn": "January 1, 2016",
+      "tests": [],
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Construye una página Tributo"
+        },
+        "pt-br": {
+          "title": "Construa uma Página Tributo"
+        },
+        "ru": {
+          "title": "Создайте страницу посвященную тому что вас вдохновляет"
+        }
+      }
+    },
+    {
+      "id": "587d78af367417b2b2512b03",
+      "title": "Build a Survey Form",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/VPaoNP' target='_blank'>https://codepen.io/freeCodeCamp/full/VPaoNP</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
+        "<strong>User Story #1:</strong> I can see a title with <code>id=\"title\"</code> in H1 sized text.",
+        "<strong>User Story #2:</strong> I can see a short explanation with <code>id=\"description\"</code> in P sized text.",
+        "<strong>User Story #3:</strong> I can see a <code>form</code> with <code>id=\"survey-form\"</code>.",
+        "<strong>User Story #4:</strong> Inside the form element, I am required to enter my name in a field with <code>id=\"name\"</code>.",
+        "<strong>User Story #5:</strong> Inside the form element, I am required to enter an email in a field with <code>id=\"email\"</code>.",
+        "<strong>User Story #6:</strong> If I enter an email that is not formatted correctly, I will see an HTML5 validation error.",
+        "<strong>User Story #7:</strong> Inside the form, I can enter a number in a field with <code>id=\"number\"</code>.",
+        "<strong>User Story #8:</strong> If I enter non-numbers in the number input, I will see an HTML5 validation error.",
+        "<strong>User Story #9:</strong> If I enter numbers outside the range of the number input, which are defined by the <code>min</code> and <code>max</code> attributes, I will see an HTML5 validation error.",
+        "<strong>User Story #10:</strong> For the name, email, and number input fields inside the form I can see corresponding labels that describe the purpose of each field with the following ids: <code>id=\"name-label\"</code>, <code>id=\"email-label\"</code>, and <code>id=\"number-label\"</code>.",
+        "<strong>User Story #11:</strong> For the name, email, and number input fields, I can see placeholder text that gives me a description or instructions for each field.",
+        "<strong>User Story #12:</strong> Inside the form element, I can select an option from a dropdown that has a corresponding <code>id=\"dropdown\"</code>.",
+        "<strong>User Story #13:</strong> Inside the form element, I can select a field from one or more groups of radio buttons. Each group should be grouped using the <code>name</code> attribute.",
+        "<strong>User Story #14:</strong> Inside the form element, I can select several fields from a series of checkboxes, each of which must have a <code>value</code> attribute.",
+        "<strong>User Story #15:</strong> Inside the form element, I am presented with a <code>textarea</code> at the end for additional comments.",
+        "<strong>User Story #16:</strong> Inside the form element, I am presented with a button with <code>id=\"submit\"</code> to submit all my inputs.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "releasedOn": "January 15, 2017",
+      "tests": [],
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {}
+    },
+    {
+      "id": "587d78af367417b2b2512b04",
+      "title": "Build a Product Landing Page",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/RKRbwL' target='_blank'>https://codepen.io/freeCodeCamp/full/RKRbwL</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
+        "<strong>User Story #1:</strong> My product landing page should have a <code>header</code> element with a corresponding <code>id=\"header\"</code>.",
+        "<strong>User Story #2:</strong> I can see an image within the <code>header</code> element with a corresponding <code>id=\"header-img\"</code>. A company logo would make a good image here.",
+        "<strong>User Story #3:</strong> Within the <code>#header</code> element I can see a <code>nav</code> element with a corresponding <code>id=\"nav-bar\"</code>.",
+        "<strong>User Story #4:</strong> I can see at least three clickable elements inside the <code>nav</code> element, each with the class <code>nav-link</code>.",
+        "<strong>User Story #5:</strong> When I click a <code>.nav-link</code> button in the <code>nav</code> element, I am taken to the corresponding section of the landing page.",
+        "<strong>User Story #6:</strong> I can watch an embedded product video with <code>id=\"video\"</code>.",
+        "<strong>User Story #7:</strong> My landing page has a <code>form</code> element with a corresponding <code>id=\"form\"</code>.",
+        "<strong>User Story #8:</strong> Within the form, there is an <code>input</code> field with <code>id=\"email\"</code> where I can enter an email address.",
+        "<strong>User Story #9:</strong> The <code>#email</code> input field should have placeholder text to let the user know what the field is for.",
+        "<strong>User Story #10:</strong> The <code>#email</code> input field uses HTML5 validation to confirm that the entered text is an email address.",
+        "<strong>User Story #11:</strong> Within the form, there is a submit <code>input</code> with a corresponding <code>id=\"submit\"</code>.",
+        "<strong>User Story #12:</strong> When I click the <code>#submit</code> element, the email is submitted to a static page (use this mock URL: <a href='https://www.freecodecamp.com/email-submit' target='_blank'>https://www.freecodecamp.com/email-submit</a>) that confirms the email address was entered and that it posted successfully.",
+        "<strong>User Story #13:</strong> The navbar should always be at the top of the viewport.",
+        "<strong>User Story #14:</strong> My product landing page should have at least one media query.",
+        "<strong>User Story #15:</strong> My product landing page should utilize CSS flexbox at least once.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/full/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "releasedOn": "January 15, 2017",
+      "tests": [],
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {}
+    },
+    {
+      "id": "587d78b0367417b2b2512b05",
+      "title": "Build a Technical Documentation Page",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/NdrKKL' target='_blank'>https://codepen.io/freeCodeCamp/full/NdrKKL</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
+        "<strong>User Story #1:</strong> I can see a <code>main</code> element with a corresponding <code>id=\"main-doc\"</code>, which contains the page's main content (technical documentation).",
+        "<strong>User Story #2:</strong> Within the <code>#main-doc</code> element, I can see several <code>section</code> elements, each with a class of <code>main-section</code>. There should be a minimum of 5.",
+        "<strong>User Story #3:</strong> The first element within each <code>.main-section</code> should be a <code>header</code> element which contains text that describes the topic of that section.",
+        "<strong>User Story #4:</strong> Each <code>section</code> element with the class of <code>main-section</code> should also have an id that corresponds with the text of each <code>header</code> contained within it. Any spaces should be replaced with underscores (e.g. The <code>section</code> that contains the header \"Javascript and Java\" should have a corresponding <code>id=\"Javascript_and_Java\"</code>).",
+        "<strong>User Story #5:</strong> The <code>.main-section</code> elements should contain at least 10 <code>p</code> elements total (not each).",
+        "<strong>User Story #6:</strong> The <code>.main-section</code> elements should contain at least 5 <code>code</code> elements total (not each).",
+        "<strong>User Story #7:</strong> The <code>.main-section</code> elements should contain at least 5 <code>li</code> items total (not each).",
+        "<strong>User Story #8:</strong> I can see a <code>nav</code> element with a corresponding <code>id=\"navbar\"</code>.",
+        "<strong>User Story #9:</strong> The navbar element should contain one <code>header</code> element which contains text that describes the topic of the technical documentation.",
+        "<strong>User Story #10:</strong> Additionally, the navbar should contain link (<code>a</code>) elements with the class of <code>nav-link</code>. There should be one for every element with the class <code>main-section</code>.",
+        "<strong>User Story #11:</strong> The <code>header</code> element in the navbar must come before any link (<code>a</code>) elements in the navbar.",
+        "<strong>User Story #12:</strong> Each element with the class of <code>nav-link</code> should contain text that corresponds to the <code>header</code> text within each <code>section</code> (e.g. if you have a \"Hello world\" section/header, your navbar should have an element which contains the text \"Hello world\").",
+        "<strong>User Story #13:</strong> When I click on a navbar element, the page should navigate to the corresponding section of the <code>main-doc</code> element (e.g. If I click on a <code>nav-link</code> element that contains the text \"Hello world\", the page navigates to a <code>section</code> element that has that id and contains the corresponding <code>header</code>.",
+        "<strong>User Story #14:</strong> On regular sized devices (laptops, desktops), the element with <code>id=\"navbar\"</code> should be shown on the left side of the screen and should always be visible to the user.",
+        "<strong>User Story #15:</strong> My Technical Documentation page should use at least one media query.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "releasedOn": "January 15, 2017",
+      "tests": [],
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {}
+    },
+    {
+      "id": "bd7158d8c242eddfaeb5bd13",
+      "title": "Build a Personal Portfolio Webpage",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/zNBOYG' target='_blank'>https://codepen.io/freeCodeCamp/full/zNBOYG</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, and CSS to complete this project. Plain CSS is recommended because that is what the lessons have covered so far and you should get some practice with plain CSS. You can use Bootstrap or SASS if you choose. Additional technologies (just for example jQuery, React, Angular, or Vue) are not recommended for this project, and using them is at your own risk. Other projects will give you a chance to work with different technology stacks like React. We will accept and try to fix all issue reports that use the suggested technology stack for this project. Happy coding!",
+        "<strong>User Story #1:</strong> My portfolio should have a welcome section with an id of <code>welcome-section</code>.",
+        "<strong>User Story #2:</strong> The welcome section should have an <code>h1</code> element that contains text.",
+        "<strong>User Story #3:</strong> My portfolio should have a projects section with an id of <code>projects</code>.",
+        "<strong>User Story #4:</strong> The projects section should contain at least one element with a class of <code>project-tile</code> to hold a project.",
+        "<strong>User Story #5:</strong> The projects section should contain at least one link to a project.",
+        "<strong>User Story #6:</strong> My portfolio should have a navbar with an id of <code>navbar</code>.",
+        "<strong>User Story #7:</strong> The navbar should contain at least one link that I can click on to navigate to different sections of the page.",
+        "<strong>User Story #8:</strong> My portfolio should have a link with an id of <code>profile-link</code>, which opens my GitHub or FCC profile in a new tab.",
+        "<strong>User Story #9:</strong> My portfolio should have at least one media query.",
+        "<strong>User Story #10:</strong> The height of the welcome section should be equal to the height of the viewport.",
+        "<strong>User Story #11:</strong> The navbar should always be at the top of the viewport.",
+        "You can build your project by forking <a href='http://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "tests": [],
+      "isRequired": true,
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Construye una página web para tu portafolio"
+        },
+        "pt-br": {
+          "title": "Construa uma Página de Portfólio Pessoal"
+        },
+        "ru": {
+          "title": "Создайте сайт-портфолио"
+        }
+      }
+    }
+  ]
+}

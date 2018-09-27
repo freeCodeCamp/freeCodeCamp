@@ -1,0 +1,203 @@
+{
+  "name": "APIs and Microservices Projects",
+  "order": 4,
+  "time": "150 hours",
+  "helpRoom": "HelpBackend",
+  "challenges": [
+    {
+      "id": "bd7158d8c443edefaeb5bdef",
+      "title": "Timestamp Microservice",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://curse-arrow.glitch.me/' target='_blank'>https://curse-arrow.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-timestamp/' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-timestamp/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+      ],
+      "tests": [
+        {
+          "text":
+            "It should handle a valid date, and return the correct unix timestamp",
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/api/timestamp/2016-12-25').then(data => { assert.equal(data.unix, 1482624000000, 'Should be a valid unix timestamp'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text":
+            "It should handle a valid date, and return the correct UTC string",
+          "testString":
+            "getUserInput => $.get(getUserInput('url')+ '/api/timestamp/2016-12-25').then(data => { assert.equal(data.utc, 'Sun, 25 Dec 2016 00:00:00 GMT', 'Should be a valid UTC date string'); }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text":
+            "It should handle a valid unix date, and return the correct unix timestamp",
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/api/timestamp/1482624000000').then(data => { assert.equal(data.unix, 1482624000000) ;  }, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text":
+            "It should return the expected error message for an invalid date",
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/api/timestamp/this-is-not-a-date').then(data => { assert.equal(data.error.toLowerCase(), 'invalid date');}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text":
+            "It should handle an empty date parameter, and return the current time in unix format",
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/api/timestamp').then(data => { var now = Date.now(); assert.approximately(data.unix, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })"
+        },
+        {
+          "text":
+            "It should handle an empty date parameter, and return the current time in UTC format",
+          "testString":
+            "getUserInput => $.get(getUserInput('url') + '/api/timestamp').then(data => { var now = Date.now(); var serverTime = (new Date(data.utc)).getTime(); assert.approximately(serverTime, now, 20000) ;}, xhr => { throw new Error(xhr.responseText); })"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 4,
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "translations": {
+        "es": {
+          "title": "Microservicio de Marca Temporal"
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bdff",
+      "title": "Request Header Parser Microservice",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://dandelion-roar.glitch.me/' target='_blank'>https://dandelion-roar.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-headerparser/' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-headerparser/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+      ],
+      "tests": [
+        {
+          "text":
+            "I can get the IP address, language and operating system for my browser.",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 4,
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "translations": {
+        "es": {
+          "title": "Microservicio para analizar el encabezado de una petición"
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bd0e",
+      "title": "URL Shortener Microservice",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://thread-paper.glitch.me/' target='_blank'>https://thread-paper.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-urlshortener/' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-urlshortener/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+      ],
+      "tests": [
+        {
+          "text":
+            "I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.",
+          "testString": ""
+        },
+        {
+          "text":
+            "If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.",
+          "testString": ""
+        },
+        {
+          "text":
+            "When I visit that shortened URL, it will redirect me to my original link.",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 4,
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "translations": {
+        "es": {
+          "title": "Microservicio para acortar URLs"
+        }
+      }
+    },
+    {
+      "id": "5a8b073d06fa14fcfde687aa",
+      "title": "Exercise Tracker",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://fuschia-custard.glitch.me/' target='_blank'>https://fuschia-custard.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-exercisetracker/' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-exercisetracker/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+      ],
+      "tests": [
+        {
+          "text":
+            "I can create a user by posting form data username to /api/exercise/new-user and returned will be an object with username and <code>_id</code>.",
+          "testString": ""
+        },
+        {
+          "text":
+            "I can get an array of all users by getting api/exercise/users with the same info as when creating a user.",
+          "testString": ""
+        },
+        {
+          "text":
+            "I can add an exercise to any user by posting form data userId(_id), description, duration, and optionally date to /api/exercise/add. If no date supplied it will use current date. App will return the user object with the exercise fields added.",
+          "testString": ""
+        },
+        {
+          "text":
+            "I can retrieve a full exercise log of any user by getting /api/exercise/log with a parameter of userId(_id). App will return the user object with added array log and count (total exercise count).",
+          "testString": ""
+        },
+        {
+          "text":
+            "I can retrieve part of the log of any user by also passing along optional parameters of from & to or limit. (Date format yyyy-mm-dd, limit = int)",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 4,
+      "isRequired": true,
+      "releasedOn": "February 17, 2017",
+      "translations": {
+        "es": {
+          "title": "Capa de abstracción para buscar imágenes"
+        }
+      }
+    },
+    {
+      "id": "bd7158d8c443edefaeb5bd0f",
+      "title": "File Metadata Microservice",
+      "description": [
+        "Build a full stack JavaScript app that is functionally similar to this: <a href='https://purple-paladin.glitch.me/' target='_blank'>https://purple-paladin.glitch.me/</a>.",
+        "Working on this project will involve you writing your code on Glitch on our starter project. After completing this project you can copy your public glitch url (to the homepage of your app) into this screen to test it! Optionally you may choose to write your project on another platform but it must be publicly visible for our testing.",
+        "Start this project on Glitch using <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-filemetadata/' target='_blank'>this link</a> or clone <a href='https://github.com/freeCodeCamp/boilerplate-project-filemetadata/'>this repository</a> on GitHub! If you use Glitch, remember to save the link to your project somewhere safe!"
+      ],
+      "tests": [
+        {
+          "text": "I can submit a FormData object that includes a file upload.",
+          "testString": ""
+        },
+        {
+          "text":
+            "When I submit something, I will receive the file size in bytes within the JSON response.",
+          "testString": ""
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "challengeType": 4,
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "translations": {
+        "es": {
+          "title": "Microservicio de metadatos de archivos"
+        }
+      }
+    }
+  ]
+}

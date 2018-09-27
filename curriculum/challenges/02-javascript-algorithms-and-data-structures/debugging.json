@@ -1,0 +1,588 @@
+{
+  "name": "Debugging",
+  "order": 4,
+  "time": "1 hour",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "587d7b83367417b2b2512b33",
+      "title": "Use the JavaScript Console to Check the Value of a Variable",
+      "description": [
+        "Both Chrome and Firefox have excellent JavaScript consoles, also known as DevTools, for debugging your JavaScript.",
+        "You can find Developer tools in your Chrome's menu or Web Console in FireFox's menu. If you're using a different browser, or a mobile phone, we strongly recommend switching to desktop Firefox or Chrome.",
+        "The <code>console.log()</code> method, which \"prints\" the output of what's within its parentheses to the console, will likely be the most helpful debugging tool. Placing it at strategic points in your code can show you the intermediate values of variables. It's good practice to have an idea of what the output should be before looking at what it is. Having check points to see the status of your calculations throughout your code will help narrow down where the problem is.",
+        "Here's an example to print 'Hello world!' to the console:",
+        "<code>console.log('Hello world!');</code>",
+        "<hr>",
+        "Use the <code>console.log()</code> method to print the value of the variable <code>a</code> where noted in the code."
+      ],
+      "tests": [
+        {
+          "text": "Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.",
+          "testString": "assert(code.match(/console\\.log\\(a\\)/g), 'Your code should use <code>console.log()</code> to check the value of the variable <code>a</code>.');"
+        }
+      ],
+      "solutions": ["var a = 5; console.log(a);"],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let a = 5;",
+            "let b = 1;",
+            "a++;",
+            "// Add your code below this line",
+            "",
+            "",
+            "let sumAB = a + b;",
+            "console.log(sumAB);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b83367417b2b2512b37",
+      "title": "Understanding the Differences between the freeCodeCamp and Browser Console",
+      "description": [
+        "You may have noticed that some freeCodeCamp JavaScript challenges include their own console.  This console behaves a little differently than the browser console you used in the last challenge.",
+        "The following challenge is meant to highlight some of the differences between the freeCodeCamp console and the browser console.",
+        "First, the browser console.  When you load and run an ordinary JavaScript file in your browser the <code>console.log()</code> statements will print exactly what you tell them to print to the browser console the exact number of times you requested. In your in-browser text editor the process is slightly different and can be confusing at first.",
+        "Values passed to <code>console.log()</code> in the text editor block run each set of tests as well as one more time for any function calls that you have in your code.",
+        "This lends itself to some interesting behavior and might trip you up in the beginning, because a logged value that you expect to see only once may print out many more times depending on the number of tests and the values being passed to those tests.",
+        "If you would like to see only your single output and not have to worry about running through the test cycles, you can use <code>console.clear()</code>.",
+        "<hr>",
+        "Use <code>console.log()</code> to print the variables in the code where indicated.",
+        ""
+      ],
+      "tests": [
+        {
+          "text": "Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.",
+          "testString": "assert(code.match(/console\\.log\\(outputTwo\\)/g), 'Use <code>console.log()</code> to print the <code>outputTwo</code> variable.  In your Browser Console this should print out the value of the variable two times.');"
+        },
+        {
+          "text": "Use <code>console.log()</code> to print the <code>outputOne</code> variable.",
+          "testString": "assert(code.match(/console\\.log\\(outputOne\\)/g), 'Use <code>console.log()</code> to print the <code>outputOne</code> variable.');"
+        },
+        {
+          "text": "Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.",
+          "testString": "assert(code.match(/^(\\s*console.clear\\(\\);?\\s*)$/gm), 'Use <code>console.clear()</code> to modify your output so that <code>outputOne</code> variable only outputs once.');"
+        }
+      ],
+      "solutions": [
+        "let outputTwo = \"This will print to the browser console 2 times\"; console.log(outputTwo); let outputOne = \"Try to get this to log only once to the browser console\";\nconsole.clear();\nconsole.log(outputOne);"
+      ],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "// Open your browser console",
+            "let outputTwo = \"This will print to the browser console 2 times\";",
+            "// Use console.log() to print the outputTwo variable",
+            "",
+            "",
+            "let outputOne = \"Try to get this to log only once to the browser console\";",
+            "// Use console.clear() in the next line to print the outputOne only once",
+            "",
+            "",
+            "// Use console.log() to print the outputOne variable",
+            "",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b84367417b2b2512b34",
+      "title": "Use typeof to Check the Type of a Variable",
+      "description": [
+        "You can use <code>typeof</code> to check the data structure, or type, of a variable. This is useful in debugging when working with multiple data types. If you think you're adding two numbers, but one is actually a string, the results can be unexpected. Type errors can lurk in calculations or function calls. Be careful especially when you're accessing and working with external data in the form of a JavaScript Object Notation (JSON) object.",
+        "Here are some examples using <code>typeof</code>:",
+        "<blockquote>console.log(typeof \"\"); // outputs \"string\"<br>console.log(typeof 0); // outputs \"number\"<br>console.log(typeof []); // outputs \"object\"<br>console.log(typeof {}); // outputs \"object\"</blockquote>",
+        "JavaScript recognizes six primitive (immutable) data types: <code>Boolean</code>, <code>Null</code>, <code>Undefined</code>, <code>Number</code>, <code>String</code>, and <code>Symbol</code> (new with ES6) and one type for mutable items: <code>Object</code>. Note that in JavaScript, arrays are technically a type of object.",
+        "<hr>",
+        "Add two <code>console.log()</code> statements to check the <code>typeof</code> each of the two variables <code>seven</code> and <code>three</code> in the code."
+      ],
+      "tests": [
+        {
+          "text": "Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.",
+          "testString": "assert(code.match(/console\\.log\\(typeof[\\( ].*\\)?\\)/g).length == 2, 'Your code should use <code>typeof</code> in two <code>console.log()</code> statements to check the type of the variables.');"
+        },
+        {
+          "text": "Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.",
+          "testString": "assert(code.match(/typeof[\\( ]seven\\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>seven</code>.');"
+        },
+        {
+          "text": "Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.",
+          "testString": "assert(code.match(/typeof[\\( ]three\\)?/g), 'Your code should use <code>typeof</code> to check the type of the variable <code>three</code>.');"
+        }
+      ],
+      "solutions": [
+        "let seven = 7;let three = \"3\";console.log(typeof seven);\nconsole.log(typeof three);"
+      ],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let seven = 7;",
+            "let three = \"3\";",
+            "console.log(seven + three);",
+            "// Add your code below this line",
+            ""
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b84367417b2b2512b35",
+      "title": "Catch Misspelled Variable and Function Names",
+      "description": [
+        "The <code>console.log()</code> and <code>typeof</code> methods are the two primary ways to check intermediate values and types of program output. Now it's time to get into the common forms that bugs take. One syntax-level issue that fast typers can commiserate with is the humble spelling error.",
+        "Transposed, missing, or mis-capitalized characters in a variable or function name will have the browser looking for an object that doesn't exist - and complain in the form of a reference error. JavaScript variable and function names are case-sensitive.",
+        "<hr>",
+        "Fix the two spelling errors in the code so the <code>netWorkingCapital</code> calculation works."
+      ],
+      "tests": [
+        {
+          "text": "Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".",
+          "testString": "assert(netWorkingCapital === 2, 'Check the spelling of the two variables used in the netWorkingCapital calculation, the console output should show that \"Net working capital is: 2\".');"
+        },
+        {
+          "text": "There should be no instances of mis-spelled variables in the code.",
+          "testString": "assert(!code.match(/recievables/g), 'There should be no instances of mis-spelled variables in the code.');"
+        },
+        {
+          "text": "The <code>receivables</code> variable should be declared and used properly in the code.",
+          "testString": "assert(code.match(/receivables/g).length == 2, 'The <code>receivables</code> variable should be declared and used properly in the code.');"
+        },
+        {
+          "text": "There should be no instances of mis-spelled variables in the code.",
+          "testString": "assert(!code.match(/payable;/g), 'There should be no instances of mis-spelled variables in the code.');"
+        },
+        {
+          "text": "The <code>payables</code> variable should be declared and used properly in the code.",
+          "testString": "assert(code.match(/payables/g).length == 2, 'The <code>payables</code> variable should be declared and used properly in the code.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let receivables = 10;",
+            "let payables = 8;",
+            "let netWorkingCapital = recievables - payable;",
+            "console.log(`Net working capital is: ${netWorkingCapital}`);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b84367417b2b2512b36",
+      "title": "Catch Unclosed Parentheses, Brackets, Braces and Quotes",
+      "description": [
+        "Another syntax error to be aware of is that all opening parentheses, brackets, curly braces, and quotes have a closing pair. Forgetting a piece tends to happen when you're editing existing code and inserting items with one of the pair types. Also, take care when nesting code blocks into others, such as adding a callback function as an argument to a method.",
+        "One way to avoid this mistake is as soon as the opening character is typed, immediately include the closing match, then move the cursor back between them and continue coding. Fortunately, most modern code editors generate the second half of the pair automatically.",
+        "<hr>",
+        "Fix the two pair errors in the code."
+      ],
+      "tests": [
+        {
+          "text": "Your code should fix the missing piece of the array.",
+          "testString": "assert(code.match(/myArray\\s*?=\\s*?\\[\\s*?1\\s*?,\\s*?2\\s*?,\\s*?3\\s*?\\];/g), 'Your code should fix the missing piece of the array.');"
+        },
+        {
+          "text": "Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".",
+          "testString": "assert(arraySum === 6, 'Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that \"Sum of array values is: 6\".');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let myArray = [1, 2, 3;",
+            "let arraySum = myArray.reduce((previous, current =>  previous + current);",
+            "console.log(`Sum of array values is: ${arraySum}`);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b84367417b2b2512b37",
+      "title": "Catch Mixed Usage of Single and Double Quotes",
+      "description": [
+        "JavaScript allows the use of both single ('') and double (\"\") quotes to declare a string. Deciding which one to use generally comes down to personal preference, with some exceptions.",
+        "Having two choices is great when a string has contractions or another piece of text that's in quotes. Just be careful that you don't close the string too early, which causes a syntax error.",
+        "Here are some examples of mixing quotes:",
+        "<blockquote>// These are correct:<br>const grouchoContraction = \"I've had a perfectly wonderful evening, but this wasn't it.\";<br>const quoteInString = \"Groucho Marx once said 'Quote me as saying I was mis-quoted.'\";<br>// This is incorrect:<br>const uhOhGroucho = 'I've had a perfectly wonderful evening, but this wasn't it.';</blockquote>",
+        "Of course, it is okay to use only one style of quotes. You can escape the quotes inside the string by using the backslash (\\) escape character:",
+        "<blockquote>// Correct use of same quotes:<br>const allSameQuotes = 'I\\'ve had a perfectly wonderful evening, but this wasn\\'t it.';</blockquote>",
+        "<hr>",
+        "Fix the string so it either uses different quotes for the <code>href</code> value, or escape the existing ones. Keep the double quote marks around the entire string."
+      ],
+      "tests": [
+        {
+          "text": "Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.",
+          "testString": "assert(code.match(/<a href=\\s*?('|\\\\\")#Home\\1\\s*?>/g), 'Your code should fix the quotes around the <code>href</code> value \"#Home\" by either changing or escaping them.');"
+        },
+        {
+          "text": "Your code should keep the double quotes around the entire string.",
+          "testString": "assert(code.match(/\"<p>.*?<\\/p>\";/g), 'Your code should keep the double quotes around the entire string.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let innerHtml = \"<p>Click here to <a href=\"#Home\">return home</a></p>\";",
+            "console.log(innerHtml);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b85367417b2b2512b38",
+      "title": "Catch Use of Assignment Operator Instead of Equality Operator",
+      "description": [
+        "Branching programs, i.e. ones that do different things if certain conditions are met, rely on <code>if</code>, <code>else if</code>, and <code>else</code> statements in JavaScript. The condition sometimes takes the form of testing whether a result is equal to a value.",
+        "This logic is spoken (in English, at least) as \"if x equals y, then ...\" which can literally translate into code using the <code>=</code>, or assignment operator. This leads to unexpected control flow in your program.",
+        "As covered in previous challenges, the assignment operator (<code>=</code>) in JavaScript assigns a value to a variable name. And the <code>==</code> and <code>===</code> operators check for equality (the triple <code>===</code> tests for strict equality, meaning both value and type are the same).",
+        "The code below assigns <code>x</code> to be 2, which evaluates as <code>true</code>. Almost every value on its own in JavaScript evaluates to <code>true</code>, except what are known as the \"falsy\" values: <code>false</code>, <code>0</code>, <code>\"\"</code> (an empty string), <code>NaN</code>, <code>undefined</code>, and <code>null</code>.",
+        "<blockquote>let x = 1;<br>let y = 2;<br>if (x = y) {<br>&nbsp;&nbsp;// this code block will run for any value of y (unless y were originally set as a falsy)<br>} else {<br>&nbsp;&nbsp;// this code block is what should run (but won't) in this example<br>}</blockquote>",
+        "<hr>",
+        "Fix the condition so the program runs the right branch, and the appropriate value is assigned to <code>result</code>."
+      ],
+      "tests": [
+        {
+          "text": "Your code should fix the condition so it checks for equality, instead of using assignment.",
+          "testString": "assert(result == \"Not equal!\", 'Your code should fix the condition so it checks for equality, instead of using assignment.');"
+        },
+        {
+          "text": "The condition can use either <code>==</code> or <code>===</code> to test for equality.",
+          "testString": "assert(code.match(/x\\s*?===?\\s*?y/g), 'The condition can use either <code>==</code> or <code>===</code> to test for equality.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "let x = 7;",
+            "let y = 9;",
+            "let result = \"to come\";",
+            "",
+            "if(x = y) {",
+            "  result = \"Equal!\";",
+            "} else {",
+            "  result = \"Not equal!\";",
+            "}",
+            "",
+            "console.log(result);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b85367417b2b2512b39",
+      "title": "Catch Missing Open and Closing Parenthesis After a Function Call",
+      "description": [
+        "When a function or method doesn't take any arguments, you may forget to include the (empty) opening and closing parentheses when calling it. Often times the result of a function call is saved in a variable for other use in your code. This error can be detected by logging variable values (or their types) to the console and seeing that one is set to a function reference, instead of the expected value the function returns.",
+        "The variables in the following example are different:",
+        "<blockquote>function myFunction() {<br>&nbsp;&nbsp;return \"You rock!\";<br>}<br>let varOne = myFunction; // set to equal a function<br>let varTwo = myFunction(); // set to equal the string \"You rock!\"</blockquote>",
+        "<hr>",
+        "Fix the code so the variable <code>result</code> is set to the value returned from calling the function <code>getNine</code>."
+      ],
+      "tests": [
+        {
+          "text": "Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.",
+          "testString": "assert(result == 9, 'Your code should fix the variable <code>result</code> so it is set to the number that the function <code>getNine</code> returns.');"
+        },
+        {
+          "text": "Your code should call the <code>getNine</code> function.",
+          "testString": "assert(code.match(/getNine\\(\\)/g).length == 2, 'Your code should call the <code>getNine</code> function.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function getNine() {",
+            "  let x = 6;",
+            "  let y = 3;",
+            "  return x + y;",
+            "}",
+            "",
+            "let result = getNine;",
+            "console.log(result);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b85367417b2b2512b3a",
+      "title": "Catch Arguments Passed in the Wrong Order When Calling a Function",
+      "description": [
+        "Continuing the discussion on calling functions, the next bug to watch out for is when a function's arguments are supplied in the incorrect order. If the arguments are different types, such as a function expecting an array and an integer, this will likely throw a runtime error. If the arguments are the same type (all integers, for example), then the logic of the code won't make sense. Make sure to supply all required arguments, in the proper order to avoid these issues.",
+        "<hr>",
+        "The function <code>raiseToPower</code> raises a base to an exponent. Unfortunately, it's not called properly - fix the code so the value of <code>power</code> is the expected 8."
+      ],
+      "tests": [
+        {
+          "text": "Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.",
+          "testString": "assert(power == 8, 'Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.');"
+        },
+        {
+          "text": "Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.",
+          "testString": "assert(code.match(/raiseToPower\\(\\s*?base\\s*?,\\s*?exp\\s*?\\);/g), 'Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function raiseToPower(b, e) {",
+            "  return Math.pow(b, e);",
+            "}",
+            "",
+            "let base = 2;",
+            "let exp = 3;",
+            "let power = raiseToPower(exp, base);",
+            "console.log(power);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b86367417b2b2512b3b",
+      "title": "Catch Off By One Errors When Using Indexing",
+      "description": [
+        "<code>Off by one errors</code> (sometimes called OBOE) crop up when you're trying to target a specific index of a string or array (to slice or access a segment), or when looping over the indices of them. JavaScript indexing starts at zero, not one, which means the last index is always one less than the length of the item. If you try to access an index equal to the length, the program may throw an \"index out of range\" reference error or print <code>undefined</code>.",
+        "When you use string or array methods that take index ranges as arguments, it helps to read the documentation and understand if they are inclusive (the item at the given index is part of what's returned) or not. Here are some examples of off by one errors:",
+        "<blockquote>let alphabet = \"abcdefghijklmnopqrstuvwxyz\";<br>let len = alphabet.length;<br>for (let i = 0; i <= len; i++) {<br>&nbsp;&nbsp;// loops one too many times at the end<br>&nbsp;&nbsp;console.log(alphabet[i]);<br>}<br>for (let j = 1; j < len; j++) {<br>&nbsp;&nbsp;// loops one too few times and misses the first character at index 0<br>&nbsp;&nbsp;console.log(alphabet[j]);<br>}<br>for (let k = 0; k < len; k++) {<br>&nbsp;&nbsp;// Goldilocks approves - this is just right<br>&nbsp;&nbsp;console.log(alphabet[k]);<br>}</blockquote>",
+        "<hr>",
+        "Fix the two indexing errors in the following function so all the numbers 1 through 5 are printed to the console."
+      ],
+      "tests": [
+        {
+          "text": "Your code should set the initial condition of the loop so it starts at the first index.",
+          "testString": "assert(code.match(/i\\s*?=\\s*?0\\s*?;/g).length == 1, 'Your code should set the initial condition of the loop so it starts at the first index.');"
+        },
+        {
+          "text": "Your code should fix the initial condition of the loop so that the index starts at 0.",
+          "testString": "assert(!code.match(/i\\s?=\\s*?1\\s*?;/g), 'Your code should fix the initial condition of the loop so that the index starts at 0.');"
+        },
+        {
+          "text": "Your code should set the terminal condition of the loop so it stops at the last index.",
+          "testString": "assert(code.match(/i\\s*?<\\s*?len\\s*?;/g).length == 1, 'Your code should set the terminal condition of the loop so it stops at the last index.');"
+        },
+        {
+          "text": "Your code should fix the terminal condition of the loop so that it stops at 1 before the length.",
+          "testString": "assert(!code.match(/i\\s*?<=\\s*?len;/g), 'Your code should fix the terminal condition of the loop so that it stops at 1 before the length.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function countToFive() {",
+            "  let firstFive = \"12345\";",
+            "  let len = firstFive.length;",
+            "  // Fix the line below",
+            "  for (let i = 1; i <= len; i++) {",
+            "  // Do not alter code below this line",
+            "    console.log(firstFive[i]);",
+            "  }",
+            "}",
+            "",
+            "countToFive();"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b86367417b2b2512b3c",
+      "title": "Use Caution When Reinitializing Variables Inside a Loop",
+      "description": [
+        "Sometimes it's necessary to save information, increment counters, or re-set variables within a loop. A potential issue is when variables either should be reinitialized, and aren't, or vice versa. This is particularly dangerous if you accidentally reset the variable being used for the terminal condition, causing an infinite loop.",
+        "Printing variable values with each cycle of your loop by using <code>console.log()</code> can uncover buggy behavior related to resetting, or failing to reset a variable.",
+        "<hr>",
+        "The following function is supposed to create a two-dimensional array with <code>m</code> rows and <code>n</code> columns of zeroes. Unfortunately, it's not producing the expected output because the <code>row</code> variable isn't being reinitialized (set back to an empty array) in the outer loop. Fix the code so it returns a correct 3x2 array of zeroes, which looks like <code>[[0, 0], [0, 0], [0, 0]]</code>."
+      ],
+      "tests": [
+        {
+          "text": "Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.",
+          "testString": "assert(JSON.stringify(matrix) == \"[[0,0],[0,0],[0,0]]\", 'Your code should set the <code>matrix</code> variable to an array holding 3 rows of 2 columns of zeroes each.');"
+        },
+        {
+          "text": "The <code>matrix</code> variable should have 3 rows.",
+          "testString": "assert(matrix.length == 3, 'The <code>matrix</code> variable should have 3 rows.');"
+        },
+        {
+          "text": "The <code>matrix</code> variable should have 2 columns in each row.",
+          "testString": "assert(matrix[0].length == 2 && matrix[1].length === 2 && matrix[2].length === 2, 'The <code>matrix</code> variable should have 2 columns in each row.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function zeroArray(m, n) {",
+            "  // Creates a 2-D array with m rows and n columns of zeroes",
+            "  let newArray = [];",
+            "  let row = [];",
+            "  for (let i = 0; i < m; i++) {",
+            "    // Adds the m-th row into newArray",
+            "    ",
+            "    for (let j = 0; j < n; j++) {",
+            "      // Pushes n zeroes into the current row to create the columns",
+            "      row.push(0);",
+            "    }",
+            "    // Pushes the current row, which now has n zeroes in it, to the array",
+            "    newArray.push(row);",
+            "  }",
+            "  return newArray;",
+            "}",
+            "",
+            "let matrix = zeroArray(3, 2);",
+            "console.log(matrix);"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    },
+    {
+      "id": "587d7b86367417b2b2512b3d",
+      "title": "Prevent Infinite Loops with a Valid Terminal Condition",
+      "description": [
+        "The final topic is the dreaded infinite loop. Loops are great tools when you need your program to run a code block a certain number of times or until a condition is met, but they need a terminal condition that ends the looping. Infinite loops are likely to freeze or crash the browser, and cause general program execution mayhem, which no one wants.",
+        "There was an example of an infinite loop in the introduction to this section - it had no terminal condition to break out of the <code>while</code> loop inside <code>loopy()</code>. Do NOT call this function!",
+        "<blockquote>function loopy() {<br>&nbsp;&nbsp;while(true) {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log(\"Hello, world!\");<br>&nbsp;&nbsp;}<br>}</blockquote>",
+        "It's the programmer's job to ensure that the terminal condition, which tells the program when to break out of the loop code, is eventually reached. One error is incrementing or decrementing a counter variable in the wrong direction from the terminal condition. Another one is accidentally resetting a counter or index variable within the loop code, instead of incrementing or decrementing it.",
+        "<hr>",
+        "The <code>myFunc()</code> function contains an infinite loop because the terminal condition <code>i != 4</code> will never evaluate to <code>false</code> (and break the looping) - <code>i</code> will increment by 2 each pass, and jump right over 4 since <code>i</code> is odd to start. Fix the comparison operator in the terminal condition so the loop only runs for <code>i</code> less than or equal to 4."
+      ],
+      "tests": [
+        {
+          "text": "Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.",
+          "testString": "assert(code.match(/i\\s*?<=\\s*?4;/g).length == 1, 'Your code should change the comparison operator in the terminal condition (the middle part) of the <code>for</code> loop.');"
+        },
+        {
+          "text": "Your code should fix the comparison operator in the terminal condition of the loop.",
+          "testString": "assert(!code.match(/i\\s*?!=\\s*?4;/g), 'Your code should fix the comparison operator in the terminal condition of the loop.');"
+        }
+      ],
+      "solutions": [],
+      "hints": [],
+      "releasedOn": "Feb 17, 2017",
+      "challengeType": 1,
+      "translations": {},
+      "files": {
+        "indexjs": {
+          "key": "indexjs",
+          "ext": "js",
+          "name": "index",
+          "contents": [
+            "function myFunc() {",
+            "  for (let i = 1; i != 4; i += 2) {",
+            "    console.log(\"Still going!\");",
+            "  }",
+            "}"
+          ],
+          "head": [],
+          "tail": []
+        }
+      }
+    }
+  ]
+}

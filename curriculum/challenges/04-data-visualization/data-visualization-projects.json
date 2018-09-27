@@ -1,0 +1,177 @@
+{
+  "name": "Data Visualization Projects",
+  "order": 3,
+  "time": "150 hours",
+  "helpRoom": "Help",
+  "challenges": [
+    {
+      "id": "bd7168d8c242eddfaeb5bd13",
+      "title": "Visualize Data with a Bar Chart",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/GrZVaM' target='_blank'>https://codepen.io/freeCodeCamp/full/GrZVaM</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at <a href='https://github.com/d3/d3/blob/master/API.md#axes-d3-axis' target='_blank'>https://github.com/d3/d3/blob/master/API.md#axes-d3-axis</a>. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
+        "<strong>User Story #1:</strong> My chart should have a title with a corresponding <code>id=\"title\"</code>.",
+        "<strong>User Story #2:</strong> My chart should have a <code>g</code> element x-axis with a corresponding <code>id=\"x-axis\"</code>.",
+        "<strong>User Story #3:</strong> My chart should have a <code>g</code> element y-axis with a corresponding <code>id=\"y-axis\"</code>.",
+        "<strong>User Story #4:</strong> Both axes should contain multiple tick labels, each with the corresponding <code>class=\"tick\"</code>.",
+        "<strong>User Story #5:</strong> My chart should have a <code>rect</code> element for each data point with a corresponding <code>class=\"bar\"</code> displaying the data.",
+        "<strong>User Story #6:</strong> Each bar should have the properties <code>data-date</code> and <code>data-gdp</code> containing date and GDP values.",
+        "<strong>User Story #7:</strong> The bar elements' <code>data-date</code> properties should match the order of the provided data.",
+        "<strong>User Story #8:</strong> The bar elements' <code>data-gdp</code> properties should match the order of the provided data.",
+        "<strong>User Story #9:</strong> Each bar element's height should accurately represent the data's corresponding GDP.",
+        "<strong>User Story #10:</strong> The <code>data-date</code> attribute and its corresponding bar element should align with the corresponding value on the x-axis.",
+        "<strong>User Story #11:</strong> The <code>data-gdp</code> attribute and its corresponding bar element should align with the corresponding value on the y-axis.",
+        "<strong>User Story #12:</strong> I can mouse over an area and see a tooltip with a corresponding <code>id=\"tooltip\"</code> which displays more information about the area.",
+        "<strong>User Story #13:</strong> My tooltip should have a <code>data-date</code> property that corresponds to the <code>data-date</code> of the active area.",
+        "Here is the dataset you will need to complete this project: <code>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json</code>",
+        "You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>.",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Visualiza datos utilizando un gráfico de barras"
+        }
+      }
+    },
+    {
+      "id": "bd7178d8c242eddfaeb5bd13",
+      "title": "Visualize Data with a Scatterplot Graph",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/bgpXyK' target='_blank'>https://codepen.io/freeCodeCamp/full/bgpXyK</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at <a href='https://github.com/d3/d3/blob/master/API.md#axes-d3-axis' target='_blank'>https://github.com/d3/d3/blob/master/API.md#axes-d3-axis</a>. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
+        "<strong>User Story #1:</strong> I can see a title element that has a corresponding <code>id=\"title\"</code>.",
+        "<strong>User Story #2:</strong> I can see an x-axis that has a corresponding <code>id=\"x-axis\"</code>.",
+        "<strong>User Story #3:</strong> I can see a y-axis that has a corresponding <code>id=\"y-axis\"</code>.",
+        "<strong>User Story #4:</strong> I can see dots, that each have a class of <code>dot</code>, which represent the data being plotted.",
+        "<strong>User Story #5:</strong> Each dot should have the properties <code>data-xvalue</code> and <code>data-yvalue</code> containing their corresponding x and y values.",
+        "<strong>User Story #6:</strong> The <code>data-xvalue</code> and <code>data-yvalue</code> of each dot should be within the range of the actual data and in the correct data format. For <code>data-xvalue</code>, integers (full years) or Date objects are acceptable for test evaluation. For <code>data-yvalue</code> (minutes), use Date objects.",
+        "<strong>User Story #7:</strong> The <code>data-xvalue</code> and its corresponding dot should align with the corresponding point/value on the x-axis.",
+        "<strong>User Story #8:</strong> The <code>data-yvalue</code> and its corresponding dot should align with the corresponding point/value on the y-axis.",
+        "<strong>User Story #9:</strong> I can see multiple tick labels on the y-axis with <code>%M:%S</code> time format.",
+        "<strong>User Story #10:</strong> I can see multiple tick labels on the x-axis that show the year.",
+        "<strong>User Story #11:</strong> I can see that the range of the x-axis labels are within the range of the actual x-axis data.",
+        "<strong>User Story #12:</strong> I can see that the range of the y-axis labels are within the range of the actual y-axis data.",
+        "<strong>User Story #13:</strong> I can see a legend containing descriptive text that has <code>id=\"legend\"</code>.",
+        "<strong>User Story #14:</strong> I can mouse over an area and see a tooltip with a corresponding <code>id=\"tooltip\"</code> which displays more information about the area.",
+        "<strong>User Story #15:</strong> My tooltip should have a <code>data-year</code> property that corresponds to the <code>data-xvalue</code> of the active area.",
+        "Here is the dataset you will need to complete this project: <code>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json</code>",
+        "You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Visualiza datos utilizando un gráfico de dispersión"
+        }
+      }
+    },
+    {
+      "id": "bd7188d8c242eddfaeb5bd13",
+      "title": "Visualize Data with a Heat Map",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/JEXgeY' target='_blank'>https://codepen.io/freeCodeCamp/full/JEXgeY</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
+        "<strong>User Story #1:</strong> My heat map should have a title with a corresponding <code>id=\"title\"</code>.",
+        "<strong>User Story #2:</strong> My heat map should have a description with a corresponding <code>id=\"description\"</code>.",
+        "<strong>User Story #3:</strong> My heat map should have an x-axis with a corresponding <code>id=\"x-axis\"</code>.",
+        "<strong>User Story #4:</strong> My heat map should have a y-axis with a corresponding <code>id=\"y-axis\"</code>.",
+        "<strong>User Story #5:</strong> My heat map should have <code>rect</code> elements with a <code>class=\"cell\"</code> that represent the data.",
+        "<strong>User Story #6:</strong> There should be at least 4 different fill colors used for the cells.",
+        "<strong>User Story #7:</strong> Each cell will have the properties <code>data-month</code>, <code>data-year</code>, <code>data-temp</code> containing their corresponding month, year, and temperature values.",
+        "<strong>User Story #8:</strong> The <code>data-month</code>, <code>data-year</code> of each cell should be within the range of the data.",
+        "<strong>User Story #9:</strong> My heat map should have cells that align with the corresponding month on the y-axis.",
+        "<strong>User Story #10:</strong> My heat map should have cells that align with the corresponding year on the x-axis.",
+        "<strong>User Story #11:</strong> My heat map should have multiple tick labels on the y-axis with the full month name.",
+        "<strong>User Story #12:</strong> My heat map should have multiple tick labels on the x-axis with the years between 1754 and 2015.",
+        "<strong>User Story #13:</strong> My heat map should have a legend with a corresponding <code>id=\"legend\"</code>.",
+        "<strong>User Story #14:</strong> My legend should contain <code>rect</code> elements.",
+        "<strong>User Story #15:</strong> The <code>rect</code> elements in the legend should use at least 4 different fill colors.",
+        "<strong>User Story #16:</strong> I can mouse over an area and see a tooltip with a corresponding <code>id=\"tooltip\"</code> which displays more information about the area.",
+        "<strong>User Story #16:</strong> My tooltip should have a <code>data-year</code> property that corresponds to the <code>data-year</code> of the active area.",
+        "Here is the dataset you will need to complete this project: <code>https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json</code>",
+        "You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "January 1, 2016",
+      "challengeType": 3,
+      "translations": {
+        "es": {
+          "title": "Visualiza datos utilizando un mapa de calor"
+        }
+      }
+    },
+    {
+      "id": "587d7fa6367417b2b2512bbf",
+      "title": "Visualize Data with a Choropleth Map",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/EZKqza' target='_blank'>https://codepen.io/freeCodeCamp/full/EZKqza</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
+        "<strong>User Story #1:</strong> My choropleth should have a title with a corresponding <code>id=\"title\"</code>.",
+        "<strong>User Story #2:</strong> My choropleth should have a description element with a corresponding <code>id=\"description\"</code>.",
+        "<strong>User Story #3:</strong> My choropleth should have counties with a corresponding <code>class=\"county\"</code> that represent the data.",
+        "<strong>User Story #4:</strong> There should be at least 4 different fill colors used for the counties.",
+        "<strong>User Story #5:</strong> My counties should each have <code>data-fips</code> and <code>data-education</code> properties containing their corresponding fips and education values.",
+        "<strong>User Story #6:</strong> My choropleth should have a county for each provided data point.",
+        "<strong>User Story #7:</strong> The counties should have data-fips and data-education values that match the sample data.",
+        "<strong>User Story #8:</strong> My choropleth should have a legend with a corresponding <code>id=\"legend\"</code>.",
+        "<strong>User Story #9:</strong> There should be at least 4 different fill colors used for the legend.",
+        "<strong>User Story #10:</strong> I can mouse over an area and see a tooltip with a corresponding <code>id=\"tooltip\"</code> which displays more information about the area.",
+        "<strong>User Story #11:</strong> My tooltip should have a <code>data-education</code> property that corresponds to the <code>data-education</code> of the active area.",
+        "Here are the datasets you will need to complete this project:<br><ul><li><strong>US Education Data: </strong><code>https://raw.githubusercontent.com/no-stack-dub-sack/testable-projects-fcc/master/src/data/choropleth_map/for_user_education.json</code></li><li><strong>US County Data: </strong><code>https://raw.githubusercontent.com/no-stack-dub-sack/testable-projects-fcc/master/src/data/choropleth_map/counties.json</code></li></ul>",
+        "You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "February 17, 2017",
+      "challengeType": 3,
+      "translations": {}
+    },
+    {
+      "id": "587d7fa6367417b2b2512bc0",
+      "title": "Visualize Data with a Treemap Diagram",
+      "description": [
+        "<strong>Objective:</strong> Build a <a href='https://codepen.io' target='_blank'>CodePen.io</a> app that is functionally similar to this: <a href='https://codepen.io/freeCodeCamp/full/KaNGNR' target='_blank'>https://codepen.io/freeCodeCamp/full/KaNGNR</a>.",
+        "Fulfill the below <a href='https://en.wikipedia.org/wiki/User_story' target='_blank'>user stories</a> and get all of the tests to pass. Give it your own personal style.",
+        "You can use HTML, JavaScript, CSS, and the D3 svg-based visualization library. The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements. You will find information about generating axes at <a href='https://github.com/d3/d3/blob/master/API.md#axes-d3-axis' target='_blank'>https://github.com/d3/d3/blob/master/API.md#axes-d3-axis</a>. Required (non-virtual) DOM elements are queried on the moment of each test. If you use a frontend framework (like Vue for example), the test results may be inaccurate for dynamic content. We hope to accommodate them eventually, but these frameworks are not currently supported for D3 projects.",
+        "<strong>User Story #1:</strong> My tree map should have a title with a corresponding <code>id=\"title\"</code>.",
+        "<strong>User Story #2:</strong> My tree map should have a description with a corresponding <code>id=\"description\"</code>.",
+        "<strong>User Story #3:</strong> My tree map should have <code>rect</code> elements with a corresponding <code>class=\"tile\"</code> that represent the data.",
+        "<strong>User Story #4:</strong> There should be at least 2 different fill colors used for the tiles.",
+        "<strong>User Story #5:</strong> Each tile should have the properties <code>data-name</code>, <code>data-category</code>, and <code>data-value</code> containing their corresponding name, category, and value.",
+        "<strong>User Story #6:</strong> The area of each tile should correspond to the data-value amount: tiles with a larger data-value should have a bigger area.",
+        "<strong>User Story #7:</strong> My tree map should have a legend with corresponding <code>id=\"legend\"</code>.",
+        "<strong>User Story #8:</strong> My legend should have <code>rect</code> elements with a corresponding <code>class=\"legend-item\"</code>.",
+        "<strong>User Story #9:</strong> The <code>rect</code> elements in the legend should use at least 2 different fill colors.",
+        "<strong>User Story #10:</strong> I can mouse over an area and see a tooltip with a corresponding <code>id=\"tooltip\"</code> which displays more information about the area.",
+        "<strong>User Story #11:</strong> My tooltip should have a <code>data-value</code> property that corresponds to the <code>data-value</code> of the active area.",
+        "For this project you can use any of the following datasets:<br><ul><li><strong>Kickstarter Pledges:</strong> <code>https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/kickstarter-funding-data.json</code></li><li><strong>Movie Sales:</strong> <code>https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/movie-data.json</code></li><li><strong>Video Game Sales:</strong> <code>https://cdn.rawgit.com/freeCodeCamp/testable-projects-fcc/a80ce8f9/src/data/tree_map/video-game-sales-data.json</code></li></ul>",
+        "You can build your project by forking <a href='https://codepen.io/freeCodeCamp/pen/MJjpwO' target='_blank'>this CodePen pen</a>. Or you can use this CDN link to run the tests in any environment you like: <code>https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js</code>",
+        "Once you're done, submit the URL to your working project with all its tests passing.",
+        "Remember to use the <a href='https://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> method if you get stuck."
+      ],
+      "tests": [],
+      "isRequired": true,
+      "releasedOn": "February 17, 2017",
+      "challengeType": 3,
+      "translations": {}
+    }
+  ]
+}
