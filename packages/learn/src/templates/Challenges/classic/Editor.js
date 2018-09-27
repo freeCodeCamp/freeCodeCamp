@@ -39,6 +39,34 @@ const modeMap = {
   jsx: 'javascript'
 };
 
+var monacoThemesDefined = false;
+const defineMonacoThemes = (monaco) => {
+  if (monacoThemesDefined) {
+    return;
+  }
+  monacoThemesDefined = true;
+  const yellowCollor = 'FFFF00';
+  const lightBlueColor = '9CDCFE';
+  const darkBlueColor = '00107E';
+  monaco.editor.defineTheme('vs-dark-custom', {
+    base: 'vs-dark',
+    inherit: true,
+    rules: [
+      { token: 'delimiter.js', foreground: lightBlueColor },
+      { token: 'delimiter.parenthesis.js', foreground: yellowCollor },
+      { token: 'delimiter.array.js', foreground: yellowCollor },
+      { token: 'delimiter.bracket.js', foreground: yellowCollor }
+    ]
+  });
+  monaco.editor.defineTheme('vs-custom', {
+    base: 'vs',
+    inherit: true,
+    rules: [
+      { token: 'identifier.js', foreground: darkBlueColor }
+    ]
+  });
+};
+
 class Editor extends PureComponent {
   constructor(...props) {
     super(...props);
@@ -63,6 +91,10 @@ class Editor extends PureComponent {
 
   componentWillUnmount() {
     document.removeEventListener('keyup', this.focusEditor);
+  }
+
+  editorWillMount(monaco) {
+    defineMonacoThemes(monaco);
   }
 
   editorDidMount(editor, monaco) {
@@ -100,12 +132,13 @@ class Editor extends PureComponent {
 
   render() {
     const { contents, ext, theme, fileKey } = this.props;
-    const editorTheme = theme === 'night' ? 'vs-dark' : 'vs';
+    const editorTheme = theme === 'night' ? 'vs-dark-custom' : 'vs-custom';
     return (
       <div className='classic-editor editor'>
         <base href='/' />
         <MonacoEditor
           editorDidMount={::this.editorDidMount}
+          editorWillMount={::this.editorWillMount}
           key={`${editorTheme}-${fileKey}`}
           language={modeMap[ext]}
           onChange={::this.onChange}
