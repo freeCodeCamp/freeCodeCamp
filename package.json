@@ -4,14 +4,14 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "develop": "npm-run-all -s ensure-env start-develop",
-    "ensure-env": "node ./scripts/ensure-env.js",
+    "ensure-env": "node ./tools/scripts/ensure-env.js",
     "lint": "echo 'Warning: TODO - Define Linting.'",
     "pretest": "npm-run-all -s lint bootstrap",
     "test": "npm-run-all -p test:*",
     "test:client": "echo 'Warning: TODO - Define Testing.'",
     "test:curriculum": "echo 'Warning: TODO - Define Testing.'",
     "test:server": "echo 'Warning: TODO - Define Testing.'",
-    "start-develop": "node ./scripts/start-develop.js"
+    "start-develop": "node ./tools/scripts/start-develop.js"
   },
   "devDependencies": {
     "eslint-config-freecodecamp": "^1.1.1",

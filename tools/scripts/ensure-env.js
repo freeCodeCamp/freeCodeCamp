@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const env = require('../config/env');
+const env = require('../../config/env');
 
-const apiPath = path.resolve(__dirname, '../api-server');
-const clientPath = path.resolve(__dirname, '../client');
+const apiPath = path.resolve(__dirname, '../../api-server');
+const clientPath = path.resolve(__dirname, '../../client');
 
 fs.access(`${apiPath}/server/rev-manifest.json`, function(err) {
   if (err) {

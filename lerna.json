@@ -2,7 +2,8 @@
   "packages": [
     "api-server",
     "client",
-    "curriculum"
+    "curriculum",
+    "tools/challenge-md-parser"
   ],
   "version": "independent"
 }
