@@ -7,33 +7,41 @@ header {
 
 #top-nav {
   background: #006400;
-  margin-bottom: 0.45rem;
-  height: 36px;
-  margin-bottom: 0px;
-  border-radius: 0;
-  border: none;
   display: flex;
-  justify-content: space-between;
+  margin: auto;
+  height: 36px;
   padding: 0 30px 0 15px;
+  line-height: 1;
 }
 
-#top-nav .home-link {
+#top-left-nav {
   display: flex;
+  flex-grow: 0.29;
+  margin: 0;
+  justify-content: center;
   align-items: center;
 }
 
-#top-nav img {
+.home-link {
+  padding: 5.5px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-logo {
   max-height: 25px;
   min-width: 35px;
-  margin: 0 5px 0 15px;
+  margin: auto;
 }
 
 #top-right-nav {
   display: flex;
   width: auto;
-  margin: 0;
+  margin: 0 0 0 auto;
   list-style: none;
   justify-content: space-around;
+  align-items: center;
 }
 
 #top-right-nav a,
@@ -61,7 +69,7 @@ header {
 }
 
 #top-right-nav > li > a {
-  padding: 10px 15px;
+  padding: 7.5px 15px;
 }
 
 .sign-in-btn {
@@ -94,18 +102,31 @@ header {
 }
 
 .user-state-spinner {
-  height: 40px;
+  height: 36px;
+  margin-left: 11px;
 }
 
 .user-state-spinner > div {
   animation-duration: 1.5s !important;
 }
 
+#top-right-nav > li.user-settings {
+  margin-left: 15px;
+}
+
+#top-right-nav li.user-settings > a {
+  padding: 0;
+}
+
+.profile-pic {
+  height: 36px;
+  width: 36px;
+}
+
 /* Search bar */
 .fcc_searchBar {
-  flex-grow: 0.4;
-  padding: 3px 10px 0;
-  margin-right: auto;
+  width: auto;
+  flex-grow: 1;
 }
 .ais-SearchBox-input {
   max-height: 30px;
@@ -116,5 +137,11 @@ header {
 .ais-Hits {
   left: 0;
   right: 0;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90vw;
+  /* rules above used so the search
+  hits search bar's margin-right
+  and are centered on the page */
+  background-color: #fff;
 }

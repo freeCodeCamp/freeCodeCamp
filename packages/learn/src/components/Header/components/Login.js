@@ -4,14 +4,16 @@ import { Button } from 'react-bootstrap';
 
 function Login() {
   return (
-    <Button
-      bsStyle='default'
-      className='btn-cta'
-      href={HOME_PATH + '/signin'}
-      target='_blank'
-      >
-      Sign In
-    </Button>
+    <li className='sign-in-btn'>
+      <Button
+        bsStyle='default'
+        className='btn-cta sign-in-btn'
+        href={HOME_PATH + '/signin'}
+        target='_blank'
+        >
+        Sign In
+      </Button>
+    </li>
   );
 }
 

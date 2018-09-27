@@ -11,9 +11,11 @@ const mapStateToProps = createSelector(userSelector, ({ picture }) => ({
 
 function SignedIn({ picture }) {
   return (
-    <a href={HOME_PATH + '/settings'}>
-      <img height='38px' src={picture} />
-    </a>
+    <li className='user-settings'>
+      <a href={HOME_PATH + '/settings'}>
+        <img className='profile-pic' src={picture} />
+      </a>
+    </li>
   );
 }
 
