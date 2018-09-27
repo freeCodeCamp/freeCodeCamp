@@ -15,3 +15,7 @@ seed/ignore
 seed/tmp
 seed/transformed
 seed/ready
+
+# Environment specific files
+.DS_Store
+.vscode/
