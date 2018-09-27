@@ -1,14 +1,14 @@
 import { createAction, handleActions } from 'redux-actions';
 import { uniqBy } from 'lodash';
 
-import { createTypes } from '../../../utils/stateManagment';
+import { createTypes } from '../../../utils/stateManagement';
 import { types as challenge } from '../../templates/Challenges/redux';
-import fecthUserEpic from './fetch-user-epic';
+import fetchUserEpic from './fetch-user-epic';
 import hardGoToEpic from './hard-go-to-epic';
 
 const ns = 'app';
 
-export const epics = [fecthUserEpic, hardGoToEpic];
+export const epics = [fetchUserEpic, hardGoToEpic];
 
 export const types = createTypes(
   [

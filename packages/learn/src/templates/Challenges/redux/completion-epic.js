@@ -12,11 +12,11 @@ import {
 import { ofType } from 'redux-observable';
 import { navigate } from 'gatsby';
 
-import { _csrf as csrfToken } from '../../../redux/cookieVaules';
+import { _csrf as csrfToken } from '../../../redux/cookieValues';
 
 import {
   backendFormValuesSelector,
-  projectFormVaulesSelector,
+  projectFormValuesSelector,
   submitComplete,
   types,
   challengeMetaSelector,
@@ -84,7 +84,7 @@ function submitProject(type, state) {
     return empty();
   }
 
-  const { solution, githubLink } = projectFormVaulesSelector(state);
+  const { solution, githubLink } = projectFormValuesSelector(state);
   const { id, challengeType } = challengeMetaSelector(state);
   const { username } = userSelector(state);
   const challengeInfo = { id, challengeType, solution };

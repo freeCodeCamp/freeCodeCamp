@@ -17,7 +17,7 @@ import {
   defaultIfEmpty,
   mapTo
 } from 'rxjs/operators';
-import { jwt } from '../cookieVaules';
+import { jwt } from '../cookieValues';
 
 function fetchUserEpic(action$, _, { services }) {
   const fetchUser = action$.pipe(

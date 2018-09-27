@@ -7,7 +7,7 @@ import {
   currentChallengeIdSelector
 } from '../../../redux/app';
 import { postJSON$ } from '../utils/ajax-stream';
-import { _csrf } from '../../../redux/cookieVaules';
+import { _csrf } from '../../../redux/cookieValues';
 import { of } from 'rxjs/observable/of';
 
 function currentChallengeEpic(action$, { getState }) {

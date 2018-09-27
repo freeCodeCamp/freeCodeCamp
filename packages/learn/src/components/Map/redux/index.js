@@ -1,6 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 
-import { createTypes } from '../../../../utils/stateManagment';
+import { createTypes } from '../../../../utils/stateManagement';
 
 const ns = 'map';
 

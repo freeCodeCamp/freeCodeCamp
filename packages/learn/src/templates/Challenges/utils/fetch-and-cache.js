@@ -19,7 +19,7 @@ export function _fetchScript({
   const script = ajax$({ url, crossDomain })
     .do(res => {
       if (res.status !== 200) {
-        throw new Error('Request errror: ' + res.status);
+        throw new Error('Request error: ' + res.status);
       }
     })
     .map(({ response }) => response)

@@ -1,8 +1,7 @@
 import { createAction, handleActions } from 'redux-actions';
-
 import { reducer as reduxFormReducer } from 'redux-form';
 
-import { createTypes } from '../../../../utils/stateManagment';
+import { createTypes } from '../../../../utils/stateManagement';
 import { createPoly } from '../utils/polyvinyl';
 import challengeModalEpic from './challenge-modal-epic';
 import completionEpic from './completion-epic';
@@ -31,7 +30,7 @@ const initialState = {
     video: false,
     reset: false
   },
-  projectFormVaules: {},
+  projectFormValues: {},
   successMessage: 'Happy Coding!'
 };
 
@@ -145,8 +144,8 @@ export const isJSEnabledSelector = state => state[ns].isJSEnabled;
 export const successMessageSelector = state => state[ns].successMessage;
 
 export const backendFormValuesSelector = state => state.form[backendNS];
-export const projectFormVaulesSelector = state =>
-  state[ns].projectFormVaules || {};
+export const projectFormValuesSelector = state =>
+  state[ns].projectFormValues || {};
 
 export const reducer = handleActions(
   {
@@ -231,7 +230,7 @@ export const reducer = handleActions(
     }),
     [types.updateProjectFormValues]: (state, { payload }) => ({
       ...state,
-      projectFormVaules: payload
+      projectFormValues: payload
     }),
 
     [types.lockCode]: state => ({

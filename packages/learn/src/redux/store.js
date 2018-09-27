@@ -16,7 +16,7 @@ import {
 } from '../templates/Challenges/redux';
 import { reducer as map } from '../components/Map/redux';
 import servicesCreator from './createServices';
-import { _csrf } from './cookieVaules';
+import { _csrf } from './cookieValues';
 
 const serviceOptions = {
   context: _csrf ? { _csrf } : {},
