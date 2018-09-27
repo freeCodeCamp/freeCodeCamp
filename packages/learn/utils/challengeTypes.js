@@ -65,3 +65,11 @@ exports.submitTypes = {
   [backend]: 'backend',
   [modern]: 'tests'
 };
+
+// determine which help forum questions should be posted to
+exports.helpCategory = {
+  [html]: 'HTML-CSS',
+  [js]: 'JavaScript',
+  [backend]: 'JavaScript',
+  [modern]: 'JavaScript'
+};

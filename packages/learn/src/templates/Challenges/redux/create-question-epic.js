@@ -7,6 +7,7 @@ import {
 } from '../redux';
 import { tap } from 'rxjs/operators/tap';
 import { mapTo } from 'rxjs/operators/mapTo';
+import { helpCategory } from '../../../../utils/challengeTypes';
 
 function filesToMarkdown(files = {}) {
   const moreThenOneFile = Object.keys(files).length > 1;
@@ -53,11 +54,10 @@ function createQuestionEpic(action$, { getState }, { window }) {
         '**Link to the challenge:**\n',
         href
       ].join('');
-      const categories = ['HTML-CSS', 'JavaScript'];
       window.open(
         'https://forum.freecodecamp.org/new-topic' +
           '?category=' +
-          window.encodeURIComponent(categories[challengeType] || 'Help') +
+          window.encodeURIComponent(helpCategory[challengeType] || 'Help') +
           '&title=' +
           window.encodeURIComponent(challengeTitle) +
           '&body=' +
