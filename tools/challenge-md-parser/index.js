@@ -10,6 +10,7 @@ const raw = require('rehype-raw');
 const frontmatterToData = require('./frontmatter-to-data');
 const textToData = require('./text-to-data');
 const testsToData = require('./tests-to-data');
+const challengeSeedToData = require('./challengeSeed-to-data');
 
 const processor = unified()
   .use(markdown)
@@ -19,6 +20,7 @@ const processor = unified()
   .use(remark2rehype, { allowDangerousHTML: true })
   .use(raw)
   .use(textToData, ['description', 'instructions'])
+  .use(challengeSeedToData)
   // the plugins below are just to stop the processor from throwing
   // we need to write a compiler that can create graphql nodes
   .use(html);
