@@ -19,8 +19,8 @@ function LargeNav({ clickOnLogo }) {
                 <FCCSearchBar />
               </Navbar.Header>
             </Col>
-            <Col className='nav-component bins' sm={ 3 } xs={ 6 }/>
-            <Col className='nav-component nav-links' sm={ 4 } xs={ 0 }>
+            <Col className='nav-component bins' sm={ 2 } xs={ 6 }/>
+            <Col className='nav-component nav-links' sm={ 5 } xs={ 0 }>
               <Navbar.Collapse>
                 <NavLinks />
               </Navbar.Collapse>
