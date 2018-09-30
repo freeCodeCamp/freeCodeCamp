@@ -21,7 +21,6 @@ exports.buildChallenges$ = function buildChallenges$() {
       const isBeta = !!challengeSpec.isBeta;
       const isComingSoon = !!challengeSpec.isComingSoon;
       const fileName = challengeSpec.fileName;
-      const helpRoom = challengeSpec.helpRoom || 'Help';
       const time = challengeSpec.time;
       const isLocked = !!challengeSpec.isLocked;
       const message = challengeSpec.message;
@@ -68,7 +67,6 @@ exports.buildChallenges$ = function buildChallenges$() {
           );
         }
         challenge.fileName = fileName;
-        challenge.helpRoom = helpRoom;
         challenge.order = order;
         challenge.suborder = index + 1;
         challenge.block = dasherize(blockName);
