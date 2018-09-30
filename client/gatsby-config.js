@@ -7,10 +7,10 @@ module.exports = {
     title: 'freeCodeCamp',
     siteUrl: 'https://www.freecodecamp.org'
   },
-  // proxy: {
-  //   prefix: '/internal',
-  //   url: 'http://localhost:3000'
-  // },
+  proxy: {
+    prefix: '/internal',
+    url: 'http://localhost:3000'
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {

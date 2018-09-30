@@ -18,7 +18,7 @@ function currentChallengeEpic(action$, state$) {
     filter(({ payload }) => payload !== currentChallengeIdSelector(state$.value)),
     switchMap(({ payload }) => {
       const update = {
-        endpoint: '/external/update-my-current-challenge',
+        endpoint: '/update-my-current-challenge',
         payload: {
           currentChallengeId: payload
         }

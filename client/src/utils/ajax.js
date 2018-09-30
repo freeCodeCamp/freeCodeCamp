@@ -6,7 +6,7 @@ function get(path) {
   return axios.get(`${base}${path}`);
 }
 
-function post(path, body) {
+export function post(path, body) {
   return axios.post(`${base}${path}`, body);
 }
 

@@ -1,5 +1,6 @@
-import { postJSON$ } from './ajax-stream';
+import { from } from 'rxjs';
+import { post } from '../../../utils/ajax';
 
 export default function postUpdate$({ endpoint, payload }) {
-  return postJSON$(endpoint, payload);
+  return from(post(endpoint, payload));
 }

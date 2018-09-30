@@ -67,7 +67,7 @@ function submitModern(type, state) {
         files
       };
       const update = {
-        endpoint: '/external/modern-challenge-completed',
+        endpoint: '/modern-challenge-completed',
         payload: challengeInfo
       };
       return postChallenge(update, username);
@@ -90,7 +90,7 @@ function submitProject(type, state) {
   }
 
   const update = {
-    endpoint: '/external/project-completed',
+    endpoint: '/project-completed',
     payload: challengeInfo
   };
   return postChallenge(update, username).pipe(
@@ -110,7 +110,7 @@ function submitBackendChallenge(type, state) {
       const challengeInfo = { id, solution };
 
       const update = {
-        endpoint: '/external/backend-challenge-completed',
+        endpoint: '/backend-challenge-completed',
         payload: challengeInfo
       };
       return postChallenge(update, username);

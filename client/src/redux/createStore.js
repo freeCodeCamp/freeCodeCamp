@@ -4,26 +4,19 @@ import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import { createEpicMiddleware } from 'redux-observable';
 
-import servicesCreator from './createServices';
-import { _csrf } from './cookieValues';
-
 import rootEpic from './rootEpic';
 import rootReducer from './rootReducer';
 import rootSaga from './rootSaga';
+import { isBrowser } from '../../utils';
 
-const serviceOptions = {
-  context: _csrf ? { _csrf } : {},
-  xhrPath: '/external/services',
-  xhrTimeout: 15000
-};
+const clientSide = isBrowser();
 
 const sagaMiddleware = createSagaMiddleware();
 const epicMiddleware = createEpicMiddleware({
   dependencies: {
-    window: typeof window !== 'undefined' ? window : {},
-    location: typeof window !== 'undefined' ? window.location : {},
-    document: typeof window !== 'undefined' ? document : {},
-    services: servicesCreator(serviceOptions)
+    window: clientSide ? window : {},
+    location: clientSide ? window.location : {},
+    document: clientSide ? document : {}
   }
 });
 
