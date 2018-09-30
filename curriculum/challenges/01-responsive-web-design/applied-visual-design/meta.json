@@ -1,0 +1,8 @@
+{
+  "name": "Applied Visual Design",
+  "dashedName": "applied-visual-design",
+  "order": 2,
+  "time": "5 hours",
+  "superBlock": "responsive-web-design",
+  "superOrder": 1
+}

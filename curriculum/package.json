@@ -71,6 +71,7 @@
     "joi": "^13.3.0",
     "joi-objectid": "^2.0.0",
     "jquery": "^3.3.1",
+    "js-yaml": "^3.12.0",
     "lint-staged": "^7.2.0",
     "lodash": "^4.17.10",
     "prettier": "^1.13.5",

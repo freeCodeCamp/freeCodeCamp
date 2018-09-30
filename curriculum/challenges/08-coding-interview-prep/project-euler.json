@@ -7782,7 +7782,7 @@
     {
       "id": "5900f4041000cf542c50ff17",
       "challengeType": 5,
-      "title": "Problem 152: Writing 1/2 as a sum of inverse squares",
+      "title": "Problem 152: Writing one half as a sum of inverse squares",
       "tests": [
         {
           "text": "<code>euler152()</code> should return 301.",
@@ -8048,7 +8048,7 @@
     {
       "id": "5900f4091000cf542c50ff1c",
       "challengeType": 5,
-      "title": "Problem 157: Solving the diophantine equation 1/a+1/b= p/10n",
+      "title": "Problem 157: Solving the diophantine equation",
       "tests": [
         {
           "text": "<code>euler157()</code> should return 53490.",
@@ -13600,7 +13600,7 @@
       "id": "5900f4881000cf542c50ff9a",
       "challengeType": 5,
       "title":
-        "Problem 283: Integer sided triangles for which the  area/perimeter ratio is integral",
+        "Problem 283: Integer sided triangles for which the area * perimeter ratio is integral",
       "tests": [
         {
           "text": "<code>euler283()</code> should return 28038042525570324.",

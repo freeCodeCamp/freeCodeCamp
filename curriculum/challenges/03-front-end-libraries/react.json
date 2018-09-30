@@ -3165,7 +3165,7 @@
     },
     {
       "id": "5a24c314108439a4d4036184",
-      "title": "Render with an If/Else Condition",
+      "title": "Render with an If-Else Condition",
       "releasedOn": "December 25, 2017",
       "description": [
         "Another application of using JavaScript to control your rendered view is to tie the elements that are rendered to a condition. When the condition is true, one view renders. When it's false, it's a different view. You can do this with a standard <code>if/else</code> statement in the <code>render()</code> method of a React component.",

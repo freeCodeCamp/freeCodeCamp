@@ -1,0 +1,8 @@
+{
+  "name": "React and Redux",
+  "dashedName": "react-and-redux",
+  "order": 7,
+  "time": "5 hours",
+  "superBlock": "front-end-libraries",
+  "superOrder": 3
+}
