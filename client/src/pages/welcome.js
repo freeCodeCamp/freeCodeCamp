@@ -8,7 +8,7 @@ import { Grid, Row, Col, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import { Loader, Spacer } from '../components/helpers';
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import { userSelector, userFetchStateSelector } from '../redux';
 import { randomQuote } from '../utils/get-words';
 

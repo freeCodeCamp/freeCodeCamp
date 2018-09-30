@@ -13,7 +13,7 @@ import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import Helmet from 'react-helmet';
 
 import { Spacer } from '../components/helpers';
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import Login from '../components/Header/components/Login';
 
 import './index.css';

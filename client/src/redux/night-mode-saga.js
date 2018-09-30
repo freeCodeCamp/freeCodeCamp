@@ -16,14 +16,14 @@ function setTheme(currentTheme = defaultTheme, theme) {
   html.classList.add(theme);
 }
 
-function* updateLocalThemeSaga({ payload }) {
-  const currentTheme = store.get(themeKey);
-  if ('user' in payload) {
-    const { theme = defaultTheme } = payload.user;
+function* updateLocalThemeSaga({ payload: {user, theme } }) {
+  const currentTheme = store.get(themeKey) || defaultTheme;
+  if (user) {
+    const { theme = defaultTheme } = user;
     return setTheme(currentTheme, theme);
   }
-  if ('theme' in payload) {
-    return setTheme(currentTheme, payload.theme);
+  if (theme) {
+    return setTheme(currentTheme, theme);
   }
   return setTheme(currentTheme);
 }

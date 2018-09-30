@@ -14,3 +14,5 @@ node_modules
 *.swp
 
 .DS_Store
+
+curriculum/dist/

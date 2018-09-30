@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 import honesty from '../resources/honesty-policy';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import Spacer from '../components/helpers/Spacer';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 

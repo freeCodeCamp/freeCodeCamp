@@ -1,10 +1,10 @@
 import { navigate } from 'gatsby';
 
-const Redirecthome = () => {
+const RedirectHome = () => {
   if (typeof window !== 'undefined') {
     navigate('/');
   }
   return null;
 };
 
-export default Redirecthome;
+export default RedirectHome;

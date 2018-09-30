@@ -6,11 +6,15 @@ import { createSelector } from 'reselect';
 import { Grid, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import { signInLoadingSelector, userSelector } from '../redux';
+import {
+  signInLoadingSelector,
+  userSelector,
+  isSignedInSelector
+} from '../redux';
 import { submitNewAbout, updateUserFlag, verifyCert } from '../redux/settings';
 import { createFlashMessage } from '../components/Flash/redux';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import Spacer from '../components/helpers/Spacer';
 import Loader from '../components/helpers/Loader';
 import FullWidthRow from '../components/helpers/FullWidthRow';
@@ -21,9 +25,11 @@ import Internet from '../components/settings/Internet';
 import Portfolio from '../components/settings/Portfolio';
 import Honesty from '../components/settings/Honesty';
 import Certification from '../components/settings/Certification';
+import RedirectHome from '../components/RedirectHome';
 
 const propTypes = {
   createFlashMessage: PropTypes.func.isRequired,
+  isSignedIn: PropTypes.bool,
   showLoading: PropTypes.bool,
   submitNewAbout: PropTypes.func.isRequired,
   toggleNightMode: PropTypes.func.isRequired,
@@ -83,9 +89,11 @@ const propTypes = {
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
-  (showLoading, user) => ({
+  isSignedInSelector,
+  (showLoading, user, isSignedIn) => ({
     showLoading,
-    user
+    user,
+    isSignedIn
   })
 );
 
@@ -107,6 +115,7 @@ const mapDispatchToProps = dispatch =>
 function ShowSettings(props) {
   const {
     createFlashMessage,
+    isSignedIn,
     submitNewAbout,
     toggleNightMode,
     user: {
@@ -154,6 +163,10 @@ function ShowSettings(props) {
         </div>
       </Layout>
     );
+  }
+
+  if (!showLoading && !isSignedIn) {
+    return <RedirectHome />;
   }
 
   return (

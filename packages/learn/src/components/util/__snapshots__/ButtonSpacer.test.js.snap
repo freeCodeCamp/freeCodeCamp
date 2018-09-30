@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<ButtonSpacer /> snapshot 1`] = `
-<div
-  className="button-spacer"
-/>
-`;
