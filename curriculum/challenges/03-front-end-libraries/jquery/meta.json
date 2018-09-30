@@ -1,0 +1,8 @@
+{
+  "name": "jQuery",
+  "dashedName": "jquery",
+  "order": 3,
+  "time": "3 hours",
+  "superBlock": "front-end-libraries",
+  "superOrder": 3
+}

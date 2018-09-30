@@ -1,4 +1,4 @@
-export function dasherize(name) {
+exports.dasherize = function dasherize(name) {
   return ('' + name)
     .toLowerCase()
     .replace(/\s/g, '-')

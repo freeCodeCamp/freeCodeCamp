@@ -1,0 +1,8 @@
+{
+  "name": "Intermediate Algorithm Scripting",
+  "dashedName": "intermediate-algorithm-scripting",
+  "order": 9,
+  "time": "50 hours",
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2
+}

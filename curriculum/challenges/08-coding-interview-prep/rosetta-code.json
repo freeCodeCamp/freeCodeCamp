@@ -654,7 +654,7 @@
       }
     },
     {
-      "title": "Averages/Mode",
+      "title": "Averages-Mode",
       "description": [
         "<p>Write a program to find the <a href=\"https://en.wikipedia.org/wiki/Mode (statistics)\" title=\"wp: Mode (statistics)\">mode</a> value of a collection.</p><p>The case where the collection is empty may be ignored. Care must be taken to handle the case where the mode is non-unique.</p><p>If it is not appropriate or possible to support a general collection, use a vector (array), if possible. If it is not appropriate or possible to support an unspecified value type, use integers.</p>"
       ],
@@ -698,7 +698,7 @@
       }
     },
     {
-      "title": "Averages/Pythagorean means",
+      "title": "Averages-Pythagorean means",
       "description": [
         "<p class='rosetta__paragraph'>Compute all three of the <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Pythagorean means' title='wp: Pythagorean means'>Pythagorean means</a> of the set of integers <big>1</big> through <big>10</big> (inclusive).</p><p class='rosetta__paragraph'>Show that <big>$A(x_1,\\ldots,x_n) \\geq G(x_1,\\ldots,x_n) \\geq H(x_1,\\ldots,x_n)$</big> for this set of positive integers.</p> The most common of the three means, the <a class='rosetta__link--rosetta' href='http://rosettacode.org/wiki/Averages/Arithmetic mean' title='Averages/Arithmetic mean'>arithmetic mean</a>, is the sum of the list divided by its length: <big>$ A(x_1, \\ldots, x_n) = \\frac{x_1 + \\cdots + x_n}{n}$</big>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Geometric mean' title='wp: Geometric mean'>geometric mean</a> is the $n$th root of the product of the list: <big>$ G(x_1, \\ldots, x_n) = \\sqrt[n]{x_1 \\cdots x_n} $</big>The <a class='rosetta__link--wiki' href='https://en.wikipedia.org/wiki/Harmonic mean' title='wp: Harmonic mean'>harmonic mean</a> is $n$ divided by the sum of the reciprocal of each item in the list: <big>$ H(x_1, \\ldots, x_n) = \\frac{n}{\\frac{1}{x_1} + \\cdots + \\frac{1}{x_n}} $</big>",
         "<p class='rosetta__paragraph'>Assume the input is an ordered array of all inclusive numbers.</p>",
@@ -757,7 +757,7 @@
       }
     },
     {
-      "title": "Averages/Root mean square",
+      "title": "Averages-Root mean square",
       "description": [
         "<p>Compute the  <a href=\"https://en.wikipedia.org/wiki/Root mean square\" title=\"wp: Root mean square\">Root mean square</a>  of the numbers 1 through 10 inclusive.</p>",
         "<p>The  root mean square  is also known by its initials RMS (or rms), and as the quadratic mean.</p><p>The RMS is calculated as the mean of the squares of the numbers, square-rooted:</p>",
@@ -3955,7 +3955,7 @@
       }
     },
     {
-      "title": "Generator/Exponential",
+      "title": "GeneratorExponential",
       "description": ["A generator is an executable entity (like a function or procedure) that contains code that yields a sequence of values, one at a time, so that each time you call the generator, the next value in the sequence is provided.", "Generators are often built on top of coroutines or objects so that the internal state of the object is handled “naturally”.", "Generators are often used in situations where a sequence is potentially infinite, and where it is possible to construct the next value of the sequence with only minimal state.", "Write a function that uses generators to generate squares and cubes. Create a new generator that filters all cubes from the generator of squares.", "The function should return the \\( n^{th} \\) value of the filtered generator.", "For example for \\(n=7\\), the function should return 81 as the sequence would be 4,9,16,25,36,49,81. Here 64 is filtered out, as it is a cube."],
       "solutions": ["function exponentialGenerator(n){\n  function* PowersGenerator(m) {\n  \tvar n=0;\n  \twhile(1) {\n  \t\tyield Math.pow(n, m);\n  \t\tn += 1;\n  \t}\n  }\n\n  function* FilteredGenerator(g, f){\n  \tvar value = g.next().value;\n  \tvar filter = f.next().value;\n  \twhile(1) {\n  \t\tif( value < filter ) {\n  \t\t\tyield value;\n  \t\t\tvalue = g.next().value;\n  \t\t} else if ( value > filter ) {\n  \t\t\tfilter = f.next().value;\n  \t\t} else {\n  \t\t\tvalue = g.next().value;\n  \t\t\tfilter = f.next().value;\n  \t\t}\n  \t}\n  }\n\n  var squares = PowersGenerator(2);\n  var cubes = PowersGenerator(3);\n\n  var filtered = FilteredGenerator(squares, cubes);\n\n  var curr=0;\n  for(var i=0;i<n;i++) curr=filtered.next();\n\n  return curr.value;\n}\n"],
       "tests": [{

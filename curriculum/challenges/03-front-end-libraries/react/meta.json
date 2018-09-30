@@ -1,0 +1,8 @@
+{
+  "name": "React",
+  "dashedName": "react",
+  "order": 5,
+  "time": "5 hours",
+  "superBlock": "front-end-libraries",
+  "superOrder": 3
+}

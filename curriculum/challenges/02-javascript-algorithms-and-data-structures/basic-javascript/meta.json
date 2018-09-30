@@ -1,0 +1,8 @@
+{
+  "name": "Basic JavaScript",
+  "dashedName": "basic-javascript",
+  "order": 1,
+  "time": "10 hours",
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2
+}
