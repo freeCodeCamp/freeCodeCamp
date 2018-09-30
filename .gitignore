@@ -16,3 +16,4 @@ node_modules
 .DS_Store
 
 curriculum/dist/
+client/static/js/frame-runner*.js
