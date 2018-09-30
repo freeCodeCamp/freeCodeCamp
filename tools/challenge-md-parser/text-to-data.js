@@ -1,12 +1,7 @@
 const visit = require('unist-util-visit');
 const toHTML = require('hast-util-to-html');
 
-const sectionFilter = (
-  { type, tagName, properties: { id = '' } },
-  sectionId
-) => {
-  return type === 'element' && tagName === 'section' && id === sectionId;
-};
+const { sectionFilter } = require('./utils')
 
 function textToData(sectionIds) {
   if (!sectionIds || !Array.isArray(sectionIds) || sectionIds.length <= 0) {

@@ -13,6 +13,7 @@
     "jest": "^23.6.0"
   },
   "dependencies": {
+    "hast-util-select": "^2.1.0",
     "hast-util-to-html": "^4.0.1",
     "js-yaml": "^3.12.0",
     "lodash": "^4.17.11",
