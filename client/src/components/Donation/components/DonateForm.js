@@ -4,7 +4,7 @@ import isEmail from 'validator/lib/isEmail';
 
 import CardForm from './CardForm';
 import { injectStripe } from 'react-stripe-elements';
-import { postJSON$ } from '../../../templates/Challenges/utils/ajax-stream';
+import postUpdate$ from '../../../templates/Challenges/utils/postUpdate$';
 
 const propTypes = {
   email: PropTypes.string,
@@ -102,7 +102,7 @@ class DonateForm extends PureComponent {
         processing: true
       }
     }));
-    return postJSON$('/external/donate/charge-stripe', {
+    return postUpdate$('/donate/charge-stripe', {
       token,
       amount
     }).subscribe(
