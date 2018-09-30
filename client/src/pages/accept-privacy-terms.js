@@ -13,7 +13,7 @@ import {
 } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import { ButtonSpacer, Spacer } from '../components/helpers';
 import { acceptTerms, userSelector } from '../redux';
 import { createSelector } from 'reselect';

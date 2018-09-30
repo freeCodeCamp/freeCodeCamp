@@ -4,7 +4,7 @@ import { Grid, Panel, Button } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
 import env from '../../config/env.json';
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 import { Spacer } from '../components/helpers';
 

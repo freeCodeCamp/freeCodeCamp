@@ -18,7 +18,7 @@ import Helmet from 'react-helmet';
 import isEmail from 'validator/lib/isEmail';
 import { isString } from 'lodash';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import { Spacer } from '../components/helpers';
 import './update-email.css';
 import { userSelector } from '../redux';

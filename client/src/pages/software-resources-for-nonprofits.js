@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@freecodecamp/react-bootstrap';
 import Helmet from 'react-helmet';
 
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import FullWidthRow from '../components/helpers/FullWidthRow';
 import { Spacer } from '../components/helpers';
 

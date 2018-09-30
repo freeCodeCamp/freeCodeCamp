@@ -20,7 +20,7 @@ import {
   userSelector,
   reportUser
 } from '../redux';
-import Layout from '../components/Layout';
+import Layout from '../components/layouts/Default';
 import { Spacer, Loader, FullWidthRow } from '../components/helpers';
 
 const propTypes = {
