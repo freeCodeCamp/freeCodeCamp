@@ -1,7 +1,7 @@
 const visit = require('unist-util-visit');
 const toHTML = require('hast-util-to-html');
 
-const { sectionFilter } = require('./utils')
+const { sectionFilter } = require('./utils');
 
 function textToData(sectionIds) {
   if (!sectionIds || !Array.isArray(sectionIds) || sectionIds.length <= 0) {
