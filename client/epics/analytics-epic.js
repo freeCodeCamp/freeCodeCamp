@@ -14,7 +14,7 @@ import capitalize from 'lodash/capitalize';
 //   label?: String,
 //   value?: String
 // }
-//
+
 const types = [ 'event', 'social' ];
 function formatFields({ type, ...fields }) {
   // make sure type is supported
