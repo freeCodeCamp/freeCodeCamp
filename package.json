@@ -2,7 +2,7 @@
   "name": "@freecodecamp/freecodecamp",
   "version": "0.0.1",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap && lerna run build --scope @freecodecamp/curriculum",
     "develop": "npm-run-all -s ensure-env start-develop",
     "ensure-env": "node ./tools/scripts/ensure-env.js",
     "lint": "echo 'Warning: TODO - Define Linting.'",
