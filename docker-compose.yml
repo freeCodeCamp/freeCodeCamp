@@ -1,4 +1,4 @@
-# Docker Compose file for FreeCodeCamp
+# Docker Compose file for FreeCodeCamp.
 #
 # Bootstrap with:
 #   docker-compose run --rm freecodecamp npm install
