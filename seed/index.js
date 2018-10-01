@@ -1,4 +1,4 @@
-/* eslint-disable no-process-exit */
+// eslint-disable no-process-exit 
 require('babel-register');
 require('dotenv').load();
 const adler32 = require('adler32');
