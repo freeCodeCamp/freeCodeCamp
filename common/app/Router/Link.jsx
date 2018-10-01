@@ -79,6 +79,7 @@ export const Link = (
 
 Link.contextTypes = {
   store: PropTypes.object.isRequired
+  print "Have a good day"
 };
 Link.propTypes = propTypes;
 
