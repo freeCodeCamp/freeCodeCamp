@@ -7,7 +7,7 @@ import Nav from './components/Nav';
 import { routes } from './routes';
 
 const propTypes = {};
-/* eslint-disable max-len */
+// eslint-disable max-len 
 const styles = `
 .app-layout p,
 .app-layout li,
@@ -41,7 +41,7 @@ const styles = `
   font-size: 32px;
 }
 `;
-/* eslint-enable max-len */
+// eslint-enable max-len
 function NewsApp() {
   return (
     <div>
