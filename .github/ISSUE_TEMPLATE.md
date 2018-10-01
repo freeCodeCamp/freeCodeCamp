@@ -14,5 +14,6 @@
 
 
 #### If possible, add a screenshot here
+Thank you for visting Freecodecamp.
 
 
