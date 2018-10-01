@@ -30,3 +30,4 @@ Closes #XXXXX
 
 #### Description
 <!-- Describe your changes in detail -->
+Thank you for visiting Codecamp.
