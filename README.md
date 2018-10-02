@@ -9,7 +9,7 @@
 freeCodeCamp is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
 Our full stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
-
+      
 ### Certifications
 
 freeCodeCamp offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take beginner programmers around 300 hours to learn.
@@ -107,7 +107,7 @@ Our community also has:
 
 If you think you've found a bug, first read the [Help I've Found a Bug](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions. If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug.
 
-### Found a security issue?
+### Found a security issue?       
 
 Please don't create GitHub issues for security issues. Instead, please send an email to security@freecodecamp.org and we'll look into it immediately.
 
