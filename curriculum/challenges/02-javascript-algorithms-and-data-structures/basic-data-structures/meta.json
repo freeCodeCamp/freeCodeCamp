@@ -1,8 +1,0 @@
-{
-  "name": "Basic Data Structures",
-  "dashedName": "basic-data-structures",
-  "order": 5,
-  "time": "1 hour",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
-}

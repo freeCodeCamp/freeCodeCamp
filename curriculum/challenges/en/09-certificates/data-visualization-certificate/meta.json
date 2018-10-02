@@ -1,0 +1,14 @@
+{
+  "name": "Data Visualization Certificate",
+  "dashedName": "data-visualization-certificate",
+  "order": 4,
+  "time": "",
+  "superBlock": "certificates",
+  "superOrder": 9,
+  "challengeOrder": [
+    [
+      "5a553ca864b52e1d8bceea14",
+      "Data Visualization Certificate"
+    ]
+  ]
+}

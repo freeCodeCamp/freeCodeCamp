@@ -1,0 +1,90 @@
+{
+  "name": "Take Home Projects",
+  "dashedName": "take-home-projects",
+  "order": 4,
+  "time": "",
+  "superBlock": "coding-interview-prep",
+  "superOrder": 8,
+  "challengeOrder": [
+    [
+      "bd7158d8c442eddfaeb5bd10",
+      "Show the Local Weather"
+    ],
+    [
+      "bd7158d8c442eddfaeb5bd19",
+      "Build a Wikipedia Viewer"
+    ],
+    [
+      "bd7158d8c442eddfaeb5bd1f",
+      "Use the Twitch JSON API"
+    ],
+    [
+      "bd7158d8c443edefaeb5bdee",
+      "Build an Image Search Abstraction Layer"
+    ],
+    [
+      "bd7158d8c442eedfaeb5bd1c",
+      "Build a Tic Tac Toe Game"
+    ],
+    [
+      "bd7158d8c442eddfaeb5bd1c",
+      "Build a Simon Game"
+    ],
+    [
+      "bd7156d8c242eddfaeb5bd13",
+      "Build a Camper Leaderboard"
+    ],
+    [
+      "bd7155d8c242eddfaeb5bd13",
+      "Build a Recipe Box"
+    ],
+    [
+      "bd7154d8c242eddfaeb5bd13",
+      "Build the Game of Life"
+    ],
+    [
+      "bd7153d8c242eddfaeb5bd13",
+      "Build a Roguelike Dungeon Crawler Game"
+    ],
+    [
+      "bd7150d8c442eddfafb5bd1c",
+      "P2P Video Chat Application"
+    ],
+    [
+      "bd7198d8c242eddfaeb5bd13",
+      "Show National Contiguity with a Force Directed Graph"
+    ],
+    [
+      "bd7108d8c242eddfaeb5bd13",
+      "Map Data Across the Globe"
+    ],
+    [
+      "bd7158d8c443eddfaeb5bd0f",
+      "Manage a Book Trading Club"
+    ],
+    [
+      "bd7158d8c443eddfaeb5bdee",
+      "Build a Pinterest Clone"
+    ],
+    [
+      "bd7158d8c443eddfaeb5bdff",
+      "Build a Nightlife Coordination App"
+    ],
+    [
+      "bd7158d8c443eddfaeb5bd0e",
+      "Chart the Stock Market"
+    ],
+    [
+      "bd7158d8c443eddfaeb5bdef",
+      "Build a Voting App"
+    ],
+    [
+      "5a4b7fcdb66f799f199e11db",
+      "Build a Pong Game"
+    ],
+    [
+      "5a5d02bd919fcf9ca8cf46cb",
+      "Build a Light-Bright App"
+    ]
+  ]
+}

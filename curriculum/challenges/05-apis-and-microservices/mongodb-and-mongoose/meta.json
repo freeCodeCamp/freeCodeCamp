@@ -1,8 +1,0 @@
-{
-  "name": "MongoDB and Mongoose",
-  "dashedName": "mongodb-and-mongoose",
-  "order": 3,
-  "time": "5 hours",
-  "superBlock": "apis-and-microservices",
-  "superOrder": 5
-}

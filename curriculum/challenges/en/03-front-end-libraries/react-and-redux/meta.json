@@ -1,0 +1,50 @@
+{
+  "name": "React and Redux",
+  "dashedName": "react-and-redux",
+  "order": 7,
+  "time": "5 hours",
+  "superBlock": "front-end-libraries",
+  "superOrder": 3,
+  "challengeOrder": [
+    [
+      "5a24c314108439a4d4036141",
+      "Getting Started with React Redux"
+    ],
+    [
+      "5a24c314108439a4d4036142",
+      "Manage State Locally First"
+    ],
+    [
+      "5a24c314108439a4d4036143",
+      "Extract State Logic to Redux"
+    ],
+    [
+      "5a24c314108439a4d4036144",
+      "Use Provider to Connect Redux to React"
+    ],
+    [
+      "5a24c314108439a4d4036145",
+      "Map State to Props"
+    ],
+    [
+      "5a24c314108439a4d4036146",
+      "Map Dispatch to Props"
+    ],
+    [
+      "5a24c314108439a4d4036147",
+      "Connect Redux to React"
+    ],
+    [
+      "5a24c314108439a4d4036148",
+      "Connect Redux to the Messages App"
+    ],
+    [
+      "5a24c314108439a4d4036149",
+      "Extract Local State into Redux"
+    ],
+    [
+      "5a24c314108439a4d403614a",
+      "Moving Forward From Here"
+    ]
+  ]
+}
