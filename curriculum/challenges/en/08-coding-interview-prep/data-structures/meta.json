@@ -1,0 +1,198 @@
+{
+  "name": "Data Structures",
+  "dashedName": "data-structures",
+  "order": 2,
+  "time": "",
+  "superBlock": "coding-interview-prep",
+  "superOrder": 8,
+  "challengeOrder": [
+    [
+      "587d8253367417b2b2512c6a",
+      "Typed Arrays"
+    ],
+    [
+      "587d8250367417b2b2512c5e",
+      "Learn how a Stack Works"
+    ],
+    [
+      "587d8250367417b2b2512c5f",
+      "Create a Stack Class"
+    ],
+    [
+      "587d8250367417b2b2512c60",
+      "Create a Queue Class"
+    ],
+    [
+      "587d8255367417b2b2512c74",
+      "Create a Priority Queue Class"
+    ],
+    [
+      "587d8255367417b2b2512c75",
+      "Create a Circular Queue"
+    ],
+    [
+      "8d1323c8c441eddfaeb5bdef",
+      "Create a Set Class"
+    ],
+    [
+      "587d8253367417b2b2512c6b",
+      "Remove from a Set"
+    ],
+    [
+      "8d1923c8c441eddfaeb5bdef",
+      "Size of the Set"
+    ],
+    [
+      "587d8253367417b2b2512c6c",
+      "Perform a Union on Two Sets"
+    ],
+    [
+      "587d8253367417b2b2512c6d",
+      "Perform an Intersection on Two Sets of Data"
+    ],
+    [
+      "587d8254367417b2b2512c6e",
+      "Perform a Difference on Two Sets of Data"
+    ],
+    [
+      "587d8254367417b2b2512c6f",
+      "Perform a Subset Check on Two Sets of Data"
+    ],
+    [
+      "587d8254367417b2b2512c70",
+      "Create and Add to Sets in ES6"
+    ],
+    [
+      "587d8254367417b2b2512c71",
+      "Remove items from a set in ES6"
+    ],
+    [
+      "587d8255367417b2b2512c72",
+      "Use .has and .size on an ES6 Set"
+    ],
+    [
+      "587d8255367417b2b2512c73",
+      "Use Spread and Notes for ES5 Set() Integration"
+    ],
+    [
+      "8d5823c8c441eddfaeb5bdef",
+      "Create a Map Data Structure"
+    ],
+    [
+      "587d825b367417b2b2512c8d",
+      "Create an ES6 JavaScript Map"
+    ],
+    [
+      "587d825b367417b2b2512c8e",
+      "Create a Hash Table"
+    ],
+    [
+      "587d8251367417b2b2512c61",
+      "Work with Nodes in a Linked List"
+    ],
+    [
+      "587d8251367417b2b2512c62",
+      "Create a Linked List Class"
+    ],
+    [
+      "587d8251367417b2b2512c63",
+      "Remove Elements from a Linked List"
+    ],
+    [
+      "587d8251367417b2b2512c64",
+      "Search within a Linked List"
+    ],
+    [
+      "587d8251367417b2b2512c65",
+      "Remove Elements from a Linked List by Index"
+    ],
+    [
+      "587d8252367417b2b2512c67",
+      "Add Elements at a Specific Index in a Linked List"
+    ],
+    [
+      "587d825a367417b2b2512c87",
+      "Create a Doubly Linked List"
+    ],
+    [
+      "587d825a367417b2b2512c88",
+      "Reverse a Doubly Linked List"
+    ],
+    [
+      "587d8256367417b2b2512c7a",
+      "Find the Minimum and Maximum Value in a Binary Search Tree"
+    ],
+    [
+      "587d8257367417b2b2512c7b",
+      "Add a New Element to a Binary Search Tree"
+    ],
+    [
+      "587d8257367417b2b2512c7c",
+      "Check if an Element is Present in a Binary Search Tree"
+    ],
+    [
+      "587d8257367417b2b2512c7d",
+      "Find the Minimum and Maximum Height of a Binary Search Tree"
+    ],
+    [
+      "587d8257367417b2b2512c7e",
+      "Use Depth First Search in a Binary Search Tree"
+    ],
+    [
+      "587d8258367417b2b2512c7f",
+      "Use Breadth First Search in a Binary Search Tree"
+    ],
+    [
+      "587d8258367417b2b2512c80",
+      "Delete a Leaf Node in a Binary Search Tree"
+    ],
+    [
+      "587d8258367417b2b2512c81",
+      "Delete a Node with One Child in a Binary Search Tree"
+    ],
+    [
+      "587d8258367417b2b2512c82",
+      "Delete a Node with Two Children in a Binary Search Tree"
+    ],
+    [
+      "587d8259367417b2b2512c83",
+      "Invert a Binary Tree"
+    ],
+    [
+      "587d8259367417b2b2512c84",
+      "Create a Trie Search Tree"
+    ],
+    [
+      "587d825a367417b2b2512c8a",
+      "Insert an Element into a Max Heap"
+    ],
+    [
+      "587d825b367417b2b2512c8b",
+      "Remove an Element from a Max Heap"
+    ],
+    [
+      "587d825b367417b2b2512c8c",
+      "Implement Heap Sort with a Min Heap"
+    ],
+    [
+      "587d8256367417b2b2512c77",
+      "Adjacency List"
+    ],
+    [
+      "587d8256367417b2b2512c78",
+      "Adjacency Matrix"
+    ],
+    [
+      "587d8256367417b2b2512c79",
+      "Incidence Matrix"
+    ],
+    [
+      "587d825c367417b2b2512c90",
+      "Breadth-First Search"
+    ],
+    [
+      "587d825d367417b2b2512c96",
+      "Depth-First Search"
+    ]
+  ]
+}

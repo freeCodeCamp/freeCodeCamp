@@ -30,14 +30,15 @@ getChallenges().forEach(block => {
     order,
     time,
     superBlock,
-    superOrder
+    superOrder,
+    challengeOrder: challenges.map(({id, title}) => [id, title])
   };
   const superOrderPrefix = `0${superOrder}`;
   const outputDir = path.resolve(
     __dirname,
-    `./challenges/${superOrderPrefix}-${superBlock}/${blockDashedName}`
+    `./challenges/en/${superOrderPrefix}-${superBlock}/${blockDashedName}`
   );
-  fs.emptyDirSync(outputDir);
+  fs.ensureDirSync(outputDir);
 
   challenges.forEach(challenge => {
     const {
@@ -48,7 +49,7 @@ getChallenges().forEach(block => {
       ...restChallenge
     } = challenge;
     const challengeMeta = omit(restChallenge, blackListedFieldNames);
-    const challengeFileName = `${challenge.title}.md`;
+    const challengeFileName = `${dasherize(challenge.title)}.en.md`;
     let description = '';
     let instructions = '';
 

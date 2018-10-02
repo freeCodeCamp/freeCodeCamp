@@ -1,0 +1,30 @@
+{
+  "name": "Responsive Web Design Projects",
+  "dashedName": "responsive-web-design-projects",
+  "order": 7,
+  "time": "150 hours",
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "challengeOrder": [
+    [
+      "bd7158d8c442eddfaeb5bd18",
+      "Build a Tribute Page"
+    ],
+    [
+      "587d78af367417b2b2512b03",
+      "Build a Survey Form"
+    ],
+    [
+      "587d78af367417b2b2512b04",
+      "Build a Product Landing Page"
+    ],
+    [
+      "587d78b0367417b2b2512b05",
+      "Build a Technical Documentation Page"
+    ],
+    [
+      "bd7158d8c242eddfaeb5bd13",
+      "Build a Personal Portfolio Webpage"
+    ]
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "name": "Functional Programming",
-  "dashedName": "functional-programming",
-  "order": 8,
-  "time": "5 hours",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
-}

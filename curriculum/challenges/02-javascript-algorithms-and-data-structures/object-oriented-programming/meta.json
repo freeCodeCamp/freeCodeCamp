@@ -1,8 +1,0 @@
-{
-  "name": "Object Oriented Programming",
-  "dashedName": "object-oriented-programming",
-  "order": 7,
-  "time": "5 hours",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
-}

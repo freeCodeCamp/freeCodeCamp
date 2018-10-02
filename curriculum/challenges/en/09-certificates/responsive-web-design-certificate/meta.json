@@ -1,0 +1,14 @@
+{
+  "name": "Responsive Web Design Certificate",
+  "dashedName": "responsive-web-design-certificate",
+  "order": 1,
+  "time": "",
+  "superBlock": "certificates",
+  "superOrder": 9,
+  "challengeOrder": [
+    [
+      "561add10cb82ac38a17513bc",
+      "Responsive Web Design Certificate"
+    ]
+  ]
+}

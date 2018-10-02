@@ -1,8 +1,0 @@
-{
-  "name": "Basic Algorithm Scripting",
-  "dashedName": "basic-algorithm-scripting",
-  "order": 6,
-  "time": "50 hours",
-  "superBlock": "javascript-algorithms-and-data-structures",
-  "superOrder": 2
-}

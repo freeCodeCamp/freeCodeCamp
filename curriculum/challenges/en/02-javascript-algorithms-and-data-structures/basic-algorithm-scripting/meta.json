@@ -1,0 +1,74 @@
+{
+  "name": "Basic Algorithm Scripting",
+  "dashedName": "basic-algorithm-scripting",
+  "order": 6,
+  "time": "50 hours",
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2,
+  "challengeOrder": [
+    [
+      "56533eb9ac21ba0edf2244b3",
+      "Convert Celsius to Fahrenheit"
+    ],
+    [
+      "a202eed8fc186c8434cb6d61",
+      "Reverse a String"
+    ],
+    [
+      "a302f7aae1aa3152a5b413bc",
+      "Factorialize a Number"
+    ],
+    [
+      "a26cbbe9ad8655a977e1ceb5",
+      "Find the Longest Word in a String"
+    ],
+    [
+      "a789b3483989747d63b0e427",
+      "Return Largest Numbers in Arrays"
+    ],
+    [
+      "acda2fb1324d9b0fa741e6b5",
+      "Confirm the Ending"
+    ],
+    [
+      "afcc8d540bea9ea2669306b6",
+      "Repeat a String Repeat a String"
+    ],
+    [
+      "ac6993d51946422351508a41",
+      "Truncate a String"
+    ],
+    [
+      "a6e40f1041b06c996f7b2406",
+      "Finders Keepers"
+    ],
+    [
+      "a77dbc43c33f39daa4429b4f",
+      "Boo who"
+    ],
+    [
+      "ab6137d4e35944e21037b769",
+      "Title Case a Sentence"
+    ],
+    [
+      "579e2a2c335b9d72dd32e05c",
+      "Slice and Splice"
+    ],
+    [
+      "adf08ec01beb4f99fc7a68f2",
+      "Falsy Bouncer"
+    ],
+    [
+      "a24c1a4622e3c05097f71d67",
+      "Where do I Belong"
+    ],
+    [
+      "af2170cad53daa0770fabdea",
+      "Mutations"
+    ],
+    [
+      "a9bd25c716030ec90084d8a1",
+      "Chunky Monkey"
+    ]
+  ]
+}
