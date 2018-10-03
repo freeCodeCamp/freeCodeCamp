@@ -86,12 +86,12 @@ ObjectId("5a474d78df58bafeb3535d34")
 
 The result is a new id, for example `5a474d78df58bafeb3535d34` above.
 
-Once you have your id, put it into the JSON file as the `id` field, e.g.
+Once you have your id, put it into the markdown file as the `id` field at the top, e.g.
 
 ```
-{
-  "id": "5a474d78df58bafeb3535d34",
-  "title": "Challenge Title",
+---
+id: 5a474d78df58bafeb3535d34
+title: Challenge Title
 ```
   
 
