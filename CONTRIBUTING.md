@@ -122,35 +122,35 @@ Now that you have a copy of your fork, there is work you will need to do to keep
 
 Do this prior to every time you create a branch for a PR:
 
-1. Make sure you are on the `staging` branch
+1. Make sure you are on the `next` branch
 
 ```shell
 $ git status
-On branch staging
-Your branch is up-to-date with 'origin/staging'.
+On branch next
+Your branch is up-to-date with 'origin/next'.
 ```
 
-If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
+If your aren't on `next`, resolve outstanding files / commits and checkout the `next` branch
 
 ```shell
-$ git checkout staging
+$ git checkout next
 ```
 
 2. Do a pull with rebase against `upstream`
 
 ```shell
-$ git pull --rebase upstream staging
+$ git pull --rebase upstream next
 ```
 
-This will pull down all of the changes to the official staging branch, without making an additional commit in your local repo.
+This will pull down all of the changes to the official next branch, without making an additional commit in your local repo.
 
-3. (_Optional_) Force push your updated staging branch to your GitHub fork
+3. (_Optional_) Force push your updated next branch to your GitHub fork
 
 ```shell
-$ git push origin staging --force
+$ git push origin next --force
 ```
 
-This will overwrite the staging branch of your fork.
+This will overwrite the next branch of your fork.
 
 ### Create a Branch
 
