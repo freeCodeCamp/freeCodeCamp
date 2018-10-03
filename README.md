@@ -1,20 +1,20 @@
-![freeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
+![freeCodeCamp.org Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 [![Build Status](https://travis-ci.org/freeCodeCamp/freeCodeCamp.svg?branch=staging)](https://travis-ci.org/freeCodeCamp/freeCodeCamp)
 [![Pull Requests Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](http://makeapullrequest.com)
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](http://www.firsttimersonly.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/freecodecamp/freecodecamp/badge.svg)](https://snyk.io/test/github/freecodecamp/freecodecamp)
 
-## Welcome to freeCodeCamp's open source codebase and curriculum!
+## Welcome to freeCodeCamp.org's open source codebase and curriculum!
 
-freeCodeCamp is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
+freeCodeCamp.org is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) nonprofit](https://donate.freecodecamp.org) with the goal of helping millions of busy adults transition into tech. Our community has already helped more than 10,000 people get their first developer job.
 
 Our full stack web development curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
 ### Certifications
 
-freeCodeCamp offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take beginner programmers around 300 hours to learn.
+freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take beginner programmers around 300 hours to learn.
 
-Each of these 30 project in the freeCodeCamp curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before submitting it.
+Each of these 30 project in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before submitting it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local development environment.
 
@@ -79,7 +79,7 @@ Here are our six core certifications:
 
 #### Full Stack Development Certification
 
-Once you earn all 6 of these certifications, you'll be able to claim your freeCodeCamp Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
+Once you earn all 6 of these certifications, you'll be able to claim your freeCodeCamp.org Full Stack Development Certification. This final distinction signifies that you’ve completed around 1,800 hours of coding with a wide range of web development tools.
 
 #### Legacy Certifications
 
@@ -113,13 +113,13 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### Contributing
 
-We welcome pull requests from members of the freeCodeCamp community and from veteran developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
+We welcome pull requests from members of the freeCodeCamp.org community and from veteran developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
 
 ### License
 
-Copyright (c) 2018 freeCodeCamp.
+Copyright (c) 2018 freeCodeCamp.org
 
 The content of this repository bound by the following licenses:
 
-- The computer software is licensed under the [BSD-3-Clause](./LICENSE.md).
-- The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/seed`](/seed) and subdirectories are licensed under the [CC-BY-SA-4.0](https://github.com/freeCodeCamp/curriculum/blob/master/LICENSE.md).
+- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
+- The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) and subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.

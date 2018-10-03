@@ -22,4 +22,3 @@ Or, If you've found a issue that is not on the board, [follow these steps](READM
 Feel free to ask for help on our public [Forum](https://www.freecodecamp.org/forum) or [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors). We are excited to help you contribute to any of the projects that you would like to work on.
 
 Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
-
