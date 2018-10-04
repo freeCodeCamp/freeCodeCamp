@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const { createFilePath } = require('gatsby-source-filesystem');
+const { createFilePath } = require('@freecodecamp/gatsby-source-filesystem');
 
 const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');

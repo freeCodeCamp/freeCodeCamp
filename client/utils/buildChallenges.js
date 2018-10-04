@@ -1,6 +1,4 @@
 const { getChallengesForLang } = require('@freecodecamp/curriculum');
-const { from, of } = require('rxjs');
-const { map } = require('rxjs/operators');
 const _ = require('lodash');
 
 const utils = require('../utils');
