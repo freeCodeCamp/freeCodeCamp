@@ -380,7 +380,7 @@ the GitHub search bar at the top of the repository page. For example, you could
 search for a challenge name and the results will display all the files along
 with line numbers. Then you can proceed to the files and verify this is the area
 that you were looking forward to edit. Always feel free to reach out to the chat
-room when you are not certain of any thing specific in the code.
+room when you are not certain of anything specific in the code.
 
 ### Run The Test Suite
 
