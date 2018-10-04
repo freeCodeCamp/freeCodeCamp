@@ -19,7 +19,7 @@ that delivers challenge files to the plugin
         .map(node => createNode(node))
     )
     .catch(e =>
-      reporter.panic(`fcc-sourec-challenges
+      reporter.panic(`fcc-source-challenges
 
   ${e.message}
 

@@ -32,7 +32,7 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: '@freecodecamp/gatsby-source-filesystem',
       options: {
         name: 'introductions',
         path: path.resolve(__dirname, './src/pages')
