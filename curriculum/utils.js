@@ -4,4 +4,7 @@ exports.dasherize = function dasherize(name) {
     .replace(/\s/g, '-')
     .replace(/[^a-z0-9\-\.]/gi, '')
     .replace(/\:/g, '');
-}
+};
+
+const supportedLangs = ['english'];
+exports.supportedLangs = supportedLangs;

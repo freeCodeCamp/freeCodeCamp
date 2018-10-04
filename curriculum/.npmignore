@@ -1,3 +1,4 @@
 *
-!dist/*.js
-!dist/challenges/**/*.json
+!lib.js
+!utils.js
+!getChallenges.js

@@ -1,26 +1,10 @@
 const path = require('path');
 const { findIndex } = require('lodash');
-const invariant = require('invariant');
 const readDirP = require('readdirp-walk');
 
 const { parseMarkdown } = require('../tools/challenge-md-parser');
 
-const supportedLangs = ['english'];
-
-function validateLang(lang) {
-  invariant(lang, 'Please provide a language');
-  invariant(
-    supportedLangs.includes(lang),
-    `${lang} is not supported
-
-  Supported languages: ${JSON.stringify(supportedLangs, null, 2)}
-
-  `
-  );
-}
-
 exports.getChallengesForLang = function getChallengesForLang(lang) {
-  validateLang(lang);
   let curriculum = {};
   return new Promise(resolve =>
     readDirP({ root: path.resolve(__dirname, `./challenges/${lang}`) })
@@ -87,4 +71,3 @@ function getBlockNameFromPath(filePath) {
   const [, block] = filePath.split('/');
   return block;
 }
-
