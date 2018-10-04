@@ -13,7 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.2.0",
     "@fortawesome/free-solid-svg-icons": "^5.2.0",
     "@fortawesome/react-fontawesome": "0.0.20",
-    "@freecodecamp/curriculum": "^3.2.1",
+    "@freecodecamp/curriculum": "0.0.0-next.1",
     "@freecodecamp/gatsby-source-filesystem": "^2.0.1-beta.3",
     "@freecodecamp/react-bootstrap": "^0.32.3",
     "@reach/router": "^1.1.1",

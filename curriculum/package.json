@@ -3,24 +3,22 @@
   "description": "freeCodeCamp's curriculum seed files",
   "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
   "author": "freeCodeCamp <team@freecodecamp.org>",
-  "homepage": "https://github.com/freeCodeCamp/curriculum#readme",
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/freeCodeCamp/curriculum.git"
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp.git"
   },
   "bugs": {
-    "url": "https://github.com/freeCodeCamp/curriculum/issues"
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
-  "version": "3.2.1",
-  "main": "getChallenges.js",
+  "version": "0.0.0-next.1",
+  "main": "lib.js",
   "scripts": {
-    "build": "gulp babel",
     "precommit": "lint-staged",
     "commit": "git-cz",
     "commitmsg": "commitlint -e",
     "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
     "lint": "eslint ./**/*.js --fix",
-    "prepack": "npm run build",
     "repack": "babel-node ./repack.js",
     "semantic-release": "semantic-release",
     "test": "babel-node ./test-challenges.js | tap-spec",
@@ -62,9 +60,6 @@
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-react": "^7.7.0",
     "fs-extra": "^6.0.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-rename": "^1.3.0",
     "husky": "^0.14.3",
     "joi": "^13.3.0",
     "joi-objectid": "^2.0.0",
