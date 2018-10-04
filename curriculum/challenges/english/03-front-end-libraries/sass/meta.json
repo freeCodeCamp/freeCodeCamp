@@ -1,0 +1,50 @@
+{
+  "name": "Sass",
+  "dashedName": "sass",
+  "order": 4,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "front-end-libraries",
+  "superOrder": 3,
+  "challengeOrder": [
+    [
+      "587d7dbd367417b2b2512bb4",
+      "Store Data with Sass Variables"
+    ],
+    [
+      "587d7dbd367417b2b2512bb5",
+      "Nest CSS with Sass"
+    ],
+    [
+      "587d7dbd367417b2b2512bb6",
+      "Create Reusable CSS with Mixins"
+    ],
+    [
+      "587d7dbe367417b2b2512bb8",
+      "Use @if and @else to Add Logic To Your Styles"
+    ],
+    [
+      "587d7dbe367417b2b2512bb9",
+      "Use @for to Create a Sass Loop"
+    ],
+    [
+      "587d7dbf367417b2b2512bba",
+      "Use @each to Map Over Items in a List"
+    ],
+    [
+      "587d7dbf367417b2b2512bbb",
+      "Apply a Style Until a Condition is Met with @while"
+    ],
+    [
+      "587d7dbf367417b2b2512bbc",
+      "Split Your Styles into Smaller Chunks with Partials"
+    ],
+    [
+      "587d7fa5367417b2b2512bbd",
+      "Extend One Set of CSS Styles to Another Element"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "03-front-end-libraries/sass.json"
+}

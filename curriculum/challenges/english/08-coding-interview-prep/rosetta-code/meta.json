@@ -1,0 +1,363 @@
+{
+  "name": "Rosetta Code",
+  "dashedName": "rosetta-code",
+  "order": 5,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "coding-interview-prep",
+  "superOrder": 8,
+  "challengeOrder": [
+    [
+      "594810f028c0303b75339acb",
+      "100 doors"
+    ],
+    [
+      "5951e88f64ebf159166a1176",
+      "24 game"
+    ],
+    [
+      "5949b579404977fbaefcd736",
+      "9 billion names of God the integer"
+    ],
+    [
+      "594810f028c0303b75339acc",
+      "ABC Problem"
+    ],
+    [
+      "594810f028c0303b75339acd",
+      "Abundant, deficient and perfect number classifications"
+    ],
+    [
+      "594810f028c0303b75339ace",
+      "Accumulator factory"
+    ],
+    [
+      "594810f028c0303b75339acf",
+      "Ackermann function"
+    ],
+    [
+      "594810f028c0303b75339ad0",
+      "Align columns"
+    ],
+    [
+      "5949b579404977fbaefcd737",
+      "Amicable pairs"
+    ],
+    [
+      "594d8d0ab97724821379b1e6",
+      "Averages-Mode"
+    ],
+    [
+      "594d966a1467eb84194f0086",
+      "Averages-Pythagorean means"
+    ],
+    [
+      "594da033de4190850b893874",
+      "Averages-Root mean square"
+    ],
+    [
+      "594db4d0dedb4c06a2a4cefd",
+      "Babbage problem"
+    ],
+    [
+      "594dc6c729e5700999302b45",
+      "Balanced brackets"
+    ],
+    [
+      "5951815dd895584b06884620",
+      "Circles of given radius through two points"
+    ],
+    [
+      "5951a53863c8a34f02bf1bdc",
+      "Closest-pair problem"
+    ],
+    [
+      "5958469238c0d8d2632f46db",
+      "Combinations"
+    ],
+    [
+      "596e414344c3b2872167f0fe",
+      "Comma quibbling"
+    ],
+    [
+      "596e457071c35c882915b3e4",
+      "Compare a list of strings"
+    ],
+    [
+      "596fd036dc1ab896c5db98b1",
+      "Convert seconds to compound duration"
+    ],
+    [
+      "596fda99c69f779975a1b67d",
+      "Count occurrences of a substring"
+    ],
+    [
+      "59713bd26bdeb8a594fb9413",
+      "Count the coins"
+    ],
+    [
+      "59713da0a428c1a62d7db430",
+      "Cramer's rule"
+    ],
+    [
+      "59669d08d75b60482359409f",
+      "Date format"
+    ],
+    [
+      "5966c21cf732a95f1b67dd28",
+      "Date manipulation"
+    ],
+    [
+      "5966f99c45e8976909a85575",
+      "Day of the week"
+    ],
+    [
+      "59694356a6e7011f7f1c5f4e",
+      "Deal cards for FreeCell"
+    ],
+    [
+      "596a8888ab7c01048de257d5",
+      "Deepcopy"
+    ],
+    [
+      "597089c87eec450c68aa1643",
+      "Define a primitive data type"
+    ],
+    [
+      "59f40b17e79dbf1ab720ed7a",
+      "Department Numbers"
+    ],
+    [
+      "59f4eafba0343628bb682785",
+      "Discordian date"
+    ],
+    [
+      "599c333915e0ea32d04d4bec",
+      "Element-wise operations"
+    ],
+    [
+      "599d0ba974141b0f508b37d5",
+      "Emirp primes"
+    ],
+    [
+      "599d15309e88c813a40baf58",
+      "Entropy"
+    ],
+    [
+      "5987fd532b954e0f21b5d3f6",
+      "Equilibrium index"
+    ],
+    [
+      "599d1566a02b571412643b84",
+      "Ethiopian multiplication"
+    ],
+    [
+      "59880443fb36441083c6c20e",
+      "Euler method"
+    ],
+    [
+      "598de241872ef8353c58a7a2",
+      "Evaluate binomial coefficients"
+    ],
+    [
+      "59e09e6d412c5939baa02d16",
+      "Execute a Markov algorithm"
+    ],
+    [
+      "59e0a8df964e4540d5abe599",
+      "Execute Brain****"
+    ],
+    [
+      "598ee8b91b410510ae82efef",
+      "Extensible prime generator"
+    ],
+    [
+      "597b2b2a2702b44414742771",
+      "Factorial"
+    ],
+    [
+      "598eea87e5cf4b116c3ff81a",
+      "Factors of a Mersenne number"
+    ],
+    [
+      "597f1e7fbc206f0e9ba95dc4",
+      "Factors of an integer"
+    ],
+    [
+      "59c3ec9f15068017c96eb8a3",
+      "Farey sequence"
+    ],
+    [
+      "598eef80ba501f1268170e1e",
+      "Fibonacci n-step number sequences"
+    ],
+    [
+      "597f24c1dda4e70f53c79c81",
+      "Fibonacci sequence"
+    ],
+    [
+      "5992e222d397f00d21122931",
+      "Fibonacci word"
+    ],
+    [
+      "5a7dad05be01840e1778a0d1",
+      "Fractran"
+    ],
+    [
+      "5a23c84252665b21eecc7e76",
+      "Gamma function"
+    ],
+    [
+      "5a23c84252665b21eecc7e77",
+      "Gaussian elimination"
+    ],
+    [
+      "5a23c84252665b21eecc7e78",
+      "General FizzBuzz"
+    ],
+    [
+      "5a23c84252665b21eecc7e7a",
+      "Generate lower case ASCII alphabet"
+    ],
+    [
+      "5a23c84252665b21eecc7e7b",
+      "GeneratorExponential"
+    ],
+    [
+      "5a23c84252665b21eecc7e80",
+      "Gray code"
+    ],
+    [
+      "5a23c84252665b21eecc7e82",
+      "Greatest common divisor"
+    ],
+    [
+      "5a23c84252665b21eecc7e84",
+      "Greatest subsequential sum"
+    ],
+    [
+      "595608ff8bcd7a50bd490181",
+      "Hailstone sequence"
+    ],
+    [
+      "594810f028c0303b75339ad1",
+      "Happy numbers"
+    ],
+    [
+      "595668ca4cfe1af2fb9818d4",
+      "Harshad or Niven series"
+    ],
+    [
+      "595671d4d2cdc305f0d5b36f",
+      "Hash from two arrays"
+    ],
+    [
+      "5956795bc9e2c415eb244de1",
+      "Hash join"
+    ],
+    [
+      "595b98f8b5a2245e243aa831",
+      "Heronian triangles"
+    ],
+    [
+      "59622f89e4e137560018a40e",
+      "Hofstadter Figure-Figure sequences"
+    ],
+    [
+      "59637c4d89f6786115efd814",
+      "Hofstadter Q sequence"
+    ],
+    [
+      "5a23c84252665b21eecc7eb0",
+      "I before E except after C"
+    ],
+    [
+      "5a23c84252665b21eecc7eaf",
+      "IBAN"
+    ],
+    [
+      "5a23c84252665b21eecc7eb1",
+      "Identity matrix"
+    ],
+    [
+      "5a23c84252665b21eecc7ec1",
+      "Iterated digits squaring"
+    ],
+    [
+      "5a23c84252665b21eecc7ec2",
+      "Jaro distance"
+    ],
+    [
+      "5a23c84252665b21eecc7ec4",
+      "JortSort"
+    ],
+    [
+      "5a23c84252665b21eecc7ec5",
+      "Josephus problem"
+    ],
+    [
+      "59da22823d04c95919d46269",
+      "Sailors, coconuts and a monkey problem"
+    ],
+    [
+      "59d9c6bc214c613ba73ff012",
+      "SEDOLs"
+    ],
+    [
+      "59667989bf71cf555dd5d2ff",
+      "S-Expressions"
+    ],
+    [
+      "594ecc0d9a8cf816e3340187",
+      "Taxicab numbers"
+    ],
+    [
+      "594faaab4e2a8626833e9c3d",
+      "Tokenize a string with escaping"
+    ],
+    [
+      "594fa2746886f41f7d8bf225",
+      "Topological sort"
+    ],
+    [
+      "595011cba5a81735713873bd",
+      "Top rank per group"
+    ],
+    [
+      "5951ed8945deab770972ae56",
+      "Towers of Hanoi"
+    ],
+    [
+      "594810f028c0303b75339ad2",
+      "Vector cross product"
+    ],
+    [
+      "594810f028c0303b75339ad3",
+      "Vector dot product"
+    ],
+    [
+      "594810f028c0303b75339ad4",
+      "Word wrap"
+    ],
+    [
+      "594810f028c0303b75339ad5",
+      "Y combinator"
+    ],
+    [
+      "594810f028c0303b75339ad6",
+      "Zeckendorf number representation"
+    ],
+    [
+      "594810f028c0303b75339ad7",
+      "Zhang-Suen thinning algorithm"
+    ],
+    [
+      "594810f028c0303b75339ad8",
+      "Zig-zag matrix"
+    ]
+  ],
+  "helpRoom": "",
+  "nChallenges": 437,
+  "fileName": "08-coding-interview-prep/rosetta-code.json"
+}

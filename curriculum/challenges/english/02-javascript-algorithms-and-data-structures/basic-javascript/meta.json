@@ -1,0 +1,442 @@
+{
+  "name": "Basic JavaScript",
+  "dashedName": "basic-javascript",
+  "order": 1,
+  "time": "10 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2,
+  "challengeOrder": [
+    [
+      "bd7123c9c441eddfaeb4bdef",
+      "Comment Your JavaScript Code"
+    ],
+    [
+      "bd7123c9c443eddfaeb5bdef",
+      "Declare JavaScript Variables"
+    ],
+    [
+      "56533eb9ac21ba0edf2244a8",
+      "Storing Values with the Assignment Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244a9",
+      "Initializing Variables with the Assignment Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244aa",
+      "Understanding Uninitialized Variables"
+    ],
+    [
+      "56533eb9ac21ba0edf2244ab",
+      "Understanding Case Sensitivity in Variables"
+    ],
+    [
+      "cf1111c1c11feddfaeb3bdef",
+      "Add Two Numbers with JavaScript"
+    ],
+    [
+      "cf1111c1c11feddfaeb4bdef",
+      "Subtract One Number from Another with JavaScript"
+    ],
+    [
+      "cf1231c1c11feddfaeb5bdef",
+      "Multiply Two Numbers with JavaScript"
+    ],
+    [
+      "cf1111c1c11feddfaeb6bdef",
+      "Divide One Number by Another with JavaScript"
+    ],
+    [
+      "56533eb9ac21ba0edf2244ac",
+      "Increment a Number with JavaScript"
+    ],
+    [
+      "56533eb9ac21ba0edf2244ad",
+      "Decrement a Number with JavaScript"
+    ],
+    [
+      "cf1391c1c11feddfaeb4bdef",
+      "Create Decimal Numbers with JavaScript"
+    ],
+    [
+      "bd7993c9c69feddfaeb7bdef",
+      "Multiply Two Decimals with JavaScript"
+    ],
+    [
+      "bd7993c9ca9feddfaeb7bdef",
+      "Divide One Decimal by Another with JavaScript"
+    ],
+    [
+      "56533eb9ac21ba0edf2244ae",
+      "Finding a Remainder in JavaScript"
+    ],
+    [
+      "56533eb9ac21ba0edf2244af",
+      "Compound Assignment With Augmented Addition"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b0",
+      "Compound Assignment With Augmented Subtraction"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b1",
+      "Compound Assignment With Augmented Multiplication"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b2",
+      "Compound Assignment With Augmented Division"
+    ],
+    [
+      "bd7123c9c444eddfaeb5bdef",
+      "Declare String Variables"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b5",
+      "Escaping Literal Quotes in Strings"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b4",
+      "Quoting Strings with Single Quotes"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b6",
+      "Escape Sequences in Strings"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b7",
+      "Concatenating Strings with Plus Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b8",
+      "Concatenating Strings with the Plus Equals Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244b9",
+      "Constructing Strings with Variables"
+    ],
+    [
+      "56533eb9ac21ba0edf2244ed",
+      "Appending Variables to Strings"
+    ],
+    [
+      "bd7123c9c448eddfaeb5bdef",
+      "Find the Length of a String"
+    ],
+    [
+      "bd7123c9c549eddfaeb5bdef",
+      "Use Bracket Notation to Find the First Character in a String"
+    ],
+    [
+      "56533eb9ac21ba0edf2244ba",
+      "Understand String Immutability"
+    ],
+    [
+      "bd7123c9c450eddfaeb5bdef",
+      "Use Bracket Notation to Find the Nth Character in a String"
+    ],
+    [
+      "bd7123c9c451eddfaeb5bdef",
+      "Use Bracket Notation to Find the Last Character in a String"
+    ],
+    [
+      "bd7123c9c452eddfaeb5bdef",
+      "Use Bracket Notation to Find the Nth-to-Last Character in a String"
+    ],
+    [
+      "56533eb9ac21ba0edf2244bb",
+      "Word Blanks"
+    ],
+    [
+      "bd7993c9c69feddfaeb8bdef",
+      "Store Multiple Values in one Variable using JavaScript Arrays"
+    ],
+    [
+      "cf1111c1c11feddfaeb7bdef",
+      "Nest one Array within Another Array"
+    ],
+    [
+      "56bbb991ad1ed5201cd392ca",
+      "Access Array Data with Indexes"
+    ],
+    [
+      "cf1111c1c11feddfaeb8bdef",
+      "Modify Array Data With Indexes"
+    ],
+    [
+      "56592a60ddddeae28f7aa8e1",
+      "Access Multi-Dimensional Arrays With Indexes"
+    ],
+    [
+      "56bbb991ad1ed5201cd392cb",
+      "Manipulate Arrays With push()"
+    ],
+    [
+      "56bbb991ad1ed5201cd392cc",
+      "Manipulate Arrays With pop()"
+    ],
+    [
+      "56bbb991ad1ed5201cd392cd",
+      "Manipulate Arrays With shift()"
+    ],
+    [
+      "56bbb991ad1ed5201cd392ce",
+      "Manipulate Arrays With unshift()"
+    ],
+    [
+      "56533eb9ac21ba0edf2244bc",
+      "Shopping List"
+    ],
+    [
+      "56bbb991ad1ed5201cd392cf",
+      "Write Reusable JavaScript with Functions"
+    ],
+    [
+      "56533eb9ac21ba0edf2244bd",
+      "Passing Values to Functions with Arguments"
+    ],
+    [
+      "56533eb9ac21ba0edf2244be",
+      "Global Scope and Functions"
+    ],
+    [
+      "56533eb9ac21ba0edf2244bf",
+      "Local Scope and Functions"
+    ],
+    [
+      "56533eb9ac21ba0edf2244c0",
+      "Global vs. Local Scope in Functions"
+    ],
+    [
+      "56533eb9ac21ba0edf2244c2",
+      "Return a Value from a Function with Return"
+    ],
+    [
+      "598e8944f009e646fc236146",
+      "Understanding Undefined Value returned from a Function"
+    ],
+    [
+      "56533eb9ac21ba0edf2244c3",
+      "Assignment with a Returned Value"
+    ],
+    [
+      "56533eb9ac21ba0edf2244c6",
+      "Stand in Line"
+    ],
+    [
+      "bd7123c9c441eddfaeb5bdef",
+      "Understanding Boolean Values"
+    ],
+    [
+      "cf1111c1c12feddfaeb3bdef",
+      "Use Conditional Logic with If Statements"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d0",
+      "Comparison with the Equality Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d1",
+      "Comparison with the Strict Equality Operator"
+    ],
+    [
+      "599a789b454f2bbd91a3ff4d",
+      "Practice comparing different values"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d2",
+      "Comparison with the Inequality Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d3",
+      "Comparison with the Strict Inequality Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d4",
+      "Comparison with the Greater Than Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d5",
+      "Comparison with the Greater Than Or Equal To Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d6",
+      "Comparison with the Less Than Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d7",
+      "Comparison with the Less Than Or Equal To Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d8",
+      "Comparisons with the Logical And Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244d9",
+      "Comparisons with the Logical Or Operator"
+    ],
+    [
+      "56533eb9ac21ba0edf2244da",
+      "Introducing Else Statements"
+    ],
+    [
+      "56533eb9ac21ba0edf2244db",
+      "Introducing Else If Statements"
+    ],
+    [
+      "5690307fddb111c6084545d7",
+      "Logical Order in If Else Statements"
+    ],
+    [
+      "56533eb9ac21ba0edf2244dc",
+      "Chaining If Else Statements"
+    ],
+    [
+      "5664820f61c48e80c9fa476c",
+      "Golf Code"
+    ],
+    [
+      "56533eb9ac21ba0edf2244dd",
+      "Selecting from Many Options with Switch Statements"
+    ],
+    [
+      "56533eb9ac21ba0edf2244de",
+      "Adding a Default Option in Switch Statements"
+    ],
+    [
+      "56533eb9ac21ba0edf2244df",
+      "Multiple Identical Options in Switch Statements"
+    ],
+    [
+      "56533eb9ac21ba0edf2244e0",
+      "Replacing If Else Chains with Switch"
+    ],
+    [
+      "5679ceb97cbaa8c51670a16b",
+      "Returning Boolean Values from Functions"
+    ],
+    [
+      "56533eb9ac21ba0edf2244c4",
+      "Return Early Pattern for Functions"
+    ],
+    [
+      "565bbe00e9cc8ac0725390f4",
+      "Counting Cards"
+    ],
+    [
+      "56bbb991ad1ed5201cd392d0",
+      "Build JavaScript Objects"
+    ],
+    [
+      "56533eb9ac21ba0edf2244c7",
+      "Accessing Object Properties with Dot Notation"
+    ],
+    [
+      "56533eb9ac21ba0edf2244c8",
+      "Accessing Object Properties with Bracket Notation"
+    ],
+    [
+      "56533eb9ac21ba0edf2244c9",
+      "Accessing Object Properties with Variables"
+    ],
+    [
+      "56bbb991ad1ed5201cd392d1",
+      "Updating Object Properties"
+    ],
+    [
+      "56bbb991ad1ed5201cd392d2",
+      "Add New Properties to a JavaScript Object"
+    ],
+    [
+      "56bbb991ad1ed5201cd392d3",
+      "Delete Properties from a JavaScript Object"
+    ],
+    [
+      "56533eb9ac21ba0edf2244ca",
+      "Using Objects for Lookups"
+    ],
+    [
+      "567af2437cbaa8c51670a16c",
+      "Testing Objects for Properties"
+    ],
+    [
+      "56533eb9ac21ba0edf2244cb",
+      "Manipulating Complex Objects"
+    ],
+    [
+      "56533eb9ac21ba0edf2244cc",
+      "Accessing Nested Objects"
+    ],
+    [
+      "56533eb9ac21ba0edf2244cd",
+      "Accessing Nested Arrays"
+    ],
+    [
+      "56533eb9ac21ba0edf2244cf",
+      "Record Collection"
+    ],
+    [
+      "cf1111c1c11feddfaeb1bdef",
+      "Iterate with JavaScript While Loops"
+    ],
+    [
+      "cf1111c1c11feddfaeb5bdef",
+      "Iterate with JavaScript For Loops"
+    ],
+    [
+      "56104e9e514f539506016a5c",
+      "Iterate Odd Numbers With a For Loop"
+    ],
+    [
+      "56105e7b514f539506016a5e",
+      "Count Backwards With a For Loop"
+    ],
+    [
+      "5675e877dbd60be8ad28edc6",
+      "Iterate Through an Array with a For Loop"
+    ],
+    [
+      "56533eb9ac21ba0edf2244e1",
+      "Nesting For Loops"
+    ],
+    [
+      "5a2efd662fb457916e1fe604",
+      "Iterate with JavaScript Do...While Loops"
+    ],
+    [
+      "5688e62ea601b2482ff8422b",
+      "Profile Lookup"
+    ],
+    [
+      "cf1111c1c11feddfaeb9bdef",
+      "Generate Random Fractions with JavaScript"
+    ],
+    [
+      "cf1111c1c12feddfaeb1bdef",
+      "Generate Random Whole Numbers with JavaScript"
+    ],
+    [
+      "cf1111c1c12feddfaeb2bdef",
+      "Generate Random Whole Numbers within a Range"
+    ],
+    [
+      "587d7b7e367417b2b2512b23",
+      "Use the parseInt Function"
+    ],
+    [
+      "587d7b7e367417b2b2512b22",
+      "Use the parseInt Function with a Radix"
+    ],
+    [
+      "587d7b7e367417b2b2512b24",
+      "Use the Conditional (Ternary) Operator"
+    ],
+    [
+      "587d7b7e367417b2b2512b21",
+      "Use Multiple Conditional (Ternary) Operators"
+    ]
+  ],
+  "helpRoom": "HelpJavaScript",
+  "fileName": "02-javascript-algorithms-and-data-structures/basic-javascript.json"
+}

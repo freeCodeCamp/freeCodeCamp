@@ -1,0 +1,106 @@
+{
+  "name": "Functional Programming",
+  "dashedName": "functional-programming",
+  "order": 8,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2,
+  "challengeOrder": [
+    [
+      "587d7b8d367417b2b2512b5b",
+      "Learn About Functional Programming"
+    ],
+    [
+      "587d7b8e367417b2b2512b5c",
+      "Understand Functional Programming Terminology"
+    ],
+    [
+      "587d7b8e367417b2b2512b5d",
+      "Understand the Hazards of Using Imperative Code"
+    ],
+    [
+      "587d7b8e367417b2b2512b5e",
+      "Avoid Mutations and Side Effects Using Functional Programming"
+    ],
+    [
+      "587d7b8e367417b2b2512b5f",
+      "Pass Arguments to Avoid External Dependence in a Function"
+    ],
+    [
+      "587d7b8f367417b2b2512b60",
+      "Refactor Global Variables Out of Functions"
+    ],
+    [
+      "587d7b8f367417b2b2512b61",
+      "Use the map Method to Extract Data from an Array"
+    ],
+    [
+      "587d7b8f367417b2b2512b62",
+      "Implement map on a Prototype"
+    ],
+    [
+      "587d7b8f367417b2b2512b63",
+      "Use the filter Method to Extract Data from an Array"
+    ],
+    [
+      "587d7b8f367417b2b2512b64",
+      "Implement the filter Method on a Prototype"
+    ],
+    [
+      "587d7b90367417b2b2512b65",
+      "Return Part of an Array Using the slice Method"
+    ],
+    [
+      "9d7123c8c441eeafaeb5bdef",
+      "Remove Elements from an Array Using slice Instead of splice"
+    ],
+    [
+      "587d7da9367417b2b2512b66",
+      "Combine Two Arrays Using the concat Method"
+    ],
+    [
+      "587d7da9367417b2b2512b67",
+      "Add Elements to the End of an Array Using concat Instead of push"
+    ],
+    [
+      "587d7da9367417b2b2512b68",
+      "Use the reduce Method to Analyze Data"
+    ],
+    [
+      "587d7da9367417b2b2512b69",
+      "Sort an Array Alphabetically using the sort Method"
+    ],
+    [
+      "587d7da9367417b2b2512b6a",
+      "Return a Sorted Array Without Changing the Original Array"
+    ],
+    [
+      "587d7daa367417b2b2512b6b",
+      "Split a String into an Array Using the split Method"
+    ],
+    [
+      "587d7daa367417b2b2512b6c",
+      "Combine an Array into a String Using the join Method"
+    ],
+    [
+      "587d7dab367417b2b2512b6d",
+      "Apply Functional Programming to Convert Strings to URL Slugs"
+    ],
+    [
+      "587d7dab367417b2b2512b6e",
+      "Use the every Method to Check that Every Element in an Array Meets a Criteria"
+    ],
+    [
+      "587d7dab367417b2b2512b6f",
+      "Use the some Method to Check that Any Elements in an Array Meet a Criteria"
+    ],
+    [
+      "587d7dab367417b2b2512b70",
+      "Introduction to Currying and Partial Application"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "02-javascript-algorithms-and-data-structures/functional-programming.json"
+}

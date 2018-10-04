@@ -1,0 +1,190 @@
+{
+  "name": "Basic CSS",
+  "dashedName": "basic-css",
+  "order": 1,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "challengeOrder": [
+    [
+      "bad87fee1348bd9aedf08803",
+      "Change the Color of Text"
+    ],
+    [
+      "bad87fee1348bd9aedf08805",
+      "Use CSS Selectors to Style Elements"
+    ],
+    [
+      "bad87fee1348bd9aecf08806",
+      "Use a CSS Class to Style an Element"
+    ],
+    [
+      "bad87fee1348bd9aefe08806",
+      "Style Multiple Elements with a CSS Class"
+    ],
+    [
+      "bad87fee1348bd9aedf08806",
+      "Change the Font Size of an Element"
+    ],
+    [
+      "bad87fee1348bd9aede08807",
+      "Set the Font Family of an Element"
+    ],
+    [
+      "bad87fee1348bd9aedf08807",
+      "Import a Google Font"
+    ],
+    [
+      "bad87fee1348bd9aedf08808",
+      "Specify How Fonts Should Degrade"
+    ],
+    [
+      "bad87fee1348bd9acdf08812",
+      "Size Your Images"
+    ],
+    [
+      "bad87fee1348bd9bedf08813",
+      "Add Borders Around Your Elements"
+    ],
+    [
+      "bad87fee1348bd9aedf08814",
+      "Add Rounded Corners with border-radius"
+    ],
+    [
+      "bad87fee1348bd9aedf08815",
+      "Make Circular Images with a border-radius"
+    ],
+    [
+      "bad87fed1348bd9aede07836",
+      "Give a Background Color to a div Element"
+    ],
+    [
+      "bad87eee1348bd9aede07836",
+      "Set the id of an Element"
+    ],
+    [
+      "bad87dee1348bd9aede07836",
+      "Use an id Attribute to Style an Element"
+    ],
+    [
+      "bad88fee1348bd9aedf08825",
+      "Adjust the Padding of an Element"
+    ],
+    [
+      "bad87fee1348bd9aedf08822",
+      "Adjust the Margin of an Element"
+    ],
+    [
+      "bad87fee1348bd9aedf08823",
+      "Add a Negative Margin to an Element"
+    ],
+    [
+      "bad87fee1348bd9aedf08824",
+      "Add Different Padding to Each Side of an Element"
+    ],
+    [
+      "bad87fee1248bd9aedf08824",
+      "Add Different Margins to Each Side of an Element"
+    ],
+    [
+      "bad87fee1348bd9aedf08826",
+      "Use Clockwise Notation to Specify the Padding of an Element"
+    ],
+    [
+      "bad87fee1348bd9afdf08726",
+      "Use Clockwise Notation to Specify the Margin of an Element"
+    ],
+    [
+      "58c383d33e2e3259241f3076",
+      "Use Attribute Selectors to Style Elements"
+    ],
+    [
+      "bad82fee1322bd9aedf08721",
+      "Understand Absolute versus Relative Units"
+    ],
+    [
+      "bad87fee1348bd9aedf08736",
+      "Style the HTML Body Element"
+    ],
+    [
+      "bad87fee1348bd9aedf08746",
+      "Inherit Styles from the Body Element"
+    ],
+    [
+      "bad87fee1348bd9aedf08756",
+      "Prioritize One Style Over Another"
+    ],
+    [
+      "bad87fee1348bd9aedf04756",
+      "Override Styles in Subsequent CSS"
+    ],
+    [
+      "bad87fee1348bd8aedf06756",
+      "Override Class Declarations by Styling ID Attributes"
+    ],
+    [
+      "bad87fee1348bd9aedf06756",
+      "Override Class Declarations with Inline Styles"
+    ],
+    [
+      "bad87fee1348bd9aedf07756",
+      "Override All Other Styles by using Important"
+    ],
+    [
+      "bad87fee1348bd9aedf08726",
+      "Use Hex Code for Specific Colors"
+    ],
+    [
+      "bad87fee1348bd9aedf08721",
+      "Use Hex Code to Mix Colors"
+    ],
+    [
+      "bad87fee1348bd9aedf08719",
+      "Use Abbreviated Hex Code"
+    ],
+    [
+      "bad87fee1348bd9aede08718",
+      "Use RGB values to Color Elements"
+    ],
+    [
+      "bad82fee1348bd9aedf08721",
+      "Use RGB to Mix Colors"
+    ],
+    [
+      "5a9d725e424fe3d0e10cad10",
+      "Use CSS Variables to change several elements at once"
+    ],
+    [
+      "5a9d726c424fe3d0e10cad11",
+      "Create a custom CSS Variable"
+    ],
+    [
+      "5a9d727a424fe3d0e10cad12",
+      "Use a custom CSS Variable"
+    ],
+    [
+      "5a9d7286424fe3d0e10cad13",
+      "Attach a Fallback value to a CSS Variable"
+    ],
+    [
+      "5b7d72c338cd7e35b63f3e14",
+      "Improve Compatibility with Browser Fallbacks"
+    ],
+    [
+      "5a9d7295424fe3d0e10cad14",
+      "Cascading CSS variables"
+    ],
+    [
+      "5a9d72a1424fe3d0e10cad15",
+      "Change a variable for a specific area"
+    ],
+    [
+      "5a9d72ad424fe3d0e10cad16",
+      "Use a media query to change a variable"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "01-responsive-web-design/basic-css.json"
+}

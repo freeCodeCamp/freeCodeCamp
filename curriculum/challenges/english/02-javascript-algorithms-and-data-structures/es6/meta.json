@@ -1,0 +1,118 @@
+{
+  "name": "ES6",
+  "dashedName": "es6",
+  "order": 2,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2,
+  "challengeOrder": [
+    [
+      "587d7b87367417b2b2512b3f",
+      "Explore Differences Between the var and let Keywords"
+    ],
+    [
+      "587d7b87367417b2b2512b40",
+      "Compare Scopes of the var and let Keywords"
+    ],
+    [
+      "587d7b87367417b2b2512b41",
+      "Declare a Read-Only Variable with the const Keyword"
+    ],
+    [
+      "587d7b87367417b2b2512b42",
+      "Mutate an Array Declared with const"
+    ],
+    [
+      "598f48a36c8c40764b4e52b3",
+      "Prevent Object Mutation"
+    ],
+    [
+      "587d7b87367417b2b2512b43",
+      "Use Arrow Functions to Write Concise Anonymous Functions"
+    ],
+    [
+      "587d7b88367417b2b2512b44",
+      "Write Arrow Functions with Parameters"
+    ],
+    [
+      "587d7b88367417b2b2512b45",
+      "Write Higher Order Arrow Functions"
+    ],
+    [
+      "587d7b88367417b2b2512b46",
+      "Set Default Parameters for Your Functions"
+    ],
+    [
+      "587d7b88367417b2b2512b47",
+      "Use the Rest Operator with Function Parameters"
+    ],
+    [
+      "587d7b89367417b2b2512b48",
+      "Use the Spread Operator to Evaluate Arrays In-Place"
+    ],
+    [
+      "587d7b89367417b2b2512b49",
+      "Use Destructuring Assignment to Assign Variables from Objects"
+    ],
+    [
+      "587d7b89367417b2b2512b4a",
+      "Use Destructuring Assignment to Assign Variables from Nested Objects"
+    ],
+    [
+      "587d7b89367417b2b2512b4b",
+      "Use Destructuring Assignment to Assign Variables from Arrays"
+    ],
+    [
+      "587d7b8a367417b2b2512b4c",
+      "Use Destructuring Assignment with the Rest Operator to Reassign Array Elements"
+    ],
+    [
+      "587d7b8a367417b2b2512b4d",
+      "Use Destructuring Assignment to Pass an Object as a Function's Parameters"
+    ],
+    [
+      "587d7b8a367417b2b2512b4e",
+      "Create Strings using Template Literals"
+    ],
+    [
+      "587d7b8a367417b2b2512b4f",
+      "Write Concise Object Literal Declarations Using Simple Fields"
+    ],
+    [
+      "587d7b8b367417b2b2512b50",
+      "Write Concise Declarative Functions with ES6"
+    ],
+    [
+      "587d7b8b367417b2b2512b53",
+      "Use class Syntax to Define a Constructor Function"
+    ],
+    [
+      "587d7b8c367417b2b2512b54",
+      "Use getters and setters to Control Access to an Object"
+    ],
+    [
+      "587d7b8c367417b2b2512b55",
+      "Understand the Differences Between import and require"
+    ],
+    [
+      "587d7b8c367417b2b2512b56",
+      "Use export to Reuse a Code Block"
+    ],
+    [
+      "587d7b8c367417b2b2512b57",
+      "Use * to Import Everything from a File"
+    ],
+    [
+      "587d7b8c367417b2b2512b58",
+      "Create an Export Fallback with export default"
+    ],
+    [
+      "587d7b8d367417b2b2512b59",
+      "Import a Default Export"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "02-javascript-algorithms-and-data-structures/es6.json"
+}

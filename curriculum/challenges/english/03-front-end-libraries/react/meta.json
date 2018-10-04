@@ -1,0 +1,213 @@
+{
+  "name": "React",
+  "dashedName": "react",
+  "order": 5,
+  "time": "5 hours",
+  "template": "<body><div id='root'></div><div id='challenge-node'></div>${ source || '' }</body>",
+  "required": [
+    {
+      "src": "https://unpkg.com/react@16.4.0/umd/react.production.min.js"
+    },
+    {
+      "src": "https://unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js"
+    }
+  ],
+  "superBlock": "front-end-libraries",
+  "superOrder": 3,
+  "challengeOrder": [
+    [
+      "587d7dbc367417b2b2512bb1",
+      "Create a Simple JSX Element"
+    ],
+    [
+      "5a24bbe0dba28a8d3cbd4c5d",
+      "Create a Complex JSX Element"
+    ],
+    [
+      "5a24bbe0dba28a8d3cbd4c5e",
+      "Add Comments in JSX"
+    ],
+    [
+      "5a24bbe0dba28a8d3cbd4c5f",
+      "Render HTML Elements to the DOM"
+    ],
+    [
+      "5a24c314108439a4d4036160",
+      "Define an HTML Class in JSX"
+    ],
+    [
+      "5a24c314108439a4d4036161",
+      "Learn About Self-Closing JSX Tags"
+    ],
+    [
+      "5a24c314108439a4d4036162",
+      "Create a Stateless Functional Component"
+    ],
+    [
+      "5a24c314108439a4d4036163",
+      "Create a React Component"
+    ],
+    [
+      "5a24c314108439a4d4036164",
+      "Create a Component with Composition"
+    ],
+    [
+      "5a24c314108439a4d4036165",
+      "Use React to Render Nested Components"
+    ],
+    [
+      "5a24c314108439a4d4036166",
+      "Compose React Components"
+    ],
+    [
+      "5a24c314108439a4d4036167",
+      "Render a Class Component to the DOM"
+    ],
+    [
+      "5a24c314108439a4d4036168",
+      "Write a React Component from Scratch"
+    ],
+    [
+      "5a24c314108439a4d4036169",
+      "Pass Props to a Stateless Functional Component"
+    ],
+    [
+      "5a24c314108439a4d403616a",
+      "Pass an Array as Props"
+    ],
+    [
+      "5a24c314108439a4d403616b",
+      "Use Default Props"
+    ],
+    [
+      "5a24c314108439a4d403616c",
+      "Override Default Props"
+    ],
+    [
+      "5a24c314108439a4d403616d",
+      "Use PropTypes to Define the Props You Expect"
+    ],
+    [
+      "5a24c314108439a4d403616e",
+      "Access Props Using this.props"
+    ],
+    [
+      "5a24c314108439a4d403616f",
+      "Review Using Props with Stateless Functional Components"
+    ],
+    [
+      "5a24c314108439a4d4036170",
+      "Create a Stateful Component"
+    ],
+    [
+      "5a24c314108439a4d4036171",
+      "Render State in the User Interface"
+    ],
+    [
+      "5a24c314108439a4d4036172",
+      "Render State in the User Interface Another Way"
+    ],
+    [
+      "5a24c314108439a4d4036173",
+      "Set State with this.setState"
+    ],
+    [
+      "5a24c314108439a4d4036174",
+      "Bind 'this' to a Class Method"
+    ],
+    [
+      "5a24c314108439a4d4036176",
+      "Use State to Toggle an Element"
+    ],
+    [
+      "5a24c314108439a4d4036177",
+      "Write a Simple Counter"
+    ],
+    [
+      "5a24c314108439a4d4036178",
+      "Create a Controlled Input"
+    ],
+    [
+      "5a24c314108439a4d4036179",
+      "Create a Controlled Form"
+    ],
+    [
+      "5a24c314108439a4d403617a",
+      "Pass State as Props to Child Components"
+    ],
+    [
+      "5a24c314108439a4d403617b",
+      "Pass a Callback as Props"
+    ],
+    [
+      "5a24c314108439a4d403617c",
+      "Use the Lifecycle Method componentWillMount"
+    ],
+    [
+      "5a24c314108439a4d403617d",
+      "Use the Lifecycle Method componentDidMount"
+    ],
+    [
+      "5a24c314108439a4d403617e",
+      "Add Event Listeners"
+    ],
+    [
+      "5a24c314108439a4d403617f",
+      "Manage Updates with Lifecycle Methods"
+    ],
+    [
+      "5a24c314108439a4d4036180",
+      "Optimize Re-Renders with shouldComponentUpdate"
+    ],
+    [
+      "5a24c314108439a4d4036181",
+      "Introducing Inline Styles"
+    ],
+    [
+      "5a24c314108439a4d4036182",
+      "Add Inline Styles in React"
+    ],
+    [
+      "5a24c314108439a4d4036183",
+      "Use Advanced JavaScript in React Render Method"
+    ],
+    [
+      "5a24c314108439a4d4036184",
+      "Render with an If-Else Condition"
+    ],
+    [
+      "5a24c314108439a4d4036185",
+      "Use && for a More Concise Conditional"
+    ],
+    [
+      "5a24c314108439a4d4036187",
+      "Use a Ternary Expression for Conditional Rendering"
+    ],
+    [
+      "5a24c314108439a4d4036188",
+      "Render Conditionally from Props"
+    ],
+    [
+      "5a24c314108439a4d4036189",
+      "Change Inline CSS Conditionally Based on Component State"
+    ],
+    [
+      "5a24c314108439a4d403618a",
+      "Use Array.map() to Dynamically Render Elements"
+    ],
+    [
+      "5a24c314108439a4d403618b",
+      "Give Sibling Elements a Unique Key Attribute"
+    ],
+    [
+      "5a24c314108439a4d403618c",
+      "Use Array.filter() to Dynamically Filter an Array"
+    ],
+    [
+      "5a24c314108439a4d403618d",
+      "Render React on the Server with renderToString"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "03-front-end-libraries/react.json"
+}

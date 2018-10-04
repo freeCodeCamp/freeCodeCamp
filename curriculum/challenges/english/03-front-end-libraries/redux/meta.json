@@ -1,0 +1,89 @@
+{
+  "name": "Redux",
+  "dashedName": "redux",
+  "order": 6,
+  "time": "5 hours",
+  "template": "",
+  "required": [
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"
+    },
+    {
+      "src": "https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.2.0/redux-thunk.min.js"
+    }
+  ],
+  "superBlock": "front-end-libraries",
+  "superOrder": 3,
+  "challengeOrder": [
+    [
+      "5a24c314108439a4d403614b",
+      "Create a Redux Store"
+    ],
+    [
+      "5a24c314108439a4d403614c",
+      "Get State from the Redux Store"
+    ],
+    [
+      "5a24c314108439a4d403614d",
+      "Define a Redux Action"
+    ],
+    [
+      "5a24c314108439a4d403614e",
+      "Define an Action Creator"
+    ],
+    [
+      "5a24c314108439a4d403614f",
+      "Dispatch an Action Event"
+    ],
+    [
+      "5a24c314108439a4d4036150",
+      "Handle an Action in the Store"
+    ],
+    [
+      "5a24c314108439a4d4036151",
+      "Use a Switch Statement to Handle Multiple Actions"
+    ],
+    [
+      "5a24c314108439a4d4036152",
+      "Use const for Action Types"
+    ],
+    [
+      "5a24c314108439a4d4036153",
+      "Register a Store Listener"
+    ],
+    [
+      "5a24c314108439a4d4036154",
+      "Combine Multiple Reducers"
+    ],
+    [
+      "5a24c314108439a4d4036155",
+      "Send Action Data to the Store"
+    ],
+    [
+      "5a24c314108439a4d4036156",
+      "Use Middleware to Handle Asynchronous Actions"
+    ],
+    [
+      "5a24c314108439a4d4036157",
+      "Write a Counter with Redux"
+    ],
+    [
+      "5a24c314108439a4d4036158",
+      "Never Mutate State"
+    ],
+    [
+      "5a24c314108439a4d4036159",
+      "Use the Spread Operator on Arrays"
+    ],
+    [
+      "5a24c314108439a4d403615a",
+      "Remove an Item from an Array"
+    ],
+    [
+      "5a24c314108439a4d403615b",
+      "Copy an Object with Object.assign"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "03-front-end-libraries/redux.json"
+}

@@ -1,0 +1,102 @@
+{
+  "name": "Advanced Node and Express",
+  "dashedName": "advanced-node-and-express",
+  "order": 3,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "information-security-and-quality-assurance",
+  "superOrder": 6,
+  "challengeOrder": [
+    [
+      "5895f700f9fc0f352b528e63",
+      "Set up a Template Engine"
+    ],
+    [
+      "5895f70bf9fc0f352b528e64",
+      "Use a Template Engine's Powers"
+    ],
+    [
+      "5895f70cf9fc0f352b528e65",
+      "Set up Passport"
+    ],
+    [
+      "5895f70cf9fc0f352b528e66",
+      "Serialization of a User Object"
+    ],
+    [
+      "5895f70cf9fc0f352b528e67",
+      "Implement the Serialization of a Passport User"
+    ],
+    [
+      "5895f70df9fc0f352b528e68",
+      "Authentication Strategies"
+    ],
+    [
+      "5895f70df9fc0f352b528e69",
+      "How to Use Passport Strategies"
+    ],
+    [
+      "5895f70df9fc0f352b528e6a",
+      "Create New Middleware"
+    ],
+    [
+      "5895f70ef9fc0f352b528e6b",
+      "How to Put a Profile Together"
+    ],
+    [
+      "58965611f9fc0f352b528e6c",
+      "Logging a User Out"
+    ],
+    [
+      "58966a17f9fc0f352b528e6d",
+      "Registration of New Users"
+    ],
+    [
+      "58a25c98f9fc0f352b528e7f",
+      "Hashing Your Passwords"
+    ],
+    [
+      "589690e6f9fc0f352b528e6e",
+      "Clean Up Your Project with Modules"
+    ],
+    [
+      "589a69f5f9fc0f352b528e70",
+      "Implementation of Social Authentication"
+    ],
+    [
+      "589a69f5f9fc0f352b528e71",
+      "Implementation of Social Authentication II"
+    ],
+    [
+      "589a8eb3f9fc0f352b528e72",
+      "Implementation of Social Authentication III"
+    ],
+    [
+      "589fc830f9fc0f352b528e74",
+      "Set up the Environment"
+    ],
+    [
+      "589fc831f9fc0f352b528e75",
+      "Communicate by Emitting"
+    ],
+    [
+      "589fc831f9fc0f352b528e76",
+      "Handle a Disconnect"
+    ],
+    [
+      "589fc831f9fc0f352b528e77",
+      "Authentication with Socket.IO"
+    ],
+    [
+      "589fc832f9fc0f352b528e78",
+      "Announce New Users"
+    ],
+    [
+      "589fc832f9fc0f352b528e79",
+      "Send and Display Chat Messages"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "06-information-security-and-quality-assurance/advanced-express-tools.json"
+}
