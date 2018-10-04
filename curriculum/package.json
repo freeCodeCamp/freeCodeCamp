@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
-  "version": "0.0.0-next.2",
+  "version": "0.0.0-next.3",
   "main": "lib.js",
   "scripts": {
     "precommit": "lint-staged",
@@ -33,9 +33,9 @@
     }
   },
   "dependencies": {
+    "@freecodecamp/challenge-md-parser": "^1.0.0",
     "invariant": "^2.2.4",
     "readdirp-walk": "^1.6.0"
-
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
