@@ -15,7 +15,9 @@ function currentChallengeEpic(action$, state$) {
   return action$.pipe(
     ofType(types.challengeMounted),
     filter(() => isSignedInSelector(state$.value)),
-    filter(({ payload }) => payload !== currentChallengeIdSelector(state$.value)),
+    filter(
+      ({ payload }) => payload !== currentChallengeIdSelector(state$.value)
+    ),
     switchMap(({ payload }) => {
       const update = {
         endpoint: '/update-my-current-challenge',
@@ -24,9 +26,9 @@ function currentChallengeEpic(action$, state$) {
         }
       };
       return postUpdate$(update).pipe(
-          mapTo(updateComplete()),
-          catchError(() => of(updateFailed(update)))
-        );
+        mapTo(updateComplete()),
+        catchError(() => of(updateFailed(update)))
+      );
     })
   );
 }

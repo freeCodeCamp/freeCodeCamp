@@ -33,7 +33,7 @@ export const ChallengeNode = PropTypes.shape({
   }),
   guideUrl: PropTypes.string,
   head: PropTypes.arrayOf(PropTypes.string),
-  suborder: PropTypes.number,
+  challengeOrder: PropTypes.number,
   isBeta: PropTypes.bool,
   isComingSoon: PropTypes.bool,
   isLocked: PropTypes.bool,

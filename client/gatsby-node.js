@@ -1,14 +1,26 @@
 require('dotenv').config();
 
+const { createFilePath } = require('gatsby-source-filesystem');
+
 const { dasherize } = require('./utils');
 const { blockNameify } = require('./utils/blockNameify');
-const { createChallengePages, createIntroPages } = require('./utils/gatsby');
+const {
+  createChallengePages,
+  createBlockIntroPages,
+  createSuperBlockIntroPages,
+  createGuideArticlePages
+} = require('./utils/gatsby');
 
-exports.onCreateNode = function onCreateNode({ node, actions }) {
+const createByIdentityMap = {
+  guideMarkdown: createGuideArticlePages,
+  blockIntroMarkdown: createBlockIntroPages,
+  superBlockIntroMarkdown: createSuperBlockIntroPages
+};
+
+exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
   if (node.internal.type === 'ChallengeNode') {
     const { tests = [], block, title, superBlock } = node;
-
     const slug = `/learn/${dasherize(superBlock)}/${dasherize(
       block
     )}/${dasherize(title)}`;
@@ -18,21 +30,10 @@ exports.onCreateNode = function onCreateNode({ node, actions }) {
   }
 
   if (node.internal.type === 'MarkdownRemark') {
-    // console.log(node);
-    const {
-      frontmatter: { block, superBlock }
-    } = node;
-
-    let slug = `/${dasherize(superBlock)}`;
-
-    // Without this condition the slug for superblocks ends up as something like
-    // "/apis-and-microservice/undefined" and what we want instead is just
-    // "/apis-and-microservice"
-    if (typeof block !== 'undefined') {
-      slug = slug + `/${dasherize(block)}`;
+    let slug = createFilePath({ node, getNode });
+    if (!slug.includes('LICENSE')) {
+      createNodeField({ node, name: 'slug', value: slug });
     }
-
-    createNodeField({ node, name: 'slug', value: slug });
   }
 };
 
@@ -44,7 +45,9 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(`
         {
-          allChallengeNode(sort: { fields: [superOrder, order, suborder] }) {
+          allChallengeNode(
+            sort: { fields: [superOrder, order, challengeOrder] }
+          ) {
             edges {
               node {
                 block
@@ -56,10 +59,9 @@ exports.createPages = ({ graphql, actions }) => {
                 order
                 required {
                   link
-                  raw
                   src
                 }
-                suborder
+                challengeOrder
                 superBlock
                 superOrder
                 template
@@ -77,7 +79,12 @@ exports.createPages = ({ graphql, actions }) => {
                   superBlock
                   title
                 }
-                html
+                htmlAst
+                id
+                excerpt
+                internal {
+                  identity
+                }
               }
             }
           }
@@ -94,9 +101,34 @@ exports.createPages = ({ graphql, actions }) => {
         );
 
         // Create intro pages
-        result.data.allMarkdownRemark.edges.forEach(
-          createIntroPages(createPage)
-        );
+        result.data.allMarkdownRemark.edges.forEach(edge => {
+          const {
+            node: {
+              internal: { identity },
+              frontmatter,
+              fields
+            }
+          } = edge;
+          if (!fields) {
+            return null;
+          }
+          const { slug } = fields;
+          if (slug.includes('LICENCE')) {
+            return null;
+          }
+          try {
+            const pageBuilder = createByIdentityMap[identity](createPage);
+            return pageBuilder(edge);
+          } catch (e) {
+            console.log(`
+            ident: ${identity} does not belong to a function
+
+            ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
+
+
+            `);
+          }
+        });
 
         return;
       })

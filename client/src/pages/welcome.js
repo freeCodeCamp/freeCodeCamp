@@ -69,6 +69,7 @@ function Welcome({
       <Helmet>
         <title>Welcome {name ? name : 'Camper'} | freeCodeCamp.org</title>
       </Helmet>
+      <main>
       <Grid className='text-center'>
         <Row>
           <Col xs={12}>
@@ -135,6 +136,7 @@ function Welcome({
         </Row>
         <Spacer size={4} />
       </Grid>
+      </main>
     </Layout>
   );
 }

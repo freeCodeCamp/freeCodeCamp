@@ -103,30 +103,32 @@ class ShowUser extends Component {
       this.setNavigationTimer();
       return (
         <Layout>
-          <FullWidthRow>
-            <Spacer />
-            <Spacer />
-            <Panel bsStyle='info'>
-              <Panel.Heading>
-                <Panel.Title componentClass='h3'>
-                  You need to be signed in to report a user
-                </Panel.Title>
-              </Panel.Heading>
-              <Panel.Body className='text-center'>
-                <Spacer />
-                <p>
-                  You will be redirected to sign in to freeCodeCamp.org
-                  automatically in 5 seconds
-                </p>
-                <p>
-                  <Link to='/signin'>
-                    Or you can here if you do not want to wait
-                  </Link>
-                </p>
-                <Spacer />
-              </Panel.Body>
-            </Panel>
-          </FullWidthRow>
+          <main>
+            <FullWidthRow>
+              <Spacer />
+              <Spacer />
+              <Panel bsStyle='info'>
+                <Panel.Heading>
+                  <Panel.Title componentClass='h3'>
+                    You need to be signed in to report a user
+                  </Panel.Title>
+                </Panel.Heading>
+                <Panel.Body className='text-center'>
+                  <Spacer />
+                  <p>
+                    You will be redirected to sign in to freeCodeCamp.org
+                    automatically in 5 seconds
+                  </p>
+                  <p>
+                    <Link to='/signin'>
+                      Or you can here if you do not want to wait
+                    </Link>
+                  </p>
+                  <Spacer />
+                </Panel.Body>
+              </Panel>
+            </FullWidthRow>
+          </main>
         </Layout>
       );
     }

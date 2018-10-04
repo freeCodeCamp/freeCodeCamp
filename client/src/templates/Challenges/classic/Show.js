@@ -283,7 +283,6 @@ export const query = graphql`
       }
       required {
         link
-        raw
         src
       }
       files {

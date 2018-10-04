@@ -1,6 +1,6 @@
 const path = require('path');
 
-const { buildChallenges$ } = require('./utils/buildChallenges');
+const { buildChallenges } = require('./utils/buildChallenges');
 
 module.exports = {
   siteMetadata: {
@@ -28,20 +28,21 @@ module.exports = {
       resolve: 'fcc-source-challenges',
       options: {
         name: 'challenges',
-        source: buildChallenges$
+        source: buildChallenges
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'introductions',
-        path: path.resolve(__dirname, './src/introductions')
+        path: path.resolve(__dirname, './src/pages')
       }
     },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          'gatsby-remark-fcc-forum-emoji',
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
@@ -70,6 +71,46 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-remark-node-identity',
+      options: {
+        identity: 'guideMarkdown',
+        predicate: ({ frontmatter }) => {
+          if (!frontmatter) {
+            return false;
+          }
+          const { title, block, superBlock } = frontmatter;
+          return title && !block && !superBlock;
+        }
+      }
+    },
+    {
+      resolve: 'gatsby-remark-node-identity',
+      options: {
+        identity: 'blockIntroMarkdown',
+        predicate: ({ frontmatter }) => {
+          if (!frontmatter) {
+            return false;
+          }
+          const { title, block, superBlock } = frontmatter;
+          return title && block && superBlock;
+        }
+      }
+    },
+    {
+      resolve: 'gatsby-remark-node-identity',
+      options: {
+        identity: 'superBlockIntroMarkdown',
+        predicate: ({ frontmatter }) => {
+          if (!frontmatter) {
+            return false;
+          }
+          const { title, block, superBlock } = frontmatter;
+          return title && !block && superBlock;
+        }
+      }
+    },
+    'fcc-create-nav-data',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

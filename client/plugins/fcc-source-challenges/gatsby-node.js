@@ -11,17 +11,18 @@ that delivers challenge files to the plugin
   const { createNode } = actions;
 
   const { source } = pluginOptions;
-  return source().subscribe(
-    challenges =>
+  return source()
+    .then(challenges =>
       challenges
         .filter(challenge => challenge.superBlock !== 'Certificates')
         .map(challenge => createChallengeNodes(challenge, reporter))
-        .map(node => createNode(node)),
-    e =>
+        .map(node => createNode(node))
+    )
+    .catch(e =>
       reporter.panic(`fcc-sourec-challenges
 
-      ${e.message}
+  ${e.message}
 
-      `)
-  );
+  `)
+    );
 };
