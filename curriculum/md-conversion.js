@@ -4,7 +4,7 @@ const { omit, findLastIndex } = require('lodash');
 const YAML = require('js-yaml');
 
 const { dasherize } = require('./utils');
-const getChallenges = require('./getChallenges');
+const { getChallenges } = require('./getChallenges');
 
 const blackListedFieldNames = [
   'betaSolutions',
@@ -22,21 +22,34 @@ const blackListedFieldNames = [
 ];
 
 getChallenges().forEach(block => {
-  const { name, order, challenges, time = '', superBlock, superOrder } = block;
+  const {
+    name,
+    order,
+    challenges,
+    time = '',
+    superBlock,
+    superOrder,
+    template = '',
+    required = [],
+    ...restBlock
+  } = block;
   const blockDashedName = dasherize(name);
   const blockMeta = {
     name,
     dashedName: blockDashedName,
     order,
     time,
+    template,
+    required,
     superBlock,
     superOrder,
-    challengeOrder: challenges.map(({id, title}) => [id, title])
+    challengeOrder: challenges.map(({ id, title }) => [id, title]),
+    ...restBlock
   };
   const superOrderPrefix = `0${superOrder}`;
   const outputDir = path.resolve(
     __dirname,
-    `./challenges/en/${superOrderPrefix}-${superBlock}/${blockDashedName}`
+    `./challenges/english/${superOrderPrefix}-${superBlock}/${blockDashedName}`
   );
   fs.ensureDirSync(outputDir);
 
@@ -49,7 +62,7 @@ getChallenges().forEach(block => {
       ...restChallenge
     } = challenge;
     const challengeMeta = omit(restChallenge, blackListedFieldNames);
-    const challengeFileName = `${dasherize(challenge.title)}.en.md`;
+    const challengeFileName = `${dasherize(challenge.title)}.english.md`;
     let description = '';
     let instructions = '';
 
@@ -81,7 +94,7 @@ ${instructions}
 <section id='tests'>
 
 \`\`\`yml
-${YAML.dump(tests, { lineWidth: 10000 })}
+${YAML.dump({ tests }, { lineWidth: 10000 })}
 \`\`\`
 
 </section>

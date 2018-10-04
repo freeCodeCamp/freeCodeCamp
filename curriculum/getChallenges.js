@@ -1,76 +1,90 @@
-/* eslint-disable no-self-compare */
-// no import here as this runs without babel
-const fs = require('fs');
 const path = require('path');
-const omit = require('lodash/omit');
+const { findIndex } = require('lodash');
+const invariant = require('invariant');
+const readDirP = require('readdirp-walk');
 
-const hiddenFile = /(^(\.|\/\.))|(.md$)/g;
+const { parseMarkdown } = require('../tools/challenge-md-parser');
 
-function getFilesFor(dir) {
-  let targetDir = path.join(__dirname, dir);
-  return fs
-    .readdirSync(targetDir)
-    .filter(file => !hiddenFile.test(file))
-    .map(function(file) {
-      let superBlock;
-      if (fs.statSync(path.join(targetDir, file)).isFile()) {
-        return { file: file };
-      }
-      superBlock = file;
-      return getFilesFor(path.join(dir, superBlock)).map(function(data) {
-        return {
-          file: path.join(superBlock, data.file),
-          superBlock: superBlock
-        };
-      });
-    })
-    .reduce(function(files, entry) {
-      return files.concat(entry);
-    }, []);
+const supportedLangs = ['english'];
+
+function validateLang(lang) {
+  invariant(lang, 'Please provide a language');
+  invariant(
+    supportedLangs.includes(lang),
+    `${lang} is not supported
+
+  Supported languages: ${JSON.stringify(supportedLangs, null, 2)}
+
+  `
+  );
 }
 
-function superblockInfo(filePath) {
-  let parts = (filePath || '').split('-');
-  let order = parseInt(parts[0], 10);
+exports.getChallengesForLang = function getChallengesForLang(lang) {
+  validateLang(lang);
+  let curriculum = {};
+  return new Promise(resolve =>
+    readDirP({ root: path.resolve(__dirname, `./challenges/${lang}`) })
+      .on('data', file => buildCurriculum(file, curriculum))
+      .on('end', () => resolve(curriculum))
+  );
+};
+
+async function buildCurriculum(file, curriculum) {
+  const { name, depth, path, fullPath, stat } = file;
+  if (depth === 1 && stat.isDirectory()) {
+    // extract the superBlock info
+    const { order, name: superBlock } = superBlockInfo(name);
+    curriculum[superBlock] = { superBlock, order, blocks: {} };
+    return;
+  }
+  if (depth === 2 && stat.isDirectory()) {
+    const blockMeta = require(`${fullPath}/meta.json`);
+    const { name: superBlock } = superBlockInfoFromPath(path);
+    const blockInfo = { meta: blockMeta, challenges: [] };
+    curriculum[superBlock].blocks[name] = blockInfo;
+    return;
+  }
+  if (name === 'meta.json') {
+    return;
+  }
+  const block = getBlockNameFromPath(path);
+  const { name: superBlock } = superBlockInfoFromPath(path);
+  const challenge = await parseMarkdown(fullPath);
+  const challengeBlock = curriculum[superBlock].blocks[block];
+  const { meta } = challengeBlock;
+  const challengeOrder = findIndex(
+    meta.challengeOrder,
+    ([id]) => id === challenge.id
+  );
+  const { name: blockName, order, superOrder } = meta;
+  challenge.block = blockName;
+  challenge.order = order;
+  challenge.superOrder = superOrder;
+  challenge.superBlock = superBlock;
+  challenge.challengeOrder = challengeOrder;
+  challengeBlock.challenges = [...challengeBlock.challenges, challenge];
+}
+
+function superBlockInfoFromPath(filePath) {
+  const [maybeSuper] = filePath.split('/');
+  return superBlockInfo(maybeSuper);
+}
+
+function superBlockInfo(fileName) {
+  const [maybeOrder, ...superBlock] = fileName.split('-');
+  let order = parseInt(maybeOrder, 10);
   if (isNaN(order)) {
-    return { order: 0, name: filePath };
+    return { order: 0, name: fileName };
   } else {
     return {
       order: order,
-      name: parts.splice(1).join('-')
+      name: superBlock.join('-')
     };
   }
 }
 
-// unpackFlag is an argument passed by the unpack script in unpack.js
-// which allows us to conditionall omit translations when running
-// the test suite and prevent schema related errors in the main fCC branch
-module.exports = function getChallenges(challengesDir, unpackFlag) {
-  if (!challengesDir) {
-    challengesDir = 'challenges';
-  }
-  return getFilesFor(challengesDir).map(function(data) {
-    const challengeSpec = require('./' + challengesDir + '/' + data.file);
-    let superInfo = superblockInfo(data.superBlock);
-    challengeSpec.fileName = data.file;
-    challengeSpec.superBlock = superInfo.name;
-    challengeSpec.superOrder = superInfo.order;
-    challengeSpec.challenges = challengeSpec.challenges.map(challenge =>
-      omit(challenge, [
-        'betaSolutions',
-        'betaTests',
-        'hints',
-        'MDNlinks',
-        'null',
-        'rawSolutions',
-        'react',
-        'reactRedux',
-        'redux',
-        'releasedOn',
-        unpackFlag ? undefined : 'translations',
-        'type'
-      ])
-    );
-    return challengeSpec;
-  });
-};
+function getBlockNameFromPath(filePath) {
+  const [, block] = filePath.split('/');
+  return block;
+}
+
