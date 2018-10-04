@@ -132,7 +132,7 @@ class ShowCertification extends Component {
             </Col>
           </header>
 
-          <section className='information'>
+          <main className='information'>
             <div className='information-container'>
               <h3>This certifies that</h3>
               <h1>
@@ -147,7 +147,7 @@ class ShowCertification extends Component {
                 {completionTime} hours of coursework
               </h4>
             </div>
-          </section>
+          </main>
           <footer>
             <div className='row signatures'>
               <Image

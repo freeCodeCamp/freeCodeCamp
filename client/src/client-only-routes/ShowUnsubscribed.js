@@ -17,27 +17,29 @@ function ShowUnsubscribed({ unsubscribeId }) {
         <title>You have been unsubscribed | freeCodeCamp.org</title>
       </Helmet>
       <Grid>
-        <FullWidthRow>
-          <Spacer />
-          <Spacer />
-          <Panel bsStyle='primary' className='text-center'>
-            <Spacer />
-            <h2>You have successfully been unsubscribed</h2>
-            <p>Whatever you go on to, keep coding!</p>
-          </Panel>
-        </FullWidthRow>
-        {unsubscribeId ? (
+        <main>
           <FullWidthRow>
-            <Button
-              block={true}
-              bsSize='lg'
-              bsStyle='primary'
-              href={`${apiLocation}/internal/resubscribe/${unsubscribeId}`}
-              >
-              You can click here to resubscribe
-            </Button>
+            <Spacer />
+            <Spacer />
+            <Panel bsStyle='primary' className='text-center'>
+              <Spacer />
+              <h2>You have successfully been unsubscribed</h2>
+              <p>Whatever you go on to, keep coding!</p>
+            </Panel>
           </FullWidthRow>
-        ) : null}
+          {unsubscribeId ? (
+            <FullWidthRow>
+              <Button
+                block={true}
+                bsSize='lg'
+                bsStyle='primary'
+                href={`${apiLocation}/internal/resubscribe/${unsubscribeId}`}
+                >
+                You can click here to resubscribe
+              </Button>
+            </FullWidthRow>
+          ) : null}
+        </main>
       </Grid>
     </Layout>
   );

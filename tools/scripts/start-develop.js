@@ -15,7 +15,12 @@ const loopback = spawn(
 );
 const gatsby = spawn('cd', ['./client', '&&', 'npm run develop'], spawnOpts);
 
+let cleanupCalled = false;
 function cleanUp() {
+  if (cleanupCalled) {
+    return null;
+  }
+  cleanupCalled = true;
   console.log(`
   Killing processes...
   `);

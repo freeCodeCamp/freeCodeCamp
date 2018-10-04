@@ -80,14 +80,13 @@ export default connect(mapStateToProps)(IndexPage);
 
 export const query = graphql`
   query FirstChallenge {
-    challengeNode(order: { eq: 0 }, suborder: { eq: 1 }) {
+    challengeNode(order: { eq: 0 }, challengeOrder: { eq: 0 }) {
       fields {
         slug
       }
     }
     allChallengeNode(
-      filter: { isPrivate: { eq: false } }
-      sort: { fields: [superOrder, order, suborder] }
+      sort: { fields: [superOrder, order, challengeOrder] }
     ) {
       edges {
         node {
@@ -99,7 +98,6 @@ export const query = graphql`
           block
           title
           isRequired
-          isPrivate
           superBlock
           dashedName
         }

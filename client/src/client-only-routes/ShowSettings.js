@@ -175,81 +175,83 @@ function ShowSettings(props) {
         <title>Settings | freeCodeCamp.org</title>
       </Helmet>
       <Grid>
-        <Spacer size={2} />
-        <FullWidthRow>
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='btn-invert'
-            href={`/${username}`}
-            >
-            Show me my public portfolio
-          </Button>
-          <Button
-            block={true}
-            bsSize='lg'
-            bsStyle='primary'
-            className='btn-invert'
-            href={'/signout'}
-            >
-            Sign me out of freeCodeCamp
-          </Button>
-        </FullWidthRow>
-        <Spacer />
-        <h1 className='text-center'>{`Account Settings for ${username}`}</h1>
-        <About
-          about={about}
-          currentTheme={theme}
-          location={location}
-          name={name}
-          picture={picture}
-          points={points}
-          submitNewAbout={submitNewAbout}
-          toggleNightMode={toggleNightMode}
-          username={username}
-        />
-        <Spacer />
-        <Privacy />
-        <Spacer />
-        <Email
-          email={email}
-          isEmailVerified={isEmailVerified}
-          sendQuincyEmail={sendQuincyEmail}
-          updateQuincyEmail={updateQuincyEmail}
-        />
-        <Spacer />
-        <Internet
-          githubProfile={githubProfile}
-          linkedin={linkedin}
-          twitter={twitter}
-          updateInternetSettings={updateInternetSettings}
-          website={website}
-        />
-        <Spacer />
-        <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
-        <Spacer />
-        <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-        <Spacer />
-        <Certification
-          completedChallenges={completedChallenges}
-          createFlashMessage={createFlashMessage}
-          is2018DataVisCert={is2018DataVisCert}
-          isApisMicroservicesCert={isApisMicroservicesCert}
-          isBackEndCert={isBackEndCert}
-          isDataVisCert={isDataVisCert}
-          isFrontEndCert={isFrontEndCert}
-          isFrontEndLibsCert={isFrontEndLibsCert}
-          isFullStackCert={isFullStackCert}
-          isHonest={isHonest}
-          isInfosecQaCert={isInfosecQaCert}
-          isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-          isRespWebDesignCert={isRespWebDesignCert}
-          username={username}
-          verifyCert={verifyCert}
-        />
-        <Spacer />
-        {/* <DangerZone /> */}
+        <main>
+          <Spacer size={2} />
+          <FullWidthRow>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-invert'
+              href={`/${username}`}
+              >
+              Show me my public portfolio
+            </Button>
+            <Button
+              block={true}
+              bsSize='lg'
+              bsStyle='primary'
+              className='btn-invert'
+              href={'/signout'}
+              >
+              Sign me out of freeCodeCamp
+            </Button>
+          </FullWidthRow>
+          <Spacer />
+          <h1 className='text-center'>{`Account Settings for ${username}`}</h1>
+          <About
+            about={about}
+            currentTheme={theme}
+            location={location}
+            name={name}
+            picture={picture}
+            points={points}
+            submitNewAbout={submitNewAbout}
+            toggleNightMode={toggleNightMode}
+            username={username}
+          />
+          <Spacer />
+          <Privacy />
+          <Spacer />
+          <Email
+            email={email}
+            isEmailVerified={isEmailVerified}
+            sendQuincyEmail={sendQuincyEmail}
+            updateQuincyEmail={updateQuincyEmail}
+          />
+          <Spacer />
+          <Internet
+            githubProfile={githubProfile}
+            linkedin={linkedin}
+            twitter={twitter}
+            updateInternetSettings={updateInternetSettings}
+            website={website}
+          />
+          <Spacer />
+          <Portfolio portfolio={portfolio} updatePortfolio={updatePortfolio} />
+          <Spacer />
+          <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+          <Spacer />
+          <Certification
+            completedChallenges={completedChallenges}
+            createFlashMessage={createFlashMessage}
+            is2018DataVisCert={is2018DataVisCert}
+            isApisMicroservicesCert={isApisMicroservicesCert}
+            isBackEndCert={isBackEndCert}
+            isDataVisCert={isDataVisCert}
+            isFrontEndCert={isFrontEndCert}
+            isFrontEndLibsCert={isFrontEndLibsCert}
+            isFullStackCert={isFullStackCert}
+            isHonest={isHonest}
+            isInfosecQaCert={isInfosecQaCert}
+            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+            isRespWebDesignCert={isRespWebDesignCert}
+            username={username}
+            verifyCert={verifyCert}
+          />
+          <Spacer />
+          {/* <DangerZone /> */}
+        </main>
       </Grid>
     </Layout>
   );

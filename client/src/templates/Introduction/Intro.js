@@ -88,7 +88,7 @@ export const query = graphql`
     }
     allChallengeNode(
       filter: { block: { eq: $block } }
-      sort: { fields: [superOrder, order, suborder] }
+      sort: { fields: [superOrder, order, challengeOrder] }
     ) {
       edges {
         node {

@@ -5,10 +5,16 @@ import { Provider } from 'react-redux';
 import headComponents from './src/head';
 import { createStore } from './src/redux/createStore';
 
+import GuideNavigationContextProvider from './src/contexts/GuideNavigationContext';
+
 const store = createStore();
 
 export const wrapRootElement = ({ element }) => {
-  return <Provider store={store}>{element}</Provider>;
+  return (
+    <Provider store={store}>
+      <GuideNavigationContextProvider>{element}</GuideNavigationContextProvider>
+    </Provider>
+  );
 };
 
 wrapRootElement.propTypes = {

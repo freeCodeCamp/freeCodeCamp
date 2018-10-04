@@ -12,7 +12,7 @@ function LearnLayout({ children }) {
   return (
     <Fragment>
       <DefaultLayout>
-        <div id='learn-app-wrapper'>{children}</div>
+        <main id='learn-app-wrapper'>{children}</main>
       </DefaultLayout>
       <DonationModal />
     </Fragment>
