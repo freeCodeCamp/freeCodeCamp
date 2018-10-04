@@ -130,7 +130,7 @@ On branch staging
 Your branch is up-to-date with 'origin/staging'.
 ```
 
-If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
+If you aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
 
 ```shell
 $ git checkout staging
