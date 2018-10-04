@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
   },
-  "version": "0.0.0-next.1",
+  "version": "0.0.0-next.2",
   "main": "lib.js",
   "scripts": {
     "precommit": "lint-staged",
@@ -33,7 +33,9 @@
     }
   },
   "dependencies": {
-    "invariant": "^2.2.4"
+    "invariant": "^2.2.4",
+    "readdirp-walk": "^1.6.0"
+
   },
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
@@ -69,7 +71,6 @@
     "lodash": "^4.17.10",
     "prettier": "^1.13.5",
     "prettier-package-json": "^1.6.0",
-    "readdirp-walk": "^1.6.0",
     "rx": "^4.1.0",
     "semantic-release": "^15.6.0",
     "tap-spec": "^5.0.0",
