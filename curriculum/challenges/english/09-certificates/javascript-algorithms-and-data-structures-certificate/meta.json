@@ -1,0 +1,18 @@
+{
+  "name": "JavaScript Algorithms and Data Structures Certificate",
+  "dashedName": "javascript-algorithms-and-data-structures-certificate",
+  "order": 2,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "certificates",
+  "superOrder": 9,
+  "challengeOrder": [
+    [
+      "561abd10cb81ac38a17513bc",
+      "JavaScript Algorithms and Data Structures Certificate"
+    ]
+  ],
+  "isPrivate": true,
+  "fileName": "09-certificates/javascript-algorithms-and-data-structures-certificate.json"
+}

@@ -1,6 +1,5 @@
 const unified = require('unified');
 const vfile = require('to-vfile');
-const report = require('vfile-reporter');
 const markdown = require('remark-parse');
 const remark2rehype = require('remark-rehype');
 const html = require('rehype-stringify');
@@ -25,10 +24,14 @@ const processor = unified()
   // we need to write a compiler that can create graphql nodes
   .use(html);
 
-processor.process(vfile.readSync('maybe.md'), function(err, file) {
-  if (err) {
-    throw err;
-  }
-  console.error(report(file));
-  console.log(JSON.stringify(file.data, null, 2));
-});
+exports.parseMarkdown = function parseMarkdown(file) {
+  return new Promise((resolve, reject) =>
+    processor.process(vfile.readSync(file), function(err, file) {
+      if (err) {
+        reject(err);
+      }
+      delete file.contents;
+      return resolve(file.data);
+    })
+  );
+};

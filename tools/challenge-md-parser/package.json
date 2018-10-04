@@ -1,5 +1,5 @@
 {
-  "name": "migration",
+  "name": "@freecodecamp/challenge-md-parser",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,7 +24,6 @@
     "remark-rehype": "^3.0.1",
     "to-vfile": "^5.0.1",
     "unified": "^7.0.0",
-    "unist-util-visit": "^1.4.0",
-    "vfile-reporter": "^5.0.0"
+    "unist-util-visit": "^1.4.0"
   }
 }

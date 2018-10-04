@@ -1,0 +1,102 @@
+{
+  "name": "Applied Accessibility",
+  "dashedName": "applied-accessibility",
+  "order": 3,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "responsive-web-design",
+  "superOrder": 1,
+  "challengeOrder": [
+    [
+      "587d774c367417b2b2512a9c",
+      "Add a Text Alternative to Images for Visually Impaired Accessibility"
+    ],
+    [
+      "587d774c367417b2b2512a9d",
+      "Know When Alt Text Should be Left Blank"
+    ],
+    [
+      "587d774d367417b2b2512a9e",
+      "Use Headings to Show Hierarchical Relationships of Content"
+    ],
+    [
+      "587d774e367417b2b2512a9f",
+      "Jump Straight to the Content Using the main Element"
+    ],
+    [
+      "587d774e367417b2b2512aa0",
+      "Wrap Content in the article Element"
+    ],
+    [
+      "587d7787367417b2b2512aa1",
+      "Make Screen Reader Navigation Easier with the header Landmark"
+    ],
+    [
+      "587d7788367417b2b2512aa2",
+      "Make Screen Reader Navigation Easier with the nav Landmark"
+    ],
+    [
+      "587d7788367417b2b2512aa3",
+      "Make Screen Reader Navigation Easier with the footer Landmark"
+    ],
+    [
+      "587d7789367417b2b2512aa4",
+      "Improve Accessibility of Audio Content with the audio Element"
+    ],
+    [
+      "587d778a367417b2b2512aa5",
+      "Improve Chart Accessibility with the figure Element"
+    ],
+    [
+      "587d778a367417b2b2512aa6",
+      "Improve Form Field Accessibility with the label Element"
+    ],
+    [
+      "587d778b367417b2b2512aa7",
+      "Wrap Radio Buttons in a fieldset Element for Better Accessibility"
+    ],
+    [
+      "587d778b367417b2b2512aa8",
+      "Add an Accessible Date Picker"
+    ],
+    [
+      "587d778c367417b2b2512aa9",
+      "Standardize Times with the HTML5 datetime Attribute"
+    ],
+    [
+      "587d778d367417b2b2512aaa",
+      "Make Elements Only Visible to a Screen Reader by Using Custom CSS"
+    ],
+    [
+      "587d778e367417b2b2512aab",
+      "Improve Readability with High Contrast Text"
+    ],
+    [
+      "587d778f367417b2b2512aac",
+      "Avoid Colorblindness Issues by Using Sufficient Contrast"
+    ],
+    [
+      "587d778f367417b2b2512aad",
+      "Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information"
+    ],
+    [
+      "587d778f367417b2b2512aae",
+      "Give Links Meaning by Using Descriptive Link Text"
+    ],
+    [
+      "587d7790367417b2b2512aaf",
+      "Make Links Navigatable with HTML Access Keys"
+    ],
+    [
+      "587d7790367417b2b2512ab0",
+      "Use tabindex to Add Keyboard Focus to an Element"
+    ],
+    [
+      "587d7790367417b2b2512ab1",
+      "Use tabindex to Specify the Order of Keyboard Focus for Several Elements"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "01-responsive-web-design/applied-accessibility.json"
+}

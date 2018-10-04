@@ -1,0 +1,50 @@
+{
+  "name": "Algorithms",
+  "dashedName": "algorithms",
+  "order": 1,
+  "time": "",
+  "template": "",
+  "required": [],
+  "superBlock": "coding-interview-prep",
+  "superOrder": 8,
+  "challengeOrder": [
+    [
+      "a3f503de51cf954ede28891d",
+      "Find the Symmetric Difference"
+    ],
+    [
+      "a56138aff60341a09ed6c480",
+      "Inventory Update"
+    ],
+    [
+      "a7bf700cd123b9a54eef01d5",
+      "No Repeats Please"
+    ],
+    [
+      "a3f503de51cfab748ff001aa",
+      "Pairwise"
+    ],
+    [
+      "8d5123c8c441eddfaeb5bdef",
+      "Implement Bubble Sort"
+    ],
+    [
+      "587d8259367417b2b2512c85",
+      "Implement Selection Sort"
+    ],
+    [
+      "587d8259367417b2b2512c86",
+      "Implement Insertion Sort"
+    ],
+    [
+      "587d825a367417b2b2512c89",
+      "Implement Quick Sort"
+    ],
+    [
+      "587d825c367417b2b2512c8f",
+      "Implement Merge Sort"
+    ]
+  ],
+  "helpRoom": "HelpJavaScript",
+  "fileName": "08-coding-interview-prep/algorithms.json"
+}

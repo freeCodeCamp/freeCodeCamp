@@ -1,0 +1,118 @@
+{
+  "name": "Object Oriented Programming",
+  "dashedName": "object-oriented-programming",
+  "order": 7,
+  "time": "5 hours",
+  "template": "",
+  "required": [],
+  "superBlock": "javascript-algorithms-and-data-structures",
+  "superOrder": 2,
+  "challengeOrder": [
+    [
+      "587d7dac367417b2b2512b73",
+      "Create a Basic JavaScript Object"
+    ],
+    [
+      "587d7dac367417b2b2512b74",
+      "Use Dot Notation to Access the Properties of an Object"
+    ],
+    [
+      "587d7dad367417b2b2512b75",
+      "Create a Method on an Object"
+    ],
+    [
+      "587d7dad367417b2b2512b76",
+      "Make Code More Reusable with the this Keyword"
+    ],
+    [
+      "587d7dad367417b2b2512b77",
+      "Define a Constructor Function"
+    ],
+    [
+      "587d7dad367417b2b2512b78",
+      "Use a Constructor to Create Objects"
+    ],
+    [
+      "587d7dae367417b2b2512b79",
+      "Extend Constructors to Receive Arguments"
+    ],
+    [
+      "587d7dae367417b2b2512b7a",
+      "Verify an Object's Constructor with instanceof"
+    ],
+    [
+      "587d7dae367417b2b2512b7b",
+      "Understand Own Properties"
+    ],
+    [
+      "587d7dae367417b2b2512b7c",
+      "Use Prototype Properties to Reduce Duplicate Code"
+    ],
+    [
+      "587d7daf367417b2b2512b7d",
+      "Iterate Over All Properties"
+    ],
+    [
+      "587d7daf367417b2b2512b7e",
+      "Understand the Constructor Property"
+    ],
+    [
+      "587d7daf367417b2b2512b7f",
+      "Change the Prototype to a New Object"
+    ],
+    [
+      "587d7daf367417b2b2512b80",
+      "Remember to Set the Constructor Property when Changing the Prototype"
+    ],
+    [
+      "587d7db0367417b2b2512b81",
+      "Understand Where an Object’s Prototype Comes From"
+    ],
+    [
+      "587d7db0367417b2b2512b82",
+      "Understand the Prototype Chain"
+    ],
+    [
+      "587d7db0367417b2b2512b83",
+      "Use Inheritance So You Don't Repeat Yourself"
+    ],
+    [
+      "587d7db0367417b2b2512b84",
+      "Inherit Behaviors from a Supertype"
+    ],
+    [
+      "587d7db1367417b2b2512b85",
+      "Set the Child's Prototype to an Instance of the Parent"
+    ],
+    [
+      "587d7db1367417b2b2512b86",
+      "Reset an Inherited Constructor Property"
+    ],
+    [
+      "587d7db1367417b2b2512b87",
+      "Add Methods After Inheritance"
+    ],
+    [
+      "587d7db1367417b2b2512b88",
+      "Override Inherited Methods"
+    ],
+    [
+      "587d7db2367417b2b2512b89",
+      "Use a Mixin to Add Common Behavior Between Unrelated Objects"
+    ],
+    [
+      "587d7db2367417b2b2512b8a",
+      "Use Closure to Protect Properties Within an Object from Being Modified Externally"
+    ],
+    [
+      "587d7db2367417b2b2512b8b",
+      "Understand the Immediately Invoked Function Expression (IIFE)"
+    ],
+    [
+      "587d7db2367417b2b2512b8c",
+      "Use an IIFE to Create a Module"
+    ]
+  ],
+  "helpRoom": "Help",
+  "fileName": "02-javascript-algorithms-and-data-structures/object-oriented-programming.json"
+}
