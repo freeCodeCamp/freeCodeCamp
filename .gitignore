@@ -16,4 +16,5 @@ node_modules
 .DS_Store
 
 curriculum/dist
+curriculum/curricula.json
 client/static/js/frame-runner*
