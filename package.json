@@ -8,7 +8,7 @@
     "lint": "echo 'Warning: TODO - Define Linting.'",
     "pretest": "npm-run-all -s lint bootstrap",
     "test": "npm-run-all -p test:*",
-    "test:client": "echo 'Warning: TODO - Define Testing.'",
+    "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "echo 'Warning: TODO - Define Testing.'",
     "test:server": "echo 'Warning: TODO - Define Testing.'",
     "start-develop": "node ./tools/scripts/start-develop.js"
