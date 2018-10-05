@@ -11,6 +11,7 @@ import {
 } from '../redux';
 import { transformers, testJS$JSX } from '../rechallenge/transformers';
 import { cssToHtml, jsToHtml, concatHtml } from '../rechallenge/builders.js';
+import { isPromise } from './polyvinyl';
 
 const jQueryCDN =
   'https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js';
@@ -34,18 +35,34 @@ function filterJSIfDisabled(state) {
   return file => !(testJS$JSX(file) && !isJSEnabled);
 }
 
+const applyFunction = fn => file => {
+  if (file.error) {
+    return file;
+  }
+  try {
+    let newFile = fn(file);
+    if (typeof newFile !== 'undefined') {
+      if (isPromise(newFile)) {
+        newFile = newFile.catch(() => {
+          // file.error = e.message;
+          return file;
+        });
+      }
+      return newFile;
+    }
+    return file;
+  } catch {
+    // file.error = e.message;
+    return file;
+  }
+};
+
 const applyFunctions = fns => file =>
   fns.reduce((file, fn) => {
-    if (file.error) {
-      return file;
+    if (isPromise(file)) {
+      return file.then(applyFunction(fn));
     }
-    try {
-      fn(file);
-    } catch (e) {
-      // file.error = e.message;
-    } finally {
-      return file;
-    }
+    return applyFunction(fn)(file);
   }, file);
 const toHtml = [jsToHtml, cssToHtml];
 const pipeLine = flow(

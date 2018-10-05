@@ -1,9 +1,9 @@
 // originally based off of https://github.com/gulpjs/vinyl
 import invariant from 'invariant';
-import { of, Observable, from, isObservable } from 'rxjs';
+import { of, from, isObservable } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-const isPromise = value =>
+export const isPromise = value =>
   value &&
   typeof value.subscribe !== 'function' &&
   typeof value.then === 'function';
@@ -13,7 +13,7 @@ export function castToObservable(maybe) {
     return maybe;
   }
   if (isPromise(maybe)) {
-    return Observable.fromPromise(maybe);
+    return from(maybe);
   }
   return of(maybe);
 }
