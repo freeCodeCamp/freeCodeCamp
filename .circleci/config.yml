@@ -28,8 +28,7 @@ jobs:
           - v1-dependencies-{{ checksum "client/package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: cd ./client
-      - run: echo "working in ${cwd}" && npm install && npm run build
+      - run: cd ./client && npm install && npm run build
 
       - save_cache:
           paths:
