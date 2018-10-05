@@ -24,4 +24,10 @@ before_script:
   - git config --global user.name "CamperBot"
 
 script:
+<<<<<<< HEAD
   - npm run test-ci
+=======
+  - npm run test
+  - cd ./client
+  - npm run build
+>>>>>>> fix(ci-build): Make it so, Travis
