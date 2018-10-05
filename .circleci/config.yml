@@ -29,13 +29,9 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
       - run: cd ./client
-      - run: npm install
+      - run: echo "working in ${cwd}" && npm install && npm run build
 
       - save_cache:
           paths:
             - client/node_modules
           key: v1-dependencies-{{ checksum "client/package.json" }}
-
-      # run tests!
-      - run: npm test
-      - run: npm run build
