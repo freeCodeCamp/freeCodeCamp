@@ -22,7 +22,7 @@ export const ChallengeNode = PropTypes.shape({
   block: PropTypes.string,
   challengeType: PropTypes.number,
   dashedName: PropTypes.string,
-  description: PropTypes.arrayOf(PropTypes.string),
+  description: PropTypes.string,
   files: PropTypes.shape({
     indexhtml: FileType,
     indexjs: FileType
@@ -34,6 +34,7 @@ export const ChallengeNode = PropTypes.shape({
   guideUrl: PropTypes.string,
   head: PropTypes.arrayOf(PropTypes.string),
   challengeOrder: PropTypes.number,
+  instructions: PropTypes.string,
   isBeta: PropTypes.bool,
   isComingSoon: PropTypes.bool,
   isLocked: PropTypes.bool,

@@ -1,36 +1,23 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ChallengeTitle from '../components/Challenge-Title';
 import Spacer from '../../../components/helpers/Spacer';
 
 const propTypes = {
-  description: PropTypes.arrayOf(PropTypes.string),
+  description: PropTypes.string,
   isCompleted: PropTypes.bool,
   isSignedIn: PropTypes.bool,
   title: PropTypes.string
 };
 
-export default class SidePanel extends PureComponent {
-  renderDescription(title = '', description = []) {
-    return description.map((line, index) => (
-      <li
-        className='step-text wrappable'
-        dangerouslySetInnerHTML={{ __html: line }}
-        key={title.slice(6) + index}
-      />
-    ));
-  }
-
-  render() {
-    const { title, description, isCompleted } = this.props;
-    return (
-      <div>
-        <Spacer />
-        <ChallengeTitle isCompleted={isCompleted}>{title}</ChallengeTitle>
-        <ul>{this.renderDescription(title, description)}</ul>
-      </div>
-    );
-  }
+export default function SidePanel({ title, description, isCompleted }) {
+  return (
+    <div>
+      <Spacer />
+      <ChallengeTitle isCompleted={isCompleted}>{title}</ChallengeTitle>
+      <div dangerouslySetInnerHTML={{ __html: description }} />
+    </div>
+  );
 }
 
 SidePanel.displayName = 'ProjectSidePanel';

@@ -1,10 +1,11 @@
 import helmet from 'helmet';
 
+import { homeLocation } from '../../../config/env';
+
 let trusted = [
   "'self'",
   'https://search.freecodecamp.org',
-  'https://www.freecodecamp.rocks',
-  'https://api.freecodecamp.rocks',
+  homeLocation,
   'https://' + process.env.AUTH0_DOMAIN
 ];
 
@@ -12,9 +13,7 @@ const host = process.env.HOST || 'localhost';
 const port = process.env.SYNC_PORT || '3000';
 
 if (process.env.NODE_ENV !== 'production') {
-  trusted = trusted.concat([
-    `ws://${host}:${port}`
-  ]);
+  trusted = trusted.concat([`ws://${host}:${port}`, 'http://localhost:8000']);
 }
 
 export default function csp() {
@@ -73,11 +72,9 @@ export default function csp() {
         '*',
         'data:'
       ],
-      mediaSrc: [
-        '*.bitly.com',
-        '*.amazonaws.com',
-        '*.twitter.com'
-      ].concat(trusted),
+      mediaSrc: ['*.bitly.com', '*.amazonaws.com', '*.twitter.com'].concat(
+        trusted
+      ),
       frameSrc: [
         '*.gitter.im',
         '*.gitter.im https:',

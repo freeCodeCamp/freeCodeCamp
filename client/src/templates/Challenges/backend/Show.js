@@ -41,7 +41,7 @@ const reduxFormPropTypes = {
 };
 
 const propTypes = {
-  description: PropTypes.arrayOf(PropTypes.string),
+  description: PropTypes.string,
   executeChallenge: PropTypes.func.isRequired,
   id: PropTypes.string,
   output: PropTypes.string,
@@ -126,7 +126,8 @@ export class BackEnd extends Component {
         challengeNode: {
           fields: { blockName, slug },
           title,
-          description
+          description,
+          instructions
         }
       },
       output,
@@ -145,7 +146,10 @@ export class BackEnd extends Component {
         <Spacer />
         <div>
           <ChallengeTitle>{blockNameTitle}</ChallengeTitle>
-          <ChallengeDescription description={description} />
+          <ChallengeDescription
+            description={description}
+            instructions={instructions}
+          />
         </div>
         <div>
           <Form
@@ -200,6 +204,7 @@ export const query = graphql`
       title
       guideUrl
       description
+      instructions
       challengeType
       fields {
         blockName
