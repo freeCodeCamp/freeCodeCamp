@@ -1,6 +1,8 @@
-platform:
-  - x64
+platform: x64
 image: ubuntu
+
+environment:
+  nodejs_version: "8"
 
 skip_branch_with_pr: false
 
@@ -16,15 +18,9 @@ skip_commits:
     - tools/**
     - "./*.md"
 
-environment:
-  nodejs_version: "8"
-
 # Install scripts. (runs after repo cloning)
 install:
-  - echo This client build is built on %buildon% and the commit tag is %APPVEYOR_REPO_TAG% and the tag is %APPVEYOR_REPO_TAG_NAME%
-  - ps: Install-Product node $env:nodejs_version $env:platform
-  - refreshenv
-  - echo we are running on %PLATFORM%
+  - sh: nvm install $nodejs_version
   - node --version
   - npm install
   - npm test
