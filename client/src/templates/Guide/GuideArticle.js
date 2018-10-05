@@ -39,7 +39,6 @@ class GuideArticle extends Component {
       },
       pageContext: { meta }
     } = this.props;
-    console.log(title);
     return (
       <Layout>
         <Helmet>

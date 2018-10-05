@@ -177,6 +177,7 @@ class ShowClassic extends Component {
           fields: { blockName, slug },
           title,
           description,
+          instructions,
           videoUrl
         }
       },
@@ -227,6 +228,7 @@ class ShowClassic extends Component {
               className='full-height'
               description={description}
               guideUrl={createGuideUrl(slug)}
+              instructions={instructions}
               section={dasherize(blockName)}
               title={blockNameTitle}
               videoUrl={videoUrl}
@@ -271,6 +273,7 @@ export const query = graphql`
     challengeNode(fields: { slug: { eq: $slug } }) {
       title
       description
+      instructions
       challengeType
       videoUrl
       fields {

@@ -26,13 +26,6 @@ export default function settingsController(app) {
     createValidatorErrorHandler(alertTypes.danger),
     updateMyCurrentChallenge
   );
-  api.post(
-    '/update-my-current-challenge',
-    ifNoUser401,
-    updateMyCurrentChallengeValidators,
-    createValidatorErrorHandler(alertTypes.danger),
-    updateMyCurrentChallenge
-  );
   api.post('/update-my-portfolio', ifNoUser401, updateMyPortfolio);
   api.post('/update-my-projects', ifNoUser401, updateMyProjects);
   api.post(

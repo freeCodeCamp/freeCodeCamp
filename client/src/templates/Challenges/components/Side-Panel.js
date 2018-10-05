@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ReactDom from 'react-dom';
 import { connect } from 'react-redux';
@@ -29,16 +29,17 @@ const mapDispatchToProps = dispatch =>
 const MathJax = global.MathJax;
 
 const propTypes = {
-  description: PropTypes.arrayOf(PropTypes.string),
+  description: PropTypes.string,
   guideUrl: PropTypes.string,
   initConsole: PropTypes.func.isRequired,
+  instructions: PropTypes.string,
   section: PropTypes.string,
   tests: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
   videoUrl: PropTypes.string
 };
 
-export class SidePanel extends PureComponent {
+export class SidePanel extends Component {
   constructor(props) {
     super(props);
     this.bindTopDiv = this.bindTopDiv.bind(this);
@@ -84,6 +85,7 @@ export class SidePanel extends PureComponent {
     const {
       title,
       description,
+      instructions,
       guideUrl,
       tests,
       section,
@@ -95,7 +97,7 @@ export class SidePanel extends PureComponent {
         <Spacer />
         <div>
           <ChallengeTitle>{title}</ChallengeTitle>
-          <ChallengeDescription description={description} section={section} />
+          <ChallengeDescription description={description} instructions={instructions} section={section} />
         </div>
         <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />
         <TestSuite tests={tests} />
