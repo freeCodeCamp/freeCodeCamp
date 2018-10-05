@@ -25,5 +25,3 @@ before_script:
 
 script:
   - npm run test
-  - cd ./client
-  - npm run build
