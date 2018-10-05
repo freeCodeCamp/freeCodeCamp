@@ -13,8 +13,6 @@ import {
 import * as Babel from '@babel/standalone';
 import presetEnv from '@babel/preset-env';
 import presetReact from '@babel/preset-react';
-import { of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import protect from 'loop-protect';
 
 import * as vinyl from '../utils/polyvinyl.js';
@@ -86,20 +84,17 @@ const htmlSassTransformCode = file => {
   if (styleTags.length === 0 || typeof Sass === 'undefined') {
     return vinyl.transformContents(() => doc.body.innerHTML, file);
   }
-  return styleTags.reduce((obs, style) => {
-    return obs.pipe(
-      switchMap(
-        file =>
-          new Promise(resolve => {
-            window.Sass.compile(style.innerHTML, function(result) {
-              style.type = 'text/css';
-              style.innerHTML = result.text;
-              resolve(vinyl.transformContents(() => doc.body.innerHTML, file));
-            });
-          })
-      )
-    );
-  }, of(file));
+  return Promise.all(styleTags.map(style => (
+    new Promise(resolve => {
+      window.Sass.compile(style.innerHTML, function(result) {
+        style.type = 'text/css';
+        style.innerHTML = result.text;
+        resolve();
+      });
+    })
+  ))).then(() => (
+    vinyl.transformContents(() => doc.body.innerHTML, file)
+  ));
 };
 
 export const htmlSassTransformer = cond([
