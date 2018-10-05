@@ -25,17 +25,17 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-{{ checksum "client/package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
+      - run: cd ./client
       - run: npm install
 
       - save_cache:
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+            - client/node_modules
+          key: v1-dependencies-{{ checksum "client/package.json" }}
 
       # run tests!
       - run: npm test
-      - run: cd ./client && npm run build
+      - run: npm run build
