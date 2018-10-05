@@ -2,11 +2,11 @@
 
 [build]
   # This is the directory to change to before starting a build.
-  base    = "/"
+  base    = "/client"
   # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
   # This is the directory that you are publishing from (relative to root of your repo)
   publish = "client/public/"
   # This will be your default build command
-  command = "npm run bootstrap && cd ./client && npm run build"
+  command = "npm run build"
   # This is where we will look for your lambda functions
   #functions = "project/functions/"
