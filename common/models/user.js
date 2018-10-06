@@ -853,7 +853,8 @@ module.exports = function(User) {
       portfolio,
       streak,
       username,
-      yearsTopContributor
+      yearsTopContributor,
+      classroomSetting
     } = user;
     const {
       isLocked = true,
@@ -886,7 +887,8 @@ module.exports = function(User) {
       points: showPoints ? points : null,
       portfolio: showPortfolio ? portfolio : [],
       streak: showHeatMap ? streak : {},
-      yearsTopContributor: yearsTopContributor
+      yearsTopContributor: yearsTopContributor,
+      classroomSetting: classroomSetting
     };
   }
 

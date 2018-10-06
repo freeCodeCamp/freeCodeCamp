@@ -26,17 +26,16 @@ export const publicUserProps = [
   'isJsAlgoDataStructCert',
   'isRespWebDesignCert',
   'linkedin',
-  'location',
   'name',
   'points',
   'portfolio',
   'profileUI',
   'projects',
   'streak',
-  'twitter',
   'username',
   'website',
-  'yearsTopContributor'
+  'yearsTopContributor',
+  'classroomSetting'
 ];
 
 export const userPropsForSession = [
