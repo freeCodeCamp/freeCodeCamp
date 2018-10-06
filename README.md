@@ -109,7 +109,7 @@ If you think you've found a bug, first read the [Help I've Found a Bug](https://
 
 ### Found a security issue?
 
-Please don't create GitHub issues for security issues. Instead, please send an email to security@freecodecamp.org and we'll look into it immediately.
+Please do not create GitHub issues for security issues. Instead, please send an email to security@freecodecamp.org and we'll look into it immediately.
 
 ### Contributing
 
