@@ -49,7 +49,7 @@ const getTemplateComponent = challengeType => views[viewTypes[challengeType]];
 
 const getIntroIfRequired = (node, index, nodeArray) => {
   const next = nodeArray[index + 1];
-  const isEndOfBlock = next && next.node.challengeOrder === 1;
+  const isEndOfBlock = next && next.node.challengeOrder === 0;
   let nextSuperBlock = '';
   let nextBlock = '';
   if (next) {
@@ -58,7 +58,7 @@ const getIntroIfRequired = (node, index, nodeArray) => {
     nextBlock = block;
   }
   return isEndOfBlock
-    ? `/${dasherize(nextSuperBlock)}/${dasherize(nextBlock)}`
+    ? `/learn/${dasherize(nextSuperBlock)}/${dasherize(nextBlock)}`
     : '';
 };
 
