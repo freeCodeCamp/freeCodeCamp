@@ -193,7 +193,7 @@ You should have [ESLint running in your editor](http://eslint.org/docs/user-guid
 
 > Please do not ignore any linting errors, as they are meant to **help** you and to ensure a clean and simple code base.
 
-### Set Up MailHog
+### Set Up MailHog (Optional - Only required when working with email workflows)
 
 To be able to create a user and log into your development copy, you need to set up MailHog. MailHog is a local SMTP mail server that will catch the emails your freeCodeCamp instance is sending. How you install and run MailHog is dependent upon your OS.
 
