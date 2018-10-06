@@ -7,6 +7,7 @@
     "ensure-env": "node ./tools/scripts/ensure-env.js",
     "lint": "echo 'Warning: TODO - Define Linting.'",
     "pretest": "npm-run-all -s lint bootstrap",
+    "seed": "node seed/index.js",
     "test": "npm-run-all -p test:*",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "echo 'Warning: TODO - Define Testing.'",
