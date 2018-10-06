@@ -1,0 +1,25 @@
+{
+  "name": "@freecodecamp/database-seeding",
+  "version": "0.0.1",
+  "description": "A script to seed challenges in to the database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "author": "freeCodeCamp.org",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "devDependencies": {
+    "@freecodecamp/curriculum": "0.0.0-next.4",
+    "dotenv": "^6.0.0",
+    "lodash": "^4.17.11",
+    "mongodb": "^3.1.6"
+  }
+}
