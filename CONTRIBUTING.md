@@ -87,7 +87,7 @@ Platform-specific guides to setting up a development environment:
 #### Forking freeCodeCamp
 
 1. Go to the top level freeCodeCamp repository: <https://github.com/freeCodeCamp/freeCodeCamp>
-2. Click the "Fork" Button in the upper right hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
+2. Click the "Fork" Button in the upper right-hand corner of the interface ([More Details Here](https://help.github.com/articles/fork-a-repo/))
 3. After the repository (repo) has been forked, you will be taken to your copy of the freeCodeCamp repo at <https://github.com/yourUsername/freeCodeCamp>
 
 #### Cloning Your Fork
@@ -130,7 +130,7 @@ On branch staging
 Your branch is up-to-date with 'origin/staging'.
 ```
 
-If your aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
+If you aren't on `staging`, resolve outstanding files / commits and checkout the `staging` branch
 
 ```shell
 $ git checkout staging
