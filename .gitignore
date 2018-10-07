@@ -17,4 +17,6 @@ node_modules
 
 curriculum/dist
 curriculum/curricula.json
-client/static/js/frame-runner*
+client/static/js/frame-runner.js
+client/static/js/frame-runner.js.map
+client/static/_redirects
