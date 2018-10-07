@@ -561,3 +561,5 @@ Be sure to post in the PR conversation that you have made the requested changes.
   - [Writing great git commit messages](http://forum.freecodecamp.org/t/writing-good-git-commit-messages/13210)
 
   - [Contributor Chat Support](https://gitter.im/FreeCodeCamp/Contributors)  - for the freeCodeCamp repositories, and running a local instance
+
+This is fun.
