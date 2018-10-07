@@ -109,11 +109,11 @@ If you think you've found a bug, first read the [Help I've Found a Bug](https://
 
 ### Found a security issue?
 
-Please don't create GitHub issues for security issues. Instead, please send an email to security@freecodecamp.org and we'll look into it immediately.
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
 ### Contributing
 
-We welcome pull requests from members of the freeCodeCamp.org community and from veteran developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
+Please follow [these steps](CONTRIBUTING.md) to contribute.
 
 ### License
 
