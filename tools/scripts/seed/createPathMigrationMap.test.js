@@ -29,4 +29,8 @@ describe('createPathMigrationMap', () => {
   it('does not add uri migrations for private challenges', () => {
     expect(pathMap['challenge-nine']).toBeUndefined();
   });
+
+  it('output snapshot', () => {
+    expect(createPathMigrationMap(mockCurriculum)).toMatchSnapshot();
+  });
 });
