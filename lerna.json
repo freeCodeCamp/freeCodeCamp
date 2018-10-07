@@ -4,7 +4,8 @@
     "client",
     "curriculum",
     "seed",
-    "tools/challenge-md-parser"
+    "tools/challenge-md-parser",
+    "tools/scripts/seed"
   ],
   "version": "independent"
 }
