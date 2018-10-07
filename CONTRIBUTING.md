@@ -22,15 +22,35 @@ You can choose to contribute to area of you interest:
 
 ### 1. Contribute to this codebase
 
-We have a huge codebase of the thousands of [Curriculum challenges](https://www.freecodecamp.org/learn) and [Guide articles](https://www.freecodecamp.org/guide). These challenges and articles make up the learning content available on the main website.
+We have a huge codebase of the thousands of [Curriculum challenges](https://www.freecodecamp.org/learn) and [Guide articles](https://www.freecodecamp.org/guide). These challenges and articles make up the learning content available on the freeCodeCamp.org's learning platform.
 
-#### You can help us
+#### 📖 Research, Write and Update our guide articles
 
-##### 📖 Research, Write and Update our guide articles
+##### What are Guide articles?
 
-##### 💻 Create, Update and Fix Bugs in our curriculum challenges
+The Guide articles aim to be short articles to get you started and familiar with these concepts before going on to read more in-depth material.
 
-##### 📚 Translate guide articles and curriculum challenges
+Guide articles can be an explanation of a syntax, design pattern, what aria labels are for, or something like what the numbers mean in the top right-hand corner of your screen when at [freecodecamp.org](https://freecodecamp.org).
+
+You can find an [example article about HTML Elements here](./client/src/pages/html/elements/index.md).
+
+##### What can I write an article about?
+
+Front-end development (adjective form with a dash) is when you are working on the front end (noun form with no dash). The same goes with the back end, full stack, and many other compound terms.
+
+We welcome your help writing these articles. You don't have to be an expert in a topic to write about it—this entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
+
+To help, find a `stub article` on our [Guide website](https://www.freecodecamp.org/guide), write the article, then open a pull request (PR) to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about your changes, review them and adopt them.
+
+If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
+
+**If you would like work on these, follow along these steps:**
+
+#### 💻 Create, Update and Fix Bugs in our curriculum challenges
+
+**[TODO]**
+
+#### 📚 Translate guide articles and curriculum challenges
 
 You can help us translate our Guide articles and Curriculum challenges for a language that you speak. Currently we have translated versions in:
 
@@ -40,9 +60,27 @@ You can help us translate our Guide articles and Curriculum challenges for a lan
 - Spanish : Español
 - Portuguese : Português
 
-Most of these are machine translated. We would love your help in updating and improving the quality of these translations.
+Most of these versions are machine translated. We would love your help in improving the quality of these translations.
 
-##### 🛠 Help us fix bugs in the API server and client apps for freeCodeCamp.org's website
+**If you would like work on these, follow along these steps:**
+
+**[TODO]**
+
+#### 🛠 Help us fix bugs in freeCodeCamp.org's learning platform
+
+Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries including but not limited to Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
+
+Broadly,
+
+- We have a Node.js based API server.
+- A set of React based client applications.
+- A script that we use to use our Frontend projects.
+
+Contributing to this requires some understanding of APIs, ES6 Syntax and a lot of curiosity.
+
+**If you would like work on these, follow along these steps:**
+
+**[TODO]**
 
 ### 2. Help campers on our [public forum](https://www.freecodecamp.org/forum)
 
@@ -51,17 +89,38 @@ Most of these are machine translated. We would love your help in updating and im
 
 ### 3. Help us add subtitles on our [YouTube channel.](https://www.youtube.com/freeCodeCamp/videos)
 
-## Steps to contribute to the code base
+## FAQs about Contributing
 
-1. :pray: Follow our [Code of Conduct](docs/CODE_OF_CONDUCT.md) at all times.
-2. 🍴 [Fork this repository](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box).
-3. 👀️ Follow the contributing guidelines outlined below.
-4. 🔧 Make some awesome changes!
-5. 👉 [Make a pull request](https://github.com/freeCodeCamp/freeCodeCamp/compare).
-6. 🎉 Get your pull request approved - success!
+**I found a bug that is not on the board. Where and when should I report?**
 
-Or, If you've found a issue that is not on the board, [follow these steps](README.md#found-a-bug). If you dont wish to work on the codebase, you can [contribute in several other ways](https://contribute.freecodecamp.org).
+If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
-Feel free to ask for help on our public [Forum](https://www.freecodecamp.org/forum) or [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors). We are excited to help you contribute to any of the projects that you would like to work on.
+If you're confident it's a new bug, go ahead and create a new GitHub issue. Be sure to include as much information as possible so we can reproduce the bug. We have a pre populated issue template to help you through this.
 
-Working on your first Pull Request? You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+Please note, that any issues that seek coding help on a challenge, will be closed. The issue tracker is strictly for the codebase related issues and discussions. You should [seek assistance on the forum](https://www.freecodecamp.org/forum) before reporting whenever in doubt.
+
+**I found a security issue:**
+
+Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
+
+**I am stuck on a step while contributing and need help:**
+
+Feel free to ask for help in:
+
+- [The "Contributors" category our public forum](https://www.freecodecamp.org/forum/c/contributors).
+- [Our public contributors chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
+
+We are excited to help you contribute to any of the topics that you would like to work on. Make sure you search for your query before posting a new one. Be polite and patient. our community volunteers and moderators are always around to guide you through your queries.
+
+**I am new to GitHub and Open Source in general:**
+
+- You can learn how from this *free* series ["How to Contribute to an Open Source Project on GitHub"](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github) - by [Kent C. Dodds](https://github.com/kentcdodds)
+- Checkout <https://www.firsttimersonly.com>, a great resource on finding issues to contribute to as a first timer.
+
+**I dont understand the different labels on the issues and pull requests:**
+
+Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels). You should go through **`Help Wanted`** or **`first timers welcome`** issues for quick lookup what is available for you to work on.
+
+**I found a typo, should I report an Issue before I can make a pull request?**
+
+Nope. You can straight away create a pull request without having to report any issues, for typos, or small changes to [verbiage](https://en.oxforddictionaries.com/definition/verbiage). Issues are a tool to seek confirmation on  changes that you would want to propose via a pull request.
