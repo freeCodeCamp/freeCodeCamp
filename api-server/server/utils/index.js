@@ -1,4 +1,4 @@
-export function dasherize(name) {
+exports.dasherize = function dasherize(name) {
   return ('' + name)
     .toLowerCase()
     .replace(/\s/g, '-')
@@ -6,13 +6,13 @@ export function dasherize(name) {
     .replace(/\:/g, '');
 }
 
-export function nameify(str) {
+exports.nameify = function nameify(str) {
   return ('' + str)
     .replace(/[^a-zA-Z0-9\s]/g, '')
     .replace(/\:/g, '');
 }
 
-export function unDasherize(name) {
+exports.unDasherize = function unDasherize(name) {
   return ('' + name)
     // replace dash with space
     .replace(/\-/g, ' ')
@@ -21,6 +21,6 @@ export function unDasherize(name) {
     .trim();
 }
 
-export function addPlaceholderImage(name) {
+exports.addPlaceholderImage = function addPlaceholderImage(name) {
   return `https://identicon.org?t=${name}&s=256`;
 }
