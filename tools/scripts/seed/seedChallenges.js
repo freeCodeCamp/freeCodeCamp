@@ -1,9 +1,14 @@
 const path = require('path');
+const fs = require('fs');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const MongoClient = require('mongodb').MongoClient;
 const { getChallengesForLang } = require('@freecodecamp/curriculum');
 const { flatten } = require('lodash');
+const debug = require('debug');
 
+const { createPathMigrationMap } = require('./createPathMigrationMap');
+
+const log = debug('fcc:tools:seedChallenges');
 const { MONGOHQ_URL, LOCALE: lang } = process.env;
 
 function handleError(err, client) {
@@ -27,7 +32,7 @@ MongoClient.connect(
   function(err, client) {
     handleError(err, client);
 
-    console.log('Connected successfully to mongo');
+    log('Connected successfully to mongo');
 
     const db = client.db('freecodecamp');
     const challenges = db.collection('challenges');
@@ -51,8 +56,21 @@ MongoClient.connect(
       } catch (e) {
         handleError(e, client);
       } finally {
-        console.log('challenge seed complete');
+        log('challenge seed complete');
         client.close();
+        log('generating path migration map');
+        const pathMap = createPathMigrationMap(curriculum);
+        const outputDir = path.resolve(
+          __dirname,
+          '../../../api-server/server/resources/pathMigration.json'
+        );
+        fs.writeFile(outputDir, JSON.stringify(pathMap), err => {
+          if (err) {
+            console.error('Oh noes!!');
+            console.error(err);
+          }
+          log('path migration map generated');
+        });
       }
     });
   }
