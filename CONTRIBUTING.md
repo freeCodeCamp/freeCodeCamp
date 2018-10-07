@@ -18,11 +18,20 @@ freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. Th
 
 ## Here are some fun ways you can help
 
-You can choose to contribute to area of you interest:
+You can choose to contribute to an area of you interest:
 
-### 1. Contribute to this codebase
+- [1. Contribute to this codebase, working on guide articles, curriculum challenges and fix bugs](#1-contribute-to-this-codebase)
+- [2. Help campers on our public forum](#2-help-campers-on-our-public-forum)
+- [3. Help us add subtitles on our YouTube channel.](#3-help-us-add-subtitles-on-our-youtube-channel)
 
-We have a huge codebase of the thousands of [Curriculum challenges](https://www.freecodecamp.org/learn) and [Guide articles](https://www.freecodecamp.org/guide). These challenges and articles make up the learning content available on the freeCodeCamp.org's learning platform.
+### 1. Contribute to this open source codebase
+
+We have a huge open source codebase of the thousands of [Curriculum challenges](https://www.freecodecamp.org/learn) and [Guide articles](https://www.freecodecamp.org/guide). These challenges and articles make up the learning content available on the freeCodeCamp.org's learning platform.
+
+- [📖 Research, Write and Update our guide articles](#%F0%9F%93%96-research-write-and-update-our-guide-articles)
+- [💻 Create, Update and Fix Bugs in our curriculum challenges](#%F0%9F%92%BB-create-update-and-fix-bugs-in-our-curriculum-challenges)
+- [📚 Translate guide articles and curriculum challenges](#%F0%9F%93%9A-translate-guide-articles-and-curriculum-challenges)
+- [🛠 Help us fix bugs in freeCodeCamp.org's learning platform](#%F0%9F%9B%A0-help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
 #### 📖 Research, Write and Update our guide articles
 
@@ -89,7 +98,7 @@ Contributing to this requires some understanding of APIs, ES6 Syntax and a lot o
 
 ### 3. Help us add subtitles on our [YouTube channel.](https://www.youtube.com/freeCodeCamp/videos)
 
-## FAQs about Contributing
+## FAQs
 
 **I found a bug that is not on the board. Where and when should I report?**
 
