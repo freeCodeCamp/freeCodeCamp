@@ -1,0 +1,86 @@
+{
+  "super-block-a": {
+    "blocks": {
+      "block-one": {
+        "meta": {},
+        "challenges": [
+          {
+            "title": "Challenge One",
+            "block": "Block One",
+            "superBlock": "super-block-a"
+          },
+          {
+            "title": "Challenge Two",
+            "block": "Block One",
+            "superBlock": "super-block-a"
+          },
+          {
+            "title": "Challenge Three",
+            "block": "Block One",
+            "superBlock": "super-block-a"
+          },
+          {
+            "title": "Challenge Four",
+            "block": "Block One",
+            "superBlock": "super-block-a"
+          }
+        ]
+      },
+      "block-two": {
+        "meta": {},
+        "challenges": [
+          {
+            "title": "Challenge Five",
+            "block": "Block Two",
+            "superBlock": "super-block-a"
+          },
+          {
+            "title": "Challenge Six",
+            "block": "Block Two",
+            "superBlock": "super-block-a"
+          },
+          {
+            "title": "Challenge Seven",
+            "block": "Block Two",
+            "superBlock": "super-block-a"
+          },
+          {
+            "title": "Challenge Eight",
+            "block": "Block Two",
+            "superBlock": "super-block-a"
+          }
+        ]
+      }
+    }
+  },
+  "super-block-b": {
+    "blocks": {
+      "block-one": {
+        "meta": {},
+        "challenges": [
+          {
+            "title": "Challenge Nine",
+            "block": "Block One",
+            "superBlock": "super-block-b",
+            "isPrivate": true
+          },
+          {
+            "title": "Challenge Ten",
+            "block": "Block One",
+            "superBlock": "super-block-b"
+          },
+          {
+            "title": "Challenge Eleven",
+            "block": "Block One",
+            "superBlock": "super-block-b"
+          },
+          {
+            "title": "Challenge Twelve",
+            "block": "Block One",
+            "superBlock": "super-block-b"
+          }
+        ]
+      }
+    }
+  }
+}
