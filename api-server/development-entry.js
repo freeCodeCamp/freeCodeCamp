@@ -4,9 +4,12 @@ const nodemon = require('nodemon');
 nodemon({
   ext: 'js json',
   // --silent squashes an ELIFECYCLE error when the server exits
-  exec: 'DEBUG=fcc* npm run --silent babel-dev-server',
+  exec: 'npm run --silent babel-dev-server',
   watch: path.resolve(__dirname, './server'),
-  spawn: true
+  spawn: true,
+  env: {
+    DEBUG: 'fcc*'
+  }
 });
 
 nodemon.on('restart', function nodemonRestart(files) {
