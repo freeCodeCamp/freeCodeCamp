@@ -15,9 +15,6 @@
   "main": "lib.js",
   "scripts": {
     "build": "gulp build",
-    "precommit": "lint-staged",
-    "commit": "git-cz",
-    "commitmsg": "commitlint -e",
     "develop": "gulp",
     "format": "prettier --write es5 './**/*.{js,json}' && npm run lint",
     "lint": "eslint ./**/*.js --fix",
@@ -27,23 +24,10 @@
     "test": "babel-node ./test-challenges.js | tap-spec",
     "unpack": "babel-node ./unpack.js"
   },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    },
-    "cz-customizable": {
-      "config": "commitizen.config.js"
-    }
-  },
   "dependencies": {
     "@freecodecamp/challenge-md-parser": "^1.0.0",
     "invariant": "^2.2.4",
-    "readdirp-walk": "^1.6.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^7.0.0",
-    "@commitlint/config-conventional": "^7.0.1",
-    "@commitlint/travis-cli": "^7.0.0",
+    "readdirp-walk": "^1.6.0",
     "@semantic-release/changelog": "^2.0.2",
     "@semantic-release/git": "^5.0.0",
     "babel-cli": "^6.3.17",
@@ -57,8 +41,6 @@
     "babel-preset-stage-3": "^6.24.1",
     "babel-standalone": "^6.26.0",
     "browserify": "^16.2.2",
-    "commitizen": "^2.9.6",
-    "cz-customizable": "^5.2.0",
     "eslint": "^4.19.1",
     "eslint-config-freecodecamp": "^1.1.1",
     "eslint-plugin-import": "^2.11.0",
@@ -66,7 +48,6 @@
     "eslint-plugin-react": "^7.7.0",
     "fs-extra": "^6.0.1",
     "gulp": "^4.0.0",
-    "husky": "^0.14.3",
     "joi": "^13.3.0",
     "joi-objectid": "^2.0.0",
     "jquery": "^3.3.1",
