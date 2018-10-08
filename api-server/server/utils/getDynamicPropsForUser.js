@@ -25,7 +25,7 @@ export default function populateUser(db, user) {
     .aggregate([
       { $match: { _id: user.id } },
       { $project: { points: { $size: '$progressTimestamps' } } }
-    ], function(err, [{ points = 1 } = {}]) {
+    ]).get(function(err, [{ points = 1 } = {}]) {
       if (err) { return reject(err); }
       user.points = points;
       let completedChallengeCount = 0;

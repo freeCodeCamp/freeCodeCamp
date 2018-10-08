@@ -55,7 +55,7 @@
     "lodash": "^4.17.5",
     "loopback": "^3.16.2",
     "loopback-boot": "^2.27.1",
-    "loopback-connector-mongodb": "3.3.0",
+    "loopback-connector-mongodb": "3.8.0",
     "method-override": "^3.0.0",
     "moment": "^2.19.3",
     "moment-timezone": "^0.5.14",
