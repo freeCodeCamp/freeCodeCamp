@@ -28,21 +28,21 @@ There are many possible Gray codes. The following encodes what is called "binary
 
 ```yml
 tests:
-  - text: "'<code>gray</code> should be a function."'
+  - text: <code>gray</code> should be a function.
     testString: 'assert(typeof gray=="function","<code>gray</code> should be a function.");'
-  - text: "'<code>gray(true,177)</code> should return a number."'
+  - text: <code>gray(true,177)</code> should return a number.
     testString: 'assert(typeof gray(true,177)=="number","<code>gray(true,177)</code> should return a number.");'
-  - text: "'<code>gray(true,177)</code> should return <code>233</code>."'
+  - text: <code>gray(true,177)</code> should return <code>233</code>.
     testString: 'assert.equal(gray(true,177),233,"<code>gray(true,177)</code> should return <code>233</code>.");'
-  - text: "'<code>gray(true,425)</code> should return <code>381</code>."'
+  - text: <code>gray(true,425)</code> should return <code>381</code>.
     testString: 'assert.equal(gray(true,425),381,"<code>gray(true,425)</code> should return <code>381</code>.");'
-  - text: "'<code>gray(true,870)</code> should return <code>725</code>."'
+  - text: <code>gray(true,870)</code> should return <code>725</code>.
     testString: 'assert.equal(gray(true,870),725,"<code>gray(true,870)</code> should return <code>725</code>.");'
-  - text: "'<code>gray(false,233)</code> should return <code>177</code>."'
+  - text: <code>gray(false,233)</code> should return <code>177</code>.
     testString: 'assert.equal(gray(false,233),177,"<code>gray(false,233)</code> should return <code>177</code>.");'
-  - text: "'<code>gray(false,381)</code> should return <code>425</code>."'
+  - text: <code>gray(false,381)</code> should return <code>425</code>.
     testString: 'assert.equal(gray(false,381),425,"<code>gray(false,381)</code> should return <code>425</code>.");'
-  - text: "'<code>gray(false,725)</code> should return <code>870</code>."'
+  - text: <code>gray(false,725)</code> should return <code>870</code>.
     testString: 'assert.equal(gray(false,725),870,"<code>gray(false,725)</code> should return <code>870</code>.");'
 
 ```

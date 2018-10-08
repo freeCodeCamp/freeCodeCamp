@@ -19,9 +19,9 @@ Write a function to generate an array of lower case ASCII characters, for a give
 
 ```yml
 tests:
-  - text: "'<code>lascii</code> should be a function."'
+  - text: <code>lascii</code> should be a function.
     testString: 'assert(typeof lascii=="function","<code>lascii</code> should be a function.");'
-  - text: "'<code>lascii("a","d")</code> should return an array."'
+  - text: <code>lascii("a","d")</code> should return an array.
     testString: 'assert(Array.isArray(lascii("a","d")),"<code>lascii("a","d")</code> should return an array.");'
   - text: '"<code>lascii("a","d")</code> should return <code>[ "a", "b", "c", "d" ]</code>."'
     testString: 'assert.deepEqual(lascii("a","d"),results[0],"<code>lascii("a","d")</code> should return <code>[ "a", "b", "c", "d" ]</code>.");'

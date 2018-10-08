@@ -23,17 +23,17 @@ Write a function that takes a number 'n' as a parameter and returns the identity
 
 ```yml
 tests:
-  - text: "'<code>idMatrix</code> should be a function."'
+  - text: <code>idMatrix</code> should be a function.
     testString: 'assert(typeof idMatrix=="function","<code>idMatrix</code> should be a function.");'
-  - text: "'<code>idMatrix(1)</code> should return an array."'
+  - text: <code>idMatrix(1)</code> should return an array.
     testString: 'assert(Array.isArray(idMatrix(1)),"<code>idMatrix(1)</code> should return an array.");'
-  - text: "'<code>idMatrix(1)</code> should return <code>"+JSON.stringify(results[0])+"</code>."'
+  - text: <code>idMatrix(1)</code> should return <code>"+JSON.stringify(results[0])+"</code>.
     testString: 'assert.deepEqual(idMatrix(1),results[0],"<code>idMatrix(1)</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
-  - text: "'<code>idMatrix(2)</code> should return <code>"+JSON.stringify(results[1])+"</code>."'
+  - text: <code>idMatrix(2)</code> should return <code>"+JSON.stringify(results[1])+"</code>.
     testString: 'assert.deepEqual(idMatrix(2),results[1],"<code>idMatrix(2)</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
-  - text: "'<code>idMatrix(3)</code> should return <code>"+JSON.stringify(results[2])+"</code>."'
+  - text: <code>idMatrix(3)</code> should return <code>"+JSON.stringify(results[2])+"</code>.
     testString: 'assert.deepEqual(idMatrix(3),results[2],"<code>idMatrix(3)</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
-  - text: "'<code>idMatrix(4)</code> should return <code>"+JSON.stringify(results[3])+"</code>."'
+  - text: <code>idMatrix(4)</code> should return <code>"+JSON.stringify(results[3])+"</code>.
     testString: 'assert.deepEqual(idMatrix(4),results[3],"<code>idMatrix(4)</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
 
 ```
