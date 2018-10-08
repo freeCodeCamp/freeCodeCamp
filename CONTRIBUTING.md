@@ -119,7 +119,7 @@ Contributing to this requires some understanding of APIs, ES6 Syntax and a lot o
 
 ## FAQs
 
-**I found a bug that is not on the board. Where and when should I report?**
+**How can I report a bug, that is not on board?**
 
 If you think you've found a bug, first read the ["Help I've Found a Bug"](https://forum.freecodecamp.org/t/how-to-report-a-bug/19543) article and follow its instructions.
 
@@ -127,11 +127,11 @@ If you're confident it's a new bug, go ahead and create a new GitHub issue. Be s
 
 Please note, that any issues that seek coding help on a challenge, will be closed. The issue tracker is strictly for the codebase related issues and discussions. You should [seek assistance on the forum](https://www.freecodecamp.org/forum) before reporting whenever in doubt.
 
-**I found a security issue:**
+**How can I report a security issue?**
 
 Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-**I am stuck on a step while contributing and need help:**
+**I am stuck on something that is not in these documentation. How can get help?**
 
 Feel free to ask for help in:
 
@@ -145,10 +145,10 @@ We are excited to help you contribute to any of the topics that you would like t
 - You can learn how from this *free* series ["How to Contribute to an Open Source Project on GitHub"](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github) - by [Kent C. Dodds](https://github.com/kentcdodds)
 - Checkout <https://www.firsttimersonly.com>, a great resource on finding issues to contribute to as a first timer.
 
-**I dont understand the different labels on the issues and pull requests:**
+**What do these different labels mean, that are tagged on issues?**
 
 Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels). You should go through **`Help Wanted`** or **`first timers welcome`** issues for quick lookup of what is available for you to work on.
 
-**I found a typo, should I report an Issue before I can make a pull request?**
+**I found a typo, should I report an issue before I can make a pull request?**
 
 You can straight away create a pull request without having to report any issues, for typos, or small changes to [verbiage](https://en.oxforddictionaries.com/definition/verbiage). Issues are a tool to seek confirmation on  changes that you would want to propose via a pull request.
