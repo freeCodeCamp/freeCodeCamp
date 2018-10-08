@@ -12,17 +12,11 @@
 
 # Contribution Guidelines
 
-Hello 👋 !
+Hello 👋!
 
-freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your interest in contributing and we are exited to welcome you onboard.
+freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful your contributions, and we are exited to welcome you onboard.
 
-Any and all contributions are welcome alike.
-
-> **A quick note before getting started:**
->
-> We have a ["Code of Conduct"](/docs/CODE_OF_CONDUCT.md) that you should follow at all times. In summary - We want contributing to freeCodeCamp.org, foster a welcoming environment that is safe and inclusive for everyone.
->
-> Be polite and succinct in your conversations with fellow contributors. Remember to respect everyone's time and efforts, they are helping the community same as you.
+We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's not very long.
 
 Happy Contributing 🎉!
 
@@ -32,7 +26,7 @@ You can choose to contribute to an area of you interest:
 
 1. [Contribute to this open source codebase.](#contribute-to-this-open-source-codebase)
 
-   Help us in creating or editing [guide articles](https://www.freecodecamp.org/guide), [curriculum challenges](https://www.freecodecamp.org/learn) and fixing bugs on the learning platform.
+Help us in creating or editing [guide articles](https://www.freecodecamp.org/guide), [coding challenges](https://www.freecodecamp.org/learn) and fixing bugs on the learning platform.
 
 2. Help campers on our [public forum](https://www.freecodecamp.org/forum/).
 
@@ -59,19 +53,15 @@ You can help us:
 
 **What are Guide articles?**
 
-The Guide articles aim to be short articles to get you started and familiar with these concepts before going on to read more in-depth material.
-
-Guide articles can be an explanation of a syntax, design pattern, what aria labels are for, or something like what the numbers mean in the top right-hand corner of your screen when at [freecodecamp.org](https://freecodecamp.org).
+Guide articles help you get a quick understanding of a technology concept. These are short, plain-English explanations that you can read before going on to more in-depth resources.
 
 You can find an [example article about HTML Elements here](./client/src/pages/html/elements/index.md).
 
 **What can I write an article about?**
 
-Front-end development (adjective form with a dash) is when you are working on the front end (noun form with no dash). The same goes with the back end, full stack, and many other compound terms.
-
 We welcome your help writing these articles. You don't have to be an expert in a topic to write about it—this entire Guide is open source, so even if you make a mistake, another contributor will eventually correct it.
 
-To help, find a `stub article` on our [Guide website](https://www.freecodecamp.org/guide), write the article, then open a pull request (PR) to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about your changes, review them and adopt them.
+To help, find a `stub article` on our [Guide website](https://www.freecodecamp.org/guide), write the article, then open a pull request to replace the stub with your article. A [pull request](https://help.github.com/articles/about-pull-requests/) is how you'll suggest changes. It lets others know about your changes, review them and adopt them.
 
 If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
 
@@ -89,11 +79,11 @@ If you would like work on these, follow along these guidelines:
 
 You can help us translate our Guide articles and Curriculum challenges for a language that you speak. Currently we have translated versions in:
 
-- Chinese : 中文
-- Russian : русский
-- Arabic : عربى
-- Spanish : Español
-- Portuguese : Português
+- Chinese (中文)
+- Russian (русский)
+- Arabic (عربى)
+- Spanish (Español)
+- Portuguese (Português)
 
 Most of these versions are machine translated. We would love your help in improving the quality of these translations.
 
@@ -117,7 +107,7 @@ Contributing to this requires some understanding of APIs, ES6 Syntax and a lot o
 
 **[TODO]**
 
-## FAQs
+## Frequently Asked Questions
 
 **How can I report a bug, that is not on board?**
 
@@ -142,8 +132,7 @@ We are excited to help you contribute to any of the topics that you would like t
 
 **I am new to GitHub and Open Source in general:**
 
-- You can learn how from this *free* series ["How to Contribute to an Open Source Project on GitHub"](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github) - by [Kent C. Dodds](https://github.com/kentcdodds)
-- Checkout <https://www.firsttimersonly.com>, a great resource on finding issues to contribute to as a first timer.
+Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
 **What do these different labels mean, that are tagged on issues?**
 
