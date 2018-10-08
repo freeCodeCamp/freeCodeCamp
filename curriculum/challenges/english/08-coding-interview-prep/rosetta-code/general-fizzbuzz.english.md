@@ -23,23 +23,23 @@ The second parameter is the number for which the function should return a string
 
 ```yml
 tests:
-  - text: "'<code>genFizzBuzz</code> should be a function."'
+  - text: <code>genFizzBuzz</code> should be a function.
     testString: 'assert(typeof genFizzBuzz=="function","<code>genFizzBuzz</code> should be a function.");'
-  - text: "'<code>genFizzBuzz("+JSON.stringify(tests[0][0])+","+tests[0][1]+")</code> should return a type."'
+  - text: <code>genFizzBuzz("+JSON.stringify(tests[0][0])+","+tests[0][1]+")</code> should return a type.
     testString: 'assert(typeof genFizzBuzz(tests[0][0],tests[0][1])=="string","<code>genFizzBuzz("+JSON.stringify(tests[0][0])+","+tests[0][1]+")</code> should return a type.");'
-  - text: "'<code>genFizzBuzz("+JSON.stringify(tests[0][0])+","+tests[0][1]+")</code> should return <code>""+results[0]+""</code>."'
+  - text: <code>genFizzBuzz("+JSON.stringify(tests[0][0])+","+tests[0][1]+")</code> should return <code>""+results[0]+""</code>.
     testString: 'assert.equal(genFizzBuzz(tests[0][0],tests[0][1]),results[0],"<code>genFizzBuzz("+JSON.stringify(tests[0][0])+","+tests[0][1]+")</code> should return <code>""+results[0]+""</code>.");'
-  - text: "'<code>genFizzBuzz("+JSON.stringify(tests[1][0])+","+tests[1][1]+")</code> should return <code>""+results[1]+""</code>."'
+  - text: <code>genFizzBuzz("+JSON.stringify(tests[1][0])+","+tests[1][1]+")</code> should return <code>""+results[1]+""</code>.
     testString: 'assert.equal(genFizzBuzz(tests[1][0],tests[1][1]),results[1],"<code>genFizzBuzz("+JSON.stringify(tests[1][0])+","+tests[1][1]+")</code> should return <code>""+results[1]+""</code>.");'
-  - text: "'<code>genFizzBuzz("+JSON.stringify(tests[2][0])+","+tests[2][1]+")</code> should return <code>""+results[2]+""</code>."'
+  - text: <code>genFizzBuzz("+JSON.stringify(tests[2][0])+","+tests[2][1]+")</code> should return <code>""+results[2]+""</code>.
     testString: 'assert.equal(genFizzBuzz(tests[2][0],tests[2][1]),results[2],"<code>genFizzBuzz("+JSON.stringify(tests[2][0])+","+tests[2][1]+")</code> should return <code>""+results[2]+""</code>.");'
-  - text: "'<code>genFizzBuzz("+JSON.stringify(tests[3][0])+","+tests[3][1]+")</code> should return <code>""+results[3]+""</code>."'
+  - text: <code>genFizzBuzz("+JSON.stringify(tests[3][0])+","+tests[3][1]+")</code> should return <code>""+results[3]+""</code>.
     testString: 'assert.equal(genFizzBuzz(tests[3][0],tests[3][1]),results[3],"<code>genFizzBuzz("+JSON.stringify(tests[3][0])+","+tests[3][1]+")</code> should return <code>""+results[3]+""</code>.");'
-  - text: "'<code>genFizzBuzz("+JSON.stringify(tests[4][0])+","+tests[4][1]+")</code> should return <code>""+results[4]+""</code>."'
+  - text: <code>genFizzBuzz("+JSON.stringify(tests[4][0])+","+tests[4][1]+")</code> should return <code>""+results[4]+""</code>.
     testString: 'assert.equal(genFizzBuzz(tests[4][0],tests[4][1]),results[4],"<code>genFizzBuzz("+JSON.stringify(tests[4][0])+","+tests[4][1]+")</code> should return <code>""+results[4]+""</code>.");'
-  - text: "'<code>genFizzBuzz("+JSON.stringify(tests[5][0])+","+tests[5][1]+")</code> should return <code>""+results[5]+""</code>."'
+  - text: <code>genFizzBuzz("+JSON.stringify(tests[5][0])+","+tests[5][1]+")</code> should return <code>""+results[5]+""</code>.
     testString: 'assert.equal(genFizzBuzz(tests[5][0],tests[5][1]),results[5],"<code>genFizzBuzz("+JSON.stringify(tests[5][0])+","+tests[5][1]+")</code> should return <code>""+results[5]+""</code>.");'
-  - text: "'<code>genFizzBuzz("+JSON.stringify(tests[6][0])+","+tests[6][1]+")</code> should return <code>""+results[6]+""</code>."'
+  - text: <code>genFizzBuzz("+JSON.stringify(tests[6][0])+","+tests[6][1]+")</code> should return <code>""+results[6]+""</code>.
     testString: 'assert.equal(genFizzBuzz(tests[6][0],tests[6][1]),results[6],"<code>genFizzBuzz("+JSON.stringify(tests[6][0])+","+tests[6][1]+")</code> should return <code>""+results[6]+""</code>.");'
 
 ```
