@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aedf08824
 title: Add Different Padding to Each Side of an Element
 challengeType: 0
-guideUrl: 'https://guide.freecodecamp.org/certificates/add-different-padding-to-each-side-of-an-element'
+guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-different-padding-to-each-side-of-an-element'
 videoUrl: 'https://scrimba.com/c/cB7mwUw'
 ---
 

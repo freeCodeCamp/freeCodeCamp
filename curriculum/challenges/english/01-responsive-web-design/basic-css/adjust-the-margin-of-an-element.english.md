@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aedf08822
 title: Adjust the Margin of an Element
 challengeType: 0
-guideUrl: 'https://guide.freecodecamp.org/certificates/adjust-the-margin-of-an-element'
+guideUrl: 'https://www.freecodecamp.org/guide/certificates/adjust-the-margin-of-an-element'
 videoUrl: 'https://scrimba.com/c/cVJarHW'
 ---
 

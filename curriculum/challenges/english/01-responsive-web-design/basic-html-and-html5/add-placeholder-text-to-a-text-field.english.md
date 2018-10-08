@@ -2,7 +2,7 @@
 id: bad87fee1348bd9aedf08830
 title: Add Placeholder Text to a Text Field
 challengeType: 0
-guideUrl: 'https://guide.freecodecamp.org/certificates/add-placeholder-text-to-a-text-field'
+guideUrl: 'https://www.freecodecamp.org/guide/certificates/add-placeholder-text-to-a-text-field'
 videoUrl: 'https://scrimba.com/p/pVMPUv/cKdJDhg'
 ---
 

@@ -2,7 +2,7 @@
 id: 56533eb9ac21ba0edf2244cc
 title: Accessing Nested Objects
 challengeType: 1
-guideUrl: 'https://guide.freecodecamp.org/certificates/accessing-nested-objects-in-json'
+guideUrl: 'https://www.freecodecamp.org/guide/certificates/accessing-nested-objects-in-json'
 ---
 
 ## Description
