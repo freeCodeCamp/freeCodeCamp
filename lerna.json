@@ -3,7 +3,6 @@
     "api-server",
     "client",
     "curriculum",
-    "seed",
     "tools/challenge-md-parser",
     "tools/scripts/seed"
   ],
