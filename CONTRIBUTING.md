@@ -16,8 +16,6 @@ Hello 👋 !
 
 freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your interest in contributing and we are exited to welcome you onboard.
 
-There are a lot of ways you can help and contribute to the community. For instance, you can copy edit, and curate content for guide articles and curriculum. Translate freeCodeCamp into a language that you speak. Write code, report and fix bugs. Triage issues and help moderate and review changes to the codebase. You can help campers, provide feedback and coding assistance and more.
-
 Any and all contributions are welcome alike.
 
 > **A quick note before getting started:**
