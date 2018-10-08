@@ -25,7 +25,7 @@ In the first grid, use <code>auto-fill</code> with <code>repeat</code> to fill t
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fill</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fill\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi), ''<code>container</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fill</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?auto-fill\s*?,\s*?minmax\s*?\(\s*?60px\s*?,\s*?1fr\s*?\)\s*?\)\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property with <code>repeat</code> and <code>auto-fill</code> that will fill the grid with columns that have a minimum width of <code>60px</code> and maximum of <code>1fr</code>.");'
 
 ```
 
@@ -43,7 +43,7 @@ tests:
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
   .item5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     min-height: 100px;
@@ -51,14 +51,14 @@ tests:
     background: LightGray;
     display: grid;
     /* change the code below this line */
-    
+
     grid-template-columns: repeat(3, minmax(60px, 1fr));
-    
+
     /* change the code above this line */
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }
-  
+
   .container2 {
     font-size: 40px;
     min-height: 100px;

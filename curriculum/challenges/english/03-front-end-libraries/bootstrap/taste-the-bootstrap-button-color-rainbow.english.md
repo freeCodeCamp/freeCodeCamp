@@ -22,11 +22,11 @@ Note that this button will still need the <code>btn</code> and <code>btn-block</
 ```yml
 tests:
   - text: Your button should have the class <code>btn-primary</code>.
-    testString: 'assert($("button").hasClass("btn-primary"), ''Your button should have the class <code>btn-primary</code>.'');'
+    testString: 'assert($("button").hasClass("btn-primary"), "Your button should have the class <code>btn-primary</code>.");'
   - text: Your button should still have the <code>btn</code> and <code>btn-block</code> classes.
-    testString: 'assert($("button").hasClass("btn-block") && $("button").hasClass("btn"), ''Your button should still have the <code>btn</code> and <code>btn-block</code> classes.'');'
+    testString: 'assert($("button").hasClass("btn-block") && $("button").hasClass("btn"), "Your button should still have the <code>btn</code> and <code>btn-block</code> classes.");'
   - text: Make sure all your <code>button</code> elements have a closing tag.
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, ''Make sure all your <code>button</code> elements have a closing tag.'');'
+    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
 
 ```
 

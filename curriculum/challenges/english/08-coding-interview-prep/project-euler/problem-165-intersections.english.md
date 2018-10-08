@@ -6,7 +6,7 @@ title: 'Problem 165: Intersections'
 
 ## Description
 <section id='description'>
-A segment is uniquely defined by its two endpoints. By considering two line segments in plane geometry there are three possibilities: 
+A segment is uniquely defined by its two endpoints. By considering two line segments in plane geometry there are three possibilities:
 the segments have zero points, one point, or infinitely many points in common.
 Moreover when two segments have exactly one point in common it might be the case that that common point is an endpoint of either one of the segments or of both. If a common point of two segments is not an endpoint of either of the segments it is an interior point of both segments.
 We will call a common point T of two segments L1 and L2 a true intersection point of L1 and L2  if T is the only common point of L1 and L2  and T is an interior point of both segments.
@@ -37,7 +37,7 @@ How many distinct true intersection points are found among the 5000 line segment
 ```yml
 tests:
   - text: <code>euler165()</code> should return 2868868.
-    testString: 'assert.strictEqual(euler165(), 2868868, ''<code>euler165()</code> should return 2868868.'');'
+    testString: 'assert.strictEqual(euler165(), 2868868, "<code>euler165()</code> should return 2868868.");'
 
 ```
 

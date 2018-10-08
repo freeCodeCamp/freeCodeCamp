@@ -25,13 +25,13 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>rot13("SERR PBQR PNZC")</code> should decode to <code>FREE CODE CAMP</code>
-    testString: 'assert(rot13("SERR PBQR PNZC") === "FREE CODE CAMP", ''<code>rot13("SERR PBQR PNZC")</code> should decode to <code>FREE CODE CAMP</code>'');'
+    testString: 'assert(rot13("SERR PBQR PNZC") === "FREE CODE CAMP", "<code>rot13("SERR PBQR PNZC")</code> should decode to <code>FREE CODE CAMP</code>");'
   - text: <code>rot13("SERR CVMMN!")</code> should decode to <code>FREE PIZZA!</code>
-    testString: 'assert(rot13("SERR CVMMN!") === "FREE PIZZA!", ''<code>rot13("SERR CVMMN!")</code> should decode to <code>FREE PIZZA!</code>'');'
+    testString: 'assert(rot13("SERR CVMMN!") === "FREE PIZZA!", "<code>rot13("SERR CVMMN!")</code> should decode to <code>FREE PIZZA!</code>");'
   - text: <code>rot13("SERR YBIR?")</code> should decode to <code>FREE LOVE?</code>
-    testString: 'assert(rot13("SERR YBIR?") === "FREE LOVE?", ''<code>rot13("SERR YBIR?")</code> should decode to <code>FREE LOVE?</code>'');'
+    testString: 'assert(rot13("SERR YBIR?") === "FREE LOVE?", "<code>rot13("SERR YBIR?")</code> should decode to <code>FREE LOVE?</code>");'
   - text: <code>rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>
-    testString: 'assert(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") === "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.", ''<code>rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>'');'
+    testString: 'assert(rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.") === "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.", "<code>rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.")</code> should decode to <code>THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG.</code>");'
 
 ```
 
@@ -44,7 +44,7 @@ tests:
 
 ```js
 function rot13(str) { // LBH QVQ VG!
-  
+
   return str;
 }
 
@@ -70,14 +70,14 @@ var lookup = {
   'M': 'Z','N': 'A','O': 'B','P': 'C',
   'Q': 'D','R': 'E','S': 'F','T': 'G',
   'U': 'H','V': 'I','W': 'J','X': 'K',
-  'Y': 'L','Z': 'M' 
+  'Y': 'L','Z': 'M'
 };
 
 function rot13(encodedStr) {
   var codeArr = encodedStr.split("");  // String to Array
   var decodedArr = []; // Your Result goes here
   // Only change code below this line
-  
+
   decodedArr = codeArr.map(function(letter) {
     if(lookup.hasOwnProperty(letter)) {
       letter = lookup[letter];

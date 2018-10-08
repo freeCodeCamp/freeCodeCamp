@@ -61,17 +61,17 @@ one to state if an integer is even.
 ```yml
 tests:
   - text: <code>eth_mult</code> is a function.
-    testString: 'assert(typeof eth_mult === ''function'', ''<code>eth_mult</code> is a function.'');'
+    testString: 'assert(typeof eth_mult === "function", "<code>eth_mult</code> is a function.");'
   - text: '<code>eth_mult(17,34)</code> should return <code>578</code>.'
-    testString: 'assert.equal(eth_mult(17, 34), 578, ''<code>eth_mult(17,34)</code> should return <code>578</code>.'');'
+    testString: 'assert.equal(eth_mult(17, 34), 578, "<code>eth_mult(17,34)</code> should return <code>578</code>.");'
   - text: '<code>eth_mult(23,46)</code> should return <code>1058</code>.'
-    testString: 'assert.equal(eth_mult(23, 46), 1058, ''<code>eth_mult(23,46)</code> should return <code>1058</code>.'');'
+    testString: 'assert.equal(eth_mult(23, 46), 1058, "<code>eth_mult(23,46)</code> should return <code>1058</code>.");'
   - text: '<code>eth_mult(12,27)</code> should return <code>324</code>.'
-    testString: 'assert.equal(eth_mult(12, 27), 324, ''<code>eth_mult(12,27)</code> should return <code>324</code>.'');'
+    testString: 'assert.equal(eth_mult(12, 27), 324, "<code>eth_mult(12,27)</code> should return <code>324</code>.");'
   - text: '<code>eth_mult(56,98)</code> should return <code>5488</code>.'
-    testString: 'assert.equal(eth_mult(56, 98), 5488, ''<code>eth_mult(56,98)</code> should return <code>5488</code>.'');'
+    testString: 'assert.equal(eth_mult(56, 98), 5488, "<code>eth_mult(56,98)</code> should return <code>5488</code>.");'
   - text: '<code>eth_mult(63,74)</code> should return <code>4662</code>.'
-    testString: 'assert.equal(eth_mult(63, 74), 4662, ''<code>eth_mult(63,74)</code> should return <code>4662</code>.'');'
+    testString: 'assert.equal(eth_mult(63, 74), 4662, "<code>eth_mult(63,74)</code> should return <code>4662</code>.");'
 
 ```
 

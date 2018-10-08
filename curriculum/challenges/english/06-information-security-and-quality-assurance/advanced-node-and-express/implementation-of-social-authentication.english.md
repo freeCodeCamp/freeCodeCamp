@@ -12,8 +12,8 @@ Strategies with OAuth require you to have at least a <em>Client ID</em> and a <e
 Obtaining your <em>Client ID and Secret<em> from Github is done in your account profile settings under 'developer settings', then '<a href='https://github.com/settings/developers'>OAuth applications</a>'. Click 'Register a new application', name your app, paste in the url to your glitch homepage (<b>Not the project code's url</b>), and lastly for the callback url, paste in the same url as the homepage but with '/auth/github/callback' added on. This is where users will be redirected to for us to handle after authenticating on Github. Save the returned information as 'GITHUB_CLIENT_ID' and 'GITHUB_CLIENT_SECRET' in your .env file.
 On your remixed project, create 2 routes accepting GET requests: /auth/github and /auth/github/callback. The first should only call passport to authenticate 'github' and the second should call passport to authenticate 'github' with a failure redirect to '/' and then if that is successful redirect to '/profile' (similar to our last project).
 An example of how '/auth/github/callback' should look is similar to how we handled a normal login in our last project: <pre>app.route('/login')
-  .post(passport.authenticate('local', { failureRedirect: '/' }), (req,res) => { 
-    res.redirect('/profile'); 
+  .post(passport.authenticate('local', { failureRedirect: '/' }), (req,res) => {
+    res.redirect('/profile');
   });</pre>
 Submit your page when you think you've got it right. If you're running into errors, you can check out the project up to this point <a href='https://gist.github.com/JosephLivengood/28ea2cae7e1dc6a53d7f0c42d987313b'>here</a>.
 </section>
@@ -29,9 +29,9 @@ Submit your page when you think you've got it right. If you're running into erro
 ```yml
 tests:
   - text: Route /auth/github correct
-    testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/_api/server.js'') .then(data => { assert.match(data, /(''|")\/auth\/github(''|")[^]*get.*passport.authenticate.*github/gi, ''Route auth/github should only call passport.authenticate with github''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /("|")\/auth\/github("|")[^]*get.*passport.authenticate.*github/gi, "Route auth/github should only call passport.authenticate with github"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: Route /auth/github/callback correct
-    testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/_api/server.js'') .then(data => { assert.match(data, /(''|")\/auth\/github\/callback(''|")[^]*get.*passport.authenticate.*github.*failureRedirect:( |)("|'')\/("|'')/gi, ''Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /("|")\/auth\/github\/callback("|")[^]*get.*passport.authenticate.*github.*failureRedirect:( |)("|")\/("|")/gi, "Route auth/github/callback should accept a get request and call passport.authenticate for github with a failure redirect to home"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

@@ -28,13 +28,13 @@ Create a <code>font-family</code> CSS rule that uses the <code>Lobster</code> fo
 ```yml
 tests:
   - text: Import the <code>Lobster</code> font.
-    testString: 'assert(new RegExp("googleapis", "gi").test(code), ''Import the <code>Lobster</code> font.'');'
+    testString: 'assert(new RegExp("googleapis", "gi").test(code), "Import the <code>Lobster</code> font.");'
   - text: Your <code>h2</code> element should use the font <code>Lobster</code>.
-    testString: 'assert($("h2").css("font-family").match(/lobster/i), ''Your <code>h2</code> element should use the font <code>Lobster</code>.'');'
+    testString: 'assert($("h2").css("font-family").match(/lobster/i), "Your <code>h2</code> element should use the font <code>Lobster</code>.");'
   - text: Use an <code>h2</code> CSS selector to change the font.
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\''|")?Lobster(\''|")?\s*;\s*\}/gi.test(code), ''Use an <code>h2</code> CSS selector to change the font.'');'
+    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?\s*;\s*\}/gi.test(code), "Use an <code>h2</code> CSS selector to change the font.");'
   - text: Your <code>p</code> element should still use the font <code>monospace</code>.
-    testString: 'assert($("p").css("font-family").match(/monospace/i), ''Your <code>p</code> element should still use the font <code>monospace</code>.'');'
+    testString: 'assert($("p").css("font-family").match(/monospace/i), "Your <code>p</code> element should still use the font <code>monospace</code>.");'
 
 ```
 
@@ -60,9 +60,9 @@ tests:
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -77,7 +77,7 @@ tests:
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

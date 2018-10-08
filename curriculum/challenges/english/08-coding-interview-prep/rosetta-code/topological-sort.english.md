@@ -7,12 +7,12 @@ challengeType: 5
 ## Description
 <section id='description'>
 <p>
-Given a mapping between items, and items they depend on, a 
-<a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting">topological sort</a> orders 
+Given a mapping between items, and items they depend on, a
+<a href="https://en.wikipedia.org/wiki/Topological sorting" title="wp: Topological sorting">topological sort</a> orders
 items so that no item precedes an item it depends upon.
 </p>
 <p>
-The compiling of a library in the 
+The compiling of a library in the
 <a href="https://en.wikipedia.org/wiki/VHDL" title="wp: VHDL">VHDL</a> language
 has the constraint that a library must be compiled after any library it depends on.
 </p>
@@ -20,9 +20,9 @@ Task:
 <p>
 Write a function that will return a valid compile order of VHDL libraries from their dependencies.
 </p>
-  Assume library names are single words. 
+  Assume library names are single words.
   Items mentioned as only dependents have no dependents of their own, but their order of compiling must be given.
-  Any self dependencies should be ignored. 
+  Any self dependencies should be ignored.
   Any un-orderable dependencies should be ignored.
 <p>Use the following data as an example:</p>
 <pre>
@@ -73,15 +73,15 @@ C.f.:
 ```yml
 tests:
   - text: <code>topologicalSort</code> is a function.
-    testString: 'assert(typeof topologicalSort === ''function'', ''<code>topologicalSort</code> is a function.'');'
+    testString: 'assert(typeof topologicalSort === "function", "<code>topologicalSort</code> is a function.");'
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: 'assert.deepEqual(topologicalSort(libsSimple), [''bbb'', ''aaa''], ''<code>topologicalSort</code> must return correct library order..'');'
+    testString: 'assert.deepEqual(topologicalSort(libsSimple), ["bbb", "aaa"], "<code>topologicalSort</code> must return correct library order..");'
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: 'assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL, ''<code>topologicalSort</code> must return correct library order..'');'
+    testString: 'assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL, "<code>topologicalSort</code> must return correct library order..");'
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: 'assert.deepEqual(topologicalSort(libsCustom), solutionCustom, ''<code>topologicalSort</code> must return correct library order..'');'
+    testString: 'assert.deepEqual(topologicalSort(libsCustom), solutionCustom, "<code>topologicalSort</code> must return correct library order..");'
   - text: <code>topologicalSort</code> must ignore unorderable dependencies..
-    testString: 'assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable, ''<code>topologicalSort</code> must ignore unorderable dependencies..'');'
+    testString: 'assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable, "<code>topologicalSort</code> must ignore unorderable dependencies..");'
 
 ```
 
@@ -123,7 +123,7 @@ function topologicalSort(libs) {
   // and array of packages on which it depends.
   const D = libs
     .split('\n')
-    .map(e => e.split(' ').filter(ep => ep !== ''))
+    .map(e => e.split(' ').filter(ep => ep !== "))
     .reduce((p, c) =>
       p.set(c[0], c.filter((e, i) => (i > 0 && e !== c[0] ? e : null))), new Map());
   [].concat(...D.values()).forEach(e => {

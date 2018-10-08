@@ -6,7 +6,7 @@ title: 'Problem 269: Polynomials with at least one integer root'
 
 ## Description
 <section id='description'>
-A root or zero of a polynomial P(x) is a solution to the equation P(x) = 0. 
+A root or zero of a polynomial P(x) is a solution to the equation P(x) = 0.
 Define Pn as the polynomial whose coefficients are the digits of n.
 For example, P5703(x) = 5x3 + 7x2 + 3.
 
@@ -30,7 +30,7 @@ What is Z(1016)?
 ```yml
 tests:
   - text: <code>euler269()</code> should return 1311109198529286.
-    testString: 'assert.strictEqual(euler269(), 1311109198529286, ''<code>euler269()</code> should return 1311109198529286.'');'
+    testString: 'assert.strictEqual(euler269(), 1311109198529286, "<code>euler269()</code> should return 1311109198529286.");'
 
 ```
 

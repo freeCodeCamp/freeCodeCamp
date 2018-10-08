@@ -44,7 +44,7 @@ Find ΣGF(t) for 2≤t≤45.
 ```yml
 tests:
   - text: <code>euler384()</code> should return 3354706415856333000.
-    testString: 'assert.strictEqual(euler384(), 3354706415856333000, ''<code>euler384()</code> should return 3354706415856333000.'');'
+    testString: 'assert.strictEqual(euler384(), 3354706415856333000, "<code>euler384()</code> should return 3354706415856333000.");'
 
 ```
 

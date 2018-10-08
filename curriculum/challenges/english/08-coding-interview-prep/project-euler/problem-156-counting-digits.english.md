@@ -52,7 +52,7 @@ Note: if, for some n, f(n,d)=n
 ```yml
 tests:
   - text: <code>euler156()</code> should return 21295121502550.
-    testString: 'assert.strictEqual(euler156(), 21295121502550, ''<code>euler156()</code> should return 21295121502550.'');'
+    testString: 'assert.strictEqual(euler156(), 21295121502550, "<code>euler156()</code> should return 21295121502550.");'
 
 ```
 

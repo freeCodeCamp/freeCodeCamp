@@ -6,7 +6,7 @@ title: 'Problem 328: Lowest-cost Search'
 
 ## Description
 <section id='description'>
-We are trying to find a hidden number selected from the set of integers {1, 2, ..., n} by asking questions. 
+We are trying to find a hidden number selected from the set of integers {1, 2, ..., n} by asking questions.
 Each number (question) we ask, has a cost equal to the number asked and we get one of three possible answers: "Your guess is lower than the hidden number", or
  "Yes, that's it!", or
  "Your guess is higher than the hidden number".
@@ -42,7 +42,7 @@ Find C(n).
 ```yml
 tests:
   - text: <code>euler328()</code> should return 260511850222.
-    testString: 'assert.strictEqual(euler328(), 260511850222, ''<code>euler328()</code> should return 260511850222.'');'
+    testString: 'assert.strictEqual(euler328(), 260511850222, "<code>euler328()</code> should return 260511850222.");'
 
 ```
 

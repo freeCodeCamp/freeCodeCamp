@@ -28,7 +28,7 @@ If one complete new layer is wrapped around the spiral above, a square spiral wi
 ```yml
 tests:
   - text: <code>euler58()</code> should return 26241.
-    testString: 'assert.strictEqual(euler58(), 26241, ''<code>euler58()</code> should return 26241.'');'
+    testString: 'assert.strictEqual(euler58(), 26241, "<code>euler58()</code> should return 26241.");'
 
 ```
 

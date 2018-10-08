@@ -21,7 +21,7 @@ Create a gap for the rows that is <code>5px</code> tall.
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi), ''<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-row-gap\s*?:\s*?5px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-row-gap</code> property that has the value of <code>5px</code>.");'
 
 ```
 
@@ -39,7 +39,7 @@ tests:
   .d3{background:PaleTurquoise;}
   .d4{background:LightPink;}
   .d5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -49,12 +49,12 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     /* add your code below this line */
-    
-    
+
+
     /* add your code above this line */
   }
 </style>
-  
+
 <div class="container">
   <div class="d1">1</div>
   <div class="d2">2</div>

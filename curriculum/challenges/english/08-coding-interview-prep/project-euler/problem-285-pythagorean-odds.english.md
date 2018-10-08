@@ -29,7 +29,7 @@ If he plays 105 turns with k = 1, k = 2, k = 3, ..., k = 105, wh
 ```yml
 tests:
   - text: <code>euler285()</code> should return 157055.80999.
-    testString: 'assert.strictEqual(euler285(), 157055.80999, ''<code>euler285()</code> should return 157055.80999.'');'
+    testString: 'assert.strictEqual(euler285(), 157055.80999, "<code>euler285()</code> should return 157055.80999.");'
 
 ```
 

@@ -26,7 +26,7 @@ Give your answer rounded to eight decimal places in the form 0.abcdefgh .
 ```yml
 tests:
   - text: <code>euler232()</code> should return 0.83648556.
-    testString: 'assert.strictEqual(euler232(), 0.83648556, ''<code>euler232()</code> should return 0.83648556.'');'
+    testString: 'assert.strictEqual(euler232(), 0.83648556, "<code>euler232()</code> should return 0.83648556.");'
 
 ```
 

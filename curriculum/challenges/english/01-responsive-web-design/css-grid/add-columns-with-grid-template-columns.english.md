@@ -24,7 +24,7 @@ Give the grid container three columns that are <code>100px</code> wide each.
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi), ''<code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?100px\s*?100px\s*?100px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property with three units of <code>100px</code>.");'
 
 ```
 
@@ -42,19 +42,19 @@ tests:
   .d3{background:PaleTurquoise;}
   .d4{background:LightPink;}
   .d5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     width: 100%;
     background: LightGray;
     display: grid;
     /* add your code below this line */
-    
-    
+
+
     /* add your code above this line */
   }
 </style>
-  
+
 <div class="container">
   <div class="d1">1</div>
   <div class="d2">2</div>

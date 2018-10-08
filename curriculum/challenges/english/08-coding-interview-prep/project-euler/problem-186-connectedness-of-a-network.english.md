@@ -32,7 +32,7 @@ The Prime Minister's phone number is 524287. After how many successful calls, no
 ```yml
 tests:
   - text: <code>euler186()</code> should return 2325629.
-    testString: 'assert.strictEqual(euler186(), 2325629, ''<code>euler186()</code> should return 2325629.'');'
+    testString: 'assert.strictEqual(euler186(), 2325629, "<code>euler186()</code> should return 2325629.");'
 
 ```
 

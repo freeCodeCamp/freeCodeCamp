@@ -10,7 +10,7 @@ Define Co(n) to be the maximal possible sum of a set of mutually co-prime elemen
 
 
 
-You are given that Co(30) = 193 and Co(100) = 1356. 
+You are given that Co(30) = 193 and Co(100) = 1356.
 
 
 Find Co(200000).
@@ -27,7 +27,7 @@ Find Co(200000).
 ```yml
 tests:
   - text: <code>euler355()</code> should return 1726545007.
-    testString: 'assert.strictEqual(euler355(), 1726545007, ''<code>euler355()</code> should return 1726545007.'');'
+    testString: 'assert.strictEqual(euler355(), 1726545007, "<code>euler355()</code> should return 1726545007.");'
 
 ```
 

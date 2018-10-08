@@ -6,7 +6,7 @@ title: 'Problem 445: Retractions A'
 
 ## Description
 <section id='description'>
-For every integer n>1, the family of functions fn,a,b  is defined 
+For every integer n>1, the family of functions fn,a,b  is defined
 by fn,a,b(x)≡ax+b mod n for a,b,x integer and  0<a<n, 0≤b<n, 0≤x<n.
 We will call fn,a,b a retraction if fn,a,b(fn,a,b(x))≡fn,a,b(x) mod n for every 0≤x<n.
 Let R(n) be the number of retractions for n.
@@ -31,7 +31,7 @@ Give your answer modulo 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler445()</code> should return 659104042.
-    testString: 'assert.strictEqual(euler445(), 659104042, ''<code>euler445()</code> should return 659104042.'');'
+    testString: 'assert.strictEqual(euler445(), 659104042, "<code>euler445()</code> should return 659104042.");'
 
 ```
 

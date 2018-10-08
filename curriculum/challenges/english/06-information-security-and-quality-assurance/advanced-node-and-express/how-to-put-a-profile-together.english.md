@@ -24,7 +24,7 @@ Submit your page when you think you've got it right.
 ```yml
 tests:
   - text: Correctly added a Pug render variable to /profile
-    testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/_api/server.js'') .then(data => { assert.match(data, /\/views\/pug\/profile[^]*username:( |)req.user.username/gi, ''You should be passing the variable username with req.user.username into the render function of the profile page''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /\/views\/pug\/profile[^]*username:( |)req.user.username/gi, "You should be passing the variable username with req.user.username into the render function of the profile page"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

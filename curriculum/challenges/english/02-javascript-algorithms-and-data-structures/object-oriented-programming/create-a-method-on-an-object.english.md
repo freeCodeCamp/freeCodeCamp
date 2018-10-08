@@ -24,9 +24,9 @@ Using the <code>dog</code> <code>object</code>, give it a method called <code>sa
 ```yml
 tests:
   - text: <code>dog.sayLegs()</code> should be a function.
-    testString: 'assert(typeof(dog.sayLegs) === ''function'', ''<code>dog.sayLegs()</code> should be a function.'');'
+    testString: 'assert(typeof(dog.sayLegs) === "function", "<code>dog.sayLegs()</code> should be a function.");'
   - text: <code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.
-    testString: 'assert(dog.sayLegs() === ''This dog has 4 legs.'', ''<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.'');'
+    testString: 'assert(dog.sayLegs() === "This dog has 4 legs.", "<code>dog.sayLegs()</code> should return the given string - note that punctuation and spacing matter.");'
 
 ```
 
@@ -41,7 +41,7 @@ tests:
 let dog = {
   name: "Spot",
   numLegs: 4,
-  
+
 };
 
 dog.sayLegs();

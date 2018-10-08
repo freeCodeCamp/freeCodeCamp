@@ -25,15 +25,15 @@ Remember to keep count of the <code>currentIndex</code>.
 ```yml
 tests:
   - text: Your <code>LinkedList</code> class should have a <code>removeAt</code> method.
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.removeAt === ''function'')}()), ''Your <code>LinkedList</code> class should have a <code>removeAt</code> method.'');'
+    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.removeAt === "function")}()), "Your <code>LinkedList</code> class should have a <code>removeAt</code> method.");'
   - text: Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list
-    testString: 'assert((function(){var test = new LinkedList(); test.add(''cat''); test.add(''dog''); test.add(''kitten''); test.removeAt(1); return test.size() === 2}()), ''Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list'');'
+    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); test.removeAt(1); return test.size() === 2}()), "Your <code>removeAt</code> method should reduce the <code>length</code> of the linked list");'
   - text: Your <code>removeAt</code> method should also return the element of the removed node.
-    testString: 'assert((function(){var test = new LinkedList(); test.add(''cat''); test.add(''dog''); test.add(''kitten'');  return test.removeAt(1) === ''dog''}()), ''Your <code>removeAt</code> method should also return the element of the removed node.'');'
+    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return test.removeAt(1) === "dog"}()), "Your <code>removeAt</code> method should also return the element of the removed node.");'
   - text: Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>
-    testString: 'assert((function(){var test = new LinkedList(); test.add(''cat''); test.add(''dog''); test.add(''kitten'');  return (test.removeAt(-1) === null)}()), ''Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>'');'
+    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return (test.removeAt(-1) === null)}()), "Your <code>removeAt</code> method should also return <code>null</code> if the given index is less than <code>0</code>");'
   - text: Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.
-    testString: 'assert((function(){var test = new LinkedList(); test.add(''cat''); test.add(''dog''); test.add(''kitten'');  return (test.removeAt(3) === null)}()), ''Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.'');'
+    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten");  return (test.removeAt(3) === null)}()), "Your <code>removeAt</code> method should also return <code>null</code> if the given index is equal or more than the <code>length</code> of the linked list.");'
 
 ```
 
@@ -45,14 +45,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-function LinkedList() { 
-  var length = 0; 
-  var head = null; 
+function LinkedList() {
+  var length = 0;
+  var head = null;
 
-  var Node = function(element){ // {1} 
-    this.element = element; 
-    this.next = null; 
-  }; 
+  var Node = function(element){ // {1}
+    this.element = element;
+    this.next = null;
+  };
 
   this.size = function(){
     return length;
@@ -77,7 +77,7 @@ function LinkedList() {
     }
 
     length++;
-  }; 
+  };
 
   this.remove = function(element){
     var currentNode = head;

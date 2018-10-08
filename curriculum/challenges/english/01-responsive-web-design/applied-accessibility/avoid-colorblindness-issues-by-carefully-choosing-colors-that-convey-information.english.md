@@ -23,7 +23,7 @@ Camper Cat is testing different styles for an important button, but the yellow (
 ```yml
 tests:
   - text: Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.
-    testString: 'assert($(''button'').css(''color'') == ''rgb(0, 51, 102)'', ''Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.'');'
+    testString: 'assert($("button").css("color") == "rgb(0, 51, 102)", "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.");'
 
 ```
 

@@ -22,7 +22,7 @@ By finding the first arrangement to contain over 1012 = 1,000,000,000,000 discs 
 ```yml
 tests:
   - text: <code>euler100()</code> should return 756872327473.
-    testString: 'assert.strictEqual(euler100(), 756872327473, ''<code>euler100()</code> should return 756872327473.'');'
+    testString: 'assert.strictEqual(euler100(), 756872327473, "<code>euler100()</code> should return 756872327473.");'
 
 ```
 

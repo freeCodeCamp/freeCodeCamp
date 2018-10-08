@@ -21,9 +21,9 @@ The code from the previous challenge is re-written more concisely in the code ed
 ```yml
 tests:
   - text: The redux store should have a value of 5 for the initial state.
-    testString: 'assert(store.getState()===5, ''The redux store should have a value of 5 for the initial state.'');'
+    testString: 'assert(store.getState()===5, "The redux store should have a value of 5 for the initial state.");'
   - text: A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.
-    testString: 'getUserInput => assert(currentState === 5 && getUserInput(''index'').includes(''store.getState()''), ''A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.'');'
+    testString: 'getUserInput => assert(currentState === 5 && getUserInput("index").includes("store.getState()"), "A variable <code>currentState</code> should exist and should be assigned the current state of the Redux store.");'
 
 ```
 

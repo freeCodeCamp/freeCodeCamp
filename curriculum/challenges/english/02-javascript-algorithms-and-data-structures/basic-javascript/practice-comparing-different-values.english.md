@@ -25,11 +25,11 @@ The <code>compareEquality</code> function in the editor compares two values usin
 ```yml
 tests:
   - text: '<code>compareEquality(10, "10")</code> should return "Not Equal"'
-    testString: 'assert(compareEquality(10, "10") === "Not Equal", ''<code>compareEquality(10, "10")</code> should return "Not Equal"'');'
+    testString: 'assert(compareEquality(10, "10") === "Not Equal", "<code>compareEquality(10, "10")</code> should return "Not Equal"");'
   - text: '<code>compareEquality("20", 20)</code> should return "Not Equal"'
-    testString: 'assert(compareEquality("20", 20) === "Not Equal", ''<code>compareEquality("20", 20)</code> should return "Not Equal"'');'
+    testString: 'assert(compareEquality("20", 20) === "Not Equal", "<code>compareEquality("20", 20)</code> should return "Not Equal"");'
   - text: You should use the <code>===</code> operator
-    testString: 'assert(code.match(/===/g), ''You should use the <code>===</code> operator'');'
+    testString: 'assert(code.match(/===/g), "You should use the <code>===</code> operator");'
 
 ```
 

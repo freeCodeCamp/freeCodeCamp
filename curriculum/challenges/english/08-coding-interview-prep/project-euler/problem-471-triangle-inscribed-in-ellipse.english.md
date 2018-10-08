@@ -29,7 +29,7 @@ For G(10) the answer would have been 2.059722222e1.
 ```yml
 tests:
   - text: <code>euler471()</code> should return 1.895093981e+31.
-    testString: 'assert.strictEqual(euler471(), 1.895093981e+31, ''<code>euler471()</code> should return 1.895093981e+31.'');'
+    testString: 'assert.strictEqual(euler471(), 1.895093981e+31, "<code>euler471()</code> should return 1.895093981e+31.");'
 
 ```
 

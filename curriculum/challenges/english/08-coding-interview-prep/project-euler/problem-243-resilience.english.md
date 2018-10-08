@@ -28,7 +28,7 @@ Find the smallest denominator d, having a resilience R(d) < 15499/94744 .
 ```yml
 tests:
   - text: <code>euler243()</code> should return 892371480.
-    testString: 'assert.strictEqual(euler243(), 892371480, ''<code>euler243()</code> should return 892371480.'');'
+    testString: 'assert.strictEqual(euler243(), 892371480, "<code>euler243()</code> should return 892371480.");'
 
 ```
 

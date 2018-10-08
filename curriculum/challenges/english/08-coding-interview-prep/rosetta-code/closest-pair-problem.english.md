@@ -65,7 +65,7 @@ References and further readings:
  <a href="http://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html" title="link: http://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html">Closest Pair (McGill)</a>
  <a href="http://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf" title="link: http://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf">Closest Pair (UCSB)</a>
  <a href="http://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf" title="link: http://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf">Closest pair (WUStL)</a>
- <a href="http://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt" title="link: http://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt">Closest pair (IUPUI)</a> 
+ <a href="http://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt" title="link: http://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt">Closest pair (IUPUI)</a>
 <p>For the input, expect the argument to be an array of objects (points) with <code>x</code> and <code>y</code> members set to numbers. For the output, return an object containing the key:value pairs for  <code>distance</code> and <code>pair</code> (i.e., the pair of two closest points).</p>
 </section>
 
@@ -80,15 +80,15 @@ References and further readings:
 ```yml
 tests:
   - text: <code>getClosestPair</code> is a function.
-    testString: 'assert(typeof getClosestPair === ''function'', ''<code>getClosestPair</code> is a function.'');'
+    testString: 'assert(typeof getClosestPair === "function", "<code>getClosestPair</code> is a function.");'
   - text: Distance should be the following.
-    testString: 'assert.equal(getClosestPair(points1).distance, answer1.distance, ''Distance should be the following.'');'
+    testString: 'assert.equal(getClosestPair(points1).distance, answer1.distance, "Distance should be the following.");'
   - text: Points should be the following.
-    testString: 'assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points1))).pair, answer1.pair, ''Points should be the following.'');'
+    testString: 'assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points1))).pair, answer1.pair, "Points should be the following.");'
   - text: Distance should be the following.
-    testString: 'assert.equal(getClosestPair(points2).distance, answer2.distance, ''Distance should be the following.'');'
+    testString: 'assert.equal(getClosestPair(points2).distance, answer2.distance, "Distance should be the following.");'
   - text: Points should be the following.
-    testString: 'assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points2))).pair, answer2.pair, ''Points should be the following.'');'
+    testString: 'assert.deepEqual(JSON.parse(JSON.stringify(getClosestPair(points2))).pair, answer2.pair, "Points should be the following.");'
 
 ```
 

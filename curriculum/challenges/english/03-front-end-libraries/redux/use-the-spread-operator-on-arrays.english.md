@@ -23,13 +23,13 @@ Use the spread operator to return a new copy of state when a to-do is added.
 ```yml
 tests:
   - text: 'The Redux store should exist and initialize with a state equal to <code>[Do not mutate state!]</code>.'
-    testString: 'assert((function() { const initialState = store.getState(); return ( Array.isArray(initialState) === true && initialState[0] === ''Do not mutate state!''); })(), ''The Redux store should exist and initialize with a state equal to <code>[Do not mutate state!]</code>.'');'
+    testString: 'assert((function() { const initialState = store.getState(); return ( Array.isArray(initialState) === true && initialState[0] === "Do not mutate state!"); })(), "The Redux store should exist and initialize with a state equal to <code>[Do not mutate state!]</code>.");'
   - text: <code>addToDo</code> and <code>immutableReducer</code> both should be functions.
-    testString: 'assert(typeof addToDo === ''function'' && typeof immutableReducer === ''function'', ''<code>addToDo</code> and <code>immutableReducer</code> both should be functions.'');'
+    testString: 'assert(typeof addToDo === "function" && typeof immutableReducer === "function", "<code>addToDo</code> and <code>immutableReducer</code> both should be functions.");'
   - text: Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.
-    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo(''__TEST__TO__DO__'')); const finalState = store.getState(); const expectedState = [ ''Do not mutate state!'', ''__TEST__TO__DO__'' ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), ''Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.'');'
+    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch(addToDo("__TEST__TO__DO__")); const finalState = store.getState(); const expectedState = [ "Do not mutate state!", "__TEST__TO__DO__" ]; return( isFrozen && DeepEqual(finalState, expectedState)); })(), "Dispatching an action of type <code>ADD_TO_DO</code> on the Redux store should add a <code>todo</code> item and should NOT mutate state.");'
   - text: The spread operator should be used to return new state.
-    testString: 'getUserInput => assert(getUserInput(''index'').includes(''...state''), ''The spread operator should be used to return new state.'');'
+    testString: 'getUserInput => assert(getUserInput("index").includes("...state"), "The spread operator should be used to return new state.");'
 
 ```
 

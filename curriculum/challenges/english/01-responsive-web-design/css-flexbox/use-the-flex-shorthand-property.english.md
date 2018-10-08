@@ -24,11 +24,11 @@ These values will cause <code>#box-1</code> to grow to fill the extra space at t
 ```yml
 tests:
   - text: 'The <code>#box-1</code> element should have the <code>flex</code> property set to a value of 2 2 150px.'
-    testString: 'assert($(''#box-1'').css(''flex-grow'') == ''2'' && $(''#box-1'').css(''flex-shrink'') == ''2'' && $(''#box-1'').css(''flex-basis'') == ''150px'', ''The <code>#box-1</code> element should have the <code>flex</code> property set to a value of 2 2 150px.'');'
+    testString: 'assert($("#box-1").css("flex-grow") == "2" && $("#box-1").css("flex-shrink") == "2" && $("#box-1").css("flex-basis") == "150px", "The <code>#box-1</code> element should have the <code>flex</code> property set to a value of 2 2 150px.");'
   - text: 'The <code>#box-2</code> element should have the <code>flex</code> property set to a value of 1 1 150px.'
-    testString: 'assert($(''#box-2'').css(''flex-grow'') == ''1'' && $(''#box-2'').css(''flex-shrink'') == ''1'' && $(''#box-2'').css(''flex-basis'') == ''150px'', ''The <code>#box-2</code> element should have the <code>flex</code> property set to a value of 1 1 150px.'');'
+    testString: 'assert($("#box-2").css("flex-grow") == "1" && $("#box-2").css("flex-shrink") == "1" && $("#box-2").css("flex-basis") == "150px", "The <code>#box-2</code> element should have the <code>flex</code> property set to a value of 1 1 150px.");'
   - text: 'Your code should use the <code>flex</code> property for <code>#box-1</code> and <code>#box-2</code>.'
-    testString: 'assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2, ''Your code should use the <code>flex</code> property for <code>#box-1</code> and <code>#box-2</code>.'');'
+    testString: 'assert(code.match(/flex:\s*?\d\s+?\d\s+?150px;/g).length == 2, "Your code should use the <code>flex</code> property for <code>#box-1</code> and <code>#box-2</code>.");'
 
 ```
 
@@ -47,13 +47,13 @@ tests:
   }
   #box-1 {
     background-color: dodgerblue;
-    
+
     height: 200px;
   }
 
   #box-2 {
     background-color: orangered;
-    
+
     height: 200px;
   }
 </style>

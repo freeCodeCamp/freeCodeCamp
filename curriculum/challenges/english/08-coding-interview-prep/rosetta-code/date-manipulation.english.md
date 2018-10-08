@@ -26,19 +26,19 @@ Task:
 ```yml
 tests:
   - text: <code>add12Hours</code> is a function.
-    testString: 'assert(typeof add12Hours === ''function'', ''<code>add12Hours</code> is a function.'');'
+    testString: 'assert(typeof add12Hours === "function", "<code>add12Hours</code> is a function.");'
   - text: <code>add12Hours(dateString)</code> should return a string.
-    testString: 'assert(typeof add12Hours(tests[0]) === ''string'', ''<code>add12Hours(dateString)</code> should return a string.'');'
-  - text: '<code>add12Hours("'' + tests[0] + ''")</code> should return <code>"'' + answers[0] + ''"</code>'
-    testString: 'assert(add12Hours(tests[0]) === answers[0], ''<code>add12Hours("'' + tests[0] + ''")</code> should return <code>"'' + answers[0] + ''"</code>'');'
-  - text: 'Should handel day change. <code>add12Hours("'' + tests[1] + ''")</code> should return <code>"'' + answers[1] + ''"</code>'
-    testString: 'assert(add12Hours(tests[1]) === answers[1], ''Should handel day change. <code>add12Hours("'' + tests[1] + ''")</code> should return <code>"'' + answers[1] + ''"</code>'');'
-  - text: 'Should handel month change in a leap years. <code>add12Hours("'' + tests[2] + ''")</code> should return <code>"'' + answers[2] + ''"</code>'
-    testString: 'assert(add12Hours(tests[2]) === answers[2], ''Should handel month change in a leap years. <code>add12Hours("'' + tests[2] + ''")</code> should return <code>"'' + answers[2] + ''"</code>'');'
-  - text: 'Should handel month change in a common years. <code>add12Hours("'' + tests[3] + ''")</code> should return <code>"'' + answers[3] + ''"</code>'
-    testString: 'assert(add12Hours(tests[3]) === answers[3], ''Should handel month change in a common years. <code>add12Hours("'' + tests[3] + ''")</code> should return <code>"'' + answers[3] + ''"</code>'');'
-  - text: 'Should handel year change. <code>add12Hours("'' + tests[4] + ''")</code> should return <code>"'' + answers[4] + ''"</code>'
-    testString: 'assert(add12Hours(tests[4]) === answers[4], ''Should handel year change. <code>add12Hours("'' + tests[4] + ''")</code> should return <code>"'' + answers[4] + ''"</code>'');'
+    testString: 'assert(typeof add12Hours(tests[0]) === "string", "<code>add12Hours(dateString)</code> should return a string.");'
+  - text: '<code>add12Hours("" + tests[0] + "")</code> should return <code>"" + answers[0] + ""</code>'
+    testString: 'assert(add12Hours(tests[0]) === answers[0], "<code>add12Hours("" + tests[0] + "")</code> should return <code>"" + answers[0] + ""</code>");'
+  - text: 'Should handel day change. <code>add12Hours("" + tests[1] + "")</code> should return <code>"" + answers[1] + ""</code>'
+    testString: 'assert(add12Hours(tests[1]) === answers[1], "Should handel day change. <code>add12Hours("" + tests[1] + "")</code> should return <code>"" + answers[1] + ""</code>");'
+  - text: 'Should handel month change in a leap years. <code>add12Hours("" + tests[2] + "")</code> should return <code>"" + answers[2] + ""</code>'
+    testString: 'assert(add12Hours(tests[2]) === answers[2], "Should handel month change in a leap years. <code>add12Hours("" + tests[2] + "")</code> should return <code>"" + answers[2] + ""</code>");'
+  - text: 'Should handel month change in a common years. <code>add12Hours("" + tests[3] + "")</code> should return <code>"" + answers[3] + ""</code>'
+    testString: 'assert(add12Hours(tests[3]) === answers[3], "Should handel month change in a common years. <code>add12Hours("" + tests[3] + "")</code> should return <code>"" + answers[3] + ""</code>");'
+  - text: 'Should handel year change. <code>add12Hours("" + tests[4] + "")</code> should return <code>"" + answers[4] + ""</code>'
+    testString: 'assert(add12Hours(tests[4]) === answers[4], "Should handel year change. <code>add12Hours("" + tests[4] + "")</code> should return <code>"" + answers[4] + ""</code>");'
 
 ```
 

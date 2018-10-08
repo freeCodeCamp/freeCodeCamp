@@ -22,7 +22,7 @@ How many squarefree numbers are there below 250?
 ```yml
 tests:
   - text: <code>euler193()</code> should return 684465067343069.
-    testString: 'assert.strictEqual(euler193(), 684465067343069, ''<code>euler193()</code> should return 684465067343069.'');'
+    testString: 'assert.strictEqual(euler193(), 684465067343069, "<code>euler193()</code> should return 684465067343069.");'
 
 ```
 

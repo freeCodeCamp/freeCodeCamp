@@ -23,7 +23,7 @@ Find the least value of n for which the remainder first exceeds 1010.
 ```yml
 tests:
   - text: <code>euler123()</code> should return 21035.
-    testString: 'assert.strictEqual(euler123(), 21035, ''<code>euler123()</code> should return 21035.'');'
+    testString: 'assert.strictEqual(euler123(), 21035, "<code>euler123()</code> should return 21035.");'
 
 ```
 

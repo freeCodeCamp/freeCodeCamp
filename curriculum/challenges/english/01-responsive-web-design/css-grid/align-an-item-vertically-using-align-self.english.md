@@ -21,7 +21,7 @@ Align the item with the class <code>item3</code> vertically at the <code>end</co
 ```yml
 tests:
   - text: <code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.
-    testString: 'assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi), ''<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.'');'
+    testString: 'assert(code.match(/.item3\s*?{[\s\S]*align-self\s*?:\s*?end\s*?;[\s\S]*}/gi), "<code>item3</code> class should have a <code>align-self</code> property that has the value of <code>end</code>.");'
 
 ```
 
@@ -36,18 +36,18 @@ tests:
 <style>
   .item1{background:LightSkyBlue;}
   .item2{background:LightSalmon;}
-  
+
   .item3 {
     background: PaleTurquoise;
     /* add your code below this line */
-    
-    
+
+
     /* add your code above this line */
   }
-  
+
   .item4{background:LightPink;}
   .item5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -59,7 +59,7 @@ tests:
     grid-gap: 10px;
   }
 </style>
-  
+
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>

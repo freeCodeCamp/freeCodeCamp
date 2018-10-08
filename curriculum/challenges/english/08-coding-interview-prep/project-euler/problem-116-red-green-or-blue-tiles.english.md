@@ -93,7 +93,7 @@ NOTE: This is related to Problem 117.
 ```yml
 tests:
   - text: <code>euler116()</code> should return 20492570929.
-    testString: 'assert.strictEqual(euler116(), 20492570929, ''<code>euler116()</code> should return 20492570929.'');'
+    testString: 'assert.strictEqual(euler116(), 20492570929, "<code>euler116()</code> should return 20492570929.");'
 
 ```
 

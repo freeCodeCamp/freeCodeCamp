@@ -24,17 +24,17 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>sumFibs(1)</code> should return a number.
-    testString: 'assert(typeof sumFibs(1) === "number", ''<code>sumFibs(1)</code> should return a number.'');'
+    testString: 'assert(typeof sumFibs(1) === "number", "<code>sumFibs(1)</code> should return a number.");'
   - text: <code>sumFibs(1000)</code> should return 1785.
-    testString: 'assert(sumFibs(1000) === 1785, ''<code>sumFibs(1000)</code> should return 1785.'');'
+    testString: 'assert(sumFibs(1000) === 1785, "<code>sumFibs(1000)</code> should return 1785.");'
   - text: <code>sumFibs(4000000)</code> should return 4613732.
-    testString: 'assert(sumFibs(4000000) === 4613732, ''<code>sumFibs(4000000)</code> should return 4613732.'');'
+    testString: 'assert(sumFibs(4000000) === 4613732, "<code>sumFibs(4000000)</code> should return 4613732.");'
   - text: <code>sumFibs(4)</code> should return 5.
-    testString: 'assert(sumFibs(4) === 5, ''<code>sumFibs(4)</code> should return 5.'');'
+    testString: 'assert(sumFibs(4) === 5, "<code>sumFibs(4)</code> should return 5.");'
   - text: <code>sumFibs(75024)</code> should return 60696.
-    testString: 'assert(sumFibs(75024) === 60696, ''<code>sumFibs(75024)</code> should return 60696.'');'
+    testString: 'assert(sumFibs(75024) === 60696, "<code>sumFibs(75024)</code> should return 60696.");'
   - text: <code>sumFibs(75025)</code> should return 135721.
-    testString: 'assert(sumFibs(75025) === 135721, ''<code>sumFibs(75025)</code> should return 135721.'');'
+    testString: 'assert(sumFibs(75025) === 135721, "<code>sumFibs(75025)</code> should return 135721.");'
 
 ```
 
@@ -65,12 +65,12 @@ sumFibs(4);
 
 ```js
 function sumFibs(num) {
-  var a = 1; 
+  var a = 1;
   var b = 1;
   var s = 0;
   while (a <= num) {
-    if (a % 2 !== 0) {   
-      s += a; 
+    if (a % 2 !== 0) {
+      s += a;
     }
     a = [b, b=b+a][0];
   }

@@ -24,11 +24,11 @@ Using the <code>type</code> attribute selector, try to give the checkboxes in Ca
 ```yml
 tests:
   - text: The <code>type</code> attribute selector should be used to select the checkboxes.
-    testString: 'assert(code.match(/<style>[\s\S]*?\[type=("|'')checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi),''The <code>type</code> attribute selector should be used to select the checkboxes.'');'
+    testString: 'assert(code.match(/<style>[\s\S]*?\[type=("|")checkbox\1\]\s*?{[\s\S]*?}[\s\S]*?<\/style>/gi),"The <code>type</code> attribute selector should be used to select the checkboxes.");'
   - text: The top margins of the checkboxes should be 10px.
-    testString: 'assert((function() {var count=0; $("[type=''checkbox'']").each(function() { if($(this).css(''marginTop'') === ''10px'') {count++;}});return (count===3)}()),''The top margins of the checkboxes should be 10px.'');'
+    testString: 'assert((function() {var count=0; $("[type="checkbox"]").each(function() { if($(this).css("marginTop") === "10px") {count++;}});return (count===3)}()),"The top margins of the checkboxes should be 10px.");'
   - text: The bottom margins of the checkboxes should be 15px.
-    testString: 'assert((function() {var count=0; $("[type=''checkbox'']").each(function() { if($(this).css(''marginBottom'') === ''15px'') {count++;}});return (count===3)}()),''The bottom margins of the checkboxes should be 15px.'');'
+    testString: 'assert((function() {var count=0; $("[type="checkbox"]").each(function() { if($(this).css("marginBottom") === "15px") {count++;}});return (count===3)}()),"The bottom margins of the checkboxes should be 15px.");'
 
 ```
 
@@ -74,9 +74,9 @@ tests:
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div class="silver-background">
     <p>Things cats love:</p>
     <ul>
@@ -91,7 +91,7 @@ tests:
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo" id="cat-photo-form">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

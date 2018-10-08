@@ -28,11 +28,11 @@ Use template literal syntax with backticks to display each entry of the <code>re
 ```yml
 tests:
   - text: <code>resultDisplayArray</code> is an array containing <code>result failure</code> messages.
-    testString: 'assert(typeof makeList(result.failure) === ''object'' && resultDisplayArray.length === 3, ''<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.'');'
+    testString: 'assert(typeof makeList(result.failure) === "object" && resultDisplayArray.length === 3, "<code>resultDisplayArray</code> is a list containing <code>result failure</code> messages.");'
   - text: <code>resultDisplayArray</code> is the desired output.
-    testString: 'assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class=''text-warning''>${result.failure[i]}</li>`), ''<code>resultDisplayArray</code> is the desired output.'');'
+    testString: 'assert(makeList(result.failure).every((v, i) => v === `<li class="text-warning">${result.failure[i]}</li>` || v === `<li class="text-warning">${result.failure[i]}</li>`), "<code>resultDisplayArray</code> is the desired output.");'
   - text: Template strings were used
-    testString: 'getUserInput => assert(getUserInput(''index'').match(/`.*`/g), ''Template strings were not used'');'
+    testString: 'getUserInput => assert(getUserInput("index").match(/`.*`/g), "Template strings were not used");'
 
 ```
 
@@ -61,7 +61,7 @@ function makeList(arr) {
 /**
  * makeList(result.failure) should return:
  * [ `<li class="text-warning">no-var</li>`,
- *   `<li class="text-warning">var-on-top</li>`, 
+ *   `<li class="text-warning">var-on-top</li>`,
  *   `<li class="text-warning">linebreak</li>` ]
  **/
 const resultDisplayArray = makeList(result.failure);

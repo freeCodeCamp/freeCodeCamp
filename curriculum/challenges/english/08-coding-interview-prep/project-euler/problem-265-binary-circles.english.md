@@ -33,7 +33,7 @@ Find S(5).
 ```yml
 tests:
   - text: <code>euler265()</code> should return 209110240768.
-    testString: 'assert.strictEqual(euler265(), 209110240768, ''<code>euler265()</code> should return 209110240768.'');'
+    testString: 'assert.strictEqual(euler265(), 209110240768, "<code>euler265()</code> should return 209110240768.");'
 
 ```
 

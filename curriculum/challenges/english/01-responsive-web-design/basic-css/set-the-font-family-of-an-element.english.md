@@ -23,7 +23,7 @@ Make all of your <code>p</code> elements use the <code>monospace</code> font.
 ```yml
 tests:
   - text: Your <code>p</code> elements should use the font <code>monospace</code>.
-    testString: 'assert($("p").not(".red-text").css("font-family").match(/monospace/i), ''Your <code>p</code> elements should use the font <code>monospace</code>.'');'
+    testString: 'assert($("p").not(".red-text").css("font-family").match(/monospace/i), "Your <code>p</code> elements should use the font <code>monospace</code>.");'
 
 ```
 
@@ -48,9 +48,9 @@ tests:
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -65,7 +65,7 @@ tests:
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

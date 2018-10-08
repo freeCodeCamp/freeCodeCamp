@@ -26,9 +26,9 @@ Use simple fields with object literals to create and return a <code>Person</code
 ```yml
 tests:
   - text: 'the output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'
-    testString: 'assert(() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);}, ''the output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.'');'
+    testString: 'assert(() => {const res={name:"Zodiac Hasbro",age:56,gender:"male"}; const person=createPerson("Zodiac Hasbro", 56, "male"); return Object.keys(person).every(k => person[k] === res[k]);}, "the output is <code>{name: "Zodiac Hasbro", age: 56, gender: "male"}</code>.");'
   - text: 'No <code>:</code> were used.'
-    testString: 'getUserInput => assert(!getUserInput(''index'').match(/:/g), ''No <code>:</code> were used.'');'
+    testString: 'getUserInput => assert(!getUserInput("index").match(/:/g), "No <code>:</code> were used.");'
 
 ```
 

@@ -24,7 +24,7 @@ Given that L is the length of the wire, for how many values of L ≤ 1,500,000 c
 ```yml
 tests:
   - text: <code>euler75()</code> should return 161667.
-    testString: 'assert.strictEqual(euler75(), 161667, ''<code>euler75()</code> should return 161667.'');'
+    testString: 'assert.strictEqual(euler75(), 161667, "<code>euler75()</code> should return 161667.");'
 
 ```
 

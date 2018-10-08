@@ -23,19 +23,19 @@ Complete the regex <code>petRegex</code> to match the pets <code>"dog"</code>, <
 ```yml
 tests:
   - text: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"John has a pet dog."</code>
-    testString: 'assert(petRegex.test(''John has a pet dog.''), ''Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"John has a pet dog."</code>'');'
+    testString: 'assert(petRegex.test("John has a pet dog."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"John has a pet dog."</code>");'
   - text: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Emma has a pet rock."</code>
-    testString: 'assert(!petRegex.test(''Emma has a pet rock.''), ''Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Emma has a pet rock."</code>'');'
+    testString: 'assert(!petRegex.test("Emma has a pet rock."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Emma has a pet rock."</code>");'
   - text: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Emma has a pet bird."</code>
-    testString: 'assert(petRegex.test(''Emma has a pet bird.''), ''Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Emma has a pet bird."</code>'');'
+    testString: 'assert(petRegex.test("Emma has a pet bird."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Emma has a pet bird."</code>");'
   - text: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Liz has a pet cat."</code>
-    testString: 'assert(petRegex.test(''Liz has a pet cat.''), ''Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Liz has a pet cat."</code>'');'
+    testString: 'assert(petRegex.test("Liz has a pet cat."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Liz has a pet cat."</code>");'
   - text: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Kara has a pet dolphin."</code>
-    testString: 'assert(!petRegex.test(''Kara has a pet dolphin.''), ''Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Kara has a pet dolphin."</code>'');'
+    testString: 'assert(!petRegex.test("Kara has a pet dolphin."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Kara has a pet dolphin."</code>");'
   - text: Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Alice has a pet fish."</code>
-    testString: 'assert(petRegex.test(''Alice has a pet fish.''), ''Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Alice has a pet fish."</code>'');'
+    testString: 'assert(petRegex.test("Alice has a pet fish."), "Your regex <code>petRegex</code> should return <code>true</code> for the string <code>"Alice has a pet fish."</code>");'
   - text: Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Jimmy has a pet computer."</code>
-    testString: 'assert(!petRegex.test(''Jimmy has a pet computer.''), ''Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Jimmy has a pet computer."</code>'');'
+    testString: 'assert(!petRegex.test("Jimmy has a pet computer."), "Your regex <code>petRegex</code> should return <code>false</code> for the string <code>"Jimmy has a pet computer."</code>");'
 
 ```
 

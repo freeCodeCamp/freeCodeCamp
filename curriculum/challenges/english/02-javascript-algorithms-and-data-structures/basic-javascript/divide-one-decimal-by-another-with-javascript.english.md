@@ -20,11 +20,11 @@ Change the <code>0.0</code> so that <code>quotient</code> will equal to <code>2.
 ```yml
 tests:
   - text: The variable <code>quotient</code> should equal <code>2.2</code>
-    testString: 'assert(quotient === 2.2, ''The variable <code>quotient</code> should equal <code>2.2</code>'');'
+    testString: 'assert(quotient === 2.2, "The variable <code>quotient</code> should equal <code>2.2</code>");'
   - text: You should use the <code>/</code> operator to divide 4.4 by 2
-    testString: 'assert(/4\.40*\s*\/\s*2\.*0*/.test(code), ''You should use the <code>/</code> operator to divide 4.4 by 2'');'
+    testString: 'assert(/4\.40*\s*\/\s*2\.*0*/.test(code), "You should use the <code>/</code> operator to divide 4.4 by 2");'
   - text: The quotient variable should only be assigned once
-    testString: 'assert(code.match(/quotient/g).length === 1, ''The quotient variable should only be assigned once'');'
+    testString: 'assert(code.match(/quotient/g).length === 1, "The quotient variable should only be assigned once");'
 
 ```
 

@@ -23,11 +23,11 @@ You want to find matches when the letter <code>s</code> occurs one or more times
 ```yml
 tests:
   - text: Your regex <code>myRegex</code> should use the <code>+</code> sign to match one or more <code>s</code> characters.
-    testString: 'assert(/\+/.test(myRegex.source), ''Your regex <code>myRegex</code> should use the <code>+</code> sign to match one or more <code>s</code> characters.'');'
+    testString: 'assert(/\+/.test(myRegex.source), "Your regex <code>myRegex</code> should use the <code>+</code> sign to match one or more <code>s</code> characters.");'
   - text: Your regex <code>myRegex</code> should match 2 items.
-    testString: 'assert(result.length == 2, ''Your regex <code>myRegex</code> should match 2 items.'');'
+    testString: 'assert(result.length == 2, "Your regex <code>myRegex</code> should match 2 items.");'
   - text: The <code>result</code> variable should be an array with two matches of <code>"ss"</code>
-    testString: 'assert(result[0] == ''ss'' && result[1] == ''ss'', ''The <code>result</code> variable should be an array with two matches of <code>"ss"</code>'');'
+    testString: 'assert(result[0] == "ss" && result[1] == "ss", "The <code>result</code> variable should be an array with two matches of <code>"ss"</code>");'
 
 ```
 

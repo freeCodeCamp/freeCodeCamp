@@ -24,9 +24,9 @@ Use CSS <code>@keyframes</code> to change the <code>background-color</code> of t
 ```yml
 tests:
   - text: The @keyframes rule should use the <code>animation-name</code> background-color.
-    testString: 'assert(code.match(/@keyframes\s+?background-color\s*?{/g), ''The @keyframes rule should use the <code>animation-name</code> background-color.'');'
+    testString: 'assert(code.match(/@keyframes\s+?background-color\s*?{/g), "The @keyframes rule should use the <code>animation-name</code> background-color.");'
   - text: 'There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.'
-    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi), ''There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.'');'
+    testString: 'assert(code.match(/100%\s*?{\s*?background-color:\s*?#4791d0;\s*?}/gi), "There should be one rule under <code>@keyframes</code> that changes the <code>background-color</code> to <code>#4791d0</code> at 100%.");'
 
 ```
 
@@ -45,15 +45,15 @@ tests:
     background-color: #0F5897;
     padding: 5px 10px 8px 10px;
   }
-  
+
   button:hover {
     animation-name: background-color;
     animation-duration: 500ms;
   }
-  
-  
+
+
 </style>
-  
+
 <button>Register</button>
 ```
 

@@ -23,7 +23,7 @@ Add code to <code>filter</code> the json data to remove the cat with the "id" va
 ```yml
 tests:
   - text: Your code should use the <code>filter</code> method.
-    testString: 'assert(code.match(/json\.filter/g), ''Your code should use the <code>filter</code> method.'');'
+    testString: 'assert(code.match(/json\.filter/g), "Your code should use the <code>filter</code> method.");'
 
 ```
 
@@ -45,19 +45,19 @@ tests:
         json=JSON.parse(req.responseText);
         var html = "";
         // Add your code below this line
-        
-        
+
+
         // Add your code above this line
          json.forEach(function(val) {
            html += "<div class = 'cat'>"
-           
+
            html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>"
-           
+
            html += "</div>"
          });
          document.getElementsByClassName('message')[0].innerHTML=html;
        };
-     }; 
+     };
   });
 </script>
 <style>
@@ -86,7 +86,7 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
-<h1>Cat Photo Finder</h1> 
+<h1>Cat Photo Finder</h1>
 <p class="message box">
   The message will go here
 </p>

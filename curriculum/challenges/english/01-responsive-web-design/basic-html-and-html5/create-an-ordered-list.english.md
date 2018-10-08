@@ -25,23 +25,23 @@ Create an ordered list of the top 3 things cats hate the most.
 ```yml
 tests:
   - text: 'You should have an ordered list for "Top 3 things cats hate:"'
-    testString: 'assert((/Top 3 things cats hate:/i).test($("ol").prev().text()), ''You should have an ordered list for "Top 3 things cats hate:"'');'
+    testString: 'assert((/Top 3 things cats hate:/i).test($("ol").prev().text()), "You should have an ordered list for "Top 3 things cats hate:"");'
   - text: 'You should have an unordered list for "Things cats love:"'
-    testString: 'assert((/Things cats love:/i).test($("ul").prev().text()), ''You should have an unordered list for "Things cats love:"'');'
+    testString: 'assert((/Things cats love:/i).test($("ul").prev().text()), "You should have an unordered list for "Things cats love:"");'
   - text: You should have only one <code>ul</code> element.
-    testString: 'assert.equal($("ul").length, 1, ''You should have only one <code>ul</code> element.'');'
+    testString: 'assert.equal($("ul").length, 1, "You should have only one <code>ul</code> element.");'
   - text: You should have only one <code>ol</code> element.
-    testString: 'assert.equal($("ol").length, 1, ''You should have only one <code>ol</code> element.'');'
+    testString: 'assert.equal($("ol").length, 1, "You should have only one <code>ol</code> element.");'
   - text: You should have three <code>li</code> elements within your <code>ul</code> element.
-    testString: 'assert.equal($("ul li").length, 3, ''You should have three <code>li</code> elements within your <code>ul</code> element.'');'
+    testString: 'assert.equal($("ul li").length, 3, "You should have three <code>li</code> elements within your <code>ul</code> element.");'
   - text: You should have three <code>li</code> elements within your <code>ol</code> element.
-    testString: 'assert.equal($("ol li").length, 3, ''You should have three <code>li</code> elements within your <code>ol</code> element.'');'
+    testString: 'assert.equal($("ol li").length, 3, "You should have three <code>li</code> elements within your <code>ol</code> element.");'
   - text: Make sure your <code>ul</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/ul>/g) && code.match(/<\/ul>/g).length === code.match(/<ul>/g).length, ''Make sure your <code>ul</code> element has a closing tag.'');'
+    testString: 'assert(code.match(/<\/ul>/g) && code.match(/<\/ul>/g).length === code.match(/<ul>/g).length, "Make sure your <code>ul</code> element has a closing tag.");'
   - text: Make sure your <code>ol</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/ol>/g) && code.match(/<\/ol>/g).length === code.match(/<ol>/g).length, ''Make sure your <code>ol</code> element has a closing tag.'');'
+    testString: 'assert(code.match(/<\/ol>/g) && code.match(/<\/ol>/g).length === code.match(/<ol>/g).length, "Make sure your <code>ol</code> element has a closing tag.");'
   - text: Make sure your <code>li</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length, ''Make sure your <code>li</code> element has a closing tag.'');'
+    testString: 'assert(code.match(/<\/li>/g) && code.match(/<li>/g) && code.match(/<\/li>/g).length === code.match(/<li>/g).length, "Make sure your <code>li</code> element has a closing tag.");'
 
 ```
 
@@ -56,9 +56,9 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>
@@ -66,7 +66,7 @@ tests:
     <li>lasagna</li>
   </ul>
   <p>Top 3 things cats hate:</p>
-  
+
 </main>
 ```
 

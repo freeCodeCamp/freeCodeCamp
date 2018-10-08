@@ -23,19 +23,19 @@ Change the regex <code>ohRegex</code> to match only <code>3</code> to <code>6</c
 ```yml
 tests:
   - text: Your regex should use curly brackets.
-    testString: 'assert(ohRegex.source.match(/{.*?}/).length > 0, ''Your regex should use curly brackets.'');'
+    testString: 'assert(ohRegex.source.match(/{.*?}/).length > 0, "Your regex should use curly brackets.");'
   - text: Your regex should not match <code>"Ohh no"</code>
-    testString: 'assert(!ohRegex.test("Ohh no"), ''Your regex should not match <code>"Ohh no"</code>'');'
+    testString: 'assert(!ohRegex.test("Ohh no"), "Your regex should not match <code>"Ohh no"</code>");'
   - text: Your regex should match <code>"Ohhh no"</code>
-    testString: 'assert(ohRegex.test("Ohhh no"), ''Your regex should match <code>"Ohhh no"</code>'');'
+    testString: 'assert(ohRegex.test("Ohhh no"), "Your regex should match <code>"Ohhh no"</code>");'
   - text: Your regex should match <code>"Ohhhh no"</code>
-    testString: 'assert(ohRegex.test("Ohhhh no"), ''Your regex should match <code>"Ohhhh no"</code>'');'
+    testString: 'assert(ohRegex.test("Ohhhh no"), "Your regex should match <code>"Ohhhh no"</code>");'
   - text: Your regex should match <code>"Ohhhhh no"</code>
-    testString: 'assert(ohRegex.test("Ohhhhh no"), ''Your regex should match <code>"Ohhhhh no"</code>'');'
+    testString: 'assert(ohRegex.test("Ohhhhh no"), "Your regex should match <code>"Ohhhhh no"</code>");'
   - text: Your regex should match <code>"Ohhhhhh no"</code>
-    testString: 'assert(ohRegex.test("Ohhhhhh no"), ''Your regex should match <code>"Ohhhhhh no"</code>'');'
+    testString: 'assert(ohRegex.test("Ohhhhhh no"), "Your regex should match <code>"Ohhhhhh no"</code>");'
   - text: Your regex should not match <code>"Ohhhhhhh no"</code>
-    testString: 'assert(!ohRegex.test("Ohhhhhhh no"), ''Your regex should not match <code>"Ohhhhhhh no"</code>'');'
+    testString: 'assert(!ohRegex.test("Ohhhhhhh no"), "Your regex should not match <code>"Ohhhhhhh no"</code>");'
 
 ```
 

@@ -24,9 +24,9 @@ Create a class called <code>smaller-image</code> and use it to resize the image 
 ```yml
 tests:
   - text: Your <code>img</code> element should have the class <code>smaller-image</code>.
-    testString: 'assert($("img[src=''https://bit.ly/fcc-relaxing-cat'']").attr(''class'') === "smaller-image", ''Your <code>img</code> element should have the class <code>smaller-image</code>.'');'
+    testString: 'assert($("img[src="https://bit.ly/fcc-relaxing-cat"]").attr("class") === "smaller-image", "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
   - text: Your image should be 100 pixels wide. Browser zoom should be at 100%.
-    testString: 'assert($("img").width() === 100, ''Your image should be 100 pixels wide. Browser zoom should be at 100%.'');'
+    testString: 'assert($("img").width() === 100, "Your image should be 100 pixels wide. Browser zoom should be at 100%.");'
 
 ```
 
@@ -57,9 +57,9 @@ tests:
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -74,7 +74,7 @@ tests:
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

@@ -15,7 +15,7 @@ Now remove an item from your Set with the <code>delete</code> method.
 
 ## Instructions
 <section id='instructions'>
-Now, create a set with the integers 1, 2, 3, 4, & 5. 
+Now, create a set with the integers 1, 2, 3, 4, & 5.
  Remove the values 2 and 5, and then return the set.
 </section>
 
@@ -25,7 +25,7 @@ Now, create a set with the integers 1, 2, 3, 4, & 5.
 ```yml
 tests:
   - text: 'Your Set should contain the values 1, 3, & 4'
-    testString: 'assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, ''Your Set should contain the values 1, 3, & 4'');'
+    testString: 'assert(function(){var test = checkSet(); return test.has(1) && test.has(3) && test.has(4) && test.size === 3}, "Your Set should contain the values 1, 3, & 4");'
 
 ```
 

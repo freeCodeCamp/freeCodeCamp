@@ -25,11 +25,11 @@ If all went as planned, you should refresh your apps home page and see a small m
 ```yml
 tests:
   - text: Pug is a dependency
-    testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/_api/package.json'') .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, ''pug'', ''Your project should list "pug" as a dependency''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/package.json") .then(data => { var packJson = JSON.parse(data); assert.property(packJson.dependencies, "pug", "Your project should list "pug" as a dependency"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: View engine is Pug
-    testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/_api/server.js'') .then(data => { assert.match(data, /(''|")view engine(''|"),( |)(''|")pug(''|")/gi, ''Your project should set Pug as a view engine''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /("|")view engine("|"),( |)("|")pug("|")/gi, "Your project should set Pug as a view engine"); }, xhr => { throw new Error(xhr.statusText); })'
   - text: Pug is working
-    testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/'') .then(data => { assert.match(data, /pug-success-message/gi, ''Your projects home page should now be rendered by pug with the projects .pug file unaltered''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/") .then(data => { assert.match(data, /pug-success-message/gi, "Your projects home page should now be rendered by pug with the projects .pug file unaltered"); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

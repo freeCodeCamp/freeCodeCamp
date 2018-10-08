@@ -27,15 +27,15 @@ Prototype copying
 ```yml
 tests:
   - text: <code>deepcopy</code> should be a function.
-    testString: 'assert(typeof deepcopy === ''function'', ''<code>deepcopy</code> should be a function.'');'
+    testString: 'assert(typeof deepcopy === "function", "<code>deepcopy</code> should be a function.");'
   - text: '<code>deepcopy({test: "test"})</code> should return an object.'
-    testString: 'assert(typeof deepcopy(obj1) === ''object'', ''<code>deepcopy({test: "test"})</code> should return an object.'');'
+    testString: 'assert(typeof deepcopy(obj1) === "object", "<code>deepcopy({test: "test"})</code> should return an object.");'
   - text: Should not return the same object that was provided.
-    testString: 'assert(deepcopy(obj2) != obj2, ''Should not return the same object that was provided.'');'
+    testString: 'assert(deepcopy(obj2) != obj2, "Should not return the same object that was provided.");'
   - text: 'When passed an object containing an array, should return a deep copy of the object.'
-    testString: 'assert.deepEqual(deepcopy(obj2), obj2, ''When passed an object containing an array, should return a deep copy of the object.'');'
+    testString: 'assert.deepEqual(deepcopy(obj2), obj2, "When passed an object containing an array, should return a deep copy of the object.");'
   - text: 'When passed an object containing another object, should return a deep copy of the object.'
-    testString: 'assert.deepEqual(deepcopy(obj3), obj3, ''When passed an object containing another object, should return a deep copy of the object.'');'
+    testString: 'assert.deepEqual(deepcopy(obj3), obj3, "When passed an object containing another object, should return a deep copy of the object.");'
 
 ```
 

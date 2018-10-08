@@ -26,7 +26,7 @@ How many ambiguous numbers x = p/q,
 ```yml
 tests:
   - text: <code>euler198()</code> should return 52374425.
-    testString: 'assert.strictEqual(euler198(), 52374425, ''<code>euler198()</code> should return 52374425.'');'
+    testString: 'assert.strictEqual(euler198(), 52374425, "<code>euler198()</code> should return 52374425.");'
 
 ```
 

@@ -31,17 +31,17 @@ Use the <code>select</code> method to select the <code>body</code> tag in the do
 ```yml
 tests:
   - text: The <code>body</code> should have one <code>h1</code> element.
-    testString: 'assert($(''body'').children(''h1'').length == 1, ''The <code>body</code> should have one <code>h1</code> element.'');'
+    testString: 'assert($("body").children("h1").length == 1, "The <code>body</code> should have one <code>h1</code> element.");'
   - text: The <code>h1</code> element should have the text "Learning D3" in it.
-    testString: 'assert($(''h1'').text() == "Learning D3", ''The <code>h1</code> element should have the text "Learning D3" in it.'');'
+    testString: 'assert($("h1").text() == "Learning D3", "The <code>h1</code> element should have the text "Learning D3" in it.");'
   - text: Your code should access the <code>d3</code> object.
-    testString: 'assert(code.match(/d3/g), ''Your code should access the <code>d3</code> object.'');'
+    testString: 'assert(code.match(/d3/g), "Your code should access the <code>d3</code> object.");'
   - text: Your code should use the <code>select</code> method.
-    testString: 'assert(code.match(/\.select/g), ''Your code should use the <code>select</code> method.'');'
+    testString: 'assert(code.match(/\.select/g), "Your code should use the <code>select</code> method.");'
   - text: Your code should use the <code>append</code> method.
-    testString: 'assert(code.match(/\.append/g), ''Your code should use the <code>append</code> method.'');'
+    testString: 'assert(code.match(/\.append/g), "Your code should use the <code>append</code> method.");'
   - text: Your code should use the <code>text</code> method.
-    testString: 'assert(code.match(/\.text/g), ''Your code should use the <code>text</code> method.'');'
+    testString: 'assert(code.match(/\.text/g), "Your code should use the <code>text</code> method.");'
 
 ```
 
@@ -56,9 +56,9 @@ tests:
 <body>
   <script>
     // Add your code below this line
-    
-    
-    
+
+
+
     // Add your code above this line
   </script>
 </body>

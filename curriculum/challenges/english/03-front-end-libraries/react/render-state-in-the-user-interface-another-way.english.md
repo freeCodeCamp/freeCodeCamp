@@ -22,13 +22,13 @@ Next, in the return statement, render this value in an <code>h1</code> tag using
 ```yml
 tests:
   - text: <code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.
-    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state(''name'') === ''freeCodeCamp'', ''<code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(MyComponent)).state("name") === "freeCodeCamp", "<code>MyComponent</code> should have a key <code>name</code> with value <code>freeCodeCamp</code> stored in its state.");'
   - text: <code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.
-    testString: 'assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), ''<code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.'');'
+    testString: 'assert(/<div><h1>.*<\/h1><\/div>/.test(Enzyme.mount(React.createElement(MyComponent)).html()), "<code>MyComponent</code> should render an <code>h1</code> header enclosed in a single <code>div</code>.");'
   - text: 'The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.'
-    testString: 'getUserInput => assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput(''index'')), ''The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.'');'
+    testString: 'getUserInput => assert(/<h1>\n*\s*\{\s*name\s*\}\s*\n*<\/h1>/.test(getUserInput("index")), "The rendered <code>h1</code> tag should include a reference to <code>{name}</code>.");'
   - text: The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: ''TestName'' });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === ''<div><h1>TestName</h1></div>'', ''The rendered <code>h1</code> header should contain text rendered from the component&apos;s state.''); };'
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); const first = () => { mockedComponent.setState({ name: "TestName" });   return waitForIt(() => mockedComponent.html()) }; const firstValue = await first(); assert(firstValue === "<div><h1>TestName</h1></div>", "The rendered <code>h1</code> header should contain text rendered from the component&apos;s state."); };'
 
 ```
 

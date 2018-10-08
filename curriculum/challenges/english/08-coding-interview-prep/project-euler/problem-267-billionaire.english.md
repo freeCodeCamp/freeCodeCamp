@@ -25,7 +25,7 @@ All computations are assumed to be exact (no rounding), but give your answer rou
 ```yml
 tests:
   - text: <code>euler267()</code> should return 0.999992836187.
-    testString: 'assert.strictEqual(euler267(), 0.999992836187, ''<code>euler267()</code> should return 0.999992836187.'');'
+    testString: 'assert.strictEqual(euler267(), 0.999992836187, "<code>euler267()</code> should return 0.999992836187.");'
 
 ```
 

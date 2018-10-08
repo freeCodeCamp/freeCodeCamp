@@ -24,11 +24,11 @@ Give your <code>h1</code> element the class of <code>pink-text</code>.
 ```yml
 tests:
   - text: Your <code>h1</code> element should have the class <code>pink-text</code>.
-    testString: 'assert($("h1").hasClass("pink-text"), ''Your <code>h1</code> element should have the class <code>pink-text</code>.'');'
+    testString: 'assert($("h1").hasClass("pink-text"), "Your <code>h1</code> element should have the class <code>pink-text</code>.");'
   - text: 'Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.'
-    testString: 'assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g), ''Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.'');'
+    testString: 'assert(code.match(/\.pink-text\s*\{\s*color\s*:\s*.+\s*;\s*\}/g), "Your <code>&#60;style&#62;</code> should have a <code>pink-text</code> CSS class that changes the <code>color</code>.");'
   - text: Your <code>h1</code> element should be pink.
-    testString: 'assert($("h1").css("color") === "rgb(255, 192, 203)", ''Your <code>h1</code> element should be pink.'');'
+    testString: 'assert($("h1").css("color") === "rgb(255, 192, 203)", "Your <code>h1</code> element should be pink.");'
 
 ```
 

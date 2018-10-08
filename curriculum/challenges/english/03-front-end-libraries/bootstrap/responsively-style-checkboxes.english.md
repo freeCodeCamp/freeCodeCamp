@@ -24,11 +24,11 @@ Nest all three of your checkboxes in a <code>&#60;div class="row"&#62;</code> el
 ```yml
 tests:
   - text: Nest all of your checkboxes inside one <code>div</code> with the class <code>row</code>.
-    testString: 'assert($("div.row:has(input[type=\"checkbox\"])").length > 0, ''Nest all of your checkboxes inside one <code>div</code> with the class <code>row</code>.'');'
+    testString: 'assert($("div.row:has(input[type=\"checkbox\"])").length > 0, "Nest all of your checkboxes inside one <code>div</code> with the class <code>row</code>.");'
   - text: Nest each of your checkboxes inside its own <code>div</code> with the class <code>col-xs-4</code>.
-    testString: 'assert($("div.col-xs-4:has(input[type=\"checkbox\"])").length > 2, ''Nest each of your checkboxes inside its own <code>div</code> with the class <code>col-xs-4</code>.'');'
+    testString: 'assert($("div.col-xs-4:has(input[type=\"checkbox\"])").length > 2, "Nest each of your checkboxes inside its own <code>div</code> with the class <code>col-xs-4</code>.");'
   - text: Make sure each of your <code>div</code> elements has a closing tag.
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, ''Make sure each of your <code>div</code> elements has a closing tag.'');'
+    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure each of your <code>div</code> elements has a closing tag.");'
 
 ```
 

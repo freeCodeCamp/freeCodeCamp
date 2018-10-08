@@ -27,13 +27,13 @@ In the last challenge, you imported the <code>Lobster</code> font using the <cod
 ```yml
 tests:
   - text: Your h2 element should use the font <code>Lobster</code>.
-    testString: 'assert($("h2").css("font-family").match(/^"?lobster/i), ''Your h2 element should use the font <code>Lobster</code>.'');'
+    testString: 'assert($("h2").css("font-family").match(/^"?lobster/i), "Your h2 element should use the font <code>Lobster</code>.");'
   - text: Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.
-    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\''|")?Lobster(\''|")?,\s*monospace\s*;\s*\}/gi.test(code), ''Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.'');'
+    testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?,\s*monospace\s*;\s*\}/gi.test(code), "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.");'
   - text: 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.'
-    testString: 'assert(new RegExp("<!--[^fc]", "gi").test(code), ''Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.'');'
+    testString: 'assert(new RegExp("<!--[^fc]", "gi").test(code), "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.");'
   - text: 'Be sure to close your comment by adding <code>--&#62;</code>.'
-    testString: 'assert(new RegExp("[^fc]-->", "gi").test(code), ''Be sure to close your comment by adding <code>--&#62;</code>.'');'
+    testString: 'assert(new RegExp("[^fc]-->", "gi").test(code), "Be sure to close your comment by adding <code>--&#62;</code>.");'
 
 ```
 
@@ -64,9 +64,9 @@ tests:
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -81,7 +81,7 @@ tests:
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

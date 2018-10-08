@@ -25,7 +25,7 @@ Give your answer rounded to 12 places behind the decimal point in the form 0.abc
 ```yml
 tests:
   - text: <code>euler239()</code> should return 0.001887854841.
-    testString: 'assert.strictEqual(euler239(), 0.001887854841, ''<code>euler239()</code> should return 0.001887854841.'');'
+    testString: 'assert.strictEqual(euler239(), 0.001887854841, "<code>euler239()</code> should return 0.001887854841.");'
 
 ```
 

@@ -6,14 +6,14 @@ title: 'Problem 305: Reflexive Position'
 
 ## Description
 <section id='description'>
-Let's call S the (infinite) string that is made by concatenating the consecutive positive integers (starting from 1)  written down in base 10. 
+Let's call S the (infinite) string that is made by concatenating the consecutive positive integers (starting from 1)  written down in base 10.
 Thus, S = 1234567891011121314151617181920212223242...
 
 
 It's easy to see that any number will show up an infinite number of times in S.
 
 
-Let's call f(n) the starting position of the nth occurrence of n in S. 
+Let's call f(n) the starting position of the nth occurrence of n in S.
 For example, f(1)=1, f(5)=81, f(12)=271 and f(7780)=111111365.
 
 
@@ -31,7 +31,7 @@ Find ∑f(3k) for 1≤k≤13.
 ```yml
 tests:
   - text: <code>euler305()</code> should return 18174995535140.
-    testString: 'assert.strictEqual(euler305(), 18174995535140, ''<code>euler305()</code> should return 18174995535140.'');'
+    testString: 'assert.strictEqual(euler305(), 18174995535140, "<code>euler305()</code> should return 18174995535140.");'
 
 ```
 

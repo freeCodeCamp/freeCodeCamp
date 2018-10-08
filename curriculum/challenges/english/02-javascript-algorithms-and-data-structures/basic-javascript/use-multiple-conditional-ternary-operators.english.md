@@ -24,13 +24,13 @@ Use multiple <code>conditional operators</code> in the <code>checkSign</code> fu
 ```yml
 tests:
   - text: <code>checkSign</code> should use multiple <code>conditional operators</code>
-    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), ''<code>checkSign</code> should use multiple <code>conditional operators</code>'');'
+    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkSign</code> should use multiple <code>conditional operators</code>");'
   - text: <code>checkSign(10)</code> should return "positive". Note that capitalization matters
-    testString: 'assert(checkSign(10) === ''positive'', ''<code>checkSign(10)</code> should return "positive". Note that capitalization matters'');'
+    testString: 'assert(checkSign(10) === "positive", "<code>checkSign(10)</code> should return "positive". Note that capitalization matters");'
   - text: <code>checkSign(-12)</code> should return "negative". Note that capitalization matters
-    testString: 'assert(checkSign(-12) === ''negative'', ''<code>checkSign(-12)</code> should return "negative". Note that capitalization matters'');'
+    testString: 'assert(checkSign(-12) === "negative", "<code>checkSign(-12)</code> should return "negative". Note that capitalization matters");'
   - text: <code>checkSign(0)</code> should return "zero". Note that capitalization matters
-    testString: 'assert(checkSign(0) === ''zero'', ''<code>checkSign(0)</code> should return "zero". Note that capitalization matters'');'
+    testString: 'assert(checkSign(0) === "zero", "<code>checkSign(0)</code> should return "zero". Note that capitalization matters");'
 
 ```
 
@@ -43,7 +43,7 @@ tests:
 
 ```js
 function checkSign(num) {
-  
+
 }
 
 checkSign(10);

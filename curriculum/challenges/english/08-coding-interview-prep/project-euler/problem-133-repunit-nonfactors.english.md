@@ -23,7 +23,7 @@ Find the sum of all the primes below one-hundred thousand that will never be a f
 ```yml
 tests:
   - text: <code>euler133()</code> should return 453647705.
-    testString: 'assert.strictEqual(euler133(), 453647705, ''<code>euler133()</code> should return 453647705.'');'
+    testString: 'assert.strictEqual(euler133(), 453647705, "<code>euler133()</code> should return 453647705.");'
 
 ```
 

@@ -25,7 +25,7 @@ Find the last 8 digits of 1777↑↑1855.
 ```yml
 tests:
   - text: <code>euler188()</code> should return 95962097.
-    testString: 'assert.strictEqual(euler188(), 95962097, ''<code>euler188()</code> should return 95962097.'');'
+    testString: 'assert.strictEqual(euler188(), 95962097, "<code>euler188()</code> should return 95962097.");'
 
 ```
 

@@ -27,20 +27,20 @@ Write a function that takes the initial number of prisoners and 'k' as parameter
 
 ```yml
 tests:
-  - text: '''<code>josephus</code> should be a function.'''
-    testString: 'assert(typeof josephus==''function'',''<code>josephus</code> should be a function.'');'
-  - text: '''<code>josephus(30,3)</code> should return a number.'''
-    testString: 'assert(typeof josephus(30,3)==''number'',''<code>josephus(30,3)</code> should return a number.'');'
-  - text: '''<code>josephus(30,3)</code> should return <code>29</code>.'''
-    testString: 'assert.equal(josephus(30,3),29,''<code>josephus(30,3)</code> should return <code>29</code>.'');'
-  - text: '''<code>josephus(30,5)</code> should return <code>3</code>.'''
-    testString: 'assert.equal(josephus(30,5),3,''<code>josephus(30,5)</code> should return <code>3</code>.'');'
-  - text: '''<code>josephus(20,2)</code> should return <code>9</code>.'''
-    testString: 'assert.equal(josephus(20,2),9,''<code>josephus(20,2)</code> should return <code>9</code>.'');'
-  - text: '''<code>josephus(17,6)</code> should return <code>2</code>.'''
-    testString: 'assert.equal(josephus(17,6),2,''<code>josephus(17,6)</code> should return <code>2</code>.'');'
-  - text: '''<code>josephus(29,4)</code> should return <code>2</code>.'''
-    testString: 'assert.equal(josephus(29,4),2,''<code>josephus(29,4)</code> should return <code>2</code>.'');'
+  - text: "'<code>josephus</code> should be a function."'
+    testString: 'assert(typeof josephus=="function","<code>josephus</code> should be a function.");'
+  - text: "'<code>josephus(30,3)</code> should return a number."'
+    testString: 'assert(typeof josephus(30,3)=="number","<code>josephus(30,3)</code> should return a number.");'
+  - text: "'<code>josephus(30,3)</code> should return <code>29</code>."'
+    testString: 'assert.equal(josephus(30,3),29,"<code>josephus(30,3)</code> should return <code>29</code>.");'
+  - text: "'<code>josephus(30,5)</code> should return <code>3</code>."'
+    testString: 'assert.equal(josephus(30,5),3,"<code>josephus(30,5)</code> should return <code>3</code>.");'
+  - text: "'<code>josephus(20,2)</code> should return <code>9</code>."'
+    testString: 'assert.equal(josephus(20,2),9,"<code>josephus(20,2)</code> should return <code>9</code>.");'
+  - text: "'<code>josephus(17,6)</code> should return <code>2</code>."'
+    testString: 'assert.equal(josephus(17,6),2,"<code>josephus(17,6)</code> should return <code>2</code>.");'
+  - text: "'<code>josephus(29,4)</code> should return <code>2</code>."'
+    testString: 'assert.equal(josephus(29,4),2,"<code>josephus(29,4)</code> should return <code>2</code>.");'
 
 ```
 

@@ -30,7 +30,7 @@ For this exercise, return a set with the following values: <code>1, 2, 3, 'Taco'
 ```yml
 tests:
   - text: 'Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.'
-    testString: 'assert(function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has(''Taco'') && test.has(''Cat'') && test.has(''Awesome'');}, ''Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.'');'
+    testString: 'assert(function(){var test = checkSet(); return (test.size == 6) && test.has(1) && test.has(2) && test.has(3) && test.has("Taco") && test.has("Cat") && test.has("Awesome");}, "Your <code>Set</code> should only contain the values <code>1, 2, 3, Taco, Cat, Awesome</code>.");'
 
 ```
 
@@ -45,7 +45,7 @@ tests:
 function checkSet() {
   var set = new Set([1, 2, 3, 3, 2, 1, 2, 3, 1]);
   // change code below this line
-  
+
   // change code above this line
   console.log(set);
   return set;

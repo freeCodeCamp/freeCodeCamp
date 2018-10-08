@@ -14,10 +14,10 @@ The final part of the strategy is handling the profile returned from Github. We 
     {$setOnInsert:{
         id: profile.id,
         name: profile.displayName || 'John Doe',
-        photo: profile.photos[0].value || '',
+        photo: profile.photos[0].value || ",
         email: profile.emails[0].value || 'No public email',
         created_on: new Date(),
-        provider: profile.provider || ''
+        provider: profile.provider || "
     },$set:{
         last_login: new Date()
     },$inc:{
@@ -43,7 +43,7 @@ You should be able to login to your app now- try it! Submit your page when you t
 ```yml
 tests:
   - text: Github strategy setup complete
-    testString: 'getUserInput => $.get(getUserInput(''url'')+ ''/_api/server.js'') .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, ''Strategy should use now use the database to search for the user''); assert.match(data, /GitHubStrategy[^]*socialusers/gi, ''Strategy should use "socialusers" as db collection''); assert.match(data, /GitHubStrategy[^]*return cb/gi, ''Strategy should return the callback function "cb"''); }, xhr => { throw new Error(xhr.statusText); })'
+    testString: 'getUserInput => $.get(getUserInput("url")+ "/_api/server.js") .then(data => { assert.match(data, /GitHubStrategy[^]*db.collection/gi, "Strategy should use now use the database to search for the user"); assert.match(data, /GitHubStrategy[^]*socialusers/gi, "Strategy should use "socialusers" as db collection"); assert.match(data, /GitHubStrategy[^]*return cb/gi, "Strategy should return the callback function "cb""); }, xhr => { throw new Error(xhr.statusText); })'
 
 ```
 

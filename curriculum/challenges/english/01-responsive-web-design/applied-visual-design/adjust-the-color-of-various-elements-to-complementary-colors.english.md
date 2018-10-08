@@ -21,13 +21,13 @@ This page will use a shade of teal (<code>#09A7A1</code>) as the dominant color,
 ```yml
 tests:
   - text: 'The <code>header</code> element should have a <code>background-color</code> of #09A7A1.'
-    testString: 'assert($(''header'').css(''background-color'') == ''rgb(9, 167, 161)'', ''The <code>header</code> element should have a <code>background-color</code> of #09A7A1.'');'
+    testString: 'assert($("header").css("background-color") == "rgb(9, 167, 161)", "The <code>header</code> element should have a <code>background-color</code> of #09A7A1.");'
   - text: 'The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.'
-    testString: 'assert($(''footer'').css(''background-color'') == ''rgb(9, 167, 161)'', ''The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.'');'
+    testString: 'assert($("footer").css("background-color") == "rgb(9, 167, 161)", "The <code>footer</code> element should have a <code>background-color</code> of #09A7A1.");'
   - text: 'The <code>h2</code> element should have a <code>color</code> of #09A7A1.'
-    testString: 'assert($(''h2'').css(''color'') == ''rgb(9, 167, 161)'', ''The <code>h2</code> element should have a <code>color</code> of #09A7A1.'');'
+    testString: 'assert($("h2").css("color") == "rgb(9, 167, 161)", "The <code>h2</code> element should have a <code>color</code> of #09A7A1.");'
   - text: 'The <code>button</code> element should have a <code>background-color</code> of #FF790E.'
-    testString: 'assert($(''button'').css(''background-color'') == ''rgb(255, 121, 14)'', ''The <code>button</code> element should have a <code>background-color</code> of #FF790E.'');'
+    testString: 'assert($("button").css("background-color") == "rgb(255, 121, 14)", "The <code>button</code> element should have a <code>background-color</code> of #FF790E.");'
 
 ```
 
@@ -50,7 +50,7 @@ tests:
   }
   h2 {
     color: black;
-  }  
+  }
   button {
     background-color: white;
   }

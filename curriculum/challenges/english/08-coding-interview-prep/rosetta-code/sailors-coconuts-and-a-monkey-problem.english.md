@@ -77,13 +77,13 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>splitCoconuts</code> is a function.
-    testString: 'assert(typeof splitCoconuts === ''function'', ''<code>splitCoconuts</code> is a function.'');'
+    testString: 'assert(typeof splitCoconuts === "function", "<code>splitCoconuts</code> is a function.");'
   - text: <code>splitCoconuts(5)</code> should return 3121.
-    testString: 'assert(splitCoconuts(5) === 3121, ''<code>splitCoconuts(5)</code> should return 3121.'');'
+    testString: 'assert(splitCoconuts(5) === 3121, "<code>splitCoconuts(5)</code> should return 3121.");'
   - text: <code>splitCoconuts(6)</code> should return 233275.
-    testString: 'assert(splitCoconuts(6) === 233275, ''<code>splitCoconuts(6)</code> should return 233275.'');'
+    testString: 'assert(splitCoconuts(6) === 233275, "<code>splitCoconuts(6)</code> should return 233275.");'
   - text: <code>splitCoconuts(7)</code> should return 823537.
-    testString: 'assert(splitCoconuts(7) === 823537, ''<code>splitCoconuts(7)</code> should return 823537.'');'
+    testString: 'assert(splitCoconuts(7) === 823537, "<code>splitCoconuts(7)</code> should return 823537.");'
 
 ```
 

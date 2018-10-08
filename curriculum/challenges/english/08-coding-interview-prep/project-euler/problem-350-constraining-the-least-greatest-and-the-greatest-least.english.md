@@ -33,7 +33,7 @@ Find f(106, 1012, 1018) mod 1014.
 ```yml
 tests:
   - text: <code>euler350()</code> should return 84664213.
-    testString: 'assert.strictEqual(euler350(), 84664213, ''<code>euler350()</code> should return 84664213.'');'
+    testString: 'assert.strictEqual(euler350(), 84664213, "<code>euler350()</code> should return 84664213.");'
 
 ```
 

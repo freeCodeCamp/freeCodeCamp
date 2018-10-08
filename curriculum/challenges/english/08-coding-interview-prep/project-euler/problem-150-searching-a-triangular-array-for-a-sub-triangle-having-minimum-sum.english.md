@@ -22,7 +22,7 @@ Our triangular array is then formed using the pseudo-random numbers thus:
 
 s1
 s2  s3
-s4  s5  s6  
+s4  s5  s6 
 
 s7  s8  s9  s10
 ...
@@ -45,7 +45,7 @@ Find the smallest possible sub-triangle sum.
 ```yml
 tests:
   - text: <code>euler150()</code> should return -271248680.
-    testString: 'assert.strictEqual(euler150(), -271248680, ''<code>euler150()</code> should return -271248680.'');'
+    testString: 'assert.strictEqual(euler150(), -271248680, "<code>euler150()</code> should return -271248680.");'
 
 ```
 

@@ -33,7 +33,7 @@ Find  A(r). Give your answer rounded to six decimal places.
 ```yml
 tests:
   - text: <code>euler332()</code> should return 2717.751525.
-    testString: 'assert.strictEqual(euler332(), 2717.751525, ''<code>euler332()</code> should return 2717.751525.'');'
+    testString: 'assert.strictEqual(euler332(), 2717.751525, "<code>euler332()</code> should return 2717.751525.");'
 
 ```
 

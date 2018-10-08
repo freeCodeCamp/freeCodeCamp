@@ -23,9 +23,9 @@ Add a click event handler inside of the <code>DOMContentLoaded</code> function f
 ```yml
 tests:
   - text: Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.
-    testString: 'assert(code.match(/document\.getElementById\(\s*?(''|")getMessage\1\s*?\)/g), ''Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.'');'
+    testString: 'assert(code.match(/document\.getElementById\(\s*?("|")getMessage\1\s*?\)/g), "Your code should use the <code>document.getElementById</code> method to select the <code>getMessage</code> element.");'
   - text: Your code should add an <code>onclick</code> event handler.
-    testString: 'assert(typeof document.getElementById(''getMessage'').onclick === ''function'', ''Your code should add an <code>onclick</code> event handler.'');'
+    testString: 'assert(typeof document.getElementById("getMessage").onclick === "function", "Your code should add an <code>onclick</code> event handler.");'
 
 ```
 
@@ -40,8 +40,8 @@ tests:
 <script>
   document.addEventListener('DOMContentLoaded',function(){
     // Add your code below this line
-    
-    
+
+
     // Add your code above this line
   });
 </script>
@@ -71,7 +71,7 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
-<h1>Cat Photo Finder</h1> 
+<h1>Cat Photo Finder</h1>
 <p class="message box">
   The message will go here
 </p>

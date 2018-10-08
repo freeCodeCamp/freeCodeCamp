@@ -6,7 +6,7 @@ title: 'Problem 194: Coloured Configurations'
 
 ## Description
 <section id='description'>
-Consider graphs built with the units A: 
+Consider graphs built with the units A:
 and B: , where the units are glued along
 the vertical edges as in the graph .
 
@@ -30,7 +30,7 @@ Find the last 8 digits of N(25,75,1984).
 ```yml
 tests:
   - text: <code>euler194()</code> should return 61190912.
-    testString: 'assert.strictEqual(euler194(), 61190912, ''<code>euler194()</code> should return 61190912.'');'
+    testString: 'assert.strictEqual(euler194(), 61190912, "<code>euler194()</code> should return 61190912.");'
 
 ```
 

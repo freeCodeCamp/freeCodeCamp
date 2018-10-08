@@ -22,7 +22,7 @@ Add a <code>width</code> property to the entire card and set it to an absolute v
 ```yml
 tests:
   - text: Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.
-    testString: 'assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), ''Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.'');'
+    testString: 'assert(code.match(/.fullCard\s*{[\s\S][^}]*\n*^\s*width\s*:\s*245px\s*;/gm), "Your code should change the <code>width</code> property of the card to 245 pixels by using the <code>fullCard</code> class selector.");'
 
 ```
 
@@ -46,7 +46,7 @@ tests:
     text-align: left;
   }
   .fullCard {
-    
+
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 10px 5px;

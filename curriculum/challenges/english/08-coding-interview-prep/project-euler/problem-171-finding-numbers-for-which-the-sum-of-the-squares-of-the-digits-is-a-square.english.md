@@ -24,7 +24,7 @@ Find the last nine digits of the sum of all n, 0 < n < 1020, such that f(n) is a
 ```yml
 tests:
   - text: <code>euler171()</code> should return 142989277.
-    testString: 'assert.strictEqual(euler171(), 142989277, ''<code>euler171()</code> should return 142989277.'');'
+    testString: 'assert.strictEqual(euler171(), 142989277, "<code>euler171()</code> should return 142989277.");'
 
 ```
 

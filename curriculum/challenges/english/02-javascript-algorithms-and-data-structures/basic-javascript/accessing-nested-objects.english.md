@@ -23,9 +23,9 @@ Access the <code>myStorage</code> object and assign the contents of the <code>gl
 ```yml
 tests:
   - text: <code>gloveBoxContents</code> should equal "maps"
-    testString: 'assert(gloveBoxContents === "maps", ''<code>gloveBoxContents</code> should equal "maps"'');'
+    testString: 'assert(gloveBoxContents === "maps", "<code>gloveBoxContents</code> should equal "maps"");'
   - text: Use dot and bracket notation to access <code>myStorage</code>
-    testString: 'assert(/=\s*myStorage\.car\.inside\[\s*("|'')glove box\1\s*\]/g.test(code), ''Use dot and bracket notation to access <code>myStorage</code>'');'
+    testString: 'assert(/=\s*myStorage\.car\.inside\[\s*("|")glove box\1\s*\]/g.test(code), "Use dot and bracket notation to access <code>myStorage</code>");'
 
 ```
 
@@ -73,13 +73,13 @@ console.info('after the test');
 
 
 ```js
-var myStorage = {  
-  "car":{  
-    "inside":{  
+var myStorage = {
+  "car":{
+    "inside":{
       "glove box":"maps",
       "passenger seat":"crumbs"
     },
-    "outside":{  
+    "outside":{
       "trunk":"jack"
     }
   }

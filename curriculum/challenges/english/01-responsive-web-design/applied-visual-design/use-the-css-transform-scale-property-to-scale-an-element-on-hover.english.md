@@ -23,7 +23,7 @@ Add a CSS rule for the <code>hover</code> state of the <code>div</code> and use 
 ```yml
 tests:
   - text: The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.
-    testString: 'assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi), ''The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.'');'
+    testString: 'assert(code.match(/div:hover\s*?{\s*?transform:\s*?scale\(1\.1\);/gi), "The size of the <code>div</code> element should scale 1.1 times when the user hovers over it.");'
 
 ```
 
@@ -36,7 +36,7 @@ tests:
 
 ```html
 <style>
-  div { 
+  div {
     width: 70%;
     height: 100px;
     margin:  50px auto;
@@ -46,9 +46,9 @@ tests:
       #ffcccf
     );
   }
-  
-  
-  
+
+
+
 </style>
 
 <div></div>

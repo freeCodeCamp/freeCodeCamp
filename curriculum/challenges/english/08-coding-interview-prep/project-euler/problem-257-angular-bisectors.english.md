@@ -6,7 +6,7 @@ title: 'Problem 257: Angular Bisectors'
 
 ## Description
 <section id='description'>
-Given is an integer sided triangle ABC with sides a ≤ b ≤ c. 
+Given is an integer sided triangle ABC with sides a ≤ b ≤ c.
 (AB = c, BC = a and AC = b).
 The angular bisectors of the triangle intersect the sides at points E, F and G (see picture below).
 
@@ -32,7 +32,7 @@ How many triangles ABC with perimeter≤100,000,000 exist so that the ratio area
 ```yml
 tests:
   - text: <code>euler257()</code> should return 139012411.
-    testString: 'assert.strictEqual(euler257(), 139012411, ''<code>euler257()</code> should return 139012411.'');'
+    testString: 'assert.strictEqual(euler257(), 139012411, "<code>euler257()</code> should return 139012411.");'
 
 ```
 

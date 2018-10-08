@@ -24,7 +24,7 @@ Change the <code>margin</code> of the blue box to match that of the red box.
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.
-    testString: 'assert($(".blue-box").css("margin-top") === "20px", ''Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.'');'
+    testString: 'assert($(".blue-box").css("margin-top") === "20px", "Your <code>blue-box</code> class should give elements <code>20px</code> of <code>margin</code>.");'
 
 ```
 
@@ -53,7 +53,7 @@ tests:
     background-color: yellow;
     padding: 10px;
   }
-  
+
   .red-box {
     background-color: crimson;
     color: #fff;

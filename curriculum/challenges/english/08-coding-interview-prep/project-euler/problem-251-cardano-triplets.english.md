@@ -30,7 +30,7 @@ Find how many Cardano Triplets exist such that a+b+c ≤ 110,000,000.
 ```yml
 tests:
   - text: <code>euler251()</code> should return 18946051.
-    testString: 'assert.strictEqual(euler251(), 18946051, ''<code>euler251()</code> should return 18946051.'');'
+    testString: 'assert.strictEqual(euler251(), 18946051, "<code>euler251()</code> should return 18946051.");'
 
 ```
 

@@ -19,7 +19,7 @@ $$
 \end{pmatrix}
 $$
 
-Find the minimal path sum, in matrix.txt (right click and 
+Find the minimal path sum, in matrix.txt (right click and
 "Save Link/Target As..."), a 31K text file containing a 80 by 80 matrix, from the top left to the bottom right by moving left, right, up, and down.
 </section>
 
@@ -34,7 +34,7 @@ Find the minimal path sum, in matrix.txt (right click and
 ```yml
 tests:
   - text: <code>euler83()</code> should return 425185.
-    testString: 'assert.strictEqual(euler83(), 425185, ''<code>euler83()</code> should return 425185.'');'
+    testString: 'assert.strictEqual(euler83(), 425185, "<code>euler83()</code> should return 425185.");'
 
 ```
 

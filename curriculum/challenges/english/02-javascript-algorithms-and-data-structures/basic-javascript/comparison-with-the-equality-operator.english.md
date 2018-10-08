@@ -25,13 +25,13 @@ Add the <code>equality operator</code> to the indicated line so that the functio
 ```yml
 tests:
   - text: <code>testEqual(10)</code> should return "Not Equal"
-    testString: 'assert(testEqual(10) === "Not Equal", ''<code>testEqual(10)</code> should return "Not Equal"'');'
+    testString: 'assert(testEqual(10) === "Not Equal", "<code>testEqual(10)</code> should return "Not Equal"");'
   - text: <code>testEqual(12)</code> should return "Equal"
-    testString: 'assert(testEqual(12) === "Equal", ''<code>testEqual(12)</code> should return "Equal"'');'
+    testString: 'assert(testEqual(12) === "Equal", "<code>testEqual(12)</code> should return "Equal"");'
   - text: <code>testEqual("12")</code> should return "Equal"
-    testString: 'assert(testEqual("12") === "Equal", ''<code>testEqual("12")</code> should return "Equal"'');'
+    testString: 'assert(testEqual("12") === "Equal", "<code>testEqual("12")</code> should return "Equal"");'
   - text: You should use the <code>==</code> operator
-    testString: 'assert(code.match(/==/g) && !code.match(/===/g), ''You should use the <code>==</code> operator'');'
+    testString: 'assert(code.match(/==/g) && !code.match(/===/g), "You should use the <code>==</code> operator");'
 
 ```
 

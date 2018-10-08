@@ -1,12 +1,12 @@
 ---
 id: 5900f4d31000cf542c50ffe6
 challengeType: 5
-title: 'Problem 359: Hilbert''s New Hotel'
+title: 'Problem 359: Hilbert"s New Hotel'
 ---
 
 ## Description
 <section id='description'>
-An infinite number of people (numbered 1, 2, 3, etc.) are lined up to get a room at Hilbert's newest infinite hotel. The hotel contains an infinite number of floors (numbered 1, 2, 3, etc.), and each floor contains an infinite number of rooms (numbered 1, 2, 3, etc.). 
+An infinite number of people (numbered 1, 2, 3, etc.) are lined up to get a room at Hilbert's newest infinite hotel. The hotel contains an infinite number of floors (numbered 1, 2, 3, etc.), and each floor contains an infinite number of rooms (numbered 1, 2, 3, etc.).
 
 
 
@@ -49,7 +49,7 @@ Find the sum of all P(f, r) for all positive f and r such that f × r = 71328803
 ```yml
 tests:
   - text: <code>euler359()</code> should return 40632119.
-    testString: 'assert.strictEqual(euler359(), 40632119, ''<code>euler359()</code> should return 40632119.'');'
+    testString: 'assert.strictEqual(euler359(), 40632119, "<code>euler359()</code> should return 40632119.");'
 
 ```
 

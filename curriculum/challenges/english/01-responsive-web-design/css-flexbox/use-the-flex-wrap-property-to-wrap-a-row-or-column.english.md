@@ -24,7 +24,7 @@ The current layout has too many boxes for one row. Add the CSS property <code>fl
 ```yml
 tests:
   - text: 'The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.'
-    testString: 'assert($(''#box-container'').css(''flex-wrap'') == ''wrap'', ''The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.'');'
+    testString: 'assert($("#box-container").css("flex-wrap") == "wrap", "The <code>#box-container</code> element should have the <code>flex-wrap</code> property set to a value of wrap.");'
 
 ```
 
@@ -41,7 +41,7 @@ tests:
     background: gray;
     display: flex;
     height: 100%;
-      
+
   }
   #box-1 {
     background-color: dodgerblue;

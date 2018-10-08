@@ -29,9 +29,9 @@ The <code>componentWillMount()</code> method is called before the <code>render()
 ```yml
 tests:
   - text: <code>MyComponent</code> should render a <code>div</code> element.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find(''div'').length === 1; })(), ''<code>MyComponent</code> should render a <code>div</code> element.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(MyComponent)); return mockedComponent.find("div").length === 1; })(), "<code>MyComponent</code> should render a <code>div</code> element.");'
   - text: <code>console.log</code> should be called in <code>componentWillMount</code>.
-    testString: 'assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,''''); return lifecycle.includes(''console.log(''); })(), ''<code>console.log</code> should be called in <code>componentWillMount</code>.'');'
+    testString: 'assert((function() { const lifecycle = React.createElement(MyComponent).type.prototype.componentWillMount.toString().replace(/ /g,""); return lifecycle.includes("console.log("); })(), "<code>console.log</code> should be called in <code>componentWillMount</code>.");'
 
 ```
 

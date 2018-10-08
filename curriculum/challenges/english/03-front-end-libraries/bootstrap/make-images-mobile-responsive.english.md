@@ -22,15 +22,15 @@ Fortunately, with Bootstrap, all we need to do is add the <code>img-responsive</
 ```yml
 tests:
   - text: You should have a total of two images.
-    testString: 'assert($("img").length === 2, ''You should have a total of two images.'');'
+    testString: 'assert($("img").length === 2, "You should have a total of two images.");'
   - text: Your new image should be below your old one and have the class <code>img-responsive</code>.
-    testString: 'assert($("img:eq(1)").hasClass("img-responsive"), ''Your new image should be below your old one and have the class <code>img-responsive</code>.'');'
+    testString: 'assert($("img:eq(1)").hasClass("img-responsive"), "Your new image should be below your old one and have the class <code>img-responsive</code>.");'
   - text: Your new image should not have the class <code>smaller-image</code>.
-    testString: 'assert(!$("img:eq(1)").hasClass("smaller-image"), ''Your new image should not have the class <code>smaller-image</code>.'');'
+    testString: 'assert(!$("img:eq(1)").hasClass("smaller-image"), "Your new image should not have the class <code>smaller-image</code>.");'
   - text: 'Your new image should have a <code>src</code> of <code>https&#58;//bit.ly/fcc-running-cats</code>.'
-    testString: 'assert($("img:eq(1)").attr("src") === "https://bit.ly/fcc-running-cats", ''Your new image should have a <code>src</code> of <code>https&#58;//bit.ly/fcc-running-cats</code>.'');'
+    testString: 'assert($("img:eq(1)").attr("src") === "https://bit.ly/fcc-running-cats", "Your new image should have a <code>src</code> of <code>https&#58;//bit.ly/fcc-running-cats</code>.");'
   - text: Make sure your new <code>img</code> element has a closing angle bracket.
-    testString: 'assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2, ''Make sure your new <code>img</code> element has a closing angle bracket.'');'
+    testString: 'assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2, "Make sure your new <code>img</code> element has a closing angle bracket.");'
 
 ```
 

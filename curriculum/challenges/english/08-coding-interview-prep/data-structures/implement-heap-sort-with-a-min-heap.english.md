@@ -22,15 +22,15 @@ Instructions: Let's implement heap sort with a min heap. Feel free to adapt your
 ```yml
 tests:
   - text: The MinHeap data structure exists.
-    testString: 'assert((function() { var test = false; if (typeof MinHeap !== ''undefined'') { test = new MinHeap() }; return (typeof test == ''object'')})(), ''The MinHeap data structure exists.'');'
+    testString: 'assert((function() { var test = false; if (typeof MinHeap !== "undefined") { test = new MinHeap() }; return (typeof test == "object")})(), "The MinHeap data structure exists.");'
   - text: MinHeap has a method called insert.
-    testString: 'assert((function() { var test = false; if (typeof MinHeap !== ''undefined'') { test = new MinHeap() } else { return false; }; return (typeof test.insert == ''function'')})(), ''MinHeap has a method called insert.'');'
+    testString: 'assert((function() { var test = false; if (typeof MinHeap !== "undefined") { test = new MinHeap() } else { return false; }; return (typeof test.insert == "function")})(), "MinHeap has a method called insert.");'
   - text: MinHeap has a method called remove.
-    testString: 'assert((function() { var test = false; if (typeof MinHeap !== ''undefined'') { test = new MinHeap() } else { return false; }; return (typeof test.remove == ''function'')})(), ''MinHeap has a method called remove.'');'
+    testString: 'assert((function() { var test = false; if (typeof MinHeap !== "undefined") { test = new MinHeap() } else { return false; }; return (typeof test.remove == "function")})(), "MinHeap has a method called remove.");'
   - text: MinHeap has a method called sort.
-    testString: 'assert((function() { var test = false; if (typeof MinHeap !== ''undefined'') { test = new MinHeap() } else { return false; }; return (typeof test.sort == ''function'')})(), ''MinHeap has a method called sort.'');'
+    testString: 'assert((function() { var test = false; if (typeof MinHeap !== "undefined") { test = new MinHeap() } else { return false; }; return (typeof test.sort == "function")})(), "MinHeap has a method called sort.");'
   - text: The sort method returns an array containing all items added to the min heap in sorted order.
-    testString: 'assert((function() { var test = false; if (typeof MinHeap !== ''undefined'') { test = new MinHeap() } else { return false; }; test.insert(3); test.insert(12); test.insert(5); test.insert(10); test.insert(1); test.insert(27); test.insert(42); test.insert(57); test.insert(5); var result = test.sort(); return (isSorted(result)); })(), ''The sort method returns an array containing all items added to the min heap in sorted order.'');'
+    testString: 'assert((function() { var test = false; if (typeof MinHeap !== "undefined") { test = new MinHeap() } else { return false; }; test.insert(3); test.insert(12); test.insert(5); test.insert(10); test.insert(1); test.insert(27); test.insert(42); test.insert(57); test.insert(5); var result = test.sort(); return (isSorted(result)); })(), "The sort method returns an array containing all items added to the min heap in sorted order.");'
 
 ```
 

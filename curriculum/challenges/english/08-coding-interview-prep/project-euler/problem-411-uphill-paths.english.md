@@ -32,7 +32,7 @@ Find ∑ S(k5) for 1 ≤ k ≤ 30.
 ```yml
 tests:
   - text: <code>euler411()</code> should return 9936352.
-    testString: 'assert.strictEqual(euler411(), 9936352, ''<code>euler411()</code> should return 9936352.'');'
+    testString: 'assert.strictEqual(euler411(), 9936352, "<code>euler411()</code> should return 9936352.");'
 
 ```
 

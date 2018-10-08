@@ -31,11 +31,11 @@ Change the <code>while</code> loop in the code to a <code>do...while</code> loop
 ```yml
 tests:
   - text: You should be using a <code>do...while</code> loop for this.
-    testString: 'assert(code.match(/do/g), ''You should be using a <code>do...while</code> loop for this.'');'
+    testString: 'assert(code.match(/do/g), "You should be using a <code>do...while</code> loop for this.");'
   - text: '<code>myArray</code> should equal <code>[10]</code>.'
-    testString: 'assert.deepEqual(myArray, [10], ''<code>myArray</code> should equal <code>[10]</code>.'');'
+    testString: 'assert.deepEqual(myArray, [10], "<code>myArray</code> should equal <code>[10]</code>.");'
   - text: <code>i</code> should equal <code>11</code>
-    testString: 'assert.deepEqual(i, 11, ''<code>i</code> should equal <code>11</code>'');'
+    testString: 'assert.deepEqual(i, 11, "<code>i</code> should equal <code>11</code>");'
 
 ```
 

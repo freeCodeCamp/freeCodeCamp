@@ -22,11 +22,11 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 ```yml
 tests:
   - text: '<code>countingSundays(1943, 1946)</code> should return 6.'
-    testString: 'assert.strictEqual(countingSundays(1943, 1946), 6, ''<code>countingSundays(1943, 1946)</code> should return 6.'');'
+    testString: 'assert.strictEqual(countingSundays(1943, 1946), 6, "<code>countingSundays(1943, 1946)</code> should return 6.");'
   - text: '<code>countingSundays(1995, 2000)</code> should return 9.'
-    testString: 'assert.strictEqual(countingSundays(1995, 2000), 9, ''<code>countingSundays(1995, 2000)</code> should return 9.'');'
+    testString: 'assert.strictEqual(countingSundays(1995, 2000), 9, "<code>countingSundays(1995, 2000)</code> should return 9.");'
   - text: '<code>countingSundays(1901, 2000)</code> should return 171.'
-    testString: 'assert.strictEqual(countingSundays(1901, 2000), 171, ''<code>countingSundays(1901, 2000)</code> should return 171.'');'
+    testString: 'assert.strictEqual(countingSundays(1901, 2000), 171, "<code>countingSundays(1901, 2000)</code> should return 171.");'
 
 ```
 

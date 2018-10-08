@@ -30,7 +30,7 @@ Work through the code and see if you can figure out the problem, then advance to
 ```yml
 tests:
   - text: Move ahead to understand the error.
-    testString: 'assert(true, ''Move ahead to understand the error.'');'
+    testString: 'assert(true, "Move ahead to understand the error.");'
 
 ```
 
@@ -64,7 +64,7 @@ Window.prototype.tabClose = function (index) {
   var tabsBeforeIndex = this.tabs.splice(0, index); // get the tabs before the tab
   var tabsAfterIndex = this.tabs.splice(index); // get the tabs after the tab
 
-  this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // join them together 
+  this.tabs = tabsBeforeIndex.concat(tabsAfterIndex); // join them together
   return this;
  };
 

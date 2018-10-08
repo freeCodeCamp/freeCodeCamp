@@ -21,7 +21,7 @@ Add two rows to the grid that are <code>50px</code> tall each.
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), ''<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-rows\s*?:\s*?50px\s*?50px\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-rows</code> property with two units of <code>50px</code>.");'
 
 ```
 
@@ -39,7 +39,7 @@ tests:
   .d3{background:PaleTurquoise;}
   .d4{background:LightPink;}
   .d5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     width: 100%;
@@ -47,12 +47,12 @@ tests:
     display: grid;
     grid-template-columns: 100px 100px 100px;
     /* add your code below this line */
-    
-    
+
+
     /* add your code above this line */
   }
 </style>
-  
+
 <div class="container">
   <div class="d1">1</div>
   <div class="d2">2</div>

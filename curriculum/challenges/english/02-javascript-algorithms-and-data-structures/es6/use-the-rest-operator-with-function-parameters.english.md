@@ -23,15 +23,15 @@ Modify the function <code>sum</code> so that it uses the rest operator and it wo
 ```yml
 tests:
   - text: 'The result of <code>sum(0,1,2)</code> should be 3'
-    testString: 'assert(sum(0,1,2) === 3, ''The result of <code>sum(0,1,2)</code> should be 3'');'
+    testString: 'assert(sum(0,1,2) === 3, "The result of <code>sum(0,1,2)</code> should be 3");'
   - text: 'The result of <code>sum(1,2,3,4)</code> should be 10'
-    testString: 'assert(sum(1,2,3,4) === 10, ''The result of <code>sum(1,2,3,4)</code> should be 10'');'
+    testString: 'assert(sum(1,2,3,4) === 10, "The result of <code>sum(1,2,3,4)</code> should be 10");'
   - text: The result of <code>sum(5)</code> should be 5
-    testString: 'assert(sum(5) === 5, ''The result of <code>sum(5)</code> should be 5'');'
+    testString: 'assert(sum(5) === 5, "The result of <code>sum(5)</code> should be 5");'
   - text: The result of <code>sum()</code> should be 0
-    testString: 'assert(sum() === 0, ''The result of <code>sum()</code> should be 0'');'
+    testString: 'assert(sum() === 0, "The result of <code>sum()</code> should be 0");'
   - text: The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.
-    testString: 'getUserInput => assert(getUserInput(''index'').match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), ''The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.'');'
+    testString: 'getUserInput => assert(getUserInput("index").match(/function\s+sum\s*\(\s*...args\s*\)\s*{/g), "The <code>sum</code> function uses the <code>...</code> spread operator on the <code>args</code> parameter.");'
 
 ```
 

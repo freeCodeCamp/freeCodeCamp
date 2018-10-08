@@ -26,9 +26,9 @@ It looks there is a problem with the variables supplied to the <code>.penguin-to
 ```yml
 tests:
   - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.
-    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), ''Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.'');'
+    testString: 'assert(code.match(/.penguin-top\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}[\s\S]*.penguin-bottom\s{/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-top</code> class.");'
   - text: Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.
-    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), ''Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.'');'
+    testString: 'assert(code.match(/.penguin-bottom\s*?{[\s\S]*background\s*?:\s*?var\(\s*?--pengiun-skin\s*?,\s*?black\s*?\)\s*?;[\s\S]*}/gi), "Apply the fallback value of <code>black</code> to the <code>background</code> property of the <code>penguin-bottom</code> class.");'
 
 ```
 
@@ -52,33 +52,33 @@ tests:
     width: 300px;
     height: 300px;
   }
-  
+
   .penguin-top {
     top: 10%;
     left: 25%;
-  
+
     /* change code below */
     background: var(--pengiun-skin);
     /* change code above */
-  
+
     width: 50%;
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
-  
+
     /* change code below */
     background: var(--pengiun-skin);
     /* change code above */
-  
+
     width: 53%;
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-  
+
   .right-hand {
     top: 0%;
     left: -5%;
@@ -89,7 +89,7 @@ tests:
     transform: rotate(45deg);
     z-index: -1;
   }
-  
+
   .left-hand {
     top: 0%;
     left: 75%;
@@ -100,7 +100,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-  
+
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -109,7 +109,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -118,7 +118,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .belly {
     top: 60%;
     left: 2.5%;
@@ -127,7 +127,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-  
+
   .right-feet {
     top: 85%;
     left: 60%;
@@ -138,7 +138,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-  
+
   .left-feet {
     top: 85%;
     left: 25%;
@@ -149,7 +149,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-  
+
   .right-eye {
     top: 45%;
     left: 60%;
@@ -158,7 +158,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .left-eye {
     top: 45%;
     left: 25%;
@@ -167,7 +167,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .sparkle {
     top: 25%;
     left: 15%;
@@ -176,7 +176,7 @@ tests:
     height: 35%;
     border-radius: 50%;
   }
-  
+
   .blush-right {
     top: 65%;
     left: 15%;
@@ -185,7 +185,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .blush-left {
     top: 65%;
     left: 70%;
@@ -194,7 +194,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-top {
     top: 60%;
     left: 40%;
@@ -203,7 +203,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -212,11 +212,11 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   body {
     background:#c6faf1;
   }
-  
+
   .penguin * {
     position: absolute;
   }

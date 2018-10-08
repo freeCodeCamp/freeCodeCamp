@@ -24,13 +24,13 @@ The <code>watchList</code> array holds objects with information on several movie
 ```yml
 tests:
   - text: The <code>watchList</code> variable should not change.
-    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", ''The <code>watchList</code> variable should not change.'');'
+    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", "The <code>watchList</code> variable should not change.");'
   - text: Your code should not use a <code>for</code> loop.
-    testString: 'assert(!code.match(/for\s*?\(.+?\)/g), ''Your code should not use a <code>for</code> loop.'');'
+    testString: 'assert(!code.match(/for\s*?\(.+?\)/g), "Your code should not use a <code>for</code> loop.");'
   - text: Your code should use the <code>map</code> method.
-    testString: 'assert(code.match(/\.map/g), ''Your code should use the <code>map</code> method.'');'
+    testString: 'assert(code.match(/\.map/g), "Your code should use the <code>map</code> method.");'
   - text: '<code>rating</code> should equal <code>[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]</code>.'
-    testString: 'assert(JSON.stringify(rating) === JSON.stringify([{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]), ''<code>rating</code> should equal <code>[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]</code>.'');'
+    testString: 'assert(JSON.stringify(rating) === JSON.stringify([{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]), "<code>rating</code> should equal <code>[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]</code>.");'
 
 ```
 
@@ -44,7 +44,7 @@ tests:
 ```js
 // the global variable
 var watchList = [
-                 {  
+                 {
                    "Title": "Inception",
                    "Year": "2010",
                    "Rated": "PG-13",
@@ -66,7 +66,7 @@ var watchList = [
                    "Type": "movie",
                    "Response": "True"
                 },
-                {  
+                {
                    "Title": "Interstellar",
                    "Year": "2014",
                    "Rated": "PG-13",
@@ -110,7 +110,7 @@ var watchList = [
                    "Type": "movie",
                    "Response": "True"
                 },
-                {  
+                {
                    "Title": "Batman Begins",
                    "Year": "2005",
                    "Rated": "PG-13",
@@ -165,7 +165,7 @@ for(var i=0; i < watchList.length; i++){
 
 // Add your code above this line
 
-console.log(rating); 
+console.log(rating);
 ```
 
 </div>

@@ -1,7 +1,7 @@
 ---
 id: 5900f50e1000cf542c510020
 challengeType: 5
-title: 'Problem 416: A frog''s trip'
+title: 'Problem 416: A frog"s trip'
 ---
 
 ## Description
@@ -25,7 +25,7 @@ Find the last 9 digits of F(10, 1012).
 ```yml
 tests:
   - text: <code>euler416()</code> should return 898082747.
-    testString: 'assert.strictEqual(euler416(), 898082747, ''<code>euler416()</code> should return 898082747.'');'
+    testString: 'assert.strictEqual(euler416(), 898082747, "<code>euler416()</code> should return 898082747.");'
 
 ```
 

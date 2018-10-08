@@ -21,9 +21,9 @@ Fix the two pair errors in the code.
 ```yml
 tests:
   - text: Your code should fix the missing piece of the array.
-    testString: 'assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g), ''Your code should fix the missing piece of the array.'');'
+    testString: 'assert(code.match(/myArray\s*?=\s*?\[\s*?1\s*?,\s*?2\s*?,\s*?3\s*?\];/g), "Your code should fix the missing piece of the array.");'
   - text: 'Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that "Sum of array values is: 6".'
-    testString: 'assert(arraySum === 6, ''Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that "Sum of array values is: 6".'');'
+    testString: 'assert(arraySum === 6, "Your code should fix the missing piece of the <code>.reduce()</code> method. The console output should show that "Sum of array values is: 6".");'
 
 ```
 

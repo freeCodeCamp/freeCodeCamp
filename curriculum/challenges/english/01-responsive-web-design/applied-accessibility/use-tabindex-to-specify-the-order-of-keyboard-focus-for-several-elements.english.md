@@ -26,13 +26,13 @@ Camper Cat has a search field on his Inspirational Quotes page that he plans to 
 ```yml
 tests:
   - text: Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.
-    testString: 'assert($(''#search'').attr(''tabindex''), ''Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.'');'
+    testString: 'assert($("#search").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the search <code>input</code> tag.");'
   - text: Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.
-    testString: 'assert($(''#submit'').attr(''tabindex''), ''Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.'');'
+    testString: 'assert($("#submit").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the submit <code>input</code> tag.");'
   - text: Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.
-    testString: 'assert($(''#search'').attr(''tabindex'') == ''1'', ''Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.'');'
+    testString: 'assert($("#search").attr("tabindex") == "1", "Your code should set the <code>tabindex</code> attribute on the search <code>input</code> tag to a value of 1.");'
   - text: Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.
-    testString: 'assert($(''#submit'').attr(''tabindex'') == ''2'', ''Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.'');'
+    testString: 'assert($("#submit").attr("tabindex") == "2", "Your code should set the <code>tabindex</code> attribute on the submit <code>input</code> tag to a value of 2.");'
 
 ```
 
@@ -57,12 +57,12 @@ tests:
   </header>
   <form>
     <label for="search">Search:</label>
-    
-    
+
+
     <input type="search" name="search" id="search">
     <input type="submit" name="submit" value="Submit" id="submit">
-    
-    
+
+
   </form>
   <h2>Inspirational Quotes</h2>
   <blockquote>

@@ -26,7 +26,7 @@ What is the first value which can be written as the sum of primes in over five t
 ```yml
 tests:
   - text: <code>euler77()</code> should return 71.
-    testString: 'assert.strictEqual(euler77(), 71, ''<code>euler77()</code> should return 71.'');'
+    testString: 'assert.strictEqual(euler77(), 71, "<code>euler77()</code> should return 71.");'
 
 ```
 

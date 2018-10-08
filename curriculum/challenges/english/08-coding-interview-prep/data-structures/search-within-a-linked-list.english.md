@@ -22,15 +22,15 @@ Write an <code>isEmpty</code> method that checks if the linked list is empty, an
 ```yml
 tests:
   - text: Your <code>LinkedList</code> class should have a <code>indexOf</code> method.
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.indexOf === ''function'')}()), ''Your <code>LinkedList</code> class should have a <code>indexOf</code> method.'');'
+    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.indexOf === "function")}()), "Your <code>LinkedList</code> class should have a <code>indexOf</code> method.");'
   - text: Your <code>LinkedList</code> class should have a <code>elementAt</code> method.
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.elementAt === ''function'')}()), ''Your <code>LinkedList</code> class should have a <code>elementAt</code> method.'');'
+    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.elementAt === "function")}()), "Your <code>LinkedList</code> class should have a <code>elementAt</code> method.");'
   - text: Your <code>size</code> method should return the length of the linked list
-    testString: 'assert((function(){var test = new LinkedList(); test.add(''cat''); test.add(''dog''); test.add(''kitten''); return test.size() === 3}()), ''Your <code>size</code> method should return the length of the linked list'');'
+    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.size() === 3}()), "Your <code>size</code> method should return the length of the linked list");'
   - text: Your <code>indexOf</code> method should return the index of the given element.
-    testString: 'assert((function(){var test = new LinkedList(); test.add(''cat''); test.add(''dog''); test.add(''kitten''); return test.indexOf(''kitten'') === 2}()), ''Your <code>indexOf</code> method should return the index of the given element.'');'
+    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.indexOf("kitten") === 2}()), "Your <code>indexOf</code> method should return the index of the given element.");'
   - text: Your <code>elementAt</code> method should return at element at a given index.
-    testString: 'assert((function(){var test = new LinkedList(); test.add(''cat''); test.add(''dog''); test.add(''kitten''); return test.elementAt(1) === ''dog''}()), ''Your <code>elementAt</code> method should return at element at a given index.'');'
+    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.add("kitten"); return test.elementAt(1) === "dog"}()), "Your <code>elementAt</code> method should return at element at a given index.");'
 
 ```
 
@@ -42,14 +42,14 @@ tests:
 <div id='js-seed'>
 
 ```js
-function LinkedList() { 
-  var length = 0; 
-  var head = null; 
+function LinkedList() {
+  var length = 0;
+  var head = null;
 
-  var Node = function(element){ // {1} 
-    this.element = element; 
-    this.next = null; 
-  }; 
+  var Node = function(element){ // {1}
+    this.element = element;
+    this.next = null;
+  };
 
   this.size = function() {
     return length;
@@ -74,7 +74,7 @@ function LinkedList() {
     }
 
     length++;
-  }; 
+  };
 
   this.remove = function(element){
     var currentNode = head;

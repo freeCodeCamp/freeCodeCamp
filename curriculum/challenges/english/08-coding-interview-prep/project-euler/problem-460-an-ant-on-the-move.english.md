@@ -40,7 +40,7 @@ Find F(10000). Give your answer rounded to nine decimal places.
 ```yml
 tests:
   - text: <code>euler460()</code> should return 18.420738199.
-    testString: 'assert.strictEqual(euler460(), 18.420738199, ''<code>euler460()</code> should return 18.420738199.'');'
+    testString: 'assert.strictEqual(euler460(), 18.420738199, "<code>euler460()</code> should return 18.420738199.");'
 
 ```
 

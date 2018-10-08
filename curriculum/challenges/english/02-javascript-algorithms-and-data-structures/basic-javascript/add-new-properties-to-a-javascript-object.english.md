@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 You can add new properties to existing JavaScript objects the same way you would modify them.
 Here's how we would add a <code>"bark"</code> property to <code>ourDog</code>:
-<code>ourDog.bark = "bow-wow";</code> 
+<code>ourDog.bark = "bow-wow";</code>
 or
 <code>ourDog["bark"] = "bow-wow";</code>
 Now when we evaluate <code>ourDog.bark</code>, we'll get his bark, "bow-wow".
@@ -25,9 +25,9 @@ Add a <code>"bark"</code> property to <code>myDog</code> and set it to a dog sou
 ```yml
 tests:
   - text: Add the property <code>"bark"</code> to <code>myDog</code>.
-    testString: 'assert(myDog.bark !== undefined, ''Add the property <code>"bark"</code> to <code>myDog</code>.'');'
+    testString: 'assert(myDog.bark !== undefined, "Add the property <code>"bark"</code> to <code>myDog</code>.");'
   - text: Do not add <code>"bark"</code> to the setup section
-    testString: 'assert(!/bark[^\n]:/.test(code), ''Do not add <code>"bark"</code> to the setup section'');'
+    testString: 'assert(!/bark[^\n]:/.test(code), "Do not add <code>"bark"</code> to the setup section");'
 
 ```
 

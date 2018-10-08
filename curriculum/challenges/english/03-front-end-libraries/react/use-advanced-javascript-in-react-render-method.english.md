@@ -22,17 +22,17 @@ In the code provided, the <code>render</code> method has an array that contains 
 ```yml
 tests:
   - text: The <code>MagicEightBall</code> component should exist and should render to the page.
-    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).find(''MagicEightBall'').length, 1, ''The <code>MagicEightBall</code> component should exist and should render to the page.'');'
+    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).find("MagicEightBall").length, 1, "The <code>MagicEightBall</code> component should exist and should render to the page.");'
   - text: <code>MagicEightBall</code>&apos;s first child should be an <code>input</code> element.
-    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(0).name(), ''input'', ''<code>MagicEightBall</code>&apos;s first child should be an <code>input</code> element.'');'
+    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(0).name(), "input", "<code>MagicEightBall</code>&apos;s first child should be an <code>input</code> element.");'
   - text: <code>MagicEightBall</code>&apos;s third child should be a <code>button</code> element.
-    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(2).name(), ''button'', ''<code>MagicEightBall</code>&apos;s third child should be a <code>button</code> element.'');'
+    testString: 'assert.strictEqual(Enzyme.mount(React.createElement(MagicEightBall)).children().childAt(2).name(), "button", "<code>MagicEightBall</code>&apos;s third child should be a <code>button</code> element.");'
   - text: <code>MagicEightBall</code>&apos;s state should be initialized with a property of <code>userInput</code> and a property of <code>randomIndex</code> both set to a value of an empty string.
-    testString: 'assert(Enzyme.mount(React.createElement(MagicEightBall)).state(''randomIndex'') === '''' && Enzyme.mount(React.createElement(MagicEightBall)).state(''userInput'') === '''', ''<code>MagicEightBall</code>&apos;s state should be initialized with a property of <code>userInput</code> and a property of <code>randomIndex</code> both set to a value of an empty string.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(MagicEightBall)).state("randomIndex") === "" && Enzyme.mount(React.createElement(MagicEightBall)).state("userInput") === "", "<code>MagicEightBall</code>&apos;s state should be initialized with a property of <code>userInput</code> and a property of <code>randomIndex</code> both set to a value of an empty string.");'
   - text: 'When <code>MagicEightBall</code> is first mounted to the DOM, it should return an empty <code>p</code> element.'
-    testString: 'assert(Enzyme.mount(React.createElement(MagicEightBall)).find(''p'').length === 1 && Enzyme.mount(React.createElement(MagicEightBall)).find(''p'').text() === '''', ''When <code>MagicEightBall</code> is first mounted to the DOM, it should return an empty <code>p</code> element.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(MagicEightBall)).find("p").length === 1 && Enzyme.mount(React.createElement(MagicEightBall)).find("p").text() === "", "When <code>MagicEightBall</code> is first mounted to the DOM, it should return an empty <code>p</code> element.");'
   - text: 'When text is entered into the <code>input</code> element and the button is clicked, the <code>MagicEightBall</code> component should return a <code>p</code> element that contains a random element from the <code>possibleAnswers</code> array.'
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MagicEightBall)); const simulate = () => { comp.find(''input'').simulate(''change'', { target: { value: ''test?'' }}); comp.find(''button'').simulate(''click''); }; const result = () => comp.find(''p'').text(); const _1 = () => { simulate(); return waitForIt(() => result()) }; const _2 = () => { simulate(); return waitForIt(() => result()) }; const _3 = () => { simulate(); return waitForIt(() => result()) }; const _4 = () => { simulate(); return waitForIt(() => result()) }; const _5 = () => { simulate(); return waitForIt(() => result()) }; const _6 = () => { simulate(); return waitForIt(() => result()) }; const _7 = () => { simulate(); return waitForIt(() => result()) }; const _8 = () => { simulate(); return waitForIt(() => result()) }; const _9 = () => { simulate(); return waitForIt(() => result()) }; const _10 = () => { simulate(); return waitForIt(() => result()) }; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const actualAnswers = [_1_val, _2_val, _3_val, _4_val, _5_val, _6_val, _7_val, _8_val, _9_val, _10_val]; const hasIndex = actualAnswers.filter((answer, i) => possibleAnswers.indexOf(answer) !== -1); const notAllEqual = new Set(actualAnswers); assert(notAllEqual.size > 1 && hasIndex.length === 10, ''When text is entered into the <code>input</code> element and the button is clicked, the <code>MagicEightBall</code> component should return a <code>p</code> element that contains a random element from the <code>possibleAnswers</code> array.'');}'
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const comp = Enzyme.mount(React.createElement(MagicEightBall)); const simulate = () => { comp.find("input").simulate("change", { target: { value: "test?" }}); comp.find("button").simulate("click"); }; const result = () => comp.find("p").text(); const _1 = () => { simulate(); return waitForIt(() => result()) }; const _2 = () => { simulate(); return waitForIt(() => result()) }; const _3 = () => { simulate(); return waitForIt(() => result()) }; const _4 = () => { simulate(); return waitForIt(() => result()) }; const _5 = () => { simulate(); return waitForIt(() => result()) }; const _6 = () => { simulate(); return waitForIt(() => result()) }; const _7 = () => { simulate(); return waitForIt(() => result()) }; const _8 = () => { simulate(); return waitForIt(() => result()) }; const _9 = () => { simulate(); return waitForIt(() => result()) }; const _10 = () => { simulate(); return waitForIt(() => result()) }; const _1_val = await _1(); const _2_val = await _2(); const _3_val = await _3(); const _4_val = await _4(); const _5_val = await _5(); const _6_val = await _6(); const _7_val = await _7(); const _8_val = await _8(); const _9_val = await _9(); const _10_val = await _10(); const actualAnswers = [_1_val, _2_val, _3_val, _4_val, _5_val, _6_val, _7_val, _8_val, _9_val, _10_val]; const hasIndex = actualAnswers.filter((answer, i) => possibleAnswers.indexOf(answer) !== -1); const notAllEqual = new Set(actualAnswers); assert(notAllEqual.size > 1 && hasIndex.length === 10, "When text is entered into the <code>input</code> element and the button is clicked, the <code>MagicEightBall</code> component should return a <code>p</code> element that contains a random element from the <code>possibleAnswers</code> array.");}'
 
 ```
 
@@ -53,8 +53,8 @@ class MagicEightBall extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: '',
-      randomIndex: ''
+      userInput: ",
+      randomIndex: "
     }
     this.ask = this.ask.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -63,7 +63,7 @@ class MagicEightBall extends React.Component {
     if (this.state.userInput) {
       this.setState({
         randomIndex: Math.floor(Math.random() * 20),
-        userInput: ''
+        userInput: "
       });
     }
   }
@@ -76,7 +76,7 @@ class MagicEightBall extends React.Component {
     const possibleAnswers = [
       'It is certain',
       'It is decidedly so',
-      'Without a doubt', 
+      'Without a doubt',
       'Yes, definitely',
       'You may rely on it',
       'As I see it, yes',
@@ -88,7 +88,7 @@ class MagicEightBall extends React.Component {
       'Better not tell you now',
       'Cannot predict now',
       'Concentrate and ask again',
-      'Don\'t count on it', 
+      'Don\'t count on it',
       'My reply is no',
       'My sources say no',
       'Most likely',
@@ -146,8 +146,8 @@ class MagicEightBall extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: '',
-      randomIndex: ''
+      userInput: ",
+      randomIndex: "
     }
     this.ask = this.ask.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -156,7 +156,7 @@ class MagicEightBall extends React.Component {
     if (this.state.userInput) {
       this.setState({
         randomIndex: Math.floor(Math.random() * 20),
-        userInput: ''
+        userInput: "
       });
     }
   }

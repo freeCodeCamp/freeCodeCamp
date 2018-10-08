@@ -23,11 +23,11 @@ There exists exactly one Pythagorean triplet for which <var>a</var> + <var>b</va
 ```yml
 tests:
   - text: <code>specialPythagoreanTriplet(1000)</code> should return 31875000.
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(1000), 31875000, ''<code>specialPythagoreanTriplet(1000)</code> should return 31875000.'');'
+    testString: 'assert.strictEqual(specialPythagoreanTriplet(1000), 31875000, "<code>specialPythagoreanTriplet(1000)</code> should return 31875000.");'
   - text: <code>specialPythagoreanTriplet(24)</code> should return 480.
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(24), 480, ''<code>specialPythagoreanTriplet(24)</code> should return 480.'');'
+    testString: 'assert.strictEqual(specialPythagoreanTriplet(24), 480, "<code>specialPythagoreanTriplet(24)</code> should return 480.");'
   - text: <code>specialPythagoreanTriplet(120)</code> should return 49920.
-    testString: 'assert.strictEqual(specialPythagoreanTriplet(120), 49920, ''<code>specialPythagoreanTriplet(120)</code> should return 49920.'');'
+    testString: 'assert.strictEqual(specialPythagoreanTriplet(120), 49920, "<code>specialPythagoreanTriplet(120)</code> should return 49920.");'
 
 ```
 

@@ -19,12 +19,12 @@ However, with the same three mixtures, it is impossible to form the ratio (3 :�
 Let n be a positive integer. Suppose that for every triple of integers (a, b, c) with 0 ≤ a, b, c ≤ n and gcd(a, b, c) = 1, we have a mixture with ratio (a : b : c). Let M(n) be the set of all such mixtures.
 
 For example, M(2) contains the 19 mixtures with the following ratios:
-{(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1), 
-(1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1), 
-(1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1), 
+{(0 : 0 : 1), (0 : 1 : 0), (0 : 1 : 1), (0 : 1 : 2), (0 : 2 : 1),
+(1 : 0 : 0), (1 : 0 : 1), (1 : 0 : 2), (1 : 1 : 0), (1 : 1 : 1),
+(1 : 1 : 2), (1 : 2 : 0), (1 : 2 : 1), (1 : 2 : 2), (2 : 0 : 1),
 (2 : 1 : 0), (2 : 1 : 1), (2 : 1 : 2), (2 : 2 : 1)}.
 
-Let E(n) be the number of subsets of M(n) which can produce the mixture with ratio (1 : 1 : 1), i.e., the mixture with equal parts A, B and C. 
+Let E(n) be the number of subsets of M(n) which can produce the mixture with ratio (1 : 1 : 1), i.e., the mixture with equal parts A, B and C.
 We can verify that E(1) = 103, E(2) = 520447, E(10) mod 118 = 82608406 and E(500) mod 118 = 13801403.
 Find E(10 000 000) mod 118.
 </section>
@@ -40,7 +40,7 @@ Find E(10 000 000) mod 118.
 ```yml
 tests:
   - text: <code>euler478()</code> should return 59510340.
-    testString: 'assert.strictEqual(euler478(), 59510340, ''<code>euler478()</code> should return 59510340.'');'
+    testString: 'assert.strictEqual(euler478(), 59510340, "<code>euler478()</code> should return 59510340.");'
 
 ```
 

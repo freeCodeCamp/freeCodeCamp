@@ -23,11 +23,11 @@ Refactor the function <code>setGear</code> inside the object <code>bicycle</code
 ```yml
 tests:
   - text: Traditional function expression was not used.
-    testString: 'assert(!getUserInput(''index'').match(/function/),''Traditional <code>function</code> expression was not used.'');'
+    testString: 'assert(!getUserInput("index").match(/function/),"Traditional <code>function</code> expression was not used.");'
   - text: <code>setGear</code> is a declarative function.
-    testString: 'assert(typeof bicycle.setGear === ''function'' && getUserInput(''index'').match(/setGear\s*\(.+\)\s*\{/), ''<code>setGear</code> is a declarative function.'');'
+    testString: 'assert(typeof bicycle.setGear === "function" && getUserInput("index").match(/setGear\s*\(.+\)\s*\{/), "<code>setGear</code> is a declarative function.");'
   - text: <code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.
-    testString: 'assert((new bicycle.setGear(48)).gear === 48, ''<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.'');'
+    testString: 'assert((new bicycle.setGear(48)).gear === 48, "<code>bicycle.setGear(48)</code> changes the <code>gear</code> value to 48.");'
 
 ```
 

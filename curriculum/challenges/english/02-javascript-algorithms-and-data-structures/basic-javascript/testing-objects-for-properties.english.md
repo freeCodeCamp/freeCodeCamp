@@ -22,11 +22,11 @@ Modify the function <code>checkObj</code> to test <code>myObj</code> for <code>c
 ```yml
 tests:
   - text: <code>checkObj("gift")</code> should return  <code>"pony"</code>.
-    testString: 'assert(checkObj("gift") === "pony", ''<code>checkObj("gift")</code> should return  <code>"pony"</code>.'');'
+    testString: 'assert(checkObj("gift") === "pony", "<code>checkObj("gift")</code> should return  <code>"pony"</code>.");'
   - text: <code>checkObj("pet")</code> should return  <code>"kitten"</code>.
-    testString: 'assert(checkObj("pet") === "kitten", ''<code>checkObj("pet")</code> should return  <code>"kitten"</code>.'');'
+    testString: 'assert(checkObj("pet") === "kitten", "<code>checkObj("pet")</code> should return  <code>"kitten"</code>.");'
   - text: <code>checkObj("house")</code> should return  <code>"Not Found"</code>.
-    testString: 'assert(checkObj("house") === "Not Found", ''<code>checkObj("house")</code> should return  <code>"Not Found"</code>.'');'
+    testString: 'assert(checkObj("house") === "Not Found", "<code>checkObj("house")</code> should return  <code>"Not Found"</code>.");'
 
 ```
 
@@ -47,7 +47,7 @@ var myObj = {
 
 function checkObj(checkProp) {
   // Your Code Here
-  
+
   return "Change Me!";
 }
 

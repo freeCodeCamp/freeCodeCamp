@@ -16,7 +16,7 @@ The grid graphs embedded in the Euclidean plane are not rigid, as the following 
 However, one can make them rigid by adding diagonal edges to the cells. For example, for the 2x3 grid graph, there are 19 ways to make the graph rigid:
 Note that for the purposes of this problem, we do not consider changing the orientation of a diagonal edge or adding both diagonal edges to a cell as a different way of making a grid graph rigid.
 
-Let R(m,n) be the number of ways to make the m × n grid graph rigid. 
+Let R(m,n) be the number of ways to make the m × n grid graph rigid.
 E.g. R(2,3) = 19 and R(5,5) = 23679901
 
 Define S(N) as ∑R(i,j) for 1 ≤ i, j ≤ N.
@@ -35,7 +35,7 @@ Find S(100), give your answer modulo 1000000033
 ```yml
 tests:
   - text: <code>euler434()</code> should return 863253606.
-    testString: 'assert.strictEqual(euler434(), 863253606, ''<code>euler434()</code> should return 863253606.'');'
+    testString: 'assert.strictEqual(euler434(), 863253606, "<code>euler434()</code> should return 863253606.");'
 
 ```
 

@@ -22,13 +22,13 @@ Fix the two indexing errors in the following function so all the numbers 1 throu
 ```yml
 tests:
   - text: Your code should set the initial condition of the loop so it starts at the first index.
-    testString: 'assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1, ''Your code should set the initial condition of the loop so it starts at the first index.'');'
+    testString: 'assert(code.match(/i\s*?=\s*?0\s*?;/g).length == 1, "Your code should set the initial condition of the loop so it starts at the first index.");'
   - text: Your code should fix the initial condition of the loop so that the index starts at 0.
-    testString: 'assert(!code.match(/i\s?=\s*?1\s*?;/g), ''Your code should fix the initial condition of the loop so that the index starts at 0.'');'
+    testString: 'assert(!code.match(/i\s?=\s*?1\s*?;/g), "Your code should fix the initial condition of the loop so that the index starts at 0.");'
   - text: Your code should set the terminal condition of the loop so it stops at the last index.
-    testString: 'assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1, ''Your code should set the terminal condition of the loop so it stops at the last index.'');'
+    testString: 'assert(code.match(/i\s*?<\s*?len\s*?;/g).length == 1, "Your code should set the terminal condition of the loop so it stops at the last index.");'
   - text: Your code should fix the terminal condition of the loop so that it stops at 1 before the length.
-    testString: 'assert(!code.match(/i\s*?<=\s*?len;/g), ''Your code should fix the terminal condition of the loop so that it stops at 1 before the length.'');'
+    testString: 'assert(!code.match(/i\s*?<=\s*?len;/g), "Your code should fix the terminal condition of the loop so that it stops at 1 before the length.");'
 
 ```
 

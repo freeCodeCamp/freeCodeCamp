@@ -21,7 +21,7 @@ The navigation bar on this site currently inherits its <code>background-color</c
 ```yml
 tests:
   - text: The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.
-    testString: 'assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), ''The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.'');'
+    testString: 'assert(code.match(/nav\s*?{\s*?background-color:\s*?hsl\(180,\s*?80%,\s*?25%\)/gi), "The <code>nav</code> element should have a <code>background-color</code> of the adjusted cyan tone using the <code>hsl()</code> property.");'
 
 ```
 
@@ -38,32 +38,32 @@ tests:
     background-color: hsl(180, 90%, 35%);
     color: #FFFFFF;
   }
-  
+
   nav {
-  
+
   }
-  
+
   h1 {
     text-indent: 10px;
     padding-top: 10px;
   }
-  
+
   nav ul {
     margin: 0px;
     padding: 5px 0px 5px 30px;
   }
-  
+
   nav li {
     display: inline;
     margin-right: 20px;
   }
-  
+
   a {
     text-decoration: none;
     color: inherit;
   }
 </style>
-  
+
 <header>
   <h1>Cooking with FCC!</h1>
   <nav>

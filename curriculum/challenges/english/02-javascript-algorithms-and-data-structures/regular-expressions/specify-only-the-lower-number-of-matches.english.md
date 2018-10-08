@@ -23,19 +23,19 @@ Change the regex <code>haRegex</code> to match the word <code>"Hazzah"</code> on
 ```yml
 tests:
   - text: Your regex should use curly brackets.
-    testString: 'assert(haRegex.source.match(/{.*?}/).length > 0, ''Your regex should use curly brackets.'');'
+    testString: 'assert(haRegex.source.match(/{.*?}/).length > 0, "Your regex should use curly brackets.");'
   - text: Your regex should not match <code>"Hazzah"</code>
-    testString: 'assert(!haRegex.test("Hazzah"), ''Your regex should not match <code>"Hazzah"</code>'');'
+    testString: 'assert(!haRegex.test("Hazzah"), "Your regex should not match <code>"Hazzah"</code>");'
   - text: Your regex should not match <code>"Hazzzah"</code>
-    testString: 'assert(!haRegex.test("Hazzzah"), ''Your regex should not match <code>"Hazzzah"</code>'');'
+    testString: 'assert(!haRegex.test("Hazzzah"), "Your regex should not match <code>"Hazzzah"</code>");'
   - text: Your regex should match <code>"Hazzzzah"</code>
-    testString: 'assert(haRegex.test("Hazzzzah"), ''Your regex should match <code>"Hazzzzah"</code>'');'
+    testString: 'assert(haRegex.test("Hazzzzah"), "Your regex should match <code>"Hazzzzah"</code>");'
   - text: Your regex should match <code>"Hazzzzzah"</code>
-    testString: 'assert(haRegex.test("Hazzzzzah"), ''Your regex should match <code>"Hazzzzzah"</code>'');'
+    testString: 'assert(haRegex.test("Hazzzzzah"), "Your regex should match <code>"Hazzzzzah"</code>");'
   - text: Your regex should match <code>"Hazzzzzzah"</code>
-    testString: 'assert(haRegex.test("Hazzzzzzah"), ''Your regex should match <code>"Hazzzzzzah"</code>'');'
+    testString: 'assert(haRegex.test("Hazzzzzzah"), "Your regex should match <code>"Hazzzzzzah"</code>");'
   - text: Your regex should match <code>"Hazzah"</code> with 30 <code>z</code>\'s in it.
-    testString: 'assert(haRegex.test("Ha" + "z".repeat(30) + "ah"), ''Your regex should match <code>"Hazzah"</code> with 30 <code>z</code>\''s in it.'');'
+    testString: 'assert(haRegex.test("Ha" + "z".repeat(30) + "ah"), "Your regex should match <code>"Hazzah"</code> with 30 <code>z</code>\"s in it.");'
 
 ```
 

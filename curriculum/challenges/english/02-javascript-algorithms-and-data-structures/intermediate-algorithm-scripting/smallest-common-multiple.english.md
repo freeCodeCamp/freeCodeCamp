@@ -24,17 +24,17 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: '<code>smallestCommons([1, 5])</code> should return a number.'
-    testString: 'assert.deepEqual(typeof smallestCommons([1, 5]), ''number'', ''<code>smallestCommons([1, 5])</code> should return a number.'');'
+    testString: 'assert.deepEqual(typeof smallestCommons([1, 5]), "number", "<code>smallestCommons([1, 5])</code> should return a number.");'
   - text: '<code>smallestCommons([1, 5])</code> should return 60.'
-    testString: 'assert.deepEqual(smallestCommons([1, 5]), 60, ''<code>smallestCommons([1, 5])</code> should return 60.'');'
+    testString: 'assert.deepEqual(smallestCommons([1, 5]), 60, "<code>smallestCommons([1, 5])</code> should return 60.");'
   - text: '<code>smallestCommons([5, 1])</code> should return 60.'
-    testString: 'assert.deepEqual(smallestCommons([5, 1]), 60, ''<code>smallestCommons([5, 1])</code> should return 60.'');'
+    testString: 'assert.deepEqual(smallestCommons([5, 1]), 60, "<code>smallestCommons([5, 1])</code> should return 60.");'
   - text: '<code>smallestCommons([2, 10])</code> should return 2520.'
-    testString: 'assert.deepEqual(smallestCommons([2, 10]), 2520, ''<code>smallestCommons([2, 10])</code> should return 2520.'');'
+    testString: 'assert.deepEqual(smallestCommons([2, 10]), 2520, "<code>smallestCommons([2, 10])</code> should return 2520.");'
   - text: '<code>smallestCommons([1, 13])</code> should return 360360.'
-    testString: 'assert.deepEqual(smallestCommons([1, 13]), 360360, ''<code>smallestCommons([1, 13])</code> should return 360360.'');'
+    testString: 'assert.deepEqual(smallestCommons([1, 13]), 360360, "<code>smallestCommons([1, 13])</code> should return 360360.");'
   - text: '<code>smallestCommons([23, 18])</code> should return 6056820.'
-    testString: 'assert.deepEqual(smallestCommons([23, 18]), 6056820, ''<code>smallestCommons([23, 18])</code> should return 6056820.'');'
+    testString: 'assert.deepEqual(smallestCommons([23, 18]), 6056820, "<code>smallestCommons([23, 18])</code> should return 6056820.");'
 
 ```
 

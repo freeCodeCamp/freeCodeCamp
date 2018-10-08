@@ -22,9 +22,9 @@ Let's try to set <code>thirdLetterOfLastName</code> to equal the third letter of
 ```yml
 tests:
   - text: The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.
-    testString: 'assert(thirdLetterOfLastName === ''v'', ''The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.'');'
+    testString: 'assert(thirdLetterOfLastName === "v", "The <code>thirdLetterOfLastName</code> variable should have the value of <code>v</code>.");'
   - text: You should use bracket notation.
-    testString: 'assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/), ''You should use bracket notation.'');'
+    testString: 'assert(code.match(/thirdLetterOfLastName\s*?=\s*?lastName\[.*?\]/), "You should use bracket notation.");'
 
 ```
 

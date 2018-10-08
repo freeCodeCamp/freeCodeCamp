@@ -34,7 +34,7 @@ In how many ways can a 9 by 12 grid be tiled in this way by triominoes?
 ```yml
 tests:
   - text: <code>euler161()</code> should return 20574308184277972.
-    testString: 'assert.strictEqual(euler161(), 20574308184277972, ''<code>euler161()</code> should return 20574308184277972.'');'
+    testString: 'assert.strictEqual(euler161(), 20574308184277972, "<code>euler161()</code> should return 20574308184277972.");'
 
 ```
 

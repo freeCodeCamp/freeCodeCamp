@@ -27,7 +27,7 @@ Find A(n, n) and give your answer mod 148.
 ```yml
 tests:
   - text: <code>euler282()</code> should return 1098988351.
-    testString: 'assert.strictEqual(euler282(), 1098988351, ''<code>euler282()</code> should return 1098988351.'');'
+    testString: 'assert.strictEqual(euler282(), 1098988351, "<code>euler282()</code> should return 1098988351.");'
 
 ```
 

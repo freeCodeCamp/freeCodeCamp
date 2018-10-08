@@ -23,13 +23,13 @@ Camper Cat's Mortal Kombat survey results are in! Wrap a <code>time</code> tag a
 ```yml
 tests:
   - text: 'Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".'
-    testString: 'assert($(''time'').text().match(/Thursday, September 15th/g), ''Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".'');'
+    testString: 'assert($("time").text().match(/Thursday, September 15th/g), "Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".");'
   - text: Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.
-    testString: 'assert($(''time'').attr(''datetime''), ''Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.'');'
+    testString: 'assert($("time").attr("datetime"), "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.");'
   - text: Your <code>datetime</code> attribute should be set to a value of 2016-09-15.
-    testString: 'assert($(''time'').attr(''datetime'') === "2016-09-15", ''Your <code>datetime</code> attribute should be set to a value of 2016-09-15.'');'
+    testString: 'assert($("time").attr("datetime") === "2016-09-15", "Your <code>datetime</code> attribute should be set to a value of 2016-09-15.");'
   - text: Make sure your <code>time</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, ''Make sure your <code>time</code> element has a closing tag.'');'
+    testString: 'assert(code.match(/<\/time>/g) && code.match(/<\/time>/g).length === 4, "Make sure your <code>time</code> element has a closing tag.");'
 
 ```
 
@@ -47,13 +47,13 @@ tests:
   </header>
   <article>
     <h2>Mortal Kombat Tournament Survey Results</h2>
-    
+
     <!-- Add your code below this line -->
-    
+
     <p>Thank you to everyone for responding to Master Camper Cat's survey. The best day to host the vaunted Mortal Kombat tournament is Thursday, September 15<sup>th</sup>. May the best ninja win!</p>
-    
+
     <!-- Add your code above this line -->
-    
+
     <section>
       <h3>Comments:</h3>
       <article>

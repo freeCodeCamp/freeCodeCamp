@@ -30,7 +30,7 @@ What is ∑ sg(i) for 1 ≤ i ≤ 150?
 ```yml
 tests:
   - text: <code>euler254()</code> should return 8184523820510.
-    testString: 'assert.strictEqual(euler254(), 8184523820510, ''<code>euler254()</code> should return 8184523820510.'');'
+    testString: 'assert.strictEqual(euler254(), 8184523820510, "<code>euler254()</code> should return 8184523820510.");'
 
 ```
 

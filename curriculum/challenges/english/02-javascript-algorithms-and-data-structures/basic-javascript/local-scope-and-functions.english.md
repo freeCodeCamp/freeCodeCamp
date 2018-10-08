@@ -24,9 +24,9 @@ Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Ru
 ```yml
 tests:
   - text: No global <code>myVar</code> variable
-    testString: 'assert(typeof myVar === ''undefined'', ''No global <code>myVar</code> variable'');'
+    testString: 'assert(typeof myVar === "undefined", "No global <code>myVar</code> variable");'
   - text: Add a local <code>myVar</code> variable
-    testString: 'assert(/var\s+myVar/.test(code), ''Add a local <code>myVar</code> variable'');'
+    testString: 'assert(/var\s+myVar/.test(code), "Add a local <code>myVar</code> variable");'
 
 ```
 
@@ -40,7 +40,7 @@ tests:
 ```js
 function myLocalScope() {
   'use strict'; // you shouldn't need to edit this line
-  
+
   console.log(myVar);
 }
 myLocalScope();
@@ -100,7 +100,7 @@ console.info('after the test');
 ```js
 function myLocalScope() {
   'use strict';
-  
+
   var myVar;
   console.log(myVar);
 }

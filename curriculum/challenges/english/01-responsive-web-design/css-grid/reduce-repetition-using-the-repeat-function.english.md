@@ -29,7 +29,7 @@ Use <code>repeat</code> to remove repetition from the <code>grid-template-column
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi), ''<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?repeat\s*?\(\s*?3\s*?,\s*?1fr\s*?\)\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that is set to repeat 3 columns with the width of <code>1fr</code>.");'
 
 ```
 
@@ -47,7 +47,7 @@ tests:
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
   .item5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -55,15 +55,15 @@ tests:
     background: LightGray;
     display: grid;
     /* change the code below this line */
-    
+
     grid-template-columns: 1fr 1fr 1fr;
-    
+
     /* change the code above this line */
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
   }
 </style>
-  
+
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>

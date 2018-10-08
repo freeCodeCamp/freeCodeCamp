@@ -48,7 +48,7 @@ Find T(106).
 ```yml
 tests:
   - text: <code>euler450()</code> should return 583333163984220900.
-    testString: 'assert.strictEqual(euler450(), 583333163984220900, ''<code>euler450()</code> should return 583333163984220900.'');'
+    testString: 'assert.strictEqual(euler450(), 583333163984220900, "<code>euler450()</code> should return 583333163984220900.");'
 
 ```
 

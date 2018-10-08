@@ -26,15 +26,15 @@ Create an <code>if</code> statement inside the function to return <code>"Yes, th
 ```yml
 tests:
   - text: <code>trueOrFalse</code> should be a function
-    testString: 'assert(typeof trueOrFalse === "function", ''<code>trueOrFalse</code> should be a function'');'
+    testString: 'assert(typeof trueOrFalse === "function", "<code>trueOrFalse</code> should be a function");'
   - text: <code>trueOrFalse(true)</code> should return a string
-    testString: 'assert(typeof trueOrFalse(true) === "string", ''<code>trueOrFalse(true)</code> should return a string'');'
+    testString: 'assert(typeof trueOrFalse(true) === "string", "<code>trueOrFalse(true)</code> should return a string");'
   - text: <code>trueOrFalse(false)</code> should return a string
-    testString: 'assert(typeof trueOrFalse(false) === "string", ''<code>trueOrFalse(false)</code> should return a string'');'
+    testString: 'assert(typeof trueOrFalse(false) === "string", "<code>trueOrFalse(false)</code> should return a string");'
   - text: '<code>trueOrFalse(true)</code> should return "Yes, that was true"'
-    testString: 'assert(trueOrFalse(true) === "Yes, that was true", ''<code>trueOrFalse(true)</code> should return "Yes, that was true"'');'
+    testString: 'assert(trueOrFalse(true) === "Yes, that was true", "<code>trueOrFalse(true)</code> should return "Yes, that was true"");'
   - text: '<code>trueOrFalse(false)</code> should return "No, that was false"'
-    testString: 'assert(trueOrFalse(false) === "No, that was false", ''<code>trueOrFalse(false)</code> should return "No, that was false"'');'
+    testString: 'assert(trueOrFalse(false) === "No, that was false", "<code>trueOrFalse(false)</code> should return "No, that was false"");'
 
 ```
 
@@ -48,7 +48,7 @@ tests:
 ```js
 // Example
 function ourTrueOrFalse(isItTrue) {
-  if (isItTrue) { 
+  if (isItTrue) {
     return "Yes, it's true";
   }
   return "No, it's false";
@@ -58,9 +58,9 @@ function ourTrueOrFalse(isItTrue) {
 function trueOrFalse(wasThatTrue) {
 
   // Only change code below this line.
-  
-  
-  
+
+
+
   // Only change code above this line.
 
 }

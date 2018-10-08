@@ -10,7 +10,7 @@ A Harshad or Niven number is a number that is divisible by the sum of its digits
 201 is a Harshad number because it is divisible by 3 (the sum of its digits.)
 When we truncate the last digit from 201, we get 20, which is a Harshad number.
 When we truncate the last digit from 20, we get 2, which is also a Harshad number.
-Let's call a Harshad number that, while recursively truncating the last digit, always results in a Harshad number a right truncatable Harshad number.  
+Let's call a Harshad number that, while recursively truncating the last digit, always results in a Harshad number a right truncatable Harshad number.
 
 Also:
 201/3=67 which is prime.
@@ -36,7 +36,7 @@ Find the sum of the strong, right truncatable Harshad primes less than 1014.
 ```yml
 tests:
   - text: <code>euler387()</code> should return 696067597313468.
-    testString: 'assert.strictEqual(euler387(), 696067597313468, ''<code>euler387()</code> should return 696067597313468.'');'
+    testString: 'assert.strictEqual(euler387(), 696067597313468, "<code>euler387()</code> should return 696067597313468.");'
 
 ```
 

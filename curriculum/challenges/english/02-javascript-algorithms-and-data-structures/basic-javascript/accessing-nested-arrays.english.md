@@ -23,9 +23,9 @@ Retrieve the second tree from the variable <code>myPlants</code> using object do
 ```yml
 tests:
   - text: <code>secondTree</code> should equal "pine"
-    testString: 'assert(secondTree === "pine", ''<code>secondTree</code> should equal "pine"'');'
+    testString: 'assert(secondTree === "pine", "<code>secondTree</code> should equal "pine"");'
   - text: Use dot and bracket notation to access <code>myPlants</code>
-    testString: 'assert(/=\s*myPlants\[1\].list\[1\]/.test(code), ''Use dot and bracket notation to access <code>myPlants</code>'');'
+    testString: 'assert(/=\s*myPlants\[1\].list\[1\]/.test(code), "Use dot and bracket notation to access <code>myPlants</code>");'
 
 ```
 
@@ -39,7 +39,7 @@ tests:
 ```js
 // Setup
 var myPlants = [
-  { 
+  {
     type: "flowers",
     list: [
       "rose",
@@ -54,7 +54,7 @@ var myPlants = [
       "pine",
       "birch"
     ]
-  }  
+  }
 ];
 
 // Only change code below this line
@@ -83,7 +83,7 @@ console.info('after the test');
 
 ```js
 var myPlants = [
-  { 
+  {
     type: "flowers",
     list: [
       "rose",
@@ -98,7 +98,7 @@ var myPlants = [
       "pine",
       "birch"
     ]
-  }  
+  }
 ];
 
 // Only change code below this line

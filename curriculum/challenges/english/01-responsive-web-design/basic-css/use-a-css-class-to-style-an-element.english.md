@@ -28,13 +28,13 @@ Give your <code>h2</code> element the <code>class</code> attribute with a value 
 ```yml
 tests:
   - text: Your <code>h2</code> element should be red.
-    testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", ''Your <code>h2</code> element should be red.'');'
+    testString: 'assert($("h2").css("color") === "rgb(255, 0, 0)", "Your <code>h2</code> element should be red.");'
   - text: Your <code>h2</code> element should have the class <code>red-text</code>.
-    testString: 'assert($("h2").hasClass("red-text"), ''Your <code>h2</code> element should have the class <code>red-text</code>.'');'
+    testString: 'assert($("h2").hasClass("red-text"), "Your <code>h2</code> element should have the class <code>red-text</code>.");'
   - text: Your stylesheet should declare a <code>red-text</code> class and have its color set to red.
-    testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), ''Your stylesheet should declare a <code>red-text</code> class and have its color set to red.'');'
+    testString: 'assert(code.match(/\.red-text\s*\{\s*color\s*:\s*red;\s*\}/g), "Your stylesheet should declare a <code>red-text</code> class and have its color set to red.");'
   - text: 'Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.'
-    testString: 'assert($("h2").attr("style") === undefined, ''Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.'');'
+    testString: 'assert($("h2").attr("style") === undefined, "Do not use inline style declarations like <code>style="color&#58; red"</code> in your <code>h2</code> element.");'
 
 ```
 
@@ -55,9 +55,9 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -72,7 +72,7 @@ tests:
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

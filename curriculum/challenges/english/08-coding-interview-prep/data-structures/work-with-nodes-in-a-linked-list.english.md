@@ -22,9 +22,9 @@ Create a <code>Cat</code> and <code>Dog</code> node and manually add them to the
 ```yml
 tests:
   - text: Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.
-    testString: 'assert(Puppy.next.element === "Cat", ''Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.'');'
+    testString: 'assert(Puppy.next.element === "Cat", "Your <code>Puppy</code> node should have a reference to a <code>Cat</code> node.");'
   - text: Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.
-    testString: 'assert(Cat.next.element === "Dog", ''Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.'');'
+    testString: 'assert(Cat.next.element === "Dog", "Your <code>Cat</code> node should have a reference to a <code>Dog</code> node.");'
 
 ```
 
@@ -37,8 +37,8 @@ tests:
 
 ```js
 var Node = function(element){
-    this.element = element; 
-    this.next = null; 
+    this.element = element;
+    this.next = null;
 };
 var Kitten = new Node("Kitten");
 var Puppy = new Node("Puppy");

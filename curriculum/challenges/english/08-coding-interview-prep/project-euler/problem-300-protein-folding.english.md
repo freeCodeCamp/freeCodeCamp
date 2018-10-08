@@ -6,7 +6,7 @@ title: 'Problem 300: Protein folding'
 
 ## Description
 <section id='description'>
-In a very simplified form, we can consider proteins as strings consisting of hydrophobic (H) and polar (P) elements, e.g. HHPPHHHPHHPH. 
+In a very simplified form, we can consider proteins as strings consisting of hydrophobic (H) and polar (P) elements, e.g. HHPPHHHPHHPH.
 For this problem, the orientation of a protein is important; e.g. HPP is considered distinct from PPH. Thus, there are 2n distinct proteins consisting of n elements.
 
 When one encounters these strings in nature, they are always folded in such a way that the number of H-H contact points is as large as possible, since this is energetically advantageous.
@@ -37,7 +37,7 @@ Give your answer using as many decimal places as necessary for an exact result.
 ```yml
 tests:
   - text: <code>euler300()</code> should return 8.0540771484375.
-    testString: 'assert.strictEqual(euler300(), 8.0540771484375, ''<code>euler300()</code> should return 8.0540771484375.'');'
+    testString: 'assert.strictEqual(euler300(), 8.0540771484375, "<code>euler300()</code> should return 8.0540771484375.");'
 
 ```
 

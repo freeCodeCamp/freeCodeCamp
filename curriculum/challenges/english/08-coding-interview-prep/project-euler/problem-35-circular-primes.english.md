@@ -22,17 +22,17 @@ How many circular primes are there below n, whereas 100 <= n <= 1000000?
 ```yml
 tests:
   - text: <code>circularPrimes(100)</code> should return 13.
-    testString: 'assert(circularPrimes(100) == 13, ''<code>circularPrimes(100)</code> should return 13.'');'
+    testString: 'assert(circularPrimes(100) == 13, "<code>circularPrimes(100)</code> should return 13.");'
   - text: <code>circularPrimes(100000)</code> should return 43.
-    testString: 'assert(circularPrimes(100000) == 43, ''<code>circularPrimes(100000)</code> should return 43.'');'
+    testString: 'assert(circularPrimes(100000) == 43, "<code>circularPrimes(100000)</code> should return 43.");'
   - text: <code>circularPrimes(250000)</code> should return 45.
-    testString: 'assert(circularPrimes(250000) == 45, ''<code>circularPrimes(250000)</code> should return 45.'');'
+    testString: 'assert(circularPrimes(250000) == 45, "<code>circularPrimes(250000)</code> should return 45.");'
   - text: <code>circularPrimes(500000)</code> should return 49.
-    testString: 'assert(circularPrimes(500000) == 49, ''<code>circularPrimes(500000)</code> should return 49.'');'
+    testString: 'assert(circularPrimes(500000) == 49, "<code>circularPrimes(500000)</code> should return 49.");'
   - text: <code>circularPrimes(750000)</code> should return 49.
-    testString: 'assert(circularPrimes(750000) == 49, ''<code>circularPrimes(750000)</code> should return 49.'');'
+    testString: 'assert(circularPrimes(750000) == 49, "<code>circularPrimes(750000)</code> should return 49.");'
   - text: <code>circularPrimes(1000000)</code> should return 55.
-    testString: 'assert(circularPrimes(1000000) == 55, ''<code>circularPrimes(1000000)</code> should return 55.'');'
+    testString: 'assert(circularPrimes(1000000) == 55, "<code>circularPrimes(1000000)</code> should return 55.");'
 
 ```
 

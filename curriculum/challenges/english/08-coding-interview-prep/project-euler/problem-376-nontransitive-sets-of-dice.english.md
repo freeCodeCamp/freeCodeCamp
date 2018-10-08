@@ -56,7 +56,7 @@ How many are there for N = 30 ?
 ```yml
 tests:
   - text: <code>euler376()</code> should return 973059630185670.
-    testString: 'assert.strictEqual(euler376(), 973059630185670, ''<code>euler376()</code> should return 973059630185670.'');'
+    testString: 'assert.strictEqual(euler376(), 973059630185670, "<code>euler376()</code> should return 973059630185670.");'
 
 ```
 

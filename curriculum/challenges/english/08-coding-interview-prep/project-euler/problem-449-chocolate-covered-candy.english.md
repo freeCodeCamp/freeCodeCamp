@@ -10,7 +10,7 @@ Phil the confectioner is making a new batch of chocolate covered candy. Each can
 
 
 Phil wants to know how much chocolate is needed to cover one candy centre with a uniform coat of chocolate one millimeter thick.
-If a=1 mm and b=1 mm, the amount of chocolate required is 
+If a=1 mm and b=1 mm, the amount of chocolate required is
 
     283
     π mm3
@@ -32,7 +32,7 @@ Find the amount of chocolate in mm3 required if a=3 mm and b=1 mm. Give your ans
 ```yml
 tests:
   - text: <code>euler449()</code> should return 103.37870096.
-    testString: 'assert.strictEqual(euler449(), 103.37870096, ''<code>euler449()</code> should return 103.37870096.'');'
+    testString: 'assert.strictEqual(euler449(), 103.37870096, "<code>euler449()</code> should return 103.37870096.");'
 
 ```
 

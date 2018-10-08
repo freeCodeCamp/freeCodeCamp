@@ -21,7 +21,7 @@ Use this property to center all our items horizontally.
 ```yml
 tests:
   - text: <code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.
-    testString: 'assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi), ''<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.'');'
+    testString: 'assert(code.match(/.container\s*?{[\s\S]*justify-items\s*?:\s*?center\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>justify-items</code> property that has the value of <code>center</code>.");'
 
 ```
 
@@ -39,7 +39,7 @@ tests:
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
   .item5{background:PaleGreen;}
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -50,12 +50,12 @@ tests:
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
     /* add your code below this line */
-    
-    
+
+
     /* add your code above this line */
   }
 </style>
-  
+
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>

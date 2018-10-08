@@ -7,7 +7,7 @@ challengeType: 1
 ## Description
 <section id='description'>
 With JavaScript <code>array</code> variables, we can store several pieces of data in one place.
-You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this: 
+You start an array declaration with an opening square bracket, end it with a closing square bracket, and put a comma between each entry, like this:
 <code>var sandwich = ["peanut butter", "jelly", "bread"]</code>.
 </section>
 
@@ -23,11 +23,11 @@ Modify the new array <code>myArray</code> so that it contains both a <code>strin
 ```yml
 tests:
   - text: <code>myArray</code> should be an <code>array</code>.
-    testString: 'assert(typeof myArray == ''object'', ''<code>myArray</code> should be an <code>array</code>.'');'
+    testString: 'assert(typeof myArray == "object", "<code>myArray</code> should be an <code>array</code>.");'
   - text: The first item in <code>myArray</code> should be a <code>string</code>.
-    testString: 'assert(typeof myArray[0] !== ''undefined'' && typeof myArray[0] == ''string'', ''The first item in <code>myArray</code> should be a <code>string</code>.'');'
+    testString: 'assert(typeof myArray[0] !== "undefined" && typeof myArray[0] == "string", "The first item in <code>myArray</code> should be a <code>string</code>.");'
   - text: The second item in <code>myArray</code> should be a <code>number</code>.
-    testString: 'assert(typeof myArray[1] !== ''undefined'' && typeof myArray[1] == ''number'', ''The second item in <code>myArray</code> should be a <code>number</code>.'');'
+    testString: 'assert(typeof myArray[1] !== "undefined" && typeof myArray[1] == "number", "The second item in <code>myArray</code> should be a <code>number</code>.");'
 
 ```
 

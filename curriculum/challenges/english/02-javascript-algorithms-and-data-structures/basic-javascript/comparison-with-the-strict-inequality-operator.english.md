@@ -22,15 +22,15 @@ Add the <code>strict inequality operator</code> to the <code>if</code> statement
 ```yml
 tests:
   - text: <code>testStrictNotEqual(17)</code> should return "Equal"
-    testString: 'assert(testStrictNotEqual(17) === "Equal", ''<code>testStrictNotEqual(17)</code> should return "Equal"'');'
+    testString: 'assert(testStrictNotEqual(17) === "Equal", "<code>testStrictNotEqual(17)</code> should return "Equal"");'
   - text: <code>testStrictNotEqual("17")</code> should return "Not Equal"
-    testString: 'assert(testStrictNotEqual("17") === "Not Equal", ''<code>testStrictNotEqual("17")</code> should return "Not Equal"'');'
+    testString: 'assert(testStrictNotEqual("17") === "Not Equal", "<code>testStrictNotEqual("17")</code> should return "Not Equal"");'
   - text: <code>testStrictNotEqual(12)</code> should return "Not Equal"
-    testString: 'assert(testStrictNotEqual(12) === "Not Equal", ''<code>testStrictNotEqual(12)</code> should return "Not Equal"'');'
+    testString: 'assert(testStrictNotEqual(12) === "Not Equal", "<code>testStrictNotEqual(12)</code> should return "Not Equal"");'
   - text: <code>testStrictNotEqual("bob")</code> should return "Not Equal"
-    testString: 'assert(testStrictNotEqual("bob") === "Not Equal", ''<code>testStrictNotEqual("bob")</code> should return "Not Equal"'');'
+    testString: 'assert(testStrictNotEqual("bob") === "Not Equal", "<code>testStrictNotEqual("bob")</code> should return "Not Equal"");'
   - text: You should use the <code>!==</code> operator
-    testString: 'assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0, ''You should use the <code>!==</code> operator'');'
+    testString: 'assert(code.match(/(val\s*!==\s*\d+)|(\d+\s*!==\s*val)/g).length > 0, "You should use the <code>!==</code> operator");'
 
 ```
 
@@ -45,7 +45,7 @@ tests:
 // Setup
 function testStrictNotEqual(val) {
   // Only Change Code Below this Line
-  
+
   if (val) {
 
   // Only Change Code Above this Line

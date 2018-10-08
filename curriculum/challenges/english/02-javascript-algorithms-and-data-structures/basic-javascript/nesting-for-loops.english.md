@@ -22,11 +22,11 @@ Modify function <code>multiplyAll</code> so that it multiplies the <code>product
 ```yml
 tests:
   - text: '<code>multiplyAll([[1],[2],[3]])</code> should return <code>6</code>'
-    testString: 'assert(multiplyAll([[1],[2],[3]]) === 6, ''<code>multiplyAll([[1],[2],[3]])</code> should return <code>6</code>'');'
+    testString: 'assert(multiplyAll([[1],[2],[3]]) === 6, "<code>multiplyAll([[1],[2],[3]])</code> should return <code>6</code>");'
   - text: '<code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>'
-    testString: 'assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040, ''<code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>'');'
+    testString: 'assert(multiplyAll([[1,2],[3,4],[5,6,7]]) === 5040, "<code>multiplyAll([[1,2],[3,4],[5,6,7]])</code> should return <code>5040</code>");'
   - text: '<code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])</code> should return <code>54</code>'
-    testString: 'assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, ''<code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])</code> should return <code>54</code>'');'
+    testString: 'assert(multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]) === 54, "<code>multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]])</code> should return <code>54</code>");'
 
 ```
 
@@ -41,7 +41,7 @@ tests:
 function multiplyAll(arr) {
   var product = 1;
   // Only change code below this line
-  
+
   // Only change code above this line
   return product;
 }

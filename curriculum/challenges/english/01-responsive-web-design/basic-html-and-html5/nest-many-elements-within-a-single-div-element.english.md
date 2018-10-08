@@ -24,13 +24,13 @@ Hint: Try putting your opening <code>div</code> tag above your "Things cats love
 ```yml
 tests:
   - text: Nest your <code>p</code> elements inside your <code>div</code> element.
-    testString: 'assert($("div").children("p").length > 1, ''Nest your <code>p</code> elements inside your <code>div</code> element.'');'
+    testString: 'assert($("div").children("p").length > 1, "Nest your <code>p</code> elements inside your <code>div</code> element.");'
   - text: Nest your <code>ul</code> element inside your <code>div</code> element.
-    testString: 'assert($("div").children("ul").length > 0, ''Nest your <code>ul</code> element inside your <code>div</code> element.'');'
+    testString: 'assert($("div").children("ul").length > 0, "Nest your <code>ul</code> element inside your <code>div</code> element.");'
   - text: Nest your <code>ol</code> element inside your <code>div</code> element.
-    testString: 'assert($("div").children("ol").length > 0, ''Nest your <code>ol</code> element inside your <code>div</code> element.'');'
+    testString: 'assert($("div").children("ol").length > 0, "Nest your <code>ol</code> element inside your <code>div</code> element.");'
   - text: Make sure your <code>div</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length, ''Make sure your <code>div</code> element has a closing tag.'');'
+    testString: 'assert(code.match(/<\/div>/g) && code.match(/<\/div>/g).length === code.match(/<div>/g).length, "Make sure your <code>div</code> element has a closing tag.");'
 
 ```
 
@@ -45,9 +45,9 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>
@@ -60,7 +60,7 @@ tests:
     <li>thunder</li>
     <li>other cats</li>
   </ol>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

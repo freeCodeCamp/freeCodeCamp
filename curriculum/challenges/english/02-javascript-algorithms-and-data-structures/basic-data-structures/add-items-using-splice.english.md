@@ -22,13 +22,13 @@ We have defined a function, <code>htmlColorNames</code>, which takes an array of
 ```yml
 tests:
   - text: '<code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"]</code>'
-    testString: 'assert.deepEqual(htmlColorNames([''DarkGoldenRod'', ''WhiteSmoke'', ''LavenderBlush'', ''PaleTurqoise'', ''FireBrick'']), [''DarkSalmon'', ''BlanchedAlmond'', ''LavenderBlush'', ''PaleTurqoise'', ''FireBrick''], ''<code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"]</code>'');'
+    testString: 'assert.deepEqual(htmlColorNames(["DarkGoldenRod", "WhiteSmoke", "LavenderBlush", "PaleTurqoise", "FireBrick"]), ["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"], "<code>htmlColorNames</code> should return <code>["DarkSalmon", "BlanchedAlmond", "LavenderBlush", "PaleTurqoise", "FireBrick"]</code>");'
   - text: The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method
-    testString: 'assert(/.splice/.test(code), ''The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method'');'
+    testString: 'assert(/.splice/.test(code), "The <code>htmlColorNames</code> function should utilize the <code>splice()</code> method");'
   - text: You should not use <code>shift()</code> or <code>unshift()</code>.
-    testString: 'assert(!/shift|unshift/.test(code), ''You should not use <code>shift()</code> or <code>unshift()</code>.'');'
+    testString: 'assert(!/shift|unshift/.test(code), "You should not use <code>shift()</code> or <code>unshift()</code>.");'
   - text: You should not use array bracket notation.
-    testString: 'assert(!/\[\d\]\s*=/.test(code), ''You should not use array bracket notation.'');'
+    testString: 'assert(!/\[\d\]\s*=/.test(code), "You should not use array bracket notation.");'
 
 ```
 
@@ -42,11 +42,11 @@ tests:
 ```js
 function htmlColorNames(arr) {
   // change code below this line
-  
+
   // change code above this line
   return arr;
-} 
- 
+}
+
 // do not change code below this line
 console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));
 ```

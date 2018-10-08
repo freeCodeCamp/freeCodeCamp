@@ -23,13 +23,13 @@ Give the blue box a <code>padding</code> of <code>40px</code> on its top and lef
 ```yml
 tests:
   - text: Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-top") === "40px", ''Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.'');'
+    testString: 'assert($(".blue-box").css("padding-top") === "40px", "Your <code>blue-box</code> class should give the top of the elements <code>40px</code> of <code>padding</code>.");'
   - text: Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-right") === "20px", ''Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.'');'
+    testString: 'assert($(".blue-box").css("padding-right") === "20px", "Your <code>blue-box</code> class should give the right of the elements <code>20px</code> of <code>padding</code>.");'
   - text: Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-bottom") === "20px", ''Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.'');'
+    testString: 'assert($(".blue-box").css("padding-bottom") === "20px", "Your <code>blue-box</code> class should give the bottom of the elements <code>20px</code> of <code>padding</code>.");'
   - text: Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.
-    testString: 'assert($(".blue-box").css("padding-left") === "40px", ''Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.'');'
+    testString: 'assert($(".blue-box").css("padding-left") === "40px", "Your <code>blue-box</code> class should give the left of the elements <code>40px</code> of <code>padding</code>.");'
 
 ```
 
@@ -58,7 +58,7 @@ tests:
     background-color: yellow;
     padding: 10px;
   }
-  
+
   .red-box {
     background-color: crimson;
     color: #fff;

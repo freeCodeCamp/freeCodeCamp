@@ -23,7 +23,7 @@ Define the <code>constructor</code> property on the <code>Dog</code> <code>proto
 ```yml
 tests:
   - text: <code>Dog.prototype</code> should set the <code>constructor</code> property.
-    testString: 'assert(Dog.prototype.constructor === Dog, ''<code>Dog.prototype</code> should set the <code>constructor</code> property.'');'
+    testString: 'assert(Dog.prototype.constructor === Dog, "<code>Dog.prototype</code> should set the <code>constructor</code> property.");'
 
 ```
 
@@ -36,18 +36,18 @@ tests:
 
 ```js
 function Dog(name) {
-  this.name = name; 
+  this.name = name;
 }
 
 // Modify the code below this line
 Dog.prototype = {
-  
-  numLegs: 2, 
+
+  numLegs: 2,
   eat: function() {
-    console.log("nom nom nom"); 
-  }, 
+    console.log("nom nom nom");
+  },
   describe: function() {
-    console.log("My name is " + this.name); 
+    console.log("My name is " + this.name);
   }
 };
 ```
@@ -64,16 +64,16 @@ Dog.prototype = {
 
 ```js
 function Dog(name) {
-  this.name = name; 
+  this.name = name;
 }
 Dog.prototype = {
   constructor: Dog,
-  numLegs: 2, 
+  numLegs: 2,
   eat: function() {
-    console.log("nom nom nom"); 
-  }, 
+    console.log("nom nom nom");
+  },
   describe: function() {
-    console.log("My name is " + this.name); 
+    console.log("My name is " + this.name);
   }
 };
 ```

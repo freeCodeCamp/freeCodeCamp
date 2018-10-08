@@ -34,7 +34,7 @@ Find the sum of the first forty terms of this sequence.
 ```yml
 tests:
   - text: <code>euler321()</code> should return 2470433131948040.
-    testString: 'assert.strictEqual(euler321(), 2470433131948040, ''<code>euler321()</code> should return 2470433131948040.'');'
+    testString: 'assert.strictEqual(euler321(), 2470433131948040, "<code>euler321()</code> should return 2470433131948040.");'
 
 ```
 

@@ -25,9 +25,9 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>fibonacci</code> is a function.
-    testString: 'assert(typeof fibonacci === ''function'', ''<code>fibonacci</code> is a function.'');'
+    testString: 'assert(typeof fibonacci === "function", "<code>fibonacci</code> is a function.");'
   - text: <code>fibonacci(2)</code> should return a number.
-    testString: 'assert(typeof fibonacci(2) == ''number'', ''<code>fibonacci(2)</code> should return a number.'');'
+    testString: 'assert(typeof fibonacci(2) == "number", "<code>fibonacci(2)</code> should return a number.");'
   - text: <code>fibonacci(3)</code> should return 1.")
     testString: 'assert.equal(fibonacci(3),1,"<code>fibonacci(3)</code> should return 1.");'
   - text: <code>fibonacci(5)</code> should return 3.")

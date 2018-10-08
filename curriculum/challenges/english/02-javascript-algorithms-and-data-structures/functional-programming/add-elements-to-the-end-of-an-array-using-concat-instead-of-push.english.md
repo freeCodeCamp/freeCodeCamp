@@ -23,15 +23,15 @@ Change the <code>nonMutatingPush</code> function so it uses <code>concat</code> 
 ```yml
 tests:
   - text: Your code should use the <code>concat</code> method.
-    testString: 'assert(code.match(/\.concat/g), ''Your code should use the <code>concat</code> method.'');'
+    testString: 'assert(code.match(/\.concat/g), "Your code should use the <code>concat</code> method.");'
   - text: Your code should not use the <code>push</code> method.
-    testString: 'assert(!code.match(/\.push/g), ''Your code should not use the <code>push</code> method.'');'
+    testString: 'assert(!code.match(/\.push/g), "Your code should not use the <code>push</code> method.");'
   - text: The <code>first</code> array should not change.
-    testString: 'assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), ''The <code>first</code> array should not change.'');'
+    testString: 'assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), "The <code>first</code> array should not change.");'
   - text: The <code>second</code> array should not change.
-    testString: 'assert(JSON.stringify(second) === JSON.stringify([4, 5]), ''The <code>second</code> array should not change.'');'
+    testString: 'assert(JSON.stringify(second) === JSON.stringify([4, 5]), "The <code>second</code> array should not change.");'
   - text: '<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.'
-    testString: 'assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), ''<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.'');'
+    testString: 'assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), "<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.");'
 
 ```
 
@@ -46,7 +46,7 @@ tests:
 function nonMutatingPush(original, newItem) {
   // Add your code below this line
   return original.push(newItem);
-  
+
   // Add your code above this line
 }
 var first = [1, 2, 3];

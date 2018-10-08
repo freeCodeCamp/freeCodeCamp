@@ -34,7 +34,7 @@ Find S(2000) mod 987 898 789.
 ```yml
 tests:
   - text: <code>euler440()</code> should return 970746056.
-    testString: 'assert.strictEqual(euler440(), 970746056, ''<code>euler440()</code> should return 970746056.'');'
+    testString: 'assert.strictEqual(euler440(), 970746056, "<code>euler440()</code> should return 970746056.");'
 
 ```
 

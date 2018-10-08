@@ -23,13 +23,13 @@ The variable <code>watchList</code> holds an array of objects with information o
 ```yml
 tests:
   - text: The <code>watchList</code> variable should not change.
-    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", ''The <code>watchList</code> variable should not change.'');'
+    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", "The <code>watchList</code> variable should not change.");'
   - text: Your code should use the <code>reduce</code> method.
-    testString: 'assert(code.match(/\.reduce/g), ''Your code should use the <code>reduce</code> method.'');'
+    testString: 'assert(code.match(/\.reduce/g), "Your code should use the <code>reduce</code> method.");'
   - text: The <code>averageRating</code> should equal 8.675.
-    testString: 'assert(averageRating == 8.675, ''The <code>averageRating</code> should equal 8.675.'');'
+    testString: 'assert(averageRating == 8.675, "The <code>averageRating</code> should equal 8.675.");'
   - text: Your code should not use a <code>for</code> loop.
-    testString: 'assert(!code.match(/for\s*?\(.*\)/g), ''Your code should not use a <code>for</code> loop.'');'
+    testString: 'assert(!code.match(/for\s*?\(.*\)/g), "Your code should not use a <code>for</code> loop.");'
 
 ```
 
@@ -43,7 +43,7 @@ tests:
 ```js
 // the global variable
 var watchList = [
-                 {  
+                 {
                    "Title": "Inception",
                    "Year": "2010",
                    "Rated": "PG-13",
@@ -65,7 +65,7 @@ var watchList = [
                    "Type": "movie",
                    "Response": "True"
                 },
-                {  
+                {
                    "Title": "Interstellar",
                    "Year": "2014",
                    "Rated": "PG-13",
@@ -109,7 +109,7 @@ var watchList = [
                    "Type": "movie",
                    "Response": "True"
                 },
-                {  
+                {
                    "Title": "Batman Begins",
                    "Year": "2005",
                    "Rated": "PG-13",
@@ -161,7 +161,7 @@ var averageRating;
 
 // Add your code above this line
 
-console.log(averageRating); 
+console.log(averageRating);
 ```
 
 </div>

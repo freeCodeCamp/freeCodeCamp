@@ -23,25 +23,25 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: <code>booWho(true)</code> should return true.
-    testString: 'assert.strictEqual(booWho(true), true, ''<code>booWho(true)</code> should return true.'');'
+    testString: 'assert.strictEqual(booWho(true), true, "<code>booWho(true)</code> should return true.");'
   - text: <code>booWho(false)</code> should return true.
-    testString: 'assert.strictEqual(booWho(false), true, ''<code>booWho(false)</code> should return true.'');'
+    testString: 'assert.strictEqual(booWho(false), true, "<code>booWho(false)</code> should return true.");'
   - text: '<code>booWho([1, 2, 3])</code> should return false.'
-    testString: 'assert.strictEqual(booWho([1, 2, 3]), false, ''<code>booWho([1, 2, 3])</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho([1, 2, 3]), false, "<code>booWho([1, 2, 3])</code> should return false.");'
   - text: '<code>booWho([].slice)</code> should return false.'
-    testString: 'assert.strictEqual(booWho([].slice), false, ''<code>booWho([].slice)</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho([].slice), false, "<code>booWho([].slice)</code> should return false.");'
   - text: '<code>booWho({ "a": 1 })</code> should return false.'
-    testString: 'assert.strictEqual(booWho({ "a": 1 }), false, ''<code>booWho({ "a": 1 })</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho({ "a": 1 }), false, "<code>booWho({ "a": 1 })</code> should return false.");'
   - text: <code>booWho(1)</code> should return false.
-    testString: 'assert.strictEqual(booWho(1), false, ''<code>booWho(1)</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho(1), false, "<code>booWho(1)</code> should return false.");'
   - text: <code>booWho(NaN)</code> should return false.
-    testString: 'assert.strictEqual(booWho(NaN), false, ''<code>booWho(NaN)</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho(NaN), false, "<code>booWho(NaN)</code> should return false.");'
   - text: <code>booWho("a")</code> should return false.
-    testString: 'assert.strictEqual(booWho("a"), false, ''<code>booWho("a")</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho("a"), false, "<code>booWho("a")</code> should return false.");'
   - text: <code>booWho("true")</code> should return false.
-    testString: 'assert.strictEqual(booWho("true"), false, ''<code>booWho("true")</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho("true"), false, "<code>booWho("true")</code> should return false.");'
   - text: <code>booWho("false")</code> should return false.
-    testString: 'assert.strictEqual(booWho("false"), false, ''<code>booWho("false")</code> should return false.'');'
+    testString: 'assert.strictEqual(booWho("false"), false, "<code>booWho("false")</code> should return false.");'
 
 ```
 

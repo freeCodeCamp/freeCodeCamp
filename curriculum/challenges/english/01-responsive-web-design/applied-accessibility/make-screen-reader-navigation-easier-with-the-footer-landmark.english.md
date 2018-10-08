@@ -21,11 +21,11 @@ Camper Cat's training page is making good progress. Change the <code>div</code> 
 ```yml
 tests:
   - text: Your code should have one <code>footer</code> tag.
-    testString: 'assert($(''footer'').length == 1, ''Your code should have one <code>footer</code> tag.'');'
+    testString: 'assert($("footer").length == 1, "Your code should have one <code>footer</code> tag.");'
   - text: Your code should not have any <code>div</code> tags.
-    testString: 'assert($(''div'').length == 0, ''Your code should not have any <code>div</code> tags.'');'
+    testString: 'assert($("div").length == 0, "Your code should not have any <code>div</code> tags.");'
   - text: Your code should have an opening and closing <code>footer</code> tag.
-    testString: 'assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g), ''Your code should have an opening and closing <code>footer</code> tag.'');'
+    testString: 'assert(code.match(/<footer>\s*&copy; 2018 Camper Cat\s*<\/footer>/g), "Your code should have an opening and closing <code>footer</code> tag.");'
 
 ```
 

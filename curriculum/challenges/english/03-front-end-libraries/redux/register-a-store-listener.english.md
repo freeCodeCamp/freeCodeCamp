@@ -21,11 +21,11 @@ Write a callback function that increments the global variable <code>count</code>
 ```yml
 tests:
   - text: Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.
-    testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: ''ADD'' }); const newState = store.getState(); return newState === (initialState + 1); })(), ''Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.'');'
+    testString: 'assert((function() { const initialState = store.getState(); store.dispatch({ type: "ADD" }); const newState = store.getState(); return newState === (initialState + 1); })(), "Dispatching the <code>ADD</code> action on the store should increment the state by <code>1</code>.");'
   - text: There should be a listener function subscribed to the store using <code>store.subscribe</code>.
-    testString: 'getUserInput => assert(getUserInput(''index'').includes(''store.subscribe(''), ''There should be a listener function subscribed to the store using <code>store.subscribe</code>.'');'
+    testString: 'getUserInput => assert(getUserInput("index").includes("store.subscribe("), "There should be a listener function subscribed to the store using <code>store.subscribe</code>.");'
   - text: The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.
-    testString: 'assert(store.getState() === count, ''The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.'');'
+    testString: 'assert(store.getState() === count, "The callback to <code>store.subscribe</code> should also increment the global <code>count</code> variable as the store is updated.");'
 
 ```
 
@@ -96,13 +96,13 @@ const reducer = (state = 0, action) => {
 };
 
 const store = Redux.createStore(reducer);
- let count = 0; 
+ let count = 0;
 // change code below this line
 
 store.subscribe( () =>
- { 
- count++; 
- } 
+ {
+ count++;
+ }
 );
 
 // change code above this line

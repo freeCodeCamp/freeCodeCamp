@@ -11,7 +11,7 @@ There are exactly ten ways of selecting three from five, 12345:
 In combinatorics, we use the notation, 5C3 = 10.
 In general,
 
-nCr = 
+nCr =
 n!r!(n−r)!
 ,where r ≤ n, n! = n×(n−1)×...×3×2×1, and 0! = 1.
 
@@ -30,13 +30,13 @@ How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are gr
 ```yml
 tests:
   - text: <code>combinatoricSelections(1000)</code> should return 4626.
-    testString: 'assert.strictEqual(combinatoricSelections(1000), 4626, ''<code>combinatoricSelections(1000)</code> should return 4626.'');'
+    testString: 'assert.strictEqual(combinatoricSelections(1000), 4626, "<code>combinatoricSelections(1000)</code> should return 4626.");'
   - text: <code>combinatoricSelections(10000)</code> should return 4431.
-    testString: 'assert.strictEqual(combinatoricSelections(10000), 4431, ''<code>combinatoricSelections(10000)</code> should return 4431.'');'
+    testString: 'assert.strictEqual(combinatoricSelections(10000), 4431, "<code>combinatoricSelections(10000)</code> should return 4431.");'
   - text: <code>combinatoricSelections(100000)</code> should return 4255.
-    testString: 'assert.strictEqual(combinatoricSelections(100000), 4255, ''<code>combinatoricSelections(100000)</code> should return 4255.'');'
+    testString: 'assert.strictEqual(combinatoricSelections(100000), 4255, "<code>combinatoricSelections(100000)</code> should return 4255.");'
   - text: <code>combinatoricSelections(1000000)</code> should return 4075.
-    testString: 'assert.strictEqual(combinatoricSelections(1000000), 4075, ''<code>combinatoricSelections(1000000)</code> should return 4075.'');'
+    testString: 'assert.strictEqual(combinatoricSelections(1000000), 4075, "<code>combinatoricSelections(1000000)</code> should return 4075.");'
 
 ```
 
@@ -68,7 +68,7 @@ combinatoricSelections(1000000);
 
 ```js
 function combinatoricSelections(limit) {
-    const factorial = n => 
+    const factorial = n =>
         Array.apply(null, { length: n })
             .map((_, i) => i + 1)
             .reduce((p, c) => p * c, 1);

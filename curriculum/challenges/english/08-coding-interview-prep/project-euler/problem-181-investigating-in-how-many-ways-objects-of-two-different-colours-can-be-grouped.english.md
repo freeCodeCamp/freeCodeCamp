@@ -23,7 +23,7 @@ In how many ways can sixty black objects B and forty white objects W be  thus gr
 ```yml
 tests:
   - text: <code>euler181()</code> should return 83735848679360670.
-    testString: 'assert.strictEqual(euler181(), 83735848679360670, ''<code>euler181()</code> should return 83735848679360670.'');'
+    testString: 'assert.strictEqual(euler181(), 83735848679360670, "<code>euler181()</code> should return 83735848679360670.");'
 
 ```
 

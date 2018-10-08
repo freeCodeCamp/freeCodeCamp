@@ -11,7 +11,7 @@ Consider the following configuration of 64 triangles:
 
 
 We wish to colour the interior of each triangle with one of three colours: red, green or blue, so that no two neighbouring triangles have the same colour. Such a colouring shall be called valid. Here, two triangles are said to be neighbouring if they share an edge.
-Note: if they only share a vertex, then they are not neighbours. 
+Note: if they only share a vertex, then they are not neighbours.
 
 For example, here is a valid colouring of the above grid:
 
@@ -32,7 +32,7 @@ How many distinct valid colourings are there for the above configuration?
 ```yml
 tests:
   - text: <code>euler189()</code> should return 10834893628237824.
-    testString: 'assert.strictEqual(euler189(), 10834893628237824, ''<code>euler189()</code> should return 10834893628237824.'');'
+    testString: 'assert.strictEqual(euler189(), 10834893628237824, "<code>euler189()</code> should return 10834893628237824.");'
 
 ```
 

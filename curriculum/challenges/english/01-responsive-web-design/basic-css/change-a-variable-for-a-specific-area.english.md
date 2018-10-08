@@ -22,7 +22,7 @@ Change the value of <code>--penguin-belly</code> to <code>white</code> in the <c
 ```yml
 tests:
   - text: The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.
-    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), ''The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.'');'
+    testString: 'assert(code.match(/.penguin\s*?{[\s\S]*--penguin-belly\s*?:\s*?white\s*?;[\s\S]*}/gi), "The <code>penguin</code> class should reassign the <code>--penguin-belly</code> variable to <code>white</code>.");'
 
 ```
 
@@ -40,17 +40,17 @@ tests:
     --penguin-belly: pink;
     --penguin-beak: orange;
   }
-  
+
   body {
     background: var(--penguin-belly, #c6faf1);
   }
-  
+
   .penguin {
-    
+
     /* add code below */
-    
+
     /* add code above */
-    
+
     position: relative;
     margin: auto;
     display: block;
@@ -58,7 +58,7 @@ tests:
     width: 300px;
     height: 300px;
   }
-  
+
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -67,7 +67,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -76,7 +76,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .belly {
     top: 60%;
     left: 2.5%;
@@ -85,7 +85,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-  
+
   .penguin-top {
     top: 10%;
     left: 25%;
@@ -94,7 +94,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
@@ -103,7 +103,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-  
+
   .right-hand {
     top: 0%;
     left: -5%;
@@ -114,7 +114,7 @@ tests:
     transform: rotate(45deg);
     z-index: -1;
   }
-  
+
   .left-hand {
     top: 0%;
     left: 75%;
@@ -125,7 +125,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-  
+
   .right-feet {
     top: 85%;
     left: 60%;
@@ -136,7 +136,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-  
+
   .left-feet {
     top: 85%;
     left: 25%;
@@ -147,7 +147,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-  
+
   .right-eye {
     top: 45%;
     left: 60%;
@@ -156,7 +156,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .left-eye {
     top: 45%;
     left: 25%;
@@ -165,7 +165,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .sparkle {
     top: 25%;
     left: 15%;
@@ -174,7 +174,7 @@ tests:
     height: 35%;
     border-radius: 50%;
   }
-  
+
   .blush-right {
     top: 65%;
     left: 15%;
@@ -183,7 +183,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .blush-left {
     top: 65%;
     left: 70%;
@@ -192,7 +192,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-top {
     top: 60%;
     left: 40%;
@@ -201,7 +201,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -210,7 +210,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .penguin * {
     position: absolute;
   }

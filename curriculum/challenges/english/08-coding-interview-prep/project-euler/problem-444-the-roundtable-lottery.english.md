@@ -15,7 +15,7 @@ An arbitrary person is chosen to be the first player. Going around the table, ea
 
 The game ends once all tickets have been scratched. All players still remaining at the table must leave with their currently-held tickets.
 
-Assume that each player uses the optimal strategy for maximizing the expected value of his ticket winnings. 
+Assume that each player uses the optimal strategy for maximizing the expected value of his ticket winnings.
 
 Let E(p) represent the expected number of players left at the table when the game ends in a game consisting of p players (e.g. E(111) = 5.2912 when rounded to 5 significant digits).
 
@@ -36,7 +36,7 @@ Find S20(1014) and write the answer in scientific notation rounded to 10 signifi
 ```yml
 tests:
   - text: <code>euler444()</code> should return 1.200856722e+263.
-    testString: 'assert.strictEqual(euler444(), 1.200856722e+263, ''<code>euler444()</code> should return 1.200856722e+263.'');'
+    testString: 'assert.strictEqual(euler444(), 1.200856722e+263, "<code>euler444()</code> should return 1.200856722e+263.");'
 
 ```
 

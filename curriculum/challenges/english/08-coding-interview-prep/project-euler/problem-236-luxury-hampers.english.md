@@ -8,7 +8,7 @@ title: 'Problem 236: Luxury Hampers'
 <section id='description'>
 Suppliers 'A' and 'B' provided the following numbers of products for the luxury hamper market:
 
-Product'A''B'Beluga Caviar5248640Christmas Cake13121888Gammon Joint26243776Vintage Port57603776Champagne Truffles39365664
+Product'A"B'Beluga Caviar5248640Christmas Cake13121888Gammon Joint26243776Vintage Port57603776Champagne Truffles39365664
 
 Although the suppliers try very hard to ship their goods in perfect condition, there is inevitably some spoilage - i.e. products gone bad.
 
@@ -32,7 +32,7 @@ Give your answer as a fraction reduced to its lowest terms, in the form u/v.
 ```yml
 tests:
   - text: <code>euler236()</code> should return 123 / 59.
-    testString: 'assert.strictEqual(euler236(), 123 / 59, ''<code>euler236()</code> should return 123 / 59.'');'
+    testString: 'assert.strictEqual(euler236(), 123 / 59, "<code>euler236()</code> should return 123 / 59.");'
 
 ```
 

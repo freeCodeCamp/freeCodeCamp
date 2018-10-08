@@ -22,15 +22,15 @@ Change the regex <code>countWhiteSpace</code> to look for multiple whitespace ch
 ```yml
 tests:
   - text: Your regex should use the global flag.
-    testString: 'assert(countWhiteSpace.global, ''Your regex should use the global flag.'');'
+    testString: 'assert(countWhiteSpace.global, "Your regex should use the global flag.");'
   - text: Your regex should use the shorthand character
-    testString: 'assert(/\\s/.test(countWhiteSpace.source), ''Your regex should use the shorthand character <code>\s</code> to match all whitespace characters.'');'
+    testString: 'assert(/\\s/.test(countWhiteSpace.source), "Your regex should use the shorthand character <code>\s</code> to match all whitespace characters.");'
   - text: Your regex should find eight spaces in <code>"Men are from Mars and women are from Venus."</code>
-    testString: 'assert("Men are from Mars and women are from Venus.".match(countWhiteSpace).length == 8, ''Your regex should find eight spaces in <code>"Men are from Mars and women are from Venus."</code>'');'
+    testString: 'assert("Men are from Mars and women are from Venus.".match(countWhiteSpace).length == 8, "Your regex should find eight spaces in <code>"Men are from Mars and women are from Venus."</code>");'
   - text: 'Your regex should find three spaces in <code>"Space: the final frontier."</code>'
-    testString: 'assert("Space: the final frontier.".match(countWhiteSpace).length == 3, ''Your regex should find three spaces in <code>"Space: the final frontier."</code>'');'
+    testString: 'assert("Space: the final frontier.".match(countWhiteSpace).length == 3, "Your regex should find three spaces in <code>"Space: the final frontier."</code>");'
   - text: Your regex should find no spaces in <code>"MindYourPersonalSpace"</code>
-    testString: 'assert("MindYourPersonalSpace".match(countWhiteSpace) == null, ''Your regex should find no spaces in <code>"MindYourPersonalSpace"</code>'');'
+    testString: 'assert("MindYourPersonalSpace".match(countWhiteSpace) == null, "Your regex should find no spaces in <code>"MindYourPersonalSpace"</code>");'
 
 ```
 

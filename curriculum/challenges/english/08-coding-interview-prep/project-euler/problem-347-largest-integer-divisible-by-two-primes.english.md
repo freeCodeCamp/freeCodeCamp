@@ -11,7 +11,7 @@ For two distinct primes p and q let M(p,q,N) be the largest positive integer ≤
 by both p and q and M(p,q,N)=0 if such a positive integer does not exist.
 
 
-E.g. M(2,3,100)=96. 
+E.g. M(2,3,100)=96.
 M(3,5,100)=75 and not 90 because 90 is divisible by 2 ,3 and 5.
 Also M(2,73,100)=0 because there does not exist a positive integer ≤ 100 that is divisible by both 2 and 73.
 
@@ -34,7 +34,7 @@ Find S(10 000 000).
 ```yml
 tests:
   - text: <code>euler347()</code> should return 11109800204052.
-    testString: 'assert.strictEqual(euler347(), 11109800204052, ''<code>euler347()</code> should return 11109800204052.'');'
+    testString: 'assert.strictEqual(euler347(), 11109800204052, "<code>euler347()</code> should return 11109800204052.");'
 
 ```
 

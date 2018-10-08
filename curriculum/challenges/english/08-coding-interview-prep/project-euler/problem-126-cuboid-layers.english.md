@@ -27,7 +27,7 @@ Find the least value of n for which C(n) = 1000.
 ```yml
 tests:
   - text: <code>euler126()</code> should return 18522.
-    testString: 'assert.strictEqual(euler126(), 18522, ''<code>euler126()</code> should return 18522.'');'
+    testString: 'assert.strictEqual(euler126(), 18522, "<code>euler126()</code> should return 18522.");'
 
 ```
 
