@@ -3,25 +3,47 @@ var fs = require('fs');
 var lang = 'es';
 var langFull = 'spanish';
 
-// Get list of .md files in current directory
-// fs.readdirSync(dir).forEach(file => {
-//   if (file.includes('.md')) {getFile(file)}
+// fs.readdirSync('./english').forEach(file1 => {
+//     if (file1 != ".DS_Store") {
+//         fs.readdirSync('./english/' + file1).forEach(file2 => {
+//             if (file2 != ".DS_Store") {
+//                 var dir = file1 + '/' + file2;
+//                 fs.readdirSync('./english/' + dir).forEach(file => {
+
+//                     if (file.includes('.md') && dir) {getFile(file, dir)}
+//                 });
+//             }
+//           });
+//     }
 // });
 
-fs.readdirSync('./english').forEach(file1 => {
-  if (file1 != '.DS_Store') {
-    fs.readdirSync('./english/' + file1).forEach(file2 => {
-      if (file2 != '.DS_Store') {
-        var dir = '/' + file1 + '/' + file2;
-        fs.readdirSync('./english' + dir).forEach(file => {
-          if (file.includes('.md') && dir) {
-            getFile(file, dir);
-          }
-        });
+var dir1 = fs.readdirSync('./english')[7];
+var dir2 = fs.readdirSync('./english/' + dir1)[9];
+var dir = dir1 + '/' + dir2;
+fs.readdirSync('./english/' + dir).forEach(file => {
+  if (file.includes('.md') && dir) {
+    let originalFileName =
+      './' + langFull + '/' + dir + '/' + file.slice(0, -10) + langFull + '.md';
+
+    fs.exists(originalFileName, function(exists) {
+      if (!exists) {
+        console.log(originalFileName);
+        getFile(file, dir);
       }
     });
   }
 });
+
+// TEST
+// let file1 = '01-responsive-web-design';
+// let file2 = 'applied-accessibility';
+// var dir = file1 + '/' + file2;
+// fs.readdirSync('./english/' + dir).forEach(file => {
+
+//     if (file.includes('.md') && dir) {getFile(file, dir)}
+// });
+
+//getFile('add-a-text-alternative-to-images-for-visually-impaired-accessibility.english.md', '01-responsive-web-design/applied-accessibility')
 
 // Load in full text, description, instructions, and title
 function getFile(file, dir) {
@@ -62,35 +84,41 @@ function processFile(
   file,
   dir
 ) {
-  // const translateText = (text, target) => {
-  //     return new Promise((resolve, reject) => {
-  //       // Imports the Google Cloud client library
-  //       const {Translate} = require('@google-cloud/translate');
-
-  //       // Creates a client
-  //       const translate = new Translate();
-
-  //       translate
-  //         .translate(text, target)
-  //         .then(results => {
-  //           let translations = results[0];
-  //           translations = Array.isArray(translations)
-  //             ? translations
-  //             : [translations];
-  //           resolve(translations);
-  //         })
-  //         .catch(err => {
-  //             reject(console.log("Error"));
-  //             if (err) {}
-  //         });
-  //   });
-  // };
-
   const translateText = (text, target) => {
     return new Promise((resolve, reject) => {
-      resolve(['translated', 'translated', 'translated', 'translated']);
+      if (typeof text == 'object' && Object.keys(text).length === 0) {
+        resolve(['']);
+      } else {
+        // Imports the Google Cloud client library
+        const { Translate } = require('@google-cloud/translate');
+
+        // Creates a client
+        const translate = new Translate();
+
+        translate
+          .translate(text, target)
+          .then(results => {
+            let translations = results[0];
+            translations = Array.isArray(translations)
+              ? translations
+              : [translations];
+            resolve(translations);
+          })
+          .catch(err => {
+            reject(console.log('!!!!!', err));
+            if (err) {
+            }
+          });
+      }
     });
   };
+
+  // FOR TESTING ONLY
+  // const translateText = (text, target) => {
+  //     return new Promise((resolve, reject) => {
+  //         resolve(['translated', 'translated', 'translated', 'translated']);
+  //     });
+  // };
 
   const translateTests = () => {
     return new Promise((resolve, reject) => {
@@ -99,14 +127,14 @@ function processFile(
 
       testsArray.forEach((test, index) => {
         if (test.includes('- text: ')) {
-          testsToTranslate.push(test.slice(8));
+          testsToTranslate.push(test.slice(10));
         }
       });
       translateText(testsToTranslate, lang).then(translation => {
         let transIndex = 0;
         testsArray.forEach((test, index) => {
           if (test.includes('- text')) {
-            testsArray[index] = '- text' + translation[transIndex];
+            testsArray[index] = '  - text: ' + translation[transIndex];
             transIndex++;
           }
         });
@@ -145,7 +173,15 @@ function processFile(
 
 function writeFile(fileString, file, dir) {
   let fullFileName =
-    '.' + '/' + langFull + dir + '/' + file.slice(0, -10) + langFull + '.md';
+    '.' +
+    '/' +
+    langFull +
+    '/' +
+    dir +
+    '/' +
+    file.slice(0, -10) +
+    langFull +
+    '.md';
   fs.writeFile(fullFileName, fileString, function(err) {
     if (err) throw err;
     console.log('Saved!');

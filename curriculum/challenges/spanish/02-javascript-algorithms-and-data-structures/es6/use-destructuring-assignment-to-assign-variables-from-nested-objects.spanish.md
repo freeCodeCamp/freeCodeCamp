@@ -1,0 +1,69 @@
+---
+id: 587d7b89367417b2b2512b4a
+title: Use Destructuring Assignment to Assign Variables from Nested Objects
+localeTitle: Utilice la asignación de destrucción para asignar variables de objetos anidados
+challengeType: 1
+---
+
+## Description
+<section id='description'> 
+Podemos igualmente destruir objetos <em>anidados</em> en variables. 
+Considera el siguiente código: 
+<blockquote>const a = {<br>&nbsp;&nbsp;start: { x: 5, y: 6},<br>&nbsp;&nbsp;end: { x: 6, y: -9 }<br>};<br>const { start : { x: startX, y: startY }} = a;<br>console.log(startX, startY); // 5, 6</blockquote> 
+En el ejemplo anterior, a la variable <code>start</code> se le asigna el valor de <code>a.start</code> , que también es un objeto. 
+</section>
+
+## Instructions
+<section id='instructions'> 
+Utilice la asignación de desestructuración para obtener el <code>max</code> de <code>forecast.tomorrow</code> y asignarlo a <code>maxOfTomorrow</code> . 
+</section>
+
+## Tests
+<section id='tests'>
+
+```yml
+tests:
+  - text: <code>maxOfTomorrow</code> es igual a <code>84.6</code>
+    testString: 'assert(getMaxOfTmrw(LOCAL_FORECAST) === 84.6, "<code>maxOfTomorrow</code> equals <code>84.6</code>");'
+  - text: se utilizó desestructuración anidada
+    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*\{\s*max\s*:\s*maxOfTomorrow\s*\}\s*\}\s*=\s*forecast/g),"nested destructuring was used");'
+
+```
+
+</section>
+
+## Challenge Seed
+<section id='challengeSeed'>
+
+<div id='js-seed'>
+
+```js
+const LOCAL_FORECAST = {
+  today: { min: 72, max: 83 },
+  tomorrow: { min: 73.3, max: 84.6 }
+};
+
+function getMaxOfTmrw(forecast) {
+  "use strict";
+  // change code below this line
+  const maxOfTomorrow = undefined; // change this line
+  // change code above this line
+  return maxOfTomorrow;
+}
+
+console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
+```
+
+</div>
+
+
+
+</section>
+
+## Solution
+<section id='solution'>
+
+```js
+// solution required
+```
+</section>
