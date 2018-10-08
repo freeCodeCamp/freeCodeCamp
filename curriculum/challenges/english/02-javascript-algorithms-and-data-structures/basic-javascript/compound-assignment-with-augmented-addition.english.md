@@ -24,15 +24,15 @@ Convert the assignments for <code>a</code>, <code>b</code>, and <code>c</code> t
 ```yml
 tests:
   - text: <code>a</code> should equal <code>15</code>
-    testString: 'assert(a === 15, ''<code>a</code> should equal <code>15</code>'');'
+    testString: 'assert(a === 15, "<code>a</code> should equal <code>15</code>");'
   - text: <code>b</code> should equal <code>26</code>
-    testString: 'assert(b === 26, ''<code>b</code> should equal <code>26</code>'');'
+    testString: 'assert(b === 26, "<code>b</code> should equal <code>26</code>");'
   - text: <code>c</code> should equal <code>19</code>
-    testString: 'assert(c === 19, ''<code>c</code> should equal <code>19</code>'');'
+    testString: 'assert(c === 19, "<code>c</code> should equal <code>19</code>");'
   - text: You should use the <code>+=</code> operator for each variable
-    testString: 'assert(code.match(/\+=/g).length === 3, ''You should use the <code>+=</code> operator for each variable'');'
+    testString: 'assert(code.match(/\+=/g).length === 3, "You should use the <code>+=</code> operator for each variable");'
   - text: Do not modify the code above the line
-    testString: 'assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), ''Do not modify the code above the line'');'
+    testString: 'assert(/var a = 3;/.test(code) && /var b = 17;/.test(code) && /var c = 12;/.test(code), "Do not modify the code above the line");'
 
 ```
 

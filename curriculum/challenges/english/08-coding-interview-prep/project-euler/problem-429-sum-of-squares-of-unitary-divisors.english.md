@@ -28,7 +28,7 @@ Find S(100 000 000!) modulo 1 000 000 009.
 ```yml
 tests:
   - text: <code>euler429()</code> should return 98792821.
-    testString: 'assert.strictEqual(euler429(), 98792821, ''<code>euler429()</code> should return 98792821.'');'
+    testString: 'assert.strictEqual(euler429(), 98792821, "<code>euler429()</code> should return 98792821.");'
 
 ```
 

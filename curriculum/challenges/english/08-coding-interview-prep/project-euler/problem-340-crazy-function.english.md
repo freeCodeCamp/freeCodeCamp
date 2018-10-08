@@ -7,7 +7,7 @@ title: 'Problem 340: Crazy Function'
 ## Description
 <section id='description'>
 For fixed integers a, b, c, define the crazy function F(n) as follows:
-F(n) = n - c for all n > b 
+F(n) = n - c for all n > b
 F(n) = F(a + F(a + F(a + F(a + n)))) for all n ≤ b.
 
 
@@ -32,7 +32,7 @@ Find the last 9 digits of S(217, 721, 127).
 ```yml
 tests:
   - text: <code>euler340()</code> should return 291504964.
-    testString: 'assert.strictEqual(euler340(), 291504964, ''<code>euler340()</code> should return 291504964.'');'
+    testString: 'assert.strictEqual(euler340(), 291504964, "<code>euler340()</code> should return 291504964.");'
 
 ```
 

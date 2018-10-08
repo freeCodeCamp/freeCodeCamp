@@ -40,7 +40,7 @@ How many distinct arrangements of the two cubes allow for all of the square numb
 ```yml
 tests:
   - text: <code>euler90()</code> should return 1217.
-    testString: 'assert.strictEqual(euler90(), 1217, ''<code>euler90()</code> should return 1217.'');'
+    testString: 'assert.strictEqual(euler90(), 1217, "<code>euler90()</code> should return 1217.");'
 
 ```
 

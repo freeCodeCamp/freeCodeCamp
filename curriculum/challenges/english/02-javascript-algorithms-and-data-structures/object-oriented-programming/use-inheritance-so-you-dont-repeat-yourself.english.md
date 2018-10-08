@@ -26,11 +26,11 @@ The <code>eat</code> method is repeated in both <code>Cat</code> and <code>Bear<
 ```yml
 tests:
   - text: <code>Animal.prototype</code> should have the <code>eat</code> property.
-    testString: 'assert(Animal.prototype.hasOwnProperty(''eat''), ''<code>Animal.prototype</code> should have the <code>eat</code> property.'');'
+    testString: 'assert(Animal.prototype.hasOwnProperty("eat"), "<code>Animal.prototype</code> should have the <code>eat</code> property.");'
   - text: <code>Bear.prototype</code> should not have the <code>eat</code> property.
-    testString: 'assert(!(Bear.prototype.hasOwnProperty(''eat'')), ''<code>Bear.prototype</code> should not have the <code>eat</code> property.'');'
+    testString: 'assert(!(Bear.prototype.hasOwnProperty("eat")), "<code>Bear.prototype</code> should not have the <code>eat</code> property.");'
   - text: <code>Cat.prototype</code> should not have the <code>eat</code> property.
-    testString: 'assert(!(Cat.prototype.hasOwnProperty(''eat'')), ''<code>Cat.prototype</code> should not have the <code>eat</code> property.'');'
+    testString: 'assert(!(Cat.prototype.hasOwnProperty("eat")), "<code>Cat.prototype</code> should not have the <code>eat</code> property.");'
 
 ```
 
@@ -43,22 +43,22 @@ tests:
 
 ```js
 function Cat(name) {
-  this.name = name; 
+  this.name = name;
 }
 
 Cat.prototype = {
-  constructor: Cat, 
+  constructor: Cat,
   eat: function() {
     console.log("nom nom nom");
   }
 };
 
 function Bear(name) {
-  this.name = name; 
+  this.name = name;
 }
 
 Bear.prototype = {
-  constructor: Bear, 
+  constructor: Bear,
   eat: function() {
     console.log("nom nom nom");
   }
@@ -68,7 +68,7 @@ function Animal() { }
 
 Animal.prototype = {
   constructor: Animal,
-  
+
 };
 ```
 
@@ -84,7 +84,7 @@ Animal.prototype = {
 
 ```js
 function Cat(name) {
-  this.name = name; 
+  this.name = name;
 }
 
 Cat.prototype = {
@@ -92,7 +92,7 @@ Cat.prototype = {
 };
 
 function Bear(name) {
-  this.name = name; 
+  this.name = name;
 }
 
 Bear.prototype = {

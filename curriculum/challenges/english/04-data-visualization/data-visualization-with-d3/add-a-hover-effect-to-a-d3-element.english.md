@@ -23,7 +23,7 @@ Use the <code>attr()</code> method to add a class of <code>bar</code> to all the
 ```yml
 tests:
   - text: Your <code>rect</code> elements should have a class of <code>bar</code>.
-    testString: 'assert($(''rect'').attr(''class'') == "bar", ''Your <code>rect</code> elements should have a class of <code>bar</code>.'');'
+    testString: 'assert($("rect").attr("class") == "bar", "Your <code>rect</code> elements should have a class of <code>bar</code>.");'
 
 ```
 
@@ -43,15 +43,15 @@ tests:
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-    
+
     const w = 500;
     const h = 100;
-    
+
     const svg = d3.select("body")
                   .append("svg")
                   .attr("width", w)
                   .attr("height", h);
-    
+
     svg.selectAll("rect")
        .data(dataset)
        .enter()
@@ -62,11 +62,11 @@ tests:
        .attr("height", (d, i) => 3 * d)
        .attr("fill", "navy")
        // Add your code below this line
-       
-       
-       
+
+
+
        // Add your code above this line
-    
+
     svg.selectAll("text")
        .data(dataset)
        .enter()
@@ -74,7 +74,7 @@ tests:
        .text((d) => d)
        .attr("x", (d, i) => i * 30)
        .attr("y", (d, i) => h - (3 * d) - 3);
-       
+
   </script>
 </body>
 ```

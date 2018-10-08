@@ -21,7 +21,7 @@ How many distinct sets containing each of the digits one through nine exactly on
 ```yml
 tests:
   - text: <code>euler118()</code> should return 44680.
-    testString: 'assert.strictEqual(euler118(), 44680, ''<code>euler118()</code> should return 44680.'');'
+    testString: 'assert.strictEqual(euler118(), 44680, "<code>euler118()</code> should return 44680.");'
 
 ```
 

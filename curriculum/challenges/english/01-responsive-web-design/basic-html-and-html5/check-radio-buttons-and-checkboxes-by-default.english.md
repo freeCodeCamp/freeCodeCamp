@@ -23,9 +23,9 @@ Set the first of your <code>radio buttons</code> and the first of your <code>che
 ```yml
 tests:
   - text: Your first radio button on your form should be checked by default.
-    testString: 'assert($(''input[type="radio"]'').prop("checked"), ''Your first radio button on your form should be checked by default.'');'
+    testString: 'assert($("input[type="radio"]").prop("checked"), "Your first radio button on your form should be checked by default.");'
   - text: Your first checkbox on your form should be checked by default.
-    testString: 'assert($(''input[type="checkbox"]'').prop("checked"), ''Your first checkbox on your form should be checked by default.'');'
+    testString: 'assert($("input[type="checkbox"]").prop("checked"), "Your first checkbox on your form should be checked by default.");'
 
 ```
 
@@ -40,9 +40,9 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>

@@ -25,11 +25,11 @@ Create a <code>constructor</code>, <code>Dog</code>, with properties <code>name<
 ```yml
 tests:
   - text: <code>Dog</code> should have a <code>name</code> property set to a string.
-    testString: 'assert(typeof (new Dog()).name === ''string'', ''<code>Dog</code> should have a <code>name</code> property set to a string.'');'
+    testString: 'assert(typeof (new Dog()).name === "string", "<code>Dog</code> should have a <code>name</code> property set to a string.");'
   - text: <code>Dog</code> should have a <code>color</code> property set to a string.
-    testString: 'assert(typeof (new Dog()).color === ''string'', ''<code>Dog</code> should have a <code>color</code> property set to a string.'');'
+    testString: 'assert(typeof (new Dog()).color === "string", "<code>Dog</code> should have a <code>color</code> property set to a string.");'
   - text: <code>Dog</code> should have a <code>numLegs</code> property set to a number.
-    testString: 'assert(typeof (new Dog()).numLegs === ''number'', ''<code>Dog</code> should have a <code>numLegs</code> property set to a number.'');'
+    testString: 'assert(typeof (new Dog()).numLegs === "number", "<code>Dog</code> should have a <code>numLegs</code> property set to a number.");'
 
 ```
 

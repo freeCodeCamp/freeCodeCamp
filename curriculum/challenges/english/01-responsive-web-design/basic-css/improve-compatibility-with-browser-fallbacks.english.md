@@ -2,7 +2,7 @@
 id: 5b7d72c338cd7e35b63f3e14
 title: Improve Compatibility with Browser Fallbacks
 challengeType: 0
-videoUrl: ''
+videoUrl: "
 ---
 
 ## Description
@@ -23,7 +23,7 @@ It looks like a variable is being used to set the background color of the <code>
 ```yml
 tests:
   - text: Your <code>.red-box</code> rule should include a fallback with the <code>background</code> set to red immediately before the existing <code>background</code> declaration.
-    testString: 'assert(code.match(/.red-box\s*{[^}]*background:\s*(red|#ff0000|#f00|rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*;\s*background:\s*var\(\s*--red-color\s*\);/gi), ''Your <code>.red-box</code> rule should include a fallback with the <code>background</code> set to red immediately before the existing <code>background</code> declaration.'');'
+    testString: 'assert(code.match(/.red-box\s*{[^}]*background:\s*(red|#ff0000|#f00|rgb\(\s*255\s*,\s*0\s*,\s*0\s*\)|rgb\(\s*100%\s*,\s*0%\s*,\s*0%\s*\)|hsl\(\s*0\s*,\s*100%\s*,\s*50%\s*\))\s*;\s*background:\s*var\(\s*--red-color\s*\);/gi), "Your <code>.red-box</code> rule should include a fallback with the <code>background</code> set to red immediately before the existing <code>background</code> declaration.");'
 
 ```
 
@@ -40,7 +40,7 @@ tests:
     --red-color: red;
   }
   .red-box {
-    
+
     background: var(--red-color);
     height: 200px;
     width:200px;

@@ -25,11 +25,11 @@ Push the odd numbers from 9 through 1 to <code>myArray</code> using a <code>for<
 ```yml
 tests:
   - text: You should be using a <code>for</code> loop for this.
-    testString: 'assert(code.match(/for\s*\(/g).length > 1, ''You should be using a <code>for</code> loop for this.'');'
+    testString: 'assert(code.match(/for\s*\(/g).length > 1, "You should be using a <code>for</code> loop for this.");'
   - text: You should be using the array method <code>push</code>.
-    testString: 'assert(code.match(/myArray.push/), ''You should be using the array method <code>push</code>.'');'
+    testString: 'assert(code.match(/myArray.push/), "You should be using the array method <code>push</code>.");'
   - text: '<code>myArray</code> should equal <code>[9,7,5,3,1]</code>.'
-    testString: 'assert.deepEqual(myArray, [9,7,5,3,1], ''<code>myArray</code> should equal <code>[9,7,5,3,1]</code>.'');'
+    testString: 'assert.deepEqual(myArray, [9,7,5,3,1], "<code>myArray</code> should equal <code>[9,7,5,3,1]</code>.");'
 
 ```
 

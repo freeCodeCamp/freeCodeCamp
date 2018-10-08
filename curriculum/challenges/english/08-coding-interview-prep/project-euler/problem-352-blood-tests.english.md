@@ -12,7 +12,7 @@ An accurate and extremely sensitive PCR test exists for blood samples, producing
 
 
 Because of the high cost, the vet-in-charge suggests that instead of performing 25 separate tests, the following procedure can be used instead:
-The sheep are split into 5 groups of 5 sheep in each group. 
+The sheep are split into 5 groups of 5 sheep in each group.
 For each group, the 5 samples are mixed together and a single test is performed. Then,
 If the result is negative, all the sheep in that group are deemed to be virus-free.
 If the result is positive, 5 additional tests will be performed (a separate test for each animal) to determine the affected individual(s).
@@ -57,7 +57,7 @@ Give your answer rounded to six decimal places.
 ```yml
 tests:
   - text: <code>euler352()</code> should return 378563.260589.
-    testString: 'assert.strictEqual(euler352(), 378563.260589, ''<code>euler352()</code> should return 378563.260589.'');'
+    testString: 'assert.strictEqual(euler352(), 378563.260589, "<code>euler352()</code> should return 378563.260589.");'
 
 ```
 

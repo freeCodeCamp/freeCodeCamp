@@ -22,15 +22,15 @@ Normally, you want to make the key something that uniquely identifies the elemen
 ```yml
 tests:
   - text: The <code>Frameworks</code> component should exist and render to the page.
-    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find(''Frameworks'').length === 1, ''The <code>Frameworks</code> component should exist and render to the page.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("Frameworks").length === 1, "The <code>Frameworks</code> component should exist and render to the page.");'
   - text: <code>Frameworks</code> should render an <code>h1</code> element.
-    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find(''h1'').length === 1, ''<code>Frameworks</code> should render an <code>h1</code> element.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("h1").length === 1, "<code>Frameworks</code> should render an <code>h1</code> element.");'
   - text: <code>Frameworks</code> should render a <code>ul</code> element.
-    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find(''ul'').length === 1, ''<code>Frameworks</code> should render a <code>ul</code> element.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("ul").length === 1, "<code>Frameworks</code> should render a <code>ul</code> element.");'
   - text: The <code>ul</code> tag should render 6 child <code>li</code> elements.
-    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find(''ul'').children().length === 6 && Enzyme.mount(React.createElement(Frameworks)).find(''ul'').childAt(0).name() === ''li'' && Enzyme.mount(React.createElement(Frameworks)).find(''li'').length === 6, ''The <code>ul</code> tag should render 6 child <code>li</code> elements.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(Frameworks)).find("ul").children().length === 6 && Enzyme.mount(React.createElement(Frameworks)).find("ul").childAt(0).name() === "li" && Enzyme.mount(React.createElement(Frameworks)).find("li").length === 6, "The <code>ul</code> tag should render 6 child <code>li</code> elements.");'
   - text: Each list item element should have a unique <code>key</code> attribute.
-    testString: 'assert((() => { const ul = Enzyme.mount(React.createElement(Frameworks)).find(''ul''); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key(), ul.childAt(4).key(), ul.childAt(5).key(), ]); return keys.size === 6; })(), ''Each list item element should have a unique <code>key</code> attribute.'');'
+    testString: 'assert((() => { const ul = Enzyme.mount(React.createElement(Frameworks)).find("ul"); const keys = new Set([ ul.childAt(0).key(), ul.childAt(1).key(), ul.childAt(2).key(), ul.childAt(3).key(), ul.childAt(4).key(), ul.childAt(5).key(), ]); return keys.size === 6; })(), "Each list item element should have a unique <code>key</code> attribute.");'
 
 ```
 

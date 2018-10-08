@@ -21,7 +21,7 @@ A unit fraction contains 1 in the numerator. The decimal representation of the u
 Where 0.1(6) means 0.166666..., and has a 1-digit recurring cycle. It can be seen that 1/7 has a 6-digit recurring cycle.
 
 Unit fractions whose denominator has no other prime factors than 2 and/or 5 are not considered to have a recurring cycle.
-We define the length of the recurring cycle of those unit fractions as 0. 
+We define the length of the recurring cycle of those unit fractions as 0.
 
 
 Let L(n) denote the length of the recurring cycle of 1/n.
@@ -42,7 +42,7 @@ Find ∑L(n) for 3 ≤ n ≤ 100 000 000
 ```yml
 tests:
   - text: <code>euler417()</code> should return 446572970925740.
-    testString: 'assert.strictEqual(euler417(), 446572970925740, ''<code>euler417()</code> should return 446572970925740.'');'
+    testString: 'assert.strictEqual(euler417(), 446572970925740, "<code>euler417()</code> should return 446572970925740.");'
 
 ```
 

@@ -24,9 +24,9 @@ Add the <code>style()</code> method to the code in the editor to make all the di
 ```yml
 tests:
   - text: Your <code>h2</code> elements should have a <code>font-family</code> of verdana.
-    testString: 'assert($(''h2'').css(''font-family'') == ''verdana'', ''Your <code>h2</code> elements should have a <code>font-family</code> of verdana.'');'
+    testString: 'assert($("h2").css("font-family") == "verdana", "Your <code>h2</code> elements should have a <code>font-family</code> of verdana.");'
   - text: Your code should use the <code>style()</code> method.
-    testString: 'assert(code.match(/\.style/g), ''Your code should use the <code>style()</code> method.'');'
+    testString: 'assert(code.match(/\.style/g), "Your code should use the <code>style()</code> method.");'
 
 ```
 
@@ -41,16 +41,16 @@ tests:
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-    
+
     d3.select("body").selectAll("h2")
       .data(dataset)
       .enter()
       .append("h2")
       .text((d) => (d + " USD"))
       // Add your code below this line
-      
-      
-      
+
+
+
       // Add your code above this line
   </script>
 </body>

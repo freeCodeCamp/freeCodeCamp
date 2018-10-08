@@ -21,13 +21,13 @@ The variable <code>watchList</code> holds an array of objects with information o
 ```yml
 tests:
   - text: The <code>watchList</code> variable should not change.
-    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", ''The <code>watchList</code> variable should not change.'');'
+    testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", "The <code>watchList</code> variable should not change.");'
   - text: Your code should use the <code>filter</code> method.
-    testString: 'assert(code.match(/\.filter/g), ''Your code should use the <code>filter</code> method.'');'
+    testString: 'assert(code.match(/\.filter/g), "Your code should use the <code>filter</code> method.");'
   - text: Your code should not use a <code>for</code> loop.
-    testString: 'assert(!code.match(/for\s*?\(.+?\)/g), ''Your code should not use a <code>for</code> loop.'');'
+    testString: 'assert(!code.match(/for\s*?\(.+?\)/g), "Your code should not use a <code>for</code> loop.");'
   - text: '<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.'
-    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}], ''<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.'');'
+    testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}], "<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.");'
 
 ```
 
@@ -41,7 +41,7 @@ tests:
 ```js
 // the global variable
 var watchList = [
-                 {  
+                 {
                    "Title": "Inception",
                    "Year": "2010",
                    "Rated": "PG-13",
@@ -63,7 +63,7 @@ var watchList = [
                    "Type": "movie",
                    "Response": "True"
                 },
-                {  
+                {
                    "Title": "Interstellar",
                    "Year": "2014",
                    "Rated": "PG-13",
@@ -107,7 +107,7 @@ var watchList = [
                    "Type": "movie",
                    "Response": "True"
                 },
-                {  
+                {
                    "Title": "Batman Begins",
                    "Year": "2005",
                    "Rated": "PG-13",
@@ -159,7 +159,7 @@ var filteredList;
 
 // Add your code above this line
 
-console.log(filteredList); 
+console.log(filteredList);
 ```
 
 </div>

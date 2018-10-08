@@ -23,11 +23,11 @@ Add a local variable to <code>myOutfit</code> function to override the value of 
 ```yml
 tests:
   - text: Do not change the value of the global <code>outerWear</code>
-    testString: 'assert(outerWear === "T-Shirt", ''Do not change the value of the global <code>outerWear</code>'');'
+    testString: 'assert(outerWear === "T-Shirt", "Do not change the value of the global <code>outerWear</code>");'
   - text: <code>myOutfit</code> should return <code>"sweater"</code>
-    testString: 'assert(myOutfit() === "sweater", ''<code>myOutfit</code> should return <code>"sweater"</code>'');'
+    testString: 'assert(myOutfit() === "sweater", "<code>myOutfit</code> should return <code>"sweater"</code>");'
   - text: Do not change the return statement
-    testString: 'assert(/return outerWear/.test(code), ''Do not change the return statement'');'
+    testString: 'assert(/return outerWear/.test(code), "Do not change the return statement");'
 
 ```
 
@@ -44,9 +44,9 @@ var outerWear = "T-Shirt";
 
 function myOutfit() {
   // Only change code below this line
-  
-  
-  
+
+
+
   // Only change code above this line
   return outerWear;
 }

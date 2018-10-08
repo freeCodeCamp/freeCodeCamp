@@ -23,7 +23,7 @@ Add code to use the <code>imageLink</code> and <code>altText</code> properties i
 ```yml
 tests:
   - text: You should use the <code>imageLink</code> property to display the images.
-    testString: 'assert(code.match(/val\.imageLink/g), ''You should use the <code>imageLink</code> property to display the images.'');'
+    testString: 'assert(code.match(/val\.imageLink/g), "You should use the <code>imageLink</code> property to display the images.");'
 
 ```
 
@@ -47,8 +47,8 @@ tests:
         json.forEach(function(val) {
           html += "<div class = 'cat'>";
           // Add your code below this line
-          
-          
+
+
           // Add your code above this line
           html += "</div><br>";
         });
@@ -83,7 +83,7 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
-<h1>Cat Photo Finder</h1> 
+<h1>Cat Photo Finder</h1>
 <p class="message box">
   The message will go here
 </p>

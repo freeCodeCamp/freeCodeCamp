@@ -26,13 +26,13 @@ Use the <code>conditional operator</code> in the <code>checkEqual</code> functio
 ```yml
 tests:
   - text: <code>checkEqual</code> should use the <code>conditional operator</code>
-    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), ''<code>checkEqual</code> should use the <code>conditional operator</code>'');'
+    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkEqual</code> should use the <code>conditional operator</code>");'
   - text: '<code>checkEqual(1, 2)</code> should return false'
-    testString: 'assert(checkEqual(1, 2) === false, ''<code>checkEqual(1, 2)</code> should return false'');'
+    testString: 'assert(checkEqual(1, 2) === false, "<code>checkEqual(1, 2)</code> should return false");'
   - text: '<code>checkEqual(1, 1)</code> should return true'
-    testString: 'assert(checkEqual(1, 1) === true, ''<code>checkEqual(1, 1)</code> should return true'');'
+    testString: 'assert(checkEqual(1, 1) === true, "<code>checkEqual(1, 1)</code> should return true");'
   - text: '<code>checkEqual(1, -1)</code> should return false'
-    testString: 'assert(checkEqual(1, -1) === false, ''<code>checkEqual(1, -1)</code> should return false'');'
+    testString: 'assert(checkEqual(1, -1) === false, "<code>checkEqual(1, -1)</code> should return false");'
 
 ```
 
@@ -45,7 +45,7 @@ tests:
 
 ```js
 function checkEqual(a, b) {
-  
+
 }
 
 checkEqual(1, 2);

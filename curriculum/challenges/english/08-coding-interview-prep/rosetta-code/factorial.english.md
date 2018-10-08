@@ -14,8 +14,8 @@ For example :
 3! = 3*2*1 = 6
 4! = 4*3*2*1 = 24
 </p>
-<p>Note : 
-0! = 1 
+<p>Note :
+0! = 1
 </p>
 </section>
 
@@ -30,9 +30,9 @@ For example :
 ```yml
 tests:
   - text: <code>factorial</code> is a function.
-    testString: 'assert(typeof factorial === ''function'', ''<code>factorial</code> is a function.'');'
+    testString: 'assert(typeof factorial === "function", "<code>factorial</code> is a function.");'
   - text: <code>factorial(2)</code> should return a number.
-    testString: 'assert(typeof factorial(2) === ''number'', ''<code>factorial(2)</code> should return a number.'');'
+    testString: 'assert(typeof factorial(2) === "number", "<code>factorial(2)</code> should return a number.");'
   - text: <code>factorial(3)</code> should return 6.")
     testString: 'assert.equal(factorial(3),results[0],"<code>factorial(3)</code> should return 6.");'
   - text: <code>factorial(3)</code> should return 120.")

@@ -23,22 +23,22 @@ Write a function that accepts a word and check if the word follows this rule. Th
 
 ```yml
 tests:
-  - text: '''<code>IBeforeExceptC</code> should be a function.'''
-    testString: 'assert(typeof IBeforeExceptC==''function'',''<code>IBeforeExceptC</code> should be a function.'');'
-  - text: '''<code>IBeforeExceptC("receive")</code> should return a boolean.'''
-    testString: 'assert(typeof IBeforeExceptC("receive")==''boolean'',''<code>IBeforeExceptC("receive")</code> should return a boolean.'');'
-  - text: '''<code>IBeforeExceptC("receive")</code> should return <code>true</code>.'''
-    testString: 'assert.equal(IBeforeExceptC("receive"),true,''<code>IBeforeExceptC("receive")</code> should return <code>true</code>.'');'
-  - text: '''<code>IBeforeExceptC("science")</code> should return <code>false</code>.'''
-    testString: 'assert.equal(IBeforeExceptC("science"),false,''<code>IBeforeExceptC("science")</code> should return <code>false</code>.'');'
-  - text: '''<code>IBeforeExceptC("imperceivable")</code> should return <code>true</code>.'''
-    testString: 'assert.equal(IBeforeExceptC("imperceivable"),true,''<code>IBeforeExceptC("imperceivable")</code> should return <code>true</code>.'');'
-  - text: '''<code>IBeforeExceptC("inconceivable")</code> should return <code>true</code>.'''
-    testString: 'assert.equal(IBeforeExceptC("inconceivable"),true,''<code>IBeforeExceptC("inconceivable")</code> should return <code>true</code>.'');'
-  - text: '''<code>IBeforeExceptC("insufficient")</code> should return <code>false</code>.'''
-    testString: 'assert.equal(IBeforeExceptC("insufficient"),false,''<code>IBeforeExceptC("insufficient")</code> should return <code>false</code>.'');'
-  - text: '''<code>IBeforeExceptC("omniscient")</code> should return <code>false</code>.'''
-    testString: 'assert.equal(IBeforeExceptC("omniscient"),false,''<code>IBeforeExceptC("omniscient")</code> should return <code>false</code>.'');'
+  - text: "'<code>IBeforeExceptC</code> should be a function."'
+    testString: 'assert(typeof IBeforeExceptC=="function","<code>IBeforeExceptC</code> should be a function.");'
+  - text: "'<code>IBeforeExceptC("receive")</code> should return a boolean."'
+    testString: 'assert(typeof IBeforeExceptC("receive")=="boolean","<code>IBeforeExceptC("receive")</code> should return a boolean.");'
+  - text: "'<code>IBeforeExceptC("receive")</code> should return <code>true</code>."'
+    testString: 'assert.equal(IBeforeExceptC("receive"),true,"<code>IBeforeExceptC("receive")</code> should return <code>true</code>.");'
+  - text: "'<code>IBeforeExceptC("science")</code> should return <code>false</code>."'
+    testString: 'assert.equal(IBeforeExceptC("science"),false,"<code>IBeforeExceptC("science")</code> should return <code>false</code>.");'
+  - text: "'<code>IBeforeExceptC("imperceivable")</code> should return <code>true</code>."'
+    testString: 'assert.equal(IBeforeExceptC("imperceivable"),true,"<code>IBeforeExceptC("imperceivable")</code> should return <code>true</code>.");'
+  - text: "'<code>IBeforeExceptC("inconceivable")</code> should return <code>true</code>."'
+    testString: 'assert.equal(IBeforeExceptC("inconceivable"),true,"<code>IBeforeExceptC("inconceivable")</code> should return <code>true</code>.");'
+  - text: "'<code>IBeforeExceptC("insufficient")</code> should return <code>false</code>."'
+    testString: 'assert.equal(IBeforeExceptC("insufficient"),false,"<code>IBeforeExceptC("insufficient")</code> should return <code>false</code>.");'
+  - text: "'<code>IBeforeExceptC("omniscient")</code> should return <code>false</code>."'
+    testString: 'assert.equal(IBeforeExceptC("omniscient"),false,"<code>IBeforeExceptC("omniscient")</code> should return <code>false</code>.");'
 
 ```
 

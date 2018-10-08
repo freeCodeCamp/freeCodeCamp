@@ -26,11 +26,11 @@ Create a <code>module</code> named <code>funModule</code> to wrap the two <code>
 ```yml
 tests:
   - text: <code>funModule</code> should be defined and return an object.
-    testString: 'assert(typeof funModule === "object", ''<code>funModule</code> should be defined and return an object.'');'
+    testString: 'assert(typeof funModule === "object", "<code>funModule</code> should be defined and return an object.");'
   - text: <code>funModule.isCuteMixin</code> should access a function.
-    testString: 'assert(typeof funModule.isCuteMixin === "function", ''<code>funModule.isCuteMixin</code> should access a function.'');'
+    testString: 'assert(typeof funModule.isCuteMixin === "function", "<code>funModule.isCuteMixin</code> should access a function.");'
   - text: <code>funModule.singMixin</code> should access a function.
-    testString: 'assert(typeof funModule.singMixin === "function", ''<code>funModule.singMixin</code> should access a function.'');'
+    testString: 'assert(typeof funModule.singMixin === "function", "<code>funModule.singMixin</code> should access a function.");'
 
 ```
 

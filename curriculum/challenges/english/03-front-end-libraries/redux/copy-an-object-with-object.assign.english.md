@@ -23,13 +23,13 @@ The Redux state and actions were modified to handle an <code>object</code> for t
 ```yml
 tests:
   - text: The Redux store should exist and initialize with a state that is equivalent to the <code>defaultState</code> object declared on line 1.
-    testString: 'assert((function() { const expectedState = { user: ''CamperBot'', status: ''offline'', friends: ''732,982'', community: ''freeCodeCamp'' }; const initialState = store.getState(); return DeepEqual(expectedState, initialState); })(), ''The Redux store should exist and initialize with a state that is equivalent to the <code>defaultState</code> object declared on line 1.'');'
+    testString: 'assert((function() { const expectedState = { user: "CamperBot", status: "offline", friends: "732,982", community: "freeCodeCamp" }; const initialState = store.getState(); return DeepEqual(expectedState, initialState); })(), "The Redux store should exist and initialize with a state that is equivalent to the <code>defaultState</code> object declared on line 1.");'
   - text: <code>wakeUp</code> and <code>immutableReducer</code> both should be functions.
-    testString: 'assert(typeof wakeUp === ''function'' && typeof immutableReducer === ''function'', ''<code>wakeUp</code> and <code>immutableReducer</code> both should be functions.'');'
+    testString: 'assert(typeof wakeUp === "function" && typeof immutableReducer === "function", "<code>wakeUp</code> and <code>immutableReducer</code> both should be functions.");'
   - text: Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.
-    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch({type: ''ONLINE''}); const finalState = store.getState(); const expectedState = { user: ''CamperBot'', status: ''online'', friends: ''732,982'', community: ''freeCodeCamp'' }; return isFrozen && DeepEqual(finalState, expectedState); })(), ''Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.'');'
+    testString: 'assert((function() { const initialState = store.getState(); const isFrozen = DeepFreeze(initialState); store.dispatch({type: "ONLINE"}); const finalState = store.getState(); const expectedState = { user: "CamperBot", status: "online", friends: "732,982", community: "freeCodeCamp" }; return isFrozen && DeepEqual(finalState, expectedState); })(), "Dispatching an action of type <code>ONLINE</code> should update the property <code>status</code> in state to <code>online</code> and should NOT mutate state.");'
   - text: <code>Object.assign</code> should be used to return new state.
-    testString: 'getUserInput => assert(getUserInput(''index'').includes(''Object.assign''), ''<code>Object.assign</code> should be used to return new state.'');'
+    testString: 'getUserInput => assert(getUserInput("index").includes("Object.assign"), "<code>Object.assign</code> should be used to return new state.");'
 
 ```
 

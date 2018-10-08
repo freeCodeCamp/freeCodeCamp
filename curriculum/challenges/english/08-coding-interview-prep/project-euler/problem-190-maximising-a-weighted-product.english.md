@@ -24,7 +24,7 @@ Find Σ[Pm] for 2 ≤ m ≤ 15.
 ```yml
 tests:
   - text: <code>euler190()</code> should return 371048281.
-    testString: 'assert.strictEqual(euler190(), 371048281, ''<code>euler190()</code> should return 371048281.'');'
+    testString: 'assert.strictEqual(euler190(), 371048281, "<code>euler190()</code> should return 371048281.");'
 
 ```
 

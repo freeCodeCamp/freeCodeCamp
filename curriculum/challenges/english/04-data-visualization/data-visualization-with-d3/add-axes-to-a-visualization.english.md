@@ -31,11 +31,11 @@ The scatter plot now has an x-axis. Create a y-axis in a variable named <code>yA
 ```yml
 tests:
   - text: Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.
-    testString: 'assert(code.match(/\.axisLeft\(yScale\)/g), ''Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.'');'
+    testString: 'assert(code.match(/\.axisLeft\(yScale\)/g), "Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.");'
   - text: 'The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).'
-    testString: 'assert($(''g'').eq(1).attr(''transform'').match(/translate\(60\s*?,\s*?0\)/g), ''The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).'');'
+    testString: 'assert($("g").eq(1).attr("transform").match(/translate\(60\s*?,\s*?0\)/g), "The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).");'
   - text: Your code should call the <code>yAxis</code>.
-    testString: 'assert(code.match(/\.call\(yAxis\)/g), ''Your code should call the <code>yAxis</code>.'');'
+    testString: 'assert(code.match(/\.call\(yAxis\)/g), "Your code should call the <code>yAxis</code>.");'
 
 ```
 
@@ -61,24 +61,24 @@ tests:
                   [ 78,    320 ],
                   [ 21,   123 ]
                 ];
-    
+
     const w = 500;
     const h = 500;
     const padding = 60;
-    
+
     const xScale = d3.scaleLinear()
                      .domain([0, d3.max(dataset, (d) => d[0])])
                      .range([padding, w - padding]);
-    
+
     const yScale = d3.scaleLinear()
                      .domain([0, d3.max(dataset, (d) => d[1])])
                      .range([h - padding, padding]);
-    
+
     const svg = d3.select("body")
                   .append("svg")
                   .attr("width", w)
                   .attr("height", h);
-    
+
     svg.selectAll("circle")
        .data(dataset)
        .enter()
@@ -86,7 +86,7 @@ tests:
        .attr("cx", (d) => xScale(d[0]))
        .attr("cy",(d) => yScale(d[1]))
        .attr("r", (d) => 5);
-    
+
     svg.selectAll("text")
        .data(dataset)
        .enter()
@@ -94,22 +94,22 @@ tests:
        .text((d) =>  (d[0] + "," + d[1]))
        .attr("x", (d) => xScale(d[0] + 10))
        .attr("y", (d) => yScale(d[1]))
-    
+
     const xAxis = d3.axisBottom(xScale);
     // Add your code below this line
     const yAxis = undefined;
     // Add your code above this line
-    
+
     svg.append("g")
        .attr("transform", "translate(0," + (h - padding) + ")")
        .call(xAxis);
-    
+
     // Add your code below this line
-    
-    
-    
+
+
+
     // Add your code above this line
-  
+
   </script>
 </body>
 ```

@@ -35,7 +35,7 @@ Give your answer in the form x,y with no spaces.
 ```yml
 tests:
   - text: '<code>euler220()</code> should return 139776, 963904.'
-    testString: 'assert.strictEqual(euler220(), 139776, 963904, ''<code>euler220()</code> should return 139776, 963904.'');'
+    testString: 'assert.strictEqual(euler220(), 139776, 963904, "<code>euler220()</code> should return 139776, 963904.");'
 
 ```
 

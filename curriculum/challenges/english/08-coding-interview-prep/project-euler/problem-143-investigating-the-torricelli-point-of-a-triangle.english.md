@@ -25,7 +25,7 @@ Find the sum of all distinct values of p + q + r ≤ 120000 for Torricelli trian
 ```yml
 tests:
   - text: <code>euler143()</code> should return 30758397.
-    testString: 'assert.strictEqual(euler143(), 30758397, ''<code>euler143()</code> should return 30758397.'');'
+    testString: 'assert.strictEqual(euler143(), 30758397, "<code>euler143()</code> should return 30758397.");'
 
 ```
 

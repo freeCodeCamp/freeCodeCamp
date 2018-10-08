@@ -35,7 +35,7 @@ For how many positive integers n ≤ 230 does X(n,2n,3n) = 0 ?
 ```yml
 tests:
   - text: <code>euler301()</code> should return 2178309.
-    testString: 'assert.strictEqual(euler301(), 2178309, ''<code>euler301()</code> should return 2178309.'');'
+    testString: 'assert.strictEqual(euler301(), 2178309, "<code>euler301()</code> should return 2178309.");'
 
 ```
 

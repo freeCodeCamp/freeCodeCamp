@@ -21,7 +21,7 @@ Change the value of the <code>font-size</code> property for the paragraph to 16p
 ```yml
 tests:
   - text: Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.
-    testString: 'assert($(''p'').css(''font-size'') == ''16px'', ''Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.'');'
+    testString: 'assert($("p").css("font-size") == "16px", "Your <code>p</code> tag should have a <code>font-size</code> of 16 pixels.");'
 
 ```
 

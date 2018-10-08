@@ -23,17 +23,17 @@ Change the regex <code>timRegex</code> to match the word <code>"Timber"</code> o
 ```yml
 tests:
   - text: Your regex should use curly brackets.
-    testString: 'assert(timRegex.source.match(/{.*?}/).length > 0, ''Your regex should use curly brackets.'');'
+    testString: 'assert(timRegex.source.match(/{.*?}/).length > 0, "Your regex should use curly brackets.");'
   - text: Your regex should not match <code>"Timber"</code>
-    testString: 'assert(!timRegex.test("Timber"), ''Your regex should not match <code>"Timber"</code>'');'
+    testString: 'assert(!timRegex.test("Timber"), "Your regex should not match <code>"Timber"</code>");'
   - text: Your regex should not match <code>"Timmber"</code>
-    testString: 'assert(!timRegex.test("Timmber"), ''Your regex should not match <code>"Timmber"</code>'');'
+    testString: 'assert(!timRegex.test("Timmber"), "Your regex should not match <code>"Timmber"</code>");'
   - text: Your regex should not match <code>"Timmmber"</code>
-    testString: 'assert(!timRegex.test("Timmmber"), ''Your regex should not match <code>"Timmmber"</code>'');'
+    testString: 'assert(!timRegex.test("Timmmber"), "Your regex should not match <code>"Timmmber"</code>");'
   - text: Your regex should match <code>"Timmmmber"</code>
-    testString: 'assert(timRegex.test("Timmmmber"), ''Your regex should match <code>"Timmmmber"</code>'');'
+    testString: 'assert(timRegex.test("Timmmmber"), "Your regex should match <code>"Timmmmber"</code>");'
   - text: Your regex should not match <code>"Timber"</code> with 30 <code>m</code>'s in it.
-    testString: 'assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"), ''Your regex should not match <code>"Timber"</code> with 30 <code>m</code>\''s in it.'');'
+    testString: 'assert(!timRegex.test("Ti" + "m".repeat(30) + "ber"), "Your regex should not match <code>"Timber"</code> with 30 <code>m</code>\"s in it.");'
 
 ```
 

@@ -6,10 +6,10 @@ title: 'Problem 252: Convex Holes'
 
 ## Description
 <section id='description'>
-Given a set of points on a plane, we define a convex hole to be a convex polygon having as vertices any of the given points and not containing any of the given points in its interior (in addition to the vertices, other given points may lie on the perimeter of the polygon). 
+Given a set of points on a plane, we define a convex hole to be a convex polygon having as vertices any of the given points and not containing any of the given points in its interior (in addition to the vertices, other given points may lie on the perimeter of the polygon).
 
 
-As an example, the image below shows a set of twenty points and a few such convex holes. 
+As an example, the image below shows a set of twenty points and a few such convex holes.
 The convex hole shown as a red heptagon has an area equal to 1049694.5 square units, which is the highest possible area for a convex hole on the given set of points.
 
 
@@ -46,7 +46,7 @@ What is the maximum area for a convex hole on the set containing the first 500 p
 ```yml
 tests:
   - text: <code>euler252()</code> should return 104924.
-    testString: 'assert.strictEqual(euler252(), 104924, ''<code>euler252()</code> should return 104924.'');'
+    testString: 'assert.strictEqual(euler252(), 104924, "<code>euler252()</code> should return 104924.");'
 
 ```
 

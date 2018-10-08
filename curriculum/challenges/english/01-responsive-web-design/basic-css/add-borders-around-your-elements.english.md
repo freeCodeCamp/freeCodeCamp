@@ -26,15 +26,15 @@ Remember that you can apply multiple classes to an element using its <code>class
 ```yml
 tests:
   - text: Your <code>img</code> element should have the class <code>smaller-image</code>.
-    testString: 'assert($("img").hasClass("smaller-image"), ''Your <code>img</code> element should have the class <code>smaller-image</code>.'');'
+    testString: 'assert($("img").hasClass("smaller-image"), "Your <code>img</code> element should have the class <code>smaller-image</code>.");'
   - text: Your <code>img</code> element should have the class <code>thick-green-border</code>.
-    testString: 'assert($("img").hasClass("thick-green-border"), ''Your <code>img</code> element should have the class <code>thick-green-border</code>.'');'
+    testString: 'assert($("img").hasClass("thick-green-border"), "Your <code>img</code> element should have the class <code>thick-green-border</code>.");'
   - text: Give your image a border width of <code>10px</code>.
-    testString: 'assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12, ''Give your image a border width of <code>10px</code>.'');'
+    testString: 'assert($("img").hasClass("thick-green-border") && parseInt($("img").css("border-top-width"), 10) >= 8 && parseInt($("img").css("border-top-width"), 10) <= 12, "Give your image a border width of <code>10px</code>.");'
   - text: Give your image a border style of <code>solid</code>.
-    testString: 'assert($("img").css("border-right-style") === "solid", ''Give your image a border style of <code>solid</code>.'');'
+    testString: 'assert($("img").css("border-right-style") === "solid", "Give your image a border style of <code>solid</code>.");'
   - text: The border around your <code>img</code> element should be green.
-    testString: 'assert($("img").css("border-left-color") === "rgb(0, 128, 0)", ''The border around your <code>img</code> element should be green.'');'
+    testString: 'assert($("img").css("border-left-color") === "rgb(0, 128, 0)", "The border around your <code>img</code> element should be green.");'
 
 ```
 
@@ -69,9 +69,9 @@ tests:
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
   <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <div>
     <p>Things cats love:</p>
     <ul>
@@ -86,7 +86,7 @@ tests:
       <li>other cats</li>
     </ol>
   </div>
-  
+
   <form action="/submit-cat-photo">
     <label><input type="radio" name="indoor-outdoor" checked> Indoor</label>
     <label><input type="radio" name="indoor-outdoor"> Outdoor</label><br>

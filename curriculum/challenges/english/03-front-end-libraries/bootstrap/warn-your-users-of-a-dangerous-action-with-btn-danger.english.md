@@ -22,13 +22,13 @@ Note that these buttons still need the <code>btn</code> and <code>btn-block</cod
 ```yml
 tests:
   - text: Create a new <code>button</code> element with the text "Delete".
-    testString: 'assert(new RegExp("Delete","gi").test($("button").text()), ''Create a new <code>button</code> element with the text "Delete".'');'
+    testString: 'assert(new RegExp("Delete","gi").test($("button").text()), "Create a new <code>button</code> element with the text "Delete".");'
   - text: All of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.
-    testString: 'assert($("button.btn-block.btn").length > 2, ''All of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.'');'
+    testString: 'assert($("button.btn-block.btn").length > 2, "All of your Bootstrap buttons should have the <code>btn</code> and <code>btn-block</code> classes.");'
   - text: Your new button should have the class <code>btn-danger</code>.
-    testString: 'assert($("button").hasClass("btn-danger"), ''Your new button should have the class <code>btn-danger</code>.'');'
+    testString: 'assert($("button").hasClass("btn-danger"), "Your new button should have the class <code>btn-danger</code>.");'
   - text: Make sure all your <code>button</code> elements have a closing tag.
-    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, ''Make sure all your <code>button</code> elements have a closing tag.'');'
+    testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'
 
 ```
 

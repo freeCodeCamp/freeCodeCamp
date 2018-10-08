@@ -24,9 +24,9 @@ Camper Cat created a new survey to collect information about his users. He knows
 ```yml
 tests:
   - text: Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.
-    testString: 'assert($(''p'').attr(''tabindex''), ''Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.'');'
+    testString: 'assert($("p").attr("tabindex"), "Your code should add a <code>tabindex</code> attribute to the <code>p</code> tag that holds the form instructions.");'
   - text: Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.
-    testString: 'assert($(''p'').attr(''tabindex'') == ''0'', ''Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.'');'
+    testString: 'assert($("p").attr("tabindex") == "0", "Your code should set the <code>tabindex</code> attribute on the <code>p</code> tag to a value of 0.");'
 
 ```
 
@@ -51,11 +51,11 @@ tests:
   </header>
   <section>
     <form>
-      
-      
+
+
       <p>Instructions: Fill in ALL your information then click <b>Submit</b></p>
-      
-      
+
+
       <label for="username">Username:</label>
       <input type="text" id="username" name="username"><br>
       <fieldset>

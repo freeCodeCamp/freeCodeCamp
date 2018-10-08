@@ -25,11 +25,11 @@ Fix the errors in the code editor so that it is valid JSX and successfully trans
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: 'assert.strictEqual(JSX.type, ''div'', ''The constant <code>JSX</code> should return a <code>div</code> element.'');'
+    testString: 'assert.strictEqual(JSX.type, "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
   - text: The <code>div</code> should contain a <code>br</code> tag.
-    testString: 'assert(Enzyme.shallow(JSX).find(''br'').length === 1, ''The <code>div</code> should contain a <code>br</code> tag.'');'
+    testString: 'assert(Enzyme.shallow(JSX).find("br").length === 1, "The <code>div</code> should contain a <code>br</code> tag.");'
   - text: The <code>div</code> should contain an <code>hr</code> tag.
-    testString: 'assert(Enzyme.shallow(JSX).find(''hr'').length === 1, ''The <code>div</code> should contain an <code>hr</code> tag.'');'
+    testString: 'assert(Enzyme.shallow(JSX).find("hr").length === 1, "The <code>div</code> should contain an <code>hr</code> tag.");'
 
 ```
 

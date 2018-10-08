@@ -22,7 +22,7 @@ Given that the three characters are always asked for in order, analyse the file 
 ```yml
 tests:
   - text: <code>euler79()</code> should return 73162890.
-    testString: 'assert.strictEqual(euler79(), 73162890, ''<code>euler79()</code> should return 73162890.'');'
+    testString: 'assert.strictEqual(euler79(), 73162890, "<code>euler79()</code> should return 73162890.");'
 
 ```
 

@@ -23,7 +23,7 @@ Add code inside the <code>onclick</code> event handler to change the text inside
 ```yml
 tests:
   - text: Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>textContent</code> to the given string.
-    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?(''|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?(''|")Here is the message\2/g), ''Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>textContent</code> to the given string.'');'
+    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?("|")Here is the message\2/g), "Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>textContent</code> to the given string.");'
 
 ```
 
@@ -39,8 +39,8 @@ tests:
   document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('getMessage').onclick=function(){
       // Add your code below this line
-      
-      
+
+
       // Add your code above this line
     }
   });
@@ -71,7 +71,7 @@ tests:
     border: 1px solid #0F5897;
   }
 </style>
-<h1>Cat Photo Finder</h1> 
+<h1>Cat Photo Finder</h1>
 <p class="message box">
   The message will go here
 </p>

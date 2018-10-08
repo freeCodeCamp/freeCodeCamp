@@ -24,9 +24,9 @@ Apply a class of <code>myDiv</code> to the <code>div</code> provided in the JSX 
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return a <code>div</code> element.
-    testString: 'assert.strictEqual(JSX.type, ''div'', ''The constant <code>JSX</code> should return a <code>div</code> element.'');'
+    testString: 'assert.strictEqual(JSX.type, "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
   - text: The <code>div</code> has a class of <code>myDiv</code>.
-    testString: 'assert.strictEqual(JSX.props.className, ''myDiv'', ''The <code>div</code> has a class of <code>myDiv</code>.'');'
+    testString: 'assert.strictEqual(JSX.props.className, "myDiv", "The <code>div</code> has a class of <code>myDiv</code>.");'
 
 ```
 

@@ -46,7 +46,7 @@ Find  S(5678027) + S(7208785).
 ```yml
 tests:
   - text: <code>euler196()</code> should return 322303240771079940.
-    testString: 'assert.strictEqual(euler196(), 322303240771079940, ''<code>euler196()</code> should return 322303240771079940.'');'
+    testString: 'assert.strictEqual(euler196(), 322303240771079940, "<code>euler196()</code> should return 322303240771079940.");'
 
 ```
 

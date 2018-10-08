@@ -28,7 +28,7 @@ Find SR(107).
 ```yml
 tests:
   - text: <code>euler457()</code> should return 2647787126797397000.
-    testString: 'assert.strictEqual(euler457(), 2647787126797397000, ''<code>euler457()</code> should return 2647787126797397000.'');'
+    testString: 'assert.strictEqual(euler457(), 2647787126797397000, "<code>euler457()</code> should return 2647787126797397000.");'
 
 ```
 

@@ -30,7 +30,7 @@ How many grids does S(m,n) = p2, where p < 106 is prime?
 ```yml
 tests:
   - text: <code>euler313()</code> should return 2057774861813004.
-    testString: 'assert.strictEqual(euler313(), 2057774861813004, ''<code>euler313()</code> should return 2057774861813004.'');'
+    testString: 'assert.strictEqual(euler313(), 2057774861813004, "<code>euler313()</code> should return 2057774861813004.");'
 
 ```
 

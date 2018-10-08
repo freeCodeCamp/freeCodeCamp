@@ -9,7 +9,7 @@ title: 'Problem 394: Eating pie'
 Jeff eats a pie in an unusual way.
 The pie is circular. He starts with slicing an initial cut in the pie along a radius.
 While there is at least a given fraction F of pie left, he performs the following procedure:
-- He makes two slices from the pie centre to any point of what is remaining of the pie border, any point on the remaining pie border equally likely. This will divide the remaining pie into three pieces. 
+- He makes two slices from the pie centre to any point of what is remaining of the pie border, any point on the remaining pie border equally likely. This will divide the remaining pie into three pieces.
 - Going counterclockwise from the initial cut, he takes the first two pie pieces and eats them.
 When less than a fraction F of pie remains, he does not repeat this procedure. Instead, he eats all of the remaining pie.
 
@@ -36,7 +36,7 @@ Find E(40) rounded to 10 decimal places behind the decimal point.
 ```yml
 tests:
   - text: <code>euler394()</code> should return 3.2370342194.
-    testString: 'assert.strictEqual(euler394(), 3.2370342194, ''<code>euler394()</code> should return 3.2370342194.'');'
+    testString: 'assert.strictEqual(euler394(), 3.2370342194, "<code>euler394()</code> should return 3.2370342194.");'
 
 ```
 

@@ -24,7 +24,7 @@ Find ∑f(n)  for 4 ≤ n ≤ 13.
 ```yml
 tests:
   - text: <code>euler369()</code> should return 862400558448.
-    testString: 'assert.strictEqual(euler369(), 862400558448, ''<code>euler369()</code> should return 862400558448.'');'
+    testString: 'assert.strictEqual(euler369(), 862400558448, "<code>euler369()</code> should return 862400558448.");'
 
 ```
 

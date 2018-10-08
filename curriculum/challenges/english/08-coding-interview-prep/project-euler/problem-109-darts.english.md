@@ -66,7 +66,7 @@ How many distinct ways can a player checkout with a score less than 100?
 ```yml
 tests:
   - text: <code>euler109()</code> should return 38182.
-    testString: 'assert.strictEqual(euler109(), 38182, ''<code>euler109()</code> should return 38182.'');'
+    testString: 'assert.strictEqual(euler109(), 38182, "<code>euler109()</code> should return 38182.");'
 
 ```
 

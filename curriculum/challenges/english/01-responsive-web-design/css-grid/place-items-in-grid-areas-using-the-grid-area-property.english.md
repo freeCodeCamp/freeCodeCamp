@@ -23,7 +23,7 @@ Place an element with the <code>item5</code> class in the <code>footer</code> ar
 ```yml
 tests:
   - text: <code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi), ''<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.'');'
+    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-area\s*?:\s*?footer\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-area</code> property that has the value of <code>footer</code>.");'
 
 ```
 
@@ -40,15 +40,15 @@ tests:
   .item2{background:LightSalmon;}
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
-  
+
   .item5 {
     background: PaleGreen;
     /* add your code below this line */
-    
-    
+
+
     /* add your code above this line */
   }
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -58,13 +58,13 @@ tests:
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 10px;
-    grid-template-areas: 
+    grid-template-areas:
       "header header header"
       "advert content content"
       "footer footer footer";
   }
 </style>
-  
+
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>

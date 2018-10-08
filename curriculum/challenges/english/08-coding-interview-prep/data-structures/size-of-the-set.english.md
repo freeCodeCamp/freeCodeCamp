@@ -20,9 +20,9 @@ In this exercise we are going to create a size function for our Set. This functi
 ```yml
 tests:
   - text: Your <code>Set</code> class should have a <code>size</code> method.
-    testString: 'assert((function(){var test = new Set(); return (typeof test.size === ''function'')}()), ''Your <code>Set</code> class should have a <code>size</code> method.'');'
+    testString: 'assert((function(){var test = new Set(); return (typeof test.size === "function")}()), "Your <code>Set</code> class should have a <code>size</code> method.");'
   - text: The <code>size</code> method should return the number of elements in the collection.
-    testString: 'assert((function(){var test = new Set(); test.add(''a'');test.add(''b'');test.remove(''a'');return (test.size() === 1)}()), ''The <code>size</code> method should return the number of elements in the collection.'');'
+    testString: 'assert((function(){var test = new Set(); test.add("a");test.add("b");test.remove("a");return (test.size() === 1)}()), "The <code>size</code> method should return the number of elements in the collection.");'
 
 ```
 

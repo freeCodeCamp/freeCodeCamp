@@ -23,9 +23,9 @@ Use <dfn>bracket notation</dfn> to find the first character in the <code>lastNam
 ```yml
 tests:
   - text: The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.
-    testString: 'assert(firstLetterOfLastName === ''L'', ''The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.'');'
+    testString: 'assert(firstLetterOfLastName === "L", "The <code>firstLetterOfLastName</code> variable should have the value of <code>L</code>.");'
   - text: You should use bracket notation.
-    testString: 'assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/), ''You should use bracket notation.'');'
+    testString: 'assert(code.match(/firstLetterOfLastName\s*?=\s*?lastName\[.*?\]/), "You should use bracket notation.");'
 
 ```
 

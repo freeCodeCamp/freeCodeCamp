@@ -6,12 +6,12 @@ title: 'Problem 326: Modulo Summations'
 
 ## Description
 <section id='description'>
-Let an be a sequence recursively defined by: . 
+Let an be a sequence recursively defined by: .
 
 
 So the first 10 elements of an are: 1,1,0,3,0,3,5,4,1,9.
 
-Let f(N,M) represent the number of pairs (p,q) such that: 
+Let f(N,M) represent the number of pairs (p,q) such that:
 
 
 It can be seen that f(10,10)=4 with the pairs (3,3), (5,5), (7,9) and (9,10).
@@ -33,7 +33,7 @@ Find f(1012,106).
 ```yml
 tests:
   - text: <code>euler326()</code> should return 1966666166408794400.
-    testString: 'assert.strictEqual(euler326(), 1966666166408794400, ''<code>euler326()</code> should return 1966666166408794400.'');'
+    testString: 'assert.strictEqual(euler326(), 1966666166408794400, "<code>euler326()</code> should return 1966666166408794400.");'
 
 ```
 

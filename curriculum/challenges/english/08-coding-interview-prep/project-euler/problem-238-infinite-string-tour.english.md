@@ -23,7 +23,7 @@ For a positive integer k, if no substring of w exists with a sum of digits equal
 
 For instance:
 
-The substrings 1, 14, 1402, … 
+The substrings 1, 14, 1402, …
 with respective sums of digits equal to 1, 5, 7, …
 start at position 1, hence p(1) = p(5) = p(7) = … = 1.
 
@@ -53,7 +53,7 @@ Find ∑ p(k), for 0 < k ≤ 2·1015.
 ```yml
 tests:
   - text: <code>euler238()</code> should return 9922545104535660.
-    testString: 'assert.strictEqual(euler238(), 9922545104535660, ''<code>euler238()</code> should return 9922545104535660.'');'
+    testString: 'assert.strictEqual(euler238(), 9922545104535660, "<code>euler238()</code> should return 9922545104535660.");'
 
 ```
 

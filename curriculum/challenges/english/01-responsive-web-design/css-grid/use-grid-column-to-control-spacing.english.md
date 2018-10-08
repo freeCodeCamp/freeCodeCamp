@@ -28,7 +28,7 @@ Make the item with the class <code>item5</code> consume the last two columns of 
 ```yml
 tests:
   - text: <code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), ''<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.'');'
+    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.");'
 
 ```
 
@@ -45,15 +45,15 @@ tests:
   .item2{background:LightSalmon;}
   .item3{background:PaleTurquoise;}
   .item4{background:LightPink;}
-  
+
   .item5 {
     background: PaleGreen;
     /* add your code below this line */
-    
-    
+
+
     /* add your code above this line */
   }
-  
+
   .container {
     font-size: 40px;
     min-height: 300px;
@@ -65,7 +65,7 @@ tests:
     grid-gap: 10px;
   }
 </style>
-  
+
 <div class="container">
   <div class="item1">1</div>
   <div class="item2">2</div>

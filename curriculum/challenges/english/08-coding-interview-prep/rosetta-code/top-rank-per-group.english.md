@@ -53,19 +53,19 @@ one could rank the top-rated movie in each genre by calling
 ```yml
 tests:
   - text: <code>topRankPerGroup</code> is a function.
-    testString: 'assert(typeof topRankPerGroup === ''function'', ''<code>topRankPerGroup</code> is a function.'');'
+    testString: 'assert(typeof topRankPerGroup === "function", "<code>topRankPerGroup</code> is a function.");'
   - text: <code>topRankPerGroup</code> returns undefined on negative n values.
-    testString: 'assert(typeof topRankPerGroup(-1, []) === ''undefined'', ''<code>topRankPerGroup</code> returns undefined on negative n values.'');'
+    testString: 'assert(typeof topRankPerGroup(-1, []) === "undefined", "<code>topRankPerGroup</code> returns undefined on negative n values.");'
   - text: First department must be D050
-    testString: 'assert.equal(res1[0][0].dept, ''D050'', ''First department must be D050'');'
+    testString: 'assert.equal(res1[0][0].dept, "D050", "First department must be D050");'
   - text: First department must be D050
-    testString: 'assert.equal(res1[0][1].salary, 21900, ''First department must be D050'');'
+    testString: 'assert.equal(res1[0][1].salary, 21900, "First department must be D050");'
   - text: The last department must be D202
-    testString: 'assert.equal(res1[3][3].dept, ''D202'', ''The last department must be D202'');'
+    testString: 'assert.equal(res1[3][3].dept, "D202", "The last department must be D202");'
   - text: '<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.'
-    testString: 'assert.equal(res2[2].length, 1, ''<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.'');'
+    testString: 'assert.equal(res2[2].length, 1, "<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.");'
   - text: '<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.'
-    testString: 'assert.equal(res3[2][1].name, ''Maze Runner'', ''<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.'');'
+    testString: 'assert.equal(res3[2][1].name, "Maze Runner", "<code>topRankPerGroup(1, ...)</code> must return only top ranking result per group.");'
 
 ```
 

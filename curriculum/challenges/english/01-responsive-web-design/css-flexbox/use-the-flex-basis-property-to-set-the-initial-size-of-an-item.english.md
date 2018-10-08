@@ -22,13 +22,13 @@ Set the initial size of the boxes using <code>flex-basis</code>. Add the CSS pro
 ```yml
 tests:
   - text: 'The <code>#box-1</code> element should have a <code>flex-basis</code> property.'
-    testString: 'assert($(''#box-1'').css(''flex-basis'') != ''auto'', ''The <code>#box-1</code> element should have a <code>flex-basis</code> property.'');'
+    testString: 'assert($("#box-1").css("flex-basis") != "auto", "The <code>#box-1</code> element should have a <code>flex-basis</code> property.");'
   - text: 'The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.'
-    testString: 'assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g), ''The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.'');'
+    testString: 'assert(code.match(/#box-1\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?10em;/g), "The <code>#box-1</code> element should have a <code>flex-basis</code> value of <code>10em</code>.");'
   - text: 'The <code>#box-2</code> element should have the <code>flex-basis</code> property.'
-    testString: 'assert($(''#box-2'').css(''flex-basis'') != ''auto'', ''The <code>#box-2</code> element should have the <code>flex-basis</code> property.'');'
+    testString: 'assert($("#box-2").css("flex-basis") != "auto", "The <code>#box-2</code> element should have the <code>flex-basis</code> property.");'
   - text: 'The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.'
-    testString: 'assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g), ''The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.'');'
+    testString: 'assert(code.match(/#box-2\s*?{\s*?.*?\s*?.*?\s*?flex-basis:\s*?20em;/g), "The <code>#box-2</code> element should have a <code>flex-basis</code> value of <code>20em</code>.");'
 
 ```
 
@@ -45,20 +45,20 @@ tests:
     display: flex;
     height: 500px;
   }
-  
+
   #box-1 {
     background-color: dodgerblue;
     height: 200px;
-    
+
   }
-  
+
   #box-2 {
     background-color: orangered;
     height: 200px;
-    
+
   }
 </style>
-  
+
 <div id="box-container">
   <div id="box-1"></div>
   <div id="box-2"></div>

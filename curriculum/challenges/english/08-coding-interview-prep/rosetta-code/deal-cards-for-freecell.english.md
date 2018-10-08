@@ -15,7 +15,7 @@ $rand_n$ is in range 0 to 32767.
 <p>The algorithm follows:</p>Seed the RNG with the number of the deal.
 Create an <a href="http://rosettacode.org/wiki/array" title="array">array</a> of 52 cards: Ace of Clubs, Ace of Diamonds, Ace of Hearts, Ace of Spades, 2 of Clubs, 2 of Diamonds, and so on through the ranks: Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King. The array indexes are 0 to 51, with Ace of Clubs at 0, and King of Spades at 51.
 Until the array is empty:
- Choose a random card at index &equiv; next random number (mod array length). 
+ Choose a random card at index &equiv; next random number (mod array length).
  Swap this random card with the last card of the array.
  Remove this random card from the array. (Array length goes down by 1.)
  Deal this random card.
@@ -67,15 +67,15 @@ Task:
 ```yml
 tests:
   - text: <code>dealFreeCell</code> is a function.
-    testString: 'assert(typeof dealFreeCell === ''function'', ''<code>dealFreeCell</code> is a function.'');'
+    testString: 'assert(typeof dealFreeCell === "function", "<code>dealFreeCell</code> is a function.");'
   - text: <code>dealFreeCell(seed)</code> should return an object.
-    testString: 'assert(typeof dealFreeCell(1) === ''object'', ''<code>dealFreeCell(seed)</code> should return an object.'');'
+    testString: 'assert(typeof dealFreeCell(1) === "object", "<code>dealFreeCell(seed)</code> should return an object.");'
   - text: <code>dealFreeCell(seed)</code> should return an array of length 7.
-    testString: 'assert(dealFreeCell(1).length === 7, ''<code>dealFreeCell(seed)</code> should return an array of length 7.'');'
+    testString: 'assert(dealFreeCell(1).length === 7, "<code>dealFreeCell(seed)</code> should return an array of length 7.");'
   - text: '<code>dealFreeCell(1)</code> should return an array identical to example "Game #1"'
-    testString: 'assert.deepEqual(dealFreeCell(1), game1, ''<code>dealFreeCell(1)</code> should return an array identical to example "Game #1"'');'
+    testString: 'assert.deepEqual(dealFreeCell(1), game1, "<code>dealFreeCell(1)</code> should return an array identical to example "Game #1"");'
   - text: '<code>dealFreeCell(617)</code> should return an array identical to example "Game #617"'
-    testString: 'assert.deepEqual(dealFreeCell(617), game617, ''<code>dealFreeCell(617)</code> should return an array identical to example "Game #617"'');'
+    testString: 'assert.deepEqual(dealFreeCell(617), game617, "<code>dealFreeCell(617)</code> should return an array identical to example "Game #617"");'
 
 ```
 

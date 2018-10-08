@@ -24,21 +24,21 @@ Go ahead, try using the abbreviated hex codes to color the correct elements.
 ```yml
 tests:
   - text: Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.
-    testString: 'assert($(''.red-text'').css(''color'') === ''rgb(255, 0, 0)'', ''Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.'');'
+    testString: 'assert($(".red-text").css("color") === "rgb(255, 0, 0)", "Give your <code>h1</code> element with the text <code>I am red!</code> the <code>color</code> red.");'
   - text: 'Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.'
-    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi), ''Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.'');'
+    testString: 'assert(code.match(/\.red-text\s*?{\s*?color:\s*?#F00\s*?;\s*?}/gi), "Use the abbreviate <code>hex code</code> for the color red instead of the hex code <code>#FF0000</code>.");'
   - text: Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.
-    testString: 'assert($(''.green-text'').css(''color'') === ''rgb(0, 255, 0)'', ''Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.'');'
+    testString: 'assert($(".green-text").css("color") === "rgb(0, 255, 0)", "Give your <code>h1</code> element with the text <code>I am green!</code> the <code>color</code> green.");'
   - text: 'Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.'
-    testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi), ''Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.'');'
+    testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.");'
   - text: Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.
-    testString: 'assert($(''.cyan-text'').css(''color'') === ''rgb(0, 255, 255)'', ''Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.'');'
+    testString: 'assert($(".cyan-text").css("color") === "rgb(0, 255, 255)", "Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.");'
   - text: 'Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.'
-    testString: 'assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi), ''Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.'');'
+    testString: 'assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.");'
   - text: Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.
-    testString: 'assert($(''.fuchsia-text'').css(''color'') === ''rgb(255, 0, 255)'', ''Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.'');'
+    testString: 'assert($(".fuchsia-text").css("color") === "rgb(255, 0, 255)", "Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.");'
   - text: 'Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.'
-    testString: 'assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi), ''Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.'');'
+    testString: 'assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.");'
 
 ```
 

@@ -29,7 +29,7 @@ Find S(1010).
 ```yml
 tests:
   - text: <code>euler390()</code> should return 2919133642971.
-    testString: 'assert.strictEqual(euler390(), 2919133642971, ''<code>euler390()</code> should return 2919133642971.'');'
+    testString: 'assert.strictEqual(euler390(), 2919133642971, "<code>euler390()</code> should return 2919133642971.");'
 
 ```
 

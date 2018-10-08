@@ -29,7 +29,7 @@ Find $S(3^{37})$. Give the last 9 digits of your answer.
 ```yml
 tests:
   - text: <code>euler463()</code> should return 808981553.
-    testString: 'assert.strictEqual(euler463(), 808981553, ''<code>euler463()</code> should return 808981553.'');'
+    testString: 'assert.strictEqual(euler463(), 808981553, "<code>euler463()</code> should return 808981553.");'
 
 ```
 

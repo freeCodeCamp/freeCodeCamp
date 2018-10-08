@@ -22,7 +22,7 @@ Increase the size of the element with the id of <code>ball2</code> to 1.5 times 
 ```yml
 tests:
   - text: 'Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.'
-    testString: 'assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), ''Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.'');'
+    testString: 'assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), "Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.");'
 
 ```
 
@@ -35,7 +35,7 @@ tests:
 
 ```html
 <style>
-  .ball { 
+  .ball {
     width: 40px;
     height: 40px;
     margin: 50 auto;
@@ -52,7 +52,7 @@ tests:
   }
   #ball2 {
     left: 65%;
-    
+
   }
 
 

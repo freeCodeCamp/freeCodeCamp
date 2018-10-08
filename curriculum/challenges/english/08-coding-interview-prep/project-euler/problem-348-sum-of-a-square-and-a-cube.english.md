@@ -29,7 +29,7 @@ Find the sum of the five smallest such palindromic numbers.
 ```yml
 tests:
   - text: <code>euler348()</code> should return 1004195061.
-    testString: 'assert.strictEqual(euler348(), 1004195061, ''<code>euler348()</code> should return 1004195061.'');'
+    testString: 'assert.strictEqual(euler348(), 1004195061, "<code>euler348()</code> should return 1004195061.");'
 
 ```
 

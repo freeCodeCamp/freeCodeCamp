@@ -26,19 +26,19 @@ challengeType: 3
 ```yml
 tests:
   - text: <code>fractran</code> should be a function.
-    testString: 'assert(typeof fractran==''function'',''<code>fractran</code> should be a function.'');'
-  - text: '<code>fractran("''+tests[0]+''")</code> should return an array.'
-    testString: 'assert(Array.isArray(fractran(tests[0])),''<code>fractran("''+tests[0]+''")</code> should return an array.'');'
-  - text: '<code>fractran("''+tests[0]+''")</code> should return <code>''+JSON.stringify(results[0])+''</code>.'
-    testString: 'assert.deepEqual(fractran(tests[0]),results[0],''<code>fractran("''+tests[0]+''")</code> should return <code>''+JSON.stringify(results[0])+''</code>.'');'
-  - text: '<code>fractran("''+tests[1]+''")</code> should return <code>''+JSON.stringify(results[1])+''</code>.'
-    testString: 'assert.deepEqual(fractran(tests[1]),results[1],''<code>fractran("''+tests[1]+''")</code> should return <code>''+JSON.stringify(results[1])+''</code>.'');'
-  - text: '<code>fractran("''+tests[2]+''")</code> should return <code>''+JSON.stringify(results[2])+''</code>.'
-    testString: 'assert.deepEqual(fractran(tests[2]),results[2],''<code>fractran("''+tests[2]+''")</code> should return <code>''+JSON.stringify(results[2])+''</code>.'');'
-  - text: '<code>fractran("''+tests[3]+''")</code> should return <code>''+JSON.stringify(results[3])+''</code>.'
-    testString: 'assert.deepEqual(fractran(tests[3]),results[3],''<code>fractran("''+tests[3]+''")</code> should return <code>''+JSON.stringify(results[3])+''</code>.'');'
-  - text: '<code>fractran("''+tests[4]+''")</code> should return <code>''+JSON.stringify(results[4])+''</code>.'
-    testString: 'assert.deepEqual(fractran(tests[4]),results[4],''<code>fractran("''+tests[4]+''")</code> should return <code>''+JSON.stringify(results[4])+''</code>.'');'
+    testString: 'assert(typeof fractran=="function","<code>fractran</code> should be a function.");'
+  - text: '<code>fractran(""+tests[0]+"")</code> should return an array.'
+    testString: 'assert(Array.isArray(fractran(tests[0])),"<code>fractran(""+tests[0]+"")</code> should return an array.");'
+  - text: '<code>fractran(""+tests[0]+"")</code> should return <code>"+JSON.stringify(results[0])+"</code>.'
+    testString: 'assert.deepEqual(fractran(tests[0]),results[0],"<code>fractran(""+tests[0]+"")</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
+  - text: '<code>fractran(""+tests[1]+"")</code> should return <code>"+JSON.stringify(results[1])+"</code>.'
+    testString: 'assert.deepEqual(fractran(tests[1]),results[1],"<code>fractran(""+tests[1]+"")</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
+  - text: '<code>fractran(""+tests[2]+"")</code> should return <code>"+JSON.stringify(results[2])+"</code>.'
+    testString: 'assert.deepEqual(fractran(tests[2]),results[2],"<code>fractran(""+tests[2]+"")</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
+  - text: '<code>fractran(""+tests[3]+"")</code> should return <code>"+JSON.stringify(results[3])+"</code>.'
+    testString: 'assert.deepEqual(fractran(tests[3]),results[3],"<code>fractran(""+tests[3]+"")</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
+  - text: '<code>fractran(""+tests[4]+"")</code> should return <code>"+JSON.stringify(results[4])+"</code>.'
+    testString: 'assert.deepEqual(fractran(tests[4]),results[4],"<code>fractran(""+tests[4]+"")</code> should return <code>"+JSON.stringify(results[4])+"</code>.");'
 
 ```
 

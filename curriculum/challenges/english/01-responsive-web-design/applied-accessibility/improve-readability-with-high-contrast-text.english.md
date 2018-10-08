@@ -22,9 +22,9 @@ Camper Cat's choice of light gray text on a white background for his recent blog
 ```yml
 tests:
   - text: Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.
-    testString: 'assert($(''body'').css(''color'') == ''rgb(99, 99, 99)'', ''Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.'');'
+    testString: 'assert($("body").css("color") == "rgb(99, 99, 99)", "Your code should change the text <code>color</code> for the <code>body</code> to the darker gray.");'
   - text: Your code should not change the <code>background-color</code> for the <code>body</code>.
-    testString: 'assert($(''body'').css(''background-color'') == ''rgb(255, 255, 255)'', ''Your code should not change the <code>background-color</code> for the <code>body</code>.'');'
+    testString: 'assert($("body").css("background-color") == "rgb(255, 255, 255)", "Your code should not change the <code>background-color</code> for the <code>body</code>.");'
 
 ```
 

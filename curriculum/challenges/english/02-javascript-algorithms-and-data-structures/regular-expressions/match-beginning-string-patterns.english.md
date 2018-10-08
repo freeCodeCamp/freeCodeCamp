@@ -22,13 +22,13 @@ Use the <code>caret</code> character in a regex to find <code>"Cal"</code> only 
 ```yml
 tests:
   - text: Your regex should search for <code>"Cal"</code> with a capital letter.
-    testString: 'assert(calRegex.source == "^Cal", ''Your regex should search for <code>"Cal"</code> with a capital letter.'');'
+    testString: 'assert(calRegex.source == "^Cal", "Your regex should search for <code>"Cal"</code> with a capital letter.");'
   - text: Your regex should not use any flags.
-    testString: 'assert(calRegex.flags == "", ''Your regex should not use any flags.'');'
+    testString: 'assert(calRegex.flags == "", "Your regex should not use any flags.");'
   - text: Your regex should match <code>"Cal"</code> at the beginning of the string.
-    testString: 'assert(calRegex.test("Cal and Ricky both like racing."), ''Your regex should match <code>"Cal"</code> at the beginning of the string.'');'
+    testString: 'assert(calRegex.test("Cal and Ricky both like racing."), "Your regex should match <code>"Cal"</code> at the beginning of the string.");'
   - text: Your regex should not match <code>"Cal"</code> in the middle of a string.
-    testString: 'assert(!calRegex.test("Ricky and Cal both like racing."), ''Your regex should not match <code>"Cal"</code> in the middle of a string.'');'
+    testString: 'assert(!calRegex.test("Ricky and Cal both like racing."), "Your regex should not match <code>"Cal"</code> in the middle of a string.");'
 
 ```
 

@@ -24,9 +24,9 @@ Fix the condition so the program runs the right branch, and the appropriate valu
 ```yml
 tests:
   - text: 'Your code should fix the condition so it checks for equality, instead of using assignment.'
-    testString: 'assert(result == "Not equal!", ''Your code should fix the condition so it checks for equality, instead of using assignment.'');'
+    testString: 'assert(result == "Not equal!", "Your code should fix the condition so it checks for equality, instead of using assignment.");'
   - text: The condition can use either <code>==</code> or <code>===</code> to test for equality.
-    testString: 'assert(code.match(/x\s*?===?\s*?y/g), ''The condition can use either <code>==</code> or <code>===</code> to test for equality.'');'
+    testString: 'assert(code.match(/x\s*?===?\s*?y/g), "The condition can use either <code>==</code> or <code>===</code> to test for equality.");'
 
 ```
 

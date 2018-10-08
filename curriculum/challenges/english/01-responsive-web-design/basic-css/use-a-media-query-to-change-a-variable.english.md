@@ -22,9 +22,9 @@ In the <code>:root</code> selector of the <code>media query</code>, change it so
 ```yml
 tests:
   - text: '<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), ''<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.'');'
+    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.");'
   - text: '<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.'
-    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), ''<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.'');'
+    testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.");'
 
 ```
 
@@ -43,17 +43,17 @@ tests:
     --penguin-belly: white;
     --penguin-beak: orange;
   }
-  
+
   @media (max-width: 350px) {
     :root {
-      
+
       /* add code below */
-      
+
       /* add code above */
-      
+
     }
   }
-  
+
   .penguin {
     position: relative;
     margin: auto;
@@ -62,7 +62,7 @@ tests:
     width: var(--penguin-size, 300px);
     height: var(--penguin-size, 300px);
   }
-  
+
   .right-cheek {
     top: 15%;
     left: 35%;
@@ -71,7 +71,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .left-cheek {
     top: 15%;
     left: 5%;
@@ -80,7 +80,7 @@ tests:
     height: 70%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .belly {
     top: 60%;
     left: 2.5%;
@@ -89,7 +89,7 @@ tests:
     height: 100%;
     border-radius: 120% 120% 100% 100%;
   }
-  
+
   .penguin-top {
     top: 10%;
     left: 25%;
@@ -98,7 +98,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 60% 60%;
   }
-  
+
   .penguin-bottom {
     top: 40%;
     left: 23.5%;
@@ -107,7 +107,7 @@ tests:
     height: 45%;
     border-radius: 70% 70% 100% 100%;
   }
-  
+
   .right-hand {
     top: 5%;
     left: 25%;
@@ -123,7 +123,7 @@ tests:
     transform-origin:0% 0%;
     animation-timing-function: linear;
   }
-  
+
   @keyframes wave {
       10% {
         transform: rotate(110deg);
@@ -133,12 +133,12 @@ tests:
       }
       30% {
         transform: rotate(110deg);
-      } 
+      }
       40% {
         transform: rotate(130deg);
-      }  
+      }
     }
-  
+
   .left-hand {
     top: 0%;
     left: 75%;
@@ -149,7 +149,7 @@ tests:
     transform: rotate(-45deg);
     z-index: -1;
   }
-  
+
   .right-feet {
     top: 85%;
     left: 60%;
@@ -160,7 +160,7 @@ tests:
     transform: rotate(-80deg);
     z-index: -2222;
   }
-  
+
   .left-feet {
     top: 85%;
     left: 25%;
@@ -171,7 +171,7 @@ tests:
     transform: rotate(80deg);
     z-index: -2222;
   }
-  
+
   .right-eye {
     top: 45%;
     left: 60%;
@@ -180,7 +180,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .left-eye {
     top: 45%;
     left: 25%;
@@ -189,7 +189,7 @@ tests:
     height: 17%;
     border-radius: 50%;
   }
-  
+
   .sparkle {
     top: 25%;
     left:-23%;
@@ -198,7 +198,7 @@ tests:
     height: 100%;
     border-radius: 50%;
   }
-  
+
   .blush-right {
     top: 65%;
     left: 15%;
@@ -207,7 +207,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .blush-left {
     top: 65%;
     left: 70%;
@@ -216,7 +216,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-top {
     top: 60%;
     left: 40%;
@@ -225,7 +225,7 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   .beak-bottom {
     top: 65%;
     left: 42%;
@@ -234,11 +234,11 @@ tests:
     height: 10%;
     border-radius: 50%;
   }
-  
+
   body {
     background:#c6faf1;
   }
-  
+
   .penguin * {
     position: absolute;
   }

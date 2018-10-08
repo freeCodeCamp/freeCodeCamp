@@ -27,11 +27,11 @@ Add a <code>numLegs</code> property to the <code>prototype</code> of <code>Dog</
 ```yml
 tests:
   - text: <code>beagle</code> should have a <code>numLegs</code> property.
-    testString: 'assert(beagle.numLegs !== undefined, ''<code>beagle</code> should have a <code>numLegs</code> property.'');'
+    testString: 'assert(beagle.numLegs !== undefined, "<code>beagle</code> should have a <code>numLegs</code> property.");'
   - text: <code>beagle.numLegs</code> should be a number.
-    testString: 'assert(typeof(beagle.numLegs) === ''number'' , ''<code>beagle.numLegs</code> should be a number.'');'
+    testString: 'assert(typeof(beagle.numLegs) === "number" , "<code>beagle.numLegs</code> should be a number.");'
   - text: <code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.
-    testString: 'assert(beagle.hasOwnProperty(''numLegs'') === false, ''<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.'');'
+    testString: 'assert(beagle.hasOwnProperty("numLegs") === false, "<code>numLegs</code> should be a <code>prototype</code> property not an <code>own</code> property.");'
 
 ```
 

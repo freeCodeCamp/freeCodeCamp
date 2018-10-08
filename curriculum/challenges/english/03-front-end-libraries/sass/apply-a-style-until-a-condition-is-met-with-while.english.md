@@ -28,31 +28,31 @@ There should be 10 different classes from <code>text-1</code> to <code>text-10</
 ```yml
 tests:
   - text: Your code should use the <code>@while</code> directive.
-    testString: 'assert(code.match(/@while /g), ''Your code should use the <code>@while</code> directive.'');'
+    testString: 'assert(code.match(/@while /g), "Your code should use the <code>@while</code> directive.");'
   - text: Your code should set an index variable to 1 to start.
-    testString: 'assert(code.match(/\$.*:\s*?1;/gi), ''Your code should set an index variable to 1 to start.'');'
+    testString: 'assert(code.match(/\$.*:\s*?1;/gi), "Your code should set an index variable to 1 to start.");'
   - text: Your code should increment the counter variable.
-    testString: 'assert(code.match(/\$(.*):\s*?\$\1\s*?\+\s*?1;/gi), ''Your code should increment the counter variable.'');'
+    testString: 'assert(code.match(/\$(.*):\s*?\$\1\s*?\+\s*?1;/gi), "Your code should increment the counter variable.");'
   - text: Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.
-    testString: 'assert($(''.text-1'').css(''font-size'') == ''5px'', ''Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.'');'
+    testString: 'assert($(".text-1").css("font-size") == "5px", "Your <code>.text-1</code> class should have a <code>font-size</code> of 5px.");'
   - text: Your <code>.text-2</code> class should have a <code>font-size</code> of 10px.
-    testString: 'assert($(''.text-2'').css(''font-size'') == ''10px'', ''Your <code>.text-2</code> class should have a <code>font-size</code> of 10px.'');'
+    testString: 'assert($(".text-2").css("font-size") == "10px", "Your <code>.text-2</code> class should have a <code>font-size</code> of 10px.");'
   - text: Your <code>.text-3</code> class should have a <code>font-size</code> of 15px.
-    testString: 'assert($(''.text-3'').css(''font-size'') == ''15px'', ''Your <code>.text-3</code> class should have a <code>font-size</code> of 15px.'');'
+    testString: 'assert($(".text-3").css("font-size") == "15px", "Your <code>.text-3</code> class should have a <code>font-size</code> of 15px.");'
   - text: Your <code>.text-4</code> class should have a <code>font-size</code> of 20px.
-    testString: 'assert($(''.text-4'').css(''font-size'') == ''20px'', ''Your <code>.text-4</code> class should have a <code>font-size</code> of 20px.'');'
+    testString: 'assert($(".text-4").css("font-size") == "20px", "Your <code>.text-4</code> class should have a <code>font-size</code> of 20px.");'
   - text: Your <code>.text-5</code> class should have a <code>font-size</code> of 25px.
-    testString: 'assert($(''.text-5'').css(''font-size'') == ''25px'', ''Your <code>.text-5</code> class should have a <code>font-size</code> of 25px.'');'
+    testString: 'assert($(".text-5").css("font-size") == "25px", "Your <code>.text-5</code> class should have a <code>font-size</code> of 25px.");'
   - text: Your <code>.text-6</code> class should have a <code>font-size</code> of 30px.
-    testString: 'assert($(''.text-6'').css(''font-size'') == ''30px'', ''Your <code>.text-6</code> class should have a <code>font-size</code> of 30px.'');'
+    testString: 'assert($(".text-6").css("font-size") == "30px", "Your <code>.text-6</code> class should have a <code>font-size</code> of 30px.");'
   - text: Your <code>.text-7</code> class should have a <code>font-size</code> of 35px.
-    testString: 'assert($(''.text-7'').css(''font-size'') == ''35px'', ''Your <code>.text-7</code> class should have a <code>font-size</code> of 35px.'');'
+    testString: 'assert($(".text-7").css("font-size") == "35px", "Your <code>.text-7</code> class should have a <code>font-size</code> of 35px.");'
   - text: Your <code>.text-8</code> class should have a <code>font-size</code> of 40px.
-    testString: 'assert($(''.text-8'').css(''font-size'') == ''40px'', ''Your <code>.text-8</code> class should have a <code>font-size</code> of 40px.'');'
+    testString: 'assert($(".text-8").css("font-size") == "40px", "Your <code>.text-8</code> class should have a <code>font-size</code> of 40px.");'
   - text: Your <code>.text-9</code> class should have a <code>font-size</code> of 45px.
-    testString: 'assert($(''.text-9'').css(''font-size'') == ''45px'', ''Your <code>.text-9</code> class should have a <code>font-size</code> of 45px.'');'
+    testString: 'assert($(".text-9").css("font-size") == "45px", "Your <code>.text-9</code> class should have a <code>font-size</code> of 45px.");'
   - text: Your <code>.text-10</code> class should have a <code>font-size</code> of 50px.
-    testString: 'assert($(''.text-10'').css(''font-size'') == ''50px'', ''Your <code>.text-10</code> class should have a <code>font-size</code> of 50px.'');'
+    testString: 'assert($(".text-10").css("font-size") == "50px", "Your <code>.text-10</code> class should have a <code>font-size</code> of 50px.");'
 
 ```
 
@@ -65,9 +65,9 @@ tests:
 
 ```html
 <style type='text/sass'>
-  
-  
-  
+
+
+
 </style>
 
 <p class="text-1">Hello</p>

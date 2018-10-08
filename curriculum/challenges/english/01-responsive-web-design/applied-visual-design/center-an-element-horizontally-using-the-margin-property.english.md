@@ -22,7 +22,7 @@ Center the <code>div</code> on the page by adding a <code>margin</code> property
 ```yml
 tests:
   - text: The <code>div</code> should have a <code>margin</code> set to auto.
-    testString: 'assert(code.match(/margin:\s*?auto;/g), ''The <code>div</code> should have a <code>margin</code> set to auto.'');'
+    testString: 'assert(code.match(/margin:\s*?auto;/g), "The <code>div</code> should have a <code>margin</code> set to auto.");'
 
 ```
 
@@ -39,7 +39,7 @@ tests:
     background-color: blue;
     height: 100px;
     width: 100px;
-    
+
   }
 </style>
 <div></div>

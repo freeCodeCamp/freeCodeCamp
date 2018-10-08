@@ -1,7 +1,7 @@
 ---
 id: 5900f4741000cf542c50ff86
 challengeType: 5
-title: 'Problem 263: An engineers'' dream come true'
+title: 'Problem 263: An engineers" dream come true'
 ---
 
 ## Description
@@ -19,7 +19,7 @@ We may occasionally find a triple-pair, which means three consecutive sexy prime
 
 
 We shall call a number n such that :
-(n-9, n-3), (n-3,n+3), (n+3, n+9) form a triple-pair, and 
+(n-9, n-3), (n-3,n+3), (n+3, n+9) form a triple-pair, and
 the numbers n-8, n-4, n, n+4 and n+8 are all practical,
 
 an engineers’ paradise.
@@ -39,7 +39,7 @@ Find the sum of the first four engineers’ paradises.
 ```yml
 tests:
   - text: <code>euler263()</code> should return 2039506520.
-    testString: 'assert.strictEqual(euler263(), 2039506520, ''<code>euler263()</code> should return 2039506520.'');'
+    testString: 'assert.strictEqual(euler263(), 2039506520, "<code>euler263()</code> should return 2039506520.");'
 
 ```
 

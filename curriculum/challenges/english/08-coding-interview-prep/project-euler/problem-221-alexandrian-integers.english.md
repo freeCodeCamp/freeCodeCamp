@@ -39,7 +39,7 @@ Find the 150000th Alexandrian integer.
 ```yml
 tests:
   - text: <code>euler221()</code> should return 1884161251122450.
-    testString: 'assert.strictEqual(euler221(), 1884161251122450, ''<code>euler221()</code> should return 1884161251122450.'');'
+    testString: 'assert.strictEqual(euler221(), 1884161251122450, "<code>euler221()</code> should return 1884161251122450.");'
 
 ```
 

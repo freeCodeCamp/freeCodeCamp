@@ -30,7 +30,7 @@ For integer values x, y, h and 0 < x < y < 1 000 000, how many triplets (x,y,h) 
 ```yml
 tests:
   - text: <code>euler309()</code> should return 210139.
-    testString: 'assert.strictEqual(euler309(), 210139, ''<code>euler309()</code> should return 210139.'');'
+    testString: 'assert.strictEqual(euler309(), 210139, "<code>euler309()</code> should return 210139.");'
 
 ```
 

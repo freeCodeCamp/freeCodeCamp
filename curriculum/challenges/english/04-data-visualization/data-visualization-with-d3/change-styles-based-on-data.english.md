@@ -26,23 +26,23 @@ Add the <code>style()</code> method to the code in the editor to set the <code>c
 ```yml
 tests:
   - text: The first <code>h2</code> should have a <code>color</code> of red.
-    testString: 'assert($(''h2'').eq(0).css(''color'') == "rgb(255, 0, 0)", ''The first <code>h2</code> should have a <code>color</code> of red.'');'
+    testString: 'assert($("h2").eq(0).css("color") == "rgb(255, 0, 0)", "The first <code>h2</code> should have a <code>color</code> of red.");'
   - text: The second <code>h2</code> should have a <code>color</code> of green.
-    testString: 'assert($(''h2'').eq(1).css(''color'') == "rgb(0, 128, 0)", ''The second <code>h2</code> should have a <code>color</code> of green.'');'
+    testString: 'assert($("h2").eq(1).css("color") == "rgb(0, 128, 0)", "The second <code>h2</code> should have a <code>color</code> of green.");'
   - text: The third <code>h2</code> should have a <code>color</code> of green.
-    testString: 'assert($(''h2'').eq(2).css(''color'') == "rgb(0, 128, 0)", ''The third <code>h2</code> should have a <code>color</code> of green.'');'
+    testString: 'assert($("h2").eq(2).css("color") == "rgb(0, 128, 0)", "The third <code>h2</code> should have a <code>color</code> of green.");'
   - text: The fourth <code>h2</code> should have a <code>color</code> of red.
-    testString: 'assert($(''h2'').eq(3).css(''color'') == "rgb(255, 0, 0)", ''The fourth <code>h2</code> should have a <code>color</code> of red.'');'
+    testString: 'assert($("h2").eq(3).css("color") == "rgb(255, 0, 0)", "The fourth <code>h2</code> should have a <code>color</code> of red.");'
   - text: The fifth <code>h2</code> should have a <code>color</code> of green.
-    testString: 'assert($(''h2'').eq(4).css(''color'') == "rgb(0, 128, 0)", ''The fifth <code>h2</code> should have a <code>color</code> of green.'');'
+    testString: 'assert($("h2").eq(4).css("color") == "rgb(0, 128, 0)", "The fifth <code>h2</code> should have a <code>color</code> of green.");'
   - text: The sixth <code>h2</code> should have a <code>color</code> of red.
-    testString: 'assert($(''h2'').eq(5).css(''color'') == "rgb(255, 0, 0)", ''The sixth <code>h2</code> should have a <code>color</code> of red.'');'
+    testString: 'assert($("h2").eq(5).css("color") == "rgb(255, 0, 0)", "The sixth <code>h2</code> should have a <code>color</code> of red.");'
   - text: The seventh <code>h2</code> should have a <code>color</code> of green.
-    testString: 'assert($(''h2'').eq(6).css(''color'') == "rgb(0, 128, 0)", ''The seventh <code>h2</code> should have a <code>color</code> of green.'');'
+    testString: 'assert($("h2").eq(6).css("color") == "rgb(0, 128, 0)", "The seventh <code>h2</code> should have a <code>color</code> of green.");'
   - text: The eighth <code>h2</code> should have a <code>color</code> of red.
-    testString: 'assert($(''h2'').eq(7).css(''color'') == "rgb(255, 0, 0)", ''The eighth <code>h2</code> should have a <code>color</code> of red.'');'
+    testString: 'assert($("h2").eq(7).css("color") == "rgb(255, 0, 0)", "The eighth <code>h2</code> should have a <code>color</code> of red.");'
   - text: The ninth <code>h2</code> should have a <code>color</code> of red.
-    testString: 'assert($(''h2'').eq(8).css(''color'') == "rgb(255, 0, 0)", ''The ninth <code>h2</code> should have a <code>color</code> of red.'');'
+    testString: 'assert($("h2").eq(8).css("color") == "rgb(255, 0, 0)", "The ninth <code>h2</code> should have a <code>color</code> of red.");'
 
 ```
 
@@ -57,16 +57,16 @@ tests:
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-    
+
     d3.select("body").selectAll("h2")
       .data(dataset)
       .enter()
       .append("h2")
       .text((d) => (d + " USD"))
       // Add your code below this line
-      
-      
-      
+
+
+
       // Add your code above this line
   </script>
 </body>

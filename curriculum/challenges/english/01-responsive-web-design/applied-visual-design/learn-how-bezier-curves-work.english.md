@@ -25,9 +25,9 @@ For the element with the id of <code>ball1</code>, change the value of the <code
 ```yml
 tests:
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.
-    testString: 'assert($(''#ball1'').css(''animation-timing-function'') == ''cubic-bezier(0.25, 0.25, 0.75, 0.75)'', ''The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.'');'
+    testString: 'assert($("#ball1").css("animation-timing-function") == "cubic-bezier(0.25, 0.25, 0.75, 0.75)", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball1</code> should be the linear-equivalent cubic-bezier function.");'
   - text: The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.
-    testString: 'assert($(''#ball2'').css(''animation-timing-function'') == ''ease-out'', ''The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.'');'
+    testString: 'assert($("#ball2").css("animation-timing-function") == "ease-out", "The value of the <code>animation-timing-function</code> property for the element with the id <code>ball2</code> should not change.");'
 
 ```
 
@@ -48,7 +48,7 @@ tests:
       #ccffff,
       #ffcccc
     );
-    position: fixed;  
+    position: fixed;
     width: 50px;
     height: 50px;
     margin-top: 50px;
@@ -56,11 +56,11 @@ tests:
     animation-duration: 2s;
     animation-iteration-count: infinite;
   }
-  #ball1 { 
+  #ball1 {
     left: 27%;
     animation-timing-function: linear;
   }
-  #ball2 { 
+  #ball2 {
     left: 56%;
     animation-timing-function: ease-out;
   }
@@ -68,11 +68,11 @@ tests:
 @keyframes bounce {
   0% {
     top: 0px;
-  } 
+  }
   100% {
     top: 249px;
   }
-} 
+}
 
 </style>
 

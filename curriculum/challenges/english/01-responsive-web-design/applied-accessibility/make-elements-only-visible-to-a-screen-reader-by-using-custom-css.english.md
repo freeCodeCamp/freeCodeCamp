@@ -29,13 +29,13 @@ Camper Cat created a really cool stacked bar chart for his training page, and pu
 ```yml
 tests:
   - text: Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.
-    testString: 'assert($(''.sr-only'').css(''position'') == ''absolute'', ''Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.'');'
+    testString: 'assert($(".sr-only").css("position") == "absolute", "Your code should set the <code>position</code> property of the <code>sr-only</code> class to a value of absolute.");'
   - text: Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.
-    testString: 'assert($(''.sr-only'').css(''left'') == ''-10000px'', ''Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.'');'
+    testString: 'assert($(".sr-only").css("left") == "-10000px", "Your code should set the <code>left</code> property of the <code>sr-only</code> class to a value of -10000px.");'
   - text: Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.
-    testString: 'assert(code.match(/width:\s*?1px/gi), ''Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.'');'
+    testString: 'assert(code.match(/width:\s*?1px/gi), "Your code should set the <code>width</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
   - text: Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.
-    testString: 'assert(code.match(/height:\s*?1px/gi), ''Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.'');'
+    testString: 'assert(code.match(/height:\s*?1px/gi), "Your code should set the <code>height</code> property of the <code>sr-only</code> class to a value of 1 pixel.");'
 
 ```
 
@@ -86,7 +86,7 @@ tests:
           <th scope="col">Stealth &amp; Agility</th>
           <th scope="col">Combat</th>
           <th scope="col">Weapons</th>
-          <th scope="col">Total</th>                                        
+          <th scope="col">Total</th>
         </tr>
       </thead>
       <tbody>

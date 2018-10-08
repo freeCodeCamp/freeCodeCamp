@@ -25,23 +25,23 @@ Normally stacks don't have this, but we've added a <code>print</code> helper met
 ```yml
 tests:
   - text: Your <code>Stack</code> class should have a <code>push</code> method.
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.push === ''function'')}()), ''Your <code>Stack</code> class should have a <code>push</code> method.'');'
+    testString: 'assert((function(){var test = new Stack(); return (typeof test.push === "function")}()), "Your <code>Stack</code> class should have a <code>push</code> method.");'
   - text: Your <code>Stack</code> class should have a <code>pop</code> method.
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.pop === ''function'')}()), ''Your <code>Stack</code> class should have a <code>pop</code> method.'');'
+    testString: 'assert((function(){var test = new Stack(); return (typeof test.pop === "function")}()), "Your <code>Stack</code> class should have a <code>pop</code> method.");'
   - text: Your <code>Stack</code> class should have a <code>peek</code> method.
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.peek === ''function'')}()), ''Your <code>Stack</code> class should have a <code>peek</code> method.'');'
+    testString: 'assert((function(){var test = new Stack(); return (typeof test.peek === "function")}()), "Your <code>Stack</code> class should have a <code>peek</code> method.");'
   - text: Your <code>Stack</code> class should have a <code>isEmpty</code> method.
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.isEmpty === ''function'')}()), ''Your <code>Stack</code> class should have a <code>isEmpty</code> method.'');'
+    testString: 'assert((function(){var test = new Stack(); return (typeof test.isEmpty === "function")}()), "Your <code>Stack</code> class should have a <code>isEmpty</code> method.");'
   - text: Your <code>Stack</code> class should have a <code>clear</code> method.
-    testString: 'assert((function(){var test = new Stack(); return (typeof test.clear === ''function'')}()), ''Your <code>Stack</code> class should have a <code>clear</code> method.'');'
+    testString: 'assert((function(){var test = new Stack(); return (typeof test.clear === "function")}()), "Your <code>Stack</code> class should have a <code>clear</code> method.");'
   - text: The <code>peek</code> method should return the top element of the stack
-    testString: 'assert((function(){var test = new Stack();  test.push(''CS50''); return (test.peek() === ''CS50'')}()), ''The <code>peek</code> method should return the top element of the stack'');'
+    testString: 'assert((function(){var test = new Stack();  test.push("CS50"); return (test.peek() === "CS50")}()), "The <code>peek</code> method should return the top element of the stack");'
   - text: The <code>pop</code> method should remove and return the top element of the stack
-    testString: 'assert((function(){var test = new Stack(); test.push(''CS50''); return (test.pop() === ''CS50'');}()), ''The <code>pop</code> method should remove and return the top element of the stack'');'
+    testString: 'assert((function(){var test = new Stack(); test.push("CS50"); return (test.pop() === "CS50");}()), "The <code>pop</code> method should remove and return the top element of the stack");'
   - text: The <code>isEmpty</code> method should return true if a stack does not contain any elements
-    testString: 'assert((function(){var test = new Stack(); return test.isEmpty()}()), ''The <code>isEmpty</code> method should return true if a stack does not contain any elements'');'
+    testString: 'assert((function(){var test = new Stack(); return test.isEmpty()}()), "The <code>isEmpty</code> method should return true if a stack does not contain any elements");'
   - text: The <code>clear</code> method should remove all element from the stack
-    testString: 'assert((function(){var test = new Stack();  test.push(''CS50''); test.clear(); return (test.isEmpty())}()), ''The <code>clear</code> method should remove all element from the stack'');'
+    testString: 'assert((function(){var test = new Stack();  test.push("CS50"); test.clear(); return (test.isEmpty())}()), "The <code>clear</code> method should remove all element from the stack");'
 
 ```
 
@@ -53,7 +53,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Stack() { 
+function Stack() {
     var collection = [];
     this.print = function() {
         console.log(collection);

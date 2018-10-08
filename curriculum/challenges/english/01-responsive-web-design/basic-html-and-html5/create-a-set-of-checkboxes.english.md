@@ -27,13 +27,13 @@ Add to your form a set of three checkboxes. Each checkbox should be nested withi
 ```yml
 tests:
   - text: Your page should have three checkbox elements.
-    testString: 'assert($(''input[type="checkbox"]'').length > 2, ''Your page should have three checkbox elements.'');'
+    testString: 'assert($("input[type="checkbox"]").length > 2, "Your page should have three checkbox elements.");'
   - text: Each of your three checkbox elements should be nested in its own <code>label</code> element.
-    testString: 'assert($(''label > input[type="checkbox"]:only-child'').length > 2, ''Each of your three checkbox elements should be nested in its own <code>label</code> element.'');'
+    testString: 'assert($("label > input[type="checkbox"]:only-child").length > 2, "Each of your three checkbox elements should be nested in its own <code>label</code> element.");'
   - text: Make sure each of your <code>label</code> elements has a closing tag.
-    testString: 'assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length, ''Make sure each of your <code>label</code> elements has a closing tag.'');'
+    testString: 'assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length, "Make sure each of your <code>label</code> elements has a closing tag.");'
   - text: Give your checkboxes the <code>name</code> attribute of <code>personality</code>.
-    testString: 'assert($(''label > input[type="checkbox"]'').filter("[name=''personality'']").length > 2, ''Give your checkboxes the <code>name</code> attribute of <code>personality</code>.'');'
+    testString: 'assert($("label > input[type="checkbox"]").filter("[name="personality"]").length > 2, "Give your checkboxes the <code>name</code> attribute of <code>personality</code>.");'
 
 ```
 
@@ -48,9 +48,9 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>

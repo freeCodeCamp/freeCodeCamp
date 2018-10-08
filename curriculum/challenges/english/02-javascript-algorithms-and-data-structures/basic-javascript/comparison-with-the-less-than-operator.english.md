@@ -22,19 +22,19 @@ Add the <code>less than</code> operator to the indicated lines so that the retur
 ```yml
 tests:
   - text: <code>testLessThan(0)</code> should return "Under 25"
-    testString: 'assert(testLessThan(0) === "Under 25", ''<code>testLessThan(0)</code> should return "Under 25"'');'
+    testString: 'assert(testLessThan(0) === "Under 25", "<code>testLessThan(0)</code> should return "Under 25"");'
   - text: <code>testLessThan(24)</code> should return "Under 25"
-    testString: 'assert(testLessThan(24) === "Under 25", ''<code>testLessThan(24)</code> should return "Under 25"'');'
+    testString: 'assert(testLessThan(24) === "Under 25", "<code>testLessThan(24)</code> should return "Under 25"");'
   - text: <code>testLessThan(25)</code> should return "Under 55"
-    testString: 'assert(testLessThan(25) === "Under 55", ''<code>testLessThan(25)</code> should return "Under 55"'');'
+    testString: 'assert(testLessThan(25) === "Under 55", "<code>testLessThan(25)</code> should return "Under 55"");'
   - text: <code>testLessThan(54)</code> should return "Under 55"
-    testString: 'assert(testLessThan(54) === "Under 55", ''<code>testLessThan(54)</code> should return "Under 55"'');'
+    testString: 'assert(testLessThan(54) === "Under 55", "<code>testLessThan(54)</code> should return "Under 55"");'
   - text: <code>testLessThan(55)</code> should return "55 or Over"
-    testString: 'assert(testLessThan(55) === "55 or Over", ''<code>testLessThan(55)</code> should return "55 or Over"'');'
+    testString: 'assert(testLessThan(55) === "55 or Over", "<code>testLessThan(55)</code> should return "55 or Over"");'
   - text: <code>testLessThan(99)</code> should return "55 or Over"
-    testString: 'assert(testLessThan(99) === "55 or Over", ''<code>testLessThan(99)</code> should return "55 or Over"'');'
+    testString: 'assert(testLessThan(99) === "55 or Over", "<code>testLessThan(99)</code> should return "55 or Over"");'
   - text: You should use the <code>&lt;</code> operator at least twice
-    testString: 'assert(code.match(/val\s*<\s*(''|")*\d+(''|")*/g).length > 1, ''You should use the <code>&lt;</code> operator at least twice'');'
+    testString: 'assert(code.match(/val\s*<\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&lt;</code> operator at least twice");'
 
 ```
 
@@ -50,7 +50,7 @@ function testLessThan(val) {
   if (val) {  // Change this line
     return "Under 25";
   }
-  
+
   if (val) {  // Change this line
     return "Under 55";
   }
@@ -77,7 +77,7 @@ function testLessThan(val) {
   if (val < 25) {  // Change this line
     return "Under 25";
   }
-  
+
   if (val < 55) {  // Change this line
     return "Under 55";
   }

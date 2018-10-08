@@ -17,7 +17,7 @@ The smallest cyclic number is the 6-digit number 142857 :
 142857 × 3 = 428571
 142857 × 4 = 571428
 142857 × 5 = 714285
-142857 × 6 = 857142  
+142857 × 6 = 857142
 
 
 
@@ -48,7 +48,7 @@ There is only one cyclic number for which, the eleven leftmost digits are 000000
 ```yml
 tests:
   - text: <code>euler358()</code> should return 3284144505.
-    testString: 'assert.strictEqual(euler358(), 3284144505, ''<code>euler358()</code> should return 3284144505.'');'
+    testString: 'assert.strictEqual(euler358(), 3284144505, "<code>euler358()</code> should return 3284144505.");'
 
 ```
 

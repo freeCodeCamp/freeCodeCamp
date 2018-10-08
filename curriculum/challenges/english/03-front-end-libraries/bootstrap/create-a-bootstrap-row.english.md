@@ -21,13 +21,13 @@ Create a <code>div</code> element below the <code>h3</code> tag, with a class of
 ```yml
 tests:
   - text: Add a <code>div</code> element below your <code>h3</code> element.
-    testString: 'assert(($("div").length > 1) && ($("div.row h3.text-primary").length == 0) && ($("div.row + h3.text-primary").length == 0) && ($("h3.text-primary + div.row").length > 0), ''Add a <code>div</code> element below your <code>h3</code> element.'');'
+    testString: 'assert(($("div").length > 1) && ($("div.row h3.text-primary").length == 0) && ($("div.row + h3.text-primary").length == 0) && ($("h3.text-primary + div.row").length > 0), "Add a <code>div</code> element below your <code>h3</code> element.");'
   - text: Your <code>div</code> element should have the class <code>row</code>
-    testString: 'assert($("div").hasClass("row"), ''Your <code>div</code> element should have the class <code>row</code>'');'
+    testString: 'assert($("div").hasClass("row"), "Your <code>div</code> element should have the class <code>row</code>");'
   - text: Your <code>row div</code> should be nested inside the <code>container-fluid div</code>
-    testString: 'assert($("div.container-fluid div.row").length > 0, ''Your <code>row div</code> should be nested inside the <code>container-fluid div</code>'');'
+    testString: 'assert($("div.container-fluid div.row").length > 0, "Your <code>row div</code> should be nested inside the <code>container-fluid div</code>");'
   - text: Make sure your <code>div</code> element has a closing tag.
-    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, ''Make sure your <code>div</code> element has a closing tag.'');'
+    testString: 'assert(code.match(/<\/div>/g) && code.match(/<div/g) && code.match(/<\/div>/g).length === code.match(/<div/g).length, "Make sure your <code>div</code> element has a closing tag.");'
 
 ```
 

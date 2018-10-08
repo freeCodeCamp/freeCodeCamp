@@ -15,7 +15,7 @@ At each turn, you may choose a disk and flip all the disks in the same row and t
 It can be proven that 3 is the minimal number of turns to finish this game.
 
 The bottom left disk on the N×N board has coordinates (0,0);
-the bottom right disk has coordinates (N-1,0) and the top left disk has coordinates (0,N-1). 
+the bottom right disk has coordinates (N-1,0) and the top left disk has coordinates (0,N-1).
 
 Let CN be the following configuration of a board with N×N disks:
 A disk at (x,y) satisfying , shows its black side; otherwise, it shows its white side. C5 is shown above.
@@ -37,7 +37,7 @@ Find .
 ```yml
 tests:
   - text: <code>euler331()</code> should return 467178235146843500.
-    testString: 'assert.strictEqual(euler331(), 467178235146843500, ''<code>euler331()</code> should return 467178235146843500.'');'
+    testString: 'assert.strictEqual(euler331(), 467178235146843500, "<code>euler331()</code> should return 467178235146843500.");'
 
 ```
 

@@ -23,7 +23,7 @@ Set the <code>opacity</code> of the anchor tags to 0.7 using <code>links</code> 
 ```yml
 tests:
   - text: Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.
-    testString: 'assert.approximately(parseFloat($(''.links'').css(''opacity'')), 0.7, 0.1, ''Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.'');'
+    testString: 'assert.approximately(parseFloat($(".links").css("opacity")), 0.7, 0.1, "Your code should set the <code>opacity</code> property to 0.7 on the anchor tags by selecting the class of <code>links</code>.");'
 
 ```
 
@@ -48,7 +48,7 @@ tests:
   .links {
     text-align: left;
     color: black;
-    
+
   }
   #thumbnail {
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);

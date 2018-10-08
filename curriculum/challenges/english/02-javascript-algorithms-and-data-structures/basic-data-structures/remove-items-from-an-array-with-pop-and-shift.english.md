@@ -24,11 +24,11 @@ We have defined a function, <code>popShift</code>, which takes an array as an ar
 ```yml
 tests:
   - text: '<code>popShift(["challenge", "is", "not", "complete"])</code> should return <code>["challenge", "complete"]</code>'
-    testString: 'assert.deepEqual(popShift([''challenge'', ''is'', ''not'', ''complete'']), ["challenge", "complete"], ''<code>popShift(["challenge", "is", "not", "complete"])</code> should return <code>["challenge", "complete"]</code>'');'
+    testString: 'assert.deepEqual(popShift(["challenge", "is", "not", "complete"]), ["challenge", "complete"], "<code>popShift(["challenge", "is", "not", "complete"])</code> should return <code>["challenge", "complete"]</code>");'
   - text: The <code>popShift</code> function should utilize the <code>pop()</code> method
-    testString: 'assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1, ''The <code>popShift</code> function should utilize the <code>pop()</code> method'');'
+    testString: 'assert.notStrictEqual(popShift.toString().search(/\.pop\(/), -1, "The <code>popShift</code> function should utilize the <code>pop()</code> method");'
   - text: The <code>popShift</code> function should utilize the <code>shift()</code> method
-    testString: 'assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1, ''The <code>popShift</code> function should utilize the <code>shift()</code> method'');'
+    testString: 'assert.notStrictEqual(popShift.toString().search(/\.shift\(/), -1, "The <code>popShift</code> function should utilize the <code>shift()</code> method");'
 
 ```
 

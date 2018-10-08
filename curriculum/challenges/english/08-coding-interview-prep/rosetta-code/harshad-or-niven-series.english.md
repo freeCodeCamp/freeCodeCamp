@@ -23,9 +23,9 @@ Task:
 ```yml
 tests:
   - text: <code>isHarshadOrNiven</code> is a function.
-    testString: 'assert(typeof isHarshadOrNiven === ''function'', ''<code>isHarshadOrNiven</code> is a function.'');'
+    testString: 'assert(typeof isHarshadOrNiven === "function", "<code>isHarshadOrNiven</code> is a function.");'
   - text: '<code>isHarshadOrNiven()</code> should return <code>{"firstTwenty": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],"firstOver1000": 1002}</code>'
-    testString: 'assert.deepEqual(isHarshadOrNiven(), res, ''<code>isHarshadOrNiven()</code> should return <code>{"firstTwenty": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],"firstOver1000": 1002}</code>'');'
+    testString: 'assert.deepEqual(isHarshadOrNiven(), res, "<code>isHarshadOrNiven()</code> should return <code>{"firstTwenty": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20, 21, 24, 27, 30, 36, 40, 42],"firstOver1000": 1002}</code>");'
 
 ```
 

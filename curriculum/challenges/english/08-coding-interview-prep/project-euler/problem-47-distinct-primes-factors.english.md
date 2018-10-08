@@ -27,11 +27,11 @@ Find the first four consecutive integers to have four distinct prime factors eac
 ```yml
 tests:
   - text: '<code>distinctPrimeFactors(2, 2)</code> should return 14.'
-    testString: 'assert.strictEqual(distinctPrimeFactors(2, 2), 14, ''<code>distinctPrimeFactors(2, 2)</code> should return 14.'');'
+    testString: 'assert.strictEqual(distinctPrimeFactors(2, 2), 14, "<code>distinctPrimeFactors(2, 2)</code> should return 14.");'
   - text: '<code>distinctPrimeFactors(3, 3)</code> should return 644.'
-    testString: 'assert.strictEqual(distinctPrimeFactors(3, 3), 644, ''<code>distinctPrimeFactors(3, 3)</code> should return 644.'');'
+    testString: 'assert.strictEqual(distinctPrimeFactors(3, 3), 644, "<code>distinctPrimeFactors(3, 3)</code> should return 644.");'
   - text: '<code>distinctPrimeFactors(4, 4)</code> should return 134043.'
-    testString: 'assert.strictEqual(distinctPrimeFactors(4, 4), 134043, ''<code>distinctPrimeFactors(4, 4)</code> should return 134043.'');'
+    testString: 'assert.strictEqual(distinctPrimeFactors(4, 4), 134043, "<code>distinctPrimeFactors(4, 4)</code> should return 134043.");'
 
 ```
 

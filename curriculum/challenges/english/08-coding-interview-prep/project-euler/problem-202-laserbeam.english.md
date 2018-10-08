@@ -29,7 +29,7 @@ In how many ways can a laser beam enter at vertex C, bounce off 12017639147 surf
 ```yml
 tests:
   - text: <code>euler202()</code> should return 1209002624.
-    testString: 'assert.strictEqual(euler202(), 1209002624, ''<code>euler202()</code> should return 1209002624.'');'
+    testString: 'assert.strictEqual(euler202(), 1209002624, "<code>euler202()</code> should return 1209002624.");'
 
 ```
 

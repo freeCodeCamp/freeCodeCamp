@@ -10,7 +10,7 @@ A laborious ant walks randomly on a 5x5 grid. The walk starts from the central s
 
 At the start of the walk, a seed is placed on each square of the lower row. When the ant isn't carrying a seed and reaches a square of the lower row containing a seed, it will start to carry the seed. The ant will drop the seed on the first empty square of the upper row it eventually reaches.
 
-What's the expected number of steps until all seeds have been dropped in the top row? 
+What's the expected number of steps until all seeds have been dropped in the top row?
 Give your answer rounded to 6 decimal places.
 </section>
 
@@ -25,7 +25,7 @@ Give your answer rounded to 6 decimal places.
 ```yml
 tests:
   - text: <code>euler280()</code> should return 430.088247.
-    testString: 'assert.strictEqual(euler280(), 430.088247, ''<code>euler280()</code> should return 430.088247.'');'
+    testString: 'assert.strictEqual(euler280(), 430.088247, "<code>euler280()</code> should return 430.088247.");'
 
 ```
 

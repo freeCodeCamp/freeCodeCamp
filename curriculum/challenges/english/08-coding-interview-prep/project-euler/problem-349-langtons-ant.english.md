@@ -1,12 +1,12 @@
 ---
 id: 5900f4ca1000cf542c50ffdc
 challengeType: 5
-title: 'Problem 349: Langton''s ant'
+title: 'Problem 349: Langton"s ant'
 ---
 
 ## Description
 <section id='description'>
-An ant moves on a regular grid of squares that are coloured either black or white. 
+An ant moves on a regular grid of squares that are coloured either black or white.
 The ant is always oriented in one of the cardinal directions (left, right, up or down) and moves from square to adjacent square according to the following rules:
 - if it is on a black square, it flips the color of the square to white, rotates 90 degrees counterclockwise and moves forward one square.
 - if it is on a white square, it flips the color of the square to black, rotates 90 degrees clockwise and moves forward one square.
@@ -25,7 +25,7 @@ Starting with a grid that is entirely white, how many squares are black after 10
 ```yml
 tests:
   - text: <code>euler349()</code> should return 115384615384614940.
-    testString: 'assert.strictEqual(euler349(), 115384615384614940, ''<code>euler349()</code> should return 115384615384614940.'');'
+    testString: 'assert.strictEqual(euler349(), 115384615384614940, "<code>euler349()</code> should return 115384615384614940.");'
 
 ```
 

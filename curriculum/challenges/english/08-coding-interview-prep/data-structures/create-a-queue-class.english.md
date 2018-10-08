@@ -24,23 +24,23 @@ Write an enqueue method that pushes an element to the tail of the queue, a deque
 ```yml
 tests:
   - text: Your <code>Queue</code> class should have a <code>enqueue</code> method.
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.enqueue === ''function'')}()), ''Your <code>Queue</code> class should have a <code>enqueue</code> method.'');'
+    testString: 'assert((function(){var test = new Queue();  return (typeof test.enqueue === "function")}()), "Your <code>Queue</code> class should have a <code>enqueue</code> method.");'
   - text: Your <code>Queue</code> class should have a <code>dequeue</code> method.
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.dequeue === ''function'')}()), ''Your <code>Queue</code> class should have a <code>dequeue</code> method.'');'
+    testString: 'assert((function(){var test = new Queue();  return (typeof test.dequeue === "function")}()), "Your <code>Queue</code> class should have a <code>dequeue</code> method.");'
   - text: Your <code>Queue</code> class should have a <code>front</code> method.
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.front === ''function'')}()), ''Your <code>Queue</code> class should have a <code>front</code> method.'');'
+    testString: 'assert((function(){var test = new Queue();  return (typeof test.front === "function")}()), "Your <code>Queue</code> class should have a <code>front</code> method.");'
   - text: Your <code>Queue</code> class should have a <code>size</code> method.
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.size === ''function'')}()), ''Your <code>Queue</code> class should have a <code>size</code> method.'');'
+    testString: 'assert((function(){var test = new Queue();  return (typeof test.size === "function")}()), "Your <code>Queue</code> class should have a <code>size</code> method.");'
   - text: Your <code>Queue</code> class should have an <code>isEmpty</code> method.
-    testString: 'assert((function(){var test = new Queue();  return (typeof test.isEmpty === ''function'')}()), ''Your <code>Queue</code> class should have an <code>isEmpty</code> method.'');'
+    testString: 'assert((function(){var test = new Queue();  return (typeof test.isEmpty === "function")}()), "Your <code>Queue</code> class should have an <code>isEmpty</code> method.");'
   - text: The <code>dequeue</code> method should remove and return the front element of the queue
-    testString: 'assert((function(){var test = new Queue();  test.enqueue(''Smith''); return (test.dequeue() === ''Smith'')}()), ''The <code>dequeue</code> method should remove and return the front element of the queue'');'
+    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return (test.dequeue() === "Smith")}()), "The <code>dequeue</code> method should remove and return the front element of the queue");'
   - text: The <code>front</code> method should return value of the front element of the queue
-    testString: 'assert((function(){var test = new Queue();  test.enqueue(''Smith''); test.enqueue(''John''); return (test.front() === ''Smith'')}()), ''The <code>front</code> method should return value of the front element of the queue'');'
+    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); test.enqueue("John"); return (test.front() === "Smith")}()), "The <code>front</code> method should return value of the front element of the queue");'
   - text: The <code>size</code> method should return the length of the queue
-    testString: 'assert((function(){var test = new Queue();  test.enqueue(''Smith''); return (test.size() === 1)}()), ''The <code>size</code> method should return the length of the queue'');'
+    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return (test.size() === 1)}()), "The <code>size</code> method should return the length of the queue");'
   - text: The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue
-    testString: 'assert((function(){var test = new Queue();  test.enqueue(''Smith''); return !(test.isEmpty())}()), ''The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue'');'
+    testString: 'assert((function(){var test = new Queue();  test.enqueue("Smith"); return !(test.isEmpty())}()), "The <code>isEmpty</code> method should return <code>false</code> if there are elements in the queue");'
 
 ```
 
@@ -52,7 +52,7 @@ tests:
 <div id='js-seed'>
 
 ```js
-function Queue () { 
+function Queue () {
     var collection = [];
     this.print = function() {
         console.log(collection);

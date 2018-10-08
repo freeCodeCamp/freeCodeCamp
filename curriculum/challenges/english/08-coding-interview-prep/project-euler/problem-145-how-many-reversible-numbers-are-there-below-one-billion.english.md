@@ -24,7 +24,7 @@ How many reversible numbers are there below one-billion (109)?
 ```yml
 tests:
   - text: <code>euler145()</code> should return 608720.
-    testString: 'assert.strictEqual(euler145(), 608720, ''<code>euler145()</code> should return 608720.'');'
+    testString: 'assert.strictEqual(euler145(), 608720, "<code>euler145()</code> should return 608720.");'
 
 ```
 

@@ -35,7 +35,7 @@ Find the sum of the primes q <1000000 such that P(q)=1.
 ```yml
 tests:
   - text: <code>euler333()</code> should return 3053105.
-    testString: 'assert.strictEqual(euler333(), 3053105, ''<code>euler333()</code> should return 3053105.'');'
+    testString: 'assert.strictEqual(euler333(), 3053105, "<code>euler333()</code> should return 3053105.");'
 
 ```
 

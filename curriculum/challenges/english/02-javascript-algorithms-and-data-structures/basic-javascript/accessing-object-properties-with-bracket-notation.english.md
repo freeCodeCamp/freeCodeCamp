@@ -25,15 +25,15 @@ Read the values of the properties <code>"an entree"</code> and <code>"the drink"
 ```yml
 tests:
   - text: <code>entreeValue</code> should be a string
-    testString: 'assert(typeof entreeValue === ''string'' , ''<code>entreeValue</code> should be a string'');'
+    testString: 'assert(typeof entreeValue === "string" , "<code>entreeValue</code> should be a string");'
   - text: The value of <code>entreeValue</code> should be <code>"hamburger"</code>
-    testString: 'assert(entreeValue === ''hamburger'' , ''The value of <code>entreeValue</code> should be <code>"hamburger"</code>'');'
+    testString: 'assert(entreeValue === "hamburger" , "The value of <code>entreeValue</code> should be <code>"hamburger"</code>");'
   - text: <code>drinkValue</code> should be a string
-    testString: 'assert(typeof drinkValue === ''string'' , ''<code>drinkValue</code> should be a string'');'
+    testString: 'assert(typeof drinkValue === "string" , "<code>drinkValue</code> should be a string");'
   - text: The value of <code>drinkValue</code> should be <code>"water"</code>
-    testString: 'assert(drinkValue === ''water'' , ''The value of <code>drinkValue</code> should be <code>"water"</code>'');'
+    testString: 'assert(drinkValue === "water" , "The value of <code>drinkValue</code> should be <code>"water"</code>");'
   - text: You should use bracket notation twice
-    testString: 'assert(code.match(/testObj\s*?\[(''|")[^''"]+\1\]/g).length > 1, ''You should use bracket notation twice'');'
+    testString: 'assert(code.match(/testObj\s*?\[("|")[^""]+\1\]/g).length > 1, "You should use bracket notation twice");'
 
 ```
 

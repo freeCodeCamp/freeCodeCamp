@@ -30,13 +30,13 @@ Create another <code>Dog</code> constructor. This time, set it up to take the pa
 ```yml
 tests:
   - text: <code>Dog</code> should receive an argument for <code>name</code>.
-    testString: 'assert((new Dog(''Clifford'')).name === ''Clifford'', ''<code>Dog</code> should receive an argument for <code>name</code>.'');'
+    testString: 'assert((new Dog("Clifford")).name === "Clifford", "<code>Dog</code> should receive an argument for <code>name</code>.");'
   - text: <code>Dog</code> should receive an argument for <code>color</code>.
-    testString: 'assert((new Dog(''Clifford'', ''yellow'')).color === ''yellow'', ''<code>Dog</code> should receive an argument for <code>color</code>.'');'
+    testString: 'assert((new Dog("Clifford", "yellow")).color === "yellow", "<code>Dog</code> should receive an argument for <code>color</code>.");'
   - text: <code>Dog</code> should have property <code>numLegs</code> set to 4.
-    testString: 'assert((new Dog(''Clifford'')).numLegs === 4, ''<code>Dog</code> should have property <code>numLegs</code> set to 4.'');'
+    testString: 'assert((new Dog("Clifford")).numLegs === 4, "<code>Dog</code> should have property <code>numLegs</code> set to 4.");'
   - text: <code>terrier</code> should be created using the <code>Dog</code> constructor.
-    testString: 'assert(terrier instanceof Dog, ''<code>terrier</code> should be created using the <code>Dog</code> constructor.'');'
+    testString: 'assert(terrier instanceof Dog, "<code>terrier</code> should be created using the <code>Dog</code> constructor.");'
 
 ```
 
@@ -49,7 +49,7 @@ tests:
 
 ```js
 function Dog() {
-  
+
 }
 
 

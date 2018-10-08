@@ -25,13 +25,13 @@ the second a substring to be searched for.
 ```yml
 tests:
   - text: <code>countSubstring</code> is a function.
-    testString: 'assert(typeof countSubstring === ''function'', ''<code>countSubstring</code> is a function.'');'
+    testString: 'assert(typeof countSubstring === "function", "<code>countSubstring</code> is a function.");'
   - text: '<code>countSubstring("the three truths", "th")</code> should return <code>3</code>.'
-    testString: 'assert.equal(countSubstring(testCases[0], searchString[0]), results[0], ''<code>countSubstring("the three truths", "th")</code> should return <code>3</code>.'');'
+    testString: 'assert.equal(countSubstring(testCases[0], searchString[0]), results[0], "<code>countSubstring("the three truths", "th")</code> should return <code>3</code>.");'
   - text: '<code>countSubstring("ababababab", "abab")</code> should return <code>2</code>.'
-    testString: 'assert.equal(countSubstring(testCases[1], searchString[1]), results[1], ''<code>countSubstring("ababababab", "abab")</code> should return <code>2</code>.'');'
+    testString: 'assert.equal(countSubstring(testCases[1], searchString[1]), results[1], "<code>countSubstring("ababababab", "abab")</code> should return <code>2</code>.");'
   - text: '<code>countSubstring("abaabba*bbaba*bbab", "a*b")</code> should return <code>2</code>.'
-    testString: 'assert.equal(countSubstring(testCases[2], searchString[2]), results[2], ''<code>countSubstring("abaabba*bbaba*bbab", "a*b")</code> should return <code>2</code>.'');'
+    testString: 'assert.equal(countSubstring(testCases[2], searchString[2]), results[2], "<code>countSubstring("abaabba*bbaba*bbab", "a*b")</code> should return <code>2</code>.");'
 
 ```
 

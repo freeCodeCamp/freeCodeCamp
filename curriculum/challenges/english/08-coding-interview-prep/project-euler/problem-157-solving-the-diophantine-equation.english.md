@@ -42,7 +42,7 @@ How many solutions has this equation for 1 ≤ n ≤ 9?
 ```yml
 tests:
   - text: <code>euler157()</code> should return 53490.
-    testString: 'assert.strictEqual(euler157(), 53490, ''<code>euler157()</code> should return 53490.'');'
+    testString: 'assert.strictEqual(euler157(), 53490, "<code>euler157()</code> should return 53490.");'
 
 ```
 

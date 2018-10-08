@@ -34,7 +34,7 @@ Find B(10 000 000 000).
 ```yml
 tests:
   - text: <code>euler311()</code> should return 2466018557.
-    testString: 'assert.strictEqual(euler311(), 2466018557, ''<code>euler311()</code> should return 2466018557.'');'
+    testString: 'assert.strictEqual(euler311(), 2466018557, "<code>euler311()</code> should return 2466018557.");'
 
 ```
 

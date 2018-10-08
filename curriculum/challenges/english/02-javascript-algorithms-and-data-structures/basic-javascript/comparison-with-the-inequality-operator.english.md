@@ -22,17 +22,17 @@ Add the inequality operator <code>!=</code> in the <code>if</code> statement so 
 ```yml
 tests:
   - text: <code>testNotEqual(99)</code> should return "Equal"
-    testString: 'assert(testNotEqual(99) === "Equal", ''<code>testNotEqual(99)</code> should return "Equal"'');'
+    testString: 'assert(testNotEqual(99) === "Equal", "<code>testNotEqual(99)</code> should return "Equal"");'
   - text: <code>testNotEqual("99")</code> should return "Equal"
-    testString: 'assert(testNotEqual("99") === "Equal", ''<code>testNotEqual("99")</code> should return "Equal"'');'
+    testString: 'assert(testNotEqual("99") === "Equal", "<code>testNotEqual("99")</code> should return "Equal"");'
   - text: <code>testNotEqual(12)</code> should return "Not Equal"
-    testString: 'assert(testNotEqual(12) === "Not Equal", ''<code>testNotEqual(12)</code> should return "Not Equal"'');'
+    testString: 'assert(testNotEqual(12) === "Not Equal", "<code>testNotEqual(12)</code> should return "Not Equal"");'
   - text: <code>testNotEqual("12")</code> should return "Not Equal"
-    testString: 'assert(testNotEqual("12") === "Not Equal", ''<code>testNotEqual("12")</code> should return "Not Equal"'');'
+    testString: 'assert(testNotEqual("12") === "Not Equal", "<code>testNotEqual("12")</code> should return "Not Equal"");'
   - text: <code>testNotEqual("bob")</code> should return "Not Equal"
-    testString: 'assert(testNotEqual("bob") === "Not Equal", ''<code>testNotEqual("bob")</code> should return "Not Equal"'');'
+    testString: 'assert(testNotEqual("bob") === "Not Equal", "<code>testNotEqual("bob")</code> should return "Not Equal"");'
   - text: You should use the <code>!=</code> operator
-    testString: 'assert(code.match(/(?!!==)!=/), ''You should use the <code>!=</code> operator'');'
+    testString: 'assert(code.match(/(?!!==)!=/), "You should use the <code>!=</code> operator");'
 
 ```
 

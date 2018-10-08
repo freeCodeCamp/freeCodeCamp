@@ -23,7 +23,7 @@ Let n = 1015. Find the sum [∑0≤x≤100 Fn(x)] mod 1307674368000 (= 15!).
 ```yml
 tests:
   - text: <code>euler435()</code> should return 252541322550.
-    testString: 'assert.strictEqual(euler435(), 252541322550, ''<code>euler435()</code> should return 252541322550.'');'
+    testString: 'assert.strictEqual(euler435(), 252541322550, "<code>euler435()</code> should return 252541322550.");'
 
 ```
 

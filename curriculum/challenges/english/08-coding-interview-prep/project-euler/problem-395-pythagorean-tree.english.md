@@ -38,7 +38,7 @@ Find the smallest area possible for such a bounding rectangle, and give your ans
 ```yml
 tests:
   - text: <code>euler395()</code> should return 28.2453753155.
-    testString: 'assert.strictEqual(euler395(), 28.2453753155, ''<code>euler395()</code> should return 28.2453753155.'');'
+    testString: 'assert.strictEqual(euler395(), 28.2453753155, "<code>euler395()</code> should return 28.2453753155.");'
 
 ```
 

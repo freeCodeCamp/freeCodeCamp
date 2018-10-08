@@ -21,9 +21,9 @@ Delete the <code>"tails"</code> property from <code>myDog</code>. You may use ei
 ```yml
 tests:
   - text: Delete the property <code>"tails"</code> from <code>myDog</code>.
-    testString: 'assert(typeof myDog === "object" && myDog.tails === undefined, ''Delete the property <code>"tails"</code> from <code>myDog</code>.'');'
+    testString: 'assert(typeof myDog === "object" && myDog.tails === undefined, "Delete the property <code>"tails"</code> from <code>myDog</code>.");'
   - text: Do not modify the <code>myDog</code> setup
-    testString: 'assert(code.match(/"tails": 1/g).length > 1, ''Do not modify the <code>myDog</code> setup'');'
+    testString: 'assert(code.match(/"tails": 1/g).length > 1, "Do not modify the <code>myDog</code> setup");'
 
 ```
 

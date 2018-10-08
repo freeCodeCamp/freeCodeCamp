@@ -40,7 +40,7 @@ Find W(1 000 000, 100) modulo the semiprime 1000 036 000 099 (= 1 000 003 · 1 0
 ```yml
 tests:
   - text: <code>euler344()</code> should return 65579304332.
-    testString: 'assert.strictEqual(euler344(), 65579304332, ''<code>euler344()</code> should return 65579304332.'');'
+    testString: 'assert.strictEqual(euler344(), 65579304332, "<code>euler344()</code> should return 65579304332.");'
 
 ```
 

@@ -24,13 +24,13 @@ Fix the code so <code>duck.constructor</code> and <code>beagle.constructor</code
 ```yml
 tests:
   - text: <code>Bird.prototype</code> should be an instance of <code>Animal</code>.
-    testString: 'assert(Animal.prototype.isPrototypeOf(Bird.prototype), ''<code>Bird.prototype</code> should be an instance of <code>Animal</code>.'');'
+    testString: 'assert(Animal.prototype.isPrototypeOf(Bird.prototype), "<code>Bird.prototype</code> should be an instance of <code>Animal</code>.");'
   - text: <code>duck.constructor</code> should return <code>Bird</code>.
-    testString: 'assert(duck.constructor === Bird, ''<code>duck.constructor</code> should return <code>Bird</code>.'');'
+    testString: 'assert(duck.constructor === Bird, "<code>duck.constructor</code> should return <code>Bird</code>.");'
   - text: <code>Dog.prototype</code> should be an instance of <code>Animal</code>.
-    testString: 'assert(Animal.prototype.isPrototypeOf(Dog.prototype), ''<code>Dog.prototype</code> should be an instance of <code>Animal</code>.'');'
+    testString: 'assert(Animal.prototype.isPrototypeOf(Dog.prototype), "<code>Dog.prototype</code> should be an instance of <code>Animal</code>.");'
   - text: <code>beagle.constructor</code> should return <code>Dog</code>.
-    testString: 'assert(beagle.constructor === Dog, ''<code>beagle.constructor</code> should return <code>Dog</code>.'');'
+    testString: 'assert(beagle.constructor === Dog, "<code>beagle.constructor</code> should return <code>Dog</code>.");'
 
 ```
 

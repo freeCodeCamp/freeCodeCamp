@@ -21,9 +21,9 @@ Add the CSS property <code>order</code> to both <code>#box-1</code> and <code>#b
 ```yml
 tests:
   - text: 'The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.'
-    testString: 'assert($(''#box-1'').css(''order'') == ''2'', ''The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.'');'
+    testString: 'assert($("#box-1").css("order") == "2", "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.");'
   - text: 'The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.'
-    testString: 'assert($(''#box-2'').css(''order'') == ''1'', ''The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.'');'
+    testString: 'assert($("#box-2").css("order") == "1", "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.");'
 
 ```
 
@@ -42,14 +42,14 @@ tests:
   }
   #box-1 {
     background-color: dodgerblue;
-    
+
     height: 200px;
     width: 200px;
   }
 
   #box-2 {
     background-color: orangered;
-    
+
     height: 200px;
     width: 200px;
   }

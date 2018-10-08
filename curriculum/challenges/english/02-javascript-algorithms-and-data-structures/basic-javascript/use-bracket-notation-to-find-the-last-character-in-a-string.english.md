@@ -22,9 +22,9 @@ Use <dfn>bracket notation</dfn> to find the last character in the <code>lastName
 ```yml
 tests:
   - text: <code>lastLetterOfLastName</code> should be "e".
-    testString: 'assert(lastLetterOfLastName === "e", ''<code>lastLetterOfLastName</code> should be "e".'');'
+    testString: 'assert(lastLetterOfLastName === "e", "<code>lastLetterOfLastName</code> should be "e".");'
   - text: You have to use <code>.length</code> to get the last letter.
-    testString: 'assert(code.match(/\.length/g).length === 2, ''You have to use <code>.length</code> to get the last letter.'');'
+    testString: 'assert(code.match(/\.length/g).length === 2, "You have to use <code>.length</code> to get the last letter.");'
 
 ```
 

@@ -28,20 +28,20 @@ Write a function a that takes two strings as parameters and returns the associat
 
 ```yml
 tests:
-  - text: '''<code>jaro</code> should be a function.'''
-    testString: 'assert(typeof jaro==''function'',''<code>jaro</code> should be a function.'');'
-  - text: '''<code>jaro("''+tests[0][0]+''","''+tests[0][1]+''")</code> should return a number.'''
-    testString: 'assert(typeof jaro(tests[0][0],tests[0][1])==''number'',''<code>jaro()</code> should return a number.'');'
-  - text: '''<code>jaro("''+tests[0][0]+''","''+tests[0][1]+''")</code> should return <code>''+results[0]+''</code>.'''
-    testString: 'assert.equal(jaro(tests[0][0],tests[0][1]),results[0],''<code>jaro("''+tests[0][0]+''","''+tests[0][1]+''")</code> should return <code>''+results[0]+''</code>.'');'
-  - text: '''<code>jaro("''+tests[1][0]+''","''+tests[1][1]+''")</code> should return <code>''+results[1]+''</code>.'''
-    testString: 'assert.equal(jaro(tests[1][0],tests[1][1]),results[1],''<code>jaro("''+tests[1][0]+''","''+tests[1][1]+''")</code> should return <code>''+results[1]+''</code>.'');'
-  - text: '''<code>jaro("''+tests[2][0]+''","''+tests[2][1]+''")</code> should return <code>''+results[2]+''</code>.'''
-    testString: 'assert.equal(jaro(tests[2][0],tests[2][1]),results[2],''<code>jaro("''+tests[2][0]+''","''+tests[2][1]+''")</code> should return <code>''+results[2]+''</code>.'');'
-  - text: '''<code>jaro("''+tests[3][0]+''","''+tests[3][1]+''")</code> should return <code>''+results[3]+''</code>.'''
-    testString: 'assert.equal(jaro(tests[3][0],tests[3][1]),results[3],''<code>jaro("''+tests[3][0]+''","''+tests[3][1]+''")</code> should return <code>''+results[3]+''</code>.'');'
-  - text: '''<code>jaro("''+tests[4][0]+''","''+tests[4][1]+''")</code> should return <code>''+results[4]+''</code>.'''
-    testString: 'assert.equal(jaro(tests[4][0],tests[4][1]),results[4],''<code>jaro("''+tests[4][0]+''","''+tests[4][1]+''")</code> should return <code>''+results[4]+''</code>.'');'
+  - text: "'<code>jaro</code> should be a function."'
+    testString: 'assert(typeof jaro=="function","<code>jaro</code> should be a function.");'
+  - text: "'<code>jaro(""+tests[0][0]+"",""+tests[0][1]+"")</code> should return a number."'
+    testString: 'assert(typeof jaro(tests[0][0],tests[0][1])=="number","<code>jaro()</code> should return a number.");'
+  - text: "'<code>jaro(""+tests[0][0]+"",""+tests[0][1]+"")</code> should return <code>"+results[0]+"</code>."'
+    testString: 'assert.equal(jaro(tests[0][0],tests[0][1]),results[0],"<code>jaro(""+tests[0][0]+"",""+tests[0][1]+"")</code> should return <code>"+results[0]+"</code>.");'
+  - text: "'<code>jaro(""+tests[1][0]+"",""+tests[1][1]+"")</code> should return <code>"+results[1]+"</code>."'
+    testString: 'assert.equal(jaro(tests[1][0],tests[1][1]),results[1],"<code>jaro(""+tests[1][0]+"",""+tests[1][1]+"")</code> should return <code>"+results[1]+"</code>.");'
+  - text: "'<code>jaro(""+tests[2][0]+"",""+tests[2][1]+"")</code> should return <code>"+results[2]+"</code>."'
+    testString: 'assert.equal(jaro(tests[2][0],tests[2][1]),results[2],"<code>jaro(""+tests[2][0]+"",""+tests[2][1]+"")</code> should return <code>"+results[2]+"</code>.");'
+  - text: "'<code>jaro(""+tests[3][0]+"",""+tests[3][1]+"")</code> should return <code>"+results[3]+"</code>."'
+    testString: 'assert.equal(jaro(tests[3][0],tests[3][1]),results[3],"<code>jaro(""+tests[3][0]+"",""+tests[3][1]+"")</code> should return <code>"+results[3]+"</code>.");'
+  - text: "'<code>jaro(""+tests[4][0]+"",""+tests[4][1]+"")</code> should return <code>"+results[4]+"</code>."'
+    testString: 'assert.equal(jaro(tests[4][0],tests[4][1]),results[4],"<code>jaro(""+tests[4][0]+"",""+tests[4][1]+"")</code> should return <code>"+results[4]+"</code>.");'
 
 ```
 

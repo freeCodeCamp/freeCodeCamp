@@ -6,7 +6,7 @@ title: 'Problem 228: Minkowski Sums'
 
 ## Description
 <section id='description'>
-Let Sn be the regular n-sided polygon – or shape – whose vertices 
+Let Sn be the regular n-sided polygon – or shape – whose vertices
 
 vk (k = 1,2,…,n) have coordinates:
 
@@ -17,9 +17,9 @@ vk (k = 1,2,…,n) have coordinates:
         sin( 2k-1/n ×180° )
   Each Sn is to be interpreted as a filled shape consisting of all points on the perimeter and in the interior.
 
-The Minkowski sum, S+T, of two shapes S and T is the result of 
+The Minkowski sum, S+T, of two shapes S and T is the result of
 
-adding every point in S to every point in T, where point addition is performed coordinate-wise: 
+adding every point in S to every point in T, where point addition is performed coordinate-wise:
 
 (u, v) + (x, y) = (u+x, v+y).
 
@@ -42,7 +42,7 @@ How many sides does S1864 + S1865 + … + S1909 have?
 ```yml
 tests:
   - text: <code>euler228()</code> should return 86226.
-    testString: 'assert.strictEqual(euler228(), 86226, ''<code>euler228()</code> should return 86226.'');'
+    testString: 'assert.strictEqual(euler228(), 86226, "<code>euler228()</code> should return 86226.");'
 
 ```
 

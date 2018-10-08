@@ -28,15 +28,15 @@ Remember to use <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: '<code>addTogether(2, 3)</code> should return 5.'
-    testString: 'assert.deepEqual(addTogether(2, 3), 5, ''<code>addTogether(2, 3)</code> should return 5.'');'
+    testString: 'assert.deepEqual(addTogether(2, 3), 5, "<code>addTogether(2, 3)</code> should return 5.");'
   - text: <code>addTogether(2)(3)</code> should return 5.
-    testString: 'assert.deepEqual(addTogether(2)(3), 5, ''<code>addTogether(2)(3)</code> should return 5.'');'
+    testString: 'assert.deepEqual(addTogether(2)(3), 5, "<code>addTogether(2)(3)</code> should return 5.");'
   - text: '<code>addTogether("http://bit.ly/IqT6zt")</code> should return undefined.'
-    testString: 'assert.isUndefined(addTogether("http://bit.ly/IqT6zt"), ''<code>addTogether("http://bit.ly/IqT6zt")</code> should return undefined.'');'
+    testString: 'assert.isUndefined(addTogether("http://bit.ly/IqT6zt"), "<code>addTogether("http://bit.ly/IqT6zt")</code> should return undefined.");'
   - text: '<code>addTogether(2, "3")</code> should return undefined.'
-    testString: 'assert.isUndefined(addTogether(2, "3"), ''<code>addTogether(2, "3")</code> should return undefined.'');'
+    testString: 'assert.isUndefined(addTogether(2, "3"), "<code>addTogether(2, "3")</code> should return undefined.");'
   - text: '<code>addTogether(2)([3])</code> should return undefined.'
-    testString: 'assert.isUndefined(addTogether(2)([3]), ''<code>addTogether(2)([3])</code> should return undefined.'');'
+    testString: 'assert.isUndefined(addTogether(2)([3]), "<code>addTogether(2)([3])</code> should return undefined.");'
 
 ```
 
@@ -68,7 +68,7 @@ addTogether(2,3);
 ```js
 function addTogether() {
   var a = arguments[0];
-  if (toString.call(a) !== '[object Number]') return;  
+  if (toString.call(a) !== '[object Number]') return;
   if (arguments.length === 1) {
     return function(b) {
       if (toString.call(b) !== '[object Number]') return;
@@ -76,7 +76,7 @@ function addTogether() {
     };
   }
   var b = arguments[1];
-  if (toString.call(b) !== '[object Number]') return;  
+  if (toString.call(b) !== '[object Number]') return;
   return a + arguments[1];
 }
 ```

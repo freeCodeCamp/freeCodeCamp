@@ -19,20 +19,20 @@ Write a function to solve \(A.x = b\) using Gaussian elimination then backwards 
 
 ```yml
 tests:
-  - text: '''<code>gaussianElimination</code> should be a function.'''
-    testString: 'assert(typeof gaussianElimination==''function'',''<code>gaussianElimination</code> should be a function.'');'
-  - text: '''<code>gaussianElimination(''+JSON.stringify(tests[0][0])+'',''+JSON.stringify(tests[0][1])+'')</code> should return an array.'''
-    testString: 'assert(Array.isArray(gaussianElimination(tests[0][0],tests[0][1])),''<code>gaussianElimination(''+JSON.stringify(tests[0][0])+'',''+JSON.stringify(tests[0][1])+'')</code> should return an array.'');'
-  - text: '''<code>gaussianElimination(''+JSON.stringify(tests[0][0])+'',''+JSON.stringify(tests[0][1])+'')</code> should return <code>''+JSON.stringify(results[0])+''</code>.'''
-    testString: 'assert.deepEqual(gaussianElimination(tests[0][0],tests[0][1]),results[0],''<code>gaussianElimination(''+JSON.stringify(tests[0][0])+'',''+JSON.stringify(tests[0][1])+'')</code> should return <code>''+JSON.stringify(results[0])+''</code>.'');'
-  - text: '''<code>gaussianElimination(''+JSON.stringify(tests[1][0])+'',''+JSON.stringify(tests[1][1])+'')</code> should return <code>''+JSON.stringify(results[1])+''</code>.'''
-    testString: 'assert.deepEqual(gaussianElimination(tests[1][0],tests[1][1]),results[1],''<code>gaussianElimination(''+JSON.stringify(tests[1][0])+'',''+JSON.stringify(tests[1][1])+'')</code> should return <code>''+JSON.stringify(results[1])+''</code>.'');'
-  - text: '''<code>gaussianElimination(''+JSON.stringify(tests[2][0])+'',''+JSON.stringify(tests[2][1])+'')</code> should return <code>''+JSON.stringify(results[2])+''</code>.'''
-    testString: 'assert.deepEqual(gaussianElimination(tests[2][0],tests[2][1]),results[2],''<code>gaussianElimination(''+JSON.stringify(tests[2][0])+'',''+JSON.stringify(tests[2][1])+'')</code> should return <code>''+JSON.stringify(results[2])+''</code>.'');'
-  - text: '''<code>gaussianElimination(''+JSON.stringify(tests[3][0])+'',''+JSON.stringify(tests[3][1])+'')</code> should return <code>''+JSON.stringify(results[3])+''</code>.'''
-    testString: 'assert.deepEqual(gaussianElimination(tests[3][0],tests[3][1]),results[3],''<code>gaussianElimination(''+JSON.stringify(tests[3][0])+'',''+JSON.stringify(tests[3][1])+'')</code> should return <code>''+JSON.stringify(results[3])+''</code>.'');'
-  - text: '''<code>gaussianElimination(''+JSON.stringify(tests[4][0])+'',''+JSON.stringify(tests[4][1])+'')</code> should return <code>''+JSON.stringify(results[4])+''</code>.'''
-    testString: 'assert.deepEqual(gaussianElimination(tests[4][0],tests[4][1]),results[4],''<code>gaussianElimination(''+JSON.stringify(tests[4][0])+'',''+JSON.stringify(tests[4][1])+'')</code> should return <code>''+JSON.stringify(results[4])+''</code>.'');'
+  - text: "'<code>gaussianElimination</code> should be a function."'
+    testString: 'assert(typeof gaussianElimination=="function","<code>gaussianElimination</code> should be a function.");'
+  - text: "'<code>gaussianElimination("+JSON.stringify(tests[0][0])+","+JSON.stringify(tests[0][1])+")</code> should return an array."'
+    testString: 'assert(Array.isArray(gaussianElimination(tests[0][0],tests[0][1])),"<code>gaussianElimination("+JSON.stringify(tests[0][0])+","+JSON.stringify(tests[0][1])+")</code> should return an array.");'
+  - text: "'<code>gaussianElimination("+JSON.stringify(tests[0][0])+","+JSON.stringify(tests[0][1])+")</code> should return <code>"+JSON.stringify(results[0])+"</code>."'
+    testString: 'assert.deepEqual(gaussianElimination(tests[0][0],tests[0][1]),results[0],"<code>gaussianElimination("+JSON.stringify(tests[0][0])+","+JSON.stringify(tests[0][1])+")</code> should return <code>"+JSON.stringify(results[0])+"</code>.");'
+  - text: "'<code>gaussianElimination("+JSON.stringify(tests[1][0])+","+JSON.stringify(tests[1][1])+")</code> should return <code>"+JSON.stringify(results[1])+"</code>."'
+    testString: 'assert.deepEqual(gaussianElimination(tests[1][0],tests[1][1]),results[1],"<code>gaussianElimination("+JSON.stringify(tests[1][0])+","+JSON.stringify(tests[1][1])+")</code> should return <code>"+JSON.stringify(results[1])+"</code>.");'
+  - text: "'<code>gaussianElimination("+JSON.stringify(tests[2][0])+","+JSON.stringify(tests[2][1])+")</code> should return <code>"+JSON.stringify(results[2])+"</code>."'
+    testString: 'assert.deepEqual(gaussianElimination(tests[2][0],tests[2][1]),results[2],"<code>gaussianElimination("+JSON.stringify(tests[2][0])+","+JSON.stringify(tests[2][1])+")</code> should return <code>"+JSON.stringify(results[2])+"</code>.");'
+  - text: "'<code>gaussianElimination("+JSON.stringify(tests[3][0])+","+JSON.stringify(tests[3][1])+")</code> should return <code>"+JSON.stringify(results[3])+"</code>."'
+    testString: 'assert.deepEqual(gaussianElimination(tests[3][0],tests[3][1]),results[3],"<code>gaussianElimination("+JSON.stringify(tests[3][0])+","+JSON.stringify(tests[3][1])+")</code> should return <code>"+JSON.stringify(results[3])+"</code>.");'
+  - text: "'<code>gaussianElimination("+JSON.stringify(tests[4][0])+","+JSON.stringify(tests[4][1])+")</code> should return <code>"+JSON.stringify(results[4])+"</code>."'
+    testString: 'assert.deepEqual(gaussianElimination(tests[4][0],tests[4][1]),results[4],"<code>gaussianElimination("+JSON.stringify(tests[4][0])+","+JSON.stringify(tests[4][1])+")</code> should return <code>"+JSON.stringify(results[4])+"</code>.");'
 
 ```
 
@@ -76,7 +76,7 @@ function gaussianElimination(A, b) {
   	var n = A.length
   	var idx = new Array(n) // Output vector with row permutations from partial pivoting
   	var vv = new Array(n) // Scaling information
-   
+
   	for (var i=0; i<n; i++) {
   		var max = 0
   		for (var j=0; j<n; j++) {
@@ -86,7 +86,7 @@ function gaussianElimination(A, b) {
   		if (max == 0) return // Singular Matrix!
   		vv[i] = 1 / max // Scaling
   	}
-   
+
 		var Acpy = new Array(n)
 		for (var i=0; i<n; i++) {
 			var Ai = A[i]
@@ -95,7 +95,7 @@ function gaussianElimination(A, b) {
 			Acpy[i] = Acpyi
 		}
 		A = Acpy
-   
+
   	var tiny = 1e-20 // in case pivot element is zero
   	for (var i=0; ; i++) {
   		for (var j=0; j<i; j++) {
@@ -133,7 +133,7 @@ function gaussianElimination(A, b) {
   	}
   	return {A:A, idx:idx, d:d}
   }
-   
+
   // Lower Upper Back Substitution
   function lubksb(lu, b) {
   	// solves the set of n linear equations A*x = b.
@@ -145,7 +145,7 @@ function gaussianElimination(A, b) {
 		var bcpy = new Array(n)
 		for (var i=0; i<b.length; i+=1) bcpy[i] = b[i]
 		b = bcpy
-   
+
   	for (var ii=-1, i=0; i<n; i++) {
   		var ix = idx[i]
   		var sum = b[ix]

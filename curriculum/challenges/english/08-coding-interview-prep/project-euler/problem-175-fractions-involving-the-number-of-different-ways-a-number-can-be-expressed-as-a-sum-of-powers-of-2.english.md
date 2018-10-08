@@ -6,7 +6,7 @@ title: 'Problem 175: Fractions involving the number of different ways a number c
 
 ## Description
 <section id='description'>
-Define f(0)=1 and f(n) to be the number of ways to write n as a sum of powers of 2 where no power occurs more than twice. 
+Define f(0)=1 and f(n) to be the number of ways to write n as a sum of powers of 2 where no power occurs more than twice.
 
 For example, f(10)=5 since there are five different ways to express 10:10 = 8+2 = 8+1+1 = 4+4+2 = 4+2+2+1+1 = 4+4+1+1
 
@@ -29,7 +29,7 @@ Give your answer as comma separated integers, without any whitespaces.
 ```yml
 tests:
   - text: '<code>euler175()</code> should return 1, 13717420, 8.'
-    testString: 'assert.strictEqual(euler175(), 1, 13717420, 8, ''<code>euler175()</code> should return 1, 13717420, 8.'');'
+    testString: 'assert.strictEqual(euler175(), 1, 13717420, 8, "<code>euler175()</code> should return 1, 13717420, 8.");'
 
 ```
 

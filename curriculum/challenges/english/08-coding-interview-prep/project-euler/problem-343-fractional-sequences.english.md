@@ -10,7 +10,7 @@ For any positive integer k, a finite sequence ai of fractions xi/yi is defined b
 a1 = 1/k and
 ai = (xi-1+1)/(yi-1-1) reduced to lowest terms for i>1.
 When ai reaches some integer n, the sequence stops. (That is, when yi=1.)
-Define f(k) = n. 
+Define f(k) = n.
 For example, for k = 20:
 
 
@@ -41,7 +41,7 @@ Find Σf(k3) for 1 ≤ k ≤ 2×106.
 ```yml
 tests:
   - text: <code>euler343()</code> should return 269533451410884200.
-    testString: 'assert.strictEqual(euler343(), 269533451410884200, ''<code>euler343()</code> should return 269533451410884200.'');'
+    testString: 'assert.strictEqual(euler343(), 269533451410884200, "<code>euler343()</code> should return 269533451410884200.");'
 
 ```
 

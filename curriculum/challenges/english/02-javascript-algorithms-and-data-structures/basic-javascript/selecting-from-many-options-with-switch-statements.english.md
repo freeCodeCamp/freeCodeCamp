@@ -23,17 +23,17 @@ Write a switch statement which tests <code>val</code> and sets <code>answer</cod
 ```yml
 tests:
   - text: <code>caseInSwitch(1)</code> should have a value of "alpha"
-    testString: 'assert(caseInSwitch(1) === "alpha", ''<code>caseInSwitch(1)</code> should have a value of "alpha"'');'
+    testString: 'assert(caseInSwitch(1) === "alpha", "<code>caseInSwitch(1)</code> should have a value of "alpha"");'
   - text: <code>caseInSwitch(2)</code> should have a value of "beta"
-    testString: 'assert(caseInSwitch(2) === "beta", ''<code>caseInSwitch(2)</code> should have a value of "beta"'');'
+    testString: 'assert(caseInSwitch(2) === "beta", "<code>caseInSwitch(2)</code> should have a value of "beta"");'
   - text: <code>caseInSwitch(3)</code> should have a value of "gamma"
-    testString: 'assert(caseInSwitch(3) === "gamma", ''<code>caseInSwitch(3)</code> should have a value of "gamma"'');'
+    testString: 'assert(caseInSwitch(3) === "gamma", "<code>caseInSwitch(3)</code> should have a value of "gamma"");'
   - text: <code>caseInSwitch(4)</code> should have a value of "delta"
-    testString: 'assert(caseInSwitch(4) === "delta", ''<code>caseInSwitch(4)</code> should have a value of "delta"'');'
+    testString: 'assert(caseInSwitch(4) === "delta", "<code>caseInSwitch(4)</code> should have a value of "delta"");'
   - text: You should not use any <code>if</code> or <code>else</code> statements
-    testString: 'assert(!/else/g.test(code) || !/if/g.test(code), ''You should not use any <code>if</code> or <code>else</code> statements'');'
+    testString: 'assert(!/else/g.test(code) || !/if/g.test(code), "You should not use any <code>if</code> or <code>else</code> statements");'
   - text: You should have at least 3 <code>break</code> statements
-    testString: 'assert(code.match(/break/g).length > 2, ''You should have at least 3 <code>break</code> statements'');'
+    testString: 'assert(code.match(/break/g).length > 2, "You should have at least 3 <code>break</code> statements");'
 
 ```
 
@@ -48,11 +48,11 @@ tests:
 function caseInSwitch(val) {
   var answer = "";
   // Only change code below this line
-  
-  
-  
-  // Only change code above this line  
-  return answer;  
+
+
+
+  // Only change code above this line
+  return answer;
 }
 
 // Change this value to test
@@ -87,7 +87,7 @@ function caseInSwitch(val) {
     case 4:
       answer = "delta";
   }
-  return answer;  
+  return answer;
 }
 ```
 

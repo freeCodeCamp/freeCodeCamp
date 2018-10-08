@@ -24,15 +24,15 @@ Finally, create an <code>h1</code> tag after the <code>form</code> which renders
 ```yml
 tests:
   - text: <code>MyForm</code> should return a <code>div</code> element which contains a <code>form</code> and an <code>h1</code> tag. The form should include an <code>input</code> and a <code>button</code>.
-    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyForm)); return (mockedComponent.find(''div'').children().find(''form'').length === 1 && mockedComponent.find(''div'').children().find(''h1'').length === 1 && mockedComponent.find(''form'').children().find(''input'').length === 1 && mockedComponent.find(''form'').children().find(''button'').length === 1) })(), ''<code>MyForm</code> should return a <code>div</code> element which contains a <code>form</code> and an <code>h1</code> tag. The form should include an <code>input</code> and a <code>button</code>.'');'
+    testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(MyForm)); return (mockedComponent.find("div").children().find("form").length === 1 && mockedComponent.find("div").children().find("h1").length === 1 && mockedComponent.find("form").children().find("input").length === 1 && mockedComponent.find("form").children().find("button").length === 1) })(), "<code>MyForm</code> should return a <code>div</code> element which contains a <code>form</code> and an <code>h1</code> tag. The form should include an <code>input</code> and a <code>button</code>.");'
   - text: 'The state of <code>MyForm</code> should initialize with <code>input</code> and <code>submit</code> properties, both set to empty strings.'
-    testString: 'assert(Enzyme.mount(React.createElement(MyForm)).state(''input'') === '''' && Enzyme.mount(React.createElement(MyForm)).state(''submit'') === '''', ''The state of <code>MyForm</code> should initialize with <code>input</code> and <code>submit</code> properties, both set to empty strings.'');'
+    testString: 'assert(Enzyme.mount(React.createElement(MyForm)).state("input") === "" && Enzyme.mount(React.createElement(MyForm)).state("submit") === "", "The state of <code>MyForm</code> should initialize with <code>input</code> and <code>submit</code> properties, both set to empty strings.");'
   - text: Typing in the <code>input</code> element should update the <code>input</code> property of the component&apos;s state.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '''' }); return waitForIt(() => mockedComponent.state(''input''))}; const _2 = () => { mockedComponent.find(''input'').simulate(''change'', { target: { value: ''TestInput'' }}); return waitForIt(() => ({ state: mockedComponent.state(''input''), inputVal: mockedComponent.find(''input'').props().value }))}; const before = await _1(); const after = await _2(); assert(before === '''' && after.state === ''TestInput'' && after.inputVal === ''TestInput'', ''Typing in the <code>input</code> element should update the <code>input</code> property of the component&apos;s state.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: "" }); return waitForIt(() => mockedComponent.state("input"))}; const _2 = () => { mockedComponent.find("input").simulate("change", { target: { value: "TestInput" }}); return waitForIt(() => ({ state: mockedComponent.state("input"), inputVal: mockedComponent.find("input").props().value }))}; const before = await _1(); const after = await _2(); assert(before === "" && after.state === "TestInput" && after.inputVal === "TestInput", "Typing in the <code>input</code> element should update the <code>input</code> property of the component&apos;s state."); }; '
   - text: Submitting the form should run <code>handleSubmit</code> which should set the <code>submit</code> property in state equal to the current input.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '''' }); mockedComponent.setState({submit: ''''}); mockedComponent.find(''input'').simulate(''change'', {target: {value: ''SubmitInput''}}); return waitForIt(() => mockedComponent.state(''submit''))}; const _2 = () => { mockedComponent.find(''form'').simulate(''submit''); return waitForIt(() => mockedComponent.state(''submit''))}; const before = await _1(); const after = await _2(); assert(before === '''' && after === ''SubmitInput'', ''Submitting the form should run <code>handleSubmit</code> which should set the <code>submit</code> property in state equal to the current input.''); };'
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: "" }); mockedComponent.setState({submit: ""}); mockedComponent.find("input").simulate("change", {target: {value: "SubmitInput"}}); return waitForIt(() => mockedComponent.state("submit"))}; const _2 = () => { mockedComponent.find("form").simulate("submit"); return waitForIt(() => mockedComponent.state("submit"))}; const before = await _1(); const after = await _2(); assert(before === "" && after === "SubmitInput", "Submitting the form should run <code>handleSubmit</code> which should set the <code>submit</code> property in state equal to the current input."); };'
   - text: The <code>h1</code> header should render the value of the <code>submit</code> field from the component&apos;s state.
-    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: '''' }); mockedComponent.setState({submit: ''''}); mockedComponent.find(''input'').simulate(''change'', {target: {value: ''TestInput''}}); return waitForIt(() => mockedComponent.find(''h1'').text())}; const _2 = () => { mockedComponent.find(''form'').simulate(''submit''); return waitForIt(() => mockedComponent.find(''h1'').text())}; const before = await _1(); const after = await _2(); assert(before === '''' && after === ''TestInput'', ''The <code>h1</code> header should render the value of the <code>submit</code> field from the component&apos;s state.''); }; '
+    testString: 'async () => { const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250)); const mockedComponent = Enzyme.mount(React.createElement(MyForm)); const _1 = () => { mockedComponent.setState({ input: "" }); mockedComponent.setState({submit: ""}); mockedComponent.find("input").simulate("change", {target: {value: "TestInput"}}); return waitForIt(() => mockedComponent.find("h1").text())}; const _2 = () => { mockedComponent.find("form").simulate("submit"); return waitForIt(() => mockedComponent.find("h1").text())}; const before = await _1(); const after = await _2(); assert(before === "" && after === "TestInput", "The <code>h1</code> header should render the value of the <code>submit</code> field from the component&apos;s state."); }; '
 
 ```
 
@@ -48,8 +48,8 @@ class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: '',
-      submit: ''
+      input: ",
+      submit: "
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -105,8 +105,8 @@ class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: '',
-      submit: ''
+      input: ",
+      submit: "
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

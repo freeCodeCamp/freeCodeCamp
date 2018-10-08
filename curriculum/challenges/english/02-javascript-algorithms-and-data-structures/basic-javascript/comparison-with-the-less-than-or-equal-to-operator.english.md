@@ -22,21 +22,21 @@ Add the <code>less than or equal to</code> operator to the indicated lines so th
 ```yml
 tests:
   - text: <code>testLessOrEqual(0)</code> should return "Smaller Than or Equal to 12"
-    testString: 'assert(testLessOrEqual(0) === "Smaller Than or Equal to 12", ''<code>testLessOrEqual(0)</code> should return "Smaller Than or Equal to 12"'');'
+    testString: 'assert(testLessOrEqual(0) === "Smaller Than or Equal to 12", "<code>testLessOrEqual(0)</code> should return "Smaller Than or Equal to 12"");'
   - text: <code>testLessOrEqual(11)</code> should return "Smaller Than or Equal to 12"
-    testString: 'assert(testLessOrEqual(11) === "Smaller Than or Equal to 12", ''<code>testLessOrEqual(11)</code> should return "Smaller Than or Equal to 12"'');'
+    testString: 'assert(testLessOrEqual(11) === "Smaller Than or Equal to 12", "<code>testLessOrEqual(11)</code> should return "Smaller Than or Equal to 12"");'
   - text: <code>testLessOrEqual(12)</code> should return "Smaller Than or Equal to 12"
-    testString: 'assert(testLessOrEqual(12) === "Smaller Than or Equal to 12", ''<code>testLessOrEqual(12)</code> should return "Smaller Than or Equal to 12"'');'
+    testString: 'assert(testLessOrEqual(12) === "Smaller Than or Equal to 12", "<code>testLessOrEqual(12)</code> should return "Smaller Than or Equal to 12"");'
   - text: <code>testLessOrEqual(23)</code> should return "Smaller Than or Equal to 24"
-    testString: 'assert(testLessOrEqual(23) === "Smaller Than or Equal to 24", ''<code>testLessOrEqual(23)</code> should return "Smaller Than or Equal to 24"'');'
+    testString: 'assert(testLessOrEqual(23) === "Smaller Than or Equal to 24", "<code>testLessOrEqual(23)</code> should return "Smaller Than or Equal to 24"");'
   - text: <code>testLessOrEqual(24)</code> should return "Smaller Than or Equal to 24"
-    testString: 'assert(testLessOrEqual(24) === "Smaller Than or Equal to 24", ''<code>testLessOrEqual(24)</code> should return "Smaller Than or Equal to 24"'');'
+    testString: 'assert(testLessOrEqual(24) === "Smaller Than or Equal to 24", "<code>testLessOrEqual(24)</code> should return "Smaller Than or Equal to 24"");'
   - text: <code>testLessOrEqual(25)</code> should return "More Than 24"
-    testString: 'assert(testLessOrEqual(25) === "More Than 24", ''<code>testLessOrEqual(25)</code> should return "More Than 24"'');'
+    testString: 'assert(testLessOrEqual(25) === "More Than 24", "<code>testLessOrEqual(25)</code> should return "More Than 24"");'
   - text: <code>testLessOrEqual(55)</code> should return "More Than 24"
-    testString: 'assert(testLessOrEqual(55) === "More Than 24", ''<code>testLessOrEqual(55)</code> should return "More Than 24"'');'
+    testString: 'assert(testLessOrEqual(55) === "More Than 24", "<code>testLessOrEqual(55)</code> should return "More Than 24"");'
   - text: You should use the <code>&lt;=</code> operator at least twice
-    testString: 'assert(code.match(/val\s*<=\s*(''|")*\d+(''|")*/g).length > 1, ''You should use the <code>&lt;=</code> operator at least twice'');'
+    testString: 'assert(code.match(/val\s*<=\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&lt;=</code> operator at least twice");'
 
 ```
 
@@ -52,7 +52,7 @@ function testLessOrEqual(val) {
   if (val) {  // Change this line
     return "Smaller Than or Equal to 12";
   }
-  
+
   if (val) {  // Change this line
     return "Smaller Than or Equal to 24";
   }
@@ -80,7 +80,7 @@ function testLessOrEqual(val) {
   if (val <= 12) {  // Change this line
     return "Smaller Than or Equal to 12";
   }
-  
+
   if (val <= 24) {  // Change this line
     return "Smaller Than or Equal to 24";
   }

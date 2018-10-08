@@ -44,7 +44,7 @@ Find the last 9 digits of ΣG(n) for 1 ≤ n < 16.
 ```yml
 tests:
   - text: <code>euler396()</code> should return 173214653.
-    testString: 'assert.strictEqual(euler396(), 173214653, ''<code>euler396()</code> should return 173214653.'');'
+    testString: 'assert.strictEqual(euler396(), 173214653, "<code>euler396()</code> should return 173214653.");'
 
 ```
 

@@ -26,7 +26,7 @@ Find W(10 000 000) mod 1 000 000 007.
 ```yml
 tests:
   - text: <code>euler409()</code> should return 253223948.
-    testString: 'assert.strictEqual(euler409(), 253223948, ''<code>euler409()</code> should return 253223948.'');'
+    testString: 'assert.strictEqual(euler409(), 253223948, "<code>euler409()</code> should return 253223948.");'
 
 ```
 

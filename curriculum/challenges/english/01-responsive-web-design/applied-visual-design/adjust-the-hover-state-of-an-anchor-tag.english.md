@@ -23,9 +23,9 @@ The code editor has a CSS rule to style all <code>a</code> tags black. Add a rul
 ```yml
 tests:
   - text: 'The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.'
-    testString: 'assert($(''a'').css(''color'') == ''rgb(0, 0, 0)'', ''The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.'');'
+    testString: 'assert($("a").css("color") == "rgb(0, 0, 0)", "The anchor tag <code>color</code> should remain black, only add CSS rules for the <code>:hover</code> state.");'
   - text: The anchor tag should have a <code>color</code> of blue on hover.
-    testString: 'assert(code.match(/a:hover\s*?{\s*?color:\s*?blue;\s*?}/gi), ''The anchor tag should have a <code>color</code> of blue on hover.'');'
+    testString: 'assert(code.match(/a:hover\s*?{\s*?color:\s*?blue;\s*?}/gi), "The anchor tag should have a <code>color</code> of blue on hover.");'
 
 ```
 
@@ -41,9 +41,9 @@ tests:
   a {
     color: #000;
   }
-  
-  
-  
+
+
+
 </style>
 <a href="http://freecatphotoapp.com/" target="_blank">CatPhotoApp</a>
 ```

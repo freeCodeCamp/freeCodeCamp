@@ -23,9 +23,9 @@ Push the numbers 0 through 4 to <code>myArray</code> using a <code>while</code> 
 ```yml
 tests:
   - text: You should be using a <code>while</code> loop for this.
-    testString: 'assert(code.match(/while/g), ''You should be using a <code>while</code> loop for this.'');'
+    testString: 'assert(code.match(/while/g), "You should be using a <code>while</code> loop for this.");'
   - text: '<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.'
-    testString: 'assert.deepEqual(myArray, [0,1,2,3,4], ''<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.'');'
+    testString: 'assert.deepEqual(myArray, [0,1,2,3,4], "<code>myArray</code> should equal <code>[0,1,2,3,4]</code>.");'
 
 ```
 

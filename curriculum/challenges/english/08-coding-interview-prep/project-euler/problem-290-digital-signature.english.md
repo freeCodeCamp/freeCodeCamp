@@ -20,7 +20,7 @@ How many integers 0 ≤ n < 1018 have the property that the sum of the digits of
 ```yml
 tests:
   - text: <code>euler290()</code> should return 20444710234716470.
-    testString: 'assert.strictEqual(euler290(), 20444710234716470, ''<code>euler290()</code> should return 20444710234716470.'');'
+    testString: 'assert.strictEqual(euler290(), 20444710234716470, "<code>euler290()</code> should return 20444710234716470.");'
 
 ```
 

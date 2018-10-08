@@ -22,19 +22,19 @@ The Gamma function can be defined as:
 ```yml
 tests:
   - text: <code>gamma</code> should be a function.
-    testString: 'assert(typeof gamma==''function'',''<code>gamma</code> should be a function.'')'
-  - text: '<code>gamma(''+tests[0]+'')</code> should return a number.'
-    testString: 'assert(typeof gamma(tests[0])==''number'',''<code>gamma(''+tests[0]+'')</code> should return a number.'')'
-  - text: '<code>gamma(''+tests[0]+'')</code> should return <code>''+results[0]+''</code>.'
-    testString: 'assert.equal(gamma(tests[0]),results[0],''<code>gamma(''+tests[0]+'')</code> should return <code>''+results[0]+''</code>.'')'
-  - text: '<code>gamma(''+tests[1]+'')</code> should return <code>''+results[1]+''</code>.'
-    testString: 'assert.equal(gamma(tests[1]),results[1],''<code>gamma(''+tests[1]+'')</code> should return <code>''+results[1]+''</code>.'')'
-  - text: '<code>gamma(''+tests[2]+'')</code> should return <code>''+results[2]+''</code>.'
-    testString: 'assert.equal(gamma(tests[2]),results[2],''<code>gamma(''+tests[2]+'')</code> should return <code>''+results[2]+''</code>.'')'
-  - text: '<code>gamma(''+tests[3]+'')</code> should return <code>''+results[3]+''</code>.'
-    testString: 'assert.equal(gamma(tests[3]),results[3],''<code>gamma(''+tests[3]+'')</code> should return <code>''+results[3]+''</code>.'')'
-  - text: '<code>gamma(''+tests[4]+'')</code> should return <code>''+results[4]+''</code>.'
-    testString: 'assert.equal(gamma(tests[4]),results[4],''<code>gamma(''+tests[4]+'')</code> should return <code>''+results[4]+''</code>.'')'
+    testString: 'assert(typeof gamma=="function","<code>gamma</code> should be a function.")'
+  - text: '<code>gamma("+tests[0]+")</code> should return a number.'
+    testString: 'assert(typeof gamma(tests[0])=="number","<code>gamma("+tests[0]+")</code> should return a number.")'
+  - text: '<code>gamma("+tests[0]+")</code> should return <code>"+results[0]+"</code>.'
+    testString: 'assert.equal(gamma(tests[0]),results[0],"<code>gamma("+tests[0]+")</code> should return <code>"+results[0]+"</code>.")'
+  - text: '<code>gamma("+tests[1]+")</code> should return <code>"+results[1]+"</code>.'
+    testString: 'assert.equal(gamma(tests[1]),results[1],"<code>gamma("+tests[1]+")</code> should return <code>"+results[1]+"</code>.")'
+  - text: '<code>gamma("+tests[2]+")</code> should return <code>"+results[2]+"</code>.'
+    testString: 'assert.equal(gamma(tests[2]),results[2],"<code>gamma("+tests[2]+")</code> should return <code>"+results[2]+"</code>.")'
+  - text: '<code>gamma("+tests[3]+")</code> should return <code>"+results[3]+"</code>.'
+    testString: 'assert.equal(gamma(tests[3]),results[3],"<code>gamma("+tests[3]+")</code> should return <code>"+results[3]+"</code>.")'
+  - text: '<code>gamma("+tests[4]+")</code> should return <code>"+results[4]+"</code>.'
+    testString: 'assert.equal(gamma(tests[4]),results[4],"<code>gamma("+tests[4]+")</code> should return <code>"+results[4]+"</code>.")'
 
 ```
 
@@ -75,7 +75,7 @@ function gamma(x) {
   771.32342877765313, -176.61502916214059, 12.507343278686905,
   -0.13857109526572012, 9.9843695780195716e-6, 1.5056327351493116e-7
   ];
-   
+
   var g = 7;
   if (x < 0.5) {
     return Math.PI / (Math.sin(Math.PI * x) * gamma(1 - x));
@@ -87,7 +87,7 @@ function gamma(x) {
   for (var i = 1; i < p.length; i++) {
   a += p[i] / (x + i);
   }
-   
+
   var result=Math.sqrt(2 * Math.PI) * Math.pow(t, x + 0.5) * Math.exp(-t) * a;
 
   return result;

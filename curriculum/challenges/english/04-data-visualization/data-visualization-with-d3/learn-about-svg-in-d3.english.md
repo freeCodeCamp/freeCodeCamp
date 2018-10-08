@@ -26,11 +26,11 @@ Add an <code>svg</code> node to the <code>body</code> using <code>append()</code
 ```yml
 tests:
   - text: Your document should have 1 <code>svg</code> element.
-    testString: 'assert($(''svg'').length == 1, ''Your document should have 1 <code>svg</code> element.'');'
+    testString: 'assert($("svg").length == 1, "Your document should have 1 <code>svg</code> element.");'
   - text: The <code>svg</code> element should have a <code>width</code> attribute set to 500.
-    testString: 'assert($(''svg'').attr(''width'') == ''500'', ''The <code>svg</code> element should have a <code>width</code> attribute set to 500.'');'
+    testString: 'assert($("svg").attr("width") == "500", "The <code>svg</code> element should have a <code>width</code> attribute set to 500.");'
   - text: The <code>svg</code> element should have a <code>height</code> attribute set to 100.
-    testString: 'assert($(''svg'').attr(''height'') == ''100'', ''The <code>svg</code> element should have a <code>height</code> attribute set to 100.'');'
+    testString: 'assert($("svg").attr("height") == "100", "The <code>svg</code> element should have a <code>height</code> attribute set to 100.");'
 
 ```
 
@@ -50,15 +50,15 @@ tests:
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-    
+
     const w = 500;
     const h = 100;
-    
+
     const svg = d3.select("body")
                   // Add your code below this line
-                  
-                  
-                  
+
+
+
                   // Add your code above this line
   </script>
 </body>

@@ -29,9 +29,9 @@ Show the number less than 100,000 which has the longest hailstone sequence toget
 ```yml
 tests:
   - text: <code>hailstoneSequence</code> is a function.
-    testString: 'assert(typeof hailstoneSequence === ''function'', ''<code>hailstoneSequence</code> is a function.'');'
+    testString: 'assert(typeof hailstoneSequence === "function", "<code>hailstoneSequence</code> is a function.");'
   - text: '<code>hailstoneSequence()</code> should return <code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>'
-    testString: 'assert.deepEqual(hailstoneSequence(), res, ''<code>hailstoneSequence()</code> should return <code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>'');'
+    testString: 'assert.deepEqual(hailstoneSequence(), res, "<code>hailstoneSequence()</code> should return <code>[[27,82,41,124,8,4,2,1], [351, 77031]]</code>");'
 
 ```
 

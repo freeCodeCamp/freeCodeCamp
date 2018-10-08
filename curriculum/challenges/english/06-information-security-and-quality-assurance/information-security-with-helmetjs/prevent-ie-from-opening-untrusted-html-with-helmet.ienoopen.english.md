@@ -21,7 +21,7 @@ Some web applications will serve untrusted HTML for download. Some versions of I
 ```yml
 tests:
   - text: helmet.ieNoOpen() middleware should be mounted correctly
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/app-info'').then(data => { assert.include(data.appStack, ''ienoopen''); assert.equal(data.headers[''x-download-options''], ''noopen''); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "ienoopen"); assert.equal(data.headers["x-download-options"], "noopen"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

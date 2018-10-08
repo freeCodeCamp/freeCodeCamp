@@ -26,7 +26,7 @@ How many triangles are there containing the origin in the interior and having al
 ```yml
 tests:
   - text: <code>euler184()</code> should return 1725323624056.
-    testString: 'assert.strictEqual(euler184(), 1725323624056, ''<code>euler184()</code> should return 1725323624056.'');'
+    testString: 'assert.strictEqual(euler184(), 1725323624056, "<code>euler184()</code> should return 1725323624056.");'
 
 ```
 

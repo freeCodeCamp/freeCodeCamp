@@ -35,7 +35,7 @@ Find NF(61,107) mod 6110
 ```yml
 tests:
   - text: <code>euler288()</code> should return 605857431263982000.
-    testString: 'assert.strictEqual(euler288(), 605857431263982000, ''<code>euler288()</code> should return 605857431263982000.'');'
+    testString: 'assert.strictEqual(euler288(), 605857431263982000, "<code>euler288()</code> should return 605857431263982000.");'
 
 ```
 

@@ -21,7 +21,7 @@ E.g. here is a picture of the solution for N = 10:
 The area occupied by the red cells for N = 10 rounded to 10 digits behind the decimal point is 3.3469640797.
 
 
-Find the positions for N = 400. 
+Find the positions for N = 400.
 Give as your answer the area occupied by the red cells rounded to 10 digits behind the decimal point.
 </section>
 
@@ -36,7 +36,7 @@ Give as your answer the area occupied by the red cells rounded to 10 digits behi
 ```yml
 tests:
   - text: <code>euler392()</code> should return 3.1486734435.
-    testString: 'assert.strictEqual(euler392(), 3.1486734435, ''<code>euler392()</code> should return 3.1486734435.'');'
+    testString: 'assert.strictEqual(euler392(), 3.1486734435, "<code>euler392()</code> should return 3.1486734435.");'
 
 ```
 

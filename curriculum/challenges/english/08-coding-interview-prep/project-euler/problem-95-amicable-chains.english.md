@@ -25,7 +25,7 @@ Find the smallest member of the longest amicable chain with no element exceeding
 ```yml
 tests:
   - text: <code>euler95()</code> should return 14316.
-    testString: 'assert.strictEqual(euler95(), 14316, ''<code>euler95()</code> should return 14316.'');'
+    testString: 'assert.strictEqual(euler95(), 14316, "<code>euler95()</code> should return 14316.");'
 
 ```
 

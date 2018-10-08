@@ -23,13 +23,13 @@ Change the regex <code>favRegex</code> to match both the American English (favor
 ```yml
 tests:
   - text: 'Your regex should use the optional symbol, <code>?</code>.'
-    testString: 'assert(favRegex.source.match(/\?/).length > 0, ''Your regex should use the optional symbol, <code>?</code>.'');'
+    testString: 'assert(favRegex.source.match(/\?/).length > 0, "Your regex should use the optional symbol, <code>?</code>.");'
   - text: Your regex should match <code>"favorite"</code>
-    testString: 'assert(favRegex.test("favorite"), ''Your regex should match <code>"favorite"</code>'');'
+    testString: 'assert(favRegex.test("favorite"), "Your regex should match <code>"favorite"</code>");'
   - text: Your regex should match <code>"favourite"</code>
-    testString: 'assert(favRegex.test("favourite"), ''Your regex should match <code>"favourite"</code>'');'
+    testString: 'assert(favRegex.test("favourite"), "Your regex should match <code>"favourite"</code>");'
   - text: Your regex should not match <code>"fav"</code>
-    testString: 'assert(!favRegex.test("fav"), ''Your regex should not match <code>"fav"</code>'');'
+    testString: 'assert(!favRegex.test("fav"), "Your regex should not match <code>"fav"</code>");'
 
 ```
 

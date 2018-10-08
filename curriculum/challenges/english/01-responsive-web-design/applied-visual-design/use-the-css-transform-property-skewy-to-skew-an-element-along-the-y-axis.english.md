@@ -21,7 +21,7 @@ Skew the element with the id of <code>top</code> -10 degrees along the Y-axis by
 ```yml
 tests:
   - text: The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.
-    testString: 'assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g), ''The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.'');'
+    testString: 'assert(code.match(/#top\s*?{\s*?.*?\s*?transform:\s*?skewY\(-10deg\);/g), "The element with id <code>top</code> should be skewed by -10 degrees along its Y-axis.");'
 
 ```
 
@@ -34,14 +34,14 @@ tests:
 
 ```html
 <style>
-  div { 
+  div {
     width: 70%;
     height: 100px;
     margin: 50px auto;
   }
   #top {
     background-color: red;
-    
+
   }
   #bottom {
     background-color: blue;

@@ -6,11 +6,11 @@ challengeType: 5
 
 ## Description
 <section id='description'>
-A &nbsp; ''zig-zag'' &nbsp; array is a square arrangement of the first &nbsp;
+A &nbsp; "zig-zag" &nbsp; array is a square arrangement of the first &nbsp;
 $N^2$ &nbsp; integers, &nbsp; where the
 numbers increase sequentially as you zig-zag along the array's &nbsp;
 <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonals</a>.
-For example, given &nbsp; '''5''', &nbsp; produce this array:
+For example, given &nbsp; "'5"', &nbsp; produce this array:
 <pre>
  0  1  5  6 14
  2  4  7 13 15
@@ -33,17 +33,17 @@ corresponding matrix as two-dimensional array.
 ```yml
 tests:
   - text: ZigZagMatrix must be a function
-    testString: 'assert.equal(typeof ZigZagMatrix, ''function'', ''ZigZagMatrix must be a function'');'
+    testString: 'assert.equal(typeof ZigZagMatrix, "function", "ZigZagMatrix must be a function");'
   - text: ZigZagMatrix should return array
-    testString: 'assert.equal(typeof ZigZagMatrix(1), ''object'', ''ZigZagMatrix should return array'');'
+    testString: 'assert.equal(typeof ZigZagMatrix(1), "object", "ZigZagMatrix should return array");'
   - text: ZigZagMatrix should return an array of nestes arrays
-    testString: 'assert.equal(typeof ZigZagMatrix(1)[0], ''object'', ''ZigZagMatrix should return an array of nestes arrays'');'
+    testString: 'assert.equal(typeof ZigZagMatrix(1)[0], "object", "ZigZagMatrix should return an array of nestes arrays");'
   - text: 'ZigZagMatrix(1) should return [[0]]'
-    testString: 'assert.deepEqual(ZigZagMatrix(1), zm1, ''ZigZagMatrix(1) should return [[0]]'');'
+    testString: 'assert.deepEqual(ZigZagMatrix(1), zm1, "ZigZagMatrix(1) should return [[0]]");'
   - text: 'ZigZagMatrix(2) should return [[0, 1], [2, 3]]'
-    testString: 'assert.deepEqual(ZigZagMatrix(2), zm2, ''ZigZagMatrix(2) should return [[0, 1], [2, 3]]'');'
+    testString: 'assert.deepEqual(ZigZagMatrix(2), zm2, "ZigZagMatrix(2) should return [[0, 1], [2, 3]]");'
   - text: ZigZagMatrix(5) must return specified matrix
-    testString: 'assert.deepEqual(ZigZagMatrix(5), zm5, ''ZigZagMatrix(5) must return specified matrix'');'
+    testString: 'assert.deepEqual(ZigZagMatrix(5), zm5, "ZigZagMatrix(5) must return specified matrix");'
 
 ```
 

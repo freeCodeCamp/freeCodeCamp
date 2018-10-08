@@ -25,7 +25,7 @@ Note: In your calculations you may assume that a calculated angle is integral if
 ```yml
 tests:
   - text: <code>euler177()</code> should return 129325.
-    testString: 'assert.strictEqual(euler177(), 129325, ''<code>euler177()</code> should return 129325.'');'
+    testString: 'assert.strictEqual(euler177(), 129325, "<code>euler177()</code> should return 129325.");'
 
 ```
 

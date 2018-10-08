@@ -23,13 +23,13 @@ Add a comment at the top of your HTML that says <code>Only change code above thi
 ```yml
 tests:
   - text: 'Start a comment with <code>&#60;!--</code> at the top of your HTML.'
-    testString: 'assert(code.match(/^\s*<!--/), ''Start a comment with <code>&#60;!--</code> at the top of your HTML.'');'
+    testString: 'assert(code.match(/^\s*<!--/), "Start a comment with <code>&#60;!--</code> at the top of your HTML.");'
   - text: Your comment should have the text <code>Only change code above this line</code>.
-    testString: 'assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi), ''Your comment should have the text <code>Only change code above this line</code>.'');'
+    testString: 'assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi), "Your comment should have the text <code>Only change code above this line</code>.");'
   - text: 'Be sure to close your comment with <code>--&#62;</code>.'
-    testString: 'assert(code.match(/-->.*\n+.+/g), ''Be sure to close your comment with <code>--&#62;</code>.'');'
+    testString: 'assert(code.match(/-->.*\n+.+/g), "Be sure to close your comment with <code>--&#62;</code>.");'
   - text: You should have the same number of comment openers and closers.
-    testString: 'assert(code.match(/<!--/g).length === code.match(/-->/g).length, ''You should have the same number of comment openers and closers.'');'
+    testString: 'assert(code.match(/<!--/g).length === code.match(/-->/g).length, "You should have the same number of comment openers and closers.");'
 
 ```
 

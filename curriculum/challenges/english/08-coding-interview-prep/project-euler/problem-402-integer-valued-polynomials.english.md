@@ -37,7 +37,7 @@ Find the last 9 digits of Σ S(Fk) for 2 ≤ k ≤ 1234567890123.
 ```yml
 tests:
   - text: <code>euler402()</code> should return 356019862.
-    testString: 'assert.strictEqual(euler402(), 356019862, ''<code>euler402()</code> should return 356019862.'');'
+    testString: 'assert.strictEqual(euler402(), 356019862, "<code>euler402()</code> should return 356019862.");'
 
 ```
 

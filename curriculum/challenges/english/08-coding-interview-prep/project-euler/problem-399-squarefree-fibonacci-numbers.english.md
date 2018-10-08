@@ -8,7 +8,7 @@ title: 'Problem 399: Squarefree Fibonacci Numbers'
 <section id='description'>
 The first 15 fibonacci numbers are:
 1,1,2,3,5,8,13,21,34,55,89,144,233,377,610.
-It can be seen that 8 and 144 are not squarefree: 8 is divisible by 4 and 144 is divisible by 4 and by 9. 
+It can be seen that 8 and 144 are not squarefree: 8 is divisible by 4 and 144 is divisible by 4 and by 9.
 So the first 13 squarefree fibonacci numbers are:
 1,1,2,3,5,13,21,34,55,89,233,377 and 610.
 
@@ -24,7 +24,7 @@ For the 200th squarefree number the answer would have been: 1608739584170445,9.7
 
 
 
-Note: 
+Note:
 For this problem, assume that for every prime p, the first fibonacci number divisible by p is not divisible by p2 (this is part of Wall's conjecture). This has been verified for primes ≤ 3·1015, but has not been proven in general.
 
 If it happens that the conjecture is false, then the accepted answer to this problem isn't guaranteed to be the 100 000 000th squarefree fibonacci number, rather it represents only a lower bound for that number.
@@ -41,7 +41,7 @@ If it happens that the conjecture is false, then the accepted answer to this pro
 ```yml
 tests:
   - text: '<code>euler399()</code> should return 1508395636674243, 6.5e27330467.'
-    testString: 'assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467, ''<code>euler399()</code> should return 1508395636674243, 6.5e27330467.'');'
+    testString: 'assert.strictEqual(euler399(), 1508395636674243, 6.5e27330467, "<code>euler399()</code> should return 1508395636674243, 6.5e27330467.");'
 
 ```
 

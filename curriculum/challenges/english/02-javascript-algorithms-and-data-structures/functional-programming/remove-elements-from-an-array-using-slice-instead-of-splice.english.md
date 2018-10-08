@@ -23,13 +23,13 @@ Do not mutate the original array provided to the function.
 ```yml
 tests:
   - text: Your code should use the <code>slice</code> method.
-    testString: 'assert(code.match(/\.slice/g), ''Your code should use the <code>slice</code> method.'');'
+    testString: 'assert(code.match(/\.slice/g), "Your code should use the <code>slice</code> method.");'
   - text: Your code should not use the <code>splice</code> method.
-    testString: 'assert(!code.match(/\.splice/g), ''Your code should not use the <code>splice</code> method.'');'
+    testString: 'assert(!code.match(/\.splice/g), "Your code should not use the <code>splice</code> method.");'
   - text: The <code>inputCities</code> array should not change.
-    testString: 'assert(JSON.stringify(inputCities) === JSON.stringify(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]), ''The <code>inputCities</code> array should not change.'');'
+    testString: 'assert(JSON.stringify(inputCities) === JSON.stringify(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]), "The <code>inputCities</code> array should not change.");'
   - text: '<code>nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])</code> should return <code>["Chicago", "Delhi", "Islamabad"]</code>.'
-    testString: 'assert(JSON.stringify(nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])) === JSON.stringify(["Chicago", "Delhi", "Islamabad"]), ''<code>nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])</code> should return <code>["Chicago", "Delhi", "Islamabad"]</code>.'');'
+    testString: 'assert(JSON.stringify(nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])) === JSON.stringify(["Chicago", "Delhi", "Islamabad"]), "<code>nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])</code> should return <code>["Chicago", "Delhi", "Islamabad"]</code>.");'
 
 ```
 
@@ -44,7 +44,7 @@ tests:
 function nonMutatingSplice(cities) {
   // Add your code below this line
   return cities.splice(3);
-  
+
   // Add your code above this line
 }
 var inputCities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];

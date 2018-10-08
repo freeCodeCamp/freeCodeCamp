@@ -8,7 +8,7 @@ title: 'Problem 451: Modular inverses'
 <section id='description'>
 Consider the number 15.
 There are eight positive numbers less than 15 which are coprime to 15: 1, 2, 4, 7, 8, 11, 13, 14.
-The modular inverses of these numbers modulo 15 are: 1, 8, 4, 13, 2, 11, 7, 14  
+The modular inverses of these numbers modulo 15 are: 1, 8, 4, 13, 2, 11, 7, 14
 because
 1*1 mod 15=1
 2*8=16 mod 15=1
@@ -35,7 +35,7 @@ Find ∑I(n) for 3≤n≤2·107
 ```yml
 tests:
   - text: <code>euler451()</code> should return 153651073760956.
-    testString: 'assert.strictEqual(euler451(), 153651073760956, ''<code>euler451()</code> should return 153651073760956.'');'
+    testString: 'assert.strictEqual(euler451(), 153651073760956, "<code>euler451()</code> should return 153651073760956.");'
 
 ```
 

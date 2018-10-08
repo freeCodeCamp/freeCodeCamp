@@ -23,21 +23,21 @@ Add the <code>greater than or equal to</code> operator to the indicated lines so
 ```yml
 tests:
   - text: <code>testGreaterOrEqual(0)</code> should return "Less than 10"
-    testString: 'assert(testGreaterOrEqual(0) === "Less than 10", ''<code>testGreaterOrEqual(0)</code> should return "Less than 10"'');'
+    testString: 'assert(testGreaterOrEqual(0) === "Less than 10", "<code>testGreaterOrEqual(0)</code> should return "Less than 10"");'
   - text: <code>testGreaterOrEqual(9)</code> should return "Less than 10"
-    testString: 'assert(testGreaterOrEqual(9) === "Less than 10", ''<code>testGreaterOrEqual(9)</code> should return "Less than 10"'');'
+    testString: 'assert(testGreaterOrEqual(9) === "Less than 10", "<code>testGreaterOrEqual(9)</code> should return "Less than 10"");'
   - text: <code>testGreaterOrEqual(10)</code> should return "10 or Over"
-    testString: 'assert(testGreaterOrEqual(10) === "10 or Over", ''<code>testGreaterOrEqual(10)</code> should return "10 or Over"'');'
+    testString: 'assert(testGreaterOrEqual(10) === "10 or Over", "<code>testGreaterOrEqual(10)</code> should return "10 or Over"");'
   - text: <code>testGreaterOrEqual(11)</code> should return "10 or Over"
-    testString: 'assert(testGreaterOrEqual(11) === "10 or Over", ''<code>testGreaterOrEqual(11)</code> should return "10 or Over"'');'
+    testString: 'assert(testGreaterOrEqual(11) === "10 or Over", "<code>testGreaterOrEqual(11)</code> should return "10 or Over"");'
   - text: <code>testGreaterOrEqual(19)</code> should return "10 or Over"
-    testString: 'assert(testGreaterOrEqual(19) === "10 or Over", ''<code>testGreaterOrEqual(19)</code> should return "10 or Over"'');'
+    testString: 'assert(testGreaterOrEqual(19) === "10 or Over", "<code>testGreaterOrEqual(19)</code> should return "10 or Over"");'
   - text: <code>testGreaterOrEqual(100)</code> should return "20 or Over"
-    testString: 'assert(testGreaterOrEqual(100) === "20 or Over", ''<code>testGreaterOrEqual(100)</code> should return "20 or Over"'');'
+    testString: 'assert(testGreaterOrEqual(100) === "20 or Over", "<code>testGreaterOrEqual(100)</code> should return "20 or Over"");'
   - text: <code>testGreaterOrEqual(21)</code> should return "20 or Over"
-    testString: 'assert(testGreaterOrEqual(21) === "20 or Over", ''<code>testGreaterOrEqual(21)</code> should return "20 or Over"'');'
+    testString: 'assert(testGreaterOrEqual(21) === "20 or Over", "<code>testGreaterOrEqual(21)</code> should return "20 or Over"");'
   - text: You should use the <code>&gt;=</code> operator at least twice
-    testString: 'assert(code.match(/val\s*>=\s*(''|")*\d+(''|")*/g).length > 1, ''You should use the <code>&gt;=</code> operator at least twice'');'
+    testString: 'assert(code.match(/val\s*>=\s*("|")*\d+("|")*/g).length > 1, "You should use the <code>&gt;=</code> operator at least twice");'
 
 ```
 
@@ -53,7 +53,7 @@ function testGreaterOrEqual(val) {
   if (val) {  // Change this line
     return "20 or Over";
   }
-  
+
   if (val) {  // Change this line
     return "10 or Over";
   }
@@ -80,7 +80,7 @@ function testGreaterOrEqual(val) {
   if (val >= 20) {  // Change this line
     return "20 or Over";
   }
-  
+
   if (val >= 10) {  // Change this line
     return "10 or Over";
   }

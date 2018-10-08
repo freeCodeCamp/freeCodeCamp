@@ -20,7 +20,7 @@ f(0)=0, f(1)=1 and f(n)=f(n-1)+f(n-2) for n>1.
 The sequence b(n) is defined as f(a(n)).
 
 
-Find ∑b(n) for 1≤n≤100 000. 
+Find ∑b(n) for 1≤n≤100 000.
 Give your answer mod 1234567891011.
 </section>
 
@@ -35,7 +35,7 @@ Give your answer mod 1234567891011.
 ```yml
 tests:
   - text: <code>euler304()</code> should return 283988410192.
-    testString: 'assert.strictEqual(euler304(), 283988410192, ''<code>euler304()</code> should return 283988410192.'');'
+    testString: 'assert.strictEqual(euler304(), 283988410192, "<code>euler304()</code> should return 283988410192.");'
 
 ```
 

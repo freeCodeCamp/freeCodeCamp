@@ -39,7 +39,7 @@ Find C(1017).
 ```yml
 tests:
   - text: <code>euler404()</code> should return 1199215615081353.
-    testString: 'assert.strictEqual(euler404(), 1199215615081353, ''<code>euler404()</code> should return 1199215615081353.'');'
+    testString: 'assert.strictEqual(euler404(), 1199215615081353, "<code>euler404()</code> should return 1199215615081353.");'
 
 ```
 

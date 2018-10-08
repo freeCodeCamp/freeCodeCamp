@@ -25,15 +25,15 @@ There are <code>Calendar</code> and <code>CurrentDate</code> components in the c
 ```yml
 tests:
   - text: The <code>Calendar</code> component should return a single <code>div</code> element.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().type() === ''div''; })(), ''The <code>Calendar</code> component should return a single <code>div</code> element.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().type() === "div"; })(), "The <code>Calendar</code> component should return a single <code>div</code> element.");'
   - text: The second child of the <code>Calendar</code> component should be the <code>CurrentDate</code> component.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().childAt(1).name() === ''CurrentDate''; })(), ''The second child of the <code>Calendar</code> component should be the <code>CurrentDate</code> component.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().childAt(1).name() === "CurrentDate"; })(), "The second child of the <code>Calendar</code> component should be the <code>CurrentDate</code> component.");'
   - text: The <code>CurrentDate</code> component should have a prop called <code>date</code>.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().childAt(1).props().date })(), ''The <code>CurrentDate</code> component should have a prop called <code>date</code>.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.children().childAt(1).props().date })(), "The <code>CurrentDate</code> component should have a prop called <code>date</code>.");'
   - text: The <code>date</code> prop of the <code>CurrentDate</code> should contain a string of text.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); const prop = mockedComponent.children().childAt(1).props().date; return( typeof prop === ''string'' && prop.length > 0 ); })(), ''The <code>date</code> prop of the <code>CurrentDate</code> should contain a string of text.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); const prop = mockedComponent.children().childAt(1).props().date; return( typeof prop === "string" && prop.length > 0 ); })(), "The <code>date</code> prop of the <code>CurrentDate</code> should contain a string of text.");'
   - text: The <code>CurrentDate</code> component should render the value from the <code>date</code> prop in the <code>p</code> tag.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.find(''p'').html().includes(Date().substr(3)); })(), ''The <code>CurrentDate</code> component should render the value from the <code>date</code> prop in the <code>p</code> tag.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(Calendar)); return mockedComponent.find("p").html().includes(Date().substr(3)); })(), "The <code>CurrentDate</code> component should render the value from the <code>date</code> prop in the <code>p</code> tag.");'
 
 ```
 

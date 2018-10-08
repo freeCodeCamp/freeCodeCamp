@@ -28,7 +28,7 @@ There are 964 balanced sculptures of order 10 and 360505 of order 15.How many ba
 ```yml
 tests:
   - text: <code>euler275()</code> should return 15030564.
-    testString: 'assert.strictEqual(euler275(), 15030564, ''<code>euler275()</code> should return 15030564.'');'
+    testString: 'assert.strictEqual(euler275(), 15030564, "<code>euler275()</code> should return 15030564.");'
 
 ```
 

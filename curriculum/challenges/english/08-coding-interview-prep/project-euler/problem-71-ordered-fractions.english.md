@@ -24,7 +24,7 @@ By listing the set of reduced proper fractions for d ≤ 1,000,000 in ascending 
 ```yml
 tests:
   - text: <code>euler71()</code> should return 428570.
-    testString: 'assert.strictEqual(euler71(), 428570, ''<code>euler71()</code> should return 428570.'');'
+    testString: 'assert.strictEqual(euler71(), 428570, "<code>euler71()</code> should return 428570.");'
 
 ```
 

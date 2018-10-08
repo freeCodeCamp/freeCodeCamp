@@ -27,13 +27,13 @@ Create a social network as an undirected graph with 4 nodes/people named <code>J
 ```yml
 tests:
   - text: <code>undirectedAdjList</code> should only contain four nodes.
-    testString: 'assert(Object.keys(undirectedAdjList).length === 4, ''<code>undirectedAdjList</code> should only contain four nodes.'');'
+    testString: 'assert(Object.keys(undirectedAdjList).length === 4, "<code>undirectedAdjList</code> should only contain four nodes.");'
   - text: There should be an edge between <code>Jeff</code> and <code>James</code>.
-    testString: 'assert(undirectedAdjList.James.indexOf("Jeff") !== -1 && undirectedAdjList.Jeff.indexOf("James") !== -1, ''There should be an edge between <code>Jeff</code> and <code>James</code>.'');'
+    testString: 'assert(undirectedAdjList.James.indexOf("Jeff") !== -1 && undirectedAdjList.Jeff.indexOf("James") !== -1, "There should be an edge between <code>Jeff</code> and <code>James</code>.");'
   - text: There should be an edge between <code>Jill</code> and <code>Jenny</code>.
-    testString: 'assert(undirectedAdjList.Jill.indexOf("Jenny") !== -1 && undirectedAdjList.Jill.indexOf("Jenny") !== -1, ''There should be an edge between <code>Jill</code> and <code>Jenny</code>.'');'
+    testString: 'assert(undirectedAdjList.Jill.indexOf("Jenny") !== -1 && undirectedAdjList.Jill.indexOf("Jenny") !== -1, "There should be an edge between <code>Jill</code> and <code>Jenny</code>.");'
   - text: There should be an edge between <code>Jeff</code> and <code>Jenny</code>.
-    testString: 'assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1, ''There should be an edge between <code>Jeff</code> and <code>Jenny</code>.'');'
+    testString: 'assert(undirectedAdjList.Jeff.indexOf("Jenny") !== -1 && undirectedAdjList.Jenny.indexOf("Jeff") !== -1, "There should be an edge between <code>Jeff</code> and <code>Jenny</code>.");'
 
 ```
 

@@ -21,7 +21,7 @@ Add the CSS property <code>flex-direction</code> to the header's <code>.profile-
 ```yml
 tests:
   - text: The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.
-    testString: 'assert($(''.profile-name'').css(''flex-direction'') == ''column'', ''The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.'');'
+    testString: 'assert($(".profile-name").css("flex-direction") == "column", "The <code>.profile-name</code> element should have a <code>flex-direction</code> property set to column.");'
 
 ```
 
@@ -48,7 +48,7 @@ tests:
   }
   header .profile-name {
     display: flex;
-    
+
     margin-left: 10px;
   }
   header .follow-btn {

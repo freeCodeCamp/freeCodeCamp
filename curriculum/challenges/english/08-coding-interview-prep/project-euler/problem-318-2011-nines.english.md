@@ -22,7 +22,7 @@ It looks like that the number of consecutive nines at the beginning of the fract
 In fact it can be proven that the fractional part of (√2+√3)2n approaches 1 for large n.
 
 
-Consider all real numbers of the form √p+√q with p and q positive integers and p<q, such that the fractional part 
+Consider all real numbers of the form √p+√q with p and q positive integers and p<q, such that the fractional part
 of (√p+√q)2n approaches 1 for large n.
 
 
@@ -46,7 +46,7 @@ Find ∑N(p,q) for p+q ≤ 2011.
 ```yml
 tests:
   - text: <code>euler318()</code> should return 709313889.
-    testString: 'assert.strictEqual(euler318(), 709313889, ''<code>euler318()</code> should return 709313889.'');'
+    testString: 'assert.strictEqual(euler318(), 709313889, "<code>euler318()</code> should return 709313889.");'
 
 ```
 

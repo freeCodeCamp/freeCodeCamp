@@ -23,11 +23,11 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>fibWord</code> is a function.
-    testString: 'assert(typeof fibWord === ''function'', ''<code>fibWord</code> is a function.'');'
+    testString: 'assert(typeof fibWord === "function", "<code>fibWord</code> is a function.");'
   - text: <code>fibWord(5)</code> should return an array.
-    testString: 'assert(Array.isArray(fibWord(5)),''<code>fibWord(5)</code> should return an array.'');'
+    testString: 'assert(Array.isArray(fibWord(5)),"<code>fibWord(5)</code> should return an array.");'
   - text: <code>fibWord(5)</code> should return <code>'+JSON.stringify(ans)+'</code>.
-    testString: 'assert.deepEqual(fibWord(5),ans,''<code>fibWord(5)</code> should return <code>''+JSON.stringify(ans)+''</code>.'');'
+    testString: 'assert.deepEqual(fibWord(5),ans,"<code>fibWord(5)</code> should return <code>"+JSON.stringify(ans)+"</code>.");'
 
 ```
 
@@ -66,16 +66,16 @@ console.info('after the test');
 function fibWord(n) {
     function entropy(s) {
          //create an object containing each individual char
-      //and the amount of iterations per char 
+      //and the amount of iterations per char
         function prob(s) {
             var h = Object.create(null);
             s.split('').forEach(function(c) {
-               h[c] && h[c]++ || (h[c] = 1); 
+               h[c] && h[c]++ || (h[c] = 1);
             });
             return h;
         }
 
-        s = s.toString(); //just in case 
+        s = s.toString(); //just in case
         var e = 0, l = s.length, h = prob(s);
 
         for (var i in h ) {
@@ -85,7 +85,7 @@ function fibWord(n) {
         return e;
     }
     var wOne = "1", wTwo = "0", wNth = [wOne, wTwo], w = "", o = [];
- 
+
     for (var i = 0; i < n; i++) {
         if (i === 0 || i === 1) {
             w = wNth[i];
@@ -95,7 +95,7 @@ function fibWord(n) {
         }
         var l = w.length;
         var e = entropy(w);
- 
+
         if (l <= 21) {
         	o.push({
             	N: i + 1,
@@ -110,7 +110,7 @@ function fibWord(n) {
             	Entropy: e,
             	Word: "..."
         	});
-        }            
+        }
     }
   return o;
 }

@@ -21,7 +21,7 @@ Using the url of <code>https://i.imgur.com/MJAkxbh.png</code>, set the <code>bac
 ```yml
 tests:
   - text: Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.
-    testString: 'assert(code.match(/background:\s*?url\(\s*("|''|)https:\/\/i\.imgur\.com\/MJAkxbh\.png\1\s*\)/gi), ''Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.'');'
+    testString: 'assert(code.match(/background:\s*?url\(\s*("|"|)https:\/\/i\.imgur\.com\/MJAkxbh\.png\1\s*\)/gi), "Your <code>body</code> element should have a <code>background</code> property set to a <code>url()</code> with the given link.");'
 
 ```
 
@@ -35,7 +35,7 @@ tests:
 ```html
 <style>
   body {
-    
+
   }
 </style>
 ```

@@ -25,9 +25,9 @@ It's worth noting that under the hood the challenges are calling <code>ReactDOM.
 ```yml
 tests:
   - text: The constant <code>JSX</code> should return an <code>h1</code> element.
-    testString: 'assert(JSX.type === ''h1'', ''The constant <code>JSX</code> should return an <code>h1</code> element.'');'
+    testString: 'assert(JSX.type === "h1", "The constant <code>JSX</code> should return an <code>h1</code> element.");'
   - text: The <code>h1</code> tag should include the text <code>Hello JSX!</code>
-    testString: 'assert(Enzyme.shallow(JSX).contains(''Hello JSX!''), ''The <code>h1</code> tag should include the text <code>Hello JSX!</code>'');'
+    testString: 'assert(Enzyme.shallow(JSX).contains("Hello JSX!"), "The <code>h1</code> tag should include the text <code>Hello JSX!</code>");'
 
 ```
 

@@ -23,9 +23,9 @@ Hint: in the "'self'" keyword, the single quotes are part of the keyword itself,
 ```yml
 tests:
   - text: helmet.csp() middleware should be mounted correctly
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/app-info'').then(data => { assert.include(data.appStack, ''csp''); }, xhr => { throw new Error(xhr.responseText); })'
-  - text: 'Your csp config is not correct. defaultSrc should be ["''self''"] and scriptSrc should be ["''self''", ''trusted-cdn.com'']'
-    testString: 'getUserInput => $.get(getUserInput(''url'') + ''/_api/app-info'').then(data => { var cspHeader = Object.keys(data.headers).filter(function(k){ return k === ''content-security-policy'' || k === ''x-webkit-csp'' || k === ''x-content-security-policy'' })[0]; assert.equal(data.headers[cspHeader], "default-src ''self''; script-src ''self'' trusted-cdn.com"); }, xhr => { throw new Error(xhr.responseText); })'
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { assert.include(data.appStack, "csp"); }, xhr => { throw new Error(xhr.responseText); })'
+  - text: 'Your csp config is not correct. defaultSrc should be [""self""] and scriptSrc should be [""self"", "trusted-cdn.com"]'
+    testString: 'getUserInput => $.get(getUserInput("url") + "/_api/app-info").then(data => { var cspHeader = Object.keys(data.headers).filter(function(k){ return k === "content-security-policy" || k === "x-webkit-csp" || k === "x-content-security-policy" })[0]; assert.equal(data.headers[cspHeader], "default-src "self"; script-src "self" trusted-cdn.com"); }, xhr => { throw new Error(xhr.responseText); })'
 
 ```
 

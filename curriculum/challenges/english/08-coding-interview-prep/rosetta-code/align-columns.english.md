@@ -40,13 +40,13 @@ It is not a requirement to add separating characters between or around columns.
 ```yml
 tests:
   - text: <code>formatText</code> is a function.
-    testString: 'assert(typeof formatText === ''function'', ''<code>formatText</code> is a function.'');'
+    testString: 'assert(typeof formatText === "function", "<code>formatText</code> is a function.");'
   - text: '<code>formatText</code> with the above input and "right" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''right''), rightAligned, ''<code>formatText</code> with the above input and "right" justification should produce the following: '');'
+    testString: 'assert.strictEqual(formatText(testInput, "right"), rightAligned, "<code>formatText</code> with the above input and "right" justification should produce the following: ");'
   - text: '<code>formatText</code> with the above input and "left" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''left''), leftAligned, ''<code>formatText</code> with the above input and "left" justification should produce the following: '');'
+    testString: 'assert.strictEqual(formatText(testInput, "left"), leftAligned, "<code>formatText</code> with the above input and "left" justification should produce the following: ");'
   - text: '<code>formatText</code> with the above input and "center" justification should produce the following: '
-    testString: 'assert.strictEqual(formatText(testInput, ''center''), centerAligned, ''<code>formatText</code> with the above input and "center" justification should produce the following: '');'
+    testString: 'assert.strictEqual(formatText(testInput, "center"), centerAligned, "<code>formatText</code> with the above input and "center" justification should produce the following: ");'
 
 ```
 
@@ -131,10 +131,10 @@ function formatText (input, justification) {
         left = ' '.repeat(Math.floor(diff));
         right = ' '.repeat(Math.ceil(diff));
         if (justification === 'left') {
-          right += left; left = '';
+          right += left; left = ";
         }
         if (justification === 'right') {
-          left += right; right = '';
+          left += right; right = ";
         }
         input[y][x] = left + input[y][x] + right;
       }

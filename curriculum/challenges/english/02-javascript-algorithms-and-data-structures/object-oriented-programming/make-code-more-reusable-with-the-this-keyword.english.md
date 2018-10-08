@@ -26,9 +26,9 @@ Modify the <code>dog.sayLegs</code> method to remove any references to <code>dog
 ```yml
 tests:
   - text: <code>dog.sayLegs()</code> should return the given string.
-    testString: 'assert(dog.sayLegs() === ''This dog has 4 legs.'', ''<code>dog.sayLegs()</code> should return the given string.'');'
+    testString: 'assert(dog.sayLegs() === "This dog has 4 legs.", "<code>dog.sayLegs()</code> should return the given string.");'
   - text: Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.
-    testString: 'assert(code.match(/this\.numLegs/g), ''Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.'');'
+    testString: 'assert(code.match(/this\.numLegs/g), "Your code should use the <code>this</code> keyword to access the <code>numLegs</code> property of <code>dog</code>.");'
 
 ```
 

@@ -21,9 +21,9 @@ The code editor shows a <code>ShoppingCart</code> component. Define default prop
 ```yml
 tests:
   - text: The <code>ShoppingCart</code> component should render.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find(''ShoppingCart'').length === 1; })(), ''The <code>ShoppingCart</code> component should render.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("ShoppingCart").length === 1; })(), "The <code>ShoppingCart</code> component should render.");'
   - text: 'The <code>ShoppingCart</code> component should have a default prop of <code>{ items: 0 }</code>.'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); mockedComponent.setProps({items: undefined}); return mockedComponent.find(''ShoppingCart'').props().items === 0; })(), ''The <code>ShoppingCart</code> component should have a default prop of <code>{ items: 0 }</code>.'');'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); mockedComponent.setProps({items: undefined}); return mockedComponent.find("ShoppingCart").props().items === 0; })(), "The <code>ShoppingCart</code> component should have a default prop of <code>{ items: 0 }</code>.");'
 
 ```
 

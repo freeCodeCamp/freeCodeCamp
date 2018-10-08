@@ -25,23 +25,23 @@ Remember to use <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-yo
 ```yml
 tests:
   - text: '<code>mutation(["hello", "hey"])</code> should return false.'
-    testString: 'assert(mutation(["hello", "hey"]) === false, ''<code>mutation(["hello", "hey"])</code> should return false.'');'
+    testString: 'assert(mutation(["hello", "hey"]) === false, "<code>mutation(["hello", "hey"])</code> should return false.");'
   - text: '<code>mutation(["hello", "Hello"])</code> should return true.'
-    testString: 'assert(mutation(["hello", "Hello"]) === true, ''<code>mutation(["hello", "Hello"])</code> should return true.'');'
+    testString: 'assert(mutation(["hello", "Hello"]) === true, "<code>mutation(["hello", "Hello"])</code> should return true.");'
   - text: '<code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should return true.'
-    testString: 'assert(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) === true, ''<code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should return true.'');'
+    testString: 'assert(mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"]) === true, "<code>mutation(["zyxwvutsrqponmlkjihgfedcba", "qrstu"])</code> should return true.");'
   - text: '<code>mutation(["Mary", "Army"])</code> should return true.'
-    testString: 'assert(mutation(["Mary", "Army"]) === true, ''<code>mutation(["Mary", "Army"])</code> should return true.'');'
+    testString: 'assert(mutation(["Mary", "Army"]) === true, "<code>mutation(["Mary", "Army"])</code> should return true.");'
   - text: '<code>mutation(["Mary", "Aarmy"])</code> should return true.'
-    testString: 'assert(mutation(["Mary", "Aarmy"]) === true, ''<code>mutation(["Mary", "Aarmy"])</code> should return true.'');'
+    testString: 'assert(mutation(["Mary", "Aarmy"]) === true, "<code>mutation(["Mary", "Aarmy"])</code> should return true.");'
   - text: '<code>mutation(["Alien", "line"])</code> should return true.'
-    testString: 'assert(mutation(["Alien", "line"]) === true, ''<code>mutation(["Alien", "line"])</code> should return true.'');'
+    testString: 'assert(mutation(["Alien", "line"]) === true, "<code>mutation(["Alien", "line"])</code> should return true.");'
   - text: '<code>mutation(["floor", "for"])</code> should return true.'
-    testString: 'assert(mutation(["floor", "for"]) === true, ''<code>mutation(["floor", "for"])</code> should return true.'');'
+    testString: 'assert(mutation(["floor", "for"]) === true, "<code>mutation(["floor", "for"])</code> should return true.");'
   - text: '<code>mutation(["hello", "neo"])</code> should return false.'
-    testString: 'assert(mutation(["hello", "neo"]) === false, ''<code>mutation(["hello", "neo"])</code> should return false.'');'
+    testString: 'assert(mutation(["hello", "neo"]) === false, "<code>mutation(["hello", "neo"])</code> should return false.");'
   - text: '<code>mutation(["voodoo", "no"])</code> should return false.'
-    testString: 'assert(mutation(["voodoo", "no"]) === false, ''<code>mutation(["voodoo", "no"])</code> should return false.'');'
+    testString: 'assert(mutation(["voodoo", "no"]) === false, "<code>mutation(["voodoo", "no"])</code> should return false.");'
 
 ```
 

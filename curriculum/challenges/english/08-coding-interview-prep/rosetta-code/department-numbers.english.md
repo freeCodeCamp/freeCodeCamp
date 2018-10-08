@@ -9,7 +9,7 @@ challengeType: 5
 <p>There is a highly organized city that has decided to assign a number to each of their departments:</p>
 Police department
 Sanitation department
-Fire department 
+Fire department
 <p>Each department can have a number between 1 and 7  (inclusive).</p><p>The three department numbers are to be unique (different from each other) and must add up to the number 12.</p><p>The Chief of the Police doesn't like odd numbers and wants to have an even number for his department.</p>
 Task:
 <p>Write a program which outputs all valid combinations:</p>
@@ -40,13 +40,13 @@ Task:
 ```yml
 tests:
   - text: <code>combinations</code> should be a function.
-    testString: 'assert(typeof combinations === ''function'', ''<code>combinations</code> should be a function.'');'
+    testString: 'assert(typeof combinations === "function", "<code>combinations</code> should be a function.");'
   - text: '<code>combinations([1, 2, 3], 6)</code> should return an Array.'
-    testString: 'assert(Array.isArray(combinations([1, 2, 3], 6)), ''<code>combinations([1, 2, 3], 6)</code> should return an Array.'');'
+    testString: 'assert(Array.isArray(combinations([1, 2, 3], 6)), "<code>combinations([1, 2, 3], 6)</code> should return an Array.");'
   - text: '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.'
-    testString: 'assert(combinations(nums, total).length === len, ''<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.'');'
+    testString: 'assert(combinations(nums, total).length === len, "<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.");'
   - text: '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.'
-    testString: 'assert.deepEqual(combinations(nums, total), result, ''<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.'');'
+    testString: 'assert.deepEqual(combinations(nums, total), result, "<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.");'
 
 ```
 

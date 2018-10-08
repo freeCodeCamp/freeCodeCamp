@@ -24,9 +24,9 @@ Add the <code>attr()</code> method to the code in the editor and put a class of 
 ```yml
 tests:
   - text: Your <code>div</code> elements should have a class of <code>bar</code>.
-    testString: 'assert($(''div'').attr(''class'') == "bar", ''Your <code>div</code> elements should have a class of <code>bar</code>.'');'
+    testString: 'assert($("div").attr("class") == "bar", "Your <code>div</code> elements should have a class of <code>bar</code>.");'
   - text: Your code should use the <code>attr()</code> method.
-    testString: 'assert(code.match(/\.attr/g), ''Your code should use the <code>attr()</code> method.'');'
+    testString: 'assert(code.match(/\.attr/g), "Your code should use the <code>attr()</code> method.");'
 
 ```
 
@@ -49,15 +49,15 @@ tests:
 <body>
   <script>
     const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
-    
+
     d3.select("body").selectAll("div")
       .data(dataset)
       .enter()
       .append("div")
       // Add your code below this line
-      
-      
-      
+
+
+
       // Add your code above this line
   </script>
 </body>

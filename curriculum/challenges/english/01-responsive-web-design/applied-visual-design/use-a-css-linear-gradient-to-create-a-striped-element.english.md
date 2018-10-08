@@ -26,17 +26,17 @@ Make stripes by changing the <code>repeating-linear-gradient()</code> to use a g
 ```yml
 tests:
   - text: The angle of the <code>repeating-linear-gradient()</code> should be 45deg.
-    testString: 'assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi), ''The angle of the <code>repeating-linear-gradient()</code> should be 45deg.'');'
+    testString: 'assert(code.match(/background:\s*?repeating-linear-gradient\(\s*?45deg/gi), "The angle of the <code>repeating-linear-gradient()</code> should be 45deg.");'
   - text: The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg
-    testString: 'assert(!code.match(/90deg/gi), ''The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg'');'
+    testString: 'assert(!code.match(/90deg/gi), "The angle of the <code>repeating-linear-gradient()</code> should no longer be 90deg");'
   - text: The color stop at 0 pixels should be <code>yellow</code>.
-    testString: 'assert(code.match(/yellow\s+?0(px)?/gi), ''The color stop at 0 pixels should be <code>yellow</code>.'');'
+    testString: 'assert(code.match(/yellow\s+?0(px)?/gi), "The color stop at 0 pixels should be <code>yellow</code>.");'
   - text: One color stop at 40 pixels should be <code>yellow</code>.
-    testString: 'assert(code.match(/yellow\s+?40px/gi), ''One color stop at 40 pixels should be <code>yellow</code>.'');'
+    testString: 'assert(code.match(/yellow\s+?40px/gi), "One color stop at 40 pixels should be <code>yellow</code>.");'
   - text: The second color stop at 40 pixels should be <code>black</code>.
-    testString: 'assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi), ''The second color stop at 40 pixels should be <code>black</code>.'');'
+    testString: 'assert(code.match(/yellow\s+?40px,\s*?black\s+?40px/gi), "The second color stop at 40 pixels should be <code>black</code>.");'
   - text: The last color stop at 80 pixels should be <code>black</code>.
-    testString: 'assert(code.match(/black\s+?80px/gi), ''The last color stop at 80 pixels should be <code>black</code>.'');'
+    testString: 'assert(code.match(/black\s+?80px/gi), "The last color stop at 80 pixels should be <code>black</code>.");'
 
 ```
 
@@ -50,7 +50,7 @@ tests:
 ```html
 <style>
 
-  div{ 
+  div{
     border-radius: 20px;
     width: 70%;
     height: 400px;

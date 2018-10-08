@@ -32,7 +32,7 @@ What is Cost(109) ?
 ```yml
 tests:
   - text: <code>euler219()</code> should return 64564225042.
-    testString: 'assert.strictEqual(euler219(), 64564225042, ''<code>euler219()</code> should return 64564225042.'');'
+    testString: 'assert.strictEqual(euler219(), 64564225042, "<code>euler219()</code> should return 64564225042.");'
 
 ```
 

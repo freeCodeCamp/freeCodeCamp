@@ -45,7 +45,7 @@ What is the sum of all checksums for the paths having the minimal length?
 ```yml
 tests:
   - text: <code>euler244()</code> should return 96356848.
-    testString: 'assert.strictEqual(euler244(), 96356848, ''<code>euler244()</code> should return 96356848.'');'
+    testString: 'assert.strictEqual(euler244(), 96356848, "<code>euler244()</code> should return 96356848.");'
 
 ```
 

@@ -28,19 +28,19 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>equilibrium</code> is a function.
-    testString: 'assert(typeof equilibrium === ''function'', ''<code>equilibrium</code> is a function.'');'
+    testString: 'assert(typeof equilibrium === "function", "<code>equilibrium</code> is a function.");'
   - text: '<code>equilibrium([-7, 1, 5, 2, -4, 3, 0])</code> should return <code>[3,6]</code>.'
-    testString: 'assert.deepEqual(equilibrium(tests[0]), ans[0], ''<code>equilibrium([-7, 1, 5, 2, -4, 3, 0])</code> should return <code>[3,6]</code>.'');'
+    testString: 'assert.deepEqual(equilibrium(tests[0]), ans[0], "<code>equilibrium([-7, 1, 5, 2, -4, 3, 0])</code> should return <code>[3,6]</code>.");'
   - text: '<code>equilibrium([2, 4, 6])</code> should return <code>[]</code>.'
-    testString: 'assert.deepEqual(equilibrium(tests[1]), ans[1], ''<code>equilibrium([2, 4, 6])</code> should return <code>[]</code>.'');'
+    testString: 'assert.deepEqual(equilibrium(tests[1]), ans[1], "<code>equilibrium([2, 4, 6])</code> should return <code>[]</code>.");'
   - text: '<code>equilibrium([2, 9, 2])</code> should return <code>[1]</code>.'
-    testString: 'assert.deepEqual(equilibrium(tests[2]), ans[2], ''<code>equilibrium([2, 9, 2])</code> should return <code>[1]</code>.'');'
+    testString: 'assert.deepEqual(equilibrium(tests[2]), ans[2], "<code>equilibrium([2, 9, 2])</code> should return <code>[1]</code>.");'
   - text: '<code>equilibrium([1, -1, 1, -1, 1, -1, 1])</code> should return <code>[0,1,2,3,4,5,6]</code>.'
-    testString: 'assert.deepEqual(equilibrium(tests[3]), ans[3], ''<code>equilibrium([1, -1, 1, -1, 1, -1, 1])</code> should return <code>[0,1,2,3,4,5,6]</code>.'');'
+    testString: 'assert.deepEqual(equilibrium(tests[3]), ans[3], "<code>equilibrium([1, -1, 1, -1, 1, -1, 1])</code> should return <code>[0,1,2,3,4,5,6]</code>.");'
   - text: '<code>equilibrium([1])</code> should return <code>[0]</code>.'
-    testString: 'assert.deepEqual(equilibrium(tests[4]), ans[4], ''<code>equilibrium([1])</code> should return <code>[0]</code>.'');'
+    testString: 'assert.deepEqual(equilibrium(tests[4]), ans[4], "<code>equilibrium([1])</code> should return <code>[0]</code>.");'
   - text: '<code>equilibrium([])</code> should return <code>[]</code>.'
-    testString: 'assert.deepEqual(equilibrium(tests[5]), ans[5], ''<code>equilibrium([])</code> should return <code>[]</code>.'');'
+    testString: 'assert.deepEqual(equilibrium(tests[5]), ans[5], "<code>equilibrium([])</code> should return <code>[]</code>.");'
 
 ```
 

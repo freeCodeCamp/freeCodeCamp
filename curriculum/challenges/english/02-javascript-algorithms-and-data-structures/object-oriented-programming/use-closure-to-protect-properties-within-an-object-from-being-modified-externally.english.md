@@ -25,9 +25,9 @@ Change how <code>weight</code> is declared in the <code>Bird</code> function so 
 ```yml
 tests:
   - text: The <code>weight</code> property should be a private variable.
-    testString: 'assert(!code.match(/this\.weight/g), ''The <code>weight</code> property should be a private variable.'');'
+    testString: 'assert(!code.match(/this\.weight/g), "The <code>weight</code> property should be a private variable.");'
   - text: Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.
-    testString: 'assert((new Bird()).getWeight() === 15, ''Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.'');'
+    testString: 'assert((new Bird()).getWeight() === 15, "Your code should create a method in <code>Bird</code> called <code>getWeight</code> that returns the <code>weight</code>.");'
 
 ```
 
@@ -41,8 +41,8 @@ tests:
 ```js
 function Bird() {
   this.weight = 15;
-  
-  
+
+
 }
 
 ```
@@ -60,7 +60,7 @@ function Bird() {
 ```js
 function Bird() {
   let weight = 15;
-  
+
   this.getWeight = () => weight;
 }
 ```

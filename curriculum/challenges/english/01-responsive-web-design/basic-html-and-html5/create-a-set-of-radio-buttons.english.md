@@ -28,19 +28,19 @@ Add a pair of radio buttons to your form, each nested in its own label element. 
 ```yml
 tests:
   - text: Your page should have two radio button elements.
-    testString: 'assert($(''input[type="radio"]'').length > 1, ''Your page should have two radio button elements.'');'
+    testString: 'assert($("input[type="radio"]").length > 1, "Your page should have two radio button elements.");'
   - text: Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.
-    testString: 'assert($(''label > input[type="radio"]'').filter("[name=''indoor-outdoor'']").length > 1, ''Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.'');'
+    testString: 'assert($("label > input[type="radio"]").filter("[name="indoor-outdoor"]").length > 1, "Give your radio buttons the <code>name</code> attribute of <code>indoor-outdoor</code>.");'
   - text: Each of your two radio button elements should be nested in its own <code>label</code> element.
-    testString: 'assert($(''label > input[type="radio"]:only-child'').length > 1, ''Each of your two radio button elements should be nested in its own <code>label</code> element.'');'
+    testString: 'assert($("label > input[type="radio"]:only-child").length > 1, "Each of your two radio button elements should be nested in its own <code>label</code> element.");'
   - text: Make sure each of your <code>label</code> elements has a closing tag.
-    testString: 'assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length), ''Make sure each of your <code>label</code> elements has a closing tag.'');'
+    testString: 'assert((code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length), "Make sure each of your <code>label</code> elements has a closing tag.");'
   - text: One of your radio buttons should have the label <code>indoor</code>.
-    testString: 'assert($("label").text().match(/indoor/gi), ''One of your radio buttons should have the label <code>indoor</code>.'');'
+    testString: 'assert($("label").text().match(/indoor/gi), "One of your radio buttons should have the label <code>indoor</code>.");'
   - text: One of your radio buttons should have the label <code>outdoor</code>.
-    testString: 'assert($("label").text().match(/outdoor/gi), ''One of your radio buttons should have the label <code>outdoor</code>.'');'
+    testString: 'assert($("label").text().match(/outdoor/gi), "One of your radio buttons should have the label <code>outdoor</code>.");'
   - text: Each of your radio button elements should be added within the <code>form</code> tag.
-    testString: 'assert($("label").parent().get(0).tagName.match(''FORM''), ''Each of your radio button elements should be added within the <code>form</code> tag.'');'
+    testString: 'assert($("label").parent().get(0).tagName.match("FORM"), "Each of your radio button elements should be added within the <code>form</code> tag.");'
 
 ```
 
@@ -55,9 +55,9 @@ tests:
 <h2>CatPhotoApp</h2>
 <main>
   <p>Click here to view more <a href="#">cat photos</a>.</p>
-  
+
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
-  
+
   <p>Things cats love:</p>
   <ul>
     <li>cat nip</li>

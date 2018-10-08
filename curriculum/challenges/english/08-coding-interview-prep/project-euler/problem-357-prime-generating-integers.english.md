@@ -25,7 +25,7 @@ for every divisor d of n, d+n/d is prime.
 ```yml
 tests:
   - text: <code>euler357()</code> should return 1739023853137.
-    testString: 'assert.strictEqual(euler357(), 1739023853137, ''<code>euler357()</code> should return 1739023853137.'');'
+    testString: 'assert.strictEqual(euler357(), 1739023853137, "<code>euler357()</code> should return 1739023853137.");'
 
 ```
 
