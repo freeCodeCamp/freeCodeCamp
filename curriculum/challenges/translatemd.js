@@ -17,8 +17,8 @@ var langFull = 'spanish';
 //     }
 // });
 
-var dir1 = fs.readdirSync('./english')[7];
-var dir2 = fs.readdirSync('./english/' + dir1)[9];
+var dir1 = fs.readdirSync('./english')[6];
+var dir2 = fs.readdirSync('./english/' + dir1)[3];
 var dir = dir1 + '/' + dir2;
 fs.readdirSync('./english/' + dir).forEach(file => {
   if (file.includes('.md') && dir) {
@@ -43,7 +43,7 @@ fs.readdirSync('./english/' + dir).forEach(file => {
 //     if (file.includes('.md') && dir) {getFile(file, dir)}
 // });
 
-//getFile('add-a-text-alternative-to-images-for-visually-impaired-accessibility.english.md', '01-responsive-web-design/applied-accessibility')
+//getFile('problem-2-even-fibonacci-numbers.english.md', '08-coding-interview-prep/project-euler')
 
 // Load in full text, description, instructions, and title
 function getFile(file, dir) {
