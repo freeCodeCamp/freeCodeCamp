@@ -1,4 +1,4 @@
-# How to catch outgoing emails for email workflows
+# How to catch outgoing emails locally (for email workflows)
 
 > **Note:** This is an **optional** step - Only required when working with email workflows
 

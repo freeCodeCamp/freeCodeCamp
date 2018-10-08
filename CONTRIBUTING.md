@@ -10,44 +10,56 @@
     </tr>
 </table>
 
-# Contributor's Guide
+# Contribution Guidelines
 
 Hello 👋 !
 
 freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your interest in contributing and we are exited to welcome you onboard.
 
-There are a lot of ways you can help and contribute to the community. We are pretty sure, we have something that will interest you. For instance, you can copy edit, and curate content. Write code, report and fix bugs. Triage issues and help moderate and review changes to the codebase. You can help campers, provide feedback and coding assistance and more.
+There are a lot of ways you can help and contribute to the community. For instance, you can copy edit, and curate content for guide articles and curriculum. Translate freeCodeCamp into a language that you speak. Write code, report and fix bugs. Triage issues and help moderate and review changes to the codebase. You can help campers, provide feedback and coding assistance and more.
 
 Any and all contributions are welcome alike.
 
-## Here are some fun ways you can help
+> **A quick note before getting started:**
+>
+> We have a ["Code of Conduct"](/docs/CODE_OF_CONDUCT.md) that you should follow at all times. In summary - We want contributing to freeCodeCamp.org, foster a welcoming environment that is safe and inclusive for everyone.
+>
+> Be polite and succinct in your conversations with fellow contributors. Remember to respect everyone's time and efforts, they are helping the community same as you.
 
-> **Important:**
->
-> We have a ["Code of Conduct"](/docs/CODE_OF_CONDUCT) that you should follow at all times.In short - We want contributing to freeCodeCamp.org, foster a welcoming environment that is safe and civil for everyone.
->
-> As contributors we should be polite and succinct in our conversations with our fellow volunteers. Let's remember to respect everyone's time and efforts.
+Happy Contributing 🎉!
+
+## Here are some fun ways you can help
 
 You can choose to contribute to an area of you interest:
 
-1. [Contribute to this open source codebase. Work on guide articles, curriculum challenges and fix bugs.](#1-contribute-to-this-open-source-codebase)
-2. [Help campers on our public forum.](#2-help-campers-on-our-public-forum)
-3. [Help us add subtitles on our YouTube channel.](#3-help-us-add-subtitles-on-our-youtube-channel)
+1. [Contribute to this open source codebase.](#contribute-to-this-open-source-codebase)
 
-### 1. Contribute to this open source codebase
+   Help us in creating or editing [guide articles](https://www.freecodecamp.org/guide), [curriculum challenges](https://www.freecodecamp.org/learn) and fixing bugs on the learning platform.
+
+2. Help campers on our [public forum](https://www.freecodecamp.org/forum/).
+
+   - ❓ Help campers by [answering their questions](https://www.freecodecamp.org/forum/?max_posts=1).
+   - 💬 [Give feedback](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) on camper projects.
+
+3. Help us add subtitles on our [YouTube channel](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
+
+### Contribute to this open source codebase
 
 We have a huge open source codebase of the thousands of [Curriculum challenges](https://www.freecodecamp.org/learn) and [Guide articles](https://www.freecodecamp.org/guide). These challenges and articles make up the learning content available on the freeCodeCamp.org's learning platform.
 
 You can help us:
 
-- [📖 Research, Write and Update our guide articles.](#%F0%9F%93%96-research-write-and-update-our-guide-articles)
-- [💻 Create, Update and Fix Bugs in our curriculum challenges.](#%F0%9F%92%BB-create-update-and-fix-bugs-in-our-curriculum-challenges)
-- [📚 Translate guide articles and curriculum challenges.](#%F0%9F%93%9A-translate-guide-articles-and-curriculum-challenges)
-- [🛠 Help us fix bugs in freeCodeCamp.org's learning platform.](#%F0%9F%9B%A0-help-us-fix-bugs-in-freecodecamporgs-learning-platform)
+- [📝 Research, Write and Update our guide articles.](#research-write-and-update-our-guide-articles)
 
-#### 📖 Research, Write and Update our guide articles
+- [💻 Create, Update and Fix Bugs in our curriculum challenges.](#create-update-and-fix-bugs-in-our-curriculum-challenges)
 
-##### What are Guide articles?
+- [🌐 Translate guide articles and curriculum challenges.](#translate-guide-articles-and-curriculum-challenges)
+
+- [🛠 Help us fix bugs in freeCodeCamp.org's learning platform.](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
+
+#### Research, Write and Update our guide articles
+
+**What are Guide articles?**
 
 The Guide articles aim to be short articles to get you started and familiar with these concepts before going on to read more in-depth material.
 
@@ -55,7 +67,7 @@ Guide articles can be an explanation of a syntax, design pattern, what aria labe
 
 You can find an [example article about HTML Elements here](./client/src/pages/html/elements/index.md).
 
-##### What can I write an article about?
+**What can I write an article about?**
 
 Front-end development (adjective form with a dash) is when you are working on the front end (noun form with no dash). The same goes with the back end, full stack, and many other compound terms.
 
@@ -65,15 +77,15 @@ To help, find a `stub article` on our [Guide website](https://www.freecodecamp.o
 
 If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
 
-**If you would like work on these, follow along these steps:**
+If you would like work on these, follow along these guidelines:
+
+### [How to work on Guide articles.](/docs/how-to-work-on-guide-articles.md)
+
+#### Create, Update and Fix Bugs in our curriculum challenges
 
 **[TODO]**
 
-#### 💻 Create, Update and Fix Bugs in our curriculum challenges
-
-**[TODO]**
-
-#### 📚 Translate guide articles and curriculum challenges
+#### Translate guide articles and curriculum challenges
 
 You can help us translate our Guide articles and Curriculum challenges for a language that you speak. Currently we have translated versions in:
 
@@ -89,7 +101,7 @@ Most of these versions are machine translated. We would love your help in improv
 
 **[TODO]**
 
-#### 🛠 Help us fix bugs in freeCodeCamp.org's learning platform
+#### Help us fix bugs in freeCodeCamp.org's learning platform
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries including but not limited to Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
@@ -104,13 +116,6 @@ Contributing to this requires some understanding of APIs, ES6 Syntax and a lot o
 **If you would like work on these, follow along these steps:**
 
 **[TODO]**
-
-### 2. Help campers on our [public forum](https://www.freecodecamp.org/forum)
-
-- ❓ Help campers by [answering their questions](https://www.freecodecamp.org/forum/?max_posts=1).
-- 💬 [Give feedback](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) on camper projects.
-
-### 3. Help us add subtitles on our [YouTube channel](https://www.youtube.com/freeCodeCamp/videos)
 
 ## FAQs
 
