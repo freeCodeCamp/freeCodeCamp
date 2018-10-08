@@ -83,6 +83,8 @@ If you would like work on these, follow along these guidelines:
 
 **[TODO]**
 
+### [How to work on Curriculum Challenges.](/docs/how-to-work-on-curriculum-challenges.md)
+
 #### Translate guide articles and curriculum challenges
 
 You can help us translate our Guide articles and Curriculum challenges for a language that you speak. Currently we have translated versions in:
