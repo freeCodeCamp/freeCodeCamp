@@ -30,8 +30,8 @@ tests:
     testString: 'assert($("h2").css("font-family").match(/^"?lobster/i), "Your h2 element should use the font <code>Lobster</code>.");'
   - text: Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.
     testString: 'assert(/\s*h2\s*\{\s*font-family\:\s*(\"|")?Lobster(\"|")?,\s*monospace\s*;\s*\}/gi.test(code), "Your h2 element should degrade to the font <code>monospace</code> when <code>Lobster</code> is not available.");'
-  - text: 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;--</code> in front of it.'
-    testString: 'assert(new RegExp("<!--[^fc]", "gi").test(code), "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60!--</code> in front of it.");'
+  - text: 'Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.'
+    testString: 'assert(new RegExp("<!--[^fc]", "gi").test(code), "Comment out your call to Google for the <code>Lobster</code> font by putting <code>&#60;!--</code> in front of it.");'
   - text: 'Be sure to close your comment by adding <code>--&#62;</code>.'
     testString: 'assert(new RegExp("[^fc]-->", "gi").test(code), "Be sure to close your comment by adding <code>--&#62;</code>.");'
 
