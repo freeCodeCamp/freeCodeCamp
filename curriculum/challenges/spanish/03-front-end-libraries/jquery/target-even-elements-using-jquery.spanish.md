@@ -8,16 +8,16 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-También puede apuntar elementos según sus posiciones usando <code>:odd</code> o <code>:even</code> selectores <code>:even</code> . 
-Tenga en cuenta que jQuery tiene un índice de cero, lo que significa que el primer elemento de una selección tiene una posición de 0. Esto puede ser un poco confuso, ya que, en contra de la intuición,: <code>:odd</code> selecciona el segundo elemento (posición 1), cuarto elemento (posición 3). ), y así. 
-Así es como se enfocaría en todos los elementos impares con la clase <code>target</code> y les daría clases: 
-<code>$(&quot;.target:odd&quot;).addClass(&quot;animated shake&quot;);</code> 
-Intenta seleccionar todos los elementos <code>target</code> uniformes y dales las clases de <code>animated</code> y <code>shake</code> . Recuerde que <strong>incluso se</strong> refiere a la posición de los elementos con un sistema basado en cero en mente. 
+<section id='description'>
+También puede apuntar elementos según sus posiciones usando <code>:odd</code> o <code>:even</code> selectores <code>:even</code> .
+Tenga en cuenta que jQuery tiene un índice de cero, lo que significa que el primer elemento de una selección tiene una posición de 0. Esto puede ser un poco confuso, ya que, en contra de la intuición,: <code>:odd</code> selecciona el segundo elemento (posición 1), cuarto elemento (posición 3). ), y así.
+Así es como se enfocaría en todos los elementos impares con la clase <code>target</code> y les daría clases:
+<code>$(&quot;.target:odd&quot;).addClass(&quot;animated shake&quot;);</code>
+Intenta seleccionar todos los elementos <code>target</code> uniformes y dales las clases de <code>animated</code> y <code>shake</code> . Recuerde que <strong>incluso se</strong> refiere a la posición de los elementos con un sistema basado en cero en mente.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -28,7 +28,7 @@ Intenta seleccionar todos los elementos <code>target</code> uniformes y dales la
 tests:
   - text: Todos los elementos de <code>target</code> que jQuery considera que están parejos deben sacudirse.
     testString: 'assert($(".target:even").hasClass("animated") && $(".target:even").hasClass("shake"), "All of the <code>target</code> elements that jQuery considers to be even should shake.");'
-  - text: &#39;Deberías usar el selector <code>:even</code> para modificar estos elementos&#39;.
+  - text: 'Deberías usar el selector <code>:even</code> para modificar estos elementos'
     testString: 'assert(code.match(/\:even/g), "You should use the <code>&#58;even</code> selector to modify these elements.");'
   - text: Solo use jQuery para agregar estas clases al elemento.
     testString: 'assert(code.match(/\$\(".target:even"\)/g) || code.match(/\$\(".target:even"\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g) || code.match(/\$\(".target"\).filter\(":even"\)/g), "Only use jQuery to add these classes to the element.");'

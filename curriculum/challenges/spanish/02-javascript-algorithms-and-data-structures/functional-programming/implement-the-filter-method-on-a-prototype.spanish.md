@@ -6,14 +6,14 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Nos enseñaría mucho sobre el método de <code>filter</code> si intentáramos implementar una versión que se comporte exactamente como <code>Array.prototype.filter()</code> . Puede usar un bucle <code>for</code> o <code>Array.prototype.forEach()</code> . 
-Nota: Una función pura puede alterar las variables locales definidas dentro de su alcance, aunque es preferible evitar eso también. 
+<section id='description'>
+Nos enseñaría mucho sobre el método de <code>filter</code> si intentáramos implementar una versión que se comporte exactamente como <code>Array.prototype.filter()</code> . Puede usar un bucle <code>for</code> o <code>Array.prototype.forEach()</code> .
+Nota: Una función pura puede alterar las variables locales definidas dentro de su alcance, aunque es preferible evitar eso también.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba su propio <code>Array.prototype.myFilter()</code> , que debe comportarse exactamente como <code>Array.prototype.filter()</code> . Puede usar un bucle <code>for</code> o el método <code>Array.prototype.forEach()</code> . 
+<section id='instructions'>
+Escriba su propio <code>Array.prototype.myFilter()</code> , que debe comportarse exactamente como <code>Array.prototype.filter()</code> . Puede usar un bucle <code>for</code> o el método <code>Array.prototype.forEach()</code> .
 </section>
 
 ## Tests
@@ -21,7 +21,7 @@ Escriba su propio <code>Array.prototype.myFilter()</code> , que debe comportarse
 
 ```yml
 tests:
-  - text: &#39; <code>new_s</code> debe ser igual a <code>[23, 65, 5]</code> .&#39;
+  - text: ' <code>new_s</code> debe ser igual a <code>[23, 65, 5]</code> .'
     testString: 'assert(JSON.stringify(new_s) === JSON.stringify([23, 65, 5]), "<code>new_s</code> should equal <code>[23, 65, 5]</code>.");'
   - text: Su código no debe utilizar el método de <code>filter</code> .
     testString: 'assert(!code.match(/\.filter/g), "Your code should not use the <code>filter</code> method.");'

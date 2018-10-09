@@ -6,19 +6,19 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-ES6 hace que la desestructuración de matrices sea tan fácil como desestructurar objetos. 
-Una diferencia clave entre el operador de propagación y la desestructuración de matrices es que el operador de propagación desempaqueta todo el contenido de una matriz en una lista separada por comas. Por consiguiente, no puede seleccionar o elegir qué elementos desea asignar a las variables. 
-destrucción de una matriz nos permite hacer exactamente eso: 
-<blockquote>const [a, b] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b); // 1, 2</blockquote> 
-A la variable <code>a</code> se le asigna el primer valor de la matriz, <code>b</code> se le asigna el segundo valor de la matriz. 
-También podemos acceder al valor en cualquier índice en una matriz con desestructuración usando comas para alcanzar el índice deseado: 
-<blockquote>const [a, b,,, c] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b, c); // 1, 2, 5 </blockquote> 
+<section id='description'>
+ES6 hace que la desestructuración de matrices sea tan fácil como desestructurar objetos.
+Una diferencia clave entre el operador de propagación y la desestructuración de matrices es que el operador de propagación desempaqueta todo el contenido de una matriz en una lista separada por comas. Por consiguiente, no puede seleccionar o elegir qué elementos desea asignar a las variables.
+destrucción de una matriz nos permite hacer exactamente eso:
+<blockquote>const [a, b] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b); // 1, 2</blockquote>
+A la variable <code>a</code> se le asigna el primer valor de la matriz, <code>b</code> se le asigna el segundo valor de la matriz.
+También podemos acceder al valor en cualquier índice en una matriz con desestructuración usando comas para alcanzar el índice deseado:
+<blockquote>const [a, b,,, c] = [1, 2, 3, 4, 5, 6];<br>console.log(a, b, c); // 1, 2, 5 </blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la asignación de desestructuración para intercambiar los valores de <code>a</code> y <code>b</code> modo que <code>a</code> reciba el valor almacenado en <code>b</code> , y <code>b</code> reciba el valor almacenado en <code>a</code> . 
+<section id='instructions'>
+Use la asignación de desestructuración para intercambiar los valores de <code>a</code> y <code>b</code> modo que <code>a</code> reciba el valor almacenado en <code>b</code> , y <code>b</code> reciba el valor almacenado en <code>a</code> .
 </section>
 
 ## Tests
@@ -26,9 +26,9 @@ Use la asignación de desestructuración para intercambiar los valores de <code>
 
 ```yml
 tests:
-  - text: &#39;El valor de <code>a</code> debe ser 6, después del intercambio.&#39;
+  - text: 'El valor de <code>a</code> debe ser 6, después del intercambio.'
     testString: 'assert(a === 6, "Value of <code>a</code> should be 6, after swapping.");'
-  - text: &#39;El valor de <code>b</code> debería ser 8, después del intercambio.&#39;
+  - text: 'El valor de <code>b</code> debería ser 8, después del intercambio.'
     testString: 'assert(b === 8, "Value of <code>b</code> should be 8, after swapping.");'
   - text: Utilice la desestructuración de matrices para intercambiar a y b.
     testString: '// assert(/\[\s*(\w)\s*,\s*(\w)\s*\]\s*=\s*\[\s*\2\s*,\s*\1\s*\]/g.test(code), "Use array destructuring to swap a and b.");'

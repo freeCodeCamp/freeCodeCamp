@@ -6,16 +6,16 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-La programación funcional tiene que ver con la creación y el uso de funciones no mutantes. 
-El último desafío introdujo el método <code>concat</code> como una forma de combinar arreglos en uno nuevo sin mutar los arreglos originales. Comparar <code>concat</code> con el método de <code>push</code> . <code>Push</code> agrega un elemento al final de la misma matriz a la que se llama, lo que muta esa matriz. Aquí hay un ejemplo: 
-<blockquote>var arr = [1, 2, 3];<br>arr.push([4, 5, 6]);<br>// arr is changed to [1, 2, 3, [4, 5, 6]]<br>// Not the functional programming way</blockquote> 
-<code>Concat</code> ofrece una forma de agregar nuevos elementos al final de una matriz sin efectos secundarios de mutación. 
+<section id='description'>
+La programación funcional tiene que ver con la creación y el uso de funciones no mutantes.
+El último desafío introdujo el método <code>concat</code> como una forma de combinar arreglos en uno nuevo sin mutar los arreglos originales. Comparar <code>concat</code> con el método de <code>push</code> . <code>Push</code> agrega un elemento al final de la misma matriz a la que se llama, lo que muta esa matriz. Aquí hay un ejemplo:
+<blockquote>var arr = [1, 2, 3];<br>arr.push([4, 5, 6]);<br>// arr is changed to [1, 2, 3, [4, 5, 6]]<br>// Not the functional programming way</blockquote>
+<code>Concat</code> ofrece una forma de agregar nuevos elementos al final de una matriz sin efectos secundarios de mutación.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie la función <code>nonMutatingPush</code> para que use <code>concat</code> para agregar <code>newItem</code> al final del <code>original</code> lugar de <code>push</code> . La función debe devolver una matriz. 
+<section id='instructions'>
+Cambie la función <code>nonMutatingPush</code> para que use <code>concat</code> para agregar <code>newItem</code> al final del <code>original</code> lugar de <code>push</code> . La función debe devolver una matriz.
 </section>
 
 ## Tests
@@ -31,7 +31,7 @@ tests:
     testString: 'assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), "The <code>first</code> array should not change.");'
   - text: La <code>second</code> matriz no debe cambiar.
     testString: 'assert(JSON.stringify(second) === JSON.stringify([4, 5]), "The <code>second</code> array should not change.");'
-  - text: &#39; <code>nonMutatingPush([1, 2, 3], [4, 5])</code> debe devolver <code>[1, 2, 3, 4, 5]</code> .&#39;
+  - text: ' <code>nonMutatingPush([1, 2, 3], [4, 5])</code> debe devolver <code>[1, 2, 3, 4, 5]</code> .'
     testString: 'assert(JSON.stringify(nonMutatingPush([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), "<code>nonMutatingPush([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.");'
 
 ```

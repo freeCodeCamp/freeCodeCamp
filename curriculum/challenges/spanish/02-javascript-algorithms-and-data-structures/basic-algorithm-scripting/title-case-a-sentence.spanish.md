@@ -7,14 +7,14 @@ challengeType: 5
 ---
 
 ## Description
-<section id='description'> 
-Devuelva la cadena provista con la primera letra de cada palabra en mayúscula. Asegúrese de que el resto de la palabra esté en minúscula. 
-A los efectos de este ejercicio, también debe poner mayúsculas en las palabras de conexión como &quot;el&quot; y &quot;de&quot;. 
-Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. 
+<section id='description'>
+Devuelva la cadena provista con la primera letra de cada palabra en mayúscula. Asegúrese de que el resto de la palabra esté en minúscula.
+A los efectos de este ejercicio, también debe poner mayúsculas en las palabras de conexión como &quot;el&quot; y &quot;de&quot;.
+Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -23,9 +23,9 @@ Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-
 
 ```yml
 tests:
-  - text: &#39; <code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> debería devolver una cadena.&#39;
+  - text: ' <code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> debería devolver una cadena.'
     testString: 'assert(typeof titleCase("I"m a little tea pot") === "string", "<code>titleCase("I&#39;m a little tea pot")</code> should return a string.");'
-  - text: &#39; <code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> debería devolver <code>I&#39;m A Little Tea Pot</code> &#39;.
+  - text: ' <code>titleCase(&quot;I&#39;m a little tea pot&quot;)</code> debería devolver <code>I&#39;m A Little Tea Pot</code> '
     testString: 'assert(titleCase("I"m a little tea pot") === "I"m A Little Tea Pot", "<code>titleCase("I&#39;m a little tea pot")</code> should return <code>I&#39;m A Little Tea Pot</code>.");'
   - text: <code>titleCase(&quot;sHoRt AnD sToUt&quot;)</code> debe devolver <code>Short And Stout</code> .
     testString: 'assert(titleCase("sHoRt AnD sToUt") === "Short And Stout", "<code>titleCase("sHoRt AnD sToUt")</code> should return <code>Short And Stout</code>.");'

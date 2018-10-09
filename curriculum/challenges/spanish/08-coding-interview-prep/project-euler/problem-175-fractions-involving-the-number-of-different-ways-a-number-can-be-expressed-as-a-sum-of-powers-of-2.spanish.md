@@ -6,21 +6,21 @@ title: 'Problem 175: Fractions involving the number of different ways a number c
 ---
 
 ## Description
-<section id='description'> 
-Defina f (0) = 1 y f (n) como el número de formas de escribir n como una suma de potencias de 2 donde no se produce potencia más de dos veces. 
+<section id='description'>
+Defina f (0) = 1 y f (n) como el número de formas de escribir n como una suma de potencias de 2 donde no se produce potencia más de dos veces.
 
-Por ejemplo, f (10) = 5 ya que hay cinco formas diferentes de expresar 10:10 = 8 + 2 = 8 + 1 + 1 = 4 + 4 + 2 = 4 + 2 + 2 + 1 + 1 = 4 + 4 + 1 + 1 
+Por ejemplo, f (10) = 5 ya que hay cinco formas diferentes de expresar 10:10 = 8 + 2 = 8 + 1 + 1 = 4 + 4 + 2 = 4 + 2 + 2 + 1 + 1 = 4 + 4 + 1 + 1
 
-Se puede mostrar que para cada fracción p / q (p&gt; 0, q&gt; 0) existe al menos un entero n tal que f (n) / f (n-1) = p / q. 
-Por ejemplo, la n más pequeña para la cual f (n) / f (n-1) = 13/17 es 241. 
-La expansión binaria de 241 es 11110001. 
-Leyendo este número binario del bit más significativo al menos significativo Bit hay 4 de uno, 3 ceros y 1 de uno. Llamaremos a la cadena 4,3,1 la Expansión Binaria Acortada de 241. 
-Halla la Expansión Binaria Acortada de la n más pequeña para la cual f (n) / f (n-1) = 123456789/987654321. 
-Da tu respuesta como enteros separados por comas, sin espacios en blanco. 
+Se puede mostrar que para cada fracción p / q (p&gt; 0, q&gt; 0) existe al menos un entero n tal que f (n) / f (n-1) = p / q.
+Por ejemplo, la n más pequeña para la cual f (n) / f (n-1) = 13/17 es 241.
+La expansión binaria de 241 es 11110001.
+Leyendo este número binario del bit más significativo al menos significativo Bit hay 4 de uno, 3 ceros y 1 de uno. Llamaremos a la cadena 4,3,1 la Expansión Binaria Acortada de 241.
+Halla la Expansión Binaria Acortada de la n más pequeña para la cual f (n) / f (n-1) = 123456789/987654321.
+Da tu respuesta como enteros separados por comas, sin espacios en blanco.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -29,7 +29,7 @@ Da tu respuesta como enteros separados por comas, sin espacios en blanco.
 
 ```yml
 tests:
-  - text: &#39; <code>euler175()</code> debe devolver 1, 13717420, 8.&#39;
+  - text: ' <code>euler175()</code> debe devolver 1, 13717420, 8.'
     testString: 'assert.strictEqual(euler175(), 1, 13717420, 8, "<code>euler175()</code> should return 1, 13717420, 8.");'
 
 ```

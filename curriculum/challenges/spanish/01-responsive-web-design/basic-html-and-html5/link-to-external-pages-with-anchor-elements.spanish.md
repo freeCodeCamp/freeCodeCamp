@@ -7,17 +7,17 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Puede usar elementos de <code>anchor</code> para vincular contenido fuera de su página web. 
-elementos de <code>anchor</code> 
-necesitan una dirección web de destino denominada atributo <code>href</code> . También necesitan texto de anclaje. Aquí hay un ejemplo: 
-<code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code> 
-Entonces su navegador mostrará el texto <strong>&quot;esto enlaza a freecodecamp.org&quot;</strong> como un enlace que puede hacer clic. Y ese enlace lo llevará a la dirección web <strong>https://spanish.freecodecamp.org</strong> . 
+<section id='description'>
+Puede usar elementos de <code>anchor</code> para vincular contenido fuera de su página web.
+elementos de <code>anchor</code>
+necesitan una dirección web de destino denominada atributo <code>href</code> . También necesitan texto de anclaje. Aquí hay un ejemplo:
+<code>&lt;a href=&quot;https://freecodecamp.org&quot;&gt;this links to freecodecamp.org&lt;/a&gt;</code>
+Entonces su navegador mostrará el texto <strong>&quot;esto enlaza a freecodecamp.org&quot;</strong> como un enlace que puede hacer clic. Y ese enlace lo llevará a la dirección web <strong>https://spanish.freecodecamp.org</strong> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Crear una <code>a</code> elemento que une a <code>http://freecatphotoapp.com</code> y tiene &quot;fotos del gato&quot; como su <code>anchor text</code> . 
+<section id='instructions'>
+Crear una <code>a</code> elemento que une a <code>http://freecatphotoapp.com</code> y tiene &quot;fotos del gato&quot; como su <code>anchor text</code> .
 </section>
 
 ## Tests
@@ -27,7 +27,7 @@ Crear una <code>a</code> elemento que une a <code>http://freecatphotoapp.com</co
 tests:
   - text: Su <code>a</code> elemento debe tener el <code>anchor text</code> de fotos &quot;gato&quot;.
     testString: 'assert((/cat photos/gi).test($("a").text()), "Your <code>a</code> element should have the <code>anchor text</code> of "cat photos".");'
-  - text: &#39;Es necesario un <code>a</code> elemento que une a <code>http://freecatphotoapp .com</code> &#39;
+  - text: 'Es necesario un <code>a</code> elemento que une a <code>http://freecatphotoapp .com</code> '
     testString: 'assert(/http:\/\/(www\.)?freecatphotoapp\.com/gi.test($("a").attr("href")), "You need an <code>a</code> element that links to <code>http&#58;//freecatphotoapp<wbr>.com</code>");'
   - text: Asegúrese de que su <code>a</code> elemento tiene una etiqueta de cierre.
     testString: 'assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a/g).length, "Make sure your <code>a</code> element has a closing tag.");'

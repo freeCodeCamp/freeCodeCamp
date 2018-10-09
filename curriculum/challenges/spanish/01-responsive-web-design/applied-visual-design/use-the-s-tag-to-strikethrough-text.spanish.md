@@ -7,13 +7,13 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Para tachar el texto, que es cuando una línea horizontal corta los caracteres, puede usar la etiqueta <code>s</code> . Muestra que una sección de texto ya no es válida. Con la etiqueta <code>s</code> , el navegador aplica el CSS de <code>text-decoration: line-through;</code> al elemento. 
+<section id='description'>
+Para tachar el texto, que es cuando una línea horizontal corta los caracteres, puede usar la etiqueta <code>s</code> . Muestra que una sección de texto ya no es válida. Con la etiqueta <code>s</code> , el navegador aplica el CSS de <code>text-decoration: line-through;</code> al elemento.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Envuelva la etiqueta <code>s</code> alrededor de &quot;Google&quot; dentro de la etiqueta <code>h4</code> y luego agregue la palabra Alfabeto a su lado, que no debería tener el formato tachado. 
+<section id='instructions'>
+Envuelva la etiqueta <code>s</code> alrededor de &quot;Google&quot; dentro de la etiqueta <code>h4</code> y luego agregue la palabra Alfabeto a su lado, que no debería tener el formato tachado.
 </section>
 
 ## Tests
@@ -25,7 +25,7 @@ tests:
     testString: 'assert($("s").length == 1, "Your code should add one <code>s</code> tag to the markup.");'
   - text: La etiqueta <code>s</code> debe envolver el texto de Google en la etiqueta <code>h4</code> . No debe contener la palabra Alfabeto.
     testString: 'assert($("s").text().match(/Google/gi) && !$("s").text().match(/Alphabet/gi), "A <code>s</code> tag should wrap around the Google text in the <code>h4</code> tag. It should not contain the word Alphabet.");'
-  - text: &#39;Incluya la palabra Alfabeto en la etiqueta <code>h4</code> , sin tachar el formato.&#39;
+  - text: 'Incluya la palabra Alfabeto en la etiqueta <code>h4</code> , sin tachar el formato.'
     testString: 'assert($("h4").html().match(/Alphabet/gi), "Include the word Alphabet in the <code>h4</code> tag, without strikethrough formatting.");'
 
 ```

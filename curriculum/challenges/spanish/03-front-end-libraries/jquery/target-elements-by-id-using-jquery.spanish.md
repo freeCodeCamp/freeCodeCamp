@@ -8,17 +8,17 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-También puede apuntar elementos por sus atributos de identificación. 
-Primero apunte el elemento de su <code>button</code> con el id <code>target3</code> usando el selector <code>$(&quot;#target3&quot;)</code> . 
-Tenga en cuenta que, al igual que con las declaraciones de CSS, escribe un <code>#</code> antes del nombre del ID. 
-Luego use la función <code>.addClass()</code> jQuery para agregar las clases <code>animated</code> y <code>fadeOut</code> . 
-Así es como harías que el elemento del <code>button</code> con el id <code>target6</code> desvanezca: 
-<code>$(&quot;#target6&quot;).addClass(&quot;animated fadeOut&quot;)</code> . 
+<section id='description'>
+También puede apuntar elementos por sus atributos de identificación.
+Primero apunte el elemento de su <code>button</code> con el id <code>target3</code> usando el selector <code>$(&quot;#target3&quot;)</code> .
+Tenga en cuenta que, al igual que con las declaraciones de CSS, escribe un <code>#</code> antes del nombre del ID.
+Luego use la función <code>.addClass()</code> jQuery para agregar las clases <code>animated</code> y <code>fadeOut</code> .
+Así es como harías que el elemento del <code>button</code> con el id <code>target6</code> desvanezca:
+<code>$(&quot;#target6&quot;).addClass(&quot;animated fadeOut&quot;)</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -27,9 +27,9 @@ Así es como harías que el elemento del <code>button</code> con el id <code>tar
 
 ```yml
 tests:
-  - text: &#39;Seleccione el elemento del <code>button</code> con el <code>id</code> de <code>target3</code> y use la función jQuery <code>addClass()</code> para darle la clase de <code>animated</code> .&#39;
+  - text: 'Seleccione el elemento del <code>button</code> con el <code>id</code> de <code>target3</code> y use la función jQuery <code>addClass()</code> para darle la clase de <code>animated</code> .'
     testString: 'assert($("#target3").hasClass("animated"), "Select the <code>button</code> element with the <code>id</code> of <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class of <code>animated</code>.");'
-  - text: &#39; <code>target3</code> al elemento con el id <code>target3</code> y usa la función jQuery <code>addClass()</code> para darle a la clase <code>fadeOut</code> .&#39;
+  - text: ' <code>target3</code> al elemento con el id <code>target3</code> y usa la función jQuery <code>addClass()</code> para darle a la clase <code>fadeOut</code> .'
     testString: 'assert(($("#target3").hasClass("fadeOut") || $("#target3").hasClass("fadeout"))  && code.match(/\$\(\s*.#target3.\s*\)/g), "Target the element with the id <code>target3</code> and use the jQuery <code>addClass&#40&#41</code> function to give it the class <code>fadeOut</code>.");'
   - text: Solo use jQuery para agregar estas clases al elemento.
     testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to add these classes to the element.");'

@@ -6,14 +6,14 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Otra función de matriz útil es <code>Array.prototype.filter()</code> , o simplemente <code>filter()</code> . El método de <code>filter</code> devuelve una nueva matriz que es a lo sumo tan larga como la matriz original, pero generalmente tiene menos elementos. 
-<code>Filter</code> no altera la matriz original, al igual que el <code>map</code> . Toma una función de devolución de llamada que aplica la lógica dentro de la devolución de llamada en cada elemento de la matriz. Si un elemento devuelve verdadero según los criterios en la función de devolución de llamada, entonces se incluye en la nueva matriz. 
+<section id='description'>
+Otra función de matriz útil es <code>Array.prototype.filter()</code> , o simplemente <code>filter()</code> . El método de <code>filter</code> devuelve una nueva matriz que es a lo sumo tan larga como la matriz original, pero generalmente tiene menos elementos.
+<code>Filter</code> no altera la matriz original, al igual que el <code>map</code> . Toma una función de devolución de llamada que aplica la lógica dentro de la devolución de llamada en cada elemento de la matriz. Si un elemento devuelve verdadero según los criterios en la función de devolución de llamada, entonces se incluye en la nueva matriz.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-La variable <code>watchList</code> contiene una serie de objetos con información sobre varias películas. Use una combinación de <code>filter</code> y <code>map</code> para devolver una nueva matriz de objetos con solo <code>title</code> y claves de <code>rating</code> , pero donde <code>imdbRating</code> es mayor o igual a 8.0. Tenga en cuenta que los valores de calificación se guardan como cadenas en el objeto y es posible que desee convertirlos en números para realizar operaciones matemáticas en ellos. 
+<section id='instructions'>
+La variable <code>watchList</code> contiene una serie de objetos con información sobre varias películas. Use una combinación de <code>filter</code> y <code>map</code> para devolver una nueva matriz de objetos con solo <code>title</code> y claves de <code>rating</code> , pero donde <code>imdbRating</code> es mayor o igual a 8.0. Tenga en cuenta que los valores de calificación se guardan como cadenas en el objeto y es posible que desee convertirlos en números para realizar operaciones matemáticas en ellos.
 </section>
 
 ## Tests
@@ -27,7 +27,7 @@ tests:
     testString: 'assert(code.match(/\.filter/g), "Your code should use the <code>filter</code> method.");'
   - text: Su código no debe utilizar un bucle <code>for</code> .
     testString: 'assert(!code.match(/for\s*?\(.+?\)/g), "Your code should not use a <code>for</code> loop.");'
-  - text: &#39; <code>filteredList</code> debe ser igual a <code>[{&quot;title&quot;: &quot;Inception&quot;,&quot;rating&quot;: &quot;8.8&quot;},{&quot;title&quot;: &quot;Interstellar&quot;,&quot;rating&quot;: &quot;8.6&quot;},{&quot;title&quot;: &quot;The Dark Knight&quot;,&quot;rating&quot;: &quot;9.0&quot;},{&quot;title&quot;: &quot;Batman Begins&quot;,&quot;rating&quot;: &quot;8.3&quot;}]</code> . &#39;
+  - text: ' <code>filteredList</code> debe ser igual a <code>[{&quot;title&quot;: &quot;Inception&quot;,&quot;rating&quot;: &quot;8.8&quot;},{&quot;title&quot;: &quot;Interstellar&quot;,&quot;rating&quot;: &quot;8.6&quot;},{&quot;title&quot;: &quot;The Dark Knight&quot;,&quot;rating&quot;: &quot;9.0&quot;},{&quot;title&quot;: &quot;Batman Begins&quot;,&quot;rating&quot;: &quot;8.3&quot;}]</code> . '
     testString: 'assert.deepEqual(filteredList, [{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}], "<code>filteredList</code> should equal <code>[{"title": "Inception","rating": "8.8"},{"title": "Interstellar","rating": "8.6"},{"title": "The Dark Knight","rating": "9.0"},{"title": "Batman Begins","rating": "8.3"}]</code>.");'
 
 ```

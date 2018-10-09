@@ -6,15 +6,15 @@ challengeType: 0
 ---
 
 ## Description
-<section id='description'> 
-Cuando comencemos a usar jQuery, modificaremos los elementos HTML sin necesidad de cambiarlos realmente en HTML. 
-Asegurémonos de que todos sepan que no deberían modificar nada de este código directamente. 
-Recuerde que puede comenzar un comentario con <code>&lt;!--</code> y terminar un comentario con <code>--&gt;</code> 
-Agregue un comentario en la parte superior de su código HTML que diga <code>Only change code above this line.</code> 
+<section id='description'>
+Cuando comencemos a usar jQuery, modificaremos los elementos HTML sin necesidad de cambiarlos realmente en HTML.
+Asegurémonos de que todos sepan que no deberían modificar nada de este código directamente.
+Recuerde que puede comenzar un comentario con <code>&lt;!--</code> y terminar un comentario con <code>--&gt;</code>
+Agregue un comentario en la parte superior de su código HTML que diga <code>Only change code above this line.</code>
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -23,11 +23,11 @@ Agregue un comentario en la parte superior de su código HTML que diga <code>Onl
 
 ```yml
 tests:
-  - text: &#39;Comience un comentario con <code>&lt;!--</code> en la parte superior de su HTML&#39;.
+  - text: 'Comience un comentario con <code>&lt;!--</code> en la parte superior de su HTML'
     testString: 'assert(code.match(/^\s*<!--/), "Start a comment with <code>&#60;!--</code> at the top of your HTML.");'
   - text: Su comentario debe tener el texto <code>Only change code above this line</code> .
     testString: 'assert(code.match(/<!--(?!(>|->|.*-->.*this line))\s*.*this line.*\s*-->/gi), "Your comment should have the text <code>Only change code above this line</code>.");'
-  - text: &#39;Asegúrese de cerrar su comentario con <code>--&gt;</code> .&#39;
+  - text: 'Asegúrese de cerrar su comentario con <code>--&gt;</code> .'
     testString: 'assert(code.match(/-->.*\n+.+/g), "Be sure to close your comment with <code>--&#62;</code>.");'
   - text: Debes tener el mismo número de abridores y cerradores de comentarios.
     testString: 'assert(code.match(/<!--/g).length === code.match(/-->/g).length, "You should have the same number of comment openers and closers.");'

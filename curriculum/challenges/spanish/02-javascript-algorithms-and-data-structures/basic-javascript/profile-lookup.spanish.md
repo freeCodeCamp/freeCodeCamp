@@ -6,17 +6,17 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Tenemos una variedad de objetos que representan a diferentes personas en nuestras listas de contactos. 
-Se ha <code>lookUpProfile</code> función <code>lookUpProfile</code> que toma el <code>name</code> y una propiedad ( <code>prop</code> ) como argumentos. 
-La función debe comprobar si <code>name</code> es de un contacto real <code>firstName</code> y la propiedad dada ( <code>prop</code> ) es una propiedad de ese contacto. 
-Si ambos son verdaderos, devuelva el &quot;valor&quot; de esa propiedad. 
-Si el <code>name</code> no corresponde a ningún contacto, devuelva <code>&quot;No such contact&quot;</code> 
-Si la <code>prop</code> no corresponde a ninguna propiedad válida de un contacto encontrado para coincidir con el <code>name</code> entonces devuelva <code>&quot;No such property&quot;</code> existe <code>&quot;No such property&quot;</code> 
+<section id='description'>
+Tenemos una variedad de objetos que representan a diferentes personas en nuestras listas de contactos.
+Se ha <code>lookUpProfile</code> función <code>lookUpProfile</code> que toma el <code>name</code> y una propiedad ( <code>prop</code> ) como argumentos.
+La función debe comprobar si <code>name</code> es de un contacto real <code>firstName</code> y la propiedad dada ( <code>prop</code> ) es una propiedad de ese contacto.
+Si ambos son verdaderos, devuelva el &quot;valor&quot; de esa propiedad.
+Si el <code>name</code> no corresponde a ningún contacto, devuelva <code>&quot;No such contact&quot;</code>
+Si la <code>prop</code> no corresponde a ninguna propiedad válida de un contacto encontrado para coincidir con el <code>name</code> entonces devuelva <code>&quot;No such property&quot;</code> existe <code>&quot;No such property&quot;</code>
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -25,17 +25,17 @@ Si la <code>prop</code> no corresponde a ninguna propiedad válida de un contact
 
 ```yml
 tests:
-  - text: &#39; <code>&quot;Kristian&quot;, &quot;lastName&quot;</code> debería devolver <code>&quot;Vos&quot;</code> &#39;
+  - text: ' <code>&quot;Kristian&quot;, &quot;lastName&quot;</code> debería devolver <code>&quot;Vos&quot;</code> '
     testString: 'assert(lookUpProfile("Kristian","lastName") === "Vos", "<code>"Kristian", "lastName"</code> should return <code>"Vos"</code>");'
-  - text: &#39; <code>&quot;Sherlock&quot;, &quot;likes&quot;</code> debería devolver <code>[&quot;Intriguing Cases&quot;, &quot;Violin&quot;]</code> &#39;
+  - text: ' <code>&quot;Sherlock&quot;, &quot;likes&quot;</code> debería devolver <code>[&quot;Intriguing Cases&quot;, &quot;Violin&quot;]</code> '
     testString: 'assert.deepEqual(lookUpProfile("Sherlock", "likes"), ["Intriguing Cases", "Violin"], "<code>"Sherlock", "likes"</code> should return <code>["Intriguing Cases", "Violin"]</code>");'
-  - text: &#39; <code>&quot;Harry&quot;,&quot;likes&quot;</code> debería devolver una matriz&#39;
+  - text: ' <code>&quot;Harry&quot;,&quot;likes&quot;</code> debería devolver una matriz'
     testString: 'assert(typeof lookUpProfile("Harry", "likes") === "object", "<code>"Harry","likes"</code> should return an array");'
-  - text: &#39; <code>&quot;Bob&quot;, &quot;number&quot;</code> debe devolver &quot;No existe tal contacto&quot;&#39;
+  - text: ' <code>&quot;Bob&quot;, &quot;number&quot;</code> debe devolver &quot;No existe tal contacto&quot;'
     testString: 'assert(lookUpProfile("Bob", "number") === "No such contact", "<code>"Bob", "number"</code> should return "No such contact"");'
-  - text: &#39; <code>&quot;Bob&quot;, &quot;potato&quot;</code> debe devolver &quot;No hay tal contacto&quot;&#39;
+  - text: ' <code>&quot;Bob&quot;, &quot;potato&quot;</code> debe devolver &quot;No hay tal contacto&quot;'
     testString: 'assert(lookUpProfile("Bob", "potato") === "No such contact", "<code>"Bob", "potato"</code> should return "No such contact"");'
-  - text: &#39; <code>&quot;Akira&quot;, &quot;address&quot;</code> debe devolver &quot;No existe tal propiedad&quot;
+  - text: ' <code>&quot;Akira&quot;, &quot;address&quot;</code> debe devolver &quot;No existe tal propiedad&quot;
     testString: 'assert(lookUpProfile("Akira", "address") === "No such property", "<code>"Akira", "address"</code> should return "No such property"");'
 
 ```

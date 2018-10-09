@@ -7,13 +7,13 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Los dos últimos desafíos utilizaron la propiedad de <code>flex-direction</code> establecida en fila. Esta propiedad también puede crear una columna apilando verticalmente los hijos de un contenedor flexible. 
+<section id='description'>
+Los dos últimos desafíos utilizaron la propiedad de <code>flex-direction</code> establecida en fila. Esta propiedad también puede crear una columna apilando verticalmente los hijos de un contenedor flexible.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>#box-container</code> y asígnele un valor de columna. 
+<section id='instructions'>
+Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>#box-container</code> y asígnele un valor de columna.
 </section>
 
 ## Tests
@@ -21,7 +21,7 @@ Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>#box-cont
 
 ```yml
 tests:
-  - text: &#39;El elemento <code>#box-container</code> debería tener una propiedad de <code>flex-direction</code> configurada en columna.&#39;
+  - text: 'El elemento <code>#box-container</code> debería tener una propiedad de <code>flex-direction</code> configurada en columna.'
     testString: 'assert($("#box-container").css("flex-direction") == "column", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to column.");'
 
 ```

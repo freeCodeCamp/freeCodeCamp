@@ -6,13 +6,13 @@ challengeType: 0
 ---
 
 ## Description
-<section id='description'> 
-Bootstrap tiene sus propios estilos para elementos de <code>button</code> , que se ven mucho mejor que los de HTML simple. 
-Crea un nuevo elemento de <code>button</code> debajo de tu foto grande de gatito. Asígnele las clases <code>btn</code> y <code>btn-default</code> , así como el texto de &quot;Me gusta&quot;. 
+<section id='description'>
+Bootstrap tiene sus propios estilos para elementos de <code>button</code> , que se ven mucho mejor que los de HTML simple.
+Crea un nuevo elemento de <code>button</code> debajo de tu foto grande de gatito. Asígnele las clases <code>btn</code> y <code>btn-default</code> , así como el texto de &quot;Me gusta&quot;.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -23,7 +23,7 @@ Crea un nuevo elemento de <code>button</code> debajo de tu foto grande de gatito
 tests:
   - text: Crea un nuevo elemento de <code>button</code> con el texto &quot;Me gusta&quot;.
     testString: 'assert(new RegExp("like","gi").test($("button").text()) && ($("img.img-responsive + button.btn").length > 0), "Create a new <code>button</code> element with the text "Like".");'
-  - text: &#39;Su nuevo botón debe tener dos clases: <code>btn</code> y <code>btn-default</code> .&#39;
+  - text: 'Su nuevo botón debe tener dos clases: <code>btn</code> y <code>btn-default</code> .'
     testString: 'assert($("button").hasClass("btn") && $("button").hasClass("btn-default"), "Your new button should have two classes: <code>btn</code> and <code>btn-default</code>.");'
   - text: Asegúrese de que todos los elementos de sus <code>button</code> tengan una etiqueta de cierre.
     testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have a closing tag.");'

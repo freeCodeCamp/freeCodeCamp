@@ -6,15 +6,15 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-El método de <code>join</code> se utiliza para unir los elementos de una matriz para crear una cadena. Toma un argumento para el delimitador que se usa para separar los elementos de la matriz en la cadena. 
-Aquí hay un ejemplo: 
-<blockquote>var arr = ["Hello", "World"];<br>var str = arr.join(" ");<br>// Sets str to "Hello World"</blockquote> 
+<section id='description'>
+El método de <code>join</code> se utiliza para unir los elementos de una matriz para crear una cadena. Toma un argumento para el delimitador que se usa para separar los elementos de la matriz en la cadena.
+Aquí hay un ejemplo:
+<blockquote>var arr = ["Hello", "World"];<br>var str = arr.join(" ");<br>// Sets str to "Hello World"</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Use el método de <code>join</code> (entre otros) dentro de la función de <code>sentensify</code> para hacer una oración de las palabras en la cadena <code>str</code> . La función debe devolver una cadena. Por ejemplo, &quot;I-like-Star-Wars&quot; se convertiría a &quot;Me gusta Star Wars&quot;. Para este desafío, no utilice el método de <code>replace</code> . 
+<section id='instructions'>
+Use el método de <code>join</code> (entre otros) dentro de la función de <code>sentensify</code> para hacer una oración de las palabras en la cadena <code>str</code> . La función debe devolver una cadena. Por ejemplo, &quot;I-like-Star-Wars&quot; se convertiría a &quot;Me gusta Star Wars&quot;. Para este desafío, no utilice el método de <code>replace</code> .
 </section>
 
 ## Tests
@@ -32,7 +32,7 @@ tests:
     testString: 'assert(sentensify("May-the-force-be-with-you") === "May the force be with you", "<code>sentensify("May-the-force-be-with-you")</code> should return <code>"May the force be with you"</code>.");'
   - text: <code>sentensify(&quot;The.force.is.strong.with.this.one&quot;)</code> debe devolver <code>&quot;The force is strong with this one&quot;</code> .
     testString: 'assert(sentensify("The.force.is.strong.with.this.one") === "The force is strong with this one", "<code>sentensify("The.force.is.strong.with.this.one")</code> should return <code>"The force is strong with this one"</code>.");'
-  - text: &#39; <code>sentensify(&quot;There,has,been,an,awakening&quot;)</code> debería regresar <code>&quot;There has been an awakening&quot;</code> .
+  - text: ' <code>sentensify(&quot;There,has,been,an,awakening&quot;)</code> debería regresar <code>&quot;There has been an awakening&quot;</code> .
     testString: 'assert(sentensify("There,has,been,an,awakening") === "There has been an awakening", "<code>sentensify("There,has,been,an,awakening")</code> should return <code>"There has been an awakening"</code>.");'
 
 ```

@@ -6,13 +6,13 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-En este ejercicio vamos a realizar una prueba de subconjunto en 2 conjuntos de datos. Crearemos un método en nuestra estructura de datos <code>Set</code> llamada <code>subset</code> . Esto comparará el primer conjunto, contra el segundo y si el primer conjunto está completamente contenido dentro del Segundo, devolverá verdadero. 
-Por ejemplo, si <code>setA = [&#39;a&#39;,&#39;b&#39;]</code> y <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> , entonces el subconjunto de setA y setB es: <code>setA.subset(setB)</code> debe ser <code>true</code> . 
+<section id='description'>
+En este ejercicio vamos a realizar una prueba de subconjunto en 2 conjuntos de datos. Crearemos un método en nuestra estructura de datos <code>Set</code> llamada <code>subset</code> . Esto comparará el primer conjunto, contra el segundo y si el primer conjunto está completamente contenido dentro del Segundo, devolverá verdadero.
+Por ejemplo, si <code>setA = [&#39;a&#39;,&#39;b&#39;]</code> y <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> , entonces el subconjunto de setA y setB es: <code>setA.subset(setB)</code> debe ser <code>true</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -25,13 +25,13 @@ tests:
     testString: 'assert(function(){var test = new Set(); return (typeof test.subset === "function")}, "Your <code>Set</code> class should have a <code>union</code> method.");'
   - text: El primer Set () estaba contenido en el segundo Set
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setB.add("b"); setB.add("c"); setB.add("a"); setB.add("d"); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)}, "The first Set() was contained in the second Set");'
-  - text: &#39; <code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;])</code> debe devolver <code>true</code> &quot;)&#39;
+  - text: ' <code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;])</code> debe devolver <code>true</code> &quot;)'
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setB.add("a"); setB.add("b"); setB.add("c"); setB.add("d"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, "<code>["a", "b"].subset(["a", "b", "c", "d"])</code> should return <code>true</code>");'
-  - text: &#39; <code>[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].subset([&quot;a&quot;, &quot;b&quot;])</code> debe devolver <code>false</code> &quot;)&#39;
+  - text: ' <code>[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].subset([&quot;a&quot;, &quot;b&quot;])</code> debe devolver <code>false</code> &quot;)'
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setA.add("c"); setB.add("a"); setB.add("b"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, "<code>["a", "b", "c"].subset(["a", "b"])</code> should return <code>false</code>");'
-  - text: &#39; <code>[].subset([])</code> debe devolver <code>true</code> &#39;
+  - text: ' <code>[].subset([])</code> debe devolver <code>true</code> '
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, "<code>[].subset([])</code> should return <code>true</code>");'
-  - text: &#39; <code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;c&quot;, &quot;d&quot;])</code> debe devolver <code>false</code> &quot;)&#39;
+  - text: ' <code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;c&quot;, &quot;d&quot;])</code> debe devolver <code>false</code> &quot;)'
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setB.add("c"); setB.add("d"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, "<code>["a", "b"].subset(["c", "d"])</code> should return <code>false</code>");'
 
 ```

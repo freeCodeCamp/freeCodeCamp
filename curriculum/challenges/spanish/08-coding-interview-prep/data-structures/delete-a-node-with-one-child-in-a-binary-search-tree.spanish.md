@@ -6,13 +6,13 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Ahora que podemos eliminar los nodos de hoja, pasemos al segundo caso: eliminar un nodo con un hijo. Para este caso, digamos que tenemos un árbol con los siguientes nodos 1 - 2 - 3 donde 1 es la raíz. Para eliminar 2, simplemente necesitamos hacer la referencia correcta en 1 punto a 3. De manera más general, para eliminar un nodo con un solo hijo, hacemos que la referencia principal de ese nodo sea el siguiente nodo del árbol. 
-Instrucciones: Hemos proporcionado algún código en nuestro método de <code>remove</code> que cumple las tareas del último desafío. Encontramos el objetivo a eliminar y su padre y definimos la cantidad de hijos que tiene el nodo objetivo. Agreguemos el siguiente caso aquí para los nodos de destino con un solo hijo. Aquí, tendremos que determinar si el único hijo es una rama izquierda o derecha en el árbol y luego establecer la referencia correcta en el padre para apuntar a este nodo. Además, consideremos el caso en el que el destino es el nodo raíz (esto significa que el nodo principal será <code>null</code> ). Siéntase libre de reemplazar todo el código de inicio con el suyo, siempre y cuando pase las pruebas. 
+<section id='description'>
+Ahora que podemos eliminar los nodos de hoja, pasemos al segundo caso: eliminar un nodo con un hijo. Para este caso, digamos que tenemos un árbol con los siguientes nodos 1 - 2 - 3 donde 1 es la raíz. Para eliminar 2, simplemente necesitamos hacer la referencia correcta en 1 punto a 3. De manera más general, para eliminar un nodo con un solo hijo, hacemos que la referencia principal de ese nodo sea el siguiente nodo del árbol.
+Instrucciones: Hemos proporcionado algún código en nuestro método de <code>remove</code> que cumple las tareas del último desafío. Encontramos el objetivo a eliminar y su padre y definimos la cantidad de hijos que tiene el nodo objetivo. Agreguemos el siguiente caso aquí para los nodos de destino con un solo hijo. Aquí, tendremos que determinar si el único hijo es una rama izquierda o derecha en el árbol y luego establecer la referencia correcta en el padre para apuntar a este nodo. Además, consideremos el caso en el que el destino es el nodo raíz (esto significa que el nodo principal será <code>null</code> ). Siéntase libre de reemplazar todo el código de inicio con el suyo, siempre y cuando pase las pruebas.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -27,7 +27,7 @@ tests:
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == "function")})(), "The binary search tree has a method called <code>remove</code>.");'
   - text: Intentar eliminar un elemento que no existe devuelve <code>null</code> .
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== "function") { return false; }; return (test.remove(100) == null); })(), "Trying to remove an element that does not exist returns <code>null</code>.");'
-  - text: &#39;Si el nodo raíz no tiene hijos, al eliminarlo, se establece la raíz en <code>null</code> &#39;.
+  - text: 'Si el nodo raíz no tiene hijos, al eliminarlo, se establece la raíz en <code>null</code> '
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== "function") { return false; }; test.add(500); test.remove(500); return (test.inorder() == null); })(), "If the root node has no children, deleting it sets the root to <code>null</code>.");'
   - text: El método de <code>remove</code> elimina los nodos de hoja del árbol.
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.remove !== "function") { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (test.inorder().join("") == "567"); })(), "The <code>remove</code> method removes leaf nodes from the tree");'

@@ -6,14 +6,14 @@ title: 'Problem 34: Digit factorials'
 ---
 
 ## Description
-<section id='description'> 
-145 es un número curioso, como 1! + 4! + 5! = 1 + 24 + 120 = 145. 
-Encuentra los números y la suma de los números que son iguales a la suma del factorial de sus dígitos. 
-Nota: como 1! = 1 y 2! = 2 no son sumas que no están incluidas. 
+<section id='description'>
+145 es un número curioso, como 1! + 4! + 5! = 1 + 24 + 120 = 145.
+Encuentra los números y la suma de los números que son iguales a la suma del factorial de sus dígitos.
+Nota: como 1! = 1 y 2! = 2 no son sumas que no están incluidas.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -22,7 +22,7 @@ Nota: como 1! = 1 y 2! = 2 no son sumas que no están incluidas.
 
 ```yml
 tests:
-  - text: &#39; <code>digitFactorial()</code> debe devolver {suma: 40730, números: [145, 40585]}.&#39;
+  - text: ' <code>digitFactorial()</code> debe devolver {suma: 40730, números: [145, 40585]}.'
     testString: 'assert.deepEqual(digitFactorial(), { sum: 40730, numbers: [145, 40585] }, "<code>digitFactorial()</code> should return { sum: 40730, numbers: [145, 40585] }.");'
 
 ```

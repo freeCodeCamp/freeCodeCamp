@@ -7,14 +7,14 @@ challengeType: 5
 ---
 
 ## Description
-<section id='description'> 
-Te pasaremos una matriz de dos números. Devuelve la suma de esos dos números más la suma de todos los números entre ellos. 
-El número más bajo no siempre vendrá primero. 
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. 
+<section id='description'>
+Te pasaremos una matriz de dos números. Devuelve la suma de esos dos números más la suma de todos los números entre ellos.
+El número más bajo no siempre vendrá primero.
+Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -23,15 +23,15 @@ Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-
 
 ```yml
 tests:
-  - text: &#39; <code>sumAll([1, 4])</code> debe devolver un número.&#39;
+  - text: ' <code>sumAll([1, 4])</code> debe devolver un número.'
     testString: 'assert(typeof sumAll([1, 4]) === "number", "<code>sumAll([1, 4])</code> should return a number.");'
-  - text: &#39; <code>sumAll([1, 4])</code> debe devolver 10.&#39;
+  - text: ' <code>sumAll([1, 4])</code> debe devolver 10.'
     testString: 'assert.deepEqual(sumAll([1, 4]), 10, "<code>sumAll([1, 4])</code> should return 10.");'
-  - text: &#39; <code>sumAll([4, 1])</code> debe devolver 10.&#39;
+  - text: ' <code>sumAll([4, 1])</code> debe devolver 10.'
     testString: 'assert.deepEqual(sumAll([4, 1]), 10, "<code>sumAll([4, 1])</code> should return 10.");'
-  - text: &#39; <code>sumAll([5, 10])</code> debe devolver 45.&#39;
+  - text: ' <code>sumAll([5, 10])</code> debe devolver 45.'
     testString: 'assert.deepEqual(sumAll([5, 10]), 45, "<code>sumAll([5, 10])</code> should return 45.");'
-  - text: &#39; <code>sumAll([10, 5])</code> debe devolver 45.&#39;
+  - text: ' <code>sumAll([10, 5])</code> debe devolver 45.'
     testString: 'assert.deepEqual(sumAll([10, 5]), 45, "<code>sumAll([10, 5])</code> should return 45.");'
 
 ```

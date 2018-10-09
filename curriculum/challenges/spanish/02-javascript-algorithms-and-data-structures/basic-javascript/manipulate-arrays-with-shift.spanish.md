@@ -6,14 +6,14 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-<code>pop()</code> siempre elimina el último elemento de una matriz. ¿Qué pasa si quieres eliminar el primero? 
-Ahí es donde <code>.shift()</code> en <code>.shift()</code> . Funciona igual que <code>.pop()</code> , excepto que elimina el primer elemento en lugar del último. 
+<section id='description'>
+<code>pop()</code> siempre elimina el último elemento de una matriz. ¿Qué pasa si quieres eliminar el primero?
+Ahí es donde <code>.shift()</code> en <code>.shift()</code> . Funciona igual que <code>.pop()</code> , excepto que elimina el primer elemento en lugar del último.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la función <code>.shift()</code> para eliminar el primer elemento de <code>myArray</code> , asignando el valor &quot;desviado&quot; a <code>removedFromMyArray</code> . 
+<section id='instructions'>
+Use la función <code>.shift()</code> para eliminar el primer elemento de <code>myArray</code> , asignando el valor &quot;desviado&quot; a <code>removedFromMyArray</code> .
 </section>
 
 ## Tests
@@ -21,9 +21,9 @@ Use la función <code>.shift()</code> para eliminar el primer elemento de <code>
 
 ```yml
 tests:
-  - text: &#39; <code>myArray</code> ahora debe ser igual a <code>[[&quot;dog&quot;, 3]]</code> .&#39;
+  - text: ' <code>myArray</code> ahora debe ser igual a <code>[[&quot;dog&quot;, 3]]</code> .'
     testString: 'assert((function(d){if(d[0][0] == "dog" && d[0][1] === 3 && d[1] == undefined){return true;}else{return false;}})(myArray), "<code>myArray</code> should now equal <code>[["dog", 3]]</code>.");'
-  - text: &#39; <code>removedFromMyArray</code> debe contener <code>[&quot;John&quot;, 23]</code> .&#39;
+  - text: ' <code>removedFromMyArray</code> debe contener <code>[&quot;John&quot;, 23]</code> .'
     testString: 'assert((function(d){if(d[0] == "John" && d[1] === 23 && typeof removedFromMyArray === "object"){return true;}else{return false;}})(removedFromMyArray), "<code>removedFromMyArray</code> should contain <code>["John", 23]</code>.");'
 
 ```

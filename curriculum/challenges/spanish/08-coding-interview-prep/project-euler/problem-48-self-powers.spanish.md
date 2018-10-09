@@ -6,13 +6,13 @@ title: 'Problem 48: Self powers'
 ---
 
 ## Description
-<section id='description'> 
-La serie, 1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 10 <sup>10</sup> = 10405071317. 
-Encuentre los últimos diez dígitos de la serie, 1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 1000 <sup>1000</sup> . 
+<section id='description'>
+La serie, 1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 10 <sup>10</sup> = 10405071317.
+Encuentre los últimos diez dígitos de la serie, 1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 1000 <sup>1000</sup> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -21,13 +21,13 @@ Encuentre los últimos diez dígitos de la serie, 1 <sup>1</sup> + 2 <sup>2</sup
 
 ```yml
 tests:
-  - text: &#39; <code>selfPowers(10, 3)</code> debe devolver 317.&#39;
+  - text: ' <code>selfPowers(10, 3)</code> debe devolver 317.'
     testString: 'assert.strictEqual(selfPowers(10, 3), 317, "<code>selfPowers(10, 3)</code> should return 317.");'
-  - text: &#39; <code>selfPowers(150, 6)</code> debe devolver 29045.&#39;
+  - text: ' <code>selfPowers(150, 6)</code> debe devolver 29045.'
     testString: 'assert.strictEqual(selfPowers(150, 6), 29045, "<code>selfPowers(150, 6)</code> should return 29045.");'
-  - text: &#39; <code>selfPowers(673, 7)</code> debe devolver 2473989.&#39;
+  - text: ' <code>selfPowers(673, 7)</code> debe devolver 2473989.'
     testString: 'assert.strictEqual(selfPowers(673, 7), 2473989, "<code>selfPowers(673, 7)</code> should return 2473989.");'
-  - text: &#39; <code>selfPowers(1000, 10)</code> debe devolver 9110846700.&#39;
+  - text: ' <code>selfPowers(1000, 10)</code> debe devolver 9110846700.'
     testString: 'assert.strictEqual(selfPowers(1000, 10), 9110846700, "<code>selfPowers(1000, 10)</code> should return 9110846700.");'
 
 ```

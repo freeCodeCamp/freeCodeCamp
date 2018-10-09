@@ -7,17 +7,17 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-En lugar de ajustar el fondo general o el color del texto para que el primer plano sea fácil de leer, puede agregar un <code>background-color</code> al elemento que contiene el texto que desea enfatizar. Este desafío utiliza <code>rgba()</code> lugar de códigos <code>hex</code> o <code>rgb()</code> normal. 
-<blockquote>rgba stands for:<br>&nbsp;&nbsp;r = red<br>&nbsp;&nbsp;g = green<br>&nbsp;&nbsp;b = blue<br>&nbsp;&nbsp;a = alpha/level of opacity</blockquote> 
-Los valores RGB pueden variar de 0 a 255. El valor alfa puede variar de 1, que es totalmente opaco o de color sólido, a 0, que es completamente transparente o claro. <code>rgba()</code> es excelente para usar en este caso, ya que le permite ajustar la opacidad. Esto significa que no tienes que bloquear completamente el fondo. 
-<code>background-color: rgba(45, 45, 45, 0.1)</code> para este desafío. Produce un color gris oscuro que es casi transparente dado el bajo valor de opacidad de 0.1. 
+<section id='description'>
+En lugar de ajustar el fondo general o el color del texto para que el primer plano sea fácil de leer, puede agregar un <code>background-color</code> al elemento que contiene el texto que desea enfatizar. Este desafío utiliza <code>rgba()</code> lugar de códigos <code>hex</code> o <code>rgb()</code> normal.
+<blockquote>rgba stands for:<br>&nbsp;&nbsp;r = red<br>&nbsp;&nbsp;g = green<br>&nbsp;&nbsp;b = blue<br>&nbsp;&nbsp;a = alpha/level of opacity</blockquote>
+Los valores RGB pueden variar de 0 a 255. El valor alfa puede variar de 1, que es totalmente opaco o de color sólido, a 0, que es completamente transparente o claro. <code>rgba()</code> es excelente para usar en este caso, ya que le permite ajustar la opacidad. Esto significa que no tienes que bloquear completamente el fondo.
+<code>background-color: rgba(45, 45, 45, 0.1)</code> para este desafío. Produce un color gris oscuro que es casi transparente dado el bajo valor de opacidad de 0.1.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Para hacer que el texto destaque más, ajuste el <code>background-color</code> de <code>background-color</code> del elemento <code>h4</code> al valor <code>rgba()</code> dado. 
-También para el <code>h4</code> , elimine la propiedad de <code>height</code> y agregue <code>padding</code> de 10px. 
+<section id='instructions'>
+Para hacer que el texto destaque más, ajuste el <code>background-color</code> de <code>background-color</code> del elemento <code>h4</code> al valor <code>rgba()</code> dado.
+También para el <code>h4</code> , elimine la propiedad de <code>height</code> y agregue <code>padding</code> de 10px.
 </section>
 
 ## Tests
@@ -25,7 +25,7 @@ También para el <code>h4</code> , elimine la propiedad de <code>height</code> y
 
 ```yml
 tests:
-  - text: &#39;Su código debe agregar una propiedad de <code>background-color</code> al conjunto de elementos <code>h4</code> en <code>rgba(45, 45, 45, 0.1)</code> .&#39;
+  - text: 'Su código debe agregar una propiedad de <code>background-color</code> al conjunto de elementos <code>h4</code> en <code>rgba(45, 45, 45, 0.1)</code> .'
     testString: 'assert(code.match(/background-color:\s*?rgba\(\s*?45\s*?,\s*?45\s*?,\s*?45\s*?,\s*?0?\.1\s*?\)/gi), "Your code should add a <code>background-color</code> property to the <code>h4</code> element set to <code>rgba(45, 45, 45, 0.1)</code>.");'
   - text: Su código debe agregar una propiedad de <code>padding</code> al elemento <code>h4</code> y establecerlo en 10 píxeles.
     testString: 'assert($("h4").css("padding-top") == "10px" && $("h4").css("padding-right") == "10px" && $("h4").css("padding-bottom") == "10px" && $("h4").css("padding-left") == "10px", "Your code should add a <code>padding</code> property to the <code>h4</code> element and set it to 10 pixels.");'

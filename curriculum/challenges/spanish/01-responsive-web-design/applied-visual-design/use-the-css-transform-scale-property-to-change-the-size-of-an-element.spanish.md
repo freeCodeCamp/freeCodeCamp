@@ -7,14 +7,14 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Para cambiar la escala de un elemento, CSS tiene la propiedad de <code>transform</code> , junto con su función <code>scale()</code> . El siguiente ejemplo de código duplica el tamaño de todos los elementos de párrafo en la página: 
-<blockquote>p {<br>&nbsp;&nbsp;transform:scale(2);<br>}</blockquote> 
+<section id='description'>
+Para cambiar la escala de un elemento, CSS tiene la propiedad de <code>transform</code> , junto con su función <code>scale()</code> . El siguiente ejemplo de código duplica el tamaño de todos los elementos de párrafo en la página:
+<blockquote>p {<br>&nbsp;&nbsp;transform:scale(2);<br>}</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Aumente el tamaño del elemento con el id de <code>ball2</code> a 1.5 veces su tamaño original. 
+<section id='instructions'>
+Aumente el tamaño del elemento con el id de <code>ball2</code> a 1.5 veces su tamaño original.
 </section>
 
 ## Tests
@@ -22,7 +22,7 @@ Aumente el tamaño del elemento con el id de <code>ball2</code> a 1.5 veces su t
 
 ```yml
 tests:
-  - text: &#39;Establezca la propiedad de <code>transform</code> para <code>#ball2</code> para escalarla 1.5 veces su tamaño.&#39;
+  - text: 'Establezca la propiedad de <code>transform</code> para <code>#ball2</code> para escalarla 1.5 veces su tamaño.'
     testString: 'assert(code.match(/#ball2\s*?{\s*?left:\s*?65%;\s*?transform:\s*?scale\(1\.5\);\s*?}|#ball2\s*?{\s*?transform:\s*?scale\(1\.5\);\s*?left:\s*?65%;\s*?}/gi), "Set the <code>transform</code> property for <code>#ball2</code> to scale it 1.5 times its size.");'
 
 ```

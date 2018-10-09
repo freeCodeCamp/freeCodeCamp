@@ -8,22 +8,22 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-Otra forma de mejorar el diagrama de dispersión es agregar un eje xy un eje y. 
-D3 tiene dos métodos <code>axisLeft()</code> y <code>axisBottom()</code> para representar los ejes y y x, respectivamente. (Ejes es la forma plural de eje). Aquí hay un ejemplo para crear el eje x basado en <code>xScale</code> en los desafíos anteriores: 
-<code>const xAxis = d3.axisBottom(xScale);</code> 
-El siguiente paso es representar el eje en el lienzo de SVG. Para hacerlo, puedes usar un componente general SVG, el elemento <code>g</code> . La <code>g</code> significa grupo. 
-A diferencia de <code>rect</code> , <code>circle</code> y <code>text</code> , un eje es solo una línea recta cuando se procesa. Porque es una forma simple, usando <code>g</code> funciona. 
-El último paso es aplicar un atributo de <code>transform</code> para colocar el eje en el lienzo SVG en el lugar correcto. De lo contrario, la línea se representaría a lo largo del borde del lienzo SVG y no sería visible. 
-SVG admite diferentes tipos de <code>transforms</code> , pero es necesario <code>translate</code> posicionamiento de un eje. Cuando se aplica al elemento <code>g</code> , mueve todo el grupo hacia arriba y hacia abajo según las cantidades dadas. Aquí hay un ejemplo: 
-<blockquote>const xAxis = d3.axisBottom(xScale);<br><br>svg.append("g")<br>&nbsp;&nbsp; .attr("transform", "translate(0, " + (h - padding) + ")")<br>&nbsp;&nbsp; .call(xAxis);</blockquote> 
-El código anterior coloca el eje x en la parte inferior del lienzo de SVG. Luego se pasa como un argumento al método <code>call()</code> . 
-El eje y funciona de la misma manera, excepto que el argumento de <code>translate</code> está en la forma (x, 0). Debido a que <code>translate</code> es una cadena en el método <code>attr()</code> anterior, puede usar la concatenación para incluir valores variables para sus argumentos. 
+<section id='description'>
+Otra forma de mejorar el diagrama de dispersión es agregar un eje xy un eje y.
+D3 tiene dos métodos <code>axisLeft()</code> y <code>axisBottom()</code> para representar los ejes y y x, respectivamente. (Ejes es la forma plural de eje). Aquí hay un ejemplo para crear el eje x basado en <code>xScale</code> en los desafíos anteriores:
+<code>const xAxis = d3.axisBottom(xScale);</code>
+El siguiente paso es representar el eje en el lienzo de SVG. Para hacerlo, puedes usar un componente general SVG, el elemento <code>g</code> . La <code>g</code> significa grupo.
+A diferencia de <code>rect</code> , <code>circle</code> y <code>text</code> , un eje es solo una línea recta cuando se procesa. Porque es una forma simple, usando <code>g</code> funciona.
+El último paso es aplicar un atributo de <code>transform</code> para colocar el eje en el lienzo SVG en el lugar correcto. De lo contrario, la línea se representaría a lo largo del borde del lienzo SVG y no sería visible.
+SVG admite diferentes tipos de <code>transforms</code> , pero es necesario <code>translate</code> posicionamiento de un eje. Cuando se aplica al elemento <code>g</code> , mueve todo el grupo hacia arriba y hacia abajo según las cantidades dadas. Aquí hay un ejemplo:
+<blockquote>const xAxis = d3.axisBottom(xScale);<br><br>svg.append("g")<br>&nbsp;&nbsp; .attr("transform", "translate(0, " + (h - padding) + ")")<br>&nbsp;&nbsp; .call(xAxis);</blockquote>
+El código anterior coloca el eje x en la parte inferior del lienzo de SVG. Luego se pasa como un argumento al método <code>call()</code> .
+El eje y funciona de la misma manera, excepto que el argumento de <code>translate</code> está en la forma (x, 0). Debido a que <code>translate</code> es una cadena en el método <code>attr()</code> anterior, puede usar la concatenación para incluir valores variables para sus argumentos.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-El diagrama de dispersión ahora tiene un eje x. Cree un eje y en una variable llamada <code>yAxis</code> usando el método <code>axisLeft()</code> . Luego renderiza el eje usando un elemento <code>g</code> . Asegúrese de usar un atributo de <code>transform</code> para traducir el eje por la cantidad de unidades de relleno a la derecha y 0 unidades hacia abajo. Recuerda <code>call()</code> al eje. 
+<section id='instructions'>
+El diagrama de dispersión ahora tiene un eje x. Cree un eje y en una variable llamada <code>yAxis</code> usando el método <code>axisLeft()</code> . Luego renderiza el eje usando un elemento <code>g</code> . Asegúrese de usar un atributo de <code>transform</code> para traducir el eje por la cantidad de unidades de relleno a la derecha y 0 unidades hacia abajo. Recuerda <code>call()</code> al eje.
 </section>
 
 ## Tests
@@ -33,7 +33,7 @@ El diagrama de dispersión ahora tiene un eje x. Cree un eje y en una variable l
 tests:
   - text: Su código debe usar el método <code>axisLeft()</code> con <code>yScale</code> pasado como argumento.
     testString: 'assert(code.match(/\.axisLeft\(yScale\)/g), "Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.");'
-  - text: &#39;El elemento <code>g</code> eje y debe tener un atributo de <code>transform</code> para traducir el eje en (60, 0).&#39;
+  - text: 'El elemento <code>g</code> eje y debe tener un atributo de <code>transform</code> para traducir el eje en (60, 0).'
     testString: 'assert($("g").eq(1).attr("transform").match(/translate\(60\s*?,\s*?0\)/g), "The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).");'
   - text: Su código debe llamar al <code>yAxis</code> .
     testString: 'assert(code.match(/\.call\(yAxis\)/g), "Your code should call the <code>yAxis</code>.");'
