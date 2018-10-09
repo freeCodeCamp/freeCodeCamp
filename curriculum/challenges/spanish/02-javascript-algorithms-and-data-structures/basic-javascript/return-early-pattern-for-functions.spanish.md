@@ -6,17 +6,17 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Cuando se alcanza una declaración de <code>return</code> , la ejecución de la función actual se detiene y el control vuelve a la ubicación de la llamada. 
-<strong>Ejemplo</strong> 
-<blockquote>function myFun() {<br>&nbsp;&nbsp;console.log("Hello");<br>&nbsp;&nbsp;return "World";<br>&nbsp;&nbsp;console.log("byebye")<br>}<br>myFun();</blockquote> 
-Lo anterior muestra &quot;Hola&quot; a la consola, devuelve &quot;Mundo&quot;, pero <code>&quot;byebye&quot;</code> nunca se <code>&quot;byebye&quot;</code> , porque la función sale de la instrucción de <code>return</code> . 
+<section id='description'>
+Cuando se alcanza una declaración de <code>return</code> , la ejecución de la función actual se detiene y el control vuelve a la ubicación de la llamada.
+<strong>Ejemplo</strong>
+<blockquote>function myFun() {<br>&nbsp;&nbsp;console.log("Hello");<br>&nbsp;&nbsp;return "World";<br>&nbsp;&nbsp;console.log("byebye")<br>}<br>myFun();</blockquote>
+Lo anterior muestra &quot;Hola&quot; a la consola, devuelve &quot;Mundo&quot;, pero <code>&quot;byebye&quot;</code> nunca se <code>&quot;byebye&quot;</code> , porque la función sale de la instrucción de <code>return</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Modifique la función <code>abTest</code> para que si <code>a</code> o <code>b</code> sean menores que <code>0</code> la función saldrá inmediatamente con un valor <code>undefined</code> . 
-<strong>Pista</strong> <br> Recuerde que <a href='http://www.freecodecamp.org/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> es una palabra clave</a> , no una cadena. 
+<section id='instructions'>
+Modifique la función <code>abTest</code> para que si <code>a</code> o <code>b</code> sean menores que <code>0</code> la función saldrá inmediatamente con un valor <code>undefined</code> .
+<strong>Pista</strong> <br> Recuerde que <a href='http://www.freecodecamp.org/challenges/understanding-uninitialized-variables' target='_blank'><code>undefined</code> es una palabra clave</a> , no una cadena.
 </section>
 
 ## Tests
@@ -24,17 +24,17 @@ Modifique la función <code>abTest</code> para que si <code>a</code> o <code>b</
 
 ```yml
 tests:
-  - text: &#39; <code>abTest(2,2)</code> debe devolver un número&#39;
+  - text: ' <code>abTest(2,2)</code> debe devolver un número'
     testString: 'assert(typeof abTest(2,2) === "number" , "<code>abTest(2,2)</code> should return a number");'
-  - text: &#39; <code>abTest(2,2)</code> debe devolver <code>8</code> &#39;
+  - text: ' <code>abTest(2,2)</code> debe devolver <code>8</code> '
     testString: 'assert(abTest(2,2) === 8 , "<code>abTest(2,2)</code> should return <code>8</code>");'
-  - text: &#39; <code>abTest(-2,2)</code> debe devolver <code>undefined</code> &#39;
+  - text: ' <code>abTest(-2,2)</code> debe devolver <code>undefined</code> '
     testString: 'assert(abTest(-2,2) === undefined , "<code>abTest(-2,2)</code> should return <code>undefined</code>");'
-  - text: &#39; <code>abTest(2,-2)</code> debe devolver <code>undefined</code> &#39;
+  - text: ' <code>abTest(2,-2)</code> debe devolver <code>undefined</code> '
     testString: 'assert(abTest(2,-2) === undefined , "<code>abTest(2,-2)</code> should return <code>undefined</code>");'
-  - text: &#39; <code>abTest(2,8)</code> debe devolver <code>18</code> &#39;
+  - text: ' <code>abTest(2,8)</code> debe devolver <code>18</code> '
     testString: 'assert(abTest(2,8) === 18 , "<code>abTest(2,8)</code> should return <code>18</code>");'
-  - text: &#39; <code>abTest(3,3)</code> debe devolver <code>12</code> &#39;
+  - text: ' <code>abTest(3,3)</code> debe devolver <code>12</code> '
     testString: 'assert(abTest(3,3) === 12 , "<code>abTest(3,3)</code> should return <code>12</code>");'
 
 ```

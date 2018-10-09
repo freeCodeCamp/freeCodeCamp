@@ -7,15 +7,15 @@ isRequired: false
 ---
 
 ## Description
-<section id='description'> 
-Aquí terminarás de crear el componente <code>DisplayMessages</code> . 
+<section id='description'>
+Aquí terminarás de crear el componente <code>DisplayMessages</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Primero, en el método <code>render()</code> , haga que el componente procese un elemento de <code>input</code> , un elemento de <code>button</code> y un elemento <code>ul</code> . Cuando el elemento de <code>input</code> cambia, debe activar un método <code>handleChange()</code> . Además, el elemento de <code>input</code> debe representar el valor de la <code>input</code> que se encuentra en el estado del componente. El elemento de <code>button</code> debe activar un método <code>submitMessage()</code> cuando se hace clic. 
-Segundo, escribe estos dos métodos. El método <code>handleChange()</code> debe actualizar la <code>input</code> con lo que el usuario está escribiendo. El método <code>submitMessage()</code> debe concatenar el mensaje actual (almacenado en la <code>input</code> ) a la matriz de <code>messages</code> en el estado local, y borrar el valor de la <code>input</code> . 
-Finalmente, use la <code>ul</code> para mapear sobre el conjunto de <code>messages</code> y procesarlos en la pantalla como una lista de elementos <code>li</code> . 
+<section id='instructions'>
+Primero, en el método <code>render()</code> , haga que el componente procese un elemento de <code>input</code> , un elemento de <code>button</code> y un elemento <code>ul</code> . Cuando el elemento de <code>input</code> cambia, debe activar un método <code>handleChange()</code> . Además, el elemento de <code>input</code> debe representar el valor de la <code>input</code> que se encuentra en el estado del componente. El elemento de <code>button</code> debe activar un método <code>submitMessage()</code> cuando se hace clic.
+Segundo, escribe estos dos métodos. El método <code>handleChange()</code> debe actualizar la <code>input</code> con lo que el usuario está escribiendo. El método <code>submitMessage()</code> debe concatenar el mensaje actual (almacenado en la <code>input</code> ) a la matriz de <code>messages</code> en el estado local, y borrar el valor de la <code>input</code> .
+Finalmente, use la <code>ul</code> para mapear sobre el conjunto de <code>messages</code> y procesarlos en la pantalla como una lista de elementos <code>li</code> .
 </section>
 
 ## Tests
@@ -23,7 +23,7 @@ Finalmente, use la <code>ul</code> para mapear sobre el conjunto de <code>messag
 
 ```yml
 tests:
-  - text: &#39;El componente <code>DisplayMessages</code> debería inicializarse con un estado igual a <code>{ input: &quot;&quot;, messages: [] }</code> .&#39;
+  - text: 'El componente <code>DisplayMessages</code> debería inicializarse con un estado igual a <code>{ input: &quot;&quot;, messages: [] }</code> .'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const initialState = mockedComponent.state(); return ( typeof initialState === "object" && initialState.input === "" && initialState.messages.length === 0); })(), "The <code>DisplayMessages</code> component should initialize with a state equal to <code>{ input: "", messages: [] }</code>.");'
   - text: &quot;El componente <code>DisplayMessages</code> debería generar un <code>div</code> contenga un elemento <code>h2</code> , un elemento de <code>button</code> , un elemento <code>ul</code> y elementos <code>li</code> como elementos <code>li</code> &quot;.
     testString: 'async () => { const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages)); const waitForIt = (fn) => new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100)); const state = () => { mockedComponent.setState({messages: ["__TEST__MESSAGE"]}); return waitForIt(() => mockedComponent )}; const updated = await state(); assert(updated.find("div").length === 1 && updated.find("h2").length === 1 && updated.find("button").length === 1 && updated.find("ul").length === 1, "The <code>DisplayMessages</code> component should render a <code>div</code> containing an <code>h2</code> element, a <code>button</code> element, a <code>ul</code> element, and <code>li</code> elements as children."); }; '

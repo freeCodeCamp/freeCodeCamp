@@ -6,19 +6,19 @@ title: 'Problem 47: Distinct primes factors'
 ---
 
 ## Description
-<section id='description'> 
-Los dos primeros números consecutivos que tienen dos factores primos distintos son: 
-<div style='padding-left: 4em;'> 14 = 2 × 7 </div> 
-<div style='padding-left: 4em;'> 15 = 3 × 5 </div> 
-Los primeros tres números consecutivos que tienen tres factores primos distintos son: 
-<div style='padding-left: 4em;'> 644 = 2² × 7 × 23 </div> 
-<div style='padding-left: 4em;'> 645 = 3 × 5 × 43 </div> 
-<div style='padding-left: 4em;'> 646 = 2 × 17 × 19 </div> 
-Encuentre los primeros cuatro enteros consecutivos que tengan cuatro factores primos distintos cada uno. ¿Cuál es el primero de estos números? 
+<section id='description'>
+Los dos primeros números consecutivos que tienen dos factores primos distintos son:
+<div style='padding-left: 4em;'> 14 = 2 × 7 </div>
+<div style='padding-left: 4em;'> 15 = 3 × 5 </div>
+Los primeros tres números consecutivos que tienen tres factores primos distintos son:
+<div style='padding-left: 4em;'> 644 = 2² × 7 × 23 </div>
+<div style='padding-left: 4em;'> 645 = 3 × 5 × 43 </div>
+<div style='padding-left: 4em;'> 646 = 2 × 17 × 19 </div>
+Encuentre los primeros cuatro enteros consecutivos que tengan cuatro factores primos distintos cada uno. ¿Cuál es el primero de estos números?
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -27,11 +27,11 @@ Encuentre los primeros cuatro enteros consecutivos que tengan cuatro factores pr
 
 ```yml
 tests:
-  - text: &#39; <code>distinctPrimeFactors(2, 2)</code> debe devolver 14.&#39;
+  - text: ' <code>distinctPrimeFactors(2, 2)</code> debe devolver 14.'
     testString: 'assert.strictEqual(distinctPrimeFactors(2, 2), 14, "<code>distinctPrimeFactors(2, 2)</code> should return 14.");'
-  - text: &#39; <code>distinctPrimeFactors(3, 3)</code> debe devolver 644.&#39;
+  - text: ' <code>distinctPrimeFactors(3, 3)</code> debe devolver 644.'
     testString: 'assert.strictEqual(distinctPrimeFactors(3, 3), 644, "<code>distinctPrimeFactors(3, 3)</code> should return 644.");'
-  - text: &#39; <code>distinctPrimeFactors(4, 4)</code> debe devolver 134043.&#39;
+  - text: ' <code>distinctPrimeFactors(4, 4)</code> debe devolver 134043.'
     testString: 'assert.strictEqual(distinctPrimeFactors(4, 4), 134043, "<code>distinctPrimeFactors(4, 4)</code> should return 134043.");'
 
 ```

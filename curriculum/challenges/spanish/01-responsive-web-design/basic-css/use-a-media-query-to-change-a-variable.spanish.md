@@ -7,14 +7,14 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Las variables CSS pueden simplificar la forma en que utiliza las consultas de medios. 
-Por ejemplo, cuando su pantalla es más pequeña o más grande que el punto de interrupción de su consulta de medios, puede cambiar el valor de una variable y aplicará su estilo donde sea que se use. 
+<section id='description'>
+Las variables CSS pueden simplificar la forma en que utiliza las consultas de medios.
+Por ejemplo, cuando su pantalla es más pequeña o más grande que el punto de interrupción de su consulta de medios, puede cambiar el valor de una variable y aplicará su estilo donde sea que se use.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-En el <code>:root</code> selector de <code>:root</code> de la <code>media query</code> , cámbielo para que <code>--penguin-size</code> se redefina y se le dé un valor de <code>200px</code> . Además, redefine <code>--penguin-skin</code> y dale un valor de <code>black</code> . Luego cambie el tamaño de la vista previa para ver este cambio en acción. 
+<section id='instructions'>
+En el <code>:root</code> selector de <code>:root</code> de la <code>media query</code> , cámbielo para que <code>--penguin-size</code> se redefina y se le dé un valor de <code>200px</code> . Además, redefine <code>--penguin-skin</code> y dale un valor de <code>black</code> . Luego cambie el tamaño de la vista previa para ver este cambio en acción.
 </section>
 
 ## Tests
@@ -22,9 +22,9 @@ En el <code>:root</code> selector de <code>:root</code> de la <code>media query<
 
 ```yml
 tests:
-  - text: &#39; <code>:root</code> debe reasignar la variable <code>--penguin-size</code> a <code>200px</code> .&#39;
+  - text: ' <code>:root</code> debe reasignar la variable <code>--penguin-size</code> a <code>200px</code> .'
     testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.");'
-  - text: &#39; <code>:root</code> debería reasignar la variable <code>--penguin-skin</code> a <code>black</code> &#39;.
+  - text: ' <code>:root</code> debería reasignar la variable <code>--penguin-skin</code> a <code>black</code> '
     testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.");'
 
 ```

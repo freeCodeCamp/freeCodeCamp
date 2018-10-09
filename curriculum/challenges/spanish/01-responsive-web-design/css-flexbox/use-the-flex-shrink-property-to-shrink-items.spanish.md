@@ -7,15 +7,15 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Hasta ahora, todas las propiedades en los desafíos se aplican al contenedor de flexión (el elemento principal de los elementos de flexión). Sin embargo, hay varias propiedades útiles para los elementos flexibles. 
-La primera es la propiedad <code>flex-shrink</code> . Cuando se usa, permite que un elemento se encoja si el contenedor flexible es demasiado pequeño. Los elementos se reducen cuando el ancho del contenedor principal es menor que el ancho combinado de todos los elementos flexibles dentro de él. 
-La propiedad <code>flex-shrink</code> toma números como valores. Cuanto mayor sea el número, más se reducirá en comparación con los otros elementos del contenedor. Por ejemplo, si un elemento tiene un valor de <code>flex-shrink</code> de 1 y el otro tiene un valor de <code>flex-shrink</code> de 3, el valor de 3 se contraerá tres veces más que el otro. 
+<section id='description'>
+Hasta ahora, todas las propiedades en los desafíos se aplican al contenedor de flexión (el elemento principal de los elementos de flexión). Sin embargo, hay varias propiedades útiles para los elementos flexibles.
+La primera es la propiedad <code>flex-shrink</code> . Cuando se usa, permite que un elemento se encoja si el contenedor flexible es demasiado pequeño. Los elementos se reducen cuando el ancho del contenedor principal es menor que el ancho combinado de todos los elementos flexibles dentro de él.
+La propiedad <code>flex-shrink</code> toma números como valores. Cuanto mayor sea el número, más se reducirá en comparación con los otros elementos del contenedor. Por ejemplo, si un elemento tiene un valor de <code>flex-shrink</code> de 1 y el otro tiene un valor de <code>flex-shrink</code> de 3, el valor de 3 se contraerá tres veces más que el otro.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la propiedad CSS <code>flex-shrink</code> a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 1 y <code>#box-2</code> un valor de 2. 
+<section id='instructions'>
+Agregue la propiedad CSS <code>flex-shrink</code> a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 1 y <code>#box-2</code> un valor de 2.
 </section>
 
 ## Tests
@@ -23,9 +23,9 @@ Agregue la propiedad CSS <code>flex-shrink</code> a <code>#box-1</code> y <code>
 
 ```yml
 tests:
-  - text: &#39;El elemento <code>#box-1</code> debe tener la propiedad <code>flex-shrink</code> establecida en un valor de 1&#39;.
+  - text: 'El elemento <code>#box-1</code> debe tener la propiedad <code>flex-shrink</code> establecida en un valor de 1'
     testString: 'assert($("#box-1").css("flex-shrink") == "1", "The <code>#box-1</code> element should have the <code>flex-shrink</code> property set to a value of 1.");'
-  - text: &#39;El elemento <code>#box-2</code> debe tener la propiedad <code>flex-shrink</code> establecida en un valor de 2&#39;.
+  - text: 'El elemento <code>#box-2</code> debe tener la propiedad <code>flex-shrink</code> establecida en un valor de 2'
     testString: 'assert($("#box-2").css("flex-shrink") == "2", "The <code>#box-2</code> element should have the <code>flex-shrink</code> property set to a value of 2.");'
 
 ```

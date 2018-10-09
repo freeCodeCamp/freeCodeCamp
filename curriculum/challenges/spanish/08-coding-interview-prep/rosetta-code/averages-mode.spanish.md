@@ -6,12 +6,12 @@ challengeType: 5
 ---
 
 ## Description
-<section id='description'> 
-<p> Escribe un programa para encontrar el valor de <a href="https://en.wikipedia.org/wiki/Mode (statistics)" title="wp: modo (estadísticas)">modo</a> de una colección. </p><p> El caso donde la colección está vacía puede ser ignorado. Se debe tener cuidado para manejar el caso donde el modo no es único. </p><p> Si no es apropiado o no es posible admitir una colección general, use un vector (matriz), si es posible. Si no es apropiado o no es posible admitir un tipo de valor no especificado, use números enteros. </p> 
+<section id='description'>
+<p> Escribe un programa para encontrar el valor de <a href="https://en.wikipedia.org/wiki/Mode (statistics)" title="wp: modo (estadísticas)">modo</a> de una colección. </p><p> El caso donde la colección está vacía puede ser ignorado. Se debe tener cuidado para manejar el caso donde el modo no es único. </p><p> Si no es apropiado o no es posible admitir una colección general, use un vector (matriz), si es posible. Si no es apropiado o no es posible admitir un tipo de valor no especificado, use números enteros. </p>
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -22,9 +22,9 @@ challengeType: 5
 tests:
   - text: <code>mode</code> es una función.
     testString: 'assert(typeof mode === "function", "<code>mode</code> is a function.");'
-  - text: &#39; <code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> debe ser igual a <code>[6]</code> &#39;
+  - text: ' <code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> debe ser igual a <code>[6]</code> '
     testString: 'assert.deepEqual(mode(arr1), [6], "<code>mode([1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17])</code> should equal <code>[6]</code>");'
-  - text: &#39;el <code>mode([1, 2, 4, 4, 1])</code> debe ser igual a <code>[1, 4]</code> .&#39;
+  - text: 'el <code>mode([1, 2, 4, 4, 1])</code> debe ser igual a <code>[1, 4]</code> .'
     testString: 'assert.deepEqual(mode(arr2).sort(), [1, 4], "<code>mode([1, 2, 4, 4, 1])</code> should equal <code>[1, 4]</code>.");'
 
 ```

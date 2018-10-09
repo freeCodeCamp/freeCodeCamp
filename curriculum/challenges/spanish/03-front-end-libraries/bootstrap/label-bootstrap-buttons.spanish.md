@@ -6,13 +6,13 @@ challengeType: 0
 ---
 
 ## Description
-<section id='description'> 
-Al igual que etiquetamos nuestros pozos, queremos etiquetar nuestros botones. 
-Dé a cada uno de los elementos de su <code>button</code> texto que corresponda al selector de su <code>id</code> . 
+<section id='description'>
+Al igual que etiquetamos nuestros pozos, queremos etiquetar nuestros botones.
+Dé a cada uno de los elementos de su <code>button</code> texto que corresponda al selector de su <code>id</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -21,17 +21,17 @@ Dé a cada uno de los elementos de su <code>button</code> texto que corresponda 
 
 ```yml
 tests:
-  - text: &#39;Déle a su elemento de <code>button</code> con el id <code>target1</code> el texto <code>#target1</code> &#39;.
+  - text: 'Déle a su elemento de <code>button</code> con el id <code>target1</code> el texto <code>#target1</code> '
     testString: 'assert(new RegExp("#target1","gi").test($("#target1").text()), "Give your <code>button</code> element with the id <code>target1</code> the text <code>#target1</code>.");'
-  - text: &#39;Déle a su elemento de <code>button</code> con el id <code>target2</code> el texto <code>#target2</code> &#39;.
+  - text: 'Déle a su elemento de <code>button</code> con el id <code>target2</code> el texto <code>#target2</code> '
     testString: 'assert(new RegExp("#target2","gi").test($("#target2").text()), "Give your <code>button</code> element with the id <code>target2</code> the text <code>#target2</code>.");'
-  - text: &#39;Déle a su elemento de <code>button</code> con el id <code>target3</code> el texto <code>#target3</code> &#39;.
+  - text: 'Déle a su elemento de <code>button</code> con el id <code>target3</code> el texto <code>#target3</code> '
     testString: 'assert(new RegExp("#target3","gi").test($("#target3").text()), "Give your <code>button</code> element with the id <code>target3</code> the text <code>#target3</code>.");'
-  - text: &#39;Dale a tu elemento de <code>button</code> con el id <code>target4</code> el texto <code>#target4</code> &#39;.
+  - text: 'Dale a tu elemento de <code>button</code> con el id <code>target4</code> el texto <code>#target4</code> '
     testString: 'assert(new RegExp("#target4","gi").test($("#target4").text()), "Give your <code>button</code> element with the id <code>target4</code> the text <code>#target4</code>.");'
-  - text: &#39;Dale a tu elemento del <code>button</code> con el id <code>target5</code> el texto <code>#target5</code> &#39;.
+  - text: 'Dale a tu elemento del <code>button</code> con el id <code>target5</code> el texto <code>#target5</code> '
     testString: 'assert(new RegExp("#target5","gi").test($("#target5").text()), "Give your <code>button</code> element with the id <code>target5</code> the text <code>#target5</code>.");'
-  - text: &#39;Dale a tu elemento del <code>button</code> con el id <code>target6</code> el texto <code>#target6</code> &#39;.
+  - text: 'Dale a tu elemento del <code>button</code> con el id <code>target6</code> el texto <code>#target6</code> '
     testString: 'assert(new RegExp("#target6","gi").test($("#target6").text()), "Give your <code>button</code> element with the id <code>target6</code> the text <code>#target6</code>.");'
 
 ```

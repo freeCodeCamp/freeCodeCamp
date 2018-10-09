@@ -9,14 +9,14 @@ challengeType: 0
 ---
 
 ## Description
-<section id='description'> 
-Puede agregar el ícono Font Awesome de <code>fa-paper-plane</code> agregando <code>&lt;i class=&quot;fa fa-paper-plane&quot;&gt;&lt;/i&gt;</code> dentro del elemento del <code>button</code> envío. 
-Asigne al campo de entrada de texto de su formulario una clase de <code>form-control</code> de <code>form-control</code> . Déle a su formulario el botón de enviar las clases <code>btn btn-primary</code> . También dé a este botón el icono de Font Awesome de <code>fa-paper-plane</code> . 
-Todos los elementos textuales <code>&lt;input&gt;</code> , <code>&lt;textarea&gt;</code> y <code>&lt;select&gt;</code> con la clase <code>.form-control</code> tienen un ancho del 100%. 
+<section id='description'>
+Puede agregar el ícono Font Awesome de <code>fa-paper-plane</code> agregando <code>&lt;i class=&quot;fa fa-paper-plane&quot;&gt;&lt;/i&gt;</code> dentro del elemento del <code>button</code> envío.
+Asigne al campo de entrada de texto de su formulario una clase de <code>form-control</code> de <code>form-control</code> . Déle a su formulario el botón de enviar las clases <code>btn btn-primary</code> . También dé a este botón el icono de Font Awesome de <code>fa-paper-plane</code> .
+Todos los elementos textuales <code>&lt;input&gt;</code> , <code>&lt;textarea&gt;</code> y <code>&lt;select&gt;</code> con la clase <code>.form-control</code> tienen un ancho del 100%.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -27,7 +27,7 @@ Todos los elementos textuales <code>&lt;input&gt;</code> , <code>&lt;textarea&gt
 tests:
   - text: Dale al botón de enviar en tu formulario las clases <code>btn btn-primary</code> .
     testString: 'assert($("button[type=\"submit\"]").hasClass("btn btn-primary"), "Give the submit button in your form the classes <code>btn btn-primary</code>.");'
-  - text: &#39;Agrega un <code>&lt;i class=&quot;fa fa-paper-plane&quot;&gt;&lt;/i&gt;</code> dentro de tu elemento de <code>button</code> envío.&#39;
+  - text: 'Agrega un <code>&lt;i class=&quot;fa fa-paper-plane&quot;&gt;&lt;/i&gt;</code> dentro de tu elemento de <code>button</code> envío.'
     testString: 'assert($("button[type=\"submit\"]:has(i.fa.fa-paper-plane)").length > 0, "Add a <code>&#60;i class="fa fa-paper-plane"&#62;&#60;/i&#62;</code> within your submit <code>button</code> element.");'
   - text: Dale al texto <code>input</code> en tu formulario la clase <code>form-control</code> .
     testString: 'assert($("input[type=\"text\"]").hasClass("form-control"), "Give the text <code>input</code> in your form the class <code>form-control</code>.");'

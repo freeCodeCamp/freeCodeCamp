@@ -8,19 +8,19 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-De forma predeterminada, las escalas utilizan la relación de identidad: el valor de entrada se asigna al valor de salida. Pero las escalas pueden ser mucho más flexibles e interesantes. 
-Supongamos que un conjunto de datos tiene valores que oscilan entre 50 y 480. Esta es la información de entrada para una escala y también se conoce como dominio. 
-Desea asignar esos puntos a lo largo del eje <code>x</code> en el lienzo de SVG, entre 10 unidades y 500 unidades. Esta es la información de salida, que también se conoce como el rango. 
-Los métodos de <code>domain()</code> y <code>range()</code> establecen estos valores para la escala. Ambos métodos toman una matriz de al menos dos elementos como un argumento. Aquí hay un ejemplo: 
-<blockquote>// Set a domain<br>// The domain covers the set of input values<br>scale.domain([50, 480]);<br>// Set a range<br>// The range covers the set of output values<br>scale.range([10, 500]);<br>scale(50) // Returns 10<br>scale(480) // Returns 500<br>scale(325) // Returns 323.37<br>scale(750) // Returns 807.67<br>d3.scaleLinear()</blockquote> 
-Observe que la escala usa la relación lineal entre el dominio y los valores de rango para determinar cuál debe ser la salida para un número dado. El valor mínimo en el dominio (50) se asigna al valor mínimo (10) en el rango. 
+<section id='description'>
+De forma predeterminada, las escalas utilizan la relación de identidad: el valor de entrada se asigna al valor de salida. Pero las escalas pueden ser mucho más flexibles e interesantes.
+Supongamos que un conjunto de datos tiene valores que oscilan entre 50 y 480. Esta es la información de entrada para una escala y también se conoce como dominio.
+Desea asignar esos puntos a lo largo del eje <code>x</code> en el lienzo de SVG, entre 10 unidades y 500 unidades. Esta es la información de salida, que también se conoce como el rango.
+Los métodos de <code>domain()</code> y <code>range()</code> establecen estos valores para la escala. Ambos métodos toman una matriz de al menos dos elementos como un argumento. Aquí hay un ejemplo:
+<blockquote>// Set a domain<br>// The domain covers the set of input values<br>scale.domain([50, 480]);<br>// Set a range<br>// The range covers the set of output values<br>scale.range([10, 500]);<br>scale(50) // Returns 10<br>scale(480) // Returns 500<br>scale(325) // Returns 323.37<br>scale(750) // Returns 807.67<br>d3.scaleLinear()</blockquote>
+Observe que la escala usa la relación lineal entre el dominio y los valores de rango para determinar cuál debe ser la salida para un número dado. El valor mínimo en el dominio (50) se asigna al valor mínimo (10) en el rango.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Cree una escala y establezca su dominio en <code>[250, 500]</code> y alcance en <code>[10, 150]</code> . 
-<strong>Nota</strong> <br> Puede encadenar los métodos de <code>domain()</code> y <code>range()</code> a la variable de <code>scale</code> . 
+<section id='instructions'>
+Cree una escala y establezca su dominio en <code>[250, 500]</code> y alcance en <code>[10, 150]</code> .
+<strong>Nota</strong> <br> Puede encadenar los métodos de <code>domain()</code> y <code>range()</code> a la variable de <code>scale</code> .
 </section>
 
 ## Tests
@@ -30,11 +30,11 @@ Cree una escala y establezca su dominio en <code>[250, 500]</code> y alcance en 
 tests:
   - text: Su código debe utilizar el método <code>domain()</code> .
     testString: 'assert(code.match(/\.domain/g), "Your code should use the <code>domain()</code> method.");'
-  - text: &#39;El <code>domain()</code> de la escala se debe establecer en <code>[250, 500]</code> .&#39;
+  - text: 'El <code>domain()</code> de la escala se debe establecer en <code>[250, 500]</code> .'
     testString: 'assert(JSON.stringify(scale.domain()) == JSON.stringify([250, 500]), "The <code>domain()</code> of the scale should be set to <code>[250, 500]</code>.");'
   - text: Su código debe utilizar el método <code>range()</code> .
     testString: 'assert(code.match(/\.range/g), "Your code should use the <code>range()</code> method.");'
-  - text: &#39;El <code>range()</code> de la escala se debe establecer en <code>[10, 150]</code> .&#39;
+  - text: 'El <code>range()</code> de la escala se debe establecer en <code>[10, 150]</code> .'
     testString: 'assert(JSON.stringify(scale.range()) == JSON.stringify([10, 150]), "The <code>range()</code> of the scale should be set to <code>[10, 150]</code>.");'
   - text: El texto en el <code>h2</code> debe ser -102.
     testString: 'assert($("h2").text() == "-102", "The text in the <code>h2</code> should be -102.");'

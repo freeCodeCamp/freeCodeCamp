@@ -7,13 +7,13 @@ isRequired: false
 ---
 
 ## Description
-<section id='description'> 
-Tiempo para practicar la eliminación de elementos de una matriz. El operador de propagación se puede utilizar aquí también. Otros métodos útiles de JavaScript incluyen <code>slice()</code> y <code>concat()</code> . 
+<section id='description'>
+Tiempo para practicar la eliminación de elementos de una matriz. El operador de propagación se puede utilizar aquí también. Otros métodos útiles de JavaScript incluyen <code>slice()</code> y <code>concat()</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
-El reductor y el creador de acciones se modificaron para eliminar un elemento de una matriz según el índice del elemento. Termine de escribir el reductor para que se devuelva una nueva matriz de estado con el elemento en el índice específico eliminado. 
+<section id='instructions'>
+El reductor y el creador de acciones se modificaron para eliminar un elemento de una matriz según el índice del elemento. Termine de escribir el reductor para que se devuelva una nueva matriz de estado con el elemento en el índice específico eliminado.
 </section>
 
 ## Tests
@@ -21,7 +21,7 @@ El reductor y el creador de acciones se modificaron para eliminar un elemento de
 
 ```yml
 tests:
-  - text: &#39;La tienda Redux debería existir e inicializarse con un estado igual a <code>[0,1,2,3,4,5]</code> &#39;
+  - text: 'La tienda Redux debería existir e inicializarse con un estado igual a <code>[0,1,2,3,4,5]</code> '
     testString: 'assert((function() { const initialState = store.getState(); return (Array.isArray(initialState) === true && DeepEqual(initialState, [0, 1, 2, 3, 4, 5])); })(), "The Redux store should exist and initialize with a state equal to <code>[0,1,2,3,4,5]</code>");'
   - text: <code>removeItem</code> y <code>immutableReducer</code> deben ser funciones.
     testString: 'assert(typeof removeItem === "function" && typeof immutableReducer === "function", "<code>removeItem</code> and <code>immutableReducer</code> both should be functions.");'

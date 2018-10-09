@@ -7,15 +7,15 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-veces que desea agregar <code>a</code> los elementos a su sitio web antes de saber donde van a unir. 
-Esto también es útil cuando está cambiando el comportamiento de un enlace usando <code>JavaScript</code> , que conoceremos más adelante. 
+<section id='description'>
+veces que desea agregar <code>a</code> los elementos a su sitio web antes de saber donde van a unir.
+Esto también es útil cuando está cambiando el comportamiento de un enlace usando <code>JavaScript</code> , que conoceremos más adelante.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-El valor actual del atributo <code>href</code> es un enlace que apunta a &quot;http://freecatphotoapp.com&quot;. Reemplace el valor del atributo <code>href</code> con un <code>#</code> , también conocido como símbolo de hash, para crear un enlace muerto. 
-Por ejemplo: <code>href=&quot;#&quot;</code> 
+<section id='instructions'>
+El valor actual del atributo <code>href</code> es un enlace que apunta a &quot;http://freecatphotoapp.com&quot;. Reemplace el valor del atributo <code>href</code> con un <code>#</code> , también conocido como símbolo de hash, para crear un enlace muerto.
+Por ejemplo: <code>href=&quot;#&quot;</code>
 </section>
 
 ## Tests
@@ -23,7 +23,7 @@ Por ejemplo: <code>href=&quot;#&quot;</code>
 
 ```yml
 tests:
-  - text: &#39;Su <code>a</code> elemento debe ser un vínculo roto con el valor de la <code>href</code> atributo establecido en &#39;#&#39;.&#39;
+  - text: 'Su <code>a</code> elemento debe ser un vínculo roto con el valor de la <code>href</code> atributo establecido en &#39;#&#39;.'
     testString: 'assert($("a").attr("href") === "#", "Your <code>a</code> element should be a dead link with the value of the <code>href</code> attribute set to "#".");'
 
 ```

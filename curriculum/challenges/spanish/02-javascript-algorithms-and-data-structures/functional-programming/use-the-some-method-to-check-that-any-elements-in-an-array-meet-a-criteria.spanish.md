@@ -6,15 +6,15 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-El <code>some</code> método funciona con matrices para comprobar si <em>cualquier</em> elemento pasa una prueba particular. Devuelve un valor booleano: <code>true</code> si alguno de los valores cumple los criterios, <code>false</code> si no. 
-Por ejemplo, el siguiente código verificará si algún elemento de la matriz de <code>numbers</code> es menor que 10: 
-<blockquote>var numbers = [10, 50, 8, 220, 110, 11];<br>numbers.some(function(currentValue) {<br>&nbsp;&nbsp;return currentValue < 10;<br>});<br>// Returns true</blockquote> 
+<section id='description'>
+El <code>some</code> método funciona con matrices para comprobar si <em>cualquier</em> elemento pasa una prueba particular. Devuelve un valor booleano: <code>true</code> si alguno de los valores cumple los criterios, <code>false</code> si no.
+Por ejemplo, el siguiente código verificará si algún elemento de la matriz de <code>numbers</code> es menor que 10:
+<blockquote>var numbers = [10, 50, 8, 220, 110, 11];<br>numbers.some(function(currentValue) {<br>&nbsp;&nbsp;return currentValue < 10;<br>});<br>// Returns true</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Use <code>some</code> método dentro de la función <code>checkPositive</code> para verificar si algún elemento en <code>arr</code> es positivo. La función debe devolver un valor booleano. 
+<section id='instructions'>
+Use <code>some</code> método dentro de la función <code>checkPositive</code> para verificar si algún elemento en <code>arr</code> es positivo. La función debe devolver un valor booleano.
 </section>
 
 ## Tests
@@ -24,11 +24,11 @@ Use <code>some</code> método dentro de la función <code>checkPositive</code> p
 tests:
   - text: Su código debe utilizar <code>some</code> método.
     testString: 'assert(code.match(/\.some/g), "Your code should use the <code>some</code> method.");'
-  - text: &#39; <code>checkPositive([1, 2, 3, -4, 5])</code> debe devolver <code>true</code> .&#39;
+  - text: ' <code>checkPositive([1, 2, 3, -4, 5])</code> debe devolver <code>true</code> .'
     testString: 'assert(checkPositive([1, 2, 3, -4, 5]), "<code>checkPositive([1, 2, 3, -4, 5])</code> should return <code>true</code>.");'
-  - text: &#39; <code>checkPositive([1, 2, 3, 4, 5])</code> debe devolver <code>true</code> .&#39;
+  - text: ' <code>checkPositive([1, 2, 3, 4, 5])</code> debe devolver <code>true</code> .'
     testString: 'assert(checkPositive([1, 2, 3, 4, 5]), "<code>checkPositive([1, 2, 3, 4, 5])</code> should return <code>true</code>.");'
-  - text: &#39; <code>checkPositive([-1, -2, -3, -4, -5])</code> debe devolver <code>false</code> .&#39;
+  - text: ' <code>checkPositive([-1, -2, -3, -4, -5])</code> debe devolver <code>false</code> .'
     testString: 'assert(!checkPositive([-1, -2, -3, -4, -5]), "<code>checkPositive([-1, -2, -3, -4, -5])</code> should return <code>false</code>.");'
 
 ```

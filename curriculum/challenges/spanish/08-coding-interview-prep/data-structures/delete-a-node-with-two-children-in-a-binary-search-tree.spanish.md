@@ -6,14 +6,14 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Eliminar los nodos que tienen dos hijos es el caso más difícil de implementar. La eliminación de un nodo como este produce dos subárboles que ya no están conectados a la estructura de árbol original. ¿Cómo podemos reconectarlos? Un método es encontrar el valor más pequeño en el subárbol derecho del nodo de destino y reemplazar el nodo de destino con este valor. Seleccionar el reemplazo de esta manera asegura que sea mayor que cada nodo en el subárbol izquierdo, se convierte en el nuevo padre, pero también en menos que cada nodo en el subárbol derecho se convierte en el nuevo padre. 
-Una vez que se realiza este reemplazo, el nodo de reemplazo debe eliminarse del subárbol derecho. Incluso esta operación es complicada porque el reemplazo puede ser una hoja o puede ser el padre de un subárbol derecho. Si es una hoja debemos eliminar la referencia de su padre. De lo contrario, debe ser el hijo derecho del objetivo. En este caso, debemos reemplazar el valor objetivo con el valor de reemplazo y hacer que la referencia objetivo sea el hijo derecho del reemplazo. 
-Instrucciones: Terminemos nuestro método de <code>remove</code> manejando el tercer caso. Hemos proporcionado un código nuevo para los dos primeros casos. Agregue un poco de código ahora para manejar los nodos de destino con dos hijos. ¿Algún caso de borde a tener en cuenta? ¿Qué pasa si el árbol tiene sólo tres nodos? Una vez que haya terminado, esto completará nuestra operación de eliminación de árboles de búsqueda binarios. Buen trabajo, este es un problema bastante difícil! 
+<section id='description'>
+Eliminar los nodos que tienen dos hijos es el caso más difícil de implementar. La eliminación de un nodo como este produce dos subárboles que ya no están conectados a la estructura de árbol original. ¿Cómo podemos reconectarlos? Un método es encontrar el valor más pequeño en el subárbol derecho del nodo de destino y reemplazar el nodo de destino con este valor. Seleccionar el reemplazo de esta manera asegura que sea mayor que cada nodo en el subárbol izquierdo, se convierte en el nuevo padre, pero también en menos que cada nodo en el subárbol derecho se convierte en el nuevo padre.
+Una vez que se realiza este reemplazo, el nodo de reemplazo debe eliminarse del subárbol derecho. Incluso esta operación es complicada porque el reemplazo puede ser una hoja o puede ser el padre de un subárbol derecho. Si es una hoja debemos eliminar la referencia de su padre. De lo contrario, debe ser el hijo derecho del objetivo. En este caso, debemos reemplazar el valor objetivo con el valor de reemplazo y hacer que la referencia objetivo sea el hijo derecho del reemplazo.
+Instrucciones: Terminemos nuestro método de <code>remove</code> manejando el tercer caso. Hemos proporcionado un código nuevo para los dos primeros casos. Agregue un poco de código ahora para manejar los nodos de destino con dos hijos. ¿Algún caso de borde a tener en cuenta? ¿Qué pasa si el árbol tiene sólo tres nodos? Una vez que haya terminado, esto completará nuestra operación de eliminación de árboles de búsqueda binarios. Buen trabajo, este es un problema bastante difícil!
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -28,7 +28,7 @@ tests:
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == "function")})(), "The binary search tree has a method called <code>remove</code>.");'
   - text: Intentar eliminar un elemento que no existe devuelve <code>null</code> .
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.remove == "function") ? (test.remove(100) == null) : false})(), "Trying to remove an element that does not exist returns <code>null</code>.");'
-  - text: &#39;Si el nodo raíz no tiene hijos, al eliminarlo, se establece la raíz en <code>null</code> &#39;.
+  - text: 'Si el nodo raíz no tiene hijos, al eliminarlo, se establece la raíz en <code>null</code> '
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; test.add(500); test.remove(500); return (typeof test.remove == "function") ? (test.inorder() == null) : false})(), "If the root node has no children, deleting it sets the root to <code>null</code>.");'
   - text: El método de <code>remove</code> elimina los nodos de hoja del árbol.
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; test.add(5); test.add(3); test.add(7); test.add(6); test.add(10); test.add(12); test.remove(3); test.remove(12); test.remove(10); return (typeof test.remove == "function") ? (test.inorder().join("") == "567") : false})(), "The <code>remove</code> method removes leaf nodes from the tree");'

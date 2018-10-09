@@ -7,15 +7,15 @@ isRequired: false
 ---
 
 ## Description
-<section id='description'> 
-Una solución de ES6 para ayudar a imponer la inmutabilidad del estado en Redux es el operador de propagación: <code>...</code> El operador de difusión tiene una variedad de aplicaciones, una de las cuales está bien adaptada al desafío anterior de producir una nueva matriz a partir de una matriz existente. Esta es una sintaxis relativamente nueva, pero comúnmente utilizada. Por ejemplo, si tiene una matriz <code>myArray</code> y escribe: 
-<code>let newArray = [...myArray];</code> 
-<code>newArray</code> ahora es un clon de <code>myArray</code> . Ambas matrices todavía existen por separado en la memoria. Si realiza una mutación como <code>newArray.push(5)</code> , <code>myArray</code> no cambia. El <code>...</code> <i>propaga</i> eficazmente los valores en <code>myArray</code> en una nueva matriz. Para clonar una matriz pero agregar valores adicionales en la nueva matriz, puede escribir <code>[...myArray, &#39;new value&#39;]</code> . Esto devolvería una nueva matriz compuesta por los valores en <code>myArray</code> y la cadena <code>&#39;new value&#39;</code> como el último valor. La sintaxis de propagación se puede utilizar varias veces en una composición de matriz como esta, pero es importante tener en cuenta que solo hace una copia superficial de la matriz. Es decir, solo proporciona operaciones de matriz inmutables para matrices unidimensionales. 
+<section id='description'>
+Una solución de ES6 para ayudar a imponer la inmutabilidad del estado en Redux es el operador de propagación: <code>...</code> El operador de difusión tiene una variedad de aplicaciones, una de las cuales está bien adaptada al desafío anterior de producir una nueva matriz a partir de una matriz existente. Esta es una sintaxis relativamente nueva, pero comúnmente utilizada. Por ejemplo, si tiene una matriz <code>myArray</code> y escribe:
+<code>let newArray = [...myArray];</code>
+<code>newArray</code> ahora es un clon de <code>myArray</code> . Ambas matrices todavía existen por separado en la memoria. Si realiza una mutación como <code>newArray.push(5)</code> , <code>myArray</code> no cambia. El <code>...</code> <i>propaga</i> eficazmente los valores en <code>myArray</code> en una nueva matriz. Para clonar una matriz pero agregar valores adicionales en la nueva matriz, puede escribir <code>[...myArray, &#39;new value&#39;]</code> . Esto devolvería una nueva matriz compuesta por los valores en <code>myArray</code> y la cadena <code>&#39;new value&#39;</code> como el último valor. La sintaxis de propagación se puede utilizar varias veces en una composición de matriz como esta, pero es importante tener en cuenta que solo hace una copia superficial de la matriz. Es decir, solo proporciona operaciones de matriz inmutables para matrices unidimensionales.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Utilice el operador de propagación para devolver una nueva copia del estado cuando se agrega una tarea pendiente. 
+<section id='instructions'>
+Utilice el operador de propagación para devolver una nueva copia del estado cuando se agrega una tarea pendiente.
 </section>
 
 ## Tests
@@ -23,7 +23,7 @@ Utilice el operador de propagación para devolver una nueva copia del estado cua
 
 ```yml
 tests:
-  - text: &#39;El almacén Redux debería existir e inicializarse con un estado igual a <code>[Do not mutate state!]</code> .&#39;
+  - text: 'El almacén Redux debería existir e inicializarse con un estado igual a <code>[Do not mutate state!]</code> .'
     testString: 'assert((function() { const initialState = store.getState(); return ( Array.isArray(initialState) === true && initialState[0] === "Do not mutate state!"); })(), "The Redux store should exist and initialize with a state equal to <code>[Do not mutate state!]</code>.");'
   - text: <code>addToDo</code> y <code>immutableReducer</code> deben ser funciones.
     testString: 'assert(typeof addToDo === "function" && typeof immutableReducer === "function", "<code>addToDo</code> and <code>immutableReducer</code> both should be functions.");'

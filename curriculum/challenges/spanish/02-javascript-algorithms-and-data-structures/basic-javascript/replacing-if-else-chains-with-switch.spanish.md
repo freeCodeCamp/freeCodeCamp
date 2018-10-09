@@ -6,16 +6,16 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Si tiene muchas opciones para elegir, una instrucción <code>switch</code> puede ser más fácil de escribir que muchas instrucciones encadenadas <code>if</code> / <code>else if</code> . Lo siguiente: 
-<blockquote>if (val === 1) {<br>&nbsp;&nbsp;answer = "a";<br>} else if (val === 2) {<br>&nbsp;&nbsp;answer = "b";<br>} else {<br>&nbsp;&nbsp;answer = "c";<br>}</blockquote> 
-puede ser reemplazado por: 
-<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "a";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "b";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "c";<br>}</blockquote> 
+<section id='description'>
+Si tiene muchas opciones para elegir, una instrucción <code>switch</code> puede ser más fácil de escribir que muchas instrucciones encadenadas <code>if</code> / <code>else if</code> . Lo siguiente:
+<blockquote>if (val === 1) {<br>&nbsp;&nbsp;answer = "a";<br>} else if (val === 2) {<br>&nbsp;&nbsp;answer = "b";<br>} else {<br>&nbsp;&nbsp;answer = "c";<br>}</blockquote>
+puede ser reemplazado por:
+<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "a";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "b";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "c";<br>}</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie las sentencias <code>if</code> / <code>else if</code> encadenadas en una sentencia <code>switch</code> . 
+<section id='instructions'>
+Cambie las sentencias <code>if</code> / <code>else if</code> encadenadas en una sentencia <code>switch</code> .
 </section>
 
 ## Tests
@@ -33,7 +33,7 @@ tests:
     testString: 'assert(chainToSwitch("bob") === "Marley", "<code>chainToSwitch("bob")</code> should be "Marley"");'
   - text: <code>chainToSwitch(42)</code> debe ser &quot;La Respuesta&quot;
     testString: 'assert(chainToSwitch(42) === "The Answer", "<code>chainToSwitch(42)</code> should be "The Answer"");'
-  - text: &#39; <code>chainToSwitch(1)</code> debe ser &quot;No hay # 1&quot;&#39;
+  - text: ' <code>chainToSwitch(1)</code> debe ser &quot;No hay # 1&quot;'
     testString: 'assert(chainToSwitch(1) === "There is no #1", "<code>chainToSwitch(1)</code> should be "There is no #1"");'
   - text: <code>chainToSwitch(99)</code> debería ser &quot;¡Me <code>chainToSwitch(99)</code> por esto!&quot;
     testString: 'assert(chainToSwitch(99) === "Missed me by this much!", "<code>chainToSwitch(99)</code> should be "Missed me by this much!"");'

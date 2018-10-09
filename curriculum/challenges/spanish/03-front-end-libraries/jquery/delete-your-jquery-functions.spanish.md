@@ -8,13 +8,13 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-Estas animaciones fueron geniales al principio, pero ahora se están distrayendo. 
-Borre las tres funciones de jQuery de su función de <code>document ready function</code> , pero deje la <code>document ready function</code> intacta. 
+<section id='description'>
+Estas animaciones fueron geniales al principio, pero ahora se están distrayendo.
+Borre las tres funciones de jQuery de su función de <code>document ready function</code> , pero deje la <code>document ready function</code> intacta.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -27,7 +27,7 @@ tests:
     testString: 'assert(code.match(/\{\s*\}\);/g), "Delete all three of your jQuery functions from your <code>document ready function</code>.");'
   - text: Deja tu elemento de <code>script</code> intacto.
     testString: 'assert(code.match(/<script>/g), "Leave your <code>script</code> element intact.");'
-  - text: &#39;Deje su <code>$(document).ready(function() {</code> al principio de su elemento de <code>script</code> .&#39;
+  - text: 'Deje su <code>$(document).ready(function() {</code> al principio de su elemento de <code>script</code> .'
     testString: 'assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g), "Leave your <code><section id='tests'>
 
 ```yml
@@ -46,7 +46,7 @@ tests:
 ```
 
 </section>#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.");'
-  - text: &#39;Deje su &quot;función de documento listo&quot; cerrando <code>})</code> intacta.
+  - text: 'Deje su &quot;función de documento listo&quot; cerrando <code>})</code> intacta.
     testString: 'assert(code.match(/.*\s*\}\);/g), "Leave your "document ready function" closing <code>&#125;&#41;</code> intact.");'
   - text: Deje intacta la etiqueta de cierre del elemento de su <code>script</code> .
     testString: 'assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length, "Leave your <code>script</code> element closing tag intact.");'

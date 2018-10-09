@@ -7,15 +7,15 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Cuando crea una variable, queda disponible para que la use dentro del elemento en el que la creó. También está disponible dentro de cualquier elemento anidado dentro de él. Este efecto se conoce como <dfn>cascada</dfn> . 
-Debido a la cascada, las variables CSS a menudo se definen en el elemento <dfn>: raíz</dfn> . 
-<code>:root</code> es un selector de <dfn>pseudo-clase</dfn> que coincide con el elemento raíz del documento, generalmente el <html> elemento. Al crear sus variables en <code>:root</code> , estarán disponibles globalmente y se podrá acceder a ellas desde cualquier otro selector más adelante en la hoja de estilo. 
+<section id='description'>
+Cuando crea una variable, queda disponible para que la use dentro del elemento en el que la creó. También está disponible dentro de cualquier elemento anidado dentro de él. Este efecto se conoce como <dfn>cascada</dfn> .
+Debido a la cascada, las variables CSS a menudo se definen en el elemento <dfn>: raíz</dfn> .
+<code>:root</code> es un selector de <dfn>pseudo-clase</dfn> que coincide con el elemento raíz del documento, generalmente el <html> elemento. Al crear sus variables en <code>:root</code> , estarán disponibles globalmente y se podrá acceder a ellas desde cualquier otro selector más adelante en la hoja de estilo.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Defina una variable llamada <code>--penguin-belly</code> en el selector de <code>:root</code> y déle el valor de <code>pink</code> . Luego puede ver cómo el valor caerá en cascada para cambiar el valor a rosa, en cualquier lugar donde se use esa variable. 
+<section id='instructions'>
+Defina una variable llamada <code>--penguin-belly</code> en el selector de <code>:root</code> y déle el valor de <code>pink</code> . Luego puede ver cómo el valor caerá en cascada para cambiar el valor a rosa, en cualquier lugar donde se use esa variable.
 </section>
 
 ## Tests
@@ -23,7 +23,7 @@ Defina una variable llamada <code>--penguin-belly</code> en el selector de <code
 
 ```yml
 tests:
-  - text: &#39;declara la variable <code>--penguin-belly</code> en la <code>:root</code> y <code>--penguin-belly</code> a <code>pink</code> &#39;.
+  - text: 'declara la variable <code>--penguin-belly</code> en la <code>:root</code> y <code>--penguin-belly</code> a <code>pink</code> '
     testString: 'assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.");'
 
 ```

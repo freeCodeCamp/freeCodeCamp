@@ -6,15 +6,15 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Ha aprendido que puede usar un atajo para hacer coincidir los caracteres alfanuméricos <code>[A-Za-z0-9_]</code> usando <code>\w</code> . Un patrón natural que quizás desee buscar es el opuesto a los alfanuméricos. 
-Puede buscar lo contrario de <code>\w</code> con <code>\W</code> Tenga en cuenta, el patrón opuesto utiliza una letra mayúscula. Este atajo es el mismo que <code>[^A-Za-z0-9_]</code> . 
-<blockquote>let shortHand = /\W/;<br>let numbers = "42%";<br>let sentence = "Coding!";<br>numbers.match(shortHand); // Returns ["%"]<br>sentence.match(shortHand); // Returns ["!"]<br></blockquote> 
+<section id='description'>
+Ha aprendido que puede usar un atajo para hacer coincidir los caracteres alfanuméricos <code>[A-Za-z0-9_]</code> usando <code>\w</code> . Un patrón natural que quizás desee buscar es el opuesto a los alfanuméricos.
+Puede buscar lo contrario de <code>\w</code> con <code>\W</code> Tenga en cuenta, el patrón opuesto utiliza una letra mayúscula. Este atajo es el mismo que <code>[^A-Za-z0-9_]</code> .
+<blockquote>let shortHand = /\W/;<br>let numbers = "42%";<br>let sentence = "Coding!";<br>numbers.match(shortHand); // Returns ["%"]<br>sentence.match(shortHand); // Returns ["!"]<br></blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la clase de caracteres abreviados <code>\W</code> para contar el número de caracteres no alfanuméricos en varias comillas y cadenas. 
+<section id='instructions'>
+Use la clase de caracteres abreviados <code>\W</code> para contar el número de caracteres no alfanuméricos en varias comillas y cadenas.
 </section>
 
 ## Tests
@@ -24,7 +24,7 @@ Use la clase de caracteres abreviados <code>\W</code> para contar el número de 
 tests:
   - text: Su expresión regular debe utilizar la bandera global.
     testString: 'assert(nonAlphabetRegex.global, "Your regex should use the global flag.");'
-  - text: Su expresión regular debe encontrar 6 caracteres no alfanuméricos en <code clase = "notranslate"> "Los cinco asistentes de boxeo saltan rápidamente".
+  - text: Su expresión regular debe encontrar 6 caracteres no alfanuméricos en <code clase = "notranslate"> "Los cinco asistentes de boxeo saltan rápidamente."
     testString: 'assert("The five boxing wizards jump quickly.".match(nonAlphabetRegex).length == 6, "Your regex should find 6 non-alphanumeric characters in <code>"The five boxing wizards jump quickly."</code>.");'
   - text: Tu expresión regular debe usar el carácter de taquigrafía.
     testString: 'assert(/\\W/.test(nonAlphabetRegex.source), "Your regex should use the shorthand character to match characters which are non-alphanumeric.");'

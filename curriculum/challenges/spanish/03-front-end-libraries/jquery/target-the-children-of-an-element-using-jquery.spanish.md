@@ -6,16 +6,16 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-Cuando los elementos HTML se colocan un nivel debajo de otro, se denominan <code>children</code> de ese elemento. Por ejemplo, los elementos de los botones en este desafío con el texto &quot;# destino1&quot;, &quot;# destino2&quot;, y &quot;# destino3&quot; son todos <code>children</code> de la <code>&lt;div class=&quot;well&quot; id=&quot;left-well&quot;&gt;</code> elemento. 
-jQuery tiene una función llamada <code>children()</code> que le permite acceder a los hijos de cualquier elemento que haya seleccionado. 
-Este es un ejemplo de cómo usaría la función <code>children()</code> para dar a los niños de su elemento de <code>left-well</code> el color <code>blue</code> : 
-<code>$(&quot;#left-well&quot;).children().css(&quot;color&quot;, &quot;blue&quot;)</code> 
+<section id='description'>
+Cuando los elementos HTML se colocan un nivel debajo de otro, se denominan <code>children</code> de ese elemento. Por ejemplo, los elementos de los botones en este desafío con el texto &quot;# destino1&quot;, &quot;# destino2&quot;, y &quot;# destino3&quot; son todos <code>children</code> de la <code>&lt;div class=&quot;well&quot; id=&quot;left-well&quot;&gt;</code> elemento.
+jQuery tiene una función llamada <code>children()</code> que le permite acceder a los hijos de cualquier elemento que haya seleccionado.
+Este es un ejemplo de cómo usaría la función <code>children()</code> para dar a los niños de su elemento de <code>left-well</code> el color <code>blue</code> :
+<code>$(&quot;#left-well&quot;).children().css(&quot;color&quot;, &quot;blue&quot;)</code>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Dale a todos los niños de tu elemento de <code>right-well</code> el color naranja. 
+<section id='instructions'>
+Dale a todos los niños de tu elemento de <code>right-well</code> el color naranja.
 </section>
 
 ## Tests
@@ -23,9 +23,9 @@ Dale a todos los niños de tu elemento de <code>right-well</code> el color naran
 
 ```yml
 tests:
-  - text: &#39;Todos los niños de <code>#right-well</code> deben tener texto naranja&#39;.
+  - text: 'Todos los niños de <code>#right-well</code> deben tener texto naranja'
     testString: 'assert($("#right-well").children().css("color") === "rgb(255, 165, 0)", "All children of <code>#right-well</code> should have orange text.");'
-  - text: &#39;Deberías usar la función <code>children()</code> para modificar estos elementos.&#39;
+  - text: 'Deberías usar la función <code>children()</code> para modificar estos elementos.'
     testString: 'assert(code.match(/\.children\(\)\.css/g), "You should use the <code>children&#40&#41</code> function to modify these elements.");'
   - text: Solo use jQuery para agregar estas clases al elemento.
     testString: 'assert(code.match(/<div class="well" id="right-well">/g), "Only use jQuery to add these classes to the element.");'

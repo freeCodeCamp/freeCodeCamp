@@ -8,16 +8,16 @@ challengeType: 5
 ---
 
 ## Description
-<section id='description'> 
-Te dan dos matrices y un índice. 
-Utilice la matriz métodos <code>slice</code> y <code>splice</code> para copiar cada elemento de la primera matriz en la segunda matriz, en orden. 
-Comenzar a insertar elementos en el índice <code>n</code> de la segunda matriz. 
-Devuelve la matriz resultante. Las matrices de entrada deben permanecer iguales después de que se ejecute la función. 
-Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código. 
+<section id='description'>
+Te dan dos matrices y un índice.
+Utilice la matriz métodos <code>slice</code> y <code>splice</code> para copiar cada elemento de la primera matriz en la segunda matriz, en orden.
+Comenzar a insertar elementos en el índice <code>n</code> de la segunda matriz.
+Devuelve la matriz resultante. Las matrices de entrada deben permanecer iguales después de que se ejecute la función.
+Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Escribe tu propio código.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -26,11 +26,11 @@ Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-
 
 ```yml
 tests:
-  - text: &#39; <code>frankenSplice([1, 2, 3], [4, 5], 1)</code> debe devolver <code>[4, 1, 2, 3, 5]</code> .&#39;
+  - text: ' <code>frankenSplice([1, 2, 3], [4, 5], 1)</code> debe devolver <code>[4, 1, 2, 3, 5]</code> .'
     testString: 'assert.deepEqual(frankenSplice([1, 2, 3], [4, 5], 1), [4, 1, 2, 3, 5], "<code>frankenSplice([1, 2, 3], [4, 5], 1)</code> should return <code>[4, 1, 2, 3, 5]</code>.");'
-  - text: &#39; <code>frankenSplice([1, 2], [&quot;a&quot;, &quot;b&quot;], 1)</code> debe devolver <code>[&quot;a&quot;, 1, 2, &quot;b&quot;]</code> .&#39;
+  - text: ' <code>frankenSplice([1, 2], [&quot;a&quot;, &quot;b&quot;], 1)</code> debe devolver <code>[&quot;a&quot;, 1, 2, &quot;b&quot;]</code> .'
     testString: 'assert.deepEqual(frankenSplice(testArr1, testArr2, 1), ["a", 1, 2, "b"], "<code>frankenSplice([1, 2], ["a", "b"], 1)</code> should return <code>["a", 1, 2, "b"]</code>.");'
-  - text: &#39; <code>frankenSplice([&quot;claw&quot;, &quot;tentacle&quot;], [&quot;head&quot;, &quot;shoulders&quot;, &quot;knees&quot;, &quot;toes&quot;], 2)</code> debe devolver <code>[&quot;head&quot;, &quot;shoulders&quot;, &quot;claw&quot;, &quot;tentacle&quot;, &quot;knees&quot;, &quot;toes&quot;]</code> . &#39;
+  - text: ' <code>frankenSplice([&quot;claw&quot;, &quot;tentacle&quot;], [&quot;head&quot;, &quot;shoulders&quot;, &quot;knees&quot;, &quot;toes&quot;], 2)</code> debe devolver <code>[&quot;head&quot;, &quot;shoulders&quot;, &quot;claw&quot;, &quot;tentacle&quot;, &quot;knees&quot;, &quot;toes&quot;]</code> . '
     testString: 'assert.deepEqual(frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2), ["head", "shoulders", "claw", "tentacle", "knees", "toes"], "<code>frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2)</code> should return <code>["head", "shoulders", "claw", "tentacle", "knees", "toes"]</code>.");'
   - text: Todos los elementos de la primera matriz se deben agregar a la segunda matriz en su orden original.
     testString: 'assert.deepEqual(frankenSplice([1, 2, 3, 4], [], 0), [1, 2, 3, 4], "All elements from the first array should be added to the second array in their original order.");'

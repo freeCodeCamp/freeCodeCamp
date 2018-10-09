@@ -7,15 +7,15 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Agregar <code>display: flex</code> a un elemento lo convierte en un contenedor flexible. Esto hace posible alinear cualquier elemento secundario de ese elemento en filas o columnas. Para ello, agregue la propiedad de <code>flex-direction</code> al elemento principal y configúrelo en fila o columna. La creación de una fila alineará a los hijos horizontalmente, y la creación de una columna alineará a los hijos verticalmente. 
-Otras opciones para <code>flex-direction</code> son la fila-reversa y la columna-reversa. 
-<strong>Nota</strong> <br> El valor predeterminado para la propiedad de <code>flex-direction</code> es fila. 
+<section id='description'>
+Agregar <code>display: flex</code> a un elemento lo convierte en un contenedor flexible. Esto hace posible alinear cualquier elemento secundario de ese elemento en filas o columnas. Para ello, agregue la propiedad de <code>flex-direction</code> al elemento principal y configúrelo en fila o columna. La creación de una fila alineará a los hijos horizontalmente, y la creación de una columna alineará a los hijos verticalmente.
+Otras opciones para <code>flex-direction</code> son la fila-reversa y la columna-reversa.
+<strong>Nota</strong> <br> El valor predeterminado para la propiedad de <code>flex-direction</code> es fila.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>#box-container</code> y asígnele un valor de fila-reversa. 
+<section id='instructions'>
+Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>#box-container</code> y asígnele un valor de fila-reversa.
 </section>
 
 ## Tests
@@ -23,7 +23,7 @@ Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>#box-cont
 
 ```yml
 tests:
-  - text: &#39;El elemento <code>#box-container</code> debería tener una propiedad de <code>flex-direction</code> configurada para invertir la fila.&#39;
+  - text: 'El elemento <code>#box-container</code> debería tener una propiedad de <code>flex-direction</code> configurada para invertir la fila.'
     testString: 'assert($("#box-container").css("flex-direction") == "row-reverse", "The <code>#box-container</code> element should have a <code>flex-direction</code> property set to row-reverse.");'
 
 ```
