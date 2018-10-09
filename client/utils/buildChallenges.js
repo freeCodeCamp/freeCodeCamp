@@ -2,6 +2,7 @@ const { getChallengesForLang } = require('@freecodecamp/curriculum');
 const _ = require('lodash');
 
 const utils = require('../utils');
+const { locale } = require('../config/env.json');
 
 const dasherize = utils.dasherize;
 const nameify = utils.nameify;
@@ -10,7 +11,7 @@ const arrToString = arr =>
   Array.isArray(arr) ? arr.join('\n') : _.toString(arr);
 
 exports.buildChallenges = async function buildChallenges() {
-  const curriculum = await getChallengesForLang('english');
+  const curriculum = await getChallengesForLang( locale );
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)
