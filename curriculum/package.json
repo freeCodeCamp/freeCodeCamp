@@ -26,8 +26,12 @@
   },
   "dependencies": {
     "@freecodecamp/challenge-md-parser": "^1.0.0",
-    "invariant": "^2.2.4",
-    "readdirp-walk": "^1.6.0",
+    "invariant": "^2.2.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "@commitlint/travis-cli": "^7.0.0",
     "@semantic-release/changelog": "^2.0.2",
     "@semantic-release/git": "^5.0.0",
     "babel-cli": "^6.3.17",
@@ -56,6 +60,7 @@
     "lodash": "^4.17.10",
     "prettier": "^1.13.5",
     "prettier-package-json": "^1.6.0",
+    "readdirp-walk": "^1.6.0",
     "rx": "^4.1.0",
     "semantic-release": "^15.6.0",
     "tap-spec": "^5.0.0",

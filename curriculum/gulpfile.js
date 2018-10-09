@@ -1,29 +1,26 @@
 const fs = require('fs-extra');
 const gulp = require('gulp');
 
-const { getChallengesForLang } = require('./getChallenges');
-const { supportedLangs } = require('./utils');
+const { locale } = require('../config/env.json');
 
-function generateCurricula(done) {
-  const promises = supportedLangs.map(lang => getChallengesForLang(lang));
-  return Promise.all(promises)
-    .then(allLangCurriculum =>
-      allLangCurriculum.reduce(
-        (map, current, i) => ({ ...map, [supportedLangs[i]]: current }),
-        {}
+const { getChallengesForLang } = require('./getChallenges');
+
+function generateCurriculum(done) {
+  return getChallengesForLang(locale)
+    .then(curriculum =>
+      fs.writeFile(
+        `./build/curriculum-${locale}.json`,
+        JSON.stringify(curriculum)
       )
-    )
-    .then(curricula =>
-      fs.writeFile('./curricula.json', JSON.stringify(curricula))
     )
     .then(done);
 }
 
 function watchFiles() {
-  return gulp.watch('./challenges/**/*.md', generateCurricula);
+  return gulp.watch('./challenges/**/*.md', generateCurriculum);
 }
 
-const defaultTask = gulp.series(generateCurricula, watchFiles);
+const defaultTask = gulp.series(generateCurriculum, watchFiles);
 
 gulp.task('default', defaultTask);
-gulp.task('build', generateCurricula);
+gulp.task('build', generateCurriculum);

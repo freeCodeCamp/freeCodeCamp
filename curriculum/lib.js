@@ -16,8 +16,8 @@ function validateLang(lang) {
 
 function getCurriculum(lang) {
   validateLang(lang);
-  const curricula = require('./curricula.json');
-  return curricula[lang];
+  const curriculum = require(`./build/curriculum-${lang}.json`);
+  return curriculum;
 }
 
 exports.getChallengesForLang = getCurriculum;

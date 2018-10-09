@@ -6,5 +6,5 @@ exports.dasherize = function dasherize(name) {
     .replace(/\:/g, '');
 };
 
-const supportedLangs = ['english'];
+const supportedLangs = ['english', 'spanish'];
 exports.supportedLangs = supportedLangs;
