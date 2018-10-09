@@ -34,7 +34,9 @@ tests:
     testString: 'assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length, "Make sure each of your <code>label</code> elements has a closing tag.");'
   - text: Give your checkboxes the <code>name</code> attribute of <code>personality</code>.
     testString: 'assert($("label > input[type="checkbox"]").filter("[name="personality"]").length > 2, "Give your checkboxes the <code>name</code> attribute of <code>personality</code>.");'
-
+  - text: Each of your checkboxes should be added within the <code>form</code> tag.
+    testString: 'assert($("label").parent().get(0).tagName.match(''FORM''), ''Each of your checkboxes should be added within the <code>form</code> tag.'');'
+    
 ```
 
 </section>
