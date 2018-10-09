@@ -49,23 +49,7 @@ Working on your first Pull Request? You can learn how from this *free* series [H
 - [Next Steps](#next-steps)
 - [Other Resources](#other-resources)
 
-## Setup
-### Prerequisites
-
-| Prerequisite                                | Version |
-| ------------------------------------------- | ------- |
-| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `~ ^3`  |
-| [MailHog](https://github.com/mailhog/MailHog) | `~ ^1` |
-| [Node.js](http://nodejs.org)                | `~ ^8.9.3`  |
-| npm (comes with Node)                       | `~ ^5`  |
-
-> _Updating to the latest releases is recommended_.
-
-If Node.js or MongoDB is already installed on your machine, run the following commands to validate the versions:
-
-```shell
-node -v
-mongo --version
+#
 ```
 
 To check your MongoDB version on Windows, you have to locate the installation directory. It is probably located at something like `C:\Program Files\MongoDB\Server\3.4\` where 3.4 is your version number.
