@@ -6,17 +6,17 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-Cada elemento HTML tiene un elemento <code>parent</code> del cual <code>inherits</code> propiedades. 
-Por ejemplo, su elemento <code>jQuery Playground</code> <code>h3</code> tiene el elemento primario de <code>&lt;div class=&quot;container-fluid&quot;&gt;</code> , que a su vez tiene el <code>body</code> principal. 
-jQuery tiene una función llamada <code>parent()</code> que le permite acceder al padre de cualquier elemento que haya seleccionado. 
-Este es un ejemplo de cómo usaría la función <code>parent()</code> si quisiera darle al elemento padre del elemento del <code>left-well</code> un color de fondo azul: 
-<code>$(&quot;#left-well&quot;).parent().css(&quot;background-color&quot;, &quot;blue&quot;)</code> 
-<code>#target1</code> al padre del elemento <code>#target1</code> un color de fondo rojo. 
+<section id='description'>
+Cada elemento HTML tiene un elemento <code>parent</code> del cual <code>inherits</code> propiedades.
+Por ejemplo, su elemento <code>jQuery Playground</code> <code>h3</code> tiene el elemento primario de <code>&lt;div class=&quot;container-fluid&quot;&gt;</code> , que a su vez tiene el <code>body</code> principal.
+jQuery tiene una función llamada <code>parent()</code> que le permite acceder al padre de cualquier elemento que haya seleccionado.
+Este es un ejemplo de cómo usaría la función <code>parent()</code> si quisiera darle al elemento padre del elemento del <code>left-well</code> un color de fondo azul:
+<code>$(&quot;#left-well&quot;).parent().css(&quot;background-color&quot;, &quot;blue&quot;)</code>
+<code>#target1</code> al padre del elemento <code>#target1</code> un color de fondo rojo.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -27,9 +27,9 @@ Este es un ejemplo de cómo usaría la función <code>parent()</code> si quisier
 tests:
   - text: Su elemento de <code>left-well</code> debe tener un fondo rojo.
     testString: 'assert($("#left-well").css("background-color") === "red" || $("#left-well").css("background-color") === "rgb(255, 0, 0)" || $("#left-well").css("background-color").toLowerCase() === "#ff0000" || $("#left-well").css("background-color").toLowerCase() === "#f00", "Your <code>left-well</code> element should have a red background.");'
-  - text: &#39;Deberías usar la función <code>.parent()</code> para modificar este elemento.&#39;
+  - text: 'Deberías usar la función <code>.parent()</code> para modificar este elemento.'
     testString: 'assert(code.match(/\.parent\s*\(\s*\)\s*\.css/g), "You should use the <code>&#46;parent&#40;&#41;</code> function to modify this element.");'
-  - text: &#39;El método <code>.parent()</code> debe llamarse en el elemento <code>#target1</code> .&#39;
+  - text: 'El método <code>.parent()</code> debe llamarse en el elemento <code>#target1</code> .'
     testString: 'assert(code.match(/\$\s*?\(\s*?(?:"|")\s*?#target1\s*?(?:"|")\s*?\)\s*?\.parent/gi), "The <code>&#46;parent&#40;&#41;</code> method should be called on the <code>&#35;target1</code> element.");'
   - text: Solo use jQuery para agregar estas clases al elemento.
     testString: 'assert(code.match(/<div class="well" id="left-well">/g), "Only use jQuery to add these classes to the element.");'

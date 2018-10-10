@@ -6,16 +6,16 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Ahora ya sabes qué son los objetos y sus características y ventajas básicas. En resumen, son tiendas de valor clave que proporcionan una forma flexible e intuitiva de estructurar los datos <strong><em>y</em></strong> proporcionan un tiempo de búsqueda muy rápido. A lo largo del resto de estos desafíos, describiremos varias operaciones comunes que puede realizar en objetos para que pueda sentirse cómodo aplicando estas estructuras de datos útiles en sus programas. 
-En desafíos anteriores, hemos agregado y modificado los pares clave-valor de un objeto. Aquí veremos cómo podemos <em>eliminar</em> un par clave-valor de un objeto. 
-Repasemos nuestro ejemplo de objeto de <code>foods</code> una última vez. Si quisiéramos eliminar la clave de las <code>apples</code> , podemos eliminarla usando la palabra clave <code>delete</code> así: 
-<blockquote>delete foods.apples;</blockquote> 
+<section id='description'>
+Ahora ya sabes qué son los objetos y sus características y ventajas básicas. En resumen, son tiendas de valor clave que proporcionan una forma flexible e intuitiva de estructurar los datos <strong><em>y</em></strong> proporcionan un tiempo de búsqueda muy rápido. A lo largo del resto de estos desafíos, describiremos varias operaciones comunes que puede realizar en objetos para que pueda sentirse cómodo aplicando estas estructuras de datos útiles en sus programas.
+En desafíos anteriores, hemos agregado y modificado los pares clave-valor de un objeto. Aquí veremos cómo podemos <em>eliminar</em> un par clave-valor de un objeto.
+Repasemos nuestro ejemplo de objeto de <code>foods</code> una última vez. Si quisiéramos eliminar la clave de las <code>apples</code> , podemos eliminarla usando la palabra clave <code>delete</code> así:
+<blockquote>delete foods.apples;</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la palabra clave delete para eliminar las teclas de <code>oranges</code> , <code>plums</code> y <code>strawberries</code> del objeto de <code>foods</code> . 
+<section id='instructions'>
+Use la palabra clave delete para eliminar las teclas de <code>oranges</code> , <code>plums</code> y <code>strawberries</code> del objeto de <code>foods</code> .
 </section>
 
 ## Tests
@@ -23,9 +23,9 @@ Use la palabra clave delete para eliminar las teclas de <code>oranges</code> , <
 
 ```yml
 tests:
-  - text: &#39;El objeto de <code>foods</code> solo tiene tres claves: <code>apples</code> , <code>grapes</code> y <code>bananas</code> &#39;
+  - text: 'El objeto de <code>foods</code> solo tiene tres claves: <code>apples</code> , <code>grapes</code> y <code>bananas</code> '
     testString: 'assert(!foods.hasOwnProperty("oranges") && !foods.hasOwnProperty("plums") && !foods.hasOwnProperty("strawberries") && Object.keys(foods).length === 3, "The <code>foods</code> object only has three keys: <code>apples</code>, <code>grapes</code>, and <code>bananas</code>");'
-  - text: &#39;Las claves de <code>oranges</code> , <code>plums</code> y <code>strawberries</code> se eliminan usando <code>delete</code> &#39;
+  - text: 'Las claves de <code>oranges</code> , <code>plums</code> y <code>strawberries</code> se eliminan usando <code>delete</code> '
     testString: 'assert(code.search(/oranges:/) !== -1 && code.search(/plums:/) !== -1 && code.search(/strawberries:/) !== -1, "The <code>oranges</code>, <code>plums</code>, and <code>strawberries</code> keys are removed using <code>delete</code>");'
 
 ```

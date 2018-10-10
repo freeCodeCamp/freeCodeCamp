@@ -8,15 +8,15 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-D3 también tiene el método <code>selectAll()</code> para seleccionar un grupo de elementos. Devuelve una matriz de nodos HTML para todos los elementos del documento que coinciden con la cadena de entrada. Aquí hay un ejemplo para seleccionar todas las etiquetas de anclaje en un documento: 
-<code>const anchors = d3.selectAll(&quot;a&quot;);</code> 
-Al igual que el método <code>select()</code> , <code>selectAll()</code> admite el encadenamiento de métodos, y puede usarlo con otros métodos. 
+<section id='description'>
+D3 también tiene el método <code>selectAll()</code> para seleccionar un grupo de elementos. Devuelve una matriz de nodos HTML para todos los elementos del documento que coinciden con la cadena de entrada. Aquí hay un ejemplo para seleccionar todas las etiquetas de anclaje en un documento:
+<code>const anchors = d3.selectAll(&quot;a&quot;);</code>
+Al igual que el método <code>select()</code> , <code>selectAll()</code> admite el encadenamiento de métodos, y puede usarlo con otros métodos.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Seleccione todas las etiquetas <code>li</code> en el documento y cambie su texto a &quot;elemento de lista&quot; encadenando el método <code>.text()</code> . 
+<section id='instructions'>
+Seleccione todas las etiquetas <code>li</code> en el documento y cambie su texto a &quot;elemento de lista&quot; encadenando el método <code>.text()</code> .
 </section>
 
 ## Tests
@@ -24,7 +24,7 @@ Seleccione todas las etiquetas <code>li</code> en el documento y cambie su texto
 
 ```yml
 tests:
-  - text: &#39;Debería haber 3 elementos <code>li</code> en la página, y el texto de cada uno debería decir &quot;elemento de la lista&quot;. La capitalización y el espaciado deben coincidir exactamente.
+  - text: 'Debería haber 3 elementos <code>li</code> en la página, y el texto de cada uno debería decir &quot;elemento de la lista&quot;. La capitalización y el espaciado deben coincidir exactamente.
     testString: 'assert($("li").text().match(/list item/g).length == 3, "There should be 3 <code>li</code> elements on the page, and the text in each one should say "list item". Capitalization and spacing should match exactly.");'
   - text: Su código debe acceder al objeto <code>d3</code> .
     testString: 'assert(code.match(/d3/g), "Your code should access the <code>d3</code> object.");'

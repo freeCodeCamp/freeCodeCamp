@@ -6,19 +6,19 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Veamos los métodos .has y .size disponibles en el objeto ES6 Set. 
-Primero, cree un conjunto ES6 
-<code>var set = new Set([1,2,3]);</code> 
-El método .has comprobará si el valor está contenido dentro del conjunto. 
-<code>var hasTwo = set.has(2);</code> 
-El método .size devolverá un número entero que representa el tamaño del Set 
-<code>var howBig = set.size;</code> 
+<section id='description'>
+Veamos los métodos .has y .size disponibles en el objeto ES6 Set.
+Primero, cree un conjunto ES6
+<code>var set = new Set([1,2,3]);</code>
+El método .has comprobará si el valor está contenido dentro del conjunto.
+<code>var hasTwo = set.has(2);</code>
+El método .size devolverá un número entero que representa el tamaño del Set
+<code>var howBig = set.size;</code>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-En este ejercicio pasaremos una matriz y un valor a la función checkSet (). Su función debe crear un conjunto ES6 a partir del argumento de la matriz. Encuentra si el conjunto contiene el argumento de valor. Encuentra el tamaño del conjunto. Y devuelve esos dos valores en una matriz. 
+<section id='instructions'>
+En este ejercicio pasaremos una matriz y un valor a la función checkSet (). Su función debe crear un conjunto ES6 a partir del argumento de la matriz. Encuentra si el conjunto contiene el argumento de valor. Encuentra el tamaño del conjunto. Y devuelve esos dos valores en una matriz.
 </section>
 
 ## Tests
@@ -26,7 +26,7 @@ En este ejercicio pasaremos una matriz y un valor a la función checkSet (). Su 
 
 ```yml
 tests:
-  - text: &#39; <code>checkSet([4, 5, 6], 3)</code> debe devolver [false, 3]&#39;
+  - text: ' <code>checkSet([4, 5, 6], 3)</code> debe devolver [false, 3]'
     testString: 'assert(function(){var test = checkSet([4,5,6], 3); test === [ false, 3 ]}, "<code>checkSet([4, 5, 6], 3)</code> should return [ false, 3 ]");'
 
 ```

@@ -6,15 +6,15 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-objetos pueden considerarse como un almacenamiento de clave / valor, como un diccionario. Si tiene datos tabulares, puede usar un objeto para &quot;buscar&quot; valores en lugar de una instrucción <code>switch</code> o una cadena <code>if/else</code> . Esto es más útil cuando sabe que sus datos de entrada están limitados a un cierto rango. 
-Aquí hay un ejemplo de una búsqueda de alfabeto inversa simple: 
-<blockquote>var alpha = {<br>&nbsp;&nbsp;1:"Z",<br>&nbsp;&nbsp;2:"Y",<br>&nbsp;&nbsp;3:"X",<br>&nbsp;&nbsp;4:"W",<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;24:"C",<br>&nbsp;&nbsp;25:"B",<br>&nbsp;&nbsp;26:"A"<br>};<br>alpha[2]; // "Y"<br>alpha[24]; // "C"<br><br>var value = 2;<br>alpha[value]; // "Y"</blockquote> 
+<section id='description'>
+objetos pueden considerarse como un almacenamiento de clave / valor, como un diccionario. Si tiene datos tabulares, puede usar un objeto para &quot;buscar&quot; valores en lugar de una instrucción <code>switch</code> o una cadena <code>if/else</code> . Esto es más útil cuando sabe que sus datos de entrada están limitados a un cierto rango.
+Aquí hay un ejemplo de una búsqueda de alfabeto inversa simple:
+<blockquote>var alpha = {<br>&nbsp;&nbsp;1:"Z",<br>&nbsp;&nbsp;2:"Y",<br>&nbsp;&nbsp;3:"X",<br>&nbsp;&nbsp;4:"W",<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;24:"C",<br>&nbsp;&nbsp;25:"B",<br>&nbsp;&nbsp;26:"A"<br>};<br>alpha[2]; // "Y"<br>alpha[24]; // "C"<br><br>var value = 2;<br>alpha[value]; // "Y"</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Convertir la instrucción switch en un objeto llamado <code>lookup</code> . Úselo para buscar <code>val</code> y asignar la cadena asociada a la variable de <code>result</code> . 
+<section id='instructions'>
+Convertir la instrucción switch en un objeto llamado <code>lookup</code> . Úselo para buscar <code>val</code> y asignar la cadena asociada a la variable de <code>result</code> .
 </section>
 
 ## Tests
@@ -38,7 +38,7 @@ tests:
     testString: 'assert(typeof phoneticLookup("") === "undefined", "<code>phoneticLookup("")</code> should equal <code>undefined</code>");'
   - text: No debes modificar la declaración de <code>return</code> .
     testString: 'assert(code.match(/return\sresult;/), "You should not modify the <code>return</code> statement");'
-  - text: &#39;No debe usar <code>case</code> , <code>switch</code> , o <code>if</code> declaraciones&#39;
+  - text: 'No debe usar <code>case</code> , <code>switch</code> , o <code>if</code> declaraciones'
     testString: 'assert(!/case|switch|if/g.test(code.replace(/([/]{2}.*)|([/][*][^/*]*[*][/])/g,"")), "You should not use <code>case</code>, <code>switch</code>, or <code>if</code> statements"); '
 
 ```

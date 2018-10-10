@@ -8,18 +8,18 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-¿Ves cómo hicimos rebotar todos los elementos de tus <code>button</code> ? Los seleccionamos con <code>$(&quot;button&quot;)</code> , luego les agregamos algunas clases de CSS con <code>.addClass(&quot;animated bounce&quot;);</code> . 
-Acaba de usar la función <code>.addClass()</code> jQuery, que le permite agregar clases a los elementos. 
-En primer lugar, vamos a orientar su <code>div</code> elementos con la clase <code>well</code> mediante el uso de la <code>$(&quot;.well&quot;)</code> selector. 
-Tenga en cuenta que, al igual que con las declaraciones de CSS, escribe a <code>.</code> antes del nombre de la clase. 
-Luego usa la función <code>.addClass()</code> jQuery para agregar las clases <code>animated</code> y <code>shake</code> . 
-Por ejemplo, puede hacer que todos los elementos con la clase <code>text-primary</code> shake agregando lo siguiente a su <code>document ready function</code> : 
-<code>$(&quot;.text-primary&quot;).addClass(&quot;animated shake&quot;);</code> 
+<section id='description'>
+¿Ves cómo hicimos rebotar todos los elementos de tus <code>button</code> ? Los seleccionamos con <code>$(&quot;button&quot;)</code> , luego les agregamos algunas clases de CSS con <code>.addClass(&quot;animated bounce&quot;);</code> .
+Acaba de usar la función <code>.addClass()</code> jQuery, que le permite agregar clases a los elementos.
+En primer lugar, vamos a orientar su <code>div</code> elementos con la clase <code>well</code> mediante el uso de la <code>$(&quot;.well&quot;)</code> selector.
+Tenga en cuenta que, al igual que con las declaraciones de CSS, escribe a <code>.</code> antes del nombre de la clase.
+Luego usa la función <code>.addClass()</code> jQuery para agregar las clases <code>animated</code> y <code>shake</code> .
+Por ejemplo, puede hacer que todos los elementos con la clase <code>text-primary</code> shake agregando lo siguiente a su <code>document ready function</code> :
+<code>$(&quot;.text-primary&quot;).addClass(&quot;animated shake&quot;);</code>
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -28,7 +28,7 @@ Por ejemplo, puede hacer que todos los elementos con la clase <code>text-primary
 
 ```yml
 tests:
-  - text: &#39;Use el jQuery <code>addClass()</code> la función de dar las clases <code>animated</code> y <code>shake</code> a todos sus elementos con la clase <code>well</code> .&#39;
+  - text: 'Use el jQuery <code>addClass()</code> la función de dar las clases <code>animated</code> y <code>shake</code> a todos sus elementos con la clase <code>well</code> .'
     testString: 'assert($(".well").hasClass("animated") && $(".well").hasClass("shake"), "Use the jQuery <code>addClass&#40&#41</code> function to give the classes <code>animated</code> and <code>shake</code> to all your elements with the class <code>well</code>.");'
   - text: Solo use jQuery para agregar estas clases al elemento.
     testString: 'assert(!code.match(/class\.\*animated/g), "Only use jQuery to add these classes to the element.");'

@@ -7,13 +7,13 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-La propiedad <code>order</code> se usa para decirle a CSS el orden en que aparecen los elementos flexibles en el contenedor flex. De forma predeterminada, los elementos aparecerán en el mismo orden en que vienen en el código fuente HTML. La propiedad toma números como valores y se pueden usar números negativos. 
+<section id='description'>
+La propiedad <code>order</code> se usa para decirle a CSS el orden en que aparecen los elementos flexibles en el contenedor flex. De forma predeterminada, los elementos aparecerán en el mismo orden en que vienen en el código fuente HTML. La propiedad toma números como valores y se pueden usar números negativos.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el <code>order</code> propiedades CSS a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 2 y a <code>#box-2</code> un valor de 1. 
+<section id='instructions'>
+Agregue el <code>order</code> propiedades CSS a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 2 y a <code>#box-2</code> un valor de 1.
 </section>
 
 ## Tests
@@ -21,9 +21,9 @@ Agregue el <code>order</code> propiedades CSS a <code>#box-1</code> y <code>#box
 
 ```yml
 tests:
-  - text: &#39;El elemento <code>#box-1</code> debe tener la propiedad de <code>order</code> establecida en un valor de 2.&#39;
+  - text: 'El elemento <code>#box-1</code> debe tener la propiedad de <code>order</code> establecida en un valor de 2.'
     testString: 'assert($("#box-1").css("order") == "2", "The <code>#box-1</code> element should have the <code>order</code> property set to a value of 2.");'
-  - text: &#39;El elemento <code>#box-2</code> debe tener la propiedad de <code>order</code> establecida en un valor de 1.&#39;
+  - text: 'El elemento <code>#box-2</code> debe tener la propiedad de <code>order</code> establecida en un valor de 1.'
     testString: 'assert($("#box-2").css("order") == "1", "The <code>#box-2</code> element should have the <code>order</code> property set to a value of 1.");'
 
 ```

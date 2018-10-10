@@ -7,14 +7,14 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Lo opuesto a <code>flex-shrink</code> es la propiedad de <code>flex-grow</code> . Recuerde que <code>flex-shrink</code> controla el tamaño de los elementos cuando el contenedor se reduce. La propiedad <code>flex-grow</code> controla el tamaño de los elementos cuando el contenedor principal se expande. 
-Usando un ejemplo similar del último desafío, si un elemento tiene un valor de <code>flex-grow</code> de 1 y el otro tiene un valor de <code>flex-grow</code> de 3, el valor de 3 crecerá tres veces más que el otro. 
+<section id='description'>
+Lo opuesto a <code>flex-shrink</code> es la propiedad de <code>flex-grow</code> . Recuerde que <code>flex-shrink</code> controla el tamaño de los elementos cuando el contenedor se reduce. La propiedad <code>flex-grow</code> controla el tamaño de los elementos cuando el contenedor principal se expande.
+Usando un ejemplo similar del último desafío, si un elemento tiene un valor de <code>flex-grow</code> de 1 y el otro tiene un valor de <code>flex-grow</code> de 3, el valor de 3 crecerá tres veces más que el otro.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la propiedad CSS <code>flex-grow</code> a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 1 y <code>#box-2</code> un valor de 2. 
+<section id='instructions'>
+Agregue la propiedad CSS <code>flex-grow</code> a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 1 y <code>#box-2</code> un valor de 2.
 </section>
 
 ## Tests
@@ -22,9 +22,9 @@ Agregue la propiedad CSS <code>flex-grow</code> a <code>#box-1</code> y <code>#b
 
 ```yml
 tests:
-  - text: &#39;El elemento <code>#box-1</code> debe tener la propiedad <code>flex-grow</code> establecida en un valor de 1.&#39;
+  - text: 'El elemento <code>#box-1</code> debe tener la propiedad <code>flex-grow</code> establecida en un valor de 1.'
     testString: 'assert($("#box-1").css("flex-grow") == "1", "The <code>#box-1</code> element should have the <code>flex-grow</code> property set to a value of 1.");'
-  - text: &#39;El elemento <code>#box-2</code> debe tener la propiedad <code>flex-grow</code> establecida en un valor de 2.&#39;
+  - text: 'El elemento <code>#box-2</code> debe tener la propiedad <code>flex-grow</code> establecida en un valor de 2.'
     testString: 'assert($("#box-2").css("flex-grow") == "2", "The <code>#box-2</code> element should have the <code>flex-grow</code> property set to a value of 2.");'
 
 ```

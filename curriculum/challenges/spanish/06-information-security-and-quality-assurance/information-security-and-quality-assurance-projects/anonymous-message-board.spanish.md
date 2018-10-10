@@ -7,14 +7,14 @@ isRequired: true
 ---
 
 ## Description
-<section id='description'> 
-Cree una aplicación de JavaScript de pila completa que sea funcionalmente similar a esto: <a href='https://horn-celery.glitch.me/' target='_blank'>https://horn-celery.glitch.me/</a> . 
-Trabajar en este proyecto implicará que escriba su código en Glitch en nuestro proyecto de inicio. Después de completar este proyecto, puede copiar su URL de error público (en la página de inicio de su aplicación) en esta pantalla para probarlo. Opcionalmente, puede optar por escribir su proyecto en otra plataforma, pero debe ser visible públicamente para nuestras pruebas. 
-Inicie este proyecto en Glitch usando <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-messageboard/'>este enlace</a> o clone <a href='https://github.com/freeCodeCamp/boilerplate-project-messageboard/'>este repositorio</a> en GitHub! Si utiliza Glitch, recuerde guardar el enlace a su proyecto en un lugar seguro. 
+<section id='description'>
+Cree una aplicación de JavaScript de pila completa que sea funcionalmente similar a esto: <a href='https://horn-celery.glitch.me/' target='_blank'>https://horn-celery.glitch.me/</a> .
+Trabajar en este proyecto implicará que escriba su código en Glitch en nuestro proyecto de inicio. Después de completar este proyecto, puede copiar su URL de error público (en la página de inicio de su aplicación) en esta pantalla para probarlo. Opcionalmente, puede optar por escribir su proyecto en otra plataforma, pero debe ser visible públicamente para nuestras pruebas.
+Inicie este proyecto en Glitch usando <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-messageboard/'>este enlace</a> o clone <a href='https://github.com/freeCodeCamp/boilerplate-project-messageboard/'>este repositorio</a> en GitHub! Si utiliza Glitch, recuerde guardar el enlace a su proyecto en un lugar seguro.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -29,7 +29,7 @@ tests:
     testString: ''
   - text: Solo permita que su sitio envíe la referencia para sus propias páginas.
     testString: ''
-  - text: 'Puedo enviar un hilo a un tablero de mensajes específico pasando el texto del formulario de datos y deletepassword_ a /api/threads/{board}.(Recomendar res.redirect a la página del tablero / b / {board}) El archivo guardado será al menos _id, 'text, createdon_ (date & time), bumpedon_ (date & time, comienza igual que created_on), reportado (boolean), deletepassword_, & replies (array).'
+  - text: 'Puedo enviar un hilo a un tablero de mensajes específico pasando el texto del formulario de datos y deletepassword_ a /api/threads/{board}.(Recomendar res.redirect a la página del tablero / b / {board}) El archivo guardado será al menos _id, text, createdon_ (date & time), bumpedon_ (date & time, comienza igual que created_on), reportado (boolean), deletepassword_, & replies (array).'
     testString: ''
   - text: 'Puedo POSTAR una respuesta a un hilo en una placa específica pasando el texto del formulario de datos, deletepassword_, & threadid_ a / api / replies / {board} y también actualizará la fecha de bumped_on a la fecha de los comentarios. (Recomiende res.redirect para enlazar la página / b / {board} / {thread_id}) En la matriz de respuestas del hilo, se guardará _id, text, createdon_, deletepassword_, y se informará. '
     testString: ''

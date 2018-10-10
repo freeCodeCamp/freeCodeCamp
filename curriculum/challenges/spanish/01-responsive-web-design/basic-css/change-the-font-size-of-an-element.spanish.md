@@ -7,14 +7,14 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-El tamaño de fuente se controla mediante la propiedad CSS de <code>font-size</code> , como esta: 
-<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote> 
+<section id='description'>
+El tamaño de fuente se controla mediante la propiedad CSS de <code>font-size</code> , como esta:
+<blockquote>h1 {<br>&nbsp;&nbsp;font-size: 30px;<br>}</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Dentro de la misma etiqueta <code>&lt;style&gt;</code> que contiene su clase de <code>red-text</code> , cree una entrada para los elementos <code>p</code> y establezca el <code>font-size</code> en 16 píxeles ( <code>16px</code> ). 
+<section id='instructions'>
+Dentro de la misma etiqueta <code>&lt;style&gt;</code> que contiene su clase de <code>red-text</code> , cree una entrada para los elementos <code>p</code> y establezca el <code>font-size</code> en 16 píxeles ( <code>16px</code> ).
 </section>
 
 ## Tests
@@ -22,7 +22,7 @@ Dentro de la misma etiqueta <code>&lt;style&gt;</code> que contiene su clase de 
 
 ```yml
 tests:
-  - text: &#39;Entre las etiquetas de <code>style</code> , <code>16px</code> elementos <code>p</code> <code>font-size</code> de <code>font-size</code> de <code>16px</code> . El navegador y el zoom de texto deben estar al 100% &quot;.
+  - text: 'Entre las etiquetas de <code>style</code> , <code>16px</code> elementos <code>p</code> <code>font-size</code> de <code>font-size</code> de <code>16px</code> . El navegador y el zoom de texto deben estar al 100% &quot;.
     testString: 'assert(code.match(/p\s*{\s*font-size\s*:\s*16\s*px\s*;\s*}/i), "Between the <code>style</code> tags, give the <code>p</code> elements <code>font-size</code> of <code>16px</code>. Browser and Text zoom should be at 100%.");'
 
 ```

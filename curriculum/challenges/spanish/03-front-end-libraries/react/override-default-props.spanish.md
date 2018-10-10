@@ -7,14 +7,14 @@ isRequired: false
 ---
 
 ## Description
-<section id='description'> 
-La capacidad de establecer accesorios predeterminados es una característica útil en React. La forma de anular los accesorios predeterminados es establecer explícitamente los valores de prop para un componente. 
+<section id='description'>
+La capacidad de establecer accesorios predeterminados es una característica útil en React. La forma de anular los accesorios predeterminados es establecer explícitamente los valores de prop para un componente.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-El componente <code>ShoppingCart</code> ahora representa un componente secundario <code>Items</code> . Este componente de <code>Items</code> tiene una <code>quantity</code> prop predeterminada establecida en el entero <code>0</code> . Anule el prop predeterminado al pasar un valor de <code>10</code> por <code>quantity</code> . 
-<strong>Nota:</strong> recuerde que la sintaxis para agregar una propuesta a un componente es similar a la forma en que agrega atributos HTML. Sin embargo, dado que el valor para la <code>quantity</code> es un número entero, no irá entre comillas, pero debería estar entre corchetes. Por ejemplo, <code>{100}</code> . Esta sintaxis le dice a JSX que interprete el valor entre las llaves directamente como JavaScript. 
+<section id='instructions'>
+El componente <code>ShoppingCart</code> ahora representa un componente secundario <code>Items</code> . Este componente de <code>Items</code> tiene una <code>quantity</code> prop predeterminada establecida en el entero <code>0</code> . Anule el prop predeterminado al pasar un valor de <code>10</code> por <code>quantity</code> .
+<strong>Nota:</strong> recuerde que la sintaxis para agregar una propuesta a un componente es similar a la forma en que agrega atributos HTML. Sin embargo, dado que el valor para la <code>quantity</code> es un número entero, no irá entre comillas, pero debería estar entre corchetes. Por ejemplo, <code>{100}</code> . Esta sintaxis le dice a JSX que interprete el valor entre las llaves directamente como JavaScript.
 </section>
 
 ## Tests
@@ -26,7 +26,7 @@ tests:
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("ShoppingCart").length === 1; })(), "The component <code>ShoppingCart</code> should render.");'
   - text: Los <code>Items</code> componente deben hacer.
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("Items").length === 1; })(), "The component <code>Items</code> should render.");'
-  - text: &#39;El componente <code>Items</code> debe tener una propiedad de <code>{ quantity: 10 }</code> aprobada desde el componente <code>ShoppingCart</code> .&#39;
+  - text: 'El componente <code>Items</code> debe tener una propiedad de <code>{ quantity: 10 }</code> aprobada desde el componente <code>ShoppingCart</code> .'
     testString: 'getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ShoppingCart)); return mockedComponent.find("Items").props().quantity == 10 && getUserInput("index").replace(/ /g,"").includes("<Itemsquantity={10}/>"); })(), "The <code>Items</code> component should have a prop of <code>{ quantity: 10 }</code> passed from the <code>ShoppingCart</code> component.");'
 
 ```

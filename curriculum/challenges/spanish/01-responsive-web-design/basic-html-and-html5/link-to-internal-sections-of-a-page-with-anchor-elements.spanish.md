@@ -7,19 +7,19 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Los elementos de anclaje también se pueden usar para crear enlaces internos para saltar a diferentes secciones dentro de una página web. 
-Para crear un enlace interno, asigna el atributo <code>href</code> un enlace a un símbolo de hash <code>#</code> más el valor del atributo <code>id</code> para el elemento al que desea enlazar internamente, generalmente más abajo en la página. A continuación, deberá agregar el mismo atributo de <code>id</code> al elemento al que se está vinculando. Un <code>id</code> es un atributo que describe de forma única un elemento. 
-A continuación se muestra un ejemplo de un enlace de anclaje interno y su elemento de destino: 
-<blockquote>&lt;a href="#contacts-header"&gt;Contacts&lt;/a&gt;<br>...<br>&lt;h2 id="contacts-header"&gt;Contacts&lt;/h2&gt;</blockquote> 
-Cuando los usuarios hacen clic en el enlace de Contactos, serán llevados a la sección de la página web con el elemento del encabezado de <b>Contactos</b> . 
+<section id='description'>
+Los elementos de anclaje también se pueden usar para crear enlaces internos para saltar a diferentes secciones dentro de una página web.
+Para crear un enlace interno, asigna el atributo <code>href</code> un enlace a un símbolo de hash <code>#</code> más el valor del atributo <code>id</code> para el elemento al que desea enlazar internamente, generalmente más abajo en la página. A continuación, deberá agregar el mismo atributo de <code>id</code> al elemento al que se está vinculando. Un <code>id</code> es un atributo que describe de forma única un elemento.
+A continuación se muestra un ejemplo de un enlace de anclaje interno y su elemento de destino:
+<blockquote>&lt;a href="#contacts-header"&gt;Contacts&lt;/a&gt;<br>...<br>&lt;h2 id="contacts-header"&gt;Contacts&lt;/h2&gt;</blockquote>
+Cuando los usuarios hacen clic en el enlace de Contactos, serán llevados a la sección de la página web con el elemento del encabezado de <b>Contactos</b> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie su enlace externo a un enlace interno cambiando el atributo <code>href</code> a &quot;# footer&quot; y el texto de &quot;fotos del gato&quot; a &quot;Saltar a la parte inferior&quot;. 
-Elimine el atributo <code>target=&quot;_blank&quot;</code> de la etiqueta de anclaje ya que esto hace que el documento vinculado se abra en una nueva pestaña de ventana. 
-Luego agregue un atributo <code>id</code> con un valor de &quot;pie de página&quot; al elemento <code>&lt;footer&gt;</code> en la parte inferior de la página. 
+<section id='instructions'>
+Cambie su enlace externo a un enlace interno cambiando el atributo <code>href</code> a &quot;# footer&quot; y el texto de &quot;fotos del gato&quot; a &quot;Saltar a la parte inferior&quot;.
+Elimine el atributo <code>target=&quot;_blank&quot;</code> de la etiqueta de anclaje ya que esto hace que el documento vinculado se abra en una nueva pestaña de ventana.
+Luego agregue un atributo <code>id</code> con un valor de &quot;pie de página&quot; al elemento <code>&lt;footer&gt;</code> en la parte inferior de la página.
 </section>
 
 ## Tests
@@ -35,9 +35,9 @@ tests:
     testString: 'assert($("a").eq(0).attr("href") == "#footer", "The <code>a</code> tag should have an <code>href</code> attribute set to "#footer".");'
   - text: La etiqueta <code class = "notranslate"> a </code> no debe tener el atributo <code class = "notranslate"> target </code>
     testString: 'assert(typeof $("a").eq(0).attr("target") == typeof undefined || $("a").eq(0).attr("target") == true, "The <code>a</code> tag should not have a <code>target</code> attribute");'
-  - text: El <code class = "notranslate"> un texto </code> debe ser "Jump to Bottom".
+  - text: El <code class = "notranslate"> un texto </code> debe ser "Jump to Bottom."
     testString: 'assert($("a").eq(0).text().match(/Jump to Bottom/gi), "The <code>a</code> text should be "Jump to Bottom".");'
-  - text: La etiqueta <code class = "notranslate"> footer </code> debe tener un atributo <code class = "notranslate"> id </code> establecido en "footer".
+  - text: La etiqueta <code class = "notranslate"> footer </code> debe tener un atributo <code class = "notranslate"> id </code> establecido en "footer."
     testString: 'assert($("footer").eq(0).attr("id") == "footer", "The <code>footer</code> tag should have an <code>id</code> attribute set to "footer".");'
 
 ```

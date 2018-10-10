@@ -6,14 +6,14 @@ challengeType: 0
 ---
 
 ## Description
-<section id='description'> 
-Para mayor claridad, etiquetemos nuestros pozos con sus identificadores. 
-Por encima de su pozo izquierdo, dentro de su elemento <code>div</code> <code>col-xs-6</code> , agregue un elemento <code>h4</code> con el texto <code>#left-well</code> . 
-Por encima de su derecha-bien, dentro de su elemento <code>div</code> <code>col-xs-6</code> , agregue un elemento <code>h4</code> con el texto <code>#right-well</code> . 
+<section id='description'>
+Para mayor claridad, etiquetemos nuestros pozos con sus identificadores.
+Por encima de su pozo izquierdo, dentro de su elemento <code>div</code> <code>col-xs-6</code> , agregue un elemento <code>h4</code> con el texto <code>#left-well</code> .
+Por encima de su derecha-bien, dentro de su elemento <code>div</code> <code>col-xs-6</code> , agregue un elemento <code>h4</code> con el texto <code>#right-well</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -22,11 +22,11 @@ Por encima de su derecha-bien, dentro de su elemento <code>div</code> <code>col-
 
 ```yml
 tests:
-  - text: &#39;Agregue un elemento <code>h4</code> a cada uno de sus elementos <code>&lt;div class=&quot;col-xs-6&quot;&gt;</code> .&#39;
+  - text: 'Agregue un elemento <code>h4</code> a cada uno de sus elementos <code>&lt;div class=&quot;col-xs-6&quot;&gt;</code> .'
     testString: 'assert($(".col-xs-6").children("h4") && $(".col-xs-6").children("h4").length > 1, "Add an <code>h4</code> element to each of your <code>&#60;div class="col-xs-6"&#62;</code> elements.");'
-  - text: &#39;Un elemento <code>h4</code> debe tener el texto <code>#left-well</code> &#39;.
+  - text: 'Un elemento <code>h4</code> debe tener el texto <code>#left-well</code> '
     testString: 'assert(new RegExp("#left-well","gi").test($("h4").text()), "One <code>h4</code> element should have the text <code>#left-well</code>.");'
-  - text: &#39;Un elemento <code>h4</code> debería tener el texto <code>#right-well</code> &#39;.
+  - text: 'Un elemento <code>h4</code> debería tener el texto <code>#right-well</code> '
     testString: 'assert(new RegExp("#right-well","gi").test($("h4").text()), "One <code>h4</code> element should have the text <code>#right-well</code>.");'
   - text: Asegúrate de que todos tus elementos <code>h4</code> tengan etiquetas de cierre.
     testString: 'assert(code.match(/<\/h4>/g) && code.match(/<h4/g) && code.match(/<\/h4>/g).length === code.match(/<h4/g).length, "Make sure all your <code>h4</code> elements have closing tags.");'

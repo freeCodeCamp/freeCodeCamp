@@ -6,16 +6,16 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Un patrón común al trabajar con matrices es cuando desea eliminar elementos y conservar el resto de la matriz. JavaScript ofrece el método de <code>splice</code> para esto, que toma argumentos para el índice de dónde comenzar a eliminar elementos, luego la cantidad de elementos que se eliminarán. Si no se proporciona el segundo argumento, el valor predeterminado es eliminar elementos hasta el final. Sin embargo, el método de <code>splice</code> muta la matriz original a la que se llama. Aquí hay un ejemplo: 
-<blockquote>var cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];<br>cities.splice(3, 1); // Returns "London" and deletes it from the cities array<br>// cities is now ["Chicago", "Delhi", "Islamabad", "Berlin"]</blockquote> 
-Como hemos visto en el último desafío, la <code>slice</code> método no muta la matriz original, pero devuelve una nueva que se pueden guardar en una variable. Recuerde que el método de <code>slice</code> toma dos argumentos para que los índices comiencen y terminen la división (el final no es inclusivo) y devuelve esos elementos en una nueva matriz. Uso de la <code>slice</code> método en lugar de <code>splice</code> ayuda a evitar los efectos secundarios de matriz-mutación. 
+<section id='description'>
+Un patrón común al trabajar con matrices es cuando desea eliminar elementos y conservar el resto de la matriz. JavaScript ofrece el método de <code>splice</code> para esto, que toma argumentos para el índice de dónde comenzar a eliminar elementos, luego la cantidad de elementos que se eliminarán. Si no se proporciona el segundo argumento, el valor predeterminado es eliminar elementos hasta el final. Sin embargo, el método de <code>splice</code> muta la matriz original a la que se llama. Aquí hay un ejemplo:
+<blockquote>var cities = ["Chicago", "Delhi", "Islamabad", "London", "Berlin"];<br>cities.splice(3, 1); // Returns "London" and deletes it from the cities array<br>// cities is now ["Chicago", "Delhi", "Islamabad", "Berlin"]</blockquote>
+Como hemos visto en el último desafío, la <code>slice</code> método no muta la matriz original, pero devuelve una nueva que se pueden guardar en una variable. Recuerde que el método de <code>slice</code> toma dos argumentos para que los índices comiencen y terminen la división (el final no es inclusivo) y devuelve esos elementos en una nueva matriz. Uso de la <code>slice</code> método en lugar de <code>splice</code> ayuda a evitar los efectos secundarios de matriz-mutación.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Reescriba la función <code>nonMutatingSplice</code> utilizando <code>slice</code> lugar de <code>splice</code> . Debe limitar la matriz de <code>cities</code> proporcionada a una longitud de 3 y devolver una nueva matriz con solo los tres primeros elementos. 
-No mutar la matriz original proporcionada a la función. 
+<section id='instructions'>
+Reescriba la función <code>nonMutatingSplice</code> utilizando <code>slice</code> lugar de <code>splice</code> . Debe limitar la matriz de <code>cities</code> proporcionada a una longitud de 3 y devolver una nueva matriz con solo los tres primeros elementos.
+No mutar la matriz original proporcionada a la función.
 </section>
 
 ## Tests
@@ -29,7 +29,7 @@ tests:
     testString: 'assert(!code.match(/\.splice/g), "Your code should not use the <code>splice</code> method.");'
   - text: La matriz <code>inputCities</code> no debería cambiar.
     testString: 'assert(JSON.stringify(inputCities) === JSON.stringify(["Chicago", "Delhi", "Islamabad", "London", "Berlin"]), "The <code>inputCities</code> array should not change.");'
-  - text: &#39; <code>nonMutatingSplice([&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;, &quot;London&quot;, &quot;Berlin&quot;])</code> debe devolver <code>[&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;]</code> .&#39;
+  - text: ' <code>nonMutatingSplice([&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;, &quot;London&quot;, &quot;Berlin&quot;])</code> debe devolver <code>[&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;]</code> .'
     testString: 'assert(JSON.stringify(nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])) === JSON.stringify(["Chicago", "Delhi", "Islamabad"]), "<code>nonMutatingSplice(["Chicago", "Delhi", "Islamabad", "London", "Berlin"])</code> should return <code>["Chicago", "Delhi", "Islamabad"]</code>.");'
 
 ```

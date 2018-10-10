@@ -7,14 +7,14 @@ isRequired: true
 ---
 
 ## Description
-<section id='description'> 
-Cree una aplicación de JavaScript de pila completa que sea funcionalmente similar a esto: <a href='https://spark-cathedral.glitch.me/' target='_blank'>https://spark-cathedral.glitch.me/</a> . 
-Trabajar en este proyecto implicará que escriba su código en Glitch en nuestro proyecto de inicio. Después de completar este proyecto, puede copiar su URL de error público (en la página de inicio de su aplicación) en esta pantalla para probarlo. Opcionalmente, puede optar por escribir su proyecto en otra plataforma, pero debe ser visible públicamente para nuestras pruebas. 
-Inicie este proyecto en Glitch usando <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-library/'>este enlace</a> o clone <a href='https://github.com/freeCodeCamp/boilerplate-project-library/'>este repositorio</a> en GitHub! Si utiliza Glitch, recuerde guardar el enlace a su proyecto en un lugar seguro. 
+<section id='description'>
+Cree una aplicación de JavaScript de pila completa que sea funcionalmente similar a esto: <a href='https://spark-cathedral.glitch.me/' target='_blank'>https://spark-cathedral.glitch.me/</a> .
+Trabajar en este proyecto implicará que escriba su código en Glitch en nuestro proyecto de inicio. Después de completar este proyecto, puede copiar su URL de error público (en la página de inicio de su aplicación) en esta pantalla para probarlo. Opcionalmente, puede optar por escribir su proyecto en otra plataforma, pero debe ser visible públicamente para nuestras pruebas.
+Inicie este proyecto en Glitch usando <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-project-library/'>este enlace</a> o clone <a href='https://github.com/freeCodeCamp/boilerplate-project-library/'>este repositorio</a> en GitHub! Si utiliza Glitch, recuerde guardar el enlace a su proyecto en un lugar seguro.
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -35,11 +35,11 @@ tests:
     testString: ''
   - text: 'Puedo publicar un comentario en / api / books / {id} para agregar un comentario a un libro y devolverlo será el objeto de libros similar a get / api / books / {id}, incluido el nuevo comentario.'
     testString: ''
-  - text: 'Puedo eliminar / api / books / {_ id} para eliminar un libro de la colección. Devuelto será "eliminar con éxito" si tiene éxito.
+  - text: 'Puedo eliminar / api / books / {_ id} para eliminar un libro de la colección. Devuelto será "eliminar con éxito" si tiene éxito.'
     testString: ''
-  - text: Si trato de solicitar un libro que no existe, me devolverán "no existe ningún libro".
+  - text: Si trato de solicitar un libro que no existe, me devolverán "no existe ningún libro."
     testString: ''
-  - text: Puedo enviar una solicitud de eliminación a / api / books para eliminar todos los libros en la base de datos. Devuelto será 'completar eliminar con éxito' si tiene éxito.
+  - text: Puedo enviar una solicitud de eliminación a / api / books para eliminar todos los libros en la base de datos. Devuelto será "completar eliminar con éxito" si tiene éxito.
     testString: ''
   - text: Todas las 6 pruebas funcionales requeridas están completas y aprobadas.
     testString: ''

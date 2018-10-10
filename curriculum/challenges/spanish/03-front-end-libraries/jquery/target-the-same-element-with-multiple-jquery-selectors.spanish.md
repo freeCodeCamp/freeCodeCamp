@@ -8,18 +8,18 @@ challengeType: 6
 ---
 
 ## Description
-<section id='description'> 
-Ahora conoce tres formas de apuntar elementos: por tipo: <code>$(&quot;button&quot;)</code> , por clase: <code>$(&quot;.btn&quot;)</code> , y por id <code>$(&quot;#target1&quot;)</code> . 
-Aunque es posible agregar varias clases en una sola llamada <code>.addClass()</code> , las agregaremos al mismo elemento de <em>tres maneras diferentes</em> . 
-Usando <code>.addClass()</code> , agregue solo una clase a la vez al mismo elemento, de tres maneras diferentes: 
-Agregue la clase <code>animated</code> a todos los elementos con el <code>button</code> tipo. 
-Agregue la clase <code>shake</code> a todos los botones con la clase <code>.btn</code> . 
-Agregue la clase <code>btn-primary</code> al botón con id <code>#target1</code> . 
-<strong>Nota</strong> <br> Solo debes apuntar a un elemento y agregar solo una clase a la vez. En total, sus tres selectores individuales terminarán agregando las tres clases <code>shake</code> , <code>animated</code> y <code>btn-primary</code> a <code>#target1</code> . 
+<section id='description'>
+Ahora conoce tres formas de apuntar elementos: por tipo: <code>$(&quot;button&quot;)</code> , por clase: <code>$(&quot;.btn&quot;)</code> , y por id <code>$(&quot;#target1&quot;)</code> .
+Aunque es posible agregar varias clases en una sola llamada <code>.addClass()</code> , las agregaremos al mismo elemento de <em>tres maneras diferentes</em> .
+Usando <code>.addClass()</code> , agregue solo una clase a la vez al mismo elemento, de tres maneras diferentes:
+Agregue la clase <code>animated</code> a todos los elementos con el <code>button</code> tipo.
+Agregue la clase <code>shake</code> a todos los botones con la clase <code>.btn</code> .
+Agregue la clase <code>btn-primary</code> al botón con id <code>#target1</code> .
+<strong>Nota</strong> <br> Solo debes apuntar a un elemento y agregar solo una clase a la vez. En total, sus tres selectores individuales terminarán agregando las tres clases <code>shake</code> , <code>animated</code> y <code>btn-primary</code> a <code>#target1</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
+<section id='instructions'>
 
 </section>
 
@@ -28,7 +28,7 @@ Agregue la clase <code>btn-primary</code> al botón con id <code>#target1</code>
 
 ```yml
 tests:
-  - text: &#39;Use el selector <code>$(&quot;button&quot;)</code> .&#39;
+  - text: 'Use el selector <code>$(&quot;button&quot;)</code> .'
     testString: 'assert(code.match(/\$\s*?\(\s*?(?:"|")\s*?button\s*?(?:"|")/gi), "Use the <code><section id='tests'>
 
 ```yml
@@ -49,7 +49,7 @@ tests:
 ```
 
 </section>#40"button"&#41</code> selector.");'
-  - text: &#39;Use el selector <code>$(&quot;.btn&quot;)</code> .&#39;
+  - text: 'Use el selector <code>$(&quot;.btn&quot;)</code> .'
     testString: 'assert(code.match(/\$\s*?\(\s*?(?:"|")\s*?\.btn\s*?(?:"|")/gi), "Use the <code><section id='tests'>
 
 ```yml
@@ -70,7 +70,7 @@ tests:
 ```
 
 </section>#40".btn"&#41</code> selector.");'
-  - text: &#39;Use el selector <code>$(&quot;#target1&quot;)</code> .&#39;
+  - text: 'Use el selector <code>$(&quot;#target1&quot;)</code> .'
     testString: 'assert(code.match(/\$\s*?\(\s*?(?:"|")\s*?#target1\s*?(?:"|")/gi), "Use the <code><section id='tests'>
 
 ```yml
@@ -93,7 +93,7 @@ tests:
 </section>#40"#target1"&#41</code> selector.");'
   - text: Solo agrega una clase con cada uno de tus tres selectores.
     testString: 'assert(code.match(/addClass/g) && code.match(/addClass\s*?\(\s*?("|")\s*?[\w-]+\s*?\1\s*?\)/g).length > 2, "Only add one class with each of your three selectors.");'
-  - text: &#39;Su elemento <code>#target1</code> debería tener las clases <code>animated</code> , <code>shake</code> y <code>btn-primary</code> &#39;.
+  - text: 'Su elemento <code>#target1</code> debería tener las clases <code>animated</code> , <code>shake</code> y <code>btn-primary</code> '
     testString: 'assert($("#target1").hasClass("animated") && $("#target1").hasClass("shake") && $("#target1").hasClass("btn-primary"), "Your <code>#target1</code> element should have the classes <code>animated</code>&#130; <code>shake</code> and <code>btn-primary</code>.");'
   - text: Solo use jQuery para agregar estas clases al elemento.
     testString: 'assert(!code.match(/class.*animated/g), "Only use jQuery to add these classes to the element.");'

@@ -7,13 +7,13 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-El último desafío mostró un ejemplo de la propiedad <code>justify-content</code> . Para la inserción de tweets, esta propiedad se puede aplicar para alinear los elementos en el elemento <code>.profile-name</code> . 
+<section id='description'>
+El último desafío mostró un ejemplo de la propiedad <code>justify-content</code> . Para la inserción de tweets, esta propiedad se puede aplicar para alinear los elementos en el elemento <code>.profile-name</code> .
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Añadir la propiedad CSS <code>justify-content</code> de la cabecera del <code>.profile-name</code> del elemento y establezca el valor en cualquiera de las opciones desde el último desafío. 
+<section id='instructions'>
+Añadir la propiedad CSS <code>justify-content</code> de la cabecera del <code>.profile-name</code> del elemento y establezca el valor en cualquiera de las opciones desde el último desafío.
 </section>
 
 ## Tests
@@ -21,7 +21,7 @@ Añadir la propiedad CSS <code>justify-content</code> de la cabecera del <code>.
 
 ```yml
 tests:
-  - text: &#39;El elemento <code>.profile-name</code> debe tener la propiedad <code>.profile-name</code> <code>justify-content</code> establecida en cualquiera de estos valores: centro, inicio flexible, extremo flexible, espacio intermedio o espacio-alrededor.&#39;
+  - text: 'El elemento <code>.profile-name</code> debe tener la propiedad <code>.profile-name</code> <code>justify-content</code> establecida en cualquiera de estos valores: centro, inicio flexible, extremo flexible, espacio intermedio o espacio-alrededor.'
     testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.");'
 
 ```

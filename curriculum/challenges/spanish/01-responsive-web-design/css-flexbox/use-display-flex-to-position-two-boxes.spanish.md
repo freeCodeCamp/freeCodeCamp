@@ -7,14 +7,14 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Esta sección utiliza estilos de desafío alternativos para mostrar cómo usar CSS para posicionar elementos de una manera flexible. Primero, un desafío explicará la teoría, luego un desafío práctico utilizando un componente de tweet simple aplicará el concepto flexbox. 
-Colocación de la <code>display: flex;</code> propiedades CSS <code>display: flex;</code> en un elemento le permite usar otras propiedades de flexión para construir una página receptiva. 
+<section id='description'>
+Esta sección utiliza estilos de desafío alternativos para mostrar cómo usar CSS para posicionar elementos de una manera flexible. Primero, un desafío explicará la teoría, luego un desafío práctico utilizando un componente de tweet simple aplicará el concepto flexbox.
+Colocación de la <code>display: flex;</code> propiedades CSS <code>display: flex;</code> en un elemento le permite usar otras propiedades de flexión para construir una página receptiva.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la <code>display</code> propiedades CSS a <code>#box-container</code> y establezca su valor en flex. 
+<section id='instructions'>
+Agregue la <code>display</code> propiedades CSS a <code>#box-container</code> y establezca su valor en flex.
 </section>
 
 ## Tests
@@ -22,7 +22,7 @@ Agregue la <code>display</code> propiedades CSS a <code>#box-container</code> y 
 
 ```yml
 tests:
-  - text: &#39; <code>#box-container</code> debería tener la propiedad de <code>display</code> establecida en un valor de flex&#39;.
+  - text: ' <code>#box-container</code> debería tener la propiedad de <code>display</code> establecida en un valor de flex'
     testString: 'assert($("#box-container").css("display") == "flex", "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.");'
 
 ```

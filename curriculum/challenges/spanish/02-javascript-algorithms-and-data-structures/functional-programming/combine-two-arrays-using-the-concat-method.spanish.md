@@ -6,14 +6,14 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-<code>Concatenation</code> significa unir elementos de extremo a extremo. JavaScript ofrece el método <code>concat</code> para cadenas y matrices que funcionan de la misma manera. Para las matrices, el método se llama en una, luego se proporciona otra matriz como el argumento a <code>concat</code> , que se agrega al final de la primera matriz. Devuelve una nueva matriz y no muta ninguna de las matrices originales. Aquí hay un ejemplo: 
-<blockquote>[1, 2, 3].concat([4, 5, 6]);<br>// Returns a new array [1, 2, 3, 4, 5, 6]</blockquote> 
+<section id='description'>
+<code>Concatenation</code> significa unir elementos de extremo a extremo. JavaScript ofrece el método <code>concat</code> para cadenas y matrices que funcionan de la misma manera. Para las matrices, el método se llama en una, luego se proporciona otra matriz como el argumento a <code>concat</code> , que se agrega al final de la primera matriz. Devuelve una nueva matriz y no muta ninguna de las matrices originales. Aquí hay un ejemplo:
+<blockquote>[1, 2, 3].concat([4, 5, 6]);<br>// Returns a new array [1, 2, 3, 4, 5, 6]</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Utilice el método <code>concat</code> en la función <code>nonMutatingConcat</code> para concatenar <code>attach</code> al final del <code>original</code> . La función debe devolver la matriz concatenada. 
+<section id='instructions'>
+Utilice el método <code>concat</code> en la función <code>nonMutatingConcat</code> para concatenar <code>attach</code> al final del <code>original</code> . La función debe devolver la matriz concatenada.
 </section>
 
 ## Tests
@@ -27,7 +27,7 @@ tests:
     testString: 'assert(JSON.stringify(first) === JSON.stringify([1, 2, 3]), "The <code>first</code> array should not change.");'
   - text: La <code>second</code> matriz no debe cambiar.
     testString: 'assert(JSON.stringify(second) === JSON.stringify([4, 5]), "The <code>second</code> array should not change.");'
-  - text: &#39; <code>nonMutatingConcat([1, 2, 3], [4, 5])</code> debe devolver <code>[1, 2, 3, 4, 5]</code> .&#39;
+  - text: ' <code>nonMutatingConcat([1, 2, 3], [4, 5])</code> debe devolver <code>[1, 2, 3, 4, 5]</code> .'
     testString: 'assert(JSON.stringify(nonMutatingConcat([1, 2, 3], [4, 5])) === JSON.stringify([1, 2, 3, 4, 5]), "<code>nonMutatingConcat([1, 2, 3], [4, 5])</code> should return <code>[1, 2, 3, 4, 5]</code>.");'
 
 ```

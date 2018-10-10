@@ -6,15 +6,15 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-Una forma fácil de agregar datos al final de una matriz es a través de la función <code>push()</code> . 
-<code>.push()</code> toma uno o más <dfn>parámetros</dfn> y los &quot;empuja&quot; al final de la matriz. 
-<blockquote>var arr = [1,2,3];<br>arr.push(4);<br>// arr is now [1,2,3,4]</blockquote> 
+<section id='description'>
+Una forma fácil de agregar datos al final de una matriz es a través de la función <code>push()</code> .
+<code>.push()</code> toma uno o más <dfn>parámetros</dfn> y los &quot;empuja&quot; al final de la matriz.
+<blockquote>var arr = [1,2,3];<br>arr.push(4);<br>// arr is now [1,2,3,4]</blockquote>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Presione <code>[&quot;dog&quot;, 3]</code> en el extremo de la variable <code>myArray</code> . 
+<section id='instructions'>
+Presione <code>[&quot;dog&quot;, 3]</code> en el extremo de la variable <code>myArray</code> .
 </section>
 
 ## Tests
@@ -22,7 +22,7 @@ Presione <code>[&quot;dog&quot;, 3]</code> en el extremo de la variable <code>my
 
 ```yml
 tests:
-  - text: &#39; <code>myArray</code> ahora debe ser igual a <code>[[&quot;John&quot;, 23], [&quot;cat&quot;, 2], [&quot;dog&quot;, 3]]</code> .&#39;
+  - text: ' <code>myArray</code> ahora debe ser igual a <code>[[&quot;John&quot;, 23], [&quot;cat&quot;, 2], [&quot;dog&quot;, 3]]</code> .'
     testString: 'assert((function(d){if(d[2] != undefined && d[0][0] == "John" && d[0][1] === 23 && d[2][0] == "dog" && d[2][1] === 3 && d[2].length == 2){return true;}else{return false;}})(myArray), "<code>myArray</code> should now equal <code>[["John", 23], ["cat", 2], ["dog", 3]]</code>.");'
 
 ```

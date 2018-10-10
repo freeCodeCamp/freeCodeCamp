@@ -6,14 +6,14 @@ challengeType: 1
 ---
 
 ## Description
-<section id='description'> 
-A veces, los caracteres de espacios en blanco alrededor de las cadenas no son deseados pero están ahí. El procesamiento típico de las cadenas es eliminar el espacio en blanco al principio y al final. 
+<section id='description'>
+A veces, los caracteres de espacios en blanco alrededor de las cadenas no son deseados pero están ahí. El procesamiento típico de las cadenas es eliminar el espacio en blanco al principio y al final.
 </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una expresión regular y use los métodos de cadena apropiados para eliminar los espacios en blanco al principio y al final de las cadenas. 
-<strong>Nota</strong> <br> El método <code>.trim()</code> funcionaría aquí, pero necesitarás completar este desafío usando expresiones regulares. 
+<section id='instructions'>
+Escriba una expresión regular y use los métodos de cadena apropiados para eliminar los espacios en blanco al principio y al final de las cadenas.
+<strong>Nota</strong> <br> El método <code>.trim()</code> funcionaría aquí, pero necesitarás completar este desafío usando expresiones regulares.
 </section>
 
 ## Tests
@@ -21,7 +21,7 @@ Escriba una expresión regular y use los métodos de cadena apropiados para elim
 
 ```yml
 tests:
-  - text: El <code>result</code> debería ser igual a <code>&quot;Hello, World!&quot;</code> &#39;
+  - text: El <code>result</code> debería ser igual a <code>&quot;Hello, World!&quot;</code> '
     testString: 'assert(result == "Hello, World!", "<code>result</code> should equal to <code>"Hello, World!"</code>");'
   - text: No debes usar el método <code>.trim()</code> .
     testString: 'assert(!code.match(/\.trim\(.*?\)/), "You should not use the <code>.trim()</code> method.");'

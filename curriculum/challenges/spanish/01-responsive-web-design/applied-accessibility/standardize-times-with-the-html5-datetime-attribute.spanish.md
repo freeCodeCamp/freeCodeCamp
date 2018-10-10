@@ -7,15 +7,15 @@ videoUrl: ''
 ---
 
 ## Description
-<section id='description'> 
-Continuando con el tema de la fecha, HTML5 también introdujo el elemento de <code>time</code> junto con un atributo de <code>datetime</code> y <code>datetime</code> para estandarizar los tiempos. Este es un elemento en línea que puede ajustar una fecha u hora en una página. Un formato válido de esa fecha se mantiene en el atributo <code>datetime</code> . Este es el valor al que acceden los dispositivos de asistencia. Ayuda a evitar confusiones al indicar una versión estandarizada de un tiempo, incluso si está escrito de manera informal o coloquial en el texto. 
-Aquí hay un ejemplo: 
-<code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code> 
+<section id='description'>
+Continuando con el tema de la fecha, HTML5 también introdujo el elemento de <code>time</code> junto con un atributo de <code>datetime</code> y <code>datetime</code> para estandarizar los tiempos. Este es un elemento en línea que puede ajustar una fecha u hora en una página. Un formato válido de esa fecha se mantiene en el atributo <code>datetime</code> . Este es el valor al que acceden los dispositivos de asistencia. Ayuda a evitar confusiones al indicar una versión estandarizada de un tiempo, incluso si está escrito de manera informal o coloquial en el texto.
+Aquí hay un ejemplo:
+<code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code>
 </section>
 
 ## Instructions
-<section id='instructions'> 
-encuentran los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelva una etiqueta de <code>time</code> alrededor del texto &quot;Jueves, 15 de septiembre &lt;sup&gt; th &lt;/sup&gt;&quot; y agregue un atributo de <code>datetime</code> y <code>datetime</code> establecido en &quot;2016-09-15&quot;. 
+<section id='instructions'>
+encuentran los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelva una etiqueta de <code>time</code> alrededor del texto &quot;Jueves, 15 de septiembre &lt;sup&gt; th &lt;/sup&gt;&quot; y agregue un atributo de <code>datetime</code> y <code>datetime</code> establecido en &quot;2016-09-15&quot;.
 </section>
 
 ## Tests
@@ -23,7 +23,7 @@ encuentran los resultados de la encuesta de Mortal Kombat de Camper Cat! Envuelv
 
 ```yml
 tests:
-  - text: &#39;Sus etiquetas de <code>time</code> deben rodear el texto &quot;Jueves 15 de septiembre &lt;sup&gt; th &lt;/sup&gt;&quot;.&#39;
+  - text: 'Sus etiquetas de <code>time</code> deben rodear el texto &quot;Jueves 15 de septiembre &lt;sup&gt; th &lt;/sup&gt;&quot;.'
     testString: 'assert($("time").text().match(/Thursday, September 15th/g), "Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".");'
   - text: Su etiqueta de <code>time</code> debe tener un atributo de <code>datetime</code> y <code>datetime</code> que no esté vacío.
     testString: 'assert($("time").attr("datetime"), "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.");'
