@@ -37,15 +37,15 @@ Help us in creating or editing [guide articles](https://www.freecodecamp.org/gui
 
 ### Contribute to this open source codebase
 
-We have a huge open source codebase of the thousands of [Curriculum challenges](https://www.freecodecamp.org/learn) and [Guide articles](https://www.freecodecamp.org/guide). These challenges and articles make up the learning content available on the freeCodeCamp.org's learning platform.
+We have a huge open source codebase of the thousands of [Coding challenges](https://www.freecodecamp.org/learn) and [Guide articles](https://www.freecodecamp.org/guide). These challenges and articles make up the learning content available on the freeCodeCamp.org's learning platform.
 
 You can help us:
 
 - [📝 Research, Write and Update our guide articles.](#research-write-and-update-our-guide-articles)
 
-- [💻 Create, Update and Fix Bugs in our curriculum challenges.](#create-update-and-fix-bugs-in-our-curriculum-challenges)
+- [💻 Create, Update and Fix Bugs in our coding challenges.](#create-update-and-fix-bugs-in-our-curriculum-challenges)
 
-- [🌐 Translate guide articles and curriculum challenges.](#translate-guide-articles-and-curriculum-challenges)
+- [🌐 Translate guide articles and coding challenges.](#translate-guide-articles-and-curriculum-challenges)
 
 - [🛠 Help us fix bugs in freeCodeCamp.org's learning platform.](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
@@ -69,15 +69,15 @@ If you would like work on these, follow along these guidelines:
 
 ### [How to work on Guide articles.](/docs/how-to-work-on-guide-articles.md)
 
-#### Create, Update and Fix Bugs in our curriculum challenges
+#### Create, Update and Fix Bugs in our coding challenges
 
 **[TODO]**
 
-### [How to work on Curriculum Challenges.](/docs/how-to-work-on-curriculum-challenges.md)
+### [How to work on Coding Challenges.](/docs/how-to-work-on-coding-challenges.md)
 
-#### Translate guide articles and curriculum challenges
+#### Translate guide articles and coding challenges
 
-You can help us translate our Guide articles and Curriculum challenges for a language that you speak. Currently we have translated versions in:
+You can help us translate our Guide articles and Coding challenges for a language that you speak. Currently we have translated versions in:
 
 - Chinese (中文)
 - Russian (русский)

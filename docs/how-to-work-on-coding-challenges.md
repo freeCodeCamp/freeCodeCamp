@@ -1,4 +1,4 @@
-# How to work on curriculum challenges
+# How to work on coding challenges
 
 ### Changing on GitHub
 
