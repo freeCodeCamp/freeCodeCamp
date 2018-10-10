@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3ca1000cf542c50fedd
+id: 5900f3ca1000cf542c50fedd
 challengeType: 5
 title: 'Problem 94: Almost equilateral triangles'
+videoUrl: ''
+localeTitle: 'Problema 94: triángulos casi equiláteros'
 ---
 
 ## Description
-<section id='description'> 
-Es fácil demostrar que no existe un triángulo equilátero con lados de longitud integral y área integral. Sin embargo, el triángulo casi equilátero 5-5-6 tiene un área de 12 unidades cuadradas. 
-Definiremos que un triángulo casi equilátero es un triángulo para el que dos lados son iguales y el tercero no difiere en más de una unidad. 
-Encuentre la suma de los perímetros de todos los triángulos casi equiláteros con longitudes laterales integrales y área y cuyos perímetros no excedan los mil millones (1,000,000,000). 
-</section>
+<section id="description"> Se demuestra fácilmente que no existe un triángulo equilátero con lados de longitud integral y área integral. Sin embargo, el triángulo casi equilátero 5-5-6 tiene un área de 12 unidades cuadradas. Definiremos que un triángulo casi equilátero es un triángulo para el que dos lados son iguales y el tercero no difiere en más de una unidad. Encuentre la suma de los perímetros de todos los triángulos casi equiláteros con longitudes laterales integrales y área y cuyos perímetros no excedan los mil millones (1,000,000,000). </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler94() {
 }
 
 euler94();
+
 ```
 
 </div>

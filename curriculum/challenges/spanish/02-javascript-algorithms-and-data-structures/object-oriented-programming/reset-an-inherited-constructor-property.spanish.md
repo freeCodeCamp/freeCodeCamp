@@ -1,23 +1,16 @@
 ---
 id: 587d7db1367417b2b2512b86
 title: Reset an Inherited Constructor Property
-localeTitle: Restablecer una propiedad de constructor heredada
 challengeType: 1
+videoUrl: ''
+localeTitle: Restablecer una propiedad de constructor heredada
 ---
 
 ## Description
-<section id='description'> 
-Cuando un objeto hereda su <code>prototype</code> de otro objeto, sino que también hereda el <code>supertype</code> propiedad constructor &#39;s. 
-Aquí hay un ejemplo: 
-<blockquote>function Bird() { }<br>Bird.prototype = Object.create(Animal.prototype);<br>let duck = new Bird();<br>duck.constructor // function Animal(){...}</blockquote> 
-Pero el <code>duck</code> y todos los casos de <code>Bird</code> deben mostrar que fueron construidos por <code>Bird</code> y no por <code>Animal</code> . Para hacerlo, puedes establecer manualmente <code>Bird&#39;s</code> propiedad <code>Bird&#39;s</code> constructor de <code>Bird</code> objeto <code>Bird</code> : 
-<blockquote>Bird.prototype.constructor = Bird;<br>duck.constructor // function Bird(){...}</blockquote> 
-</section>
+<section id="description"> Cuando un objeto hereda su <code>prototype</code> de otro objeto, sino que también hereda el <code>supertype</code> propiedad constructor &#39;s. Aquí hay un ejemplo: <blockquote> función Bird () {} <br> Bird.prototype = Object.create (Animal.prototype); <br> dejar pato = nuevo pájaro (); <br> duck.constructor // function Animal () {...} </blockquote> Pero el <code>duck</code> y todos los casos de <code>Bird</code> deberían mostrar que fueron construidos por <code>Bird</code> y no por <code>Animal</code> . Para hacerlo, puedes establecer manualmente <code>Bird&#39;s</code> propiedad <code>Bird&#39;s</code> constructor de <code>Bird</code> objeto <code>Bird</code> : <blockquote> Bird.prototype.constructor = Bird; <br> duck.constructor // function Bird () {...} </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-<code>duck.constructor</code> el código para que <code>duck.constructor</code> y <code>beagle.constructor</code> devuelvan sus respectivos constructores. 
-</section>
+<section id="instructions"> <code>duck.constructor</code> el código para que <code>duck.constructor</code> y <code>beagle.constructor</code> devuelvan sus respectivos constructores. </section>
 
 ## Tests
 <section id='tests'>
@@ -56,6 +49,7 @@ Dog.prototype = Object.create(Animal.prototype);
 
 let duck = new Bird();
 let beagle = new Dog();
+
 ```
 
 </div>
@@ -67,17 +61,7 @@ let beagle = new Dog();
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Animal() { }
-function Bird() { }
-function Dog() { }
-Bird.prototype = Object.create(Animal.prototype);
-Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.constructor = Dog;
-Bird.prototype.constructor = Bird;
-let duck = new Bird();
-let beagle = new Dog();
+// solution required
 ```
-
 </section>

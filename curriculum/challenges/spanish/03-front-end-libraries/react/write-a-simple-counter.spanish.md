@@ -1,28 +1,24 @@
 ---
 id: 5a24c314108439a4d4036177
 title: Write a Simple Counter
-localeTitle: Escribe un contador simple
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Escribe un contador simple
 ---
 
 ## Description
-<section id='description'>
-Puede diseñar un componente con estado más complejo combinando los conceptos cubiertos hasta ahora. Estos incluyen el <code>state</code> inicialización, los métodos de escritura que establecen el <code>state</code> y la asignación de controladores de clics para activar estos métodos.
-</section>
+<section id="description"> Puede diseñar un componente con estado más complejo combinando los conceptos cubiertos hasta ahora. Estos incluyen el <code>state</code> inicialización, los métodos de escritura que establecen el <code>state</code> y la asignación de controladores de clics para activar estos métodos. </section>
 
 ## Instructions
-<section id='instructions'>
-El componente <code>Counter</code> realiza un seguimiento de un valor de <code>count</code> en el <code>state</code> . Hay dos botones que llaman a los métodos <code>increment()</code> y <code>decrement()</code> . Escriba estos métodos para que el valor del contador se incremente o disminuya en 1 cuando se hace clic en el botón apropiado. Además, cree un método de <code>reset()</code> para que cuando se haga clic en el botón de reinicio, el conteo se establezca en 0.
-<strong>Nota:</strong> Asegúrese de no modificar los <code>classNames</code> de <code>classNames</code> de los botones. Además, recuerde agregar los enlaces necesarios para los métodos recién creados en el constructor.
-</section>
+<section id="instructions"> El componente <code>Counter</code> realiza un seguimiento de un valor de <code>count</code> en el <code>state</code> . Hay dos botones que llaman a los métodos <code>increment()</code> y <code>decrement()</code> . Escriba estos métodos para que el valor del contador se incremente o disminuya en 1 cuando se hace clic en el botón apropiado. Además, cree un método de <code>reset()</code> para que cuando se haga clic en el botón de reinicio, el conteo se establezca en 0. <strong>Nota:</strong> Asegúrese de no modificar los <code>classNames</code> de <code>classNames</code> de los botones. Además, recuerde agregar los enlaces necesarios para los métodos recién creados en el constructor. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'El <code>Counter</code> debe devolver un elemento <code>div</code> que contiene tres botones con contenido de texto en este orden <code>Increment!</code> , <code>Decrement!</code> , <code>Reset</code> .
+  - text: '<code>Counter</code> debe devolver un elemento <code>div</code> que contiene tres botones con contenido de texto en este orden <code>Increment!</code> , <code>Decrement!</code> , <code>Reset</code> .'
     testString: 'assert((() => { const mockedComponent = Enzyme.mount(React.createElement(Counter)); return (mockedComponent.find(".inc").text() === "Increment!" && mockedComponent.find(".dec").text() === "Decrement!" && mockedComponent.find(".reset").text() === "Reset"); })(), "<code>Counter</code> should return a <code>div</code> element which contains three buttons with text content in this order <code>Increment!</code>, <code>Decrement!</code>, <code>Reset</code>.");'
   - text: El estado del <code>Counter</code> debe inicializarse con una propiedad de <code>count</code> establecida en <code>0</code> .
     testString: 'assert.strictEqual(Enzyme.mount(React.createElement(Counter)).state("count"), 0, "The state of <code>Counter</code> should initialize with a <code>count</code> property set to <code>0</code>.");'
@@ -67,6 +63,7 @@ class Counter extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -86,44 +83,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-class Counter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0
-    };
-  this.increment = this.increment.bind(this);
- this.decrement = this.decrement.bind(this);
- this.reset = this.reset.bind(this);
- }
-  reset() {
-    this.setState({
-      count: 0
-    });
-  }
-  increment() {
-    this.setState({
-      count: this.state.count + 1
-    });
-  }
-  decrement() {
-    this.setState({
-      count: this.state.count - 1
-    });
-  }
-  render() {
-    return (
-      <div>
-        <button className='inc' onClick={this.increment}>Increment!</button>
-        <button className='dec' onClick={this.decrement}>Decrement!</button>
-        <button className='reset' onClick={this.reset}>Reset</button>
-        <h1>Current Count: {this.state.count}</h1>
-      </div>
-    );
-  }
-};
+// solution required
 ```
-
 </section>

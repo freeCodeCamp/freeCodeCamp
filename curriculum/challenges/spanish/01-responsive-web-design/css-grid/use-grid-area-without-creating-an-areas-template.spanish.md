@@ -1,24 +1,16 @@
 ---
 id: 5a94fe2669fb03452672e45e
 title: Use grid-area Without Creating an Areas Template
-localeTitle: Usar área de cuadrícula sin crear una plantilla de áreas
 challengeType: 0
 videoUrl: ''
+localeTitle: Usar área de cuadrícula sin crear una plantilla de áreas
 ---
 
 ## Description
-<section id='description'> 
-La propiedad de <code>grid-area</code> que aprendió en el último desafío se puede usar de otra manera. Si su cuadrícula no tiene una plantilla de áreas a la que hacer referencia, puede crear un área sobre la marcha para colocar un elemento como este: 
-<blockquote>item1 { grid-area: 1/1/2/4; }</blockquote> 
-Esto es usando los números de línea que aprendió anteriormente para definir dónde estará el área para este elemento. Los números en el ejemplo anterior representan estos valores: 
-<blockquote>grid-area: horizontal line to start at / vertical line to start at / horizontal line to end at / vertical line to end at;</blockquote> 
-Entonces, el elemento en el ejemplo consumirá las filas entre las líneas 1 y 2, y las columnas entre las líneas 1 y 4. 
-</section>
+<section id="description"> La propiedad de <code>grid-area</code> que aprendiste en el último desafío se puede usar de otra manera. Si su cuadrícula no tiene una plantilla de áreas a la que hacer referencia, puede crear un área sobre la marcha para colocar un elemento como este: <blockquote> item1 {grid-area: 1/1/2/4; } </blockquote> Esto es utilizar los números de línea que aprendió anteriormente para definir dónde estará el área para este elemento. Los números en el ejemplo anterior representan estos valores: <blockquote> área de la cuadrícula: línea horizontal para comenzar en / línea vertical para comenzar en / línea horizontal para terminar en / línea vertical para terminar en; </blockquote> Así que el elemento en el ejemplo consumirá las filas entre las líneas 1 y 2, y las columnas entre las líneas 1 y 4. </section>
 
 ## Instructions
-<section id='instructions'> 
-Usando la propiedad del <code>grid-area</code> la <code>grid-area</code> , coloque el elemento con la clase <code>item5</code> entre las líneas horizontales tercera y cuarta y entre las líneas verticales primera y cuarta. 
-</section>
+<section id="instructions"> Usando la propiedad del <code>grid-area</code> la <code>grid-area</code> , coloque el elemento con la clase <code>item5</code> entre las líneas horizontales tercera y cuarta y entre las líneas verticales primera y cuarta. </section>
 
 ## Tests
 <section id='tests'>
@@ -71,6 +63,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -82,9 +75,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".item5 {grid-area: 3/1/4/4;}"
+// solution required
 ```
-
 </section>

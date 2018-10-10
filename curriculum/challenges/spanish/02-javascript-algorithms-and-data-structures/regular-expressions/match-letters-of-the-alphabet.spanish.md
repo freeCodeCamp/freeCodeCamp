@@ -1,22 +1,16 @@
 ---
 id: 587d7db5367417b2b2512b96
 title: Match Letters of the Alphabet
-localeTitle: Combina las letras del alfabeto
 challengeType: 1
+videoUrl: ''
+localeTitle: Combina las letras del alfabeto
 ---
 
 ## Description
-<section id='description'> 
-Vio cómo puede usar los <code>character sets</code> para especificar un grupo de caracteres para hacer coincidir, pero eso es mucho para escribir cuando necesita hacer coincidir una gran variedad de caracteres (por ejemplo, todas las letras del alfabeto). Afortunadamente, hay una característica incorporada que hace que esto sea breve y simple. 
-Dentro de un <code>character set</code> , puede definir un rango de caracteres para hacer coincidir usando un carácter de <code>hyphen</code> : <code>-</code> . 
-Por ejemplo, para que coincida con las letras minúsculas <code>a</code> medio <code>e</code> que usaría <code>[ae]</code> . 
-<blockquote>let catStr = "cat";<br>let batStr = "bat";<br>let matStr = "mat";<br>let bgRegex = /[a-e]at/;<br>catStr.match(bgRegex); // Returns ["cat"]<br>batStr.match(bgRegex); // Returns ["bat"]<br>matStr.match(bgRegex); // Returns null</blockquote> 
-</section>
+<section id="description"> Vio cómo puede usar los <code>character sets</code> para especificar un grupo de caracteres para hacer coincidir, pero eso es mucho para escribir cuando necesita hacer coincidir una gran variedad de caracteres (por ejemplo, todas las letras del alfabeto). Afortunadamente, hay una característica incorporada que hace que esto sea breve y simple. Dentro de un <code>character set</code> , puede definir un rango de caracteres para hacer coincidir usando un carácter de <code>hyphen</code> : <code>-</code> . Por ejemplo, para que coincida con las letras minúsculas <code>a</code> medio <code>e</code> que usaría <code>[ae]</code> . <blockquote> vamos catStr = &quot;gato&quot;; <br> dejar batStr = &quot;bat&quot;; <br> dejar matStr = &quot;mat&quot;; <br> vamos bgRegex = / [ae] en /; <br> catStr.match (bgRegex); // Devoluciones [&quot;cat&quot;] <br> batStr.match (bgRegex); // Devoluciones [&quot;bat&quot;] <br> matStr.match (bgRegex); // Devoluciones nulas </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Coinciden con todas las letras en la cadena <code>quoteSample</code> . 
-<strong>Nota</strong> <br> Asegúrese de hacer coincidir las <strong>letras</strong> mayúsculas y minúsculas <strong><strong>. <code>0</code></strong></strong> </section>
+<section id="instructions"> Coinciden con todas las letras en la cadena <code>quoteSample</code> . <strong>Nota</strong> <br> Asegúrese de hacer coincidir las <strong>letras</strong> mayúsculas y minúsculas <strong><strong>.</strong></strong> </section>
 
 ## Tests
 <section id='tests'>
@@ -43,6 +37,7 @@ tests:
 let quoteSample = "The quick brown fox jumps over the lazy dog.";
 let alphabetRegex = /change/; // Change this line
 let result = alphabetRegex; // Change this line
+
 ```
 
 </div>

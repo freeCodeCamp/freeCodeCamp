@@ -1,19 +1,16 @@
 ---
 id: 587d824a367417b2b2512c46
 title: Learn How JavaScript Assertions Work
-localeTitle: Aprende cómo funcionan las afirmaciones de JavaScript
 challengeType: 2
+videoUrl: ''
+localeTitle: Aprende cómo funcionan las afirmaciones de JavaScript
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-Utilice assert.isNull () o assert.isNotNull () para hacer que se pasen las pruebas. 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . Utilice assert.isNull () o assert.isNotNull () para hacer que se pasen las pruebas. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

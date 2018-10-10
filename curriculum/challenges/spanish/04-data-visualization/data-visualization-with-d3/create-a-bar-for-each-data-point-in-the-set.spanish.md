@@ -1,24 +1,18 @@
 ---
 id: 587d7fa8367417b2b2512bcd
 title: Create a Bar for Each Data Point in the Set
-localeTitle: Crear una barra para cada punto de datos en el conjunto
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Crear una barra para cada punto de datos en el conjunto
 ---
 
 ## Description
-<section id='description'> 
-El último desafío agregó solo un rectángulo al elemento <code>svg</code> para representar una barra. Aquí, combinará lo que ha aprendido hasta ahora acerca de las formas de <code>data()</code> , <code>enter()</code> y SVG para crear y anexar un rectángulo para cada punto de <code>dataset</code> en el <code>dataset</code> de <code>dataset</code> . 
-Un desafío anterior mostró el formato de cómo crear y anexar un <code>div</code> para cada elemento en el <code>dataset</code> de <code>dataset</code> : 
-<blockquote>d3.select("body").selectAll("div")<br>&nbsp;&nbsp;.data(dataset)<br>&nbsp;&nbsp;.enter()<br>&nbsp;&nbsp;.append("div")</blockquote> 
-Hay algunas diferencias que trabajan con elementos <code>rect</code> lugar de <code>divs</code> . Los <code>rects</code> deben adjuntarse a un elemento <code>svg</code> , no directamente al <code>body</code> . Además, debe indicar a D3 dónde colocar cada <code>rect</code> dentro del área de <code>svg</code> . La colocación de la barra será cubierta en el próximo desafío. 
-</section>
+<section id="description"> El último desafío agregó solo un rectángulo al elemento <code>svg</code> para representar una barra. Aquí, combinará lo que ha aprendido hasta ahora acerca de las formas de <code>data()</code> , <code>enter()</code> y SVG para crear y anexar un rectángulo para cada punto de <code>dataset</code> en el <code>dataset</code> de <code>dataset</code> . Un desafío anterior mostró el formato de cómo crear y anexar un <code>div</code> para cada elemento en el <code>dataset</code> de <code>dataset</code> : <blockquote> d3.select (&quot;body&quot;). selectAll (&quot;div&quot;) <br> .data (conjunto de datos) <br> .entrar() <br> .append (&quot;div&quot;) </blockquote> Hay algunas diferencias que trabajan con elementos <code>rect</code> lugar de <code>divs</code> . Los <code>rects</code> deben adjuntarse a un elemento <code>svg</code> , no directamente al <code>body</code> . Además, debe indicar a D3 dónde colocar cada <code>rect</code> dentro del área de <code>svg</code> . La colocación de la barra será cubierta en el próximo desafío. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use los métodos <code>data()</code> , <code>enter()</code> y <code>append()</code> para crear y adjuntar un <code>rect</code> para cada elemento en el <code>dataset</code> de <code>dataset</code> . Las barras deben mostrar todas una encima de la otra, esto se solucionará en el próximo desafío. 
-</section>
+<section id="instructions"> Use los métodos <code>data()</code> , <code>enter()</code> y <code>append()</code> para crear y adjuntar un <code>rect</code> para cada elemento en el <code>dataset</code> de <code>dataset</code> . Las barras deben mostrar todas una encima de la otra, esto se solucionará en el próximo desafío. </section>
 
 ## Tests
 <section id='tests'>
@@ -68,6 +62,7 @@ tests:
        .attr("height", 100);
   </script>
 </body>
+
 ```
 
 </div>

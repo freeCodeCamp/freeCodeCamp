@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4181000cf542c50ff2a
+id: 5900f4181000cf542c50ff2a
 challengeType: 5
 title: 'Problem 171: Finding numbers for which the sum of the squares of the digits is a square'
+videoUrl: ''
+localeTitle: 'Problema 171: encontrar números para los cuales la suma de los cuadrados de los dígitos es un cuadrado'
 ---
 
 ## Description
-<section id='description'> 
-Para un entero positivo n, sea f (n) la suma de los cuadrados de los dígitos (en la base 10) de n, por ejemplo, 
-f (3) = 32 = 9, 
-f (25) = 22 + 52 = 4 + 25 = 29, 
-f (442) = 42 + 42 + 22 = 16 + 16 + 4 = 36 
-Encuentre los últimos nueve dígitos de la suma de todos n, 0 &lt;n &lt;1020, de manera que f (n) Es un cuadrado perfecto. 
-</section>
+<section id="description"> Para un entero positivo n, sea f (n) la suma de los cuadrados de los dígitos (en la base 10) de n, por ejemplo, f (3) = 32 = 9, f (25) = 22 + 52 = 4 + 25 = 29, f (442) = 42 + 42 + 22 = 16 + 16 + 4 = 36 Encuentre los últimos nueve dígitos de la suma de todos n, 0 &lt;n &lt;1020, de modo que f (n) sea un cuadrado perfecto. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +37,7 @@ function euler171() {
 }
 
 euler171();
+
 ```
 
 </div>

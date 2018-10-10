@@ -1,22 +1,16 @@
 ---
 id: 587d78a8367417b2b2512ae3
 title: Animate Elements Continually Using an Infinite Animation Count
-localeTitle: Animar elementos continuamente utilizando un recuento de animaciones infinitas
 challengeType: 0
 videoUrl: ''
+localeTitle: Animar elementos continuamente utilizando un recuento de animaciones infinitas
 ---
 
 ## Description
-<section id='description'> 
-Los desafíos anteriores cubrían cómo usar algunas de las propiedades de animación y la regla <code>@keyframes</code> . Otra propiedad de la <code>animation-iteration-count</code> es la <code>animation-iteration-count</code> , que le permite controlar cuántas veces le gustaría recorrer la animación. Aquí hay un ejemplo: 
-<code>animation-iteration-count: 3;</code> 
-En este caso, la animación se detendrá después de ejecutarse 3 veces, pero es posible hacer que la animación se ejecute continuamente estableciendo ese valor en infinito. 
-</section>
+<section id="description"> Los desafíos anteriores cubrían cómo usar algunas de las propiedades de animación y la regla <code>@keyframes</code> . Otra propiedad de la <code>animation-iteration-count</code> es la <code>animation-iteration-count</code> , que le permite controlar cuántas veces le gustaría recorrer la animación. Aquí hay un ejemplo: <code>animation-iteration-count: 3;</code> En este caso, la animación se detendrá después de ejecutarse 3 veces, pero es posible hacer que la animación se ejecute continuamente estableciendo ese valor en infinito. </section>
 
 ## Instructions
-<section id='instructions'> 
-Para mantener la bola rebotando a la derecha en un bucle continuo, cambie la propiedad de <code>animation-iteration-count</code> a infinito. 
-</section>
+<section id="instructions"> Para mantener la bola rebotando a la derecha en un bucle continuo, cambie la propiedad de <code>animation-iteration-count</code> a infinito. </section>
 
 ## Tests
 <section id='tests'>
@@ -69,6 +63,7 @@ tests:
   }
 </style>
 <div id="ball"></div>
+
 ```
 
 </div>

@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5481000cf542c51005b
+id: 5900f5481000cf542c51005b
 challengeType: 5
 title: 'Problem 476: Circle Packing II'
+videoUrl: ''
+localeTitle: 'Problema 476: Embalaje de Círculo II'
 ---
 
 ## Description
-<section id='description'> 
-Sea R (a, b, c) el área máxima cubierta por tres círculos no superpuestos dentro de un triángulo con longitudes de borde a, b y c. 
-Sea S (n) el valor promedio de R (a, b, c) sobre todos los tripletes enteros (a, b, c) de tal manera que 1 ≤ a ≤ b ≤ c &lt;a + b ≤ n 
-Le dan S (2) = R (1, 1, 1) ≈ 0.31998, S (5) ≈ 1.25899. 
-Encuentre S (1803) redondeado a 5 lugares decimales detrás del punto decimal. 
-</section>
+<section id="description"> Sea R (a, b, c) el área máxima cubierta por tres círculos no superpuestos dentro de un triángulo con longitudes de borde a, b y c. Sea S (n) el valor promedio de R (a, b, c) sobre todos los tripletes enteros (a, b, c) de manera que 1 ≤ a ≤ b ≤ c &lt;a + b ≤ n Le den S (2 ) = R (1, 1, 1) ≈ 0.31998, S (5) ≈ 1.25899. Encuentre S (1803) redondeado a 5 lugares decimales detrás del punto decimal. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +37,7 @@ function euler476() {
 }
 
 euler476();
+
 ```
 
 </div>

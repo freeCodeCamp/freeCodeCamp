@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5361000cf542c510049
+id: 5900f5361000cf542c510049
 challengeType: 5
 title: 'Problem 458: Permutations of Project'
+videoUrl: ''
+localeTitle: 'Problema 458: Permutaciones del Proyecto.'
 ---
 
 ## Description
-<section id='description'> 
-Considera el alfabeto A hecho de las letras de la palabra &quot;proyecto&quot;: A = {c, e, j, o, p, r, t}. 
-Sea T (n) el número de cadenas de longitud n que consiste en letras de A que no tienen una subcadena que es una de las 5040 permutaciones de &quot;proyecto&quot;. 
-
-T (7) = 77-7! = 818503. 
-
-
-Encuentra T (1012). Da los últimos 9 dígitos de tu respuesta. 
-</section>
+<section id="description"> Considere el alfabeto A hecho de las letras de la palabra &quot;proyecto&quot;: A = {c, e, j, o, p, r, t}. Sea T (n) el número de cadenas de longitud n que consiste en letras de A que no tienen una subcadena que es una de las 5040 permutaciones de &quot;proyecto&quot;. <p> T (7) = 77-7! = 818503. </p><p> Encuentra T (1012). Da los últimos 9 dígitos de tu respuesta. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +37,7 @@ function euler458() {
 }
 
 euler458();
+
 ```
 
 </div>

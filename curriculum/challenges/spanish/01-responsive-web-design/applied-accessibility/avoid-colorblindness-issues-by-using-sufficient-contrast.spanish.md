@@ -1,23 +1,16 @@
 ---
 id: 587d778f367417b2b2512aac
 title: Avoid Colorblindness Issues by Using Sufficient Contrast
-localeTitle: Evite los problemas de ceguera al color usando un contraste suficiente
 challengeType: 0
 videoUrl: ''
+localeTitle: Evite los problemas de ceguera al color usando un contraste suficiente
 ---
 
 ## Description
-<section id='description'> 
-color es una gran parte del diseño visual, pero su uso presenta dos problemas de accesibilidad. Primero, el color solo no debe usarse como la única forma de transmitir información importante porque los usuarios de lectores de pantalla no la verán. En segundo lugar, los colores de fondo y de fondo necesitan un contraste suficiente para que los usuarios con daltonismo los puedan distinguir. 
-Los desafíos anteriores cubrieron tener alternativas de texto para abordar el primer problema. El último desafío introdujo herramientas de comprobación de contraste para ayudar con el segundo. La relación de contraste recomendada por WCAG de 4.5: 1 se aplica al uso del color así como a las combinaciones de escala de grises. 
-usuarios de Colorblind tienen problemas para distinguir algunos colores de otros, generalmente en tonos, pero a veces también con ligereza. Puede recordar que la relación de contraste se calcula utilizando los valores de luminancia relativa (o luminosidad) de los colores de primer plano y de fondo. 
-En la práctica, se puede alcanzar la proporción de 4.5: 1 oscureciendo el color más oscuro y aclarando el más claro con la ayuda de un comprobador de contraste de color. Los colores más oscuros en la rueda de colores se consideran azules, violetas, magentas y rojos, mientras que los colores más claros son naranjas, amarillos, verdes y verdes azules. 
-</section>
+<section id="description"> El color es una gran parte del diseño visual, pero su uso presenta dos problemas de accesibilidad. Primero, el color solo no debe usarse como la única forma de transmitir información importante porque los usuarios de lectores de pantalla no la verán. En segundo lugar, los colores de fondo y de fondo necesitan un contraste suficiente para que los usuarios con daltonismo los puedan distinguir. Los desafíos anteriores cubrían tener alternativas de texto para abordar el primer problema. El último desafío introdujo herramientas de comprobación de contraste para ayudar con el segundo. La relación de contraste recomendada por WCAG de 4.5: 1 se aplica al uso del color así como a las combinaciones de escala de grises. Los usuarios de color daltónicos tienen problemas para distinguir algunos colores de otros, generalmente en tonos, pero a veces también con ligereza. Puede recordar que la relación de contraste se calcula utilizando los valores de luminancia relativa (o luminosidad) de los colores de primer plano y de fondo. En la práctica, se puede alcanzar la proporción de 4.5: 1 oscureciendo el color más oscuro y aclarando el más claro con la ayuda de un comprobador de contraste de color. Los colores más oscuros en la rueda de colores se consideran azules, violetas, magentas y rojos, mientras que los colores más claros son naranjas, amarillos, verdes y verdes azules. </section>
 
 ## Instructions
-<section id='instructions'> 
-Camper gato está experimentando con el uso del color para su blog de texto y el fondo, pero su actual combinación de un color verdoso <code>background-color</code> con el texto marrón <code>color</code> tiene un 2.5: 1 relación de contraste. Puede ajustar fácilmente la luminosidad de los colores ya que los declaró utilizando la propiedad <code>hsl()</code> CSS (que significa matiz, saturación, luminosidad) cambiando el tercer argumento. Aumente el valor de luminosidad del <code>background-color</code> del 35% al ​​55% y disminuya el valor de luminosidad del <code>color</code> del 20% al 15%. Esto mejora el contraste a 5.9: 1. 
-</section>
+<section id="instructions"> Gato Camper está experimentando con el uso del color para su blog de texto y el fondo, pero su actual combinación de un color verdoso <code>background-color</code> con el texto marrón <code>color</code> tiene un 2.5: 1 relación de contraste. Puede ajustar fácilmente la luminosidad de los colores ya que los declaró utilizando la propiedad <code>hsl()</code> CSS (que significa matiz, saturación, luminosidad) cambiando el tercer argumento. Aumente el valor de luminosidad del <code>background-color</code> del 35% al ​​55% y disminuya el valor de luminosidad del <code>color</code> del 20% al 15%. Esto mejora el contraste a 5.9: 1. </section>
 
 ## Tests
 <section id='tests'>
@@ -57,6 +50,7 @@ tests:
     <p>As I've stated in the past, I firmly believe a true ninja's skills must come from within, with no external influences. My own catnip use shall continue as purely recreational.</p>
   </article>
 </body>
+
 ```
 
 </div>
@@ -68,9 +62,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "body {color: hsl(0, 55%, 15%); background-color: hsl(120, 25%, 55%);}"
+// solution required
 ```
-
 </section>

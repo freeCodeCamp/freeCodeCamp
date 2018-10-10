@@ -1,24 +1,16 @@
 ---
 id: 5a94fe5469fb03452672e461
 title: Create Flexible Layouts Using auto-fill
-localeTitle: Crear diseños flexibles con autocompletar
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear diseños flexibles con autocompletar
 ---
 
 ## Description
-<section id='description'> 
-La función de repetición viene con una opción llamada <dfn>autocompletar</dfn> . Esto le permite insertar automáticamente tantas filas o columnas del tamaño deseado como sea posible, dependiendo del tamaño del contenedor. Puede crear diseños flexibles al combinar <code>auto-fill</code> con <code>minmax</code> . 
-En la vista previa, <code>grid-template-columns</code> se establece en 
-<blockquote>repeat(auto-fill, minmax(60px, 1fr));</blockquote> 
-Cuando el contenedor cambia de tamaño, esta configuración continúa insertando columnas de 60px y estirándolas hasta que pueda insertar otra. 
-<strong>Nota</strong> <br> Si su contenedor no puede colocar todos sus artículos en una fila, los moverá a uno nuevo. 
-</section>
+<section id="description"> La función de repetición viene con una opción llamada <dfn>autocompletar</dfn> . Esto le permite insertar automáticamente tantas filas o columnas del tamaño deseado como sea posible, dependiendo del tamaño del contenedor. Puede crear diseños flexibles al combinar <code>auto-fill</code> con <code>minmax</code> . En la vista previa, <code>grid-template-columns</code> se establecen en <blockquote> repetir (autocompletar, minmax (60px, 1fr)); </blockquote> Cuando el contenedor cambia de tamaño, esta configuración continúa insertando columnas de 60 px y estirándolas hasta que pueda insertar otra. <strong>Nota</strong> <br> Si su contenedor no puede colocar todos sus artículos en una fila, los moverá a uno nuevo. </section>
 
 ## Instructions
-<section id='instructions'> 
-En la primera cuadrícula, use <code>auto-fill</code> con <code>repeat</code> para llenar la cuadrícula con columnas que tengan un ancho mínimo de <code>60px</code> y un máximo de <code>1fr</code> . Luego cambie el tamaño de la vista previa para ver la acción de autocompletar. 
-</section>
+<section id="instructions"> En la primera cuadrícula, use <code>auto-fill</code> con <code>repeat</code> para llenar la cuadrícula con columnas que tengan un ancho mínimo de <code>60px</code> y un máximo de <code>1fr</code> . Luego cambie el tamaño de la vista previa para ver la acción de autocompletar. </section>
 
 ## Tests
 <section id='tests'>
@@ -85,6 +77,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -96,9 +89,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));}"
+// solution required
 ```
-
 </section>

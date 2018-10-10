@@ -1,20 +1,16 @@
 ---
 title: Entropy
 id: 599d15309e88c813a40baf58
-localeTitle: 599d15309e88c813a40baf58
 challengeType: 5
+videoUrl: ''
+localeTitle: Entropía
 ---
 
 ## Description
-<section id='description'> 
-Tarea: 
-<p> Calcule la entropía H de Shannon de una cadena de entrada dada. </p><p> Dada la discreta variable aleatoria $ X $ que es una cadena de $ N $ &quot;símbolos&quot; (caracteres totales) que consta de $ n $ caracteres diferentes (n = 2 para binario), la entropía de X de Shannon en bits / símbolo es: </p> 
-<p> $ H_2 (X) = - \ sum_ {i = 1} ^ n \ frac {count_i} {N} \ log_2 \ left (\ frac {count_i} {N} \ right) $ </p><p> donde $ count_i $ es el conteo del carácter $ n_i $. </p> 
-</section>
+<section id="description"> Tarea: <p> Calcule la entropía H de Shannon de una cadena de entrada dada. </p><p> Dada la discreta variable aleatoria $ X $ que es una cadena de $ N $ &quot;símbolos&quot; (caracteres totales) que consta de $ n $ caracteres diferentes (n = 2 para binario), la entropía de X de Shannon en bits / símbolo es: </p><p> $ H_2 (X) = - \ sum_ {i = 1} ^ n \ frac {count_i} {N} \ log_2 \ left (\ frac {count_i} {N} \ right) $ </p><p> donde $ count_i $ es el conteo del carácter $ n_i $. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -50,6 +46,7 @@ tests:
 function entropy (s) {
   // Good luck!
 }
+
 ```
 
 </div>
@@ -61,29 +58,7 @@ function entropy (s) {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function entropy(s) {
-	// Create a dictionary of character frequencies and iterate over it.
-  function process(s, evaluator) {
-    let h = Object.create(null),
-      k;
-    s.split('').forEach(c => {
-      h[c] && h[c]++ || (h[c] = 1); });
-    if (evaluator) for (k in h) evaluator(k, h[k]);
-    return h;
-  }
-	// Measure the entropy of a string in bits per symbol.
-
-  let sum = 0,
-    len = s.length;
-  process(s, (k, f) => {
-    const p = f / len;
-    sum -= p * Math.log(p) / Math.log(2);
-  });
-  return sum;
-}
-
+// solution required
 ```
-
 </section>

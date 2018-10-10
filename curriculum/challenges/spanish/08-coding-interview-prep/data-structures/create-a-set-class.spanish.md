@@ -1,23 +1,16 @@
 ---
 id: 8d1323c8c441eddfaeb5bdef
 title: Create a Set Class
-localeTitle: Crear una clase de conjunto
 challengeType: 1
+videoUrl: ''
+localeTitle: Crear una clase de conjunto
 ---
 
 ## Description
-<section id='description'> 
-En los próximos ejercicios, vamos a crear una función para emular una estructura de datos llamada &quot;Conjunto&quot;. Un conjunto es como una matriz, pero no puede contener valores duplicados. El uso típico de un Conjunto es simplemente verificar la presencia de un elemento. Esto se puede implementar con un objeto, por ejemplo: 
-<blockquote>var set = new Object();<br>set.foo = true;<br>// See if foo exists in our set:<br>console.log(set.foo) // true</blockquote> 
-En los próximos ejercicios, construiremos un conjunto completo desde cero. 
-Para este ejercicio, cree una función que agregue un valor a nuestra colección de conjuntos siempre que el valor no exista en el conjunto. Por ejemplo: 
-<blockquote>this.add = function(element) {<br>  //some code to add value to the set<br>}</blockquote> 
-La función debe devolver <code>true</code> si el valor se agrega exitosamente y <code>false</code> contrario. 
-</section>
+<section id="description"> En los siguientes ejercicios vamos a crear una función para emular una estructura de datos llamada &quot;Conjunto&quot;. Un conjunto es como una matriz, pero no puede contener valores duplicados. El uso típico de un Conjunto es simplemente verificar la presencia de un elemento. Esto se puede implementar con un objeto, por ejemplo: <blockquote> var set = new Object (); <br> set.foo = true; <br> // Ver si existe foo en nuestro set: <br> console.log (set.foo) // true </blockquote> En los próximos ejercicios, construiremos un conjunto completo desde cero. Para este ejercicio, cree una función que agregue un valor a nuestra colección de conjuntos siempre que el valor no exista en el conjunto. Por ejemplo: <blockquote> this.add = function (element) { <br> // algún código para agregar valor al conjunto <br> } </blockquote> La función debe devolver <code>true</code> si el valor se agrega exitosamente y <code>false</code> contrario. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -58,6 +51,7 @@ function Set() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>
@@ -69,9 +63,7 @@ function Set() {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};}
+// solution required
 ```
-
 </section>

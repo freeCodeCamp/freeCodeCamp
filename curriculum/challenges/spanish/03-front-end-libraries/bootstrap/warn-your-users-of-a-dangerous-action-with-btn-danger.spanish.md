@@ -1,20 +1,16 @@
 ---
 id: bad87fee1348ce8acef08814
 title: Warn Your Users of a Dangerous Action with btn-danger
-localeTitle: Advierta a sus usuarios de una acción peligrosa con btn-danger
 challengeType: 0
+videoUrl: ''
+localeTitle: Advierta a sus usuarios de una acción peligrosa con btn-danger
 ---
 
 ## Description
-<section id='description'> 
-Bootstrap viene con varios colores predefinidos para botones. La clase <code>btn-danger</code> es el color del botón que usarás para notificar a los usuarios que el botón realiza una acción destructiva, como eliminar una foto de gato. 
-Crea un botón con el texto &quot;Eliminar&quot; y dale la clase <code>btn-danger</code> . 
-Tenga en cuenta que estos botones aún necesitan las clases <code>btn</code> y <code>btn-block</code> . 
-</section>
+<section id="description"> Bootstrap viene con varios colores predefinidos para botones. La clase <code>btn-danger</code> es el color del botón que usarás para notificar a los usuarios que el botón realiza una acción destructiva, como eliminar una foto de gato. Crea un botón con el texto &quot;Eliminar&quot; y dale la clase <code>btn-danger</code> . Tenga en cuenta que estos botones aún necesitan las clases <code>btn</code> y <code>btn-block</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -100,6 +96,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

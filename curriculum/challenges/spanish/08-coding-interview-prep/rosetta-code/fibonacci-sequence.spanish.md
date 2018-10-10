@@ -1,23 +1,16 @@
 ---
 title: Fibonacci sequence
 id: 597f24c1dda4e70f53c79c81
-localeTitle: 597f24c1dda4e70f53c79c81
 challengeType: 5
+videoUrl: ''
+localeTitle: secuencia Fibonacci
 ---
 
 ## Description
-<section id='description'> 
-<p> Escribe una función para generar el <big>n <sup>º</sup></big> número de Fibonacci. </p> 
-/// <p> El <big><sup>número</sup> n de</big> Fibonacci viene dado por: 
-/// <p> F <sub>n</sub> = F <sub>n-1</sub> + F <sub>n-2</sub> </p> 
-/// <p> Los dos primeros términos de la serie son 0, 1. </p> 
-/// <p> Por lo tanto, la serie es: 0, 1, 1, 2, 3, 5, 8, 13 ... </p> 
-/// 
-</section>
+<section id="description"><p> Escribe una función para generar el <big>n <sup>º</sup></big> número de Fibonacci. </p> /// <p> El <big><sup>número</sup> n de</big> Fibonacci viene dado por: /// </p><p> F <sub>n</sub> = F <sub>n-1</sub> + F <sub>n-2</sub> </p> /// <p> Los dos primeros términos de la serie son 0, 1. </p> /// <p> Por lo tanto, la serie es: 0, 1, 1, 2, 3, 5, 8, 13 ... </p> /// </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +42,7 @@ tests:
 function fibonacci(n) {
   // Good luck!
 }
+
 ```
 
 </div>
@@ -60,18 +54,7 @@ function fibonacci(n) {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function fibonacci(n) {
-  let a = 0, b = 1, t;
-  while (--n > 0) {
-    t = a;
-    a = b;
-    b += t;
-  }
-  return a;
-}
-
+// solution required
 ```
-
 </section>

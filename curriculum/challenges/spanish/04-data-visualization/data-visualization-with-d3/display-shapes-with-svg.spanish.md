@@ -1,25 +1,18 @@
 ---
 id: 587d7fa8367417b2b2512bcc
 title: Display Shapes with SVG
-localeTitle: Mostrar formas con SVG
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Mostrar formas con SVG
 ---
 
 ## Description
-<section id='description'> 
-El último desafío creó un elemento <code>svg</code> con un ancho y alto dado, que era visible porque tenía un <code>background-color</code> aplicado en la etiqueta de <code>style</code> . El código hizo espacio para el ancho y alto dado. 
-El siguiente paso es crear una forma para colocar en el área de <code>svg</code> . Hay una serie de formas compatibles en SVG, como rectángulos y círculos. Se utilizan para mostrar datos. Por ejemplo, una forma SVG rectangular ( <code>&lt;rect&gt;</code> ) podría crear una barra en un gráfico de barras. 
-Cuando coloca una forma en el área de <code>svg</code> , puede especificar a dónde va con las coordenadas <code>x</code> e <code>y</code> . El punto de origen de (0, 0) está en la esquina superior izquierda. Los valores positivos para <code>x</code> empujan la forma hacia la derecha, y los valores positivos para <code>y</code> empujan la forma hacia abajo desde el punto de origen. 
-Para colocar una forma en el medio del <code>svg</code> 500 (ancho) x 100 (altura) del último desafío, la coordenada <code>x</code> sería 250 y la coordenada <code>y</code> sería 50. 
-Un <code>rect</code> SVG tiene cuatro atributos. Existen las coordenadas <code>x</code> e <code>y</code> donde se coloca en el área de <code>svg</code> . También tiene una <code>height</code> y <code>width</code> para especificar el tamaño. 
-</section>
+<section id="description"> El último desafío creó un elemento <code>svg</code> con un ancho y alto dado, que era visible porque tenía un <code>background-color</code> aplicado en la etiqueta de <code>style</code> . El código hizo espacio para el ancho y alto dado. El siguiente paso es crear una forma para colocar en el área de <code>svg</code> . Hay una serie de formas compatibles en SVG, como rectángulos y círculos. Se utilizan para mostrar datos. Por ejemplo, una forma SVG rectangular ( <code>&lt;rect&gt;</code> ) podría crear una barra en un gráfico de barras. Cuando coloca una forma en el área de <code>svg</code> , puede especificar a dónde va con las coordenadas <code>x</code> e <code>y</code> . El punto de origen de (0, 0) está en la esquina superior izquierda. Los valores positivos para <code>x</code> empujan la forma hacia la derecha, y los valores positivos para <code>y</code> empujan la forma hacia abajo desde el punto de origen. Para colocar una forma en el medio del <code>svg</code> 500 (ancho) x 100 (altura) del último desafío, la coordenada <code>x</code> sería 250 y la coordenada <code>y</code> sería 50. Un <code>rect</code> SVG tiene cuatro atributos. Existen las coordenadas <code>x</code> e <code>y</code> donde se coloca en el área de <code>svg</code> . También tiene una <code>height</code> y <code>width</code> para especificar el tamaño. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue una forma <code>rect</code> a la <code>svg</code> usando <code>append()</code> , y asigne un atributo de <code>width</code> de 25 y un atributo de <code>height</code> de 100. Además, <code>rect</code> atributos <code>rect</code> <code>x</code> e <code>y</code> cada conjunto a 0. 
-</section>
+<section id="instructions"> Agregue una forma <code>rect</code> a la <code>svg</code> usando <code>append()</code> , y asigne un atributo de <code>width</code> de 25 y un atributo de <code>height</code> de 100. Además, <code>rect</code> atributos <code>rect</code> <code>x</code> e <code>y</code> cada conjunto a 0. </section>
 
 ## Tests
 <section id='tests'>
@@ -65,6 +58,7 @@ tests:
                   // Add your code above this line
   </script>
 </body>
+
 ```
 
 </div>

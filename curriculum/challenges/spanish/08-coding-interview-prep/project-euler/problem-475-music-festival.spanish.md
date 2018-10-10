@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5481000cf542c51005a
+id: 5900f5481000cf542c51005a
 challengeType: 5
 title: 'Problem 475: Music festival'
+videoUrl: ''
+localeTitle: 'Problema 475: festival de música'
 ---
 
 ## Description
-<section id='description'> 
-12n músicos participan en un festival de música. El primer día forman 3 cuartetos y practican todo el día. 
-Es un desastre. Al final del día, todos los músicos deciden que nunca volverán a aceptar tocar con ningún miembro de su cuarteto. 
-En el segundo día, forman 4n tríos, cada músico evitando a sus compañeros de cuarteto anteriores. 
-
-Sea f (12n) el número de maneras de organizar los tríos entre los 12n músicos. 
-Le dan f (12) = 576 y f (24) mod 1 000 000 007 = 509089824. 
-
-Encuentre f (600) mod 1 000 000 007. 
-</section>
+<section id="description"> Doce músicos participan en un festival de música. El primer día forman 3 cuartetos y practican todo el día. Es un desastre. Al final del día, todos los músicos deciden que nunca volverán a aceptar tocar con ningún miembro de su cuarteto. En el segundo día, forman 4n tríos, cada músico evitando a sus compañeros de cuarteto anteriores. <p> Sea f (12n) el número de maneras de organizar los tríos entre los 12n músicos. Le dan f (12) = 576 y f (24) mod 1 000 000 007 = 509089824. </p><p> Encuentre f (600) mod 1 000 000 007. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler475() {
 }
 
 euler475();
+
 ```
 
 </div>

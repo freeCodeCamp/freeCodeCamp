@@ -1,29 +1,25 @@
 ---
 id: 56bbb991ad1ed5201cd392cd
 title: Manipulate Arrays With shift()
-localeTitle: Manipular matrices con cambio ()
 challengeType: 1
+videoUrl: ''
+localeTitle: Manipular matrices con cambio ()
 ---
 
 ## Description
-<section id='description'>
-<code>pop()</code> siempre elimina el último elemento de una matriz. ¿Qué pasa si quieres eliminar el primero?
-Ahí es donde <code>.shift()</code> en <code>.shift()</code> . Funciona igual que <code>.pop()</code> , excepto que elimina el primer elemento en lugar del último.
-</section>
+<section id="description"> <code>pop()</code> siempre elimina el último elemento de una matriz. ¿Qué pasa si quieres eliminar el primero? Ahí es donde <code>.shift()</code> en <code>.shift()</code> . Funciona igual que <code>.pop()</code> , excepto que elimina el primer elemento en lugar del último. </section>
 
 ## Instructions
-<section id='instructions'>
-Use la función <code>.shift()</code> para eliminar el primer elemento de <code>myArray</code> , asignando el valor &quot;desviado&quot; a <code>removedFromMyArray</code> .
-</section>
+<section id="instructions"> Use la función <code>.shift()</code> para eliminar el primer elemento de <code>myArray</code> , asignando el valor &quot;desviado&quot; a <code>removedFromMyArray</code> . </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ' <code>myArray</code> ahora debe ser igual a <code>[[&quot;dog&quot;, 3]]</code> .'
+  - text: '<code>myArray</code> ahora debe ser igual a <code>[[&quot;dog&quot;, 3]]</code> .'
     testString: 'assert((function(d){if(d[0][0] == "dog" && d[0][1] === 3 && d[1] == undefined){return true;}else{return false;}})(myArray), "<code>myArray</code> should now equal <code>[["dog", 3]]</code>.");'
-  - text: ' <code>removedFromMyArray</code> debe contener <code>[&quot;John&quot;, 23]</code> .'
+  - text: '<code>removedFromMyArray</code> debe contener <code>[&quot;John&quot;, 23]</code> .'
     testString: 'assert((function(d){if(d[0] == "John" && d[1] === 23 && typeof removedFromMyArray === "object"){return true;}else{return false;}})(removedFromMyArray), "<code>removedFromMyArray</code> should contain <code>["John", 23]</code>.");'
 
 ```
@@ -47,7 +43,6 @@ var myArray = [["John", 23], ["dog", 3]];
 // Only change code below this line.
 var removedFromMyArray;
 
-
 ```
 
 </div>
@@ -67,12 +62,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myArray = [["John", 23], ["dog", 3]];
-
-// Only change code below this line.
-var removedFromMyArray = myArray.shift();
+// solution required
 ```
-
 </section>

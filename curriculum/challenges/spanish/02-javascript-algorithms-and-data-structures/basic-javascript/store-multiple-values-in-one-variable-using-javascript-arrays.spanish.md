@@ -1,22 +1,16 @@
 ---
 id: bd7993c9c69feddfaeb8bdef
 title: Store Multiple Values in one Variable using JavaScript Arrays
-localeTitle: Almacene múltiples valores en una variable utilizando matrices de JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Almacene múltiples valores en una variable utilizando matrices de JavaScript
 ---
 
 ## Description
-<section id='description'> 
-Con las variables de <code>array</code> JavaScript, podemos almacenar varios datos en un solo lugar. 
-Inicia una declaración de matriz con un corchete de apertura, finalícelo con un corchete de cierre y ponga una coma entre cada entrada, como esto: 
-<code>var sandwich = [&quot;peanut butter&quot;, &quot;jelly&quot;, &quot;bread&quot;]</code> . 
-</section>
+<section id="description"> Con las variables de <code>array</code> JavaScript, podemos almacenar varios datos en un solo lugar. Inicia una declaración de matriz con un corchete de apertura, finalícela con un corchete de cierre y ponga una coma entre cada entrada, como esto: <code>var sandwich = [&quot;peanut butter&quot;, &quot;jelly&quot;, &quot;bread&quot;]</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Modifique la nueva matriz <code>myArray</code> para que contenga tanto una <code>string</code> como un <code>number</code> (en ese orden). 
-<strong>Pista</strong> <br> Consulte el código de ejemplo en el editor de texto si se atasca. 
-</section>
+<section id="instructions"> Modifique la nueva matriz <code>myArray</code> para que contenga tanto una <code>string</code> como un <code>number</code> (en ese orden). <strong>Insinuación</strong> <br> Consulte el código de ejemplo en el editor de texto si se atasca. </section>
 
 ## Tests
 <section id='tests'>
@@ -65,9 +59,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myArray = ["The Answer", 42];
+// solution required
 ```
-
 </section>

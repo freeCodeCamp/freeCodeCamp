@@ -1,20 +1,17 @@
 ---
 id: ab306dbdcc907c7ddfc30830
 title: Steamroller
-localeTitle: Apisonadora
 isRequired: true
 challengeType: 5
+videoUrl: ''
+localeTitle: Apisonadora
 ---
 
 ## Description
-<section id='description'>
-Aplanar una matriz anidada. Debe tener en cuenta los diferentes niveles de anidación.
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código.
-</section>
+<section id="description"> Aplanar una matriz anidada. Debe tener en cuenta los diferentes niveles de anidación. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -22,13 +19,13 @@ Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-
 
 ```yml
 tests:
-  - text: ' <code>steamrollArray([[[&quot;a&quot;]], [[&quot;b&quot;]]])</code> debe devolver <code>[&quot;a&quot;, &quot;b&quot;]</code> .'
+  - text: '<code>steamrollArray([[[&quot;a&quot;]], [[&quot;b&quot;]]])</code> debe devolver <code>[&quot;a&quot;, &quot;b&quot;]</code> .'
     testString: 'assert.deepEqual(steamrollArray([[["a"]], [["b"]]]), ["a", "b"], "<code>steamrollArray([[["a"]], [["b"]]])</code> should return <code>["a", "b"]</code>.");'
-  - text: ' <code>steamrollArray([1, [2], [3, [[4]]]])</code> debe devolver <code>[1, 2, 3, 4]</code> .'
+  - text: '<code>steamrollArray([1, [2], [3, [[4]]]])</code> debe devolver <code>[1, 2, 3, 4]</code> .'
     testString: 'assert.deepEqual(steamrollArray([1, [2], [3, [[4]]]]), [1, 2, 3, 4], "<code>steamrollArray([1, [2], [3, [[4]]]])</code> should return <code>[1, 2, 3, 4]</code>.");'
-  - text: ' <code>steamrollArray([1, [], [3, [[4]]]])</code> debe devolver <code>[1, 3, 4]</code> .'
+  - text: '<code>steamrollArray([1, [], [3, [[4]]]])</code> debe devolver <code>[1, 3, 4]</code> .'
     testString: 'assert.deepEqual(steamrollArray([1, [], [3, [[4]]]]), [1, 3, 4], "<code>steamrollArray([1, [], [3, [[4]]]])</code> should return <code>[1, 3, 4]</code>.");'
-  - text: ' <code>steamrollArray([1, {}, [3, [[4]]]])</code> debe devolver <code>[1, {}, 3, 4]</code> .'
+  - text: '<code>steamrollArray([1, {}, [3, [[4]]]])</code> debe devolver <code>[1, {}, 3, 4]</code> .'
     testString: 'assert.deepEqual(steamrollArray([1, {}, [3, [[4]]]]), [1, {}, 3, 4], "<code>steamrollArray([1, {}, [3, [[4]]]])</code> should return <code>[1, {}, 3, 4]</code>.");'
 
 ```
@@ -47,6 +44,7 @@ function steamrollArray(arr) {
 }
 
 steamrollArray([1, [2], [3, [[4]]]]);
+
 ```
 
 </div>
@@ -58,20 +56,7 @@ steamrollArray([1, [2], [3, [[4]]]]);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function steamrollArray(arr) {
-  if (!Array.isArray(arr)) {
-    return [arr];
-  }
-  var out = [];
-  arr.forEach(function(e) {
-    steamrollArray(e).forEach(function(v) {
-      out.push(v);
-    });
-  });
-  return out;
-}
+// solution required
 ```
-
 </section>

@@ -1,24 +1,16 @@
 ---
 id: 587d78a4367417b2b2512ad2
 title: Learn about Tertiary Colors
-localeTitle: Aprende sobre los colores terciarios
 challengeType: 0
 videoUrl: ''
+localeTitle: Aprende sobre los colores terciarios
 ---
 
 ## Description
-<section id='description'> 
-Los monitores de computadora y las pantallas de dispositivos crean diferentes colores al combinar cantidades de luz roja, verde y azul. Esto se conoce como el modelo de color aditivo RGB en la teoría moderna del color. Rojo (R), verde (G) y azul (B) se denominan colores primarios. La mezcla de dos colores primarios crea los colores secundarios cian (G + B), magenta (R + B) y amarillo (R + G). Viste estos colores en el desafío de los colores complementarios. Estos colores secundarios resultan ser el complemento del color primario no utilizado en su creación, y son opuestos a ese color primario en la rueda de color. Por ejemplo, el magenta está hecho con rojo y azul, y es el complemento del verde. 
-Los colores terciarios son el resultado de combinar un color primario con uno de sus vecinos de color secundario. Por ejemplo, el rojo (primario) y el amarillo (secundario) hacen naranja. Esto agrega seis colores más a una rueda de color simple para un total de doce. 
-Existen varios métodos para seleccionar diferentes colores que dan como resultado una combinación armoniosa en el diseño. Un ejemplo que puede usar colores terciarios se denomina esquema de color de división complementaria. Este esquema comienza con un color base, luego lo combina con los dos colores adyacentes a su complemento. Los tres colores proporcionan un fuerte contraste visual en un diseño, pero son más sutiles que el uso de dos colores complementarios. 
-Aquí hay tres colores creados usando el esquema de complemento dividido: 
-<table class="table table-striped"><thead><tr><th> Color </th><th> Código hexadecimal </th></tr><thead><tbody><tr><td> naranja </td><td> # FF7D00 </td></tr><tr><td> cian </td><td> # 00FFFF </td></tr><tr><td> frambuesa </td><td> # FF007D </td></tr></tbody></table> 
-</section>
+<section id="description"> Los monitores de computadora y las pantallas de dispositivos crean diferentes colores al combinar cantidades de luz roja, verde y azul. Esto se conoce como el modelo de color aditivo RGB en la teoría moderna del color. Rojo (R), verde (G) y azul (B) se denominan colores primarios. La mezcla de dos colores primarios crea los colores secundarios cian (G + B), magenta (R + B) y amarillo (R + G). Viste estos colores en el desafío de los colores complementarios. Estos colores secundarios resultan ser el complemento del color primario no utilizado en su creación, y son opuestos a ese color primario en la rueda de color. Por ejemplo, el magenta está hecho con rojo y azul, y es el complemento del verde. Los colores terciarios son el resultado de combinar un color primario con uno de sus vecinos de color secundario. Por ejemplo, el rojo (primario) y el amarillo (secundario) hacen naranja. Esto agrega seis colores más a una rueda de color simple para un total de doce. Existen varios métodos para seleccionar diferentes colores que dan como resultado una combinación armoniosa en el diseño. Un ejemplo que puede usar colores terciarios se denomina esquema de color de división complementaria. Este esquema comienza con un color base, luego lo combina con los dos colores adyacentes a su complemento. Los tres colores proporcionan un fuerte contraste visual en un diseño, pero son más sutiles que el uso de dos colores complementarios. Aquí hay tres colores creados usando el esquema de complemento dividido: <table class="table table-striped"><thead><tr><th> Color </th><th> Código hexadecimal </th></tr></thead><thead></thead><tbody><tr><td> naranja </td><td> # FF7D00 </td></tr><tr><td> cian </td><td> # 00FFFF </td></tr><tr><td> frambuesa </td><td> # FF007D </td></tr></tbody></table></section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie la propiedad de <code>background-color</code> de las clases de <code>orange</code> , <code>cyan</code> y <code>raspberry</code> a sus respectivos colores. Asegúrese de utilizar los códigos hexadecimales, ya que la naranja y la frambuesa no son nombres de colores reconocidos por el navegador. 
-</section>
+<section id="instructions"> Cambie la propiedad de <code>background-color</code> de las clases de <code>orange</code> , <code>cyan</code> y <code>raspberry</code> a sus respectivos colores. Asegúrese de utilizar los códigos hexadecimales, ya que la naranja y la frambuesa no son nombres de colores reconocidos por el navegador. </section>
 
 ## Tests
 <section id='tests'>
@@ -69,6 +61,7 @@ tests:
 <div class="orange"></div>
 <div class="cyan"></div>
 <div class="raspberry"></div>
+
 ```
 
 </div>

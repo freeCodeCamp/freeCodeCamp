@@ -1,22 +1,16 @@
 ---
 id: 587d7fad367417b2b2512be1
 title: Handle Click Events with JavaScript using the onclick property
-localeTitle: Manejar eventos de clic con JavaScript usando la propiedad onclick
 challengeType: 6
+videoUrl: ''
+localeTitle: Manejar eventos de clic con JavaScript usando la propiedad onclick
 ---
 
 ## Description
-<section id='description'> 
-Desea que su código se ejecute solo una vez que su página haya terminado de cargarse. Para ese propósito, puede adjuntar un evento de JavaScript al documento llamado <code>DOMContentLoaded</code> . Aquí está el código que hace esto: 
-<blockquote>document.addEventListener('DOMContentLoaded',function() {<br><br>});</blockquote> 
-Puede implementar controladores de eventos que van dentro de la función <code>DOMContentLoaded</code> . Puede implementar un controlador de eventos <code>onclick</code> que se activa cuando el usuario hace clic en el elemento con id <code>getMessage</code> , agregando el siguiente código: 
-<blockquote>document.getElementById('getMessage').onclick=function(){};</blockquote> 
-</section>
+<section id="description"> Quieres que tu código se ejecute solo una vez que tu página haya terminado de cargarse. Para ese propósito, puede adjuntar un evento de JavaScript al documento llamado <code>DOMContentLoaded</code> . Aquí está el código que hace esto: <blockquote> document.addEventListener (&#39;DOMContentLoaded&#39;, function () { <br><br> }); </blockquote> Puede implementar controladores de eventos que van dentro de la función <code>DOMContentLoaded</code> . Puede implementar un controlador de eventos <code>onclick</code> que se activa cuando el usuario hace clic en el elemento con id <code>getMessage</code> , agregando el siguiente código: <blockquote> document.getElementById (&#39;getMessage&#39;). onclick = function () {}; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue un controlador de eventos de clic dentro de la función <code>DOMContentLoaded</code> para el elemento con id de <code>getMessage</code> . 
-</section>
+<section id="instructions"> Agregue un controlador de eventos de clic dentro de la función <code>DOMContentLoaded</code> para el elemento con id de <code>getMessage</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -81,6 +75,7 @@ tests:
     Get Message
   </button>
 </p>
+
 ```
 
 </div>

@@ -1,27 +1,24 @@
 ---
 id: 5a24c314108439a4d403615a
 title: Remove an Item from an Array
-localeTitle: Eliminar un artículo de una matriz
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Eliminar un artículo de una matriz
 ---
 
 ## Description
-<section id='description'>
-Tiempo para practicar la eliminación de elementos de una matriz. El operador de propagación se puede utilizar aquí también. Otros métodos útiles de JavaScript incluyen <code>slice()</code> y <code>concat()</code> .
-</section>
+<section id="description"> Es hora de practicar la eliminación de elementos de una matriz. El operador de propagación se puede utilizar aquí también. Otros métodos útiles de JavaScript incluyen <code>slice()</code> y <code>concat()</code> . </section>
 
 ## Instructions
-<section id='instructions'>
-El reductor y el creador de acciones se modificaron para eliminar un elemento de una matriz según el índice del elemento. Termine de escribir el reductor para que se devuelva una nueva matriz de estado con el elemento en el índice específico eliminado.
-</section>
+<section id="instructions"> El reductor y el creador de acciones se modificaron para eliminar un elemento de una matriz según el índice del elemento. Termine de escribir el reductor para que se devuelva una nueva matriz de estado con el elemento en el índice específico eliminado. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'La tienda Redux debería existir e inicializarse con un estado igual a <code>[0,1,2,3,4,5]</code> '
+  - text: 'La tienda Redux debería existir e inicializarse con un estado igual a <code>[0,1,2,3,4,5]</code>'
     testString: 'assert((function() { const initialState = store.getState(); return (Array.isArray(initialState) === true && DeepEqual(initialState, [0, 1, 2, 3, 4, 5])); })(), "The Redux store should exist and initialize with a state equal to <code>[0,1,2,3,4,5]</code>");'
   - text: <code>removeItem</code> y <code>immutableReducer</code> deben ser funciones.
     testString: 'assert(typeof removeItem === "function" && typeof immutableReducer === "function", "<code>removeItem</code> and <code>immutableReducer</code> both should be functions.");'
@@ -56,6 +53,7 @@ const removeItem = (index) => {
 }
 
 const store = Redux.createStore(immutableReducer);
+
 ```
 
 </div>
@@ -67,28 +65,7 @@ const store = Redux.createStore(immutableReducer);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const immutableReducer = (state = [0,1,2,3,4,5], action) => {
-  switch(action.type) {
-    case 'REMOVE_ITEM':
-      return [
-        ...state.slice(0, action.index),
-        ...state.slice(action.index + 1)
-      ];
-    default:
-      return state;
-  }
-};
-
-const removeItem = (index) => {
-  return {
-    type: 'REMOVE_ITEM',
-    index
-  }
-}
-
-const store = Redux.createStore(immutableReducer);
+// solution required
 ```
-
 </section>

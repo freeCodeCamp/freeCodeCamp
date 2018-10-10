@@ -1,23 +1,16 @@
 ---
 id: 587d78ad367417b2b2512afa
 title: Use the flex-wrap Property to Wrap a Row or Column
-localeTitle: Utilice la propiedad flex-wrap para envolver una fila o columna
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice la propiedad flex-wrap para envolver una fila o columna
 ---
 
 ## Description
-<section id='description'>
-CSS flexbox tiene una función para dividir un elemento flexible en varias filas (o columnas). Por defecto, un contenedor flexible encajará todos los elementos flexibles juntos. Por ejemplo, una fila estará en una sola línea.
-Sin embargo, al usar la propiedad <code>flex-wrap</code> , le dice a CSS que envuelva los elementos. Esto significa que los elementos adicionales se mueven a una nueva fila o columna. El punto de ruptura de donde ocurre la envoltura depende del tamaño de los artículos y del tamaño del contenedor.
-CSS también tiene opciones para la dirección de la envoltura:
-<ul><li> <code>nowrap</code> : esta es la configuración predeterminada y no envuelve los elementos. </li><li> <code>wrap</code> : envuelve los elementos de izquierda a derecha si están en una fila, o de arriba a abajo si están en una columna. </li><li> <code>wrap-reverse</code> : envuelve los elementos de abajo a arriba si están en una fila, o de derecha a izquierda si están en una columna. </li></ul>
-</section>
+<section id="description"> CSS flexbox tiene una función para dividir un elemento flexible en varias filas (o columnas). Por defecto, un contenedor flexible encajará todos los elementos flexibles juntos. Por ejemplo, una fila estará en una sola línea. Sin embargo, al usar la propiedad <code>flex-wrap</code> , le dice a CSS que envuelva los elementos. Esto significa que los elementos adicionales se mueven a una nueva fila o columna. El punto de ruptura de donde ocurre la envoltura depende del tamaño de los artículos y del tamaño del contenedor. CSS también tiene opciones para la dirección de la envoltura: <ul><li> <code>nowrap</code> : esta es la configuración predeterminada y no envuelve los elementos. </li><li> <code>wrap</code> : envuelve los elementos de izquierda a derecha si están en una fila, o de arriba a abajo si están en una columna. </li><li> <code>wrap-reverse</code> : envuelve los elementos de abajo a arriba si están en una fila, o de derecha a izquierda si están en una columna. </li></ul></section>
 
 ## Instructions
-<section id='instructions'>
-El diseño actual tiene demasiados cuadros para una fila. Agregue la propiedad CSS <code>flex-wrap</code> al elemento <code>#box-container</code> y asígnele un valor de wrap.
-</section>
+<section id="instructions"> El diseño actual tiene demasiados cuadros para una fila. Agregue la propiedad CSS <code>flex-wrap</code> al elemento <code>#box-container</code> y asígnele un valor de wrap. </section>
 
 ## Tests
 <section id='tests'>
@@ -85,6 +78,7 @@ tests:
   <div id="box-5"></div>
   <div id="box-6"></div>
 </div>
+
 ```
 
 </div>

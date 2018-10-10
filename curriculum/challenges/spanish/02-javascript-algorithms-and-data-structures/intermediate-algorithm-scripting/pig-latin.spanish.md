@@ -1,23 +1,17 @@
 ---
 id: aa7697ea2477d1316795783b
 title: Pig Latin
-localeTitle: Jerga
 isRequired: true
 challengeType: 5
+videoUrl: ''
+localeTitle: Jerga
 ---
 
 ## Description
-<section id='description'> 
-Traducir la cadena proporcionada a cerdo latino. 
-<a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">Pig Latin</a> toma la primera consonante (o agrupamiento de consonantes) de una palabra en inglés, la mueve al final de la palabra y los sufijos &quot;ay&quot;. 
-Si una palabra comienza con una vocal, simplemente agrega &quot;camino&quot; al final. 
-Se garantiza que las cadenas de entrada son palabras en inglés en minúsculas. 
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. 
-</section>
+<section id="description"> Traducir la cadena proporcionada a cerdo latino. <a href="http://en.wikipedia.org/wiki/Pig_Latin" target="_blank">Pig Latin</a> toma la primera consonante (o grupo de consonantes) de una palabra en inglés, la mueve al final de la palabra y los sufijos &quot;ay&quot;. Si una palabra comienza con una vocal, simplemente agrega &quot;camino&quot; al final. Las cadenas de entrada están garantizadas para ser palabras en inglés en minúsculas. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -55,6 +49,7 @@ function translatePigLatin(str) {
 }
 
 translatePigLatin("consonant");
+
 ```
 
 </div>
@@ -66,21 +61,7 @@ translatePigLatin("consonant");
 ## Solution
 <section id='solution'>
 
-
 ```js
-function translatePigLatin(str) {
-  if (isVowel(str.charAt(0))) return str + "way";
-  var front = [];
-  str = str.split('');
-  while (str.length && !isVowel(str[0])) {
-    front.push(str.shift());
-  }
-  return [].concat(str, front).join('') + 'ay';
-}
-
-function isVowel(c) {
-  return ['a', 'e', 'i', 'o', 'u'].indexOf(c.toLowerCase()) !== -1;
-}
+// solution required
 ```
-
 </section>

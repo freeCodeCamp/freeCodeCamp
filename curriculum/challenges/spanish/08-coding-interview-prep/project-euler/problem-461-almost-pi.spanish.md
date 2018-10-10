@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f53a1000cf542c51004c
+id: 5900f53a1000cf542c51004c
 challengeType: 5
 title: 'Problem 461: Almost Pi'
+videoUrl: ''
+localeTitle: 'Problema 461: Casi Pi'
 ---
 
 ## Description
-<section id='description'> 
-Sea fn (k) = ek / n - 1, para todos los enteros no negativos k. 
-Notablemente, f200 (6) + f200 (75) + f200 (89) + f200 (226) = 3.141592644529… ≈ π. 
-De hecho, es la mejor aproximación de π de la forma fn (a) + fn (b) + fn (c) + fn (d) para n = 200. 
-Sea g (n) = a2 + b2 + c2 + d 2 para a, b, c, d que minimizan el error: | fn (a) + fn (b) + fn (c) + fn (d) - π | 
-(donde | x | denota el valor absoluto de x). 
-Le dan g (200) = 62 + 752 + 892 + 2262 = 64658. 
-Encuentre g (10000). 
-</section>
+undefined
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +37,7 @@ function euler461() {
 }
 
 euler461();
+
 ```
 
 </div>

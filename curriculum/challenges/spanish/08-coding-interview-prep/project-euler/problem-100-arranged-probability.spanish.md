@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3d01000cf542c50fee3
+id: 5900f3d01000cf542c50fee3
 challengeType: 5
 title: 'Problem 100: Arranged probability'
+videoUrl: ''
+localeTitle: 'Problema 100: probabilidad dispuesta'
 ---
 
 ## Description
-<section id='description'> 
-Si una caja contiene veintiún discos de colores, compuestos por quince discos azules y seis discos rojos, y se tomaron dos discos al azar, se puede ver que la probabilidad de tomar dos discos azules, P (BB) = (15 / 21) × (14/20) = 1/2. 
-El siguiente acuerdo de este tipo, para el que hay exactamente un 50% de probabilidades de tomar dos discos azules al azar, es una caja que contiene ochenta y cinco discos azules y treinta y cinco discos rojos. 
-Al encontrar el primer arreglo que contenga más de 1012 = 1,000,000,000,000 de discos en total, determine la cantidad de discos azules que contendría la caja. 
-</section>
+<section id="description"> Si una caja contiene veintiún discos de colores, compuestos por quince discos azules y seis discos rojos, y se tomaron dos discos al azar, se puede ver que la probabilidad de tomar dos discos azules, P (BB) = (15/21 ) × (14/20) = 1/2. El siguiente acuerdo de este tipo, para el que hay exactamente un 50% de probabilidades de tomar dos discos azules al azar, es una caja que contiene ochenta y cinco discos azules y treinta y cinco discos rojos. Al encontrar el primer arreglo que contenga más de 1012 = 1,000,000,000,000 de discos en total, determine la cantidad de discos azules que contendría la caja. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler100() {
 }
 
 euler100();
+
 ```
 
 </div>

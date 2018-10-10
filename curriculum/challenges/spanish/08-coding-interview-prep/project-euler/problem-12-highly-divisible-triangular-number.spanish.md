@@ -1,29 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3781000cf542c50fe8b
+id: 5900f3781000cf542c50fe8b
 challengeType: 5
 title: 'Problem 12: Highly divisible triangular number'
+videoUrl: ''
+localeTitle: 'Problema 12: Número triangular altamente divisible'
 ---
 
 ## Description
-<section id='description'> 
-La secuencia de los números de triángulos se genera al sumar los números naturales. Entonces, el número del séptimo triángulo sería 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. Los primeros diez términos serían: 
-<div style='text-align: center;'> 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ... </div> 
-Listemos los factores de los primeros siete números de triángulos: 
-<div style='padding-left: 4em;'> <b>1:</b> 1 </div> 
-<div style='padding-left: 4em;'> <b>3:</b> 1, 3 </div> 
-<div style='padding-left: 4em;'> <b>6:</b> 1, 2, 3, 6 </div> 
-<div style='padding-left: 4em;'> <b>10:</b> 1, 2, 5, 10 </div> 
-<div style='padding-left: 4em;'> <b>15:</b> 1, 3, 5, 15 </div> 
-<div style='padding-left: 4em;'> <b>21:</b> 1, 3, 7, 21 </div> 
-<div style='padding-left: 4em;'> <b>28:</b> 1, 2, 4, 7, 14, 28 </div> 
-Podemos ver que 28 es el primer número de triángulo que tiene más de cinco divisores. 
-¿Cuál es el valor del primer número de triángulo que tiene más de <code>n</code> divisores? 
-</section>
+<section id="description"> La secuencia de los números de triángulos se genera al sumar los números naturales. Entonces, el número del séptimo triángulo sería 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. Los primeros diez términos serían: <div style="text-align: center;"> 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ... </div> Enlistemos los factores de los primeros siete números de triángulos: <div style="padding-left: 4em;"> <b>1:</b> 1 </div><div style="padding-left: 4em;"> <b>3:</b> 1, 3 </div><div style="padding-left: 4em;"> <b>6:</b> 1, 2, 3, 6 </div><div style="padding-left: 4em;"> <b>10:</b> 1, 2, 5, 10 </div><div style="padding-left: 4em;"> <b>15:</b> 1, 3, 5, 15 </div><div style="padding-left: 4em;"> <b>21:</b> 1, 3, 7, 21 </div><div style="padding-left: 4em;"> <b>28:</b> 1, 2, 4, 7, 14, 28 </div> Podemos ver que 28 es el primer número de triángulo que tiene más de cinco divisores. ¿Cuál es el valor del primer número de triángulo que tiene más de <code>n</code> divisores? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -58,6 +45,7 @@ function divisibleTriangleNumber(n) {
 }
 
 divisibleTriangleNumber(500);
+
 ```
 
 </div>
@@ -69,38 +57,7 @@ divisibleTriangleNumber(500);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function divisibleTriangleNumber(n) {
-  let counter = 1;
-  let triangleNumber = counter++;
-
-  function getFactors(num) {
-    let factors = [];
-
-    let possibleFactor = 1;
-    let sqrt = Math.sqrt(num);
-
-    while (possibleFactor <= sqrt) {
-      if (num % possibleFactor == 0) {
-        factors.push(possibleFactor);
-        var otherPossibleFactor = num / possibleFactor;
-        if (otherPossibleFactor > possibleFactor) {
-          factors.push(otherPossibleFactor);
-        }
-      }
-      possibleFactor++;
-    }
-
-    return factors;
-  }
-
-  while (getFactors(triangleNumber).length < n) {
-    triangleNumber += counter++;
-  }
-  console.log(triangleNumber)
-  return triangleNumber;
-}
+// solution required
 ```
-
 </section>

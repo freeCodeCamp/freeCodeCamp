@@ -1,32 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f40d1000cf542c50ff20
+id: 5900f40d1000cf542c50ff20
 challengeType: 5
 title: 'Problem 161: Triominoes'
+videoUrl: ''
+localeTitle: 'Problema 161: Triominoes'
 ---
 
 ## Description
-<section id='description'> 
-Un triomino es una forma que consiste en tres cuadrados unidos por los bordes. 
-Hay dos formas básicas: 
-
-
-
-Si se tienen en cuenta todas las orientaciones posibles, hay seis: 
-
-
-
-Cualquier cuadrícula n por m para la cual nxm es divisible por 3 se puede combinar con triominoes. 
-Si consideramos las inclinaciones que pueden obtenerse por reflexión o rotación de otro mosaico, hay 41 formas diferentes de cuadrícula de 2 por 9 con triominoes: 
-
-
-
-¿De cuántas maneras se puede combinar una cuadrícula de 9 por 12 De esta manera por los triominos? 
-</section>
+<section id="description"> Un triomino es una forma que consiste en tres cuadrados unidos por los bordes. Hay dos formas básicas: <p> Si se toman en cuenta todas las orientaciones posibles, hay seis: </p><p> Cualquier cuadrícula de n por m para la cual nxm es divisible por 3 se puede combinar con triominoes. Si consideramos los mosaicos que se pueden obtener por reflexión o rotación de otro mosaico, hay 41 maneras en que una cuadrícula de 2 por 9 se puede combinar con triominoes: </p><p> ¿De cuántas maneras puede una cuadrícula de 9 por 12 estar en mosaico de esta manera por las triominoes? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -53,6 +37,7 @@ function euler161() {
 }
 
 euler161();
+
 ```
 
 </div>

@@ -1,27 +1,16 @@
 ---
 id: bad87fee1348cd8acef08812
 title: Create a Block Element Bootstrap Button
-localeTitle: Crear un botón de arranque Bootstrap Button
 challengeType: 0
+videoUrl: ''
+localeTitle: Crear un botón de arranque Bootstrap Button
 ---
 
 ## Description
-<section id='description'> 
-Normalmente, los elementos de sus <code>button</code> con las clases <code>btn</code> y <code>btn-default</code> son tan anchos como el texto que contienen. Por ejemplo: 
-<code>&lt;button class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;</code> 
-Este botón solo será tan ancho como la palabra &quot;Enviar&quot;. 
-<button class='btn btn-default'>Enviar</button> 
-Al convertirlos en elementos de bloque con la clase adicional de <code>btn-block</code> , su botón se expandirá para llenar todo el espacio horizontal de su página y cualquier elemento que se siga fluirá hacia una &quot;nueva línea&quot; debajo del bloque. 
-<code>&lt;button class=&quot;btn btn-default btn-block&quot;&gt;Submit&lt;/button&gt;</code> 
-Este botón ocuparía el 100% del ancho disponible. 
-<button class='btn btn-default btn-block'>Enviar</button> 
-Tenga en cuenta que estos botones todavía necesitan la clase <code>btn</code> . 
-Agregue la clase <code>btn-block</code> de Bootstrap a su botón Bootstrap. 
-</section>
+<section id="description"> Normalmente, los elementos de los <code>button</code> con las clases <code>btn</code> y <code>btn-default</code> son solo tan anchos como el texto que contienen. Por ejemplo: <code>&lt;button class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;</code> Este botón solo será tan ancho como la palabra &quot;Enviar&quot;. <button class="btn btn-default">Enviar</button> Haciéndolos elementos de bloque con la clase adicional de <code>btn-block</code> , su botón se estirará para llenar todo el espacio horizontal de su página y cualquier elemento que lo siga fluirá hacia una &quot;nueva línea&quot; debajo del bloque. <code>&lt;button class=&quot;btn btn-default btn-block&quot;&gt;Submit&lt;/button&gt;</code> Este botón ocuparía el 100% del ancho disponible. <button class="btn btn-default btn-block">Enviar</button> Tenga en cuenta que estos botones todavía necesitan la clase <code>btn</code> . Agregue la clase <code>btn-block</code> de Bootstrap a su botón Bootstrap. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -104,6 +93,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

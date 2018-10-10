@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f44b1000cf542c50ff5e
+id: 5900f44b1000cf542c50ff5e
 challengeType: 5
 title: 'Problem 223: Almost right-angled triangles I'
+videoUrl: ''
+localeTitle: 'Problema 223: triángulos casi rectos I'
 ---
 
 ## Description
-<section id='description'> 
-Llamemos a un triángulo de lados enteros con lados a ≤ b ≤ c apenas agudo si los lados satisfacen a2 + b2 = c2 + 1. 
-
-¿Cuántos triángulos apenas agudos tienen un perímetro ≤ 25,000,000? 
-</section>
+<section id="description"> Llamemos a un triángulo de lados enteros con lados a ≤ b ≤ c apenas agudos si los lados satisfacen a2 + b2 = c2 + 1. <p> ¿Cuántos triángulos apenas agudos hay con un perímetro ≤ 25,000,000? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler223() {
 }
 
 euler223();
+
 ```
 
 </div>

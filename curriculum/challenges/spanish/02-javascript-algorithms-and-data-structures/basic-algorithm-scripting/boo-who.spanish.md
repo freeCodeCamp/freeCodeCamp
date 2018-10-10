@@ -1,21 +1,17 @@
 ---
 id: a77dbc43c33f39daa4429b4f
 title: Boo who
-localeTitle: Boo quien
 isRequired: true
 challengeType: 5
+videoUrl: ''
+localeTitle: Boo quien
 ---
 
 ## Description
-<section id='description'>
-Compruebe si un valor está clasificado como un primitivo booleano. Devuelve verdadero o falso.
-Los primitivos booleanos son verdaderos y falsos.
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código.
-</section>
+<section id="description"> Compruebe si un valor está clasificado como un primitivo booleano. Devuelve verdadero o falso. Los primitivos booleanos son verdaderos y falsos. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -27,11 +23,11 @@ tests:
     testString: 'assert.strictEqual(booWho(true), true, "<code>booWho(true)</code> should return true.");'
   - text: <code>booWho(false)</code> debe devolver verdadero.
     testString: 'assert.strictEqual(booWho(false), true, "<code>booWho(false)</code> should return true.");'
-  - text: ' <code>booWho([1, 2, 3])</code> debe devolver falso.'
+  - text: '<code>booWho([1, 2, 3])</code> debe devolver falso.'
     testString: 'assert.strictEqual(booWho([1, 2, 3]), false, "<code>booWho([1, 2, 3])</code> should return false.");'
-  - text: ' <code>booWho([].slice)</code> debe devolver falso.'
+  - text: '<code>booWho([].slice)</code> debe devolver falso.'
     testString: 'assert.strictEqual(booWho([].slice), false, "<code>booWho([].slice)</code> should return false.");'
-  - text: ' <code>booWho({ &quot;a&quot;: 1 })</code> debe devolver falso.'
+  - text: '<code>booWho({ &quot;a&quot;: 1 })</code> debe devolver falso.'
     testString: 'assert.strictEqual(booWho({ "a": 1 }), false, "<code>booWho({ "a": 1 })</code> should return false.");'
   - text: <code>booWho(1)</code> debe devolver falso.
     testString: 'assert.strictEqual(booWho(1), false, "<code>booWho(1)</code> should return false.");'
@@ -60,6 +56,7 @@ function booWho(bool) {
 }
 
 booWho(null);
+
 ```
 
 </div>
@@ -71,13 +68,7 @@ booWho(null);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function booWho(bool) {
-  return typeof bool === "boolean";
-}
-
-booWho(null);
+// solution required
 ```
-
 </section>

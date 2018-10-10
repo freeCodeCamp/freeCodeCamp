@@ -1,28 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4ed1000cf542c50ffff
+id: 5900f4ed1000cf542c50ffff
 challengeType: 5
 title: 'Problem 383: Divisibility comparison between factorials'
+videoUrl: ''
+localeTitle: 'Problema 383: comparación de divisibilidad entre factoriales'
 ---
 
 ## Description
-<section id='description'> 
-Sea f5 (n) el entero más grande x para el que 5x divide n. 
-Por ejemplo, f5 (625000) = 7. 
-
-
-
-Sea T5 (n) el número de enteros i que satisfacen f5 ((2 · i-1)!) &lt;2 · f5 (i!) Y 1 ≤ i ≤ n. 
-Se puede verificar que T5 (103) = 68 y T5 (109) = 2408210. 
-
-
-
-Encuentre T5 (1018). 
-</section>
+<section id="description"> Sea f5 (n) el mayor entero x para el cual 5x divide n. Por ejemplo, f5 (625000) = 7. <p> Sea T5 (n) el número de enteros i que satisfacen f5 ((2 · i-1)!) &lt;2 · f5 (i!) Y 1 ≤ i ≤ n. Se puede verificar que T5 (103) = 68 y T5 (109) = 2408210. </p><p> Encuentra T5 (1018). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +37,7 @@ function euler383() {
 }
 
 euler383();
+
 ```
 
 </div>

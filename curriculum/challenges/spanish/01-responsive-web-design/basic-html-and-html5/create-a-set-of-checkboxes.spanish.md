@@ -1,26 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08835
 title: Create a Set of Checkboxes
-localeTitle: Crear un conjunto de casillas de verificación
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear un conjunto de casillas de verificación
 ---
 
 ## Description
-<section id='description'> 
-formularios suelen utilizar <code>checkboxes</code> de <code>checkboxes</code> para preguntas que pueden tener más de una respuesta. 
-casillas de verificación son un tipo de <code>input</code> 
-Cada una de sus casillas de verificación se puede anidar dentro de su propio elemento de <code>label</code> . Al ajustar un elemento de <code>input</code> dentro de un elemento de <code>label</code> , asociará automáticamente la entrada de la casilla de verificación con el elemento de etiqueta que lo rodea. 
-Todas las entradas de las casillas de verificación relacionadas deben tener el mismo atributo de <code>name</code> . 
-Se considera una buena práctica definir explícitamente la relación entre una <code>input</code> casilla de verificación y su <code>label</code> correspondiente estableciendo el atributo <code>for</code> en el elemento de <code>label</code> para que coincida con el atributo <code>id</code> del elemento de <code>input</code> asociado. 
-Aquí hay un ejemplo de una casilla de verificación: 
-<code>&lt;label for=&quot;loving&quot;&gt;&lt;input id=&quot;loving&quot; type=&quot;checkbox&quot; name=&quot;personality&quot;&gt; Loving&lt;/label&gt;</code> 
-</section>
+<section id="description"> Los formularios suelen utilizar <code>checkboxes</code> de <code>checkboxes</code> para preguntas que pueden tener más de una respuesta. Las casillas de verificación son un tipo de <code>input</code> Cada una de sus casillas de verificación se puede anidar dentro de su propio elemento de <code>label</code> . Al ajustar un elemento de <code>input</code> dentro de un elemento de <code>label</code> , asociará automáticamente la entrada de la casilla de verificación con el elemento de etiqueta que lo rodea. Todas las entradas de la casilla de verificación relacionadas deben tener el mismo atributo de <code>name</code> . Se considera una buena práctica definir explícitamente la relación entre una <code>input</code> casilla de verificación y su <code>label</code> correspondiente estableciendo el atributo <code>for</code> en el elemento de <code>label</code> para que coincida con el atributo <code>id</code> del elemento de <code>input</code> asociado. Aquí hay un ejemplo de una casilla de verificación: <code>&lt;label for=&quot;loving&quot;&gt;&lt;input id=&quot;loving&quot; type=&quot;checkbox&quot; name=&quot;personality&quot;&gt; Loving&lt;/label&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue a su formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe estar anidada dentro de su propio elemento de <code>label</code> . Los tres deben compartir el atributo de <code>name</code> de la <code>personality</code> . 
-</section>
+<section id="instructions"> Agregue a su formulario un conjunto de tres casillas de verificación. Cada casilla de verificación debe estar anidada dentro de su propio elemento de <code>label</code> . Los tres deben compartir el atributo de <code>name</code> de la <code>personality</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -29,11 +19,11 @@ Agregue a su formulario un conjunto de tres casillas de verificación. Cada casi
 tests:
   - text: Su página debe tener tres elementos de casilla de verificación.
     testString: 'assert($("input[type="checkbox"]").length > 2, "Your page should have three checkbox elements.");'
-  - text: Cada uno de sus tres elementos de casilla de verificación debe estar anidado en su propio elemento <code clase = "notranslate"> etiqueta </code>.
+  - text: Cada uno de los tres elementos de la casilla de verificación debe estar anidado en su propio elemento de <code>label</code> .
     testString: 'assert($("label > input[type="checkbox"]:only-child").length > 2, "Each of your three checkbox elements should be nested in its own <code>label</code> element.");'
-  - text: Asegúrese de que cada uno de sus elementos <code class = "notranslate"> label </code> tenga una etiqueta de cierre.
+  - text: Asegúrese de que cada uno de los elementos de su <code>label</code> tenga una etiqueta de cierre.
     testString: 'assert(code.match(/<\/label>/g) && code.match(/<label/g) && code.match(/<\/label>/g).length === code.match(/<label/g).length, "Make sure each of your <code>label</code> elements has a closing tag.");'
-  - text: Dé a sus casillas de verificación el atributo <code clase = "notranslate"> nombre </code> de <code clase = "notranslate"> personalidad </code>.
+  - text: Dale a tus casillas el <code>name</code> atributo de <code>personality</code> .
     testString: 'assert($("label > input[type="checkbox"]").filter("[name="personality"]").length > 2, "Give your checkboxes the <code>name</code> attribute of <code>personality</code>.");'
 
 ```
@@ -71,6 +61,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

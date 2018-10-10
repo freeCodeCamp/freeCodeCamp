@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036180
 title: Optimize Re-Renders with shouldComponentUpdate
-localeTitle: Optimizar Re-Renders con shouldComponentUpdate
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Optimizar Re-Renders con shouldComponentUpdate
 ---
 
 ## Description
-<section id='description'> 
-Hasta ahora, si algún componente recibe un nuevo <code>state</code> o nuevos <code>props</code> , se vuelve a rendir a sí mismo ya todos sus hijos. Esto suele estar bien. Pero React proporciona un método de ciclo de vida al que puede llamar cuando los componentes secundarios reciben un nuevo <code>state</code> o <code>props</code> , y declaran específicamente si los componentes deberían actualizarse o no. El método es <code>shouldComponentUpdate()</code> , y toma <code>nextProps</code> y <code>nextState</code> como parámetros. 
-Este método es una forma útil de optimizar el rendimiento. Por ejemplo, el comportamiento predeterminado es que su componente se vuelve a procesar cuando recibe nuevos <code>props</code> , incluso si los <code>props</code> no han cambiado. Puedes usar <code>shouldComponentUpdate()</code> para evitar esto al comparar los <code>props</code> . El método debe devolver un valor <code>boolean</code> que indique a React si actualizar o no el componente. Puede comparar los props actuales ( <code>this.props</code> ) con los props siguientes ( <code>nextProps</code> ) para determinar si necesita actualizar o no, y devolver <code>true</code> o <code>false</code> consecuencia. 
-</section>
+<section id="description"> Hasta ahora, si algún componente recibe un nuevo <code>state</code> o nuevos <code>props</code> , se vuelve a representar a sí mismo ya todos sus hijos. Esto suele estar bien. Pero React proporciona un método de ciclo de vida al que puede llamar cuando los componentes secundarios reciben un nuevo <code>state</code> o <code>props</code> , y declaran específicamente si los componentes deberían actualizarse o no. El método es <code>shouldComponentUpdate()</code> , y toma <code>nextProps</code> y <code>nextState</code> como parámetros. Este método es una forma útil de optimizar el rendimiento. Por ejemplo, el comportamiento predeterminado es que su componente se vuelve a procesar cuando recibe nuevos <code>props</code> , incluso si los <code>props</code> no han cambiado. Puedes usar <code>shouldComponentUpdate()</code> para evitar esto al comparar los <code>props</code> . El método debe devolver un valor <code>boolean</code> que indique a React si actualizar o no el componente. Puede comparar los props actuales ( <code>this.props</code> ) con los props siguientes ( <code>nextProps</code> ) para determinar si necesita actualizar o no, y devolver <code>true</code> o <code>false</code> consecuencia. </section>
 
 ## Instructions
-<section id='instructions'> 
-El método <code>shouldComponentUpdate()</code> se agrega en un componente llamado <code>OnlyEvens</code> . Actualmente, este método devuelve <code>true</code> por lo que <code>OnlyEvens</code> vuelve a representar cada vez que recibe nuevos <code>props</code> . Modifique el método para que <code>OnlyEvens</code> solo se actualice si el <code>value</code> de sus nuevos accesorios es par. Haga clic en el botón <code>Add</code> y observe el orden de los eventos en la consola de su navegador a medida que se activan los otros ganchos del ciclo de vida. 
-</section>
+<section id="instructions"> El método <code>shouldComponentUpdate()</code> se agrega en un componente llamado <code>OnlyEvens</code> . Actualmente, este método devuelve <code>true</code> por lo que <code>OnlyEvens</code> vuelve a representar cada vez que recibe nuevos <code>props</code> . Modifique el método para que <code>OnlyEvens</code> solo se actualice si el <code>value</code> de sus nuevos accesorios es par. Haga clic en el botón <code>Add</code> y observe el orden de los eventos en la consola de su navegador a medida que se activan los otros ganchos del ciclo de vida. </section>
 
 ## Tests
 <section id='tests'>
@@ -84,6 +80,7 @@ class Controller extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -103,51 +100,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-class OnlyEvens extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('Should I update?');
-    // change code below this line
-    return nextProps.value % 2 === 0;
-    // change code above this line
-  }
-  componentWillReceiveProps(nextProps) {
-    console.log('Receiving new props...');
-  }
-  componentDidUpdate() {
-    console.log('Component re-rendered.');
-  }
-  render() {
-    return <h1>{this.props.value}</h1>
-  }
-};
-
-class Controller extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: 0
-    };
-  this.addValue = this.addValue.bind(this);
-  }
-  addValue() {
-    this.setState({
-      value: this.state.value + 1
-    });
-  }
-  render() {
-    return (
-      <div>
-        <button onClick={this.addValue}>Add</button>
-        <OnlyEvens value={this.state.value}/>
-      </div>
-    );
-  }
-};
+// solution required
 ```
-
 </section>

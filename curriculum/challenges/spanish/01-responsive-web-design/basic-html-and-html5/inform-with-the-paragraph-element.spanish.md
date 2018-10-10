@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08801
 title: Inform with the Paragraph Element
-localeTitle: Informar con el elemento de párrafo
 challengeType: 0
 videoUrl: ''
+localeTitle: Informar con el elemento de párrafo
 ---
 
 ## Description
-<section id='description'> 
-elementos 
-<code>p</code> son el elemento preferido para el texto de párrafo en sitios web. <code>p</code> es la abreviatura de &quot;párrafo&quot;. 
-Puedes crear un elemento de párrafo como este: 
-<code>&lt;p&gt;I&#39;m ap tag!&lt;/p&gt;</code> 
-</section>
+<section id="description"> <code>p</code> elementos <code>p</code> son el elemento preferido para el texto de párrafo en sitios web. <code>p</code> es la abreviatura de &quot;párrafo&quot;. Puedes crear un elemento de párrafo como este: <code>&lt;p&gt;I&#39;m ap tag!&lt;/p&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Crea un elemento <code>p</code> debajo de tu elemento <code>h2</code> y dale el texto &quot;Hola párrafo&quot;. 
-</section>
+<section id="instructions"> Crea un elemento <code>p</code> debajo de tu elemento <code>h2</code> y dale el texto &quot;Hola Párrafo&quot;. </section>
 
 ## Tests
 <section id='tests'>
@@ -43,6 +36,7 @@ tests:
 ```html
 <h1>Hello World</h1>
 <h2>CatPhotoApp</h2>
+
 ```
 
 </div>

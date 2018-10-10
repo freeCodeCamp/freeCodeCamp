@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036151
 title: Use a Switch Statement to Handle Multiple Actions
-localeTitle: Use una declaración de cambio para manejar múltiples acciones
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Use una declaración de cambio para manejar múltiples acciones
 ---
 
 ## Description
-<section id='description'> 
-Puede decirle a la tienda Redux cómo manejar múltiples tipos de acciones. Digamos que está administrando la autenticación de usuarios en su tienda Redux. Desea tener una representación de estado para cuando los usuarios inician sesión y cuando se desconectan. Usted representa esto con un solo objeto de estado con la propiedad <code>authenticated</code> . También necesita creadores de acciones que creen acciones correspondientes al inicio de sesión del usuario y al cierre de sesión del usuario, junto con los propios objetos de acción. 
-</section>
+<section id="description"> Puede decirle a la tienda Redux cómo manejar múltiples tipos de acciones. Digamos que está administrando la autenticación de usuarios en su tienda Redux. Desea tener una representación de estado para cuando los usuarios inician sesión y cuando se desconectan. Usted representa esto con un solo objeto de estado con la propiedad <code>authenticated</code> . También necesita creadores de acciones que creen acciones correspondientes al inicio de sesión del usuario y al cierre de sesión del usuario, junto con los propios objetos de acción. </section>
 
 ## Instructions
-<section id='instructions'> 
-El editor de código tiene una tienda, acciones y creadores de acción configurados para usted. Complete la función del <code>reducer</code> para manejar múltiples acciones de autenticación. Use una declaración de <code>switch</code> JavaScript en el <code>reducer</code> para responder a diferentes eventos de acción. Este es un patrón estándar en la escritura de reductores de Redux. La instrucción de cambio debe cambiar sobre <code>action.type</code> y devolver el estado de autenticación apropiado. 
-<strong>Nota:</strong> En este punto, no se preocupe por la inmutabilidad del estado, ya que es pequeño y simple en este ejemplo. Para cada acción, puede devolver un nuevo objeto, por ejemplo, <code>{authenticated: true}</code> . Además, no olvide escribir un caso <code>default</code> en su declaración de cambio que devuelva el <code>state</code> actual. Esto es importante porque una vez que su aplicación tiene varios reductores, todos se ejecutan cada vez que se realiza un envío de acción, incluso cuando la acción no está relacionada con ese reductor. En tal caso, desea asegurarse de que devuelve el <code>state</code> actual. 
-</section>
+<section id="instructions"> El editor de código tiene una tienda, acciones y creadores de acción configurados para usted. Complete la función del <code>reducer</code> para manejar múltiples acciones de autenticación. Use una declaración de <code>switch</code> JavaScript en el <code>reducer</code> para responder a diferentes eventos de acción. Este es un patrón estándar en la escritura de reductores de Redux. La instrucción de cambio debe cambiar sobre <code>action.type</code> y devolver el estado de autenticación apropiado. <strong>Nota:</strong> En este punto, no se preocupe por la inmutabilidad del estado, ya que es pequeño y simple en este ejemplo. Para cada acción, puede devolver un nuevo objeto, por ejemplo, <code>{authenticated: true}</code> . Además, no olvide escribir un caso <code>default</code> en su declaración de cambio que devuelva el <code>state</code> actual. Esto es importante porque una vez que su aplicación tiene varios reductores, todos se ejecutan cada vez que se realiza un envío de acción, incluso cuando la acción no está relacionada con ese reductor. En tal caso, desea asegurarse de que devuelve el <code>state</code> actual. </section>
 
 ## Tests
 <section id='tests'>
@@ -68,6 +64,7 @@ const logoutUser = () => {
     type: 'LOGOUT'
   }
 };
+
 ```
 
 </div>
@@ -79,46 +76,7 @@ const logoutUser = () => {
 ## Solution
 <section id='solution'>
 
-
 ```js
-const defaultState = {
-  authenticated: false
-};
-
-const authReducer = (state = defaultState, action) => {
-
-  switch (action.type) {
-
-    case 'LOGIN':
-      return {
-        authenticated: true
-      }
-
-    case 'LOGOUT':
-      return {
-        authenticated: false
-      }
-
-    default:
-      return state;
-
-  }
-
-};
-
-const store = Redux.createStore(authReducer);
-
-const loginUser = () => {
-  return {
-    type: 'LOGIN'
-  }
-};
-
-const logoutUser = () => {
-  return {
-    type: 'LOGOUT'
-  }
-};
+// solution required
 ```
-
 </section>

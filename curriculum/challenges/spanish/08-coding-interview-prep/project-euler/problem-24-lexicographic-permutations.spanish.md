@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3841000cf542c50fe97
+id: 5900f3841000cf542c50fe97
 challengeType: 5
 title: 'Problem 24: Lexicographic permutations'
+videoUrl: ''
+localeTitle: 'Problema 24: permutaciones lexicográficas'
 ---
 
 ## Description
-<section id='description'> 
-Una permutación es una disposición ordenada de objetos. Por ejemplo, 3124 es una posible permutación de los dígitos 1, 2, 3 y 4. Si todas las permutaciones se enumeran numérica o alfabéticamente, lo llamamos orden lexicográfico. Las permutaciones lexicográficas de 0, 1 y 2 son: 
-<div style='text-align: center;'> 012 021 102 120 201 210 </div> 
-¿Cuál es la <var>n</var> ª permutación lexicográfica de los dígitos 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9? 
-</section>
+<section id="description"> Una permutación es una disposición ordenada de objetos. Por ejemplo, 3124 es una posible permutación de los dígitos 1, 2, 3 y 4. Si todas las permutaciones se enumeran numérica o alfabéticamente, lo llamamos orden lexicográfico. Las permutaciones lexicográficas de 0, 1 y 2 son: <div style="text-align: center;"> 012 021 102 120 201 210 </div> ¿Cuál es el <var>n-ésimo</var> de permutación lexicográfico de los dígitos 0, 1, 2, 3, 4, 5, 6, 7, 8 y 9? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +43,7 @@ function lexicographicPermutations(n) {
 }
 
 lexicographicPermutations(999999);
+
 ```
 
 </div>

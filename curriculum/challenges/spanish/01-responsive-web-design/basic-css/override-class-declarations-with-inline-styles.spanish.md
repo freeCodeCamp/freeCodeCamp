@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aedf06756
 title: Override Class Declarations with Inline Styles
-localeTitle: Anular declaraciones de clase con estilos en línea
 challengeType: 0
 videoUrl: ''
+localeTitle: Anular declaraciones de clase con estilos en línea
 ---
 
 ## Description
-<section id='description'> 
-Por lo tanto, hemos comprobado que las declaraciones de identificación anulan las declaraciones de clase, independientemente de dónde estén declaradas en su elemento de <code>style</code> CSS. 
-Hay otras formas en que puede anular CSS. ¿Recuerdas los estilos en línea? 
-</section>
+<section id="description"> Así que hemos comprobado que las declaraciones de identificación anulan las declaraciones de clase, independientemente de dónde se declaren en su elemento de <code>style</code> CSS. Hay otras formas en que puedes anular CSS. ¿Recuerdas los estilos en línea? </section>
 
 ## Instructions
-<section id='instructions'> 
-Use un <code>inline style</code> para tratar de hacer que nuestro elemento <code>h1</code> blanco. Recuerde, los estilos de línea se ven así: 
-<code>&lt;h1 style=&quot;color: green;&quot;&gt;</code> 
-Deje las clases de <code>pink-text</code> <code>blue-text</code> <code>pink-text</code> en su elemento <code>h1</code> . 
-</section>
+<section id="instructions"> Use un <code>inline style</code> para tratar de hacer que nuestro elemento <code>h1</code> blanco. Recuerde, los estilos de línea se ven así: <code>&lt;h1 style=&quot;color: green;&quot;&gt;</code> Deje las clases de <code>pink-text</code> <code>blue-text</code> y <code>pink-text</code> en su elemento <code>h1</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -62,6 +55,7 @@ tests:
   }
 </style>
 <h1 id="orange-text" class="pink-text blue-text">Hello World!</h1>
+
 ```
 
 </div>

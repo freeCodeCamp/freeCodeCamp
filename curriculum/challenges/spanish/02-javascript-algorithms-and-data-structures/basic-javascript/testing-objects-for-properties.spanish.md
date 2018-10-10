@@ -1,21 +1,16 @@
 ---
 id: 567af2437cbaa8c51670a16c
 title: Testing Objects for Properties
-localeTitle: Prueba de objetos para propiedades
 challengeType: 1
+videoUrl: ''
+localeTitle: Prueba de objetos para propiedades
 ---
 
 ## Description
-<section id='description'> 
-A veces es útil verificar si la propiedad de un objeto dado existe o no. Podemos usar el método de objetos <code>.hasOwnProperty(propname)</code> para determinar si ese objeto tiene el nombre de propiedad dado. <code>.hasOwnProperty()</code> devuelve <code>true</code> o <code>false</code> si se encuentra la propiedad o no. 
-<strong>Ejemplo</strong> 
-<blockquote>var myObj = {<br>&nbsp;&nbsp;top: "hat",<br>&nbsp;&nbsp;bottom: "pants"<br>};<br>myObj.hasOwnProperty("top");    // true<br>myObj.hasOwnProperty("middle"); // false</blockquote> 
-</section>
+<section id="description"> A veces es útil verificar si la propiedad de un objeto dado existe o no. Podemos usar el método de objetos <code>.hasOwnProperty(propname)</code> para determinar si ese objeto tiene el nombre de propiedad dado. <code>.hasOwnProperty()</code> devuelve <code>true</code> o <code>false</code> si se encuentra la propiedad o no. <strong>Ejemplo</strong> <blockquote> var myObj = { <br> arriba: &quot;sombrero&quot;, <br> abajo: &quot;pantalones&quot; <br> }; <br> myObj.hasOwnProperty (&quot;top&quot;); // cierto <br> myObj.hasOwnProperty (&quot;middle&quot;); // falso </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Modifique la función <code>checkObj</code> para probar <code>myObj</code> para <code>checkProp</code> . Si se encuentra la propiedad, devuelva el valor de esa propiedad. Si no, devuelve <code>&quot;Not Found&quot;</code> . 
-</section>
+<section id="instructions"> Modifique la función <code>checkObj</code> para probar <code>myObj</code> para <code>checkProp</code> . Si se encuentra la propiedad, devuelva el valor de esa propiedad. Si no, devuelve <code>&quot;Not Found&quot;</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -54,6 +49,7 @@ function checkObj(checkProp) {
 
 // Test your code by modifying these values
 checkObj("gift");
+
 ```
 
 </div>
@@ -65,20 +61,7 @@ checkObj("gift");
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myObj = {
-  gift: "pony",
-  pet: "kitten",
-  bed: "sleigh"
-};
-function checkObj(checkProp) {
-  if(myObj.hasOwnProperty(checkProp)) {
-    return myObj[checkProp];
-  } else {
-    return "Not Found";
-  }
-}
+// solution required
 ```
-
 </section>

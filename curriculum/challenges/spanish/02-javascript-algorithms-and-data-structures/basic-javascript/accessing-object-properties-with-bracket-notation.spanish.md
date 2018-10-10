@@ -1,24 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244c8
 title: Accessing Object Properties with Bracket Notation
-localeTitle: Acceso a las propiedades del objeto con notación de corchete
 challengeType: 1
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/accessing-objects-properties-with-bracket-notation'
+videoUrl: ''
+localeTitle: Acceso a las propiedades del objeto con notación de corchete
 ---
 
 ## Description
-<section id='description'> 
-La segunda forma de acceder a las propiedades de un objeto es la notación de corchetes ( <code>[]</code> ). Si la propiedad del objeto al que intenta acceder tiene un espacio en su nombre, deberá utilizar la notación de corchetes. 
-Sin embargo, aún puede usar la notación de corchete en las propiedades del objeto sin espacios. 
-Aquí hay una muestra del uso de la notación de corchetes para leer la propiedad de un objeto: 
-<blockquote>var myObj = {<br>&nbsp;&nbsp;"Space Name": "Kirk",<br>&nbsp;&nbsp;"More Space": "Spock",<br>&nbsp;&nbsp;"NoSpace": "USS Enterprise"<br>};<br>myObj["Space Name"]; // Kirk<br>myObj['More Space']; // Spock<br>myObj["NoSpace"];    // USS Enterprise</blockquote> 
-Tenga en cuenta que los nombres de propiedades con espacios en ellos deben estar entre comillas (simple o doble). 
-</section>
+<section id="description"> La segunda forma de acceder a las propiedades de un objeto es la notación de corchetes ( <code>[]</code> ). Si la propiedad del objeto al que intenta acceder tiene un espacio en su nombre, deberá utilizar la notación de corchetes. Sin embargo, aún puede usar la notación de corchete en las propiedades del objeto sin espacios. Aquí hay una muestra del uso de la notación de corchetes para leer la propiedad de un objeto: <blockquote> var myObj = { <br> &quot;Nombre del espacio&quot;: &quot;Kirk&quot;, <br> &quot;Más espacio&quot;: &quot;Spock&quot;, <br> &quot;NoSpace&quot;: &quot;USS Enterprise&quot; <br> }; <br> myObj [&quot;Nombre del espacio&quot;]; // Kirk <br> myObj [&#39;Más espacio&#39;]; // Spock <br> myObj [&quot;NoSpace&quot;]; // USS Enterprise </blockquote> Tenga en cuenta que los nombres de propiedades con espacios en ellos deben estar entre comillas (simple o doble). </section>
 
 ## Instructions
-<section id='instructions'> 
-Lea los valores de las propiedades <code>&quot;an entree&quot;</code> y <code>&quot;the drink&quot;</code> de <code>testObj</code> utilizando la notación de corchetes y asignarlos a <code>entreeValue</code> y <code>drinkValue</code> respectivamente. 
-</section>
+<section id="instructions"> Lea los valores de las propiedades <code>&quot;an entree&quot;</code> y <code>&quot;the drink&quot;</code> de <code>testObj</code> utilizando la notación de corchetes y asignarlos a <code>entreeValue</code> y <code>drinkValue</code> respectivamente. </section>
 
 ## Tests
 <section id='tests'>
@@ -57,6 +50,7 @@ var testObj = {
 
 var entreeValue = testObj;   // Change this line
 var drinkValue = testObj;    // Change this line
+
 ```
 
 </div>
@@ -76,15 +70,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var testObj = {
-  "an entree": "hamburger",
-  "my side": "veggies",
-  "the drink": "water"
-};
-var entreeValue = testObj["an entree"];
-var drinkValue = testObj['the drink'];
+// solution required
 ```
-
 </section>

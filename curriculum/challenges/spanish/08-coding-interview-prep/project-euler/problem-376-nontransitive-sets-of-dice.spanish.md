@@ -1,54 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4e51000cf542c50fff7
+id: 5900f4e51000cf542c50fff7
 challengeType: 5
 title: 'Problem 376: Nontransitive sets of dice'
+videoUrl: ''
+localeTitle: 'Problema 376: juegos de dados no transitivos'
 ---
 
 ## Description
-<section id='description'> 
-Considera el siguiente juego de dados con puntos no estándar: 
-
-
-
-Muere A: 1 4 4 4 4 4 4 
-Muere B: 2 2 2 5 5 5 
-Muere C: 3 3 3 3 3 6 
-
-
-Un juego es jugado por dos jugadores que recogen un dado por turnos y lo hacen rodar. El jugador que saca el valor más alto gana. 
-
-
-
-Si el primer jugador elige el dado A y el segundo el jugador muere B, obtenemos 
-P (el segundo jugador gana) = 7/12&gt; 1/2 
-
-
-Si el primer jugador elige el dado B y el segundo jugador elige die C obtenemos 
-P (el segundo jugador gana) = 7/12&gt; 1/2 
-
-
-Si el primer jugador elige die C y el segundo jugador elige die A obtenemos 
-P (el segundo jugador gana) = 25/36&gt; 1/2 
-
-
-Entonces, cualquiera que sea el dado que elija el primer jugador, el segundo jugador puede elegir otro dado y tener una probabilidad de ganar de más del 50%. 
-Un conjunto de dados que tiene esta propiedad se llama un conjunto de dados no transitivos. 
-
-
-
-Queremos investigar cuántos conjuntos de dados no transitivos existen. Asumiremos las siguientes condiciones: Hay tres dados de seis caras con cada lado que tiene entre 1 y N pips, inclusive. 
-dados con el mismo conjunto de puntos son iguales, independientemente del lado en el que se encuentren los puntos. 
-El mismo valor de pip puede aparecer en múltiples dados; si ambos jugadores lanzan el mismo valor, ninguno de los dos gana. 
-Los conjuntos de dados {A, B, C}, {B, C, A} y {C, A, B} son el mismo conjunto. 
-
-Para N = 7 encontramos que hay 9780 tales conjuntos. 
-¿Cuántos hay para N = 30? 
-</section>
+<section id="description"> Considere el siguiente conjunto de dados con pips no estándar: <p> Die A: 1 4 4 4 4 4 Die B: 2 2 2 5 5 5 Die C: 3 3 3 3 3 6 </p><p> Un juego es jugado por dos jugadores que toman un dado por turnos y lo hacen rodar. El jugador que saca el valor más alto gana. </p><p> Si el primer jugador elige el dado A y el segundo el jugador muere B, obtenemos P (el segundo jugador gana) = 7/12&gt; 1/2 </p><p> Si el primer jugador elige el dado B y el segundo el jugador muere C, obtenemos P (el segundo jugador gana) = 7/12&gt; 1/2 </p><p> Si el primer jugador elige el dado C y el segundo el jugador muere A, obtenemos P (el segundo jugador gana) = 25/36&gt; 1/2 </p><p> Entonces, cualquiera que sea el dado que el primer jugador elija, el segundo jugador puede elegir otro dado y tiene una probabilidad mayor de 50% de ganar. Un conjunto de dados que tiene esta propiedad se llama un conjunto de dados no transitivos. </p><p> Queremos investigar cuántos conjuntos de dados no transitivos existen. Asumiremos las siguientes condiciones: Hay tres dados de seis caras con cada lado que tiene entre 1 y N pips, inclusive. Los dados con el mismo conjunto de pips son iguales, independientemente del lado en el que se encuentren los pips. El mismo valor de pip puede aparecer en múltiples dados; si ambos jugadores lanzan el mismo valor, ninguno de los dos gana. Los conjuntos de dados {A, B, C}, {B, C, A} y {C, A, B} son el mismo conjunto. </p><p> Para N = 7 encontramos que hay 9780 tales conjuntos. ¿Cuántos hay para N = 30? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -75,6 +37,7 @@ function euler376() {
 }
 
 euler376();
+
 ```
 
 </div>

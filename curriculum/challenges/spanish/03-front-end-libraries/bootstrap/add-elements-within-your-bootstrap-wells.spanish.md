@@ -1,19 +1,16 @@
 ---
 id: bad87fee1348bd9aec908849
 title: Add Elements within Your Bootstrap Wells
-localeTitle: Agrega elementos dentro de tus pozos de Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Agrega elementos dentro de tus pozos de Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Ahora somos varios elementos <code>div</code> en cada columna de nuestra fila. Esto es tan profundo como tendremos que ir. Ahora podemos añadir nuestros elementos de <code>button</code> . 
-Anide tres elementos de <code>button</code> dentro de cada uno de sus elementos de <code>well</code> <code>div</code> . 
-</section>
+<section id="description"> Ahora somos varios elementos <code>div</code> en cada columna de nuestra fila. Esto es tan profundo como tendremos que ir. Ahora podemos añadir nuestros elementos de <code>button</code> . Nido de tres <code>button</code> elementos dentro de cada uno de sus <code>well</code> <code>div</code> elementos. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -57,6 +54,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

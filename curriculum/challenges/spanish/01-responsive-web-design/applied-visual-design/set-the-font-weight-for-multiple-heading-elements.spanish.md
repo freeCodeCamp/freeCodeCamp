@@ -1,21 +1,16 @@
 ---
 id: 587d781c367417b2b2512ac3
 title: Set the font-weight for Multiple Heading Elements
-localeTitle: Establecer el peso de la fuente para varios elementos de encabezado
 challengeType: 0
 videoUrl: ''
+localeTitle: Establecer el peso de la fuente para varios elementos de encabezado
 ---
 
 ## Description
-<section id='description'> 
-Establece el <code>font-size</code> de <code>font-size</code> de cada etiqueta de encabezado en el último desafío, aquí ajustará el <code>font-weight</code> la <code>font-weight</code> . 
-La propiedad <code>font-weight</code> establece la cantidad de caracteres gruesos o delgados en una sección del texto. 
-</section>
+<section id="description"> Establece el <code>font-size</code> de <code>font-size</code> de cada etiqueta de encabezado en el último desafío, aquí ajustarás el <code>font-weight</code> la <code>font-weight</code> . La propiedad <code>font-weight</code> establece la cantidad de caracteres gruesos o delgados en una sección del texto. </section>
 
 ## Instructions
-<section id='instructions'> 
-<ul> <li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h1</code> en 800. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h2</code> en 600. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h3</code> en 500. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h4</code> en 400. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h5</code> en 300. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h6</code> en 200. </li></ul> 
-</section>
+<section id="instructions"><ul><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h1</code> en 800. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h2</code> en 600. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h3</code> en 500. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h4</code> en 400. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h5</code> en 300. </li><li> Establezca el <code>font-weight</code> de la <code>font-weight</code> de la etiqueta <code>h6</code> en 200. </li></ul></section>
 
 ## Tests
 <section id='tests'>
@@ -77,6 +72,7 @@ tests:
 <h4>This is h4 text</h4>
 <h5>This is h5 text</h5>
 <h6>This is h6 text</h6>
+
 ```
 
 </div>

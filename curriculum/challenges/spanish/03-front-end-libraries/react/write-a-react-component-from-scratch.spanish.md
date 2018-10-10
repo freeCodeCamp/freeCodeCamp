@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036168
 title: Write a React Component from Scratch
-localeTitle: Escribir un componente React desde cero
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Escribir un componente React desde cero
 ---
 
 ## Description
-<section id='description'> 
-Ahora que ha aprendido los conceptos básicos de los componentes JSX y React, es hora de escribir un componente por su cuenta. Los componentes de React son los componentes básicos de las aplicaciones de React, por lo que es importante familiarizarse con su escritura. Recuerde, un componente típico de React es una <code>class</code> ES6 que extiende <code>React.Component</code> . Tiene un método de render que devuelve HTML (de JSX) o <code>null</code> . Esta es la forma básica de un componente React. Una vez que entienda esto bien, estará preparado para comenzar a construir proyectos React más complejos. 
-</section>
+<section id="description"> Ahora que ha aprendido los conceptos básicos de los componentes JSX y React, es hora de escribir un componente por su cuenta. Los componentes de React son los componentes básicos de las aplicaciones de React, por lo que es importante familiarizarse con su escritura. Recuerde, un componente típico de React es una <code>class</code> ES6 que extiende <code>React.Component</code> . Tiene un método de render que devuelve HTML (de JSX) o <code>null</code> . Esta es la forma básica de un componente React. Una vez que entienda esto bien, estará preparado para comenzar a construir proyectos React más complejos. </section>
 
 ## Instructions
-<section id='instructions'> 
-Defina una clase <code>MyComponent</code> que amplíe <code>React.Component</code> . Su método de renderización debe devolver un <code>div</code> que contenga una etiqueta <code>h1</code> con el texto: <code>My First React Component!</code> en eso. Use este texto exactamente, el caso y la puntuación son importantes. Asegúrese de llamar al constructor para su componente, también. 
-Renderice este componente al DOM usando <code>ReactDOM.render()</code> . Hay un <code>div</code> con <code>id=&#39;challenge-node&#39;</code> disponible para que lo uses. 
-</section>
+<section id="instructions"> Defina una clase <code>MyComponent</code> que amplíe <code>React.Component</code> . Su método de renderización debe devolver un <code>div</code> que contenga una etiqueta <code>h1</code> con el texto: <code>My First React Component!</code> en eso. Use este texto exactamente, el caso y la puntuación son importantes. Asegúrese de llamar al constructor para su componente, también. Renderice este componente al DOM usando <code>ReactDOM.render()</code> . Hay un <code>div</code> con <code>id=&#39;challenge-node&#39;</code> disponible para que lo uses. </section>
 
 ## Tests
 <section id='tests'>
@@ -52,23 +48,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-// change code below this line
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-        <h1>My First React Component!</h1>
-      </div>
-    );
-  }
-};
-
-ReactDOM.render(<MyComponent />, document.getElementById('challenge-node'));
+// solution required
 ```
-
 </section>

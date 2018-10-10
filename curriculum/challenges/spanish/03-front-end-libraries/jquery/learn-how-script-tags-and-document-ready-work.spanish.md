@@ -1,24 +1,16 @@
 ---
 id: bad87fee1348bd9acdd08826
 title: Learn How Script Tags and Document Ready Work
-localeTitle: Aprenda cómo funcionan las etiquetas de script y el documento listo
 challengeType: 6
+videoUrl: ''
+localeTitle: Aprenda cómo funcionan las etiquetas de script y el documento listo
 ---
 
 ## Description
-<section id='description'>
-Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos.
-Antes de que podamos comenzar a usar jQuery, necesitamos agregar algunas cosas a nuestro HTML.
-Primero, agregue un elemento de <code>script</code> en la parte superior de su página. Asegúrate de cerrarla en la siguiente línea.
-Su navegador ejecutará cualquier JavaScript dentro de un elemento de <code>script</code> , incluyendo jQuery.
-Dentro de su elemento de <code>script</code> , agregue este código: <code>$(document).ready(function() {</code> a su <code>script</code> . Luego ciérrelo en la siguiente línea (aún dentro de su elemento de <code>script</code> ) con: <code>});</code>
-Aprenderemos más sobre las <code>functions</code> más adelante. Lo importante que debe saber es que el código que ingrese dentro de esta <code>function</code> se ejecutará tan pronto como su navegador haya cargado su página.
-Esto es importante porque sin su <code>document ready function</code> , su código puede ejecutarse antes de que se genere su HTML, lo que causaría errores.
-</section>
+<section id="description"> Ahora estamos listos para aprender jQuery, la herramienta de JavaScript más popular de todos los tiempos. Antes de que podamos comenzar a usar jQuery, necesitamos agregar algunas cosas a nuestro HTML. Primero, agregue un elemento de <code>script</code> en la parte superior de su página. Asegúrate de cerrarla en la siguiente línea. Su navegador ejecutará cualquier JavaScript dentro de un elemento de <code>script</code> , incluido jQuery. Dentro de su elemento de <code>script</code> , agregue este código: <code>$(document).ready(function() {</code> a su <code>script</code> . Luego ciérrelo en la siguiente línea (aún dentro de su elemento de <code>script</code> ) con: <code>});</code> Aprenderemos más sobre las <code>functions</code> más adelante. Lo importante que debe saber es que el código que ingrese dentro de esta <code>function</code> se ejecutará tan pronto como su navegador haya cargado su página. Esto es importante porque sin su <code>document ready function</code> , su código puede ejecutarse antes de que se genere su HTML, lo que causaría errores. </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -28,36 +20,10 @@ Esto es importante porque sin su <code>document ready function</code> , su códi
 tests:
   - text: Cree un elemento de <code>script</code> asegurándose de que sea válido y tenga una etiqueta de cierre.
     testString: 'assert(code.match(/<\/script\s*>/g) && code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g) && code.match(/<\/script\s*>/g).length === code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g).length, "Create a <code>script</code> element making sure it is valid and has a closing tag.");'
-  - text: 'Debes agregar <code>$(document).ready (function() {</code> al principio de tu elemento de <code>script</code> .'
-    testString: 'assert(code.match(/\$\s*?\(\s*?document\s*?\)\.ready\s*?\(\s*?function\s*?\(\s*?\)\s*?\{/g), "You should add <code><section id='tests'>
-
-```yml
-tests:
-  - text: Create a <code>script</code> element making sure it is valid and has a closing tag.
-    testString: 'assert(code.match(/<\/script\s*>/g) && code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g) && code.match(/<\/script\s*>/g).length === code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g).length, "Create a <code>script</code> element making sure it is valid and has a closing tag.");'
-  - text: 'You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.'
+  - text: 'Debe agregar <code>$(document).ready (function() {</code> al principio de su elemento de <code>script</code> .'
     testString: 'assert(code.match(/\$\s*?\(\s*?document\s*?\)\.ready\s*?\(\s*?function\s*?\(\s*?\)\s*?\{/g), "You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.");'
-  - text: 'Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>'
+  - text: 'Cierre su <code>$(document).ready (function() {</code> function with <code>});</code>'
     testString: 'assert(code.match(/\n*?\s*?\}\s*?\);/g), "Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>");'
-
-```
-
-</section>#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.");'
-  - text: 'Cierre su <code>$(document).ready (function() {</code> function with <code>});</code> '
-    testString: 'assert(code.match(/\n*?\s*?\}\s*?\);/g), "Close your <code><section id='tests'>
-
-```yml
-tests:
-  - text: Create a <code>script</code> element making sure it is valid and has a closing tag.
-    testString: 'assert(code.match(/<\/script\s*>/g) && code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g) && code.match(/<\/script\s*>/g).length === code.match(/<script(\sasync|\sdefer)*(\s(charset|src|type)\s*=\s*["\"]+[^"\"]*["\"]+)*(\sasync|\sdefer)*\s*>/g).length, "Create a <code>script</code> element making sure it is valid and has a closing tag.");'
-  - text: 'You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.'
-    testString: 'assert(code.match(/\$\s*?\(\s*?document\s*?\)\.ready\s*?\(\s*?function\s*?\(\s*?\)\s*?\{/g), "You should add <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> to the beginning of your <code>script</code> element.");'
-  - text: 'Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>'
-    testString: 'assert(code.match(/\n*?\s*?\}\s*?\);/g), "Close your <code>$&#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>");'
-
-```
-
-</section>#40;document&#41;.ready<wbr>&#40;function&#40;&#41; {</code> function with <code>}&#41;;</code>");'
 
 ```
 
@@ -92,6 +58,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

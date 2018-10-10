@@ -1,26 +1,18 @@
 ---
 id: 587d7fa9367417b2b2512bd0
 title: Invert SVG Elements
-localeTitle: Invertir elementos SVG
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Invertir elementos SVG
 ---
 
 ## Description
-<section id='description'> 
-Es posible que haya notado que el gráfico de barras parecía invertido o invertido. Esto se debe a cómo SVG utiliza las coordenadas (x, y). 
-En SVG, el punto de origen de las coordenadas se encuentra en la esquina superior izquierda. Una coordenada <code>x</code> de 0 coloca una forma en el borde izquierdo del área SVG. Una coordenada <code>y</code> de 0 coloca una forma en el borde superior del área SVG. Los valores más altos de <code>x</code> empujan el rectángulo hacia la derecha. Los valores más altos de <code>y</code> empujan el rectángulo hacia abajo. 
-Para hacer que las barras queden hacia arriba, debe cambiar la forma en que se calcula la coordenada <code>y</code> . Debe tener en cuenta tanto la altura de la barra como la altura total del área SVG. 
-La altura del área de SVG es 100. Si tiene un punto de datos de 0 en el conjunto, desearía que la barra comience en la parte inferior del área de SVG (no en la parte superior). Para hacer esto, la coordenada <code>y</code> necesita un valor de 100. Si el valor del punto de datos fuera 1, comenzaría con una coordenada <code>y</code> de 100 para establecer la barra en la parte inferior. Luego, debe tener en cuenta la altura de la barra de 1, por lo que la coordenada <code>y</code> final sería 99. 
-La coordenada <code>y</code> que es <code>y = heightOfSVG - heightOfBar</code> colocaría las barras del lado derecho hacia arriba. 
-</section>
+<section id="description"> Es posible que haya notado que el gráfico de barras parecía invertido o al revés. Esto se debe a cómo SVG utiliza las coordenadas (x, y). En SVG, el punto de origen para las coordenadas se encuentra en la esquina superior izquierda. Una coordenada <code>x</code> de 0 coloca una forma en el borde izquierdo del área SVG. Una coordenada <code>y</code> de 0 coloca una forma en el borde superior del área SVG. Los valores más altos de <code>x</code> empujan el rectángulo hacia la derecha. Los valores más altos de <code>y</code> empujan el rectángulo hacia abajo. Para hacer que las barras queden hacia arriba, debe cambiar la forma en que se calcula la coordenada <code>y</code> . Debe tener en cuenta tanto la altura de la barra como la altura total del área SVG. La altura del área de SVG es 100. Si tiene un punto de datos de 0 en el conjunto, desearía que la barra comience en la parte inferior del área de SVG (no en la parte superior). Para hacer esto, la coordenada <code>y</code> necesita un valor de 100. Si el valor del punto de datos fuera 1, comenzaría con una coordenada <code>y</code> de 100 para establecer la barra en la parte inferior. Luego, debe tener en cuenta la altura de la barra de 1, por lo que la coordenada <code>y</code> final sería 99. La coordenada <code>y</code> que es <code>y = heightOfSVG - heightOfBar</code> colocaría las barras del lado derecho hacia arriba. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie la función de devolución de llamada para el atributo <code>y</code> para establecer las barras del lado derecho hacia arriba. Recuerde que la <code>height</code> de la barra es 3 veces el valor de los datos <code>d</code> . 
-<strong>Nota</strong> <br> En general, la relación es <code>y = h - m * d</code> , donde <code>m</code> es la constante que escala los puntos de datos. 
-</section>
+<section id="instructions"> Cambie la función de devolución de llamada para el atributo <code>y</code> para establecer las barras del lado derecho hacia arriba. Recuerde que la <code>height</code> de la barra es 3 veces el valor de los datos <code>d</code> . <strong>Nota</strong> <br> En general, la relación es <code>y = h - m * d</code> , donde <code>m</code> es la constante que escala los puntos de datos. </section>
 
 ## Tests
 <section id='tests'>
@@ -84,6 +76,7 @@ tests:
        .attr("height", (d, i) => 3 * d);
   </script>
 </body>
+
 ```
 
 </div>

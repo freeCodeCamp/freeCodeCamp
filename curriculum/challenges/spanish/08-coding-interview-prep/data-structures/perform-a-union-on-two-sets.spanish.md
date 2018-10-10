@@ -1,19 +1,16 @@
 ---
 id: 587d8253367417b2b2512c6c
 title: Perform a Union on Two Sets
-localeTitle: Realizar una unión en dos sets
 challengeType: 1
+videoUrl: ''
+localeTitle: Realizar una unión en dos sets
 ---
 
 ## Description
-<section id='description'> 
-En este ejercicio vamos a realizar una unión en dos conjuntos de datos. Crearemos un método en nuestra estructura de datos de <code>Set</code> llamada <code>union</code> . Este método debe tomar otro <code>Set</code> como argumento y devolver la <code>union</code> de los dos conjuntos, excluyendo cualquier valor duplicado. 
-Por ejemplo, si <code>setA = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code> y <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;d&#39;,&#39;e&#39;]</code> , entonces la unión de setA y setB es: <code>setA.union(setB) = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]</code> . 
-</section>
+<section id="description"> En este ejercicio vamos a realizar una unión en dos conjuntos de datos. Crearemos un método en nuestra estructura de datos de <code>Set</code> llamada <code>union</code> . Este método debe tomar otro <code>Set</code> como argumento y devolver la <code>union</code> de los dos conjuntos, excluyendo cualquier valor duplicado. Por ejemplo, si <code>setA = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code> y <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;d&#39;,&#39;e&#39;]</code> , entonces la unión de setA y setB es: <code>setA.union(setB) = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -72,6 +69,7 @@ function Set() {
 
     // change code above this line
 }
+
 ```
 
 </div>
@@ -83,9 +81,7 @@ function Set() {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};}
+// solution required
 ```
-
 </section>

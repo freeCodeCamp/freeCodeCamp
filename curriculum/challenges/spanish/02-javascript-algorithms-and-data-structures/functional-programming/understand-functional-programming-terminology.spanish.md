@@ -1,26 +1,16 @@
 ---
 id: 587d7b8e367417b2b2512b5c
 title: Understand Functional Programming Terminology
-localeTitle: Entender la terminología de programación funcional
 challengeType: 1
+videoUrl: ''
+localeTitle: Entender la terminología de programación funcional
 ---
 
 ## Description
-<section id='description'> 
-El equipo de la FCC tuvo un cambio de humor y ahora quiere dos tipos de té: té verde y té negro. Hecho general: los cambios de humor del cliente son bastante comunes. 
-Con esa información, tendremos que revisar la función <code>getTea</code> del último desafío para manejar varias solicitudes de té. Podemos modificar <code>getTea</code> para aceptar una función como parámetro para poder cambiar el tipo de té que prepara. Esto hace que <code>getTea</code> sea ​​más flexible y le da al programador más control cuando cambian las solicitudes de los clientes. 
-Pero primero, vamos a cubrir algunos términos funcionales: 
-<code>Callbacks</code> son las funciones que se deslizan o pasan a otra función para decidir la invocación de esa función. Es posible que los haya visto pasar a otros métodos, por ejemplo, en el <code>filter</code> , la función de devolución de llamada le dice a JavaScript los criterios sobre cómo filtrar una matriz. 
-funciones que pueden asignarse a una variable, pasarse a otra función o devolverse desde otra función como cualquier otro valor normal, se denominan funciones de <code>first class</code> . En JavaScript, todas las funciones son funciones de <code>first class</code> . 
-Las funciones que toman una función como argumento o que devuelven una función como valor de retorno se denominan funciones de <code>higher order</code> . 
-Cuando las funciones se pasan a otra función o se devuelven desde otra función, las funciones que se pasan o devuelven pueden llamarse <code>lambda</code> . 
-</section>
+<section id="description"> El equipo de la FCC tuvo un cambio de humor y ahora quiere dos tipos de té: té verde y té negro. Hecho general: los cambios de humor del cliente son bastante comunes. Con esa información, tendremos que revisar la función <code>getTea</code> del último desafío para manejar varias solicitudes de té. Podemos modificar <code>getTea</code> para aceptar una función como parámetro para poder cambiar el tipo de té que prepara. Esto hace que <code>getTea</code> sea ​​más flexible y le da al programador más control cuando cambian las solicitudes de los clientes. Pero primero, vamos a cubrir algunos términos funcionales: las <code>Callbacks</code> son las funciones que se deslizan o pasan a otra función para decidir la invocación de esa función. Es posible que los haya visto pasar a otros métodos, por ejemplo, en el <code>filter</code> , la función de devolución de llamada le dice a JavaScript los criterios sobre cómo filtrar una matriz. Las funciones que se pueden asignar a una variable, pasar a otra función o devolver desde otra función al igual que cualquier otro valor normal, se denominan funciones de <code>first class</code> . En JavaScript, todas las funciones son funciones de <code>first class</code> . Las funciones que toman una función como argumento o que devuelven una función como valor de retorno se denominan funciones de <code>higher order</code> . Cuando las funciones se pasan a otra función o se devuelven desde otra función, las funciones que se pasan o se devuelven pueden llamarse <code>lambda</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Prepare 27 tazas de té verde y 13 tazas de té negro y almacénelas en las variables <code>tea4GreenTeamFCC</code> y <code>tea4BlackTeamFCC</code> , respectivamente. Tenga en cuenta que la función <code>getTea</code> se ha modificado, por lo que ahora toma una función como primer argumento. 
-Nota: Los datos (el número de tazas de té) se proporcionan como el último argumento. Discutiremos esto más en lecciones posteriores. 
-</section>
+<section id="instructions"> Prepare 27 tazas de té verde y 13 tazas de té negro y almacénelas en las variables <code>tea4GreenTeamFCC</code> y <code>tea4BlackTeamFCC</code> , respectivamente. Tenga en cuenta que la función <code>getTea</code> se ha modificado, por lo que ahora toma una función como primer argumento. Nota: Los datos (el número de tazas de té) se proporcionan como el último argumento. Discutiremos esto más en lecciones posteriores. </section>
 
 ## Tests
 <section id='tests'>
@@ -86,6 +76,7 @@ console.log(
   tea4GreenTeamFCC,
   tea4BlackTeamFCC
 );
+
 ```
 
 </div>

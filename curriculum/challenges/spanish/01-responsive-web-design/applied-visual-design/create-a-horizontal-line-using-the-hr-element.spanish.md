@@ -1,21 +1,16 @@
 ---
 id: 587d781b367417b2b2512abb
 title: Create a Horizontal Line Using the hr Element
-localeTitle: Crear una línea horizontal utilizando el elemento hr
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear una línea horizontal utilizando el elemento hr
 ---
 
 ## Description
-<section id='description'> 
-Puede usar la etiqueta <code>hr</code> para agregar una línea horizontal a lo ancho del elemento que lo contiene. Esto se puede usar para definir un cambio en el tema o para separar visualmente grupos de contenido. 
-</section>
+<section id="description"> Puede usar la etiqueta <code>hr</code> para agregar una línea horizontal a través del ancho de su elemento contenedor. Esto se puede usar para definir un cambio en el tema o para separar visualmente grupos de contenido. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue una etiqueta de <code>hr</code> debajo de la <code>h4</code> que contiene el título de la tarjeta. 
-<strong>Nota</strong> <br> En HTML, <code>hr</code> es una etiqueta de cierre automático, y por lo tanto no necesita una etiqueta de cierre separada. 
-</section>
+<section id="instructions"> Agregue una etiqueta de <code>hr</code> debajo de la <code>h4</code> que contiene el título de la tarjeta. <strong>Nota</strong> <br> En HTML, <code>hr</code> es una etiqueta de cierre automático, y por lo tanto no necesita una etiqueta de cierre separada. </section>
 
 ## Tests
 <section id='tests'>
@@ -76,6 +71,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

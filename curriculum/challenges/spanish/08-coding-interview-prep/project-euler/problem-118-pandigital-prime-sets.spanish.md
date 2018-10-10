@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3e21000cf542c50fef5
+id: 5900f3e21000cf542c50fef5
 challengeType: 5
 title: 'Problem 118: Pandigital prime sets'
+videoUrl: ''
+localeTitle: 'Problema 118: Pandigital prime sets'
 ---
 
 ## Description
-<section id='description'> 
-Usando todos los dígitos del 1 al 9 y concatenándolos libremente para formar enteros decimales, se pueden formar diferentes conjuntos. Es interesante que con el conjunto {2,5,47,89,631}, todos los elementos que pertenecen a él son primos. 
-¿Cuántos conjuntos distintos que contienen cada uno de los dígitos del uno al nueve exactamente una vez contienen solo elementos primos? 
-</section>
+<section id="description"> Usando todos los dígitos del 1 al 9 y concatenándolos libremente para formar enteros decimales, se pueden formar diferentes conjuntos. Es interesante que con el conjunto {2,5,47,89,631}, todos los elementos que pertenecen a él son primos. ¿Cuántos conjuntos distintos que contienen cada uno de los dígitos del uno al nueve exactamente una vez contienen solo elementos primos? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -40,6 +37,7 @@ function euler118() {
 }
 
 euler118();
+
 ```
 
 </div>

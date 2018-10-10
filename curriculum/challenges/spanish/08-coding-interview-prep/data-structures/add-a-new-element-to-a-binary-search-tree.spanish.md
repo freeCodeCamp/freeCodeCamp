@@ -1,20 +1,16 @@
 ---
 id: 587d8257367417b2b2512c7b
 title: Add a New Element to a Binary Search Tree
-localeTitle: Agregar un nuevo elemento a un árbol de búsqueda binario
 challengeType: 1
+videoUrl: ''
+localeTitle: Agregar un nuevo elemento a un árbol de búsqueda binario
 ---
 
 ## Description
-<section id='description'> 
-Ahora que tenemos una idea de lo básico, escribamos un método más complejo. 
-En este desafío, crearemos un método para agregar nuevos valores a nuestro árbol de búsqueda binario. El método debe llamarse <code>add</code> y debe aceptar un valor entero para agregarlo al árbol. Tenga cuidado de mantener el invariante de un árbol de búsqueda binario: el valor en cada elemento secundario izquierdo debe ser menor o igual que el valor principal, y el valor en cada elemento secundario derecho debe ser mayor o igual que el valor principal. Aquí, hagamos que nuestro árbol no pueda contener valores duplicados. Si intentamos agregar un valor que ya existe, el método debe devolver <code>null</code> . De lo contrario, si la adición es exitosa, se debe devolver <code>undefined</code> . 
-Sugerencia: ¡los árboles son naturalmente estructuras de datos recursivas! 
-</section>
+<section id="description"> Ahora que tenemos una idea de lo básico, escribamos un método más complejo. En este desafío, crearemos un método para agregar nuevos valores a nuestro árbol de búsqueda binario. El método debe llamarse <code>add</code> y debe aceptar un valor entero para agregarlo al árbol. Tenga cuidado de mantener el invariante de un árbol de búsqueda binario: el valor en cada elemento secundario izquierdo debe ser menor o igual que el valor principal, y el valor en cada elemento secundario derecho debe ser mayor o igual que el valor principal. Aquí, hagamos que nuestro árbol no pueda contener valores duplicados. Si intentamos agregar un valor que ya existe, el método debe devolver <code>null</code> . De lo contrario, si la adición es exitosa, se debe devolver <code>undefined</code> . Pista: ¡los árboles son naturalmente estructuras de datos recursivas! </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +48,7 @@ function BinarySearchTree() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>
@@ -71,44 +68,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Node(value) {
- this.value = value;
- this.left = null;
- this.right = null;
- }
- function BinarySearchTree() {
- this.root = null;
- this.add = function (element) {
- let current = this.root;
- if (!current) {
- this.root = new Node(element)
- return;
- } else {
- const searchTree = function (current) {
- if (current.value > element) {
- if (current.left) { //si existe
- return searchTree(current.left)
- } else {
- current.left = new Node(element);
- return;
- }
- } else if (current.value < element) {
-  if (current.right) {
- return searchTree(current.right)
- } else {
- current.right = new Node(element)
- return;
- }
- } else {
- return null;
- }
- }
- return searchTree(current);
- }
- }
- }
+// solution required
 ```
-
 </section>

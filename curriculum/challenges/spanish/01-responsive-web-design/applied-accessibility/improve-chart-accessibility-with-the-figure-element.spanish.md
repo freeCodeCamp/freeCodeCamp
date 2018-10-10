@@ -1,23 +1,16 @@
 ---
 id: 587d778a367417b2b2512aa5
 title: Improve Chart Accessibility with the figure Element
-localeTitle: Mejora la accesibilidad de la carta con la figura Elemento.
 challengeType: 0
 videoUrl: ''
+localeTitle: Mejora la accesibilidad de la carta con la figura Elemento.
 ---
 
 ## Description
-<section id='description'> 
-HTML5 introdujo el elemento <code>figure</code> , junto con la <code>figcaption</code> relacionada. Usados ​​juntos, estos elementos envuelven una representación visual (como una imagen, diagrama o gráfico) junto con su título. Esto proporciona un aumento de accesibilidad doble al agrupar semánticamente el contenido relacionado y al proporcionar una alternativa de texto que explica la <code>figure</code> . 
-Para visualizaciones de datos como cuadros, la leyenda se puede usar para observar brevemente las tendencias o conclusiones para usuarios con discapacidades visuales. Otro desafío es cómo mover una versión de tabla de los datos del gráfico fuera de la pantalla (mediante CSS) para los usuarios de lectores de pantalla. 
-Aquí hay un ejemplo: tenga en cuenta que la <code>figcaption</code> va dentro de las etiquetas de <code>figure</code> y se puede combinar con otros elementos: 
-<blockquote>&lt;figure&gt;<br>&nbsp;&nbsp;&lt;img src=&quot;roundhouseDestruction.jpeg&quot; alt=&quot;Photo of Camper Cat executing a roundhouse kick&quot;&gt;<br>&nbsp;&nbsp;&lt;br&gt;<br>&nbsp;&nbsp;&lt;figcaption&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;Master Camper Cat demonstrates proper form of a roundhouse kick.<br>&nbsp;&nbsp;&lt;/figcaption&gt;<br>&lt;/figure&gt;<br></blockquote> 
-</section>
+<section id="description"> HTML5 introdujo el elemento <code>figure</code> , junto con la <code>figcaption</code> relacionada. Usados ​​juntos, estos elementos envuelven una representación visual (como una imagen, diagrama o gráfico) junto con su título. Esto proporciona un aumento de accesibilidad doble al agrupar semánticamente el contenido relacionado y al proporcionar una alternativa de texto que explica la <code>figure</code> . Para visualizaciones de datos como cuadros, la leyenda se puede usar para observar brevemente las tendencias o conclusiones para usuarios con discapacidades visuales. Otro desafío es cómo mover una versión de tabla de los datos del gráfico fuera de la pantalla (mediante CSS) para los usuarios de lectores de pantalla. Aquí hay un ejemplo: tenga en cuenta que la <code>figcaption</code> va dentro de las etiquetas de la <code>figure</code> y se puede combinar con otros elementos: <blockquote> &lt;figura&gt; <br> &lt;img src = &quot;roundhouseDestruction.jpeg&quot; alt = &quot;Foto de Camper Cat ejecutando una patada circular&quot;&gt; <br> &lt;br&gt; <br> &lt;figcaption&gt; <br> Master Camper Cat demuestra la forma correcta de una patada circular. <br> &lt;/figcaption&gt; <br> &lt;/figure&gt; <br></blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Camper Cat está trabajando duro para crear un gráfico de barras apiladas que muestre la cantidad de tiempo por semana para pasar el entrenamiento en sigilo, combate y armas. Ayúdelo a estructurar mejor su página cambiando la etiqueta <code>div</code> que usó por una etiqueta de <code>figure</code> , y la etiqueta <code>p</code> que rodea el título a una etiqueta de <code>figcaption</code> . 
-</section>
+<section id="instructions"> Camper Cat está trabajando duro para crear un gráfico de barras apiladas que muestre la cantidad de tiempo por semana para pasar el entrenamiento en sigilo, combate y armas. Ayúdelo a estructurar mejor su página cambiando la etiqueta <code>div</code> que usó por una etiqueta de <code>figure</code> , y la etiqueta <code>p</code> que rodea el título a una etiqueta de <code>figcaption</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -88,6 +81,7 @@ tests:
   </main>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+
 ```
 
 </div>

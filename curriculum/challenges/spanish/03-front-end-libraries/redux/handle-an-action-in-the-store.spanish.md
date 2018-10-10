@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036150
 title: Handle an Action in the Store
-localeTitle: Manejar una acción en la tienda
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Manejar una acción en la tienda
 ---
 
 ## Description
-<section id='description'>
-Después de crear y enviar una acción, la tienda Redux debe saber cómo responder a esa acción. Este es el trabajo de una función <code>reducer</code> . Los reductores en Redux son responsables de las modificaciones de estado que tienen lugar en respuesta a las acciones. Un <code>reducer</code> toma el <code>state</code> y la <code>action</code> como argumentos, y siempre devuelve un nuevo <code>state</code> . Es importante ver que este es el <strong>único</strong> papel del reductor. No tiene efectos secundarios: nunca llama a un punto final de la API y nunca tiene sorpresas ocultas. El reductor es simplemente una función pura que toma estado y acción, luego devuelve un nuevo estado.
-Otro principio clave en Redux es que el <code>state</code> es de solo lectura. En otras palabras, la función <code>reducer</code> <strong>siempre</strong> debe devolver una nueva copia del <code>state</code> y nunca modificar el estado directamente. Redux no impone la inmutabilidad del estado, sin embargo, usted es responsable de hacerlo cumplir en el código de sus funciones de reductor. Practicarás esto en desafíos posteriores.
-</section>
+<section id="description"> Después de crear y enviar una acción, la tienda Redux debe saber cómo responder a esa acción. Este es el trabajo de una función <code>reducer</code> . Los reductores en Redux son responsables de las modificaciones de estado que tienen lugar en respuesta a las acciones. Un <code>reducer</code> toma el <code>state</code> y la <code>action</code> como argumentos, y siempre devuelve un nuevo <code>state</code> . Es importante ver que este es el <strong>único</strong> papel del reductor. No tiene efectos secundarios: nunca llama a un punto final de la API y nunca tiene sorpresas ocultas. El reductor es simplemente una función pura que toma estado y acción, luego devuelve un nuevo estado. Otro principio clave en Redux es que el <code>state</code> es de solo lectura. En otras palabras, la función <code>reducer</code> <strong>siempre</strong> debe devolver una nueva copia del <code>state</code> y nunca modificar el estado directamente. Redux no impone la inmutabilidad del estado, sin embargo, usted es responsable de hacerlo cumplir en el código de sus funciones de reductor. Practicarás esto en desafíos posteriores. </section>
 
 ## Instructions
-<section id='instructions'>
-El editor de código tiene el ejemplo anterior así como el inicio de una función de <code>reducer</code> para usted. Complete el cuerpo de la función del <code>reducer</code> modo que si recibe una acción del tipo <code>&#39;LOGIN&#39;</code> , devuelva un objeto de estado con el <code>login</code> establecido en <code>true</code> . De lo contrario, devuelve el <code>state</code> actual. Tenga en cuenta que el <code>state</code> actual y la <code>action</code> distribuida se pasan al reductor, por lo que puede acceder al tipo de acción directamente con <code>action.type</code> .
-</section>
+<section id="instructions"> El editor de código tiene el ejemplo anterior, así como el inicio de una función de <code>reducer</code> para usted. Complete el cuerpo de la función del <code>reducer</code> modo que si recibe una acción del tipo <code>&#39;LOGIN&#39;</code> , devuelva un objeto de estado con el <code>login</code> establecido en <code>true</code> . De lo contrario, devuelve el <code>state</code> actual. Tenga en cuenta que el <code>state</code> actual y la <code>action</code> distribuida se pasan al reductor, por lo que puede acceder al tipo de acción directamente con <code>action.type</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -58,6 +54,7 @@ const loginAction = () => {
     type: 'LOGIN'
   }
 };
+
 ```
 
 </div>
@@ -69,31 +66,7 @@ const loginAction = () => {
 ## Solution
 <section id='solution'>
 
-
 ```js
-const defaultState = {
-  login: false
-};
-
-const reducer = (state = defaultState, action) => {
-
-  if (action.type === 'LOGIN') {
-    return {login: true}
-  }
-
-  else {
-    return state
-  }
-
-};
-
-const store = Redux.createStore(reducer);
-
-const loginAction = () => {
-  return {
-    type: 'LOGIN'
-  }
-};
+// solution required
 ```
-
 </section>

@@ -1,23 +1,18 @@
 ---
 id: 587d7fa9367417b2b2512bcf
 title: Dynamically Change the Height of Each Bar
-localeTitle: Cambiar dinámicamente la altura de cada barra
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Cambiar dinámicamente la altura de cada barra
 ---
 
 ## Description
-<section id='description'> 
-La altura de cada barra se puede establecer en el valor del punto de datos en la matriz, de manera similar a cómo se estableció dinámicamente el valor de <code>x</code> . 
-<blockquote>selection.attr("property", (d, i) => {<br>&nbsp;&nbsp;/* <br>&nbsp;&nbsp;* d is the data point value<br>&nbsp;&nbsp;* i is the index of the data point in the array<br>&nbsp;&nbsp;*/<br>})</blockquote> 
-</section>
+<section id="description"> La altura de cada barra se puede establecer en el valor del punto de datos en la matriz, de manera similar a cómo se estableció dinámicamente el valor de <code>x</code> . <blockquote> selection.attr (&quot;propiedad&quot;, (d, i) =&gt; { <br> / * <br> * d es el valor del punto de datos <br> * i es el índice del punto de datos en la matriz <br> * / <br> }) </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie la función de devolución de llamada para que el atributo de <code>height</code> devuelva el valor de los datos por 3. 
-<strong>Nota</strong> <br> Recuerde que al multiplicar todos los puntos de datos por la misma constante, se escalan los datos (como hacer zoom). Ayuda a ver las diferencias entre los valores de barras en este ejemplo. 
-</section>
+<section id="instructions"> Cambie la función de devolución de llamada para que el atributo de <code>height</code> devuelva el valor de los datos por 3. <strong>Nota</strong> <br> Recuerde que al multiplicar todos los puntos de datos por la misma constante, se escalan los datos (como hacer zoom). Ayuda a ver las diferencias entre los valores de barras en este ejemplo. </section>
 
 ## Tests
 <section id='tests'>
@@ -81,6 +76,7 @@ tests:
        });
   </script>
 </body>
+
 ```
 
 </div>

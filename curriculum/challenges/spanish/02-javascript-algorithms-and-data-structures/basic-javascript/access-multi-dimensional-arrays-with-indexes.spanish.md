@@ -1,23 +1,17 @@
 ---
 id: 56592a60ddddeae28f7aa8e1
 title: Access Multi-Dimensional Arrays With Indexes
-localeTitle: Acceder a matrices multidimensionales con índices
 challengeType: 1
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/access-array-data-with-indexes'
+videoUrl: ''
+localeTitle: Acceder a matrices multidimensionales con índices
 ---
 
 ## Description
-<section id='description'> 
-Una forma de pensar en una matriz <dfn>multidimensional</dfn> es como una <em>matriz de matrices</em> . Cuando usa corchetes para acceder a su matriz, el primer conjunto de corchetes se refiere a las entradas en la matriz más externa (el primer nivel), y cada par adicional de corchetes se refiere al siguiente nivel de entradas adentro. 
-<strong>Ejemplo</strong> 
-<blockquote>var arr = [<br>&nbsp;&nbsp;[1,2,3],<br>&nbsp;&nbsp;[4,5,6],<br>&nbsp;&nbsp;[7,8,9],<br>&nbsp;&nbsp;[[10,11,12], 13, 14]<br>];<br>arr[3]; // equals [[10,11,12], 13, 14]<br>arr[3][0]; // equals [10,11,12]<br>arr[3][0][1]; // equals 11</blockquote> 
-<strong>Nota</strong> <br> No debe haber espacios entre el nombre de la matriz y los corchetes, como la <code>array [0][0]</code> e incluso esta <code>array [0] [0]</code> no está permitida. Aunque JavaScript puede procesar esto correctamente, esto puede confundir a otros programadores que leen su código. 
-</section>
+<section id="description"> Una forma de pensar en una matriz <dfn>multidimensional</dfn> es como una <em>matriz de matrices</em> . Cuando usa corchetes para acceder a su matriz, el primer conjunto de corchetes se refiere a las entradas en la matriz más externa (el primer nivel), y cada par adicional de corchetes se refiere al siguiente nivel de entradas adentro. <strong>Ejemplo</strong> <blockquote> var arr = [ <br> [1,2,3], <br> [4,5,6], <br> [7,8,9], <br> [[10,11,12], 13, 14] <br> ]; <br> arr [3]; // es igual a [[10,11,12], 13, 14] <br> arr [3] [0]; // es igual a [10,11,12] <br> arr [3] [0] [1]; // es igual a 11 </blockquote> <strong>Nota</strong> <br> No debe haber espacios entre el nombre de la matriz y los corchetes, como la <code>array [0][0]</code> e incluso esta <code>array [0] [0]</code> no está permitida. Aunque JavaScript puede procesar esto correctamente, esto puede confundir a otros programadores que leen su código. </section>
 
 ## Instructions
-<section id='instructions'> 
-Usando la notación de corchetes, seleccione un elemento de <code>myArray</code> para que <code>myData</code> sea ​​igual a <code>8</code> . 
-</section>
+<section id="instructions"> Usando la notación de corchetes, seleccione un elemento de <code>myArray</code> para que <code>myData</code> sea ​​igual a <code>8</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -64,10 +58,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myArray = [[1,2,3],[4,5,6], [7,8,9], [[10,11,12], 13, 14]];
-var myData = myArray[2][1];
+// solution required
 ```
-
 </section>

@@ -1,39 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4fe1000cf542c510010
+id: 5900f4fe1000cf542c510010
 challengeType: 5
 title: 'Problem 400: Fibonacci tree game'
+videoUrl: ''
+localeTitle: 'Problema 400: juego del árbol de Fibonacci'
 ---
 
 ## Description
-<section id='description'> 
-Un árbol de Fibonacci es un árbol binario recursivamente definido como: T (0) es el árbol vacío. 
-T (1) es el árbol binario con un solo nodo. 
-T (k) consiste en un nodo raíz que tiene T (k-1) y T (k-2) como hijos. 
-
-En tal árbol, dos jugadores juegan un juego para llevar. En cada turno, un jugador selecciona un nodo y elimina ese nodo junto con el subárbol arraigado en ese nodo. 
-El jugador que está obligado a tomar el nodo raíz de todo el árbol pierde. 
-
-
-Estos son los movimientos ganadores del primer jugador en el primer turno para T (k) de k = 1 a k = 6. 
-
-
-
-
-Sea f (k) el número de movimientos ganadores del primer jugador (es decir, los movimientos para los cuales el segundo jugador no tiene una estrategia ganadora) en el primer turno del juego cuando este juego se juega en T (k ). 
-
-
-
-Por ejemplo, f (5) = 1 y f (10) = 17. 
-
-
-
-Encuentre f (10000). Da los últimos 18 dígitos de tu respuesta. 
-</section>
+<section id="description"> Un árbol de Fibonacci es un árbol binario recursivamente definido como: T (0) es el árbol vacío. T (1) es el árbol binario con un solo nodo. T (k) consiste en un nodo raíz que tiene T (k-1) y T (k-2) como hijos. <p> En un árbol así, dos jugadores juegan un juego para llevar. En cada turno, un jugador selecciona un nodo y elimina ese nodo junto con el subárbol arraigado en ese nodo. El jugador que está obligado a tomar el nodo raíz de todo el árbol pierde. </p><p> Aquí están los movimientos ganadores del primer jugador en el primer turno para T (k) de k = 1 a k = 6. </p><p> Sea f (k) el número de movimientos ganadores del primer jugador (es decir, los movimientos para los cuales el segundo jugador no tiene una estrategia ganadora) en el primer turno del juego cuando este juego se juega en T (k). </p><p> Por ejemplo, f (5) = 1 y f (10) = 17. </p><p> Encontrar f (10000). Da los últimos 18 dígitos de tu respuesta. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -60,6 +37,7 @@ function euler400() {
 }
 
 euler400();
+
 ```
 
 </div>

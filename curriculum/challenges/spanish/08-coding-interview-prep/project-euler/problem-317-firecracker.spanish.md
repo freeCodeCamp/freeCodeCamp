@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4aa1000cf542c50ffbc
+id: 5900f4aa1000cf542c50ffbc
 challengeType: 5
 title: 'Problem 317: Firecracker'
+videoUrl: ''
+localeTitle: 'Problema 317: Petardo'
 ---
 
 ## Description
-<section id='description'> 
-Un petardo explota a una altura de 100 m sobre el nivel del suelo. Se rompe en una gran cantidad de fragmentos muy pequeños, que se mueven en todas las direcciones; Todos ellos tienen la misma velocidad inicial de 20 m / s. 
-
-
-Suponemos que los fragmentos se mueven sin resistencia del aire, en un campo gravitacional uniforme con g = 9.81 m / s2. 
-
-
-Encuentre el volumen (en m3) de la región a través de la cual se mueven los fragmentos antes de llegar al suelo. 
-Da tu respuesta redondeada a cuatro lugares decimales. 
-</section>
+<section id="description"> Un petardo explota a una altura de 100 m sobre el nivel del suelo. Se rompe en una gran cantidad de fragmentos muy pequeños, que se mueven en todas las direcciones; Todos ellos tienen la misma velocidad inicial de 20 m / s. <p> Suponemos que los fragmentos se mueven sin resistencia del aire, en un campo gravitacional uniforme con g = 9.81 m / s2. </p><p> Encuentre el volumen (en m3) de la región a través de la cual se mueven los fragmentos antes de llegar al suelo. Da tu respuesta redondeada a cuatro lugares decimales. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler317() {
 }
 
 euler317();
+
 ```
 
 </div>

@@ -1,18 +1,16 @@
 ---
 id: 587d825a367417b2b2512c88
 title: Reverse a Doubly Linked List
-localeTitle: Invertir una lista doblemente vinculada
 challengeType: 1
+videoUrl: ''
+localeTitle: Invertir una lista doblemente vinculada
 ---
 
 ## Description
-<section id='description'> 
-Creemos un método más para nuestra lista doblemente enlazada llamada reversa que invierte la lista en su lugar. Una vez que se ejecuta el método, la cabeza debe apuntar a la cola anterior y la cola debe apuntar a la cabeza anterior. Ahora, si recorremos la lista de principio a fin, deberíamos encontrar los nodos en orden inverso en comparación con la lista original. Intentar revertir una lista vacía debe devolver nulo. 
-</section>
+<section id="description"> Vamos a crear un método más para nuestra lista de enlace doble llamada reversa que invierte la lista en su lugar. Una vez que se ejecuta el método, la cabeza debe apuntar a la cola anterior y la cola debe apuntar a la cabeza anterior. Ahora, si recorremos la lista de principio a fin, deberíamos encontrar los nodos en orden inverso en comparación con la lista original. Intentar revertir una lista vacía debe devolver nulo. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -26,7 +24,7 @@ tests:
     testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == "function")})(), "The DoublyLinkedList has a method called add.");'
   - text: El DoublyLinkedList tiene un método llamado reversa.
     testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; if (test.reverse == undefined) { return false; }; return (typeof test.reverse == "function")})(), "The DoublyLinkedList has a method called reverse.");'
-  - text: Invertir una lista vacía devuelve nulo.
+  - text: 'Si se invierte una lista vacía, se devuelve un valor nulo.'
     testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; return (test.reverse() == null); })(), "Reversing an empty list returns null.");'
   - text: El método inverso invierte la lista.
     testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; test.add(58); test.add(61); test.add(32); test.reverse(); return (test.print().join("") == "326158"); })(), "The reverse method reverses the list.");'
@@ -54,6 +52,7 @@ var DoublyLinkedList = function() {
   // change code below this line
   // change code above this line
 };
+
 ```
 
 </div>

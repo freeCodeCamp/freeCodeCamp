@@ -1,57 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f54c1000cf542c51005f
+id: 5900f54c1000cf542c51005f
 challengeType: 5
 title: 'Problem 480: The Last Question'
+videoUrl: ''
+localeTitle: 'Problema 480: La última pregunta'
 ---
 
 ## Description
-<section id='description'> 
-Considere todas las palabras que pueden formarse seleccionando letras, en cualquier orden, de la frase: 
-thereisasyetinsufficientdataforameaningfulanswer 
-Supongamos que las que tienen 15 letras o menos se enumeran en orden alfabético y se numeran secuencialmente a partir de 1. 
-La lista incluiría: 
-1: a 
-2: aa 
-3: aaa 
-4: aaaa 
-5: aaaaa 
-6: aaaaaa 
-7: aaaaaac 
-8: aaaaaacd 
-9: aaaaaacde 
-10: aaaaaacdee 
-11: aaaaaacdeee 
-12: aaaaaacdeeee 
-13: aaaaaacdeeee 
-13: aaaaaacdeeeee 
-14: aaaaaacdeeeeee 
-15: aaaaaacdeeeeeef 
-16: aaaaaacdeeeeeeg 
-17: aaaaaacdeeeeeeh 
-... 
-28: aaaaaacdeeeeeey 
-29: aaaaaacdeeeeef 
-30: aaaaaacdeeeeefe 
-... 
-115246685191495242: euleoywuttttsss 
-115246685191495243: Euler 
-115246685191495244: eulera 
-... 
-525069350231428029: ywuuttttssssrrrDefine P (w) como la posición de la palabra w. 
-Define W (p) como la palabra en la posición p. 
-Podemos ver que P (w) y W (p) son inversos: P (W (p)) = p y W (P (w)) = w. 
-Ejemplos: 
-W (10) = aaaaaacdee 
-P (aaaaaacdee) = 10 
-W (115246685191495243) = Euler 
-P (Euler) = 115246685191495243Find W (P (legionario) + P (calorímetros) - P (aniquilan) + P ( orquestado) - P (aleteo)). 
-Da tu respuesta usando caracteres en minúscula (sin puntuación ni espacio). 
-</section>
+<section id="description"> Considere todas las palabras que pueden formarse seleccionando letras, en cualquier orden, de la frase: thereisasyetinsufficientdataforameaningfulanswer Supongamos que las que tienen 15 letras o menos se enumeran en orden alfabético y se numeran secuencialmente empezando por 1. La lista incluiría: 1: a 2: aa 3: aaa 4: aaaa 5: aaaaa 6: aaaaaa 7: aaaaaac 8: aaaaaacd 9: aaaaaacde 10: aaaaaacdee 12: aaaaaacdeee 12: aaaaaacdeeeee cada uno de los accesorios de la foto: aaaaaacdeeeee: : aaaaaacdeeeeeey 29: aaaaaacdeeeeef 30: aaaaaacdeeeeefe ... 115246685191495242: euleoywuttttsss 115246685191495243: desprendimiento de las condiciones de los juegos de datos 115246685191495244: eulera ... Define W (p) como la palabra en la posición p. Podemos ver que P (w) y W (p) son inversos: P (W (p)) = p y W (P (w)) = w. Ejemplos: W (10) = aaaaaacdee P (aaaaaacdee) = 10 W (115246685191495243) = Euler P (Euler) = 115246685191495243Find W (P (legionario) + P (calorímetros) - P (aniquilado) + P (orquiado) - P (legado) aleteo)). Da tu respuesta usando caracteres en minúscula (sin puntuación ni espacio). </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -78,6 +37,7 @@ function euler480() {
 }
 
 euler480();
+
 ```
 
 </div>

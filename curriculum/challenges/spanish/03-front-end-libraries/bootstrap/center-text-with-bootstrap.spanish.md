@@ -1,20 +1,16 @@
 ---
 id: bad87fee1348bd8acde08812
 title: Center Text with Bootstrap
-localeTitle: Centro de texto con Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Centro de texto con Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Ahora que estamos usando Bootstrap, podemos centrar nuestro elemento de encabezado para que se vea mejor. Todo lo que necesitamos hacer es agregar la clase <code>text-center</code> a nuestro elemento <code>h2</code> . 
-Recuerde que puede agregar varias clases al mismo elemento separando cada una de ellas con un espacio, como este: 
-<code>&lt;h2 class=&quot;red-text text-center&quot;&gt;your text&lt;/h2&gt;</code> 
-</section>
+<section id="description"> Ahora que estamos usando Bootstrap, podemos centrar nuestro elemento de encabezado para que se vea mejor. Todo lo que necesitamos hacer es agregar la clase <code>text-center</code> a nuestro elemento <code>h2</code> . Recuerde que puede agregar varias clases al mismo elemento separando cada una de ellas con un espacio, como este: <code>&lt;h2 class=&quot;red-text text-center&quot;&gt;your text&lt;/h2&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -94,6 +90,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

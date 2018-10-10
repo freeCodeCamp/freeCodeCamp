@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08736
 title: Style the HTML Body Element
-localeTitle: Estilo del elemento HTML del cuerpo
 challengeType: 0
 videoUrl: ''
+localeTitle: Estilo del elemento HTML del cuerpo
 ---
 
 ## Description
-<section id='description'> 
-Ahora comencemos de nuevo y hablemos de la herencia CSS. 
-Cada página HTML tiene un elemento de <code>body</code> . 
-</section>
+<section id="description"> Ahora comencemos de nuevo y hablemos de la herencia CSS. Cada página HTML tiene un elemento de <code>body</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Podemos probar que el elemento del <code>body</code> existe aquí dándole un <code>background-color</code> de <code>background-color</code> de negro. 
-Podemos hacer esto agregando lo siguiente a nuestro elemento de <code>style</code> : 
-<blockquote>body {<br>&nbsp;&nbsp;background-color: black;<br>}</blockquote> 
-</section>
+<section id="instructions"> Podemos probar que el elemento del <code>body</code> existe aquí dándole un <code>background-color</code> de <code>background-color</code> de negro. Podemos hacer esto agregando lo siguiente a nuestro elemento de <code>style</code> : <blockquote> cuerpo { <br> color de fondo: negro; <br> } </blockquote></section>
 
 ## Tests
 <section id='tests'>
@@ -44,6 +37,7 @@ tests:
 <style>
 
 </style>
+
 ```
 
 </div>

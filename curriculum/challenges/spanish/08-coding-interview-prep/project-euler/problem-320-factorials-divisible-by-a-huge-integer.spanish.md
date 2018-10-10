@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4ae1000cf542c50ffbf
+id: 5900f4ae1000cf542c50ffbf
 challengeType: 5
 title: 'Problem 320: Factorials divisible by a huge integer'
+videoUrl: ''
+localeTitle: 'Problema 320: Factoriales divisibles por un entero enorme'
 ---
 
 ## Description
-<section id='description'> 
-Sea N (i) el entero más pequeño n tal que n! es divisible por (i!) 1234567890 
-
-Sea S (u) = ∑N (i) para 10 ≤ i ≤ u. 
-
-
-S (1000) = 614538266565663. 
-
-
-Encuentra S (1 000 000) mod 1018. 
-</section>
+<section id="description"> Sea N (i) el entero más pequeño n tal que n! es divisible por (i!) 1234567890 <p> Sea S (u) = ∑N (i) para 10 ≤ i ≤ u. </p><p> S (1000) = 614538266565663. </p><p> Encontrar S (1 000 000) mod 1018. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler320() {
 }
 
 euler320();
+
 ```
 
 </div>

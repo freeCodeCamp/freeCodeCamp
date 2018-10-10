@@ -1,20 +1,16 @@
 ---
 id: bad87fee1348bd9acde08812
 title: Make Images Mobile Responsive
-localeTitle: Hacer móviles las imágenes receptivas
 challengeType: 0
+videoUrl: ''
+localeTitle: Hacer móviles las imágenes receptivas
 ---
 
 ## Description
-<section id='description'> 
-Primero, agregue una nueva imagen debajo de la existente. Establezca su atributo <code>src</code> en <code>https://bit.ly/fcc-running-cats</code> . 
-Sería genial si esta imagen pudiera tener exactamente el ancho de la pantalla de nuestro teléfono. 
-Afortunadamente, con Bootstrap, todo lo que necesitamos hacer es añadir la <code>img-responsive</code> clase a su imagen. Haga esto, y la imagen debe ajustarse perfectamente al ancho de su página. 
-</section>
+<section id="description"> Primero, agregue una nueva imagen debajo de la existente. Establezca su atributo <code>src</code> en <code>https://bit.ly/fcc-running-cats</code> . Sería genial si esta imagen pudiera tener exactamente el ancho de la pantalla de nuestro teléfono. Afortunadamente, con Bootstrap, todo lo que tenemos que hacer es agregar la clase <code>img-responsive</code> a su imagen. Haga esto, y la imagen debe ajustarse perfectamente al ancho de su página. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -24,13 +20,13 @@ Afortunadamente, con Bootstrap, todo lo que necesitamos hacer es añadir la <cod
 tests:
   - text: Debes tener un total de dos imágenes.
     testString: 'assert($("img").length === 2, "You should have a total of two images.");'
-  - text: Su nueva imagen debe estar debajo de la anterior y tener la clase <code clase = "notranslate"> img-responsive </code>.
+  - text: Su nueva imagen debe estar por debajo de su imagen anterior y tener la clase <code>img-responsive</code> .
     testString: 'assert($("img:eq(1)").hasClass("img-responsive"), "Your new image should be below your old one and have the class <code>img-responsive</code>.");'
-  - text: Su nueva imagen no debe tener la clase <code clase = "notranslate"> imagen más pequeña </code>.
+  - text: Tu nueva imagen no debe tener la clase <code>smaller-image</code> .
     testString: 'assert(!$("img:eq(1)").hasClass("smaller-image"), "Your new image should not have the class <code>smaller-image</code>.");'
-  - text: 'Su nueva imagen debe tener un <code class = "notranslate"> src </code> de <code class = "notranslate"> https & # 58; // bit.ly/fcc-running-cats </code>.'
+  - text: 'Su nueva imagen debe tener un <code>src</code> de <code>https://bit.ly/fcc-running-cats</code> .'
     testString: 'assert($("img:eq(1)").attr("src") === "https://bit.ly/fcc-running-cats", "Your new image should have a <code>src</code> of <code>https&#58;//bit.ly/fcc-running-cats</code>.");'
-  - text: Asegúrese de que su nuevo elemento <code clase = "notranslate"> img </code> tenga un soporte de ángulo de cierre.
+  - text: Asegúrese de que su nuevo elemento <code>img</code> tenga un soporte de ángulo de cierre.
     testString: 'assert(code.match(/<img/g) && code.match(/<img[^<]*>/g).length === 2 && code.match(/<img/g).length === 2, "Make sure your new <code>img</code> element has a closing angle bracket.");'
 
 ```
@@ -99,6 +95,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

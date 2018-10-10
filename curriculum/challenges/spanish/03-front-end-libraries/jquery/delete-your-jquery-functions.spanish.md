@@ -1,21 +1,18 @@
 ---
 id: bad87fee1348bd9aeda08726
 title: Delete Your jQuery Functions
-localeTitle: Borre sus funciones de jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+videoUrl: ''
+localeTitle: Borre sus funciones de jQuery
 ---
 
 ## Description
-<section id='description'>
-Estas animaciones fueron geniales al principio, pero ahora se están distrayendo.
-Borre las tres funciones de jQuery de su función de <code>document ready function</code> , pero deje la <code>document ready function</code> intacta.
-</section>
+<section id="description"> Estas animaciones eran geniales al principio, pero ahora se distraen un poco. Elimine las tres funciones de jQuery de su función de <code>document ready function</code> , pero deje la <code>document ready function</code> intacta. </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -28,25 +25,8 @@ tests:
   - text: Deja tu elemento de <code>script</code> intacto.
     testString: 'assert(code.match(/<script>/g), "Leave your <code>script</code> element intact.");'
   - text: 'Deje su <code>$(document).ready(function() {</code> al principio de su elemento de <code>script</code> .'
-    testString: 'assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g), "Leave your <code><section id='tests'>
-
-```yml
-tests:
-  - text: Delete all three of your jQuery functions from your <code>document ready function</code>.
-    testString: 'assert(code.match(/\{\s*\}\);/g), "Delete all three of your jQuery functions from your <code>document ready function</code>.");'
-  - text: Leave your <code>script</code> element intact.
-    testString: 'assert(code.match(/<script>/g), "Leave your <code>script</code> element intact.");'
-  - text: 'Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.'
     testString: 'assert(code.match(/\$\(document\)\.ready\(function\(\)\s?\{/g), "Leave your <code>$&#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.");'
-  - text: 'Leave your "document ready function" closing <code>&#125;&#41;</code> intact.'
-    testString: 'assert(code.match(/.*\s*\}\);/g), "Leave your "document ready function" closing <code>&#125;&#41;</code> intact.");'
-  - text: Leave your <code>script</code> element closing tag intact.
-    testString: 'assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length, "Leave your <code>script</code> element closing tag intact.");'
-
-```
-
-</section>#40document&#41.ready&#40function&#40&#41 {</code> to the beginning of your <code>script</code> element.");'
-  - text: 'Deje su &quot;función de documento listo&quot; cerrando <code>})</code> intacta.
+  - text: 'Deje su &quot;función de documento listo&quot; cerrando <code>})</code> intacto.'
     testString: 'assert(code.match(/.*\s*\}\);/g), "Leave your "document ready function" closing <code>&#125;&#41;</code> intact.");'
   - text: Deje intacta la etiqueta de cierre del elemento de su <code>script</code> .
     testString: 'assert(code.match(/<\/script>/g) && code.match(/<script/g) && code.match(/<\/script>/g).length === code.match(/<script/g).length, "Leave your <code>script</code> element closing tag intact.");'
@@ -93,6 +73,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4d01000cf542c50ffe2
+id: 5900f4d01000cf542c50ffe2
 challengeType: 5
 title: 'Problem 355: Maximal coprime subset'
+videoUrl: ''
+localeTitle: 'Problema 355: subconjunto máximo de coprime'
 ---
 
 ## Description
-<section id='description'> 
-Defina Co (n) como la suma máxima posible de un conjunto de elementos de cebado primordial de {1, 2, ..., n}. Por ejemplo, Co (10) es 30 y alcanza ese máximo en el subconjunto {1, 5, 7, 8, 9}. 
-
-
-
-Se le da que Co (30) = 193 y Co (100) = 1356. 
-
-
-Encuentre Co (200000). 
-</section>
+<section id="description"> Defina Co (n) como la suma máxima posible de un conjunto de elementos de cebado primordial de {1, 2, ..., n}. Por ejemplo, Co (10) es 30 y alcanza ese máximo en el subconjunto {1, 5, 7, 8, 9}. <p> Se le da que Co (30) = 193 y Co (100) = 1356. </p><p> Encuentra Co (200000). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler355() {
 }
 
 euler355();
+
 ```
 
 </div>

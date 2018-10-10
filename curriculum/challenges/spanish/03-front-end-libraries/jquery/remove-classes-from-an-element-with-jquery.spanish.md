@@ -1,23 +1,18 @@
 ---
 id: bad87fee1348bd9aed918626
 title: Remove Classes from an Element with jQuery
-localeTitle: Eliminar clases de un elemento con jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+videoUrl: ''
+localeTitle: Eliminar clases de un elemento con jQuery
 ---
 
 ## Description
-<section id='description'> 
-De la misma manera que puede agregar clases a un elemento con la función <code>addClass()</code> jQuery, puede eliminarlas con la función <code>removeClass()</code> jQuery. 
-Así es como haría esto para un botón específico: 
-<code>$(&quot;#target2&quot;).removeClass(&quot;btn-default&quot;);</code> 
-<code>btn-default</code> clase <code>btn-default</code> de todos nuestros elementos de <code>button</code> . 
-</section>
+<section id="description"> De la misma manera que puede agregar clases a un elemento con la función <code>addClass()</code> jQuery, puede eliminarlas con la función <code>removeClass()</code> jQuery. A continuación le indicamos cómo haría esto para un botón específico: <code>$(&quot;#target2&quot;).removeClass(&quot;btn-default&quot;);</code> <code>btn-default</code> clase <code>btn-default</code> de todos nuestros elementos de <code>button</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -74,6 +69,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

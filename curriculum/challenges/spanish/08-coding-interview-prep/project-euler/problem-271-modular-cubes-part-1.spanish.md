@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f47b1000cf542c50ff8d
+id: 5900f47b1000cf542c50ff8d
 challengeType: 5
 title: 'Problem 271: Modular Cubes, part 1'
+videoUrl: ''
+localeTitle: 'Problema 271: Cubos modulares, parte 1'
 ---
 
 ## Description
-<section id='description'> 
-Para un número positivo n, defina S (n) como la suma de los enteros x, para lo cual 1 <x<n andx3≡1 mod n.<code> 0 
-
-Cuando n = 91, hay 8 valores posibles para x, a saber: 9, 16, 22, 29, 53, 74, 79, 81. 
-Por lo tanto, S (91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363. 
-
-Encuentra S (13082761331670030). 
-</section>
+<section id="description"> Para un número positivo n, defina S (n) como la suma de los enteros x, para lo cual 1 <p> Cuando n = 91, hay 8 valores posibles para x, a saber: 9, 16, 22, 29, 53, 74, 79, 81. Por lo tanto, S (91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363. </p><p> Encuentre S (13082761331670030). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler271() {
 }
 
 euler271();
+
 ```
 
 </div>

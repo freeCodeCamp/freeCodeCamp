@@ -1,21 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d6
 title: Comparison with the Less Than Operator
-localeTitle: Comparación con el operador menor que
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparación con el operador menor que
 ---
 
 ## Description
-<section id='description'> 
-El operador <dfn>menor que</dfn> ( <code>&lt;</code> ) compara los valores de dos números. Si el número a la izquierda es menor que el número a la derecha, devuelve <code>true</code> . De lo contrario, devuelve <code>false</code> . Al igual que el operador de igualdad, <dfn>menos que el</dfn> operador convierte los tipos de datos al comparar. 
-<strong>ejemplos</strong> 
-<blockquote>2 &lt; 5  // true<br>'3' &lt; 7  // true<br>5 &lt; 5  // false<br>3 &lt; 2  // false<br>'8' &lt; 4  // false</blockquote> 
-</section>
+<section id="description"> El operador <dfn>menor que</dfn> ( <code>&lt;</code> ) compara los valores de dos números. Si el número a la izquierda es menor que el número a la derecha, devuelve <code>true</code> . De lo contrario, devuelve <code>false</code> . Al igual que el operador de igualdad, <dfn>menos que el</dfn> operador convierte los tipos de datos al comparar. <strong>Ejemplos</strong> <blockquote> 2 &lt;5 // verdadero <br> &#39;3&#39; &lt;7 // verdadero <br> 5 &lt;5 // falso <br> 3 &lt;2 // falso <br> &#39;8&#39; &lt;4 // falso </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el operador <code>less than</code> a las líneas indicadas para que las declaraciones de devolución tengan sentido. 
-</section>
+<section id="instructions"> Agregue el operador <code>less than</code> a las líneas indicadas para que las declaraciones de devolución tengan sentido. </section>
 
 ## Tests
 <section id='tests'>
@@ -61,6 +56,7 @@ function testLessThan(val) {
 
 // Change this value to test
 testLessThan(10);
+
 ```
 
 </div>
@@ -72,19 +68,7 @@ testLessThan(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testLessThan(val) {
-  if (val < 25) {  // Change this line
-    return "Under 25";
-  }
-
-  if (val < 55) {  // Change this line
-    return "Under 55";
-  }
-
-  return "55 or Over";
-}
+// solution required
 ```
-
 </section>

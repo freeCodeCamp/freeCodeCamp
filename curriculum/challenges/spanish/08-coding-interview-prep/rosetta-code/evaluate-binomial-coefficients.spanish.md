@@ -1,19 +1,16 @@
 ---
 title: Evaluate binomial coefficients
 id: 598de241872ef8353c58a7a2
-localeTitle: 598de241872ef8353c58a7a2
 challengeType: 5
+videoUrl: ''
+localeTitle: Evaluar coeficientes binomiales.
 ---
 
 ## Description
-<section id='description'>
-<p> Escribe una función para calcular el coeficiente binomial para el valor dado de n y k. </p><p> Se recomienda esta fórmula: </p>
-$ \ binom {n} {k} = \ frac {n!} {(Nk)! K!} = \ Frac {n (n-1) (n-2) \ ldots (n-k + 1)} {k (k-1) (k-2) \ ldots 1} $
-</section>
+<section id="description"><p> Escribe una función para calcular el coeficiente binomial para el valor dado de n y k. </p><p> Se recomienda esta fórmula: </p> $ \ binom {n} {k} = \ frac {n!} {(nk)! k!} = \ frac {n (n-1) (n-2) \ ldots (n-k + 1)} { k (k-1) (k-2) \ ldots 1} $ </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -23,15 +20,15 @@ $ \ binom {n} {k} = \ frac {n!} {(Nk)! K!} = \ Frac {n (n-1) (n-2) \ ldots (n-k 
 tests:
   - text: <code>binom</code> es una función.
     testString: 'assert(typeof binom === "function", "<code>binom</code> is a function.");'
-  - text: ' <code>binom(5,3)</code> debe devolver 10.'
+  - text: '<code>binom(5,3)</code> debe devolver 10.'
     testString: 'assert.equal(binom(5, 3), 10, "<code>binom(5,3)</code> should return 10.");'
-  - text: ' <code>binom(7,2)</code> debe devolver 21'
+  - text: '<code>binom(7,2)</code> debe devolver 21.'
     testString: 'assert.equal(binom(7, 2), 21, "<code>binom(7,2)</code> should return 21.");'
-  - text: ' <code>binom(10,4)</code> debe devolver 210.'
+  - text: '<code>binom(10,4)</code> debe devolver 210.'
     testString: 'assert.equal(binom(10, 4), 210, "<code>binom(10,4)</code> should return 210.");'
-  - text: ' <code>binom(6,1)</code> debe devolver 6.'
+  - text: '<code>binom(6,1)</code> debe devolver 6.'
     testString: 'assert.equal(binom(6, 1), 6, "<code>binom(6,1)</code> should return 6.");'
-  - text: ' <code>binom(12,8)</code> debe devolver 495.'
+  - text: '<code>binom(12,8)</code> debe devolver 495.'
     testString: 'assert.equal(binom(12, 8), 495, "<code>binom(12,8)</code> should return 495.");'
 
 ```
@@ -47,6 +44,7 @@ tests:
 function binom (n, k) {
   // Good luck!
 }
+
 ```
 
 </div>
@@ -58,15 +56,7 @@ function binom (n, k) {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function binom(n, k) {
-  let coeff = 1;
-  for (let i = n - k + 1; i <= n; i++) coeff *= i;
-  for (let i = 1; i <= k; i++) coeff /= i;
-  return coeff;
-}
-
+// solution required
 ```
-
 </section>

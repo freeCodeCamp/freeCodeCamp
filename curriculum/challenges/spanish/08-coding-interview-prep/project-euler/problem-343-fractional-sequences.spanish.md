@@ -1,39 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4c41000cf542c50ffd6
+id: 5900f4c41000cf542c50ffd6
 challengeType: 5
 title: 'Problem 343: Fractional Sequences'
+videoUrl: ''
+localeTitle: 'Problema 343: Secuencias fraccionarias'
 ---
 
 ## Description
-<section id='description'> 
-Para cualquier entero k positivo, una secuencia finita ai de fracciones xi / yi se define por: 
-a1 = 1 / k y 
-ai = (xi-1 + 1) / (yi-1-1) reducido a los términos más bajos para i&gt; 1. 
-Cuando ai alcanza algún entero n, la secuencia se detiene. (Es decir, cuando yi = 1.) 
-Defina f (k) = n. 
-Por ejemplo, para k = 20: 
-
-
-
-1/20 → 2/19 → 3/18 = 1/6 → 2/5 → 3/4 → 4/3 → 5/2 → 6/1 = 6 
-
-
-
-Entonces f (20) = 6. 
-
-
-
-También f (1) = 1, f (2) = 2, f (3) = 1 y Σf (k3) = 118937 para 1 ≤ k ≤ 100 
-
-
-
-Encuentra Σf (k3) para 1 ≤ k ≤ 2 × 106. 
-</section>
+<section id="description"> Para cualquier entero k positivo, una secuencia finita ai de fracciones xi / yi se define por: a1 = 1 / k y ai = (xi-1 + 1) / (yi-1-1) reducido a los términos más bajos para i&gt; 1 . Cuando ai alcanza algún entero n, la secuencia se detiene. (Es decir, cuando yi = 1.) Defina f (k) = n. Por ejemplo, para k = 20: <p> 1/20 → 2/19 → 3/18 = 1/6 → 2/5 → 3/4 → 4/3 → 5/2 → 6/1 = 6 </p><p> Entonces f (20) = 6. </p><p> También f (1) = 1, f (2) = 2, f (3) = 1 y Σf (k3) = 118937 para 1 ≤ k ≤ 100. </p><p> Encuentre Σf (k3) para 1 ≤ k ≤ 2 × 106. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -60,6 +37,7 @@ function euler343() {
 }
 
 euler343();
+
 ```
 
 </div>

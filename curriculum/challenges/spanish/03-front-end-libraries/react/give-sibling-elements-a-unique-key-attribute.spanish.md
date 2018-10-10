@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d403618b
 title: Give Sibling Elements a Unique Key Attribute
-localeTitle: Dar a los elementos hermanos un atributo clave único
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Dar a los elementos hermanos un atributo clave único
 ---
 
 ## Description
-<section id='description'> 
-El último desafío mostró cómo se usa el método de <code>map</code> para generar dinámicamente una serie de elementos basados ​​en la entrada del usuario. Sin embargo, faltaba una pieza importante en ese ejemplo. Cuando crea una matriz de elementos, cada uno necesita un atributo de <code>key</code> establecido en un valor único. React utiliza estas teclas para realizar un seguimiento de los elementos que se agregan, cambian o eliminan. Esto ayuda a hacer que el proceso de representación sea más eficiente cuando la lista se modifica de alguna manera. Tenga en cuenta que las claves solo tienen que ser únicas entre elementos hermanos, no tienen que ser únicas a nivel mundial en su aplicación. 
-</section>
+<section id="description"> El último desafío mostró cómo se usa el método de <code>map</code> para generar dinámicamente una serie de elementos basados ​​en la entrada del usuario. Sin embargo, faltaba una pieza importante en ese ejemplo. Cuando crea una matriz de elementos, cada uno necesita un atributo de <code>key</code> establecido en un valor único. React utiliza estas teclas para realizar un seguimiento de los elementos que se agregan, cambian o eliminan. Esto ayuda a hacer que el proceso de representación sea más eficiente cuando la lista se modifica de alguna manera. Tenga en cuenta que las claves solo tienen que ser únicas entre elementos hermanos, no tienen que ser únicas a nivel mundial en su aplicación. </section>
 
 ## Instructions
-<section id='instructions'> 
-El editor de código tiene una matriz con algunos marcos front-end y un componente funcional sin estado llamado <code>Frameworks()</code> . <code>Frameworks()</code> necesita asignar la matriz a una lista desordenada, como en el último desafío. Termine de escribir la devolución de llamada del <code>map</code> para devolver un elemento <code>li</code> para cada marco en la matriz <code>frontEndFrameworks</code> . Esta vez, asegúrese de dar a cada <code>li</code> un atributo <code>key</code> , establecido en un valor único. 
-Normalmente, desea que la clave sea algo que identifique de forma única el elemento que se está representando. Como último recurso, se puede usar el índice de matriz, pero normalmente debe intentar usar una identificación única. 
-</section>
+<section id="instructions"> El editor de código tiene una matriz con algunos marcos front-end y un componente funcional sin estado llamado <code>Frameworks()</code> . <code>Frameworks()</code> necesita asignar la matriz a una lista desordenada, como en el último desafío. Termine de escribir la devolución de llamada del <code>map</code> para devolver un elemento <code>li</code> para cada marco en la matriz <code>frontEndFrameworks</code> . Esta vez, asegúrese de dar a cada <code>li</code> un atributo <code>key</code> , establecido en un valor único. Normalmente, desea que la clave sea algo que identifique de forma única el elemento que se está representando. Como último recurso, se puede usar el índice de matriz, pero normalmente debe intentar usar una identificación única. </section>
 
 ## Tests
 <section id='tests'>
@@ -43,7 +39,6 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-
 const frontEndFrameworks = [
   'React',
   'Angular',
@@ -64,6 +59,7 @@ function Frameworks() {
     </div>
   );
 };
+
 ```
 
 </div>
@@ -83,30 +79,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-const frontEndFrameworks = [
-  'React',
-  'Angular',
-  'Ember',
-  'Knockout',
-  'Backbone',
-  'Vue'
-];
-
-function Frameworks() {
-  const renderFrameworks = frontEndFrameworks.map((fw, i) => {
-    return <li key={i}>{fw}</li>
-  })
-  return (
-    <div>
-      <h1>Popular Front End JavaScript Frameworks</h1>
-      <ul>
-        {renderFrameworks}
-      </ul>
-    </div>
-  );
-};
+// solution required
 ```
-
 </section>

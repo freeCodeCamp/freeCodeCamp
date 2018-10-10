@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036172
 title: Render State in the User Interface Another Way
-localeTitle: Estado de render en la interfaz de usuario de otra manera
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Estado de render en la interfaz de usuario de otra manera
 ---
 
 ## Description
-<section id='description'>
-Hay otra forma de acceder al <code>state</code> en un componente. En el método <code>render()</code> , antes de la declaración de <code>return</code> , puede escribir JavaScript directamente. Por ejemplo, podría declarar funciones, acceder a datos de <code>state</code> o <code>props</code> , realizar cálculos en estos datos, etc. Luego, puede asignar cualquier dato a las variables, a las que tiene acceso en la declaración de <code>return</code> .
-</section>
+<section id="description"> Hay otra forma de acceder al <code>state</code> en un componente. En el método <code>render()</code> , antes de la declaración de <code>return</code> , puede escribir JavaScript directamente. Por ejemplo, podría declarar funciones, acceder a datos de <code>state</code> o <code>props</code> , realizar cálculos en estos datos, etc. Luego, puede asignar cualquier dato a las variables, a las que tiene acceso en la declaración de <code>return</code> . </section>
 
 ## Instructions
-<section id='instructions'>
-En el método de procesamiento de <code>MyComponent</code> , defina una <code>const</code> llamada <code>name</code> y establezca que sea igual al valor del nombre en el <code>state</code> del componente. Debido a que puede escribir JavaScript directamente en esta parte del código, no tiene que incluir esta referencia entre llaves.
-A continuación, en la declaración de retorno, renderice este valor en una etiqueta <code>h1</code> usando el <code>name</code> la variable. Recuerde, debe usar la sintaxis JSX (llaves para JavaScript) en la declaración de devolución.
-</section>
+<section id="instructions"> En el método de procesamiento de <code>MyComponent</code> , defina una <code>const</code> llamada <code>name</code> y establezca que sea igual al valor del nombre en el <code>state</code> del componente. Debido a que puede escribir JavaScript directamente en esta parte del código, no tiene que incluir esta referencia entre llaves. A continuación, en la declaración de retorno, represente este valor en una etiqueta <code>h1</code> utilizando el <code>name</code> la variable. Recuerde, debe usar la sintaxis JSX (llaves para JavaScript) en la declaración de devolución. </section>
 
 ## Tests
 <section id='tests'>
@@ -61,6 +57,7 @@ class MyComponent extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -80,28 +77,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-class MyComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: 'freeCodeCamp'
-    }
-  }
-  render() {
-    // change code below this line
-    const name = this.state.name;
-    // change code above this line
-    return (
-      <div>
-        { /* change code below this line */ }
-        <h1>{name}</h1>
-        { /* change code above this line */ }
-      </div>
-    );
-  }
-};
+// solution required
 ```
-
 </section>

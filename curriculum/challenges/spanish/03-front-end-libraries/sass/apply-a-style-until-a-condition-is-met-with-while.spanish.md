@@ -1,27 +1,19 @@
 ---
 id: 587d7dbf367417b2b2512bbb
 title: Apply a Style Until a Condition is Met with @while
-localeTitle: Aplicar un estilo hasta que se cumpla una condición con @while
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Aplicar un estilo hasta que se cumpla una condición con @while
 ---
 
 ## Description
-<section id='description'> 
-La directiva <code>@while</code> es una opción con una funcionalidad similar a la del bucle <code>while</code> JavaScript. Crea reglas CSS hasta que se cumple una condición. 
-El desafío <code>@for</code> dio un ejemplo para crear un sistema de cuadrícula simple. Esto también puede funcionar con <code>@while</code> . 
-<blockquote>$x: 1;<br>@while $x < 13 {<br>&nbsp;&nbsp;.col-#{$x} { width: 100%/12 * $x;}<br>&nbsp;&nbsp;$x: $x + 1;<br>}</blockquote> 
-Primero, defina una variable <code>$x</code> y <code>@while</code> en 1. Luego, use la directiva <code>@while</code> para crear el sistema de cuadrícula <i>mientras que</i> <code>$x</code> es menor que 13. 
-Después de configurar la regla CSS para el <code>width</code> , <code>$x</code> se incrementa en 1 a Evita un bucle infinito. 
-</section>
+<section id="description"> La directiva <code>@while</code> es una opción con una funcionalidad similar a la del bucle <code>while</code> JavaScript. Crea reglas CSS hasta que se cumple una condición. El desafío <code>@for</code> dio un ejemplo para crear un sistema de cuadrícula simple. Esto también puede funcionar con <code>@while</code> . <blockquote> $ x: 1; <br> @while $ x &lt;13 { <br> .col - # {$ x} {ancho: 100% / 12 * $ x;} <br> $ x: $ x + 1; <br> } </blockquote> Primero, defina una variable <code>$x</code> y <code>@while</code> en 1. Luego, use la directiva <code>@while</code> para crear el sistema de cuadrícula <i>mientras que</i> <code>$x</code> es menor que 13. Después de configurar la regla de CSS para el <code>width</code> , <code>$x</code> se incrementa en 1 para evitar una Bucle infinito. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use <code>@while</code> para crear una serie de clases con diferentes <code>font-sizes</code> . 
-Debe haber 10 clases diferentes de <code>text-1</code> a <code>text-10</code> . A continuación, establezca <code>font-size</code> a 5px multiplicado por el número de índice actual. Asegúrese de evitar un bucle infinito! 
-</section>
+<section id="instructions"> Use <code>@while</code> para crear una serie de clases con diferentes <code>font-sizes</code> . Debería haber 10 clases diferentes de <code>text-1</code> a <code>text-10</code> . A continuación, establezca <code>font-size</code> a 5px multiplicado por el número de índice actual. Asegúrese de evitar un bucle infinito! </section>
 
 ## Tests
 <section id='tests'>
@@ -81,6 +73,7 @@ tests:
 <p class="text-8">Hello</p>
 <p class="text-9">Hello</p>
 <p class="text-10">Hello</p>
+
 ```
 
 </div>

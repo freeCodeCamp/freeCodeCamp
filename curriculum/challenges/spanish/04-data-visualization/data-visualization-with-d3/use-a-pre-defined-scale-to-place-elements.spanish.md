@@ -1,25 +1,18 @@
 ---
 id: 587d7fac367417b2b2512bde
 title: Use a Pre-Defined Scale to Place Elements
-localeTitle: Use una escala predefinida para colocar elementos
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Use una escala predefinida para colocar elementos
 ---
 
 ## Description
-<section id='description'> 
-Con las escalas configuradas, es hora de mapear el diagrama de dispersión nuevamente. Las escalas son como funciones de procesamiento que convierten los datos en bruto de x e y en valores que se ajustan y se representan correctamente en el lienzo de SVG. Mantienen los datos dentro del área de trazado de la pantalla. 
-Usted establece los valores de los atributos de coordenadas para una forma SVG con la función de escala. Esto incluye los atributos <code>x</code> e <code>y</code> para elementos <code>rect</code> o de <code>text</code> , o <code>cx</code> y <code>cy</code> para <code>circles</code> . Aquí hay un ejemplo: 
-<blockquote>shape<br>&nbsp;&nbsp;.attr("x", (d) => xScale(d[0]))</blockquote> 
-escalas establecen atributos de coordenadas de forma para colocar los puntos de datos en el lienzo SVG. No es necesario aplicar escalas cuando muestra el valor de datos real, por ejemplo, en el método <code>text()</code> para una información sobre herramientas o una etiqueta. 
-</section>
+<section id="description"> Con las escalas configuradas, es hora de mapear el diagrama de dispersión nuevamente. Las escalas son como funciones de procesamiento que convierten los datos en bruto de x e y en valores que se ajustan y se representan correctamente en el lienzo de SVG. Mantienen los datos dentro del área de trazado de la pantalla. Establece los valores de los atributos de coordenadas para una forma SVG con la función de escalado. Esto incluye los atributos <code>x</code> e <code>y</code> para elementos <code>rect</code> o de <code>text</code> , o <code>cx</code> y <code>cy</code> para <code>circles</code> . Aquí hay un ejemplo: <blockquote> forma <br> .attr (&quot;x&quot;, (d) =&gt; xScale (d [0])) </blockquote> Las escalas establecen atributos de coordenadas de forma para colocar los puntos de datos en el lienzo de SVG. No es necesario aplicar escalas cuando muestra el valor de datos real, por ejemplo, en el método <code>text()</code> para una información sobre herramientas o una etiqueta. </section>
 
 ## Instructions
-<section id='instructions'> 
-Utilice <code>xScale</code> y <code>yScale</code> para colocar tanto el <code>circle</code> como las formas de <code>text</code> en el lienzo de SVG. Para los <code>circles</code> , aplique las escalas para establecer los atributos <code>cx</code> y <code>cy</code> . Dales un radio de 5 unidades, también. 
-Para los elementos de <code>text</code> , aplique las escalas para establecer los atributos <code>x</code> e <code>y</code> . Las etiquetas deben estar desplazadas a la derecha de los puntos. Para hacer esto, agregue 10 unidades al valor de datos x antes de pasarlo a <code>xScale</code> . 
-</section>
+<section id="instructions"> Utilice <code>xScale</code> y <code>yScale</code> para colocar las formas de <code>circle</code> y <code>text</code> en el lienzo de SVG. Para los <code>circles</code> , aplique las escalas para establecer los atributos <code>cx</code> y <code>cy</code> . Dales un radio de 5 unidades, también. Para los elementos de <code>text</code> , aplique las escalas para establecer los atributos <code>x</code> e <code>y</code> . Las etiquetas deben estar desplazadas a la derecha de los puntos. Para hacer esto, agregue 10 unidades al valor de datos x antes de pasarlo a <code>xScale</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -136,6 +129,7 @@ tests:
        // Add your code above this line
   </script>
 </body>
+
 ```
 
 </div>

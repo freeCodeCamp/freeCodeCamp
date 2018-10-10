@@ -1,31 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4dd1000cf542c50ffef
+id: 5900f4dd1000cf542c50ffef
 challengeType: 5
 title: 'Problem 368: A Kempner-like series'
+videoUrl: ''
+localeTitle: 'Problema 368: Una serie como Kempner'
 ---
 
 ## Description
-<section id='description'> 
-Se sabe que la serie armónica $ 1 + \ dfrac {1} {2} + \ dfrac {1} {3} + \ dfrac {1} {4} + ... $ es divergente. 
-
-Sin embargo, si omitimos de esta serie cada término donde el denominador tiene un 9, la serie converge notablemente en aproximadamente 22.9206766193. 
-Esta serie de armónicos modificada se llama la serie de Kempner. 
-
-Consideremos ahora otra serie armónica modificada omitiendo de la serie armónica cada término donde el denominador tenga 3 o más dígitos consecutivos iguales. 
-Se puede verificar que de los primeros 1200 términos de la serie de armónicos, solo se omitirán 20 términos. 
-Estos 20 términos omitidos son: 
-$ \ dfrac {1} {111}, \ dfrac {1} {222}, \ dfrac {1} {333}, \ dfrac {1} {444}, \ dfrac {1 } {555}, \ dfrac {1} {666}, \ dfrac {1} {777}, \ dfrac {1} {888}, \ dfrac {1} {999}, \ dfrac {1} {1000}, \ dfrac {1} {1110}, \\\ \ dfrac {1} {1111}, \ dfrac {1} {1112}, \ dfrac {1} {1113}, \ dfrac {1} {1114}, \ dfrac {1} {1115}, \ dfrac {1} {1116}, \ dfrac {1} {1117}, \ dfrac {1} {1118}, \ dfrac {1} {1119} $ 
-
-Esta serie converge como bien. 
-
-Encuentra el valor al que la serie converge. 
-Da tu respuesta redondeada a 10 dígitos detrás del punto decimal. 
-</section>
+<section id="description"> Se sabe que la serie armónica $ 1 + \ dfrac {1} {2} + \ dfrac {1} {3} + \ dfrac {1} {4} + ... $ es divergente. <p> Sin embargo, si omitimos de esta serie todos los términos en los que el denominador tiene un 9, la serie converge notablemente en aproximadamente 22.9206766193. Esta serie armónica modificada se llama la serie de Kempner. </p><p> Consideremos ahora otra serie armónica modificada al omitir de la serie armónica cada término donde el denominador tiene 3 o más dígitos consecutivos iguales. Uno puede verificar que de los primeros 1200 términos de la serie armónica, solo se omitirán 20 términos. Estos 20 términos omitidos son: $$ \ dfrac {1} {111}, \ dfrac {1} {222}, \ dfrac {1} {333}, \ dfrac {1} {444}, \ dfrac {1} { 555}, \ dfrac {1} {666}, \ dfrac {1} {777}, \ dfrac {1} {888}, \ dfrac {1} {999}, \ dfrac {1} {1000}, \ dfrac {1} {1110}, \\ \ dfrac {1} {1111}, \ dfrac {1} {1112}, \ dfrac {1} {1113}, \ dfrac {1} {1114}, \ dfrac {1} {1115}, \ dfrac {1} {1116}, \ dfrac {1} {1117}, \ dfrac {1} {1118}, \ dfrac {1} {1119} $$ </p><p> Esta serie también converge. </p><p> Encuentra el valor al que la serie converge. Da tu respuesta redondeada a 10 dígitos detrás del punto decimal. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +37,7 @@ function euler368() {
 }
 
 euler368();
+
 ```
 
 </div>

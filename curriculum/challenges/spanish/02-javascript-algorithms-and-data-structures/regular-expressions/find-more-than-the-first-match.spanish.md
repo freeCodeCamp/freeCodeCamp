@@ -1,23 +1,16 @@
 ---
 id: 587d7db4367417b2b2512b93
 title: Find More Than the First Match
-localeTitle: Encuentra más que el primer partido
 challengeType: 1
+videoUrl: ''
+localeTitle: Encuentra más que el primer partido
 ---
 
 ## Description
-<section id='description'> 
-Hasta ahora, solo ha podido extraer o buscar un patrón una vez. 
-<blockquote>let testStr = "Repeat, Repeat, Repeat";<br>let ourRegex = /Repeat/;<br>testStr.match(ourRegex);<br>// Returns ["Repeat"]</blockquote> 
-Para buscar o extraer un patrón más de una vez, puede usar la bandera <code>g</code> . 
-<blockquote>let repeatRegex = /Repeat/g;<br>testStr.match(repeatRegex);<br>// Returns ["Repeat", "Repeat", "Repeat"]</blockquote> 
-</section>
+<section id="description"> Hasta ahora, solo ha podido extraer o buscar un patrón una vez. <blockquote> deje testStr = &quot;Repetir, Repetir, Repetir&quot;; <br> vamos a nuestroRegex = / Repetir /; <br> testStr.match (ourRegex); <br> // Devoluciones [&quot;Repetir&quot;] </blockquote> Para buscar o extraer un patrón más de una vez, puede usar la bandera <code>g</code> . <blockquote> vamos a repeatRegex = / Repetir / g; <br> testStr.match (repeatRegex); <br> // Devuelve [&quot;Repetir&quot;, &quot;Repetir&quot;, &quot;Repetir&quot;] </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Usando el regex <code>starRegex</code> , encuentra y extrae ambas palabras <code>&quot;Twinkle&quot;</code> de la cadena <code>twinkleStar</code> . 
-<strong>Nota</strong> <br> Puedes tener múltiples banderas en tu expresión regular como <code>/search/gi</code> 
-</section>
+<section id="instructions"> Usando el regex <code>starRegex</code> , encuentra y extrae ambas palabras <code>&quot;Twinkle&quot;</code> de la cadena <code>twinkleStar</code> . <strong>Nota</strong> <br> Puedes tener múltiples banderas en tu expresión regular como <code>/search/gi</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -46,6 +39,7 @@ tests:
 let twinkleStar = "Twinkle, twinkle, little star";
 let starRegex = /change/; // Change this line
 let result = twinkleStar; // Change this line
+
 ```
 
 </div>

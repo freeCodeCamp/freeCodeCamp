@@ -1,21 +1,16 @@
 ---
 id: 587d78ae367417b2b2512afc
 title: Use the flex-grow Property to Expand Items
-localeTitle: Utilice la propiedad flex-grow para expandir elementos
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice la propiedad flex-grow para expandir elementos
 ---
 
 ## Description
-<section id='description'>
-Lo opuesto a <code>flex-shrink</code> es la propiedad de <code>flex-grow</code> . Recuerde que <code>flex-shrink</code> controla el tamaño de los elementos cuando el contenedor se reduce. La propiedad <code>flex-grow</code> controla el tamaño de los elementos cuando el contenedor principal se expande.
-Usando un ejemplo similar del último desafío, si un elemento tiene un valor de <code>flex-grow</code> de 1 y el otro tiene un valor de <code>flex-grow</code> de 3, el valor de 3 crecerá tres veces más que el otro.
-</section>
+<section id="description"> Lo opuesto a <code>flex-shrink</code> es la propiedad de <code>flex-grow</code> . Recuerde que <code>flex-shrink</code> controla el tamaño de los elementos cuando el contenedor se reduce. La propiedad <code>flex-grow</code> controla el tamaño de los elementos cuando el contenedor principal se expande. Usando un ejemplo similar del último desafío, si un elemento tiene un valor de <code>flex-grow</code> de 1 y el otro tiene un valor de <code>flex-grow</code> de 3, el valor de 3 crecerá tres veces más que el otro. </section>
 
 ## Instructions
-<section id='instructions'>
-Agregue la propiedad CSS <code>flex-grow</code> a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 1 y <code>#box-2</code> un valor de 2.
-</section>
+<section id="instructions"> Agregue la propiedad CSS <code>flex-grow</code> a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 1 y <code>#box-2</code> un valor de 2. </section>
 
 ## Tests
 <section id='tests'>
@@ -60,6 +55,7 @@ tests:
   <div id="box-1"></div>
   <div id="box-2"></div>
 </div>
+
 ```
 
 </div>

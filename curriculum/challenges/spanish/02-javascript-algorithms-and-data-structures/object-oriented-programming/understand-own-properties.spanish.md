@@ -1,24 +1,16 @@
 ---
 id: 587d7dae367417b2b2512b7b
 title: Understand Own Properties
-localeTitle: Entender propiedades propias
 challengeType: 1
+videoUrl: ''
+localeTitle: Entender propiedades propias
 ---
 
 ## Description
-<section id='description'> 
-En el siguiente ejemplo, el constructor de <code>Bird</code> define dos propiedades: <code>name</code> y <code>numLegs</code> : 
-<blockquote>function Bird(name) {<br>&nbsp;&nbsp;this.name  = name;<br>&nbsp;&nbsp;this.numLegs = 2;<br>}<br><br>let duck = new Bird("Donald");<br>let canary = new Bird("Tweety");</blockquote> 
-<code>name</code> y <code>numLegs</code> se denominan propiedades <code>own</code> , porque se definen directamente en el objeto de instancia. Eso significa que el <code>duck</code> y el <code>canary</code> tienen su propia copia separada de estas propiedades. 
-De hecho, cada instancia de <code>Bird</code> tendrá su propia copia de estas propiedades. 
-El siguiente código agrega todas las propiedades <code>own</code> de <code>duck</code> a la matriz <code>ownProps</code> : 
-<blockquote>let ownProps = [];<br><br>for (let property in duck) {<br>&nbsp;&nbsp;if(duck.hasOwnProperty(property)) {<br>&nbsp;&nbsp;&nbsp;&nbsp;ownProps.push(property);<br>&nbsp;&nbsp;}<br>}<br><br>console.log(ownProps); // prints [ "name", "numLegs" ]</blockquote> 
-</section>
+<section id="description"> En el siguiente ejemplo, el constructor de <code>Bird</code> define dos propiedades: <code>name</code> y <code>numLegs</code> : <blockquote> función Bird (nombre) { <br> this.name = nombre; <br> this.numLegs = 2; <br> } <br><br> dejar pato = nuevo pájaro (&quot;Donald&quot;); <br> vamos canary = new Bird (&quot;Tweety&quot;); </blockquote> <code>name</code> y <code>numLegs</code> se denominan propiedades <code>own</code> , porque se definen directamente en el objeto de instancia. Eso significa que el <code>duck</code> y el <code>canary</code> tienen su propia copia separada de estas propiedades. De hecho, cada instancia de <code>Bird</code> tendrá su propia copia de estas propiedades. El siguiente código agrega todas las propiedades <code>own</code> de <code>duck</code> a la matriz <code>ownProps</code> : <blockquote> dejemos ownProps = []; <br><br> para (dejar propiedad en pato) { <br> if (duck.hasOwnProperty (propiedad)) { <br> ownProps.push (propiedad); <br> } <br> } <br><br> console.log (ownProps); // imprime [&quot;nombre&quot;, &quot;numLegs&quot;] </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agrega las propiedades <code>own</code> de <code>canary</code> a la matriz <code>ownProps</code> . 
-</section>
+<section id="instructions"> Agregue las propiedades <code>own</code> de <code>canary</code> a la matriz <code>ownProps</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -49,8 +41,6 @@ let canary = new Bird("Tweety");
 let ownProps = [];
 // Add your code below this line
 
-
-
 ```
 
 </div>
@@ -62,27 +52,7 @@ let ownProps = [];
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Bird(name) {
-  this.name = name;
-  this.numLegs = 2;
-}
-
-let canary = new Bird("Tweety");
-function getOwnProps (obj) {
-  const props = [];
-
-  for (let prop in obj) {
-    if (obj.hasOwnProperty(prop)) {
-      props.push(prop);
-    }
-  }
-
-  return props;
-}
-
-const ownProps = getOwnProps(canary);
+// solution required
 ```
-
 </section>

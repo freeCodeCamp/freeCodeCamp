@@ -1,21 +1,16 @@
 ---
 id: 587d781a367417b2b2512ab8
 title: Use the u Tag to Underline Text
-localeTitle: Use la etiqueta u para subrayar el texto
 challengeType: 0
 videoUrl: ''
+localeTitle: Use la etiqueta u para subrayar el texto
 ---
 
 ## Description
-<section id='description'> 
-Para subrayar el texto, puede utilizar la etiqueta <code>u</code> . Esto se usa a menudo para indicar que una sección del texto es importante, o algo para recordar. Con la etiqueta <code>u</code> , el navegador aplica el CSS de <code>text-decoration: underline;</code> al elemento. 
-</section>
+<section id="description"> Para subrayar el texto, puede utilizar la etiqueta <code>u</code> . Esto se usa a menudo para indicar que una sección del texto es importante, o algo para recordar. Con la etiqueta <code>u</code> , el navegador aplica el CSS de <code>text-decoration: underline;</code> al elemento. </section>
 
 ## Instructions
-<section id='instructions'> 
-Envuelva la etiqueta <code>u</code> únicamente alrededor del texto &quot;Estudiantes de doctorado&quot;. 
-<strong>Nota</strong> <br> Intente evitar usar la etiqueta <code>u</code> cuando podría confundirse con un enlace. Las etiquetas de anclaje también tienen un formato subrayado predeterminado. 
-</section>
+<section id="instructions"> Envuelva la etiqueta <code>u</code> solo alrededor del texto &quot;Estudiantes de doctorado&quot;. <strong>Nota</strong> <br> Intente evitar usar la etiqueta <code>u</code> cuando podría confundirse con un enlace. Las etiquetas de anclaje también tienen un formato subrayado predeterminado. </section>
 
 ## Tests
 <section id='tests'>
@@ -75,6 +70,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

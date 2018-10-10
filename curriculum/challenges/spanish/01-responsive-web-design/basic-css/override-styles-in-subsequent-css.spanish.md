@@ -1,26 +1,16 @@
 ---
 id: bad87fee1348bd9aedf04756
 title: Override Styles in Subsequent CSS
-localeTitle: Anular estilos en CSS subsiguiente
 challengeType: 0
 videoUrl: ''
+localeTitle: Anular estilos en CSS subsiguiente
 ---
 
 ## Description
-<section id='description'> 
-Nuestra clase de &quot;texto rosa&quot; anuló la declaración CSS de nuestro elemento de <code>body</code> ! 
-Acabamos de demostrar que nuestras clases anularán el CSS del elemento del <code>body</code> . Entonces, la siguiente pregunta lógica es: ¿qué podemos hacer para anular nuestra clase de <code>pink-text</code> ? 
-</section>
+<section id="description"> Nuestra clase de &quot;texto rosa&quot; anuló la declaración CSS de nuestro elemento de <code>body</code> . Acabamos de demostrar que nuestras clases anularán el CSS del elemento <code>body</code> . Entonces, la siguiente pregunta lógica es: ¿qué podemos hacer para anular nuestra clase de <code>pink-text</code> ? </section>
 
 ## Instructions
-<section id='instructions'> 
-Crea una clase CSS adicional llamada <code>blue-text</code> que le da a un elemento el color azul. Asegúrate de que esté debajo de tu declaración de clase de <code>pink-text</code> . 
-Aplique la clase de <code>blue-text</code> a su elemento <code>h1</code> además de su clase de <code>pink-text</code> , y veamos cuál gana. 
-aplicación de múltiples atributos de clase a un elemento HTML se realiza con un espacio entre ellos como este: 
-<code>class=&quot;class1 class2&quot;</code> 
-Nota: No importa en qué orden se enumeran las clases en el elemento HTML. 
-Sin embargo, lo que es importante es el orden de las declaraciones de <code>class</code> en la sección <code>&lt;style&gt;</code> . La segunda declaración siempre tendrá prioridad sobre la primera. Como <code>.blue-text</code> se declara en segundo lugar, anula los atributos de <code>.pink-text</code> 
-</section>
+<section id="instructions"> Cree una clase CSS adicional llamada <code>blue-text</code> que le dé a un elemento el color azul. Asegúrate de que esté debajo de tu declaración de clase de <code>pink-text</code> . Aplique la clase de <code>blue-text</code> a su elemento <code>h1</code> además de su clase de <code>pink-text</code> , y veamos cuál gana. La aplicación de múltiples atributos de clase a un elemento HTML se realiza con un espacio entre ellos como este: <code>class=&quot;class1 class2&quot;</code> Nota: No importa en qué orden se enumeran las clases en el elemento HTML. Sin embargo, lo que es importante es el orden de las declaraciones de <code>class</code> en la sección <code>&lt;style&gt;</code> . La segunda declaración siempre tendrá prioridad sobre la primera. Debido a que <code>.blue-text</code> se declara segundo, anula los atributos de <code>.pink-text</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -57,6 +47,7 @@ tests:
   }
 </style>
 <h1 class="pink-text">Hello World!</h1>
+
 ```
 
 </div>

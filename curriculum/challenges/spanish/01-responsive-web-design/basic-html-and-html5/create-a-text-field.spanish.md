@@ -1,24 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08829
 title: Create a Text Field
-localeTitle: Crear un campo de texto
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear un campo de texto
 ---
 
 ## Description
-<section id='description'> 
-Ahora vamos a crear un formulario web. 
-Los elementos de entrada son una forma conveniente de obtener información de su usuario. 
-Puede crear una entrada de texto como esta: 
-<code>&lt;input type=&quot;text&quot;&gt;</code> 
-Tenga en cuenta que <code>input</code> elementos de <code>input</code> se cierran automáticamente. 
-</section>
+<section id="description"> Ahora vamos a crear un formulario web. Los elementos de entrada son una forma conveniente de obtener información de su usuario. Puede crear una entrada de texto como esta: <code>&lt;input type=&quot;text&quot;&gt;</code> Tenga en cuenta que <code>input</code> elementos de <code>input</code> se cierran automáticamente. </section>
 
 ## Instructions
-<section id='instructions'> 
-Crea un elemento de <code>input</code> de <code>text</code> de tipo debajo de tus listas. 
-</section>
+<section id="instructions"> Cree un elemento de <code>input</code> de <code>text</code> de tipo debajo de sus listas. </section>
 
 ## Tests
 <section id='tests'>
@@ -59,6 +51,7 @@ tests:
 
 
 </main>
+
 ```
 
 </div>

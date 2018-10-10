@@ -1,23 +1,16 @@
 ---
 id: 587d78b2367417b2b2512b10
 title: Remove Items Using splice()
-localeTitle: Quitar elementos utilizando empalme ()
 challengeType: 1
+videoUrl: ''
+localeTitle: Quitar elementos utilizando empalme ()
 ---
 
 ## Description
-<section id='description'> 
-Bien, hemos aprendido cómo eliminar elementos del principio y el final de los arreglos usando <code>shift()</code> y <code>pop()</code> , pero ¿qué pasa si queremos eliminar un elemento de algún lugar en el medio? ¿O eliminar más de un elemento a la vez? Bueno, ahí es donde entra <code>splice()</code> . <code>splice()</code> nos permite hacer precisamente eso: <strong>eliminar cualquier número de elementos consecutivos</strong> de cualquier lugar en una matriz. 
-<code>splice()</code> puede tomar hasta 3 parámetros, pero por ahora, nos enfocaremos solo en los primeros 2. Los primeros dos parámetros de <code>splice()</code> son enteros que representan índices, o posiciones, de la matriz que <code>splice()</code> es siendo llamado. Y recuerde, las matrices tienen <em>un índice de cero</em> , por lo que para indicar el primer elemento de una matriz, usaríamos <code>0</code> . El primer parámetro de <code>splice()</code> representa el índice en la matriz a partir de la cual comenzar a eliminar elementos, mientras que el segundo parámetro indica el número de elementos a eliminar. Por ejemplo: 
-<blockquote>let array = ['today', 'was', 'not', 'so', 'great'];<br><br>array.splice(2, 2);<br>// remove 2 elements beginning with the 3rd element<br>// array now equals ['today', 'was', 'great']</blockquote> 
-<code>splice()</code> no solo modifica la matriz en la que se llama, sino que también devuelve una nueva matriz que contiene el valor de los elementos eliminados: 
-<blockquote>let array = ['I', 'am', 'feeling', 'really', 'happy'];<br><br>let newArray = array.splice(3, 2);<br>// newArray equals ['really', 'happy']</blockquote> 
-</section>
+<section id="description"> Bien, hemos aprendido cómo eliminar elementos del principio y el final de las matrices con <code>shift()</code> y <code>pop()</code> , pero ¿qué pasa si queremos eliminar un elemento de algún lugar en el medio? ¿O eliminar más de un elemento a la vez? Bueno, ahí es donde entra <code>splice()</code> . <code>splice()</code> nos permite hacer precisamente eso: <strong>eliminar cualquier número de elementos consecutivos</strong> de cualquier lugar en una matriz. <code>splice()</code> puede tomar hasta 3 parámetros, pero por ahora, nos enfocaremos solo en los primeros 2. Los primeros dos parámetros de <code>splice()</code> son enteros que representan índices, o posiciones, de la matriz que <code>splice()</code> está siendo exhortó a. Y recuerde, las matrices tienen <em>un índice de cero</em> , por lo que para indicar el primer elemento de una matriz, usaríamos <code>0</code> . El primer parámetro de <code>splice()</code> representa el índice en la matriz a partir de la cual comenzar a eliminar elementos, mientras que el segundo parámetro indica el número de elementos a eliminar. Por ejemplo: <blockquote> let array = [&#39;today&#39;, &#39;was&#39;, &#39;not&#39;, &#39;so&#39;, &#39;great&#39;]; <br><br> array.splice (2, 2); <br> // eliminar 2 elementos comenzando con el 3er elemento <br> // array ahora es igual a [&#39;today&#39;, &#39;was&#39;, &#39;great&#39;] </blockquote> <code>splice()</code> no solo modifica la matriz, sino que también devuelve una nueva matriz que contiene el valor de los elementos eliminados: <blockquote> dejar array = [&#39;I&#39;, &#39;am&#39;, &#39;feeling&#39;, &#39;really&#39;, &#39;happy&#39;]; <br><br> deja newArray = array.splice (3, 2); <br> // newArray es igual a [&#39;really&#39;, &#39;happy&#39;] </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Hemos definido una función, <code>sumOfTen</code> , que toma una matriz como argumento y devuelve la suma de los elementos de esa matriz. Modifique la función, usando <code>splice()</code> , para que devuelva un valor de <code>10</code> . 
-</section>
+<section id="instructions"> Hemos definido una función, <code>sumOfTen</code> , que toma una matriz como argumento y devuelve la suma de los elementos de esa matriz. Modifique la función, usando <code>splice()</code> , para que devuelva un valor de <code>10</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -48,6 +41,7 @@ function sumOfTen(arr) {
 
 // do not change code below this line
 console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
+
 ```
 
 </div>

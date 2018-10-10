@@ -1,22 +1,16 @@
 ---
 id: 587d8250367417b2b2512c60
 title: Create a Queue Class
-localeTitle: Crear una clase de cola
 challengeType: 1
+videoUrl: ''
+localeTitle: Crear una clase de cola
 ---
 
 ## Description
-<section id='description'> 
-Al igual que las pilas, las colas son una colección de elementos. Pero a diferencia de las pilas, las colas siguen el principio FIFO (primero en entrar, primero en salir). Los elementos agregados a una cola se empujan a la cola, o al final, de la cola, y solo se permite eliminar el elemento en la parte delantera de la cola. 
-Podríamos usar una matriz para representar una cola, pero al igual que las pilas, queremos limitar la cantidad de control que tenemos sobre nuestras colas. 
-Los dos métodos principales de una clase de cola son la puesta en cola y el método de salida. El método de puesta en cola empuja un elemento a la cola de la cola, y el método de salida de cola elimina y devuelve el elemento al frente de la cola. Otros métodos útiles son los métodos de frente, tamaño e isEmpty. 
-Instrucciones 
-Escriba un método de puesta en cola que empuja un elemento a la cola de la cola, un método de salida de cola que elimina y devuelve el elemento frontal, un método frontal que nos permite ver el elemento frontal, un método de tamaño que muestra la longitud y una Método isEmpty para verificar si la cola está vacía. 
-</section>
+<section id="description"> Al igual que las pilas, las colas son una colección de elementos. Pero a diferencia de las pilas, las colas siguen el principio FIFO (primero en entrar, primero en salir). Los elementos agregados a una cola se empujan a la cola, o al final, de la cola, y solo se permite eliminar el elemento en la parte delantera de la cola. Podríamos usar una matriz para representar una cola, pero al igual que las pilas, queremos limitar la cantidad de control que tenemos sobre nuestras colas. Los dos métodos principales de una clase de cola son la puesta en cola y el método de salida. El método de puesta en cola empuja un elemento a la cola de la cola, y el método de salida de cola elimina y devuelve el elemento en la parte delantera de la cola. Otros métodos útiles son los métodos de frente, tamaño e isEmpty. Instrucciones Escriba un método de puesta en cola que empuja un elemento a la cola de la cola, un método de salida de cola que elimina y devuelve el elemento frontal, un método frontal que nos permite ver el elemento frontal, un método de tamaño que muestra la longitud y un método isEmpty para comprobar si la cola está vacía. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -62,6 +56,7 @@ function Queue () {
 
     // Only change code above this line
 }
+
 ```
 
 </div>

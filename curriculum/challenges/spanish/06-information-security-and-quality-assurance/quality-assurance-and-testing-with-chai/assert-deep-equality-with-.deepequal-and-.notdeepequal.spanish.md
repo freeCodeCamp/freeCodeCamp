@@ -1,20 +1,16 @@
 ---
 id: 587d824c367417b2b2512c4c
 title: Assert Deep Equality with .deepEqual and .notDeepEqual
-localeTitle: Afirmar la igualdad profunda con .deepEqual y .notDeepEqual
 challengeType: 2
+videoUrl: ''
+localeTitle: Afirmar la igualdad profunda con .deepEqual y .notDeepEqual
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-.deepEqual (), .notDeepEqual () 
-.deepEqual () afirma que dos objetos son 
-profundos iguales </section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .deepEqual (), .notDeepEqual () .deepEqual () afirma que dos objetos son profundos iguales </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

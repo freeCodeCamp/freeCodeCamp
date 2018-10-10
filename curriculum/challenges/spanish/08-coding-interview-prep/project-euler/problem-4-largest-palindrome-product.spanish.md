@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3701000cf542c50fe83
+id: 5900f3701000cf542c50fe83
 challengeType: 5
 title: 'Problem 4: Largest palindrome product'
+videoUrl: ''
+localeTitle: 'Problema 4: el producto palíndromo más grande'
 ---
 
 ## Description
-<section id='description'> 
-Un número palindrómico se lee igual en ambos sentidos. El palíndromo más grande hecho del producto de dos números de 2 dígitos es 9009 = 91 × 99. 
-Encuentre el palíndromo más grande hecho del producto de dos números de <code>n</code> dígitos. 
-</section>
+<section id="description"> Un número palindrómico se lee igual en ambos sentidos. El palíndromo más grande hecho del producto de dos números de 2 dígitos es 9009 = 91 × 99. Encuentre el palíndromo más grande hecho del producto de dos números de <code>n</code> dígitos. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +39,7 @@ function largestPalindromeProduct(n) {
 }
 
 largestPalindromeProduct(3);
+
 ```
 
 </div>
@@ -53,21 +51,7 @@ largestPalindromeProduct(3);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const largestPalindromeProduct = (digit)=>{
-  let start = 1;
-  let end = Number(`1e${digit}`) - 1;
- let palindrome = [];
-  for(let i=start;i<=end;i++){
-    for(let j=start;j<=end;j++){
-      let product = i*j;
-      let palindromeRegex = /\b(\d)(\d?)(\d?).?\3\2\1\b/gi;
-      palindromeRegex.test(product) && palindrome.push(product);
-    }
- }
- return Math.max(...palindrome);
-}
+// solution required
 ```
-
 </section>

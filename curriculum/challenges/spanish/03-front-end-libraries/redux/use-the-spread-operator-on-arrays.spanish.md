@@ -1,22 +1,17 @@
 ---
 id: 5a24c314108439a4d4036159
 title: Use the Spread Operator on Arrays
-localeTitle: Utilice el operador de propagación en matrices
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Utilice el operador de propagación en matrices
 ---
 
 ## Description
-<section id='description'>
-Una solución de ES6 para ayudar a imponer la inmutabilidad del estado en Redux es el operador de propagación: <code>...</code> El operador de difusión tiene una variedad de aplicaciones, una de las cuales está bien adaptada al desafío anterior de producir una nueva matriz a partir de una matriz existente. Esta es una sintaxis relativamente nueva, pero comúnmente utilizada. Por ejemplo, si tiene una matriz <code>myArray</code> y escribe:
-<code>let newArray = [...myArray];</code>
-<code>newArray</code> ahora es un clon de <code>myArray</code> . Ambas matrices todavía existen por separado en la memoria. Si realiza una mutación como <code>newArray.push(5)</code> , <code>myArray</code> no cambia. El <code>...</code> <i>propaga</i> eficazmente los valores en <code>myArray</code> en una nueva matriz. Para clonar una matriz pero agregar valores adicionales en la nueva matriz, puede escribir <code>[...myArray, &#39;new value&#39;]</code> . Esto devolvería una nueva matriz compuesta por los valores en <code>myArray</code> y la cadena <code>&#39;new value&#39;</code> como el último valor. La sintaxis de propagación se puede utilizar varias veces en una composición de matriz como esta, pero es importante tener en cuenta que solo hace una copia superficial de la matriz. Es decir, solo proporciona operaciones de matriz inmutables para matrices unidimensionales.
-</section>
+<section id="description"> Una solución de ES6 para ayudar a imponer la inmutabilidad del estado en Redux es el operador de propagación: <code>...</code> El operador de difusión tiene una variedad de aplicaciones, una de las cuales está bien adaptada al desafío anterior de producir una nueva matriz a partir de una matriz existente. Esta es una sintaxis relativamente nueva, pero comúnmente utilizada. Por ejemplo, si tiene una matriz <code>myArray</code> y escribe: <code>let newArray = [...myArray];</code> <code>newArray</code> ahora es un clon de <code>myArray</code> . Ambas matrices todavía existen por separado en la memoria. Si realiza una mutación como <code>newArray.push(5)</code> , <code>myArray</code> no cambia. El <code>...</code> <i>propaga</i> eficazmente los valores en <code>myArray</code> en una nueva matriz. Para clonar una matriz pero agregar valores adicionales en la nueva matriz, puede escribir <code>[...myArray, &#39;new value&#39;]</code> . Esto devolvería una nueva matriz compuesta por los valores en <code>myArray</code> y la cadena <code>&#39;new value&#39;</code> como el último valor. La sintaxis de propagación se puede utilizar varias veces en una composición de matriz como esta, pero es importante tener en cuenta que solo hace una copia superficial de la matriz. Es decir, solo proporciona operaciones de matriz inmutables para matrices unidimensionales. </section>
 
 ## Instructions
-<section id='instructions'>
-Utilice el operador de propagación para devolver una nueva copia del estado cuando se agrega una tarea pendiente.
-</section>
+<section id="instructions"> Use el operador de propagación para devolver una nueva copia del estado cuando se agregue una tarea pendiente. </section>
 
 ## Tests
 <section id='tests'>
@@ -60,6 +55,7 @@ const addToDo = (todo) => {
 }
 
 const store = Redux.createStore(immutableReducer);
+
 ```
 
 </div>
@@ -71,28 +67,7 @@ const store = Redux.createStore(immutableReducer);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const immutableReducer = (state = ['Do not mutate state!'], action) => {
-  switch(action.type) {
-    case 'ADD_TO_DO':
-      return [
-        ...state,
-        action.todo
-      ];
-    default:
-      return state;
-  }
-};
-
-const addToDo = (todo) => {
-  return {
-    type: 'ADD_TO_DO',
-    todo
-  }
-}
-
-const store = Redux.createStore(immutableReducer);
+// solution required
 ```
-
 </section>

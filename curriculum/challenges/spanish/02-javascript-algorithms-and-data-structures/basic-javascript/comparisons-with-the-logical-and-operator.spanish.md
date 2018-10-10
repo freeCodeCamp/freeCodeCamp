@@ -1,23 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d8
 title: Comparisons with the Logical And Operator
-localeTitle: Comparaciones con lo lógico y el operador.
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparaciones con lo lógico y el operador.
 ---
 
 ## Description
-<section id='description'> 
-A veces necesitará probar más de una cosa a la vez. La <dfn>lógica y el</dfn> operador ( <code>&amp;&amp;</code> ) devuelven <code>true</code> si y solo si los <dfn>operandos</dfn> a su izquierda y derecha son verdaderos. 
-El mismo efecto podría lograrse anidando una instrucción if dentro de otra if: 
-<blockquote>if (num > 5) {<br>&nbsp;&nbsp;if (num < 10) {<br>&nbsp;&nbsp;&nbsp;&nbsp;return "Yes";<br>&nbsp;&nbsp;}<br>}<br>return "No";</blockquote> 
-solo devolverá &quot;Sí&quot; si <code>num</code> es mayor que <code>5</code> y menor que <code>10</code> . La misma lógica se puede escribir como: 
-<blockquote>if (num > 5 && num < 10) {<br>&nbsp;&nbsp;return "Yes";<br>}<br>return "No";</blockquote> 
-</section>
+<section id="description"> A veces necesitará probar más de una cosa a la vez. La <dfn>lógica y el</dfn> operador ( <code>&amp;&amp;</code> ) devuelven <code>true</code> si y solo si los <dfn>operandos</dfn> a su izquierda y derecha son verdaderos. El mismo efecto podría lograrse anidando una instrucción if dentro de otra si: <blockquote> if (num&gt; 5) { <br> si (num &lt;10) { <br> devuelve &quot;Sí&quot;; <br> } <br> } <br> devuelve &quot;No&quot;; </blockquote> solo devolverá &quot;Sí&quot; si <code>num</code> es mayor que <code>5</code> y menor que <code>10</code> . La misma lógica se puede escribir como: <blockquote> if (num&gt; 5 &amp;&amp; num &lt;10) { <br> devuelve &quot;Sí&quot;; <br> } <br> devuelve &quot;No&quot;; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Combine las dos declaraciones if en una declaración que devolverá <code>&quot;Yes&quot;</code> si <code>val</code> es menor o igual a <code>50</code> y mayor o igual a <code>25</code> . De lo contrario, devolverá <code>&quot;No&quot;</code> . 
-</section>
+<section id="instructions"> Combine las dos declaraciones if en una declaración que devolverá <code>&quot;Yes&quot;</code> si <code>val</code> es menor o igual a <code>50</code> y mayor o igual a <code>25</code> . De lo contrario, devolverá <code>&quot;No&quot;</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -70,6 +63,7 @@ function testLogicalAnd(val) {
 
 // Change this value to test
 testLogicalAnd(10);
+
 ```
 
 </div>
@@ -81,14 +75,7 @@ testLogicalAnd(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testLogicalAnd(val) {
-  if (val >= 25 && val <= 50) {
-    return "Yes";
-  }
-  return "No";
-}
+// solution required
 ```
-
 </section>

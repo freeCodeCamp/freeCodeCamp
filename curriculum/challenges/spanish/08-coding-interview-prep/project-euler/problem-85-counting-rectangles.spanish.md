@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3c11000cf542c50fed4
+id: 5900f3c11000cf542c50fed4
 challengeType: 5
 title: 'Problem 85: Counting rectangles'
+videoUrl: ''
+localeTitle: 'Problema 85: Contar rectángulos'
 ---
 
 ## Description
-<section id='description'> 
-Al contar con cuidado, se puede ver que una cuadrícula rectangular que mide 3 por 2 contiene dieciocho rectángulos: 
-
-
-Aunque no existe una cuadrícula rectangular que contenga exactamente dos millones de rectángulos, encuentre el área de la cuadrícula con la solución más cercana. 
-</section>
+<section id="description"> Al contar con cuidado, se puede ver que una cuadrícula rectangular que mide 3 por 2 contiene dieciocho rectángulos: <p> Aunque no existe una cuadrícula rectangular que contenga exactamente dos millones de rectángulos, encuentre el área de la cuadrícula con la solución más cercana. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +37,7 @@ function euler85() {
 }
 
 euler85();
+
 ```
 
 </div>

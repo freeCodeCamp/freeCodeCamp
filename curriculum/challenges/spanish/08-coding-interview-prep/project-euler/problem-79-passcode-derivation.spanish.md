@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3bb1000cf542c50fece
+id: 5900f3bb1000cf542c50fece
 challengeType: 5
 title: 'Problem 79: Passcode derivation'
+videoUrl: ''
+localeTitle: 'Problema 79: Derivación del código de acceso'
 ---
 
 ## Description
-<section id='description'> 
-Un método de seguridad común utilizado para la banca en línea es pedirle al usuario tres caracteres aleatorios de un código de acceso. Por ejemplo, si el código de acceso era 531278, pueden solicitar los caracteres segundo, tercero y quinto; la respuesta esperada sería: 317. 
-El archivo de texto, keylog.txt, contiene cincuenta intentos de inicio de sesión exitosos. 
-Dado que los tres caracteres siempre se solicitan en orden, analice el archivo para determinar el código de acceso secreto más corto posible de longitud desconocida. 
-</section>
+<section id="description"> Un método de seguridad común utilizado para la banca en línea es pedirle al usuario tres caracteres aleatorios de un código de acceso. Por ejemplo, si el código de acceso era 531278, pueden solicitar los caracteres 2, 3 y 5; la respuesta esperada sería: 317. El archivo de texto, keylog.txt, contiene cincuenta intentos de inicio de sesión exitosos. Dado que los tres caracteres siempre se solicitan en orden, analice el archivo para determinar el código de acceso secreto más corto posible de longitud desconocida. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler79() {
 }
 
 euler79();
+
 ```
 
 </div>

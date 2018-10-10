@@ -1,25 +1,16 @@
 ---
 id: 587d78a6367417b2b2512ade
 title: Create a More Complex Shape Using CSS and HTML
-localeTitle: Crea una forma más compleja usando CSS y HTML
 challengeType: 0
 videoUrl: ''
+localeTitle: Crea una forma más compleja usando CSS y HTML
 ---
 
 ## Description
-<section id='description'>
-Una de las formas más populares del mundo es la forma de corazón, y en este desafío creará una utilizando CSS puro. Pero primero, debe comprender los elementos pseudoelementos <code>::before</code> y <code>::after</code> . Estos pseudo-elementos se usan para agregar algo antes o después de un elemento seleccionado. En el siguiente ejemplo, un <code>::before</code> pseudo-elemento se usa para agregar un rectángulo a un elemento con el <code>heart</code> la clase:
-<blockquote>.heart::before {<br>&nbsp;&nbsp;content: "";<br>&nbsp;&nbsp;background-color: yellow;<br>&nbsp;&nbsp;border-radius: 25%;<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;height: 50px;<br>&nbsp;&nbsp;width: 70px;<br>&nbsp;&nbsp;top: -50px;<br>&nbsp;&nbsp;left: 5px;<br>}</blockquote>
-Para que los elementos de pseudo-elementos <code>::before</code> y <code>::after</code> funcionen correctamente, deben tener una propiedad de <code>content</code> definida. Esta propiedad se usa generalmente para agregar elementos como una foto o texto al elemento seleccionado. Cuando los pseudo-elementos <code>::before</code> y <code>::after</code> se usan para hacer formas, la propiedad de <code>content</code> sigue siendo necesaria, pero se establece en una cadena vacía.
-En el ejemplo anterior, el elemento con la clase de <code>heart</code> tiene un pseudoelemento <code>::before</code> del que produce un rectángulo amarillo con <code>height</code> y <code>width</code> de 50 px y 70 px, respectivamente. Este rectángulo tiene esquinas redondeadas debido a su radio de borde del 25% y está posicionado absolutamente a 5px desde la <code>left</code> y 50px por encima de la <code>top</code> del elemento.
-</section>
+<section id="description"> Una de las formas más populares del mundo es la forma de corazón, y en este desafío creará una utilizando CSS puro. Pero primero, debe comprender los elementos pseudoelementos <code>::before</code> y <code>::after</code> . Estos pseudo-elementos se usan para agregar algo antes o después de un elemento seleccionado. En el siguiente ejemplo, un <code>::before</code> pseudo-elemento se usa para agregar un rectángulo a un elemento con el <code>heart</code> la clase: <blockquote> .heart :: before { <br> contenido: &quot;&quot;; <br> color de fondo: amarillo; <br> radio del borde: 25%; <br> posición: absoluta; <br> altura: 50px; <br> ancho: 70px; <br> arriba: -50px; <br> izquierda: 5px; <br> } </blockquote> Para que <code>::before</code> y <code>::after</code> pseudo-elements funcionen correctamente, deben tener una propiedad de <code>content</code> definida. Esta propiedad se usa generalmente para agregar elementos como una foto o texto al elemento seleccionado. Cuando los pseudo-elementos <code>::before</code> y <code>::after</code> se usan para hacer formas, la propiedad de <code>content</code> sigue siendo necesaria, pero se establece en una cadena vacía. En el ejemplo anterior, el elemento con la clase de <code>heart</code> tiene un pseudoelemento <code>::before</code> del que produce un rectángulo amarillo con <code>height</code> y <code>width</code> de 50 px y 70 px, respectivamente. Este rectángulo tiene esquinas redondeadas debido a su radio de borde del 25% y está posicionado absolutamente a 5px desde la <code>left</code> y 50px por encima de la <code>top</code> del elemento. </section>
 
 ## Instructions
-<section id='instructions'>
-Transforma el elemento en la pantalla a un corazón. En el <code>heart::after</code> selector, cambie el <code>background-color</code> a rosa y el <code>border-radius</code> del <code>border-radius</code> a 50%.
-A continuación, apunte el elemento con el <code>heart</code> la clase (solo el <code>heart</code> ) y complete la propiedad de <code>transform</code> . Utilice la función <code>rotate()</code> con -45 grados. ( <code>rotate()</code> funciona de la misma manera que <code>skewX()</code> y <code>skewY()</code> hacen).
-Finalmente, en el <code>heart::before</code> selector, establece su propiedad de <code>content</code> en una cadena vacía.
-</section>
+<section id="instructions"> Transforma el elemento en la pantalla en un corazón. En el <code>heart::after</code> selector, cambie el <code>background-color</code> a rosa y el <code>border-radius</code> del <code>border-radius</code> a 50%. A continuación, apunte el elemento con el <code>heart</code> la clase (solo el <code>heart</code> ) y complete la propiedad de <code>transform</code> . Utilice la función <code>rotate()</code> con -45 grados. ( <code>rotate()</code> funciona de la misma manera que <code>skewX()</code> y <code>skewY()</code> hacen). Finalmente, en el <code>heart::before</code> selector, establece su propiedad de <code>content</code> en una cadena vacía. </section>
 
 ## Tests
 <section id='tests'>
@@ -80,6 +71,7 @@ tests:
 }
 </style>
 <div class = "heart"></div>
+
 ```
 
 </div>
@@ -91,9 +83,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".heart {transform: rotate(-45deg);} .heart::after {background-color: pink; border-radius: 50%;} .heart::before {content: \"\"; border-radius: 50%;}"
+// solution required
 ```
-
 </section>

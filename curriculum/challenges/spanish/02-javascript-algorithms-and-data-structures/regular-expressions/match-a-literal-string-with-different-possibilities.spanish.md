@@ -1,22 +1,16 @@
 ---
 id: 587d7db4367417b2b2512b90
 title: Match a Literal String with Different Possibilities
-localeTitle: Unir una cadena literal con diferentes posibilidades
 challengeType: 1
+videoUrl: ''
+localeTitle: Unir una cadena literal con diferentes posibilidades
 ---
 
 ## Description
-<section id='description'> 
-Usando expresiones regulares como <code>/coding/</code> , puede buscar el patrón <code>&quot;coding&quot;</code> en otra cadena. 
-Esto es poderoso para buscar cadenas simples, pero está limitado a un solo patrón. Puede buscar múltiples patrones utilizando la <code>alternation</code> u operador <code>OR</code> : <code>|</code> . 
-Este operador hace coincidir los patrones antes o después de él. Por ejemplo, si desea hacer coincidir <code>&quot;yes&quot;</code> o <code>&quot;no&quot;</code> , la expresión regular que desea es <code>/yes|no/</code> . 
-También puede buscar más de dos patrones. Puede hacer esto agregando más patrones con más operadores <code>OR</code> que los separan, como <code>/yes|no|maybe/</code> . 
-</section>
+<section id="description"> Usando expresiones regulares como <code>/coding/</code> , puede buscar el patrón <code>&quot;coding&quot;</code> en otra cadena. Esto es poderoso para buscar cadenas simples, pero está limitado a un solo patrón. Puede buscar múltiples patrones utilizando la <code>alternation</code> u operador <code>OR</code> : <code>|</code> . Este operador hace coincidir los patrones antes o después de él. Por ejemplo, si desea hacer coincidir <code>&quot;yes&quot;</code> o <code>&quot;no&quot;</code> , la expresión regular que desea es <code>/yes|no/</code> . También puede buscar más de dos patrones. Puede hacer esto agregando más patrones con más operadores <code>OR</code> que los separan, como <code>/yes|no|maybe/</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Complete el regex <code>petRegex</code> para que coincida con las mascotas <code>&quot;dog&quot;</code> , <code>&quot;cat&quot;</code> , <code>&quot;bird&quot;</code> o <code>&quot;fish&quot;</code> . 
-</section>
+<section id="instructions"> Complete el regex <code>petRegex</code> para que coincida con las mascotas <code>&quot;dog&quot;</code> , <code>&quot;cat&quot;</code> , <code>&quot;bird&quot;</code> o <code>&quot;fish&quot;</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -51,6 +45,7 @@ tests:
 let petString = "James has a pet cat.";
 let petRegex = /change/; // Change this line
 let result = petRegex.test(petString);
+
 ```
 
 </div>

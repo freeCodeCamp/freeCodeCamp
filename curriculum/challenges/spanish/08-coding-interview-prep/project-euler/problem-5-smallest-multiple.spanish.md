@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3711000cf542c50fe84
+id: 5900f3711000cf542c50fe84
 challengeType: 5
 title: 'Problem 5: Smallest multiple'
+videoUrl: ''
+localeTitle: 'Problema 5: el múltiplo más pequeño'
 ---
 
 ## Description
-<section id='description'> 
-2520 es el número más pequeño que se puede dividir por cada uno de los números del 1 al 10 sin ningún resto. 
-¿Cuál es el número positivo más pequeño que es divisible por todos los números del 1 al <code>n</code> ? 
-</section>
+<section id="description"> 2520 es el número más pequeño que se puede dividir por cada uno de los números del 1 al 10 sin ningún resto. ¿Cuál es el número positivo más pequeño que es divisible por todos los números del 1 al <code>n</code> ? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +45,7 @@ function smallestMult(n) {
 }
 
 smallestMult(20);
+
 ```
 
 </div>
@@ -59,22 +57,7 @@ smallestMult(20);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function smallestMult(n){
-  function gcd(a, b) {
-    return b === 0 ? a : gcd(b, a%b); // Euclidean algorithm
-  }
-
-  function lcm(a, b) {
-    return a * b / gcd(a, b);
-  }
-  var result = 1;
-  for(var i = 2; i <= n; i++) {
-    result = lcm(result, i);
-  }
-  return result;
-}
+// solution required
 ```
-
 </section>

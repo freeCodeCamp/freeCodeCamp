@@ -1,22 +1,16 @@
 ---
 id: 587d7da9367417b2b2512b68
 title: Use the reduce Method to Analyze Data
-localeTitle: Utilice el método de reducción para analizar datos
 challengeType: 1
+videoUrl: ''
+localeTitle: Utilice el método de reducción para analizar datos
 ---
 
 ## Description
-<section id='description'> 
-<code>Array.prototype.reduce()</code> , o simplemente <code>reduce()</code> , es la más general de todas las operaciones de matriz en JavaScript. Puede resolver casi cualquier problema de procesamiento de matrices utilizando el método de <code>reduce</code> . 
-Este no es el caso con los métodos de <code>filter</code> y <code>map</code> , ya que no permiten la interacción entre dos elementos diferentes de la matriz. Por ejemplo, si desea comparar elementos de la matriz, o agregarlos juntos, el <code>filter</code> o el <code>map</code> no podrían procesarlo. 
-El método de <code>reduce</code> permite formas más generales de procesamiento de matrices, y es posible mostrar que tanto el <code>filter</code> como el <code>map</code> pueden derivarse como una aplicación especial de <code>reduce</code> . 
-Sin embargo, antes de que lleguemos allí, practiquemos <code>reduce</code> primero. 
-</section>
+<section id="description"> <code>Array.prototype.reduce()</code> , o simplemente <code>reduce()</code> , es la más general de todas las operaciones de matriz en JavaScript. Puede resolver casi cualquier problema de procesamiento de matrices utilizando el método de <code>reduce</code> . Este no es el caso con los métodos de <code>filter</code> y <code>map</code> , ya que no permiten la interacción entre dos elementos diferentes de la matriz. Por ejemplo, si desea comparar elementos de la matriz, o agregarlos juntos, el <code>filter</code> o el <code>map</code> no podrían procesarlo. El método de <code>reduce</code> permite formas más generales de procesamiento de matrices, y es posible mostrar que tanto el <code>filter</code> como el <code>map</code> pueden derivarse como una aplicación especial de <code>reduce</code> . Sin embargo, antes de que lleguemos allí, practiquemos <code>reduce</code> primero. </section>
 
 ## Instructions
-<section id='instructions'> 
-La variable <code>watchList</code> contiene una serie de objetos con información sobre varias películas. Use <code>reduce</code> para encontrar la calificación promedio de IMDB de las películas <strong>dirigidas por Christopher Nolan</strong> . Recuerde de los desafíos anteriores cómo <code>filter</code> datos y <code>map</code> para obtener lo que necesita. Es posible que deba crear otras variables, pero guardar el promedio final en la variable <code>averageRating</code> . Tenga en cuenta que los valores de calificación se guardan como cadenas en el objeto y deben convertirse en números antes de que se utilicen en cualquier operación matemática. 
-</section>
+<section id="instructions"> La lista de <code>watchList</code> variable contiene una serie de objetos con información sobre varias películas. Use <code>reduce</code> para encontrar la calificación promedio de IMDB de las películas <strong>dirigidas por Christopher Nolan</strong> . Recuerde de los desafíos anteriores cómo <code>filter</code> datos y <code>map</code> para obtener lo que necesita. Es posible que deba crear otras variables, pero guardar el promedio final en la variable <code>averageRating</code> . Tenga en cuenta que los valores de calificación se guardan como cadenas en el objeto y deben convertirse en números antes de que se utilicen en cualquier operación matemática. </section>
 
 ## Tests
 <section id='tests'>
@@ -163,6 +157,7 @@ var averageRating;
 // Add your code above this line
 
 console.log(averageRating);
+
 ```
 
 </div>

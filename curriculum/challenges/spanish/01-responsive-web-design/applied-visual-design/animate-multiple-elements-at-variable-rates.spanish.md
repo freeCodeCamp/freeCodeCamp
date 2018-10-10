@@ -1,21 +1,16 @@
 ---
 id: 587d78a8367417b2b2512ae6
 title: Animate Multiple Elements at Variable Rates
-localeTitle: Animar múltiples elementos a tasas variables
 challengeType: 0
 videoUrl: ''
+localeTitle: Animar múltiples elementos a tasas variables
 ---
 
 ## Description
-<section id='description'> 
-En el desafío anterior, cambiaste las tasas de animación para dos elementos animados similares al modificar sus reglas <code>@keyframes</code> . Puede lograr el mismo objetivo manipulando la <code>animation-duration</code> de la <code>animation-duration</code> de varios elementos. 
-En la animación que se ejecuta en el editor de código, hay tres &quot;estrellas&quot; en el cielo que brillan al mismo ritmo en un bucle continuo. Para hacerlos brillar a diferentes velocidades, puede establecer la propiedad de <code>animation-duration</code> la <code>animation-duration</code> en diferentes valores para cada elemento. 
-</section>
+<section id="description"> En el desafío anterior, cambiaste las tasas de animación para dos elementos animados similares al modificar sus reglas de <code>@keyframes</code> . Puede lograr el mismo objetivo manipulando la <code>animation-duration</code> de la <code>animation-duration</code> de varios elementos. En la animación que se ejecuta en el editor de código, hay tres &quot;estrellas&quot; en el cielo que brillan al mismo ritmo en un bucle continuo. Para hacerlos brillar a diferentes velocidades, puede establecer la propiedad de <code>animation-duration</code> la <code>animation-duration</code> en diferentes valores para cada elemento. </section>
 
 ## Instructions
-<section id='instructions'> 
-Establezca la <code>animation-duration</code> de la <code>animation-duration</code> de los elementos con las clases <code>star-1</code> , <code>star-2</code> y <code>star-3</code> en 1s, 0.9s y 1.1s, respectivamente. 
-</section>
+<section id="instructions"> Establezca la <code>animation-duration</code> de la <code>animation-duration</code> de los elementos con las clases <code>star-1</code> , <code>star-2</code> y <code>star-3</code> en 1s, 0.9s y 1.1s, respectivamente. </section>
 
 ## Tests
 <section id='tests'>
@@ -92,6 +87,7 @@ tests:
 <div class="star-1 stars"></div>
 <div class="star-2 stars"></div>
 <div class="star-3 stars"></div>
+
 ```
 
 </div>

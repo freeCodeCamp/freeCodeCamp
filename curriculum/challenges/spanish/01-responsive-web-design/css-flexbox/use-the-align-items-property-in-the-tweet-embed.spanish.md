@@ -1,20 +1,16 @@
 ---
 id: 587d78ad367417b2b2512af9
 title: Use the align-items Property in the Tweet Embed
-localeTitle: Use la propiedad align-items en el Tweet Insertar
 challengeType: 0
 videoUrl: ''
+localeTitle: Use la propiedad align-items en el Tweet Insertar
 ---
 
 ## Description
-<section id='description'> 
-El último desafío introdujo la propiedad <code>align-items</code> y dio un ejemplo. Esta propiedad se puede aplicar a algunos elementos de inserción de tweets para alinear los elementos flexibles dentro de ellos. 
-</section>
+<section id="description"> El último desafío introdujo la propiedad <code>align-items</code> y dio un ejemplo. Esta propiedad se puede aplicar a algunos elementos de inserción de tweets para alinear los elementos flexibles dentro de ellos. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la propiedad CSS <code>align-items</code> al <code>align-items</code> <code>.follow-btn</code> del encabezado. Establezca el valor en el centro. 
-</section>
+<section id="instructions"> Agregue la propiedad CSS <code>align-items</code> al <code>align-items</code> <code>.follow-btn</code> del encabezado. Establezca el valor en el centro. </section>
 
 ## Tests
 <section id='tests'>
@@ -125,6 +121,7 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
+
 ```
 
 </div>

@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d4
 title: Comparison with the Greater Than Operator
-localeTitle: Comparación con el operador mayor que
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparación con el operador mayor que
 ---
 
 ## Description
-<section id='description'> 
-El operador mayor que ( <code>&gt;</code> ) compara los valores de dos números. Si el número a la izquierda es mayor que el número a la derecha, devuelve <code>true</code> . De lo contrario, devuelve <code>false</code> . 
-Al igual que el operador de igualdad, el operador mayor que el convertirá los tipos de datos de valores al comparar. 
-<strong>ejemplos</strong> 
-<blockquote> 5 > 3   // true<br> 7 > '3' // true<br> 2 > 3   // false<br>'1' > 9  // false</blockquote> 
-</section>
+<section id="description"> El operador mayor que ( <code>&gt;</code> ) compara los valores de dos números. Si el número a la izquierda es mayor que el número a la derecha, devuelve <code>true</code> . De lo contrario, devuelve <code>false</code> . Al igual que el operador de igualdad, el operador mayor que el convertirá los tipos de datos de valores al comparar. <strong>Ejemplos</strong> <blockquote> 5&gt; 3 // verdadero <br> 7&gt; &#39;3&#39; // verdadero <br> 2&gt; 3 // falso <br> &#39;1&#39;&gt; 9 // falso </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el operador <code>greater than</code> a las líneas indicadas para que las declaraciones de devolución tengan sentido. 
-</section>
+<section id="instructions"> Agregue el operador <code>greater than</code> a las líneas indicadas para que las declaraciones de devolución tengan sentido. </section>
 
 ## Tests
 <section id='tests'>
@@ -64,6 +58,7 @@ function testGreaterThan(val) {
 
 // Change this value to test
 testGreaterThan(10);
+
 ```
 
 </div>
@@ -75,17 +70,7 @@ testGreaterThan(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testGreaterThan(val) {
-  if (val > 100) {  // Change this line
-    return "Over 100";
-  }
-  if (val > 10) {  // Change this line
-    return "Over 10";
-  }
-  return "10 or Under";
-}
+// solution required
 ```
-
 </section>

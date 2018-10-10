@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3e41000cf542c50fef7
+id: 5900f3e41000cf542c50fef7
 challengeType: 5
 title: 'Problem 120: Square remainders'
+videoUrl: ''
+localeTitle: 'Problema 120: Restos cuadrados'
 ---
 
 ## Description
-<section id='description'> 
-Sea r el resto cuando (a − 1) n + (a + 1) n esté dividido por a2. 
-Por ejemplo, si a = 7 y n = 3, entonces r = 42: 63 + 83 = 728 ≡ 42 mod 49. Y como n varía, también lo hará r, pero para a = 7 resulta que rmax = 42 . 
-Para 3 ≤ a ≤ 1000, encuentre ∑ rmax. 
-</section>
+<section id="description"> Sea r el resto cuando (a − 1) n + (a + 1) n esté dividido por a2. Por ejemplo, si a = 7 y n = 3, entonces r = 42: 63 + 83 = 728 ≡ 42 mod 49. Y como n varía, también r, pero para a = 7 resulta que rmax = 42. Para 3 ≤ a ≤ 1000, encuentre ∑ rmax. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler120() {
 }
 
 euler120();
+
 ```
 
 </div>

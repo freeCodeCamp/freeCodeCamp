@@ -1,25 +1,17 @@
 ---
 id: bad87fee1348bd9bedf08813
 title: Add Borders Around Your Elements
-localeTitle: Añadir bordes alrededor de sus elementos
 challengeType: 0
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/add-borders-around-your-elements'
 videoUrl: ''
+localeTitle: Añadir bordes alrededor de sus elementos
 ---
 
 ## Description
-<section id='description'> 
-Los bordes CSS tienen propiedades como <code>style</code> , <code>color</code> y <code>width</code> 
-Por ejemplo, si quisiéramos crear un borde rojo de 5 píxeles alrededor de un elemento HTML, podríamos usar esta clase: 
-<blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote> 
-</section>
+<section id="description"> Los bordes CSS tienen propiedades como <code>style</code> , <code>color</code> y <code>width</code> Por ejemplo, si quisiéramos crear un borde rojo de 5 píxeles alrededor de un elemento HTML, podríamos usar esta clase: <blockquote> &lt;estilo&gt; <br> .thin-red-border { <br> color del borde: rojo; <br> ancho del borde: 5px; <br> estilo de borde: sólido; <br> } <br> &lt;/style&gt; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Crea una clase llamada <code>thick-green-border</code> . Esta clase debe agregar un borde verde sólido de 10 px alrededor de un elemento HTML. Aplica la clase a tu foto de gato. 
-Recuerde que puede aplicar varias clases a un elemento utilizando su atributo de <code>class</code> , separando cada nombre de clase con un espacio. Por ejemplo: 
-<code>&lt;img class=&quot;class1 class2&quot;&gt;</code> 
-</section>
+<section id="instructions"> Crea una clase llamada <code>thick-green-border</code> . Esta clase debe agregar un borde verde sólido de 10 px alrededor de un elemento HTML. Aplica la clase a tu foto de gato. Recuerde que puede aplicar varias clases a un elemento utilizando su atributo de <code>class</code> , separando cada nombre de clase con un espacio. Por ejemplo: <code>&lt;img class=&quot;class1 class2&quot;&gt;</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -98,6 +90,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

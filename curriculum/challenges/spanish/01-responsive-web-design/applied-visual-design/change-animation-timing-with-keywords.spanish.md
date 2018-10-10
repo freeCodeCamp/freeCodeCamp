@@ -1,21 +1,16 @@
 ---
 id: 587d78a8367417b2b2512ae7
 title: Change Animation Timing with Keywords
-localeTitle: Cambiar el tiempo de animación con palabras clave
 challengeType: 0
 videoUrl: ''
+localeTitle: Cambiar el tiempo de animación con palabras clave
 ---
 
 ## Description
-<section id='description'> 
-En las animaciones CSS, la propiedad <code>animation-timing-function</code> controla la rapidez con la que un elemento animado cambia a lo largo de la duración de la animación. Si la animación es un automóvil que se mueve del punto A al punto B en un tiempo determinado (la <code>animation-duration</code> su <code>animation-duration</code> ), la <code>animation-timing-function</code> la <code>animation-timing-function</code> dice cómo el automóvil acelera y desacelera en el transcurso del viaje. 
-Hay una serie de palabras clave predefinidas disponibles para las opciones populares. Por ejemplo, el valor predeterminado es la <code>ease</code> , que comienza lento, se acelera en el medio y luego se ralentiza nuevamente al final. Otras opciones incluyen la <code>ease-out</code> , que es rápida al principio y luego se ralentiza, la <code>ease-in</code> , que es lenta al principio, luego se acelera al final, o <code>linear</code> , que aplica una velocidad de animación constante en todo momento. 
-</section>
+<section id="description"> En las animaciones CSS, la propiedad <code>animation-timing-function</code> controla la rapidez con la que un elemento animado cambia a lo largo de la duración de la animación. Si la animación es un automóvil que se mueve del punto A al punto B en un tiempo determinado (la <code>animation-duration</code> su <code>animation-duration</code> ), la <code>animation-timing-function</code> la <code>animation-timing-function</code> dice cómo el automóvil acelera y desacelera en el transcurso del viaje. Hay una serie de palabras clave predefinidas disponibles para las opciones populares. Por ejemplo, el valor predeterminado es la <code>ease</code> , que comienza lento, se acelera en el medio y luego se ralentiza nuevamente al final. Otras opciones incluyen la <code>ease-out</code> , que es rápida al principio y luego se ralentiza, la <code>ease-in</code> , que es lenta al principio, luego se acelera al final, o <code>linear</code> , que aplica una velocidad de animación constante en todo momento. </section>
 
 ## Instructions
-<section id='instructions'> 
-Para los elementos con el ID de <code>ball1</code> y <code>ball2</code> , añada una <code>animation-timing-function</code> propiedad para cada uno, y establecer <code>#ball1</code> a <code>linear</code> , y <code>#ball2</code> a <code>ease-out</code> . Observe la diferencia entre cómo se mueven los elementos durante la animación pero terminan juntos, ya que comparten la misma <code>animation-duration</code> de <code>animation-duration</code> de 2 segundos. 
-</section>
+<section id="instructions"> Para los elementos con el ID de <code>ball1</code> y <code>ball2</code> , añadir una <code>animation-timing-function</code> propiedad para cada uno, y establecer <code>#ball1</code> a <code>linear</code> , y <code>#ball2</code> a <code>ease-out</code> . Observe la diferencia entre cómo se mueven los elementos durante la animación pero terminan juntos, ya que comparten la misma <code>animation-duration</code> de <code>animation-duration</code> de 2 segundos. </section>
 
 ## Tests
 <section id='tests'>
@@ -76,6 +71,7 @@ tests:
 
 <div class="balls" id="ball1"></div>
 <div class="balls" id="ball2"></div>
+
 ```
 
 </div>

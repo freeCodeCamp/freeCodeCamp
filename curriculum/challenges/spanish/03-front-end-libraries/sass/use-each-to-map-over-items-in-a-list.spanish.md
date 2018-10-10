@@ -1,30 +1,19 @@
 ---
 id: 587d7dbf367417b2b2512bba
 title: Use @each to Map Over Items in a List
-localeTitle: Utilice @each para asignar sobre elementos en una lista
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/sass.js/0.10.9/sass.sync.min.js'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Utilice @each para asignar sobre elementos en una lista
 ---
 
 ## Description
-<section id='description'> 
-El último desafío mostró cómo la directiva <code>@for</code> usa un valor de inicio y final para hacer un bucle un cierto número de veces. Sass también ofrece la directiva <code>@each</code> que recorre cada elemento en una lista o mapa. 
-En cada iteración, la variable se asigna al valor actual de la lista o mapa. 
-<blockquote>@each $color in blue, red, green {<br>&nbsp;&nbsp;.#{$color}-text {color: $color;}<br>}</blockquote> 
-Un mapa tiene una sintaxis ligeramente diferente. Aquí hay un ejemplo: 
-<blockquote>$colors: (color1: blue, color2: red, color3: green);<br><br>@each $key, $color in $colors {<br>&nbsp;&nbsp;.#{$color}-text {color: $color;}<br>}</blockquote> 
-Tenga en cuenta que la variable <code>$key</code> es necesaria para hacer referencia a las claves en el mapa. De lo contrario, el CSS compilado tendría <code>color1</code> , <code>color2</code> ... en él. 
-dos ejemplos de código anteriores se convierten en el siguiente CSS: 
-<blockquote>.blue-text {<br>&nbsp;&nbsp;color: blue;<br>}<br><br>.red-text {<br>&nbsp;&nbsp;color: red;<br>}<br><br>.green-text {<br>&nbsp;&nbsp;color: green;<br>}</blockquote> 
-</section>
+<section id="description"> El último desafío mostró cómo la directiva <code>@for</code> utiliza un valor de inicio y final para realizar un bucle un cierto número de veces. Sass también ofrece la directiva <code>@each</code> que recorre cada elemento en una lista o mapa. En cada iteración, la variable se asigna al valor actual de la lista o mapa. <blockquote> @each $ color en azul, rojo, verde { <br> . # {$ color} -text {color: $ color;} <br> } </blockquote> Un mapa tiene una sintaxis ligeramente diferente. Aquí hay un ejemplo: <blockquote> $ colores: (color1: azul, color2: rojo, color3: verde); <br><br> @each $ clave, $ color en $ colores { <br> . # {$ color} -text {color: $ color;} <br> } </blockquote> Tenga en cuenta que la variable <code>$key</code> es necesaria para hacer referencia a las claves en el mapa. De lo contrario, el CSS compilado tendría <code>color1</code> , <code>color2</code> ... en él. Los dos ejemplos de código anteriores se convierten en el siguiente CSS: <blockquote> .blue-text { <br> color azul; <br> } <br><br> .red-text { <br> color rojo; <br> } <br><br> .green-text { <br> color verde; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una directiva <code>@each</code> que pase por una lista: <code>blue, black, red</code> y asigne cada variable a una clase <code>.color-bg</code> , donde la parte de &quot;color&quot; cambia para cada elemento. 
-Cada clase debe establecer el <code>background-color</code> respectivo. 
-</section>
+<section id="instructions"> Escriba una directiva <code>@each</code> que pase por una lista: <code>blue, black, red</code> y asigne cada variable a una clase <code>.color-bg</code> , donde la parte de &quot;color&quot; cambia para cada elemento. Cada clase debe establecer el <code>background-color</code> respectivo. </section>
 
 ## Tests
 <section id='tests'>
@@ -63,6 +52,7 @@ tests:
 <div class="blue-bg"></div>
 <div class="black-bg"></div>
 <div class="red-bg"></div>
+
 ```
 
 </div>

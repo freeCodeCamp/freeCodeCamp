@@ -1,21 +1,16 @@
 ---
 id: 587d7db5367417b2b2512b94
 title: Match Anything with Wildcard Period
-localeTitle: Coincidir cualquier cosa con el período de comodín
 challengeType: 1
+videoUrl: ''
+localeTitle: Coincidir cualquier cosa con el período de comodín
 ---
 
 ## Description
-<section id='description'> 
-A veces no (o no es necesario) conocer los caracteres exactos en sus patrones. Pensar en todas las palabras que coinciden, por ejemplo, una falta de ortografía llevaría mucho tiempo. Por suerte, se puede ahorrar tiempo utilizando el carácter comodín: <code>.</code> 
-El carácter comodín <code>.</code> coincidirá con cualquier personaje. El comodín es también llamado <code>dot</code> y <code>period</code> . Puede usar el carácter comodín como cualquier otro carácter en la expresión regular. Por ejemplo, si desea hacer coincidir <code>&quot;hug&quot;</code> , <code>&quot;huh&quot;</code> , <code>&quot;hut&quot;</code> y <code>&quot;hum&quot;</code> , puede usar la expresión regular <code>/hu./</code> para hacer coincidir las cuatro palabras. 
-<blockquote>let humStr = "I'll hum a song";<br>let hugStr = "Bear hug";<br>let huRegex = /hu./;<br>humStr.match(huRegex); // Returns ["hum"]<br>hugStr.match(huRegex); // Returns ["hug"]</blockquote> 
-</section>
+<section id="description"> A veces no sabrás (o no necesitarás) los caracteres exactos en tus patrones. Pensar en todas las palabras que coinciden, por ejemplo, una falta de ortografía llevaría mucho tiempo. Por suerte, se puede ahorrar tiempo utilizando el carácter comodín: <code>.</code> El carácter comodín <code>.</code> coincidirá con cualquier personaje. El comodín es también llamado <code>dot</code> y <code>period</code> . Puede usar el carácter comodín como cualquier otro carácter en la expresión regular. Por ejemplo, si desea hacer coincidir <code>&quot;hug&quot;</code> , <code>&quot;huh&quot;</code> , <code>&quot;hut&quot;</code> y <code>&quot;hum&quot;</code> , puede usar la expresión regular <code>/hu./</code> para hacer coincidir las cuatro palabras. <blockquote> vamos a humStr = &quot;zumbaré una canción&quot;; <br> dejar hugStr = &quot;abrazo del oso&quot;; <br> deja huRegex = /hu./; <br> humStr.match (huRegex); // Devuelve [&quot;zumbido&quot;] <br> hugStr.match (huRegex); // Devoluciones [&quot;abrazo&quot;] </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Complete la expresión regular <code>unRegex</code> para que coincida con las cadenas <code>&quot;run&quot;</code> , <code>&quot;sun&quot;</code> , <code>&quot;fun&quot;</code> , <code>&quot;pun&quot;</code> , <code>&quot;nun&quot;</code> y <code>&quot;bun&quot;</code> . Su expresión regular debe utilizar el carácter comodín. 
-</section>
+<section id="instructions"> Complete la expresión regular <code>unRegex</code> para que coincida con las cadenas <code>&quot;run&quot;</code> , <code>&quot;sun&quot;</code> , <code>&quot;fun&quot;</code> , <code>&quot;pun&quot;</code> , <code>&quot;nun&quot;</code> y <code>&quot;bun&quot;</code> . Su expresión regular debe utilizar el carácter comodín. </section>
 
 ## Tests
 <section id='tests'>
@@ -56,6 +51,7 @@ tests:
 let exampleStr = "Let's have fun with regular expressions!";
 let unRegex = /change/; // Change this line
 let result = unRegex.test(exampleStr);
+
 ```
 
 </div>

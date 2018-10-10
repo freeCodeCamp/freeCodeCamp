@@ -1,22 +1,16 @@
 ---
 id: 587d8259367417b2b2512c84
 title: Create a Trie Search Tree
-localeTitle: Crear un árbol de búsqueda Trie
 challengeType: 1
+videoUrl: ''
+localeTitle: Crear un árbol de búsqueda Trie
 ---
 
 ## Description
-<section id='description'> 
-Aquí pasaremos de los árboles de búsqueda binarios y echaremos un vistazo a otro tipo de estructura de árbol llamada trie. Un trie es un árbol de búsqueda ordenada que se usa comúnmente para contener cadenas, o matrices asociativas más genéricamente o conjuntos de datos dinámicos en los que las claves son cadenas. Son muy buenos para almacenar conjuntos de datos cuando muchas claves tienen prefijos que se superponen, por ejemplo, todas las palabras en un diccionario. 
-A diferencia de un árbol binario, los nodos no están asociados con valores reales. En su lugar, la ruta a un nodo representa una clave específica. Por ejemplo, si quisiéramos almacenar el código de cadena en un trío, tendríamos cuatro nodos, uno para cada letra: c - o - d - e. Seguir esa ruta a través de todos estos nodos creará un código como una cadena, esa es la clave que almacenamos. Luego, si quisiéramos agregar la codificación de cadena, compartiría los primeros tres nodos de código antes de bifurcarse después de la d. De esta manera, los grandes conjuntos de datos se pueden almacenar de forma muy compacta. Además, la búsqueda puede ser muy rápida porque se limita efectivamente a la longitud de la cadena que está almacenando. Además, a diferencia de los árboles binarios, un nodo puede almacenar cualquier número de nodos secundarios. 
-Como puede haber adivinado en el ejemplo anterior, algunos metadatos se almacenan comúnmente en los nodos que contienen el final de una clave, de modo que en los recorridos posteriores se puede recuperar esa clave. Por ejemplo, si agregamos códigos en nuestro ejemplo anterior, necesitaríamos alguna forma de saber que la e en el código representa el final de una clave que se ingresó anteriormente. De lo contrario, esta información se perdería efectivamente al agregar códigos. 
-Instrucciones: Vamos a crear un trie para almacenar palabras. Aceptará palabras a través de un método de adición y las almacenará en una estructura de datos trie. También nos permitirá consultar si una cadena dada es una palabra con un método isWord, y recuperar todas las palabras ingresadas en el texto con un método de impresión. isWord debería devolver un valor booleano e imprimir debería devolver una matriz de todas estas palabras como valores de cadena. 
-Para que podamos verificar que esta estructura de datos se implementa correctamente, proporcionamos una estructura de Nodo para cada nodo en el árbol. Cada nodo será un objeto con una propiedad de claves que es un objeto de mapa de JavaScript. Esto mantendrá las letras individuales que son claves válidas de cada nodo. También hemos creado una propiedad final en los nodos que se pueden establecer en verdadero si el nodo representa la terminación de una palabra. 
-</section>
+<section id="description"> Aquí pasaremos de los árboles de búsqueda binarios y echaremos un vistazo a otro tipo de estructura de árbol llamada trie. Un trie es un árbol de búsqueda ordenada que se usa comúnmente para contener cadenas, o matrices asociativas más genéricamente o conjuntos de datos dinámicos en los que las claves son cadenas. Son muy buenos para almacenar conjuntos de datos cuando muchas claves tienen prefijos que se superponen, por ejemplo, todas las palabras en un diccionario. A diferencia de un árbol binario, los nodos no están asociados con valores reales. En su lugar, la ruta a un nodo representa una clave específica. Por ejemplo, si quisiéramos almacenar el código de cadena en un trío, tendríamos cuatro nodos, uno para cada letra: c - o - d - e. Seguir esa ruta a través de todos estos nodos creará un código como una cadena, esa es la clave que almacenamos. Luego, si quisiéramos agregar la codificación de cadena, compartiría los primeros tres nodos de código antes de bifurcarse después de la d. De esta manera, los grandes conjuntos de datos se pueden almacenar de forma muy compacta. Además, la búsqueda puede ser muy rápida porque se limita efectivamente a la longitud de la cadena que está almacenando. Además, a diferencia de los árboles binarios, un nodo puede almacenar cualquier número de nodos secundarios. Como puede haber adivinado en el ejemplo anterior, algunos metadatos se almacenan comúnmente en los nodos que contienen el final de una clave, de modo que en los recorridos posteriores esa clave aún puede recuperarse. Por ejemplo, si agregamos códigos en nuestro ejemplo anterior, necesitaríamos alguna forma de saber que la e en el código representa el final de una clave que se ingresó anteriormente. De lo contrario, esta información se perdería efectivamente al agregar códigos. Instrucciones: Vamos a crear un trie para almacenar palabras. Aceptará palabras a través de un método de adición y las almacenará en una estructura de datos trie. También nos permitirá consultar si una cadena dada es una palabra con un método isWord, y recuperar todas las palabras ingresadas en el texto con un método de impresión. isWord debería devolver un valor booleano e imprimir debería devolver una matriz de todas estas palabras como valores de cadena. Para que podamos verificar que esta estructura de datos está implementada correctamente, hemos proporcionado una estructura de Nodo para cada nodo en el árbol. Cada nodo será un objeto con una propiedad de claves que es un objeto de mapa de JavaScript. Esto mantendrá las letras individuales que son claves válidas de cada nodo. También hemos creado una propiedad final en los nodos que se pueden establecer en verdadero si el nodo representa la terminación de una palabra. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -60,6 +54,7 @@ var Trie = function() {
   // change code below this line
   // change code above this line
 };
+
 ```
 
 </div>

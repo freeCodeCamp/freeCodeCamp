@@ -1,23 +1,17 @@
 ---
 id: bad87fee1348bd9aedf08823
 title: Add a Negative Margin to an Element
-localeTitle: Agregar un margen negativo a un elemento
 challengeType: 0
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: ''
+localeTitle: Agregar un margen negativo a un elemento
 ---
 
 ## Description
-<section id='description'> 
-El <code>margin</code> un elemento controla la cantidad de espacio entre el <code>border</code> un elemento y los elementos circundantes. 
-Si establece el <code>margin</code> un elemento en un valor negativo, el elemento aumentará de tamaño. 
-</section>
+<section id="description"> El <code>margin</code> un elemento controla la cantidad de espacio entre el <code>border</code> un elemento y los elementos circundantes. Si establece el <code>margin</code> un elemento en un valor negativo, el elemento aumentará de tamaño. </section>
 
 ## Instructions
-<section id='instructions'> 
-Intente establecer el <code>margin</code> en un valor negativo como el del cuadro rojo. 
-Cambie el <code>margin</code> del cuadro azul a <code>-15px</code> , para que llene todo el ancho horizontal del cuadro amarillo que lo rodea. 
-</section>
+<section id="instructions"> Intente establecer el <code>margin</code> en un valor negativo como el del cuadro rojo. Cambie el <code>margin</code> del cuadro azul a <code>-15px</code> , para que llene todo el ancho horizontal del cuadro amarillo que lo rodea. </section>
 
 ## Tests
 <section id='tests'>
@@ -74,6 +68,7 @@ tests:
   <h5 class="box red-box">padding</h5>
   <h5 class="box blue-box">padding</h5>
 </div>
+
 ```
 
 </div>

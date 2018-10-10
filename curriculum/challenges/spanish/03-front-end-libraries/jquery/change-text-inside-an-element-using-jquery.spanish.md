@@ -1,25 +1,16 @@
 ---
 id: 564944c91be2204b269d51e3
 title: Change Text Inside an Element Using jQuery
-localeTitle: Cambiar texto dentro de un elemento usando jQuery
 challengeType: 6
+videoUrl: ''
+localeTitle: Cambiar texto dentro de un elemento usando jQuery
 ---
 
 ## Description
-<section id='description'> 
-Con jQuery, puede cambiar el texto entre las etiquetas de inicio y fin de un elemento. Incluso puedes cambiar el formato HTML. 
-jQuery tiene una función llamada <code>.html()</code> que le permite agregar etiquetas HTML y texto dentro de un elemento. Cualquier contenido previamente dentro del elemento será reemplazado completamente con el contenido que proporcione utilizando esta función. 
-Así es como reescribiría y enfatizaría el texto de nuestro encabezado: 
-<code>$(&quot;h3&quot;).html(&quot;&lt;em&gt;jQuery Playground&lt;/em&gt;&quot;);</code> 
-jQuery también tiene una función similar llamada <code>.text()</code> que solo altera el texto sin agregar etiquetas. En otras palabras, esta función no evaluará ninguna etiqueta HTML que se le pase, sino que la tratará como el texto con el que desea reemplazar el contenido existente. 
-Cambie el botón con id <code>target4</code> enfatizando su texto. 
-Marque este <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/em" target="_blank">enlace</a> para saber más sobre la diferencia entre <code>&lt;i&gt;</code> y <code>&lt;em&gt;</code> y sus usos. 
-Tenga en cuenta que si bien la etiqueta <code>&lt;i&gt;</code> se ha usado tradicionalmente para enfatizar el texto, desde entonces se ha utilizado como etiqueta para los iconos. La etiqueta <code>&lt;em&gt;</code> ahora es ampliamente aceptada como la etiqueta de énfasis. Tampoco funcionará para este desafío. 
-</section>
+<section id="description"> Con jQuery, puede cambiar el texto entre las etiquetas de inicio y fin de un elemento. Incluso puedes cambiar el formato HTML. jQuery tiene una función llamada <code>.html()</code> que le permite agregar etiquetas HTML y texto dentro de un elemento. Cualquier contenido previamente dentro del elemento será reemplazado completamente con el contenido que proporcione utilizando esta función. Así es como reescribiría y enfatizaría el texto de nuestro encabezado: <code>$(&quot;h3&quot;).html(&quot;&lt;em&gt;jQuery Playground&lt;/em&gt;&quot;);</code> jQuery también tiene una función similar llamada <code>.text()</code> que solo altera el texto sin agregar etiquetas. En otras palabras, esta función no evaluará ninguna etiqueta HTML que se le pase, sino que la tratará como el texto con el que desea reemplazar el contenido existente. Cambia el botón con id <code>target4</code> enfatizando su texto. Consulte este <a href="https://developer.mozilla.org/en/docs/Web/HTML/Element/em" target="_blank">enlace</a> para saber más sobre la diferencia entre <code>&lt;i&gt;</code> y <code>&lt;em&gt;</code> y sus usos. Tenga en cuenta que si bien la etiqueta <code>&lt;i&gt;</code> se ha usado tradicionalmente para enfatizar el texto, desde entonces se ha utilizado como etiqueta para los iconos. La etiqueta <code>&lt;em&gt;</code> ahora es ampliamente aceptada como la etiqueta de énfasis. Tampoco funcionará para este desafío. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -78,6 +69,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

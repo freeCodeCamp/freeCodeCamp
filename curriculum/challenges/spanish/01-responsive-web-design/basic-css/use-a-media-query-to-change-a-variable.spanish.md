@@ -1,30 +1,25 @@
 ---
 id: 5a9d72ad424fe3d0e10cad16
 title: Use a media query to change a variable
-localeTitle: Usa una consulta de medios para cambiar una variable
 challengeType: 0
 videoUrl: ''
+localeTitle: Usa una consulta de medios para cambiar una variable
 ---
 
 ## Description
-<section id='description'>
-Las variables CSS pueden simplificar la forma en que utiliza las consultas de medios.
-Por ejemplo, cuando su pantalla es más pequeña o más grande que el punto de interrupción de su consulta de medios, puede cambiar el valor de una variable y aplicará su estilo donde sea que se use.
-</section>
+<section id="description"> Las Variables CSS pueden simplificar la forma en que utiliza las consultas de medios. Por ejemplo, cuando su pantalla es más pequeña o más grande que el punto de interrupción de su consulta de medios, puede cambiar el valor de una variable y aplicará su estilo donde sea que se use. </section>
 
 ## Instructions
-<section id='instructions'>
-En el <code>:root</code> selector de <code>:root</code> de la <code>media query</code> , cámbielo para que <code>--penguin-size</code> se redefina y se le dé un valor de <code>200px</code> . Además, redefine <code>--penguin-skin</code> y dale un valor de <code>black</code> . Luego cambie el tamaño de la vista previa para ver este cambio en acción.
-</section>
+<section id="instructions"> En el <code>:root</code> selector de <code>:root</code> de la <code>media query</code> , cámbielo para que <code>--penguin-size</code> se redefina y se le dé un valor de <code>200px</code> . Además, redefine <code>--penguin-skin</code> y dale un valor de <code>black</code> . Luego cambie el tamaño de la vista previa para ver este cambio en acción. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ' <code>:root</code> debe reasignar la variable <code>--penguin-size</code> a <code>200px</code> .'
+  - text: '<code>:root</code> debe reasignar la variable <code>--penguin-size</code> a <code>200px</code> .'
     testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-size\s*?:\s*?200px\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-size</code> variable to <code>200px</code>.");'
-  - text: ' <code>:root</code> debería reasignar la variable <code>--penguin-skin</code> a <code>black</code> '
+  - text: '<code>:root</code> debe reasignar la variable <code>--penguin-skin</code> a <code>black</code> .'
     testString: 'assert(code.match(/media\s*?\(\s*?max-width\s*?:\s*?350px\s*?\)\s*?{[\s\S]*:root\s*?{[\s\S]*--penguin-skin\s*?:\s*?black\s*?;[\s\S]*}[\s\S]*}/gi), "<code>:root</code> should reassign the <code>--penguin-skin</code> variable to <code>black</code>.");'
 
 ```
@@ -267,6 +262,7 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
+
 ```
 
 </div>
@@ -278,9 +274,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "@media (max-width: 350px) {:root {--penguin-size: 200px; --penguin-skin: black;}}"
+// solution required
 ```
-
 </section>

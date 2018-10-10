@@ -1,29 +1,23 @@
 ---
 id: 5a9d7295424fe3d0e10cad14
 title: Cascading CSS variables
-localeTitle: Variables CSS en cascada
 challengeType: 0
 videoUrl: ''
+localeTitle: Variables CSS en cascada
 ---
 
 ## Description
-<section id='description'>
-Cuando crea una variable, queda disponible para que la use dentro del elemento en el que la creó. También está disponible dentro de cualquier elemento anidado dentro de él. Este efecto se conoce como <dfn>cascada</dfn> .
-Debido a la cascada, las variables CSS a menudo se definen en el elemento <dfn>: raíz</dfn> .
-<code>:root</code> es un selector de <dfn>pseudo-clase</dfn> que coincide con el elemento raíz del documento, generalmente el <html> elemento. Al crear sus variables en <code>:root</code> , estarán disponibles globalmente y se podrá acceder a ellas desde cualquier otro selector más adelante en la hoja de estilo.
-</section>
+<section id="description"> Cuando creas una variable, queda disponible para que la uses dentro del elemento en el que la creas. También está disponible dentro de cualquier elemento anidado dentro de él. Este efecto se conoce como <dfn>cascada</dfn> . Debido a la conexión en cascada, las variables CSS a menudo se definen en el elemento <dfn>: raíz</dfn> . <code>:root</code> es un selector de <dfn>pseudo-clase</dfn> que coincide con el elemento raíz del documento, generalmente el <code></code> elemento. Al crear sus variables en <code>:root</code> , estarán disponibles globalmente y se podrá acceder a ellas desde cualquier otro selector más adelante en la hoja de estilo. </section>
 
 ## Instructions
-<section id='instructions'>
-Defina una variable llamada <code>--penguin-belly</code> en el selector de <code>:root</code> y déle el valor de <code>pink</code> . Luego puede ver cómo el valor caerá en cascada para cambiar el valor a rosa, en cualquier lugar donde se use esa variable.
-</section>
+<section id="instructions"> Defina una variable llamada <code>--penguin-belly</code> en el selector de <code>:root</code> y dale el valor de <code>pink</code> . Luego puede ver cómo el valor caerá en cascada para cambiar el valor a rosa, en cualquier lugar donde se use esa variable. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'declara la variable <code>--penguin-belly</code> en la <code>:root</code> y <code>--penguin-belly</code> a <code>pink</code> '
+  - text: 'declara la variable <code>--penguin-belly</code> en la <code>:root</code> y <code>--penguin-belly</code> a <code>pink</code> .'
     testString: 'assert(code.match(/:root\s*?{[\s\S]*--penguin-belly\s*?:\s*?pink\s*?;[\s\S]*}/gi), "declare the <code>--penguin-belly</code> variable in the <code>:root</code> and assign it to <code>pink</code>.");'
 
 ```
@@ -238,6 +232,7 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
+
 ```
 
 </div>
@@ -249,9 +244,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ":root {--penguin-belly: pink;}"
+// solution required
 ```
-
 </section>

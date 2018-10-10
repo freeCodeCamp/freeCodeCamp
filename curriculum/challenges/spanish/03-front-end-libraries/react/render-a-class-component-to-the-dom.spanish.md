@@ -1,22 +1,17 @@
 ---
 id: 5a24c314108439a4d4036167
 title: Render a Class Component to the DOM
-localeTitle: Renderizar un componente de clase al DOM
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Renderizar un componente de clase al DOM
 ---
 
 ## Description
-<section id='description'> 
-Es posible que recuerde usar la API ReactDOM en un desafío anterior para representar elementos JSX al DOM. El proceso para renderizar componentes React se verá muy similar. Los últimos desafíos se enfocaron en los componentes y la composición, por lo que el renderizado se realizó para usted entre bastidores. Sin embargo, ninguno de los códigos React que escriba se procesarán en el DOM sin hacer una llamada a la API ReactDOM. 
-Aquí hay una actualización de la sintaxis: <code>ReactDOM.render(componentToRender, targetNode)</code> . El primer argumento es el componente React que desea procesar. El segundo argumento es el nodo DOM en el que desea procesar ese componente. 
-componentes de React se pasan a <code>ReactDOM.render()</code> un poco diferente a los elementos JSX. Para los elementos JSX, pasa el nombre del elemento que desea representar. Sin embargo, para los componentes React, debe usar la misma sintaxis como si estuviera representando un componente anidado, por ejemplo, <code>ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)</code> . Utilice esta sintaxis para los componentes de clase ES6 y los componentes funcionales. 
-</section>
+<section id="description"> Puede recordar haber usado la API ReactDOM en un desafío anterior para representar elementos JSX al DOM. El proceso para renderizar componentes React se verá muy similar. Los últimos desafíos se enfocaron en los componentes y la composición, por lo que el renderizado se realizó para usted entre bastidores. Sin embargo, ninguno de los códigos React que escriba se procesarán en el DOM sin hacer una llamada a la API ReactDOM. Aquí hay una actualización de la sintaxis: <code>ReactDOM.render(componentToRender, targetNode)</code> . El primer argumento es el componente React que desea procesar. El segundo argumento es el nodo DOM en el que desea procesar ese componente. Los componentes de React se pasan a <code>ReactDOM.render()</code> un poco diferente a los elementos JSX. Para los elementos JSX, pasa el nombre del elemento que desea representar. Sin embargo, para los componentes React, debe usar la misma sintaxis como si estuviera representando un componente anidado, por ejemplo, <code>ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)</code> . Utilice esta sintaxis para los componentes de clase ES6 y los componentes funcionales. </section>
 
 ## Instructions
-<section id='instructions'> 
-Ambos componentes de <code>Fruits</code> y <code>Vegetables</code> están definidos para usted detrás de escena. Procese ambos componentes como elementos <code>TypesOfFood</code> componente <code>TypesOfFood</code> , a continuación, procese <code>TypesOfFood</code> al DOM. Hay un <code>div</code> con <code>id=&#39;challenge-node&#39;</code> disponible para que lo uses. 
-</section>
+<section id="instructions"> Ambos componentes de <code>Fruits</code> y <code>Vegetables</code> se definen para usted detrás de escena. Procese ambos componentes como elementos <code>TypesOfFood</code> componente <code>TypesOfFood</code> , a continuación, procese <code>TypesOfFood</code> al DOM. Hay un <code>div</code> con <code>id=&#39;challenge-node&#39;</code> disponible para que lo uses. </section>
 
 ## Tests
 <section id='tests'>
@@ -42,7 +37,6 @@ tests:
 <div id='jsx-seed'>
 
 ```jsx
-
 class TypesOfFood extends React.Component {
   constructor(props) {
     super(props);
@@ -69,7 +63,6 @@ class TypesOfFood extends React.Component {
 <div id='jsx-setup'>
 
 ```jsx
-
 const Fruits = () => {
   return (
     <div>
@@ -114,27 +107,7 @@ const Vegetables = () => {
 ## Solution
 <section id='solution'>
 
-
 ```js
-class TypesOfFood extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <div>
-        <h1>Types of Food:</h1>
-        {/* change code below this line */}
-          <Fruits />
-           <Vegetables />
-         {/* change code above this line */}
-      </div>
-    );
-  }
-};
-
-// change code below this line
-ReactDOM.render(<TypesOfFood />, document.getElementById('challenge-node'));
+// solution required
 ```
-
 </section>

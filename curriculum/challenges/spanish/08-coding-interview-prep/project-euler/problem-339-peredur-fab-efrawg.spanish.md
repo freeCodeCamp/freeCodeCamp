@@ -1,27 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4c01000cf542c50ffd2
+id: 5900f4c01000cf542c50ffd2
 challengeType: 5
 title: 'Problem 339: Peredur fab Efrawg'
+videoUrl: ''
+localeTitle: 'Problema 339: Peredur fab Efrawg'
 ---
 
 ## Description
-<section id='description'> 
-&quot;Y se dirigió hacia un valle, a través del cual corría un río; y las orillas del valle estaban boscosas, y a cada lado del río había praderas a nivel. Y a un lado del río vio un rebaño de ovejas blancas, y en el otro, un rebaño de ovejas negras. Y cuando una de las ovejas blancas sangraba, una de las ovejas negras cruzaba y se volvía blanca, y cuando una de las ovejas negras sangraba, una de las ovejas blancas cruzaba y se convertía negro. &quot;en.wikisource.org 
-
-
-
-Inicialmente, cada rebaño consiste en n ovejas. Cada oveja (sin importar el color) tiene la misma probabilidad de ser la próxima oveja a la paliza. Después de que una oveja haya desangrado y una oveja del otro rebaño haya cruzado, Peredur puede eliminar varias ovejas blancas para maximizar el número final esperado de ovejas negras. Sea E (n) el número final esperado de ovejas negras si Peredur usa una estrategia óptima. 
-
-
-
-Se da que E (5) = 6.871346 redondeado a 6 lugares detrás del punto decimal. 
-Encuentra E (10 000) y da tu respuesta redondeada a 6 lugares detrás del punto decimal. 
-</section>
+<section id="description"> &quot;Y se dirigió hacia un valle, a través del cual corría un río; y las orillas del valle estaban boscosas, y a cada lado del río había prados a nivel. Y a un lado del río vio un rebaño de ovejas blancas, y en el otro, un rebaño de ovejas negras. Y cuando una de las ovejas blancas sangraba, una de las ovejas negras cruzaba y se volvía blanca, y cuando una de las ovejas negras sangraba, una de las ovejas blancas cruzaba y se volvía negra &quot;en.wikisource.org <p> Inicialmente cada rebaño consiste en n ovejas. Cada oveja (sin importar el color) tiene la misma probabilidad de ser la próxima oveja a la paliza. Después de que una oveja haya desangrado y una oveja del otro rebaño haya cruzado, Peredur puede eliminar varias ovejas blancas para maximizar el número final esperado de ovejas negras. Sea E (n) el número final esperado de ovejas negras si Peredur usa una estrategia óptima. </p><p> Se da que E (5) = 6.871346 redondeado a 6 lugares detrás del punto decimal. Encuentra E (10 000) y da tu respuesta redondeada a 6 lugares detrás del punto decimal. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +37,7 @@ function euler339() {
 }
 
 euler339();
+
 ```
 
 </div>

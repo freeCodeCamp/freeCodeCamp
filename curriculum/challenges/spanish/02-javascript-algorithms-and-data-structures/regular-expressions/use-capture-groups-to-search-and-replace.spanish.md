@@ -1,24 +1,16 @@
 ---
 id: 587d7dbb367417b2b2512bab
 title: Use Capture Groups to Search and Replace
-localeTitle: Utilice los grupos de captura para buscar y reemplazar
 challengeType: 1
+videoUrl: ''
+localeTitle: Utilice los grupos de captura para buscar y reemplazar
 ---
 
 ## Description
-<section id='description'> 
-búsqueda es útil. Sin embargo, puede hacer que la búsqueda sea aún más poderosa cuando también cambia (o reemplaza) el texto que coincide. 
-Puede buscar y reemplazar texto en una cadena usando <code>.replace()</code> en una cadena. Las entradas para <code>.replace()</code> son primero el patrón de <code>.replace()</code> regulares que desea buscar. El segundo parámetro es la cadena para reemplazar la coincidencia o una función para hacer algo. 
-<blockquote>let wrongText = "The sky is silver.";<br>let silverRegex = /silver/;<br>wrongText.replace(silverRegex, "blue");<br>// Returns "The sky is blue."</blockquote> 
-También puede acceder a grupos de captura en la cadena de reemplazo con signos de dólar ( <code>$</code> ). 
-<blockquote>"Code Camp".replace(/(\w+)\s(\w+)/, '$2 
-');<br>// Returns "Camp Code"</blockquote> 
-</section>
+<section id="description"> La búsqueda es útil. Sin embargo, puede hacer que la búsqueda sea aún más poderosa cuando también cambia (o reemplaza) el texto que coincide. Puede buscar y reemplazar texto en una cadena usando <code>.replace()</code> en una cadena. Las entradas para <code>.replace()</code> son primero el patrón de <code>.replace()</code> regulares que desea buscar. El segundo parámetro es la cadena para reemplazar la coincidencia o una función para hacer algo. <blockquote> let wrongText = &quot;El cielo es plateado.&quot;; <br> Deje silverRegex = / silver /; <br> wrongText.replace (silverRegex, &quot;blue&quot;); <br> // Devuelve &quot;El cielo es azul&quot;. </blockquote> También puede acceder a grupos de captura en la cadena de reemplazo con signos de dólar ( <code>$</code> ). <blockquote> &quot;Code Camp&quot; .replace (/ (\ w +) \ s (\ w +) /, &#39;$ 2 $ 1&#39;); <br> // Devuelve &quot;Código de campamento&quot; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una expresión regular para que busque la cadena <code>&quot;good&quot;</code> . Luego actualice la variable <code>replaceText</code> para reemplazar <code>&quot;good&quot;</code> con <code>&quot;okey-dokey&quot;</code> . 
-</section>
+<section id="instructions"> Escriba una expresión regular para que busque la cadena <code>&quot;good&quot;</code> . Luego actualice la variable <code>replaceText</code> para reemplazar <code>&quot;good&quot;</code> con <code>&quot;okey-dokey&quot;</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -46,6 +38,7 @@ let huhText = "This sandwich is good.";
 let fixRegex = /change/; // Change this line
 let replaceText = ""; // Change this line
 let result = huhText.replace(fixRegex, replaceText);
+
 ```
 
 </div>

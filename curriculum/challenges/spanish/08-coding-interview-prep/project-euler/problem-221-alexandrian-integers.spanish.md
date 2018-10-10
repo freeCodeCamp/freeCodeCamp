@@ -1,37 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4491000cf542c50ff5c
+id: 5900f4491000cf542c50ff5c
 challengeType: 5
 title: 'Problem 221: Alexandrian Integers'
+videoUrl: ''
+localeTitle: 'Problema 221: enteros alejandrinos'
 ---
 
 ## Description
-<section id='description'> 
-Llamaremos a un entero positivo A un &quot;entero alejandrino&quot;, si existen enteros p, q, r tales que: 
-
-
-A = p · q · r y 
-
-
-1A 
-= 
-
-1p 
-+ 
-
-1q 
-+ 
-
-1r 
-Por ejemplo, 630 es un número entero alejandrino (p = 5, q = −7, r = −18). 
-De hecho, 630 es el sexto número entero de Alejandría, siendo los primeros 6 enteros alejandrinos: 6, 42, 120, 156, 420 y 630. 
-
-Encuentra el 150000 número entero de Alejandría. 
-</section>
+<section id="description"> Llamaremos a un entero positivo A un &quot;entero alejandrino&quot;, si existen enteros p, q, r tales que: <pre> <code> A = p · q · r    and 1A</code> </pre><p> = </p><pre> <code> 1p</code> </pre><p> + </p><pre> <code> 1q</code> </pre><p> + </p><pre> <code> 1r</code> </pre><p> Por ejemplo, 630 es un entero alejandrino (p = 5, q = −7, r = −18). De hecho, 630 es el sexto entero de Alejandría, siendo los primeros 6 enteros de Alejandría: 6, 42, 120, 156, 420 y 630. </p><p> Encuentra el 150000 ° entero alejandrino. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -58,6 +37,7 @@ function euler221() {
 }
 
 euler221();
+
 ```
 
 </div>

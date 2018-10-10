@@ -1,21 +1,16 @@
 ---
 id: 587d7b88367417b2b2512b44
 title: Write Arrow Functions with Parameters
-localeTitle: Escribir funciones de flecha con parámetros
 challengeType: 1
+videoUrl: ''
+localeTitle: Escribir funciones de flecha con parámetros
 ---
 
 ## Description
-<section id='description'> 
-Al igual que una función normal, puede pasar argumentos a las funciones de flecha. 
-<blockquote>// doubles input value and returns it<br>const doubler = (item) => item * 2;</blockquote> 
-También puede pasar más de un argumento a las funciones de flecha. 
-</section>
+<section id="description"> Al igual que una función normal, puede pasar argumentos a las funciones de flecha. <blockquote> // duplica el valor de entrada y lo devuelve <br> const doubler = (item) =&gt; item * 2; </blockquote> También puede pasar más de un argumento a las funciones de flecha. </section>
 
 ## Instructions
-<section id='instructions'> 
-Vuelva a <code>myConcat</code> función <code>myConcat</code> que agrega el contenido de <code>arr2</code> a <code>arr1</code> para que la función utilice la sintaxis de la función de flecha. 
-</section>
+<section id="instructions"> Reescriba la función <code>myConcat</code> que agrega el contenido de <code>arr2</code> a <code>arr1</code> para que la función use la sintaxis de la función de flecha. </section>
 
 ## Tests
 <section id='tests'>
@@ -49,6 +44,7 @@ var myConcat = function(arr1, arr2) {
 };
 // test your code
 console.log(myConcat([1, 2], [3, 4, 5]));
+
 ```
 
 </div>

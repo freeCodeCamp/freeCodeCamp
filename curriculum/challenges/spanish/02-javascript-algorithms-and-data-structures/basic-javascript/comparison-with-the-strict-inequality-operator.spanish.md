@@ -1,21 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d3
 title: Comparison with the Strict Inequality Operator
-localeTitle: Comparación con el operador de desigualdad estricta
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparación con el operador de desigualdad estricta
 ---
 
 ## Description
-<section id='description'> 
-El operador de desigualdad estricta ( <code>!==</code> ) es el opuesto lógico del operador de igualdad estricta. Significa &quot;Estrictamente no es igual&quot; y devuelve <code>false</code> donde la igualdad estricta sería <code>true</code> y <em>viceversa</em> . La desigualdad estricta no convertirá los tipos de datos. 
-<strong>ejemplos</strong> 
-<blockquote>3 !== 3   // false<br>3 !== '3' // true<br>4 !== 3   // true</blockquote> 
-</section>
+<section id="description"> El operador de desigualdad estricta ( <code>!==</code> ) es el opuesto lógico del operador de igualdad estricta. Significa &quot;Estrictamente no es igual&quot; y devuelve <code>false</code> donde la igualdad estricta sería <code>true</code> y <em>viceversa</em> . La desigualdad estricta no convertirá los tipos de datos. <strong>Ejemplos</strong> <blockquote> 3! == 3 // falso <br> 3! == &#39;3&#39; // verdadero <br> 4! == 3 // verdadero </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el <code>strict inequality operator</code> a la sentencia <code>if</code> para que la función devuelva &quot;No igual&quot; cuando <code>val</code> no sea estrictamente igual a <code>17</code> 
-</section>
+<section id="instructions"> Agregue el <code>strict inequality operator</code> a la instrucción <code>if</code> para que la función devuelva &quot;No igual&quot; cuando <code>val</code> no es estrictamente igual a <code>17</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -58,6 +53,7 @@ function testStrictNotEqual(val) {
 
 // Change this value to test
 testStrictNotEqual(10);
+
 ```
 
 </div>
@@ -69,14 +65,7 @@ testStrictNotEqual(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testStrictNotEqual(val) {
-  if (val !== 17) {
-    return "Not Equal";
-  }
-  return "Equal";
-}
+// solution required
 ```
-
 </section>

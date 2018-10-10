@@ -1,21 +1,16 @@
 ---
 id: 587d78ab367417b2b2512af1
 title: Add Flex Superpowers to the Tweet Embed
-localeTitle: Añadir Flex Superpowers al Tweet Insertar
 challengeType: 0
 videoUrl: ''
+localeTitle: Añadir Flex Superpowers al Tweet Insertar
 ---
 
 ## Description
-<section id='description'> 
-A la derecha está la inserción de tweets que se utilizará como ejemplo práctico. Algunos de los elementos se verían mejor con un diseño diferente. El último desafío demostró <code>display: flex</code> . Aquí lo agregará a varios componentes en la inserción de tweets para comenzar a ajustar su posicionamiento. 
-</section>
+<section id="description"> A la derecha se encuentra la inserción de tweets que se utilizará como ejemplo práctico. Algunos de los elementos se verían mejor con un diseño diferente. El último desafío demostró <code>display: flex</code> . Aquí lo agregará a varios componentes en la inserción de tweets para comenzar a ajustar su posicionamiento. </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue la <code>display: flex</code> propiedades CSS <code>display: flex</code> a todos los elementos siguientes: tenga en cuenta que los selectores ya están configurados en el <code>header</code> CSS: 
-, el <code>.profile-name</code> de <code>.follow-btn</code> del encabezado, <code>.follow-btn</code> del encabezado, <code>h3</code> y <code>h4</code> del encabezado el <code>footer</code> , y los <code>.stats</code> de pie de <code>.stats</code> . 
-</section>
+<section id="instructions"> Agregue la <code>display: flex</code> propiedades CSS <code>display: flex</code> a todos los elementos siguientes: tenga en cuenta que los selectores ya están configurados en el <code>header</code> CSS: el <code>.profile-name</code> de <code>.follow-btn</code> del encabezado, el <code>.follow-btn</code> del encabezado, el <code>h3</code> y el <code>h4</code> del encabezado, el <code>footer</code> , y los <code>.stats</code> de pie de <code>.stats</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -136,6 +131,7 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
+
 ```
 
 </div>

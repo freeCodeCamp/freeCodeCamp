@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f41e1000cf542c50ff31
+id: 5900f41e1000cf542c50ff31
 challengeType: 5
 title: 'Problem 178: Step Numbers'
+videoUrl: ''
+localeTitle: 'Problema 178: números de paso'
 ---
 
 ## Description
-<section id='description'> 
-Considere el número 45656. 
-Se puede ver que cada par de dígitos consecutivos de 45656 tiene una diferencia de uno. 
-Un número para el que cada par de dígitos consecutivos tiene una diferencia de uno se llama un número de paso. 
-Un número pandigital contiene cada dígito decimal de 0 a 9 al menos una vez. 
-
-¿Cuántos números de paso pandigital menores que 1040 hay? 
-</section>
+<section id="description"> Considere el número 45656. Se puede ver que cada par de dígitos consecutivos de 45656 tiene una diferencia de uno. Un número para el cual cada par de dígitos consecutivos tiene una diferencia de uno se llama un número de paso. Un número pandigital contiene cada dígito decimal de 0 a 9 al menos una vez. <p> ¿Cuántos números de paso pandigital menos de 1040 hay? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler178() {
 }
 
 euler178();
+
 ```
 
 </div>

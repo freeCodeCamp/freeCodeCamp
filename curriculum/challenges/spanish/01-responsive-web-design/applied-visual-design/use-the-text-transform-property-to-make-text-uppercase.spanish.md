@@ -1,22 +1,16 @@
 ---
 id: 587d781c367417b2b2512ac0
 title: Use the text-transform Property to Make Text Uppercase
-localeTitle: Utilice la propiedad de transformación de texto para hacer mayúsculas de texto
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice la propiedad de transformación de texto para hacer mayúsculas de texto
 ---
 
 ## Description
-<section id='description'> 
-La propiedad de <code>text-transform</code> en CSS se usa para cambiar la apariencia del texto. Es una forma conveniente de asegurarse de que el texto de una página web se muestre de forma coherente, sin tener que cambiar el contenido de texto de los elementos HTML reales. 
-La siguiente tabla muestra cómo los diferentes valores de <code>text-transform</code> cambian el texto de ejemplo &quot;Transformarme&quot;. 
-<table class="table table-striped"><thead><th> Valor <th> Resultado <tbody><tr><td> <code>lowercase</code> <td> &quot;transformame&quot; <tr><td> <code>uppercase</code> <td> &quot;Transfórmame&quot; <tr><td> <code>capitalize</code> <td> &quot;Transformame&quot; <tr><td> <code>initial</code> <td> Usa el valor por defecto <tr><td> <code>inherit</code> <td> Use el valor de <code>text-transform</code> del elemento padre <tr><td> <code>none</code> <td> <strong>Predeterminado:</strong> usar el texto original </td></table> 
-</section>
+<section id="description"> La propiedad de <code>text-transform</code> en CSS se usa para cambiar la apariencia del texto. Es una forma conveniente de asegurarse de que el texto de una página web se muestre de forma coherente, sin tener que cambiar el contenido de texto de los elementos HTML reales. La siguiente tabla muestra cómo los diferentes valores de <code>text-transform</code> cambian el texto de ejemplo &quot;Transformarme&quot;. <table class="table table-striped"><thead><tr><th> Valor </th><th> Resultado </th></tr></thead><tbody><tr><td> <code>lowercase</code> </td> <td> &quot;transformame&quot; </td></tr><tr><td> <code>uppercase</code> </td> <td> &quot;Transfórmame&quot; </td></tr><tr><td> <code>capitalize</code> </td> <td> &quot;Transformame&quot; </td></tr><tr><td> <code>initial</code> </td> <td> Usa el valor por defecto </td></tr><tr><td> <code>inherit</code> </td> <td> Use el valor de <code>text-transform</code> del elemento padre </td></tr><tr><td> <code>none</code> </td> <td> <strong>Predeterminado:</strong> usar el texto original </td></tr></tbody></table></section>
 
 ## Instructions
-<section id='instructions'> 
-Transforme el texto del <code>h4</code> para que esté en mayúsculas utilizando la propiedad de <code>text-transform</code> . 
-</section>
+<section id="instructions"> Transforme el texto del <code>h4</code> para que esté en mayúsculas utilizando la propiedad de <code>text-transform</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -84,6 +78,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

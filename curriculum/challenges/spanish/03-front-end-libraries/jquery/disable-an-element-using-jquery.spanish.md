@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aed808826
 title: Disable an Element Using jQuery
-localeTitle: Deshabilitar un elemento usando jQuery
 challengeType: 6
+videoUrl: ''
+localeTitle: Deshabilitar un elemento usando jQuery
 ---
 
 ## Description
-<section id='description'> 
-También puede cambiar las propiedades no CSS de elementos HTML con jQuery. Por ejemplo, puede deshabilitar botones. 
-Cuando desactiva un botón, se vuelve de color gris y ya no se puede hacer clic en él. 
-jQuery tiene una función llamada <code>.prop()</code> que le permite ajustar las propiedades de los elementos. 
-Así es como deshabilitaría todos los botones: 
-<code>$(&quot;button&quot;).prop(&quot;disabled&quot;, true);</code> 
-Deshabilita solo el botón <code>target1</code> . 
-</section>
+<section id="description"> También puede cambiar las propiedades no CSS de elementos HTML con jQuery. Por ejemplo, puede deshabilitar botones. Cuando desactivas un botón, se vuelve de color gris y ya no se puede hacer clic en él. jQuery tiene una función llamada <code>.prop()</code> que le permite ajustar las propiedades de los elementos. A continuación le indicamos cómo deshabilitaría todos los botones: <code>$(&quot;button&quot;).prop(&quot;disabled&quot;, true);</code> Deshabilita solo el botón <code>target1</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -72,6 +65,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

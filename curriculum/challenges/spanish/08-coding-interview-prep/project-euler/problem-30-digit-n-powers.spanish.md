@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f38a1000cf542c50fe9d
+id: 5900f38a1000cf542c50fe9d
 challengeType: 5
 title: 'Problem 30: Digit n powers'
+videoUrl: ''
+localeTitle: 'Problema 30: dígitos y potencias'
 ---
 
 ## Description
-<section id='description'> 
-Sorprendentemente, solo hay tres números que se pueden escribir como la suma de las cuartas potencias de sus dígitos: 
-1634 = 1 <sup>4</sup> + 6 <sup>4</sup> + 3 <sup>4</sup> + 4 <sup>4</sup> 
-8208 = 8 <sup>4</sup> + 2 <sup>4</sup> + 0 <sup>4</sup> + 8 <sup>4</sup> 
-9474 = 9 <sup>4</sup> + 4 <sup>4</sup> + 7 <sup>4</sup> + 4 <sup>4</sup> 
-Como 1 = 1 <sup>4</sup> no es una suma que no está incluida. 
-La suma de estos números es 1634 + 8208 + 9474 = 19316. 
-Encuentre la suma de todos los números que se pueden escribir como la suma de n potencias de sus dígitos. 
-</section>
+<section id="description"> Sorprendentemente, solo hay tres números que pueden escribirse como la suma de las cuartas potencias de sus dígitos: 1634 = 1 <sup>4</sup> + 6 <sup>4</sup> + 3 <sup>4</sup> + 4 <sup>4</sup> 8208 = 8 <sup>4</sup> + 2 <sup>4</sup> + 0 <sup>4</sup> + 8 <sup>4</sup> 9474 = 9 <sup>4</sup> + 4 <sup>4</sup> + 7 <sup>4</sup> + 4 <sup>4</sup> Como 1 = 1 <sup>4</sup> no es una suma que no está incluida. La suma de estos números es 1634 + 8208 + 9474 = 19316. Encuentra la suma de todos los números que se pueden escribir como la suma de n potencias de sus dígitos. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +43,7 @@ function digitnPowers(n) {
 }
 
 digitnPowers(5);
+
 ```
 
 </div>

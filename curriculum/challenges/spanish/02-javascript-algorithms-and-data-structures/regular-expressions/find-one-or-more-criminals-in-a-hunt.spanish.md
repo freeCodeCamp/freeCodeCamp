@@ -1,24 +1,16 @@
 ---
 id: 587d7db7367417b2b2512b9c
 title: Find One or More Criminals in a Hunt
-localeTitle: Encuentra uno o más criminales en una cacería
 challengeType: 1
+videoUrl: ''
+localeTitle: Encuentra uno o más criminales en una cacería
 ---
 
 ## Description
-<section id='description'> 
-Tiempo para pausar y probar sus nuevas habilidades de escritura de expresiones regulares. Un grupo de criminales escapó de la cárcel y se escapó, pero no sabes cuántos. Sin embargo, sí sabes que permanecen juntos cuando están cerca de otras personas. Eres responsable de encontrar a todos los criminales a la vez. 
-Aquí hay un ejemplo para revisar cómo hacer esto: 
-La expresión regular <code>/z+/</code> coincide con la letra <code>z</code> cuando aparece una o más veces seguidas. Encontraría coincidencias en todas las cadenas siguientes: 
-<blockquote>"z"<br>"zzzzzz"<br>"ABCzzzz"<br>"zzzzABC"<br>"abczzzzzzzzzzzzzzzzzzzzzabc"</blockquote> 
-Pero no encuentra coincidencias en las siguientes cadenas ya que no hay caracteres de la letra <code>z</code> : 
-<blockquote>""<br>"ABC"<br>"abcabc"</blockquote> 
-</section>
+<section id="description"> Es hora de hacer una pausa y probar sus nuevas habilidades de escritura regex. Un grupo de criminales escapó de la cárcel y se escapó, pero no sabes cuántos. Sin embargo, sí sabes que permanecen juntos cuando están cerca de otras personas. Eres responsable de encontrar a todos los criminales a la vez. Aquí hay un ejemplo para revisar cómo hacer esto: La expresión regular <code>/z+/</code> coincide con la letra <code>z</code> cuando aparece una o más veces seguidas. Encontraría coincidencias en todas las siguientes cadenas: <blockquote> &quot;z&quot; <br> zzzzzz <br> &quot;ABCzzzz&quot; <br> &quot;zzzzABC&quot; <br> &quot;abczzzzzzzzzzzzzzzzzzzzzzzzzabc&quot; </blockquote> Pero no encuentra coincidencias en las siguientes cadenas ya que no hay caracteres de la letra <code>z</code> : <blockquote> &quot;&quot; <br> &quot;A B C&quot; <br> abcabc </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una expresión regular <code>greedy</code> que encuentre uno o más delincuentes dentro de un grupo de otras personas. Un criminal está representado por la letra mayúscula <code>C</code> 
-</section>
+<section id="instructions"> Escriba una expresión regular <code>greedy</code> que encuentre uno o más delincuentes dentro de un grupo de otras personas. Un criminal está representado por la letra mayúscula <code>C</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -57,6 +49,7 @@ let reCriminals = /./; // Change this line
 
 let matchedCriminals = crowd.match(reCriminals);
 console.log(matchedCriminals);
+
 ```
 
 </div>

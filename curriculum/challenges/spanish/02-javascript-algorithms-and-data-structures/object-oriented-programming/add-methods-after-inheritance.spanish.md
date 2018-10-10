@@ -1,25 +1,16 @@
 ---
 id: 587d7db1367417b2b2512b87
 title: Add Methods After Inheritance
-localeTitle: Añadir métodos después de la herencia
 challengeType: 1
+videoUrl: ''
+localeTitle: Añadir métodos después de la herencia
 ---
 
 ## Description
-<section id='description'> 
-Una función constructora que hereda su objeto <code>prototype</code> de una función constructora de <code>supertype</code> aún puede tener sus propios métodos además de los métodos heredados. 
-Por ejemplo, <code>Bird</code> es un constructor que hereda su <code>prototype</code> de <code>Animal</code> : 
-<blockquote>function Animal() { }<br>Animal.prototype.eat = function() {<br>&nbsp;&nbsp;console.log("nom nom nom");<br>};<br>function Bird() { }<br>Bird.prototype = Object.create(Animal.prototype);<br>Bird.prototype.constructor = Bird;</blockquote> 
-Además de lo que se hereda de <code>Animal</code> , desea agregar un comportamiento que sea único para los objetos <code>Bird</code> . Aquí, <code>Bird</code> obtendrá una función <code>fly()</code> . Las funciones se agregan al <code>prototype</code> <code>Bird&#39;s</code> la misma manera que cualquier función de constructor: 
-<blockquote>Bird.prototype.fly = function() {<br>&nbsp;&nbsp;console.log("I'm flying!");<br>};</blockquote> 
-Ahora, las instancias de <code>Bird</code> tendrán los métodos <code>eat()</code> y <code>fly()</code> : 
-<blockquote>let duck = new Bird();<br>duck.eat(); // prints "nom nom nom"<br>duck.fly(); // prints "I'm flying!"</blockquote> 
-</section>
+<section id="description"> Una función constructora que hereda su objeto <code>prototype</code> de una función constructora de <code>supertype</code> aún puede tener sus propios métodos además de los métodos heredados. Por ejemplo, <code>Bird</code> es un constructor que hereda su <code>prototype</code> de <code>Animal</code> : <blockquote> función animal () {} <br> Animal.prototype.eat = function () { <br> console.log (&quot;nom nom nom&quot;); <br> }; <br> función Bird () {} <br> Bird.prototype = Object.create (Animal.prototype); <br> Bird.prototype.constructor = Bird; </blockquote> Además de lo que se hereda de <code>Animal</code> , desea agregar un comportamiento que sea exclusivo de los objetos <code>Bird</code> . Aquí, <code>Bird</code> obtendrá una función <code>fly()</code> . Las funciones se agregan al <code>prototype</code> <code>Bird&#39;s</code> la misma manera que cualquier función de constructor: <blockquote> Bird.prototype.fly = function () { <br> console.log (&quot;Estoy volando!&quot;); <br> }; </blockquote> Ahora las instancias de <code>Bird</code> tendrán los métodos de <code>eat()</code> y <code>fly()</code> : <blockquote> dejar pato = nuevo pájaro (); <br> duck.eat (); // imprime &quot;nom nom nom&quot; <br> duck.fly (); // impresiones &quot;Estoy volando!&quot; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue todo el código necesario para que el objeto <code>Dog</code> hereda de <code>Animal</code> y el constructor <code>Dog&#39;s</code> <code>prototype</code> <code>Dog&#39;s</code> esté configurado en Dog. Luego, agregue un método de <code>bark()</code> al objeto <code>Dog</code> para que el <code>beagle</code> pueda <code>eat()</code> y <code>bark()</code> . El método de la <code>bark()</code> debe imprimir &quot;¡Guau!&quot; a la consola. 
-</section>
+<section id="instructions"> Agregue todo el código necesario para que el objeto <code>Dog</code> hereda de <code>Animal</code> y el constructor <code>Dog&#39;s</code> <code>prototype</code> <code>Dog&#39;s</code> esté configurado en Dog. Luego, agregue un método de <code>bark()</code> al objeto <code>Dog</code> para que el <code>beagle</code> pueda <code>eat()</code> y <code>bark()</code> . El método de la <code>bark()</code> debe imprimir &quot;¡Guau!&quot; a la consola. </section>
 
 ## Tests
 <section id='tests'>
@@ -63,6 +54,7 @@ let beagle = new Dog();
 
 beagle.eat(); // Should print "nom nom nom"
 beagle.bark(); // Should print "Woof!"
+
 ```
 
 </div>
@@ -74,21 +66,7 @@ beagle.bark(); // Should print "Woof!"
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Animal() { }
-Animal.prototype.eat = function() { console.log("nom nom nom"); };
-
-function Dog() { }
-Dog.prototype = Object.create(Animal.prototype);
-Dog.prototype.constructor = Dog;
-Dog.prototype.bark = function () {
-  console.log('Woof!');
-};
-let beagle = new Dog();
-
-beagle.eat();
-beagle.bark();
+// solution required
 ```
-
 </section>

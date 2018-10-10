@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aec908853
 title: Add id Attributes to Bootstrap Elements
-localeTitle: Añadir atributos de ID a los elementos Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Añadir atributos de ID a los elementos Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Recuerde que además de los atributos de clase, puede asignar a cada uno de sus elementos un atributo <code>id</code> . 
-Cada ID debe ser único para un elemento específico y se debe utilizar solo una vez por página. 
-Demos una identificación única a cada uno de nuestros elementos <code>div</code> de clase <code>well</code> . 
-Recuerda que puedes darle a un elemento una identificación como esta: 
-<code>&lt;div class=&quot;well&quot; id=&quot;center-well&quot;&gt;</code> 
-Dale al pozo de la izquierda el id del <code>left-well</code> . Dale al pozo de la derecha la identificación del <code>right-well</code> . 
-</section>
+<section id="description"> Recuerde que además de los atributos de clase, puede asignar a cada uno de sus elementos un atributo <code>id</code> . Cada id debe ser único para un elemento específico y se debe utilizar solo una vez por página. Demos una identificación única a cada uno de nuestros elementos <code>div</code> de clase <code>well</code> . Recuerde que puede asignar a un elemento una identificación como esta: <code>&lt;div class=&quot;well&quot; id=&quot;center-well&quot;&gt;</code> Déle al pozo de la izquierda el id del <code>left-well</code> . Dale al pozo de la derecha la identificación del <code>right-well</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -59,6 +52,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

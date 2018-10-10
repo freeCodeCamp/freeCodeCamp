@@ -1,24 +1,16 @@
 ---
 id: 587d7b8c367417b2b2512b57
 title: Use * to Import Everything from a File
-localeTitle: Usa * para importar todo desde un archivo
 challengeType: 1
+videoUrl: ''
+localeTitle: Usa * para importar todo desde un archivo
 ---
 
 ## Description
-<section id='description'> 
-Suponga que tiene un archivo que desea importar todo su contenido en el archivo actual. Esto se puede hacer con la sintaxis de <dfn>importación *</dfn> . 
-Aquí hay un ejemplo donde el contenido de un archivo llamado <code>&quot;math_functions&quot;</code> se importa a un archivo en el mismo directorio: 
-<blockquote>import * as myMathModule from "math_functions";<br>myMathModule.add(2,3);<br>myMathModule.subtract(5,3);</blockquote> 
-Y rompiendo ese código: 
-<blockquote>import * as object_with_name_of_your_choice from "file_path_goes_here"<br>object_with_name_of_your_choice.imported_function</blockquote> 
-Puede usar cualquier nombre después de la <code>import * as</code> parte de la declaración. Para utilizar este método, se requiere un objeto que reciba los valores importados. Desde aquí, utilizará la notación de puntos para llamar a sus valores importados. 
-</section>
+<section id="description"> Supongamos que tiene un archivo que desea importar todo su contenido en el archivo actual. Esto se puede hacer con la sintaxis de <dfn>importación *</dfn> . Aquí hay un ejemplo donde el contenido de un archivo llamado <code>&quot;math_functions&quot;</code> se importa a un archivo en el mismo directorio: <blockquote> importar * como myMathModule desde &quot;math_functions&quot;; <br> myMathModule.add (2,3); <br> myMathModule.subtract (5,3); </blockquote> Y rompiendo ese código: <blockquote> importar * como object_with_name_of_your_choice desde &quot;file_path_goes_here&quot; <br> object_with_name_of_your_choice.imported_function </blockquote> Puede usar cualquier nombre después de la <code>import * as</code> parte de la declaración. Para utilizar este método, se requiere un objeto que reciba los valores importados. Desde aquí, utilizará la notación de puntos para llamar a sus valores importados. </section>
 
 ## Instructions
-<section id='instructions'> 
-El siguiente código requiere el contenido de un archivo, <code>&quot;capitalize_strings&quot;</code> , que se encuentra en el mismo directorio que este, importado. Agregue la declaración de <code>import *</code> apropiada en la parte superior del archivo, utilizando el objeto proporcionado. 
-</section>
+<section id="instructions"> El código a continuación requiere el contenido de un archivo, <code>&quot;capitalize_strings&quot;</code> , que se encuentra en el mismo directorio que este, importado. Agregue la declaración de <code>import *</code> apropiada en la parte superior del archivo, utilizando el objeto proporcionado. </section>
 
 ## Tests
 <section id='tests'>
@@ -39,6 +31,7 @@ tests:
 
 ```js
 "use strict";
+
 ```
 
 </div>
@@ -53,6 +46,7 @@ return {
 capitalize: str => str.toUpperCase(),
 lowercase: str => str.toLowerCase()
 }}};
+
 ```
 
 </div>

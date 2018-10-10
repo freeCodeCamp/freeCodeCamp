@@ -1,22 +1,17 @@
 ---
 id: 5a24c314108439a4d403615b
 title: Copy an Object with Object.assign
-localeTitle: Copiar un objeto con Object.assign
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Copiar un objeto con Object.assign
 ---
 
 ## Description
-<section id='description'> 
-Los últimos varios desafíos funcionaron con arrays, pero hay formas de ayudar a imponer la inmutabilidad del estado cuando el estado también es un <code>object</code> . Una herramienta útil para manejar objetos es la utilidad <code>Object.assign()</code> . <code>Object.assign()</code> toma un objeto de destino y objetos de origen y asigna propiedades de los objetos de origen al objeto de destino. Cualquier propiedad coincidente se sobrescribe con las propiedades en los objetos de origen. Este comportamiento se usa comúnmente para hacer copias superficiales de objetos al pasar un objeto vacío como el primer argumento seguido por los objetos que desea copiar. Aquí hay un ejemplo: 
-<code>const newObject = Object.assign({}, obj1, obj2);</code> 
-Esto crea <code>newObject</code> como un nuevo <code>object</code> , que contiene las propiedades que existen actualmente en <code>obj1</code> y <code>obj2</code> . 
-</section>
+<section id="description"> Los últimos varios desafíos funcionaron con arreglos, pero hay formas de ayudar a imponer la inmutabilidad del estado cuando el estado es un <code>object</code> , también. Una herramienta útil para manejar objetos es la utilidad <code>Object.assign()</code> . <code>Object.assign()</code> toma un objeto de destino y objetos de origen y asigna propiedades de los objetos de origen al objeto de destino. Cualquier propiedad coincidente se sobrescribe con las propiedades en los objetos de origen. Este comportamiento se usa comúnmente para hacer copias superficiales de objetos al pasar un objeto vacío como el primer argumento seguido por los objetos que desea copiar. Aquí hay un ejemplo: <code>const newObject = Object.assign({}, obj1, obj2);</code> Esto crea <code>newObject</code> como un nuevo <code>object</code> , que contiene las propiedades que existen actualmente en <code>obj1</code> y <code>obj2</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-El estado y las acciones de Redux se modificaron para manejar un <code>object</code> para el <code>state</code> . Edite el código para devolver un nuevo objeto de <code>state</code> para acciones con el tipo <code>ONLINE</code> , que establece la propiedad de <code>status</code> en la cadena en <code>online</code> . Intenta usar <code>Object.assign()</code> para completar el desafío. 
-</section>
+<section id="instructions"> El estado y las acciones de Redux se modificaron para manejar un <code>object</code> para el <code>state</code> . Edite el código para devolver un nuevo objeto de <code>state</code> para acciones con el tipo <code>ONLINE</code> , que establece la propiedad de <code>status</code> en la cadena en <code>online</code> . Intenta usar <code>Object.assign()</code> para completar el desafío. </section>
 
 ## Tests
 <section id='tests'>
@@ -66,6 +61,7 @@ const wakeUp = () => {
 };
 
 const store = Redux.createStore(immutableReducer);
+
 ```
 
 </div>
@@ -77,33 +73,7 @@ const store = Redux.createStore(immutableReducer);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const defaultState = {
-  user: 'CamperBot',
-  status: 'offline',
-  friends: '732,982',
-  community: 'freeCodeCamp'
-};
-
-const immutableReducer = (state = defaultState, action) => {
-  switch(action.type) {
-    case 'ONLINE':
-      return Object.assign({}, state, {
-        status: 'online'
-      });
-    default:
-      return state;
-  }
-};
-
-const wakeUp = () => {
-  return {
-    type: 'ONLINE'
-  }
-};
-
-const store = Redux.createStore(immutableReducer);
+// solution required
 ```
-
 </section>

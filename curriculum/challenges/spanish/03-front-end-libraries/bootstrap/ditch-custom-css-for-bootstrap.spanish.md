@@ -1,22 +1,16 @@
 ---
 id: bad87fee1347bd9aedf08845
 title: Ditch Custom CSS for Bootstrap
-localeTitle: Ditch Custom CSS para Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Ditch Custom CSS para Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Podemos limpiar nuestro código y hacer que nuestra aplicación Cat Photo se vea más convencional utilizando los estilos incorporados de Bootstrap en lugar de los estilos personalizados que creamos anteriormente. 
-No se preocupe, habrá mucho tiempo para personalizar nuestro CSS más adelante. 
-Elimine las declaraciones CSS de <code>.red-text</code> , <code>p</code> , y <code>.smaller-image</code> de su elemento de <code>style</code> para que las únicas declaraciones que queden en su elemento de <code>style</code> sean <code>h2</code> y <code>thick-green-border</code> . 
-Luego borra el elemento <code>p</code> que contiene un enlace muerto. Luego elimine la clase de <code>red-text</code> de su elemento <code>h2</code> y reemplácela con la clase Bootstrap <code>text-primary</code> . 
-Finalmente, elimine la clase de &quot;imagen más pequeña&quot; de su primer elemento <code>img</code> y reemplácela con la clase <code>img-responsive</code> . 
-</section>
+<section id="description"> Podemos limpiar nuestro código y hacer que nuestra aplicación Cat Photo se vea más convencional utilizando los estilos incorporados de Bootstrap en lugar de los estilos personalizados que creamos anteriormente. No se preocupe, habrá mucho tiempo para personalizar nuestro CSS más tarde. Elimine las declaraciones CSS de <code>.red-text</code> , <code>p</code> , y <code>.smaller-image</code> de su elemento de <code>style</code> para que las únicas declaraciones que queden en su elemento de <code>style</code> sean <code>h2</code> y <code>thick-green-border</code> . Luego borra el elemento <code>p</code> que contiene un enlace muerto. Luego elimine la clase de <code>red-text</code> de su elemento <code>h2</code> y reemplácela con la clase Bootstrap <code>text-primary</code> . Finalmente, elimine la clase de &quot;imagen más pequeña&quot; de su primer elemento <code>img</code> y reemplácela con la clase <code>img-responsive</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -113,6 +107,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

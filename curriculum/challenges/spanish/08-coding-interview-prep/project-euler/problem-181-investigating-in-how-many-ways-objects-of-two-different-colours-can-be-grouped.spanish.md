@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4231000cf542c50ff34
+id: 5900f4231000cf542c50ff34
 challengeType: 5
 title: 'Problem 181: Investigating in how many ways objects of two different colours can be grouped'
+videoUrl: ''
+localeTitle: 'Problema 181: investigar de cuántas maneras se pueden agrupar los objetos de dos colores diferentes'
 ---
 
 ## Description
-<section id='description'> 
-Teniendo tres objetos negros B y un objeto blanco W, se pueden agrupar de 7 formas como esta: 
-(BBBW) (B, BBW) (B, B, BW) (B, B, B, W) 
-(B, BB, W) (BBB, W) (BB, BW) 
-¿De cuántas maneras se pueden agrupar sesenta objetos negros B y cuarenta objetos blancos W? 
-</section>
+<section id="description"> Teniendo tres objetos negros B y un objeto blanco W, se pueden agrupar en 7 formas como esta: (BBBW) (B, BBW) (B, B, BW) (B, B, B, W) (B, BB, W ) (BBB, W) (BB, BW) ¿De cuántas maneras se pueden agrupar sesenta objetos negros B y cuarenta objetos blancos W? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +37,7 @@ function euler181() {
 }
 
 euler181();
+
 ```
 
 </div>

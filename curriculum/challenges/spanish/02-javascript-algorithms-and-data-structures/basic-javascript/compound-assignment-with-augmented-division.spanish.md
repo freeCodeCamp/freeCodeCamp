@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244b2
 title: Compound Assignment With Augmented Division
-localeTitle: Asignación compuesta con división aumentada
 challengeType: 1
+videoUrl: ''
+localeTitle: Asignación compuesta con división aumentada
 ---
 
 ## Description
-<section id='description'> 
-El operador <code>/=</code> divide una variable por otro número. 
-<code>myVar = myVar / 5;</code> 
-<code>myVar</code> por <code>5</code> . Esto se puede reescribir como: 
-<code>myVar /= 5;</code> 
-</section>
+<section id="description"> El operador <code>/=</code> divide una variable por otro número. <code>myVar = myVar / 5;</code> <code>myVar</code> por <code>5</code> . Esto se puede reescribir como: <code>myVar /= 5;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Convierta las asignaciones para <code>a</code> , <code>b</code> y <code>c</code> para usar el operador <code>/=</code> . 
-</section>
+<section id="instructions"> Convierta las asignaciones para <code>a</code> , <code>b</code> y <code>c</code> para usar el operador <code>/=</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -73,15 +67,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var a = 48;
-var b = 108;
-var c = 33;
-
-a /= 12;
-b /= 4;
-c /= 11;
+// solution required
 ```
-
 </section>

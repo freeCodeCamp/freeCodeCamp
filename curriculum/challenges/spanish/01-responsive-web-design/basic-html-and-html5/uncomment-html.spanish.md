@@ -1,22 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08802
 title: Uncomment HTML
-localeTitle: Descomentar HTML
 challengeType: 0
 videoUrl: ''
+localeTitle: Descomentar HTML
 ---
 
 ## Description
-<section id='description'>
-comentarios son una forma en la que puede dejar comentarios para otros desarrolladores dentro de su código sin afectar el resultado resultante que se muestra al usuario final.
-comentarios también son una forma conveniente de desactivar el código sin tener que eliminarlo por completo.
-comentarios en HTML comienzan con <code>&lt;!--</code> , y terminan con un <code>--&gt;</code>
-</section>
+<section id="description"> El comentar es una forma en que puede dejar comentarios para otros desarrolladores dentro de su código sin afectar el resultado resultante que se muestra al usuario final. El comentar también es una forma conveniente de desactivar el código sin tener que eliminarlo por completo. Los comentarios en HTML comienzan con <code>&lt;!--</code> , y terminan con <code>--&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'>
-Descomenta tus elementos <code>h1</code> , <code>h2</code> <code>p</code> .
-</section>
+<section id="instructions"> Descomenta tus elementos <code>h1</code> , <code>h2</code> <code>p</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -49,6 +43,7 @@ tests:
 
 <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
 -->
+
 ```
 
 </div>

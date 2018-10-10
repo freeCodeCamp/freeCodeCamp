@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4671000cf542c50ff79
+id: 5900f4671000cf542c50ff79
 challengeType: 5
 title: 'Problem 249: Prime Subset Sums'
+videoUrl: ''
+localeTitle: 'Problema 249: sumas de primer subconjunto'
 ---
 
 ## Description
-<section id='description'> 
-Sea S = {2, 3, 5, ..., 4999} el conjunto de números primos menores que 5000. 
-Encuentre el número de subconjuntos de S, la suma de cuyos elementos es un número primo. 
-Ingrese los 16 dígitos más a la derecha como su respuesta. 
-</section>
+<section id="description"> Sea S = {2, 3, 5, ..., 4999} el conjunto de números primos menores que 5000. Encuentre el número de subconjuntos de S, la suma de cuyos elementos es un número primo. Ingrese los 16 dígitos más a la derecha como su respuesta. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler249() {
 }
 
 euler249();
+
 ```
 
 </div>

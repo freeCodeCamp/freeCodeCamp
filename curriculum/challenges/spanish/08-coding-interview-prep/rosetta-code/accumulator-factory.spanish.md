@@ -1,22 +1,16 @@
 ---
 title: Accumulator factory
 id: 594810f028c0303b75339ace
-localeTitle: 594810f028c0303b75339ace
 challengeType: 5
+videoUrl: ''
+localeTitle: Fábrica de acumuladores
 ---
 
 ## Description
-<section id='description'>
-<p> Cree una función que tome un solo argumento (numérico) y devuelva otra función que sea un acumulador. La función del acumulador devuelto a su vez también toma un solo argumento numérico y devuelve la suma de todos los valores numéricos pasados ​​hasta ese acumulador (incluido el valor inicial pasado cuando se creó el acumulador). </p>
-<p> Reglas: </p>
-<p> No utilice variables globales. </p>
-<p> Insinuación: </p>
-<p> Los cierres salvan el estado exterior. </p>
-</section>
+<section id="description"><p> Cree una función que tome un solo argumento (numérico) y devuelva otra función que sea un acumulador. La función del acumulador devuelto a su vez también toma un solo argumento numérico y devuelve la suma de todos los valores numéricos pasados ​​hasta ese acumulador (incluido el valor inicial pasado cuando se creó el acumulador). </p><p> Reglas: </p><p> No utilice variables globales. </p><p> Insinuación: </p><p> Los cierres salvan el estado exterior. </p></section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -30,7 +24,7 @@ tests:
     testString: 'assert(typeof accumulator(0) === "function", "<code>accumulator(0)</code> should return a function.");'
   - text: <code>accumulator(0)(2)</code> debe devolver un número.
     testString: 'assert(typeof accumulator(0)(2) === "number", "<code>accumulator(0)(2)</code> should return a number.");'
-  - text: 'Pasar los valores 3, -4, 1.5 y 5 debería devolver 5.5.'
+  - text: 'Pasar los valores 3, -4, 1.5 y 5 debe devolver 5.5.'
     testString: 'assert(testFn(5) === 5.5, "Passing in the values 3, -4, 1.5, and 5 should return 5.5.");'
 
 ```
@@ -46,6 +40,7 @@ tests:
 function accumulator (sum) {
   // Good luck!
 }
+
 ```
 
 </div>
@@ -65,14 +60,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function accumulator (sum) {
-  return function (n) {
-    return sum += n;
-  };
-}
-
+// solution required
 ```
-
 </section>

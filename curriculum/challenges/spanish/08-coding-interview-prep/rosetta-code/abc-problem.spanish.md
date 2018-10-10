@@ -1,42 +1,16 @@
 ---
 title: ABC Problem
 id: 594810f028c0303b75339acc
-localeTitle: 594810f028c0303b75339acc
 challengeType: 5
+videoUrl: ''
+localeTitle: Problema abc
 ---
 
 ## Description
-<section id='description'> 
-<p> Se le entrega una colección de bloques ABC (por ejemplo, bloques del alfabeto infantil). Hay 20 bloques con dos letras en cada bloque. Un alfabeto completo está garantizado entre todos los lados de los bloques. La colección de muestras de bloques: </p> 
-<p> (BO) </p> 
-<p> (XK) </p> 
-<p> (DQ) </p> 
-<p> (CP) </p> 
-<p> (N / A) </p> 
-<p> (GT) </p> 
-<p> (RE) </p> 
-<p> (TG) </p> 
-<p> (QD) </p> 
-<p> (FS) </p> 
-<p> (JW) </p> 
-<p> (HU) </p> 
-<p> (VI) </p> 
-<p> (UN) </p> 
-<p> (TRANSMISIÓN EXTERIOR) </p> 
-<p> (ER) </p> 
-<p> (FS) </p> 
-<p> (LY) </p> 
-<p> (ORDENADOR PERSONAL) </p> 
-<p> (ZM) </p> 
-<p> Algunas reglas a tener en cuenta: </p> 
-Una vez que se usa una letra en un bloque, ese bloque no se puede usar de nuevo. 
-La función debe ser insensible a mayúsculas y minúsculas. 
-<p> Implementar una función que toma una cadena (palabra) y determina si la palabra se puede deletrear con la colección de bloques dada. </p> 
-</section>
+<section id="description"><p> Se le entrega una colección de bloques ABC (por ejemplo, bloques del alfabeto infantil). Hay 20 bloques con dos letras en cada bloque. Un alfabeto completo está garantizado entre todos los lados de los bloques. La colección de muestras de bloques: </p><p> (BO) </p><p> (XK) </p><p> (DQ) </p><p> (CP) </p><p> (N / A) </p><p> (GT) </p><p> (RE) </p><p> (TG) </p><p> (QD) </p><p> (FS) </p><p> (JW) </p><p> (HU) </p><p> (VI) </p><p> (UN) </p><p> (TRANSMISIÓN EXTERIOR) </p><p> (ER) </p><p> (FS) </p><p> (LY) </p><p> (ORDENADOR PERSONAL) </p><p> (ZM) </p><p> Algunas reglas a tener en cuenta: </p> Una vez que se usa una letra en un bloque, ese bloque no se puede usar de nuevo. La función debe ser insensible a mayúsculas y minúsculas. <p> Implementar una función que toma una cadena (palabra) y determina si la palabra se puede deletrear con la colección de bloques dada. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -74,6 +48,7 @@ tests:
 function canMakeWord (word) {
   // Good luck!
 }
+
 ```
 
 </div>
@@ -93,30 +68,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function canMakeWord (word) {
-  const characters = 'BO XK DQ CP NA GT RE TG QD FS JW HU VI AN OB ER FS LY PC ZM';
-  const blocks = characters.split(' ').map(pair => pair.split(''));
-
-  const letters = [...word.toUpperCase()];
-  let length = letters.length;
-  const copy = new Set(blocks);
-
-  letters.forEach(letter => {
-    for (let block of copy) {
-      const index = block.indexOf(letter);
-
-      if (index !== -1) {
-        length--;
-        copy.delete(block);
-        break;
-      }
-    }
-  });
-  return !length;
-}
-
+// solution required
 ```
-
 </section>
