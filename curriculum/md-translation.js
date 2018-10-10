@@ -9,8 +9,8 @@ const {
   Translate
 } = require('@google-cloud/translate');
 
-const lang = 'es';
-const langFull = 'spanish';
+const lang = 'pt';
+const langFull = 'portuguese';
 
 const outputDir = path.resolve(__dirname, `./challenges/${langFull}`);
 fs.ensureDirSync(outputDir);
@@ -65,8 +65,7 @@ async function translateChallenge(file) {
     ))
   ];
   return Promise.all(translatePromises).then(([title, description, instructions, ...tests]) => {
-    challenge['videoUrl'] = '';
-    if (challenge['guideUrl']) challenge['guideUrl'] = challenge['guideUrl'].replace('www', langFull);
+
     const {
       description: oldDescription = [],
       instructions: oldInstructions = [],
@@ -76,7 +75,7 @@ async function translateChallenge(file) {
       ...challengeMeta
     } = challenge;
     const md = `---
-${YAML.dump(Object.assign(challengeMeta, {localeTitle: title.join(' ').trim()}), { lineWidth: 10000 })}---
+${YAML.dump(Object.assign(challengeMeta, {localeTitle: title ? title.join(' ').trim() : ''}), { lineWidth: 10000 })}---
 
 ## Description
 ${description}
