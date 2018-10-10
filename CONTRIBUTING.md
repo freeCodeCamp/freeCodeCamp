@@ -14,7 +14,7 @@
 
 Hello 👋!
 
-freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful your contributions, and we are exited to welcome you onboard.
+freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are exited to welcome you onboard.
 
 We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's not very long.
 
