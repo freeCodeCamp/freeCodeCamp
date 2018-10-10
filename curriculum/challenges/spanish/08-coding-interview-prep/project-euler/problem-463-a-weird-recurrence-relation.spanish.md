@@ -1,27 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f53c1000cf542c51004e
+id: 5900f53c1000cf542c51004e
 challengeType: 5
 title: 'Problem 463: A weird recurrence relation'
+videoUrl: ''
+localeTitle: 'Problema 463: una extraña relación de recurrencia'
 ---
 
 ## Description
-<section id='description'> 
-La función $ f $ se define para todos los enteros positivos de la siguiente manera: 
-$ f (1) = 1 $ 
-$ f (3) = 3 $ 
-$ f (2n) = f (n) $ 
-$ f (4n) + 1) = 2f (2n + 1) - f (n) $ 
-$ f (4n + 3) = 3f (2n + 1) - 2f (n) $ 
-
-La función $ S (n) $ se define como $ \ sum_ {i = 1} ^ {n} f (i) $. 
-$ S (8) = 22 $ y $ S (100) = 3604 $. 
-Encuentra $ S (3 ^ {37}) $. Da los últimos 9 dígitos de tu respuesta. 
-</section>
+<section id="description"> La función $ f $ se define para todos los enteros positivos de la siguiente manera: $ f (1) = 1 $ $ f (3) = 3 $ $ f (2n) = f (n) $ $ f (4n + 1) = 2f (2n + 1) - f (n) $ $ f (4n + 3) = 3f (2n + 1) - 2f (n) $ <p> La función $ S (n) $ se define como $ \ sum_ {i = 1} ^ {n} f (i) $. $ S (8) = 22 $ y $ S (100) = 3604 $. Encuentra $ S (3 ^ {37}) $. Da los últimos 9 dígitos de tu respuesta. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +37,7 @@ function euler463() {
 }
 
 euler463();
+
 ```
 
 </div>

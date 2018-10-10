@@ -1,18 +1,16 @@
 ---
 title: Generate lower case ASCII alphabet
 id: 5a23c84252665b21eecc7e7a
-localeTitle: 5a23c84252665b21eecc7e7a
 challengeType: 5
+videoUrl: ''
+localeTitle: Generar minúsculas alfabeto ASCII
 ---
 
 ## Description
-<section id='description'>
-Escriba una función para generar una matriz de caracteres ASCII en minúsculas, para un rango determinado. Por ejemplo: para el rango 1 a 4, la función debe devolver <code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> .
-</section>
+<section id="description"> Escriba una función para generar una matriz de caracteres ASCII en minúsculas, para un rango determinado. Por ejemplo: para el rango 1 a 4, la función debe devolver <code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> . </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -22,7 +20,7 @@ Escriba una función para generar una matriz de caracteres ASCII en minúsculas,
 tests:
   - text: <code>lascii</code> debería ser una función.
     testString: 'assert(typeof lascii=="function","<code>lascii</code> should be a function.");'
-  - text: <code>lascii(&quot;a&quot;,&quot;d&quot;)</code> debe devolver una matriz.
+  - text: '<code>lascii(&quot;a&quot;,&quot;d&quot;)</code> debe devolver una matriz.'
     testString: 'assert(Array.isArray(lascii("a","d")),"<code>lascii("a","d")</code> should return an array.");'
   - text: '&quot; <code>lascii(&quot;a&quot;,&quot;d&quot;)</code> debe devolver <code>[ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]</code> .&quot;'
     testString: 'assert.deepEqual(lascii("a","d"),results[0],"<code>lascii("a","d")</code> should return <code>[ "a", "b", "c", "d" ]</code>.");'
@@ -48,6 +46,7 @@ tests:
 function lascii (cFrom, cTo) {
   // Good luck!
 }
+
 ```
 
 </div>
@@ -67,26 +66,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function lascii(cFrom, cTo) {
-
-  function cRange(cFrom, cTo) {
-    var iStart = cFrom.charCodeAt(0);
-
-    return Array.apply(
-      null, Array(cTo.charCodeAt(0) - iStart + 1)
-    ).map(function (_, i) {
-
-      return String.fromCharCode(iStart + i);
-
-    });
-  }
-
-  return cRange(cFrom, cTo);
-
-}
-
+// solution required
 ```
-
 </section>

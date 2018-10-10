@@ -1,28 +1,23 @@
 ---
 id: 587d78ab367417b2b2512af0
-title: 'Use display
-localeTitle: 'Usar pantalla: flex to Position Two Boxes'
+title: 'Use display: flex to Position Two Boxes'
 challengeType: 0
 videoUrl: ''
+localeTitle: 'Use la pantalla: flexione para posicionar dos cajas'
 ---
 
 ## Description
-<section id='description'>
-Esta sección utiliza estilos de desafío alternativos para mostrar cómo usar CSS para posicionar elementos de una manera flexible. Primero, un desafío explicará la teoría, luego un desafío práctico utilizando un componente de tweet simple aplicará el concepto flexbox.
-Colocación de la <code>display: flex;</code> propiedades CSS <code>display: flex;</code> en un elemento le permite usar otras propiedades de flexión para construir una página receptiva.
-</section>
+<section id="description"> Esta sección utiliza estilos de desafío alternativos para mostrar cómo usar CSS para posicionar elementos de una manera flexible. Primero, un desafío explicará la teoría, luego un desafío práctico utilizando un componente de tweet simple aplicará el concepto flexbox. Colocación de la <code>display: flex;</code> propiedades CSS <code>display: flex;</code> en un elemento le permite usar otras propiedades de flexión para construir una página receptiva. </section>
 
 ## Instructions
-<section id='instructions'>
-Agregue la <code>display</code> propiedades CSS a <code>#box-container</code> y establezca su valor en flex.
-</section>
+<section id="instructions"> Agregue la <code>display</code> propiedades CSS a <code>#box-container</code> y establezca su valor en flex. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: ' <code>#box-container</code> debería tener la propiedad de <code>display</code> establecida en un valor de flex'
+  - text: '<code>#box-container</code> debería tener la propiedad de <code>display</code> establecida en un valor de flex.'
     testString: 'assert($("#box-container").css("display") == "flex", "<code>#box-container</code> should have the <code>display</code> property set to a value of flex.");'
 
 ```
@@ -59,6 +54,7 @@ tests:
   <div id="box-1"></div>
   <div id="box-2"></div>
 </div>
+
 ```
 
 </div>

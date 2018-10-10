@@ -1,18 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f43a1000cf542c50ff4d
+id: 5900f43a1000cf542c50ff4d
 challengeType: 5
 title: 'Problem 206: Concealed Square'
+videoUrl: ''
+localeTitle: 'Problema 206: Plaza oculta'
 ---
 
 ## Description
-<section id='description'> 
-Encuentre el entero positivo único cuyo cuadrado tiene la forma 1_2_3_4_5_6_7_8_9_0, donde cada &quot;_&quot; es un solo dígito. 
-</section>
+<section id="description"> Encuentre el entero positivo único cuyo cuadrado tiene la forma 1_2_3_4_5_6_7_8_9_0, donde cada &quot;_&quot; es un solo dígito. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -39,6 +37,7 @@ function euler206() {
 }
 
 euler206();
+
 ```
 
 </div>

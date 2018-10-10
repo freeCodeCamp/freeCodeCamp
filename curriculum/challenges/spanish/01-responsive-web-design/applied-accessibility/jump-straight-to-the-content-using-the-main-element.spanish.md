@@ -1,23 +1,16 @@
 ---
 id: 587d774e367417b2b2512a9f
 title: Jump Straight to the Content Using the main Element
-localeTitle: Ir directamente al contenido usando el elemento principal
 challengeType: 0
 videoUrl: ''
+localeTitle: Ir directamente al contenido usando el elemento principal
 ---
 
 ## Description
-<section id='description'> 
-HTML5 introdujo una serie de nuevos elementos que brindan a los desarrolladores más opciones al tiempo que incorporan funciones de accesibilidad. Estas etiquetas incluyen <code>main</code> , <code>header</code> , <code>footer</code> , <code>nav</code> , <code>article</code> y <code>section</code> , entre otras. 
-De forma predeterminada, un navegador presenta estos elementos de manera similar a la humble <code>div</code> . Sin embargo, usarlos cuando sea apropiado le da un significado adicional a su marca. El nombre de la etiqueta solo puede indicar el tipo de información que contiene, lo que agrega un significado semántico a ese contenido. Las tecnologías de asistencia pueden acceder a esta información para proporcionar un mejor resumen de la página o opciones de navegación para sus usuarios. 
-El elemento <code>main</code> se utiliza para envolver (usted lo adivinó) el contenido principal, y solo debe haber uno por página. Está destinado a rodear la información relacionada con el tema central de su página. No está diseñado para incluir elementos que se repiten en todas las páginas, como enlaces de navegación o banners. 
-La etiqueta <code>main</code> también tiene una característica de hito incorporada que la tecnología de asistencia puede usar para navegar rápidamente al contenido principal. Si alguna vez ha visto un enlace &quot;Ir al contenido principal&quot; en la parte superior de una página, el uso de una etiqueta principal otorga automáticamente esa funcionalidad a los dispositivos de asistencia. 
-</section>
+<section id="description"> HTML5 introdujo una serie de nuevos elementos que brindan a los desarrolladores más opciones al tiempo que incorporan funciones de accesibilidad. Estas etiquetas incluyen <code>main</code> , <code>header</code> , <code>footer</code> , <code>nav</code> , <code>article</code> y <code>section</code> , entre otras. Por defecto, un navegador presenta estos elementos de manera similar a la humble <code>div</code> . Sin embargo, usarlos cuando sea apropiado le da un significado adicional a su marca. El nombre de la etiqueta solo puede indicar el tipo de información que contiene, lo que agrega un significado semántico a ese contenido. Las tecnologías de asistencia pueden acceder a esta información para proporcionar un mejor resumen de la página o opciones de navegación para sus usuarios. El elemento <code>main</code> se utiliza para envolver (usted lo adivinó) el contenido principal, y solo debe haber uno por página. Está destinado a rodear la información relacionada con el tema central de su página. No está diseñado para incluir elementos que se repiten en todas las páginas, como enlaces de navegación o banners. La etiqueta <code>main</code> también tiene una característica de hito incorporada que la tecnología de asistencia puede usar para navegar rápidamente al contenido principal. Si alguna vez ha visto un enlace &quot;Ir al contenido principal&quot; en la parte superior de una página, el uso de una etiqueta principal otorga automáticamente esa funcionalidad a los dispositivos de asistencia. </section>
 
 ## Instructions
-<section id='instructions'> 
-Camper Cat tiene algunas grandes ideas para su página de armas ninja. Ayúdelo estableció su margen de beneficio mediante la adición de apertura y cierre de <code>main</code> etiquetas entre la <code>header</code> y <code>footer</code> (cubierto en otros desafíos). Mantener las etiquetas <code>main</code> vacías por ahora. 
-</section>
+<section id="instructions"> Camper Cat tiene algunas grandes ideas para su página de armas ninja. Ayúdelo estableció su margen de beneficio mediante la adición de apertura y cierre de <code>main</code> etiquetas entre la <code>header</code> y <code>footer</code> (cubierto en otros desafíos). Mantener las etiquetas <code>main</code> vacías por ahora. </section>
 
 ## Tests
 <section id='tests'>
@@ -46,6 +39,7 @@ tests:
 
 
 <footer></footer>
+
 ```
 
 </div>

@@ -1,27 +1,16 @@
 ---
 id: 56bbb991ad1ed5201cd392d0
 title: Build JavaScript Objects
-localeTitle: Construir objetos de JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Construir objetos de JavaScript
 ---
 
 ## Description
-<section id='description'> 
-Es posible que hayas escuchado el término <code>object</code> antes. 
-objetos son similares a las <code>arrays</code> , excepto que en lugar de utilizar índices para acceder y modificar sus datos, puede acceder a los datos en objetos a través de lo que se denomina <code>properties</code> . 
-objetos son útiles para almacenar datos de manera estructurada y pueden representar objetos del mundo real, como un gato. 
-Aquí hay una muestra de un objeto de gato: 
-<blockquote>var cat = {<br>&nbsp;&nbsp;"name": "Whiskers",<br>&nbsp;&nbsp;"legs": 4,<br>&nbsp;&nbsp;"tails": 1,<br>&nbsp;&nbsp;"enemies": ["Water", "Dogs"]<br>};</blockquote> 
-En este ejemplo, todas las propiedades se almacenan como cadenas, como <code>&quot;name&quot;</code> , <code>&quot;legs&quot;</code> y <code>&quot;tails&quot;</code> . Sin embargo, también puede utilizar los números como propiedades. Incluso puede omitir las comillas para las propiedades de cadena de una sola palabra, de la siguiente manera: 
-<blockquote>var anotherObject = {<br>&nbsp;&nbsp;make: "Ford",<br>&nbsp;&nbsp;5: "five",<br>&nbsp;&nbsp;"model": "focus"<br>};</blockquote> 
-Sin embargo, si su objeto tiene propiedades que no son de cadena, JavaScript las encasillará automáticamente como cadenas. 
-</section>
+<section id="description"> Es posible que haya escuchado el término <code>object</code> antes. Los objetos son similares a las <code>arrays</code> , excepto que, en lugar de utilizar índices para acceder y modificar sus datos, puede acceder a los datos de los objetos a través de lo que se denomina <code>properties</code> . Los objetos son útiles para almacenar datos de forma estructurada y pueden representar objetos del mundo real, como un gato. Aquí hay una muestra de un objeto cat: <blockquote> var cat = { <br> &quot;nombre&quot;: &quot;bigotes&quot;, <br> &quot;piernas&quot;: 4, <br> &quot;colas&quot;: 1, <br> &quot;enemigos&quot;: [&quot;Agua&quot;, &quot;Perros&quot;] <br> }; </blockquote> En este ejemplo, todas las propiedades se almacenan como cadenas, como <code>&quot;name&quot;</code> , <code>&quot;legs&quot;</code> y <code>&quot;tails&quot;</code> . Sin embargo, también puede utilizar los números como propiedades. Incluso puede omitir las citas de las propiedades de cadena de una sola palabra, de la siguiente manera: <blockquote> var anotherObject = { <br> hacer: &quot;Ford&quot;, <br> 5: &quot;cinco&quot;, <br> &quot;modelo&quot;: &quot;enfoque&quot; <br> }; </blockquote> Sin embargo, si su objeto tiene propiedades que no son de cadena, JavaScript las encasilla automáticamente como cadenas. </section>
 
 ## Instructions
-<section id='instructions'> 
-Haz un objeto que represente un perro llamado <code>myDog</code> que contenga las propiedades <code>&quot;name&quot;</code> (una cadena), <code>&quot;legs&quot;</code> , <code>&quot;tails&quot;</code> y <code>&quot;friends&quot;</code> . 
-Puede establecer estas propiedades de objeto en los valores que desee, siempre que <code>&quot;name&quot;</code> sea ​​una cadena, <code>&quot;legs&quot;</code> y <code>&quot;tails&quot;</code> sean números, y <code>&quot;friends&quot;</code> es una matriz. 
-</section>
+<section id="instructions"> Haga un objeto que represente a un perro llamado <code>myDog</code> que contenga las propiedades <code>&quot;name&quot;</code> (una cadena), <code>&quot;legs&quot;</code> , <code>&quot;tails&quot;</code> y <code>&quot;friends&quot;</code> . Puede establecer estas propiedades de objeto en los valores que desee, siempre que <code>&quot;name&quot;</code> sea ​​una cadena, <code>&quot;legs&quot;</code> y <code>&quot;tails&quot;</code> sean números, y <code>&quot;friends&quot;</code> es una matriz. </section>
 
 ## Tests
 <section id='tests'>
@@ -65,6 +54,7 @@ var myDog = {
 
 
 };
+
 ```
 
 </div>
@@ -84,14 +74,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"]
-};
+// solution required
 ```
-
 </section>

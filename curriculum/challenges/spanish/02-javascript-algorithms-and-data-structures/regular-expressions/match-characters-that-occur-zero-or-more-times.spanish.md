@@ -1,21 +1,16 @@
 ---
 id: 587d7db6367417b2b2512b9a
 title: Match Characters that Occur Zero or More Times
-localeTitle: Caracteres de coincidencia que ocurren cero o más veces
 challengeType: 1
+videoUrl: ''
+localeTitle: Caracteres de coincidencia que ocurren cero o más veces
 ---
 
 ## Description
-<section id='description'>
-El último desafío usó el signo más <code>+</code> para buscar caracteres que aparecen una o más veces. También hay una opción que coincide con los caracteres que aparecen cero o más veces.
-El personaje para hacer esto es el <code>asterisk</code> o <code>star</code> : <code>*</code> .
-<blockquote>let soccerWord = "gooooooooal!";<br>let gPhrase = "gut feeling";<br>let oPhrase = "over the moon";<br>let goRegex = /go*/;<br>soccerWord.match(goRegex); // Returns ["goooooooo"]<br>gPhrase.match(goRegex); // Returns ["g"]<br>oPhrase.match(goRegex); // Returns null</blockquote>
-</section>
+<section id="description"> El último desafío utilizó el signo más <code>+</code> para buscar caracteres que aparecen una o más veces. También hay una opción que coincide con los caracteres que aparecen cero o más veces. El personaje para hacer esto es el <code>asterisk</code> o <code>star</code> : <code>*</code> . <blockquote> Deje soccerWord = &quot;gooooooooal!&quot;; <br> dejar gPhrase = &quot;gut feeling&quot;; <br> vamos a oPhrase = &quot;sobre la luna&quot;; <br> vamos goRegex = / go * /; <br> soccerWord.match (goRegex); // Devoluciones [&quot;goooooooo&quot;] <br> gPhrase.match (goRegex); // Devoluciones [&quot;g&quot;] <br> oPhrase.match (goRegex); // Devoluciones nulas </blockquote></section>
 
 ## Instructions
-<section id='instructions'>
-Cree un regex <code>chewieRegex</code> que use el carácter <code>*</code> para que coincida con todos los caracteres <code>&quot;a&quot;</code> superiores e inferiores en <code>chewieQuote</code> . Su expresión regular no necesita indicadores y no debe coincidir con ninguna de las otras comillas.
-</section>
+<section id="instructions"> Cree un regex <code>chewieRegex</code> que use el carácter <code>*</code> para que coincida con todos los caracteres <code>&quot;a&quot;</code> superiores e inferiores en <code>chewieQuote</code> . Su expresión regular no necesita indicadores y no debe coincidir con ninguna de las otras comillas. </section>
 
 ## Tests
 <section id='tests'>
@@ -28,9 +23,9 @@ tests:
     testString: 'assert(result[0].length === 16, "Your regex <code>chewieRegex</code> should match 16 characters.");'
   - text: Tu expresión regular debe coincidir con <code>&quot;Aaaaaaaaaaaaaaaa&quot;</code> .
     testString: 'assert(result[0] === "Aaaaaaaaaaaaaaaa", "Your regex should match <code>"Aaaaaaaaaaaaaaaa"</code>.");'
-  - text: 'Tu expresión regular no debe coincidir con ningún carácter en <code>&quot;He made a fair move. Screaming about it can&#39;t help you.&quot;</code> '
+  - text: 'Tu expresión regular no debe coincidir con ningún carácter en <code>&quot;He made a fair move. Screaming about it can&#39;t help you.&quot;</code>'
     testString: 'assert(!"He made a fair move. Screaming about it can\"t help you.".match(chewieRegex), "Your regex should not match any characters in <code>"He made a fair move. Screaming about it can&#39t help you."</code>");'
-  - text: &quot;Tu expresión regular no debe coincidir con ningún carácter en <code>&quot;Let him have it. It&#39;s not wise to upset a Wookiee.&quot;</code> '
+  - text: 'Tu expresión regular no debe coincidir con ningún carácter en <code>&quot;Let him have it. It&#39;s not wise to upset a Wookiee.&quot;</code>'
     testString: 'assert(!"Let him have it. It\"s not wise to upset a Wookiee.".match(chewieRegex), "Your regex should not match any characters in <code>"Let him have it. It&#39s not wise to upset a Wookiee."</code>");'
 
 ```
@@ -46,6 +41,7 @@ tests:
 let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
 let chewieRegex = /change/; // Change this line
 let result = chewieQuote.match(chewieRegex);
+
 ```
 
 </div>

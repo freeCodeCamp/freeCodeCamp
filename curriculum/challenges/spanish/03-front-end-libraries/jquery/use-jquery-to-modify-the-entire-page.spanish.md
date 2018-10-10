@@ -1,23 +1,18 @@
 ---
 id: bad87fee1348bd9aecb08826
 title: Use jQuery to Modify the Entire Page
-localeTitle: Usa jQuery para modificar la página completa
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+videoUrl: ''
+localeTitle: Usa jQuery para modificar la página completa
 ---
 
 ## Description
-<section id='description'> 
-Hemos terminado de jugar con nuestro patio de juegos jQuery. ¡Vamos a derribarlo! 
-jQuery también puede apuntar al elemento del <code>body</code> . 
-Así es como haríamos que todo el cuerpo se desvanezca: <code>$(&quot;body&quot;).addClass(&quot;animated fadeOut&quot;);</code> 
-Pero hagamos algo más dramático. Agrega las clases <code>animated</code> y <code>hinge</code> a tu <code>body</code> . 
-</section>
+<section id="description"> Hemos terminado de jugar con nuestro patio de juegos jQuery. ¡Vamos a derribarlo! jQuery también puede apuntar al elemento del <code>body</code> . Así es como haríamos que todo el cuerpo se desvanezca: <code>$(&quot;body&quot;).addClass(&quot;animated fadeOut&quot;);</code> Pero hagamos algo más dramático. Agrega las clases <code>animated</code> y <code>hinge</code> a tu <code>body</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -77,6 +72,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

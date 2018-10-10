@@ -1,19 +1,16 @@
 ---
 id: 587d824b367417b2b2512c47
 title: Test if a Variable or Function is Defined
-localeTitle: Probar si una variable o función está definida
 challengeType: 2
+videoUrl: ''
+localeTitle: Probar si una variable o función está definida
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-Use assert.isDefined () o assert.isUndefined () para hacer que las pruebas pasen 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . Use assert.isDefined () o assert.isUndefined () para hacer pasar las pruebas </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

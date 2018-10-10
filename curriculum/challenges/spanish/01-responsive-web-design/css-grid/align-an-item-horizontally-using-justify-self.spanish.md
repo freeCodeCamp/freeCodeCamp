@@ -1,23 +1,16 @@
 ---
 id: 5a90374338fddaf9a66b5d3a
 title: Align an Item Horizontally using justify-self
-localeTitle: Alinear un artículo horizontalmente usando justify-self
 challengeType: 0
 videoUrl: ''
+localeTitle: Alinear un artículo horizontalmente usando justify-self
 ---
 
 ## Description
-<section id='description'> 
-En CSS Grid, el contenido de cada elemento se encuentra en un cuadro al que se hace referencia como una <dfn>celda</dfn> . Puede alinear la posición del contenido dentro de su celda horizontalmente usando la propiedad de <code>justify-self</code> en un elemento de la cuadrícula. De forma predeterminada, esta propiedad tiene un valor de <code>stretch</code> , que hará que el contenido llene todo el ancho de la celda. Esta propiedad de la cuadrícula de CSS también acepta otros valores: 
-<code>start</code> : alinea el contenido a la izquierda de la celda, 
-<code>center</code> : alinea el contenido en el centro de la celda, 
-<code>end</code> : alinea el contenido a la derecha de la celda. 
-</section>
+<section id="description"> En CSS Grid, el contenido de cada elemento se encuentra en un cuadro al que se hace referencia como una <dfn>celda</dfn> . Puede alinear la posición del contenido dentro de su celda horizontalmente usando la propiedad de <code>justify-self</code> en un elemento de la cuadrícula. De forma predeterminada, esta propiedad tiene un valor de <code>stretch</code> , que hará que el contenido llene todo el ancho de la celda. Esta propiedad de la cuadrícula de CSS también acepta otros valores: <code>start</code> : alinea el contenido a la izquierda de la celda, <code>center</code> : alinea el contenido en el centro de la celda, <code>end</code> : alinea el contenido a la derecha de la celda. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la propiedad de <code>justify-self</code> para centrar el elemento con la clase <code>item2</code> . 
-</section>
+<section id="instructions"> Utilice la propiedad <code>justify-self</code> para centrar el elemento con la clase <code>item2</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -71,6 +64,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -82,9 +76,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".item2 {justify-self: center;}"
+// solution required
 ```
-
 </section>

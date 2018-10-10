@@ -1,22 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244de
 title: Adding a Default Option in Switch Statements
-localeTitle: Adición de una opción predeterminada en los estados de cambio
 challengeType: 1
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/adding-a-default-option-in-switch-statements'
+videoUrl: ''
+localeTitle: Adición de una opción predeterminada en los estados de cambio
 ---
 
 ## Description
-<section id='description'> 
-En una declaración de <code>switch</code> , es posible que no pueda especificar todos los valores posibles como declaraciones de <code>case</code> . En su lugar, puede agregar la declaración <code>default</code> que se ejecutará si no se encuentran declaraciones de <code>case</code> coincidentes. Piense en ello como la última instrucción <code>else</code> en una cadena <code>if/else</code> . 
-Una declaración por <code>default</code> debe ser el último caso. 
-<blockquote>switch (num) {<br>&nbsp;&nbsp;case value1:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement1;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case value2:<br>&nbsp;&nbsp;&nbsp;&nbsp;statement2;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>...<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;defaultStatement;<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>}</blockquote> 
-</section>
+<section id="description"> En una declaración de <code>switch</code> , es posible que no pueda especificar todos los valores posibles como declaraciones de <code>case</code> . En su lugar, puede agregar la declaración <code>default</code> que se ejecutará si no se encuentran declaraciones de <code>case</code> coincidentes. Piense en ello como la última instrucción <code>else</code> en una cadena <code>if/else</code> . Una declaración por <code>default</code> debe ser el último caso. <blockquote> interruptor (núm) { <br> valor de caso1: <br> sentencia1; <br> descanso; <br> valor de caso2: <br> declaración2; <br> descanso; <br> ... <br> defecto: <br> declaración por defecto; <br> descanso; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una instrucción de cambio para establecer la <code>answer</code> para las siguientes condiciones: <br> <code>&quot;a&quot;</code> - &quot;manzana&quot; <br> <code>&quot;b&quot;</code> - &quot;pájaro&quot; <br> <code>&quot;c&quot;</code> - &quot;gato&quot; <br> <code>default</code> - &quot;cosas&quot; 
-</section>
+<section id="instructions"> Escriba una instrucción de cambio para establecer la <code>answer</code> para las siguientes condiciones: <br> <code>&quot;a&quot;</code> - &quot;manzana&quot; <br> <code>&quot;b&quot;</code> - &quot;pájaro&quot; <br> <code>&quot;c&quot;</code> - &quot;gato&quot; <br> <code>default</code> - &quot;cosas&quot; </section>
 
 ## Tests
 <section id='tests'>
@@ -74,26 +69,7 @@ switchOfStuff(1);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function switchOfStuff(val) {
-  var answer = "";
-
-  switch(val) {
-    case "a":
-      answer = "apple";
-      break;
-    case "b":
-      answer = "bird";
-      break;
-    case "c":
-      answer = "cat";
-      break;
-    default:
-      answer = "stuff";
-  }
-  return answer;
-}
+// solution required
 ```
-
 </section>

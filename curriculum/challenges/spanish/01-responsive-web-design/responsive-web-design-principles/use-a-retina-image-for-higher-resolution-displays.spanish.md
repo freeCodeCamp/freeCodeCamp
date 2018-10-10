@@ -1,22 +1,16 @@
 ---
 id: 587d78b1367417b2b2512b0a
 title: Use a Retina Image for Higher Resolution Displays
-localeTitle: Utilice una imagen de retina para pantallas de mayor resolución
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice una imagen de retina para pantallas de mayor resolución
 ---
 
 ## Description
-<section id='description'> 
-La forma más sencilla de hacer que sus imágenes aparezcan como &quot;retina&quot; (y optimizarlas para las pantallas de retina) es definir sus valores de <code>width</code> y <code>height</code> como solo la mitad de lo que es el archivo original. 
-Aquí hay un ejemplo de una imagen que solo usa la mitad de la altura y el ancho originales: 
-<blockquote>&lt;style&gt;<br>&nbsp;&nbsp;img { height: 250px; width: 250px; }<br>&lt;/style&gt;<br>&lt;img src=&quot;coolPic500x500&quot; alt=&quot;A most excellent picture&quot;&gt;</blockquote> 
-</section>
+<section id="description"> La forma más sencilla de hacer que sus imágenes aparezcan como &quot;retina&quot; (y optimizarlas para las pantallas de retina) es definir sus valores de <code>width</code> y <code>height</code> como solo la mitad de lo que es el archivo original. Aquí hay un ejemplo de una imagen que solo usa la mitad del alto y ancho original: <blockquote> &lt;estilo&gt; <br> img {altura: 250px; ancho: 250px; } <br> &lt;/style&gt; <br> &lt;img src = &quot;coolPic500x500&quot; alt = &quot;Una imagen excelente&quot;&gt; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Establezca el <code>width</code> y el <code>height</code> de la etiqueta <code>img</code> en la mitad de sus valores originales. En este caso, tanto la <code>height</code> original como el <code>width</code> original son 200 px. 
-</section>
+<section id="instructions"> Establezca el <code>width</code> y el <code>height</code> de la etiqueta <code>img</code> en la mitad de sus valores originales. En este caso, tanto la <code>height</code> original como el <code>width</code> original son 200 px. </section>
 
 ## Tests
 <section id='tests'>
@@ -43,6 +37,7 @@ tests:
 </style>
 
 <img src="https://s3.amazonaws.com/freecodecamp/FCCStickers-CamperBot200x200.jpg" alt="freeCodeCamp sticker that says 'Because CamperBot Cares'">
+
 ```
 
 </div>

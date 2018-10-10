@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3a01000cf542c50feb3
+id: 5900f3a01000cf542c50feb3
 challengeType: 5
 title: 'Problem 52: Permuted multiples'
+videoUrl: ''
+localeTitle: 'Problema 52: múltiplos permutados'
 ---
 
 ## Description
-<section id='description'> 
-Se puede ver que el número, 125874, y su doble, 251748, contienen exactamente los mismos dígitos, pero en un orden diferente. 
-Encuentre el entero positivo más pequeño, x, tal que 2x, 3x, 4x, 5x y 6x, contengan los mismos dígitos. 
-</section>
+<section id="description"> Se puede ver que el número, 125874, y su doble, 251748, contienen exactamente los mismos dígitos, pero en un orden diferente. Encuentre el entero positivo más pequeño, x, tal que 2x, 3x, 4x, 5x y 6x, contengan los mismos dígitos. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -40,6 +37,7 @@ function permutedMultiples() {
 }
 
 permutedMultiples();
+
 ```
 
 </div>
@@ -51,38 +49,7 @@ permutedMultiples();
 ## Solution
 <section id='solution'>
 
-
 ```js
-function permutedMultiples() {
-    const isPermutation = (a, b) =>
-        a.length !== b.length
-            ? false
-            : a.split('').sort().join() === b.split('').sort().join();
-
-
-    let start = 1;
-    let found = false;
-    let result = 0;
-
-    while (!found) {
-        start *= 10;
-        for (let i = start; i < start * 10 / 6; i++) {
-            found = true;
-            for (let j = 2; j <= 6; j++) {
-                if (!isPermutation(i + ", j * i + ")) {
-                    found = false;
-                    break;
-                }
-            }
-            if (found) {
-                result = i;
-                break;
-            }
-        }
-    }
-
-    return result;
-}
+// solution required
 ```
-
 </section>

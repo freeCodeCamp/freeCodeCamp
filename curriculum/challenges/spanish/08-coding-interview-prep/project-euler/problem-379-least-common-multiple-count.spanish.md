@@ -1,28 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4e81000cf542c50fffa
+id: 5900f4e81000cf542c50fffa
 challengeType: 5
 title: 'Problem 379: Least common multiple count'
+videoUrl: ''
+localeTitle: 'Problema 379: Recuento múltiple menos común'
 ---
 
 ## Description
-<section id='description'> 
-Sea f (n) el número de parejas (x, y) con x e y enteros positivos, x ≤ y y el mínimo común múltiplo de x e y igual a n. 
-
-
-Sea g la función sumatoria de f, es decir: 
-g (n) = ∑ f (i) para 1 ≤ i ≤ n. 
-
-
-Te dan que g (106) = 37429395. 
-
-
-Encuentra g (1012). 
-</section>
+<section id="description"> Sea f (n) el número de parejas (x, y) con x e y enteros positivos, x ≤ y y el mínimo común múltiplo de x e y igual a n. <p> Sea g la función sumatoria de f, es decir: g (n) = ∑ f (i) para 1 ≤ i ≤ n. </p><p> Se le da que g (106) = 37429395. </p><p> Encontrar g (1012). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +37,7 @@ function euler379() {
 }
 
 euler379();
+
 ```
 
 </div>

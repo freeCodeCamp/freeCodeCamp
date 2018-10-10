@@ -1,28 +1,19 @@
 ---
 id: bad87fee1348bd9aedd08845
 title: Add Font Awesome Icons to our Buttons
-localeTitle: Añadir iconos impresionantes de fuente a nuestros botones
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Añadir iconos impresionantes de fuente a nuestros botones
 ---
 
 ## Description
-<section id='description'> 
-Font Awesome es una conveniente biblioteca de iconos. Estos iconos son gráficos vectoriales, almacenados en el formato de archivo <code>.svg</code> . Estos iconos son tratados como fuentes. Puede especificar su tamaño usando píxeles, y asumirán el tamaño de fuente de sus elementos HTML principales. 
-Puede incluir Font Awesome en cualquier aplicación agregando el siguiente código en la parte superior de su HTML: 
-<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> 
-En este caso, hemos tenido un gran <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> . 
-El elemento <code>i</code> se usó originalmente para hacer otros elementos en cursiva, pero ahora se usa comúnmente para los iconos. Puede agregar las clases de Font Awesome al elemento <code>i</code> para convertirlo en un icono, por ejemplo: 
-<code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> 
-Tenga en cuenta que el elemento <code>span</code> también es aceptable para su uso con iconos 
-Use Font Awesome para agregar un ícono con el <code>thumbs-up</code> al botón Me gusta dándole un elemento <code>i</code> con las clases <code>fa</code> y <code>fa-thumbs-up</code> ; Asegúrese de mantener el texto &quot;Me gusta&quot; junto al icono. 
-</section>
+<section id="description"> Font Awesome es una conveniente biblioteca de iconos. Estos iconos son gráficos vectoriales, almacenados en el formato de archivo <code>.svg</code> . Estos iconos son tratados como fuentes. Puede especificar su tamaño usando píxeles, y asumirán el tamaño de fuente de sus elementos HTML principales. Puedes incluir Font Awesome en cualquier aplicación agregando el siguiente código en la parte superior de tu HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> En este caso, hemos estado en esto. El elemento <code>i</code> se usó originalmente para hacer otros elementos en cursiva, pero ahora se usa comúnmente para los iconos. Puede agregar las clases de Font Awesome al elemento <code>i</code> para convertirlo en un icono, por ejemplo: <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> Tenga en cuenta que el elemento <code>span</code> también es aceptable para usar con iconos . Use Font Awesome para agregar un ícono con el <code>thumbs-up</code> al botón Me gusta dándole un elemento <code>i</code> con las clases <code>fa</code> y <code>fa-thumbs-up</code> ; Asegúrese de mantener el texto &quot;Me gusta&quot; junto al icono. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -106,6 +97,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

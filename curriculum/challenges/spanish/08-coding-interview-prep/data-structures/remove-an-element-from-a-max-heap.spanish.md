@@ -1,22 +1,16 @@
 ---
 id: 587d825b367417b2b2512c8b
 title: Remove an Element from a Max Heap
-localeTitle: Eliminar un elemento de un montón máximo
 challengeType: 1
+videoUrl: ''
+localeTitle: Eliminar un elemento de un montón máximo
 ---
 
 ## Description
-<section id='description'> 
-Ahora que podemos agregar elementos a nuestro montón, veamos cómo podemos eliminar elementos. Eliminar e insertar elementos requiere una lógica similar. En un montón máximo, normalmente querrá eliminar el mayor valor, por lo que esto implica simplemente extraerlo de la raíz de nuestro árbol. Esto romperá la propiedad del montón de nuestro árbol, por lo que debemos restablecerla de alguna manera. Normalmente, para un montón máximo, esto se hace de la siguiente manera: 
-Mueva el último elemento del montón a la posición raíz. 
-Si cualquiera de los hijos de la raíz es mayor, intercambie la raíz con el hijo de mayor valor. 
-Continúa intercambiando hasta que el padre sea mayor que ambos hijos o hasta que alcances el último nivel en el árbol. 
-Instrucciones: Agregue un método a nuestro montón máximo llamado eliminar. Este método debe devolver el mayor valor que se ha agregado a nuestro montón máximo y eliminarlo del montón. También debe reordenar el montón para que se mantenga la propiedad de montón. Después de eliminar un elemento, el siguiente elemento más grande que quede en el montón debe convertirse en la raíz. Agregue su método de inserción de nuevo aquí también. 
-</section>
+<section id="description"> Ahora que podemos agregar elementos a nuestro montón, veamos cómo podemos eliminar elementos. Eliminar e insertar elementos requiere una lógica similar. En un montón máximo, normalmente querrá eliminar el mayor valor, por lo que esto implica simplemente extraerlo de la raíz de nuestro árbol. Esto romperá la propiedad del montón de nuestro árbol, por lo que debemos restablecerla de alguna manera. Normalmente, para un montón máximo, esto se hace de la siguiente manera: Mueva el último elemento del montón a la posición raíz. Si cualquiera de los hijos de la raíz es mayor, intercambie la raíz con el hijo de mayor valor. Continúa intercambiando hasta que el padre sea mayor que ambos hijos o hasta que alcances el último nivel del árbol. Instrucciones: Agregue un método a nuestro montón máximo llamado eliminar. Este método debe devolver el mayor valor que se ha agregado a nuestro montón máximo y eliminarlo del montón. También debe reordenar el montón para que se mantenga la propiedad de montón. Después de eliminar un elemento, el siguiente elemento más grande que quede en el montón debe convertirse en la raíz. Agregue su método de inserción de nuevo aquí también. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +43,7 @@ var MaxHeap = function() {
   // change code below this line
   // change code above this line
 };
+
 ```
 
 </div>

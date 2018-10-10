@@ -1,24 +1,18 @@
 ---
 id: 587d7faa367417b2b2512bd2
 title: Add Labels to D3 Elements
-localeTitle: Añadir etiquetas a elementos D3
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Añadir etiquetas a elementos D3
 ---
 
 ## Description
-<section id='description'> 
-D3 le permite etiquetar un elemento gráfico, como una barra, usando el elemento de <code>text</code> SVG. 
-Al igual que el elemento <code>rect</code> , un elemento de <code>text</code> debe tener los atributos <code>x</code> e <code>y</code> , para colocarlo en el lienzo SVG. También necesita acceder a los datos para mostrar esos valores. 
-D3 le da un alto nivel de control sobre cómo etiquetar sus barras. 
-</section>
+<section id="description"> D3 le permite etiquetar un elemento gráfico, como una barra, usando el elemento de <code>text</code> SVG. Al igual que el elemento <code>rect</code> , un elemento de <code>text</code> debe tener los atributos <code>x</code> e <code>y</code> , para colocarlo en el lienzo SVG. También necesita acceder a los datos para mostrar esos valores. D3 le da un alto nivel de control sobre cómo etiquetar sus barras. </section>
 
 ## Instructions
-<section id='instructions'> 
-El código en el editor ya vincula los datos a cada nuevo elemento de <code>text</code> . Primero, agregue nodos de <code>text</code> al <code>svg</code> . A continuación, agregue atributos para las coordenadas <code>x</code> e <code>y</code> . Deben calcularse de la misma manera que los <code>rect</code> , excepto que el valor <code>y</code> para el <code>text</code> debe hacer que la etiqueta se sitúe 3 unidades por encima de la barra. Finalmente, use el método D3 <code>text()</code> para establecer la etiqueta igual al valor del punto de datos. 
-<strong>Nota</strong> <br> Para que la etiqueta quede más alta que la barra, decida si el valor <code>y</code> para el <code>text</code> debe ser 3 mayor o 3 menos que el valor <code>y</code> para la barra. 
-</section>
+<section id="instructions"> El código en el editor ya vincula los datos a cada nuevo elemento de <code>text</code> . Primero, agregue nodos de <code>text</code> al <code>svg</code> . A continuación, agregue atributos para las coordenadas <code>x</code> e <code>y</code> . Deben calcularse de la misma manera que los <code>rect</code> , excepto que el valor <code>y</code> para el <code>text</code> debe hacer que la etiqueta se sitúe 3 unidades por encima de la barra. Finalmente, use el método D3 <code>text()</code> para establecer la etiqueta igual al valor del punto de datos. <strong>Nota</strong> <br> Para que la etiqueta quede más alta que la barra, decida si el valor <code>y</code> para el <code>text</code> debe ser 3 mayor o 3 menos que el valor <code>y</code> para la barra. </section>
 
 ## Tests
 <section id='tests'>
@@ -87,6 +81,7 @@ tests:
        // Add your code above this line
   </script>
 <body>
+
 ```
 
 </div>

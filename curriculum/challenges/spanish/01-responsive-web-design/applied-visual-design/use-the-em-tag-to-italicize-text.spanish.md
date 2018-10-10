@@ -1,20 +1,16 @@
 ---
 id: 587d781a367417b2b2512ab9
 title: Use the em Tag to Italicize Text
-localeTitle: Utilice la etiqueta em para cursiva texto
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice la etiqueta em para cursiva texto
 ---
 
 ## Description
-<section id='description'> 
-Para enfatizar texto, puedes usar la etiqueta <code>em</code> . Esto muestra el texto en cursiva, ya que el navegador aplica el CSS del <code>font-style: italic;</code> de <code>font-style: italic;</code> al elemento. 
-</section>
+<section id="description"> Para enfatizar el texto, puedes usar la etiqueta <code>em</code> . Esto muestra el texto en cursiva, ya que el navegador aplica el CSS del <code>font-style: italic;</code> de <code>font-style: italic;</code> al elemento. </section>
 
 ## Instructions
-<section id='instructions'> 
-Envuelva una etiqueta <code>em</code> alrededor del contenido de la etiqueta de párrafo para darle énfasis. 
-</section>
+<section id="instructions"> Envuelva una etiqueta <code>em</code> alrededor del contenido de la etiqueta de párrafo para darle énfasis. </section>
 
 ## Tests
 <section id='tests'>
@@ -74,6 +70,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

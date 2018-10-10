@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4861000cf542c50ff99
+id: 5900f4861000cf542c50ff99
 challengeType: 5
 title: 'Problem 282: The Ackermann function'
+videoUrl: ''
+localeTitle: 'Problema 282: La función de Ackermann'
 ---
 
 ## Description
-<section id='description'> 
-Para enteros no negativos m, n, la función de Ackermann A (m, n) se define como sigue: 
-
-
-
-Para el ejemplo A (1, 0) = 2, A (2, 2) = 7 y A ( 3, 4) = 125. 
-
-
-Encuentra A (n, n) y da tu respuesta mod 148. 
-</section>
+<section id="description"> Para los enteros no negativos m, n, la función de Ackermann A (m, n) se define de la siguiente manera: <p> Por ejemplo, A (1, 0) = 2, A (2, 2) = 7 y A (3, 4) = 125. </p><p> Encuentra A (n, n) y da tu respuesta mod 148. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler282() {
 }
 
 euler282();
+
 ```
 
 </div>

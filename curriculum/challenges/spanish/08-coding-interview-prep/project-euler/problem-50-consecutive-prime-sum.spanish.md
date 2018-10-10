@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f39e1000cf542c50feb1
+id: 5900f39e1000cf542c50feb1
 challengeType: 5
 title: 'Problem 50: Consecutive prime sum'
+videoUrl: ''
+localeTitle: 'Problema 50: Suma primera consecutiva'
 ---
 
 ## Description
-<section id='description'> 
-El primer 41, puede escribirse como la suma de seis primos consecutivos: 
-41 = 2 + 3 + 5 + 7 + 11 + 13 
-Esta es la suma más larga de primos consecutivos que se suma a un primo por debajo de cien. 
-La suma más larga de números primos consecutivos por debajo de mil que se suma a un número primo, contiene 21 términos y es igual a 953. 
-¿Qué número primo, por debajo de un millón, se puede escribir como la suma de los números primos más consecutivos? 
-</section>
+<section id="description"> El primer 41, se puede escribir como la suma de seis primos consecutivos: 41 = 2 + 3 + 5 + 7 + 11 + 13 Esta es la suma más larga de primos consecutivos que se suma a un primo por debajo de cien. La suma más larga de números primos consecutivos por debajo de mil que se suma a un número primo, contiene 21 términos y es igual a 953. ¿Qué número primo, por debajo de un millón, se puede escribir como la suma de los números primos más consecutivos? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +39,7 @@ function consecutivePrimeSum(limit) {
 }
 
 consecutivePrimeSum(1000000);
+
 ```
 
 </div>
@@ -56,46 +51,7 @@ consecutivePrimeSum(1000000);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function consecutivePrimeSum(limit) {
-  function isPrime(num) {
-    if (num < 2) {
-      return false;
-    } else if (num === 2) {
-      return true;
-    }
-    const sqrtOfNum = Math.floor(num ** 0.5);
-    for (let i = 2; i <= sqrtOfNum + 1; i++) {
-      if (num % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  }
-  function getPrimes(limit) {
-    const primes = [];
-    for (let i = 0; i <= limit; i++) {
-      if (isPrime(i)) primes.push(i);
-    }
-    return primes;
-  }
-
-  const primes = getPrimes(limit);
-  let primeSum = [...primes];
-  primeSum.reduce((acc, n, i) => {
-    primeSum[i] += acc;
-    return acc += n;
-  }, 0);
-
-  for (let j = primeSum.length - 1; j >= 0; j--) {
-    for (let i = 0; i < j; i++) {
-      const sum = primeSum[j] - primeSum[i];
-      if (sum > limit) break;
-      if (isPrime(sum) && primes.indexOf(sum) > -1) return sum;
-    }
-  }
-}
+// solution required
 ```
-
 </section>

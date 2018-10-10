@@ -1,21 +1,16 @@
 ---
 id: 587d78a8367417b2b2512ae5
 title: Animate Elements at Variable Rates
-localeTitle: Animar elementos a tasas variables
 challengeType: 0
 videoUrl: ''
+localeTitle: Animar elementos a tasas variables
 ---
 
 ## Description
-<section id='description'> 
-Hay una variedad de formas de alterar las tasas de animación de elementos animados similares. Hasta ahora, esto se ha logrado mediante la aplicación de una propiedad de <code>animation-iteration-count</code> y la configuración de reglas de <code>@keyframes</code> . 
-Para ilustrar, la animación de la derecha consta de dos &quot;estrellas&quot; que disminuyen de tamaño y opacidad en la marca del 20% en la regla <code>@keyframes</code> , que crea la animación de <code>@keyframes</code> . Puede cambiar la regla <code>@keyframes</code> para uno de los elementos para que las estrellas parpadeen a diferentes velocidades. 
-</section>
+<section id="description"> Hay una variedad de formas de alterar las tasas de animación de elementos animados similares. Hasta ahora, esto se ha logrado mediante la aplicación de una propiedad de <code>animation-iteration-count</code> y la configuración de reglas de <code>@keyframes</code> . Para ilustrar, la animación de la derecha consta de dos &quot;estrellas&quot; que disminuyen de tamaño y opacidad en la marca del 20% en la regla <code>@keyframes</code> , que crea la animación de <code>@keyframes</code> . Puede cambiar la regla <code>@keyframes</code> para uno de los elementos para que las estrellas parpadeen a diferentes velocidades. </section>
 
 ## Instructions
-<section id='instructions'> 
-Modifique la tasa de animación del elemento con el nombre de clase de <code>star-1</code> cambiando su regla <code>@keyframes</code> al 50%. 
-</section>
+<section id="instructions"> Modifique la tasa de animación del elemento con el nombre de clase de <code>star-1</code> cambiando su regla <code>@keyframes</code> al 50%. </section>
 
 ## Tests
 <section id='tests'>
@@ -87,6 +82,7 @@ tests:
 <div id="back"></div>
 <div class="star-1 stars"></div>
 <div class="star-2 stars"></div>
+
 ```
 
 </div>
@@ -98,9 +94,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "@keyframes twinkle-1 {50% {transform: scale(0.5); opacity: 0.5;}}"
+// solution required
 ```
-
 </section>

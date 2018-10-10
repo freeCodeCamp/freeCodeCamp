@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4c31000cf542c50ffd5
+id: 5900f4c31000cf542c50ffd5
 challengeType: 5
 title: 'Problem 342: The totient of a square is a cube'
+videoUrl: ''
+localeTitle: 'Problema 342: El totiente de un cuadrado es un cubo.'
 ---
 
 ## Description
-<section id='description'> 
-Considera el número 50. 
-502 = 2500 = 22 × 54, entonces φ (2500) = 2 × 4 × 53 = 8 × 53 = 23 × 53. 1 
-Entonces 2500 es un cuadrado y φ (2500) es un cubo . 
-
-
-Encuentra la suma de todos los números n, 1 &lt;n &lt;1010 de manera que (n2) sea un cubo. 
-
-
-1 φ denota la función totient de Euler. 
-</section>
+<section id="description"> Considere el número 50. 502 = 2500 = 22 × 54, entonces φ (2500) = 2 × 4 × 53 = 8 × 53 = 23 × 53. 1 Entonces 2500 es un cuadrado y φ (2500) es un cubo. <p> Encuentre la suma de todos los números n, 1 &lt;n &lt;1010 de manera que φ (n2) sea un cubo. </p><p> 1 φ denota la función totient de Euler. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler342() {
 }
 
 euler342();
+
 ```
 
 </div>

@@ -1,21 +1,16 @@
 ---
 id: 587d78a3367417b2b2512ad0
 title: Center an Element Horizontally Using the margin Property
-localeTitle: Centrar un elemento horizontalmente usando la propiedad de margen
 challengeType: 0
 videoUrl: ''
+localeTitle: Centrar un elemento horizontalmente usando la propiedad de margen
 ---
 
 ## Description
-<section id='description'> 
-Otra técnica de posicionamiento es centrar un elemento de bloque horizontalmente. Una forma de hacerlo es establecer su <code>margin</code> en un valor de auto. 
-Este método también funciona para imágenes. Las imágenes son elementos en línea de forma predeterminada, pero se pueden cambiar a elementos de bloque cuando configura la propiedad de <code>display</code> para bloquear. 
-</section>
+<section id="description"> Otra técnica de posicionamiento es centrar un elemento de bloque horizontalmente. Una forma de hacerlo es establecer su <code>margin</code> en un valor de auto. Este método también funciona para imágenes. Las imágenes son elementos en línea de forma predeterminada, pero se pueden cambiar a elementos de bloque cuando configura la propiedad de <code>display</code> para bloquear. </section>
 
 ## Instructions
-<section id='instructions'> 
-Centre el <code>div</code> en la página agregando una propiedad de <code>margin</code> con un valor de auto. 
-</section>
+<section id="instructions"> Centre el <code>div</code> en la página agregando una propiedad de <code>margin</code> con un valor de auto. </section>
 
 ## Tests
 <section id='tests'>
@@ -44,6 +39,7 @@ tests:
   }
 </style>
 <div></div>
+
 ```
 
 </div>
@@ -55,9 +51,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "div {background-color: blue; height: 100px; width: 100px; margin: auto;}"
+// solution required
 ```
-
 </section>

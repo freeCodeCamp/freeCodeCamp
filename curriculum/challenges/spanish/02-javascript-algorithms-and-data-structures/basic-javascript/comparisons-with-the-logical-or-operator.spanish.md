@@ -1,24 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d9
 title: Comparisons with the Logical Or Operator
-localeTitle: Comparaciones con el operador lógico o
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparaciones con el operador lógico o
 ---
 
 ## Description
-<section id='description'> 
-El <dfn>lógico u</dfn> operador ( <code>||</code> ) devuelve <code>true</code> si cualquiera de los <dfn>operandos</dfn> es <code>true</code> . De lo contrario, devuelve <code>false</code> . 
-El operador <dfn>lógico</dfn> está compuesto de dos símbolos de tubería ( <code>|</code> ). Normalmente, esto se puede encontrar entre las teclas Retroceso e Intro. 
-El patrón a continuación debe parecer familiar de los puntos de paso anteriores: 
-<blockquote>if (num > 10) {<br>&nbsp;&nbsp;return "No";<br>}<br>if (num < 5) {<br>&nbsp;&nbsp;return "No";<br>}<br>return "Yes";</blockquote> 
-devolverá &quot;Sí&quot; solo si el <code>num</code> está entre <code>5</code> y <code>10</code> (5 y 10 incluidos). La misma lógica se puede escribir como: 
-<blockquote>if (num > 10 || num < 5) {<br>&nbsp;&nbsp;return "No";<br>}<br>return "Yes";</blockquote> 
-</section>
+<section id="description"> El <dfn>lógico u</dfn> operador ( <code>||</code> ) devuelve <code>true</code> si cualquiera de los <dfn>operandos</dfn> es <code>true</code> . De lo contrario, devuelve <code>false</code> . El operador <dfn>lógico o</dfn> está compuesto por dos símbolos de tubería ( <code>|</code> ). Normalmente, esto se puede encontrar entre las teclas Retroceso e Intro. El patrón a continuación debe parecer familiar de los puntos de paso anteriores: <blockquote> if (num&gt; 10) { <br> devuelve &quot;No&quot;; <br> } <br> si (num &lt;5) { <br> devuelve &quot;No&quot;; <br> } <br> devuelve &quot;Sí&quot;; </blockquote> devolverá &quot;Sí&quot; solo si el <code>num</code> está entre <code>5</code> y <code>10</code> (5 y 10 incluidos). La misma lógica se puede escribir como: <blockquote> if (num&gt; 10 || num &lt;5) { <br> devuelve &quot;No&quot;; <br> } <br> devuelve &quot;Sí&quot;; </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Combine las dos declaraciones <code>if</code> en una declaración que devuelva <code>&quot;Outside&quot;</code> si <code>val</code> no está entre <code>10</code> y <code>20</code> , inclusive. De lo contrario, devuelve <code>&quot;Inside&quot;</code> . 
-</section>
+<section id="instructions"> Combine las dos declaraciones <code>if</code> en una sola declaración que devuelva <code>&quot;Outside&quot;</code> si <code>val</code> no está entre <code>10</code> y <code>20</code> , inclusive. De lo contrario, devuelve <code>&quot;Inside&quot;</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -73,6 +65,7 @@ function testLogicalOr(val) {
 
 // Change this value to test
 testLogicalOr(15);
+
 ```
 
 </div>
@@ -84,14 +77,7 @@ testLogicalOr(15);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testLogicalOr(val) {
-  if (val < 10 || val > 20) {
-    return "Outside";
-  }
-  return "Inside";
-}
+// solution required
 ```
-
 </section>

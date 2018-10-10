@@ -1,22 +1,16 @@
 ---
 id: 5a9036ee38fddaf9a66b5d35
 title: Create a Column Gap Using grid-column-gap
-localeTitle: Crear una brecha de columna usando grid-column-gap
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear una brecha de columna usando grid-column-gap
 ---
 
 ## Description
-<section id='description'> 
-Hasta ahora, en las cuadrículas que has creado, las columnas han estado apretadas una contra la otra. A veces quieres un espacio entre las columnas. Para agregar un espacio entre las columnas, use la propiedad <code>grid-column-gap</code> así: 
-<blockquote>grid-column-gap: 10px;</blockquote> 
-Esto crea 10 px de espacio vacío entre todas nuestras columnas. 
-</section>
+<section id="description"> Hasta ahora, en las cuadrículas que has creado, las columnas han estado apretadas unas contra otras. A veces quieres un espacio entre las columnas. Para agregar un espacio entre las columnas, use la propiedad <code>grid-column-gap</code> así: <blockquote> gap-column-gap: 10px; </blockquote> Esto crea 10 px de espacio vacío entre todas nuestras columnas. </section>
 
 ## Instructions
-<section id='instructions'> 
-Dé a las columnas en la cuadrícula un espacio de <code>20px</code> . 
-</section>
+<section id="instructions"> Dé a las columnas en la cuadrícula un espacio de <code>20px</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -65,6 +59,7 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
+
 ```
 
 </div>
@@ -76,9 +71,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-column-gap: 20px;}"
+// solution required
 ```
-
 </section>

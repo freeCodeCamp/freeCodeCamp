@@ -1,21 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244ca
 title: Using Objects for Lookups
-localeTitle: Uso de objetos para búsquedas
 challengeType: 1
+videoUrl: ''
+localeTitle: Uso de objetos para búsquedas
 ---
 
 ## Description
-<section id='description'>
-objetos pueden considerarse como un almacenamiento de clave / valor, como un diccionario. Si tiene datos tabulares, puede usar un objeto para &quot;buscar&quot; valores en lugar de una instrucción <code>switch</code> o una cadena <code>if/else</code> . Esto es más útil cuando sabe que sus datos de entrada están limitados a un cierto rango.
-Aquí hay un ejemplo de una búsqueda de alfabeto inversa simple:
-<blockquote>var alpha = {<br>&nbsp;&nbsp;1:"Z",<br>&nbsp;&nbsp;2:"Y",<br>&nbsp;&nbsp;3:"X",<br>&nbsp;&nbsp;4:"W",<br>&nbsp;&nbsp;...<br>&nbsp;&nbsp;24:"C",<br>&nbsp;&nbsp;25:"B",<br>&nbsp;&nbsp;26:"A"<br>};<br>alpha[2]; // "Y"<br>alpha[24]; // "C"<br><br>var value = 2;<br>alpha[value]; // "Y"</blockquote>
-</section>
+<section id="description"> Los objetos pueden considerarse como un almacenamiento de clave / valor, como un diccionario. Si tiene datos tabulares, puede usar un objeto para &quot;buscar&quot; valores en lugar de una instrucción <code>switch</code> o una cadena <code>if/else</code> . Esto es más útil cuando sabe que sus datos de entrada están limitados a un cierto rango. Aquí hay un ejemplo de una búsqueda de alfabeto inversa simple: <blockquote> var alfa = { <br> 1: &quot;Z&quot;, <br> 2: &quot;Y&quot;, <br> 3: &quot;X&quot;, <br> 4: &quot;W&quot;, <br> ... <br> 24: &quot;C&quot;, <br> 25: &quot;B&quot;, <br> 26: &quot;A&quot; <br> }; <br> alfa [2]; // &quot;Y&quot; <br> alfa [24]; // &quot;C&quot; <br><br> valor de var = 2; <br> alfa [valor]; // &quot;Y&quot; </blockquote></section>
 
 ## Instructions
-<section id='instructions'>
-Convertir la instrucción switch en un objeto llamado <code>lookup</code> . Úselo para buscar <code>val</code> y asignar la cadena asociada a la variable de <code>result</code> .
-</section>
+<section id="instructions"> Convertir la instrucción switch en un objeto llamado <code>lookup</code> . Úselo para buscar <code>val</code> y asignar la cadena asociada a la variable de <code>result</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -82,6 +77,7 @@ function phoneticLookup(val) {
 
 // Change this value to test
 phoneticLookup("charlie");
+
 ```
 
 </div>
@@ -93,24 +89,7 @@ phoneticLookup("charlie");
 ## Solution
 <section id='solution'>
 
-
 ```js
-function phoneticLookup(val) {
-  var result = "";
-
-  var lookup = {
-    alpha: "Adams",
-    bravo: "Boston",
-    charlie: "Chicago",
-    delta: "Denver",
-    echo: "Easy",
-    foxtrot: "Frank"
-  };
-
-  result = lookup[val];
-
-  return result;
-}
+// solution required
 ```
-
 </section>

@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244c2
 title: Return a Value from a Function with Return
-localeTitle: Devolver un valor de una función con retorno
 challengeType: 1
+videoUrl: ''
+localeTitle: Devolver un valor de una función con retorno
 ---
 
 ## Description
-<section id='description'> 
-Podemos pasar valores a una función con <dfn>argumentos</dfn> . Puede usar una declaración de <code>return</code> para enviar un valor de vuelta de una función. 
-<strong>Ejemplo</strong> 
-<blockquote>function plusThree(num) {<br>&nbsp;&nbsp;return num + 3;<br>}<br>var answer = plusThree(5); // 8</blockquote> 
-<code>plusThree</code> toma un <dfn>argumento</dfn> para <code>num</code> y devuelve un valor igual a <code>num + 3</code> . 
-</section>
+<section id="description"> Podemos pasar valores a una función con <dfn>argumentos</dfn> . Puede usar una declaración de <code>return</code> para enviar un valor de vuelta de una función. <strong>Ejemplo</strong> <blockquote> función plusThree (num) { <br> devuelve num + 3; <br> } <br> respuesta var = másTres (5); // 8 </blockquote> <code>plusThree</code> toma un <dfn>argumento</dfn> para <code>num</code> y devuelve un valor igual a <code>num + 3</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Cree una función <code>timesFive</code> que acepte un argumento, lo multiplique por <code>5</code> y devuelva el nuevo valor. Vea la última línea en el editor para ver un ejemplo de cómo puede probar su función <code>timesFive</code> . 
-</section>
+<section id="instructions"> Cree una función <code>timesFive</code> que acepte un argumento, lo multiplique por <code>5</code> y devuelva el nuevo valor. Vea la última línea en el editor para ver un ejemplo de cómo puede probar su función <code>timesFive</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -52,6 +46,7 @@ function minusSeven(num) {
 
 
 console.log(minusSeven(10));
+
 ```
 
 </div>
@@ -63,12 +58,7 @@ console.log(minusSeven(10));
 ## Solution
 <section id='solution'>
 
-
 ```js
-function timesFive(num) {
-  return num * 5;
-}
-timesFive(10);
+// solution required
 ```
-
 </section>

@@ -1,22 +1,16 @@
 ---
 title: Date format
 id: 59669d08d75b60482359409f
-localeTitle: 59669d08d75b60482359409f
 challengeType: 5
+videoUrl: ''
+localeTitle: Formato de fecha
 ---
 
 ## Description
-<section id='description'> 
-Tarea: 
-<p> Devuelve una matriz con la fecha actual en los formatos: </p> 
-<p> - 2007-11-23 y </p> 
-<p> - Domingo 23 de noviembre de 2007. </p> 
-<p> Salida de ejemplo: <code>[&#39;2007-11-23&#39;, &#39;Sunday, November 23, 2007&#39;]</code> </p> 
-</section>
+<section id="description"> Tarea: <p> Devuelve una matriz con la fecha actual en los formatos: </p><p> - 2007-11-23 y </p><p> - Domingo 23 de noviembre de 2007. </p><p> Salida de ejemplo: <code>[&#39;2007-11-23&#39;, &#39;Sunday, November 23, 2007&#39;]</code> </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +41,7 @@ function getDateFormats () {
   // Good luck!
   return true;
 }
+
 ```
 
 </div>
@@ -66,17 +61,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function getDateFormats () {
-  const date = new Date();
-  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  const fmt1 = `${date.getFullYear()}-${(1 + date.getMonth())}-${date.getDate()}`;
-  const fmt2 = `${weekdays[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-  return [fmt1, fmt2];
-}
-
+// solution required
 ```
-
 </section>

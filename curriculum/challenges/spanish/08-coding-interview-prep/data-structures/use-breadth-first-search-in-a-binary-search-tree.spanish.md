@@ -1,20 +1,16 @@
 ---
 id: 587d8258367417b2b2512c7f
 title: Use Breadth First Search in a Binary Search Tree
-localeTitle: Utilice la búsqueda en primer lugar en un árbol de búsqueda binario
 challengeType: 1
+videoUrl: ''
+localeTitle: Utilice la búsqueda en primer lugar en un árbol de búsqueda binario
 ---
 
 ## Description
-<section id='description'> 
-Aquí vamos a introducir otro método de recorrido de árboles: búsqueda de amplitud en primer lugar. En contraste con los métodos de búsqueda de profundidad primero del último desafío, la búsqueda de amplitud primero explora todos los nodos en un nivel dado dentro de un árbol antes de continuar al siguiente nivel. Normalmente, las colas se utilizan como estructuras de datos auxiliares en el diseño de los algoritmos de búsqueda más avanzados. 
-En este método, comenzamos agregando el nodo raíz a una cola. Luego comenzamos un ciclo en el que sacamos de la cola el primer elemento de la cola, lo agregamos a una nueva matriz y luego inspeccionamos ambos subárboles secundarios. Si sus hijos no son nulos, se ponen en cola. Este proceso continúa hasta que la cola está vacía. 
-Instrucciones: Vamos a crear un primer método de búsqueda en nuestro árbol llamado <code>levelOrder</code> . Este método debe devolver una matriz que contenga los valores de todos los nodos de árbol, explorados de manera integral. Asegúrese de devolver los valores de la matriz, no los nodos en sí. Un nivel debe ser recorrido de izquierda a derecha. A continuación, escribamos un método similar llamado <code>reverseLevelOrder</code> que realiza la misma búsqueda pero en la dirección inversa (de derecha a izquierda) en cada nivel. 
-</section>
+<section id="description"> Aquí introduciremos otro método de recorrido de árboles: la búsqueda de amplitud en primer lugar. En contraste con los métodos de búsqueda de profundidad primero del último desafío, la búsqueda de amplitud primero explora todos los nodos en un nivel dado dentro de un árbol antes de continuar al siguiente nivel. Normalmente, las colas se utilizan como estructuras de datos auxiliares en el diseño de los algoritmos de búsqueda más avanzados. En este método, comenzamos agregando el nodo raíz a una cola. Luego comenzamos un ciclo en el que sacamos de la cola el primer elemento de la cola, lo agregamos a una nueva matriz y luego inspeccionamos ambos subárboles secundarios. Si sus hijos no son nulos, se ponen en cola. Este proceso continúa hasta que la cola está vacía. Instrucciones: Vamos a crear un primer método de búsqueda en nuestro árbol llamado <code>levelOrder</code> . Este método debe devolver una matriz que contenga los valores de todos los nodos de árbol, explorados de manera integral. Asegúrese de devolver los valores de la matriz, no los nodos en sí. Un nivel debe ser recorrido de izquierda a derecha. A continuación, escribamos un método similar llamado <code>reverseLevelOrder</code> que realiza la misma búsqueda pero en la dirección inversa (de derecha a izquierda) en cada nivel. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -58,6 +54,7 @@ function BinarySearchTree() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>

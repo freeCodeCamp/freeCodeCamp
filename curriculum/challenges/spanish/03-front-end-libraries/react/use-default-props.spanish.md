@@ -1,20 +1,17 @@
 ---
 id: 5a24c314108439a4d403616b
 title: Use Default Props
-localeTitle: Usar accesorios predeterminados
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Usar accesorios predeterminados
 ---
 
 ## Description
-<section id='description'>
-React también tiene una opción para establecer accesorios predeterminados. Puede asignar accesorios predeterminados a un componente como una propiedad en el propio componente y React asigna el apoyo predeterminado si es necesario. Esto le permite especificar lo que debe ser un valor de propiedad si no se proporciona ningún valor explícitamente. Por ejemplo, si declara <code>MyComponent.defaultProps = { location: &#39;San Francisco&#39; }</code> , ha definido un prop de ubicación que se establece en la cadena <code>San Francisco</code> , a menos que especifique lo contrario. React asigna props por defecto si los prop no están definidos, pero si pasa <code>null</code> como valor para un prop, seguirá siendo <code>null</code> .
-</section>
+<section id="description"> React también tiene una opción para establecer accesorios predeterminados. Puede asignar accesorios predeterminados a un componente como una propiedad en el propio componente y React asigna el apoyo predeterminado si es necesario. Esto le permite especificar lo que debe ser un valor de propiedad si no se proporciona ningún valor explícitamente. Por ejemplo, si declara <code>MyComponent.defaultProps = { location: &#39;San Francisco&#39; }</code> , ha definido un prop de ubicación que se establece en la cadena <code>San Francisco</code> , a menos que especifique lo contrario. React asigna props por defecto si los prop no están definidos, pero si pasa <code>null</code> como valor para un prop, seguirá siendo <code>null</code> . </section>
 
 ## Instructions
-<section id='instructions'>
-El editor de código muestra un componente <code>ShoppingCart</code> . Defina accesorios predeterminados en este componente que especifican <code>items</code> prop con un valor de <code>0</code> .
-</section>
+<section id="instructions"> El editor de código muestra un componente <code>ShoppingCart</code> . Defina accesorios predeterminados en este componente que especifican <code>items</code> prop con un valor de <code>0</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -64,20 +61,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-const ShoppingCart = (props) => {
-  return (
-    <div>
-      <h1>Shopping Cart Component</h1>
-    </div>
-  )
-};
-
-// change code below this line
-ShoppingCart.defaultProps = {
-  items: 0
-}
+// solution required
 ```
-
 </section>

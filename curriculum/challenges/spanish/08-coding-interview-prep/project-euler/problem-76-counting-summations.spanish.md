@@ -1,25 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3b81000cf542c50fecb
+id: 5900f3b81000cf542c50fecb
 challengeType: 5
 title: 'Problem 76: Counting summations'
+videoUrl: ''
+localeTitle: 'Problema 76: Contar sumas'
 ---
 
 ## Description
-<section id='description'> 
-Es posible escribir cinco como suma en exactamente seis formas diferentes: 
-4 + 1 
-3 + 2 
-3 + 1 + 1 
-2 + 2 + 1 
-2 + 1 + 1 + 1 
-1 + 1 + 1 + 1 + 1 
-¿De cuántas maneras diferentes se pueden escribir cien como una suma de al menos dos enteros positivos? 
-</section>
+<section id="description"> Es posible escribir cinco como una suma exactamente de seis maneras diferentes: 4 + 1 3 + 2 3 + 1 + 1 2 + 2 + 1 2 + 1 + 1 + 1 1 + 1 + 1 + 1 + 1 ¿Cuántos diferentes ¿Se pueden escribir cien como una suma de al menos dos enteros positivos? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +37,7 @@ function euler76() {
 }
 
 euler76();
+
 ```
 
 </div>

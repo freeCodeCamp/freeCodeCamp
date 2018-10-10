@@ -1,25 +1,16 @@
 ---
 id: 587d7b8a367417b2b2512b4d
 title: Use Destructuring Assignment to Pass an Object as a Function's Parameters
-localeTitle: Utilice la asignación de destrucción para pasar un objeto como parámetros de una función
 challengeType: 1
+videoUrl: ''
+localeTitle: Utilice la asignación de destrucción para pasar un objeto como parámetros de una función
 ---
 
 ## Description
-<section id='description'> 
-En algunos casos, puede destruir el objeto en el propio argumento de una función. 
-Considera el siguiente código: 
-<blockquote>const profileUpdate = (profileData) => {<br>&nbsp;&nbsp;const { name, age, nationality, location } = profileData;<br>&nbsp;&nbsp;// do something with these variables<br>}</blockquote> 
-Esto destruye efectivamente el objeto enviado a la función. Esto también se puede hacer en el lugar: 
-<blockquote>const profileUpdate = ({ name, age, nationality, location }) => {<br>&nbsp;&nbsp;/* do something with these fields */<br>}</blockquote> 
-Esto elimina algunas líneas adicionales y hace que nuestro código se vea limpio. 
-Esto tiene el beneficio adicional de no tener que manipular un objeto completo en una función; solo los campos que son necesarios se copian dentro de la función. 
-</section>
+<section id="description"> En algunos casos, puede destruir el objeto en un argumento de función. Considere el siguiente código: <blockquote> const profileUpdate = (profileData) =&gt; { <br> const {nombre, edad, nacionalidad, ubicación} = profileData; <br> // haz algo con estas variables <br> } </blockquote> Esto destruye efectivamente el objeto enviado a la función. Esto también se puede hacer en el lugar: <blockquote> const profileUpdate = ({nombre, edad, nacionalidad, ubicación}) =&gt; { <br> / * hacer algo con estos campos * / <br> } </blockquote> Esto elimina algunas líneas adicionales y hace que nuestro código se vea limpio. Esto tiene la ventaja adicional de no tener que manipular un objeto completo en una función; solo los campos que son necesarios se copian dentro de la función. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la asignación de desestructuración dentro del argumento de la función <code>half</code> para enviar solo <code>max</code> y <code>min</code> dentro de la función. 
-</section>
+<section id="instructions"> Use la asignación de desestructuración dentro del argumento de la función <code>half</code> para enviar solo <code>max</code> y <code>min</code> dentro de la función. </section>
 
 ## Tests
 <section id='tests'>
@@ -64,6 +55,7 @@ const half = (function() {
 })();
 console.log(stats); // should be object
 console.log(half(stats)); // should be 28.015
+
 ```
 
 </div>

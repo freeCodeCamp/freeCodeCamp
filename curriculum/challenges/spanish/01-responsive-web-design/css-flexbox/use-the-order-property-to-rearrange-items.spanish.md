@@ -1,20 +1,16 @@
 ---
 id: 587d78ae367417b2b2512aff
 title: Use the order Property to Rearrange Items
-localeTitle: Utilice la propiedad de orden para reorganizar artículos
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice la propiedad de orden para reorganizar artículos
 ---
 
 ## Description
-<section id='description'>
-La propiedad <code>order</code> se usa para decirle a CSS el orden en que aparecen los elementos flexibles en el contenedor flex. De forma predeterminada, los elementos aparecerán en el mismo orden en que vienen en el código fuente HTML. La propiedad toma números como valores y se pueden usar números negativos.
-</section>
+<section id="description"> La propiedad de <code>order</code> se utiliza para indicar a CSS el orden en que aparecen los elementos flexibles en el contenedor flexible. De forma predeterminada, los elementos aparecerán en el mismo orden en que vienen en el código fuente HTML. La propiedad toma números como valores y se pueden usar números negativos. </section>
 
 ## Instructions
-<section id='instructions'>
-Agregue el <code>order</code> propiedades CSS a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 2 y a <code>#box-2</code> un valor de 1.
-</section>
+<section id="instructions"> Agregue el <code>order</code> propiedades CSS a <code>#box-1</code> y <code>#box-2</code> . Dé a <code>#box-1</code> un valor de 2 y a <code>#box-2</code> un valor de 1. </section>
 
 ## Tests
 <section id='tests'>
@@ -60,6 +56,7 @@ tests:
   <div id="box-1"></div>
   <div id="box-2"></div>
 </div>
+
 ```
 
 </div>

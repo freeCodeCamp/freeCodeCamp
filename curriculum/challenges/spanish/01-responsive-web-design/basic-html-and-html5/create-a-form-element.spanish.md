@@ -1,22 +1,16 @@
 ---
 id: bad87fee1348bd9aede08830
 title: Create a Form Element
-localeTitle: Crear un elemento de formulario
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear un elemento de formulario
 ---
 
 ## Description
-<section id='description'> 
-Puede crear formularios web que realmente envíen datos a un servidor usando nada más que HTML puro. Puedes hacer esto especificando una acción en tu elemento de <code>form</code> . 
-Por ejemplo: 
-<code>&lt;form action=&quot;/url-where-you-want-to-submit-form-data&quot;&gt;&lt;/form&gt;</code> 
-</section>
+<section id="description"> Puede crear formularios web que en realidad envíen datos a un servidor usando nada más que HTML puro. Puedes hacer esto especificando una acción en tu elemento de <code>form</code> . Por ejemplo: <code>&lt;form action=&quot;/url-where-you-want-to-submit-form-data&quot;&gt;&lt;/form&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Anide el campo de texto dentro de un elemento de <code>form</code> y agrega el atributo <code>action=&quot;/submit-cat-photo&quot;</code> al elemento de formulario. 
-</section>
+<section id="instructions"> Anida el campo de texto dentro de un elemento de <code>form</code> y agrega el atributo <code>action=&quot;/submit-cat-photo&quot;</code> al elemento de formulario. </section>
 
 ## Tests
 <section id='tests'>
@@ -60,6 +54,7 @@ tests:
   </ol>
   <input type="text" placeholder="cat photo URL">
 </main>
+
 ```
 
 </div>

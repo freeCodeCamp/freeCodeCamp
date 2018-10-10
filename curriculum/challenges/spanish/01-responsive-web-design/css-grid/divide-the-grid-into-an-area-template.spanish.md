@@ -1,31 +1,23 @@
 ---
 id: 5a94fe0569fb03452672e45c
 title: Divide the Grid Into an Area Template
-localeTitle: Divide la cuadrícula en una plantilla de área
 challengeType: 0
 videoUrl: ''
+localeTitle: Divide la cuadrícula en una plantilla de área
 ---
 
 ## Description
-<section id='description'> 
-Puede agrupar las celdas de su cuadrícula en un <dfn>área</dfn> y darle al área un nombre personalizado. Haga esto utilizando <code>grid-template-areas</code> en el contenedor como esto: 
-<blockquote>grid-template-areas:<br>&nbsp;&nbsp;"header header header"<br>&nbsp;&nbsp;"advert content content"<br>&nbsp;&nbsp;"footer footer footer";</blockquote> 
-El código anterior combina las tres celdas superiores juntas en un área llamada <code>header</code> , las tres celdas inferiores en un área de <code>footer</code> , y forma dos áreas en la fila central; <code>advert</code> y <code>content</code> . 
-<strong>Nota</strong> <br> Cada palabra en el código representa una celda y cada par de comillas representa una fila. 
-Además de las etiquetas personalizadas, puede usar un punto ( <code>.</code> ) Para designar una celda vacía en la cuadrícula. 
-</section>
+<section id="description"> Puede agrupar las celdas de su cuadrícula en un <dfn>área</dfn> y darle al área un nombre personalizado. Haga esto usando <code>grid-template-areas</code> en el contenedor de esta manera: <blockquote> cuadrícula-plantillas-áreas: <br> &quot;encabezado encabezado encabezado&quot; <br> &quot;contenido del contenido del anuncio&quot; <br> &quot;pie de página pie de página&quot;; </blockquote> El código anterior combina las tres celdas superiores juntas en un área llamada <code>header</code> , las tres celdas inferiores en un área de <code>footer</code> , y forma dos áreas en la fila central; <code>advert</code> y <code>content</code> . <strong>Nota</strong> <br> Cada palabra en el código representa una celda y cada par de comillas representa una fila. Además de las etiquetas personalizadas, puede usar un punto ( <code>.</code> ) Para designar una celda vacía en la cuadrícula. </section>
 
 ## Instructions
-<section id='instructions'> 
-Coloque la plantilla de área para que la celda etiquetada como <code>advert</code> convierta en una celda vacía. 
-</section>
+<section id="instructions"> Coloque la plantilla de área para que la celda etiquetada como <code>advert</code> convierta en una celda vacía. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: <code>container</code> clase <code>container</code> debe tener una propiedad de <code>grid-template-areas</code> similar a la vista previa, pero tiene <code>.</code> En lugar del área de <code>advert</code> .
+  - text: '<code>container</code> clase <code>container</code> debe tener una propiedad de <code>grid-template-areas</code> similar a la vista previa, pero tiene <code>.</code> En lugar del área de <code>advert</code> .'
     testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-areas\s*?:\s*?"\s*?header\s*?header\s*?header\s*?"\s*?"\s*?.\s*?content\s*?content\s*?"\s*?"\s*?footer\s*?footer\s*?footer\s*?"\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-areas</code> propertiy similar to the preview but has <code>.</code> instead of the <code>advert</code> area.");'
 
 ```
@@ -71,6 +63,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -82,9 +75,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-template-areas: \"header header header\" \". content content\" \"footer footer footer\";}"
+// solution required
 ```
-
 </section>

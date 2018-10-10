@@ -1,23 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d1
 title: Comparison with the Strict Equality Operator
-localeTitle: Comparación con el operador de igualdad estricta
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparación con el operador de igualdad estricta
 ---
 
 ## Description
-<section id='description'> 
-Igualdad estricta ( <code>===</code> ) es la contraparte del operador de igualdad ( <code>==</code> ). Sin embargo, a diferencia del operador de igualdad, que intenta convertir ambos valores en comparación con un tipo común, el operador de igualdad estricta no realiza una conversión de tipo. 
-Si los valores que se comparan tienen tipos diferentes, se consideran desiguales y el operador de igualdad estricta devolverá el valor falso. 
-<strong>ejemplos</strong> 
-<blockquote>3 === 3   // true<br>3 === '3' // false</blockquote> 
-En el segundo ejemplo, <code>3</code> es un tipo de <code>Number</code> y <code>&#39;3&#39;</code> es un tipo de <code>String</code> . 
-</section>
+<section id="description"> La igualdad estricta ( <code>===</code> ) es la contraparte del operador de igualdad ( <code>==</code> ). Sin embargo, a diferencia del operador de igualdad, que intenta convertir ambos valores en comparación con un tipo común, el operador de igualdad estricta no realiza una conversión de tipo. Si los valores que se comparan tienen tipos diferentes, se consideran desiguales y el operador de igualdad estricta devolverá el valor falso. <strong>Ejemplos</strong> <blockquote> 3 === 3 // verdadero <br> 3 === &#39;3&#39; // falso </blockquote> En el segundo ejemplo, <code>3</code> es un tipo de <code>Number</code> y <code>&#39;3&#39;</code> es un tipo de <code>String</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Use el operador de igualdad estricta en la instrucción <code>if</code> para que la función devuelva &quot;Igual&quot; cuando <code>val</code> sea ​​estrictamente igual a <code>7</code> 
-</section>
+<section id="instructions"> Use el operador de igualdad estricta en la instrucción <code>if</code> para que la función devuelva &quot;Igual&quot; cuando <code>val</code> sea ​​estrictamente igual a <code>7</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -53,6 +46,7 @@ function testStrict(val) {
 
 // Change this value to test
 testStrict(10);
+
 ```
 
 </div>
@@ -64,14 +58,7 @@ testStrict(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testStrict(val) {
-  if (val === 7) {
-    return "Equal";
-  }
-  return "Not Equal";
-}
+// solution required
 ```
-
 </section>

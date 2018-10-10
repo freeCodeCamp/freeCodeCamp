@@ -1,28 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3c71000cf542c50feda
+id: 5900f3c71000cf542c50feda
 challengeType: 5
 title: 'Problem 91: Right triangles with integer coordinates'
+videoUrl: ''
+localeTitle: 'Problema 91: triángulos rectángulos con coordenadas enteras'
 ---
 
 ## Description
-<section id='description'> 
-Los puntos P (x1, y1) y Q (x2, y2) se trazan en coordenadas de enteros y se unen al origen, O (0,0), para formar ΔOPQ. 
-
-
-
-
-Hay exactamente catorce triángulos que contienen un ángulo recto que pueden formarse cuando cada coordenada se encuentra entre 0 y 2 inclusive; es decir, 0 ≤ x1, y1, x2, y2 ≤ 2. 
-
-
-
-
-Dado que 0 ≤ x1, y1, x2, y2 ≤ 50, ¿cuántos triángulos rectos pueden formarse? 
-</section>
+<section id="description"> Los puntos P (x1, y1) y Q (x2, y2) se trazan en coordenadas de enteros y se unen al origen, O (0,0), para formar ΔOPQ. <p> Hay exactamente catorce triángulos que contienen un ángulo recto que se puede formar cuando cada coordenada se encuentra entre 0 y 2 inclusive; es decir, 0 ≤ x1, y1, x2, y2 ≤ 2. </p><p> Dado que 0 ≤ x1, y1, x2, y2 ≤ 50, ¿cuántos triángulos rectos pueden formarse? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +37,7 @@ function euler91() {
 }
 
 euler91();
+
 ```
 
 </div>

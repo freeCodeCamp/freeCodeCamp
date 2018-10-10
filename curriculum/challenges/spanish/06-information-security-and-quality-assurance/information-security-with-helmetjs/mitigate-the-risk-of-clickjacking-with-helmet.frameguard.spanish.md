@@ -1,20 +1,16 @@
 ---
 id: 587d8247367417b2b2512c38
 title: Mitigate the Risk of Clickjacking with helmet.frameguard()
-localeTitle: Mitigue el riesgo de clickjacking con helmet.frameguard ()
 challengeType: 2
+videoUrl: ''
+localeTitle: Mitigue el riesgo de clickjacking con helmet.frameguard ()
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-infosec/'>GitHub</a> . 
-Su página podría colocarse en un <code>&lt;frame&gt;</code> o <code>&lt;iframe&gt;</code> sin su consentimiento. Esto puede resultar en ataques de clickjacking, entre otras cosas. Clickjacking es una técnica para engañar a un usuario para que interactúe con una página diferente de lo que el usuario cree que es. Esto se puede obtener ejecutando su página en un contexto malicioso, mediante iframing. En ese contexto, un hacker puede poner una capa oculta sobre su página. Los botones ocultos se pueden utilizar para ejecutar scripts incorrectos. Este middleware establece el encabezado X-Frame-Options. Se restringe quién puede poner su sitio en un marco. Tiene tres modos: DENY, SAMEORIGIN y ALLOW-FROM. 
-No necesitamos que nuestra aplicación sea enmarcada. Debería usar el uso de <code>helmet.frameguard()</code> pasa con el objeto de configuración <code>{action: &#39;deny&#39;}</code> . 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a> . Su página podría colocarse en un <code>&lt;frame&gt;</code> o <code>&lt;iframe&gt;</code> sin su consentimiento. Esto puede resultar en ataques de clickjacking, entre otras cosas. Clickjacking es una técnica para engañar a un usuario para que interactúe con una página diferente de lo que el usuario cree que es. Esto se puede obtener ejecutando su página en un contexto malicioso, mediante iframing. En ese contexto, un hacker puede poner una capa oculta sobre su página. Los botones ocultos se pueden utilizar para ejecutar scripts incorrectos. Este middleware establece el encabezado X-Frame-Options. Se restringe quién puede poner su sitio en un marco. Tiene tres modos: DENY, SAMEORIGIN y ALLOW-FROM. No necesitamos que nuestra aplicación sea enmarcada. Debería usar el uso de <code>helmet.frameguard()</code> pasa con el objeto de configuración <code>{action: &#39;deny&#39;}</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

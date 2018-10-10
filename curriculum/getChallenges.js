@@ -36,13 +36,19 @@ async function buildCurriculum(file, curriculum) {
     curriculum[superBlock].blocks[name] = blockInfo;
     return;
   }
-  if (name === 'meta.json') {
+  if (name === 'meta.json' || name === '.DS_Store') {
     return;
   }
   const block = getBlockNameFromPath(filePath);
   const { name: superBlock } = superBlockInfoFromPath(filePath);
   const challenge = await parseMarkdown(fullPath);
-  const challengeBlock = curriculum[superBlock].blocks[block];
+  let challengeBlock;
+  try {
+    challengeBlock = curriculum[superBlock].blocks[block];
+  } catch (e) {
+    console.log(superBlock, block);
+    process.exit(0);
+  }
   const { meta } = challengeBlock;
   const challengeOrder = findIndex(
     meta.challengeOrder,

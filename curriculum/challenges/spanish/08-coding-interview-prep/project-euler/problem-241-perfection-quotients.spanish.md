@@ -1,26 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f45d1000cf542c50ff70
+id: 5900f45d1000cf542c50ff70
 challengeType: 5
 title: 'Problem 241: Perfection Quotients'
+videoUrl: ''
+localeTitle: 'Problema 241: Cocientes de perfección'
 ---
 
 ## Description
-<section id='description'> 
-Para un entero positivo n, sea σ (n) la suma de todos los divisores de n, por lo que, por ejemplo, σ (6) = 1 + 2 + 3 + 6 = 12. 
-
-
-Un número perfecto, como probablemente sepa, es un número con σ (n) = 2n. 
-
-Definamos el cociente de perfección de un entero positivo asp (n) = 
-σ (n) n 
-. 
-Encuentre la suma de todos los enteros positivos n ≤ 1018 para los cuales p (n) tiene la forma k + 1⁄2, donde k es un número entero. 
-</section>
+<section id="description"> Para un entero positivo n, sea σ (n) la suma de todos los divisores de n, por lo que, por ejemplo, σ (6) = 1 + 2 + 3 + 6 = 12. <p> Un número perfecto, como probablemente sepa, es un número con σ (n) = 2n. </p><p> Definamos el cociente de perfección de un entero positivo asp (n) = σ (n) n. Encuentre la suma de todos los enteros positivos n ≤ 1018 para los cuales p (n) tiene la forma k + 1⁄2, donde k es un número entero. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +37,7 @@ function euler241() {
 }
 
 euler241();
+
 ```
 
 </div>

@@ -1,22 +1,16 @@
 ---
 title: I before E except after C
 id: 5a23c84252665b21eecc7eb0
-localeTitle: 5a23c84252665b21eecc7eb0
 challengeType: 5
+videoUrl: ''
+localeTitle: Yo antes de E excepto después de C
 ---
 
 ## Description
-<section id='description'> 
-La frase <a href="https://en.wikipedia.org/wiki/I before E except after C">&quot;I antes de E, excepto después de C&quot;</a> es una mnemotécnica muy conocida que se supone que ayuda cuando se deletrean palabras en inglés. 
-Usando las palabras proporcionadas, verifique si las dos sub-cláusulas de la frase son plausibles individualmente: 
-<ol><li style='margin-bottom: 5px;'> <i>&quot;I antes de E cuando no está precedido por C&quot;.</i> </li><li> <i>&quot;E antes que yo cuando está precedido por C&quot;.</i> </li></ol> 
-Si ambas subfrases son plausibles, entonces se puede decir que la frase original es plausible. 
-Escriba una función que acepte una palabra y verifique si la palabra sigue esta regla. La función debería devolver verdadero si sigue la regla de lo contrario falso. 
-</section>
+<section id="description"> La frase <a href="https://en.wikipedia.org/wiki/I before E except after C">&quot;I antes de E, excepto después de C&quot;</a> es una mnemotécnica muy conocida que se supone que ayuda cuando se deletrean palabras en inglés. Usando las palabras provistas, verifique si las dos sub-cláusulas de la frase son plausibles individualmente: <ol><li style="margin-bottom: 5px;"> <i>&quot;I antes de E cuando no está precedido por C&quot;.</i> </li><li> <i>&quot;E antes que yo cuando está precedido por C&quot;.</i> </li></ol> Si ambas subfrases son plausibles, entonces se puede decir que la frase original es plausible. Escriba una función que acepte una palabra y verifique si la palabra sigue esta regla. La función debería devolver verdadero si sigue la regla de lo contrario falso. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -54,6 +48,7 @@ tests:
 function IBeforeExceptC (word) {
   // Good luck!
 }
+
 ```
 
 </div>
@@ -65,17 +60,7 @@ function IBeforeExceptC (word) {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function IBeforeExceptC (word)
-{
-	if(word.indexOf("c")==-1 && word.indexOf("ie")!=-1)
-		return true;
-	else if(word.indexOf("cei")!=-1)
-		return true;
-	return false;
-}
-
+// solution required
 ```
-
 </section>

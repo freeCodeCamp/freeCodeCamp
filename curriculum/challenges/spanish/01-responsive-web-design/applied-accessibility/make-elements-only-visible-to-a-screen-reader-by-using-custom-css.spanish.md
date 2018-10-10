@@ -1,28 +1,16 @@
 ---
 id: 587d778d367417b2b2512aaa
 title: Make Elements Only Visible to a Screen Reader by Using Custom CSS
-localeTitle: Haga que los elementos solo sean visibles para un lector de pantalla utilizando CSS personalizado
 challengeType: 0
 videoUrl: ''
+localeTitle: Haga que los elementos solo sean visibles para un lector de pantalla utilizando CSS personalizado
 ---
 
 ## Description
-<section id='description'> 
-¿Ha notado que todos los desafíos de accesibilidad aplicados hasta ahora no han usado ningún CSS? Esto es para mostrar la importancia de un esquema de documento lógico y el uso de etiquetas semánticamente significativas alrededor de su contenido antes de introducir el aspecto de diseño visual. 
-Sin embargo, la magia de CSS también puede mejorar la accesibilidad en su página cuando desea ocultar visualmente contenido destinado solo para lectores de pantalla. Esto sucede cuando la información está en un formato visual (como un gráfico), pero los usuarios de lectores de pantalla necesitan una presentación alternativa (como una tabla) para acceder a los datos. CSS se utiliza para colocar los elementos de solo lectura de pantalla fuera del área visual de la ventana del navegador. 
-Aquí hay un ejemplo de las reglas CSS que logran esto: 
-<blockquote>.sr-only {<br>&nbsp;&nbsp;position: absolute;<br>&nbsp;&nbsp;left: -10000px;<br>&nbsp;&nbsp;width: 1px;<br>&nbsp;&nbsp;height: 1px;<br>&nbsp;&nbsp;top: auto;<br>&nbsp;&nbsp;overflow: hidden;<br>}</blockquote> 
-<strong>Nota</strong> <br> Los siguientes enfoques de CSS NO harán lo mismo: 
-<ul> 
-<li> <code>display: none;</code> o <code>visibility: hidden;</code> oculta el contenido para todos, incluidos los usuarios de lectores de pantalla </li> 
-<li> Valores cero para tamaños de píxeles, tales como <code>width: 0px; height: 0px;</code> elimina ese elemento del flujo de su documento, lo que significa que los lectores de pantalla lo ignorarán </li> 
-</ul> 
-</section>
+<section id="description"> ¿Ha notado que todos los desafíos de accesibilidad aplicados hasta ahora no han usado ningún CSS? Esto es para mostrar la importancia de un esquema de documento lógico y el uso de etiquetas semánticamente significativas alrededor de su contenido antes de introducir el aspecto de diseño visual. Sin embargo, la magia de CSS también puede mejorar la accesibilidad en su página cuando desea ocultar visualmente el contenido destinado solo para lectores de pantalla. Esto sucede cuando la información está en un formato visual (como un gráfico), pero los usuarios de lectores de pantalla necesitan una presentación alternativa (como una tabla) para acceder a los datos. CSS se utiliza para colocar los elementos de solo lectura de pantalla fuera del área visual de la ventana del navegador. Aquí hay un ejemplo de las reglas CSS que logran esto: <blockquote> .sr-only { <br> posición: absoluta; <br> izquierda: -10000px; <br> ancho: 1px; <br> altura: 1px; <br> arriba: auto; <br> desbordamiento: oculto; <br> } </blockquote> <strong>Nota</strong> <br> Los siguientes enfoques de CSS NO harán lo mismo: <ul><li> <code>display: none;</code> o <code>visibility: hidden;</code> oculta el contenido para todos, incluidos los usuarios de lectores de pantalla </li><li> Valores cero para tamaños de píxeles, tales como <code>width: 0px; height: 0px;</code> elimina ese elemento del flujo de su documento, lo que significa que los lectores de pantalla lo ignorarán </li></ul></section>
 
 ## Instructions
-<section id='instructions'> 
-Camper Cat creó un gráfico de barras apiladas realmente genial para su página de entrenamiento y puso los datos en una tabla para sus usuarios con discapacidades visuales. La tabla ya tiene una clase <code>sr-only</code> , pero las reglas de CSS aún no están completas. Asigne a la <code>position</code> un valor absoluto, el valor <code>left</code> a -10000px, y el <code>width</code> y el <code>height</code> ambos valores de 1px. 
-</section>
+<section id="instructions"> Camper Cat creó un gráfico de barras apiladas realmente genial para su página de entrenamiento y puso los datos en una tabla para sus usuarios con discapacidades visuales. La tabla ya tiene una clase <code>sr-only</code> , pero las reglas de CSS aún no están completas. Asigne a la <code>position</code> un valor absoluto, el valor <code>left</code> a -10000px, y el <code>width</code> y el <code>height</code> ambos valores de 1px. </section>
 
 ## Tests
 <section id='tests'>
@@ -132,6 +120,7 @@ tests:
   </section>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+
 ```
 
 </div>

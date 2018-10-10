@@ -1,22 +1,19 @@
 ---
 id: bad87fee1348bd9aeda08845
 title: Responsively Style Checkboxes
-localeTitle: Casillas de verificación de estilo responsivo
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Casillas de verificación de estilo responsivo
 ---
 
 ## Description
-<section id='description'> 
-También puede usar las clases <code>col-xs-*</code> en elementos de <code>form</code> ! De esta manera, nuestras casillas de verificación se distribuirán de manera uniforme en toda la página, independientemente de la resolución de la pantalla. 
-Anide las tres casillas de verificación en un elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Luego anida cada uno de ellos en un elemento <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> . 
-</section>
+<section id="description"> ¡También puedes usar las clases <code>col-xs-*</code> en elementos de <code>form</code> ! De esta manera, nuestras casillas de verificación se distribuirán de manera uniforme en toda la página, independientemente de la resolución de la pantalla. Anide las tres casillas de verificación en un elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Luego anida cada uno de ellos en un elemento <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -105,6 +102,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

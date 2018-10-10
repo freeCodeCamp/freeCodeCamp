@@ -1,20 +1,16 @@
 ---
 id: 587d781b367417b2b2512abd
 title: Adjust the Size of a Header Versus a Paragraph Tag
-localeTitle: Ajustar el tamaño de un encabezado frente a una etiqueta de párrafo
 challengeType: 0
 videoUrl: ''
+localeTitle: Ajustar el tamaño de un encabezado frente a una etiqueta de párrafo
 ---
 
 ## Description
-<section id='description'> 
-El tamaño de fuente de las etiquetas de encabezado ( <code>h1</code> a <code>h6</code> ) generalmente debe ser mayor que el tamaño de fuente de las etiquetas de párrafo. Esto hace que sea más fácil para el usuario entender visualmente el diseño y el nivel de importancia de todo en la página. Utiliza la propiedad de <code>font-size</code> para ajustar el tamaño del texto en un elemento. 
-</section>
+<section id="description"> El tamaño de fuente de las etiquetas de encabezado ( <code>h1</code> a <code>h6</code> ) generalmente debe ser mayor que el tamaño de fuente de las etiquetas de párrafo. Esto hace que sea más fácil para el usuario entender visualmente el diseño y el nivel de importancia de todo en la página. Utiliza la propiedad de <code>font-size</code> para ajustar el tamaño del texto en un elemento. </section>
 
 ## Instructions
-<section id='instructions'> 
-Para hacer que el encabezado sea significativamente más grande que el párrafo, cambie el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h4</code> a 27 píxeles. 
-</section>
+<section id="instructions"> Para hacer que el encabezado sea significativamente más grande que el párrafo, cambie el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h4</code> a 27 píxeles. </section>
 
 ## Tests
 <section id='tests'>
@@ -75,6 +71,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

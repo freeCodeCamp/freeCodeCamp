@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3901000cf542c50fea3
+id: 5900f3901000cf542c50fea3
 challengeType: 5
 title: 'Problem 36: Double-base palindromes'
+videoUrl: ''
+localeTitle: 'Problema 36: palíndromos de doble base'
 ---
 
 ## Description
-<section id='description'> 
-El número decimal, 585 = 10010010012 (binario), es palindrómico en ambas bases. 
-Encuentre la suma de todos los números, menos que n, mientras que 1000 &lt;= n &lt;= 1000000, que son palíndromos en la base 10 y en la base 2. 
-(Tenga en cuenta que el número palindrómico, en cualquiera de las bases, puede no incluir ceros a la izquierda. ) 
-</section>
+<section id="description"> El número decimal, 585 = 10010010012 (binario), es palindrómico en ambas bases. Encuentre la suma de todos los números, menos que n, mientras que 1000 &lt;= n &lt;= 1000000, que son palíndromos en la base 10 y en la base 2. (Tenga en cuenta que el número palindrómico, en cualquiera de las bases, puede no incluir ceros a la izquierda). </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +43,7 @@ function doubleBasePalindromes(n) {
 }
 
 doubleBasePalindromes(1000000);
+
 ```
 
 </div>

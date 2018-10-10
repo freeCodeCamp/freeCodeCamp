@@ -1,24 +1,16 @@
 ---
 id: cf1111c1c11feddfaeb4bdef
 title: Subtract One Number from Another with JavaScript
-localeTitle: Resta un número de otro con JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Resta un número de otro con JavaScript
 ---
 
 ## Description
-<section id='description'> 
-También podemos restar un número de otro. 
-JavaScript usa el símbolo <code>-</code> para restar. 
-
-<strong>Ejemplo</strong> 
-<blockquote>myVar = 12 - 6; // assigned 6</blockquote> 
-
-</section>
+<section id="description"> También podemos restar un número de otro. JavaScript usa el símbolo <code>-</code> para restar. <p> <strong>Ejemplo</strong> </p><blockquote> myVar = 12 - 6; // asignado 6 </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Cambia el <code>0</code> por lo que la diferencia es <code>12</code> . 
-</section>
+<section id="instructions"> Cambia el <code>0</code> por lo que la diferencia es <code>12</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -42,7 +34,6 @@ tests:
 ```js
 var difference = 45 - 0;
 
-
 ```
 
 </div>
@@ -62,9 +53,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var difference = 45 - 33;
+// solution required
 ```
-
 </section>

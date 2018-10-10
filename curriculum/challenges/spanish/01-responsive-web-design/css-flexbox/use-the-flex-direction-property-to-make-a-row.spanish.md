@@ -1,22 +1,16 @@
 ---
 id: 587d78ab367417b2b2512af2
 title: Use the flex-direction Property to Make a Row
-localeTitle: Utilice la propiedad de dirección flexible para hacer una fila
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice la propiedad de dirección flexible para hacer una fila
 ---
 
 ## Description
-<section id='description'>
-Agregar <code>display: flex</code> a un elemento lo convierte en un contenedor flexible. Esto hace posible alinear cualquier elemento secundario de ese elemento en filas o columnas. Para ello, agregue la propiedad de <code>flex-direction</code> al elemento principal y configúrelo en fila o columna. La creación de una fila alineará a los hijos horizontalmente, y la creación de una columna alineará a los hijos verticalmente.
-Otras opciones para <code>flex-direction</code> son la fila-reversa y la columna-reversa.
-<strong>Nota</strong> <br> El valor predeterminado para la propiedad de <code>flex-direction</code> es fila.
-</section>
+<section id="description"> Añadiendo <code>display: flex</code> a un elemento lo convierte en un contenedor flexible. Esto hace posible alinear cualquier elemento secundario de ese elemento en filas o columnas. Para ello, agregue la propiedad de <code>flex-direction</code> al elemento principal y configúrelo en fila o columna. La creación de una fila alineará a los hijos horizontalmente, y la creación de una columna alineará a los hijos verticalmente. Otras opciones para <code>flex-direction</code> son la fila inversa y la columna inversa. <strong>Nota</strong> <br> El valor predeterminado para la propiedad de <code>flex-direction</code> es fila. </section>
 
 ## Instructions
-<section id='instructions'>
-Agregue la propiedad CSS <code>flex-direction</code> al elemento <code>#box-container</code> y asígnele un valor de fila-reversa.
-</section>
+<section id="instructions"> Agregue la propiedad <code>flex-direction</code> CSS al elemento <code>#box-container</code> y asígnele un valor de fila-inversa. </section>
 
 ## Tests
 <section id='tests'>
@@ -59,6 +53,7 @@ tests:
   <div id="box-1"></div>
   <div id="box-2"></div>
 </div>
+
 ```
 
 </div>

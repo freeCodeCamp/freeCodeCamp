@@ -1,18 +1,23 @@
 const fs = require('fs-extra');
 const gulp = require('gulp');
 
-const { locale } = require('../config/env.json');
+const {
+  locale
+} = require('../config/env.json');
 
-const { getChallengesForLang } = require('./getChallenges');
+const {
+  getChallengesForLang
+} = require('./getChallenges');
 
 function generateCurriculum(done) {
   return getChallengesForLang(locale)
-    .then(curriculum =>
+    .then(curriculum => {
+      fs.ensureFileSync(`./build/curriculum-${locale}.json`);
       fs.writeFile(
         `./build/curriculum-${locale}.json`,
         JSON.stringify(curriculum)
       )
-    )
+    })
     .then(done);
 }
 

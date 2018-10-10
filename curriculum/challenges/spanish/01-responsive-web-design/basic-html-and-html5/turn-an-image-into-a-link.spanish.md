@@ -1,24 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08820
 title: Turn an Image into a Link
-localeTitle: Convertir una imagen en un enlace
 challengeType: 0
 videoUrl: ''
+localeTitle: Convertir una imagen en un enlace
 ---
 
 ## Description
-<section id='description'>
-Se puede hacer elementos en enlaces anidando dentro de un <code>a</code> elemento.
-Nido de su imagen dentro de un <code>a</code> elemento. Aquí hay un ejemplo:
-<code>&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-running-cats&quot; alt=&quot;Three kittens running towards the camera.&quot;&gt;&lt;/a&gt;</code>
-Recuerda usar <code>#</code> como la propiedad <code>href</code> <code>a</code> elemento para convertirlo en un enlace muerto.
-</section>
+<section id="description"> Puede hacer que los elementos en los enlaces por los nidos de ellos dentro de un <code>a</code> elemento. Nido de su imagen dentro de un <code>a</code> elemento. Aquí hay un ejemplo: <code>&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-running-cats&quot; alt=&quot;Three kittens running towards the camera.&quot;&gt;&lt;/a&gt;</code> Recuerda usar <code>#</code> como propiedad <code>href</code> <code>a</code> elemento para convertirlo en un enlace muerto. </section>
 
 ## Instructions
-<section id='instructions'>
-Coloque el elemento de imagen existente dentro de un elemento de anclaje.
-Una vez que hayas hecho esto, desplázate sobre tu imagen con el cursor. El puntero normal de su cursor debe convertirse en el enlace que hace clic en el puntero. La foto es ahora un enlace.
-</section>
+<section id="instructions"> Coloque el elemento de imagen existente dentro de un elemento de anclaje. Una vez que hayas hecho esto, desplázate sobre tu imagen con el cursor. El puntero normal de su cursor debe convertirse en el enlace que hace clic en el puntero. La foto es ahora un enlace. </section>
 
 ## Tests
 <section id='tests'>
@@ -51,6 +43,7 @@ tests:
   <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
   <p>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</p>
 </main>
+
 ```
 
 </div>

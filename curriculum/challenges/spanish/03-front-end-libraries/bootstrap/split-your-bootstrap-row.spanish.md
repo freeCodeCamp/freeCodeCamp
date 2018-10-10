@@ -1,19 +1,16 @@
 ---
 id: bad87fee1348bd9aec908847
 title: Split Your Bootstrap Row
-localeTitle: Dividir tu fila Bootstrap
 challengeType: 0
+videoUrl: ''
+localeTitle: Dividir tu fila Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Ahora que tenemos una fila Bootstrap, dividámosla en dos columnas para albergar nuestros elementos. 
-Crea dos elementos <code>div</code> dentro de tu fila, ambos con la clase <code>col-xs-6</code> . 
-</section>
+<section id="description"> Ahora que tenemos una fila Bootstrap, dividámosla en dos columnas para albergar nuestros elementos. Cree dos elementos <code>div</code> dentro de su fila, ambos con la clase <code>col-xs-6</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +40,7 @@ tests:
 
   </div>
 </div>
+
 ```
 
 </div>

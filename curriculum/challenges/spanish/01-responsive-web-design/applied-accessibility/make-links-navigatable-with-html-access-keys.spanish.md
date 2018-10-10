@@ -1,23 +1,16 @@
 ---
 id: 587d7790367417b2b2512aaf
 title: Make Links Navigatable with HTML Access Keys
-localeTitle: Haga que los enlaces sean navegables con claves de acceso HTML
 challengeType: 0
 videoUrl: ''
+localeTitle: Haga que los enlaces sean navegables con claves de acceso HTML
 ---
 
 ## Description
-<section id='description'> 
-HTML ofrece la <code>accesskey</code> atributo para especificar una tecla de acceso directo para activar o traer el foco a un elemento. Esto puede hacer que la navegación sea más eficiente para usuarios que solo usan el teclado. 
-HTML5 permite que este atributo se use en cualquier elemento, pero es particularmente útil cuando se usa con los interactivos. Esto incluye enlaces, botones y controles de formulario. 
-Aquí hay un ejemplo: 
-<code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code> 
-</section>
+<section id="description"> HTML ofrece la <code>accesskey</code> atributo para especificar una tecla de acceso directo para activar o traer el foco a un elemento. Esto puede hacer que la navegación sea más eficiente para usuarios que solo usan el teclado. HTML5 permite que este atributo se use en cualquier elemento, pero es particularmente útil cuando se usa con los interactivos. Esto incluye enlaces, botones y controles de formulario. Aquí hay un ejemplo: <code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Camper Cat desea que los enlaces que se encuentran alrededor de los dos títulos de artículos de blogs tengan atajos de teclado para que los usuarios de su sitio puedan navegar rápidamente a la historia completa. Agregue un atributo de <code>accesskey</code> a ambos enlaces y establezca el primero en &quot;g&quot; (para Garfield) y el segundo en &quot;c&quot; (para Chuck Norris). 
-</section>
+<section id="instructions"> Camper Cat desea que los enlaces que se encuentran alrededor de los dos títulos de los artículos del blog tengan atajos de teclado para que los usuarios de su sitio puedan navegar rápidamente a la historia completa. Agregue un atributo de <code>accesskey</code> a ambos enlaces y establezca el primero en &quot;g&quot; (para Garfield) y el segundo en &quot;c&quot; (para Chuck Norris). </section>
 
 ## Tests
 <section id='tests'>
@@ -65,6 +58,7 @@ tests:
   </article>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+
 ```
 
 </div>

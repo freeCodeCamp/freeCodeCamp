@@ -1,23 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244e2
 title: Caesars Cipher
-localeTitle: Cifrado de Caesars
 challengeType: 5
 isRequired: true
+videoUrl: ''
+localeTitle: Cifrado de Caesars
 ---
 
 ## Description
-<section id='description'> 
-Uno de los <dfn>cifrados</dfn> más simples y más conocidos es el <code>Caesar cipher</code> , también conocido como <code>shift cipher</code> . En un <code>shift cipher</code> los significados de las letras se desplazan en una cantidad determinada. 
-Un uso moderno común es el cifrado <a href="https://en.wikipedia.org/wiki/ROT13" target='_blank'>ROT13</a> , donde los valores de las letras se desplazan en 13 lugares. Así, &#39;A&#39; ↔ &#39;N&#39;, &#39;B&#39; ↔ &#39;O&#39; y así sucesivamente. 
-Escribir una función que toma una cadena codificada <a href="https://en.wikipedia.org/wiki/ROT13" target='_blank'>ROT13</a> como entrada y devuelve una cadena decodificada. 
-Todas las letras serán mayúsculas. No transforme ningún carácter no alfabético (es decir, espacios, puntuación), pero sí páselos. 
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. 
-</section>
+<section id="description"> Uno de los <dfn>cifrados</dfn> más simples y más conocidos es el <code>Caesar cipher</code> , también conocido como <code>shift cipher</code> . En un <code>shift cipher</code> los significados de las letras se desplazan en una cantidad determinada. Un uso moderno común es el cifrado <a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a> , donde los valores de las letras se desplazan en 13 lugares. Así, &#39;A&#39; ↔ &#39;N&#39;, &#39;B&#39; ↔ &#39;O&#39; y así sucesivamente. Escriba una función que tome una cadena codificada <a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a> como entrada y devuelva una cadena decodificada. Todas las letras serán mayúsculas. No transforme ningún carácter no alfabético (es decir, espacios, puntuación), pero sí páselos. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +45,7 @@ function rot13(str) { // LBH QVQ VG!
 
 // Change the inputs below to test
 rot13("SERR PBQR PNZC");
+
 ```
 
 </div>
@@ -62,33 +57,7 @@ rot13("SERR PBQR PNZC");
 ## Solution
 <section id='solution'>
 
-
 ```js
-var lookup = {
-  'A': 'N','B': 'O','C': 'P','D': 'Q',
-  'E': 'R','F': 'S','G': 'T','H': 'U',
-  'I': 'V','J': 'W','K': 'X','L': 'Y',
-  'M': 'Z','N': 'A','O': 'B','P': 'C',
-  'Q': 'D','R': 'E','S': 'F','T': 'G',
-  'U': 'H','V': 'I','W': 'J','X': 'K',
-  'Y': 'L','Z': 'M'
-};
-
-function rot13(encodedStr) {
-  var codeArr = encodedStr.split("");  // String to Array
-  var decodedArr = []; // Your Result goes here
-  // Only change code below this line
-
-  decodedArr = codeArr.map(function(letter) {
-    if(lookup.hasOwnProperty(letter)) {
-      letter = lookup[letter];
-    }
-    return letter;
-  });
-
-  // Only change code above this line
-  return decodedArr.join(""); // Array to String
-}
+// solution required
 ```
-
 </section>

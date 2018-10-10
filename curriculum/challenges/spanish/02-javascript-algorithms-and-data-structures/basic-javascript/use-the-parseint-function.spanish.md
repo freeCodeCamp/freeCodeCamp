@@ -1,21 +1,16 @@
 ---
 id: 587d7b7e367417b2b2512b23
 title: Use the parseInt Function
-localeTitle: Usa la función de parseInt
 challengeType: 1
+videoUrl: ''
+localeTitle: Usa la función de parseInt
 ---
 
 ## Description
-<section id='description'> 
-La <code>parseInt()</code> analiza una cadena y devuelve un entero. Aquí hay un ejemplo: 
-<code>var a = parseInt(&quot;007&quot;);</code> 
-La función anterior convierte la cadena &quot;007&quot; en un número entero 7. Si el primer carácter de la cadena no se puede convertir en un número, devuelve <code>NaN</code> . 
-</section>
+<section id="description"> La <code>parseInt()</code> analiza una cadena y devuelve un entero. Aquí hay un ejemplo: <code>var a = parseInt(&quot;007&quot;);</code> La función anterior convierte la cadena &quot;007&quot; en un número entero 7. Si el primer carácter de la cadena no se puede convertir en un número, devuelve <code>NaN</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Use <code>parseInt()</code> en la función <code>convertToInteger</code> para que convierta la cadena de entrada <code>str</code> en un entero, y la devuelva. 
-</section>
+<section id="instructions"> Use <code>parseInt()</code> en la función <code>convertToInteger</code> para que convierta la cadena de entrada <code>str</code> en un entero, y la devuelva. </section>
 
 ## Tests
 <section id='tests'>
@@ -48,6 +43,7 @@ function convertToInteger(str) {
 }
 
 convertToInteger("56");
+
 ```
 
 </div>

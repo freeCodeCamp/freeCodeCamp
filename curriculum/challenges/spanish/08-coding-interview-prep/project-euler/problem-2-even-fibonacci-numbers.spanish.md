@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f36e1000cf542c50fe81
+id: 5900f36e1000cf542c50fe81
 challengeType: 5
 title: 'Problem 2: Even Fibonacci Numbers'
+videoUrl: ''
+localeTitle: 'Problema 2: incluso los números de Fibonacci'
 ---
 
 ## Description
-<section id='description'> 
-Cada nuevo término en la secuencia de Fibonacci se genera al agregar los dos términos anteriores. Al comenzar con 1 y 2, los primeros 10 términos serán: 
-<div style='text-align: center;'> 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ... </div> 
-Al considerar los términos en la secuencia de Fibonacci cuyos valores no exceden el término <code>n</code> , encuentre la suma de los términos de valor par. 
-</section>
+<section id="description"> Cada nuevo término en la secuencia de Fibonacci se genera al agregar los dos términos anteriores. Al comenzar con 1 y 2, los primeros 10 términos serán: <div style="text-align: center;"> 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ... </div> Al considerar los términos en la secuencia de Fibonacci cuyos valores no exceden el término <code>n</code> , encuentre la suma de los términos de valor par. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -49,6 +45,7 @@ function fiboEvenSum(n) {
 }
 
 fiboEvenSum(10);
+
 ```
 
 </div>
@@ -60,22 +57,7 @@ fiboEvenSum(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const fiboEvenSum = (number) => {
-  let temp, sum = 0, a = 0, b = 1;
-    while (number >= 0) {
-      temp = a;
-      a = b;
-      b += temp;
-      number --;
-      if ((b % 2) === 0) {
-        sum += b;
-      }
-    }
-
-  return sum;
-}
+// solution required
 ```
-
 </section>

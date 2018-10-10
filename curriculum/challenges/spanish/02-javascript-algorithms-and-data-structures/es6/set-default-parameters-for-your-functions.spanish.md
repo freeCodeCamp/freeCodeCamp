@@ -1,29 +1,23 @@
 ---
 id: 587d7b88367417b2b2512b46
 title: Set Default Parameters for Your Functions
-localeTitle: Establecer parámetros predeterminados para sus funciones
 challengeType: 1
+videoUrl: ''
+localeTitle: Establecer parámetros predeterminados para sus funciones
 ---
 
 ## Description
-<section id='description'>
-Para ayudarnos a crear funciones más flexibles, ES6 introduce <dfn>parámetros predeterminados</dfn> para las funciones.
-Echa un vistazo a este código:
-<blockquote>function greeting(name = "Anonymous") {<br>&nbsp;&nbsp;return "Hello " + name;<br>}<br>console.log(greeting("John")); // Hello John<br>console.log(greeting()); // Hello Anonymous</blockquote>
-El parámetro predeterminado se activa cuando el argumento no está especificado (no está definido). Como puede ver en el ejemplo anterior, el <code>name</code> del parámetro recibirá su valor predeterminado <code>&quot;Anonymous&quot;</code> cuando no proporcione un valor para el parámetro. Puede agregar valores predeterminados para tantos parámetros como desee.
-</section>
+<section id="description"> Para ayudarnos a crear funciones más flexibles, ES6 introduce <dfn>parámetros predeterminados</dfn> para las funciones. Echa un vistazo a este código: <blockquote> función de saludo (nombre = &quot;Anónimo&quot;) { <br> devuelve &quot;Hola&quot; + nombre; <br> } <br> console.log (saludo (&quot;John&quot;)); // Hola John <br> console.log (saludo ()); // Hola Anónimo </blockquote> El parámetro predeterminado se activa cuando el argumento no está especificado (no está definido). Como puede ver en el ejemplo anterior, el <code>name</code> del parámetro recibirá su valor predeterminado <code>&quot;Anonymous&quot;</code> cuando no proporcione un valor para el parámetro. Puede agregar valores predeterminados para tantos parámetros como desee. </section>
 
 ## Instructions
-<section id='instructions'>
-Modifique el <code>increment</code> la función agregando parámetros predeterminados para que agregue 1 al <code>number</code> si no se especifica el <code>value</code> .
-</section>
+<section id="instructions"> Modifique el <code>increment</code> la función agregando parámetros predeterminados para que agregue 1 al <code>number</code> si no se especifica el <code>value</code> . </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'El resultado del <code>increment(5, 2)</code> debe ser <code>7</code> '
+  - text: 'El resultado del <code>increment(5, 2)</code> debe ser <code>7</code> .'
     testString: 'assert(increment(5, 2) === 7, "The result of <code>increment(5, 2)</code> should be <code>7</code>.");'
   - text: El resultado del <code>increment(5)</code> debe ser <code>6</code> .
     testString: 'assert(increment(5) === 6, "The result of <code>increment(5)</code> should be <code>6</code>.");'
@@ -48,6 +42,7 @@ const increment = (function() {
 })();
 console.log(increment(5, 2)); // returns 7
 console.log(increment(5)); // returns 6
+
 ```
 
 </div>

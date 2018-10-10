@@ -1,23 +1,16 @@
 ---
 id: 587d7b8f367417b2b2512b61
 title: Use the map Method to Extract Data from an Array
-localeTitle: Utilice el método de mapa para extraer datos de una matriz
 challengeType: 1
+videoUrl: ''
+localeTitle: Utilice el método de mapa para extraer datos de una matriz
 ---
 
 ## Description
-<section id='description'>
-Hasta ahora hemos aprendido a usar funciones puras para evitar efectos secundarios en un programa. Además, hemos visto que el valor de tener una función solo depende de sus argumentos de entrada.
-Esto es solo el comienzo. Como su nombre lo indica, la programación funcional se centra en una teoría de funciones.
-Tendría sentido poder pasarlos como argumentos a otras funciones y devolver una función desde otra función. Las funciones se consideran <code>First Class Objects</code> en JavaScript, lo que significa que se pueden usar como cualquier otro objeto. Pueden guardarse en variables, almacenarse en un objeto o pasarse como argumentos de función.
-Comencemos con algunas funciones de matriz simples, que son métodos en el prototipo de objeto de matriz. En este ejercicio estamos viendo <code>Array.prototype.map()</code> , o más simplemente un <code>map</code> .
-Recuerde que el método de <code>map</code> es una forma de iterar sobre cada elemento en una matriz. Crea una nueva matriz (sin cambiar la original) después de aplicar una función de devolución de llamada a cada elemento.
-</section>
+<section id="description"> Hasta ahora hemos aprendido a usar funciones puras para evitar efectos secundarios en un programa. Además, hemos visto que el valor de tener una función solo depende de sus argumentos de entrada. Este es sólo el comienzo. Como su nombre lo indica, la programación funcional se centra en una teoría de funciones. Tendría sentido poder pasarlos como argumentos a otras funciones y devolver una función desde otra función. Las funciones se consideran <code>First Class Objects</code> en JavaScript, lo que significa que se pueden usar como cualquier otro objeto. Pueden guardarse en variables, almacenarse en un objeto o pasarse como argumentos de función. Comencemos con algunas funciones de matriz simples, que son métodos en el prototipo de objeto de matriz. En este ejercicio estamos viendo <code>Array.prototype.map()</code> , o más simplemente un <code>map</code> . Recuerde que el método de <code>map</code> es una forma de iterar sobre cada elemento en una matriz. Crea una nueva matriz (sin cambiar la original) después de aplicar una función de devolución de llamada a cada elemento. </section>
 
 ## Instructions
-<section id='instructions'>
-La matriz <code>watchList</code> contiene objetos con información sobre varias películas. Use el <code>map</code> para extraer el título y la clasificación de la <code>watchList</code> de <code>watchList</code> y guarde la nueva matriz en la variable de <code>rating</code> . El código en el editor actualmente usa un bucle <code>for</code> para hacer esto, reemplaza la funcionalidad de bucle con tu expresión de <code>map</code> .
-</section>
+<section id="instructions"> La matriz <code>watchList</code> contiene objetos con información sobre varias películas. Use el <code>map</code> para extraer el título y la clasificación de la <code>watchList</code> de <code>watchList</code> y guarde la nueva matriz en la variable de <code>rating</code> . El código en el editor actualmente usa un bucle <code>for</code> para hacer esto, reemplaza la funcionalidad de bucle con tu expresión de <code>map</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -30,7 +23,7 @@ tests:
     testString: 'assert(!code.match(/for\s*?\(.+?\)/g), "Your code should not use a <code>for</code> loop.");'
   - text: Su código debe utilizar el método de <code>map</code> .
     testString: 'assert(code.match(/\.map/g), "Your code should use the <code>map</code> method.");'
-  - text: La <code>rating</code> debería ser igual a <code>[{&quot;title&quot;:&quot;Inception&quot;,&quot;rating&quot;:&quot;8.8&quot;},{&quot;title&quot;:&quot;Interstellar&quot;,&quot;rating&quot;:&quot;8.6&quot;},{&quot;title&quot;:&quot;The Dark Knight&quot;,&quot;rating&quot;:&quot;9.0&quot;},{&quot;title&quot;:&quot;Batman Begins&quot;,&quot;rating&quot;:&quot;8.3&quot;},{&quot;title&quot;:&quot;Avatar&quot;,&quot;rating&quot;:&quot;7.9&quot;}]</code> . '
+  - text: '<code>rating</code> debería ser igual a <code>[{&quot;title&quot;:&quot;Inception&quot;,&quot;rating&quot;:&quot;8.8&quot;},{&quot;title&quot;:&quot;Interstellar&quot;,&quot;rating&quot;:&quot;8.6&quot;},{&quot;title&quot;:&quot;The Dark Knight&quot;,&quot;rating&quot;:&quot;9.0&quot;},{&quot;title&quot;:&quot;Batman Begins&quot;,&quot;rating&quot;:&quot;8.3&quot;},{&quot;title&quot;:&quot;Avatar&quot;,&quot;rating&quot;:&quot;7.9&quot;}]</code> .'
     testString: 'assert(JSON.stringify(rating) === JSON.stringify([{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]), "<code>rating</code> should equal <code>[{"title":"Inception","rating":"8.8"},{"title":"Interstellar","rating":"8.6"},{"title":"The Dark Knight","rating":"9.0"},{"title":"Batman Begins","rating":"8.3"},{"title":"Avatar","rating":"7.9"}]</code>.");'
 
 ```
@@ -167,6 +160,7 @@ for(var i=0; i < watchList.length; i++){
 // Add your code above this line
 
 console.log(rating);
+
 ```
 
 </div>

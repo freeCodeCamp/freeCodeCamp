@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f47e1000cf542c50ff90
+id: 5900f47e1000cf542c50ff90
 challengeType: 5
 title: 'Problem 273: Sum of Squares'
+videoUrl: ''
+localeTitle: 'Problema 273: Suma de cuadrados'
 ---
 
 ## Description
-<section id='description'> 
-Considera las ecuaciones de la forma: a2 + b2 = N, 0 ≤ a ≤ b, a, by N entero. 
-
-Para N = 65 hay dos soluciones: 
-a = 1, b = 8 y a = 4, b = 7. 
-Llamamos a S (N) la suma de los valores de a de todas las soluciones de a2 + b2 = N, 0 ≤ a ≤ b, a, by N entero. 
-Así, S (65) = 1 + 4 = 5. 
-Encuentre FindS (N), para todos los cuadrados libres N solo divisibles por números primos de la forma 4k + 1 con 4k + 1 &lt;150. 
-</section>
+<section id="description"> Considere las ecuaciones de la forma: a2 + b2 = N, 0 ≤ a ≤ b, a, by N entero. <p> Para N = 65 hay dos soluciones: a = 1, b = 8 y a = 4, b = 7. Llamamos a S (N) la suma de los valores de a de todas las soluciones de a2 + b2 = N, 0 ≤ a ≤ b, a, by N entero. Por lo tanto, S (65) = 1 + 4 = 5. Encuentre ∑S (N), para todos los cuadrados libres N solo divisibles por números primos de la forma 4k + 1 con 4k + 1 &lt;150. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -45,6 +37,7 @@ function euler273() {
 }
 
 euler273();
+
 ```
 
 </div>

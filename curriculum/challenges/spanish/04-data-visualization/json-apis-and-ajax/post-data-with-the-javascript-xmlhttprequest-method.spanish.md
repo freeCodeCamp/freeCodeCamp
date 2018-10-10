@@ -1,25 +1,16 @@
 ---
 id: 587d7faf367417b2b2512be9
 title: Post Data with the JavaScript XMLHttpRequest Method
-localeTitle: Publicar datos con el método XMLHttpRequest de JavaScript
 challengeType: 6
+videoUrl: ''
+localeTitle: Publicar datos con el método XMLHttpRequest de JavaScript
 ---
 
 ## Description
-<section id='description'> 
-En los ejemplos anteriores, recibió datos de un recurso externo. También puede enviar datos a un recurso externo, siempre que ese recurso sea compatible con las solicitudes de AJAX y conozca la URL. 
-El método <code>XMLHttpRequest</code> de JavaScript también se utiliza para publicar datos en un servidor. Aquí hay un ejemplo: 
-<blockquote>req=new XMLHttpRequest();<br>req.open("POST",url,true);<br>req.setRequestHeader('Content-Type','text/plain');<br>req.onreadystatechange=function(){<br>&nbsp;&nbsp;if(req.readyState==4 && req.status==200){<br>&nbsp;&nbsp;&nbsp;&nbsp;document.getElementsByClassName('message')[0].innerHTML=req.responseText;<br>&nbsp;&nbsp;}<br>};<br>req.send(userName);</blockquote> 
-Has visto varios de estos métodos antes. Aquí el método <code>open</code> inicializa la solicitud como un &quot;POST&quot; a la URL dada del recurso externo, y utiliza el <code>true</code> Booleano para hacerlo asíncrono. 
-El método <code>setRequestHeader</code> establece el valor de un encabezado de solicitud HTTP, que contiene información sobre el remitente y la solicitud. Debe llamarse después del método <code>open</code> , pero antes del método de <code>send</code> . Los dos parámetros son el nombre del encabezado y el valor para establecer como el cuerpo de ese encabezado. 
-A continuación, el <code>onreadystatechange</code> eventos <code>onreadystatechange</code> maneja un cambio en el estado de la solicitud. Un estado <code>readyState</code> de 4 significa que la operación está completa, y un <code>status</code> de 200 significa que fue una solicitud exitosa. El HTML del documento puede ser actualizado. 
-Finalmente, el método de <code>send</code> envía la solicitud con el valor <code>userName</code> , que fue dado por el usuario en el campo de <code>input</code> . 
-</section>
+<section id="description"> En los ejemplos anteriores, recibió datos de un recurso externo. También puede enviar datos a un recurso externo, siempre que ese recurso sea compatible con las solicitudes de AJAX y conozca la URL. El método <code>XMLHttpRequest</code> de JavaScript también se utiliza para publicar datos en un servidor. Aquí hay un ejemplo: <blockquote> req = new XMLHttpRequest (); <br> req.open (&quot;POST&quot;, url, true); <br> req.setRequestHeader (&#39;Content-Type&#39;, &#39;text / plain&#39;); <br> req.onreadystatechange = function () { <br> if (req.readyState == 4 &amp;&amp; req.status == 200) { <br> document.getElementsByClassName (&#39;message&#39;) [0] .innerHTML = req.responseText; <br> } <br> }; <br> req.send (nombre de usuario); </blockquote> Has visto varios de estos métodos antes. Aquí el método <code>open</code> inicializa la solicitud como un &quot;POST&quot; a la URL dada del recurso externo, y utiliza el <code>true</code> Booleano para hacerlo asíncrono. El método <code>setRequestHeader</code> establece el valor de un encabezado de solicitud HTTP, que contiene información sobre el remitente y la solicitud. Debe llamarse después del método <code>open</code> , pero antes del método de <code>send</code> . Los dos parámetros son el nombre del encabezado y el valor para establecer como el cuerpo de ese encabezado. A continuación, el <code>onreadystatechange</code> escucha de eventos <code>onreadystatechange</code> maneja un cambio en el estado de la solicitud. Un estado <code>readyState</code> de 4 significa que la operación está completa, y un <code>status</code> de 200 significa que fue una solicitud exitosa. El HTML del documento puede ser actualizado. Finalmente, el método de <code>send</code> envía la solicitud con el valor <code>userName</code> , que fue dado por el usuario en el campo de <code>input</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Actualice el código para crear y enviar una solicitud &quot;POST&quot;. Luego ingrese su nombre en el cuadro de entrada y haga clic en &quot;Enviar mensaje&quot;. Su función AJAX reemplazará &quot;La respuesta del servidor estará aquí&quot;. Con la respuesta del servidor. En este caso, es su nombre añadido con &quot;ama a los gatos&quot;. 
-</section>
+<section id="instructions"> Actualice el código para crear y enviar una solicitud &quot;POST&quot;. Luego ingrese su nombre en el cuadro de entrada y haga clic en &quot;Enviar mensaje&quot;. Su función AJAX reemplazará &quot;La respuesta del servidor estará aquí&quot;. Con la respuesta del servidor. En este caso, es su nombre añadido con &quot;ama a los gatos&quot;. </section>
 
 ## Tests
 <section id='tests'>
@@ -99,6 +90,7 @@ tests:
     Send Message
   </button>
 </p>
+
 ```
 
 </div>

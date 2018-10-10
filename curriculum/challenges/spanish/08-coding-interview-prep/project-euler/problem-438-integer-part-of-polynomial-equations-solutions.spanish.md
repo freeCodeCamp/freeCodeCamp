@@ -1,30 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5231000cf542c510034
+id: 5900f5231000cf542c510034
 challengeType: 5
 title: 'Problem 438: Integer part of polynomial equation"s solutions'
+videoUrl: ''
+localeTitle: 'Problema 438: parte entera de las soluciones de la ecuación polinomial'
 ---
 
 ## Description
-<section id='description'> 
-Para una n-tupla de enteros t = (a1, ..., an), sea (x1, ..., xn) las soluciones de la ecuación polinomial xn + a1xn-1 + a2xn-2 + ... + an-1x + an = 0. 
-
-
-Considere las siguientes dos condiciones: 
-x1, ..., xn son todas reales. 
-Si x1, ..., xn están ordenados, ⌊xi⌋ = i para 1 ≤ i ≤ n. (⌊ · ⌋: función de piso.) 
-
-En el caso de n = 4, hay 12 nuplas de enteros que satisfacen ambas condiciones. 
-Definimos S (t) como la suma de los valores absolutos de los enteros en t. 
-Para n = 4 podemos verificar que ∑S (t) = 2087 para todas las n-tuplas t que satisfacen ambas condiciones. 
-
-
-Encuentra ∑S (t) para n = 7. 
-</section>
+<section id="description"> Para una n-tupla de enteros t = (a1, ..., an), sea (x1, ..., xn) las soluciones de la ecuación polinomial xn + a1xn-1 + a2xn-2 + ... + an-1x + an = 0. <p> Considere las siguientes dos condiciones: x1, ..., xn son todas reales. Si x1, ..., xn están ordenados, ⌊xi⌋ = i para 1 ≤ i ≤ n. (⌊ · ⌋: función de piso.) </p><p> En el caso de n = 4, hay 12 nudillos de enteros que satisfacen ambas condiciones. Definimos S (t) como la suma de los valores absolutos de los enteros en t. Para n = 4 podemos verificar que ∑S (t) = 2087 para todas las n-tuplas t que satisfacen ambas condiciones. </p><p> Encuentra ∑S (t) para n = 7. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +37,7 @@ function euler438() {
 }
 
 euler438();
+
 ```
 
 </div>

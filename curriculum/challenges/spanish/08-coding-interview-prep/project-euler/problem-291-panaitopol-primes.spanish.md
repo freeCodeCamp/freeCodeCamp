@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f48f1000cf542c50ffa2
+id: 5900f48f1000cf542c50ffa2
 challengeType: 5
 title: 'Problem 291: Panaitopol Primes'
+videoUrl: ''
+localeTitle: 'Problema 291: Panaitopol Primes'
 ---
 
 ## Description
-<section id='description'> 
-Un número primo p se llama un primo de Panaitopol si para algunos enterosx e y positivos. 
-
-
-Halla cuántos primos de Panaitopol son menores que 5 × 1015. 
-</section>
+<section id="description"> Un número primo p se llama un primo de Panaitopol si para algunos enteros positivos e y. <p> Encuentra cuántos primos de Panaitopol son menores que 5 × 1015. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -42,6 +37,7 @@ function euler291() {
 }
 
 euler291();
+
 ```
 
 </div>

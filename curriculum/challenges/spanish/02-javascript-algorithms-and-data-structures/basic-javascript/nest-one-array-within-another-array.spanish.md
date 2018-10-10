@@ -1,18 +1,16 @@
 ---
 id: cf1111c1c11feddfaeb7bdef
 title: Nest one Array within Another Array
-localeTitle: Anidar una matriz dentro de otra matriz
 challengeType: 1
+videoUrl: ''
+localeTitle: Anidar una matriz dentro de otra matriz
 ---
 
 ## Description
-<section id='description'> 
-También puede anidar matrices dentro de otras matrices, como esta: <code>[[&quot;Bulls&quot;, 23], [&quot;White Sox&quot;, 45]]</code> . Esto también se llama una <dfn>matriz multidimensional <dfn>. <code>0</code></dfn></dfn> </section>
+<section id="description"> También puede anidar matrices dentro de otras matrices, como esta: <code>[[&quot;Bulls&quot;, 23], [&quot;White Sox&quot;, 45]]</code> . Esto también se llama una <dfn>matriz multidimensional <dfn>.</dfn></dfn> </section>
 
 ## Instructions
-<section id='instructions'> 
-Crea una matriz anidada llamada <code>myArray</code> . 
-</section>
+<section id="instructions"> Crea una matriz anidada llamada <code>myArray</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -57,9 +55,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var myArray = [[1,2,3]];
+// solution required
 ```
-
 </section>

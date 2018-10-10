@@ -1,23 +1,16 @@
 ---
 id: bad88fee1348ce8acef08815
 title: Use the Bootstrap Grid to Put Elements Side By Side
-localeTitle: Usa la rejilla de Bootstrap para poner los elementos lado a lado
 challengeType: 0
+videoUrl: ''
+localeTitle: Usa la rejilla de Bootstrap para poner los elementos lado a lado
 ---
 
 ## Description
-<section id='description'> 
-Bootstrap utiliza un sistema de cuadrícula receptivo de 12 columnas, lo que facilita colocar los elementos en filas y especificar el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap se pueden aplicar a un elemento <code>div</code> . 
-Bootstrap tiene diferentes atributos de ancho de columna que utiliza según la anchura de la pantalla del usuario. Por ejemplo, los teléfonos tienen pantallas estrechas y las computadoras portátiles tienen pantallas más anchas. 
-Tomemos, por ejemplo, la clase <code>col-md-*</code> . Aquí, <code>md</code> significa medio, y <code>*</code> es un número que especifica cuántas columnas de ancho debe tener el elemento. En este caso, se está especificando el ancho de columna de un elemento en una pantalla de tamaño mediano, como una computadora portátil. 
-En la aplicación Cat Photo que estamos construyendo, usaremos <code>col-xs-*</code> , donde <code>xs</code> significa extra pequeño (como una pantalla de teléfono móvil extra pequeño), y <code>*</code> es el número de columnas que especifican cuántas columnas de ancho El elemento debe ser. 
-Ponga los botones <code>Like</code> , <code>Info</code> y <code>Delete</code> lado a lado anidando los tres dentro de un elemento <code>&lt;div class=&quot;row&quot;&gt;</code> , luego cada uno dentro de un <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> elemento. 
-La clase de <code>row</code> se aplica a un <code>div</code> , y los propios botones se pueden anidar dentro de ella. 
-</section>
+<section id="description"> Bootstrap utiliza un sistema de cuadrícula receptivo de 12 columnas, lo que facilita colocar los elementos en filas y especificar el ancho relativo de cada elemento. La mayoría de las clases de Bootstrap se pueden aplicar a un elemento <code>div</code> . Bootstrap tiene diferentes atributos de ancho de columna que utiliza según la anchura de la pantalla del usuario. Por ejemplo, los teléfonos tienen pantallas estrechas y las computadoras portátiles tienen pantallas más anchas. Tomemos, por ejemplo, la clase <code>col-md-*</code> . Aquí, <code>md</code> significa medio, y <code>*</code> es un número que especifica cuántas columnas de ancho debe tener el elemento. En este caso, se está especificando el ancho de columna de un elemento en una pantalla de tamaño mediano, como una computadora portátil. En la aplicación de fotos Cat que estamos construyendo, usaremos <code>col-xs-*</code> , donde <code>xs</code> significa extra pequeño (como una pantalla de teléfono móvil extra pequeño), y <code>*</code> es el número de columnas que especifican cuántas columnas de ancho hay El elemento debe ser. Ponga los botones <code>Like</code> , <code>Info</code> y <code>Delete</code> lado a lado al anidar los tres dentro de un elemento <code>&lt;div class=&quot;row&quot;&gt;</code> , luego cada uno dentro de un elemento <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> . La clase de <code>row</code> se aplica a un <code>div</code> , y los propios botones se pueden anidar dentro de ella. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -104,6 +97,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

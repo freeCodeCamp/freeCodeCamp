@@ -1,20 +1,16 @@
 ---
 id: 56bbb991ad1ed5201cd392d3
 title: Delete Properties from a JavaScript Object
-localeTitle: Eliminar propiedades de un objeto de JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Eliminar propiedades de un objeto de JavaScript
 ---
 
 ## Description
-<section id='description'> 
-También podemos eliminar propiedades de objetos como este: 
-<code>delete ourDog.bark;</code> 
-</section>
+<section id="description"> También podemos eliminar propiedades de objetos como este: <code>delete ourDog.bark;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Eliminar la propiedad <code>&quot;tails&quot;</code> de <code>myDog</code> . Puede usar la notación de punto o corchete. 
-</section>
+<section id="instructions"> Eliminar la propiedad <code>&quot;tails&quot;</code> de <code>myDog</code> . Puede usar la notación de punto o corchete. </section>
 
 ## Tests
 <section id='tests'>
@@ -58,7 +54,6 @@ var myDog = {
 
 // Only change code below this line.
 
-
 ```
 
 </div>
@@ -78,23 +73,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var ourDog = {
-  "name": "Camper",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["everything!"],
-  "bark": "bow-wow"
-};
-var myDog = {
-  "name": "Happy Coder",
-  "legs": 4,
-  "tails": 1,
-  "friends": ["freeCodeCamp Campers"],
-  "bark": "woof"
-};
-delete myDog.tails;
+// solution required
 ```
-
 </section>

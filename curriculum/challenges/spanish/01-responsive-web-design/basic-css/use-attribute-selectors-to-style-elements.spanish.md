@@ -1,23 +1,16 @@
 ---
 id: 58c383d33e2e3259241f3076
 title: Use Attribute Selectors to Style Elements
-localeTitle: Usar selectores de atributos para elementos de estilo
 challengeType: 0
 videoUrl: ''
+localeTitle: Usar selectores de atributos para elementos de estilo
 ---
 
 ## Description
-<section id='description'> 
-Ha estado asignando atributos de <code>id</code> o <code>class</code> a los elementos que desea diseñar específicamente. Estos son conocidos como ID y selectores de clase. Hay otros selectores de CSS que puede usar para seleccionar grupos personalizados de elementos para personalizar. 
-Veamos nuevamente CatPhotoApp para practicar el uso de los selectores de CSS. 
-Para este desafío, utilizará el selector de atributo <code>[attr=value]</code> para diseñar las casillas de verificación en CatPhotoApp. Este selector combina y diseña elementos con un valor de atributo específico. Por ejemplo, el código siguiente cambia los márgenes de todos los elementos con el <code>type</code> atributo y el valor de <code>radio</code> correspondiente: 
-<blockquote>[type='radio'] {<br>&nbsp;&nbsp;margin: 20px 0px 20px 0px;<br>}</blockquote> 
-</section>
+<section id="description"> Ha estado asignando atributos de <code>id</code> o <code>class</code> a los elementos que desea diseñar específicamente. Estos son conocidos como ID y selectores de clase. Hay otros selectores de CSS que puede usar para seleccionar grupos personalizados de elementos para personalizar. Vamos a sacar CatPhotoApp de nuevo para practicar el uso de los selectores de CSS. Para este desafío, utilizará el selector de atributo <code>[attr=value]</code> para diseñar las casillas de verificación en CatPhotoApp. Este selector combina y diseña elementos con un valor de atributo específico. Por ejemplo, el código siguiente cambia los márgenes de todos los elementos con el <code>type</code> atributo y el valor de <code>radio</code> correspondiente: <blockquote> [tipo = &#39;radio&#39;] { <br> margen: 20px 0px 20px 0px; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Con el selector de atributos de <code>type</code> , intente dar a las casillas de verificación en CatPhotoApp un margen superior de 10 px y un margen inferior de 15 px. 
-</section>
+<section id="instructions"> Con el selector de atributos de <code>type</code> , intente dar a las casillas de verificación en CatPhotoApp un margen superior de 10 px y un margen inferior de 15 px. </section>
 
 ## Tests
 <section id='tests'>
@@ -103,6 +96,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

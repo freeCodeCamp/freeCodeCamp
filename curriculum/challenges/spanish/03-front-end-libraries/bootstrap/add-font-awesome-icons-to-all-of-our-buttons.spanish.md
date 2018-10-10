@@ -1,23 +1,19 @@
 ---
 id: bad87fee1348bd9aedc08845
 title: Add Font Awesome Icons to all of our Buttons
-localeTitle: Añadir iconos impresionantes de fuente a todos nuestros botones
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.css'
     raw: true
 challengeType: 0
+videoUrl: ''
+localeTitle: Añadir iconos impresionantes de fuente a todos nuestros botones
 ---
 
 ## Description
-<section id='description'>
-Font Awesome es una conveniente biblioteca de iconos. Estos iconos son gráficos vectoriales, almacenados en el formato de archivo <code>.svg</code> . Estos iconos son tratados como fuentes. Puede especificar su tamaño usando píxeles, y asumirán el tamaño de fuente de sus elementos HTML principales.
-Use Font Awesome para agregar un ícono de <code>info-circle</code> de información a su botón de información y un ícono de <code>trash</code> a su botón de eliminar.
-Nota: El elemento <code>span</code> es una alternativa aceptable al elemento <code>i</code> para las instrucciones a continuación.
-</section>
+<section id="description"> Font Awesome es una conveniente biblioteca de iconos. Estos iconos son gráficos vectoriales, almacenados en el formato de archivo <code>.svg</code> . Estos iconos son tratados como fuentes. Puede especificar su tamaño usando píxeles, y asumirán el tamaño de fuente de sus elementos HTML principales. Use Font Awesome para agregar un ícono de <code>info-circle</code> de información a su botón de información y un ícono de <code>trash</code> a su botón de eliminar. Nota: El elemento <code>span</code> es una alternativa aceptable al elemento <code>i</code> para las instrucciones a continuación. </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -25,11 +21,11 @@ Nota: El elemento <code>span</code> es una alternativa aceptable al elemento <co
 
 ```yml
 tests:
-  - text: 'Debes agregar un <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> dentro del elemento de tu botón de información.'
+  - text: Debes agregar un <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> dentro del elemento de tu botón de información.
     testString: 'assert($(".btn-info > i").is(".fa.fa-info-circle") || $(".btn-info > span").is(".fa.fa-info-circle"), "You should add a <code>&#60;i class="fa fa-info-circle"&#62;&#60;/i&#62;</code> within your info button element.");'
-  - text: 'Debes agregar una <code>&lt;i class=&quot;fa fa-trash&quot;&gt;&lt;/i&gt;</code> dentro de tu elemento de botón de eliminar.'
+  - text: Debes agregar una <code>&lt;i class=&quot;fa fa-trash&quot;&gt;&lt;/i&gt;</code> dentro de tu elemento de botón de eliminar.
     testString: 'assert($(".btn-danger > i").is(".fa.fa-trash") || $(".btn-danger > span").is(".fa.fa-trash"), "You should add a <code>&#60;i class="fa fa-trash"&#62;&#60;/i&#62;</code> within your delete button element.");'
-  - text: 'Asegúrate de que cada uno de tus elementos <code>i</code> tenga una etiqueta de cierre y <code>&lt;i class=&quot;fa fa-thumbs-up&quot;&gt;&lt;/i&gt;</code> está en el elemento de tu botón me gusta.'
+  - text: Asegúrate de que cada uno de tus elementos <code>i</code> tenga una etiqueta de cierre y que <code>&lt;i class=&quot;fa fa-thumbs-up&quot;&gt;&lt;/i&gt;</code> esté en tu elemento de botón me gusta.
     testString: 'assert(code.match(/<\/i>|<\/span/g) && code.match(/<\/i|<\/span>/g).length > 2 && ($(".btn-primary > i").is(".fa.fa-thumbs-up") || $(".btn-primary > span").is(".fa.fa-thumbs-up")), "Make sure each of your <code>i</code> elements has a closing tag and <code>&#60;i class="fa fa-thumbs-up"&#62;&#60;/i&#62;</code> is in your like button element.");'
 
 ```
@@ -99,6 +95,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

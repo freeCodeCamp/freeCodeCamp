@@ -1,22 +1,16 @@
 ---
 id: bad87fee1348bd9aedc08830
 title: Use HTML5 to Require a Field
-localeTitle: Usa HTML5 para requerir un campo
 challengeType: 0
 videoUrl: ''
+localeTitle: Usa HTML5 para requerir un campo
 ---
 
 ## Description
-<section id='description'> 
-Puede requerir campos de formulario específicos para que su usuario no pueda enviar su formulario hasta que él o ella los haya completado. 
-Por ejemplo, si desea hacer que un campo de entrada de texto sea obligatorio, simplemente puede agregar el atributo <code>required</code> dentro de su elemento de <code>input</code> , de esta manera: <code>&lt;input type=&quot;text&quot; required&gt;</code> 
-</section>
+<section id="description"> Puede requerir campos de formulario específicos para que su usuario no pueda enviar su formulario hasta que él o ella los haya completado. Por ejemplo, si desea hacer que un campo de entrada de texto sea obligatorio, simplemente puede agregar el atributo <code>required</code> dentro de su elemento de <code>input</code> , como este: <code>&lt;input type=&quot;text&quot; required&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Haga que su <code>input</code> texto sea un campo <code>required</code> , para que su usuario no pueda enviar el formulario sin completar este campo. 
-Luego intente enviar el formulario sin ingresar ningún texto. ¿Ves cómo tu formulario HTML5 te notifica que el campo es obligatorio? 
-</section>
+<section id="instructions"> Haga que su <code>input</code> texto sea un campo <code>required</code> , de modo que su usuario no pueda enviar el formulario sin completar este campo. Luego intente enviar el formulario sin ingresar ningún texto. ¿Ves cómo tu formulario HTML5 te notifica que el campo es obligatorio? </section>
 
 ## Tests
 <section id='tests'>
@@ -59,6 +53,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </main>
+
 ```
 
 </div>

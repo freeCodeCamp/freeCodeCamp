@@ -1,19 +1,16 @@
 ---
 id: 587d8254367417b2b2512c6f
 title: Perform a Subset Check on Two Sets of Data
-localeTitle: Realizar una verificación de subconjunto en dos conjuntos de datos
 challengeType: 1
+videoUrl: ''
+localeTitle: Realizar una verificación de subconjunto en dos conjuntos de datos
 ---
 
 ## Description
-<section id='description'>
-En este ejercicio vamos a realizar una prueba de subconjunto en 2 conjuntos de datos. Crearemos un método en nuestra estructura de datos <code>Set</code> llamada <code>subset</code> . Esto comparará el primer conjunto, contra el segundo y si el primer conjunto está completamente contenido dentro del Segundo, devolverá verdadero.
-Por ejemplo, si <code>setA = [&#39;a&#39;,&#39;b&#39;]</code> y <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> , entonces el subconjunto de setA y setB es: <code>setA.subset(setB)</code> debe ser <code>true</code> .
-</section>
+<section id="description"> En este ejercicio vamos a realizar una prueba de subconjunto en 2 conjuntos de datos. Crearemos un método en nuestra estructura de datos <code>Set</code> llamada <code>subset</code> . Esto comparará el primer conjunto, contra el segundo y si el primer conjunto está completamente contenido dentro del Segundo, devolverá verdadero. Por ejemplo, si <code>setA = [&#39;a&#39;,&#39;b&#39;]</code> y <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> , entonces el subconjunto de setA y setB es: <code>setA.subset(setB)</code> debe ser <code>true</code> . </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -25,13 +22,13 @@ tests:
     testString: 'assert(function(){var test = new Set(); return (typeof test.subset === "function")}, "Your <code>Set</code> class should have a <code>union</code> method.");'
   - text: El primer Set () estaba contenido en el segundo Set
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setB.add("b"); setB.add("c"); setB.add("a"); setB.add("d"); var subsetSetAB = setA.subset(setB);return (subsetSetAB === true)}, "The first Set() was contained in the second Set");'
-  - text: ' <code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;])</code> debe devolver <code>true</code> &quot;)'
+  - text: '<code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;])</code> debe devolver <code>true</code> &quot;)'
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setB.add("a"); setB.add("b"); setB.add("c"); setB.add("d"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, "<code>["a", "b"].subset(["a", "b", "c", "d"])</code> should return <code>true</code>");'
-  - text: ' <code>[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].subset([&quot;a&quot;, &quot;b&quot;])</code> debe devolver <code>false</code> &quot;)'
+  - text: '<code>[&quot;a&quot;, &quot;b&quot;, &quot;c&quot;].subset([&quot;a&quot;, &quot;b&quot;])</code> debe devolver <code>false</code> &quot;)'
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setA.add("c"); setB.add("a"); setB.add("b"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, "<code>["a", "b", "c"].subset(["a", "b"])</code> should return <code>false</code>");'
-  - text: ' <code>[].subset([])</code> debe devolver <code>true</code> '
+  - text: '<code>[].subset([])</code> debe devolver <code>true</code>'
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); var subsetSetAB = setA.subset(setB); return (subsetSetAB === true)}, "<code>[].subset([])</code> should return <code>true</code>");'
-  - text: ' <code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;c&quot;, &quot;d&quot;])</code> debe devolver <code>false</code> &quot;)'
+  - text: '<code>[&quot;a&quot;, &quot;b&quot;].subset([&quot;c&quot;, &quot;d&quot;])</code> debe devolver <code>false</code> &quot;)'
     testString: 'assert(function(){var setA = new Set(); var setB = new Set(); setA.add("a"); setA.add("b"); setB.add("c"); setB.add("d"); var subsetSetAB = setA.subset(setB); return (subsetSetAB === false)}, "<code>["a", "b"].subset(["c", "d"])</code> should return <code>false</code>");'
 
 ```
@@ -114,6 +111,7 @@ function Set() {
     // change code below this line
     // change code above this line
 }
+
 ```
 
 </div>
@@ -125,9 +123,7 @@ function Set() {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function Set() {var collection = []; this.has = function(e){return(collection.indexOf(e) !== -1);};this.values = function() {return collection;};this.add = function(element) {if (!this.has(element)) {collection.push(element);return true;} else {return false;}};this.remove = function(element) {if(this.has(element)) {var i = collection.indexOf(element);collection.splice(i, 1);return true;}return false;};this.size = function() {return collection.length;};this.union = function(set) {var u = new Set();var c = this.values();var s = set.values();c.forEach(function(element){u.add(element);});s.forEach(function(element){u.add(element);});return u;};this.intersection = function(set) {var i = new Set();var c = this.values();c.forEach(function(element){if(s.has(element)) i.add(element);});};this.difference = function(set) {var d = new Set();var c = this.values();c.forEach(function(e){if(!set.has(e)) d.add(e);});};this.subset = function(set) {var isSubset = true;var c = this.values();c.forEach(function(e){if(!set.has(e)) isSubset = false;});return isSubset;};}
+// solution required
 ```
-
 </section>

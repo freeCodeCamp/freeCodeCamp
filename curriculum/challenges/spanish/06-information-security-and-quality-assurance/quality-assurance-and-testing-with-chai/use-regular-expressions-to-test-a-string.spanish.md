@@ -1,20 +1,16 @@
 ---
 id: 587d824d367417b2b2512c54
 title: Use Regular Expressions to Test a String
-localeTitle: Usa expresiones regulares para probar una cadena
 challengeType: 2
+videoUrl: ''
+localeTitle: Usa expresiones regulares para probar una cadena
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-#match Afirma que el valor real 
-coincide con la expresión regular del segundo argumento. 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . #match Afirma que el valor real coincide con la expresión regular del segundo argumento. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

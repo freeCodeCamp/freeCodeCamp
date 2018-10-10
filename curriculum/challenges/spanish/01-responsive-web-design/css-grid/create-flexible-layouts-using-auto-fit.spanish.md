@@ -1,21 +1,16 @@
 ---
 id: 5a94fe6269fb03452672e462
 title: Create Flexible Layouts Using auto-fit
-localeTitle: Crear diseños flexibles con autoajuste
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear diseños flexibles con autoajuste
 ---
 
 ## Description
-<section id='description'> 
-<code>auto-fit</code> funciona de manera casi idéntica al <code>auto-fill</code> . La única diferencia es que cuando el tamaño del contenedor excede el tamaño de todos los elementos combinados, el <code>auto-fill</code> continúa insertando filas o columnas vacías y empuja sus artículos hacia un lado, mientras que <code>auto-fit</code> colapsa esas filas o columnas vacías y extiende sus artículos a Ajustar el tamaño del contenedor. 
-<strong>Nota</strong> <br> Si su contenedor no puede colocar todos sus artículos en una fila, los moverá a uno nuevo. 
-</section>
+<section id="description"> <code>auto-fit</code> funciona de <code>auto-fit</code> casi idéntica al <code>auto-fill</code> . La única diferencia es que cuando el tamaño del contenedor excede el tamaño de todos los elementos combinados, el <code>auto-fill</code> continúa insertando filas o columnas vacías y empuja sus artículos hacia un lado, mientras que <code>auto-fit</code> colapsa esas filas o columnas vacías y extiende sus artículos a Ajustar el tamaño del contenedor. <strong>Nota</strong> <br> Si su contenedor no puede colocar todos sus artículos en una fila, los moverá a uno nuevo. </section>
 
 ## Instructions
-<section id='instructions'> 
-En la segunda cuadrícula, use <code>auto-fit</code> con <code>repeat</code> para llenar la cuadrícula con columnas que tengan un ancho mínimo de <code>60px</code> y máximo de <code>1fr</code> . Luego cambia el tamaño de la vista previa para ver la diferencia. 
-</section>
+<section id="instructions"> En la segunda cuadrícula, use <code>auto-fit</code> con <code>repeat</code> para llenar la cuadrícula con columnas que tengan un ancho mínimo de <code>60px</code> y un máximo de <code>1fr</code> . Luego cambia el tamaño de la vista previa para ver la diferencia. </section>
 
 ## Tests
 <section id='tests'>
@@ -83,6 +78,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -94,9 +90,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-template-columns: repeat( auto-fill, minmax(60px, 1fr));} .container2 {grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));}"
+// solution required
 ```
-
 </section>

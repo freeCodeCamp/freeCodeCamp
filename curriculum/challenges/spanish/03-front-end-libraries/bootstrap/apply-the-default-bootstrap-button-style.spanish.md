@@ -1,20 +1,17 @@
 ---
 id: bad87fee1348bd9aec908850
 title: Apply the Default Bootstrap Button Style
-localeTitle: Aplicar el estilo de botón predeterminado Bootstrap
 challengeType: 0
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/apply-the-default-bootstrap-button-style'
+videoUrl: ''
+localeTitle: Aplicar el estilo de botón predeterminado Bootstrap
 ---
 
 ## Description
-<section id='description'> 
-Bootstrap tiene otra clase de botón llamada <code>btn-default</code> . 
-Aplique las clases <code>btn</code> y <code>btn-default</code> a cada uno de los elementos de sus <code>button</code> . 
-</section>
+<section id="description"> Bootstrap tiene otra clase de botón llamada <code>btn-default</code> . Aplique las clases <code>btn</code> y <code>btn-default</code> a cada uno de los elementos de sus <code>button</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -56,6 +53,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

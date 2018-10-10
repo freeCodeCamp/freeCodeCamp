@@ -1,30 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4131000cf542c50ff25
+id: 5900f4131000cf542c50ff25
 challengeType: 5
 title: 'Problem 166: Criss Cross'
+videoUrl: ''
+localeTitle: 'Problema 166: Criss Cross'
 ---
 
 ## Description
-<section id='description'> 
-Una cuadrícula 4x4 se llena con los dígitos d, 0 ≤ d ≤ 9. 
-
-Se puede ver que en la cuadrícula 
-
-
-6 3 3 0 
-5 0 4 3 
-0 7 1 4 
-1 2 4 5 
-
-la suma de cada fila y cada columna tiene el valor 12. Además, la suma de cada diagonal también es 12. 
-
-¿De cuántas maneras puedes llenar una cuadrícula de 4x4 con los dígitos d, 0 ≤ d ≤ 9 para que cada fila, Cada columna, y ambas diagonales tienen la misma suma? 
-</section>
+<section id="description"> Una cuadrícula de 4x4 se llena con los dígitos d, 0 ≤ d ≤ 9. <p> Se puede ver que en la cuadrícula. </p><p> 6 3 3 0 5 0 4 3 0 7 1 4 1 2 4 5 </p><p> la suma de cada fila y cada columna tiene el valor 12. Además, la suma de cada diagonal también es 12. </p><p> ¿De cuántas maneras puedes llenar una cuadrícula de 4x4 con los dígitos d, 0 ≤ d ≤ 9 para que cada fila, cada columna y ambas diagonales tengan la misma suma? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +37,7 @@ function euler166() {
 }
 
 euler166();
+
 ```
 
 </div>

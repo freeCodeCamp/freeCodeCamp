@@ -1,20 +1,16 @@
 ---
 id: 587d7788367417b2b2512aa3
 title: Make Screen Reader Navigation Easier with the footer Landmark
-localeTitle: Facilita la navegación por el lector de pantalla con el pie de página
 challengeType: 0
 videoUrl: ''
+localeTitle: Facilita la navegación por el lector de pantalla con el pie de página
 ---
 
 ## Description
-<section id='description'> 
-igual que el <code>header</code> y la <code>nav</code> , el elemento de <code>footer</code> tiene una característica de marca incorporada que permite que los dispositivos de asistencia naveguen rápidamente hacia ella. Se utiliza principalmente para contener información de derechos de autor o enlaces a documentos relacionados que generalmente se encuentran en la parte inferior de una página. 
-</section>
+<section id="description"> Al igual que el <code>header</code> y la <code>nav</code> , el elemento de <code>footer</code> tiene una característica de hito incorporada que permite que los dispositivos de asistencia naveguen rápidamente hacia él. Se utiliza principalmente para contener información de derechos de autor o enlaces a documentos relacionados que generalmente se encuentran en la parte inferior de una página. </section>
 
 ## Instructions
-<section id='instructions'> 
-La página de entrenamiento de Camper Cat está progresando bien. Cambie el <code>div</code> que usó para ajustar su información de copyright en la parte inferior de la página a un elemento de <code>footer</code> . 
-</section>
+<section id="instructions"> La página de entrenamiento de Camper Cat está progresando bien. Cambie el <code>div</code> que usó para ajustar su información de copyright en la parte inferior de la página a un elemento de <code>footer</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -72,6 +68,7 @@ tests:
 
 
 </body>
+
 ```
 
 </div>

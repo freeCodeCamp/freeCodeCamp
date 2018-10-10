@@ -1,30 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4281000cf542c50ff39
+id: 5900f4281000cf542c50ff39
 challengeType: 5
 title: 'Problem 186: Connectedness of a network'
+videoUrl: ''
+localeTitle: 'Problema 186: Conectividad de una red'
 ---
 
 ## Description
-<section id='description'> 
-Aquí están los registros de un sistema telefónico ocupado con un millón de usuarios: 
-
-RecNrCallerCalled120000710005326001835004393600863701497 ......... 
-El número de teléfono de la persona que llama y el número llamado en el registro n son Caller (n) = S2n-1 y Llamado (n) = S2n donde S1,2,3, ... proviene del &quot;Generador de Fibonacci Rezagado&quot;: 
-
-Para 1 ≤ k ≤ 55, Sk = [100003 - 200003k + 300007k3] (módulo 1000000) 
-Para 56 ≤ k, Sk = [Sk-24 + Sk-55] (módulo 1000000) 
-
-Si la persona que llama (n) = Called (n), se supone que el usuario ha marcado incorrectamente y la llamada falla; De lo contrario la llamada es exitosa. 
-
-Desde el inicio de los registros, decimos que cualquier par de usuarios X e Y son amigos si X llama a Y o viceversa. De manera similar, X es amigo de un amigo de Z si X es amigo de Y e Y es amigo de Z; y así sucesivamente para cadenas más largas. 
-
-El número de teléfono del Primer Ministro es 524287. ¿Después de cuántas llamadas exitosas, sin contar los errores de marcación, el 99% de los usuarios (incluido el Primer Ministro) será un amigo, o un amigo de un amigo, etc., del Primer Ministro? 
-</section>
+<section id="description"> Aquí están los registros de un sistema telefónico ocupado con un millón de usuarios: <p> RecNrCallerCalled120000710005326001835004393600863701497 ......... El número de teléfono de la persona que llama y el número llamado en el registro n son Caller (n) = S2n-1 y Called (n) = S2n donde S1,2,3, ... come del &quot;Generador de Fibonacci Lagged&quot;: </p><p> Para 1 ≤ k ≤ 55, Sk = [100003 - 200003k + 300007k3] (módulo 1000000) Para 56 ≤ k, Sk = [Sk-24 + Sk-55] (módulo 1000000) </p><p> Si el Llamador (n) = Llamado (n), se supone que el usuario ha marcado incorrectamente y la llamada falla; De lo contrario la llamada es exitosa. </p><p> Desde el inicio de los registros, decimos que cualquier par de usuarios X e Y son amigos si X llama a Y o viceversa. De manera similar, X es amigo de un amigo de Z si X es amigo de Y e Y es amigo de Z; y así sucesivamente para cadenas más largas. </p><p> El número de teléfono del Primer Ministro es 524287. Después de cuántas llamadas exitosas, sin contar los errores de marcación, ¿el 99% de los usuarios (incluido el Primer Ministro) será un amigo, o un amigo de un amigo, etc., del Primer Ministro? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +37,7 @@ function euler186() {
 }
 
 euler186();
+
 ```
 
 </div>

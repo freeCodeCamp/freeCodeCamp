@@ -1,25 +1,16 @@
 ---
 id: 587d7790367417b2b2512ab1
 title: Use tabindex to Specify the Order of Keyboard Focus for Several Elements
-localeTitle: Use tabindex para especificar el orden de enfoque del teclado para varios elementos
 challengeType: 0
 videoUrl: ''
+localeTitle: Use tabindex para especificar el orden de enfoque del teclado para varios elementos
 ---
 
 ## Description
-<section id='description'> 
-El atributo <code>tabindex</code> también especifica el orden de tabulación exacto de los elementos. Esto se logra cuando el valor del atributo se establece en un número positivo de 1 o superior. 
-Establecer un tabindex = &quot;1&quot; traerá el foco del teclado a ese elemento primero. Luego pasa por la secuencia de valores de <code>tabindex</code> especificados (2, 3, etc.), antes de pasar a los elementos predeterminados y <code>tabindex=&quot;0&quot;</code> . 
-Es importante tener en cuenta que cuando el orden de tabulación se establece de esta manera, anula el orden predeterminado (que utiliza la fuente HTML). Esto puede confundir a los usuarios que esperan comenzar la navegación desde la parte superior de la página. Esta técnica puede ser necesaria en algunas circunstancias, pero en términos de accesibilidad, tenga cuidado antes de aplicarla. 
-Aquí hay un ejemplo: 
-<code>&lt;div tabindex=&quot;1&quot;&gt;I get keyboard focus, and I get it first!&lt;/div&gt;</code> 
-<code>&lt;div tabindex=&quot;2&quot;&gt;I get keyboard focus, and I get it second!&lt;/div&gt;</code> 
-</section>
+<section id="description"> El atributo <code>tabindex</code> también especifica el orden de tabulación exacto de los elementos. Esto se logra cuando el valor del atributo se establece en un número positivo de 1 o superior. Establecer un tabindex = &quot;1&quot; traerá el foco del teclado a ese elemento primero. Luego pasa por la secuencia de valores de <code>tabindex</code> especificados (2, 3, etc.), antes de pasar a los elementos predeterminados y <code>tabindex=&quot;0&quot;</code> . Es importante tener en cuenta que cuando el orden de tabulación se establece de esta manera, anula el orden predeterminado (que utiliza la fuente HTML). Esto puede confundir a los usuarios que esperan comenzar la navegación desde la parte superior de la página. Esta técnica puede ser necesaria en algunas circunstancias, pero en términos de accesibilidad, tenga cuidado antes de aplicarla. Aquí hay un ejemplo: <code>&lt;div tabindex=&quot;1&quot;&gt;I get keyboard focus, and I get it first!&lt;/div&gt;</code> <code>&lt;div tabindex=&quot;2&quot;&gt;I get keyboard focus, and I get it second!&lt;/div&gt;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Camper Cat tiene un campo de búsqueda en su página de citas inspiradoras que planea posicionar en la esquina superior derecha con CSS. Quiere que la <code>input</code> búsqueda y <code>input</code> controles de formulario de <code>input</code> sean los dos primeros elementos en el orden de tabulación. Agregue un <code>tabindex</code> atributos de <code>tabindex</code> a &quot;1&quot; a la <code>input</code> búsqueda, y un atributo de <code>tabindex</code> establecido a &quot;2&quot; a la <code>input</code> envío. 
-</section>
+<section id="instructions"> Camper Cat tiene un campo de búsqueda en su página de citas inspiradoras que planea posicionar en la esquina superior derecha con CSS. Quiere que la <code>input</code> búsqueda y <code>input</code> controles de formulario de <code>input</code> sean los dos primeros elementos en el orden de tabulación. Agregue un <code>tabindex</code> atributos de <code>tabindex</code> a &quot;1&quot; a la <code>input</code> búsqueda, y un atributo de <code>tabindex</code> establecido a &quot;2&quot; a la <code>input</code> envío. </section>
 
 ## Tests
 <section id='tests'>
@@ -76,6 +67,7 @@ tests:
   </blockquote>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+
 ```
 
 </div>

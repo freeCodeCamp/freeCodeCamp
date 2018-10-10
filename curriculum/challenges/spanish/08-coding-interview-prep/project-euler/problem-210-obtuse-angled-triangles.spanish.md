@@ -1,23 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f43e1000cf542c50ff50
+id: 5900f43e1000cf542c50ff50
 challengeType: 5
 title: 'Problem 210: Obtuse Angled Triangles'
+videoUrl: ''
+localeTitle: 'Problema 210: Triángulos angulosos obtusos'
 ---
 
 ## Description
-<section id='description'> 
-Considere el conjunto S (r) de puntos (x, y) con coordenadas enteras que satisfacen | x | + | y ​​| ≤ r. 
-Sea O el punto (0,0) y C el punto (r / 4, r / 4). 
-Sea N (r) el número de puntos B en S (r), de modo que el triángulo OBC tenga un ángulo obtuso, es decir, el ángulo mayor α satisface 90 ° &lt;α &lt;180 °. 
-Entonces, por ejemplo, N (4) = 24 y N (8) = 100. 
-
-¿Qué es N (1,000,000,000)? 
-</section>
+<section id="description"> Considere el conjunto S (r) de puntos (x, y) con coordenadas enteras que satisfacen | x | + | y ​​| ≤ r. Sea O el punto (0,0) y C el punto (r / 4, r / 4). Sea N (r) el número de puntos B en S (r), de modo que el triángulo OBC tenga un ángulo obtuso, es decir, el ángulo mayor α satisface 90 ° &lt;α &lt;180 °. Entonces, por ejemplo, N (4) = 24 y N (8) = 100. <p> ¿Qué es N (1,000,000,000)? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,6 +37,7 @@ function euler210() {
 }
 
 euler210();
+
 ```
 
 </div>

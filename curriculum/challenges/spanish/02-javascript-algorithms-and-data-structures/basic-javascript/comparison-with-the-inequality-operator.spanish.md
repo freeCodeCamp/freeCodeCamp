@@ -1,21 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d2
 title: Comparison with the Inequality Operator
-localeTitle: Comparación con el operador de desigualdad
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparación con el operador de desigualdad
 ---
 
 ## Description
-<section id='description'> 
-El operador de desigualdad ( <code>!=</code> ) Es el opuesto del operador de igualdad. Significa &quot;No es igual&quot; y devuelve <code>false</code> donde la igualdad se volvería <code>true</code> y <em>viceversa</em> . Al igual que el operador de igualdad, el operador de desigualdad convertirá los tipos de datos de los valores al comparar. 
-<strong>ejemplos</strong> 
-<blockquote>1 != 2      // true<br>1 != "1"    // false<br>1 != '1'    // false<br>1 != true   // false<br>0 != false  // false</blockquote> 
-</section>
+<section id="description"> El operador de desigualdad ( <code>!=</code> ) Es lo opuesto al operador de igualdad. Significa &quot;No es igual&quot; y devuelve <code>false</code> donde la igualdad se volvería <code>true</code> y <em>viceversa</em> . Al igual que el operador de igualdad, el operador de desigualdad convertirá los tipos de datos de los valores al comparar. <strong>Ejemplos</strong> <blockquote> 1! = 2 // verdadero <br> 1! = &quot;1&quot; // falso <br> 1! = &#39;1&#39; // falso <br> 1! = Verdadero // falso <br> 0! = Falso // falso </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el operador de desigualdad <code>!=</code> En la instrucción <code>if</code> para que la función devuelva &quot;No igual&quot; cuando <code>val</code> no es equivalente a <code>99</code> 
-</section>
+<section id="instructions"> Agregue el operador de desigualdad <code>!=</code> En la instrucción <code>if</code> para que la función devuelva &quot;No igual&quot; cuando <code>val</code> no es equivalente a <code>99</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -55,6 +50,7 @@ function testNotEqual(val) {
 
 // Change this value to test
 testNotEqual(10);
+
 ```
 
 </div>
@@ -66,14 +62,7 @@ testNotEqual(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testNotEqual(val) {
-  if (val != 99) {
-    return "Not Equal";
-  }
-  return "Equal";
-}
+// solution required
 ```
-
 </section>

@@ -1,26 +1,18 @@
 ---
 id: 587d7fa7367417b2b2512bc5
 title: Work with Dynamic Data in D3
-localeTitle: Trabajar con datos dinámicos en D3
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Trabajar con datos dinámicos en D3
 ---
 
 ## Description
-<section id='description'> 
-Los dos últimos desafíos cubren los aspectos básicos de mostrar datos dinámicamente con D3 usando los métodos <code>data()</code> y <code>enter()</code> . Estos métodos toman un conjunto de datos y, junto con el método <code>append()</code> , crean un nuevo elemento DOM para cada entrada en el conjunto de datos. 
-En el desafío anterior, creó un nuevo elemento <code>h2</code> para cada elemento en la matriz del <code>dataset</code> , pero todos contenían el mismo texto, &quot;Nuevo título&quot;. Esto se debe a que no ha utilizado los datos vinculados a cada uno de los elementos <code>h2</code> . 
-El método D3 <code>text()</code> puede tomar una cadena o una función de devolución de llamada como un argumento: 
-<code>selection.text((d) =&gt; d)</code> 
-En el ejemplo anterior, el parámetro <code>d</code> refiere a una sola entrada en el conjunto de datos que un La selección está vinculada a 
-Utilizando el ejemplo actual como contexto, el primer elemento <code>h2</code> está vinculado a 12, el segundo elemento <code>h2</code> está vinculado a 31, el tercer elemento <code>h2</code> está vinculado a 22, y así sucesivamente. 
-</section>
+<section id="description"> Los dos últimos desafíos cubren los aspectos básicos de mostrar datos dinámicamente con D3 usando los métodos <code>data()</code> y <code>enter()</code> . Estos métodos toman un conjunto de datos y, junto con el método <code>append()</code> , crean un nuevo elemento DOM para cada entrada en el conjunto de datos. En el desafío anterior, creó un nuevo elemento <code>h2</code> para cada elemento en la matriz del <code>dataset</code> , pero todos contenían el mismo texto, &quot;Título nuevo&quot;. Esto se debe a que no ha utilizado los datos vinculados a cada uno de los elementos <code>h2</code> . El método D3 <code>text()</code> puede tomar una cadena o una función de devolución de llamada como un argumento: <code>selection.text((d) =&gt; d)</code> En el ejemplo anterior, el parámetro <code>d</code> refiere a una sola entrada en el conjunto de datos que una selección está vinculada a. Utilizando el ejemplo actual como contexto, el primer elemento <code>h2</code> está vinculado a 12, el segundo elemento <code>h2</code> está vinculado a 31, el tercer elemento <code>h2</code> está vinculado a 22, y así sucesivamente. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie el método <code>text()</code> para que cada elemento <code>h2</code> muestre el valor correspondiente de la matriz de <code>dataset</code> con un solo espacio y &quot;USD&quot;. Por ejemplo, el primer encabezado debe ser &quot;12 USD&quot;. 
-</section>
+<section id="instructions"> Cambie el método <code>text()</code> para que cada elemento <code>h2</code> muestre el valor correspondiente de la matriz del <code>dataset</code> con un solo espacio y &quot;USD&quot;. Por ejemplo, el primer encabezado debe ser &quot;12 USD&quot;. </section>
 
 ## Tests
 <section id='tests'>
@@ -71,6 +63,7 @@ tests:
       // Add your code above this line
   </script>
 </body>
+
 ```
 
 </div>

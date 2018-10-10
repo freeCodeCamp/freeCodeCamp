@@ -1,32 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f5411000cf542c510054
+id: 5900f5411000cf542c510054
 challengeType: 5
 title: 'Problem 468: Smooth divisors of binomial coefficients'
+videoUrl: ''
+localeTitle: 'Problema 468: divisores suaves de coeficientes binomiales'
 ---
 
 ## Description
-<section id='description'> 
-Un entero se llama B-suave si ninguno de sus factores primos es mayor que B. 
-
-Sea SB (n) el divisor B-liso más grande de n. 
-Ejemplos: 
-S1 (10) = 1 
-S4 (2100) = 12 
-S17 (2496144) = 5712 
-
-Defina F (n) = ∑1≤B≤n ∑0≤r≤n SB (C (n, r)). Aquí, C (n, r) denota el coeficiente binomial. 
-Ejemplos: 
-F (11) = 3132 
-F (1 111) mod 1 000 000 993 = 706036312 
-F (111 111) mod 1 000 000 993 = 22156169 
-
-Encuentre F (11 111 111) mod 1 000 000 993 . 
-</section>
+<section id="description"> Un entero se llama B-suave si ninguno de sus factores primos es mayor que B. <p> Sea SB (n) el divisor B-smooth más grande de n. Ejemplos: S1 (10) = 1 S4 (2100) = 12 S17 (2496144) = 5712 </p><p> Defina F (n) = ∑1≤B≤n ∑0≤r≤n SB (C (n, r)). Aquí, C (n, r) denota el coeficiente binomial. Ejemplos: F (11) = 3132 F (1 111) mod 1 000 000 993 = 706036312 F (111 111) mod 1 000 000 993 = 22156169 </p><p> Encontrar F (11 111 111) mod 1 000 000 993. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -53,6 +37,7 @@ function euler468() {
 }
 
 euler468();
+
 ```
 
 </div>

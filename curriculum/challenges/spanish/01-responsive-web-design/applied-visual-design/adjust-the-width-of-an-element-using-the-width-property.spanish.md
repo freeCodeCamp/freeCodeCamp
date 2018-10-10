@@ -1,21 +1,16 @@
 ---
 id: 587d7791367417b2b2512ab4
 title: Adjust the Width of an Element Using the width Property
-localeTitle: Ajustar el ancho de un elemento usando la propiedad width
 challengeType: 0
 videoUrl: ''
+localeTitle: Ajustar el ancho de un elemento usando la propiedad width
 ---
 
 ## Description
-<section id='description'> 
-Puede especificar el ancho de un elemento utilizando la propiedad <code>width</code> en CSS. Los valores se pueden dar en unidades de longitud relativa (como em), unidades de longitud absoluta (como px) o como un porcentaje de su elemento principal que contiene. Aquí hay un ejemplo que cambia el ancho de una imagen a 220px: 
-<blockquote>img {<br>&nbsp;&nbsp;width: 220px;<br>}</blockquote> 
-</section>
+<section id="description"> Puede especificar el ancho de un elemento utilizando la propiedad <code>width</code> en CSS. Los valores se pueden dar en unidades de longitud relativa (como em), unidades de longitud absoluta (como px) o como un porcentaje de su elemento principal que contiene. Aquí hay un ejemplo que cambia el ancho de una imagen a 220px: <blockquote> img { <br> ancho: 220px; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue una propiedad de <code>width</code> a toda la tarjeta y establézcala en un valor absoluto de 245px. Usa la clase <code>fullCard</code> para seleccionar el elemento. 
-</section>
+<section id="instructions"> Agregue una propiedad de <code>width</code> a toda la tarjeta y establézcala en un valor absoluto de 245px. Usa la clase <code>fullCard</code> para seleccionar el elemento. </section>
 
 ## Tests
 <section id='tests'>
@@ -69,6 +64,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>
@@ -80,9 +76,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".fullCard {\nwidth: 245px; border: 1px solid #ccc; border-radius: 5px; margin: 10px 5px; padding: 4px;}"
+// solution required
 ```
-
 </section>

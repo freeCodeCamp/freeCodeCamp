@@ -1,48 +1,41 @@
 ---
 id: 58966a17f9fc0f352b528e6d
 title: Registration of New Users
-localeTitle: Registro de nuevos usuarios
 challengeType: 2
+videoUrl: ''
+localeTitle: Registro de nuevos usuarios
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-advancednode/'>GitHub</a> . 
-Ahora debemos permitir que un nuevo usuario en nuestro sitio registre una cuenta. En el res.render para la página de inicio, agregue una nueva variable al objeto pasado a lo <code>showRegistration: true</code> . Cuando actualice su página, debería ver el formulario de registro que ya se creó en su archivo index.pug. Este formulario está configurado para <b>POST</b> on <em>/ register, de</em> modo que aquí es donde debemos configurar para aceptar el POST y crear el objeto de usuario en la base de datos. 
-La lógica de la ruta de registro debe ser la siguiente: Registrar el nuevo usuario&gt; Autenticar el nuevo usuario&gt; Redirigir a / perfil 
-La lógica del paso 1, registrar al nuevo usuario, debe ser la siguiente: Base de datos de consultas con un comando findOne&gt; si se devuelve el usuario, entonces existe y se redirige a casa <em>O</em> si el usuario no está definido y no se produce ningún error, &#39;inserte uno&#39; en la base de datos con el nombre de usuario y la contraseña, y mientras no se produzcan errores, llame al <em>siguiente</em> paso para ir al paso 2, autenticando El nuevo usuario, para el que ya hemos escrito la lógica en nuestra ruta POST / login. 
-<pre> app.route (&#39;/ register&#39;) 
-.post ((req, res, next) =&gt; { 
-db.collection (&#39;users&#39;). findOne ({username: req.body.username}, función (err, usuario ) { 
-si (err) { 
-siguiente (err); 
-} else if (usuario) { 
-res.redirect (&#39;/&#39;); 
-} else { 
-db.collection (&#39;usuarios&#39;). InsertOne ( 
-{ nombre de usuario: req.body.username, 
-contraseña: req.body.password}, 
-(err, doc) =&gt; { 
-if (err) { 
-res.redirect (&#39;/&#39;); 
-} else { 
-next ( nulo, usuario); 
-} 
-} 
-) 
-} 
-})}, 
-passport.authenticate (&#39;local&#39;, {failureRedirect: &#39;/&#39;}), 
-(req, res, next) =&gt; { 
-res. redirigir (&#39;/ profile&#39;); 
-} 
-); </pre> 
-Envía tu página cuando creas que lo has hecho bien. Si está teniendo errores, puede consultar el proyecto completado hasta este punto <a href='https://gist.github.com/JosephLivengood/6c47bee7df34df9f11820803608071ed'>aquí</a> . 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Ahora debemos permitir que un nuevo usuario en nuestro sitio registre una cuenta. En el res.render para la página de inicio, agregue una nueva variable al objeto pasado a lo <code>showRegistration: true</code> . Cuando actualice su página, debería ver el formulario de registro que ya se creó en su archivo index.pug. Este formulario está configurado para <b>POST</b> on <em>/ register, de</em> modo que aquí es donde debemos configurar para aceptar el POST y crear el objeto de usuario en la base de datos. La lógica de la ruta de registro debe ser la siguiente: Registrar el nuevo usuario&gt; Autenticar el nuevo usuario&gt; Redirigir a / perfil La lógica del paso 1, registrar al nuevo usuario, debe ser la siguiente: Consultar la base de datos con un comando findOne&gt; if user se devuelve, entonces existe y se redirige a casa <em>O</em> si el usuario no está definido y no se produce ningún error, &#39;insertOne&#39; en la base de datos con el nombre de usuario y la contraseña, y mientras no se produzcan errores, llame al <em>siguiente</em> paso para autenticar el nuevo usuario, para lo cual ya hemos escrito la lógica en nuestra ruta POST / login. <pre> app.route (&#39;/ register&#39;)
+  .post ((req, res, next) =&gt; {
+      db.collection (&#39;usuarios&#39;). findOne ({username: req.body.username}, función (err, usuario) {
+          if (err) {
+              siguiente (err);
+          } else if (usuario) {
+              res.redirect (&#39;/&#39;);
+          } else {
+              db.collection (&#39;usuarios&#39;). insertOne (
+                {username: req.body.username,
+                 contraseña: req.body.password},
+                (err, doc) =&gt; {
+                    if (err) {
+                        res.redirect (&#39;/&#39;);
+                    } else {
+                        siguiente (nulo, usuario);
+                    }
+                }
+              )
+          }
+      })},
+    passport.authenticate (&#39;local&#39;, {failureRedirect: &#39;/&#39;}),
+    (req, res, next) =&gt; {
+        res.redirect (&#39;/ profile&#39;);
+    }
+); </pre> Envía tu página cuando creas que lo has hecho bien. Si está teniendo errores, puede consultar el proyecto completado hasta este punto <a href="https://gist.github.com/JosephLivengood/6c47bee7df34df9f11820803608071ed">aquí</a> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

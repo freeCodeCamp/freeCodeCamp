@@ -1,21 +1,16 @@
 ---
 id: bd7123c9c451eddfaeb5bdef
 title: Use Bracket Notation to Find the Last Character in a String
-localeTitle: Use la notación de corchete para encontrar el último carácter en una cadena
 challengeType: 1
+videoUrl: ''
+localeTitle: Use la notación de corchete para encontrar el último carácter en una cadena
 ---
 
 ## Description
-<section id='description'> 
-Para obtener la última letra de una cadena, puedes restar una de la longitud de la cadena. 
-Por ejemplo, si <code>var firstName = &quot;Charles&quot;</code> , puede obtener el valor de la última letra de la cadena usando <code>firstName[firstName.length - 1]</code> . 
-</section>
+<section id="description"> Para obtener la última letra de una cadena, puedes restar una de la longitud de la cadena. Por ejemplo, si <code>var firstName = &quot;Charles&quot;</code> , puede obtener el valor de la última letra de la cadena usando <code>firstName[firstName.length - 1]</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la <dfn>notación de corchetes</dfn> para encontrar el último carácter en la variable <code>lastName</code> . 
-<strong>Pista</strong> <br> Intenta mirar la declaración de la variable <code>lastLetterOfFirstName</code> si te quedas atascado. 
-</section>
+<section id="instructions"> Use la <dfn>notación de corchetes</dfn> para encontrar el último carácter en la variable <code>lastName</code> . <strong>Insinuación</strong> <br> Intenta mirar la declaración de la variable <code>lastLetterOfFirstName</code> si te quedas atascado. </section>
 
 ## Tests
 <section id='tests'>
@@ -47,7 +42,6 @@ var lastName = "Lovelace";
 // Only change code below this line.
 var lastLetterOfLastName = lastName;
 
-
 ```
 
 </div>
@@ -67,13 +61,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var firstName = "Ada";
-var lastLetterOfFirstName = firstName[firstName.length - 1];
-
-var lastName = "Lovelace";
-var lastLetterOfLastName = lastName[lastName.length - 1];
+// solution required
 ```
-
 </section>

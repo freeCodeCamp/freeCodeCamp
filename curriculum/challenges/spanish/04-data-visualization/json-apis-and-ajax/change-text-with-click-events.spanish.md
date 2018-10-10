@@ -1,22 +1,16 @@
 ---
 id: 587d7fad367417b2b2512be2
 title: Change Text with click Events
-localeTitle: Cambiar texto con click eventos
 challengeType: 6
+videoUrl: ''
+localeTitle: Cambiar texto con click eventos
 ---
 
 ## Description
-<section id='description'> 
-Cuando ocurre el evento de clic, puede usar JavaScript para actualizar un elemento HTML. 
-Por ejemplo, cuando un usuario hace clic en el botón &quot;Obtener mensaje&quot;, cambia el texto del elemento con el <code>message</code> clase para que diga &quot;Aquí está el mensaje&quot;. 
-Esto funciona agregando el siguiente código dentro del evento de clic: 
-<code>document.getElementsByClassName(&#39;message&#39;)[0].textContent=&quot;Here is the message&quot;;</code> 
-</section>
+<section id="description"> Cuando ocurre el evento de clic, puede usar JavaScript para actualizar un elemento HTML. Por ejemplo, cuando un usuario hace clic en el botón &quot;Obtener mensaje&quot;, cambia el texto del elemento con el <code>message</code> clase para que diga &quot;Aquí está el mensaje&quot;. Esto funciona agregando el siguiente código dentro del evento click: <code>document.getElementsByClassName(&#39;message&#39;)[0].textContent=&quot;Here is the message&quot;;</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue código dentro del controlador de eventos <code>onclick</code> para cambiar el texto dentro del elemento del <code>message</code> para que diga &quot;Aquí está el mensaje&quot;. 
-</section>
+<section id="instructions"> Agregue código dentro del controlador de eventos <code>onclick</code> para cambiar el texto dentro del elemento del <code>message</code> para que diga &quot;Aquí está el mensaje&quot;. </section>
 
 ## Tests
 <section id='tests'>
@@ -81,6 +75,7 @@ tests:
     Get Message
   </button>
 </p>
+
 ```
 
 </div>

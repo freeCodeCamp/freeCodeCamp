@@ -1,23 +1,16 @@
 ---
 id: 5a9036d038fddaf9a66b5d32
 title: Add Columns with grid-template-columns
-localeTitle: Añadir columnas con cuadrícula-plantilla-columnas
 challengeType: 0
 videoUrl: ''
+localeTitle: Añadir columnas con cuadrícula-plantilla-columnas
 ---
 
 ## Description
-<section id='description'> 
-Simplemente crear un elemento de cuadrícula no te lleva muy lejos. También es necesario definir la estructura de la cuadrícula. Para agregar algunas columnas a la cuadrícula, use la propiedad <code>grid-template-columns</code> en un contenedor de cuadrícula como se muestra a continuación: 
-<blockquote>.container {<br>&nbsp;&nbsp;display: grid;<br>&nbsp;&nbsp;grid-template-columns: 50px 50px;<br>}</blockquote> 
-Esto le dará a su cuadrícula dos columnas de 50px de ancho cada una. 
-El número de parámetros dados a la propiedad <code>grid-template-columns</code> indica el número de columnas en la cuadrícula, y el valor de cada parámetro indica el ancho de cada columna. 
-</section>
+<section id="description"> Simplemente crear un elemento de cuadrícula no te lleva muy lejos. También es necesario definir la estructura de la cuadrícula. Para agregar algunas columnas a la cuadrícula, use la propiedad <code>grid-template-columns</code> en un contenedor de cuadrícula como se muestra a continuación: <blockquote> .envase { <br> pantalla: rejilla; <br> rejilla-plantilla-columnas: 50px 50px; <br> } </blockquote> Esto le dará a su cuadrícula dos columnas de 50px de ancho cada una. El número de parámetros dados a la propiedad <code>grid-template-columns</code> indica el número de columnas en la cuadrícula, y el valor de cada parámetro indica el ancho de cada columna. </section>
 
 ## Instructions
-<section id='instructions'> 
-Déle al contenedor de la cuadrícula tres columnas de <code>100px</code> ancho cada una. 
-</section>
+<section id="instructions"> Entregue al contenedor de la cuadrícula tres columnas de <code>100px</code> ancho cada una. </section>
 
 ## Tests
 <section id='tests'>
@@ -63,6 +56,7 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
+
 ```
 
 </div>
@@ -74,9 +68,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-template-columns: 100px 100px 100px;}"
+// solution required
 ```
-
 </section>

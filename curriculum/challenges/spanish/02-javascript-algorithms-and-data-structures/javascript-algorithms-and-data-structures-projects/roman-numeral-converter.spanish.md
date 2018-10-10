@@ -1,21 +1,17 @@
 ---
 id: a7f4d8f2483413a6ce226cac
 title: Roman Numeral Converter
-localeTitle: Convertidor de números romanos
 isRequired: true
 challengeType: 5
+videoUrl: ''
+localeTitle: Convertidor de números romanos
 ---
 
 ## Description
-<section id='description'> 
-Convertir el número dado en un número romano. 
-Todas las respuestas de los <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">números romanos</a> deben proporcionarse en mayúsculas. 
-Recuerda usar <a href='http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514' target='_blank'>Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. 
-</section>
+<section id="description"> Convertir el número dado en un número romano. Todas las respuestas de los <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">números romanos</a> deben proporcionarse en mayúsculas. Recuerda usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> si te atascas. Trate de emparejar el programa. Escribe tu propio código. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -91,6 +87,7 @@ function convertToRoman(num) {
 }
 
 convertToRoman(36);
+
 ```
 
 </div>
@@ -102,19 +99,7 @@ convertToRoman(36);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function convertToRoman(num) {
-  var ref = [['M', 1000], ['CM', 900], ['D', 500], ['CD', 400], ['C', 100], ['XC', 90], ['L', 50], ['XL', 40], ['X', 10], ['IX', 9], ['V', 5], ['IV', 4], ['I', 1]];
-  var res = [];
-  ref.forEach(function(p) {
-    while (num >= p[1]) {
-      res.push(p[0]);
-      num -= p[1];
-    }
-  });
-  return res.join('');
-}
+// solution required
 ```
-
 </section>

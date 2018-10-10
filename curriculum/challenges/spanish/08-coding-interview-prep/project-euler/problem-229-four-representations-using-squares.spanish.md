@@ -1,36 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4521000cf542c50ff64
+id: 5900f4521000cf542c50ff64
 challengeType: 5
 title: 'Problem 229: Four Representations using Squares'
+videoUrl: ''
+localeTitle: 'Problema 229: cuatro representaciones usando cuadrados'
 ---
 
 ## Description
-<section id='description'> 
-Considera el número 3600. Es muy especial, porque 
-
-3600 = 482 + 362 
-3600 = 202 + 2 × 402 
-3600 = 302 + 3 × 302 
-3600 = 452 + 7 × 152 
-
-Del mismo modo, encontramos que 88201 = 992 + 2802 = 2872 + 2 × 542 = 2832 + 3 × 522 = 1972 + 7 × 842. 
-
-En 1747, Euler demostró qué números se pueden representar como la suma de dos cuadrados. 
-Estamos interesados ​​en los números n que admiten representaciones de los siguientes cuatro tipos: 
-
-n = a12 + b12n = a22 + 2 b22n = a32 + 3 b32n = a72 + 7 b72, 
-
-donde ak y bk son enteros positivos. 
-
-Hay 75373 números de este tipo que no superan los 107. 
-
-¿Cuántos de esos números hay que no superan 2 × 109? 
-</section>
+<section id="description"> Considere el número 3600. Es muy especial, porque <p> 3600 = 482 + 362 3600 = 202 + 2 × 402 3600 = 302 + 3 × 302 3600 = 452 + 7 × 152 </p><p> De manera similar, encontramos que 88201 = 992 + 2802 = 2872 + 2 × 542 = 2832 + 3 × 522 = 1972 + 7 × 842. </p><p> En 1747, Euler demostró qué números se pueden representar como una suma de dos cuadrados. Nos interesan los números n que admiten representaciones de los siguientes cuatro tipos: </p><p> n = a12 + b12n = a22 + 2 b22n = a32 + 3 b32n = a72 + 7 b72, </p><p> donde ak y bk son enteros positivos. </p><p> Hay 75373 tales números que no exceden de 107. </p><p> ¿Cuántos de esos números hay que no excedan 2 × 109? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -57,6 +37,7 @@ function euler229() {
 }
 
 euler229();
+
 ```
 
 </div>

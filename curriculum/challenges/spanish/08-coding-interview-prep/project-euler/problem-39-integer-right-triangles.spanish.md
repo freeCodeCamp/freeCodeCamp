@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3931000cf542c50fea6
+id: 5900f3931000cf542c50fea6
 challengeType: 5
 title: 'Problem 39: Integer right triangles'
+videoUrl: ''
+localeTitle: 'Problema 39: triángulos rectos enteros'
 ---
 
 ## Description
-<section id='description'> 
-Si p es el perímetro de un triángulo rectángulo con lados de longitud integral, {a, b, c}, hay exactamente tres soluciones para p = 120. 
-{20,48,52}, {24,45,51} , {30,40,50} 
-Para qué valor de p ≤ n, se maximiza el número de soluciones? 
-</section>
+<section id="description"> Si p es el perímetro de un triángulo rectángulo con lados de longitud integral, {a, b, c}, hay exactamente tres soluciones para p = 120. {20,48,52}, {24,45,51}, { 30,40,50} ¿Para qué valor de p ≤ n, se maximiza el número de soluciones? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -47,6 +43,7 @@ function intRightTriangles(n) {
 }
 
 intRightTriangles(1000);
+
 ```
 
 </div>

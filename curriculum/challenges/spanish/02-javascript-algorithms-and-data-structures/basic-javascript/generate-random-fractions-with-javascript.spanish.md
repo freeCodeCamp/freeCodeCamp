@@ -1,21 +1,16 @@
 ---
 id: cf1111c1c11feddfaeb9bdef
 title: Generate Random Fractions with JavaScript
-localeTitle: Generar fracciones aleatorias con JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Generar fracciones aleatorias con JavaScript
 ---
 
 ## Description
-<section id='description'> 
-Los números aleatorios son útiles para crear un comportamiento aleatorio. 
-JavaScript tiene una función <code>Math.random()</code> que genera un número decimal aleatorio entre <code>0</code> (incluido) y no hasta <code>1</code> (exclusivo). Por <code>Math.random()</code> tanto, <code>Math.random()</code> puede devolver un <code>0</code> pero nunca devolver completamente una <strong>Nota de</strong> <code>1</code> 
-<br> Al igual que el <a href='storing-values-with-the-assignment-operator' target='_blank'>almacenamiento de valores con el operador igual</a> , todas las llamadas de función se resolverán antes de que se ejecute la <code>return</code> , por lo que podemos <code>return</code> el valor de la función <code>Math.random()</code> . 
-</section>
+<section id="description"> Los números aleatorios son útiles para crear un comportamiento aleatorio. JavaScript tiene una función <code>Math.random()</code> que genera un número decimal aleatorio entre <code>0</code> (incluido) y no hasta <code>1</code> (exclusivo). Por <code>Math.random()</code> tanto, <code>Math.random()</code> puede devolver un <code>0</code> pero nunca devolver una <code>1</code> <strong>Nota</strong> <br> Al igual que el <a href="storing-values-with-the-assignment-operator" target="_blank">almacenamiento de valores con el operador igual</a> , todas las llamadas de función se resolverán antes de que se ejecute la <code>return</code> , por lo que podemos <code>return</code> el valor de la función <code>Math.random()</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie <code>randomFraction</code> para devolver un número aleatorio en lugar de devolver <code>0</code> . 
-</section>
+<section id="instructions"> Cambie <code>randomFraction</code> para devolver un número aleatorio en lugar de devolver <code>0</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -47,6 +42,7 @@ function randomFraction() {
 
   // Only change code above this line.
 }
+
 ```
 
 </div>
@@ -66,11 +62,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-function randomFraction() {
-  return Math.random();
-}
+// solution required
 ```
-
 </section>

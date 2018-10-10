@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4041000cf542c50ff17
+id: 5900f4041000cf542c50ff17
 challengeType: 5
 title: 'Problem 152: Writing one half as a sum of inverse squares'
+videoUrl: ''
+localeTitle: 'Problema 152: escribir una mitad como suma de cuadrados inversos'
 ---
 
 ## Description
-<section id='description'> 
-Hay varias formas de escribir el número 1/2 como una suma de cuadrados inversos usando enteros distintos. 
-Por ejemplo, se pueden usar los números {2,3,4,5,7,12,15,20,28,35}: 
-
-De hecho, solo se utilizan números enteros entre 2 y 45 inclusive, hay exactamente tres formas para hacerlo, los dos restantes son: {2,3,4,6,7,9,10,20,28,35,36,45} y {2,3,4,6,7,9,12, 15,28,30,35,36,45}. 
-¿De cuántas maneras hay para escribir el número 1/2 como una suma de cuadrados inversos usando enteros distintos entre 2 y 80 inclusive? 
-</section>
+<section id="description"> Hay varias formas de escribir el número 1/2 como una suma de cuadrados inversos usando enteros distintos. Por ejemplo, los números {2,3,4,5,7,12,15,20,28,35} se pueden usar: <p> De hecho, solo utilizando números enteros entre 2 y 45 inclusive, hay exactamente tres formas de hacerlo, las dos restantes son: {2,3,4,6,7,9,10,20,28,35,36,45 } y {2,3,4,6,7,9,12,15,28,30,35,36,45}. ¿Cuántas formas existen para escribir el número 1/2 como una suma de cuadrados inversos usando enteros distintos entre 2 y 80 inclusive? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +37,7 @@ function euler152() {
 }
 
 euler152();
+
 ```
 
 </div>

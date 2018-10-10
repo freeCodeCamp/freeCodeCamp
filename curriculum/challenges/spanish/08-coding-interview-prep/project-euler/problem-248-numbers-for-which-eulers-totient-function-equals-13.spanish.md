@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4651000cf542c50ff77
+id: 5900f4651000cf542c50ff77
 challengeType: 5
 title: 'Problem 248: Numbers for which Euler’s totient function equals 13!'
+videoUrl: ''
+localeTitle: 'Problema 248: ¡Números para los cuales la función totient de Euler es igual a 13!'
 ---
 
 ## Description
-<section id='description'> 
-El primer número n para el cual φ (n) = 13! es 6227180929. 
-Encuentra la 150,000 de dicho número. 
-</section>
+<section id="description"> El primer número n para el cual φ (n) = 13! es 6227180929. Encuentra el número 150,000. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -40,6 +37,7 @@ function euler248() {
 }
 
 euler248();
+
 ```
 
 </div>

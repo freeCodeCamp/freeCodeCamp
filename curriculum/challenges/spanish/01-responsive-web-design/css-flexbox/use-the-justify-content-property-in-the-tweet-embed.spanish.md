@@ -1,27 +1,23 @@
 ---
 id: 587d78ac367417b2b2512af7
 title: Use the justify-content Property in the Tweet Embed
-localeTitle: Use la propiedad justify-content en el Tweet Insertar
 challengeType: 0
 videoUrl: ''
+localeTitle: Use la propiedad justify-content en el Tweet Insertar
 ---
 
 ## Description
-<section id='description'>
-El último desafío mostró un ejemplo de la propiedad <code>justify-content</code> . Para la inserción de tweets, esta propiedad se puede aplicar para alinear los elementos en el elemento <code>.profile-name</code> .
-</section>
+<section id="description"> El último desafío mostró un ejemplo de la propiedad <code>justify-content</code> . Para la inserción de tweets, esta propiedad se puede aplicar para alinear los elementos en el elemento <code>.profile-name</code> . </section>
 
 ## Instructions
-<section id='instructions'>
-Añadir la propiedad CSS <code>justify-content</code> de la cabecera del <code>.profile-name</code> del elemento y establezca el valor en cualquiera de las opciones desde el último desafío.
-</section>
+<section id="instructions"> Añadir la propiedad CSS <code>justify-content</code> de la cabecera del <code>.profile-name</code> del elemento y establezca el valor en cualquiera de las opciones desde el último desafío. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'El elemento <code>.profile-name</code> debe tener la propiedad <code>.profile-name</code> <code>justify-content</code> establecida en cualquiera de estos valores: centro, inicio flexible, extremo flexible, espacio intermedio o espacio-alrededor.'
+  - text: 'El elemento <code>.profile-name</code> debe tener la propiedad <code>.profile-name</code> <code>justify-content</code> establecida en cualquiera de estos valores: centro, inicio flexible, final flexible, espacio intermedio o espacio-alrededor.'
     testString: 'assert(code.match(/header\s.profile-name\s*{\s*?.*?\s*?.*?\s*?\s*?.*?\s*?justify-content\s*:\s*(center|flex-start|flex-end|space-between|space-around)\s*;/g), "The <code>.profile-name</code> element should have the <code>justify-content</code> property set to any of these values: center, flex-start, flex-end, space-between, or space-around.");'
 
 ```
@@ -123,6 +119,7 @@ tests:
     <button class="like-btn">Like</button>
   </div>
 </footer>
+
 ```
 
 </div>
@@ -134,9 +131,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "header .profile-name {display: flex; flex-direction: column; justify-content: center; margin-left: 10px;}"
+// solution required
 ```
-
 </section>

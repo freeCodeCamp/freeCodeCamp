@@ -1,27 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244c9
 title: Accessing Object Properties with Variables
-localeTitle: Accediendo a las propiedades del objeto con variables
 challengeType: 1
 guideUrl: 'https://spanish.freecodecamp.org/guide/certificates/accessing-objects-properties-with-variables'
+videoUrl: ''
+localeTitle: Accediendo a las propiedades del objeto con variables
 ---
 
 ## Description
-<section id='description'> 
-Otro uso de la notación de corchetes en los objetos es acceder a una propiedad que se almacena como el valor de una variable. Esto puede ser muy útil para iterar a través de las propiedades de un objeto o al acceder a una tabla de búsqueda. 
-Aquí hay un ejemplo del uso de una variable para acceder a una propiedad: 
-<blockquote>var dogs = {<br>&nbsp;&nbsp;Fido: "Mutt", 
- Hunter: "Doberman", 
- Snoopie: "Beagle"<br>};<br>var myDog = "Hunter";<br>var myBreed = dogs[myDog];<br>console.log(myBreed); // "Doberman"</blockquote> 
-Otra forma en que puede usar este concepto es cuando el nombre de la propiedad se recopila dinámicamente durante la ejecución del programa, de la siguiente manera: 
-<blockquote>var someObj = {<br>&nbsp;&nbsp;propName: "John"<br>};<br>function propPrefix(str) {<br>&nbsp;&nbsp;var s = "prop";<br>&nbsp;&nbsp;return s + str;<br>}<br>var someProp = propPrefix("Name"); // someProp now holds the value 'propName'<br>console.log(someObj[someProp]); // "John"</blockquote> 
-Tenga en cuenta que <em>no</em> usamos comillas alrededor del nombre de la variable cuando la usamos para acceder a la propiedad porque estamos usando el <em>valor</em> de la variable, no el <em>nombre</em> . 
-</section>
+<section id="description"> Otro uso de la notación de corchetes en los objetos es acceder a una propiedad que se almacena como el valor de una variable. Esto puede ser muy útil para iterar a través de las propiedades de un objeto o al acceder a una tabla de búsqueda. Aquí hay un ejemplo del uso de una variable para acceder a una propiedad: <blockquote> perros var = { <br> Fido: &quot;Mutt&quot;, Hunter: &quot;Doberman&quot;, Snoopie: &quot;Beagle&quot; <br> }; <br> var myDog = &quot;Cazador&quot;; <br> var myBreed = perros [myDog]; <br> console.log (myBreed); // &quot;Doberman&quot; </blockquote> Otra forma en que puede usar este concepto es cuando el nombre de la propiedad se recopila dinámicamente durante la ejecución del programa, de la siguiente manera: <blockquote> var someObj = { <br> propName: &quot;John&quot; <br> }; <br> función propPrefix (str) { <br> var s = &quot;prop&quot;; <br> devuelve s + str; <br> } <br> var someProp = propPrefix (&quot;Name&quot;); // someProp ahora tiene el valor &#39;propName&#39; <br> console.log (someObj [someProp]); // &quot;John&quot; </blockquote> Tenga en cuenta que <em>no</em> usamos comillas alrededor del nombre de la variable cuando la usamos para acceder a la propiedad porque estamos usando el <em>valor</em> de la variable, no el <em>nombre</em> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la variable <code>playerNumber</code> para buscar el jugador <code>16</code> en <code>testObj</code> usando la notación de corchete. Luego asigna ese nombre a la variable del <code>player</code> . 
-</section>
+<section id="instructions"> Use la variable <code>playerNumber</code> para buscar el jugador <code>16</code> en <code>testObj</code> usando la notación de corchete. Luego asigna ese nombre a la variable del <code>player</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -62,6 +52,7 @@ var testObj = {
 
 var playerNumber;       // Change this Line
 var player = testObj;   // Change this Line
+
 ```
 
 </div>
@@ -81,15 +72,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var testObj = {
-  12: "Namath",
-  16: "Montana",
-  19: "Unitas"
-};
-var playerNumber = 16;
-var player = testObj[playerNumber];
+// solution required
 ```
-
 </section>

@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244e0
 title: Replacing If Else Chains with Switch
-localeTitle: Reemplazo de cadenas de otro tipo con interruptor
 challengeType: 1
+videoUrl: ''
+localeTitle: Reemplazo de cadenas de otro tipo con interruptor
 ---
 
 ## Description
-<section id='description'>
-Si tiene muchas opciones para elegir, una instrucción <code>switch</code> puede ser más fácil de escribir que muchas instrucciones encadenadas <code>if</code> / <code>else if</code> . Lo siguiente:
-<blockquote>if (val === 1) {<br>&nbsp;&nbsp;answer = "a";<br>} else if (val === 2) {<br>&nbsp;&nbsp;answer = "b";<br>} else {<br>&nbsp;&nbsp;answer = "c";<br>}</blockquote>
-puede ser reemplazado por:
-<blockquote>switch(val) {<br>&nbsp;&nbsp;case 1:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "a";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;case 2:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "b";<br>&nbsp;&nbsp;&nbsp;&nbsp;break;<br>&nbsp;&nbsp;default:<br>&nbsp;&nbsp;&nbsp;&nbsp;answer = "c";<br>}</blockquote>
-</section>
+<section id="description"> Si tiene muchas opciones para elegir, una instrucción <code>switch</code> puede ser más fácil de escribir que muchas instrucciones encadenadas <code>if</code> / <code>else if</code> . El seguimiento: <blockquote> si (val === 1) { <br> respuesta = &quot;a&quot;; <br> } else if (val === 2) { <br> respuesta = &quot;b&quot;; <br> } else { <br> respuesta = &quot;c&quot;; <br> } </blockquote> puede ser reemplazado con: <blockquote> interruptor (val) { <br> caso 1: <br> respuesta = &quot;a&quot;; <br> descanso; <br> caso 2: <br> respuesta = &quot;b&quot;; <br> descanso; <br> defecto: <br> respuesta = &quot;c&quot;; <br> } </blockquote></section>
 
 ## Instructions
-<section id='instructions'>
-Cambie las sentencias <code>if</code> / <code>else if</code> encadenadas en una sentencia <code>switch</code> .
-</section>
+<section id="instructions"> Cambie las instrucciones encadenadas <code>if</code> / <code>else if</code> en una instrucción <code>switch</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -33,7 +27,7 @@ tests:
     testString: 'assert(chainToSwitch("bob") === "Marley", "<code>chainToSwitch("bob")</code> should be "Marley"");'
   - text: <code>chainToSwitch(42)</code> debe ser &quot;La Respuesta&quot;
     testString: 'assert(chainToSwitch(42) === "The Answer", "<code>chainToSwitch(42)</code> should be "The Answer"");'
-  - text: ' <code>chainToSwitch(1)</code> debe ser &quot;No hay # 1&quot;'
+  - text: '<code>chainToSwitch(1)</code> debe ser &quot;No hay # 1&quot;'
     testString: 'assert(chainToSwitch(1) === "There is no #1", "<code>chainToSwitch(1)</code> should be "There is no #1"");'
   - text: <code>chainToSwitch(99)</code> debería ser &quot;¡Me <code>chainToSwitch(99)</code> por esto!&quot;
     testString: 'assert(chainToSwitch(99) === "Missed me by this much!", "<code>chainToSwitch(99)</code> should be "Missed me by this much!"");'
@@ -88,29 +82,7 @@ chainToSwitch(7);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function chainToSwitch(val) {
-  var answer = "";
-
-  switch(val) {
-    case "bob":
-      answer = "Marley";
-      break;
-    case 42:
-      answer = "The Answer";
-      break;
-    case 1:
-      answer = "There is no #1";
-      break;
-    case 99:
-      answer = "Missed me by this much!";
-      break;
-    case 7:
-      answer = "Ate Nine";
-  }
-  return answer;
-}
+// solution required
 ```
-
 </section>

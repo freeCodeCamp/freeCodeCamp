@@ -1,29 +1,16 @@
 ---
 id: 587d7fae367417b2b2512be3
 title: Get JSON with the JavaScript XMLHttpRequest Method
-localeTitle: Obtenga JSON con el método XMLHttpRequest de JavaScript
 challengeType: 6
+videoUrl: ''
+localeTitle: Obtenga JSON con el método XMLHttpRequest de JavaScript
 ---
 
 ## Description
-<section id='description'> 
-También puede solicitar datos de una fuente externa. Aquí es donde las API entran en juego. 
-Recuerde que las API (o interfaces de programación de aplicaciones) son herramientas que las computadoras utilizan para comunicarse entre sí. Aprenderá cómo actualizar HTML con los datos que obtenemos de las API utilizando una tecnología llamada AJAX. 
-La mayoría de las API web transfieren datos en un formato llamado JSON. JSON significa JavaScript Object Notation. 
-sintaxis JSON es muy similar a la notación literal de objetos JavaScript. JSON tiene propiedades de objeto y sus valores actuales, intercalados entre un <code>{</code> y un <code>}</code> . 
-Estas propiedades y sus valores a menudo se denominan &quot;pares clave-valor&quot;. 
-Sin embargo, los JSON transmitidos por las API se envían como <code>bytes</code> , y su aplicación lo recibe como una <code>string</code> . Estos se pueden convertir en objetos JavaScript, pero no son objetos JavaScript de forma predeterminada. El método <code>JSON.parse</code> analiza la cadena y construye el objeto JavaScript descrito por él. 
-Puedes solicitar el JSON desde la API Cat Photo de freeCodeCamp. Aquí está el código que puede poner en su evento de clic para hacer esto: 
-<blockquote>req=new XMLHttpRequest();<br>req.open("GET",'/json/cats.json',true);<br>req.send();<br>req.onload=function(){<br>&nbsp;&nbsp;json=JSON.parse(req.responseText);<br>&nbsp;&nbsp;document.getElementsByClassName('message')[0].innerHTML=JSON.stringify(json);<br>};</blockquote> 
-Aquí hay una reseña de lo que está haciendo cada pieza. El objeto <code>XMLHttpRequest</code> JavaScript tiene una serie de propiedades y métodos que se utilizan para transferir datos. Primero, se crea una instancia del objeto <code>XMLHttpRequest</code> y se guarda en la variable <code>req</code> . 
-A continuación, el método <code>open</code> inicializa una solicitud: este ejemplo solicita datos de una API, por lo tanto es una solicitud &quot;GET&quot;. El segundo argumento para <code>open</code> es la URL de la API de la que solicita datos. El tercer argumento es un valor booleano donde <code>true</code> convierte en una solicitud asíncrona. 
-El método de <code>send</code> envía la solicitud. Finalmente, el controlador de eventos <code>onload</code> analiza los datos devueltos y aplica el método <code>JSON.stringify</code> para convertir el objeto JavaScript en una cadena. Esta cadena se inserta como el texto del mensaje. 
-</section>
+<section id="description"> También puede solicitar datos de una fuente externa. Aquí es donde las API entran en juego. Recuerde que las API (o interfaces de programación de aplicaciones) son herramientas que las computadoras utilizan para comunicarse entre sí. Aprenderá cómo actualizar HTML con los datos que obtenemos de las API utilizando una tecnología llamada AJAX. La mayoría de las API web transfieren datos en un formato llamado JSON. JSON significa JavaScript Object Notation. La sintaxis JSON es muy similar a la notación literal de objetos JavaScript. JSON tiene propiedades de objeto y sus valores actuales, intercalados entre un <code>{</code> y un <code>}</code> . Estas propiedades y sus valores a menudo se denominan &quot;pares clave-valor&quot;. Sin embargo, los JSON transmitidos por las API se envían como <code>bytes</code> , y su aplicación lo recibe como una <code>string</code> . Estos se pueden convertir en objetos JavaScript, pero no son objetos JavaScript de forma predeterminada. El método <code>JSON.parse</code> analiza la cadena y construye el objeto JavaScript descrito por él. Puedes solicitar el JSON desde la API Cat Photo de freeCodeCamp. Aquí está el código que puede poner en su evento de clic para hacer esto: <blockquote> req = new XMLHttpRequest (); <br> req.open (&quot;GET&quot;, &#39;/ json / cats.json&#39;, verdadero); <br> req.send (); <br> req.onload = function () { <br> json = JSON.parse (req.responseText); <br> document.getElementsByClassName (&#39;message&#39;) [0] .innerHTML = JSON.stringify (json); <br> }; </blockquote> Aquí hay una reseña de lo que está haciendo cada pieza. El objeto <code>XMLHttpRequest</code> JavaScript tiene una serie de propiedades y métodos que se utilizan para transferir datos. Primero, se crea una instancia del objeto <code>XMLHttpRequest</code> y se guarda en la variable <code>req</code> . A continuación, el método <code>open</code> inicializa una solicitud: este ejemplo solicita datos de una API, por lo tanto, es una solicitud &quot;GET&quot;. El segundo argumento para <code>open</code> es la URL de la API de la que solicita datos. El tercer argumento es un valor booleano donde <code>true</code> convierte en una solicitud asíncrona. El método de <code>send</code> envía la solicitud. Finalmente, el controlador de eventos <code>onload</code> analiza los datos devueltos y aplica el método <code>JSON.stringify</code> para convertir el objeto JavaScript en una cadena. Esta cadena se inserta como el texto del mensaje. </section>
 
 ## Instructions
-<section id='instructions'> 
-Actualice el código para crear y enviar una solicitud &quot;GET&quot; a la API de foto freeCodeCamp Cat. Luego haga clic en el botón &quot;Obtener mensaje&quot;. Su función AJAX reemplazará el texto &quot;El mensaje irá aquí&quot; con la salida JSON sin formato de la API. 
-</section>
+<section id="instructions"> Actualice el código para crear y enviar una solicitud &quot;GET&quot; a la API Cat Photo de freeCodeCamp. Luego haga clic en el botón &quot;Obtener mensaje&quot;. Su función AJAX reemplazará el texto &quot;El mensaje irá aquí&quot; con la salida JSON sin formato de la API. </section>
 
 ## Tests
 <section id='tests'>
@@ -98,6 +85,7 @@ tests:
     Get Message
   </button>
 </p>
+
 ```
 
 </div>

@@ -1,23 +1,16 @@
 ---
 id: 5a9d726c424fe3d0e10cad11
 title: Create a custom CSS Variable
-localeTitle: Crear una variable CSS personalizada
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear una variable CSS personalizada
 ---
 
 ## Description
-<section id='description'> 
-Para crear una Variable CSS, solo debes darle un <code>name</code> con <code>two dashes</code> delante y asignarle un <code>value</code> como este: 
-<blockquote>--penguin-skin: gray;</blockquote> 
-Esto creará una variable llamada <code>--penguin-skin</code> y le asignará el valor de <code>gray</code> . 
-Ahora puede usar esa variable en otra parte de su CSS para cambiar el valor de otros elementos a gris. 
-</section>
+<section id="description"> Para crear una Variable CSS, solo necesitas darle un <code>name</code> con <code>two dashes</code> delante y asignarle un <code>value</code> como este: <blockquote> --penguin-piel: gris; </blockquote> Esto creará una variable llamada <code>--penguin-skin</code> y le asignará el valor de <code>gray</code> . Ahora puede usar esa variable en otra parte de su CSS para cambiar el valor de otros elementos a gris. </section>
 
 ## Instructions
-<section id='instructions'> 
-En la clase de <code>penguin</code> , crea un nombre de variable <code>--penguin-skin</code> y dale un valor de <code>gray</code> 
-</section>
+<section id="instructions"> En la clase de <code>penguin</code> , crea un nombre de variable <code>--penguin-skin</code> y dale un valor de <code>gray</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -234,6 +227,7 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
+
 ```
 
 </div>
@@ -245,9 +239,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".penguin {--penguin-skin: gray;}"
+// solution required
 ```
-
 </section>

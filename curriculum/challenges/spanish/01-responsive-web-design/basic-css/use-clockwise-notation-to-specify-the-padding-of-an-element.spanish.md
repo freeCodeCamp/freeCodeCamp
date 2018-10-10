@@ -1,22 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08826
 title: Use Clockwise Notation to Specify the Padding of an Element
-localeTitle: Use la notación de las agujas del reloj para especificar el relleno de un elemento
 challengeType: 0
 videoUrl: ''
+localeTitle: Use la notación de las agujas del reloj para especificar el relleno de un elemento
 ---
 
 ## Description
-<section id='description'> 
-En lugar de especificar las propiedades <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> y <code>padding-left</code> individualmente, puede especificarlas todas en una línea, como esta: 
-<code>padding: 10px 20px 10px 20px;</code> 
-Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado que utilizando las instrucciones de relleno específicas para cada lado. 
-</section>
+<section id="description"> En lugar de especificar las propiedades <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> y <code>padding-left</code> individualmente, puede especificarlas todas en una línea, como esta: <code>padding: 10px 20px 10px 20px;</code> Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado que utilizando las instrucciones de relleno específicas para cada lado. </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la notación de las agujas del reloj para darle a la clase &quot;.blue-box&quot; un <code>padding</code> de <code>40px</code> en su parte superior e izquierda, pero solo <code>20px</code> en su parte inferior y derecha. 
-</section>
+<section id="instructions"> Use la notación de las agujas del reloj para darle a la clase &quot;.blue-box&quot; un <code>padding</code> de <code>40px</code> en su lado superior e izquierdo, pero solo <code>20px</code> en su lado inferior y derecho. </section>
 
 ## Tests
 <section id='tests'>
@@ -79,6 +73,7 @@ tests:
   <h5 class="box red-box">padding</h5>
   <h5 class="box blue-box">padding</h5>
 </div>
+
 ```
 
 </div>

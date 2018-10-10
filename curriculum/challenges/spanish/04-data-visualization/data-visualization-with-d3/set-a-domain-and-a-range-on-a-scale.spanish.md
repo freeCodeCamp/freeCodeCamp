@@ -1,27 +1,18 @@
 ---
 id: 587d7fac367417b2b2512bdb
 title: Set a Domain and a Range on a Scale
-localeTitle: Establecer un dominio y un rango en una escala
 required:
   - src: 'https://cdnjs.cloudflare.com/ajax/libs/d3/4.3.0/d3.min.js'
 challengeType: 6
+videoUrl: ''
+localeTitle: Establecer un dominio y un rango en una escala
 ---
 
 ## Description
-<section id='description'>
-De forma predeterminada, las escalas utilizan la relación de identidad: el valor de entrada se asigna al valor de salida. Pero las escalas pueden ser mucho más flexibles e interesantes.
-Supongamos que un conjunto de datos tiene valores que oscilan entre 50 y 480. Esta es la información de entrada para una escala y también se conoce como dominio.
-Desea asignar esos puntos a lo largo del eje <code>x</code> en el lienzo de SVG, entre 10 unidades y 500 unidades. Esta es la información de salida, que también se conoce como el rango.
-Los métodos de <code>domain()</code> y <code>range()</code> establecen estos valores para la escala. Ambos métodos toman una matriz de al menos dos elementos como un argumento. Aquí hay un ejemplo:
-<blockquote>// Set a domain<br>// The domain covers the set of input values<br>scale.domain([50, 480]);<br>// Set a range<br>// The range covers the set of output values<br>scale.range([10, 500]);<br>scale(50) // Returns 10<br>scale(480) // Returns 500<br>scale(325) // Returns 323.37<br>scale(750) // Returns 807.67<br>d3.scaleLinear()</blockquote>
-Observe que la escala usa la relación lineal entre el dominio y los valores de rango para determinar cuál debe ser la salida para un número dado. El valor mínimo en el dominio (50) se asigna al valor mínimo (10) en el rango.
-</section>
+<section id="description"> De forma predeterminada, las escalas utilizan la relación de identidad: el valor de entrada se asigna al valor de salida. Pero las escalas pueden ser mucho más flexibles e interesantes. Supongamos que un conjunto de datos tiene valores que oscilan entre 50 y 480. Esta es la información de entrada para una escala y también se conoce como dominio. Desea asignar esos puntos a lo largo del eje <code>x</code> en el lienzo de SVG, entre 10 unidades y 500 unidades. Esta es la información de salida, que también se conoce como el rango. Los métodos <code>domain()</code> y <code>range()</code> establecen estos valores para la escala. Ambos métodos toman una matriz de al menos dos elementos como un argumento. Aquí hay un ejemplo: <blockquote> // Establecer un dominio <br> // El dominio cubre el conjunto de valores de entrada. <br> dominio de escala ([50, 480]); <br> // establecer un rango <br> // El rango cubre el conjunto de valores de salida. <br> scale.range ([10, 500]); <br> escala (50) // Devoluciones 10 <br> escala (480) // Devoluciones 500 <br> escala (325) // Devoluciones 323.37 <br> escala (750) // Devoluciones 807.67 <br> d3.scaleLinear () </blockquote> Observe que la escala utiliza la relación lineal entre el dominio y los valores de rango para determinar cuál debe ser la salida para un número dado. El valor mínimo en el dominio (50) se asigna al valor mínimo (10) en el rango. </section>
 
 ## Instructions
-<section id='instructions'>
-Cree una escala y establezca su dominio en <code>[250, 500]</code> y alcance en <code>[10, 150]</code> .
-<strong>Nota</strong> <br> Puede encadenar los métodos de <code>domain()</code> y <code>range()</code> a la variable de <code>scale</code> .
-</section>
+<section id="instructions"> Cree una escala y establezca su dominio en <code>[250, 500]</code> y alcance en <code>[10, 150]</code> . <strong>Nota</strong> <br> Puede encadenar los métodos de <code>domain()</code> y <code>range()</code> a la variable de <code>scale</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -63,6 +54,7 @@ tests:
       .text(output);
   </script>
 </body>
+
 ```
 
 </div>

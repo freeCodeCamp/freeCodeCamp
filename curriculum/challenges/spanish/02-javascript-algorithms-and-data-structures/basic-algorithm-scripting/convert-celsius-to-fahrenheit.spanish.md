@@ -1,21 +1,17 @@
 ---
 id: 56533eb9ac21ba0edf2244b3
 title: Convert Celsius to Fahrenheit
-localeTitle: Convertir Celsius a Fahrenheit
 challengeType: 1
 isRequired: true
+videoUrl: ''
+localeTitle: Convertir Celsius a Fahrenheit
 ---
 
 ## Description
-<section id='description'> 
-El algoritmo para convertir de Celsius a Fahrenheit es la temperatura en grados Celsius <code>9/5</code> , más <code>32</code> . 
-Se le da una variable <code>celsius</code> representa una temperatura en grados centígrados. Use la variable <code>fahrenheit</code> ya definida y asígnele la temperatura Fahrenheit equivalente a la temperatura Celsius dada. Use el algoritmo mencionado anteriormente para ayudar a convertir la temperatura en grados Celsius a Fahrenheit. 
-No se preocupe demasiado por la función y las declaraciones de devolución, ya que se cubrirán en futuros desafíos. Por ahora, solo utiliza operadores que ya hayas aprendido. 
-</section>
+<section id="description"> El algoritmo para convertir de Celsius a Fahrenheit es la temperatura en grados Celsius <code>9/5</code> , más <code>32</code> . Te dan una variable <code>celsius</code> representa una temperatura en grados celsius. Use la variable <code>fahrenheit</code> ya definida y asígnele la temperatura Fahrenheit equivalente a la temperatura Celsius dada. Use el algoritmo mencionado anteriormente para ayudar a convertir la temperatura en grados Celsius a Fahrenheit. No se preocupe demasiado por la función y las declaraciones de devolución, ya que se cubrirán en futuros desafíos. Por ahora, solo utiliza operadores que ya hayas aprendido. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -52,6 +48,7 @@ function convertToF(celsius) {
 }
 
 convertToF(30);
+
 ```
 
 </div>
@@ -63,16 +60,7 @@ convertToF(30);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function convertToF(celsius) {
-  let fahrenheit = celsius * 9/5 + 32;
-
-  return fahrenheit;
-}
-
-convertToF(30);
-
+// solution required
 ```
-
 </section>

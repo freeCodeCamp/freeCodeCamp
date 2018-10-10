@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3b21000cf542c50fec5
+id: 5900f3b21000cf542c50fec5
 challengeType: 5
 title: 'Problem 70: Totient permutation'
+videoUrl: ''
+localeTitle: Problema 70 totient permutación
 ---
 
 ## Description
-<section id='description'> 
-La función de Totient de Euler, φ (n) [a veces llamada función phi], se usa para determinar el número de números positivos menores o iguales a n que son primos relativos a n. Por ejemplo, como 1, 2, 4, 5, 7 y 8, son todos menos de nueve y son relativamente primos a nueve, φ (9) = 6. El número 1 se considera relativamente primo a cada número positivo, por lo que φ (1) = 1. 
-Interesantemente, φ (87109) = 79180, y se puede ver que 87109 es una permutación de 79180. 
-Encuentre el valor de n, 1 &lt;n &lt;107, para el cual φ (n) es una permutación de n y la relación n / φ (n) produce un mínimo. 
-</section>
+<section id="description"> La función Totient de Euler, φ (n) [a veces llamada función phi], se usa para determinar el número de números positivos menores o iguales a n que son primos relativos a n. Por ejemplo, como 1, 2, 4, 5, 7 y 8, son todos menos de nueve y son relativamente primos a nueve, φ (9) = 6. El número 1 se considera relativamente primo a cada número positivo, por lo que φ (1) = 1. Curiosamente, φ (87109) = 79180, y se puede ver que 87109 es una permutación de 79180. Encuentre el valor de n, 1 &lt;n &lt;107, para el cual φ (n) es una permutación de n y la relación n / φ (n) produce un mínimo. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -41,6 +37,7 @@ function euler70() {
 }
 
 euler70();
+
 ```
 
 </div>

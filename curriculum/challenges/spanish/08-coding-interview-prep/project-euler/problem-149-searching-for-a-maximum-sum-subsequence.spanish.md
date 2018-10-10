@@ -1,34 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4021000cf542c50ff13
+id: 5900f4021000cf542c50ff13
 challengeType: 5
 title: 'Problem 149: Searching for a maximum-sum subsequence'
+videoUrl: ''
+localeTitle: 'Problema 149: Buscar una subsecuencia de suma máxima'
 ---
 
 ## Description
-<section id='description'> 
-Mirando la tabla de abajo, es fácil verificar que la suma máxima posible de números adyacentes en cualquier dirección (horizontal, vertical, diagonal o anti-diagonal) es 16 (= 8 + 7 + 1). 
-
-
-−25329−6513273−18−4 8 
-
-Ahora, repitamos la búsqueda, pero en una escala mucho mayor: 
-
-Primero, genere cuatro millones de números pseudoaleatorios utilizando una forma específica de lo que se conoce como &quot;Lagged Fibonacci Generator&quot;: 
-
-para 1 ≤ k ≤ 55, sk = [100003 - 200003k + 300007k3] (módulo 1000000) - 500000. 
-para 56 ≤ k ≤ 4000000, sk = [sk − 24 + sk − 55 + 1000000] (módulo 1000000) - 500000. 
-
-Por lo tanto, s10 = −393027 y s100 = 86613. 
-
-Los términos de s se ordenan en una tabla de 2000 × 2000, usando los primeros 2000 números para llenar la primera fila (secuencialmente ), los siguientes 2000 números para llenar la segunda fila, y así sucesivamente. 
-
-Finalmente, encuentre la mayor suma de (cualquier número de) entradas adyacentes en cualquier dirección (horizontal, vertical, diagonal o anti-diagonal). 
-</section>
+<section id="description"> Mirando la tabla de abajo, es fácil verificar que la suma máxima posible de números adyacentes en cualquier dirección (horizontal, vertical, diagonal o anti-diagonal) es 16 (= 8 + 7 + 1). <p> −25329−6513273−18−4 8 </p><p> Ahora, repitamos la búsqueda, pero en una escala mucho mayor: </p><p> Primero, genere cuatro millones de números pseudoaleatorios utilizando una forma específica de lo que se conoce como &quot;Generador de Fibonacci Rezagado&quot;: </p><p> Para 1 ≤ k ≤ 55, sk = [100003 - 200003k + 300007k3] (módulo 1000000) - 500000. Para 56 ≤ k ≤ 4000000, sk = [sk − 24 + sk − 55 + 1000000] (módulo 1000000) - 500000. </p><p> Por lo tanto, s10 = −393027 y s100 = 86613. </p><p> Los términos de s se organizan en una tabla de 2000 × 2000, utilizando los primeros 2000 números para completar la primera fila (secuencialmente), los siguientes 2000 números para completar la segunda fila, y así sucesivamente. </p><p> Finalmente, encuentre la mayor suma de (cualquier número de) entradas adyacentes en cualquier dirección (horizontal, vertical, diagonal o anti-diagonal). </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -55,6 +37,7 @@ function euler149() {
 }
 
 euler149();
+
 ```
 
 </div>

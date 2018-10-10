@@ -1,22 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f41a1000cf542c50ff2c
+id: 5900f41a1000cf542c50ff2c
 challengeType: 5
 title: 'Problem 173: Using up to one million tiles how many different "hollow" square laminae can be formed?'
+videoUrl: ''
+localeTitle: 'Problema 173: al usar hasta un millón de baldosas, ¿cuántas láminas cuadradas "huecas" se pueden formar?'
 ---
 
 ## Description
-<section id='description'> 
-Definiremos una lámina cuadrada como un contorno cuadrado con un &quot;orificio&quot; cuadrado de modo que la forma posea simetría vertical y horizontal. Por ejemplo, utilizando exactamente treinta y dos baldosas cuadradas podemos formar dos láminas cuadradas diferentes: 
-
-
-Con cien baldosas, y no necesariamente usando todas las baldosas a la vez, es posible formar cuarenta y una láminas cuadradas diferentes . 
-Usando hasta un millón de baldosas, ¿cuántas láminas cuadradas diferentes se pueden formar? 
-</section>
+<section id="description"> Definiremos una lámina cuadrada para que sea un contorno cuadrado con un &quot;agujero&quot; cuadrado de modo que la forma posea simetría vertical y horizontal. Por ejemplo, utilizando exactamente treinta y dos azulejos cuadrados podemos formar dos láminas cuadradas diferentes: <p> Con cien baldosas, y no necesariamente utilizando todas las fichas a la vez, es posible formar cuarenta y una láminas cuadradas diferentes. Usando hasta un millón de baldosas, ¿cuántas láminas cuadradas diferentes se pueden formar? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -43,6 +37,7 @@ function euler173() {
 }
 
 euler173();
+
 ```
 
 </div>

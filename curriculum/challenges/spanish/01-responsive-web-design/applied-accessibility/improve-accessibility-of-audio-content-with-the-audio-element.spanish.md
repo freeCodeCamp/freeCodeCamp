@@ -1,25 +1,16 @@
 ---
 id: 587d7789367417b2b2512aa4
 title: Improve Accessibility of Audio Content with the audio Element
-localeTitle: Mejorar la accesibilidad del contenido de audio con el elemento de audio
 challengeType: 0
 videoUrl: ''
+localeTitle: Mejorar la accesibilidad del contenido de audio con el elemento de audio
 ---
 
 ## Description
-<section id='description'> 
-El elemento de <code>audio</code> de HTML5 da un significado semántico cuando envuelve el contenido de la transmisión de sonido o audio en su marca. El contenido de audio también necesita una alternativa de texto para que las personas sordas o con dificultades auditivas puedan acceder. Esto se puede hacer con el texto cercano en la página o un enlace a una transcripción. 
-La etiqueta de <code>audio</code> admite el atributo de <code>controls</code> . Esto muestra los controles de reproducción, pausa y otros controles predeterminados del navegador, y es compatible con la funcionalidad del teclado. Este es un atributo booleano, lo que significa que no necesita un valor, su presencia en la etiqueta activa la configuración. 
-Aquí hay un ejemplo: 
-<blockquote>&lt;audio id=&quot;meowClip&quot; controls&gt;<br>&nbsp;&nbsp;&lt;source src=&quot;audio/meow.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;<br>&nbsp;&nbsp;&lt;source src=&quot;audio/meow.ogg&quot; type=&quot;audio/ogg&quot; /&gt;<br>&lt;/audio&gt;<br></blockquote> 
-<strong>Nota</strong> <br> El contenido multimedia suele tener componentes tanto visuales como auditivos. Necesita subtítulos sincronizados y una transcripción para que los usuarios con discapacidades visuales y / o auditivas puedan acceder a ella. Generalmente, un desarrollador web no es responsable de crear los subtítulos o la transcripción, pero necesita saber para incluirlos. 
-</section>
+<section id="description"> El elemento de <code>audio</code> de HTML5 le da un significado semántico cuando envuelve el contenido de la transmisión de sonido o audio en su marca. El contenido de audio también necesita una alternativa de texto para que las personas sordas o con dificultades auditivas puedan acceder. Esto se puede hacer con el texto cercano en la página o un enlace a una transcripción. La etiqueta de <code>audio</code> soporta el atributo de <code>controls</code> . Esto muestra los controles de reproducción, pausa y otros controles predeterminados del navegador, y es compatible con la funcionalidad del teclado. Este es un atributo booleano, lo que significa que no necesita un valor, su presencia en la etiqueta activa la configuración. Aquí hay un ejemplo: <blockquote> &lt;audio id = &quot;meowClip&quot; controles&gt; <br> &lt;source src = &quot;audio / meow.mp3&quot; type = &quot;audio / mpeg&quot; /&gt; <br> &lt;source src = &quot;audio / meow.ogg&quot; type = &quot;audio / ogg&quot; /&gt; <br> &lt;/audio&gt; <br></blockquote> <strong>Nota</strong> <br> El contenido multimedia suele tener componentes tanto visuales como auditivos. Necesita subtítulos sincronizados y una transcripción para que los usuarios con discapacidades visuales y / o auditivas puedan acceder a ella. Generalmente, un desarrollador web no es responsable de crear los subtítulos o la transcripción, pero necesita saber para incluirlos. </section>
 
 ## Instructions
-<section id='instructions'> 
-hora de tomar un descanso de Camper Cat y conocer a su compañero campista Zersiax (@zersiax), un campeón de accesibilidad y un usuario de lector de pantalla. Para escuchar un clip de su lector de pantalla en acción, agregue un elemento de <code>audio</code> después de la <code>p</code> . Incluir el atributo de <code>controls</code> . Luego coloque una etiqueta de <code>source</code> dentro de las etiquetas de <code>audio</code> con el atributo <code>src</code> configurado en &quot;https://s3.amazonaws.com/freecodecamp/screen-reader.mp3&quot; y <code>type</code> atributo establecido en &quot;audio / mpeg&quot;. 
-<strong>Nota</strong> <br> El clip de audio puede sonar rápido y ser difícil de entender, pero esa es una velocidad normal para los usuarios de lectores de pantalla. 
-</section>
+<section id="instructions"> Es hora de tomar un descanso de Camper Cat y conocer a su compañero de campista Zersiax (@zersiax), un campeón de la accesibilidad y un usuario lector de pantalla. Para escuchar un clip de su lector de pantalla en acción, agregue un elemento de <code>audio</code> después de la <code>p</code> . Incluir el atributo de <code>controls</code> . Luego coloque una etiqueta de <code>source</code> dentro de las etiquetas de <code>audio</code> con el atributo <code>src</code> configurado en &quot;https://s3.amazonaws.com/freecodecamp/screen-reader.mp3&quot; y <code>type</code> atributo establecido en &quot;audio / mpeg&quot;. <strong>Nota</strong> <br> El clip de audio puede sonar rápido y ser difícil de entender, pero esa es una velocidad normal para los usuarios de lectores de pantalla. </section>
 
 ## Tests
 <section id='tests'>
@@ -62,6 +53,7 @@ tests:
 
   </main>
 </body>
+
 ```
 
 </div>

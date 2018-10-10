@@ -1,21 +1,16 @@
 ---
 id: bd7123c9c452eddfaeb5bdef
 title: Use Bracket Notation to Find the Nth-to-Last Character in a String
-localeTitle: Use la notación de corchete para encontrar el carácter Nth-to-Last en una cadena
 challengeType: 1
+videoUrl: ''
+localeTitle: Use la notación de corchete para encontrar el carácter Nth-to-Last en una cadena
 ---
 
 ## Description
-<section id='description'> 
-Puede usar el mismo principio que acabamos de usar para recuperar el último carácter de una cadena para recuperar el enésimo al último carácter. 
-Por ejemplo, puede obtener el valor de la tercera a la última letra de la cadena <code>var firstName = &quot;Charles&quot;</code> usando <code>firstName[firstName.length - 3]</code> 
-</section>
+<section id="description"> Puede usar el mismo principio que acabamos de usar para recuperar el último carácter de una cadena para recuperar el Nth-to-last. Por ejemplo, puede obtener el valor de la tercera a la última letra de la cadena <code>var firstName = &quot;Charles&quot;</code> usando <code>firstName[firstName.length - 3]</code> </section>
 
 ## Instructions
-<section id='instructions'> 
-Use la <dfn>notación de corchetes</dfn> para encontrar el segundo hasta el último carácter en la cadena <code>lastName</code> . 
-<strong>Pista</strong> <br> Intenta mirar la declaración de la variable <code>thirdToLastLetterOfFirstName</code> si te quedas atascado. 
-</section>
+<section id="instructions"> Use la <dfn>notación de corchetes</dfn> para encontrar el segundo hasta el último carácter en la cadena <code>lastName</code> . <strong>Insinuación</strong> <br> Intenta mirar la declaración de la variable <code>thirdToLastLetterOfFirstName</code> si te quedas atascado. </section>
 
 ## Tests
 <section id='tests'>
@@ -47,7 +42,6 @@ var lastName = "Lovelace";
 // Only change code below this line
 var secondToLastLetterOfLastName = lastName;
 
-
 ```
 
 </div>
@@ -67,13 +61,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-var firstName = "Ada";
-var thirdToLastLetterOfFirstName = firstName[firstName.length - 3];
-
-var lastName = "Lovelace";
-var secondToLastLetterOfLastName = lastName[lastName.length - 2];
+// solution required
 ```
-
 </section>

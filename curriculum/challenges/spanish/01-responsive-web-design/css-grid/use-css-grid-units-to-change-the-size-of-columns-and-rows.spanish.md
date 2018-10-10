@@ -1,33 +1,23 @@
 ---
 id: 5a9036ee38fddaf9a66b5d34
 title: Use CSS Grid units to Change the Size of Columns and Rows
-localeTitle: Utilice las unidades de cuadrícula de CSS para cambiar el tamaño de las columnas y las filas
 challengeType: 0
 videoUrl: ''
+localeTitle: Utilice las unidades de cuadrícula de CSS para cambiar el tamaño de las columnas y las filas
 ---
 
 ## Description
-<section id='description'>
-Puede usar unidades absolutas y relativas como <code>px</code> y <code>em</code> en CSS Grid para definir el tamaño de las filas y columnas. También puede usar estos:
-<code>fr</code> : establece la columna o fila a una fracción del espacio disponible,
-<code>auto</code> : establece la columna o fila al ancho o alto de su contenido automáticamente,
-<code>%</code> : ajusta la columna o fila a El porcentaje de ancho de su contenedor.
-Aquí está el código que genera el resultado en la vista previa:
-<blockquote>grid-template-columns: auto 50px 10% 2fr 1fr;</blockquote>
-Este fragmento crea cinco columnas. La primera columna es tan ancha como su contenido, la segunda columna es 50px, la tercera columna es el 10% de su contenedor, y para las dos últimas columnas; El espacio restante se divide en tres secciones, dos se asignan para la cuarta columna y una para la quinta.
-</section>
+<section id="description"> Puede usar unidades absolutas y relativas como <code>px</code> y <code>em</code> en CSS Grid para definir el tamaño de las filas y columnas. También puede usar estos: <code>fr</code> : establece la columna o fila a una fracción del espacio disponible, <code>auto</code> : establece la columna o fila al ancho o alto de su contenido automáticamente, <code>%</code> : ajusta la columna o fila al ancho de porcentaje de su envase. Aquí está el código que genera el resultado en la vista previa: <blockquote> rejilla-plantilla-columnas: auto 50px 10% 2fr 1fr; </blockquote> Este fragmento crea cinco columnas. La primera columna es tan ancha como su contenido, la segunda columna es 50px, la tercera columna es el 10% de su contenedor, y para las dos últimas columnas; El espacio restante se divide en tres secciones, dos se asignan para la cuarta columna y una para la quinta. </section>
 
 ## Instructions
-<section id='instructions'>
-Haz una cuadrícula con tres columnas cuyos anchos sean los siguientes: 1fr, 100px y 2fr.
-</section>
+<section id="instructions"> Haz una cuadrícula con tres columnas cuyos anchos sean los siguientes: 1fr, 100px y 2fr. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'la clase <code>container</code> debe tener una propiedad de <code>grid-template-columns</code> que tenga tres columnas con los siguientes anchos: <code>1fr, 100px, and 2fr</code> '
+  - text: '<code>container</code> clase <code>container</code> debe tener una propiedad de <code>grid-template-columns</code> que tenga tres columnas con los siguientes anchos: <code>1fr, 100px, and 2fr</code> .'
     testString: 'assert(code.match(/.container\s*?{[\s\S]*grid-template-columns\s*?:\s*?1fr\s*?100px\s*?2fr\s*?;[\s\S]*}/gi), "<code>container</code> class should have a <code>grid-template-columns</code> property that has three columns with the following widths: <code>1fr, 100px, and 2fr</code>.");'
 
 ```
@@ -68,6 +58,7 @@ tests:
   <div class="d4">4</div>
   <div class="d5">5</div>
 </div>
+
 ```
 
 </div>
@@ -79,9 +70,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {grid-template-columns: 1fr 100px 2fr;}"
+// solution required
 ```
-
 </section>

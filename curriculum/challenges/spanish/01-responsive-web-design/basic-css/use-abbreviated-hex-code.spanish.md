@@ -1,23 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08719
 title: Use Abbreviated Hex Code
-localeTitle: Use el código hexadecimal abreviado
 challengeType: 0
 videoUrl: ''
+localeTitle: Use el código hexadecimal abreviado
 ---
 
 ## Description
-<section id='description'>
-Muchas personas se sienten abrumadas por las posibilidades de más de 16 millones de colores. Y es difícil recordar el código hexadecimal. Afortunadamente, puedes acortarlo.
-Por ejemplo, el código hexadecimal de rojo <code>#FF0000</code> se puede acortar a <code>#F00</code> . Esta forma abreviada proporciona un dígito para el rojo, un dígito para el verde y un dígito para el azul.
-Esto reduce el número total de colores posibles a alrededor de 4.000. Pero los navegadores interpretarán <code>#FF0000</code> y <code>#F00</code> como exactamente del mismo color.
-</section>
+<section id="description"> Muchas personas se sienten abrumadas por las posibilidades de más de 16 millones de colores. Y es difícil recordar el código hexadecimal. Afortunadamente, puedes acortarlo. Por ejemplo, el código hexadecimal de rojo <code>#FF0000</code> puede <code>#FF0000</code> a <code>#F00</code> . Esta forma abreviada proporciona un dígito para el rojo, un dígito para el verde y un dígito para el azul. Esto reduce el número total de colores posibles a alrededor de 4.000. Pero los navegadores interpretarán <code>#FF0000</code> y <code>#F00</code> como exactamente del mismo color. </section>
 
 ## Instructions
-<section id='instructions'>
-Adelante, intente usar los códigos hexadecimales abreviados para colorear los elementos correctos.
-<table class='table table-striped'><tr><th> Color </th><th> Código hexadecimal corto </th></tr><tr><td> Cian </td><td> <code>#0FF</code> </td> </tr><tr><td> Verde </td><td> <code>#0F0</code> </td> </tr><tr><td> rojo </td><td> <code>#F00</code> </td> </tr><tr><td> Fucsia </td><td> <code>#F0F</code> </td> </tr></table>
-</section>
+<section id="instructions"> Adelante, intente usar los códigos hexadecimales abreviados para colorear los elementos correctos. <table class="table table-striped"><tbody><tr><th> Color </th><th> Código hexadecimal corto </th></tr><tr><td> Cian </td><td> <code>#0FF</code> </td> </tr><tr><td> Verde </td><td> <code>#0F0</code> </td> </tr><tr><td> rojo </td><td> <code>#F00</code> </td> </tr><tr><td> Fucsia </td><td> <code>#F0F</code> </td> </tr></tbody></table></section>
 
 ## Tests
 <section id='tests'>
@@ -34,11 +27,11 @@ tests:
     testString: 'assert(code.match(/\.green-text\s*?{\s*?color:\s*?#0F0\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color green instead of the hex code <code>#00FF00</code>.");'
   - text: ¡Da tu elemento <code>h1</code> con el texto <code>I am cyan!</code> El <code>color</code> cian.
     testString: 'assert($(".cyan-text").css("color") === "rgb(0, 255, 255)", "Give your <code>h1</code> element with the text <code>I am cyan!</code> the <code>color</code> cyan.");'
-  - text: 'Use el <code>hex code</code> abreviado para el color cian en lugar del código hexadecimal <code>#00FFFF</code> '
+  - text: 'Use el <code>hex code</code> abreviado para el color cian en lugar del código hexadecimal <code>#00FFFF</code> .'
     testString: 'assert(code.match(/\.cyan-text\s*?{\s*?color:\s*?#0FF\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color cyan instead of the hex code <code>#00FFFF</code>.");'
   - text: ¡Da tu elemento <code>h1</code> con el texto <code>I am fuchsia!</code> El <code>color</code> fucsia.
     testString: 'assert($(".fuchsia-text").css("color") === "rgb(255, 0, 255)", "Give your <code>h1</code> element with the text <code>I am fuchsia!</code> the <code>color</code> fuchsia.");'
-  - text: 'Use el <code>hex code</code> abreviado para el color fucsia en lugar del código hexadecimal <code>#FF00FF</code> '
+  - text: 'Utilice el <code>hex code</code> abreviado para el color fucsia en lugar del código hexadecimal <code>#FF00FF</code> .'
     testString: 'assert(code.match(/\.fuchsia-text\s*?{\s*?color:\s*?#F0F\s*?;\s*?}/gi), "Use the abbreviated <code>hex code</code> for the color fuchsia instead of the hex code <code>#FF00FF</code>.");'
 
 ```
@@ -73,6 +66,7 @@ tests:
 <h1 class="cyan-text">I am cyan!</h1>
 
 <h1 class="green-text">I am green!</h1>
+
 ```
 
 </div>

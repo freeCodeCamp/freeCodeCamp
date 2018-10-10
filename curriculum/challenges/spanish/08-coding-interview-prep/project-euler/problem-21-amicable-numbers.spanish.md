@@ -1,21 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3811000cf542c50fe94
+id: 5900f3811000cf542c50fe94
 challengeType: 5
 title: 'Problem 21: Amicable numbers'
+videoUrl: ''
+localeTitle: 'Problema 21: números amistosos'
 ---
 
 ## Description
-<section id='description'> 
-Deje que d ( <var>n</var> ) se defina como la suma de los divisores propios de <var>n</var> (números menores que <var>n</var> que se dividen uniformemente en <var>n</var> ). 
-Si d ( <var>a</var> ) = <var>b</var> y d ( <var>b</var> ) = <var>a</var> , donde <var>a</var> ≠ <var>b</var> , entonces <var>a</var> y <var>b</var> son un par amigable y cada uno de <var>a</var> y <var>b</var> se llama números amistosos. 
-Por ejemplo, los divisores propios de 220 son 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 y 110; por lo tanto, d (220) = 284. Los divisores propios de 284 son 1, 2, 4, 71 y 142; entonces d (284) = 220. 
-Evalúa la suma de todos los números amistosos debajo de <var>n</var> . 
-</section>
+<section id="description"> Sea d ( <var>n</var> ) definido como la suma de los divisores propios de <var>n</var> (números menores que <var>n</var> que se dividen uniformemente en <var>n</var> ). Si d ( <var>a</var> ) = <var>b</var> y d ( <var>b</var> ) = <var>a</var> , donde <var>a</var> ≠ <var>b</var> , entonces <var>a</var> y <var>b</var> son un par amigable y cada uno de <var>a</var> y <var>b</var> se llama números amistosos. Por ejemplo, los divisores propios de 220 son 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 y 110; por lo tanto, d (220) = 284. Los divisores propios de 284 son 1, 2, 4, 71 y 142; entonces d (284) = 220. Evalúa la suma de todos los números amistosos bajo <var>n</var> . </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -48,6 +43,7 @@ function sumAmicableNum(n) {
 }
 
 sumAmicableNum(10000);
+
 ```
 
 </div>
@@ -59,25 +55,7 @@ sumAmicableNum(10000);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const sumAmicableNum = (n) => {
-  const fsum = (n) => {
-    let sum = 1;
-    for (let i = 2; i <= Math.floor(Math.sqrt(n)); i++)
-      if (Math.floor(n % i) === 0)
-        sum += i + Math.floor(n / i);
-    return sum;
-  };
-  let d = [];
-  let amicableSum = 0;
-  for (let i=2; i<n; i++) d[i] = fsum(i);
-  for (let i=2; i<n; i++) {
-    let dsum = d[i];
-    if (d[dsum]===i && i!==dsum) amicableSum += i+dsum;
-  }
-  return amicableSum/2;
-};
+// solution required
 ```
-
 </section>

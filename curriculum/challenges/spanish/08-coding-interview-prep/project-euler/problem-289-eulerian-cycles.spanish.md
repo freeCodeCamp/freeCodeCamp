@@ -1,32 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f48d1000cf542c50ffa0
+id: 5900f48d1000cf542c50ffa0
 challengeType: 5
 title: 'Problem 289: Eulerian Cycles'
+videoUrl: ''
+localeTitle: 'Problema 289: Ciclos Eulerianos'
 ---
 
 ## Description
-<section id='description'> 
-Sea C (x, y) un círculo que pasa por los puntos (x, y), (x, y + 1), (x + 1, y) y (x + 1, y + 1). 
-
-Para los enteros positivos m y n, sea E (m, n) una configuración que consiste en los círculos m · n: 
-{C (x, y): 0 ≤ x &lt;m, 0 ≤ y &lt;n, x y y son números enteros} 
-
-Un ciclo euleriano en E (m, n) es un camino cerrado que pasa a través de cada arco exactamente una vez. 
-Muchos de estos caminos son posibles en E (m, n), pero solo nos interesan aquellos que no se cruzan solos: 
-Un camino que no se cruza solo se toca en los puntos de la red, pero nunca se cruza. 
-
-La imagen de abajo muestra E (3,3) y un ejemplo de una ruta Euleriana sin cruce. 
-
-Sea L (m, n) el número de caminos no cruzados eulerianos en E (m, n). 
-Por ejemplo, L (1,2) = 2, L (2,2) = 37 y L (3,3) = 104290. 
-
-Encuentra L (6,10) mod 1010. 
-</section>
+<section id="description"> Sea C (x, y) un círculo que pasa por los puntos (x, y), (x, y + 1), (x + 1, y) y (x + 1, y + 1). <p> Para los enteros positivos m y n, sea E (m, n) una configuración que consiste en los círculos m · n: {C (x, y): 0 ≤ x &lt;m, 0 ≤ y &lt;n, xey son enteros} </p><p> Un ciclo euleriano en E (m, n) es un camino cerrado que pasa a través de cada arco exactamente una vez. Muchos de estos caminos son posibles en E (m, n), pero solo nos interesan aquellos que no se cruzan solos: un camino que no se cruza solo se toca en los puntos de la red, pero nunca se cruza. </p><p> La imagen de abajo muestra E (3,3) y un ejemplo de un camino no cruzado euleriano. </p><p> Sea L (m, n) el número de caminos no cruzados eulerianos en E (m, n). Por ejemplo, L (1,2) = 2, L (2,2) = 37 y L (3,3) = 104290. </p><p> Encuentra L (6,10) mod 1010. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -53,6 +37,7 @@ function euler289() {
 }
 
 euler289();
+
 ```
 
 </div>

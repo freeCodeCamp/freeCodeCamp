@@ -1,22 +1,16 @@
 ---
 id: 56533eb9ac21ba0edf2244d5
 title: Comparison with the Greater Than Or Equal To Operator
-localeTitle: Comparación con el operador mayor o igual que el operador
 challengeType: 1
+videoUrl: ''
+localeTitle: Comparación con el operador mayor o igual que el operador
 ---
 
 ## Description
-<section id='description'> 
-El operador <code>greater than or equal to</code> ( <code>&gt;=</code> ) compara los valores de dos números. Si el número a la izquierda es mayor o igual que el número a la derecha, devuelve <code>true</code> . De lo contrario, devuelve <code>false</code> . 
-Al igual que el operador de igualdad, <code>greater than or equal to</code> operador convertirá los tipos de datos al comparar. 
-<strong>ejemplos</strong> 
-<blockquote> 6  >=  6  // true<br> 7  >= '3' // true<br> 2  >=  3  // false<br>'7' >=  9  // false</blockquote> 
-</section>
+<section id="description"> El operador <code>greater than or equal to</code> ( <code>&gt;=</code> ) compara los valores de dos números. Si el número a la izquierda es mayor o igual que el número a la derecha, devuelve <code>true</code> . De lo contrario, devuelve <code>false</code> . Al igual que el operador de igualdad, <code>greater than or equal to</code> operador convertirá los tipos de datos al comparar. <strong>Ejemplos</strong> <blockquote> 6&gt; = 6 // verdadero <br> 7&gt; = &#39;3&#39; // verdadero <br> 2&gt; = 3 // falso <br> &#39;7&#39;&gt; = 9 // falso </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue el operador <code>greater than or equal to</code> las líneas indicadas para que las declaraciones de devolución tengan sentido. 
-</section>
+<section id="instructions"> Agregue el operador <code>greater than or equal to</code> las líneas indicadas para que las declaraciones de devolución tengan sentido. </section>
 
 ## Tests
 <section id='tests'>
@@ -64,6 +58,7 @@ function testGreaterOrEqual(val) {
 
 // Change this value to test
 testGreaterOrEqual(10);
+
 ```
 
 </div>
@@ -75,19 +70,7 @@ testGreaterOrEqual(10);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function testGreaterOrEqual(val) {
-  if (val >= 20) {  // Change this line
-    return "20 or Over";
-  }
-
-  if (val >= 10) {  // Change this line
-    return "10 or Over";
-  }
-
-  return "Less than 10";
-}
+// solution required
 ```
-
 </section>

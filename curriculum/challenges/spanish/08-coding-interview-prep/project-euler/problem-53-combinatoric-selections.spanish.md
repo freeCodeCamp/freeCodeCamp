@@ -1,28 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3a11000cf542c50feb4
+id: 5900f3a11000cf542c50feb4
 challengeType: 5
 title: 'Problem 53: Combinatoric selections'
+videoUrl: ''
+localeTitle: 'Problema 53: selecciones combinatorias'
 ---
 
 ## Description
-<section id='description'> 
-Hay exactamente diez formas de seleccionar tres de cinco, 12345: 
-123, 124, 125, 134, 135, 145, 234, 235, 245 y 345 
-En combinatoria, usamos la notación, 5C3 = 10. 
-In general, 
-
-nCr = 
-n! r! (n − r)! 
-, donde r ≤ n, n! = n × (n − 1) × ... × 3 × 2 × 1, y 0! = 1. 
-
-No es hasta n = 23, que un valor excede de un millón: 23C10 = 1144066. 
-¿Cuántos, no necesariamente distintos, valores de nCr, para 1 ≤ n ≤ 100, son mayores que un millón? ? 
-</section>
+<section id="description"> Hay exactamente diez formas de seleccionar tres de cinco, 12345: 123, 124, 125, 134, 135, 145, 234, 235, 245 y 345 En combinatoria, usamos la notación, 5C3 = 10. En general, <p> nCr = n! r! (n − r)! , donde r ≤ n, n! = n × (n − 1) × ... × 3 × 2 × 1, y 0! = 1. </p><p> No es hasta n = 23, que un valor excede de un millón: 23C10 = 1144066. ¿Cuántos, no necesariamente distintos, valores de nCr, para 1 ≤ n ≤ 100, son mayores que un millón? </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -55,6 +43,7 @@ function combinatoricSelections(limit) {
 }
 
 combinatoricSelections(1000000);
+
 ```
 
 </div>
@@ -66,26 +55,7 @@ combinatoricSelections(1000000);
 ## Solution
 <section id='solution'>
 
-
 ```js
-function combinatoricSelections(limit) {
-    const factorial = n =>
-        Array.apply(null, { length: n })
-            .map((_, i) => i + 1)
-            .reduce((p, c) => p * c, 1);
-
-    let result = 0;
-    const nMax = 100;
-
-    for (let n = 1; n <= nMax; n++) {
-        for (let r = 0; r <= n; r++) {
-            if (factorial(n) / (factorial(r) * factorial(n - r)) >= limit)
-                result++;
-        }
-    }
-
-    return result;
-}
+// solution required
 ```
-
 </section>

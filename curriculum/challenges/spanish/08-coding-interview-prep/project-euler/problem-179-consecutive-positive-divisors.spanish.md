@@ -1,18 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f41f1000cf542c50ff32
+id: 5900f41f1000cf542c50ff32
 challengeType: 5
 title: 'Problem 179: Consecutive positive divisors'
+videoUrl: ''
+localeTitle: 'Problema 179: Divisores positivos consecutivos'
 ---
 
 ## Description
-<section id='description'> 
-Encuentre el número de enteros 1 &lt;n &lt;107, para los que n y n + 1 tienen el mismo número de divisores positivos. Por ejemplo, 14 tiene los divisores positivos 1, 2, 7, 14, mientras que 15 tiene 1, 3, 5, 15. 
-</section>
+<section id="description"> Encuentre el número de enteros 1 &lt;n &lt;107, para los cuales n y n + 1 tienen el mismo número de divisores positivos. Por ejemplo, 14 tiene los divisores positivos 1, 2, 7, 14 mientras que 15 tiene 1, 3, 5, 15. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -39,6 +37,7 @@ function euler179() {
 }
 
 euler179();
+
 ```
 
 </div>

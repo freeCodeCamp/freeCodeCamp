@@ -1,26 +1,16 @@
 ---
 id: 587d78a3367417b2b2512ad1
 title: Learn about Complementary Colors
-localeTitle: Aprende sobre colores complementarios
 challengeType: 0
 videoUrl: ''
+localeTitle: Aprende sobre colores complementarios
 ---
 
 ## Description
-<section id='description'> 
-La teoría del color y su impacto en el diseño es un tema profundo y solo se cubren los aspectos básicos en los siguientes desafíos. En un sitio web, el color puede llamar la atención sobre el contenido, evocar emociones o crear armonía visual. El uso de diferentes combinaciones de colores puede realmente cambiar el aspecto de un sitio web, y se puede pensar mucho en elegir una paleta de colores que funcione con su contenido. 
-La rueda de colores es una herramienta útil para visualizar cómo se relacionan los colores entre sí: es un círculo donde los tonos similares son vecinos y los diferentes tonos están más separados. Cuando dos colores están opuestos entre sí en la rueda, se denominan colores complementarios. Tienen la característica de que si se combinan, se &quot;cancelan&quot; entre sí y crean un color gris. Sin embargo, cuando se colocan lado a lado, estos colores aparecen más vibrantes y producen un fuerte contraste visual. 
-Algunos ejemplos de colores complementarios con sus códigos hexadecimales son: 
-<blockquote>red (#FF0000) and cyan (#00FFFF)<br>green (#00FF00) and magenta (#FF00FF)<br>blue (#0000FF) and yellow (#FFFF00)</blockquote> 
-Esto es diferente del modelo de color RYB obsoleto que muchos de nosotros aprendimos en la escuela, que tiene diferentes colores primarios y complementarios. La teoría moderna del color utiliza el modelo RGB aditivo (como en una pantalla de computadora) y el modelo sustractivo CMY (K) (como en la impresión). Lea <a href='https://en.wikipedia.org/wiki/Color_model' target='_blank'>aquí</a> para más información sobre este tema complejo. 
-Hay muchas herramientas de selección de colores disponibles en línea que tienen la opción de encontrar el complemento de un color. 
-<strong>Nota</strong> <br> Para todos los desafíos de color: usar color puede ser una forma poderosa de agregar interés visual a una página. Sin embargo, el color solo no debe usarse como la única forma de transmitir información importante porque los usuarios con discapacidades visuales pueden no entender ese contenido. Este problema se tratará con más detalle en los desafíos de accesibilidad aplicada. 
-</section>
+<section id="description"> La teoría del color y su impacto en el diseño es un tema profundo y solo los aspectos básicos están cubiertos en los siguientes desafíos. En un sitio web, el color puede llamar la atención sobre el contenido, evocar emociones o crear armonía visual. El uso de diferentes combinaciones de colores puede realmente cambiar el aspecto de un sitio web, y se puede pensar mucho en elegir una paleta de colores que funcione con su contenido. La rueda de colores es una herramienta útil para visualizar cómo se relacionan los colores entre sí: es un círculo donde los tonos similares son vecinos y los diferentes tonos están más separados. Cuando dos colores están opuestos entre sí en la rueda, se denominan colores complementarios. Tienen la característica de que si se combinan, se &quot;cancelan&quot; entre sí y crean un color gris. Sin embargo, cuando se colocan lado a lado, estos colores aparecen más vibrantes y producen un fuerte contraste visual. Algunos ejemplos de colores complementarios con sus códigos hexadecimales son: <blockquote> rojo (# FF0000) y cian (# 00FFFF) <br> verde (# 00FF00) y magenta (# FF00FF) <br> azul (# 0000FF) y amarillo (# FFFF00) </blockquote> Esto es diferente del modelo de color RYB obsoleto que muchos de nosotros aprendimos en la escuela, que tiene diferentes colores primarios y complementarios. La teoría moderna del color utiliza el modelo RGB aditivo (como en una pantalla de computadora) y el modelo sustractivo CMY (K) (como en la impresión). Lea <a href="https://en.wikipedia.org/wiki/Color_model" target="_blank">aquí</a> para más información sobre este tema complejo. Hay muchas herramientas de selección de colores disponibles en línea que tienen la opción de encontrar el complemento de un color. <strong>Nota</strong> <br> Para todos los desafíos de color: usar color puede ser una forma poderosa de agregar interés visual a una página. Sin embargo, el color solo no debe usarse como la única forma de transmitir información importante porque los usuarios con discapacidades visuales pueden no entender ese contenido. Este problema se tratará con más detalle en los desafíos de accesibilidad aplicada. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cambie la propiedad de <code>background-color</code> de las clases <code>blue</code> y <code>yellow</code> a sus respectivos colores. Observe cómo los colores se ven diferentes uno al lado del otro en comparación con el fondo blanco. 
-</section>
+<section id="instructions"> Cambie la propiedad de <code>background-color</code> de las clases <code>blue</code> y <code>yellow</code> a sus respectivos colores. Observe cómo los colores se ven diferentes uno al lado del otro en comparación con el fondo blanco. </section>
 
 ## Tests
 <section id='tests'>
@@ -60,6 +50,7 @@ tests:
 </style>
 <div class="blue"></div>
 <div class="yellow"></div>
+
 ```
 
 </div>

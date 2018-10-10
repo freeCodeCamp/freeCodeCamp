@@ -1,21 +1,16 @@
 ---
 id: 5a94fe8569fb03452672e464
 title: Create Grids within Grids
-localeTitle: Crear cuadrículas dentro de cuadrículas
 challengeType: 0
 videoUrl: ''
+localeTitle: Crear cuadrículas dentro de cuadrículas
 ---
 
 ## Description
-<section id='description'> 
-Convertir un elemento en una cuadrícula solo afecta el comportamiento de sus descendientes directos. Entonces, al convertir un descendiente directo en una cuadrícula, tiene una cuadrícula dentro de una cuadrícula. 
-Por ejemplo, al configurar las propiedades de <code>display</code> y <code>grid-template-columns</code> del elemento con la clase <code>item3</code> , creará una cuadrícula dentro de su cuadrícula. 
-</section>
+<section id="description"> Convertir un elemento en una cuadrícula solo afecta el comportamiento de sus descendientes directos. Entonces, al convertir un descendiente directo en una cuadrícula, tiene una cuadrícula dentro de una cuadrícula. Por ejemplo, al configurar las propiedades de <code>display</code> y <code>grid-template-columns</code> del elemento con la clase <code>item3</code> , creará una cuadrícula dentro de su cuadrícula. </section>
 
 ## Instructions
-<section id='instructions'> 
-Convierta el elemento con la clase <code>item3</code> en una cuadrícula con dos columnas con un ancho de <code>auto</code> y <code>1fr</code> usando las <code>1fr</code> <code>display</code> y <code>grid-template-columns</code> . 
-</section>
+<section id="instructions"> Convierta el elemento con la clase <code>item3</code> en una cuadrícula con dos columnas con un ancho de <code>auto</code> y <code>1fr</code> usando las <code>1fr</code> <code>display</code> y <code>grid-template-columns</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -95,6 +90,7 @@ tests:
   </div>
   <div class="item4">footer</div>
 </div>
+
 ```
 
 </div>
@@ -106,9 +102,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".item3 {grid-template-columns: auto 1fr; display: grid;}"
+// solution required
 ```
-
 </section>

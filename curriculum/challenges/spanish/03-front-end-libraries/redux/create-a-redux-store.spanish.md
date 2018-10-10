@@ -1,24 +1,17 @@
 ---
 id: 5a24c314108439a4d403614b
 title: Create a Redux Store
-localeTitle: Crear una tienda Redux
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Crear una tienda Redux
 ---
 
 ## Description
-<section id='description'> 
-Redux es un marco de administración estatal que se puede usar con varias tecnologías web diferentes, incluida React. 
-En Redux, hay un único objeto de estado que es responsable del estado completo de su aplicación. Esto significa que si tenía una aplicación React con diez componentes, y cada componente tenía su propio estado local, el estado completo de su aplicación estaría definido por un objeto de estado único alojado en el <code>store</code> Redux. Este es el primer principio importante que se debe entender al aprender Redux: la tienda Redux es la única fuente de verdad cuando se trata del estado de la aplicación. 
-Esto también significa que cada vez que cualquier parte de su aplicación quiera actualizar el estado, <strong>debe</strong> hacerlo a través de la tienda Redux. El flujo de datos unidireccional facilita el seguimiento de la administración del estado en su aplicación. 
-</section>
+<section id="description"> Redux es un marco de administración estatal que se puede usar con varias tecnologías web diferentes, incluida React. En Redux, hay un solo objeto de estado que es responsable del estado completo de su aplicación. Esto significa que si tenía una aplicación React con diez componentes, y cada componente tenía su propio estado local, el estado completo de su aplicación estaría definido por un objeto de estado único alojado en el <code>store</code> Redux. Este es el primer principio importante que se debe entender al aprender Redux: la tienda Redux es la única fuente de verdad cuando se trata del estado de la aplicación. Esto también significa que en cualquier momento en que cualquier parte de su aplicación quiera actualizar el estado, <strong>debe</strong> hacerlo a través de la tienda Redux. El flujo de datos unidireccional facilita el seguimiento de la administración del estado en su aplicación. </section>
 
 ## Instructions
-<section id='instructions'> 
-El <code>store</code> Redux es un objeto que mantiene y administra el <code>state</code> aplicación. Existe un método llamado <code>createStore()</code> en el objeto Redux, que se utiliza para crear el <code>store</code> Redux. Este método toma una función <code>reducer</code> como un argumento requerido. La función de <code>reducer</code> se cubre en un desafío posterior y ya está definida para usted en el editor de código. Simplemente toma el <code>state</code> como argumento y devuelve el <code>state</code> . 
-Declare una variable de <code>store</code> y asigne el método <code>createStore()</code> , pasando el <code>reducer</code> como un argumento. 
-<strong>Nota:</strong> El código en el editor utiliza la sintaxis de argumento por defecto de ES6 para inicializar este estado para mantener un valor de <code>5</code> . Si no está familiarizado con los argumentos predeterminados, puede consultar la <a target="_blank" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions">sección ES6 en el Currículo</a> que cubre este tema. 
-</section>
+<section id="instructions"> El <code>store</code> Redux es un objeto que mantiene y administra el <code>state</code> aplicación. Existe un método llamado <code>createStore()</code> en el objeto Redux, que se utiliza para crear el <code>store</code> Redux. Este método toma una función <code>reducer</code> como un argumento requerido. La función de <code>reducer</code> se cubre en un desafío posterior y ya está definida para usted en el editor de código. Simplemente toma el <code>state</code> como argumento y devuelve el <code>state</code> . Declare una variable de <code>store</code> y <code>createStore()</code> método <code>createStore()</code> , pasando el <code>reducer</code> como un argumento. <strong>Nota:</strong> el código en el editor utiliza la sintaxis de argumentos por defecto de ES6 para inicializar este estado para mantener un valor de <code>5</code> . Si no está familiarizado con los argumentos predeterminados, puede consultar la <a target="_blank" href="https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/es6/set-default-parameters-for-your-functions">sección ES6 en el Currículo</a> que cubre este tema. </section>
 
 ## Tests
 <section id='tests'>
@@ -48,7 +41,6 @@ const reducer = (state = 5) => {
 // For example: Redux.createStore()
 // Define the store here:
 
-
 ```
 
 </div>
@@ -60,17 +52,7 @@ const reducer = (state = 5) => {
 ## Solution
 <section id='solution'>
 
-
 ```js
-const reducer = (state = 5) => {
-  return state;
-}
-
-// Redux methods are available from a Redux object
-// For example: Redux.createStore()
-// Define the store here:
-
-const store = Redux.createStore(reducer);
+// solution required
 ```
-
 </section>

@@ -1,23 +1,16 @@
 ---
 id: 5a9d727a424fe3d0e10cad12
 title: Use a custom CSS Variable
-localeTitle: Use una variable CSS personalizada
 challengeType: 0
 videoUrl: ''
+localeTitle: Use una variable CSS personalizada
 ---
 
 ## Description
-<section id='description'> 
-Después de crear su variable, puede asignar su valor a otras propiedades de CSS haciendo referencia al nombre que le dio. 
-<blockquote>background: var(--penguin-skin);</blockquote> 
-Esto cambiará el fondo de cualquier elemento que estés apuntando a gris porque ese es el valor de la variable <code>--penguin-skin</code> . 
-Tenga en cuenta que los estilos no se aplicarán a menos que los nombres de las variables coincidan exactamente. 
-</section>
+<section id="description"> Después de crear su variable, puede asignar su valor a otras propiedades de CSS haciendo referencia al nombre que le dio. <blockquote> fondo: var (- piel de pingüino); </blockquote> Esto cambiará el fondo de cualquier elemento que estés apuntando a gris porque ese es el valor de la variable <code>--penguin-skin</code> . Tenga en cuenta que los estilos no se aplicarán a menos que los nombres de las variables coincidan exactamente. </section>
 
 ## Instructions
-<section id='instructions'> 
-Aplique la variable <code>--penguin-skin</code> a la propiedad de <code>background</code> de las clases <code>penguin-top</code> , <code>penguin-bottom</code> , <code>right-hand</code> y <code>left-hand</code> . 
-</section>
+<section id="instructions"> Aplique la variable <code>--penguin-skin</code> a la propiedad de <code>background</code> de las clases <code>penguin-top</code> , <code>penguin-bottom</code> , <code>right-hand</code> y <code>left-hand</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -253,6 +246,7 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
+
 ```
 
 </div>
@@ -264,9 +258,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".penguin-top {background: var(--penguin-skin);} .penguin-bottom {background: var(--penguin-skin);} .right-hand {background: var(--penguin-skin);} .left-hand {background: var(--penguin-skin);}"
+// solution required
 ```
-
 </section>

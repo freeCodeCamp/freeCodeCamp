@@ -1,20 +1,16 @@
 ---
 id: 587d781c367417b2b2512ac2
 title: Set the font-size for Multiple Heading Elements
-localeTitle: Establecer el tamaño de fuente para varios elementos de encabezado
 challengeType: 0
 videoUrl: ''
+localeTitle: Establecer el tamaño de fuente para varios elementos de encabezado
 ---
 
 ## Description
-<section id='description'> 
-La propiedad de <code>font-size</code> se usa para especificar el tamaño del texto en un elemento dado. Esta regla se puede usar para múltiples elementos para crear una consistencia visual del texto en una página. En este desafío, establecerá los valores de todas las etiquetas <code>h1</code> a <code>h6</code> para equilibrar los tamaños de los títulos. 
-</section>
+<section id="description"> La propiedad de <code>font-size</code> se usa para especificar el tamaño del texto en un elemento dado. Esta regla se puede usar para múltiples elementos para crear una consistencia visual del texto en una página. En este desafío, establecerá los valores de todas las etiquetas <code>h1</code> a <code>h6</code> para equilibrar los tamaños de los títulos. </section>
 
 ## Instructions
-<section id='instructions'> 
-<ul> <li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h1</code> en 68px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h2</code> en 52px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h3</code> en 40px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h4</code> en 32px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h5</code> en 21px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h6</code> en 14px. </li></ul> 
-</section>
+<section id="instructions"><ul><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h1</code> en 68px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h2</code> en 52px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h3</code> en 40px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h4</code> en 32px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h5</code> en 21px. </li><li> Establezca el <code>font-size</code> de <code>font-size</code> de la etiqueta <code>h6</code> en 14px. </li></ul></section>
 
 ## Tests
 <section id='tests'>
@@ -58,6 +54,7 @@ tests:
 <h4>This is h4 text</h4>
 <h5>This is h5 text</h5>
 <h6>This is h6 text</h6>
+
 ```
 
 </div>

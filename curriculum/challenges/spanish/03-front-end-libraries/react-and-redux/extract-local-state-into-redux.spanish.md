@@ -1,21 +1,17 @@
 ---
 id: 5a24c314108439a4d4036149
 title: Extract Local State into Redux
-localeTitle: Extraer el estado local en Redux
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Extraer el estado local en Redux
 ---
 
 ## Description
-<section id='description'>
-Ya casi terminas! Recuerde que escribió todo el código de Redux para que Redux pudiera controlar la administración del estado de su aplicación de mensajes React. Ahora que Redux está conectado, debe extraer la administración del estado del componente de <code>Presentational</code> y en Redux. Actualmente, tiene Redux conectado, pero está manejando el estado localmente dentro del componente de <code>Presentational</code> .
-</section>
+<section id="description"> ¡Ya casi terminas! Recuerde que escribió todo el código de Redux para que Redux pudiera controlar la administración del estado de su aplicación de mensajes React. Ahora que Redux está conectado, debe extraer la administración del estado del componente de <code>Presentational</code> y en Redux. Actualmente, tiene Redux conectado, pero está manejando el estado localmente dentro del componente de <code>Presentational</code> . </section>
 
 ## Instructions
-<section id='instructions'>
-En el componente <code>Presentational</code> , primero, elimine la propiedad de <code>messages</code> en el <code>state</code> local. Estos mensajes serán gestionados por Redux. A continuación, modifique el método <code>submitMessage()</code> para que <code>submitNewMessage()</code> desde <code>this.props</code> , y pase la entrada del mensaje actual del <code>state</code> local como un argumento. Como también eliminó los <code>messages</code> del estado local, elimine la propiedad de <code>messages</code> de la llamada a <code>this.setState()</code> aquí. Finalmente, modifique el método <code>render()</code> para que se asigne sobre los mensajes recibidos de los <code>props</code> lugar del <code>state</code> .
-Una vez que se realicen estos cambios, la aplicación continuará funcionando de la misma manera, excepto que Redux administra el estado. Este ejemplo también ilustra cómo un componente puede tener un <code>state</code> local: su componente aún realiza un seguimiento local de las entradas del usuario en su propio <code>state</code> . Puede ver cómo Redux proporciona un marco de administración de estado útil sobre React. Obtuvo el mismo resultado utilizando solo el estado local de React al principio, y esto generalmente es posible con aplicaciones simples. Sin embargo, a medida que sus aplicaciones se vuelven más grandes y complejas, también lo hace la administración de su estado, y este es el problema que Redux resuelve.
-</section>
+<section id="instructions"> En el componente <code>Presentational</code> , primero, elimine la propiedad de <code>messages</code> en el <code>state</code> local. Estos mensajes serán gestionados por Redux. A continuación, modifique el método <code>submitMessage()</code> para que <code>submitNewMessage()</code> desde <code>this.props</code> , y pase la entrada del mensaje actual del <code>state</code> local como un argumento. Como también eliminó los <code>messages</code> del estado local, elimine la propiedad de <code>messages</code> de la llamada a <code>this.setState()</code> aquí. Finalmente, modifique el método <code>render()</code> para que se asigne sobre los mensajes recibidos de los <code>props</code> lugar del <code>state</code> . Una vez que se realicen estos cambios, la aplicación continuará funcionando de la misma manera, excepto que Redux administra el estado. Este ejemplo también ilustra cómo un componente puede tener un <code>state</code> local: su componente aún realiza un seguimiento local de las entradas del usuario en su propio <code>state</code> . Puede ver cómo Redux proporciona un marco de administración de estado útil sobre React. Obtuvo el mismo resultado utilizando solo el estado local de React al principio, y esto generalmente es posible con aplicaciones simples. Sin embargo, a medida que sus aplicaciones se vuelven más grandes y complejas, también lo hace la administración de su estado, y este es el problema que Redux resuelve. </section>
 
 ## Tests
 <section id='tests'>
@@ -24,9 +20,9 @@ Una vez que se realicen estos cambios, la aplicación continuará funcionando de
 tests:
   - text: El <code>AppWrapper</code> debe renderizar a la página.
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("AppWrapper").length === 1; })(), "The <code>AppWrapper</code> should render to the page.");'
-  - text: 'El componente de <code>Presentational</code> debe representar un <code>h2</code> , <code>input</code> , <code>button</code> y <code>ul</code> elementos.'
+  - text: 'El componente de <code>Presentational</code> debe representar los elementos <code>h2</code> , <code>input</code> , <code>button</code> y <code>ul</code> .'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("Presentational").length === 1; })(), "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.");'
-  - text: 'El componente de <code>Presentational</code> debe representar un <code>h2</code> , <code>input</code> , <code>button</code> y <code>ul</code> elementos.'
+  - text: 'El componente de <code>Presentational</code> debe representar los elementos <code>h2</code> , <code>input</code> , <code>button</code> y <code>ul</code> .'
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find("Presentational"); return ( PresentationalComponent.find("div").length === 1 && PresentationalComponent.find("h2").length === 1 && PresentationalComponent.find("button").length === 1 && PresentationalComponent.find("ul").length === 1 ); })(), "The <code>Presentational</code> component should render an <code>h2</code>, <code>input</code>, <code>button</code>, and <code>ul</code> elements.");'
   - text: El componente de <code>Presentational</code> debe recibir <code>messages</code> de la tienda de Redux como prop.
     testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); const PresentationalComponent = mockedComponent.find("Presentational"); const props = PresentationalComponent.props(); return Array.isArray(props.messages); })(), "The <code>Presentational</code> component should receive <code>messages</code> from the Redux store as a prop.");'
@@ -146,6 +142,7 @@ class AppWrapper extends React.Component {
     );
   }
 };
+
 ```
 
 </div>
@@ -165,102 +162,7 @@ console.info('after the test');
 ## Solution
 <section id='solution'>
 
-
 ```js
-// Redux:
-const ADD = 'ADD';
-
-const addMessage = (message) => {
-  return {
-    type: ADD,
-    message: message
-  }
-};
-
-const messageReducer = (state = [], action) => {
-  switch (action.type) {
-    case ADD:
-      return [
-        ...state,
-        action.message
-      ];
-    default:
-      return state;
-  }
-};
-
-const store = Redux.createStore(messageReducer);
-
-// React:
-const Provider = ReactRedux.Provider;
-const connect = ReactRedux.connect;
-
-// Change code below this line
-class Presentational extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: "
-    }
- this.handleChange = this.handleChange.bind(this);
- this.submitMessage = this.submitMessage.bind(this);
-  }
-  handleChange(event) {
-    this.setState({
-      input: event.target.value
-    });
-  }
-  submitMessage() {
-    this.props.submitNewMessage(this.state.input);
-    this.setState({
-      input: "
-    });
-  }
-  render() {
-    return (
-      <div>
-        <h2>Type in a new Message:</h2>
-        <input
-          value={this.state.input}
-          onChange={this.handleChange}/><br/>
-        <button onClick={this.submitMessage}>Submit</button>
-        <ul>
-          {this.props.messages.map( (message, idx) => {
-              return (
-                 <li key={idx}>{message}</li>
-              )
-            })
-          }
-        </ul>
-      </div>
-    );
-  }
-};
-// Change code above this line
-
-const mapStateToProps = (state) => {
-  return {messages: state}
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    submitNewMessage: (message) => {
-      dispatch(addMessage(message))
-    }
-  }
-};
-
-const Container = connect(mapStateToProps, mapDispatchToProps)(Presentational);
-
-class AppWrapper extends React.Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Container/>
-      </Provider>
-    );
-  }
-};
+// solution required
 ```
-
 </section>

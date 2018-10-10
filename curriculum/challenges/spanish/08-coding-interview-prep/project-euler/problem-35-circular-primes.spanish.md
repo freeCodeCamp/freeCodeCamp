@@ -1,20 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f38f1000cf542c50fea2
+id: 5900f38f1000cf542c50fea2
 challengeType: 5
 title: 'Problem 35: Circular primes'
+videoUrl: ''
+localeTitle: 'Problema 35: primos circulares'
 ---
 
 ## Description
-<section id='description'> 
-El número, 197, se llama primo circular porque todas las rotaciones de los dígitos: 197, 971 y 719, son primos. 
-Hay trece de tales primos por debajo de 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 y 97. 
-¿Cuántos primos circulares hay debajo de n, mientras que 100 &lt;= n &lt;= 1000000? 
-</section>
+<section id="description"> El número, 197, se llama primo circular porque todas las rotaciones de los dígitos: 197, 971 y 719, son primos. Hay trece de tales primos por debajo de 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 y 97. ¿Cuántos primos circulares hay debajo de n, mientras que 100 &lt;= n &lt; = 1000000? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -51,6 +47,7 @@ function circularPrimes(n) {
 }
 
 circularPrimes(1000000);
+
 ```
 
 </div>
@@ -62,39 +59,7 @@ circularPrimes(1000000);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const circularPrimes = (n) => {
-  const primeCheck = (num) => {
-    if (num === 1) {
-      return false;
-    }
-    for (let i = 2; i <= Math.floor(Math.sqrt(num)); i++) {
-      if (num % i === 0) {
-        return false;
-      }
-    }
-    return true;
-  };
-  let count = 1;
-  for (let i = 1; i < n; i += 2) {
-    if (primeCheck(i)) {
-      let flag = true;
-      let circularNum = i.toString();
-      for (let j = 1; j < i.toString().length; j++) {
-        circularNum = circularNum.substring(1) + circularNum.substring(0, 1);
-        if (primeCheck(Number(circularNum)) === false) {
-          flag = false;
-          break;
-        }
-      }
-      if (flag) {
-        count++;
-      }
-    }
-  }
-  return count;
-};
+// solution required
 ```
-
 </section>

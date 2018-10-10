@@ -1,19 +1,16 @@
 ---
 id: bad87fee1348cd8acdf08812
 title: Create a Bootstrap Button
-localeTitle: Crear un botón de arranque
 challengeType: 0
+videoUrl: ''
+localeTitle: Crear un botón de arranque
 ---
 
 ## Description
-<section id='description'>
-Bootstrap tiene sus propios estilos para elementos de <code>button</code> , que se ven mucho mejor que los de HTML simple.
-Crea un nuevo elemento de <code>button</code> debajo de tu foto grande de gatito. Asígnele las clases <code>btn</code> y <code>btn-default</code> , así como el texto de &quot;Me gusta&quot;.
-</section>
+<section id="description"> Bootstrap tiene sus propios estilos para elementos de <code>button</code> , que se ven mucho mejores que los de HTML simple. Crea un nuevo elemento de <code>button</code> debajo de tu foto de gatito grande. Asígnele las clases <code>btn</code> y <code>btn-default</code> , así como el texto de &quot;Me gusta&quot;. </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -96,6 +93,7 @@ tests:
     <button type="submit">Submit</button>
   </form>
 </div>
+
 ```
 
 </div>

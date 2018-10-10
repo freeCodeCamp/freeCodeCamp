@@ -1,25 +1,16 @@
 ---
 id: 587d7b7c367417b2b2512b18
 title: Add Key-Value Pairs to JavaScript Objects
-localeTitle: Agregue pares de valor-clave a los objetos de JavaScript
 challengeType: 1
+videoUrl: ''
+localeTitle: Agregue pares de valor-clave a los objetos de JavaScript
 ---
 
 ## Description
-<section id='description'> 
-En su forma más básica, los objetos son solo colecciones de <dfn>pares clave-valor</dfn> , o, en otras palabras, fragmentos de datos asignados a identificadores únicos que llamamos <dfn>propiedades</dfn> o <dfn>claves</dfn> . Veamos un ejemplo muy simple: 
-<blockquote>let FCC_User = {<br>&nbsp;&nbsp;username: 'awesome_coder',<br>&nbsp;&nbsp;followers: 572,<br>&nbsp;&nbsp;points: 1741,<br>&nbsp;&nbsp;completedProjects: 15<br>};</blockquote> 
-El código anterior define un objeto llamado <code>FCC_User</code> que tiene cuatro <dfn>propiedades</dfn> , cada una de las cuales se <code>FCC_User</code> a un valor específico. Si quisiéramos saber el número de <code>followers</code> tiene <code>FCC_User</code> , podemos acceder a esa propiedad escribiendo: 
-<blockquote>let userData = FCC_User.followers;<br>// userData equals 572</blockquote> 
-Esto se llama <dfn>notación de puntos</dfn> . Alternativamente, también podemos acceder a la propiedad entre paréntesis, así: 
-<blockquote>let userData = FCC_User['followers']<br>// userData equals 572</blockquote> 
-Observe que con la <dfn>notación de corchetes</dfn> , incluimos a los <code>followers</code> entre comillas. Esto se debe a que los corchetes realmente nos permiten pasar una variable para que sea evaluada como un nombre de propiedad (sugerencia: ten esto en cuenta para más adelante). Si hubiéramos pasado a los <code>followers</code> sin las comillas, el motor de JavaScript habría intentado evaluarla como una variable, y un <code>ReferenceError: followers is not defined</code> . 
-</section>
+<section id="description"> En su forma más básica, los objetos son solo colecciones de <dfn>pares clave-valor</dfn> , o, en otras palabras, fragmentos de datos asignados a identificadores únicos que llamamos <dfn>propiedades</dfn> o <dfn>claves</dfn> . Veamos un ejemplo muy simple: <blockquote> dejar FCC_User = { <br> nombre de usuario: &#39;awesome_coder&#39;, <br> seguidores: 572, <br> puntos: 1741, <br> Proyectos completados: 15 <br> }; </blockquote> El código anterior define un objeto llamado <code>FCC_User</code> que tiene cuatro <dfn>propiedades</dfn> , cada una de las cuales se <code>FCC_User</code> a un valor específico. Si quisiéramos saber la cantidad de <code>followers</code> tiene <code>FCC_User</code> , podemos acceder a esa propiedad escribiendo: <blockquote> deje userData = FCC_User.followers; <br> // userData es igual a 572 </blockquote> Esto se llama <dfn>notación de puntos</dfn> . Alternativamente, también podemos acceder a la propiedad entre paréntesis, así: <blockquote> deja userData = FCC_User [&#39;followers&#39;] <br> // userData es igual a 572 </blockquote> Tenga en cuenta que con la <dfn>notación de corchetes</dfn> , incluimos a los <code>followers</code> entre comillas. Esto se debe a que los corchetes realmente nos permiten pasar una variable para que sea evaluada como un nombre de propiedad (sugerencia: ten esto en cuenta para más adelante). Si hubiéramos pasado a los <code>followers</code> sin las comillas, el motor de JavaScript habría intentado evaluarla como una variable, y un <code>ReferenceError: followers is not defined</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Usando la misma sintaxis, también podemos <em><strong>agregar nuevos</strong></em> pares clave-valor a los objetos. Hemos creado un objeto de <code>foods</code> con tres entradas. Agregue tres entradas más: <code>bananas</code> con un valor de <code>13</code> , <code>grapes</code> con un valor de <code>35</code> y <code>strawberries</code> con un valor de <code>27</code> . 
-</section>
+<section id="instructions"> Usando la misma sintaxis, también podemos <em><strong>agregar nuevos</strong></em> pares clave-valor a los objetos. Hemos creado un objeto de <code>foods</code> con tres entradas. Agregue tres entradas más: <code>bananas</code> con un valor de <code>13</code> , <code>grapes</code> con un valor de <code>35</code> y <code>strawberries</code> con un valor de <code>27</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -58,6 +49,7 @@ let foods = {
 // change code above this line
 
 console.log(foods);
+
 ```
 
 </div>

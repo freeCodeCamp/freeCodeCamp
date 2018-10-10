@@ -1,22 +1,16 @@
 ---
 id: bad87fee1348bd9aedf08833
 title: Fill in the Blank with Placeholder Text
-localeTitle: Rellene el espacio en blanco con el texto del marcador de posición
 challengeType: 0
 videoUrl: ''
+localeTitle: Rellene el espacio en blanco con el texto del marcador de posición
 ---
 
 ## Description
-<section id='description'> 
-Los desarrolladores web tradicionalmente usan el <code>lorem ipsum text</code> como texto de marcador de posición. El texto &#39;lorem ipsum&#39; se raspa al azar de un famoso pasaje de Cicerón de la Antigua Roma. 
-El texto de Lorem ipsum ha sido utilizado como texto de marcador de posición por tipógrafos desde el siglo XVI, y esta tradición continúa en la web. 
-Bueno, 5 siglos es lo suficientemente largo. Ya que estamos construyendo un CatPhotoApp, usemos algo que se llama <code>kitty ipsum text</code> . 
-</section>
+<section id="description"> Los desarrolladores web tradicionalmente usan el <code>lorem ipsum text</code> como texto de marcador de posición. El texto &#39;lorem ipsum&#39; se raspa al azar de un famoso pasaje de Cicerón de la Antigua Roma. El texto de Lorem ipsum ha sido utilizado como texto de marcador de posición por los tipógrafos desde el siglo XVI, y esta tradición continúa en la web. Bueno, 5 siglos es lo suficientemente largo. Ya que estamos construyendo un CatPhotoApp, usemos algo que se llama <code>kitty ipsum text</code> . </section>
 
 ## Instructions
-<section id='instructions'> 
-Reemplace el texto dentro de su elemento <code>p</code> con las primeras palabras de este texto de kitty ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code> 
-</section>
+<section id="instructions"> Reemplace el texto dentro de su elemento <code>p</code> con las primeras palabras de este texto de kitty ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code> </section>
 
 ## Tests
 <section id='tests'>
@@ -41,6 +35,7 @@ tests:
 <h2>CatPhotoApp</h2>
 
 <p>Hello Paragraph</p>
+
 ```
 
 </div>

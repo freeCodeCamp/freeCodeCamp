@@ -1,21 +1,16 @@
 ---
 id: 5a9d725e424fe3d0e10cad10
 title: Use CSS Variables to change several elements at once
-localeTitle: Usa las variables CSS para cambiar varios elementos a la vez
 challengeType: 0
 videoUrl: ''
+localeTitle: Usa las variables CSS para cambiar varios elementos a la vez
 ---
 
 ## Description
-<section id='description'> 
-<dfn>Las Variables CSS</dfn> son una forma poderosa de cambiar muchas propiedades de estilo CSS a la vez cambiando solo un valor. 
-Siga las instrucciones a continuación para ver cómo cambiar solo tres valores puede cambiar el estilo de muchos elementos. 
-</section>
+<section id="description"> <dfn>Las Variables CSS</dfn> son una forma poderosa de cambiar muchas propiedades de estilo CSS a la vez cambiando solo un valor. Siga las instrucciones a continuación para ver cómo cambiar solo tres valores puede cambiar el estilo de muchos elementos. </section>
 
 ## Instructions
-<section id='instructions'> 
-En la clase de <code>penguin</code> , cambie el valor de <code>black</code> a <code>gray</code> , el valor de <code>gray</code> a <code>white</code> y el de <code>yellow</code> a <code>orange</code> . 
-</section>
+<section id="instructions"> En la clase de <code>penguin</code> , cambie el valor de <code>black</code> a <code>gray</code> , el valor de <code>gray</code> a <code>white</code> y el de <code>yellow</code> a <code>orange</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -239,6 +234,7 @@ tests:
     <div class="beak-bottom"></div>
   </div>
 </div>
+
 ```
 
 </div>
@@ -250,9 +246,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".penguin {--penguin-skin: gray; --penguin-belly: white; --penguin-beak: orange;}"
+// solution required
 ```
-
 </section>

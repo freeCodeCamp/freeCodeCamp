@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3a41000cf542c50feb7
+id: 5900f3a41000cf542c50feb7
 challengeType: 5
 title: 'Problem 56: Powerful digit sum'
+videoUrl: ''
+localeTitle: 'Problema 56: suma de dígitos poderosos'
 ---
 
 ## Description
-<section id='description'> 
-Un googol (10100) es un número masivo: uno seguido de cien ceros; 100100 es casi inimaginablemente grande: uno seguido de doscientos ceros. A pesar de su tamaño, la suma de los dígitos en cada número es solo 1. 
-Considerando los números naturales de la forma, ab, donde a, b &lt;100, ¿cuál es la suma digital máxima? 
-</section>
+<section id="description"> Un googol (10100) es un número masivo: uno seguido de cien ceros; 100100 es casi inimaginablemente grande: uno seguido de doscientos ceros. A pesar de su tamaño, la suma de los dígitos en cada número es solo 1. Considerando los números naturales de la forma, ab, donde a, b &lt;100, ¿cuál es la suma digital máxima? </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -40,6 +37,7 @@ function euler56() {
 }
 
 euler56();
+
 ```
 
 </div>

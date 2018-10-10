@@ -1,25 +1,18 @@
 ---
 id: bad87fee1348bd9aed108826
 title: Target a Specific Child of an Element Using jQuery
-localeTitle: Apunta a un niño específico de un elemento usando jQuery
 required:
   - link: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.css'
 challengeType: 6
+videoUrl: ''
+localeTitle: Apunta a un niño específico de un elemento usando jQuery
 ---
 
 ## Description
-<section id='description'>
-Ha visto por qué los atributos de identificación son tan convenientes para la selección de objetivos con los selectores jQuery. Pero no siempre tendrás tan buenos identificadores con los que trabajar.
-Afortunadamente, jQuery tiene algunos otros trucos para apuntar a los elementos correctos.
-jQuery usa los selectores de CSS para apuntar a los elementos. El selector de CSS <code>target:nth-child(n)</code> permite seleccionar todos los elementos nth con la clase de destino o el tipo de elemento.
-Así es como le darías al tercer elemento en cada pozo la clase de rebote:
-<code>$(&quot;.target:nth-child(3)&quot;).addClass(&quot;animated bounce&quot;);</code>
-Haz que el segundo niño en cada uno de tus elementos de pozo rebote. Debes seleccionar los elementos de los hijos con la clase <code>target</code> .
-</section>
+<section id="description"> Ha visto por qué los atributos de identificación son tan convenientes para la selección de objetivos con los selectores jQuery. Pero no siempre tendrás tan buenos identificadores con los que trabajar. Afortunadamente, jQuery tiene algunos otros trucos para apuntar a los elementos correctos. jQuery utiliza los selectores de CSS para apuntar a los elementos. El selector de CSS <code>target:nth-child(n)</code> permite seleccionar todos los elementos nth con la clase de destino o el tipo de elemento. Así es como le darías al tercer elemento en cada pozo la clase de rebote: <code>$(&quot;.target:nth-child(3)&quot;).addClass(&quot;animated bounce&quot;);</code> Haz que el segundo niño en cada uno de tus elementos de pozo rebote. Debes seleccionar los elementos de los hijos con la clase <code>target</code> . </section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -31,7 +24,7 @@ tests:
     testString: 'assert($(".target:nth-child(2)").hasClass("animated") && $(".target:nth-child(2)").hasClass("bounce"), "The second element in your <code>target</code> elements should bounce.");'
   - text: Solo dos elementos deben rebotar.
     testString: 'assert($(".animated.bounce").length === 2, "Only two elements should bounce.");'
-  - text: 'Debería usar el selector <code>:nth-child()</code> para modificar estos elementos.'
+  - text: 'Debe utilizar el selector <code>:nth-child()</code> para modificar estos elementos.'
     testString: 'assert(code.match(/\:nth-child\(/g), "You should use the <code>&#58;nth-child&#40&#41</code> selector to modify these elements.");'
   - text: Solo use jQuery para agregar estas clases al elemento.
     testString: 'assert(code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target:nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g) || code.match(/\$\(".target"\).filter\(":nth-child\(2\)"\)/g), "Only use jQuery to add these classes to the element.");'
@@ -82,6 +75,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

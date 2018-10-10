@@ -1,22 +1,16 @@
 ---
 id: 587d7fae367417b2b2512be7
 title: Pre-filter JSON to Get the Data You Need
-localeTitle: Pre-filtre JSON para obtener los datos que necesita
 challengeType: 6
+videoUrl: ''
+localeTitle: Pre-filtre JSON para obtener los datos que necesita
 ---
 
 ## Description
-<section id='description'> 
-Si no desea renderizar cada foto de gato que obtiene de la API de foto de catCampCamp CampCamp, puede pre-filtrar el JSON antes de pasar por él. 
-Teniendo en cuenta que los datos JSON se almacena en una matriz, se puede utilizar el <code>filter</code> método para filtrar el gato cuya clave &quot;id&quot; tiene un valor de 1. 
-Aquí está el código para hacer esto: 
-<blockquote>json = json.filter(function(val) {<br>&nbsp;&nbsp;return (val.id !== 1);<br>});</blockquote> 
-</section>
+<section id="description"> Si no quieres renderizar cada foto de gato que obtienes de la API de foto freeCodeCamp Campamp, puedes pre-filtrar el JSON antes de recorrerlo. Teniendo en cuenta que los datos JSON se almacena en una matriz, se puede utilizar el <code>filter</code> método para filtrar el gato cuya clave &quot;id&quot; tiene un valor de 1. Este es el código para hacer esto: <blockquote> json = json.filter (función (val) { <br> return (val.id! == 1); <br> }); </blockquote></section>
 
 ## Instructions
-<section id='instructions'> 
-Agregue código para <code>filter</code> los datos de json para eliminar el gato con el valor &quot;id&quot; de 1. 
-</section>
+<section id="instructions"> Agregue código para <code>filter</code> los datos json para eliminar el cat con el valor &quot;id&quot; de 1. </section>
 
 ## Tests
 <section id='tests'>
@@ -96,6 +90,7 @@ tests:
     Get Message
   </button>
 </p>
+
 ```
 
 </div>

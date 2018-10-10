@@ -1,20 +1,16 @@
 ---
 id: 587d824b367417b2b2512c4a
 title: Use the Double Equals to Assert Equality
-localeTitle: Utilice el doble igual para afirmar la igualdad
 challengeType: 2
+videoUrl: ''
+localeTitle: Utilice el doble igual para afirmar la igualdad
 ---
 
 ## Description
-<section id='description'> 
-Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href='https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/'>Glitch</a> , o clonado desde <a href='https://github.com/freeCodeCamp/boilerplate-mochachai/'>GitHub</a> . 
-.equal (), .notEqual () 
-.equal () compara objetos utilizando &#39;==&#39; 
-</section>
+<section id="description"> Como recordatorio, este proyecto se está construyendo sobre el siguiente proyecto de inicio en <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , o clonado desde <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .equal (), .notEqual () .equal () compara objetos usando &#39;==&#39; </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests

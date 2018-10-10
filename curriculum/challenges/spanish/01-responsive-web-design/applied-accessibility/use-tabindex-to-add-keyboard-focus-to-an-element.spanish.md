@@ -1,23 +1,16 @@
 ---
 id: 587d7790367417b2b2512ab0
 title: Use tabindex to Add Keyboard Focus to an Element
-localeTitle: Use tabindex para agregar el foco de teclado a un elemento
 challengeType: 0
 videoUrl: ''
+localeTitle: Use tabindex para agregar el foco de teclado a un elemento
 ---
 
 ## Description
-<section id='description'> 
-El atributo HTML <code>tabindex</code> tiene tres funciones distintas relacionadas con el enfoque del teclado de un elemento. Cuando está en una etiqueta, indica que el elemento se puede enfocar. El valor (un entero que es positivo, negativo o cero) determina el comportamiento. 
-Ciertos elementos, como los enlaces y los controles de formulario, reciben automáticamente el enfoque del teclado cuando un usuario se desplaza por una página. Está en el mismo orden en que los elementos vienen en el código fuente HTML. Esta misma funcionalidad se puede dar a otros elementos, como <code>div</code> , <code>span</code> <code>p</code> , colocando un <code>tabindex=&quot;0&quot;</code> en ellos. Aquí hay un ejemplo: 
-<code>&lt;div tabindex=&quot;0&quot;&gt;I need keyboard focus!&lt;/div&gt;</code> 
-<strong>Nota</strong> <br> Un valor de <code>tabindex</code> negativo (generalmente -1) indica que un elemento es enfocable, pero no es accesible por el teclado. Este método generalmente se usa para enfocar el contenido mediante programación (como cuando se activa un <code>div</code> para una ventana emergente), y está más allá del alcance de estos desafíos. 
-</section>
+<section id="description"> El atributo HTML <code>tabindex</code> tiene tres funciones distintas relacionadas con el enfoque del teclado de un elemento. Cuando está en una etiqueta, indica que el elemento se puede enfocar. El valor (un entero que es positivo, negativo o cero) determina el comportamiento. Ciertos elementos, como los enlaces y los controles de formulario, reciben automáticamente el enfoque del teclado cuando un usuario se desplaza por una página. Está en el mismo orden en que los elementos vienen en el código fuente HTML. Esta misma funcionalidad se puede dar a otros elementos, como <code>div</code> , <code>span</code> <code>p</code> , colocando un <code>tabindex=&quot;0&quot;</code> en ellos. Aquí hay un ejemplo: <code>&lt;div tabindex=&quot;0&quot;&gt;I need keyboard focus!&lt;/div&gt;</code> <strong>Nota</strong> <br> Un valor de <code>tabindex</code> negativo (generalmente -1) indica que un elemento es enfocable, pero no es accesible por el teclado. Este método generalmente se usa para enfocar el contenido mediante programación (como cuando se activa un <code>div</code> para una ventana emergente), y está más allá del alcance de estos desafíos. </section>
 
 ## Instructions
-<section id='instructions'> 
-Camper Cat creó una nueva encuesta para recopilar información sobre sus usuarios. Sabe que los campos de entrada se enfocan automáticamente en el teclado, pero quiere asegurarse de que los usuarios de su teclado se detengan en las instrucciones mientras repasan los elementos. Agregue un atributo de <code>tabindex</code> a la etiqueta <code>p</code> y establezca su valor en &quot;0&quot;. Bonus: el uso de <code>tabindex</code> también habilita la <code>tabindex</code> CSS <code>:focus</code> para trabajar en la etiqueta <code>p</code> . 
-</section>
+<section id="instructions"> Camper Cat creó una nueva encuesta para recopilar información sobre sus usuarios. Sabe que los campos de entrada se enfocan automáticamente en el teclado, pero quiere asegurarse de que los usuarios de su teclado se detengan en las instrucciones mientras repasan los elementos. Agregue un atributo de <code>tabindex</code> a la etiqueta <code>p</code> y establezca su valor en &quot;0&quot;. Bonus: el uso de <code>tabindex</code> también habilita la <code>tabindex</code> CSS <code>:focus</code> para trabajar en la etiqueta <code>p</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -86,6 +79,7 @@ tests:
   </section>
   <footer>&copy; 2018 Camper Cat</footer>
 </body>
+
 ```
 
 </div>

@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3761000cf542c50fe89
+id: 5900f3761000cf542c50fe89
 challengeType: 5
 title: 'Problem 10: Summation of primes'
+videoUrl: ''
+localeTitle: 'Problema 10: Suma de números primos'
 ---
 
 ## Description
-<section id='description'> 
-La suma de los números primos debajo de 10 es 2 + 3 + 5 + 7 = 17. 
-Encuentra la suma de todos los números primos debajo de n. 
-</section>
+<section id="description"> La suma de los números primos debajo de 10 es 2 + 3 + 5 + 7 = 17. Encuentra la suma de todos los números primos debajo de n. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +43,7 @@ function primeSummation(n) {
 }
 
 primeSummation(2000000);
+
 ```
 
 </div>
@@ -57,43 +55,7 @@ primeSummation(2000000);
 ## Solution
 <section id='solution'>
 
-
 ```js
-//noprotect
-function primeSummation(n) {
-  // Initialise an array containing only prime numbers
-  let primes = [2];
-  let result = 2;
-
-  function isPrime(y, primes) {
-    // Find sqrt(y)
-    const sqrt = Math.floor(Math.sqrt(y));
-
-    // Divide y by each applicable prime, return false if any of them divide y
-    for (let i = 0; i < primes.length && primes[i] <= sqrt; i++) {
-      if (y % primes[i] === 0) {
-        return false;
-      }
-    }
-
-    // At this point x must be prime
-    return true;
-  }
-
-  // For every odd integer, add it to the array if it is prime
-  for (let x = 3; x < n; x += 2) {
-    if (isPrime(x, primes)) {
-      if (x > n) {
-        return result;
-      } else {
-        result += x;
-        primes.push(x);
-      }
-    }
-  }
-
-  return result;
-}
+// solution required
 ```
-
 </section>

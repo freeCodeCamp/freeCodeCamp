@@ -1,20 +1,16 @@
 ---
 title: Happy numbers
 id: 594810f028c0303b75339ad1
-localeTitle: 594810f028c0303b75339ad1
 challengeType: 5
+videoUrl: ''
+localeTitle: Números felices
 ---
 
 ## Description
-<section id='description'>
-<p> Un número feliz se define mediante el siguiente proceso: </p>
-<p> Comenzando con cualquier entero positivo, reemplaza el número por la suma de los cuadrados de sus dígitos y repite el proceso hasta que el número sea igual a 1 (donde permanecerá), o se repite sin cesar en un ciclo que no incluye 1. Esos números por lo que este proceso termina en 1 son números felices, mientras que aquellos que no terminan en 1 son números infelices. </p>
-<p> Implemente una función que devuelva verdadero si el número es feliz o falso si no lo es. </p>
-</section>
+<section id="description"><p> Un número feliz se define mediante el siguiente proceso: </p><p> Comenzando con cualquier entero positivo, reemplaza el número por la suma de los cuadrados de sus dígitos y repite el proceso hasta que el número sea igual a 1 (donde permanecerá), o se repite sin cesar en un ciclo que no incluye 1. Esos números por lo que este proceso termina en 1 son números felices, mientras que aquellos que no terminan en 1 son números infelices. </p><p> Implemente una función que devuelva verdadero si el número es feliz o falso si no lo es. </p></section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -44,7 +40,7 @@ tests:
     testString: 'assert(happy(28), "<code>happy(28)</code> should return true.");'
   - text: <code>happy(31)</code> debe devolver verdadero.
     testString: 'assert(happy(31), "<code>happy(31)</code> should return true.");'
-  - text: ' <code>happy(32)</code> debe devolver verdadero :.'
+  - text: '<code>happy(32)</code> debe devolver verdadero :.'
     testString: 'assert(happy(32), "<code>happy(32)</code> should return true:.");'
   - text: <code>happy(33)</code> debe devolver falso.
     testString: 'assert(!happy(33), "<code>happy(33)</code> should return false.");'
@@ -62,6 +58,7 @@ tests:
 function happy (number) {
   // Good luck!
 }
+
 ```
 
 </div>
@@ -73,26 +70,7 @@ function happy (number) {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function happy (number) {
-  let m;
-  let digit;
-  const cycle = [];
-
-  while (number !== 1 && cycle[number] !== true) {
-    cycle[number] = true;
-    m = 0;
-    while (number > 0) {
-      digit = number % 10;
-      m += Math.pow(digit, 2);
-      number = (number - digit) / 10;
-    }
-    number = m;
-  }
-  return (number === 1);
-}
-
+// solution required
 ```
-
 </section>

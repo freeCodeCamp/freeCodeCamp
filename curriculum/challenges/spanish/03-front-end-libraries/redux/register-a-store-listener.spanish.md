@@ -1,20 +1,17 @@
 ---
 id: 5a24c314108439a4d4036153
 title: Register a Store Listener
-localeTitle: Registrar un Oyente de Tienda
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Registrar un Oyente de Tienda
 ---
 
 ## Description
-<section id='description'> 
-Otro método al que tiene acceso en el objeto de <code>store</code> Redux es <code>store.subscribe()</code> . Esto le permite suscribir funciones de escucha a la tienda, a las que se llama cada vez que se envía una acción contra la tienda. Un uso simple para este método es suscribir una función a su tienda que simplemente registra un mensaje cada vez que se recibe una acción y se actualiza la tienda. 
-</section>
+<section id="description"> Otro método al que tiene acceso en el objeto de <code>store</code> Redux es <code>store.subscribe()</code> . Esto le permite suscribir funciones de escucha a la tienda, a las que se llama cada vez que se envía una acción contra la tienda. Un uso simple para este método es suscribir una función a su tienda que simplemente registra un mensaje cada vez que se recibe una acción y se actualiza la tienda. </section>
 
 ## Instructions
-<section id='instructions'> 
-Escriba una función de devolución de llamada que incremente el <code>count</code> global de variables cada vez que la tienda reciba una acción, y pase esta función al método <code>store.subscribe()</code> . Verá que se llama a <code>store.dispatch()</code> tres veces seguidas, cada vez que pasa directamente un objeto de acción. Mire la salida de la consola entre los despachos de acción para ver cómo tienen lugar las actualizaciones. 
-</section>
+<section id="instructions"> Escriba una función de devolución de llamada que incremente el <code>count</code> global de variables cada vez que la tienda reciba una acción, y pase esta función al método <code>store.subscribe()</code> . Verá que se llama a <code>store.dispatch()</code> tres veces seguidas, cada vez que pasa directamente un objeto de acción. Mire la salida de la consola entre los despachos de acción para ver cómo tienen lugar las actualizaciones. </section>
 
 ## Tests
 <section id='tests'>
@@ -64,6 +61,7 @@ store.dispatch({type: ADD});
 console.log(count);
 store.dispatch({type: ADD});
 console.log(count);
+
 ```
 
 </div>
@@ -73,6 +71,7 @@ console.log(count);
 
 ```jsx
 count = 0;
+
 ```
 
 </div>
@@ -83,34 +82,7 @@ count = 0;
 ## Solution
 <section id='solution'>
 
-
 ```js
-const ADD = 'ADD';
-
-const reducer = (state = 0, action) => {
-  switch(action.type) {
-    case ADD:
-      return state + 1;
-    default:
-      return state;
-  }
-};
-
-const store = Redux.createStore(reducer);
- let count = 0;
-// change code below this line
-
-store.subscribe( () =>
- {
- count++;
- }
-);
-
-// change code above this line
-
-store.dispatch({type: ADD});
-store.dispatch({type: ADD});
-store.dispatch({type: ADD});
+// solution required
 ```
-
 </section>

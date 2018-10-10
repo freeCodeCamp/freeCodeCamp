@@ -1,28 +1,16 @@
 ---
 title: Vector dot product
 id: 594810f028c0303b75339ad3
-localeTitle: 594810f028c0303b75339ad3
 challengeType: 5
+videoUrl: ''
+localeTitle: Producto punto vectorial
 ---
 
 ## Description
-<section id='description'> 
-<p> 
-Un vector se define como que tiene tres dimensiones como se representa por una colección ordenada de tres números: (X, Y, Z). 
-</p> 
-<p> 
-Tarea: 
-
-Escribe una función que tome cualquier número de vectores (matrices) como entrada y calcula su producto de puntos. 
-
-Su función debe devolver <code>null</code> en 
-entradas no válidas (es decir, vectores de diferentes longitudes). 
-</p> 
-</section>
+<section id="description"><p> Un vector se define como que tiene tres dimensiones como se representa por una colección ordenada de tres números: (X, Y, Z). </p><p> Tarea: </p><pre> <code>Write a function that takes any numbers of vectors (arrays) as input and computes their dot product.</code> </pre><p> Su función debe devolver <code>null</code> en entradas no válidas (es decir, vectores de diferentes longitudes). </p><p></p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -40,7 +28,7 @@ tests:
     testString: 'assert.equal(dotProduct([1], [1, 2]), null, "dotProduct([[1], [1, 2]]) must return null.");'
   - text: 'dotProduct ([1, 3, -5], [4, -2, -1]) debe devolver 3.'
     testString: 'assert.equal(dotProduct([1, 3, -5], [4, -2, -1]), 3, "dotProduct([1, 3, -5], [4, -2, -1]) must return 3.");'
-  - text: <code class = "notranslate"> dotProduct (... nVectors) </code> debe devolver 156000
+  - text: <code>dotProduct(...nVectors)</code> debe devolver 156000
     testString: 'assert.equal(dotProduct([ 0, 1, 2, 3, 4 ], [ 0, 2, 4, 6, 8 ], [ 0, 3, 6, 9, 12 ], [ 0, 4, 8, 12, 16 ], [ 0, 5, 10, 15, 20 ]), 156000, "<code>dotProduct(...nVectors)</code> should return 156000");'
 
 ```
@@ -56,6 +44,7 @@ tests:
 function dotProduct() {
     // Good luck!
 }
+
 ```
 
 </div>
@@ -67,42 +56,7 @@ function dotProduct() {
 ## Solution
 <section id='solution'>
 
-
 ```js
-function dotProduct(...vectors) {
-  if (!vectors || !vectors.length) {
-    return null;
-  }
-  if (!vectors[0] || !vectors[0].length) {
-    return null;
-  }
-  const vectorLen = vectors[0].length;
-  const numVectors = vectors.length;
-
-  // If all vectors not same length, return null
-  for (let i = 0; i < numVectors; i++) {
-    if (vectors[i].length !== vectorLen) {
-      return null;  // return undefined
-    }
-  }
-
-  let prod = 0;
-  let sum = 0;
-  let j = vectorLen;
-  let i = numVectors;
-  // Sum terms
-  while (j--) {
-    i = numVectors;
-    prod = 1;
-
-    while (i--) {
-      prod *= vectors[i][j];
-    }
-    sum += prod;
-  }
-  return sum;
-}
-
+// solution required
 ```
-
 </section>

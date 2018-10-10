@@ -1,20 +1,16 @@
 ---
 id: 587d781b367417b2b2512aba
 title: Use the s Tag to Strikethrough Text
-localeTitle: Use la etiqueta s para tachar el texto
 challengeType: 0
 videoUrl: ''
+localeTitle: Use la etiqueta s para tachar el texto
 ---
 
 ## Description
-<section id='description'>
-Para tachar el texto, que es cuando una línea horizontal corta los caracteres, puede usar la etiqueta <code>s</code> . Muestra que una sección de texto ya no es válida. Con la etiqueta <code>s</code> , el navegador aplica el CSS de <code>text-decoration: line-through;</code> al elemento.
-</section>
+<section id="description"> Para tachar el texto, que es cuando una línea horizontal corta los caracteres, puede usar la etiqueta <code>s</code> . Muestra que una sección de texto ya no es válida. Con la etiqueta <code>s</code> , el navegador aplica el CSS de <code>text-decoration: line-through;</code> al elemento. </section>
 
 ## Instructions
-<section id='instructions'>
-Envuelva la etiqueta <code>s</code> alrededor de &quot;Google&quot; dentro de la etiqueta <code>h4</code> y luego agregue la palabra Alfabeto a su lado, que no debería tener el formato tachado.
-</section>
+<section id="instructions"> Envuelva la etiqueta <code>s</code> alrededor de &quot;Google&quot; dentro de la etiqueta <code>h4</code> y luego agregue la palabra Alfabeto junto a ella, que no debería tener el formato tachado. </section>
 
 ## Tests
 <section id='tests'>
@@ -76,6 +72,7 @@ tests:
     </div>
   </div>
 </div>
+
 ```
 
 </div>

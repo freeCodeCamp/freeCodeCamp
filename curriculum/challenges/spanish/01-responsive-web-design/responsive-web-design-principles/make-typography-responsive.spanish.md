@@ -1,22 +1,16 @@
 ---
 id: 587d78b1367417b2b2512b0c
 title: Make Typography Responsive
-localeTitle: Hacer que la tipografía responda
 challengeType: 0
 videoUrl: ''
+localeTitle: Hacer que la tipografía responda
 ---
 
 ## Description
-<section id='description'> 
-En lugar de usar <code>em</code> o <code>px</code> para <code>px</code> tamaño del texto, puede usar unidades de vista para tipografía sensible. Las unidades de vista, como los porcentajes, son unidades relativas, pero se basan en elementos diferentes. Las unidades de la ventana gráfica son relativas a las dimensiones de la ventana gráfica (ancho o alto) de un dispositivo, y los porcentajes son relativos al tamaño del elemento contenedor primario. 
-Las cuatro unidades de viewport diferentes son: 
-<ul><li> <code>vw: 10vw</code> sería el 10% del ancho de la ventana <code>vw: 10vw</code> . </li><li> <code>vh: 3vh</code> sería el 3% de la altura de la ventana <code>vh: 3vh</code> . </li><li> <code>vmin: 70vmin</code> sería el 70% de la dimensión más pequeña de la ventana <code>vmin: 70vmin</code> (altura en función del ancho). </li><li> <code>vmax: 100vmax</code> sería el 100% de la dimensión más grande de la ventana <code>vmax: 100vmax</code> (altura en función del ancho). </li></ul> 
-</section>
+<section id="description"> En lugar de usar <code>em</code> o <code>px</code> para <code>px</code> tamaño del texto, puede usar unidades de vista para tipografía sensible. Las unidades de vista, como los porcentajes, son unidades relativas, pero se basan en elementos diferentes. Las unidades de la ventana gráfica son relativas a las dimensiones de la ventana gráfica (ancho o alto) de un dispositivo, y los porcentajes son relativos al tamaño del elemento contenedor primario. Las cuatro unidades de vista diferentes son: <ul><li> <code>vw: 10vw</code> sería el 10% del ancho de la ventana <code>vw: 10vw</code> . </li><li> <code>vh: 3vh</code> sería el 3% de la altura de la ventana <code>vh: 3vh</code> . </li><li> <code>vmin: 70vmin</code> sería el 70% de la dimensión más pequeña de la ventana <code>vmin: 70vmin</code> (altura en función del ancho). </li><li> <code>vmax: 100vmax</code> sería el 100% de la dimensión más grande de la ventana <code>vmax: 100vmax</code> (altura en función del ancho). </li></ul></section>
 
 ## Instructions
-<section id='instructions'> 
-Establezca el <code>width</code> de la etiqueta <code>h2</code> en el 80% del ancho de la ventana gráfica y el <code>width</code> del párrafo como el 75% de la dimensión más pequeña de la ventana gráfica. 
-</section>
+<section id="instructions"> Establezca el <code>width</code> de la etiqueta <code>h2</code> en el 80% del ancho de la ventana gráfica y el <code>width</code> del párrafo como el 75% de la dimensión más pequeña de la ventana gráfica. </section>
 
 ## Tests
 <section id='tests'>
@@ -44,6 +38,7 @@ tests:
 
 <h2>Importantus Ipsum</h2>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis tempus massa. Aenean erat nisl, gravida vel vestibulum cursus, interdum sit amet lectus. Sed sit amet quam nibh. Suspendisse quis tincidunt nulla. In hac habitasse platea dictumst. Ut sit amet pretium nisl. Vivamus vel mi sem. Aenean sit amet consectetur sem. Suspendisse pretium, purus et gravida consequat, nunc ligula ultricies diam, at aliquet velit libero a dui.</p>
+
 ```
 
 </div>
@@ -55,9 +50,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = "h2 {width: 80vw;} p {width: 75vmin;}"
+// solution required
 ```
-
 </section>

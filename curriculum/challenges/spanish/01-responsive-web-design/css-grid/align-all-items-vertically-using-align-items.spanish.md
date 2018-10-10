@@ -1,20 +1,16 @@
 ---
 id: 5a94fdf869fb03452672e45b
 title: Align All Items Vertically using align-items
-localeTitle: Alinear todos los elementos verticalmente utilizando elementos de alineación
 challengeType: 0
 videoUrl: ''
+localeTitle: Alinear todos los elementos verticalmente utilizando elementos de alineación
 ---
 
 ## Description
-<section id='description'> 
-uso de la propiedad <code>align-items</code> en un contenedor de cuadrícula establecerá la alineación vertical para todos los elementos en nuestra cuadrícula. 
-</section>
+<section id="description"> El uso de la propiedad <code>align-items</code> en un contenedor de cuadrícula establecerá la alineación vertical para todos los elementos en nuestra cuadrícula. </section>
 
 ## Instructions
-<section id='instructions'> 
-Úselo ahora para mover todos los elementos al final de cada celda. 
-</section>
+<section id="instructions"> Úselo ahora para mover todos los elementos al final de cada celda. </section>
 
 ## Tests
 <section id='tests'>
@@ -64,6 +60,7 @@ tests:
   <div class="item4">4</div>
   <div class="item5">5</div>
 </div>
+
 ```
 
 </div>
@@ -75,9 +72,7 @@ tests:
 ## Solution
 <section id='solution'>
 
-
 ```js
-var code = ".container {align-items: end;}"
+// solution required
 ```
-
 </section>

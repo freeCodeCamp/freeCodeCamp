@@ -1,31 +1,25 @@
 ---
 id: 587d7b88367417b2b2512b47
 title: Use the Rest Operator with Function Parameters
-localeTitle: Utilice el operador de reposo con parámetros de función
 challengeType: 1
+videoUrl: ''
+localeTitle: Utilice el operador de reposo con parámetros de función
 ---
 
 ## Description
-<section id='description'>
-Para ayudarnos a crear funciones más flexibles, ES6 presenta al <dfn>operador de resto</dfn> para los parámetros de función. Con el operador resto, puede crear funciones que toman un número variable de argumentos. Estos argumentos se almacenan en una matriz a la que se puede acceder posteriormente desde dentro de la función.
-Echa un vistazo a este código:
-<blockquote>function howMany(...args) {<br>&nbsp;&nbsp;return "You have passed " + args.length + " arguments.";<br>}<br>console.log(howMany(0, 1, 2)); // You have passed 3 arguments<br>console.log(howMany("string", null, [1, 2, 3], { })); // You have passed 4 arguments.</blockquote>
-El operador restante elimina la necesidad de verificar la matriz de <code>args</code> y nos permite aplicar <code>map()</code> , <code>filter()</code> y <code>reduce()</code> en la matriz de parámetros.
-</section>
+<section id="description"> Para ayudarnos a crear funciones más flexibles, ES6 presenta al <dfn>operador de resto</dfn> para los parámetros de función. Con el operador resto, puede crear funciones que toman un número variable de argumentos. Estos argumentos se almacenan en una matriz a la que se puede acceder posteriormente desde dentro de la función. Echa un vistazo a este código: <blockquote> función howMany (... args) { <br> return &quot;Has pasado&quot; + args.length + &quot;argumentos.&quot;; <br> } <br> console.log (howMany (0, 1, 2)); // Has pasado 3 argumentos <br> console.log (howMany (&quot;string&quot;, null, [1, 2, 3], {})); // Has pasado 4 argumentos. </blockquote> El operador restante elimina la necesidad de verificar la matriz de <code>args</code> y nos permite aplicar <code>map()</code> , <code>filter()</code> y <code>reduce()</code> en la matriz de parámetros. </section>
 
 ## Instructions
-<section id='instructions'>
-Modifique la <code>sum</code> la función para que use el operador de descanso y funcione de la misma manera con cualquier número de parámetros.
-</section>
+<section id="instructions"> Modifique la <code>sum</code> la función para que use el operador de descanso y funcione de la misma manera con cualquier número de parámetros. </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'El resultado de la <code>sum(0,1,2)</code> debe ser 3'
+  - text: 'El resultado de la <code>sum(0,1,2)</code> debe ser 3.'
     testString: 'assert(sum(0,1,2) === 3, "The result of <code>sum(0,1,2)</code> should be 3");'
-  - text: 'El resultado de la <code>sum(1,2,3,4)</code> debe ser 10'
+  - text: 'El resultado de la <code>sum(1,2,3,4)</code> debe ser 10.'
     testString: 'assert(sum(1,2,3,4) === 10, "The result of <code>sum(1,2,3,4)</code> should be 10");'
   - text: El resultado de la <code>sum(5)</code> debe ser 5.
     testString: 'assert(sum(5) === 5, "The result of <code>sum(5)</code> should be 5");'
@@ -52,6 +46,7 @@ const sum = (function() {
   };
 })();
 console.log(sum(1, 2, 3)); // 6
+
 ```
 
 </div>

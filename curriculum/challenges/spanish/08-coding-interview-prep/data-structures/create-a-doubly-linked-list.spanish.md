@@ -1,21 +1,16 @@
 ---
 id: 587d825a367417b2b2512c87
 title: Create a Doubly Linked List
-localeTitle: Crear una lista doblemente vinculada
 challengeType: 1
+videoUrl: ''
+localeTitle: Crear una lista doblemente vinculada
 ---
 
 ## Description
-<section id='description'> 
-Todas las listas enlazadas que hemos creado hasta ahora son listas enlazadas individualmente. Aquí, crearemos una <dfn>lista doblemente vinculada</dfn> . Como su nombre lo indica, los nodos en una lista doblemente enlazada tienen referencias al nodo siguiente y anterior en la lista. 
-Esto nos permite recorrer la lista en ambas direcciones, pero también requiere que se use más memoria porque cada nodo debe contener una referencia adicional al nodo anterior en la lista. 
-</section>
+<section id="description"> Todas las listas enlazadas que hemos creado hasta ahora son listas enlazadas individualmente. Aquí, crearemos una <dfn>lista doblemente vinculada</dfn> . Como su nombre lo indica, los nodos en una lista doblemente enlazada tienen referencias al nodo siguiente y anterior en la lista. Esto nos permite recorrer la lista en ambas direcciones, pero también requiere que se use más memoria porque cada nodo debe contener una referencia adicional al nodo anterior en la lista. </section>
 
 ## Instructions
-<section id='instructions'> 
-Proporcionamos un objeto <code>Node</code> y comenzamos nuestra <code>DoublyLinkedList</code> . Agreguemos dos métodos a nuestra lista doblemente enlazada llamada <code>add</code> y <code>remove</code> . El <code>add</code> método debe añadir el elemento dado de la lista, mientras que el <code>remove</code> método debe eliminar todas las ocurrencias de un elemento dado en la lista. 
-Tenga cuidado de manejar cualquier posible caso de borde al escribir estos métodos, como eliminaciones del primer o último elemento. Además, eliminar cualquier elemento de una lista vacía debe devolver <code>null</code> . 
-</section>
+<section id="instructions"> Proporcionamos un objeto <code>Node</code> y comenzamos nuestra <code>DoublyLinkedList</code> . Agreguemos dos métodos a nuestra lista doblemente enlazada llamada <code>add</code> y <code>remove</code> . El <code>add</code> método debe añadir el elemento dado de la lista, mientras que el <code>remove</code> método debe eliminar todas las ocurrencias de un elemento dado en la lista. Tenga cuidado al manejar cualquier posible caso de borde al escribir estos métodos, como eliminaciones del primer o último elemento. Además, eliminar cualquier elemento de una lista vacía debe devolver <code>null</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -28,7 +23,7 @@ tests:
     testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; if (test.add == undefined) { return false; }; return (typeof test.add == "function")})(), "The DoublyLinkedList has a method called add.");'
   - text: DoublyLinkedList tiene un método llamado eliminar.
     testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; if (test.remove == undefined) { return false; }; return (typeof test.remove == "function")})(), "The DoublyLinkedList has a method called remove.");'
-  - text: Al eliminar un elemento de una lista vacía, se devuelve un valor nulo.
+  - text: 'Al eliminar un elemento de una lista vacía, se devuelve un valor nulo.'
     testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; return (test.remove(100) == null); })(), "Removing an item from an empty list returns null.");'
   - text: El método add agrega elementos a la lista.
     testString: 'assert((function() { var test = false; if (typeof DoublyLinkedList !== "undefined") { test = new DoublyLinkedList() }; test.add(5); test.add(6); test.add(723); return (test.print().join("") == "56723"); })(), "The add method adds items to the list.");'
@@ -60,6 +55,7 @@ var DoublyLinkedList = function() {
   // change code below this line
   // change code above this line
 };
+
 ```
 
 </div>

@@ -1,22 +1,17 @@
 ---
 id: 5a24c314108439a4d4036155
 title: Send Action Data to the Store
-localeTitle: Enviar datos de acción a la tienda
 challengeType: 6
 isRequired: false
+videoUrl: ''
+localeTitle: Enviar datos de acción a la tienda
 ---
 
 ## Description
-<section id='description'> 
-Ya ha aprendido cómo enviar acciones a la tienda de Redux, pero hasta ahora estas acciones no han contenido ninguna información que no sea un <code>type</code> . También puede enviar datos específicos junto con sus acciones. De hecho, esto es muy común porque las acciones generalmente se originan en la interacción del usuario y tienden a llevar algunos datos con ellas. La tienda Redux a menudo necesita saber acerca de estos datos. 
-</section>
+<section id="description"> Ya ha aprendido cómo enviar acciones a la tienda de Redux, pero hasta ahora estas acciones no han contenido ninguna información que no sea un <code>type</code> . También puede enviar datos específicos junto con sus acciones. De hecho, esto es muy común porque las acciones generalmente se originan en la interacción del usuario y tienden a llevar algunos datos con ellas. La tienda Redux a menudo necesita saber acerca de estos datos. </section>
 
 ## Instructions
-<section id='instructions'> 
-Hay un <code>notesReducer()</code> básico y un creador de acción <code>addNoteText()</code> definido en el editor de código. <code>addNoteText()</code> el cuerpo de la función <code>addNoteText()</code> para que devuelva un objeto de <code>action</code> . El objeto debe incluir una propiedad de <code>type</code> con un valor de <code>ADD_NOTE</code> , y también una propiedad de <code>text</code> establecida en los datos de <code>note</code> que se pasan al creador de la acción. Cuando llame al creador de acciones, pasará la información de una nota específica a la que puede acceder para el objeto. 
-A continuación, termine de escribir la instrucción de <code>switch</code> en el <code>notesReducer()</code> . <code>addNoteText()</code> agregar un caso que maneje las acciones <code>addNoteText()</code> . Este caso debe <code>ADD_NOTE</code> siempre que haya una acción de tipo <code>ADD_NOTE</code> y debe devolver la propiedad de <code>text</code> en la <code>action</code> entrante como el nuevo <code>state</code> . 
-La acción se envía en la parte inferior del código. Una vez que hayas terminado, ejecuta el código y mira la consola. Eso es todo lo que se necesita para enviar datos específicos de la acción a la tienda y usarlos cuando actualiza el <code>state</code> tienda. 
-</section>
+<section id="instructions"> Hay un <code>notesReducer()</code> básico y un creador de acción <code>addNoteText()</code> definido en el editor de código. <code>addNoteText()</code> el cuerpo de la función <code>addNoteText()</code> para que devuelva un objeto de <code>action</code> . El objeto debe incluir una propiedad de <code>type</code> con un valor de <code>ADD_NOTE</code> , y también una propiedad de <code>text</code> establecida en los datos de <code>note</code> que se pasan al creador de la acción. Cuando llame al creador de acciones, pasará la información de una nota específica a la que puede acceder para el objeto. A continuación, termine de escribir la instrucción de <code>switch</code> en el <code>notesReducer()</code> . <code>addNoteText()</code> agregar un caso que maneje las acciones <code>addNoteText()</code> . Este caso debe <code>ADD_NOTE</code> siempre que haya una acción de tipo <code>ADD_NOTE</code> y debe devolver la propiedad de <code>text</code> en la <code>action</code> entrante como el nuevo <code>state</code> . La acción se envía en la parte inferior del código. Una vez que hayas terminado, ejecuta el código y mira la consola. Eso es todo lo que se necesita para enviar datos específicos de la acción a la tienda y usarlos cuando actualiza el <code>state</code> tienda. </section>
 
 ## Tests
 <section id='tests'>
@@ -61,6 +56,7 @@ const store = Redux.createStore(notesReducer);
 console.log(store.getState());
 store.dispatch(addNoteText('Hello!'));
 console.log(store.getState());
+
 ```
 
 </div>
@@ -72,35 +68,7 @@ console.log(store.getState());
 ## Solution
 <section id='solution'>
 
-
 ```js
-const ADD_NOTE = 'ADD_NOTE';
-
-const notesReducer = (state = 'Initial State', action) => {
-  switch(action.type) {
-    // change code below this line
-    case ADD_NOTE:
-      return action.text;
-    // change code above this line
-    default:
-      return state;
-  }
-};
-
-const addNoteText = (note) => {
-  // change code below this line
-  return {
-    type: ADD_NOTE,
-    text: note
-  }
-  // change code above this line
-};
-
-const store = Redux.createStore(notesReducer);
-
-console.log(store.getState());
-store.dispatch(addNoteText('Hello Redux!'));
-console.log(store.getState());
+// solution required
 ```
-
 </section>

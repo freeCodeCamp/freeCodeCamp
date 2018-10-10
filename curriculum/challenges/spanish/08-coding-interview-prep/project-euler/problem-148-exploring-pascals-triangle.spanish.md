@@ -1,97 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f4021000cf542c50ff14
+id: 5900f4021000cf542c50ff14
 challengeType: 5
 title: 'Problem 148: Exploring Pascal"s triangle'
+videoUrl: ''
+localeTitle: 'Problema 148: Explorando el triángulo de Pascal'
 ---
 
 ## Description
-<section id='description'> 
-Podemos verificar fácilmente que ninguna de las entradas en las primeras siete filas del triángulo de Pascal son divisibles entre 7: 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1 
-
-
-
-
-
-
-
-
-
-
-
-
-1 
-
-
-
-1 
-
-3 
-
-3 
-
-1 
-
-
-1 
-
-4 
-
-6 
-
-4 
-
-1 
-
-1 
-
-5 
-
-10 
-
-10 
-
-5 
-
-1 
-1 
-
-6 
-
-15 
-
-20 
-
-15 
-
-6 
-
-1 
-Sin embargo, si revisamos las primeras cien filas, encontraremos que solo 2361 de las 5050 entradas no son divisibles por 7. 
-
-Encuentre el número de entradas que no son divisibles por 7 en las primeras mil millones (109) filas del triángulo de Pascal. 
-</section>
+<section id="description"> Podemos verificar fácilmente que ninguna de las entradas en las primeras siete filas del triángulo de Pascal es divisible por 7: <p> 1 </p><p> 1 </p><p> 1 </p><p> 1 </p><p> 2 </p><p> 1 </p><p> 1 </p><p> 3 </p><p> 3 </p><p> 1 </p><p> 1 </p><p> 4 </p><p> 6 </p><p> 4 </p><p> 1 </p><p> 1 </p><p> 5 </p><p> 10 </p><p> 10 </p><p> 5 </p><p> 1 1 </p><p> 6 </p><p> 15 </p><p> 20 </p><p> 15 </p><p> 6 </p><p> 1 Sin embargo, si verificamos las primeras cien filas, encontraremos que solo 2361 de las 5050 entradas no son divisibles por 7. </p><p> Encuentra el número de entradas que no son divisibles por 7 en las primeras mil millones (109) filas del triángulo de Pascal. </p></section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -118,6 +37,7 @@ function euler148() {
 }
 
 euler148();
+
 ```
 
 </div>

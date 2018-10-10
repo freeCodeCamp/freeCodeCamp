@@ -1,29 +1,16 @@
 ---
 id: 8d5823c8c441eddfaeb5bdef
 title: Create a Map Data Structure
-localeTitle: Crear una estructura de datos de mapas
 challengeType: 1
+videoUrl: ''
+localeTitle: Crear una estructura de datos de mapas
 ---
 
 ## Description
-<section id='description'>
-Los próximos desafíos cubrirán mapas y tablas hash. Los mapas son estructuras de datos que almacenan pares clave-valor. En JavaScript, estos están disponibles para nosotros como objetos. Los mapas proporcionan una búsqueda rápida de elementos almacenados en función de valores clave y son estructuras de datos muy comunes y útiles.
-Instrucciones: Hagamos algo de práctica creando nuestro propio mapa. Debido a que los objetos de JavaScript proporcionan una estructura de mapa mucho más eficiente que cualquier otra que podamos escribir aquí, esto está pensado principalmente como un ejercicio de aprendizaje. Sin embargo, los objetos de JavaScript solo nos proporcionan ciertas operaciones. ¿Y si quisiéramos definir operaciones personalizadas?
-Utilice el objeto <code>Map</code> que se proporciona aquí como una envoltura alrededor de un <code>object</code> JavaScript. Cree los siguientes métodos y operaciones en el objeto Mapa:
-<ul>
-<li> <code>add</code> acepta una <code>key, value</code> par de <code>key, value</code> para agregar al mapa. </li>
-<li> <code>remove</code> acepta una clave y elimina la <code>key, value</code> asociada <code>key, value</code> par de <code>key, value</code> </li>
-<li> <code>get</code> acepta una <code>key</code> y devuelve el <code>value</code> almacenado </li>
-<li> <code>has</code> acepta una <code>key</code> y devuelve <dfn>verdadero</dfn> si existe la clave o <dfn>falso</dfn> si no lo hace. </li>
-<li> <code>values</code> devuelve una matriz de todos los valores en el mapa </li>
-<li> <code>size</code> devuelve el número de elementos en el mapa </li>
-<li> <code>clear</code> vacía el mapa </li>
-</ul>
-</section>
+<section id="description"> Los próximos desafíos cubrirán mapas y tablas hash. Los mapas son estructuras de datos que almacenan pares clave-valor. En JavaScript, estos están disponibles para nosotros como objetos. Los mapas proporcionan una búsqueda rápida de elementos almacenados en función de valores clave y son estructuras de datos muy comunes y útiles. Instrucciones: Hagamos algo de práctica creando nuestro propio mapa. Debido a que los objetos de JavaScript proporcionan una estructura de mapa mucho más eficiente que cualquier otra que podamos escribir aquí, esto está pensado principalmente como un ejercicio de aprendizaje. Sin embargo, los objetos de JavaScript solo nos proporcionan ciertas operaciones. ¿Y si quisiéramos definir operaciones personalizadas? Utilice el objeto <code>Map</code> que se proporciona aquí como una envoltura alrededor de un <code>object</code> JavaScript. Cree los siguientes métodos y operaciones en el objeto Map: <ul><li> <code>add</code> acepta una <code>key, value</code> par de <code>key, value</code> para agregar al mapa. </li><li> <code>remove</code> acepta una clave y elimina la <code>key, value</code> asociada <code>key, value</code> par de <code>key, value</code> </li><li> <code>get</code> acepta una <code>key</code> y devuelve el <code>value</code> almacenado </li><li> <code>has</code> acepta una <code>key</code> y devuelve <dfn>verdadero</dfn> si existe la clave o <dfn>falso</dfn> si no lo hace. </li><li> <code>values</code> devuelve una matriz de todos los valores en el mapa </li><li> <code>size</code> devuelve el número de elementos en el mapa </li><li> <code>clear</code> vacía el mapa </li></ul></section>
 
 ## Instructions
-<section id='instructions'>
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -61,6 +48,7 @@ var Map = function() {
   // change code below this line
   // change code above this line
 };
+
 ```
 
 </div>

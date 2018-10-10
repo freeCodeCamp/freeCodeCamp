@@ -1,24 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f3c81000cf542c50fedb
+id: 5900f3c81000cf542c50fedb
 challengeType: 5
 title: 'Problem 92: Square digit chains'
+videoUrl: ''
+localeTitle: 'Problema 92: cadenas de dígitos cuadrados'
 ---
 
 ## Description
-<section id='description'> 
-Se crea una cadena de números agregando continuamente el cuadrado de los dígitos en un número para formar un nuevo número hasta que se haya visto antes. 
-Por ejemplo, 
-44 → 32 → 13 → 10 → 1 → 1 
-85 → 89 → 145 → 42 → 20 → 4 → 16 → 37 → 58 → 89 
-Por lo tanto cualquier cadena que llega a 1 o 89 se convertirá en atascado en un bucle sin fin Lo más sorprendente es que CADA número inicial llegará eventualmente a 1 u 89. 
-¿Cuántos números iniciales por debajo de diez millones llegarán a 89? 
-</section>
+<section id="description"> Se crea una cadena de números agregando continuamente el cuadrado de los dígitos en un número para formar un nuevo número hasta que se haya visto antes. Por ejemplo, 44 ​​→ 32 → 13 → 10 → 1 → 1 85 → 89 → 145 → 42 → 20 → 4 → 16 → 37 → 58 → 89 Por lo tanto, cualquier cadena que llegue a 1 o 89 se atascará en un bucle sin fin. Lo que es más sorprendente es que CADA número inicial llegará eventualmente a 1 u 89. ¿Cuántos números iniciales por debajo de diez millones llegarán a 89? </section>
 
 ## Instructions
-<section id='instructions'> 
-
-</section>
+undefined
 
 ## Tests
 <section id='tests'>
@@ -44,6 +36,7 @@ function euler92() {
 }
 
 euler92();
+
 ```
 
 </div>

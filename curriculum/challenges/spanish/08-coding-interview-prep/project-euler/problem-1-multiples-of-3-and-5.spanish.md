@@ -1,19 +1,16 @@
 ---
-id: 5
-localeTitle: 5900f36e1000cf542c50fe80
+id: 5900f36e1000cf542c50fe80
 challengeType: 5
 title: 'Problem 1: Multiples of 3 and 5'
+videoUrl: ''
+localeTitle: 'Problema 1: Múltiplos de 3 y 5'
 ---
 
 ## Description
-<section id='description'> 
-Si enumeramos todos los números naturales por debajo de 10 que son múltiplos de 3 o 5, obtenemos 3, 5, 6 y 9. La suma de estos múltiplos es 23. 
-Halla la suma de todos los múltiplos de 3 o 5 debajo de <code>number</code> valor del parámetro proporcionado. 
-</section>
+<section id="description"> Si enumeramos todos los números naturales por debajo de 10 que son múltiplos de 3 o 5, obtenemos 3, 5, 6 y 9. La suma de estos múltiplos es 23. Encuentre la suma de todos los múltiplos de 3 o 5 debajo del parámetro provisto <code>number</code> valor. </section>
 
 ## Instructions
-<section id='instructions'> 
-
+<section id="instructions">
 </section>
 
 ## Tests
@@ -46,6 +43,7 @@ function multiplesOf3and5(number) {
 }
 
 multiplesOf3and5(1000);
+
 ```
 
 </div>
@@ -57,18 +55,7 @@ multiplesOf3and5(1000);
 ## Solution
 <section id='solution'>
 
-
 ```js
-const multiplesOf3and5 = (number) => {
-  var total = 0;
-
-  for(var i = 0; i < number; i++) {
-    if(i % 3 == 0 || i % 5 == 0) {
-      total += i;
-    }
-  }
-  return total;
-};
+// solution required
 ```
-
 </section>

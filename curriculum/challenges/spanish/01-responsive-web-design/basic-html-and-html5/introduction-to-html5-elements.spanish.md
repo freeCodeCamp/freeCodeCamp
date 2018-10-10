@@ -1,24 +1,16 @@
 ---
 id: bad87fee1348bd9aecf08801
 title: Introduction to HTML5 Elements
-localeTitle: Introducción a los elementos HTML5
 challengeType: 0
 videoUrl: ''
+localeTitle: Introducción a los elementos HTML5
 ---
 
 ## Description
-<section id='description'> 
-HTML5 introduce etiquetas HTML más descriptivas. Estos incluyen <code>header</code> , <code>footer</code> , <code>nav</code> , <code>video</code> , <code>article</code> , <code>section</code> y otros. 
-Estas etiquetas hacen que su HTML sea más fácil de leer, y también ayudan con la optimización del motor de búsqueda (SEO) y la accesibilidad. 
-La etiqueta HTML5 <code>main</code> ayuda a los motores de búsqueda y otros desarrolladores a encontrar el contenido principal de su página. 
-<strong>Nota</strong> <br> Muchas de las nuevas etiquetas HTML5 y sus beneficios se tratan en la sección de accesibilidad aplicada. 
-</section>
+<section id="description"> HTML5 introduce etiquetas HTML más descriptivas. Estos incluyen <code>header</code> , <code>footer</code> , <code>nav</code> , <code>video</code> , <code>article</code> , <code>section</code> y otros. Estas etiquetas hacen que su HTML sea más fácil de leer y también ayudan con la optimización del motor de búsqueda (SEO) y la accesibilidad. La etiqueta <code>main</code> HTML5 ayuda a los motores de búsqueda y otros desarrolladores a encontrar el contenido principal de su página. <strong>Nota</strong> <br> Muchas de las nuevas etiquetas HTML5 y sus beneficios se tratan en la sección de accesibilidad aplicada. </section>
 
 ## Instructions
-<section id='instructions'> 
-Cree un segundo elemento <code>p</code> después del elemento <code>p</code> existente con el siguiente texto de ipsum del gatito: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code> 
-Envuelva los párrafos con una etiqueta <code>main</code> apertura y cierre. 
-</section>
+<section id="instructions"> Cree un segundo elemento <code>p</code> después del elemento <code>p</code> existente con el siguiente texto de kitty ipsum: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code> Envuelva los párrafos con una etiqueta <code>main</code> apertura y cierre. </section>
 
 ## Tests
 <section id='tests'>
@@ -53,6 +45,7 @@ tests:
 <h2>CatPhotoApp</h2>
 
 <p>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</p>
+
 ```
 
 </div>
