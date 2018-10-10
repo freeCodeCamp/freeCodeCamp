@@ -13,7 +13,7 @@ Using spread syntax, we have just achieved an operation that would have been mor
 
 ## Instructions
 <section id='instructions'>
-We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>, modify the function using the <dfn>spread</dfn> operator so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>.
+We have defined a function <code>spreadOut</code> that returns the variable <code>sentence</code>. Modify the function using the <dfn>spread</dfn> operator so that it returns the array <code>['learning', 'to', 'code', 'is', 'fun']</code>.
 </section>
 
 ## Tests
