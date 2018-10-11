@@ -14,7 +14,7 @@
 
 Hello 👋!
 
-freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are exited to welcome you onboard.
+freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are excited to welcome you onboard.
 
 We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's not very long.
 
@@ -43,9 +43,9 @@ You can help us:
 
 - [📝 Research, Write and Update our guide articles.](#research-write-and-update-our-guide-articles)
 
-- [💻 Create, Update and Fix Bugs in our coding challenges.](#create-update-and-fix-bugs-in-our-curriculum-challenges)
+- [💻 Create, Update and Fix Bugs in our coding challenges.](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [🌐 Translate guide articles and coding challenges.](#translate-guide-articles-and-curriculum-challenges)
+- [🌐 Translate guide articles and coding challenges.](#translate-guide-articles-and-coding-challenges)
 
 - [🛠 Help us fix bugs in freeCodeCamp.org's learning platform.](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
@@ -71,7 +71,7 @@ If you can't find a stub about the topic you'd like to write about, you can open
 
 ### Create, Update and Fix Bugs in our coding challenges
 
-All our Coding challenges are are curated by the community, bringing in expert knowledge from volunteers like you.
+All our Coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
 However, these need to be constantly refined, for quality. For example, you may want to update instructions to improve their [verbiage](https://en.oxforddictionaries.com/definition/verbiage). You can update the user stories to explain the concept better and even remove redundant ones. You may want to refactor tests which do not pass with valid code for the user stories.
 
@@ -129,11 +129,11 @@ Please note, that any issues that seek coding help on a challenge, will be close
 
 Please don't create GitHub issues for security issues. Instead, please send an email to `security@freecodecamp.org` and we'll look into it immediately.
 
-**I am stuck on something that is not in these documentation. How can get help?**
+**I am stuck on something that is not in these documentation. How can I get help?**
 
 Feel free to ask for help in:
 
-- [The "Contributors" category our public forum](https://www.freecodecamp.org/forum/c/contributors).
+- [The "Contributors" category in our public forum](https://www.freecodecamp.org/forum/c/contributors).
 - [Our public contributors chat room on Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
 We are excited to help you contribute to any of the topics that you would like to work on. Make sure you search for your query before posting a new one. Be polite and patient. Our community volunteers and moderators are always around to guide you through your queries.
