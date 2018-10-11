@@ -228,6 +228,10 @@ Meaning, if you visit <http://localhost:3000/explorer> you should see the APIs t
 
 Congratulations 🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
 
+## Quick commands reference when working locally
+
+[Here is a quick reference](/docs/README.md) to a list of commands that you may need locally from time to time:
+
 ## Making changes to your clone of freeCodeCamp locally
 
 Next, you can make changes to files, and commit your changes.
