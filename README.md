@@ -113,7 +113,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### Contributing
 
-Please follow [these steps](CONTRIBUTING.md) to contribute.
+#### [Please follow these steps to contribute.](CONTRIBUTING.md)
 
 ### License
 
