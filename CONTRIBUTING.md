@@ -91,7 +91,7 @@ Most of these versions are machine translated. We would love your help in improv
 
 **If you would like work on these, follow along these guidelines:**
 
-**[TODO]** We are in the process of updating docs for translation. Follow #18313 for the progress.
+**[TODO]** We are in the process of updating docs for translation. Follow [`#18313`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18313) for the progress.
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
