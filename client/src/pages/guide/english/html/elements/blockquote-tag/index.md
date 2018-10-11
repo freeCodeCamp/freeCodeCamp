@@ -3,13 +3,17 @@ title: Blockquote Tag
 ---
 ## Blockquote Tag
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/blockquote-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Purpose
+The HTML <blockquote> element shows that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation.  
+ ### Usage
+Just like the "H" tags send signals to a reader that the informaiton is important, the blockquote alerts a reader that the information they're reading is from another source.  The <blockquote> tag can include A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the <cite> element.
+  
+### Example
+```
+<blockquote cite="https://www.cnet.com/news/tim-cook-maintains-steve-jobs-beatles-business-model/"> “My model for business is The Beatles. They were four guys who kept each other’s kind of negative tendencies in check. They balanced each other and the total was greater than the sum of the parts. That’s how I see business: great things in business are never done by one person, they’re done by a team of people.”</blockquote>
+<cite>Steve Jobs</cite>
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote
