@@ -291,16 +291,6 @@ Follow these steps:
     translate/add-spanish-basic-html
     ```
 
-    And these are really bad name:
-
-    ```shell
-    challenges-branch
-    update-guide
-    fix/#12345
-    fix-#123
-    changes-for-1234
-    ```
-
 4. Next, you can work on the editing pages and working on the code in your favorite text editor.
 
 5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
