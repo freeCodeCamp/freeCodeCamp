@@ -1,12 +1,13 @@
 <table>
     <tr>
-        <td> Leia essas orientações em </td>
+        <!-- Do not translate this table -->
+        <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
-        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
         <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
-        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+        <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
+        <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
     </tr>
 </table>
 
@@ -77,7 +78,7 @@ Entretanto, eles precisam ser constantemente refinados para melhor qualidade. Po
 
 **Se você gostaria de trabalhar nisso, por favor, siga as seguintes recomendações:**
 
-### [Como trabalhar em desafios de código.](/docs/portuguese/how-to-work-on-coding-challenges.md)
+#### [Como trabalhar em desafios de código.](/docs/portuguese/how-to-work-on-coding-challenges.md)
 
 ### Traduza artigos de guia e desafios de código
 
