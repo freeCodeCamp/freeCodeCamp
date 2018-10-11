@@ -14,4 +14,4 @@
 
 Hello 👋 !
 
-These instructions have not been translated yet. Please check this issue for details:
+These instructions have not been translated yet. Please check this issue for details: #18312
