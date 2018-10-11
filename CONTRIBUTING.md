@@ -15,7 +15,7 @@
 
 Hello 👋!
 
-freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are exited to welcome you onboard.
+freeCodeCamp.org is possible thanks to thousands of kind volunteers like you. We are grateful for your contributions, and we are excited to welcome you onboard.
 
 We strictly enforce our ["Code of Conduct"](https://www.freecodecamp.org/code-of-conduct). Take a moment to read it. It's not very long.
 
@@ -44,9 +44,9 @@ You can help us:
 
 - [📝 Research, Write and Update our guide articles.](#research-write-and-update-our-guide-articles)
 
-- [💻 Create, Update and Fix Bugs in our coding challenges.](#create-update-and-fix-bugs-in-our-curriculum-challenges)
+- [💻 Create, Update and Fix Bugs in our coding challenges.](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [🌐 Translate guide articles and coding challenges.](#translate-guide-articles-and-curriculum-challenges)
+- [🌐 Translate guide articles and coding challenges.](#translate-guide-articles-and-coding-challenges)
 
 - [🛠 Help us fix bugs in freeCodeCamp.org's learning platform.](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
