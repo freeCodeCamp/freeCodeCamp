@@ -65,15 +65,15 @@ To help, find a `stub article` on our [Guide website](https://www.freecodecamp.o
 
 If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
 
-If you would like work on these, follow along these guidelines:
+**If you would like work on these, follow along these guidelines:**
 
-### [How to work on Guide articles.](/docs/how-to-work-on-guide-articles.md)
+#### [How to work on Guide articles.](/docs/how-to-work-on-guide-articles.md)
 
 #### Create, Update and Fix Bugs in our coding challenges
 
 **[TODO]**
 
-### [How to work on Coding Challenges.](/docs/how-to-work-on-coding-challenges.md)
+#### [How to work on Coding Challenges.](/docs/how-to-work-on-coding-challenges.md)
 
 #### Translate guide articles and coding challenges
 
@@ -89,7 +89,7 @@ Most of these versions are machine translated. We would love your help in improv
 
 **If you would like work on these, follow along these steps:**
 
-**[TODO]** We are in the process of updating docs for translation. [Follow this issue for the progress]().
+**[TODO]** We are in the process of updating docs for translation. Follow #18313 for the progress.
 
 #### Help us fix bugs in freeCodeCamp.org's learning platform
 
@@ -99,13 +99,17 @@ Broadly,
 
 - We have a Node.js based API server.
 - A set of React based client applications.
-- A script that we use to use our Frontend projects.
+- A script that we use to use evaluate our Frontend projects.
 
 Contributing to this requires some understanding of APIs, ES6 Syntax and a lot of curiosity.
 
-**If you would like work on these, follow along these steps:**
+Essentially we expect certain basic familiarity, with some of the aforementioned technologies, tools and libraries. That said, you are not required to be an expert on them.
 
-**[TODO]**
+Feel free to ask us questions, on the related issue threads, and we will be glad to clarify. When in doubt, you can reach Mrugesh Mohapatra [`@raisedadead`](https://github.com/raisedadead) or Stuart Taylor [`@bouncey`](https://github.com/bouncey) from our platform dev team to help you with this.
+
+**If you would like work on these, follow along these guidelines:**
+
+#### [How to setup freeCodeCamp locally.](/docs/how-to-setup-freecodecamp-locally.md)
 
 ## Frequently Asked Questions
 
@@ -136,7 +140,11 @@ Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCam
 
 **What do these different labels mean, that are tagged on issues?**
 
-Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels). You should go through **`Help Wanted`** or **`first timers welcome`** issues for quick lookup of what is available for you to work on.
+Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
+
+You should go through **`Help Wanted`** or **`first timers welcome`** issues for quick lookup of what is available for you to work on. These are up for grabs and you do not need a go ahead before working on these.
+
+If these issues lack clarity on what needs to be done, feel free ask questions in the comments.
 
 **I found a typo, should I report an issue before I can make a pull request?**
 
