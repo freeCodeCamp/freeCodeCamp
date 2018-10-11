@@ -1,5 +1,5 @@
 ---
-name: 'Bug report:  Issues with Guide articles'
+name: 'Bug Report:  Issues with Guide articles'
 about: Reporting issue with a guide article, broken links, images,  or content related
 
 ---
