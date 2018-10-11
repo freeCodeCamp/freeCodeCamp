@@ -35,7 +35,7 @@ You can choose to contribute to an area of you interest:
 
 3. Help us add subtitles on our [YouTube channel](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
-### Contribute to this open source codebase
+## Contribute to this open source codebase
 
 We have a huge open source codebase of the thousands of [Coding challenges](https://www.freecodecamp.org/learn) and [Guide articles](https://www.freecodecamp.org/guide). These challenges and articles make up the learning content available on the freeCodeCamp.org's learning platform.
 
@@ -49,7 +49,7 @@ You can help us:
 
 - [🛠 Help us fix bugs in freeCodeCamp.org's learning platform.](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
-#### Research, Write and Update our guide articles
+### Research, Write and Update our guide articles
 
 **What are Guide articles?**
 
@@ -69,13 +69,15 @@ If you can't find a stub about the topic you'd like to write about, you can open
 
 #### [How to work on Guide articles.](/docs/how-to-work-on-guide-articles.md)
 
-#### Create, Update and Fix Bugs in our coding challenges
+### Create, Update and Fix Bugs in our coding challenges
 
 **[TODO]**
 
-#### [How to work on Coding Challenges.](/docs/how-to-work-on-coding-challenges.md)
+**If you would like work on these, follow along these guidelines:**
 
-#### Translate guide articles and coding challenges
+### [How to work on Coding Challenges.](/docs/how-to-work-on-coding-challenges.md)
+
+### Translate guide articles and coding challenges
 
 You can help us translate our Guide articles and Coding challenges for a language that you speak. Currently we have translated versions in:
 
@@ -87,11 +89,11 @@ You can help us translate our Guide articles and Coding challenges for a languag
 
 Most of these versions are machine translated. We would love your help in improving the quality of these translations.
 
-**If you would like work on these, follow along these steps:**
+**If you would like work on these, follow along these guidelines:**
 
 **[TODO]** We are in the process of updating docs for translation. Follow #18313 for the progress.
 
-#### Help us fix bugs in freeCodeCamp.org's learning platform
+### Help us fix bugs in freeCodeCamp.org's learning platform
 
 Our learning platform runs on a modern JavaScript stack. It has various components, tools and libraries including but not limited to Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, and more.
 
