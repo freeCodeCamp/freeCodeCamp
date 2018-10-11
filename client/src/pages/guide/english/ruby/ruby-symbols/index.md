@@ -115,4 +115,4 @@ Symbol.all_symbols[1,20]   #=> [:floor, :ARGV, :Binding, :symlink,
 ```
 
 #### More Information:
-<a href='https://ruby-doc.org/core-2.4.0/Symbol.html' target='_blank' rel='nofollow'>Ruby array documentation</a>
+<a href='http://ruby-doc.org/core-2.5.1/Symbol.html' target='_blank' rel='nofollow'>Ruby Symbols Documentation</a>

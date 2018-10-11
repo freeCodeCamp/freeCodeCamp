@@ -54,6 +54,17 @@ The `for...in` statement iterates over the enumerable properties of an object, i
     //   2: two
     //   orange: fruit
     //   carrot: vegetable
+    
+    // Efficient way of getting an object's keys using an expression within the for-in loop's conditions
+    var myObj = {a: 1, b: 2, c:3}, myKeys = [], i=0;
+    for (myKeys[i++] in myObj);
+    
+    document.write(myKeys);
+    
+    //Output:
+    //   a
+    //   b
+    //   c
 
 # Ohter Resources:
 * [MDN link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)

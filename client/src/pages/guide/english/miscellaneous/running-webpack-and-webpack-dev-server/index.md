@@ -105,3 +105,11 @@ In the next tutorial we will cover some more advanced steps, including:
 *   Going into more detail with React
 *   Looking at some other cool features of Webpack, like compiling Sass files
 *   Using minification on our `dist/bundle.js`
+
+#### More Information:
+
+<a href="https://webpack.js.org/" target='blank' rel='nofollow'>Webpack website</a>
+
+<a href="https://github.com/webpack/webpack" target='blank' rel='nofollow'>Webpack Github</a>
+
+<a href="https://github.com/webpack/webpack-dev-server" target='blank' rel='nofollow'>webpack-dev-server Github</a>

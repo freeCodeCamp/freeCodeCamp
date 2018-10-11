@@ -3,8 +3,19 @@ title: Use Advanced JavaScript in React Render Method
 ---
 ## Use Advanced JavaScript in React Render Method
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/use-advanced-javascript-in-react-render-method/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Method
+While you are inside the render method and not inside the return method, you can write JavaScript **without** wrapping it inside curly braces.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+First, you will have to set the constant 'answer' to a value. Access the 'possibleAnswers' array using the value of 'randomIndex', which is located within the state of your component. Remember, you access state using `this.state`.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+```js
+const answer = possibleAnswers[this.state.randomIndex];
+```
+
+Next, insert your const 'answer' into the p-tags. Make sure to wrap it with curly braces `{ }`.
+```jsx
+<p>
+  {answer}          
+</p>
+```

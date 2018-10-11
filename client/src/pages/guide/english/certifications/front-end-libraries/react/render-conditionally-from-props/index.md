@@ -2,9 +2,31 @@
 title: Render Conditionally from Props
 ---
 ## Render Conditionally from Props
+This is a bit tricky challenge but easy though.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/render-conditionally-from-props/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Solution
+Change `handleClick()` with proper increament statement.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```react.js
+handleClick() {
+  this.setState({
+    counter: this.state.counter + 1
+  });
+}
+```
+In `render()` method use `Math.random()` as mentioned in the challenge description and write a ternary expression to pass `props` in the **Results** component.
+```react.js
+ let expression = Math.random() > .5;
+    
+{(expression == 1)? <Results fiftyFifty="You win!"/> : <Results fiftyFifty="You lose!"/> }
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```
+
+Then render the `fiftyFifty` props in the Results component.
+```react.js
+  <h1>
+  {
+    this.props.fiftyFifty
+  }
+  </h1>
+```

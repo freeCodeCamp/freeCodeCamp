@@ -3,7 +3,7 @@ title: C++
 ---
 # Hello World! - Your First C++ Program
 
-## What is C++  ?
+## What is C++?
 
 * C++ is a general purpose programming language which has been used since the 1990's
 * It was designed by Bjarne Stroustrup under with the name "C with classes".
@@ -16,8 +16,8 @@ _source: Github_
 ### Your First Program in C++
 
 ```cpp
-#include<iostream>
-using namespace std ;
+#include <iostream>
+using namespace std;
 int main()
 {
     cout << "Hello World" << endl;
@@ -43,7 +43,7 @@ using namespace std;
 
 * The first line tells the computer to use the "iostream" header file for this specific program . A header file is a seperate file with prewritten C++ code. There are many other header files which are requireed for a specific program to run properly. Some of them are : math , vector and string. Header files are generally represented by a ".h" extension (you don't need to add .h when including C++ standard library files)
 * `iostream` stands for input-output stream . The "iostream" file contains code for allowing the computer to take input and generate an output, using the C++ language.
-* The second line tells the computer to use the standard namespace which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` on line 4. It makes the code more readable and our lives as programmers easier.
+* The second line tells the computer to use the standard namespace which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` and `std::endl` instead of `endl` on line 4. It makes the code more readable and our lives as programmers easier.
 
 #### Line 3 and 4
 
@@ -56,7 +56,7 @@ int main()
   **NOTE : Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
 * Line 4 indicates the start of the main() function. 
 
-#### Lines 4,5 & 6
+#### Lines 5, 6 & 7
 
 ```cpp
     cout << "Hello World" << endl;
@@ -92,11 +92,11 @@ _You have finished coding your first C++ program and have understood most of the
  
  **Feel free to ask any questions on FreeCodeCamp's GitHub page or [FreeCodeCamp's Forum.](https://forum.freecodecamp.org/)**
 
- <a href='https://repl.it/L4k3' target='_blank' rel='nofollow'>Try it yourself ! :) </a>
+ [Try it yourself ! :)](https://repl.it/L4k3)
 
 **You may need some software to write and execute C++ code. I recommend using CodeBlocks. There's a download link below :**
 
-Download Link : <a href='http://www.codeblocks.org/downloads/26' target='_blank' rel='nofollow'>Download Here</a>
+Download Link : [Download Here](http://www.codeblocks.org/downloads/26)
 
 * Click the link with the GNU/GCC compiler for windows. This will not require an additional installation
 

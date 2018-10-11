@@ -4,8 +4,22 @@ title: Python Numeric Types
 The <a href='https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex' target='_blank' rel='nofollow'>numeric types</a> for Python are:
 
 *   integers (`int`)
+#### Examples:
+
+```py
+print(1)
+print(100)
+print(8435367)
+```
 *   floating point numbers (`float`)
     *   <a href='https://docs.python.org/3/library/functions.html#float' target='_blank' rel='nofollow'>constructor</a>
+#### Examples:
+
+```py
+print(1.5)
+print(46.84)
+print(84357.435)
+```
 *   complex numbers
     *   <a href='https://docs.python.org/3/library/functions.html#complex' target='_blank' rel='nofollow'>constructor</a>
 

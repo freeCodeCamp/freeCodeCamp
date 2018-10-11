@@ -5,7 +5,7 @@ title: Singleton
 The singleton is a design pattern that restricts the instantiation of a class to one object. It is useful when you want to give only one object the ability to coordinate actions across your application.
 
 ## Singleton in Android
-Singleton is a design pattern often used in Android. It is easily misused and so can cause app to be hard to maintain. It is useful in Android beause they live across fragments, activities, and rotations. 
+Singleton is a design pattern often used in Android. It is easily misused and so can cause app to be hard to maintain. It is useful in Android because they live across fragments, activities, and rotations. 
 
 - Singletons are often used in Android to store temporary data
 - They allow the application to have one owner of the data and provides an easy way to pass data between controller classes

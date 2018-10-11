@@ -49,3 +49,32 @@ Output of the example should be:
 `c` is set equal to `a`, because the condition `a<b` was true.
 
 This looks pretty simple, right? Do note that `value_if_true` and `value_if_false` must have the same type, and they cannot be full statements but simply expressions.
+
+The ternary operator can be nested too same like nested if-else statements. Consider this nested if-else statement :
+```c
+int a = 1, b = 2, ans;
+if (a == 1) {
+    if (b == 2) {
+        ans = 3;
+    } else {
+        ans = 5;
+    }
+} else {
+    ans = 0;
+}
+printf ("%d\n", ans);
+```
+
+Here's the above code re-written using nested ternary operator:
+
+```c
+int a = 1, b = 2, ans;
+ans = (a == 1 ? (b == 2 ? 3 : 5) : 0);
+printf ("%d\n", ans);
+```
+
+The output of both of the above codes should be:
+
+```c
+3
+```

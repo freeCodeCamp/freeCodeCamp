@@ -12,6 +12,34 @@ Swift is an [open source](https://en.wikipedia.org/wiki/Open-source_software), g
 
 Want to try out Swift right now? [Repl.it](https://repl.it/languages/swift) offers an online Read-Eval-Print loop for Swift. You won't have access to UIKit or other APIs that are commonly used, but give it a shot!
 
+# Basics
+
+To declare a variable in Swift, simply use var followed by the name of your variable.
+```Swift
+var x = 6
+var name = "Bob"
+var boole = true
+
+x = 3
+```
+
+Constants are similar to variables, but they cannot change in value after creation.
+```Swift
+let x = 6
+let name = "Bob"
+let boole = true
+```
+
+To print anything to the standard output, simply use print() and place your output in the parentheses.
+```Swift
+let x = "World"
+
+print("Hello ")
+print(x)
+```
+
+
+
 # Version
 
 The latest version is [Swift 4.2](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/RevisionHistory.html), released Sept. 17, 2018. Swift is constantly evolving, and you can expect more changes in the future. It is recommended you use the latest version of Swift when starting a new project.
@@ -31,6 +59,7 @@ project or application, no matter how small!
 # Want to learn more?
 
 * [RayWenderlich.com](https://www.raywenderlich.com/) : Has many great tutorials for Swift and iOS development.
+* [Hacking with Swift](https://www.hackingwithswift.com/read) : A complete Swift tutorial, taking you from a beginner to advanced using hands-on projects.
 
 ### Sources
 

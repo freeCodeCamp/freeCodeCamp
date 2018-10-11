@@ -11,14 +11,16 @@ C programming language **_assumes any non-zero and non-null values as true_** an
 
 #### Syntax
 ```C
-if(boolean_expression) {
+if(boolean_expression)
+{
     //Block of Statements executed when boolean_expression is true
 }
 ```
 #### Example
 ```C
 int a = 100;
-if(a < 200) {
+if(a < 200) 
+{
     printf("a is less than 200\n" );
 }
 ```
@@ -31,20 +33,24 @@ if(a < 200) {
 If the Boolean expression evaluates to **true**, then the if block will be executed, otherwise, the else block will be executed.
 #### Syntax
 ```C
-if(boolean_expression) {
+if(boolean_expression) 
+{
     //Block of Statements executed when boolean_expression is true
 }
-else {
+else
+{
     //Block of Statements executed when boolean_expression is false
 }
 ```
 #### Example
 ```C
 int a = 300;
-if(a < 200) {
+if(a < 200)
+{
     printf("a is less than 200\n" );
 }
-else {
+else
+{
     printf("a is more than 200\n");
 }
 ```
@@ -60,32 +66,40 @@ When using if...else if..else statements, there are few points to keep in mind -
 
 #### Syntax
 ```C
-if(boolean_expression_1) {
+if(boolean_expression_1)
+{
     //Block of Statements executed when boolean_expression_1 is true
 }
-else if(boolean_expression_2) {
+else if(boolean_expression_2)
+{
     //Block of Statements executed when boolean_expression_1 is false and boolean_expression_2 is true
 }
-else if(boolean_expression_3) {
+else if(boolean_expression_3) 
+{
     //Block of Statements executed when both boolean_expression_1 and boolean_expression_2 are false and boolean_expression_3 is true
 }
-else {
+else
+{
     //Block of Statements executed when all boolean_expression_1, boolean_expression_2 and boolean_expression_3 are false
 }
 ```
 #### Example
 ```C
 int a = 300;
-if(a == 100) {
+if(a == 100)
+{
     printf("a is equal to 100\n" );
 }
-else if(a == 200) {
+else if(a == 200)
+{
     printf("a is equal to 200\n");
 }
-else if(a == 300) {
+else if(a == 300)
+{
     printf("a is equal to 300\n");
 }
-else {
+else
+{
     printf("a is more than 300\n");
 }
 ```
@@ -97,9 +111,11 @@ else {
 It is always legal in C programming to nest if-else statements, which means you can use one if or else if statement inside another if or else if statement(s).
 #### Syntax
 ```C
-if(boolean_expression_1) {
+if(boolean_expression_1)
+{
     //Executed when boolean_expression_1 is true
-    if(boolean_expression_2) {
+    if(boolean_expression_2)
+    {
       //Executed when both boolean_expression_1 and boolean_expression_2 are true
     }
 }
@@ -109,9 +125,11 @@ if(boolean_expression_1) {
 ```C
 int a = 100;
 int b = 200;
-if(a == 100) {
+if(a == 100)
+{
     printf("a is equal to 100\n" );
-    if(b == 200) {
+    if(b == 200)
+    {
         printf("b is equal to 200\n");
     }
 }
@@ -123,3 +141,91 @@ if(a == 100) {
 a is equal to 100
 b is equal to 200
 ```
+## 5. Switch Case Statement
+The switch statement is often faster than nested if...else (not always). Also, the syntax of switch statement is cleaner and easy to understand.
+
+### Syntax of switch case
+```
+switch (n)
+ {
+    case constant1:
+        // code to be executed if n is equal to constant1;
+        break;
+
+    case constant2:
+        // code to be executed if n is equal to constant2;
+        break;
+        .
+        .
+        .
+    default:
+        // code to be executed if n doesn't match any constant
+}
+```
+When a case constant is found that matches the switch expression, control of the program passes to the block of code associated with that case.
+
+In the above pseudocode, suppose the value of n is equal to constant2. The compiler will execute the block of code associate with the case statement until the end of switch block, or until the break statement is encountered.
+
+The break statement is used to prevent the code running into the next case.
+
+### Example:
+```
+// Program to create a simple calculator
+// Performs addition, subtraction, multiplication or division depending the input from user
+
+# include <stdio.h>
+
+int main()
+{
+
+    char operator;
+    double firstNumber,secondNumber;
+
+    printf("Enter an operator (+, -, *, /): ");
+    scanf("%c", &operator);
+
+    printf("Enter two operands: ");
+    scanf("%lf %lf",&firstNumber, &secondNumber);
+
+    switch(operator)
+    {
+        case '+':
+            printf("%.1lf + %.1lf = %.1lf",firstNumber, secondNumber, firstNumber+secondNumber);
+            break;
+
+        case '-':
+            printf("%.1lf - %.1lf = %.1lf",firstNumber, secondNumber, firstNumber-secondNumber);
+            break;
+
+        case '*':
+            printf("%.1lf * %.1lf = %.1lf",firstNumber, secondNumber, firstNumber*secondNumber);
+            break;
+
+        case '/':
+            printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/secondNumber);
+            break;
+
+        // operator is doesn't match any case constant (+, -, *, /)
+        default:
+            printf("Error! operator is not correct");
+    }
+
+    return 0;
+}
+```
+### Output
+```
+Enter an operator (+, -, *,): -
+Enter two operands: 32.5
+12.4
+32.5 - 12.4 = 20.1
+```
+The '-' operator entered by the user is stored in operator variable. And, two operands 32.5 and 12.4 are stored in variables firstNumber and secondNumber respectively.
+
+Then, control of the program jumps to
+```
+printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumber);
+```
+Finally, the break statement ends the switch statement.
+
+If break statement is not used, all cases after the correct case is executed. 

@@ -3,8 +3,22 @@ title: Match All Numbers
 ---
 ## Match All Numbers
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/regular-expressions/match-all-numbers/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hint 1
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+* A global flag will help you get through this challenge.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Hint 2
+
+* Try using a shorthand character for `d`igits.
+
+# Spoiler Alert!! Solution Ahead!
+
+## Solution
+
+```javascript
+let numRegex = /\d/g;
+```
+
+## Explanation
+
+* The `\d` shorthand character is a shortcut for `[0-9]`, it search for any number between 0 and 9.

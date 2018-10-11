@@ -26,6 +26,11 @@ To create your pages in `HTML`, you need to know how to structure a page in `HTM
 
 5º - Between the `<body>` and `</ body>` tags the page content is placed, which is what is displayed in the browser.
 
+### Changes in HTML5
+
+#### Introduction of semantic tags
+Instead of using `<div>` for every other container several semantic(these tags help screenreaders which are used by visually
+impaired) tags such as `<header>` `<footer>` . So it is advisable to use these tags instead of generic `<div>`. 
 
 #### More Information:
 [HTML: Introduction](https://www.w3schools.com/html/html_intro.asp)

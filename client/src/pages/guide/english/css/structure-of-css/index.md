@@ -6,10 +6,18 @@ A CSS rule follows this basic structure:
 ```CSS
 selector {
   property: value;
-  proerty: value;
+  property: value;
 }
 ```
 Everything inside the curly brackets styles whatever is selected by the [selector]. Inside a CSS rules is a set of [property]/value pairs.
+
+You can have different selectors seperated with comas:
+```CSS
+selector1, 
+selector2 {
+  property: value;
+}
+```
 
 Multiple CSS rules can be put in one CSS file - here is an example:
 ```CSS

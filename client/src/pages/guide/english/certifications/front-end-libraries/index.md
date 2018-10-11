@@ -3,11 +3,14 @@ title: Front End Libraries
 ---
 ## Front End Libraries
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A Front End library is a file or a piece of pre-written code that is helpful to the user by reducing the time consumed.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+These code libraries help their users to minimize their time in writing long lines of code, and increase their productivity. For example- Front end libraries like [Bootstrap](https://getbootstrap.com/) provide a framework for users to build upon and reduces the time consumed, while allowing flexibility to the user.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Libraries can be opinionated or non-opionated, i.e. leaving some choices to the user and not leaving any choice for the user respectively.
+
+Since these are front-end libraries, they work with HTML, CSS and JavaScript and modify the layout, style and behavious of the page in a browser respectively.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+1. [Some Good Front End Libraries](https://medium.com/learnwithrahul/introduction-to-some-kick-ass-front-end-libraries-tools-963f55152f4b)

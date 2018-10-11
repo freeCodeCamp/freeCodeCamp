@@ -27,13 +27,6 @@ Always return the entire collection object.
     *   If **value** is an empty string, delete that **prop** from the object.
 *   Finally, return the **collection** object.
 
-#### Relevant Links
-
-*   <a href='http://www.freecodecamp.com/challenges/accessing-objects-properties-with-bracket-notation' target='_blank' rel='nofollow'>Challenge: Accessing Objects Properties with Bracket Notation</a>
-*   <a href='http://www.freecodecamp.com/challenges/add-new-properties-to-a-javascript-object' target='_blank' rel='nofollow'>Challenge: Add New Properties to a JavaScript Object</a>
-*   <a href='http://www.freecodecamp.com/challenges/delete-properties-from-a-javascript-object' target='_blank' rel='nofollow'>Challenge: Delete Properties from a JavaScript Object</a>
-*   <a href='http://www.freecodecamp.com/challenges/accessing-nested-objects-in-json' target='_blank' rel='nofollow'>Challenge: Accessing Nested Objects in JSON</a>
-
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
 Use an `else if` statement to check the needed steps.
@@ -92,11 +85,12 @@ To access the value of a key in this object, you will use `collection[id][prop]`
 *   **value** is not a blank string, so the second part of the else if statement passes.
 *   `artist: "ABBA"` is added to the `5439` `id`.
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
+### Resources:
 
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a href='http://forum.freecodecamp.com/t/algorithm-article-template/14272' target='_blank' rel='nofollow'>**`Wiki Challenge Solution Template`**</a> for reference.
+*   [fCC's challenge: Accessing Objects Properties with Bracket Notation](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-object-properties-with-bracket-notation/)
+*   [fCC's challenge: Add New Properties to a JavaScript Object](http://www.freecodecamp.com/challenges/add-new-properties-to-a-javascript-object)
+*   [fCC's challenge: Delete Properties from a JavaScript Object](http://www.freecodecamp.com/challenges/delete-properties-from-a-javascript-object)
+*   [fCC's challenge: Accessing Nested Objects](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/accessing-nested-objects/)
+*  ["Array.prototype.push()" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+*  ["delete operator" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)

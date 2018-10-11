@@ -30,3 +30,10 @@ You can also nest an anchor element `<a>` within a paragraph.
   <a href="http://freecodecamp.com">link to Free Code Camp.com</a>
   for you to follow.</p>
 ```
+
+
+#### More Information:
+
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+- <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p' target='_blank' rel='nofollow'>MDN: &lt;p&gt; The Paragraph element</a>
+- <a href='https://www.w3schools.com/tags/tag_i.asp' target='_blank' rel='nofollow'>w3schools: HTML &lt;p&gt; Tag</a>

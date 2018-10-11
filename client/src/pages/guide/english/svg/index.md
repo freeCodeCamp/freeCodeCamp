@@ -142,6 +142,11 @@ There are few tools available to create SVG in the form of drawing program.
 
 For more tools, refer to <a href='https://https://www.w3.org/Graphics/SVG/WG/wiki/Implementations' target='_blank' rel='nofollow'>W3C list of tools that supports SVG</a>
 
+## Why you should use SVGs
+
+As a vector image format, it allows you to resize an image without any loss of quality and a particularly light weight.
+As an XML format, it allows you to benefit from the full power of JavaScript and especially CSS.
+
 ## Resources
 
 - <a href='https://www.w3.org/TR/SVG/' target='_blank' rel='nofollow'>W3C, Scalable Vector Graphics (SVG) 1.1 (Second Edition)</a>

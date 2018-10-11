@@ -6,6 +6,7 @@ title: Vectors
 
 The C++ `vector` is one of the most used containers in C++. A container is a data structure that stores a collection of objects that can vary from being ordered(like `vector`!) to unordered(like `set`). All C++ containers have a different set of functions that allow you to access an object(s) in that collection, modify and loop over the elements in that data structure.
 
+Vectors are similar to ArrayLists in Java since you don't have to specify the length of the container. Compared to an array where you have to define how large it is, its size depends on its contents.
 
 `std::vector` is part of the C++ standard library (hence the prefix `std::`) and allows you to store contiguous data of the same data type. NOTE: **All objects within a vector must be of the same data type**
 
@@ -170,4 +171,46 @@ for(std::vector<int>::size_type i = 0; i != myVector.size(); i++){
   std::cout << "The element is " << myVector[i] << std::endl;  // Dereference the iterator to access its data
 }
 
+```
+### Sorting A Vector In Ascending Order
+Sorting a vector based on ascending order can be done with the help of Sort() in C++.
+``` cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(){
+ 
+ vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
+ sort(v.begin(), v.end());
+ 
+ cout << "Vector Contents Sorted In Ascending Order:\n";
+ for(int e : v){
+ cout << e << " ";
+ }
+ 
+ return 0;
+}
+```
+### Sorting Vector In Descending Order
+Sorting Vector in descending order can be done with the help of third argument namely greater<int>() in Sort() in C++.
+``` cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(){
+ 
+ vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
+ sort(v.begin(), v.end(), greater<int>());
+ 
+ cout << "Vector Contents Sorted In Ascending Order:\n";
+ for(int e : v){
+ cout << e << " ";
+ }
+ 
+ return 0;
+}
 ```

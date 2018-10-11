@@ -59,3 +59,7 @@ And the `.box-element` will look like this:
 ![Example Image](https://s26.postimg.org/ff2kmdfzd/5-_Xand_Y.png)
 
 If the content overflows the Y-axis, then that content will be hidden, whilst a scrollbar should be visible for users to read the rest of the content.
+
+#### More Information:
+
+CSS-Tricks: <a href='https://css-tricks.com/almanac/properties/o/overflow/' target='_blank' rel='nofollow'>overflow</a>

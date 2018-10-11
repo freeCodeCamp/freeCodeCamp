@@ -176,6 +176,38 @@ If you absolutely need to access the current index of your iteration, do **NOT**
 for index, item in enumerate(shopping_basket):
   print("Item", index, "is a", item)
 ```
+**for/else statements**
+Pyhton permits you to use else with for loops, the else case is executed when none of the conditions with in the loop body was satisfied. To use the else we have to make use of `break` statement so that we can break out of the loop on a satsfied condition.If we do not break out then the else part will be executed.
+
+```python
+week_days = ['Monday','Tuesday','Wednesday','Thursday','Friday']
+today = 'Saturday'
+for day in week_days:
+  if day == today:
+    print('today is a week day')
+    break
+else:
+  print('today is not a week day')
+```
+In the above case the output will be `today is not a week day` since the break within the loop will never be executed.
+
+**Iterate over a list using inline loop function**
+
+We could also iterate inline using python, for example if we need to uppercase all the words in a list from a list we could simply do the following:
+
+```python
+A = ["this", "is", "awesome", "shinning", "star"]
+
+UPPERCASE = [word.upper() for word in A]
+print (UPPERCASE)
+```
+
+Output:
+```
+>
+['THIS', 'IS', 'AWESOME', 'SHINNING', 'STAR']
+>
+```
 
 #### More Information:
 

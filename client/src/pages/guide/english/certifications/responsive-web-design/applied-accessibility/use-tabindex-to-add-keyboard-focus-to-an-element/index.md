@@ -3,8 +3,19 @@ title: Use tabindex to Add Keyboard Focus to an Element
 ---
 ## Use tabindex to Add Keyboard Focus to an Element
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/use-tabindex-to-add-keyboard-focus-to-an-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Following the instructions:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Add a tabindex attribute to the p tag and set its value to "0".
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+ the line 16 
+ ```css
+    <p>Instructions: Fill in ALL your information then click <b>Submit</b></p>
+```
+
+becomes:
+ ```css
+    <p tabindex="0">Instructions: Fill in ALL your information then click <b>Submit</b></p>
+```
+
+In this way it will receive keyboard focus when a user tabs through a page.

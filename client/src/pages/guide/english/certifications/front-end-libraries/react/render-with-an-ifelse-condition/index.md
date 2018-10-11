@@ -3,8 +3,30 @@ title: Render with an If/Else Condition
 ---
 ## Render with an If/Else Condition
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/render-with-an-ifelse-condition/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Method
+Inside of the render method of the component, write if/else statements that each have it's own return method that has different JSX. This gives programmers the ability to render different UI according to various conditions.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+First, wrap the current return method inside of an if statement and set the condition to check if the variable 'display' is true. Remember, you access state using `this.state`.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+```react.js
+if (this.state.display === true) {
+  return (
+    <div>
+      <button onClick={this.toggleDisplay}>Toggle Display</button>
+      <h1>Displayed!</h1>
+    </div>
+  );
+}
+```
+
+Next, create an else statement that returns the same JSX **without** the `h1` element. 
+```react.js
+else {
+  return (
+    <div>
+      <button onClick={this.toggleDisplay}>Toggle Display</button>
+    </div>
+  )
+}
+```

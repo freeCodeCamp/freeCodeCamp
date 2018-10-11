@@ -324,3 +324,15 @@ yarn remove gulp
 ```
 
 After every install, upgrade or removal, yarn updates a yarn.lock file which keeps track of the exact package version installed in node_modules directory. Similar feature has been updated in npm. Now there is a `package-lock.json` which behave exactly in the same manner as `yarn.lock` in newer versions of npm.
+
+### Package Version Numbers, and What they Mean
+
+A first release of a npm package is always 1.0.0
+
+Bug fixes, or minor changes increment the third digit, hense 1.0.0 would become 1.0.1
+
+New features that dont break previous versions of a package increment the second digit, hense 1.0.0 would become 1.1.0
+
+All changes that break the previous releases of a package increment the first digit, hense 1.0.0 would become 2.0.0
+
+It is important to remember this when updateing packages to keep your project stable!

@@ -28,3 +28,20 @@ Hello, world!
 ```
 
 Congratulations! You've just written your own Rust program!
+
+## Hello Cargo
+
+Cargo is the build tool that gets shipped with Rust when you installed it and can be used for many things. Here we will see the alternative approach of using cargo.
+
+Firstly navigate to the parent directory of your project and run `cargo new hello_world`. This will create our project directory of `hello_world` with some files inside it, those being `Cargo.toml` which tells `cargo` how to build your project, as well as `src/main.rs` which is our Rust source file. If you open this file you will see some code is already generated for us to run hello world! So let's do that.
+
+To run your program with cargo it is as simple as running `cargo run` in your project directory and it should look something like this:
+```bash
+cargo run
+   Compiling hello_world v0.1.0
+    Finished dev [unoptimized + debuginfo] target(s) in 1.31s
+     Running `target/debug/hello_world`
+Hello, world!
+```
+
+Great work you now have even more tools at your disposal!

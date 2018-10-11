@@ -18,11 +18,11 @@ situations, such as people using a slow Internet connection, people with "tempor
 due to aging. The document [Developing a Web Accessibility Business Case for Your Organization](https://www.w3.org/WAI/bcase/Overview) describes many
 different benefits of Web accessibility, including **benefits for organizations**.
 
-Web accessibility  should also include the people who doesnt have access to internet or computer.
+Web accessibility should also include the people who don't have access to the internet or to computers.
 
 A prominent guideline for web development was introduced by the [World Wide Web Consortium (W3C)](https://www.w3.org/), the [Web Accessibility Initiative](https://www.w3.org/WAI/)
 from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/WAI-ARIA_basics), the Accessible Rich Internet Applications Suite.
-Where WAI tackles the sementics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
+Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
 AJAX, more accessible. 
 
 The use of images and graphics on websites can decrease accessibility for those with visual impairments. However, this doesn't mean designers should avoid
@@ -31,6 +31,8 @@ to do so. In order to use these elements appropriately, web designers must use a
 them. Alt text should be short and to the point--generally [no more than five to 15 words](https://www.thoughtco.com/writing-great-alt-text-3466185). If a
 graphic is used to convey information that exceeds the limitations of alt text, that information should also exist as web text in order to be read by screen
 readers. [Learn more about alt text](https://webaim.org/techniques/alttext/).
+
+Just like Alt text is for people who are visually impaired, transcripts of the audio are for the people who cannot listen. Providing a written document or a transcript of what is being spoken accessible to people who are hard of hearing.
 
 Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Consortium</a>, (<a href="http://www.csail.mit.edu/" shape="rect">MIT</a>, <a href="http://www.ercim.org" shape="rect">ERCIM</a>, <a href="http://www.keio.ac.jp" shape="rect">Keio</a>,<a href="http://ev.buaa.edu.cn" shape="rect">Beihang</a>). http://www.w3.org/Consortium/Legal/2015/doc-license
 

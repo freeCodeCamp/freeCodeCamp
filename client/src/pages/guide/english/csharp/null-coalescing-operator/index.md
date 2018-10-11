@@ -4,38 +4,73 @@ title: Null-coalescing Operator
 
 # Null-coalescing Operator
 
-Null-coalescing operators (??) allow to define a default value for nullable value types or reference types. It returns the left-hand operand if the operand is not null; otherwise it returns the right operand.
-##
+The null-coalescing operator in C# is used to help assign one variable to another and specify an alternate value if the source value is `null`. The null-coalescing operator in C# is `??`.
+
+## Example 1
+
+Since `name` is `null`, `clientName` will be assigned the value "John Doe".
+
+```cs
+string name = null;
+
+string clientName = name ?? "John Doe";
+
+Console.WriteLine(clientName);
 ```
-Address address = null;
-if (employee.Address != null)
-{
-    address = employee.Address;
-}
+
+```cs
+> John Doe
+```
+
+## Example 2
+
+Since `name` is not `null`, `clientName` will be assigned the value of `name`, which is "Jane Smith".
+
+```cs
+string name = "Jane Smith";
+
+string clientName = name ?? "John Doe";
+
+Console.WriteLine(clientName);
+```
+
+```cs
+> Jane Smith
+```
+
+## Alternative to if...else Statement
+
+You could use an `if...else` statement to test for the presence of `null` and assign a different value.
+
+```cs
+string clientName;
+
+if (name != null)
+	clientName = name;
 else
-{
-    address = defaultAddress;
-}
+	clientName = "John Doe";
 ```
-You could use a standard conditional operator to make that check more concise:
-##
-```
-Address address = employee.Address != null ? employee.Address : defaultAddress;
-```
-However, in C# 6.0 null-conditional operators were introduced, so now the above line can simply
-be represented as follows:
-##
-```
-Address address = employee.Address ?? defaultAddress;
-```
-If employee.Address is null, address will simply be assigned the defaultAddress value.
 
-You can use null-coalescing operator with [null-conditional operator](/csharp/null-conditional-operator) together:
-##
-```
-Address address = employee?.Address ?? defaultAddress;
-```
-Now, if employee is null or employee.Address is null, address will simply be assigned defaultAddress value.
+However, this can be greatly simplified using the null-coalescing operator.
 
-Null-conditional operators are short-circuiting, so as soon as one check of conditional member access
-returns not null, the rest do not take place.
+```cs
+string clientName = name ?? "John Doe";
+```
+
+## Alternative to Conditional (Ternary) Operator
+
+It is also possible to use the conditional operator to test for the presence of `null` and assign a different value.
+
+```cs
+string clientName = name != null ? name : "John Doe";
+```
+
+Again, this can be simplified using the null-coalescing operator.
+
+```cs
+string clientName = name ?? "John Doe";
+```
+
+## References
+
+* [?? Operator (C# Reference)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-conditional-operator)

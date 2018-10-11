@@ -45,6 +45,12 @@ int max(int num1, int num2)
 }
 ```
 
+## Why are functions important?
+
+Functions support modularity(breaking down of work into smaller pieces called modules) which is an essential feature of OOP which primarily separates C++ from C. 
+Having specific functions to perform specific tasks removes confusion and shortens the length of the main function.
+The function also performs reusability of code. So the next time you have to calculate the maximum of two different numbers agaun and again in the same program, you do not need to copy and paste your code. You just have to call the function and it does rest of the work.
+
 ## More Information
 
 * [TutorialsPoint](https://www.tutorialspoint.com/cplusplus/cpp_functions.htm)

@@ -11,7 +11,7 @@ Angular(versions 2.x and up) is a Typescript based open source framework to deve
 
 Google released the initial version of AngularJS on October 20,2010. Stable release of AngularJS was on December 18, 2017 of version 1.6.8. Angular 2.0 release took place on Sep-22 2014 at ng-Europe conference. One of the feature of Angular 2.0 is dynamic loading.
 
-After some modifications, Angular 4.0 was released on Dec-2016. Angular 4 is backward compatible with Angular 2.0. HttpClient library is one of the feature of Angular 4.0. Angular 5 release was on November 1, 2017.Support for Progressive web apps was one of the improvement in the Angular 4.0.
+After some modifications, Angular 4.0 was released on Dec-2016. Angular 4 is backward compatible with Angular 2.0. HttpClient library is one of the feature of Angular 4.0. Angular 5 release was on November 1, 2017. Support for Progressive web apps was one of the improvement in the Angular 4.0. Angular 6 release was in May 2018. The latest stable version is [6.1.9](https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6)
 
 **Install**:
  
@@ -51,7 +51,7 @@ Then add a `<script>` to your `index.html`:
 <script src="/bower_components/angular/angular.js"></script>
 ```
 
-For more information regarding the documentation, refer to the offical site of [AngularJS](https://docs.angularjs.org/api) 
+For more information regarding the documentation, refer to the official site of [AngularJS](https://docs.angularjs.org/api) 
 
 You can install **Angular 2.x** and other versions by following the steps from the official documentation of [Angular](https://angular.io/guide/quickstart)
 

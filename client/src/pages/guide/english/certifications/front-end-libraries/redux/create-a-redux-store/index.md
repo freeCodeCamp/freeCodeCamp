@@ -3,8 +3,30 @@ title: Create a Redux Store
 ---
 ## Create a Redux Store
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/redux/create-a-redux-store/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+There are three parts to this challenge.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+1. Declare a `store` variable.
+2. Assign it to the `createStore()` method.
+3. Pass in the `reducer` as an argument.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Step 1. Declare a variable.
+
+```javascript
+const yourVariableName;
+```
+
+### Step 2. Assign your variable to a method.
+
+```javascript
+const yourVariableName = yourMethodName();
+```
+
+Hint: Keep in mind that the `createStore()` method is available from the Redux object. For example: `Redux.createStore()`
+
+### Step 3. Pass in an argument to your method.
+
+```javascript
+const yourVariableName = yourMethodName(yourArgumentName);
+```
+
+Good luck!

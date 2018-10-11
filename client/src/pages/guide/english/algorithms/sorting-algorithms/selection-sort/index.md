@@ -17,8 +17,8 @@ But, how would you write the code for finding the index of the second smallest v
 
 * An easy way is to notice that the smallest value has already been swapped into index 0, so the problem reduces to finding the smallest element in the array starting at index 1.
 
-An implementation in C/C++ is as shown below,
 
+### Implementation in C/C++
 
 ```C
 for(int i = 0; i < n; i++)
@@ -39,7 +39,7 @@ for(int i = 0; i < n; i++)
 }
 ```
 
-Here is an implementation in Javascript:
+### Implementation in Javascript
 
 ``` Javascript
 function selection_sort(A) {
@@ -64,11 +64,25 @@ function swap(A, x, y) {
 }
 ```
 
+### Implementation in Python
+```python
+def seletion_sort(arr):
+         if not arr:
+         return arr
+    for i in range(len(arr)):
+         min_i = i
+         for j in range(i + 1, len(arr)):
+              if arr[j] < arr[min_i]:
+                  min_i = j
+         arr[i], arr[min_i] = arr[min_i], arr[i]
+```
+
 ### Properties
 
 * Space Complexity: <b>O(n)</b>
 * Time Complexity: <b>O(n<sup>2</sup>)</b>
 * Sorting in Place: <b>Yes</b>
+* Stable: <b>No</b>
 
 ### Visualization
 

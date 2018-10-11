@@ -1,15 +1,26 @@
 ---
-title: Area Between a Curve and the X Axis
+title: Area-between-a-curve-and-X-axis
 ---
+
 ## Area Between a Curve and the X Axis
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/area-between-a-curve-and-the-x-axis/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+To find the area between a curve and the x-axis, the most preferred tool is [definite integration](https://www.mathsisfun.com/calculus/integration-definite.html) of the given curve.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+To find the area under the curve y = f(x) between x = a and x = b, integrate y = f(x) between the limits of a and b.
+
+![img](https://upload.wikimedia.org/wikipedia/commons/f/f2/Integral_as_region_under_curve.svg)
+
+![img](https://latex.codecogs.com/gif.latex?%5Clarge%20S%20%3D%20%5Cint_%7Ba%7D%5E%7Bb%7D%20f%28x%29%20dx)
+
+
+## Some Examples
+
+
+
+
+
+NOTE: Areas under the x-axis will come out negative and areas above the x-axis will be positive. This means that you have to be careful when finding an area which is partly above and partly below the x-axis.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+- [Interactive lessons for Area under the Curve](https://www.intmath.com/applications-integration/2-area-under-curve.php)

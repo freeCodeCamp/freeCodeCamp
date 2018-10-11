@@ -3,13 +3,44 @@ title: Background Property
 ---
 ## Background Property
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/properties/background-property/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The CSS background property allows one to declare all eight background properties at once using this a short-hand declaration<sup>1</sup>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+The background property is specified as one or more background layers, separated by commas for the following properties<sup>2</sup>:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+  * background-color
+  * background-image
+  * background-position
+  * background-size
+  * background-repeat
+  * background-origin
+  * background-clip
+  * background-attachment
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+Syntax<sup>1</sup>:
 
+```css
+body {
+  /* Using a <background-color> */
+  background: green;
+}
 
+.error {
+  /* Using a <bg-image> and <repeat-style> */
+  background: url("test.jpg") repeat-y;
+}
+
+header {
+  /* Using a <box> and <background-color> */
+  background: border-box red;
+}
+
+.topbanner {
+  /* A single image, centered and scaled */
+  background: no-repeat center/80% url("../img/image.png");
+}
+```
+
+### Sources
+
+1. [Visit MDN's Background page for more information.](https://developer.mozilla.org/en-US/docs/Web/CSS/background)
+2. [Visit W3School's CSS background Property page for more information.](https://www.w3schools.com/cssref/css3_pr_background.asp)

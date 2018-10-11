@@ -3,8 +3,6 @@ title: Use the align-self Property
 ---
 ## Use the align-self Property
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/use-the-align-self-property/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The main take away from this challege should be the fact that `float`, `clear`, and `vertical-align` do not work on flex items. This is why we have the flex property `align-self` which accepts the same values as `align-items` and will take precedence over any values set by the later.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+This means `align-self: center;` would work while `align-items: center;` would not.

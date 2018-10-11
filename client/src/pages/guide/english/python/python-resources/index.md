@@ -29,8 +29,12 @@ title: Python Resources
 *   <a href='http://www.tangowithdjango.com/' target='_blank' rel='nofollow'>Tango with Django</a>
 *   <a href='http://tutorial.djangogirls.org/en/' target='_blank' rel='nofollow'>Django Girls' Tutorial</a> - Build a blog
 *   <a href='http://www.marinamele.com/taskbuster-django-tutorial' target='_blank' rel='nofollow'>TaskBuster Django Tutorial</a> - Build a Django project from scratch
+*   <a href='https://www.youtube.com/watch?v=N4mEzFDjqtA' target='_blank' rel='nofollow'>Derek Banas' Learn Python In One Video</a>
+*   <a href='https://pythonprogramming.net/introduction-to-python-programming/' target='_blank' rel='nofollow'>pythonprogramming.net Python Baics</a>
+*   <a href='https://www.youtube.com/playlist?list=PL6gx4Cwl9DGAcbMi1sH6oAMk4JHw91mC_' target='_blank' rel='nofollow'>thenewboston Python 3.4 Programming Tutorials</a>
 *   <a href='http://www.tutorialspoint.com/python/'>Tutorials Point - Python</a>
 *   <a href='https://pythonprogramming.net' target='_blank' rel='nofollow'> Set of Starter Projects with Videos </a> - From the basics onward.
+*   <a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" target='_blank' rel='nofollow'>The Flask Mega Tutorial (Miguel Grinberg)</a>
 
 ## Challenges
 
@@ -45,6 +49,9 @@ title: Python Resources
 *   <a href='https://checkio.org' target='_blank' rel='nofollow'>CheckiO</a> - the game for coders
 *   <a href='http://www.codeabbey.com/' target='_blank' rel='nofollow'>CodeAbbey</a> 
 *   <a href='https://hackerrank.com/domains/python/py-introduction'>HackerRank - Python Challenges</a>
+*   <a href='https://codesignal.com/' target='_blank' rel='nofollow'>CodeSignal - Prepare for interviews & further your programming skills</a>
+*   <a href="https://www.codewars.com/" target='_blank' rel='nofollow'>CodeWars</a>
+*   <a href="https://www.codechef.com/" target='_blank' rel='nofollow'>CodeChef</a>
 
 ## Community
 
@@ -54,6 +61,7 @@ title: Python Resources
 *   <a href='http://planetpython.org/' target='_blank' rel='nofollow'>Planet Python</a>
 *   <a href='http://www.pyladies.com/' target='_blank' rel='nofollow'>PyLadies</a>
 *   <a href='https://djangogirls.org/' target='_blank' rel='nofollow'>DjangoGirls</a>
+*   <a href="https://python-forum.io/" target='_blank' rel='nofollow'>Python-forum.io</a>
 
 ## Tools:
 

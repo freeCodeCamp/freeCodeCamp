@@ -3,8 +3,54 @@ title: Breadth-First Search
 ---
 ## Breadth-First Search
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/breadth-first-search/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Let's first define the `Tree` class to be used for the implementation of the Breadth First Search algorithm. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```python
+class Tree:
+  def __init__(self, x):
+    self.val = x
+    self.left = None
+    self.right = None
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+The breadth first search algorithm moves from one level to another starting from the root of the tree. We will make use of a `queue` for this. 
+
+```python
+
+def bfs(root_node):
+  queue = [root_node]
+  
+  while queue:
+    top_element = queue.pop()
+    print("Node processed: ",top_element)
+    
+    if top_element.left:
+      queue.append(top_element.left)
+
+    if top_element.right:
+      queue.append(top_element.right)
+``` 
+
+We can easily modify the above code to print the level of each node as well.
+
+```python
+
+def bfs(root_node):
+  queue = [(root_node, 0)]
+  
+  while queue:
+    top_element, level = queue.pop()
+    print("Node processed: {} at level {}".format(top_element, level))
+    
+    if top_element.left:
+      queue.append((top_element.left, level + 1))
+
+    if top_element.right:
+      queue.append((top_element.right, level + 1))
+```
+
+
+| Complexity   | Time | Space |
+| ----- | ------ | ------ | 
+| BFS |   n    |    n   |  
+

@@ -91,7 +91,7 @@ Second way is that a new folder called `node_modules` suddenly appeared in the r
 
 ## Building a Server with Express
 
-To use our installed package for Express framework and create a simple server application. First step is to create a `index.js` file at the root of our directory.
+To use our installed package for Express framework and create a simple server application, we will create the file, `index.js`, at the root of our project's directory.
 
 ```javascript
 const express = require('express');

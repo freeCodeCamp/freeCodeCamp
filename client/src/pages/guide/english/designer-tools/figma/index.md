@@ -15,6 +15,7 @@ It has an in-built version control system, like Git, which allows designers to d
 * You can import your Sketch files
 * Strong Typography and Vector Graphic Tools
 * It has a Multiplayer Mode which makes collaboration a breeze
+* Easy integration with Zeplin and Avocode for exporting your designs
 
 The Figma UI is very easy* to use for beginners. If you have been a former Sketch user, you will feel home in no time. 
 

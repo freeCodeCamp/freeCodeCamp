@@ -3,11 +3,19 @@ title: Bootstrap
 ---
 ## Bootstrap
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+[Bootstrap](https://www.getbootstrap.com/) is a front-end library that provides for a basic framework or layout thata user can either directly use or modify and then deploy. Their main focus is on making a mobile-friendly framework but Bootstrap works as well with desktop devices too.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Quoted from the Bootstrap website:
+```
+Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+The framework finds employability in many front-end projects and is noe branded as the most famous HTML and CSS framework.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+1. [Bootstrap Documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+2. [Use Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/download/)
+3. [Bootstrap Themes](https://themes.getbootstrap.com/)
+4. [Bootstrap Blog](https://blog.getbootstrap.com/)
+5. [Bootstrap Open Source Page](https://github.com/twbs/bootstrap)

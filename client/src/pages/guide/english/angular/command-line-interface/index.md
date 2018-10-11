@@ -26,6 +26,8 @@ Recognize that `ng` is the basic building block of the CLI. All your commands wi
 
 * ng build
 
+* ng update
+
 The key terms for each of these are quite telling. Together, they comprise what you will need to hit the ground running with Angular. Of course, there are many more. All commands are outlined in the [CLI's GitHub Documentation<sup>1</sup>](https://github.com/angular/angular-cli/wiki#additional-commands). You will likely find that the commands listed above will cover the necessary bases.
 
 #### ng new
@@ -61,6 +63,55 @@ Angular is a front end tool. The CLI performs its operations on behalf of the fr
 This one line of configuration determines where `ng build` dumps its results. The results being the entire Angular application compiled into one folder `dist/my-app`. Inside of that folder, there exists `index.html`. The whole Angular application can run with `index.html`. No `ng serve` is necessary from here. With this file, you can easily wire up your back end.
 
 Give it a go: `ng build`. Again, this must execute within the Angular file system. Based of the key value of `“outputPath:”` in `angular.json`. A file will generate wherein the original application is fully compiled. If you kept `“outputPath:”` the same, the compiled application will be in: `[name-of-app] -> dist -> [name-of-app]`.
+
+#### ng update
+
+In angular cli ng update do automatic updation on all the angular and npm packages to latest versions.
+
+Here is the syntax and options can be used with `ng update`.
+
+`ng update [package]`
+
+**Options**
+- dry-run
+`--dry-run (alias: -d)`
+
+  Run through without making any changes.
+
+- force
+`--force`
+
+  If false, will error out if installed packages are incompatible with the update.
+
+- all
+`--all`
+
+  Whether to update all packages in package.json.
+
+- next
+`--next`
+
+  Use the largest version, including beta and RCs.
+
+- migrate-only
+`--migrate-only`
+
+  Only perform a migration, does not update the installed version.
+
+- from
+`--from`
+
+  Version from which to migrate from. Only available with a single package being updated, and only on migration only.
+
+- to
+`--to`
+
+  Version up to which to apply migrations. Only available with a single package being updated, and only on migrations only.   Requires from to be specified. Default to the installed version detected.
+
+- registry
+`--registry`
+
+  The NPM registry to use.
 
 #### Conclusion
 

@@ -18,3 +18,4 @@ Some Interpreted Languages:
 * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 * [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language))
 * [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language))
+* [Perl](https://en.wikipedia.org/wiki/Perl)

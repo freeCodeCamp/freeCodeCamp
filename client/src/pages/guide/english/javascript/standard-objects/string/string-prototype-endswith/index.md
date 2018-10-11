@@ -3,13 +3,19 @@ title: String.prototype.endsWith
 ---
 ## String.prototype.endsWith
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-endswith/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `endsWith()` method checks if the string ends with your string input and returns a boolean value.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### For example
+```js
+let str = "Hello world";
+let bool = str.endsWith("ld") // true
+bool = str.endsWith("llo") // false
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+This method can also accept another parameter, the `length` that determines before what character to search the string.
+```js
+let str = "Hello world";
+let bool = str.endsWith("ld", 5) // false, it's the same as "Hello".endsWith("ld")
+bool = str.endsWith("llo", 5) // true, it's the same as "Hello".endsWith("llo")
+```
 

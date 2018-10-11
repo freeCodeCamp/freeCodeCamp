@@ -7,7 +7,7 @@ title: Promise Reject
 
 Chaining a catch function at the end of a Promise caller will allow you to catch the error condition.
 
-```
+```javascript
 promiseCallingFunction(paramList)
   .then( ... )
   ...

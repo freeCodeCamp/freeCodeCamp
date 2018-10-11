@@ -19,11 +19,28 @@ struct StudentRecord
   char Phone[10];
 };
 ```
+* We can also define a **structure** using **typedef** which makes initializing a structure later in our program easier.
+```C
+typedef struct StudentRecord
+{
+  char Name[20];
+  int Class;
+  char Address[30];
+  char Phone[10];
+}Record;
+```
 In `main()`, the user-defined data-type **StudentRecord** is defined as:
 ```C
 int main(void)
 {
   struct StudentRecord student1;
+}
+```
+And using **typedef**, the user-defined data-type looks like:
+```C
+int main(void)
+{
+  Record student1;
 }
 ```
 To access the data stored in **student1**, we use dot( **.** ) operator to access the contents of the structure type variable.

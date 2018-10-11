@@ -1,23 +1,53 @@
 ---
 title: Algorithm Performance
 ---
+
 In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
-A function's limiting behavior is how the function acts as it trends towards a particular value and in big-O notation it is usually as it trends towards infinity.  
+A function's limiting behavior is how the function acts as it tends towards a particular value and in big-O notation it is usually as it trends towards infinity.  
 In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
 
+in algorithm design we usualy use big-O notation because we can see how bad or good an algorithm will work in worst mode. but keep that in mind it isn't always the case because the worst case may be super rare and in those cases we calculate average case. for now lest's disscus big-O notation.
 
+In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
+
+A function's limiting behavior is how the function acts as it trends towards a particular value and in big-O notation it is usually as it trends towards infinity.  
+
+In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
 NOTE: x^2 is equivalent to x * x or 'x-squared']
 
 For example we say that x = O(x^2) for all x > 1 or in other words, x^2 is an upper bound on x and therefore it grows faster.  
 The symbol of a claim like x = O(x^2) for all x > _n_ can be substituted with x <= x^2 for all x > _n_ where _n_ is the minimum number that satisfies the claim, in this case 1.  
+
 Effectively, we say that a function f(x) that is O(g(x)) grows slower than g(x) does.
 
-Comparitively, in computer science and software development we can use big-O notation in order to describe the time complexity or efficiency of algorithms  
+
+Comparitively, in computer science and software development we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
+
+**Space Complexity** of an algorithm refers to its memory footprint with respect to the input size.
+
 Specifically when using big-O notation we are describing the efficiency of the algorithm with respect to an input: _n_, usually as _n_ approaches infinity.  
-When examining algorithms, we generally want a lower time complexity, and ideally a time complexity of O(1) which is constant time.  
+When examining algorithms, we generally want a lower time and space complexity. Time complexity of o(1) is indicative of constant time.
+
 Through the comparison and analysis of algorithms we are able to create more efficient applications.
+
+For algorithm performance we have two main factors:
+
+- **Time**: We need to know how much time it takes to run an algorithm for our data and how it will grow by data size (or in some cases other factors like number of digits and etc).
+
+- **Space**: our memory is finate so we have to know how much free space we need for this algorithm and like time we need to be able to trace its growth.
+    
+The following 3 notations are mostly used to represent time complexity of algorithms:
+
+1. **Θ Notation**: The theta notation bounds a functions from above and below, so it defines exact behavior. we can say that we have theta notation when worst case and best case are the same.
+    >Θ(g(n)) = {f(n): there exist positive constants c1, c2 and n0 such that 0 <= c1*g(n) <= f(n) <= c2*g(n) for all n >= n0}
+
+2. **Big O Notation**: The Big O notation defines an upper bound of an algorithm. For example Insertion Sort takes linear time in best case and quadratic time in worst case. We can safely say that the time complexity of Insertion sort is *O*(*n^2*).
+    >O(g(n)) = { f(n): there exist positive constants c and  n0 such that 0 <= f(n) <= cg(n) for all n >= n0}
+
+3. **Ω Notation**: Ω notation provides an lower bound to algorithm. it shows fastest possible answer for that algorithm.
+    >Ω (g(n)) = {f(n): there exist positive constants c and n0 such that 0 <= cg(n) <= f(n) for all n >= n0}.
 
 ## Examples
 

@@ -33,13 +33,13 @@ function pivot(arr, left = 0, right = arr.length-1){
   return shift;
 }
 
-function mergeSort(array, left = 0, right = array.length-1) {
+function quickSort(array, left = 0, right = array.length-1) {
   if (left < right){
     let pivotIndex = pivot(array, left, right);
     
     //Recusrively calling the function to the left of the pivot and to the right of the pivot
-    mergeSort(array, left, pivotIndex-1);
-    mergeSort(array, pivotIndex+1, right);
+    quickSort(array, left, pivotIndex-1);
+    quickSort(array, pivotIndex+1, right);
   }
   return array;
 }

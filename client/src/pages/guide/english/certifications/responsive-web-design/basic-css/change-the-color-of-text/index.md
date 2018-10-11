@@ -3,8 +3,17 @@ title: Change the Color of Text
 ---
 ## Change the Color of Text
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/change-the-color-of-text/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+You can change the color of text in CSS using the `color` property.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### EXAMPLE
 
+```
+color: red;
+```
+
+## SOLUTION
+
+```
+<h2 style="color: red;">CatPhotoApp</h2>
+```
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->

@@ -19,11 +19,11 @@ class App extends Component {
 }
 ```
 
-This gives the class `App` access to the React lifecycle methods like `render` as well state/props functionality from the parent???
+This gives the class `App` access to the React lifecycle methods like `render` as well state/props functionality from the parent.
 
 ### Functional Components
 
-Functional components are simpler; they don't manage their own state or have access to the lifecycle methods provided by React Native. They are literally plain old JavaScript functions!
+Functional components are simpler. They don't manage their own state or have access to the lifecycle methods provided by React Native. They are literally plain old JavaScript functions. They are also known as stateless components.
 
 ```js
 const PageOne = () => {

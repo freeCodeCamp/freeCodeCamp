@@ -40,8 +40,10 @@ my_io_task();
 my_io_task();
 ```
 
-Both look similar but the time taken to execute are different. The python code takes 10 seconds to execute while the Node.js code takes only 5 seconds to execute.  
+Both look similar but the time taken to execute are different. The python code takes 10 seconds to execute while the Node.js code takes only 5 seconds to execute.
+
 Node.js takes less time because of its non-blocking I/O model. The first call to ```my_io_task()``` starts the timer and leaves it there. It does not wait for the response from the function, instead, it moves on to call the second ```my_io_task()```, starts the timer and leaves it there.  
+
 When the timer completes it's execution taking 5 seconds, it calls the function and prints ```done``` on the console. Since, both the timers are started together, they complete together and therefore take same amount of time.
 
 #### More information:

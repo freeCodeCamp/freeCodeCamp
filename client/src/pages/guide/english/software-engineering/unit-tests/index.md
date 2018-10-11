@@ -35,6 +35,10 @@ describe('Test to check add function', function(){
 });
 ```
 
+### Test-Driven Development
+
+Unit testing is a key feature of the test-driven development (TDD) approach to software development. In this approach, code for specific features or functions is written through the repeated use of a very short cycle. First, the developer writes a set of automated unit tests and ensures that they fail initially. Next, the developer implements the bare minimum amount of code required to pass the test cases. Once it has been validated that the code is behaving as expected, the developer then goes back and refactors code to adhere to any relevant coding standards.
+
 ### More Information
 
 Martin Fowler on Unit Testing: <a href='https://www.martinfowler.com/bliki/UnitTest.html' target='_blank' rel='nofollow'>martinfowler.com</a>

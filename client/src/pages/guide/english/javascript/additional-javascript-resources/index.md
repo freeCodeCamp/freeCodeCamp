@@ -87,6 +87,12 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='https://devchat.tv/js-jabber' target='_blank' rel='nofollow'>JS Jabber</a>
 
 
+
+## Video Tutorials
+
+*   <a href='https://www.youtube.com/watch?v=fju9ii8YsGs' target='_blank' rel='nofollow'>Derek Banas' Learn JS In One Video </a>
+*   <a href='https://www.youtube.com/watch?v=O8wwnhdkPE4'>Derek Banas' Object Oriented JavaScript</a>
+
 ## Books
 
 *   <a href='https://www.manning.com/books/secrets-of-the-javascript-ninja' target='_blank' rel='nofollow'>Secrets of the JavaScript Ninja</a>
@@ -110,5 +116,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
     Quite in-depth guide to Functional Programming in Javascript
     
 *   <a href='https://github.com/bpesquet/thejsway' target='_blank' rel='nofollow'>The JavaScript Way</a>
+
+*   <a href='https://github.com/getify/Functional-Light-JS' target='blank' rel='nofollow'>Functional Light JS</a>
 
     This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. From the very basics of programming up to front-end and back-end web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!

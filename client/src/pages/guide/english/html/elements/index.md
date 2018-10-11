@@ -95,6 +95,14 @@ Creates a paragraph, perhaps the most common block level element.
 <p>...</p>
 ```
 
+## The A(Link) Element
+
+Creates a hyperlink to direct visitors to another page or resource.
+
+```html
+<a href="#">...</a>
+```
+
 ## Other Resources
 
 - [HTML Paragraphs](#)

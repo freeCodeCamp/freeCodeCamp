@@ -3,8 +3,16 @@ title: Add Rows with grid-template-rows
 ---
 ## Add Rows with grid-template-rows
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/add-rows-with-grid-template-rows/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In this challenge, you are required to define rows for the CSS grid in `<div class="container">`.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
+ 
+You can define rows by using the `grid-template-rows` CSS property.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+Since the challenge requires you to create two rows of `50px` each, declare the followin in your `.container` CSS code block:
+ 
+````css
+grid-template-rows: 50px 50px;
+````

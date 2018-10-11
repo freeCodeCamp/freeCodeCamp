@@ -99,6 +99,13 @@ Here are three examples of structural directives. Each one has a logical counter
 
 This is a contrived example. Any member value from the template's component class can be substituted in for `true` or `false`.
 
+NOTE: You also can do following thing with *ngIf to get access to observalbe value
+```html
+<div *ngIf="observable$ | async as anyNameYouWant">
+  {{  anyNameYouWant }}
+</div>
+```
+
 ##### *ngFor
 
 `*ngFor` loops based off a right-assigned, *microsyntactic* expression. Microsyntax moves beyond the scope of this article. Know that microsyntax is a short form of logical expression. It occurs as a single string capable of referencing class member values. It can loop iterable values which makes it useful for `*ngFor`.
@@ -123,6 +130,13 @@ This is a contrived example. Any member value from the template's component clas
 ```
 
 `[‘Russet’, ‘Sweet’, ‘Laura’]` is an iterable value. Arrays are one of the most common iterables. The `*ngFor` spits out a new `<li></li>` per array element. Each array element is assigned the variable `potato`. This is all done utilizing microsyntax. The `*ngFor` defines the structural content of the `ul` element. That is characteristic of a structural directive.
+
+NOTE: You can also do following thing with *ngFor directive to get access to observalbe value (hacky)
+```html
+<div *ngFor="let anyNameYouWant of [(observable$ | async)]">
+  {{  anyNameYouWant }}
+</div>
+```
 
 ##### *ngSwitchCase and *ngSwitchDefault
 

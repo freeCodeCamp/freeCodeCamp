@@ -3,8 +3,21 @@ title: Use tabindex to Specify the Order of Keyboard Focus for Several Elements
 ---
 ## Use tabindex to Specify the Order of Keyboard Focus for Several Elements
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-accessibility/use-tabindex-to-specify-the-order-of-keyboard-focus-for-several-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Following the instructions:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Add a tabindex attribute set to "1" to the search input, and a tabindex attribute set to "2" to the submit input.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+ the lines 16 and 17
+ ```css
+    <input tabindex="1" type="search" name="search" id="search">
+    <input tabindex="2" type="submit" name="submit" value="Submit" id="submit">
+```
+
+become:
+
+ ```css
+    <input type="search" name="search" id="search">
+    <input type="submit" name="submit" value="Submit" id="submit">
+```
+
+In this way the search input and submit input form controls to be the first two items in the tab order.

@@ -87,7 +87,7 @@ On to the class logic. The `PipeTransform` implementation provides the instructi
 
 `value: any` is the output that the pipe receives. Think of `<div>{{ someValue | example }}</div>`. The value of someValue gets passed to the `transform` function’s `value: any` parameter. This is the same `transform` function defined in the ExamplePipe class.
 
-`args?: any` is any argument that the pipe optionally receives. Think of `<div>{{ someValue | example:[some-argument] }}</div>`. `[some-argument]’ can be replace by any one value. This value gets passed to the `transform` function’s `args?: any` parameter. That is, the `transform` function defined in ExamplePipe's class.
+`args?: any` is any argument that the pipe optionally receives. Think of `<div>{{ someValue | example:[some-argument] }}</div>`. `[some-argument]` can be replace by any one value. This value gets passed to the `transform` function’s `args?: any` parameter. That is, the `transform` function defined in ExamplePipe's class.
 
 Whatever the function returns (`return null;`) becomes the output of the pipe operation. Take a look at the next example to see a complete example of ExamplePipe. Depending on the variable the pipe receives, it either uppercases or lowercases the input as new output. An invalid or nonexistent argument will cause the pipe to return the same input as output.
 

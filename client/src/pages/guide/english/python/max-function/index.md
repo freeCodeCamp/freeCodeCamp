@@ -6,6 +6,9 @@ title: Python Max Function
 ## Arguments
 
 This function takes two or more numbers or any kind of iterable as an argument. While giving an iterable as an argument we must make sure that all the elements in the iterable are of the same type. This means that we cannot pass a list which has both string and integer values stored in it.
+Syntax:
+max(iterable, *iterables[,key, default])
+max(arg1, arg2, *args[, key])
 
 Valid Arguments:  
 
@@ -32,7 +35,7 @@ The largest item in the iterable is returned. If two or more positional argument
     print(max(list1)) # Returns 54 as 54 is the largest value in the list
 
     list2 = ['a', 'b', 'c' ]
-    print(max(list2)) # Returns 'c' as 'c' is the largest in the list in alphabetical order
+    print(max(list2)) # Returns 'c' as 'c' is the largest in the list because c has ascii value larger then 'a' ,'b'.
 
     list3 = [1, 2, 'abc', 'xyz']
     print(max(list3)) # Gives TypeError as values in the list are of different type

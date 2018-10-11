@@ -2,9 +2,30 @@
 title: Render State in the User Interface
 ---
 ## Render State in the User Interface
+In the challenge, you will need to render a state value in `<h1>` tag, pretty simple.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/render-state-in-the-user-interface/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hint
+Just make a `<h1>` tag and render `this.state.name` between tag.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution
+
+```react.js
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    return (
+      <div>
+        { /* change code below this line */ }
+        <h1>{this.state.name}</h1>
+        { /* change code above this line */ }
+      </div>
+    );
+  }
+};
+```

@@ -29,3 +29,6 @@ title: Dynamic Memory Allocation
  Similarly, for example 2, the memory can be freed by:  
  `delete ptr2`;
  
+ ### Memory Leaks
+ Leaks are caused when you fail to deallocate dynamic memory you allocated via `New` operator at the end of your program. If you do not deallocate it with the Delete operator, your computer will keep creating new memory in the heap every time the program runs. This causes your computer to slow down because memory is not deleted and your available memory decreases.
+ 

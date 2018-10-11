@@ -3,8 +3,16 @@ title: Create a Row Gap using grid-row-gap
 ---
 ## Create a Row Gap using grid-row-gap
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/create-a-row-gap-using-grid-row-gap/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+This challenge requires you to add a gap of `20px` between all the rows of the CSS Grid in .container.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+To add a gap between the rows in a CSS grid, we use the `grid-row-gap` CSS property.
+
+### Solution
+
+Since the challenge has you adding a gap of `5px`, you would add the following line to the `.container` CSS code block.
+
+````css
+grid-row-gap: 5px;
+````

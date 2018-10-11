@@ -4,6 +4,12 @@ title: Orthogonality
 
 ## Orthogonality
 
+In software engineering, a system is considered orthogonal if changing one of its components changes the state of that component only. For instance, consider a program with three variables: a, b, and c. Changing the value of a, should not change the value of b, or c, provided they are independent. This property is particularly critical in debugging a program since one relies on narrowing down the number of moving parts of a program to identify the root cause of the problem.
+
+See the following quote from Eric S. Raymond's "Art of UNIX programming"
+
+> Orthogonality is one of the most important properties that can help make even complex designs compact. In a purely orthogonal design, operations do not have side effects; each action (whether it's an API call, a macro invocation, or a language operation) changes just one thing without affecting others. There is one and only one way to change each property of whatever system you are controlling.
+
 Orthogonality is a software design principle for writing components in a way that changing one component doesn't affect other components. It is the combination of two other principles, namely strong cohesion and loose coupling.
 
 Orthogonality is a term borrowed from mathematics.  For example, two lines are orthogonal if they are perpendicular.  In software design, two components are orthogonal if a change in one does not affect the other.
@@ -25,3 +31,5 @@ Between software components, there should be few connections. If two components 
 * [Principles of Orthogonal Object Oriented Programming | jasoncoffin.com](http://www.jasoncoffin.com/cohesion-and-coupling-principles-of-orthogonal-object-oriented-programming/)
 * [GRASP - object-oriented design principles | Wikipedia](https://en.wikipedia.org/wiki/GRASP_(object-oriented_design)
 
+
+Stack Overflow: What is Orthogonality?. https://stackoverflow.com/questions/1527393/what-is-orthogonality

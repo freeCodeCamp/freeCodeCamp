@@ -10,12 +10,16 @@ The `echo()` function writes out the value of a variable or argument to the scre
 <?php
 echo "freeCodeCamp";
 ```
+NOTE: A short hand way to open the PHP tag and echo is <?=
+```
+<?= "freeCodeCamp"; ?>
+```
 
 ### print
 The `print()` function out the value of a variable or argument to the screen.
 ```PHP
 <?php
-echo "freeCodeCamp";
+print "freeCodeCamp";
 ```
 
 ### print_r

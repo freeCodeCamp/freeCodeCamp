@@ -47,7 +47,29 @@ title: Operators
      int b = a--; // postfix operator; a = 6, b = 7
      int c = --a; // prefix operator; a = 5, c = 5
      ```
+// C Program to demonstrate the working of arithmetic operators
+#include <stdio.h>
+int main()
+{
+    int a = 9,b = 4, c;
+    
+    c = a+b;
+    printf("a+b = %d \n",c);
 
+    c = a-b;
+    printf("a-b = %d \n",c);
+    
+    c = a*b;
+    printf("a*b = %d \n",c);
+    
+    c=a/b;
+    printf("a/b = %d \n",c);
+    
+    c=a%b;
+    printf("Remainder when a divided by b = %d \n",c);
+    
+    return 0;
+}
 
 ## 2. Relational Operators
 
@@ -167,6 +189,16 @@ title: Operators
   a %= 5; // equivalent to a = a % 5 = 21 % 5 = 1
   ```
      
+Misc Operators ↦ sizeof & ternary
+Besides the operators discussed above, there are a few other important operators including sizeof and ? : supported by the C Language.
+
+Operator	               Description	                                        Example
+sizeof()	               Returns the size of a variable.	                    sizeof(a), where a is integer, will return 4.
+&	                    Returns the address of a variable.	                    &a; returns the actual address of the variable.
+*	                    Pointer to a variable.	                              *a;
+? :	                    Conditional Expression.	                              If Condition is true ? then value X : otherwise value Y
+
+
 ## 6. Operator precedence in C
 Operators with the highest precedence appear at the top of the list. Within an expression, operators
 with higher precedence will be evaluated first.

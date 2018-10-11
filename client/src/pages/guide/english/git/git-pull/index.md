@@ -101,6 +101,7 @@ ID is the pull request id and BRANCHNAME is the name of the branch that you want
 ### Other Resources on git pull
 - <a href='https://git-scm.com/docs/git-pull' target='_blank' rel='nofollow'>git-scm</a>
 - <a href='https://help.github.com/articles/fetching-a-remote/#pull' target='_blank' rel='nofollow'>GitHub Help Docs</a>
+- <a href='https://services.github.com/on-demand/intro-to-github/create-pull-request' target='_blank' rel='nofollow'>GitHub On Demand Training</a>
 - <a href='https://www.atlassian.com/git/tutorials/syncing' target='_blank' rel='nofollow'>Syncing Tutorials</a>
 
 ### Other Resources on git in guide.freecodecamp.org

@@ -3,8 +3,18 @@ title: Make an Image Responsive
 ---
 ## Make an Image Responsive
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/responsive-web-design-principles/make-an-image-responsive/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Following the instructions:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Add style rules for the img tag to make it responsive to the size of its container. It should display as a block-level element, it should fit the full width of its container without stretching, and it should keep its original aspect ratio.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+the style becomes:
+
+```css
+<style>
+  img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+</style>
+```

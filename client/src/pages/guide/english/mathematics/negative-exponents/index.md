@@ -3,13 +3,8 @@ title: Negative Exponents
 ---
 ## Negative Exponents
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/negative-exponents/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+A negative exponent is simply moving the exponent below the fraction bar. Lets take a power of 10. If we take _10³_ we get _10\*10\*10 = 1000_. If the exponent were negative, say _10⁻³_, it would equal _1/10³_, or _1/(10\*10\*10)_, or just _1/1000_.
+This goes for any number, and any power. _2³ = 8_, wheras _2⁻³ = 1/2³ = 1/8_. The same goes for _5² = 25_ whereas 
+_5⁻² = 1/5² = 1/25_
 
 

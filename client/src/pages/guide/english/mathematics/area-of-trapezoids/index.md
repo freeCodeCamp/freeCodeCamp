@@ -6,6 +6,9 @@ title: Area of Trapezoids
 The area of a trapezoid is defined as 
 
 ** A = (a+b)/2 x h ** 
+Where, 
+a,b are the lengths of each base
+h is the altitude (height)
 
 #### More Information:
 

@@ -31,9 +31,19 @@ System.out.println(obj2 == obj3) // false
 
 ## The `.equals()` Method
 
-The built-in `Object` class in Java, which all other classes automatically extand, contains a number of helpful built-in methods. One such method is `equals()`, which takes another object as its argument and returns whether the two objects should be considered "equal" according to the relevant logic for that class.
+The built-in `Object` class in Java, which all other classes automatically extend, contains a number of helpful built-in methods. One such method is `equals()`, which takes another object as its argument and returns whether the two objects should be considered "equal" according to the relevant logic for that class.
 
-When you create a new class in Java, you will often weant to override the `equals()` method in order to provide a mroe meaningful way to compare two objects of the same class. How this method is implemented is completely up to the developer's judgment. 
+The 'String' class is one of the most common examples of a class that overrides the 'equals()' method. When comparing two 'String's for equality, you need to use the 'equals()' method, as '==' won't work as you expect.
+
+```java
+String s1 = "Bob";
+String s2 = "ob";
+s2 = "B" + s2; //s2 now is also "Bob"
+System.out.println(s1 == s2); //false
+System.out.println(s1.equals(s2)); //true
+```
+
+When you create a new class in Java, you will often want to override the `equals()` method in order to provide a more meaningful way to compare two objects of the same class. How this method is implemented is completely up to the developer's judgement. 
 
 For example, you may decide that two `Person`s should be considered "equal" if their `name` and `dateOfBirth` are the same. This logic would be implemented in your `Person` class's `equals()` method:
 

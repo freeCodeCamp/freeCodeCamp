@@ -3,8 +3,22 @@ title: Catch Misspelled Variable and Function Names
 ---
 ## Catch Misspelled Variable and Function Names
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/debugging/catch-misspelled-variable-and-function-names/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Problem explanation:
+Fix the two spelling errors in the code so the netWorkingCapital calculation works.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
+Check the spelling of the first two variables against when it is used. 
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Spoiler alert!
+
+**Solution ahead!**
+
+```javascript
+// 'i' and 'e' swapped in "receivables" and missing 's' in "payables"
+
+let receivables = 10;
+let payables = 8;
+let netWorkingCapital = receivables - payables;
+console.log(`Net working capital is: ${netWorkingCapital}`);
+
+```

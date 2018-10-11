@@ -2,14 +2,13 @@
 title: Defining Brands
 ---
 ## Defining Brands
+A designer can’t “make” a brand. Or design a brand. Designers design a brand identity that reflects a brand.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/product-design/defining-brands/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The branding itself has to come from the company. From their brand strategy.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+What are some of their core values?
+What do they stand for?
+What makes their product unique?
+What is their unique selling point?
+Who are their target customers?
+Questions like this form the basis of a brand strategy and should be established within the company in the first instance. A designer or design agency builds the foundation of a brand, or is brought in to enhance the brand’s visual and corporate identity

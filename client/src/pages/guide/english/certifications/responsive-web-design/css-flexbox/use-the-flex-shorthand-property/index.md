@@ -3,8 +3,14 @@ title: Use the flex Shorthand Property
 ---
 ## Use the flex Shorthand Property
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/use-the-flex-shorthand-property/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+While you can set `flex-grow`, `flex-shrink`, and `flex-basis` properties individually. if you ever need to see the values for all of them you can do it in one line using the following format `flex: flex-grow flex-shrink flex-basis;`.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Example:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```css
+#box-1 {
+    background-color: dodgerblue;
+    flex: 2 2 150px;
+    height: 200px;
+  }
+```

@@ -2,9 +2,43 @@
 title: Returning Boolean Values from Functions
 ---
 ## Returning Boolean Values from Functions
+Instead of using an if/else block to compare variable we can do it right inside the return statement with a comparison operator and minmal code.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/returning-boolean-values-from-functions/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Problem explanation
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+_Fix the function `isLess` to remove the `if...else` statements._
+```js
+// Fix this code
+  if (a < b) {
+    return true;
+  } else {
+    return false;
+  }
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+#### Hint 1
+As with the [previous exercise](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/replacing-if-else-chains-with-switch) you are about to change how the function returns the correct value, meaning you don't have to reuse or modify that code but to substitute it.
+> _try to solve the problem now_
+
+#### Hint 2
+In order to return `true` or `false` you don't need two statements nor use `if` ones. The correct [comparison operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators) is all you need.
+> _try to solve the problem now_
+
+## Spoiler alert!
+
+**Solution ahead!**
+
+## Code Solution:
+```javascript
+function isLess(a, b) {
+  // Fix this code
+  return a <= b;
+}
+// Change these values to test
+isLess(10, 15);
+```
+
+Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-Js-Returning-boolean-from-function).
+
+### Resources
+- ["Less than or equal operator (<=)" - *MDN Javascript Reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators#Less_than_or_equal_operator_(%3C))

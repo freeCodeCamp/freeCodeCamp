@@ -3,8 +3,51 @@ title: Render State in the User Interface Another Way
 ---
 ## Render State in the User Interface Another Way
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/render-state-in-the-user-interface-another-way/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+#### Hint 1:
+```JSX
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    // change code below this line
+            // Remember that how you can access the property of a state.
+    // change code above this line
+    return (
+      <div>
+        { /* change code below this line */ }
+            // Just use the const "name" inside the h1 tag.
+            // Dont forget to use JSX syntax "{ curly braces for JavaScript }".
+        { /* change code above this line */ }
+      </div>
+    );
+  }
+};
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution
+```JSX
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: 'freeCodeCamp'
+    }
+  }
+  render() {
+    // change code below this line
+    const name = this.state.name;
+    // change code above this line
+    return (
+      <div>
+        { /* change code below this line */ }
+          <h1>{name}</h1>
+        { /* change code above this line */ }
+      </div>
+    );
+  }
+};
+```

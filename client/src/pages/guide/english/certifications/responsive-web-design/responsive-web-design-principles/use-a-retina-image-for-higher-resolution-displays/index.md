@@ -3,8 +3,15 @@ title: Use a Retina Image for Higher Resolution Displays
 ---
 ## Use a Retina Image for Higher Resolution Displays
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/responsive-web-design-principles/use-a-retina-image-for-higher-resolution-displays/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Following the instructions:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Set the width and height of the img tag to half of their original values. In this case, both the original height and the original width are 200px.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+the style 4 becomes:
+
+```css
+  <style>
+  img { height: 100px; width: 100px; }
+  </style>
+```
+note that the simplest way to make your images appear "retina" (and optimize them for retina displays) is to define their width and height values as only half of what the original file is. 

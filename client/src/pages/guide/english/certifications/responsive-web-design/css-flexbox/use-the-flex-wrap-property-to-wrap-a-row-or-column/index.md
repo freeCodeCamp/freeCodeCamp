@@ -3,8 +3,6 @@ title: Use the flex-wrap Property to Wrap a Row or Column
 ---
 ## Use the flex-wrap Property to Wrap a Row or Column
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/use-the-flex-wrap-property-to-wrap-a-row-or-column/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Setting the `flex-wrap` property to `wrap` will make the columns go back to their specified width and the gree and black columns will be wraped to the begining of the frame.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Note that setting it to `wrap-reverse` will not make the grey empty space from the `#box-container` stay at the bottom while changing the columns order.

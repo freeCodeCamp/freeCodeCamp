@@ -3,8 +3,14 @@ title: Escaping Literal Quotes in Strings
 ---
 ## Escaping Literal Quotes in Strings
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/escaping-literal-quotes-in-strings/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+* When you need to use a special character such as `"` inside a string you need to escape it using `\`.
+* If you use double quotes `"` for the string, single quotes `'` in the string do not need to be escaped. 
+* If you use single quotes `'` for the string, double quotes `"` in the string do not need to be escaped. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution
+```javascript
+var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
+var otherStr = 'I am a \'single quoted\' string inside \'single quotes\'.';
+var noEscapeSingle = "There is no need to 'escape' the single quotes.";
+var noEscapeDouble = 'There is no need to "escape" the double quotes.';
+```

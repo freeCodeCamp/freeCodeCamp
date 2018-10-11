@@ -2,9 +2,35 @@
 title: Iterate with JavaScript While Loops
 ---
 ## Iterate with JavaScript While Loops
+While loops will run as long as the condition inside the ( ) is true.
+Example:
+```javascript
+while(condition){
+code...
+}
+```
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-while-loops/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hint 1:
+Use a iterator variable such as i in your condition
+```javascript
+var i = 0;
+while(i <= 4){
+}
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+## Spoiler Alert Solution Ahead!
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution:
+
+```javascript
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+var i = 0;
+while (i <= 4){
+    myArray.push(i);
+    i++;
+}
+
+```

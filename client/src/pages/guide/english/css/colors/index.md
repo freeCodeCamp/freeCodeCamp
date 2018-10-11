@@ -7,7 +7,7 @@ title:  CSS3 Colors
 CSS Colors is a CSS module that deals with colors, color types, color blending, and opacity. Not all CSS properties that take a <color> as a value are part of this module, but they do depend upon it. In CSS, you can change the color of almost any element in your HTML page. Properties like `background-color`, `color`, and `border-color` set the color of those elements.
   
 CSS supports color names, hexadecimal and RGB colors.
-As well as introducing the `opacity` declaration, colors in CSS3 can now be specified using color names, or RGB, HEX, HSL, RGBA, HSLA values.
+In addition to the introduction of the `opacity` declaration, colors in CSS3 can now be specified using color names, or RGB, HEX, HSL, RGBA, HSLA values.
 
 HTML supports 140 standard <a href='https://www.w3schools.com/colors/colors_names.asp' target='_blank' rel='nofollow'>color names</a>.
 
@@ -34,6 +34,16 @@ HSLA color values are an extension of HSL color values with an alpha channel - w
 An HSL color value is specified with: hsl(hue, saturation, lightness).
 An HSLA color value is similar, with the alpha value in last position: hsla(hue, saturation, lightness, alpha)
     
+### CMYK
+
+CMYK colors is a combination of CYAN, MAGENTA, YELLOW , and BLACK. Computer screens display colors using RGB color values. Printers often presents colors using CMYK color values.
+CMYK is not supported in HTML, but it is suggested as a new standard in CSS4.
+
+Example colors:
+  CMYK Red: cmyk(0%, 100%, 100%, 0%)
+  CMYK Green: cmyk(100%, 0%, 100%, 0%)
+  CMYK Blue: cmyk(100%, 100%, 0%, 0%)
+
 ### Hexcodes
 Hexcode, short for hexadecimal code, is a way to express a color value to your computer. It is named this way because 16 unique symbols can be used as values. In this case, the numbers 0 to 9 and letters a to f are used.
 

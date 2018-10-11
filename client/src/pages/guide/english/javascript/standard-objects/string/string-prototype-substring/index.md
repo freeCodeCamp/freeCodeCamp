@@ -3,13 +3,28 @@ title: String.prototype.substring
 ---
 ## String.prototype.substring
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-substring/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `substring()` function _extracts_ a sequence of characters from another given string. It does not alter the original string.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+You define the sequence to extract with a _start and end character index_. These indexes are passed into the `substring()` function as parameters. The substring is formed from the character of the start index all the way to the character of the end index. Both indexes are counted from the beginning of the string, starting from `0`.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Examples:
+
+```js
+"Hello, campers".substring(7, 14);
+// output is "campers"
+
+"Hello, world".substring(0, 5);
+// output is "Hello"
+```
+
+You can also omit the last character index parameter, and the substring sequence will extract from the start index until the end of the string. Example:
+
+```js
+"Hello, campers!".substring(7);
+// output is "campers!"
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+- [String.prototype.substring() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
 
 

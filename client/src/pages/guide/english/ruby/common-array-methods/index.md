@@ -173,5 +173,37 @@ end
 4
 ```
 
+#### .map
+The .map method is the same as the .collect method. The .map and .collect methods iterate over each element of the array, allowing you to perform actions on them. The .map and .collect methods differ from the .each method in that they return an array containing the transformed elements.
+
+``` ruby
+array.map { |element| element * 2 }
+  puts element
+end
+=> 
+0
+2
+4
+6
+8
+```
+
+#### .uniq
+The .uniq method takes in an array containing duplicate elements, and returns a copy of the array containing only unique elements--any duplicate elements are removed from the array.
+
+``` ruby
+array = [1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 6, 7, 8]
+array.uniq
+=> [1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+#### .concat
+The .concat method appends the elements from an array to the original array. The .concat method can take in multiple arrays as an argument, which will in turn append multiple arrays to the original array.
+``` ruby
+array = [0, 1, 2, 3, 4]
+array.concat([5, 6, 7], [8, 9, 10])
+=> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
 ## More Information
-* [Ruby Array docs](https://ruby-doc.org/core-2.4.2/Array.html)
+* [Ruby Array docs](http://ruby-doc.org/core-2.5.1/Array.html)

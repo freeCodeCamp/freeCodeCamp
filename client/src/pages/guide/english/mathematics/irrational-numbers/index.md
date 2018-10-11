@@ -3,13 +3,7 @@ title: Irrational Numbers
 ---
 ## Irrational Numbers
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/irrational-numbers/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+An irrational number is a number that cannot be written as fully on decimal form. A popular example is the number _Pi_, as it cannot be fully written. There are an infinite number of decimals, and therefore it is irrational. 
+The same goes for the number _e_ and the square root of 2. they cannot be written down as they have an infinite number of decimals, and they are therefore irrational.
 
 

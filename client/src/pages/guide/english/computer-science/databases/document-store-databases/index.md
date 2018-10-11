@@ -2,14 +2,22 @@
 title: Document Store Databases
 ---
 ## Document Store Databases
+A document store database is considered to be yet another type of NoSQL database that is very similar to a Key Value database. A record in a document store represents a single structured document that can be different from all other documents in the database. Unlike a relational database, there is no mapping of objects to various table in the database. Instead we can take the entire object and write it directly into a document store database.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/computer-science/databases/document-store-databases/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+For example, we could have the following object inside of our code.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```json
+{
+    "name": "freeCodeCamp",
+    "job": "contributor"
+}
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+This entire object can be written directly into a document store database without further parsing.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+[MongoDB](https://www.mongodb.com/document-databases)
+
+[Elasticsearch](https://www.elastic.co/)
 
 

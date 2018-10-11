@@ -3,13 +3,18 @@ title: String.prototype.trim
 ---
 ## String.prototype.trim
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-trim/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `trim()` function removes any whitespace characters from both the beginning and the end of a given string. It does not modify the original string; it outputs a new one.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Examples:
+```js
+"  Hello, campers. I have spaces on both ends!  ".trim();
+// output is "Hello, campers. I have spaces on both ends!"
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+`trim()` not only removes space characters; it removes any whitespace character, such as tabs, line-breaks, no-break spaces, etc.
+
+This is useful, for example, when you want to process a text input from a user and they might have submitted a string with spaces at the end that you might not want.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+- [String.prototype.trim() on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim)
 

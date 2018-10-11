@@ -3,11 +3,31 @@ title: Tuples
 ---
 ## Tuples
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/elixir/tuples/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In Elixir, tuples are a data-structure that can hold any value or mixture of types. Tuples are defined by curly braces, and their indexes start from 0. Because tuples are stored contiguously in memory, getting data from them is a very quick operation.
+```elixir
+iex> tuple = {:atom, "string"}
+{:atom, "string"}
+iex> elem(tuple, 0)
+:atom
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+## Immutability
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Tuples in Elixir are an immutable, so making modifications will return an entirely new tuple - saving the original in memory. 
+```elixir
+iex> tuple = {:atom, "string"}
+{:atom, "string"}
+iex> put_elem(tuple, 1, true)
+{:atom, true}
+iex> tuple
+{:atom, "string"}
+```
+
+## Pattern Matching
+
+The most common use of tuples in Elixir is as a return for a function. For example: `{:ok, "Hello World\n"}`
+This is a very helpful, as it enables the use of Pattern Matching to handle these returns.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+* [elixir-lang.org | recursion](https://elixir-lang.org/getting-started/basic-types.html#tuples)
+* [hexdocs | Enum](https://hexdocs.pm/elixir/Tuple.html)

@@ -53,8 +53,10 @@ d => 40
 ## Insertion 
 Inserting data with insert member function.
 
-`myMap.insert(make_pair("earth", 1));`
-`myMap.insert(make_pair("moon", 2));`
+```c++
+myMap.insert(make_pair("earth", 1));
+myMap.insert(make_pair("moon", 2));
+```
 
 We can also insert data in std::map using operator [] i.e.
 
@@ -65,14 +67,13 @@ We can also insert data in std::map using operator [] i.e.
 To access map elements, you have to create iterator for it. Here is an example as stated before.
 ```c++
 map<char, int>::iterator it;
-   for(it=first.begin(); it!=first.end(); ++it){
-      cout << it->first << " => " << it->second << '\n';
-   }
+for(it=first.begin(); it!=first.end(); ++it){
+  cout << it->first << " => " << it->second << '\n';
+}
 ```
 
 Here you can learn more about map: <a href="http://www.cplusplus.com/reference/map/map/map/" target="_blank">cpluspluc_map</a>
 
 N.B: All code in example are in C++11 version. You can learn more about C++ version <a href="http://en.cppreference.com/w/cpp/compiler_support" target="_blank">Here</a>
-
 
 

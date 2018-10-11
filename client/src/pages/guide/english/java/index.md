@@ -8,7 +8,7 @@ title: Java
 
 ## Version
 
-The latest version is <a href='http://www.oracle.com/technetwork/java/javase/overview' target='_blank' rel='nofollow'> Java 9</a>, which was released in 2017 with <a href='https://docs.oracle.com/javase/9/whatsnew/toc.htm#JSNEW-GUID-C23AFD78-C777-460B-8ACE-58BE5EA681F6' target='_blank' rel='nofollow'>various improvements</a> over the previous version, Java 8. But for all intents and purposes, we will use Java 8 in this wiki for all tutorials.
+The latest version is <a href='http://www.oracle.com/technetwork/java/javase/overview' target='_blank' rel='nofollow'> Java 11</a>, which was released in 2018 with <a href='https://www.oracle.com/technetwork/java/javase/11-relnote-issues-5012449.html' target='_blank' rel='nofollow'>various improvements</a> over the previous version, Java 10. But for all intents and purposes, we will use Java 8 in this wiki for all tutorials.
 
 Java is also divided into several "Editions" :
 

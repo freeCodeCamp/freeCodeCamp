@@ -3,13 +3,12 @@ title: Axis of Symmetry of a Parabola
 ---
 ## Axis of Symmetry of a Parabola
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/axis-of-symmetry-of-a-parabola/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The axis of symmetry for a parabola is the line which perfectly bisects (or splits into two even parts) the parabola. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This is the same as a vertical line drawn at the x-value of the parabola’s vertex. Knowing this, you can find the line of symmetry easily by using the vertex form of a quadratic (parabolic) equation:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+y = a(x-h)<sup>2</sup>+k
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+In this form, the coordinates of a parabola’s vertex is given by (h,k), meaning the equation of the line of symmetry will be x=h.
 
 

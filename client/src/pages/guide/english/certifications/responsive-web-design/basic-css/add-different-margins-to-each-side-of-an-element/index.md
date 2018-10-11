@@ -3,8 +3,29 @@ title: Add Different Margins to Each Side of an Element
 ---
 ## Add Different Margins to Each Side of an Element
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/add-different-margins-to-each-side-of-an-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To adjust the margins of an element use:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```css
+.example {
+  margin: 10px;
+}
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+To specify margins sizes on an element by individual sides we can use 'margin-top', 'margin-right', 'margin-bottom', and 'margin left'. We can use any of these in combination and in any order. For example:
+
+```css
+.example {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+```
+
+Or:
+
+```css
+.example {
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 5px;
+}
+```

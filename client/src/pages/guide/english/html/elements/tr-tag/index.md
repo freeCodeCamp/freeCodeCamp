@@ -1,15 +1,34 @@
 ---
 title: Tr Tag
 ---
-## Tr Tag
+<p>The <code class="language-text">&lt;tr&gt;</code> tag defines a standard row in an HTML table on a web page.</p>
+<p>The <code class="language-text">&lt;tr&gt;</code> tag houses the <code class="language-text">&lt;th&gt;</code> and <code class="language-text">&lt;td&gt;</code> tags, also known as Table Header and Table Data respectively.</p>
+<p><code class="language-text">&lt;tr&gt;</code> tag is a close-ended tag meaning that every <code class="language-text">&lt;tr&gt;</code> tag opened must be closed with their sub-sequent closing tag denoted by <code class="language-text">&lt;/tr&gt;</code></p>
+<p><code class="language-text">&lt;tr&gt;</code> tag defines a row in a table. </p>
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/tr-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+<h3>Example</h3>
+<p>&nbsp;</p>
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```html
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+<html>
+<head>
+<title>Tr Tag Example</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>Header One</th>
+  </tr>
+  <tr>
+    <td>The usual table data/column cell.</td>
+  </tr>
+<tr>
+    <td>The usual table data/column cell.</td>
+  </tr>
+<tr>
+    <td>The usual table data/column cell.</td>
+  </tr>
+</table>
+</body>
+</html>

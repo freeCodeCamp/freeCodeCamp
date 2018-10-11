@@ -35,7 +35,7 @@ A case is used to house all the components of a computer.
 ### Power Supply
 A power supply is an electronic device that supplies electric energy to an electrical load.
  
- ![Power Supply](http://www.corsair.com/~/media/corsair/product%20photos/psu/ax-series/ax1200i/large/axi_psu_sideview_a.png)
+ ![Power Supply](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
  
 ### Motherboard
 Motherboard holds and allows communication between many of the crucial electronic components of a system, such as the central processing unit (CPU) and memory, and provides connectors for other peripherals.

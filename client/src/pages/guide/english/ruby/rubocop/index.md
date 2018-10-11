@@ -80,3 +80,8 @@ example:
 ```
 rubocop --auto-correct --only 'Layout/EmptyLineAfterMagicComment'
 ```
+
+### Text Editor Integration
+
+Rubocop can be integrated with Vim, Visual Studio Code, Atom, and other text editors. A full list can be found [here](https://rubocop.readthedocs.io/en/latest/integration_with_other_tools/).
+

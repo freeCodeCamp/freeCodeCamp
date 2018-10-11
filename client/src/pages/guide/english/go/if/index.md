@@ -1,5 +1,5 @@
 ---
-title: Go
+title: If in Go
 ---
 
 # If in Go

@@ -3,8 +3,22 @@ title: Create a Column Gap Using grid-column-gap
 ---
 ## Create a Column Gap Using grid-column-gap
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/create-a-column-gap-using-grid-column-gap/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+This challenge requires you to add a gap of 20px between all the columns of the CSS Grid in .container.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+To add the gap between the columns of a grid, we use:
+
+````css
+grid-column-gap: parameter;
+```` 
+
+where parameter is the required gap.
+
+### Solution
+
+Since the challenge has you adding a gap of 20px, you would add the following line to the .container CSS codeblock.
+
+````css
+grid-column-gap: 20px;
+````

@@ -11,7 +11,7 @@ For example the base-10 value of `12` will be obtained in this way:
 1*(10^1) + 2*(10^0) = 10 + 2 = 12
 ```
 This was obvious but what if you had a base-2 number and wanted to know its base-10 value?
-First of all mind that a base n number only has `n` total symbols to rappresent its values.
+First of all mind that a base n number only has `n` total symbols to represent its values.
 In the binary base we have then just 2 (base-2) symbols: `1` and `0`.
 Applying the procedure you have seen before you will be able to obtain a decimal number starting from a binary one like `101`:
 
@@ -19,7 +19,7 @@ Applying the procedure you have seen before you will be able to obtain a decimal
 101 = 1*(2^2) + 0*(2^1) + 1*(2^0) = 4+0+1 = 5
 ```
 
-In the same way a hexadecimal (base-16) number has 16 symbols to rappresents its values: `0, 1, 2, 3, 4, 5, 6 ,7, 8, 9, A, B, C, D, E, F`.
+In the same way a hexadecimal (base-16) number has 16 symbols to represent its values: `0, 1, 2, 3, 4, 5, 6 ,7, 8, 9, A, B, C, D, E, F`.
 Converting a base-16 number like `7AF` to a decimal will be easy then:
 
 ```
@@ -29,7 +29,7 @@ Converting a base-16 number like `7AF` to a decimal will be easy then:
 What if you wished to convert a decimal number into a n-based number?
 A common way to accomplish this is dividing the decimal number by the n base repeatedly.
 Take note of all remainders, and when your quotient reaches 0 stop.
-Now simply write all your remainders setting the last one as most significant digit (your newly converted n-based number should have as last digit your first remainder).
+Now simply write all your remainders setting the last one as the most significant digit (your newly converted n-based number should have as last digit your first remainder).
 EG: Let's convert the base-10 `12` to its base-2 value
 
 ``` 
@@ -48,7 +48,7 @@ Now using the first method written above you can check if everything worked fine
 
 ## Binary Decimal Hexadecimal Converter
 
-A Binary,decimal and hexadecimal converter it's a tool that allows you to convert one number in the corresponding one expressed in a different numeral system. The numeral systems allowed are `base-2` (binary), `base-10` (decimal) which is the one we commonly use and `base-16` (hexadecimal).
+A Binary, decimal and hexadecimal converter it's a tool that allows you to convert one number in the corresponding one expressed in a different numeral system. The numeral systems allowed are `base-2` (binary), `base-10` (decimal) which is the one we commonly use and `base-16` (hexadecimal).
 The are plenty of this tools available online:
 * [Binary Hex Converter] (www.binaryhexconverter.com/)
 * [Calculator website] (http://www.calculator.net/)

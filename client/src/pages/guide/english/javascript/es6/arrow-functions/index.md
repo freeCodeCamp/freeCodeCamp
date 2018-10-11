@@ -45,4 +45,20 @@ let newOneWithOneParam = a => {
 }
 ```
 
+An incredible advantage of the arrows function is that you can not rebind an arrow function. It will always be called with the context in which it was defined. Just use a normal function.
+```javascript
+// Old Syntax
+axios.get(url).then(function(response) {
+  this.data = response.data;
+}).bind(this);
+
+// New Syntax
+axios.get(url).then(response => {
+  this.data = response.data;
+});
+
+```
+
+
+
 I don’t think I need to give an explanation for this. It's straightforward.

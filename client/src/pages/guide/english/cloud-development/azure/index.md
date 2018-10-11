@@ -26,3 +26,4 @@ There are varying levels of machine 'sizes' to choose from, ranging from simple 
 #### More Information:
 * <a href='https://en.wikipedia.org/wiki/Microsoft_Azure' target='_blank' rel='nofollow'>Wikipedia</a>
 * <a href='https://azure.microsoft.com/en-us/' target='_blank' rel='nofollow'>Microsoft Azure</a>
+* <a href='https://docs.microsoft.com/en-us/learn/' target='_blank' rel='nofollow'>Microsoft Learn</a>

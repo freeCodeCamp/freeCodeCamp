@@ -14,7 +14,7 @@ To help form an image of how this might be applied, a coffee machine will be use
 ![Coffee machine finite state machine diagram](https://raw.githubusercontent.com/arunma/blogimages/master/AkkaFSM/CoffeeMachineFSM.png)
 This diagram shows three possible states for the coffee machine:
 - Open
-- Ready to buy
+- ReadyToBuy
 - PoweredOff
 
 The lines between these states show which transitions are possible between states and in which direction. These transitions have conditions for when the FSM needs to change between states.

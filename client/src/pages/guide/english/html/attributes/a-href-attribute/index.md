@@ -24,7 +24,7 @@ For instance:
 ```
 The `<a href>` attribute is supported by all browsers.
 
-#### more atribute:
+#### More attributes:
  `hreflang` : Specifies the language of the linked resource.
  `target`   : Specifies the context in which the linked resource will open.
  `title`    : Defines the title of a link, which appears to the user as a tooltip.
@@ -33,14 +33,12 @@ The `<a href>` attribute is supported by all browsers.
 ```html
 <a href="#">This is a dead link</a>
 <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a>
-<a href="https://html.com/attributes/a-href/
-">more with a href atribut</a>
+<a href="https://html.com/attributes/a-href/">more with a href attribute</a>
 
 ```
-
 ### In-page anchors
 
-Also it is possible to set an anchor to certain place of the page. To do this you should first place a tab at location on the page with tag <a> and necessary attribute "name" with any key-word description in it, like this:
+It's also possible to set an anchor to certain place of the page. To do this you should first place a tab at location on the page with tag <a> and necessary attribute "name" with any keyword description in it, like this:
 
 ```html
 <a name="top"></a>
@@ -49,12 +47,12 @@ Also it is possible to set an anchor to certain place of the page. To do this yo
 Any description between tags is not required. After that you can place a link leading to this anchor at any palce on same page. To do this you should use tag <a> with necessary attribute "href" with symbol # (sharp) and key-word description of the anchor, like this:
 
 ```html
-<a href="#top>Go to Top</a>
+<a href="#top">Go to Top</a>
 ```
 
 ### Image Links
 
-The `<a href="#">` can also be aplied to images and other HTML elements.
+The `<a href="#">` may also be applied to images and other HTML elements.
 
 ### Example
 
@@ -64,3 +62,8 @@ The `<a href="#">` can also be aplied to images and other HTML elements.
 ```
 ### Example
 <a href="#"><img itemprop="image" style="height: 90px;" src="http://www.chatbot.chat/assets/images/header-bg_y.jpg" alt="picture">  </a>
+### Some more examples of href
+```html
+<base href="https://www.freecodecamp.org/a-href/">This gives a base url for all further urls on the page</a>
+<link href="style.css">This is a live link to an external stylesheet</a>
+```

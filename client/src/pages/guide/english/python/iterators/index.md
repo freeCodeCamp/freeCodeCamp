@@ -5,7 +5,7 @@ Python supports a concept of iteration over containers. This is implemented usin
 
 <a href='https://docs.python.org/3/library/stdtypes.html#iterator-types' target='_blank' rel='nofollow'>Python Docs - Iterator Types</a>
 
-**TODO: Clarify what iteration means and what iterators can be used for.**
+Iteration is the process of programatically repeating a step a given number of times.  A programmer can make use of iteration to perform the same operation on every item in a collection of data, for example printing out every item in a list.
 
 *   Objects can implement a `__iter__()` method that returns an iterator object to support iteration.
 *   Iterator objects must implement:

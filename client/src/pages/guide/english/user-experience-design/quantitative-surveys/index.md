@@ -3,13 +3,29 @@ title: Quantitative Surveys
 ---
 ## Quantitative Surveys
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/user-experience-design/quantitative-surveys/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+**Quantitative surveys** look at the statistical approach of analyzing the survey results. The questions are designed in a way so that the answers are recorded in numbers. Then you look at how many users have answered certain questions.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+#### Quantitative Surveys tell us about 
+- How many users use the product?
+- What kind of people use the product?
+- What is the market for our product?
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+It is a great approach to test the market, see trends, patterns, user base, see success of the product etc.
+
+#### Example Questions
+- Do you use Free code camp?
+    - Yes
+    - No
+- How many challenges have you finished in free code camp?
+    - Less than 100
+    - Less than 500
+    - More than 500
+- How many certificates have you earned on free code camp in total?
+    - 0
+    - 1
+    - 2
+    - 3
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+<a href='https://www.marketingdonut.co.uk/market-research/questionnaires-surveys-and-focus-groups/what-is-quantitative-research' target='_blank' rel='nofollow'>Article on quantitative survey</a>

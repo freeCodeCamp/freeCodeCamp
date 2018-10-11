@@ -116,6 +116,10 @@ Another way you can resolve hash collisions is using open addressing. In this me
 
 The major setback of open addressing lies in the fact that when needing to look for values, they might not be in the place you expect them to be (the key mapping). Therefore you have to traverse parts of the hash table in order to find the value you are looking for, thus resulting in increased time complexity.
 
+#### Time Complexity
+It is very important to note that hash tables have amortised constant complexity i.e. on an average case the complexity will be O(1). 
+In worst case, If too many elements were hashed into the same key, it can have a time complexity of O(n).
+
 ### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 

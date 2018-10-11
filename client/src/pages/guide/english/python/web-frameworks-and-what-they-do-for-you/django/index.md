@@ -2,7 +2,7 @@
 title: Django
 ---
 
-Overview:
+## Overview:
 
 Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
 
@@ -21,5 +21,5 @@ Some of the busiest sites on the planet use Django’s ability to quickly and fl
 Incredibly versatile.
 Companies, organizations and governments have used Django to build all sorts of things — from content management systems to social networks to scientific computing platforms.
 
-###Sources
+### Sources
 https://www.djangoproject.com/

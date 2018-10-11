@@ -18,7 +18,7 @@ The details of each of the data types is given below :
 
 ## Integers:
 
-These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using <a href='http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html' target='_blank' rel='nofollow'>2's complement</a>. It consist both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
+These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consist both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
 
 ### byte:
 
@@ -85,7 +85,7 @@ These are also called real numbers and are used for expressions involving fracti
 
 ### float:
 
-float data type is a single-precision 32-bit <a href='http://steve.hollasch.net/cgindex/coding/ieeefloat.html' target='_blank' rel='nofollow'>IEEE 754 floating point</a>.
+float data type is a single-precision 32-bit [IEEE 754 floating point](http://steve.hollasch.net/cgindex/coding/ieeefloat.html).
 
     Wrapper Class: Float
 
@@ -100,7 +100,8 @@ float data type is a single-precision 32-bit <a href='http://steve.hollasch.net/
 
 ### double:
 
-double data type is a double-precision 64-bit IEEE 754 floating point.
+
+double data type is a double-precision 64-bit [IEEE 754 floating point](http://steve.hollasch.net/cgindex/coding/ieeefloat.html). This data type is generally the default choice. This data type should never be used for precise values, such as currency.
 
     Wrapper Class: Double
 
@@ -108,7 +109,7 @@ double data type is a double-precision 64-bit IEEE 754 floating point.
 
     Default value: 0.0d.
 
-    Example: double d1 = 123.400778
+    Example: double d1 = 123.400778;
 
 ## Character:
 
@@ -119,6 +120,8 @@ We use this data type to store characters. This is not the same as the char in C
     Minimum value: '\u0000' (or 0).
 
     Maximum value: '\uffff' (or 65,535).
+    
+    Default value: null ('\u0000').
 
     Example: char letterA ='a';
 
@@ -134,7 +137,7 @@ This is used for storing logical values. A boolean type can have a value of eith
 
     Default value is false.
 
-    Example: boolean b = true, boolean b1 = 1, boolean b2;
+    Example: boolean b = true, boolean b1 = 1(this is not possible in java and give incompatible type error), boolean b2;
 
 ## Reference Data Types:
 

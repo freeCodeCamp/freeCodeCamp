@@ -3,7 +3,7 @@ title: Text Indent
 ---
 ## Text Indent
 
-This css property creates an indentation of the first line in a text block.
+This CSS property creates an indentation of the first line in a text block.
 
 ### Values:
 The `text-indent` property can be specified using `%`, `px`, `em` or measurement units such as `cm` and `in`.

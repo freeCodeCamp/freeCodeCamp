@@ -15,8 +15,6 @@ While styling the navigation bars, it's common to remove the extra spacing creat
    padding: 0px;
 ```   
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/navigation-bars/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
 **Example:**
 
 There are two parts to any navigation: the HTML and the CSS. This is just a quick example.

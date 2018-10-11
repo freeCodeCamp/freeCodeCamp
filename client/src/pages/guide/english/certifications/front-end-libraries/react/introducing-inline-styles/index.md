@@ -3,8 +3,53 @@ title: Introducing Inline Styles
 ---
 ## Introducing Inline Styles
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/introducing-inline-styles/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Solution 
+This one can be a little tricky because JSX is very similar to HTML but **NOT the same**.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Let's walkthrough the steps so that you understand the difference. 
+First set your style tag to a **JavaScript object**.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```react.js
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={{}}>
+        Big Red
+      </div>
+    );
+  }
+};
+```
+Now you have your style tag set to an empty object. Notice how there are two sets of curly braces. This is an important difference between JSX and HTML.<br>
+
+Second, let's set the color to red. 
+
+```react.js
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={{ color: 'red' }}>
+        Big Red
+      </div>
+    );
+  }
+};
+```
+
+Finally, let's set the font size to 72px. 
+
+### Spoiler
+```react.js
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={{ color: 'red', fontSize: '72'}}>
+        Big Red
+      </div>
+    );
+  }
+};
+```
+
+Notice how the JSX attribute is **camelCase**. This is another important difference to remember about JSX.
+Additionally, you probably noticed that there is no unit. In JSX, when setting the fontSize attribute the **unit is optional** and will automatically be set to px if not set manually. 

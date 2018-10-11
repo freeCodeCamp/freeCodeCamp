@@ -11,7 +11,7 @@ A ```Promise.resolve``` function indicates the successful completion of a Promis
 
 A "value" for a resolve function can be basic JavaScript types, arrays, or objects. 
 
-```
+```javascript
 Promise.resolve('success'); // string
 Promise.resolve([2, 3, 5]); // array
 Promise.resolve({name: 'John', age: '43'}); // object
@@ -19,7 +19,7 @@ Promise.resolve({name: 'John', age: '43'}); // object
 
 A "thenable" is a function that takes two callback functions as parameters. You can use the first parameter to trigger a successful completion, and the second to return an error on the Promise.
 
-```
+```javascript
 thenableFunction = {then: function(onSuccesss, onFailure) {
     if (condition === 'success') {
       onSuccess(paramList); // success condition
@@ -33,7 +33,8 @@ Promise.resolve(thenableFunction);
 ```
 
 Chaining a then function to a promise caller will give you access to the result of ```Promise.resolve```.
-```
+
+```javascript
 promiseCallingFunction(paramList)
   .then(function(value) {
     /* 

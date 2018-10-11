@@ -46,7 +46,7 @@ We do not change anything here:
 function phoneticLookup(val) {
   var result = "";
 ```
-We need to switch statement into an object. Transfer all `case` values to object properties: 
+We need to convert the switch statement into an object. Transfer all `case` values to object properties: 
 
 ```javascript
 function phoneticLookup(val) {
@@ -60,14 +60,15 @@ function phoneticLookup(val) {
     "foxtrot": "Frank"
   };
   ```
-After the transformations, we need to return the value of the variable `val`, with the help of which, we will display the assigned value to the property of our object `phoneticLookup`:
+After converting our case statements into object properties you can make use of the variable `result` to let the function return the correct value.
 
 ```javascript
-  return lookup[val];
-}
+  result = lookup[val];
  ```
- Here we can substitute any properties of the object for verification:
- ```javascript
-phoneticLookup("charlie");
- ```
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+·  Run code at [repl.it](https://repl.it/@AdrianSkar/Using-objects-for-lookups).
+
+### Resources
+
+- ["JavaScript object basics" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics)
+

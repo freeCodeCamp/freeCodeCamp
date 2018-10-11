@@ -12,12 +12,13 @@ It takes one argument `x` - an integer, or decimal, or a complex number.
 The return value would be a positive number. Even if complex number is passed, it would return its magnitude, computed as per complex number algebra.
 
 ## Code Sample
+```python
+print(abs(3.4)) # prints 3.4
+print(abs(-6)) # prints 6
+print(abs(3 + 4j)) # prints 5, because |3 + 4j| = 5
+```
 
-    print(abs(3.4)) # prints 3.4
-    print(abs(-6)) # prints 6
-    print(abs(3 + 4j)) # prints 5, because |3 + 4j| = 5
-
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CL8k/0' target='_blank' rel='nofollow'>Run Code</a>
+<a href='https://repl.it/CL8k/0' target='_blank' rel='nofollow'>🚀 Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#abs' target='_blank' rel='nofollow'>Official Docs</a>
 

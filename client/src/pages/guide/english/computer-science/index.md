@@ -11,20 +11,20 @@ Today, if you attend an undergraduate computer science course, you will learn ab
 
 # Computer Science Fields
 Computer science is categorized into several fields. The following are among the current established and well-studied fields. Most of the fields are further categorized into sub0fields.
-- Theory of Computing
+- <a href="https://en.wikipedia.org/wiki/Theory_of_computation">Theory of Computing</a>
   - Complexity Theory
   - Formal Methods
   - Distributed Algorithms
-- Security
-  - Cryptography
-- Artificial Intelligence
+- <a href="https://en.wikipedia.org/wiki/Computer_security">Security</a>
+  - Cryptography<br>
+- <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Artificial Intelligence</a>
   - Data Mining
   - Machine Learning
   - Computer Vision
-- Software Engineering
-- Data Sciences
+- <a href="https://en.wikipedia.org/wiki/Software_engineering">Software Engineering</a>
+- <a href="https://en.wikipedia.org/wiki/Data_science">Data Sciences</a>
   - Big Data
-- Human Computer Interaction
+- <a href="https://en.wikipedia.org/wiki/Human%E2%80%93computer_interaction">Human Computer Interaction</a>
   - Brain Computer Interface
 - Systems
   - Distributed Systems

@@ -15,7 +15,7 @@ some logic because it's a programming language.
 ```bash
 $ touch myscript.sh
 ```
-2) Add a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) at the start of the file:
+2) Add a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) at the start of the file. The Shebang line is responsible for letting the command interpreter know which interpreter the shell script will be run with:
 ```bash
 $ echo "#!/bin/bash" > myscript.sh
 # or

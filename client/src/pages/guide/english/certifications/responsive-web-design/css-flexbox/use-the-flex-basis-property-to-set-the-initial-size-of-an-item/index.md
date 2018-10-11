@@ -3,8 +3,19 @@ title: Use the flex-basis Property to Set the Initial Size of an Item
 ---
 ## Use the flex-basis Property to Set the Initial Size of an Item
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/use-the-flex-basis-property-to-set-the-initial-size-of-an-item/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+You can achieve the same effect as the previous two challenges with `flax-basis`.
+After setting sthe appropiate values, you will see `#box-2` being bigger than `#box-1` before any shrinking or grow is applied.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```css
+#box-1 {
+  background-color: dodgerblue;
+  height: 200px;
+  flex-basis: 10em;
+}
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+#box-2 {
+  background-color: orangered;
+  height: 200px;
+  flex-basis: 20em;
+}
+```

@@ -2,9 +2,14 @@
 title: Give Sibling Elements a Unique Key Attribute
 ---
 ## Give Sibling Elements a Unique Key Attribute
+## Hint
+It is just almost same as previous [challenge](https://learn.freecodecamp.org/front-end-libraries/react/use-array-map-to-dynamically-render-elements). Just you need to add `key` attribute.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/give-sibling-elements-a-unique-key-attribute/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Solution
+Just add `key` attribute to the `<li>` tag to make unique 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```react.js
+const renderFrameworks = frontEndFrameworks.map((item) =>
+  <li key={item+1}>{item}</li>
+);
+```

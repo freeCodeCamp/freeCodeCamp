@@ -29,12 +29,6 @@ You will write a card counting function. It will receive a **card** parameter an
 *   -3 Hold
 *   5 Bet
 
-#### Relevant Links
-
-*   <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank' rel='nofollow'>Card counting</a>
-*   <a href='http://www.freecodecamp.com/challenges/selecting-from-many-options-with-switch-statements' target='_blank' rel='nofollow'>Challenge: Selecting from many options with Switch Statements</a>
-*   <a href='http://www.freecodecamp.com/challenges/chaining-if-else-statements' target='_blank' rel='nofollow'>Challenge: Chaining If Else Statements</a>
-*   <a href='http://www.freecodecamp.com/challenges/increment-a-number-with-javascript' target='_blank' rel='nofollow'>Challenge: Increment a Number with Javascript</a>
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
@@ -108,11 +102,33 @@ After you've counted the cards, use an `if` statement to check the value of **co
 
 **_Note_**: As mentioned earlier, the `switch` statement could have also been an `else if` statement.
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
 
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
+## Additional code solution:
 
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a>**`Wiki Challenge Solution Template`**</a> for reference.
+```javascript
+function cc(card) {
+  // Only change code below this line
+  var regex = /[JQKA]/;
+  if (card > 1 && card < 7){count++;}
+  else if (card === 10 || String(card).match(regex)){count--;}
+
+  if (count > 0) return count + " Bet";
+  return count + " Hold";
+
+  // Only change code above this line
+}
+```
+·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Counting-cards).
+
+### Code explanation
+· The function first evaluates `if` the condition `card` is a value greater than `1` and lower than `7`, in which case it increments `count` by one.
+· Then if the card is `10` or higher it decrements `count` by one.
+· The variable `regex` is a [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp) representing values (letters) for the higher cards.
+· The `else` statement checks those values with the `|| (logical OR)` operator; first for `10` and then for any string that matches the regular expression using [String.match()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match).
+
+#### Resources
+
+*   <a href='https://en.wikipedia.org/wiki/Card_counting' target='_blank' rel='nofollow'>Card counting at Wikipedia</a>
+*   <a href='http://www.freecodecamp.com/challenges/selecting-from-many-options-with-switch-statements' target='_blank' rel='nofollow'>Challenge: Selecting from many options with Switch Statements</a>
+*   <a href='http://www.freecodecamp.com/challenges/chaining-if-else-statements' target='_blank' rel='nofollow'>Challenge: Chaining If Else Statements</a>
+*   <a href='http://www.freecodecamp.com/challenges/increment-a-number-with-javascript' target='_blank' rel='nofollow'>Challenge: Increment a Number with Javascript</a>

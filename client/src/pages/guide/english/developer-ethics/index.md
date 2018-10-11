@@ -3,11 +3,11 @@ title: Developer Ethics
 ---
 ## Developer Ethics
 
-Developer Ethics describes the field of ethics as it is applied to the behavior of software developers.
+Developer Ethics describes the field of ethics when applied to the behavior of software developers.
 
 According to <a href='http://www.iep.utm.edu/ethics/' target='_blank' rel='nofollow'>The Internet Encyclopedia of Philosophy</a>, the field of ethics (or moral philosophy) involves "systematizing, defending, and recommending concepts of right and wrong." 
 
-Over the years a number of organizations and individuals have attempted to codify developer ethics into a variety of oaths, pledges, and codes of conduct. 
+Over the years, a number of organizations and individuals have attempted to codify developer ethics into a variety of oaths, pledges, and codes of conduct. 
 
 Examples include:
 
@@ -22,6 +22,8 @@ Examples include:
 * [**The Programmer's Oath**] (https://www.youtube.com/watch?v=36NgPu9OyRM&list=PLWKjhJtqVAbno-B4RmJHCDO0ZUKC2tpUQ) by "Uncle Bob" Martin
 
 * [**The "Never Again" Pledge**] (http://neveragain.tech)
+
+* [**ACM Code of Ethics**] (http://www.acm.org/about-acm/acm-code-of-ethics-and-professional-conduct)
 
 Common themes appearing throughout these examples include a commitment to honesty, integrity, and fairness.
 

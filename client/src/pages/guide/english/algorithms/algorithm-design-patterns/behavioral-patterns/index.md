@@ -19,7 +19,7 @@ Examples of this type of design pattern include:
 9. **Weak reference pattern**: De-couple an observer from an observable.
 10. **Protocol stack**: Communications are handled by multiple layers, which form an encapsulation hierarchy.
 11. **Scheduled-task pattern**: A task is scheduled to be performed at a particular interval or clock time (used in real-time computing).
-12. **Single-serving visitor pattern**: Optimise the implementation of a visitor that is allocated, used only once, and then deleted.
+12. **Single-serving visitor pattern**: Optimize the implementation of a visitor that is allocated, used only once, and then deleted.
 13. **Specification pattern**: Recombinable business logic in a boolean fashion.
 14. **State pattern**: A clean way for an object to partially change its type at runtime.
 15. **Strategy pattern**: Algorithms can be selected on the fly.

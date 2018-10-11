@@ -17,7 +17,7 @@ Usability testing is a technique used in user-centered interaction design to eva
 This is in contrast with usability inspection methods where experts use different methods to evaluate a user interface without involving users. 
 
 Usability testing focuses on measuring a human-made product's capacity to meet its intended purpose. Examples of products that commonly benefit from usability testing are foods, consumer products, web sites or web applications, computer interfaces, documents, and devices. Usability testing measures the usability, or ease of use, of a specific object or set of objects, whereas general human–computer interaction studies attempt to formulate universal principles.
-
+This testing is recommended during the initial design phase of  SDLC, which gives more visibility on the expectations of the users.
 Methods
 
 1. Hallway testing 

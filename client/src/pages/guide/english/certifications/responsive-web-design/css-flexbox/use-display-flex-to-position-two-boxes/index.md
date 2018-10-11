@@ -3,8 +3,14 @@ title: "Use display: flex to Position Two Boxes"
 ---
 ## Use display: flex to Position Two Boxes
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/use-display-flex-to-position-two-boxes/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/layout/flexbox/index.md' target='_blank' rel='nofollow'>Flexbox</a> is a way to structure content in CSS3 which allows you to create responsie websites.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+This challenge is to set the first out of thre steps when using Flexbox. You need to make the parent container a flex one by adding <i>display:flex;</i> to its CSS section.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Example:
+
+```CSS
+#main-container {
+    display: flex;
+}
+```

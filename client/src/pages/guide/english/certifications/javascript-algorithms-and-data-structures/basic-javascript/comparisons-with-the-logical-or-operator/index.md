@@ -3,11 +3,11 @@ title: Comparisons with the Logical Or Operator
 ---
 ## Comparisons with the Logical Or Operator
 
-### Guide : Follow the code given in the example
+### Guide: Follow the code given in the example
 **Spoiler Alert**
-:grimacing: :grimacing: :grimacing:
 
-Below is the sample code. (The simplest way)
+
+Below is the sample code (the simplest way).
 
 ```javascript
 if ( val < 10 || val > 20 ) {
@@ -15,5 +15,5 @@ if ( val < 10 || val > 20 ) {
 }
 ```
 
-The above code will return "Yes" only if *val* is between 10 and 20. (Inclusive)
+The above code will return "Outside" only if `val` is between 10 and 20 (inclusive).
 

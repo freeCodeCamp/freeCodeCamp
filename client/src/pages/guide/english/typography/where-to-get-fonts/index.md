@@ -50,12 +50,12 @@ body{
 You're done! You successfully have new fonts for your site.
 
 ##### Additional Resources:
-* (Google Fonts)[http://fonts.google.com]
-* (FontSpace)[http://www.fontspace.com]
-* (Font Squirrel)[http://fontsquirrel.com]
-* (DaFont)[http://www.dafont.com]
-* (1001 Free Fonts)[http://www.1001freefonts.com]
+* [Google Fonts](http://fonts.google.com)
+* [FontSpace](http://www.fontspace.com)
+* [Font Squirrel](http://fontsquirrel.com)
+* [DaFont](http://www.dafont.com)
+* [1001 Free Fonts](http://www.1001freefonts.com)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-* (Web fonts overview from Mozilla Developer)[https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts]
+* [Web fonts overview from Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts)

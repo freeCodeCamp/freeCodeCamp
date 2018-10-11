@@ -3,7 +3,7 @@ title: Screen Dimensions
 ---
 ## React Native - Screen Dimensions
 
-React Native uses Density Independent Pixels (DPI) to measure the sizing of the User Interface (UI) and anything displayed on the UI. This type of measurement allows an application to look uniform accross various screen sizes and pixel densities.
+React Native uses Dots Per Inch (DPI) to measure the sizing of the User Interface (UI) and anything displayed on the UI. This type of measurement allows an application to look uniform accross various screen sizes and pixel densities.
 
 For standard use cases, applications can be developed without having to know the specifics of the user's device (eg pixel density) since the UI elements will scale automatically. When it is required, there are APIs availabel such as `PixelRatio` for finding out about the pixel density of the users device.
 

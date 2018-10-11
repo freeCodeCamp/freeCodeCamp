@@ -6,8 +6,14 @@ title: Color Theory
 Color Theory is a practical application of mixing colors and using color to achieve a specific visual effect.
 
 Colors are used in all sorts of ways.
+
 The choice of colors in visual display is often constrained by hardware, software running on the hardware, limitations of the human eye and variations on how humans perceive color.
+
 Limits to choices are also shaped by artificial constraints supplied by a project, such as having to conform to design style and branding.
+
+A color wheel is the main tool used by designers to specify or locate color. Color wheels can include the entire color spectrum or they can be organized by a defined category of colors. 
+
+The four main category of colors, which you might already be familiar with, are Primary Colors, Secondary Colors, Tertiary Colors, Complementary Colors.
 
 Using color theory can help meet the requirements of projects while maximizing legibility of text and accessibility of content to viewers with different viewing traits or needs.
 
@@ -15,6 +21,7 @@ Using color theory can help meet the requirements of projects while maximizing l
 
 A color wheel or picker is a tool used by designers to specify or locate color.
 Color pickers may include a color spectrum or they may be organized by defined categories of light, such as brightness and hue.
+
 
 **Primary Colors**
 
@@ -40,6 +47,11 @@ Key is a traditional term for the most significant impression of a combination o
 Color Psychology is a study of how color influences human mood and behavior. The colors chosen for the design can influence how 
 successful a product is.
 
+**Complementary Colors:**
+Red-green, yellow-purple, blue-orange
+These are colors formed by mixing colors that are oppsite from each other on the color wheel.
+
+In web design, colors also carry with them connotations and implications that need to be understood or else you could cause confusion. The color red in a non-digital space, such as a fast-food restaurant, carries the implication of energy or excitement. However, on the web the color red also carries with it the implication that the user has committed an error. This example of how color means certain things in certain settings should be a critical reminder to understand how the person viewing your page will interpret the color selection you’ve made.
 
 ### Web colors
 

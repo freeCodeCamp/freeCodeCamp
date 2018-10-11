@@ -23,7 +23,7 @@ Assignment operators, as the name suggests, assign (or re-assign) values to a va
 
 ## Variations
 
-The other assignment operators are a shorthand for performing some operation using the variable (indicated by x above) and value (indicated by y above) and then assinging the result to the variable itself.
+The other assignment operators are a shorthand for performing some operation using the variable (indicated by x above) and value (indicated by y above) and then assigning the result to the variable itself.
 
 For example, below is the syntax for the addition assignment operator:
 
