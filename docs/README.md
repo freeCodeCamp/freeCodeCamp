@@ -10,7 +10,7 @@
     </tr>
 </table>
 
-# Documentation
+# Documentation Quick Reference
 
 Hello 👋!
 

@@ -26,12 +26,12 @@ You can choose to contribute to an area of you interest:
 
 1. [Contribute to this open source codebase.](#contribute-to-this-open-source-codebase)
 
-Help us in creating or editing [guide articles](https://www.freecodecamp.org/guide), [coding challenges](https://www.freecodecamp.org/learn) and fixing bugs on the learning platform.
+    Help us in creating or editing [guide articles](https://www.freecodecamp.org/guide), [coding challenges](https://www.freecodecamp.org/learn) and fixing bugs on the learning platform.
 
 2. Help campers on our [public forum](https://www.freecodecamp.org/forum/).
 
-   - ❓ Help campers by [answering their questions](https://www.freecodecamp.org/forum/?max_posts=1).
-   - 💬 [Give feedback](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) on camper projects.
+    - ❓ Help campers by [answering their questions](https://www.freecodecamp.org/forum/?max_posts=1).
+    - 💬 [Give feedback](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) on camper projects.
 
 3. Help us add subtitles on our [YouTube channel](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
@@ -89,7 +89,7 @@ Most of these versions are machine translated. We would love your help in improv
 
 **If you would like work on these, follow along these steps:**
 
-**[TODO]**
+**[TODO]** We are in the process of updating docs for translation. [Follow this issue for the progress]().
 
 #### Help us fix bugs in freeCodeCamp.org's learning platform
 
