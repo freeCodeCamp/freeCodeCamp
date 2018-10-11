@@ -10,8 +10,8 @@
     </tr>
 </table>
 
-# Documentation
+# Documentation Quick Reference
 
 Hello 👋 !
 
-These instructions have not been translated yet.
+These instructions have not been translated yet. Please check this issue for details:
