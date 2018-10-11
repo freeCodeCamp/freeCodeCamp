@@ -61,7 +61,7 @@ Puede encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/sr
 
 Agradecemos su ayuda al escribir estos artículos. No tiene que ser un experto en un tema para escribir sobre él; toda esta Guía es de código abierto, por lo que incluso si comete un error, otro colaborador lo corregirá.
 
-Para obtener ayuda, busque un `artículo del trozo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escriba el artículo y luego abra un solicitud de tirón para reemplazar el trozo con su artículo. Un [solicitud de tirón] (https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirá cambios. Permite a otros conocer sus cambios, revisarlos y adoptarlos.
+Para obtener ayuda, busque un `artículo del trozo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escriba el artículo y luego abra un solicitud de tirón para reemplazar el trozo con su artículo. Un [solicitud de tirón](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirá cambios. Permite a otros conocer sus cambios, revisarlos y adoptarlos.
 
 Si no puede encontrar un trozo sobre el tema sobre el que desea escribir, puede abrir un PR que crea el trozo e incluye su borrador del artículo.
 
@@ -75,7 +75,7 @@ Todos nuestros temas de codificación son curados por la comunidad, aportando co
 
 Sin embargo, estos deben ser constantemente refinados, para la calidad. Por ejemplo, es posible que desee actualizar las instrucciones para mejorar su [verborrea](https://en.oxforddictionaries.com/definition/verbiage). Puede actualizar las historias de usuario para explicar mejor el concepto e incluso eliminar las redundantes. Es posible que desee refactorizar las pruebas que no pasan con un código válido para las historias de usuario.
 
-** Si desea trabajar en estos, siga estas pautas: **
+**Si desea trabajar en estos, siga estas pautas:**
 
 #### [Cómo trabajar en Coding Challenges.](/docs/how-to-work-on-coding-challenges.md)
 
@@ -127,7 +127,7 @@ Tenga en cuenta que cualquier problema que busque ayuda de codificación en un d
 
 **¿Cómo puedo reportar un problema de seguridad?**
 
-Por favor, no cree problemas de GitHub para problemas de seguridad. En su lugar, envíe un correo electrónico a `security @ freecodecamp.org` y lo veremos de inmediato.
+Por favor, no cree problemas de GitHub para problemas de seguridad. En su lugar, envíe un correo electrónico a `security@freecodecamp.org` y lo veremos de inmediato.
 
 **Estoy atascado en algo que no está en esta documentación. ¿Cómo puedo obtener ayuda?**
 
