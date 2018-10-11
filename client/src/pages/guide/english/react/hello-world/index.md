@@ -5,14 +5,32 @@ title: Hello World
 
 Every language learning starts with Traditional Hello World example. Here, you get introduced to React with the same HelloWorld program.
 
-Everything in React is a component. So firstly, you need to create HelloWorld component.
+Everything in React is a component. 
 
-#### HelloWorld.js
+But before that we need to make sure to have node.js and npm installed in the computer. Optionally we can use CRA(Create React App) which is a tool built by developers at Facebook to help you build React applications. It saves you from time-consuming setup and configuration. You simply run one command and create react app sets up the tools you need to start your React project.
+
+We can install it through the following commands 
+```
+npm install -g create-react-app
+
+create-react-app my-app
+
+cd my-app
+npm start
+```
+
+The command line should give you an output where you can find the application in the browser. The default should be localhost:8080. If you are only using IE or Edge on your Windows machine, I can recommend you to install Chrome as well to access the developer environment and the React Developer Tools which are available as Chrome extension.
+
+![alt react starting page](https://cdn-images-1.medium.com/max/800/1*Qcry5pCXIy2KeNRsq3w7Bg.png)
+
+#### src/App.js
+
+copy the code below and paste it into src/App.js
 
 ```javascript
   import React from 'react';
 
-  class HelloWorld extends React.Component{
+  class App extends React.Component{
     constructor(props) {
       super(props);
     }
@@ -26,36 +44,24 @@ Everything in React is a component. So firstly, you need to create HelloWorld co
     }
   }
 
-  export default HelloWorld;
+  export default App;
 ```
-
-You need to have index.html which has a div with id=”helloWorld” where our HelloWorld component gets rendered.
-
-#### index.html
-
-```html
-  <!doctype html>
-  <html>
-    <head>
-      <title>Hello World !!</title>
-    </head>
-    <body>
-      <div id="helloWorld"></div>
-    </body>
-  </html>
-```
-
-Then, you need to create index.js that act as link between HelloWorld.js and index.html, which tells exactly where we need to render the component.
-
-#### index.js
+If we check the index.js file in the src folder, we find that the above App.js is called into index.js and then rendered. 
 
 ```javascript
-  import ReactDOM from 'react-dom';
-  import HelloWorld from './HelloWorld';
+// Other code
+import App from './App'; // The App component is imported
 
-  ReactDOM.render(<HelloWorld />, document.getElementById('helloWorld'));
+// Other code
+ReactDOM.render(<App />, 
+document.getElementById('root'));  //The <App /> is the way components are called in react after importing them
+
+// Other code
+
 ```
 
-Congrats !! You have created your first React component. You learn more about React in the coming articles.
+In the above, App.js is called a component. Normally, we make multiple components and put them together in App.js which will be then rendered in index.js which is then rendered into the root div that is in the index.html.
+
+Congrats !! You have created your first React Hello world app. You learn more about React in the coming articles.
 
 Happy Coding !!

@@ -3,8 +3,29 @@ title: Learn About Self-Closing JSX Tags
 ---
 ## Learn About Self-Closing JSX Tags
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/learn-about-self-closing-jsx-tags/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Hint 1:
+```js
+const JSX = (
+  <div>
+    {/* remove comment and change code below this line // Remember that comments in JSX have parentheses.
+    <h2>Welcome to React!</h2> <br > // ?
+    <p>Be sure to close all tags!</p>
+    <hr >  // ?
+    remove comment and change code above this line */} // Remember that comments in JSX have parentheses.
+  </div>
+);
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution 
+```js
+const JSX = (
+  <div>
+    
+    <h2>Welcome to React!</h2> <br />
+    <p>Be sure to close all tags!</p>
+    <hr />
+        
+  </div>
+);
+```

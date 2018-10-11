@@ -3,8 +3,6 @@ title: Use the align-items Property in the Tweet Embed
 ---
 ## Use the align-items Property in the Tweet Embed
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/use-the-align-items-property-in-the-tweet-embed/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Similar to the  <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/align-elements-using-the-align-items-property/index.md' target='_blank' rel='nofollow'>previous challenge</a>, you will need to set the property value to `center` on the right selector.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Note it might look like nothing changed but once again, the more explicit youa re with your style early on, the less side effects you will see when your CSS gets more complex.

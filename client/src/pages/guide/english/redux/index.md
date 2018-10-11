@@ -83,6 +83,9 @@ Redux does get more complicated but if you understand these principles then you 
 
 #### More Information:
 
+##### Do you really need Redux?
+[Dan Abramov](https://github.com/gaearon), creator of Redux, wrote some time ago great article [You Might Not Need Redux](https://medium.com/@dan_abramov/you-might-not-need-redux-be46360cf367). You should check it first because, well, you might not need it.
+
 For more information head to [http://redux.js.org/](http://redux.js.org/)
 
 ### Resources

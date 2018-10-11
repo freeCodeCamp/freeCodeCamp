@@ -7,11 +7,12 @@ Moodboards are a way to convey the feeling about product you are about to make. 
 
 Creating a moodboard is really simple. There are two ways: either manual or digital.
 
-For creating manual moodboards you will need 
-- different magazines, newspapers, books and/or posters that you can cut, 
-- paper, 
-- scissors,
-- glue. 
+For creating manual moodboards you will need: 
+- Different magazines, newspapers, books and/or posters that you can cut 
+- Paper
+- Scissors
+- Glue 
+
 Start out with finding the images, shapes, colours, messages you feel that resonate with your will-be product. 
 Cut them out. 
 If you have cut out all that you need, arrange them on paper, and glue them.
@@ -20,10 +21,10 @@ The end result might look something similar to this:
 ![papercut moodboard](https://raw.githubusercontent.com/ejke/ejke.github.io/master/else/moodboard.jpg)
 
 
-The other option is to create digital moodboard. The technique is quite the same, you need
-- internet connection,
-- basic knowledge of copy and paste functions,
-- image editing software.
+The other option is to create digital moodboard. The technique is quite the same, you need:
+- Internet connection
+- Basic knowledge of copy and paste functions
+- Image editing software
 
 The positive aspect is that you don't have to limit your moodboard to images in magazine. The negative aspect is that it might be hard to find the right images, since you have all internet to search from. 
 
@@ -34,9 +35,9 @@ The places to start look for images and ideas:
 - go outside with a camera. There might be the exact item for your moodboard waiting for you to take that picture. 
 
 Again, when you have sufficient images, it is time to put the moodboard together. For that, you also have different possibilities:
-- gimp/photoshop/paint. In first two you have greater ability to move images around, paint is just as good as paint can be (sufficient, but uncomfortable).
-- inkscape/illustrator. These are not ment for this kind of work, but can do the job. Additionally you have do and add vector art to your moodboard.
-- online tools: just search for 'moodboard' with your favourite search engine and you should find plenty of sites that offer the template for competing moodboard.
+- Gimp/Photoshop/Paint. In first two you have greater ability to move images around, paint is just as good as paint can be (sufficient, but uncomfortable).
+- Inkscape/Illustrator. These are not ment for this kind of work, but can do the job. Additionally you have do and add vector art to your moodboard.
+- Online tools: just search for 'moodboard' with your favourite search engine and you should find plenty of sites that offer the template for competing moodboard.
 
 ![digital moodboard example](http://stuckwithpins.com/blog/wp-content/uploads/2015/08/moodboard-s2s.jpg)
 
@@ -51,6 +52,10 @@ Making moodboards is one of the most fun part of production, so try to enjoy it 
 Mood boards can convey color scheme, type face, and specific imagery.  They can also explore tone and mood more abstractly.  A board can include video or sound in addition to static images, photography, and text.
 
 ![An example of a surf-themed mood board](https://cdn-images-1.medium.com/max/1600/1*9qVOw8uDg8oOOevWmYUozQ.jpeg)
+
+There are many factors that go into making the perfect mood board. Depending on your audience, you may want to decide on choosing a larger image and building the mood board around it. This image would become your inspiration and centerpiece for the entire board. Also, do you think you should create a physical or digital mood board, which one would portray your ideas and inspiration more effectively?
+
+![An example of a physical mood board](https://www.designyourway.net/blog/wp-content/uploads/2018/02/06moodboard3-superjumbo.jpg)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->

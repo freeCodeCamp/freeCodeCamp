@@ -3,8 +3,15 @@ title: Iterate with JavaScript Do...While Loops
 ---
 ## Iterate with JavaScript Do...While Loops
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-do...while-loops/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+* `Do...While` loops makes sure that the code is executed at least once, and after the execution, if the condition inside the `while()` is **true**, it continues with the loop, otherwise it stop.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+## Solution
+```javascript
+var myArray = [];
+var i = 10;
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+do {
+  myArray.push(i);
+  i++;
+} while(i <= 10);
+```

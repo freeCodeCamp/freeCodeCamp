@@ -3,8 +3,19 @@ title: Typed Arrays
 ---
 ## Typed Arrays
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/typed-arrays/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Method:
+- In this challenge, first we need to create a buffer of 64 bytes. We can use `ArrayBuffer()` constructor.
+- After creating a buffer we need to create an Int32Array, for that we can use `Int32Array()` constructor.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Solution:
+```js
+//Create a buffer of 64 bytes
+var buffer = new ArrayBuffer(64);
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+//Make 32-bit int typed array with the above buffer
+var i32View = new Int32Array(buffer);
+```
+
+### References:
+- [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer)
+- [TypedArray](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)

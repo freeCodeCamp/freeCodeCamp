@@ -9,6 +9,8 @@ There are two main ways to write CSS.
 
 ### Inline CSS
 
+Specifics on CSS Specificity: <a href='https://css-tricks.com/specifics-on-css-specificity/' target='_blank' rel='nofollow'>CSS Tricks</a>
+
 Inline CSS applies styling to a single element and its children, until another style overriding the first is encountered.
 
 To apply inline CSS, add the "style" attribute to an HTML element that you'd like to modify. Inside quotes, include a semicolon-delimited list of key/value pairs (each in turn separated by a colon) indicating styles to set.
@@ -85,4 +87,5 @@ All the styling has its own document which is linked in the ```<head>``` tag. Th
 #### More Information:
 * [CSS Syntax](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax) @ MDN
 * [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) @ MDN
-
+* [CSS Selectors Reference](https://www.w3schools.com/cssref/css_selectors.asp)
+* [CSS Selectors Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)

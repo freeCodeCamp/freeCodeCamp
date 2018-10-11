@@ -53,4 +53,6 @@ SASS: http://sass-lang.com/
 
 LESS: http://lesscss.org/
 
+Stylus: http://stylus-lang.com/
+
 MDN Page: https://developer.mozilla.org/en-US/docs/Glossary/CSS_preprocessor

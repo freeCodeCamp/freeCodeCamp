@@ -3,13 +3,15 @@ title: The Law of Sines
 ---
 ## The Law of Sines
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/the-law-of-sines/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The law of sines is only for right triangles. When you have two or more sides and at least one of their corresponding angle to solve for your missing side.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+The equation is:
+
+Sin(A)/a = Sin(B)/b = Sin(C)/c
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+https://www.mathsisfun.com/algebra/trig-sine-law.html
 

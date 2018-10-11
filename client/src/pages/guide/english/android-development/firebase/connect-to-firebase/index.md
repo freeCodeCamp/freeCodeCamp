@@ -39,3 +39,6 @@ Having connected your Android Studio project to Firebase, you can either
 
 Reading a combination of all three will enable you to setup the product, which includes adding suitable dependencies to your build.gradle file.
 
+**If You Encounter Gradle Sync**
+Try To Change The Firebase-core Version or Firebase-database version
+

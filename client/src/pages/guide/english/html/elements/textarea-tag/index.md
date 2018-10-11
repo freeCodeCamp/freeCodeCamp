@@ -2,6 +2,8 @@
 title: Textarea Tag
 ---
 ## Textarea Tag
+The HTML textarea tag allows you to enter a box that will contain text for user feedback or interaction. In most cases, it is common to see the textarea used as part of a form.
+
 Programmers use textarea tag to create multiline field for user input (useful especially in case when user should be able to put on the form longer text). Programmers may specify different attributes for textarea tags.
 
 Sample code:

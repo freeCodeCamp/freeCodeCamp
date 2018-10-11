@@ -60,6 +60,12 @@ The ```--patch``` flag causes ```git log ``` to display
 * the location of the lines that you added or removed
 * the specific changes that you made
 
+### View specified number of commits by author
+
+To view a specified number of commits by an author to the current repo (optionally in a prettified format), the following command can be used
+
+```git log  --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" -n {NUMBER_OF_COMMITS} --author="{AUTHOR_NAME}" --all```
+
 #### Start at a specific commit
 
 To start ```git log``` at a specific commit, add the SHA:

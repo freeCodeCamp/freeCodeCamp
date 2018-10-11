@@ -29,6 +29,27 @@ sessionStorage.setItem("foo", "bar");
 sessionStorage.getItem("foo"); //returns "bar"
 ```
 
+Since the current implementation only supports string-to-string mappings, you need to serialize and de-serialize other data structures. 
+
+You can do so using JSON.stringify() and JSON.parse().
+
+For e.g. for the given JSON
+
+```
+var jsonObject = { 'one': 1, 'two': 2, 'three': 3 };
+```
+
+We first convert the JSON object to string and save in the local storage:
+
+```
+localStorage.setItem('jsonObjectString', JSON.stringify(jsonObject));
+```
+
+To get the JSON object from the string stored in local storage:
+```
+var jsonObject = JSON.parse(localStorage.getItem('jsonObjectString'));
+```
+
 #### More Information:
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage' target='_blank' rel='nofollow'>MDN</a>

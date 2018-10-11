@@ -3,6 +3,8 @@ title: Manipulating Cookies
 ---
 ## Manipulating Cookies
 
+Getting or setting cookies is a straightforward operation that can be achived by accessing the cookie property on the browser's document object.
+
 You find an amazing and informative recipe website to cook a foreign meal for your guests but it's in foreign language, luckily you are able to change the language on the site website using a selection dropdown. A couple of days later you visit the same site again to make a dish for your mother, but now you see the website in your native language by default. 
 
 *The website remembers language you selected on your last visit and stores it in form of a **cookie**. Now it automatically selected your preferred language by reading that cookie.*
@@ -64,4 +66,4 @@ Cookies.remove('userLanguage');
 - [Cookie explained](https://www.quirksmode.org/js/cookies.html)
 - [MDN Cookie Guide](https://developer.mozilla.org/en-US/docs/Web/API/document/cookie)
 - [Udacity Cookie Video](https://www.youtube.com/watch?v=xdH9zsW1CK0)
-
+- [HTTP cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies)

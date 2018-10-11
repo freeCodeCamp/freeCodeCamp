@@ -14,7 +14,7 @@ Backtracking is a general algorithm for finding all (or some) solutions to some 
 
  ### Path followed by Knight to cover all the cells
   Following is chessboard with 8 x 8 cells. Numbers in cells indicate move number of Knight.
-  [![chrome_2017-10-21_11-54-32.png](https://s1.postimg.org/3mj9ovlzbz/chrome_2017-10-21_11-54-32.png)](https://postimg.org/image/7657eoop3v/)
+  [![The knight's tour solution - by Euler](https://upload.wikimedia.org/wikipedia/commons/d/df/Knights_tour_%28Euler%29.png)](https://commons.wikimedia.org/wiki/File:Knights_tour_(Euler).png)
 
 ### Naive Algorithm for Knight’s tour
 The Naive Algorithm is to generate all tours one by one and check if the generated tour satisfies the constraints.

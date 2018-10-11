@@ -3,8 +3,10 @@ title: Align Elements Using the justify-content Property
 ---
 ## Align Elements Using the justify-content Property
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/align-elements-using-the-justify-content-property/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+As stated on the challenge, to pass it you need to set the `justify-content` to center. However, the point of the challenge is to experiemnt and see how the different options affect the content.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+`center`: Will ensure your child elements are centered in the parent container.<br/>
+`flex-start`: Will push everything to the left side.<br/>
+`flex-end`: Will push everything to the right side.<br/>
+`space-between`: Will push the first and last elements to the left and right respectivelly and add even space between. If you have odd numbers of elements it will add them to the center and keep pushing left and right depending on the order.<br/>
+`space-around`: Will do similar to space-between but there will be equal spacing around the elements so the first and last will not be directly on the edge.

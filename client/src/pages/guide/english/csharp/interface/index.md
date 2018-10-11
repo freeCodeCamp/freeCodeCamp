@@ -2,11 +2,13 @@
 title : Interface 
 ---
 ---
-An interface is similar to a class but without implementation for its members.
+An interface is similar to a class or struct but without implementation for its members.
 An interface declares a contract or a behavior that implementing classes should have.
 It may declare only properties, methods and events with NO access modifiers.
-All the declared members must be implemented in the implementing class, otherwise we will have a compile error.
-As a convention, we will mark an interface with the letter I at the beginning (IMyInterface || IUserOptions)
+
+All the declared members must be implemented in the inharit class, otherwise will have an compile error.
+as a convention we will mark interface with the letter I at the begenning (IMyInterface || IUserOptions).
+You define an interface by using the interface keyword.
  
 All members of an interface are:
 implicitly abstract, 

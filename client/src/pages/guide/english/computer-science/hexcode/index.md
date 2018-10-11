@@ -1,44 +1,85 @@
 ---
-title: Hexcode
+title: Hexadecimal Numbers
 ---
-## Hexcodes
 
-HexCode are a way to specify colors on computers. HexCode's achieve this by specifying the amount of red, green and blue that is needed to form the colors in hexadecimal (hence the name).
+## The Hexadecimal Numeral System
 
+Hexadecimal numbers, often shortened to "hex numbers" or "hex",
+ are numbers represented in base 16 as opposed to base 10 that we use for everyday arithmetic and counting.
 
-Computers display all the colors that they can by combining red, green and blue. These colors are also called as primary colors, as combining them in different proportions creates all the colors that you can see on the display.
+In practical terms, this means that each column of a number written in hexadecimal can represent up to 16 values.
 
-Computer Display consists of pixels, each pixel consist of a red, green and blue component. The intensity of a particular color from a pixel is controlled by a number. So if a pixel has a 8 bit for each of the red, green, and blue component, then each color's intensity can be varied from 0-255.        
+Digits in hexadecimal use the standard symbols 0, 1, 2, 3, 4, 5, 6, 7, 8, and 9 to represent the corresponding value, 
+and use the first six letters of the alphabet to represent the values 10 through 15 (E.G: A, B, C, D, E, F).
 
-Thus 0 for red, 0 for green and 0 for blue represent no intensity for red, green, and blue which is pure black. This can be written in binary as 00000000 00000000 00000000. If you convert each of the red, green and blue components into hexadecimal you get 00 00 00, which is generally written in CSS and such as #000000.
+In programming, we prefix hexadecimal constants with `0x`, with some exceptions.
 
-Similarly to get pure blue you can set 0 for red, 0 for green and 255 (the largest value) for blue. Which when written in binary is 00000000 00000000 11111111, which when converted to hexadecimal is #0000FF.
+### Examples and explanation
+```
+0x1        ==        1
+0xF        ==        15
+0xFF       ==        255
+0xFFF      ==        4095
+0x1000     ==        4096
+```
 
+In the standard base 10 system, each column represents increasing powers of 10, 
+while in base 16 each column represents increasing powers of 16.
 
-In mathematics and computing, hexadecimal (also base 16, or hex) is a positional numeral system with a radix, or base, of 16. It uses sixteen distinct symbols, most often the symbols 0–9 to represent values zero to nine, and A, B, C, D, E, F (or alternatively a, b, c, d, e, f) to represent values ten to fifteen.
+As seen in the table example above, with one hex digit we can represent numbers up to and including 15. Add another column and we can represent numbers up to 255, 4095 with another column, and so on.
 
-Hex colors are broken up into six hexadecimal digits. There are three sections - Red, Green, and Blue (in that order). Each section is a number from 00 to FF. The higher the number/letter, the more of that color you have.
+## Uses of Hexadecimal in Low Level Programming
+Hexadecimal first found its use in Computer Science as a convenience feature. 
 
-There are 16,777,216 possible color combinations using hexcode.
+Data in our computers has a lowest common storage unit, the Byte.
+Each byte contains 8 bits, and is able to store a number between 0 and 255 inclusive.
 
-#### Examples:
+Hexadecimal has the advantage of being terse and having well defined boundaries. 
 
-Pure red is FF0000
-Pure green is 00FF00
-Pure blue is 0000FF
-Black is 000000
-White is FFFFFF
+A single byte is always represented by two hexadecimal digits 
+from 0x00 to 0xFF, the latter being the largest per-byte value of 255.
 
-Thus you can generate all possible 8-bit colors and represent them in hexadecimal by changing each of the 6 hexadecimal digits from #000000 to #FFFFFF which will get you 16^6 = 16777216 colors.
+The terseness and byte-aligned nature of hexadecimal numbers make them a popular choice for software engineers working on low-level code-bases or embedded software.
+
+## Uses of Hexadecimal Numbers in JavaScript
+JavaScript supports the use of hexadecimal notation in place of any integer, but not decimals. 
+
+As an example, the number 2514 in hex is 0x9D2, but there is no language-supported way of representing 25.14 as a hex number. 
+
+Using hexadecimal in your code is a personal and stylistic choice, and has no effect on the underlying logic your code implements.
+
+## Uses of Hexadecimal Numbers in CSS
+CSS has for a long time used hexadecimal notation to represent color values. Consider the following selector:
+```css
+.my-container {
+    background-color: #112233;
+    color: #FFFFFF;
+}
+```
+
+The `background-color`'s value is in fact three hex bytes. 
+
+The CSS processor treats these as three individual bytes, representing Red, Green, and Blue.  
+
+In our example, 11 corresponds to the Red color component, 22 corresponds to the Green color component, and 33 to the Blue color component.
+
+There is currently no way as of CSS3 to define a color with an alpha component using hex. 
+The proposed CSS4 Draft<sup>1</sup> includes a proposal to allow for an extra byte to specify alpha values.
+
+For now, use of the standard `rgba()` function is the recommended way to add an alpha value to your colors.
 
 #### More Information:
+ + [Hexadecimal numeral system on Wikipedia](https://wikipedia.org/wiki/Hexadecimal_numeral_system)
+ + [CSS color on the MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
 
+#### References:
+ + <sup>1</sup> [CSS Color Module Level 4 - 4.2. The RGB hexadecimal notations: #RRGGBB](https://www.w3.org/TR/css-color-4/#hex-notation) 
+ 
+#### More Information:
+<!-- Please add any articles you think might be helpful to read before writing the article -->
 * [How Do HEX Color Codes Work? (in 60 seconds)](https://www.youtube.com/watch?v=c56x1aj2CPA) - Good Video which also explains a little bit about Hexadecimal Numbers.
 * [Hex Codes & Color Theory](https://www.youtube.com/watch?v=xlRiLSDdqcY) - A Longer Video which delves into Color theory (Such as what are additive colors and what are subtractive colors etc.) and it also points to other resources for delving deeper into the topic. 
 * [Web Colors](https://en.wikipedia.org/wiki/Web_colors) - Wikipedia Article on how colors are used on the web.
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 * [Wikipedia article about Hexadecimal code](https://en.wikipedia.org/wiki/Hexadecimal)
 * [Wikipedia article about web colors](https://en.wikipedia.org/wiki/Web_colors)
 * [Hex Colors](http://www.color-hex.com/)

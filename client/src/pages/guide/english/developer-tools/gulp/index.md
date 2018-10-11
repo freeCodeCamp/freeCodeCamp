@@ -39,6 +39,15 @@ gulp.watch('css')
   .on('change', ['css']);
 ```
 
+### Task Dependencies
+By default gulp will run all of the tasks defined at the same time and wait for nothing. To run multiple task in the correct order, you can add a task as a dependencies to another task.
+```javascript
+gulp.task('two', ['one'], function() {
+    // task 'one' is done now
+});
+```
+With the code snippet above, task `two` will only run after task `one` is completed.
+
 
 Gulpfiles can have multiple tasks per file, and tasks can also be split up into multiple files for an organization. This, along with the 100's of plugins available make it a very flexible and useful framework for JavaScript developers.
 

@@ -48,6 +48,9 @@ GPUs were evolving and advancing at it's peak rate and this generation GPUs were
 ### 6th Generation
 In 2006, the release of NVIDIA's GeForce 8 series GPU revolutionized the GPU industry and reach, by introducing the GPU as massively parallel processors. It was the first to have "unified" and "programmable" shaders or, in other words, programmable unified processor. Unified means all the processes of graphics pipeline were executed on a single processor and no external unit is required for any stage. Basic Unified GPU architecture components are discussed below.
 
+Since the release of the 9XX series NVidia GPUs, the performance increase between generations only got better. From the 980Ti to the 1080Ti and the newly launched 208Tis, performance has more than doubled. AMD also started to produce better GPUs like the RX 580 and Vega 64, although this is still nowhere near Nvidia's level.
+Just recently, Nvidia launched a new line of GPUs titled RTX which includes the higher-end cards like 2080Ti, 2080, and 2070. RTX stands for "Ray Tracing", which is a rendering technique used in generating images though tracing the path of light in a scene.
+
 
 ## Basic Unified GPU Architecture Components
 

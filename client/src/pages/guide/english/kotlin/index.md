@@ -12,7 +12,7 @@ title: Kotlin
 
 
 ## Version
-As of this writing, the latest stable release of Kotlin happens to be <a href='https://blog.jetbrains.com/kotlin/2017/09/kotlin-1-1-50-is-out/'>version 1.1.51</a>
+As of this writing, the latest stable release of Kotlin happens to be <a href='https://blog.jetbrains.com/kotlin/2018/09/kotlin-1-2-70-is-out/'>version 1.2.71</a>
 
 ## Installation 
 

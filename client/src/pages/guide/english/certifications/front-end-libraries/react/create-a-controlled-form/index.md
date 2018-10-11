@@ -3,8 +3,28 @@ title: Create a Controlled Form
 ---
 ## Create a Controlled Form
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/create-a-controlled-form/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Creating a controlled form is the same process as creating a controlled input, except you need to handle a submit event.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+First, create a controlled input that stores its value in state, so that there is a single source of truth. 
+(This is what you did in the previous challenge.) Create an input element, set it's value attribute to the input variable located in state. Remember, state can be accessed by `this.state`. Next, set the input element's `onChange` attribute to call the function 'handleChange'.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+```react.js
+<input value={this.state.input} onChange={this.handleChange}/>
+```
+
+Next, create the handleSubmit method for your component. First, because your form is submitting you will have to prevent the page from refreshing. Second, call the `setState()` method, passing in an object of the different key-value pairs that you want to change. In this case, you want to set 'submit' to the value of the variable 'input' and set 'input' to an empty string. 
+```react.js
+handleSubmit(event) {
+  event.preventDefault();
+  this.setState({
+    input: '',
+    submit: this.state.input
+  });
+}
+```
+
+Now that your data is being handled in state, we can use this data. Create an `h1` element. Inside of your `h1` element put your 'submit' variable. Remember, 'submit' is located within state so you'll need to use `this.state`. Additionally, placing the variable within JSX requires curly braces `{ }` because it is JavaScript. 
+```jsx
+<h1>{this.state.submit}</h1>
+```

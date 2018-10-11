@@ -35,6 +35,14 @@ your blog posts from a database and display them. Other uses for PHP scripts inc
 
 All PHP code is executed on a web server only, not on your local computer. For example, if you complete a form on a website and submit it, or click a link to a web page written in PHP, no actual PHP code runs on your computer. Instead, the form data or request for the web page gets sent to a web server to be processed by the PHP scripts. The web server then sends the processed HTML back to you (which is where 'Hypertext Preprocessor' in the name comes from), and your web browser displays the results. For this reason, you cannot see the PHP code of a website, only the resulting HTML that the PHP scripts have produced.
 
+This is illustrated below:
+
+![PHP-server-model](https://github.com/xeroxism/myImages/blob/master/FCC_guides/PHP-server-model.png?raw=true)
+
+PHP is an interpreted language. This means that when you make changes to your source code you can immediately test these changes, without first needing to compile your source code into binary form. Skipping the compilation step makes the development process much faster.
+
+PHP code is enclosed between the ```<?php``` and ``` ?> ``` tags and can then be embedded into HTML.
+
 ## Installation
 
 PHP can be installed with or without a web server.

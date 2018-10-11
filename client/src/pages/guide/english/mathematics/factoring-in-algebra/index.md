@@ -3,13 +3,19 @@ title: Factoring in Algebra
 ---
 ## Factoring in Algebra
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/factoring-in-algebra/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Factoring is how you take a quadratic in standard form and put it in factored form. The standard form for a quadratic is normally shown as ax<sup>2</sup> + bx + c where a and b are coefficients and c is a constant. Factored form is normally shown as (x - d)(x - t) where d and t are both coefficients.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+## Factoring in Your Head
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+This method of factoring usually works best when a = 1. To do this when a = 1 you look at what two numbers add to equal b while also multiplying to c. Those two numbers will then be equal to d and t.
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+#### Example 1:<br>
+x<sup>2</sup> + 2x + 1<br>
+Here you have to look for two numbers that multiply to 1 and add to 2. Those two numbers are 1 and 1. Then you put those numbers into the factored form like this:<br>
+(x + 1)(x + 1)
 
+#### Example 2:<br>
+x<sup>2</sup> + 7x + 12<br>
+Here you have to look for two numbers that multiply to 12 and add to 7. Those two numbers are 3 and 4. Then you put those numbers into the factored form like this:<br>
+(x + 7)(x + 4).
 

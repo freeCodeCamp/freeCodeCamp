@@ -124,7 +124,7 @@ A good way of defining which acceptance tests should be written is to add accept
 
 In an Agile project it is important for the team to have acceptance criteria defined for all user stories. The Acceptance Testing work will use the defined criteria for evaluating the delivered functionality. When a story can pass all acceptance criteria it is complete. 
 
-#### More Information:
- <!-- Please add any articles you think might be helpful to read before writing the article -->
-- International Software Testing Qualifications Board (http://www.istqb.org/)
+Acceptance testing can also validate if a completed epic/story/task fulfills the defined acceptance criteria. In contrast to definition of done, this criteria can cover specific business cases that the team wants to solve. This provides a good measurement of work quality.
 
+#### More Information:
+- [International Software Testing Qualifications Board](http://www.istqb.org/)

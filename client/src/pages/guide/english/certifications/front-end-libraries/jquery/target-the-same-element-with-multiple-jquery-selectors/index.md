@@ -3,8 +3,13 @@ title: Target the Same Element with Multiple jQuery Selectors
 ---
 ## Target the Same Element with Multiple jQuery Selectors
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/jquery/target-the-same-element-with-multiple-jquery-selectors/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution 
+```javascript
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated"); // Target elements with type "button" and add the class "animated" to them.
+    $(".btn").addClass("shake"); // Target elements with class ".btn" and add the class "shake" to them.
+    $("#target1").addClass("btn-primary"); // Target elements with id "#target1" and add the class "btn-primary" to them.
+  });
+</script>
+```

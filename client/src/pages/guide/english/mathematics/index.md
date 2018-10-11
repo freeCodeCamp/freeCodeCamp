@@ -3,9 +3,9 @@ title: Mathematics
 ---
 ## Mathematics
 
-In this section, we'll have guides to a wide variety of mathematical concepts.
+In this section, we have guides for a wide variety of mathematical concepts.
 
-### Maths in programming
+### Mathematics in programming
 
 Although it is good practice to create mathematical functions yourself, there are math libraries availiable for use in many programming languages. These 
 have predetermined functions you can utilize to execute calculations. In programming, you typically cover topics like these in upper division courses on
@@ -83,6 +83,17 @@ Documentation reference: <a href='http://www.cplusplus.com/reference/cmath/' tar
 >>> math.radians(90)  //converts degrees to radians
 1.5707963267948966
 ```
+
+In addition to the standard `math` module, there are several other mathematical helper libraries available on [PyPI](https://pypi.org/). For example:
+
+```shell
+$ pip install numpy
+$ python
+>>> import numpy as np
+>>> np.zeros((3,4))
+```
+This returns a 3x4 array populated with 0s.
+
 #### Java
 ```java
 import java.lang.Math
@@ -101,4 +112,5 @@ The `math` module can also be imported as follows, and the usage difference is i
 
 Documentation reference: <a href='https://docs.python.org/2/library/math.html' target='_blank' rel='nofollow'>Python 2</a> | <a href='https://docs.python.org/3/library/math.html' target='_blank' rel='nofollow'>Python 3</a>
 
-
+### Additional resources
+Animated visualizations of mathematical concepts can be found at [3 Blue 1 Brown](http://www.3blue1brown.com/) and [Khan Academy](https://www.khanacademy.org/).

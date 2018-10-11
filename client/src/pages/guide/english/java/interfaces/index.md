@@ -17,7 +17,7 @@ public interface Vehicle {
 }
 ```
 
-The interface above contains one field and two methods. Alone, it is not of much use, but they are usually used along with Classes. How? Simple, you have to make sure some class `implements` it.
+The interface above contains two fields, two methods, and a default method. Alone, it is not of much use, but they are usually used along with Classes. How? Simple, you have to make sure some class `implements` it.
 
 ```java
 public class Car implements Vehicle {
@@ -36,7 +36,7 @@ Now, there is a **ground rule** : The Class must implement **all** of the method
 
 ## Instances of an Interface
 
-Once you create a Java Class which `implements` any Interface, the object instance can be referenced as an instance of the Interface. Similar concept as of Inheritance instantiation.
+Once you create a Java Class which `implements` any Interface, the object instance can be referenced as an instance of the Interface. This concept is similar to that of Inheritance instantiation.
 
 ```java
 // following our previous example
@@ -46,7 +46,7 @@ Vehicle tesla = new Car();
 tesla.start(); // starting engine ...
 ```
 
-But, you **cannot** create an instance of an Interface itself. You must create instance of some class implementing an Interface to reference it. Think of interfaces as a blank contract form, or a template.
+An Interface **can not** contain a constructor methods,therefore,you **can not** create an instance of an Interface itself. You must create an instance of some class implementing an Interface to reference it. Think of interfaces as a blank contract form, or a template.
 
 What can you do with this feature? Polymorphism! You can use only interfaces to refer to object instances!
 
@@ -109,16 +109,16 @@ public class Smartphone implements GPS,Radio {
 
 *   You can place variables within an Interface, although it won't be a sensible decision as Classes are not bound to have the same variable. In short, avoid placing variables!
 *   All variables and methods in an Interface are public, even if you leave out the `public` keyword.
-*   An Interface cannot specify the implementation of a particular method. Its upto the Classes to do it. Although there has been a recent exception (see below).
+*   An Interface cannot specify the implementation of a particular method. Its up to the Classes to do it. Although there has been a recent exception (see below).
 *   If a Class implements multiple Interfaces, then there is a remote chance of method signature overlap. Since Java does not allow multiple methods of the exact same signature, this can lead to problems. See <a href='http://stackoverflow.com/questions/2598009/method-name-collision-in-interface-implementation-java' target='_blank' rel='nofollow'>this question</a> for more info.
 
 ## Interface Default Methods
 
 Before Java 8, we had no way to direct an Interface to have a particular method implementation. This lead to lot of confusion and code breaks if an Interface definition is suddenly changed.
 
-Suppose, you wrote an open source library, which contains an Interface. Say, your clients, i.e. practically all developers around the world, are using it heavily and are happy. Now you have had to upgrade the library by adding a new method definition to the Interface to support a new feature. But that would break _all_ builds since all Classes implementing that Interface has to change now. What a catastrophe!
+Suppose, you wrote an open source library, which contains an Interface. Say, your clients, i.e. practically all developers around the world, are using it heavily and are happy. Now you have had to upgrade the library by adding a new method definition to the Interface to support a new feature. But that would break _all_ builds since all Classes implementing that Interface have to change now. What a catastrophe!
 
-Thankfully, Java 8 now provides us `default` methods of Interfaces. A `default` method _can_ contain its own implementation _directly_ within the Interface! So, if a Class does not implement a default method, the compiler will take the implementation mentioned within the Interface. Nice, isn't it? So in your library, you may add any number of default methods in interfaces without the fear of breaking anything!
+Thankfully, Java 8 now provides us `default` methods for Interfaces. A `default` method _can_ contain its own implementation _directly_ within the Interface! So, if a Class does not implement a default method, the compiler will take the implementation mentioned within the Interface. Nice, isn't it? So in your library, you may add any number of default methods in interfaces without the fear of breaking anything!
 
 ```java
 public interface GPS {

@@ -5,7 +5,7 @@ title: Git Clone
 
 The `git clone` command allows you to copy a remote repository onto your local machine.
 
-First, find the remote repository for the project you're working on or interested in - this can also be your fork of a project. Next, copy the url for it. For example, if you've forked the freeCodeCamp guides repository, the url looks like `https://github.com/YOUR-GITHUB-USERNAME/guides.git`.
+First, find the remote repository for the project you're working on or interested in - this can also be your fork of a project. Next, copy the URL for it. For example, if you've forked the freeCodeCamp guides repository, the URL looks like `https://github.com/YOUR-GITHUB-USERNAME/guides.git`.
 
 In the command line on your local machine, navigate to where you want to save the project in your working directory. Finally, run the `git clone` command:
 
@@ -19,9 +19,9 @@ The default name of the new directory on your computer is the name of the reposi
 git clone URL-OF-REPOSITORY NAME-OF-DIRECTORY-ON-COMPUTER
 ```
 
-Git gives the remote the alias "origin". This is a useful way to refer to the remote when you want to push your changes to the remote server, or pull changes from it. See <a href='https://guide.freecodecamp.org/git/git-push/' target='_blank' rel='nofollow'>Git push</a> and <a href='https://guide.freecodecamp.org/git/git-pull/' target='_blank' rel='nofollow'>Git pull</a> for more details.
+Git gives the remote the alias "origin". This is a useful way to refer to the remote when you want to push your changes to the remote server or pull changes from it. See <a href='https://guide.freecodecamp.org/git/git-push/' target='_blank' rel='nofollow'>Git push</a> and <a href='https://guide.freecodecamp.org/git/git-pull/' target='_blank' rel='nofollow'>Git pull</a> for more details.
 
-Git only pulls the remote's main branch onto your computer. This branch is usually named "master" by convention, but may be defined differently depending on the project.
+Git only pulls the remote's main branch onto your computer. This branch is usually named "master" by convention but may be defined differently depending on the project.
 
 Also, Git automatically sets up your local main branch to track the remote branch. When you run `git status`, you'll see information about whether your local branch is up-to-date with the remote. Here's an example output:
 
@@ -43,7 +43,7 @@ If you want to host mirror of a repository you can use mirror parameter.
 git clone URL-OF-REPOSITORY --mirror
 ```
 
-After mirroring repository you can clone your local mirror from your server.
+After mirroring a repository, you can clone your local mirror from your server.
 
 ```shell
 git clone NAME-OF-DIRECTORY-ON-COMPUTER

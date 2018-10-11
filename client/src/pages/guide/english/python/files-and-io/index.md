@@ -92,8 +92,23 @@ file.write('Hello World!')
 file.close()
 ```
 
+##### Using with
+An alternative to using the `open()` function in standalone is to make use of the `with` statement to open a file. This is considered best practice as it allows the Python framework to manage the context of opening the file, and will autmoatically perform any required resource cleanup.
+
+This is adventageous in the fact that it takes the onus off the programmer to close every file that is opened, and that the file will still be closed even if an exception was encountered during an IO operation.
+
+When using the `with` statement is important to note that access to the file will only available within the scope of the `with` block.
+
+To open a file using the `with` statement the `with` keyword is entered, followed by the call to `open(file)`. Following this the variable used as a handle to the open file is declared after the `as` keyword. Once the programs execution returns from this block, the file will be closed automatically.
+
+Sample code to open a text file using the `with` statement:
+```
+with open('hello_world.txt', 'w') as f:
+    f.write('Hello World!')
+```
+
 #### More Information:
 [Python Documentation - IO](https://docs.python.org/2/tutorial/inputoutput.html)
 [Automate the Boring Stuff](https://automatetheboringstuff.com/chapter8/)
 [Tutorials Point - Python IO](https://www.tutorialspoint.com/python/python_files_io.htm)
-
+[8 PEP 343: The 'with' statement](https://docs.python.org/2.5/whatsnew/pep-343.html)

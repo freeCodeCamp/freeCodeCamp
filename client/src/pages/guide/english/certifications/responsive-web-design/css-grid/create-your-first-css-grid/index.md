@@ -3,21 +3,26 @@ title: Create Your First CSS Grid
 ---
 ## Create Your First CSS Grid
 
-### Hint 
+### Hint 1
 
-To make any div a grid we use the following syntax.
-  ````css
-  display:grid;
-  ````
+To change display of any element, the following syntax is used:
+
+````css
+display: propertyName;
+````
+
+### Hint 2
+
+Change the display property of the .container element
+
+### Hint 3
+
+Set the display of the .container element to grid
 
 ### Solution
 
-We simply change the style of the .container to
+To set the display of the .container element to grid:
+
 ````css
-  .container {
-    font-size: 40px;
-    width: 100%;
-    background: LightGray;
-    display: grid;
-  }
-  ````
+display: grid;
+````

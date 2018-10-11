@@ -42,7 +42,7 @@ Getters and setters allow control over the values.  You may validate the given v
 
 ## Why getter and setter?
 
-By using getter and setter, the programmer can control how their important variables are accessed and updated in a correct manner, such as changing value of a variable within a specified range. Consider the following code of a setter method:
+By using getter and setter, the programmer can control how their important variables are accessed and updated, such as changing value of a variable within a specified range. Consider the following code of a setter method:
 ```java
 public void setNumber(int num) {
     if (num < 10 || num > 100) {
@@ -51,13 +51,13 @@ public void setNumber(int num) {
     this.number = num;
 }
 ```
-That ensures the value of number is always set between 10 and 100.  Suppose the variable number can be updated directly, the caller can set any arbitrary value to it:
+This ensures the value of number is always set between 10 and 100.  If the programmer allows the variable number to be updated directly, the caller can set any arbitrary value to it:
 ```java
 obj.number = 3;
 ```
 
-And that violates the constraint for values ranging from 10 to 100 for that variable. Of course we don’t expect that happens. Thus hiding the variable number as private and using a setter comes to rescue.
-On the other hand, a getter method is the only way for the outside world reads the variable’s value:
+This violates the constraint for values ranging from 10 to 100 for that variable. Since we don't expect that to happen, hiding the variable number as private and using a setter prevents it.
+On the other hand, a getter method is the only way for the outside world to read the variable’s value:
 ```java
 public int getNumber() {
     return this.number;

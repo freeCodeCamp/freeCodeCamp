@@ -7,8 +7,7 @@ Unity is a cross-platform game engine developed by Unity Technologies, which is 
 First announced only for OS X, at Apple's Worldwide Developers Conference in 2005, it has since been extended to target 27 platforms.
 
 ## Overview
-
-Unity is an all-purpose game engine that provides a complete framework for creating 2D and 3D games using C#. 
+Unity is an all purpose game engine that supports 2D and 3D graphics, drag and drop functionality and scripting through [C#](https://guide.freecodecamp.org/csharp).
 
 Unity is particularly popular for mobile game development and much of their focus is on mobile platforms. Unity3D's 2D pipeline is a more recent addition to the engine, and is less mature than the 3D pipeline. Despite this Unity is an adaquate platform for developing 2D games even when compared to other dedicated 2D engines, particularly if you plan to release the game across multiple mobile devices.
 
@@ -43,6 +42,8 @@ In picture above, you will notice five section:
 * Temple Run Trilogy
 * Battlestar Galactica Online
 * Hearthstone: Heroes of Warcraft
+* Inside
+* Cuphead
      
 ## History
 

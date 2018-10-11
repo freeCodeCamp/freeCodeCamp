@@ -3,13 +3,19 @@ title: Special Right Triangles Intro
 ---
 ## Special Right Triangles Intro
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/special-right-triangles-intro/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Special right triangles a a type of right triangle where the two non-right angles share a special relationship.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+There are two types of special right triangles: a 45-45-90, and a 30-60-90.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## 45-45-90
+This type of triangle has one angle of 90<sup>o</sup>, and two angles of 45<sup>o</sup> each. This causes the triangle's sides to have this special relationship:
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+![45-45-90 side relationships](https://github.com/Zoonn123/resources/blob/master/45-45-90hacktoberfestedit.png)
+
+## 30-60-90
+This type of triangle has one angle of 90<sup>o</sup>, one angle of 60<sup>o</sup>, and one angle of 30<sup>o</sup>. This causes the triangle's sides to have this special relationship:
+
+![30-60-90 side relationships](https://github.com/Zoonn123/resources/blob/master/30-60-90hacktoberfestedit.png)
+
 
 

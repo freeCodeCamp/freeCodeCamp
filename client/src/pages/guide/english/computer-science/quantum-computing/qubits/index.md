@@ -10,8 +10,12 @@ The major difference between the classical bit and the quantum bit has to do wit
 
 To illustrate this further, if you had one qubit, you can store a "0" and "1" simultaneously (which corresponds to a total of 2 states or values). If you had a 2-qubit system, you can hold **four** values at once - 00, 01, 10, and 11. With a 3-qubit system, you can hold **eight** values at once - 000, 001, 010, 011, 100, 101, 110, and 111. In general, a quantum system consisting of n-qubits will be able to have 2^n states which is exponentially more powerful than any classical computer.
 
-#### More Information
+#### More Information:
 
-[Qbits on Wikipedia](https://en.wikipedia.org/wiki/Qubit)
+[Ars Technica - Explanation of Quantum Computing and Qubits](https://arstechnica.com/science/2010/01/a-tale-of-two-qubits-how-quantum-computers-work)
+
+[Wikipedia - Qubits](https://en.wikipedia.org/wiki/Qubit)
+
+[Wikipedia - Quantum Superposition](https://en.wikipedia.org/wiki/Quantum_superposition)
 
 [Quantum Mechanics on Wikipedia](https://en.wikipedia.org/wiki/Quantum_mechanics)

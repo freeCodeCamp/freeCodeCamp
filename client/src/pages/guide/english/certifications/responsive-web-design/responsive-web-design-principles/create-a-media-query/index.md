@@ -3,8 +3,18 @@ title: Create a Media Query
 ---
 ## Create a Media Query
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/responsive-web-design-principles/create-a-media-query/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Following the instructions:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Add a media query, so that the p tag has a font-size of 10px when the device's height is less than or equal to 800px.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+the media query is:
+
+```css
+  /* Add media query below */
+  @media (max-height: 800px){ 
+    p {
+    font-size: 10px;
+      }
+  }
+```
+and the size of the text will be 10px when the device's width is less than or equal to 800px.

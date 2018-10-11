@@ -24,6 +24,5 @@ The standard which dictates the rough speed for RAM in most computers has been D
 * [Static RAM](https://en.wikipedia.org/wiki/Static_random-access_memory)
 * [Dynamic RAM](https://en.wikipedia.org/wiki/Dynamic_random-access_memory)
 * <a href='http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html' target='_blank' rel='nofollow'>Types of RAM</a>.
+* [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
 * <a href='https://en.wikipedia.org/wiki/Random-access_memory' target='_blank' rel='noffolow'>Wikipedia</a>.
-
-

@@ -3,6 +3,7 @@ title: AVL Trees
 ---
 ## AVL Trees
 
+
 An AVL tree is a subtype of binary search tree.
 
 A BST is a data structure composed of nodes. It has the following guarantees:
@@ -14,17 +15,17 @@ A BST is a data structure composed of nodes. It has the following guarantees:
 5. For each node, its left descendents are less than the current node, which is less than the right descendents.
 
 AVL trees have an additional guarantee:
-6. The difference between the depth of right and left subtrees cannot be more than one.In order to maintain this guarantee, an implementation of an AVL will include an algorithm to rebalance the tree when adding an additional element would upset this guarantee.
+6. The difference between the depth of right and left subtrees cannot be more than one. In order to maintain this guarantee, an implementation of an AVL will include an algorithm to rebalance the tree when adding an additional element would upset this guarantee.
 
 AVL trees have a worst case lookup, insert and delete time of O(log n).
 
 ### Right Rotation
 
-![AVL Tree Right Rotation](https://github.com/HebleV/valet_parking/blob/master/images/avl_right_rotation.jpg)
+![AVL Tree Right Rotation](https://raw.githubusercontent.com/HebleV/valet_parking/master/images/avl_right_rotation.jpg)
 
 ### Left Rotation
 
-![AVL Tree Left Rotation](https://github.com/HebleV/valet_parking/blob/master/images/avl_left_rotation.jpg)
+![AVL Tree Left Rotation](https://raw.githubusercontent.com/HebleV/valet_parking/master/images/avl_left_rotation.jpg)
 
 ### AVL Insertion Process
 
@@ -57,6 +58,6 @@ In LL Rotation every node moves one position to left from the current position.
 ->Single Right Rotation (RR Rotation)
 In RR Rotation every node moves one position to right from the current position. 
 ->Left Right Rotation (LR Rotation)
-The LR Rotation is combination of single left rotation followed by single right rotation. In LR Roration, first every node moves one position to left then one position to right from the current position.
+The LR Rotation is combination of single left rotation followed by single right rotation. In LR Rotation, first every node moves one position to left then one position to right from the current position.
 ->Right Left Rotation (RL Rotation)
-The RL Rotation is combination of single right rotation followed by single left rotation. In RL Roration, first every node moves one position to right then one position to left from the current position.
+The RL Rotation is combination of single right rotation followed by single left rotation. In RL Rotation, first every node moves one position to right then one position to left from the current position.

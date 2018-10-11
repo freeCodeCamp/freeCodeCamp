@@ -14,6 +14,7 @@ Some port numbers are used by convention to identify specific services, such as:
 * 23 - Telnet
 * 25 - SMTP
 * 42 - nameserver
+* 53 - Domain Name System (DNS)
 * 80 - http
 * 110 - pop3
 * 143 - imap
@@ -25,3 +26,4 @@ Some port numbers are used by convention to identify specific services, such as:
 ### Sources
 * [iana.org](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)
 * [Wikipedia](https://en.wikipedia.org/index.php?q=aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvUG9ydF8oY29tcHV0ZXJfbmV0d29ya2luZyk)
+* [Webopedia](https://www.webopedia.com/quick_ref/portnumbers.asp)

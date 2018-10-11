@@ -234,9 +234,9 @@ Angular does not use the shadow DOM by default. It uses an emulation system that
 
 The `@Component` metadata contains the `encapsulation` field. This lets developers toggle in-between emulated shadow DOM, real shadow DOM, or neither. Here are the options in their respective order:
 
-* `ViewEncapsulation.Emulated` - fake shadow DOM
+* `ViewEncapsulation.Emulated` - fake shadow DOM (default)
 
-* `ViewEncapsulation.Native` - real shadow DOM
+* `ViewEncapsulation.Native` - real shadow DOM (now deprecated since Angular 6.0.8)
 
 * `ViewEncapsulation.None` - neither
 

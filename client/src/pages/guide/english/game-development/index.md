@@ -34,6 +34,8 @@ Some Game Engines have a very steep learning curve such as CryEngine or Unreal E
 
 The Unity Game Engine ranges somewhere in the middle, while it is beginner friendly, some popular and commercial games have been built using Unity (e.g. Overcooked, Superhot).
 
+The BuildBox game engine is basically for developing hypercasual games.
+
 ### Typical Game Engines
 
 - CryEngine
@@ -42,6 +44,9 @@ The Unity Game Engine ranges somewhere in the middle, while it is beginner frien
 - Game Maker
 - Construct 2 or 3
 - Twine
+- Source
+- Frostbite
+- Buildbox
 
 
 
@@ -56,3 +61,4 @@ The Unity Game Engine ranges somewhere in the middle, while it is beginner frien
 * <a href='https://www.yoyogames.com/gamemaker'>Game Maker Engine</a><br>
 * <a href='https://unity3d.com/pt'>Unity3D Engine</a><br>
 * <a href='https://www.unrealengine.com/en-US/what-is-unreal-engine-4'>Unreal Engine</a>
+* <a href='https://www.buildbox.com/'>BuildBox</a><br>

@@ -4,7 +4,8 @@ title: Conditional Operator
 
 ## Conditional Operator
 
-Conditional operator is a ternary operator, that is it needs 3 operands. 
+Conditional operator is a ternary operator, that is it needs 3 operands.
+It returns one of two values depending on the result of an expression
 Conditional operator is used to replace a simple if-else statements.
 
 Syntax :

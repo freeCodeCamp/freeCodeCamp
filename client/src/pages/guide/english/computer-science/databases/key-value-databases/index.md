@@ -3,7 +3,7 @@ title: Key Value Databases
 ---
 ## Key Value Databases
 
-A key-value database, or key-value store, is a type of [NoSQL](https://en.wikipedia.org/wiki/NoSQL) database that uses a key/value storage. This means that the data stored in the databse is a collection of key-value pairs.
+A key-value database, or key-value store, is a type of [NoSQL](https://en.wikipedia.org/wiki/NoSQL) database that uses a key/value storage. This means that the data stored in the database is a collection of key-value pairs.
 
 This type of data structure is used on many programming languages. Key-value pairs are commonly known as associative arrays, dictionaries or hash. For example, consider a dictionary of phone numbers:
 
@@ -51,3 +51,4 @@ Here are some examples of databases that use the key-value approach:
 * Key-value databases on [Wikipedia](https://en.wikipedia.org/wiki/Key-value_database)
 
 
+Key-Value database is a simple database that uses a map or a dictionary as the fundamental data model where each key is associated with one and only one value in a collection and is the most flexible type of NoSQL database. 

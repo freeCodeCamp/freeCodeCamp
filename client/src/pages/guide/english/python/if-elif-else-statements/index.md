@@ -71,3 +71,26 @@ else:
 This was just a simple example for nested if's. Please feel free to explore more online.
 
 While the examples above are simple, you can create complex conditions using <a href='https://guide.freecodecamp.org/python/comparisons' target='_blank' rel='nofollow'>boolean comparisons</a> and <a href='https://guide.freecodecamp.org/python/boolean-operations' target='_blank' rel='nofollow'>boolean operators</a>.
+
+
+***Inline python if-else statement***
+
+We can also use if-else statements inline python functions
+The following example should check if the number is greater or equal than 50, if yes return True:
+
+```
+python 
+x = 89
+is_greater = True if x >= 50 else False
+
+print(is_greater)
+```
+
+Output
+```
+>
+True
+>
+```
+
+

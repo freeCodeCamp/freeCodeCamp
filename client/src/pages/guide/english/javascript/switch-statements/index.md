@@ -26,6 +26,28 @@ The above snippet shows the syntax for a basic `switch` statement. In this examp
 
 The `default` condition is a condition that will be executed if none of the other cases are true.
 
+
+Note: One really important point to note here is that in the snippet above, `case 1:` and `case 2:` might seem to represent some kind of order, but `1` and `2` are nothing but the answers which the `(expression)` may get evaluated to. So therefore instead of 1 and 2 it can be anything which the `(expression)` may evaluate to and can be tested against.
+
+For example:
+```javascript
+var someValue;
+var expression = someValue;
+switch(expression){
+  case someValue:
+    console.log('10'); // 10 would be printed to the console
+    break;
+  case 23:
+    console.log('12');
+    break;
+  default:
+    console.log('No matches');
+}
+```
+
+Note: `expression` in the snippet above can be a string or number.
+
+
 ### Break
 The `break` keyword is required in each case to make sure that only the code in that case gets executed. Without the break, multiple cases could be executed. When JavaScript reaches a `break` keyword, it breaks out of the switch block. If the `break` was left out of the above example, this is what would happen:
 

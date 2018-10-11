@@ -23,11 +23,13 @@ We can send these actions to the store by using
 ```javascript 
 store.dispatch()
 ```
-An application can have different sorts of events happening at a time and these actions helps describe these events. Without these
-actions there is no way to change the state of the application. 
+An application can have different sorts of events happening at a time and these actions helps describe these events. Without these actions there is no way to change the state of the application. 
+
+You might try [redux-actions](https://github.com/redux-utilities/redux-actions) project that reduces lot of boilerplate making writing your actions way faster.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [Actions-Redux Offical Docs](https://redux.js.org/basics/actions)
+[redux-actions](https://github.com/redux-utilities/redux-actions) github project page
 
 

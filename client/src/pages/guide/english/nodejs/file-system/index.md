@@ -1,7 +1,3 @@
----
-title: File System
----
-
 ## File System
 
 The Node.js File System module allows you to work with the file system on your computer.
@@ -41,7 +37,7 @@ fs.readFile('input.txt', 'utf-8', (err, data) => {
 ```
 The above code reads a file *input.txt* from your computer and returns the content to the console.
 
-### Steps for execution :
+### Steps for execution : 
 
 * You should have Node.js installed in your computer.
 * Create a file *app.js* and paste the above code.
@@ -54,7 +50,7 @@ The above code reads a file *input.txt* from your computer and returns the conte
 
 The ```fs.writeFile()``` method takes three arguments - filename, content and a call back function.
 
-Node.js code to write content into file.
+Node.js code to write content into file. 
 
 ```javascript
 const fs = require('fs');
@@ -69,7 +65,7 @@ fs.writeFile('output.txt', "New content added", (err, data) => {
 ```
 The above code creates a file *output.txt* and add content *New content added* to it.
 
-### Steps for execution :
+### Steps for execution : 
 
 * You should have Node.js installed in your computer.
 * Create a file *app.js* and paste the above code.
@@ -81,4 +77,4 @@ The above code creates a file *output.txt* and add content *New content added* t
 
 * [Node.js API](https://nodejs.org/api/fs.html#fs_file_system)
 * [W3 Schools](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-
+ 

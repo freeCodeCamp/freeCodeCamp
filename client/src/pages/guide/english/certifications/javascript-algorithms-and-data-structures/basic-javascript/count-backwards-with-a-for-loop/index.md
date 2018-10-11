@@ -3,8 +3,42 @@ title: Count Backwards With a For Loop
 ---
 ## Count Backwards With a For Loop
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/count-backwards-with-a-for-loop/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Here’s the example:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```javascript
+// Example
+var ourArray = [];
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+```
+
+#### HINT: 1
+* create a new for loop for myArray
+
+#### HINT: 2
+* start from the first odd number just before 9
+
+# SPOILER WARNING: SOLUTION AHEAD
+
+```javascript
+var ourArray = [];
+
+for (var i = 10; i > 0; i -= 2) {
+  ourArray.push(i);
+}
+
+// Setup
+var myArray = [];
+
+// Only change code below this line.
+for (var i = 9; i > 0; i-=2){
+  myArray.push(i)
+}
+```

@@ -48,3 +48,6 @@ Sorting algorithms are said to be `in place` if they require a constant `O(1)` e
 
 * `Merge Sort` is an example of `out place` sort as it require extra memory space for it's operations.
 
+### Best possible time complexity for any comparison based sorting
+Any comparison based sorting algorithm must make at least nLog2n comparisons to sort the input array, and Heapsort and merge sort are asymptotically optimal comparison sorts.This can be easily proved by drawing the desicion tree diagram.
+

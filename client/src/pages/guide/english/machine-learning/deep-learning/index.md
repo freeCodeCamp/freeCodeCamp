@@ -28,9 +28,7 @@ A resnet-152 model looks like this (Don't worry if you don't understand it. It's
 ![Resnet-152 Model](https://adeshpande3.github.io/assets/ResNet.gif)
 
 
-Google had its own neural network architecture that won the Imagenet challenged in 2014:
-
-![GoogLeNet Model](https://adeshpande3.github.io/assets/GoogleNet.gif)
+Google had its own neural network architecture that won the Imagenet challenged in 2014. Which can be seen in a <a href="https://adeshpande3.github.io/assets/GoogleNet.gif">gif here in more detail</a>.
 
 
 ### How to implement your own?
@@ -42,6 +40,7 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="https://keras.io/">Keras</a>
 * <a href="https://caffe2.ai/">Caffe2</a>
 * <a href="https://github.com/gluon-api/gluon-api/">Gluon</a>
+* <a href="http://deeplearning.net/software/theano/">Theano</a>
 
 ### More Information:
 * <a href="http://www.deeplearningbook.org">Deep Learning Textbook</a> 
@@ -50,3 +49,4 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="http://image-net.org/">Imagenet</a>
 * <a href="https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/">A Beginner's Guide To Understanding Convolutional Neural Networks</a>
 * <a href="https://www.youtube.com/playlist?list=PLjJh1vlSEYgvGod9wWiydumYl8hOXixNu">Deep Learning SIMPLIFIED - DeepLearning.TV</a>
+* <a href="http://neuralnetworksanddeeplearning.com"> Neural Networks and Deep Learning</a>

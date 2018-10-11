@@ -3,8 +3,26 @@ title: Define an Action Creator
 ---
 ## Define an Action Creator
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/redux/define-an-action-creator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint 1
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+A function is defined using the following syntax:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+````javascript
+functionName(){
+  console.log("Do something");
+}
+````
+
+Where console.log can be changed as per the need.
+
+### Hint 2
+
+A value is returned using the ```` return ```` keyword
+
+### Solution
+
+````javascript
+function actionCreator(){
+    return action;
+}
+````

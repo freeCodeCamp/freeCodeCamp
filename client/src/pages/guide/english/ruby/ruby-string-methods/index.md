@@ -11,7 +11,17 @@ Ruby has many built in methods to work with strings. Strings in Ruby by default 
     "Hello".length #=> 5
     "Hello World!".length #=> 12
     ```
+    
+### Empty:
 
+*   The `.empty?` method returns `true` if a string has a length of zero.
+    ```ruby
+    "Hello".empty? #=> false
+    "!".empty?     #=> false
+    " ".empty?     #=> false
+    "".empty?      #=> true
+    ```
+    
 ### Count:
 
 *   The `.count` method counts how many times a specific character(s) is found in a string.

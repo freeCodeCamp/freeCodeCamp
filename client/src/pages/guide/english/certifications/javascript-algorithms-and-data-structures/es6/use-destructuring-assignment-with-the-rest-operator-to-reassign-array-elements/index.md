@@ -13,23 +13,10 @@ Assign the first two elements to two random variables.
 
 Set the remaining part of the array to `...arr`.
 
-## Spoiler Alert - Solution Ahead!
-
-## Solution
-
-```javascript
-function removeFirstTwo(list) {
-  "use strict";
-  // change code below this line
-  const [a, b, ...arr] = list; 
-  // change code above this line
-  return arr;
-}
-```
 =======
 ## Hint 1
 
-Use descructuring to create the `arr` variable.
+Use destructuring to create the `arr` variable.
 
 ```javascript
 function removeFirstTwo(list) {
@@ -55,7 +42,7 @@ function removeFirstTwo(list) {
 }
 ```
 
-## Hint 3 - Spoiler Alert - Solution Ahead!
+## Hint 3 
 
 Exclude the first two elements of the `arr` array with `,,`.
 
@@ -69,4 +56,14 @@ function removeFirstTwo(list) {
 }
 ```
 
+## Spoiler Alert - Solution Ahead!
 
+```javascript
+function removeFirstTwo(list) {
+  "use strict";
+  // change code below this line
+  const [a, b, ...arr] = list; 
+  // change code above this line
+  return arr;
+}
+```

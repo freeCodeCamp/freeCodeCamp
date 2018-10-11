@@ -26,4 +26,4 @@ These are the valid values for ```vertical-align```:
 
 * [CSS vertical-align](https://www.w3schools.com/cssref/pr_pos_vertical-align.asp)
 
-
+* [CSS-Tricks vertical-align](https://css-tricks.com/almanac/properties/t/text-align/)

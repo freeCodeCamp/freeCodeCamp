@@ -3,8 +3,34 @@ title: Create a Class to Target with jQuery Selectors
 ---
 ## Create a Class to Target with jQuery Selectors
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/create-a-class-to-target-with-jquery-selectors/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The last challenge had you adding some classes to your ```html <button></button> ``` elements to style them, this time you are required to add other classes to those buttons which would allow jQuery to target them.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Edit the classes
+
+
+### Solution
+Since you have to add the ``` target ``` class, the following is the solution:
+
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+  </div>
+</div>
+```

@@ -2,12 +2,7 @@
 title: Groovy
 ---
 ## Groovy
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Apache Groovy or Groovy is a powerful and dynamic language with static compilation and typing capabilities for the Java platform and was designed to increase productivity with its concise and familiar syntax. It integrates with any Java program with ease.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+For documentation and more information, visit [Groovy's Official Website](http://groovy-lang.org)

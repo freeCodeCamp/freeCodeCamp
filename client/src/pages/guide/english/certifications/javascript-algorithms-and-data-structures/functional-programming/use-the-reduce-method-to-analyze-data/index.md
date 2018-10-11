@@ -3,6 +3,8 @@ title: Use the reduce Method to Analyze Data
 ---
 ## Use the reduce Method to Analyze Data
 
+```javascript
+
 // the global variable
 var watchList = [
                  {  
@@ -124,3 +126,5 @@ var averageRating = watchList.filter(x => x.Director === "Christopher Nolan").ma
 // Add your code above this line
 
 console.log(averageRating); 
+
+```

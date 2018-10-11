@@ -15,7 +15,7 @@ To learn more about using the promise model to handle asynchrony, check out this
 ## Examples
 
 1. Submit Form to the Server
-```C#
+```csharp
 private readonly string url = 'http://localhost:3000/api/submit';
 private readonly HttpContent formContent = new HttypContent();
 
@@ -32,7 +32,7 @@ SubmitButton.Clicked += async (object, event) =>
 ```
 
 2. "Latches" Synchronizer
-```C#
+```csharp
 public async Task<int> CalcDamage(Player player)
 {
   // CPU-intense method, calculate afflicted damage done to the

@@ -27,10 +27,10 @@ prototyping in order to fix problems before final distribution.
 
 Some popular prototyping tools among UX designers include:
 
-- Sketch
-- InVision
-- Axure
-- Adobe XD CC
-- Figma
-- UXPin
-- Framer
+- Sketch - https://sketchapp.com
+- InVision - https://invisionapp.com
+- Axure - https://www.axure.com
+- Adobe XD CC - https://www.adobe.com/in/products/xd.html
+- Figma - https://figma.com
+- UXPin - https://www.uxpin.com/
+- Framer - https://framer.com

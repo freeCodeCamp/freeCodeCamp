@@ -57,4 +57,4 @@ Documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/API/WindowO
 More examples of setTimeout function: <a href='https://www.w3schools.com/jsref/met_win_settimeout.asp' target='_blank' rel='nofollow'>w3schools</a>
 
 To understand what really happen under the hood just watch this awesome video
-[Philip Roberts: What the heck is the event loop anyway? | JSConf EU 2014](https://www.youtube.com/watch?v=8aGhZQkoFbQ)
+<a href='https://www.youtube.com/watch?v=8aGhZQkoFbQ' target='_blank' rel='nofollow'>Philip Roberts: What the heck is the event loop anyway? | JSConf EU 2014</a>

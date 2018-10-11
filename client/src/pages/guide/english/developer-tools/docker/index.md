@@ -5,7 +5,7 @@ title: Docker
 
 Docker is an open-source software aimed at facilitating application deployment. It offers the possibility to build containers, including an operating system,
 libraries and all you need to run your application. Therefore, your application can then be deployed on any machine. Its lightweight structure enables you to
-run several containers on the same machine. A container image is a lightwieght, stand-alone, execuateble package of a piece of software that includes everything
+run several containers on the same machine. A container image is a lightwieght, stand-alone, executable package of a piece of software that includes everything
 needed to run it.
 
 ### Features
@@ -24,10 +24,10 @@ A container image is a lightweight, stand-alone, executable package of a piece o
 ### See also
 - Docker Compose : to create and manage several containers at the same time.
 
-### Container Vs. Virtual Machines
+### Containers Vs. Virtual Machines
 
-* Container virtualises the Operating System and more portable, where as VMs virtualises the Hardware. 
-* Container are an abstraction at the app layer that packages code and dependencies togehter. VMs are an abstraction of physical hardware turning one server into many. Hypervisor helps VM to do so.
+* Containers virtualise the Operating System making them more portable, whereas VMs virtualise the hardware. 
+* Containers are an abstraction at the application layer that packages code and dependencies together. VMs are an abstraction of physical hardware turning one server into many. Hypervisor helps VM to do so.
 * [CONTAINERS ARE NOT VMS](https://blog.docker.com/2016/03/containers-are-not-vms/)
 
 
@@ -65,7 +65,7 @@ This message shows that your installation appears to be working correctly.
 
 
 #### More Information:
-You can find plenty of informations in the following sites : 
+You can find plenty of information in the following sites : 
 - <a href='https://www.docker.com/' target='_blank' rel='nofollow'>Docker website</a>
 - <a href='https://docs.docker.com/' target='_blank' rel='nofollow'>Docker docs</a>
 - <a href='https://hub.docker.com/' target='_blank' rel='nofollow'>DockerHub</a>

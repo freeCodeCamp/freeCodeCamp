@@ -3,8 +3,73 @@ title: Create a Stack Class
 ---
 ## Create a Stack Class
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/coding-interview-prep/data-structures/create-a-stack-class/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Method:
+- Stack is an abstract data structure.
+- Stack follows LIFO/FILO principle.
+- In this challenge, we need to add `.push()`, `.pop()`, `.peek()`, `.isEmpty()` and `.clear()` methods to the class.
+- 
+  - `push()` method pushes value to the stack.
+  - `pop()` method pops the first value from the stack.
+  - `peek()` method returns the first value from the stack.
+  - `isEmpty()` method checks if ths stack is empty.
+  - `.clear()` method removes all the elements from the stack.
+-
+| DS    | Access | Search | Insert | Delete |
+| ----- | ------ | ------ | ------ | ------ |
+| Stack |   n    |    n   |   1    |    1   |
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Solution:
+#### Basic:
+```js
+function Stack() { 
+    var collection = [];
+    this.print = function() {
+        console.log(collection);
+    };
+    this.push = function(val){
+        return collection.push(val);
+    }
+    this.pop = function(){
+        return collection.pop();
+    }
+    this.peek = function(){
+        return collection[collection.length-1];
+    }
+    this.isEmpty = function(){
+        return collection.length === 0;
+    }
+    this.clear = function(){
+        collection.length = 0;
+    }
+}
+```
+#### Advanced - ES6 Class syntax:
+```js
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+class Stack {
+    constructor() {
+        this.collection = [];
+    }
+    print(){
+        console.log(this.collection);
+    }
+    push(val){
+        retiurn this.collection.push(val);
+    }
+    pop(){
+        return this.collection.pop();
+    }
+    peek(){
+        return this.collection[this.collection.length-1];
+    }
+    isEmpty(){
+        return this.collection.length === 0;
+    }
+    clear(){
+        return this.collection.length = 0;
+    }
+}
+```
+ ### Resources:
+ 
+- [Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))

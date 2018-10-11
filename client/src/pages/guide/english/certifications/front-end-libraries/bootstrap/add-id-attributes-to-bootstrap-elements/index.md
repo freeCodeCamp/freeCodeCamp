@@ -3,8 +3,50 @@ title: Add id Attributes to Bootstrap Elements
 ---
 ## Add id Attributes to Bootstrap Elements
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/add-id-attributes-to-bootstrap-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The last challenge had you adding a class to your button elements, this time you have to add id(s) to the div(s) which have the well class.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint 1
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+An id is declared as follows:
+
+```html
+<element id="id(s)List"></element>
+```
+
+### Hint 2
+
+Edit the div tags which have the well class
+
+### Hint 3
+
+Use different id(s) for both wells.
+
+### Hint 4
+
+Give the well on the left the id of ``` left-well ``` and the well on the right the id of ``` right-well ```.
+
+### Solution
+
+Since you have to add id(s) to both the wells and have both with a unique id, the following is the solution:
+
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well" id="left-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well" id="right-well">
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+        <button class="btn btn-default target"></button>
+      </div>
+    </div>
+  </div>
+</div>
+```

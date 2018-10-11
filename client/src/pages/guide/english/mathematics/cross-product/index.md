@@ -3,13 +3,29 @@ title: Cross Product
 ---
 ## Cross Product
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/cross-product/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In set theory, a cross product of two sets is a binary operation performed on sets, which outputs a result set.
+It is denoted by the symbol X. Sometimes it is also called as Cartesian Product after mathematician Rene Descartes.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+<pre><code>
+A X B = {(a, b) | a &isin; A and b &isin; B} 
+</code></pre>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Examples
+```
+let us have,
+  set A = {a, b}
+ & set B = {1, 2}
+ then A X B = {(a, 1), (a, 2),
+               (b, 1), (b, 2)}
+```
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+### Use
+  It is used to generate all possible combinations after combining two tables in a database.
+
+### References
+[Wikipedia Article](https://en.wikipedia.org/wiki/Cartesian_product)
+
+[Wofram Alpha](https://www.wolframalpha.com/input/?i=Cartesian+product&lk=1&a=ClashPrefs_*MathWorld.CartesianProduct-)
 
 

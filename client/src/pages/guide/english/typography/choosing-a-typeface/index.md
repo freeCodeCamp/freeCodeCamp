@@ -7,7 +7,7 @@ Form follows function: work from general principles, don't choose typefaces at r
 
 ### When You Can't Choose
 
-When choosing a different typeface is out of the question, you can often still add visual spice to a project by tweaking font sizes, weights, and styles.
+When choosing a different typeface is out of the question, you can often still add visual spice to a project by tweaking font sizes, weights, and styles. Furthermore, it is always better to try hit-and-miss strategy, trying a few different fonts before you give up on choosing another typeface. This way, maybe you won't get your desired typeface but you'll have an idea of various other typefaces you could then use in another cases.
 
 ### When You Can
 
@@ -44,6 +44,7 @@ In the end, guidelines can only take you so far. Creativity and surprise are imp
 #### More Information:
 
 [20 Perfect Type Pairings](http://www.creativebloq.com/typography/20-perfect-type-pairings-3132120)
+[Choosing the Right Font - A concise article for reference](https://webdesign.tutsplus.com/articles/choosing-the-right-font-a-practical-guide-to-typography-on-the-web--webdesign-15?_ga=2.210603089.55465761.1538586153-769794395.1538586153)
 
 #### More Information:
 * [Smashing Magazine article - How to choose a typeface](https://www.smashingmagazine.com/2011/03/how-to-choose-a-typeface/)

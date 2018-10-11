@@ -57,3 +57,6 @@ However if we attach `onclick` to links (HTML's `a` tag) we might want prevent d
 In the above example we prevented default behavior of `a` element (opening link) using `event.preventDefault()` inside our `onclick` callback function.
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick' target='_blank' rel='nofollow'>MDN</a>
+
+#### Other Resources
+<a href='https://api.jquery.com/on/' target='_blank' rel='nofollow'>jQuery .on() Event Handler Attachment</a>

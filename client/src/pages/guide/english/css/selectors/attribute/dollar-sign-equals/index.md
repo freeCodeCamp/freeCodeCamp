@@ -3,13 +3,16 @@ title: Dollar Sign Equals
 ---
 ## Dollar Sign Equals
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/selectors/attribute/dollar-sign-equals/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Dollar sign CSS attribute selector or $ is used for selecting attributes that end with specific value.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+#### Example
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+If you want to search all anchor links of file type .pdf and make them red, you can do it like this:
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+```css
+a[href$=".pdf"] {
+   color: red;
+}
+```
 
 

@@ -3,8 +3,37 @@ title: Add Elements within Your Bootstrap Wells
 ---
 ## Add Elements within Your Bootstrap Wells
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/add-elements-within-your-bootstrap-wells/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In the last challenge, you had created a div with the well class, this challenge now requires you to add 3 button elements in each of the wells.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+A button is declared as follows:
+```html
+<button></button>
+```
+
+### Solution
+
+Since we have to declare 3 button in each well, we would do the following:
+
+```html
+<div class="container-fluid">
+  <h3 class="text-primary text-center">jQuery Playground</h3>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="well">
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="well">
+        <button></button>
+        <button></button>
+        <button></button>
+      </div>
+    </div>
+  </div>
+</div>
+```

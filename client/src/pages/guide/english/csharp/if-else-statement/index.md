@@ -8,6 +8,17 @@ The If-Else statement executes a block of code depending if your precondition is
 
 ## Example
 ```
+
+if(boolean expression)
+{
+// execute this code block if expression evalutes to true
+}
+else
+{
+// always execute this code block when above if expression is false
+}
+
+
 int Price = 30;
 
 If (Price = 30)

@@ -51,3 +51,31 @@ public class Example {
   }
 }
 ```
+
+The syntax to create your own Generic class would be as follows.
+
+```java
+import java.util.ArrayList;
+
+public class Example <T> {
+  private ArrayList<T> classNames;
+
+  public Example() {
+    classNames = new ArrayList<T>();
+  }
+  
+  public void addName(T name) {
+    classNames.add(name);
+  }
+  
+  public T getNameAtIndex(int index) {
+    return classNames.get(index);
+  }
+}
+```
+
+Note that inside the angular brackets when naming the class, you can ensure that the Generic type is something that 
+you want. For example, if you wanted to make sure the type can be read as a form of String, you would go `<T extends String>`.
+
+Note that the letter `T` is a placeholder, you could make that anything you like, as long as you use the same one 
+throughout the class.

@@ -3,8 +3,15 @@ title: Target Elements by Class Using jQuery
 ---
 ## Target Elements by Class Using jQuery
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/jquery/target-elements-by-class-using-jquery/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+- You can find elements with the jQuery class selector. // $(.className)
+- In this example, It allows you to select elements with the class ".well" 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution
+```javascript
+<script>
+  $(document).ready(function() {
+    $(".well").addClass("animated bounce");
+    $(".well").addClass("shake");
+  });
+</script>
+```

@@ -35,6 +35,6 @@ Read on more information on XSS and the steps you can take to protect against is
 
 <a href='https://www.owasp.org/index.php/Cross-site_Scripting_(XSS' target='_blank' rel='nofollow'>Cross-site Scripting (XSS)</a>)
 
-<a href='https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting' target='_blank' rel='nofollow'>XSS (Cross Site Scripting) Prevention Cheat Sheet</a>_Prevention_Cheat_Sheet)
+<a href='https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting' target='_blank' rel='nofollow'>OWASP XSS (Cross Site Scripting) Prevention Cheat Sheet</a>
 
 <a href='https://www.hacksplaining.com/exercises/xss-stored' target='_blank' rel='nofollow'>Hacksplaining XSS Lesson</a>

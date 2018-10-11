@@ -3,13 +3,7 @@ title: Maclaurin Series
 ---
 ## Maclaurin Series
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/maclaurin-series/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The Maclaurin Series is a special case of the Taylor series, centered at 0.  It is a power series that enables one to calculate the approximation of a function f(x) for input values close to zero.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+<a href='http://mathworld.wolfram.com/MaclaurinSeries.html' target='_blank' rel='nofollow'>Maclaurin Series reference</a>.
 

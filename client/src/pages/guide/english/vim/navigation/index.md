@@ -36,6 +36,12 @@ e   moves to the end of the current word
 
 0   moves to the beginning of the current line
 $   moves to the end of the current line
+:n  moves to line n (ex. :23 moves to line 23) can also use nG
+
+ZZ  moves to the center of the line your on
+H   moves to the top of the screen
+M   moves to the middle of the screen
+L   moves to the bottom of the screen
 
 gg  moves to the first line in the file
 G   moves to the last line in the file

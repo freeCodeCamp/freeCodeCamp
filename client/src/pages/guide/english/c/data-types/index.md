@@ -50,10 +50,10 @@ In general, you should pick the minimum for your task. If you know you'll be cou
 
 We can use the sizeof() operator to check the size of a variable. See the following C program for the usage of the various data types:
 
+```c
 #include <stdio.h>
 
 int main()
-
 {
     int a = 1;
     
@@ -77,18 +77,17 @@ int main()
     //can use sizeof(c) above as well
  
     printf("Bye! See you soon. :)\n");
-     return 0;
+    return 0;
 }
-    
+```
+
 ## Output:
 
-Hello World!
-Hello! I am a character. My value is G and my size is 1 byte.
-Hello! I am an integer. My value is 1 and my size is 4  bytes.
-Hello! I am a double floating point variable. My value is 3.140000 and my size i
-s 8 bytes.
+Hello World!  
+Hello! I am a character. My value is G and my size is 1 byte.  
+Hello! I am an integer. My value is 1 and my size is 4  bytes.  
+Hello! I am a double floating point variable. My value is 3.140000 and my size is 8 bytes.  
 Bye! See you soon. :)
-
 
 ## The Void type
 The void type specifies that no value is available. It is used in three kinds of situations:

@@ -4,33 +4,35 @@ title: Text
 
 ## Text
 
-Several properties are provided by CSS to change the look and feelof the text.Various text properties are explained below.
+Several properties are provided by CSS to change the look and feel of the text. Various text properties are explained below.
 
 #### Text Color
 
 ``` html
 <html>
   <body>
-    <p>This is an example of css text propertiy.</p>
+    <p>This is an example of CSS text property.</p>
   </body>
 </html>
 ```
 ``` css
-p{
+p {
     color:red;
  }
 ```
-In the above example, the text `color` of `<p>` element is changed to red. You can also specify the color as RGB values, HLS values, and hex codes (For more information about colors, click <a href =' guides/src/pages/css/colors/index.md ' target='_blank'>here<a>).
+
+In the above example, the text `color` of `<p>` element is changed to red. You can also specify the color as RGB values, HLS values, and hex codes (For more information about colors, click [here](https://guide.freecodecamp.org/css/colors)).
   
 #### Text Alignment
 
-`text-align` property is used to set horizontal alignment of text.It can tak values `left`,`right`,`center`,and `justify`.
+`text-align` property is used to set horizontal alignment of text. It can take values `left`,`right`,`center`,and `justify`.
 ``` css
-p{
-    text-align:center;
+p {
+    text-align: center;
  }
 ```
-Here the text is alligned to the `center`(<a href ="https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align" target="_blank">example<a>).When `text-align` is set to `justify`,each line is stretched so that every line has equal width, and the left and right margins are straight(<a href ="https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align_all" target="_blank">example<a>).
+
+Here the text is aligned to the `center` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align)).When `text-align` is set to `justify`,each line is stretched so that every line has equal width, and the left and right margins are straight ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align_all)).
   
 #### Text Decoration
 
@@ -39,16 +41,18 @@ p {
     text-decoration: underline;
 }
 ```
-The `text-decoration` property is used to set or remove decorations from text.The value `text-decoration: none;` is often used to remove underlines from links.Other `text-decorations` include `overline`,`line-through`,and `underline`(<a href ="https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration" target="_blank">example<a>).
+
+The `text-decoration` property is used to set or remove decorations from text. The value `text-decoration: none;` is often used to remove underlines from links. Other `text-decorations` include `overline`,`line-through`,and `underline` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration)).
   
 #### Text Tranformation
 
 ``` css
 p {
-    text-transform:capitiize;
+    text-transform: capitalize;
 }
 ```
-The `text-transform` property is used to convert the entire text to `uppercase`,`lowercase` or to `capitilize` each word(<a href ="https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform" target="_blank">example<a>).
+
+The `text-transform` property is used to convert the entire text to `uppercase`,`lowercase` or to `capitilize` each word([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform)).
 
 #### Letter Spacing
 

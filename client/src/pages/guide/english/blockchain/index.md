@@ -7,9 +7,9 @@ title: Blockchain
 >
 > --Bettina Warburg<sup>1</sup>
 
-Blockchain is often associated with Bitcoin and other cryptocurrencies, but they are not the same thing. Bitcoin is the first to implement the concept of the Blockchain. The structure of a blockchain, a growing list of records, can be applied to many other fields such as digital identity, supply chain and even [democracy](https://www.democracy.earth/).
+Blockchain is often associated with Bitcoin and other cryptocurrencies, but they are not the same thing. Bitcoin was the first to implement the concept of the Blockchain. The structure of a blockchain, a growing list of records, can be applied to many other fields such as digital identity, supply chain and even [democracy](https://www.democracy.earth/).
 
-Even though blockchain can be applied to a big range of problems, is not the solution to everything. This technology is usually used to solve problems where the parts don't trust each other.
+Even though blockchain can be applied to a big range of problems, it is not the solution to everything. This technology is usually used to solve problems where the parts don't trust each other.
 
 A third party is usually needed to validate trust relationships. In the most common example, which is the banking system, a trusted authority is needed, such as a bank, to intermediate transactions, manage accounts, verify balances, and validate transfers. Blockchain then, comes in this case to replace the regulatory authority. In the case of cryptocurrencies, it replaces the figure of the bank, doing all the validations and guaranteeing the security and veracity in the transactions.
 
@@ -32,9 +32,10 @@ As of 2016, blockchain 2.0 implementations continue to require an off-chain orac
 
 ##### More information
 
-[WTF is The Blockchain?](https://hackernoon.com/wtf-is-the-blockchain-1da89ba19348)       
-[Blockchain: the revolution we’re not ready for](https://medium.freecodecamp.org/blockchain-is-our-first-22nd-century-technology-d4ad45fca2ce)         
-[How the blockchain is changing money and business | Don Tapscott (YouTube video)](https://www.youtube.com/watch?v=Pl8OlkkwRpc)
-[Introduction to Bitcoin, Ethereum and Smart Contracts](https://github.com/WizardOfAus/WizardsEthereumWorkshop)
-
+* [WTF is The Blockchain?](https://hackernoon.com/wtf-is-the-blockchain-1da89ba19348)    
+* [Blockchain: the revolution we’re not ready for](https://medium.freecodecamp.org/blockchain-is-our-first-22nd-century-technology-d4ad45fca2ce)
+* [How the blockchain is changing money and business | Don Tapscott (YouTube video)](https://www.youtube.com/watch?v=Pl8OlkkwRpc)
+* [Introduction to Bitcoin, Ethereum and Smart Contracts](https://github.com/WizardOfAus/WizardsEthereumWorkshop)
+* [Blockchain academic papers](https://github.com/decrypto-org/blockchain-papers)
+* [Blockchain Resources](https://github.com/BlockchainDevs/CryptocurrencyAwesome/blob/master/README.md)
 

@@ -10,3 +10,7 @@ The Java throw keyword is used to explicitly throw an exception.You can throw ei
 throw new ArithmeticException("/ by zero not permitted");
 ```
 
+##### More resources
+
+[Geeks for Geeks](https://www.geeksforgeeks.org/throw-throws-java/)
+

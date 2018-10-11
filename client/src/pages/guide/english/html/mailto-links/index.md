@@ -1,13 +1,13 @@
 ---
 title: Mailto Links
 ---
+
 ## Mailto Links
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+A mailto link is a kind of hyperlink (`<a href=""></a>`) with special parameters that lets you specify additional recipients, a subject line, and/or a body text.
 
-A mailto link is a kind of hyperlink (<a href=""></a>), with special parameters that lets you specify additional recipients, a subject line, and/or a body text.
+### The basic syntax with a recipient is:
 
-### The basic syntax with a recipient is : 
 ```html
 <a href="mailto:friend@something.com">Some text</a>
 ```
@@ -24,7 +24,7 @@ Similarly, you can add a specific message in the body portion of the email:
 Again, spaces have to be replaced by `%20` or `+`.
 After the subject paramater, any additional parameter must be preceded by `&`
 
-Example : Say you want users to send an email to their friends about their progress at Free Code Camp:
+Example: Say you want users to send an email to their friends about their progress at Free Code Camp:
 
 Address: empty
 
@@ -49,7 +49,5 @@ Additional parameters must be preceded by `&`.
 ```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-<a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks' target='_blank' rel='nofollow'>Mailto links on MDN web docs</a>
 
-
+[MDN - E-mail links](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#E-mail_links)

@@ -46,6 +46,20 @@ You can print out several integers in the order given after the comma.
 
 Note that when you try to store a decimal value in an `int`, you will only get the whole part of it, because they will be truncated.
 
+we can also write the program in the manner below:
+```
+#include <stdio.h>
+int main(void){
+
+ int a=3,b=4,c; // we can also assign and declare the values in 1 line
+ c = a + b; // Assign the sum of 'a' and 'b' to the variable c
+ 
+ printf("%d %d \n", a, b); 
+ printf("%d \n", c); 
+
+ return 0;
+}
+```
 ### Floats and doubles
 To store decimal values, you can use the `float` and `double` keywords. The difference between them is the precision, `double` has about 13 digits while `float` has about 7, but this differs from CPU to CPU.
  ```C

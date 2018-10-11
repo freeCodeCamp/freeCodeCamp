@@ -1,15 +1,20 @@
 ---
 title: String.prototype.repeat
 ---
+
 ## String.prototype.repeat
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/javascript/standard-objects/string/string-prototype-repeat/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The `.repeat(n)` method gets an integer paramenter and returns the string repeated `n` times.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### For example
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```js
+  let str = "test";
+  console.log(str.repeat(3)); // "testtesttest", test is repeated 3 times
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+  // NB
+  console.log(str.repeat(2.5)); // "testtest", 2.5 is converted to an integer and test is repeated 2 times
+```
 
-
+#### More Information
+[MDN - String.prototype.repeat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat)

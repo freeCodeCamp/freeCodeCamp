@@ -16,6 +16,8 @@ Form contains control elements which are wrapped around ```<form></form>``` tags
 - ```range```
 - ```search```
 - ```date```
+- ```time```
+- ```week```
 - ```color```
 - ```datalist```
 

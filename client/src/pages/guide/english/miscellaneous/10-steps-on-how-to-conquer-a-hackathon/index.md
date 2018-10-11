@@ -6,7 +6,7 @@ title: 10 Steps on How to Conquer a Hackathon
 
 1.  **Apply early.** 
 
-Sometimes, some of the hackathons send out acceptances in batches. If you apply just a few days before the hackathon, you may be left out.
+Sometimes, some of the hackathons send out acceptances in batches. If you apply just a few days before the hackathon, you may be left out. Most hackathons, especially those aimed at undergraduate and graduate students, are free to attend and many even offer travel reimbursements to help subsidize the cost of travel for participants traveling longer distances. However, there may be limited funds for travel reimbursements, so apply early to guarantee you receive one of these grants.
 
 2.  **Don't be afraid.** 
 

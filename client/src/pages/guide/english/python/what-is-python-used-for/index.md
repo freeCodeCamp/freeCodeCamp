@@ -41,6 +41,9 @@ its flexibility and rapid prototyping and availability of libraries.
 #### Telegram Bots Development
 You can use Python and some Python-libraries for developing your own <a href='https://core.telegram.org/bots' target="_blank" rel="nofollow">Telegram Bots</a>
 
+#### Data Gathering by crawling and scraping
+Python could also be used by parse pages source codes and retrieve its data. Using some python modules, such as: Scrapy and also (for some reasons and pages which uses javascript) Selenium, should do the trick!
+
 #### More Information:
 Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofollow'>link</a> to a section of the official Python website describing its various applications.
 
@@ -61,6 +64,14 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 * Data analysis
 * Scraping data from websites
 * Image Processing
+## Why python has got such a wide range of usage?
+* Python  has got many packages to work with, some ranging for aerospace research to mathematics. 
+*Secondly for choosing to be a part of the open source community.
+  Yes! Python is Open-source. 
+  * For it's simple and elegant syntax.
+  *There are many built-in functions because of which python codes are small in size than compared with other codes which       are same in context but written in different language.
+  * Python also supports Object-Oriented programming fashion.
+  Thus these things add on for the popularity of Python in various communities.
 
 #### Some articles covering the usability of python
 

@@ -28,6 +28,7 @@ Diameter (d) - The length of the line that passes across the circle through the 
 Pi (<span class="texhtml">π</span>) - A mathematical constant which is approximated as 3.14
 
 #### Formula
+Area = π × r2 
 
 ###### Given radius of the circle
 

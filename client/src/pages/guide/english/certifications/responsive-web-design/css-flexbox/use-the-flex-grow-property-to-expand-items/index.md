@@ -3,8 +3,5 @@ title: Use the flex-grow Property to Expand Items
 ---
 ## Use the flex-grow Property to Expand Items
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-flexbox/use-the-flex-grow-property-to-expand-items/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+`flex-grow` works similarly to `flex-shrink`, the higher the number, the more it grows.
+The `#box-2` box should be wider in this excercise.

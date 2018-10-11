@@ -140,12 +140,12 @@ There are also many functions (forEach) and entire libraries (lodash.js) that ar
 Closures have many special applications that are useful when creating large javascript programs.
 
 1. Emulating private variables or encapsulation
-2. Making Assynchronous server side calls
+2. Making Asynchronous server side calls
 3. Creating a block-scoped variable.
 
 <b>Emulating private variables.</b>
 
-Unlike many other languages, Javascript does not have a mechanism which allows you to create encapsulated instance variables within an object. Having public instance variables can cause alot of problems when biulding medium to large programs. However with closures, this problem can be mitigated.
+Unlike many other languages, Javascript does not have a mechanism which allows you to create encapsulated instance variables within an object. Having public instance variables can cause a lot of problems when building medium to large programs. However with closures, this problem can be mitigated.
 
 Much like in the previous example, you can build functions which return object literals with methods that have access to the object's local variables without exposing them. Thus, making them effectively private.
 

@@ -2,10 +2,10 @@
 title: Search Algorithms
 ---
 ## Search Algorithms
-In computer science, a search algorithm is any algorithm which solves the Search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain. Examples of such structures include but are not limited to a Linked List, an Array data structure, or a Search tree. The appropriate search algorithm often depends on the data structure being searched, but also on any a priori knowledge about the data.
+In computer science, a search algorithm is any algorithm which solves the Search problem, namely, to retrieve information stored within some data structure or calculated in the search space of a problem domain. Examples of such structures include Linked Lists, Array data structures, Search trees and many more. The appropriate search algorithm often depends on the data structure being searched but also on prior knowledge about the data.
 <a href='https://en.wikipedia.org/wiki/Search_algorithm' target='_blank' rel='nofollow'>More on wikipedia</a>.
 
-This kind of algorithms is looking at the problem of re-arranging an array of items in asceding order. The two most clasical examples of that is the binary-search and the mergesort algorithm.
+This kind of algorithm looks at the problem of re-arranging an array of items in asceding order. The two most clasical examples of that is the binary search and the merge sort algorithm.
 
 In the following links you can also find more information about:
 * <a href="">Binary</a> Search

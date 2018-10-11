@@ -1,15 +1,50 @@
 ---
 title: Strong Tag
 ---
-## Strong Tag
+# Strong Tag
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/elements/strong-tag/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The HTML < ***strong***> tag is a text emphasis tag which when used, results in, bold display of text, placed within the tags.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Usage 
+```
+<strong> Hello World! </strong>
+```
+The above code results in
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+**Hello World!**
+
+This tag is also commonly referred to as the **strong element** . When it comes to attributes, only the Global Attributes apply to **strong**
+tag ie., there are no specific attributes for <**strong**> tag.
+
+### Browser Support 
+| Name of the Browser | Support |
+|:-------------------:|:-------:|
+|Chrome|Yes|
+|Android|Yes|
+|Firefox|Yes|
+|Internet Explorer|Yes|
+|Opera|Yes|
+|Safari|Yes|
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+[https://www.techonthenet.com/html/elements/strong_tag.php](https://www.techonthenet.com/html/elements/strong_tag.php)<br>
+[https://www.w3schools.com/tags/tag_strong.asp](https://www.w3schools.com/tags/tag_strong.asp)
+=======
+The `<strong>` tag is used to give importance to text in an HTML document. This can be done by wrapping the text you would like to be emphasized in an `<strong>` tag. Most browsers will render text wrapped in an `<strong>` tag as bold.
+
+Note: The `<strong>` tag should not be used to stylistically bold text.
+
+### Example:
+```
+<body>
+  <p>
+    <strong> This </strong> is important.
+  </p>
+</body>
+```
+
+  
+#### More Information:
+- [em tag: w3schools](https://www.w3schools.com/tags/tag_strong.asp)
 
 

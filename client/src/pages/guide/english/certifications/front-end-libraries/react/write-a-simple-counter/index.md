@@ -3,8 +3,64 @@ title: Write a Simple Counter
 ---
 ## Write a Simple Counter
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/write-a-simple-counter/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+#### Hint 1:
+```JSX
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+    // change code below this line
+         // Remember the previous challange. 
+         // Bind "this" for each of these three method (increment(),decrement() and reset()).
+    // change code above this line
+  }
+  // change code below this line
+         // Define these three method here.
+         // Inside these methods, call "setState()" method to update the data of construtor`s state. 
+  // change code above this line
+  render() {
+    return (
+      <div>
+        <button className='inc' onClick={this.increment}>Increment!</button>
+        <button className='dec' onClick={this.decrement}>Decrement!</button>
+        <button className='reset' onClick={this.reset}>Reset</button>
+        <h1>Current Count: {this.state.count}</h1>
+      </div>
+    );
+  }
+};
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution:
+```JSX
+class Counter extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+    // change code below this line
+      this.increment = this.increment.bind(this); 
+      this.decrement = this.decrement.bind(this);
+      this.reset = this.reset.bind(this);
+    // change code above this line
+  }
+  // change code below this line
+    increment(){this.setState({count: this.state.count + 1})}
+    decrement(){this.setState({count: this.state.count - 1})}
+    reset(){this.setState({count: 0})}
+  // change code above this line
+  render() {
+    return (
+      <div>
+        <button className='inc' onClick={this.increment}>Increment!</button>
+        <button className='dec' onClick={this.decrement}>Decrement!</button>
+        <button className='reset' onClick={this.reset}>Reset</button>
+        <h1>Current Count: {this.state.count}</h1>
+      </div>
+    );
+  }
+};
+```

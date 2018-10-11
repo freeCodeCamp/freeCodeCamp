@@ -1,7 +1,3 @@
----
-title: React Router for Beginners
----
-
 # React Router for beginners
 
 # Installation

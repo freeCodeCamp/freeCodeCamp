@@ -63,12 +63,12 @@ while (i <= 5)
 Instead of:
 ```cpp
 for (int i = 1; i <= 5; i++)
-        {
-            if( i == 2)
-            {
-               i = 4;
-            }
-            // Do work
+{
+    if (i == 2)
+    {
+       i = 4;
+    }
+    // Do work
 }
 ```
 
@@ -94,7 +94,7 @@ for (int i = 1; i <= 5; i++)
 Do:
 ```cpp
 for (int i = 1; i <= 5; i++)
-        {
+{
     //CODE
 }
 ```

@@ -3,7 +3,7 @@ title: Pass an Array as Props
 ---
 ## Pass an Array as Props
 
-To pass an array as a prop, first an array must be declared as a prop inside the concerned components:
+To pass an array as a prop, first an array must be declared as a "tasks" prop on each of the components to be rendered:
 
 ```javascript
 const List= (props) => {
@@ -19,16 +19,16 @@ class ToDo extends React.Component {
       <div>
         <h1>To Do Lists</h1>
         <h2>Today</h2>
-        <List tasks={["Walk ", "Cook ", "Bake"]} />
+        <List tasks={["Walk", "Cook", "Bake"]} />
         <h2>Tomorrow</h2>
-        <List tasks={["Study ","Code ","Eat"]}/>
+        <List tasks={["Study", "Code", "Eat"]}/>
       </div>
     );
   }
 };
 ```
 
-Then, the props must be passed inside the List componene
+Then, the props must be handled inside the "List" component:
 
 ```javascript
 const List= (props) => {
@@ -38,6 +38,7 @@ const List= (props) => {
 // ... same as above
 ```
 
-The ```javascript .join(", ") ``` is used to separate diffetent elements of the array and display then with a comma and a space in between.
+The `.join(", ")` method is used to take each element from within the array and join them into a string to be displayed.
 
-We are using the modularity of React in this example to display the tasks passed by two different components to a common componenet which renders the final HTML.
+We are using the modularity of React in this example to display the tasks passed by two different components to a common component which renders the final HTML.
+

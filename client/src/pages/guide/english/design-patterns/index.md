@@ -1,9 +1,9 @@
 ---
-title: Object Oriented Design Patterns
+title: Design Patterns
 ---
-## Object Oriented Design Patterns
+## Design Patterns
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+This is a stub. <a href='https://github.com/freeCodeCamp/guide/blob/master/src/pages/design-patterns/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 

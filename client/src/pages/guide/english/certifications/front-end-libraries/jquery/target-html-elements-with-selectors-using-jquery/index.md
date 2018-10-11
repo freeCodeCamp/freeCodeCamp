@@ -1,10 +1,26 @@
 ---
 title: Target HTML Elements with Selectors Using jQuery
 ---
-## Target HTML Elements with Selectors Using jQuery
+- JQuery selectors allow you to select and manipulate HTML elements.
+- These selectors start with the dollar sign and parentheses: $()
+- You can "find" (or select) HTML elements based on their name, id, classes, types, attributes, values of attributes and much more.
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/jquery/target-html-elements-with-selectors-using-jquery/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## Example
+```javascipt
+//You can select all <p> elements on a page like this  =  $("p")
+  $(document).ready(function(){
+    $("button").click(function(){
+        $("p").hide();
+    });
+});
+```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+## Solution
+```javascript
+<script>
+  $(document).ready(function() {
+      $("button").addClass("animated bounce"); // We are selecting the button elements and adding "animated bounce" class to them.
+  });
+</script>
+```

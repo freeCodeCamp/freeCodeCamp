@@ -3,12 +3,12 @@ title: Basic Commands
 ---
 ## Basic Commands
 
-Here you will find a list of basic commands to start developing iOS and Android apps with React Native. If you don't have it installed yet, is highly recommended that you follow the [official guide](https://facebook.github.io/react-native/docs/getting-started.html).
+Here you will find a list of basic commands to start developing iOS and Android apps using React Native. If you don't have it installed yet, is highly recommended that you follow the [official guide](https://facebook.github.io/react-native/docs/getting-started.html).
 
 
-**Start new project**
+### Starting a new project
 
-You can use **Expo** or `create-react-native-app` to start your new project, but with this method you are in more control of what happend in your projecto and allow to understand more in deep the functionality of React Native.
+There are different ways you can bootstrap a react native application. You can use **Expo** or `create-react-native-app`(which in turns uses Expo-Cli) to start your new project, but with this method you are in more control of what happend in your projecto and can communicate, tweak and write your own modules with native libraries for iOS and Android mobile platform.
 ```
 react-native init [PROJECT-NAME]
 cd [PROJECT-NAME]
@@ -34,7 +34,7 @@ react-native run-ios
 
 **Link dependencies to native projects**
 
-Some Libraries have dependencies that need to be linked in the native code generated for React Native. If something doesn't work after you installed a new library, maybe is because you skip this step.
+Some libraries have dependencies that need to be linked in the native code generated for React Native. If something doesn't work after you installed a new library, maybe is because you skip this step.
 ```
 react-native link [LIBRARY-NAME]
 ```

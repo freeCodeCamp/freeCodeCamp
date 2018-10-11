@@ -8,6 +8,14 @@ The `do while` loop executes a block of code once and until a condition is false
 
 ## Example
 ```
+do
+{
+    //execute code block
+
+
+} while(boolean expression);
+
+
 string input = "";
 do
 {
@@ -25,3 +33,8 @@ Console.WriteLine("Bye!");
 > Type A to continue: A
 > Bye!
 ```
+
+#### More Information:
+
+* [Microsoft C# - do](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/do)
+* [Dot Net Perls - do](https://www.dotnetperls.com/do)

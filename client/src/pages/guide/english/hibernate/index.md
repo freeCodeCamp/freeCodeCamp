@@ -2,12 +2,7 @@
 title: Hibernate
 ---
 ## Hibernate
-
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Hibernate ORM, commonly known as Hibernate is an object-relational mapping tool for Java. It provides a system for mapping object oriented domain models to relational databases. It possesses multiple high-level object handling functions.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+For documentation and downloads, visit [Hibernate's Official Site](https://hibernate.org)

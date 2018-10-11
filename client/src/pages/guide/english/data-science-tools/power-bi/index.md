@@ -14,3 +14,7 @@ Power BI has many features for data ingestion, analysis, and consumption:
  
 ## How it is used for Data Science: 
 While it is not as powerful for complex inference analysis or map reducing, it thrives in presenting data in interactive dashboards for typical business-type data consumers. PowerBI is the bridge between the data scientist and the rest of the business world who want to data for decision making in easy to understand visualizations. By leveraging the Office 365 environment that many consumers are familiar with, the Data Scientist can bring the most complex custom analysis or visualization through the R console for interaction by whomever is needed.
+
+## Lab
+
+<a href="https://github.com/Microsoft/computerscience/blob/master/Labs/Big%20Data%20and%20Analytics/Power%20BI/Power%20BI.md">Using Microsoft Power BI to Explore and Visualize Data</a>

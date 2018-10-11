@@ -12,7 +12,7 @@ At one instance the template might be ready, in another data will have finished 
 
 #### Lifecycle Hooks Explained
 
-Lifecycle hooks are timed methods. They differ in when and why they execute. Change detection triggers these methods. They execute depedning on the conditions of the current cycle. Angular runs change detection constantly on its data. Lifecycle hooks help manage its effects.
+Lifecycle hooks are timed methods. They differ in when and why they execute. Change detection triggers these methods. They execute depending on the conditions of the current cycle. Angular runs change detection constantly on its data. Lifecycle hooks help manage its effects.
 
 An important aspect of these hooks is their order of execution. It never deviates. They execute based off a predictable series of load events produced from a detection cycle. This makes them predictable. Some assets are only available after a certain hook executes. Of course, a hook only execute under certain conditions set in the current change detection cycle.
 

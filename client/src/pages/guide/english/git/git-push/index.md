@@ -14,13 +14,15 @@ git push <repo name> <branch name>
 There are a number of different options you can pass with the command, you can learn more about them in the <a href='https://git-scm.com/docs/git-push#_options_a_id_options_a' target='_blank' rel='nofollow'>Git documentation</a> or run `git push --help`.
 
 ### Push to a Specific Remote Repository and Branch
-In order to push code, you must first clone a repository to your local machine. 
+In order to push code, you must first clone a repository to your local machine.
 ```bash
-# Once a repo is cloned, you'll be working inside of a `master` branch
+# Once a repo is cloned, you'll be working inside of the default branch (the default is `master`)
 git clone https://github.com/<git-user>/<repo-name> && cd <repo-name>
-# make some changes and commit code
+# make changes and stage your files (repeat the `git add` command for each file, or use `git add .` to stage all)
+git add <filename>
+# now commit your code
 git commit -m "added some changes to my repo!"
-# push changes in MASTER branch to github
+# push changes in `master` branch to github
 git push origin master
 ```
 
@@ -48,5 +50,14 @@ in which:
 - `REMOTE-NAME` is the name of the remote repository to which you want to push the changes to
 - `BRANCH-NAME` is the name of the remote branch you want to push your changes to
 
+### Push ignoring Git's pre-push hook
+By default `git push` will trigger the `--verify` toggle.  This means that git will execute any client-side pre-push script that may have been configured.  If the pre-push scripts fails, so will the git push.  (Pre-Push hooks are good for doing things like, checking if commit messages confirm to company standards, run unit tests etc...).  Occasionally you may wish to ignore this default behavior e.g. in the scenario where you wish to push your changes to a feature branch for another contributor to pull, but your work-in-progress changes are breaking unit tests.  To ignore the hook, simply input your push command and add the flag `--no-verify` 
+
+```bash
+git push --no-verify
+```
+
+
 ### More Information:
 - [Git documentation - push](https://git-scm.com/docs/git-push)
+- [Git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks)

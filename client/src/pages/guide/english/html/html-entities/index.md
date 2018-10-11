@@ -61,6 +61,7 @@ This is by no means an exhaustive list but the links below will be able to give 
 |   "   | `&quot;`  | `&#34;`   | double quotation mark |
 |  `>`  |  `&gt;`   | `&#62;`   | Greater-than sign |
 |  `<`  |  `&lt;`   | `&#60;`   | Less-than sign |
+|  `•`  |  `&bull;`   | `&#8226`   | Bullet point |
 
 
 #### More Information:

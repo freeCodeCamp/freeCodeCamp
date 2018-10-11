@@ -11,6 +11,16 @@ function myFunction(a, b) {
   return a * b;
 }
 myFunction(10, 2);           // Function invocation, will return 20 
+
+//optional parameters (es6 only)
+//allow to set optional parameters
+
+function myFunction(a, b = 10) {
+  return a * b; 
+}
+myFunction(1);           // Function invocation, will return 10 
+myFunction(1,5);           // Function invocation, will return 5 
+
 ```
 
 In the example code, a and b are the function's parameters that hold the values 10 and 2, that are the arguments used in the function call.

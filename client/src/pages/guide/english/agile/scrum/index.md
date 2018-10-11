@@ -26,10 +26,19 @@ The practice revolves around
 - Scrum Masters: - Scrum Master's has to strictly adhere to Scrum Guide and make the team understand the need to adhere to Scrum guide when following Scrum. It is a Scrum Master's job to ensure all Scrum ceremonies being conducted on time and participated by all the required people as per the scrum guide. The SM has to ensure that the Daily Scrum is conducted regularly and actively participated by the team.
 
 #### More Information:
-There are several online tools that can be used to do scrum for your team. e.g. <a href='https://www.scrumdo.com/'>Scrum Do</a>, <a href='http://www.asana.com'>Asana</a>, or <a href='http://trello.com'>Trello</a>
-  
-<a href='https://www.scrumalliance.org/why-scrum'> Why Scrum </a> from The Scrum Alliance.
-<a href = 'http://www.scrumguides.org/scrum-guide.html'>Scrum Guide</a> from Scrum.org
 
-<a href='http://agilitrix.com/2016/04/doing-agile-vs-being-agile/'>Doing vs Being Agile</a>
+There are several online tools that can be used to do scrum for your team:
 
+- [Scrum Do](https://www.scrumdo.com/) 
+- [Asana](http://www.asana.com)
+- [Trello](http://trello.com)
+- [Monday](https://monday.com)
+- [Basecamp](https://basecamp.com)
+- [Airtable](https://airtable.com)
+- [SmartSheet](https://www.smartsheet.com)
+
+Here are some more resources:
+
+- [Why Scrum](https://www.scrumalliance.org/why-scrum) from The Scrum Alliance
+- [Scrum Guide](http://www.scrumguides.org/scrum-guide.html) from Scrum.org
+- [Doing vs Being Agile](http://agilitrix.com/2016/04/doing-agile-vs-being-agile/)

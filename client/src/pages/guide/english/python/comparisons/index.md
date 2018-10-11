@@ -26,6 +26,8 @@ Instances of a class cannot be ordered with respect to other instances of the sa
 
 The behavior of the `is` and `is not` operators cannot be customized; also they can be applied to any two objects and never raise an exception.
 
+We can also chain `<` and `>` operators together. For instance, `3 < 4 < 5` will return `True`, but `3 < 4 > 5` will not. We can also chain the equality operator. For instance, `3 == 3 < 5` will return `True` but `3 == 5 < 5` will not.
+
 ### Equality Comparisons - "is" vs "=="
 
 In Python, there are two comparison operators which allow us to check to see if two objects are equal. The `is` operator and the `==` operator. However, there is a key difference between them!
@@ -80,9 +82,3 @@ False # both lists have different reference
 To sum up:
 * An `is` expression outputs `True` if both variables are pointing to the same reference 
 * An `==` expression outputs `True` if both variables contain the same data
-
-
-**TODO**
-
-*   Chained comparisons `w < x < y > z`
-*   Equality comparison `is` vs `==`

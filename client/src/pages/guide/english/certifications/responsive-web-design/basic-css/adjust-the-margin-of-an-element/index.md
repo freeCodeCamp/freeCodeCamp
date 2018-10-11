@@ -3,8 +3,35 @@ title: Adjust the Margin of an Element
 ---
 ## Adjust the Margin of an Element
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/adjust-the-margin-of-an-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Adjusting the `Margin` of an `Element` means to increase or decrease the amount of spacing between the Element's borders and surrounding Elements.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+  • Margins are adjusted with positive and negative integers by units of pixels(`px`).
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+  • Margins can be created from all directions (top, bottom, left, right).
+
+This is an example of how it is written:
+```css
+margin: 20px;
+```
+
+You can easily change or adjust the `Margin` of an `Element` by changing the numerical value:
+
+<b>Before</b>:
+
+margin: `20`px;
+
+<b>After</b>:
+
+margin: `50`px;
+
+You can also create a custom `class` with a `margin` that you will use repetitively. 
+
+```css
+  .style-margin {
+    margin: 20px;
+  }
+```
+
+```html
+<h2 class="style-margin">Example</h2>
+```

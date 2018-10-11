@@ -48,6 +48,11 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
     <td>12 / 3 = 4</td>
   </tr>
   <tr>
+    <td>Note: When two integers are used, the result differs between Python 2 and Python 3.</td> 
+    <td>5 / 2 = 2 in Python 2</td>
+    <td>5 / 2 = 2.5 in Python 3</td>
+  </tr>
+  <tr>
     <td align="center">%</td>
     <td>Performs a Modulus on the operands. <br>Returns the remainder obtained while dividing the left operand by the right operand</td> 
     <td>16 % 3 = 1</td>
@@ -298,6 +303,12 @@ c = 4
 print a is b # prints True
 print a is not b # prints False
 print a is not c # prints True
+
+x = 1
+y = x
+z = y
+print z is 1 # prints True
+print z is x # prints True
 
 str1 = "FreeCodeCamp"
 str2 = "FreeCodeCamp"

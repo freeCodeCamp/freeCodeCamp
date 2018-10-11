@@ -25,7 +25,7 @@ A||B returns True if A or B (or both A and B) is True. Only returns False if bot
 |  t| f | t |
 
 **NOT (!)** </br>
-Negates a truth value (true or false). Ex. if A is true, then !A is false. This is the only logical operator that works on only one input, which makes it a unary operator.
+Returns the opposite value. Ex. if A is true, then !A is false, and if A is false, then !A is true. This is the only logical operator that works on only one input, which makes it a unary operator.
 
 | A | B |NOT(A)| NOT(B)
 |---|---|---|---|

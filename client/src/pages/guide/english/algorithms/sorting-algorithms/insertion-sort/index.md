@@ -149,6 +149,25 @@ public int[] insertionSort(int[] arr)
       return arr;
 ```
 
+### insertion sort in c....
+```C
+void insertionSort(int arr[], int n) 
+{ 
+   int i, key, j; 
+   for (i = 1; i < n; i++) 
+   { 
+       key = arr[i]; 
+       j = i-1;
+       while (j >= 0 && arr[j] > key) 
+       { 
+           arr[j+1] = arr[j]; 
+           j = j-1; 
+       } 
+       arr[j+1] = key; 
+   } 
+} 
+```
+
 ### Properties:
 * Space Complexity: O(1)
 * Time Complexity: O(n), O(n* n), O(n* n) for Best, Average, Worst cases respectively

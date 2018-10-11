@@ -12,6 +12,8 @@ On every page you want to access the session you will need to start (or load) th
 session_start();
 ```
 
+Please note, that when using cookie-based sessions, session_start() must be called before outputing anything to the browser. anything else will result in an error.
+
 ### Accessing And Setting Data In A Session
 The `$_SESSION['key']` variable is a special type of array (using a browser cookie to determine which session to access).
 

@@ -67,9 +67,7 @@ The array becomes : 10,11,17,21,34,44,123,654 which is sorted. This is how our a
 
 An implementation in C:
 ```
-void countsort(int arr[],int n,int place)
-
-{
+void countsort(int arr[],int n,int place){
 
         int i,freq[range]={0};         //range for integers is 10 as digits range from 0-9
 
@@ -83,9 +81,7 @@ void countsort(int arr[],int n,int place)
 
                 freq[i]+=freq[i-1];
 
-        for(i=n-1;i>=0;i--)
-
-        {
+        for(i=n-1;i>=0;i--){
 
                 output[freq[(arr[i]/place)%range]-1]=arr[i];
 
@@ -99,15 +95,11 @@ void countsort(int arr[],int n,int place)
 
 }
 
-void radixsort(ll arr[],int n,int maxx)            //maxx is the maximum element in the array
-
-{
+void radixsort(ll arr[],int n,int maxx){            //maxx is the maximum element in the array
 
         int mul=1;
 
-        while(maxx)
-
-        {
+        while(maxx){
 
                 countsort(arr,n,mul);
 

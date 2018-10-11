@@ -1,6 +1,3 @@
----
-title: W3 CSS Containers
----
 
 ## W3 CSS Containers
 W3.css provides a container class which adds 16 pixels worth of left and right padding to any html element, and 0.01em of
@@ -26,7 +23,7 @@ Would produce the following result.
 Just add a regular stylesheet link to the head of your web page like so:
 ```
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-```
+``` 
 or download the latest css file to your local machine. Here: (https://www.w3schools.com/w3css/4/w3.css)
 
 

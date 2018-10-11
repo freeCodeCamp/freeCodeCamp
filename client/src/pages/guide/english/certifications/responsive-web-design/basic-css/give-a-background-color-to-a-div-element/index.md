@@ -3,8 +3,37 @@ title: Give a Background Color to a div Element
 ---
 ## Give a Background Color to a div Element
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/give-a-background-color-to-a-div-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+You can change the `background` `color` to a `div` Element (or section) by one of two ways.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+<b>The First Method:</b>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Create a `class` in the style brackets.
+```html
+<style>
+ .blue-background {
+    background-color: blue;
+  }
+</style>
+```
+You can then add the `class` to your `div` Element:
+```html
+<div class="blue-background">
+  <p> Example </p>
+</div>
+```
+ 
+<b>The Second Method:</b>
+ 
+Instead of creating a `class` like in the first method, you can create a `div` Element `class` in the style brackets.
+    
+Every `div` Element will have the `class` you created and assigned.
+    
+(This means it is a repeating `class` for every `div` Element that you create.)
+
+```html
+<style>
+  div {
+    background-color: blue;
+  }
+</style>
+```

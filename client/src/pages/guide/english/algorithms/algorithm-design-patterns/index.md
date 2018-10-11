@@ -11,17 +11,17 @@ This patterns are divided in three major categories:
 
 ### Creational patterns
 
-This are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
+These are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
 
 ### Structural patterns 
 
-This are design patterns that ease the design by identifying a simple way to realize relationships between entities.
+These are design patterns that ease the design by identifying a simple way to realize relationships between entities.
 
 ### Behavioral patterns
 
-This are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
+These are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-[Dessign patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
+[Design patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
 

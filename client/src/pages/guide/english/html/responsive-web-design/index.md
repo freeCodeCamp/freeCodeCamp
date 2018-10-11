@@ -12,7 +12,7 @@ In order to create a responsive web page, CSS is commonly used to style your HTM
 3. Using the [Flexbox model](https://guide.freecodecamp.org/css/layout/flexbox)
 4. Using [CSS Grid](https://guide.freecodecamp.org/css/layout/grid-layout)
 
-#### 1. Media queries
+### 1. Media queries
 
 Media queries tell the web browser to ignore or replace properties of the webpage based on specific attributes like screen width or whether the user is printing.
 
@@ -33,7 +33,7 @@ The following example sets `padding-left` and `padding-right` within the class `
 }
 ```
 
-##### 2. CSS Frameworks
+### 2. CSS Frameworks
 
 CSS frameworks like [Bootstrap](https://www.getbootstrap.com/), [Material Design Lite](https://getmdl.io/), and [Foundation](https://foundation.zurb.com/) have pre-built CSS classes that make responsive design coding simpler. These classes operate like standard HTML classes.
 
@@ -47,7 +47,8 @@ The Bootstrap framework divides a row into twelve columns. In the above example,
 
 ![Grid Example](https://www.javatpoint.com/bootstrappages/images/bootstrapgrid.jpg "Basic Grid Example")
 
-#### More Information:
+### More Information:
+<!-- Please add any articles you think might be helpful to read before writing the article -->
 1. <a href='https://medium.freecodecamp.org/css-flexbox-interactive-tutorial-in-8-minutes-including-cheat-sheet-6214e00de3d2' target='_blank' rel='nofollow'>CSS Flexbox Complete tutorial in 8 minutes</a>
 2. [Freecodecamp CSS section](https://guide.freecodecamp.org/css).
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+3. <a href="https://www.youtube.com/watch?v=zBjUEDzK-ow"/>CSS Flexbox tutorial by CodingTutorials360</a>

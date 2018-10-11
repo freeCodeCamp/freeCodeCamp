@@ -3,13 +3,30 @@ title: Type
 ---
 ## Type
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/selectors/general/type/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+<p>Type Selector selects elements by node(tag) name.</p>
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+####Code Syntax</h4>
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```css
+* { 
+    css declarations; 
+}
+```
+
+####Code Example</h4>
+```css
+h1 { 
+    background-color: red;
+}
+```
+selects all h1 element & set background color red.
+
+```css
+div { 
+    width: 100px;
+}
+```
+selects all div element & set element width 100px.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+- <a href='https://www.w3.org/TR/CSS22/selector.html#type-selectors' target='_blank' rel='nofollow'>W3C Working Draft</a>

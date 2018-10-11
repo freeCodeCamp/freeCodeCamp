@@ -19,6 +19,7 @@ In How phase the team shortly discusses every picked Sprint Backlog item with th
 ### Sprint Goal / Closing
 The team should come up with a shared Sprint Goal for the Sprint to keep the focus in the Sprint time box. At the end of the Sprint Planning the team forecasts that they can achieve the Sprint Goal and complete most likely all Sprint Backlog items. The SM should prevent the team to overestimate by providing useful insights or statistics. 
 
-
 #### More Information:
 [Scrum Guide: Sprint Planning](http://www.scrumguides.org/scrum-guide.html#events-planning)
+[Simple Cheat Sheet to Sprint Planning Meetings](https://www.leadingagile.com/2012/08/simple-cheat-sheet-to-sprint-planning-meeting/)
+[Four Steps for Better Sprint Planning](https://www.atlassian.com/blog/agile/sprint-planning-atlassian)

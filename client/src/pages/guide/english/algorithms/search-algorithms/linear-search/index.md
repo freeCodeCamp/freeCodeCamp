@@ -37,6 +37,8 @@ But in the worst case, you would have to look at each and every item before you 
 
 The complexity therefore of the linear search is: O(n).
 
+If the element to be searched presides on the the first memory block then the complexity would be: O(1).
+
 The code for a linear search function in JavaScript is shown below. This function returns the position of the item we are looking for in the array. If the item is not present in the array, the function would return null.
 
 ### Example in Javascript
@@ -70,6 +72,28 @@ def linear_search(target, array)
   return nil
 end
 ```
+### Example in C++
+
+```c++
+int linear_search(int arr[],int n,int num)
+{
+	for(int i=0;i<n;i++){
+		if(arr[i]==num)
+			return i;
+   }
+   // Item not found in the array
+   return -1; 
+}
+```
+
+### Example in Python
+```python
+def linear_search(array, num):
+	for i in range(len(array)):
+		if (array[i]==num):
+			return i
+	return -1
+```
 
 ## Global Linear Search
 
@@ -102,6 +126,10 @@ def global_linear_search(target, array)
   end
 end
 ```
+
+## Why linear search is not efficient
+
+There is no doubt that linear search is simple but because it compares each element one by one, it is time consuming and hence not much efficient. If we have to find a number from say, 1000000 numbers and number is at the last location, linear search technique would become quite tedious. So, also learn about bubble sort, quick sort etc.
 
 #### Relevant Video:
 
