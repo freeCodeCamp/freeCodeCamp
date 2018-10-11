@@ -71,11 +71,13 @@ If you can't find a stub about the topic you'd like to write about, you can open
 
 ### Create, Update and Fix Bugs in our coding challenges
 
-**[TODO]**
+All our Coding challenges are are curated by the community, bringing in expert knowledge from volunteers like you.
+
+However, these need to be constantly refined, for quality. For example, you may want to update instructions to improve their [verbiage](https://en.oxforddictionaries.com/definition/verbiage). You can update the user stories to explain the concept better and even remove redundant ones. You may want to refactor tests which do not pass with valid code for the user stories.
 
 **If you would like work on these, follow along these guidelines:**
 
-### [How to work on Coding Challenges.](/docs/how-to-work-on-coding-challenges.md)
+#### [How to work on Coding Challenges.](/docs/how-to-work-on-coding-challenges.md)
 
 ### Translate guide articles and coding challenges
 
@@ -91,7 +93,7 @@ Most of these versions are machine translated. We would love your help in improv
 
 **If you would like work on these, follow along these guidelines:**
 
-**[TODO]** We are in the process of updating docs for translation. Follow [`#18313`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18313) for the progress.
+**[TODO]** We are in the process of updating docs for the translation workflow. Follow [`#18313`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18313) for the progress.
 
 ### Help us fix bugs in freeCodeCamp.org's learning platform
 
