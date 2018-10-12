@@ -41,10 +41,10 @@ Next, you can go to [using MailHog](#using-mailhog).
 
 First install [Go](https://golang.org).
 
-For Debian-based systems like Ubuntu and Linux Mint, run:
+For Debian-based systems like Ubuntu and Linux Mint,Ubuntu Mate run:
 
 ```bash
-sudo apt-get install golang
+sudo apt install golang
 ```
 
 For CentOS, Fedora, Red Hat Linux, and other RPM-based systems, run:
