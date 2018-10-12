@@ -19,3 +19,5 @@ title: Algorithms in JavaScript books
 - ISBN-13: 978-1449364939
  
 Please feel free to add more that you have found useful!
+
+Mychanges
