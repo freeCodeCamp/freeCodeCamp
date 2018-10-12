@@ -15,9 +15,9 @@ type *var-name;
 
 int main(void){
     double my_double_variable = 10.1;
-    double *my_pointer;
+    double *my_pointer;              //creates a new pointer of double data type which will store the address of a double data type
 
-    my_pointer = &my_double_variable;
+    my_pointer = &my_double_variable;  // here the pointer my_pointer stores the address of my_double_variable
 
     printf("value of my_double_variable: %f\n", my_double_variable);
 
