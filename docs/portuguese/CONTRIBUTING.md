@@ -49,7 +49,7 @@ Você pode nos ajudar:
 
 - [🌐 Traduza artigos de guia e desafios de código.](#traduza-artigos-de-guia-e-desafios-de-código)
 
-- [🛠 Nos ajude a corrijir <i>bugs</i> na plataforma de aprendizado da freeCodeCamp.org.](#nos-ajude-a-corrijir-bugs-na-plataforma-de-aprendizado-da-freecodecamporg)
+- [🛠 Nos ajude a corrigir <i>bugs</i> na plataforma de aprendizado da freeCodeCamp.org.](#nos-ajude-a-corrigir-bugs-na-plataforma-de-aprendizado-da-freecodecamporg)
 
 ### Pesquise, Escreva e Atualize nossos artigos de guia
 
@@ -96,7 +96,7 @@ A maioria dessas versões são traduções de máquina. Nós iríamos amar sua a
 
 **[TODO]** Nós estamos no processo de atualizar os documentos para o fluxo de tradução. Siga [`#18313`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18313) para acompanhar o progresso.
 
-### Nos ajude a corrijir <i>bugs</i> na plataforma de aprendizado da freeCodeCamp.org
+### Nos ajude a corrigir <i>bugs</i> na plataforma de aprendizado da freeCodeCamp.org
 
 Nossa plataforma de aprendizado roda em uma moderna <i>stack</i> de Javascript. Ela contém vários componentes, ferramentas e bibliotecas, incluindo, mas não limitada a, Node.js, MongoDB, LoopBack, OAuth 2.0, React, Gatsby, Webpack, entre outras.
 
