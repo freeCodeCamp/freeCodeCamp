@@ -27,41 +27,95 @@ You can also use bootstrap buttons with the `<a>` and `<input>` elements as show
 #### Bootstrap Button Class List:
 This is a list of the CSS classes that bootstrap provides for buttons.
 
-`.btn` This is bootstrap's basic button.
+Default
 
-<button type="button" class="btn">Basic</button>
+(Color: Light Grey, Text: Black
 
-`.btn-default` This is bootstrap's default button.
+`.btn`
 
-<button type="button" class="btn btn-default">Default</button>
+`<button type="button" class="btn">Default</button>`
 
-`.btn-primary` This is bootstrap's primary button.
 
-<button type="button" class="btn btn-primary">Primary</button>
+Primary
 
-`.btn-success` This is bootstrap's success button.
+(Color: Blue, Text: White)
 
-<button type="button" class="btn btn-success">Success</button>
+`.btn-primary`
 
-`.btn-info` This is bootstrap's info button.
+`<button type="button" class="btn btn-primary">Primary</button>`
 
-<button type="button" class="btn btn-info">Info</button>
 
-`.btn-warning` This is bootstrap's warning button.
+Sedondary
 
-<button type="button" class="btn btn-warning">Warning</button>
+(Color: Grey, Text: White)
 
-`.btn-danger` This is bootstrap's danger button.
+`.btn-secondary`
 
-<button type="button" class="btn btn-danger">Danger</button>
+`<button type="button" class="btn btn-secondary">Secondary</button>`
 
-`.btn-link` This is bootstrap's link button.
 
-<button type="button" class="btn btn-link">Link</button>
+Success
 
-`.btn-light` This is bootstrap's light button.
+(Color: Green, Text: White)
 
-<button type="button" class="btn btn-light">Light</button>
+`.btn-success`
+
+`<button type="button" class="btn btn-success">Success</button>`
+
+
+Danger
+
+(Color: Red, Text: White)
+
+`.btn-danger`
+
+`<button type="button" class="btn btn-danger">Danger</button>`
+
+
+Warning
+
+(Color: Yellow, Text: Dark Grey)
+
+`.btn-warning`
+
+`<button type="button" class="btn btn-warning">Warning</button>`
+
+
+Info
+
+(Color: Blue/Green, Text: White)
+
+`.btn-info`
+
+`<button type="button" class="btn btn-info">Info</button>`
+
+
+Light
+
+(Color: Off White, Text: Dark Grey)
+
+`.btn-light`
+
+`<button type="button" class="btn btn-light">Light</button>`
+
+
+Dark
+
+(Color: Dark Grey, Text: White)
+
+`.btn-dark`
+
+`<button type="button" class="btn btn-dark">Dark</button>`
+
+
+Link
+
+(Color: Off White, Text: Blue)
+
+`.btn-link`
+
+`<button type="button" class="btn btn-link">Link</button>`
+
 
 #### Bootstrap Button Sizes:
 This is a list of the CSS classes for different size of the buttons.
