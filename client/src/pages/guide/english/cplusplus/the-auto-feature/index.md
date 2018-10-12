@@ -31,6 +31,7 @@ auto last_employee = employees.back();
 ```
 
 Once the compiler determines the type on the right side of the `=` it replaces `auto` with that type.
+However,it should be noted that it is mandatory to intialize the variable marked as auto while declaring so that the compiler can know the type of that variable.
 
 In modern versions of C++ (since C++14), `auto` can also be used in a function declaration as the return type. The compiler will then infer the return type from the return statement inside of the function. Following the example with employees:
 
