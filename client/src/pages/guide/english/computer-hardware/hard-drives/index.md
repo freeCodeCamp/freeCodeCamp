@@ -26,6 +26,8 @@ Computers store data and files on hard drives for later use. Because hard drives
 
 Data stored in RAM is said to be fleeting whereas data written out to a hard drive is persistent. Meaning if the power suddenly goes out, any data that was in RAM is lost and will not be there after power is restored and the computer is booted back up. However data that was written to the hard drive will be there when power is restored. For this reason, modern operating systems and applications will periodically write session and application related data that's currently in RAM out to the hard drive. This way if the power goes out, only 10 minutes of data entered in a newly created spreadsheet that was being worked on for 3 hours preceding the power outage and not yet saved to the hard drive. These files are usually denoted with a tilde~ and can be found in a temporary or temp directory or possibly located in a 'blind directory' whose contents are referred to as hidden files.
 
+Intel Optane is a technology that can accelerate an HDD's memory speed. It uses 3D XPoint Memory Media with very low latency which effectively can act as both an extended storage device with a speed much higher than an HDD.It is quite responsive and currently comes in a 16GB or 32GB size.
+
 ## Solid State Drives (SSD)
 Solid State Drives uses integrated circuits to store data. Therefore, an SSD has no moving parts like the HDD. THis makes them less prone to physical shocks, run silently, and have faster read/write times thanks to not needing to locate the data physically.
 
