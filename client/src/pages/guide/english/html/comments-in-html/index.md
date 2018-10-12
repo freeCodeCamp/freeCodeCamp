@@ -9,6 +9,8 @@ It is good practice to add comments to your code, especially when working with a
 
 Comments are started with `<!--` and ended with `-->`, and can span multiple lines. They can contain code or text, and won't appear on the front-end of the website when a user visits a page. You can view comments through the Inspector Console, or by viewing Page Source.
 
+Comments also give other developer easy way to read your code and understand it output, more especially does that are beginner in coding is good to make comment so that i will give easy access to the people that will come across it in future.
+
 ### Example
 ```html
 
