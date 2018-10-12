@@ -5,6 +5,8 @@ title: GPU
 
 GPU stands for Graphics Processing Unit. The majority of computers use these to render videos or play video games.
 
+A graphics processing unit (GPU) is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device. GPUs are used in embedded systems, mobile phones, personal computers, workstations, and game consoles. Modern GPUs are very efficient at manipulating computer graphics and image processing, and their highly parallel structure makes them more efficient than general-purpose CPUs for algorithms where the processing of large blocks of data is done in parallel. In a personal computer, a GPU can be present on a video card, or it can be embedded on the motherboard or—in certain CPUs—on the CPU die.
+
 A GPU is like a CPU but has different strengths and weaknesses. CPUs are very good at running a couple of tasks very quickly. GPUs are much better at running many tasks at the same time, but slower. A typical GPU can have more than 10,000 tasks running, but to run so many tasks at the same time they must share memory and other resources. GPUs usually run very repetitive tasks over and over to save the CPU from wasting time. Some CPUs have built-in GPUs, but having a separate GPU is almost always more powerful.
 
 GPUs can be used for computation as well as video rendering. Common ways to do this include OpenACC, CUDA, OpenCL, and OpenGL. Some applications include GPU implementations to reduce the amount of time the application takes to run.
