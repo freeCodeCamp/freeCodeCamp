@@ -47,6 +47,7 @@ The BuildBox game engine is basically for developing hypercasual games.
 - Source
 - Frostbite
 - Buildbox
+- Godot Engine
 
 
 
@@ -62,3 +63,4 @@ The BuildBox game engine is basically for developing hypercasual games.
 * <a href='https://unity3d.com/pt'>Unity3D Engine</a><br>
 * <a href='https://www.unrealengine.com/en-US/what-is-unreal-engine-4'>Unreal Engine</a>
 * <a href='https://www.buildbox.com/'>BuildBox</a><br>
+* <a href='https://godotengine.org/'>Godot Engine</a><br>
