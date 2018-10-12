@@ -44,3 +44,5 @@ Console.WriteLine($"Female: {(int)Gender.Female}");
 Male: 1
 Female: 2
 ```
+
+## End
