@@ -44,5 +44,43 @@ It is important to not treat a session as permanent storage. They get cleared fr
 ### Security
 Last but not least it's important to use php sessions securely. Read our article on [Session Identifier Acquirement](/php/security/session-identifier-acquirement) and [Session Hijacking](/php/security/session-hijacking) for more information.
 
+
+### Expiring A Session
+In php one need to manually expire a user's session. Here is an example below:
+```
+<?php
+//Start our session.
+session_start();
+
+//Expire the session if user is inactive for 30
+//minutes or more.
+$expireAfter = 30;
+
+//Check to see if our "last action" session
+//variable has been set.
+if(isset($_SESSION['last_action'])){
+    
+    //Figure out how many seconds have passed
+    //since the user was last active.
+    $secondsInactive = time() - $_SESSION['last_action'];
+    
+    //Convert our minutes into seconds.
+    $expireAfterSeconds = $expireAfter * 60;
+    
+    //Check to see if they have been inactive for too long.
+    if($secondsInactive >= $expireAfterSeconds){
+        //User has been inactive for too long.
+        //Kill their session.
+        session_unset();
+        session_destroy();
+    }
+    
+}
+
+//Assign the current timestamp as the user's
+//latest activity
+$_SESSION['last_action'] = time();
+```
+
 #### More Information:
 * <a href="https://secure.php.net/manual/en/book.session.php">php.net session manual</a>
