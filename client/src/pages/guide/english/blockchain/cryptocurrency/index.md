@@ -18,3 +18,5 @@ If you want to earn bitcoins through mining, it can be done through solving math
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
 
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin)
+
+Bitcoin is priceless
