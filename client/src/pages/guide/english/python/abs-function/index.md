@@ -15,7 +15,7 @@ The return value would be a positive number. Even if complex number is passed, i
 ```python
 print(abs(3.4)) # prints 3.4
 print(abs(-6)) # prints 6
-print(abs(3 + 4j)) # prints 5, because |3 + 4j| = 5
+print(abs(3 + 4j)) # prints 5.0, because |3 + 4j| = 5
 ```
 
 <a href='https://repl.it/CL8k/0' target='_blank' rel='nofollow'>🚀 Run Code</a>
