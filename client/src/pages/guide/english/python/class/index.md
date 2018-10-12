@@ -18,6 +18,8 @@ Objects can contain arbitrary amounts and kinds of data.
 As is true for modules, classes partake of the dynamic nature of Python:
 they are created at runtime, and can be modified further after creation.
 
+Python classes are mostly use to store data.
+
 #### Class Definition Syntax :
 
 The simplest form of class definition looks like this:
