@@ -147,15 +147,6 @@ Start by installing the dependencies required for the application to startup.
 npm install
 ```
 
-Next lets, bootstrap the various services, i.e. the api-server, the client UI application, etc. You can [learn more about these services in this guide](#).
-
-By bootstrapping you are tying the links between the services. They are semi-independent. Meaning, in production these services are deployed to their own locations, but while running locally you want them all to be available to you.
-
-```shell
-# Bootstrap all projects inside this repository
-npm run bootstrap
-```
-
 Then you need to add the private environment variables (API Keys):
 
 ```shell
@@ -174,6 +165,15 @@ The keys are not required to be changed, to run the app locally. You can leave t
 `MONGOHQ_URL` is the most important one. Unless you have MongoDB running in a setup different than the defaults, the URL in the `sample.env` should work fine.
 
 You can leave the other keys as they are. Keep in mind if you want to use more services you'll have to get your own API keys for those services and edit those entries accordingly in the `.env` file.
+
+Next lets, bootstrap the various services, i.e. the api-server, the client UI application, etc. You can [learn more about these services in this guide](#).
+
+By bootstrapping you are tying the links between the services. They are semi-independent. Meaning, in production these services are deployed to their own locations, but while running locally you want them all to be available to you.
+
+```shell
+# Bootstrap all projects inside this repository
+npm run bootstrap
+```
 
 ### Start MongoDB
 
