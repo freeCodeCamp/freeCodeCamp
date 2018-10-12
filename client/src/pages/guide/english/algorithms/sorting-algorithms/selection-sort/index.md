@@ -93,3 +93,4 @@ def seletion_sort(arr):
 
 * [Wikipedia](https://en.wikipedia.org/wiki/Selection_sort)
 * [KhanAcademy](https://www.khanacademy.org/computing/computer-science/algorithms#sorting-algorithms)
+* [MyCodeSchool](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
