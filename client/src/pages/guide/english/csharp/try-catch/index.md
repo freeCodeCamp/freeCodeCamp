@@ -98,3 +98,6 @@ finally
     initialValue = 12;
 }
 ```
+Yes, in source code we can have ```Try``` block without ```Catch``` block. But, when you place try block alone will throw a compile time error. ```Try``` block must have either ```Catch``` block or ```Finally``` block which saves us from the compile time error. 
+
+When you follow Solid principles pattern to write code, make sure that your method which has ```Try``` and ```Catch``` block does only one work. I mean when a method handles error try to call another method within it to avoid failing in ```Single Responsibility Principle```
