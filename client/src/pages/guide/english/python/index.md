@@ -12,7 +12,7 @@ To learn more about Python, check out these pages on python.org:
 
 <a href='https://docs.python.org/3/faq/general.html' target='_blank' rel='nofollow'>Python FAQ</a>.
 
-## Python 2 or Python 3
+## Python 2 or Python 3 
 
 *   The two versions are similar, with knowledge of one switching to writing code for the other is easy.
 *   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
