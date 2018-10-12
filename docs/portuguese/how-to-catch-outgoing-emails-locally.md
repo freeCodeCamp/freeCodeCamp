@@ -10,9 +10,9 @@ Alguns do fluxos de email, como atualizar o email de um usuário, necessita de u
 
 Como instalar e rodar MailHog depende do seu sistema operacional:
 
-- [Instalando MailHog no macOS](#installing-mailhog-on-macos)
-- [Instalando MailHog no Windows](#installing-mailhog-on-windows)
-- [Instalando MailHog no Linux](#installing-mailhog-on-linux)
+- [Instalando MailHog no macOS](#instalando-mailhog-no-macos)
+- [Instalando MailHog no Windows](#instalando-mailhog-no-windows)
+- [Instalando MailHog no Linux](#instalando-mailhog-no-linux)
 
 ### Instalando MailHog no macOS
 
@@ -25,7 +25,7 @@ brew services start mailhog
 
 Este comando vai iniciar o serviço mailhog em background.
 
-A seguir, você pode pular para [usando MailHog](#using-mailhog).
+A seguir, você pode pular para [usando MailHog](#usando-o-mailhog).
 
 ### Instalando MailHog no Windows
 
@@ -36,7 +36,7 @@ Quando o download finalizar, clique no arquivo. Você provavelmente vai receber 
 
 Para fechar o MailHog basta fechar o prompt de comando. Para rodar de novo é só clicar no mesmo arquivo executável baixado anteriormente. Não precisa fazer o download novamente.
 
-A seguir, você pode pular para [usando MailHog](#using-mailhog).
+A seguir, você pode pular para [usando MailHog](#usando-o-mailhog).
 
 ### Instalando MailHog no Linux
 
@@ -76,22 +76,22 @@ sudo cp /home/$(whoami)/go/bin/MailHog /usr/local/bin/mailhog
 mailhog
 ```
 
-A seguir, você pode pular para [usando MailHog](#using-mailhog).
+A seguir, você pode pular para [usando MailHog](#usando-o-mailhog).
 
 ## Usando o MailHog
 
 Uma vez que você instalou o MailHog e iniciou o serviço, você precisa abrir seu inbox MailHog no browser. Abra uma nova aba ou janela e entre em [http://localhost:8025](http://localhost:8025).
 Você deve ver agora algo semelhante com a tela abaixo:
 
-![Captura de tela MailHog 1](images/mailhog/1.jpg)
+![Captura de tela MailHog 1](../images/mailhog/1.jpg)
 
 Quando sua instalação do freeCodeCamp enviar um email você irá ver ele aparecer aqui. Como mostra abaixo:
 
-![Captura de tela MailHog 2](images/mailhog/2.jpg)
+![Captura de tela MailHog 2](../images/mailhog/2.jpg)
 
 Abra o email e você deve ver duas abas onde pode ver o conteúdo - texto simples e o fonte. Assegure que você está na aba de texto simples.
 
-![Captura de tela MailHog 3](images/mailhog/3.jpg)
+![Captura de tela MailHog 3](../images/mailhog/3.jpg)
 
 Qualquer link no email deve ser clicável.
 
