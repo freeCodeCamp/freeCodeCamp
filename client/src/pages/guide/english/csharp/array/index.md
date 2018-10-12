@@ -49,3 +49,11 @@ You can store an array directly into another array by using the format below:
 `int [] nameOfArray = new nameOfArray[4] {2,9,56,1280};`
 `int [] nameOfSecondArray = nameOfArray;`
 
+# Advantages
+
+* Can easily be accessed in a random manner.
+* Can easily be manipulated.
+
+# Disadvantages
+
+* The only disadvantage is that the size of an array is fixed. (Hence, a list can be used in case of a dynamic sizing.) 
