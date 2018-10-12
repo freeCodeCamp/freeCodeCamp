@@ -42,3 +42,5 @@ By prioritizing in this way, a common definition of the project can be reached a
 
 [Wikipedia](https://en.wikipedia.org/wiki/MoSCoW_method)
 
+My changes
+
