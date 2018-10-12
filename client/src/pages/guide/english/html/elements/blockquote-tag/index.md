@@ -4,7 +4,7 @@ title: Blockquote Tag
 ## Blockquote Tag
 
 ### Purpose
-The HTML <blockquote> element shows that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation.  
+The HTML `<blockquote>` element shows that the enclosed text is an extended quotation. Usually, this is rendered visually by indentation.  
 
 ### Usage
 Just like the "H" tags send signals to a reader that the informaiton is important, the blockquote alerts a reader that the information they're reading is from another source.  The `<blockquote>` tag can include A URL for the source of the quotation may be given using the cite attribute, while a text representation of the source can be given using the `<cite>` element.
