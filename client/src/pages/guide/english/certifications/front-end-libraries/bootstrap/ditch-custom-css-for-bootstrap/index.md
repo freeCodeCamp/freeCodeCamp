@@ -11,6 +11,8 @@ Check if you have completed all of the required tasks for the challenge.
 
 ### Solution
 
+Change all the code in your document to:
+
 ```html
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <style>
