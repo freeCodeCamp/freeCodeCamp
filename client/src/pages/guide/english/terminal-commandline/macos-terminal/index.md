@@ -68,6 +68,22 @@ Use the following syntax to delete a file
 
 **rm _#PATH_TO_FILE_**
 
+# iTerm2
+
+iTerm2 replaces the legacy terminal in macOSX. Iterm2 brings some new features such as:
+* Split Panes
+* Hotkey Window
+* Search
+* Autocomplete
+* Paste history
+* Configurability
+* and many [more](https://www.iterm2.com/features.html)
+
+### Get started
+Just download the iTerm2 from the official [website](https://www.iterm2.com/downloads.html) and replace it as the primary terminal on your Mac.
+---
+Additional Documentation can be found [here](https://www.iterm2.com/documentation.html).
+
 
 
 
