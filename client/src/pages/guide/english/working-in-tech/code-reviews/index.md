@@ -12,3 +12,5 @@ grow as a developer.
 Is is important to be humble throughout the code review process. Accept your mistakes, 
 and be professional when pointing out improvements or errors in the code of your fellow
 team members.
+
+[A pretty good article about doing code reviews ](https://mtlynch.io/human-code-reviews-1/ "How to Do Code Reviews Like a Human (Part One)")
