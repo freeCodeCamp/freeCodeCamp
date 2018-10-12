@@ -5,7 +5,7 @@ title: C++ Arrays
 ## What are Arrays?  
 An array is a series of elements of the same data type which are stored in contiguous memory locations and can be referenced individually.  
 
-For example, a array containing 5 integer values called numbers is declared like so:  
+For example, an array containing 5 integer values called numbers is declared like so:  
 ```C++
 int numbers [5];
 ```
