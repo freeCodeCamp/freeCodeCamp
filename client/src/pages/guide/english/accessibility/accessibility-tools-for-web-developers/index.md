@@ -1,11 +1,11 @@
 ---
 title: Accessibility Tools for Web Developers
 ---
-# Accessibility Tools for Web Developers
+## Accessibility Tools for Web Developers
 
 There are many tools and online resources that can help you to ensure that your web application meets all of the accessibility requirements.
 
-## General 
+### General 
 
 - **<a href='https://chrome.google.com/webstore/detail/accessibility-developer-t/fpkknkljclfencbdbgkenhalefipecmb?hl=en' target='_blank' rel='nofollow'>Accessibility Developer Tools</a>**
 
@@ -26,7 +26,7 @@ There are many tools and online resources that can help you to ensure that your 
    A GitHub app that checks your pull requests for accessibility issues.
 
 
-## Color Contrast
+### Color Contrast
 
 - **<a href='http://colorsafe.co' target='_blank' rel='nofollow'>Color Safe Palette Generator</a>**
 
