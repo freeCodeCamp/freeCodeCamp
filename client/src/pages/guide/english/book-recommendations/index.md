@@ -119,6 +119,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Machine Learning with Python Cookbook: Practical Solutions from Preprocessing to Deep Learning
+-https://www.amazon.com/Machine-Learning-Python-Cookbook-Preprocessing/dp/1491989386
+-ISBN-13: 978-1491989388
+
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
