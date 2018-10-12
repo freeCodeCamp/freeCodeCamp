@@ -24,3 +24,9 @@ computer;
 voice;
 firewall.
 Network engineers may work internally as part of an organisation's IT support team, or externally as part of an outsourced IT networking consultancy firm working with a number of clients.
+
+
+**VLAN**
+⋅⋅* A Layer 2 partition
+⋅⋅* When a computer connects to a switch, it will become part of the VLAN associated with that switch port.
+⋅⋅* It can communicate with all computers connected to ports on the same VLAN
