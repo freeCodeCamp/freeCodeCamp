@@ -162,6 +162,26 @@ Notice the `!`, which is needed because this function returns 0 if they are the 
 char *strtok(char *str, const char *delim);
 ```
 
+#### Fill the block of Memory: `memset`
+
+`void * memset ( void * ptr, int value, size_t num );`
+
+Sets the first num bytes of the block of memory pointed by ptr to the specified value (interpreted as an unsigned char).
+
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main (){
+
+  char str[] = "Memset is very fast";
+  memset (str,'?',6);
+  puts (str);
+  return 0;
+}
+
+```
+
 # Before you go on...
 ## A Review
 * Arrays are collections of variables.
