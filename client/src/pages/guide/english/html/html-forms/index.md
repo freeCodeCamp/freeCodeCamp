@@ -53,6 +53,8 @@ MORE INFORMATION ON HTML FORMS.
 
 HTML Forms are required when you want to collect some data from the site visitor. For example, during user registration you would like to collect information such as name, email address, credit card, etc.
 
+For example and application for an application form for university admission or job application.
+
 A form will take input from the site visitor and then will post it to a back-end application such as CGI, ASP Script or PHP script etc. The back-end application will perform required processing on the passed data based on defined business logic inside the application.
 
 There are various form elements available like text fields, textarea fields, drop-down menus, radio buttons, checkboxes, etc.
@@ -71,3 +73,4 @@ The form tag can also have an attribute named "target" which specifies where the
 
 The action attribute defines the action to be performed when the form is submitted.
 Normally, the form data is sent to a web page at the Script URL when the user clicks on the submit button. If the action attribute is omitted, the action is set to the current page.
+
