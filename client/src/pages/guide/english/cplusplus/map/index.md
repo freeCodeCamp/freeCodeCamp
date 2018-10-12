@@ -76,4 +76,17 @@ Here you can learn more about map: <a href="http://www.cplusplus.com/reference/m
 
 N.B: All code in example are in C++11 version. You can learn more about C++ version <a href="http://en.cppreference.com/w/cpp/compiler_support" target="_blank">Here</a>
 
+## Clearing the map
+
+It removes all the elements from the map and hence the size of the map is now zero.
+```c++
+mymap.clear();
+```
+Here mymap is the name of the map.This function does not return anything.
+
+##  Comparison with unordered map
+
+1. map should be used when sorted order is required otherwise unordered map can be used.
+2. map is implemented by red black tree whereas unordered map is implemented by use of hash tables.
+
 
