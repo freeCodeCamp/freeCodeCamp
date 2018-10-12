@@ -86,7 +86,7 @@ Challenge solution code.
 
 Creating and Editing Challenges:
 
-1. [Challenge Style Guide](style-guide-for-curriclum-challenges.md) - how to create and format challenges
+1. [Challenge Style Guide](style-guide-for-curriculum-challenges.md) - how to create and format challenges
 
 2. [Challenge types](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - what the numeric challenge type values mean (enum).
 
