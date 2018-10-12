@@ -39,17 +39,17 @@ Increment the index after performing the splice.
 **Solution ahead!**
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
-
-    function frankenSplice(arr1, arr2, n) {
-      // It's alive. It's alive!
-      let localArray = arr2.slice();
-      for (let i = 0; i < arr1.length; i++) {
-        localArray.splice(n, 0, arr1[i]);
-        n++;
-      }
-      return localArray;
-    }
-
+```js
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let localArray = arr2.slice();
+  for (let i = 0; i < arr1.length; i++) {
+    localArray.splice(n, 0, arr1[i]);
+    n++;
+  }
+  return localArray;
+}
+```
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/RedundantGrossGenres' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
@@ -66,19 +66,14 @@ Increment the index after performing the splice.
 
 
 ## 🌻 Intermediate Code Solution:
-   ```
-   function frankenSplice(arr1, arr2, n) {
+```js
+function frankenSplice(arr1, arr2, n) {
   // It's alive. It's alive!
-
-
-let localArr = arr2.slice();
-
-localArr.splice(n, 0, ...arr1);
-
-return localArr;
+  let localArr = arr2.slice();
+  localArr.splice(n, 0, ...arr1);
+  return localArr;
 }
-
-   ```
+```
 ![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/BelovedNegativeMoto' target='_blank' rel='nofollow'>Run Code</a>
 
 * Since our goal is to return the new array with out altering `arr1` or `arr2` we create a `localArr` and add all the items from `arr2` using the `slice()` function
