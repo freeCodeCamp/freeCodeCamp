@@ -1,5 +1,7 @@
 Cómo trabajar en los retos de programación
+
 Modificaciones en GitHub
+
 Cada reto está alojado en su propio archivo. Esto permite poder editar facilmente los retos desde GitHub.
 
 Puedes realizar cambios sin ejecutar nada en tu sistema local.
