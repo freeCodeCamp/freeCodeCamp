@@ -26,3 +26,5 @@ A _broadcast receiver_ is another component without user interface (except an op
 A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
 
 For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation 
+
+Android is Awesome
