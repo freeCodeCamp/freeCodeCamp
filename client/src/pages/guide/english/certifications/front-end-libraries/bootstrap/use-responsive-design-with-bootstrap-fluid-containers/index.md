@@ -22,3 +22,5 @@ Since you have to add all the HTML in the newly created div, the following is th
 ...
 </div>
 ```
+
+##### NOTE: IN the above solution, the ``` ... ``` represents the HTML which was already present.
