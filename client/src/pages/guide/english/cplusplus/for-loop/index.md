@@ -108,7 +108,7 @@ for ( element: container )
 ```
 
 ```
-int[5] array = { 1, 2, 3, 4, 5 }
+int[5] array = { 1, 2, 3, 4, 5 ,6}
 for ( int i: array )
    cout << i << endl;
 }
@@ -119,6 +119,7 @@ Output:
 3
 4
 5
+6
 ```
 
 
