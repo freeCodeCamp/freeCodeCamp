@@ -17,7 +17,7 @@ return_type function_name( parameter list )
 ```
 
 ### Return type:
-A function may return a value. The return_type is the data type of the value the function returns. Some functions perform the desired operations without returning a value. In this case, the return_type is the keyword void.
+A function may return a value. The return_type is the data type of the value the function returns. Some functions perform the desired operations without returning a value. In this case, the return_type is the keyword void, but the return type of main() must always be int.
 
 ### Function name:
 This is the actual name of the function. The function name and the parameter list together constitute the function signature.
