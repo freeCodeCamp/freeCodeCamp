@@ -7,10 +7,19 @@ localeTitle: Añadir columnas con cuadrícula-plantilla-columnas
 ---
 
 ## Description
-<section id="description"> Simplemente crear un elemento de cuadrícula no te lleva muy lejos. También es necesario definir la estructura de la cuadrícula. Para agregar algunas columnas a la cuadrícula, use la propiedad <code>grid-template-columns</code> en un contenedor de cuadrícula como se muestra a continuación: <blockquote> .envase { <br> pantalla: rejilla; <br> rejilla-plantilla-columnas: 50px 50px; <br> } </blockquote> Esto le dará a su cuadrícula dos columnas de 50px de ancho cada una. El número de parámetros dados a la propiedad <code>grid-template-columns</code> indica el número de columnas en la cuadrícula, y el valor de cada parámetro indica el ancho de cada columna. </section>
+<section id="description"> Simplemente crear un elemento de cuadrícula no te lleva muy lejos. También es necesario definir la estructura de la cuadrícula. Para agregar algunas columnas a la cuadrícula, use la propiedad <code>grid-template-columns</code> en un contenedor de cuadrícula como se muestra a continuación: 
+  
+ ```html
+.container { 
+  display: grid; 
+  grid-template-columns: 50px 50px;
+} 
+```
+ 
+Esto le dará a su cuadrícula dos columnas de 50px de ancho cada una. El número de parámetros dados a la propiedad <code>grid-template-columns</code> indica el número de columnas en la cuadrícula, y el valor de cada parámetro indica el ancho de cada columna. </section>
 
 ## Instructions
-<section id="instructions"> Entregue al contenedor de la cuadrícula tres columnas de <code>100px</code> ancho cada una. </section>
+<section id="instructions"> Definir al contenedor de la cuadrícula tres columnas de <code>100px</code> de ancho cada una. </section>
 
 ## Tests
 <section id='tests'>
