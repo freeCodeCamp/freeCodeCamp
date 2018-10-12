@@ -99,7 +99,7 @@ Our community also has:
 - thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
 - A popular [YouTube channel](https://youtube.com/freecodecamp)
-- and a comprehensive [guide to thousands of programming topics](https://www.freecodecamp.org/guide)
+- and a comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
 
