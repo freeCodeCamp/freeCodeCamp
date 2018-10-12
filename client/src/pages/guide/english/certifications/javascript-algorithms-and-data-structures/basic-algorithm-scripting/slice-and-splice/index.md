@@ -50,7 +50,7 @@ Increment the index after performing the splice.
       return localArray;
     }
 
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLjU' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/RedundantGrossGenres' target='_blank' rel='nofollow'>Run Code</a>
 
 ### Code Explanation:
 
