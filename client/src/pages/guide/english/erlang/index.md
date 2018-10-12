@@ -70,13 +70,10 @@ mnesia is a distributed database management system written in Erlang and highly 
 The following are some of the most important and attractive capabilities provided by Mnesia:
 
 * A relational/object hybrid data model.
-* A DBMS query language, Query List Comprehension (QLC) as an add-on library.
 * Persistence. Tables can be coherently kept on disc and in the main memory.
 * Replication. Tables can be replicated at several nodes.
 * Atomic transactions. A series of table manipulation operations can be grouped into a single atomic transaction.
-* Location transparency. Programs can be written without knowledge of the actual data location.
 * Extremely fast real-time data searches.
-* Schema manipulation routines. The DBMS can be reconfigured at runtime without stopping the system.
 
 ### Try it out
 
