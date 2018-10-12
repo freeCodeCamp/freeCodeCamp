@@ -11,31 +11,30 @@
     </tr>
 </table>
 
-# Documentation Quick Reference
+#DocumentationQuick Reference
 
-Hello 👋!
+Hello, hey!
 
-This directory contains all of the documentation on contributing to freeCodeCamp.org
+This directory contains all the documentation for contributing to freeCodeCamp.org
 
-## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
-
+## [If you have already started, please read this first. ](/ CONTRIBUTING.md)
 ---
 
-## Quick references articles
+##Quick reference article
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+1. How to deal with the guide article.
+2. How to deal with coding challenges.
+3. How to set freeCodeCamp locally.
+4. How to capture outgoing emails locally.
 
-## Style guides
+##Style Guide
 
-1. Style guide for creating guide articles.
-2. Style guide for creating coding challenges.
+1. Create a style guide for the guide article.
+2. Create a style guide for the coding challenge.
 
-## Quick commands reference when working locally
+##Quick commands are referenced when working locally
 
-A quick reference to the commands that you will need, when working locally.
+Quickly refer to the commands you need when working locally.
 
 | command | description |
 | ------- | ----------- |
