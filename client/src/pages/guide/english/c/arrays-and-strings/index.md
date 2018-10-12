@@ -161,6 +161,14 @@ Notice the `!`, which is needed because this function returns 0 if they are the 
 ```C
 char *strtok(char *str, const char *delim);
 ```
+#### Locate substring: `strstr`
+
+`const char * strstr ( const char * str1, const char * str2 );
+      char * strstr (       char * str1, const char * str2 );`
+
+Returns a pointer to the first occurrence of str2 in str1, or a null pointer if str2 is not part of str1.
+The matching process does not include the terminating null-characters, but it stops there.
+
 
 # Before you go on...
 ## A Review
