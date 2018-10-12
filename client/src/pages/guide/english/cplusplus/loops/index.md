@@ -20,14 +20,14 @@ cout << 1000 << endl;
 
 ```
 But the problem with this approach is that you have to write the same line again and again. And if suppose you have to print 
-prime numbers from 1 to 1000 then this will be more hectic.
+prime numbers from 1 to 1000 then this will be more hectic so this consumes more and more time as the number is increased.
 Therefore, in order to solve such problems loops are introduced.
 
 There are different types of loop functions:
 ### While and do while loops
 
 While and do while loops allow you to make the loop until a condition finishes.
-The difference between While and Do while is that Do while always executes once.
+The difference between While and Do while is that Do while  executes atleast once but it is not so with While.
 Here you can see an example:
 ``` c++
 while (condition){
