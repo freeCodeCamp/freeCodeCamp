@@ -185,3 +185,11 @@ In subsequent articles, I will touch on a number of more notch topics. A number 
 *   Is there a way for me to write content only screen-readers and other assistive technologies see?
 *   How do I make custom JavaScript components accessible?
 *   What tools are there, in addition to inclusive user testing, that can be used to develop the most robust and accessible experience for the largest group of users?
+
+
+## Color contrast accessibility
+Color contrast is a common web accessibility issue that is often overlooked. People who may have low vision, or may be colorblind, could encounter some difficulty distinguishing text from a background color if the contrast is insufficient. There are nearly three times more individuals with low vision than those with total blindness; and one out of twelve people has some sort of color deficiency. So, it is critical to consider adequate contrast between text and backgrounds.
+
+For Level AA conformance, WCAG 2.0 Success Criterion 1.4.3 recommends that regular text has a minimum contrast ratio of 4.5:1 and that large text (18-point or 14-point bold) has a minimum contrast ratio of 3:1. The ratios have been scientifically calculated to ensure that text can be read by those with moderate low vision and that contrast is sufficient enough for those who have color deficiencies. A common question web designers have when addressing color contrast is what colors to avoid. It is not so much about avoiding colors as much as it is about ensuring that colors used in web design have appropriate contrast.
+
+
