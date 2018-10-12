@@ -21,5 +21,6 @@ title: Chef
 - [Chef TutorialsPoint](https://www.tutorialspoint.com/chef/chef_overview.htm)
 - [Official Documnetation](https://docs.chef.io/chef_overview.html)
 - [Chef Tutorial](http://gettingstartedwithchef.com/)
+- [Chef Training](https://learn.chef.io/#/)
 
     
