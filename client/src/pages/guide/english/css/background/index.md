@@ -149,8 +149,9 @@ background-repeat
 background-attachment
 background-position
 
-You can refer to the following link to W3 schools to know more about background and related stuffs in CSS.
+You can refer to the following link to W3 schools and MDN to know more about background and related stuffs in CSS.
 <a href = "https://www.w3schools.com/css/css_background.asp">Background reference to W3</a>
+and <a href = "https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/background">Background reference to MDN</a>
 
 ### Other Resources
 * <a href='http://cloford.com/resources/colours/500col.htm' target='_blank' rel='nofollow'>List of color values</a>
