@@ -31,3 +31,17 @@ title: Books on Python Programming Language
 - ISBN-10: 1593275900
 
   Please feel free to add more that you have found useful!
+  
+*Programming Python*
+
+- O'Reilly book, covers more advanced programming aspects of Python.
+- [Amazon] (https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
+- ISBN-10: 0596158106
+- ISBN-13: 978-0596158101
+
+*Data Science from Scratch: First Principles with Python* 
+
+- O'Reilly book, covers fundamentals of Python, libraries, and machine learning techniques
+- [Amazon] (https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
+- ISBN-10: 149190142X
+- ISBN-13: 978-1491901427
