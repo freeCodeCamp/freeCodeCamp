@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const MongoClient = require('mongodb').MongoClient;
 const { getChallengesForLang } = require('@freecodecamp/curriculum');
 const { flatten } = require('lodash');
