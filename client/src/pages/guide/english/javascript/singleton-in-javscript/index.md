@@ -56,5 +56,54 @@ console.log(fishNames); //will Print array with "SimpleFish".
 
 Now with this knowledge you can define constants, enums or anything that needs to use multiple in project written here. or something like configurations.
 
+Here's another example of singleton:
+```
+var Person;
+
+(function() {
+  let instance;
+
+  Person = function(fName, lName, job) {
+    // constructor
+    this.fName = fName || 'John';
+    this.lName = lName || 'Doe';
+    this.job = job || 'Software Engineer';
+    
+    if (!instance) {
+      instance = this;
+    }
+
+    this.getFullName = function () {
+      return this.fName + ' ' + this.lName;
+    }
+    
+    this.getJob = function () {
+      return this.job;
+    }
+
+    this.print = function () {
+      console.log(this.getFullName() + ' ' + this.getJob());
+    }
+
+    return instance;
+  }
+})();
+
+//initialize these "guys" but they point to the same object
+var guy1 = new Person();
+var guy2 = new Person();
+
+// proof that they're the same instance
+guy1.print();
+guy2.print();
+console.log(guy1 == guy2); //true
+
+// modify guy2 and see that guy1 has changed as well
+guy2.fName = 'Jane';
+guy2.lName = 'Doo';
+guy2.job = 'Project Manager';
+guy1.print();
+guy2.print();
+```
 
 Hope, This will help you write better codes. Happy Coding :)
