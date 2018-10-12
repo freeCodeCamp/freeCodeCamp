@@ -40,9 +40,9 @@ In this case, for matrix M, M' will denote the transpose of matrix M
 Of course, just seeing this article looks hugely complicated and should really only be understood in the greater contexts of neural networks and machine learning. Please look at the arrached references for a better understanding of the topic as a whole.
 
 #### More Information:
-Lecture 4 CS231n [Introduction to Neural Networks](https://youtu.be/d14TUNcbn1k?t=354)
-Siraj Raval - [Backpropagation in 5 Minutes](https://www.youtube.com/watch?v=q555kfIFUCM)
-[Andrew Ng's ML Course](https://www.coursera.org/learn/machine-learning/)
-[In depth, wiki style article](https://brilliant.org/wiki/backpropagation/)
-[Backprop on Wikipedia](https://en.wikipedia.org/wiki/Backpropagation)
-[A Step by Step Backpropagation Example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
+* [Lecture 4 CS231n Introduction to Neural Networks](https://youtu.be/d14TUNcbn1k?t=354)
+* [Siraj Raval - Backpropagation in 5 Minutes](https://www.youtube.com/watch?v=q555kfIFUCM)
+* [Andrew Ng's ML Course](https://www.coursera.org/learn/machine-learning/)
+* [In depth, wiki style article](https://brilliant.org/wiki/backpropagation/)
+* [Backprop on Wikipedia](https://en.wikipedia.org/wiki/Backpropagation)
+* [A Step by Step Backpropagation Example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
