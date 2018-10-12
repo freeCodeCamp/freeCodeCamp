@@ -73,7 +73,7 @@ Note: To get the result in floating type, one of the operands must also be of fl
 
 #### Comparison (Relational) Operators
 
-A relationalor comparison operator is used to compare two operands to decide a relation between them. It returns a boolean value based on the condition.
+A relational or comparison operator is used to compare two operands to decide a relation between them. It returns a boolean value based on the condition.
 
 <table style="width:100%">
   <tr>
