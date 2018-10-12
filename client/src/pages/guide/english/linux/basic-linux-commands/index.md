@@ -32,8 +32,13 @@ When starting out with linux, there are some basic commands everyone should know
  9. **mv** - move   
 - Use the mv command to move files through the command line. We can also use the mv command to rename a file. For example, if we want to rename the file “text” to “new”, we can use 'mv text new'.
 
- 10. **right-click** - copy and paste  
-- This one is less of a command and more of a how-to, however, it is very useful for doing almost anything in a terminal on linux. To begin, highlight text like normal and then "right-click" on your mouse to copy a selection. You should see the highlighted portion become un-highlighted, this means you copied the selection. Now "right-click" on where you want to paste the selection and you're done. 
+ 10. **cat** - display file's textual contents  
+- Use this command to display text from within a given file on your terminal. Entering `cat myFile.txt` in your terminal will display the contents of the file `myFile.txt` on screen. The `cat` command can be a very handy tool when used with the terminal _pipes_
 
  11. **less** - view file content  
 - Use `less filename.txt` to view contents of a file and navigate through them. By default, less will go through the file page by page.
+
+### Useful Resources for Practice:
+- [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
+- [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
+- [LinuxJourney](https://linuxjourney.com/lesson/the-shell): A collection of beginner-friendly terminal tutorials.
