@@ -1,6 +1,6 @@
-Cómo trabajar en los retos de programación
+# Cómo trabajar en los retos de programación
 
-Modificaciones en GitHub
+### Modificaciones en GitHub
 
 Cada reto está alojado en su propio archivo. Esto permite poder editar facilmente los retos desde GitHub.
 
@@ -10,9 +10,11 @@ Tras localizar el archivo que deseas modificar dentro de GitHub, pulsa en el ico
 
 También puedes clonar el proyecto y editarlo de manera local en tu ordenador. Si necesitas ayuda con esto, lee la guía de contribución.
 
-Plantilla de retos
+### Plantilla de retos
+
 Aquí tienes un ejemplo del aspecto final de un archivo de reto.
 
+````md
 ---
 id: identificador único (alfanumérico, MongoDB _id)
 título: Título del reto
@@ -78,11 +80,14 @@ Código de solución.
 ```
 
 </section>
-Links útiles
+````
+
+### Links útiles
+
 Creando y editando retos:
 
-Guía de estilo de retos - cómo crear y editar retos
+1. [Guía de estilo de retos](style-guide-for-curriculum-challenges.md) - Cómo crear y editar retos
 
-Tipos de retos - qué significa el valor numérico del tipo de reto (enum).
+2. [Tipos de reto](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - Qué significan los valores numéricos del tipo de reto (enum).
 
-Contribuir a FreeCodeCamp - Escribir Tests ES6 para retos - vídeo muestra de Ethan Arrowood contribuyendo a la version antigua del currículum.
+3. [Contribuir a FreeCodeCamp - Escribir tests para retos en ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - Vídeo de [Ethan Arrowood](https://twitter.com/ArrowoodTech) contribuyendo a la versión antigua del currículum
