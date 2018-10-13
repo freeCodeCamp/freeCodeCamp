@@ -61,6 +61,8 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0984782802
 
 ## C-lang
+*C Notes for Professionals book
+-https://books.goalkicker.com/CBook/
 
 *The C Programming Language* by Brian W. Kernighan and Dennis M. Ritchie
 - [Amazon Smile](https://smile.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/)
