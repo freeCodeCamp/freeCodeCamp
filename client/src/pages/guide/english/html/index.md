@@ -45,6 +45,43 @@ h1: The element defines a large heading
 
 p: The element defines a paragraph
 
+## Other HTML Elements examples
+ Header of the HTML document: <head>...</head>. The title is included in the head, for example:
+
+<head>
+  <title>The Title</title>
+</head>
+
+Headings: HTML headings are defined with the <h1> to <h6> tags:
+
+<h1>Heading level 1</h1>
+<h2>Heading level 2</h2>
+<h3>Heading level 3</h3>
+<h4>Heading level 4</h4>
+<h5>Heading level 5</h5>
+<h6>Heading level 6</h6>
+Paragraphs:
+
+<p>Paragraph 1</p> <p>Paragraph 2</p>
+
+Line breaks: <br>. The difference between <br> and <p> is that br breaks a line without altering the semantic structure of the page, whereas p sections the page into paragraphs. Note also that br is an empty element in that, although it may have attributes, it can take no content and it may not have an end tag.
+
+<p>This <br> is a paragraph <br> with <br> line breaks</p>
+This is a link in HTML. To create a link the <a> tag is used. The href attribute holds the URL address of the link.
+
+<a href="https://freecodecamp.org/">A link to FreeCodeCamp!</a>
+Inputs:
+
+There are many possible ways a user can give input/s like:
+
+<input type="text" /> <!-- This is for text input -->
+<input type="file" /> <!-- This is for uploading files -->
+<input type="checkbox" /> <!-- This is for checkboxes -->
+Comments:
+
+<!-- This is a comment -->
+Comments can help in the understanding of the markup and do not display in the webpage.
+
 ### HTML Versions
 
 Since the early days of the web, there have been many versions of HTML
