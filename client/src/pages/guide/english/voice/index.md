@@ -54,6 +54,7 @@ recognition.addEventListener('result', e => {
 recognition.addEventListener('start', () => loader.textContent = 'Listening (enable your microphone)...');
 
 recognition.addEventListener('end', recognition.start);
+
 recognition.start();
 ```
 
@@ -94,6 +95,8 @@ IBM Watson Speech-to-Text uses machine learning to accurately predict speech in 
 [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
 [Alexa API](https://developer.amazon.com/docs/alexa-voice-service/api-overview.html)
 [IBM Watson API](https://www.ibm.com/watson/services/speech-to-text/)
+https://medium.com/@ageitgey/machine-learning-is-fun-part-6-how-to-do-speech-recognition-with-deep-learning-28293c162f7a
+
 
 
 
