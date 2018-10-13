@@ -18,7 +18,7 @@ Bootstrap 4 estuvo en desarrollo durante dos años antes de lanzar algunas versi
 
 *   Movido de Less a Sass;
 *   Se trasladó a Flexbox y se mejoró el sistema de red;
-*   Tarjetas agregadas (reemplazo de pozos, miniaturas y paneles);
+*   Tarjetas agregadas (reemplazo de cajas, miniaturas y paneles);
 *   ¡Y mucho más!
 
 En el momento de escribir este artículo, la última versión de Bootstrap es \[4.1.3\] (http://blog.getbootstrap.com/2018/07/24/bootstrap-4-1-3/ ). Si desea mantenerse al día con cualquier noticia de anuncios, sígalos [aquí](http://blog.getbootstrap.com/) .
