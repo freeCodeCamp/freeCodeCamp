@@ -31,8 +31,8 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     2 - 3      // returns -1
     3 - 2      // returns 1
     false - 5  // interprets false as 0 and returns -5
-    true + 3   // interprets true as 1 and returns 4
-    5 + "foo"  // returns NaN (Not a Number)
+    true - 3   // interprets true as 1 and returns -2
+    5 - "foo"  // returns NaN (Not a Number)
 
 _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--' target='_blank' rel='nofollow'>decrement</a>) operator that is a great shortcut when you're subtracting numbers by 1.
 
@@ -67,7 +67,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     -3 / 0               // returns -Infinity
     false / 5            // interprets false as 0 and returns 0
     true / 2             // interprets true a 1 and returns 0.5
-    5 + "foo"            // returns NaN (Not a Number)
+    5 / "foo"            // returns NaN (Not a Number)
     Infinity / Infinity  // returns NaN
 
 ## Remainder
