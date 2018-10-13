@@ -27,3 +27,4 @@ In stochastic gradient descent you update the the parameter for the cost gradien
 * [A guide to Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com/)
 * [Gradient Descent For Machine Learning](https://machinelearningmastery.com/gradient-descent-for-machine-learning/) 
 * [Difference between Batch Gradient Descent and Stochastic Gradient Descent](https://towardsdatascience.com/difference-between-batch-gradient-descent-and-stochastic-gradient-descent-1187f1291aa1)
+* [An overview of gradient descent optimization algorithms, Sebastian Ruder](http://ruder.io/optimizing-gradient-descent/)
