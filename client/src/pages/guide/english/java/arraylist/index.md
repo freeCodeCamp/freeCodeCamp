@@ -6,7 +6,12 @@ title: ArrayList
   
   The *Collection framework* consists of all interfaces and classes that can hold a set of values (similar to [arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)). **ArrayList** is a class that is in this hierarchy and known as a _**Collection object**_. It implements the *List* interface which in turn implements the *Collection* interface. This *Collection* interface can be found in the `java.util` package. You will need to import this package.
   
+  import java.util.ArrayList; it would more efficient.
+  just import packages that needed,to maintain efficiency and memory size
+  
+  
   ArrayList is a class that is used to create dynamic arrays. It is slower than regular arrays but allows for a lot of manipulation. It can be initialized to have a specific size or it will have a default size of 10 units. 
+  
   
   ```java
   ArrayList<String> names = new ArrayList<>();
