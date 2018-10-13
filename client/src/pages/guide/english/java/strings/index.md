@@ -146,7 +146,7 @@ System.out.println(c.compareTo(a));       // -1 since (c<a)
 If you want to split a string into multiple parts it can easily be done through ```.split()``` this creates an array of the split up parts of the string.
 
 Example of using a delimiter (",") to split a string
-```
+```java
 String text = "Hello, World";
 String[] textParts = text.split(",");
 System.out.println(textParts[0]);
@@ -162,7 +162,7 @@ We can also split the string by specifing the start and end index of the charact
 
 The ```.substring()``` method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0.
 Example:
-```
+```java
 String text = "Hello,My name is Bob";
 System.out.println(text.substring(6));
 ```
