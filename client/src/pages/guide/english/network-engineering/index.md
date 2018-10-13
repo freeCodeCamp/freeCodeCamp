@@ -24,3 +24,8 @@ computer;
 voice;
 firewall.
 Network engineers may work internally as part of an organisation's IT support team, or externally as part of an outsourced IT networking consultancy firm working with a number of clients.
+
+**Subnet**
+⋅⋅* A Layer 3 Partition
+⋅⋅* A common example is 192.168.10.0/24
+⋅⋅* All computers with an IP address (ie. a Layer 3 address) within this range could communicate with eachother
