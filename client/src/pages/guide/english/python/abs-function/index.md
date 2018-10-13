@@ -24,3 +24,5 @@ print(abs(3 + 4j)) # prints 5.0, because |3 + 4j| = 5
 
 ### Sources
 1. <a href='https://www.mathsisfun.com/numbers/absolute-value.html' target='_blank'>Math Is Fun. Accessed: October 25, 2017</a>
+
+The abs function can be used to find distance in a grid algorithm since it returns the distance regardless of direction. 
