@@ -22,7 +22,7 @@ title: Tables
 ---
 ```
 
-> [`/client/src/pages/css/borders/index.md`](/client/src/pages/css/borders/index.md)
+> [`/client/src/pages/css/borders/index.md`](/client/src/pages/guide/english/css/borders/index.md)
 
 ```markdown
 ---
@@ -30,7 +30,7 @@ title: Borders
 ---
 ```
 
-> [`/client/src/pages/javascript/loops/for-loop/index.md`](/client/src/pages/javascript/loops/for-loop/index.md)
+> [`/client/src/pages/javascript/loops/for-loop/index.md`](/client/src/pages/guide/english/javascript/loops/for-loop/index.md)
 
 ```markdown
 ---
