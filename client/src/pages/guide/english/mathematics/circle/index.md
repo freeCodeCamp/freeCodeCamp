@@ -3,7 +3,7 @@ title: Circle
 ---
 ## Circle
 
-A circle is a closed shape where all points are the same distance from the center.
+A circle is a closed shape where all points in the plain are the same distance from the center.
 
 The distance from one point to the center is called the radius (R).
 
