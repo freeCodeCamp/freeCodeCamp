@@ -3,7 +3,7 @@ title: Iframes
 ---
 ## Iframes
 
-The HTML `<iframe>` element represents an inline frame, which allows you to include an independent HTML document into the current HTML document. The `<iframe>` is typically used for embedding third-party media, your own media, widgets, code snippets, or embedding third-party applets such as payment forms.
+The HTML `<iframe>` element specifies an inline frame, which allows you to include an independent HTML document into the current HTML document. The `<iframe>` is typically used for embedding third-party media, your own media, widgets, code snippets, or embedding third-party applets such as payment forms.
 
 ### Attributes
 Listed below are some of the `<iframe>`'s attributes:
