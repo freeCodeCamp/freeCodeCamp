@@ -2,7 +2,7 @@
 title: Styling Links
 ---
 ## Styling Links
-Links can be styled with any CSS property, such as ```color```, ```font-family```, ```font-size```, and ```padding```.
+Links can be styled with any CSS (Cascading Style Sheets) property, such as ```color```, ```font-family```, ```font-size```, and ```padding```.
 Here is an easy example:
 ```css
 a {
