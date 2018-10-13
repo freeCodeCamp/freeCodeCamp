@@ -42,3 +42,8 @@ Reading a combination of all three will enable you to setup the product, which i
 **If You Encounter Gradle Sync**
 Try To Change The Firebase-core Version or Firebase-database version
 
+## FCM Changes in Android App
+Latest firbase relases    implementation 'com.google.firebase:firebase-messaging:17.3.3'
+FirebaseMessagingServices and FirebaseInstanceIDService are there to develop notification 
+now in latest Firebase notification FirebaseInstanceIDService are not required to add
+for tocken onTockenRefresh() will be changed to onNewTocen() method will be added only in FirebaseMessagingServices
