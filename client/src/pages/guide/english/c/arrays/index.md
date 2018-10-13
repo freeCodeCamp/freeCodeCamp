@@ -90,7 +90,7 @@ int arr[2][5] = {
 };
 ```
 
-Two nested for loops can be used to print the contents of a 2-dimensional array in tabular format.
+Two nested for loops are used to print the contents of a 2-dimensional array in tabular format.
 ```C
 #include <stdio.h>
 
