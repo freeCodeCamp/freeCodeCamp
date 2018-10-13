@@ -16,7 +16,13 @@ Now install it on your computer. For help in installation refer to reference sec
 * [Tidyverse](https://www.tidyverse.org/) is an opinionated collection of R packages designed for data science like ggplot2, dplyr, readr, tidyr, purr, tibble.
 * [data.table](https://github.com/Rdatatable/data.table/wiki) is an implementation of base `data.frame` focused on improved performance and terse, flexible syntax.
 * [Shiny](https://shiny.rstudio.com/) framework for building dashboard style web apps in R.
-*
+
+## Useful Reference Sheets for R Syntax
+* https://www.rstudio.com/resources/cheatsheets/
+* Very useful for writing code that utilizes the popular tools in R, such as:
+     - ggplot
+     - dplyr
+     - shiny
 
 ## Where to learn R for free
  * [R Studio](https://www.rstudio.com/online-learning/)
