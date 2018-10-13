@@ -25,7 +25,7 @@ You are probably wondering what, then, is left for the developer to do? Based on
 
 Your code will fill the gaps _intentionally_ left in the framework code - and combining your code with the framework; your web application would have life breathed into it!
 
-Two of the most popular web frameworks in Python are Django and Flask. Django is probably the most-used Python framework out there. Django helps you to build websites where you're interacting with both your client (user) and your database, often simultaneously. Flask is a micro-framework, which can also do much of the tasks that Django does, but by using extensions made by the community. Other frameworks worth mentioning are Pylons,Pyramid,TurboGears and Tornado.
+Two of the most popular web frameworks in Python are Django and Flask. Django is probably the most-used Python framework out there. Django helps you to build websites where you're interacting with both your client (user) and your database, often simultaneously. Flask is a micro-framework, which can also do much of the tasks that Django does, but by using extensions made by the community. Other frameworks worth mentioning are Pylons, Pyramid, TurboGears and Tornado.
 
 ### Django 
 
