@@ -5,7 +5,7 @@ title: Go Playground
 # The Golang Playground
 The Golang playground is a website where you can write Go code online, so that you don't have to set up any developmet environment.
 
-Just open a new browser window clinking [Playground](https://play.golang.org).
+Just open a new browser window clicking [Playground](https://play.golang.org).
 
 Once there you'll get the buttons:
 1. Run
