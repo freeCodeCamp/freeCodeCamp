@@ -21,6 +21,8 @@ npm start
 
 The command line should give you an output where you can find the application in the browser. The default should be localhost:8080. If you are only using IE or Edge on your Windows machine, I can recommend you to install Chrome as well to access the developer environment and the React Developer Tools which are available as Chrome extension.
 
+** If you don't use Chrome, there are extensions that let you use Chrome extensions. **
+
 ![alt react starting page](https://cdn-images-1.medium.com/max/800/1*Qcry5pCXIy2KeNRsq3w7Bg.png)
 
 #### src/App.js
