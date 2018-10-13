@@ -33,7 +33,7 @@ In the diagram above, to the extreme left is the unit of data that is used in ea
 
 * _**Layer 2 - Data Link Layer:**_ The data link layer is responsible for transferring data to adjacent devices on the same Local Area Network (LAN). This layer also has provisions to make sure that error-free data is being passed on to the higher layers from the physical layer. Hence, it conteains error detection and correction mechanisms to ensure the integrity of data is maintained.
 
-* _**Layer 3 - Network Layer:**_ The network layer is responsible for forwarding packets to other networks. Usually a network is divided into multiple subnets and the network layer with the help of routers forwards packets between such networks to establish a Wide Area Network (WAN). 
+* _**Layer 3 - Network Layer:**_ The network layer is responsible for forwarding packets to other networks. Usually a network is divided into multiple subnets and the network layer with the help of routers forwards packets between such networks to establish a Wide Area Network (WAN). Data at this layer is commonly referred to as a "packet". The transmission of packets at layer 3 is known as "routing", and is the common function of a "Network Router". There are devices that can both "route packets" and handle switching of L2 frames; these devices are referred to as "Multilayer Switches" or "Layer 3 Switches".
 
 * _**Layer 4 - Transport Layer:**_ The transport layer ensures that messages are delivered error-free, in sequence, and with no losses or duplications. It relieves the higher layer protocols from any concern with the transfer of data between them and their peers.
 
