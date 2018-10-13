@@ -67,15 +67,15 @@ Task:
 ```yml
 tests:
   - text: <code>dealFreeCell</code> is a function.
-    testString: 'assert(typeof dealFreeCell === "function", "<code>dealFreeCell</code> is a function.");'
+    testString: assert(typeof dealFreeCell === 'function', '<code>dealFreeCell</code> is a function.');
   - text: <code>dealFreeCell(seed)</code> should return an object.
-    testString: 'assert(typeof dealFreeCell(1) === "object", "<code>dealFreeCell(seed)</code> should return an object.");'
+    testString: assert(typeof dealFreeCell(1) === 'object', '<code>dealFreeCell(seed)</code> should return an object.');
   - text: <code>dealFreeCell(seed)</code> should return an array of length 7.
-    testString: 'assert(dealFreeCell(1).length === 7, "<code>dealFreeCell(seed)</code> should return an array of length 7.");'
-  - text: '<code>dealFreeCell(1)</code> should return an array identical to example "Game #1"'
-    testString: 'assert.deepEqual(dealFreeCell(1), game1, "<code>dealFreeCell(1)</code> should return an array identical to example "Game #1"");'
-  - text: '<code>dealFreeCell(617)</code> should return an array identical to example "Game #617"'
-    testString: 'assert.deepEqual(dealFreeCell(617), game617, "<code>dealFreeCell(617)</code> should return an array identical to example "Game #617"");'
+    testString: assert(dealFreeCell(1).length === 7, '<code>dealFreeCell(seed)</code> should return an array of length 7.');
+  - text: <code>dealFreeCell(1)</code> should return an array identical to example "Game #1"
+    testString: assert.deepEqual(dealFreeCell(1), game1, '<code>dealFreeCell(1)</code> should return an array identical to example "Game #1"');
+  - text: <code>dealFreeCell(617)</code> should return an array identical to example "Game #617"
+    testString: assert.deepEqual(dealFreeCell(617), game617, '<code>dealFreeCell(617)</code> should return an array identical to example "Game #617"');
 
 ```
 

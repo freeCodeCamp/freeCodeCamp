@@ -73,15 +73,15 @@ C.f.:
 ```yml
 tests:
   - text: <code>topologicalSort</code> is a function.
-    testString: 'assert(typeof topologicalSort === "function", "<code>topologicalSort</code> is a function.");'
+    testString: assert(typeof topologicalSort === 'function', '<code>topologicalSort</code> is a function.');
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: 'assert.deepEqual(topologicalSort(libsSimple), ["bbb", "aaa"], "<code>topologicalSort</code> must return correct library order..");'
+    testString: assert.deepEqual(topologicalSort(libsSimple), ['bbb', 'aaa'], '<code>topologicalSort</code> must return correct library order..');
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: 'assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL, "<code>topologicalSort</code> must return correct library order..");'
+    testString: assert.deepEqual(topologicalSort(libsVHDL), solutionVHDL, '<code>topologicalSort</code> must return correct library order..');
   - text: <code>topologicalSort</code> must return correct library order..
-    testString: 'assert.deepEqual(topologicalSort(libsCustom), solutionCustom, "<code>topologicalSort</code> must return correct library order..");'
+    testString: assert.deepEqual(topologicalSort(libsCustom), solutionCustom, '<code>topologicalSort</code> must return correct library order..');
   - text: <code>topologicalSort</code> must ignore unorderable dependencies..
-    testString: 'assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable, "<code>topologicalSort</code> must ignore unorderable dependencies..");'
+    testString: assert.deepEqual(topologicalSort(libsUnorderable), solutionUnorderable, '<code>topologicalSort</code> must ignore unorderable dependencies..');
 
 ```
 
@@ -123,7 +123,7 @@ function topologicalSort(libs) {
   // and array of packages on which it depends.
   const D = libs
     .split('\n')
-    .map(e => e.split(' ').filter(ep => ep !== "))
+    .map(e => e.split(' ').filter(ep => ep !== ''))
     .reduce((p, c) =>
       p.set(c[0], c.filter((e, i) => (i > 0 && e !== c[0] ? e : null))), new Map());
   [].concat(...D.values()).forEach(e => {

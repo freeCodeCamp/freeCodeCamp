@@ -23,11 +23,11 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>fibWord</code> is a function.
-    testString: 'assert(typeof fibWord === "function", "<code>fibWord</code> is a function.");'
+    testString: assert(typeof fibWord === 'function', '<code>fibWord</code> is a function.');
   - text: <code>fibWord(5)</code> should return an array.
-    testString: 'assert(Array.isArray(fibWord(5)),"<code>fibWord(5)</code> should return an array.");'
+    testString: assert(Array.isArray(fibWord(5)),'<code>fibWord(5)</code> should return an array.');
   - text: <code>fibWord(5)</code> should return <code>'+JSON.stringify(ans)+'</code>.
-    testString: 'assert.deepEqual(fibWord(5),ans,"<code>fibWord(5)</code> should return <code>"+JSON.stringify(ans)+"</code>.");'
+    testString: assert.deepEqual(fibWord(5),ans,'<code>fibWord(5)</code> should return <code>'+JSON.stringify(ans)+'</code>.');
 
 ```
 

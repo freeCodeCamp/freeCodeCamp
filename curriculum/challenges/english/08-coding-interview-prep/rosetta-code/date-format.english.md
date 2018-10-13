@@ -24,13 +24,13 @@ Task:
 ```yml
 tests:
   - text: <code>getDateFormats</code> is a function.
-    testString: 'assert(typeof getDateFormats === "function", "<code>getDateFormats</code> is a function.");'
+    testString: assert(typeof getDateFormats === 'function', '<code>getDateFormats</code> is a function.');
   - text: Should return an object.
-    testString: 'assert(typeof getDateFormats() === "object", "Should return an object.");'
+    testString: assert(typeof getDateFormats() === 'object', 'Should return an object.');
   - text: Should returned an array with 2 elements.
-    testString: 'assert(getDateFormats().length === 2, "Should returned an array with 2 elements.");'
+    testString: assert(getDateFormats().length === 2, 'Should returned an array with 2 elements.');
   - text: Should return the correct date in the right format
-    testString: 'assert.deepEqual(getDateFormats(), dates, equalsMessage);'
+    testString: assert.deepEqual(getDateFormats(), dates, equalsMessage);
 
 ```
 

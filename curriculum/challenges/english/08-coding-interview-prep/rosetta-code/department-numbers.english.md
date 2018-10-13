@@ -40,13 +40,13 @@ Task:
 ```yml
 tests:
   - text: <code>combinations</code> should be a function.
-    testString: 'assert(typeof combinations === "function", "<code>combinations</code> should be a function.");'
-  - text: '<code>combinations([1, 2, 3], 6)</code> should return an Array.'
-    testString: 'assert(Array.isArray(combinations([1, 2, 3], 6)), "<code>combinations([1, 2, 3], 6)</code> should return an Array.");'
-  - text: '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.'
-    testString: 'assert(combinations(nums, total).length === len, "<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.");'
-  - text: '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.'
-    testString: 'assert.deepEqual(combinations(nums, total), result, "<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.");'
+    testString: assert(typeof combinations === 'function', '<code>combinations</code> should be a function.');
+  - text: <code>combinations([1, 2, 3], 6)</code> should return an Array.
+    testString: assert(Array.isArray(combinations([1, 2, 3], 6)), '<code>combinations([1, 2, 3], 6)</code> should return an Array.');
+  - text: <code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.
+    testString: assert(combinations(nums, total).length === len, '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return an array of length 14.');
+  - text: <code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.
+    testString: assert.deepEqual(combinations(nums, total), result, '<code>combinations([1, 2, 3, 4, 5, 6, 7], 12)</code> should return all valid combinations.');
 
 ```
 

@@ -24,7 +24,7 @@ Give your answer with 9 digits after the decimal point.
 ```yml
 tests:
   - text: <code>euler197()</code> should return 1.710637717.
-    testString: 'assert.strictEqual(euler197(), 1.710637717, "<code>euler197()</code> should return 1.710637717.");'
+    testString: assert.strictEqual(euler197(), 1.710637717, '<code>euler197()</code> should return 1.710637717.');
 
 ```
 

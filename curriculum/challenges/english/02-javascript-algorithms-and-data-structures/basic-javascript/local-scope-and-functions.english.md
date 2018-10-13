@@ -24,9 +24,9 @@ Declare a local variable <code>myVar</code> inside <code>myLocalScope</code>. Ru
 ```yml
 tests:
   - text: No global <code>myVar</code> variable
-    testString: 'assert(typeof myVar === "undefined", "No global <code>myVar</code> variable");'
+    testString: assert(typeof myVar === 'undefined', 'No global <code>myVar</code> variable');
   - text: Add a local <code>myVar</code> variable
-    testString: 'assert(/var\s+myVar/.test(code), "Add a local <code>myVar</code> variable");'
+    testString: assert(/var\s+myVar/.test(code), 'Add a local <code>myVar</code> variable');
 
 ```
 
