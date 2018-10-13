@@ -49,6 +49,8 @@ K-means algorithm is a popular clustering algorithm since it is relatively simpl
 4. Once all data points have been classified, compute the midpoint of all points for each cluster and assign as new centroid
 5. Repeat steps 3 and 4 until the centroids converge upon certain k points.
 
+Try different values for K and plot the results on graph. This should help you decide a better value of K.
+
 Since we only need to calculate k x n distances (rather than n(n-1) distances for knn algorithm), this algorithm is quite scalable.
 
 Here's a clustering example in Python that uses the [Iris Dataset](https://www.kaggle.com/uciml/iris)
