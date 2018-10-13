@@ -38,16 +38,8 @@ session_unset();
 session_destroy();
 ```
 
-### Sessions Are Temporary
-It is important to not treat a session as permanent storage. They get cleared from time to time by the developer, whenever the application is moved to a new host server, by the application itself (for example a logout button), and even during server maintenance. For long term storage of data make sure to use a database.
-
-### Security
-Last but not least it's important to use php sessions securely. Read our article on [Session Identifier Acquirement](/php/security/session-identifier-acquirement) and [Session Hijacking](/php/security/session-hijacking) for more information.
-
-
-### Expiring A Session
-In php one need to manually expire a user's session. Here is an example below:
-```
+Here's a full example to manually expire a user's session:
+```PHP
 <?php
 //Start our session.
 session_start();
@@ -81,6 +73,12 @@ if(isset($_SESSION['last_action'])){
 //latest activity
 $_SESSION['last_action'] = time();
 ```
+
+### Sessions Are Temporary
+It is important to not treat a session as permanent storage. They get cleared from time to time by the developer, whenever the application is moved to a new host server, by the application itself (for example a logout button), and even during server maintenance. For long term storage of data make sure to use a database.
+
+### Security
+Last but not least it's important to use php sessions securely. Read our article on [Session Identifier Acquirement](/php/security/session-identifier-acquirement) and [Session Hijacking](/php/security/session-hijacking) for more information.
 
 #### More Information:
 * <a href="https://secure.php.net/manual/en/book.session.php">php.net session manual</a>
