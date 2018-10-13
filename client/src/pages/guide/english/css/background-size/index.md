@@ -31,3 +31,5 @@ Documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/backgro
 CSS-Tricks: <a href='https://css-tricks.com/almanac/properties/b/background-size/' target='_blank' rel='nofollow'>background-size</a>
 
 Browser Support: <a href='http://caniuse.com/#search=background-size' target='_blank' rel='nofollow'>caniuse</a>
+
+Auto means that the image is displayed in its original size. Length sets the width and the height of the background image. The first value sets the width, the second value sets the height. If only one value is given, the second is set to auto. Percentage sets the width and height of the background image in percent of the parent element. The first value sets the width, the second value sets the height. If only one value is given, the second is set to auto. Cover	resizes the background image to cover the entire container, even if it has to stretch the image or cut a little bit off one of the edges.	Contain resizes the background image to make sure the image is fully visible. Initial sets this property to its default value. Inherit inherits this property from its parent element. 
