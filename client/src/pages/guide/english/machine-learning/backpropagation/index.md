@@ -53,6 +53,7 @@ High-Level:
 In-depth: 
 * Lecture 4 CS231n [Introduction to Neural Networks](https://youtu.be/d14TUNcbn1k?t=354)
 * [In depth, wiki style article](https://brilliant.org/wiki/backpropagation/)
+* [Article on computation graphs](http://colah.github.io/posts/2015-08-Backprop/)
 * [A Step by Step Backpropagation Example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
 * [Andrew Ng's ML Course](https://www.coursera.org/learn/machine-learning/)
 
