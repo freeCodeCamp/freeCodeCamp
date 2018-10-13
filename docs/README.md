@@ -13,7 +13,7 @@
 
 # Documentation Quick Reference
 
-Hello 👋!
+Welcome 👋!
 
 This directory contains all of the documentation on contributing to freeCodeCamp.org
 
