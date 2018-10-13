@@ -9,7 +9,7 @@ One of the great things about redux is that it provides an interface to plug in 
 
 Adding middleware to redux is as simple as adding another argument when calling "createStore". Just pass the result of calling "applyMiddleware" with each middleware package you want to use. In the example below we add redux-thunk and redux-logger to our app. 
 
-```
+```js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger'
