@@ -11,6 +11,24 @@ When starting out with linux, there are some basic commands everyone should know
  2. **ls** - list command
 - Type `ls` and the contents of the current directory will be displayed.
 
+Example
+
+{  neit@neit-HP:~$ ls
+
+  list of Files-
+  CLionProjects  Downloads         mysqld    Public           ven
+  Desktop        examples.desktop  Pictures  PycharmProjects  Videos
+  Documents      Music             program   Templates
+  
+  neit@neit-HP:~$ cd pictures         //String should be same as folder name shown
+  bash: cd: pictures: No such file or directory      
+  
+  neit@neit-HP:~$ cd Pictures 
+  neit@neit-HP:~/Pictures$  
+  again if we command ls then list of pictures we get}
+
+
+
  3. **man** - manual command
 - Shows you the manual for the following command. This is very helpful when trying to figure out how an unfamiliar command works. For example, type `man ls` for everything you need to know about the ls command. Type `q` to exit.
 
