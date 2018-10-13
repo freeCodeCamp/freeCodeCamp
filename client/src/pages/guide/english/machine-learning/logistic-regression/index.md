@@ -9,6 +9,7 @@ Logistic regression is very similar to linear regression in that it attempts to 
 #### How it Works 
 Logistic regression models the probability that Y, the response variable, belongs to a certain category. In many cases, the response variable will be a binary one, so logistic regression will want to model a function y = f(x) that outputs a normalized value that ranges  from, say, 0 to 1 for all values of X, corresponding to the two possible values of Y. It does this by using the logistic function: 
 Logistic regression is the appropriate regression analysis to conduct when the dependent variable is dichotomous (binary).  Like all regression analyses, the logistic regression is a predictive analysis.  Logistic regression is used to describe data and to explain the relationship between one dependent binary variable and one or more nominal, ordinal, interval or ratio-level independent variables.
+logistic regression is different from other classification algorithms as it indicates the probability of the class it might fall into.
 
 ![Cost Function](https://cdn-images-1.medium.com/max/800/1*wHtYmENzug_W6fIE9xY8aw.jpeg)
 <br>

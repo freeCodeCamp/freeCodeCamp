@@ -71,6 +71,37 @@ const tags = (
 );
 ```
 
+### All Tags Must Be Closed
+
+In HTML, there are self-closing tags such as `img`, `br`, `input`, and `hr`. 
+
+This means that either of these methods are valid:
+
+```html
+<!-- no closing / -->
+<input type="text" name="city">
+<!-- with closing / -->
+<input type="text" name="city" />
+```
+
+Self-closing (sometimes referred to as **void**) tags can be rendered with or without a closing forward slash.
+
+However, with JSX, _all_ tags must be closed.
+
+The following JSX is invalid:
+
+```javascript
+const email = <input type="email">;
+```
+
+Closing the `input` tag will make the JSX valid:
+
+
+```javascript
+const email = <input type="email" />;
+```
+
+
 ### More Information
 
 - [Introducing JSX](https://reactjs.org/docs/introducing-jsx.html)
