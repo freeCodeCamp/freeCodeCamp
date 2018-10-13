@@ -4,7 +4,7 @@ title: Text
 
 ## Text
 
-Several properties are provided by CSS to change the look and feel of the text. Various text properties are explained below.
+Several properties are provided by CSS (Cascading Style Sheets) to change the look and feel of the text. Various text properties are explained below.
 
 #### Text Color
 
