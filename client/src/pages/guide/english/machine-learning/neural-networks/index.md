@@ -64,3 +64,4 @@ The second most common form of neural networks is nueroevolution. In this system
 - [3Blue1Brown, Youtube Channel with Neural Network content](https://youtu.be/aircAruvnKk)
 - [Siraj Raval, Youtube CHannel with Neural Network content](https://youtu.be/h3l4qz76JhQ)
 - [Neuroevolution - Wikipedia](https://en.wikipedia.org/wiki/Neuroevolution)
+- [Sagar Sharma, Neural Networks: Activation Functions(Sigmoid, tanh, Softmax, ReLU, Leaky ReLU EXPLAINED) - Medium](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6)
