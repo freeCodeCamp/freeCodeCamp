@@ -16,6 +16,8 @@ Note: Backpropagation, and machine learning in general, requires significant fam
 
 The process of backpropagation can be explained in three steps.
 
+feed forward ==> backpropagation of error==> weight updation
+
 Given the following
 
 - m training examples (x,y) on a neural network of L layers
