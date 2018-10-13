@@ -91,7 +91,7 @@ Broadly,
 
 - We have a Node.js based API server.
 - A set of React based client applications.
-- A script that we use to use evaluate our Frontend projects.
+- A script that we use to evaluate our Frontend projects.
 
 Contributing to this requires some understanding of APIs, ES6 Syntax and a lot of curiosity.
 
