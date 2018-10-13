@@ -3,7 +3,7 @@ title: Padding
 ---
 # Padding
 
-The `padding` CSS property sets the padding area on all four sides of an element. This property can be used to generate space around content (inside the border). It is a shorthand to set all individual paddings at once: `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`. Values are defined in the clockwise direction.
+The CSS `padding` properties are used to generate space around an element's content, inside of any defined borders. It is a shorthand to set all individual paddings at once: `padding-top`, `padding-right`, `padding-bottom`, and `padding-left`. Values are defined in the clockwise direction.
 
 Padding values are set using lengths or percentages or `inherit` keyword, and cannot accept negative values. The initial, or default, value for all padding properties is 0. While you can use `inherit` keyword but it can not be used along with a length value.
 
