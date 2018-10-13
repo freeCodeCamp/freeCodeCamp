@@ -27,3 +27,8 @@ A collection of articles covering the basics (core language and working with a b
 
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
+
+*JavaScript® Notes for Professionals*
+The JavaScript® Notes for Professionals book is compiled from Stack Overflow Documentation, the content is written by the beautiful people at Stack Overflow.
+
+-[Online](https://books.goalkicker.com/JavaScriptBook/)
