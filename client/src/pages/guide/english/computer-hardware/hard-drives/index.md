@@ -31,6 +31,15 @@ Solid State Drives uses integrated circuits to store data. Therefore, an SSD has
 
 SSDs are usually only used as boot drives or storage for the mostly used applications in a person's computer. This is because eventhough its price has lessened a lot in recent years, it is still much more expensive than a traditional hard drive. Thus, HDDs are still used to store big chunks of data like our photos and videos, or in datacenters or server farms. 
 
+
+
+
+##  M.2 Solid State Drives (SSD)
+M.2, formerly known as the Next Generation Form Factor (NGFF), is a specification for internally mounted computer expansion cards and associated connectors. It replaces the mSATA standard, which uses the PCI Express Mini Card physical card layout and connectors. M.2's more flexible physical specification allows different module widths and lengths, and, paired with the availability of more advanced interfacing features, makes the M.2 more suitable than mSATA for solid-state storage applications in general and particularly for the use in small devices such as ultrabooks or tablets.
+
+Computer bus interfaces provided through the M.2 connector are PCI Express 3.0 (up to four lanes), Serial ATA 3.0, and USB 3.0 (a single logical port for each of the latter two). It is up to the manufacturer of the M.2 host or device to select which interfaces are to be supported, depending on the desired level of host support and device type. The M.2 connector has different keying notches that denote various purposes and capabilities of M.2 hosts and modules, preventing plugging of M.2 modules into feature-incompatible host connectors.
+
+In addition to supporting legacy Advanced Host Controller Interface (AHCI) at the logical interface level, M.2 specification also supports NVM Express (NVMe) as the logical device interface for M.2 PCI Express SSDs. While the support for AHCI ensures software-level backward compatibility with legacy SATA devices and legacy operating systems, NVM Express is designed to fully utilize the capability of high-speed PCI Express storage devices to perform many I/O operations in parallel.
 #### More Information:
 
 * [Wikipedia - Hard Disk Drive](https://en.wikipedia.org/wiki/Hard_disk_drive)
@@ -39,3 +48,5 @@ SSDs are usually only used as boot drives or storage for the mostly used applica
 * [PCMag - SSD vs. HDD: What's the Difference?](https://www.pcmag.com/article2/0,2817,2404258,00.asp)
 * [Digital Trends - SSD vs. HDD](https://www.digitaltrends.com/computing/solid-state-drives-vs-hard-disk-drives)
 * [IOMeter Project](http://www.iometer.org)
+* [Wikipedia - M.2 SSD] (https://en.wikipedia.org/wiki/M.2)
+* [Wikipedia - M.2 SSD VS SSD] (https://www.reddit.com/r/buildapc/comments/3wda0c/m2_vs_sata_ssd_is_the_improvement_worth_the_money/)
