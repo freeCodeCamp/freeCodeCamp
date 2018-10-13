@@ -1,0 +1,3 @@
+{
+    "git.ignoreLimitWarning": true
+}
