@@ -68,7 +68,11 @@ Use the following syntax to delete a file
 
 **rm _#PATH_TO_FILE_**
 
+#### Detect which process is using the port you want to use
+``` lsof -i :<PORT> ```
 
+#### Terminate the process which uses the port you want to use
+``` kill <PID> ```
 
 
 
