@@ -42,7 +42,7 @@ function Dog(name) {
 // Modify the code below this line
 Dog.prototype = {
 
-  numLegs: 2,
+  numLegs: 4,
   eat: function() {
     console.log("nom nom nom");
   },
@@ -68,7 +68,7 @@ function Dog(name) {
 }
 Dog.prototype = {
   constructor: Dog,
-  numLegs: 2,
+  numLegs: 4,
   eat: function() {
     console.log("nom nom nom");
   },
