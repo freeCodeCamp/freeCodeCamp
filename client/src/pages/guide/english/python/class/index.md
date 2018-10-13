@@ -83,7 +83,7 @@ x = Complex(3.0, -4.5)
 
 #### Private Variables in Class:
 
-Every programming language which follows OOPs concept has some mechanism of data hiding.In python if some variable needs to be hidden from the outside world we use the concept of private variables by using `__` before he variable name.
+Every programming language which follows OOPs (Object Oriented Programming) concept has some mechanism of data hiding.In python if some variable needs to be hidden from the outside world we use the concept of private variables by using `__` before he variable name.
 
 for example:
 ```
