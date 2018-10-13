@@ -14,3 +14,5 @@ in a HCL Terraform syntax or JSON format.
 - <a href="https://www.terraform.io">Official Website</a>
 - <a href="https://https://github.com/hashicorp/terraform">Terraform on GitHub</a>
 
+terraform plan:
+shows diff between existing infrastructure and what state we wanted to be in based on our configuration.
