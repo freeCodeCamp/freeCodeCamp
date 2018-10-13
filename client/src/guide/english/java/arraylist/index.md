@@ -25,3 +25,60 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
   So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
+  
+  ### Examples
+  
+  Adding items to an ArrayList:
+  
+   ```java
+  List<Integer> listOfNumbers = new ArrayList<>();
+  listOfNumbers.add(1);
+  listOfNumbers.add(2);
+
+  ```   
+  Output: 
+    ```
+    [1, 2]
+     ```
+     
+  Removing items to an ArrayList:
+
+  ```java
+  List<Integer> listOfNumbers = new ArrayList<>();
+  listOfNumbers.add(1);
+  listOfNumbers.add(2);
+  System.out.println(listOfNumbers);
+  listOfNumbers.remove(1); //put the index of the object not the value of the object
+  System.out.println(listOfNumbers);
+
+  ```
+Output: 
+    ```
+    [1, 2]
+    [1]
+    ```
+    
+    
+Iterating through an ArrayList 
+
+ ```java
+  ArrayList<Integer> listOfNumbers = new ArrayList<>();
+  listOfNumbers.add(1);
+  listOfNumbers.add(2);
+  listOfNumbers.add(3);
+  listOfNumbers.add(2);
+
+ for (int i: listOfNumbers) {
+  System.out.println(i);
+ }
+
+  ``` 
+  
+ Output: 
+  
+```
+    1
+    2
+    3
+    2  
+   ```
