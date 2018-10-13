@@ -70,3 +70,9 @@ console.info('after the test');
 // solution required
 ```
 </section>
+
+合并排序的时间复杂度为O（n log n）。
+
+在每个递归级别，对整个阵列执行合并过程。 （更深层次对数组的较短段进行处理，但这些被调用的次数更多。）因此每个递归级别为O（n）。 有递归的O（log n）级别，因为每次数组大约减半。
+
+最佳情况时间复杂度也是O（n log n），因此无论数组的现有状态如何，mergesort都需要同样长的时间。
