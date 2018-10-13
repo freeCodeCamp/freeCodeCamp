@@ -10,13 +10,13 @@
     </tr>
 </table>
 
-# Como trabajar con correos salientes localmente (para el flujo de trabajo de correo electrónico)
+# Cómo trabajar con correos salientes localmente (para el flujo de trabajo de correo electrónico)
 
 > **Nota:** Hay un **Opcional** Paso - Solo es requerido cuando trabajamos con el cuando se trabaja con flujos de trabajo de correo electrónico
 
-## Introducción
+## Introducción
 
-Algunos flujos de trabajo del correo electrónico, como la actualizar el correo electrónico de un usuario, requieren de una API, en el backend para mandar correos electrónicos. mientras desarrollamos podemos usar una herramienta para obtenerlos localmente, en lugar de tener que usar un proveedor de correo electrónico y enviar un correo electrónico real. MailHog es una de las muchas herramientas de email para probar en el entorno de desarrollo para desarrolladores, que capturará los correos electrónicos de su instancia local que freeCodeCamp está enviando. 
+Algunos flujos de trabajo del correo electrónico, como actualizar el correo electrónico de un usuario, requieren que la API del servidor back-end envie correos electrónicos. Mientras desarrollamos podemos usar una herramienta para obtenerlos localmente en lugar de tener que usar un proveedor de correo electrónico y enviar un correo electrónico real. MailHog es una de las muchas herramientas de email para probar en el entorno de desarrollo para programadores, que capturará los correos electrónicos de su instancia local que freeCodeCamp está enviando. 
  
 
 ## Instalando MailHog
