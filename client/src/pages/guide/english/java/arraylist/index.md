@@ -19,8 +19,15 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```java
   List<Integer> students = new ArrayList<>();
   ```
+  we can find Size of arraylist
+  
+  size_of_array=student.size();
   
   An ArrayList is dynamic, meaning it will grow in size if required and similarly shrink in size if elements are deleted from it. This is what makes it better to use than normal arrays. 
+  
+  grow size or add element
+  
+  names.add("name");
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
