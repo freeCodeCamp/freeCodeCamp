@@ -1,15 +1,3 @@
-<table>
-    <tr>
-        <td> Read these guidelines in </td>
-        <td><a href="/how-to-work-on-guide-articles.md"> English </a></td>
-        <td><a href="/docs/chinese/how-to-work-on-guide-articles.md"> 中文 </a></td>
-        <td><a href="/docs/russian/how-to-work-on-guide-articles.md"> русский </a></td>
-        <td><a href="/docs/arabic/how-to-work-on-guide-articles.md"> عربى </a></td>
-        <td><a href="/docs/spanish/how-to-work-on-guide-articles.md"> Español </a></td>
-        <td><a href="/docs/portuguese/how-to-work-on-guide-articles.md"> Português </a></td>
-    </tr>
-</table>
-
 # Como trabalhar em Artigos Guia
 
 Com a tua ajuda, nós podemos criar uma ferramenta de referência compreensiva que ajudará milhões de pessoas que estão a aprender código nos anos que aí vêm. 💛
