@@ -4,6 +4,7 @@ title: For Each Loop
 # For Each Loop
 
 Also called the enhanced `for` loop, it is an extremely useful and simple way to iterate over each item in a collection, array or any object that implements the `Iterable` interface.
+TIP:- If there is only 1 statement after the 'for' loop it is not required to put that statement within '{ }'. But, if there are multiple statements after the 'for' loop it is mandatory to put all of those statements within '{ }'. Otherwise the for loop would recognise only the first statement as the part of the for loop and the rest of them would possibly arise an error.
 
 ```java
 for (object : iterable)
