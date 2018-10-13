@@ -16,7 +16,7 @@
 
 ## Introducción
 
-Algunas tareas de trabajo con correo electrónico, como actualizar el correo de un usuario, requieren que la API del servidor back-end envie correos electrónicos. Durante el proceso de desarrollo podemos usar una herramienta para obtenerlos localmente en lugar de tener que usar un proveedor de correo electrónico y enviar un correo real. MailHog es una de las muchas herramientas de email para realizar pruebas en el entorno de desarrollo para programadores, ayudando a recibir los correos electrónicos que de la instancia local de freeCodeCamp está enviando. 
+Algunas tareas de trabajo con correo electrónico, como actualizar el correo de un usuario, requieren que la API del servidor back-end envie correos electrónicos. Durante el proceso de desarrollo podemos usar una herramienta para obtenerlos localmente en lugar de tener que usar un proveedor de correo electrónico y enviar un correo real. MailHog es una de las muchas herramientas de email para realizar pruebas en el entorno de desarrollo para programadores, ayudando a recibir los correos electrónicos que la instancia local de freeCodeCamp está enviando. 
  
 
 ## Instalando MailHog
