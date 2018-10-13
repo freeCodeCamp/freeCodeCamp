@@ -7,6 +7,7 @@ Gradient descent is an optimization algorithm for finding the minimum of a funct
 
 ![Gradient Descent](https://upload.wikimedia.org/wikipedia/commons/6/68/Gradient_descent.jpg)
 What you want to do is to repeatedly update the value of the parameter theta until you minimize the value of the Cost Function J(θ) close to 0;
+multiple parameters should be updated simultaneously.
 
 ### Learning Rate
 The size of a step is called the learning rate. A larger learning rate make iterating faster but it might overshoot the global minimum, the value that we are looking for. On the other hand we could prevent this overshooting by decreasing the learning rate; but beware that the smaller you make the learning rate, the more computationally intensive it gets. This could either prolong the computation unnecessarily, or you may not arrive at the global minimum altogether. 
