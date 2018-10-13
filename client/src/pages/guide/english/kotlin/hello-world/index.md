@@ -66,7 +66,5 @@ Hope you liked this tutorial,
 Cheers
 
 
-## Kotlin cource for beginners 
-Udacity provides kotlin cource for free    https://in.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011
-
-
+## Kotlin course for beginners 
+Udacity provides the free [Kotlin Bootcamp for Programmers](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011) course.
