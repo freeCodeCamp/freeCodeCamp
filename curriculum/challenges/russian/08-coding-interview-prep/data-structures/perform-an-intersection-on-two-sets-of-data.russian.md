@@ -19,9 +19,9 @@ localeTitle: Выполнить пересечение на двух набор�
 ```yml
 tests:
   - text: Класс <code>Set</code> должен иметь метод <code>intersection</code> .
-    testString: 'assert(function(){var test = new Set(); return (typeof test.intersection === "function")}, "Your <code>Set</code> class should have a <code>intersection</code> method.");'
+    testString: 'assert((function(){var test = new Set(); return (typeof test.intersection === "function")})(), "Your <code>Set</code> class should have a <code>intersection</code> method.");'
   - text: Собственная коллекция была возвращена
-    testString: 'assert(function(){  var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === "c")}, "The proper collection was returned");'
+    testString: 'assert((function(){  var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === "c")})(), "The proper collection was returned");'
 
 ```
 

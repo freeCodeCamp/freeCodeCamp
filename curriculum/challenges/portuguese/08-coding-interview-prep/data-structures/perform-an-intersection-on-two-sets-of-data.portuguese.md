@@ -19,9 +19,9 @@ localeTitle: Realizar uma interseção em dois conjuntos de dados
 ```yml
 tests:
   - text: Sua classe <code>Set</code> deve ter um método de <code>intersection</code> .
-    testString: 'assert(function(){var test = new Set(); return (typeof test.intersection === "function")}, "Your <code>Set</code> class should have a <code>intersection</code> method.");'
+    testString: 'assert((function(){var test = new Set(); return (typeof test.intersection === "function")})(), "Your <code>Set</code> class should have a <code>intersection</code> method.");'
   - text: A coleção adequada foi retornada
-    testString: 'assert(function(){  var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === "c")}, "The proper collection was returned");'
+    testString: 'assert((function(){  var setA = new Set();  var setB = new Set();  setA.add("a");  setA.add("b");  setA.add("c");  setB.add("c");  setB.add("d");  var intersectionSetAB = setA.intersection(setB); return (intersectionSetAB.size() === 1 && intersectionSetAB.values()[0] === "c")})(), "The proper collection was returned");'
 
 ```
 
