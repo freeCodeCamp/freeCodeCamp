@@ -1,4 +1,4 @@
-# A guide to designing freeCodeCamp coding challenges
+# A guide to design freeCodeCamp coding challenges
 
 > "Talk is cheap. Show me the code." — Linus Torvalds
 
@@ -20,7 +20,7 @@ With that practical focus in mind, let’s talk about the requirements for our c
 - [Formatting seed code](#formatting-seed-code)
 - [Why do we have all these rules?](#why-do-we-have-all-these-rules)
 
-## Proper nouns
+## Proper Nouns
 
 Proper nouns should use correct capitalization when possible. Below is a list of words as they should appear in the challenges.
 
