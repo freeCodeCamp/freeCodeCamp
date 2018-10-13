@@ -60,6 +60,16 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+## BASH
+
+*The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
+- [Amazon](https://www.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
+- ISBN-13: 978-1593273897
+
+*Learning the bash Shell: Unix Shell Programming by Cameron Newham*
+- [Amazon](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
+- ISBN-13: 978-0596009656
+
 ## C-lang
 
 *The C Programming Language* by Brian W. Kernighan and Dennis M. Ritchie
@@ -118,16 +128,6 @@ title: Books to Read for Programmers
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
-
-## BASH
-
-*The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
-- [Amazon Smile](https://smile.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
-- ISBN-13: 978-1593273897
-
-*Learning the bash Shell: Unix Shell Programming by Cameron Newham*
-- [Amazon Smile](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
-- ISBN-13: 978-0596009656
 
 ## Soft Skills
 
