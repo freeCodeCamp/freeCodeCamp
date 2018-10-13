@@ -142,4 +142,4 @@ Dacă aceste aspecte nu prezintă clarificări cu privire la ceea ce trebuie fă
 
 **Am găsit o greșeală de tipărire, ar trebui să raportez o problemă înainte de a putea face o solicitare de integrare a modificărilor?**
 
-Pentru greșelile de tipărire și alte modificări de gebul acesta, poți deschide direct solicitari de integrare a modificărilor fără a crea mai întâi o problemă. Problemele sunt mai mult pentru a discuta probleme asociate cu codul, sau mai multe aspecte structurale ale curriculumului.
+Pentru greșelile de tipărire și alte modificări de genul acesta, poți deschide direct solicitari de integrare a modificărilor fără a crea mai întâi o problemă. Problemele sunt mai mult pentru a discuta probleme asociate cu codul, sau mai multe aspecte structurale ale curriculumului.
