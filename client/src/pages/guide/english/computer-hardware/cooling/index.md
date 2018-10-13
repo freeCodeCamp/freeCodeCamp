@@ -1,7 +1,7 @@
 ---
 title: Cooling Systems
 ---
-Your computer contains many parts that generate heat. Heat can cause premature failure and erratic behaviors; too much heat can have the possibility to damage hardware inside a computer. The more you overclock the graphics or the CPU, the hotter the computer will run. Cooling systems assure that your computer is stable and you extend the life of your investment.
+Your computer contains many parts that generate heat. Excessive heat can cause your computer to behave erratically or its hardware to fail prematurely. The more you overclock the graphics or the CPU, the hotter the computer will run. Cooling systems assure that your computer is stable and you extend the life of your investment.
 
 ## Case Cooling
 Case cooling can be a combination of a well ventilated case and the use of fans to circulate air within the case. Most cases come with at least one fan. This is the minimum configuration. For best results, there be at least two fans in the case. One is as an intake to draw in cold air while the other is an exhaust to expel hot air. There are many different types of fans and configurations. Cable management also plays a huge part in cooling the system. Bad cable management and tangled wires disrupt airflow and cause dust to accumulate inside the case.
@@ -15,7 +15,7 @@ Cooling devices are available for individual parts on the computer. The two most
 
 ## Environmental Considerations
 
-* Keep it clean - Dust can clog up fans, heat sinks and act an an insulating layer trapping heat. Use compressed air to keep the dust out of the internal cavity. Maintenance of liguid cooling should be considered as well, many forms of liquid cooling require incremented flushings to keep the tubes clean.
+* Keep it clean - Dust can clog up fans, heat sinks and act an an insulating layer trapping heat. Use compressed air to keep the dust out of the internal cavity. Maintenance of liquid cooling systems should be considered as well. Many forms of liquid cooling require incremental flushings to keep the tubes clean.
 * Case Covers - Contrary to what you read on the internet, keeping the case covers on the computer aids cooling. Absence of the case covers disrupts air flow and can actually increase the heat inside the case.
 Room ventilation - Locate the computer where it is neutral to the rooms environmental registers. Keep the computer away from room heaters or vents at all times.
 * Room placement - Locate the computer away from windows or areas of strong sunlight exposure. Placement in closets can also provide challenges to cooling. It is recommended to keep the computer away from any carpet-like material, which can easily bring dust into the computer.
