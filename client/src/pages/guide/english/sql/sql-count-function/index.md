@@ -36,7 +36,7 @@ Here we get a count of students in each field of study.
 
 Here we get a count of students with the same SAT scores.
 ```sql
- select studentID, FullName, count(*) AS studentCount from the student table with a group by sat_score;
+ select sat_score, count(*) AS studentCount from the student table with a group by sat_score;
 ```
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/count04.JPG?raw=true)
 
