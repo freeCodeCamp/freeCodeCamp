@@ -3,7 +3,6 @@
 # high impact files
 #
 # Important: The order in this file cascades.
-#            So, @camperbot > dev/null
 #
 # https://help.github.com/articles/about-codeowners
 # -------------------------------------------------
@@ -13,7 +12,7 @@
 # -------------------------------------------------
 
 * @freecodecamp/dev 
-*.md @camperbot
+*.md
 
 # -------------------------------------------------
 # All files in the root including markdown is owned 
