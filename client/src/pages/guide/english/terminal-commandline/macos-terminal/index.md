@@ -70,7 +70,8 @@ Use the following syntax to delete a file
 
 # iTerm2
 
-iTerm2 replaces the legacy terminal in macOSX. Iterm2 brings some new features such as:
+iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
+
 * Split Panes
 * Hotkey Window
 * Search
@@ -79,12 +80,4 @@ iTerm2 replaces the legacy terminal in macOSX. Iterm2 brings some new features s
 * Configurability
 * and many [more](https://www.iterm2.com/features.html)
 
-### Get started
-Just download the iTerm2 from the official [website](https://www.iterm2.com/downloads.html) and replace it as the primary terminal on your Mac.
----
-Additional Documentation can be found [here](https://www.iterm2.com/documentation.html).
-
-
-
-
-
+Just download iTerm2 from the official [website](https://www.iterm2.com/downloads.html). Additional documentation can be found [here](https://www.iterm2.com/documentation.html).
