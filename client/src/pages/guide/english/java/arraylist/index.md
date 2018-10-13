@@ -26,6 +26,27 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   ```
   
   An ArrayList is dynamic, meaning it will grow in size if required and similarly shrink in size if elements are deleted from it. This is what makes it better to use than normal arrays. 
+  we can remove added element from list
+  variable_name.remmove(index_number);
+  
+  to access element from list
+  variable_name.get(index_number);
+   
+   we can modify elements too
+   variable_name.set(index_number,element);
+  
+  we can reverse order of element in Array-list.
+  import java.util.Collections
+  Collections.reverse(variable_name);
+  
+  we can also sort the collection with above import
+  Collection.sort(variable_name);
+  
+  And
+  
+   it provide sort in decending order
+  Collections.reverseOrder());
+ 
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
