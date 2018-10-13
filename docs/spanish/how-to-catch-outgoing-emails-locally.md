@@ -16,7 +16,7 @@
 
 ## Introducción
 
-Algunos de los flujos de trabajo del correo electrónico, como actualizar el correo electrónico de un usuario, requieren que la API del servidor back-end envie correos electrónicos. Mientras desarrollamos podemos usar una herramienta para obtenerlos localmente en lugar de tener que usar un proveedor de correo electrónico y enviar un correo electrónico real. MailHog es una de las muchas herramientas de email para probar en el entorno de desarrollo para programadores, que capturará los correos electrónicos de su instancia local que freeCodeCamp está enviando. 
+Algunas tareas de trabajo con correo electrónico, como actualizar el correo de un usuario, requieren que la API del servidor back-end envie correos electrónicos. Durante el proceso de desarrollo podemos usar una herramienta para obtenerlos localmente en lugar de tener que usar un proveedor de correo electrónico y enviar un correo real. MailHog es una de las muchas herramientas de email para realizar pruebas en el entorno de desarrollo para programadores, ayudando a recibir los correos electrónicos que de la instancia local de freeCodeCamp está enviando. 
  
 
 ## Instalando MailHog
@@ -96,15 +96,15 @@ A continuación, puedes ir a [usando MailHog](#using-mailhog).
 
 Una vez que hayas instalado MailHog y lo hayas iniciado, debes abrir tu bandeja de entrada de MailHog en tu navegador, y abrir una nueva pestaña o ventana y navegar a [http://localhost:8025] (http://localhost:8025). Deberías ver una pantalla como la siguiente:
 
-![MailHog Screenshot 1](images/mailhog/1.jpg)
+![Captura de pantalla MailHog 1](../images/mailhog/1.jpg)
 
 Cuando tu instalación de freeCodeCamp envíe un correo electrónico, verás que aparece aquí. Como verás abajo:
 
-![MailHog Screenshot 2](images/mailhog/2.jpg)
+![Captura de pantalla MailHog 2](../images/mailhog/2.jpg)
 
 Abre el correo y verás dos pestañas donde puedes ver el contenido: texto sin formato y fuente. Asegúrate de que estás en la pestaña de texto sin formato (Plain Text).
 
-![MailHog Screenshot 3](images/mailhog/3.jpg)
+![Captura de pantalla MailHog 3](../images/mailhog/3.jpg)
 
 Cualquier enlace en el correo electrónico debe redireccionar.
 
