@@ -12,7 +12,7 @@ You can:
 1. 🍴 [Fork this repo](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
 2. 👀️ Follow the contributing guidelines outlined below.
 3. 🔧 Make some awesome changes!
-4. 📖 Read this [style guide for best practices](/docs/style-guide-for-guide-articles).
+4. 📖 Read this [style guide for best practices](/docs/style-guide-for-guide-articles.md).
 5. 👉 [Make a pull request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Get your pull request approved - success!
 
@@ -79,7 +79,7 @@ You are not required to work on your local machine, unless you would like to pre
 Here are a few guidelines the reviewers follow when reviewing PRs:
 
 - there is a relevant description and title
-- PR respects the [style guide](/docs/style-guide-for-guide-articles)
+- PR respects the [style guide](/docs/style-guide-for-guide-articles.md)
 - we follow general QA tips found in [Moderator guidelines](https://forum.freecodecamp.org/t/freecodecamp-moderator-guidelines/18295)
 - as long as a pull request improves or expands the guide, we accept it even if it contains imperfect English or partial content
 - older pull requests are reviewed first
