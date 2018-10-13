@@ -17,4 +17,9 @@ SQL injection can be used to compromise this code by injecting a `1=1;` statemen
 
 `https://www.foo.com/get-user?AccountId="105 OR 1=1;"`
 
-`1=1` will always evaluate to `TRUE`. This will cause the executed code to output all of the Accounts table.
+`1=1` will always evaluate to `TRUE`. This will cause the executed code to output all the AccountIds present in the Accounts table.
+
+#### More Information:
+
+1. [Computerphile - Hacking websites with SQL Injection](https://www.youtube.com/watch?v=_jKylhJtPmI)
+
