@@ -77,6 +77,7 @@ int main() {
 -> 12.4
 -> 32.5 - 12.4 = 20.1
 ```
+if "default" is not in switch block then also code run correctly. 
 
 ## Review : Switch vs if else
 * Check the Testing Expression: An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests expressions based only on a single integer, enumerated value, or String object.
