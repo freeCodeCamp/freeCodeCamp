@@ -3,12 +3,11 @@ title: scikit-learn
 ---
 ## Scikit-learn
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/data-science-tools/scikit/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Scikit-learn is a popular open-source machine learning library for Python, built off of previous packages like numpy and scipy. There is code available to handle everything from importing data and data cleaning to model preparation and testing. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+ Installation steps: http://scikit-learn.org/stable/install.html 
+ 
+## References
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-<a href='http://scikit-learn.org/stable/' target='_blank' rel='nofollow'>Scikit-learn reference page</a>
+Scikit-learn main page: http://scikit-learn.org/stable/
+Tutorials: http://scikit-learn.org/stable/tutorial/index.html
