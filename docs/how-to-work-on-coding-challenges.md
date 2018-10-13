@@ -2,7 +2,7 @@
 
 ### Changing on GitHub
 
-Each challenge is stored in it's own markdown file. That makes it easy to edit challenges right from within GitHub.
+Each challenge is stored in it's own markdown file. That makes it easy to edit the challenges right from within GitHub.
 
 You can make a change without having anything running on your local system.
 
@@ -84,7 +84,7 @@ Challenge solution code.
 
 ### Useful Links
 
-Creating and Editing Challenges:
+Creating and Editing the Challenges:
 
 1. [Challenge Style Guide](style-guide-for-curriculum-challenges.md) - how to create and format challenges
 
