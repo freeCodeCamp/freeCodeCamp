@@ -17,6 +17,13 @@ x = 5
 if x > 4:
   print("The condition was true!") #this statement executes
 ```
+> **Tips** : You can use **1** as alternative to **True** and **0** as alternative to **False**
+
+_Example_:
+```python
+if 1:   #true
+  print('If block will execute!')
+ ```
 
 You can optionally add an `else` response that will execute if the condition is `false`:
 ```python
