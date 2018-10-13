@@ -85,9 +85,7 @@ npm list # for local packages
 
 ## Node Version Manager `nvm`
 
-nvm is a popular version manager for npm. It lets you install multiple npm instances on the same machine, giving you the 
-opportunity to also have different versions for global packages, for each npm installation.
-More info can be found [here](https://github.com/creationix/nvm).
+nvm is a popular version manager for npm. It lets you install multiple npm instances on the same machine, giving you the opportunity to also have different versions for global packages, for each npm installation. You can find [more information on nvm here](https://github.com/creationix/nvm).
 
 Say you want to install Node v6.9.1 you would write on the terminal:
 
