@@ -5,7 +5,7 @@ title: If Elif Else Statements
 ## If Elif Else Statements
 
 The `if`/`elif`/`else` structure is a common way to control the flow of a program, allowing you to execute specific blocks of code depending on the value of some data. If the condition following the keyword `if` evaluates as `true`, the block of code will execute:
-Note that parenthesis is not used before and after the condition check as in other languages .
+Note that parenthesis is not used before and after the condition check as in other languages.
 ```python
 if True:
   print('If block will execute!')
@@ -61,9 +61,9 @@ else:
 
 *Note only the first condition that evaluates as `true` will execute. Even though `z > 6` is `true`, the `if/elif/else` block terminates after the first true condition. This means that an `else` will only execute if none of the conditions were `true`.*
 
-We can also create nested if's for decision making. Before preceding please refer to the  href='https://guide.freecodecamp.org/python/code-blocks-and-indentation' target='_blank' rel='nofollow'>indentation guide once</a> before preceding. 
+We can also create nested if's for decision making. Before preceding please refer to the <a href='https://guide.freecodecamp.org/python/code-blocks-and-indentation' target='_blank' rel='nofollow'>indentation guide once</a> before preceding. 
 
-Let's take an example of finding a number which is even and also greater than '10`
+Let's take an example of finding a number which is even and also greater than '10':
 ```
 python 
 x = 34
