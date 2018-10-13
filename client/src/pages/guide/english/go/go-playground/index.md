@@ -13,9 +13,9 @@ Once there you'll get the buttons:
 3. Imports
 4. Share
 
-The Run button just send the instruction of compile the code you wrote to the google servers that run the golang Backend.
+The Run button sends the instruction to compile the code you wrote to the google servers that run the golang backend.
 
-The Format button implements the idiomatic formatting style of the language, you can read more [here.](https://golang.org/pkg/fmt/)
+The Format button implements the idiomatic formatting style of the language, you can read more [here](https://golang.org/pkg/fmt/)
 
 Imports just check what packages you have declared within import(). An import path is a string that uniquely identifies a package. A package's import path corresponds to its location inside a workspace or in a remote repository (explained below). [More](https://golang.org/doc/code.html#ImportPaths)
 
