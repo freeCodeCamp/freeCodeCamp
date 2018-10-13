@@ -65,3 +65,4 @@ For further reading to build logistic regression step by step :
 - Click <a href="https://medium.com/towards-data-science/building-a-logistic-regression-in-python-step-by-step-becd4d56c9c8"  target='_blank' rel='nofollow'>here</a> for an article about building a Logistic Regression in Python.
 - Click <a href="http://nbviewer.jupyter.org/gist/justmarkham/6d5c061ca5aee67c4316471f8c2ae976" target='_blank' rel='nofollow'>here</a> for another article on building a Logical Regression.
 - Click <a href="http://nbviewer.jupyter.org/gist/justmarkham/6d5c061ca5aee67c4316471f8c2ae976" target='_blank' rel='nofollow'>here</a> for another article on mathematics and intuition behind Logical Regression.
+- [Logistic Regression - Wikipedia](https://en.wikipedia.org/wiki/Logistic_regression)
