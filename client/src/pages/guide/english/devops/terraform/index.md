@@ -14,3 +14,7 @@ in a HCL Terraform syntax or JSON format.
 - <a href="https://www.terraform.io">Official Website</a>
 - <a href="https://https://github.com/hashicorp/terraform">Terraform on GitHub</a>
 
+
+
+terraform init
+terraform init command determince which plugin are needed for provides like aws, azure for google cloud platform, download then into the directory.
