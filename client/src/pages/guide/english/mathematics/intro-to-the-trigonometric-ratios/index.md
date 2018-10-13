@@ -3,6 +3,11 @@ title: Intro to the Trigonometric Ratios
 ---
 ## Intro to the Trigonometric Ratios
 
+
+All of the trigonometric functions of an angle θ can be constructed geometrically in terms of a unit circle centered at O.
+
+https://en.wikipedia.org/wiki/Trigonometry#/media/File:Circle-trig6.svg
+
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/intro-to-the-trigonometric-ratios/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
