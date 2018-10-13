@@ -26,3 +26,4 @@ The standard which dictates the rough speed for RAM in most computers has been D
 * <a href='http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html' target='_blank' rel='nofollow'>Types of RAM</a>.
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
 * <a href='https://en.wikipedia.org/wiki/Random-access_memory' target='_blank' rel='noffolow'>Wikipedia</a>.
+* [DDR4 RAM Information ](https://en.wikipedia.org/wiki/DDR4_SDRAM)
