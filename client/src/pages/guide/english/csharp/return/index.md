@@ -1,5 +1,5 @@
 ---
-title: Return statement
+title: Return Statement
 ---
 
 # Return Statement

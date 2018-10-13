@@ -54,7 +54,6 @@
     "./middlewares/csurf": {},
     "./middlewares/constant-headers": {},
     "./middlewares/csp": {},
-    "./middlewares/jade-helpers": {},
     "./middlewares/flash-cheaters": {},
     "./middlewares/passport-login": {},
     "./middlewares/email-not-verified-notice": {},

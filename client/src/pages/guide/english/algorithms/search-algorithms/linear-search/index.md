@@ -95,6 +95,16 @@ def linear_search(array, num):
 	return -1
 ```
 
+### Example in Swift
+```swift
+func linearSearch(for number: Int, in array: [Int]) -> Int? {
+    for (index, value) in array.enumerated() {
+        if value == number { return index } // return the index of the number
+    }
+    return nil // the number was not found in the array
+}
+```
+        
 ## Global Linear Search
 
 What if you are searching the multiple occurrences of an element? For example you want to see how many 5’s are in an array.

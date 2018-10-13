@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require('fs');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+require('dotenv').config({ path: path.resolve(__dirname, '../../../.env') });
 const MongoClient = require('mongodb').MongoClient;
 const { getChallengesForLang } = require('@freecodecamp/curriculum');
 const { flatten } = require('lodash');
@@ -35,7 +35,7 @@ MongoClient.connect(
     log('Connected successfully to mongo');
 
     const db = client.db('freecodecamp');
-    const challenges = db.collection('challenges');
+    const challenges = db.collection('challenge');
 
     challenges.deleteMany({}, err => {
       handleError(err, client);
@@ -49,7 +49,12 @@ MongoClient.connect(
             key => superBlock[key].challenges
           );
           return [...challengeArray, ...flatten(challengesForBlock)];
-        }, []);
+        }, [])
+        .map(challenge => {
+          challenge._id = challenge.id.slice(0);
+          delete challenge.id;
+          return challenge;
+        });
 
       try {
         challenges.insertMany(allChallenges, { ordered: false });

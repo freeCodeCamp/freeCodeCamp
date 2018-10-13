@@ -45,6 +45,7 @@ In this case, for matrix M, M' will denote the transpose of matrix M
 Of course, just seeing this article looks hugely complicated and should really only be understood in the greater contexts of neural networks and machine learning. Please look at the arrached references for a better understanding of the topic as a whole.
 
 #### More Information:
+
 High-Level:
 * Siraj Raval - [Backpropagation in 5 Minutes](https://www.youtube.com/watch?v=q555kfIFUCM)
 * [Backprop on Wikipedia](https://en.wikipedia.org/wiki/Backpropagation)
@@ -56,4 +57,3 @@ In-depth:
 * [Andrew Ng's ML Course](https://www.coursera.org/learn/machine-learning/)
 
 If you'd like to learn how to implement a full-blown single (hidden) layer neural network in python, whilst learning more about the math behind the algorithms used, you can register for [Andrew Ng's Deep Learning Specialization] (https://www.coursera.org/specializations/deep-learning)
-
