@@ -27,3 +27,10 @@ A collection of articles covering the basics (core language and working with a b
 
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
+
+*Secrets of the Javascript ninja* 2e
+
+Targeted to at least intermediate JS programmers, this book covers in depth features of Javascript in ES6 version.
+- [Amazon] (https://www.amazon.com/Secrets-JavaScript-Ninja-Second-Resig/dp/1617292850/ref=sr_1_1?s=english-books&ie=UTF8&qid=1539460800&sr=1-1&keywords=javascript+ninja)
+- ISBN-10: 1617292850
+- ISBN-13: 978-1617292859
