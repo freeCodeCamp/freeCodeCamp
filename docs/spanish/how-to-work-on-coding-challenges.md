@@ -18,13 +18,13 @@ Cada desafío está almacenado en su propio archivo markdown. De esa forma resul
 
 Puedes realizar los cambios sin tener que ejecutar nada desde tu sistema local.
 
-Después de que encuentres el archivo que quieras modificar desde la interfaz de GitHub, haz clic en el icono de lápiz para comenzar a editar el archivo. Esto automáticamente creara una bifurcación del proyecto, si es que no tienes una todavía.
+Después de que encuentres el archivo que quieras modificar desde la interfaz de GitHub, haz clic en el icono de lápiz para comenzar a editar el archivo. Esto automáticamente creara una bifurcación del proyecto, si es que no tienes uno todavía.
 
 También puedes clonar el proyecto y editarlo de manera local en tu ordenador. Si necesitas ayuda al respecto, dale un vistazo a la [guía principal de contribución](/CONTRIBUTING.md).
 
-### Patrón de los Desafíos.
+### Plantilla de los Desafíos.
 
-He aquí un patrón de cómo se verán los archivos markdown correspondientes a los desafíos.
+He aquí una plantilla de cómo se verán los archivos markdown correspondientes a los desafíos.
 
 ````md
 ---
@@ -88,7 +88,7 @@ Código posterior a las pruebas
 <section id='solution'>
 
 ```js
-Solución en código del desafío.
+Solución del código del desafío.
 ```
 
 </section>
@@ -98,8 +98,8 @@ Solución en código del desafío.
 
 Creando y Editando Desafíos:
 
-1. [Guía de Diseño de Desafíos](style-guide-for-curriclum-challenges.md) - como crear y formatear desafíos
+1. [Guía de Diseño de Desafíos](style-guide-for-curriclum-challenges.md) - cómo crear y formatear desafíos.
 
-2. [Tipos de desafíos](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - que significa el valor numerico de 'challengeType' (enum).
+2. [Tipos de desafíos](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - qué significan los valores numéricos del tipo de desafío (enumeración).
 
-3. [Contribuyendo a freeCodeCamp - Escribiendo Pruebas de Desafío en ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video siguiendo a [Ethan Arrowood](https://twitter.com/ArrowoodTech) mientras contribuye a la version antigua del currículo 
+3. [Contribuyendo a freeCodeCamp - Escribiendo Pruebas de Desafío en ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video siguiendo a [Ethan Arrowood](https://twitter.com/ArrowoodTech) mientras contribuye a la versión antigua del currículo.
