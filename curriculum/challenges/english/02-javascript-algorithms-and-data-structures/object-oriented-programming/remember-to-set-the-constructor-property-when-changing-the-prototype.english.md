@@ -9,7 +9,7 @@ challengeType: 1
 There is one crucial side effect of manually setting the <code>prototype</code> to a new object. It erased the <code>constructor</code> property! The code in the previous challenge would print the following for <code>duck</code>:
 <blockquote>console.log(duck.constructor)<br>// prints ‘undefined’ - Oops!</blockquote>
 To fix this, whenever a prototype is manually set to a new object, remember to define the <code>constructor</code> property:
-<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;constructor: Bird, // define the constructor property<br>&nbsp;&nbsp;numLegs: 2,<br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("nom nom nom");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("My name is " + this.name); <br>&nbsp;&nbsp;}<br>};</blockquote>
+<blockquote>Bird.prototype = {<br>&nbsp;&nbsp;constructor: Bird, // define the constructor property<br>&nbsp;&nbsp;numLegs: 4,<br>&nbsp;&nbsp;eat: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("nom nom nom");<br>&nbsp;&nbsp;},<br>&nbsp;&nbsp;describe: function() {<br>&nbsp;&nbsp;&nbsp;&nbsp;console.log("My name is " + this.name); <br>&nbsp;&nbsp;}<br>};</blockquote>
 </section>
 
 ## Instructions
@@ -42,7 +42,7 @@ function Dog(name) {
 // Modify the code below this line
 Dog.prototype = {
 
-  numLegs: 2,
+  numLegs: 4,
   eat: function() {
     console.log("nom nom nom");
   },
@@ -68,7 +68,7 @@ function Dog(name) {
 }
 Dog.prototype = {
   constructor: Dog,
-  numLegs: 2,
+  numLegs: 4,
   eat: function() {
     console.log("nom nom nom");
   },
