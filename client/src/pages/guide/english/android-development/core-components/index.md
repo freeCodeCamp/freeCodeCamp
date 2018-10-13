@@ -28,4 +28,4 @@ A _content provider_ is a component used to manage a set of app data to share wi
 For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
 
 ## Advanced Android Development  
-To learn advanced Android programming concepts, see Google's [Advanced Android Development](https://developers.google.com/training/courses/android-advanced) course.
+To learn advanced Android programming concepts, see Google's [Advanced Android Development](https://developers.google.com/training/courses/android-advanced) course.!
