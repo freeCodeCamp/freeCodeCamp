@@ -1,0 +1,29 @@
+# -------------------------------------------------
+# CODEOWNERS - For automated review request for 
+# high impact files
+#
+# Important: The order in this file cascades.
+#            So, @camperbot > dev/null
+#
+# https://help.github.com/articles/about-codeowners
+# -------------------------------------------------
+
+# -------------------------------------------------
+# All files except markdown is owned by dev team
+# -------------------------------------------------
+
+* @freecodecamp/dev 
+*.md @camperbot
+
+# -------------------------------------------------
+# All files in the root including markdown is owned 
+# by dev team
+# -------------------------------------------------
+
+/* @freecodecamp/dev
+
+# -------------------------------------------------
+# All files in root of docs is owned by dev team
+# -------------------------------------------------
+
+/docs/* @freecodecamp/dev
