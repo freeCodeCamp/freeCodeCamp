@@ -1,8 +1,8 @@
----
+ is a value of a continuous quantity that can represent a distance along a line.---
 title: Definition of Real Number
 ---
 ## Definition of Real Number
-> Real numbers can be thought of as points on an infinitely long line.
+> Real numbers can be thought of as points on an infinitely long line or as a value of a continuous quantity that can represent a distance along a line.
 
 Real numbers include all rational numbers, such as <em>1/2</em>, <em>0</em>, <em>103.644</em>, and <em>271/272</em>, as well as all of the irrational numbers, such as <em>pi</em>, the square root of 2, and <em>e</em>. Note that the "Complex Numbers", numbers who include non-zero imaginary magnitude, are not included. 
 
