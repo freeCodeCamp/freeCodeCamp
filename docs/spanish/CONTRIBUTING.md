@@ -3,7 +3,7 @@
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
+        <td><a href="/docs/arabic/CONTRIBUTING.md"> عربي </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
@@ -86,7 +86,7 @@ Puede ayudarnos a traducir los artículos de nuestra Guía y los desafíos de co
 
 - Chino (中文)
 - Ruso (русский)
-- Árabe (عربى)
+- Árabe (عربي)
 - Español
 - Portugués (Português)
 
