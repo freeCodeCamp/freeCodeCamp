@@ -59,6 +59,9 @@ convertToInteger("56");
 <section id='solution'>
 
 ```js
-// solution required
+function convertToInteger(str) {
+  
+  return parseInt(str);
+}
 ```
 </section>
