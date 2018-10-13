@@ -136,7 +136,7 @@ h5 { border: dotted; }
 - [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
 
 ### Other Border Attributes
-- 'border-radius' - This can set radius of the border. 
+- 'border-radius' - to set the radius of the border.
 - 'border-spacing' - This can set spacing between the text and border. 
 - 'border-image' - This sets an image as border. 
 
