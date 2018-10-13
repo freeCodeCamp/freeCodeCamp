@@ -166,3 +166,4 @@ Free Code Camp has some great resources. The web is a big place, there's plenty 
 * List of more resources for learning python: https://github.com/vinta/awesome-python
 * Interactive Python: http://interactivepython.org/runestone/static/thinkcspy/index.html
 * Developer's Guide to Python: https://devguide.python.org/
+* Learn Python The Hard Way: https://learnpythonthehardway.org/
