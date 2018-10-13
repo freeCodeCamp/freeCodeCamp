@@ -32,3 +32,5 @@ Setting an element to `opacity: 0;` does not remove it from the page. The elemen
 #### More Information:
 * [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/opacity)
 * [CSS Tricks Almanac](https://css-tricks.com/almanac/properties/o/opacity/)
+
+When you use the opacity property to add transparency to the background of an element, all of its child elements inherit the same transparency. If you do not want to apply opacity to child elements, use RGBA color values.
