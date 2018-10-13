@@ -14,3 +14,10 @@ in a HCL Terraform syntax or JSON format.
 - <a href="https://www.terraform.io">Official Website</a>
 - <a href="https://https://github.com/hashicorp/terraform">Terraform on GitHub</a>
 
+Terraform Apply:
+
+terraform apply will run the diff.
+
+terraform init
+terraform plan
+terraform apply are our main command that we will run on daily basis.
