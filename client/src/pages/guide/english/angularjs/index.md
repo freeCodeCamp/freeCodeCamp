@@ -30,3 +30,16 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+
+```Some basic Commands
+Creating a new project:
+  ng new project-name
+ Eg: ng new hello-world
+  
+Creating a class:
+  ng generate class class-name
+ Eg: ng generate class sample-class
+  
+Creating a component:
+  ng generate component component-name
+ Eg: ng generate component registration-form
