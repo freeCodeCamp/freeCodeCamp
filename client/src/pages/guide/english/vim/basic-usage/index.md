@@ -33,6 +33,9 @@ title: Basic Usage
 - :syntax on
 
 ## About Vim
-Vim is the text editor basically used in CLI mode . But now the editor is also available in various versions. There have 
-also GVIM which is the graphical version of VIM. vi was the main editor then its improved & named it VI improved Vim.
+
+Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.
+
+Vim is often called a "programmer's editor," and so useful for programming that many consider it an entire IDE. It's not just for programmers, though. Vim is perfect for all kinds of text editing, from composing email to editing configuration files.
+
 
