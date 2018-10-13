@@ -2,6 +2,11 @@
 title: Books on JavaScript
 ---
  ### List of Books
+ 
+*JavaScript & jQuery: interactive front-end web development by Jon Ducket* 
+One of the best books on JavaScript. For beginners and intermediate programmers, who code in JavaScript. 
+- [Amazon](https://www.amazon.co.uk/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
 
 *Eloquent JavaScript*
 
