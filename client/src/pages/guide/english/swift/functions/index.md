@@ -24,3 +24,26 @@ Functions do not require any input parameters or return types. However this requ
 
   helloSteve() // This prints out "Hello, Steve."
  ```
+ 
+ ## Protocol 
+ 
+ Protocol syntax
+  ```Swift
+ protocol someProtocols {
+   // protocol definition goes here
+ }
+ ```
+ 
+Class and Struct implement protocol
+
+```Swift
+struct SomeStruct: FirstProtocol, OtherProtocol {
+  //struct definition goes here
+}
+```
+
+```Swift
+struct SomeClass: FirstProtocol, OtherProtocol {
+ //class definition goes here
+}
+```
