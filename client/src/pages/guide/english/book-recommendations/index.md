@@ -61,6 +61,8 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0984782802
 
 ## C-lang
+*C Notes for Professionals book
+-https://books.goalkicker.com/CBook/
 
 *The C Programming Language* by Brian W. Kernighan and Dennis M. Ritchie
 - [Amazon Smile](https://smile.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/)
@@ -212,6 +214,9 @@ The Mythical Man-Month: Essays on Software Engineering
 - ISBN: 978-0262035613
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
+
+*Pro PHP Programming - Peter MacIntyre*
+[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
