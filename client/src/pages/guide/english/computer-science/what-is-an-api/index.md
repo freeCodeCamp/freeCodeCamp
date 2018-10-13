@@ -52,6 +52,17 @@ In the example above, a developer made a request for the current weather at a sp
   <li>Yelp: http://www.yelp.com/developers/getting_started</li>
   <li>Facebook: https://developers.facebook.com/docs/facebook-login/login-flow-for-web</li>
 </ol>
+## How do I access an API?
+You can request an API using code, such as Javascript. You can also request an API using a tool like Postman. Here is some example code to access an API using nodeJS:
+```javascript
+    const options = {  
+          url: 'urlfortheapi',
+          method: 'GET',
+          headers: {
+              'Authorization': 'API Key',
+          }
+      };
+      ```
 
 #### More Information:
 * [API for non-programmers](https://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/)
