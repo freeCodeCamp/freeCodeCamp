@@ -213,6 +213,9 @@ The Mythical Man-Month: Essays on Software Engineering
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
 
+*Pro PHP Programming - Peter MacIntyre*
+[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
