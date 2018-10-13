@@ -11,7 +11,7 @@
 # All files except markdown is owned by dev team
 # -------------------------------------------------
 
-* @freecodecamp/dev 
+* @freecodecamp/dev-team
 *.md
 
 # -------------------------------------------------
@@ -19,10 +19,10 @@
 # by dev team
 # -------------------------------------------------
 
-/* @freecodecamp/dev
+/* @freecodecamp/dev-team
 
 # -------------------------------------------------
 # All files in root of docs is owned by dev team
 # -------------------------------------------------
 
-/docs/* @freecodecamp/dev
+/docs/* @freecodecamp/dev-team
