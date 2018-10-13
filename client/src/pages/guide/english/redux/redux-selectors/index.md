@@ -1,6 +1,7 @@
 ---
 title: Redux Selectors
 ---
+
 ## Redux Selectors
 
 Redux selectors in their essence are functions that are used to select a subset of data from a Redux state, or in Redux terms, calculate derived data.
