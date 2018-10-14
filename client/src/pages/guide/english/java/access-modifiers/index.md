@@ -74,6 +74,8 @@ void setNewAge(){
     
 Above are some ways of using the default access modifier for a variable or method.
 Don't forget, the default access modifier does not have a key word. The absence of the 3 other access modifiers means you are using the default access modifier.
+ ***DEFAULT METHODS USED IN INTERFACES
+ Default methods in interfaces has a different fuctionallity. These are used to get an automathic result when oher programmers want to use the class.
 
 #### Protected Access Modifier
 The protected access modifier is closely related to the default access modifier. The protected access modifier has the properties of the default access modifier but with a little improvement.
@@ -115,6 +117,7 @@ public class Car {
 In the above example, only the `Car` class can use the `Engine`class. This can be useful in some cases.
 
 Other classes can never be set to `protected` or `private`, because it makes no sense. The `protected`access modifier is used to make things `package-private` but with the option to be accessible to subclasses. There is no concept such as 'subpackages' or 'package-inheritance' in java.
+
 
 ### Sources
 [1. Oracle docs on Access Modifiers](https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html "Oracle Docs")
