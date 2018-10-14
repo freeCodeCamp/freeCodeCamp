@@ -4,7 +4,7 @@ title: RAM
 ## RAM
 
 RAM stands for random-access memory, alternatively referred to as **main memory**, **primary memory**, or **system memory**. It is a piece of computer hardware where the data that your computer is currently working on is stored.<br>
-Unlike hard drives, RAM is a volatile memory and requires power to keep the data accessible. If the computer is turned off, all data contained in RAM is lost. New users often confuse RAM with disk drive space. See <a href='https://www.computerhope.com/jargon/m/memory.htm' target='_blank' rel='nofollow'>memory</a> definition for a comparison between memory and storage.<br>
+Unlike hard drives, RAM is a volatile memory and requires power to keep the data accessible. If the computer is turned off, all data contained in RAM is lost. New users often confuse RAM with disk drive space. See [memory definition](https://www.computerhope.com/jargon/m/memory.htm) for a comparison between memory and storage.<br>
 
 #### Types of RAM:
 There are two main types of RAM: static (SRAM) and dynamic (DRAM). Static RAM is constructed using flip-flops, is very fast, but is difficult to make in large sizes. Dynamic RAM is constructed using capacitors, is fairly fast, but needs 'refreshed' periodically to keep charge on the capacitors. SRAM is often used closer to the CPU due to its speed and space constraints whereas DRAM is used as main memory.
@@ -20,11 +20,11 @@ The standard which dictates the rough speed for RAM in most computers has been D
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-* <a href='http://www.webopedia.com/TERM/R/RAM.html' target='_blank' rel='nofollow'>RAM</a>
+* [Random-access Memory - Wikipedia](https://en.wikipedia.org/wiki/Random-access_memory)
+* [RAM - Webopedia](http://www.webopedia.com/TERM/R/RAM.html)
 * [Static RAM](https://en.wikipedia.org/wiki/Static_random-access_memory)
 * [Dynamic RAM](https://en.wikipedia.org/wiki/Dynamic_random-access_memory)
 * [DDR3 SDRAM](https://en.wikipedia.org/wiki/DDR3_SDRAM)
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
-* <a href='http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html' target='_blank' rel='nofollow'>Types of RAM</a>
+* [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
-* <a href='https://en.wikipedia.org/wiki/Random-access_memory' target='_blank' rel='nofollow'>Wikipedia</a>
