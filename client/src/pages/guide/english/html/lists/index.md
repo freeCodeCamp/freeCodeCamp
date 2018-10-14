@@ -33,7 +33,7 @@ An unordered list is written as
 
 
 ```HTML
-<ul>
+<ul">
   <li>Macintosh</li>
   <li>Fuji</li>
   <li>Gala</li>
@@ -51,7 +51,7 @@ An ordered list can be used for a variety of functions and in a number of styles
 Remove bullets:
 ```CSS
 ul {
-  list-style: none; 
+  list-style: circle; 
   }
 ```
 
