@@ -12,7 +12,7 @@ title: IDE and Printing different text
 
 **2 Debugger :** Software that helps you find errors in your program , and resolve them before execution. Imagine FaceBook crashing on loading an application or a game crashing all of a sudden. To prevent faulty execution of a program, the debugger is a programmer's best friend.
 
-**3 Compiler :** A compiler is that part of the computer which converts your high level program code to simple machine code : 0s & 1s ; so that a computer understands the commands and executes them. From now on, we will be uding the word **compiler** frequently.
+**3 Compiler :** A compiler is that part of the computer which converts your high level program code to simple machine code : 0s & 1s ; so that a computer understands the commands and executes them. From now on, we will be using the word **compiler** frequently.
 
 *Q : Try searching for an IDE on Google and run your first program on it . Check the output*
 
@@ -104,7 +104,7 @@ This is because we did not add the inverted commas for the second print statemen
 
 #### Comments:
 
-* Comments are an important feature of many programming languages. They allow the programmer to take notes for self help, and won't affect the running of the program.
+* Comments are an important feature of many programming languages. They allow the programmer to take notes for self help, and won't affect the running of the program.They also help another programmer to understand your code.
 
 **The different types of comments and Syntax of a comment**:
 
