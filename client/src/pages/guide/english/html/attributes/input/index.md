@@ -34,6 +34,8 @@ In the above example, there are two input fields which ask the user to enter the
 #### More Information:
 <a href="https://www.youtube.com/watch?v=qJ9ZkxmVf5s">Youtube</a>
 
+<a href="https://slack.com/">Slack </a>
+
 
 ## Input
 The HTML `<input>` tag is of many types to enter data. Some of them are:
