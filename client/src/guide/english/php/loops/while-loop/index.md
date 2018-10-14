@@ -26,9 +26,9 @@ Illustrating the simple and alternate syntax of while loop using example:
 
 $i = 1;  /* initialisation part */
 
-while ($i <= 100 && $i!=5 ) 
+while ($i <= 100 && $i!=5 )
 {
-    echo $i++;  
+    echo $i++;
 }
 
 /*using the alternate synatx of while loop*/

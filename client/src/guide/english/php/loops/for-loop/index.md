@@ -8,27 +8,46 @@ The PHP  `for` statement consists of three expressions and a statement:
 
 `for ((initialization); (condition); (final-expression)) statement`
 
+## Example
+```php
+
+<?php
+for($index = 0; $index < 5; $index ++)
+{
+    echo "Current loop counter ".$index.".\n";
+}
+?>
+```
+The output of this loop will be:
+```
+> Current loop counter 0.
+> Current loop counter 1.
+> Current loop counter 2.
+> Current loop counter 3.
+> Current loop counter 4.
+```
+
 ### Description
 
 - initialization
     - Run before the first execution on the loop.
-    - This expression is commonly used to create counters. 
+    - This expression is commonly used to create counters.
     - Variables created here are scoped to the loop. Once the loop has finished it is execution they are destroyed.
-- condition 
-    - Expression that is checked prior to the execution of every iteration. 
+- condition
+    - Expression that is checked prior to the execution of every iteration.
     - If omitted this expression evaluates to `true`.
-- final-expression 
-    - Expression that is run after every iteration. 
-    - Usually used to increment a counter. 
+- final-expression
+    - Expression that is run after every iteration.
+    - Usually used to increment a counter.
     - But it can be used to run any expression.
 - statement
     - Code to be repeated in every loop iteration.
 
-Any of these three expressions or the statement can be ommited. 
+Any of these three expressions or the statement can be ommited.
 
-The expressions can contain multiple expressions separated by comma. 
+The expressions can contain multiple expressions separated by comma.
 
-In the (condition) expression, all the comma separated expressions will be evaluated. 
+In the (condition) expression, all the comma separated expressions will be evaluated.
 
 The result is obtained from the last one.
 
@@ -56,13 +75,13 @@ This will output:
 int(1) int(2) int(3) NULL
 ```
 
-There are to ways to fix this code. 
+There are to ways to fix this code.
 
 Set the condition to either `$i < count($arr)` or `$i <= count($arr) - 1`.
 
 #### Performance Issues
 
-The above code can became slow, because the array size is fetched in every iteration. 
+The above code can became slow, because the array size is fetched in every iteration.
 
 In order to fix this problem it is possible to put the array size into a variable.
 
@@ -73,4 +92,4 @@ for ($i = 0, $size = count($arr); $i < $size; ++$i) {
 
 ### More Information
 
-- <a href='https://secure.php.net/manual/en/control-structures.for.php' target='_blank' rel='nofollow'>PHP.net - Control Structures</a> 
+- <a href='https://secure.php.net/manual/en/control-structures.for.php' target='_blank' rel='nofollow'>PHP.net - Control Structures</a>
