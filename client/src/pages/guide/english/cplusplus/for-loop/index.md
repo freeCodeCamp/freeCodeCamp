@@ -8,6 +8,8 @@ The for loop is distinguished from other looping statements through an explicit 
 
 Hence a for loop is a repetition control structure that allows you to efficiently write a loop that needs to execute a specific number of times.
 
+As opposed to the do while loop, a for loop may never be executed if it doesn't satisfy the entry loop condition.
+
 ## Syntax
 
 ```
@@ -16,7 +18,7 @@ for ( init; condition; increment ) {
 }
 ```
 
-It is allowed to place the increment insie the for loop like in a while loop. Meaning a syntax like this can also work.
+It is allowed to place the increment inside the for loop like in a while loop. Meaning a syntax like this can also work.
 
 ```
 for ( init; condition;) {
@@ -38,7 +40,7 @@ The update statement executes after the execution of the body of the loop.
 ## IMPLEMENTATION:
 ```C++
 #include <iostream>
-using namespace std; // Here we use the scope resolution operator to define the scope of the standar functions as std::
+using namespace std; // Here we use the scope resolution operator to define the scope of the standard functions as std::
  
 int main () {
    // for loop execution
@@ -120,5 +122,10 @@ Output:
 4
 5
 ```
+# Infinite for loop
+This kind of for loop should be known so that if can be avoided using coding, such a loop never ends and can cause the computer to crash. The checking condition never fails in such a loop.
 
+Example :
+for(int i=1;i>0;i++)
+cout<<"hello world";
 
