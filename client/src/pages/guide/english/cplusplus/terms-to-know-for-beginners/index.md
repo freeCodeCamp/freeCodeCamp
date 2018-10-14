@@ -12,7 +12,7 @@ title: IDE and Printing different text
 
 **2 Debugger :** Software that helps you find errors in your program , and resolve them before execution. Imagine FaceBook crashing on loading an application or a game crashing all of a sudden. To prevent faulty execution of a program, the debugger is a programmer's best friend.
 
-**3 Compiler :** A compiler is that part of the computer which converts your high level program code to simple machine code : 0s & 1s ; so that a computer understands the commands and executes them. From now on, we will be using the word **compiler** frequently.
+**3 Compiler :** A compiler is the part of the computer which converts your high level program code to machine code : 0s & 1s ; so that the computer's Central Processing Unit (CPU) can understand the commands and execute them. From now on, we will be using the word **compiler** frequently.
 
 *Q : Try searching for an IDE on Google and run your first program on it . Check the output*
 
@@ -100,7 +100,7 @@ Output:
 * The first output statement is `1+2`
 * The second output statement is `3`
 
-This is because we did not add the inverted commas for the second print statement and so, the compiler added the numbers before printing them.
+This is because we did not add the quotation marks for the second print statement and so, the compiler added the numbers before printing them.
 
 #### Comments:
 
