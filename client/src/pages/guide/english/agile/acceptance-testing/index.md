@@ -48,7 +48,15 @@ The Acceptance test plan has the following attributes:
 
 ->Acceptance Test Category
 
-->operation Environment
+->Operation Environment
+
+->Approach
+
+->Feature to be tested
+
+->Feature not to be tested
+
+->Responsibilities
 
 ->Test case ID
 

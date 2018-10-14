@@ -11,7 +11,7 @@ selector {
 ```
 Everything inside the curly brackets styles whatever is selected by the [selector]. Inside a CSS rules is a set of [property]/value pairs.
 
-You can have different selectors seperated with comas:
+You can have different selectors seperated with commas:
 ```CSS
 selector1, 
 selector2 {

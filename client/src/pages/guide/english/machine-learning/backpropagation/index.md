@@ -10,6 +10,8 @@ Backprogapation is a subtopic of [neural networks](../neural-networks/index.md).
 
 **Method:** This is done by calculating the gradients of each node in the network. These gradients measure the "error" each node contributes to the output layer, so in training a neural network, these gradients are minimized.
 
+Backpropogation can be thought of as using the chain rule to compute gradients with respect to different parameters in a neural network in order to perform iterative updates to those parameters. 
+
 Note: Backpropagation, and machine learning in general, requires significant familiarity with linear algebra and matrix manipulation. Coursework or reading on this topic is highly recommended before trying to understand the contents of this article. 
 
 ### Computation
@@ -53,6 +55,7 @@ High-Level:
 In-depth: 
 * Lecture 4 CS231n [Introduction to Neural Networks](https://youtu.be/d14TUNcbn1k?t=354)
 * [In depth, wiki style article](https://brilliant.org/wiki/backpropagation/)
+* [Article on computation graphs](http://colah.github.io/posts/2015-08-Backprop/)
 * [A Step by Step Backpropagation Example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
 * [Andrew Ng's ML Course](https://www.coursera.org/learn/machine-learning/)
 

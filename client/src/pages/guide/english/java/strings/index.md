@@ -141,3 +141,45 @@ System.out.println(a.compareTo(b));       // 0
 System.out.prinltn(a.compareTo(c));       // 1 since (a>b)
 System.out.println(c.compareTo(a));       // -1 since (c<a)
 ```
+
+#### Splitting Strings  
+If you want to split a string into multiple parts it can easily be done through ```.split()``` this creates an array of the split up parts of the string.
+
+Example of using a delimiter (",") to split a string
+```java
+String text = "Hello, World";
+String[] textParts = text.split(",");
+System.out.println(textParts[0]);
+System.out.println(textParts[1]);
+```
+The result will be:
+
+```
+Hello
+World
+```
+We can also split the string by specifing the start and end index of the characters in the string. We will do this using the Java function called ```.substring()```.
+
+The ```.substring()``` method can be used in two ways. One with only the starting index and one with both the start and end index. Take note that the index starts from 0.
+Example:
+```java
+String text = "Hello,My name is Bob";
+System.out.println(text.substring(6));
+```
+Will produce
+```
+My Name is Bob
+```
+To use it with an ending index take note that the actual ending index is -1 of the value passed into the method.
+Now using ```.substring()``` with an ending index
+Example:
+```
+String text = "Hello,My name is Bob";
+System.out.println(text.substring(6,8));
+
+```
+The result will be:
+```
+My
+```
+
