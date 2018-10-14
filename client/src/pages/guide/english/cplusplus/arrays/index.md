@@ -34,3 +34,7 @@ x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
+Elements in the array can be accessed continuosly using a for loop which runs from 0 to the (number of elements-1).
+Example : for(int i=0;i<n;i++)
+cin>>array[i];
+cout<<array[i];
