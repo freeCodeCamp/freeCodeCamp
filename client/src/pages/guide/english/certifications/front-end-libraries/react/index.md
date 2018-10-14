@@ -5,9 +5,9 @@ title: React
 
 ![React](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png)
 
-React or ReactJS is a frone-end library which is used to create beautiful, reusable and interactive User Interfaces.
+React or ReactJS is a front-end library which is used to create beautiful, reusable and interactive User Interfaces.
 
-React is written in JavaScript and JSON( JavaScript Object Notation ). It is designed with reusability in mind and follows a component based pattern, which means write once and use infinitely.
+React is written in JavaScript and JSX. It is designed with reusability in mind and follows a component based pattern, which means write once and use infinitely.
 
 It is available as a CDN for browser based development or as a npm package for Command line shell based editing.
 
