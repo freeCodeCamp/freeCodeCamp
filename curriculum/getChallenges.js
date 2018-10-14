@@ -64,7 +64,7 @@ async function buildCurriculum(file, curriculum) {
 }
 
 function superBlockInfoFromPath(filePath) {
-  const [maybeSuper] = filePath.split('/');
+  const [maybeSuper] = filePath.split(path.sep);
   return superBlockInfo(maybeSuper);
 }
 
@@ -82,6 +82,6 @@ function superBlockInfo(fileName) {
 }
 
 function getBlockNameFromPath(filePath) {
-  const [, block] = filePath.split('/');
+  const [, block] = filePath.split(path.sep);
   return block;
 }
