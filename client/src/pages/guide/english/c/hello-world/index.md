@@ -1,6 +1,9 @@
 ---
 title: Hello World C
 ---
+##History 
+
+Though small test programs have existed since the development of programmable computers, the tradition of using the phrase "Hello, world!" as a test message was influenced by an example program in the seminal book 'The C Programming Language'. The example from the book prints "hello, world".
 
  ## Hello World
 
