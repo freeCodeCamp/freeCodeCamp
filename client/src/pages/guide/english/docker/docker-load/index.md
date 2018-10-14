@@ -20,5 +20,5 @@ This command also recognizes gzip, bzip2 and xz compression, and decompresses th
 docker load -i nginx-backup.tar.gz
 ```
 
-#### For More Information:
+#### More Information:
 - [Docker CLI docs: load](https://docs.docker.com/engine/reference/commandline/load/)
