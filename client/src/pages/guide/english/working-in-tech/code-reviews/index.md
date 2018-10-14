@@ -12,3 +12,9 @@ grow as a developer.
 Is is important to be humble throughout the code review process. Accept your mistakes, 
 and be professional when pointing out improvements or errors in the code of your fellow
 team members.
+
+Code Review have been proven to improve quality, modularization and reduce error-proneness in a software project.
+Even if a review is just an explanation of the code to another programmer, the feeling that your code is going to be read/ inspected by another programmer as well makes you write better code in many ways (smaller methods, comments and no ["magic numbers"](https://en.wikipedia.org/wiki/Magic_number_(programming))).
+
+As to what is reviewed and when, well there is no clear answer. Many teams have rules that every piece of code that checks-in in the version control system has to be reviewed by another programmer, while other teams have whole days when they dedicate to code reviews across the team.
+
