@@ -123,7 +123,7 @@ void bubblesort(int arr[], int n)
 	if(n==1)	//Initial Case
 		return;
 	
-	for(int i=0;i<n-1;i++)	//After this pass the largest element will move to its desired location.
+	for(int i=0;i<=n-2;i++)	//After this pass the largest element will move to its desired location.
 	{
 		if(arr[i]>arr[i+1])
 		{
