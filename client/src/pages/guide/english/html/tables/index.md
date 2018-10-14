@@ -39,7 +39,7 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
 <!DOCTYPE html>
     <html>
 	<body>
-	   <table>
+	   <table style="width:100%; border: 1px solid black;">
 	  <thead>
 	    <tr>
 	      <th>Item</th>
@@ -96,3 +96,7 @@ Result:
 #### More Information:
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
+        
+        
+   
+
