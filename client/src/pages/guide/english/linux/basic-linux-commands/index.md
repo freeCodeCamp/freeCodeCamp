@@ -13,6 +13,24 @@ When starting out with linux, there are some basic commands everyone should know
 - Two common flags used with `ls` are `-l` and `-a`, they can be used together and chained as such: `ls -la`. The `-l` flag will show you files in list order and in long format including a display of permissions, `-a` will show dot type files which are typically hidden in a GUI file finder such as `.env` files
 - Flag ordering does not matter, so the previous command could be written as `ls -al`
 
+Example
+
+{  neit@neit-HP:~$ ls
+
+  list of Files-
+  CLionProjects  Downloads         mysqld    Public           ven
+  Desktop        examples.desktop  Pictures  PycharmProjects  Videos
+  Documents      Music             program   Templates
+  
+  neit@neit-HP:~$ cd pictures         //String should be same as folder name shown
+  bash: cd: pictures: No such file or directory      
+  
+  neit@neit-HP:~$ cd Pictures 
+  neit@neit-HP:~/Pictures$  
+  again if we command ls then list of pictures we get}
+
+
+
  3. **man** - manual command
 - Shows you the manual for the following command. This is very helpful when trying to figure out how an unfamiliar command works. For example, type `man ls` for everything you need to know about the ls command. Type `q` to exit.
 
