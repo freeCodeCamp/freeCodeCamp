@@ -3,7 +3,7 @@ title: Spread Operator
 ---
 ## Spread Operator
 
-The spread operator (`...`), allows to get the elements of a collection.
+The spread operator (`...`), allows to get the elements of a collection such as an array and helps operating on it.
 
 One of the most commom uses is for `Node` Objects, when using query selectors in the browser, in order to make them iterable Array Objects:
 ```javascript
@@ -11,7 +11,7 @@ const paragraphs = document.querySelectorAll('p.paragraph');
 const arr = [...paragraphs];
 ```
 
-Another use of the spread operator is for Array concatenation:
+An Example of using the spread operator for Array concatenation:
 ```javascript
 const arr_1 = [1, 2, 3, 4]
 const arr_2 = [5, 6, 7, 8]
