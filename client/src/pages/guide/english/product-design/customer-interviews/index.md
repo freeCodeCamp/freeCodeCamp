@@ -11,5 +11,6 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+<a href='https://www.interaction-design.org/literature/article/how-to-conduct-user-interviews' target='_blank' rel='nofollow'>A quick intro on user interviews</a>.
 
 
