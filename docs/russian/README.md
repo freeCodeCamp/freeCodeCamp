@@ -13,5 +13,6 @@
 # Documentation Quick Reference
 
 Hello 👋 !
-
+Привет 👋 !
+Эта инструкция еще не переведена. Пожалуйста, проверьте этот вопрос для деталей: [`# 18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
 These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
