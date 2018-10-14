@@ -31,19 +31,19 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 </html>
 ```
 
-!DOCTYPE html: Defines this document to be HTML5
+1. !DOCTYPE html: Defines this document to be HTML5
 
-html: The root element of an HTML page
+2. html: The root element of an HTML page
 
-head: The element contains meta information about the document
+3. head: The element contains meta information about the document
 
-title: The element specifies a title for the document
+4. title: The element specifies a title for the document
 
-body: The element contains the visible page content
+5. body: The element contains the visible page content
 
-h1: The element defines a large heading
+6. h1: The element defines a large heading
 
-p: The element defines a paragraph
+7. p: The element defines a paragraph
 
 ### HTML Versions
 
