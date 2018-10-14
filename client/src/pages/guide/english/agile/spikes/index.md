@@ -7,7 +7,7 @@ Not everything your team works on during the Sprint are User Stories. Sometimes,
 
 In these cases, a Spike is added to the Sprint Backlog. The Acceptance Criteria for the Spike should be an answer to the question being posed. If the experiment is more difficult than anticipated, then maybe the answer is negative. (That's why the Spike should be limited in time.) 
 
-The time and energy invested in the Spike are intentionally limited so that the work can be completed within the Sprint while other User Stories are minimally impacted. The Spike does not usually receive a Story Point Estimate, but is given a fixed number of hours to be worked on.
+The time and energy invested in the Spike are intentionally limited so that the work can be completed within the Sprint while other User Stories are minimally impacted. The Spike does not usually receive a Story Point Estimate, but is given a fixed number of hours to be worked on. Also make sure that your team is not ending up in a spike every time they are facing challening tasks. Rather one should place the question if the task can be broken down in smaller parts.
 
 Demonstrate the results of the Spike in the Sprint Review. Based on the new information, the original question is reframed as a new User Story in a future Sprint.
 
