@@ -39,3 +39,12 @@ When starting out with linux, there are some basic commands everyone should know
 
  11. **less** - view file content  
 - Use `less filename.txt` to view contents of a file and navigate through them. By default, less will go through the file page by page.
+
+ 12. **cat** - display file's textual contents  
+- Use this command to display text from within a given file on your terminal. Entering `cat myFile.txt` in your terminal will display the contents of the file `myFile.txt` on screen. The `cat` command can be a very handy tool when used with the terminal _pipes_.
+
+-----
+### Useful Resources for Practice:
+- [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
+- [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
+- [LinuxJourney](https://linuxjourney.com/lesson/the-shell): A collection of beginner-friendly terminal tutorials.
