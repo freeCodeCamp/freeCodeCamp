@@ -32,7 +32,7 @@ Ideal for click-through prototypes.
 
 [Moqups](https://moqups.com/)
 
-### Paiting
+### Painting
 Great for artists.
 
 [Clip Studio Paint](https://www.clipstudio.net/en)
