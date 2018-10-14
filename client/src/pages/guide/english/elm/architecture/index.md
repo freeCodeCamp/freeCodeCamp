@@ -4,7 +4,7 @@ title: Architecture
 
 ## Architecture
 
-The Elm architecture was the inspiration of the state-of-the-practice architecture in many web applications developed nowadays. It's based on some principles that are inherent to Elm itself, like immutability. The Elm architecture is sometimes referred to as MVU (Model-View-Update). Let's explore each of the elements in this definition:
+The Elm architecture was the inspiration of the state-of-the-practice architecture in many web applications developed nowadays. It's based on some principles that are inherent to Elm itself, like immutability. The Elm architecture is sometimes referred to as MVU (Model-View-Update). You can read more about the Elm architecture in the [official language guide](https://guide.elm-lang.org/architecture/). Let's explore each of the elements in this definition:
 
 ### Model
 
