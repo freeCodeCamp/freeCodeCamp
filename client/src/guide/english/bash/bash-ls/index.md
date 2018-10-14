@@ -10,7 +10,7 @@ title: Bash ls
 ### Usage
 
 ```bash
-cat [options] [file_names]
+ls [options] [file_names/directory/path]
 ```
 
 Most used options:
