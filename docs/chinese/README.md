@@ -27,13 +27,14 @@
 ### 在本地从事工作的快速指令指南
 
 以下是你在本地从事工作时，你所需要的指令的快速参考
+
 | 指令  |  描述 |
-|-------|-------|
-|npm run bootstrap|Bootstraps the different services|
-|npm run seed|Parse all the challenge markdown files and inserts them into MongoDB.|
-|npm run develop|Starts the freeCodeCamp API Server and Client Apps|
-|npm test|Run all JS tests in the system, including client, server, lint and challenge tests|
-|npm run test:client|Run the client test suite|
-|npm run test:curriculum|Run the curriculum test suite|
-|npm run test:server|Run the server test suite|
-|npm run commit|An interactive tool to help you build a good commit message|
+| --- | ---|
+| npm run bootstrap | Bootstraps the different services |
+| npm run seed | Parse all the challenge markdown files and inserts them into MongoDB. |
+| npm run develop | Starts the freeCodeCamp API Server and Client Apps |
+| npm test | Run all JS tests in the system, including client, server, lint and challenge tests |
+| npm run test:client | Run the client test suite |
+| npm run test:curriculum | Run the curriculum test suite |
+| npm run test:server | Run the server test suite |
+| npm run commit | An interactive tool to help you build a good commit message |
