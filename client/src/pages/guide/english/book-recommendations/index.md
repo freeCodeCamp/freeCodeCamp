@@ -207,6 +207,9 @@ The Mythical Man-Month: Essays on Software Engineering
 - [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 - ISBN-13: 978-0201835953
 
+*Deep Learning*
+- [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618/ref=sr_1_4?s=books&ie=UTF8&qid=1539402410&sr=1-4&keywords=deep+learning)
+- ISBN: 978-0262035613
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
