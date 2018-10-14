@@ -18,5 +18,5 @@ Or with a specific version:
 docker save -o nginx-backup.tar nginx:1.15.5
 ```
 
-#### For More Information:
+#### More Information:
 - [Docker CLI docs: save](https://docs.docker.com/engine/reference/commandline/save/)
