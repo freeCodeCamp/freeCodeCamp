@@ -24,5 +24,5 @@ To kill more than one container, container names or IDs must be added with a whi
 docker kill mycontainer mysecondcontainer mythirdcontainer
 ```
 
-#### For More Information:
+#### More Information:
 - [Docker CLI docs: kill](https://docs.docker.com/engine/reference/commandline/kill/)
