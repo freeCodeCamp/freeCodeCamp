@@ -14,8 +14,12 @@ The Model represents the **whole** state of the application, centralized as a si
 
 The View represents the user interface presented in the web browser. In Elm applications, there is a very important aspect of the View: it is a pure function that receives the Model as input.
 
-If you look at the type for the Elm elements in a web application, `Html.Html`, you'll notice it is a parameterized type (you'll usually see something like `Html a` or `Html Msg`). The type parameter here is used to tell the Elm compiler the return type of the event handlers for the elements, if any. We usually call this type `Message`. Messages returned from event handlers are dispatched to the Update function much like Redux actions.
+If you look at the type for the Elm elements in a web application, `Html.Html`, you'll notice it is a parameterized type (you'll usually see something like `Html a` or `Html Msg`). The type parameter here is used to tell the Elm compiler the return type of the event handlers for the elements, if any. We usually call this type Message, and Messages returned from event handlers are dispatched to the Update function much like Redux actions.
 
 ### Update
 
-The Update part is another pure function. It receives the current Model and a dispatched Message, returning a new Model as a result. When the Update function is called as the result of a Message being dispatched, the View function is called again, and if necessary, the application interface is rendered again.
+The Update part is another pure function. It receives the current Model and a dispatched Message, returning a new Model as a result. In more complex applications, the Update function can also return Commands, which represent side effects that may later result in more Messages being dispatched.
+
+### How all of this fits together
+
+The three elements mentioned above interact in a predictable way during all of the application's life cycle. The initialization of an Elm application receives as one of its arguments the initial state, which is a value of the Model type. Based on that, the first View render is computed and presented in the web browser. Whenever some user interaction or another side effect results in the dispatch of a Message, the Update function is called. If the resulting Model is different from the previous, the View function is called again.
