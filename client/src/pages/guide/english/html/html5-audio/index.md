@@ -10,7 +10,7 @@ The following code snippet adds an audio file with the filename `tutorial.ogg` o
 
 #### Example 1
 ```html
-<audio controls>
+<audio controls autoplay>
   <source src="tutorial.ogg" type="audio/ogg">
   <source src="tutorial.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
