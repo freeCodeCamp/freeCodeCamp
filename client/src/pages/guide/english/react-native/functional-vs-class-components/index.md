@@ -11,11 +11,11 @@ Class components are JavaScript ES2015 classes that extend a base class from Rea
 
 ```js
 class App extends Component {
-    render () {
-        return (
-            <Text>Hello World!</Text>
-        )
-    }
+  render () {
+    return (
+      <Text>Hello World!</Text>
+    )
+  }
 }
 ```
 
@@ -23,15 +23,43 @@ This gives the class `App` access to the React lifecycle methods like `render` a
 
 ### Functional Components
 
-Functional components are simpler. They don't manage their own state or have access to the lifecycle methods provided by React Native. They are literally plain old JavaScript functions. They are also known as stateless components.
+Functional components are simpler. They don't manage their own state or have access to the lifecycle methods provided by React Native. They are literally plain old JavaScript functions. They are also known as stateless components. 
 
 ```js
 const PageOne = () => {
-    return (
-        <h1>Page One</h1>
-    );
+  return (
+    <Text>Page One</Text>
+  );
 }
 ```
+
+Note that its immediate parent doesn't necessarily have to be a Class component. It could just be another stateless one, which allows for better componentization. Here's an example.
+
+```js
+const SecondComponent = () => {
+  return <Text>Hello World</Text>
+}
+
+const FirstComponent = () => {
+  return (
+    <View>
+      <SecondComponent />
+    </View>
+  )
+}
+
+class App extends Component {
+  render () {
+    return <FirstComponent />
+  }
+}
+```
+
+We're not doing all that much here. `App` is a class component that renders `FirstComponent`, which is just a functional component that returns `SecondComponent` inside of a `View`. 
+
+Obviously, if the goal was just to render a `Text` component that said "Hello World", you wouldn't need `FirstComponent` nor `SecondComponent`. But the purpose of this example is to show how one might go about nesting functional components.
+
+Sometimes, a functional component may contain a lot of markup for its configuration. For example, the `TextInput` component can be customized with many attributes, so you may want to create custom components for different fields like email, password, username and so on. That is a powerful concept, as you're now able to reuse these custom components throughout your application.
 
 ### Summary
 
