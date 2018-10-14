@@ -82,6 +82,8 @@ A forest is a set of n ≥ 0 disjoint trees.
 
 ###Code of a tree node
 
+In C++: 
+
 ``` c_cpp
 struct node
     {
@@ -91,6 +93,16 @@ struct node
     };
 
 ```
+In Python:
+
+``` py
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+```
+
 #### More Information:
 
 * [CMU lesson notes](http://www.cs.cmu.edu/~clo/www/CMU/DataStructures/Lessons/lesson4_1.htm)
