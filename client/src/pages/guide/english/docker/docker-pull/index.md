@@ -30,5 +30,5 @@ Or with specific version:
 docker pull myregistry.example.com/myapplicationimage:1.2.11
 ```
 
-#### For More Information:
+#### More Information:
 - [Docker CLI docs: pull](https://docs.docker.com/engine/reference/commandline/pull/)
