@@ -24,6 +24,17 @@ The stack container supports the following operations:
   - empty
   - size
   - back
+Stacks can also be worked on as dynamic containers, using linked lists. They will have a pointer Top, signifying the first entered element.
+
+struct node
+{
+int data;
+node *next;
+}*top=NULL;
+
+push, pop operations will take place using this top pointer as key, while display takes place from the top till the last node's next doesn't point to NULL.
+
+This is useful compared to array stack, since there's no precided maximum number of allowed elements.
 
 #### Push
 
