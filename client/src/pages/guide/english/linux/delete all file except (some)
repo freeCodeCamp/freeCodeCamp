@@ -1,0 +1,4 @@
+<h4>How to delete all files in a directory with a specific file(s)</h4><hr>
+
+<pre>find . ! -name 'mysql.sock' -type f -exec rm -f {} +</pre>
+<em> The command above deletes all file in the . directory except 'mysql.sock'</em>
