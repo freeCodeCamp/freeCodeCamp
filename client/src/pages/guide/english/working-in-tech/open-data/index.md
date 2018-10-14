@@ -18,4 +18,6 @@ One way that you can use open data is through Civic Hacking in your local code f
 * [Open Data Wikipedia Page](https://en.wikipedia.org/wiki/Open_data)
 * [Find Your Brigade](http://brigade.codeforamerica.org/brigade/)
 
+##### Local Examples:
+* [The Public Knowledge Workshop (“HASADNA”)](http://www.hasadna.org.il/en/)
 
