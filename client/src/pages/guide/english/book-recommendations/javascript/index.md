@@ -27,3 +27,9 @@ A collection of articles covering the basics (core language and working with a b
 
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
+
+*JavaScript and JQuery: Interactive Front-End Web Development*
+
+A very fun and easy book for beginners. 
+
+[Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
