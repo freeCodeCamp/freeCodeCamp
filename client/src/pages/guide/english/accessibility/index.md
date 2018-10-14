@@ -36,6 +36,6 @@ Just like Alt text is for people who are visually impaired, transcripts of the a
 
 Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Consortium</a>, (<a href="http://www.csail.mit.edu/" shape="rect">MIT</a>, <a href="http://www.ercim.org" shape="rect">ERCIM</a>, <a href="http://www.keio.ac.jp" shape="rect">Keio</a>,<a href="http://ev.buaa.edu.cn" shape="rect">Beihang</a>). http://www.w3.org/Consortium/Legal/2015/doc-license
 
-### More Information:
+### More Information About Accessibility:
 <a href='https://www.w3.org/WAI/intro/accessibility.php' target='_blank' rel='nofollow'>w3.org introduction to accessibility.</a>
 <a href='http://a11yproject.com/' target='_blank' rel='nofollow'>The A11Y Project</a>
