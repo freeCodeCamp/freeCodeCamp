@@ -1,4 +1,5 @@
-var fs = require('fs');
+Var fs = require('fs');
+
 
 var directory = '';
 // Get list of .md files in current directory
