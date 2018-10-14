@@ -92,7 +92,7 @@ note that we also used an arrow function to shorten the forEach callback!
 
 The arguments object is not available inside the body of an arrow function.
 
-The rest parameter must always come as the last argument in your function definition.  
+The rest parameter must always come as the last parameter in your function definition.  
     ```function getIntoAnArgument(arg1, arg2, arg3, ...restOfArgs  /*no more arguments allowed here*/) {
         //function body
     }```   
