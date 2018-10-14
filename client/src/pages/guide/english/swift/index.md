@@ -60,6 +60,7 @@ project or application, no matter how small!
 
 * [RayWenderlich.com](https://www.raywenderlich.com/) : Has many great tutorials for Swift and iOS development.
 * [Hacking with Swift](https://www.hackingwithswift.com/read) : A complete Swift tutorial, taking you from a beginner to advanced using hands-on projects.
+* [Udemy Courses](https://www.udemy.com/) : Featuring project-based learning, Udemy offers an expansive collection of courses, which better prepare you for real-world tasks. Note: Most courses are discounted 90% depending on sales and promotions.
 
 ### Sources
 
