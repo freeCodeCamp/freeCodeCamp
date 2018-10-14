@@ -51,7 +51,7 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
  Sort the collection // in ascending order
  ```java
-  Collection.sort(variable_name);
+  Collections.sort(variable_name);
   ```
   
    for sorting in decending order
