@@ -13,7 +13,7 @@ Each estimator holds an identical set of poker cards consisting of cards with va
 
 The product owner (PO) or stakeholder explains the story that is to be estimated.
 
-The team discusses the story, asking any clarifying questions that they might have. This helps the team get a better understanding on *what* the PO wants. 
+The team discusses the story, asking any clarifying questions that they might have. This helps the team get a better understanding on *what* the PO wants. The efficiency of the Planning Poker hereby depends on how well the PO prepared the user stories.
 
 At the end of the discussion, each person first selects a card (representing their estimate for the story) without showing it to the others. Then, they reveal their cards at the same time.
 
