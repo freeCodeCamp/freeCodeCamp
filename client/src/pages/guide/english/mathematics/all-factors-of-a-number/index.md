@@ -3,7 +3,7 @@ title: All Factors of a Number
 ---
 ## All Factors of a Number
 
-You can think of factors as the whole numbers that you multiply to get another whole number.
+You can think of factors as the whole numbers that you multiply to get another whole number. Factorizing is only applicable for the whole numbers.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Factor_Tree_of_42.png" width="90">
 
