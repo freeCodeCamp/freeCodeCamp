@@ -10,6 +10,8 @@ When starting out with linux, there are some basic commands everyone should know
 
  2. **ls** - list command
 - Type `ls` and the contents of the current directory will be displayed.
+- Two common flags used with `ls` are `-l` and `-a`, they can be used together and chained as such: `ls -la`. The `-l` flag will show you files in list order and in long format including a display of permissions, `-a` will show dot type files which are typically hidden in a GUI file finder such as `.env` files
+- Flag ordering does not matter, so the previous command could be written as `ls -al`
 
  3. **man** - manual command
 - Shows you the manual for the following command. This is very helpful when trying to figure out how an unfamiliar command works. For example, type `man ls` for everything you need to know about the ls command. Type `q` to exit.

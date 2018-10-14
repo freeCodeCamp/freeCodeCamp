@@ -38,6 +38,42 @@ session_unset();
 session_destroy();
 ```
 
+Here's a full example to manually expire a user's session:
+```PHP
+<?php
+//Start our session.
+session_start();
+
+//Expire the session if user is inactive for 30
+//minutes or more.
+$expireAfter = 30;
+
+//Check to see if our "last action" session
+//variable has been set.
+if(isset($_SESSION['last_action'])){
+    
+    //Figure out how many seconds have passed
+    //since the user was last active.
+    $secondsInactive = time() - $_SESSION['last_action'];
+    
+    //Convert our minutes into seconds.
+    $expireAfterSeconds = $expireAfter * 60;
+    
+    //Check to see if they have been inactive for too long.
+    if($secondsInactive >= $expireAfterSeconds){
+        //User has been inactive for too long.
+        //Kill their session.
+        session_unset();
+        session_destroy();
+    }
+    
+}
+
+//Assign the current timestamp as the user's
+//latest activity
+$_SESSION['last_action'] = time();
+```
+
 ### Sessions Are Temporary
 It is important to not treat a session as permanent storage. They get cleared from time to time by the developer, whenever the application is moved to a new host server, by the application itself (for example a logout button), and even during server maintenance. For long term storage of data make sure to use a database.
 

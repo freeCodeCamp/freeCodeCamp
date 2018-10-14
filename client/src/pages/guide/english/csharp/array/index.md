@@ -6,7 +6,7 @@ title: Arrays
 
 An array is used to store a collection of data of the same type. This can be used as a single variable that holds multiple values, or a collection of variables.
 
-# Rules of Arrays
+## Rules of Arrays
 
 Arrays start from zero. The first element of an array is 0, the second element is 1, the third element 2, and so on.
 
@@ -14,18 +14,18 @@ Arrays must be of the same data type. You can use any data type in an array (e.g
 
 A new Array must first be declared and initialised before it can be called and accessed.
 
-# Declaring an Array
+## Declaring an Array
 
 Use the following format for declaring arrays:
 `dataType [] nameOfArray;`
 
-# Initialising an array
+## Initializing an array
 
 Use the following format for initialising an array. This method also declares the array and states how many values are to be stored into the array.
 
 `dataType [] nameOfArray = new nameOfArray[numberOfElements];`
 
-# Assigning values to an array
+## Assigning values to an array
 
 You can assign a value into an element directly by using the format below:
 
@@ -49,3 +49,11 @@ You can store an array directly into another array by using the format below:
 `int [] nameOfArray = new nameOfArray[4] {2,9,56,1280};`
 `int [] nameOfSecondArray = nameOfArray;`
 
+## Advantages
+
+* Can be easily accessed in a random manner
+* Can be easily manipulated
+
+## Disadvantages
+
+* The only disadvantage is that the size of an array is fixed. (Hence, a list can be used in case of a dynamic sizing.)
