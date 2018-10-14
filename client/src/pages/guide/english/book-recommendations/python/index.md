@@ -21,13 +21,29 @@ title: Books on Python Programming Language
 - [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
 - [E-book](https://learnpythonthehardway.org/python3/) (free)
 
-- [Functional Programming in Python by David Mertz [OREILLY][FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
-- [Python in Education by Nicholas H. Tollervey[OREILLY][FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
-- [How to think like a Computer Scientist by Allen Downey[V 2.0.17][FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
-- [A Byte of Python[FREE]](https://python.swaroopch.com)
-
 *Black Hat Python: Python Programming for Hackers and Pentesters*
 - [Amazon Smile](https://smile.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/)
 - ISBN-10: 1593275900
 
-  Please feel free to add more that you have found useful!
+*Programming Python*
+
+- O'Reilly book, covers more advanced programming aspects of Python.
+- [Amazon](https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
+- ISBN-10: 0596158106
+- ISBN-13: 978-0596158101
+
+*Data Science from Scratch: First Principles with Python* 
+
+- O'Reilly book, covers fundamentals of Python, libraries, and machine learning techniques.
+- [Amazon](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
+- ISBN-10: 149190142X
+- ISBN-13: 978-1491901427
+
+*Others*
+
+- [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
+- [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
+- [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
+- [A Byte of Python[FREE]](https://python.swaroopch.com)
+
+Please feel free to add more that you have found useful!

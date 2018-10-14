@@ -19,7 +19,7 @@ title: Chef
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 - [Chef TutorialsPoint](https://www.tutorialspoint.com/chef/chef_overview.htm)
-- [Official Documnetation](https://docs.chef.io/chef_overview.html)
+- [Official Documentation](https://docs.chef.io/chef_overview.html)
 - [Chef Tutorial](http://gettingstartedwithchef.com/)
 
     

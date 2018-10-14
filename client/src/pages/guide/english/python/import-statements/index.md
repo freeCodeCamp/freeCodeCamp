@@ -47,6 +47,15 @@ Third party modules don't come bundled with python , but we have to install it e
 
 Find out more about python-requests module <a href='http://docs.python-requests.org/en/master/' target='_blank' rel='nofollow'>here</a>
 
+## Local imports
+
+Files/Modules in the same project can be imported just by their name. import also supports relative references to files/modules as shown below:
+
+    # to relatively import a file in adjacent module
+    import '../adjacent_module/file_to_import'
+    
+However, as a good practice, it is recommended not to use relative paths in imports.
+
 ## To structure programs
 
 We want to make a program that has various functions regarding prime numbers. So lets start. We will define all the functions in `prime_functions.py`
