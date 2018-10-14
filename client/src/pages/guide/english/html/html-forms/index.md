@@ -25,9 +25,9 @@ Code example:
 ```html
 <form>
     <label for="username">Username:</label>
-    <input type="text" name="username" id="username">
+    <input type="text" name="username" id="username" placeholder="enter your username">
     <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
+    <input type="password" name="password" id="password" disabled>
     <input type="radio" name="gender" value="male">Male<br>
     <input type="radio" name="gender" value="female">Female<br>
     <input type="radio" name="gender" value="other">Other
