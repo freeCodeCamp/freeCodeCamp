@@ -39,6 +39,12 @@ title: Books on Python Programming Language
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
+*Automate The Boring Stuff With Python*
+- Great book for beginners. Has interesting projects to practice Python.
+- [Amazon](https://www.amazon.com/gp/product/1593275994/)
+- ISBN-10: 1593275994
+- ISBN-13: 978-1593275990
+
 *Others*
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
