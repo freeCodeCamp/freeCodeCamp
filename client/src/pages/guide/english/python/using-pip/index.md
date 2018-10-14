@@ -54,6 +54,12 @@ For example, we could create the file `requirements.txt` and its content:
     Cython
     
  In this file we could also set a version for the installation.
+ We can also use a special operator '~'(tilde) prefixed infront of the == to install the latest version greater than or equal to the mentioned version.
+ 
+    mock-django~=0.6.10
+
+It means it will select the latest version of the package, greater or equal to 0.6.10, but still in the 0.6.* version, so it won't download 0.7.0 for example. It ensures you will get security fixes but keep backward-compatibility, if the package maintainer respects the semantic versioning (which states that breaking changes should occur only in major versions).
+
  After this, by invoking pip with:
  
      pip install -r <FILE CONTAINING MODULES>
