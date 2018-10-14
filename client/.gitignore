@@ -1,6 +1,6 @@
 # Project dependencies
 .cache
-node_modules
+./node_modules
 yarn-error.log
 
 config/env.json

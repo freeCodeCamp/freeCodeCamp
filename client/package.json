@@ -76,7 +76,7 @@
     "format:src": "prettier-eslint --write --trailing-comma none --single-quote './src/**/*.js'",
     "format:utils": "prettier-eslint --write --trailing-comma none --single-quote './utils/**/*.js'",
     "format": "npm run format:gatsby && npm run format:src && npm run format:utils",
-    "test": "jest"
+    "test": "sh check-file-name.sh && jest"
   },
   "devDependencies": {
     "babel-plugin-transform-imports": "^1.5.0",
