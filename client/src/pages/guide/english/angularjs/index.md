@@ -29,4 +29,11 @@ HTML:
 
 ```html
 <script src="/bower_components/angular/angular.js"></script>
+
 ```
+installation and creating new project 
+
+npm install -g @angular/cli
+ng new my-dream-app
+cd my-dream-app
+ng serve
