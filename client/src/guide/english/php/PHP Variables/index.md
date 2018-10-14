@@ -2,7 +2,7 @@
 title: PHP Variables
 ---
 
-### PH
+### Overview
 Variables are the main way to store information in a PHP program.
 All variables in PHP are denoted with a leading dollar sign: `$variable_name`.
 Variables are assigned with the `=` operator, with the variable on the left-hand side and the expression to be evaluated on the right.
