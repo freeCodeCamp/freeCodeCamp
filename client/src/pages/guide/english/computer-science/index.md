@@ -33,4 +33,4 @@ Computer science is categorized into several fields. The following are among the
 
 ##More Information
 [Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
-
+Resource to learn more about Computer Science https://www.edx.org/learn/computer-science-programming
