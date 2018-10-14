@@ -12,3 +12,7 @@ grow as a developer.
 Is is important to be humble throughout the code review process. Accept your mistakes, 
 and be professional when pointing out improvements or errors in the code of your fellow
 team members.
+
+## Want to learn more?
+
+* [GitHub Documentation](https://github.com/features/code-review) : Learn how to write better code and document your changes with version control.
