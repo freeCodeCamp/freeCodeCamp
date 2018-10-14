@@ -3,7 +3,7 @@ title: CPU
 ---
 ## CPU
 
-The Central Processing Unit (CPU) serves as the "brain" of a computer, allowing it to perform essential computational tasks.
+The Central Processing Unit (CPU) serves as the "brain" of a computer, allowing it to perform essential computational tasks. While most refer to the CPU as the brain, the reality is software is essential for the brain to function and some refer to refer to the software as the brain, as the CPU by itself is is merely a an efficient calculator. 
 
 CPUs are integrated circuits, which are complex circuits embedded on a single chip. They include registers, which store single values, and input/output pins. These pins allow them to talk to the rest of the computer. Due to the continued advancement of CPU technology, many computers today utilize a multi-processing unit. Multi-processors are single chips that contain two or more CPUs or "Cores" that allow for increased processing capabilities.    
 
