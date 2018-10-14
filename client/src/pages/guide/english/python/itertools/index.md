@@ -5,6 +5,7 @@ title: Itertools
 Itertools is a python module of functions that return generators, objects that only function when iterated over. 
 Some examples of itertool functions include but not limited to: chain(), imap(), product(), and compress().
 
+### Iterators terminating on the shortest input sequence:
 
 ### chain()
 
@@ -17,7 +18,6 @@ list(itertools.chain([1, 2], [3, 4]))
 # Output
 # [1, 2, 3, 4]
 ```
-
 
 ### islice()
 
@@ -43,19 +43,31 @@ list(izip([1, 2, 3], ['a', 'b', 'c']))
 # [(1, 'a'),(2, 'b'),(3, 'c')]
 ```
 
-Combinatoric iterators:
+### Combinatoric iterators
 
-Iterator	                                           Arguments	                                 Results
-product()	                                            p, q, … [repeat=1]	                       cartesian product, equivalent to a nested                                                                                                  for-loop
-permutations()	                                      p[, r]	                                   r-length tuples, all possible orderings,                                                                                                  no repeated elements
-combinations()	                                      p, r	                                     r-length tuples, in sorted order, no                                                                                                      repeated elements
-combinations_with_replacement()	                      p, r	                                     r-length tuples, in sorted order, with                                                                                                    repeated elements
-product('ABCD', repeat=2)	 	                                                                     AA AB AC AD BA BB BC BD CA CB CC CD DA DB                                                                                                  DC DD
-permutations('ABCD', 2)	 	                                                                       AB AC AD BA BC BD CA CB CD DA DB DC
+### product()
 
-combinations('ABCD', 2)	 	                                                                       AB AC AD BC BD CD
+product() returns a Cartesian product, equivalent to a nested for-loop. In comparison, the usual zip() function, which returns the convolution.
 
-combinations_with_replacement('ABCD', 2)	 	                                                     AA AB AC AD BB BC BD CC CD DD
+```py
+from itertools import product
+list(product([1,2,3],[3,4]))
 
+# Output
+# [(1, 3), (1, 4), (2, 3), (2, 4), (3, 3), (3, 4)]
 
-Source:https://docs.python.org/3/library/itertools.html
+A = [[1,2,3],[3,4,5]]
+list(product(*A))
+
+# Output
+# [(1, 3), (1, 4), (1, 5), (2, 3), (2, 4), (2, 5), (3, 3), (3, 4), (3, 5)]
+
+B = [[1,2,3],[3,4,5],[7,8]]
+list(product(*B))
+
+# Output
+# [(1, 3, 7), (1, 3, 8), (1, 4, 7), (1, 4, 8), (1, 5, 7), (1, 5, 8), (2, 3, 7), (2, 3, 8), (2, 4, 7), (2, 4, 8), (2, 5, 7), (2, 5, 8), (3, 3, 7), (3, 3, 8), (3, 4, 7), (3, 4, 8), (3, 5, 7), (3, 5, 8)]
+```
+
+Source: https://docs.python.org/3/library/itertools.html
+https://www.hackerrank.com/challenges/itertools-product/problem
