@@ -1,7 +1,7 @@
 ---
 title: Computer Science
 ---
-## Computer Science
+# Computer Science
 
 Computer Science is the study of computers and the concepts that make computers possible.
 
