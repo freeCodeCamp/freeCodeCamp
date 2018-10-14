@@ -20,3 +20,5 @@ It may become an extremely important idea to make a habit out of commenting your
 *[Code Tuts top 15 Best Practices](https://code.tutsplus.com/tutorials/top-15-best-practices-for-writing-super-readable-code--net-8118)
 
 *[Medium Article "The Good, The Bad, The Ugly"](https://medium.freecodecamp.org/code-comments-the-good-the-bad-and-the-ugly-be9cc65fbf83)
+
+*[Git - Contributing to a project](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project)
