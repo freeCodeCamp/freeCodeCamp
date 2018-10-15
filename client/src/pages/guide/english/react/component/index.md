@@ -19,7 +19,7 @@ ReactDOM.render(
 
 ```
 
-```name="Faisal Arkan"``` will give value into ```{props.name}``` from ```function Welcome(props)``` and returning component that has given value by ```name="Faisal Arkan"```, After that react will render element into html.
+The value ```name="Faisal Arkan"``` will be assigned to ```{props.name}``` from ```function Welcome(props)``` and returns a component ```<h1>Hello, Faisal Arkan</h1>``` which is saved into the const variable ```element```. The component can then be rendered via ```ReactDOM.render(element, document.getElementById('root'));```. ```document.getElementById('root')``` in this case is the target location you would like the ```element``` component to be rendered.    
 
 ### Other ways to declare components
 

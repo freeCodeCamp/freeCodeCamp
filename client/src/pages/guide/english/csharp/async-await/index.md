@@ -4,20 +4,21 @@ title: Async / Await
 
 # Async / Await Keywords
 
-The `async`/`await` keywords in C# provide convenient ways of managing resources-intensive applications, which are more common in front-end languages such as Javascript libraries. Methods that return `Task<T>` types can be crowned with the `async` keyword, and when calling these methods in an UI handler or service workflow, we can use the `await` on the methods to tell C# to yield the control back to its caller until the background job is finished. By yielding the control on resources-intensive calls, we are able to allow UI to be more responsive and make the service more elastic.
+The `async`/`await` keywords in C# provide convenient ways of managing resource-intensive applications, which are more common in front-end languages such as Javascript libraries. Methods that return `Task<T>` types can be crowned with the `async` keyword, and when calling these methods in a UI handler or service workflow, we can use the `await` on the methods to tell C# to yield the control back to its caller until the background job is finished. By yielding the control on resources-intensive calls, we are able to allow UI to be more responsive and make the service more elastic.
 
 The core of the `async` and `await` are the `Task<T>` class. When using it along with the `async` keyword as the return type of a method, we indicate that the method has promised to return an object of the `T` type (for methods that wouldn't return any value, use `Task` as the return type instead). `Task<T>` is a sophisticated topic of its own, for more information, please refer to the official documents: [Task Class](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task?view=netframework-4.7.1).
 
-Once encountering `async` methods, the work will be queued in a thread-pool for execution, while the caller will continue its execution without waiting on the return values from the `async` methods. However, in most occasions, our UI and service rely on the values returned from the `async` methods: for example, when we query a local database using the `async` methods, we would eventually want to know what are the query results and act on them, synchronously. This is where the `await` keyword shall be used: if using the `await` keyword when invoking an `async` method, the caller will pause the execution until a result is returned from the `async` method, and mean while, the parent method will continue execution without waiting on the caller to finish. With that said, any methods that uses `await` keyword have to be an `async` function themselves -- this is enforced by the C# compiler as well, if using Visual Studio to write your C# code, the IDE will warn you if a method violate the `async-await` contract.
+Once encountering `async` methods, the work will be queued in a thread-pool for execution, while the caller will continue its execution without waiting on the return values from the `async` methods. However, in most occasions, our UI and service rely on the values returned from the `async` methods: for example, when we query a local database using the `async` methods, we would eventually want to know what are the query results and act on them, synchronously. This is where the `await` keyword shall be used: if using the `await` keyword when invoking an `async` method, the caller will pause the execution until a result is returned from the `async` method, and mean while, the parent method will continue execution without waiting on the caller to finish. With that said, any method that uses `await` keyword have to be an `async` function itself -- this is enforced by the C# compiler as well, if using Visual Studio to write your C# code, the IDE will warn you if a method violate the `async-await` contract.
 
 To learn more about using the promise model to handle asynchrony, check out this wikipedia page: [Achieving Asynchrony through Promises](https://en.wikipedia.org/wiki/Futures_and_promises)
 
 ## Examples
 
 1. Submit Form to the Server
+
 ```csharp
-private readonly string url = 'http://localhost:3000/api/submit';
-private readonly HttpContent formContent = new HttypContent();
+private readonly string url = "http://localhost:3000/api/submit";
+private readonly HttpContent formContent = new HttpContent();
 
 // Update the formContent object while filling up the form.
 
@@ -32,6 +33,7 @@ SubmitButton.Clicked += async (object, event) =>
 ```
 
 2. "Latches" Synchronizer
+
 ```csharp
 public async Task<int> CalcDamage(Player player)
 {

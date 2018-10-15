@@ -13,6 +13,7 @@ Here is an example:
 ```
 <?php
 // array without keys
+// This array is also an example of "indexed array"
 $bikes = array("Suzuki","BMW","Yamaha");
 echo "I like " . $bikes[0] . ", " . $bikes[1] . " and " . $bikes[2] . ".";
 ?>

@@ -17,3 +17,17 @@ try {
    //  except when System.exit() is called in "try" or "catch" blocks;
 }
 ```
+
+The finally block does not need the catch block to precede it.There can also be a finally block without the catch block.
+
+***Example:***
+```java
+try {
+   //Normal code
+     System.out.println("hello world!");
+} finally {
+   System.out.println("In finally block");
+}
+```
+
+The above code works fine even though the catch statement is not used.

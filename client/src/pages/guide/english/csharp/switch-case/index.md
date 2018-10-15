@@ -45,5 +45,20 @@ If myColor is Colors.Orange:
 
 ```
 
+## Fallthrough
+
+It is also possible to use multiple statements produce the same outcome, by letting the cases 'fallthrough', like so:
+
+```
+switch(myColor) {
+  case Colors.Red:
+  case Colors.Blue:
+    //Code
+    break;
+  ...
+ }
+```
+This will execute the same lines of code if myColor is either Red or Blue.
+
 ### Sources:
 - 1 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch

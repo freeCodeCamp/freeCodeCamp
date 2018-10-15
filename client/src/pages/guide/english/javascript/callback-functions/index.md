@@ -77,3 +77,5 @@ serverRequest("The glass is half ", getResults);
 In the above example, we make a mock request to a server. After 5 seconds elapse the response is modified and then our callback function `getResults` gets executed. To see this in action, you can copy/paste the above code into your browser's developer tool and execute it.
 
 Also, if you are already familiar with `setTimeout`, then you've been using callback functions all along. The anonymous function argument passed into the above example's `setTimeout` function call is also a callback! So the example's original callback is actually executed by another callback. Be careful not to nest too many callbacks if you can help it, as this can lead to something called "callback hell"! As the name implies, it isn't a joy to deal with.
+
+Please refer to this link for more details on "callback hell" : http://callbackhell.com/

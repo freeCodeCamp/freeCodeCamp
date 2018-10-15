@@ -1,7 +1,7 @@
 ---
-title: Dinamic Memory Management
+title: Dynamic Memory Management
 ---
-# Dinamic Memory Management
+# Dynamic Memory Management
 Sometimes you will need to allocate memory spaces in the heap also known as the dinamic memory. This is particulary usefull when you do not know during compile time how large a data structure (like an array) will be. 
 ## An Example
 Here's a simple example where we allocate an array asking the user to choose the dimension
