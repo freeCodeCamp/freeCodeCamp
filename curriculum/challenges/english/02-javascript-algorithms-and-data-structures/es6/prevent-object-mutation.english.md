@@ -41,7 +41,7 @@ tests:
 
 ```js
 function freezeObj() {
-  "use strict";
+  'use strict';
   const MATH_CONSTANTS = {
     PI: 3.14
   };
@@ -70,12 +70,12 @@ const PI = freezeObj();
 
 ```js
 function freezeObj() {
-  "use strict";
+  'use strict';
   const MATH_CONSTANTS = {
     PI: 3.14
   };
   // change code below this line
-  Object.freeze(MATH_CONSTANTS)
+  Object.freeze(MATH_CONSTANTS);
 
   // change code above this line
   try {
