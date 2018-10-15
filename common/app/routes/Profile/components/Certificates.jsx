@@ -78,11 +78,6 @@ const mapStateToProps = createSelector(
     ],
     legacyCerts: [
       {
-        show: isFullStackCert,
-        title: 'Full Stack Certification',
-        showURL: 'legacy-full-stack'
-      },
-      {
         show: isFrontEndCert,
         title: 'Front End Certification',
         showURL: 'legacy-front-end'
