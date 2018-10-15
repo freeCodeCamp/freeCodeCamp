@@ -56,6 +56,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='http://exercism.io' target='_blank' rel='nofollow'>Exercism</a>
 *   <a href='https://javascript30.com/' target='_blank' rel='nofollow'>JavaScript30</a>
 *   <a href='https://www.javascript.com/' target='_blank' rel='nofollow'>Javascript.com (Pluralsight)</a>
+*   <a href='https://www.w3schools.com/' target='_blank' rel='nofollow'>W3Schools Online Web Tutorials</a>
 
 ## Editors
 
