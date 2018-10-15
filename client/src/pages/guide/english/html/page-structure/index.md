@@ -3,7 +3,7 @@ title: Page Structure
 ---
 ## Page Structure
 
-To create your pages in `HTML`, you need to know how to structure a page in `HTML`, basically, the structuring a page follows the order below:
+To create your pages in `HTML`, you need to know how to structure a page in `HTML`. Usually, the structuring a page follows the order below:
 
 ```HTML
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ To create your pages in `HTML`, you need to know how to structure a page in `HTM
 
 2º - The `<html>` and `</html>` tags tell the web browser where the `HTML` code starts and ends.
 
-3º - The `<head>` and `</head>` tags contains informations about the web site, exemple: style, meta-tags, scripts, etc...
+3º - The `<head>` and `</head>` tags contains informations about the website, e.g. style, meta-tags, etc.
 
 4º - The `<title>` and `</title>` tags tell the browser what the page title is. The title can be seen by identifying the tab in your internet browser. The text that is defined between these tags is also the text that is used as title by the search engines when they present the pages in the results of a search.
 
@@ -30,7 +30,7 @@ To create your pages in `HTML`, you need to know how to structure a page in `HTM
 
 #### Introduction of semantic tags
 Instead of using `<div>` for every other container several semantic(these tags help screenreaders which are used by visually
-impaired) tags such as `<header>` `<footer>` . So it is advisable to use these tags instead of generic `<div>`. 
+impaired) tags such as `<header>` `<footer>`. So it is advisable to use these tags instead of generic `<div>`. 
 
 #### More Information:
 [HTML: Introduction](https://www.w3schools.com/html/html_intro.asp)
