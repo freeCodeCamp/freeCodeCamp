@@ -10,6 +10,7 @@
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
         <td><a href="/docs/romanian/CONTRIBUTING.md"> Română </a></td>
         <td><a href="/docs/italian/CONTRIBUTING.md"> Italiano </a></td>
+		<td><a href="/docs/persian/CONTRIBUTING.md"> پارسی </a></td>
     </tr>
 </table>
 

@@ -7,6 +7,7 @@
         <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
+		<td><a href="/docs/persian/CONTRIBUTING.md"> پارسی </a></td>
     </tr>
 </table>
 
