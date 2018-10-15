@@ -39,4 +39,4 @@ Una vez que tengas los requisitos previos instalados, necesitas preparar tu ento
 
     Tu deberías teneer [ESLint corriendo en tu editor](http://eslint.org/docs/user-guide/integrations.html), y destacara cualquier cosa que no cumpla con [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
-    > Por favor no ignore nigun error linting. Please do not ignore any linting errors. Están destinados a **ayudarte** y asegurar una base de código limpio y simple.
+    > Por favor no ignore nigun error linting. Están destinados a **ayudarte** y asegurar una base de código limpio y simple.
