@@ -3,7 +3,7 @@ title: Page Structure
 ---
 ## Page Structure
 
-To create your pages in `HTML`, you need to know how to structure a page in `HTML`. Usually, the structuring a page follows the order below:
+To create your pages in `HTML`, you need to know how to structure a page in `HTML`. Usually, the website structure follows the order below:
 
 ```HTML
 <!DOCTYPE html>
@@ -20,7 +20,7 @@ To create your pages in `HTML`, you need to know how to structure a page in `HTM
 
 2º - The `<html>` and `</html>` tags tell the web browser where the `HTML` code starts and ends.
 
-3º - The `<head>` and `</head>` tags contains informations about the website, e.g. style, meta-tags, etc.
+3º - The `<head>` and `</head>` tags contains information about the website, e.g. style, meta-tags, etc.
 
 4º - The `<title>` and `</title>` tags tell the browser what the page title is. The title can be seen by identifying the tab in your internet browser. The text that is defined between these tags is also the text that is used as title by the search engines when they present the pages in the results of a search.
 
