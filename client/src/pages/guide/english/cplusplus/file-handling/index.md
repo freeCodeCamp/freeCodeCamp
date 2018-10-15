@@ -58,7 +58,8 @@ int main () {
    infile.close();
 
    return 0;
-}```
+}
+```
 
 ```cpp
 $./a.out
