@@ -10,8 +10,31 @@
     </tr>
 </table>
 
-# Documentation Quick Reference
+# 快速查阅指南
 
-Hello 👋 !
+### 快速查阅文章
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+1. 如何从事指南文章
+2. 如何从事代码挑战
+3. 如果在本地设置freeCodeCamp
+4. 如何拦截发出的邮件
+
+### 文字风格向导
+
+1. 创建指南文章的文字风格
+2. 创建代码挑战的文字风格
+
+### 在本地从事工作的快速指令指南
+
+以下是你在本地从事工作时，你所需要的指令的快速参考
+
+| 指令  |  描述 |
+| --- | ---|
+| npm run bootstrap | Bootstraps the different services |
+| npm run seed | Parse all the challenge markdown files and inserts them into MongoDB. |
+| npm run develop | Starts the freeCodeCamp API Server and Client Apps |
+| npm test | Run all JS tests in the system, including client, server, lint and challenge tests |
+| npm run test:client | Run the client test suite |
+| npm run test:curriculum | Run the curriculum test suite |
+| npm run test:server | Run the server test suite |
+| npm run commit | An interactive tool to help you build a good commit message |
