@@ -21,10 +21,10 @@ src="https://www.youtube.com/watch?v=v8kFT4I31es">
 </iframe>
 ```
 
-Inserted values are reccomended, but feel free to change them in a way that you would like.
+Inserted values are recomended, but feel free to change them in a way that you would like.
 
-#### Autoplay
-What should we do if we would like to make this player starting automatically playing? Just add to your link value `?autoplay=1`. But be careful, because it can be annoying for a lot of people visiting your webpage.
+#### Autoplay [not recommended]
+Add to your link value `?autoplay=1` to make this player starting automatically playing. It's not recommended, because it can be annoying for a lot of people visiting your webpage.
 
 ```html
 <iframe width="420" height="315"
