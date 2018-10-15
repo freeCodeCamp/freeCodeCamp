@@ -1,0 +1,17 @@
+---
+title: Delete file without some  
+---
+## How to Delete Files in a Directory Excluding some Files
+
+Sometimes you'll want to delete many files from a directory without deleting some other files. Thus, deleting these one after the other can be sterssfull and annoying
+Here is a simple way of doing this on any linux distributon with just a simple command
+
+### Example
+Run the following command to delete all files in ```shell .```  (the current directory) except ```mysql.sock```
+``` shell
+ find . ! -name 'mysql.sock' -type f -exec rm -f {} +
+ ```
+ 
+ 
+
+Have fun with system admin!!!
