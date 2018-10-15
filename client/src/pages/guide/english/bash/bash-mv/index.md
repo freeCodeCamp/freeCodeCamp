@@ -11,7 +11,7 @@ mv source target
 mv source ... directory
 ```
 
-The first argument is the file you want to move, and the second is the location to move it to.
+The first argument is the file you want to move, and the second is the location to move it to. It can also be used to rename a file, by inputting 2 file names as parameters, like so: `mv originalFilename.txt newFilename.txt`
 
 Commonly used options:
 - `-f` to force move them and overwrite files without checking with the user.

@@ -49,5 +49,13 @@ After mirroring a repository, you can clone your local mirror from your server.
 git clone NAME-OF-DIRECTORY-ON-COMPUTER
 ```
 
+### To clone a spacific branch
+
+If you want to clone a spacific branch, you can do that by the following command.
+
+```shell
+git clone URL-OF-REPOSITORY -R branch_name
+```
+
 ### More Information:
 - Git documentation: [clone](https://git-scm.com/docs/git-clone)

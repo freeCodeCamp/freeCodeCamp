@@ -3,7 +3,7 @@ id: 587d78ad367417b2b2512af8
 title: Align Elements Using the align-items Property
 challengeType: 0
 videoUrl: ''
-localeTitle: Alinhar elementos usando a propriedade de itens de alinhamento
+localeTitle: Alinhar elementos usando a propriedade align-items
 ---
 
 ## Description

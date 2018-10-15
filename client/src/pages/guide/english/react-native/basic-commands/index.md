@@ -8,7 +8,7 @@ Here you will find a list of basic commands to start developing iOS and Android 
 
 ### Starting a new project
 
-There are different ways you can bootstrap a react native application. You can use **Expo** or `create-react-native-app`(which in turns uses Expo-Cli) to start your new project, but with this method you are in more control of what happend in your projecto and can communicate, tweak and write your own modules with native libraries for iOS and Android mobile platform.
+There are different ways you can bootstrap a react native application. You can use **Expo** or `create-react-native-app`(which in turns uses Expo-Cli) to start your new project, but with this method you are in more control of what happend in your project and can communicate, tweak and write your own modules with native libraries for iOS and Android mobile platform.
 ```
 react-native init [PROJECT-NAME]
 cd [PROJECT-NAME]

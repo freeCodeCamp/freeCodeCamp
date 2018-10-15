@@ -74,5 +74,16 @@ Use the following syntax to delete a file
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
 
+# iTerm2
 
+iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
 
+* Split Panes
+* Hotkey Window
+* Search
+* Autocomplete
+* Paste history
+* Configurability
+* and many [more](https://www.iterm2.com/features.html)
+
+Just download iTerm2 from the official [website](https://www.iterm2.com/downloads.html). Additional documentation can be found [here](https://www.iterm2.com/documentation.html).
