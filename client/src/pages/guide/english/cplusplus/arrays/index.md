@@ -34,3 +34,9 @@ x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
+### Arrays Dynamic Allocation:
+int* numbers; //pointer to int numbers
+int SIZE; //initialize size
+cin>>SIZE; //take the size
+numbers = new int[SIZE]; //allocate SIZE ints and save pointer in numbers
+delete [] a; //free the memory
