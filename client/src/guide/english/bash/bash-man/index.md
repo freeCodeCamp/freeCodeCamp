@@ -2,7 +2,7 @@
 title: Bash Man
 ---
 
-## Man
+## Bash command: man
 
 Man, the abbreviation of **man**ual, is a bash command used to display on-line reference manuals of the given command.
 

@@ -64,6 +64,6 @@ document.getElementById('root'));  //The <App /> is the way components are calle
 
 In the above, App.js is called a component. Normally, we make multiple components and put them together in App.js which will be then rendered in index.js which is then rendered into the root div that is in the index.html.
 
-Congrats !! You have created your first React Hello world app. You learn more about React in the coming articles.
+Congrats !! You have created your first React Hello world app. You will learn more about React in the coming articles.
 
 Happy Coding !!

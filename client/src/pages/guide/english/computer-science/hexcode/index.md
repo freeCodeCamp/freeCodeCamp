@@ -68,10 +68,6 @@ The proposed CSS4 Draft<sup>1</sup> includes a proposal to allow for an extra by
 
 For now, use of the standard `rgba()` function is the recommended way to add an alpha value to your colors.
 
-#### More Information:
- + [Hexadecimal numeral system on Wikipedia](https://wikipedia.org/wiki/Hexadecimal_numeral_system)
- + [CSS color on the MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
-
 #### References:
  + <sup>1</sup> [CSS Color Module Level 4 - 4.2. The RGB hexadecimal notations: #RRGGBB](https://www.w3.org/TR/css-color-4/#hex-notation) 
  
@@ -81,8 +77,10 @@ For now, use of the standard `rgba()` function is the recommended way to add an 
 * [Hex Codes & Color Theory](https://www.youtube.com/watch?v=xlRiLSDdqcY) - A Longer Video which delves into Color theory (Such as what are additive colors and what are subtractive colors etc.) and it also points to other resources for delving deeper into the topic. 
 * [Web Colors](https://en.wikipedia.org/wiki/Web_colors) - Wikipedia Article on how colors are used on the web.
 * [Wikipedia article about Hexadecimal code](https://en.wikipedia.org/wiki/Hexadecimal)
+* [Wikipedia article about hexadecimal numeral system](https://wikipedia.org/wiki/Hexadecimal_numeral_system)  
 * [Wikipedia article about web colors](https://en.wikipedia.org/wiki/Web_colors)
 * [Hex Colors](http://www.color-hex.com/)
 * [Medium article on hex color code](https://medium.com/webkul-dev/hex-color-codes-27cd0a37c3ce)
-* [More information on colors in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+* [More information on color values in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
+* [CSS color property on the MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
 * [Explore different Hex colors](http://www.colorhexa.com/)

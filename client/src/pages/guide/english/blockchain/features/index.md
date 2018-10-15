@@ -41,7 +41,7 @@ BlockTech uses the concepts like Proof of Work and Hash encryption to ensure sec
 
 #### _* Mining_
 
-Torrent is a peer-to-peer decentralised network used to share files. BlockTech uses similar technology. What differentiates the users is that, in Torrent, the system relies on the honor code of the users to seed the files. Whereas, in blockchain, the users who are involved in the transaction have economic incentives. These users are called "Miners." The Miners spend their computing resources to solve the cryptographic hashes and ensure immutability and reliability of the transaction. Every successful solution (decryption) ensures some economic benefit.
+Torrent is a peer-to-peer decentralized network used to share files. Blockchain uses similar technology. What differentiates the two is that, in Torrent, the system relies on the honor code of the users to seed the files. Whereas, in blockchain, the users who are involved in the transaction have economic incentives. These users are called "Miners". The Miners spend their computing resources to solve the cryptographic hashes and ensure immutability and reliability of the transaction. Every successful solution (decryption) ensures some economic benefit - meaning the miner gets currency credited to their wallet.
 
 ![Mining](https://raw.githubusercontent.com/Vagisha16/Hw3/master/5f6609014470f4b0122de37eb09dbfc7.jpg)
 
