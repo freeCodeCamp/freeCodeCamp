@@ -69,15 +69,6 @@ add(10)(20)(30);
 <section id='solution'>
 
 ```js
-function add(x) {
-  // Add your code below this line
-  return function b(y) {
-      return function c(z) {
-          return x + y + z
-      }
-  }
-}
-// Or using ES6
 const add = x => y => z => x + y + z
 ```
 </section>
