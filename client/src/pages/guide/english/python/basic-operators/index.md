@@ -48,8 +48,8 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
     <td>12 / 3 = 4</td>
   </tr>
   <tr>
-    <td>Note: When negative integers are used, the result differs from actual expetation</td> 
-    <td>5 / 2 = 2 </td>
+    <td>Note(Only python 2): When negative integers are used, the result differs from actual expectation</td> 
+    <td></td>
     <td>-5 / 2 = -3 due to floor roundoff(use with caution).</td>
   </tr>
   <tr>
