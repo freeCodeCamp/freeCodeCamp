@@ -76,7 +76,12 @@ console.log(isEveryoneHere(users));
 
 ```js
 function isEveryoneHere(obj) {
-  return users.hasOwnProperty('Alan', 'Jeff', 'Sarah', 'Ryan');
+  return [
+    'Alan',
+    'Jeff',
+    'Sarah',
+    'Ryan'
+  ].every(i => obj.hasOwnProperty(i));
 }
 ```
 </section>
