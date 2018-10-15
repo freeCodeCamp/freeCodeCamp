@@ -60,7 +60,6 @@ convertToInteger("56");
 
 ```js
 function convertToInteger(str) {
-  
   return parseInt(str);
 }
 ```
