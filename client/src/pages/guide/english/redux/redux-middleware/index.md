@@ -3,7 +3,7 @@ title: Redux Middleware
 ---
 ## Redux Middleware
 
-One of the great things about redux is that it provides an interface to plug in different middleware packages to add additional functionality to redux. Redux middleware basically acts like pipes that your actions will flow through after getting dispatched but before being handled by your reducers. There are a large amount of popular redux middleware packages for adding features like logging and handling asynchronous action flows. 
+One of the great things about redux is that it provides an interface to plug in different middleware packages to add additional functionality to redux. Redux middleware basically acts like pipes that your actions will flow through either 1. after getting dispatched but before being handled by your reducers, 2. after being used by your reducers to produce a new state, or 3. both. There are a large amount of popular redux middleware packages for adding features like logging and handling asynchronous action flows. 
 
 [Redux Thunk](https://github.com/reduxjs/redux-thunk) for example allows you to dispatch functions to delay the dispatching of actions. 
 
