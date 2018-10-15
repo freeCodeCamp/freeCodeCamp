@@ -27,3 +27,9 @@ A collection of articles covering the basics (core language and working with a b
 
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
+
+*Effective JavaScript: 68 Ways Specific ways to Harness the power of JavaScript*
+
+68 proven approaches for writing better JavaScript, backed by concrete examples. You’ll learn how to choose the right programming style for each project, manage unanticipated problems, and work more successfully with every facet of JavaScript programming from data structures to concurrency.
+
+- [Amazon](https://www.amazon.com/Effective-JavaScript-Specific-Software-Development/dp/0321812182)
