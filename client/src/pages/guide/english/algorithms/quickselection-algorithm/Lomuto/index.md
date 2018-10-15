@@ -1,3 +1,4 @@
+## Lomuto Algorithm
 ```
 algorithm Lomuto(A, lo, hi) is
     pivot := A[hi]
