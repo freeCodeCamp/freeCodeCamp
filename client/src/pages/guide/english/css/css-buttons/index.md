@@ -104,6 +104,35 @@ button {
 }
 ```
 
+### Button Click Animation
+
+To animate a button on click use 'button:active':
+
+```
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffffff;
+  background-color: #ff7d1a;
+  border: none;
+  border-radius: 15px;
+}
+
+.button:hover {
+	background-color: #ff6d00;
+}
+
+.button:active {
+  background-color: #ff6d00;
+  transform: translateY(4px);
+}
+```
+
 #### More Information:
 * https://www.w3schools.com/css/css3_buttons.asp
 * https://www.w3schools.com/howto/howto_css_animate_buttons.asp
