@@ -36,6 +36,24 @@ console.log("Server is listening on port no : 8000");
 
 *Note:* In order to close the server then press ```ctrl + C``` in your console for windows users.
 
+## Using [request](https://www.npmjs.com/package/request)
+Request is designed to be the simplest way possible to make http calls. It supports HTTPS and follows redirects by default.
+It handles both GET and POST http requests.
+
+* Install
+```
+npm install request
+```
+* Usage
+``` javascript
+var request = require('request');
+request('http://www.google.com',  (error, response, body) => {
+  console.log('error:', error); // Print the error if one occurred
+  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+  console.log('body:', body); // Print the HTML for the Google homepage.
+});
+```
+
 ## Resources
 
 * [Node.js API](https://nodejs.org/api/http.html#http_http)
