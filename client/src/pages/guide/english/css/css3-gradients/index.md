@@ -132,4 +132,6 @@ The following example shows a linear gradient that starts at top left (and goes 
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-[MDN Documentatiion](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) || [w3schools](https://www.w3schools.com/css/css3_gradients.asp) || [CSS Tricks](https://css-tricks.com/snippets/css/css-linear-gradient/)
+- [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+- [W3Schools](https://www.w3schools.com/css/css3_gradients.asp)
+- [CSS Tricks](https://css-tricks.com/snippets/css/css-linear-gradient/)
