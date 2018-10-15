@@ -3,8 +3,8 @@ title: Cloud Storage
 ---
 
 ## STORAGE AS A SERVICE (StAAS) 
-When we use the storage of cloud, that is the StAAS. In this, cloud system has storage and the user use that storage on his system and can use that to store data.
-Cloud system should have the capability of Storage Scaling.
+When we use cloud storage, that is StAAS. In this, a cloud system has storage and the user can use that storage on his system and can use that to store data.
+The Cloud system should have the capability of Storage Scaling.
 We can integrate all storage. For example, if we have multiple pen-drives then we can integrate all pen-drive storages in a single one. 
  
 There are mainly two types of storage 
