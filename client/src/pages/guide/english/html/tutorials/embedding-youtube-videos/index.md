@@ -8,12 +8,12 @@ Probably a lot of times you have seen embedded videos on your favorite websites.
 ### `<frame>` Element
 
 #### Using
-You can easily put your chosen video by using `<frame>` element. But remember, you also need to define height and width of your player, so we will use atributes `height` and `width`.
+You can easily put your chosen video by using `<frame>` element. But remember, you also need to define height and width of your player, so we will use attributes `height` and `width`.
 
 What we will need?
 - Video on YouTube and URL
 - `<frame>` element (don't forget to close it!)
-- `width` and `height` atributes
+- `width` and `height` attributes
 
 ```html
 <iframe width="420" height="315"
