@@ -63,9 +63,7 @@ convertToInteger("10011");
 
 ```js
 function convertToInteger(str) {
-
-    return parseInt(str,2);
-  
+  return parseInt(str, 2);
 }
 ```
 </section>
