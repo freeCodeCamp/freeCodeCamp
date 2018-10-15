@@ -21,7 +21,8 @@ cout << 1000 << endl;
 ```
 But the problem with this approach is that you have to write the same line again and again. And if suppose you have to print 
 prime numbers from 1 to 1000 then this will be more hectic.
-Therefore, in order to solve such problems loops are introduced.
+Therefore, in order to solve such problems loops are introduced.Loops are a way for a programmer to do something over and over again
+until a certain condition is met.
 
 There are different types of loop functions:
 ### While and do while loops
