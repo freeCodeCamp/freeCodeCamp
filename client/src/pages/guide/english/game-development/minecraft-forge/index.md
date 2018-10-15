@@ -8,7 +8,8 @@ Forge is a modding api. Minecraft Forge (or Forge for short) is a layer between 
 
 ## Sounds cool! How do I get started?
 
-* You'll need the JDK (Java development kit) which is a set of libraries, tools and the runtime environment to make Java programs and run them.
+You'll need these to get up and running: 
+* JDK (Java development kit) which is a set of libraries, tools and the runtime environment to make Java programs and run them.
 * A Minecraft account which can be bought from their official website. (https://minecraft.net/en-us/store/)
 * An IDE (Eclipe or IntelliJ are recommended for Minecraft development)
 
@@ -59,4 +60,4 @@ public class TheMod {
 }
 `
 
-Use this code as you please, make sure you edit for instance the proxy strings and more! This should give you a basic overview of what a basic mod class looks like.
+Use this code as you please, make sure you edit as appropriate - for instance the proxy strings and more! This should give you a basic overview of what a basic mod class looks like.
