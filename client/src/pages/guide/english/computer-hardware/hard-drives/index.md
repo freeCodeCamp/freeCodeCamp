@@ -29,9 +29,9 @@ Data stored in RAM is said to be fleeting whereas data written out to a hard dri
 ## Solid State Drives (SSD)
 Solid State Drives uses integrated circuits to store data. Therefore, an SSD has no moving parts like the HDD. This makes them less prone to physical shocks, run silently, and have faster read/write times thanks to not needing to locate the data physically.
 
-SSDs are commonly used as boot drives or storage for the most used applications and files on a system. This is because even though prices have dropped in recent years, SSDs are still more expensive than a traditional hard drive when considering unit of storge per money spent. Thus, HDDs are still used to bulk data such as extertainment media (Pictures, Videos, Music) and in datacenters or server farms. Though here it is common for the Hard Drives to be accelerated with an SSD.
+SSDs are commonly used as boot drives or storage for the most used applications and files on a system. This is because even though prices have dropped in recent years, SSDs are still more expensive than a traditional hard drive when considering cost per unit of storage. Thus, HDDs are still used for bulk data such as entertainment media (pictures, videos, music) and in data centers or server farms. Though here it is common for the Hard Drives to be accelerated with an SSD.
 
-While most Hard Drives use either a SATA or SAS connector Solid State Drives often use other connections that can handle higer bandwith and lower latencies, with the most notable being PCI Express (PCI-e) where formfactors such as M.2 or U.2 dominate. Though other formfactors are available, such as Intel's 'Yard stick' form factor or PCI-e cards that look quite similar to a low end graphics card.
+While most Hard Drives use either a SATA or SAS connector Solid State Drives often use other connections that can handle higher bandwidth and lower latencies, with the most notable being PCI Express (PCI-e) where form factors such as M.2 or U.2 dominate. Though other form factors are available, such as Intel's 'Yard stick' form factor or PCI-e cards that look quite similar to a low end graphics card.
 
 #### More Information:
 
