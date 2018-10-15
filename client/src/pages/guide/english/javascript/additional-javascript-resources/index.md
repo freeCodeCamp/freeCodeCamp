@@ -48,6 +48,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
 *   <a href='https://www.codecademy.com' target='_blank' rel='nofollow'>Codecademy</a>
 *   <a href='https://www.rithmschool.com' target='_blank' rel='nofollow'>RithmSchool</a> 
+*   <a href='https://es6.io/' target='_blank' rel='nofollow'>ES6 for Everyone</a> 
 
 ## Exercises
 
@@ -91,7 +92,8 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 ## Video Tutorials
 
 *   <a href='https://www.youtube.com/watch?v=fju9ii8YsGs' target='_blank' rel='nofollow'>Derek Banas' Learn JS In One Video </a>
-*   <a href='https://www.youtube.com/watch?v=O8wwnhdkPE4'>Derek Banas' Object Oriented JavaScript</a>
+*   <a href='https://www.youtube.com/watch?v=O8wwnhdkPE4' target='_blank' rel='nofollow'>Derek Banas' Object Oriented JavaScript</a>
+*   <a href='https://www.youtube.com/watch?v=h50lRx3Myfo' target='_blank' rel='nofollow'>JavaScript for Experienced Developerst</a>
 
 ## Books
 
