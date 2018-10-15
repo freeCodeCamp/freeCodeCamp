@@ -48,4 +48,20 @@ string = str(input('Please enter a string: '))
 
 Sin embargo, las entradas se almacenan por defecto como una cadena. El uso de la función `str()` deja claro al lector de códigos que la entrada será una "cadena". Es una buena práctica mencionar qué tipo de información se tomará de antemano.
 
+5\. Cuando queremos separar la entrada por espacios:
+```
+a,b,c=input("Escribe 3 palabras").split()
+```
+![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/@Brian_RG/Multple-input)
+
+En este caso, podemos leer 3 palabras separadas por espacio y almacenarlas en 3 variables diferentes, para ser usadas posteriormente.
+
+6\. Cuando queremos separar una entrada de 3 enteros:
+```
+a,b,c=map(int,input("Ingresa 3 números: ").split())
+```
+Como ya sabemos, las entradas por defecto se almacenan como una cadena, podemos usar map, indicar que sean convertidas a números enteros, y así almacenarlos.
+
+![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/@Brian_RG/Input-multiple-de-enteros)
+
 [Documentos oficiales](https://docs.python.org/3/library/functions.html#input)
