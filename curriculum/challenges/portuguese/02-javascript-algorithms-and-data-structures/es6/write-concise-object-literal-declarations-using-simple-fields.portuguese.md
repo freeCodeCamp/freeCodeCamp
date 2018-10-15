@@ -3,7 +3,7 @@ id: 587d7b8a367417b2b2512b4f
 title: Write Concise Object Literal Declarations Using Simple Fields
 challengeType: 1
 videoUrl: ''
-localeTitle: Escrever declarações concisas de objetos concisos usando campos simples
+localeTitle: Escrever declarações concisas de objetos literais usando campos simples
 ---
 
 ## Description

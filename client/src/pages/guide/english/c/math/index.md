@@ -33,7 +33,9 @@ Division is performed with a `/`, like so:
 ```C
 result = a / b;
 ```
+
 In the above example, the variable `result` will be equal to a divided by b. This is not always a fraction of a over b, however. When dealing with integers, things get a little different- more on that later.
+When dividing always check that the divisor (in this example variable b) is not equal to 0 , dividing with 0 will cause your program to crash.
 
 # The not-so-basic stuff
 ## Modulo: '%'

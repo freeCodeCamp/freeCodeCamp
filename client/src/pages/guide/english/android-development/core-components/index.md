@@ -13,7 +13,7 @@ Core components are the essential elements which an app for Android consists of.
 An _activity_ is a component that has a user interface and represents a single screen. An app can have multiple activities, each of those can be an entry point to the application itself for the user or the system (an app's activity that wants to open another activity that belongs to the same application or to a different one).
 
 ### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
-![alt text](https://developer.android.com/images/activity_lifecycle.png "Activity Lifecycle")
+![Activity Lifecycle](https://developer.android.com/images/activity_lifecycle.png)
 
 * onCreate():
 
@@ -106,4 +106,8 @@ A _broadcast receiver_ is another component without user interface (except an op
 ## [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
 A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
 
-For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation 
+For detailed information about the topic, see the official [Android fundamentals](https://developer.android.com/guide/components/fundamentals) documentation.
+
+## Advanced Android Development  
+To learn advanced Android programming concepts, see Google's [Advanced Android Development](https://developers.google.com/training/courses/android-advanced) course.
+

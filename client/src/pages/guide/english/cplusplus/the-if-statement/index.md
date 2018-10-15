@@ -18,6 +18,7 @@ title: C++ If Statement
     // Block of statements if test expression is True
   }
 ```
+If there is only one statement after the if statement the '{ }' are not necessarily required . But if there are more number of statements after if statement, then it is mandatory to put all those statements in '{}'.
 
 If the value of the test expression is **true**, then the block of
 code inside the if statement is executed.
