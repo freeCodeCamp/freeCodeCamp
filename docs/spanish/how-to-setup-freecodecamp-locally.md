@@ -45,7 +45,7 @@ Una vez que tengas los requisitos previos instalados, necesitas preparar tu ento
 
 ['Cloning'](https://help.github.com/articles/cloning-a-repository/) es un paso donde tu **descargas** una copia del repositorio que es de tu propiedad o de alguien de una localización `remota`. En tu caso, esta localización remota es tu `fork` del repositorio de freeCodeCamp, que debería estar disponible en `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
 
-Corre estos comandos en tu maquina local: 
+Ejecuta estos comandos en tu maquina local: 
 
 1. Open a Terminal / Command Prompt / Bash Shell en tu directorio de proyectos
 
@@ -93,3 +93,83 @@ Tiene que señalar su clon local al `upstream`, además de al `origin`. Esto es 
         upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
         upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
     ```
+
+## Ejecutando freeCodeCamp localmente en tu maquina
+
+Ahora que tienes una copia local de freeCodeCamp, puedes seguir estas instrucciones para conseguir que se ejecuten localmente. esto te ayudara:
+
+- Vista previa de las modificaciones de las páginas tal como aparecería en la plataforma de aprendizaje.
+- Trabajo en cuestiones relacionadas con la UI y mejoras
+- Depurar y corregir problemas en los servidores de aplicaciones y aplicaciones de cliente
+
+Puede omitir la ejecución de freeCodeCamp localmente, si se acaba de editar archivos, haciendo un `rebase` o resolviendo `merge` conflictos. Puedes volver siempre a esta parte de la instrucción mas adelante.
+
+[Saltar la ejecución de freeCodeCamp localmete](#making-changes-to-your-clone-of-freecodecamp-locally)
+
+### Instalando los requisitos previos
+
+Empezar por la instalación de estos requisitos previos de software.
+
+| Requisito previo                            | Version | Notes |
+| ------------------------------------------- | ------- | ----- |
+| [MongoDB Community Server](https://docs.mongodb.com/manual/administration/install-community/) | `3.6`   | [Notas de versión](https://docs.mongodb.com/manual/release-notes/), Nota: Actualmente en `3.6`, un [upgrade is planned](https://github.com/freeCodeCamp/freeCodeCamp/issues/18275).
+| [Node.js](http://nodejs.org)                | `8.x`   | [LTS Schedule](https://github.com/nodejs/Release#release-schedule) |
+| npm (viene incluido con Node)               | `6.x`   | No tiene versiones LTS, utilizamos la versión integrada con el Nodo LTS |
+
+**Importante:**
+
+Le recomendamos actualizar a la última versión estable también conocido como Long Term Support (LTS) versions of the above.
+Si Node.js or MongoDB estan ya instalados en tu maquina, ejecuta los siguinetes comandos para validar las versiones:
+
+```shell
+node -v
+mongo --version
+npm -v
+```
+
+> Si tienes una versión diferente, por favor instala la versión recomendada. Podemos apoyar problemas de instalación solo para las versiones recomendadas.
+
+**Estoy teniendo problemas con la instalación de los requisitos previos recomendados. ¿Qué debería hacer?**
+
+Nosotros regularmente desarrollamos en populares y últimos sistemas operativos como macOS 10.12 o posteriores, Ubuntu 16.04 o posteriores y Windows 10. Se recomienda la búsqueda de su problema específico en recursos como: Google, Stack Overflow o Stack Exchange. Posiblemente alguien se ha enfrentado al mismo problema y haya una respuesta a tu consulta.
+
+Si estás en un sistema operativo difernte, y/o sigues teniendo problemas,  intenta comunicarte con [contributors community on our public forum](https://www.freeCodeCamp.org/c/contributors) o la [Contributor's Chat room](https://gitter.im/freeCodeCamp/Contributors). Podemos ser capaces de solucionar algunos problemas comunes.
+
+No podemos apoyarte en Github, porque los problemas de instalación de sofware estan mas allá del alcance de este proyecto.
+
+### Instalando dependencias
+
+Emepezar por instalar las dependencias necesarias para la aplicación al inicio.
+
+```shell
+# Install NPM dependencies
+npm install
+```
+
+Entonces tu necesitas añadir las variables de entorno privado (API Keys):
+
+```shell
+# Crea una copia de "sample.env" y nombrala como ".env".
+# Rellena con la necesaria API keys and secrets:
+
+# macOS / Linux
+cp sample.env .env
+
+# Windows
+copy sample.env .env
+```
+
+Las claves no son necesarias cambiarlas, para ejecutar la app localmente. Puedes dejar los valores por defecto de `sample.env` como están.
+
+`MONGOHQ_URL` es la mas importante. A menos que tengas MongoDB ejecutando en una configuración diferente a la predeterminada, la URL en el `sample.env` debería funcionar bien.
+
+Puedes dejar las otras claves como están.Ten en cuenta que si quiere usasr mas servicios tendrás que obtenertus propias claves API para esos servicios y editar esas entradas en el archivo `.env`.
+
+Luego, arranque varios servicios, por ejemplo el api-server, el client UI application, etc. Tu puedes [learn more about these services in this guide](#).
+
+Arrancando estas atando los vinculos entre los servicios. Ellos son semi-independientes. Quiere decir, en la producción de estos servicios se implementan a sus propias localizaciones, pero mientras se ejecutan localmente quieres que todos esten disponibles para ti.
+
+```shell
+# Arranque todos los proyectos dentro de este repositorio
+npm run bootstrap
+```
