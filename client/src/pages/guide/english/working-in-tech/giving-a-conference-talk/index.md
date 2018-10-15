@@ -10,6 +10,8 @@ Pick a topic that interests you! Topics that you are passionate about or about w
 
 There are a lot of conferences that like having speakers who are earlier in their career. They bring a fresh perspective and are often working on things that are exciting. 
 
+Lastly, know what you want to get out of your presentation before you get started. Do you want to entertain? Do you want to impress? Do you want to sell something? This will guide your content and conferences you may want to consider.
+
 ## Start Small
 
 If you are interested in public speaking/giving a tech talk, you can start small. Many communities have meetup groups for a wide range of technologies. You could give a lightning talk (a short talk, usually 5 minutes) version of the talk you want to propose elsewhere. 
