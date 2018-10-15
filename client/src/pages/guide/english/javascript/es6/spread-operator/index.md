@@ -20,4 +20,4 @@ const arr_final = [...arr_1, ...arr_2]
 ```
 ### More Information:
 
-<a href='https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/Spread_operator' target='_blank' rel='nofollow'>MDN</a>
+- [MDN - Spread Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
