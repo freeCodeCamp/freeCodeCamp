@@ -13,11 +13,11 @@ Here is a list of the flexbox properties that can be used to position out elemen
 
 ### CSS that can be applied to the container
 
-    display: flexbox | inline-flex;
+    display: flex | flexbox | inline-flex;
     flex-direction: row | row-reverse | column | column-reverse;
     flex-wrap: nowrap | wrap | wrap-reverse;
     flex-flow: <‘flex-direction’> || <‘flex-wrap’>
-    justify-content: flex-start | flex-end | center | space-between | space-around;
+    justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
     align-items: flex-start | flex-end | center | baseline | stretch;
     align-content: flex-start | flex-end | center | space-between | space-around | stretch;
 
