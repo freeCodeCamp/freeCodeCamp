@@ -19,6 +19,6 @@ Cooling devices are available for individual parts on the computer. The two most
 * Case Covers - Contrary to what you read on the internet, keeping the case covers on the computer aids cooling. Absence of the case covers disrupts air flow and can actually increase the heat inside the case.
 Room ventilation - Locate the computer where it is neutral to the rooms environmental registers. Keep the computer away from room heaters or vents at all times.
 * Room placement - Locate the computer away from windows or areas of strong sunlight exposure. Placement in closets can also provide challenges to cooling.
-* Placement next to walls and other computers - Locating the computer away from other equipment allows cool, clean, air to flow in and out of the computer. Placement close to other equipment can constrict air flow and increase heat. Placement next to a wall may also lead to the ehaust ports being completely blocked off and consequently increase heat.
+* Placement next to walls and other computers - Locating the computer away from other equipment allows cool, clean, air to flow in and out of the computer. Placement close to other equipment can constrict air flow and increase heat. Placement next to a wall may also lead to the exhaust ports being completely blocked off and consequently increase heat.
 
 [Wikipedia - Article on computer cooling](https://en.wikipedia.org/wiki/Computer_cooling)
