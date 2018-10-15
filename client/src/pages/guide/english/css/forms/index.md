@@ -15,16 +15,17 @@ An HTML form contains form elements.
 Form elements are different types of input elements, like text fields, checkboxes, radio buttons, submit buttons, and more.
 
 Inside the form tags there are also some important attribute which are:
--action : the page that the data will sent to
--method : type of request which are: 'GET' and 'POST'.
+`action` : the page that the data will sent to
 
--GET: 
-1. Appends form-data into the URL in name/value pairs , so never use GET to send sensitive data.
-2. The length of a URL is limited (about 3000 characters).
+`method` : type of request which are: 'GET' and 'POST'.
 
--POST: 
-1. This method does not display the submitted form data in the page address field.
-2. Has no size limitation.
+`GET`: 
+* Appends form-data into the URL in name/value pairs , so never use GET to send sensitive data.
+* The length of a URL is limited (about 3000 characters).
+
+`POST`: 
+* This method does not display the submitted form data in the page address field.
+* Has no size limitation.
 
 ### The input element
 It is the most important form element.  Different types of input element are:
