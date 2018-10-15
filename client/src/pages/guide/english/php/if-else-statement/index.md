@@ -64,3 +64,15 @@ If/Else is a conditional statement where depending on the truthiness of a condit
 
 For more information check out the following link:
 <a href='http://php.net/manual/en/control-structures.elseif.php' target='_blank' rel='nofollow'>PHP Else</a>
+
+Also there is an alternative syntax for control structures
+~~~~
+  if (condition1):
+    statement1;
+  endif;
+  else
+    statement5;
+~~~~
+For more information check out the following link:
+<a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
+
