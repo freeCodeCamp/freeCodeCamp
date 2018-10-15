@@ -77,7 +77,7 @@ Aquí hay tres ejemplos de directivas estructurales. Cada uno tiene una contrapa
 
 *   \* ngIf
     
-*   \* ngPara
+*   \* ngFor
     
 *   \* ngSwitchCase y \* ngSwitchDefault
     
@@ -112,7 +112,7 @@ NOTA: También puede hacer lo siguiente con \* ngIf para obtener acceso al valor
  </div> 
 ```
 
-##### \* ngPara
+##### \* ngFor
 
 `*ngFor` bucles basados ​​en una expresión _microsintáctica_ asignada por el derecho. Microsyntax se mueve más allá del alcance de este artículo. Sepa que la microsyntax es una forma corta de expresión lógica. Ocurre como una sola cadena capaz de hacer referencia a valores de miembros de clase. Puede enlazar valores iterables lo que lo hace útil para `*ngFor` .
 
