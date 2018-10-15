@@ -3,23 +3,23 @@ id: 587d778f367417b2b2512aac
 title: Avoid Colorblindness Issues by Using Sufficient Contrast
 challengeType: 0
 videoUrl: ''
-localeTitle: 使用足够的对比度避免色盲问题
+localeTitle: Sử dụng đủ độ tương phản để tránh bị mù màu
 ---
 
 ## Description
-<section id="description">颜色是视觉设计的重要组成部分，但它的使用引入了两个可访问性问题。首先，不应仅仅使用颜色作为传达重要信息的唯一方式，因为屏幕阅读器用户不会看到它。其次，前景色和背景色需要足够的对比度，因此色盲用户可以区分它们。以前的挑战包括解决第一个问题的文本替代方案。最后一项挑战引入了对比度检查工具来帮助第二个。 WCAG建议的对比度为4.5：1适用于颜色使用以及灰度组合。色盲用户无法区分某些颜色与其他颜色 - 通常是色调，但有时也很轻。您可能会想起使用前景色和背景色的相对亮度（或亮度）值来计算对比度。在实践中，通过使用颜色对比度检查器使较暗的颜色变暗并使较浅的颜色变淡来达到4.5：1的比例。色轮上较暗的颜色被认为是蓝色，紫罗兰，洋红色和红色，而较浅的颜色是橙色，黄色，绿色和蓝绿色。 </section>
+<section id = "description"> Màu là một phần quan trọng trong thiết kế trực quan, nhưng việc sử dụng nó giới thiệu hai vấn đề về khả năng truy cập. Đầu tiên, bạn không nên chỉ sử dụng màu sắc như là cách duy nhất để truyền đạt thông tin quan trọng, bởi vì người dùng trình đọc màn hình sẽ không nhìn thấy nó. Thứ hai, màu nền trước và màu nền yêu cầu đủ độ tương phản để người dùng mù màu có thể phân biệt được chúng. Những thách thức trước đây bao gồm các lựa chọn thay thế văn bản để giải quyết vấn đề đầu tiên. Thử thách cuối cùng đã giới thiệu một trình kiểm tra độ tương phản để giúp người thứ hai. WCAG đề xuất tỷ lệ tương phản 4,5: 1 để sử dụng màu và kết hợp thang độ xám. Người dùng mù màu không thể phân biệt được một số màu nhất định và các màu khác - thường là tông màu, nhưng đôi khi chúng là ánh sáng. Bạn có thể nhớ lại các giá trị độ sáng (hoặc độ sáng) tương đối của màu nền trước và màu nền để tính độ tương phản. Trong thực tế, tỷ lệ 4.5: 1 đạt được bằng cách sử dụng bộ kiểm tra độ tương phản màu để làm tối màu tối hơn và màu sáng nhạt hơn. Các màu tối hơn trên bánh xe màu được coi là màu xanh, tím, đỏ tươi và đỏ, trong khi các màu sáng hơn là màu cam, vàng, xanh lục và xanh lục. </ section>
 
 ## Instructions
-<section id="instructions"> Camper Cat正在尝试使用颜色作为他的博客文字和背景，但他目前的绿色<code>background-color</code>与栗色文字<code>color</code>具有2.5：1的对比度。您可以轻松调整颜色的亮度，因为他通过更改第三个参数使用CSS <code>hsl()</code>属性（代表色调，饱和度，亮度）来声明它们。将<code>background-color</code>亮度值从35％增加到55％，并将<code>color</code>亮度值从20％降低到15％。这将对比度提高到5.9：1。 </section>
+<section id = "instructions"> Camper Cat đang cố gắng sử dụng màu làm văn bản và nền blog của anh ấy, nhưng màu nền <code> màu nền </ code> màu xanh lá cây hiện tại của anh ấy và màu <code> màu cẩm chướng </ code> có 2.5 : 1 tỷ lệ tương phản. Bạn có thể dễ dàng điều chỉnh độ sáng của màu sắc bởi vì anh ta khai báo chúng bằng cách thay đổi tham số thứ ba bằng cách sử dụng thuộc tính CSS <code> hsl () </ code> (đại diện cho màu sắc, độ bão hòa, độ sáng). Tăng giá trị độ sáng <code> màu nền </ code> từ 35% lên 55% và giảm giá trị độ sáng <code> màu </ code> từ 20% xuống 15%. Điều này làm tăng độ tương phản lên 5,9: 1. </ section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码只应将文本<code>color</code>属性的亮度值更改为15％的值。
+  - text: Mã của bạn chỉ nên đặt văn bản<code>color</code>Giá trị độ sáng của thuộc tính được thay đổi thành giá trị 15%.
     testString: 'assert(code.match(/color:\s*?hsl\(0,\s*?55%,\s*?15%\)/gi), "Your code should only change the lightness value for the text <code>color</code> property to a value of 15%.");'
-  - text: 您的代码应仅将<code>background-color</code>属性的亮度值更改为值55％。
+  - text: Mã của bạn chỉ nên<code>background-color</code>Giá trị độ sáng của thuộc tính được thay đổi thành giá trị 55%.
     testString: 'assert(code.match(/background-color:\s*?hsl\(120,\s*?25%,\s*?55%\)/gi), "Your code should only change the lightness value for the <code>background-color</code> property to a value of 55%.");'
 
 ```
