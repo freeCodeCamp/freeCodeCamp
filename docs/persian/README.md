@@ -11,13 +11,12 @@
         <td><a href="/docs/persian/README.md"> پارسی </a></td>
     </tr>
 </table>
-
+<div dir='rtl' align='right'>
 # دسترسی سریع به مستندات
 
 دُرود 👋!
 
 این مسیر شامل همهٔ مستندات مشارکت‌ها در freeCodeCamp.org است.
-This directory contains all of the documentation on contributing to freeCodeCamp.org
 
 ## [اگر تازه‌وارد هستید، با مطالعهٔ این نوشتار آغاز کنید.](/CONTRIBUTING.md)
 
@@ -25,6 +24,7 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick references articles
 
+۱. چگونه در نوشتارهای آموزشی مشارکت کنیم؟
 1. How to work on Guide articles.
 2. How to work on Coding Challenges.
 3. How to setup freeCodeCamp locally.
@@ -49,3 +49,5 @@ A quick reference to the commands that you will need, when working locally.
 | `npm run test:curriculum` | Run the curriculum test suite |
 | `npm run test:server` | Run the server test suite |
 | `npm run commit` | An interactive tool to help you build a good commit message |
+
+</div>
