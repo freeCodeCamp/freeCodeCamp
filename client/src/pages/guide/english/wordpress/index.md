@@ -14,3 +14,5 @@ WordPress powers over 30% of all websites and is by far the most used CMS on the
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
+- [WordPress Theme Handbook](https://developer.wordpress.org/themes/)
+- [WordPress Plugin Handbook](https://developer.wordpress.org/plugins/)
