@@ -3,8 +3,7 @@ title: Build a Drum Machine
 ---
 ## Build a Drum Machine
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/front-end-libraries-projects/build-a-drum-machine/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+The project consists of three distinct parts:
+1. Identifying the components needed to complete the task, what components are there? Can some components be used more than once? E.g. the buttons, are they the same only with different onClick events and ids?
+2. What component should be responsible for keeping state, and how should changes in state be passed on to other components?
+3. Knowing that the corresponding audio element should be in your clickable area/button which means that the audio element is a child of the corresponding button.

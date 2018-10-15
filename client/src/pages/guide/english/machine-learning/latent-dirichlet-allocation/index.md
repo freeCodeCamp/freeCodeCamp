@@ -95,5 +95,5 @@ Presidential Campaign/Elections: mail, web, from, thank, you, box, mccain, sarah
 #### Suggested Reading:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-- https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation
-- http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/
+- [Latent Dirichlet allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation)
+- [Introduction to Latent Dirichlet Allocation](http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/)

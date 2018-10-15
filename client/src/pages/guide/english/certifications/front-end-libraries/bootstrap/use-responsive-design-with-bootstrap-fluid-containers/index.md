@@ -3,8 +3,24 @@ title: Use Responsive Design with Bootstrap Fluid Containers
 ---
 ## Use Responsive Design with Bootstrap Fluid Containers
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/use-responsive-design-with-bootstrap-fluid-containers/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Welcome to the Bootstrap challenges, the followingchallenge has you making the existing content children or sub-child of a new div which would be a bootstrap container
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint 1
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Wrap all HTML code into a single ``` <div></div> ```.
+
+### Hint 2
+
+Use the class of ``` container-fluid ```
+
+### Solution
+
+Since you have to add all the HTML in the newly created div, the following is the solution:
+
+```html
+<div class="container-fluid>
+...
+</div>
+```
+
+##### NOTE: IN the above solution, the ``` ... ``` represents the HTML which was already present.

@@ -4,7 +4,7 @@ title: Map
 
 ## Introduction of map
 
-`map` is an associative container that store elements in key-value pair. Just like in `Java` have collection, associative array in PHP and so on.
+`map` is an associative container that store elements in key-value pair. Just like in `Java` we have collection, associative array in PHP and so on.
 
 ## Benefits of using map
 * It stores only unique keys and that too in sorted order based on its assigned sorting criteria.

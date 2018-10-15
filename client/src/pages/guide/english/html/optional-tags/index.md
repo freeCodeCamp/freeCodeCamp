@@ -34,4 +34,4 @@ The optional tag specifications for the most common HTML5 tags are as follows:
 
 ### More Information
 
-To learn more about the HTML5 optional tags, please visit ![The World Wide Web Consortium's Recommendations](https://www.w3.org/TR/html5/syntax.html#optional-tags).
+To learn more about the HTML5 optional tags, please visit [The World Wide Web Consortium's Recommendations](https://www.w3.org/TR/html5/syntax.html#optional-tags).

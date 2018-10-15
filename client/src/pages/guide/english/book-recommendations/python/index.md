@@ -4,42 +4,52 @@ title: Books on Python Programming Language
  
  ### List of Books
  
- *Think Python 2e*
+ #### Think Python 2e
  
-- Free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
-- [Amazon](https://www.amazon.com/gp/product/1491939362/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1491939362&linkCode=as2&tag=greenteapre01-20&linkId=XCU5FNNNMXRHDD7X)
-- ISBN-13: 978-1491939369
+ A free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
+ 
 - [Website](http://greenteapress.com/wp/think-python-2e/)
 - [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
+- [Amazon](https://www.amazon.com/gp/product/1491939362)
+- ISBN-13: 978-1491939369
  
-*Learn Python 3 the Hard Way*
+#### Learn Python 3 the Hard Way
 
-  - Paid (Free ebook avaiable) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
+Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
+
+- [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
+- [E-book](https://learnpythonthehardway.org/python3/) (free)
 - [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
-- [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
-- [E-book](https://learnpythonthehardway.org/python3/) (free)
 
-*Black Hat Python: Python Programming for Hackers and Pentesters*
-- [Amazon Smile](https://smile.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/)
+
+#### Black Hat Python: Python Programming for Hackers and Pentesters
+
+Explore the darker side of Python and discover how to write network sniffers, manipulate packets, infect virtual machines and more.
+
+- [Amazon](https://www.amazon.co.uk/Black-Hat-Python-Programming-Pentesters/dp/1593275900)
 - ISBN-10: 1593275900
 
-*Programming Python*
+#### Programming Python
 
-- O'Reilly book, covers more advanced programming aspects of Python.
+So you've covered the basics of Python?  You're now ready to discover the in-depth tutorials which cover the advanced programming aspects of Python. These include system administration, GUIs and the web.  Understand how Python is used in databases, networking, front-end scripting layers and more.
+
 - [Amazon](https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
+- [O'Reilly](http://shop.oreilly.com/product/9780596158118.do)
 - ISBN-10: 0596158106
 - ISBN-13: 978-0596158101
 
-*Data Science from Scratch: First Principles with Python* 
+#### Data Science from Scratch: First Principles with Python
 
-- O'Reilly book, covers fundamentals of Python, libraries, and machine learning techniques.
+You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
+
+- [O'Reilly](http://shop.oreilly.com/product/0636920033400.do)
 - [Amazon](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
-*Others*
+#### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)

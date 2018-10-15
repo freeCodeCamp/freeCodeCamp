@@ -36,7 +36,7 @@ This is the same as applying the addition operator and reassigning the sum to th
 To illustrate this using actual values, here is another example of using the addition assignment operator:
 
     let myVar = 5;   // value of myVar: 5
-    myVar += 7;   // value of myVar: 12 = 5 + 7
+    myVar += 7;   // value of myVar: 5 + 7 = 12
 
 ## Complete list of Javascript's assignment operators
 

@@ -13,7 +13,7 @@ Bayes Classifier models uncertainty by keeping probabilities for each of the pos
 #### Suggested Reading:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-- https://monkeylearn.com/blog/practical-explanation-naive-bayes-classifier/
-- https://en.wikipedia.org/wiki/Naive_Bayes_classifier
-- https://youtu.be/XcwH9JGfZOU (Part 1)
-- https://youtu.be/k2diLn5Nqbs (Part 2)
+- [A practical explanation of a Naive Bayes classifier](https://monkeylearn.com/blog/practical-explanation-naive-bayes-classifier/)
+- [Naive Bayes classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)
+- [How Naive Bayes Classifier Works 1/2](https://youtu.be/XcwH9JGfZOU)
+- [How Naive Bayes Classifier Works 2/2](https://youtu.be/k2diLn5Nqbs)

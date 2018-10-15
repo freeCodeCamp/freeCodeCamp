@@ -1,8 +1,8 @@
 ---
-title: Bash Cat
+title: Bash cat
 ---
 
-## Bash Cat
+## Bash command: cat
 
 Cat is one of the most frequently used commands in Unix operating systems.
 

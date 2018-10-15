@@ -64,6 +64,17 @@ Output:
 "Hello Beth."
 ```
 
+### Mnesia
+
+mnesia is a distributed database management system written in Erlang and highly compatible with Erlang processes.
+The following are some of the most important and attractive capabilities provided by Mnesia:
+
+* A relational/object hybrid data model.
+* Persistence. Tables can be coherently kept on disc and in the main memory.
+* Replication. Tables can be replicated at several nodes.
+* Atomic transactions. A series of table manipulation operations can be grouped into a single atomic transaction.
+* Extremely fast real-time data searches.
+
 ### Try it out
 
 There are websites where you can try running Erlang commands without having to install anything locally, like these:
