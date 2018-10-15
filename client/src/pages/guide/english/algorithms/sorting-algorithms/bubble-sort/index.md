@@ -110,22 +110,15 @@ public class bubble-sort {
 ### Example in C++
 ```c++
 // Recursive Implementation
-void bubblesort(int arr[], int n)
+void bubblesort(int a[], int n)
 {
-	if(n==1)	//Initial Case
-		return;
-	
-	for(int i=0;i<n-1;i++)	//After this pass the largest element will move to its desired location.
-	{
-		if(arr[i]>arr[i+1])
-		{
-			temp=arr[i];
-			arr[i]=arr[i+1];
-			arr[i+1]=temp;
-		}
-	}
-	
-	bubblesort(arr,n-1);	//Recursion for remaining array
+	for (int i = 0; i < n - 1; ++ i)
+        {
+                for (int j = i + 1; j < n; ++ j)
+                {
+                        if (a[i] < a[j]) swap(a[i], a[j]);
+                }
+        }
 }
 ```
 ### Example in Swift
