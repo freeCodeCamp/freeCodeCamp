@@ -23,11 +23,11 @@ Esto es esencial, porque de esta manera puedes trabajar en tu propia copia de fr
 
 ## Preparando el entorno de desarrollo
 
-Una vez que tengas los requisitos previos instalados, necesitas preparar tu entorno de desarrollo. Once you have the prerequisites installed, you need to prepare you development environment. Esto es común para muchos flujos de trabajo, y tendrás que hacer esto solo una vez.
+Una vez que tengas los requisitos previos instalados, necesitas preparar tu entorno de desarrollo. Esto es común para muchos flujos de trabajo, y tendrás que hacer esto solo una vez.
 
 **Sigue estos pasos para tener tu entorno de desarrolloo listo:**
 
-1. Instala [Git](https://git-scm.com/) o tu cliente favorito de Git, si tu no lo tienes aun. Actualiza a la ultima version, Update to the latest version, el que vino con tu OS se puede quedar obsoleto.
+1. Instala [Git](https://git-scm.com/) o tu cliente favorito de Git, si tu no lo tienes aun. Actualiza a la ultima version, el que vino con tu OS se puede quedar obsoleto.
 
 2. (Opcional pero recomendado) [Configura una SSH Key](https://help.github.com/articles/generating-an-ssh-key/) para GitHub.
 
@@ -37,6 +37,59 @@ Una vez que tengas los requisitos previos instalados, necesitas preparar tu ento
 
 4. Configuración de linting para su editor de códigos.
 
-    Tu deberías teneer [ESLint corriendo en tu editor](http://eslint.org/docs/user-guide/integrations.html), y destacara cualquier cosa que no cumpla con [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+    Tu deberías tener [ESLint corriendo en tu editor](http://eslint.org/docs/user-guide/integrations.html), y destacará cualquier cosa que no cumpla con [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
     > Por favor no ignore nigun error linting. Están destinados a **ayudarte** y asegurar una base de código limpio y simple.
+
+## Clona tu copia de freeCodeCamp
+
+['Cloning'](https://help.github.com/articles/cloning-a-repository/) es un paso donde tu **descargas** una copia del repositorio que es de tu propiedad o de alguien de una localización `remota`. En tu caso, esta localización remota es tu `fork` del repositorio de freeCodeCamp, que debería estar disponible en `https://github.com/YOUR_USER_NAME/freeCodeCamp`.
+
+Corre estos comandos en tu maquina local: 
+
+1. Open a Terminal / Command Prompt / Bash Shell en tu directorio de proyectos
+
+    _i.e.: `/yourprojectdirectory/`_
+
+2. Clona tu fork de freeCodeCamp, sustituyendo `YOUR_USER_NAME` con tu GitHub Username
+
+    ```shell
+    git clone https://github.com/YOUR_USER_NAME/freeCodeCamp.git
+    ```
+
+Esto descargará el repositorio completo de freeCodeCamp a tu directorio de proyectos.
+
+## Configurar un `upstream` al repositorio principal
+
+Ahora que has descargado una copia de tu fork, tu necesitaras configurar un `upstream`.
+
+Como se menciono antes, el repositorio principal de `https://github.com/freeCodeCamp/freeCodeCamp` Se denomina a menudo `upstream` repositorio. Tu fork de `https://github.com/YOUR_USER_NAME/freeCodeCamp` se denomina a menudo como `origin` repositorio.
+
+Tiene que señalar su clon local al `upstream`, además de al `origin`. Esto es para que puedas sincronizar cambios del repositorio principal. De esta manera no tienes que pasar por el forcking y la clonación una y otra vez.
+
+1. Cambiar el directorio al nuevo directorio de freeCodeCamp:
+
+    ```shell
+    cd freeCodeCamp
+    ```
+
+2. Añadir un remoto al repositorio principal de freeCodeCamp:
+
+    ```shell
+    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+    ```
+
+3. Comprueba que la configuración se ve bien para ti:
+
+    ```shell
+        git remote -v
+    ```
+
+        The output should be something like below:
+
+    ```shell
+        origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+        origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+        upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+        upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+    ```
