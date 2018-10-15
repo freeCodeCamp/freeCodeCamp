@@ -13,7 +13,7 @@ A linked list is a simple data structure, but it can be used to implement more c
 
 
 Linked List |  (Introduction)
-Like arrays, Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at contiguous location; the elements are linked using pointers or like in the example using Javascript, a reference to the next node.
+Like arrays, Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at contiguous location; the elements are linked using pointers or like in the example using Javascript, a reference to the next node. As such, the size of a Linked List is not fixed. It can be altered, unlike in an array where the size remains constant once initialized. 
 
 If you want to understand Linked Lists, it helps to understand **Arrays**.
 
