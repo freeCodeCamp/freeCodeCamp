@@ -27,16 +27,39 @@ If/Else is a conditional statement where depending on the truthiness of a condit
 ~~~~
 ## If/Elseif/Else Statement
 ~~~~
-  if (condition){
+  if (condition1){
     statement1;
     statement2;
   }
-  elseif{
+  elseif (condition2){
     statement3;
     statement4;
   }
   else
     statement5;
+~~~~
+## Nested If/Else Statement
+~~~~
+  if (condition1){
+      if (condition2){
+        statement1;
+        statement2;
+      }
+      else{
+        statement3;
+        statement4;
+      }
+  }
+  else {
+      if (condition3){
+        statement5;
+        statement6;
+      }
+      else{
+        statement7;
+        statement8;
+      }
+  }
 ~~~~
 
 For more information check out the following link:

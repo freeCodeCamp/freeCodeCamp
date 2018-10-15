@@ -8,7 +8,7 @@
     "ensure-env": "cross-env DEBUG=fcc:* node ./tools/scripts/ensure-env.js",
     "lint": "echo 'Warning: TODO - Define Linting.'",
     "pretest-ci": "npm-run-all -s lint bootstrap",
-    "seed": "node tools/scripts/seed/seedChallenges",
+    "seed": "cross-env DEBUG=fcc:* node ./tools/scripts/seed/seedChallenges",
     "test": "npm-run-all -p test:*",
     "test-ci": "npm test",
     "test:client": "cd ./client && npm test && cd ../",
