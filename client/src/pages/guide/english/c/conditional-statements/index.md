@@ -47,7 +47,7 @@ else
 int a = 300;
 if(a < 200)
 {
-    printf("a is less than 200\n" );
+    printf("a is less than 200\n");
 }
 else
 {
@@ -88,7 +88,7 @@ else
 int a = 300;
 if(a == 100)
 {
-    printf("a is equal to 100\n" );
+    printf("a is equal to 100\n");
 }
 else if(a == 200)
 {
@@ -147,7 +147,7 @@ The switch statement is often faster than nested if...else (not always). Also, t
 ### Syntax of switch case
 ```
 switch (n)
- {
+{
     case constant1:
         // code to be executed if n is equal to constant1;
         break;
