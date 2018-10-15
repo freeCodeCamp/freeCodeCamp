@@ -1,0 +1,44 @@
+
+## STRINGS
+
+In simp
+le terms, a string is a collection of characters stored in continous memory locations. For eg- a name, a location,
+an address or an introduction.
+
+It may be a single character, a word or a complere story.
+
+## DECLARATION
+
+There are 2 ways to declare a string in C++.
+
+1. A character type array - char <string name>[size]; 
+
+2. A string type data type which was introduced in later versions of C++ -
+string <name>; 
+
+Note- Type 2 is not available in C and earlier versions of C++.
+
+## NULL TERMINATION
+
+Always remember that a string is always proceeded by a null character ('\0'). 
+It is added by the compiler automatically at the end of the string. 
+
+So always reserve an extra space for null character.
+
+## INPUT AND OUTPUT
+
+Here is a sample program to summarise input and output.
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+string s;
+
+cout<<"Enter your name";
+cin>>s;
+
+cout<<endl<<"Hello, "<<s;
+}
