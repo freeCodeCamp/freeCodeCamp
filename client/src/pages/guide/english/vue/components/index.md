@@ -56,7 +56,7 @@ can just reference it by using as a tag. In our example, we can use the tag
     iconSrc="https://freedesignfile.com/upload/2017/08/rocket-icon-vector.png"
     iconAltText="rocket"
     featureTitle="Processing speed"
-    featureDescription="Our solution has astonishing benchmarks grades"
+    featureDescription="Our solution has astonishing benchmarks grades">
   </feature-card>
 </div>
 ```
