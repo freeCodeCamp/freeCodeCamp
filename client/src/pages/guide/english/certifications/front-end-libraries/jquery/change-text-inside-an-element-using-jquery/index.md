@@ -8,8 +8,8 @@ title: Change Text Inside an Element Using jQuery
 ```html
 <script>
   $(document).ready(function() {
-    $("#target1").css("color", "red");
-    $("#target4").html("<em>#target4</em>");
+    $("#target1").css('color', 'red');
+    $("#target4").html('<em>#target4</em>');
   });
 </script>
 
@@ -44,4 +44,3 @@ title: Change Text Inside an Element Using jQuery
 
 [freeCoceCamp Guide](https://guide.freecodecamp.org/jquery/jquery-html-method)
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
