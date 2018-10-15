@@ -1,5 +1,5 @@
 ---
-title: Redux Middleware	
+title: Redux Middleware
 ---	
  ## Introduction
  In this guide it will be presented to the reader the basic concept of Redux Middleware.
