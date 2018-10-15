@@ -25,4 +25,14 @@ enum StringBasedEnum {
     Programming = "is fun",
     Pizza = "is good"
 }
+
+// Heterogeneous based enum
+enum HeterogeneousBasedEnum {
+    Day = 2,
+    Pizza = "is good"
+}
+
+
 ```
+
+Like Constants Enums are ready only. its imperative to understand that the benefit of using an Enum vs a Constant is it allow developers to organize collections of related values.
