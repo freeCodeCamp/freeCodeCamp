@@ -22,5 +22,5 @@ The companies that sponsor these programs gain several benefits:
 
 The following is a list of popular platforms which provide access to bug bounties from a wide variety of companies:
 
-* *BugCrowd* (https://www.bugcrowd.com/bug-bounty-list/)
-* *HackerOne* (https://hackerone.com/bug-bounty-programs)
+- [BugCrowd](https://www.bugcrowd.com/bug-bounty-list/)
+- [HackerOne](https://hackerone.com/bug-bounty-programs)
