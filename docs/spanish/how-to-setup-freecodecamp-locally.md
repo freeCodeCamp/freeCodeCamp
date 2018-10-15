@@ -20,3 +20,23 @@ Esto es esencial, porque de esta manera puedes trabajar en tu propia copia de fr
 3. Despues seras llevado a tu copia de freeCodeCamp en `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 ![GIF - How to fork freeCodeCamp on Github](/docs/images/github/how-to-fork-freeCodeCamp.gif)
+
+## Preparando el entorno de desarrollo
+
+Una vez que tengas los requisitos previos instalados, necesitas preparar tu entorno de desarrollo. Once you have the prerequisites installed, you need to prepare you development environment. Esto es común para muchos flujos de trabajo, y tendrás que hacer esto solo una vez.
+
+**Sigue estos pasos para tener tu entorno de desarrolloo listo:**
+
+1. Instala [Git](https://git-scm.com/) o tu cliente favorito de Git, si tu no lo tienes aun. Actualiza a la ultima version, Update to the latest version, el que vino con tu OS se puede quedar obsoleto.
+
+2. (Opcional pero recomendado) [Configura una SSH Key](https://help.github.com/articles/generating-an-ssh-key/) para GitHub.
+
+3. Instala un editor de codigo de tu elección.
+
+    Nosotros recomendamos usar [VS Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Estos son unos grandes editores de codigo fuente libre.
+
+4. Configuración de linting para su editor de códigos.
+
+    Tu deberías teneer [ESLint corriendo en tu editor](http://eslint.org/docs/user-guide/integrations.html), y destacara cualquier cosa que no cumpla con [freeCodeCamp's JavaScript Style Guide](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
+
+    > Por favor no ignore nigun error linting. Please do not ignore any linting errors. Están destinados a **ayudarte** y asegurar una base de código limpio y simple.
