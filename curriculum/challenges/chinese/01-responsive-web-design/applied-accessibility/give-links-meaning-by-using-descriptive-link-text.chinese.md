@@ -3,25 +3,24 @@ id: 587d778f367417b2b2512aae
 title: Give Links Meaning by Using Descriptive Link Text
 challengeType: 0
 videoUrl: ''
-localeTitle: 通过使用描述性链接文本给出链接含义
+localeTitle: Cho ý nghĩa liên kết bằng cách sử dụng văn bản liên kết mô tả
 ---
 
 ## Description
-<section id="description">屏幕阅读器用户对其设备读取的内容类型有不同的选择。这包括跳过（或覆盖）地标元素，跳转到主要内容或从标题中获取页面摘要。另一种选择是仅听取页面上可用的链接。屏幕阅读器通过阅读链接文本或锚（ <code>a</code> ）标签之间的内容来完成此操作。列出“点击此处”或“阅读更多”链接无济于事。相反，您应该在<code>a</code>标签中使用简短但具有描述性的文本，以便为这些用户提供更多意义。 </section>
+<section id = "description"> Người dùng trình đọc màn hình có các lựa chọn khác nhau cho loại nội dung họ đọc trên thiết bị của họ. Điều này bao gồm bỏ qua (hoặc ghi đè) phần tử dấu vị trí, chuyển đến nội dung chính hoặc nhận tóm tắt trang từ tiêu đề. Một tùy chọn khác là chỉ lắng nghe các liên kết có sẵn trên trang. Trình đọc màn hình thực hiện việc này bằng cách đọc nội dung giữa văn bản liên kết hoặc thẻ (<code> a </ code>). Liệt kê các liên kết "Bấm vào đây" hoặc "Đọc thêm" không giúp ích gì. Thay vào đó, bạn nên sử dụng văn bản ngắn nhưng mô tả trong thẻ <code> a </ code> để cung cấp cho những người dùng này nhiều ý nghĩa hơn. </ section>
 
 ## Instructions
-<section id="instructions">如果没有周围的上下文，Camper Cat正在使用的链接文本不是很具描述性。移动锚（ <code>a</code> ）标签，使它们环绕文本“有关电池的信息”而不是“点击此处”。 </section>
+<section id = "instructions"> Nếu không có bối cảnh xung quanh, văn bản liên kết mà Camper Cat đang sử dụng không phải là mô tả. Di chuyển các thẻ neo (<code> a </ code>) để chúng bao quanh văn bản "thông tin về pin" thay vì "bấm vào đây". </ section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 您的代码应移动锚点<code>a</code>来自各地的词“点击这里”标签环绕中的“关于电池的信息”。
-    testString: 'assert($("a").text().match(/^(information about batteries)$/g), "Your code should move the anchor <code>a</code> tags from around the words "Click here" to wrap around the words "information about batteries".");'
-  - text: 确保您<code>a</code>元素具有结束标记。
-    testString: 'assert(code.match(/<\/a>/g) && code.match(/<\/a>/g).length === code.match(/<a href=(""|"")>/g).length, "Make sure your <code>a</code> element has a closing tag.");'
-
+- văn bản: Mã của bạn nên di chuyển neo <code> a </ code> từ tab "Nhấp vào đây" xung quanh "Thông tin về pin".
+    testString: 'assert ($ ("a"). text (). match (/ ^ (thông tin về pin) $ / g), "Mã của bạn nên di chuyển thẻ <code> a </ code> neo từ xung quanh các từ "Bấm vào đây" để quấn quanh các từ "thông tin về pin". "); '
+  - văn bản: Đảm bảo phần tử <code> a </ code> của bạn có thẻ kết thúc.
+    testString: 'assert (code.match (/ <\ / a> / g) && code.match (/ <\ / a> / g) .length === code.match (/ <a href = ("" | "")> / g) .length, "Đảm bảo phần tử <code> a </ code> của bạn có thẻ đóng."); '
 ```
 
 </section>
