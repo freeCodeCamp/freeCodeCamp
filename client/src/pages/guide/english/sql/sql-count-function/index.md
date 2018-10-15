@@ -30,7 +30,7 @@ select count(*) AS studentCount from student; -- count of all records
 Here we get a count of students in each field of study.
 
 ```sql
- select studentID, FullName, count(*) AS studentCount from the student table with a group by programOfStudy;
+ select programOfStudy, count(*) AS studentCount from the student table with a group by programOfStudy;
 ```
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/count03.JPG?raw=true)
 
