@@ -124,7 +124,7 @@ divs.forEach(div => div.addEventListener("click", logDivs, { capture: true }));
 
 ### Event Delegation
 
-Event bubbling can cause prolems, but it can also be useful. For example, if you attach event handlers to a number of elements on page load, and then dynamically add more elements after the page has loaded, the later elements won't have event handlers attached to them.
+Event bubbling can cause problems, but it can also be useful. For example, if you attach event handlers to a number of elements on page load, and then dynamically add more elements after the page has loaded, the later elements won't have event handlers attached to them.
 
 You can avoid this by attaching the event handler to the parent element (which exists on page load) and catching the event when it bubbles up from the child element. For example, in a todo app consisting of a `ul` containing `li`s, you can listen on the list instead of on each list item (which might not exist at page load).
 
