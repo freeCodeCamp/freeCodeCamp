@@ -56,13 +56,13 @@ There are more operators beyond the main two, a full list with examples can be f
 
 Beyond the core uses of media queries for mobile-first web design shown above, media queries can do a lot, especially for web accessibility. Here are just a few examples:
 
-1. Adjusting for screen readers that convert website text to speech for the visually impaired (for example, ignoring non-essential text)
+1. Adjusting for screen readers that convert website text to speech for the visually impaired (for example, ignoring non-essential text).
 ```css
     @media speech {
       /* ... */
     }
 ```
-2. Allowing for more graceful zooming in for the minorly visually impaired, such as many elderly people
+2. Allowing for more graceful zooming in for the minorly visually impaired, such as many elderly people.
 3. Allowing smoother experiences for those who prefer or need less animation to read a page.
 ```css
     @media (prefers-reduced-motion: reduce) {
@@ -72,7 +72,7 @@ Beyond the core uses of media queries for mobile-first web design shown above, m
       }
     }
 ```
-4. Restyling a page for when it's printed as opposed to read on a screen
+4. Restyling a page for when it's printed as opposed to read on a screen.
 ```css
     @media print {
       /* ... */
@@ -82,7 +82,7 @@ Beyond the core uses of media queries for mobile-first web design shown above, m
 ### More Information
 * [MDN - media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 * [W3 Schools - @media rule](https://www.w3schools.com/cssref/css3_pr_mediaquery.asp)
-* [CSS Tricks Standard Device Widths Atricle](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
-* [https://alistapart.com/article/responsive-web-design](Ethan Marcotte A List Apart Atricle on  Responsive Web Design)
-* [http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/](Brad Frost 7 habits of highly effective media queries)
-* [https://www.templatemonster.com/blog/css-media-queries-for-all-devices-and-browsers-including-ie7-and-ie8/](How to make media queries work on older browsers)
+* [CSS Tricks Standard Device Widths Article](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
+* [Ethan Marcotte A List Apart Atricle on  Responsive Web Design](https://alistapart.com/article/responsive-web-design)
+* [Brad Frost 7 habits of highly effective media queries](http://bradfrost.com/blog/post/7-habits-of-highly-effective-media-queries/)
+* [How to make media queries work on older browsers](https://www.templatemonster.com/blog/css-media-queries-for-all-devices-and-browsers-including-ie7-and-ie8/)
