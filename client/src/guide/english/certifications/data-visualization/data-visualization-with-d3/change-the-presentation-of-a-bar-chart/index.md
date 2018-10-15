@@ -3,8 +3,70 @@ title: Change the Presentation of a Bar Chart
 ---
 ## Change the Presentation of a Bar Chart
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/change-the-presentation-of-a-bar-chart/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+This challenge requires you to style your html according the the given instructions, i.e. a ``` margin ``` of ``` 2px ``` on the ``` bar ``` class and scaling them by ``` 10 ``` times.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint 1
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Change the CSS and use the ``` margin ``` property.
+
+### Hint 2
+
+Use call back on the style property
+
+### Spoiler Alert | Solution ahead
+### Basic Solution
+
+```html
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    margin: 2px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+    
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      .style("height", (d) => (d*10 + "px"))
+      .style("margin",'2px');
+  </script>
+</body>
+```
+
+##### Explaination: In this solution, the CSS has been changed to comply with the ``` margin ``` instruction and a callback has been used to scale the ``` <div></div> ```s 10 times.
+
+### Advanced Solution
+
+```html
+<style>
+  .bar {
+    width: 25px;
+    height: 100px;
+    display: inline-block;
+    background-color: blue;
+  }
+</style>
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+    
+    d3.select("body").selectAll("div")
+      .data(dataset)
+      .enter()
+      .append("div")
+      .attr("class", "bar")
+      .style("height", (d) => (d*10 + "px"))
+      .style("margin",'2px');
+  </script>
+</body>
+```
+
+##### Explaination: In this solution, we have chained two ``` style() ``` methods to also add the ``` margin ``` as required and a callback has been used to scale the ``` <div></div> ```s 10 times.
