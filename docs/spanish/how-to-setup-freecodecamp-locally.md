@@ -17,6 +17,6 @@ Esto es esencial, porque de esta manera puedes trabajar en tu propia copia de fr
 
 1. Ve al repositorio de freeCodeCamp en GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
 2. Haga click en el botón "Fork" en la parte superior derecha de la interfaz ([More Details Here](https://help.github.com/articles/fork-a-repo/))
-3. Despues seras llevado a tu copia de freeCodeCamp at `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+3. Despues seras llevado a tu copia de freeCodeCamp en `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 ![GIF - How to fork freeCodeCamp on Github](/docs/images/github/how-to-fork-freeCodeCamp.gif)
