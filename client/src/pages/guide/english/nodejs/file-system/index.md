@@ -55,12 +55,12 @@ Node.js code to write content into file.
 ```javascript
 const fs = require('fs');
 fs.writeFile('output.txt', "New content added", (err, data) => {
-	if(err){
-		console.log(err);
-	}
-	else{
-		console.log("The file is saved");
-	}
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log("The file is saved");
+    }
 });
 ```
 The above code creates a file *output.txt* and add content *New content added* to it.
