@@ -15,9 +15,9 @@
 
 Hello 👋!
 
-This directory contains all the documentation for contributing to freeCodeCamp.org
+This directory contains all of the documentation on contributing to freeCodeCamp.org
 
-## [If you have already started, please read this first. ](/ CONTRIBUTING.md)
+## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
 
 ---
 
