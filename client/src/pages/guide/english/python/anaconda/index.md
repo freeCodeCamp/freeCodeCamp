@@ -29,6 +29,9 @@ letter of the option. So ``--name`` and ``-n`` are the same, and
 For full usage of each command, including abbreviations, see
 [Command reference](https://conda.io/docs/commands.html).
 
+### Download Anaconda
+https://www.anaconda.com/download/
+
 ### Sources
 1. [Anaconda Documentation](https://docs.anaconda.com/)
 2. [Conda Documentation](https://conda.io/docs/)
