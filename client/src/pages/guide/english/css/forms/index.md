@@ -19,5 +19,9 @@ Inside the form tags there are also some important attribute which are:
 -method : type of request which are: 'GET' and 'POST'
 
 
+## More Resources
+
+<a href="https://www.w3schools.com/html/html_forms.asp" target="_blank">w3schools forms</a>
+
 
 
