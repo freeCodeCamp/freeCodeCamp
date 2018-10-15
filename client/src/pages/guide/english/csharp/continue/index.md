@@ -28,3 +28,5 @@ for (int i = 0; i < array.Length; i++)
 > Item on index 3 is 4
 > Item on index 4 is 5
 ```
+
+As you can see, before printing the 2nd index of the array, the control enters the if block and is told to continue to the next iteration of the loop skipping everything left to execute in the 2nd iteration. For this reason, the output does not print an item at the 2nd index of the array.
