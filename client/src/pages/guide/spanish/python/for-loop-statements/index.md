@@ -123,13 +123,13 @@ Salida:
 ```
 
 **Iterar sobre dos listas del mismo tamaño en un solo bucle con la función zip ()**
-
-\`\` \`pitón A = \["a", "b", "c"\] B = \["a", "d", "e"\]
-
-para a, b en zip (A, B): imprimir a, b, a == b
+```
+A=["a", "b", "c"] 
+B=["a", "d", "e"]
+for a,b in zip(A,B):
+  print(a,b,a==b)
 ```
 Output: 
-```
 
 \> aa cierto bd falso ce falso >
 ```
