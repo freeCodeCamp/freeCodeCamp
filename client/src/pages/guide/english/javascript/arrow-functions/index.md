@@ -27,6 +27,23 @@ var multiply = (x, y) => x * y;
 
 You no longer need the `function` and `return` keywords, or even the curly brackets.
 
+```javascript
+// everything included
+const multiply = function(x, y) => { return x * y };
+
+// remove "function" 
+const multiply = (x, y) => { return x * y };
+
+// remove curly brackets and "return" ==> this way it returns implicitly
+const multiply = (x, y) => x * y;
+
+// if you only have one argument/parameter 
+const multiplyBy2 = x => x * 2;
+
+// combined with the ternary operator, but note it's not a looker! 
+const addOrMultiply = (x, y, mathOperator) => mathOperator.toLowerCase() === 'add' ? x + y : x * y;
+```
+
 ### A simplified `this`
 
 Before arrow functions, new functions defined their own `this` value. To use `this` inside a traditional function expression, we have to write a workaround like so:

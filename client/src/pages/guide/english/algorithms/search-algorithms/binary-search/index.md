@@ -181,14 +181,13 @@ int binarySearch(int a[], int l, int r, int x) {
 ```C++
 int binary_search(int arr[], int l, int r, int target) 
 { 
-   if (r >= l) 
+   while (r >= l) 
    { 
         int mid = l + (r - l)/2; 
         if (arr[mid] == target)   
             return mid; 
-        if (arr[mid] > target)  
-            return binary_search(arr, l, mid-1, target); 
-        return binary_search(arr, mid+1, r, target); 
+        if (arr[mid] > target) r = mid - 1;
+        else l = mid + 1; 
    } 
    return -1; 
 }
@@ -286,6 +285,26 @@ int binarySearch(int arr[], int start, int end, int x)
 }
 ```
 
+### Example in Swift
+```Swift
+func binarySearch(for number: Int, in numbers: [Int]) -> Int? {
+    var lowerBound = 0
+    var upperBound = numbers.count
+    while lowerBound < upperBound {
+        let index = lowerBound + (upperBound - lowerBound) / 2
+        if numbers[index] == number {
+            return index // we found the given number at this index
+        } else if numbers[index] < number {
+            lowerBound = index + 1
+        } else {
+            upperBound = index
+        }
+    }
+    return nil // the given number was not found
+}
+```
+
 ### More Information
 * [Binary search (YouTube video)](https://youtu.be/P3YID7liBug)
 * [Binary Search - CS50](https://www.youtube.com/watch?v=5xlIPT1FRcA)
+* [Binary Search - MyCodeSchool](https://www.youtube.com/watch?v=j5uXyPJ0Pew&list=PL2_aWCzGMAwL3ldWlrii6YeLszojgH77j)

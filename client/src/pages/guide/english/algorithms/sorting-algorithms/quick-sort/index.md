@@ -140,3 +140,5 @@ The space complexity of quick sort is O(n). This is an improvement over other di
 
 - <a href='https://www.youtube.com/watch?v=SLauY6PpjW4' target='_blank' rel='nofollow'>Youtube: Gayle Laakmann McDowell (author of Cracking The Coding Interview) explains the basics of quicksort and show some implementations</a>
 
+- <a href='https://www.youtube.com/watch?v=COk73cpQbFQ' target='_blank' rel='nofollow'>Quick Sort - MyCodeSchool</a>
+

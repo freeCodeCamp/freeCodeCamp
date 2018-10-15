@@ -2,8 +2,8 @@
 title: Reselect
 ---
 ## Reselect
-Reselect is simple selector library for Redux. 
-Why we need selectors? Official docs describe it this way:
+Reselect is a simple selector library for Redux. 
+Why do we need selectors? Official docs describe it this way:
 
 * Selectors can compute derived data, allowing Redux to store the minimal possible state.
 * Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
