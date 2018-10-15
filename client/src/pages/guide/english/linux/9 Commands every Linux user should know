@@ -1,0 +1,30 @@
+#10 Commands every Linux user should know
+
+1.ls
+you will use ls command to to view files, folders and directories.
+All hidden files are viewable by using the command ls -a.
+
+2.cd
+you use to go ("or change") to a directory.It is how you navigate from one folder to another.
+To go back form the current folder to the previous one, you can type in the folder name followed by cd..Think of two dots liek a back button.
+
+3.mv
+transfers a file from one folder to another.
+
+4. mkdir
+top make a directory or a folder.
+
+5. at 
+if you want to run a Linux command at a certain time.The syntax is at followed by the date and time you want the command to run.
+
+6.rmfir
+allows you to remove a directory. This comamnd will remove a directory that has files inside. This only works when removing empty directories.
+
+7.rm
+It cam delete files and directories. To delete a directory and the files inside it, type rm -r.
+
+8. touch
+will make an empty file.
+
+9. locate
+To find a file in a Linux system.
