@@ -26,3 +26,5 @@ Step 5: Automatically Start Apache Server when Operating System start.<br>
 
 Step 6: Add firewall permission.<br> 
 `firewall-cmd --add-service=http --permanent`
+
+If you are using ubuntu you may checkout https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04
