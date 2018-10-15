@@ -16,6 +16,8 @@ There are various forms of acceptance testing:
 
 ->Beta Testing
 
+->Final Testing
+
 #Acceptance Criteria
 Acceptance criteria are defined on the basis of the following attributes
 
