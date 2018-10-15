@@ -30,6 +30,6 @@ Following are some standard algorithms that are Divide and Conquer algorithms.
 
 ### Divide and Conquer (D & C) vs Dynamic Programming (DP)
 
-Both paradigms (D & C and DP) divide the given problem into subproblems and solve subproblems. How to choose one of them for a given problem? Divide and Conquer should be used when same subproblems are not evaluated many times. Otherwise Dynamic Programming or Memoization should be used.
+Both paradigms (D & C and DP) divide the given problem into subproblems and solve subproblems. How to choose one of them for a given problem? Divide and Conquer should be used when there is no "overlapping substructure" i.e (we are not solving  same subproblems again and again)  Otherwise Dynamic Programming or Memoization should be used.
 
 For example, Binary Search is a Divide and Conquer algorithm, we never evaluate the same subproblems again. On the other hand, for calculating nth Fibonacci number, Dynamic Programming should be preferred.
