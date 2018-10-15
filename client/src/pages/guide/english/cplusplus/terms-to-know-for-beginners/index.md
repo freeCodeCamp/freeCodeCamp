@@ -124,7 +124,7 @@ The output will be :
 
 `Hello Comment`
 
-As you may notice, the comments are ignored during program execution and do not show up on checking the output of the program.
+As you may notice, the comments are ignored during program execution and do not show up on checking the output of the program.Comments are useful if used in moderation. 
 It should be noted that while comments do add an extra level of readability to one's code, it's a bad habit to rely too heavily on comments to describe the logic in your code. In general, your code should speak for itself and reflect the intention of the programmer.
 
 As you may notice, the comments are ignored during program execution and do not show up on checking the output of the program.
