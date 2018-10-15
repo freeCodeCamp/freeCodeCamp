@@ -18,7 +18,7 @@ localeTitle: Thêm văn bản thay thế cho hình ảnh cho người khiếm th
 
 ```yml
 tests:
-  - text: 你的<code>img</code>Thẻ phải có<code>alt</code>Thuộc tính, không được để trống.
+  - text: Của bạn<code>img</code>Thẻ phải có<code>alt</code>Thuộc tính, không được để trống.
     testString: 'assert($("img").attr("alt"), "Your <code>img</code> tag should have an <code>alt</code> attribute, and it should not be empty.");'
 
 ```
