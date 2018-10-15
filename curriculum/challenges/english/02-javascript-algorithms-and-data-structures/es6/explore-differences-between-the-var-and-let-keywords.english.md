@@ -72,11 +72,10 @@ catTalk();
 let catName;
 let quote;
 function catTalk() {
-  "use strict";
+  'use strict';
 
-  catName = "Oliver";
-  quote = catName + " says Meow!";
-
+  catName = 'Oliver';
+  quote = catName + ' says Meow!';
 }
 catTalk();
 ```
