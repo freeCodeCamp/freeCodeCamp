@@ -6,6 +6,8 @@ El flujo de trabajo de las contribuciones puede desear mostrar vistas previas de
 
 ## Como hacer Forking a un repositorio en GitHub
 
-['Forking'](https://help.github.com/articles/about-forks/) es un paso en donde obtienes tu propia copia de el repositorio principal de freeCodeCamp (también conocido como _repo_) en GitHub.
+['Forking'](https://help.github.com/articles/about-forks/) es un paso donde obtienes tu propia copia del repositorio principal de freeCodeCamp (también conocido como _repo_) en GitHub.
 
-Esto es eencial, por que de esta manera puedes trabajar en tu propia copia de freeCodeCamp en GitHub, o descargarla para trabajar con ella de manera local. Despues, podrias solicitar que cambios sean extraídos al repositorio principal al realizar un _pull request_ o solicitud de cambio.
+Esto es esencial, porque de esta manera puedes trabajar en tu propia copia de freeCodeCamp en GitHub, o descargarla para trabajar con ella de manera local. Despues, podrias solicitar que los cambios sean extraídos al repositorio principal al realizar un _pull request_ o solicitud de cambio.
+
+ProTip: El repositorio principal en https://github.com/freeCodeCamp/freeCodeCamp es a menudo referdo como upstream repositorio. Tu fork en https://github.com/YOUR_USER_NAME/freeCodeCamp es a menudo conocido como origin repositorio.
