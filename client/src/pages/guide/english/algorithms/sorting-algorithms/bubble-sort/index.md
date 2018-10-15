@@ -142,8 +142,10 @@ func bubbleSort(_ inputArray: [Int]) -> [Int] {
     }
     return numbers // return the sorted array
 } 
-
+```
 ### Example in Python
+```py
+
 def bubblesort( A ):
   for i in range( len( A ) ):
     for k in range( len( A ) - 1, i, -1 ):
