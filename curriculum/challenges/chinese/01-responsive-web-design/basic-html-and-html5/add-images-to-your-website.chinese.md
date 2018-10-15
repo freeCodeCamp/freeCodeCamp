@@ -8,7 +8,7 @@ localeTitle: 添加图片到您的网站
 ---
 
 ## Description
-<section id="description">您可以使用<code>img</code>元素将图像添加到网站，并使用<code>src</code>属性指向特定图像的URL。这方面的一个例子是： <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot;&gt;</code>请注意， <code>img</code>元素是自动关闭的。所有<code>img</code>元素都<strong>必须</strong>具有<code>alt</code>属性。 <code>alt</code>属性中的文本用于屏幕阅读器以提高可访问性，并在图像无法加载时显示。注意：如果图像纯粹是装饰性的，则使用空的<code>alt</code>属性是最佳做法。理想情况下，除非需要，否则<code>alt</code>属性不应包含特殊字符。让我们在上面的<code>img</code>示例中添加一个<code>alt</code>属性： <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot; alt=&quot;Author standing on a beach with two thumbs up.&quot;&gt;</code> </section>
+<section id="description">您可以使用<code>img</code>元素将图像添加到网站，并使用<code>src</code>属性指向特定图像的URL。这方面的一个例子是： <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot;&gt;</code>。请注意， <code>img</code>元素是自动关闭的。所有<code>img</code>元素都<strong>必须</strong>具有<code>alt</code>属性。 <code>alt</code>属性中的文本用于屏幕阅读器以提高可及性，并在图像无法加载时显示。注意：如果图像纯粹是装饰性的，则使用空的<code>alt</code>属性是最佳做法。理想情况下，除非需要，否则<code>alt</code>属性不应包含特殊字符。让我们在上面的<code>img</code>示例中添加一个<code>alt</code>属性： <code>&lt;img src=&quot;https://www.your-image-source.com/your-image.jpg&quot; alt=&quot;Author standing on a beach with two thumbs up.&quot;&gt;</code> </section>
 
 ## Instructions
 <section id="instructions">让我们尝试将图像添加到我们的网站：在<code>h2</code>元素之前插入<code>img</code>标记。现在设置<code>src</code>属性，使其指向此URL： <code>https://bit.ly/fcc-relaxing-cat</code> ： <code>https://bit.ly/fcc-relaxing-cat</code>最后不要忘记为您的图像添加<code>alt</code>文字。 </section>
