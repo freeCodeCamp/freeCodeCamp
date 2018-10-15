@@ -24,7 +24,7 @@ Docker images can also be downloaded from registries other than Docker Hub by ad
 docker pull myregistry.example.com/myapplicationimage
 ```
 
-Or with specific version:
+Or with a specific version:
 
 ```
 docker pull myregistry.example.com/myapplicationimage:1.2.11
