@@ -62,7 +62,7 @@ checkEqual(1, 2);
 
 ```js
 function checkEqual(a, b) {
-  return a == b ? true : false;
+  return a === b ? true : false;
 }
 ```
 </section>
