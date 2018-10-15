@@ -173,3 +173,292 @@ Arrancando estas atando los vinculos entre los servicios. Ellos son semi-indepen
 # Arranque todos los proyectos dentro de este repositorio
 npm run bootstrap
 ```
+
+### Empezar MongoDB
+
+Necesitarás empezar MongoDB, antes de empezar la aplicación:
+
+Empieza el MongoDB servidor en una terminal distinto
+
+- En macOS & Ubuntu:
+
+    ```shell
+    mongod
+    ```
+
+- En Windows, tienes que especificar el camino completo al binario `mongod` 
+
+    Asegurate de reemplazar la `3.6` con la versión que tengas instalada
+
+    ```shell
+    "C:\Program Files\MongoDB\Server\3.6\bin\mongod"
+    ```
+
+> ProTip:
+> Usted puede evitar tener que iniciar MongoDB cada vez, mediante la instalación como un servicio en segundo plano.
+> Puedes [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
+
+### La siembra de la base de datos
+
+Siguiente, permite la semilla de la base de datos. En este paso In this step, ejecutamos el siguiente comando que llenara el servidor MongoDB con algunos de los primeros conjuntos de datos que es requerido por los otros servicios. Esto incluye algunos de los esquemas, entre otras cosas.
+
+```shell
+npm run seed
+```
+
+### Start the freeCodeCamp client application and API server
+
+You can now start up the API server and the client applications.
+
+```shell
+npm run develop
+```
+
+This single command will fire up all the services, including the API server and the client applications available for you to work on.
+
+Now open a web browser and visit <http://localhost:8000>. If the app loads, congratulations – you're all set.
+
+> ProTip:
+>
+> The API Server serves APIs at `http://localhost:3000`
+> The Gatsby app serves the client application at `http://localhost:8000`
+
+Meaning, if you visit <http://localhost:3000/explorer> you should see the APIs that we have.
+
+Congratulations 🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+
+## Quick commands reference when working locally
+
+[Here is a quick reference](/docs/README.md) to a list of commands that you may need locally from time to time:
+
+## Making changes to your clone of freeCodeCamp locally
+
+Next, you can make changes to files, and commit your changes.
+
+Follow these steps:
+
+1. Check that you are on the `master` branch
+
+    ```shell
+    git status
+    ```
+
+    You should get a output like this:
+
+    ```shell
+    On branch master
+    Your branch is up-to-date with 'origin/master'.
+
+    nothing to commit, working directory clean
+    ```
+
+    If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
+
+    ```shell
+    git checkout master
+    ```
+
+2. Next, you would want to `rebase` from the `upstream`.
+
+    This step **will sync the lastest changes** from the main repository of freeCodeCamp. Its important that you rebase as often as possible, to avoid conflicts later.
+
+    ```shell
+    git pull --rebase upstream master
+    ```
+
+    You can optionally push this branch back to your origin, to have a clean history on your fork on GitHub.
+
+    ```shell
+    git push origin master --force
+    ```
+
+3. Next, you will have to create a fresh new branch.
+
+    Working on a separate branch for every single issue, helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+
+    Check that you are on `master` as explained previously, and branch off from there:
+
+    ```shell
+    git checkout -b fix/update-guide-for-xyz
+    ```
+
+    Your branch name should start with a `fix/`, `feat/`, etc. Avoid, using issue no.s in branches. Keep them short, meaningful and unique.
+
+    Some examples of good branch names are:
+
+    ```md
+    fix/update-challenges-for-react
+    fix/update-guide-for-html-css
+    fix/platform-bug-sign-in-issues
+    feat/add-guide-article-for-javascript
+    translate/add-spanish-basic-html
+    ```
+
+4. Next, you can work on the editing pages and working on the code in your favorite text editor.
+
+5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
+
+6. Make sure you fix any errors, and check the formating of your changes. We have style guide for the Guide articles and Coding challenges.
+
+7. Next, check and confirm the files you are updating
+
+    ```shell
+    git status
+    ```
+
+    This should show a list of `unstaged` files that you have edited.
+
+    ```shell
+    On branch feat/documentation
+    Your branch is up to date with 'upstream/feat/documentation'.
+
+    Changes not staged for commit:
+    (use "git add/rm <file>..." to update what will be committed)
+    (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   CONTRIBUTING.md
+        modified:   docs/README.md
+        modified:   docs/how-to-setup-freecodecamp-locally.md
+        modified:   docs/how-to-work-on-guide-articles.md
+    ...
+    ```
+
+8. Stage the changes and make a commit.
+
+    In this step you should only mark files that you have edited, or added. You can perform a reset, and resolve files that you did not intend to change.
+
+    ```shell
+    git add path/to/my/changed/file.ext
+    ```
+
+    Or, alternatively you can add all the `unstaged` files to the staging area:
+
+    ```shell
+    git add .
+    ```
+
+    Only the files that were moved to the staging area will added when you make a commit.
+
+    ```shell
+    git status
+    ```
+
+    Output:
+    ```shell
+    On branch feat/documentation
+    Your branch is up to date with 'upstream/feat/documentation'.
+
+    Changes to be committed:
+    (use "git reset HEAD <file>..." to unstage)
+
+        modified:   CONTRIBUTING.md
+        modified:   docs/README.md
+        modified:   docs/how-to-setup-freecodecamp-locally.md
+        modified:   docs/how-to-work-on-guide-articles.md
+    ```
+
+    Now, you can commit your changes with a short message like so:
+
+    ```shell
+    git commit -m "fix: my short commit message"
+    ```
+
+    Some examples:
+
+    ```md
+    fix: update guide article for Java - for loop
+    feat: add guide article for alexa skills
+    ```
+
+    Optional:
+
+    We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+
+    Some examples of conventional commit messages are:
+
+    ```md
+    fix: update HTML guide article
+    fix: update build scripts for Travis-CI
+    feat: add article for JavaScript hoisting
+    docs: update contributing guidelines
+    ```
+
+    Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+
+    This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
+
+    You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+
+9. If you realise that you need to edit a file or, update the commit message after making a commit you can do so after editing the files with:
+
+    ```shell
+    git commit --amend
+    ```
+
+    This will open up a default, text editor like `nano` or `vi` where you can edit the commit message title and add/edit description.
+
+10. Next, you can push your changes to your fork.
+
+    ```shell
+    git push origin branch/name-here
+    ```
+
+## Proposing a Pull Request (PR)
+
+1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+
+    ![Image - Compare pull request prompt on GitHub](/docs/images/github/compare-pull-request-prompt.png)
+
+2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
+
+    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.**
+
+    ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
+
+3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
+
+4. In the body of your PR include a more detailed summary of the changes you made and why.
+
+    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
+
+    - Fill in the details as they seem fit you. This information will be reviewed and decide whether or not, your pull request is going to be accepted.
+
+    - If the PR is meant to fix an existing bug/issue then, at the end of
+      your PR's description, append the keyword `closes` and #xxxx (where xxxx
+      is the issue number). Example: `closes #1337`. This tells GitHub to
+      automatically close the existing issue, if the PR is accepted and merged.
+
+5. Indicate if you have tested on a local copy of the site or not.
+
+    This is very important when you are making changes that are not copy editing markdown files. For example, changes to CSS or JavaScript code, etc.
+
+## Get your PR accepted
+
+
+
+## Getting Help
+
+If you are stuck, and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
+
+There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
+
+### Troubleshooting
+
+If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following troubleshooting steps at least once:
+
+```shell
+# Remove all installed node modules
+rm -rf node_modules ./**/node_modules
+
+# Reinstall npm packages
+npm install
+
+# Bootstrap the project
+npm run bootstrap
+
+# Seed the database
+npm run seed
+
+# Re-start the application
+npm run develop
+```
