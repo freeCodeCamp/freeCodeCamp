@@ -8,6 +8,8 @@ WordPress es un sistema de gestión de contenido gratuito y de código abierto b
 
 WordPress alimenta casi el 27% de todos los sitios web y actualmente domina la cuota de mercado de CMS. Respaldada por una gran comunidad, esta plataforma de código abierto impulsa una economía de miles de millones de dólares con temas / complementos y software personalizado.
 
+WordPress dispone de un sistema de plugins, que permiten extender las capacidades de WordPress, de esa forma se consigue un CMS más flexible.
+
 ### Más información
 
 *   [WordPress Codex: el manual en línea](https://codex.wordpress.org/)
