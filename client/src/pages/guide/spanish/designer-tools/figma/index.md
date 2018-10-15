@@ -4,9 +4,11 @@ localeTitle: Figma
 ---
 ## Figma
 
-Figma es una herramienta de diseño de interfaz basada en el navegador, que facilita la creación de software por parte de los equipos. Se conecta a la nube, lo que permite que varios diseñadores trabajen en el mismo proyecto simultáneamente.
+Figma es una herramienta de diseño de interfaz basada en el navegador, que facilita la creación de software por parte de los equipos. Se conecta a la nube, lo que permite que varios diseñadores trabajen en el mismo proyecto simultáneamente (es colaborativo).
 
-Cuenta con un sistema de control de versiones incorporado, como Git, que permite a los diseñadores diseñar sin el temor de que los compañeros de equipo anulen o eliminen los diseños.
+Se trata de una conocida aplicación de diseño de interfaces que permite la colaboración en tiempo real entre varias personas, lo que ayuda a que varios usuarios trabajen en el diseño de una nueva app, por ejemplo, de forma remota y simultánea, comunicándose entre ellos y avanzando en el resultado.
+
+Cuenta con un sistema de control de versiones incorporado, como Git, que permite a los diseñadores diseñar sin temor a que los compañeros de equipo anulen o eliminen los diseños.
 
 ### ¿Por qué Figma?
 
@@ -17,6 +19,7 @@ Cuenta con un sistema de control de versiones incorporado, como Git, que permite
 *   Tipografía fuerte y herramientas de gráficos vectoriales
 *   Tiene un modo multijugador que facilita la colaboración.
 *   Fácil integración con Zeplin y Avocode para exportar sus diseños
+*   Es gratuito
 
 La interfaz de usuario de Figma es muy fácil de usar \* para principiantes. Si ha sido usuario de Sketch, se sentirá como en casa en poco tiempo.
 
