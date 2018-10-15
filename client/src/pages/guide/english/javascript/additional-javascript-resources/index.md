@@ -48,6 +48,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
 *   <a href='https://www.codecademy.com' target='_blank' rel='nofollow'>Codecademy</a>
 *   <a href='https://www.rithmschool.com' target='_blank' rel='nofollow'>RithmSchool</a> 
+*   <a href='https://www.udacity.com/course/intro-to-javascript--ud803' target='_blank' rel='nofollow'>Udacity</a> 
 
 ## Exercises
 
