@@ -17,6 +17,6 @@ The CD-ROM is a type of compact disc storage object that requires the use of an 
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-[Read-only memory](https://en.wikipedia.org/wiki/Read-only_memory)
-[BIOS](https://en.wikipedia.org/wiki/BIOS)
-[CD-ROM](https://en.wikipedia.org/wiki/CD-ROM)
+- [Read-only memory](https://en.wikipedia.org/wiki/Read-only_memory)
+- [BIOS](https://en.wikipedia.org/wiki/BIOS)
+- [CD-ROM](https://en.wikipedia.org/wiki/CD-ROM)
