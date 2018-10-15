@@ -7,7 +7,7 @@ _Algebra of Logic_ or _Boolean algebra_ is a branch of mathematics. It deals wit
 
 It was first introduced by George Boole in his book The Mathematical Analysis of Logic (1847).
 
-Boolean algebra is fundamental to the development of digital electronics. It is responsible for making possible all modern computing.
+Boolean algebra is fundamental to the development of digital electronics. It is responsible for making possible all modern computing. Computers use logic in the form of logic gates.
 
 The three basic operations in Boolean Algebra are `AND`, `OR`, and `NOT`. Consider two boolean variables `x` and `y`:
 
