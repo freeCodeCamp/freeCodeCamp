@@ -55,6 +55,10 @@ Sometimes the script won't be executed, and the above command will return an err
 ```
 zach@marigold:~$ chmod u+x myBashScript.sh
 ````
+or
+```
+zach@marigold:~$ chmod 744 myBashScript.sh
+````
 And then execute the script.
 ### More Information:
 
