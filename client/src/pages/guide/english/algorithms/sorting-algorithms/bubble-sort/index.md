@@ -51,7 +51,9 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 ### Video Explanation
 [Bubble sort in easy way](https://www.youtube.com/watch?v=Jdtq5uKz-w4)
 
-This code will use bubble sort to sort the array.
+-----
+
+### Example in JavaScript
 ```js
 let arr = [1, 4, 7, 45, 7,43, 44, 25, 6, 4, 6, 9];
 let sorted = false
@@ -68,16 +70,7 @@ while(!sorted) {
   }
 }
 ```
-
-### Properties:
-* Space Complexity: O(1)
-* Time Complexity: O(n), O(n* n), O(n* n) for Best, Average and Worst cases respectively.
-* In place: Yes
-* Stable: Yes
-
-=======
-Here is the algorithm written in Java.
-
+### Example in Java.
 ```java
 public class bubble-sort {
     static void sort(int[] arr) {
@@ -114,10 +107,9 @@ public class bubble-sort {
         }
 }
 ```
-=======
-###The Recursive implementation of the Bubble Sort.
-
+### Example in C++
 ```c++
+// Recursive Implementation
 void bubblesort(int arr[], int n)
 {
 	if(n==1)	//Initial Case
@@ -135,6 +127,21 @@ void bubblesort(int arr[], int n)
 	
 	bubblesort(arr,n-1);	//Recursion for remaining array
 }
+```
+### Example in Swift
+```swift
+func bubbleSort(_ inputArray: [Int]) -> [Int] {
+    guard inputArray.count > 1 else { return inputArray } // make sure our input array has more than 1 element
+    var numbers = inputArray // function arguments are constant by default in Swift, so we make a copy
+    for i in 0..<(numbers.count - 1) {
+        for j in 0..<(numbers.count - i - 1) {
+            if numbers[j] > numbers[j + 1] {
+                numbers.swapAt(j, j + 1)
+            }
+        }
+    }
+    return numbers // return the sorted array
+} 
 ```
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
