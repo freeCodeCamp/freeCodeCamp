@@ -4,7 +4,7 @@ localeTitle: CSS3 2d Transforms
 ---
 ## CSS3 2d Transforms
 
-Las transformaciones de CSS3 le permiten traducir, rotar, escalar y sesgar elementos.
+Las transformaciones de CSS3 le permiten trasladar, rotar, escalar y sesgar elementos.
 
 Una transformación es un efecto que permite que un elemento cambie de forma, tamaño y posición.
 
@@ -29,7 +29,7 @@ Métodos:
 *   `skewY()`
 *   `matrix()`
 
-## El método traducir ()
+## El método translate ()
 
 El método `translate()` mueve un elemento desde su posición actual (según a los parámetros dados para el eje X y el eje Y).
 
@@ -75,7 +75,7 @@ div {
  } 
 ```
 
-## El método de la escala ()
+## El método scale ()
 
 El método `scale()` aumenta o disminuye el tamaño de un elemento (de acuerdo con Los parámetros dados para el ancho y alto).
 
@@ -163,11 +163,11 @@ div {
  } 
 ```
 
-## El método de la matriz ()
+## El método matrix ()
 
 El método `matrix()` combina todos los métodos de transformación 2D en uno.
 
-El método matrix () toma seis parámetros, que contienen funciones matemáticas, que le permite rotar, escalar, mover (traducir) y sesgar elementos.
+El método matrix () toma seis parámetros, que contienen funciones matemáticas, que le permite rotar, escalar, trasladar y sesgar elementos.
 
 Los parámetros son los siguientes: matriz (scaleX (), skewY (), skewX (), scaleY (), translateX (), translateY ())
 
@@ -189,7 +189,7 @@ La siguiente tabla enumera todas las propiedades de transformación 2D:
 
 ## Métodos de transformación 2D
 
-| Función | Descripción | | --------------------- | -------------------------------------------------- ----------------------- | | matriz (n, n, n, n, n, n) | Define una transformación 2D, utilizando una matriz de seis valores | | traducir (x, y) | Define una traducción 2D, moviendo el elemento a lo largo del eje X y el eje Y | | traducirX (n) | Define una traducción 2D, moviendo el elemento a lo largo del eje X | | traducirY (n) | Define una traducción 2D, moviendo el elemento a lo largo del eje Y | | escala (x, y) | Define una transformación de escala 2D, cambiando los elementos ancho y alto | | escalaX (n) | Define una transformación de escala 2D, cambiando el ancho del elemento | | escalaY (n) | Define una transformación de escala 2D, cambiando la altura del elemento | | girar (ángulo) | Define una rotación 2D, el ángulo se especifica en el parámetro | | sesgo (ángulo x, ángulo y) | Define una transformación de sesgo 2D a lo largo del eje X y el eje Y | | skewX (ángulo) | Define una transformación de sesgo 2D a lo largo del eje X | | skewY (ángulo) | Define una transformación de sesgo 2D a lo largo del eje Y |
+| Función | Descripción | | --------------------- | -------------------------------------------------- ----------------------- | | matriz (n, n, n, n, n, n) | Define una transformación 2D, utilizando una matriz de seis valores | | trasladar (x, y) | Define una traslación 2D, moviendo el elemento a lo largo del eje X y el eje Y | | trasladarX (n) | Define una traslación 2D, moviendo el elemento a lo largo del eje X | | trasladarY (n) | Define una traslación 2D, moviendo el elemento a lo largo del eje Y | | escala (x, y) | Define una transformación de escala 2D, cambiando los elementos ancho y alto | | escalaX (n) | Define una transformación de escala 2D, cambiando el ancho del elemento | | escalaY (n) | Define una transformación de escala 2D, cambiando la altura del elemento | | girar (ángulo) | Define una rotación 2D, el ángulo se especifica en el parámetro | | sesgo (ángulo x, ángulo y) | Define una transformación de sesgo 2D a lo largo del eje X y el eje Y | | skewX (ángulo) | Define una transformación de sesgo 2D a lo largo del eje X | | skewY (ángulo) | Define una transformación de sesgo 2D a lo largo del eje Y |
 
 ## Más información:
 
