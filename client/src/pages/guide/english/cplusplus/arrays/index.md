@@ -24,14 +24,13 @@ int numbers [] = {1, 2, 3, 4, 5};
 //In the examples above, the size was fixed beforehand
 ```
 ## Types Of Arrays
-There are two types of array based on way,we declare it.
+There are two types of array based on way, we declare it.
 
-**1** static array
-Those arrays whose size is defined before compile time like in the examples above,are called static arrays.In these arrays we can't change their size,once they are declared.
+**1**. Static array:
+Those arrays whose size is defined before compile time like in the examples above, are called static arrays. In these arrays we can't change their size, once they are declared.
 
-**2** Dynamic array.
-Dynamic arrays are those arrays, whose size is not known at compile time and we can define their size at run time.These arrays are created by using **new** keyword and when done with that array we can delete that array by using the **delete** keyword .
-static arrays 
+**2**. Dynamic array:
+Dynamic arrays are those arrays, whose size is not known at compile time and we can define their size at run time. These arrays are created by using **new** keyword and when done with that array we can delete that array by using the **delete** keyword.
 
 ### Access:  
 Elements from an array can be accessed via reference of their position in the array. (Start counting from 0).  
