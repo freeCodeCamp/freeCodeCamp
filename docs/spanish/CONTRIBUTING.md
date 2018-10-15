@@ -11,7 +11,7 @@
     </tr>
 </table>
 
-# Pautas de Contribución
+# Guiá de Contribución
 
 Hola 👋!
 
@@ -19,7 +19,7 @@ freeCodeCamp.org es posible gracias a miles de voluntarios amables como usted. N
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómese un momento para leerlo. No es muy largo.
 
-Feliz contribuyendo 🎉!
+Felices contribuciones 🎉!
 
 ## Aquí hay algunas maneras divertidas en que puede ayudar:
 
@@ -42,7 +42,7 @@ Tenemos una gran base de código abierto de los miles de [Desafíos de Codificac
 
 Puede ayudarnos con:
 
-- [📝 Investiga, escribe y actualiza los artículos de nuestra guía.](#investiga-escribe-y-actualiza-nuestros-artículos-de-guía)
+- [📝 Investigar, escribir y actualizar los artículos de nuestra guía.](#investiga-escribe-y-actualiza-nuestros-artículos-de-guía)
 
 - [💻 Crear, actualizar y corregir errores en nuestros desafíos de codificación.](#crear-actualizar-y-corregir-errores-en-nuestros-desafíos-de-codificación)
 
