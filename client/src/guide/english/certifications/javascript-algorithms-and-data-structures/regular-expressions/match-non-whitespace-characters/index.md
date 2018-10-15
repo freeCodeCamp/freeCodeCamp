@@ -17,4 +17,4 @@ let result = sample.match(countNonWhiteSpace);
 
 ## Explanation:
 
-We use ```\S```, and this pattern will not match whitespace, carriage return, tab, form feed, and new line characters, so we find all match non-whitespace characters.
+We use ```\S```, and this pattern will not matching whitespace, carriage return, tab, form feed, and new line characters, so we find all match non-whitespace characters.
