@@ -45,27 +45,27 @@ tests:
 
 ```html
 <style>
-  .red-text {
-    color: #000000;
+  .texto-rojo {
+    color: #F00;
   }
-  .fuchsia-text {
-    color: #000000;
+  .texto-fucsia {
+    color: #F0F;
   }
-  .cyan-text {
-    color: #000000;
+  .texto-cian {
+    color: #0FF;
   }
-  .green-text {
-    color: #000000;
+  .texto-verde {
+    color: #0F0;
   }
 </style>
 
-<h1 class="red-text">I am red!</h1>
+<h1 class="texto-rojo">Soy rojo!</h1>
 
-<h1 class="fuchsia-text">I am fuchsia!</h1>
+<h1 class="texto-fucsia">Soy fucsia!</h1>
 
-<h1 class="cyan-text">I am cyan!</h1>
+<h1 class="texto-cian">Soy cian!</h1>
 
-<h1 class="green-text">I am green!</h1>
+<h1 class="texto-verde">Soy verde!</h1>
 
 ```
 
