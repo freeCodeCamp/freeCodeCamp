@@ -3,11 +3,27 @@ title: Validating Form Input
 ---
 ## Validating Form Input
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/php/forms/validating-form-input/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Simple form validation example.
+```
+$name = $email = $gender = $comment = $website = "";
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+```
+
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
