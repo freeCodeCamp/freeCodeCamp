@@ -3,7 +3,7 @@ title: Stacks
 ---
 ## Stacks
 
-A stack is a First In Last Out (FILO) Data Structure. It is a linear data structure.
+A stack is a First In Last Out (FILO) or Last In First Out (LIFO) Data Structure. It is a linear data structure.
 
 You can imagine a stack as the way plates were organized in buffet restaurant. You can only pick the plate at the top otherwise the stack will collapse. Generally, the last item to be inserted will be removed first. 
 
