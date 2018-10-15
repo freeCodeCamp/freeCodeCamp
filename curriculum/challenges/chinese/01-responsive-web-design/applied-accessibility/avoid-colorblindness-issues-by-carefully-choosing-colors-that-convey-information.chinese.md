@@ -3,11 +3,11 @@ id: 587d778f367417b2b2512aad
 title: Avoid Colorblindness Issues by Carefully Choosing Colors that Convey Information
 challengeType: 0
 videoUrl: ''
-localeTitle: 通过仔细选择传达信息的颜色来避免色盲问题
+localeTitle: Tránh mù màu bằng cách lựa chọn cẩn thận màu sắc của tin nhắn
 ---
 
 ## Description
-<section id="description">有各种形式的色盲。这些范围可以从对特定波长的光的灵敏度降低到根本无法看到颜色。最常见的形式是检测果岭的灵敏度降低。例如，如果两个相似的绿色是内容的前景色和背景色，则色盲用户可能无法区分它们。关闭颜色可以被认为是色轮上的邻居，并且在传达重要信息时应该避免这些组合。 <strong>注意</strong> <br>一些在线颜色挑选工具包括颜色如何针对不同类型的颜色盲目出现的视觉模拟。除在线对比度检查计算器外，这些都是很好的资源。 </section>
+<section id = "description"> Có nhiều dạng mù màu khác nhau. Những phạm vi này có thể được giảm từ độ nhạy với ánh sáng của một bước sóng cụ thể để không có màu nào cả. Dạng phổ biến nhất là phát hiện sự giảm độ nhạy của màu xanh lá cây. Ví dụ: nếu hai màu xanh tương tự là màu nền trước và màu nền của nội dung, người dùng bị mù màu có thể không phân biệt được chúng. Tắt màu sắc có thể được coi là hàng xóm trên bánh xe màu và tránh những kết hợp này khi truyền đạt thông tin quan trọng. <strong> Lưu ý </ strong> <br> Một số công cụ chọn màu trực tuyến bao gồm mô phỏng trực quan về cách màu bị mù đối với các loại màu khác nhau. Đây là những tài nguyên tốt ngoài máy tính kiểm tra độ tương phản trực tuyến. </ section>
 
 ## Instructions
 undefined
@@ -17,7 +17,7 @@ undefined
 
 ```yml
 tests:
-  - text: 您的代码应将<code>button</code>的文本<code>color</code>更改为深蓝色。
+  - text: Mã của bạn phải là<code>button</code>Văn bản<code>color</code>Thay đổi thành màu lam đậm。
     testString: 'assert($("button").css("color") == "rgb(0, 51, 102)", "Your code should change the text <code>color</code> for the <code>button</code> to the dark blue.");'
 
 ```
