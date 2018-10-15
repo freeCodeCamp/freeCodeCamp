@@ -27,5 +27,5 @@ In PHP, a variable starts with the $ sign, followed by the name of the variable.
  ?>
  ```
  
-
+Variable lifecycle: Before a variable is used, it has no existence. It is unset. So you can't use it by writing isset($variable) before using it.
  
