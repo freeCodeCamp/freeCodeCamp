@@ -9,7 +9,7 @@ Why do we need selectors? Official docs describe it this way:
 * Selectors are efficient. A selector is not recomputed unless one of its arguments changes.
 * Selectors are composable. They can be used as input to other selectors.
 
-It might sound complicated but selectors allow your app to work faster by reducing unnecessary rerendering(s). Normally `mapStateToProps` is called every single time any change in `store` is made. `mapStateToProps` binds store values to react. Until you use `PureComponents` it might cause component being rerendered although it's not required.
+It might sound complicated but selectors allow your app to work faster by reducing unnecessary rerendering(s). Normally `mapStateToProps` is called every single time any change in `store` is made. React-redux's "connect" function uses a  `mapStateToProps` function argument to specify which store values to pass to the connected react component as props. Until you use `PureComponents` it might cause component being rerendered although it's not required.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
