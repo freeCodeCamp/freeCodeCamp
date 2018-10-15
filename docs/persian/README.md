@@ -11,6 +11,7 @@
         <td><a href="/docs/persian/README.md"> پارسی </a></td>
     </tr>
 </table>
+
 <div dir='rtl' align='right'>
 # دسترسی سریع به مستندات
 
@@ -22,7 +23,7 @@
 
 ---
 
-## Quick references articles
+## دستیابی سریع به نوشتارها
 
 ۱. چگونه در نوشتارهای آموزشی مشارکت کنیم؟
 1. How to work on Guide articles.
