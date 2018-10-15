@@ -90,7 +90,11 @@ _Note that the first letter is only capitalized if it is at the beginning of the
     ```ruby
     "H-e-l-l-o".split('-') #=> ["H", "e", "l", "l", "o"]
     ```
-
+*   To split a word in to individual letters :
+    ``` ruby
+    "hello".split("") #=> ["h", "e", "l", "l", "o"]
+    ```
+    
 ### Chop:
 
 *   The `.chop` method removes the last character of the string.

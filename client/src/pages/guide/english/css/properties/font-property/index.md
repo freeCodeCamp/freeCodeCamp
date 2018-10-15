@@ -3,13 +3,34 @@ title: Font Property
 ---
 ## Font Property
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/properties/font-property/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The font CSS property is either a shorthand property for setting font-style, font-variant, font-weight, font-size, line-height, and font-family; or a way to set the element's font to a system font, using specific keywords.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Examples
+
+```css
+/* Set the font size to 12px and the line height to 14px.
+   Set the font family to sans-serif */
+p { font: 12px/14px sans-serif }
+
+/* Set the font size to 80% of the parent element
+   or default value (if no parent element present).
+   Set the font family to sans-serif */
+p { font: 80% sans-serif }
+
+/* Set the font weight to bold,
+   the font-style to italic,
+   the font size to large,
+   and the font family to serif. */
+p { font: bold italic large serif }
+
+/* Use the same font as the status bar of the window */
+p { font: status-bar }
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
+
 
 

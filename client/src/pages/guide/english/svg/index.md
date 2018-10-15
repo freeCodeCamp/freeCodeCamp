@@ -12,9 +12,9 @@ Developers start an SVG graphic with the `<svg>` tag and XML namespace like so:
 
 </svg>
 ```
-The sample also includes a `version` attribute. The `version` attribute is optional but it is recommended for complaince with XML specifications.
+The sample also includes a `version` attribute. The `version` attribute is optional but it is recommended for compliance with XML specifications.
 
-This sample won't display anything, it merely established a viewport. You can add `height` and `width` attributes to set a display size for the viewport this essentially establishes a canvas for you to work in.
+This sample won't display anything, it merely established a viewport. You can add `height` and `width` attributes to set a display size for the viewport, this essentially establishes a canvas for you to work in.
 
 With a viewport in place you can add basic graphics, text, and path elements.
 
@@ -64,8 +64,8 @@ A = arc
 
 ### The canvas element
 
-Canvas graphics can be drawn onto a <canvas> element. You can give suchan element width and height attributes to determine its size in pixels.A new canvas is empty, meaning it is entirely transparent and thusshows up simply as empty space in the document.
-The <canvas> tag is intended to support different styles of drawing.To get access to an actual drawing interface, we first need to create a context, which is an object whose methods provide the drawing interface.There are currently two widely supported drawing styles: "2d" for two-dimensional graphics and "webgl" for three-dimensional graphics through the OpenGL interface.
+Canvas graphics can be drawn onto a <canvas> element. You can give such an element width and height attributes to determine its size in pixels. A new canvas is empty, meaning it is entirely transparent and thus shows up simply as empty space in the document.
+The <canvas> tag is intended to support different styles of drawing. To get access to an actual drawing interface, we first need to create a context, which is an object whose methods provide the drawing interface. There are currently two widely supported drawing styles: "2d" for two-dimensional graphics and "webgl" for three-dimensional graphics through the OpenGL interface.
 
 A context is created through the getContext method on the <canvas> element.
 ```
@@ -131,11 +131,11 @@ This draws the following chart:
 
 ## Editors
 
-* [Vectr](https://vectr.com) - web and desktop tool fot creating and editing SVG graphics, free of charge
+* [Vectr](https://vectr.com) - web and desktop tool for creating and editing SVG graphics, free of charge
 
 ## Tools to create SVG
 
-There are few tools available to create SVG in the form of drawing program.
+There are a few tools available to create SVG in the form of a drawing program.
 
 - <a href='https://www.inkscape.org/' target='_blank' rel='nofollow'>Inkscape</a> - It is an open source tool for state-of-the-art vector drawing with an easy to use graphical interface.
 - <a href='https://www.adobe.com/products/illustrator/' target='_blank' rel='nofollow'>Adobe Illustrator</a> - Adobe Illustrator is a commercial tool for Vector Imagery.
@@ -144,7 +144,7 @@ For more tools, refer to <a href='https://https://www.w3.org/Graphics/SVG/WG/wik
 
 ## Why you should use SVGs
 
-As a vector image format, it allows you to resize an image without any loss of quality and a particularly light weight.
+As a vector image format, it allows you to resize an image without any loss of quality and is particularly light weight.
 As an XML format, it allows you to benefit from the full power of JavaScript and especially CSS.
 
 ## Resources

@@ -163,6 +163,7 @@ Free Code Camp has some great resources. The web is a big place, there's plenty 
 * General: https://www.fullstackpython.com/
 * Learn the Basics: https://www.codecademy.com/learn/learn-python
 * Computer science using Python: https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11?ref=hackernoon#!
+* Another computer science course using Python: https://www.udacity.com/course/intro-to-computer-science--cs101
 * List of more resources for learning python: https://github.com/vinta/awesome-python
 * Interactive Python: http://interactivepython.org/runestone/static/thinkcspy/index.html
 * Developer's Guide to Python: https://devguide.python.org/

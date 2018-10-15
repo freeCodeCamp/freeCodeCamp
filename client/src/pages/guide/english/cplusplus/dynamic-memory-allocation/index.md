@@ -17,7 +17,8 @@ title: Dynamic Memory Allocation
  `pointer-variable-type` = **new** `data-type;`  
  Example 1: `int *ptr` = **new** `int;`  
  Example 2: `int *ptr2` = **new** `int[10];`  
- Here, `pointer-variable-type` is a **pointer** of `data type`. The `data-type` can be int, char, etc. or user-defined data-type.    
+ Here, `pointer-variable-type` is a **pointer** of `data type`. The `data-type` can be int, char, etc. or user-defined data-type.
+ * `new` is preferred over `malloc()` in C++ because new works for objects as well which is the main building block for OOPs.
 
 ### DELETE operator
 * It is programmer's responsibility to de-allocate the dynamically allocated memory otherwise the memory would not be available to be re-allocated until the end of the program.
@@ -30,5 +31,5 @@ title: Dynamic Memory Allocation
  `delete ptr2`;
  
  ### Memory Leaks
- Leaks are caused when you fail to deallocate dynamic memory you allocated via `New` operator at the end of your program. If you do not deallocate it with the Delete operator, your computer will keep creating new memory in the heap every time the program runs. This causes your computer to slow down because memory is not deleted and your available memory decreases.
+ Leaks are caused when you fail to deallocate dynamic memory you allocated via `New` operator at the end of your program. If you do not deallocate it with the Delete operator, your computer will keep creating new memory in the heap every time the program runs. This causes your computer to slow down because memory is not deleted and your available memory decreases. Many computer programs cause memory leaks over time. However, when you reboot the machine, it will resolve the issue. This is because rebooting releases those spaces in heap memory that were causing memory leaks.
  
