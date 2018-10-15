@@ -115,8 +115,9 @@ how much the border is to be rounded. Size can be in px or %.
 Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right.
 ```css 
   border-radius: 15% 10px 30% 5px;
-```
 
+```
+Set border radius to 50% if you want to make your element a sphere.
 ### Border: All in One
 
 While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code.
