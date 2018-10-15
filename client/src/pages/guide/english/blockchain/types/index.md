@@ -18,7 +18,7 @@ Blockchain Technology that is owned by a private party or an organization. It is
 
 The person in-charge is responsible for giving selective accesses and permissions such as read/write.
 
-Example : Bankchain, Hyperledger
+Example : [Bankchain](http://www.bankchaintech.com/), [Hyperledger](https://www.hyperledger.org/)
 
 #### 2. Public Blockchain
 
