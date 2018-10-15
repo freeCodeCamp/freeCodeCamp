@@ -62,3 +62,5 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
+### Notes
+* See the source-code-editors section under developer-tools https://github.com/freeCodeCamp/freeCodeCamp/tree/master/client/src/pages/guide/english/developer-tools/source-code-editors
