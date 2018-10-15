@@ -28,7 +28,7 @@ Functions do not require any input parameters or return types. However this requ
 
 If a function exists inside the body of another function, it's called nested function. It should be noted that, inner functions can be only called and used inside the enclosing function (outer function).
 
-### Example 1: Nested function without return values
+Example 1: Nested function without return values
 
 ```Swift
 func outputMessageByGreeting(_ message: String) {
@@ -51,7 +51,7 @@ In the above program, the nested function addGreetingAndPrint() is being called 
 
 The statement outputMessageByGreeting("Jack") calls the outer function. And the statement addGreetingAndPrint() inside the outer function calls the method which outputs Hello! Jack in the console.
 
-### Example 2: Nested function with parameters and return values
+Example 2: Nested function with parameters and return values
 Nested functions can contain functions with parameters and return values.
 
 ```Swift
@@ -78,11 +78,11 @@ When you run the program, the output will be:
 ```
 In the above program,
 
-- The outer function is operate(), with return value of type Function (Int, Int) -> Int.
+- The outer function is operate(), with return value of type Function (Int,Int) -> Int.
 and the inner (nested) functions are add() and subtract().
  - The nested function add() and subtract() in a way are being used outside of the enclosing function operate(). This is possible because the outer function returns one of these functions.
 
-We've used the inner function outside the enclosing function operate() as operation(2, 3). The program internally calls add(2, 3) which outputs 5 in the console.
+We've used the inner function outside the enclosing function operate() as operation(2, 3). The program internally calls add(2, 3)which outputs 5 in the console.
 
 [Source](https://www.programiz.com/swift-programming/nested-functions) 
 
