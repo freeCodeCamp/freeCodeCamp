@@ -6,11 +6,11 @@ localeTitle: Jerarquía visual
 
 La jerarquía visual es la organización y presentación del contenido. Puede usar la jerarquía visual para enfocar la atención de los usuarios y mostrar dónde está la información más importante.
 
-Lo que debe recordar al crear la jerarquía visual de su contenido es que todo es relativo. Las partes que desea resaltar deben destacarse de otras partes de su contenido.
+Lo que debe recordar al crear la jerarquía visual de tu contenido es que todo es relativo. Las partes que deseas resaltar deben destacarse de otras partes de tu contenido.
 
-Puede lograr la jerarquía visual de muchas maneras, incluyendo (pero no limitado a):
+Puedes lograr la jerarquía visual de muchas maneras, incluyendo (pero no limitando a):
 
-*   tamaño
+*   Tamaño
 *   Color y contraste
 *   Encabezamientos y subtítulos
 *   Tipografía
