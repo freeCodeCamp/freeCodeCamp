@@ -95,3 +95,5 @@ Using the returned value, without checking if the allocation is successful, invo
 Failure to deallocate memory using `free` leads to buildup of non-reusable memory, which is no longer used by the program.
 * Logical errors
 All allocations must follow the same pattern: allocation using `malloc`, usage to store data, deallocation using `free`. If you not follow this pattern usually segmentation fault errore will be given and the program will crash. These errors can be transient and hard to debug – for example, freed memory is usually not immediately reclaimed by the system, and dangling pointers may persist for a while and appear to work.
+
+hello world
