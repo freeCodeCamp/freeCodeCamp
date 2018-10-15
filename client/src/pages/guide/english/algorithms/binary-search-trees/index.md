@@ -19,6 +19,8 @@ The BST is built up on the idea of the <a href='https://guide.freecodecamp.org/a
 
 **Worst case scenario example:** This can happen when you keep adding nodes that are *always* larger than the node before (it's parent), the same can happen when you always add nodes with values lower than their parents.
 
+The BST can be balanced by maintaining a difference less than or equal to 1 between the heights of the nodes at each level. 
+
 ### Basic operations on a BST
 - Create: creates an empty tree.
 - Insert: insert a node in the tree.
