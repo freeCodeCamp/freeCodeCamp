@@ -8,7 +8,7 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-MYSQLi functions allows access to the database.
+MYSQLi functions allow access to the database.
 MYSQLi is an improved version of MYSQL
 
 #### Some Important MYSQLi functions and their uses:
