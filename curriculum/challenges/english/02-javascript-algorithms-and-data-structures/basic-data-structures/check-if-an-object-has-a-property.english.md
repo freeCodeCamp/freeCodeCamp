@@ -75,6 +75,8 @@ console.log(isEveryoneHere(users));
 <section id='solution'>
 
 ```js
-// solution required
+function isEveryoneHere(obj) {
+  return users.hasOwnProperty('Alan', 'Jeff', 'Sarah', 'Ryan');
+}
 ```
 </section>
