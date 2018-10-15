@@ -1,0 +1,27 @@
+8 Linux command for effective process management:
+
+
+1. Starting a process:
+The easiest way to start a process is to type its name at the command line and press enter.
+
+2. Viewing your executable path:
+you can view your executable path using echo $PATH
+
+3. WHICH:
+use the WHICH command to view the pull path of executable path.
+
+4. Keeping a process running:
+A process may not continue to run when you log out or close your terminal. This can be avoided by preceding the command you want to run with nohup command.
+For example, suppose you want to run myprogram.sh
+nohup myprogram.sh 
+
+5. Manage a Running Process:
+Each process is given a unique process Identification number (PID)
+ps -ef
+we can pipe this output to grep.
+
+6. PGREP:
+The pgrep command was created to further simplify things by removing the need to call grep separately
+
+7. Top:
+The top command has been around a long time and is very useful for viewing details of running processes and quickly identifying issues such as memory hogs.
