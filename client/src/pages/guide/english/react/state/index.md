@@ -78,26 +78,26 @@ this.setState({value: 1});
 
 Keep in mind that `setState` may be asynchronous so you should be careful when using the current state to set a new state. A good example of this would be if you want to increment a value in your state. 
 
-### The Wrong Way
+#### The Wrong Way
 ```js
 this.setState({value: this.state.value + 1});
 ```
 
 This can lead to unexpected behavior in your app if the code above is called multiple times in the same update cycle. To avoid this you can pass an updater callback function to `setState` instead of an object. 
 
-### The Right Way
+#### The Right Way
 ```js
 this.setState(prevState => ({value: prevState.value + 1}));
 ```
 
-### The Cleaner Way
+#### The Cleaner Way
 ```
 this.setState(({ value }) => ({ value: value + 1 }));
 ```
 
 When only a limited number of fields in the state object is required, object destructing can be used for cleaner code.
 
-### More Information
+#### More Information
 
 - [React - State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 - [React - Lifting State Up](https://reactjs.org/docs/lifting-state-up.html)
