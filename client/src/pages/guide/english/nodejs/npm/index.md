@@ -84,6 +84,7 @@ We can list the local packages we have installed locally with the npm list comma
 $ npm list --depth=0
 /usr/local/someDirectory
 └── express@4.16.4
+```
 
 ### Installing a Specific Version of a Package
 
