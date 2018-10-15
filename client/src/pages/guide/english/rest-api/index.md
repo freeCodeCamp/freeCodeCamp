@@ -103,6 +103,7 @@ REST was developed to provide a uniform interface for
   The dangerous **5xx** resources!
 
   - **500** Internal Server Error
+  - **501** Not implemented. Server lacks the ability to fulfil the request
   - **504** Gateway Timeout. Server didn't receive timely response
 
   Less known **4xx** suggests that you are passing wrong parameter. Can also pass information that is wrong. E.g.

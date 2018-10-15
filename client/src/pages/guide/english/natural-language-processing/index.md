@@ -31,3 +31,8 @@ Next task is to build a language model. Here we consider an assumption that the 
 ## Further readings
 The field of NLP is huge. If you have read this far and have implemented the above, you have certainly loved this. Go ahead and read Jurafsky's book to learn some more new concepts. Remember, it's important to implement them as well.
 
+#### Some useful online learning resources:
+
+* [LSTM networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+* [Attention](https://distill.pub/2016/augmented-rnns/)
+

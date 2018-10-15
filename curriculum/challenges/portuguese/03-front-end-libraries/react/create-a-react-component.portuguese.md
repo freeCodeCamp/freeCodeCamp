@@ -4,7 +4,7 @@ title: Create a React Component
 challengeType: 6
 isRequired: false
 videoUrl: ''
-localeTitle: Criar um componente de reação
+localeTitle: Criar um componente React
 ---
 
 ## Description

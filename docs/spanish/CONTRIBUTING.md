@@ -15,7 +15,7 @@
 
 Hola 👋!
 
-freeCodeCamp.org es posible gracias a miles de voluntarios amables como usted. Nos emocionados por sus contribuciones y nos complace darle la bienvenida a bordo.
+freeCodeCamp.org es posible gracias a miles de voluntarios amables como usted. Nos emocionamos por sus contribuciones y nos complace darle la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómese un momento para leerlo. No es muy largo.
 
@@ -38,7 +38,7 @@ Puede optar por contribuir a un área de su interés:
 
 ## Contribuye a este código fuente abierto
 
-Tenemos un gran base de código de código abierto de los miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y [Artículos de la Guía](https://www.freecodecamp.org/guide). Estos desafíos y artículos conforman el contenido de aprendizaje disponible en la plataforma de aprendizaje de freeCodeCamp.org.
+Tenemos una gran base de código abierto de los miles de [Desafíos de Codificación](https://www.freecodecamp.org/learn) y [Artículos de la Guía](https://www.freecodecamp.org/guide). Estos desafíos y artículos conforman el contenido de aprendizaje disponible en la plataforma de aprendizaje de freeCodeCamp.org.
 
 Puede ayudarnos con:
 
@@ -62,9 +62,9 @@ Puede encontrar un [artículo de ejemplo sobre elementos HTML aquí](./client/sr
 
 Agradecemos su ayuda al escribir estos artículos. No tiene que ser un experto en un tema para escribir sobre él; toda esta Guía es de código abierto, por lo que incluso si comete un error, otro colaborador lo corregirá.
 
-Para obtener ayuda, busque un `artículo del trozo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escriba el artículo y luego abra un solicitud de tirón para reemplazar el trozo con su artículo. Un [solicitud de tirón](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirá cambios. Permite a otros conocer sus cambios, revisarlos y adoptarlos.
+Para obtener ayuda, busque un `artículo del trozo` en nuestro [sitio web de la Guía](https://www.freecodecamp.org/guide), escriba el artículo y luego abra una solicitud de tirón para reemplazar el trozo con su artículo. Una [solicitud de tirón](https://help.github.com/articles/about-pull-requests/) es la forma en que sugerirá cambios. Permite a otros conocer sus cambios, revisarlos y adoptarlos.
 
-Si no puede encontrar un trozo sobre el tema sobre el que desea escribir, puede abrir un PR que crea el trozo e incluye su borrador del artículo.
+Si no puede encontrar un trozo sobre el tema que desea escribir, puede abrir un PR que crea el trozo e incluye su borrador del artículo.
 
 **Si desea trabajar en estos, siga estas pautas:**
 
@@ -137,7 +137,7 @@ Siéntase libre de pedir ayuda en:
 - [La categoría "Colaboradores" en nuestro foro público](https://www.freecodecamp.org/forum/c/contributors).
 - [La sala de chat de nuestros colaboradores públicos en Gitter](https://gitter.im/FreeCodeCamp/Contributors).
 
-Nos emocionados ayudarlo a contribuir con cualquiera de los temas en los que le gustaría trabajar. Asegúrese de buscar su consulta antes de publicar una nueva. Sé educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
+Nos emociona ayudarlo a contribuir con cualquiera de los temas en los que le gustaría trabajar. Asegúrese de buscar su consulta antes de publicar una nueva. Sea educado y paciente. Nuestros voluntarios y moderadores de la comunidad están siempre alrededor para guiarlo a través de sus consultas.
 
 **Soy nuevo en GitHub y Open Source en general:**
 
@@ -153,5 +153,5 @@ Si estos temas carecen de claridad sobre lo que debe hacerse, siéntase libre de
 
 **Encontré un error tipográfico, ¿debo informar un problema antes de poder hacer un solicitud de tirón?**
 
-De inmediato puede crear un solicitud de tirónsin tener que reportar ningún problema, por errores tipográficos o pequeños cambios en [verborrea](https://en.oxforddictionaries.com/definition/verbiage). Problemas son una herramienta para buscar la confirmación de los cambios que desea proponer a través de una solicitud de tirón.
+De inmediato puede crear un solicitud de tirón sin tener que reportar ningún problema, por errores tipográficos o pequeños cambios en [verborrea](https://en.oxforddictionaries.com/definition/verbiage). Problemas son una herramienta para buscar la confirmación de los cambios que desea proponer a través de una solicitud de tirón.
 

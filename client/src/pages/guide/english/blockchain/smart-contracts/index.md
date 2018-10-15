@@ -9,3 +9,11 @@ power of a Turing-Complete machine - meaning they can be steps for a task that a
 As a piece of code that sits on the blockchain, a smart contract can automate tasks.
 When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
+
+
+## Blockchain Technologies
+
+Two of the most common technologies used are :
+- Etherium
+- Hyperledger
+
