@@ -74,7 +74,7 @@ No ponga pruebas de larga duración en la suite de pruebas. Mantenga esas prueba
 
 > 7.  Me aseguraré continuamente de que otros puedan cubrirse por mí y de que puedo cubrirlos por mí.
 
-Esto es algo que a menudo descuidamos hacer. Somos un equipo, y la forma en que se comportan los equipos, es que si otro compañero de equipo se cae, otro compañero de equipo los cubre.
+Esto es algo que a menudo descuidamos hacer. Somos un equipo, y la forma en que se comportan los equipos es que si un compañero se cae, siempre tendrá nuestro apoyo para regresar a estar de pie.
 
 En software, lo que eso significa es que necesitas saber cómo funcionan las cosas de tus compañeros de equipo, y dónde están sus scripts, dónde están sus archivos, cómo está estructurado su código, etc.
 
