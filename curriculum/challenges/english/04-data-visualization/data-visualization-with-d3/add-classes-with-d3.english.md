@@ -12,7 +12,7 @@ Using a lot of inline styles on HTML elements gets hard to manage, even for smal
 The <code>attr()</code> method works the same way that <code>style()</code> does. It takes comma-separated values, and can use a callback function. Here's an example to add a class of "container" to a selection:
 <code>selection.attr("class", "container");</code>
 </section>
-
+Note that the "class" parameter will remain same whenever you need to add a class and only the "container" parameter will change.
 ## Instructions
 <section id='instructions'>
 Add the <code>attr()</code> method to the code in the editor and put a class of <code>bar</code> on the <code>div</code> elements.
@@ -73,6 +73,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+.attr("class","bar");
 ```
 </section>
