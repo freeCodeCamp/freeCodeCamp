@@ -85,4 +85,4 @@ While break can be omitted without causing fall-through in some instances (see b
 ```
 
 #### More Information:
-* <a href="https://secure.php.net/manual/en/control-structures.switch.php" rel="nofollow">php.net docs Switch</a>
+* [php.net docs Switch](https://secure.php.net/manual/en/control-structures.switch.php")
