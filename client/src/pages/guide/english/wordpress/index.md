@@ -12,8 +12,9 @@ Easy to use, Wordpress offers an easy solution for both web developers and non-w
 
 Just to a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
-* Has a blog built-in and ready to go whenever applicable. 
-* Has plugins, which extend functionality to WordPress sites. 
+* Has a blog built-in and ready to go whenever applicable.
+* Has thousands of customizable themes available for free and premium or you can build your own.
+* Has plugins, which extends functionality to WordPress sites and you can also build your own.
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
@@ -22,3 +23,5 @@ Whether its page transitions or a customized contact form, WordPress users are o
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
+- [WordPress Theme Handbook](https://developer.wordpress.org/themes/)
+- [WordPress Plugin Handbook](https://developer.wordpress.org/plugins/)
