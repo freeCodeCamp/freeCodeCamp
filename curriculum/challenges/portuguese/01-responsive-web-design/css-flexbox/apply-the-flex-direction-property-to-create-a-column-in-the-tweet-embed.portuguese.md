@@ -7,10 +7,10 @@ localeTitle: Aplicar a propriedade flex-direction para criar uma coluna no Tweet
 ---
 
 ## Description
-<section id="description"> O <code>header</code> e <code>footer</code> incorporados pelo tweet usavam a propriedade <code>flex-direction</code> anteriormente com um valor de linha. Da mesma forma, os itens dentro do elemento <code>.profile-name</code> funcionariam bem empilhados como uma coluna. </section>
+<section id="description"> O <code>header</code> e <code>footer</code> incorporados pelo tweet usavam a propriedade <code>flex-direction</code> anteriormente com um valor de *row*. Da mesma forma, os itens dentro do elemento <code>.profile-name</code> ficariam bem empilhados como uma coluna. </section>
 
 ## Instructions
-<section id="instructions"> Adicione o <code>flex-direction</code> propriedade CSS ao elemento <code>.profile-name</code> do cabeçalho e defina o valor como column. </section>
+<section id="instructions"> Adicione a propriedade CSS <code>flex-direction</code> ao elemento <code>.profile-name</code> do *header* e defina o valor como *column*. </section>
 
 ## Tests
 <section id='tests'>
