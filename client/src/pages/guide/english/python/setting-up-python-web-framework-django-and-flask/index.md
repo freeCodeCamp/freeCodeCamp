@@ -39,4 +39,4 @@ In next article, we would be discussing how to install PostgreSQL and use it wit
 
 A point to ponder - we have been using `pip` heavily, but we have barely said anything about it. Well, for now, it's just a package manager like `npm`. It has some differences with `npm`; but, you don't need to worry about that now. If you are interested, do check out the <a href='http://pip-python3.readthedocs.org/en/latest/index.html' target='_blank' rel='nofollow'>official `pip` documentation</a>.
 
-_If you have suggestions or questions, come join us on <a href='https://gitter.im/FreeCodeCamp/FreeCodeCamp' target='_blank' rel='nofollow'>gitter</a>_.
+_If you have suggestions or questions, come join us on <a href='https://gitter.im/FreeCodeCamp/home' target='_blank' rel='nofollow'>gitter</a>_.
