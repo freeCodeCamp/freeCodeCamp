@@ -59,6 +59,12 @@ It's easy to add key-value pairs to an existing dictionary:
     >>> club_names
     ['chelsea', 'barcelona']
 ```  
+**`values`** is a built-in *method* that can be used to get the values of a given dictionary. To extract the values present in a dict as lists:  
+```python
+    >>> club_names = list(teams.values())    
+    >>> club_names
+    [1910, 1875]
+```  
 Yet another way of creating dictionary is using the **`dict()`** method:
 ```python
     >>> players = dict( [('messi','argentina'), ('ronaldo','portugal'), ('kaka','brazil')] ) # sequence of key-value pair is passed  

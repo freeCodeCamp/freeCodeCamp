@@ -47,3 +47,4 @@ Hackage provides documentation for Haskell
 
 ## Want to learn more?
 * Haskell wiki <a href='https://wiki.haskell.org/Haskell' target='_blank' rel='nofollow'>link</a>
+* Learn You a Haskell for Great Good <a href='http://learnyouahaskell.com/' target='_blank' rel='nofollow'>website</a>

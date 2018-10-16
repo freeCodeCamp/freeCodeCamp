@@ -4,7 +4,7 @@ title: Reinforcement Learning
 #### Suggested Reading:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-- http://incompleteideas.net/sutton/book/the-book-2nd.html
+- [Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book-2nd.html)
 
 #### Reinforcement Learning
 <!-- Please add your working draft below in GitHub-flavored Markdown -->
@@ -25,4 +25,7 @@ Deep Adversarial Networks
 
 ## Use cases:
 Some applications of the reinforcement learning algorithms are computer played board games (Chess, Go), robotic hands, and self-driving cars.
+
+## More information:
+* [David Silver's RL course](http://www0.cs.ucl.ac.uk/staff/d.silver/web/Teaching.html)
 

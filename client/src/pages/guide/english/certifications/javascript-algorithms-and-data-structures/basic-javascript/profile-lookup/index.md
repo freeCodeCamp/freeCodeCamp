@@ -1,7 +1,8 @@
 ---
 title: Profile Lookup
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+## Profile Lookup
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use `Read-Search-Ask` if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
 
 ### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
 
@@ -26,10 +27,6 @@ If **prop** does not correspond to any valid properties then return `No such pro
     *   If **firstName** is found and no associated **prop** is found, you should return `No such property`.
 *   If **firstName** isn't found anywhere, you should return `No such contact`.
 
-#### Relevant Links
-
-*   <a href='http://www.freecodecamp.com/challenges/accessing-objects-properties-with-bracket-notation' target='_blank' rel='nofollow'>Challenge: Accessing Objects Properties with Bracket Notation</a>
-*   <a href='http://www.freecodecamp.com/challenges/iterate-with-javascript-for-loops' target='_blank' rel='nofollow'>Challenge: Iterate with JavaScript For Loops</a>
 
 ## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
 
@@ -57,16 +54,19 @@ Leave your `return "No such contact"` out of the `for` loop as a final catch-all
 
 ## ![:beginner:](https://forum.freecodecamp.com/images/emoji/emoji_one/beginner.png?v=3 ":beginner:") Basic Code Solution:
 
-    for (var x = 0; x < contacts.length; x++){
-        if (contacts[x].firstName === name) {
-            if (contacts[x].hasOwnProperty(prop)) {
-                return contacts[x][prop];
-            } else {
-                return "No such property";
-            }
+
+``` javascript    
+for (var x = 0; x < contacts.length; x++){
+    if (contacts[x].firstName === name) {
+        if (contacts[x].hasOwnProperty(prop)) {
+            return contacts[x][prop];
+        } else {
+            return "No such property";
         }
     }
-    return "No such contact";
+}
+return "No such contact";
+ ```
 
 ### Code Explanation:
 
@@ -84,11 +84,28 @@ Leave your `return "No such contact"` out of the `for` loop as a final catch-all
 *   `"likes"` is found within the first object, so the second `if` statement returns true.
 *   The value of `"likes"` is returned - `"Pizza", "Coding", "Brownie Points"`.
 
-## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
+## Alternative code solution:
 
-*   ![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **DO NOT** add solutions that are similar to any existing solutions. If you think it is **_similar but better_**, then try to merge (or replace) the existing similar solution.
-*   Add an explanation of your solution.
-*   Categorize the solution in one of the following categories — **Basic**, **Intermediate** and **Advanced**. ![:traffic_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/traffic_light.png?v=3 ":traffic_light:")
-*   Please add your username only if you have added any **relevant main contents**. (![:warning:](https://forum.freecodecamp.com/images/emoji/emoji_one/warning.png?v=3 ":warning:") **_DO NOT_** _remove any existing usernames_)
+```javascript
+for (var i = 0; i < contacts.length; i++){
+  if (contacts[i].firstName === name){
+    if (prop in contacts[i]){
+      return contacts[i][prop];
+    }
+    else return "No such property"; 
+  }
+}
+return "No such contact";
+}
+```
+·  Run code at [repl.it](https://repl.it/@AdrianSkar/Basic-JS-Profile-lookup).
 
-> See ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=3 ":point_right:") <a>**`Wiki Challenge Solution Template`**</a> for reference.
+### Code explanation
+This works as the last example but uses the `in` operator to look for `prop` instead of the `hasOwnProperty()` method.
+
+
+### Resources
+
+- ["Iterate with JavaScript For Loops" - *fCC's challenge*](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-for-loops/)
+ - ["Object.prototype.hasOwnProperty()" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+- ["in operator" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)

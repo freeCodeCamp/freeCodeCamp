@@ -2,10 +2,9 @@
 title: CSS Images
 ---
 ## CSS Images
-<p>This helps in adding an image to a website.</p>
+This helps in adding an image to a website.
 
-
-####Code Sample</h4>
+#### Code Sample
 
 ```<img src="picture.jpg" alt="Picture" width="100" height="100">```
 
@@ -14,6 +13,14 @@ title: CSS Images
 * **width:** This specifies a width for the image(can be percent or px or auto)</li>
 * **height:** This specifies a height for the image(can be percent or px or auto)</li>
 
+#### CSS Defaults
+The `img` element will be rendered by default in most browsers to be displayed as an inline-block display type unless specified otherwise.
+
+```
+img {
+     display: inline-block;
+     }
+```
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->

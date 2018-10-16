@@ -7,17 +7,18 @@ React is a JavaScript library for building user interfaces. It was voted the mos
 
 React is a JavaScript library and React applications built on it run in the browser, NOT on the server. Applications of this kind only communicate with the server when necessary, which makes them very fast compared to traditional websites that force the user to wait for the server to re-render entire pages and send them to the browser.
 
-React is used for building user interfaces - what the user sees on their screen and interacts with to use your web app. This interface is split up into components, instead of having one huge page you break it up into smaller pieces known as components. In more general terms, this approach is called Modularity.
+React is used for building user interfaces - what the user sees on their screen and how they interact with your web app. This interface is split up into components, instead of having one huge page you break it up into smaller pieces known as components. In more general terms, this approach is called Modularity.
 
-- It's declarative: React uses a declarative paradigm that makes it easier to reason about your application. 
+- It's declarative: React uses a declarative paradigm that makes it more readable. 
 - It's efficient: React computes the minimal set of changes necessary to keep your DOM up-to-date. 
-- And it's flexible: React works with the libraries and frameworks that you already know.
+- It's flexible: React allows the user to render one or many components to the browser.
+- And it's compatible: React works well with many popular libraries and frameworks.
 
 ## Why learn React?
 
 1. React involves Composition that is lots of components wrapping up the functionalities into an encapsulated container.
 Many popular websites use React implementing the MVC architectural pattern. Facebook (Partially), Instagram (Completely), Khan Academy (Partially), Codecademy (Partially), New York Times (Partially), Yahoo Mail (Completely), Dropbox's new photo and video gallery app Carousel (Completely) are the popular websites known to be using React.
-How these large applications are build using React? The simple answer is by building small applications or components.
+How are these large applications built using React? The simple answer is by building small applications or components.
 Example:
 
 ```jsx
@@ -47,7 +48,7 @@ ReactDOM.render(
 ```
 
 2. React is Declarative for most part in which we are concerned more with What to do rather than How to do a specific task. Declarative programming is a programming paradigm that expresses the logic of a computation without describing its control flow.
-Declarative programming comes with certain advantages such as reduced side effects(occurs when we modify any state or mutating something or making an API request), minimizing mutability(as lot of is abstracted), enhanced readability, lesser bugs.
+Declarative programming comes with certain advantages such as reduced side effects(occurs when we modify any state or mutating something or making an API request), minimizing mutability(mostly abstracted), enhanced readability, less bugs.
 
 3. Unidirectional dataflow. UI in React is actually the function of the state that means as the state updates it updates the UI as well. So our UI progresses as the state changes.
 
@@ -64,7 +65,7 @@ Some reasons to use React are:
 
 React's magic comes from it's interpretation of the DOM and it's strategy for creating UIs.
 
-React uses the Virtual DOM to render an HTML tree virtually first, and then, every time a state changes and we get a new HTML tree that needs to be taken to the browser’s DOM, instead of writing the whole new tree React will only write the difference between the new tree and the previous tree (since React has both trees in memory). This process is known as Tree Reconciliation.
+React uses the virtual DOM to render an HTML tree virtually first, and then, every time a state changes and we get a new HTML tree that needs to be taken to the browser’s DOM, instead of writing the whole new tree React will only write the difference between the new tree and the previous tree (since React has both trees in memory). This process is known as Tree Reconciliation.
 
 ### Reconciliation
 
@@ -76,7 +77,7 @@ React will then instruct the browser to update only the computed diff and not th
 
 ## React from Scratch
 
-Would you like to get started learning the basics of react without getting bogged down creating a development environment?
+Would you like to get started learning the basics of React without getting bogged down creating a development environment?
 Chances are that if you are new to web development that setting up a development environment can leave you feeling a little intimidated when you are just trying to learn React or just learn about React for the first time.
 
 In this article we are going to look at how we can get started with React using only a text editor and a browser and nothing else.

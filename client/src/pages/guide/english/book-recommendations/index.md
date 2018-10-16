@@ -225,18 +225,22 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Facts-Fallacies-Software-Engineering-Robert/dp/0321117425/)
 - ISBN-13: 978-0321117427
 
-The Mythical Man-Month: Essays on Software Engineering
+*The Mythical Man-Month: Essays on Software Engineering*
 - [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 - ISBN-13: 978-0201835953
 
-*Deep Learning*
-- [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618/ref=sr_1_4?s=books&ie=UTF8&qid=1539402410&sr=1-4&keywords=deep+learning)
+*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
+- [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
 
 *Pro PHP Programming - Peter MacIntyre*
 [Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+
+*Mastering Linux Shell Scripting by Andrew Mallett*
+- [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
+- ISBN-13: 978-1784396978
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 

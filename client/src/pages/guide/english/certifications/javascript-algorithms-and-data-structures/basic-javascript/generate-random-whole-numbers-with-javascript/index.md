@@ -1,10 +1,44 @@
+---	
+title: Generate Random Whole Numbers with JavaScript	
 ---
-title: Generate Random Whole Numbers with JavaScript
----
+
 ## Generate Random Whole Numbers with JavaScript
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/generate-random-whole-numbers-with-javascript/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Here’s the setup:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```javascript
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+function randomWholeNum() {
+
+  // Only change code below this line.
+  Math.floor(Math.random() * 10);
+  return Math.floor(Math.random());
+}
+```
+
+We need to use ```Math.floor()``` with ```Math.random()``` to generate and return a random whole number between 0 and 9.
+Putting ```Math.floor()``` and ```Math.random()``` together, this is what our code looks like:
+
+```javascript
+Math.floor(Math.random() * 10);
+```
+
+And we need change the value of ```return```:
+
+```javascript
+return Math.floor(Math.random());
+```
+
+Here’s a full solution:
+
+```javascript
+var randomNumberBetween0and19 = Math.floor(Math.random() * 20);
+
+function randomWholeNum() {
+
+  // Only change code below this line.
+  Math.floor(Math.random() * 10);
+  return Math.floor(Math.random());
+}
+```
