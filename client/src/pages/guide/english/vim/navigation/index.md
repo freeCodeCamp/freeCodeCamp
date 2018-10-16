@@ -37,6 +37,7 @@ e   moves to the end of the current word
 0   moves to the beginning of the current line
 $   moves to the end of the current line
 :n  moves to line n (ex. :23 moves to line 23) can also use nG
+^   moves to the first non blank character of the line.
 
 ZZ  moves to the center of the line your on
 H   moves to the top of the screen

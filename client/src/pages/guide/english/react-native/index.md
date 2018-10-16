@@ -26,7 +26,7 @@ It follows the same pattern as React where the views (what you see on the screen
 1. **Corporate backing** — Lot’s of companies support and contribute to React Native including Walmart, Airbnb, Wix, and, of course, Facebook.
 1. **Community** — React Native has a large (and growing) community with over 1500 contributors to the core project and thousands more who contribute to various libraries.
 1. **Better user experience** — React Native uses the JavaScript code to render native components from your phone's OS. In other words, the application's user interface (UI) is entirely native!
-1. **Cross-Platform** - Great way to prototype and save time while building either a universal user interfeace or platform specific mobile application that can run on both iOS and Android devices.
+1. **Cross-Platform** - Great way to prototype and save time while building either a universal user interface or platform specific mobile application that can run on both iOS and Android devices.
 
 ### How to Get Started with React Native
 
@@ -35,3 +35,4 @@ There are three quick easy ways to get started with React Native. Depending on y
 1. [Create React Native App](https://www.npmjs.com/package/create-react-native-app)- Similar to Create React App it get up in running using the terminal.
 1. [Expo](https://expo.io) - Best for prototyping an app or if it is earlier stage. Using Expo you can even create an quick app using drag and drop features from snack.expo.io in the broswer. 
 1. [Ignite CLI](https://github.com/infinitered/ignite) - Empowers devleopers to easily create a new React Native app with plug ins. Ignite CLI also enables developers to easily setup best practices. 
+

@@ -35,6 +35,7 @@ int main () {
 
 Output:
 
+```
 value of a: 10
 value of a: 11
 value of a: 12
@@ -45,6 +46,7 @@ value of a: 16
 value of a: 17
 value of a: 18
 value of a: 19
+```
 
 
 ###Sources

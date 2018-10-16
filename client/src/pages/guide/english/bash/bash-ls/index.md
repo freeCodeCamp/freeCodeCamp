@@ -20,6 +20,7 @@ Most used options:
 * `-a`, all files and folders, including ones that are hidden and start with a `.`
 * `-l`, List in long format
 * `-G`, enable colorized output.
+* `-s`, List File Size.
 
 ### Example:
 
