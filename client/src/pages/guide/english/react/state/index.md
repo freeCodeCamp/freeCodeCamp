@@ -44,15 +44,12 @@ Another Example:
 import React from 'react';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    
+  
     // We declare the state as shown below
     this.state = {                           
       x: "This is x from state",    
       y: "This is y from state"
     }
-  }
 
   render() {
     let x1 = this.state.x;
