@@ -4,7 +4,7 @@ localeTitle: Definiendo marcas
 ---
 ## Definiendo marcas
 
-Un diseñador no puede "hacer" una marca. O diseñar una marca. Los diseñadores diseñan una identidad de marca que refleja una marca.
+Un diseñador no puede "hacer" una marca, ni diseñar una marca. Los diseñadores se enfoncan en crear una identidad y experiencia que refleje directamente la misión y visión de cierta empresa.
 
 La propia marca tiene que venir de la empresa. Desde su estrategia de marca.
 
