@@ -28,11 +28,11 @@ UI state pseudo classes offer a way to target elements based on their current st
 
 Class     | Description
 ---------|------------
-`:link` | Unvisited link elements.
-`:visited` | A link visited already.
-`:hover` | An element over which mouse pointer is hovering.
-`:active` | An element on which mouse pointer has been clicked, but not yet released.
-`:focus` | An element that has focus. Important for accessibility, for example, while using `tab` key for navigation.
+`:link` | <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/css/selectors/pseudo/link/index.md" target="_blank">Unvisited link elements.</a>
+`:visited` | <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/css/selectors/pseudo/visited/index.md" target="_blank">A link visited already.</a>
+`:hover` | <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/css/selectors/pseudo/hover/index.md" target="_blank">An element over which mouse pointer is hovering.</a>
+`:active` | <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/css/selectors/pseudo/active/index.md" target="_blank">An element on which mouse pointer has been clicked, but not yet released.</a>
+`:focus` | <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/css/selectors/pseudo/focus/index.md" target="_blank">An element that has focus. Important for accessibility, for example, while using `tab` key for navigation.</a>
 `:enabled` | An element that is in enabled state.
 `:disabled` | An element that has been disabled.
 `:checked` | A selected Checkbox or Radio button.
@@ -45,7 +45,7 @@ Selector     | Description
 `::first-line` | First line of an element, usually a container or paragraph.
 `::first-letter` | A letter of an element. Widely used for styling drop-caps.
 `::before` | A dynamic element created with content of its own before the actual element.
-`::after` | A dynamic element created with content of its own after the actual element.
+`::after` | <a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/css/selectors/pseudo/after/index.md" target="_blank">A dynamic element created with content of its own after the actual element. </a>
 
 ## More Information:
 Additional information can be found on below references.
