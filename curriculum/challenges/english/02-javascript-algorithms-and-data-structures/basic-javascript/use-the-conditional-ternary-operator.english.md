@@ -17,7 +17,7 @@ This can be re-written using the <code>conditional operator</code>:
 
 ## Instructions
 <section id='instructions'>
-Use the <code>conditional operator</code> in the <code>checkEqual</code> function to check if two numbers are equal or not. The function should return either true or false.
+Use the <code>conditional operator</code> in the <code>checkEqual</code> function to check if two numbers are equal or not. The function should return either "equal" or "not equal".
 </section>
 
 ## Tests
@@ -26,13 +26,13 @@ Use the <code>conditional operator</code> in the <code>checkEqual</code> functio
 ```yml
 tests:
   - text: <code>checkEqual</code> should use the <code>conditional operator</code>
-    testString: assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), '<code>checkEqual</code> should use the <code>conditional operator</code>');
-  - text: <code>checkEqual(1, 2)</code> should return false
-    testString: assert(checkEqual(1, 2) === false, '<code>checkEqual(1, 2)</code> should return false');
-  - text: <code>checkEqual(1, 1)</code> should return true
-    testString: assert(checkEqual(1, 1) === true, '<code>checkEqual(1, 1)</code> should return true');
-  - text: <code>checkEqual(1, -1)</code> should return false
-    testString: assert(checkEqual(1, -1) === false, '<code>checkEqual(1, -1)</code> should return false');
+    testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkEqual</code> should use the <code>conditional operator</code>");'
+  - text: '<code>checkEqual(1, 2)</code> should return "not equal"'
+    testString: 'assert(checkEqual(1, 2) === false, "<code>checkEqual(1, 2)</code> should return \"not equal\"");'
+  - text: '<code>checkEqual(1, 1)</code> should return "equal"'
+    testString: 'assert(checkEqual(1, 1) === true, "<code>checkEqual(1, 1)</code> should return \"equal\"");'
+  - text: '<code>checkEqual(1, -1)</code> should return "not equal"'
+    testString: 'assert(checkEqual(1, -1) === false, "<code>checkEqual(1, -1)</code> should return \"not equal\"");'
 
 ```
 
@@ -62,7 +62,7 @@ checkEqual(1, 2);
 
 ```js
 function checkEqual(a, b) {
-  return a === b ? true : false;
+  return a === b ? "equal" : "not equal";
 }
 ```
 </section>
