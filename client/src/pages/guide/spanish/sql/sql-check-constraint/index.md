@@ -1,16 +1,16 @@
 ---
 title: SQL CHECK Constraint
-localeTitle: Restricción de SQL CHECK
+localeTitle: Restricción SQL - CHECK
 ---
-La restricción CHECK se usa para limitar el rango de valores que se puede colocar en una columna.
+La restricción `CHECK` se usa para limitar el rango de valores que se puede colocar en una columna.
 
-Si define una restricción CHECK en una sola columna, solo se permiten ciertos valores para esta columna.
+Si define una restricción `CHECK` en una sola columna, solo se permiten ciertos valores para esta columna.
 
-Si define una restricción CHECK en una tabla, puede limitar los valores en ciertas columnas basándose en valores en otras columnas en la fila.
+Si define una restricción `CHECK` en una tabla, puede limitar los valores en ciertas columnas basándose en valores en otras columnas en la fila.
 
 ### SQL CHECK en CREATE TABLE
 
-El siguiente SQL crea una restricción CHECK en la columna "Edad" cuando se crea la tabla "Personas". La restricción CHECK asegura que no se puede tener a ninguna persona menor de 18 años:
+El siguiente comando SQL crea una restricción `CHECK` en la columna "Edad" cuando se crea la tabla "Personas". La restricción `CHECK` asegura que no se puede tener a ninguna persona menor de 18 años:
 
 **MySQL:**
 
@@ -61,7 +61,7 @@ ALTER TABLE Persons
  ADD CHECK (Age>=18); 
 ```
 
-Para permitir la denominación de una restricción CHECK y para definir una restricción CHECK en varias columnas, use la siguiente sintaxis SQL:
+Para permitir el nombrado en una restricción `CHECK` y para definir una restricción `CHECK` en varias columnas, use la siguiente sintaxis SQL:
 
 **MySQL / SQL Server / Oracle / MS Access:**
 
@@ -72,7 +72,7 @@ ALTER TABLE Persons
 
 ### DROP una restricción CHECK
 
-Para eliminar una restricción CHECK, use el siguiente SQL:
+Para eliminar una restricción `CHECK`, use el siguiente SQL:
 
 **SQL Server / Oracle / MS Access:**
 
