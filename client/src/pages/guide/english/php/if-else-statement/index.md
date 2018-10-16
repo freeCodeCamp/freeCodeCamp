@@ -2,65 +2,95 @@
 title: If-else Statement
 ---
 ## Introduction
-If/Else is a conditional statement where depending on the truthiness of a condition, diffierent actions will be performed.  
+If/Else is a conditional statement where depending on the truthiness of a condition, different actions will be performed.  
 
-> **Note:** The `{}` brackets are only needed if the condition has more than one action statement.
+> **Note:** The `{}` brackets are only needed if the condition has more than one action statement; however, it is best practice to include them regardless.
 
 ## If Statement
-~~~~
-  if (condition){
+
+```
+<?php
+
+  if (condition) {
     statement1;
     statement2;
   }
-~~~~
+```
 > **Note:** The `else` statement is optional.
 ## If/Else Statement
-~~~~
-  if (condition){
+
+```
+<?php
+
+  if (condition) {
     statement1;
     statement2;
-  }
-  else{
+  } else {
     statement3;
     statement4;
   }
-~~~~
+```
+> **Note:** `elseif` should always be written as one word.
 ## If/Elseif/Else Statement
-~~~~
-  if (condition1){
+
+```
+<?php
+
+  if (condition1) {
     statement1;
     statement2;
-  }
-  elseif (condition2){
+  } elseif (condition2) {
     statement3;
     statement4;
-  }
-  else
+  } else {
     statement5;
-~~~~
+  }
+```
 ## Nested If/Else Statement
-~~~~
-  if (condition1){
-      if (condition2){
+
+```
+<?php
+
+  if (condition1) {
+      if (condition2) {
         statement1;
         statement2;
-      }
-      else{
+      } else {
         statement3;
         statement4;
       }
-  }
-  else {
-      if (condition3){
+  } else {
+      if (condition3) {
         statement5;
         statement6;
-      }
-      else{
+      } else {
         statement7;
         statement8;
       }
   }
-~~~~
+```
 
-For more information check out the following link:
-<a href='http://php.net/manual/en/control-structures.elseif.php' target='_blank' rel='nofollow'>PHP Else</a>
+## Multiple Conditions
+
+Multiple conditions can be used at once with the "or" (||), "xor", and "and" (&&) logical operators.
+
+For instance:
+
+```
+<?php
+
+  if (condition1 && condition2) {
+    echo 'Both conditions are true!';
+  } elseif (condition 1 || condition2) {
+    echo 'One condition is true!';
+  } else (condition1 xor condition2) {
+    echo 'One condition is true, and one condition is false!';
+  }
+```
+
+## Ternary Operators
+
+Another important option to consider when using short If/Else statements is the ternary operator.
+
+For more information please check out the following link:
+[PHP: if](http://php.net/manual/en/control-structures.if.php)
