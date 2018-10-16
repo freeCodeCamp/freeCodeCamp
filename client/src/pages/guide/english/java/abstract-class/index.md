@@ -6,6 +6,7 @@ Lets discuss abstract classes. Before diving into this tutorial it is better tha
 and inheritance.
 
 Abstract classes are classes that can be subclassed (i.e. extended) but cannot be instantiated. You can think of them as a **class version** of interfaces, or as an interface with actual code attached to the methods. 
+In other words abstract classes are those whose methods are abstract too and are not implemented i.e they have empty method body. 
 
 Consider the following example to understand abstract classes:
 You have a class Vehicle which defines certain basic functionality (methods) and certain components (object variables) that a machinery should have, to be classified as a vehicle. You cannot create an object of Vehicle because a vehicle in itself is an abstract concept. You can however extend the functionality of the vehicle class to create a Car or a Motorcycle.
