@@ -193,7 +193,7 @@ int main(){
  return 0;
 }
 ```
-In C++11, you can also sort with lamda function, which can be useful.
+In C++11, you can also sort with lambda function, which can be useful.
 ```cpp11
 #include<bits/stdc++.h>
 using namespace std;
