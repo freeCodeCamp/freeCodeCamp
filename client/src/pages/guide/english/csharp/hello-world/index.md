@@ -14,6 +14,7 @@ namespace HelloWorld
 {
     class Hello
     {
+        // The program start its execution from the Main() method 
         static void Main()
         {
             // Write "Hello World!" on console
