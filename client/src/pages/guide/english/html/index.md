@@ -45,6 +45,8 @@ h1: The element defines a large heading
 
 p: The element defines a paragraph
 
+There are other html elements(tags) other than those listed above, but these are the building blocks!
+
 ### HTML Versions
 
 Since the early days of the web, there have been many versions of HTML
