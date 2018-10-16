@@ -25,7 +25,6 @@ Singly quoted strings are treated almost literally, whereas doubly quoted string
    $literally = "My $variable will print!\\n";
    
    print($literally);
-?>
 ```
 
 This will produce the following result −
@@ -61,7 +60,6 @@ To concatenate two string variables together, use the dot (.) operator −
    $string2="1234";
    
    echo $string1 . " " . $string2;
-?>
 ```
 
 This will produce the following result −
@@ -82,7 +80,6 @@ Let's find the length of our string "Hello world!":
 ```
 <?php
    echo strlen("Hello world!");
-?>
 ```
 
 This will produce the following result −
@@ -96,14 +93,13 @@ The length of a string is often used in loops or other functions, when it is imp
 ### Using the strpos() function
 The strpos() function is used to search for a string or character within a string.
 
-If a match is found in the string, this function will return the position of the first match. If no match is found, it will return FALSE.
+If a match is found in the string, this function will return the position of the first match. If no match is found, it will return FALSE. For this reason, it is important to always perform a strict comparison (===) to determine if a match is present.
 
 Let's see if we can find the string "world" in our string −
 
 ```
 <?php
    echo strpos("Hello world!","world");
-?>
 ```
 
 This will produce the following result −
@@ -113,3 +109,50 @@ This will produce the following result −
 ```
 
 As you see the position of the string "world" in our string is position 6. The reason that it is 6, and not 7, is that the first position in the string is 0, and not 1.
+
+Let's see if we can find the string "Hello" in our string - 
+
+```
+<?php
+   echo strpos("Hello world!", "world");
+```
+
+This will produce the following result - 
+
+```
+0
+```
+
+At first, this seems harmless, but let's take a look at another example -
+
+```
+<?php
+   if (strpos("Hello world!", "Hello")) {
+      echo 'The substring was found!';
+   } else {
+      echo 'The substring was not found...';
+   }
+```
+
+Since this equates to '0', or falsy, this will produce the following result - 
+
+```
+   The substring was not found...
+```
+
+Instead, the following should always be used when using strpos() -
+
+```
+<?php
+   if (strpos("Hello world!", "Hello") === false) {
+      echo 'The substring was found!';
+   } else {
+      echo 'The substring was not found...';
+   }
+```
+
+This will produce the following result -
+
+```
+   The substring was found!
+```

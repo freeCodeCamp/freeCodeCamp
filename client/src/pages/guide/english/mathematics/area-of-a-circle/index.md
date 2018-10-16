@@ -5,13 +5,13 @@ title: Area of a Circle
 
 The area of a circle is all the space inside a circle's circumference. 
 
-If 'r' is the radius of circle, its area is calculated with formula pi*r<sup>2</sup> where pi is mathematical constant.
+If 'r' is the radius of circle, its area is calculated with formula πr<sup>2</sup> where π is mathematical constant.
 
-pi = 22/7 = 3.141592....
+π ≈ 22/7 ≈ 3.141592....
 
-A = pi *r<sup>2</sup>, r is the radius of circle
+A = π *r<sup>2</sup>, r is the radius of circle
 
-A = pi * {d<sup>2</sup>/4}, d is the diameter of circle, d=2* r
+A = π * {d<sup>2</sup>/4}, d is the diameter of circle, d=2* r
 
 ![alt](http://areacircle.com/Area_of_a_circle_basics.png)
 
@@ -28,7 +28,7 @@ Diameter (d) - The length of the line that passes across the circle through the 
 Pi (<span class="texhtml">π</span>) - A mathematical constant which is approximated as 3.14
 
 #### Formula
-Area = π × r2 
+Area = π × r<sup>2</sup> 
 
 ###### Given radius of the circle
 

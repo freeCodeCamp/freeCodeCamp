@@ -5,6 +5,12 @@ title: The Tuples
 
 A tuple is a sequence of Python objects. Tuples are immutable which means they cannot be modified after creation, unlike lists.
 
+    >>> tuple = (1,2,3)
+    >>> tuple[1] = 4
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    TypeError: 'tuple' object does not support item assignment
+
 **Creation:**
 
 An empty `tuple` is created using a pair of round brackets, `()`:

@@ -7,7 +7,7 @@ localeTitle: Alterar a cor do texto
 ---
 
 ## Description
-<section id="description"> Agora vamos mudar a cor de alguns dos nossos textos. Podemos fazer isso alterando o <code>style</code> do seu elemento <code>h2</code> . A propriedade responsável pela cor do texto de um elemento é a propriedade de estilo de <code>color</code> . Veja como você <code>h2</code> a cor do texto do elemento <code>h2</code> como azul: <code>&lt;h2 style=&quot;color: blue;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Observe que é uma boa prática finalizar declarações de <code>style</code> inline com a <code>;</code> . </section>
+<section id="description"> Agora vamos mudar a cor de alguns dos nossos textos. Podemos fazer isso alterando o <code>style</code> do seu elemento <code>h2</code>. A propriedade responsável pela cor do texto de um elemento é a propriedade de estilo <code>color</code>. Veja como você definirá a cor do texto do elemento <code>h2</code> como azul: <code>&lt;h2 style=&quot;color: blue;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Observe que é uma boa prática finalizar declarações de <code>style</code> na linha com um <code>;</code>. </section>
 
 ## Instructions
 <section id="instructions"> Altere o estilo do elemento <code>h2</code> para que sua cor de texto fique vermelha. </section>

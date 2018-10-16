@@ -163,3 +163,12 @@ int main ()
     2
     1
     Out of loop
+    
+## Uses of Stack
+
+1. Expression Evaluation and Conversion.
+   stacks are used to evaluate and convert expressions like prefx, postfix and infix expression. 
+2. In Recursive functions to keep information about the active functions or subroutines.
+3. In Backtracking, as in DFS algorithm.
+4. Memory management, run-time environment for nested language features. etc
+

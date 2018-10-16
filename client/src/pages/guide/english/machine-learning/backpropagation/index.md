@@ -44,19 +44,19 @@ In this case, for matrix M, M' will denote the transpose of matrix M
    D(l) = 1\m(Delta(l) + lambda • Theta(l)); if l≠0
    D(l) = 1\m • Delta(l); if l=0
 
-Of course, just seeing this article looks hugely complicated and should really only be understood in the greater contexts of neural networks and machine learning. Please look at the arrached references for a better understanding of the topic as a whole.
+This article should only be understood in the greater contexts of neural networks and machine learning. Please read the arrached references for a better understanding of the topic as a whole.
 
-#### More Information:
+### More Information
 
-High-Level:
+**High-Level:**
 * Siraj Raval - [Backpropagation in 5 Minutes](https://www.youtube.com/watch?v=q555kfIFUCM)
 * [Backprop on Wikipedia](https://en.wikipedia.org/wiki/Backpropagation)
 
-In-depth: 
+**In-depth:**
 * Lecture 4 CS231n [Introduction to Neural Networks](https://youtu.be/d14TUNcbn1k?t=354)
 * [In depth, wiki style article](https://brilliant.org/wiki/backpropagation/)
 * [Article on computation graphs](http://colah.github.io/posts/2015-08-Backprop/)
 * [A Step by Step Backpropagation Example](https://mattmazur.com/2015/03/17/a-step-by-step-backpropagation-example/)
 * [Andrew Ng's ML Course](https://www.coursera.org/learn/machine-learning/)
 
-If you'd like to learn how to implement a full-blown single (hidden) layer neural network in python, whilst learning more about the math behind the algorithms used, you can register for [Andrew Ng's Deep Learning Specialization] (https://www.coursera.org/specializations/deep-learning)
+If you'd like to learn how to implement a full-blown single (hidden) layer neural network in Python, whilst learning more about the math behind the algorithms used, you can register for [Andrew Ng's Deep Learning Specialization] (https://www.coursera.org/specializations/deep-learning)

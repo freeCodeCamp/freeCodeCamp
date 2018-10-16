@@ -147,13 +147,17 @@ _You can find more information at <a href='https://developer.mozilla.org/en-US/d
 When we compare null and undefined we see different behaviour. Lets check different scenario through examples
 #### Example - strict equality check (===)
 
+```javascript
 console.log( null === undefined ); // O/P - false
+```
 
 Otuput is false and that's correct because we know "null" and "undefined" are different types.
 
 #### Example - non-strict equality check (==)
 
+```javascript
 console.log( null == undefined ); // O/P: - true
+```
 
 How? This is because there is a special rule for "null" and "undefined". Due to which they are equal in case of non-strict check (==) but are not equal to any other value.
 
@@ -161,9 +165,11 @@ If we use comparison operators like <, >, <=, >= etc., "null" and "undefined" ar
 
 #### Example - compare null with 0(zero)
 
+```javascript
 console.log( null > 0 ); // O/P - false
 console.log( null >= 0 ); // O/P - true
 console.log( null == 0 ); // O/P - false
+```
 
 Strange? As per the first statement null is not greater than 0 and from the second statement null is either greater than or equal to 0. So, if we think mathematically and compare both statements, will come to the result that null is equal to 0. But, as per third statement it's not true. Why?
 
@@ -173,9 +179,11 @@ But, in equality check (==), "null/undefined" works without any conversion and a
 
 #### Example - compare undefined with 0(zero)
 
+```javascript
 console.log( undefined  > 0 ); // O/P - false
 console.log( undefined  >= 0 ); // O/P - false
 console.log( undefined  == 0 ); // O/P - false
+```
 
 Here, we test the same cases as we did for null but again result is different. Why?
 

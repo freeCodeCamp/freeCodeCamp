@@ -45,20 +45,31 @@ let newOneWithOneParam = a => {
 }
 ```
 
-An incredible advantage of the arrows function is that you can not rebind an arrow function. It will always be called with the context in which it was defined. Just use a normal function.
+### advantages of arrow sytnax 
+1. It will always be called with the context in which it was defined. Therefore there is no existence of the this keyword.
+
 ```javascript
-// Old Syntax
-axios.get(url).then(function(response) {
-  this.data = response.data;
-}).bind(this);
-
-// New Syntax
-axios.get(url).then(response => {
-  this.data = response.data;
-});
-
+ // Old Syntax
+ axios.get(url).then(function(response) {
+   this.data = response.data;
+ }).bind(this);
+ 
+ // New Syntax
+ axios.get(url).then(response => {
+   this.data = response.data;
+ });
+ ```
+   *  before arrow functions each function had it's own this contect 
+2.  shorter more readable functions 
+```javascript
+  // Old Syntax
+  const sumValues = function (a, b) {
+    return a+b;
+  }
+  
+  // New Syntax
+  const sumValues = (a,b) => a+b;
 ```
+  * since it's a one line return we can ommit the brackets
 
 
-
-I don’t think I need to give an explanation for this. It's straightforward.

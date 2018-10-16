@@ -54,3 +54,7 @@ This video visually demonstrates some popular sorting algorithms that are common
 [Algorithm Visualizer](http://algo-visualizer.jasonpark.me)
 
 This is also a really good open source project that helps you visualize algorithms. 
+
+[Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
+
+This infographic shows you how unsupervised and supervised machine learning algorithms work..

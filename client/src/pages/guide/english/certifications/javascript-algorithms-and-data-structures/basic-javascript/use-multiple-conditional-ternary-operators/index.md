@@ -1,10 +1,25 @@
+---	
+title: Use Multiple Conditional (Ternary) Operators	
 ---
-title: Use Multiple Conditional (Ternary) Operators
----
+
 ## Use Multiple Conditional (Ternary) Operators
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+We need to use multiple ```conditional operators``` in the ```checkSign``` function to check if a number is positive, negative or zero.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Here’s a solution:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+In the function body we need to add multiple ```conditional operators``` - as in our lesson:
+
+```javascript
+{return (num === 10) ? "positive" : (num === -12) ? "negative" : "zero";}
+```
+In this way, function can check if a number is positive, negative or zero.
+
+Here’s a full solution:
+
+```javascript
+function checkSign(num) {
+  return (num === 10) ? "positive" : (num === -12) ? "negative" : "zero";
+}
+checkSign(10);
+```

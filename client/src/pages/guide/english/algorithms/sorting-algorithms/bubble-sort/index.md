@@ -114,17 +114,20 @@ void bubblesort(int arr[], int n)
 {
 	if(n==1)	//Initial Case
 		return;
-	
+	bool swap_flag = false;
 	for(int i=0;i<n-1;i++)	//After this pass the largest element will move to its desired location.
 	{
 		if(arr[i]>arr[i+1])
 		{
-			temp=arr[i];
+			int temp=arr[i];
 			arr[i]=arr[i+1];
 			arr[i+1]=temp;
+			swap_flag = true;
 		}
 	}
-	
+        // IF no two elements were swapped in the loop, then return, as array is sorted 
+	if(swap_flag == false)
+		return;
 	bubblesort(arr,n-1);	//Recursion for remaining array
 }
 ```
@@ -142,6 +145,21 @@ func bubbleSort(_ inputArray: [Int]) -> [Int] {
     }
     return numbers // return the sorted array
 } 
+```
+### Example in Python
+```py
+
+def bubblesort( A ):
+  for i in range( len( A ) ):
+    for k in range( len( A ) - 1, i, -1 ):
+      if ( A[k] < A[k - 1] ):
+        swap( A, k, k - 1 )
+ 
+def swap( A, x, y ):
+  tmp = A[x]
+  A[x] = A[y]
+  A[y] = tmp
+
 ```
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
