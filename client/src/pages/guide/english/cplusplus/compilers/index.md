@@ -78,6 +78,15 @@ to compile and execute your code directly, run
 `g++ -o helloWorld helloWorld.cpp; ./helloWorld`
 so when you need to compile and run your code multiple times,
 up arrow-enter 
+
+### Adding Flags
+You can also add flags to the compiler to your custom and favor. For example:
+`g++ -O2 helloWorld.cpp -o helloWorld`
+Some common flags is :
+1. -O2 : Optimize your code, so it may run faster
+2. -std=c++11 : use c++11 instead of c++98 which is defaulted.
+3. -Wall: prompt some warning about some common mistakes which can bug your program.
+4. -Wextra: prompt some extra warning.
 ____________
 
 There are a number of different types of compilers. The two listed are the two that are usually packaged with the Windows
