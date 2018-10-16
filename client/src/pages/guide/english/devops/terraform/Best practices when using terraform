@@ -1,0 +1,8 @@
+.tfstate files
+
+Terrform config can be used to provision many boxes on different infrastructure, each of which could have a different state. As it can also 
+be runmy multiple people this state should  be in a centralised location (like S3) but not git.
+
+This can be confirmed looking at the Terraform https://github.com/hashicorp/terraform/blob/347f9c0bea68722a85a1e453c69e6a756043f6b8/.gitignore
+
+
