@@ -11,7 +11,7 @@ Every browser has a JavaSript engine built in it to process JavaScript files con
 - Node.js uses an event-driven model.  
 This means that Node.js is able to wait for that event to take place in the background while continuing to process events without needing to halt the event loop or block your browser.  This is called an asynchronous event. Once the background event has been completed, it then acts on those events. Events can be anything from a click to a HTTP request. We can also declare our own custom events and make Node.js listen for those events.
 - Node.js uses a non-blocking I/O model.  
-We know that I/O tasks take much longer than processing tasks. Node.js uses callback functions to handle such requests.
+We know that I/O tasks take much longer than processing tasks. Node.js uses callback functions to handle such requests in the background hence allowing the browser to continue the event loop, preventing the browser to halt or block its ability to perform the next event if that be a click, render, and any event.
 
 Let us assume that a particular I/O task takes 5 secs to execute.
 And we want to perform this I/O twice in our code.
