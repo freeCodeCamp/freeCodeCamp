@@ -60,6 +60,20 @@ You can also combine classes in the same line:
 
 You can see the result of the above code [here](https://codepen.io/Tlandis/pen/RLvomV').  Learn how to combine css classes using selectors [here](https://www.w3schools.com/css/css_combinators.asp'). 
 
+Classes and Ids can be also be combined and styled once if they need to be styled alike.
+
+```html
+
+  <h1 id="one" class="two">This Should Be Red</h1>
+
+```
+Then in your css file
+
+```
+  #one.two { color: red; };
+
+```
+
 #### More Information:
 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
