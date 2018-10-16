@@ -3,8 +3,37 @@ title: Create a Bar for Each Data Point in the Set
 ---
 ## Create a Bar for Each Data Point in the Set
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/create-a-bar-for-each-data-point-in-the-set/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Use the ``` data() ```, ``` enter() ```, and ``` append() ``` methods.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+The ``` data() ```, ``` enter() ```, and ``` append() ``` methods are used, the code should look as follows:
+
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+    
+    const w = 500;
+    const h = 100;
+    
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h);
+    
+    svg.selectAll("rect")
+       .data(dataset)
+       .enter()
+       .append("rect")
+       .attr("x", 0)
+       .attr("y", 0)
+       .attr("width", 25)
+       .attr("height", 100);
+  </script>
+</body>
+```
+
+Note that all the bars overlap each other, how to correct this and make them non-overlapping is covered in the next challenge.
