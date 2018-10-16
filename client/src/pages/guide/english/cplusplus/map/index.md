@@ -52,7 +52,7 @@ d => 40
 
 ## Get Size 
 Get size of map with size function
-``` Size
+```
 map<int, int > myMap;
 myMap[100] = 3
 cout << "size of map is " << myMap.size() << '\n';
