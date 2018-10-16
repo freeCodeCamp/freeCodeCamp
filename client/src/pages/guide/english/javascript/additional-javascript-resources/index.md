@@ -86,6 +86,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
 ## Podcasts
 *   <a href='https://devchat.tv/js-jabber' target='_blank' rel='nofollow'>JS Jabber</a>
+*   <a href='https://syntax.fm/' rel='nofollow'>Syntax</a>
 
 
 
@@ -93,6 +94,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
 *   <a href='https://www.youtube.com/watch?v=fju9ii8YsGs' target='_blank' rel='nofollow'>Derek Banas' Learn JS In One Video </a>
 *   <a href='https://www.youtube.com/watch?v=O8wwnhdkPE4'>Derek Banas' Object Oriented JavaScript</a>
+*   <a href='https://www.khanacademy.org/computing/computer-programming#programming'>Khan Academy</a>
 *   <a href='https://www.youtube.com/watch?v=YMvzfQSI6pQ'>JavaScript Fundamentals for Absolute Beginners 2018</a>
 
 ## Books
