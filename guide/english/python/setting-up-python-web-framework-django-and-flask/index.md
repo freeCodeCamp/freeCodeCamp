@@ -9,7 +9,7 @@ In case these assumptions are untrue, you might want to take a look at this <a>w
 
 But it would be unfair if we completely ignore the <a href='http://docs.python-guide.org/en/latest/starting/which-python/#the-state-of-python-2-vs-3' target='_blank' rel='nofollow'>Python 2 vs Python 3</a> debate.
 
-If you do not have Python already installed check out our <a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/python/installing-and-using-python-3/index.md'>Python Installation Guide</a>
+If you do not have Python already installed check out our <a href='https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/python/installing-and-using-python-3/index.md'>Python Installation Guide</a>
 
 ## Virtual environment
 

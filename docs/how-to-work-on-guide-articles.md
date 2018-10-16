@@ -35,7 +35,7 @@ Watch the video demonstration or follow the steps below it:
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Go into the **"pages"** folder (located in [`client/src/pages/guide`](/client/src/pages/guide)) and find the article stub you'd like to write or edit.
+1. Go into the **"pages"** folder (located in [`guide`](/guide)) and find the article stub you'd like to write or edit.
 
     > All stubs will be in an index.md file
 
