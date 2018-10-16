@@ -14,7 +14,7 @@ In this article, we are going to explore the key characteristic features of Bloc
 When something is controlled by a central authority, where the power to make decision lies in the hands of the apex of the management, such system is called a Centralized System. Banks, for example, are a centralized system, where it's the responsibility of the Governor to make decisions.
 
 On the contrary, when the power is vested in the hands of the people or the users, such system is said to be a Decentralized System.
-The peer to peer network, Torrent, for example is a decentralised system, where the user has complete control.
+The peer to peer network, Torrent,bitcoin for example is a decentralised system, where the user has complete control.
 
 ![Decentralized Systems](https://raw.githubusercontent.com/Vagisha16/Hw3/master/blockchain_article_pic.jpg)
 
@@ -51,7 +51,8 @@ Blockchains, ideally, are just very sophisticated linked lists where each block 
 
 #### _* Consensus Based_
 
-Consensus Based is an approach to decision making. It is a creative and dynamic way of reaching agreement between all members of a group. A transaction on Blockchain can be executed only if all the parties on the network unanimously approve it. It is however, subjected to alterations to suit various circumstances.
+
+This is the proces by which all the different node agree about the state change.Consensus Based is an approach to decision making. It is a creative and dynamic way of reaching agreement between all members of a group. A transaction on Blockchain can be executed only if all the parties on the network unanimously approve it. It is however, subjected to alterations to suit various circumstances.this is the proces
 
 
 ### Sources
