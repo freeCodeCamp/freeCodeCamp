@@ -45,3 +45,10 @@ In general, the more you know about these attacks, the better prepared you are. 
 * [Does Dropping USB Drives in Parking Lots and Other Places Really Work?](https://www.youtube.com/watch?v=XJCQBqTmGUU)
 * [Example of Pretexting](https://www.youtube.com/watch?v=lc7scxvKQOo)
 * [Test your Phishing IQ](https://www.sonicwall.com/en-us/phishing-iq-test)
+
+### Recommended Reading:
+*Social Engineering: The Art of Human Hacking by Christopher Hadnagy* [Amazon](https://www.amazon.com/Social-Engineering-Art-Human-Hacking/dp/0470639539)
+- ISBN-13: 978-0470639535
+
+*The Art of Deception by Kevin Mitnick* [Amazon](https://www.amazon.com/Art-Deception-Controlling-Element-Security/dp/076454280X)
+- ISBN-13: 978-0764542800
