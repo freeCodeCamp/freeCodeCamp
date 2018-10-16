@@ -64,7 +64,7 @@ Classes and Ids can be also be combined and styled once if they need to be style
 
 ```html
 
-  <h1 id="one" class="two">This Should Be Red</h1>
+<h1 id="one" class="two">This Should Be Red</h1>
 
 ```
 Then in your css file
