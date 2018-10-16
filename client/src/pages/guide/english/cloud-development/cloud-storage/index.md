@@ -3,7 +3,7 @@ title: Cloud Storage
 ---
 
 ## STORAGE AS A SERVICE (STaaS) 
-When you use cloud storage, that is STaaS. In this case, a cloud system gives you the ability to store data online and use it acesss it as if it was local.
+When you use cloud storage, that is STaaS. In this case, a cloud system gives you the ability to store data online and acesss it as if it was local.
 The Cloud system should have the capability of Storage Scaling.
 We can integrate all storage. For example, if we have multiple pen-drives then we can integrate all pen-drive storages in a single one. 
  
