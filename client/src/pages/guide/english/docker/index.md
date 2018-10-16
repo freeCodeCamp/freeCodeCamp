@@ -1,19 +1,19 @@
 ---
-title: Docker
+título: Docker
 ---
 ## Docker
 
-Docker is an open platform to build, ship, and run distributed applications. It is written in Go. It was first released in 2013 and is developed by Docker, Inc.
+O Docker é uma plataforma aberta para criar, enviar e executar aplicativos distribuídos. Está escrito em Go. Foi lançado pela primeira vez em 2013 e é desenvolvido pela Docker, Inc.
 
-Docker is used to run packages called "containers". Containers are isolated from each others and from the OS. These are more lightweight than virtual machines as they do not use the host machine to run an operating system.
+O Docker é usado para executar pacotes chamados "containers". Os containers são isolados uns dos outros e do sistema operacional. Eles são mais leves que as máquinas virtuais, pois não usam a máquina host para executar um sistema operacional.
 
-Containerization, which is a way of deploying and running applications, runs isolated services which run natively on the Linux kernel. Memory can be set manually for each container in Docker.
+Containerização, que é uma maneira de implementar e executar aplicativos, executa serviços isolados que são executados nativamente no kernel do Linux. A memória pode ser definida manualmente para cada contêiner no Docker.
 
-Docker is used to simplify configurations, and ensure a smooth continuous integration and deployment flow. Specific containers can be specified for development, staging, and production environments. A true implementation of a container in production, according to the Docker manual, is to run it as a service, using the  `docker-compose.yml` file for setup. This is a YAML file that defines how Docker containers should behave in production.
+O Docker é usado para simplificar configurações e garantir um fluxo contínuo e suave de integração e implantação. Containers específicos podem ser especificados para ambientes de desenvolvimento, preparação e produção. Uma implementação real de um contêiner em produção, de acordo com o manual do Docker, é executá-lo como um serviço, usando o arquivo `docker-compose.yml` para configuração. Este é um arquivo YAML que define como os containers do Docker devem se comportar na produção.
 
-One of Docker's biggest advantages is that it can be used by a team using different operateing systems to build projects without needing to worry about software conflicts.
+Uma das maiores vantagens do Docker é que ele pode ser usado por uma equipe que usa sistemas operacionais diferentes para criar projetos sem precisar se preocupar com conflitos de software.
 
-### Installation
+### Instalação
 
 * Ubuntu: `sudo apt install docker`
 
@@ -22,15 +22,15 @@ One of Docker's biggest advantages is that it can be used by a team using differ
 * Windows / macOS: [Download](https://www.docker.com/get-started)
 
 * Linux:
-
+a
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
 
-#### More Information:
+#### Mais informações:
 
-* For download and documentation check the docker official site: [Docker official site](https://www.docker.com)
-* For more on containerization, checkout [Search IT Operations](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization)
-* A Docker 101 course [Docker 101](https://github.com/docker/labs/tree/master/beginner/)
+* Para download e documentação, verifique o site oficial do docker: [Docker official site](https://www.docker.com)
+* Para mais sobre containerização, checkout [Procure IT Operations](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization)
+* Curso Docker 101 [Docker 101](https://github.com/docker/labs/tree/master/beginner/)
 
