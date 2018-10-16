@@ -4,19 +4,19 @@ localeTitle: ¿Para qué se utiliza Python?
 ---
 ## ¿Para qué se utiliza Python?
 
-Python se puede usar fácilmente para proyectos pequeños, grandes, en línea y fuera de línea. Las mejores opciones para utilizar Python son desarrollo web, scripts simples y análisis de datos. A continuación hay algunos ejemplos de lo que Python te permitirá hacer:
+Python se puede usar fácilmente para proyectos pequeños, grandes, en línea (online) y fuera de línea (offline). Las mejores opciones para utilizar Python son desarrollo web, scripts simples y análisis de datos. A continuación hay algunos ejemplos de lo que Python te permitirá hacer:
 
 ##### Desarrollo web:
 
-Puedes usar Python para crear aplicaciones web en muchos niveles de complejidad. Hay muchos marcos web de Python excelentes, incluidos Pyramid, Django y Flask, por nombrar unos pocos.
+Puedes usar Python para crear aplicaciones web en muchos niveles de complejidad. Hay muchos frameworks web de Python excelentes, incluidos Pyramid, Django y Flask, por nombrar unos pocos.
 
 ##### Análisis de los datos:
 
-Python es el principal idioma de elección para muchos científicos de datos. Python ha crecido en popularidad dentro del campo debido a la disponibilidad de excelentes bibliotecas centrado en la ciencia de datos (de los cuales NumPy y Pandas son dos de los más conocidos) y la visualización de datos (como Matplotlib y Seaborn). Pyton realmente hizo crujido de datos Diversión con todas sus numerosas bibliotecas disponibles. Ipython con JupyterLab es otra forma de Python que mejora el uso de Python en el campo de la ciencia de datos.
+Python es el lenguaje de programación preferido por muchos científicos de datos. Python ha crecido en popularidad dentro del campo debido a la disponibilidad de excelentes bibliotecas centradas en la ciencia de datos (de los cuales NumPy y Pandas son dos de los más conocidos) y la visualización de datos (como Matplotlib y Seaborn). Python realmente hizo el Data crunching divertido con todas sus numerosas bibliotecas disponibles. Ipython con JupyterLab es otra forma de Python que mejora el uso de Python en el campo de la ciencia de datos.
 
 ##### Automatización:
 
-Python es un lenguaje muy flexible que se puede utilizar para automatizar tareas aburridas o repetitivas. Los administradores del sistema a menudo lo utilizan escribiendo guiones que pueden ser fácilmente Ejecutado desde la terminal. Python también se puede utilizar para crear bots que automatizan algunas de nuestras tareas diarias.
+Python es un lenguaje muy flexible que se puede utilizar para automatizar tareas aburridas o repetitivas. Los Administradores de Sistemas a menudo lo utilizan escribiendo guiones que pueden ser fácilmente ejecutados desde la terminal. Python también se puede utilizar para crear bots que automatizan algunas de nuestras tareas diarias.
 
 ##### Inteligencia artificial:
 
@@ -28,11 +28,11 @@ Las aplicaciones y juegos móviles se pueden crear con Python utilizando Kivy, P
 
 #### Seguridad y redes:
 
-Python se utiliza para crear herramientas de red y herramientas de seguridad que se utilizan ampliamente. La automatización remota de Python es la más segura, rápida y eficiente para las pruebas en la nube. de marcos, es por eso que los desarrolladores profesionales usan python para hacer los marcos más seguros y para los programadores de socket.
+Python se utiliza para crear herramientas de red y herramientas de seguridad que se utilizan ampliamente. La automatización remota de Python es la más segura, rápida y eficiente para las pruebas de frameworks en la nube, es por eso que los desarrolladores profesionales usan Python para hacer los frameworks más seguros y para los programadores de socket.
 
 ##### Aprendizaje Automático, Aprendizaje Profundo
 
-Python es uno de los mejores lenguajes adecuados para el aprendizaje automático, el aprendizaje profundo y el análisis de datos con una fortaleza en todos ellos.
+Python es uno de los mejores lenguajes adecuados para el machine learning, el deep learning y el análisis de datos con una fortaleza en todos ellos.
 
 Existen lenguajes especializados que se adaptan mejor a varios roles, como R y MATLAB, pero cuando se trata de campos superpuestos de aplicaciones, Python gana las manos debido a Su flexibilidad y rápida creación de prototipos y disponibilidad de bibliotecas.
 
@@ -57,7 +57,7 @@ Aquí hay un [enlace](https://www.python.org/about/apps/) a una sección del sit
 *   Computación numérica
 *   Desarrollo de software
 *   Desarrollo de aplicaciones empresariales
-*   Aprendizaje automático
+*   Machine learning
 *   IOT
 *   Desarrollo de juegos
 *   Prototipado rápido
