@@ -21,7 +21,7 @@ You can then style these elements with CSS. Classes are referenced with period (
 }
 ```
 
-This code give a blue background and a red text color to all the elements that have the `super-man` class.
+This code will give s blue background and red text color to all the elements which have the `super-man` class.
 [View this example on CodePen](https://codepen.io/Tlandis/pen/RLvomV).
 
 You can also declare more than one class to your element, like:
@@ -39,27 +39,26 @@ Then in your css file:
 ```css
 
 .ironMan{
-color:red;
+  color:red;
 }
 
 .alfred{
-background-color: black;
+  background-color: black;
 }
 
 ```
 
-**Note:** class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
+**Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
 
 You can also combine classes in the same line:
 ```css
 .superMan .spiderMan {
-color: red;
-background-color: blue;
+  color: red;
+  background-color: blue;
 }
 ```
 
-You can see the result of the above code <a href='https://codepen.io/Tlandis/pen/RLvomV' target='_blank' rel='nofollow'>here</a>.
-Learn how to combine css classes using selectors <a href='https://www.w3schools.com/css/css_combinators.asp' target='_blank' rel='nofollow'>here</a>. 
+You can see the result of the above code [here](https://codepen.io/Tlandis/pen/RLvomV').  Learn how to combine css classes using selectors [here](https://www.w3schools.com/css/css_combinators.asp'). 
 
 #### More Information:
 

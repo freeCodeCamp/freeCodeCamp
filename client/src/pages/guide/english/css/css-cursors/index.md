@@ -3,49 +3,55 @@ title: CSS Cursors
 ---
 ## CSS Cursors
 
-The cursor property specifies the type of cursor to be displayed when you hover over an element. It has 36 possible values: 
+The cursor property specifies the type of cursor to be displayed when you hover over an element. It has 39 possible values: 
 ```css
+    .alias           { cursor: alias; }
+    .all-scroll      { cursor: all-scroll; }
     .auto            { cursor: auto; }
-    .default         { cursor: default; }
-    .none            { cursor: none; }
+    .cell            { cursor: cell; }
     .context-menu    { cursor: context-menu; }
+    .col-resize      { cursor: col-resize; }
+    .copy            { cursor: copy; }
+    .crosshair       { cursor: crosshair; }
+    .default         { cursor: default; }
+    .e-resize        { cursor: e-resize; }
+    .ew-resize       { cursor: ew-resize; }
+    .grab            { cursor: grab; }
+    .grabbing        { cursor: grabbing; }
     .help            { cursor: help; }
+    .move            { cursor: move; }
+    .n-resize        { cursor: n-resize; }
+    .ne-resize       { cursor: ne-resize; }
+    .nesw-resize     { cursor: nesw-resize; }
+    .ns-resize       { cursor: ns-resize; }
+    .nw-resize       { cursor: nw-resize; }
+    .nwse-resize     { cursor: nwse-resize; }
+    .no-drop         { cursor: no-drop; }
+    .none            { cursor: none; }
+    .not-allowed     { cursor: not-allowed; }
     .pointer         { cursor: pointer; }
     .progress        { cursor: progress; }
-    .wait            { cursor: wait; }
-    .cell            { cursor: cell; }
-    .crosshair       { cursor: crosshair; }
-    .text            { cursor: text; }
-    .vertical-text   { cursor: vertical-text; }
-    .alias           { cursor: alias; }
-    .copy            { cursor: copy; }
-    .move            { cursor: move; }
-    .no-drop         { cursor: no-drop; }
-    .not-allowed     { cursor: not-allowed; }
-    .all-scroll      { cursor: all-scroll; }
-    .col-resize      { cursor: col-resize; }
     .row-resize      { cursor: row-resize; }
-    .n-resize        { cursor: n-resize; }
-    .e-resize        { cursor: e-resize; }
     .s-resize        { cursor: s-resize; }
-    .w-resize        { cursor: w-resize; }
-    .ns-resize       { cursor: ns-resize; }
-    .ew-resize       { cursor: ew-resize; }
-    .ne-resize       { cursor: ne-resize; }
-    .nw-resize       { cursor: nw-resize; }
     .se-resize       { cursor: se-resize; }
     .sw-resize       { cursor: sw-resize; }
-    .nesw-resize     { cursor: nesw-resize; }
-    .nwse-resize     { cursor: nwse-resize; }
-```
+    .text            { cursor: text; }
+    .vertical-text   { cursor: vertical-text; }
+    .w-resize        { cursor: w-resize; }
+    .wait            { cursor: wait; }
+    .zoom-in         { cursor: zoom-in; }
+    .zoom-out        { cursor: zoom-out; }
+    .initial         { cursor: initial; }
+    .inherit         { cursor: inherit; }
+    ```
 ![alt text](http://www.javascripter.net/faq/24_cursor_styles.gif "CSS Cursors")
 
-
-You can also set an image as the cursor.
+You can also set an image as the cursor. 
+Note: Always specific a default cursor at the end incase the specified cursor is unavailable.
 
 ```
 .custom-cursor {
-  cursor: url(cursor-image.png);
+  cursor: url(cursor-image.png),auto;
 }
 ```
 

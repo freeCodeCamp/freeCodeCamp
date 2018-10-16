@@ -3,8 +3,24 @@ title: Add Labels to D3 Elements
 ---
 ## Add Labels to D3 Elements
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/add-labels-to-d3-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint 1
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Use the ``` attr() `` methods to set `` x ``` and ``` y ```.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint 2
+
+Use callback on all methods which you add.
+
+### Solution
+
+Edit your ``` svg.selectAll("text") ``` method to look like:
+
+```javascript
+svg.selectAll("text")
+    .data(dataset)
+    .enter()
+    .append("text")
+    .attr("x", (d,i) => i*30) //Set x attribute
+    .attr("y", (d,i) => ((h-3*d)-3)) // Set y attribute
+    .text(d=>d); // Set text
+```

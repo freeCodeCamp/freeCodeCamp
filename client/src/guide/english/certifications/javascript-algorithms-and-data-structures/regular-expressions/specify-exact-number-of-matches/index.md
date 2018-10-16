@@ -1,10 +1,21 @@
+---	
+title: Specify Exact Number of Matches	
 ---
-title: Specify Exact Number of Matches
----
+
 ## Specify Exact Number of Matches
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/regular-expressions/specify-exact-number-of-matches/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## The Problem:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+We need to change the regex ```timRegex``` to match the word ```"Timber"``` only when it has four letter ```m```'s.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+ ## Solution:
+ 
+ ```js
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/; // Change this line
+let result = timRegex.test(timStr);
+```
+
+ ## Explanation:
+ 
+With this regex (```/Tim{4}ber/```) we specify a certain number (```4```) of letter ```m```'s.

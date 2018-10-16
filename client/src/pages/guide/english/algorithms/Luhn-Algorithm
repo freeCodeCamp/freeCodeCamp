@@ -1,0 +1,19 @@
+---
+title: Luhn Algorithm
+---
+
+## Luhn Algorithm
+
+The Luhn algorithm, also called the Luhn formula is a simple formula used for validating credit card numbers or identification of numbers, such as Social Security numbers, IMEI numbers, etc. The algorithm was created by Hans Peter Luhn in 1960s.
+
+### How It Works?
+
+These are the simple steps of the algorithm:
+  
+  1. Start from the rightmost digit and double the value of every second digit.
+  2. If doubling results in two digits(greater than 9), then sum the digits of the product, to get a single digit number.
+  3. Take the sum of all the digits which comes from second step and remaining digits from step 1(non-doubled digits).
+  4. If the total modulo 10 is equal to 0 (if the total ends in zero) then the number is valid according to the Luhn formula; else it is not valid.
+  
+#### More Information:
+* [Wikipedia](https://en.wikipedia.org/wiki/Luhn_algorithm)

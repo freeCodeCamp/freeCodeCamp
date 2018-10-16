@@ -2,18 +2,27 @@
 title: Books on Haskell
 ---
 ### List of Books
+ 
+#### Learn You a Haskell for Great Good!: A Beginner's Guide
 
-#### Learn You a Haskell for Great Good!
-*Learn You a Haskell for Great Good* is one of the best books for beginners diving into the world of Haskell. Full with illustrations.
+One of the best books for beginners diving into the world of Haskell. This book is full of useful illustrations to aid your learning with a touch of humor to make this functional programming lanuage fun.
  
  And yes, the e-book is free!
 - [Website](http://learnyouahaskell.com/)
 - [No Starch Press](https://nostarch.com/lyah.htm)
 - [E-book](http://learnyouahaskell.com/chapters) (free)
+- [Amazon](https://www.amazon.co.uk/Learn-You-Haskell-Great-Good/dp/1593272839)
+- ISBN-10: 9781593272838
+- ISBN-13: 978-1593272838
 
-#### Programming in Haskell
-*Programming in Haskell* by Graham Hutton is a very recommended book too, written by a programming professor that also puts slides, code examples and even exams and answers available for free in his webpage and the publisher's.
+#### Programming in Haskell (Second Edition)
 
+Available to buy or download for free (e-book)! This book is broken down into two parts; part one focuses on the basic concepts of Haskell whilst part two introduces you to advanced topics. Haskell is a functional programming lanuage that allows programmers to develop clear and concise software.  This book also includes lots of examples, exercises, downloadable lecture slides and example code from the [University of Nottingham](http://www.cs.nott.ac.uk/~pszgmh/pih.html) website.
+
+- [E-book](http://www.cs.nott.ac.uk/~pszgmh/pih.html)
+- [Amazon](https://www.amazon.co.uk/Programming-Haskell-Graham-Hutton/dp/1316626229)
+- ISBN-10: 1316626229
+- ISBN-13: 978-1316626221
 - [Website](http://www.cs.nott.ac.uk/~pszgmh/pih.html)
 - [Cambridge University Press](https://www.cambridge.org/es/academic/subjects/computer-science/programming-languages-and-applied-logic/programming-haskell-2nd-edition)
 

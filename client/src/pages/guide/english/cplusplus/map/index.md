@@ -50,6 +50,19 @@ d => 40
 ## Creating map object
 ` map<string, int> myMap; `
 
+## Get Size 
+Get size of map with size function
+```
+map<int, int > myMap;
+myMap[100] = 3
+count << "size of map is " << myMap.size() << '\n';
+```
+
+Output:
+```
+size of map is 1
+```
+
 ## Insertion 
 Inserting data with insert member function.
 
@@ -61,6 +74,42 @@ myMap.insert(make_pair("moon", 2));
 We can also insert data in std::map using operator [] i.e.
 
 `myMap["sun"] = 3;`
+
+If "sun" is already mapped before, this action will override the value mapped to key.
+
+## Erase
+Erasing data with erase function
+
+```
+map<int, int > myMap;
+myMap[10] = 1000;
+cout << "before erase, size of map is " << myMap.size() << '\n';
+myMap.erase(10);
+cout << "after erase, size of map is " << myMap.size() << '\n';
+```
+
+Output:
+```
+before erase, size of map is 1
+after erase, size of map is 0
+```
+
+## Accessing map value
+
+To access map values, simply call Map[key]. For example:
+```
+map<string, int > M;
+M["abc"] = 1;
+M["def"] = 2;
+cout << "value of abc is " << M["abc"] << '\n';
+cout << "value of def is " << M["def"] << '\n';
+```
+
+Output:
+```
+value of abc is 1
+value of def is 2
+```
 
 ## Accessing map elements
 

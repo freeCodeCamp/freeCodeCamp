@@ -6,7 +6,7 @@ title: Cryptography
 
 The basic objective of cryptography is to enable two people to communicate through the unsecure channel in such a way that a third person cannot understand what is being said. This channel could be a telephone line or a computer network. 
 
-Cryptography started being used by the Romans in order to make messages in battle unreadable by the enemy if decyphered. 
+Cryptography started being used by the Romans in order to make messages in battle unreadable by the enemy if deciphered. 
 
 Cryptography prior to the modern age was effectively synonymous with encryption, the conversion of information from a readable state to apparent nonsense. 
 
@@ -24,9 +24,19 @@ The first known cypher was the Ceasar cypher. The Ceasar cypher works by shiftin
 
 From an outside person's perspective, the message appears to be random letters with spaces in between.
 
+### Simple Substitution Cipher
+
+It is an improvement to the Caesar Cipher. Instead of shifting the alphabets by some number, this scheme uses some permutation of the letters in alphabet.
+For example, A.B…..Y.Z and Z.Y……B.A are two obvious permutation of all the letters in alphabet
+
+### Playfair Cipher
+
+In this scheme, pairs of letters are encrypted, instead of single letters as in the case of simple substitution cipher.
+In playfair cipher, initially a key table is created. The key table is a 5×5 grid of alphabets that acts as the key for encrypting the plaintext. Each of the 25 alphabets must be unique and one letter of the alphabet (usually J) is omitted from the table as we need only 25 alphabets instead of 26. If the plaintext contains J, then it is replaced by I.
+
 ### Modern Cryptography
 
-Modern encryption uses almost random numbers and mathematically sound functions in order to allow secure communication. These newly developed functyions cannot be easily cracked due to their structure, requiring even supercomputers hundreds of years to crack.
+Modern encryption uses almost random numbers and mathematically sound functions in order to allow secure communication. These newly developed functions cannot be easily cracked due to their structure, requiring even supercomputers hundreds of years to crack.
 
 There are 2 main types of modern encryption:
 

@@ -25,6 +25,8 @@ FXML is an XML-based markup language used for defining structures in JavaFX. The
         <Button text="Sign In"/> // Nested inside the HBox is a Button object with the text 'Sign In'
 </HBox>
 ```
+### Gulon Scenic View   
+Scenic View is an application designed to show the current state of your JavaFX application. Scenic View enables you to debug the graphic elements in your application in real time, including changing various values.
 
 ### References:
 [FXML Documentation](https://docs.oracle.com/javase/8/javafx/api/javafx/fxml/doc-files/introduction_to_fxml.html)
@@ -35,5 +37,4 @@ FXML is an XML-based markup language used for defining structures in JavaFX. The
 
 [Official OpenJFX Site](https://openjfx.io/)
 
-
-
+[Official Scenic View Page](http://fxexperience.com/scenic-view/)

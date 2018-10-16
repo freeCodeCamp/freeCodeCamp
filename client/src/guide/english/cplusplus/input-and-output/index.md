@@ -122,8 +122,46 @@ When chained, the extraction operator will first read data from `cin` to fill `a
 
 
 C's standard printf and scanf statements can also be used with c++ by importing '<cstdio>' header file.
+  
+#### Error handling with `cin`
 
+Sometimes the process of reading an input fails, commonly because we try to assign a content of certain type to a variable that cannot store it. If not handled properly, an error in input could cause `cin` to stop blocking the program flux, just accepting what remains on its buffer that failed to be read. If for example `cin` is in an infinite loop, it could begin repeating that sequence indefinitely without waiting for the user input, leaving the only choice of force quitting the program.
+
+When `cin` fails to read it raises a `failbit`<sup>3</sup>, so we need to handle that, `clear`<sup>4</sup> the stream state from errors and `ignore`<sup>5</sup> the remaining input, since a failure in reading will not clear the input buffer. Let's see an example:
+
+```C++
+int number;
+cin >> number;
+
+if(cin.fail())
+{
+  cin.clear(); // resetting failbit
+  cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // skipping input until line return
+  /*
+  ...
+  Do other needed handling, for
+  example asking for new input.
+  ...
+  */
+}
+```
+
+It is also possible to check the condition with `if (!cin)` instead of `if (cin.fail())`. Furthermore, we can check for errors at the same time we try to assign the input to the variable:
+
+```C++
+int number;
+
+if(!(cin >> number))
+{
+  cin.clear();
+  cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  // ...
+}
+```
 
 ## Sources
 1. http://www.cplusplus.com/reference/ostream/ostream/operator%3C%3C/
 2. http://www.cplusplus.com/reference/istream/istream/operator%3E%3E/
+3. https://en.cppreference.com/w/cpp/io/basic_ios/fail
+4. https://en.cppreference.com/w/cpp/io/basic_ios/clear
+5. https://en.cppreference.com/w/cpp/io/basic_istream/ignore

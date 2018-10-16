@@ -154,6 +154,42 @@ void insert(int data) {
    }
 }        
 ```
+#### Delete Operation
+void deleteNode(struct node* root, int data){
+
+    if (root == NULL) root=tempnode; 
+
+    if (data < root->key) 
+        root->left = deleteNode(root->left, key); 
+  
+
+    else if (key > root->key) 
+        root->right = deleteNode(root->right, key); 
+
+    else
+    { 
+        if (root->left == NULL) 
+        { 
+            struct node *temp = root->right; 
+            free(root); 
+            return temp; 
+        } 
+        else if (root->right == NULL) 
+        { 
+            struct node *temp = root->left; 
+            free(root); 
+            return temp; 
+        } 
+  
+        struct node* temp = minValueNode(root->right); 
+ 
+        root->key = temp->key; 
+
+        root->right = deleteNode(root->right, temp->key); 
+    } 
+    return root; 
+
+}
 
 Binary search trees (BSTs) also give us quick access to predecessors and successors.
   Predecessors can be described as the node that would come right before the node you are currently at.
