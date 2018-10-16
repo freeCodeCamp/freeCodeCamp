@@ -8,7 +8,7 @@ localeTitle: Добавить кнопку отправки в форму
 ---
 
 ## Description
-<section id="description"> Давайте добавим кнопку <code>submit</code> в вашу форму. Нажатие этой кнопки отправит данные из вашей формы в URL-адрес, указанный вами с помощью атрибута <code>action</code> формы. Вот пример кнопки отправки: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
+<section id="description"> Давайте добавим кнопку <code>submit</code> в вашу форму. Нажатие этой кнопки отправит данные из вашей формы по URL-адресу, указанному вами с помощью атрибута формы <code>action</code> . Вот пример кнопки отправки: <code>&lt;button type=&quot;submit&quot;&gt;this button submits the form&lt;/button&gt;</code> </section>
 
 ## Instructions
 <section id="instructions"> Добавьте кнопку в качестве последнего элемента вашего элемента <code>form</code> с типом <code>submit</code> и «Отправить» в качестве текста. </section>
