@@ -27,5 +27,4 @@ In PHP, a variable starts with the $ sign, followed by the name of the variable.
  ?>
  ```
  
-In PHP variables have a default value. If variable was not declared befor usage, it value is NULL.
- 
+In PHP variables have a default value. If a variable is not declared before you attempt to use it, its value will be NULL.
