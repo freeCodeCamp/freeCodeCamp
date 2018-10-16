@@ -1,10 +1,17 @@
+---	
+title: Match Ending String Patterns	
 ---
-title: Match Ending String Patterns
----
+
 ## Match Ending String Patterns
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/javascript-algorithms-and-data-structures/regular-expressions/match-ending-string-patterns/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+We need to use the anchor character (```$```) to match the string ```"caboose"``` at the end of the string ```caboose```.
+
+## Solution:
+
+```js
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/; // Change this line
+let result = lastRegex.test(caboose);
+```

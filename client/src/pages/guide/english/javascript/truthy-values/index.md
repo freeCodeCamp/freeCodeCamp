@@ -13,6 +13,14 @@ Some interesting **truthy** values are:
 {} (an empty object)
 function(){} (an “empty” function)
 
+**Rules:**
+* `false`, `zero` and `''`(empty strings) are all equivalent.
+* `null` and `undefined` are equivalent to themselves and each other but nothing else.
+* `NaN` is not equivalent to anything – including another `NaN!
+* `Infinity` is truthy – but cannot be compared to `true` or `false`!
+* An empty array(`[]`) is truthy – yet comparing with `true` is `false` and comparing with `false` is `true`?!
+
+
 A single value can therefore be used within conditions, e.g.
 
 if (value) {

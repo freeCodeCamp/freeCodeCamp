@@ -3,8 +3,8 @@ title: Fontawesome Icons For Bootstrap
 ---
 ## Fontawesome Icons For Bootstrap
 
-Bootstrap (version 4) have dropped Glyphicon icons font in their latest release. 
-Fontawesome Icons provide you with over 675 icons, they come in font format.
+Bootstrap (from version 4 onwards) have dropped Glyphicon icons font in their latest release. 
+Fontawesome Icons provide you with over 675 icons and they come in font format.
 
 #### How To Use:
 

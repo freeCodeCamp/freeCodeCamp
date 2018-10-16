@@ -39,4 +39,22 @@ If you enter a non integer value then Python will throw an error `ValueError`. *
 
 Though, inputs are stored by default as a string. Using the `str()` function makes it clear to the code-reader that the input is going to be a 'string'. It is a good practice to mention what type of input will be taken beforehand.
 
+5\. Separating input with spaces:
+```
+a,b,c=input("Please enter 3 words: ").split()
+```
+![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/@Brian_RG/multinput)
+ In this case, we can read 3 words separated by space and store in three different vars, so we can use them later.
+
+ 6\. Separating input of integers:
+```
+a,b,c=map(int,input("Please insert 3 numbers: ").split())
+```
+As we know, the input are stored by default as a string, so we can use the map() function, indicate that the input will be converted to integers and then store each value in a variable.
+
+ ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/@Brian_RG/Intput)
+ [Documentos oficiales](https://docs.python.org/3/library/functions.html#input)
+
+NOTE: Inside the split() function, we can add the separator for the input, por example, if we want to separate each value by a comma, we should write input().split(",") and so on.
+
 <a href='https://docs.python.org/3/library/functions.html#input' target='_blank' rel='nofollow'>Official Docs</a>

@@ -3,18 +3,20 @@ title: All Factors of a Number
 ---
 ## All Factors of a Number
 
-You can think of factors as the numbers that you multiply to get another number.
+You can think of factors as the whole numbers that you multiply to get another whole number. Factorizing is only applicable for the whole numbers.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Factor_Tree_of_42.png" width="90">
 
-In this case 2, 3, 6, and 7 are all numbers you can multiply to get 42. So, they are all factors of 42. However, they are not all the factors of 42. To find all the factors we can use the algorithm or step by step by process below.
+In this case 2, 3, 6, and 7 are all numbers you can multiply to get 42. So, they are all factors of 42. However, it is not the full list of factors of 42. To find all the factors we can use the algorithm or step by step by process below.
 
-Start with 1. 
+Start with 1, as it it the factor for any number. 
 
 1 * 42 = 42
 
 1 | ... | 42
 --- | --- | ---
+
+Then, follow with successively increasing numbers.
 
 Try 2. 
 
@@ -46,7 +48,7 @@ Try 6.
 1 | 2 | 3 | 6 | ... | 7 | 14 | 21 | 42
  --- | --- | --- | --- | --- | --- | --- | --- | ---
 
-Since there are no whole numbers between 6 and 7, all of the positive factors have been found. All of the numbers above can have their sign flipped and will continue to be factors of 42. In conclusion, all the factors of 42 are below.
+Since there are no whole numbers between 6 and 7, all of the positive factors have been found. All of the numbers above are to have their sign flipped and are also the factors of 42. In conclusion, all the factors of 42 are below.
 
 1 | 2 | 3 | 6 | 7 | 14 | 21 | 42 | -1 | -2 | -3 | -6 | -7 | -14 | -21 | -42
  --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | ---

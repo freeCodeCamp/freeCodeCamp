@@ -19,3 +19,7 @@ Some of the most common graph algorithms are:
 <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/breadth-first-search/index.md' target='_blank' rel='nofollow'>Breadth First Search (BFS)</a>
 
 <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/depth-first-search/index.md' target='_blank' rel='nofollow'>Depth First Search (DFS)</a>
+
+<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/dijkstra/index.md' target='_blank' rel='nofollow'>Dijkstra</a>
+
+<a href='https://github.com/freecodecamp/guides/tree/master/src/pages/algorithms/graph-algorithms/floyd-warshall-algorithm/index.md' target='_blank' rel='nofollow'>Floyd-Warshall Algorithm</a>
