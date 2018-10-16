@@ -68,6 +68,7 @@ While break can be omitted without causing fall-through in some instances (see b
             return 2;
         default:
             break;
+     }
 ```
 ```
 <?php
@@ -80,6 +81,7 @@ While break can be omitted without causing fall-through in some instances (see b
             break;
         default:
             break;
+     }
 ```
 
 #### More Information:
