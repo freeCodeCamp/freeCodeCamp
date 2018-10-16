@@ -30,7 +30,9 @@ It follows the same pattern as React where the views (what you see on the screen
 
 ### How to Get Started with React Native
 
-There are two quick easy ways to get started with React Native. Depending on your situation, one can be a better option for you. 
+There are three quick easy ways to get started with React Native. Depending on your situation, one can be a better option for you. 
 
 1. [Create React Native App](https://www.npmjs.com/package/create-react-native-app)- Similar to Create React App it get up in running using the terminal.
-1. [Expo](https://expo.io) - Best for prototyping an app or if it is earlier stage. Using Expo you can even create a quick app using drag and drop features from [snack.expo.io](https://snack.expo.io/) in the browser. 
+1. [Expo](https://expo.io) - Best for prototyping an app or if it is earlier stage. Using Expo you can even create an quick app using drag and drop features from snack.expo.io in the broswer. 
+1. [Ignite CLI](https://github.com/infinitered/ignite) - Empowers devleopers to easily create a new React Native app with plug ins. Ignite CLI also enables developers to easily setup best practices. 
+
