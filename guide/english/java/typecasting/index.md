@@ -4,7 +4,7 @@ title: Typecasting
 
 ## Typecasting
 Converting one data type to another data type is known as type casting. Since 
-Java is an Object Oriented programming language and supports both **Inheritance** and **Polymorphism**, It’s easy that super class reference variable is pointing to subClass object. 
+Java is an Object Oriented programming language and supports both **Inheritance** and **Polymorphism**, it’s easy that super class reference variable is pointing to subClass object. 
 
 When we assign value of one data type to another, the two types might not be compatible with each other. If the data types are compatible, then JVM  will perform the conversion automatically known as automatic type conversion and if not then they need to be casted or converted explicitly.
 ### Types of Typecasting
@@ -28,5 +28,12 @@ eg.
       int i = (int)l;	//explicit type casting required
 ```
 
+### Quirks:
+Floating point values are type double
+Integer values are type int unless used in a valid lower-precision assignment
+```java 
+      byte b = 23; // is valid  
+      b = 5 * 100; // is not
+```
 #### More Information:
 - [Oracle Java Docs :Typecasting](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html)
