@@ -3,11 +3,7 @@ title: Custom Types
 ---
 ## Custom Types
 
-Custom Types are one of the main features of the Elm language, and are similar to [Rust's enums](https://doc.rust-lang.org/book/second-edition/ch06-01-defining-an-enum.html).
-
-### Syntax and Definition
-
-Custom Types are types with a well-defined set of possible values, and are defined with the `type` keyword:
+Custom Types are one of the main features of the Elm language, and are similar to [Rust's enums](https://doc.rust-lang.org/book/second-edition/ch06-01-defining-an-enum.html). Custom Types are types with a well-defined set of possible values, and are defined with the `type` keyword:
 
 ```elm
 type Direction = Left | Right | Up | Down
@@ -25,4 +21,4 @@ In order to use a value of the `User` type, we must also pass an integer to it, 
 type Box a = Empty | FilledWith a
 ```
 
-Notice the lowercased `a` in the `Box` type definition. It means `Box` is a generic type, and `a` can be any type. The only restriction is that once its parameterized type is defined, the `FilledWith` constructor must hold a value of the same type (i.e. a value with `Box Int` type may only hold `Int` values in it). In fact, the `Box` type is nearly identical to the `Maybe` type from the Elm language core types.
+Notice the lowercased `a` in the `Box` type definition. It means `Box` is a generic type, and `a` can be any type. The only restriction is that once its parameterized type is defined, the `FilledWith` constructor must hold a value of the same type (i.e. a value with `Box Int` type may only hold `Int` values in it). In fact, the `Box` type is nearly identical to the `Maybe` type from the [Elm language core library](https://package.elm-lang.org/packages/elm/core/latest/Maybe).
