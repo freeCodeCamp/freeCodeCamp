@@ -30,7 +30,7 @@ To create your pages in `HTML`, you need to know how to structure a page in `HTM
 
 #### Introduction of semantic tags
 Instead of using `<div>` for every other container several semantic(these tags help screenreaders which are used by visually
-impaired) tags such as `<header>` `<footer>`. So it is advisable to use these tags instead of generic `<div>`. 
+impaired) tags such as `<header>` `<main>` `<aside>` `<footer>`. So it is advisable to use these tags instead of generic `<div>`. 
 
 #### More Information:
 [HTML: Introduction](https://www.w3schools.com/html/html_intro.asp)
