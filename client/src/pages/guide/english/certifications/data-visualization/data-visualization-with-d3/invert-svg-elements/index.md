@@ -3,8 +3,16 @@ title: Invert SVG Elements
 ---
 ## Invert SVG Elements
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/invert-svg-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Use a callback function
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Solution
+
+Since you need to shift the svg bar by the height of the svg minus the height of the bas to make it centered, add the following line of code in your ``` attr() ``` method's callback function.
+
+```javascript
+return h-d*3;
+// Since h is the height of the <svg>
+// and d*3 is the height of each bar.
+```
