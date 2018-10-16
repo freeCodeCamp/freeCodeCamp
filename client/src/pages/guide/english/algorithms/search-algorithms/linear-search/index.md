@@ -104,6 +104,17 @@ func linearSearch(for number: Int, in array: [Int]) -> Int? {
     return nil // the number was not found in the array
 }
 ```
+
+### Example in Java
+```java
+public static int linearSearch(int[] array, int num) {
+	if (array.length == 0) return - 1;
+	for (int i = 0; i < array.length; i++) {
+		if (array[i] == num) return i;
+		else return - 1;
+	}
+}
+```
         
 ## Global Linear Search
 
