@@ -1,13 +1,14 @@
+---	
+title: Match Whitespace	
+---
 
 ## Match Whitespace
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-## Problem:
+### Problem:
 
 We need to change the regex ```countWhiteSpace``` to look for multiple whitespace characters in a string.
 
-## Solution:
+### Solution:
 
 ```js
 let sample = "Whitespace is important in separating words";
