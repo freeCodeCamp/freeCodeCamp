@@ -14,6 +14,14 @@ title: CSS Images
 * **width:** This specifies a width for the image(can be percent or px or auto)</li>
 * **height:** This specifies a height for the image(can be percent or px or auto)</li>
 
+####CSS DEFAULTS
+<p>The IMG element will be rendered by default in most browsers to be displayed as an inline-block display type unless specified otherwise.</p>
+
+```
+img {
+     display: inline-block;
+     }
+```
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
