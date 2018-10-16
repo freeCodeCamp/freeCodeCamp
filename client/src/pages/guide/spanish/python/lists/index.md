@@ -81,6 +81,34 @@ _Desembalaje de listas para python-3_
  1 2 9 16 25 
 ```
 
+_Desempacando elementos de la lista para python-3_
+
+Podemos desempacar elementos de la lista asignándolo a variables, de la siguiente manera
+
+```
+>>> my_list=[2,4,6,8]
+>>> a,b,c,d = my_list
+>>>print(a,b,c,d)
+2 4 6 8
+```
+De la misma manera, si le agregamos un * a un elemento, automáticamente tomará los valores de la lista restantes:
+
+```
+>>> my_list=[2,4,6,8,10]
+>>>a,*b=my_list
+>>>print(a,b)
+2 [4,6,8,10]
+```
+Asímismo, podemos hacer lo siguiente:
+
+```
+>>> my_list=[2,4,6,8,10]
+>>>a,*b,c=my_list
+>>>print(a,b,c)
+2 [4,6,8] 10
+```
+
+
 **Mudable:**
 
 `lists` son contenedores mutables. Los contenedores mutables son contenedores que permiten cambios en los objetos que contiene el contenedor. **TODO: AÑADIR MÁS?**
