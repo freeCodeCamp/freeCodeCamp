@@ -49,6 +49,14 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
+#### Head First Python: A Brain-Friendly Guide
+
+Want to learn the Python language without slogging your way through how-to manuals? With Head First Python, you’ll quickly grasp Python’s fundamentals, working with the built-in data structures and functions. Then you’ll move on to building your very own webapp, exploring database management, exception handling, and data wrangling. If you’re intrigued by what you can do with context managers, decorators, comprehensions, and generators, it’s all here.
+
+- [Amazon](https://www.amazon.com/gp/product/1491919531/ref=as_li_tl?ie=UTF8&tag=stackabuse-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1491919531&linkId=3994ea3ef029e0ff7251abf31c6e010c)
+- ISBN-10: 9781491919538
+- ISBN-13: 978-1491919538
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
