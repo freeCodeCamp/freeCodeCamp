@@ -7,7 +7,7 @@ localeTitle: 创建文本字段
 ---
 
 ## Description
-<section id="description">现在让我们创建一个Web表单。输入元素是从用户获取输入的便捷方式。您可以创建如下文本输入： <code>&lt;input type=&quot;text&quot;&gt;</code>请注意， <code>input</code>元素是自动关闭的。 </section>
+<section id="description">现在让我们创建一个表单。<code>input</code>元素是从用户获取输入的便捷方式。您可以创建如下文本输入： <code>&lt;input type=&quot;text&quot;&gt;</code>请注意， <code>input</code>元素是能自动关闭的。 </section>
 
 ## Instructions
 <section id="instructions">在列表下创建<code>text</code>类型的<code>input</code>元素。 </section>
