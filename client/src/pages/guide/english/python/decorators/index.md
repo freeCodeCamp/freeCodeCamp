@@ -3,7 +3,13 @@ title: Python Decorators
 ---
 Decorators essentially work as wrappers. They modify the behaviour of the code before and after a target function execution, without the need to modify the function itself, augmenting the original functionality, thus decorating it.
 
-Before going in detail about decorators, there are some concepts that should be clear. In Python, functions are objects and we can do a lot of useful stuff with them.
+Before going in detail about decorators, there are some concepts that should be clear. In Python, functions are objects and we can do a lot of useful stuff with them. Some of them are:
+* [Assigning funtions to a variables](#assigning-funtions-to-a-variables)
+* [Defining functions inside other functions](#defining-functions-inside-other-functions)
+* [Functions can also be passed as parameters to other functions](#functions-can-also-be-passed-as-parameters-to-other-functions)
+* [Functions can return other functions](#functions-can-return-other-functions)
+* [Inner functions have access to the enclosing scope](#inner-functions-have-access-to-the-enclosing-scope)
+
 
 > ### Assigning funtions to a variables:
 

@@ -79,6 +79,13 @@ Local modules are further divided into two types of depenedencies: `devDepenedne
 
 A nice shorthand for installing a devDependency that I like to use is `npm i -D`. The shorthand for saving a regular dependency is `-S` instead of `-D`.
 
+We can list the local packages we have installed locally with the npm list command.
+```js 
+$ npm list --depth=0
+/usr/local/someDirectory
+└── express@4.16.4
+```
+
 ### Installing a Specific Version of a Package
 
 To do so, we mention the package version we want to install.

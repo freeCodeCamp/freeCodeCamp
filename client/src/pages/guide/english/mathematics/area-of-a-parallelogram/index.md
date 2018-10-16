@@ -8,7 +8,6 @@ A parallelogram is a four-sided figure in which the opposite sides and angles ar
 ![alt text](http://www.onemathematicalcat.org/Math/Geometry_obj/graphics/area_parallelogram.bmp)
 
 The area of a triangle is `1/2 * base * height` and the area of a parallelogram is the addition of areas of the two same triangles.
-Therefore,
 
 ### Example
 Consider a paralleogram as shown in the figure.

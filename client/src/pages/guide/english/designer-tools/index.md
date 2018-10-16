@@ -5,11 +5,10 @@ title: Designer Tools
 
 In this section, we'll have guides to a wide variety of tools used by designers.
 
-These are some of them:
+### UI
+Great for static content. 
 
 [Sketch](https://www.sketchapp.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/sketch/index.md)
-
-[Adobe Experience Design](www.adobe.com/products/experience-design.html) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Experience-design/index.md)
 
 [Adobe Photoshop](http://adobe.com/Photoshop) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/photoshop/index.md)
 
@@ -17,21 +16,38 @@ These are some of them:
 
 [Figma](https://www.figma.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Figma/index.md)
 
+### Interaction
+Better for complicated interactions.
+
+[Adobe Experience Design](www.adobe.com/products/experience-design.html) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/Experience-design/index.md)
+
 [Framer](https://framer.com) - [Guide](https://github.com/freeCodeCamp/guides/blob/master/src/pages/designer-tools/framer/index.md)
 
-[CLIP STUDIO PAINT](https://www.clipstudio.net/en)
+### Wireframes and prototyping
+Ideal for click-through prototypes.
+
+[InVision](https://www.invisionapp.com/)
+
+[Marvel](https://marvelapp.com/)
 
 [Moqups](https://moqups.com/)
 
-[Krita] (https://krita.org/en/homepage/)
+### Painting
+Great for artists.
 
-[MediBang Paint] (https://medibangpaint.com/en/)
+[Clip Studio Paint](https://www.clipstudio.net/en)
 
-[Autodesk Sketchbook] (https://www.sketchbook.com/)
+[Krita](https://krita.org/en/homepage/)
+
+[MediBang Paint](https://medibangpaint.com/en/)
+
+[Autodesk Sketchbook](https://www.sketchbook.com/)
+
+## Plug-ins
+
+### For Firefox
 
 In this section, you can see popular Firefox plug-ins used by designers.
-
-These are some of them:
 
 - [Color Picker](https://addons.mozilla.org/en-us/firefox/addon/colorzilla/?src=collection&collection_id=90e68e6a-f13f-5921-3412-5228262ca9db)
 - [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)

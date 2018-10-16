@@ -39,3 +39,6 @@ When starting out with linux, there are some basic commands everyone should know
 
  11. **less** - view file content  
 - Use `less filename.txt` to view contents of a file and navigate through them. By default, less will go through the file page by page.
+
+12. **clear** - clear terminal
+- Use `clear` to simply clear all output from your terminal.

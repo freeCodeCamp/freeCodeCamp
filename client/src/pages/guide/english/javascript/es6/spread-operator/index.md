@@ -18,3 +18,6 @@ const arr_2 = [5, 6, 7, 8]
 const arr_final = [...arr_1, ...arr_2]
 // arr_final = [1, 2, 3, 4, 5, 6, 7, 8]
 ```
+### More Information:
+
+- [MDN - Spread Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)

@@ -3,8 +3,51 @@ title: Use the Lifecycle Method componentWillMount
 ---
 ## Use the Lifecycle Method componentWillMount
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/use-the-lifecycle-method-componentwillmount/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+This challenges introduces the ``` componentWillMount ``` Lifecycle method. This is used to set state after a giventime period.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+The syntax for the method is:
+```javascript
+componentDidMount() {
+    setTimeout( () => {
+      this.setState({
+        one: 1,
+        two: false
+      });
+    }, interval);
+  }
+```
+where ``` one ``` and ``` two ``` are states you want to set after ``` interval ```ms.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint
+
+Use
+```javascript
+this.state.stateName
+```
+and change ``` stateName ``` as required.
+
+### Solution
+
+Change
+```javascript
+render() {
+    return (
+      <div>
+        <h1>Active Users: { /* change code here */ }</h1>
+      </div>
+    );
+  }
+```
+
+to 
+
+```javascript
+render() {
+    return (
+      <div>
+        <h1>Active Users: { this.state.activeUsers }</h1>
+      </div>
+    );
+  }
+```
+##### Note: The ``` componentWillMount ``` Lifecycle method has been deprecated as of version 17, and does not work on later versions. [(Source)](https://reactjs.org/docs/react-component.html)
