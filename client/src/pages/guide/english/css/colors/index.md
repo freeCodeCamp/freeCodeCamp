@@ -109,6 +109,7 @@ Above shows paragraphs styled bright orange and 20% transparent, h2 elements a s
 To get custom colors to use in CSS, you might find a color picker helpful. Some text editors have built-in color pickers, like Visual Studio Code. If you search "color picker" on Google or DuckDuckGo, you will get a color picker that you can use. Google Chrome and Firefox also have color picker add-ons that you can install. Adobe Color CC not only helps you pick a color, but will also help you pick out a color scheme for your web page! It's a good idea to check that you have enough contrast between your text and background colors by using a tool like WebAIM's Color Contrast Checker.
 
 #### More Information:
+<a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/css/legal-color-values/index.md" target="_blank">Read on at FreeCodeCamp: Legal Color Values</a>
 <a href="https://color.adobe.com/" target="_blank">Adobe Color CC</a><br>
 <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">ColorPick Eyedropper on Chrome Web Store</a><br>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/colorzilla/" target="_blank">ColorZilla add-on for Firefox</a><br>
