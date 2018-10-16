@@ -2,11 +2,14 @@
 title: scikit-learn
 ---
 ## Scikit-learn
-Scikit-learn is an open source machine learning library build for python programming language. Scikit-learn is simple to use and comes up with a range of supervised and unsupervised machine learning algorithm. This library was developed by David Cournapeau as a part of his <a href='https://en.wikipedia.org/wiki/Google_Summer_of_Code' target='_blank' rel='nofollow'>Google Summer of Code</a> project.
+
+Scikit-learn is a popular open-source machine learning library for Python, built off of previous packages like numpy and scipy. There is code available to handle everything from importing data and data cleaning to model preparation and testing. 
 
 ## Installation
 To install scikit-learn in a conda environment: `conda install scikit-learn` <br>
 To install scikit-learn with pip: `pip install scikit-learn`
 
-<p>For more information visit the <a href='http://scikit-learn.org/stable/' target='_blank' rel='nofollow'>Scikit-learn Website</a>, <a href='https://github.com/scikit-learn/scikit-learn' target='_blank' rel='nofollow'>Scikit-learn Github Repository</a>.
+## References
 
+Scikit-learn main page: http://scikit-learn.org/stable/
+Tutorials: http://scikit-learn.org/stable/tutorial/index.html
