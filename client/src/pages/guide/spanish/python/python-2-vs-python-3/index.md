@@ -4,7 +4,7 @@ localeTitle: Python 2 vs Python 3
 ---
 No estamos tomando partido en el debate. Si está interesado en saber más sobre esto con fines académicos, tal vez [este artículo que compara Python 2 y Python 3](https://wiki.python.org/moin/Python2orPython3) lo intrigaría.
 
-Pero tampoco podemos ignorar el hecho de que hay dos sabores principales de Python. ¿Por qué debería importarte, te preguntarás? Debido a que el código escrito para una versión de Python puede provocar un error de sintaxis en otra versión de Python.
+A pesar de ello, no podemos ignorar el hecho de que hay dos sabores principales de Python. ¿Por qué debería importarte, te preguntarás? Debido a que el código escrito para una versión de Python puede provocar un error de sintaxis en otra versión de Python, es importante saber algunos de sus diferenciadores.
 
 La siguiente es una declaración de `print` válida en Python 2, pero no funciona en Python 3:
 
