@@ -8,17 +8,17 @@ In this section, we explore the various hardware components of modern computers.
 ## Parts of a Personal Computer
 
 ### Central Processing Unit (CPU)
-A Central Processing Unit (CPU) is the electronic circuitry within a computer that carries out the instructions of a computer program by performing the basic arithmetic, logical, control and input/output (I/O) operations specified by the instructions.
+A Central Processing Unit (CPU) is the electronic circuitry within a computer that carries out the instructions of a computer program by performing the basic arithmetic, logical, control, and input/output (I/O) operations specified by the instructions.
   
 ![Intel Core i7](http://ecx.images-amazon.com/images/I/51MOTjmtg2L.jpg)
 
 ### Expansion Cards (eg. GPU)
-A graphics processing unit (GPU) is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device.
+An expansion card is an embeded circuit card which enhances the functionality of the motherboard by either adding in new capabilites or upgrading existing ones. The most common expansions cards are GPUs, graphical processing units. 
   
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)  
   
-### Storage (SSD or HDD)
-The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store information on the computer. It retains the memory even after loss of power.
+### Storage (SSD and HDD)
+Solid State Drives (SSD) and Hard Disk Drives (HDD) are used to store information on the computer. They retain their memory even after loss of power. Most computer have only one type of storage while higher-end computers commonly use both.
   
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
   
@@ -35,7 +35,7 @@ A case is used to house all the components of a computer.
 ### Power Supply
 A power supply is an electronic device that supplies electric energy to an electrical load.
  
- ![Power Supply](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
+![Power Supply](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
  
 ### Motherboard
 Motherboard holds and allows communication between many of the crucial electronic components of a system, such as the central processing unit (CPU) and memory, and provides connectors for other peripherals.
@@ -43,7 +43,7 @@ Motherboard holds and allows communication between many of the crucial electroni
 ![Motherboard](https://fthmb.tqn.com/mmTUdCN6UBGIKlkEggGq4fpV-3k=/768x0/filters:no_upscale()/gig-57c732ed3df78c71b60e7aa5.jpg)  
   
 ### Input and Output devices (eg. Keyboard and Mouse)
-Input/Output device is any hardware used by a human operator or other systems to communicate with a computer.
+An Input/Output device is any hardware used by a human operator or other systems to communicate with a computer.
 
 ![I/O Devices](https://www.clasohlson.com/medias/sys_master/9225929949214.jpg)
 
