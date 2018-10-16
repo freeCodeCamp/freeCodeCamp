@@ -53,7 +53,7 @@ console.log(firstName, lastName); // undefined undefined
 You can still achieve the desired result using the following syntax.
 ```js
 const obj = {propertyName: value}
-{propertyName: desiredVariableName} = obj
+const {propertyName: desiredVariableName} = obj
 ```
 
 Our previous example would be rewritten as follows:
@@ -62,4 +62,11 @@ const fullName = { first: "John", last: "Smith"};
 const {first: firstName, last: lastName} = fullName;
 
 console.log(firstName, lastName); // John Smith
+```
+**Array Destructuring with rest**
+When destructuring an array, you can unpack and assign the remaining part of it to a variable using the rest pattern:
+```js
+const [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
 ```

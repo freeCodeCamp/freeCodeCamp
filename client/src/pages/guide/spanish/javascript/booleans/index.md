@@ -15,16 +15,16 @@ var a = 'a string';
  } 
 ```
 
-Hay solo unos pocos valores que serán forzados a falso:
+Hay solo unos pocos valores que serán forzados a false:
 
-*   falso (no es realmente coaccionado como ya es falso)
-*   nulo
-*   indefinido
-*   Yaya
+*   false (no es realmente forzado ya que es false)
+*   null
+*   undefined
+*   NaN
 *   0
-*   '' (cuerda vacía)
+*   '' (string vacío)
 
-Todos los demás valores serán obligados a ser verdaderos. Cuando un valor es forzado a un booleano, también lo llamamos "falsy" o "truthy".
+Todos los demás valores serán forzados a ser true. Cuando un valor es forzado a un booleano, también lo llamamos "falsy" o "truthy".
 
 Una forma en que se usa el tipo de coerción es con el uso de los operadores o ( `||` ) y ( `&&` ):
 
@@ -48,24 +48,24 @@ var a = 'word';
  console.log(c && a); // 'word' 
 ```
 
-Como puede ver, el operador _o_ comprueba el primer operando. Si esto es cierto o veraz, lo devuelve de inmediato (por lo que obtenemos 'palabra' en el primer caso y verdadero en el segundo caso). Si no es verdad o no es verdad, devuelve el segundo operando (por lo que obtenemos 'palabra' en el tercer caso).
+Como puede ver, el operador _o_ comprueba el primer operando. Si esto es true o truthy, lo devuelve de inmediato (por lo que obtenemos 'palabra' en el primer caso y verdadero en el segundo caso). Si no es verdad o no es verdad, devuelve el segundo operando (por lo que obtenemos 'word' en el tercer caso).
 
-Con el operador y funciona de una manera similar, pero para 'y' para ser verdad, ambos operandos deben ser sinceros. Por lo tanto, siempre devolverá el segundo operando si ambos son verdaderos / verdaderos, de lo contrario, devolverá falso. Es por eso que en el cuarto caso nos hacemos realidad y en el último caso recibimos 'word'.
+Con el operador y ocurre algo similar, pero para que 'y' sea true, ambos operandos deben ser truthy. Por lo tanto, siempre devolverá el segundo operando si ambos son true/truthy, de lo contrario, devolverá false. Es por eso que en el cuarto caso obtenemos true y en el último caso obtenemos 'word'.
 
 ## El objeto booleano
 
-También hay un objeto JavaScript nativo que envuelve un valor. El valor pasado como primer parámetro se convierte en un valor booleano, si es necesario. Si se omite el valor, 0, -0, nulo, falso, NaN, indefinido o la cadena vacía (""), el objeto tiene un valor inicial de falso. Todos los demás valores, incluido cualquier objeto o la cadena "falsa", crean un objeto con un valor inicial de verdadero.
+También hay un objeto JavaScript nativo que envuelve un valor. El valor pasado como primer parámetro se convierte en un valor booleano, si es necesario. Si se omite el valor, 0, -0, null, false, NaN, undefined o una cadena vacía (""), el objeto tiene como valor inicial false. Todos los demás valores, incluido cualquier objeto o la cadena "false", crean un objeto con un valor inicial true.
 
-No confunda los valores booleanos primitivos verdaderos y falsos con los valores verdaderos y falsos del objeto booleano.
+No confunda los valores booleanos primitivos true y false con los valores true y false del objeto booleano.
 
 ## Más detalles
 
-Cualquier objeto cuyo valor no sea indefinido o nulo, incluido un objeto booleano cuyo valor es falso, se evalúa como verdadero cuando se pasa a una declaración condicional. Si es verdadero, esto ejecutará la función. Por ejemplo, la condición en la siguiente instrucción if se evalúa como verdadera:
+Cualquier objeto cuyo valor no sea undefined o null, incluido un objeto booleano cuyo valor sea false, se evalúa como true cuando se pasa a una declaración condicional. Si es true, esto ejecutará la función. Por ejemplo, la condición en la siguiente instrucción if se evalúa como verdadera:
 
 ```javascript
 var x = new Boolean(false); 
  if (x) { 
-  // this code is executed 
+  // se ejecuta este código
  } 
 ```
 
@@ -74,24 +74,24 @@ Este comportamiento no se aplica a los primitivos booleanos. Por ejemplo, la con
 ```javascript
 var x = false; 
  if (x) { 
-  // this code is not executed 
+  // se ejecuta este código
  } 
 ```
 
 No utilice un objeto booleano para convertir un valor no booleano en un valor booleano. En su lugar, use Boolean como una función para realizar esta tarea:
 
 ```javascript
-var x = Boolean(expression);     // preferred 
- var x = new Boolean(expression); // don't use 
+var x = Boolean(expression);     // recomendado 
+ var x = new Boolean(expression); // no usar 
 ```
 
-Si especifica cualquier objeto, incluido un objeto booleano cuyo valor sea falso, como el valor inicial de un objeto booleano, el nuevo objeto booleano tiene un valor verdadero.
+Si especifica cualquier objeto, incluido un objeto booleano cuyo valor sea false, como el valor inicial de un objeto booleano, el nuevo objeto booleano tiene un valor true.
 
 ```javascript
-var myFalse = new Boolean(false);   // initial value of false 
- var g = new Boolean(myFalse);       // initial value of true 
- var myString = new String('Hello'); // string object 
- var s = new Boolean(myString);      // initial value of true 
+var myFalse = new Boolean(false);   // valor inicial false 
+ var g = new Boolean(myFalse);       // valor inicial true 
+ var myString = new String('Hello'); // objeto string 
+ var s = new Boolean(myString);      // valor inicial true 
 ```
 
 No utilice un objeto booleano en lugar de un primitivo booleano.

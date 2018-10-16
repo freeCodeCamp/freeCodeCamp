@@ -69,7 +69,44 @@ _Unpacking lists for python-3_
 >>> print(*my_list)
 1 2 9 16 25
 ```
-
+_unpacking elements from the list to variables python-3_
+ We can unpack the elements of the list, and assign to variables.
+ ```
+>>> my_list = [2, 4, 6, 8]
+>>> a, b, c, d = my_list
+>>>print(a, b, c, d)
+2 4 6 8
+```
+Same way, if we add * before the var name, this will automatically take the left elements of the list
+ ```
+>>> my_list = [2, 4, 6, 8, 10]
+>>>a, *b = my_list
+>>>print(a, b)
+2 [4, 6, 8, 10]
+```
+Also, we can do this:
+```
+>>> my_list = [2, 4, 6, 8, 10]
+>>>a, *b, c = my_list
+>>>print(a, b, c)
+2 [4, 6, 8] 10
+```
+**Reverse a `list`:**
+```shell
+>>> my_list = [1, 2, 9, 16, 25]
+>>> print(my_list[::-1])
+[25, 16, 9, 2, 1]
+```
+**Slice a `list`:**
+```shell
+>>> my_list = [1, 2, 9, 16, 25]
+>>> print(my_list[:-2]) #Access sub-elements first to length-2
+[1, 2, 9]
+>>> print(my_list[2:]) #Access sub-elements 3rd to last element
+[9, 16, 25]
+>>> print(my_list[::2]) #Access list by skipping 2 indexes
+[1, 9, 25]
+```
 **Mutable:**
 
 `lists` are mutable containers. Mutable containers are containers that allow changes to which objects are contained by the container. **TODO: ADD MORE?**

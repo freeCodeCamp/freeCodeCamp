@@ -6,6 +6,8 @@ title: Functions in C++
 A function is a group of statements that together perform a task. Every C++ program has at least one function, which is `main()`.
 
 A function declaration tells the compiler about a function's name, return type, and parameters. A function definition provides the actual body of the function.
+One must always make sure, before using a function in the program, the function is defined.
+Even if function definition is after the main, just the function name and its arguments have to be declared above, so that compiler knows what is being talked about.
 
 ## The general form of a C++ function definition:
 
@@ -43,6 +45,12 @@ int max(int num1, int num2)
  
    return result; 
 }
+## calling a function:
+
+int res;
+res=max(5,10);
+
+// if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2);
 ```
 
 ## Why are functions important?

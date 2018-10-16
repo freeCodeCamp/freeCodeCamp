@@ -13,11 +13,17 @@ For example:
 - `text-indent: 15px;`
 - `text-indent: 5em;`
 - `text-indent: 2in;`
+- 'text-indent: 35cm;'
 
 The `text-indent` property can also inherit from its parent element using `inherit` value.
 
 For example:
 - `text-indent: inherit;`
+
+The 'text-indent' property can be reset to it's initial CSS property default value.
+
+For example: 
+- 'text-indent: initial;'
 
 #### More Information:
 - <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/text-indent' target='_blank' rel='nofollow'>MDN Web Docs - CSS text-indent</a>

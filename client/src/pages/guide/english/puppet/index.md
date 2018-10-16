@@ -8,11 +8,10 @@ Puppet is designed to manage the configuration of Unix-like and Microsoft Window
 Puppet consists of a custom declarative language to describe system configuration, which can be either applied directly on the system, or compiled into a catalog and distributed to the target system via client–server paradigm (using a REST API), and the agent uses system specific providers to enforce the resource specified in the manifests. The resource abstraction layer enables administrators to describe the configuration in high-level terms, such as users, services and packages without the need to specify OS specific commands (such as rpm, yum, apt). 
 source: Wikipedia/Puppet
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+## What exactly does a configuration management tool do?
+Say you have a web application served by two servers up and running, and then you need to update one configuration (for example you need to update Python), you can go to the first machine and make the update, then go to the next machine and do the same. 
+Imagine if instead of two servers you have tens, or hundreds of servers. How can you make changes to all of them? How can you ensure that all of them are in the required state? and how do you specify this required state?
+This is when Puppet comes in as a configuration management tool. 
+You define the state you want your servers to be in, you define this state in "manifest files" (.pp). Then puppet makes sure that all your servers which connect to puppet are in this desired state. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+Next time you want to install new package in your machines, you just edit the manifest file to include something like "ensure this package is installed" and puppet will take care of the rest.

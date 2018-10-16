@@ -4,6 +4,13 @@ title: Loops of all kinds
 # Loops of all kinds in C
 Loops are what you use when you have code that you want to loop, meaning that after it runs, you might want it to loop around to the beginning and run again. There are a few of these in C.
 
+
+They can be categorized as:
+
+(a) Entry controlled loops- Loops in which the condition is checked before every iteration. e.g. for loop, while loop
+(a) Exit controlled loop- Loops in which the execution takes place once even if the condition is false. e.g. for do-while loop
+
+
 ## While loops
 The simplest of the bunch are while loops. While loops will run while the condition within the parenthesis is true. They should be used when you want something to happen until a certain condition takes place.
 
