@@ -200,50 +200,50 @@ Empieza el MongoDB servidor en una terminal distinto
 
 ### La siembra de la base de datos
 
-Siguiente, permite la semilla de la base de datos. En este paso In this step, ejecutamos el siguiente comando que llenara el servidor MongoDB con algunos de los primeros conjuntos de datos que es requerido por los otros servicios. Esto incluye algunos de los esquemas, entre otras cosas.
+Siguiente, permite la semilla de la base de datos. En este paso, ejecutamos el siguiente comando que llenara el servidor MongoDB con algunos de los primeros conjuntos de datos que es requerido por los otros servicios. Esto incluye algunos de los esquemas, entre otras cosas.
 
 ```shell
 npm run seed
 ```
 
-### Start the freeCodeCamp client application and API server
+### Comience la aplicación cliente de freeCodeCamp y el servidor API 
 
-You can now start up the API server and the client applications.
+Ahora puede arrancar el servidor API y la aplicación del cliente.
 
 ```shell
 npm run develop
 ```
 
-This single command will fire up all the services, including the API server and the client applications available for you to work on.
+Este comando activará todos los servicios, incluyendo el servidor API y la aplicación del cliente, disponible para trabajar en el.
 
-Now open a web browser and visit <http://localhost:8000>. If the app loads, congratulations – you're all set.
+Ahora abre un navegador web y visita <http://localhost:8000>. Si la app carga, felicidades - ya está todo listo.
 
 > ProTip:
 >
-> The API Server serves APIs at `http://localhost:3000`
-> The Gatsby app serves the client application at `http://localhost:8000`
+> El servidor API sirve las APIs en `http://localhost:3000`
+> La Gatsby app sirve la aplicación en `http://localhost:8000`
 
-Meaning, if you visit <http://localhost:3000/explorer> you should see the APIs that we have.
+Quiere decir que si tu visitas <http://localhost:3000/explorer> tu deberías ver las APIs que tu tienes.
 
-Congratulations 🎉! You now have a copy of freeCodeCamp's entire learning platform running on your local machine.
+Felicidades 🎉! Tu ahora tienes una copia completa de la plataforma de aprendizaje de freeCodeCamp ejecutandose en tu máquina local.
 
-## Quick commands reference when working locally
+## Comandos rápidos de referencia cuando trabajas localmente
 
-[Here is a quick reference](/docs/README.md) to a list of commands that you may need locally from time to time:
+[Aqui hay una rápida referencia](/docs/README.md) a una lista de comandos que tu puedes necesitar localmente de vez en cuando:
 
-## Making changes to your clone of freeCodeCamp locally
+## Realizar cambios a su copia local de freeCodeCamp
 
-Next, you can make changes to files, and commit your changes.
+Siguiente, puedes haceer cambios a los archivos, y confirmar los cambios.
 
-Follow these steps:
+Sigue estos pasos:
 
-1. Check that you are on the `master` branch
+1. Comprobar que está en la rama `master`
 
     ```shell
     git status
     ```
 
-    You should get a output like this:
+    Deberias obtener una salida como esta:
 
     ```shell
     On branch master
@@ -252,39 +252,39 @@ Follow these steps:
     nothing to commit, working directory clean
     ```
 
-    If you are not on master or your working directory is not clean, resolve any outstanding files/commits and checkout `master`:
+    Si no estás en el master o tu directorio de trabajo no esta limpio, resuelve cualquier expediente o comando pendiente y checkout `master`:
 
     ```shell
     git checkout master
     ```
 
-2. Next, you would want to `rebase` from the `upstream`.
+2. A continuación le gustaría hacer un `rebase` del `upstream`.
 
-    This step **will sync the lastest changes** from the main repository of freeCodeCamp. Its important that you rebase as often as possible, to avoid conflicts later.
+    Este paso **sincronizará los últimos cambios** desde el repositorio principal de freeCodeCamp. Es importante que rebase tan a menudo como sea posible, para evitar conflictos posteriores.
 
     ```shell
     git pull --rebase upstream master
     ```
 
-    You can optionally push this branch back to your origin, to have a clean history on your fork on GitHub.
+    Opcionalmente, se puede impulsar esta rama de vuelta a tu origen, para tener un historial limpio en tu fork en GitHub.
 
     ```shell
     git push origin master --force
     ```
 
-3. Next, you will have to create a fresh new branch.
+3. Siguiente, usted tendrá que crear una nueva rama.
 
-    Working on a separate branch for every single issue, helps you keep your local work copy clean. You should never work on the `master`. This will soil your copy of freeCodeCamp and you may have to start over with a fresh clone or fork.
+    Trabajando en una rama separada para cada cuestión, te ayuda a mantener tu copia de trabajo local limpia. Tu nunca debes tranbajar en el `master`. Esto ensuciará tu copia local de freeCodeCamp y puede que tengas que empezar de nuevo con una copia fresca del fork.
 
-    Check that you are on `master` as explained previously, and branch off from there:
+    Comprueba que estas en `master` como se explica anteriormente, y ve construyendo desde ahí:
 
     ```shell
     git checkout -b fix/update-guide-for-xyz
     ```
 
-    Your branch name should start with a `fix/`, `feat/`, etc. Avoid, using issue no.s in branches. Keep them short, meaningful and unique.
+    Tu nombre de rama deberá empezar con un `fix/`, `feat/`, etc. Evita el uso de la edición no.s en las ramas. Mantenlas cortas y únicas.
 
-    Some examples of good branch names are:
+    Algunos ejemplos de buenos nombres de rama son:
 
     ```md
     fix/update-challenges-for-react
@@ -294,19 +294,19 @@ Follow these steps:
     translate/add-spanish-basic-html
     ```
 
-4. Next, you can work on the editing pages and working on the code in your favorite text editor.
+4. A continuación puedes trabajar en la edición de páginas y en el código en su editor de texto favorito.
 
-5. Once you are happy with the changes you should optionally run freeCodeCamp locally to preview the changes.
+5. Una vez estés satisfecho con los cambios deberías opcionalmente ejecutar freeCodeCamp localmente para una vista previa de los cambios.
 
-6. Make sure you fix any errors, and check the formating of your changes. We have style guide for the Guide articles and Coding challenges.
+6. Asegúrese de corregir los errores, y el formateo de los cambios. Contamos con la guía de estilo para los artículos de guía y los We have style guide for the Guide articles y los desafios de codificación.
 
-7. Next, check and confirm the files you are updating
+7. Siguiente, comprueba y confirma los archivos que estas actualizando
 
     ```shell
     git status
     ```
 
-    This should show a list of `unstaged` files that you have edited.
+    Esto debería mostrar una lista de archivos `unstaged` que tu has editado.
 
     ```shell
     On branch feat/documentation
@@ -323,9 +323,9 @@ Follow these steps:
     ...
     ```
 
-8. Stage the changes and make a commit.
+8. Fase de cambios y hacer un commit.
 
-    In this step you should only mark files that you have edited, or added. You can perform a reset, and resolve files that you did not intend to change.
+    En este paso sólo debe marcar los archivos que has editado o añadido. Puede realizar un reinicio y resolver archivos que no desee cambiar.
 
     ```shell
     git add path/to/my/changed/file.ext
