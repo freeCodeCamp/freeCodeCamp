@@ -162,18 +162,58 @@ An error ocurred: There was an error on your application
 ```
   
 
-  
- #### More Information:
- [In depth Redux Middleware documentation](https://redux.js.org/advanced/middleware)
+#### Creating Middleware
 
- [In depth Redux ApplyMiddleware documentation](https://redux.js.org/api/applymiddleware)
+Redux middleware are just functions with the signature
 
- [Redux Middleware List](https://redux.js.org/introduction/ecosystem#middleware)
+```js
+const reduxMiddleware = store => next => action => {
+  // do some middleware stuff
+}
+```
 
+Side Note - The fact that this is a function that takes a store and returns a function that takes a next callback and returns a function that takes an action and performs some middlware operations might look a bit odd. why do that instead of three parameters? Well this is actually a very helpful technique from functional programming called currying and it enables a lot of goodness like partial application. The main difference though is how you call the middleware function.
+
+```js
+// calling an uncurried version - NOT how you call the function above
+reduxMiddleware(store, next, action)
+
+// vs calling the curried version - how you call the function above
+reduxMiddleware(store)(next)(action)
+```
+
+The parameters here are:
+
+1.) store - your redux store and calling its "getState" method returns the current state of your store.
+```js
+let currentState = store.getState()
+```
+2.) next - a callback that you pass an action to continue with the flow of your redux middleware / reducers.
+```js
+next(action)
+```
+3.) action - the action dispatched to the store to update state
+
+Let's use the information above to create a simple logging middleware that will log "User Updated!" to the console every time an action with type "UPDATE_USER" is dispatched.
+
+```js
+const updateUserLogger = store => next => action => {
+  if (action.type === "UPDATE_USER") {
+    console.log("User Updated!");
+  }
+  next(action);
+};
+```
+
+
+#### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-   
-  
- [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+- [Middleware - Redux docs](https://redux.js.org/advanced/middleware)
+- [In depth Redux Middleware documentation](https://redux.js.org/advanced/middleware)
+- [In depth Redux ApplyMiddleware documentation](https://redux.js.org/api/applymiddleware)
+- [Redux Middleware List](https://redux.js.org/introduction/ecosystem#middleware)
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
    
  [Express]: <https://expressjs.com/>
 [node.js]: <http://nodejs.org>
