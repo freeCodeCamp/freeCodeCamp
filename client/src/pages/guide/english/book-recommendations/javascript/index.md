@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### JavaScript and JQuery: Interactive Front-End Web Development
+
+This book was written for anyone who wants to use JavaScript to make their websites a little more interesting, engaging, interactive, or usable. In particular, it is aimed at people who do not have a degree in computer science (well, not yet anyway).
+
+- [Amazon] (https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
