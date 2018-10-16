@@ -53,7 +53,7 @@ console.log(firstName, lastName); // undefined undefined
 You can still achieve the desired result using the following syntax.
 ```js
 const obj = {propertyName: value}
-{propertyName: desiredVariableName} = obj
+const {propertyName: desiredVariableName} = obj
 ```
 
 Our previous example would be rewritten as follows:
