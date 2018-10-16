@@ -1,10 +1,10 @@
 ---
 title: SQL Avg Function
-localeTitle: Función de promedio de SQL
+localeTitle: Función SQL - AVG (promedio)
 ---
-## Función de promedio de SQL (AVG)
+## Función SQL - AVG (promedio)
 
-"Promedio" es una función agregada (Agrupar por). Se utiliza para calcular el promedio de una columna numérica del conjunto de filas devueltas por una declaración SQL.
+`AVG` es una función de agregación (`GROUP BY`). Se utiliza para calcular el promedio de una columna numérica del conjunto de filas devueltas por un comando SQL.
 
 Aquí está la sintaxis para usar la función:
 
