@@ -331,13 +331,13 @@ Sigue estos pasos:
     git add path/to/my/changed/file.ext
     ```
 
-    Or, alternatively you can add all the `unstaged` files to the staging area:
+    O puede añadir alternativamente todos los archivos `unstaged` al area de preparación:
 
     ```shell
     git add .
     ```
 
-    Only the files that were moved to the staging area will added when you make a commit.
+    SOlo los archivos que fueron movidos al area de preparación se añadirán cuando hagas un commit.
 
     ```shell
     git status
@@ -357,24 +357,24 @@ Sigue estos pasos:
         modified:   docs/how-to-work-on-guide-articles.md
     ```
 
-    Now, you can commit your changes with a short message like so:
+    Ahora puedes hacer un commit a tus cambios con un mensaje corto como:
 
     ```shell
     git commit -m "fix: my short commit message"
     ```
 
-    Some examples:
+    Algunos ejemplos:
 
     ```md
     fix: update guide article for Java - for loop
     feat: add guide article for alexa skills
     ```
 
-    Optional:
+    Opcional:
 
-    We highly recommend making a conventional commit message. This is a good practice that you will see on some of the popular Open Source repositories. As a developer, this encourages you to follow standard practices.
+    Es muy recomendable hacer un mensaje commit convencional. Esta es una buena práctica que tu verás en algunos de los mas populares repositorios de código abierto. Como desarrollador, esto te anima a seguir las prácticas estándar.
 
-    Some examples of conventional commit messages are:
+    Algunos ejemplos de mensajes commit convencional son:
 
     ```md
     fix: update HTML guide article
