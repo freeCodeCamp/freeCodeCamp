@@ -9,7 +9,7 @@ Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js 
 - Javascript runtime built on Chrome's V8 JavaScript engine.  
 Every browser has a JavaSript engine built in it to process JavaScript files contained in websites. Google Chrome uses V8 engine which is built using C++. Node.js also uses this super-fast engine to interpret JavaScript files.
 - Node.js uses an event-driven model.  
-This means that Node.js waits for certain events to take place. It then acts on those events. Events can be anything from a click to a HTTP request. We can also declare our own custom events and make node.js listen for those events.
+This means that Node.js is able to wait for that event to take place in the background while continuing to process events without needing to halt the event loop or block your browser.  This is called an asynchronous event. Once the background event has been completed, it then acts on those events. Events can be anything from a click to a HTTP request. We can also declare our own custom events and make Node.js listen for those events.
 - Node.js uses a non-blocking I/O model.  
 We know that I/O tasks take much longer than processing tasks. Node.js uses callback functions to handle such requests.
 
