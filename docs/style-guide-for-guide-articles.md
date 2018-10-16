@@ -14,7 +14,7 @@ However, you can include special characters in the article title.
 
 Here are some examples of properly named titles:
 
-> [`src/pages/html/tables/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/html/tables/index.md)
+> [`/client/src/pages/html/tables/index.md`](/client/src/pages/guide/english/html/tables/index.md)
 
 ```markdown
 ---
@@ -22,7 +22,7 @@ title: Tables
 ---
 ```
 
-> [`src/pages/css/borders/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/css/borders/index.md)
+> [`/client/src/pages/css/borders/index.md`](/client/src/pages/guide/english/css/borders/index.md)
 
 ```markdown
 ---
@@ -30,7 +30,7 @@ title: Borders
 ---
 ```
 
-> [`src/pages/javascript/loops/for-loop/index.md`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/src/pages/javascript/loops/for-loop/index.md)
+> [`/client/src/pages/javascript/loops/for-loop/index.md`](/client/src/pages/guide/english/javascript/loops/for-loop/index.md)
 
 ```markdown
 ---
