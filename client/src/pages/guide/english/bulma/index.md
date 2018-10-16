@@ -5,7 +5,7 @@ title: Bulma
 
 Bulma is a open source CSS framework based on flexbox and used by more than 100,000 developers.
 Why bulma?
-* 100% Responsive
+* 100% Responsive(Designed fo mobile first.)
 * Modular
 * Modern
 * Free(Source code on Github)
