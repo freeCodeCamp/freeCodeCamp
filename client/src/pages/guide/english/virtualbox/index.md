@@ -11,6 +11,8 @@ VirtualBox can be downloaded here:
 [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
 
 # Setup
+- Sometimes you may need to enable virtualization from your bios settings
+
 - To set up your first Virtual Machine, download the .iso file from your desired Operating System site. 
 
 - Next you will hit the "New" button in VirtualBox, and name your VM with any name you like. 

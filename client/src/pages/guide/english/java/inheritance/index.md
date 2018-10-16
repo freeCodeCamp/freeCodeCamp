@@ -50,7 +50,7 @@ Therefore, whenever you need to share some common piece of code between multiple
 
 ## What can be inherited ?
 
-*   All `protected` and `public` fields and methods from parent
+*   All `protected` and `public` members (fields, methods, and nested classes) from parent, regardless what package the sub-class is in. If a sub-class is in the same package as its parent, it will also inherit `package-private` members from parent. 
 
 ## What cannot be inherited ?
 

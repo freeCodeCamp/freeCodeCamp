@@ -69,7 +69,22 @@ _Unpacking lists for python-3_
 >>> print(*my_list)
 1 2 9 16 25
 ```
-
+**Reverse a `list`:**
+```shell
+>>> my_list = [1, 2, 9, 16, 25]
+>>> print(my_list[::-1])
+[25, 16, 9, 2, 1]
+```
+**Slice a `list`:**
+```shell
+>>> my_list = [1, 2, 9, 16, 25]
+>>> print(my_list[:-2]) #Access sub-elements first to length-2
+[1, 2, 9]
+>>> print(my_list[2:]) #Access sub-elements 3rd to last element
+[9, 16, 25]
+>>> print(my_list[::2]) #Access list by skipping 2 indexes
+[1, 9, 25]
+```
 **Mutable:**
 
 `lists` are mutable containers. Mutable containers are containers that allow changes to which objects are contained by the container. **TODO: ADD MORE?**

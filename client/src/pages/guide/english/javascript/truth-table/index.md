@@ -6,3 +6,4 @@ title: Truth Table
 This is why you should always use `===` and `!==`.
 
 Source: <a href='https://dorey.github.io/JavaScript-Equality-Table/' target='_blank' rel='nofollow'>https://dorey.github.io/JavaScript-Equality-Table/</a>
+<a href='https://dorey.github.io/JavaScript-Equality-Table/unified/' target='_blank' rel='nofollow'>unified table</a>

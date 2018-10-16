@@ -2,39 +2,85 @@
 title: array
 ---
 
-## Introduction of PHP array
+## Introduction to PHP Array
 
-An array in PHP is actually an ordered map. A map is a type that associates values to keys. 
-This type is optimized for several different uses; it can be treated as an array, list (vector), hash table (an implementation of a map), dictionary, collection, stack, queue, and probably more. 
-As array values can be other arrays, trees and multidimensional arrays are also possible.
+An array can be thought of as a collection of items.
 
+## Syntax
 
-Here is an example:
+An array is defined by array(), or [].
+
+An example of an array in each style can be seen below:
+
 ```
 <?php
-// array without keys
-// This array is also an example of "indexed array"
-$bikes = array("Suzuki","BMW","Yamaha");
-echo "I like " . $bikes[0] . ", " . $bikes[1] . " and " . $bikes[2] . ".";
-?>
+
+$bikes = array('Suzuki','BMW','Yamaha');
 ```
-
-PHP array has so many functions to work with. Here is all list sorted: <a href="https://www.w3schools.com/php/php_ref_array.asp" target="_blank">Functions</a>
-
-## Associative arrays
-
-PHP arrays can be used as key and value like map. It can be accessed by key too.
-
-Here is an simple example:
 ```
 <?php
-$array = array(
-    "foo" => "bar",
-    "bar" => "foo",
-);
 
-echo $array['bar'];
-
+$bikes = ['Suzuki', 'BMW', 'Yamaha'];
 ```
 
-Have a good day, happy coding !!!
+## Key => Value
+
+Arrays can also be defined with named keys, as shown below:
+
+```
+<?php
+
+$bikes = [
+    'favorite'        => 'Suzuki',
+    'second favorite' => 'BMW',
+    'not my favorite' => 'Yamaha'
+];
+```
+
+## Accessing Items
+
+Items within an array can be accessed by their corresponding key, or location within the array.
+
+For instance:
+
+```
+<?php
+
+$bikes = ['Suzuki', 'BMW', 'Yamaha'];
+
+echo 'I like '. $bikes[0]
+```
+
+Would produce the following output:
+
+```
+I like Suzuki
+```
+
+Another example, using named keys can be seen below:
+```
+<?php
+
+$bikes = [
+    'favorite'        => 'Suzuki',
+    'second favorite' => 'BMW',
+    'not my favorite' => 'Yamaha'
+];
+
+echo 'I like '. $bikes['not my favorite']
+```
+
+Would produce the following output:
+
+```
+I like BWM
+```
+
+## Pitfalls
+
+When working with arrays, there are a few important things to keep in mind:
+
+1) A comma after the last element is optional.
+2) Named keys must be escaped to be accessed (i.e. $bikes[not my favorite] would not work).
+
+For more information, please see [PHP: Arrays](http://php.net/manual/en/language.types.array.php)

@@ -12,7 +12,7 @@ There are three different kinds of popup methods used in JavaScript: <a href='ht
 The <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/alert' target='_blank' rel='nofollow'>alert method</a> displays messages that don't require the user to enter a response. Once this function is called, an alert dialog box will appear with the specified (optional) message. Users will be required to confirm the message before the alert goes away. 
 
 ### Example:
-`window.alert("Welcome to our website");`
+`window.alert("Hello world");`
 
 ![MDN Alert Example](https://mdn.mozillademos.org/files/130/AlertHelloWorld.png)
 
@@ -21,7 +21,7 @@ The <a href='https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm' ta
 
 ### Example:
 ```javascript
-var result = window.confirm('Are you sure?');
+var result = window.confirm('Do you really want to leave?');
 if (result === true) {
     window.alert('Okay, if you're sure.');
 } else { 
@@ -51,7 +51,7 @@ swal("Oops!", "Something went wrong on the page!", "error");
 ```
 The above code will produce the following popup: 
 ![SweetAlert Example](https://ludu-assets.s3.amazonaws.com/lesson-content/rWqOoQXgDrSVSMrAKiZ9)
-SweetAlert is by no means the only subsitute for standard modals, but it is clean and easy to implement. 
+SweetAlert is by no means the only substitute for standard modals, but it is clean and easy to implement. 
 
 
 
