@@ -24,9 +24,6 @@ User Research, Data Analysis, UX and Interaction Design, Graphic and UI Design, 
  <a href='https://www.youtube.com/watch?v=v-XDF57OOQQ' target='_blank' rel='nofollow'>How to be a Freelance Product Designer — Jared Erondu</a>
 [Dann Petty Youtube Channel] (https://www.youtube.com/channel/UCTOwGti_mRb2J1JfTdIkg_w)
 
- <a href='https://www.youtube.com/watch?v=v-XDF57OOQQ' target='_blank' rel='nofollow'>How to be a Freelance Product Designer — Jared Erondu</a>
-[Dann Petty Youtube Channel] (https://www.youtube.com/channel/UCTOwGti_mRb2J1JfTdIkg_w)
-
 
  ###### Resources:
 <a href='https://medium.com/@jeanniehuang/product-design-resources-ive-found-helpful-5dadad58dcff' target='_blank' rel='nofollow'>Product Design Resources I’ve Found Helpful</a>

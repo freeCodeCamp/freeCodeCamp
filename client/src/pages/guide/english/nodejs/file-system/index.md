@@ -27,12 +27,12 @@ Node.js code to read file from your computer and return the content to the conso
 ```javascript
 const fs = require('fs');
 fs.readFile('input.txt', 'utf-8', (err, data) => {
-  if(err){
-  console.log(err);
-  }
-  else{
-  console.log("Content present in input.txt file : " + data.toString());
-  }
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log("Content present in input.txt file : " + data.toString());
+    }
 });
 ```
 The above code reads a file *input.txt* from your computer and returns the content to the console.
@@ -55,12 +55,12 @@ Node.js code to write content into file.
 ```javascript
 const fs = require('fs');
 fs.writeFile('output.txt', "New content added", (err, data) => {
-	if(err){
-		console.log(err);
-	}
-	else{
-		console.log("The file is saved");
-	}
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log("The file is saved");
+    }
 });
 ```
 The above code creates a file *output.txt* and add content *New content added* to it.

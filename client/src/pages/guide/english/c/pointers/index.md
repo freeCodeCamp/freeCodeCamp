@@ -66,7 +66,7 @@ Notice that the `*` is required before each variable. This is because being a po
 
 ## Practical Uses of Pointers
 ### Arrays
-The most common application of a pointer is in an array. Arrays, which you'll read about later, allow for a group of variables. You don't actually have to deal with `*` and `&` to use arrays, but that's what they're doing behind the scenes.
+The most common application of a pointer is in an array. Arrays, which you'll read about later, allow for a group of variables. You don't actually have to deal with `*` and `&` to use arrays, but that's what they're doing behind the scenes. A commonly used array is for strings. Since strings are not defined in C, they are simply created as a character array, commonly denoted by `char * stringName;`
 
 ### Functions
 Sometimes you want to adjust the value of a variable inside of a function, but if you simply pass in your variable by-value, the function will work with a copy of your variable instead of the variable itself. If, instead, you pass in the pointer pointing to the memory location of the variable, you can access and modify it from outside of its normal scope. This is because you are touching the original memory location itself, allowing you to adjust something in a function and having it make changes elsewhere. In contrast to "call by value", this is called "call by reference".

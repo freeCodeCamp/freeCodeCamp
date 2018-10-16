@@ -25,7 +25,7 @@ Happy contributing 🎉!
 
 You can choose to contribute to any area that interests you:
 
-1. [Contribute to this open source codebase.](#contribute-to-this-open-source-codebase). Help editing [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
+1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help editing [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
 
 2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
@@ -69,7 +69,7 @@ All our Coding challenges are curated by the community, bringing in expert knowl
 
 You can help expand them and make their wording more clear. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
 
-If you're interested in improving these coding chalenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
+If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
 ### Translate guide articles and coding challenges
 
@@ -138,4 +138,4 @@ If these issues lack clarity on what needs to be done, feel free ask questions i
 
 **I found a typo, should I report an issue before I can make a pull request?**
 
-For typos and other wording changes, you can directly open pull requests without first creating an issues. Issues are more for discussing larger problems associated with code, or more structural aspects of the curriculum.
+For typos and other wording changes, you can directly open pull requests without first creating an issue. Issues are more for discussing larger problems associated with code, or more structural aspects of the curriculum.

@@ -9,9 +9,9 @@ A Minimum Marketable Feature (MMF) is a self-contained feature that can be devel
 
 Break down MMF to its core components:
 
-**Minimum** - the absolute smallest set of functionality. This is essential for getting any given feature to market quickly
+**Minimum** - The absolute smallest set of functionality. This is essential for getting any given feature to market quickly.
 
-**Marketable** - Selling the end user or organization that the feature has significant value
+**Marketable** - Selling the end user or organization that the feature has significant value.
 
 **Feature** - The percieved value by the end user. What does it give me? Brand recognition? More Revenue? Help cut costs? Does it give me a competative advantage? 
 
