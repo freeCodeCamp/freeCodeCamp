@@ -1,7 +1,7 @@
 ---
 title: Computer Science
 ---
-## Computer Science
+# Computer Science
 
 Computer Science is the study of computers and the concepts that make computers possible.
 
@@ -31,6 +31,9 @@ Computer science is categorized into several fields. The following are among the
   - Operating Systems
   - Database Systems
 
-##More Information
-[Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
+# Want to learn more?
+
+* [Khan Academy](https://www.khanacademy.org/computing/computer-science) : A deep dive into algorithms, cryptography, introductory computing, and much more.
+* [CS50](https://cs50.harvard.edu) : A free, introduction to computer science course, taught by David J. Malan and staff at Harvard & Yale Universities.
+* [Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
 
