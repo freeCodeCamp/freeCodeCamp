@@ -55,7 +55,7 @@ Get size of map with size function
 ```
 map<int, int > myMap;
 myMap[100] = 3
-cout << "size of map is " << myMap.size() << '\n';
+count << "size of map is " << myMap.size() << '\n';
 ```
 
 Output:
