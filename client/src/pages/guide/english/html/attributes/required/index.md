@@ -6,7 +6,7 @@ title: Required
 
 The HTML required attribute is used in an input element to make the input field in a form required to submit the form.
 If the user does not fill in the input field the form will not submit and it will give a message asking the user to fill out the field. 
-The `< Required>` attribute is applicable to `<input>` , `<select>` , `<textarea>`. 
+The `required` attribute is applicable to `<input>`, `<select>`, `<textarea>`. 
 
 For example: 
 ```html

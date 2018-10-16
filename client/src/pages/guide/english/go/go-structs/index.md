@@ -22,6 +22,8 @@ To initialise a new object, we can use the Go shorthand syntax for creating and 
 
 ```go
 func main() {
+    type MyInt int64
+    
     // Create a user and set both the first and last name properties
     user1 := User{
         FirstName: "John",
@@ -36,9 +38,13 @@ func main() {
 
 ### Object methods
 
-Go enables assigning methods to structs. This enables grouping of relevant operations to the data it affects. In this example we will write a method on the `User` struct to generate the full name of the user:
+Go enables declaring methods to struct types and non struct types. This enables grouping of relevant operations to the data it affects. In this example we will write a method on the `User` struct to generate the full name of the user and String method on `MyInt` type to return a String:
 
 ```go
+func (myint MyInt) String() string {
+    return fmt.Sprintf("%d", myint)
+}
+
 func (u User) FullName() string {
     return strings.Join([]string{u.FirstName, u.LastName}, " ")
 }
@@ -47,7 +53,7 @@ func (u User) FullName() string {
 This method will join the first and last name of the user with a space in between. Calling the method might look like this:
 
 ```go
-    println(user1.FullName())
+    fmt.println(user1.FullName())
 ```
 
 ### Struct Tags
@@ -79,11 +85,13 @@ type User struct {
 }
 ```
 
-Doing this will make the following code throw an error at build time as it is trying to interact with an unexported property:
+Doing this will make the following code throw a compilation error as it is trying to assign value to an unexported property:
 
 ```go
     user1.email = "john@wick.com"
 ```
+
+Same principle applies when attempting to read data from an unexported property.
 
 This also applies to methods:
 
@@ -125,5 +133,5 @@ func main() {
     user1.SetEmail("john@wick.com")
 
     // Access and print the user's email address
-    println(user1.Email())
+    fmt.println(user1.Email())
 }

@@ -3,8 +3,23 @@ title: Use the Lifecycle Method componentWillMount
 ---
 ## Use the Lifecycle Method componentWillMount
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/react/use-the-lifecycle-method-componentwillmount/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The challenge is a basic introduction to React's LifeCycle components.
+These methods are also called Lifecycle Hooks.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint 1
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Log something to the console in the ```react componentWillMount ``` method.
+
+### Hint 2
+
+The `` console.log(); `` statement is used to log to the browser console.
+
+### Solution
+
+Since you can log anything, use the ``` console.log(); ``` and pass in a string. The ``` componentWillMount ``` method should look like:
+
+```javascript
+componentWillMount() {
+  console.log('Component being mounted');
+}
+```

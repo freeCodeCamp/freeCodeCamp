@@ -217,4 +217,4 @@ encodeURI(Free Code Camp);
 
 [MDN encodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI)
 
-[https://www.w3schools.com/tags/ref_urlencode.asp](HTML URL Encoding Reference)
+[HTML URL Encoding Reference](https://www.w3schools.com/tags/ref_urlencode.asp)

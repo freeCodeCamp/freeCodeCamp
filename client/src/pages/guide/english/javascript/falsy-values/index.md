@@ -4,7 +4,7 @@ title: Falsy Values
 
 ## Description
 
-A falsy value is something which evaluates to FALSE, for instance when checking a variable. There are only six falsey values in JavaScript: `undefined`, `null`, `NaN`, `0`, `""` (empty string), and `false` of course.
+A falsy value is something which evaluates to FALSE, for instance when checking a variable. There are only six falsy values in JavaScript: `undefined`, `null`, `NaN`, `0`, `""` or `''` (empty string), and `false` of course.
 
 ## Checking for falsy values on variables
 
@@ -25,7 +25,7 @@ var filledString = "some string in here"; // <-- truthy
 
 var zero = 0; // <-- falsy
 
-var numberGreaterThanZero // <-- truthy
+var numberGreaterThanZero; // <-- falsy
 
 var emptyArray = []; // <-- truthy, we'll explore more about this next
 

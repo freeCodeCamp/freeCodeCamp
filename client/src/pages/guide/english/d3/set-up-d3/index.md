@@ -84,5 +84,36 @@ The file d3.v2.min.js is saved in the same folder as the HTML file so that it ca
  ![](https://d1gg5jm9r4jrt6.cloudfront.net/d3.js.javascript.console_300x420.png)
  
  If all the tests passed and you were able to load D3.js correctly, you are ready to get started.
+ 
+ ### Simple Code to get you Started
+ 
+ Here is a simple Code with the use of D3JS library. Just copy paste it into a file and save it in html format ex. index.html or hello.html . You can name the file whatever You like but append .html at the end so that it could be rendered as a valid html file. Open it in a Web browser by double clicking it.
+ 
+ ```
+ <!DOCTYPE html>
+<html>
+
+<head>
+
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+
+<body>
+
+<script>
+		
+	d3.select("body")
+		.append("p")
+			.style("color","red")
+				.text("A Hello using D3JS");
+				
+</script>
+
+</body>
+
+</html>
+ 
+ ```
     
  #### More Information

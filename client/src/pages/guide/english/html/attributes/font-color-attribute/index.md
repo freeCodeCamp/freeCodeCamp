@@ -6,7 +6,7 @@ title: Font Color Attribute
 This attribute is used to set a color to the text enclosed in a ```<font>``` tag.
 
 ### Syntax:
- ``html
+ ```html
  <font color= "color">
  ```
  

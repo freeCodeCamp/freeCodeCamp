@@ -17,9 +17,9 @@ In Python, a function definition has the following features:
 
 1. The keyword `def`
 2. a function name
-3. paranthesis'()', and within paranthesis input parameters,although the input parameters are optional.
+3. paranthesis'()', and within paranthesis input parameters,although the input parameters are optional
 4. a colon ':'
-5. some block of code to execute
+5. some block of code to execute (that must be indented relative to the definition statement)
 6. a return statement (optional)
 
 ```python
@@ -126,6 +126,6 @@ result = s(1, 2)
   print(x)  # error - x is not defined
   print(double(4))  # prints 8
   ```
--Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
+- Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
 ### More Information:
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python 3 Docs: Defining Functions</a>

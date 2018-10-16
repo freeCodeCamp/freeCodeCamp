@@ -47,3 +47,9 @@ NotWorkingFunction(20, 30); // 50;
 ```
 
 Works fine.
+
+However, if you want to use the default first parameter, you can pass `undefined` as the first argument of the function call.
+
+```
+NotWorkingFunction(undefined, 30); // 40;
+```

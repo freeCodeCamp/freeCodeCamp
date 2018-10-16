@@ -60,7 +60,19 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+## BASH
+
+*The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
+- [Amazon](https://www.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
+- ISBN-13: 978-1593273897
+
+*Learning the bash Shell: Unix Shell Programming by Cameron Newham*
+- [Amazon](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
+- ISBN-13: 978-0596009656
+
 ## C-lang
+*C Notes for Professionals book
+-https://books.goalkicker.com/CBook/
 
 *The C Programming Language* by Brian W. Kernighan and Dennis M. Ritchie
 - [Amazon Smile](https://smile.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/)
@@ -69,6 +81,16 @@ title: Books to Read for Programmers
 *A Book on C: Programming in C*
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
+
+## C#
+
+*C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
+- https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell
+- ISBN-13: 978-1491927069
+
+*Pro C# 7: With .NET and .NET Core Paperback – Nov 21 2017* by Andrew Troelsen (Author), Philip Japikse (Author)
+- https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
+- ISBN-13: 978-1484230176
 
 ## Coding Interview
 
@@ -203,13 +225,22 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Facts-Fallacies-Software-Engineering-Robert/dp/0321117425/)
 - ISBN-13: 978-0321117427
 
-The Mythical Man-Month: Essays on Software Engineering
+*The Mythical Man-Month: Essays on Software Engineering*
 - [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 - ISBN-13: 978-0201835953
 
-*Deep Learning*
-- [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618/ref=sr_1_4?s=books&ie=UTF8&qid=1539402410&sr=1-4&keywords=deep+learning)
+*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
+- [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
+*Oracle® Database Notes for Professionals*
+https://books.goalkicker.com/OracleDatabaseBook/
+
+*Pro PHP Programming - Peter MacIntyre*
+[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+
+*Mastering Linux Shell Scripting by Andrew Mallett*
+- [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
+- ISBN-13: 978-1784396978
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 

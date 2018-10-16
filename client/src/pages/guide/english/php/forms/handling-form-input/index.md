@@ -2,8 +2,13 @@
 title: Handling Form Input
 ---
 ## Handling Form Input
+GET VS POST
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/php/forms/handling-form-input/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+One can get form inputs with global variables $_POST and $_GET.
+```
+$_POST["firstname"] or $_GET['lastname']
+```
+
 
 <a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
 
