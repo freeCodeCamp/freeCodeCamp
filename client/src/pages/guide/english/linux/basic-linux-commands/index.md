@@ -42,3 +42,6 @@ When starting out with linux, there are some basic commands everyone should know
 
 12. **clear** - clear terminal
 - Use `clear` to simply clear all output from your terminal.
+
+13. **cp** - copy files and directories
+- Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
