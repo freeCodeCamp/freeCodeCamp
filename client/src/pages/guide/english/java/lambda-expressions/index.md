@@ -14,7 +14,7 @@ The Stream Api is used in java to allow chaining of sequential and aggregate ope
 In this small example you can see that one of the utilities of a stream is to receive a certain property of all objects in a list and return it in another list using intermediate and terminal operations.
 
 Assume you have an object class of Student.
-``java
+```java
 public class Student {
   int studentId;
   String studentName;
@@ -28,27 +28,27 @@ public class Student {
   }
    // setters
 }
-``
+```
 
 Now assume in some method you have a list of all the students and want to get a list of all the student names. 
 Traditionally this can looks something like this.
 
-``java
+```java
 List<Student> students = some list of student objects
 
 List<String> studentNames = new ArrayList<>();
 for(Student student: students) {
   studentNames.add(student.getStudentName());
 }
-``
+```
 While this isn't terrible it can be simplified.
 Using streams this is possible with one line of code.
 
-``java
+```java
 List<Student> students = some list of student objects
 
 List<String> studentNames = students.stream().map(String::getStudentName).collect(Collectors.toList());
-``
+```
 
 The students stream api goes over the list of students and uses the intermediate map function to return a new list of streams using whatever method is on the right of the ::
 
