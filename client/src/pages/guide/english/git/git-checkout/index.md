@@ -53,3 +53,8 @@ You can use the `git checkout` command to undo changes you've made to a file in 
 ```shell
 git checkout -- FILE-NAME
 ```
+
+You can also use the `git checkout .` command to undo changes you've made to all the files in your working directory. This will revert the files back to the version in `HEAD`:
+```shell
+git checkout .
+```
