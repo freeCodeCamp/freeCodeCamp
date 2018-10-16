@@ -51,7 +51,12 @@ Hex codes are expressed in this format: #000000, which would be the color black 
 
 These three pairs each express a value for the amount of red, green and blue in a particular color. Taking the hexcode color #AA11BB, AA is the amount of red, 11 the amount of green, and BB the amount of blue. 0 is the lowest value of a color while f is the highest value.
 
-Hex codes are case insensitive, meaning that #FFFFFF and #ffffff would be the same color: white.
+In most modern browsers, you can add another pair to the Hexcode (#00000000), for a total of 8 characters. The first six letters work just as specified above, but the last two define the alpha-channel of the color. The alpha-channel represents the opacity, with 00 being fully transparent and FF being fully opaque. Because of lacking support in some browsers (most notably IE and Edge) it is recommended to stick with RGBA or HSLA to define colors with an alpha-channel.
+
+If all three (or four, if you decide to use an alpha-channel) value pairs contain of the same character twice, for example #AAFFAA, you can shorten it to only one character. 
+#AAFFAA is the same as #AFA.
+
+Hex codes are case insensitive, meaning that #FFFFFF and #ffffff and #fff would be the same color: white.
 
 Additionally, there are 16,777,216 possible color combinations using hexcode.
 
@@ -83,7 +88,7 @@ You can use named colors, like `green`, `blue`, `yellow`, `red`, `purple`, and m
 
 ```css
 p {
-  color: rgba(244, 145, 14, 0.80); // bright orange
+  color: rgba(244, 145, 14, 0.80); // bright orange with 0.8 (80%) opacity.
 }
 
 h2 {
@@ -104,6 +109,7 @@ Above shows paragraphs styled bright orange and 20% transparent, h2 elements a s
 To get custom colors to use in CSS, you might find a color picker helpful. Some text editors have built-in color pickers, like Visual Studio Code. If you search "color picker" on Google or DuckDuckGo, you will get a color picker that you can use. Google Chrome and Firefox also have color picker add-ons that you can install. Adobe Color CC not only helps you pick a color, but will also help you pick out a color scheme for your web page! It's a good idea to check that you have enough contrast between your text and background colors by using a tool like WebAIM's Color Contrast Checker.
 
 #### More Information:
+<a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/css/legal-color-values/index.md" target="_blank">Read on at FreeCodeCamp: Legal Color Values</a>
 <a href="https://color.adobe.com/" target="_blank">Adobe Color CC</a><br>
 <a href="https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en" target="_blank">ColorPick Eyedropper on Chrome Web Store</a><br>
 <a href="https://addons.mozilla.org/en-US/firefox/addon/colorzilla/" target="_blank">ColorZilla add-on for Firefox</a><br>
