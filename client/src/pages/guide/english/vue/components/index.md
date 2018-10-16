@@ -66,3 +66,21 @@ as we setted `iconSrc` or `featureTitle` as they were valid attributes. And the
 purpose of Vue.js components is this: increment your toolbox with your own
 tools.
 
+### Props
+
+Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance. To pass a title to our blog post component, we can include it in the list of props this component accepts, using a props option:
+
+```js
+Vue.component('feature-card', {
+  props: ['title'],
+  template: '<h3>{{ title }}</h3>'
+})
+```
+A component can have as many props as you’d like and by default, any value can be passed to any prop. In the template above, you’ll see that we can access this value on the component instance, just like with data.
+
+Once a prop is registered, you can pass data to it as a custom attribute, like this:
+```html
+<blog-post title="My journey with Vue"></blog-post>
+<blog-post title="Blogging with Vue"></blog-post>
+<blog-post title="Why Vue is so fun"></blog-post>
+```
