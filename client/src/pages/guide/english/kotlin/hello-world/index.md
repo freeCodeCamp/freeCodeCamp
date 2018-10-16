@@ -64,3 +64,7 @@ If you'd like to know more about Kotlin Syntax and start writing awesome program
 
 Hope you liked this tutorial,
 Cheers
+
+
+## Kotlin course for beginners 
+Udacity provides the free [Kotlin Bootcamp for Programmers](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011) course.

@@ -11,11 +11,11 @@ list.sort(key=…,  reverse=[True/False])
 
 There are two optional parameters to this method
 <br><br>
-<i>key</i> - The input value for the key parameter should be a function that takes a single argument 	and returns a value used for comparisons to sort the items in the list
+<i>key</i> - The input value for the key parameter should be a function that takes a single argument	and returns a value used for comparisons to sort the items in the list.
 <br><br>
 <i>reverse=[value]</i>
 <br>
-<i>value=True</i> : Sorts the items in the list in descending order
+<i>value=True</i> : Sorts the items in the list in descending order.
 <br>
 <i>value=False</i> : Sorts the items in the list in ascending order. This is considered the default value.
 <br><br>
@@ -33,7 +33,7 @@ b.sort()
 print b # prints ['camp', 'code', 'free']
 ```
 
-Consider an example with the <b>reverse</b> parameter
+Consider an example with the <b>reverse</b> parameter:
 
 ```py
 a = [4, 2, 5, 3, 1]
@@ -45,7 +45,7 @@ print a # prints [5, 4, 3, 2, 1]
 ```
 
 If you want to sort the list based on your own function, then use the <b>key</b> parameter. 
-<br>Here is an example to sort the strings in the list by length, in ascending order
+<br>Here is an example to sort the strings in the list by length, in ascending order:
 
 ```py
 a = ["hello", "hi", "hey"]
@@ -56,7 +56,7 @@ a.sort(key = len)
 print a # prints ['hi', 'hey', 'hello']
 ```
 
-Here is another example, where the list contains tuples(name, age). <br>The usage below shows how to sort the list by age, in ascending order.
+Here is another example, where the list contains tuples(name, age). <br>The usage below shows how to sort the list by age, in ascending order:
 
 ```py
 #Consider the second element in the tuple for sorting
@@ -80,7 +80,7 @@ A simple ascending sort is very easy -- just call the sorted() function. It retu
 >>> sorted([5, 2, 3, 1, 4])
 [1, 2, 3, 4, 5]
 ```
-You can also use the list.sort() method of a list. It modifies the list in-place (and returns None to avoid confusion). Usually it's less convenient than sorted() - but if you don't need the original list, it's slightly more efficient.
+You can also use the list.sort() method of a list. It modifies the list in-place (and returns None to avoid confusion). Usually it's less convenient than sorted() - but if you don't need the original list, it's slightly more efficient:
 
 ```python
 >>> a = [5, 2, 3, 1, 4]
@@ -88,7 +88,7 @@ You can also use the list.sort() method of a list. It modifies the list in-place
 >>> a
 [1, 2, 3, 4, 5]
 ```
-Another difference is that the list.sort() method is only defined for lists. In contrast, the sorted() function accepts any iterable.
+Another difference is that the list.sort() method is only defined for lists. In contrast, the sorted() function accepts any iterable:
 
 ```python
 >>> sorted({1: 'D', 2: 'B', 3: 'B', 4: 'E', 5: 'A'})
@@ -96,7 +96,7 @@ Another difference is that the list.sort() method is only defined for lists. In 
 ```
 #### Implementation Details
  
-If one wants to know details about the implementation of the sort function, the algorithm, and the time complexity, etc., refer <a href='http://svn.python.org/projects/python/trunk/Objects/listsort.txt' target='_blank' rel='nofollow'>here</a>. In brief, sort function uses TimSort algorithm, which according to Python Developers, is :-  
+If one wants to know details about the implementation of the sort function, the algorithm, and the time complexity, etc, refer <a href='http://svn.python.org/projects/python/trunk/Objects/listsort.txt' target='_blank' rel='nofollow'>here</a>. In brief, sort function uses TimSort algorithm, which according to Python Developers, is :-  
 >an adaptive, stable, natural mergesort, modestly called
 timsort (hey, I earned it <wink>).  It has supernatural performance on many
 kinds of partially ordered arrays (less than lg(N!) comparisons needed, and
@@ -105,12 +105,12 @@ hybrid on random arrays.
 
 #### sort() Parameters
 By default, sort() doesn't require any extra parameters. However, it has two optional parameters:
- * reverse - If true, the sorted list is reversed (or sorted in Descending order)
- * key - function that serves as a key for the sort comparison
+ * reverse - If true, the sorted list is reversed (or sorted in Descending order).
+ * key - A function that serves as a key for the sort comparison.
 
 #### More Information:
-More information about ```sort()``` can be found <a href='https://docs.python.org/3/library/functions.html#sorted' target='_blank' rel='nofollow'>here</a>
+More information about ```sort()``` can be found <a href='https://docs.python.org/3/library/functions.html#sorted' target='_blank' rel='nofollow'>here</a>.
 
-More information about sort() and sorted() can be found <a href='https://docs.python.org/3.6/tutorial/datastructures.html' target='_blank' rel='nofollow'>here</a>
+More information about sort() and sorted() can be found <a href='https://docs.python.org/3.6/tutorial/datastructures.html' target='_blank' rel='nofollow'>here</a>.
 
 More information about sort() and sorted() can be found <a href='https://docs.python.org/3.6/tutorial/datastructures.html' target='_blank' rel='nofollow'>here</a>. 

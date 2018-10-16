@@ -41,6 +41,9 @@ its flexibility and rapid prototyping and availability of libraries.
 #### Telegram Bots Development
 You can use Python and some Python-libraries for developing your own <a href='https://core.telegram.org/bots' target="_blank" rel="nofollow">Telegram Bots</a>
 
+#### Discord Bots Development
+You can use Python and some Python-libraries for developing <a href='https://github.com/discord-python/hacktoberbot' target="_blank" rel="nofollow">Discord Bots</a>
+
 #### Data Gathering by crawling and scraping
 Python could also be used by parse pages source codes and retrieve its data. Using some python modules, such as: Scrapy and also (for some reasons and pages which uses javascript) Selenium, should do the trick!
 

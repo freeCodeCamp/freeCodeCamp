@@ -2,11 +2,9 @@
 title: Fonts
 ---
 ## Fonts
-
 The CSS font properties define the font family, weight, size, variant, line height and style of a text.
 
 ### Font family
-
 The font family of a text is simply set by using the `font-family` property.
 
 It works with a *fallback* system, if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. 
@@ -21,7 +19,6 @@ mechanism for preserving style if the family-name is unavailable. A generic name
 family names are serif, sans-serif, monospace, cursive, fantasy, system-ui.
 
 ### Font style
-
 The `font-style` property can be used to specify italic text.
 
 This property has 3 values:
@@ -33,7 +30,7 @@ This property has 3 values:
 ```css
 .normal {
     font-style: normal;
-}
+} 
 
 .italic {
     font-style: italic;
@@ -45,7 +42,6 @@ This property has 3 values:
 ```
 
 ### Font size
-
 The `font-size` property sets the size of the text.
 
 There are different types of font size values:
@@ -74,7 +70,6 @@ There are different types of font size values:
 ```
 
 ### Font weight
-
 The `font-weight`property specifies the weight (or boldness) of the font. Accepts keywords (`bold`, `normal`, `bolder`, `lighter`) or numeric keywords (`100`, `200`, `300`, `400` etc.) `400` is the same as `normal`.
 
 ```css
@@ -84,7 +79,6 @@ p {
 ```
 
 ### Font responsiveness
-
 The text size can be set with a vw(viewport width) unit.
 That way the text size will follow the size of the browser window.
 
@@ -93,10 +87,7 @@ That way the text size will follow the size of the browser window.
 ```
 `Viewport is the browser window size. 1vw = 1% of viewport width. If the viewport is 50cm wide, 1vw is 0.5cm.`
 
-
-
 ### Font variant
-
 The `font-variant` property specifies if a text should be displayed in a small-caps font (where all lowercase letters are converted to uppercase letters while appearing in a smaller font-size than the original uppercase letters in the text).
 
 ```css
@@ -105,8 +96,23 @@ p.small {
 }
 ```
 
-#### More Information:
+### Font shorthand property
+Font properties can be specified with the shorthand font. 
+It takes as value (in this order):
+- font-style (optional)
+- font-variant (optional)
+- font-weight (optional)
+- font-size (mandatory)
+- line-height (optional)
+- font-family (mandatory)
 
-- [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
+```css
+p {
+  font: italic small-caps 800 20px/1.5 Arial;
+}
+```
+
+#### More Information:
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
+- [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
 - [CSSFontStack](https://www.cssfontstack.com/)

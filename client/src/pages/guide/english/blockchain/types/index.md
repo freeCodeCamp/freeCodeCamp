@@ -46,5 +46,6 @@ There is another category for classification, that is based on the persmission g
 2. Private Permissioned Blockchain
 3. Permissionless Blockchain
 
+` Basically we use hyperledger to make permissioned blockchain. Hyperledger is a multi-project open source collaborative effort hosted by The Linux Foundation. `
 
 <sub>This article is not an original work and is inspired and taken from [here](https://coinsutra.com/different-types-blockchains/) and [here](https://data-flair.training/blogs/types-of-blockchain/)</sub>

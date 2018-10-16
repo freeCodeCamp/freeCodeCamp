@@ -18,6 +18,16 @@ The .length method tallies the number of elements in your array and returns the 
 array.length
 => 5
 ```
+This is also similar to .count and .size methods.
+
+``` ruby
+array.count
+=> 5
+```
+``` ruby
+array.size
+=> 5
+```
 
 #### .first
 The .first method accesses the first element of the array, the element at index 0:

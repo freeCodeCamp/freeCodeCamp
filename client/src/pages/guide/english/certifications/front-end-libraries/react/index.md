@@ -3,11 +3,18 @@ title: React
 ---
 ## React
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/quadratic-equations/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+![React](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png)
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+React or ReactJS is a front-end library which is used to create beautiful, reusable and interactive User Interfaces.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+React is written in JavaScript and JSX. It is designed with reusability in mind and follows a component based pattern, which means write once and use infinitely.
+
+It is available as a CDN for browser based development or as a npm package for Command line shell based editing.
+
+React has been developed under the Facebook Open Source project, and is actively maintained by the Open Source community.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+1. [React](https://reactjs.org/)
+2. [React Open Source page](https://github.com/facebook/react/)
+3. [React Forum](https://discuss.reactjs.org/)
