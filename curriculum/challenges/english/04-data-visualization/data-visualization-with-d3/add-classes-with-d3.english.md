@@ -11,6 +11,8 @@ challengeType: 6
 Using a lot of inline styles on HTML elements gets hard to manage, even for smaller apps. It's easier to add a class to elements and style that class one time using CSS rules. D3 has the <code>attr()</code> method to add any HTML attribute to an element, including a class name.
 The <code>attr()</code> method works the same way that <code>style()</code> does. It takes comma-separated values, and can use a callback function. Here's an example to add a class of "container" to a selection:
 <code>selection.attr("class", "container");</code>
+  
+Note that the "class" parameter will remain the same whenever you need to add a class and only the "container" parameter will change.
 </section>
 
 ## Instructions
@@ -73,6 +75,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+.attr("class","bar");
 ```
 </section>
