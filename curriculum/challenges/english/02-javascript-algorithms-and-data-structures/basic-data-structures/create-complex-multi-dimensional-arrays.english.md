@@ -18,7 +18,7 @@ And now that we know where that piece of data is, we can reset it if we need to:
 
 ## Instructions
 <section id='instructions'>
-We have defined a variable, <code>myNestedArray</code>, set equal to an array. Modify <code>myNestedArray</code>, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include the string <code>'deep'</code>, on the fourth level, include the string <code>'deeper'</code>, and on the fifth level, include the string <code>'deepest'</code>.
+We have defined a variable, <code>myNestedArray</code>, set equal to an array. Modify <code>myNestedArray</code>, using any combination of <dfn>strings</dfn>, <dfn>numbers</dfn>, and <dfn>booleans</dfn> for data elements, so that it has exactly five levels of depth (remember, the outer-most array is level 1). Somewhere on the third level, include an array with the string <code>'deep'</code>, on the fourth level, include an array with the string <code>'deeper'</code>, and on the fifth level, include an array with the string <code>'deepest'</code>.
 </section>
 
 ## Tests
