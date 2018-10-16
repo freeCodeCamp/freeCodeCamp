@@ -10,11 +10,11 @@ title: Bash mkdir
 mkdir directory_name
 ```
 
-Make directory(ies) with provided name, if they do not already exist.
+Make directory(ies) with the provided name if they do not already exist.
 
 Commonly used options:
 - `-p` no error if existing, make parent directories as needed.
 - `-v` prints message for each created directory.
 
 ### More Information:
-* [Wikipedia](https://en.wikipedia.org/wiki/Mkdir)
+* [Wikipedia - Mkdir](https://en.wikipedia.org/wiki/Mkdir)
