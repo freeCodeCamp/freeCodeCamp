@@ -15,6 +15,8 @@ A third party is usually needed to validate trust relationships. In the most com
 
 For this reason Blockchain is also known as **"The Trust Protocol"**.
 
+Blockchain could be thought of a way to carry out the transactions on the internet where each user gets equal access to the transaction medium, without any centralization. Each user secures the transaction.
+
 ### History
 The first work on a cryptographically secured chain of blocks was described in 1991 by Stuart Haber and W. Scott Stornetta. They wanted to implement a system where documents' timestamps could not be tampered with or backdated. In 1992, Bayer, Haber and Stornetta incorporated Merkle trees to the design, which improved its efficiency by allowing several documents to be collected into one block.
 
