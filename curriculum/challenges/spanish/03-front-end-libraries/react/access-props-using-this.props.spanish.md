@@ -8,10 +8,10 @@ localeTitle: Acceder a los apoyos usando this.props
 ---
 
 ## Description
-<section id="description"> Los últimos varios desafíos cubrieron las formas básicas de pasar accesorios a los componentes secundarios. Pero, ¿qué sucede si el componente secundario al que le está pasando una propuesta es un componente de clase ES6, en lugar de un componente funcional sin estado? El componente de clase ES6 utiliza una convención ligeramente diferente para acceder a accesorios. Cada vez que refiera a un componente de clase dentro de sí mismo, use <code>this</code> palabra clave. Para acceder a los apoyos dentro de un componente de clase, que Prefacio el código que se utiliza para acceder a ella con <code>this</code> . Por ejemplo, si un componente de clase ES6 tiene una propiedad llamada <code>data</code> , escribe <code>{this.props.data}</code> en JSX. </section>
+<section id="description"> Los últimos desafíos cubrieron las formas básicas de pasar propiedades (props) a los componentes secundarios. Pero, ¿qué sucede si el componente secundario al que le está pasando una propiedad (prop) es un componente de clase ES6, en lugar de un componente funcional sin estado? El componente de clase ES6 utiliza una convención ligeramente diferente para acceder a las propiedades (props). Cada vez que se refiera a un componente de clase dentro de sí mismo, use la palabra clave <code>this</code>. Para acceder a las propiedades (props) dentro de un componente de clase, precede el código que se utiliza para acceder a ella con <code>this</code>. Por ejemplo, si un componente de clase ES6 tiene una propiedad llamada <code>data</code> , escribe <code>{this.props.data}</code> en JSX. </section>
 
 ## Instructions
-<section id="instructions"> Renderice una instancia del componente <code>ReturnTempPassword</code> en el componente principal <code>ResetPassword</code> . Aquí, <code>ReturnTempPassword</code> a <code>ReturnTempPassword</code> un prop de <code>tempPassword</code> y asígnele un valor de una cadena que tenga al menos 8 caracteres de longitud. Dentro del hijo, <code>ReturnTempPassword</code> , acceda a la propiedad <code>tempPassword</code> dentro de las etiquetas <code>strong</code> para asegurarse de que el usuario vea la contraseña temporal. </section>
+<section id="instructions"> Renderiza una instancia del componente <code>ReturnTempPassword</code> en el componente principal <code>ResetPassword</code> . Aquí, añade una propiedad (prop) <code>tempPassword</code> al componente <code>ReturnTempPassword</code> y asígnele un valor de una cadena que tenga al menos 8 caracteres de longitud. Dentro del componente hijo, <code>ReturnTempPassword</code> , acceda a la propiedad <code>tempPassword</code> dentro de las etiquetas <code>strong</code> para asegurarse de que el usuario vea la contraseña temporal. </section>
 
 ## Tests
 <section id='tests'>
@@ -48,7 +48,7 @@ class ReturnTempPassword extends React.Component {
     return (
         <div>
             { /* change code below this line */ }
-            <p>Your temporary password is: <strong></strong></p>
+            <p>Tu contraseña temporal es: <strong></strong></p>
             { /* change code above this line */ }
         </div>
     );
@@ -63,9 +63,9 @@ class ResetPassword extends React.Component {
   render() {
     return (
         <div>
-          <h2>Reset Password</h2>
-          <h3>We've generated a new temporary password for you.</h3>
-          <h3>Please reset this password from your account settings ASAP.</h3>
+          <h2>Reiniciar Contraseña</h2>
+          <h3>Nosotros hemos generado una nueva contraseña para ti.</h3>
+          <h3>Por favor, cambie su contraseña desde la configuración de su cuenta lo antes posible.</h3>
           { /* change code below this line */ }
 
           { /* change code above this line */ }
