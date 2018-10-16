@@ -14,8 +14,8 @@ One tool in that toolbox should be accessibility. It is a tool that should ideal
 
 In my life as a user, and later a developer, who benefits from accessibility in any form of content, I have seen both ends of that spectrum. If you are reading this article, I am guessing you are in one of the following categories:
 
-*   You are a novice web developer and would like to know more about accessibility
-*   You are a seasoned web developer and have lost your way (more on that later)
+*   You are a novice web developer and would like to know more about accessibility.
+*   You are a seasoned web developer and have lost your way (more on that later).
 *   You feel that there is a legal obligation from work, and need to learn more about it.
 
 If you fall outside these rather broad categories, please let me know. I always like to hear from the people who read what I write about. Implementing accessibility impacts the entire team, from the colors chosen by the designer, the copy written by the copywriter, and to you, the developer.

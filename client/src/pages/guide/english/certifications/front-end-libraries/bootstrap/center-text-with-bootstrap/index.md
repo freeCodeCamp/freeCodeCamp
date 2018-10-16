@@ -3,8 +3,23 @@ title: Center Text with Bootstrap
 ---
 ## Center Text with Bootstrap
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/bootstrap/center-text-with-bootstrap/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The challenge introduces the class of ``` text-center ``` for centering text and has to be used to center the ``` <h2></h2> ``` element.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint 1
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Use the class of ``` text-center ```.
+### Hint 2
+
+The class has to applied on the first ``` <h2></h2> ``` in the document.
+
+### Solution
+
+Since you need to add a class, edit the HTML of the first ```html <h2></h2> ``` from:
+
+```html
+<h2 class="red-text">CatPhotoApp</h2>
+```
+to
+```html
+<h2 class="red-text text-center">CatPhotoApp</h2>
+```

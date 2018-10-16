@@ -48,6 +48,28 @@ public class Car {
     }
 }
 ```
+If we not sure with the distinct number of parameters passed in a method then use 'Variable Arguments (Varargs) Method'
+
+Initialize parameter with three dots and will have same dataType.
+Passed arguments will store in an array and also accessible as array 
+```java
+public class Main
+{
+	public static void main(String[] args) {
+	   
+       Main p=new Main();
+		
+        System.out.println(p.sum(5,5,5,5,5,5,5,5,5)); //can pass any number of argument.
+	}
+	
+int sum(int ...a) //decleration of variable argument method.
+	{int sum=0;
+	    for(int i=0;i<a.length;i++)
+	    sum=sum+a[i]; //getting the passed arguments in form of array
+	    return sum;}
+	
+}
+```
 
 As with any other language, methods (or functions, if you are here from JS world) are used often for their modularity and reusability.
 

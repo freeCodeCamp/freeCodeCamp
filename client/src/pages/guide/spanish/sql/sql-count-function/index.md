@@ -32,7 +32,7 @@ select count(*) AS studentCount from student; -- count of all records
 Aquí obtenemos un recuento de alumnos en cada campo de estudio.
 
 ```sql
- select studentID, FullName, count(*) AS studentCount from the student table with a group by programOfStudy; 
+ select programOfStudy, count(*) AS studentCount from the student table with a group by programOfStudy; 
 ```
 
 ![imagen-1](https://github.com/SteveChevalier/guide-images/blob/master/count03.JPG?raw=true)
@@ -40,7 +40,7 @@ Aquí obtenemos un recuento de alumnos en cada campo de estudio.
 Aquí obtenemos un conteo de estudiantes con los mismos puntajes del SAT.
 
 ```sql
- select studentID, FullName, count(*) AS studentCount from the student table with a group by sat_score; 
+ select sat_score, count(*) AS studentCount from the student table with a group by sat_score; 
 ```
 
 ![imagen-1](https://github.com/SteveChevalier/guide-images/blob/master/count04.JPG?raw=true)

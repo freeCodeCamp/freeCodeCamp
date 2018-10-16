@@ -24,7 +24,7 @@ Some applications of clustering algorithms include:
 4. Density-based clustering 
 
 Some examples of clustering algorithms are:
-1. Alogmerative clustering
+1. Agglomerative clustering
 2. K-means clustering
 3. K-mediods clustering
 4. Partition Clustering
@@ -33,6 +33,10 @@ Some examples of clustering algorithms are:
 There are methods for clustering that only use similarities of instances, without any other requirement on the data; the aim is to find groups such that instances in a group are more similar to each other than instances in different groups. This is the approach taken by hierarchical clustering.
 
 This needs the use of a similarity, or equivalently a distance, measure defined between instances.  Generally Euclidean distance is used, where one has to make sure that all attributes have the same scale.
+
+There are two main types of Hierarchical clustering which are used:
+1. Agglomerative Clustering - This algorithm starts with a bunch of individual clusters and a proximity matrix. Here, the individual clusters are basically individual points, and the matrix is for the distance between each point with each other points. The algorithm tries to find the closest pair of clusters and then combines them into one cluster, and then update the proximity matrix with the new cluster and removes the two combined clusters. This step is repeated until a single cluster is left. The most important part of this algorithm is the proximity matrix and it's updatation.
+2. Divisive Clustering - This algorithm can be called an opposite of Agglomerative in terms of how it approachs clustering. It starts with a single cluster and then starts dividing it into multiple clusters. It has a similarity matrix between each point, similarity here being how close the clusters are with each other. This algorithm tries to divide the cluster into two clusters based on how dissimilar a cluster or a point is from the rest. This is continued until there are multiple individual clusters.
 
 ### Point Assignment
 This method maintains a set of clusters, and it places points to nearest clusters.
