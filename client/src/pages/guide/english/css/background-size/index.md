@@ -15,6 +15,8 @@ The background-size property specifies the size of the background images. You ca
 .pixel {background-size: 50px 50px;}
 .percentage {background-size: 50% 50%;}
 ```
+Note: If using pixel or percentage for length and you only specify one value, 
+the second one will be set to auto by default.
 
 To set this property on multiple background images separate values by comma:
 ```css
