@@ -12,19 +12,19 @@ Digamos que tiene una matriz que contiene un nombre y un apellido, ya que son do
 
 ```js
 var fullName = ["John", "Smith"]; 
- var firstName = fullName[0]; 
- var lastName = fullName[1]; 
+var firstName = fullName[0]; 
+var lastName = fullName[1]; 
  
- console.log(firstName, lastName); // John Smith 
+console.log(firstName, lastName); // John Smith 
 ```
 
 **ES6 Destructura**
 
 ```js
 const fullName = ["John", "Smith"]; 
- const [firstName, lastName] = fullName; 
+const [firstName, lastName] = fullName; 
  
- console.log(firstName, lastName); // John Smith 
+console.log(firstName, lastName); // John Smith 
 ```
 
 Los ejemplos anteriores muestran el beneficio de usar la asignación de destrucción ES6.
@@ -33,33 +33,40 @@ También puede usar la destrucción en objetos usando una sintaxis similar
 
 ```js
 const fullName = { first: "John", last: "Smith"}; 
- const {first, last} = fullName; 
+const {first, last} = fullName; 
  
- console.log(first, last); // John Smith 
+console.log(first, last); // John Smith 
 ```
 
 La asignación de destrucción de objetos es un poco diferente porque el objeto debe tener propiedades con los nombres que está asignando. Por lo tanto, el siguiente código no funcionaría como se esperaba.
 
 ```js
 const fullName = { first: "John", last: "Smith"}; 
- const {firstName, lastName} = fullName; 
+const {firstName, lastName} = fullName;
  
- console.log(firstName, lastName); // undefined undefined 
+console.log(firstName, lastName); // undefined undefined 
 ```
 
 Aún puede lograr el resultado deseado usando la siguiente sintaxis.
 
 ```js
 const obj = {propertyName: value} 
- {propertyName: desiredVariableName} = obj 
+const {propertyName: desiredVariableName} = obj 
 ```
 
 Nuestro ejemplo anterior sería reescrito de la siguiente manera:
 
 ```js
 const fullName = { first: "John", last: "Smith"}; 
- const {first: firstName, last: lastName} = fullName; 
+const {first: firstName, last: lastName} = fullName; 
  
- console.log(firstName, lastName); // John Smith 
+console.log(firstName, lastName); // John Smith 
 
+```
+**Desestructuración de matrices con descanso.**
+Al desestructurar una matriz, puede descomprimir y asignar la parte restante a una variable usando el patrón de descanso:
+```js
+const [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
 ```

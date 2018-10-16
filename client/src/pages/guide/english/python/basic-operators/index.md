@@ -8,7 +8,7 @@ Operators are symbols which tells the interpreter to do a specific operation (vi
 The different types of operators in Python are listed below:
 
 1. Arithmetic Operators
-2. Relational Operators
+2. Comparison (Relational) Operators
 3. Bitwise Operators
 4. Assignment Operators
 5. Logical Operators
@@ -71,9 +71,9 @@ Consider the expression, <b>“a = 2 + 3”</b>. Here, `2` and `3` are the <i>op
 
 Note: To get the result in floating type, one of the operands must also be of float type.
 
-#### Relational Operators
+#### Comparison (Relational) Operators
 
-A relational operator is used to compare two operands to decide a relation between them. It returns a boolean value based on the condition.
+A comparison or relational operator is used to compare two operands to decide a relation between them. It returns a boolean value based on the condition.
 
 <table style="width:100%">
   <tr>

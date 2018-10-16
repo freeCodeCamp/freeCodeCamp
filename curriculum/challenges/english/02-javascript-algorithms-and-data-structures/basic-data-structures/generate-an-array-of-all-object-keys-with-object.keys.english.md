@@ -72,6 +72,8 @@ console.log(getArrayOfUsers(users));
 <section id='solution'>
 
 ```js
-// solution required
+function getArrayOfUsers(obj) {
+  return Object.keys(users);
+}
 ```
 </section>

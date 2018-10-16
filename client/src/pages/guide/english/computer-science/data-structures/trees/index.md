@@ -80,9 +80,9 @@ A forest is a set of n ≥ 0 disjoint trees.
 
 
 
-###Code of a tree node
+### Code of a tree node
 
-``` c_cpp
+``` c++
 struct node
     {
          int data;                 //Data element

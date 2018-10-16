@@ -65,9 +65,9 @@ function changeButtonColor(e) {
 
 ### Event Bubbling
 
-Any time you click on an element, you are really also clicking on its parent elements because they surround it and so it is part of them. When you click on an element, the browser checks if it has an event handler attached to it and runs the handler. It then moves to the parent element and checks if it has an event handler, and repeats this until it reaches the `<html>` element. The event "bubbles" up through the DOM. 
+Any time you click on an element, you are really also clicking on its parent elements because they surround it and so it is part of them. When you click on an element, the browser checks if it has an event handler attached to it and runs the handler. It then moves to the parent element and checks if it has an event handler, and repeats this until it reaches the `<html>` element. The event "bubbles" up through the DOM.
 
-In the example below, if you click on div three it will log `three, two, one` to the console as the click event bubbles up and triggers the event handler on each div. 
+In the example below, if you click on div three it will log `three, two, one` to the console as the click event bubbles up and triggers the event handler on each div.
 
 ```html
 <div class="one">
@@ -98,9 +98,33 @@ function logDivs(e){
 }
 ```
 
+### Event Capturing
+
+Just as an event can bubble up when you click on an element, the same thing can happen in reverse. An event can be registered on an element's parent element and can then "trickle down" to the child element; this is event capturing.
+
+In bubbling, the event passes from the child element that was clicked on to its parent elements, with the browser checking for event handlers along the way.
+
+In capturing, the browser checks the element's outermost parent element, `<html>`, for an event handler, then the next element down, then the element inside that, and so on until it reaches the innermost element.
+
+In modern browsers a capturing phase happens first and then a bubbling phase but all events are handled during the bubbling phase by default. Event capturing is a legacy of early browsers (which were less cross-compatible). Netscape Navigator used event capturing and Internet Explorer used event bubbling. The W3C made a compromise position part of web standards, where developers could tell the browser to use capturing even though bubbling is the default. 
+
+If you want to register events through capturing you can do so by using the optional `options` parameter in `addEventListener()`.
+
+If you make this change to the code from the nested divs example above, it will now log `one, two, three` to the console. The click event trickles down from the outermost div and triggers the event handler on each div.
+
+```js
+const divs = document.querySelectorAll("div");
+
+function logDivs(e){
+  console.log(this.classList.value);
+}
+
+divs.forEach(div => div.addEventListener("click", logDivs, { capture: true }));
+```
+
 ### Event Delegation
 
-Event bubbling can however be useful. For example, if you attach event handlers to a number of elements on page load, and then dynamically add more elements after the page has loaded, the later elements won't have event handlers attached to them.
+Event bubbling can cause problems, but it can also be useful. For example, if you attach event handlers to a number of elements on page load, and then dynamically add more elements after the page has loaded, the later elements won't have event handlers attached to them.
 
 You can avoid this by attaching the event handler to the parent element (which exists on page load) and catching the event when it bubbles up from the child element. For example, in a todo app consisting of a `ul` containing `li`s, you can listen on the list instead of on each list item (which might not exist at page load).
 
@@ -128,10 +152,12 @@ document.querySelector(".parent-list").addEventListener("click", function(e) {
 
 ["Introduction to events", MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events)
 
+["EventTarget.addEventListener()", MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
 [Newman, Tovi "Let's meet the event object", LaunchSchool Medium Publication](https://medium.com/launch-school/javascript-lets-talk-about-events-572ecce968d0)
 
 [Thakuria, Honey "Event Handling in JavaScript", freeCodeCamp Medium Publication](https://medium.freecodecamp.org/event-handling-in-javascript-with-examples-f6bc1e2fff57)
 
 [Wilkie, Amber "A simplified explanation of event propagation in JavaScript", freeCodeCamp Medium Publication](https://medium.freecodecamp.org/a-simplified-explanation-of-event-propagation-in-javascript-f9de7961a06e)
 
-[Walsh, David "How JavaScript Event Delegation Works"](https://davidwalsh.name/event-delegate)
+[Walsh, David "How JavaScript Event Delegation Works", David Walsh Blog](https://davidwalsh.name/event-delegate)

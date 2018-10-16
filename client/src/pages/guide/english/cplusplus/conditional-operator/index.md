@@ -24,6 +24,24 @@ else
     expression-2;
   }
 ```
+
+The above code however can be used to check more than just two conditions in the following way/syntax:
+```cpp
+if(condition 1)    /* Checks first condition, skips else-if and else
+  {                   entirely if condition 1 checks out */          
+    expression-1;
+  }
+else if(condition 2) /*Checks condition 2, only and only if condition 1
+  {                    is false, if condition 2 is true the comiler will 
+    expression-2;      skip the 'else' part and move on */
+  }
+
+else                /*Once if and else-if conditions don't satisfy the  
+  {                   compiler will run the expression in else{..}   
+    expression-3;     because it does not have a condition to check, 
+  }                   part of code can also be skipped if not necessary*/  
+```
+
 Hence conditional operator is very handy when you need to write simple if-else statement. It can also be used in #define 
 preprocessor when similar condition is to be used in multiple places.
 

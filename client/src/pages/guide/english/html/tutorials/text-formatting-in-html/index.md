@@ -55,7 +55,7 @@ HTML isn't boring. <ins>You can make a lot of combinations of elements!</ins>
 Using element `<sub>` gives you a useful formatting as subscripted text (showing it smaller on the bottom). There is an example code: 
 
 ``` 
-This was in 2003 year <sub>(needs a link).
+This was in 2003 year <sub>(needs a link)</sub>.
 ``` 
 
 ### Superscripted 

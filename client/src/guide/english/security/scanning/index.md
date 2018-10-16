@@ -81,6 +81,6 @@ There are many tools available to scan but one of the most common is `nmap`. It'
 
 ## Sources
 <ol>
-  <li>Summarizing The Five Phases of Penetration Testing. (2015, May 06). Retrieved October 26, 2017, from https://www.cybrary.it/2015/05/summarizing-the-five-phases-of-penetration-testing/<li>
+  <li>Summarizing The Five Phases of Penetration Testing. (2015, May 06). Retrieved October 26, 2017, from https://www.cybrary.it/2015/05/summarizing-the-five-phases-of-penetration-testing/</li>
   <li>Engebretson, P. (2013). The Basics of Hacking and Penetration Testing: Ethical Hacking and Penetration Testing Made Easy Ed. 2. Syngress.</li>
 </ol>

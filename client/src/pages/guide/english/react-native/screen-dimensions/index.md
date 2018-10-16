@@ -3,29 +3,64 @@ title: Screen Dimensions
 ---
 ## React Native - Screen Dimensions
 
-React Native uses Dots Per Inch (DPI) to measure the sizing of the User Interface (UI) and anything displayed on the UI. This type of measurement allows an application to look uniform accross various screen sizes and pixel densities.
+React Native uses Dots Per Inch (DPI) to measure the sizing of the User Interface (UI) and anything displayed on the UI. This type of measurement allows an application to look uniform across various screen sizes and pixel densities.
 
-For standard use cases, applications can be developed without having to know the specifics of the user's device (eg pixel density) since the UI elements will scale automatically. When it is required, there are APIs availabel such as `PixelRatio` for finding out about the pixel density of the users device.
+For standard use cases, applications can be developed without having to know the specifics of the user's device (e.g. pixel density) since the UI elements will scale automatically. When it is required, there are APIs available such as `PixelRatio` for finding out the pixel density of the user's device.
 
-To get the window or screen height/width of a users device, React Native has an API called `Dimensions`.
+React Native provides an API called `Dimensions` that can be used to get the width and height of the window or screen of a user's device. 
 
 ```js
 import { Dimensions } from 'react-native';
 ```
 
-Here are the methods that the `Dimensions` API provides:
+These are are the methods that this API currently offers:
  
-```js
-Dimensions.get('window').height;
-Dimensions.get('window').width;
-Dimensions.get('screen').height;
-Dimensions.get('screen').width;
+```
+set
+get
+addEventListener
+removeEventListener
 ```
 
-What makes React-Native so attractive to developers is being able to write code, and have it run on multiple devices (iPhone, iPad, Pixel, etc ...). The use of the Dimensions API enables developers to write modular code to be used across multiple devices. 
+For the purposes of this guide, we'll focus on the `get` method, but feel free to check out the React Native official documentation for details on the other methods.
 
-for example if you wanted a screen to looka certain way on an iPad vs a phone simple math can be done to apply the proper styling.
+https://facebook.github.io/react-native/docs/dimensions#docsNav
 
+The width and height of the window object can be easily retrieved, like so:
+
+```js
+const width = Dimensions.get("window").width
+const height = Dimensions.get("window").height
+
+// if you're feeling fancy, you could also use object destructuring to get those values out of the object that `Dimensions.get("window")` returns
+const { width, height } = Dimensions.get("window")
+```
+
+Pretty simple, huh? Let's take a look at an example.
+
+Let's say you want to cover the whole screen with a background image. We'll use the `ImageBackground` component that React Native provides. You can read more about it in the link below.
+
+https://facebook.github.io/react-native/docs/images#background-image-via-nesting.
+
+We need to set the width and height for this component to work. One way to do that is by using the width and height we got with the `Dimensions` API.
+
+```js
+import React, { Component } from "react"
+import { Dimensions, ImageBackground } from "react-native"
+
+const { width, height } = Dimensions.get("window")
+
+export default HomePage = () => {
+  return(
+    <ImageBackground source={...} style={{ width, height }}> 
+    </ImageBackground>
+  )
+}
+```
+
+What makes React Native so attractive is the ability to write code once and have it run on multiple devices (iPhone, iPad, Pixel, etc), and the `Dimensions` API makes that really easy.
+
+For example, if you wanted a screen to look a certain way on an iPad vs a phone simple math can be done to apply the proper styling.
 
 ```js
 const { width, height } = Dimensions.get('window');
