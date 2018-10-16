@@ -10,9 +10,9 @@ Angular is closely associated with its command-line interface (CLI). The CLI str
 
 #### Installation
 
-The Angular CLI requires [Node.js and Node Packet Manager (NPM)](https://nodejs.org/en/). You can check for these programs with the terminal command: `node -v; npm -v`. Once installed, open a terminal and install the Angular CLI with this command: `npm install -g @angular/cli`. This can executed from anywhere on your system. The CLI is configured for global use with the `-g` flag.
+The Angular CLI requires [Node.js and Node Packet Manager (NPM)](https://nodejs.org/en/). You can check for these programs with the terminal command: `node -v; npm -v`. Once installed, open a terminal and install the Angular CLI with this command: `npm install -g @angular/cli` or `pm install -g @angular/cli@latest` to install the latest version of angular cli. This can executed from anywhere on your system. The CLI is configured for global use with the `-g` flag.
 
-Verify the CLI is there with the command: `ng -v`. This outputs several lines of information. One of these lines state the version of the installed CLI.
+Verify the CLI is there with the command: `ng -v`. This outputs several lines of information about the angular cli installed in your machine. One of these lines state the version of the installed CLI.
 
 Recognize that `ng` is the basic building block of the CLI. All your commands will begin with `ng`. Time to take a look at four of the most common commands prefixed with `ng`.
 
@@ -32,9 +32,9 @@ The key terms for each of these are quite telling. Together, they comprise what 
 
 #### ng new
 
-`ng new` creates a *new* Angular file system. This is a surreal process. Please navigate to a file location desirable for *new* application generation. Type this command as follows, replacing `[name-of-app]` with whatever you want: `ng new [name-of-app]`.
+`ng new` creates a *new* Angular file system. This is a surreal process. Please navigate to a file location desirable for *new* application generation. Type this command as follows, replacing `[name-of-app]` with whatever you want: `ng new [name-of-app]`. For Example `ng new myapp` here `myapp` the name which I've given to my app. Which will generate your app with a default folder structure. There wil be a lot of generated files, Don't consider every file. You'll be mostly working with the src folder.
 
-A file system under the folder `[name-of-app]` should appear. Feel free to explore what lies within. Try to not make any changes yet. All of what you need to run your first Angular application comes packaged together in this generated file system.
+But Feel free to explore other files within. Try to not make any changes yet. All of what you need to run your first Angular application comes packaged together in this generated file system.
 
 #### ng serve
 
@@ -43,6 +43,8 @@ To get the application running, the `ng serve` command must execute within the `
 The application runs on port 4200 by default. You can view the Angular application by navigating to `localhost:4200` in any web browser. Angular works across all browsers. Unless you are using an old version of Internet Explorer, the application will pop up. It displays the official Angular logo alongside a list of helpful links.
 
 Ok, the application runs. It hopefully functions, but you need to know what is going on under the hood. Refer back to the `[name-of-app]` file system. Navigate `[name-of-app] -> src -> app`. Therein lies the files responsible for what you saw on `localhost:4200`.
+
+Okay, What if you are running 2 Angular app which runs on PORT 4200 by default or let me say that the PORT 4200 has been busy? You can change your default PORT by using a cli commang `ng serve --port 4000` here 4000 is the PORT that I want to run. You can change it to a PORT that ypu wnat to run your app.
 
 #### ng generate
 

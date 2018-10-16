@@ -3,6 +3,8 @@ title: CSS Buttons
 ---
 ## CSS Buttons
 
+CSS Buttons are a great way to add functional design features to your page.
+
 * You can style any clickable button (HTML `<button>` element)
 
 `<button>Click Me</button>`
@@ -15,15 +17,15 @@ title: CSS Buttons
 
 You can change several properties of a button in order to change its appearance.
 
-To add shadows to the button use `box-shadow` property.
+* To add shadows to the button use `box-shadow` property.
 
-To add transparency to a button for a disabled effect use the property `opacity`.
+* To add transparency to a button for a disabled effect use the property `opacity`.
 
-To remove the margins and create a button group add `float:left/right` property.
+* To remove the margins and create a button group add `float:left/right` property.
 
-To create a button group but with the borders, use `float` property and add a `border property`.
+* To create a button group but with the borders, use `float` property and add a `border property`.
 
-To create a vertical group of buttons use display:`block property`.
+* To create a vertical group of buttons use display:`block property`.
 
 ### Button Color
 
@@ -99,6 +101,35 @@ To disable a button, use the cursor property:
 ```
 button {
   cursor: not-allowed;
+}
+```
+
+### Button Click Animation
+
+To animate a button on click use 'button:active':
+
+```
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #ffffff;
+  background-color: #ff7d1a;
+  border: none;
+  border-radius: 15px;
+}
+
+.button:hover {
+	background-color: #ff6d00;
+}
+
+.button:active {
+  background-color: #ff6d00;
+  transform: translateY(4px);
 }
 ```
 

@@ -20,7 +20,7 @@ To create a linear gradient you must define at least two color stops. Color stop
     background: linear-gradient(direction, color-stop1, color-stop2, ...);
 
 ##### Linear Gradient - Top to Bottom (this is default)
-The following example shows a linear gradient that starts at the top. It starts red, transitioning to yellow:
+The following example shows a linear gradient that starts at the top. It starts red, transitioning to green:
 ![default-linear-gradient](https://i.imgur.com/2uGfleD.jpg)
 
 #### Example
@@ -42,7 +42,7 @@ The following example shows a linear gradient that starts at the top. It starts 
 <body>
 
 <h3>Linear Gradient - Top to Bottom</h3>
-<p>This linear gradient starts at the top. It starts red, transitioning to yellow:</p>
+<p>This linear gradient starts at the top. It starts red, transitioning to green:</p>
 
 <div id="grad1"></div>
 
@@ -55,7 +55,7 @@ The following example shows a linear gradient that starts at the top. It starts 
 ![default-linear-gradient](https://i.imgur.com/CvtXCMd.jpg)
 
 ##### Linear Gradient - Left to Right
-The following example shows a linear gradient that starts from the left. It starts red, transitioning to yellow:
+The following example shows a linear gradient that starts from the left. It starts red, transitioning to green:
 ![left-to-right](https://i.imgur.com/e4dRvZR.jpg)
 
 #### Example
@@ -78,7 +78,7 @@ The following example shows a linear gradient that starts from the left. It star
 <body>
 
 <h3>Linear Gradient - Left to Right</h3>
-<p>This linear gradient starts at the left. It starts red, transitioning to yellow:</p>
+<p>This linear gradient starts at the left. It starts red, transitioning to green:</p>
 
 <div id="grad1"></div>
 
@@ -94,7 +94,7 @@ The following example shows a linear gradient that starts from the left. It star
 
 You can make a gradient diagonally by specifying both the horizontal and vertical starting positions.
 
-The following example shows a linear gradient that starts at top left (and goes to bottom right). It starts red, transitioning to yellow:
+The following example shows a linear gradient that starts at top left (and goes to bottom right). It starts red, transitioning to green:
 
 ![diagonal](https://i.imgur.com/YvtbUBH.jpg)
 
@@ -118,7 +118,7 @@ The following example shows a linear gradient that starts at top left (and goes 
 <body>
 
 <h3>Linear Gradient - Diagonal</h3>
-<p>This linear gradient starts at top left. It starts red, transitioning to yellow:</p>
+<p>This linear gradient starts at top left. It starts red, transitioning to green:</p>
 
 <div id="grad1"></div>
 
@@ -132,4 +132,6 @@ The following example shows a linear gradient that starts at top left (and goes 
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-[MDN Documentatiion](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient) || [w3schools](https://www.w3schools.com/css/css3_gradients.asp)
+- [MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+- [W3Schools](https://www.w3schools.com/css/css3_gradients.asp)
+- [CSS Tricks](https://css-tricks.com/snippets/css/css-linear-gradient/)

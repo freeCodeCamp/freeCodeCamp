@@ -181,14 +181,13 @@ int binarySearch(int a[], int l, int r, int x) {
 ```C++
 int binary_search(int arr[], int l, int r, int target) 
 { 
-   if (r >= l) 
+   while (r >= l) 
    { 
         int mid = l + (r - l)/2; 
         if (arr[mid] == target)   
             return mid; 
-        if (arr[mid] > target)  
-            return binary_search(arr, l, mid-1, target); 
-        return binary_search(arr, mid+1, r, target); 
+        if (arr[mid] > target) r = mid - 1;
+        else l = mid + 1; 
    } 
    return -1; 
 }

@@ -10,11 +10,11 @@ import (
   "html/template"
 )
 
-type PAGE struct {
-  NAME string
+type Page struct {
+  Name string
 }
 
-var page PAGE
+var page Page
 
 func main() {
   http.HandleFunc("/", servePage)
@@ -22,9 +22,9 @@ func main() {
 }
 
 func servePage(writer http.ResponseWriter, reqest *http.Request) {
-  page.NAME = request.FormValue("name")
+  page.Name = request.FormValue("name")
   template := template.New("sayHello")
-  template, _ = template.Parse("Hello {{.NAME}}!")
+  template, _ = template.Parse("Hello {{.Name}}!")
   template.Execute(writer, page)
 }
 ```
