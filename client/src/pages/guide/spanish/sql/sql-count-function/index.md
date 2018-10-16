@@ -1,19 +1,19 @@
 ---
 title: SQL COUNT Aggregate Function
-localeTitle: Función de agregado de COUNT de SQL
+localeTitle: Función de agregación SQL - COUNT
 ---
-## Función de agregado de COUNT de SQL
+## Función de agregación SQL - COUNT
 
-El operador COUNT se usa generalmente en combinación con una cláusula GROUP BY. Es una de las funciones "agregadas" de SQL, que incluyen AVG (promedio) y SUM.
+El operador `COUNT` se usa generalmente en combinación con una cláusula `GROUP BY`. Es una de las funciones de agregación de SQL, que incluyen `AVG` (promedio) y `SUM` (sumatoria).
 
 Esta función contará el número de filas y devolverá ese recuento como una columna en el conjunto de resultados.
 
-Aquí hay ejemplos de lo que usaría COUNT para:
+Aquí hay ejemplos para lo cual podría usarse `COUNT`:
 
-*   Contando todas las filas en una tabla (no se requiere grupo)
-*   Recuento de los totales de subconjuntos de datos (requiere una sección Agrupar por de la declaración)
+*   Contar todas las filas en una tabla (no se requiere de `GROUP BY`)
+*   Hacer un recuento de los totales de subconjuntos de datos (requiere una sección `GROUP BY` dentro del comando)
 
-Para referencia, aquí están los datos actuales de todas las filas en nuestra base de datos de estudiantes de ejemplo.
+Como referencia, aquí están los datos actuales de todas las filas en nuestra base de datos de estudiantes de ejemplo.
 
 ```sql
 select studentID, FullName, programOfStudy, sat_score from student; -- all records with fields of interest 
@@ -21,7 +21,7 @@ select studentID, FullName, programOfStudy, sat_score from student; -- all recor
 
 ![imagen-1](https://github.com/SteveChevalier/guide-images/blob/master/count01.JPG?raw=true)
 
-Esta declaración SQL proporciona un recuento de todas las filas. Tenga en cuenta que puede asignar un nombre a la columna COUNT resultante con "AS".
+Este comando SQL proporciona un recuento de todas las filas. Tenga en cuenta que puede asignar un nombre a la columna `COUNT` resultante mediante el comando `AS`.
 
 ```sql
 select count(*) AS studentCount from student; -- count of all records 
@@ -56,4 +56,4 @@ select Specific_Party, Election_Year, format(sum(Total_$),2) AS contribution$Tot
 
 ![imagen-1](https://github.com/SteveChevalier/guide-images/blob/master/count05.JPG?raw=true)
 
-Al igual que con todas estas cosas, hay mucho más que eso, así que consulte el manual de su administrador de base de datos y diviértase probando diferentes pruebas usted mismo.
+Al igual que con otros comandos de SQL, hay mucho más que lo que aquí se presenta, por favor consulte el manual de su administrador de base de datos y diviértase realizando diferentes pruebas usted mismo.
