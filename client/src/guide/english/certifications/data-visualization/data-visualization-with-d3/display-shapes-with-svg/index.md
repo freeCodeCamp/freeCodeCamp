@@ -3,8 +3,34 @@ title: Display Shapes with SVG
 ---
 ## Display Shapes with SVG
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/display-shapes-with-svg/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint 1
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Use ``` append("rect") ```.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint 2
+
+Chain 4 ``` .attr() ``` methods.
+
+### Spoiler Alert | Solution Ahead
+### Solution
+
+```html
+<body>
+  <script>
+    const dataset = [12, 31, 22, 17, 25, 18, 29, 14, 9];
+    
+    const w = 500;
+    const h = 100;
+    
+    const svg = d3.select("body")
+                  .append("svg")
+                  .attr("width", w)
+                  .attr("height", h)
+                  .append("rect")
+                  .attr("width",25)
+                  .attr("height",100)
+                  .attr("x",0)
+                  .attr("y",0)
+  </script>
+</body>
+```
