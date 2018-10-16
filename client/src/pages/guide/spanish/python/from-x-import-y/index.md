@@ -33,3 +33,12 @@ Por ejemplo, en el módulo `os` hay un método `open` . Pero incluso tenemos una
 Incluso podemos usar `form x import *` , esto importaría todos los métodos, clases de ese módulo al espacio de nombres global del programa. Esta es una mala práctica de programación. Por favor, evítalo.
 
 En general, debe evitar la `from x import y` simplemente por los problemas que puede causar en programas a gran escala. Por ejemplo, nunca se sabe si un compañero programador podría querer hacer una nueva función que sea el nombre de una de las funciones existentes. Tampoco sabe si Python cambiará la biblioteca desde la que está importando funciones. Si bien estos problemas no existirán tan a menudo para los proyectos en solitario, como se dijo anteriormente, es una mala práctica de programación y debe evitarse.
+
+También podemos importar las funciones y renombrarlas para que se nos haga más sencillo utilizarlas, podemos hacerlo de esta manera:
+```
+>>>from math import sqrt as s
+>>>#Usamos s en lugar de sqrt
+>>>s(36)
+<<<6
+
+```
