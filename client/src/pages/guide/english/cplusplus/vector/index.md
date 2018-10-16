@@ -193,6 +193,23 @@ int main(){
  return 0;
 }
 ```
+In C++11, you can also sort with lambda function, which can be useful.
+```cpp11
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int > v {3, 1, 2};
+    sort(v.begin(), v.end(), [] (int i, int j) -> bool {
+        return i < j;
+    } );
+    cout << "Vector Contents Sorted In Ascending Order:\n";
+    for (int e : v)
+    cout << e << " ";
+    return 0;
+}
+```
 ### Sorting Vector In Descending Order
 Sorting Vector in descending order can be done with the help of third argument namely greater<int>() in Sort() in C++.
 ``` cpp
@@ -214,3 +231,5 @@ int main(){
  return 0;
 }
 ```
+
+You can also sort in descending using lamda like the one above.

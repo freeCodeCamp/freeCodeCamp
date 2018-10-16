@@ -16,7 +16,7 @@ for ( init; condition; increment ) {
 }
 ```
 
-It is allowed to place the increment insie the for loop like in a while loop. Meaning a syntax like this can also work.
+It is allowed to place the increment inside the for loop like in a while loop. Meaning a syntax like this can also work.
 
 ```
 for ( init; condition;) {
@@ -24,9 +24,20 @@ for ( init; condition;) {
    increment;
 }
 ```
+It is also allowed to ignore the init variables. For example :
+```
+int a = 1;
+for (; a <= 10 ;)
+{
+    cout << a << '\n';
+    a++;
+}
+```
+Though you can't ignore the condition, because empty condition is defaulted as false, so the for-loop won't run at all.
 
 ### init
-This step allows you to declare and initialize any loop control variables. This step is performed first and only once.
+This step allows you to declare and initialize any loop control variables. This step is performed first and only once.  
+Note that the variables declared in init can only be used inside the brackets of the for loop.
 
 ### condition
 Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next iteration(repetition of a process).
@@ -120,5 +131,3 @@ Output:
 4
 5
 ```
-
-
