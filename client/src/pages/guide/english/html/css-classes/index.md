@@ -21,7 +21,7 @@ You can then style these elements with CSS. Classes are referenced with period (
 }
 ```
 
-This code give a blue background and a red text color to all the elements that have the `super-man` class.
+This code will give you a blue background and a red text color to all the elements that have the `super-man` class.
 [View this example on CodePen](https://codepen.io/Tlandis/pen/RLvomV).
 
 You can also declare more than one class to your element, like:
@@ -48,7 +48,7 @@ background-color: black;
 
 ```
 
-**Note:** class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
+**Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
 
 You can also combine classes in the same line:
 ```css
