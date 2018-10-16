@@ -6,6 +6,10 @@ title: Books to Read for Programmers
 
 ## General
 
+*The Art of Agile Development* by James Shore and Shane Warden
+-http://shop.oreilly.com/product/9780596527679.do
+-ISBN-13: 978-0596527679
+
 *Automate the Boring Stuff With Python* by Al Sweigart
 - http://automatetheboringstuff.com/
 - ISBN-13: 978-1593275990
