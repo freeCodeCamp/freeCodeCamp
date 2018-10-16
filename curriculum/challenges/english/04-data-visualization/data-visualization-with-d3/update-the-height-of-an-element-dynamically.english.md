@@ -73,8 +73,6 @@ tests:
       .attr("class", "bar")
       // Add your code below this line
 
-
-
       // Add your code above this line
   </script>
 </body>
