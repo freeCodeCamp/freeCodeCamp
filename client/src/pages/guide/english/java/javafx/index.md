@@ -4,6 +4,10 @@ title: JavaFX
 ## Introduction 
 JavaFX is a graphics framework created by Sun Microsystems used for developing rich desktop and Internet applications. JavaFX was created to replace the much older Swing and Abstract Window Toolkit (AWT) libraries and serve as the Java language's standard graphics API for Java Standard Edition.
 
+As of JDK11, JavaFX won't be released as a part of the JDK package and will be availible as a seperate download. Oracle (the owner of Sun Microsystems) annonced it will support JavaFX (JDK8 release) until at least 2022.
+
+JavaFX is currenly being developed as an open source project by the OpenJFX community as a part of the OpenJDK project.
+
 ## Development Tools
 
 ### Gulon SceneBuilder
@@ -30,5 +34,7 @@ Scenic View is an application designed to show the current state of your JavaFX 
 [Scene Builder Tutorial](https://docs.oracle.com/javase/8/scene-builder-2/get-started-tutorial/overview.htm#JSBGS164)
 
 [Official JavaFX Documentation](https://docs.oracle.com/javase/8/javase-clienttechnologies.htm)
+
+[Official OpenJFX Site](https://openjfx.io/)
 
 [Official Scenic View Page](http://fxexperience.com/scenic-view/)
