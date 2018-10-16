@@ -50,7 +50,7 @@ class Fruits extends React.Component {
         <h2>Fruits:</h2>
         { /* change code below this line */ }
 
-         { /* change code above this line */ }
+        { /* change code above this line */ }
       </div>
     );
   }
