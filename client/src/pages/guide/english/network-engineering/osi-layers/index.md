@@ -29,16 +29,28 @@ In the diagram above, to the extreme left is the unit of data that is used in ea
 
 ### **Functions of Layers**
 
-* _**Layer 1 - Physical Layer:**_  The physical layer is the lowest of the OSI Layers and the most complex. This is because of the undelying hardware technologies used. The function of this layer is to define how the bit stream will be transmitted rather than the logical data packet. It deals with defining which frequency will the bit be transmitted on, what kind of modulation will be used, how the bits will be grouped and other low lying physical parameters needed for transmission of bits.
+* _**Layer 1 - Physical Layer:**_  This layer is the root of the OSI model, where information is transmitted either in the Local Area Network (LAN) for the Link Layer, and a physical signal such as electrical, mechanical medium in the form of code words or symbols in the Physical Layer.
 
 * _**Layer 2 - Data Link Layer:**_ The data link layer is responsible for transferring data to adjacent devices on the same Local Area Network (LAN). This layer also has provisions to make sure that error-free data is being passed on to the higher layers from the physical layer. Hence, it contains error detection and correction mechanisms to ensure the integrity of data is maintained. Data at this layer is commonly referred to as a "frame". The transmission of frames at layer 2 is known as "switching", and is the common function of a Network Switch.
 
-* _**Layer 3 - Network Layer:**_ The network layer is responsible for forwarding packets to other networks. Usually a network is divided into multiple subnets and the network layer with the help of routers forwards packets between such networks to establish a Wide Area Network (WAN). 
+* _**Layer 3 - Network Layer:**_ This layer is responsible for providing data routing paths for network connections. Basically, it moves data packets across the network with the most logical path.
 
-* _**Layer 4 - Transport Layer:**_ The transport layer ensures that messages are delivered error-free, in sequence, and with no losses or duplications. It relieves the higher layer protocols from any concern with the transfer of data between them and their peers.
+Internet Protocol (IP)
+Defines the structure of the data packets, as well as labeling it with the source and destination information.
+
+The source and destination information are in the form of IP Addresses, in which can be in the form 104.16.121.127(IPv4), or 2001:db8:0:1234:0:567:8:1(IPv6).
+
+* _**Layer 4 - Transport Layer:**_ This layer is responsible for the host-to-host communication of messages. Examples of protocols in this layer include TCP and UDP.
+
+Transmission Control Protocol (TCP)
+The most common connection-oriented protocol. It defines how to establish and maintain a network conversation. It is responsible for establishing a connection (called a socket) between the client and the host in a 3-way handshake.
 
 * _**Layer 5 - Session Layer:**_ The session layer allows session establishment between processes running on different stations. 
 
 * _**Layer 6 - Presentation Layer:**_ The presentation layer formats the data to be presented to the application layer. 
 
-* _**Layer 7 - Application Layer:**_ The application layer serves as the window for users and application processes to access network services.
+* _**Layer 7 - Application Layer:**_ Application Layer
+This layer allows applications to communicate over the network once the connection has been established, such as from the Web Browser (Application) to the Server. Examples of protocols in this layer include HTTP and TELNET.
+
+HyperText Transfer Protocol (HTTP)
+A set of rules for transferring files over the Internet. For example, when you enter the URL into the browser, the browser sends an HTTP request for the webpage. The host would then return the webpage, together with all the elements that are within, such as images, text, videos, styling fonts, etc.
