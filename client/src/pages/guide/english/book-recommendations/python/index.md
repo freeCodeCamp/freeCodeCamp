@@ -49,6 +49,15 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
+#### Python Crash Course: A Hands-On, Project-Based Introduction to Programming
+
+This book has it all! Starting off right from the get-go, beginners dive into the fundamentals of programming in Python, with useful exercises to test your skills and keep them sharp. Veterans of the Python programming language will find this section to be an extremely helpful reference. After learning the fundamentals, beginners are prompted with three different projects to add to their programming portfolio. These specifically include creating a 2D game that responds to keypresses and mous clicks, growing more challenging as the game progresses, data visualization, and creating your very own web application using Django! The book will get you up to speed and have you writing real programs fast, why wait?
+
+- [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
+- ISBN-10: 1593276036
+- ISBN-13: 978-1593276034
+
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
