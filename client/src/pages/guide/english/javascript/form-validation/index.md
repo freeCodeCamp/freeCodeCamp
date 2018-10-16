@@ -3,19 +3,15 @@ title: Form Validation
 ---
 
 ## Form Validation
-Form validation normally used to occur at the server, after the client had entered all the necessary data and then pressed the Submit button. If the data
-entered by a client was incorrect or was simply missing, the server would have to send all the data back to the client and request that the form be
-resubmitted with correct information. This was really a lengthy process which used to put a lot of burden on the server.
+Form validation used to occur on the server, after a client had entered all necessary data and then pressed a Submit button. If the data entered by a client was incorrect or missing, the server would return all data back to the client and request that the form be resubmitted with correct information. This was a lengthy process, which used to put a lot of burden on the server.
 
-JavaScript provides a way to validate form's data on the client's computer before sending it to the web server. Form validation generally performs two
-functions:
+JavaScript provides a way to validate a form's data on the client's computer before sending it to the web server. Form validation generally performs two functions:
 
 ### Basic Validation
-First of all, the form must be checked to make sure all the mandatory fields are filled in. It would require just a loop through each field in the form and
-check for data.
+Firstly, the form must be checked to make sure all the mandatory fields are completed. This requires a loop through each field of the form, checking for data in each field.
 
 ### Data Format Validation
-Secondly, the data that is entered must be checked for correct form and value. Your code must include appropriate logic to test correctness of data.
+Secondly, the data that is entered must be checked for correct form and value. Validation code must include appropriate logic to test correctness of data.
 
 #### Example:
 
@@ -81,8 +77,7 @@ Lookout [here](https://liveweave.com/LP9eOP)
 
 ### Basic Form Validation
 
-First let us see how to do a basic form validation. In the above form, we are calling validate() to validate data when onsubmit event is occurring. The
-following code shows the implementation of this `validate()` function.
+In the above form, we are calling `validate()` to validate data when an `onsubmit` event occurs. The following code shows the implementation of this `validate()` function.
 
 ```html
 <script type="text/javascript">
@@ -128,10 +123,9 @@ Lookout [here](https://liveweave.com/pCPTnP)
 
 ### Data Format Validation
 
-Now we will see how we can validate our entered form data before submitting it to the web server.
+We can also validate our entered form data for correctness before submitting it to the web server.
 
-The following example shows how to validate an entered email address. An email address must contain at least a ‘@’ sign and a dot (.). Also, the ‘@’ must
-not be the first character of the email address, and the last dot must at least be one character after the ‘@’ sign.
+The following example shows how to validate an entered email address. An email address must contain at least a ‘@’ sign and a dot (.). Also, the ‘@’ must not be the first character of the email address, and the last dot must at least be one character after the ‘@’ sign.
 
 #### Example:
 
@@ -160,8 +154,7 @@ Lookout [here](https://liveweave.com/nznVs6)
 
 ### HTML5 Form Constraints
 
-Some of commonly used HTML5 constraints for `<input>` are the `type` attribute (e.g. `type="password"`), `maxlength`, `required`and `disabled`. A less
-commonly used constraint is the `pattern` attrinute that takes JavaScript regular expression.
+Some commonly used HTML5 constraints for `<input>` are the `type` attribute (e.g. `type="password"`), `maxlength`, `required`and `disabled`. A less commonly used constraint is the `pattern` attribute that takes a JavaScript regular expression.
 
 ### Validation Libraries
 Examples of validation libraries include:
