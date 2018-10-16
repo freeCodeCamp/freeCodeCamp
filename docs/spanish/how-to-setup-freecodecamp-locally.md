@@ -337,7 +337,7 @@ Sigue estos pasos:
     git add .
     ```
 
-    SOlo los archivos que fueron movidos al area de preparación se añadirán cuando hagas un commit.
+    Solo los archivos que fueron movidos al area de preparación se añadirán cuando hagas un commit.
 
     ```shell
     git status
@@ -383,7 +383,7 @@ Sigue estos pasos:
     docs: update contributing guidelines
     ```
 
-    Keep these short, not more than 50 characters. You can always add additional information in the description of the commit message.
+    Que sean cortos, no mas de 50 caracteres. Tu siempre puedes añadir información adicional en la descripción del mensaje commit.
 
     This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
 
