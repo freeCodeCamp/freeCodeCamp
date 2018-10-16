@@ -3,13 +3,28 @@ title: Styling Tables
 ---
 ## Styling Tables
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/styling-tables/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Tables can be styled with css properties, such as ```table-layout```,```border-collapse```,```border```,```width```,```height```,```text-align```,```font```,```color```etc.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Example
+```css
+/*set table border to solid black*/
+table, th, td {
+   border: 1px solid black;
+}
+table {
+    border-collapse: collapse;
+}
+/*set padding of 15px to all table elements and aligns to left*/
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+```
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+ 
+ -  [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes/Styling_tables)
+ -  [w3schools](https://www.w3schools.com/css/css_table.asp)
+
 
 

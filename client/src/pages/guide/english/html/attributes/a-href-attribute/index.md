@@ -44,7 +44,7 @@ It's also possible to set an anchor to certain place of the page. To do this you
 <a name="top"></a>
 ```
 
-Any description between tags is not required. After that you can place a link leading to this anchor at any palce on same page. To do this you should use tag <a> with necessary attribute "href" with symbol # (sharp) and key-word description of the anchor, like this:
+Any description between tags is not required. After that you can place a link leading to this anchor at any place on the same page. To do this you should use tag <a> with necessary attribute "href" with symbol # (sharp) and key-word description of the anchor, like this:
 
 ```html
 <a href="#top">Go to Top</a>

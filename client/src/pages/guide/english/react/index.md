@@ -81,8 +81,9 @@ Chances are that if you are new to web development that setting up a development
 
 In this article we are going to look at how we can get started with React using only a text editor and a browser and nothing else.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="Watch Video Here" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI" target="_blank">
+  <img src="https://img.youtube.com/vi/100pKUE3OPI/0.jpg" alt="Watch Video Here" width="240" height="180" border="10" />
+</a>
 
 ### 1 — Set Up Boiler Plate Code with Emmet
 

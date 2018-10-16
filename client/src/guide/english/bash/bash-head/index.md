@@ -1,5 +1,5 @@
 ---
-title: Bash Head
+title: Bash head
 ---
 
 ## Bash command: head
