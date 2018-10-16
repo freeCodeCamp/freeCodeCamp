@@ -7,25 +7,26 @@ videoUrl: ''
 localeTitle: Adicione uma margem negativa a um elemento
 ---
 
-## Description
-<section id="description"> A <code>margin</code> é um elemento CSS que controla a quantidade de espaço entre a <code>border</code> de um elemento com os elementos adjacentes. Se você definir a <code>margin</code> de um elemento como um valor negativo, o elemento ficará maior. </section>
 
-## Instructions
-<section id="instructions"> Tente definir a <code>margin</code> para um valor negativo como o da caixa vermelha. Altere a <code>margin</code> da caixa azul para <code>-15px</code> , para preencher toda a largura horizontal da caixa amarela em torno dela. </section>
+## Descrição
+<section id="description"> O elemento <code>margin</code> controla a quantidade de espaço entre o elemento <code>border</code>  e os elementos adjacentes. Se você definir o elemento <code>margin</code> com um valor negativo, o elemento ficará maior. </section>
 
-## Tests
+## Intruções
+<section id="instructions"> Tente definir a <code>margin</code> para um valor negativo como o da caixa vermelha. Altere a <code>margin</code> da caixa azul para <code>-15px</code>, para preencher toda a largura horizontal da caixa amarela em torno dela.</section>
+
+## Testes
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Sua classe de <code>blue-box</code> deve fornecer elementos de <code>-15px</code> de <code>margin</code> .
+  - text: Sua classe <code>blue-box</code> deve fornecer elementos de <code>-15px</code> de <code>margin</code> .
     testString: 'assert($(".blue-box").css("margin-top") === "-15px", "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,7 +78,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
