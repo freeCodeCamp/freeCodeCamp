@@ -3,11 +3,12 @@ title: Jump Search
 ---
 
 ## Jump Search
-A jump search locates an item in a sorted array by jumping k itens and then verify if the item wanted is between 
+A jump search locates an item in a sorted array by jumping k items and then verify if the item wanted is between 
 the previous jump and current jump.
 
 # Complexity Worst Case
 O(√N)
+_Note : Here we need the array to be sorted , to implement this_
 
 # Works
 1. Define the value of k, the number of jump: Optimal jump size is √N where the N is the length of array
