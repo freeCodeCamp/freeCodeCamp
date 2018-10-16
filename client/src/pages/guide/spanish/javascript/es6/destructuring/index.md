@@ -42,7 +42,7 @@ La asignación de destrucción de objetos es un poco diferente porque el objeto 
 
 ```js
 const fullName = { first: "John", last: "Smith"}; 
- const {firstName, lastName} = fullName; 
+ const {firstName, lastName} = fullName;
  
  console.log(firstName, lastName); // undefined undefined 
 ```
@@ -62,4 +62,11 @@ const fullName = { first: "John", last: "Smith"};
  
  console.log(firstName, lastName); // John Smith 
 
+```
+**Desestructuración de matrices con descanso.**
+Al desestructurar una matriz, puede descomprimir y asignar la parte restante a una variable usando el patrón de descanso:
+```js
+const [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
 ```
