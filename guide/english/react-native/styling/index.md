@@ -1,16 +1,17 @@
 ---
 title: Styling
 ---
+
 ## React Native - Styling
 
-React Native provides an API for creating stylesheets and styling your components: [StyleSheet](https://facebook.github.io/react-native/docs/stylesheet). 
+React Native provides an API for creating stylesheets and styling your components: [StyleSheet](https://facebook.github.io/react-native/docs/stylesheet).
 
 ```jsx
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <View>
         <Text style={styles.header}>I am a header!</Text>
@@ -22,11 +23,11 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 20
+    fontSize: 20,
   },
   text: {
-    color: 'blue'
-  }
+    color: 'blue',
+  },
 });
 ```
 
@@ -40,7 +41,7 @@ Styles are also not inherited as they are in traditional CSS. In most cases, you
 
 React Native uses an implementation of [flexbox](https://facebook.github.io/react-native/docs/flexbox) similar to the web standard. By default, items in the view will be set to `display: flex`.
 
- > If you do not want to use flexbox, you can also arrange React Native components via `relative` or `absolute` positioning.
+> If you do not want to use flexbox, you can also arrange React Native components via `relative` or `absolute` positioning.
 
 Flexbox in React Native defaults to `flexDirection: column`, instead of `flex-direction: row` (web standard). The `column` value displays flexible items vertically, which accommodates mobile devices in portrait orientation.
 
@@ -48,7 +49,7 @@ To learn more about flexbox, visit [this detailed guide on CSS-Tricks](https://c
 
 ### Styled Components
 
-Including lots of styles in a file with a component isn't always easy to maintain. Styled components can solve this issue. 
+Including lots of styles in a file with a component isn't always easy to maintain. Styled components can solve this issue.
 
 For example, a Button component may be used in multiple places across an application. Copying and pasting the style object with each Button instance would be inefficient. Instead, create a reusable, styled Button component:
 
@@ -60,9 +61,7 @@ const Button = ({ onPress, children }) => {
   const { buttonStyle, textStyle } = styles;
   return (
     <TouchableOpacity onPress={onPress} style={buttonStyle}>
-      <Text style={textStyle}>
-        {children}
-      </Text>
+      <Text style={textStyle}>{children}</Text>
     </TouchableOpacity>
   );
 };
@@ -76,7 +75,7 @@ const styles = {
     fontSize: 16,
     fontWeight: '600',
     paddingTop: 10,
-    paddingBottom: 10
+    paddingBottom: 10,
   },
   buttonStyle: {
     backgroundColor: '#fff',
@@ -87,8 +86,8 @@ const styles = {
     paddingRight: 25,
     paddingLeft: 25,
     marginTop: 10,
-    width: 300
-  }
+    width: 300,
+  },
 };
 ```
 
@@ -102,11 +101,11 @@ import Button from './styling/Button';
 export default class Login extends Component {
   render() {
     return (
-        <View>
-          <TextInput placeholder='Username or Email' />
-          <TextInput placeholder='Password' />
-          <Button>Log In</Button>
-        </View>
+      <View>
+        <TextInput placeholder="Username or Email" />
+        <TextInput placeholder="Password" />
+        <Button>Log In</Button>
+      </View>
     );
   }
 }
@@ -114,4 +113,4 @@ export default class Login extends Component {
 
 ### Libraries for Styling
 
-There are a few popular libraries for styling React Native. Some of them provide features similar to [Bootstrap](../../bootstrap/index.md), including default forms, button styles, and page layout options. One of the most popular libraries is [styled-components](https://github.com/styled-components/styled-components). There are many others you can find on npm and GitHub to try for yourself.
+There are a few popular libraries for styling React Native. Some of them provide features similar to [Bootstrap](../../bootstrap), including default forms, button styles, and page layout options. One of the most popular libraries is [styled-components](https://github.com/styled-components/styled-components). There are many others you can find on npm and GitHub to try for yourself.
