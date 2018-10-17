@@ -17,7 +17,7 @@ This can be re-written using the <code>conditional operator</code>:
 
 ## Instructions
 <section id='instructions'>
-Use the <code>conditional operator</code> in the <code>checkEqual</code> function to check if two numbers are equal or not. The function should return either "equal" or "not equal".
+Use the <code>conditional operator</code> in the <code>checkEqual</code> function to check if two numbers are equal or not. The function should return either "Equal" or "Not Equal".
 </section>
 
 ## Tests
@@ -27,12 +27,12 @@ Use the <code>conditional operator</code> in the <code>checkEqual</code> functio
 tests:
   - text: <code>checkEqual</code> should use the <code>conditional operator</code>
     testString: 'assert(/.+?\s*?\?\s*?.+?\s*?:\s*?.+?/gi.test(code), "<code>checkEqual</code> should use the <code>conditional operator</code>");'
-  - text: '<code>checkEqual(1, 2)</code> should return "not equal"'
-    testString: 'assert(checkEqual(1, 2) === false, "<code>checkEqual(1, 2)</code> should return \"not equal\"");'
+  - text: '<code>checkEqual(1, 2)</code> should return "Not Equal"'
+    testString: 'assert(checkEqual(1, 2) === "Not Equal", "<code>checkEqual(1, 2)</code> should return \"Not Equal\"");'
   - text: '<code>checkEqual(1, 1)</code> should return "equal"'
-    testString: 'assert(checkEqual(1, 1) === true, "<code>checkEqual(1, 1)</code> should return \"equal\"");'
-  - text: '<code>checkEqual(1, -1)</code> should return "not equal"'
-    testString: 'assert(checkEqual(1, -1) === false, "<code>checkEqual(1, -1)</code> should return \"not equal\"");'
+    testString: 'assert(checkEqual(1, 1) === "Equal", "<code>checkEqual(1, 1)</code> should return \"Equal\"");'
+  - text: '<code>checkEqual(1, -1)</code> should return "Not Equal"'
+    testString: 'assert(checkEqual(1, -1) === "Not Equal", "<code>checkEqual(1, -1)</code> should return \"Not Equal\"");'
 
 ```
 
@@ -62,7 +62,7 @@ checkEqual(1, 2);
 
 ```js
 function checkEqual(a, b) {
-  return a === b ? "equal" : "not equal";
+  return a === b ? "Equal" : "Not Equal";
 }
 ```
 </section>
