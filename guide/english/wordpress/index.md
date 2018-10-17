@@ -8,7 +8,7 @@ WordPress is a free and open-source content management system based on PHP and M
 
 WordPress powers over 30% of all websites and is by far the most used CMS on the planet. Backed up by a huge community, this open source platform powers a multi-billion dollar economy with themes/plugins and custom software.
 
-Easy to use, Wordpress offers an easy solution for both web developers and non-web developers alike to create a site.
+Easy to use, Wordpress offers an easy solution for both web developers and non-web developers alike to create a site. To function, WordPress has to be installed on a web server, either part of an Internet hosting service like WordPress.com or a computer running the software package WordPress.org in order to serve as a network host in its own right. A local computer may be used for single-user testing and learning purposes.
 
 Just to a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
