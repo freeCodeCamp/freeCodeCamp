@@ -24,81 +24,81 @@ The three most basic principles of functional programming are:
 #### Pure Functions
 Pure Functions are functions which are consistent--if you give them the same inputs, they always return the same outputs.
 A pure function, with no side effects:
-```javascript
-var count = 0;
-function countOne(i) {
-return i+1;
-}
-var next = countOne(count);
-var third = countOne(countOne(count));
-console.log(count); // 0
-console.log(next); // 1
-console.log(third); // 2
-```
+  ```javascript
+  var count = 0;
+  function countOne(i) {
+    return i+1;
+  }
+  var next = countOne(count);
+  var third = countOne(countOne(count));
+  console.log(count); // 0
+  console.log(next); // 1
+  console.log(third); // 2
+  ```
 Not a pure function, because of side effects:
-```javascript
-var count = 0;
-function countOne() {
-return count = count + 1;
-}
-var next = countOne();
-var third = countOne();
-console.log(count); // 2
-console.log(next); // 1
-console.log(next); // 2
-```
+  ```javascript
+  var count = 0;
+  function countOne() {
+    return count = count + 1;
+  }
+  var next = countOne();
+  var third = countOne();
+  console.log(count); // 2
+  console.log(next); // 1
+  console.log(next); // 2
+  ```
 #### Avoid shared or mutable (changeable) state
 Using parameters creates function-specific scope.
-```javascript
-function count(number) {
-return 1;
-}
-function double(number) {
-return number * 2;
-}
-console.log(count(1)); // 2
-console.log(double(1)); // 2
-```
+  ```javascript
+  function count(number) {
+    return 1;
+  }
+  function double(number) {
+    return number * 2;
+  }
+  console.log(count(1)); // 2
+  console.log(double(1)); // 2
+  ```
 Using shared, global variables means that changes might be unpredictable, especially when variables are shared between multiple files.
-```javascript
-var number = 1;
-function count() {
-return number = number + 1;
-}
-function double() {
-return number = number * 2;
-}
-console.log(count()); // 2
-console.log(double()); // 4
-```
+  ```javascript
+  var number = 1;
+  function count() {
+    return number = number + 1;
+  }
+  function double() {
+    return number = number * 2;
+  }
+  console.log(count()); // 2
+  console.log(double()); // 4
+  ```
 
 #### Use declarative programming
 A simple example, which is
 classic imperative, spells out every step:
-```javascript
-var values = [3, 7, 29, 'forty-seven', 'a book'];
-var strings = [];
-for (var i = 0; i < values.length; i++) {
-if (typeof values[i] === "string") {
-strings.push(values[i]);
-}
-}
-console.log(strings); // ['forty-seven', 'a book']
-```
+  ```javascript
+  var values = [3, 7, 29, 'forty-seven', 'a book'];
+  var strings = [];
+  for (var i = 0; i < values.length; i++) {
+    if (typeof values[i] === "string") {
+      strings.push(values[i]);
+    }
+  }
+  console.log(strings); // ['forty-seven', 'a book']
+  ```
 An example which is declarative, relies on functions:
-```javascript
-var values = [3, 7, 29, 'forty-seven', 'a book'];
-var strings = values.filter(function(value) {
-return typeof value === "string";
-});
-console.log(strings); // ['forty-seven', 'a book']
-```
+  ```javascript
+  var values = [3, 7, 29, 'forty-seven', 'a book'];
+  var strings = values.filter(function(value) {
+    return typeof value === "string";
+  });
+  console.log(strings); // ['forty-seven', 'a book']
+  ```
 Even simpler with ES6:
-```javascript
-var values = [3, 7, 29, 'forty-seven', 'a book'];
-var strings = values.filter(value => typeof value === "string");
-console.log(strings); // ['forty-seven', 'a book']
-```
+  ```javascript
+  var values = [3, 7, 29, 'forty-seven', 'a book'];
+  var strings = values.filter(value => typeof value === "string");
+  console.log(strings); // ['forty-seven', 'a book']
+  ```
 
 ### Functional programming languages
 
