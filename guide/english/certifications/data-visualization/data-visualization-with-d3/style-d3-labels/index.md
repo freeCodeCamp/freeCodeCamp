@@ -13,8 +13,9 @@ Use ` font-family ` in the first method and ` fill ` in the second method.
 
 ### Solution
 
-Add these lines to the end of the chain
-`javascript
+Add these lines to the end of the chain:
+
+```javascript
   .style("font-size","25px")
   .style("fill","red");
-`
+```
