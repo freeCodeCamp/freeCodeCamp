@@ -17,6 +17,9 @@ Just to a few advantages of WordPress:
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
+## Plugins
+
+WordPress' plugin architecture allows users to extend the features and functionality of a website or blog. As of March 2017, WordPress has over 55,286 plugins available, each of which offers custom functions and features enabling users to tailor their sites to their specific needs. These customizations range from search engine optimization, to client portals used to display private information to logged in users, to content management systems, to content displaying features, such as the addition of widgets and navigation bars. Not all available plugins are always abreast with the upgrades and as a result they may not function properly or may not function at all.
 
 ### More Information
 
