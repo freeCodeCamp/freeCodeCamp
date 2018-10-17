@@ -32,6 +32,15 @@ Using the variable:
 var(--custom-name)
 ```
 
+### Solution
+
+In ```.penguin``` class we need to add ```:root``` and change the value of ```--penguin-belly``` to ```white```:
+
+```css 
+  :root {
+    --penguin-belly: white;
+  }
+```
 
 ### Sources
 
