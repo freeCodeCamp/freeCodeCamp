@@ -21,7 +21,7 @@ Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp
 
 Feliz contribución 🎉!
 
-## Aquí hay algunas maneras divertidas en que puede ayudar:
+## Aquí hay algunas maneras divertidas en que puedes ayudar:
 
 Puedes optar por contribuir a cualquier área de tu interés:
 

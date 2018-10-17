@@ -8,7 +8,7 @@ challengeType: 1
 <section id='description'>
 So far, we've learned different ways of creating representations of graphs. What now? One natural question to have is what are the distances between any two nodes in the graph? Enter <dfn>graph traversal algorithms</dfn>.
 <dfn>Traversal algorithms</dfn> are algorithms to traverse or visit nodes in a graph. One type of traversal algorithm is the breadth-first search algorithm.
-This algorithm starts at one node, first visits all its neighbors that are one edge away, then goes on to visiting each of their neighbors.
+This algorithm starts at one node, first visits all its neighbors that are one edge away, then goes on to visiting each of their neighbors and so on until all nodes have been reached.
 Visually, this is what the algorithm is doing.
 <img class='img-responsive' src='https://camo.githubusercontent.com/2f57e6239884a1a03402912f13c49555dec76d06/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f342f34362f416e696d617465645f4246532e676966'>
 To implement this algorithm, you'll need to input a graph structure and a node you want to start at.
@@ -83,36 +83,37 @@ console.info('after the test');
 
 ```js
 function bfs(graph, root) {
-// Distance object returned
-var nodesLen = {};
-// Set all distances to infinity
-for (var i = 0; i < graph.length; i++) {
-nodesLen[i] = Infinity;
+  // Distance object returned
+  var nodesLen = {};
+  // Set all distances to infinity
+  for (var i = 0; i < graph.length; i++) {
+    nodesLen[i] = Infinity;
+  }
+  nodesLen[root] = 0; // ...except root node
+  var queue = [root]; // Keep track of nodes to visit
+  var current; // Current node traversing
+  // Keep on going until no more nodes to traverse
+  while (queue.length !== 0) {
+    current = queue.shift();
+    // Get adjacent nodes from current node
+    var curConnected = graph[current]; // Get layer of edges from current
+    var neighborIdx = []; // List of nodes with edges
+    var idx = curConnected.indexOf(1); // Get first edge connection
+    while (idx !== -1) {
+      neighborIdx.push(idx); // Add to list of neighbors
+      idx = curConnected.indexOf(1, idx + 1); // Keep on searching
+    }
+    // Loop through neighbors and get lengths
+    for (var j = 0; j < neighborIdx.length; j++) {
+      // Increment distance for nodes traversed
+      if (nodesLen[neighborIdx[j]] === Infinity) {
+        nodesLen[neighborIdx[j]] = nodesLen[current] + 1;
+        queue.push(neighborIdx[j]); // Add new neighbors to queue
+      }
+    }
+  }
+  return nodesLen;
 }
-nodesLen[root] = 0; // ...except root node
-var queue = [root]; // Keep track of nodes to visit
-var current; // Current node traversing
-// Keep on going until no more nodes to traverse
-while (queue.length !== 0) {
-current = queue.shift();
-// Get adjacent nodes from current node
-var curConnected = graph[current]; // Get layer of edges from current
-var neighborIdx = []; // List of nodes with edges
-var idx = curConnected.indexOf(1); // Get first edge connection
-while (idx !== -1) {
-neighborIdx.push(idx); // Add to list of neighbors
-idx = curConnected.indexOf(1, idx + 1); // Keep on searching
-}
-// Loop through neighbors and get lengths
-for (var j = 0; j < neighborIdx.length; j++) {
-// Increment distance for nodes traversed
-if (nodesLen[neighborIdx[j]] === Infinity) {
-nodesLen[neighborIdx[j]] = nodesLen[current] + 1;
-queue.push(neighborIdx[j]); // Add new neighbors to queue
-}
-}
-}
-return nodesLen;}
 ```
 
-</section>
+</section>  

@@ -33,7 +33,7 @@ Este directorio contiene toda la documentación sobre cómo contribuir a freeCod
 1. Guía de estilo sobre cómo crear Guías.
 2. Guía de estilo sobre cómo crear Desafíos de programación.
 
-## Referencía rápida de comandos para trabajar en local
+## Referencia rápida de comandos para trabajar en local
 
 Una referencia rápida de los comandos que necesitarás cuando trabajes en local.
 

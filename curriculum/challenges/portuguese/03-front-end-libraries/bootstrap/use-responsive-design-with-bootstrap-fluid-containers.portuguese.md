@@ -3,7 +3,7 @@ id: bad87fee1348bd9acde08712
 title: Use Responsive Design with Bootstrap Fluid Containers
 challengeType: 0
 videoUrl: ''
-localeTitle: Use Design Responsivo com Recipientes de Fluido Bootstrap
+localeTitle: Use Design Responsivo com Containers Fluidos do Bootstrap
 ---
 
 ## Description
