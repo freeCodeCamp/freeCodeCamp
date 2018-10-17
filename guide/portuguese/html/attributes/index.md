@@ -27,7 +27,7 @@ No exemplo acima, o valor fornecido para o atributo `href` pode ser qualquer lin
 
 Alguns atributos HTML não precisam de um valor porque eles têm apenas uma opção. Estes são chamados de atributos booleanos. A presença do atributo em uma tag será aplicada a esse elemento HTML. No entanto, não há problema em escrever o nome do atributo e defini-lo como igual à única opção do valor. Nesse caso, o valor geralmente é o mesmo que o nome do atributo.
 
-Por exemplo, o elemento `<input>` em um formulário pode ter um atributo `required` . Isso requer que os usuários preencham esse item antes de poderem enviar o formulário.
+Por exemplo, o elemento `<input>` em um formulário pode ter um atributo `required` . Isso requer que os usuários preencham esse item antes de enviarem o formulário.
 
 Aqui estão exemplos que fazem a mesma coisa:
 
