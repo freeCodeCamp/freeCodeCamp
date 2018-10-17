@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Recuerde establecer la propiedad del constructor al cambiar el prototipo
 ---
 
-## Description
+## Descripción
 <section id="description"> Hay un efecto secundario crucial de configurar manualmente el <code>prototype</code> en un nuevo objeto. Se borró la propiedad del <code>constructor</code> ! El código del desafío anterior imprimirá lo siguiente para el <code>duck</code> : <blockquote> console.log (duck.constructor) <br> // imprime &#39;indefinido&#39; - ¡Vaya! </blockquote> Para solucionar esto, siempre que un prototipo se establezca manualmente en un nuevo objeto, recuerde definir la propiedad del <code>constructor</code> : <blockquote> Bird.prototype = { <br> constructor: Bird, // define la propiedad del constructor <br> NumLegs: 2, <br> comer: función () { <br> console.log (&quot;nom nom nom&quot;); <br> } <br> describe: function () { <br> console.log (&quot;Mi nombre es&quot; + this.name); <br> } <br> }; </blockquote></section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Definir la propiedad del <code>constructor</code> en el <code>prototype</code> <code>Dog</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ function Dog(name) {
   this.name = name;
 }
 
-// Modify the code below this line
+// Modifica el código debajo de esta linea
 Dog.prototype = {
 
   numLegs: 2,
@@ -54,10 +54,10 @@ Dog.prototype = {
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// Solución requerida
 ```
 </section>
