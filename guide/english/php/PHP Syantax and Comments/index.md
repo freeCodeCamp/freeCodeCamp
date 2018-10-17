@@ -1,10 +1,10 @@
 ---
-title: PHP Syantax and Comments
+title: PHP Syntax and Comments
 ---
 
 ### PHP Syantx
 
-The structure of a PHP syantax somewhat looks like:
+The structure of a PHP syntax somewhat looks like:
 
 ```shell
     <?php
