@@ -8,6 +8,20 @@ Gatsby is a static site generator for [React](https://guide.freecodecamp.org/rea
 
 The Gatsby environment provides several "starters" to help configure static sites quickly. Starters can be found here: [Starter Library](https://www.gatsbyjs.org/starters/).
 
+## How Gatsby works
+Gatsby build blazing fast site with the data provided by developer regardless of the source. 
+
+### Data sources
+1- CMSs: Wordpress, Contenful, Drupal etc
+2- Markdown: Documentation, posts etc
+3- Data: APIs, Databasses, JSON, CSV etc
+
+### Build 
+Gatsby build powered by GraphQL and render it through HTML, CSS, React
+
+### Deploy 
+It then deploys it on static web host Amazon S3, Netlify, Github Pages, Surge.sh and many more.
+
 ### Installation and using the Gatsby CLI
 
 * Node: `npm install --global gatsby-cli`
