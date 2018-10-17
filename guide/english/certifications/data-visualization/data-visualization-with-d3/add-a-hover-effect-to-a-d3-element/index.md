@@ -14,6 +14,7 @@ Use the ` attr() ` method to add attributes.
 ### Solution
 
 Add the following line of code to the end of your ` rect ` methods chain:
-`javascript
+
+```javascript
 .attr("class","bar");
-`
+```
