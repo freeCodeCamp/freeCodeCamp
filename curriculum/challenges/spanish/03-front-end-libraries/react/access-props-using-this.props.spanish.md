@@ -47,9 +47,9 @@ class ReturnTempPassword extends React.Component {
   render() {
     return (
         <div>
-            { /* change code below this line */ }
-            <p>Your temporary password is: <strong></strong></p>
-            { /* change code above this line */ }
+            { /* cambia el código debajo de esta línea */ }
+            <p>Tu contraseña temporal es: <strong></strong></p>
+            { /* cambia el código arriba de esta línea */ }
         </div>
     );
   }
@@ -63,12 +63,12 @@ class ResetPassword extends React.Component {
   render() {
     return (
         <div>
-          <h2>Reset Password</h2>
-          <h3>We've generated a new temporary password for you.</h3>
-          <h3>Please reset this password from your account settings ASAP.</h3>
-          { /* change code below this line */ }
+          <h2>Cambiar Contraseña</h2>
+          <h3>Te hemos generado una contraseña temporal.</h3>
+          <h3>Por favor cambia pronto está contraseña desde las opciones de tu cuenta .</h3>
+          { /* cambia el código debajo de esta línea */ }
 
-          { /* change code above this line */ }
+          { /* cambia el código arriba de esta línea */ }
         </div>
     );
   }
@@ -83,7 +83,7 @@ class ResetPassword extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+console.info('después de la prueba');
 ```
 
 </div>
@@ -94,6 +94,6 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
