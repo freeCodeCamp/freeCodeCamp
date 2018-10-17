@@ -24,3 +24,17 @@ add between ```<style>``` and ```</style>```:
     color: green;
     font-family: monospace;
 ```
+
+#### Full solution
+
+```css
+<style>
+  body {
+    background-color: black;
+    color: green;
+    font-family: monospace;
+  }
+</style>
+
+<h1>Hello World</h1>
+```
