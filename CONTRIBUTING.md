@@ -1,4 +1,4 @@
-<table>
+﻿<table>
     <tr>
         <!-- Do not translate this table -->
         <td> Read these guidelines in </td>
@@ -33,7 +33,7 @@ You can choose to contribute to any area that interests you:
 
 ## Contribute to this open source codebase
 
-We have a huge open source codebase of the thousands of [coding challenges](https://learn.freecodecamp.org) and [guide articles](https://guide.freecodecamp.org).
+We have a huge open source codbase of the thousands of [coding challenges](https://learn.freecodecamp.org) and [guide articles](https://guide.freecodecamp.org).
 
 You can help us:
 
