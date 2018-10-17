@@ -136,7 +136,7 @@ The final section is referred to as the 'increment/decrement'. Its job is to per
 ### Syntax Comparison
 ```
 
-main()                            
+int main()                            
 {                          
   int i = 1;
   while(i<=5)
@@ -145,10 +145,11 @@ main()
      i++;
    }
   getch();
+  return 0;
 }
 
 
-main()            
+int main()            
 {
   int i = 1;
   do
@@ -157,11 +158,11 @@ main()
      i++;
    } while(i<=5);
   getch();
-
+  return 0;
 }
 
 
-main()                
+int main()                
 {
   int i
   for(i=1;i<=5;i++)
@@ -169,6 +170,7 @@ main()
      printf(“for”);
    }
   getch();
+  return 0;
 }
 ```
 
