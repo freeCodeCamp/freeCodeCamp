@@ -3,8 +3,27 @@ title: Add a Tooltip to a D3 Element
 ---
 ## Add a Tooltip to a D3 Element
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/data-visualization/data-visualization-with-d3/add-a-tooltip-to-a-d3-element/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### Hint 1
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Use the ` .append() ` method.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+### Hint 2
+
+Use the ` .text() ` method.
+
+### Hint 3
+
+Chain the ` .append() ` and ` .text() ` methods.
+
+### Hint 4
+
+Use a callback function in the ` .text() ` method.
+
+### Solution
+
+Chain the following lines of code with your ` svg.selectAll("rect") ` method.
+
+```javascript
+  .append("title")
+  .text(d=>d);
+```
