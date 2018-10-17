@@ -16,8 +16,8 @@ Esto es esencial, porque de esta manera puedes trabajar en tu propia copia de fr
 **Sigue estos pasos para hacer fork en el repositorio de `https://github.com/freeCodeCamp/freeCodeCamp`:**
 
 1. Ve al repositorio de freeCodeCamp en GitHub: <https://github.com/freeCodeCamp/freeCodeCamp>
-2. Haga click en el botón "Fork" en la parte superior derecha de la interfaz ([More Details Here](https://help.github.com/articles/fork-a-repo/))
-3. Despues seras llevado a tu copia de freeCodeCamp en `https://github.com/YOUR_USER_NAME/freeCodeCamp`
+2. Haga click en el botón "Fork" en la parte superior derecha de la interfaz ([mas detalles aquí](https://help.github.com/articles/fork-a-repo/))
+3. Despues serás llevado a tu copia de freeCodeCamp en `https://github.com/YOUR_USER_NAME/freeCodeCamp`
 
 ![GIF - How to fork freeCodeCamp on Github](/docs/images/github/how-to-fork-freeCodeCamp.gif)
 
@@ -31,9 +31,9 @@ Una vez que tengas los requisitos previos instalados, necesitas preparar tu ento
 
 2. (Opcional pero recomendado) [Configura una SSH Key](https://help.github.com/articles/generating-an-ssh-key/) para GitHub.
 
-3. Instala un editor de codigo de tu elección.
+3. Instala un editor de código de tu elección.
 
-    Nosotros recomendamos usar [VS Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Estos son unos grandes editores de codigo fuente libre.
+    Nosotros recomendamos usar [VS Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Estos son unos grandes editores de código fuente libre.
 
 4. Configuración de linting para su editor de códigos.
 
@@ -49,7 +49,7 @@ Ejecuta estos comandos en tu maquina local:
 
 1. Open a Terminal / Command Prompt / Bash Shell en tu directorio de proyectos
 
-    _i.e.: `/yourprojectdirectory/`_
+    _por ejemplo: `/yourprojectdirectory/`_
 
 2. Clona tu fork de freeCodeCamp, sustituyendo `YOUR_USER_NAME` con tu GitHub Username
 
@@ -61,9 +61,9 @@ Esto descargará el repositorio completo de freeCodeCamp a tu directorio de proy
 
 ## Configurar un `upstream` al repositorio principal
 
-Ahora que has descargado una copia de tu fork, tu necesitaras configurar un `upstream`.
+Ahora que has descargado una copia de tu fork, necesitarás configurar un `upstream`.
 
-Como se menciono antes, el repositorio principal de `https://github.com/freeCodeCamp/freeCodeCamp` Se denomina a menudo `upstream` repositorio. Tu fork de `https://github.com/YOUR_USER_NAME/freeCodeCamp` se denomina a menudo como `origin` repositorio.
+Como se mencionó antes, el repositorio principal de `https://github.com/freeCodeCamp/freeCodeCamp` se denomina a menudo `upstream` repositorio. Tu fork de `https://github.com/YOUR_USER_NAME/freeCodeCamp` se denomina a menudo como `origin` repositorio.
 
 Tiene que señalar su clon local al `upstream`, además de al `origin`. Esto es para que puedas sincronizar cambios del repositorio principal. De esta manera no tienes que pasar por el forcking y la clonación una y otra vez.
 
@@ -118,8 +118,8 @@ Empezar por la instalación de estos requisitos previos de software.
 
 **Importante:**
 
-Le recomendamos actualizar a la última versión estable también conocido como Long Term Support (LTS) versions of the above.
-Si Node.js or MongoDB estan ya instalados en tu maquina, ejecuta los siguinetes comandos para validar las versiones:
+Le recomendamos actualizar a la última versión estable también conocido como Long Term Support (LTS).
+Si Node.js o MongoDB están ya instalados en tu máquina, ejecuta los siguinetes comandos para validar las versiones:
 
 ```shell
 node -v
@@ -150,7 +150,7 @@ Entonces tu necesitas añadir las variables de entorno privado (API Keys):
 
 ```shell
 # Crea una copia de "sample.env" y nombrala como ".env".
-# Rellena con la necesaria API keys and secrets:
+# Rellena con la necesaria API keys y secrets:
 
 # macOS / Linux
 cp sample.env .env
@@ -165,7 +165,7 @@ Las claves no son necesarias cambiarlas, para ejecutar la app localmente. Puedes
 
 Puedes dejar las otras claves como están.Ten en cuenta que si quiere usasr mas servicios tendrás que obtenertus propias claves API para esos servicios y editar esas entradas en el archivo `.env`.
 
-Luego, arranque varios servicios, por ejemplo el api-server, el client UI application, etc. Tu puedes [learn more about these services in this guide](#).
+Luego, arranque varios servicios, por ejemplo el api-server, el client UI application, etc. Tu puedes [aprender mas sobre estos servicios en esta guía](#).
 
 Arrancando estas atando los vinculos entre los servicios. Ellos son semi-independientes. Quiere decir, en la producción de estos servicios se implementan a sus propias localizaciones, pero mientras se ejecutan localmente quieres que todos esten disponibles para ti.
 
@@ -196,7 +196,7 @@ Empieza el MongoDB servidor en una terminal distinto
 
 > ProTip:
 > Usted puede evitar tener que iniciar MongoDB cada vez, mediante la instalación como un servicio en segundo plano.
-> Puedes [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
+> Puedes [aprender mas sobre ello en su documentación para tu SO](https://docs.mongodb.com/manual/administration/install-community/)
 
 ### La siembra de la base de datos
 
@@ -343,7 +343,7 @@ Sigue estos pasos:
     git status
     ```
 
-    Output:
+    Salida:
     ```shell
     On branch feat/documentation
     Your branch is up to date with 'upstream/feat/documentation'.
@@ -385,7 +385,7 @@ Sigue estos pasos:
 
     Que sean cortos, no mas de 50 caracteres. Tu siempre puedes añadir información adicional en la descripción del mensaje commit.
 
-    This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
+    Esto no toma más tiempo que un mensaje no convencional como 'update file' or 'add index.md'
 
     Puedes aprender mas sobre porque deberías usar los commits convencionales [aquí](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
