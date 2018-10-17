@@ -10,7 +10,7 @@ localeTitle: Use a propriedade de itens de alinhamento no Tweet Incorporar
 <section id="description"> O último desafio apresentou a propriedade <code>align-items</code> e deu um exemplo. Essa propriedade pode ser aplicada a alguns elementos de incorporação do tweet para alinhar os itens flexíveis dentro deles. </section>
 
 ## Instructions
-<section id="instructions"> Adicione a propriedade CSS <code>align-items</code> ao elemento <code>.follow-btn</code> do cabeçalho. Defina o valor para *center*. </section>
+<section id="instructions"> Adicione a propriedade CSS <code>align-items</code> ao elemento <code>.follow-btn</code> do cabeçalho. Defina o valor para <code>center</code>. </section>
 
 ## Tests
 <section id='tests'>
