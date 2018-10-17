@@ -13,7 +13,7 @@
 
 # Documentation Quick Reference
 
-Hello 👋!
+Hello Everyone!!
 
 This directory contains all of the documentation on contributing to freeCodeCamp.org
 
@@ -35,7 +35,7 @@ This directory contains all of the documentation on contributing to freeCodeCamp
 
 ## Quick commands reference when working locally
 
-A quick reference to the commands that you will need, when working locally.
+a Q U I C K  reference to the commands that you will need, when working locally.
 
 | command | description |
 | ------- | ----------- |
