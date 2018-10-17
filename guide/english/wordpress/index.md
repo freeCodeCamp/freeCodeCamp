@@ -17,6 +17,10 @@ Just to a few advantages of WordPress:
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
+## Themes
+
+WordPress users may install and switch among different themes. Themes allow users to change the look and functionality of a WordPress website without altering the core code or site content. Every WordPress website requires at least one theme to be present and every theme should be designed using WordPress standards with structured PHP, valid HTML (HyperText Markup Language), and Cascading Style Sheets (CSS).
+
 
 ### More Information
 
