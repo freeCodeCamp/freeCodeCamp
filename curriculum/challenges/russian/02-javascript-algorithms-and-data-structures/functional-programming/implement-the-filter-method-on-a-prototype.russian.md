@@ -3,16 +3,16 @@ id: 587d7b8f367417b2b2512b64
 title: Implement the filter Method on a Prototype
 challengeType: 1
 videoUrl: ''
-localeTitle: Внедрить фильтр на прототипе
+localeTitle: Реализовать filter на прототипе
 ---
 
-## Description
-<section id="description"> Это научит нас многому о методе <code>filter</code> если мы попытаемся реализовать версию, которая ведет себя точно так же, как <code>Array.prototype.filter()</code> . Он может использовать либо цикл <code>for</code> либо <code>Array.prototype.forEach()</code> . Примечание. Чистая функция позволяет изменять локальные переменные, определенные в пределах ее области действия, хотя предпочтительно избегать этого. </section>
+## Описание
+<section id="description"> Реализация версии <code>filter</code>, которая ведет себя точно так же, как <code>Array.prototype.filter()</code> , поможет нам в понимании её работы . Он может использовать либо цикл <code>for</code> либо <code>Array.prototype.forEach()</code> . Примечание. Чистая функция позволяет изменять локальные переменные, определенные в пределах ее области действия, хотя предпочтительно избегать этого. </section>
 
-## Instructions
+## Указания
 <section id="instructions"> Напишите свой собственный <code>Array.prototype.myFilter()</code> , который должен вести себя точно так же, как <code>Array.prototype.filter()</code> . Вы можете использовать цикл <code>for</code> или метод <code>Array.prototype.forEach()</code> . </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Исходные данные
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ var new_s = s.myFilter(function(item){
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
