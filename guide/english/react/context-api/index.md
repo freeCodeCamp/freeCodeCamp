@@ -15,7 +15,7 @@ This get to its full potential when we want to share data that will be accessed 
 
 This is based around two things : a Provider and a Consumer.
 
-#### Provider
+## Provider
 
 On a file created exclusively to provide data, TimeProvider.js, let’s say we want to share some time between components.
 
@@ -70,7 +70,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
 
-### Consumer
+## Consumer
 In the ShowTime.js file, let's call the time value using the consumer :
 
 ```javascript
@@ -80,9 +80,9 @@ import React from “react”;
 import { TimeContext } from “./utils/TimeProvider”;
 
 export default () => (
-	<TimeContext.Consumer>
-		{ value => <p> It’s { value.time } ! </p> }
-</TimeContext.Consumer>
+  <TimeContext.Consumer>
+    {value => <p> It’s {value.time} ! </p>}
+  </TimeContext.Consumer>
 );
 ```
 
@@ -132,10 +132,10 @@ import React from “react”;
 import { TimeContext } from “./utils/TimeProvider”;
 
 export default () => (
-	<TimeContext.Consumer>
-		{ value => <p> It’s { value.time } ! </p> }    
-<input type="text" value={time} onChange={e => setTime(e.target.value)} />
-</TimeContext.Consumer>
+  <TimeContext.Consumer>
+    {value => <p> It’s {value.time} ! </p>}
+    <input type="text" value={time} onChange={e => setTime(e.target.value)} />
+  </TimeContext.Consumer>
 );
 ```
 
