@@ -18,9 +18,9 @@ localeTitle: Añadir esquinas redondeadas con radio de borde
 
 ```yml
 tests:
-  - text: El elemento de su imagen debe tener la clase "borde verde grueso".
+  - text: El elemento de su imagen debería tener la clase "thick-green-border".
     testString: 'assert($("img").hasClass("thick-green-border"), "Your image element should have the class "thick-green-border".");'
-  - text: Tu imagen debe tener un radio de <code>10px</code> de <code>10px</code>
+  - text: Su imagen debería tener un radio de borde de <code>10px</code>.
     testString: 'assert(parseInt($("img").css("border-top-left-radius")) > 8, "Your image should have a border radius of <code>10px</code>");'
 
 ```
