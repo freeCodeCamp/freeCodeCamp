@@ -15,7 +15,7 @@ Just to a few advantages of WordPress:
 * Has a blog built-in and ready to go whenever applicable. 
 * Has plugins, which extend functionality to WordPress sites. 
 
-Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
+WordPress has a web template system using a template processor. Its architecture is a front controller, routing all requests for non-static URIs to a single PHP file which parses the URI and identifies the target page. This allows support for more human-readable permalinks.
 
 
 ### More Information
