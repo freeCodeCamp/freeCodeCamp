@@ -387,64 +387,64 @@ Sigue estos pasos:
 
     This does not take any additional time than a unconventional message like 'update file' or 'add index.md'
 
-    You can learn more about why you should use conventional commits [here](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
+    Puedes aprender mas sobre porque deberías usar los commits convencionales [aquí](https://www.conventionalcommits.org/en/v1.0.0-beta.2/#why-use-conventional-commits).
 
-9. If you realise that you need to edit a file or, update the commit message after making a commit you can do so after editing the files with:
+9. Si te das cuenta que necesitas editar un archivo o actualizar el mensaje commit despues de hacer un commit puedes hacerlo después de la edición de archivos con:
 
     ```shell
     git commit --amend
     ```
 
-    This will open up a default, text editor like `nano` or `vi` where you can edit the commit message title and add/edit description.
+    Esto abritá por defecto un editor de texto como `nano` o `vi` donde puedes editar el titulo del mensaje commit y  añadir/editar la descripción.
 
-10. Next, you can push your changes to your fork.
+10. Despues puedes subir los cambios a tu fork:
 
     ```shell
     git push origin branch/name-here
     ```
 
-## Proposing a Pull Request (PR)
+## Proponiendo un Pull Request (PR)
 
-1. Once the edits have been committed, you will be prompted to create a pull request on your fork's GitHub Page.
+1. Una vez que hayan sido editados, se le pedirá que cree una pull request en la página de github de su fork
 
     ![Image - Compare pull request prompt on GitHub](/docs/images/github/compare-pull-request-prompt.png)
 
-2. By default, all pull requests should be against the freeCodeCamp main repo, `master` branch.
+2. Por defecto, todas las pull requests debe estar en contra del repositorio principal de freeCodeCamp, `master`.
 
-    Make sure that your Base Fork is set to freeCodeCamp/freeCodeCamp when raising a Pull Request.**
+    asegurate que la base de tu fork está situado en freecodecamp/freecodecamp cuando se recurre a una Pull Request.**
 
     ![Image - Comparing forks when making a pull request](/docs/images/github/comparing-forks-for-pull-request.png)
 
-3. Submit the pull request from your branch to freeCodeCamp's `master` branch.
+3. Envíe la pull request de tu rama a la rama  `master` de freeCodeCamp.
 
-4. In the body of your PR include a more detailed summary of the changes you made and why.
+4. En el cuerpo de tu pull request un sumario detallado de los cambios que has hecho y porque.
 
-    - You will be presented with a pull request template. This is a checklist that you should have followed before opening the pull request.
+    - Serás presentado con un platilla de la pull request. Este es un cheklist que deberías seguir antes de abrir la pull request.
 
-    - Fill in the details as they seem fit you. This information will be reviewed and decide whether or not, your pull request is going to be accepted.
+    - Rellena los detalles que te parezcan adecuados. Esta información será revisada y decidiraán si tu pull request es aceptada o no.
 
-    - If the PR is meant to fix an existing bug/issue then, at the end of
-      your PR's description, append the keyword `closes` and #xxxx (where xxxx
-      is the issue number). Example: `closes #1337`. This tells GitHub to
-      automatically close the existing issue, if the PR is accepted and merged.
+    - Si la pull request esta destinada a arreglar un bug/error existente entonces
+      añade al final de la descripción la palabra clave `closes` y #xxxx (donde xxxx
+      es el numero del error). Por ejemplo: `closes #1337`. Esto le dirá a GitHub que
+      cierre automáticamente el error existente si la pull request es aceptada e incorporada.
 
-5. Indicate if you have tested on a local copy of the site or not.
+5. Indica si has probado una copia local del sitio o no.
 
-    This is very important when you are making changes that are not copy editing markdown files. For example, changes to CSS or JavaScript code, etc.
+    Es muy importante cuando hagas cambios que no sean copias editadas de los archivos markdown. Por ejemplo, cambios a CSS o código JavaScript, etc.
 
-## Get your PR accepted
+## Ten tu pull request aceptada
 
 
 
-## Getting Help
+## Para obtener ayuda
 
-If you are stuck, and need help, let us know by asking in the ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) or the [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) on Gitter.
+SI estás atascado y necesitas ayuda, haznoslo saber preguntando en ['Contributors' category on our forum](https://www.freecodecamp.org/forum/c/contributors) o en [Contributors chat room](https://gitter.im/FreeCodeCamp/Contributors) en Gitter.
 
-There might be an error in the console of your browser or in Bash / Terminal / Command Line that will help identify the problem.
+Puede haber un error en la consola de tu navegador o en el Terminal/Linea de Comandos que te ayudará a identificar el problema.
 
-### Troubleshooting
+### Resolución de problemas
 
-If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following troubleshooting steps at least once:
+Si la app arranca pero te estás encontrando errores con la misma UI, por ejemplo si las fuentes no se cargan o si el editor no se muestra correctamente, deberías intentar seguir los pasos de la resolución de problemas al menos una vez:
 
 ```shell
 # Remove all installed node modules
