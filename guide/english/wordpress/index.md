@@ -17,6 +17,11 @@ Just to a few advantages of WordPress:
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
+## Multi-user and multi-blogging
+
+Prior to version 3, WordPress supported one blog per installation, although multiple concurrent copies may be run from different directories if configured to use separate database tables. WordPress Multisites (previously referred to as WordPress Multi-User, WordPress MU, or WPMU) was a fork of WordPress created to allow multiple blogs to exist within one installation but is able to be administered by a centralized maintainer. WordPress MU makes it possible for those with websites to host their own blogging communities, as well as control and moderate all the blogs from a single dashboard. WordPress MS adds eight new data tables for each blog.
+
+As of the release of WordPress 3, WordPress MU has merged with WordPress
 
 ### More Information
 
