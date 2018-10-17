@@ -29,7 +29,10 @@ tests:
     testString: 'assert($("h3").length === 6, "Your code should have six <code>h3</code> tags.");'
   - text: Your code should not have any <code>h5</code> tags.
     testString: 'assert($("h5").length === 0, "Your code should not have any <code>h5</code> tags.");'
-
+  - text: Your code should not have any <code>h5</code> closing tags.
+    testString: 'assert({var temp = document.getElementById('html-seed').innerHTML; var count = (temp.match(/\/h5/g) || []).length; count===0}, "Your code should not have any <code>h5</code> tags.");'
+  - text: Your code should not have 6 <code>h3</code> closing tags.
+    testString: 'assert({var temp = document.getElementById('html-seed').innerHTML; var count = (temp.match(/\/h3/g) || []).length; count===6}, "Your code should not have any <code>h5</code> tags.");'
 ```
 
 </section>
