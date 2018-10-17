@@ -11,7 +11,7 @@ localeTitle: Añadir esquinas redondeadas con radio de borde
 <section id="description"> Tu foto de gato tiene actualmente esquinas afiladas. Podemos redondear esas esquinas con una propiedad CSS llamada <code>border-radius</code> . </section>
 
 ## Instructions
-<section id="instructions"> Puede especificar un <code>border-radius</code> con píxeles. Dale a tu foto de gato un <code>border-radius</code> de <code>10px</code> de <code>10px</code> . Nota: este desafío permite múltiples soluciones posibles. Por ejemplo, puede agregar <code>border-radius</code> <code>.thick-green-border</code> clase <code>.thick-green-border</code> o a la clase <code>.smaller-image</code> . </section>
+<section id="instructions"> Puede especificar un <code>border-radius</code> con píxeles. Dale a tu foto de gato un <code>border-radius</code> de <code>10px</code>. Nota: este desafío permite múltiples soluciones posibles. Por ejemplo, puede agregar un <code>border-radius</code> a la clase <code>.thick-green-border</code> o a la clase <code>.smaller-image</code> . </section>
 
 ## Tests
 <section id='tests'>
@@ -52,10 +52,12 @@ tests:
     border-color: green;
     border-width: 10px;
     border-style: solid;
+    border-radius: 10px;
   }
 
   .smaller-image {
     width: 100px;
+    border-radius: 5px;
   }
 </style>
 
