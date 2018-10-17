@@ -11,7 +11,7 @@ localeTitle: Use a propriedade align-self
 <code>align-self</code> aceita os mesmos valores que <code>align-items</code> e substituirá qualquer valor definido pela propriedade <code>align-items</code> . </section>
 
 ## Instructions
-<section id="instructions"> Adicione a propriedade CSS <code>align-self</code> a ambos <code>#box-1</code> e <code>#box-2</code> . Dê ao <code>#box-1</code> um valor de *center* e dê ao <code>#box-2</code> um valor de *flex-end*. </section>
+<section id="instructions"> Adicione a propriedade CSS <code>align-self</code> a ambos <code>#box-1</code> e <code>#box-2</code> . Dê ao <code>#box-1</code> um valor de <code>center</code> e dê ao <code>#box-2</code> um valor de <code>flex-end</code>. </section>
 
 ## Tests
 <section id='tests'>
