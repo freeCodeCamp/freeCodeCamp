@@ -54,8 +54,9 @@ int maximum,x=5,y=6; // variable to store maximum of two numbers
 maximum=(x>y)?x:y; // directly using conditional operator
 maximum=big(x,y); // using the #define preprocessor defined above as big
 ```
+Using more of conditional operators or ternary operators over if-else statements results in faster compilation.
  **Good Luck to all of you** 
-
+ 
  **Happy Coding ! :)**
 
  **Feel free to ask any queries on FreeCodeCamp's GitHub page or [FreeCodeCamp's Forum .](https://forum.freecodecamp.org/)**
