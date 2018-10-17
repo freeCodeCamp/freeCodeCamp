@@ -154,16 +154,16 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
     function smallestCommons(arr) {
-
+      
       // range
-      let min = Math.min.apply(null, arr);
-      let max = Math.max.apply(null, arr);
+      const sorted = arr.sort((a,b) => a > b)
+      let min = sorted[0]
+      let max = sorted[arr.length-1]
 
-      let smallestCommon = lcm(min, min + 1);
+      let smallestCommon = lcm(min, ++min);
 
       while(min < max) {
-        min++;
-        smallestCommon = lcm(smallestCommon, min);
+        smallestCommon = lcm(smallestCommon, ++min);
       }
 
       return smallestCommon;
@@ -199,13 +199,13 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 
 ### Code Explanation:
 
-*   Extract minimum and maximum from provided **arr**.
+*   Extract minimum and maximum from provided **arr** by sorting and grabbing the first and last values.
 *   Initialise **smallestCommon** with the LCM of first two numbers.
 *   Loop through range computing LCM of current LCM and next number in range **lcm(a, b, c) = lcm(lcm(a, b), c)**.
 
 #### Relevant Links
 
-*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply' target='_blank' rel='nofollow'>JS Function.prototype.apply()</a>
+*   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment' target='_blank' rel='nofollow'>Prefix increment operator ++</a>
 
 
 ## ![:clipboard:](https://forum.freecodecamp.com/images/emoji/emoji_one/clipboard.png?v=3 ":clipboard:") NOTES FOR CONTRIBUTIONS:
