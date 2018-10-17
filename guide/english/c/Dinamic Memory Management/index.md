@@ -2,7 +2,7 @@
 title: Dynamic Memory Management
 ---
 # Dynamic Memory Management
-Sometimes you will need to allocate memory spaces in the heap also known as the dinamic memory. This is particulary usefull when you do not know during compile time how large a data structure (like an array) will be. 
+Sometimes you will need to allocate memory spaces in the heap also known as the dynamic memory. This is particulary usefull when you do not know during compile time how large a data structure (like an array) will be. 
 ## An Example
 Here's a simple example where we allocate an array asking the user to choose the dimension
 ```C
@@ -31,7 +31,7 @@ int main(void) {
 }
 ```
 
-As you can see in order to allocate a space in the dinamic memory you need to know how pointers work in C.
+As you can see in order to allocate a space in the dynamic memory you need to know how pointers work in C.
 The magic function here is the `malloc` which will return as output a void pointer (it is a pointer to a region of unknown data type) to the new memory space we've just allocated.
 Let's see how to use this function step by step: 
 
