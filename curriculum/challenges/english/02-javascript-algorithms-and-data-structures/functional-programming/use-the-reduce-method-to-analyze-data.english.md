@@ -14,7 +14,7 @@ However, before we get there, let's practice using <code>reduce</code> first.
 
 ## Instructions
 <section id='instructions'>
-The variable <code>watchList</code> holds an array of objects with information on several movies. Use <code>reduce</code> to find the average IMDB rating of the movies <strong>directed by Christopher Nolan</strong>. Recall from prior challenges how to <code>filter</code> data and <code>map</code> over it to pull what you need. You may need to create other variables, but save the final average into the variable <code>averageRating</code>. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
+The variable <code>watchList</code> holds an array of objects with information on several movies. Use <code>filter</code> to filter movies <strong>directed by Christopher Nolan</strong> from <code>watchList</code> and store it in <code>moviesToRate</code> variable. Then use <code>reduce</code> to find the average IMDB rating of the movies <strong>directed by Christopher Nolan</strong>. Recall from prior challenges how to <code>filter</code> data and <code>map</code> over it to pull what you need. You may need to create other variables, but save the final average into the variable <code>averageRating</code>. Note that the rating values are saved as strings in the object and need to be converted into numbers before they are used in any mathematical operations.
 </section>
 
 ## Tests
@@ -24,6 +24,8 @@ The variable <code>watchList</code> holds an array of objects with information o
 tests:
   - text: The <code>watchList</code> variable should not change.
     testString: 'assert(watchList[0].Title === "Inception" && watchList[4].Director == "James Cameron", "The <code>watchList</code> variable should not change.");'
+  - text: Your code should use the <code>filter</code> method to filter movies directed by <strong>Christopher Nolan</strong>.
+    testString: 'assert(code.match(/\.filter/g) && moviesToRate.constructor === Array && moviesToRate.filter(function(movie) {return movie.Director !== "Christopher Nolan"}).length === 0, "Your code should use the <code>filter</code> method to select movies directed by Christopher Nolan and store it in <code>moviesToRate</code> variable.");'
   - text: Your code should use the <code>reduce</code> method.
     testString: 'assert(code.match(/\.reduce/g), "Your code should use the <code>reduce</code> method.");'
   - text: The <code>averageRating</code> should equal 8.675.
@@ -158,7 +160,7 @@ var watchList = [
 // Add your code below this line
 
 var averageRating;
-
+var moviesToRate;
 // Add your code above this line
 
 console.log(averageRating);
