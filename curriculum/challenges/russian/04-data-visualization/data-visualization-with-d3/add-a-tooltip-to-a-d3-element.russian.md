@@ -81,7 +81,7 @@ tests:
 
 
 
-       // Add your code above this line
+       // Напишите ваш код сдесь 
 
     svg.selectAll("text")
        .data(dataset)
@@ -106,6 +106,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// напишите ваше решение сдесь
 ```
 </section>
