@@ -202,6 +202,11 @@ int main()
             break;
 
         case '/':
+            if(secondNumber==0){
+                printf("division with zero is not allowed\n");
+                break;
+                //Avoid runtime error of division with zero
+            }
             printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/secondNumber);
             break;
 
