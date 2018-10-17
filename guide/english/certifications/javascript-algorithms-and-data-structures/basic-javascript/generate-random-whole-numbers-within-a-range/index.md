@@ -34,11 +34,11 @@ function randomRange(myMin, myMax) {
 - Before multiplying it, it resolves the part between parenthesis `(myMax - myMin + 1)` because of the grouping operator `(   )`.
 - The result of that multiplication is followed by adding `myMin` and then "rounded" to the largest integer less than or equal to it (eg: 9.9 would result in 9)
 If the values were `myMin = 1, myMax= 10`, one result could be the following:
-· a) `Math.random() = 0.8244326990411024`
-· b) `(myMax - myMin + 1) = 10 - 1 + 1 -> 10`
-· c) `a * b =  8.244326990411024`
-· d) `c + myMin = 9.244326990411024`
-· e) `Math.floor(9.244326990411024) = 9`
+ - a) `Math.random() = 0.8244326990411024`
+ - b) `(myMax - myMin + 1) = 10 - 1 + 1 -> 10`
+ - c) `a * b =  8.244326990411024`
+ - d) `c + myMin = 9.244326990411024`
+ - e) `Math.floor(9.244326990411024) = 9`
 
 
 ### Resources
