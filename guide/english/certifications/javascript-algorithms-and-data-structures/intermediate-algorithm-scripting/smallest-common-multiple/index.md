@@ -154,7 +154,7 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
     function smallestCommons(arr) {
-      
+
       // range
       const sorted = arr.sort((a,b) => a > b)
       let min = sorted[0]
@@ -165,7 +165,6 @@ Note: If the array only has two elements, then the `for` loop never gets used an
       while(min < max) {
         smallestCommon = lcm(smallestCommon, ++min);
       }
-
       return smallestCommon;
     }
 
