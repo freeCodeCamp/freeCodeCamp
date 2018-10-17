@@ -1,62 +1,62 @@
 # Cómo trabajar en artículo de la Guía
 
-Con tu yuda, podemos crear un herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar en los próximos años. 💛
+Con tu ayuda, podemos crear una herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar en los próximos años. 💛
 
 Puedes:
 
-- [Ayudarnos creando y editando artúclos de la Guía](#steps-for-creating-and-editing-guide-articles).
+- [Ayudarnos creando y editando articulos de la Guía](#steps-for-creating-and-editing-guide-articles).
 - [Ayudarnos a revisar Pull Requests para artículos de la guía]()
 
 ## Pasos para crear y editar artículos de la Guía
 
 1. 🍴 [Fork este repositorio](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
-2. 👀️ Sgiue las normas de controbución expuestas a continuación.
-3. 🔧 Propón cambios asombrosos!
-4. 📖 Lee la [guía de buenas prácticas de estilo](/docs/style-guide-for-guide-articles).
-5. 👉 [Haz una Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
+2. 👀️ Suigue las normas de contribución expuestas a continuación.
+3. 🔧 Propónga cambios asombrosos!
+4. 📖 Lea la [guía de buenas prácticas de estilo](/docs/style-guide-for-guide-articles).
+5. 👉 [Haga una Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Consigue que aprueben tu Pull request - Éxito!
 
-O siemplement [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
+O simplement [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
 
 ### [Sigue estas recomendaciones de nuestra guía de estilo para crear un artículo atractivo](/docs/style-guide-for-guide-articles.md)
 
 ### Crear Pull Request para propoenr cambios
 
-Hay dos formas de proponer cambios en el repositorio tras editar o añadir un articulo:
+Hay dos formas de proponer cambios en el repositorio despues de editar o añadir un articulo:
 
 - [Utilizando la interfaz de GitHub en tu navegador](#using-the-github-web-interface-on-your-browser).
-- [Trabajando en tu ordenador personal](#working-on-your-local-machine) (_recomendado_ para previsualiar cambios).
+- [Trabajando en tu ordenador personal](#working-on-your-local-machine) (_recomendado_ para pre-visualizar cambios).
 
-#### Utilizar la interaz web de GitHub
+#### Utilizar la interfaz web de GitHub
 
-Mira este vídeo de demostración o sigue los siguientes pasos:
+Mira este video de demostración o sigue los siguientes pasos:
 
 **[TODO]** Update the GIF recording.
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Ve a la carpets **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
+1. Vea las carpetas **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
 
     > Todas las raíces estarán en un archivo index.md
 
-2. Pincha en <kbd>Editar este archivo</kbd> y haz tus cambios al archivo en la consola de edición de GitHub.
+2. Pincha en <kbd>Editar este archivo</kbd> y hace tus cambios al archivo en la consola de edición de GitHub.
 
-    > Si el icono aparece gris y te muestra la alerta "Debes estar en una rama para hacer o proponer cambios a este archivo", significa que probablemente estés en la rama de otra persona. En la parte superior izquierda de la página hay una casilla desplegable que dice: "Árbol: #######". Pincha en el desplegable y cambia la rama a maestra. El icono de edición debería estar disponible ahora.
+    > Si el icono aparece gris y te muestra la alerta "Debes estar en una rama para hacer o proponer cambios a este archivo", significa que probablemente estas en la rama de otra persona. En la parte superior izquierda de la página hay una casilla desplegable que dice: "Árbol: #######". Pincha en el desplegable y cambia la rama a maestra. El icono de edición debería estar disponible ahora.
 
 3. Desplázate a la parte de abajo de la pantalla y añade un mensaje explicando tus cambios.
 
-    (Opcional): Recomendamos haer un mensaje convencional. Esta es una buena práctica que verás en algunos de los repositorios Open Source más populares. Como desarrollador, deberías seguir las prácticas estándar.
+    (Opcional): Recomendamos hacer un mensaje convencional. Esta es una buena práctica que verás en algunos de los repositorios Open Source más populares. Como desarrollador, deberías seguir las prácticas estándar.
 
     Algunos ejemplos de mensajes convencionales serían:
 
     ```md
     Solución: Actualizar articúlo de guía sobre HTML
     Solución: Actualizar scripts para Travis-CI
-    feat: Añadir articulo sobre JavaScript hoisting
+    feat: Añadir articulo sobre JavaScript hosting
     Documentos: Actualizadas recomendaciones de contribución
     ```
 
-    Se breve, no más de 50 caracteres. Puedes añadir información extra en la descripción del mensaje.
+    Sea breve, no más de 50 caracteres. Puedes añadir información extra en la descripción del mensaje.
 
     esto no supone ningún esfuerzo adicional respecto a mensajes como 'update file' o 'add index.md'
 
@@ -66,17 +66,17 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 5. En la siguiente pantalla, puedes añadir más detalles sobre tu PR, luego pincha en <kbd>Crear pull request</kbd>.
 
-Enhorabuena 🎉! Acabas de crear una pull request.
+Felicitaciones 🎉! Acabas de crear una pull request.
 
 #### Trabajar desde tu sistema local (_recomendado_ para revisar cambios)
 
-No es obligatorio que trabajes en tu sistema personal, salvo que desees previsualizar tus cambios, o trabajar con mejoras y arreglos de UI. También es recomendable si tienes problemas con git como errores de integración, rebase, etc.
+No es obligatorio que trabajes en tu sistema personal, salvo que desees pre-visualizar tus cambios, o trabajar con mejoras y arreglos de UI. También es recomendable si tienes problemas con git como errores de integración, rebase, etc.
 
-##### Lee sobre esta recomendaciones en [Cómo configurar freeCodeCamp localmente](/docs/how-to-setup-freecodecamp-locally.md)
+##### Lea sobre estas recomendaciones en [Cómo configurar freeCodeCamp localmente](/docs/how-to-setup-freecodecamp-locally.md)
 
 ### Aceptación de la PR
 
-Estas son algunos criterios utilizados por los revisores cuando evalúan PRs:
+Estos son algunos criterios utilizados por los revisores cuando evalúan PRs:
 
 - Descripción y título relevantes
 - La PR respeta la [guía de estilo](/docs/style-guide-for-guide-articles)
@@ -109,7 +109,7 @@ Los revisores harán todos los esfuerzos posibles para resolver estos conflictos
 
 #### Solicitar cambios
 
-Si la Pull Request no es perfect el revisor podría:
+Si la Pull Request no es perfecta el revisor podría:
 
 - solicitar cambios al contribuidor y añadir la etiqueta *cambios solicitados*
 - solucionar errores menores y hacer un envío encima de la PR
