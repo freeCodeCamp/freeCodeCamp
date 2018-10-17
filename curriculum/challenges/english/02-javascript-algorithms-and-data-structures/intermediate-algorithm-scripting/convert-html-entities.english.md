@@ -33,7 +33,7 @@ tests:
     testString: 'assert.match(convertHTML("Schindler"s List"), /Schindler&apos;s List/, "<code>convertHTML("Schindler&apos;s List")</code> should return <code>Schindler&apos;s List</code>.");'
   - text: '<code>convertHTML("<>")</code> should return <code>&lt;&gt;</code>.'
     testString: 'assert.match(convertHTML("<>"), /&lt;&gt;/, "<code>convertHTML("<>")</code> should return <code>&lt;&gt;</code>.");'
-  - text: <code>convertHTML("abc")</code> should return <code>abc</code>.
+  - text: '<code>convertHTML("abc")</code> should return <code>abc</code>.
     testString: 'assert.strictEqual(convertHTML("abc"), "abc", "<code>convertHTML("abc")</code> should return <code>abc</code>.");'
 
 ```
