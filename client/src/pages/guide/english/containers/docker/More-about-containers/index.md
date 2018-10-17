@@ -14,7 +14,7 @@ docker conatiner ls
 * Command to list all the containers (including the stopped containers)
 
 ```
-docker container ls -a 
+docker container ls -a
 
 ```
 
