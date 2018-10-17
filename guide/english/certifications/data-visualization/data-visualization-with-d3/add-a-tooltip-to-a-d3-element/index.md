@@ -23,7 +23,7 @@ Use a callback function in the ` .text() ` method.
 
 Chain the following lines of code with your ` svg.selectAll("rect") ` method.
 
-`javascript
+```javascript
   .append("title")
   .text(d=>d);
-`
+```
