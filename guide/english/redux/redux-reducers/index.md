@@ -3,7 +3,7 @@ title: Redux Reducers
 ---
 ## Redux Reducers
 
-Redux reducers allow you to make changes to your state in your application. Actions in redux only tell the application what basically happened. Whether it was a click event that took place or some mouse scroll it will just tell that this thing happened. Now how do you go about changing the state of your application which lives inside the store well you do that by using a reducer. 
+Redux reducers allow you to make changes to your state in your application. While Redux actions inform the application about events that happened (eg click/scroll events), Redux reducers allow you to change the state of the application.
 
 Now a reducer in redux needs to be a pure function. A pure function is a type of function that does not have additional side-effects. You pass it some arguments and it returns the expected result. For example:
 
