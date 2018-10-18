@@ -31,3 +31,9 @@ Available to buy or download for free (e-book)! This book is broken down into tw
 
 - [Website](http://haskellbook.com/index.html)
 - [Gumroad](https://gumroad.com/l/haskellbook)
+
+#### Get Programming with Haksell
+
+This book introduces you to the Haskell language without drowning you in academic jargon or heavy programming theory. It's great for beginners. It is written by Will Kurt. It is packed with focused topics, short code examples and short programs, plus numerous exercises to help stretch and strengthen your new knowledge.
+
+-[Amazon](https://www.amazon.com/Get-Programming-Haskell-Will-Kurt/dp/1617293768)
