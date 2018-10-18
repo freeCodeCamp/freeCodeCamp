@@ -27,7 +27,22 @@ and if you want to get error messages in more detail from your code, you can add
 error:
 cannot concatenate 'str' and 'int' objects
 ```
+Two additional clauses for the try-except statement are `else` and `finally`. The `else` clause executes when the program runs successfully without any error. While the `finally` clause will always execute no matter what:
 
+```python
+try:
+    print("this is a " + "string")
+except Exception as err:
+    print("error:\n" + str(err))
+else:
+    print("successfully concatenated string")
+finally:
+    print("end execution")
+    
+>>> this is a string
+>>> successfully concatenated string
+>>> end execution
+```
 More Information:
 
 Errors and Exceptions <a href='https://docs.python.org/2/tutorial/errors.html' target='_blank' rel='nofollow'>documentation</a>.
