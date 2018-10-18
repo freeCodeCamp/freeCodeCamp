@@ -53,5 +53,8 @@ more command allows quickly view file and shows details in percentage. You can p
 10. `cp` Command
 Copy file from source to destination preserving same mode.
 
+11. `df -h` Command
+Shows the size, amount used, amount available and capacity percentage of mounted drives/partitions.
+
 Here are the list of commands frequently used by adiminstrator.
 This is not a complete but it’s a compact list of commands to refer when needed. 
