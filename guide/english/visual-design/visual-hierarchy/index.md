@@ -21,10 +21,18 @@ You can achieve visual hierarchy in many ways, including (but not limited to):
 
 #### More Information:
 
-Tools to Create a Visual Hierarchy: <a href='https://designschool.canva.com/blog/visual-hierarchy/' target='_blank' rel='nofollow'>Design School blog</a>
+[Tools to Create a Visual Hierarchy:] <a href='https://designschool.canva.com/blog/visual-hierarchy/' target='_blank' rel='nofollow'>Design School blog</a>
 
-6 Principles of Visual Hierarchy: <a href='https://99designs.com/blog/tips/6-principles-of-visual-hierarchy/' target='_blank' rel='nofollow'>99 designs blog</a>
+[6 Principles of Visual Hierarchy:] <a href='https://99designs.com/blog/tips/6-principles-of-visual-hierarchy/' target='_blank' rel='nofollow'>99 designs blog</a>
 
-Case Study - Improving a Page with Visual Hierarchy: <a href='http://blog.formedfunction.com/post/3029763425/on-visual-hierarchy' target='_blank' rel='nofollow'>blog</a>
+[Case Study - Improving a Page with Visual Hierarchy:] <a href='http://blog.formedfunction.com/post/3029763425/on-visual-hierarchy' target='_blank' rel='nofollow'>blog</a>
 
-Adding Visual Hierarchy: <a href='https://medium.com/designed-thought/8-ways-to-add-visual-hierarchy-8820be73218a/' target='_blank'>Medium</a>
+[Adding Visual Hierarchy:] <a href='https://medium.com/designed-thought/8-ways-to-add-visual-hierarchy-8820be73218a/' target='_blank'>Medium</a>
+
+[Understanding Web UI Visual Hierarchy] (https://www.awwwards.com/understanding-web-ui-visual-hierarchy.html)
+
+[Understanding Visual Hierarchy in Web Design] (https://webdesign.tutsplus.com/articles/understanding-visual-hierarchy-in-web-design--webdesign-84)
+
+[How to Effectively Use Visual Hierarchy in Web Design] (https://speckyboy.com/visual-hierarchy-web-design/)
+
+
