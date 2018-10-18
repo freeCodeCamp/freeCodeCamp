@@ -81,6 +81,15 @@ Ok now since we are done with the installations, let's begin to understand first
 Java is a pretty secure language as it doesn't let your program run directly on the machine. Instead, your program runs on a Virtual Machine called JVM. This Virtual Machine exposes several APIs for low level machine interactions you can make, but other than that you cannot play with machine instructions explicitely. This adds a huge bonus of security.
 
 Also, once your bytecode is compiled it can run on any Java VM. This Virtual Machine is machine dependent, i.e it has different implementations for Windows, Linux and Mac. But your program is guranteed to run in any system thanks to this VM. This philosophy is called <a href='https://en.wikipedia.org/wiki/Write_once,_run_anywhere' target='_blank' rel='nofollow'>"Write Once, Run Anywhere"</a>.
+## Platform Independence:
+Java code is compiled into intermediate format (bytecode), which can be executed on any systems for which Java virtual machine is ported. That means you can write a Java program once and run it on Windows, Mac, Linux or Solaris without re-compiling. Thus the slogan “Write once, run anywhere” of Java.
+Besides the above features, programmers can benefit from a strong and vibrant Java ecosystem:
+Java is powered by Oracle - one of the leaders in the industry. Java also gets enormous support from big technology companies like IBM, Google, Redhat,… so it has been always evolving over the years.
+There are a lot of open source libraries which you can choose for building your applications.
+There are many superior tools and IDEs that makes your Java development easier.
+There are many frameworks that help you build highly reliable applications quickly.
+The community around Java technology is very big and mature, so that you can get support easily.
+That’s why Java has been ranking as #2 programming language in the world by popularity (just behind C), according to statistics by Tiobe Index.
 
 ## Hello World!
 
