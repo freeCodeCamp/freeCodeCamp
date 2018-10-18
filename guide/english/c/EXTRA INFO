@@ -1,0 +1,13 @@
+---
+Extra's on C
+---
+
+## Escape Sequence
+* \b -Backspace  
+* \f -Form feed
+* \n -Newline
+* \t -tab
+* \r -Carriage 
+* \\ -Backslash
+* \* -Double qoute
+* \' -Single quote
