@@ -41,7 +41,8 @@ e.g. Python can be executed either as a compiled program, or as an interpreted l
 ### Advantages and Disadvantages
 
 #### Advantages of Compiled Languages
-Programs compiled into native code at compile time usually tend to be faster than those translated at run time, due to the overhead of the translation process.
+* Programs compiled into native code at compile time usually tend to be faster than those translated at run time, due to the overhead of the translation process.
+* All the errors are provided to you at once. This allows the programmer to correct all the mistakes at once and recompile the code for execution.
 
 #### Disadvantages of Compiled Languages
 The most notable disadvantages are :-
@@ -52,7 +53,8 @@ The most notable disadvantages are :-
 An Interpreted language gives implementations some additional flexibility over compiled implementations. Because interpreters execute the source program code themselves, the code itself is platform independent (Java's byte code, for example). Other features include dynamic typing, and smaller executable program size.
 
 #### Disadvantages of Interpreted Languages
-The most notable disadvantage is typical execution speed compared to compiled languages.
+* The most notable disadvantage is typical execution speed compared to compiled languages.
+* The program stops executing when the first error is encountered; the program (script) continues to execute until the next error is encountered or till program termination.
 
 #### More Information:
 
