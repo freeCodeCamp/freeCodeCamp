@@ -3,6 +3,7 @@ title: Components
 ---
 
 # Components
+Below are the list of components:
 
 #### Motivation
 
