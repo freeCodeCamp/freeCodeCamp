@@ -39,20 +39,20 @@ Popular AWS services include:
 #### AWS Certifications 
 AWS offers many different certifications for it's practitioners. There are different tiers to AWS certs as well as role-based certifications. 
 The tiers are:
-* Foundational
-* Associate
-* Professional
-For every role there are those three tiers.
+* Foundational (Cloud Practitioner)
+* Associate (Solutions Architect, Developer, SysOps Administrator)
+* Professional (Solutions Architect, DevOps Engineer)
 
-These roles include:
+These roles for each of the tiers include:
 * Architect
 * Developer
 * Operations
 
-AWS also offers a prerequisite AWS Cloud Practitioner Essentials certification* relevant to anyone no matter their role.
+AWS offers a prerequisite AWS Cloud Practitioner Essentials certification* relevant to anyone no matter their role.
 Outside of the standard roles there are specialty certifications for Advanced networking, Big Data, and Security.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [AWS](https://aws.amazon.com/)
 * [certifications](https://aws.amazon.com/certification/)
+* [certification preparation](https://aws.amazon.com/certification/certification-prep/)
