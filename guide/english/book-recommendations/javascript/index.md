@@ -30,6 +30,13 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### A Smarter Way To Learn JavaScript
+
+A collection of articles covering the basics (core language and working with a browser) as well as advanced topics with concise explanations. Available as an e-book with pay and also as an online tutorial.
+
+- [Amazon](https://www.amazon.com/Smarter-JavaScript-tech-assisted-approach-requires/dp/1497408180/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr=)
+- [E-book](https://www.amazon.com/Smarter-Way-Learn-JavaScript-technology-ebook/dp/B00H1W9I6C)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
