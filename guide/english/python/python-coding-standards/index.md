@@ -25,3 +25,8 @@ Here's how you check if your python code meets he standards.
 ```
 
 This will give all those lines which violate the standards, along with a short description of the fixes.
+
+### Docstring Conventions - PEP 257
+In addition to PEP 8, there is another set of conventions created by the python community for docstrings. It's important to know these conventions because, as described in the [docstring section](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/python/docstring/index.md) of FCC's Python Guide, it is a way for developers to communicate the purpose, parameters, requirements, and usage of a function in Python to other developers. It allows for ease of code maintenance and understanding. 
+
+[Take a look at PEP-257 -- Docstring Conventions for more information](https://www.python.org/dev/peps/pep-0257/ "PEP 257 -- Docstring Conventions")
