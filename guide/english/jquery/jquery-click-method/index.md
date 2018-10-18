@@ -98,6 +98,16 @@ $( document ).on("click", "element", function() {
   alert("I've been clicked!");
 });
 ```
+This technique can be useful when registering a click event on a dynamically created element within your web page.
+
+For Example:
+
+```javascript
+$('DOM element').append($('<div>').text('New Div'));
+$(document).on('click', 'DOM element', function(){
+  alert("Clicked a div you just created!");
+});
+```
 
 #### More Information:
 
