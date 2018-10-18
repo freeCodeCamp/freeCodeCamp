@@ -47,3 +47,4 @@
 | `npm run test：server` |运行服务器测试套件|
 | `npm run commit` |一个帮助您构建良好提交消息的交互式工具
 
+test
