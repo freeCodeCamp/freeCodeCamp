@@ -45,6 +45,8 @@ h1: The element defines a large heading
 
 p: The element defines a paragraph
 
+a: The element defines a hyperlink, which is a link to another page
+
 ### HTML Versions
 
 Since the early days of the web, there have been many versions of HTML
