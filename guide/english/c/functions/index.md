@@ -115,3 +115,4 @@ int factorial (int n)
 * `return` ends the function and gives back a value. You can have several in one function, but as soon as you hit one the function ends there.
 * When you pass a variable to a function, it has its own copy to use - changing something in a function doesn't change it outside the function.
 * Variables declared inside a function are only visible inside that function, unless they are declared static.
+Add the iterative examples as well.
