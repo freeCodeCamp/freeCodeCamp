@@ -242,6 +242,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+"Beginning Visual Basic: A Step by Step Computer Programming Tutorial" - Philip Conrod
+ISBN-13: 978-1-937161-75-0
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
+
