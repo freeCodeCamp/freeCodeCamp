@@ -15,3 +15,5 @@ nodemon({
 nodemon.on('restart', function nodemonRestart(files) {
   console.log('App restarted due to: ', files);
 });
+// html example
+<span>&#9786;</span>
