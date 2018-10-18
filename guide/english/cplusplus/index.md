@@ -103,3 +103,6 @@ Download Link : [Download Here](http://www.codeblocks.org/downloads/26)
 Other alternatives could be visual studio, using a compiler or an online IDE such as Cloud9 or repl.it
 
 Link #2 for Mac : [Download for Mac #2 here](https://developer.apple.com/xcode/)
+
+### More Information
+[C++ Programming tutorials](https://www.youtube.com/playlist?list=PLAE85DE8440AA6B83) A free introduction to C++ video series by TheNewBoston on YouTube
