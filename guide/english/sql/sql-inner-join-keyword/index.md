@@ -61,7 +61,7 @@ student or LEFT table
 |         9 | Raymond F. Boyce       |      2400 | Computer Science | Raymond@someSchool.edu |
 +-----------+------------------------+-----------+------------------+------------------------+
 9 rows in set (0.00 sec)
-
+```
 
 ```sql
 SELECT * FROM `student-contact-info` AS b;
