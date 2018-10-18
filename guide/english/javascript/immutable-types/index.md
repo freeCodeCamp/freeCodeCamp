@@ -17,3 +17,13 @@ the `s` didn't change! <a>WAT</a>!
 Some string methods like `String.replace` returns a new string.
 
 JavaScript has one complex data type, the Object data type, and it has five simple data types: Number, String, Boolean, Undefined, and Null. These simple (primitive) data types are immutable (cannot be changed), while objects are mutable (can be changed).
+
+### Immutable Variables
+
+To declare an immutable variable (constant), you use the `const` keyword. Attempting to modify a constant results in an error:
+
+```js
+const myConstant = "Hello, World!";
+console.log(myConstant);
+myConstant = "Goodbye, World!"; //Results in error
+```
