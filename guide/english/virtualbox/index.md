@@ -4,7 +4,7 @@ title: VirtualBox
 # VirtualBox
 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Virtualbox_logo.png" width="200" height="200"/>
 
-VirtualBox is an open source Virtual Machine program from Oracle. It allows users to virtually install many operating systems on virtual drives, including Windows, BSD, Linux, Solaris, etc. 
+ VirtualBox (formerly Sun VirtualBox, Sun xVM VirtualBox and Innotek VirtualBox) is a free and open-source hosted hypervisor for x86 computers currently being developed by Oracle Corporation. It allows users to virtually install many operating systems on virtual drives, including Windows, BSD, Linux, Solaris, etc. 
 
 # Installation
 VirtualBox can be downloaded here: 
