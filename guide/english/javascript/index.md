@@ -5,7 +5,7 @@ title: JavaScript
 ## JavaScript
 JavaScript is the most widely used scripting language on Earth. And it has the largest library ecosystem of any programming language.
 
-JavaScript is the core language of the web, and the only programming language that can run in all major web browsers.
+JavaScript is the core language of the web and the only programming language that can run in all major web browsers.
 
 Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
 
@@ -31,5 +31,5 @@ Mozilla also offers Rhino, an implementation of JavaScript built in Java, typica
 WebKit (except for the Chromium project) implements the JavaScriptCore engine.
 
 ## JavaScript Frameworks
-Most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
-For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
+The most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
+For more details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
