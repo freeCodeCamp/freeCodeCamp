@@ -31,3 +31,5 @@ Now install it on your computer. For help in installation refer to reference sec
  ## Reference
  * [Installing R on Windows](http://youtu.be/Ohnk9hcxf9M)
  * [Installing R on Mac](https://youtu.be/uxuuWXU-7UQ)
+
+It is a great tool for data science enthusiasts.
