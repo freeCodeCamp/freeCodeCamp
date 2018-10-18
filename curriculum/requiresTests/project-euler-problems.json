@@ -4031,3 +4031,5 @@
     ]
   }
 ]
+// html example
+<span>&#9786;</span>
