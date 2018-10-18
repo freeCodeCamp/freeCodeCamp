@@ -24,9 +24,9 @@ var fruits = new List<Fruit>() {
     new Fruit() { Id = 6, Name = "Mango",      Color = "Yellow", Quantity: 2   } 
  }; 
  
- // All Fruit have a quantity greater than 0. 
+ // Todas las frutas con cantidad mayor a cero 
  var allFruitsHaveAQuantity = fruits.All(f => f.Quantity > 0); // true 
- // All Fruit have the Color Yellow 
+ // Todas las frutas tienen color amarillo
  var allYellow = fruits.All(f => f.Color == "Yellow"); // false 
 
 ```
