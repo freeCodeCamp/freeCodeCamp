@@ -101,7 +101,7 @@ int factorial (int n)
     if ( n < 0)
         return -1; /*Wrong value*/
     if (n == 0)
-        return 1; /*Terminating condition*/
+        return 1; /*Terminating condition means after that you will find the output*/
     return (n * factorial (n -1));
 }   
 ```
