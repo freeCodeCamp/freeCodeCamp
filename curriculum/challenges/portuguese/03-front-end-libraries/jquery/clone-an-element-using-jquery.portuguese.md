@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Clone um elemento usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Além de mover elementos, você também pode copiá-los de um lugar para outro. jQuery tem uma função chamada <code>clone()</code> que faz uma cópia de um elemento. Por exemplo, se quiséssemos copiar o <code>target2</code> do nosso <code>target2</code> da <code>left-well</code> para o nosso da <code>right-well</code> , <code>$(&quot;#target2&quot;).clone().appendTo(&quot;#right-well&quot;);</code> : <code>$(&quot;#target2&quot;).clone().appendTo(&quot;#right-well&quot;);</code> Você notou que isso envolve juntar duas funções jQuery? Isso é chamado de <code>function chaining</code> e é uma maneira conveniente de fazer as coisas com o jQuery. Clone seu elemento <code>target5</code> e anexe-o à sua <code>left-well</code> . </section>
 
-## Instructions
+## Intruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,7 +77,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

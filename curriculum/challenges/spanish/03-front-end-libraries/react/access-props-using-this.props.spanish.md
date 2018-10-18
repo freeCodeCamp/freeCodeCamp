@@ -4,7 +4,7 @@ title: Access Props Using this.props
 challengeType: 6
 isRequired: false
 videoUrl: ''
-localeTitle: Acceder a los apoyos usando this.props
+localeTitle: Acceder a los props usando this.props
 ---
 
 ## Description
@@ -48,7 +48,7 @@ class ReturnTempPassword extends React.Component {
     return (
         <div>
             { /* change code below this line */ }
-            <p>Tu contraseña temporal es: <strong></strong></p>
+            <p>Your temporary password is: <strong></strong></p>
             { /* change code above this line */ }
         </div>
     );
@@ -63,9 +63,9 @@ class ResetPassword extends React.Component {
   render() {
     return (
         <div>
-          <h2>Reiniciar Contraseña</h2>
-          <h3>Nosotros hemos generado una nueva contraseña para ti.</h3>
-          <h3>Por favor, cambie su contraseña desde la configuración de su cuenta lo antes posible.</h3>
+          <h2>Reset Password</h2>
+          <h3>We've generated a new temporary password for you.</h3>
+          <h3>Please reset this password from your account settings ASAP.</h3>
           { /* change code below this line */ }
 
           { /* change code above this line */ }
@@ -83,7 +83,7 @@ class ResetPassword extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+console.info('después de la prueba');
 ```
 
 </div>
@@ -94,6 +94,6 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
