@@ -4,7 +4,7 @@ title: Amazon Web Services
 ## Amazon Web Services
 
 Amazon Web Services, or AWS for short, is a subsidiary of Amazon.com that provides on-demand cloud computing platforms to individuals, companies and governments on a
-paid subscription basis with a free-tier option available for 12 months. It along with Microsoft's Azure and Google's Cloud Platform are considered the three major
+paid subscription basis with a free-tier option available for 12 months. AWS, along with Microsoft's Azure and Google's Cloud Platform, are considered the three major
 public cloud vendors.
 
 The technology allows subscribers to have at their disposal a full-fledged virtual cluster of computers, available all the time, through the internet. AWS's version of
@@ -55,4 +55,4 @@ Outside of the standard roles there are specialty certifications for Advanced ne
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [AWS](https://aws.amazon.com/)
-* [certifications](https://aws.amazon.com/certification/)
+* [Certifications](https://aws.amazon.com/certification/)
