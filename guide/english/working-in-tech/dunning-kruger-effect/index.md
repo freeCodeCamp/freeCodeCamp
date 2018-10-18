@@ -5,7 +5,7 @@ title: Dunning Kruger Effect
 ## Dunning Kruger (DK) Effect
 
 ### Wikipedia's Definition
-In the field of psychology, the **Dunning–Kruger** effect is a cognitive bias wherein people of low ability suffer from illusory superiority, mistakenly assessing their cognitive ability as greater than it is. The cognitive bias of illusory superiority derives from the metacognitive inability of low-ability persons to recognize their own ineptitude.
+In the field of psychology, the **[Dunning–Kruger](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)** (DK) effect is a cognitive bias wherein people of low ability suffer from illusory superiority, mistakenly assessing their cognitive ability as greater than it is. The cognitive bias of illusory superiority derives from the metacognitive inability of low-ability persons to recognize their own ineptitude.
 
 ### Why does it matter in Software Development?
 
@@ -29,3 +29,4 @@ Sorry, but there isn't a straight answer to this question. You can ask following
 
  Readings:
  - [Wikipedia](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+ - [Imposter Syndrome](https://en.wikipedia.org/wiki/Impostor_syndrome)
