@@ -28,6 +28,13 @@ Servers typically use ECC or Error-Correcting Code RAM. This RAM features a few 
 
 Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a relevant feature to most consumers, instead being mostly used in servers, data centers, and high end business workstations where the added 'insurance' against any down time is worth the added cost.
 
+#### Cost Efficiency:
+
+When building a new machine as a hobby, or assembling an entire server rack for a data center, cost efficiency is important with this type of hardware as well as others (such as a GPU) because it's both necessary and often times costly component. A good analysis to start with before the compatibility with other hardware is checked may just be "how much is this gonna cost me" vs "how much am I gonna get out of it". 
+
+Cost can be dependent on the current market, manufacturing of hardware, and the specifications of the hardware itself. Some of these factors may not be something that can be helped on an individual level, but they do influence the choice you make when determining how much you're getting out of purchasing that kind of RAM. 
+
+Do you plan on running VMs across a framework of server clients? Consider new, efficient RAM with desirable features that will benefit that configuration the most, without spending too little or less. Do you plan on building a home machine with the sole purpose of playing movies in the living room? Buy enough to run your desired operating system, and if that's not cheap enough to fit the bill then consider older generation hardware. 
 
 #### More Information:
 
