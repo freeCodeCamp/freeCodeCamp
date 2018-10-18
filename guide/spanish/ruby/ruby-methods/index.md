@@ -14,27 +14,27 @@ Los métodos siempre deben definirse como minúsculas (puede separar las palabra
 
 Los métodos son bastante fáciles de crear, se pueden crear sin la capacidad de aceptar parámetros, con parámetros e incluso con parámetros predefinidos si no se proporciona ninguno.
 
-#### Metodo simple
+#### Método simple
 ```
 def my_method 
   code goes here 
- end 
+end 
 ```
 
 #### Método de aceptación de parámetros
 ```
 def my_method (param1, param2) 
   param1 + param2 
- end 
+end 
 ```
 
 #### Método de parámetro predefinido (los parámetros predefinidos se usan cuando no se dan)
 ```
 def my_method (param1 = parameter1, param2 = parameter2) 
   parm1 + parm2 
- end 
+end 
 ```
 
-## Volver en metodos
+## Volver en Métodos
 
 El valor devuelto de un método siempre será la última expresión evaluada en el método. Sin embargo, puede usar la palabra clave return para devolver más de un valor si es necesario.
