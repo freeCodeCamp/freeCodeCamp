@@ -9,9 +9,9 @@ Why Bulma?
 * Modular.
 * Modern.
 * Free (Source code on Github).
-* growing community.
+* Has a growing community.
 * Easy to learn.
-* Quick Customization.
+* Quickly Customizable.
 
 Just one command to get started:
 ```terminal
