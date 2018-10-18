@@ -4,9 +4,9 @@ localeTitle: Mônada
 ---
 # Leis de Monad
 
-Existem 3 leis que devem ser satisfeitas por um tipo de dados para serem consideradas como mônadas
+Existem 3 leis que devem ser satisfeitas, por um tipo de dados, para serem consideradas como mônadas
 
-# Talvez Mônada
+# Mônada Talvez
 
 ```haskell
 justHead :: Maybe Char 
@@ -15,9 +15,9 @@ justHead :: Maybe Char
     return x 
 ```
 
-# Listar Monad
+# Monad de Lista
 
-retorno é o mesmo que puro de aplicativo
+O retorno é o mesmo que o do aplicativo
 
 instância Monad \[\] onde  
 return x = \[x\]  
