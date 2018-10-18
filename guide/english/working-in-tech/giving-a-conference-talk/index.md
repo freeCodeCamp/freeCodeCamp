@@ -23,11 +23,11 @@ Organize your thoughts in a bulleted list. This will help you when you write you
 
 You can find conferences on websites such as [**PaperCall**](https://papercall.io), through social media by following profiles like [**Call Back Women**](https://twitter.com/callbackwomen) on twitter, or simply by using a search engine. 
 
-Most of the time, you can submit a proposal to multiple conferences or you can submit multiple proposals to the same conference. If you do either, you increase your chance of being accepted. You should pay attention to what the conference organizers are looking for in submittals and edit your submittal to match. 
+Most of the time, you can submit a proposal to multiple conferences, or you can submit multiple proposals to the same conference. If you do either, you increase your chance of being accepted. You should pay attention to what the conference organizers are looking for in submittals and edit your submittal to match. 
 
-Many conferences do an initial blind review, meaning that your identity is not revealed to the reviewers. When submitting to a conference with that practice, do not include any identifiable information in your submittal. Sometimes conferences will ask whether or not you are a first time speaker, because they want to see new people at the podium. 
+Many conferences do an initial blind review, meaning that your identity is not revealed to the reviewers. When submitting to a conference with that practice, do not include any identifiable information in your submittal. Sometimes conferences will ask whether or not you are a first-time speaker, because they want to see new people at the podium. 
 
-It is not uncommon for a conference to have an acceptance rate around 20%. Do not be discouraged if you don't get accepted the first time you submit a proposal. You can edit it and submit it to another conference. 
+It is not uncommon for a conference to have an acceptance rate of around 20%. Do not be discouraged if you don't get accepted the first time you submit a proposal. You can edit it and submit it to another conference.
 
 ## Complete Presentation
 
