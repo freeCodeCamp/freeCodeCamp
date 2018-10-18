@@ -134,3 +134,6 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 #### More Information:
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
+
+## My changes
+Acceptance tests are black-box system tests. Each acceptance test represents some expected result from the system. Customers are responsible for verifying the correctness of the acceptance tests and reviewing test scores to decide which failed tests are of highest priority. Acceptance tests are also used as regression tests prior to a production release. A user story is not considered complete until it has passed its acceptance tests.
