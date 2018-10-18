@@ -63,3 +63,8 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 The best part of learning Android is that many of the courses and material available out there online are free.
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
+
+### Designing User Interface
+Well coding part is done using kotlin or java whatever one prefers but before that one should have thorough knowledge of how to design the User Interface of the app you are making. So we use XML(Xtensible Mark-up Language) for that task. One can get the in-depth knowledge of layouts,widgets and attributes online at https://developer.android.com/guide/topics/ui/declaring-layout for free. The UI part of an app is what attracts and fascinates users so it should not be comprised at any cost.
+
+
