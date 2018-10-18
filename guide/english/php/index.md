@@ -17,7 +17,7 @@ acronym also changed to what it stands for today: 'PHP: Hypertext Preprocessor'.
 
 ## What is PHP used for?
 
-As of October 2017, PHP is used on [82% of websites whose server-side language is known](https://w3techs.com/technologies/overview/programming_language/all). It is
+As of October 2017, PHP carried the title of highest used programming language on the web with [82% of websites whose server-side language is known](https://w3techs.com/technologies/overview/programming_language/all). It is
 typically used on websites to generate web page content dynamically. Use-cases include:
 
 * Websites and web applications (server-side scripting)
