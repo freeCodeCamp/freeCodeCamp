@@ -26,6 +26,8 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 
   <h1>My First Heading</h1>
   <p>My first paragraph.</p>
+ <h2>My Second Heading.<h2>
+  <p>My SeconD Paragraph.<p>
 
 </body>
 </html>
@@ -44,6 +46,10 @@ body: The element contains the visible page content
 h1: The element defines a large heading
 
 p: The element defines a paragraph
+
+h2: The element defines a heading smaller in size than h1 tag
+
+p:the element defines anothe paragraph
 
 ### HTML Versions
 
