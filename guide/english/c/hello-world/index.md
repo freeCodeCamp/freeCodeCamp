@@ -9,12 +9,12 @@ To write on console you can use the function `printf()` contained in the library
  ```C
  #include <stdio.h>
 
- int main(void)
+ void main()
  {
 
      printf("hello, world\n");  //lines starting with this are called comments..
 
-     return 0;
+    
  }
  ```
   ## Explanation 
