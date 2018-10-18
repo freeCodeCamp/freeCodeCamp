@@ -147,3 +147,29 @@ Elements from a `list` may be extracted and re-arranged using another `list` as 
 *   `list.reverse()` Reverse the elements of the list in place.
 
 *   `list.copy()` Return a shallow copy of the list. Equivalent to a[:].
+
+ python 
+
+#Additional:
+ lists are the most famous tools we use during our programs but here is a cool thing python provides, a special feature known as list comprehensions .now this can help to reduce your 4 lines of code to one single line.
+ Ex:
+ ```
+ l=[]                # empty list
+ for i in range(5):
+    l.append(i**2)
+ ``` 
+ now this will create  a list of squares in range 5
+ now list comprehensions:
+ ```
+ l=[ i**2 for i in range(5)]
+ ```
+ this creates a the same array but within a less effort.
+ much more can be added to this amazing feature of python's list
+ ```
+ l=[ i**2 for i in range(10) if i%2==0]
+ 
+ l=[i**2 for i in range(100) if i%2==0 else -90]
+ ```
+  many cool things are possible with this 
+  for more details follow the docs 
+  https://docs.python.org/2/tutorial/datastructures.html
