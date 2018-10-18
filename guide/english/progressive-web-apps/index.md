@@ -48,6 +48,9 @@ This implies that depending on the browser, the experience can change.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/esfi7ZLibmk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
+### Demo site use PWA
+https://www.flipkart.com/
+
 ### References
 
 1. [Russell, Alex. "Progressive Web Apps: Escaping Tabs Without Losing Our Soul" "Infrequently Noted" Posted: June 15, 2015.](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)
