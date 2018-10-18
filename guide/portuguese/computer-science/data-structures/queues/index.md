@@ -4,7 +4,7 @@ localeTitle: caudas
 ---
 ## Filas
 
-Fila é uma Estrutura de Dados First In First Out (FIFO). Muitos algoritmos usam filas em seu núcleo para melhorar o desempenho.
+Fila é uma Estrutura de Dados First In First Out (FIFO) em português o primeiro a entrar é o primeiro a sair. Muitos algoritmos usam filas em seu núcleo para melhorar o desempenho.
 
 A fila é um dos tipos abstratos de dados abstratos (ADT). É semelhante a filas que temos em filmes ou supermercados. A primeira pessoa a chegar será servida primeiro, certo? Da mesma forma, o primeiro elemento a ser inserido será removido primeiro. Existem vários tipos de filas, como
 
@@ -25,10 +25,39 @@ As operações mais comuns disponíveis na fila são,
 
 A implementação de uma fila é possível usando arrays ou listas vinculadas. A seguir, uma implementação de matriz simples da estrutura de dados da fila com suas operações mais comuns.
 
-\`\` \`JavaScript  
-var Queue = function () { var queue = \[\]; var front = 0; var back = 0; Retorna { isEmpty: function () { retornar frente> = voltar || queue.length === 0; } add: function (elem) { / \* Você também pode fazer queue.push (elem) em JavaScript. É assim que eles fazem em outros idiomas \* / fila \[voltar ++\] = elem; } remove: function () { if (! this.isEmpty ()) { fila de retorno \[frente ++\]; // ou queue.shift () } outro { throw new Error ("Fila está vazia"). } } espiada: function () { if (! this.isEmpty ()) { fila de retorno \[frente\]; } } } };
+```javascript  
+var Queue = function () { 
+  var fila = []; var front = 0; var back = 0; 
+  Retorna { 
+    isEmpty: function () { 
+      return (frente >= voltar || queue.length === 0); 
+    } 
+    /* Você também pode fazer queue.push (elem) em JavaScript. É assim que eles fazem em outras Linguagens */
+    add: function (elem) { 
+      fila[voltar++] = elem; 
+    } 
+    remove: function () { 
+      if (!this.isEmpty ()) { 
+        fila de retorno [frente++]; // ou queue.shift () 
+      } 
+      outro { throw new Error ("Fila está vazia"). } } 
+      espiada: function () { 
+        if (!this.isEmpty ()) { 
+          fila de retorno [frente]; 
+        } 
+      } 
+    }
+  };
 
-var queue = new Fila (); console.log (queue.isEmpty ()); // verdade queue.add (1); fila.add (2); console.log (queue.remove ()); // 1 console.log (queue.peek ()); // 2 console.log (queue.remove ()); // 2 console.log (queue.remove ()); // exception \`\` \`
+var fila = new Fila (); 
+console.log (fila.isEmpty ()); // verdade 
+fila.add (1); 
+fila.add (2); 
+console.log (fila.remove ()); // 1 
+console.log (fila.peek ());   // 2 
+console.log (fila.remove ()); // 2 
+console.log (fila.remove ()); // exception 
+```
 
 #### Aplicações
 
