@@ -53,3 +53,5 @@ In the code editor Git uses markings to indicate the HEAD (master) version of th
 From the code editor delete/update to resolve conflict and remove the special markings including the HEAD and OTHER file names, reload your file, then re add and recommit your changes. 
 
 For more information about the `git merge` command and all available options, please refer to the <a href="https://git-scm.com/docs/git-merge" target="_blank" rel="nofollow">Git documentation</a>.
+
+My Changes
