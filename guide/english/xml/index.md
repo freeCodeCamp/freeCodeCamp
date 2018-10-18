@@ -5,6 +5,8 @@ title: Extensible Markup Language (XML)
 
   XML stands for eXtensible Markup Language. It is extensible, because it does not use a predefined set of tags for identifying structural components, instead, it provides a mechanism for defining such sets of tags. The main purpose of the language is to share the data. Unlike HTML, in XML there is no predefined set of tags and tags specify meaning, rather than the presentation.
   
+XML is designed to store and transport data, be human and machine readable, and  be self descriptive.
+  
  ## Syntax of XML
   XML syntax refers to the rules that determine how an XML application can be written. The XML syntax is very straight forward, and this    makes XML very easy to learn.
   XML documents must contain one root element that is the parent of all other elements:
