@@ -61,6 +61,13 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+#### Python Crash Course
+
+Hands-on, project-based introduction to programming
+
+-[Amazon] (https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
+- ISBN: 978-1-59327-603-4
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
