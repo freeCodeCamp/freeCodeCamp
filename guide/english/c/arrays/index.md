@@ -57,6 +57,11 @@ int crr[100] = {3};
 ```
 If you do this, then the first element is going to be `3`, but the rest of them is going to be `0`. 
 
+```
+int crr[100] = {0}
+```
+Most of the time arrays are created with garbage values you can initialize it with 0 using above methods.
+
 ```C
 int var = arr[0];
 ```
