@@ -31,6 +31,18 @@ First, you need to have good amount of patience to ace in Robotics.
   
 Putting together, these resources are good enough to kick start your journey with Robotics!
 
+## knowledge required for Robotics:
+
+Electronics
+Microprocessors
+Sensors
+Output devices
+Networking/Communication
+Scaling up for production
+Durability
+Safety
+
+
 ### More Information:
 
 [Robots (Wikipedia.org)](https://en.wikipedia.org/wiki/Robot)
@@ -40,4 +52,6 @@ Putting together, these resources are good enough to kick start your journey wit
 [Sensors (electronicshub.org)](https://www.electronicshub.org/different-types-sensors/)
 
 [Actuator (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
+
+
 
