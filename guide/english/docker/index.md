@@ -13,6 +13,8 @@ Docker is used to simplify configurations, and ensure a smooth continuous integr
 
 One of Docker's biggest advantages is that it can be used by a team using different operateing systems to build projects without needing to worry about software conflicts.
 
+Solomon Hykes started Docker in France as an internal project within dotcloud, a platform-as-a service company.
+
 ### Installation
 
 * Ubuntu: `sudo apt install docker`
