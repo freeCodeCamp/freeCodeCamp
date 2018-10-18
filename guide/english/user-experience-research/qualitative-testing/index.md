@@ -4,7 +4,7 @@ title: Qualitative Testing
 
 ## Qualitative Testing
 
-Qualitative testing—which can take the form of interviews or other directly-observed usability tests (can be in-person or via video-conferencing tools like Skype or Google Hangouts)—tend to be exploratory and with the goal of gaining a more in-depth understanding of the user's experience. Qualitative testing aims to gather information on a user or group's everyday life experiences and motivations to see how these details might affect their use of the product or tool.
+Qualitative testing—which can take the form of interviews or other directly-observed usability tests that can be in-person or via video-conferencing tools like Skype or Google Hangouts—tend to be exploratory and with the goal of gaining a more in-depth understanding of the user's experience. Qualitative testing aims to gather information on a user or group's everyday life experiences and motivations to see how these details might affect their use of the product or tool.
 
 
 ### Results
