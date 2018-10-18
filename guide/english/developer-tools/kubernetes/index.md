@@ -12,4 +12,4 @@
   
 
 ### Sources:
-  * The Kubernetes Authors, 2017, kubernetes.io. Accessed 27 Oct. 2017.
+  * The Kubernetes Authors, 2017, kubernetes.io. Accessed 27 Oct. 2017
