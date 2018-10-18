@@ -1,3 +1,4 @@
 sin^2(a)+cos^2(a)=1
 sec^2(a)-tan^2(a)=1
 cosec^2(a)-cot^2(a)=1
+cos(a)=root(1-sin^2(a))
