@@ -11,7 +11,8 @@ localeTitle: إضافة نص العنصر النائب إلى حقل نص
 <section id="description"> نص العنصر النائب هو ما يتم عرضه في عنصر <code>input</code> قبل قيام المستخدم <code>input</code> أي شيء. يمكنك إنشاء نص عنصر نائب مثل: <code>&lt;input type=&quot;text&quot; placeholder=&quot;this is placeholder text&quot;&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> <code>placeholder</code> قيمة <code>placeholder</code> <code>input</code> النص إلى &quot;عنوان URL لصورة القط&quot;. </section>
+<section id="instructions"> عيِّـن <code>placeholder</code> قيـمة نصِّك : <code>input</code> إلى "عنوان URL لصورة القط".
+ </section>
 
 ## Tests
 <section id='tests'>
