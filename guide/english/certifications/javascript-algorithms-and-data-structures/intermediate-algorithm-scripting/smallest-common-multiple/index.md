@@ -153,44 +153,25 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
-    function smallestCommons(arr) {
+    function smallestCommons(arr) {  
+        // Euclidean algorithm for the greatest common divisor.
+        // ref: https://en.wikipedia.org/wiki/Euclidean_algorithm
+        const gcd = (a, b) => b === 0 ? a : gcd(b, a%b);
 
-      // range
-      const sorted = arr.sort((a,b) => a > b)
-      let min = sorted[0]
-      let max = sorted[arr.length-1]
+        // Least Common Multiple for two numbers based on GCD
+        const lcm = (a, b) => (a * b) / gcd(a, b);
 
-      let smallestCommon = lcm(min, ++min);
+        // range
+        let [min,max] = arr.sort((a,b)=> a-b);
+        let currentLCM = min;
 
-      while(min < max) {
-        smallestCommon = lcm(smallestCommon, ++min);
-      }
-      return smallestCommon;
-    }
+        while (min < max) {
+            currentLCM = lcm(currentLCM, ++min);
+        }
 
-    /**
-     * Calculates Greatest Common Divisor
-     * of two nubers using Euclidean algorithm
-     * https://en.wikipedia.org/wiki/Euclidean_algorithm
-     */
-    function gcd(a, b) {
-      while (b > 0) {
-        let tmp = a;
-        a = b;
-        b = tmp % b;
-      }
-      return a;
-    }
-
-    /**
-     * Calculates Least Common Multiple
-     * for two numbers utilising GCD
-     */
-    function lcm(a, b) {
-      return (a * b / gcd(a, b));
-    }
-
-
+        return currentLCM;
+    };
+    
     // test here
     smallestCommons([1,5]);
     
