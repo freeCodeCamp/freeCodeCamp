@@ -34,3 +34,4 @@ These keyword values are grouped into six categories:
 - [MDN - display](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
 - [caniuse - Browser Support](http://caniuse.com/#search=display)
 - [CSS-Tricks- A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+- [CSS - display details](https://developer.mozilla.org/en-US/docs/Web/CSS/display)
