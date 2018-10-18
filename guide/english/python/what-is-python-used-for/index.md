@@ -67,8 +67,8 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 * Data analysis
 * Scraping data from websites
 * Image Processing
-## Why python has got such a wide range of usage?
-* Python  has got many packages to work with, some ranging for aerospace research to mathematics. 
+## Why does python have such a wide range of usage?
+* Python  has many packages to work with, some ranging for aerospace research to mathematics. 
 *Secondly for choosing to be a part of the open source community.
   Yes! Python is Open-source. 
   * For it's simple and elegant syntax.
