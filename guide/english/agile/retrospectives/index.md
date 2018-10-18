@@ -40,6 +40,7 @@ Action items should be notated on a board to make tracking progress visual and m
 - Inspirations for preparing a retrospective:
   - https://plans-for-retrospectives.com/en/
   - http://www.funretrospectives.com/
+  - http://tastycupcakes.org/
 - How to run experiments with the popcorn flow:
   - https://www.slideshare.net/cperrone/popcornflow-continuous-evolution-through-ultrarapid-experimentation
 
