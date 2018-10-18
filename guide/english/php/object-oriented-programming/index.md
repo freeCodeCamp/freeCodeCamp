@@ -373,3 +373,5 @@ echo json_encode($jack->getFavDrinks());
 ```
  
 This way of implementing and using class methods to retrieve and update class properties is called encapsulation in Object Oriented Programming. We can also set visibility for class methods just like how we did it for class properties.
+
+My changes.
