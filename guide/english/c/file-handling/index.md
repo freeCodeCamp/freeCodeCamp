@@ -4,7 +4,7 @@ title: File Handling
 ## File Handling
 
 ### Introduction
-If you've written the C `helloworld` program before, you've already done file IO in C!  Congratulations! :tada:
+If you've written the C `helloworld` program before, you've already done file INPUT/OUTPUT(Genrally reffered as IO) in C!  Congratulations! :tada:
 
 ```c
 /* A simple hello world in C. */
@@ -21,20 +21,23 @@ int main() {
 }
 ```
 
-File Handling is most important part of a programmer . In C language we use a structure pointer of a file type to declare a file
+File Handling is one of the most important part of a programming . In C language we use a **FILE** type structure pointer  to declare a **file**.
 
 ```c
 FILE *fp;
+..// declaration of file name as fp
 ```
 C provides a number of build-in function to perform basic file operation
 
 **fopen()**   **-**   **create a new file or open a existing file**
 
 **fclose()**   **-**   **close a file**
+//Most important part is to close the file to restrict any further changes.
 
 **getc()**   **-**   **reads a character from a file**
 
 **putc()**   **-**   **writes a character to a file**
+//getc and putc() both method are are used for string or char arrays.
 
 **fscanf()**   **-**   **reads a set of data from a file**
 
@@ -60,10 +63,13 @@ C provides a number of build-in function to perform basic file operation
   
   In C there are many mode for opening a file 
   **r**  **-**   **open a file in reading mode**
+  ..//Provide access only to read a file but not to write it.
   
   **w**  **-**   **opens or create a text file in writing mode**
+  ..//Provides access only to write on file not to read it.
   
   **a**  **-**   **opens a file in append mode**
+  ..//Provides acces to append more words in file.
   
   **r+**  **-**   **opens a file in both reading and writing mode**
   
@@ -105,11 +111,11 @@ So how does this relate to `helloworld` and file IO?
 
 When you call `printf`, you are really just writing to a special file called `stdout`, short for __standard output__.
 `stdout` represents, well, the standard output as decided by your shell, which is usually the terminal.
-This explains why it printed to your screen.
+This explains why it printed to your screen.stdout is stream used by Os to display the output on the monitor or particularly in your terminal.
 
 There are two other streams (i.e. files) that are available to you with effort, `stdin` and `stderr`.
-`stdin` represents the __standard input__, which your shell usually attaches to the keyboard.
-`stderr` represents the __standard error__ output, which your shell usually attaches to the terminal.
+`stdin` represents the __standard input__, which your shell usually attaches to the keyboard in terms via keyboard service to console.
+`stderr` represents the __standard error__ output, which your shell usually attaches to the terminal but this time to display **errors**.
 
 ### Rudimentary File IO, or How I Learnt to Lay Pipes
 Enough theory, let's get down to business by writing some code!
