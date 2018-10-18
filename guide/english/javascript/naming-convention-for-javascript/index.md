@@ -13,7 +13,7 @@ In programming, camelCase formatting for variable names looks like this:
 
 PascalCase (or CamelCase) is a variant of camelCase. It differs from camelCase by capitalizing every word, *including* the first word:
 
-    var PascalCase = "upper-case every word";
+    var PascalCase = "capitalize every word";
 
 ## snake_case
 
