@@ -23,5 +23,9 @@ title: Algorithms in JavaScript books
 - Data structures and algorithms are the base of every solution to any programming problem. Learn to write complex and powerful code using the latest ES 2017 features
 - [Amazon](https://https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1788623878/)
 - ISBN-13: 978-1788623872
+
+*Cracking the Coding Interview: 189 Programming Questions and Solutions 6th Edition*
+- learn (or re-learn) core computer science concepts, and practice on 189 interview questions and solutions.
+- [Amazon](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850)
  
 Please feel free to add more that you have found useful!
