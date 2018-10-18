@@ -98,6 +98,8 @@ h2 {
     }
 ```
 
+Tip: Many code editors will comment a highlighted portion of text by typing CMD+/ (Apple) or CTRL+/ (Windows).
+
 ### More Information:
 
 * [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/Comments)
