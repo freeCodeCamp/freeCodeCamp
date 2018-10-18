@@ -153,6 +153,10 @@ will do that itself based on the type of value assigned.
 
 The `objects` parameter is prefixed with a `*` which indicates that the function will take an arbitrary number of arguments for that parameter.
 
+## One of the most importan built in functions of Python is help()!
+
+If you are stuck about the objects within your long code and do not remember what the object is about you may find help() function very useful which returns the python built in documentation about the object.
+
 ## Want to learn more?
 
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
