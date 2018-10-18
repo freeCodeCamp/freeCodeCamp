@@ -3,7 +3,7 @@ title: SVG
 ---
 ## SVG
 
-SVG or Scalable Vector Graphics is a web standard for defining vector-based graphics in web pages. Based on XML the SVG standard provides markup to describe paths, shapes, and text within a viewport. The markup can be embedded directly into HTML for display or saved to a `.svg` file and inserted like any other image. You can write SVG by hand, but more complicated graphics can be designed in vector graphics editors such as Illustrator or InkScape and exported to SVG files or code.
+SVG or Scalable Vector Graphics is a web standard for defining vector-based graphics in web pages. Based on XML the SVG standard provides markup to describe paths, shapes, and text within a viewport. The markup can be embedded directly into HTML for display or saved to a `.svg` file and inserted like any other image. You can write SVG by hand, but more complicated graphics can be designed in vector graphics editors such as Illustrator or InkScape and exported to SVG files or directly to code.
 
 ## SVG Basics
 Developers start an SVG graphic with the `<svg>` tag and XML namespace like so:
