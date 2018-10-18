@@ -62,7 +62,7 @@ When creating a class in react, you should export them after declaration, which 
 export default App;
 ```
 ### View the results!
-When you've started the development server by issuing the `npm start` command, you can view the changes you add to your project live in your browser. After issuing the command, npm should open a browser automatically displaying your app.
+When you've started the development server by issuing the `npm start` command, you can view the changes you add to your project live in your browser. After issuing the command, npm should open a browser automatically displaying your app. Ensure to include "Hello World!"
 
 ### Sources
 [1. React documentation](https://reactjs.org/docs/hello-world.html)
