@@ -4,7 +4,7 @@ localeTitle: Acessibilidade
 ---
 ## Acessibilidade
 
-**Acessibilidade na Web significa que pessoas com deficiências podem usar a Web** .
+**Acessibilidade na Web significa que pessoas com deficiência podem usar a Web** .
 
 Mais especificamente, a acessibilidade na Web significa que as pessoas com deficiência podem perceber, entender, navegar e interagir com a Web, e que podem contribuir para a Web. Acessibilidade na Web também beneficia outros, incluindo [pessoas mais velhas](https://www.w3.org/WAI/bcase/soc.html#of) com habilidades de mudança devido ao envelhecimento.
 
