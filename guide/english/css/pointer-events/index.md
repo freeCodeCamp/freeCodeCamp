@@ -3,9 +3,27 @@ title: Pointer Events
 ---
 ## Pointer Events
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/css/using-css-transitions/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+This property specifies how your mouse reacts when you hover over any element on a page.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Example
+
+```css
+
+.example{
+  pointer-events: auto; 
+  /*this will use the default look set by the browser agent*/
+}
+
+.example{
+  pointer-events: none; 
+  /*this will use the regular mouse look when hovered over the element*/
+}
+
+```
+
+### Other acceptable values
+
+Other values could be: ```initial```, and ```inherit```
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
