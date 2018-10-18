@@ -13,59 +13,69 @@ En comparación con otros lenguajes de programación, el mecanismo de clase de P
 La forma más simple de definición de clase se ve así:
 
 ```python
-class ClassName: 
-    <statement-1> 
+class NombreClase: 
+    <estatuto-1> 
         ... 
         ... 
         ... 
-    <statement-N> 
+    <estatuto-N> 
  ``` 
  
- #### Class Objects: 
+ #### Objetos de la clase: 
  
- Class objects support two kinds of operations: attribute references and instantiation. 
+ Los objetos de una clase manejan dos clases de operaciones: referencia de atributos e intansiacion
+
+ La referencia de atributos usa sintaxis estandard: `obj.nombre`.
+ Los nombres de atributos validos son todos los nombres que se encuentran en es nombre espacial (Namespace) de un objeto de la clase cuando este objeto fue creado.
+
+ Entonces, si la definicion de la clase se ve asi:
+```python
+
+class MiClase: 
+    """Una clase de ejemplo simple""" 
+    i = 12345
+
+    def f(self): 
+        return 'hola mundo' 
+
+```
+Entonces `MiClase.i` y `MiClase.f` son nombres de atributos validos, uno regresa un numero y otro una funcion, respectivamente. 
+ Los atributos de la clase tambien pueden ser asignados, asi que es posible cambiar el atributo `MiClase.i` por asignacion. `__doc__` tambien es un nombre de atributo valido, y regresa la documentacion referente a la clase: `"""Una clase de ejemplo simple""" `. 
  
- Attribute references use the standard syntax used for all attribute references in Python: `obj.name`. 
- Valid attribute names are all the names that were in the class's namespace when the class object was created. 
- So, if the class definition looked like this: 
-```
+ La instansiacionde una clase usa sintaxis estandard para llamar a una funcion. Solo prentende que el objeto de la una calse es una funcion sin parametros que regresa una nueva instancia de la clase. Por ejemplo (asumiendo la siguiente clase):
 
-pitón clase MyClass: "" "Una clase de ejemplo simple" "" i = 12345
+```python
+x = MiClase()
 ```
-def f(self): 
-    return 'hello world' 
-```
-
-```
-Then `MyClass.i` and `MyClass.f` are valid attribute references, returning an integer and a function object, respectively. 
- Class attributes can also be assigned to, so you can change the value of `MyClass.i` by assignment. `__doc__` is also a valid attribute, returning the docstring belonging to the class: `"A simple example class"`. 
+Crea una nueva instancia de la clase y asigna este nuevo objeto a la variable local x.
  
- Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class): 
+La operacion de instancia ("llamar" a un objeto de una clase) crea un objeto vacio.
+Muchas clases prefieren crear objetos con instancias personalizadas a un estado inicial especifico.
+Por lo tanto una clase puede definir un metodo especial llamado __init__(), de la siguiente forma
+```python
+def **__init__** (self): 
+    self.data = []
 ```
-
-pitón x = MyClass ()
-```
-Creates a new instance of the class and assigns this object to the local variable x. 
- 
- The instantiation operation (“calling” a class object) creates an empty object. 
- Many classes like to create objects with instances customized to a specific initial state. 
- Therefore a class may define a special method named __init__(), like this: 
-```
-
-pitón def **init** (self): self.data = \[\]
-```
-When a class defines an `__init__()` method, class instantiation automatically invokes `__init__()` for the newly-created class instance. 
+Cuando una clase define el metodo `__init__()`, la instanciacion de la clase automaticamente invoca este metodo para la nueva instancia de la clase.
+En este ejemplo, una nueva instancia puede crearse asi:
+When a class defines an  method, class instantiation automatically invokes `__init__()` for the newly-created class instance. 
  So in this example, a new, initialized instance can be obtained by: 
-```
 
-pitón x = MyClass ()
+```python
+x = MiClase()
 ```
-Of course, the `__init__()` method may have arguments for greater flexibility. 
- In that case, arguments given to the class instantiation operator are passed on to `__init__()`. For example, 
-```
+Claro que el metodo `__init__()` puede llevar varios parametros para mas flexibilidad.
+En ese caso, los parametros dados para la instanciacion se llevan en la llamada a `__init__()`, por ejemplo:
 
-pitón Complejo de clase: def **init** (self, realpart, imagpart): self.r = realpart self.i = imagpart ...
+```python
+
+class Complejo: 
+    def **__init__** (self, realpart, imagpart): 
+        self.r = realpart 
+        self.i = imagpart
 
 x = Complejo (3.0, -4.5)
 
-> > > xr, xi (3.0, -4.5) \`\` \`
+> > > x.r, x.i 
+> > > (3.0, -4.5)
+```
