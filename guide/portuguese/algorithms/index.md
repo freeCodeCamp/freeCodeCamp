@@ -28,7 +28,7 @@ Algoritmos de classificação vêm em vários sabores, dependendo da sua necessi
 
 Não há discussão de classificação que possa terminar sem ordenação rápida. O conceito básico está no link abaixo. [Ordenação rápida](http://me.dt.in.th/page/Quicksort/)
 
-#### Merge Sort
+#### Ordenação por Comparação
 
 É o algoritmo de classificação que se baseia no conceito de como as matrizes ordenadas são mescladas para fornecer uma matriz ordenada. Leia mais sobre isso aqui- [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
