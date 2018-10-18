@@ -9,6 +9,8 @@ For example, if you happen to pass along your code to an absolute beginner, they
 
 It may become an extremely important idea to make a habit out of commenting your functions, loops, and declarations and treating comments as part of the source code, just as regular code should be.
 
+Some programmers unfortunately dont commit to it this way and write comments only they will understand
+
 ![An example of commenting in the real world](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
