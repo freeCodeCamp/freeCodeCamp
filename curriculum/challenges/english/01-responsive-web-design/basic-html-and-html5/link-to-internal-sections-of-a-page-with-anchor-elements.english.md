@@ -7,9 +7,9 @@ videoUrl: 'https://scrimba.com/p/pVMPUv/cyrDRUL'
 
 ## Description
 <section id='description'>
-Anchor elements can also be used to create internal links to jump to different sections within a webpage.
+<code>anchor</code> elements can also be used to create internal links to jump to different sections within a webpage.
 To create an internal link, you assign a link's <code>href</code> attribute to a hash symbol <code>#</code> plus the value of the <code>id</code> attribute for the element that you want to internally link to, usually further down the page. You then need to add the same <code>id</code> attribute to the element you are linking to. An <code>id</code> is an attribute that uniquely describes an element.
-Below is an example of an internal anchor link and its target element:
+Below is an example of an internal <code>anchor</code> link and its target element:
 <blockquote>&lt;a href="#contacts-header"&gt;Contacts&lt;/a&gt;<br>...<br>&lt;h2 id="contacts-header"&gt;Contacts&lt;/h2&gt;</blockquote>
 When users click the Contacts link, they'll be taken to the section of the webpage with the <b>Contacts</b> header element.
 </section>
@@ -17,7 +17,7 @@ When users click the Contacts link, they'll be taken to the section of the webpa
 ## Instructions
 <section id='instructions'>
 Change your external link to an internal link by changing the <code>href</code> attribute to "#footer" and the text from "cat photos" to "Jump to Bottom".
-Remove the <code>target="_blank"</code> attribute from the anchor tag since this causes the linked document to open in a new window tab.
+Remove the <code>target="_blank"</code> attribute from the <code>anchor</code> tag since this causes the linked document to open in a new window tab.
 Then add an <code>id</code> attribute with a value of "footer" to the <code>&lt;footer&gt;</code> element at the bottom of the page.
 </section>
 
