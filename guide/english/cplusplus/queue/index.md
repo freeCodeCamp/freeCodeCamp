@@ -195,6 +195,10 @@ int main ()
     2
     2
     
+    ##Uses of Queue
+    1. When data is transferred asynchronously between two processes. eg. IO Buffers, pipes,file IO etc.
+    2. When a resource is shared among multiple consumers. Examples include CPU scheduling, Disk scheduling.
+    3. In print spooling, documents are loaded into a buffer and afterward the printer puls them off the buffer at its own rate.
 
 ### For More Resources:
 http://www.cplusplus.com/reference/queue/queue/
