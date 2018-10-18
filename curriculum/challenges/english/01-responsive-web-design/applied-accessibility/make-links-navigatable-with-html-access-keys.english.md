@@ -13,7 +13,7 @@ Here's an example:
 <code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code>
   
 #### Note
-For more information about how accesskeys can be used by the enduser, [see this](https://www.w3schools.com/tags/att_global_accesskey.asp)
+For more information about how accesskeys can be used by the enduser, [see this](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey)
 </section>
 
 ## Instructions
