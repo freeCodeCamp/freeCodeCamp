@@ -9,7 +9,11 @@ title: Cryptocurrency
 
 Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography in securing its transactions. There are various cryptocurrencies including LiteCoin, Dash, Ethereum, Ripple, and the currently most popular one Bitcoin. It is the perfect way to make trustless and anonymous transactions since it does not involve any third party - there is no central bank. 
 
-Unlike normal currency, cryptocurrency can be exchanged as fractions. For example, transactions can amount to 0.00007 BTC or even lower.
+>You can’t stop things like Bitcoin. It will be everywhere and the world will have to readjust. World governments will have to readjust
+>
+> – John McAfee
+
+Unlike normal currency, cryptocurrency can be exchanged as fractions. For example, transactions can amount to 0.00007 BTC or even lower. Currently the smallest amount of bitcoin ever recorded on the block chain is 0.00000001 BTC also called satoshi (in honor of the creator of Bitcoin, Satoshi Nakamoto).
 
 If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
 
