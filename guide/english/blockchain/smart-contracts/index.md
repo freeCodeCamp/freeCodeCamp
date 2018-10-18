@@ -15,5 +15,8 @@ This is entirely transparent so all the nodes(miners) can see what logic is bein
 
 Two of the most common technologies used are :
 - Ethereum
+    Ethereum is an open-source, public, blockchain-based distributed computing platform and operating system featuring smart contract           functionality.
+
 - Hyperledger
+    Hyperledger is an open source collaborative effort created to advance cross-industry blockchain technologies. It is a global               collaboration, hosted by The Linux Foundation, including leaders in finance, banking, Internet of Things, supply chains, manufacturing,     and Technology.
 
