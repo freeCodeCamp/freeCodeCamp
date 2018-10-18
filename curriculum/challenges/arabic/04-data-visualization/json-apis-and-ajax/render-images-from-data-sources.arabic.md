@@ -3,14 +3,44 @@ id: 587d7fae367417b2b2512be6
 title: Render Images from Data Sources
 challengeType: 6
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'JSON APIs و Ajax: رسم الصور بناء على مصادر البيانات'
 ---
 
 ## Description
-undefined
+التمارين السابقة أظهرت أن كل كيان من مصفوفة
+
+JSON
+
+يحتوي على 
+
+`imageLink`
+
+مفتاح ذو قيمة تشير إلى رابط لصورة قطة.
+
+أثناء تنفيذ حلقة على هذه الكائنات، يمكنك استخدام قيمة خاصة
+
+`imageLink`
+
+لتعرض صورة في عنصر
+
+`img`
+
+الكود الذي يقوم بهذه العملية:
+
+`html += "<img src = '" + val.imageLink + "' " + "alt='" + val.altText + "'>";`
 
 ## Instructions
-undefined
+قم بإضافة الكود الضروري لاستخدام 
+
+`imageLink`
+
+و
+
+`altText`
+
+في عنصر
+
+`img`
 
 ## Tests
 <section id='tests'>
