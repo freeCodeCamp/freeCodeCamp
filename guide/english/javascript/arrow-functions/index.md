@@ -40,6 +40,9 @@ const multiply = (x, y) => x * y;
 // if you only have one argument/parameter 
 const multiplyBy2 = x => x * 2;
 
+// if you need to concisely return an object, you can wrap the {} inside the () to avoid syntax conflicts
+const returnObject = (x, y) => ({a : x, b: y});
+
 // combined with the ternary operator, but note it's not a looker! 
 const addOrMultiply = (x, y, mathOperator) => mathOperator.toLowerCase() === 'add' ? x + y : x * y;
 ```
