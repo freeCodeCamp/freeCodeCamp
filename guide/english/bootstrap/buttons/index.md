@@ -78,6 +78,21 @@ This is a list of the CSS classes for different size of the buttons.
 
 <button type="button" class="btn btn-xs">Extra Small</button>
 
+#### CSS files
+Bootstrap includes a handful of options for including some or all of our compiled CSS.
+
+CSS files  	               Layout	         Content 	   Components	     Utilities
+bootstrap.css
+bootstrap.min.css
+                          Included         Included	   Included	       Included
+bootstrap-grid.css
+bootstrap-grid.min.css
+                       Only grid system	 Not included	 Not included   Only flex utilities
+bootstrap-reboot.css
+bootstrap-reboot.min.css
+                        Not included	   Only Reboot	  Not included	  Not included
+JS files
+
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
 
