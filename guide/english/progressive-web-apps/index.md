@@ -47,7 +47,10 @@ This implies that depending on the browser, the experience can change.
 ### Demo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/esfi7ZLibmk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
-
+### Combine AMP with Progressive Web Apps
+Features: 
+ + AMP Pages can use many PWA features on their own, as long as they're served from your origin (your site's domain) as opposed to an AMP Cache. This means that PWA features won't kick in when consuming an AMP Page within a platform like Google or Bing, but they will on the onward journey, or if users navigate to your AMP pages directly.
+ + One of the core features of AMP Pages is that they're easy and safe to embed, which is why an ever-growing number of platforms are happy to distribute and serve them. If you're building a Progressive Web App, you can receive the same benefits and dramatically reduce your backend and client complexity by re-using your AMP Pages as data-source for your PWA.
 ### References
 
 1. [Russell, Alex. "Progressive Web Apps: Escaping Tabs Without Losing Our Soul" "Infrequently Noted" Posted: June 15, 2015.](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/)
@@ -55,4 +58,5 @@ This implies that depending on the browser, the experience can change.
 3. [Introduction to Progressive Web Apps - MDN Web Docs] (https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Introduction)
 4. [Hume, Dean. Alan. "Progressive Web Apps: Live book](https://livebook.manning.com/#!/book/progressive-web-apps/about-this-book/)
 5. [Hofmann, Simon. "The Road to PWA - Part 1"] (https://blog.simon-hofmann.org/pwa/js/2018/05/07/road-to-pwa01.html)
+6. [Combine AMP with Progressive Web Apps - AMP](https://www.ampproject.org/docs/integration/pwa-amp)
 
