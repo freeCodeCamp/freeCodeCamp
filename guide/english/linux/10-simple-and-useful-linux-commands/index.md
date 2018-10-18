@@ -1,5 +1,5 @@
 ---
-title: 10 Simple and Useful Linux Commands
+title: Simple and Useful Linux Commands for Daily use and Operations
 ---
 # 10 Simple and Useful Linux Commands
 The commands listed here are basic, and will help you get started quickly. But they’re also powerful, and they’ll continue to be useful as your Linux expertise expands.
@@ -15,7 +15,7 @@ Example 2: `echo "Hello world" > hello.txt`
 1. `cut` When you have a string with separators in it, use `cut` to filter out certain fields. Example: `echo "this, that, and the other" | cut -d, -f2 # "that"`
 1. `grep` To find lines of text that contain a certain string, use grep. Example: `grep 'root' /etc/passwd # root:x:0:0:root:/root:/bin/bash`
 1. `sed` Use sed to find and change a substring in a piece of text. Example: `echo "this, that, and the other" | sed 's/that/those/' # "this, those, and the other"`
-1. `shutdown` use shut down the system and turn off the power. Example: `shutdown -h now`shuts down system immediately. `shutdown -h +5` shuts down system after five minutes.
+1. `shutdown` use shut down the system and turn off the power. Example: `shutdown -h now`shuts down system immediately. `shutdown -h +5` shuts down system after five minutes. You can also reboot the system immediately by issuing the command `shutdown -r now`.
 
 Use these commands in scripts and at the command line. They're all very powerful commands, and Linux's man page has a lot more information about each one.
 
@@ -52,6 +52,12 @@ more command allows quickly view file and shows details in percentage. You can p
 
 10. `cp` Command
 Copy file from source to destination preserving same mode.
+
+11. `systemctl` Command
+
+Is a command which allows operators to work with the Linux system services. The standard use of the command is "systemctl <OPTION> <SERVICE-NAME>" by providing an OPTION (e.g. start, stop, status) and than providing a specific Service Name to act on. You can use the command to get a general status of your Linux services (e.g systemctl status). Note that you will either need Administrator access or use SUDO to elevate your rights to run the command successfully.
+
+
 
 Here are the list of commands frequently used by adiminstrator.
 This is not a complete but it’s a compact list of commands to refer when needed. 
