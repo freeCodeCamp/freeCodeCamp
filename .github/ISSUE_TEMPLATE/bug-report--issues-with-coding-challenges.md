@@ -20,3 +20,6 @@ NOTE: If you're reporting a security issue, don't create a GitHub issue. Instead
 
 
 **If possible, add a screenshot here (you can drag and drop, png, jpg, gif, etc. in this box):**
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+"
