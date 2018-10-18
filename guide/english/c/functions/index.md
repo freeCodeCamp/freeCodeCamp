@@ -106,6 +106,31 @@ int factorial (int n)
 }   
 ```
 
+## Defining a function after main program
+There can be instances when you provide the function definition after the main program. In those cases the function should be declared before the main program with arguments and should be ended with semi-colon(;). Later the function can be defined after the main program.
+
+```C
+#include <stdio.h>
+
+int divides(int a, int b);
+
+int main(void) {
+    int first = 5;
+    int second = 10; //MUST NOT BE ZERO;
+
+    int result = divides(first, second);
+
+    printf("first divided by second is %i\n", result);
+
+    return 0;
+}
+
+int divides(int a, int b) {
+    return a / b;
+}
+
+```
+
 # Before you go on...
 ## A review
 * Functions are good to use because they make your code cleaner and easier to debug.
