@@ -112,3 +112,13 @@ Use **`items()`** for Python 3.x:
     y 2
     z 3
 ```
+
+To loop over just the values in the dictionary, do this in Python 3.x:
+```python
+    >>> for value in d.values():
+    ...     print(value)
+    ...
+    1
+    2
+    3
+```
