@@ -10,6 +10,8 @@ VirtualBox is an open source Virtual Machine program from Oracle. It allows user
 VirtualBox can be downloaded here: 
 [VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
 
+There are 32 bit and 64 bit versions of the software available for downlaod. Confirm your OS type while downloading.
+
 # Setup
 - Sometimes you may need to enable virtualization from your bios settings
 
