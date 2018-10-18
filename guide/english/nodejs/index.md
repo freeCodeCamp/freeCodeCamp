@@ -48,5 +48,6 @@ When the timer completes it's execution taking 5 seconds, it calls the function 
 
 #### More information:
 - [Official NodeJS site](https://nodejs.org)
+- [Link to Official NodeJS Docs](https://nodejs.org/en/docs/)
 - [Node Version Manager](https://github.com/creationix/nvm/blob/master/README.md)
 - [n: Interactive NodeJS Version Manager](https://github.com/tj/n)
