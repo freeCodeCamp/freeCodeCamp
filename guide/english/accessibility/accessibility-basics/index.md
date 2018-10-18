@@ -28,18 +28,18 @@ If your site is on the Internet, reachable by anyone with a web browser, in one 
 
 But, is all content on your website actually readable, usable and understandable for everyone? Are there no thresholds that bar certain people from 'accessing' all the information you are exposing?
 
-You could ask yourself questions like the following ones:
+You could ask yourself questions like the following:
 
-*   If you add information that is only contained in an audio file, can a deaf person still get that information?
+*   If you add information that is only contained in an audio file, can a deaf person access that information?
 *   If you denote an important part of your website with a certain color, will a colorblind person know about it?
 *   If you add images on your website that convey important information, how will a blind or low-vision person know about it?
 *   If you want to navigate the application with keyboard or mouth-stick, will it be possible and predictable?
 *   Does your application assume the orientation of the device, and what if the user can't physically change it?
-*   Are there forgiving timed aspects of your application for someone that might need more time to fill in a form?
+*   Are there forgiving timed aspects of your application when someone might need more time to fill in a form?
 *   Does your application still work (progressive enhancement) assuming that JavaScript does not load in time?
-*   You can even go as far as saying, if your website is very resource-heavy, will someone on a slow or spotty connection be able to read your content?
+*   If your website is very resource-heavy, will someone on an older device with a slow or spotty connection be able to access your content?
 
-This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are deaf, low-vision, blind, dyslexic, mute, on a slow connection, colorblind, suffering from epilepsy, mental fatigue, age, physical limitations, etc.
+This is where accessibility comes into play. Accessibility basically entails making your content as friendly, as easy to 'access' as possible for the largest amount of people. This includes people who are older, deaf, low-vision, blind, dyslexic, colorblind, have epilepsy, have mental fatigue, have physical limitations, cannot afford new devices or high-speed connections, etc.
 
 ## Why implement accessibility?
 
@@ -63,7 +63,7 @@ That question, sadly, is harder to answer than it may seem. The Harry Potter quo
 
 As I stated above, accessibility is important for a large group of different people, each with their own needs. Making your website work for literally everyone is a large, on-going task.
 
-To bring a bit of a method to the madness, the Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA] which is important for JavaScript-based apps.
+The Web Content Accessibility Guidelines or <a href='https://www.wuhcag.com/web-content-accessibility-guidelines/' target='_blank' rel='nofollow'>WCAG</a> were composed to help developers create accessible content. This document contains a number of criteria you can use to check your website. For now, I will cover some of the most important basics here. I will point you at the low-hanging fruits, so to speak. In subsequent articles, I will discuss more advanced techniques like [WAI-ARIA] which is important for JavaScript-based apps.
 
 ### Talk like the natives
 
