@@ -127,5 +127,22 @@ result = s(1, 2)
   print(double(4))  # prints 8
   ```
 - Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
+
+#Additional:
+here  we will discuss about recursion. now this is a part of algorithms but can be extensively used once we know about function.
+    using function in our programs sometimes helps to explicitly handle the execution of specific type of algorithms. such an example is recursion . using recursion not only saves the time but can explictly handle the code and execute the given task.
+    ```
+    def factorial(n):
+       if n==0:
+         return 1
+       else:
+         return  n*factorial(n-1)
+    ``` 
+    in this case we are computing factorial of a given no. without using any loops. now whenever we want to use recursion we must define a base case. and for rest of the  cases it can recursively call the subsequent no. now no need of extra hard coded loops to perform the itertion.
+    Ex:
+    we need 5!,
+    so first we call factorial(5)
+    now n!=1 so it goes to else part and calls itself for n-1, it goes untill n=0 and at that case it returns 1 ,
+    finally returning to it's original value gives the ans of 5!.
 ### More Information:
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python 3 Docs: Defining Functions</a>
