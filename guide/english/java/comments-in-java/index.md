@@ -56,6 +56,7 @@ public class RandomNumbers{
 }  
 ```
 
+The difference between the documentation comment and the multi & single line comments is that the former is oriented about making your comments visible to anyone viewing the documentation, while the mutli and single line comments are the ones that are supposed to mainly keep you on track.
 
 #### More Information:
 * [Java Resources](http://guide.freecodecamp.org/java/resources/)
