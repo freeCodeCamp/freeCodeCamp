@@ -22,3 +22,4 @@ Whether its page transitions or a customized contact form, WordPress users are o
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
+- [FoundationPress GitHub Repository](https://github.com/olefredrik/FoundationPress)
