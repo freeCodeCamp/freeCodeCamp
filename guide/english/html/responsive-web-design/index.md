@@ -52,3 +52,4 @@ The Bootstrap framework divides a row into twelve columns. In the above example,
 1. <a href='https://medium.freecodecamp.org/css-flexbox-interactive-tutorial-in-8-minutes-including-cheat-sheet-6214e00de3d2' target='_blank' rel='nofollow'>CSS Flexbox Complete tutorial in 8 minutes</a>
 2. [Freecodecamp CSS section](https://guide.freecodecamp.org/css).
 3. <a href="https://www.youtube.com/watch?v=zBjUEDzK-ow"/>CSS Flexbox tutorial by CodingTutorials360</a>
+4. <a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_responsive_page">Try Responsive designing here </a>
