@@ -31,6 +31,8 @@ Unconscious bias is far more prevalent than conscious prejudice and often incomp
   
 Unconscious bias can influence decisions in recruitment, promotion and performance management. It could be discriminatory when the unconscious bias relates to a protected characteristic.  
 
+Unconcious bias can come in many forms - an example of this is availability bias whereby people tend to rely heavily on information what is most readily avaialble regardless of its source (an example of this is this very contribution to the article on unconcious bias).
+
 #### More Information:
 1. [Navarro, Renee MD. "What is unconscious bias?" *University of California, San Francisco.* Accessed: October 20, 2017](https://diversity.ucsf.edu/resources/unconscious-bias)
 2. ["Unconscious Bias." *Advisory, Conciliation and Arbitration Service.* Accessed: October 20, 2017](http://www.acas.org.uk/index.aspx?articleid=5433)
@@ -38,3 +40,4 @@ Unconscious bias can influence decisions in recruitment, promotion and performan
 4. ["What is Unconscious Bias" University of California, San Francisco
 Office of Diversity and Outreach. Accessed: October 15, 2017.](https://diversity.ucsf.edu/resources/unconscious-bias)
 5. ["Unconscious Bias" acas.org.uk Accessed: October 15, 2017.](http://www.acas.org.uk/index.aspx?articleid=5433)
+6. ["5 Common Unconscious Biases That Lead To Bad Decisions" FastCompany Accessed: October 18th, 2018](https://www.fastcompany.com/3045035/5-common-unconscious-biases-that-lead-to-bad-decisions)
