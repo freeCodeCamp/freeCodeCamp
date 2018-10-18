@@ -57,3 +57,6 @@ These comments are only available in Internet Explorer and can be used up to IE9
 ```
 
 [About conditional comments](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
+
+I recommend my students use comments to work ahead on bigger projects.
+For instance, comments can hide code to give a website a seasonal design for holidays, etc and simply commenting and uncommenting the code.
