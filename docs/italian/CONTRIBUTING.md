@@ -77,7 +77,7 @@ Se sei interessato a migliorare queste chalenges di codifica, ecco [come lavorar
 
 Puoi aiutarci a tradurre i nostri articoli guida e le sfide di codifica per una lingua che parli. Attualmente abbiamo tradotto le versioni in:
 
-- [Chinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
+- [Cinese (中文)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/chinese)
 - [Russo (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
 - [Arabico (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Spagnolo (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
@@ -136,7 +136,7 @@ Leggi la nostra [Guida su Come contribuire alla open source](https://github.com/
 
 I nostri moderatori della communita' [smistano](https://en.wikipedia.org/wiki/Software_bug#Bug_management) i problemi e le richieste di  pull/integrazione delle modifiche in base alla loro priorità, gravità e altri fattori. Puoi [trovare qui un glossario completo dei loro significati](https://github.com/freecodecamp/freecodecamp/labels).
 
-Dovresti esaminare questi problemi di **`Help Wanted/Ho bisogno di aiuto`** oppure **`first timers welcome/Prinzipianti`** per una rapida ricerca di ciò che è disponibile per te su cui lavorare. Questi sono in palio e non c'è bisogno di andare avanti prima di lavorare su questi.
+Dovresti esaminare questi problemi di **`Help Wanted/Ho bisogno di aiuto`** oppure **`first timers welcome/Principianti`** per una rapida ricerca di ciò che è disponibile per te su cui lavorare. Questi sono in palio e non c'è bisogno di andare avanti prima di lavorare su questi.
 
 Se questi problemi mancano di chiarezza su ciò che deve essere fatto, sentiti libero di porre domande nei commenti.
 
