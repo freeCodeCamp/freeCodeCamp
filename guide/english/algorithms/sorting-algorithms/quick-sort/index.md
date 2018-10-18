@@ -128,7 +128,7 @@ int main()
     return 0; 
 } 
 ```
-The space complexity of quick sort is O(n). This is an improvement over other divide and conquer sorting algorithms, which take O(nlong(n)) space. Quick sort achieves this by changing the order of elements within the given array. Compare this with the <a href='https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort' target='_blank' rel='nofollow'>merge sort</a> algorithm which creates 2 arrays, each length n/2, in each function call.
+The space complexity of quick sort is O(n) since Quick sort algorithm in-place changes the order of elements within the given array. This is an improvement over other divide and conquer sorting algorithms, which take O(nlog(n)) space. For example, <a href='https://guide.freecodecamp.org/algorithms/sorting-algorithms/merge-sort' target='_blank' rel='nofollow'>merge sort</a> algorithm which creates 2 arrays, each length n/2, in each function call.
 
 #### More Information:
 
