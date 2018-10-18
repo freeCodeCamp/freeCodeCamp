@@ -1,7 +1,8 @@
 ---
 title: If-Else Statement
 localeTitle: Declaración If-Else
----## ¿Qué hace una declaración If-Else?
+---
+## ¿Qué hace una declaración If-Else?
 
 *   La instrucción If-Else es una extensión de la instrucción simple If.
 *   En la declaración simple If, ​​si el valor de la expresión de prueba es falso, omitimos el código de bloqueo y continuamos con nuestra siguiente declaración.
@@ -11,13 +12,13 @@ localeTitle: Declaración If-Else
 ### Forma general de la declaración de If-Else
 
 ```cpp
-if (test expression) 
+if (condición) 
  { 
-  //statements that run if the test expression is true 
+  //Este segmento de código se ejecuta si se da la condición establecida en el if
  } 
  else 
  { 
-  //statements that run if the test expression is false 
+    //Este segmento de código se ejecuta si NO se da la condición establecida en el if
  } 
 ```
 
@@ -26,60 +27,60 @@ if (test expression)
 Si la expresión de prueba es verdadera:
 
 ```cpp
-int a=10; 
- if (a < 20) // This expression is true, so... 
+int a = 10; 
+ if (a < 20) // Si esta condición es verdadera entonces ...
  { 
-  //...the code in this block gets executed, and... 
+  //...Este bloque de código se ejecuta y...
  } 
  else 
  { 
-  //...the code in this block gets skipped. 
+  //...Este bloque de código se omite
  } 
- //program continues 
+ //El programa continúa
 ```
 
 Si la expresión de prueba es falsa:
 
 ```cpp
-int a=10; 
- if (a>20) // This expression is false, so this time... 
+int  a = 10; 
+ if (a > 20) // Esta expresión es falsa, por eso esta vez ...
  { 
-  //...this code gets skipped... 
+  //...este bloque de código se omite... 
  } 
  else 
  { 
-  //...and this code executes instead. 
+  //...y este bloque de código se ejecuta
  } 
- //program continues 
+ //el programa continúa
 ```
 
 ### Ejemplo en C ++:
 
 ```cpp
-//Program to check whether number entered by user is positive or negative 
+//Programa para verificar si el número introducido es positivo o negativo
  #include <iostream> 
  using namespace std; 
  int main() 
  { 
   int no; 
-  cout << "Enter a number: " << endl; 
+  cout << "Introduzca un número: " << endl; 
  
   cin >> no; 
  
-  // condition to check if number is positive or negative 
-  if (no >= 0) // positive 
+  // condición para verificar si el número es positivo o no
+  if (no >= 0) // positivo 
   { 
-    // block if value is true 
-    cout << "You entered a positive number: " << no << endl; 
+    // bloque si la condición es verdadera
+    cout << "Ha introducido un número positivo: " << no << endl; 
   } 
-  else         // negative 
+  else         // negativo
   { 
-    // block if value is false 
-    cout << "You entered a negative number: " << no << endl; 
+    // Bloque de código si la condición es falsa
+    cout << "Usted ha introducido un número negativo: " << no << endl; 
   } 
  
-  // program continues 
-  cout << "This step is always printed" << endl; 
+  // El programa continúa
+  cout << "Este mensaje siempre se muestra al ejecutarse el programa" << endl; 
   return 0; 
  } 
 ```
@@ -88,18 +89,18 @@ int a=10;
 
 *   Cuando se ingresa un número positivo:
 ```
-Enter a number: 
+Introduzca un número: 
  4 
- You entered a positive number: 4 
- This step is always printed 
+ Usted ha introducido un número positivo: 4 
+ Este mensaje siempre se muestra al ejecutarse el programa.
 ```
 
 *   Cuando se ingresa un número negativo:
 ```
-Enter a number: 
+Introduzca un número: 
  -200 
- You entered a negative number: -200 
- This step is always printed 
+ Usted ha introducido un número negativo: -200 
+ Este mensaje siempre se muestra al ejecutarse el programa.
 ```
 
 [Prueba el código tu mismo](https://repl.it/MzBq)
