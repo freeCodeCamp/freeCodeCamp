@@ -69,3 +69,10 @@ You'll learn many of the first princliples for data science tools and how algori
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
 
 Please feel free to add more that you have found useful!
+
+#Additional
+some times books are hard to study but there is a website named interactive python which provides pythons books from famous authors in an interactive way. it is easy to read ,can easily continue from where you left of. and it also provides real time code blocks to edit and run through which we can study ad execute the code at the same time we are reading. it is really a interactive way to read python.
+link: https://interactivepython.org/runestone/default/user/login?_next=/runestone/default/index
+
+it may ask you to register for an account but all the book links are accessible in either way. so it's a fun and nice way to learn python. 
+Hope you enjoy it! 
