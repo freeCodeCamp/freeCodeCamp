@@ -1,33 +1,100 @@
 ---
-title: R
+title: Linear Regression in R
 ---
 
-## What is R?
-R is an open source programming language and software environment for statistical computing and graphics. It is one of the primary languages used by data scientists and statisticians alike. It is supported by the R Foundation for Statistical Computing and a large community of open source developers. Since R utilized a command line interface, there can be a steep learning curve for some individuals who are used to using GUI focused programs such as SPSS and SAS so extensions to R such as RStudio can be highly beneficial. Since R is an open source program and freely available, there can a large attraction for academics whose access to statistical programs are regulated through their association to various colleges or universities.
+# Chapter 3 Lab: Linear Regression
+```{r}
+## First we call the libraries 
+library(MASS)
+## our dataset that we are going to use is in this library
+library(ISLR)
+```
+# Simple Linear Regression
+```{r}
+fix(Boston)
+names(Boston)
+```
+### First let us do our first linear Regression.
+### lm (linear model) takes the function as its first input
+### [dependent variable] ~ [independent variable], and the data set
 
+```{
+lm.fit=lm(medv~lstat,data=Boston)
+```
+```
+attach(Boston)
+lm.fit
+summary(lm.fit)
+```
+### note that the "*" in the coefficients tell us how important the independent variable is
 
-## Installations
- The first thing you need to get started with R is to download it from its <a href='https://www.r-project.org/' target='_blank' rel='nofollow'>Official Site</a> according to your operating system.
-Now install it on your computer. For help in installation refer to reference section below.
+#### predicting and understanding the coefs
+```{r}
+names(lm.fit)
+coef(lm.fit)
+confint(lm.fit)
+predict(lm.fit,data.frame(lstat=(c(5,10,15))), interval="confidence")
+predict(lm.fit,data.frame(lstat=(c(5,10,15))), interval="prediction")
+plot(lstat,medv)
+abline(lm.fit)
+abline(lm.fit,lwd=3)
+abline(lm.fit,lwd=3,col="red")
+plot(lstat,medv,col="red")
+plot(lstat,medv,pch=20)
+plot(lstat,medv,pch="+")
+plot(1:20,1:20,pch=1:20)
+par(mfrow=c(2,2))
+plot(lm.fit)
+plot(predict(lm.fit), residuals(lm.fit))
+plot(predict(lm.fit), rstudent(lm.fit))
+plot(hatvalues(lm.fit))
+which.max(hatvalues(lm.fit))
+```
+# Multiple Linear Regression
 
-## Popular R Tools & Packages
-* [RStudio](https://www.rstudio.com/products/rstudio/) is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management.
-* [The Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/) is a leading source for R tools and resources. 
-* [Tidyverse](https://www.tidyverse.org/) is an opinionated collection of R packages designed for data science like ggplot2, dplyr, readr, tidyr, purr, tibble.
-* [data.table](https://github.com/Rdatatable/data.table/wiki) is an implementation of base `data.frame` focused on improved performance and terse, flexible syntax.
-* [Shiny](https://shiny.rstudio.com/) framework for building dashboard style web apps in R.
-*
+lm.fit=lm(medv~lstat+age,data=Boston)
+summary(lm.fit)
+lm.fit=lm(medv~.,data=Boston)
+summary(lm.fit)
+library(car)
+vif(lm.fit)
+lm.fit1=lm(medv~.-age,data=Boston)
+summary(lm.fit1)
+lm.fit1=update(lm.fit, ~.-age)
 
-## Where to learn R for free
- * [R Studio](https://www.rstudio.com/online-learning/)
- * [Code school](http://tryr.codeschool.com/)
- * [Coursera -allows to audit course for free but certification is paid.](https://www.coursera.org/learn/r-programming)
- * [DataCamp -allows to complete the introductory part for free.](https://www.datacamp.com)
- * [R for Data Science -is a book which is available free to read online.](http://r4ds.had.co.nz/)
- * [edX -allows to audit course for free but certification is paid.](https://www.edx.org/learn/r-programming)
- * [Advanced R](https://adv-r.hadley.nz/)
- * [RSeek](http://rseek.org/)
- 
- ## Reference
- * [Installing R on Windows](http://youtu.be/Ohnk9hcxf9M)
- * [Installing R on Mac](https://youtu.be/uxuuWXU-7UQ)
+# Interaction Terms
+
+summary(lm(medv~lstat*age,data=Boston))
+
+# Non-linear Transformations of the Predictors
+
+lm.fit2=lm(medv~lstat+I(lstat^2))
+summary(lm.fit2)
+lm.fit=lm(medv~lstat)
+anova(lm.fit,lm.fit2)
+par(mfrow=c(2,2))
+plot(lm.fit2)
+lm.fit5=lm(medv~poly(lstat,5))
+summary(lm.fit5)
+summary(lm(medv~log(rm),data=Boston))
+
+# Qualitative Predictors
+
+fix(Carseats)
+names(Carseats)
+lm.fit=lm(Sales~.+Income:Advertising+Price:Age,data=Carseats)
+summary(lm.fit)
+attach(Carseats)
+contrasts(ShelveLoc)
+
+# Writing Functions
+
+LoadLibraries
+LoadLibraries()
+LoadLibraries=function(){
+ library(ISLR)
+ library(MASS)
+ print("The libraries have been loaded.")
+ }
+LoadLibraries
+LoadLibraries()
