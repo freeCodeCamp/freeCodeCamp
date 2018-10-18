@@ -26,3 +26,5 @@ Comments can also be used to make code inactive without having to delete it enti
 -->
 ```
 
+#### More Information
+[W3School - Comment Tag(https://www.w3schools.com/tags/tag_comment.asp)
