@@ -52,8 +52,8 @@ fun main(args : Array<String>): Unit {...}
 
 ### Declaração de impressão
 
-A função println pega uma string como argumento e a imprime na tela. Neste caso, estamos imprimindo a string "Hello, World!". Observe que os literais de string são declarados usando aspas duplas `"String"` .
+A função ```println``` pega uma string como argumento e a imprime na tela. Neste caso, estamos imprimindo a string "Hello, World!". Observe que os literais de string são declarados usando aspas duplas `"String"` .
 
 Se você gostaria de saber mais sobre a Sintaxe Kotlin e começar a escrever programas incríveis, você deve checar a incrível Documentação Oficial do Kotlin: https://kotlinlang.org/docs/reference/
 
-Espero que você tenha gostado deste tutorial Felicidades
+Espero que você tenha gostado deste tutorial. Felicidades.
