@@ -56,6 +56,13 @@ public class RandomNumbers{
 }  
 ```
 
+#### 4. Some more features
+Comments can be used for making TODO list
+
+```java
+// TODO: todo1, todo2, todo3...
+```
+
 
 #### More Information:
 * [Java Resources](http://guide.freecodecamp.org/java/resources/)
