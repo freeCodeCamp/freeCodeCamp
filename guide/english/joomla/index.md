@@ -6,7 +6,7 @@ title: Joomla
 
 Joomla! is a free and open-source content management system (CMS) built on a model–view–controller web application framework that can be used independently of the CMS. It is developed by Open Source Matters, Inc.
 
-Joomla! is written in object-oriented programming (OOP) PHP. It can store data in MySQL, PostgreSQL or MS SQL database. Features include page caching, RSS feeds, printable versions of pages, news flashes, blogs, search, and support for language internationalization.
+Joomla! is written in object-oriented programming (OOP) PHP. It can store data in MySQL, PostgreSQL or MS SQL database. Features include page caching, RSS feeds, printable versions of pages, news flashes, blogs, search, and support for language internationalization. Also supports web stores.
 
 ### More Information
 
