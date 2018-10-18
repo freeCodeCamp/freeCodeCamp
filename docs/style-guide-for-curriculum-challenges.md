@@ -31,7 +31,7 @@ Front-end development (adjective form with a dash) is when you're working on the
 
 ## The 2 minute rule
 
-Each challenge should be solvable within 120 seconds  by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
+Each challenge should be solveable within 120 seconds  by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
 
 If it takes longer than two minutes to complete the challenge, you have two options:
 - simplify the challenge, or
