@@ -83,6 +83,23 @@ Object.defineProperty(Person.prototype, 'profession', {
 
 ```
 
+# Automatically execute a block of code with new instance call
+...javascript
+class Hello {
+   constructor(greeting){
+     this.greeting = greeting;
+     console.log(`${greeting} Developer!`);
+      /* All variables are set as soon as a new instance of the class is created
+      Therefore placing code such as a simple log or for-loop will work all the same
+      I use this method to put developer credits in classes and encode them so it will
+      Be a bit confusing at first to remove my credits.. You probably noticed the Variable i used.
+      That is called a Template Literal if you would like to look into further learning about those. */
+  }
+}
+let greetings = new Hello("Wonderful day!");
+
+...
+
 You could also write prototype methods over function `Person` as below
 
 ```javascript
