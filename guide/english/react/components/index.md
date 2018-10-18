@@ -4,7 +4,7 @@ title: Components
 
 # Components
 
-Components are the building blocks of React.  
+Components are the building blocks of React. They help you divide the functionality of the UI into several pieces which can be reused throughout the application.
 
 ### More Information:
 
