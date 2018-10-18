@@ -111,9 +111,11 @@ result = s(1, 2)
   def myFunc():
     print('this will print')
     print('so will this')
-
-  x = 7
+    x=7
+  myFunction()
+  
   # the assignment of x is not a part of the function since it is not indented
+  # call the function each time you run the code.
   ```
 
 - Variables defined within a function only exist within the scope of that function.
