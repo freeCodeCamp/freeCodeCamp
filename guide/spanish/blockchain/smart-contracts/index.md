@@ -1,3 +1,4 @@
+---
 title: Smart Contracts
 localeTitle: undefined
 ---
