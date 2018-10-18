@@ -178,7 +178,6 @@ arguments with args.
 
 ## Resources
 
-<a href='https://cran.r-project.org/manuals.html' target='_blank' rel='nofollow'>Official Docs</a>
-<a href='https://www.statmethods.net/management/functions.html' target='_blank' rel='nofollow'>Quick-R</a>
-<a href='https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Functions' target='_blank' rel='nofollow'>CRAN</a>
-<a href='http://adv-r.had.co.nz/Functions.html' target='_blank' rel='nofollow'>Advanced R: Functions</a>
+ * [Official Docs](https://cran.r-project.org/manuals.html' target='_blank)
+ * [Quick-R](https://www.statmethods.net/management/functions.html)
+ * [Advanced R: Functions](http://adv-r.had.co.nz/Functions.html)
