@@ -7,7 +7,8 @@ Bootstrap is the most popular CSS framework for developing responsive, mobile fi
 
 ## Getting Started - Latest version: 4.1
 
-Here is a simple HTML template which includes the latest compiled and minified CSS and Javascript for the Bootstrap library. We have used a CDN in this example, but you can checkout <a href='https://getbootstrap.com/docs/4.1/getting-started/download/' target='_blank' rel='nofollow'>other ways of installing Bootstrap</a>.
+Below is a simple HTML template which includes the latest compiled and minified CSS and Javascript for the Bootstrap library. We have used a CDN in this example, please see <a href='https://getbootstrap.com/docs/4.1/getting-started/download/' target='_blank' rel='nofollow'>the official documentation</a> for other ways of installing the latest version of Bootstrap.
+
 ```html
     <!DOCTYPE html>
     <html lang="en">
