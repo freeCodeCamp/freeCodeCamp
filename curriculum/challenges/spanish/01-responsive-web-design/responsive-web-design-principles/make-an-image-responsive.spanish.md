@@ -8,6 +8,7 @@ localeTitle: Hacer una imagen receptiva
 
 ## Description
 <section id="description"> Hacer que las imágenes respondan con CSS es realmente muy simple. En lugar de aplicar un ancho absoluto a un elemento: <code>img { width: 720px; }</code> Puedes usar: 
+  
 ```css
 img {
   max-width: 100%;
@@ -26,11 +27,11 @@ La propiedad de <code>max-width</code> del 100% ajusta la imagen para que se aju
 ```yml
 tests:
   - text: Su etiqueta <code>img</code> debe tener un <code>max-width</code> establecido al 100%.
-    testString: 'assert(code.match(/max-width:\s*?100%;/g), "Your <code>img</code> tag should have a <code>max-width</code> set to 100%.");'
+    testString: 'assert(code.match(/max-width:\s*?100%;/g), "Su etiqueta <code>img</code> debe tener un <code>max-width</code> establecido al 100%.");'
   - text: Su etiqueta <code>img</code> debe tener un conjunto de <code>display</code> para bloquear.
-    testString: 'assert($("img").css("display") == "block", "Your <code>img</code> tag should have a <code>display</code> set to block.");'
+    testString: 'assert($("img").css("display") == "block", "Su etiqueta <code>img</code> debe tener un conjunto de <code>display</code> para bloquear.");'
   - text: Tu etiqueta <code>img</code> debe tener una <code>height</code> establecida en auto.
-    testString: 'assert(code.match(/height:\s*?auto;/g), "Your <code>img</code> tag should have a <code>height</code> set to auto.");'
+    testString: 'assert(code.match(/height:\s*?auto;/g), "Tu etiqueta <code>img</code> debe tener una <code>height</code> establecida en auto.");'
 
 ```
 
