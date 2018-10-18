@@ -29,9 +29,9 @@ Para verificar que nada en el nuevo código rompa la funcionalidad existente, se
 5.  Cada fusión en el `master` tiene que ser construida y completamente probada.
     
 
-### Mejores prácticas
+### Prácticas recomendadas
 
-Existen otras mejores prácticas que hacen el mejor uso de lo que CI tiene para ofrecer y los desafíos que presenta, tales como:
+Existen algunas prácticas recomendadas que hacen el mejor uso de lo que CI tiene para ofrecer y los desafíos que presenta, tales como:
 
 1.  Mantenga la compilación rápida, para que no se desperdicie mucho tiempo de desarrollador esperando una compilación.
     
