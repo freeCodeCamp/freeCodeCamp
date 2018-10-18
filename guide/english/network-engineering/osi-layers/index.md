@@ -42,3 +42,6 @@ In the diagram above, to the extreme left is the unit of data that is used in ea
 * _**Layer 6 - Presentation Layer:**_ The presentation layer formats the data to be presented to the application layer. 
 
 * _**Layer 7 - Application Layer:**_ The application layer serves as the window for users and application processes to access network services.
+
+Recommended reading:
+http://library.aceondo.net/ebooks/Computer_Science/Data_Communication_and_Networking_by_Behrouz.A.Forouzan_4th.edition.pdf
