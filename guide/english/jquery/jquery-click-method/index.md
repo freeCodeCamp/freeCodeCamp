@@ -5,7 +5,7 @@ title: Click Method
 # Click Method
 
 
-The jQuery Click method triggers an function when an element is clicked. The function is known as a "handler" becuase it handles the click event. Functions can
+The jQuery Click method triggers an function when an element is clicked. The function is known as a "handler" because it handles the click event. Functions can
 impact the HTML element that is bound to the click using the jQuery Click method, or they can change something else entirely. The most-used form is:
 
 ```javascript
