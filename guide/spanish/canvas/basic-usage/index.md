@@ -4,14 +4,14 @@ localeTitle: Uso básico
 ---
 ## Uso básico de lona
 
-Cuando use lienzo, primero coloque un lienzo en el documento como un elemento.
+Cuando use `canvas`, primero coloque un `canvas` en el documento como un elemento.
 
 ```html
 
 <canvas width="400" height="400" id="canvas"></canvas> 
 ```
 
-Los atributos de `width` y `height` controlarán el tamaño del lienzo. Estos atributos controlan el tamaño del lienzo de dibujo, no el tamaño real renderizado. Consulte la página "Dimensiones del lienzo" para obtener más información.
+Los atributos de `width` y `height` controlarán el tamaño del `canvas`. Estos atributos controlan el tamaño del `canvas` de dibujo, no el tamaño real renderizado. Consulte la página "Dimensiones del Canvas" para obtener más información.
 
 Para usar un `canvas` , primero debemos tomar el elemento de la página como un elemento DOM, y luego obtener un contexto de dibujo de él.
 
