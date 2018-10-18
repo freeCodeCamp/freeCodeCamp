@@ -21,3 +21,4 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+In Turkish apache means something different...
