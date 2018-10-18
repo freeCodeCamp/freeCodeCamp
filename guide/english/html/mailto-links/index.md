@@ -51,3 +51,6 @@ Additional parameters must be preceded by `&`.
 #### More Information:
 
 [MDN - E-mail links](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#E-mail_links)
+
+#### Try it out:
+[W3Schools - Testing functionalities](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_link_mailto)
