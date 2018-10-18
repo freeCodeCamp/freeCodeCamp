@@ -16,7 +16,7 @@ cp [options] source target
  ```bash
 cp somefile.txt newfile.txt
 ```
- Run `ls` and you will see you have a new file called `newfile.txt`
+ Run `ls` and you will see you have a new file called `newfile.txt`.
  #### Copy a file to a directory
  ```bash
 cp -p somefile.txt your/target/directory
