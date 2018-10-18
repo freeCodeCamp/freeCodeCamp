@@ -1,7 +1,7 @@
 ---
 title: Basic Operators
 ---
-## Basic Operators
+## [Basic Operators](https://www.programiz.com/python-programming/operators)
 
 Operators are symbols which tells the interpreter to do a specific operation (viz arithmetic, comparison, logical, etc.)
 
