@@ -71,8 +71,8 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0596009656
 
 ## C-lang
-*C Notes for Professionals book
--https://books.goalkicker.com/CBook/
+*C Notes for Professionals book*
+- https://books.goalkicker.com/CBook/
 
 *The C Programming Language* by Brian W. Kernighan and Dennis M. Ritchie
 - [Amazon Smile](https://smile.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/)
@@ -121,7 +121,7 @@ title: Books to Read for Programmers
 *Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke*
 - [Read it online here](https://eloquentjavascript.net)
 - [Amazon Smile](https://smile.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
--ISBN-13: 978-1593275846
+- ISBN-13: 978-1593275846
 
 *JavaScript: The Good Parts*
 - [Amazon Smile](https://smile.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
@@ -149,11 +149,11 @@ title: Books to Read for Programmers
 
 ## Other
 
-*Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
+*Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser*
 - https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM
 - (ISBN 1976112524).
 
-*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
+*Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices)*
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
 - ISBN-13: 978-0735611313
 
@@ -230,16 +230,18 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0201835953
 
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
-- [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
+- [Amazon Smile](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
+
 *Oracle® Database Notes for Professionals*
-https://books.goalkicker.com/OracleDatabaseBook/
+- https://books.goalkicker.com/OracleDatabaseBook/
 
 *Pro PHP Programming - Peter MacIntyre*
-[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+- [Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
+- ISBN-13: 978-1430235606
 
 *Mastering Linux Shell Scripting by Andrew Mallett*
-- [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
+- [Amazon Smile](https://smile.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
