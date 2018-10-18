@@ -22,3 +22,4 @@ In this age where software can be used maliciously to steal information or do ha
 - <a href='https://github.com/kilimchoi/engineering-blogs' target='_blank' rel='nofollow'>Curated List of Engineering Blogs</a>
 - <a href='http://www.acm.org/about/se-code' target='_blank' rel='nofollow'>Software Engineering Code of Ethics and Professional Practice</a>
 - <a href='https://en.wikipedia.org/wiki/Software_engineering' rel='nofollow'>Wikipedia Article</a>
+- <a href='https://www.softwareengineerinsider.com/articles/what-is-software-engineering.html' rel='nofollow'>What is Software engineering?</a>
