@@ -7,7 +7,7 @@ localeTitle: Entender de dónde viene el prototipo de un objeto
 ---
 
 ## Description
-<section id="description"> Al igual que las personas heredan genes de sus padres, un objeto hereda su <code>prototype</code> directamente de la función constructora que lo creó. Por ejemplo, aquí el constructor <code>Bird</code> crea el objeto <code>duck</code> : <blockquote> función Bird (nombre) { <br> this.name = nombre; <br> } <br><br> dejar pato = nuevo pájaro (&quot;Donald&quot;); </blockquote> <code>duck</code> hereda su <code>prototype</code> de la función constructor de <code>Bird</code> . Puede mostrar esta relación con el método <code>isPrototypeOf</code> : <blockquote> Bird.prototype.isPrototypeOf (pato); <br> // devuelve true </blockquote></section>
+<section id="description"> Al igual que las personas heredan genes de sus padres, un objeto hereda su <code>prototype</code> directamente de la función constructora que lo creó. Por ejemplo, aquí el constructor <code>Bird</code> crea el objeto <code>duck</code> : <blockquote> función Bird (nombre) { <br> this.name = nombre; <br> } <br><br> let pato = nuevo pájaro (&quot;Donald&quot;); </blockquote> <code>duck</code> hereda su <code>prototype</code> de la función constructor de <code>Bird</code> . Puede mostrar esta relación con el método <code>isPrototypeOf</code> : <blockquote> Bird.prototype.isPrototypeOf (pato); <br> // devuelve true </blockquote></section>
 
 ## Instructions
 <section id="instructions"> Utilice <code>isPrototypeOf</code> para comprobar el <code>prototype</code> de <code>beagle</code> . </section>
