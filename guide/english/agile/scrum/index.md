@@ -3,7 +3,7 @@ title: Scrum
 ---
 ## Scrum
 
-Scrum is one of the methodologies under the Agile umbrella. The name is derived from a method of resuming play in the sport of rugby, in which the entire team moves together to make ground. Similarly, a scrum in Agile involves all parts of the team working on the same set of goals. In the scrum method, a prioritized list of tasks is presented to the team, and over the course of a "sprint" (usually two weeks), those tasks are completed, in order, by the team. This insures that the highest-priority tasks or deliverables are completed before time or funds run out. 
+Scrum is one of the methodologies under the Agile umbrella. The name is derived from a method of resuming play in the sport of rugby, in which the entire team moves together to make ground. Similarly, a scrum in Agile involves all parts of the team working on the same set of goals. In the scrum method, a prioritized list of tasks is presented to the team, and over the course of a "sprint" (usually two weeks), those tasks are completed, in order, by the team. This insures that the highest-priority tasks or deliverables are completed before time or funds run out. But Scrum has one big problem. It's very hard to find a prefect team, that will work good in order to Scrum.
 
 ### Components of a Scrum
 
