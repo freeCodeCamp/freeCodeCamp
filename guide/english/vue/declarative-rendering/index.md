@@ -88,3 +88,5 @@ let app = new Vue({
 The syntax `v-bind` is what Vue.js calls a "directive". It's a way to set a new
 attribute to the tag that will be handled by Vue -- there are more
 directives, they all begin with `v-`.
+
+Welcome from Hactober 2018!
