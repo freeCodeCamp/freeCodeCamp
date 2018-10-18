@@ -1,25 +1,26 @@
 ---
-title: Django-file-storage
+title: Django-döküman-depolama
 ---
-## Django Media Files and Static files Storage
+## Django Medya Dökümanları ve Statik döküman Depolama
 
-#### Steps to create AWS S3 Bucket
+#### Adım adım AWS S3 Bucket hazırlama
 
-* Open aws console and create IAM user for S3 bucket
-* In services select S3
-* Create new S3 buket in S3 console
 
-#### Steps to do in django app
+* Aws konsolu'nu açın ve S3 bucket için IAM kullanıcısı oluşturun.
+* Servısler kısmında S3'ü seçin
+* S3 konsolu içinde yeni bir S3 bucket oluşturun
 
-* install boto3 and Django-storages libraries. The commands to install these libraries are
+#### Django app içinde yapılacaklar 
+
+* boto3 ve Djang-storages kütüphanelerini yükleyin. Bu kütüphaneleri yükleme komutları şunlardır
 
 ```
 pip install boto3
 pip install django-storages
 ```
-* Add storages to Installed Apps in ```settings.py```
+* Depoları Yüklü Uygulamalar içinde şuraya ekleyin ```settings.py```
 
-* To work with satic assets only you have to add the following to your settings.py
+* Sadece statik değerlerle çalışmak için aşağıdaki kodu settings.py içine eklemelisiniz.
 
 ```
 AWS_ACCESS_KEY_ID = <your AWS acces key>
@@ -38,7 +39,7 @@ STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 ```
-* To work with both static and media assets you have to add the following to your settings.py
+* Hem statik hem de medya değerleri ile çalışmak için aşağıdaki kodu settings.py içine eklemelisiniz.
 
 ```
 AWS_ACCESS_KEY_ID = <your AWS acces key>
