@@ -33,6 +33,8 @@ Additional slots to connect hardware in the form of Peripheral Component Interco
 
 Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX. The different types of ATX are known as micro-ATX (sometimes shown as µATX, mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX).
 
+Additionally there can be even smaller boards like the raspberry pi, which are 65mm by 35mm and have all processing units integrated to the board. There are many others that are even more specific in function, such as an Aurdino board. These are typically limited in I/O, have no expansion slots aside from whatever expansion is offered via USB ports, and some display ports like HDMI or similar variants. These are used for small emulator projects, running small servers, or as an alternative to slim client devices in an office. 
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://www.computerhope.com/jargon/m/mothboar.htm' target='_blank' rel='nofollow'>Motherboard</a>
