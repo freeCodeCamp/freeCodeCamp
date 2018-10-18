@@ -129,3 +129,5 @@ result = s(1, 2)
 - Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
 ### More Information:
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python 3 Docs: Defining Functions</a>
+
+- A recursive function is a function that calls it self. Eg. To get a fibonacci sequence one can use recursive function.
