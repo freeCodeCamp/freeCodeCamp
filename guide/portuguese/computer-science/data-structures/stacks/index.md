@@ -4,7 +4,7 @@ localeTitle: Pilhas
 ---
 ## Pilhas
 
-Stacks é uma Estrutura de Dados First In Last Out (FILO). É uma estrutura de dados linear.
+Stacks é uma Estrutura de Dados First In Last Out (FILO), em português o primeiro a entrar é o último a sair. É uma estrutura de dados linear.
 
 Você pode imaginar uma pilha como as placas de maneira foram organizadas em restaurante buffet. Você só pode escolher a placa no topo, caso contrário a pilha entrará em colapso. Geralmente, o último item a ser inserido será removido primeiro.
 
@@ -18,8 +18,9 @@ Algumas operações básicas da pilha são:
 A implementação de uma pilha é possível usando arrays ou listas vinculadas. A seguir, uma implementação de matriz simples da estrutura de dados da pilha com suas operações mais comuns.
 
 ```C++
-//Stack implementation using array in C++ 
- //You can also include<stack> and then use the C++ STL Library stack class. 
+//Iplementação de pilha utilizando array em C++
+//Também é possível usar include<stack> e depois user a biblioteca STL Library stack class do C++
+
  
  #include <bits/stdc++.h> 
  
