@@ -4,7 +4,9 @@ title: Img Width Attribute
 ## Img Width Attribute
 
 The HTML 'width' attribute refers to the width of an image. The value in the quotations is the amount of pixels. 
-
+___
+Downsizing a large image with the height and width attributes forces a user to download the large image (even if it looks small on the page). To avoid this, rescale the image with a program before using it on a page.
+___
 For example, if you already have a link to an image set up via the `src` attribute you can add the width attribute like so:
 ```html
 <!DOCTYPE html>
