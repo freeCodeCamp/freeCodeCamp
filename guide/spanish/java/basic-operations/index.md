@@ -6,9 +6,9 @@ localeTitle: Operaciones básicas
 
 Java soporta las siguientes operaciones en variables:
 
-*   **Aritmética** : `Addition (+)` , `Subtraction (-)` , `Multiplication (*)` , `Division (/)` , `Modulus (%)` , `Increment (++)` , `Decrement (--)` .
+*   **Aritmética** : `Adición (+)` , `Sustracción (-)` , `Multiplicación (*)` , `División (/)` , `Módulo (%)` , `Incremento (++)` , `Decremenot (--)` .
 *   **Concatenación de cadenas** : `+` se puede usar para la concatenación de cadenas, pero la resta `-` en una cadena no es una operación válida.
-*   **Relacional** : `Equal to (==)` , `Not Equal to (!=)` , `Greater than (>)` , `Less than (<)` , `Greater than or equal to (>=)` , `Less than or equal to (<=)`
+*   **Relacional** : `Igual a (==)` , `No Igual a (!=)` , `Mayor que (>)` , `Menor que (<)` , `Mayor o igual que (>=)` , `Menos igual que (<=)`
 *   **Bitwise** : `Bitwise And (&)` , `Bitwise Or (|)` , `Bitwise XOR (^)` , `Bitwise Compliment (~)` , `Left shift (<<)` , `Right Shift (>>)` , `Zero fill right shift (>>>)`
 *   **Lógico** : `Logical And (&&)` , `Logical Or (||)` , `Logical Not (!)`
 *   **Asignación** : `=` , `+=` , `-=` , `*=` , `/=` , `%=` , `<<=` , `>>=` , `&=` , `^=` , `|=`
