@@ -2,13 +2,13 @@
 title: miscellaneous
 localeTitle: Diversos
 ---
-Quando você está um pouco confortável com o modo como Haskell trabalha você
+Quando já estiver um pouco onfortável com o modo como Haskell trabalha, você pode recorrer ao:
 
 ## hoogle
 
 É como o Google, mas para as bibliotecas da Haskell
 
-Para instalar o hoogle com pilha:
+Para instalar o hoogle com o Stack:
 
 ```shell
     stack build hoogle 
