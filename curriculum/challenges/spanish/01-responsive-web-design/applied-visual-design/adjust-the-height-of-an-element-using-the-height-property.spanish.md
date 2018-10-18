@@ -8,9 +8,10 @@ localeTitle: Ajustar la altura de un elemento usando la propiedad height
 
 ## Description
 <section id="description"> Puede especificar la altura de un elemento utilizando la propiedad de <code>height</code> en CSS, similar a la propiedad de <code>width</code> . Aquí hay un ejemplo que cambia la altura de una imagen a 20px: 
+  
 ```css
 img {
-  altura: 20px;
+  height: 20px;
 }
 ```
 </section>
@@ -24,7 +25,7 @@ img {
 ```yml
 tests:
   - text: Su código debe cambiar la propiedad de <code>height</code> <code>h4</code> a un valor de 25 píxeles.
-    testString: 'assert($("h4").css("height") == "25px", "Your code should change the <code>h4</code> <code>height</code> property to a value of 25 pixels.");'
+    testString: 'assert($("h4").css("height") == "25px", "Su código debe cambiar la propiedad de <code>height</code> <code>h4</code> a un valor de 25 píxeles.");'
 
 ```
 
