@@ -61,7 +61,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 **Usage**
 
     3 / 2                // returns 1.5
-    3.0 / 2/0            // returns 1.5
+    3.0 / 2.0            // returns 1.5
     3 / 0                // returns Infinity
     3.0 / 0.0            // returns Infinity
     -3 / 0               // returns -Infinity
