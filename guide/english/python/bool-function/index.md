@@ -28,3 +28,6 @@ If `x` is false or omitted, this returns `False`; otherwise it returns `True`.
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CVCS/2' target='_blank' rel='nofollow'>Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#bool' target='_blank' rel='nofollow'>Official Docs</a>
+
+
+<a href='https://docs.python.org/2.3/whatsnew/section-bool.html' target='_blank' rel='nofollow'>More Info</a>
