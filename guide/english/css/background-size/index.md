@@ -11,7 +11,7 @@ The background-size property specifies the size of the background images. You ca
 .contain {background-size: contain;}
 .initial {background-size: initial;}
 .inherit {background-size: inherit;}
- /* Percentage, pixel, and viewport units can also be used */
+ /* Percentage, pixel, and viewport units can also be used and also the meaning of it */
 .pixel {background-size: 50px 50px;}
 .percentage {background-size: 50% 50%;}
 .view {background-size: 50vw 50vh;}
