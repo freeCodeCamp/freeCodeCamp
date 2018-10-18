@@ -15,7 +15,7 @@ Ejemplos de este tipo de patrón de diseño incluyen:
 5.  **Patrón de mediador** : proporciona una interfaz unificada a un conjunto de interfaces en un subsistema.
 6.  **Patrón de recuerdo** : proporciona la capacidad de restaurar un objeto a su estado anterior (retroceso).
 7.  **Patrón de objeto nulo** : diseñado para actuar como un valor predeterminado de un objeto.
-8.  **Patrón de observador** : también conocido como P **ublish / Subscribe** o **Event Listener** . Los objetos se registran para observar un evento que puede ser provocado por otro objeto.
+8.  **Patrón de observador** : también conocido como **Publish / Subscribe** o **Event Listener** . Los objetos se registran para observar un evento que puede ser provocado por otro objeto.
 9.  **Patrón de referencia débil** : desacoplar un observador de un observable.
 10.  **Pila de protocolos** : las comunicaciones se manejan mediante varias capas, que forman una jerarquía de encapsulación.
 11.  **Patrón de** tarea programada: una tarea está programada para realizarse en un intervalo determinado o en un tiempo de reloj (usado en computación en tiempo real).
