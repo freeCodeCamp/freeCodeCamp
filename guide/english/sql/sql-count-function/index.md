@@ -51,4 +51,6 @@ having Election_Year = 2016;
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/count05.JPG?raw=true)
 
+There may be times you only want to count unique values for each Grouped field. A Count Distinct would be used in this instance.
+
 As with all of these things there is much more to it, so please see the manual for your database manager and have fun trying different tests yourself.
