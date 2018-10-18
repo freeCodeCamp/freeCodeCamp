@@ -4,7 +4,7 @@ localeTitle: Listar método Append
 ---
 ## Listar método Append
 
-Existem muitos métodos para listas, você pode explorar todos eles digitando `help(list)` em seu console python. Uma delas é a função append que, como o nome diz, acrescenta a lista de argumentos dada.
+Existem muitos métodos para listas, você pode explorar todos eles digitando `help(list)` na sua consola python. Uma delas é a função append que, como o nome diz (append é adicionar, acrescentar em inglês), acrescenta a lista de argumentos dada.
 
 #### Exemplo de uso
 
