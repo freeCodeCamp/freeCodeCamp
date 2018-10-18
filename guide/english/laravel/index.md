@@ -7,6 +7,8 @@ Laravel is a free and open-source PHP web framework available on [GitHub](https:
 
 Because Laravel is open-source the community around it is very strong and so is the documentation where you can learn how to do almost everything, try taking a look at the [Laravel Documentation](https://laravel.com/docs/5.7/) to get a glimpse of the open source power!
 
+Taylor and the supporters of Laravel have built a strong eco-system around Laravel. One of the many events officially run is the yearly Laracon, which is a one-day online conference.
+
 ### Featured Packages
 
 Ready-to-use bundles provided by Laravel through Composer and Packagist include the following:
