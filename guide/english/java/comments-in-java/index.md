@@ -3,46 +3,46 @@ title: Comments in Java
 ---
 ## Comments in Java
 
-Comments in java are like real life post-it notes used to display some information, which other programmers or developers can read and understand.
+Comments in Java are like real life sticky notes used to display some helpful information, which other programmers or developers can read and understand.
 
-It is good practice to add comments to your code, especially when working with a team or at a company. This helps future developers or teammates to know what is going on more easily when they look at your code. Comments make your code more neat and organized.
+It is good practice to add comments to your code, especially when working with a team. This helps future developers and teammates to more easily understand at your code. Comments make your code more neat and organized.
 
-Java comments are not executed by compiler and interpreter.
+Java comments are not executed by the compiler or interpreter.
 
 
 ### Types of Java Comments
 
-#### 1. Single Line Comment
+#### 1. Single-Line Comments
 
-To create a single line comment just add two `//` forward slashes before the text.
+To create a single-line comment just add two `//` forward slashes before the text.
 
 ```java
-// This is how single line comment looks like
+// This is how a single-line comment looks
 ```
 
-#### 2. Multi Line Comment
+#### 2. Multi-Line Comments
 
-To Create a Multi line comment wrap the lines in between `/*` line goes here `*/`
+To create a multi0line comment, wrap the lines in between `/*` multiple lines go here `*/`
 
 ```java
 public class MyFirstJava {  
     public static void main(String[] args) {  
-    /* This Java Code 
-       Prints out "Hello world"
-       and you are looking at a multi line comment 
+    /* This Java code 
+       Prints out "Hello world!"
+       and you are looking at a multi-line comment 
     */
-        System.out.println("Hello World");  
+        System.out.println("Hello world!");  
     }  
 }  
 ```
 
-#### 3. Documentation Comment
+#### 3. Documentation Comments
 
-Documentation comment is used by Javadoc tool to create documentation for the code. Documentation Comment is used by developers to document code, like what a class does or what a method does. This is used by a javadoc tool which will compile a preformatted set of html files containing all the information available in the comment. 
+Documentation comments are used by the Javadoc tool to create documentation for the code. Documentation comments are used by developers to document code, such as explaining what a class or method does. These comments are parsed by a Javadoc tool, which will compile a preformatted set of HTML files containing all the information available in the comments. 
 ```java
 /**
- * The Following Java program displays a random between 0 - 50
- * Most Developer dont document simple program like this
+ * The following Java program displays a random integer between 0 - 50.
+ * Most developers don't document simple programs like this.
  * 
  * @author      Quincy Larson
  * @version     1.0
