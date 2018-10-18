@@ -10,6 +10,8 @@ It is always best practice when starting out to comment more often than not, as 
 
 JavaScript has two ways of assigning comments in its code.
 
+Ctrl+K, Ctrl+C to comment, and Ctrl+K, Ctrl+U to uncomment. (For visual sudio code users)
+
 The first way is the `//` comment; all text following `//` on the same line into a comment. For example:
 
 ```javascript
