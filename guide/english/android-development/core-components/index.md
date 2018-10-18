@@ -1,8 +1,8 @@
 ---
-title: Android core components
+title: Android Core Components
 ---
 # Android core components
-Core components are the essential elements which an app for Android consists of. Each of them has its own purpose and lifecycle but not all of them are independent. They are:
+Core components are the essential elements contained in an Android app. Each of them has its own purpose and lifecycle, but not all of them are independent. The Android Core Components are:
 
 - Activities
 - Services
@@ -10,7 +10,7 @@ Core components are the essential elements which an app for Android consists of.
 - Content providers
 
 ## [Activities](https://developer.android.com/guide/components/activities/)
-An _activity_ is a component that has a user interface and represents a single screen. An app can have multiple activities, each of those can be an entry point to the application itself for the user or the system (an app's activity that wants to open another activity that belongs to the same application or to a different one).
+An _activity_ is a component that has a user interface and represents a single screen in an Android app. An app can have multiple activities, each of which can be an entry point to the application itself for the user or the system (an app's activity that wants to open another activity that belongs to the same application or to a different one).
 
 ### [Activity Lifecycle](https://developer.android.com/guide/components/activities/activity-lifecycle)
 ![Activity Lifecycle](https://developer.android.com/images/activity_lifecycle.png)
@@ -21,7 +21,7 @@ An _activity_ is a component that has a user interface and represents a single s
 
 * onRestart():
 
-> Called after your activity has been stopped, prior to it being started again. Always followed by onStart()
+> Called after your activity has been stopped, prior to it being started again. Always followed by onStart().
 
 * onStart():
 
@@ -33,17 +33,17 @@ An _activity_ is a component that has a user interface and represents a single s
 
 * onPause ():
 
-> Called as part of the activity lifecycle when an activity is going into the background, but has not (yet) been killed. The counterpart to onResume(). When activity B is launched in front of activity A, this callback will be invoked on A. B will not be created until A's onPause() returns, so be sure to not do anything lengthy here.
+> Called as part of the activity lifecycle when an activity is going into the background, but has not (yet) been killed. The counterpart to onResume(). Take for example, an Android app with two activities A and B, in which activity A is currently in the foreground and is the only activity on the app activity stack. When activity B is launched in front of activity A, this callback will be invoked on A. B will not be created until A's onPause() returns, so be sure to not do anything lengthy here.
 
 * onStop():
 
-> Called when you are no longer visible to the user. You will next receive either onRestart(), onDestroy(), or nothing, depending on later user activity.
+> Called when an activity is no longer visible to the user. You will next receive either onRestart(), onDestroy(), or nothing, depending on subsequent user activity.
 
 >Note that this method may never be called, in low memory situations where the system does not have enough memory to keep your activity's process running after its onPause() method is called.
 
 * onDestroy():
 
-> The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it, or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between> these two scenarios with the isFinishing() method.
+> The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it), or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishing() method.
 
 #### Sample code to understand Activity Lifecycle
 ``` java
@@ -94,14 +94,14 @@ public class MainActivity extends Activity {
 
 
 ## [Services](https://developer.android.com/guide/components/services)
-A _service_ is a component without user interface to perform long-running operations in the background.
+A _service_ is a component without a user interface, and is used to perform long-running operations in the background.
 There are two kinds of services:
 
 - _foreground_ services: they are strictly related to user's interaction (for example music playback), so it's harder for the system to kill them.
 - _background_ services: they are not directly related to user's activities, so they can be killed if more RAM is needed.
 
 ## [Broadcast receivers](https://developer.android.com/guide/components/broadcasts)
-A _broadcast receiver_ is another component without user interface (except an optional status bar notification) that lets the system to deliver events from/to the app, even when the latter hasn't been previously launched.
+A _broadcast receiver_ is another component without user interface (except an optional status bar notification) that provides a gateway for the system to deliver events from/to the app, even when the latter hasn't been previously launched.
 
 ## [Content providers](https://developer.android.com/guide/topics/providers/content-providers)
 A _content provider_ is a component used to manage a set of app data to share with other applications. Each item saved in the content provider is identified by a URI scheme.
