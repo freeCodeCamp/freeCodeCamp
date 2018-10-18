@@ -16,3 +16,4 @@ If no entity name exists, either the entity number or hexadecimal reference can 
 
 * [W3 Schools Reference](https://www.w3schools.com/html/html_symbols.asp)
 * [Symbols Reference Chart](https://dev.w3.org/html5/html-author/charref)
+* [Toptal Reference](https://www.toptal.com/designers/htmlarrows/symbols/)
