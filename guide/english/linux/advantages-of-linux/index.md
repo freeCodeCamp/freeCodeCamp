@@ -47,4 +47,4 @@ Linux allows user to change desktop design and themes, add widgets and more. The
 
 ## It's Free.
 
-Hard to beat that!
+Very hard to beat that!
