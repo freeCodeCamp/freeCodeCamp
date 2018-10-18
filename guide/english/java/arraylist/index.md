@@ -33,7 +33,7 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   variable.clear();
   ```
   
-  we can delete existing element from the list
+  We can delete existing element from the list
   ```java
   variable_name.remove(index_number);
   ```
@@ -63,6 +63,19 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
    ```java
   Collections.reverseOrder());
  ```
+ 
+ Basic Big O for ArrayList Methods:
+ 
+ .get(int index) 
+    ~O(1). This will always be constant time. 
+ .add(E ele) 
+    ~O(1). We are only adding an element to the END of the list.
+ .add(int ind, E ele)
+     ~O(N). Because of the way an ArrayList is implemented, we must do shifting which requires O(N) time on average.
+ .remove(int ind)
+     ~O(N). For the same reason as above. The elements must be shifted after removal.
+     
+ It is important to the the Big O for methods of data structures. This way, you can choose the most efficient data structure for your program.
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
