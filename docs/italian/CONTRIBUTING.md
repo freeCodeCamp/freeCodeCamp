@@ -130,13 +130,13 @@ Siamo lieti di aiutarti a contribuire a uno qualsiasi degli argomenti su cui vor
 
 **Sono nuovo a GitHub e Open Source in generale:**
 
-Leggi la nostra [Guida su Come contribuire alla open source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
+Leggi la nostra [Guida su come contribuire alla open source](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
 **Che cosa significano queste etichette diverse, che sono taggate su problemi?**
 
 I nostri moderatori della communita' [smistano](https://en.wikipedia.org/wiki/Software_bug#Bug_management) i problemi e le richieste di  pull/integrazione delle modifiche in base alla loro priorità, gravità e altri fattori. Puoi [trovare qui un glossario completo dei loro significati](https://github.com/freecodecamp/freecodecamp/labels).
 
-Dovresti esaminare questi problemi di **`Help Wanted/Ho bisogno di aiuto`** oppure **`first timers welcome/Principianti`** per una rapida ricerca di ciò che è disponibile per te su cui lavorare. Questi sono in palio e non c'è bisogno di andare avanti prima di lavorare su questi.
+Dovresti esaminare questi problemi di **`Help Wanted/Ho bisogno di aiuto`** oppure **`First timers welcome/Principianti`** per una rapida ricerca di ciò che è disponibile per te su cui lavorare. Questi sono in palio e non c'è bisogno di andare avanti prima di lavorare su questi.
 
 Se questi problemi mancano di chiarezza su ciò che deve essere fatto, sentiti libero di porre domande nei commenti.
 
