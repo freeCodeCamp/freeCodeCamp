@@ -48,3 +48,5 @@ Linux allows user to change desktop design and themes, add widgets and more. The
 ## It's Free.
 
 Hard to beat that!
+
+runs great on older pc. so great to refresh a tired system
