@@ -7,7 +7,7 @@ title: More About Docker Containers
 * Command to list Running Containers
 
 ```
-docker conatiner ls
+docker container ls
 
 ```
 
