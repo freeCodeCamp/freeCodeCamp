@@ -14,3 +14,5 @@ Example usage:
 
 - <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr' target='_blank' rel='nofollow'>The HTML &lt;abbr&gt; element: MDN</a>
 - <a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Advanced_text_formatting#Abbreviations' target='_blank' rel='nofollow'>Advanced Text Formatting: Abbreviations</a>
+<a href='https://www.w3schools.com/tags/tag_abbr.asp' target='_blank' rel='nofollow'>W3Schools</a>
+
