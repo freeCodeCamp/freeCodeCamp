@@ -6,7 +6,7 @@
 
 ## Types of Blockchain
 
-As of now, there are mainly three types of Blockchains that have emergered. These are broad classifications based on the way the tech is used and handled.
+As of now, there are mainly three types of Blockchains that have emerged. These are broad classifications based on the way the tech is used and handled.
 
 1. Private Blockchain
 2. Public Blockchain
@@ -16,7 +16,7 @@ As of now, there are mainly three types of Blockchains that have emergered. Thes
 
 Blockchain Technology that is owned by a private party or an organization. It is a decentralized architecture but some powers to make decisions are vested in the hands of person in-charge.
 
-The person in-charge is responsible for giving selective accesses and permissions such as read/write.
+The person in-charge is responsible for giving selective access and permissions such as read/write.
 
 Example : Bankchain, Hyperledger
 
