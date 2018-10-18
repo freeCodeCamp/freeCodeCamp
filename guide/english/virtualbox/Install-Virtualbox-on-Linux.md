@@ -18,16 +18,20 @@ packages of the system to the latest version.
 Let’s import the Oracle public key to your system signed the Debian packages using the following commands.
 
 ```wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -```
+
 ```wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -```
+
 Now, you need to add Oracle VirtualBox PPA to Ubuntu system. You can do this by running the below command on your system.
 
 ```sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian `lsb_release -cs` contrib"```
+
 This command will add an entry to /etc/apt/sources.list at end of the file.
 
 ### Step 3 – Install Oracle VirtualBox
 After completing the above steps, let’s install VirtualBox using the following commands. If you have already installed an older version of VirtualBox, Below command will update it automatically.
 
 ```sudo apt-get update```
+
 ```sudo apt-get install virtualbox-5.2```
 
 ### Step 4 – Launch VirtualBox
