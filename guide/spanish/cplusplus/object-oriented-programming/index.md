@@ -13,19 +13,21 @@ Aprendamos sobre las diferentes características de un lenguaje de programación
 Los objetos son entidades de tiempo de ejecución básicas en un sistema orientado a objetos, los objetos son instancias de una clase, son tipos de datos definidos por el usuario definidos.
 
 ```cpp
-class person 
+class Persona 
  { 
-    char name[20]; 
-    int id; 
+ private:
+    char _nombre[20]; 
  public: 
-    void getdetails(){} 
+    char* getNombre(){ return _nombre; }
+    void  setNombre(char* nombre){ _nombre = nombre; }
  }; 
  
  int main() 
  { 
-   person p1; //p1 is an object 
+   Persona p1; //p1 es un objeto de tipo Persona
  } 
 ```
+Note que en la clase **Persona** el nombre del atributo ```_nombre``` tiene un guión bajo inicial. Es usanza en C++ utilizar guión bajo o la letra **m** como prefijo al nombrar atributos de la clase para fines de distinguirlas fácilmente de variables globales y de variables locales.
 
 Los objetos ocupan espacio en la memoria y tienen una dirección asociada como un registro en pascal o estructura o unión en C.
 
@@ -38,14 +40,18 @@ Cada objeto contiene datos y código para manipular los datos. Los objetos puede
 La clase es un plano de datos y funciones o métodos. La clase no ocupa ningún espacio.
 
 ```cpp
-class class_name 
+class nombre_de_la_clase
  { 
   private: 
-     //data members and member functions declarations 
+     //declaración de atributos y métodos privados 
+     //(solamente pueden ser accedidos desde el interior de la clase)
   public: 
-     //data members and member functions declarations 
+     //declaración de atributos y métodos públicos 
+     //(pueden ser accedidos desde cualquier parte del código)
+
   protected: 
-     //data members and member functions declarations 
+     //declaración de atributos y métodos protegidos
+     //(solamente pueden ser accedidos desde el interior de la clase y desde las clases hijas)
  }; 
 ```
 
