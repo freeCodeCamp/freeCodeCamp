@@ -44,4 +44,4 @@ localeTitle: Uso básico
 
 ## Acerca de Vim
 
-Vim es el editor de texto que se usa básicamente en el modo CLI. Pero ahora el editor también está disponible en varias versiones. Allí tienen También GVIM que es la versión gráfica de VIM. vi fue el editor principal, luego se mejoró y lo llamó VI mejorado Vim.
+Vim es un editor de texto que se usa básicamente en el modo CLI. Pero ahora el editor también está disponible en varias versiones. También existe la versión gráfica de VIM, llamada GVIM, que tiene todas las funcionalidades principales pero permite a los usuarios a añadir menús y barras de herramientas adicionales. vi fue el editor principal, luego se mejoró y lo llamó VI mejorado Vim.
