@@ -22,7 +22,7 @@ To create a single-line comment just add two `//` forward slashes before the tex
 
 #### 2. Multi-Line Comments
 
-To create a multi0line comment, wrap the lines in between `/*` multiple lines go here `*/`
+To create a multi-line comment, wrap the lines in between `/*` multiple lines go here `*/`
 
 ```java
 public class MyFirstJava {  
