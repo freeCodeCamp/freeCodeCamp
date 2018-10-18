@@ -1,3 +1,4 @@
+---
 title: Smart Contracts
 ---
 ## Smart Contracts
@@ -10,10 +11,14 @@ As a piece of code that sits on the blockchain, a smart contract can automate ta
 When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
 
+A smart contract can be 'embedded' or 'layered' with a transaction. Smart contracts commonly require
+a small transaction for them to be inititally created.
+
 
 ## Blockchain Technologies
 
-Two of the most common technologies used are :
+Two of the most common technologies used for smart contracts are :
 - Ethereum
 - Hyperledger
 
+However, many Blockchain projects are emerging with their own smart contracts more recently.
