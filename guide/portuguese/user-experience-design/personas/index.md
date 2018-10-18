@@ -6,17 +6,17 @@ localeTitle: Pessoas
 
 As personas são usadas no processo de design como um guia para criar experiências do usuário com base nos tipos de usuários que um aplicativo terá. Uma persona representa um grupo demográfico de pessoas que usarão o aplicativo. Normalmente, várias personas são criadas antes do design de um aplicativo. As personas ajudarão os designers a criar designs diferentes para os diferentes tipos de usuários.
 
-Por exemplo, se uma equipe estava criando um aplicativo que lidava com associação e operações para um clube de ginástica, alguns dos usuários do aplicativo poderiam incluir funcionários da recepção, vendedores e personal trainers. As idades, a mentalidade e a capacidade técnica desses usuários podem ser muito diferentes. Assim, a equipe criaria uma persona para cada um desses tipos de usuários e incluiria detalhes sobre o cargo, o nível de habilidade, as metas, o histórico e uma breve descrição sobre as atividades diárias desse indivíduo.
+Por exemplo, se uma equipa estava a criar um aplicativo que lidava com associações e operações para um clube de ginástica, alguns dos usuários do aplicativo poderiam incluir funcionários da recepção, vendedores e personal trainers. As idades, a mentalidade e a capacidade técnica desses usuários podem ser muito diferentes. Assim, a equipa criaria uma persona para cada um desses tipos de usuários e incluiria detalhes sobre o cargo, o nível de habilidade, as metas, o histórico e uma breve descrição sobre as atividades diárias desse indivíduo.
 
 ## Persona do usuário
 
-Uma persona do usuário é um perfil fictício ou representação de um usuário ideal que você está tentando alcançar. Os designers usam personas para entender melhor seus usuários e personalizar um design para se adequar ao público-alvo.
+Uma persona do usuário é um perfil fictício ou uma representação de um usuário ideal que você está a tentar alcançar. Os designers usam personas para entender melhor os seus usuários e personalizar um design que se adeque ao público-alvo.
 
-User personas mostram como uma pessoa pode usar um site ou aplicativo. As necessidades, objetivos e comportamentos de um usuário ajudam os designers a descobrir como eles usam um produto e o que o design pode fazer para que um usuário execute uma ação específica. Uma forte personalidade do usuário identifica claramente essas necessidades e informações essenciais que podem influenciar o design.
+User personas mostram como uma pessoa pode usar um site ou aplicativo. As necessidades, objetivos e comportamentos de um usuário ajudam os designers a descobrir como é que eles usam um produto e o que o design pode fazer para que um usuário execute uma ação específica. Uma forte personalidade do usuário identifica claramente essas necessidades e informações essenciais que podem influenciar o design.
 
 Os designers de UX encontram o máximo de pesquisa possível para representar com precisão seus usuários. As informações são organizadas em grupos que representam os usuários ideais que você deseja alcançar. Os designers geralmente se concentram nos grupos de usuários mais importantes porque é mais fácil projetar para um grupo selecionado do que tentar atender às necessidades de todos.
 
-As personas de usuários individuais são uma página e evitam detalhes extras que não afetam o designer final nem ajudam em nenhuma das decisões de design. Você deve certificar-se de que as personas sejam realistas e específicas quanto possível, pois isso ajudará você a encontrar usuários reais quando estiver pronto para testar seu produto.
+As personas de usuários individuais são uma página e evitam detalhes extras que não afetam o designer final nem ajudam em nenhuma das decisões de design. Você deve certificar-se de que as personas sejam realistas e específicas quanto possível, pois isso ajuda-o a encontrar usuários reais quando estiver pronto para testar o seu produto.
 
 ## Como definir sua personalidade de usuário
 
