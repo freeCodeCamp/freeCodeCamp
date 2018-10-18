@@ -45,6 +45,18 @@ h1: The element defines a large heading
 
 p: The element defines a paragraph
 
+### HTML Tags
+
+HTML tags are element names surrounded by angle brackets:
+
+```<tagname> here is the content.. </tagname>```
+
+HTML tags normally come in pairs like ```<p>```and ```</p>```
+
+The first tag in a pair is the start tag, the second tag is the end tag
+
+The end tag is written like the start tag, but with a forward slash inserted before the tag name
+
 ### HTML Versions
 
 Since the early days of the web, there have been many versions of HTML
