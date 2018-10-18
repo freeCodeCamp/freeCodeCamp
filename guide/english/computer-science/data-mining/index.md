@@ -2,6 +2,10 @@
 title: Data Mining
 ---
 ## Data Mining
+<h1>Pokemongo</h1>
+Data mining is used in Pokemongo alot. They do it to see if Niantic added new things into the code but not activated it yet in game.
+You can compare it to the good old easter egg hunting.
+
 
 This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/computer-science/databases/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
