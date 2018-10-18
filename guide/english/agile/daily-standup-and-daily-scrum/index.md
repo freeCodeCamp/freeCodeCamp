@@ -13,6 +13,7 @@ The standard agenda for each person is:
 * What have you done since the last DSU
 * What are you doing after this DSU
 * What are the major obstacles that are stopping your progress, and where do you need help
+who can help you if you need help
 
 Team members are to listen carefully to each other's contributions and attempt to identify areas where they can assist each other's progress. The standup meeting will also surface more lengthy topics of discussion that need to take place between different members of the team. These lengthier discussions that arise should then be halted and taken outside of the standup, involving only the relevant participants, and not the entire team. 
 
