@@ -128,6 +128,8 @@ We are excited to help you contribute to any of the topics that you would like t
 
 Read our [How to Contribute to Open Source Guide](https://github.com/freeCodeCamp/how-to-contribute-to-open-source).
 
+You can also go here to try and create your own repository: (https://github.com/new)
+
 **What do these different labels mean, that are tagged on issues?**
 
 Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug_management) issues and pull requests based on their priority, severity and other factors. You can [find a complete glossary of their meanings here](https://github.com/freecodecamp/freecodecamp/labels).
