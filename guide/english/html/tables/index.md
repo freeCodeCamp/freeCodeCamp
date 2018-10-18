@@ -30,6 +30,11 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
     <td>Jackson</td> 
     <td>94</td>
   </tr>
+  <tr>
+    <td>Dau</td>
+    <td>Dau</td> 
+    <td>93</td>
+  </tr>
 </table>
 ```
 <a href='https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table'> DEMO </a>
