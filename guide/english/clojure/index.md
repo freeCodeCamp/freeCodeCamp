@@ -54,7 +54,7 @@ A great feature about arguments in Clojure is destructuring. It allows you to 'p
     (add [1 2] 3)
     ; => 6
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://ideone.com/SWlvKn' target='_blank' rel='nofollow'>IDEOne it!</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='//ideone.com/SWlvKn' target='_blank' rel='nofollow'>IDEOne it!</a>
 
 The arguments to that function are a collection (`[x y]`) and a number (`z`). We can use destructuring to pull the first and second elements out of the list, and call them `x` and `y`.
 
@@ -70,7 +70,7 @@ You can also define a function with an arbitrary number of arguments using `&`.
     ;    ("foo" ["bar" 22])
     ;    nil
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://ideone.com/VftymP' target='_blank' rel='nofollow'>IDEOne it!</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href=('https://ideone.com/VftymP.png?v=2') target='_blank' rel='nofollow'>IDEOne it!</a>
 
 As you can see, using `&` separated our function's arguments into one variable called `first` and a list of variables called `rest`. This means that our function could have any number of arguments!
 
@@ -82,5 +82,5 @@ In Clojure, returns are 'implicit'. If you've used Ruby, you're probably familia
 
 The reason why our functions that use `println` output `nil` is because `println` evaluates to `nil`. (`nil` is like `null` or `None` -- it represents nothing.)
 
-| [![:point_left:](//forum.freecodecamp.com/images/emoji/emoji_one/point_left.png?v=2 ":point_left:") Previous](//forum.freecodecamp.com/t/what-is-clojure/18419) | [![:book:](//forum.freecodecamp.com/images/emoji/emoji_one/book.png?v=2 ":book:") Home ![:book:](//forum.freecodecamp.com/images/emoji/emoji_one/book.png?v=2 ":book:")](//forum.freecodecamp.com/t/clojure-resources/18422) | [Next ![:point_right:](//forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=2 ":point_right:")](//forum.freecodecamp.com/t/clojure-conditionals/18412)|  
-| [Summary](//forum.freecodecamp.com/t/what-is-clojure/18419) | [Table of Contents](//forum.freecodecamp.com/t/clojure-resources/18422) | [Conditionals](//forum.freecodecamp.com/t/clojure-conditionals/18412)|
+| [![:point_left:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_left.png?v=2 ":point_left:") Previous](https://forum.freecodecamp.com/t/what-is-clojure/18419) | [![:book:](https://forum.freecodecamp.com/images/emoji/emoji_one/book.png?v=2 ":book:") Home ![:book:](https://forum.freecodecamp.com/images/emoji/emoji_one/book.png?v=2 ":book:")](https://forum.freecodecamp.com/t/clojure-resources/18422) | [Next ![:point_right:](https://forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=2 ":point_right:")](https://forum.freecodecamp.com/t/clojure-conditionals/18412)|  
+| [Summary](https://forum.freecodecamp.com/t/what-is-clojure/18419) | [Table of Contents](https://forum.freecodecamp.com/t/clojure-resources/18422) | [Conditionals](https://forum.freecodecamp.com/t/clojure-conditionals/18412)|
