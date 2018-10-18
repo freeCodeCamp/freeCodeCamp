@@ -56,3 +56,7 @@ For more information regarding the documentation, refer to the official site of 
 You can install **Angular 2.x** and other versions by following the steps from the official documentation of [Angular](https://angular.io/guide/quickstart)
 
 *Note : Please refer the Angular documentation for the updated information.*
+
+How Angular changed my life as a developer
+
+Earlier I used to code in raw javascript and later came to know about it's frameworks and browsed the internet and came across various popular frameworks like Angular,React and vue.js.But I came to know that angular is good for Single page applications and I was in a rush to develop an application for my resume and started learning Angular which helped me in completing the project and even helped me in getting a job.Now I am working as a Angular developer at Google
