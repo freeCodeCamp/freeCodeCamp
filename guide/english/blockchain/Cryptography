@@ -1,0 +1,12 @@
+Crytopgraphy is the art of creating (encryption) or solving (decryption) codes. It relies on mathematics and logic principles to derive the codes.
+
+Blockchains rely on crytopgraphy for the following purposes:
+* To ensure a verified transaction is stored securely into a block 
+* A new block is appended to the blockchain securely
+* To prevent blocks previously created from being changed or altered
+
+An example of a type of cryptographic algorithm is SHA (Shared Hash Algorithm) 256. The Bitcoin blockchain relies on the SHA256 hashing algorithm to secure its transactions. 
+
+### References: ###
+1. [What is Cryptography?](https://lisk.io/academy/blockchain-basics/how-does-blockchain-work/blockchain-cryptography-explained)
+2. [Blockchain 101 - A Visual Demo](https://youtu.be/_160oMzblY8) video
