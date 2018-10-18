@@ -24,5 +24,13 @@ $(document).ready(function(){
 });
 ```
 
+## Adding jQuery to your page
+
+Add the following code to the bottom of your HTML file to include jQuery in your code:
+
+```html
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+```
+
 #### More Information
 * [jQuery Home Page](https://jquery.com/)
