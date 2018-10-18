@@ -1,0 +1,17 @@
+Alerts
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+Use the .alert-link utility class to quickly provide matching colored links within any alert.
+
+class="alert alert-primary"
+class="alert alert-secondary"
+class="alert alert-success"
+class="alert alert-danger"
+class="alert alert-warning"
+class="alert alert-info"
+class="alert alert-light"
+class="alert alert-dark"
+
+All rights go to courtesy of Bootstrap.com.
+All documentation from this page is taken from https://getbootstrap.com/docs/4.0/components/alerts/ 
