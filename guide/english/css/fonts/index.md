@@ -16,7 +16,8 @@ p {
 ```
 In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback
 mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
-family names are serif, sans-serif, monospace, cursive, fantasy, system-ui.
+family names are serif, sans-serif, monospace, cursive, fantasy, system-ui. 
+In addition to specifying common fonts that are found on most operating systems, custom web fonts can be used as well. To import such a font, copy the font URL from the library and reference it in the HTML.
 
 ### Font style
 The `font-style` property can be used to specify italic text.
@@ -116,3 +117,4 @@ p {
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
 - [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
 - [CSSFontStack](https://www.cssfontstack.com/)
+- [Google Fonts](https://fonts.google.com/)
