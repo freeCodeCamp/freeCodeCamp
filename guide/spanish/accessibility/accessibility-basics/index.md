@@ -137,7 +137,7 @@ La WCAG tiene relaciones de contraste para letras más pequeñas y más grandes 
 Un buen lugar para comenzar a verificar el contraste de color es mediante el uso del [verificador de](https://webaim.org/resources/contrastchecker/) contraste de color [WebAIM](https://webaim.org/resources/contrastchecker/) .
 
 ### Qué hace este botón?
-
+testo
 Mientras estamos en el tema de los formularios, echemos un vistazo rápido a la etiqueta de `input` . Este pequeño es algo importante.
 
 Cuando coloca algunos campos de entrada en una página web, puede usar etiquetas para ... bueno ... etiquetarlos. Sin embargo, ponerlos uno al lado del otro no es suficiente. El atributo que desea es el atributo for, que toma el ID de un campo de entrada posterior. De esta manera, las tecnologías de asistencia saben qué etiqueta asociar con qué campo de formulario.
