@@ -5,6 +5,8 @@ title: Adding and Subtracting Negative Numbers
 
 Adding and subtracting positive numbers is fairly straighforward, but what does it mean to add and subtract negative numbers? Let's look at a real world example to get a better idea. Suppose we have a basket with some balloons tied to it pushing it upward and some weights tied to it pushing it down. Think of the force pulling the balloon up as a positive number and the force pulling it down as a negative number. If we add more weights, it's like we're adding a negative number and the basket gets pulled down. If we remove weights, we are subtracting a negative number and the basket gets pulled up.
 
+If one considers only addition (and ignores subtraction), one sees that "subtracting" is just adding negative numbers. The subtraction of negative numbers, therefore, is the same as the addition of those negative numbers' absolute value.
+
 ### Examples
 
 (-1) + 3 = 2
