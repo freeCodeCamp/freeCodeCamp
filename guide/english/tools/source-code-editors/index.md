@@ -11,9 +11,9 @@ markup coloring, and tabs/panes for side-by-side editing. These features can
 be useful even to new users who don't know their way around all of the  
 advanced options.
 
-There are many, many editors availble to download or use  
+There are many, many editors available to download or use  
 online, both paid and free. They offer many of the same core-features, but  
-each have their own subtlties. Further research may help find the one that's  
+each have their own subtleties. Further research may help find the one that's  
 right for you. The following editors are all cross-platform and  
 free to use or evaluate.
 
