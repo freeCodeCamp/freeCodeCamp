@@ -14,6 +14,7 @@ For example: The noise from the neighbor's house&mdash;it's killing me.
 * Command for an Em dash on a mac : Shift-Option-Hyphen
 * Command for an Em dash on Microsoft Word  :  Alt + Ctrl + (minus)
 * Em dash in HTML : `&mdash;` or `&#8212;`
+* Alt code for Em dash : Alt + 22
 
 ### En Dash
 
@@ -24,6 +25,7 @@ For example: The first world war lasted from 1914&ndash;1918.
 * Command for an En dash on a mac : Option-Hyphen
 * Command for an En dash on Microsoft Word  :  Ctrl + (minus)
 * En dash in HTML : `&ndash;` or `&#8211;`
+* Alt code for Em dash : Alt + 0151
 
 
 #### More Information:
