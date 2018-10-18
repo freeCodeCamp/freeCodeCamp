@@ -54,4 +54,4 @@ more command allows quickly view file and shows details in percentage. You can p
 Copy file from source to destination preserving same mode.
 
 Here are the list of commands frequently used by adiminstrator.
-This is not a complete but it’s a compact list of commands to refer when needed. 
+This is not a complete but it’s a compact list of commands to refer to if and when needed. 
