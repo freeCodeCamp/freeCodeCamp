@@ -73,3 +73,4 @@ Notepad++ is a free, open source code editor, that runs in the Microsoft Windows
 
 <a href='https://notepad-plus-plus.org' target='_blank' rel='nofollow'>notepad-plus-plus.org</a>
 
+## Extending the editor
