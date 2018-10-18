@@ -4,11 +4,11 @@ localeTitle: Botones
 ---
 ## Botones
 
-El marco de Bootstrap le proporciona varias opciones de estilo para los botones. Estos estilos le ayudan a proporcionar una representación visual al usuario de lo que puede hacer el botón.
+El framework de Bootstrap le proporciona varias opciones de estilo para los botones. Estos estilos le ayudan a proporcionar una representación visual al usuario de lo que puede hacer el botón.
 
 #### Cómo utilizar:
 
-Para usar los botones de arranque, siga los mismos pasos que haría para crear un botón en HTML, excepto que también aplica la clase de CSS correspondiente al botón. A continuación se proporciona un ejemplo de código.
+Para usar los botones de Bootstrap, siga los mismos pasos que haría para crear un botón en HTML, excepto que también aplica la clase de CSS correspondiente al botón. A continuación se proporciona un ejemplo de código.
 
 **Ejemplo de código:**
 
@@ -24,9 +24,9 @@ También puede usar los botones de arranque con los elementos `<a>` e `<input>` 
 
 `<input class="btn btn-primary" type="submit" value="Submit">`
 
-#### Lista de clases de botones de arranque:
+#### Lista de clases de botones de Bootstrap:
 
-Esta es una lista de las clases CSS que bootstrap proporciona para los botones.
+Esta es una lista de las clases CSS que Bootstrap proporciona para los botones.
 
 `.btn` Este es el botón básico de bootstrap.
 
@@ -60,9 +60,9 @@ Peligro
 
 Enlazar
 
-`.btn-light` Este es el botón de luz de bootstrap.
+`.btn-light` Este es el botón de color claro de bootstrap.
 
-Ligero
+Color Claro
 
 #### Tamaños de botones de Bootstrap:
 
@@ -72,7 +72,7 @@ Esta es una lista de las clases de CSS para diferentes tamaños de botones.
 
 Grande
 
-`.btn-sm` Este es el pequeño botón de bootstrap.
+`.btn-sm` Este es el botón pequeño de bootstrap.
 
 Pequeña
 
@@ -80,9 +80,9 @@ Pequeña
 
 Extra Pequeño
 
-#### Botones de la correa de arranque:
+#### Botones de Bootstrap:
 
-También es posible tener botones delineados en lugar de totalmente coloreados. Esto se logra colocando el `outline` corrección intermedia entre la clase de botón que desea. Un ejemplo de uso sería el siguiente:
+También es posible tener botones delineados en lugar de totalmente coloreados. Esto se logra colocando `outline` entre la clase de botón que desea. Un ejemplo de uso sería el siguiente:
 
 `<button type="button" class="btn btn-outline-primary">Primary</button>`
 
