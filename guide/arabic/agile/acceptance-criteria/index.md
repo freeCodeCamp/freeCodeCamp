@@ -19,3 +19,4 @@ localeTitle: معايير القبول
 يوفر Nomad8 [أسئلة وأجوبة حول معايير القبول](https://nomad8.com/acceptance_criteria/)
 
 يقود رشيق على [معايير القبول](https://www.leadingagile.com/2014/09/acceptance-criteria/)
+My Changes
