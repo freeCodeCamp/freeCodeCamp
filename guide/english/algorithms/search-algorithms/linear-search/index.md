@@ -79,7 +79,8 @@ int linear_search(int arr[],int n,int num)
 {
 	for(int i=0;i<n;i++){
 		if(arr[i]==num)
-			return i;
+			return i; 
+                        //Item found in the array
    }
    // Item not found in the array
    return -1; 
