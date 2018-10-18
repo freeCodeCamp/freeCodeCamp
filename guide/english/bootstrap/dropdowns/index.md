@@ -31,7 +31,7 @@ To open the dropdown menu, use a button or a link with a class of *.dropdown-tog
 
 The *.caret* class creates a caret arrow icon (&#9660;), which indicates that the button is a dropdown.
 
-Add the *.dropdown-menu* class to a unordered list element to actually build the dropdown menu.
+Add the *.dropdown-menu* class to an unordered list element to build the dropdown menu.
 
 #### More Information:
 https://getbootstrap.com/docs/4.0/components/dropdowns/
