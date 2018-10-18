@@ -51,3 +51,6 @@ Originally created by Progress, NativeScript apps are built using JavaScript, or
 
 Flutter is a cross platform mobile development framework from Google, i,e it can be used to create both ios and Android apps with ease. It uses Dart as its primary language. It's hot reload feature helps in speeding up the overall Development process. Flutter produces real native apps as in the case of React Native as opposed to cordova, Ionic and Cordova which produces hybrid apps.
 
+### Xamarin
+
+Xamarin is a cross platform mobile development framework from Microsoft. It allows you to develop on a PC or a MAC using a C# codebase. You can create Natvie iOS Apps, Native Android Apps, and Native Windows Phone Apps. You can use either Visual Studio or Xamarin Studio as the IDE to develop using Xamarin. For more information pleasee see: https://docs.microsoft.com/en-us/xamarin/
