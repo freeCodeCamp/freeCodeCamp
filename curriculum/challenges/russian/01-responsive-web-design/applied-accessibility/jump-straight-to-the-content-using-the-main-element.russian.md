@@ -18,9 +18,9 @@ localeTitle: Перейти прямо к контенту Используя о
 ```yml
 tests:
   - text: В вашем коде должен быть один <code>main</code> тег.
-    testString: 'assert($("main").length == 1, "Your code should have one <code>main</code> tag.");'
-  - text: <code>main</code> теги должны быть между закрывающем тегом <code>header</code> и тегом открывающим <code>footer</code>.
-    testString: 'assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi), "The <code>main</code> tags should be between the closing <code>header</code> tag and the opening <code>footer</code> tag.");'
+    testString: 'assert($("main").length == 1, "В вашем коде должен быть один <code>main</code> тег.");'
+  - text: <code>main</code> теги должны быть между закрывающем тегом <code>header</code> и открывающим тегом <code>footer</code>.
+    testString: 'assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi), "The <code>main</code> теги должны быть между закрывающем тегом <code>header</code> и открывающим тегом <code>footer</code>.");'
 
 ```
 
