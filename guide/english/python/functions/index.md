@@ -126,6 +126,18 @@ result = s(1, 2)
   print(x)  # error - x is not defined
   print(double(4))  # prints 8
   ```
+  
+ - A trick usage about functions that you can assign default values to parameters. This may useful in some cases.
+ 
+ ```python
+ def greetMe(name='Eva'):
+    return 'Hello' + name
+ 
+ print (greetMe('Walle')) # prints Hello Walle
+ print (greetMe())  # prints Hello Eva
+  ```
+  
+  
 - Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
 ### More Information:
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python 3 Docs: Defining Functions</a>
