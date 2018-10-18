@@ -7,7 +7,7 @@ Computer Science is the study of computers and the concepts that make computers 
 
 Much of computer science was pioneered in the latter half of the 20th century.
 
-Today, if you attend an undergraduate computer science course, you will learn about both hardware and software. You'll learn how computers work at a low level of abstraction (machine language) and at a high level of abstraction (modern scripting langauges like JavaScript).
+Today, if you attend an undergraduate computer science course, you will learn about both hardware and software. You'll learn how computers work at a low level of abstraction (machine language) and at a high level of abstraction (modern scripting langauges like JavaScript). Contrary to popular belief, an undergradate computer science program might revolve more around hardware and software, than actual coding. Most CS undergrads are encouraged to pick up coding by themselves in their spare time.
 
 # Computer Science Fields
 Computer science is categorized into several fields. The following are among the current established and well-studied fields. Most of the fields are further categorized into sub0fields.
