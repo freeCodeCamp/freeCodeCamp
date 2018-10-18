@@ -21,7 +21,7 @@ You can then style these elements with CSS. Classes are referenced with period (
 }
 ```
 
-This code will give s blue background and red text color to all the elements which have the `super-man` class.
+This code will give blue background and red text color to all the elements which have the `super-man` class.
 [View this example on CodePen](https://codepen.io/Tlandis/pen/RLvomV).
 
 You can also declare more than one class to your element, like:
