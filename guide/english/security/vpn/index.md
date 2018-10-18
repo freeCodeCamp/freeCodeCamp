@@ -3,9 +3,7 @@ title: VPNs
 ---
 ## VPNs
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/security/vpn/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+A VPN, or Virtual Private Network, is a tool used to extend a private network to public networks. A user of a VPN can send and recieve data as if they were connected to the private network. In order to secure the connections of users to a VPN, authentication methods - such as passwords - are used.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
