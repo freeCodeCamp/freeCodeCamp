@@ -71,3 +71,20 @@ System.out.println("The sum of the first 50 numbers is: " + 50);
 You cannot use a number (old C-style language construct) or anything that does not evaluate to a boolean value as a condition for an if statement or looping construct. You can't, for example, say if(x), unless x is a boolean variable.
 
 Also, it is important to keep in mind that the boolean expression must, at some point, evaluate to true. Otherwise, your program will be stuck in an infinite loop.
+
+
+### We can also use multiple statements inside a for loop
+
+...
+for (int iter1_For = 0, iter2_For = 1; iter1_For < 10, iter2_For < 10; iter1_For++, iter2_For++)
+{
+    System.out.print (iter1_For + " " + iter2_For + " ");
+}
+
+Output:
+
+0 1 1 2 2 4 3 5 4 6 5 7 6 8 7 9 8 8 9
+
+// starting from 0 every odd places output is of iter1_For and the other even places are output of iter2_For
+...
+
