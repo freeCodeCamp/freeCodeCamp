@@ -32,3 +32,10 @@ docker pull myregistry.example.com/myapplicationimage:1.2.11
 
 #### More Information:
 - [Docker CLI docs: pull](https://docs.docker.com/engine/reference/commandline/pull/)
+
+##Extended description
+Most of your images will be created on top of a base image from the Docker Hub registry.
+
+Docker Hub contains many pre-built images that you can pull and try without needing to define and configure your own.
+
+To download a particular image, or set of images (i.e., a repository), use docker pull.
