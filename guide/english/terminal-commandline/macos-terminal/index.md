@@ -37,6 +37,10 @@ touch | Create a new file
 cp| Copy a file 
 rm | Remove a file 
 rm -rf | Remove a directory 
+man | View the manual of any command
+ps | list the status of running processes
+find | find files and folders
+grep | processes each line and prints the line matching a pattern
 
 ### Usage Examples
 
