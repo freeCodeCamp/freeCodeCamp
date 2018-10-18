@@ -24,4 +24,4 @@ These are design patterns that identify common communication patterns between ob
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [Design patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
-
+(https://www.theguardian.com/science/2013/jul/01/how-algorithms-rule-world-nsa)
