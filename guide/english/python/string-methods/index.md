@@ -1,7 +1,7 @@
 ---
 title: String Methods
 ---
-**TODO: `string` basic info**
+**String** - one of the basic types in Python that store text
 
 [Python Docs - Strings](https://docs.python.org/3/library/stdtypes.html#strings)
 
