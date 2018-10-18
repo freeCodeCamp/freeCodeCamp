@@ -8,4 +8,4 @@ localeTitle: Компоненты
 
 ### Дополнительная информация:
 
-[Компоненты и реквизит](https://reactjs.org/docs/components-and-props.html)
+[Компоненты и свойства](https://reactjs.org/docs/components-and-props.html)
