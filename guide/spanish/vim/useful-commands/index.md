@@ -4,7 +4,7 @@ localeTitle: Comandos útiles
 ---
 # Comandos útiles
 
-## Funcionalidad basica
+## Funcionalidad básica
 
 Lo más probable es que te encuentres en el modo "normal", te permite ingresar comandos presionando la tecla de dos puntos `:` . Para llegar aquí desde otros modos puede escribir `ctrl + c` o `escape` .
 
