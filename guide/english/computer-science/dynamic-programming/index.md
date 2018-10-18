@@ -3,7 +3,7 @@ title: Dynamic Programming
 ---
 
 ## Dynamic Programming
-
+Dynamic Programming is a method of overlapping subproblems, i.e. a problem is divided into some smaller subproblems and then the sub problems are solved repeatedly. The solution of such subproblems is then stored in a memory unit which is then referred again for solving the bigger problem.
 Dynamic Programming(DP) is a programming technique for solving problems where the computations of its subproblems overlap: you write your program in a way that avoids recomputing already solved problems.
 This technique, it's usually applied in conjunction with memoization which is an optimization technique where you cache previously computed results, and return the cached result when the same computation is needed again.
 
