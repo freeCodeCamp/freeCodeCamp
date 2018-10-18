@@ -13,3 +13,9 @@ Majorly, the data structures can be divided into two categories :-
 ## Reference:
 
 [Python Data Structures](https://docs.python.org/3.7/tutorial/datastructures.html)
+
+#Additional
+The above mentioned  data structure are in build one which have their own advantages and limitations. such as each operation operated on them such as find,replace,append have their own time complexity, but to use them we just have to invoke them and they ready to use . but for using data structure in larger complex computational problems people prefer to use their own structure which allows them to  modify complexity accourding to their needs and are easy to use . some examples may be:
+* Trees (Binary)
+* graphs
+* ordered and unordered list .... and many more
