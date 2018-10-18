@@ -26,7 +26,7 @@ The `<a href>` attribute is supported by all browsers.
 
 #### More attributes:
  `hreflang` : Specifies the language of the linked resource.
- `target`   : Specifies the context in which the linked resource will open.
+ `target`   : Specifies the context in which the linked resource will open. Two of the most common are `_blank` which will open a new tab or window and `_self` wich will open the link in the current frame.
  `title`    : Defines the title of a link, which appears to the user as a tooltip.
 
 ### Examples
