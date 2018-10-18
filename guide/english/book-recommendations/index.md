@@ -145,7 +145,17 @@ title: Books to Read for Programmers
 
 *Soft Skills: The software developer's life manual*
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
-- ISBN-13: 9781617292392 
+- ISBN-13: 9781617292392
+
+## Android
+
+*Android programming: The Big Nerd Ranch Guide by by Bill Phillips and Chris Stewart*
+- [Amazon](https://www.amazon.com/Android-Programming-Ranch-Guide-Guides/dp/0134706056/ref=sr_1_1?ie=UTF8&qid=1539902741&sr=8-1&keywords=android+programming+the+big+nerd+ranch+guide+3rd+edition&dpID=412puBdQscL&preST=_SY291_BO1,204,203,200_QL40_&dpSrc=srch)
+- ISBN-13: 978-0134706054
+
+*Android Design Patterns: Interaction Design Solutions for Developers*
+- [Amazon](https://www.amazon.com/Android-Design-Patterns-Interaction-Developers/dp/1118394151/ref=mt_paperback?_encoding=UTF8&me=&qid=)
+- ISBN-13: 978-1118394151
 
 ## Other
 
