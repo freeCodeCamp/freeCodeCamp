@@ -103,3 +103,37 @@ We get `15.300000`. So, say we just want two places after the decimal to give us
 * Variables are created in the following format: `datatype variable_name = number`.
 * Format specifiers allow for variables to be printed.
 * The equals sign `=` allows for values to be assigned to variables.
+
+
+
+## Program to show variables
+
+```C
+#include<stdio.h>
+int
+main ()
+{
+
+  int i;
+  float f;
+  printf ("enter integer value\n");
+  scanf ("%d", &i);
+  printf ("enter float value\n");
+  scanf ("%f", &f);
+  printf ("integer value is:%d \nfloat value is:%f \n ", i, f);
+  return 0;
+
+}
+
+```
+
+#OUTPUT
+```C
+enter integer value
+1
+enter float value
+2.2
+integer value is:1
+ float value is:2.2 
+
+```
