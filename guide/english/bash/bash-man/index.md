@@ -30,3 +30,4 @@ man ls
 #### More information:
 
 * Wikipedia: https://en.wikipedia.org/wiki/Man_page
+* Linux: https://linux.die.net/man/1/bash
