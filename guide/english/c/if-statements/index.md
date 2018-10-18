@@ -12,6 +12,33 @@ if (testExpression) {
 }
 ```
 
+
+## code to print even odd numbers using if and while loop*
+
+```C
+#include <stdio.h>
+
+int main()
+{
+    int i=1,x; 
+    printf("enter your number\t:");
+    scanf("%d",&x);
+    
+    while(i<=x)
+    {
+    //printf("%d\n",i);
+    if(i%2==0)
+    {printf("%d is even\n",i);}
+    else
+    {
+    printf("%d is odd\n",i);    
+    }
+       i++;
+    }
+    return 0;
+}
+
+```
 ## A Simple Example
 Let's look at an example of this in action:
 
