@@ -53,3 +53,5 @@ exports.createNavigationNode = node => {
 
   return { ...navNode, ...gatsbyRequired };
 };
+// html example
+<span>&#9786;</span>
