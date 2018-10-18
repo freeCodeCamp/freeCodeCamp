@@ -25,3 +25,13 @@ This helps in reusing code and making you rcode structure much more clean. Data 
 
 ## What next?
 Pick an OO language, and build a basic terminal based game to illustrate these concepts.
+
+## Outline
+* TDD concepts
+
+Test-driven development (TDD) is a software development process that relies on the repetition of a very short development cycle: requirements are turned into very specific test cases, then the software is improved to pass the new tests, only.
+That means we are starting from writing our test before we will write any functional code.The assumption is to start with test which does not work(shows red) and write as simple implementation which will make our test pass.Then if there will be any additional requiremenets from our clients,write a new tests against them and work by creating your test first
+
+
+
+
