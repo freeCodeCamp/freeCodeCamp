@@ -183,3 +183,5 @@ The result will be:
 My
 ```
 
+**More Information:**
+- [String Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
