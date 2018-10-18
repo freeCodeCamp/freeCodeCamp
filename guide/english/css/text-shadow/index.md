@@ -3,7 +3,7 @@ title: Text Shadow
 ---
 ## Text Shadow
 
-The `text-shadow` property adds shadow to text. 
+The `text-shadow` property adds shadow to text, which is similiar to highlighting a word or phrase. 
 ```css 
   text-shadow: offset-x offset-y blur-radius color;
 ```
