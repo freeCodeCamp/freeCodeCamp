@@ -13,7 +13,7 @@
     </tr>
 </table>
 
-# Le Linee guida per la contribuzione
+# Le linee guida per contribuire
 
 Ciao 👋!
 
@@ -23,35 +23,35 @@ Applichiamo rigorosamente il nostro ["Codice di condotta"](https://www.freecodec
 
 Ti auguriamo un felice contributo 🎉!
 
-## Ecco alcuni modi divertenti che ci puoi aiutare
+## Ecco alcuni dei modi divertenti in cui puoi aiutare
 
 Puoi scegliere di contribuire a qualsiasi area che ti interessa:
 
 1. [Contribuirsci a questo codice open source.](#contribute-to-this-open-source-codebase). Aiuta a modificare gli [articoli guida](https://guide.freecodecamp.org/), [sfide di codifica](https://learn.freecodecamp.org/), o correggi i bug/errori sulla piattaforma di apprendimento.
 
-2. Aiuta i coleghi sul nostro [forum pubblico](https://www.freecodecamp.org/forum/). [Rispondi alle loro domande di codifica](https://www.freecodecamp.org/forum/?max_posts=1) o [dai loro feedback sui loro progetti di codifica](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
+2. Aiuta i colleghi sul nostro [forum pubblico](https://www.freecodecamp.org/forum/). [Rispondi alle loro domande](https://www.freecodecamp.org/forum/?max_posts=1) o [dai loro feedback sui loro progetti](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
 3. Aiutaci a aggiungere i sottotitoli ai nostri [video del canale YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
 
 ## Contribuisci a questo codice open source
 
-Abbiamo un enorme numero di codice open source delle migliaia di [sfide di codifica](https://learn.freecodecamp.org) e [articoli guida] (https://guide.freecodecamp.org).
+Abbiamo un'enorme quantità di [codice open source](https://learn.freecodecamp.org) e [articoli guida] (https://guide.freecodecamp.org).
 
-Puoi aiutarci:
+Aiutaci!
 
 - [📝 Ricerca, scrivi e aggiorna i nostri articoli guida](#research-write-and-update-our-guide-articles)
 
-- [💻 Crea, aggiorna e correggi i bug/errori nelle nostre sfide di codifica](#create-update-and-fix-bugs-in-our-coding-challenges)
+- [💻 Crea, aggiorna e correggi i bug/errori nelle nostre sfide di programmazione](#create-update-and-fix-bugs-in-our-coding-challenges)
 
-- [🌐 Traduci gli articoli guida e le sfide di codifica](#translate-guide-articles-and-coding-challenges)
+- [🌐 Traduci gli articoli guida e le sfide di programmazione](#translate-guide-articles-and-coding-challenges)
 
 - [🛠 Aiutaci a correggere i bug/errori nella piattaforma di apprendimento di freeCodeCamp.org](#help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
-###  Ricerca, scrivi e aggiorna i nostri articoli di guida
+###  Ricerca, scrivi e aggiorna i nostri articoli della guida
 
-**Cosa sono gli articoli della Guida?**
+**Cosa sono gli articoli della guida?**
 
-Gli articoli della guida ti aiutano a comprendere rapidamente il concetto di tecnologia. Queste sono brevi spiegazioni in inglese semplice che è possibile leggere prima di passare a risorse più approfondite.
+Gli articoli della guida ti aiutano a comprendere rapidamente il concetto di tecnologia. Si tratta di brevi spiegazioni in inglese semplice che è possibile leggere prima di passare a risorse più approfondite.
 
 Puoi trovare un [articolo di esempio sugli elementi HTML qui](./client/src/pages/html/elements/index.md).
 
