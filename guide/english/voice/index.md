@@ -77,9 +77,9 @@ The Echo mics are arranged in a hexagonal layout, with one microphone at each ve
 While state-of-the-art speech recognition systems perform reasonably well in close-talking microphone conditions, performance degrades in conditions where the microphone is far from the user.
 
 The audio captured by the Echo will be influenced by:
-1) the speaker’s voice against the wall of the room,
-2) the background noise from outside, 
-3) the acoustic echo coming from the device’s loudspeaker 
+1) the speaker’s voice against the wall of the room
+2) the background noise from outside
+3) the acoustic echo coming from the device’s loudspeaker
 4) the output audio against the wall of the room.
 
 # Software
