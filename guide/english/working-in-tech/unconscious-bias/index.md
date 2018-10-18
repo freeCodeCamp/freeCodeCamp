@@ -4,9 +4,9 @@ title: Unconscious Bias
 
 ## Unconscious Bias
 
-Bias is a prejudice in favor of or against one thing, person, or group compared with another usually in a way that’s considered to be unfair. Biases may be held by an individual, group, or institution and can have negative or positive consequences. For that reason the benefits of prejudism can only exist at the expense of others. Therefore to be "biased for" you must be "biased against".
+Bias is a prejudice in favor of or against one thing, person, or group compared with another usually in a way that’s considered to be unfair. Biases may be held by an individual, group, or institution and can have negative or positive consequences. For that reason the benefits of prejudice can only exist at the expense of others. Therefore to be "biased for" you must be "biased against".
 
-<p>Unconscious bias, otherwise known as "implicit bias", occurs when people favour others who look like them and/or share their values. For example a person may be drawn to someone with a similar educational background, from the same area, who shares a similar sexual orientation, or who is the same colour or ethnicity as them.</p>
+<p>Unconscious bias, otherwise known as "implicit bias", occurs when people favour others who look like them, behave like them and/or share their values. For example a person may be drawn to someone with a similar educational background, from the same area, who shares a similar sexual orientation, or who is the same colour or ethnicity as them.</p>
 
 Implicit or unconscious bias happens by our brains making incredibly quick judgments and assessments of people and situations without us realising. Our biases are influenced by our background, cultural environment and personal experiences. We may not even be aware of these views and opinions, or be aware of their full impact and implications.<sup>3</sup>
 
@@ -27,7 +27,6 @@ There are many factors that can give you an unconcious bias, such as:
 
 It was also found in various studies that that even the order of questions in a test can lead to unconsious bias. There is a very good video on the topic [here](https://www.youtube.com/watch?v=75g4d5sF3xI").  
 
-Unconscious bias is far more prevalent than conscious prejudice and often incompatible with one’s conscious values. Certain scenarios can activate unconscious attitudes and beliefs. For example, biases may be more prevalent when multi-tasking or working under time pressure.  
   
 Unconscious bias can influence decisions in recruitment, promotion and performance management. It could be discriminatory when the unconscious bias relates to a protected characteristic.  
 
