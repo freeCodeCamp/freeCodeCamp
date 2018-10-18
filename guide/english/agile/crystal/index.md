@@ -19,7 +19,7 @@ Those methods are focused on:
 4. Skills
 5. Talents
 6. Communications
-
+7. Resolution
 ![Different Colors] https://upload.wikimedia.org/wikiversity/en/c/c5/Crystal_Family_example.jpg
 
 
