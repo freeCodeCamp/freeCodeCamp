@@ -23,14 +23,6 @@ Value is the lightness or darkness of a color. When a color is selected, such as
 
 Denman Ross, created a nine step value scale that ranges from 1 - White, to 9 - Black. The Ross scale is listed below:
 
-1 - White
-2 - High light
-3 - Light
-4 - Low light
-5 - Mid value (the original hue)
-6 - High dark
-7 - Dark
-8 - Low dark
-9 - Black
+![Denman Ross Scale](https://illustratorslounge.com/wp-content/uploads/IL-the-denman-ross-value-scale-02.png)
 
 When selecting color, be mindful of value to direct the attention of the viewer by creating contrast.
