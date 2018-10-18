@@ -3,7 +3,7 @@ title: Computer Science
 ---
 # Computer Science
 
-Computer Science is the study of computers and the concepts that make computers possible.
+Computer Science is the study of computers and the concepts that make computers possible. It is a scientific approach to computation and its applications. This includes the study of the structure, expression, and algorithms that underlie the manipulation of data.
 
 Much of computer science was pioneered in the latter half of the 20th century.
 
