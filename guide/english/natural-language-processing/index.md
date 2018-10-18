@@ -9,15 +9,15 @@ title: Introduction to NLP
 * Further readings
 
 ## Motivation
-It has always been our dream to make machines understand our language. Ever since Chomsky came up with Context free grammars, linguists have been wanting to come up with solutions to understand context dependent grammars. It is therefore only natural that an academic disciple had evolved around this topic.
+It has always been our dream to make machines understand our language. Ever since Chomsky came up with Context free grammars, linguists have wanted to come up with solutions to understand context dependent grammars. It is therefore only natural that an academic discipline has evolved around this topic.
 
 ## Use cases
-People have used this concept in a lot of interesting applications. Few of the exciting ones include Google Translate, Siri, or Gmail auto reply suggestions. People are however working on ways to improve these predictions, and state of the art research is being done on how to make machines answer questions more reliably. 
+People have used this concept in a lot of interesting applications. A few of the exciting ones include Google Translate, Siri, or Gmail auto reply suggestions. People are however working on ways to improve these predictions, and state of the art research is being done on how to make machines answer questions more reliably. 
 
 ## How Natural Language Processing works
-Earlier, NLP employed rule based approach, i.e. all the rules were hard coded(Eg writing grammar). However this wasn't very affective to the variations in the language models.
-Currently, NLP processes are carried on using Artificial Intelligence. They rely mainly on Deep Learning, an AI that determines patterns in the data and uses it to train the model. This method is better than the earlier methods used because when learning through the huge data present, the machine can focus on most common cases, which is not easy with hand-written rules because it is not ovious as to where the efforts are to be put. Also, these models become more reliable with the increase in data, but in earlier approaches it an only be made accurate by increasing the complexity of the rules, which is a more difficult task. 
-The model learns the rules of the language through the analysis of large corpora of typical real-world examples. This method requires enormous amount of labelled data , which is a big hurdle for NLP.
+Earlier, NLP employed rule based approach, i.e. all the rules were hard coded(Eg writing grammar). However this wasn't very robust to the variations in the language models.
+Currently, NLP processes are carried on using Artificial Intelligence. They rely mainly on Deep Learning, an AI that determines patterns in the data and uses it to train the model. This method is better than the earlier methods used because when learning through the huge data present, the machine can focus on most common cases, which is not easy with hand-written rules because it is not ovious as to where the efforts are to be put. Also, these models become more reliable with the increase in data, but in earlier approaches it can only be made accurate by increasing the complexity of the rules, which is a more difficult task. 
+The model learns the rules of the language through the analysis of large corpora of typical real-world examples. This method requires enormous amount of labelled data, which is a big hurdle for NLP.
 
 ## Language Modelling
 For those looking to get into this field, I intend to start you off with 2 concepts.
