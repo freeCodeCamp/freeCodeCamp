@@ -60,3 +60,5 @@ Bash (باختصار لـ Bourne Again SHell) هي shell Unix ، ومترجم ل
 *   tldp.org دليل باش: http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2
 *   دليل bash gnu.org: https://www.gnu.org/software/bash/manual/html _node / index.html # SEC_ المحتويات
 *   برنامج نصي البرمجة شل للبدء: https://www.shellscript.sh/
+
+عین فارسیه دیکه!
