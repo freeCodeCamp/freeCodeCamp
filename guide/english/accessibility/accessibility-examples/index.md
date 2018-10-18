@@ -51,4 +51,41 @@ These CSS styles hide the link by default and only display the link when it is r
 
 
 ### Accessible Tables
+~~~~
+<table>
+<caption>Mr. Smith's Class</caption>
+<tr>
+<th scope="col">Name</th>
+<th scope="col">Age</th>
+<th scope="col">Favorite Color</th>
+</tr>
+<tr>
+<th scope="row">Tommy</th>
+<td>7</td>
+<td>Blue</td>
+</tr>
+<tr>
+<th scope="row">Sara</th>
+<td>6</td>
+<td>Red</td>
+</tr>
+<tr>
+<th scope="row">Derek</th>
+<td>6</td>
+<td>Green</td>
+</tr>
+
+<tr>
+<th scope="row">Aaliyah</th>
+<td>7</td>
+<td>Orange</td>
+</tr>
+<tr>
+<th scope="row">Jessica</th>
+<td>6</td>
+<td>Yellow</td>
+</tr>
+
+</table>
+~~~~
 ### Accessible Tabs
