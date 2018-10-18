@@ -4,6 +4,7 @@ title: SQL Having Clause
 
 ## SQL Having Clause
 HAVING gives the DBA or SQL-using programmer a way to filter the data aggregated by the GROUP BY clause so that the user gets a limited set of records to view. 
+HAVING clause sets the condition for group rows (created by the GROUP BY clause) after the GROUP BY clause applied.
 
 ### Example of use
 The HAVING clause is like the WHERE clause, exept it acts on the grouped data. In this case, the user will only see the largest amounts.
