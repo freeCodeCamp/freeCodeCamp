@@ -14,7 +14,7 @@ This helps in adding an image to a website.
 * **height:** This specifies a height for the image(can be percent or px or auto)</li>
 
 #### CSS Defaults
-The `img` element will be rendered by default in most browsers to be displayed as an inline-block display type unless specified otherwise.
+The `img` element will be rendered by default in most browsers to be displayed as an inline-block display type unless specified otherwise.  
 
 ```
 img {
@@ -24,6 +24,7 @@ img {
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+It is advised to change anyone parameter, either height or width to get a proportionate image. Changing both dimensions results in forced scaling and is not advisable.
 
 ##### Properties
 <a title="The image-orientation CSS property describes how to correct the default orientation of an image." href="/en-US/docs/Web/CSS/image-orientation"><code>image-orientation</code></a>
