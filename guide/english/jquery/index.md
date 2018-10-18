@@ -26,3 +26,4 @@ $(document).ready(function(){
 
 #### More Information
 * [jQuery Home Page](https://jquery.com/)
+* [Why you might not need jQuery](http://youmightnotneedjquery.com/)
