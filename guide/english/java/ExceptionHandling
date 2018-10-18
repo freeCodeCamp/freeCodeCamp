@@ -32,3 +32,4 @@ finally {
 // block of code to be executed after try block ends
 }
 ```
+The "try" clause must be always be accompanied by either a catch or finally clause or both.
