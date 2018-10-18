@@ -176,22 +176,6 @@ int binarySearch(int a[], int l, int r, int x) {
 } 
 ```
 
-### C/C++ implementation
-
-```C++
-int binary_search(int arr[], int l, int r, int target) 
-{ 
-   while (r >= l) 
-   { 
-        int mid = l + (r - l)/2; 
-        if (arr[mid] == target)   
-            return mid; 
-        if (arr[mid] > target) r = mid - 1;
-        else l = mid + 1; 
-   } 
-   return -1; 
-}
-```
 ### Python implementation
 
 ```Python
@@ -208,41 +192,6 @@ def binary_search(arr, l, r, target):
         return -1
 ```
 
-### Example in C++
-
-```c++
-// Binary Search using iteration
-int binary_search(int arr[], int beg, int end, int num)
-{
-	while(beg <= end){
-		int mid = (beg + end) / 2;
-		if(arr[mid] == num)
-			return mid;
-		else if(arr[mid] < num)
-			beg = mid + 1;
-		else
-			end = mid - 1;
-	}
-	return -1;
-}
-```
-
-```c++
-// Binary Search using recursion
-int binary_search(int arr[], int beg, int end, int num)
-{
-	if(beg <= end){
-	    int mid = (beg + end) / 2;
-		if(arr[mid] == num)
-			return mid;
-		else if(arr[mid] < num)
-			return binary_search(arr, mid + 1, end, num);
-		else
-			return binary_search(arr, beg, mid - 1, num);
-	}
-	return -1;
-}
-```
 
 ### Example in C++
 
@@ -268,7 +217,7 @@ int binarySearch(int arr[], int start, int end, int x)
 
 Iterative approach!
 
-```C++ - Iterative approach
+```C++
 int binarySearch(int arr[], int start, int end, int x) 
 { 
     while (start <= end) 
