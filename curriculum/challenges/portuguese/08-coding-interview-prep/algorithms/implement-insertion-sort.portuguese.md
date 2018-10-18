@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
