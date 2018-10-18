@@ -4,7 +4,7 @@ localeTitle: Comandos útiles
 ---
 # Comandos útiles
 
-## Funcionalidad basica
+## Funcionalidad básica
 
 Lo más probable es que te encuentres en el modo "normal", te permite ingresar comandos presionando la tecla de dos puntos `:` . Para llegar aquí desde otros modos puede escribir `ctrl + c` o `escape` .
 
@@ -54,7 +54,7 @@ Dependiendo de la configuración, puede ingresar a un explorador de archivos esc
 *   puede usar `yy` y `dd` precedidos por un número para cortar o copiar varias líneas (por `13dd` , `13dd` cortará 13 líneas)
 *   `p` pega todo desde el buffer de pasta
 
-## Pegando bloques de codigo
+## Pegando bloques de código
 
 Muy a menudo te encontrarás buscando soluciones a los problemas, y encontrar a alguien ha escrito un bloque de código que hace exactamente lo que quieres. Si intenta copiar y pegar el código directamente en Vim, es posible que el código tenga un formato extraño o que no se haya pegado correctamente. Esto se debe al hecho de que Vim lee cada carácter que pegue uno tras otro, lo que significa que cualquier combinación de teclas que active un acceso directo de Vim se ejecutará y Vim intentará (y fallará) sangrar automáticamente el código pegado.
 
