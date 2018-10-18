@@ -39,3 +39,4 @@ Many type foundries create typefaces with extensive extra features like multiple
 
 * Shaun Pagin, [The Art Of Mixing Typefaces Google Fonts Edition](http://www.fastprint.co.uk/blog/the-art-of-mixing-typefaces.html).
 
+* TypeWolf - [What's trending in type, good source for pairing fonts] (https://www.typewolf.com/)
