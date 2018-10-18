@@ -3,14 +3,49 @@ id: 587d7fad367417b2b2512be2
 title: Change Text with click Events
 challengeType: 6
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'JSON APIs و AJAX: تغيير النص باستخدام النقر'
 ---
 
 ## Description
-undefined
+عندما تحدث عملية نقر، يمكنك أن تستخدم جافاسكريبت لتحديث عنصر
+
+`HTML`
+
+على سبيل المثال، عندما يقوم المستخدم بالنقر على زر
+
+Get Message
+
+سيتغير نص العنصر المرتبط بـ
+
+`class`
+
+ذو قيمة تساوي
+
+`message`
+
+إلى
+
+"Here is the message"
+
+هذا ما سيتم عند إضافة الكود التالي إلى دالة حادثة النقر:
+
+```
+document.getElementsByClassName('message')[0].textContent="Here is the message";
+```
 
 ## Instructions
-undefined
+قم بإضافة الكود إلى داخل الدالة المسؤولة عن حالة النقر
+
+`onclick`
+
+لتغيير النص داخل عنصر
+
+`message`
+
+لتصبح
+
+"Here is the message"
+
 
 ## Tests
 <section id='tests'>
