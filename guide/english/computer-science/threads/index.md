@@ -19,6 +19,8 @@ Suppose you have multiple programs open - each program’s share of the CPU’s 
 A thread for a certain program consists of some or all of that program’s compiled instructions, plus some information required for the CPU to execute these instructions.
 
 **Multithreading** is a programming concept where a program spawns multiple threads during execution so as to perform tasks faster.
+Life Cycle of a Thread
+A thread goes through various stages in its life cycle. For example, a thread is born, started, runs, and then dies. 
 
 Here is a simple multithreading example in python which prints the numbers 1 through 10, by spawning a separate thread for each print statement.
 
