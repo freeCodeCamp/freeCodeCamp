@@ -120,6 +120,13 @@ Output:
 
 
 ### Multi-dimensional Arrays
+## Creating Arrays (example):
+
+```java
+dataType[][] arrayName = new dataType[arraySize1] [arraySize2];
+dataType[] arrayName [] = new dataType[arraySize1] [arraySize2; //Different syntax but works perfectly.
+```
+
 Two-dimensional arrays (2D arrays) can be thought of as a table with rows and columns. Though this representation is only a way to visualize the array for better problem-solving. The values are actually stored in sequential memory addresses only.
 ```java
 int M = 5;
