@@ -10,6 +10,8 @@ There are few commonly used arguments:
 
 - `r` , means to recursively delete all the folders inside a directory.
 - `f` , means to forcefully delete anything folder or file.
+- `i` , will ask before deleting the file.
+- `v` , will explain what was deleted.
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
