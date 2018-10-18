@@ -6,7 +6,7 @@ The commands listed here are basic, and will help you get started quickly. But t
 1. `echo` This takes the text you give it and sends it somewhere—back to the screen, to a file, or to another command. By default it echoes back to the screen, unless used with redirection `>` 
 Example: `echo "hello!"`
 Example 2: `echo "Hello world" > hello.txt`
-1. `cat` To display the contents of a text file, just type `cat myfile`.
+1. `cat` To display the contents of a text file, just type `cat myfile`. This command can display multiple files one after another by concatenating them into one string, hence the name. Just type `cat myfile1 myfile2`.
 1. `find` It does what it says, and it’s good at it. Use it to locate files by path, size, date, owner and a bunch of other useful filters. Example: `find . -type f -mtime -1h # List files in this directory modified in the past hour`.
 1. `date` Just type date when you want to know what time it is. Example: `date "+It's %l:%m%p on %A"`. Use it in a script to name files according to the current date.
 1. `ls` What's in this directory? Combine `ls` with some useful flags to display and sort directory contents by date and size. It also gives you lots of options for formatting the output.
