@@ -14,6 +14,7 @@ counter = 0
 while counter < 10:
    # Execute the block of code here as
    # long as counter is less than 10
+   counter += 1
 ```
 
 An example is shown below:
@@ -36,17 +37,14 @@ Today is Friday
 Today is Saturday
 Today is Sunday
 ```
-Line-by-Line Explanation of the above CODE:
+Line-by-Line Explanation of the above code:
 1. the variable 'days' is set to a value 0.
 2. a variable week is assigned to a list containing all the days of the week.
-3. while loop starts 
-4. the block of code will be executed until the condition returns 'true'.
-5. the condition is 'days<7' which rougly says run the while loop till the point the variable days is less than 7
-6. So when the days=7 the while loop stops executing.
-7. the days variable gets updated on every iteration.
-8. When the while loop runs for the first time the line 'Today is Monday' is printed onto the console and the variable days becomes equal to 1.
-9. Since the variable days is equal to 1 which is less than 7 so the while loop is executed again.
-10. It goes on again and again and when the console prints 'Today is Sunday' the variable days is now equal to 7 and the while loop stops executing. 
+3. while loop begins if the variable 'days' is less than 7
+4. executes the code within the while loop
+5. the variable 'days' is increased by 1
+The code will then return to line 3 and repeat until days = > 7
+
 
 #### More Information:
 
