@@ -183,3 +183,6 @@ The result will be:
 My
 ```
 
+### More Information:
+
+..* [String official documentation](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html)
