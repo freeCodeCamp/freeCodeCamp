@@ -4,14 +4,14 @@ title: Add a Negative Margin to an Element
 challengeType: 0
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-a-negative-margin-to-an-element'
 videoUrl: ''
-localeTitle: Добавить отрицательную маржу к элементу
+localeTitle: Добавить к элементу свойство margin с отрицательным значением
 ---
 
 ## Description
-<section id="description"> Элемент по <code>margin</code> контролирует объем пространства между элементом в <code>border</code> и окружающих элементами. Если вы установите элемент <code>margin</code> отрицательного значение, то элемент будет расти больше. </section>
+<section id="description"> Свойство <code>margin</code> контролирует расстояние между свойством <code>border</code> и окружающими элементами. Если вы присвоите свойству <code>margin</code> отрицательное значение, то элемент увеличится. </section>
 
 ## Instructions
-<section id="instructions"> Попытайтесь установить <code>margin</code> на отрицательное значение, подобное значению для красного квадрата. Измените <code>margin</code> синего <code>-15px</code> на <code>-15px</code> , чтобы он заполнил всю горизонтальную ширину желтой рамки вокруг него. </section>
+<section id="instructions"> Попытайтесь установить <code>margin</code> на отрицательное значение, подобное значению для красной коробки. Измените <code>margin</code> синей коробки на <code>-15px</code> , чтобы он заполнил всю горизонтальную ширину желтой коробки вокруг него. </section>
 
 ## Tests
 <section id='tests'>
