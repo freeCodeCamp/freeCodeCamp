@@ -28,7 +28,7 @@ else
     /* final statement */
 ```
 
-**Note:** If you want to execute more than one statement in the `if`, `else` or `else if` part, curly braces are required around the statements:
+**Note:** If you want to execute more than one statement in the `if`, `else` or `else if` chain, curly braces are required around the statements:
 
 ```javascript
 if (condition) {
