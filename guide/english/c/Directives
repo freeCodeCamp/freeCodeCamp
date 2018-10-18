@@ -1,0 +1,33 @@
+---
+C Directives
+---
+
+## Preprocessor Directive
+*also called as macro's or preprocessor directive
+* In the C Programming Language #define directive allows the definition of macros to be  your source code.
+* Here if a macro once define in the program is used throughout the program.
+* Macro definitions are not variables and cannot be changed by your program code like variables.
+* The difference between variable declaration and macro definition declaration is that variables take memory after declaration 
+  whereas macros dont.
+
+## best example is 
+ 
+```c
+#define 
+```
+which is counterpart to variable declaration.
+
+## #Define
+used when you want to keep something ie value of a variable constant throughout the program.
+
+
+## example
+
+```c
+#define PI 3.14
+
+```
+
+## 
+it doesn't needs semicolon ';' to end.
+according to good programing practices the variable declared should be capital so that it is identified as a constant value.
