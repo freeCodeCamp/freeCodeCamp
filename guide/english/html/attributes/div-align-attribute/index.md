@@ -5,6 +5,9 @@ title: Div Align Attribute
 
 The `<div align="">` attribute is used for aligning the text in a div tag to The Left, Right, center or justify.
 
+___
+*As a "pure" container, the <div> element does not inherently represent anything. Instead, it's used to group content so it can be easily styled using the class or id attributes, marking a section of a document as being written in a different language (using the lang attribute), and so on.*
+___
 For instance:
 
 ```html
