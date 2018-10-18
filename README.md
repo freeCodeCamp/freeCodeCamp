@@ -124,6 +124,8 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### Contributing
 
+Fell free to contribute as we are working hard to educate the whole world for free.. every penny and suggestion counts !
+
 #### [Please follow these steps to contribute.](CONTRIBUTING.md)
 
 ### License
