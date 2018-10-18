@@ -2,7 +2,7 @@
 title: Styling
 localeTitle: стайлинг
 ---
-## Реагировать на родной стиль
+## React-native - Стили
 
 React Native предоставляет API для создания стилей и стилизации ваших компонентов: [StyleSheet](https://facebook.github.io/react-native/docs/stylesheet) .
 
