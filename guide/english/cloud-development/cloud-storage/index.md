@@ -10,6 +10,7 @@ We can integrate all storage. For example, if we have multiple pen-drives then w
 There are mainly two types of storage 
 1. Object
 2. Block 
+
  
 ### Object Storage
   - We can not a make partition in cloud storage. We can only store files and folders there. This is called object storage. We can’t install OS there as there are no partitions.
@@ -17,6 +18,7 @@ There are mainly two types of storage
     - Google drive (google compute engine, GCE), OneDrive, drop box, Microsoft azure.
     - Amazon has its own cloud service AWS. S3(Simple Storage Service, SSS) is the product of amazon that provides StAAS. It’s a public cloud. Anyone can use their services.
     - OpenStack is the biggest private cloud. OpenStack has product swift (Object Storage). 
+    - Google has its own storage service called Google cloud storage(GCS). Google offers both structured and non-structured data storage.
 
 ### Block Storage
   - If we’re able to make partitions in provided storage, then we can install OS. We have a hard-disk and we can make partitions in them, this type of storage is known as block storage.
