@@ -81,9 +81,9 @@ Puoi aiutarci a tradurre i nostri articoli guida e le sfide di codifica per una 
 - [Russo (русский)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/russian)
 - [Arabico (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Spagnolo (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
-- [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
-- [Rumeno (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/romanian)
-- [Italiano (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/italian)
+- [Portoghese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
+- [Rumeno (Română)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/romanian)
+- [Italiano (Italiano)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/italian)
 
 Ci piacerebbe il tuo aiuto per migliorare la qualità di queste traduzioni. Milioni di persone usano la versione in lingua inglese di freeCodeCamp.org, e ci aspettiamo che altri milioni usino anche queste versioni tradotte.
 
