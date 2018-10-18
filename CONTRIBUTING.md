@@ -61,7 +61,7 @@ To help, find a `stub article` on our [Guide website](https://guide.freecodecamp
 
 If you can't find a stub about the topic you'd like to write about, you can open a PR that creates the stub and includes your draft article.
 
-If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).
+If you would like to help improve guide articles, here's [how to work on guide articles](/docs/how-to-work-on-guide-articles.md).test
 
 ### Create, Update and Fix Bugs in our coding challenges
 
