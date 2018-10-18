@@ -72,6 +72,8 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 
 ## Remainder
 
+Also referred to as the "modulo" operator. [Source](https://en.wikipedia.org/wiki/Modulus)
+
 **Syntax**
 
 `a % b`
