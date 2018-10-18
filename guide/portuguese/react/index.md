@@ -4,7 +4,7 @@ localeTitle: Reagir
 ---
 # Reagir
 
-React é uma biblioteca JavaScript para criar interfaces com o usuário. Ele foi eleito o mais amado na categoria "Frameworks, bibliotecas e outras tecnologias" da Pesquisa de desenvolvedores do Stack Overflow 2017. 1
+React é uma biblioteca JavaScript para criar interfaces com o usuário. É mantido pelo Facebook, Instagram e uma comunidade de desenvolvedores individuais e outras empresas. Ele foi eleito o mais amado na categoria "Frameworks, bibliotecas e outras tecnologias" da Pesquisa de desenvolvedores do Stack Overflow 2017. 1
 
 React é uma biblioteca JavaScript e os aplicativos React criados nele são executados no navegador, NÃO no servidor. Aplicativos desse tipo só se comunicam com o servidor quando necessário, o que os torna muito rápidos em comparação com os sites tradicionais que forçam o usuário a esperar que o servidor renderize novamente páginas inteiras e as envie para o navegador.
 
