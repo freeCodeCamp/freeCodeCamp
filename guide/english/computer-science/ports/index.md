@@ -20,6 +20,8 @@ Some port numbers are used by convention to identify specific services, such as:
 * 143 - imap
 * 194 - irc
 * 443 - https
+* 998 - SFTP
+* 990 - SFTP
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
