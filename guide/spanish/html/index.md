@@ -4,7 +4,11 @@ localeTitle: HTML
 ---
 # HTML
 
-El lenguaje de marcado de hipertexto (HTML) es un lenguaje de marcado utilizado para construir documentos en línea y es la base de la mayoría de los sitios web de la actualidad. Los lenguajes de marcado como HTML nos permiten 1) crear enlaces a otros documentos, 2) estructurar el contenido de nuestro documento y 3) atribuir contexto y significado al contenido de nuestro documento.
+El lenguaje de marcado de hipertexto (HTML) es un lenguaje de marcado utilizado para construir documentos en línea y es la base de la mayoría de los sitios web de la actualidad. Los lenguajes de marcado como HTML nos permiten 
+
+1. crear enlaces a otros documentos, 
+2. estructurar el contenido de nuestro documento y 
+3. atribuir contexto y significado al contenido de nuestro documento.
 
 Un documento HTML tiene dos aspectos. Contiene información estructurada (marcado) y enlaces de texto (hipertexto) a otros documentos. Estructuramos nuestras páginas utilizando [elementos HTML](#) . Son constructos del lenguaje que proporciona [estructura](#) y [significado](#) en nuestro documento para el navegador y la Elemento enlaces a otros documentos a través de internet.
 
