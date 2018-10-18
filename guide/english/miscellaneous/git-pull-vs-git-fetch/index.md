@@ -1,17 +1,19 @@
 ---
 title: Git Pull Vs Git Fetch
 ---
-These two commands are regularly used by git users. Let's see the difference between both commands.
+Bu iki komut git kullanıcıları tarafından düzenli olarak kullanılmaktadır. 
 
-For the sake of context, it's worth remembering we're probably working in a clone repo. What's a clone? simply a duplicate of another repository. It is basically getting your own copy of someone else's source code.
+Bağlamın hatrına, bir klon depoda çalıştığımızı hatırlayalım. Klon nedir? basitçe başka bir deponun kopyasıdır. Esasında, başka birine ait kaynak kodun kendinize ait kopyanızı yapmanızdır.
 
-That said, to keep your clone updated with whatever changes may have been applied to the original, you'll need to bring those to your clone. That's where `fetch` and `pull` come in. `git fetch` is the command that tells your local git to retrieve the latest meta-data info from the original (yet doesn't do any file transfering. It's more like just checking to see if there are any changes available). `git pull` on the other hand does that AND brings (copy) those changes from the remote repository.
+Bununla beraber, kopyanızı orjinal koda uygulanan değişikliklerle güncel tutmak için, bunları kendi klonunuza getirmelisiniz. İşte bunu da 'fetch' ve 'pull' ile yapabilirsiniz. `git fetch` yerel git'e orjinalden güncel metaveri'yi getirir (ama herhangi bir dosya transeri yapmaz. daha çok herhangi bir değişiklik uygun mu onu kontrol eder). Diğer yandan `git pull` uzak depoda ki değişiklikleri yerel kopyanıza getirir.
 
-E.g.
+Örnek:
 
     git pull origin ankur bugfix
 
-The take away is to keep in mind that there generally are at least three copies of a project on your workstation. One copy is your own repository with your own commit history (the already saved one, so to say). The second copy is your working copy where you are editing and building (not committed yet to your repo). The third copy is your local "cached" copy of a remote repository (probably the original from where you cloned yours). You can use `git fetch` to know the changes done in the remote repo/branch since your last pull. This is useful to allow for checking before doing an actual pull, which could change files in your current branch and working copy (and potentially losing your changes, etc).
+Bilgisayarınızda bir projenin en az üç kopyası olduğunuzu unutmayın. Biri kendi değişiklik geçmişinizle birlikte kendinize ait olan (hali hazırda kaydedilmiş olan). İkincisi değişiklik yapıp, inşa ettiğiniz çalışan kopyadır(ama hala değişiklik eklenmemiştir). Üçüncüsü ise, uzak deponun bilgisayarınızda önbelleğe alınmış kopyasıdır(büyük ihtimalle sizin kopyaladığınız deponun orjinalidir.). Uzak depo/dal'da son güncellemenizden bu yana yapılan değişiklikleri öğrenmek için 'git fetch' komutunu kullanabilirsiniz. Bu, güncellemenizin, kendi dalınızda ve çalışan kopyanızda herhangi bir değişiklik yapmadan neleri değiştireceğini görmenize yaradığı için kullanışlıdır.
+
+
 
     git fetch    
     git diff ...origin
