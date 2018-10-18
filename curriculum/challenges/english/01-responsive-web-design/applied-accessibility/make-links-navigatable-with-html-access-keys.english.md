@@ -11,6 +11,9 @@ HTML offers the <code>accesskey</code> attribute to specify a shortcut key to ac
 HTML5 allows this attribute to be used on any element, but it's particularly useful when it's used with interactive ones. This includes links, buttons, and form controls.
 Here's an example:
 <code>&lt;button accesskey=&quot;b&quot;&gt;Important Button&lt;/button&gt;</code>
+  
+#### Note
+For more information about how accesskeys can be used by the enduser, [see this](https://www.w3schools.com/tags/att_global_accesskey.asp)
 </section>
 
 ## Instructions
