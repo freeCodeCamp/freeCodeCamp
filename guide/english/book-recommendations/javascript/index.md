@@ -30,6 +30,11 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### Exploring ES6
+
+A book for people who already know JavaScript and want to learn ES6
+-[Online](http://exploringjs.com/)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
