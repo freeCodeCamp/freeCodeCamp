@@ -51,3 +51,4 @@ module.exports = {
     secret: process.env.STRIPE_SECRET
   }
 };
+test
