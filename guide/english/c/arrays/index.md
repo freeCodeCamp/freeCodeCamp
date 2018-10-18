@@ -167,4 +167,7 @@ int b = test[89];
 The reason for C not checking the indexing bound is simple: C is an efficient language. It was made, so your program is the fastest: communicates nicely with hardware etc. A nicely written C code does not contain indexing errors, so why would C want to check while running? 
 
 - When you try to access the last element of the array. Suppose the length of the array A be 4 and while accessing the last element as
-A[4] will return an error, as the the indexing starts from 0.
+A[4] will return an error, as the the indexing start
+
+
+my changes to the file
