@@ -35,4 +35,4 @@ ls (List) - This command list the content in the current directory. It can be al
 ```unix
 ls
 ```
-Now we can see our directories in our home.
+Now we can see our directories in our home directory 
