@@ -33,3 +33,6 @@ WebKit (except for the Chromium project) implements the JavaScriptCore engine.
 ## JavaScript Frameworks
 Most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
 For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
+
+## Other
+[History of JavaScript](https://medium.com/@benastontweet/lesson-1a-the-history-of-javascript-8c1ce3bffb17)
