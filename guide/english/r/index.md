@@ -5,6 +5,8 @@ title: R
 ## What is R?
 R is an open source programming language and software environment for statistical computing and graphics. It is one of the primary languages used by data scientists and statisticians alike. It is supported by the R Foundation for Statistical Computing and a large community of open source developers. Since R utilized a command line interface, there can be a steep learning curve for some individuals who are used to using GUI focused programs such as SPSS and SAS so extensions to R such as RStudio can be highly beneficial. Since R is an open source program and freely available, there can a large attraction for academics whose access to statistical programs are regulated through their association to various colleges or universities.
 
+R has multiple packages (which are similar to libraries used in languages like python) on repositories like CRAN and bioconductor, which can be utilized for various purposes.
+
 
 ## Installations
  The first thing you need to get started with R is to download it from its <a href='https://www.r-project.org/' target='_blank' rel='nofollow'>Official Site</a> according to your operating system.
@@ -16,7 +18,7 @@ Now install it on your computer. For help in installation refer to reference sec
 * [Tidyverse](https://www.tidyverse.org/) is an opinionated collection of R packages designed for data science like ggplot2, dplyr, readr, tidyr, purr, tibble.
 * [data.table](https://github.com/Rdatatable/data.table/wiki) is an implementation of base `data.frame` focused on improved performance and terse, flexible syntax.
 * [Shiny](https://shiny.rstudio.com/) framework for building dashboard style web apps in R.
-*
+
 
 ## Where to learn R for free
  * [R Studio](https://www.rstudio.com/online-learning/)
