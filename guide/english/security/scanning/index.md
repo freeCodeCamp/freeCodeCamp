@@ -78,6 +78,7 @@ There are many tools available to scan but one of the most common is `nmap`. It'
 ## More Information:
 - How to Ping in Linux https://www.wikihow.com/Ping-in-Linux
 - [Video from Gordon Lyon aka Fydor, the creator of the nmap tool](https://www.youtube.com/watch?v=Hk-21p2m8YY)
+- [nmap.org](https://nmap.org/)
 
 ## Sources
 <ol>
