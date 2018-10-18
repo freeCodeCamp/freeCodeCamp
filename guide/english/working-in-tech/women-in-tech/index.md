@@ -16,10 +16,10 @@ From an article on ["The Latest Stats on Women in Tech"](https://www.themuse.com
 
 Although women are still underrepresented in the tech world it does not mean that we are not making a difference in the tech world.
 
-In a Women in Tech Round-up event presented by Google in Austin, the Women who spoke at these events were vice presidents (VPs) and high-level management positions from profitable companies working in the tech industry. Not all of them began their careers in the tech world many had started as secretaries and other roles that are often geared towards women. They worked hard and took risks to get where they are now. The one piece of advice that seemed to resound from all of them was that for you to succeed you must take risks. 
+In a Women in Tech Round-Up event presented by Google in Austin, the women who spoke at these events were vice presidents (VPs) and high-level management positions from profitable companies working in the tech industry. Not all of them began their careers in the tech world: many had started as secretaries and other roles that are often geared towards women. They worked hard and took risks to get where they are now. The one piece of advice that seemed to resound from all of them was that for you to succeed you must take risks. 
 
-The Google VP who spoke at this event gave us all a piece of advice: that we should take any and every opportunity afford to us and risk  applying to jobs we are not qualified for. The worst that will happen is you’ll get rejected or you won’t get an interview. Men get tech positions not because they are more experienced or better than women but because they apply to positions that they often aren’t qualified for while women only apply for jobs that they think they are qualified for. 
-The worst thing you can do is to sell yourself short if you want something take that risk and achieve the impossible.
+The Google VP who spoke at this event gave us all a piece of advice: that we should take any and every opportunity offered to us and risk applying to jobs we are not qualified for. The worst that will happen is you’ll get rejected or you won’t get an interview. Men get tech positions not because they are more experienced or better than women but because they apply to positions that they often aren’t qualified for while women only apply for jobs that they think they are qualified for. 
+The worst thing you can do is to sell yourself short; if you want something take that risk and achieve the impossible.
 
 ### More Information:
 
