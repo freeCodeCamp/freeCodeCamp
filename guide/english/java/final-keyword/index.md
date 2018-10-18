@@ -16,6 +16,8 @@ class MyClass {
 ```
 PI is now a constant. Any attempt to assign it a value will cause an error.
 
+Please be aware that by making a `Collection` variable final, e.g. a `List`, the only effect is that the value of the reference cannot be reassigned. It does not make the contents of the `Collection` unmodifiable.
+
 -----------------------------------------------------------------------------------------
 If you make any method as final, you cannot override it.
 ```java
