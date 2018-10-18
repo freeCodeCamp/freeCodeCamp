@@ -104,6 +104,8 @@ Finally, here are some suggested formatting guidelines when writing code blocks:
 
 ## Links
 
+If adding an external link, we recommend adding a link from trusted sources like MDN(Mozilla Developers' Network) or Wikipedia. Please refrain from sources like W3 schools as their information is often old, wrong or incomplete.
+
 Use Markdown style links in your articles to link to other websites.
 
 ```markdown
