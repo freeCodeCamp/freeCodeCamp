@@ -1,6 +1,3 @@
----
-title: Angular
----
 ## Angular
 
 AngularJS (versions 1.x) is a JavaScript based open source Framework. It is cross platform and used to develop Single Page Web Application (SPWA). AngularJS implements the MVC pattern to separate the logic , presentation and data components. It also uses dependency injection to make use of server-side services in client side applications.
