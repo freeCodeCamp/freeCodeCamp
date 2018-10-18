@@ -7,7 +7,7 @@ title: Django-file-storage
 
 * Open aws console and create IAM user for S3 bucket
 * In services select S3
-* Create new S3 buket in S3 console
+* Create new S3 bucket in S3 console
 
 #### Steps to do in django app
 
@@ -19,7 +19,7 @@ pip install django-storages
 ```
 * Add storages to Installed Apps in ```settings.py```
 
-* To work with satic assets only you have to add the following to your settings.py
+* To work with static assets only you have to add the following to your settings.py
 
 ```
 AWS_ACCESS_KEY_ID = <your AWS acces key>
