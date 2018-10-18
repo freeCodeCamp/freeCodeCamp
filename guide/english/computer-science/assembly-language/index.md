@@ -12,7 +12,7 @@ Every family of CPUs define their own Instruction Set Architeture (ISA), a set o
 The compiler decomposes composite higher level composite instructions into operations available in the ISA. 
 Some of the more common ISAS in use today include MIPS, ARM, Intel x86, RISC-V.
 
-Assemblers decompose Assembly instructions into their respective binary representations and replace the generic addresses of assembly code with explicit register and memory addresses of your computer.
+Assemblers decompose Assembly instructions into their respective binary representations and replace the generic addresses of assembly code with explicit register and memory addresses of your computer. This language is less intuitive and more difficult to read but there is more power available.
 
 Code where execution time and control is crucial can be written directly in assembler. This however comes at the cost of prolonging development time, and making development harder. It should also be noted that there has been a large amount of research going into making compilers optimize the code that is generated automatically. 
 
