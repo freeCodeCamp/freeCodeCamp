@@ -3,7 +3,7 @@ title: Chickens Versus Pigs
 ---
 ## Chickens Versus Pigs
 
-"Chickens versus Pigs" refers to a story about a chicken and a pig, where the chicken proposes they open a restaurant called "Ham-n-Eggs".
+"*Chickens versus Pigs*" refers to a story about a chicken and a pig, where the chicken proposes they open a restaurant called "*Ham-n-Eggs*".
 The pig refuses, because while the chicken just needs to lay eggs, the pig has more at stake.
 
 In an Agile software development project, the software developer is the pig. If you fail to complete the job, or fail to do it well,
