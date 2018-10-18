@@ -1,32 +1,32 @@
 ---
-title: Getters & Setters
+title: Accessors & Mutators
 ---
 
-# Getters & Setters
-Getters and Setters are used to effectively protect your data, particularly when creating classes. For each instance variable, a getter method returns its value while a setter method sets or updates its value. Getters and setters are also known as accessors and mutators, respectively.
+# Accessor methods & Mutators
+Accessors and Mutators are used to effectively protect your data, particularly when creating classes. For each instance variable, an accessor method returns its value while a mutator method sets or updates its value.
 
-By convention, getters start with get, followed by the variable name, with the first letter of the variable name capitalized. Setters start with set, followed by the variable name, with the first letter of the variable name capitalized.
+By convention, accessors start with get, followed by the variable name, with the first letter of the variable name capitalized. Mutators start with set, followed by the variable name, with the first letter of the variable name capitalized. Accesors and mutators could also be called getters and setters respectively.
 
 ***Example:***
 ```java
 public class Vehicle {
   private String color;
   
-  // Getter
+  // Accessor
   public String getColor() {
   return color;
   }
   
-  // Setter
+  // Mutator
   public void setColor(String c) {
   this.color = c;
   }
 }
 ```
-The getter method returns the value of the attribute.
-The setter method takes a parameter and assigns it to the attribute.
+The accessor method returns the value of the attribute.
+The mutator method takes a parameter and assigns it to the attribute.
 
-Once the getter and setter have been defined, we use it in our main:
+Once the accessor and mutator have been defined, we use it in our main:
 ```java
 public stativ void main(String[] args) {
   Vehicle v1 = new Vehicle();
@@ -37,12 +37,12 @@ public stativ void main(String[] args) {
 // Outputs "Red"
 ```
 ****************
-Getters and setters allow control over the values.  You may validate the given value in the setter before actually setting the value.
+Accessors and mutators allow control over the values.  You may validate the given value in the mutator before actually setting the value.
 
 
-## Why getter and setter?
+## Why accessor and mutator?
 
-By using getter and setter, the programmer can control how their important variables are accessed and updated, such as changing value of a variable within a specified range. Consider the following code of a setter method:
+By using accessor and mutator, the programmer can control how their important variables are accessed and updated, such as changing value of a variable within a specified range. Consider the following code of a mutator method:
 ```java
 public void setNumber(int num) {
     if (num < 10 || num > 100) {
@@ -56,8 +56,8 @@ This ensures the value of number is always set between 10 and 100.  If the progr
 obj.number = 3;
 ```
 
-This violates the constraint for values ranging from 10 to 100 for that variable. Since we don't expect that to happen, hiding the variable number as private and using a setter prevents it.
-On the other hand, a getter method is the only way for the outside world to read the variable’s value:
+This violates the constraint for values ranging from 10 to 100 for that variable. Since we don't expect that to happen, hiding the variable number as private and using a mutator prevents it.
+On the other hand, a accessor method is the only way for the outside world to read the variable’s value:
 ```java
 public int getNumber() {
     return this.number;
