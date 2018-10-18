@@ -54,6 +54,11 @@ On Debian based GNU/Linux distros, you can install by :
 sudo apt install php
 ```
 
+On Centos 6 or 7 you can install by :
+```bash
+sudo yum install php
+```
+
 After installing you can run any PHP files by simply doing this in terminal :
 ```
 php file.php
