@@ -45,6 +45,10 @@ h1: The element defines a large heading
 
 p: The element defines a paragraph
 
+### Other elements
+
+div: The div is used to structure page content / divide it in to smaller sections.
+
 ### HTML Versions
 
 Since the early days of the web, there have been many versions of HTML
