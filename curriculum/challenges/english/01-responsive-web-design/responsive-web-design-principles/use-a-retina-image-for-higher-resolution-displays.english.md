@@ -18,6 +18,11 @@ Here is an example of an image that is only using half of the original height an
 <section id='instructions'>
 Set the <code>width</code> and <code>height</code> of the <code>img</code> tag to half of their original values. In this case, both the original <code>height</code> and the original <code>width</code> are 200px.
 </section>
+<section>
+
+#### Note
+You will need to have your browser zoom at 100% for this challenge to pass successfully.
+</section>
 
 ## Tests
 <section id='tests'>
