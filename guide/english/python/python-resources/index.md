@@ -35,6 +35,7 @@ title: Python Resources
 *   <a href='http://www.tutorialspoint.com/python/'>Tutorials Point - Python</a>
 *   <a href='https://pythonprogramming.net' target='_blank' rel='nofollow'> Set of Starter Projects with Videos </a> - From the basics onward.
 *   <a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world" target='_blank' rel='nofollow'>The Flask Mega Tutorial (Miguel Grinberg)</a>
+*   <a href="https://www.w3schools.com/python/" target='_blank' rel='nofollow'>W3 Schools - Python</a>
 
 ## Challenges
 
