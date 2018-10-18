@@ -56,6 +56,12 @@ You're done! You successfully have new fonts for your site.
 * [DaFont](http://www.dafont.com)
 * [1001 Free Fonts](http://www.1001freefonts.com)
 
+##### Paid Font Reources:
+
+* [Fonts by Hoefler & Co.] (https://www.typography.com/)
+* [MyFonts] (https://www.myfonts.com/)
+* [Adobe Typekit] (https://fonts.adobe.com/)
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [Web fonts overview from Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts)
