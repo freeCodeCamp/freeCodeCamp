@@ -22,11 +22,11 @@ Para valores de números enteros, se usa la palabra clave `int` (abreviatura de 
 #include <stdio.h> 
  int main(void){ 
  
- int a; // Declaring a variable which stores integer values and is called 'a' 
- int b = 5; //Initializing an int called 'b' with the value 5 
- a = 6; // Assigning the value 6 to the variable 'a' 
+ int a; // Declaramos una variable que guarda valores de tipo enteros y se llama 'a' 
+ int b = 5; //Inicializamos un entero llamado b con el valor 5 
+ a = 6; // Asignamos a la variable a el valor 6 
  int c; 
- c = a + b; // Assign the sum of 'a' and 'b' to the variable c 
+ c = a + b; // Asignamos a c el valor de la suma 'a' y 'b' 
  int d = a + c; //But we could also initialize it right away. 
  
  //Some shiny things 
@@ -43,7 +43,7 @@ Vamos a desglosar lo que hicimos bajo `Some shingy things` :
 printf("%d \n", c); 
 ```
 
-Para imprimir el valor de la variable `c` , puede usar la `printf()` . Tenga en cuenta el `%d` encerrado en las comillas dobles. Esto le indica a la computadora a esperar un valor ecimal **d,** y que es después de la coma.
+Para imprimir el valor de la variable `c` , puede usar la `printf()` . Tenga en cuenta el `%d` encerrado en las comillas dobles. Esto le indica al ordenador a esperar un valor ecimal **d,** y que es después de la coma.
 
 ```C
 printf("%d %d \n", a, b); 
