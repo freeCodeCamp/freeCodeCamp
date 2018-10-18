@@ -9,8 +9,8 @@ In this section, we explore the various hardware components of modern computers.
 
 ### Central Processing Unit (CPU)
 A Central Processing Unit (CPU) is the electronic circuitry within a computer that carries out the instructions of a computer program by performing the basic arithmetic, logical, control and input/output (I/O) operations specified by the instructions.
-  
-![Intel Core i7](http://ecx.images-amazon.com/images/I/51MOTjmtg2L.jpg)
+
+![Intel Core i5 - Front](https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Intel_i5-2500.jpg/247px-Intel_i5-2500.jpg) ![Intel Core i5 - Back](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Intel_i5-3330%2C_bottom.jpg/240px-Intel_i5-3330%2C_bottom.jpg)
 
 ### Expansion Cards (eg. GPU)
 A graphics processing unit (GPU) is a specialized electronic circuit designed to rapidly manipulate and alter memory to accelerate the creation of images in a frame buffer intended for output to a display device.
