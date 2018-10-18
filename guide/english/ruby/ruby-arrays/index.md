@@ -41,7 +41,11 @@ You can check the last element of an array with the `last` method:
 mixed_array.last # true
 ```
 
-
+You can get the index of an element of an array with the `index` method:
+```ruby
+a = ["a", "b", "c"]
+a.index("b") # 1
+```
 
 #### More Information:
 <a href='https://ruby-doc.org/core-2.4.2/Array.html' target='_blank' rel='nofollow'>Ruby array documentation</a>
