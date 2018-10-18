@@ -23,3 +23,5 @@ componentWillMount() {
   console.log('Component being mounted');
 }
 ```
+
+##### Note: The ``` componentWillMount ``` Lifecycle method has been deprecated as of version 17, and does not work on later versions. [(Source)](https://reactjs.org/docs/react-component.html)
