@@ -28,6 +28,12 @@ Uma das maiores vantagens do Docker é que ele pode ser usado por uma equipe que
 curl -fsSL https://get.docker.com -o get-docker.sh 
  sh get-docker.sh 
 ```
+### Alguns comandos
+
+* Procurar uma imagem: docker search ubuntu
+* Descarregar a imagem para utilizar: docker pull ubuntu
+* Criar um container: docker run ubuntu
+* Criar um container e entrar no terminal: docker run -it ubuntu /bin/bash
 
 #### Mais Informações:
 
