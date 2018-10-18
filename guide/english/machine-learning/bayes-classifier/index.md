@@ -6,9 +6,9 @@ Bayes Classifier is based on applying Bayes Theorem to update its belief on the 
 
 ![Bayes Theorem](https://github.com/Cheungo/bayes_theorem_image/blob/master/CodeCogsEqn.gif?raw=true)
 
-Bayes Theorem allows you to compute the probability of B given A, provided you have probabilities for A given B, A, and B.
+Bayes Theorem allows you to compute the probability of B given A, provided you have probabilities for A given B, A, and B. Here, P(B|A) is known as the posterior probability.
 
-Bayes Classifier models uncertainty by keeping probabilities for each of the possible scenarios. As more information becomes available, the probabilities are updated to more accurately reflect what is now known about the given situation. 
+Bayes Classifier models uncertainty by keeping probabilities for each of the possible scenarios. As more information becomes available, the probabilities are updated to more accurately reflect what is now known about the given situation. Bayes classifier chooses the class that has the highest posterior probability.
 
 #### Suggested Reading:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
