@@ -8,5 +8,5 @@ Canvas is a technology introduced in HTML5 which can be accessed by the `<canvas
 #### More Information:
 
 - [MDN Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
-
+- [HTML5 Canvas](https://www.w3schools.com/html/html5_canvas.asp)
 
