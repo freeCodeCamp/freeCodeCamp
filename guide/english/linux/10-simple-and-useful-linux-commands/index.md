@@ -1,7 +1,7 @@
 ---
-title: 10 Simple and Useful Linux Commands
+title:  Simple and Useful Linux Commands
 ---
-# 10 Simple and Useful Linux Commands
+#  Simple and Useful Linux Commands
 The commands listed here are basic, and will help you get started quickly. But they’re also powerful, and they’ll continue to be useful as your Linux expertise expands.
 1. `echo` This takes the text you give it and sends it somewhere—back to the screen, to a file, or to another command. By default it echoes back to the screen, unless used with redirection `>` 
 Example: `echo "hello!"`
@@ -52,6 +52,12 @@ more command allows quickly view file and shows details in percentage. You can p
 
 10. `cp` Command
 Copy file from source to destination preserving same mode.
+
+11. Sometimes showing some sort of videos to friends is embarassing when no sound is reaching to them due to lesser max. volume                             of your PC. Well that sort of thing could be solved by a single sort of code as below:
+    pactl -- set-sink-volume 0 150%                   (it sets volume to maximum level of 150%)
+    W A R N I N G :-
+    It could be anything in place 150. So, be careful to put the limit, it might damage the quality of your speaker/earphones.
+    
 
 Here are the list of commands frequently used by adiminstrator.
 This is not a complete but it’s a compact list of commands to refer when needed. 
