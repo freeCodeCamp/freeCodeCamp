@@ -11,5 +11,7 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+http://telescript.denayer.wenk.be/~hcr/cn/idoceo/tcp_header.html
+https://en.wikipedia.org/wiki/Transmission_Control_Protocol
 
 
