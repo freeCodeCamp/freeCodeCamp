@@ -35,7 +35,7 @@ You can also make your comments more readable by stylizing it.
 * A paragraph where I give informations
 * about everything that someone who reads the code
 * but didn't write it would need to know.
-* The asterisk around the paragraph make it more readable.
+* The asterisk around the paragraph makes it more readable.
 ***
 */
 
