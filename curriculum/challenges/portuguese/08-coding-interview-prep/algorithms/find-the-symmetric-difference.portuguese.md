@@ -75,6 +75,6 @@ sym([1, 2, 3], [5, 2, 1, 4]);
 <section id='solution'>
 
 ```js
-// solution required
+// Solução obrigatória
 ```
 </section>
