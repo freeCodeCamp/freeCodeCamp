@@ -28,7 +28,7 @@ Sorting algorithms can be categorized based on the following parameters:
 
 1. Based on Number of Swaps or Inversion
 This is the number of times the algorithm swaps elements to sort the input. `Selection Sort` requires the minimum number of swaps.
-it has a time complexity of O(n^2).
+it has a time complexity of `O(n^2)`.
 
 2. Based on Number of Comparisons
 This is the number of times the algorithm compares elements to sort the input. Using <a href='https://guide.freecodecamp.org/computer-science/notation/big-o-notation/' target='_blank' rel='nofollow'>Big-O notation</a>, the sorting algorithm examples listed above require at least `O(nlogn)` comparisons in the best case and `O(n^2)` comparisons in the worst case for most of the outputs.
