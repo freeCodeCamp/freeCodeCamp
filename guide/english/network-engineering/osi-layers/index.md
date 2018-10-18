@@ -17,6 +17,8 @@ As in the figure below the model divides the network into **7 layers**. Data com
 
 We go for a layered approach because it is easy to design independent layers with dedicated functions which interact with each other as compared to a single complex model.
 
+The model is a product of the Open Systems Interconnection project at the International Organization for Standardization (ISO), maintained by the identification ISO/IEC 7498-1.
+
 ![Relationship between sender, intermediate nodes, and receiver across multiple layers](https://user-images.githubusercontent.com/16820612/33828192-2773b920-de91-11e7-8804-08dbfaf0143a.jpg)
 
 ### **Important Observations**
