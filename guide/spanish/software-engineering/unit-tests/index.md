@@ -4,7 +4,7 @@ localeTitle: Pruebas unitarias
 ---
 ## Pruebas unitarias
 
-La prueba de unidad es un tipo de prueba que se encuentra en la parte inferior de la pirámide de pruebas de software. Implica dividir la base de código en partes más pequeñas (o unidades) y probar a aquellos en aislamiento. Dependiendo del tipo de lenguaje de programación (o paradigma), estos pueden ser contra cualquier cosa que defina como una unidad, aunque la práctica más común es contra funciones.
+La prueba de unidad es un tipo de prueba que se encuentra en la parte inferior de la pirámide de pruebas de software. Implica dividir la base de código en partes más pequeñas (o unidades) y probar a aquellos en aislamiento. Dependiendo del tipo de lenguaje de programación (o paradigma), estos pueden ser contra cualquier cosa que defina como una unidad, aunque la práctica más común es contra funciones. La unidad se puede definir como el parte mas pequeño en tu código.
 
 ### ¿Por que hacerlo?
 
