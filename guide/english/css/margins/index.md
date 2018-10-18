@@ -42,6 +42,18 @@ The margin property in CSS defines the outermost portion of the box model, creat
 ## Collapsing margins
 Vertical margins on different elements that touch each other (thus have no content, padding, or borders separating them) will collapse, forming a single margin that is equal to the greater of the adjoining margins. This does not happen on horizontal margins (left and right), only vertical (top and bottom).
 
+## Centering an element using margin
+An element can be aligned to the center by making it a block element and changing the values of the left and right margins to auto.
+
+```css
+.c-pos {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+```
+
+
 ## Browser Support
 It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)
 
