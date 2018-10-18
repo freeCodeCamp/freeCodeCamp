@@ -3,7 +3,7 @@ title: Photoshop
 ---
 ## Photoshop
 
-Adobe Photoshop is a raster(pixel) based image editing software that is used by a wide arrange of content creators for graphic/photograph creation and editing. Developers or designers typically use Photoshop to create or modify assets and photographs for websites.  Some developers also use photoshop for website designs and mockups, but other tools such as Adobe Experience Design and Sketch are becoming more commonly used.  Adobe Photoshop is available for both Windows and Mac, but currently not Linux.
+Adobe Photoshop CC 2017 is a raster(pixel) based image editing software that is used by a wide arrange of content creators for graphic/photograph creation and editing. Developers or designers typically use Photoshop to create or modify assets and photographs for websites.  Some developers also use photoshop for website designs and mockups, but other tools such as Adobe Experience Design and Sketch are becoming more commonly used.  Adobe Photoshop is available for both Windows and Mac, but currently not Linux.
 
 A common thing a developer could do in photoshop, is modify the pixel size and resolution (72dpi for web) of an image for proper web use and modify images to have transparent backgrounds (using filetypes .gif, and .png). It is a common practice to reduce the size of an image to be the largest that it will need to be used for on a website.  This reduces server space and loading times and Photoshop is a tool to achieve this.  
 
