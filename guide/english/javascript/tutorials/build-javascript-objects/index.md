@@ -1,7 +1,7 @@
 ---
 title: Build JavaScript Objects
 ---
-Objects are useful for storing data in a structured way, and can be used to represent real world objects, like a cars or hotel to a computer. 
+Objects are useful for storing data in a structured way, and can be used to represent real world objects, like cars or hotels to a computer. 
 
 Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties. There are two ways main to create objects: the Object Literal and the Constructor way.
 
