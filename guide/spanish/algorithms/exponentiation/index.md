@@ -1,10 +1,10 @@
 ---
 title: Exponentiation
-localeTitle: Exposiciónción
+localeTitle: Exposiciación
 ---
-## Exposiciónción
+## Exposiciación
 
-Dados dos enteros a y n, escribe una función para calcular a ^ n.
+Dados dos enteros 'a' y 'n', escribe una función para calcular 'a' elevado a 'n'.
 
 #### Código
 
@@ -38,9 +38,9 @@ int power(int x, unsigned int y) {
  } 
 ```
 
-## Exponentiación modular
+## Exponenciación modular
 
-Dados tres números x, yyp, calculamos (x ^ y)% p
+Dados tres números 'x', 'y' y 'p', calculamos (x ^ y)% p
 
 ```C
 int power(int x, unsigned int y, int p) { 
