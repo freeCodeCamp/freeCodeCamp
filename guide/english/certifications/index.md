@@ -28,3 +28,6 @@ For more information about the new certification program, see the forum post [he
 
 A great way to test one's Android skills and certify that by none other than Google.
 The link to the certification and its details are [here](https://developers.google.com/training/certification/).
+
+### How can certifications help a developer??
+Even though skills matters much more than certifications,in some cases we have to show a proof of work for our knowldge which can be done either by projects or certificates but certificates shows an effective way in doing that.
