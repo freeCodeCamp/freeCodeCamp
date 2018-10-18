@@ -26,3 +26,9 @@ _JavaScript: Info_ Uma coleção de artigos cobrindo o básico (linguagem centra
 
 *   [Conectados](https://javascript.info/)
 *   [E-book](https://javascript.info/ebook)
+
+_JavaScript and JQuery: Interactive Front-End Web Development 1st Edition_
+Você é novo no JavaScript? Ou você adicionou scripts à sua página da Web, mas quer ter uma ideia melhor de como eles funcionam? Então este livro é para você.
+
+*   [Website](http://javascriptbook.com/)
+*   [Amazon Brasil](https://www.amazon.com.br/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118871650/)
