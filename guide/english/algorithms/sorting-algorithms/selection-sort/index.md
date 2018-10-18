@@ -21,16 +21,16 @@ But, how would you write the code for finding the index of the second smallest v
 ### Implementation in C/C++
 
 ```C
-for(int i = 0; i < n; i++)
+for(int i = 0; i < n-1; i++)
 {
 	int min_index = i;
-	int min_element = a[i];
+	
 	
 	for(int j = i +1; j < n; j++)
 	{
-		if(a[j] < min_element)
+		if(a[j] < a[min_index])
 		{
-			min_element = a[j];
+			
 			min_index = j;
 		}
 	}
