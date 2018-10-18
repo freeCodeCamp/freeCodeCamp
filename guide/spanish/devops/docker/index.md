@@ -1,12 +1,12 @@
 ---
 title: Docker
-localeTitle: Estibador
+localeTitle: Docker
 ---
-## Estibador
+## Docker
 
-Docker es un proyecto de código abierto basado en contenedores de Linux. Utiliza las características del kernel de Linux, como los espacios de nombres y los grupos de control, para crear contenedores sobre un sistema operativo.
+Docker (literalmente "Estibador") es un proyecto de código abierto basado en contenedores de Linux. Utiliza las características del kernel de Linux, como los espacios de nombres y los grupos de control, para crear contenedores sobre el sistema operativo.
 
-Docker usa contenedores (una instancia de tiempo de ejecución de una imagen) para crear entornos que pueden construir, enviar y ejecutar aplicaciones fácilmente. El principal beneficio es que los contenedores Docker se ejecutan completamente aislados del entorno del host de forma predeterminada, solo acceden a los archivos y puertos del host si están configurados para hacerlo. Esta es una excelente alternativa a las máquinas virutales (VM) que a menudo requieren muchos recursos. La imagen de disco y el estado de la aplicación de las máquinas virtuales son un enredo de la configuración del sistema operativo, las dependencias instaladas en el sistema, los parches de seguridad del sistema operativo y otros elementos efímeros fáciles de perder y difíciles de replicar.
+Docker usa contenedores (una instancia de tiempo de ejecución de una imagen) para crear entornos que pueden construir, desplegar y ejecutar aplicaciones fácilmente. El principal beneficio es que los contenedores Docker se ejecutan completamente aislados del entorno del host de forma predeterminada, solo acceden a los archivos y puertos del host si están configurados para hacerlo. Esta es una excelente alternativa a las máquinas virutales (VM) que a menudo requieren muchos recursos. La imagen de disco y el estado de la aplicación de las máquinas virtuales son complicadas por la configuración del sistema operativo, las dependencias instaladas en el sistema, los parches de seguridad del sistema operativo y otros elementos efímeros fáciles de perder y difíciles de replicar.
 
 Docker es un programa informático que realiza la virtualización a nivel de sistema operativo, también conocido como "contenedorización".
 
@@ -14,12 +14,12 @@ Docker es una plataforma para desarrolladores y administradores de sistemas para
 
 La contenedorización es cada vez más popular porque los contenedores son:
 
-*   Flexible: Incluso las aplicaciones más complejas se pueden contener en contenedores.
-*   Ligero: los contenedores aprovechan y comparten el núcleo del host.
-*   Intercambiable: puede implementar actualizaciones y actualizaciones sobre la marcha.
-*   Portátil: puede construir localmente, desplegar en la nube y ejecutar en cualquier lugar.
-*   Escalable: puede aumentar y distribuir automáticamente réplicas de contenedor.
-*   Apilable: puede apilar servicios verticalmente y sobre la marcha.
+*   Flexibles: Incluso las aplicaciones más complejas se pueden contener en contenedores.
+*   Ligeros: los contenedores aprovechan y comparten el núcleo del host.
+*   Intercambiables: pueden implementar actualizaciones y subidas de versión sobre la marcha.
+*   Portátiles: pueden construirse localmente, desplegarse en la nube y ejecutarse en cualquier lugar.
+*   Escalables: pueden aumentar y distribuir automáticamente réplicas de contenedor.
+*   Apilables: pueden apilar servicios verticalmente y sobre la marcha.
 
 Instalacion para [Mac](https://docs.docker.com/docker-for-mac/install/)
 
@@ -31,9 +31,9 @@ _Todos estos enlaces son para Docker CE (Community Edition)_
 
 * * *
 
-## Versión de prueba Docker
+## Comprobar la Versión de Docker
 
-Para probar si la aplicación salió bien, ejecute:
+Para probar si la aplicación se instaló bien, ejecuta:
 ```
 docker --version 
 ```
@@ -45,9 +45,9 @@ Docker version 18.06.1-ce, build e68fc7a
 
 * * *
 
-## Instalación de prueba Docker
+## Prueba de la Instalación de Docker
 
-Compruebe que su instalación funciona ejecutando la imagen simple de Docker, hello-world:
+Compruebe que su instalación funciona correctamente ejecutando la imagen más simple de Docker, hello-world:
 ```
 docker run hello-world 
  
@@ -68,17 +68,17 @@ En pocas palabras, no es más que el empaquetado de un proceso / aplicación y s
 
 ### ¿Por qué necesitamos a Docker?
 
-Hace que la vida de los ingenieros de software sea muy fluida, ya que siempre funcionarán en el mismo entorno de desarrollo. Ayuda a compartir el producto final con los clientes / otros equipos sin preocuparse por los problemas del entorno. Reduce la cantidad de hardware que necesitamos para ejecutar nuestras aplicaciones al no desperdiciarlas en una capa de SO innecesaria.
+Hace que la vida de los ingenieros de software sea más cómoda, ya que siempre trabajarán en el mismo entorno de desarrollo. Ayuda a compartir el producto final con los clientes / otros equipos sin preocuparse por los problemas del entorno. Reduce la cantidad de hardware que necesitamos para ejecutar nuestras aplicaciones al no desperdiciarlo en una capa de SO innecesaria.
 
 ## Conceptos Fundamentales de Docker
 
 ### Docker Engine
 
-El motor Docker es la capa en la que Docker se ejecuta. Es un motor de ejecución y herramientas ligero que administra contenedores, imágenes, compilaciones y más. Se ejecuta de forma nativa en sistemas Linux y se compone de:
+El motor Docker es la capa en la que Docker se ejecuta. Es un motor de ejecución ligero y herramientas para administrar contenedores, imágenes, compilaciones y más. Se ejecuta de forma nativa en sistemas Linux y se compone de:
 
 1.  Un Docker Daemon que se ejecuta en la computadora host.
     
-2.  Un cliente de Docker que luego se comunica con el demonio de Docker para ejecutar comandos.
+2.  Un cliente de Docker que se comunica con el demonio de Docker para ejecutar comandos.
     
 3.  Una API REST para interactuar con el Docker Daemon de forma remota.
     
@@ -93,7 +93,7 @@ El demonio de Docker es lo que realmente ejecuta los comandos enviados al client
 
 ### Dockerfile
 
-Un Dockerfile es donde escribes las instrucciones para construir una imagen de Docker. Estas instrucciones pueden ser: **Ejecute apt-get y install some-package** : para instalar un paquete de software **EXPONER 8000** : exponer un puerto **ENV ANT\_HOME / usr / local / apache-ant** para pasar una variable de entorno y así sucesivamente. Una vez que haya configurado su Dockerfile, puede usar el comando de construcción de la ventana acoplable para construir una imagen a partir de él. Aquí hay un ejemplo de un Dockerfile:
+Un Dockerfile es donde escribes las instrucciones para construir una imagen de Docker. Estas instrucciones pueden ser: **Ejecute apt-get y install some-package** : para instalar un paquete de software **EXPONER 8000** : exponer un puerto **ENV ANT\_HOME / usr / local / apache-ant** para pasar una variable de entorno y así sucesivamente. Una vez que haya configurado su Dockerfile, puede usar el comando de construcción de Docker para construir una imagen a partir de él. Aquí hay un ejemplo de un Dockerfile:
 ```
 # Start with ubuntu 14.04 
  FROM ubuntu:14.04 
