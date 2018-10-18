@@ -105,6 +105,13 @@ int factorial (int n)
     return (n * factorial (n -1));
 }   
 ```
+<!-- Some minor additional info on Recursion -MR -->
+The recursion continues until some condition is met to prevent it.
+To prevent infinite recursion, an if...else statement or similar approach can be used where one branch makes the recursive call and the other doesn't.
+
+Recursion makes program more elegant and clean. All algorithms can be defined recursively, which makes it easier to visualize and prove. 
+If the speed of the program is important then you may not want to use recursion as it uses more memory and can slow the program down.
+
 
 # Before you go on...
 ## A review
