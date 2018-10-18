@@ -85,7 +85,7 @@ The two base cases for recursion would be:
 * Item is found
 
 The Power of Binary Search in Data Systems (B+ trees):
-Binary Search Trees are very powerful because of their O(log n) search times, second to the hashmap data structure which uses a hasing key to search for data in O(1). It is important to understand how the log n run time comes from the height of a binary search tree. If each node splits into two nodes, (binary), then the depth of the tree is log n (base 2).. In order to improve this speed in Data System, we use B+ trees because they have a larger branching factor, and therefore more height. I hope this short article helps expand your mind about how binary search is used in practical systems.
+Binary Search Trees are very powerful because of their O(log n) search times, second to the hashmap data structure which uses a hashing key to search for data in O(1). It is important to understand how the log n run time comes from the height of a binary search tree. If each node splits into two nodes, (binary), then the depth of the tree is log n (base 2).. In order to improve this speed in Data System, we use B+ trees because they have a larger branching factor, and therefore more height. I hope this short article helps expand your mind about how binary search is used in practical systems.
 
 The code for recursive binary search is shown below:
 
@@ -165,7 +165,7 @@ end
 ```C
 int binarySearch(int a[], int l, int r, int x) { 
    if (r >= l){ 
-        int mid = l + (r - l)/2; 
+        int mid = (l + (r - l))/2; 
         if (a[mid] == x)   
             return mid; 
         if (arr[mid] > x)  
@@ -176,28 +176,12 @@ int binarySearch(int a[], int l, int r, int x) {
 } 
 ```
 
-### C/C++ implementation
-
-```C++
-int binary_search(int arr[], int l, int r, int target) 
-{ 
-   while (r >= l) 
-   { 
-        int mid = l + (r - l)/2; 
-        if (arr[mid] == target)   
-            return mid; 
-        if (arr[mid] > target) r = mid - 1;
-        else l = mid + 1; 
-   } 
-   return -1; 
-}
-```
 ### Python implementation
 
 ```Python
 def binary_search(arr, l, r, target):
     if r >= l:
-        mid = l + (r - l)/2
+        mid = (l + (r - l))/2
         if arr[mid] == target:
             return mid
         elif arr[mid] > target:
@@ -210,42 +194,6 @@ def binary_search(arr, l, r, target):
 
 ### Example in C++
 
-```c++
-// Binary Search using iteration
-int binary_search(int arr[], int beg, int end, int num)
-{
-	while(beg <= end){
-		int mid = (beg + end) / 2;
-		if(arr[mid] == num)
-			return mid;
-		else if(arr[mid] < num)
-			beg = mid + 1;
-		else
-			end = mid - 1;
-	}
-	return -1;
-}
-```
-
-```c++
-// Binary Search using recursion
-int binary_search(int arr[], int beg, int end, int num)
-{
-	if(beg <= end){
-	    int mid = (beg + end) / 2;
-		if(arr[mid] == num)
-			return mid;
-		else if(arr[mid] < num)
-			return binary_search(arr, mid + 1, end, num);
-		else
-			return binary_search(arr, beg, mid - 1, num);
-	}
-	return -1;
-}
-```
-
-### Example in C++
-
 Recursive approach!
 
 ```C++ - Recursive approach
@@ -253,7 +201,7 @@ int binarySearch(int arr[], int start, int end, int x)
 { 
    if (end >= start) 
    { 
-        int mid = start + (end - start)/2; 
+        int mid = (start + (end - start))/2; 
         if (arr[mid] == x)   
             return mid; 
 
@@ -273,7 +221,7 @@ int binarySearch(int arr[], int start, int end, int x)
 { 
     while (start <= end) 
     { 
-        int mid = start + (end - start)/2; 
+        int mid = (start + (end - start))/2; 
         if (arr[mid] == x) 
             return mid; 
         if (arr[mid] < x) 
@@ -325,14 +273,18 @@ int binarySearch(int[] arr, int start, int end, int element)
 // Recursive Approach in Java
 int binarySearch(int[] arr, int start,int end , int element)
 {
-    int mid = ( start + end ) / 2;
-    if(arr[mid] ==  element)
-        return mid;
-    if(arr[mid] < element)
-        return binarySearch( arr , mid + 1 , end , element );
-    else
-        return binarySearch( arr, start, mid - 1 , element);
-}
+    if(start <= end)
+    {
+        int mid = ( start + end ) / 2;
+        if(arr[mid] ==  element)
+                return mid;
+        if(arr[mid] < element)
+                return binarySearch( arr , mid + 1 , end , element );
+        else
+                return binarySearch( arr, start, mid - 1 , element);
+     }
+     return -1;
+ }
 
 ```
 
