@@ -4,7 +4,7 @@ title:  CSS3 Colors
 
 ## Colors
 
-CSS Colors is a CSS module that deals with colors, color types, color blending, and opacity. Not all CSS properties that take a <color> as a value are part of this module, but they do depend upon it. In CSS, you can change the color of almost any element in your HTML page. Properties like `background-color`, `color`, and `border-color` set the color of those elements.
+CSS Colors is a CSS module that deals with colors, color types, color blending, and opacity. Not all CSS properties that take a 'color' as a value are part of this module, but they do depend upon it. In CSS, the color of almost any element in an HTML page can be changed. Properties like `background-color`, `color`, and `border-color` set the color of those elements.
   
 CSS supports color names, hexadecimal and RGB colors.
 In addition to the introduction of the `opacity` declaration, colors in CSS3 can now be specified using color names, or RGB, HEX, HSL, RGBA, HSLA values.
@@ -45,7 +45,7 @@ Example colors:
   CMYK Blue: cmyk(100%, 100%, 0%, 0%)
 
 ### Hexcodes
-Hexcode, short for hexadecimal code, is a way to express a color value to your computer. It is named this way because 16 unique symbols can be used as values. In this case, the numbers 0 to 9 and letters a to f are used.
+Hexcode, short for hexadecimal code, is a way to express a color value that the computer understands. It is named this way because 16 unique symbols can be used as values. In this case, the numbers 0 to 9 and letters a to f are used.
 
 Hex codes are expressed in this format: #000000, which would be the color black in this instance. Six characters are used in each hexcode, using any of the 16 characters mentioned previously. These six characters are divided into three pairs of two.
 
@@ -79,7 +79,7 @@ body {
 ```
 
 In the above example, the `background-color: green` turns the `<body>` element green. This turns the whole web page green. The `<p>` elements are all white after `color: white` too.
-You can use named colors, like `green`, `blue`, `yellow`, `red`, `purple`, and many others. But for custom colors, you can use hex codes (`#147ACC`), RGB values (`rgb(20, 122, 204)`), and even HSL values (`hsl(145, 59%, 30%)`).
+Named colors, like `green`, `blue`, `yellow`, `red`, `purple`, and many others can be used. But for custom colors, hex codes (`#147ACC`), RGB values (`rgb(20, 122, 204)`), and even HSL values (`hsl(145, 59%, 30%)`).
 
 ```css
 p {
@@ -91,7 +91,7 @@ h2 {
 }
 ```
 
-You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and stil have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
+Alpha values and transparency can also be added to colors. Transparency allows text to be overlaid on an image and still have the image partially viewable through the text. It can be also used to change the shade of the colour, if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in the color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
 
 ```css
 body {
@@ -101,7 +101,7 @@ body {
 
 Above shows paragraphs styled bright orange and 20% transparent, h2 elements a salmon pink, and the body's background bright blue.
 
-To get custom colors to use in CSS, you might find a color picker helpful. Some text editors have built-in color pickers, like Visual Studio Code. If you search "color picker" on Google or DuckDuckGo, you will get a color picker that you can use. Google Chrome and Firefox also have color picker add-ons that you can install. Adobe Color CC not only helps you pick a color, but will also help you pick out a color scheme for your web page! It's a good idea to check that you have enough contrast between your text and background colors by using a tool like WebAIM's Color Contrast Checker.
+To create custom colors to use in CSS, a color picker is helpful. Some text editors have built-in color pickers, like Visual Studio Code. Alternatively, searching "color picker" on Google or DuckDuckGo provides even more choices. Google Chrome and Firefox also have color picker add-ons that can be installed. Adobe Color CC can assist in not only one color, but entire color schemes for a website. Be sure there is enough contrast between  text and background colors by using a tool like WebAIM's Color Contrast Checker.
 
 #### More Information:
 <a href="https://color.adobe.com/" target="_blank">Adobe Color CC</a><br>
