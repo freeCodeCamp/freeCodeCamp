@@ -16,9 +16,13 @@ type *var-name;
 int main(void){
     double my_double_variable = 10.1;
     double *my_pointer;
+    ..//Just  a declaration
 
     my_pointer = &my_double_variable;
-
+   ..// While using we don't use * with the name It wa just with name
+    ..//As * can also be used to unpack  value from a refernce 
+    ..// Which will be shown later ...
+    
     printf("value of my_double_variable: %f\n", my_double_variable);
 
     ++my_double_variable;
@@ -36,7 +40,7 @@ value of my_pointer: 11.100000
 
 In this code, there are two declarations. The first is a typical variable initialization which creates a `double` and sets it equal to 10.1. New in our declarations is the usage of `*`. The asterisk (`*`) is usually used for multiplication, but when we use it by placing it in front of a variable it tells C that this is a pointer variable.  
 
-The next line tells the compiler where that somewhere else actually is. By using `&` in this way, it becomes the 'dereferencing operator', and returns the memory location of the variable it's looking at.
+The next line tells the compiler where that somewhere else actually is. By using `&`(ampersand) in this way, it becomes the 'dereferencing operator', and returns the memory location of the variable it's looking at.
 
 With that in mind, let's take another look at this chunk of code:
 ```c
@@ -69,7 +73,7 @@ Notice that the `*` is required before each variable. This is because being a po
 The most common application of a pointer is in an array. Arrays, which you'll read about later, allow for a group of variables. You don't actually have to deal with `*` and `&` to use arrays, but that's what they're doing behind the scenes. A commonly used array is for strings. Since strings are not defined in C, they are simply created as a character array, commonly denoted by `char * stringName;`
 
 ### Functions
-Sometimes you want to adjust the value of a variable inside of a function, but if you simply pass in your variable by-value, the function will work with a copy of your variable instead of the variable itself. If, instead, you pass in the pointer pointing to the memory location of the variable, you can access and modify it from outside of its normal scope. This is because you are touching the original memory location itself, allowing you to adjust something in a function and having it make changes elsewhere. In contrast to "call by value", this is called "call by reference".
+Sometimes you want to adjust the value of a variable inside of a function, but if you simply pass in your variable by-value, the function will work with a copy of your variable instead of the variable itself. If, instead, you pass in the pointer pointing to the memory location of the variable, you can access and modify it from outside of its normal scope. This is because you are touching the original value at  memory location itself, allowing you to adjust something in a function and having it make changes elsewhere. In contrast to "call by value", this is called "call by reference".
 
 The following program swaps the values of two variables inside of the dedicated `swap` function. To achieve that, the variables are passed in by reference.
 
