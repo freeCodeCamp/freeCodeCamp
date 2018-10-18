@@ -1,7 +1,7 @@
 ---
 title: C++
 ---
-# Hello World! - Your First C++ Program
+## Hello World! - Your First C++ Program
 
 ## What is C++?
 
