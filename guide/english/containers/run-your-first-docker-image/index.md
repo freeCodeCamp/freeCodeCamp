@@ -3,7 +3,7 @@ title: Run Your First Docker Image
 ---
 ## Run Your First Docker Image
 
-After you are done setting up your computer and installig docker, you can simply test your Docker by running command:
+After you are done setting up your computer and installing docker, you can test your Docker installation by running the following command:
 
 ```shell
 $ docker run hello-world
@@ -17,13 +17,13 @@ Hello from Docker!
 This message shows that your installation appears to be working correctly.
 ...
 ```
-If you have no hello-world image locally Docker will automatically download it to your machine.
-You can list image that was downloaded or created to your machine by running command:
+If you have no `hello-world` image locally, Docker will automatically download it to your machine.
+You can list image that was downloaded or created to your machine by running the command:
 
 ```shell
 $ docker image ls
 ```
 
-More Information:
+#### More Information:
 
-test Docker installation <a href='https://docs.docker.com/get-started/#test-docker-installation' target='_blank' rel='nofollow'>documentation</a>.
+Docker installation <a href='https://docs.docker.com/get-started/#test-docker-installation' target='_blank' rel='nofollow'>documentation</a>.
