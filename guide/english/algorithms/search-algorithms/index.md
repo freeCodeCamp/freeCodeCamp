@@ -18,3 +18,6 @@ In the following links you can also find more information about:
 * MIT OCW Introduction to search <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-01sc-introduction-to-electrical-engineering-and-computer-science-i-spring-2011/unit-4-probability-and-planning/search-algorithms/">search</a> algorithms.
 * Princeton University: <a href="https://introcs.cs.princeton.edu/java/42sort/">Sorting and Searching.</a>
 * The anatomy of a search engine <a href="http://infolab.stanford.edu/~backrub/google.html">(Google).</a>
+
+[Interactive Search Algorithm](https://www.advanced-ict.info/interactive/searching.html)
+This is an interactive page that demonstrates how linear and binary search algorthims operate.
