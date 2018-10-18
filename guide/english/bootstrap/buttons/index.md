@@ -91,3 +91,15 @@ _Note: Do not include the dot in the HTML Class Attribute, referring to the clas
 * <a href='https://getbootstrap.com/docs/4.0/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
 * <a href='http://getbootstrap.com/docs/4.0/components/button-group/' target='_blank' rel='nofollow'>Bootstrap Button Group documentation</a>
 * [Bootstrap Get Started](/articles/bootstrap/bootstrap-get-started)
+
+
+### Bootstrap Modals :
+Modals are the best with bootstrap.  Build them with CSS, JS, and HTML.  You may need to use some custom JS because of HTML5 restrictions.  Use buttons and classes with pre word of modal --- like modal-content or modal-body, etc!
+
+Ex:
+$('bestModal').on('show.bs.modal, function() {
+  $('#bestInputNameEver').trigger('focus')
+})
+
+#### More information :
+* <a href="https://getbootstrap.com/docs/4.0/components/modal/" target='_blank'>Bootstrap Modal Documentation</a>
