@@ -48,6 +48,9 @@ Line-by-Line Explanation of the above CODE:
 9. Since the variable days is equal to 1 which is less than 7 so the while loop is executed again.
 10. It goes on again and again and when the console prints 'Today is Sunday' the variable days is now equal to 7 and the while loop stops executing. 
 
+#### Caution:
+You can create infinite loops using while statements. They are at best irritating but could have unintended performance consequences.  
+
 #### More Information:
 
 - <a href='https://docs.python.org/3/reference/compound_stmts.html#the-while-statement' target='_blank' rel='nofollow'>Python `while` statement documentation</a>
