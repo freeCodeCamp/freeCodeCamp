@@ -3,9 +3,9 @@ title: The Distance Formula
 ---
 ## The Distance Formula
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/the-distance-formula/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+In three-dimensional Cartesian space, each point has three unique coordinates.
+<img src='https://slideplayer.com/slide/5027673/16/images/3/Theorem+Distance+Formula+in+Space.jpg'>
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
