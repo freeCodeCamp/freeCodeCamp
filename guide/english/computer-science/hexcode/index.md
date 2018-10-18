@@ -84,3 +84,5 @@ For now, use of the standard `rgba()` function is the recommended way to add an 
 * [More information on color values in CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value)
 * [CSS color property on the MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
 * [Explore different Hex colors](http://www.colorhexa.com/)
+* Even the some of the newest digital production printers use hex for setup.
+
