@@ -3,7 +3,7 @@
 title: Blender
 ---
 
-#Blender
+![Blender Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Logo_Blender.svg/2000px-Logo_Blender.svg.png "Logo Title Text 1")
 
 Blender is a free and open source 3D creation suite. It's used for modeling, creating photorealistic renders, simulation, model sculpting, architecture models, compositing, character design, animation, rigging, level design, 2D rendered scenes, motion graphics, game development, VFX, video editing and even much more!
 
