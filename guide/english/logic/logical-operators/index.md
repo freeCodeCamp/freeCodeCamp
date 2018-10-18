@@ -37,6 +37,8 @@ Returns the opposite value. Ex. if A is true, then !A is false, and if A is fals
 **XOR ("eXclusive or")** </br>
 Is known as **exclusive or**. Similar to OR, but returns False if both A and B are true. That is, XOR returns true if one and only one of A or B is True.
 
+Note: Xor is unique among the logical operators because by combining several together you can form all of the other logical operators using only Xor.
+
 | A | B |XOR(A,B)|
 |---|---|---|
 |  f| t | t |
