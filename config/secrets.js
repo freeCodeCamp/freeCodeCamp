@@ -51,3 +51,5 @@ module.exports = {
     secret: process.env.STRIPE_SECRET
   }
 };
+// html example
+<span>&#9786;</span>
