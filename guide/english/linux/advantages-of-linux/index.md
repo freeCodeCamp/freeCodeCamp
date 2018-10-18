@@ -48,3 +48,5 @@ Linux allows user to change desktop design and themes, add widgets and more. The
 ## It's Free.
 
 Hard to beat that!
+## It's safer.
+Linux distributions have broadly two types of users, namely ROOT and NON-ROOT. There could be only 1 root user but multiple non-root users. Root users have the permission to do any modification (de-modification too!!!) to the system without the use of password (once asked while logging in). In case of non-root users they require permission from the root users to do any activity which could affect the system. So, browsing with non-root user is safe as just by clicking some sort of malicious links, it can't be installed and affect the system without the permission from root user.
