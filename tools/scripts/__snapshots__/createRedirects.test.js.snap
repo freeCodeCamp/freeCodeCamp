@@ -43,3 +43,5 @@ exports[`createRedirects matches the snapshot 1`] = `
 
 "
 `;
+// html example
+<span>&#9786;</span>
