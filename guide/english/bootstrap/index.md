@@ -83,3 +83,4 @@ themes that build on the Bootstrap framework to provide a more customized and st
 [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
 [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
 [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)
+[Some themes and snippets resources for Bootstrap](https://startbootstrap.com/bootstrap-resources)
