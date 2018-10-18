@@ -1,0 +1,12 @@
+Blockchain protocols rely on a variety of consensus algorithms or proofs to verify transactions and generate new blocks to be appended to the blockchain. The main design purpose of the proof is to overcome the Double Spend issue; where cryptocurrencies generated are not spent more than once. 
+
+Some of the common proofs or consensus algorithms are:
+
+### 1. Proof of Work (PoW) ###
+The Bitcoin network relies on the Proof of Work algorithm to validate and append blocks to the Bitcoin blockchain. It relies on a P2P network of highly specialised computing devices, miners or mining rigs, to compete in the 'lottery' to solve computationally complex calculations to win the right to generate new blocks for the blockchain. In return for winning the successful attempts, these miners are rewarded with Bitcoins. This consensus algorithm is robust and has worked without fault for almost 10 years. However, the transaction throught is low; about 420 transactions per minute and requires very high amounts of electrical energy to power the mining rigs.
+
+### 2. Proof of Stake (PoS) ###
+The Proof of Stake algorithm, does not require the use of specialised computational equipment and massive amounts of electricity to validate each blockchain transaction. It relies on the value of the stake of cryptocurrencies held or locked up to validate transactions. There are also variations of this algorithm: the Delegated Proof of Stake (dPoS) and Proof of Stake Anonymous (PoSA). The Ethereum network is migrating from the PoW algorithm to the PoS algorithm with the Casper fork.
+
+Reference:
+1. [Basic Primer: Blockchain Consensus Protocol](https://blockgeeks.com/guides/blockchain-consensus/)
