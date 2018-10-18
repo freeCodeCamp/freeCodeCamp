@@ -118,12 +118,12 @@ void copy_string(char [] first_string, char [] second_string)
 ```C
 strcat(first, second);
 ```
-Here is an example of manual implementation of fuction strcat:
+Here is an example of manual implementation of function strcat:
 
 void string_concatenate(char [] s1, char [] s2)
 {
     int i = strlen(s1), j;
-    for(int j = 0; s2[j]; j++, i += 1)
+    for(j = 0; s2[j]; j++, i += 1)
     {
         s1[i] = s2[j];
     }
@@ -140,7 +140,7 @@ int string_length(char [] string)
 {
     int i;
     
-    for(int i = 0; string[i]; i++);
+    for(i = 0; string[i]; i++);
     
     return i;
 }
