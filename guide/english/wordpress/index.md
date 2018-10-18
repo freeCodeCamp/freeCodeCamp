@@ -17,6 +17,9 @@ Just to a few advantages of WordPress:
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
+## WordPress.org vs. WordPress.com
+
+The free and open-source version of wordpress is found at [https://wordpress.org] (https://wordpress.org) and must be self-hosted on a server or local development machine. This is also the version of WordPress that is frequently available as a simple installation through cPanel on the majority of hosting providers. Meanwhile, a hosted version of WordPress is available [https://wordpress.com](https://wordpress.com), but this is not an open-source version. Users of the WordPress.com site may need to pay subscription fees to access many of the features and benefits of the open-source WordPress.
 
 ### More Information
 
