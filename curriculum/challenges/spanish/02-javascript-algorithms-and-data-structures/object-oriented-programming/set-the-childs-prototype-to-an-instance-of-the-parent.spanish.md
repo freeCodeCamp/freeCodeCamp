@@ -41,11 +41,11 @@ Animal.prototype = {
 
 function Dog() { }
 
-// Add your code below this line
+// Agrega tu codigo por debajo de esta linea
 
 
 let beagle = new Dog();
-beagle.eat();  // Should print "nom nom nom"
+beagle.eat();  // Debería imprimir "nom nom nom"
 
 ```
 
@@ -59,6 +59,6 @@ beagle.eat();  // Should print "nom nom nom"
 <section id='solution'>
 
 ```js
-// solution required
+// Solución requerida.
 ```
 </section>
