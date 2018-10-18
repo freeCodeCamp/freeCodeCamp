@@ -3,8 +3,22 @@ title: Add Gaps Faster with grid-gap
 ---
 ## Add Gaps Faster with grid-gap
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/add-gaps-faster-with-grid-gap/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In this challenge you are required to use "grid-gap" to define a row gap and a column gap.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+You can define the gap for the row and column by declaring the following in the .container CSS codeblock:
+
+````css
+grid-gap: 'row-gap' 'column-gap';
+````
+
+and inserting the desired parameters for 'row-gap' and 'column-gap'.
+
+### Solution
+
+Since the challenge requires you to create a 10px gap between the rows and a 20px gap between the columns, add the following code to the .container CSS codeblock:
+
+````css
+grid-gap: 10px 20px;
+````
