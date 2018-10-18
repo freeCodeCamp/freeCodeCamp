@@ -20,6 +20,8 @@ Un buen comienzo es el currículum de freeCodeCamp [Introducción a Basic CSS](h
 
 Otra sugerencia para los principiantes es que W3C [Comenzando con HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) enseña cómo crear una hoja de estilo.
 
+Una completa guia y referencia puede ser encontrada en [w3schools.com](https://www.w3schools.com/css/default.asp).
+
 El sitio [CSS Zen Garden](http://www.csszengarden.com/) es un gran ejemplo de cómo se puede diseñar el mismo html para que parezca totalmente único.
 
 Para una demostración del poder de CSS, echa un vistazo a [Species In Pieces](http://species-in-pieces.com/#) .
