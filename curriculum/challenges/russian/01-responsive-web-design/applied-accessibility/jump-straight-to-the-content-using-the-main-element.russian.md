@@ -20,7 +20,7 @@ tests:
   - text: В вашем коде должен быть один <code>main</code> тег.
     testString: 'assert($("main").length == 1, "В вашем коде должен быть один <code>main</code> тег.");'
   - text: <code>main</code> теги должны быть между закрывающем тегом <code>header</code> и открывающим тегом <code>footer</code>.
-    testString: 'assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi), "The <code>main</code> теги должны быть между закрывающем тегом <code>header</code> и открывающим тегом <code>footer</code>.");'
+    testString: 'assert(code.match(/<\/header>\s*?<main>\s*?<\/main>/gi), "<code>main</code> теги должны быть между закрывающем тегом <code>header</code> и открывающим тегом <code>footer</code>.");'
 
 ```
 
