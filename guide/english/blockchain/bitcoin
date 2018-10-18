@@ -1,0 +1,10 @@
+The Bitcoin network is the world's first public blockchain database. It's design was described in a whitepaper published by a person or group of people using the moniker, Satoshi Nakamoto, in October 2008. This happened in the wake of the Global Financial Crisis. See Reference 1 below for details. Satoshi announced the release of the whitepaper in an online crypto mailing list with the following remark and a link to a 9-page document that led to a disruptive innovation:
+
+### “I’ve been working on a new electronic cash system that’s fully peer-to-peer, with no trusted third party.” ###
+
+Satoshi initiatd the database when version 0.1 of the source code was released on 09 January 2009 in Sourceforge. Bitcoin was the first open source peer-to-peer (P2P) currency launched on the Internet. It is not controlled by a centralised authority and to-date has been resilient against any disruptions.  Often times it is seen as a threat to sovereign currencies and the international banking industry. It is simple in its design and works independently of any device, code version, exchange, wallet type or service provider. Bitcoin value transfers occur round the clock, every single day. No fees are incurred to receive Bitcoins; however fees may be incurred to send Bitcoins. The fees incurred to send Bitcoins are independent of the value of Bitcoins transfered. This facilitates global value transfers and can be accessed by people who are typically not served by traditional banks and other financial institutions. 
+
+The total number of Bitcoins (abbreviated to BTC) is limited by design to 21 million. Currently, due to the computationally complex process to generate Bitcoins by specialised devices, a huge amount of electricity is consumed. 
+
+References:
+1. [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf)
