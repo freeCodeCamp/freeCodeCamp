@@ -10,3 +10,4 @@ Extreme Programming (XP) recommends that all production code be written by two p
 - <a href='http://bit.ly/PS-PairProgramming' target='_blank' rel='nofollow'>Pair Programming Fundamentals (training course)</a>
 - <a href='https://www.versionone.com/agile-101/agile-software-programming-best-practices/pair-programming/' target='_blank' rel='nofollow'>Agile Software Programming Best Practices</a>
 
+update more information about pair programming.
