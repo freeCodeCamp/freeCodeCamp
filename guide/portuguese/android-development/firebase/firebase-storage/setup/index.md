@@ -44,7 +44,7 @@ Para saber mais sobre como ler e gravar no armazenamento em seu aplicativo Andro
 
 ## Projetos de amostra dos desenvolvedores do Firebase
 
-Você pode acompanhar essas amostras de desenvolvedores do Firebase para iniciar o armazenamento do Firebase Android [\-amostra do](https://github.com/firebase/quickstart-android/tree/master/storage) Firebase Quickstart-Android
+Você pode acompanhar essas amostras de desenvolvedores do Firebase para iniciar o armazenamento do Firebase Android [\-amostra do Firebase Quickstart-Android](https://github.com/firebase/quickstart-android/tree/master/storage) 
 
 ## Nota
 
