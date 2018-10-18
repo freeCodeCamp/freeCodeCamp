@@ -111,6 +111,8 @@ p {
   font: italic small-caps 800 20px/1.5 Arial;
 }
 ```
+for more fonts:
+you can use Google fonts(https://fonts.google.com/)
 
 #### More Information:
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
