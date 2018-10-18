@@ -77,7 +77,14 @@ function Person(){
 
 var p = new Person();
 ```
+An arrow function doesn't go well with function arguments. For example, if you do not know the number of arguments to a function you will be using in a function you do not leave it empty, rather you can use spread operator:
+```javascript
+const myFunc = (...n) => {
+  console.log('The first argument is', n[0]);
+}
 
+myFunc(10,20,30,40,40);
+```
 #### Further Reading
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions' target='_blank' rel='nofollow'>MDN link</a>
