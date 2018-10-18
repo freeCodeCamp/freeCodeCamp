@@ -50,3 +50,4 @@ Caching computed solutions in a lookup table, and query it before go recursion w
 
 [What is dynamic programming on StackOverflow](https://stackoverflow.com/questions/1065433/what-is-dynamic-programming")
 [Difference between memoization and DP on StackOverflow](https://stackoverflow.com/questions/6184869/what-is-the-difference-between-memoization-and-dynamic-programming)
+[Michal beautiful explantion on wine problem using dp on Quora](https://www.quora.com/Are-there-any-good-resources-or-tutorials-for-dynamic-programming-DP-besides-the-TopCoder-tutorial/answer/Michal-Danil%C3%A1k?share=1&srid=3OBi)
