@@ -5,7 +5,7 @@ import { startCase } from 'lodash';
 const urls = {
   curriculum: 'https://learn.freecodecamp.org',
   forum: 'https://forum.freecodecamp.org',
-  news: 'https://freecodecamp.org/news'
+  news: 'https://freecodecamp.org/news' ,
 };
 
 const Links = Object.keys(urls).map(key => (
@@ -32,7 +32,7 @@ export default NavLinks;
 /*
 <SignUp
       isInDropDown={ !isInNav }
-      showLoading={ showLoading }
+      showLoading={ !showLoading }
       showSignUp={ !isSignedIn }
     />
     */
