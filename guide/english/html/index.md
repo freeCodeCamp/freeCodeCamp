@@ -26,7 +26,7 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 
   <h1>My First Heading</h1>
   <p>My first paragraph.</p>
-
+  <b> Adding </b>
 </body>
 </html>
 ```
