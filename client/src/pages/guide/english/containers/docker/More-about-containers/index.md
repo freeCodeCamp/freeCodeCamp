@@ -42,3 +42,4 @@ docker container prune
 #### More Information
 - [More commands for docker containers]
 (https://docs.docker.com/engine/reference/commandline/container/)
+- [Intro video about Docker containers](https://www.youtube.com/watch?v=v-sVpk8nxbA)
