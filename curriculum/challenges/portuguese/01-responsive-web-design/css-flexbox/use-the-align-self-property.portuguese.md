@@ -7,10 +7,11 @@ localeTitle: Use a propriedade align-self
 ---
 
 ## Description
-<section id="description"> A propriedade final dos itens flexíveis é o <code>align-self</code> . Essa propriedade permite ajustar o alinhamento de cada item individualmente, em vez de configurá-los todos de uma vez. Isso é útil, pois outras técnicas comuns de ajuste que usam as propriedades CSS <code>float</code> , <code>clear</code> e <code>vertical-align</code> não funcionam em itens flexíveis. <code>align-self</code> aceita os mesmos valores que <code>align-items</code> e substituirá qualquer valor definido pela propriedade <code>align-items</code> . </section>
+<section id="description"> A última propriedade dos itens flexíveis é o <code>align-self</code> . Essa propriedade permite ajustar o alinhamento de cada item individualmente, em vez de configurá-los todos de uma vez. Isso é útil, pois outras técnicas comuns de ajuste que usam as propriedades CSS <code>float</code> , <code>clear</code> e <code>vertical-align</code> não funcionam em itens flexíveis.
+<code>align-self</code> aceita os mesmos valores que <code>align-items</code> e substituirá qualquer valor definido pela propriedade <code>align-items</code> . </section>
 
 ## Instructions
-<section id="instructions"> Adicione a propriedade CSS <code>align-self</code> aos dois <code>#box-1</code> e <code>#box-2</code> . Dê <code>#box-1</code> um valor de center e dê <code>#box-2</code> um valor de flex-end. </section>
+<section id="instructions"> Adicione a propriedade CSS <code>align-self</code> a ambos <code>#box-1</code> e <code>#box-2</code> . Dê ao <code>#box-1</code> um valor de <code>center</code> e dê ao <code>#box-2</code> um valor de <code>flex-end</code>. </section>
 
 ## Tests
 <section id='tests'>
