@@ -14,7 +14,12 @@ You can build some pretty amazing things in CSS alone, such as this pure-CSS [Mi
 
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
+### Tools
+
+To quickly start playing around with CSS, you can visit [CodePen](https://codepen.io) and start creating pages/sites without too having to set up an environment.
+
 #### Suggested Reading:
+
 A good start is the freeCodeCamp curriculum [Introduction to Basic CSS](https://learn.freecodecamp.org/responsive-web-design/basic-css).
 
 Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www.w3.org/Style/Examples/011/firstcss) teaches how to create a style sheet.
