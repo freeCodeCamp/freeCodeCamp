@@ -26,5 +26,5 @@ For more information about the new certification program, see the forum post [he
 
 ### Associate Android Developer Certification
 
-A great way to test one's Android skills and certify that by none other than Google.
+A great way to test one's Android skills and certify by none other than Google.
 The link to the certification and its details are [here](https://developers.google.com/training/certification/).
