@@ -1,0 +1,268 @@
+A
+alias
+The alias command is a way to run a command or a series of Unix commands using a shorter name than those that are usually associated with such commands.
+
+apt-get
+The apt-get tool automatically updates a Debian machine and installs Debian packages/programs.
+
+AWK, Gawk
+AWK is a programming language tool used to manipulate text. The AWK utility resembles the shell programming language in many areas, but AWK's syntax is very much its own. Gawk is the GNU Project's version of the AWK programming language.
+
+B 
+bzip2
+A portable, fast, open source program that compresses and decompresses files at a high rate, but that does not archive them.
+
+C 
+cat
+A Unix/Linux command that can read, modify or concatenate text files. The cat command also displays file contents.
+
+cd
+The cd command changes the current directory in Linux and can conveniently toggle between directories. The Linux cd command is similar to the CD and CHDIR commands in MS-DOS.
+
+chmod
+The chmod command changes the permissions of one or more files. Only the file owner or a privileged user can change the access mode.
+
+chown
+The chown prompt changes file or group ownership. It gives admins the option to change ownership of all the objects within a directory tree, as well as the ability to view information on the objects processed.
+
+cmp
+The cmp utility compares two files of any type and writes the results to the standard output. By default, cmp is silent if the files are the same. If they differ, cmp reports the byte and line number where the first difference occurred.
+
+comm
+Admins use comm to compare lines common to file1 and file2. The output is in three columns; from left to right: lines unique to file1, lines unique to file2 and lines common in both files.
+
+cp
+The cp command copies files and directories. Copies can be made simultaneously to another directory even if the copy is under a different name.
+
+cpio
+The cpio command copies files into or out of a cpio or tar archive. A tar archive is a file that contains other files, plus information about them, such as their file name, owner, timestamps and access permissions. The archive can be another file on the disk, a magnetic tape or a pipe. It also has three operating modes: copy-out, copy-in and copy-pass. It is also­ a more efficient alternative to tar.
+
+CRON
+CRON is a Linux system process that executes a program at a preset time. To use a CRON script, admins must prepare a text file that describes the program and when they want CRON to execute it. Then, the crontab program loads the text file and executes the program at the specified time.
+
+cURL 
+Admins use cURL to transfer a URL. It is useful for determining if an application can reach another service and how healthy the service is.
+
+D
+declare
+The declare command states variables, gives them attributes or modifies the properties of variables.
+
+df
+This command displays the amount of disk space available on the file system containing each file name argument. With no file name, the df command shows the available space on all the currently mounted file systems.
+
+E
+echo
+Use echo to repeat a string variable to standard output.
+
+enable
+The enable command stops or starts printers and classes.
+
+env
+The env command runs a program in a modified environment or displays the current environment and its variables.
+
+eval
+The eval command analyzes several arguments, concatenates them into a single command and reports on that argument's status.
+
+exec
+This function replaces the parent process with any subsequently typed command. The exec command treats its arguments as the specification of one or more subprocesses to execute.
+
+exit
+The exit command terminates a script and returns a value to the parent script.
+
+expect
+The expect command talks to other interactive programs via a script and waits for a response, often from any string that matches a given pattern.
+
+export
+The export command converts a file into a different format than its current format. Once a file is exported, it can be accessed by any application that uses the new format.
+
+F
+find
+The find command searches the directory tree to locate particular groups of files that meet specified conditions, including -name, -type, -exec, -size, -mtime and -user.
+
+for, while
+The for and while commands execute or loop items repeatedly as long as certain conditions are met.
+
+free
+With the free command, admins can see the total amount of free and used physical memory and swap space in the system, as well as the buffers and cache used by the kernel.
+
+G
+gawk
+See AWK.
+
+grep
+The grep command searches files for a given character string or pattern and can replace the string with another. This is one method of searching for files within Linux.
+
+gzip
+This is the GNU Project's open source program for file compression that compresses webpages on the server end for decompression in the browser. This is popular for streaming media compression and can simultaneously concatenate and compress several streams.
+
+H
+history
+The history function shows all the commands used since the start of the current session.
+
+I
+ifconfig
+The iconfig command configures kernel-resident network interfaces at boot time. It is usually only needed when debugging or during system tuning.
+
+ifup
+With ifup, admins can configure a network interface and enable a network connection.
+
+ifdown
+The ifdown command shuts down a network interface and disables a network connection.
+
+iptables
+The iptables command allows or blocks traffic on a Linux host and can prevent certain applications from receiving or transmitting a request.
+
+K
+kill
+With kill signals, admins can send a specific signal to a process. It is most often used to safely shut down processes or applications.
+
+L
+less 
+The less command lets an admin scroll through configuration and error log files, displaying text files one screen at a time with backward or forward navigation available.
+
+locate 
+The locate command reads one or more databases and writes file names to match certain output patterns.
+
+lft
+The lft command determines connection routes and provides information to debug connections or find a box/system location. It also displays route packets and file types.
+
+ln
+The ln command creates a new name for a file using hard linking, which allows multiple users to share one file.
+
+ls
+The ls command lists files and directories within the current working directory, which allows admins to see when configuration files were last edited.
+
+lsof
+Admins use lsof to list all the open files. They can add -u to find the number of open files by username.
+
+lsmod
+The lsmod command displays a module's status within the kernel, which helps troubleshoot server function issues.
+
+M 
+man
+The man command allows admins to format and display the user manual that's built into Linux distributions, which documents commands and other system aspects.
+
+more
+Similar to less, more pages through text one screen at a time, but has limitations on file navigation.
+
+mount
+This command mounts file systems on servers. It also lists the current file systems and their mount locations, which is useful to locate a defunct drive or install a new one.
+
+mkdir
+Linux mkdir generates a new directory with a name path.
+
+N
+neat
+A Gnome GUI tool that allows admins to specify the information needed to set up a network card.
+
+netconfig/netcfg
+Admins can use netconfig to configure a network, enable network products and display a series of screens that ask for configuration information.
+
+netstat
+This command provides information and statistics about protocols in use and current TCP/IP network connections. It is a helpful forensic tool for figuring out which processes and programs are active on a computer and are involved in network communications.
+
+nslookup
+A user can enter a host name and find the corresponding IP address with nslookup. It can also help find the host name.
+
+O 
+od
+The od command dumps binary files in octal -- or hex/binary -- format to standard output.
+
+P 
+passwd
+Admins use passwd to update a user's current password.
+
+ping       
+The ping command verifies that a particular IP address exists and can accept requests. It can test connectivity and determine response time, as well as ensure an operating user's host computer is working.
+
+ps
+Admins use ps to report the statuses of current processes in a system.
+
+pwd
+The print working directory (pwd) command displays the name of the current working directory.
+
+R 
+read
+The read command interprets lines of text from standard input and assigns values of each field in the input line to shell variables for further processing.
+
+rsync
+This command syncs data from one disk or file to another across a network connection. It is similar to rcp, but has more options.
+
+S 
+screen
+The GNU screen utility is a terminal multiplexor where a user can use a single terminal window to run multiple terminal applications or windows.
+
+sdiff       
+Admins use sdiff to compare two files and produce a side-by-side listing indicating lines that are dissimilar. The command then merges the files and outputs the results to the outfile.
+
+sed
+The sed utility is a stream editor that filters text in a pipeline, distinguishing it from other editors. It takes text input, performs operations on it and outputs the modified text. This command is typically used to extract part of a file using pattern matching or to substitute multiple occurrences of a string within a file.
+
+service
+This command is the quickest way to start or stop a service, such as networking.
+
+shutdown
+The shutdown command turns off the computer and can be combined with variables such as -h for halt after shutdown or -r for reboot after shutdown.
+
+slocate
+Like locate, slocate, or secure locate, provides a way to index and quickly search for files, but it can also securely store file permissions and ownership to hide information from unauthorized users.
+
+Snort
+Snort is an open source network intrusion detection system and packet sniffer that monitors network traffic. It looks at each packet to detect dangerous payloads or suspicious anomalies. Snort is based on libpcap.
+
+sort
+This command sorts lines of text alphabetically or numerically according to the fields. Users can input multiple sort keys.
+
+sudo
+The sudo command lets a system admin give certain users the ability to run some -- or all -- commands at the root level and logs all the commands and arguments.
+
+SSH
+SSH is a command interface for secure remote computer access and is used by network admins to remotely control servers.
+
+T 
+tar
+The tar command lets users create archives from a number of specified files or to extract files from a specific archive.
+
+tail        
+
+The tail command displays the last few lines of the file. This is particularly helpful for troubleshooting code because admins don't often need all the possible logs to determine code errors.
+
+TOP
+TOP is a set of protocols for networks that performs distributed information processing and displays the tasks on the system that take up the most memory. TOP can sort tasks by CPU usage, memory usage and runtime.
+
+touch
+Admins can create a blank file within Linux with the touch command.
+
+tr
+This command translates or deletes characters from a text stream. It writes to a standard output, but it does not accept file names as arguments -- it only accepts input from standard input.
+
+traceroute
+The traceroute function determines and records a route through the internet between two computers and is useful for troubleshooting network/router issues. If the domain does not work or is not available, admins can use traceroute to track the IP.
+
+U 
+uname
+This function displays the current operating system name and can print system information.
+
+uniq
+With uniq, admins can compare adjacent lines in a file and remove or identify any duplicate lines. 
+
+V 
+vi
+The vi environment is a text editor that allows a user to control the system with just the keyboard instead of both mouse selections and keystrokes.
+
+vmstat
+The vmstat command snapshots everything in a system and reports information on such items as processes, memory, paging and CPU activity. This is a good method for admins to use to determine where issues/slowdown may occur in a system.
+
+W 
+wget
+This is a network utility that retrieves web files that support HTTP, HTTPS and FTP protocols. The wget command works non-interactively in the background when a user is logged off. It can create local versions of remote websites and recreate original site directories.
+
+while 
+See for.
+
+whoami
+The whoami command prints or writes the user login associated with the current user ID to the standard output.
+
+X 
+xargs
+Admins use xargs to read, build and execute arguments from standard input. Each input is separated by blanks.
