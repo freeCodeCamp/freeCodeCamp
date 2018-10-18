@@ -4,10 +4,18 @@ title: Android core components
 # Android core components
 Core components are the essential elements which an app for Android consists of. Each of them has its own purpose and lifecycle but not all of them are independent. They are:
 
+- Views
+- ViewGroup
 - Activities
 - Services
 - Broadcast receivers
 - Content providers
+
+## [Views](https://developer.android.com/reference/android/view/View) 
+A View occupies a rectangular area on the screen and is responsible for drawing and event handling. View is the base class for widgets, which are used to create interactive UI components (buttons, text fields, etc.).
+
+## [ViewGroup](https://developer.android.com/reference/android/view/ViewGroup)
+A ViewGroup is a special view that can contain other views (called children.) The view group is the base class for layouts and views containers. This class also defines the ViewGroup.LayoutParams class which serves as the base class for layouts parameters.
 
 ## [Activities](https://developer.android.com/guide/components/activities/)
 An _activity_ is a component that has a user interface and represents a single screen. An app can have multiple activities, each of those can be an entry point to the application itself for the user or the system (an app's activity that wants to open another activity that belongs to the same application or to a different one).
