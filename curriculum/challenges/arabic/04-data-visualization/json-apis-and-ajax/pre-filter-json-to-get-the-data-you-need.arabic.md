@@ -3,14 +3,50 @@ id: 587d7fae367417b2b2512be7
 title: Pre-filter JSON to Get the Data You Need
 challengeType: 6
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'تنفيذ تصفية مسبقة لـ JSON للحصول على المعلومات المطلوبة'
 ---
 
 ## Description
-undefined
+إذا لم تكن ترغب بإظهار كل صور القطط التي تحصل عليها باستخدام 
+
+`API`
+
+صور القطط من
+
+`FreeCodeCamp`
+
+يمكنك أن تقوم بتنفيذ تصفية مسبقة على
+
+`JSON`
+
+قبل البدء بحلقة تكرارية عليه.
+
+بما أن بيانات
+
+`JSON`
+
+مخزنة في مصفوفة، يمكنك استخدام دالة
+
+`filter`
+
+للتخلص من كافة القطط الذين يملكون رقم معرف مساو لـ 1
+الكود المستخدم في هذه العملية هو:
+```
+json = json.filter(function(val) {
+  return (val.id !== 1);
+});
+```
 
 ## Instructions
-undefined
+قم بإضافة كود للقيام بعملية
+
+`filter`
+
+على بيانات
+
+`json`
+
+لحذف أي قطة تمتلك معرف ذو قيمة تساوي 1
 
 ## Tests
 <section id='tests'>
