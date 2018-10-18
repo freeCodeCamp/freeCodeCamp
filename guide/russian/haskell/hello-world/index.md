@@ -2,7 +2,7 @@
 title: Hello World Program
 localeTitle: Привет, Всемирная программа
 ---
-## Самая простая программа Hello World в Haskell
+## "Hello World" на Haskell
 
 ```haskell
 main :: IO () 
@@ -10,7 +10,7 @@ main :: IO ()
     putStrLn "Hello World" 
 ```
 
-## Hello World с использованием функционального состава
+## "Hello World" с использованием композиции функций
 
 ```haskell
 hello :: String 
