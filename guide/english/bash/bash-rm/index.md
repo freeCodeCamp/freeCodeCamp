@@ -11,5 +11,16 @@ There are few commonly used arguments:
 - `r` , means to recursively delete all the folders inside a directory.
 - `f` , means to forcefully delete anything folder or file.
 
+### Example
+
+Delete file.txt:
+```bash
+rm file.txt
+```
+
+Delete folder:
+```bash
+rm -r folder
+```
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
