@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Reto
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -45,6 +45,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// se requiere una solución
 ```
 </section>
