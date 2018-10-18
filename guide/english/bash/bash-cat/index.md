@@ -18,7 +18,7 @@ cat [options] [file_names]
 Most used options:
 
 * `-b`, numer non-blank output lines
-* `-n`, number all output lines
+* `-n`, number all output lines, starting at 1
 * `-s`, squeeze multiple adjacent blank lines
 * `-v`, display nonprinting characters, except for tabs and the end of line character
 
