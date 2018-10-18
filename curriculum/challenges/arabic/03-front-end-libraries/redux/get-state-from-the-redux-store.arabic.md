@@ -4,14 +4,43 @@ title: Get State from the Redux Store
 challengeType: 6
 isRequired: false
 videoUrl: ''
-localeTitle: ''
+localeTitle: 'استرجاع ال state من مخزن Redux'
 ---
 
 ## Description
-undefined
+كائن مخزن الـ
+
+Redux
+
+يوفر عددا من الدالات التي تسمح باستخدام هذا الكائن
+على سبيل المثال يمكن الحصول على قيمة الـ 
+
+`State`
+
+المخزنة في مخزن
+
+Redux
+
+باستخدام دالة
+
+getState()
 
 ## Instructions
-undefined
+لقد قمنا بإعادة كتابة الكود من التمارين السابقة بشكل أكثر اختصارا. قم باستخدام
+
+`store.getState()`
+
+لاستعادة قيمة الـ
+
+`state`
+
+من الـ
+
+`store`
+
+ثم قم بإسناد هذه القيمة إلى المتغير الجديد
+
+`currentState`
 
 ## Tests
 <section id='tests'>
