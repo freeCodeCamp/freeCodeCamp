@@ -45,4 +45,5 @@ Now that you have found some relevant packets, select one to view more details a
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [Wireshark.org](https://www.wireshark.org)  
 [Wireshark - Wikipedia](https://en.wikipedia.org/wiki/Wireshark)  
-[How to Use Wireshark to Capture, Filter and Inspect Packets - How to Geek](https://www.howtogeek.com/104278/how-to-use-wireshark-to-capture-filter-and-inspect-packets/)
+[How to Use Wireshark to Capture, Filter and Inspect Packets - How to Geek](https://www.howtogeek.com/104278/how-to-use-wireshark-to-capture-filter-and-inspect-packets/)                                                                          
+[Wireshark Display Filters Cheat Sheet](http://packetlife.net/media/library/13/Wireshark_Display_Filters.pdf)
