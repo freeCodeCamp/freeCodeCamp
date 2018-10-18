@@ -17,6 +17,7 @@ BDD focuses on:
 - How much to test in one go
 - What to call the tests
 - How to understand why a test fails
+How to fix a fail.
 
 At the heart of BDD is a rethinking of the approach to the unit testing and acceptance testing that naturally arise with these issues. 
 For example, BDD suggests that unit test names be whole sentences starting with a conditional verb ("should" in English for example) and should be written in order of business value. 
