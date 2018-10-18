@@ -1,7 +1,13 @@
 ---
 title: Python Len Function
 ---
-`len()` is a built-in function in Python 3\. This method returns the length (the number of items) of an object. It takes one argument `x`.
+`len()` is a built-in function in Python 3 and Python 2\. This method returns the length (the number of items) of an object. It takes one argument `x`.Essentially, it counts the characters in the parintheses. Example:
+```Python
+x = five
+print len(x)
+#This would print out 4
+
+```
 
 ## Arguments
 
