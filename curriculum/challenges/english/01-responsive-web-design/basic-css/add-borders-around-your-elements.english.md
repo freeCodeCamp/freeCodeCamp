@@ -8,7 +8,7 @@ videoUrl: 'https://scrimba.com/c/c2MvnHZ'
 
 ## Description
 <section id='description'>
-CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>
+CSS borders have properties like <code>style</code>, <code>color</code> and <code>width</code>.
 For example, if we wanted to create a red, 5 pixel border around an HTML element, we could use this class:
 <blockquote>&#60;style&#62;<br>&nbsp;&nbsp;.thin-red-border {<br>&nbsp;&nbsp;&nbsp;&nbsp;border-color: red;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-width: 5px;<br>&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid;<br>&nbsp;&nbsp;}<br>&#60;/style&#62;</blockquote>
 </section>
