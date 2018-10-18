@@ -45,6 +45,8 @@ h1: The element defines a large heading
 
 p: The element defines a paragraph
 
+b: the element defines the strength of a cahracter
+
 ### HTML Versions
 
 Since the early days of the web, there have been many versions of HTML
