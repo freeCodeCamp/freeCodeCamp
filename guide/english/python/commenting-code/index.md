@@ -10,6 +10,8 @@ Comments are used to annotate, describe, or explain code that is complex or diff
     print('Hello world!') # This is an inline commment.
 ```
 
+For Visual studio code users : Ctrl+K, Ctrl+C to comment, and Ctrl+K, Ctrl+U to uncomment.
+
 Python does not include a formal way to write multiline comments. Each line of a comment spanning multiple lines should start with `#` and a space:
 ```python
     # This is the first line of a multiline comment.
