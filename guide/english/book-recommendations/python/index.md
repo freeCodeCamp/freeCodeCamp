@@ -61,6 +61,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+#### A Smarter Way to Learn Python: Learn it faster. Remember it longer
+
+An "small chunk at a time" approach to learning Python. Has free website for practicing. 
+
+- [Amazon Kindle Version](http://a.co/d/gR5cqvW) 
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
