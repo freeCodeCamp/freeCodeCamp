@@ -94,6 +94,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='https://www.youtube.com/watch?v=fju9ii8YsGs' target='_blank' rel='nofollow'>Derek Banas' Learn JS In One Video </a>
 *   <a href='https://www.youtube.com/watch?v=O8wwnhdkPE4'>Derek Banas' Object Oriented JavaScript</a>
 *   <a href='https://www.youtube.com/watch?v=YMvzfQSI6pQ'>JavaScript Fundamentals for Absolute Beginners 2018</a>
+*   <a href='https://https://www.youtube.com/watch?v=fju9ii8YsGs'>JavaScript Tutorial</a>
 
 ## Books
 
