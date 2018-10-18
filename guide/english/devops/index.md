@@ -12,8 +12,23 @@ Alternatively, software development can be done within silos. One silo is respon
 This section contains articles introducing technologies used in DevOps.
 
 ### More Information
+
 * [Read more about DevOps on Wikipedia](https://en.wikipedia.org/wiki/DevOps)
 * [See this Video that explains Devops](https://youtu.be/_I94-tJlovg)
+
+### Books
+
+* Designing Delivery: Rethinking IT in the Digital Service Economy
+
+* Leading the Transformation: Applying Agile and DevOps Principles at Scale
+
+* Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation
+
+* Lean Enterprise: How High Performance Organizations Innovate at Scale
+
+* The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win
+
+* DevOps for Dummies
 
 ### Resources
 This section contains links to learning DevOps through a MOOC experience. Courses may be pay-only.
