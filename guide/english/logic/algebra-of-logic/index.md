@@ -22,3 +22,5 @@ The three basic operations in Boolean Algebra are `AND`, `OR`, and `NOT`. Consid
 ### More Information:
 - The Calculus of Logic: <a href='http://www.maths.tcd.ie/pub/HistMath/People/Boole/CalcLogic/CalcLogic.html' target='_blank' rel='nofollow'>George Boole</a>
 - Boolean algebra article: <a href='https://en.wikipedia.org/wiki/Boolean_algebra' target='_blank' rel='nofollow'>Wikipedia</a>
+- Boolean Algebra Demonstration: <a href='http://mathworld.wolfram.com/BooleanAlgebra.html' target='_blank' rel='nofollow'>Wikipedia</a>
+
