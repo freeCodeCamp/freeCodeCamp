@@ -5,7 +5,7 @@ title: Jupyter Notebook
 
 Jupyter Notebook is an open-source web application. It allows you to create and share documents that contain live code, equations, visualizations and narrative text.
 
-The Jupyter Notebook helps you create and share documents containing live code, equations, visualizations and rich text.   
+Jupyter Notebook helps you create and share documents containing live code, equations, visualizations, and rich text.   
  
 You can use it for:
 * data cleaning and transformation
@@ -15,7 +15,7 @@ You can use it for:
 * machine learning
 
 <img src="https://github.com/indianmoody/images/blob/master/guide_fcc/guides_jupyter_snap.jpeg" width="400" height="300" />
-See your results as you go step by step. Just like in this image.
+See your results as you go step by step, just like in this image.
 
 ## What Is A Jupyter Notebook?
 
