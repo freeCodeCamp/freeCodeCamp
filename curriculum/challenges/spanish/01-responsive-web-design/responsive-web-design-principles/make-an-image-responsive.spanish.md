@@ -7,7 +7,16 @@ localeTitle: Hacer una imagen receptiva
 ---
 
 ## Description
-<section id="description"> Hacer que las imágenes respondan con CSS es realmente muy simple. En lugar de aplicar un ancho absoluto a un elemento: <code>img { width: 720px; }</code> Puedes usar: <blockquote> img { <br> ancho máximo: 100%; <br> bloqueo de pantalla; <br> altura: auto; <br> } </blockquote> La propiedad de <code>max-width</code> del 100% ajusta la imagen para que se ajuste al ancho de su contenedor, pero la imagen no se estirará más que su ancho original. La configuración de la propiedad de <code>display</code> para bloquear cambia la imagen de un elemento en línea (su valor predeterminado) a un elemento de bloque en su propia línea. La propiedad de <code>height</code> de auto mantiene la relación de aspecto original de la imagen. </section>
+<section id="description"> Hacer que las imágenes respondan con CSS es realmente muy simple. En lugar de aplicar un ancho absoluto a un elemento: <code>img { width: 720px; }</code> Puedes usar: 
+  
+```css
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+```
+La propiedad de <code>max-width</code> del 100% ajusta la imagen para que se ajuste al ancho de su contenedor, pero la imagen no se estirará más que su ancho original. La configuración de la propiedad de <code>display</code> para bloquear cambia la imagen de un elemento en línea (su valor predeterminado) a un elemento de bloque en su propia línea. La propiedad de <code>height</code> de auto mantiene la relación de aspecto original de la imagen. </section>
 
 ## Instructions
 <section id="instructions"> Agregue reglas de estilo para la etiqueta <code>img</code> para que responda al tamaño de su contenedor. Debe mostrarse como un elemento de nivel de bloque, debe ajustarse a todo el ancho de su contenedor sin estirarlo y debe mantener su relación de aspecto original. </section>
@@ -18,11 +27,11 @@ localeTitle: Hacer una imagen receptiva
 ```yml
 tests:
   - text: Su etiqueta <code>img</code> debe tener un <code>max-width</code> establecido al 100%.
-    testString: 'assert(code.match(/max-width:\s*?100%;/g), "Your <code>img</code> tag should have a <code>max-width</code> set to 100%.");'
+    testString: 'assert(code.match(/max-width:\s*?100%;/g), "Su etiqueta <code>img</code> debe tener un <code>max-width</code> establecido al 100%.");'
   - text: Su etiqueta <code>img</code> debe tener un conjunto de <code>display</code> para bloquear.
-    testString: 'assert($("img").css("display") == "block", "Your <code>img</code> tag should have a <code>display</code> set to block.");'
+    testString: 'assert($("img").css("display") == "block", "Su etiqueta <code>img</code> debe tener un conjunto de <code>display</code> para bloquear.");'
   - text: Tu etiqueta <code>img</code> debe tener una <code>height</code> establecida en auto.
-    testString: 'assert(code.match(/height:\s*?auto;/g), "Your <code>img</code> tag should have a <code>height</code> set to auto.");'
+    testString: 'assert(code.match(/height:\s*?auto;/g), "Tu etiqueta <code>img</code> debe tener una <code>height</code> establecida en auto.");'
 
 ```
 
