@@ -1,6 +1,14 @@
 ---
 title: Arrays
 ---
+<!DOCTYPE html>
+<html>
+    <body>
+        <a href="https://www.youtube.com/watch?v=eNPX2pTiaHI" target="_blank"width="480" height="853" alt+"youtube video about java">Everything you need to know about arrays
+        </a>
+    </body>
+ </html>
+    
 
 # Array
 
