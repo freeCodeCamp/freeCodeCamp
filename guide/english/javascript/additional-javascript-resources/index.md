@@ -62,11 +62,11 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
 *   <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>Visual Studio Code</a>
 
-    Visual Studio Code includes built-in support for IntelliSense code completion, rich semantic code understanding and navigation, and code refactoring. It comes with a built-in debugger and git support and has a plethora of extensions.
+    Visual Studio Code includes built-in support for IntelliSense code completion, rich semantic code understanding and navigation and code refactoring. It comes with a built-in debugger, git support and has a plethora of extensions.
     
 *   <a href='https://www.jetbrains.com/webstorm/' target='_blank' rel='nofollow'>Webstorm</a>
 
-    A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
+    A full-feature IDE for Javascript, including code completion, support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
 *   <a href='http://brackets.io' target='_blank' rel='nofollow'>Brackets</a>
 *   <a href='http://atom.io' target='_blank' rel='nofollow'>Atom</a>
 
@@ -121,4 +121,4 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
 *   <a href='https://github.com/getify/Functional-Light-JS' target='blank' rel='nofollow'>Functional Light JS</a>
 
-    This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. From the very basics of programming up to front-end and back-end web development, a lot of topics are covered in a simple and accessible way. No prior knowledge needed!
+    This book aims to be a useful companion for anyone wishing to (re)discover the many facets of JavaScript. From the very basics of programming up to front-end and back-end web development. A lot of topics are covered in a simple and accessible way. No prior knowledge needed!
