@@ -29,3 +29,6 @@ Sorry, but there isn't a straight answer to this question. You can ask following
 
  Readings:
  - [Wikipedia](https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect)
+ 
+ Podcasts:
+ -[In Defense of Ignorance](https://www.thisamericanlife.org/585/in-defense-of-ignorance)
