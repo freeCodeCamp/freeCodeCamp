@@ -23,6 +23,12 @@ title: Wireframing
     <a href="https://www.lucidchart.com/pages/examples/wireframe_software/" target="blank">Lucidchart</a>
   </li>
   <li>
-    <a href="http://pencil.evolus.vn/Default.html/" target="blank">Pencil</a>
+    <a href="https://pencil.evolus.vn/" target="blank">Pencil</a>
+  </li>
+    <li>
+    <a href="https://mockflow.com/" target="blank">Mockflow</a>
+  </li>
+  <li>
+    <a href="https://gomockingbird.com/home" target="blank">Mockingbird</a>
   </li>
 </ul>
