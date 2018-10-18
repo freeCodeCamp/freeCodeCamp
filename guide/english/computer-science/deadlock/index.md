@@ -22,6 +22,7 @@ Deadlock can arise if four conditions hold simultaneously.
 - **Circular wait** : there exists a set { P<sub>0</sub>, P<sub>1</sub>, …, P<sub>0</sub> } of waiting processes such that P<sub>0</sub> is waiting for a resource that is held by P<sub>1</sub>, P<sub>1</sub> is waiting for a resource that is held by P<sub>2</sub>, …, P<sub>n –1</sub> is waiting for a resource that is held by P<sub>n</sub>, and P<sub>0</sub> is waiting for a resource that is held by P<sub>0</sub>.
 
 ### Methods for Handling Deadlocks
+- Put the system in a situation where the deadlock can be avoided, i.e. Deadlock Avoidance.
 - Ensure that the system will never enter a deadlock state.
 - Allow the system to enter a deadlock state and then recover.
 - Ignore the problem and pretend that deadlocks never occur in the system; **used by most operating systems, including UNIX**.
