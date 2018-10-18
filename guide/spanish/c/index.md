@@ -127,9 +127,9 @@ Si todo ha ido bien, deberías ver `Hello, World!` Impreso en la pantalla.
 *   C es la lengua franca de los lenguajes de programación.
 *   C se utilizó para volver a implementar el sistema operativo Unix.
 *   C es útil porque es pequeño, rápido y tiene acceso a operaciones de bajo nivel. Debido a esto, se usa mucho en robótica, sistemas operativos y electrónica de consumo, pero no en cosas como páginas web.
-*   El programa de CA tiene algunas partes críticas:
-*   La declaración de inclusión, que le indica al compilador de C dónde encontrar el código adicional que se utilizará en el programa.
-*   La función principal, que es donde primero se ejecutará el código y se requiere para compilar.
-*   Cosas dentro de esa función principal que se ejecutarán, incluida una declaración de retorno que cierra el programa y le da un valor al programa que lo llamó.
+*   El programa de C tiene algunas partes críticas:
+  *   La declaración de inclusión, que le indica al compilador de C dónde encontrar el código adicional que se utilizará en el programa.
+  *   La función principal, que es donde primero se ejecutará el código y se requiere para compilar.
+  *   Cosas dentro de esa función principal que se ejecutarán, incluida una declaración de retorno que cierra el programa y le da un valor al programa que lo llamó.
 *   C necesita ser compilado para funcionar.
 *   C se puede usar para acceder a direcciones de hardware específicas y para realizar punks de tipo para cumplir con los requisitos de interfaz impuestos externamente, con una baja demanda de recursos del sistema en tiempo de ejecución.
