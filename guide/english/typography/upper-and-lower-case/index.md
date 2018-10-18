@@ -15,11 +15,13 @@ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 ## Lowercase:
 a b c d e f g h i j k l m n o p q r s t u v w x y z
 
+### Important take away's
 Capitalization is important for the following reasons:
-- Passwords: passwords are case sensitive, so capitalization add an extra level of security.
-- Measurements: When dealing with computer measurement, and other measurements, capitalization is important for identifying the exact type of measurement. For example, "Mb" (short for Megabit) and "MB" (short for Megabyte) are two different types of measurements with different values.
+- Passwords: passwords are case sensitive, so capitalization add an extra level of security
+- Measurements: When dealing with computer measurement, and other measurements, capitalization is important for identifying the exact type of measurement. For example, "Mb" (short for Megabit) and "MB" (short for Megabyte) are two different types of measurements with different values
 - Commands 
-- File names, directories and paths.
+- File names, directories and paths
+-Each letter can be represented by it's unique unicode value
 
 #### More Information:
 <a href='https://www.computerhope.com/jargon/u/uppercase.htm'>Computer Hope</a> <br>
