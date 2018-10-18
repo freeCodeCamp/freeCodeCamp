@@ -23,7 +23,7 @@ Change the code so that all variables are declared using <code>let</code> or <co
 ```yml
 tests:
   - text: <code>var</code> does not exist in your code.
-    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> does not exist in your code.");'
+    testString: 'getUserInput => assert(!getUserInput("index").match(/var/g),"<code>var</code> should not exist in your code.");'
   - text: <code>SENTENCE</code> should be a constant variable declared with <code>const</code>.
     testString: 'getUserInput => assert(getUserInput("index").match(/(const SENTENCE)/g), "<code>SENTENCE</code> should be a constant variable declared with <code>const</code>.");'
   - text: <code>i</code> should be declared with <code>let</code>.
