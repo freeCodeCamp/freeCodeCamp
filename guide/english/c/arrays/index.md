@@ -45,7 +45,7 @@ Here you have created an `array` of `ints`(Integers), called `arr`. This array h
 ```C
 datatype name[number of elements] 
 ```
-The first element of this array is `1`, the second is `2` etc.
+The first element of this array is `1`, the second is `2` and the third is '3', etc.
 
 ```C
 int brr[] = {78, 65};
