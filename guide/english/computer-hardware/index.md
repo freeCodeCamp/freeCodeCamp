@@ -51,3 +51,9 @@ Input/Output device is any hardware used by a human operator or other systems to
 A computer monitor is an output device which displays information in pictorial form.
   
 ![Monitor](https://assets.pcmag.com/media/images/523934-dell-ultrasharp-34-curved-monitor-u3417w.jpg?thumb=y)
+
+### RGB LIGHTING
+
+Simply put the most common way to improve the look of your system. 
+just add lights, fans or cooling that uses red, green, blue lighting to customise to your heart's content
+
