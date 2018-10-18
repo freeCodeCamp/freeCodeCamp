@@ -9,7 +9,7 @@ Functions allow you to create more modular and [DRY](https://en.wikipedia.org/wi
 
 While Python already provides many built-in functions such as `print()` and `len()`, you can also define your own functions to use within your projects.
 
-One of the great advantages of using functions in your code is that it reduces the overall number of lines of code in your project.
+One of the great advantages of using functions in your code is that it reduces the overall number of lines of code in your project.  Formally, this is known as abstraction. 
 
 ### Syntax
 
