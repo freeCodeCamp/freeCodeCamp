@@ -1,10 +1,12 @@
 ---
 title: Accessibility Basics
 ---
+
+## Accessibility Basics
+
 > "The Dark Arts are many, varied, ever-changing, and eternal. Fighting them is like fighting a many-headed monster, which, each time a neck is severed, sprouts a head even fiercer and cleverer than before. You are fighting that which is unfixed, mutating, indestructible."
 >
 > --Professor Severus Snape, Harry Potter Series
-
 
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
