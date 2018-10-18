@@ -8,12 +8,12 @@ Structures and unions will give you the chance to store non-homogenous data type
 
 ```C
 typedef struct student_structure{
-    char* name;
+    char* name; 
     char* surname;
     int year_of_birth;
 }student;
 ```
-
+here in structure we use pointer variable.
 After this little code `student` will be a new reserved keyword and you will be able to create variables of type `student`.
 Please mind that this new kind of variable is going to be structured which means that defines a physically grouped list of variables to be placed under one name in a block of memory.
 
