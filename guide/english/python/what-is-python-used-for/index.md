@@ -45,7 +45,7 @@ You can use Python and some Python-libraries for developing your own <a href='ht
 You can use Python and some Python-libraries for developing <a href='https://github.com/discord-python/hacktoberbot' target="_blank" rel="nofollow">Discord Bots</a>
 
 #### Data Gathering by crawling and scraping
-Python could also be used by parse pages source codes and retrieve its data. Using some python modules, such as: Scrapy and also (for some reasons and pages which uses javascript) Selenium, should do the trick!
+Python could also be used by parse pages source codes and retrieve its data. Using some python modules, such as: Scrapy and also (for some reasons and pages which uses javascript) Selenium, should do the trick! Python is also great for API development and the json package is part of the standard library.
 
 #### More Information:
 Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofollow'>link</a> to a section of the official Python website describing its various applications.
