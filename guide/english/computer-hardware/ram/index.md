@@ -32,6 +32,7 @@ Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a
 #### More Information:
 
 * [Random-access Memory - Wikipedia](https://en.wikipedia.org/wiki/Random-access_memory)
+* [ECC RAM Wikipedia](https://en.wikipedia.org/wiki/ECC_memory)
 * [RAM - Webopedia](http://www.webopedia.com/TERM/R/RAM.html)
 * [Static RAM](https://en.wikipedia.org/wiki/Static_random-access_memory)
 * [Dynamic RAM](https://en.wikipedia.org/wiki/Dynamic_random-access_memory)
