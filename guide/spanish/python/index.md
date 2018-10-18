@@ -76,7 +76,7 @@ $ python3.5
  $ 
 ```
 
-## El zen de pitón
+## El zen de Python
 
 Algunos de los principios que influyeron en el diseño de Python se incluyen como un huevo de Pascua y se pueden leer usando el comando en el modo interactivo de intérprete de Python:
 ```
