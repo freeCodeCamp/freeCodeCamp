@@ -5,7 +5,7 @@ title: Docker
 
 Docker is an open platform to build, ship, and run distributed applications. It is written in Go. It was first released in 2013 and is developed by Docker, Inc.
 
-Docker is used to run packages called "containers". Containers are isolated from each others and from the OS. These are more lightweight than virtual machines as they do not use the host machine to run an operating system.
+Docker is used to run packages called "containers". Containers are isolated from each other and from the OS. These are more lightweight than virtual machines as they do not use the host machine to run an operating system.
 
 Containerization, which is a way of deploying and running applications, runs isolated services which run natively on the Linux kernel. Memory can be set manually for each container in Docker.
 
