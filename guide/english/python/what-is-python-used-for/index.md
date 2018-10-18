@@ -4,7 +4,7 @@ title: What Is Python Used for
 
 ## What Is Python Used for
 
-Python can easily be used for small, large, online and offline projects. The best options for utilizing Python are web development, simple scripting and data analysis.
+Python can easily be used for small, large, online and offline projects. The best options for utilizing Python are web development, simple scripting and data analysis.Due to Python's more simple syntax, and many uses, it is also one of the most learned laguages in beginning programming classes at Universities. 
 Below are a few examples of what Python will let you do:
 
 ##### Web Development:
