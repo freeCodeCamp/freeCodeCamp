@@ -1,11 +1,11 @@
 ---
 title: Data Types
 ---
-# Data Types
+# Data Types:
 
 Java is a strongly typed language. This means that, in Java, each data type has its own strict definition. There are no implicit data type conversions when any conflicts occur between the data types. Any change in data types should be explicitly declared by the programmer.
 
-Java defines 8 primitive data types : `byte`, `short`, `int`, `long`, `char`, `float`, `double` and `boolean`.
+Java defines 8 primitive data types : **`byte`**, **`short`**, **`int`**, **`long`**, **`char`**, **`float`**, **`double`** and **`boolean`**.
 
 They are divided into the following categories:
 
@@ -14,11 +14,11 @@ They are divided into the following categories:
 *   Characters
 *   Boolean Type
 
-The details of each of the data types is given below :
+**The** **details** **of** **each** **of** **the** **data** **types** **is** **given** **below** :
 
 ## Integers:
 
-These are of four types: `byte`, `short`, `int`, `long`. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consist both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
+These are of four types: *`byte`*, *`short`*, *`int`*, *`long`*. It is important to note that these are signed positive and negative values. Signed integers are stored in a computer using [2's complement](http://www.ele.uri.edu/courses/ele447/proj_pages/divid/twos.html). It consist both negative and positive values but in different formats like `(-1 to -128)` or `(0 to +127)`. An unsigned integer can hold a larger positive value, and no negative value like `(0 to 255)`. Unlike C++ there is no unsigned integer in Java.
 
 ### byte:
 
