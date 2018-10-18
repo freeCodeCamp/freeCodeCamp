@@ -44,6 +44,22 @@ and is displayed as:
 - Fuji
 - Gala
 
+## Styling Lists
+
+An ordered list and unordered list can have different list item markers. The default numbering system in ordered list can be changed to lowercase or uppercase roman numerals and lowercase or uppercase alphabets and the the start of the list can be changed from the default value 1. In unordered list different list markers can be used like the disc,circle, square etc. 
+
+Styling Ordered List:
+```CSS
+ol {
+  list-style-type: upper-roman; 
+  }
+```
+Styling Unordered List:
+```CSS
+ul {
+  list-style-type: square; 
+  }
+```
 ## Styling Bulletpoints
 
 An ordered list can be used for a variety of functions and in a number of styles. Since changing the encompassing tag colors doesn't change the color of the bullets themselves, you can style them by first removing the traditional black bullets and inserting your own:
@@ -65,7 +81,16 @@ ul li::before {
   }
 ```
 
-The content style adds a new bulletpoint while display and width style create a space between the bullet and the word. Regular font styles can apply here if you would like to make the bullet larger or bolder.
+The content style adds a new bulletpoint while display and width style create a space between the bullet and the word. Regular font styles can apply here if you would like to make the bullet larger or bolder. And images can be used as list item markers.
+
+Images as list item markers:
+```CSS
+ul {
+    list-style-image: url('rock.png');
+  }
+```
+
+
 
 
 
