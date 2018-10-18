@@ -3,10 +3,10 @@ title: Ul Tag
 ---
 ## Ul Tag
 
-The unordered list `<ul>` is a tag used to create bulleted lists. To create a list inside the `<ul>`, use the `<li>` tag. To style lists, go to the CSS style lists and make the changes.
+The *unordered* *list* `<ul>` is a tag used to create bulleted lists. To create a list inside the `<ul>`, use the `<li>` tag. To style lists, go to the CSS style lists and make the changes.
 
 The `<ul>` can be nested inside other lists and is compatible with others tag such as `<a>`,`<p>`,`<button>`, the html styling tags (`<strong>`,`<em>`, etc).
-
+___
 ### Example
 To create the following:
 ```html
