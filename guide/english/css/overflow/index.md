@@ -24,25 +24,25 @@ For example, a given block-level element (`<div>`) set to 300px wide, that conta
 ```css
 .box-element { overflow: visible; }
 ```
-![Example Image](https://s26.postimg.org/gweu6g5yh/1-vissible.png)
+![Example Image](https://i.gyazo.com/e742da4b965543d951185c6ffadb97d9.png)
 
 ### Hidden:
 ```css
 .box-element { overflow: hidden; }
 ```
-![Example Image](https://s26.postimg.org/l49mf77e1/2-hidden.png)
+![Example Image](https://i.gyazo.com/cee767d9d8f89f4d6dd3fd7de7858fd9.png)
 
 ### Scroll:
 ```css
 .box-element { overflow: scroll; }
 ```
-![Example Image](https://s26.postimg.org/d8z30dxrd/3-scroll.png)
+![Example Image](https://i.gyazo.com/6c41a51c5a0398fe74dbb5bd2f08a1fd.png)
 
 ### Auto:
 ```css
 .box-element { overflow: auto; }
 ```
-![Example Image](https://s26.postimg.org/z5q7ei0bt/4-autoank.png)
+![Example Image](https://i.gyazo.com/173a13fd618d7946fceabcf35f33c458.png)
 
 ## overflow-x and overflow-y
 
@@ -63,3 +63,4 @@ If the content overflows the Y-axis, then that content will be hidden, whilst a 
 #### More Information:
 
 CSS-Tricks: <a href='https://css-tricks.com/almanac/properties/o/overflow/' target='_blank' rel='nofollow'>overflow</a>
+W3Schools: <a href='https://www.w3schools.com/css/css_overflow.asp' target='_blank' rel='nofollow'>image source</a>
