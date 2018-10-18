@@ -16,7 +16,7 @@ Después de instalar / adquirir estas piezas de software, descargue la versión 
 
 Lo siguiente es elegir su IDE (entorno de desarrollo integrado). ¿Eclipse? `gradlew eclipse` IntelliJ? ¡Importe el archivo build.gradle en su configuración de IntelliJ!
 
-## Bien ahora que? ¿Cómo agrego nuevos artículos de lujo? (Configuración de mod básica)
+## Bien. ¿Ahora que? ¿Cómo agrego nuevos artículos de lujo? (Configuración de mod básica)
 
 Calma. Hay mucho más que eso. Tendrás que texturizar un artículo, por supuesto, agregar código y mucho más. En este artículo solo veremos un código de ejemplo simple que también uso para mis propios mods. ¡Aquí está!
 
