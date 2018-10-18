@@ -15,7 +15,8 @@ Some famous web services include
 * Google Cloud Functions – As of August 2017 is in beta testing. FaaS providing serverless functions to be triggered by cloud events.
 * Google Cloud Datastore - DBaaS providing a document-oriented database.
 * Cloud Pub/Sub - a service for publishing and subscribing to data streams and messages. Applications can communicate via Pub/Sub, without direct integration between the applications themselves.
-* Google Storage - IaaS providing RESTful online file and object storage.
+* Google Cloud Storage - IaaS providing RESTful online file and object storage.It consists of both structured and unstructured data.
+* Cloud SQL - IaaS that Provides relational database management system in Postgre and MySQL.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
