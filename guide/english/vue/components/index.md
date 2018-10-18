@@ -84,3 +84,5 @@ Once a prop is registered, you can pass data to it as a custom attribute, like t
 <blog-post title="Blogging with Vue"></blog-post>
 <blog-post title="Why Vue is so fun"></blog-post>
 ```
+
+Welcome from Hacktober 2018!
