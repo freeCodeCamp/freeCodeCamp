@@ -21,7 +21,7 @@ In procedural programming, we simply create variables and change them when requi
 
 Another extremely useful concept is that of inheritance. The idea is that a class can inherit attributes and behaviour from a base class. For example, while creating a game, we have a player and enemy. We can create a base class called person, and give it attributes like name, age, gender, etc. Person's behaviour can be walk and jump. A player and enemy can then inherit these "qualities" from person, and can have added qualities like kill, score, eat, etc.
 
-This helps in reusing code and making you rcode structure much more clean. Data hiding is another cool feature. In OO, we have the notion of private and public attributes. Private attributes can be accessed and modified only by methods of that particular class, while public data can be modified from anywhere in the program (within scope obviously).
+This helps in reusing code and making you code structure much more clean. Data hiding is another cool feature. In OO, we have the notion of private and public attributes. Private attributes can be accessed and modified only by methods of that particular class, while public data can be modified from anywhere in the program (within scope obviously).
 
 ## What next?
 Pick an OO language, and build a basic terminal based game to illustrate these concepts.
