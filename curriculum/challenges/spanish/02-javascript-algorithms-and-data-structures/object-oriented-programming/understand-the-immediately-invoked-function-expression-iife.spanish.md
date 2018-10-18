@@ -7,10 +7,10 @@ localeTitle: Comprender la expresión de función invocada inmediatamente (IIFE)
 ---
 
 ## Description
-<section id="description"> Un patrón común en JavaScript es ejecutar una función tan pronto como se declara: <blockquote> (función () { <br> console.log (&quot;Chirp, chirp!&quot;); <br> }) (); // esta es una expresión de función anónima que se ejecuta de inmediato <br> // Salidas &quot;¡Chirrido, chirrido!&quot; inmediatamente </blockquote> Tenga en cuenta que la función no tiene nombre y no está almacenada en una variable. Los dos paréntesis () al final de la expresión de la función hacen que se ejecute o se invoque inmediatamente. Este patrón se conoce como una <code>immediately invoked function expression</code> o <code>IIFE</code> . </section>
+<section id="description"> Un patrón común en JavaScript es ejecutar una función tan pronto como se declara: <blockquote> (función () { <br> console.log (&quot;Chirrido, Chirrido!&quot;); <br> }) (); // esta es una expresión de función anónima que se ejecuta de inmediato <br> // Salidas &quot;¡Chirrido, chirrido!&quot; inmediatamente </blockquote> Tenga en cuenta que la función no tiene nombre y no está almacenada en una variable. Los dos paréntesis () al final de la expresión de la función hacen que se ejecute o se invoque inmediatamente. Este patrón se conoce como una <code>immediately invoked function expression</code> o <code>IIFE</code> . </section>
 
 ## Instructions
-<section id="instructions"> Reescriba la función <code>makeNest</code> y elimine su llamada, por lo que es una <code>immediately invoked function expression</code> forma anónima ( <code>IIFE</code> ). </section>
+<section id="instructions"> Reescriba la función <code>makeNest</code> eliminando su llamada, por lo que es una <code>immediately invoked function expression</code> forma anónima ( <code>IIFE</code> ). </section>
 
 ## Tests
 <section id='tests'>
@@ -33,7 +33,7 @@ tests:
 
 ```js
 function makeNest() {
-  console.log("A cozy nest is ready");
+  console.log("Un acojedor nido está listo.");
 }
 
 makeNest();
@@ -50,6 +50,6 @@ makeNest();
 <section id='solution'>
 
 ```js
-// solution required
+// Solución requerida.
 ```
 </section>
