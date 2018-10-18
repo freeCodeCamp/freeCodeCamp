@@ -153,6 +153,14 @@ title: Books to Read for Programmers
 - https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM
 - (ISBN 1976112524).
 
+*Rtfm: Red Team Field Manual
+- https://www.amazon.com/Rtfm-Red-Team-Field-Manual/dp/1494295504
+- (ISBN-13 978-1494295509).
+
+*Blue Team Field Manual (BTFM)
+- https://www.amazon.com/Blue-Team-Field-Manual-BTFM-ebook/dp/B077WF4WYV
+- (ISBN 154101636X).
+
 *Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319)
 - ISBN-13: 978-0735611313
