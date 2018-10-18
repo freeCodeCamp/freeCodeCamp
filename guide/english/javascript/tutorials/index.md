@@ -12,4 +12,6 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
+#### Useful articles:
 
+- [Google's JS Style Guide](https://google.github.io/styleguide/jsguide.html#source-file-basics)
