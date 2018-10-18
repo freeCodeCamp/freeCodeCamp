@@ -47,3 +47,4 @@ For further reading  :
 
 - Click <a href="https://medium.com/@gon.esbuyo/get-started-with-nlp-part-i-d67ca26cc828"  target='_blank' rel='nofollow'>here</a> for an article about NLP intro.
 - Click <a href="https://en.wikipedia.org/wiki/Natural_language_processing" target='_blank' rel='nofollow'>here</a> for the Wikipedia reference.
+- Click <a href="https://medium.com/@gon.esbuyo/get-started-with-nlp-part-i-d67ca26cc828"  target='_blank' rel='nofollow'>here</a> to check out google's language processing API
