@@ -44,3 +44,6 @@ Practice as much as you need to feel relaxed. You should time yourself giving th
 You may be nervous (that's okay!) but try to enjoy the other talks and events that the conference has to offer. 
 
 Give yourself plenty of time to be at your speaking location beforehand and bring a friend to see your talk if possible. Be aware that many conferences now record talks and prepare for this ahead of time. Take several deep breaths before you go on and try to have a nice time. If people can see that you are happy to be there, they will most likely be happy to hear what you have to say. 
+
+## References
+How and Why to Speak at a Tech Conferece [Video] - https://hackernoon.com/how-and-why-to-speak-at-tech-conferences-1d50a3f548e0
