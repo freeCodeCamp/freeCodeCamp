@@ -1,7 +1,10 @@
 ---
 title: Python Code Blocks and Indentation
 ---
-It is generally good practice for you not to mix tabs and spaces when coding in Python. Doing this can possibly cause a ```TabError```, and your program will crash. Be consistent when you code - choose either to indent using tabs or spaces and follow your chosen convention throughout your program.
+It is generally good practice for you not to mix tabs and spaces when coding in Python. Doing this can possibly cause a ```TabError```, and your program will crash. Python 3 Python 3 disallows mixing the use of tabs and spaces for indentation.
+Be consistent when you code - choose either to indent using tabs or spaces and follow your chosen convention throughout your program.
+
+<a href='https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces'>PEP-8</a>, the official style guide for Python, recommends using spaces for indentation.
 
 #### Code Blocks and Indentation
 One of the most distinctive features of Python is its use of indentation to mark blocks of code. Consider the if-statement from our simple password-checking program:
