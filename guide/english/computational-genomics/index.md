@@ -13,3 +13,7 @@ This section will focus on the various data structures and algorithms that are u
 Introduction to Computational Genomics by Matthew W. Hahn
 
 A great starter book for beginners 
+
+## Additional Resources
+This blog by astrobiologist [Mike Lee](https://astrobiomike.github.io/) is a good place to start.  
+Bioinformatics tools are commonly designed in R and Python.  Two such projects are the [Bioconductor](https://www.bioconductor.org/) project (written in R) and the [Biopython](https://biopython.org/) project.
