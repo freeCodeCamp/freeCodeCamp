@@ -9,12 +9,19 @@ Here's a simple example of a function that divides two numbers. It's not very us
 #include <stdio.h>
 
 int divides(int a, int b) {
+if(b!=0)
+{
     return a / b;
+}
+else
+{
+return 0;
+}
 }
 
 int main(void) {
     int first = 5;
-    int second = 10; //MUST NOT BE ZERO;
+    int second = 10; //MUST NOT BE ZERO BUT IF IT IS THE ABOVE CODE CAN HANDLE IT;
 
     int result = divides(first, second);
 
