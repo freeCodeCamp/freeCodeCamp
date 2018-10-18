@@ -38,3 +38,6 @@ Script tags are loaded into your HTML in-order and syncronously so it is usually
 ```
 
 You can see the official documentation for the script element on the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
+
+#### Try it here
+[W3School - Hands on for <script> tag](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_scripts_intro)
