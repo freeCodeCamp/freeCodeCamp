@@ -12,71 +12,65 @@ To use bootstrap buttons you follow the same steps that you would to create a bu
 
 `<button type="button" class="btn btn-primary">Primary</button>`
 
-<button type="button" class="btn btn-primary">Primary</button>
-
 You can also use bootstrap buttons with the `<a>` and `<input>` elements as shown in the examples below.
 
 `<a class="btn btn-primary" href="#" role="button">This button is a link</a>`
 
-<a class="btn btn-primary" href="#" role="button">This button is a link</a>
-
 `<input class="btn btn-primary" type="submit" value="Submit">`
-
-<input class="btn btn-primary" type="submit" value="Submit">
 
 #### Bootstrap Button Class List:
 This is a list of the CSS classes that bootstrap provides for buttons.
 
-`.btn` This is bootstrap's basic button.
+`.btn` Bootstrap's basic button.
 
-<button type="button" class="btn">Basic</button>
+`<button type="button" class="btn">Basic</button>`
 
-`.btn-default` This is bootstrap's default button.
+`.btn-default` Bootstrap's default button.
 
-<button type="button" class="btn btn-default">Default</button>
+`<button type="button" class="btn btn-default">Default</button>`
 
-`.btn-primary` This is bootstrap's primary button.
+`.btn-primary` Bootstrap's primary button.
 
-<button type="button" class="btn btn-primary">Primary</button>
+`<button type="button" class="btn btn-primary">Primary</button>`
 
-`.btn-success` This is bootstrap's success button.
+`.btn-success` Bootstrap's success button.
 
-<button type="button" class="btn btn-success">Success</button>
+`<button type="button" class="btn btn-success">Success</button>`
 
-`.btn-info` This is bootstrap's info button.
+`.btn-info` Bootstrap's info button.
 
-<button type="button" class="btn btn-info">Info</button>
+`<button type="button" class="btn btn-info">Info</button>`
 
-`.btn-warning` This is bootstrap's warning button.
+`.btn-warning` Bootstrap's warning button.
 
-<button type="button" class="btn btn-warning">Warning</button>
+`<button type="button" class="btn btn-warning">Warning</button>`
 
-`.btn-danger` This is bootstrap's danger button.
+`.btn-danger` Bootstrap's danger button.
 
-<button type="button" class="btn btn-danger">Danger</button>
+`<button type="button" class="btn btn-danger">Danger</button>`
 
-`.btn-link` This is bootstrap's link button.
+`.btn-link` Bootstrap's link button.
 
-<button type="button" class="btn btn-link">Link</button>
+`<button type="button" class="btn btn-link">Link</button>`
 
-`.btn-light` This is bootstrap's light button.
+`.btn-light` Bootstrap's light button.
 
-<button type="button" class="btn btn-light">Light</button>
+`<button type="button" class="btn btn-light">Light</button>`
 
 #### Bootstrap Button Sizes:
 This is a list of the CSS classes for different size of the buttons.
 
-`.btn-lg` This is bootstrap's large button.
+`.btn-lg` Bootstrap's large button.
 
-<button type="button" class="btn btn-lg">Large</button>
+`<button type="button" class="btn btn-lg">Large</button>`
 
-`.btn-sm` This is bootstrap's small button.
+`.btn-sm` Bootstrap's small button.
 
-<button type="button" class="btn btn-sm">Small</button>
+`<button type="button" class="btn btn-sm">Small</button>`
 
 `.btn-xs` This is bootstrap's extra small button.
 
-<button type="button" class="btn btn-xs">Extra Small</button>
+`<button type="button" class="btn btn-xs">Extra Small</button>`
 
 #### Bootstrap Outlined Buttons:
 It is possible to also have outlined buttons rather than fully colored in ones. This is achieved by placing the mid fix `outline` between the button class you want. A sample usage would be as follows:
