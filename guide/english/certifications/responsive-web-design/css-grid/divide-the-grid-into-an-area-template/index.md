@@ -3,8 +3,19 @@ title: Divide the Grid Into an Area Template
 ---
 ## Divide the Grid Into an Area Template
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/css-grid/divide-the-grid-into-an-area-template/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+In this challenge you are required to use the "grid-template-areas" property to group cells of a grid together into areas and give the areas a custom name.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+### Hint
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+A period (`.`) designates an empty cell in a grid.
+
+### Solution
+
+Since the challenge requires you to make the cell labeled `advert` into an empty cell, change `advert` to a `.` (period) so that the code reflects the following:
+
+````css
+grid-template-areas:
+  "header header header"
+  ". content content"
+  "footer footer footer";
+````
