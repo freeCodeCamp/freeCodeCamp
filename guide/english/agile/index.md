@@ -24,3 +24,4 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+[Alassian about Agile](thttps://www.atlassian.com/agile)
