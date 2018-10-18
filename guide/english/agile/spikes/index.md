@@ -21,3 +21,4 @@ Your team gained the information necessary to make better decisions; to reduce u
 - Scrum Alliance [Spikes and Effort-to-Grief Ratio](https://www.scrumalliance.org/community/articles/2013/march/spikes-and-the-effort-to-grief-ratio)
 - Wikipedia [Spike](https://en.wikipedia.org/wiki/Spike_(software_development))
 
+I enjoy learning to code now
