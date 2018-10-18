@@ -156,6 +156,7 @@ The `objects` parameter is prefixed with a `*` which indicates that the function
 ## Want to learn more?
 
 Free Code Camp has some great resources. The web is a big place, there's plenty more to explore:
+Python documentation:   https://docs.python.org/3.7/index.html
 * Python Practice Book: http://anandology.com/python-practice-book/index.html
 * Think Python: http://greenteapress.com/thinkpython/html/index.html
 * Practical Business Python: http://pbpython.com/
