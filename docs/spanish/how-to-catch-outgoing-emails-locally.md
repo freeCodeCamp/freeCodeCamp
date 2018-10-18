@@ -111,3 +111,5 @@ Cualquier enlace en el correo electrónico debe redireccionar.
 ## Enlaces útiles
 
 - Para cualquier otra pregunta relacionada con MailHog o para obtener instrucciones sobre configuraciones personalizadas, consulte el repositorio de [MailHog](https://github.com/mailhog/MailHog).
+// html example
+<span>&#9786;</span>
