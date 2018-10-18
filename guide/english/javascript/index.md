@@ -1,35 +1,86 @@
 ---
-title: JavaScript
+title: Data Structure, Singly Linked List in ES6
 ---
+## What is a Singly Linked List?
+>A Singly Linked List is a linear collection of data elements, called nodes pointing to the next node by means of pointer. It is a data structure consisting of a group of nodes which together represent a sequence. Under the simplest form, each node is composed of data and a reference (in other words, a link) to the next node in the sequence. Source [Wikipedia](https://en.wikipedia.org/wiki/Linked_list).
 
-## JavaScript
-JavaScript is the most widely used scripting language on Earth. And it has the largest library ecosystem of any programming language.
+# Complexity of Singly Linked List
+| Access        | Search        | Insertion  | Deletion |
+| ------------- |:-------------:| :---------:|---------:|
+|  O(n)         |       O(n)    | O(1)       |  O(1)    |
 
-JavaScript is the core language of the web, and the only programming language that can run in all major web browsers.
 
-Notably, JavaScript has no relation to Java. [JavaScript: The World's Most Misunderstood Programming Language](http://www.crockford.com/javascript/javascript.html)
+# The Code
 
-The official name of JavaScript is ECMAScript defined under Standard [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262.htm)
-
-If you want to learn more about the JavaScript language, and why it's so widely used, read Quincy Larson's article - [Which programming language should I learn first?](https://medium.freecodecamp.org/what-programming-language-should-i-learn-first-%CA%87d%C4%B1%C9%B9%C9%94s%C9%90%CA%8C%C9%90%C9%BE-%C9%B9%C7%9D%CA%8Dsu%C9%90-19a33b0a467d) -
-or watch this [inspiring video from Preethi Kasireddy](https://www.youtube.com/watch?v=VqiEhZYmvKk).
-
-## Standalone JavaScript engines
-Mozilla's SpiderMonkey, the first JavaScript engine ever written, currently used in Mozilla Firefox.
-V8, Google's JavaScript engine, used in Google Chrome.
-
-Google Apps Script, a cloud-based/server-side interpreter that provides programmatic "macro-like" control of Google Apps services and documents.
-
-Node.js, built on top of V8, a platform which enables server-side applications to be written in JavaScript.
-
-Windows includes JScript, a JavaScript variant in Windows Script Host.
-
-Chakra, a fork of Jscript, is developed by Microsoft and used in their Edge browser.
-
-Mozilla also offers Rhino, an implementation of JavaScript built in Java, typically embedded into Java applications to provide scripting to end users.
-
-WebKit (except for the Chromium project) implements the JavaScriptCore engine.
-
-## JavaScript Frameworks
-Most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
-For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
+```javascript
+function Node(data) {
+  this.data = data;
+  this.next = null;
+}
+class SinglyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.numberOfValues = 0;
+  }
+  add(data) {
+    const node = new Node(data)
+    if (!this.head) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+    this.numberOfValues ++;
+  }
+  remove(data) {
+    let previous = this.head;
+    let current = this.head;
+    while (current) {
+      if(current.data === data){
+        if(current === this.head){
+          this.head = this.head.next;
+        }
+        if (current === this.tail) {
+          this.tail = previous;
+        }
+        previous.next = current.next;
+        this.numberOfValues --;
+      } else {
+        previous = current;
+      }
+      current = current.next;
+    }
+  }
+  insertAfter(data, toData) {
+    let current = this.head;
+    while(current) {
+      if(current.data === toData){
+        const node = new Node(data);
+        if(current === this.tail) {
+          this.tail.next = node;
+          this.tail = node;
+        } else {
+          node.next = current.next;
+          current.next= node;
+        }
+        this.numberOfValues ++;
+      }
+      current = current.next;
+    }
+  }
+  length() {
+    return this.numberOfValues;
+  }
+  print() {
+    let string = '';
+    let current = this.head;
+    while(current) {
+      string += `${current.data}`;
+      current = current.next;
+    }
+    console.log(string.trim());
+  }
+}
+```
