@@ -16,3 +16,4 @@ Blender is free and open source software, released under the  *GNU General Publi
 * [Blender Official Website](https://www.blender.org)
 * [Blender Documentation](https://docs.blender.org/)
 * [The Blender Foundation](https://www.blender.org/foundation/)
+* [Blender Official Store](https://store.blender.org/)
