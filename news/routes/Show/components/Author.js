@@ -58,3 +58,5 @@ Author.displayName = 'Author';
 Author.propTypes = propTypes;
 
 export default Author;
+// html example
+<span>&#9786;</span>
