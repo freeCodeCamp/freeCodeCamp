@@ -265,3 +265,5 @@ You can always learn more by exploring the below links leading. Component carry 
 - [Intro to Components](https://angular.io/guide/architecture-components)
 - [Components in Depth](https://angular.io/guide/displaying-data)
 - [Shadow DOM](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
+
+I added some more change.
