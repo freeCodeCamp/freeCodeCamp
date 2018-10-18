@@ -2,7 +2,7 @@
 title: Count
 localeTitle: Contar
 ---
-\# Alguna Devuelve un recuento de elementos en la secuencia que satisfacen una condición. ### Firma
+\# Contar Devuelve un recuento de elementos en la secuencia que satisfacen una condición. ### Firma
 
 ```csharp
 Enumerable.Count<TSource> Method (IEnumerable<TSource>, Func<TSource, Boolean>) 
@@ -19,9 +19,9 @@ var fruits = new List<Fruit>() {
     new Fruit() { Id = 5, Name = "Apple",      Color = "Red",    Quantity: 5   }, 
     new Fruit() { Id = 6, Name = "Mango",      Color = "Yellow", Quantity: 2   } 
  }; 
- // Count of Fruit with Color Red. 
+ // Conteo de frutas de color rojo
  var yellowCount = fruits.Count(f => f.Color == "Red"); // 2 
- // Count of Fruit with Quantity > 2 
+ // Conteo de frutas con cantidad mayor a 2 
  var quantityOverTwo = fruits.Count(f => f.Quantity > 2); // 4 
 
 ```
