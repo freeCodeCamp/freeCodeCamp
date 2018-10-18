@@ -12,6 +12,8 @@ A *distributed* version control system means that different users maintain their
 
 When Git is initialized in a project directory, it begins tracking file changes and stores them as "change sets" or "patches." Users working together on a project submit their change sets which are then included (or rejected) in the project.
 
+Git can also be used in conjunction with github, which is a web-based hosting service for version control. 
+
 **Table of Contents**
 - [Understand the Three Sections of a Git Project](#understand-the-three-sections-of-a-git-project)
 - [Install Git](#install-git)
