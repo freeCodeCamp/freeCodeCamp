@@ -17,5 +17,9 @@ Commonly used options:
 - `-f` to force move them and overwrite files without checking with the user.
 - `-i` to prompt confirmation before overwriting files.
 
+### Warning
+
+This command is capable of modifying many files at once with ease.  This can be beneficial, but also dangerous. Use at your own risk
+
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Mv)
