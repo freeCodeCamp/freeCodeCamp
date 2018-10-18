@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 export default class HTML extends React.Component {
   render() {
+    const { htmlAttributes, headComponents, bodyAttributes, preBodyComponents, postBodyComponents, body } = this.props;
     return (
-      <html id='__fcc-html' {...this.props.htmlAttributes} lang='en'>
+      <html id='__fcc-html' {...htmlAttributes} lang='en'>
         <head>
           <meta charSet='utf-8' />
           <meta content='ie=edge' httpEquiv='x-ua-compatible' />
@@ -19,16 +20,16 @@ export default class HTML extends React.Component {
             }
             rel='stylesheet'
           />
-          {this.props.headComponents}
+          {headComponents}
         </head>
-        <body {...this.props.bodyAttributes}>
-          {this.props.preBodyComponents}
+        <body {...bodyAttributes}>
+          {preBodyComponents}
           <div
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
+            dangerouslySetInnerHTML={{ __html: body }}
             id='___gatsby'
             key={'body'}
           />
-          {this.props.postBodyComponents}
+          {postBodyComponents}
         </body>
       </html>
     );
