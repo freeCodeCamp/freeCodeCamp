@@ -7,7 +7,7 @@ In this article we will tell you some of the coolest tricks, to debug using the 
 
 ## A brief insight into the FreeCodeCamp Code Editor:
 
-Before jumping into debugging lets leak out some secret facts about that _awesome code checking engine_ at FCC.
+Before jumping into debugging let's leak out some secret facts about that _awesome code checking engine_ at FCC.
 
 We use a customized <a href='http://codemirror.net/mode/javascript/index.html' target='_blank' rel='nofollow'>CodeMirror</a>, as the code editor. A <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval' target='_blank' rel='nofollow'>`eval()` function</a> is used to evaluate the JavaScript code represented as a string from the editor. When `eval()` is called, browsers will natively execute your code. We will learn more why this secret is important in later sections of this article.
 
@@ -35,7 +35,7 @@ on Mac, or If you just love your mouse go to `Menu > More Tools > Developer Tool
 
 #### Getting to know the `Sources` and the `console` tabs.
 
-These two tabs are the perhaps going to be your best friends while debugging. The `Sources` tab can be used to visualize all the scripts that's on the webpage you are visiting. This tab has sections for the code window, file tree, call stack & watch windows, etc.
+These two tabs are the perhaps going to be your best friends while debugging. The `Sources` tab can be used to visualize all the scripts that are on the webpage you are visiting. This tab has sections for the code window, file tree, call stack & watch windows, etc.
 
 The `console` tab is where all of the log output goes. Additionally you can use the console tab's prompt to execute JavaScript code. Its kind of synonymous to the command prompt on Windows, or terminal on Linux.
 
@@ -60,7 +60,7 @@ One of the coolest feature that you will love is <a href='https://developer.chro
 
 Every script can be visualized in the Source tab of the DevTools. The source tab has all the JavaScript source files. But the code from the code editor is executed via `eval()`in a container simply called a virtual machine(VM) within the browser process.
 
-As you might have guessed by now is that our code is actually a script that doesn't have a file name. So we don't see that in the Source tab.
+As you might have guessed by now our code is actually a script that doesn't have a file name. So we don't see that in the Source tab.
 
 > ![:sparkles:](//forum.freecodecamp.com/images/emoji/emoji_one/sparkles.png?v=2 ":sparkles:") **_Here comes the hack!_** ![:sparkles:](//forum.freecodecamp.com/images/emoji/emoji_one/sparkles.png?v=2 ":sparkles:")
 
