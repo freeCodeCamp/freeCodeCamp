@@ -31,3 +31,6 @@ One of the biggest Open Source projects is Linux.
 [Open Source Initiative](https://opensource.org/)
 [Wikipedia Open Source Model](https://en.wikipedia.org/wiki/Open-source_model)
 [Wikipedia Open Source Software](https://en.wikipedia.org/wiki/Open-source_software)
+
+##### Podcasts:
+Check out Christopher Lydon's open source podcast here at [Radio Open Source](http://radioopensource.org/)
