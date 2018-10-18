@@ -98,3 +98,9 @@ Note that the `else` and `else if` sections are not required, while `if` is mand
 ```
 
 The if statement needs a boolean result, that is, true or false. In some programming languages, several datatypes can be automatically converted into booleans, but in C#, you have to specifically make the result boolean. For instance, you can't use if(number), but you can compare number to something, to generate a true or false.
+
+##If Shorthand Statement
+```
+	(someValue = condition) ? newValue : someValue;
+```
+The statement above has a condition wrapped in parenthesis "()" with a question mark. This is your if logic. The first value after the question mark is what is used if the condition is true followed by a colon, which just a divider, and finally the value to use if the conditional is false. 
