@@ -51,7 +51,7 @@ HTML tags are element names surrounded by angle brackets:
 
 ```<tagname> here is the content.. </tagname>```
 
-HTML tags normally come in pairs like ```<p>```and ```</p>```
+HTML tags normally come in pairs like ```<h1>```and ```</h1>```
 
 The first tag in a pair is the start tag, the second tag is the end tag
 
