@@ -53,3 +53,10 @@ Any comparison based sorting algorithm must make at least nLog2n comparisons to 
 
 ### Algorithmic Paradigm
 Merge Sort and Quick Sort are based on Divide and Conquer Algorithm
+
+### Additional Resources
+
+[Sorting Algorithm Examples](https://www.advanced-ict.info/interactive/algorithms.html)
+
+This website helps demonstrate various types of sorting algorithms
+
