@@ -12,77 +12,106 @@ Para entender esse assunto, você deve ter uma compreensão sólida de como as [
 
 ## Sintaxe Básica
 
-\`\` \`javascript function slowlyResolvedPromiseFunc (string) { return new Promise (resolve => { setTimeout (() => { resolver (string); }, 5000); }); }
+```javascript 
+function slowlyResolvedPromiseFunc (string) { 
+   return new Promise (resolve => { 
+     setTimeout (() => { resolver (string); }, 5000); 
+   }); 
+}
 
-função assíncrona doIt () { const myPromise = aguardar lentamenteResolvedPromiseFunc ("foo"); console.log (myPromise); // "foo" }
+função assíncrona doIt () { 
+  const myPromise = aguardar lentamenteResolvedPromiseFunc ("foo"); 
+  console.log (myPromise); // "foo" 
+}
 
 faça();
 ```
-There are a few things to note: 
- 
- * The function that encompasses the `await` declaration must include the `async` operator. This will tell the JS interpreter that it must wait until the Promise is resolved or rejected. 
- * The `await` operator must be inline, during the const declaration. 
- * This works for `reject` as well as `resolve`. 
+
+Há outras coisas para se prestar atenção:
+
+* A função que contém alguma declaração de `await` precisa incluir o operador `async` em sua declaração. Isso irá dizer ao interpretador JS para que ele espere até que a `Promise` seja resolvida ou rejeitada.
+ * O operador `await` precisa ser declarado inline.
+   * `const something = await thisReturnsAPromise()`
+ * Isso funciona tanto para a rejeição ou a resolução de uma `Promise`.
  
  --- 
  
- ## Nested Promises vs. `Async` / `Await` 
+ ## Promises aninhadas vs. `Async` / `Await` 
  
- Implementing a single Promise is pretty straightforward. In contrast, Chained Promises or the creation of a dependency pattern may produce "spaghetti code". 
+ Implementar uma unica promise é muito facil. Por outro lado promises aninhadas ou a criação de uma "dependency pattern" pode produzir um código spagetti.
  
- The following examples assume that the <a href='https://github.com/request/request-promise' target='_blank' rel='nofollow'>`request-promise`</a> library is available as `rp`. 
+ Os exemplos a seguir assumem que <a href='https://github.com/request/request-promise' target='_blank' rel='nofollow'>`request-promise`</a> está disponível como `rp`. 
  
- ### Chained/Nested Promises 
-```
+ ### Promises encadeadas/aninhadas
+```js 
 
-javascript // Primeira Promessa const fooPromise = rp ("http://domain.com/foo");
+// Primeira Promisse
+const fooPromise = rp("http://domain.com/foo");
 
-fooPromise.then (resultFoo => { // deve esperar por "foo" para resolver console.log (resultFoo);
+fooPromise.then(resultFoo => { 
+// deve esperar por "foo" para resolver 
+  console.log (resultFoo);
+})
 ```
+```js
 const barPromise = rp("http://domain.com/bar"); 
- const bazPromise = rp("http://domain.com/baz"); 
+const bazPromise = rp("http://domain.com/baz"); 
  
- return Promise.all([barPromise, bazPromise]); 
-```
-
-}). then (resultArr => { // Lidar com as resoluções "bar" e "baz" aqui console.log (resultArr \[0\]); console.log (resultArr \[1\]); });
+Promise.all([barPromise, bazPromise])
+.then(resultArr => {
+   // Lidar com as resoluções "bar" e "baz" aqui 
+   console.log(resultArr [0]); 
+   console.log(resultArr [1]); 
+});
 ```
 ### `async` and `await` Promises 
-```
 
-javascript // Enrole tudo em uma função assíncrona função assíncrona doItAll () { // Pega dados do ponto de extremidade "foo", mas aguarde a resolução console.log (aguarde rp ("http://domain.com/foo"));
-```
-// Concurrently kick off the next two async calls, 
- // don't wait for "bar" to kick off "baz" 
+```js
+
+// Enrole tudo em uma função assíncrona função assíncrona 
+async doItAll () { 
+ // Pega dados do ponto de extremidade "foo", mas aguarde a resolução 
+ console.log (await rp("http://domain.com/foo"));
+
+ // Concorrência aconteceConcurrently kick off the next two async calls, 
+ // não espere por "bar" para disparar "baz"
  const barPromise = rp("http://domain.com/bar"); 
  const bazPromise = rp("http://domain.com/baz"); 
  
- // After both are concurrently kicked off, wait for both 
+ // Depois que as duas foram disparadas, espere pelas duas
  const barResponse = await barPromise; 
  const bazResponse = await bazPromise; 
  
  console.log(barResponse); 
  console.log(bazResponse); 
-```
-
 }
-
-// Finalmente, invoque a função assíncrona doItAll (). then (() => console.log ('Feito!'));
 ```
-The advantages of using `async` and `await` should be clear. This code is more readable, modular, and testable. 
+
+```js
+// Finalmente, invoque a função assíncrona 
+doItAll().then(() => console.log ('Feito!'));
+```
+
+As vantagens de usar `async` e `await` deve estar claro. O codigo é mais modular, testavel e legível. 
  
- It's fair to note that even though there is an added sense of concurrency, the underlying computational process is the same as the previous example. 
+Entretanto há um senso de concorrencia, os processos computacionais que ocorrem são os mesmos do exemplo anterior.
  
  --- 
  
- ## Handling Errors / Rejection 
+## Lidando com Errors / Rejection 
  
- A basic try-catch block handles a rejected Promise. 
+Um bloco `try-catch` consegue lidar com rejeição de promises.
+
+```js 
+async errorExample () { 
+  try { 
+    const rejectedPromise = await Promise.reject ("Oh-oh!"); 
+  } catch (erro) { 
+    console.log (erro);
+  }
+
+errorExample ();
 ```
-
-javascript função assíncrona errorExample () { experimentar { const rejectedPromise = await Promise.reject ("Oh-oh!"); } pegar (erro) { console.log (erro); // "Uh-oh!" } }
-
-errorExample (); \`\` \`
 
 * * *
 
