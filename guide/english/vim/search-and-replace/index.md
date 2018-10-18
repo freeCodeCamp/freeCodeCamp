@@ -30,3 +30,5 @@ Some common search and replace examples are listed below:
 - `:%s/foo/bar/g`	Change each 'foo' to 'bar' in all the lines.
 - `:13s/foo/bar/g` Change each 'foo' to 'bar' in line 13.
 - `:%s/foo/bar/cgi` Change every 'foo' to 'bar' in all lines.
+
+You can also search and replace in visual mode. 
