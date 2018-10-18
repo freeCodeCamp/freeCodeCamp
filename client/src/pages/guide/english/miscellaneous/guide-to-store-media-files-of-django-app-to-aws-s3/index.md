@@ -3,11 +3,11 @@ title: Django-file-storage
 ---
 ## Django Media Files and Static files Storage
 
-#### Steps to create AWS S3 Bucket
+#### Steps to create AWS S3 Bucket (More information on S3 [Visit Here!](https://docs.aws.amazon.com/AmazonS3/latest/gsg/GetStartedWithS3.html))
 
 * Open aws console and create IAM user for S3 bucket
 * In services select S3
-* Create new S3 buket in S3 console
+* Create new S3 bucket in S3 console
 
 #### Steps to do in django app
 
