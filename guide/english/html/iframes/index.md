@@ -30,8 +30,8 @@ Embedding Google Maps with an `<iframe>`:
 width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 ```
 
-### Alternative Text
-The content between the opening and closing `<iframe>` tags is used as alternative text, to be displayed if the viewer's browser does not support iframes.
+### Content Between Iframe Tags
+The content between the opening and closing `<iframe>` tags is udisplayed if the viewer's browser does not support iframes.
 
 ```html
 <iframe width="560" height="315" src="https://www.youtube.com/embed/v8kFT4I31es" frameborder="0">
