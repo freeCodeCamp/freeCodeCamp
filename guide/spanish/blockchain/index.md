@@ -20,7 +20,7 @@ Por esta razón, Blockchain también se conoce como **"The Trust Protocol"** .
 
 El primer trabajo sobre una cadena de bloques asegurada criptográficamente fue descrito en 1991 por Stuart Haber y W. Scott Stornetta. Querían implementar un sistema en el que las marcas de tiempo de los documentos no pudieran ser manipuladas o retrasadas. En 1992, Bayer, Haber y Stornetta incorporaron árboles Merkle al diseño, lo que mejoró su eficiencia al permitir que varios documentos se reunieran en un solo bloque.
 
-El primer blockchain fue conceptualizado por una persona (o grupo de personas) conocida como Satoshi Nakamoto en 2008. Fue implementada el año siguiente por Nakamoto como un componente central de la criptomoneda bitcoin, donde sirve como el registro público para todas las transacciones en el red.
+El primer blockchain fue conceptualizado por una persona conocida como Satoshi Nakamoto en 2008. Fue implementada el año siguiente por Nakamoto como un componente central de la criptomoneda bitcoin, donde sirve como el registro público para todas las transacciones en el red.
 
 En agosto de 2014, el tamaño del archivo bitcoin blockchain, que contiene registros de todas las transacciones que se han producido en la red, alcanzó los 20 GB (gigabytes). En enero de 2015, el tamaño había aumentado a casi 30 GB, y desde enero de 2016 hasta enero de 2017, la cadena de bloques de bitcoin creció de 50 GB a 100 GB. Además, Nakamoto introdujo el concepto de prueba de trabajo para garantizar una confianza más descentralizada en la seguridad de los registros.
 
