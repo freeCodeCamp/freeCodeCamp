@@ -30,7 +30,7 @@ cp file1.txt file2.txt fileN.txt your/target/directory
  #### Copy a directory
  ```bash
 cp -R directory/to/copy your/target/directory
-```
+```  Added I am now done with this task
  `cd` into the target directory and `ls` to see your directory. The `-R` option is added to recursively copy everything in the directory.
  ### More Information
 * run `man cp` to get a list of all options for this command
