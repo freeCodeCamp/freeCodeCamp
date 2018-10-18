@@ -56,7 +56,7 @@ class Person {
 
 In general programmers use the following ways to create a class in JavaScript.
 
-### Using methods added to prototypes:
+### Using methods added to prototypes :
 
 Here, all the methods are added to prototype
 
