@@ -35,4 +35,7 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [Girls Who Code](https://girlswhocode.com/)
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 
+### Podcasts on Women-in-tech:
+If you're interested in podcasts, check out Esperee Devora's on women in tech [here](http://podcast.womenintechshow.com/episodes)
+
 
