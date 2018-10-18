@@ -27,4 +27,4 @@ In PHP, a variable starts with the $ sign, followed by the name of the variable.
  ?>
  ```
  
-Variable lifecycle: In PHP variables have a default value. If a variable is not declared before you attempt to use it, its value will be NULL. It is unset. So you can't use it by writing `isset($variable)` before using it.
+Variable lifecycle: In PHP variables have a default value. If a variable is not declared before you attempt to use it, its value will be NULL. It is unset. So you can't use it by writing `isset($variable)` before declaring it.
