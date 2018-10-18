@@ -55,6 +55,8 @@ Hex codes are case insensitive, meaning that #FFFFFF and #ffffff would be the sa
 
 Additionally, there are 16,777,216 possible color combinations using hexcode.
 
+A shorthand form also exists. The shorthand #ABC is equivalent to #AABBCC. In this form, 4096 colours are available.
+
 ### Opacity
 
 The CSS3 opacity property sets the opacity for the whole element (both background color and text will be opaque/transparent). Unlike alpha values specified with rgba and hsla, opacity is inherited by child elements.
