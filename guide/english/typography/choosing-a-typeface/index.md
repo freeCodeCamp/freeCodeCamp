@@ -49,3 +49,6 @@ In the end, guidelines can only take you so far. Creativity and surprise are imp
 #### More Information:
 * [Smashing Magazine article - How to choose a typeface](https://www.smashingmagazine.com/2011/03/how-to-choose-a-typeface/)
 
+#### More Information / Inpsriation
+[Creative Bloq article - How to choose the right typeface](https://www.creativebloq.com/typography/tips-choosing-typeface-31514399)
+[Whats Trending in Type] https://www.typewolf.com/
