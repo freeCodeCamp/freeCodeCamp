@@ -49,8 +49,21 @@ The BuildBox game engine is basically for developing hypercasual games.
 - Buildbox
 - Godot Engine
 
+---
 
+## Notable Game Developmers
 
+### Adam Gilmore
+
+He is a fantastic English musician known for making 8-BIT music for games (mostly for **Zeppelin Games**). His creativity can be heard in great hits like:
+
+  * Zybex (1988)
+  * Draconus (1988)
+  * Ninja Commando (1989)
+
+He composed music for games between the 80s and 90s. Currently he is working as a PC programmer.
+
+---
 
 ### More Information
 
