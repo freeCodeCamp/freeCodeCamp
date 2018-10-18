@@ -42,8 +42,9 @@ title: The element specifies a title for the document
 body: The element contains the visible page content
 
 h1: The element defines a large heading
-
+There are 6 Heading Tag in HTML depending on their inportance.
 p: The element defines a paragraph
+div: div tags are used to modify your html commands.
 
 ### HTML Versions
 
