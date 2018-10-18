@@ -22,7 +22,7 @@ The `text-align` property is specified as a single keyword chosen from the list 
 
 `text-align: end;`  aligns the last line at the end of the line
 
-`text-align: match-parent;`  calculate the values start and end to the parent's direction and replaced by the appropriate left or right value.
+`text-align: match-parent;`  calculates the values start and end to the parent's direction and replaced by the appropriate left or right value.
 
 **Block Alignment Values (non-standard syntax)**:
 
