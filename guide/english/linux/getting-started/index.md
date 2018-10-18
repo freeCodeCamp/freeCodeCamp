@@ -3,10 +3,10 @@ title: Getting Started
 ---
 ## Choosing a distribution.
 
-There are various types of Linux distributions to choose from nowadays, choosing one is a major concern in the currently Linux world. Taking in consideration easy to use OSs, the top dogs in this category are:
-Ubuntu - Derivative of the stable Debian system, Ubuntu thrives in the a easy to use and up to date environment.
-Mint - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution remind of Windows, this can be a nice characteristic for users comming from Windows. 
-Trisquel - A distribution  derived from Ubuntu that focuses on only utilizing fully free software, avoiding proprietary software. Trisquel is endorsed by the Free Software Foundation (FSF).
+There are various types of Linux distributions to choose from nowadays, choosing one is a significant concern in the current Linux world. Taking into consideration easy to use OSs, the top dogs in this category are:
+Ubuntu - Derivative of the stable Debian system, Ubuntu thrives in the easy to use and up to date environment.
+Mint - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution has some similarities to the Windows UI - this can be an excellent characteristic for users coming from Windows. 
+Trisquel - A distribution derived from Ubuntu that focuses on only utilizing entirely free software, avoiding proprietary software. Trisquel is endorsed by the Free Software Foundation (FSF).
 
 ## Installing.
 
