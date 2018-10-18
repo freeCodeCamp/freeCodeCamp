@@ -80,7 +80,7 @@
     },
     "name": {
       "type": "string",
-      "default": ""
+      "default": "
     },
     "location": {
       "type": "string",
