@@ -3,14 +3,14 @@ id: 587d78ab367417b2b2512af1
 title: Add Flex Superpowers to the Tweet Embed
 challengeType: 0
 videoUrl: ''
-localeTitle: Añadir Flex Superpowers al Tweet Insertar
+localeTitle: Añadir los superpoderes de Flex al visualizador de Tweet
 ---
 
 ## Description
-<section id="description"> A la derecha se encuentra la inserción de tweets que se utilizará como ejemplo práctico. Algunos de los elementos se verían mejor con un diseño diferente. El último desafío demostró <code>display: flex</code> . Aquí lo agregará a varios componentes en la inserción de tweets para comenzar a ajustar su posicionamiento. </section>
+<section id="description"> A la derecha se encuentra un listado de tweets insertados que se utilizará como ejemplo práctico. Algunos de los elementos se verían mejor con un diseño diferente. En el último desafío se utilizó la propiedad <code>display: flex</code> . Aquí lo añadirá a algunas partes en el listado de tweets para comenzar a ajustar su posicionamiento. </section>
 
 ## Instructions
-<section id="instructions"> Agregue la <code>display: flex</code> propiedades CSS <code>display: flex</code> a todos los elementos siguientes: tenga en cuenta que los selectores ya están configurados en el <code>header</code> CSS: el <code>.profile-name</code> de <code>.follow-btn</code> del encabezado, el <code>.follow-btn</code> del encabezado, el <code>h3</code> y el <code>h4</code> del encabezado, el <code>footer</code> , y los <code>.stats</code> de pie de <code>.stats</code> . </section>
+<section id="instructions"> Agregue la propiedad css <code>display: flex</code> a los siguientes elementos. Tenga en cuenta que los selectores css ya están configurados: <code>header</code>, <code>.profile-name</code> y <code>.follow-btn</code> del encabezado, <code>.follow-btn</code> del encabezado, el <code>h3</code> y el <code>h4</code> del encabezado, el <code>footer</code> , y los <code>.stats</code> en la parte inferior de <code>.stats</code> . </section>
 
 ## Tests
 <section id='tests'>
