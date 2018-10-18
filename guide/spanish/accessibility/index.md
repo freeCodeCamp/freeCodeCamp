@@ -25,3 +25,5 @@ Copyright © 2005 [World Wide Web Consortium](http://www.w3.org) , ( [MIT](http:
 ### Más información:
 
 [w3.org introducción a la accesibilidad.](https://www.w3.org/WAI/intro/accessibility.php) [El proyecto A11Y](http://a11yproject.com/)
+
+my changes
