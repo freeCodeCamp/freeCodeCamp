@@ -1,7 +1,7 @@
 ---
 title: Python Commenting Code
 ---
-Comments are used to annotate, describe, or explain code that is complex or difficult to understand. Python will intentionally ignore comments when it compiles to bytecode by the interpreter. <a href='https://www.python.org/dev/peps/pep-0008/#comments' target='_blank' rel='nofollow'>`PEP 8`</a> has a section dealing with comments.They also increases the readablity of code by adding easy and descriptive language for better understanding.
+Comments are used to annotate, describe, or explain code that is complex or difficult to understand. Python will intentionally ignore comments when it compiles to bytecode by the interpreter. <a href='https://www.python.org/dev/peps/pep-0008/#comments' target='_blank' rel='nofollow'>`PEP 8`</a> has a section dealing with comments.They also increases the readablity of code by adding easy and descriptive language for better understanding.Good commenting can be the difference between a program anyone can use to a program that is near unreadable.
 
 **Block** and **inline** comments start with a `#`, followed by a space before the comment:
 
@@ -14,6 +14,11 @@ Python does not include a formal way to write multiline comments. Each line of a
 ```python
     # This is the first line of a multiline comment.
     # This is the second line.
+```
+You can also use this to allow the program to block a line of code to see how that code would run without it:
+```python
+    #print "hello world" #This block of code will now only read out "hello world" one time instead of two.
+    print "hello world"
 ```
 Another type of comment is the **docstring**, documented in <a href='https://www.python.org/dev/peps/pep-0257/' target='_blank' rel='nofollow'>`PEP 257`</a>. Docstrings are a specific type of comment that becomes the `__doc__` attribute.
 
