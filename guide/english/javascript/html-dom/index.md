@@ -5,7 +5,7 @@ title: HTML Dom
 
 With the HTML DOM, JavaScript can access and change all the elements of an HTML document.
 
-When a web page is loaded, the browser creates a **D**ocument **O**bject **M**odel of the page.
+When a web page is loaded, the browser creates a DOM (**D**ocument **O**bject **M**odel) of the page.
 
 The HTML DOM model is constructed as a tree of Objects:
 
