@@ -13,6 +13,8 @@ Consider the example of a Machine Learning algorithm that plays chess. In this e
 
 Machine learning is exactly like how a human being learns. For example if a human wants to learn how to play poker, it will firstly learn the rules. Then it will try to get experience by playing the game. This experience is nothing but a huge data set for a machine by using which it can make intelligent decisions reagrding the proposed problem.
 
+Machine learning is a field of artificial intelligence that uses statistical techniques to give computer systems the ability to "learn" (e.g., progressively improve performance on a specific task) from data, without being explicitly programmed. Algorithms used by popular websites like youtube and netlix are developed usinng machine learning to suggest videos or movies you might be interested in, based on your history.
+
 In general, machine learning problems can be classified into supervised learning, and unsupervised learning. In supervised learning, you have the input and the labeled output, and you suspect that a relationship exists between the input and the labeled output. When you know neither what the labeled output is nor if a relationship exists, unsupervised learning will help you find structure in your data if there is one.
 
 We've covered two main categories of machine learning, but there are four broad categories of machine learning:
