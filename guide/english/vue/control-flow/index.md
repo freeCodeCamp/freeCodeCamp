@@ -124,3 +124,4 @@ As expected, the page rendered now has our brand new item!
 </div>
 ```
 This way, we can use `index` to style the first, last or even/odd list elements differently, or apply extra logic to our component.
+
