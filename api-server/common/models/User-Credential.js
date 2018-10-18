@@ -87,3 +87,4 @@ module.exports = function(UserCredential) {
       );
   };
 };
+test
