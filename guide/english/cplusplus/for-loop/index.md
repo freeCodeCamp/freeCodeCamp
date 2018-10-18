@@ -45,6 +45,7 @@ Next the condition is evaluated. If it holds true, the body of the loop is execu
 ### update
 The update statement is used to alter the loop variable by using simple operations like addition,subtraction,multiplication or division.
 The update statement executes after the execution of the body of the loop.
+You will often see an increment operation as the update statement (e.g. i++, count++). This is often seen as one of the distinguishing features and posisble name sources for the C++ language.
 
 ## IMPLEMENTATION:
 ```C++
