@@ -14,4 +14,4 @@ For instance, an object could represent a person with attributes as name, age, a
 OOP models real-world entities as software objects, which have some data associated with them and can perform certain functions. Objects are modeled as **classes**, that are a sort of *blueprint*.
 
 
-
+https://python-textbok.readthedocs.io/en/1.0/
