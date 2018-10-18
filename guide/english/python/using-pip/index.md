@@ -64,3 +64,8 @@ For example, we could create the file `requirements.txt` and its content:
      
  Should install all the modules listed on the file.
 
+
+ We can also specify python version for which we want to install package on, by using:
+    `python -m pip install <module_name>`
+ or
+    `python3 -m pip install <module_name>`
