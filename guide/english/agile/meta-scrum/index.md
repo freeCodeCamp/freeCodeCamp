@@ -20,3 +20,4 @@ The Meta Scrum aligns priorities across teams by establishing a standardized, re
  - <a href=“https://www.solutionsiq.com/agile-glossary/meta-scrum/”>https://www.solutionsiq.com/agile-glossary/meta-scrum/</a>
  - <a href=“https://agileparkinglot.blog/2010/02/25/what-is-metascrum/“>https://agileparkinglot.blog/2010/02/25/what-is-metascrum/</a>
 
+Coding is very cool and important
