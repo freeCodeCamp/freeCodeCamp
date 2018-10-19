@@ -12,7 +12,6 @@ To learn more about Python, check out these pages on python.org:
 
 <a href='https://docs.python.org/3/faq/general.html' target='_blank' rel='nofollow'>Python FAQ</a>.
 
-## Python 2 or Python 3
 
 *   The two versions are similar, with knowledge of one switching to writing code for the other is easy.
 *   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
@@ -169,3 +168,4 @@ Free Code Camp has some great resources. The web is a big place, there's plenty 
 * Developer's Guide to Python: https://devguide.python.org/
 * Learn Python the Hard Way book: https://learnpythonthehardway.org/python3/
 * Introduction to Python Programming: https://www.udacity.com/course/introduction-to-python--ud1110
+* Python for Everybody Specialization: https://www.coursera.org/specializations/python
