@@ -19,13 +19,13 @@ int main()
   cout << "Hello world!" << endl;
 }
 ```
-The first two lines at the top are necessary for you to use `cout` and other streams. `#include<iostream>` makes the stream objects abailable, and `using namespace std;` lets you type `cout` directly instead of having to type `std::cout`, that is, having to specify that we want to use `cout` from the `std` namespace.
+The first two lines at the top are necessary for you to use `cout` and other streams. `#include<iostream>` makes the stream objects available, and `using namespace std;` lets you type `cout` directly instead of having to type `std::cout`, that is, having to specify that we want to use `cout` from the `std` namespace.
 
 `cout` stands for "Console Output", and is a so-called _output stream_ that represents the console. When you want to print something to the console, you can put it into `cout`; imagine it as a hole that leads to the terminal. To put things into this hole, one at a time, you use the `<<` operator, a.k.a. the _insertion operator_<sup>1</sup>. The operator can be chained, that is, you can put several things in one after the other. The following will print "The cake is a lie.":
 
 `cout << "The cake " << "is " << "a " << "lie." << endl;`
 
-`endl` stands for "End Line" and is another item that comes from `<iostream>`. When you put `endl` into `cout`, it will print a newline character ("\n") to the console, and also _flush_ `cout`, which means that it will force `cout` to print everything you have put into it *right now*. If you don't put `endl` into `cout`, `cout` might keep the data you've put into it but wait for more data before actually printing it all. This is called _buffering_ and is very good for performance, but if you've already given it everything it's supposed to print, you want `cout` to print it immediatelly. Therefore it is very good practice to end with `endl` in places where it makes sense.
+`endl` stands for "End Line" and is another item that comes from `<iostream>`. When you put `endl` into `cout`, it will print a newline character ("\n") to the console, and also _flush_ `cout`, which means that it will force `cout` to print everything you have put into it *right now*. If you don't put `endl` into `cout`, `cout` might keep the data you've put into it but wait for more data before actually printing it all. This is called _buffering_ and is very good for performance, but if you've already given it everything it's supposed to print, you want `cout` to print it immediately. Therefore it is very good practice to end with `endl` in places where it makes sense.
 
 Almost everything can be put into a stream: strings, numbers, variables, expressions, etc. Here area some examples of valid stream insertions:
 
