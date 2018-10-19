@@ -25,7 +25,7 @@ Or just [create an issue](https://github.com/freeCodeCamp/freeCodeCamp/issues) -
 There are two ways you can propose a change to the repository, after you edit or add a Guide article:
 
 - [Using the GitHub Web Interface on your browser](#using-the-github-web-interface-on-your-browser).
-- [Working on your local machine](#working-on-your-local-machine) (_recommended_ for previewing changes).
+- [Working on your local machine (_recommended_ for previewing changes)](#working-on-your-local-machine-recommended-for-previewing-changes).
 
 #### Using the GitHub Web Interface on your browser
 
@@ -35,7 +35,7 @@ Watch the video demonstration or follow the steps below it:
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Go into the **"pages"** folder (located in [`client/src/pages/guide`](/client/src/pages/guide)) and find the article stub you'd like to write or edit.
+1. Go into the **"pages"** folder (located in [`guide`](/guide)) and find the article stub you'd like to write or edit.
 
     > All stubs will be in an index.md file
 
