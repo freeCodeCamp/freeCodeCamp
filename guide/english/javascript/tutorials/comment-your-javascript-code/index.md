@@ -1,20 +1,21 @@
 ---
 title: Comment Your JavaScript Code
+localeTitle: Comentando Seu Código JavaScript
 ---
-Comments are a great way to leave notes to yourself and to other people who will later need to figure out what it does. Any code in it will be ignored.
+Comentários são uma grande forma de deixar notas para você mesmo e para outras pessoas que posteriormente vão entender o que o seu código faz. Qualquer código em um comentário será ignorado, ou seja, não será executado.
 
-Let's take a look at the two ways you can write comments in JavaScript.
+Vamos ver as duas formas de escrever comentários em JavaScript.
 
-*   The double-slash comment will comment out the remainder of the text on the current line:
+*   O comentário de barra dupla irá comentar o restante do texto na linha em que for aplicado: 
 
-`// This is a single line comment.`
+`// Este é um comentário de linha única.`
 
-*   The slash-star-star-slash comment will comment out everything between the `/*` and the `*/` characters:
+*   O comentário de barra asterisco irá comentar tudo entre os caracteres `/*` e os caracteres `*/`:
 
 ```javascript
 /* 
-This is 
-a multi-line comment 
-(comment block) 
+Isto é 
+um comentário multi linha
+(bloco de comentário) 
 */
 ```
