@@ -38,7 +38,7 @@ Existem linguagens especializadas mais adequadas para várias funções, como R 
 
 #### Desenvolvimento de Bots de Telegramas
 
-Você pode usar o Python e algumas bibliotecas Python para desenvolver seus próprios [Bots de Telegramas](https://core.telegram.org/bots)
+Você pode usar o Python e algumas bibliotecas Python para desenvolver seus próprios [Bots do Telegram](https://core.telegram.org/bots)
 
 #### Coleta de dados por rastreamento e raspagem
 
