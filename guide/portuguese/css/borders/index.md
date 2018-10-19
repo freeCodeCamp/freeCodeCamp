@@ -8,99 +8,127 @@ localeTitle: Propriedade Border
 
 Nosso atributo CSS favorito, permite que você personalize completamente as bordas que aparecem em torno dos elementos HTML. Com o HTML, costumava ser impossível colocar uma borda em torno de um elemento, exceto a tabela. As bordas de CSS permitem criar estilos de borda nítidos e personalizados com muito pouco trabalho, em comparação com os métodos antiquados de HTML.
 
-A propriedade abreviada de `border` define todas as propriedades da borda em uma declaração. \`\` \`css borda: 1px sólido # 000;
+A propriedade abreviada de `border` define todas as propriedades da borda em uma declaração.
+
+```css 
+  border: 1px solid #000;
 ```
-The properties that can be set, are (in order): 
+
+As propriedades que podem ser definidas, são (em ordem):
  1. `border-style` 
  2. `border-width` 
  3. `border-color` 
  4. `border-radius` 
  
- It does not matter if one of the values above are missing, for example: 
-```
+ Não importa se um dos valores acima estiver faltando, por exemplo: 
 
-css borda: vermelho sólido;
+```css
+ border: solid red;
 ```
-The above code is also valid CSS. 
- 
- ### Border Styles 
- 
- The `border-style` property sets a wide range of different types of borders. 
- 
- The various values are: 
- - `dotted` - Sets a dotted border. 
- - `dashed` - Sets a dashed border. 
- - `solid` - Sets a solid border. 
- - `double` - Sets a double border. 
- - `groove` - Sets a 3D grooved border. 
- - `ridge` - Sets a 3D ridged border. 
- - `inset` - Sets a 3D inset border. 
- - `outset` - Sets a 3D outset border. 
- - `none` - Sets no border. 
- - `hidden` - Sets a hidden border. 
- 
- Based on the property you choose, these styles can be mismatched. 
- You can style each side seperately: 
-```
+O código acima e valido em CSS.
 
-css border-top-style: sólido; border-left-style: pontilhado; border-right-style: tracejado; border-bottom-style: duplo;
-```
-Or you can style them all at once: 
-```
-
-css estilo de borda: sólido pontilhado duplo;
-```
-As shown, the border property allows you to select different sections of it. [top, bottom, left, right] 
+Outros atributos de Borda
+`border-radius` - Isso pode definir o raio da borda.
+`border-espaçamento` - Isso pode definir o espaçamento entre o texto e a borda.
+`border-image` - Isto define uma imagem como borda.
+Suporte ao Navegador: IE6 +
  
- ### Border Width 
+ ### Estilos de Borda 
  
- To alter the thickness of your border use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must 
- define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined 
- values: thin, medium, or thick. 
+ A propriedade `border-style` tem um amplo range de diferentes tipos de bordas
  
- Example: 
-```
-
-css
-
-table { border-width: 7px; border-style: outset; } td { border-width: medium; border-style: outset; } p { border-width: thick; border-style: solid; }
-```
-### Border Color 
+ Os diferentes valores são: 
+ - `dotted` - Define uma borda pontilhada. 
+ - `dashed` - Define uma borda traçada. 
+ - `solid` - Define uma borda solida. 
+ - `double` - Define uma borda dupla. 
+ - `groove` - Define uma borda 3D ranhurada. 
+ - `ridge` - Define uma borda 3D ridged. 
+ - `inset` - Define uma borda 3D inset. 
+ - `outset` - Define uma borda 3D outset. 
+ - `none` - Define sem borda. 
+ - `hidden` - Define uma borda escondida. 
  
- Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout 
- of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types. 
+ Baseado na propriedade que você escolher, esses estilos podem ser incompatíveis.
+ E possível estilizar cada lado separadamente: 
+
+```css
+  border-top-style: solid;
+  border-left-style: dotted;
+  border-right-style: dashed;
+  border-bottom-style: double;
+```
+Ou você pode estilizar todos de uma vez:
+```css
+  border-style: solid dashed double dotted;
+```
+Como demonstrado, a propriedade border possibilita que você selecione diferentes sessões dela. [top, bottom, left, right]
+
+### Espessura da Borda 
+
+Para modificar a espessura da borda você pode usar o atributo `border-width`. Você pode usar valores chave ou específicos para definir a espessura da borda. PS: Você deve definir o `border-style` para que a borda seja mostrada. A espessura pode ser definida com um valor especifico (em px, pt, cm, em, etc.) ou usando um dos três valores pré-definidos: thin, medium, ou thick.
+
+Exemplo:
+
+```css
+<style type="text/css">
+table {
+	border-width: 7px;
+	border-style: outset;
+}
+td {
+	border-width: medium;
+	border-style: outset;
+}
+p {
+	border-width: thick;
+	border-style: solid;
+}
+</style>
+```
+### Cor da Borda 
  
- Example: 
-```
+Agora para a parte criativa da Borda em CSS! Com o use do atributo `border-color`, você pode criar bordas customizadas para encaixar no layout do seu site. As cores da borda podem ser definidas por RGB, hexadecimal, ou valores chave. Abaixo um exemplo de cada um desses tipos.
+Exemplo:
+```css
+<style type="text/css">
+table {
+	border-color: rgb( 100, 100, 255);
+	border-style: dashed;
+}
 
-css
+td {
+	border-color: #FFBD32;
+	border-style: ridge;
+}
 
-table { border-color: rgb( 100, 100, 255); border-style: dashed; } td { border-color: #FFBD32; border-style: ridge; } p { border-color: blue; border-style: solid; }
+p {
+	border-color: blue;
+	border-style: solid;
+}
+</style>
 ```
-### Border-Radius 
- The `border-radius` property allows the corners of a border to be rounded. This is done by providing a size for 
- how much the border is to be rounded. Size can be in px or %. 
+### Borda arredondada 
+ A propriedade `border-radius` possibilita que os cantos da borda sejam arredondados. Isso pode ser feito provendo o tamanho para o quanto a borda será arredondada. O tamanho pode ser em px ou %
+```css 
+  border-radius: 25px;
 ```
-
-css raio de fronteira: 25 px;
-```
-Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right. 
-```
-
-css raio de fronteira: 15% 10px 30% 5px;
+Cada canto `border-radius` pode ser ajusato. A ordem e: cima, baixo, esquerda, direita. 
+```css 
+  border-radius: 15% 10px 30% 5px;
 ```
 ### Border: All in One 
  
- While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code. 
+ Mesmo que as vezes seja legal que o CSS permite que o desenvolvedor web seja muito especifico ao criar a borda, as vezes e mais fácil e da menos dor de cabeça criar uma borda uniforme, tudo em uma única linha de código CSS
  
- Example: 
+ Exemplo: 
+```css
+<style type="text/css">
+p { border: 20px outset blue; } 
+h4 { border: 5px solid; } 
+h5 { border: dotted; }
+</style>
 ```
-
-css
-
-p { border: 20px outset blue; } h4 { border: 5px solid; } h5 { border: dotted; }
-
-\`\` \`
 
 ### Mais Informações:
 
