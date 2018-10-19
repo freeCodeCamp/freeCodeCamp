@@ -84,8 +84,8 @@ catch(FormatException exceptionVariable)
 The variable declared after the type of exception will contain all the data of the exception and can be used within the ```Catch``` block.
 
 ## Finally block
-The finally block is **always** run at the end after the ```Try``` and ```Catch``` blocks. This section is usually used to when something **must** happen at the end regardless if an exception was thrown or not.
-For example, say we need a variable to always be re-initalised back to a specific number after it has been manipulated all the time.
+The finally block is **always** run at the end after the ```Try``` and ```Catch``` blocks. This section is usually used when something **must** happen at the end, regardless if an exception was thrown or not.
+For example, say we need a variable to always be re-initialised back to a specific number after it has been manipulated.
 ```csharp
 int initalValue = 12;
 try
