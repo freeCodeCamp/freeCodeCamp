@@ -1,0 +1,19 @@
+Distributed Ledger Technology (DLT) is a system architecture to sustain a shared ledger with the following key features:
+
+* Transactions are appended to the ledger after they have been verfied by a consensus algorithm (Proof Work, Proof of Stake, etc)
+* Transactions are secured from mutation by cryptography
+* The ledger is replicated over a peer-to-peer network
+* Can either be sustained without central control (permissionless) or with a controlling party (permissioned)
+
+The main types of DLT include:
+
+* Blockchains
+* Directed Acyclic Graphs (DAG)
+
+DLTs are used to streamline processes that used to be managed and supported by regulated organisations like banks and related institutions. The streamlining process removes intermediaries and significantly reduce time spent and costs.
+
+Distributed Ledger Technology offers near real-time access to verified transactions across multiple parties - often referred to as the 'single version of the truth'. DLTs simplify the auditing process of transaction ledgers. These ledgers that exist on the decentralised network are resistant to hacking attacks and do not become a single point of failure - unlike databases or ledgers maintained by large monolithic organisations.
+
+References:
+1. [Wikipedia: Distributed Ledgers](https://en.wikipedia.org/wiki/Distributed_ledger)
+2. [The World Bank: Blockchain & Distributed Ledger Technology (DLT)](https://www.worldbank.org/en/topic/financialsector/brief/blockchain-dlt)
