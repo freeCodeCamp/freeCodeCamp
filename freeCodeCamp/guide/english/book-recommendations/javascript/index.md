@@ -1,5 +1,5 @@
 ---
-title: Books on JavaScript
+### TITLE: Books on JavaScript
 ---
  ### List of Books
 
@@ -33,3 +33,7 @@ A collection of articles covering the basics (core language and working with a b
 A very fun and easy book for beginners. 
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
+some more interesting books are as follows:
+1.Mind for numbers by barbara oakley
+2.Deep Work by Cal Newport
