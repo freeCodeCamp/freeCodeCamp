@@ -1,10 +1,10 @@
 ---
 title: With
-localeTitle: Con
+localeTitle: With
 ---
-## Con
+## With
 
-La declaración de JavaScript `with` es una forma abreviada de editar varias propiedades en un objeto. La mayoría de los desarrolladores de desalentar el uso de `with` , y que son mejor no usar esta palabra clave.
+La declaración de JavaScript `with` es una forma abreviada de editar varias propiedades en un objeto. La mayoría de los desarrolladores desalentan el uso de `with`, por eso es mejor no usar esta palabra clave.
 
 **Nota** : `"strict mode"` prohíbe el uso de `with` .
 
@@ -17,7 +17,7 @@ with (expression)
 
 ### Ejemplo de uso
 
-En JavaScript, puedes modificar individualmente las propiedades de un objeto como a continuación:
+En JavaScript, puedes modificar individualmente las propiedades de un objeto como se muestra a continuación:
 
 ```javascript
 let earth = {}; 
@@ -25,7 +25,7 @@ let earth = {};
  earth.continents = 7; 
 ```
 
-`with` le da una taquigrafía para modificar las propiedades de un objeto:
+`with` le da una forma de modificar las propiedades de un objeto:
 
 ```javascript
 with (earth) { 
@@ -34,17 +34,18 @@ with (earth) {
  } 
 ```
 
-Si bien este ejemplo está diseñado, puede comprender los casos de uso `with` más si tiene objetos más grandes como el siguiente:
+Si bien este ejemplo está prediseñado, se pueden comprender los casos de uso de `with`, más si tiene objetos más grandes como el siguiente:
 
 ```javascript
 earth.continents.australia.geography.ocean = "Pacific"; 
  earth.continents.australia.geography.river = "Murray"; 
  earth.continents.australia.geography.mountain = "Kosciuszko"; 
 ```
+No debe utilizar `with` ya que tiene errores sutiles y problemas de compatibilidad. 
 
 ### Alternativas
 
-No debe utilizar `with` ya que tiene errores sutiles y problemas de compatibilidad. Un enfoque altamente recomendado es asignar el objeto a una variable y luego modificar las propiedades de la variable. Aquí hay un ejemplo usando un objeto más grande:
+Un enfoque altamente recomendado es asignar el objeto a una variable y luego modificar las propiedades de la variable. Aquí hay un ejemplo usando un objeto más grande:
 
 ```javascript
 let earth = { 
