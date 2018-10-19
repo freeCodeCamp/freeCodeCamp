@@ -18,7 +18,7 @@ BDD focuses on:
 - What to call the tests
 - How to understand why a test fails
 
-At the heart of BDD is a rethinking of the approach to the unit testing and acceptance testing that naturally arise with these issues. 
+At the heart of BDD is  rethinking of the approach to the unit testing and acceptance testing that naturally arise with these issues. 
 For example, BDD suggests that unit test names be whole sentences starting with a conditional verb ("should" in English for example) and should be written in order of business value. 
 Acceptance tests should be written using the standard agile framework of a user story: "As a _role_ I want _feature_ so that _benefit_".
 Acceptance criteria should be written in terms of scenarios and implemented as classes: Given _initial context_, when _event occurs_, then _ensure some outcomes_.
