@@ -64,7 +64,7 @@ body {
  } 
 ```
 
-No exemplo acima, a `background-color: green` transforma o elemento verde em `<body>` . Isso transforma toda a página da web em verde. Os elementos `<p>` são todos brancos depois da `color: white` também. Você pode usar cores nomeadas, como `green` , `blue` , `yellow` , `red` , `purple` e muitas outras. Mas para cores personalizadas, você pode usar códigos hexadecimais ( `#147ACC` ), valores RGB ( `rgb(20, 122, 204)` ) e até mesmo valores HSL ( `hsl(145, 59%, 30%)` ).
+No exemplo acima, a `background-color: green` adiciona o elemento de cor verde em `<body>` . Isso transforma toda a página da web em verde. Os elementos `<p>` são todos brancos depois da `color: white` também. Você pode usar cores nomeadas, como `green` , `blue` , `yellow` , `red` , `purple` e muitas outras. Mas para cores personalizadas, você pode usar códigos hexadecimais ( `#147ACC` ), valores RGB ( `rgb(20, 122, 204)` ) e até mesmo valores HSL ( `hsl(145, 59%, 30%)` ).
 
 ```css
 p { 
