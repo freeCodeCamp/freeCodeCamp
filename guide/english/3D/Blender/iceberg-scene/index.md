@@ -1,10 +1,10 @@
-----
-Title: Blender Water Shader effect
-----
+---
+title: Blender Water Shader effect
+---
 
-#This is a simple scene to render polar waters.
+## This is a simple scene to render polar waters.
 
-##To make the cube look like water, mix the following shaders:
+To make the cube look like water, mix the following shaders:
 
 *Glass BSDF Shader :	Roughness = 0.850
 						IOR = 	1.010 ~ 1.333
