@@ -33,6 +33,7 @@ p {
 #### A Note on Web Fonts
 
 Just because some fonts are safer than others does not mean you should confine your designs to using only web safe fonts. Modern designs with CSS can also take advantage of web fonts to ensure consistent typography across operating systems.
+You can also download fonts and add them to your website files. It can make the fonts more efficient.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
