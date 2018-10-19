@@ -21,10 +21,10 @@ You can then style these elements with CSS. Classes are referenced with period (
 }
 ```
 
-This code will give s blue background and red text color to all the elements which have the `super-man` class.
+This code will give a blue background and red text color to all the elements which have the `super-man` class.
 [View this example on CodePen](https://codepen.io/Tlandis/pen/RLvomV).
 
-You can also declare more than one class to your element, like:
+You can also declare more than one class to your element as mentioned before, like:
 
 ```html
 
@@ -69,3 +69,4 @@ You can see the result of the above code [here](https://codepen.io/Tlandis/pen/R
 - [css-tricks](https://css-tricks.com/how-css-selectors-work/)
 - [How to Code in HTML5 and CSS3](http://howtocodeinhtml.com/chapter7.html)
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class)
+
