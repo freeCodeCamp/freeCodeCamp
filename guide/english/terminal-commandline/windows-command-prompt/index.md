@@ -53,3 +53,14 @@ rm /s name_of_directory_you_want_to_delete
 - Some tasks require you to run the command prompt as an administrator you clicking the windows button and typing `cmd admin` and hit the `enter` key
 - If you know the path to a file or directory can type `cd PATH_TO_YOUR_DIRECTORY` instead of changing directories several times to get to a directory or file 
 - When you hit the up arrow key your previously entered command will appear and if you hit it repeatedly it will cycle through all of your previously entered commands 
+
+# Cmder
+
+Cmder is a windows console emulator. Its an alternative to the windows command prompt and comes with useful features such as:
+- Git
+- Unix commands
+- Better Themes
+- Portability
+- and [more](https://github.com/cmderdev/cmder/blob/master/README.md#features)
+
+Cmder can be downloaded [here](http://cmder.net/) and documentaion can be found [here](https://github.com/cmderdev/cmder/blob/master/README.md).
