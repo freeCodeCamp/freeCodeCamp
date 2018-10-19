@@ -47,3 +47,6 @@ Robert Martin aka "Dr. Bob" on TDD: <a href='http://www.butunclebob.com/ArticleS
 
 Eric Elliot on Unit tests and TDD: <a href='https://medium.com/javascript-scene/5-common-misconceptions-about-tdd-unit-tests-863d5beb3ce9' target='_blank' rel='nofollow'>Medium</a>
 
+John Reese on Unit testing best practices: <a href='https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-best-practices' target='_blank' rel='nofollow'>Microsoft</a>
+
+
