@@ -82,6 +82,7 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 * <a href='https://www.python.org/about/apps/' target='_blank' rel='nofollow'>Applications for Python</a>
 * <a href='https://stackoverflow.com/questions/3043085/where-is-python-language-used' target='_blank' rel='nofollow'>Where is the Python Language Used?</a>
 * <a href='https://stackoverflow.com/questions/1909512/what-is-python-used-for' target='_blank' rel='nofollow'>What is Python used for?</a>
+* <a href='https://pythonprogramming.net/data-analysis-tutorials/' target='_blank' rel='nofollow'>Data Analysis using python with examples and tutorials.</a>
 
 
 The official package index for python is <a href='https://pypi.python.org/pypi' target='_blank' rel='nofollow'>here</a>.
