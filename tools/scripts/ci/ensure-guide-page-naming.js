@@ -15,19 +15,20 @@ const allowedLangDirNames = [
 
 function checkDirName(dirName, fullPath) {
   if (dirName.replace(/(\s|\_)/, '') !== dirName) {
-    const newDirName = dirName.replace(/\s/g, '-');
-    fs.renameSync(fullPath, fullPath.replace(dirName, newDirName));
-    // throw new Error(
-    //   `Invalid character found in a folder named '${dirName}', please use '-' for spaces
-    //   ${fullPath}
-    //   `
-    // );
-    return;
+    throw new Error(`
+Invalid character found in '${dirName}', please use '-' for spaces
+
+  Found in:
+    ${fullPath}
+`);
   }
   if (dirName.toLowerCase() !== dirName) {
-    const newPath = fullPath.replace(dirName, dirName.toLowerCase());
-    console.log(`renaming ${dirName} to ${dirName.toLowerCase()}`);
-    fs.renameSync(fullPath, newPath);
+    throw new Error(`
+Upper case characters found in ${dirName}, all folder names must be lower case
+
+  Found in :
+    ${fullPath}
+`);
   }
 }
 
@@ -35,8 +36,10 @@ function checkFileName(fileName, fullPath) {
   if (fileName !== 'index.md') {
     throw new Error(
       `${fileName} is not a valid file name, please use 'index.md'
-      ${fullPath}
-      `
+
+  Found in:
+    ${fullPath}
+`
     );
   }
 }
