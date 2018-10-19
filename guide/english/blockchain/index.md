@@ -15,6 +15,11 @@ A third party is usually needed to validate trust relationships. In the most com
 
 For this reason Blockchain is also known as **"The Trust Protocol"**.
 
+## How Blockchain Works<sup>2</sup>
+The following diagram explains the process:
+
+![alt text](https://github.com/joechef/hello-world/blob/master/Blockchain.PNG?raw=true "blockchain 1") 
+
 ### History
 The first work on a cryptographically secured chain of blocks was described in 1991 by Stuart Haber and W. Scott Stornetta. They wanted to implement a system where documents' timestamps could not be tampered with or backdated. In 1992, Bayer, Haber and Stornetta incorporated Merkle trees to the design, which improved its efficiency by allowing several documents to be collected into one block.
 
@@ -28,7 +33,7 @@ As of 2016, blockchain 2.0 implementations continue to require an off-chain orac
 
 #### Sources
 1. [Bettina Warburg, "How the blockchain will radically transform the economy", *TED Talks*, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
-
+2. [Infographic: Learn how blockchain works, PwC, 2018](https://pwc.to/2LmQsee)
 
 ##### More information
 
