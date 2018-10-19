@@ -95,11 +95,13 @@ Make sure that you are careful not to drop the square root or the "plus/minus" i
 
 Remember that "b^2" means "the square of ALL of b, including its sign", so don't leave b^2 being negative.
 
+
 #### More Information:
-[The Quadratic Formula Explained](http://www.purplemath.com/modules/quadform.htm "The Quadratic Formula Explained")
 
-[Wikipedia - Quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula/)
+* [The Quadratic Formula Explained](http://www.purplemath.com/modules/quadform.htm "The Quadratic Formula Explained")
 
-[Purple Math](http://www.purplemath.com/modules/quadform.htm/)
+* [Wikipedia - Quadratic formula](https://en.wikipedia.org/wiki/Quadratic_formula/)
 
-[Khan Academy](https://www.khanacademy.org/math/algebra/quadratics/solving-quadratics-using-the-quadratic-formula/a/quadratic-formula-explained-article/)
+* [Purple Math](http://www.purplemath.com/modules/quadform.htm/)
+
+* [Khan Academy](https://www.khanacademy.org/math/algebra/quadratics/solving-quadratics-using-the-quadratic-formula/a/quadratic-formula-explained-article/)
