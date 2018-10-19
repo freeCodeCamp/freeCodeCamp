@@ -73,7 +73,7 @@ array[5]
 ```
 
 #### .pop
-The .pop method will permantently remove the last element of an array:
+The .pop method will permantently remove the last element of an array and return this element:
 
 ``` ruby
 array.pop
@@ -148,6 +148,7 @@ array = [1, 2, 3, 4, 5]
 => [1, 2, 3, 4, 5]
 array.include?(3)
 => true
+````
 
 #### .flatten
 The flatten method can be used to take an array that contains nested arrays and create a one-dimensional array:
