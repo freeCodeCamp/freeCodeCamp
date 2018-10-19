@@ -48,5 +48,6 @@ Most Product Managers have been in different roles earlier in their careers. Ver
 
 #### More Information:
 Wikipedia page: https://en.wikipedia.org/wiki/Product_management
+Product Management Overview: https://www.atlassian.com/agile/product-management
 
 
