@@ -1,5 +1,5 @@
 ---
-title: Bash chmod
+title: Bash touch
 localeTitle: باش touch
 ---
 
