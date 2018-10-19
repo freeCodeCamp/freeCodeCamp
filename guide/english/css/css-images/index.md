@@ -10,7 +10,7 @@ This helps in adding an image to a website.
 
 * **src:** It consists the value of the path to the required image</li>
 * **alt:** If the image is not displayed then an alternate text can be displayed using alt attribute.</li>
-* **width:** This specifies a width for the image(can be percent or px or auto)</li>
+* **width:** This specifies a width for the image (can be percent or px or auto)</li>
 * **height:** This specifies a height for the image(can be percent or px or auto)</li>
 
 #### CSS Defaults
@@ -40,4 +40,4 @@ img {
 
 ##### Datatypes
 <a title="The <image> CSS data type represents a 2D image. There are two kinds of images: plain images, typically referenced using a URL, and dynamically-generated images, like those generated with <gradient> or element(). Images can be used with numerous CSS properties, such as background-image, border-image, content, list-style-image, and cursor." href="/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code></a>
-<a title="The documentation about this has not yet been written; please consider contributing!" href="/en-US/docs/Web/CSS/uri"><code>&lt;uri&gt;</code></a>
+<a title="The documentation about this has not yet been written; please consider contributing!" href="/en-US/docs/Web/CSS/url"><code>&lt;url&gt;</code></a>
