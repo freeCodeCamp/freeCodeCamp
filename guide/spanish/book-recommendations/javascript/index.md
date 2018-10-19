@@ -26,3 +26,10 @@ _JavaScript: Información_ Una colección de artículos que cubren los conceptos
 
 *   [En línea](https://javascript.info/)
 *   [Libro electronico](https://javascript.info/ebook)
+
+_MDN JavaScript Guía_
+
+_Una guía de JavaScript en la Mozilla Developer Network que muestra cómo usar el lenguaje._
+
+*   [En línea](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide)
+  
