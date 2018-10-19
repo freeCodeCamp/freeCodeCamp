@@ -8,7 +8,7 @@ The switch statement is like a set of `if statements`.
 
 It's a list of possibilities, with an action for each possibility, and an optional default action, in case nothing else evaluates to true.
 
-We exit from the switch by `break`. If the `break` statement is not reached before the beginning of the next case, the execution will fall through and begin executing the code in the next case.
+We exit from the switch by `break`. If the `break` statement is not executed before the start of the next case, the current execution will stop and begin executing the code in the next case.
 
 ## Syntax of switch...case
 
