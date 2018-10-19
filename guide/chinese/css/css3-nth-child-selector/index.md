@@ -8,7 +8,10 @@ localeTitle: CSS3 Nth Child Selector
 
 ## 句法
 
-\`\`\`CSS a：nth-​​child（pattern）{ / \* Css到这里\* / }
+```CSS 
+   a：nth-​​child（pattern）{
+     /* Css到这里 */
+   }
 ```
 ### Pattern 
  
@@ -19,25 +22,29 @@ localeTitle: CSS3 Nth Child Selector
  ##### Odd 
  
  Odd returns all odd elements of a given type. 
-```
-
-CSS a：nth-​​childe（odd）{ / \* CSS在这里\* / }
+```CSS 
+    a：nth-​​child（odd）{ 
+      /* CSS在这里 */
+    }
 ```
 ##### Even 
  
  Even returns all even elements of a given type. 
-```
-
-CSS a：nth-​​childe（偶数）{ / \* CSS在这里\* / }
+```CSS 
+    a：nth-​​child（even）{
+        /* CSS在这里 */
+    }
 ```
 #### An+B 
  
  Returns all elements matching the equation An+B for every positive integer value of n (in addition to 0). 
  
  For example, the following will match every 3rd anchor element: 
+```CSS 
+    a:nth-​​child（3n）{
+      /* CSS在这里 */
+      } 
 ```
-
-CSS a：nth-​​childe（3n）{ / \* CSS在这里\* / } \`\`\`
 
 ### 更多信息：
 
