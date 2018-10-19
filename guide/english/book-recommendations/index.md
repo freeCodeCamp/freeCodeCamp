@@ -22,11 +22,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 - ISBN-13: 978-0735611313
 
-*Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability by Steve Krug*
+*Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability* by Steve Krug
 - [Amazon Smile](https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=sr_1_1?ie=UTF8&qid=1538370339&sr=8-1&keywords=dont+make+me+think)
 - ISBN-13: 978-0321965516
 
-*Programming Pearls (2nd Edition) by Jon Bentley*
+*Programming Pearls (2nd Edition)* by Jon Bentley
 - [Amazon Smile](https://smile.amazon.com/Programming-Pearls-2nd-Jon-Bentley/dp/0201657880)
 - ISBN-13: 978-0201657883
 
@@ -62,16 +62,16 @@ title: Books to Read for Programmers
 
 ## BASH
 
-*The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
+*The Linux Command Line: A Complete Introduction 1st Edition* by William E. Shotts Jr
 - [Amazon](https://www.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
 - ISBN-13: 978-1593273897
 
-*Learning the bash Shell: Unix Shell Programming by Cameron Newham*
+*Learning the bash Shell: Unix Shell Programming* by Cameron Newham
 - [Amazon](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
 - ISBN-13: 978-0596009656
 
 ## C-lang
-*C Notes for Professionals book
+*C Notes for Professionals book*
 -https://books.goalkicker.com/CBook/
 
 *The C Programming Language* by Brian W. Kernighan and Dennis M. Ritchie
@@ -108,7 +108,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208)
 - ISBN-13: 978-0596009205
 
-*Effective Java by Joshua Bloch*
+*Effective Java* by Joshua Bloch
 - [Amazon Smile](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 - ISBN-13: 978-0134685991
 
@@ -118,7 +118,7 @@ title: Books to Read for Programmers
 - https://github.com/getify/You-Dont-Know-JS
 - ISBN-13: 9781491924464 
 
-*Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke*
+*Eloquent JavaScript: A Modern Introduction to Programming* by Marijn Haverbeke
 - [Read it online here](https://eloquentjavascript.net)
 - [Amazon Smile](https://smile.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
 -ISBN-13: 978-1593275846
@@ -137,7 +137,7 @@ title: Books to Read for Programmers
 - http://automatetheboringstuff.com/
 - ISBN-13: 978-1593275990
 
-*Core Python Applications Programming (3rd Edition) by Wesley J Chun*
+*Core Python Applications Programming (3rd Edition)* by Wesley J Chun
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
@@ -169,11 +169,11 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
 - ISBN-13: 978-1593276034
 
-*Computer Science Distilled: Learn the art of solving computaitonal problems by Wladston Ferreira Filho*
+*Computer Science Distilled: Learn the art of solving computaitonal problems* by Wladston Ferreira Filho
 - [Amazon Smile](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
 - ISBN-13: 978-0-9773160-2-5
 
-*Algorithms Unlocked by Thomas H. Cormen*
+*Algorithms Unlocked* by Thomas H. Cormen
 - [Amazon Smile](https://smile.amazon.com/Algorithms-Unlocked-Press-Thomas-Cormen/dp/0262518805)
 - ISBN-13: 978-0262518802
 
@@ -193,7 +193,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Practical-Object-Oriented-Design-Ruby-Addison-Wesley/dp/0321721330)
 - ISBN-13: 978-0321721334
 
-*Thinking in C++ by Bruce Eckel*
+*Thinking in C++* by Bruce Eckel
 - [Amazon Smile](https://smile.amazon.com/Thinking-C-Bruce-Eckel/dp/0139177094)
 - ISBN-13: 978-0139177095
 
@@ -201,7 +201,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Operating-System-Concepts-Abraham-Silberschatz/dp/1118063333/ref=sr_1_1?s=books&ie=UTF8&qid=1538967825&sr=1-1&keywords=operating+system+concepts+10th+edition&dpID=51Qy2upM%252BaL&preST=_SY291_BO1,204,203,200_QL40_&dpSrc=srch)
 - ISBN-13: 978-1118063330
 
-*Computer Networking: A Top-Down Approach (7th Edition) by Kurose and Ross*
+*Computer Networking: A Top-Down Approach (7th Edition)* by Kurose and Ross
 - [Amazon Smile](https://smile.amazon.com/Computer-Networking-Top-Down-Approach-7th/dp/0133594149/ref=sr_1_1?s=books&ie=UTF8&qid=1538967896&sr=1-1&keywords=kurose+and+ross&dpID=51xp1%252BoDRML&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
 - ISBN-13: 978-0133594140 
 
@@ -217,7 +217,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/GATE-Computer-Science-Information-Technology/dp/194658178X)
 - ISBN-13: 978-1946581785
 
-*The Art of Computer Programming by Donald E. Knuth*
+*The Art of Computer Programming* by Donald E. Knuth
 - https://www-cs-faculty.stanford.edu/~knuth/taocp.html
 - ISBN-13: 978-0321751041
 
@@ -229,16 +229,16 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 - ISBN-13: 978-0201835953
 
-*Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
+*Deep Learning* by Ian Goodfellow, Yoshua Bengio, Aaron Courville
 - [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
 
-*Pro PHP Programming - Peter MacIntyre*
+*Pro PHP Programming* by Peter MacIntyre
 [Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
 
-*Mastering Linux Shell Scripting by Andrew Mallett*
+*Mastering Linux Shell Scripting* by Andrew Mallett
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
