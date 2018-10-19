@@ -84,3 +84,7 @@ The reason why our functions that use `println` output `nil` is because `println
 
 | [![:point_left:](//forum.freecodecamp.com/images/emoji/emoji_one/point_left.png?v=2 ":point_left:") Previous](//forum.freecodecamp.com/t/what-is-clojure/18419) | [![:book:](//forum.freecodecamp.com/images/emoji/emoji_one/book.png?v=2 ":book:") Home ![:book:](//forum.freecodecamp.com/images/emoji/emoji_one/book.png?v=2 ":book:")](//forum.freecodecamp.com/t/clojure-resources/18422) | [Next ![:point_right:](//forum.freecodecamp.com/images/emoji/emoji_one/point_right.png?v=2 ":point_right:")](//forum.freecodecamp.com/t/clojure-conditionals/18412)|  
 | [Summary](//forum.freecodecamp.com/t/what-is-clojure/18419) | [Table of Contents](//forum.freecodecamp.com/t/clojure-resources/18422) | [Conditionals](//forum.freecodecamp.com/t/clojure-conditionals/18412)|
+
+
+
+<!-- some comment-->
