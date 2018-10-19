@@ -5,7 +5,7 @@ title: Adjust the Margin of an Element
 
 Adjusting the `Margin` of an `Element` means to increase or decrease the amount of spacing between the Element's borders and surrounding Elements.
 
-  • Margins are adjusted with positive and negative integers by units of pixels(`px`).
+  • Margins are adjusted with positive and [negative](../add-a-negative-margin-to-an-element/index.md) integers by units of pixels(`px`).
 
   • Margins can be created from all directions (top, bottom, left, right).
 
