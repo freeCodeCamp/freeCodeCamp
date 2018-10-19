@@ -17,7 +17,7 @@ At runtime when the class is created enough memory is allocated onto the heap fo
 #### Creating Classes
 To create a class in C# we need to use the `class` keyword followed by a unique identifier.
 
-Like other languages, C# creates a default constructor that accepts no parameters. We can also specify our own constructor if we need to take in special parameters or have custom initlization steps in our constructor.
+Like other languages, C# creates a default constructor that accepts no parameters. We can also specify our own constructor if we need to take in special parameters or have custom initlization steps in our constructor. For example if we need to take in a string parameter we would do it as follows:
 
 ```csharp
 public class NewClass
@@ -65,6 +65,51 @@ namespace CPrograms
 ```
 
 A class can inherit from one base class only. However, it can implement from more than one interface.
+
+#### Example of inheriting from one class and 2 interfaces
+```csharp
+// base class: Human
+public class Human {
+    public int Age;
+    
+    public Human (int age) {
+        Age = age;
+    }
+}
+
+// first interface: Student
+public interface Student {
+    int StudentNumber { get; set; }
+}
+
+// second interface: Employee
+public interface Employee {
+    int EmployeeNumber { get; set; }
+    string JobTitle { get; set; } 
+}
+
+// Example of class extending a class and using 2 interfaces
+public class Person : Human, Student, Employee {
+   // new field for Person
+   public string Name;
+   
+   // needed to satisfy Student interface
+   public int StudentNumber { get; set; }
+   
+   // needed to satisfy Employee interface
+   public int EmployeeNumber { get; set; }
+   public string JobTitle { get; set; } 
+
+   // set the instance variables and pass the age to the base class
+   public Person(string name, int age, int studentNum, int employeeNum, string jobTitle) : base(age)
+   {
+       Name = name;
+       StudentNumber = studentNum;
+       EmployeeNumber = employeeNum;
+       JobTitle = jobTitle;
+   }
+}
+```
 
 ## More Information
 Read more about classes [here](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/class)
