@@ -30,3 +30,8 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+
+#### Books
+* Pro AngularJS
+* Operational angularJS: improving productivity with structured web applications
+* AngularJS web application revenue development guide
