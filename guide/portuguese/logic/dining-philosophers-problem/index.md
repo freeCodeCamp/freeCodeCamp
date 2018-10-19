@@ -1,12 +1,12 @@
 ---
 title: Dining Philosophers Problem
-localeTitle: Jantar Filosofos Problema
+localeTitle: Problema do Jantar dos Filósofos
 ---
-## Jantar Filosofos Problema
+## Problema do Jantar dos Filósofos
 
-Na ciência da computação, o problema dos filósofos de jantar é um problema exemplar frequentemente usado no projeto de algoritmo simultâneo para ilustrar problemas de sincronização e técnicas para resolvê-los. Foi originalmente formulado em 1965 por Edsger Dijkstra como um exercício de exame para estudantes, apresentado em termos de computadores competindo pelo acesso a periféricos de drives de fita. Logo depois, Tony Hoare deu ao problema sua formulação atual.
+Na ciência da computação, o problema do jantar dos filósofos é um problema exemplar frequentemente usado no projeto de algoritmo simultâneo para ilustrar problemas de sincronização e técnicas para resolvê-los. Foi originalmente formulado em 1965 por Edsger Dijkstra como um exercício de exame para estudantes, apresentado em termos de computadores competindo pelo acesso a periféricos de drives de fita. Logo depois, Tony Hoare deu ao problema sua formulação atual.
 
-Em palavras simples, o problema dos filósofos de jantar é uma ilustração de como o acesso sincronizado a um recurso compartilhado pode resultar na criação de uma situação de conflito.
+Em palavras simples, o problema dojantar dos filósofos é uma ilustração de como o acesso sincronizado a um recurso compartilhado pode resultar na criação de uma situação de conflito.
 
 #### Sincronização e Deadlock
 
@@ -41,7 +41,7 @@ Soluções incluem: -
 
 1.  Prioridade - Alguns filósofos recebem prioridade mais alta, de modo que a chance de adquirir os dois garfos é aumentada.
 2.  Preempção (Polidez) - Os filósofos renunciam ao garfo adquirido sem comer, caso o outro garfo não esteja disponível.
-3.  Arbitragem - Um mediador aloca garfos garantindo que dois garfos sejam dados a uma pessoa, ibnstaed de um para muitos.
+3.  Arbitragem - Um mediador aloca garfos garantindo que dois garfos sejam dados a uma pessoa, em vez de um para muitos.
 
 #### Mais Informações:
 
