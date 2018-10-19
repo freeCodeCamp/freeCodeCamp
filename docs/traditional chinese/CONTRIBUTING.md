@@ -80,6 +80,7 @@
  -  [阿拉伯語（عربى）]（https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic）
  -  [西班牙語（西班牙語）]（https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish）
  -  [葡萄牙語（葡萄牙語）]（https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese）
+ -  [繁體中文（繁體中文）]（https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/traditional%20chinese）
 
 我們非常樂意幫助您提高翻譯品質。數百萬人使用freeCodeCamp.org的英語版本，我們希望還有數百萬人使用這些翻譯版本。
 
