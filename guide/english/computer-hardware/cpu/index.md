@@ -28,6 +28,10 @@ A microprocessor is a silicon chip containing millions of microscopic transistor
   
 There are two primary manufacturers of computer microprocessors. Intel and Advanced Micro Devices (AMD) lead the market in terms of speed and quality. Intel's desktop CPUs include Celeron, Pentium and Core. AMD's desktop processors include Sempron, Athlon and Phenom. Intel makes Celeron M, Pentium M and Core mobile processors for notebooks. AMD makes mobile versions of its Sempron and Athlon, as well as the Turion mobile processor which comes in Ultra and Dual-Core versions. Both companies make both single-core and multi-core processors.
 
+## APU
+
+The AMD Accelerated Processing Unit (APU), formerly known as Fusion, is the marketing term for a series of 64-bit microprocessors from Advanced Micro Devices (AMD), designed to act as a central processing unit (CPU) and graphics accelerator unit (GPU) on a single die.
+
 
 <b> Manufacturers of mobile microprocessors </b>
 
