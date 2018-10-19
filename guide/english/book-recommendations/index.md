@@ -112,6 +112,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 - ISBN-13: 978-0134685991
 
+*Java: A Beginner's Guide, Sixth Edition*
+- [Amazon](https://www.amazon.com/Java-Beginners-Guide-Herbert-Schildt/dp/0071809252/ref=sr_1_7?s=books&ie=UTF8&qid=1539972203&sr=1-7&keywords=java&refinements=p_72%3A1250221011)
+- ISBN-13: 978-0071809252
+
 ## JavaScript
 
 *You Don't Know JS (book series)*
