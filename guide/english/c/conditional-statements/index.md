@@ -171,7 +171,7 @@ The break statement is used to prevent the code running into the next case.
 ### Example:
 ```
 // Program to create a simple calculator
-// Performs addition, subtraction, multiplication or division depending the input from user
+// Performs addition, subtraction, multiplication or division depending on the input from user
 
 # include <stdio.h>
 
@@ -228,4 +228,4 @@ printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumbe
 ```
 Finally, the break statement ends the switch statement.
 
-If break statement is not used, all cases after the correct case is executed. 
+If break statement is not used, all cases after the correct case are executed. 
