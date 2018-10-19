@@ -255,7 +255,7 @@ You can always learn more by exploring the below links leading. Component carry 
 ## Sources
 
 - [Angular Team. “Angular Docs”. *Google*. Accessed 3 June 2018](https://angular.io/guide)
-- [Mozilla MDN Community. “Using Shadow DOM”. *Mozilla*, updated 30 May 2018. Accessed 3 June 2018](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
+- [Mozilla MDN Community. “Using Shadow DOM”. *Mozilla*, updated september 9 2018. Accessed 19 October 2018](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM)
 - [Mundy, Ian. “Declarative vs Imperative Programming”. *codeburst.io*, 20 Feb. 2017. Accessed 3 June 2018](https://codeburst.io/declarative-vs-imperative-programming-a8a7c93d9ad2)
 
 ## Resources
