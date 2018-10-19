@@ -12,11 +12,6 @@
 
 # Contribution Guidelines
 
-Hello 👋 !
-
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
-
-
 Привет, 👋!
 
-Эти инструкции еще не переведены. Пожалуйста, проверьте эту проблему для получения дополнительной информации: [`# 18312`] (https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+Эти инструкции еще не переведены. Пожалуйста, проверьте эту проблему для получения дополнительной информации: [`# 18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
