@@ -24,25 +24,25 @@
 
 您可以选择为您感兴趣的任何领域做出贡献：
 
-1. [有助于这个开源代码库。]（＃contribution-to-this-open-source-codebase）。帮助编辑[指南文章]（https://guide.freecodecamp.org/），[编码挑战]（https://learn.freecodecamp.org/），或修复学习平台上的错误。
+1. [有助于这个开源代码库](＃contribution-to-this-open-source-codebase)。帮助编辑[指南文章](https://guide.freecodecamp.org/)，[编码挑战](https://learn.freecodecamp.org/)，或修复学习平台上的错误。
 
-2.在我们的[公共论坛]（https://www.freecodecamp.org/forum/）上帮助营员。 [回答他们的编码问题]（https://www.freecodecamp.org/forum/?max_posts=1）或[给他们反馈他们的编码项目]（https://www.freecodecamp.org/forum/c/project反馈系统开发与？max_posts = 1）
+2.在我们的[公共论坛](https://www.freecodecamp.org/forum/)上帮助营员。[回答他们的编码问题](https://www.freecodecamp.org/forum/?max_posts=1)或[给他们反馈他们的编码项目](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
-3.帮助我们为[YouTube频道视频]（https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos）添加字幕。
+3.帮助我们为[YouTube频道视频](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos)添加字幕。
 
 ##有助于这个开源代码库
 
-我们有数千个[编码挑战]（https://learn.freecodecamp.org）和[指南文章]（https://guide.freecodecamp.org）的庞大开源代码库。
+我们有数千个[编码挑战](https://learn.freecodecamp.org)和[指南文章](https://guide.freecodecamp.org)的庞大开源代码库。
 
 你可以帮助我们：
 
- -  [📝研究，编写和更新我们的指南文章]（＃research-write-and-update-our-guide-articles）
+ -  [📝研究，编写和更新我们的指南文章](＃research-write-and-update-our-guide-articles)
 
- -  [💻在我们的编码挑战中创建，更新和修复错误]（＃create-update-and-fix-bugs-in-our-coding-challenges）
+ -  [💻在我们的编码挑战中创建，更新和修复错误](＃create-update-and-fix-bugs-in-our-coding-challenges)
 
- -  [🌐翻译指南文章和编码挑战]（＃translate-guide-articles-and-coding-challenges）
+ -  [🌐翻译指南文章和编码挑战](＃translate-guide-articles-and-coding-challenges)
 
- -  [🛠帮助我们修复freeCodeCamp.org学习平台中的错误]（＃help-us-fix-bugs-in-freecodecamporgs-learning-platform）
+ -  [🛠帮助我们修复freeCodeCamp.org学习平台中的错误](＃help-us-fix-bugs-in-freecodecamporgs-learning-platform)
 
 ###研究，编写和更新我们的指南文章
 
