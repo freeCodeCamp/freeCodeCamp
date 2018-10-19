@@ -245,3 +245,9 @@ https://books.goalkicker.com/OracleDatabaseBook/
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
+
+My Change -- gauravkumarsinh
+
+JavaScript for Absoulte Beginners
+
+https://www.thriftbooks.com/w/getting-started-with-javascript_terry-mcnavage/1939705/?mkwid=sbM6YJYtB%7cdc&pcrid=70112900832&pkw=&pmt=&plc=&pgrid=21329340912&ptaid=pla-293510751080&gclid=CjwKCAjw3qDeBRBkEiwAsqeO7hA1MgX68bfRlxAogjMqAQKxaPgIwj7EaIazWM6Yz5eIjWic3pEqxBoCG5kQAvD_BwE#isbn=1430272198&idiq=3333432
