@@ -10,6 +10,19 @@ Java inheritance refers to the ability of a Java Class to `inherit` the properti
 
 Thus, inheritance gives Java the cool capability of _re-using_ code, or sharing code between classes!
 
+**The syntax of Java Inheritance**
+```java
+class Subclass-name extends Superclass-name  
+{  
+   //methods and fields  
+}  
+```
+
+The extends keyword indicates that you are making a new class that derives from an existing class. The meaning of "extends" is to increase the functionality.
+
+In the terminology of Java, a class which is inherited is called a parent or superclass, and the new class is called child or subclass.
+
+
 Let's describe it with the classic example of a `Vehicle` class and a `Car` class :
 
 ```java
