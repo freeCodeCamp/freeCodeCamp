@@ -1,29 +1,29 @@
 ---
 title: Steamroller
 ---
-![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3 ":triangular_flag_on_post:") Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3 ":busts_in_silhouette:") and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3 ":pencil:")
+![:triangular_flag_on_post:](https://forum.freecodecamp.com/images/emoji/emoji_one/triangular_flag_on_post.png?v=3) Remember to use <a>**`Read-Search-Ask`**</a> if you get stuck. Try to pair program ![:busts_in_silhouette:](https://forum.freecodecamp.com/images/emoji/emoji_one/busts_in_silhouette.png?v=3) and write your own code ![:pencil:](https://forum.freecodecamp.com/images/emoji/emoji_one/pencil.png?v=3)
 
-### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3 ":checkered_flag:") Problem Explanation:
+### ![:checkered_flag:](https://forum.freecodecamp.com/images/emoji/emoji_one/checkered_flag.png?v=3) Problem Explanation:
 
 This problem seems simple but you need to make sure to flatten any array, regardless of the level which is what adds a bit of difficulty to the problem.
 
 #### Relevant Links
 
-*   <a href='http://forum.freecodecamp.com/t/javascript-array-isarray/14284' target='_blank' rel='nofollow'>Array.isArray()</a>
+*   [Array.isArray()](http://forum.freecodecamp.com/t/javascript-array-isarray/14284)
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 1
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3) Hint: 1
 
 You need to check if an element is an array or not.
 
 > _try to solve the problem now_
 
-## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:") Hint: 2
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3) Hint: 2
 
-If you are dealing with an array, then you need flatten it by getting the value inside of the array. This means if you have <a href='https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3 ":speech_balloon:"' target='_blank' rel='nofollow'>[4]] then instead of returning [4] you need to return 4\. If you get [[[4]]] then the same, you want the 4\. You can access it with arr[index1][index2] to go a level deeper.
+If you are dealing with an array, then you need flatten it by getting the value inside of the array. This means if you have \[\[4\]\] then instead of returning \[4\] you need to return 4\. If you get \[\[\[4\]\]\] then the same, you want the 4\. You can access it with arr\[index1\]\[index2\] to go a level deeper.
 
 > _try to solve the problem now_
 
-## ![:speech_balloon:</a> Hint: 3
+## ![:speech_balloon:](https://forum.freecodecamp.com/images/emoji/emoji_one/speech_balloon.png?v=3) Hint: 3
 
 You will definitely need recursion or another way to go beyond two level arrays to make the code flexible and not hard-coded to the answers needed. Have fun!
 
