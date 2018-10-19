@@ -1,7 +1,10 @@
 ---
 title: Lists
 ---
-**TODO: `list` basic info**
+**Introduction:**
+A `list` is just an ordered sequence of values, where each value is identified with an *index*. Lists are zero-indexed, i.e., the index of the **1st** element in a `list` is **0**, the index of the **2nd** element is **1**, and so on. This means that a list of **N** elements will have indices from **0** to **N - 1**(not N).
+
+A benefit of using `lists`is the plethora of built-in methods available for easy manipulation. One very important property is that _**lists are mutable**_, which can be a blessing for programmers(or a curse, if we're not careful).
 
 [Python Docs - Lists](https://docs.python.org/3/library/stdtypes.html#lists)
 
