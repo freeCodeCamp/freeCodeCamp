@@ -19,6 +19,8 @@ A class is basically a program template. This template defines the initial `prop
 
 A new instance of a class is created using the `initialize` method of a class.
 
+A Class is a blueprint from which individual object are  created.
+
 Take for example the following sample code of a class:
 
 ```Ruby
