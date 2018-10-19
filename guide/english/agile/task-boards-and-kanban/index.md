@@ -24,6 +24,8 @@ But many other columns, or states, can be added. A software team may also includ
 ### More Information:
 - What is Kanban: <a href='https://leankit.com/learn/kanban/what-is-kanban/' target='_blank' rel='nofollow'>Leankit</a>
 - What is Kanban: <a href='https://www.atlassian.com/agile/kanban' target='_blank' rel='nofollow'>Atlassian</a>
+- Kanban 101: <a href='https://zapier.com/learn/project-management/kanban-board/' target= '_blank' rel='nofollow'> Zapier</a>
+- Why you should use Kanban: <a href='https://techbeacon.com/why-you-should-use-kanban-project-management' target= '_blank' rel='nofollow'>Techbeacon</a>
 
 Some online boards
 - <a href='https://trello.com/' target='_blank' rel='nofollow'>Trello</a>
