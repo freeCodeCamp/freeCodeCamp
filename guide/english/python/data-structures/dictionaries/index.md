@@ -65,6 +65,15 @@ It's easy to add key-value pairs to an existing dictionary:
     >>> club_names
     [1910, 1875]
 ```  
+**`has_key`** is a built-in *method* that can be used to check if a *key* exists in the dictionary.
+```python
+    >>> items = {'a': 'apple', 'b': 'banana', 'c': 'cat'}
+    >>> items.has_key('a')
+    True
+    >>> items.has_key('d')
+    False
+```
+
 Yet another way of creating dictionary is using the **`dict()`** method:
 ```python
     >>> players = dict( [('messi','argentina'), ('ronaldo','portugal'), ('kaka','brazil')] ) # sequence of key-value pair is passed  
