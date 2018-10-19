@@ -38,3 +38,10 @@ For example, `<img src="images/freeCodeCamp.jpeg>` would work if you had a folde
 
 - [HTML.com](https://html.com/attributes/img-src/)
 - [W3 Schools](https://www.w3schools.com/tags/att_img_src.asp)
+
+#### Dimension 
+You can add your Dimension. Size of an Image. 
+here is the example. 
+<img src= "Here You can insert any image links."
+ height="150px" width="150px"
+ border="1px" alt="" /> 
