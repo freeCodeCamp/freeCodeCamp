@@ -48,6 +48,21 @@ To get a list in Python 3, you need to convert it:
     >>> print (result)
     >>> [10,20,30,40]
 
+For printing in the Same line in Python 2, we used "," (comma) to indicate the pointer to stay in same line while printing.
+    >>> l=[10, 20, 30, 40]
+    >>> for i in range(4):
+    >>>     print a[i],
+    >>> 10 20 30 40
+    
+But in Python 3, to indicate the pointer to stay in same line , we cannot use comma, we have to use (end=" "). The character between the double quotes can be anything like " "(space),"$","&" and will appear between the printed elements.
+    >>> l=[10, 20, 30, 40]
+    >>> for i in range(4): 
+    >>>      print(a[i], end =" ")  
+    >>> 10 20 30 40
+
+In Python 2, the way we used to an input from the user was by using raw_input() function for taking a string input and input() function for evaluating the user input(it checks whether the input is a valid python expression or not).
+
+In Python 3, we take input from the user by using the input() function which takes a string input and has to be typecasted for taking a integer input. This input() function is entirely different from the input() function from Python 2 and is more like raw_input() function from Python 2. The input() function from Python 2 doesn't exist in Python 3.
 
 So, the only question you need to concern yourself with right now; is which one you should pick? If you are new to Python, you should pick Python 3. Python 2 currently has its <a href='https://www.python.org/dev/peps/pep-0373/#update' target='_blank' rel='nofollow'>End Of Life</a> date set to 2020. Meaning regular bugfixes are not guaranteed going forward and yes, it takes time to even get familiar with most common aspects with either Python; and your time is important. So, invest your time and effort wisely!
 
