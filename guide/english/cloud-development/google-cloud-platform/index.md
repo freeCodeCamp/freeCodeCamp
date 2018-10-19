@@ -22,3 +22,4 @@ Some famous web services include
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://cloud.google.com/docs/' target='_blank' rel='nofollow'>Google Cloud Platform Documentation</a>
 * <a href='https://en.wikipedia.org/wiki/Google_Cloud_Platform' target='_blank' rel='nofollow'>Wikipedia</a>
+* <a href='https://cloudplatform.googleblog.com/' target='blank' rel='nofollow'>Cloud Platform Blog</a>
