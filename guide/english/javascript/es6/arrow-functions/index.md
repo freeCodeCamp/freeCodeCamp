@@ -24,7 +24,7 @@ There are two parts of the syntax.
 1. const newOne = ()
 2. => {}
 
-The first part is just declaring a variable and assigning the function (i.e) () to it. It just says the variable is actually a function. The `const` keyword is used to indicate that the function won't be reassigned. Refer [this](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/javascript/es6/let-and-const/index.md) to learn more about `const` and `let`.
+The first part is just declaring a variable and assigning the function (i.e) () to it. It just says the variable is actually a function. The `const` keyword is used to indicate that the function won't be reassigned. Refer [this](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/javascript/es6/let-and-const/index.md target="_blank") to learn more about `const` and `let`.
 
 Then the second part is declaring the body part of the function. The arrow part with the curly braces defines the body part.
 
