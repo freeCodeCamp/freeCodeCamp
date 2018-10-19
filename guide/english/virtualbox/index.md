@@ -43,7 +43,7 @@ For more information visit the
   Visit the
   [VirtualBox Manual](https://www.virtualbox.org/manual/UserManual.html) for even more information about using and configuring machines.
 
-Oracle VM VirtualBox is a powerful cross-platform virtualization product intended for enterprise or personal use. VirtualBox is freely available as Open Source Software under the GNU General Public Licence (GPL) version 2.
+*Oracle VM VirtualBox* is a powerful cross-platform virtualization product intended for enterprise or personal use. VirtualBox is freely available as Open Source Software under the GNU General Public Licence (GPL) version 2.
 
 VirtualBox extends the capabilties of your existing computer so that it can run multiple operating systems, you can even run VirtualBox inside a virtual machine, to run another Operating system, all on the same PC, the only limits are disk space and memory.
 
