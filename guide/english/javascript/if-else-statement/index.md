@@ -69,3 +69,4 @@ else {
     return "Invalid number";
 }
 ```
+**Note:** The same functionality can be achieved using a "switch" statement! Learn more about <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch' target='_blank' rel='nofollow'> switch statements.</a> 
