@@ -21,5 +21,11 @@ title: Chef
 - [Chef TutorialsPoint](https://www.tutorialspoint.com/chef/chef_overview.htm)
 - [Official Documentation](https://docs.chef.io/chef_overview.html)
 - [Chef Tutorial](http://gettingstartedwithchef.com/)
-
-    
+- [Official Chef Learning Site](https://learn.chef.io/tutorials/)
+- [Dependency management in Chef](https://docs.chef.io/berkshelf.html)
+- [Test Kitchen](http://kitchen.ci/docs/getting-started/)
+- [Working with Chef server using Knife](https://docs.chef.io/knife.html)
+- [Unit Testing](https://www.chef.io/inspec/)
+- [Integration testing](http://inspec.io)
+- [Linting](http://www.foodcritic.io)
+- [Managing secrets in Chef](https://docs.chef.io/chef_vault.html)
