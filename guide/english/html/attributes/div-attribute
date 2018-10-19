@@ -1,0 +1,8 @@
+The <div> attribute is a block-level attribute, meaning each time a <div> attribute is called, it displays the contents 
+contained on a new line.  Other examples of block-level syntaxes are <p>, or the parapraph element, and the header elements <h1> through <h6>.  
+Div's are often used to style and space out content on a page or break up elements.  
+The syntax for div is as follows:
+
+<div>
+  insert code here
+</div>
