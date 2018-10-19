@@ -34,6 +34,9 @@ data consist of a set of training examples. In supervised learning, each example
 4. Decide which algorithm will you be applying, SVM, deep net, etc
 5. Run the algorithm on training set and use the model for predictions
 
+#### The easiest introduction to Machine Learning
+<a href='https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471' target='_blank' rel='nofollow'>Introduction to Machine Learning - Article by: Adam Geitgey</a>
+
 #### Courses:
 1. <a href='https://www.udacity.com/course/intro-to-machine-learning--ud120?autoenroll=true' target='_blank' rel='nofollow'>Intro to Machine Learning</a>
 2. <a href='https://www.coursera.org/learn/machine-learning' target='_blank' rel='nofollow'>Machine Learning - Taught by:  Andrew Ng</a>
