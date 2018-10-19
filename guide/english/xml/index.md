@@ -58,3 +58,7 @@ And it's main achievement was that it became a W3C Recommendation as early as in
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
 * [Introduction to XML](https://www.w3schools.com/xml/xml_whatis.asp)
+
+My Change.
+Xpath Expressions
+/Onlinestore/categoty[1]	Selects the first category element that is the child of the onlinetore element
