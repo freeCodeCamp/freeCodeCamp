@@ -7,15 +7,15 @@ title: HTML Entities
 ## Overview
 
 ###	What are HTML Entities?
-
+---
 HTML entities are characters that are used to replace reserved characters in HTML or for characters that do not appear on your keyboard. Some characters are reserved in HTML. If you use the less than(<) or greater than(>) signs in your text, the browser might mix them up with tags.
 
 ###	What are they used for?
-  
+  ---
 As mentioned about HTML entities are used in order to replace reserved characters that are reserved by HTML.
 
 ### How do you use them?
-
+---
 A character entity looks similar to this:
 ```html
 <!-- format &[entity_name]; -->
@@ -30,7 +30,7 @@ Or
 ```
   
 ## Reference Guide
-
+---
 This is by no means an exhaustive list but the links below will be able to give you more entities if the ones below do not work for your needs. Happy Coding :bowtie: 
 
 
@@ -65,6 +65,7 @@ This is by no means an exhaustive list but the links below will be able to give 
 
 
 #### More Information:
+---
 There are plenty of HTML entites references out there; some examples are:
 * [Table of Entities - W3](https://dev.w3.org/html5/html-author/charref)
 * [W3 Schools](https://www.w3schools.com/html/html_entities.asp)
