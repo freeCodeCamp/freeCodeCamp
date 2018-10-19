@@ -35,6 +35,10 @@ There is no sorting discussion which can finish without quick sort. The basic co
 It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
+#### Bubble Sort
+One of the simplest sorting algorithms there is and one of the easiest to implement. It relies on the comparison of two adjacent numbers in an array and swapping them if one is bigger than the other. Example and explenation below.
+[Bubble Sort](https://www.geeksforgeeks.org/bubble-sort/)
+
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
 ### Further Resources
