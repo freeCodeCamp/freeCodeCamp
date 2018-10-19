@@ -194,6 +194,8 @@ int main() {
         printf("Greetings are done!\n");
     }
 
+    fclose(names);
+    fclose(greet);
     return EXIT_SUCCESS;
 }
 ```
