@@ -17,6 +17,15 @@ Just to a few advantages of WordPress:
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
+## Templates
+
+WordPress does not require work from scratch. For ease of new developers there are tons of free templates available on internet which can be used by basic developer. 
+Few website whcih provides these free templates are:
+
+- [AThemes](https://athemes.com/collections/free-wordpress-themes/)
+- [WordPress](https://wordpress.org/themes/)
+- [Just Free Themes](https://justfreethemes.com)
+
 
 ### More Information
 
