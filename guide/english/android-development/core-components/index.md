@@ -31,7 +31,7 @@ An _activity_ is a component that has a user interface and represents a single s
 
 > Called when the activity will start interacting with the user. At this point your activity is at the top of the activity stack, with user input going to it. Always followed by onPause().
 
-* onPause ():
+* onPause():
 
 > Called as part of the activity lifecycle when an activity is going into the background, but has not (yet) been killed. The counterpart to onResume(). When activity B is launched in front of activity A, this callback will be invoked on A. B will not be created until A's onPause() returns, so be sure to not do anything lengthy here.
 
@@ -43,7 +43,7 @@ An _activity_ is a component that has a user interface and represents a single s
 
 * onDestroy():
 
-> The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it, or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between> these two scenarios with the isFinishing() method.
+> The final call you receive before your activity is destroyed. This can happen either because the activity is finishing (someone called finish() on it, or because the system is temporarily destroying this instance of the activity to save space. You can distinguish between these two scenarios with the isFinishing() method.
 
 #### Sample code to understand Activity Lifecycle
 ``` java
