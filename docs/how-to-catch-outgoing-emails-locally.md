@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Some of the email workflows, like updating an user's email, requires the back-end api-server to send out emails. While developing you can use a tool to catch these emails locally, instead of having to use an email provider and send an actual email. MailHog is one such email testing tool for developers, that will catch the emails your local freeCodeCamp instance is sending.
+Some of the email workflows, like updating a user's email, requires the back-end api-server to send out emails. While developing you can use a tool to catch these emails locally, instead of having to use an email provider and send an actual email. MailHog is one such email testing tool for developers, that will catch the emails your local freeCodeCamp instance is sending.
 
 ## Installing MailHog
 
@@ -39,7 +39,7 @@ Next, you can go to [using MailHog](#using-mailhog).
 
 ### Installing MailHog on Linux
 
-First install [Go](https://golang.org).
+First, install [Go](https://golang.org).
 
 For Debian-based systems like Ubuntu and Linux Mint, run:
 
