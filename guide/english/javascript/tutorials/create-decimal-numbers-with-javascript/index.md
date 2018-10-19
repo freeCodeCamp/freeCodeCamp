@@ -1,6 +1,8 @@
 ---
 title: Create Decimal Numbers with JavaScript
+localeTitle: Criar Números Decimais com JavaScript
 ---
-JavaScript number variables can have decimals.
+Variáveis numéricas JavaScript podem ter casas decimais.
 
-    var myDecimal = 2.8;
+    var meuDecimal = 2.8;
+    var outroDecimal = .15; //Isto também é válido
