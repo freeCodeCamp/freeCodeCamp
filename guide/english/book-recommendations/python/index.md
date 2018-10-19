@@ -12,6 +12,14 @@ title: Books on Python Programming Language
 - [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
 - [Amazon](https://www.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
+
+#### Python for Everyone, 2nd edition
+
+Textbook that is designed for beginners and introduces the fundamental programming for python at the eyes of a beginner.  Used in university course designed for complete beginners in coding.
+
+- [Wiley](https://www.wiley.com/en-us/Python+for+Everyone%2C+2nd+Edition-p-9781119186656)
+- [Amazon](https://www.amazon.ca/Python-Everyone-2nd-Cay-Horstmann-ebook/dp/B01AKSZ9MU)
+- ISBN-13: 978-1-119-18665-6
  
 #### Learn Python 3 the Hard Way
 
@@ -67,5 +75,6 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
+- [A Practical Introduction to Python Programming by Brian Heinold in [PDF]](https://www.brianheinold.net/python/A_Practical_Introduction_to_Python_Programming_Heinold.pdf) [or in HTML format](https://www.brianheinold.net/python/python_book.html#chapter_forloops)
 
 Please feel free to add more that you have found useful!
