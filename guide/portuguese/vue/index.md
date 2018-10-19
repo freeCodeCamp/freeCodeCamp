@@ -4,7 +4,7 @@ localeTitle: vista
 ---
 ## Introdução
 
-O Vue.js é uma estrutura progressiva para construir interfaces com o usuário. Seu núcleo é focado apenas na camada "view" e pode ser facilmente integrado a bibliotecas e projetos existentes. Mas por outro lado, o Vue.js também pode ser aproveitado para criar aplicativos de página única poderosos integrando-se a extensões como `vue-router` e `vuex` .
+O Vue.js é uma estrutura progressiva para construir interfaces com o usuário. Seu núcleo é focado apenas na camada "view" e pode ser facilmente integrado a bibliotecas e projetos existentes. Mas por outro lado, o Vue.js também pode ser aproveitado para criar aplicativos de página única poderosos integrando-se a extensões como `vue-router` e `vuex`, este último que cria um _store_ centralizado que permite o compartilhamento de dados entre os componentes da aplicação.
 
 Seus principais atributos são os seguintes:
 
