@@ -2,8 +2,8 @@
 title: Input
 ---
 ## Input
-The HTML `<input>` tag is used within a form to declare an input element.
-It allows the user to enter data.
+The HTML `<input>` tag is used within a `<form>` element to declare an input element.
+It allows the user to enter data, and can vary in many ways.
 
 ## Example
 ```html
@@ -29,14 +29,16 @@ It allows the user to enter data.
 </html>
 ```
 
-In the above example, there are two input fields which ask the user to enter their first and last names according to the labels specified. The submit `<button type="submit">` is another type of input which is used to take the data entered by the user into the form and send it to some other location specified in the code.
+In the above example, there are two input fields which ask the user to enter their first and last names according to the labels specified. 
+<br/>The 'submit' `<button type="submit">` is another type of input which is used to take the data entered by the user into the form and send it to some other location specified in the code.
 
 #### More Information:
 <a href="https://www.youtube.com/watch?v=qJ9ZkxmVf5s">Youtube</a>
 
 
 ## Input
-The HTML `<input>` tag is of many types to enter data. Some of them are:
-Type:Text(This is the most common type which is used to create general textboxes)
-Type:Password(This type is used for creation of password feilds)
-Type:Hidden(This is a special type of Input that is not shown to the user but it is used for passing information from one page to another while using <a href> tag)
+The HTML `<input>` tag uses the attribute `type` to specify what kind of input element to display. Some of these include:
+<br/>`type = "text"` - This is the default type, and generates a one-line text field.
+<br/>`type = "password"`- This will generate a password field, and is used for (you guessed it!) passwords.
+<br/>`type = "hidden"` - This will generate a hidden input field.
+
