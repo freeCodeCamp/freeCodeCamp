@@ -252,3 +252,15 @@ temp = [None for _ in range(len(arr))]
 merge_sort(arr, 0, len(arr) - 1)
 print(arr, inversions)
 ```
+## Complexity
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Merge sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n&nbsp;log(n)       | n         | Yes       |           |
+
+
+## References
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
+- [YouTube](https://www.youtube.com/watch?v=KF2j-9iSf4Q&index=27&list=PLLXdhg_r2hKA7DPDsunoDZ-Z769jWn4R8)
+
