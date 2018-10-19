@@ -25,3 +25,4 @@ These are design patterns that identify common communication patterns between ob
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [Design patterns - Wikipedia](https://en.wikipedia.org/wiki/Design_Patterns)
 
+My changes
