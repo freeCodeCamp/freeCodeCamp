@@ -22,3 +22,6 @@ Consider the following situation: when accepting the user story the Product Owne
 Nomad8 provides an [FAQ on Acceptance Criteria](https://nomad8.com/acceptance_criteria/)
 
 Leading Agile on [Acceptance Criteria](https://www.leadingagile.com/2014/09/acceptance-criteria/)
+
+
+my changes.
