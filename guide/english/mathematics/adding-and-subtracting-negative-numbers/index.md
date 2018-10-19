@@ -7,15 +7,15 @@ Adding and subtracting positive numbers is fairly straighforward, but what does 
 
 ### Examples
 
-(-1) + 3 = 2
+1. (-1) + 3 = 3 - 1 = 2
 
-(-3) + (-3) = -6
+2. (-3) + (-3) = -6
 
-(-2) - 4 = -6
+3. (-2) - 4 = (-2) + (-4) = -6
 
-(-10) + 2 = -8
+4. (-10) + 2 = 2 - 10 = -8
 
-20 + (-44) = -24
+5. 20 + (-44) = 20 - 44 = -24
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
