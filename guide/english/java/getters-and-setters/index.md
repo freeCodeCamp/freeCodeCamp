@@ -51,7 +51,7 @@ public void setNumber(int num) {
     this.number = num;
 }
 ```
-This ensures the value of 'number' is always set between 10 and 100.  If the programmer allows the variable 'number' to be updated directly, the caller can set any arbitrary value to it:
+This ensures the value of `number` is always set between 10 and 100.  If the programmer allows the variable `number` to be updated directly, the caller can set any arbitrary value to it:
 ```java
 obj.number = 3;
 ```
