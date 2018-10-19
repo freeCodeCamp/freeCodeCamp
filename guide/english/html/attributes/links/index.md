@@ -25,7 +25,7 @@ If you'd like your link to open in a new tab, you'll use the ```code target``` a
 When you need to guide users to a specific part of your webpage, let's assume the very bottom, you first need to assign the hash ```code #``` symbol to the ```code href``` attribute, like this
 
 ```html
-<a href="#footer>More about us<a/>
+<a href="#footer">More about us<a/>
 ```
 
 you'll then need to use an ```code id``` attribute in the element you want to direct your user to - in this case the ```code <footer>``` at the bottom of the webpage. 
