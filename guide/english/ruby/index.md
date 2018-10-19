@@ -35,6 +35,9 @@ g = Greeter.new("world")
 # Output "Hello World!"
 g.salute
 ```
+## Ruby Logo 
+[Logo]:(https://www.google.com/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/2000px-Ruby_logo.svg.png&imgrefurl=https://commons.wikimedia.org/wiki/File:Ruby_logo.svg&h=2000&w=2000&tbnid=wOuU6mLmd_hAHM:&q=ruby+logo&tbnh=160&tbnw=160&usg=AI4_-kRe9oW0eMkoRuTT6w3MKlMrdJFf6g&vet=12ahUKEwjNt5eZ9JLeAhVQba0KHe6aDBgQ9QEwAHoECAgQBg..i&docid=oAuJ1u94F_XQUM&sa=X&ved=2ahUKEwjNt5eZ9JLeAhVQba0KHe6aDBgQ9QEwAHoECAgQBg)
+
 ## Version
 
 The current stable version is [2.5.1](https://www.ruby-lang.org/en/news/2018/03/28/ruby-2-5-1-released/).
