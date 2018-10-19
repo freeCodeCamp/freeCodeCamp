@@ -147,6 +147,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
+*Inlfuence: They Psychology of Persuasion*
+- [Amazon](https://www.amazon.com/Influence-Psychology-Persuasion-Robert-Cialdini/dp/006124189X/ref=sr_1_3?s=books&ie=UTF8&qid=1539970175&sr=1-3&keywords=influence+the+psychology+of+persuasion)
+- ISBN-13: 978-0061241895
+
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
