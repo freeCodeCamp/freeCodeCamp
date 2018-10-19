@@ -74,6 +74,24 @@ This shows that the function is over and that it should end by giving a value of
 
 As before, this line ends with a semicolon to indicate that the line has completed.
 
+# Comment in C
+As for many other languges, C support two kind of comment.
+-Single line comment "//":
+
+```comment
+// your single line comment goes here
+
+```
+-Multiple line comment "/* */":
+
+```comment
+/* 
+your multiple lines 
+comment goes here
+/*
+
+```
+
 ## Compilation and Running
 You can save your hello world file as whatever you want, but it needs to end with the .c file extension. In this example, the file has been named "helloworld.c", because that is a clear name with a .c file extension.
 
