@@ -3,13 +3,12 @@ title: How to Find the Median Value
 ---
 ## How to Find the Median Value
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/how-to-find-the-median-value/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Say you have the following numbers: 21, 8, 10, 15, 4, 7, 8, 12, 7, 10
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Step 1 - Put the numbers in ascending order: 4, 7, 7, 8, 8, 10, 10, 12, 15, 21
+Step 2 - Find the number in the middle: here, the no. is the mean between 8 and 10, that is 9. If we had an odd list, than the calculation of the mean was not necessary.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Thus, thw median is 9 for that example.
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
 
 
