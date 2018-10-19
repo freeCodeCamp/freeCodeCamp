@@ -36,3 +36,11 @@ ls (List) - This command list the content in the current directory. It can be al
 ls
 ```
 Now we can see our directories in our home.
+
+pwd (Print Working Directory) - This command prints the current working directory with its absolute path, for example : 
+```unix
+root@1.1.1.1:~$ pwd
+
+/home/mark
+```
+Now we can see absolute path to directory we are working in.
