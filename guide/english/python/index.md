@@ -107,7 +107,7 @@ Some of the principles that influenced the design of Python are included as an E
 2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others
 3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
 
-#### Cons
+### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
 2. It is a slow language. So, a very bad language to use for developing general algorithms.
 
