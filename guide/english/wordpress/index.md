@@ -14,6 +14,7 @@ Just to a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
 * Has a blog built-in and ready to go whenever applicable. 
 * Has plugins, which extend functionality to WordPress sites. 
+* Wordpress sites can be hosted on any server running the LAMP stack
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
@@ -22,3 +23,7 @@ Whether its page transitions or a customized contact form, WordPress users are o
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
+
+#### Download WordPress
+
+- [Download WordPress](https://wordpress.org/download/)
