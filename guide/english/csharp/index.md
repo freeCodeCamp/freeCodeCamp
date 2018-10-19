@@ -63,3 +63,5 @@ For more information on ASP.NET, see the topic, ASPNET in the <a href='https://g
 * [C# Tutorials](https://www.microsoft.com/net/tutorials/csharp/getting-started)
 * [Official C# Documentation](https://docs.microsoft.com/en-us/dotnet/csharp/)
 * [New Features in C# 7.0](https://msdn.microsoft.com/en-us/magazine/mt790184.aspx)
+* [The History of C# (Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history)
+
