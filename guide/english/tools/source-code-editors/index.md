@@ -59,6 +59,6 @@ It supports many programming languages, and like the others you can download plu
 Its main features are:
 *   IntelliSense - For syntax highlighting, autocomplete, functions definitions and smart complete.
 *   Debugging - Be able to debug using break points, call stacks and an interactive console.
-*   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
+*   Built-in Git support - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
