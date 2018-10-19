@@ -145,5 +145,6 @@ Some frequently used options are:
 
 ## Additional Details
 - [Bootstrap Carousel](https://getbootstrap.com/docs/4.0/components/carousel/)
+- Bootstrap Carousel Plugin (https://www.w3schools.com/bootstrap/bootstrap_carousel.asp)
 
 
