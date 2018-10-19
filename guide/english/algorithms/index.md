@@ -35,6 +35,10 @@ There is no sorting discussion which can finish without quick sort. The basic co
 It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
+#### Bubble Sort
+Bubble sort is based on the idea of repeatedly comparing pairs of adjacent elements and then swapping their positions if they exist in the wrong order.
+[Bubble Sort](https://www.hackerearth.com/practice/algorithms/sorting/bubble-sort/tutorial/)
+
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
 ### Further Resources
@@ -58,3 +62,9 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work..
+
+[GeeksforGeeks](https://www.geeksforgeeks.org/fundamentals-of-algorithms/)
+
+One of the good resources online for learning and practicing data structures and algorithms.
+ 
+ 
