@@ -16,7 +16,7 @@ Originalmente PHP significaba 'Página de inicio personal', ya que Rasmus Lerdor
 
 ## ¿Para qué se usa PHP?
 
-A partir de octubre de 2017, PHP se utiliza en el [82% de los sitios web cuyo lenguaje del lado del servidor es conocido](https://w3techs.com/technologies/overview/programming_language/all) . Es Normalmente se utiliza en sitios web para generar contenido de páginas web de forma dinámica. Los casos de uso incluyen:
+A partir de octubre de 2017, PHP se utiliza en el [82% de los sitios web cuyo lenguaje del lado del servidor es conocido](https://w3techs.com/technologies/overview/programming_language/all) . Es Normalmente utilizado en sitios web para generar contenido de páginas web de forma dinámica. Los casos de uso incluyen:
 
 *   Sitios web y aplicaciones web (scripts del lado del servidor)
 *   Guión de línea de comandos
@@ -82,7 +82,7 @@ sudo apt install apache2 libapache2-mod-php
 
 ## PHP Frameworks
 
-Dado que escribir el código completo para un sitio web no es realmente práctico / factible para la mayoría de los proyectos, la mayoría de los desarrolladores tienden a usar marcos para el desarrollo web. La ventaja de usar un framework es que
+Dado que escribir el código completo para un sitio web no es realmente práctico / factible para la mayoría de los proyectos, la mayoría de los desarrolladores tienden a usar framework para el desarrollo web. La ventaja de usar un framework es que
 
 *   No tienes que reinventar la rueda cada vez que creas un proyecto, muchos de los matices ya están cuidados.
 *   Por lo general, están bien estructurados de modo que ayudan a separar las preocupaciones.
