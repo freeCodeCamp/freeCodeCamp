@@ -24,7 +24,7 @@ Treinar uma rede neural profunda (também conhecida como nossa pilha de funçõe
 
 Para treinar, você fornece uma rede neural com uma função de perda que basicamente diz quão diferentes são os resultados da rede neural versus as respostas corretas. Dependendo do valor da função loss, você altera os parâmetros da função matemática de tal forma que na próxima vez que sua rede tentar classificar a mesma imagem, o valor da função loss será menor. Você continua encontrando o valor da função de perda e atualizando os parâmetros repetidamente em todo o conjunto de dados de treinamento até que os valores da função de perda estejam dentro de margens razoáveis. Sua enorme rede neural está pronta agora!
 
-### Algumas arquiteturas de rede neural padrão
+### Algumas arquiteturas padrões de rede neural
 
 Nos últimos anos, alguns dos modelos (isto é, a combinação das funções matemáticas, a arquitetura e os parâmetros) tornaram-se padrão para determinadas tarefas. Por exemplo, um modelo chamado Resnet-152 ganhou o Imagenet Challenge em 2015, que envolve a tentativa de classificar imagens em 1000 categorias (incluindo cães e gatos). Se você estiver planejando fazer tarefas semelhantes, a recomendação é começar com esses modelos padrão e ajustá-los se eles não atenderem aos seus requisitos.
 
