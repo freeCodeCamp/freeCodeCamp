@@ -24,3 +24,5 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+Aonther Approach :
+Waterfall and agile aprroach can be combined. through this system we can fully identify the scope and needs of the project. From there we can begin the development cycle and try get a perfect waterfall model efficiently and quickly simply takingg out the cons of waterfall model alone.
