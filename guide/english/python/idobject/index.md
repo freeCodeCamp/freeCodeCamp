@@ -3,6 +3,8 @@ title: Python Idobject
 ---
 `id()` is a built-in function in Python 3, which returns the _identity_ of an object. The _identity_ is a unique integer for that object during its lifetime. This is also the address of the object in memory.
 
+For the average programmer this function isn't very helpful.  If the id() of two objects in a program are the same, then they are actually the same object.  Although you can use this to test, the keyword "is" is a better solution.
+
 ## Argument
 
 #### object
