@@ -14,7 +14,7 @@ Ao começar com o linux, existem alguns comandos básicos que todos devem conhec
 
 *   Digite `ls` e o conteúdo do diretório atual será exibido.
 
-1.  **homem** - comando manual
+1.  **man** - comando manual
 
 *   Mostra o manual do seguinte comando. Isso é muito útil ao tentar descobrir como funciona um comando desconhecido. Por exemplo, digite `man ls` para tudo que você precisa saber sobre o comando ls. Digite `q` para sair.
 
@@ -34,7 +34,7 @@ Ao começar com o linux, existem alguns comandos básicos que todos devem conhec
 
 *   Este comando remove arquivos, não diretórios. `rm file.txt` removerá o arquivo chamado arquivo.txt enquanto existir e estiver no diretório atual.
 
-1.  **toque** - cria arquivo
+1.  **touch** - cria arquivo
 
 *   O comando touch é usado para criar um arquivo. Pode ser qualquer coisa, desde um arquivo txt vazio até um arquivo zip vazio. 'touch new.txt' criará um novo arquivo com o nome new.
 
@@ -46,6 +46,15 @@ Ao começar com o linux, existem alguns comandos básicos que todos devem conhec
 
 *   Este é menos um comando e mais um how-to, no entanto, é muito útil para fazer quase tudo em um terminal no linux. Para começar, destaque o texto como normal e, em seguida, clique com o botão direito do mouse para copiar uma seleção. Você deve ver a parte destacada se tornar não destacada, isso significa que você copiou a seleção. Agora, clique com o botão direito do mouse onde deseja colar a seleção e pronto.
 
-1.  **menos** - visualizar o conteúdo do arquivo
+1.  **less** - visualizar o conteúdo do arquivo
 
 *   Use `less filename.txt` para visualizar o conteúdo de um arquivo e navegar por eles. Por padrão, menos passará pela página do arquivo por página.
+
+1.  **netstat** - Visualiza o estado das conexões realizadas pelo host.
+*   Este comando é utilizado quando você quer ver quais portas estão "abertas" no seu computador(Listening), além de mostrar as conexões de rede realizadas com outras maquinas. Exemplo: `ǹetstat -nlpt` -> Lista quais portas estão abertas no sistema
+
+1.  **whoami**  - MOstra qual usuário está logado no sistema.
+*   Este comando é utilizado quando você quer saber qual o nome de usuário que está logado no sistema. Exemplo: `whoami` -> Mostrara o nome de usuário
+
+1.  **echo** - Comando para imprimir uma frase na saída padrão.
+*   Este comando é utilizado quando você quer imprimir uma informação na tela. Exemplo: `echo "https://www.freecodecamp.org/"` -> Mostra na tela a frase "https://www.freecodecamp.org/"
