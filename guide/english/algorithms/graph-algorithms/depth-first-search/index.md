@@ -10,6 +10,18 @@ Depth First Search is one of the most simple graph algorithms. It traverses the 
 
 ![](https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif)
 
+### Sudo Code
+
+1. Initialize all vertices to mark as unvisited(ready state).
+
+2. Select an arbitrary vertex, and push it to stack(wait state).
+
+3. Repeat step #4 through step #5 until the stack is empty.
+
+4. Pop off an element from the stack. Process and mark it as visited(processed).
+
+5. Push to stack adjacent vertices of the processed vertex. Go to step #3.
+
 ### Implementation (C++14)
 
  ```c++
