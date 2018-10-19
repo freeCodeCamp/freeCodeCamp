@@ -24,7 +24,7 @@ To write on console you can use the function `printf()` contained in the library
  * The execution of a C program starts from the main() function.
  * The printf() is a library function to send formatted output to the screen. In this program, the printf() displays Hello, World! text        on the screen.
  * The return 0; statement is the "Exit status" of the program. In simple terms, program ends with this statement
-
+ * This return 0; will tells the OS that the process completed successfully.
  ## Output:
  ```
  >Hello World
