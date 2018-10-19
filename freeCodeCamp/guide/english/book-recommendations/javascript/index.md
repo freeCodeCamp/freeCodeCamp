@@ -31,5 +31,6 @@ A collection of articles covering the basics (core language and working with a b
 *JavaScript and JQuery: Interactive Front-End Web Development*
 
 A very fun and easy book for beginners. 
+A book for total beginners
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
