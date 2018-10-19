@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Combinar reductores múltiples
 ---
 
-## Description
+## Descripción
 <section id="description"> Cuando el estado de su aplicación comienza a hacerse más complejo, puede ser tentador dividir el estado en varias partes. En su lugar, recuerde el primer principio de Redux: todo el estado de la aplicación se mantiene en un objeto de un solo estado en la tienda. Por lo tanto, Redux proporciona la composición del reductor como una solución para un modelo de estado complejo. Usted define múltiples reductores para manejar diferentes partes del estado de su aplicación, luego componga estos reductores juntos en un reductor de raíz. El reductor de raíz se pasa luego al método <code>createStore()</code> Redux. Para permitirnos combinar varios reductores juntos, Redux proporciona el método <code>combineReducers()</code> . Este método acepta un objeto como un argumento en el que define propiedades que asocian claves a funciones reductoras específicas. Redux usará el nombre que le dé a las teclas como el nombre para el estado asociado. Normalmente, es una buena práctica crear un reductor para cada parte del estado de la aplicación cuando son distintos o únicos de alguna manera. Por ejemplo, en una aplicación para tomar notas con autenticación de usuario, un reductor podría manejar la autenticación, mientras que otro maneja el texto y observa que el usuario está enviando. Para una aplicación de este tipo, podríamos escribir el método <code>combineReducers()</code> siguiente manera: <blockquote> const rootReducer = Redux.combineReducers ({ <br> auth: authenticationReducer, <br> notas: notas reductor <br> }); </blockquote> Ahora, las <code>notes</code> clave contendrán todo el estado asociado con nuestras notas y manejado por nuestro <code>notesReducer</code> . Así es como se pueden componer varios reductores para administrar un estado de aplicación más complejo. En este ejemplo, el estado mantenido en el almacén de Redux sería entonces un único objeto que contiene las propiedades <code>auth</code> y <code>notes</code> . </section>
 
-## Instructions
+## Instruciones
 <section id="instructions"> Hay <code>counterReducer()</code> y <code>authReducer()</code> proporcionadas en el editor de código, junto con una tienda Redux. Termine de escribir la función <code>rootReducer()</code> utilizando el método <code>Redux.combineReducers()</code> . Asigne <code>counterReducer</code> a una clave llamada <code>count</code> y <code>authReducer</code> a una clave llamada <code>auth</code> . </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafío
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -69,7 +69,7 @@ const authReducer = (state = {authenticated: false}, action) => {
   }
 };
 
-const rootReducer = // define the root reducer here
+const rootReducer = // define aquí el root reducer
 
 const store = Redux.createStore(rootReducer);
 
@@ -81,10 +81,10 @@ const store = Redux.createStore(rootReducer);
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
