@@ -12,24 +12,24 @@ To use bootstrap buttons you follow the same steps that you would to create a bu
 
 `<button type="button" class="btn btn-primary">Primary</button>`
 
-<button type="button" class="btn btn-primary">Primary</button>
+![Primary Button](https://i.imgur.com/jTDG875.png "Primary Button")
 
 You can also use bootstrap buttons with the `<a>` and `<input>` elements as shown in the examples below.
 
 `<a class="btn btn-primary" href="#" role="button">This button is a link</a>`
 
-<a class="btn btn-primary" href="#" role="button">This button is a link</a>
+![Button Link](https://i.imgur.com/ehnJrn7.png "Button Link")
 
 `<input class="btn btn-primary" type="submit" value="Submit">`
 
-<input class="btn btn-primary" type="submit" value="Submit">
+![Submit Button](https://i.imgur.com/DIFO1h4.png "Submit Button")
 
 #### Bootstrap Button Class List:
 This is a list of the CSS classes that bootstrap provides for buttons.
 
 `.btn` This is bootstrap's basic button.
 
-<button type="button" class="btn">Basic</button>
+
 
 `.btn-default` This is bootstrap's default button.
 
