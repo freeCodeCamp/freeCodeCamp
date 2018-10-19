@@ -9,13 +9,13 @@ Docker-Compose is a tool for defining and running multi-container Docker applica
 The steps to use docker-compose are
 
 ```
-1)create a Dockerfile which defines the image and can be producible every where.
+1)create a Dockerfile which defines the image and can be producible everywhere.
 ```
 ```
-2)create a docker-compose yml file to run the services
+2)create a docker-compose yml file to run the services.
 ```
 ```
-3)use docker-compose up to start the sevices specified in docker-compose.yml file
+3)use docker-compose up to start the sevices specified in docker-compose.yml file.
 ```
 
 #### Basic commands in docker-compose
