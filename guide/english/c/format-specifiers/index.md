@@ -3,7 +3,7 @@ title: Format Specifiers
 ---
 # Format Specifiers
 
-Format specifiers defines the type of data to be printed on standard output. Whether to print formatted output or to take formatted input we need format specifiers. Format specifiers are also called as format string.Format specifier is used during input and output. It is a way to tell the compiler what type of data is in a variable during taking input using scanf() or printing using printf(). Some examples are %c, %d, %f, etc.
+Format specifiers define the type of data that is to be printed on standard output. We need format specifiers in order to take the formatted input or print the formatted output. Format specifiers are also called as format string. Format specifier is used during input and output. It is a way to tell the compiler what type of data is in a variable during taking input using scanf() or printing using printf(). Some examples are %c, %d, %f, etc.
 
 Character format specifier : %c
 
