@@ -28,7 +28,17 @@ and is displayed as:
 1. January
 1. February
 1. March
-
+Also we change bby default  format of display list items as numbers and bullets to roman number , alphabet,bullets,square etc.
+e.g  - 
+<ol type="a">
+  <li>January</li>
+  <li>February</li>
+  <li>March</li>
+</ol>
+and it is display like this  - ]
+a. january
+b. February
+c. March
 An unordered list is written as
 
 
