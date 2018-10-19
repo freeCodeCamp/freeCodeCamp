@@ -54,6 +54,10 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670)
 - ISBN-13: 978-0735619678
 
+*Design Patterns: Elements of Reusable Object-Oriented Software* - Erich Gamma
+- [Amazon](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)
+- ISBN-13: 978-0201633610
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
