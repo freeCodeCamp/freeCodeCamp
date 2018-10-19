@@ -2,6 +2,7 @@
 title: Arrays
 ---
 # Arrays in C
+Arrays are special variables which can hold more than one value under the same variable name, organised with an index.
 ## Problems
 Before trying to explain what arrays are, let's look at the code where we want to print 10 numbers given by the user in reverse order.
 ```C
