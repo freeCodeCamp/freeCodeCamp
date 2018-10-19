@@ -15,7 +15,7 @@ Currently the term “effort estimate” is used to denote as different concepts
 
 ### History
 
-Software researchers and practitioners have been addressing the problems of effort estimation for software development projects since at least the 1960s; see, e.g., work by Farr and Nelson.
+Software researchers and practitioners have been addressing the problems of effort estimation for software development projects since at least the 1960s; see, e.g. work by Farr and Nelson.
 
 Most of the research has focused on the construction of formal software effort estimation models. The early models were typically based on regression analysis or mathematically derived from theories from other domains. Since then a high number of model building approaches have been evaluated, such as approaches founded on case-based reasoning, classification and regression trees, simulation, neural networks, Bayesian statistics, lexical analysis of requirement specifications, genetic programming, linear programming, economic production models, soft computing, fuzzy logic modeling, statistical bootstrapping, and combinations of two or more of these models. 
 
