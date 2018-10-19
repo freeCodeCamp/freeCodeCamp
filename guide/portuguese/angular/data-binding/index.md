@@ -1,30 +1,30 @@
 ---
 title: Data Binding
-localeTitle: Ligação de dados
+localeTitle: Vinculação de dados
 ---
-# Ligação de dados
+# Vinculação de dados
 
 #### Motivação
 
-Os dados geralmente definem a aparência de um aplicativo. A interpretação desses dados na interface do usuário envolve lógica de classe ( `.component.html` ) e uma exibição de modelo ( `.component.ts` ). Angular conecta-os através da vinculação de dados. Pense na ligação de dados como uma ferramenta para interação de componentes.
+Os dados geralmente definem a aparência de um aplicativo. A interpretação desses dados na interface do usuário envolve lógica de classe ( `.component.html` ) e uma exibição de modelo ( `.component.ts` ). Angular conecta-os através da vinculação de dados. Pense na vinculação de dados como uma ferramenta para interação de componentes.
 
 #### Componente e Modelo
 
 O componente armazena a maior parte de sua lógica e dados dentro de sua classe decorada com `@Component` . Esse decorador define a classe como um componente com HTML de modelo. O modelo do componente representa a classe dentro do aplicativo. O foco aqui precisa estar entre a classe do componente e o modelo HTML.
 
-É aqui que ocorre a ligação de dados. Propriedades e eventos do elemento recebem valores atribuídos. Esses valores, definidos pela classe do componente, servem para uma das duas funções. Uma é produzir dados que o modelo recebe. O outro manipula eventos emitidos pelo elemento template.
+É aqui que ocorre a vinculação de dados. Propriedades e eventos do elemento recebem valores atribuídos. Esses valores, definidos pela classe do componente servem para uma das duas funções. Uma é produzir dados que o modelo então recebe, a outra é manipular eventos emitidos pelo elemento do template.
 
 ![Exemplo de código](https://raw.githubusercontent.com/sosmaniac-FCC/designatedata/master/image4.png)
 
 Tente usar essa imagem como um modelo mental para a próxima seção.
 
-#### Direções de Encadernação
+#### Direções da Vinculação
 
-Existem duas maneiras de vincular os dados: unidirecional e bidirecional. Angular tecnicamente só usa fluxo de dados unidirecional. O fluxo bidirecional é basicamente unidirecional. Acontece em duas aplicações de fluxo unidirecional, uma vez para cada direção. Mais sobre isso depois.
+Existem duas maneiras de vincular os dados: unidirecional e bidirecional. Angular tecnicamente só usa fluxo de dados unidirecional. O fluxo bidirecional é basicamente unidirecional. Acontece em duas aplicações do fluxo unidirecional, porém uma vez para cada direção. Mais sobre isso depois.
 
-O fluxo unidirecional define a interação unidirecional. O componente envia dados para o modelo ou o modelo emite um evento para a lógica do componente. As alterações de dados dentro do escopo do modelo não são percoladas na classe do componente. A emissão de eventos é uma transação unidirecional que começa nos elementos do modelo.
+O fluxo unidirecional define a interação um caminho. O componente envia dados para o modelo ou o modelo emite um evento para a lógica do componente. As alterações de dados dentro do escopo do modelo não são percoladas na classe do componente. A emissão de eventos é uma transação unidirecional que começa nos elementos do modelo.
 
-Bidirecional constitui ambas as direções. Isso significa que as alterações nos dados na lógica da classe ou no HTML do modelo persistem entre si. O escopo das mudanças é a visão do componente. A exibição inclui a classe e o modelo do componente juntos.
+Bidirecional constitui ambas as direções. Isso significa que as alterações nos dados na lógica da classe ou no HTML do modelo persistem entre eles. O escopo das mudanças é a visão do componente. A exibição inclui a classe e o modelo do componente juntos.
 
 #### Propriedades do elemento
 
@@ -47,23 +47,23 @@ Para reconhecer propriedades de elemento vinculado a dados, o Angular usa uma si
  <any-element [property]=“value”>innerHTML</any-element> 
 ```
 
-Fique comigo neste.
+Veja aqui comigo:
 
 `[property]` espelha a propriedade no nó de objeto do elemento DOM (Domain Object Model). Não confunda as propriedades do objeto com os atributos de um elemento DOM. Propriedades e atributos geralmente compartilham o mesmo nome e fazem a mesma coisa. Há uma distinção clara no entanto.
 
-Lembre-se que `attr` (atributos) é uma propriedade única do objeto DOM subjacente. Ele é declarado na instanciação do DOM com valores de atributo correspondentes à definição do elemento. Mantém o mesmo valor depois disso. Cada propriedade possui seu próprio campo de valor-chave em um nó de objeto DOM. Essas propriedades são pós-instanciação mutável.
+Lembre-se que `attr` (atributos) é uma propriedade única do objeto DOM do elemento. Ele é declarado na instanciação do DOM com valores de atributo correspondentes à definição do elemento e mantém o mesmo valor depois disso. Cada propriedade possui seu próprio campo de valor-chave em um nó de objeto DOM. Essas propriedades são mutáveis pós instanciação.
 
-Conheça a diferença entre atributos e propriedades. Isso levará a um melhor entendimento de como o Angular vincula dados a propriedades (binding de propriedade). Angular dificilmente ligará dados aos atributos de um elemento. Exceções a isso são muito raras. Uma última vez: Angular liga os dados do componente às propriedades, não aos atributos!
+Conheça a diferença entre atributos e propriedades, isso levará a um melhor entendimento de como o Angular vincula dados a propriedades (_binding_ de propriedade). Angular dificilmente vinculará dados aos atributos de um elemento e exceções a isso são muito raras. Uma última vez: Angular vincula os dados do componente às propriedades, não aos atributos!
 
-Referindo-se ao exemplo, o `[ … ]` na atribuição da propriedade do elemento tem um significado especial. Os colchetes mostram que a `property` está vinculada ao `“value”` à direita da atribuição.
+Referindo-se ao exemplo, o `[ … ]` na atribuição da propriedade do elemento tem um significado especial, os colchetes mostram que a `property` está vinculada ao `“value”` à direita da atribuição.
 
-`value` também tem um significado especial dentro do contexto dos parênteses. `value` por si só é uma string literal. Angular lê e combina seu valor com os membros da classe do componente. Angular substituirá o valor do atributo de membro correspondente. Isso, é claro, refere-se à mesma classe de componente que hospeda o modelo HTML.
+`value` também tem um significado especial dentro do contexto dos parênteses. `value` por si só é uma string literal. Angular lê e combina seu valor com os membros da classe do componente e substituirá o valor do atributo correspondente. Isso, é claro, refere-se à mesma classe de componente que hospeda o modelo HTML.
 
-O fluxo unidirecional de dados do componente para o modelo está completo. O membro correspondido à designação direita da propriedade entre colchetes fornece o `value` . Observe que as alterações no valor do membro na classe do componente se filtram para o modelo. Essa é a detecção de alterações do Angular em funcionamento. Alterações no escopo do modelo não afetam o membro da classe do componente.
+O fluxo unidirecional de dados do componente para o modelo está completo. O membro correspondente à direita da propriedade entre colchetes fornece o `value` . Observe que as alterações no valor do membro na classe do componente se espelham para o modelo, essa é a detecção de alterações do Angular em funcionamento. Alterações no escopo do modelo não afetam o membro na classe do componente.
 
-Key take-away: a classe de componentes fornece os dados enquanto o modelo os exibe.
+Resumidamente: a classe do componente fornece os dados enquanto o modelo os exibe.
 
-Não mencionei que os valores dos dados também podem aparecer no `innerHTML` um componente. Este último exemplo implementa chaves duplas. O Angular reconhece essas chaves e interpola os dados correspondentes da classe do componente no `innerHTML` da `div` .
+Não mencionei que os valores dos dados também podem aparecer no `innerHTML` de um componente. Este último exemplo implementa chaves duplas. O Angular reconhece essas chaves e interpola os dados correspondentes da classe do componente no `innerHTML` da `div` .
 
 ```html
 
@@ -95,17 +95,17 @@ Se o componente fornecer dados, o modelo fornecerá eventos.
 
 Isso funciona de maneira semelhante à vinculação de propriedade.
 
-O `(event)` refere-se a qualquer tipo de evento válido. Por exemplo, um dos tipos de eventos mais comuns é o `click` . Emite quando você _clica no_ mouse. Independentemente do tipo, o `event` está vinculado ao `“handler”` no exemplo. Manipuladores de eventos são geralmente funções membro da classe de componentes.
+O `(event)` se refere a qualquer tipo de evento válido. Por exemplo, um dos tipos de eventos mais comuns é o `click` que emite quando você clica com o mouse. Independentemente do tipo, o `event` está vinculado ao `“handler”` no exemplo. Manipuladores de eventos são geralmente funções da classe do componente.
 
-Os `( … )` são especiais para o Angular. Parêntese informa ao Angular que um evento é limitado à atribuição correta do `handler` . O próprio evento é originado do elemento host.
+Os `( … )` são especiais para o Angular. Parêntese informa ao Angular que um evento está atrelado ao metodo da classe passado entre parenteses. O próprio evento é originado no elemento.
 
-Quando o evento emite, ele passa o objeto Event na forma de `$event` . O `handler` mapeado para a função de `handler` nome idêntico da classe do componente. A troca unidirecional do elemento ligado ao evento para a classe do componente é concluída.
+Quando o evento emite, ele passa o objeto _Event_ na forma de `$event` . O `handler` mapeado para a função de `handler` tem o nome idêntico na classe do componente. A troca unidirecional do elemento ligado ao evento para a classe do componente é concluída.
 
-Emitir eventos do manipulador, enquanto possível, não afeta o elemento de modelo. A ligação é unidirecional depois de tudo.
+Emitir eventos do elemento não afeta o elemento de modelo se não for designado para fazer isso, afinal, o vinculo é unidirecional.
 
 #### Vinculação Bidirecional
 
-Os formulários de entrada fornecem um ótimo exemplo do motivo pelo qual a vinculação bidirecional é necessária. As ligações de dados bidirecionais são mais caras que as ligações de eventos ou de propriedades.
+Os formulários de entrada fornecem um ótimo exemplo do motivo pelo qual a vinculação bidirecional é necessária. As ligações de dados bidirecionais são mais custosas que as ligações de eventos ou de propriedades.
 
 A ligação de dados bidirecional possui seu próprio módulo. Antes de dar uma olhada nisso, considere o seguinte exemplo.
 
@@ -135,7 +135,7 @@ Este exemplo combina os dois anteriores. Isso explica por que é mais caro. Segu
 
 Agora na ligação da propriedade. O `inputValue` foi atribuído a um novo valor. Como `inputValue` está ligado ao `value` do elemento de entrada, sua alteração nos dados é transmitida para a propriedade de `value` do elemento de entrada. O `value` do elemento de entrada corresponde ao `inputValue` . Isso conclui a ligação da propriedade.
 
-Lá você tem isso. A ligação de dados bidirecional ocorre com os dois aplicativos de ligação unidirecional aplicados consecutivamente. A sintaxe é um pouco confusa.
+Lá você tem isso. A ligação de dados bidirecional acontece com a aplicação de dois vinculos unidirecionais, consecutivamente. A sintaxe é um pouco confusa.
 
 Felizmente, o Angular fornece o `NgModel` para simplificar a sintaxe. O exemplo abaixo é sinônimo do acima.
 
@@ -156,7 +156,7 @@ Felizmente, o Angular fornece o `NgModel` para simplificar a sintaxe. O exemplo 
  <input [(ngModel)]=“inputValue”> 
 ```
 
-`ngModel` é uma ótima conveniência. Você precisa importar o FormsModule na raiz do aplicativo antes de usá-lo. Com isso eliminado, a ligação de dados bidirecional se torna muito mais fácil de se trabalhar.
+`ngModel` é uma ótima conveniência. Você precisa importar o `FormsModule` na raiz do aplicativo antes de usá-lo. Com isso eliminado, a vinculação de dados bidirecional se torna muito mais fácil de se trabalhar.
 
 Para reforçar tudo que você aprendeu, confira esta foto da [Documentação Angular](https://angular.io/guide/architecture-components#data-binding) oficial [1](https://angular.io/guide/architecture-components#data-binding) .
 
