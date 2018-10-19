@@ -53,6 +53,10 @@ In the example above, a developer made a request for the current weather at a sp
   <li>Facebook: https://developers.facebook.com/docs/facebook-login/login-flow-for-web</li>
 </ol>
 
+## API Tokens
+
+Generally, before using an API from service, you will be required to register your app or open an account with the service. You will then be given a unique key / token / secret / code which acts as a form of authentication. The service will know who is requesting the information. For example, it is not uncommon for services to offer free API calls to indie developers, but require payments if the number of API calls you make in a period of time exceeds their threshold. Tokens can also be revoked if the service determines that the APIs have been abused, so it is important to check the terms and conditions. These tokens should be kept secret.
+
 #### More Information:
 * [API for non-programmers](https://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Application_programming_interface)
