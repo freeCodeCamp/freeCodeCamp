@@ -7,10 +7,10 @@ localeTitle: Изменение цвета текста
 ---
 
 ## Description
-<section id="description"> Теперь давайте изменим цвет некоторых наших текстов. Мы можем сделать это, изменив <code>style</code> вашего элемента <code>h2</code> . Свойство, отвечающее за цвет текста элемента, является свойством стиля <code>color</code> . Вот как вы можете задать цвет текста вашего элемента <code>h2</code> синим: <code>&lt;h2 style=&quot;color: blue;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Обратите внимание, что хорошей практикой является прекращение объявлений в <code>style</code> inline с помощью <code>;</code> , </section>
+<section id="description"> Теперь давайте изменим цвет текста. Мы можем сделать это, изменив атрибут <code>style</code> вашего элемента <code>h2</code> . Свойство, отвечающее за цвет текста элемента, является свойством стиля <code>color</code> . Вот как вы можете задать синий цвет текста вашего элемента <code>h2</code>: <code>&lt;h2 style=&quot;color: blue;&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Обратите внимание, что хорошей практикой является прекращать объявление в <code>style</code> с помощью <code>;</code>. </section>
 
 ## Instructions
-<section id="instructions"> Измените свой стиль элемента <code>h2</code> так, чтобы его цвет текста был красным. </section>
+<section id="instructions"> Измените стиль элемента <code>h2</code> так, чтобы его цвет текста был красным. </section>
 
 ## Tests
 <section id='tests'>
