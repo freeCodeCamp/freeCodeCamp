@@ -15,5 +15,6 @@ There are a few really helpful arguments to aid this:
 - `-` can be used to move to the previous directory. For example, you are in `/A`, then cd to `/B`, use `cd -` and you are back to `/A`
 - `~[number]` will cd to that entry from the output of `dirs` directories can be pushed on poped to the 'dirs' stack using `pushd` and `popd` respectively.
 - Typing only `cd` will move to the home directory works same as `cd ~`
+- Typing 'cd - ' will move you back to the previous directory.
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Cd_(command))
