@@ -64,3 +64,4 @@ The BuildBox game engine is basically for developing hypercasual games.
 * [Unreal Engine](https://www.unrealengine.com/en-US/what-is-unreal-engine-4)
 * [BuildBox](https://www.buildbox.com/)
 * [Godot Engine](https://godotengine.org/)
+* [Reddit Guides and Resources](https://www.reddit.com/r/gamedev/wiki/index)
