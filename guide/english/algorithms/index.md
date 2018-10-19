@@ -25,6 +25,8 @@ Algorithms are most commonly judged by their efficiency and the amount of comput
 
 Sorting algorithms come in various flavors depending on your necessity.
 Some, very common and widely used are:
+1. Quick Sort
+2. Merge Sort
 
 #### Quick Sort
 
@@ -41,7 +43,7 @@ freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is becaus
 
 [Intro to Algorithms | Crash Course: Computer Science](https://www.youtube.com/watch?v=rL8X2mlNHPM)
 
-This video gives an accessible and lively introduction to algorithms focusing on sorting and graph search algorithms. 
+This video gives an accessble and lively introduction to algorithms focusing on sorting and graph search algorithms. 
 
 [What is an Algorithm and Why Should you Care? | Khan Academy](https://www.youtube.com/watch?v=CvSOaYi89B4)
 
