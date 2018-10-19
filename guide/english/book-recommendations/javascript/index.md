@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### JavaScript: The Definitive Guide
+
+A book for beginners and intermediate programmers, who code in JavaScript. This book works as a guide and comprehensive reference to the core JavaScript language and to the client-side JavaScript APIs defined by web browsers.
+
+- [Amazon](https://www.amazon.de/JavaScript-Definitive-Guide-Guides/dp/0596805527/ref=sr_1_1?s=books-intl-de&ie=UTF8&qid=1539928564&sr=1-1&keywords=JavaScript%3A+The+Definitive+Guide)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
