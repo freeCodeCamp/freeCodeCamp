@@ -1,29 +1,30 @@
 ---
 title: Component State
 ---
+
 ## Component State
 
 In `Class` components, there is a way to store and manage state built in to React Native.
 
 ```javascript
 class App extends Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
-      counter: 0
+      counter: 0,
     };
   }
-  incrementCount () {
+  incrementCount() {
     this.setState({
-      counter: this.state.counter + 1
+      counter: this.state.counter + 1,
     });
   }
-  decrementCount () {
+  decrementCount() {
     this.setState({
-      counter: this.state.counter - 1
+      counter: this.state.counter - 1,
     });
   }
-  render () {
+  render() {
     return (
       <View>
         <Text>Count: {this.state.counter}</Text>
@@ -37,16 +38,18 @@ class App extends Component {
 
 State is similar to props, but it is private and fully controlled by the component. Here, the `constructor()` method is calling the parent class' constructor with `super();` - **`Component`** is the parent class of `App` because we are using the `extends` keyword. The `constructor()` method also initializes the component's state object:
 
-```
+```js
 this.state = {
-  counter: 0
+  counter: 0,
 };
 ```
 
 The state can be displayed within the component:
 
 ```js
-{this.state.counter}
+{
+  this.state.counter;
+}
 ```
 
 Or updated by calling:
@@ -55,20 +58,18 @@ Or updated by calling:
 this.setState({});
 ```
 
-**Note:** Aside from its initial creation in your component's `constructor()` method, you should never directly modify the component's state with `this.state = `. You must use `this.setState` as can be seen in the `incrementCount` and `decrementCount` functions above.
+**Note:** Aside from its initial creation in your component's `constructor()` method, you should never directly modify the component's state with `this.state =`. You must use `this.setState`, as shown in the `incrementCount` and `decrementCount` functions above.
 
-The count is incremented and decremented by calling the functions passed to the `onPress` handlers just like they would be if you called a click handler from JavaScript on the web.
+The count is incremented and decremented by calling the functions passed to the `onPress` handlers, just like they would if you called a click handler from JavaScript on the web.
 
-*ASIDE: In the first example, `<Button>` is a custom component; it's a combination of `<TouchableOpacity>` and `<Text>` from the React Native API:*
+_ASIDE: In the first example, `<Button>` is a custom component; it's a combination of `<TouchableOpacity>` and `<Text>` from the React Native API:_
 
 ```js
 const Button = ({ onPress, children, buttonProps, textProps }) => {
   const { buttonStyle, textStyle } = styles;
   return (
     <TouchableOpacity onPress={onPress} style={[buttonStyle, buttonProps]}>
-      <Text style={[textStyle, textProps]}>
-        {children}
-      </Text>
+      <Text style={[textStyle, textProps]}>{children}</Text>
     </TouchableOpacity>
   );
 };
