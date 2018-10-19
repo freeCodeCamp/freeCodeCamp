@@ -73,6 +73,7 @@ sudo apt install apache2 libapache2-mod-php
 * PHP can add, delete, modify data in your database
 * PHP can be used to control user-access
 * PHP can encrypt data
+*PHP can be used on all major operating systems, including Linux, many Unix variants (including HP-UX, Solaris and OpenBSD), Microsoft Windows, macOS, RISC OS, and probably others.
 
 ## Why PHP?
 
