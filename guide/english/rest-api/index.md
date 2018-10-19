@@ -120,3 +120,6 @@ REST was developed to provide a uniform interface for
 [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
 
 [HTTP status codes](https://httpstatuses.com/)
+[Documenting APIs: A guide for technical writers](https://idratherbewriting.com/learnapidoc/)
+
+
