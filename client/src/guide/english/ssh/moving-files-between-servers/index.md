@@ -24,7 +24,7 @@ title: Moving files between servers
 
 ```
 
-## Moving file between remote servers
+## Moving files between remote servers
 
 * First add public key of remote servers to known hosts 
 
