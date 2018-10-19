@@ -34,5 +34,6 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [Rails Girls](http://railsgirls.com/)
 - [Girls Who Code](https://girlswhocode.com/)
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
-
+- [Women Who Test](http://womenwhotest.com/)
+- [Women In Testing](http://www.womenintesting.com/)
 
