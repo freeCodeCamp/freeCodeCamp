@@ -24,3 +24,8 @@ There are mainly two types of storage
     - Block storage service of AWS – EBS (Elastic Block Storage) 
     - Cloud provides facility of scaling storage that’s the elastic property of cloud.
     - Block storage of OpenStack – Cinder
+
+
+
+Decentralized Cloud Storage for Security:
+ - Using services like Storj for having a decentralized storage architecture for the cloud can help in enhancing security as well as robustness to access data.
