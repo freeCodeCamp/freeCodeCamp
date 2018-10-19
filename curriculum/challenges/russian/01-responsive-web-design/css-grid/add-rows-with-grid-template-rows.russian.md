@@ -3,14 +3,14 @@ id: 5a9036e138fddaf9a66b5d33
 title: Add Rows with grid-template-rows
 challengeType: 0
 videoUrl: ''
-localeTitle: Добавить строки с строками-сетками-строками
+localeTitle: Добавление строк с grid-template-rows
 ---
 
 ## Description
-<section id="description"> Сетка, созданная в последней задаче, автоматически установит количество строк. Чтобы вручную отредактировать строки, используйте свойство <code>grid-template-rows</code> же, как в предыдущем вызове были использованы <code>grid-template-columns</code> . </section>
+<section id="description"> Грид, который вы создали в прошлом упражнении, автоматически устанавливает количество строк. Чтобы вручную задать строки, используйте свойство <code>grid-template-rows</code> точно также как вы использовали <code>grid-template-columns</code> в предыдущем упражнении. </section>
 
 ## Instructions
-<section id="instructions"> Добавьте две строки в сетку, каждая из которых имеет <code>50px</code> . </section>
+<section id="instructions"> Добавьте две строки в грид, каждая высотой <code>50px</code> . </section>
 
 ## Tests
 <section id='tests'>
