@@ -34,11 +34,19 @@ TypeError: cannot concatenate 'str' and 'int' objects
 ````
 The error should make it clear to you that you need to convert the `age` object to an integer before adding something to it.
 
+Both Code Below will give same output.
 ```py
 age = "18"
 age_int = int(age)
 print(age_int+2)
 ```
+or 
+
+```py
+age = "18"
+print(int(age_int)+2)
+```
+
 Output:
 ```py
 20
