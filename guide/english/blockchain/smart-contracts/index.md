@@ -18,3 +18,14 @@ Two of the most common technologies used are :
 - Ethereum
 - Hyperledger
 
+## Solidity Smart Contract Programming
+
+Solidity is a contract-oriented programming language specifically created for developing smart contracts on the EVM (Ethereum Virtual Machine). Solidity enables developers to create apps that implement self-enforcing business logic embodied in smart contracts. 
+
+Solidity is the primary language on Ethereum and is also used on some private blockchains that run on the Ethereum platform such as Monax's Hyperledger Burrow blockchain.
+
+### Ethereum Development Tools
+- [Remix (official Solidity IDE)] (https://remix.readthedocs.io/en/latest/)
+- [Truffle] (https://github.com/trufflesuite/truffle)
+- [MetaMask] (https://metamask.io/)
+- [DAppBoard] (http://dappboard.com/app)
