@@ -17,3 +17,4 @@ Two of the most common technologies used are :
 - Ethereum
 - Hyperledger
 
+You can start making your first Ethereum Smart Contract by reading _<a href="https://www.ethereum.org/greeter">this</a>_ simple guide.
