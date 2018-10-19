@@ -60,6 +60,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+*Fundamentals of Computer Algorithms* by Ellis Horowitz, Sartaj Sahni and Sanguthevar Rajasekaran
+- [Amazon](https://www.amazon.com/Fundamentals-Computer-Algorithms-Sanguthevar-Rajasekaran/dp/8173716129)
+- ISBN-13: 978-8173716126
+
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
