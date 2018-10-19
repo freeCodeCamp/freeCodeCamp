@@ -1,14 +1,14 @@
 ---
 title: PHP Variable Basics
-localeTitle: Princípios Básicos de Variáveis ​​PHP
+localeTitle: Princípios Básicos de Variáveis PHP
 ---
-Variáveis ​​permitem que programadores usem dados através de um script PHP.
+Variáveis permitem que programadores usem dados através de um script PHP.
 
-No PHP, as variáveis ​​sempre começam com um símbolo `$` seguido pelo nome da variável. Somente letras, números (pode não ser o primeiro caractere) e sublinhados podem compor o nome de uma variável.
+No PHP, as variáveis sempre começam com um símbolo `$` seguido pelo nome da variável. Somente letras, números (não podendo ser o primeiro caractere) e sublinhados podem compor o nome de uma variável.
 
-Por exemplo, `$my_variable` , `$anotherVariable` e `$the2ndVariable` permitem nomes de variáveis ​​válidos.
+Por exemplo, `$my_variable` , `$anotherVariable` e `$the2ndVariable` são nomes de variáveis válidos.
 
-Os nomes de variáveis ​​são sensíveis a maiúsculas e minúsculas. `$my_variable` é diferente de `$My_Variable` que é diferente de `$mY_vARiAblE` .
+Os nomes de variáveis são sensíveis a maiúsculas e minúsculas (case-sensitive). `$my_variable` é diferente de `$My_Variable` que é diferente de `$mY_vARiAblE` .
 
 Antes que uma variável possa ser usada, ela deve ter um valor atribuído a ela.
 
