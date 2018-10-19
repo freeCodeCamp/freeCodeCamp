@@ -15,9 +15,9 @@ When writing HTML, you can add classes to an element. Just add the attribute `cl
 You can then style these elements with CSS. Classes are referenced with period (.) before them in CSS, but you should not put periods in your HTML.
 
 ```css
-.super-man {
-  color: red;
-  background-color: blue;
+.hulk {
+  color: green;
+  background-color: purple;
 }
 ```
 
