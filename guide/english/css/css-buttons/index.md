@@ -93,7 +93,7 @@ button:hover {
 ![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "Hoverable Buttons")
 
 To determine the speed of the hover effect use the property `transition-duration`.
-
+also show the use of transition-duration with example.
 ### Disabled Buttons
 
 To disable a button, use the cursor property:
