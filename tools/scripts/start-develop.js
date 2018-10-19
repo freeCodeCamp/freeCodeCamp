@@ -39,3 +39,7 @@ process.on('exit', cleanUp);
 process.on('SIGINT', cleanUp);
 process.on('SIGUSR1', cleanUp);
 process.on('SIGUSR2', cleanUp);
+process.on('exit', cleanUp);
+process.on('SIGINT', cleanUp);
+process.on('SIGUSR1', cleanUp);
+process.on('SIGUSR2', cleanUp);
