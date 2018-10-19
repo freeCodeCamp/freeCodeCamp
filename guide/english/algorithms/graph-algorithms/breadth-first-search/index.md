@@ -18,6 +18,18 @@ Worse Case Time Complexity: O(n)
 
 Breadth First Search is complete on a finite set of nodes and optimal if the cost of moving from one node to another is constant.
 
+### Sudo Code
+
+1. Initialize all vertices to mark as unvisited(ready state).
+
+2. Select an arbitrary vertex, add it to queue(wait state).
+
+3. Repeat step #4 through step #5 until queue is empty.
+
+4. Remove an element from queue. Process and mark it as visited(processed state).
+
+5. Enqueue all adjacent vertices of the processed vertex. Go to Step #3. 
+
 ### C++ code for BFS implementation
 
 ```cpp
