@@ -5,6 +5,14 @@ title: Responsive Web Design
 
 Responsive web design is the concept of designing web pages that adapt to different screen sizes. It commonly involves the use of different layouts, font sizes, and placement of navigation menus.
 
+Responsive web design is a way of m minimizing your code stress, in the sense that you use a single stone to kill more than 3 birds. You just have to write your codes with your desired css implemented and it fits into any screen size, ranging from:
+
+Laptop
+Tablets
+Smartphones(normal android size), etc
+
+Your website will definitely have different views across different devices.
+
 In order to create a responsive web page, CSS is commonly used to style your HTML elements. Some common methods in CSS used to create responsive web designs are:
 
 1. Writing [media queries](https://guide.freecodecamp.org/css/media-queries)
