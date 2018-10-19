@@ -22,3 +22,7 @@ guarantee the project is delivered as efficiently as possible.
 
 <a href='http://www.agilejedi.com/chickenandpig'>Agile Jedi: The Story of the Chicken and Pig</a>  
 <a href='https://en.wikipedia.org/wiki/The_Chicken_and_the_Pig'>Wikipedia: The Chicken and the Pig</a>
+Reference-style: 
+![alt text][the-chicken-and-the-pig]
+
+[the-chicken-and-the-pig]: https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pig_and_chickens.jpg/220px-Pig_and_chickens.jpg "The Chicken and the Pig"
