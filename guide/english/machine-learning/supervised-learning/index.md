@@ -3,34 +3,23 @@ title: Supervised Learning
 ---
 ## Supervised Learning
 
-In supervised learning, we know what the correct output should be. Supervised learning problems can be categorized into regression and classification. A regression problem is where you map input to a continuous output. A classification problem, in contrast, is where you map (group) inputs into discrete categories.
+In supervised learning, We have a **labelled** observed set of data or  observation. And tha basic meaning of supervised here is reffering to data set i.e we have a data with input attributes and output labels to train a model to maintain a typical function with proper gradients or weights to predict further required output.  And Supervised learning can be categorized in two types on the basis of its output whether it is continuos like-100,511515,48484 or discreet like- {0,1},{4,8,3,7} etc.
 
 ### Regression
 
-Given data about used cars such as their mileage, you can predict their market prices. Since price is a continuous variable, this is a regression problem. In another example, Microsoft released a web app that predicts age based on picture. Again, as age is continuous rather than discrete or categorical, this is also a regression problem.  
+Given data about houses  such as -no. of rooms,length of rooms,carpet area,distance fromsupermarket etc you can predict their market prices. Since price is a continuous variable, this is a regression problem. 
+<br>In another example, Microsoft released a web app that predicts age based on picture. Again, as age is continuous rather than discrete or categorical, this is also a regression problem.  
 
 ### Classification
-
-The regression problems above can be turned into classification problems. Suppose you want to look for a used car less than X dollars. Then the output would be if the used car fits the price that you set. Similarly, age prediction can be a classification problem if we are looking to predict if a submitted picture belongs to someone under 18, and therefore should not be allowed to buy cigarettes.
+Classification is used where we have to categorize take example - As we have to judge whether a disease such as cancer is malignant or benign on the basis of size of tumor we will use classification algorithms to classify.
+<br>more example- In a firm I fyou have to decide whether a customer account is compromised or not.
 
 ###  Discussion points:
   
 - What is special about supervised learning?
 - In what scenario would you use it in?
-- Caveats or traps to think about?
 - What are some example models?
 
-#### Example 1:
-
-> Given data about the size of houses on the real estate market, try to predict their price. 
-
-Price as a function of size is a continuous output, so this is a regression problem.
-
-#### Example 2:
-
-(a) Regression - For continuous-response values. For example given a picture of a person, we have to predict their age on the basis of the given picture
-
-(b) Classification - for categorical response values, where the data can be separated into specific “classes”. For example given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
 
 #### Suggested Reading:
 
