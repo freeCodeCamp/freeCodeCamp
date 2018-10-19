@@ -12,10 +12,10 @@ There is definitely a learning curve to get used to the Android framework, howev
 The learning curve involved in Android has a relatively smaller slope as compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here](https://source.android.com/) 
 
 ## Getting started
-Check out the guides in this folder to learn about the 4 [core components](core-components/index.md) that make up an Android app and how you can get started with a sample app, and then delve into the more advanced topics such as fragments and the Gradle build system. Then check out the material design specifications guide as well to learn how to make your apps beautiful and user friendly.
+Check out the guides in this folder to learn about the four [core components](core-components/index.md) that make up an Android app and how you can get started with a sample app, and then delve into the more advanced topics such as fragments and the Gradle build system. Then check out the material design specifications guide as well to learn how to make your apps beautiful and user friendly.
 
 ### Setting Up and Getting Started with Android Studio
-Go to this [link](https://www.oracle.com/technetwork/java/javase/downloads/index.html) and install the latest JDK.
+Visit this [link](https://www.oracle.com/technetwork/java/javase/downloads/index.html) and install the latest JDK.
 Now download the Android Studio and SDK tools bundle from [here](https://developer.android.com/studio/).
 Install the Android Studio and SDK following the set up. Keep note of the SDK location.
 If you face any error go to settings later to solve it.
