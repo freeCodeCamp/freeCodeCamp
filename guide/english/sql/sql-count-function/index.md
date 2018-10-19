@@ -6,7 +6,7 @@ title: SQL COUNT Aggregate Function
 
 The COUNT operator is usually used in combination with a GROUP BY clause. It is one of the SQL "aggregate" functions, which include AVG (average) and SUM.
 
-This function will count the number of rows and return that count as a column in the result set. 
+This function will count the number of rows of the given function and return that count as a column in the result set. 
 
 Here are examples of what you would use COUNT for:
 * Counting all rows in a table (no group by required)
