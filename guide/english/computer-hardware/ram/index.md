@@ -4,7 +4,7 @@ title: RAM
 ## RAM
 
 RAM stands for random-access memory, alternatively referred to as **main memory**, **primary memory**, or **system memory**. It is a piece of computer hardware where the data that your computer is currently working on is stored.<br>
-Unlike hard drives, RAM is a volatile memory and requires power to keep the data accessible. If the computer is turned off, all data contained in RAM is lost. New users often confuse RAM with disk drive space. See [memory definition](https://www.computerhope.com/jargon/m/memory.htm) for a comparison between memory and storage.<br>
+Unlike hard drives, RAM is a volatile memory and requires power to keep the data accessible. If the computer is turned off, all data contained in RAM is lost. New computerusers often confuse RAM with hard drive space. See [memory definition](https://www.computerhope.com/jargon/m/memory.htm) for a comparison between memory and storage.<br>
 
 #### Types of RAM:
 
@@ -16,7 +16,7 @@ Some examples of packaging RAM are: DIMM, RIMM, SIMM, SO-DIMM, and SOO-RIMM. Bel
 
 #### RAM speeds:
 
-The speed rating of your RAM module is an expression of its data transfer rate, and it's almost always expressed in megahertz (Mhz). The faster the number, the faster your computer can store and retrieve the data stored in local memory. The formula for the exact speed rating changes slightly based on the version of DDR memory your computer is using. It’s no longer simply an expression of clock speed, like a processor, but a combination of hardware factors. But in general, faster is better. Like the GPU and CPU, RAM can also be overclocked. To achieve the faster speed, a user has to enable an XMP (Intel) or AMP (AMD) profile in the BIOS.
+The speed rating of your RAM module is an expression of its rate to tranfer data, and it's almost always expressed in megahertz (Mhz). The faster the number, the faster your computer can store and retrieve the data stored in local memory. The formula for the exact speed rating changes slightly based on the version of DDR memory your computer is using. It’s no longer simply an expression of clock speed, like a processor, but a combination of hardware factors. But in general, faster is better. Like the GPU and CPU, RAM can also be overclocked. To achieve the faster speed, a user has to enable an XMP (Intel) or AMP (AMD) profile in the BIOS.
 
 The standard which dictates the rough speed for RAM in most computers has been DDR3, which is still widely adopted and supports a limit fo 2133MHz or greater when run outside of its specification by overclocking. A new standard, DDR4, has been released in recent years and promises a wider range of clock speeds and reduced power consumption and latencies, and increases the maximum DIMM size from 16 GB to 64 GB.
 
