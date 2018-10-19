@@ -6,7 +6,7 @@ localeTitle: La anatomía de la línea de comandos de Linux
 
 En este mundo tecnológico de interfaz gráfica de usuario (GUI), muchos usuarios de computadoras encuentran la idea de ingresar comandos de texto (en una línea de comandos o terminal) para llevar a cabo funciones básicas como repulsivas, y es mejor dejarlas para los programadores o Desarrolladores (de hecho geeks).
 
-Afortunadamente, la interfaz de línea de comandos (CLI) es el rey en el mundo de Linux. Aunque muchos sabores de linux vienen con GUI intuitivas y bien pulidas, para una experiencia de Linux óptima, uno todavía necesita familiarizarse con el CLI de Linux (el terminal o shell) para poder realizar operaciones informáticas esenciales de manera rápida y limpia.
+Afortunadamente, la interfaz de línea de comandos (CLI) es el rey en el mundo de Linux. Aunque muchas distribuciones de linux vienen con GUI intuitivas y bien pulidas, para una experiencia de Linux óptima, uno todavía necesita familiarizarse con el CLI de Linux (el terminal o shell) para poder realizar operaciones informáticas esenciales de manera rápida y limpia.
 
 La línea de comandos sigue desempeñando roles muy importantes en la vida del usuario de Linux y de la suya también si decide usarla.
 
@@ -33,3 +33,8 @@ Desde el terminal de comando puedes comenzar a dar comando al shell. Se pueden d
 `user_name@machine_name:~$ who; free; df`
 
 Pero la mayoría de las veces, para garantizar una salida limpia, es recomendable ingresar los comandos uno por uno para no agrupar la pantalla.
+
+Finalmente, cabe destacar que GNU / Linux es compatible con una gran cantidad de shells o terminales como pueden ser `bash` (suele ser la utiliza por defecto), `sh`, `ksh`, `csh`, `zsh`, etc. Cada una de ellas ofrece una serie de características propias que facilitan la introducción de comandos.
+Para saber que shell estamos utilizando podemos teclear el siguiente comando:
+
+`user_name@machine_name:~$ echo $0`
