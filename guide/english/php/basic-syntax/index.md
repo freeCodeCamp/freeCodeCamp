@@ -3,9 +3,8 @@ title: Basic Syntax
 ---
 # Basic Syntax
 
-A PHP script can be placed anywhere in the document.
-
-A PHP script starts with `<?php` and ends with `?>`
+A PHP script can be placed anywhere in the document and starts with an opening and closing tags, which are **<?php** and **?>** which tell PHP to start and stop interpreting the code between them.
+*Note*: Even if it is discouraged, PHP also allows for short open tag **<?**
 
 Below, we have an example of a simple PHP file, with a PHP script that uses a built-in PHP function "echo" to output the text "Hello World!" on a web page
 
