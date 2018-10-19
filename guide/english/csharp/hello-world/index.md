@@ -5,7 +5,7 @@ title: Hello World
 # Hello World
 
 To write some text on the console we use the `Console.WriteLine()`. This method takes a string as input.
-
+The method `Console.ReadKey()` waits for a user to press any key. 
 ## Example
 ```csharp
 using System;
