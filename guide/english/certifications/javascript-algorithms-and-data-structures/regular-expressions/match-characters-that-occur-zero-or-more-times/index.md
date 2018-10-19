@@ -27,6 +27,7 @@ let regexStar = /wo*w/;
 regexPlus.test(phrase); // returns true
 regexStar.test(phrase); // returns true
 ```
+
 ## Solution:
 
 ```js
