@@ -6,7 +6,7 @@ localeTitle: Programação Orientada a Objetos (OOP)
 
 *   Por que orientado a objeto (doravante abreviado como OO)?
 *   Conceitos OO
-*   Qual o proximo?
+*   Qual o próximo?
 
 ## Porquê OO?
 
@@ -27,6 +27,6 @@ Outro conceito extremamente útil é o da herança. A ideia é que uma classe po
 
 Isso ajuda a reutilizar o código e tornar a estrutura do rcode muito mais limpa. A ocultação de dados é outro recurso interessante. Em OO, temos a noção de atributos privados e públicos. Atributos privados podem ser acessados ​​e modificados somente por métodos dessa classe em particular, enquanto dados públicos podem ser modificados de qualquer lugar no programa (dentro do escopo obviamente).
 
-## Qual o proximo?
+## Qual o próximo?
 
 Escolha uma linguagem OO e construa um jogo básico baseado em terminal para ilustrar esses conceitos.
