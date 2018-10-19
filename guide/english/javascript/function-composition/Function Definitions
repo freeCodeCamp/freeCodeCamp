@@ -1,0 +1,115 @@
+As a newbie in javascript, my experience learning javascript has proven to be an interesting language to learn and challenging as well
+Here is the part of the little thing i have learnt so far courtesy of W3schools
+
+JavaScript functions are defined with the function keyword.
+
+You can use a function declaration or a function expression.
+
+Declared functions are not executed immediately. They are "saved for later use", and will be executed later, when they are invoked (called upon).
+Example:
+This example calls a function which performs a calculation and returns the result:
+
+<script>
+var x = myFunction(4, 3);
+document.getElementById("demo").innerHTML = x;
+
+function myFunction(a, b) {
+    return a * b;
+}
+</script>
+
+Function Expressions
+A JavaScript function can also be defined using an expression.
+
+A function expression can be stored in a variable:
+
+This example can be defined in two ways;
+Example
+<script>
+var x = function (a, b) {return a * b};
+document.getElementById("demo").innerHTML = x;
+</script>
+
+Example 2:
+<script>
+var x = function (a, b) {return a * b};
+document.getElementById("demo").innerHTML = x(4, 3);
+</script>
+
+The function above is actually an anonymous function (a function without a name).
+Functions stored in variables do not need function names. They are always invoked (called) using the variable name.
+
+The Function() Constructor
+As you have seen in the previous examples, JavaScript functions are defined with the function keyword.
+
+Functions can also be defined with a built-in JavaScript function constructor called Function().
+
+Example
+<script>
+var myFunction = new Function("a", "b", "return a * b");
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+You actually don't have to use the function constructor. The example above is the same as writing:
+<script>
+var myFunction = function (a, b) {return a * b}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+
+Note: Most of the time, you can avoid using the new keyword in JavaScript.
+
+Self-Invoking Functions
+Function expressions can be made "self-invoking".
+
+A self-invoking expression is invoked (started) automatically, without being called.
+
+Function expressions will execute automatically if the expression is followed by ().
+
+You cannot self-invoke a function declaration.
+
+You have to add parentheses around the function to indicate that it is a function expression:
+Example
+<script>
+(function () {
+    document.getElementById("demo").innerHTML = "Hello! I called myself";
+})();
+</script>
+The function above is actually an anonymous self-invoking function (function without name).
+
+JavaScript functions can be used in expressions:
+Example
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+var x = myFunction(4, 3) * 2;
+document.getElementById("demo").innerHTML = x;
+</script>
+
+Functions are Objects
+The typeof operator in JavaScript returns "function" for functions.
+
+But, JavaScript functions can best be described as objects.
+
+JavaScript functions have both properties and methods.
+
+The arguments.length property returns the number of arguments received when the function was invoked:
+Example
+<script>
+function myFunction(a, b) {
+    return arguments.length;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+
+The toString() method returns the function as a string:
+Example
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demo").innerHTML = myFunction.toString();
+</script>
+
+A function defined as the property of an object, is called a method to the object.
+A function designed to create new objects, is called an object constructor.
+
