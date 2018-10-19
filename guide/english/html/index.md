@@ -58,6 +58,11 @@ Since the early days of the web, there have been many versions of HTML
 |XHTML|2000|
 |HTML5|2014|
 
+NEW improvements in HTML5
+
+1. Responsive Web Design Principles
+2. Accessibility features regarding Visually Impaired, Screen Reader, Colorblindness, Descriptive Link Text, HTML Access Keys
+
 #### Other Resources
 
 - [HTML Elements](https://guide.freecodecamp.org/html/elements)
