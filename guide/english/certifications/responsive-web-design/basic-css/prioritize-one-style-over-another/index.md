@@ -20,6 +20,7 @@ We need to create a CSS class called ```pink-text``` that gives an our ```h1``` 
     .pink-text {
 
     }
+  </style>
   ```
   And add in this class ```color``` with value of ```pink```:
   
