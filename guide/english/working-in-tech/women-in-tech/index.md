@@ -36,3 +36,6 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 
 
+My Change 
+
+Many IT Training Company and IT services are taking initative to bring woman in technology 
