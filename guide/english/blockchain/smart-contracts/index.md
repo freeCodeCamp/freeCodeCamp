@@ -18,3 +18,4 @@ Two of the most common technologies used are :
 - Ethereum
 - Hyperledger
 
+A common language used to define a smart contract is Solidity.
