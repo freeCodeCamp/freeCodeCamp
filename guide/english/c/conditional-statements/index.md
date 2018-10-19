@@ -229,3 +229,4 @@ printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumbe
 Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
+*conditional statements are awesome*
