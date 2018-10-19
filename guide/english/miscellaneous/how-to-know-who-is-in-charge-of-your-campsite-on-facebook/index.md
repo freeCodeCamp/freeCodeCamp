@@ -17,4 +17,4 @@ How to find out who is an Admin for your Local Group:
 
 ![](//discourse-user-assets.s3.amazonaws.com/original/2X/9/946354dab087e439a810937de4332ad5e231ccf2.png)
 
-Message this person to introduce yourself and let them know you're interested in being an admin. After this, go schedule your first meetup.
+Message this person to introduce yourself and let them know you're interested in being an admin. After this, go schedule your first meetup. Happy Coding!
