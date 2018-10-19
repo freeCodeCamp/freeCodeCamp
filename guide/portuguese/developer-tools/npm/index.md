@@ -44,3 +44,4 @@ A execução da instalação do npm no diretório raiz de um projeto sem um nome
 *   Um guia para iniciantes do npm: [sitepoint](https://www.sitepoint.com/beginners-guide-node-package-manager/)
 *   Se você quiser uma série de vídeos abrangente, confira: [youtube](https://youtu.be/6fj0cpmMiVg)
 *   E aqui está a série oficial do npm: [youtube](https://youtu.be/pa4dc480Apo)
+Minhas mudanças.
