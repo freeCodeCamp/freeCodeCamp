@@ -2,10 +2,15 @@
 title: Random Forest
 ---
 ## Random Forest
-A Random Forest is a group of decision trees that make better decisions as a whole than individually.
+Random Forest is a flexible, easy to use machine learning algorithm that produces, even without hyper-parameter tuning, a great result most of the time. It is also one of the most used algorithms, because it’s simplicity and the fact that it can be used for both classification and regression tasks.
+
+### Working of Random Forest
+A Random Forest is a group of decision trees that make better decisions as a whole than individually.Random Forest is a supervised learning algorithm. Like you can already see from it’s name, it creates a forest and makes it somehow random. The **forest** it builds, is an ensemble of Decision Trees, most of the time trained with the **bagging** method. The general idea of the agging method is that a combination of learning models increases the overall result.One big advantage of random forest is, that it can be used for both **classification** and **regression** problems, which form the majority of current machine learning systems. 
 
 ### Problem
 Decision trees by themselves are prone to **overfitting**. This means that the tree becomes so used to the training data that it has difficulty making decisions for data it has never seen before.
+
+The major problem with Random Forest are their inabilty to predict **real time** because the with increasing number of trees makes the algorithm slow.
 
 ### Solution with Random Forests
 Random Forests belong in the category of **ensemble learning** algorithms. This class of algorithms use many estimators to yield better results. This makes Random Forests usually **more accurate** than plain decision trees. In Random Forests, a bunch of decision trees are created. Each tree is **trained on a random subset of the data and a random subset of the features of that data**. This way the possibility of the estimators getting used to the data (overfitting) is greatly reduced, because **each of them work on the different data and features** than the others. This method of creating a bunch of estimators and training them on random subsets of data is a technique in *ensemble learning* called **bagging** or *Bootstrap AGGregatING*. To get the prediction, the each of the decision trees vote on the correct prediction (classification) or they get the mean of their results (regression).
@@ -48,6 +53,9 @@ model2 = gradient_boosted_tree.fit(X,Y)
 predictions2 = model2.predict(data_test)
 print(predictions2)
 ```
+
+### Summary
+A fast, simple and flexible algorithm to train early in the model development process, to see how it performs. This algorithm is also a great choice to develop a model in a short period of time.
 
 #### More Information:
 - <a href='https://www.wikiwand.com/en/Random_forest' target='_blank' rel='nofollow'>Random Forests (Wikipedia)</a>
