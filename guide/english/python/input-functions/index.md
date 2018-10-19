@@ -10,7 +10,7 @@ Many a time, in a program we need some input from the user. Taking inputs from t
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CUqX/0' target='_blank' rel='nofollow'>Run Code</a>
 
-1.  To give a prompt with a message:
+2.  To give a prompt with a message:
 
     prompt_with_message = input('<Your prompt message should appear here>')
     # <Your prompt message should appear here> _
