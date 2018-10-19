@@ -31,7 +31,7 @@ console.log(a); // 50
 
 ## Const
 
-Const is used to assign a constant value to the variable. And the value cannot be changed. It's fixed.
+Const is used to assign a constant value to the variable. And the value cannot be changed. It's fixed. Const also has block-level scoping.
 ```
 const a = 50;
 a = 60; // shows error. You cannot change the value of const.
