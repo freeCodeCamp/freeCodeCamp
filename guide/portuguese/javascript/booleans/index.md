@@ -4,9 +4,9 @@ localeTitle: boleano
 ---
 ## boleano
 
-Os booleanos são um tipo de dados primitivo comumente usado em linguagens de programação de computadores. Por definição, um booleano tem dois valores possíveis: `true` ou `false` .
+Os booleanos são um tipo de dados primitivo comumente usado em linguagens de programação de computadores. Por definição, um booleano tem dois valores possíveis: `true` (verdadeiro) ou `false` (falso).
 
-Em Javascript, há frequentemente coerção de tipo implícito para booleano. Se, por exemplo, você tiver uma instrução if que verifica uma determinada expressão, essa expressão será forçada para um valor booleano:
+Em Javascript, há frequentemente coerção de tipo implícita para booleano. Se, por exemplo, você tiver uma instrução if que verifica uma determinada expressão, essa expressão será forçada para um valor booleano:
 
 ```javascript
 var a = 'a string'; 
@@ -17,16 +17,16 @@ var a = 'a string';
 
 Existem apenas alguns valores que serão coagidos a falsos:
 
-*   falso (não realmente coagido como já é falso)
-*   nulo
-*   Indefinido
-*   NaN
-*   0
-*   '' (corda vazia)
+*   false (não realmente coagido como já é falso)
+*   null (nulo)
+*   undefined (indefinido)
+*   NaN (Não Numérico)
+*   0 (zero)
+*   '' (string vazia)
 
-Todos os outros valores serão coagidos para verdadeiro. Quando um valor é coagido para um valor booleano, também chamamos isso de 'falso' ou 'truthy'.
+Todos os outros valores serão coagidos a verdadeiro. Quando um valor é coagido para um valor booleano, chamamos isso de 'falsy' ou 'truthy'.
 
-Uma maneira que o tipo de coerção é usado é com o uso dos operadores ou ( `||` ) `&&` ( `&&` ):
+Uma maneira que o tipo de coerção é usado é com o uso dos operadores ou ( `||` ) e e ( `&&` ):
 
 ```javascript
 var a = 'word'; 
@@ -48,15 +48,15 @@ var a = 'word';
  console.log(c && a); // 'word' 
 ```
 
-Como você pode ver, o operador _ou_ verifica o primeiro operando. Se isso for verdade ou verdadeiro, ele retorna imediatamente (e é por isso que obtemos 'word' no primeiro caso e true no segundo caso). Se não for verdade ou verdadeiro, devolve o segundo operando (e é por isso que obtemos 'palavra' no terceiro caso).
+Como pode ver, o operador _ou_ verifica o primeiro operando. Se for `true` ou truthy, ele retorna imediatamente (e é por isso que obtemos 'word' no primeiro caso e true no segundo caso). Se não for `true` ou truthy, devolve o segundo operando (e é por isso que obtemos 'word' no terceiro caso).
 
-Com o operador e ele funciona de maneira semelhante, mas para 'e' para ser verdade, ambos os operandos precisam ser verdadeiros. Por isso, sempre retornará o segundo operando se ambos forem verdadeiros / verdadeiros, caso contrário, retornará false. É por isso que no quarto caso nos tornamos verdade e no último caso obtemos "palavra".
+O operador `&&` (e) funciona de maneira semelhante, mas para ser avaliado como verdadeiro, ambos os operandos precisam ser verdadeiros. Por isso, retornará sempre o segundo operando se ambos forem `true` / truthy, caso contrário, retornará `false`. É por isso que no penúltimo caso obtemos true e no último caso obtemos "word".
 
-## O objeto booleano
+## O objeto Booleano
 
-Há também um objeto JavaScript nativo que envolve um valor. O valor passado como o primeiro parâmetro é convertido em um valor booleano, se necessário. Se o valor for omitido, 0, -0, nulo, falso, NaN, indefinido ou a cadeia vazia (""), o objeto terá um valor inicial de falso. Todos os outros valores, incluindo qualquer objeto ou a string "false", criam um objeto com um valor inicial de true.
+Há também um objeto JavaScript nativo que envolve um valor. O valor passado como o primeiro parâmetro é convertido em um valor booleano, se necessário. Se o valor for omitido, 0, -0, nulo, falso, NaN, indefinido ou a string vazia (""), o objeto terá um valor inicial de falso. Todos os outros valores, incluindo qualquer objeto ou a string "false", criam um objeto com um valor inicial de true.
 
-Não confunda os valores Booleanos primitivos true e false com os valores true e false do objeto booleano.
+Não confunda os valores Booleanos primitivos true e false com os valores true e false do objeto Booleano.
 
 ## Mais detalhes
 
@@ -65,7 +65,7 @@ Qualquer objeto cujo valor não seja indefinido ou nulo, incluindo um objeto boo
 ```javascript
 var x = new Boolean(false); 
  if (x) { 
-  // this code is executed 
+  // este código é executado
  } 
 ```
 
@@ -74,27 +74,27 @@ Esse comportamento não se aplica a primitivos booleanos. Por exemplo, a condiç
 ```javascript
 var x = false; 
  if (x) { 
-  // this code is not executed 
+  // este código não é executado
  } 
 ```
 
-Não use um objeto booleano para converter um valor não booleano em um valor booleano. Em vez disso, use o Boolean como uma função para executar esta tarefa:
+Não use um objeto Booleano para converter um valor não booleano em um valor booleano. Em vez disso, use o Boolean como uma função para executar esta tarefa:
 
 ```javascript
-var x = Boolean(expression);     // preferred 
- var x = new Boolean(expression); // don't use 
+var x = Boolean(expression);     // preferível
+ var x = new Boolean(expression); // não usar
 ```
 
-Se você especificar qualquer objeto, incluindo um objeto booleano cujo valor seja false, como o valor inicial de um objeto booleano, o novo objeto booleano terá um valor true.
+Se especificar qualquer objeto, incluindo um objeto Booleano cujo valor é false, tal como o valor inicial de um objeto Booleano, o novo objeto Booleano terá um valor true.
 
 ```javascript
-var myFalse = new Boolean(false);   // initial value of false 
- var g = new Boolean(myFalse);       // initial value of true 
- var myString = new String('Hello'); // string object 
- var s = new Boolean(myString);      // initial value of true 
+var myFalse = new Boolean(false);   // valor inicial é false 
+ var g = new Boolean(myFalse);       // valor inicial é true 
+ var myString = new String('Hello'); // objeto string 
+ var s = new Boolean(myString);      // valor inicial é true 
 ```
 
-Não use um objeto booleano no lugar de um primitivo booleano.
+Não use um objeto Booleano no lugar de um primitivo booleano.
 
 ### Recursos
 
