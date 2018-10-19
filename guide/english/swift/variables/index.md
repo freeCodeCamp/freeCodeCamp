@@ -41,3 +41,4 @@ To test if your variables has the correct value, use `print()`.
 #### More Information:
 
 * [The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID310)
+* [Team Treehouse] (https://teamtreehouse.com/)
