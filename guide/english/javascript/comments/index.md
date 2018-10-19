@@ -39,7 +39,7 @@ function hello() {
 hello();
 ```
 
-You can also prevent execution of Javascript code just commenting the code lines like this:
+In some cases you may want to prevent code from running for debugging purposeses. For example:
 ```javascript
 function hello() {
   /*console.log("Hello world!");*/
