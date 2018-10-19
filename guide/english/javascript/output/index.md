@@ -95,6 +95,19 @@ Also, you can control & filter the type of output you wish to see in console.
 3. Warning
 4. Errors
 
+### Alert box
+As an alternative you can use 'alert' box to check your output. An alert box pops up with the outout and the user will have to click "OK" to proceed.
+
+```javascript
+var a = 1;
+var b = 2;
+
+function sum(x,y){
+  alert(a+b);
+});
+
+sum(a,b);
+```
 
 #### More Information:
 - <a href='https://developers.google.com/web/tools/chrome-devtools/console/console-reference' target='_blank' rel='nofollow'>Complete reference of console object by Google</a>
