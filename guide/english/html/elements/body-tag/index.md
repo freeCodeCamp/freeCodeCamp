@@ -23,3 +23,7 @@ The `<body>` element should contain all of a page's content, including all displ
 
 #### More Information:
 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body' target='_blank' rel='nofollow'>MDN</a>
+#### Important information:
+The Body tag follow the head tag. 
+All visual - Structural elements are contained with the body tag. 
+<body> tag defines the main content of HTML document.
