@@ -26,6 +26,7 @@ math.log(2, 2) #outputs 1
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * https://betterexplained.com/articles/using-logs-in-the-real-world/
 * https://www.khanacademy.org/math/algebra2/exponential-and-logarithmic-functions/introduction-to-logarithms/a/intro-to-logarithms
+* https://mathinsight.org/logarithm_basics
 
 
 ### Definition of logarithm
