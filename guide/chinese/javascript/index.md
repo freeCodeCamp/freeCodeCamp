@@ -32,4 +32,4 @@ WebKit（Chromium项目除外）实现了JavaScriptCore引擎。
 
 ## JavaScript框架
 
-最常用的JavaScript框架是React JS，Angular JS，Create JS，jQuery，nodeJS等。 有关详细信息请点击此[链接](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/)
+最常用的JavaScript框架是React JS，Angular JS，Vue.js, Create JS，jQuery，nodeJS等。 有关详细信息请点击此[链接](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/)
