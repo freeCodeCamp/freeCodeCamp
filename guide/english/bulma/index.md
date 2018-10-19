@@ -17,3 +17,6 @@ Just one command to get started:
 ```terminal
 $ npm install bulma
 ```
+We can give a link to Bulma from CDN ny including it in our HTML file, like this:
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
