@@ -1,5 +1,5 @@
 ---
-title: Algorithms
+# Title: Algorithms
 ---
 
 ## Algorithms
@@ -26,12 +26,12 @@ Algorithms are most commonly judged by their efficiency and the amount of comput
 Sorting algorithms come in various flavors depending on your necessity.
 Some, very common and widely used are:
 
-#### Quick Sort
+#### 1.Quick Sort
 
 There is no sorting discussion which can finish without quick sort. The basic concept is in the link below.
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
-#### Merge Sort
+#### 2.Merge Sort
 It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
