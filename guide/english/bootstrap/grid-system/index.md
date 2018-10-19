@@ -41,7 +41,14 @@ Here is how you would define a class prefix to use up one column width on the va
 ```
 <div class="col-sm-1"></div>
 ```
-
+#### Basic structure for usage of bootstrap
+        
+ Almost every html markup with bootstrap is likely to follow the following structure or rules :
+ 
+ - The outermost div should always be tagged with a class of `contatiner or container-fluid` for proper scaling based on viewports.
+ - Have multiple rows in a container ; not multiple containers for multiple rows.
+ - divs with column class can be rendered without a parent row . It works but dont do it .
+ - Never wrap a row class immediately with a parent row . 
 
 #### Example
 
