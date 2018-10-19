@@ -40,6 +40,7 @@ PHP-скрипт начинается с `<?php` и заканчивается �
  
  <?php 
  echo "My first PHP script!"; 
+ echo "My changes"
  ?> 
  
  </body> 
