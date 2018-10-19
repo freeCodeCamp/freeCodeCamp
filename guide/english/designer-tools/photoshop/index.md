@@ -3,25 +3,28 @@ title: Photoshop
 ---
 ## Photoshop
 
-Adobe Photoshop is a raster(pixel) based image editing software that is used by a wide arrange of content creators for graphic/photograph creation and editing. Developers or designers typically use Photoshop to create or modify assets and photographs for websites.  Some developers also use photoshop for website designs and mockups, but other tools such as Adobe Experience Design and Sketch are becoming more commonly used.  Adobe Photoshop is available for both Windows and Mac, but currently not Linux.
+Adobe Photoshop is raster(pixel)-based image editing software that is used by a wide range of content creators for graphic/photograph creation and editing. Developers or designers typically use Photoshop to create or modify assets and photographs for websites.  Some developers also use photoshop for website designs and mockups, but other tools such as Adobe Experience Design and Sketch are becoming more commonly used.  Adobe Photoshop is available for both Windows and Mac, but currently not Linux.
 
-A common thing a developer could do in photoshop, is modify the pixel size and resolution (72dpi for web) of an image for proper web use and modify images to have transparent backgrounds (using filetypes .gif, and .png). It is a common practice to reduce the size of an image to be the largest that it will need to be used for on a website.  This reduces server space and loading times and Photoshop is a tool to achieve this.  
+A common thing a developer could do in Photoshop is modify the pixel size and resolution of an image for proper web use (72 dpi) and modify images to have transparent backgrounds (using filetypes .gif or .png). It is also a common practice to reduce the size of an image so that it is no larger than it will ever be used on a website. This reduces server space and loading times.
 
 ### Summary
-* Raster based image editing software
-* A Photoshop file is a .psd, can export to most image filetypes.
-* Photoshop uses pixels. Make sure to create assets large enough, as scaling larger isn't possible without degradation.
-* Downloads available for Windows and Mac through Adobe subscriptions.
+* Raster-based image editing software
+* A Photoshop file is a .psd; Photoshop can export to most image filetypes.
+* Photoshop creates and edits pixel-based files. Make sure to create assets large enough for their intended use; scaling larger isn't possible without degradation.
+* Downloads available for Windows and Mac through Adobe Creative Cloud subscriptions.
 * Becoming less commonly used for website/ User Interface mockups.
 * Many advanced tools and features for photo editing that might not be needed for developers.  
 
 Photoshop was created in 1988 and is the industry standard for various image manipulation tasks such as:
 
-* Photo manipulation such as cropping images, quickly changing colors
+* Cropping, resizing, rotating, and color management
+* Photo post-processing (cleanup, editing, blurring, sharpening)
 * Designing <a href='https://en.wikipedia.org/wiki/Mockup' target='_blank' rel='nofollow'>mock-ups</a> for websites or apps
-* Designing logos<sup>1</sup>
+* Creating pixel-based derivatives of image files optimized for web, storage, etc.
 * Creating <a href='http://styletil.es/' target='_blank' rel='nofollow'>style tiles</a>
 * Designing icons
+* Designing logo elements<sup>1</sup>
+* Digital painting<sup>2</sup>
 
 Photoshop is used by web designers, mobile app designers, UX designers, and photographers, among other industry professionals.
 
@@ -60,7 +63,7 @@ When you first open Photoshop, you will likely see a dialog box that will ask if
 
 If you do not see this, you can go to `File` > `New...` or use the `CMD` / `ctrl` + `N`keyboard shortcut.
 
-For web projects, you will want to choose a lower resolution or dpi (dots per pixel). The standard is 72 dpi.
+For web projects, you will want to choose a lower resolution or dpi (dots per inch). The standard is 72 dpi.
 
 For print projects, you should choose a higher resolution. At least 300 dpi is recommended.
 
@@ -96,7 +99,7 @@ The canvas is the workspace for your project. You can move elements around the c
 
 7. Spot healing brush tool: clone an area from an image, and blend it into a different part of the image. Use it to retouch and blend.
 
-8. Brush tool: free form drawing.
+8. Brush tool: free form drawing<sup>3</sup>.
 
 9. Clone stamp tool: copy and paste certain pixels from an image. Use it to retouch.
 
@@ -204,14 +207,12 @@ If you need another format, select `File` > `Export` > `Export as...`. There, yo
 #### Footnotes
 
 1. While you can design logos in Photoshop, most designers chose to use Illustrator for logos, as Illustrator creates vector images that can make it easier to resize logos for multiple uses, such as small logos for business cards, or large logos for banner signs.
-2. You can create your own brushes in Photoshop, using Brush Preset option. You can also import brushes. This allows you to not limit yourself to given default brushes. 
-3. It is easier and better to use Photoshop in case you are making artworks using graphic tablets, since you have multiple options for brushes, something which isn't there in Illustrator.
+2. Photoshop has a high level of support for graphic tablets, making both photo manipulation and digital painting easier. 
+3. You can create your own brushes in Photoshop, using Brush Preset option. You can also import brushes. This allows you to not limit yourself to given default brushes. 
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://www.adobe.com/products/photoshop.html' target='_blank' rel='nofollow'>Official Website</a>
 * <a href='https://www.psprint.com/resources/difference-between-raster-vector/' target='_blank' rel='nofollow'>Raster vs. Vector graphics</a>
 * <a href='https://helpx.adobe.com/support/photoshop.html?promoid=5NHJ8FD2&mv=other' target='_blank' rel='nofollow'>Learn and Support</a>
-
-Alternatives: Gimp (available on Linux and free)
 
