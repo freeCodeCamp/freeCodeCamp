@@ -41,6 +41,9 @@ The padding property in CSS defines the innermost portion of the box model, crea
 ![The CSS Box Model](https://www.w3.org/TR/css3-box/box.png)
 
 
+## Common Pitfalls
+Do note, while padding and margins are similar in 'adding spaces between elements' context. Padding is included into the element dimensions, while margins are excluded from the element dimensions.
+
 ## Browser Support
 It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)
 
