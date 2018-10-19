@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Adicionar texto do marcador de posição a um campo de texto
 ---
 
-## Description
+## Descrição
 <section id="description"> O texto do espaço reservado é o que é exibido no elemento de <code>input</code> antes que o usuário introduza alguma coisa. Você pode criar um texto de espaço reservado da seguinte forma: <code>&lt;input type=&quot;text&quot; placeholder=&quot;this is placeholder text&quot;&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina o valor de <code>placeholder</code> da sua <code>input</code> texto para &quot;cat photo URL&quot;. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -64,7 +64,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
