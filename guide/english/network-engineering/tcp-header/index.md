@@ -12,4 +12,6 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
+- RFC 675: Specification of Internet TCP (1974) (http://www.ietf.org/rfc/rfc0675.txt)
+
 
