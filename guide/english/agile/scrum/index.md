@@ -5,6 +5,8 @@ title: Scrum
 
 Scrum is one of the methodologies under the Agile umbrella. The name is derived from a method of resuming play in the sport of rugby, in which the entire team moves together to make ground. Similarly, a scrum in Agile involves all parts of the team working on the same set of goals. In the scrum method, a prioritized list of tasks is presented to the team, and over the course of a "sprint" (usually two weeks), those tasks are completed, in order, by the team. This insures that the highest-priority tasks or deliverables are completed before time or funds run out. 
 
+Scrum wants you to "fail". Yes it sounded correct, infact it wants you to "fail fast". The trick is focusing on the second word "Fast". Failure is okay as long as you are learning from it, but if you have to wait too long, you are not going to learn nearly as much from it. Scrum takes the Agile manifesto and its key principles boils them down to a very simple framework that encourages small-scale focus and rapid learning cycles.
+
 ### Components of a Scrum
 
 Scrum is one of the methodologies under the Agile umbrella. It originates from 'scrummage' which is a term used in rugby to denote players huddling together to get possession of the ball.
