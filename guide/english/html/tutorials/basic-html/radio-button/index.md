@@ -20,3 +20,6 @@ title: Radio Button
 </html> 
 ```
 Radio buttons can be used to select a single option out of multiple options. You aren't allowed to choose 2 or more radio buttons in the same selection field.
+
+The above code will output the following:
+![Imgur](https://i.imgur.com/diAgwVE.png)
