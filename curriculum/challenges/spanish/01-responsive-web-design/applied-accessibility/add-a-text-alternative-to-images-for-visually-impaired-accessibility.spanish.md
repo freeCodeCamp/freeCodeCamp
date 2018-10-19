@@ -45,6 +45,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
