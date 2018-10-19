@@ -25,9 +25,9 @@ class ClassName:
  
  Class objects support two kinds of operations: attribute references and instantiation. 
  
- Attribute references use the standard syntax used for all attribute references in Python: `obj.name`. 
- Valid attribute names are all the names that were in the class's namespace when the class object was created. 
- So, if the class definition looked like this: 
+ Referência de atributo usam a sintaxe padrão usada para todas as referências de atributo em Python: `obj.name`.
+ Nomes de atributos válidos são todos os nomes que estavam na classe quando o objeto daquela classe foi criado.
+ Então, se a definição da classe for parecida com a definição abaixo:
 ```
 
 python class MyClass: "" "Um exemplo simples de classe" "" i = 12345
