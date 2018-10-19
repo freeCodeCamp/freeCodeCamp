@@ -16,7 +16,7 @@ O Flexbox pode ser usado para centralizar qualquer quantidade de elementos dados
 
 Vamos quebrar este exemplo. Primeiro, definimos a propriedade de exibição como "flexível" para podermos aplicar nossas propriedades de flexbox. Em seguida, declaramos a maneira como o flexbox lidará com nossos elementos. Isso pode ser em uma linha ou em uma coluna. Configurá-lo para linha alinhará os elementos horizontais dentro do elemento. A coluna irá alinhá-los na vertical.
 
-Agora vamos dar uma breve olhada em "justify-content". Esta propriedade declara como os elementos são distribuídos dentro do elemento pai. Nós escolhemos o valor "center". Isso significa que todos os elementos dentro desse elemento serão centralizados.
+Agora vamos dar uma breve olhada em "justify-content". Esta propriedade declara como os elementos são distribuídos dentro do elemento pai. Nós escolhemos o valor "center". Isso significa que todos os elementos dentro desse elemento serão centralizados. Poderíamos ainda escolher valores tais como "flex-start" e "flex-end", que alinhariam os elementos no início ou no fim da linha, respectivamente.
 
 #### Mais Informações:
 
