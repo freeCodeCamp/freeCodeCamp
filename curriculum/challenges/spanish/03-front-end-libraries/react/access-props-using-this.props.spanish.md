@@ -4,7 +4,7 @@ title: Access Props Using this.props
 challengeType: 6
 isRequired: false
 videoUrl: ''
-localeTitle: Acceder a las propiedades usando this.props
+localeTitle: Acceder a los props usando this.props
 ---
 
 ## Description
@@ -18,16 +18,16 @@ localeTitle: Acceder a las propiedades usando this.props
 
 ```yml
 tests:
-  - text: El componente <code>ResetPassword</code> debe devolver un único elemento <code>div</code> .
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().type() === "div"; })(), "The <code>ResetPassword</code> component should return a single <code>div</code> element.");'
-  - text: El cuarto hijo de <code>ResetPassword</code> debe ser el componente <code>ReturnTempPassword</code> .
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().childAt(3).name() === "ReturnTempPassword"; })(), "The fourth child of <code>ResetPassword</code> should be the <code>ReturnTempPassword</code> component.");'
-  - text: El componente <code>ReturnTempPassword</code> debe tener un prop llamado <code>tempPassword</code> .
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find("ReturnTempPassword").props().tempPassword; })(), "The <code>ReturnTempPassword</code> component should have a prop called <code>tempPassword</code>.");'
+  - text: El componente <code>ResetPassword</code> debe devolver un único elemento <code>div</code>.
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().type() === "div"; })(), "El componente <code>ResetPassword</code> debe devolver un único elemento <code>div</code>.");'
+  - text: El cuarto hijo de <code>ResetPassword</code> debe ser el componente <code>ReturnTempPassword</code>.
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.children().childAt(3).name() === "ReturnTempPassword"; })(), "El cuarto hijo de <code>ResetPassword</code> debe ser el componente <code>ReturnTempPassword</code>.");'
+  - text: El componente <code>ReturnTempPassword</code> debe tener un prop llamado <code>tempPassword</code>.
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find("ReturnTempPassword").props().tempPassword; })(), "El componente <code>ReturnTempPassword</code> debe tener un prop llamado <code>tempPassword</code>.");'
   - text: El prop <code>tempPassword</code> de <code>ReturnTempPassword</code> debe ser igual a una cadena de al menos <code>8</code> caracteres.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find("ReturnTempPassword").props().tempPassword; return typeof temp === "string" && temp.length >= 8; })(), "The <code>tempPassword</code> prop of <code>ReturnTempPassword</code> should be equal to a string of at least <code>8</code> characters.");'
-  - text: El componente <code>ReturnTempPassword</code> debe mostrar la contraseña que crea como el prop <code>tempPassword</code> dentro de <code>strong</code> etiquetas <code>strong</code> .
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find("strong").text() === mockedComponent.find("ReturnTempPassword").props().tempPassword; })(), "The <code>ReturnTempPassword</code> component should display the password you create as the <code>tempPassword</code> prop within <code>strong</code> tags.");'
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); const temp = mockedComponent.find("ReturnTempPassword").props().tempPassword; return typeof temp === "string" && temp.length >= 8; })(), "El prop <code>tempPassword</code> de <code>ReturnTempPassword</code> debe ser igual a una cadena de al menos <code>8</code> caracteres.");'
+  - text: El componente <code>ReturnTempPassword</code> debe mostrar la contraseña que crea como el prop <code>tempPassword</code> dentro de <code>strong</code> etiquetas <code>strong</code>.
+    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(ResetPassword)); return mockedComponent.find("strong").text() === mockedComponent.find("ReturnTempPassword").props().tempPassword; })(), "El componente <code>ReturnTempPassword</code> debe mostrar la contraseña que crea como el prop <code>tempPassword</code> dentro de <code>strong</code> etiquetas <code>strong</code>.");'
 
 ```
 
@@ -83,7 +83,7 @@ class ResetPassword extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+console.info('después de la prueba');
 ```
 
 </div>
@@ -94,6 +94,6 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
