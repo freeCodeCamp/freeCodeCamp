@@ -1,7 +1,8 @@
 ---
 title: Android core components
 localeTitle: Componentes principais do Android
----# Componentes principais do Android
+---
+# Componentes principais do Android
 
 Os componentes principais são os elementos essenciais dos quais um aplicativo para o Android consiste. Cada um deles tem seu próprio propósito e ciclo de vida, mas nem todos são independentes. Eles são:
 
@@ -30,3 +31,4 @@ Um _receptor de difusão_ é outro componente sem interface de usuário (exceto 
 Um _provedor de conteúdo_ é um componente usado para gerenciar um conjunto de dados do aplicativo para compartilhar com outros aplicativos. Cada item salvo no provedor de conteúdo é identificado por um esquema de URI.
 
 Para obter informações detalhadas sobre o tópico, consulte a documentação oficial dos [fundamentos do Android](https://developer.android.com/guide/components/fundamentals) .
+Colocar dicas para LOT
