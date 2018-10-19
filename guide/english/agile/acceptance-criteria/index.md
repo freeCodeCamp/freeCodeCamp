@@ -16,6 +16,7 @@ Acceptance criteria can be viewed as an instrument to protect the Delivery Team.
 
 Consider the following situation: when accepting the user story the Product Owner suggests adding something that was not in the scope of the User story. In this case the Delivery team is in the position to reject this request (however small it might be) and ask the Product owner to create a new User story that can be taken care of in another Sprint. 
 
+Please provide proper comments while sending a PR.
 
 #### More Information:
 
