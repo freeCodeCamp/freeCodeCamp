@@ -67,9 +67,12 @@ You can also install a localhost server to run PHP websites. For installing Apac
 sudo apt install apache2 libapache2-mod-php
 ```
 
+Or you can also install PHP, MySQL & Web-server all by installing 
 ```
-Or you can also install PHP, MySQL & Web-server all by installing [XAMPP](https://www.apachefriends.org/download.html) (free and open-source cross-platform web server solution stack package) or similar packages like [WAMP](http://www.wampserver.com/en/) or [LAMP](https://www.facebook.com/)
+<a href="https://www.apachefriends.org/download.html" target="_blank">XAMPP</a> (free and open-source cross-platform web server solution stack package)
 ```
+or similar packages like <a href="http://www.wampserver.com/en/" target="_blank">WAMP</a>
+
 
 ## What Can PHP Do?
 
