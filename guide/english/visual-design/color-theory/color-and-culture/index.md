@@ -28,3 +28,5 @@ A pallet of colors may change the context and meaning of content you publish.
 
 [Color and psychology (Wikipedia.org)](https://en.wikipedia.org/wiki/Color_psychology)
 
+[Cultural relativity of colors] (https://www.sapiens.org/language/color-perception/)
+
