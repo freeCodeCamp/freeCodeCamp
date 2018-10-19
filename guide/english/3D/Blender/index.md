@@ -1,4 +1,3 @@
-
 ---
 title: Blender
 ---
@@ -11,7 +10,7 @@ The Blender software is cross-platform that runs on Windows, Linux and Mac.Blend
 
 Blender is free and open source software, released under the  *GNU General Public License (GPL)**.
 
-#### More Information: 
+#### More Information:
 
 * [Blender Official Website](https://www.blender.org)
 * [Blender Documentation](https://docs.blender.org/)
