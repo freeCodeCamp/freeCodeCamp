@@ -1,7 +1,9 @@
 ---
 title: Books to Read for Programmers
 ---
+The Following List of Books Consists of great selection over a variety of topic s and languages. See for yourself.
 
+![alt text](https://cdn.arstechnica.net/wp-content/uploads/2013/11/8396104239_ab93c016b8_z.jpg "Programming Books")
 ### List of Books
 
 ## General
