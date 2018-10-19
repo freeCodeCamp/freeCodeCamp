@@ -1,10 +1,10 @@
 ---
 id: 561add10cb82ac38a17213bc
-title: 'Information, Securtiy and Quality Assurance Certificate'
+title: 'Information Security and Quality Assurance Certificate'
 challengeType: 7
 isPrivate: true
 videoUrl: ''
-localeTitle: 'Информация, Securtiy и сертификат обеспечения качества'
+localeTitle: 'Сертификат Информационная Безопасность и Обеспечение Качества'
 ---
 
 ## Description
