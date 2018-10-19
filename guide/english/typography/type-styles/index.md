@@ -3,13 +3,37 @@ title: Type Styles
 ---
 ## Type Styles
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/typography/type-styles/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+There is a considerable number of styles that one can choose in order to write a more aesthetic text/ article etc.
+All styles are grouped in 4 categories: those with serifs, those without serifs, scripts and decorative styles. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+Here are some succinct lists that show examples of styles for each of the 4 categories:
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+SERIF
+Old Style
+Transitional
+Neoclassical & Didone
+Slab
+Clarendon
+Glyphic
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+SANS SERIF
+Grotesque
+Square
+Humanistic
+Geometric
+
+SCRIPT
+Formal
+Casual
+Calligraphic
+Blackletter & Lombardic
+
+DECORATIVE
+Grunge
+Psychedelic
+Graffiti
+
+For a more detailed explanation, go to the following website: Fonts.com
+
 
 
