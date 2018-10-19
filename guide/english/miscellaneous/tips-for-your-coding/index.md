@@ -17,4 +17,4 @@ References
 
     1.  Posting your code in gitter is as simple as adding a line consisting of only 3 backtics **`** then your code in a new line and another line with 3 more backtics.`
 
-    2.  Ask for help in gitter! I can personally relate to staring at a problem for hours, then seeing the solution as soon as I try to explain it to someone, or having someone say something like "typo on line 6" as soon as they see it.
+    2.  Ask for help in gitter! I can personally relate to staring at a problem for hours, then seeing the solution as soon as I try to explain it to someone, or having someone say something like "typo on line 6" as soon as they see it. Take advantage of message boards and social media groups as well as in person peers to attempt to have a fresh set of eyes glance over your work. 
