@@ -3,7 +3,7 @@ title: Android Development
 ---
 # Android Development
 
-Android apps can be a great, fun way to get into the world of programming. Officially programmers can use Java, Kotlin, or C++ to develop for Android, and though there may be API restrictions, using tools, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
+Android apps can be a great, fun way to get into the world of programming. Official programmers use Java, Kotlin, or C++ to develop Android apps, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
 
 From simple games and utility apps to full-blown music players, there are many opportunities to create something meaningful with Android. The Android developer community is widespread, and the documentation and resources online are easy to find, so that you can tackle any issue you're facing.
 
@@ -60,6 +60,6 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 
 ### Developing Android Apps
 
-The best part of learning Android is that many of the courses and material available out there online are free.
+The best part of learning Android is that many of the courses and material available are online and free. Take your skillset up a notch.
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
