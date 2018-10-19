@@ -37,6 +37,9 @@ PlayStation Portable and Raspberry Pi support was demonstrated but not released.
 * VA-11 Hall-A
 * Undertale
 * Nuclear Throne
+* Paper Knight
+* Nidhogg 2
+* Cook, Serve, Delicious! 2!!
 
 #### More Information:
 * [Wikipedia] https://en.wikipedia.org/wiki/GameMaker_Studio<br>
