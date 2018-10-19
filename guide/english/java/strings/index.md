@@ -68,6 +68,10 @@ public class StringExample{
    }
 }
 ```
+If you want to print a string with values in Java it is better to use the following:
+   System.out.printf("example text with %s",value); //where value is a parameter
+   
+This uses the StringBuilder Class wich is more efficient for memory.
 
 #### Comparing Strings 
 If you want to compare the value of two String variables, you can't use ==. This is due to the fact that this will compare the references of the variables
