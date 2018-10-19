@@ -1,5 +1,5 @@
 # How to catch outgoing emails locally (for email workflows)
-
+![alt text](https://cdn.pixabay.com/photo/2018/08/10/15/39/email-3597088_960_720.jpg "How to catch outgoing emails locally (for email workflows)")
 > **Note:** This is an **optional** step - Only required when working with email workflows
 
 ## Introduction
