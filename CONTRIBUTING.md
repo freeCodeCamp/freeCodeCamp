@@ -67,7 +67,7 @@ If you would like to help improve guide articles, here's [how to work on guide a
 
 All our Coding challenges are curated by the community, bringing in expert knowledge from volunteers like you.
 
-You can help expand them and make their wording more clear. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
+You can help expand them and make their wording clearer. You can update the user stories to explain the concept better and even remove redundant ones. You can also improve the challenge tests to make them more accurately test people's code.
 
 If you're interested in improving these coding challenges, here's [how to work on coding challenges](/docs/how-to-work-on-coding-challenges.md).
 
