@@ -19,3 +19,5 @@ localeTitle: 验收标准
 Nomad8提供了[关于验收标准](https://nomad8.com/acceptance_criteria/)的[常见问题解答](https://nomad8.com/acceptance_criteria/)
 
 在[接受标准](https://www.leadingagile.com/2014/09/acceptance-criteria/)上领先敏捷
+
+THis is my second Change.
