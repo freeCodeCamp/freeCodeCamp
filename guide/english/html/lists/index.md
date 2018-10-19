@@ -19,9 +19,9 @@ The direct children of ordered and unordered lists must be list items. Each list
 An ordered list is written as
 ```HTML
 <ol>
-  <li>January</li>
-  <li>February</li>
-  <li>March</li>
+  <li> January </li>
+  <li> February </li>
+  <li> March </li>
 </ol>
 ```
 and is displayed as:
@@ -34,9 +34,9 @@ An unordered list is written as
 
 ```HTML
 <ul>
-  <li>Macintosh</li>
-  <li>Fuji</li>
-  <li>Gala</li>
+  <li> Macintosh </li>
+  <li> Fuji </li>
+  <li> Gala </li>
 </ul>
 ```
 and is displayed as:
@@ -78,20 +78,20 @@ They are called definition lists in HTML 4.
 Here is an example of a description list:
 ```HTML
 <dl>
-  <dt>Programming</dt>
-  <dd>The process of writing computer programs.</dd>
-  <dt>freeCodeCamp</dt>
-  <dd>An awesome non-profit organization teaching people how to code.</dd>
+  <dt> Programming </dt>
+  <dd> The process of writing computer programs. </dd>
+  <dt> freeCodeCamp </dt>
+  <dd> An awesome non-profit organization teaching people how to code. </dd>
 </dl>
 ```
 
 which would end up looking like:
 
 <dl>
-  <dt>Programming</dt>
-  <dd>The process of writing computer programs.</dd>
-  <dt>freeCodeCamp</dt>
-  <dd>An awesome non-profit organization teaching people how to code.</dd>
+  <dt> Programming </dt>
+  <dd> The process of writing computer programs. </dd>
+  <dt> freeCodeCamp </dt>
+  <dd> An awesome non-profit organization teaching people how to code. </dd>
 </dl>
 
 
