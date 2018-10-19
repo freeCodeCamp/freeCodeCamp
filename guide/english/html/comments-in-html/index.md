@@ -7,6 +7,8 @@ The comment tag is an element used to leave notes, mostly related to the project
 
 It is good practice to add comments to your code, especially when working with a team or at a company.  
 
+Before you call yourself a good or great programmer, your codes should be easily understood by a newbie and can be easily edited
+
 Comments are started with `<!--` and ended with `-->`, and can span multiple lines. They can contain code or text, and won't appear on the front-end of the website when a user visits a page. You can view comments through the Inspector Console, or by viewing Page Source.
 
 ### Example
