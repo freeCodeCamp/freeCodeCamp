@@ -8,7 +8,7 @@ The `break` statement terminates the enclosing loop or switch statement in which
 
 In the first example, when the value of i is 3, the break statement is executed, which causes the execution of the loop to be terminated.
 
-## Example
+## For example
 ```
 int[] array = { 1, 2, 3, 4, 5 };
 for (int i = 0; i < array.Length; i++)
@@ -29,7 +29,7 @@ for (int i = 0; i < array.Length; i++)
 ```
 In the second example, a break statement is included at the end of each case. This executes the statements in the case without continuing to the next case. Without the break statement, the program would continue to execute the next case and would not function as intended.
 
-## Example
+## For example
 ```
 switch (exampleVariable)
 {
