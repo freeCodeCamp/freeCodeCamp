@@ -9,3 +9,4 @@ O Heroku é uma plataforma em nuvem como um serviço (PaaS) que suporta várias 
 #### Mais Informações:
 
 *   [Wikipedia](https://en.wikipedia.org/wiki/Heroku)
+Adicionar detalhes do hetoku
