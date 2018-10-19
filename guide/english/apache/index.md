@@ -21,3 +21,8 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+
+#### Check the web server
+```
+sudo systemctl status apache2
+```
