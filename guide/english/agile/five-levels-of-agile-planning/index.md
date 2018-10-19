@@ -20,7 +20,7 @@ Agile planning is always continuous and should be revised at least every three m
  
  3. Release Planning: Iteration, Team Capacity, Stories, Priority, Size, Estimates, Definition of Done.
  
- 4. Sprint Planning: Stories - Tasks, Definition of Done, Level-of Effort, Commitment
+ 4. Sprint Planning: Stories - Tasks, Definition of Done, Level of Effort, Commitment
  
  5. Daily Planning: What did I do yesterday? What will I do today? What is blocking me?
 
