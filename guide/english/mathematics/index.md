@@ -114,3 +114,5 @@ Documentation reference: <a href='https://docs.python.org/2/library/math.html' t
 
 ### Additional resources
 Animated visualizations of mathematical concepts can be found at [3 Blue 1 Brown](http://www.3blue1brown.com/) and [Khan Academy](https://www.khanacademy.org/).
+
+Here is a very nice book about mathematics named "THE PRINCETON COMPANION TO MATHEMATICS3, clear and very easy to understand. You can find a pdf copy here https://isidore.co/calibre/get/pdf/4662 
