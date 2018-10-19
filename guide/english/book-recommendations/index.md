@@ -241,7 +241,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
-
+ My change.
+ for c programming 
+ let us c - Yashavant Kanetkar
+ [Amazon](https://www.amazon.com/Let-Us-16th-Yashavant-Kanetkar/dp/9387284492/ref=dp_ob_title_bk)
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
