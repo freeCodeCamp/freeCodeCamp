@@ -98,6 +98,28 @@ h2 {
     }
 ```
 
+The best thing you can do in CSS with comments is the next thing: use Regions. Yes, the regions you use too in C#.
+Regions are useful in a long CSS file, when you've got plenty of classes and sections to manage and organize. They are basically commented titles of specific sections. The best part about regions? You can collapse/expand them.
+
+Here's how region works:
+``` css
+/*#region Header */
+
+.header {
+    font-size: 12px;
+}
+
+/*#endregion */
+
+/*#region Footer
+------------------------------------------- */
+
+.footer {
+    height: 20px;
+}
+/*#endregion */
+````
+
 ### More Information:
 
 * [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/Comments)
