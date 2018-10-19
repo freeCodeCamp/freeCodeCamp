@@ -70,6 +70,7 @@ int main(){
 * It speeds up your program by avoiding function call overheads.
 * It saves overhead of variables push/pop operations on the stack, when function calls happen.
 * It is possible to put a function definition in a header file, i.e. it can be included in multiple compilation unit, without the linker complaining.
+* Though inline functions are not that necessary, but we use them to make our program faster.
 
 ## Disadvantages of inline function
 * When used in a header, it makes your header file larger with information which users don’t care.
