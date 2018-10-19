@@ -3,11 +3,21 @@ title: Remote Versus Onsite
 ---
 ## Remote Versus Onsite
 
-There are two main work environments: onsite and remote.
+There are two main work environments: onsite and remote. And there are pros and cons to both. 
 
 ### Onsite Work
 
-Onsite work is what you might think of when you think of a 9-5 job. When you're onsite, you may either be in your company's office or at a client's office. Either way, you're in the same physical location as the rest of the people with whom you work.
+Onsite work is what you might think of when you think of a 9-5 job. When you're onsite, you may either be in your company's office or at a client's office. Either way, you're in the same physical location as the rest of the people with whom you work. 
+
+#### Pros of Onsite Work
+* ability to interact face-to-face (good for collaboration and morale)
+* access to facilities and peers
+* improves bond of coworkers
+
+#### Cons of Onsite Work
+* potential for distraction/excessive socializing
+* subject to company culture
+* commuting
 
 ### Remote Work
 
@@ -16,6 +26,16 @@ Remote work occurs when team members work in separate physical locations. You ca
 Because in-person communication occurs less frequently (if at all), remote teams often rely more on communication software like [Slack](https://slack.com/) and [Skype](https://www.skype.com/).
 
 Remote teams may host regular company retreats so team members can meet and hang out.
+
+#### Pros of Remote Work
+* cutting down commute time and costs
+* flexibility
+* expand geographic limitations by hiring outside of local area
+
+#### Cons of Remote Work
+* weakens communication
+* without frequent 'face time', may lower employee morale
+* potential for decreased efficiency and productivity
 
 ### The "In-Between"
 
@@ -32,5 +52,9 @@ Larger companies may have a different version of the "in-between", where they ha
 ### More Information:
 
 
-Quincy Larson on The Economics of Working Remotely: [Medium](https://medium.freecodecamp.org/the-economics-of-working-remotely-28d4173e16e2)
+[Economics of Working Remotely](https://medium.freecodecamp.org/the-economics-of-working-remotely-28d4173e16e2)
+
+[Advantages of Working On-site](https://www.itechus.com/2017/09/12/the-advantages-of-working-onsite-for-it-staff/)
+
+[Pros and Cons of a Distributed Workforce](https://www.forbes.com/sites/forbestechcouncil/2017/08/03/13-pros-and-cons-of-having-a-distributed-workforce/#155dc27013d9)
 
