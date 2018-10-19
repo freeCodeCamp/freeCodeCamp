@@ -4,7 +4,7 @@ title: Operators
 # Operators in C
 
 ## 1. Arithmetic Operators
-- `+` Adds to operands (values) 
+- `+` Adds to operands (values)
      ```C
      int a = 6;
      int c = a + 1; // c = 7
@@ -52,22 +52,22 @@ title: Operators
 int main()
 {
     int a = 9,b = 4, c;
-    
+
     c = a+b;
     printf("a+b = %d \n",c);
 
     c = a-b;
     printf("a-b = %d \n",c);
-    
+
     c = a*b;
     printf("a*b = %d \n",c);
-    
+
     c=a/b;
     printf("a/b = %d \n",c);
-    
+
     c=a%b;
     printf("Remainder when a divided by b = %d \n",c);
-    
+
     return 0;
 }
 
@@ -115,7 +115,7 @@ int main()
   ```C
   bool c = (5 < 6) || (8 == 7) // first operand is true, therefore c = true
   ```
-- `!` NOT operator - True when the operand is false. 
+- `!` NOT operator - True when the operand is false.
   ```C
   bool c = !(8 == 7) // translate: NOT (false), therefore c = true
   ```
@@ -188,9 +188,19 @@ int main()
   int a = 21;
   a %= 5; // equivalent to a = a % 5 = 21 % 5 = 1
   ```
-     
-Misc Operators ↦ sizeof & ternary
-Besides the operators discussed above, there are a few other important operators including sizeof and ? : supported by the C Language.
+
+## 6. Misc Operators, sizeof() & ternary
+
+- `sizeof()`  Returns the amount of memory allocated.
+```C
+int a = 21;
+sizeof(a);  // result is 4
+
+double b = 21.21;
+sizeof(b);  // result is 8
+
+// note the result of sizeof() may vary depending on the type of machine.
+```
 
 Operator	               Description	                                        Example
 sizeof()	               Returns the size of a variable.	                    sizeof(a), where a is integer, will return 4.
