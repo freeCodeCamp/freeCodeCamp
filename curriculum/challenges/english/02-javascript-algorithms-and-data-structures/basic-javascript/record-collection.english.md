@@ -102,7 +102,7 @@ updateRecords(5439, "artist", "ABBA");
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+;(function(x) { return "collection = \n" + JSON.stringify(x, '\n', 2); })(collection);
 ```
 
 </div>

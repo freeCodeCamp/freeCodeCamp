@@ -52,7 +52,9 @@ function babbage (babbageNum, endDigits) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const babbageAns = 99736;
+const endDigits = 269696;
+const answer = 25264;
 ```
 
 </div>

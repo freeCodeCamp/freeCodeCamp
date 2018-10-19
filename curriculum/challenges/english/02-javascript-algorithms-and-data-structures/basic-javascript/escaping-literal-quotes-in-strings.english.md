@@ -51,7 +51,13 @@ var myStr = ""; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  if(typeof myStr === 'string') {
+    console.log("myStr = \"" + myStr + "\"");
+  } else {
+    console.log("myStr is undefined");
+  }
+})();
 ```
 
 </div>

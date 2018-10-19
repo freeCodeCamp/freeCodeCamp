@@ -54,7 +54,7 @@ var remainder;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y){return 'remainder = '+y;})(remainder);
 ```
 
 </div>

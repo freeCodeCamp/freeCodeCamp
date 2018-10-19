@@ -62,7 +62,10 @@ function mergeSort(array) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+function isSorted(arr) {
+  var check = (i) => (i == arr.length - 1) ? true : (arr[i] > arr[i + 1]) ? false : check(i + 1);
+  return check(0);
+};
 ```
 
 </div>

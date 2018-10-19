@@ -56,7 +56,13 @@ function lascii (cFrom, cTo) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+let results=[
+  [ 'a', 'b', 'c', 'd' ],
+  [ 'c', 'd', 'e', 'f', 'g', 'h', 'i' ],
+  [ 'm', 'n', 'o', 'p', 'q' ],
+  [ 'k', 'l', 'm', 'n' ],
+  [ 't', 'u', 'v', 'w', 'x', 'y', 'z' ]
+]
 ```
 
 </div>

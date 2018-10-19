@@ -132,7 +132,7 @@ class Vegetables extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<TypesOfFood />, document.getElementById('root'))
 ```
 
 </div>

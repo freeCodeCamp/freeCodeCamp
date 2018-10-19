@@ -75,7 +75,7 @@ class ControlledInput extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ControlledInput />, document.getElementById('root'))
 ```
 
 </div>

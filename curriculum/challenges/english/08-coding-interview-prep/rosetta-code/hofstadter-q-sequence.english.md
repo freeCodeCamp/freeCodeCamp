@@ -59,7 +59,8 @@ function hofstadterQ (n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCase = [1000, 1500, 2000, 2500];
+const res = [502, 755, 1005, 1261];
 ```
 
 </div>

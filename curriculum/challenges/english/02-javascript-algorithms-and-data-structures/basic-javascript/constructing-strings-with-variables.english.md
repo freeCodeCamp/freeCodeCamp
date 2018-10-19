@@ -52,7 +52,20 @@ var myStr;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  var output = [];
+  if(typeof myName === 'string') {
+    output.push('myName = "' + myName + '"');
+  } else {
+    output.push('myName is not a string');
+  }
+  if(typeof myStr === 'string') {
+    output.push('myStr = "' + myStr + '"');
+  } else {
+    output.push('myStr is not a string');
+  }
+  return output.join('\n');
+})();
 ```
 
 </div>

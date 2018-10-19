@@ -68,7 +68,20 @@ var myRandom = randomRange(5, 15);
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var calcMin = 100;
+var calcMax = -100;
+for(var i = 0; i < 100; i++) {
+  var result = randomRange(5,15);
+  calcMin = Math.min(calcMin, result);
+  calcMax = Math.max(calcMax, result);
+}
+(function(){
+  if(typeof myRandom === 'number') {
+    return "myRandom = " + myRandom;
+  } else {
+    return "myRandom undefined";
+  }
+})()
 ```
 
 </div>

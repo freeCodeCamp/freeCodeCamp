@@ -73,7 +73,7 @@ function azSorted (arr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [['AA', 'AA', 'AA', 'AA'], ['AA', 'ACB', 'BB', 'CC'], [], ['AA'], ['BB', 'AA']];
 ```
 
 </div>

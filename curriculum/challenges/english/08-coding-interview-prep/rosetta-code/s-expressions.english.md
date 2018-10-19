@@ -87,7 +87,11 @@ function parseSexpr(str) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const simpleSExpr = '(data1 data2 data3)';
+const simpleSolution = ['data1', 'data2', 'data3'];
+
+const basicSExpr = '((data "quoted data" 123 4.5) (data (!@# (4.5) "(more" "data)")))';
+const basicSolution = [["data","\"quoted data\"",123,4.5],["data",["!@#",[4.5],"\"(more\"","\"data)\""]]];
 ```
 
 </div>

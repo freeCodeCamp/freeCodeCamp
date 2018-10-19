@@ -82,7 +82,7 @@ function canMakeWord (word) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const words = ['bark', 'BooK', 'TReAT', 'COMMON', 'squAD', 'conFUSE'];
 ```
 
 </div>

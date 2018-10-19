@@ -48,7 +48,7 @@ var ourVar = 19;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof a !== 'undefined') {(function(a){return "a = " + a;})(a);} else { (function() {return 'a is undefined';})(); }
 ```
 
 </div>

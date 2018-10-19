@@ -76,7 +76,7 @@ var PropTypes = {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<CampSite />, document.getElementById('root'))
 ```
 
 </div>

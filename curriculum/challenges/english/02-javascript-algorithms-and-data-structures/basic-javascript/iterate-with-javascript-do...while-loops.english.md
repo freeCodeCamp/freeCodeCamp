@@ -67,7 +67,7 @@ while (i < 5) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>

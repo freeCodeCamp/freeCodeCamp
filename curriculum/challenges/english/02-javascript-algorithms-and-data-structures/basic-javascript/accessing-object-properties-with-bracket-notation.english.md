@@ -65,7 +65,7 @@ var drinkValue = testObj;    // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b) { return "entreeValue = '" + a + "', drinkValue = '" + b + "'"; })(entreeValue,drinkValue);
 ```
 
 </div>

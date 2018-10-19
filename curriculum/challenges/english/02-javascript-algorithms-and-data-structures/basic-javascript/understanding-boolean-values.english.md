@@ -52,7 +52,7 @@ return false; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+welcomeToBooleans();
 ```
 
 </div>

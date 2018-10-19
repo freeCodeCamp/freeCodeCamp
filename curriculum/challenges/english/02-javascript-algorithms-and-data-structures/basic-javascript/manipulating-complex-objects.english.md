@@ -79,7 +79,7 @@ var myMusic = [
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(x){ if (Array.isArray(x)) { return JSON.stringify(x); } return "myMusic is not an array"})(myMusic);
 ```
 
 </div>

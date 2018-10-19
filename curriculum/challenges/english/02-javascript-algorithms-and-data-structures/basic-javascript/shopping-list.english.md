@@ -53,7 +53,32 @@ var myList = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var count = 0;
+var isArray = false;
+var hasString = false;
+var hasNumber = false;
+(function(list){
+  if(Array.isArray(myList)) {
+    isArray = true;
+    if(myList.length > 0) {
+      hasString = true;
+      hasNumber = true;
+      myList.forEach(function(elem) {
+        if(typeof elem[0] !== 'string') {
+          hasString = false;
+        }
+        if(typeof elem[1] !== 'number') {
+          hasNumber = false;
+        }
+      });
+    }
+    count = myList.length;
+    return JSON.stringify(myList);
+  } else {
+    return "myList is not an array";
+  }
+
+})(myList);
 ```
 
 </div>

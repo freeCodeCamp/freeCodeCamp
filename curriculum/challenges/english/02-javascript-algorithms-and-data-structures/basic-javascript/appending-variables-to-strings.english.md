@@ -54,7 +54,20 @@ var myStr = "Learning to code is ";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  var output = [];
+  if(typeof someAdjective === 'string') {
+    output.push('someAdjective = "' + someAdjective + '"');
+  } else {
+    output.push('someAdjective is not a string');
+  }
+  if(typeof myStr === 'string') {
+    output.push('myStr = "' + myStr + '"');
+  } else {
+    output.push('myStr is not a string');
+  }
+  return output.join('\n');
+})();
 ```
 
 </div>

@@ -60,7 +60,15 @@ function deepcopy (obj) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const obj1 = { test: 'test' };
+const obj2 = {
+  t: 'test',
+  a: ['an', 'array']
+};
+const obj3 = {
+  t: 'try',
+  o: obj2
+};
 ```
 
 </div>

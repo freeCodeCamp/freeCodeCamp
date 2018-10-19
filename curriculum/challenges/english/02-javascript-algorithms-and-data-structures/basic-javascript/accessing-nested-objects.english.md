@@ -61,7 +61,12 @@ var gloveBoxContents = undefined; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(x) { 
+  if(typeof x != 'undefined') { 
+    return "gloveBoxContents = " + x;
+  }
+  return "gloveBoxContents is undefined";
+})(gloveBoxContents);
 ```
 
 </div>

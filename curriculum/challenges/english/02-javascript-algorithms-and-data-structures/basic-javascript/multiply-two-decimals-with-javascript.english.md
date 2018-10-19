@@ -47,7 +47,7 @@ var product = 2.0 * 0.0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y){return 'product = '+y;})(product);
 ```
 
 </div>

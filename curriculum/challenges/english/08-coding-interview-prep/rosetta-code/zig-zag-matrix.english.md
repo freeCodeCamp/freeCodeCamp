@@ -68,7 +68,15 @@ function ZigZagMatrix(n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const zm1 = [[0]];
+const zm2 = [[0, 1], [2, 3]];
+const zm5 = [
+  [0, 1, 5, 6, 14],
+  [2, 4, 7, 13, 15],
+  [3, 8, 12, 16, 21],
+  [9, 11, 17, 20, 22],
+  [10, 18, 19, 23, 24]
+];
 ```
 
 </div>

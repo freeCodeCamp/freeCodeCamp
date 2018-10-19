@@ -92,7 +92,9 @@ capture();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+uncapture();
+testArr = [1,2,3,4,5];
+(function() { return logOutput.join("\n");})();
 ```
 
 </div>

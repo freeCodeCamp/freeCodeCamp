@@ -66,7 +66,8 @@ function quibble (words) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [[], ["ABC"], ["ABC", "DEF"], ["ABC", "DEF", "G", "H"]];
+const results = ["{}", "{ABC}", "{ABC and DEF}", "{ABC,DEF,G and H}"];
 ```
 
 </div>

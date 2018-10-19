@@ -66,7 +66,7 @@ function processArg(num) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){return "processed = " + processed})();
 ```
 
 </div>

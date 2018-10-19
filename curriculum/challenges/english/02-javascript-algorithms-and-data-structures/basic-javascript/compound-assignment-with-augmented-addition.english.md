@@ -63,7 +63,7 @@ c = c + 7;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b,c){ return "a = " + a + ", b = " + b + ", c = " + c; })(a,b,c);
 ```
 
 </div>

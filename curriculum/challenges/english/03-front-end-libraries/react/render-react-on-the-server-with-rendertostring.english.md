@@ -63,7 +63,7 @@ var ReactDOMServer = { renderToString(x) { return null; } };
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<App />, document.getElementById('root'))
 ```
 
 </div>

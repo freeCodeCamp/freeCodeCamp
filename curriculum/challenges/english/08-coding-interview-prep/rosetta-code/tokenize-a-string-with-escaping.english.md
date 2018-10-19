@@ -74,7 +74,12 @@ function tokenize(str, esc, sep) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testStr1 = 'one^|uno||three^^^^|four^^^|^cuatro|';
+const res1 = ['one|uno', '', 'three^^', 'four^|cuatro', ''];
+
+// TODO add more tests
+const testStr2 = 'a@&bcd&ef&&@@hi';
+const res2 = ['a&bcd', 'ef', '', '@hi'];
 ```
 
 </div>

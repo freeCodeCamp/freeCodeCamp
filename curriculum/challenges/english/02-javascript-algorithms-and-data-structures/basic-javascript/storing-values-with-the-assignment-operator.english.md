@@ -72,7 +72,7 @@ if (typeof b != 'undefined') {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b){return "a = " + a + ", b = " + b;})(a,b);
 ```
 
 </div>

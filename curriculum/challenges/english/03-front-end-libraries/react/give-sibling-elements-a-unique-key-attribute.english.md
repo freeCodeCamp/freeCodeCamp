@@ -72,7 +72,7 @@ function Frameworks() {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<Frameworks />, document.getElementById('root'))
 ```
 
 </div>

@@ -60,7 +60,23 @@ function arrToObj (keys, vals) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [
+  [[1, 2, 3, 4, 5], ['a', 'b', 'c', 'd', 'e']],
+  [[1, 2, 3, 4, 5], ['a', 'b', 'c', 'd']],
+  [[1, 2, 3], ['a', 'b', 'c', 'd', 'e']],
+  [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4, 5]],
+  [['a', 'b', 'c', 'd', 'e'], [1, 2, 3, 4]],
+  [['a', 'b', 'c'], [1, 2, 3, 4, 5]]
+];
+
+const res = [
+  { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e' },
+  { 1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: undefined },
+  { 1: 'a', 2: 'b', 3: 'c' },
+  { a: 1, b: 2, c: 3, d: 4, e: 5 },
+  { a: 1, b: 2, c: 3, d: 4, e: undefined },
+  { a: 1, b: 2, c: 3 }
+];
 ```
 
 </div>

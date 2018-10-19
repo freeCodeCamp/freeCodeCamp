@@ -86,7 +86,8 @@ function uncapture() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+typeof myLocalScope === 'function' && (capture(), myLocalScope(), uncapture());
+(function() { return logOutput || "console.log never called"; })();
 ```
 
 </div>

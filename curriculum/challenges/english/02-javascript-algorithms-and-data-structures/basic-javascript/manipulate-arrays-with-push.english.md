@@ -54,7 +54,7 @@ var myArray = [["John", 23], ["cat", 2]];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'myArray = ' + JSON.stringify(z);})(myArray);
 ```
 
 </div>

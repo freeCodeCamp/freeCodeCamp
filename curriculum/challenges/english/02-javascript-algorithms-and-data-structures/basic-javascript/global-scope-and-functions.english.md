@@ -95,7 +95,10 @@ capture();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+fun1();
+fun2();
+uncapture();
+(function() { return logOutput || "console.log never called"; })();
 ```
 
 </div>

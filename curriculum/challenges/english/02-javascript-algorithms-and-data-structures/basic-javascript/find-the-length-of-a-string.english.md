@@ -60,7 +60,7 @@ lastNameLength = lastName;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof lastNameLength !== "undefined"){(function(){return lastNameLength;})();}
 ```
 
 </div>

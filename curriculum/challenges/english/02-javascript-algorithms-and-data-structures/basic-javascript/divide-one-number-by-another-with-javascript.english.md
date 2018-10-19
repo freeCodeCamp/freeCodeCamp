@@ -51,7 +51,7 @@ var quotient = 66 / 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'quotient = '+z;})(quotient);
 ```
 
 </div>

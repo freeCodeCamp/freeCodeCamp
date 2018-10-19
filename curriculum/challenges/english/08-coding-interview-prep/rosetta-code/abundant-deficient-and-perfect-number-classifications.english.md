@@ -58,7 +58,7 @@ function getDPA (num) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const solution = [15043, 4, 4953];
 ```
 
 </div>

@@ -49,7 +49,7 @@ var sum = 10 + 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'sum = '+z;})(sum);
 ```
 
 </div>

@@ -59,7 +59,7 @@ function hailstoneSequence () {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const res = [[27, 82, 41, 124, 8, 4, 2, 1], [351, 77031]];
 ```
 
 </div>

@@ -54,7 +54,7 @@ var myArray = [];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return z;})(myArray);
 ```
 
 </div>

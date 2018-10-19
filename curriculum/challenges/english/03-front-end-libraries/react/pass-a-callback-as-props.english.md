@@ -104,7 +104,7 @@ class RenderInput extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<MyApp />, document.getElementById('root'))
 ```
 
 </div>

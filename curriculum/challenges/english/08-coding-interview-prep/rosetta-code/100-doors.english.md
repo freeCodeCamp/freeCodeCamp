@@ -49,7 +49,7 @@ function getFinalOpenedDoors (numDoors) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const solution = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
 ```
 
 </div>

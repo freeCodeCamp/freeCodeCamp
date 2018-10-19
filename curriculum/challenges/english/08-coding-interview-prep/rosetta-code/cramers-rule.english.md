@@ -67,7 +67,22 @@ function cramersRule (matrix, freeTerms) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const matrices = [
+  [
+    [2, -1, 5, 1],
+    [3, 2, 2, -6],
+    [1, 3, 3, -1],
+    [5, -2, -3, 3]
+  ],
+  [
+    [3, 1, 1],
+    [2, 2, 5],
+    [1, -3, -4]
+  ]
+];
+const freeTerms = [[-3, -32, -47, 49], [3, -1, 2]];
+
+const answers = [[2, -12, -4, 1], [1, 1, -1]];
 ```
 
 </div>

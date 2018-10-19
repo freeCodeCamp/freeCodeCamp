@@ -60,7 +60,8 @@ wordBlanks("dog", "big", "ran", "quickly");
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var test1 = wordBlanks("dog", "big", "ran", "quickly");
+var test2 = wordBlanks("cat", "little", "hit", "slowly");
 ```
 
 </div>

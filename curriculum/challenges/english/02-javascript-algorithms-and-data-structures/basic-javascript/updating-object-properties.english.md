@@ -70,7 +70,7 @@ var myDog = {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return z;})(myDog);
 ```
 
 </div>

@@ -86,7 +86,13 @@ capture();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+uncapture();
+
+if (typeof reusableFunction !== "function") { 
+  (function() { return "reusableFunction is not defined"; })();
+} else {
+  (function() { return logOutput || "console.log never called"; })();
+}
 ```
 
 </div>

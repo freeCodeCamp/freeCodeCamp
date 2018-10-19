@@ -81,7 +81,7 @@ var factorial = Y(function(f) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var factorial = Y(f => n => (n > 1 ? n * f(n - 1) : 1));
 ```
 
 </div>

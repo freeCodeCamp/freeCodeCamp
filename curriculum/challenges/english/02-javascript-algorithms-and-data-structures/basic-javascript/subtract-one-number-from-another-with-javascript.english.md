@@ -51,7 +51,7 @@ var difference = 45 - 0;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'difference = '+z;})(difference);
 ```
 
 </div>

@@ -49,7 +49,8 @@ function mode (arr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const arr1 = [1, 3, 6, 6, 6, 6, 7, 7, 12, 12, 17];
+const arr2 = [1, 2, 4, 4, 1];
 ```
 
 </div>

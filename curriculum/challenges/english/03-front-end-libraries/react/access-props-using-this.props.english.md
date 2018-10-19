@@ -85,7 +85,7 @@ class ResetPassword extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ResetPassword />, document.getElementById('root'))
 ```
 
 </div>

@@ -82,7 +82,20 @@ const connect = ReactRedux.connect;
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+
+const store = Redux.createStore(
+  (state = '__INITIAL__STATE__', action) => state
+);
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <ReactRedux.Provider store = {store}>
+        <ConnectedComponent/>
+      </ReactRedux.Provider>
+    );
+  }
+};
+ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 ```
 
 </div>

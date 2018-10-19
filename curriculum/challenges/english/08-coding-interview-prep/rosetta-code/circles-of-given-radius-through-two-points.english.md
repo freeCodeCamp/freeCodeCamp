@@ -76,7 +76,20 @@ function getCircles (...args) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [
+  [[0.1234, 0.9876], [0.8765, 0.2345], 2.0],
+  [[0.0000, 2.0000], [0.0000, 0.0000], 1.0],
+  [[0.1234, 0.9876], [0.1234, 0.9876], 2.0],
+  [[0.1234, 0.9876], [0.8765, 0.2345], 0.5],
+  [[0.1234, 0.9876], [0.1234, 0.9876], 0.0]
+];
+const answers = [
+  [[1.8631, 1.9742], [-0.8632, -0.7521]],
+  [0, 1],
+  'Coincident point. Infinite solutions',
+  'No intersection. Points further apart than circle diameter',
+  'Radius Zero'
+];
 ```
 
 </div>

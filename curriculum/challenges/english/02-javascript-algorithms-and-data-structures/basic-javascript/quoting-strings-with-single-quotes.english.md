@@ -54,7 +54,7 @@ var myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function() { return "myStr = " + myStr; })();
 ```
 
 </div>

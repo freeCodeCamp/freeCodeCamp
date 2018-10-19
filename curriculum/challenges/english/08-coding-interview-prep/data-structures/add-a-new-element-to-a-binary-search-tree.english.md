@@ -60,7 +60,48 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+BinarySearchTree.prototype = {
+    isBinarySearchTree() {
+        if (this.root == null) {
+            return null;
+        } else {
+            var check = true;
+            function checkTree(node) {
+                if (node.left != null) {
+                    var left = node.left;
+                    if (left.value > node.value) {
+                        check = false;
+                    } else {
+                        checkTree(left);
+                    }
+                }
+                if (node.right != null) {
+                    var right = node.right;
+                    if (right.value < node.value) {
+                        check = false;
+                    } else {
+                        checkTree(right);
+                    };
+                };
+            };
+            checkTree(this.root);
+            return check;
+        };
+    }
+};
+BinarySearchTree.prototype = {
+    inOrder() {
+        if (!this.root) { return null; }
+        var result = new Array();
+        function traverseInOrder(node) {
+             node.left && traverseInOrder(node.left);
+             result.push(node.value);
+             node.right && traverseInOrder(node.right);
+        }
+        traverseInOrder(this.root);
+        return result;
+    }
+};
 ```
 
 </div>

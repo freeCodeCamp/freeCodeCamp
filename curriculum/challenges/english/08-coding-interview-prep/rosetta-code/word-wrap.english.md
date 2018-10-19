@@ -78,7 +78,19 @@ function wrap (text, limit) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const text =
+`Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX algorithm.
+If your language provides this, you get easy extra credit,
+but you ''must reference documentation'' indicating that the algorithm
+is something better than a simple minimimum length algorithm.`;
+
+const wrapped80 = wrap(text, 80);
+const wrapped42 = wrap(text, 42);
+
+const firstRow80 =
+    'Wrap text using a more sophisticated algorithm such as the Knuth and Plass TeX';
+
+const firstRow42 = 'Wrap text using a more sophisticated';
 ```
 
 </div>

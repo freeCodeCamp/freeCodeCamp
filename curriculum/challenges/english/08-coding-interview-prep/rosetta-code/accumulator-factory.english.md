@@ -54,7 +54,11 @@ function accumulator (sum) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testFn = typeof accumulator(3) === 'function' && accumulator(3);
+if (testFn) {
+  testFn(-4);
+  testFn(1.5);
+}
 ```
 
 </div>

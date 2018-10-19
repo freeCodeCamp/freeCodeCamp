@@ -55,7 +55,7 @@ myStr[0] = "H"; // Fix Me
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(v){return "myStr = " + v;})(myStr);
 ```
 
 </div>

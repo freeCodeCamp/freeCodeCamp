@@ -53,7 +53,7 @@ const ShoppingCart = (props) => {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ShoppingCart />, document.getElementById('root'))
 ```
 
 </div>

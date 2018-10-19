@@ -70,7 +70,7 @@ var player = testObj;   // Change this Line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof player !== "undefined"){(function(v){return v;})(player);}
 ```
 
 </div>

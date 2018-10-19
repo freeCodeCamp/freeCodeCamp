@@ -57,7 +57,7 @@ var myArray = [50,60,70];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined" && typeof myData !== "undefined"){(function(y,z){return 'myArray = ' + JSON.stringify(y) + ', myData = ' + JSON.stringify(z);})(myArray, myData);}
 ```
 
 </div>

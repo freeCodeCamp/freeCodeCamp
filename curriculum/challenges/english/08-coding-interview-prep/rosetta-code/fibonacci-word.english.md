@@ -51,7 +51,15 @@ function fibWord (n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+let ans=[ { N: 1, Length: 1, Entropy: 0, Word: '1' },
+
+  { N: 2, Length: 1, Entropy: 0, Word: '0' },
+
+  { N: 3, Length: 2, Entropy: 1, Word: '01' },
+
+  { N: 4, Length: 3, Entropy: 0.9182958340544896, Word: '010' },
+
+  { N: 5, Length: 5, Entropy: 0.9709505944546688, Word: '01001' }];
 ```
 
 </div>

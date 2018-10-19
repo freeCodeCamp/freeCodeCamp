@@ -70,7 +70,12 @@ var secondTree = ""; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(x) {
+  if(typeof x != 'undefined') {
+    return "secondTree = " + x;
+  }
+  return "secondTree is undefined";
+})(secondTree);
 ```
 
 </div>

@@ -52,7 +52,7 @@ var lastName = "Turing";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myFirstName !== "undefined" && typeof myLastName !== "undefined"){(function(){return myFirstName + ', ' + myLastName;})();}
 ```
 
 </div>

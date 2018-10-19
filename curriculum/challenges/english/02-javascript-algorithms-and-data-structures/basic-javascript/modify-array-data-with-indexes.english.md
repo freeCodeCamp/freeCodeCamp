@@ -56,7 +56,7 @@ var myArray = [18,64,99];
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myArray !== "undefined"){(function(){return myArray;})();}
 ```
 
 </div>

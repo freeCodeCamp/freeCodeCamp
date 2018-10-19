@@ -56,7 +56,7 @@ var secondToLastLetterOfLastName = lastName;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(v){return v;})(secondToLastLetterOfLastName);
 ```
 
 </div>

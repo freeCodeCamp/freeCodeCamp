@@ -68,7 +68,36 @@ var DoublyLinkedList = function() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+DoublyLinkedList.prototype = {
+  print() {
+    if (this.head == null) {
+      return null;
+    } else {
+      var result = new Array();
+      var node = this.head;
+      while (node.next != null) {
+        result.push(node.data);
+        node = node.next;
+      };
+      result.push(node.data);
+      return result;
+    };
+  },
+  printReverse() {
+    if (this.tail == null) {
+      return null;
+    } else {
+      var result = new Array();
+      var node = this.tail;
+      while (node.prev != null) {
+        result.push(node.data);
+        node = node.prev;
+      };
+      result.push(node.data);
+      return result;
+    };
+  } 
+};
 ```
 
 </div>

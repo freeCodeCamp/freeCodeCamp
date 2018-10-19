@@ -63,7 +63,7 @@ var shirtValue = testObj;    // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(a,b) { return "hatValue = '" + a + "', shirtValue = '" + b + "'"; })(hatValue,shirtValue);
 ```
 
 </div>

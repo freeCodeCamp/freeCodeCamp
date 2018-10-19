@@ -56,7 +56,10 @@ function crossProduct() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const tv1 = [1, 2, 3];
+const tv2 = [4, 5, 6];
+const res12 = crossProduct(tv1, tv2);
+const exp12 = [-3, 6, -3];
 ```
 
 </div>

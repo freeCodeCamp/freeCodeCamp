@@ -54,7 +54,7 @@ var ourName;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+if(typeof myName !== "undefined"){(function(v){return v;})(myName);}
 ```
 
 </div>

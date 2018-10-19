@@ -56,7 +56,7 @@ myVar = myVar - 1;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(z){return 'myVar = ' + z;})(myVar);
 ```
 
 </div>

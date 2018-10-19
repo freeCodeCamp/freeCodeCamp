@@ -62,7 +62,7 @@ function factorial (n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const results=[6,120,3628800];
 ```
 
 </div>

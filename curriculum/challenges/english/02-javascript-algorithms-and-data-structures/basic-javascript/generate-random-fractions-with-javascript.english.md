@@ -55,7 +55,7 @@ function randomFraction() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){return randomFraction();})();
 ```
 
 </div>

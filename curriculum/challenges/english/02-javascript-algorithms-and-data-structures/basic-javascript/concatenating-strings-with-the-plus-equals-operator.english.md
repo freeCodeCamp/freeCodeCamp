@@ -53,7 +53,13 @@ var myStr;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  if(typeof myStr === 'string') {
+    return 'myStr = "' + myStr + '"';
+  } else {
+    return 'myStr is not a string';
+  }
+})();
 ```
 
 </div>

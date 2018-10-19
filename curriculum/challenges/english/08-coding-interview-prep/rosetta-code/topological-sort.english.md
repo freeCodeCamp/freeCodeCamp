@@ -106,7 +106,45 @@ function topologicalSort(libs) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const libsSimple =
+  `aaa bbb
+  bbb`;
+
+const libsVHDL =
+  `des_system_lib   std synopsys std_cell_lib des_system_lib dw02 dw01 ramlib ieee
+  dw01             ieee dw01 dware gtech
+  dw02             ieee dw02 dware
+  dw03             std synopsys dware dw03 dw02 dw01 ieee gtech
+  dw04             dw04 ieee dw01 dware gtech
+  dw05             dw05 ieee dware
+  dw06             dw06 ieee dware
+  dw07             ieee dware
+  dware            ieee dware
+  gtech            ieee gtech
+  ramlib           std ieee
+  std_cell_lib     ieee std_cell_lib
+  synopsys`;
+
+const solutionVHDL = [
+  'ieee', 'std_cell_lib', 'gtech', 'dware', 'dw07', 'dw06',
+  'dw05', 'dw02', 'dw01', 'dw04', 'std', 'ramlib', 'synopsys',
+  'dw03', 'des_system_lib'
+];
+
+const libsCustom =
+  `a b c d
+  b c d
+  d c
+  c base
+  base`;
+const solutionCustom = ['base', 'c', 'd', 'b', 'a'];
+
+const libsUnorderable =
+  `TestLib Base MainLib
+  MainLib TestLib
+  Base`;
+
+const solutionUnorderable = ['Base'];
 ```
 
 </div>

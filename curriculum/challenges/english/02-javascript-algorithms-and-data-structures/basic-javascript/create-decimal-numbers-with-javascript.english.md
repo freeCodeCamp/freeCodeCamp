@@ -49,7 +49,7 @@ var ourDecimal = 5.7;
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){if(typeof myDecimal !== "undefined"){return myDecimal;}})();
 ```
 
 </div>

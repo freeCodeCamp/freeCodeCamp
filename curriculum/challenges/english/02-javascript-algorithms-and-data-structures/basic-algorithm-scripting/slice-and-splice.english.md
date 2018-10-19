@@ -63,7 +63,8 @@ frankenSplice([1, 2, 3], [4, 5, 6], 1);
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+let testArr1 = [1, 2];
+let testArr2 = ["a", "b"];
 ```
 
 </div>

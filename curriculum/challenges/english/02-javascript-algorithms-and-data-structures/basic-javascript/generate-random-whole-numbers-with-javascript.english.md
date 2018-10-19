@@ -60,7 +60,7 @@ function randomWholeNum() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){return randomWholeNum();})();
 ```
 
 </div>

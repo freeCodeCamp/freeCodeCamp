@@ -60,7 +60,9 @@ var myStr; // Change this line
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+if (myStr !== undefined){
+console.log('myStr:\n' + myStr);}})();
 ```
 
 </div>

@@ -63,7 +63,10 @@ function towerOfHanoi (n, a, b, c) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const res3 = towerOfHanoi(3, 'A', 'B', 'C');
+const res3Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B']];
+const res5 = towerOfHanoi(5, 'X', 'Y', 'Z');
+const res7First10Moves = [['A', 'B'], ['A', 'C'], ['B', 'C'], ['A', 'B'], ['C', 'A'], ['C', 'B'], ['A', 'B'], ['A', 'C'], ['B', 'C'], ['B', 'A']];
 ```
 
 </div>

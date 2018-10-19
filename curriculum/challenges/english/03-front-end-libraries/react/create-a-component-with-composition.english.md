@@ -74,7 +74,7 @@ class ParentComponent extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<ParentComponent />, document.getElementById('root'))
 ```
 
 </div>

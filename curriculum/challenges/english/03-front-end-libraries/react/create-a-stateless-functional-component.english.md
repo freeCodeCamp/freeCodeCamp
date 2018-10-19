@@ -58,7 +58,7 @@ const MyComponent = function() {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<MyComponent />, document.getElementById('root'))
 ```
 
 </div>

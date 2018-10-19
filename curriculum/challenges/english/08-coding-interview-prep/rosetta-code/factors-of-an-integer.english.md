@@ -51,7 +51,7 @@ function factors (num) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const ans=[[1,3,5,9,15,45],[1,53],[1,2,4,8,16,32,64]];
 ```
 
 </div>

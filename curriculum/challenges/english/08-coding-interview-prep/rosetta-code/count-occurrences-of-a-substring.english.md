@@ -56,7 +56,9 @@ function countSubstring (str, subStr) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = ['the three truths', 'ababababab', 'abaabba*bbaba*bbab'];
+const searchString = ['th', 'abab', 'a*b'];
+const results = [3, 2, 2];
 ```
 
 </div>

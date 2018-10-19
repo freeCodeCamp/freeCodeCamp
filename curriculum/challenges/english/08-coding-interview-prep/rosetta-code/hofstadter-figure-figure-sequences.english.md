@@ -82,7 +82,9 @@ function ffs(n) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const ffrParamRes = [[10, 69], [50, 1509], [100, 5764], [1000, 526334]];
+const ffsParamRes = [[10, 14], [50, 59], [100, 112], [1000, 1041]];
+
 ```
 
 </div>

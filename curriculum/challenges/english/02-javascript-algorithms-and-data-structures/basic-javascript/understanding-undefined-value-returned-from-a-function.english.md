@@ -62,7 +62,10 @@ var returnedValue = addFive();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+var sum = 0;
+function addThree() {sum = sum + 3;}
+addThree();
+addFive();
 ```
 
 </div>

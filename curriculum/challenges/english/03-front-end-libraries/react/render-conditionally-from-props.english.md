@@ -98,7 +98,7 @@ class GameOfChance extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<GameOfChance />, document.getElementById('root'))
 ```
 
 </div>

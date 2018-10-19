@@ -55,7 +55,7 @@ myArray.shift();
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(y, z){return 'myArray = ' + JSON.stringify(y);})(myArray);
 ```
 
 </div>

@@ -113,7 +113,8 @@ function convertSeconds (sec) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testCases = [7259, 86400, 6000000];
+const results = ['2 hr, 59 sec', '1 d', '9 wk, 6 d, 10 hr, 40 min'];
 ```
 
 </div>
