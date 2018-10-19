@@ -33,3 +33,7 @@ WebKit (excepto el proyecto Chromium) implementa el motor JavaScriptCore.
 ## Marcos de JavaScript
 
 Los Frameworks de JavaScript más utilizados son React JS, Angular JS, Create JS, jQuery, nodeJS etc. Para más detalles siga este [enlace](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/) .
+
+# Jennifer 
+
+En la ultima actualizacion del lenguaje fueron introducidos metodos como, find(), map(), reduce(), every(), some() los cuales ayuda a la programacion funcional en Javascript. 
