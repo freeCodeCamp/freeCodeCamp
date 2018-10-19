@@ -60,6 +60,8 @@ This ensures that only packages under `my-env/` are used.
 
 You will notice that the name of the environment is shown on the left of the prompt. This way you can see which is the active environment.
 
+After you activate the environment you do not need to install packages with `sudo` anymore. Only `pip install <something>` is enough.
+
 ### Install Packages
 
 You can install packages one by one, or by setting a `requirements.txt` file for your project.
