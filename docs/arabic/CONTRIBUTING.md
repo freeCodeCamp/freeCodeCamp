@@ -15,3 +15,5 @@
 Hello 👋 !
 
 These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+
+                                ممكن بفضل الآلاف من المتطوعين الطيبين مثلكم. نحن ممتنون لمساهماتكم ، ونحن متحمسون للترحيب بكم freeCodeCamp.org
