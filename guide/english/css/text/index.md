@@ -54,6 +54,17 @@ p {
 
 The `text-transform` property is used to convert the entire text to `uppercase`,`lowercase` or to `capitilize` each word([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform)).
 
+### Text Shadow
+
+``` css
+.header {
+    text-shadow:5px 5px 5px red;
+}
+```
+
+The text shadow property is used to add shadow to the text. The `h-shadow` (horizontal shadow, the first value) and `v-shadow` (vertical shadow, the second value) are required values. Then you can add `blur-radius` and `color` optional values.
+In the example provided above, the first value represents the horizontal value, the second is the vertical value, the third value is the blur value and the last one represents the color value.
+
 #### Letter Spacing
 
 The `letter-spacing` property sets the space between characters in a text.
