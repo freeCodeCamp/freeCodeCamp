@@ -24,6 +24,8 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 </head>
 <body>
 
+ 
+ <!--This is a comment.-->
   <h1>My First Heading</h1>
   <p>My first paragraph.</p>
 
@@ -40,6 +42,8 @@ head: The element contains meta information about the document
 title: The element specifies a title for the document
 
 body: The element contains the visible page content
+
+!--...--(Comment) : Comments are not displayed in the browser.
 
 h1: The element defines a large heading
 
