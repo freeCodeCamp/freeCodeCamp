@@ -153,7 +153,7 @@ end
 
 ## Why linear search is not efficient
 
-There is no doubt that linear search is simple but because it compares each element one by one, it is time consuming and hence not much efficient. If we have to find a number from say, 1000000 numbers and number is at the last location, linear search technique would become quite tedious. So, also learn about bubble sort, quick sort etc.
+There is no doubt that linear search is simple but because it compares each element one by one, it is time consuming and hence not much efficient. If we have to find a number from say, 1000000 numbers and number is at the last location, linear search technique would become quite tedious. So, also learn about bubble sort, quick sort,etc. which are much more efficient than linear search.
 
 #### Relevant Video:
 
