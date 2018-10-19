@@ -3,7 +3,7 @@ title: Static
 ---
 
 # Static
-When you declare a variable or a method as static, it belongs to the class, rather than a specific instance.  This means that only one instance of a static member exists, even if you create multiple objects of the class, or if you don't create any. It will be shared by all objects.
+When you declare a variable or a method as static, it belongs to the class, rather than a specific instance.  This means that only one instance of a static member exists, even if you create multiple objects of the class, or if you don't create any. It will be shared by all objects. Static method runs before any method declared in a Class. That's why the main method in Java declared public static void main(String args[])
 
 The static keyword can be used with variables, methods, code blocks and nested classes.
 
