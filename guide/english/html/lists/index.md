@@ -100,3 +100,37 @@ which would end up looking like:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
 
+
+
+
+### Nested HTML Lists
+
+List can be nested (lists inside lists):
+
+##### Code:
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+
+
+##### Output:
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+
