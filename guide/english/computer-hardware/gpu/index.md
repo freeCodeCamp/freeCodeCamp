@@ -11,7 +11,7 @@ GPUs can be used for computation as well as video rendering. Common ways to do t
 
 The GPU was originally used mainly for 3D game rendering to improve your resolution and framerate. But now these capabilities are being harnessed more broadly to improve computational workloads in many areas; for example financial modeling, cutting-edge scientific research and oil and gas exploration. GPU's are also used as a resource for bitcoin mining, since they are able to run repetitive tasks easily without straining the resources of the CPU, which allows you run an Operating System on the computer with a low end CPU while still being able to bitcoin mine using the GPU
 
-There are two major brands producing GPUs: NVidia and AMD. They are often referred as the "green team" and "red team" which indicate the major color of their logo. 
+There are two major brands producing GPUs: Nvidia and AMD. They are often referred as the "green team" and "red team" which indicate the major color of their logo. 
 
 Notable makers of GPU's include: Nvidia and AMD/ATI.
 
@@ -84,3 +84,4 @@ Some of the thread instructions are executed on SFUs simultaneously with other t
 - <a href='https://blogs.nvidia.com/blog/2009/12/16/whats-the-difference-between-a-cpu-and-a-gpu/' target='_blank' rel='nofollow'>nVidia Blog</a>
 - <a href='https://www.nvidia.com/' target='_blank' rel='nofollow'>NVidia</a>
 - <a href='http://www.amd.com/en-us/products/graphics' target='_blank' rel='nofollow'>AMD</a>
+- <a href='https://www.pcmag.com/encyclopedia/term/43886/gpu' target='_blank' rel='nofollow'>PCMAG</a>
