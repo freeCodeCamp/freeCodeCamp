@@ -59,6 +59,8 @@ This can be seen in the example below:
  * that spans over multiple
  * lines.
  */
+ 
+ # This is single-lined comment.
 ```
 
 ## Additional Information
