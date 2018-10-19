@@ -7,7 +7,7 @@ localeTitle: Agrega elementos dentro de tus pozos de Bootstrap
 ---
 
 ## Description
-<section id="description"> Ahora somos varios elementos <code>div</code> en cada columna de nuestra fila. Esto es tan profundo como tendremos que ir. Ahora podemos añadir nuestros elementos de <code>button</code> . Nido de tres <code>button</code> elementos dentro de cada uno de sus <code>well</code> <code>div</code> elementos. </section>
+<section id="description"> Ahora somos varios elementos <code>div</code> en cada columna de nuestra fila. Esta es la profundidad final a la que llegaremos. Ahora podemos añadir los elementos <code>button</code> . Añade tres elementos <code>button</code> dentro de cada uno de sus <code>well</code> <code>div</code> elementos. </section>
 
 ## Instructions
 <section id="instructions">
@@ -18,11 +18,11 @@ localeTitle: Agrega elementos dentro de tus pozos de Bootstrap
 
 ```yml
 tests:
-  - text: Anida tres elementos de <code>button</code> dentro de cada uno de tus elementos <code>div</code> con clase <code>well</code> .
+  - text: Anida tres elementos <code>button</code> dentro de cada uno de los elementos <code>div</code> con clase <code>well</code> .
     testString: 'assert($("div.well:eq(0)").children("button").length === 3 && $("div.well:eq(1)").children("button").length === 3, "Nest three <code>button</code> elements within each of your <code>div</code> elements with class <code>well</code>.");'
-  - text: Debes tener un total de 6 elementos de <code>button</code> .
+  - text: Debes tener un total de 6 elementos <code>button</code> .
     testString: 'assert($("button") && $("button").length > 5, "You should have a total of 6 <code>button</code> elements.");'
-  - text: Asegúrese de que todos los elementos de sus <code>button</code> tengan etiquetas de cierre.
+  - text: Asegúrate de que todos los elementos <code>button</code> tengan etiquetas de cierre.
     testString: 'assert(code.match(/<\/button>/g) && code.match(/<button/g) && code.match(/<\/button>/g).length === code.match(/<button/g).length, "Make sure all your <code>button</code> elements have closing tags.");'
 
 ```
