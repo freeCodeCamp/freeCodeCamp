@@ -18,13 +18,13 @@ To learn more about Python, check out these pages on python.org:
 *   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
     *   <a href='https://www.python.org/dev/peps/pep-0373/' target='_blank' rel='nofollow'>Python 2.x will not be maintained past 2020.</a> 
     * 3.x is under active development. This means that all recent standard library improvements, for example, are only available by default in Python 3.x.
-    *   Python ecosystem has amassed a significant amount of quality software over the years. The downside of breaking backwards compatibility in 3.x is that some of that software (especially in-house software in companies) still doesn't work on 3.x yet.
+    *   The Python ecosystem has amassed a significant amount of quality software over the years. The downside of breaking backwards compatibility in 3.x is that some of that software (especially in-house software in companies) still doesn't work on 3.x yet.
 
 ## Installation
 
-Most *nix based operating systems come with Python installed (usually Python 2, Python 3 in most recent ones). Replacing the system Python is not recommended and may cause problems. However, different versions of Python can be safely installed alongside the system Python. See <a href='https://docs.python.org/3/using/index.html' target='_blank' rel='nofollow'>Python Setup and Usage</a>.
+Most *nix based operating systems come with Python installed (usually Python 2, Python 3 in more recent ones). Replacing the system Python is not recommended and may cause problems. However, different versions of Python can be safely installed alongside the system Python. See <a href='https://docs.python.org/3/using/index.html' target='_blank' rel='nofollow'>Python Setup and Usage</a>.
 
-Windows doesn't come with Python, the installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>
+Windows doesn't come with Python, the installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>.
 
 ## Python Interpreter
 
@@ -103,8 +103,8 @@ Some of the principles that influenced the design of Python are included as an E
 
 ## Pros and Cons of Python
 ### Pros
-1. Interactive language with a module support for almost all functionality.
-2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others
+1. Interactive language with module support for almost all functionality.
+2. Open Source: So, you can contribute to the community, the functions you have developed for future use and to help others.
 3. A lot of good interpreters and notebooks available for better experience like jupyter notebook.
 
 #### Cons
@@ -148,10 +148,9 @@ The <a href='https://docs.python.org/3/library/functions.html#print' target='_bl
 A function is called when the name of the function is followed by `()`. For the Hello world! example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters the defaults are used.
 
 The argument that we called the `print` function with is a `str` object or _string_, one of Python's <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>_built-in types_</a>.
-Also the most important thing about python is that you don't have to specify the data type while declaring a variable, python's compiler
-will do that itself based on the type of value assigned.
+Also the most important thing about python is that you don't have to specify the data type while declaring a variable, python's compiler will do that itself based on the type of value assigned.
 
-The `objects` parameter is prefixed with a `*` which indicates that the function will take an arbitrary number of arguments for that parameter.
+The `objects` parameter is prefixed with a `*,` which indicates that the function will take an arbitrary number of arguments for that parameter.
 
 ## Want to learn more?
 
