@@ -28,6 +28,11 @@ There are few commonly used arguments:
 ### Warning
 This command is capable of deleting many files at once with ease. This can be beneficial, but also dangerous. Use at your own risk.
 
+To remove a nonempty folder for example, type:
+   `rm -rf folder`
+ 
+
+
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
 * [Man pages](http://man7.org/linux/man-pages/man1/rm.1.html)
