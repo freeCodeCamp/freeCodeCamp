@@ -28,6 +28,8 @@ As of 2016, blockchain 2.0 implementations continue to require an off-chain orac
 
 #### Sources
 1. [Bettina Warburg, "How the blockchain will radically transform the economy", *TED Talks*, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
+2. [How Blockchain can transform India | Jaspreet Bindra | TEDxChennai]
+(https://www.youtube.com/watch?v=8fbhI1qVj0c)
 
 
 ##### More information
