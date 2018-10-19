@@ -13,7 +13,7 @@ for element in array do
  end 
 ```
 
-Existem muitas maneiras diferentes nas quais você pode executar um loop ou loop em Ruby, outro exemplo seria:
+Existem muitas maneiras diferentes nas quais você pode executar um loop ou iteração em Ruby, outro exemplo seria:
 ```
 element.each do |element| 
   puts element 
@@ -25,5 +25,7 @@ Isso alcançaria exatamente os mesmos resultados que o loop for mencionado anter
 Para ir além, podemos escrever o loop acima da seguinte maneira:
 ```
 element.each do { |element| puts element } 
+
+Dessa maneira, temos cada elemento do Array com o "apelido" passado entre os pipes: |element|. Esse nome pode ser qualquer nome. Em seguida podemos realizar as operações neste elemento em particular, como no exemplo, imprimindo o elemento no console.
 
 ```
