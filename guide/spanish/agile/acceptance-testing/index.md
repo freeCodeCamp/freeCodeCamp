@@ -131,3 +131,7 @@ Las pruebas de aceptación también pueden validar si una épica / historia / ta
 #### Más información:
 
 *   [Junta Internacional de Calificación de Pruebas de Software](http://www.istqb.org/)
+
+
+#updatte possible?
+leets see
