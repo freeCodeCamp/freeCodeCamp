@@ -23,7 +23,7 @@ The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store informati
 ![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
   
 ### Memory (RAM)
-Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
+Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. RAM allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
   
 ![Ram](https://images10.newegg.com/NeweggImage/ProductImage/20-232-476-S01.jpg)  
 
