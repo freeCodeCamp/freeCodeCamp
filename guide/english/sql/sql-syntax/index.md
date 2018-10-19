@@ -8,7 +8,7 @@ title: SQL Syntax
 
 This guide provides a basic, high level description of the syntax for SQL statements. 
 
-SQL is an international standard (ISO), but you will find many differences between implementations. This guide uses MySQL as an example. If you use one of the many other Relational Database Managers (DBMS) you'll need to check the manual for that DBMS if needed.
+SQL is an international standard (ISO), but you will find many differences between implementations. This guide uses MySQL as an example. If you use one of the many other Relational Database Management Systems (DBMS) you'll need to check the manual for equivalent commands and syntax.
 
 ### What we will cover
 
@@ -28,7 +28,7 @@ use fcc_sql_guides_database; -- select the guide sample database
 
 ### Select and From clauses
 
-The Select part is normally used to determine which columns of the data you want to show in the results. There are also options you can use to show data that is not a table column.
+The Select clause is normally used to determine which columns of the data you want to show in the results. There are also options you can use to show data that is not a table column.
 
 This example shows two columns selected from the "student" table, and two calculated columns. The first of the calculated columns is a meaningless number, and the other is the system date.
 
@@ -44,7 +44,7 @@ This example shows two columns selected from the "student" table, and two calcul
 
 The WHERE clause is used to limit the number of rows returned.  
 
-In this case all five of these will be used is a somewhat ridiculous Where clause. 
+In this case all five of these will be used in a somewhat ridiculous Where clause. 
 
 Compare this result to the above SQL statement to follow this logic.
 
@@ -70,7 +70,7 @@ The following example is similar, but it further specifies that if any of the st
 
 ### Order By (ASC, DESC)
 
-Order By gives us a way to sort the result set by one or more of the items in the SELECT section. Here is the same list as above, but sorted by the students Full Name. The default sort order is ascending (ASC), but to sort in the opposite order (descending) you use DESC, as in the example below:
+Order By gives us a way to sort the result set by one or more of the items in the SELECT section. Here is the same list as above, but sorted by the student's Full Name. The default sort order is ascending (ASC), but to sort in the opposite order (descending) you use DESC, as in the example below:
 
 ```sql
     select studentID, FullName, sat_score
@@ -89,7 +89,7 @@ Order By gives us a way to sort the result set by one or more of the items in th
 
 Group By gives us a way to combine rows and aggregate data. The Having clause is like the above Where clause, except that it acts on the grouped data.
 
-This data is from the campaign contributions data we've been using in some of these guides.
+This data is from the campaign contributions dataset we've been using in some of these guides.
 
 This SQL statement answers the question: "which candidates recieved the largest number of contributions (not $ amount, but count (\*)) in 2016, but only those who had more than 80 contributions?"
 
