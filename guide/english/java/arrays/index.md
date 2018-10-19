@@ -82,7 +82,7 @@ arrayName[index] = value;
 ```
 
 Note: You cannot change the size or type of an array after initialising it.
-Note: You can however reset the array like so
+Note: You can, however, reset the array like so:
 
 ```java
 arrayName = new dataType[] {value1, value2, value3};
