@@ -1,13 +1,13 @@
 ---
-title: Basic Usage
+title: VIM Editor
 ---
 ## VIM Basic Usage
   
 ### Open File
-- Run vim or vi and open the given filename.
+- Run vim or vi from the command line and specify the filename to work with.
 
 ### Insert Mode
-- Once opening the page enter I and you will see the text "Insert Mode" at the bottom of your screen. From here you can make any changes you want to the text of your file.
+- Once the file is opened and displayed, press the key 'I' to go into INSERT mode to edit the file. This can be verified with the text "Insert Mode" at the bottom of your screen. From here you can make any changes you want to the text of your file.
 
 ### Save File
 - :w
@@ -26,8 +26,14 @@ title: Basic Usage
 ### Display line numbers
 - :set nu
 
-### Don't display line numbers
+### Not to show the line numbers
 - :set nonu
+
+### Display the indentation formats
+- :set list
+
+### Not to show the indentation formats
+- :set nolist
 
 ### Add syntax color based on prog language used
 - :syntax on
