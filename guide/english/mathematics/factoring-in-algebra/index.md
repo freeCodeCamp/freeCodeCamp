@@ -17,5 +17,14 @@ Here you have to look for two numbers that multiply to 1 and add to 2. Those two
 #### Example 2:<br>
 x<sup>2</sup> + 7x + 12<br>
 Here you have to look for two numbers that multiply to 12 and add to 7. Those two numbers are 3 and 4. Then you put those numbers into the factored form like this:<br>
-(x + 7)(x + 4).
+(x + 3)(x + 4).
 
+#### Example 3:<br>
+2x<sup>2</sup> + 3x + 1 <br>
+In some cases, the quadratic co-efficient, which is the value of a in ax<sup>2</sup>, can be greater than 1, where we need to consider how to create a number 3, through the combination of addition and multiplication with the factors of the quadratic co-efficient, and the co-efficient. So we consider the factors of 2 and 1 in '2' for the quadratic co-efficient, and the factors of 1 and 1 for the '1' in the co-efficient. We are required to multiply one factor of the quadratic co-efficient to another factor of the co-efficient, and consider the other case as well. So we multiply 2 from the quadratic co-efficient and 1 from the co-efficient, to receive a value of 2, while we multiply 1 from the quadratic co-efficient and 1 from the co-efficient, to receive a value of 1. Afterwards, we add the values of 2 and 1 to receive a value of 3, which corresponds to the linear co-efficient of 3x in the equation. Hence, you put these numbers into the factored form like this: <br>
+(2x+1)(x+1).
+
+#### Example 4:<br>
+6x<sup>2</sup> + 11x + 4 <br>
+In some cases, the quadratic co-efficient, which is the value of a in ax<sup>2</sup>, can be greater than 1, where we need to consider how to create a number 11, through the combination of addition and multiplication with the factors of the quadratic co-efficient, and the co-efficient. So we consider the factors of 3 and 2 in '6' for the quadratic co-efficient, and the factors of 4 and 1 for the '4' in the co-efficient. We are required to multiply one factor of the quadratic co-efficient to another factor of the co-efficient, and consider the other case as well. So we multiply 2 from the quadratic co-efficient and 4 from the co-efficient, to receive a value of 8, while we multiply 3 from the quadratic co-efficient and 1 from the co-efficient, to receive a value of 3. Afterwards, we add the values of 8 and 3 to receive a value of 3, which corresponds to the linear co-efficient of 11x in the equation. Hence, you put these numbers into the factored form like this: <br>
+(2x+1)(3x+4)
