@@ -38,7 +38,7 @@ Este es un panel con el estilo del panel primario.
 
 `panel panel-success`
 
-Panel de exito
+Panel de éxito
 
 Este es un panel con el estilo de panel de éxito.
 
