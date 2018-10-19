@@ -156,6 +156,13 @@ if(!strcmp(first, second)){
 ```
 Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
 
+
+#### concatenate number of characters to a string: `strncat`
+`strncat` (from 'string number concatenate') concatenates a certain number of characters from the beginning of the second string to the end of first string. In this example, strncat will concatenate some characters from the second to the first string:
+```C
+strncat(char s1[], char s2[], int n);
+```
+
 #### Split a string: `strtok`
 `strtok` (from 'string token') breaks a string into a series of tokens using a  delimiter. In this example, strtok breaks  string str into a series of tokens using the delimiter delim:
 ```C
