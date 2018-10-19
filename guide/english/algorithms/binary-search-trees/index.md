@@ -154,7 +154,10 @@ void insert(int data) {
    }
 }        
 ```
+
 #### Delete Operation
+
+```c
 void deleteNode(struct node* root, int data){
 
     if (root == NULL) root=tempnode; 
@@ -190,6 +193,7 @@ void deleteNode(struct node* root, int data){
     return root; 
 
 }
+```
 
 Binary search trees (BSTs) also give us quick access to predecessors and successors.
   Predecessors can be described as the node that would come right before the node you are currently at.
@@ -205,15 +209,18 @@ So for instance, if we want to calculate the height of a tree, that is the heigh
 * For instance, if we have a nil tree, then its height is a 0.
 * Otherwise, We're 1 plus the maximum of the left child tree and the right child tree.
 * So if we look at a leaf for example, that height would be 1 because the height of the left child is nil, is 0, and the height of the nil right child is also 0. So the max of that is 0, then 1 plus 0.
+
 #### Height(tree) algorithm
-```
+
+```c
 if tree = nil:
     return 0
 return 1 + Max(Height(tree.left),Height(tree.right))
 ```
 
 #### Here is the code in C++
-```
+
+```c
 int maxDepth(struct node* node)
 {
     if (node==NULL)
@@ -239,15 +246,18 @@ We could also look at calculating the size of a tree that is the number of nodes
 
 * Again, if we have a nil tree, we have zero nodes.
 * Otherwise, we have the number of nodes in the left child plus 1 for ourselves plus the number of nodes in the right child. So 1 plus the size of the left tree plus the size of the right tree.
+
 #### Size(tree) algorithm
-```
+
+```c
 if tree = nil
     return 0
 return 1 + Size(tree.left) + Size(tree.right)
 ```
 
 #### Here is the code in C++
-```
+
+```c
 int treeSize(struct node* node)
 {
     if (node==NULL)
