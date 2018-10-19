@@ -3,7 +3,7 @@ title: Class
 ---
 ## Class
 	
-A class in C# is defined as a reference type. In order to instatiate a variable of with a reference type you must specify the `new` keyword, else the variable will have the default value of `null`. See below for an example.
+A class in C# is defined as a reference type. In order to instatiate a variable with a reference type you must specify the `new` keyword, otherwise the variable will have the default value of `null`. See below for an example.
 
 ```csharp
 // The value of variableOne is null at this point.
@@ -12,7 +12,7 @@ NewClass variableOne;
 // Now the value of variableOne will be an instance of the class NewClass
 variableOne = new NewClass();
 ```
-At runtime when the class is created enough memory is allocated onto the heap for that specific instance of the class that the variable holds. 
+At runtime, when the class is created, enough memory is allocated onto the heap for that specific instance of the class held in the variable.
 
 #### Creating Classes
 To create a class in C# we need to use the `class` keyword followed by a unique identifier.
@@ -49,7 +49,7 @@ namespace CPrograms
         }
         public void PrintEmployee()
         {
-            Console.WriteLine("Employee Name: {0} , Employee ID: {1}", this.name, this.employeeId);
+            Console.WriteLine("Employee Name: {0}, Employee ID: {1}", this.name, this.employeeId);
         }
     }
 
@@ -62,6 +62,11 @@ namespace CPrograms
         }
     }
 }
+```
+
+## Output:
+```sh
+> Employee Name: John Doe, Employee ID: 420156
 ```
 
 A class can inherit from one base class only. However, it can implement from more than one interface.
