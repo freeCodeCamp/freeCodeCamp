@@ -121,3 +121,7 @@ Make a new program with `file` -> `new` -> `Source File`, then copy over the hel
  * Stuff within that main function which will get executed, including a return statement that closes the program and gives a value to the program that called it.
 * C needs to be compiled in order to run.
 * C can be used to access specific hardware addresses and to perform type punning to match externally imposed interface requirements, with a low run-time demand on system resources.
+
+## More exercises and tutorials on C
+
+[Exercises with answers](https://codeforwin.org/2017/08/introduction-c-programming.html)
