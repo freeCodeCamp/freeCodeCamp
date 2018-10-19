@@ -26,11 +26,12 @@ Unreal has gone through 4 major revisions. Although some code is common between 
   Released in 2015 and targets PC, PlayStation 4, Xbox One, Mac OS X, iOS, Android, many VR systems, Linux, SteamOS, and HTML5, and the editor can run on Windows, OS X and Linux. Unreal Script has been removed and replaced with dynamically reloaded C++ modules, and a more advanced visual scripting interface called Blueprints.
   
 ### Popular Games made in Unreal
-- Batman Arkham City
-- Mass Effect
-- Bioshock
-- Borderlands
-- Gears of War
+- XCOM: Enemy Unknown (2012)
+- Batman Arkham City (2011)
+- Mass Effect (2007)
+- Bioshock (2007)
+- Borderlands (2009)
+- Gears of War (2006)
 
 #### More Information:
 
