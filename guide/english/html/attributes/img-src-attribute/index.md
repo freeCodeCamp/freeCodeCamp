@@ -1,5 +1,5 @@
 ---
-title: Img Src Attribute
+title: Img Src and alt Attribute
 ---
 ## Img Src Attribute
 The `<img src>` attribute refers to the source of the image you want to display. The `img` tag will not display an image without the `src` attribute. However, if you set the source to the location of the image, you can display any image.
@@ -32,7 +32,11 @@ For example, `<img src="images/freeCodeCamp.jpeg>` would work if you had a folde
 `../files/index.html`
 
 `..files/images/freeCodeCamp.jpeg`
+The alt Attribute
+The alt attribute specifies an alternative text to be used, when an image cannot be displayed.
 
+The value of the attribute can be read by screen readers. This way, someone "listening" to the webpage, e.g. a blind person, can "hear" the element.
+<img src="img_girl.jpg" alt="Girl with a jacket">
 
 ### More Information:
 
