@@ -11,7 +11,7 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 Structure of a basic HTML file:
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
   <head>
