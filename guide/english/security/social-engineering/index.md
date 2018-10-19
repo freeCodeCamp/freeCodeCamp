@@ -12,6 +12,12 @@ Social Engineering is the art of gaining access to a secured system or resource 
 * Charming and persuasive
 * Patient and observant
 * Adept at predicting human behavior based on exploiting the human need to be helpful, curious, greedy and vain
+### Social Engineering Attack Process
+There are four common steps taken by social engineers to successsfully divulge and accquire target information or access they are:
+* **Intelligence gathering**:There are many effective technique to determine target for the attack.This is done by harvesting e-mail address through web using advanced search engine tool,collecting personal information  through social networks;these information collected will give enough intelligenceto select accurate insider for social engineering purpose
+* **Identifying vulnerable point**:Once we identify and selected key insiderwe can move forward to establish a trusting relationship;maintaining a concealment during the whole process is important.the main objective is to identify the vulnerabilities in target system.
+* **Planning the attack**:It's the choice of the penetration tester choice whether plan to attack target directly or by passively.Based on previous process i.e;identified vulnerable point we could determine path and method
+* **Execution**:In this final process,Our planned attack should be executed with confidence and patience to monitor and asses of the target exploitation and acquisition process is completed
 
 #### Some examples of Social Engineering hacks
 
