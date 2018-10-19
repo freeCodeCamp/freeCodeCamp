@@ -1,0 +1,44 @@
+Extension Functions enable us to "extend" classes we did not write ourselves, or may not even have source code access to. As there is no need for inheritance, this is also true for final classes like String or Int!
+
+Extension functions are a safe, clean and clever way to extend classes, or at least may functions look like they are member methods of a class from the caller's perspective.
+
+
+Example
+Imagine, for your current project, you frequently need to calculate the _square_s of integers.
+
+Traditionally, a function for this is rather trivial:
+
+fun squared(i: Int): Int {
+    return i * i
+}
+
+or, even shorter:
+
+fun squared(i: Int) = i * i
+As Kotlin allows package-level functions, you could easily call this function throughout your code even without any utility class. But we can do even better!
+
+Using an extension function, we can teach the Int class itself to calculate and return an integer's square.
+
+That is, they enable us to write something more object oriented like this instead of calling our aforementioned function:
+
+val i = 42.squared()
+But how to we declare the squared function to be able to call it that way? Enter extension functions.
+
+Let's look right at the full declaration of the squared extension function:
+
+fun Int.squared() = this * this // extension function
+
+val i = 42.squared() // use the extension function
+
+check(i == 42*42) // check that everything went well
+The declaration looks quite similar to the traditional one, with the one exception that the single Int argument is gone and there is this ominous Int. prefix before the function name instead.
+
+This prefix is the so called receiver type. That's the type we want to extend - Int in our example.
+
+Within the functions body, as there is no argument i anymore, we cannot refer to it. Instead, we use this. But how is this possible, as there is no instance this could refer to?
+
+Actually, there is: when calling an extension function - as seen in val i = 42.squared() - the instance the function gets called on becomes this in our declaration.
+
+So we do have a this to refer to just as we would have in an ordinary method of Int. But there is one very important exception:
+
+As classes often are final for good reasons and extension functions cannot just break such contracts without adding a lot of potential problems to your program, you cannot access private/protected members of the receiver type.
