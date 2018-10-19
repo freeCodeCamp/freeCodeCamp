@@ -42,6 +42,19 @@ This can be of use in a CSS navigation menu. The key is to make the height of th
  ```
  More neat tricks <a href = "https://www.webdesignerdepot.com/2016/10/20-essential-css-tricks-every-designer-should-know/" target = '_blank' rel='nofollow'>can be found here</a>
 
+## Drop Caps
+
+A drop caps is a large capital letter letter used at the beginning of a text block.
+```css
+p:first-letter{
+    display:block;
+    float:left;
+    margin:3px;
+    color:#f00;
+    font-size:300%;
+    }
+ ```
+
 ## Center a horizontal list
 
 <a href='http://csswizardry.com/2011/01/create-a-centred-horizontal-navigation/' target='_blank' rel='nofollow'>http://csswizardry.com/2011/01/create-a-centred-horizontal-navigation/</a>
