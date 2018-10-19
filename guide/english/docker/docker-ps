@@ -1,0 +1,9 @@
+docker ps
+
+It shows the running containers
+
+If you want to see all the containers present
+
+docker ps -a
+
+
