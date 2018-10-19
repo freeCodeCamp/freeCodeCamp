@@ -1,6 +1,6 @@
 <table>
     <tr>
-        <td> Read these guidelines in </td>
+        <td> Читать этот файл в другом языке: </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/chinese/README.md"> 中文 </a></td>
         <td><a href="/docs/russian/README.md"> русский </a></td>
@@ -10,8 +10,8 @@
     </tr>
 </table>
 
-# Documentation Quick Reference
+# Краткая справочная документация
 
-Hello 👋 !
+Привет 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+Возможно не все инструкции готовы. Подробнее можно узнать в проблеме [`#18312`]  (https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
