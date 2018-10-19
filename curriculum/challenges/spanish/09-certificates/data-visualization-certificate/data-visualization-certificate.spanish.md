@@ -7,15 +7,15 @@ videoUrl: ''
 localeTitle: Certificado de visualización de datos
 ---
 
-## Description
+## Descripción
 <section id="description">
 </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -35,15 +35,15 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semilla del Desafío
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
