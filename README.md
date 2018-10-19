@@ -134,3 +134,5 @@ The content of this repository bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) License.
 - The [curricular content](https://www.npmjs.com/package/@freecodecamp/curriculum) in the [`/curriculum`](/curriculum) folder and its subdirectories are licensed under the [CC-BY-SA-4.0](/curriculum/LICENSE.md) License.
+
+The previous 'guide' freeCodeCamp repository has been archived in favor of this one, containing the identical materal.
