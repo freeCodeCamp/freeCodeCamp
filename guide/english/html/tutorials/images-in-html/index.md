@@ -38,12 +38,12 @@ To insert an image you define the source and an alternative text wich is display
 <img src="URL of the Image" alt="Descriptive Title" style="width: 100px; height: 150px;"/>
 ```
 
-### Make rounded image:
+Here's an example to make a rounded image:
 ```html
 <img src="URL of the Image" alt="Descriptive Title" style="border-radius: 50%;"/>
 ```
 
-#### More Information
+### More Information
 
 - See the freeCodeCamp page on the `<img>` tag [here](https://guide.freecodecamp.org/html/elements/img-tag).
 - To get more details on images in HTML, check out the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img)
