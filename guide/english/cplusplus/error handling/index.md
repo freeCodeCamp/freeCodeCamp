@@ -2,7 +2,7 @@
 title: Error Handling
 ---
 # C++ Exception Handling
-An exception is a problem that arises during the execution of a program.Exceptions provide a way to transfer control from one part of a program to another. C++ exception handling is built upon three keywords: #try, #catch, and #throw.
+An exception is a problem that arises during the execution of a program. Exceptions provide a way to transfer control from one part of a program to another. C++ exception handling is built upon three keywords: #try, #catch, and #throw.
 * #throw − A program throws an exception when a problem shows up. This is done using a throw keyword.
 
 * #catch − A program catches an exception with an exception handler at the place in a program where you want to handle the problem. The catch keyword indicates the catching of an exception.
