@@ -4,6 +4,7 @@ title: Business Value
 ## Business Value
 
 Business Value is the focus of agile delivery. The agile team is charged with evaluating the business value of all work.
+In agile development, an acceptance test confirms that an story is complete by matching a user action scenario with a desired outcome.
 
 Business value describes what the customer will get for a specific piece of work.
 
