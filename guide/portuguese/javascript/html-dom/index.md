@@ -1,16 +1,14 @@
 ---
-title: HTML Dom
-localeTitle: HTML Dom
+title: HTML DOM (Document Object Model)
+localeTitle: HTML DOM (Document Object Model)
 ---
-## HTML Dom
+## HTML DOM (Document Object Model)
 
 Com o HTML DOM, o JavaScript pode acessar e alterar todos os elementos de um documento HTML.
 
-Quando uma página da web é carregado, o navegador cria um **D** ocument **O** bject **M** odelo da página.
+Quando uma página web é carregada, é disponibilizado para o navegador o **DOM** -  um objeto javascript chamado `document`, contendo os elementos na página como uma árvore de objetos:
 
-O modelo HTML DOM é construído como uma árvore de objetos:
-
-Cada elemento no DOM também é chamado de nó.
+Cada elemento no DOM é chamado de nó.
 
 ```html
 
