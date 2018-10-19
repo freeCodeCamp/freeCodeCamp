@@ -7,7 +7,7 @@ localeTitle: Agregar un nuevo elemento a un árbol de búsqueda binario
 ---
 
 ## Description
-<section id="description"> Ahora que tenemos una idea de lo básico, escribamos un método más complejo. En este desafío, crearemos un método para agregar nuevos valores a nuestro árbol de búsqueda binario. El método debe llamarse <code>add</code> y debe aceptar un valor entero para agregarlo al árbol. Tenga cuidado de mantener el invariante de un árbol de búsqueda binario: el valor en cada elemento secundario izquierdo debe ser menor o igual que el valor principal, y el valor en cada elemento secundario derecho debe ser mayor o igual que el valor principal. Aquí, hagamos que nuestro árbol no pueda contener valores duplicados. Si intentamos agregar un valor que ya existe, el método debe devolver <code>null</code> . De lo contrario, si la adición es exitosa, se debe devolver <code>undefined</code> . Pista: ¡los árboles son naturalmente estructuras de datos recursivas! </section>
+<section id="description"> Ahora que tenemos una idea de lo básico, vamos a escribir un método más complejo. En este desafío, crearemos un método para agregar nuevos valores a nuestro árbol de búsqueda binario. El método debe llamarse <code>add</code> y debe aceptar un valor entero para agregarlo al árbol. Tenga cuidado de mantener el invariante de un árbol de búsqueda binario: el valor en cada elemento secundario izquierdo debe ser menor o igual que el valor principal, y el valor en cada elemento secundario derecho debe ser mayor o igual que el valor principal. En este caso, vamos a hacer que nuestro árbol no pueda contener valores duplicados. Si intentamos agregar un valor que ya existe, el método debe devolver <code>null</code> . De lo contrario, si la adición es exitosa, se debe devolver <code>undefined</code> . Pista: ¡los árboles son naturalmente estructuras de datos recursivas! </section>
 
 ## Instructions
 <section id="instructions">
@@ -24,7 +24,7 @@ tests:
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.add == "function")})(), "The binary search tree has a method called <code>add</code>.");'
   - text: El método add agrega elementos de acuerdo con las reglas del árbol de búsqueda binario.
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== "function") { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); const expectedResult = [ 1, 4, 7, 8, 34, 45, 73, 87 ]; const result = test.inOrder(); return (expectedResult.toString() === result.toString()); })(), "The add method adds elements according to the binary search tree rules.");'
-  - text: Añadiendo un elemento que ya existe devuelve <code>null</code>
+  - text: Al añadir un elemento que ya existe devuelve <code>null</code>
     testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.add !== "function") { return false; }; test.add(4); return test.add(4) == null; })(), "Adding an element that already exists returns <code>null</code>");'
 
 ```
