@@ -14,6 +14,8 @@ The imaginary part of a complex number can be created using an imaginary literal
 0.0
 >>> a.imag
 3.5
+>>> a.conjugate()
+-3.5j
 ```
 
 No literal exists for creating a complex number with non-zero real and imaginary parts. To create a non-zero real part complex number, add an imaginary literal to a floating point number:
