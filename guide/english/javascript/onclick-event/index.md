@@ -3,6 +3,7 @@ title: Onclick Event
 ---
 ## Onclick Event
 The `onclick` event in JavaScript lets you as a programmer execute a function when an element is clicked. 
+This makes the page interactive.
 
 ### Example
 ```javascript
