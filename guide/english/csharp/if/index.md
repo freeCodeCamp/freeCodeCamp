@@ -4,7 +4,7 @@ title: If
 
 # If
 
-The if statement executes different blocks of code based on conditions.
+The if statement is one of the most commonly used control flow statements.
 
 ```
 if (condition)
