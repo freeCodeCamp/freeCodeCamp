@@ -35,7 +35,7 @@ Forms can be submitted using either the GET or POST method.
 ###Elements
 The `<form>` element will have at least have one of the following elements nested inside of it:
 
-- [`<input>`](https://guide.freecodecamp.org/html/elements/input "Input")
+- [`<input>`](https://guide.freecodecamp.org/html/elements/input-tag "Input")
 - [`<button>`](https://guide.freecodecamp.org/html/elements/button-tag "Button")
 - [`<label>`](https://guide.freecodecamp.org/html/elements/label-tag "Label") 
 - [`<select>`](https://guide.freecodecamp.org/html/elements/select-tag "Select")
