@@ -4,7 +4,7 @@ title: Bash ls
 
 ## Bash ls
 
-`ls` is a command on Unix-like operating systems to list contents of a directory, for example folder and file names.
+`ls` is a command on Unix-like operating systems to list contents of a directory, for example folder and the file names.
 
 
 ### Usage
