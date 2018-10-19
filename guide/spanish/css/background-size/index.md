@@ -4,7 +4,7 @@ localeTitle: Tamaño de fondo
 ---
 ## Tamaño de fondo
 
-La propiedad de tamaño de fondo especifica el tamaño de las imágenes de fondo. Puede establecer una longitud o un porcentaje, siendo el primer valor el ancho y el segundo la altura. También puede utilizar uno de los 5 valores de palabras clave:
+La propiedad de tamaño de fondo especifica el tamaño de las imágenes de fondo. Puede establecer una longitud o un porcentaje, siendo el primer valor el ancho y el segundo la altura. También puede utilizar una de estas 5 palabras clave:
 
 ```css
 .auto {background-size: auto;} 
@@ -17,7 +17,7 @@ La propiedad de tamaño de fondo especifica el tamaño de las imágenes de fondo
  .percentage {background-size: 50% 50%;} 
 ```
 
-Para establecer esta propiedad en varias imágenes de fondo, valores separados por comas:
+Para establecer la misma propiedad en varias imágenes de fondo se usa el siguiente código, recuerda separar los valores con comas:
 
 ```css
 .multiple { 
