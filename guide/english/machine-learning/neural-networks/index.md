@@ -4,7 +4,7 @@ title: Neural Networks
 ## Neural Networks
 ![Feed-forward neural network](http://ufldl.stanford.edu/tutorial/images/SingleNeuron.png)
 
-An artificial neural network is a computing system. They are like biological neural networks that constitute animal brains. 
+An artificial neural network is a computing system based on biological neural networks that constitute animal brains. The most basic element of a neural network is a neuron. Its input is a vector, say `x`, and its output is a real valued variable, say `y`. The neuron acts as a mapping between the vector `x` and a real number `y`.
 To train a neural network, we need an input vector and a corresponding output vector.
 The training works by minimizing an error term. This error can be the squared difference between the predicted output and the original output.
 
@@ -12,8 +12,6 @@ The basic principle which underlies the remarkable success of neural networks is
 
 Neural networks initially became popular in the 1980s, but limitations in computational power prohibited their widespread acceptance until the past decade.
 Innovations in CPU size and power allow for neural network implementation at scale, though other machine learning paradigms still outrank neural networks in terms of efficiency.
-
-The most basic element of a neural network is a neuron. It's input is a vector, say `x`, and its output is a real valued variable, say `y`. Thus, we can conclude that the neuron acts as a mapping between the vector `x` and a real number `y`.
 
 Neural networks perform regression iteratively across multiple layers, resulting in a more nuanced prediction model.
 A single node in a neural network computes the exact same function as [logistic regression](../logistic-regression/index.md).
