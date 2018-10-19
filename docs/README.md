@@ -11,29 +11,29 @@
     </tr>
 </table>
 
-# Documentation Quick Reference
+ Alt-Documentation Quick Reference
 
 Hello 👋!
 
 This directory contains all of the documentation on contributing to freeCodeCamp.org
 
-## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
+Alt-[If you are getting started, start by reading this first.](/CONTRIBUTING.md)
 
 ---
 
-## Quick references articles
+Alt-Quick references articles
 
 1. How to work on Guide articles.
 2. How to work on Coding Challenges.
 3. How to setup freeCodeCamp locally.
 4. How to catch outgoing emails locally.
 
-## Style guides
+Alt-Style guides
 
 1. Style guide for creating guide articles.
 2. Style guide for creating coding challenges.
 
-## Quick commands reference when working locally
+Alt-Quick commands reference when working locally
 
 A quick reference to the commands that you will need, when working locally.
 
