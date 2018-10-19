@@ -7,25 +7,25 @@ videoUrl: ''
 localeTitle: Добавить отрицательную маржу к элементу
 ---
 
-## Description
-<section id="description"> Элемент по <code>margin</code> контролирует объем пространства между элементом в <code>border</code> и окружающих элементами. Если вы установите элемент <code>margin</code> отрицательного значение, то элемент будет расти больше. </section>
+## Описание
+<section id="description"> Свойство элемента <code>margin</code> контролирует объем пространства (отступы) между границей элемента, т.е. <code>border</code> и окружающими элементами. Если вы установите элементу отрицательное значение <code>margin</code>, то размер элемента увеличится. </section>
 
-## Instructions
-<section id="instructions"> Попытайтесь установить <code>margin</code> на отрицательное значение, подобное значению для красного квадрата. Измените <code>margin</code> синего <code>-15px</code> на <code>-15px</code> , чтобы он заполнил всю горизонтальную ширину желтой рамки вокруг него. </section>
+## Инструкции
+<section id="instructions"> Попытайтесь установить отрицательное значение <code>margin</code>, так же как установлено подобное значению для красного квадрата. Измените <code>margin</code> синего квадрата на <code>-15px</code>, чтобы он заполнил всю горизонтальную ширину желтой рамки вокруг него. </section>
 
-## Tests
+## Тесты
 <section id='tests'>
 
 ```yml
 tests:
-  - text: Ваш класс <code>blue-box</code> должен давать элементы <code>-15px</code> от <code>margin</code> .
+  - text: Ваш класс <code>blue-box</code> должен установить для элемента <code>margin</code> отступ в размере <code>-15px</code>.
     testString: 'assert($(".blue-box").css("margin-top") === "-15px", "Your <code>blue-box</code> class should give elements <code>-15px</code> of <code>margin</code>.");'
 
 ```
 
 </section>
 
-## Challenge Seed
+## Испытание
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,10 +77,10 @@ tests:
 
 </section>
 
-## Solution
+## Решение
 <section id='solution'>
 
 ```js
-// solution required
+// впишите ваш код решения
 ```
 </section>
