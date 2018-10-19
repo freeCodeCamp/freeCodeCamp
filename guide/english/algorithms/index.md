@@ -58,3 +58,7 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work..
+
+
+<h1> stack and Queue programs </h1>
+<a href="https://github.com/karshil2309/DataStructure/blob/karshil2309-patch-1/DATASTRU.C">Program For Queue and Stack</a>
