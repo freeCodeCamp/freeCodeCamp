@@ -18,18 +18,20 @@ The Cost Function is used to train the SVM. By minimizing the value of J(theta),
 ### Kernels
 
 Polynomial features are possibly computationally expensive and may slow down runtime with large datasets.
-Rather than adding more polynomial features, add "landmarks" against which you test the proximity of other datapoints.
-Each member of the training set is a landmark.
+Rather than adding more polynomial features, add "landmarks" against which you test the proximity of other datapoints.Each member of the training set is a landmark.
 A kernel is the "similarity function" that measures how close an input is to a certain marker.
-Different SVM algorithm use different types of Kernel Function.For example - linear ,non-linear,polynomial,sigmoid,radial basis function(RBF),etc.The most used type of kernel function is RBF as it produces localized and finite response along the entire x-axis.
-
+Different SVM algorithm use different types of Kernel Function.For example - linear ,non-linear,polynomial,sigmoid,radial basis function(RBF),etc.The most used type of kernel function is **RBF** as it produces localized and finite response along the entire x-axis.**Reason** :RBF is a stationary kernel, which means that it is invariant to translation. Suppose you are computing K(x,y). A stationary kernel will yield the same value K(x,y) for K(x+c,y+c), where c may be vector-valued of dimension to match the inputs.Secondly,single parameter version of RBF is isotropic in nature,i.e,the scaling by γ occurs the same amount in all directions. This can be easily generalized, though, by slightly tweaking the RBF kernel to K(x,y)=exp(−(x−y)′Γ(x−y)) where Γ is a p.s.d. matrix.
 
 ### Large Margin Classifier
 An SVM will find the line (or hyperplane in the more general case) that splits the data with the largest margin.
 While outliers may sway the line to one direction, a small enough C value will enforce regularization. 
 This new regularizing works the same with 1/\Lambda, as seen in linear and logistic regression, but here we modify the cost component.
 
-###Applications of SVM :
+### Applications of SVM :
+* Hand written character recognition
+* Bio-Informatics-Protein Classification,Cancer Cell Classification
+* Text and Hypertext categorization
+* Classification of Images like Image-based Gender Identification
 
 
 #### More Information:
