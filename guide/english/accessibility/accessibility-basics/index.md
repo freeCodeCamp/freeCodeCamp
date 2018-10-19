@@ -131,7 +131,7 @@ The WCAG has contrast ratios for smaller and larger letters and there's plenty o
 A good place to start checking color contrast is by using the [WebAIM](https://webaim.org/resources/contrastchecker/) color contrast checker.
 
 ### What does this button do?
-While we are on the topic of forms, let's quickly glance at the <code>input</code> tag. This little guy is kinda important.  
+While we are on the topic of forms, let's quickly glance at the <code>input</code> tag. This little guy is kind of important.  
 
 When you put some input fields on a web page, you can use labels to ...well ...label them. However, putting them next to each other is not quite enough. The attribute you want is the for-attribute, which takes the ID of a subsequent input field. This way, assistive technologies know what label to associate with what form field.  
 
