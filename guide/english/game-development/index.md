@@ -8,13 +8,13 @@ Game Development is the art of creating games and describes the design, developm
 
 A game developer could be a programmer, a sound designer, an artist, a designer or many other roles available in the industry.
 
-Game Development can be undertaken by a large Game Development Studio or by a single individual. It can be as small or large as you like. As long as it lets the player interact with content and is able to manipulate the game's elements, you can call it a 'game'.
+Game Development can be undertaken by a large Game Development Studio or by a single individual. It can be as small or as large as you like. As long as it lets the player interact with content and is able to manipulate the game's elements, you can call it a 'game.'
 
-To get involved in the Game Development process, you do not need to write code. Artists may create and design assets, while a Developer might focus on programming a health bar. A Tester may get involved to see that the game works as expected.
+To get involved in the Game Development process, you do not need to write code. Artists may create and design assets, while a Developer might focus on programming a health bar. A Tester may get involved to verify that the game works as expected.
 
 ![What first games looked like](https://i.ytimg.com/vi/ePc12V6F0ws/maxresdefault.jpg "What first games looked like")
 
-To resolve problems that game frameworks had, tools like libGDX and OpenGL were developed. They helped game development to be a lot faster and easier, providing lots of pre-made functions and features. However, it was still hard to enter the industry or understand a framework for someone coming from a non-programmer background, a common case in the game development scene.
+To resolve problems that game frameworks had, tools like libGDX and OpenGL were developed. They helped make game development a lot faster and easier, providing many pre-made functions and features. However, it was still hard to enter the industry or understand a framework if you were coming from a non-programmer background, a common case in the game development world.
 
 ![3D map editor made with OpenGL](https://i.ytimg.com/vi/E0laTeycpB4/maxresdefault.jpg "3D map editor made with OpenGL")
 
