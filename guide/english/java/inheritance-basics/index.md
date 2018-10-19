@@ -50,3 +50,7 @@ modelS.charge();
 See here that the class `ElectricCar` inherits or `extends` the public methods from `Car` class, as well as has its own methods and properties. Cool way to pass on information!
 
 Also notice the usage of <a href='https://docs.oracle.com/javase/tutorial/java/IandI/super.html' target='_blank' rel='nofollow'>super</a> keyword here. Since our `Car` class had a constructor, so we have to initialize that constructor from the child class as well. We do that using the `super` keyword. Read more about <a>Inheritance here</a>.
+
+Inheritance is a way for *Object Oriented* languages to share properties from an existing class to a new class. The new class can use the properties of the old one, but the old one cannot use the new properties added into the new class.
+
+This link from  <a href='https://www.techopedia.com/definition/3226/inheritance-java'>technopedia</a> explains inheritance in more detail
