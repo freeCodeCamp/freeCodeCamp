@@ -54,3 +54,25 @@ When starting out with linux, there are some basic commands everyone should know
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
 - [LinuxJourney](https://linuxjourney.com/lesson/the-shell): A collection of beginner-friendly terminal tutorials.
 
+
+** LINUX File/Directory Permission ***
+In linux access policy is determinned by the concept of 'Permission of Access' and 'Permission to USe'. Each individual file/directory can be organized under three basic premission tag - r(read), w(write) and x(access). While the /root SU(super user) has default permission to all files/directories, other users are needed to given access through terminal commands.
+
+
+Scope of this 'permission' tags-
+– read(r)
+• [File] can view/read the content of the file (like with VIM)
+• [Dir] can view/read the content of the Directory
+
+– write(w)
+• [File] can modify/edit the content of the file (with VIM)
+• [Dir] can add & remove (delete) files and directories
+
+– execute(x)
+• [File] can be executed– 
+(Note:Binary files require only the execute permission; script files require both read and execute permissions.)
+• [Dir] Switch into the directory with the cd command
+
+
+
+
