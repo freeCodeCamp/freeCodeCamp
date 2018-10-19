@@ -68,3 +68,28 @@ Cheers
 
 ## Kotlin course for beginners 
 Udacity provides the free [Kotlin Bootcamp for Programmers](https://www.udacity.com/course/kotlin-bootcamp-for-programmers--ud9011) course.
+
+
+
+
+**********Kotlin for beginners************
+Write better Android apps faster with Kotlin. 
+
+Kotlin is a modern statically typed programming language that will boost your productivity and increase your developer happiness.
+
+Kotlin's modern language features allow you to focus on expressing your ideas and write less boilerplate code. Less code written also means less code to test and maintain.
+
+Call Java-based code from Kotlin, or call Kotlin from Java-based code. Kotlin is 100% interoperable with the Java programming language, so you can have as little or as much of Kotlin in your project as you want.
+What does it look like??
+
+class Mainactivity:AppCompatActivity() {
+ override fun onCreate(savedInstanceState:Bundle?) {
+ 
+ .....
+ fab.setOnClickListener { view ->
+ Snackbar.make(view, "Hello $name",   Snackbar.LENGTH_LONG).show() 
+ }
+ }
+ }
+
+
