@@ -95,8 +95,8 @@ title: Books to Read for Programmers
 ## Coding Interview
 
 *Cracking the Coding Interview: 150 Programming Questions and Solutions*
-- [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
-- ISBN-13: 978-0984782802
+- [Amazon Smile](https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=dp_ob_title_bk)
+- ISBN-13: 978-0984782857
 
 *Programming Interviews Exposed: Secrets to Landing Your Next Job, 2nd Edition*
 - [Wiley](https://www.wiley.com/en-id/Programming+Interviews+Exposed:+Secrets+to+Landing+Your+Next+Job,+2nd+Edition-p-9780470121672)
