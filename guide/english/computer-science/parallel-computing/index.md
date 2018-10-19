@@ -84,3 +84,5 @@ In the simplest sense, parallel computing is the simultaneous use of **multiple 
 #### More Information:
 - [Parallel Computing on Wikipedia](https://en.wikipedia.org/wiki/Parallel_computing)
 - [Introduction to Parallel Computing](https://computing.llnl.gov/tutorials/parallel_comp/)
+- [3RD JOINT INTERNATIONAL WORKSHOP ON PARALLEL DATA STORAGE & DATA INTENSIVE SCALABLE COMPUTING SYSTEMS]   (http://www.pdsw.org/index.shtml)
+
