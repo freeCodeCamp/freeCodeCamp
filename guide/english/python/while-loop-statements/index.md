@@ -48,6 +48,8 @@ Line-by-Line Explanation of the above CODE:
 9. Since the variable days is equal to 1 which is less than 7 so the while loop is executed again.
 10. It goes on again and again and when the console prints 'Today is Sunday' the variable days is now equal to 7 and the while loop stops executing. 
 
+Because while loops are conditioned controlled loops, while loops are great for programs that need to be run for an undefined amount of times. This allows for input to be taken time and time again until the condition is met. A good practical example would be for a game in which the player has the option to try again. Until the player responds with the response that meets the while loop condition, the player can continue to play the game, simulating the loop as many times as they please.
+
 #### More Information:
 
 - <a href='https://docs.python.org/3/reference/compound_stmts.html#the-while-statement' target='_blank' rel='nofollow'>Python `while` statement documentation</a>
