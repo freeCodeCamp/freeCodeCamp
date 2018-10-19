@@ -33,7 +33,7 @@ module.exports = function(UserCredential) {
         externalId: profile.id
       }
     };
-
+my changes
     // find createCred if they exist
     // if not create it
     // if yes, update credentials
