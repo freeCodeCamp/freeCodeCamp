@@ -38,7 +38,7 @@ you'll then need to use an ```code id``` attribute in the element you want to di
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href="https://www.w3schools.com/html/html_links.asp" target="_blank">w3sschools - HTML Links</a>
 
-
+<a href="https://ryanstutorials.net/html-tutorial/html-links.php" target="_blank">w3sschools - Learn HTML Links</a>
 
 
 
