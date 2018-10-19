@@ -36,7 +36,7 @@ An HSLA color value is similar, with the alpha value in last position: hsla(hue,
     
 ### CMYK
 
-CMYK colors is a combination of CYAN, MAGENTA, YELLOW , and BLACK. Computer screens display colors using RGB color values. Printers often presents colors using CMYK color values.
+CMYK colors is a combination of CYAN, MAGENTA, YELLOW , and BLACK. Computer screens display colors using RGB color values. Printers often present colors using CMYK color values.
 CMYK is not supported in HTML, but it is suggested as a new standard in CSS4.
 
 Example colors:
