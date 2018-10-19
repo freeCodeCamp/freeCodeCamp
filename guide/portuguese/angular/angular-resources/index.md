@@ -42,3 +42,5 @@ Uma coleção de recursos angulares úteis
 
 *   [Alligator.io](https://alligator.io/angular/)
 *   [Angular em Profundidade](https://blog.angularindepth.com/tagged/angular)
+
+My changes
