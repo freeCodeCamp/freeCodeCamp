@@ -196,6 +196,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Shellcoders-Handbook-Discovering-Exploiting-Security/dp/047008023X/ref=sr_1_1?ie=UTF8&qid=1538665772&sr=8-1&keywords=shellcoders+handbook+3rd+edition&dpID=41xfa6zpuPL&preST=_SX218_BO1,204,203,200_QL40_&dpSrc=srch)
 - ISBN-13: 978-0470080238
 
+*Cracking the Code to a Successful Interview: 15 Insider Secrets from a Top-Level Recruiter by Evan Pellett*
+- [Amazon](https://www.amazon.co.uk/Cracking-Code-Successful-Interview-Top-Level/dp/1441700536/)
+- ISBN-13: 978-1441700537
+
 ## Java
 
 *Head First Java* by Kathy Sierra and Bert Bates
@@ -208,6 +212,10 @@ title: Books to Read for Programmers
 
 *Introduction to Java Programming and Data Structures by Y. Daniel Liang
 - [Amazon Smile](https://smile.amazon.com/Introduction-Programming-Structures-Comprehensive-Version/dp/0134670949)
+
+*Core Java Volume I--Fundamentals by Cay S. Horstmann and Gary Cornell*
+- [Amazon](https://www.amazon.co.uk/Core-Java-I-Fundamentals-Cay-Horstmann/dp/0137081898/)
+- ISBN-13: 978-0137081899
 
 ## JavaScript
 
@@ -233,6 +241,10 @@ title: Books to Read for Programmers
  *Beginning Node.js*
  -[Amazon](https://www.amazon.com/Beginning-Node-js-Basarat-Syed-ebook/dp/B01JFUD1X8/ref=sr_1_1?ie=UTF8&qid=1539929353&sr=8-1&keywords=beginning-Node-js-Basarat-Syed)
  - ISBN-13: 978-1484201886
+
+*JavaScript and JQuery: Interactive Front-End Web Development by Jon Duckett*
+- [Amazon] (https://www.amazon.co.uk/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/)
+- ISBN-13: 978-1118531648
 
 ## Python
 
@@ -388,6 +400,10 @@ https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201
 
 https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124
 
+
+*HTML and CSS: Design and Build Websites by Jon Duckett*
+- [Amazon](https://www.amazon.co.uk/HTML-CSS-Design-Build-Websites/dp/1118008189)
+- ISBN-13: 978-1118008188
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
