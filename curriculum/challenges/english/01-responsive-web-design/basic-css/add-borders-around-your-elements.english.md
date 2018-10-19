@@ -51,6 +51,10 @@ tests:
   .red-text {
     color: red;
   }
+  .yellow-border
+  {
+    border:solid 5px yellow;
+  }
 
   h2 {
     font-family: Lobster, monospace;
@@ -68,7 +72,7 @@ tests:
 
 <h2 class="red-text">CatPhotoApp</h2>
 <main>
-  <p class="red-text">Click here to view more <a href="#">cat photos</a>.</p>
+  <p class="red-text yellow-border">Click here to view more <a href="#">cat photos</a>.</p>
 
   <a href="#"><img class="smaller-image" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
