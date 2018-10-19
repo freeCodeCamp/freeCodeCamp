@@ -7,6 +7,8 @@ Classes are an efficient way of grouping HTML elements so that they can share th
 
 When writing HTML, you can add classes to an element. Just add the attribute `class="myclass"` to the element. Multiple elements can have the same class, and one element can have multiple classes. You can assign multiple classes to an element by adding all the desired class names separated by a space to the `class` attribute in HTML.
 
+With CSS Classes, you should no longer use inline styles fruently since it consumes space in your html documents. A typical example is using <div style="background:black; padding:4px;">MY PLACE</div> but with class you just have to define your css class and it works for you, thereby reducing your html codes
+
 ```html
 <h1 class="super-man other-class third-class">"Here I come to save the day!"</h1>
 <p>is a popular catchphrase that <span class="super-man">Super Man</span> often said.</p>
