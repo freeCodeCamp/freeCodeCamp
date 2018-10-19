@@ -32,4 +32,4 @@ O WebKit (exceto o projeto Chromium) implementa o mecanismo JavaScriptCore.
 
 ## Frameworks JavaScript
 
-Os Frameworks JavaScript usados ​​com mais frequência são React JS, Angular JS, Criar JS, jQuery, nodeJS etc. Para detalhes, siga este [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/) .
+Os Frameworks JavaScript usados ​​com mais frequência são React JS, Angular JS, Vue.js Criar JS, jQuery, nodeJS etc. Para detalhes, siga este [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/) .
