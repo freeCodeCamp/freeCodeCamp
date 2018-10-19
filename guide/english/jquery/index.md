@@ -26,3 +26,4 @@ $(document).ready(function(){
 
 #### More Information
 * [jQuery Home Page](https://jquery.com/)
+* [Head First jQuery by O'Reilly](http://shop.oreilly.com/product/0636920012740.do)
