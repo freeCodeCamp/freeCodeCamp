@@ -6,7 +6,7 @@ localeTitle: Clases de CSS
 
 Las clases son una forma eficiente de agrupar elementos HTML para que puedan compartir los mismos estilos. Las clases de CSS (hojas de estilo en cascada) se pueden utilizar para organizar y decorar elementos de páginas web.
 
-Al escribir HTML, puede agregar clases a un elemento. Simplemente agregue el atributo `class="myclass"` al elemento. Varios elementos pueden tener la misma clase y un elemento puede tener varias clases. Puede asignar varias clases a un elemento agregando todos los nombres de clase deseados separados por un espacio al atributo de `class` en HTML.
+Al escribir HTML, se pueden agregar clases a un elemento. Simplemente agregue el atributo `class="myclass"` al elemento. Varios elementos pueden tener la misma clase y un elemento puede tener varias clases. Puede asignar varias clases a un elemento agregando todos los nombres de clase deseados separados por un espacio al atributo de `class` en HTML.
 
 ```html
 
@@ -23,7 +23,7 @@ A continuación, puede diseñar estos elementos con CSS. Se hace referencia a la
  } 
 ```
 
-Este código da un fondo azul y un color rojo texto a todos los elementos que tienen el `super-man` clase. [Ver este ejemplo en CodePen](https://codepen.io/Tlandis/pen/RLvomV) .
+Este código da un fondo azul y un color rojo texto a todos los elementos que tienen la clase `super-man`. [Ver este ejemplo en CodePen](https://codepen.io/Tlandis/pen/RLvomV) .
 
 También puede declarar más de una clase a su elemento, como:
 
@@ -46,9 +46,9 @@ Luego en tu archivo css:
  } 
 ```
 
-**Nota:** los nombres de las clases son tradicionalmente en minúsculas, con cada palabra en un nombre de clase de varias palabras separadas por guiones (por ejemplo, "super-man").
+**Nota:** los nombres de las clases se escriben tradicionalmente en minúsculas, separadas por guiones si hay más de uno (por ejemplo, "super-man").
 
-También puedes combinar clases en la misma línea:
+También se pueden combinar clases en la misma línea:
 
 ```css
 .superMan .spiderMan { 
