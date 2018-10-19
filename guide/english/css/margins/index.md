@@ -51,3 +51,4 @@ It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ e
 - <a href='https://www.w3.org/TR/CSS1/#margin' target='_blank' rel='nofollow'>W3C CSS Level 1</a>
 - <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/margin' target='_blank' rel='nofollow'>MDN Web Docs</a>
 - <a href='https://css-tricks.com/almanac/properties/m/margin/' target='_blank' rel='nofollow'>CSS Tricks</a>
+- <a href='https://www.w3schools.com/css/css_margin.asp' target='_blank' rel='nofollow'>W3Schools</a>
