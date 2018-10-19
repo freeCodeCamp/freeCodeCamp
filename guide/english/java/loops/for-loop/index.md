@@ -7,7 +7,7 @@ The `for` loop gives you a compact way to iterate over a range of values.
 A basic `for` statement has three parts: a variable initialization, a boolean expression, and an increment expression.
 
 ```java
-for (variable initialization; boolean expression; increment expression)
+for(variable initialization; boolean expression; increment expression)
 {  
     // Statements
 }
@@ -25,7 +25,7 @@ A common way the `for` loop is used is if you need to iterate your code a specif
 Notice that you would check if the value is less than 10, not less than or equal to 10, since you are starting your counter at 0.
 
 ```java
-for (int iter_For = 0; iter_For < 10; iter_For++)
+for(int iter_For = 0; iter_For < 10; iter_For++)
 {
     System.out.print(iter_For + " ");
     // Iterated 10 times, iter_For 0,1,2...9
@@ -36,9 +36,9 @@ System.out.println("iter_For Value: " + iter_For);
 
 Note: It is also acceptable to declare a variable within the for loop as a single statement.
 ```java
-for (int iter_For = 0; iter_For < 10; iter_For++)
+for(int iter_For = 0; iter_For < 10; iter_For++)
 {
-    System.out.print (iter_For + " ");
+    System.out.print(iter_For + " ");
     // Iterated 10 times, iter_For 0,1,2...9
 }
 ```
@@ -56,7 +56,7 @@ i++ means i = i+1.
 int addUntil = 50;
 int sum 0;
 
-for (int i = 1; i <= addUntil; i++) 
+for(int i = 1; i <= addUntil; i++) 
 {
     sum+=i
 }
