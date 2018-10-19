@@ -22,6 +22,9 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Code-Language-Computer-Hardware-Software/dp/0735611319/ref=sr_1_1?s=books&ie=UTF8&qid=1508780869&sr=1-1&keywords=code)
 - ISBN-13: 978-0735611313
 
+*C# Notes (Free)
+- https://books.goalkicker.com/CSharpBook/ 
+
 *Don't Make Me Think, Revisited: A Common Sense Approach to Web Usability by Steve Krug*
 - [Amazon Smile](https://smile.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515/ref=sr_1_1?ie=UTF8&qid=1538370339&sr=8-1&keywords=dont+make+me+think)
 - ISBN-13: 978-0321965516
