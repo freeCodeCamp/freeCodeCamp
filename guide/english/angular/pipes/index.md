@@ -46,6 +46,9 @@ In the example, `potatoSack$` is an Observable pending an upload of potatoes. On
 
 Formatting date strings takes a fair bit of hacking with the JavaScript `Date` object. The DatePipe provides a powerful way to format dates assuming the given input is a valid time format.
 
+#### TitleCasePipe
+Transforms text to title case. Capitalizes the first letter of each word, and transforms the rest of the word to lower case. Words are delimited by any whitespace character, such as a space, tab, or line-feed character.
+
 ```typescript
 // example.component.ts
 
