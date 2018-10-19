@@ -103,6 +103,11 @@ If-Else statement can also be used along with list comprehension.
 list_1 = [i if i%2==0 else i*-1 for i in range(10)]
 ```
 
+Nested list comprehension to flat list of list 
+```py
+flat_list = [item for sublist in l for item in sublist]
+```
+
 #### More Information:
 [Python Data Structures - Lists](https://docs.python.org/2.7/tutorial/datastructures.html)
 
