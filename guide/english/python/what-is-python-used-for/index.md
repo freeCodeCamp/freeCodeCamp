@@ -32,6 +32,9 @@ Mobile apps and games can be created with python using Kivy, Pygame and PyQt.
 Python is used to build Networking tools and security-tools that are widely used.Python's remote automation is the most secured, fast and efficient for cloud-testing
 of frameworks, that's why professional developers use python for making most secured frameworks and for socket-programmings.
 
+##### Network Testing
+Python can be used in network testing for packet generation. Generation of different streams of traffic and traffic replay can be performed using Scapy. This can be particularly useful in generation of different types of packet streams like VoIP, video, data for QoS testing.
+
 ##### Machine Learning, Deep Learning:
 Python is one of the best languages suited for machine learning, deep learning and data analytics with a stronghold in all of them.
 
