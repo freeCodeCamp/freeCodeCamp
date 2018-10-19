@@ -67,6 +67,7 @@ Most common operations available on List are,
 6. Access / Peek - Access an existing element from the List.
 7. Size / Count - Returns the number of elements currently present in the List.
 8. IsEmpty - Check whether the List is empty or not.
+9. Reverse - Reversing a linear linked list.
 
 #### Implementation of a Simple Linked List in C++
 ```cpp
@@ -419,6 +420,80 @@ int main()
   return 0;
 }
 ```
+
+#### Implementation of a Simple Linked List in Java
+```
+class Node {
+	int data;
+	Node next;
+
+	Node(int d) {
+		data = d;
+		next = null;
+	}
+}
+
+class LinkedList {
+	// Create a linked list with atleast one node
+	Node head;
+	LinkedList(int data) {
+		head = new Node(data);
+	}
+
+	public void addNode(int data) {
+		Node temp = new Node(data);
+		temp.next = head;
+		head = temp;
+	}
+
+	public void reverseLinkedList() {
+		// No need for changes or reversal.
+		if (head == null || head.next == null) {
+			return;
+		}
+		else {
+			Node temp = head;
+			Node curr = head.next;
+			temp.next = null;
+			while (curr != null && curr.next != null) {
+				Node newNode = curr.next;
+				curr.next = temp;
+				temp = curr;
+				curr = newNode;
+			}
+
+			curr.next = temp;
+			head = curr;
+
+		}
+	}
+
+	public void printLinkedList() {
+		Node temp = head;
+		System.out.println();
+		while (temp != null) {
+			System.out.print(temp.data + " ");
+			temp = temp.next;
+		}
+		System.out.println();
+	}
+}
+
+public class LinkedListWork {
+	public static void main(String[] args) {
+		LinkedList ll = new LinkedList(1);
+		ll.addNode(2);
+		ll.addNode(3);
+		ll.addNode(4);
+		ll.addNode(5);
+		ll.printLinkedList();
+
+		ll.reverseLinkedList();
+		ll.printLinkedList();
+	}
+}
+```
+
 #### More Information:
 * <a href='http://www.geeksforgeeks.org/linked-list-set-1-introduction/' target='_blank' rel='nofollow'>Introduction to Linked Lists</a>
 * <a href='https://www.youtube.com/watch?v=njTh_OwMljA' target='_blank' rel='nofollow'>Linked Lists (YouTube video)</a>
