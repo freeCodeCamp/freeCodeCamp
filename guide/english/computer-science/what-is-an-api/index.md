@@ -57,3 +57,4 @@ In the example above, a developer made a request for the current weather at a sp
 * [API for non-programmers](https://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Application_programming_interface)
 * [Medium](https://medium.com/girl-geeks/top-10-apis-for-beginners-4d3c43be9386)
+* [Collective list of APIs](https://apilist.fun/)
