@@ -4,7 +4,8 @@ title: Binary Search
 
 ## Binary Search
 
-A binary search locates an item in a sorted array by repeatedly dividing the search interval in half.
+A binary search locates an item in a sorted array by repeatedly dividing the search interval in half.It is better than linear search in cases where we have an already sorted array.
+
 ![](images/binary_search.gif "Binary Search vs Sequential Search")
 
 
@@ -337,6 +338,12 @@ int binarySearch(int[] arr, int start,int end , int element)
 }
 
 ```
+###Some SPOJ Problems related to Binary Search
+* [ABCDEF](https://www.spoj.com/problems/ABCDEF/)
+* [AGGRCOW](https://www.spoj.com/problems/AGGRCOW/)
+* [SUBSUMS](https://www.spoj.com/problems/SUBSUMS/)
+* [RENT](https://www.spoj.com/problems/RENT/)
+* [ANARC05B](https://www.spoj.com/problems/ANARC05B/)
 
 ### More Information
 * [Binary search (YouTube video)](https://youtu.be/P3YID7liBug)
