@@ -3,9 +3,7 @@ title: Jupyter Notebook
 ---
 ## Jupyter Notebook
 
-Jupyter Notebook is an open-source web application. It allows you to create and share documents that contain live code, equations, visualizations and narrative text.
-
-The Jupyter Notebook helps you create and share documents containing live code, equations, visualizations and rich text.   
+Jupyter Notebook is an open-source web application. It allows you to create and share documents that contain live code, equations, visualizations and narrative text. Because of the individual codecells and narrative text, the contents of the notebook are displayed in a structured manner and more easily understandable.
  
 You can use it for:
 * data cleaning and transformation
@@ -34,8 +32,14 @@ A kernel is a program that runs and introspects the user’s code. The Jupyter N
 
 ## Installation
 You can use Anaconda or Pip to install Jupyter notebook.
-For steps to do so, refer to the official guide 
+For an in-depth explaination, refer to the official guide 
 <a href='https://jupyter.readthedocs.io/en/latest/install.html'> here.</a>
+
+Jupyter notebooks automatically come with the distribution. You'll be able to use notebooks from the default environment.
+
+To install Jupyter notebooks in a conda environment: `conda install jupyter notebook`
+
+To install Jupyter notebooks with pip: `pip install jupyter notebook`
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
@@ -79,11 +83,6 @@ Jupyter notebooks grew out of the IPython project started by Fernando Perez. IPy
 
 When you save the notebook, it is written to the server as a JSON file with a **.ipynb** file extension
 The new name Jupyter comes from the combination of **Ju**lia, **Py**thon, and **R**. there are a lot of kernels for different languages to use Jupyter. you could check the [list of available Jupyter kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels).
-
-### Installing Jupyter Notebook
-Jupyter notebooks automatically come with the distribution. You'll be able to use notebooks from the default environment.
-To install Jupyter notebooks in a conda environment: `conda install jupyter notebook`
-To install Jupyter notebooks with pip: `pip install jupyter notebook`
 
 #### More Information:
 * [Jupyter Org Website](http://jupyter.org)
