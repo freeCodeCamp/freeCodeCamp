@@ -54,3 +54,4 @@ fs.access(`${apiPath}/server/resources/pathMigration.json`, err => {
 
 fs.writeFileSync(`${clientPath}/config/env.json`, JSON.stringify(env));
 fs.writeFileSync(`${globalConfigPath}/env.json`, JSON.stringify(env));
+console.log("Happy Pandas")
