@@ -25,6 +25,6 @@ If `x` is false or omitted, this returns `False`; otherwise it returns `True`.
     print(bool((2,3,4))) # Returns True as tuple is a non-zero value
     print(bool([])) # Returns False as list is empty and equal to 0 according to truth value testing
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CVCS/2' target='_blank' rel='nofollow'>Run Code</a>
+<a href='https://repl.it/CVCS/2' target='_blank' rel='nofollow'>Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#bool' target='_blank' rel='nofollow'>Official Docs</a>
