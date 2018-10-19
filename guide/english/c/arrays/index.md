@@ -168,3 +168,71 @@ The reason for C not checking the indexing bound is simple: C is an efficient la
 
 - When you try to access the last element of the array. Suppose the length of the array A be 4 and while accessing the last element as
 A[4] will return an error, as the the indexing starts from 0.
+
+## Creating a stack using an array
+Stack is a linear data structure which follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out).
+Here I am implementing a stack and some operations on that stack using an array.
+```C
+#include<stdio.h>
+#include<stdlib.h>
+int stack[5];
+int top=0;
+void push(int);
+void pop();
+void travers();
+int main(){
+    int elemenet,choice;
+    while(1){
+        printf("Eneter your choice!!\n");
+        printf("1.insert an element to the stack \n");
+        printf("2.Delete an element from the stack \n");
+        printf("3.Travers the stack \n");
+        printf("4.Exit \n");
+        scanf("%d",&choice);
+        switch(choice)
+        {
+            case 1:
+            if (top==5){
+            printf("Overflow , we can't insert any new number \n");
+            }
+            else{
+            printf("Enter the number you want to insert \n");
+            scanf("%d",&elemenet);
+            push(elemenet);
+            }
+            break;
+            case 2:
+            if (top==0){
+            printf("The stack is empty! \n");
+            }
+            else{
+            pop();
+            }
+            break;
+            case 3:
+            travers();
+            break;
+            case 4:
+            exit(0);
+        
+    }
+
+    }
+
+return 0;
+}
+void push(int element){
+    stack[top] = element;
+    printf("\n %d is inserted\n",stack[top]);
+   top++;
+}
+void pop(){
+    top--;
+}
+void travers(){
+    printf("element in the stack are:\n");
+    for(int i=top-1;i>=0;i--){
+        printf("%d \n",stack[i]);
+    }
+}
+```
