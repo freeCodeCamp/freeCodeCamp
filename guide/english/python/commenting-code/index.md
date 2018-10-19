@@ -1,7 +1,7 @@
 ---
 title: Python Commenting Code
 ---
-Comments are used to annotate, describe, or explain code that is complex or difficult to understand. Python will intentionally ignore comments when it compiles to bytecode by the interpreter. <a href='https://www.python.org/dev/peps/pep-0008/#comments' target='_blank' rel='nofollow'>`PEP 8`</a> has a section dealing with comments.They also increases the readablity of code by adding easy and descriptive language for better understanding.
+Comments are used to annotate, describe, or explain code that is complex or difficult to understand. Python will intentionally ignore comments when it compiles to bytecode by the interpreter. <a href='https://www.python.org/dev/peps/pep-0008/#comments' target='_blank' rel='nofollow'>`PEP 8`</a> has a section dealing with comments. They also increase the readablity of code by adding easy and descriptive language for better understanding.
 
 **Block** and **inline** comments start with a `#`, followed by a space before the comment:
 
