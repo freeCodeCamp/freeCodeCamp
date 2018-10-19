@@ -48,4 +48,5 @@ Firebase Quickstart-Android [android-sample](https://github.com/firebase/quickst
 
 ## Note
 Google now deprecated 'compile' and in place of that you need to use 'implementation'.
+Check dependencies in case of errors
 
