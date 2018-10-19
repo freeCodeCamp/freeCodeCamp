@@ -45,6 +45,14 @@ let newOneWithOneParam = a => {
 }
 ```
 
+When there is only one statement or operation in the body's section, brackers are optional and the result is returned or undefined.
+
+```javascript
+let a = 10;
+let newOneParamWithNoBrackets = b => a + b;
+console.log(newOneParamWithNoBrackets(20)); // 30
+```
+
 An incredible advantage of the arrows function is that you can not rebind an arrow function. It will always be called with the context in which it was defined. Just use a normal function.
 ```javascript
 // Old Syntax
