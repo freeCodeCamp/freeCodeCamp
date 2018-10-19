@@ -1,5 +1,5 @@
 ---
-title: Animations
+Title: Animations
 ---
 
 # Animations
