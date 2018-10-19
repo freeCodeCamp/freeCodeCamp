@@ -46,12 +46,6 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
 	      <th>Amount</th>
 	    </tr>
 	  </thead>
-	  <tfoot>
-	    <tr>
-	      <td>Apple</td>
-	      <td>10</td>
-	    </tr>
-	  </tfoot>
 	  <tbody>
 	    <tr>
 	      <td>Peach</td>
@@ -62,6 +56,12 @@ A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `
 	      <td>3</td>
 	    </tr>
 	  </tbody>
+          <tfoot>
+	    <tr>
+	      <td>Apple</td>
+	      <td>10</td>
+	    </tr>
+	  </tfoot>      
 	</table>
 	</body>
    </html>
@@ -74,12 +74,6 @@ Result:
 	      <th>Amount</th>
 	    </tr>
 	  </thead>
-	  <tfoot>
-	    <tr>
-	      <td>Apple</td>
-	      <td>10</td>
-	    </tr>
-	  </tfoot>
 	  <tbody>
 	    <tr>
 	      <td>Peach</td>
@@ -90,6 +84,12 @@ Result:
 	      <td>3</td>
 	    </tr>
 	  </tbody>
+          <tfoot>
+	    <tr>
+	      <td>Apple</td>
+	      <td>10</td>
+	    </tr>
+	  </tfoot>
 	</table>
 
 
