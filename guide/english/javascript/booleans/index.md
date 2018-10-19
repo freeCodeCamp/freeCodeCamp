@@ -22,6 +22,7 @@ There are only a few values that will be coerced to false:
 - NaN
 - 0
 - '' or "" (empty string)
+- [] (empty array)
 
 All other values will be coerced to true. 
 When a value is coerced to a boolean, we also call that either 'falsy' or 'truthy'.
