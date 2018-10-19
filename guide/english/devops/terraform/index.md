@@ -9,6 +9,11 @@ build the infrastructure in a service provider such as OpenStack or in a service
 IBM Cloud (formerly Bluemix), AWS, Microsoft Azure or Google Cloud Platform. Infrastructure is defined
 in a HCL Terraform syntax or JSON format.
 
+Terraform is becoming more popular among cloud service providers. Terraform is integrated into the Azure
+cloud shell. Google has a project team working to create GCP specific modules to make starting up
+resources much quicker. As popular as Terraform is becoming AWS CloudFormation and Terraform are not
+compatible.
+
 #### More Information:
 
 - <a href="https://www.terraform.io">Official Website</a>
