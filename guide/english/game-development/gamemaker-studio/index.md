@@ -3,7 +3,7 @@ title: GameMaker Studio
 ---
 
 ## GameMaker Studio
-GameMaker Studio, previously known as GameMaker, is a cross-platform game development software primarily focused on creating 2d games 
+GameMaker Studio, previously known as GameMaker, is a cross-platform game development software primarily focused on creating 2D games 
 using drag and drop action sequences or a scripting language known as Game Maker Language (GML).
 
 ### Overview:
@@ -11,7 +11,8 @@ GameMaker allows it's users to create and prototype games quickly without the ne
 consists of at least 3 things: sprites (images & animations), objects (logic & interactivity) and rooms (screens & levels). 
 Each game needs at least one room which is used for both menus and levels, and the transitioning between each.
 
-GameMaker Studio 2 released on 2 November 2016. 
+GameMaker Studio 2 released on 2 November 2016 and GameMaker Studio 1 was brought off the market and is no longer available for purchase. 
+Gamemaker Studio 2 came with an update to GML, the DnD system and a complete overhaul of the GUI.
 
 ### Supported Platforms:
 * Microsoft Windows
@@ -37,6 +38,7 @@ PlayStation Portable and Raspberry Pi support was demonstrated but not released.
 * VA-11 Hall-A
 * Undertale
 * Nuclear Throne
+* Don't Sink
 
 #### More Information:
 * [Wikipedia] https://en.wikipedia.org/wiki/GameMaker_Studio<br>
