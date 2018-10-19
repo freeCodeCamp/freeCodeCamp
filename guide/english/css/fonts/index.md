@@ -48,6 +48,7 @@ There are different types of font size values:
 
 * `px` (pixels) - The default size of text being `16px`
 * `em` - `1em` = the current font size, so `1em` = `16px` (recommended by the W3C)
+* `rem` - `1rem` = the font size of the HTML element, or the browser's default font size
 * `small`, `medium`, `large` - known as absolute size values
 * `%` - percentages
 
