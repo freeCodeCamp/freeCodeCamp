@@ -12,7 +12,6 @@ What is great about data science is that there are numerous pathways to becoming
 There are a few tools that you can start learning to get into data science. R remains the leading tool, with 49% share, but use of the Python language is growing fast, and is approaching the popularity of R. RapidMiner remains the most popular general Data Science platform. Big Data tools used by almost 40%, and Deep Learning usage doubles.
 Data Science is OSEMN (**O**btain, **S**crub, **M**odel, i**N**terpret) the Data.
 
-One free resource for Data Science and Machine Learning is by Open Source Data Science Masters. To follow
 
 [Resources for Data Science]
 
