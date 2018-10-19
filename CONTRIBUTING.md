@@ -35,7 +35,7 @@ You can choose to contribute to any area that interests you:
 
 We have a huge open source codebase of the thousands of [coding challenges](https://learn.freecodecamp.org) and [guide articles](https://guide.freecodecamp.org).
 
-You can help us:
+You can help us with this:
 
 - [📝 Research, Write and Update our guide articles](#research-write-and-update-our-guide-articles)
 
