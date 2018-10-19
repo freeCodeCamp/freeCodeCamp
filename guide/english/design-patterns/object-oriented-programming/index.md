@@ -25,3 +25,5 @@ This helps in reusing code and making you rcode structure much more clean. Data 
 
 ## What next?
 Pick an OO language, and build a basic terminal based game to illustrate these concepts.
+
+Suggested Read - https://sourcemaking.com/design-patterns-and-tips
