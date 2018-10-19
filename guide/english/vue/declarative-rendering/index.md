@@ -47,13 +47,13 @@ let app = new Vue({
 });
 ```
 
-With those snipets, you're telling Vue to dynamically render whatever is stored
+With those snippets, you're telling Vue to dynamically render whatever is stored
 inside `message` variable. And the fun: whenever `message` is changed,
 Vue.js manages to reload that specific part of the DOM and you see the
 change. 
 
-If you want to try this reactivity out, open the console and change de value
-of `app.message` to, say, `"Hello from console"`. Did you notice the change in
+If you want to try this reactivity out, open the console and change the value
+of `app.message` to say, `"Hello from console"`. Did you notice the change in
 the page?
 
 The `{{ ... }}` is the syntax for that behavior: outputting the value
@@ -66,7 +66,7 @@ will result in `hello`:
 </div>
 ```
 
-There're cases which what we want is to set an attribute using our Vue app's
+There're cases in which what we want is to set an attribute using our Vue app's
 variable.  You might think that the same syntax applies, but Vue has something
 specific for that, what we call "binding".
 
