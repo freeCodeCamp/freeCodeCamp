@@ -17,3 +17,7 @@ Two of the most common technologies used are :
 - Ethereum
 - Hyperledger
 
+## More Information
+
+How smart contracts work in the Ethereum Blockchain: https://www.coindesk.com/information/ethereum-smart-contracts-work/
+
