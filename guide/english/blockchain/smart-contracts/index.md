@@ -10,6 +10,14 @@ As a piece of code that sits on the blockchain, a smart contract can automate ta
 When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
 
+### Smart Contracts in Ethereum
+
+Smart contracts in ethereum are written using Solidity, its a high-level, contract-oriented programmng language, and targets Ethereum Virtual Machine, one can use Remix online IDE to try writting and deploying smart contracts
+
+### Smart Contracts in Hyperledger
+
+Smart contracts in Hyperledger is called chaincode, and is written in Golang programming language.
+
 
 ## Blockchain Technologies
 
