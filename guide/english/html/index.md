@@ -3,7 +3,7 @@ title: HTML
 ---
 
 # HTML
-
+It is a standardized system for tagging text files to achieve font, colour, graphic, and hyperlink effects on World Wide Web pages.
 HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to 1) create links to other documents, 2) structure the content in our document, and 3) ascribe context and meaning to the content of our document.
  
 An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
