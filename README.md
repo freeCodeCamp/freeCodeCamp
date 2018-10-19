@@ -36,7 +36,7 @@ The one exception to this is in the event that we discover violations of our [Ac
 Here are our six core certifications:
 
 #### 1. Responsive Web Design Certification
-
+- happy faces
 - Basic HTML and HTML5
 - Basic CSS
 - Applied Visual Design
