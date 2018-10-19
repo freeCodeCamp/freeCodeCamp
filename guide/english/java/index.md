@@ -115,7 +115,7 @@ Java is heavily <a href='https://docs.oracle.com/javase/8/docs/' target='_blank'
 Also, here is a list of free IDEs for Java coding:
 * <a href='https://netbeans.org/' target='_blank' rel='nofollow'>NetBeans</a>
 * <a href='https://eclipse.org/' target='_blank' rel='nofollow'>Eclipse</a>
-* <a href='https://www.jetbrains.com/idea/features/' target='_blank' rel='nofollow'>IntelliJ IDEA</a>
+* <a href='https://www.jetbrains.com/idea/features/' target='_blank' rel='nofollow'>IntelliJ IDEA</a> <a href='https://education.github.com/pack' target='_blank' rel='nofollow'>(Get premium as a student!)</a>
 * <a href='https://developer.android.com/studio/index.html' target='_blank' rel='nofollow'>Android Studio</a>
 * <a href='https://www.bluej.org/' target='_blank' rel='nofollow'>BlueJ</a>
 * <a href='http://www.jedit.org/' target='_blank' rel='nofollow'>jEdit</a>
