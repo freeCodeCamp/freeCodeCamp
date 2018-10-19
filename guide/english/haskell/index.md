@@ -48,3 +48,4 @@ Hackage provides documentation for Haskell
 ## Want to learn more?
 * Haskell wiki <a href='https://wiki.haskell.org/Haskell' target='_blank' rel='nofollow'>link</a>
 * Learn You a Haskell for Great Good <a href='http://learnyouahaskell.com/' target='_blank' rel='nofollow'>website</a>
+* Try Haskell in your browser <a href='https://www.tryhaskell.org/' target='_blank' rel='nofollow'>website</a>
