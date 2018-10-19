@@ -61,6 +61,12 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+#### Head First Python by Paul Barry
+- This book is highly engaging for the beginner. It puts illustrations and learning aids at the center of learning to help you code Python. If you've given up learning Python half-way through a tough book, this is the solution to finally go all the way.
+-[Amazon] (https://www.amazon.com/gp/product/1491919531/ref=as_li_tl?ie=UTF8&tag=stackabuse-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1491919531&linkId=3994ea3ef029e0ff7251abf31c6e010c)
+
+- ISBN-13: 978-1491919538
+- ISBN-10: 9781491919538
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
