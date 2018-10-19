@@ -100,3 +100,4 @@ which would end up looking like:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * [HTML lists on w3schools](https://www.w3schools.com/html/html_lists.asp)
 
+* HTML Online Training - Absolute Beginners (https://www.tutorialspoint.com/html_online_training/index.asp)
