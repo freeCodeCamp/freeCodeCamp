@@ -35,7 +35,11 @@ This rule changes the font color of all p elements to green, just like above.
 
 ### Hexadecimal Values
 
-Hexadecimal values are yet another way to define colors in CSS and they work quite similarly to RGB values.<br>
+Hexadecimal values are yet another way to define colors in CSS and they work quite similarly to RGB values. It is supported in all browsers.<br>
+
+**A hexadecimal color is specified with: #RRGGBB** <br>
+
+RR(Red), GG(Green), BB(Blue) are hexadecimal integers between 00 and FF specify the intensity of the color. <br>
 
 A random hex code would like this: `#29432b`, where the first two characters after the hash stand for the amount of RED in the mix, the second two stand for the amount of Green and the last two stand for the amount of Blue.<br> 
 
@@ -76,10 +80,19 @@ Color names take only 140 values, while RGB and HEX values have 16,777,216 possi
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
-#### More Information:
+### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [w3schools](https://www.w3schools.com/colors/default.asp)
 
 [W3 Draft Documentation](https://drafts.csswg.org/css-color-3/#color)
 
 [MDN | CSS colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
+
+### Useful Tools
+[0to255](http://www.0to255.com/)
+
+[Flat UI Colors](https://flatuicolors.com/)
+
+[Materials Design Palette](https://www.materialpalette.com/)
+
+[Color Hunt](https://colorhunt.co/)
