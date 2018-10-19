@@ -71,7 +71,7 @@ function getResults(results){
 serverRequest("The glass is half ", getResults);
 
 // Result in console after 5 second delay:
-// Response from the server: The glass is half full!
+
 ```
 
 In the above example, we make a mock request to a server. After 5 seconds elapse the response is modified and then our callback function `getResults` gets executed. To see this in action, you can copy/paste the above code into your browser's developer tool and execute it.
