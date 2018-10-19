@@ -13,3 +13,4 @@ There are a few tools that you can start learning to get into data science. R re
 Data Science is OSEMN (**O**btain, **S**crub, **M**odel, i**N**terpret) the Data.
 There is one good resource for Data Science and Machine Learning by Open Source Data Science Masters. Follow on github  datasciencemasters!!!
 * [Resources for Data Science](https://github.com/datasciencemasters/go)
+ change
