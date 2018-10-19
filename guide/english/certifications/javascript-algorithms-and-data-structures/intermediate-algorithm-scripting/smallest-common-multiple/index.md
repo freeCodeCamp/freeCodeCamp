@@ -151,6 +151,29 @@ Note: If the array only has two elements, then the `for` loop never gets used an
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-max/14682' target='_blank' rel='nofollow'>JS Math Max</a>
 *   <a href='http://forum.freecodecamp.com/t/javascript-math-min/14684' target='_blank' rel='nofollow'>JS Math Min</a>
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Intermediate Code Solution 2:
+
+    function smallestCommons(arr) {
+      // Creates array consists of sequential numbers in the range
+      let numbers = Array.from(Array(Math.abs(arr[0] - arr[1]) + 1), (_, i) => Math.min(arr[0], arr[1]) + i);
+      
+      // the biggest number in the sequence, is the smallest possible common multiple
+      let checked = numbers[numbers.length - 1];
+      
+      // if checked isn't evenly divided by any number in the array, it's not the solution
+      while(numbers.some(num => checked % num != 0)) {
+        // the solution must evenly divided by the biggest number in the sequence
+        checked += numbers[numbers.length - 1];
+      }
+      
+      return checked;
+    }
+
+    smallestCommons([1,5]);
+    
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/TurboGrubbyAbstraction' target='_blank' rel='nofollow'>Run Code</a> 
+
+
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 
     function smallestCommons(arr) {  
