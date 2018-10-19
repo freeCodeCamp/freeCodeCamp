@@ -1,9 +1,7 @@
-
 ---
 title: Blender
 ---
-
-#Blender
+## Blender
 
 Blender is a free and open source 3D creation suite. It's used for modeling, creating photorealistic renders, simulation, model sculpting, architecture models, compositing, character design, animation, rigging, level design, 2D rendered scenes, motion graphics, game development, VFX, video editing and even much more!
 
@@ -11,7 +9,7 @@ The Blender software is cross-platform that runs on Windows, Linux and Mac.Blend
 
 Blender is free and open source software, released under the  *GNU General Public License (GPL)**.
 
-#### More Information: 
+#### More Information:
 
 * [Blender Official Website](https://www.blender.org)
 * [Blender Documentation](https://docs.blender.org/)

@@ -1,4 +1,8 @@
-# WebSockets
+---
+title: WebSockets
+---
+
+## WebSockets
 
 *Web Sockets* is a technology that allows you to create an interactive connection between a client and a server for exchanging data in real time. WebSockets allow you to work in two streams, which distinguishes this technology from HTTP.
 

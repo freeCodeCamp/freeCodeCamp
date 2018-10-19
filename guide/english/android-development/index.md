@@ -42,7 +42,7 @@ Now, coming back to the second set of programmers who wants to learn Android dev
 
 A class which takes 50 lines of code in Java can really be written in just one line in Kotlin. It can help you avoid all boiler-plate code, e.g. you don't need to specify getters and setters, equals(), hashCode() or toString() methods. Kotlin can generate all that by itself.
 
-If you don't know, Kotlin was development by JetBrains, the company behind one of the most popular Java IDEs, IntelliJ IDEA. They were a Java shop and developing IDEs like IntelliJ IDEA, PyCharm, and ReSharper, all in Java, and built Kotlin to improve their productivity, but at the same time, they cannot rewrite all their code in Kotlin, so that's why they made Kotlin fully interoperable with Java.
+If you don't know, Kotlin was developed by JetBrains, the company behind one of the most popular Java IDEs, IntelliJ IDEA. They were a Java shop and developing IDEs like IntelliJ IDEA, PyCharm, and ReSharper, all in Java, and built Kotlin to improve their productivity, but at the same time, they cannot rewrite all their code in Kotlin, so that's why they made Kotlin fully interoperable with Java.
 
 Because Kotlin generates Java bytecode, you can use your favorite Java frameworks and libraries in Kotlin and your Java friends can also use any Kotlin framework you develop.
 

@@ -1,5 +1,5 @@
 ---
-  title: Tableau
+title: Tableau
 localeTitle: mesa
 ---
 # Quadro
