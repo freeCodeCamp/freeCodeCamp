@@ -39,3 +39,4 @@ Just because some fonts are safer than others does not mean you should confine y
 * [MDN Documentation: Fundamental text and font styling](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Fundamentals#Web_safe_fonts)
 * [MDN Documentation: Web fonts](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Web_fonts)
 * [Web Safe Fonts](https://www.cssfontstack.com)
+* 15 Of The Best Web Safe Fonts For HTML and CSS (https://websitesetup.org/web-safe-fonts-html-css/)
