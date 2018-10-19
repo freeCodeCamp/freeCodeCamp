@@ -28,3 +28,6 @@ BSD includes a 'Jails' system which is somewhat analogous to Linux Containers --
 
 [Comparison of BSD operating systems (Wikipedia.org)](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems)
 
+My Change
+
+BSD OS open a world of opensource use for maintaining and controlling the scheduler and timeline 
