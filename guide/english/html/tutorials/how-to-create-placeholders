@@ -1,0 +1,21 @@
+## How to create PlaceHolders
+
+Originally we had to depend on javascript to create Placeholders. 
+You can set the calue attribute how you see fit but as soon as the user deletes the text and clicks away 
+,the input will be left blank again. The <code> placeholder </code>  attribute remedies this.
+
+
+```html
+
+<input name="email" type="email" placeholder="doug@givethesepeopleair.com" />
+
+```
+
+Support across browsers is limited. Firefox and opera don't currently support the placeholder attribute.
+
+
+
+
+
+
+Reference: https://code.tutsplus.com/tutorials/28-html5-features-tips-and-techniques-you-must-know--net-13520
