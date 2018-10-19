@@ -117,6 +117,7 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
   - The dialog box should be visible
   - And The dialog box should contain an input box
   - And The input box should have placeholder text "Your name, please!"
+  - And The dialog box shoud contain an OK button
 
 ### Notes
 
