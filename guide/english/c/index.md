@@ -109,6 +109,10 @@ Make a new program with `file` -> `new` -> `file`, select C/C++ source, select C
 <a href='https://sourceforge.net/projects/orwelldevcpp/' target='_blank' rel='nofollow'>Dev-C++ can be downloaded from here.</a>
 Make a new program with `file` -> `new` -> `Source File`, then copy over the helloworld.c text that you read through earlier and then save the file with`file` -> `save As`  as hello.c , and Compile and run the code with `Execute` -> `Compile & Run`.
 
+#### Other Resources
+[Amazon](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628/ref=sr_1_1?ie=UTF8&qid=1539942443&sr=8-1&keywords=C+dennis+ritchie)
+[PDF Link](https://www.dipmat.univpm.it/~demeio/public/the_c_programming_language_2.pdf)
+
 # Before you go on...
 
 ## A review
