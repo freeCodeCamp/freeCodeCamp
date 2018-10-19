@@ -9,7 +9,7 @@ In Python 2, there was a distinction between **`int`**, numbers that fit in a 32
 
 <a href='https://docs.python.org/3/reference/lexical_analysis.html#integer-literals' target='_blank' rel='nofollow'>Integer Literals</a>
 
-_Integer objects_ can be created using using integer literals. Unadorned numbers without decimals are integer literals:
+_Integer objects_ can be created using integer literals. Unadorned numbers without decimals are integer literals:
 
     >>> 1234567890           # Unadorned numbers are integer literals
     1234567890
