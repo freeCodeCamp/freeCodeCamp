@@ -42,3 +42,9 @@ const Nav = () => (
   </div>
 )
 ```
+
+## Protected Routes and Authentication
+Only want users to access a protected route based on authentication?
+Check out this article by Tyler McGinnis:
+https://tylermcginnis.com/react-router-protected-routes-authentication/
+
