@@ -23,3 +23,6 @@ Room ventilation - Locate the computer where it is neutral to the rooms environm
 * Cable Management = Having a rat's nest of cables can block airflow and make your computer hotter. It is reccomended to take some time to cable manage after building a computer, because it can increase the lifespan of your computer in the future.
 
 [Wikipedia - Article on computer cooling](https://en.wikipedia.org/wiki/Computer_cooling)
+
+My changes.
+ Smart cooling - If you have low budget on cooling and you are thinking of fan cooling , then let me tell you the best ways for that is to check the fan directional cooling . Well you might ask what that is. What if you add two fans in your case but they both are sucking the air inside then this will create an air chocked (hot air choke). What should you do is take one fan that takes the air in and other that takes the air out from the system. I have tried this and it works. How do i know this from Linus Tech Tips
