@@ -62,6 +62,7 @@ _Note: Do not include the dot in the HTML Class Attribute, referring to the clas
 </button>
 
 _Note: Bootstrap's Glyphicons icon is not avalable on bootstrap V4_
+_However, it still works with the V3.3.7 which is avaialble at the link provided below.
 
 ### More Information:
 
