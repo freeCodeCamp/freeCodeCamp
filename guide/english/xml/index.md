@@ -42,6 +42,14 @@ In this example 'note' is the root element.
 
 In Computer Language, eXtensible Markup Language(XML) is that which defines a set or block of Rules which are later used for Encoding documents in such a Format which is both Machine and Human Readable.
 
+XML was replaced by JSON as the main language for transferring data but XML is still widely used to create user interfaces for Android, JavaFX and general GUI design due to its expressive quality. The following example is a view created with a framework called SAPUI5 that uses XML:
+```
+          <m:FlexBox wrap="NoWrap" fitContainer="true" alignItems="Center" class="sapUiTinyMarginEnd">
+            <m:Title text="{products>Name}" wrapping="true" class="sapUiTinyMarginEnd"/>
+          </m:FlexBox>
+```
+As you can see, XML is quite similar to HTML, but the difference lies in the functionality.
+
 There is a main thing between XML and HTML which makes them different from each other. It is that XML was designed to carry a particular information and focuses on that informaion only. And HTML focuses on displaying that particular Information like design and all these stuff regarding the information.
 
 Also XML does not uses a predefined tags as used by HTML. It uses user defined tags.
