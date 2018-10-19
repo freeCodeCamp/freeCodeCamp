@@ -20,6 +20,8 @@ JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` 
 
 _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_(' target='_blank' rel='nofollow'>increment</a>) operator that is a great shortcut when you're adding numbers by 1.
 
+_Hint:_ The spaces between the values and the operator are optional (the calculation will work fine without them), but it is generally accepted best practice to include them.
+
 ## Subtraction
 
 **Syntax**
@@ -36,6 +38,8 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 
 _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--' target='_blank' rel='nofollow'>decrement</a>) operator that is a great shortcut when you're subtracting numbers by 1.
 
+_Hint:_ The spaces between the values and the operator are optional (the calculation will work fine without them), but it is generally accepted best practice to include them.
+
 ## Multiplication
 
 **Syntax**
@@ -51,6 +55,8 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     5 * "foo"            // returns NaN (Not a Number)
     Infinity * 0         // returns NaN
     Infinity * Infinity  // returns Infinity
+
+_Hint:_ The spaces between the values and the operator are optional (the calculation will work fine without them), but it is generally accepted best practice to include them.
 
 ## Division
 
@@ -70,6 +76,8 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     5 / "foo"            // returns NaN (Not a Number)
     Infinity / Infinity  // returns NaN
 
+_Hint:_ The spaces between the values and the operator are optional (the calculation will work fine without them), but it is generally accepted best practice to include them.
+
 ## Remainder
 
 **Syntax**
@@ -82,6 +90,8 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     true % 5       // interprets true as 1 and returns 1
     false % 4      // interprets false as 0 and returns 0
     3 % "bar"      // returns NaN
+
+_Hint:_ The spaces between the values and the operator are optional (the calculation will work fine without them), but it is generally accepted best practice to include them.
 
 ## Increment
 
