@@ -1,6 +1,3 @@
----
-title: Software Engineering
----
 ## Software Engineering
 
 The field of **software engineering** is the study of techniques and strategies in order to efficiently manage the entire life cycle of software development.
@@ -22,3 +19,4 @@ In this age where software can be used maliciously to steal information or do ha
 - <a href='https://github.com/kilimchoi/engineering-blogs' target='_blank' rel='nofollow'>Curated List of Engineering Blogs</a>
 - <a href='http://www.acm.org/about/se-code' target='_blank' rel='nofollow'>Software Engineering Code of Ethics and Professional Practice</a>
 - <a href='https://en.wikipedia.org/wiki/Software_engineering' rel='nofollow'>Wikipedia Article</a>
+- [Fundamentals of Software Engineering](https://www.amazon.in/Fundamentals-Software-Engineering-Mall-B/dp/8120348982)
