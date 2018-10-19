@@ -34,6 +34,9 @@ def gradient_descent_runner(points, starting_b, starting_m, learning_rate, num_i
     return [b, m]
 
 gradient_descent_runner(wheat_and_bread, 1, 1, 0.01, 100)
+
+You can refer to this article for deeper insight into regression  
+https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
 ```
 
 Code example is from <a href='http://blog.floydhub.com/coding-the-history-of-deep-learning/' target='_blank' rel='nofollow'>this article</a>. It also explains gradient descent and other essential concepts for deep learning.
