@@ -30,6 +30,12 @@ Lastly, learn to integrate 3rd party libraries and Firebase services to add func
 
 Ever since Google announced Kotlin as the official language for Android development at Google IO in 2017, programmers who want to become Android developers are in a dilemma. The big question in front of them is whether they should learn Kotlin or Java.
 
+#### Flutter
+
+Flutter is Google’s mobile app SDK for crafting high-quality native interfaces on iOS and Android in record time. Flutter works with existing code, is used by developers and organizations around the world, and is free and open source. Flutter is based on Google's Dart language.
+
+[Reference](https://flutter.io/)
+
 ##### Beginners in Android Development Should Start With Java
 
 The first and foremost thing is that Android development is not everything; as a programmer, you may be starting your career with Android development, but if you start with a well-established language like Java, you become a part of the bigger Java community and market, which directly means more job opportunities.
