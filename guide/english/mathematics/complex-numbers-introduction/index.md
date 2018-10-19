@@ -12,6 +12,9 @@ A complex number is any number that can be expressed in the form of z = a + ib.
 #### Note
 A pure imaginary number or a pure real number is also a complex number.
 
+Geometrically, complex numbers can be plotted on the two-dimensional complex plane in the form (a,b). 
+![i](https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Complex_number_illustration.svg/220px-Complex_number_illustration.svg.png)
+
 #### Examples
 1. What is the real part of 2i+1?
 A. Real part : 1
