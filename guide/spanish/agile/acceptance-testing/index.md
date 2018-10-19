@@ -8,37 +8,37 @@ Pruebas de aceptación, una técnica de prueba realizada para determinar si el s
 
 Hay varias formas de pruebas de aceptación:
 
-\-> Pruebas de aceptación del usuario
-
-\-> Pruebas de aceptación de negocios
-
-\-> Pruebas alfa
-
-\-> Prueba Beta
+> - Pruebas de aceptación del usuario
+>
+> - Pruebas de aceptación de negocios
+>
+> - Pruebas alfa
+>
+> - Pruebas Beta
 
 # Criterios de aceptación
 
 Los criterios de aceptación se definen sobre la base de los siguientes atributos
 
-\-> Corrección funcional y exhaustividad
-
-\-> Integridad de datos
-
-\-> Conversión de datos
-
-\-> Usabilidad
-
-\-> Rendimiento
-
-\-> Puntualidad
-
-\-> Confidencialidad y disponibilidad
-
-\-> Instalación y capacidad de actualización
-
-\-> Escalabilidad
-
-\-> Documentación
+> - Corrección funcional y exhaustividad
+>
+> - Integridad de datos
+>
+> - Conversión de datos
+>
+> - Usabilidad
+>
+> - Rendimiento
+>
+> - Puntualidad
+>
+> - Confidencialidad y disponibilidad
+>
+> - Instalación y capacidad de actualización
+>
+> - Escalabilidad
+>
+> - Documentación
 
 # Plan de Pruebas de Aceptación - Atributos
 
@@ -46,45 +46,45 @@ Las actividades de prueba de aceptación se llevan a cabo en fases. En primer lu
 
 El plan de prueba de aceptación tiene los siguientes atributos:
 
-\-> Introducción
+> - Introducción
+>
+> - Categoría de prueba de aceptación
+>
+> - Ambiente de operación
+>
+> - ID de caso de prueba
+>
+> - Título de la prueba
+>
+> - Objetivo de prueba
+>
+> - Procedimiento de prueba
+>
+> - Horario de prueba
+>
+> - Recursos
 
-\-> Categoría de prueba de aceptación
+Las actividades de la prueba de aceptación están diseñadas para llegar a una de las conclusiones:
 
-\-> Ambiente de operación
+- Aceptar el sistema como entregado.
 
-\-> ID de caso de prueba
+- Aceptar el sistema una vez realizadas las modificaciones solicitadas.
 
-\-> Título de la prueba
-
-\-> Objetivo de prueba
-
-\-> Procedimiento de prueba
-
-\-> Horario de prueba
-
-\-> Recursos
-
-\=> Las actividades de la prueba de aceptación están diseñadas para llegar a una de las conclusiones:
-
-Aceptar el sistema como entregado.
-
-Aceptar el sistema una vez realizadas las modificaciones solicitadas.
-
-No aceptes el sistema
+- No aceptes el sistema
 
 # Informe de prueba de aceptación - Atributos
 
 El informe de prueba de aceptación tiene los siguientes atributos:
 
-\-> Identificador de informe
-
-\-> Resumen de Resultados
-
-\-> Variaciones
-
-\-> Recomendaciones
-
-\-> Resumen de la lista de tareas pendientes
+> Identificador de informe
+>
+> Resumen de Resultados
+>
+> Variaciones
+>
+> Recomendaciones
+>
+> Resumen de la lista de tareas pendientes
 
 # \-> Decisión de aprobación
 
@@ -116,17 +116,17 @@ Dado que la página está abierta El cuadro de diálogo debe ser visible Y el cu
 
 ### Notas
 
-Las Pruebas de aceptación se pueden escribir en cualquier idioma y se ejecutan utilizando varias herramientas disponibles que se ocuparían de la infraestructura mencionada anteriormente, por ejemplo, abrir un navegador, cargar una página, proporcionar los métodos para acceder a los elementos de la página, bibliotecas de afirmaciones, etc.
+- Las Pruebas de aceptación se pueden escribir en cualquier idioma y se ejecutan utilizando varias herramientas disponibles que se ocuparían de la infraestructura mencionada anteriormente, por ejemplo, abrir un navegador, cargar una página, proporcionar los métodos para acceder a los elementos de la página, bibliotecas de afirmaciones, etc.
 
-Cada vez que escribes una pieza de software que se utilizará de nuevo (incluso por ti mismo), es útil escribir una prueba para ello. Cuando usted u otro realice cambios en este código, la ejecución de las pruebas garantizará que no haya roto la funcionalidad existente.
+- Cada vez que escribes una pieza de software que se utilizará de nuevo (incluso por ti mismo), es útil escribir una prueba para ello. Cuando usted u otro realice cambios en este código, la ejecución de las pruebas garantizará que no haya roto la funcionalidad existente.
 
-Normalmente lo realizan los usuarios o los expertos en la materia. También se llama como prueba de aceptación del usuario (UAT). La UAT involucra los escenarios de la vida real más comunes. A diferencia de las pruebas del sistema, no se enfoca en los errores o fallas, sino en la funcionalidad. UAT se realiza al final del ciclo de vida de la prueba y decidirá si el software se moverá al siguiente entorno o no.
+- Normalmente lo realizan los usuarios o los expertos en la materia. También se llama como prueba de aceptación del usuario (UAT). La UAT involucra los escenarios de la vida real más comunes. A diferencia de las pruebas del sistema, no se enfoca en los errores o fallas, sino en la funcionalidad. UAT se realiza al final del ciclo de vida de la prueba y decidirá si el software se moverá al siguiente entorno o no.
 
-Una buena manera de definir qué pruebas de aceptación se deben escribir es agregar criterios de aceptación a una historia de usuario. Con los criterios de aceptación, puede definir cuándo una historia de usuario está lista para implementarse y el problema se ha completado según sus deseos.
+- Una buena manera de definir qué pruebas de aceptación se deben escribir es agregar criterios de aceptación a una historia de usuario. Con los criterios de aceptación, puede definir cuándo una historia de usuario está lista para implementarse y el problema se ha completado según sus deseos.
 
-En un proyecto Agile es importante que el equipo tenga criterios de aceptación definidos para todas las historias de usuario. El trabajo de Pruebas de aceptación utilizará los criterios definidos para evaluar la funcionalidad entregada. Cuando una historia puede pasar todos los criterios de aceptación, está completa.
+- En un proyecto Agile es importante que el equipo tenga criterios de aceptación definidos para todas las historias de usuario. El trabajo de Pruebas de aceptación utilizará los criterios definidos para evaluar la funcionalidad entregada. Cuando una historia puede pasar todos los criterios de aceptación, está completa.
 
-Las pruebas de aceptación también pueden validar si una épica / historia / tarea completada cumple con los criterios de aceptación definidos. En contraste con la definición de hecho, este criterio puede cubrir casos de negocios específicos que el equipo desea resolver. Esto proporciona una buena medida de la calidad del trabajo.
+- Las pruebas de aceptación también pueden validar si una épica / historia / tarea completada cumple con los criterios de aceptación definidos. En contraste con la definición de hecho, este criterio puede cubrir casos de negocios específicos que el equipo desea resolver. Esto proporciona una buena medida de la calidad del trabajo.
 
 #### Más información:
 
