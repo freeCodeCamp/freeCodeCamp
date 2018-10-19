@@ -4,7 +4,7 @@ title: Switch Case
 
 # Switch Case
 
-Switch is a selection statement that chooses a switch case section depending on the value matched with the expression/value being evaluated.<sup>1</sup>  If none of the case statements match the value of the switched variable, the default path is chosen. The switch statement is like a set of `if statements`. We exit from the switch by `break`.
+The switch statement is similar to an if statement except that it does not work with a range of values. Switch is a selection statement that chooses a switch case section depending on the value matched with the expression/value being evaluated.<sup>1</sup>  If none of the case statements match the value of the switched variable, the default path is chosen. The switch statement is like a set of `if statements`. We exit from the switch by `break`.
 
 ## Example
 ```
