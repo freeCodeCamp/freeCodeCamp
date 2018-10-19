@@ -1,10 +1,10 @@
 ---
-title: Loop
+title: Loops
 ---
 
-# PHP Loop
-When you need to repeat same task for many times, you can use loop instead of keep adding same code over and over again.
-In PHP have following loop statements :
+# PHP Loops
+When you need to repeat task for multiple times, you can use a loop instead of adding the same code over and over again.
+PHP has the following loop statements :
 - for - loop through a block of code with specific number of times.
 - while - loop through a block of code if condition is true.
 - do...while - loop through a block of code one and continue loop if condition is true.
