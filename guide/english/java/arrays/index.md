@@ -125,6 +125,7 @@ Two-dimensional arrays (2D arrays) can be thought of as a table with rows and co
 int M = 5;
 int N = 5;
 double[][] a = new double [M][N]; //M = rows N = columns
+double[] a[]=new double[M][N]; //this way of array declaration will also work fine
 for(int i = 0; i < M; i++) {
     for (int j = 0; j < N; j++) {
         //Do something here at index 
@@ -143,6 +144,8 @@ Similarly a 3D array can also be made. It can be visualised as a cuboid instead 
 ```java
 int a=2, b=3, c=4;
 int[][][] a=new int[a][b][c];
+int [][] B[]=new int[a][b][c];  // also one of the way of array declaration
+int[] C[][]=new int[a][b][c];   // also one of the way of multidimensional array declaration
 ```
 In a similar manner, one can an array of as many dimensions as he/she wishes to but visualizing an array of more than 3 dimensions is difficult to visualize in a particular way.
 
