@@ -20,6 +20,10 @@ Sketch is a professional design application for the Mac that utilizes a vector-b
 
 Sketch is designed to build digital products rather than editing photos and print graphics. Sketch's clean interface helps keep you organized when mocking up or building out your UI/UX designs. The art boards that Sketch uses enforces a pixel grid for precise designs. Exporting designs is simple and supports different device resolutions.
 
+### Keyboard Shortcuts
+
+![untitled](https://user-images.githubusercontent.com/32509775/47198479-0c4b2900-d38a-11e8-978c-b1a40d228436.png)
+
 ### Useful Plugins for Sketch
 
 - [Zeplin - Generates and exports design assets and style guides](https://zeplin.io/)
