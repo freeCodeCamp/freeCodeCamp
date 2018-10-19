@@ -1,7 +1,7 @@
 ---
-title: Business Value
+title: Business Values
 ---
-## Business Value
+## Business Values
 
 Business Value is the focus of agile delivery. The agile team is charged with evaluating the business value of all work.
 
