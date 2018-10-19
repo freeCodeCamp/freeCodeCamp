@@ -53,6 +53,7 @@ Following are the simplicity caused by XML :
 4. It simplifies data availability
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
+Popularly used in Android layout.
 
 ### More information
 
