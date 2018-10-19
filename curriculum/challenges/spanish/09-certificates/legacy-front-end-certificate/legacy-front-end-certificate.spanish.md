@@ -7,11 +7,11 @@ videoUrl: ''
 localeTitle: Certificado Front End Legado
 ---
 
-## Description
+## Descripción
 <section id="description">
 </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions">
 </section>
 
@@ -45,15 +45,15 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafío
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
