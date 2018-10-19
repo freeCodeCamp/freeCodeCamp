@@ -61,6 +61,37 @@ Figure 4 - Example of Pet table with owner field linked.
 
 A one-to-many relationship is one record linked to many other records, the example being the user Jerry having two pets. It could also be a many-to-many relationship where the tables could be books and authors, as authors could co-write many books. Finally the most common relationship type is one-to-one, a record that can only be linked to one, and only one, other record.
 
+### Foreign key
+
+To describe the Relationships above, Foreign keys(FK) should be be used to link table to tables.
+Each FK needs 3 parameter:
+1. Referenced table: having candidate keys
+2. Child table: having foreign keys
+3. Constraint: having the columns which both tables have in common.
+
+|Id   |Name          |Gender|
+|-----|--------------|------|
+|1    |Hung          |1     |
+|2    |Linh          |2     |
+|3    |Duong         |0     |
+|4    |Alice         |2     |
+|5    |Bob           |1     |
+
+Figure 5 - Example of child table containing FK Gender
+
+|GenderId   |Description          |
+|-----------|---------------------|
+|0          | Not yet defined     |
+|1          | Male                |
+|2          | Female              |
+
+Figure 6 - Example of referenced table containing GenderId with candidate keys
+
+```sql
+ALTER TABLE <child table> ADD CONSTRAINT FK_Child_Gender_Ref_GenderId FOREIGN KEY(Gender) REFERENCES Child(GenderId);
+```
+
+Figure 7 - A constraint of both tables is Gender linking to GenderId 
 ## Conclusion
 
 This is just a brief intro into relational-databases. Below links are provided to resources that could help you further study the subject.
