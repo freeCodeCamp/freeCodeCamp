@@ -33,3 +33,8 @@ A collection of articles covering the basics (core language and working with a b
 A very fun and easy book for beginners. 
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
+*Eloquent JavaScript: A Modern Introduction to Programming by Marijn Haverbeke*
+JavaScript is the most commonly used programming language for web development. Its ease of use and versatility make it easy to develop dynamic and interactive websites. When you’re starting off in the web development world, it’s a great idea to read up on some technical programming information regarding this popular programming language.
+
+Get this book here https://eloquentjavascript.net/
