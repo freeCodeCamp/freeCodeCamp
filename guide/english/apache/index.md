@@ -21,3 +21,8 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+#### On Windows
+Popular options for deploying Apache httpd and optionally, PHP + MySQL or PHP + MariaDB on Microsoft Windows, include;
+
+* [XAMP](https://www.apachefriends.org/index.html "XAMP website")
+* [WampServer](http://www.wampserver.com/ "WampServer website")
