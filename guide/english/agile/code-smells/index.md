@@ -5,7 +5,7 @@ title: Code Smells
 
 A Code Smell in computer programming is a surface indication that there might be a problem regarding your system and the quality of your code. This problem might require refactoring to be fixed.
 
-It is important to understand that smelly code works, but is not of good quality.
+It is important to understand that smelly code works, but is not of good quality so it is hard to maintain.
 
 #### Examples
 1. Duplicated code - Blocks of code that have been replicated across the code base. This may indicate that you need to generalize the code into a function and call it in two places, or it may be that the way the code works in one place is completely unrelated to the way it works in another place, despite having been copied.
