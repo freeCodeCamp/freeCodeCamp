@@ -3,7 +3,7 @@ title: Variables
 ---
 # Variables
 
-Variables store values. They are the most basic entity used to store data such as text, numbers, etc. in a program. 
+Variables store values. They are the most basic entity used to store data such as text and numbers in a program. 
 
 In <a href='https://github.com/FreeCodeCamp/FreeCodeCamp/wiki/Java' target='_blank' rel='nofollow'>Java</a>, variables are <a href='https://en.wikipedia.org/wiki/Strong_and_weak_typing#Definitions_of_.22strong.22_or_.22weak.22' target='_blank' rel='nofollow'>_strongly typed_</a>, which means you have to define the type for each variable whenever you declare it. Otherwise, the compiler will throw an error at <a href='https://en.wikipedia.org/wiki/Compile_time' target='_blank' rel='nofollow'>compile time</a>. Therefore, each variable has an associated '<a href='https://guide.freecodecamp.org/java/data-types' target='_blank' rel='nofollow'>data-type</a>' of one of the following:
 
