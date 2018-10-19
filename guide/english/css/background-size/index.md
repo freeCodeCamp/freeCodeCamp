@@ -33,4 +33,6 @@ Documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/backgro
 
 CSS-Tricks: <a href='https://css-tricks.com/almanac/properties/b/background-size/' target='_blank' rel='nofollow'>background-size</a>
 
+W3Schools: <a href='https://www.w3schools.com/cssref/css3_pr_background-size.asp' target='_blank' rel='nofollow'>CSS background-size Property</a>
+
 Browser Support: <a href='http://caniuse.com/#search=background-size' target='_blank' rel='nofollow'>caniuse</a>
