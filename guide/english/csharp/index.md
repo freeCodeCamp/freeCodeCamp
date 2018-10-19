@@ -49,6 +49,8 @@ This creates a new book object that we can use to manipulate data and store it i
 11. Record Type
 12. Minimizing OUT
 13. Non-'NULL' able reference type
+### Object Oriented Programming Guide
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/object-oriented-programming
 
 You can use C# to create Windows client applications, XML Web services, distributed components, client-server applications, database applications, and much more.
 
