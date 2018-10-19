@@ -30,6 +30,16 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### JavaScript and JQuery: Interactive Front-End Web Development
+This book was written for anyone who wants to use JavaScript to make their websites a little more interesting, engaging, interactive, or usable. In particular, it is aimed at people who do not have a degree in computer science
+
+- [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
+#### Learning JavaScript Data Structures and Algorithms - Second Edition: Hone your skills by learning classic data structures and algorithms in JavaScript
+Understand common data structures and the associated algorithms, as well as the context in which they are used. Master existing JavaScript data structures such as array, set and map and learn how to implement new ones such as stacks, linked lists, trees and graphs. All concepts are explained in an easy way, followed by examples.
+
+- [Amazon](https://www.amazon.com/Learning-JavaScript-Data-Structures-Algorithms/dp/1785285491/ref=mt_paperback?_encoding=UTF8&me=&qid=1498579708)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
