@@ -15,6 +15,8 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='http://www.codeconquest.com/blog/top-50-websites-to-learn-javascript/' target='_blank' rel='nofollow'>The 50 Best Websites to Learn JavaScript</a>
 *   <a href='https://www.codementor.io/community/topic/javascript' target='_blank' rel='nofollow'>Codementor JavaScript tutorial</a> 
 *   <a href='http://youmightnotneedjquery.com/' target='_blank' rel='nofollow'>You Might Not Need jQuery</a>
+*   <a href='https://www.youtube.com/watch?v=HOfuju3dgjE&list=PLGC-hHIh7l5vs0uDGlQEXQGQR2hW8Gcwl' target='_blank' rel='nofollow'>Avelx - Javascript Tutorial</a>
+*   <a href='https://www.youtube.com/watch?v=qoSksQ4s_hg&list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET' target='_blank' rel='nofollow'>The Net Ninja - JavaScript Tutorials for Beginners</a>
 
 ## References
 
@@ -35,6 +37,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='http://c9.io' target='_blank' rel='nofollow'>C9 (_IDE_, _pair programming_)</a>
 *   <a href='http://www.objectplayground.com/' target='_blank' rel='nofollow'>Object Playground (_visualize objects_)</a>
 *   <a href='http://plnkr.co' target='_blank' rel='nofollow'>Plunker</a>
+*   <a href='https://webmakerapp.com' target='_blank' rel='nofollow'>Web Maker</a>
 
 ## Challenges
 
@@ -49,6 +52,9 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
 *   <a href='https://www.codecademy.com' target='_blank' rel='nofollow'>Codecademy</a>
 *   <a href='https://www.rithmschool.com' target='_blank' rel='nofollow'>RithmSchool</a> 
+*   <a href='https://www.sololearn.com/Course/JavaScript/' target='_blank' rel='nofollow'>Sololearn - JavaScript Tutorial</a> 
+*   <a href='https://www.udacity.com/course/intro-to-javascript--ud803' target='_blank' rel='nofollow'>Udacity - Intro to JavaScript</a> 
+*   <a href='https://csx.codesmith.io/home' target='_blank' rel='nofollow'>CSX</a> 
 
 ## Exercises
 
@@ -81,11 +87,14 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='https://medium.com/the-javascript-collection' target='_blank' rel='nofollow'>JS collection on Medium</a>
 *   <a href='https://davidwalsh.name/' target='_blank' rel='nofollow'>David Walsh</a>
 *   <a href='http://superherojs.com/' target='_blank' rel='nofollow'>superheroJS</a>
+*   <a href='https://flaviocopes.com/tags/js/' target='_blank' rel='nofollow'>Flavio Copes</a>
+*   <a href='https://www.kirupa.com' target='_blank' rel='nofollow'>Kirupa</a>
 
 
 
 ## Podcasts
 *   <a href='https://devchat.tv/js-jabber' target='_blank' rel='nofollow'>JS Jabber</a>
+*   <a href='https://syntax.fm' target='_blank' rel='nofollow'>Syntax FM</a>
 
 
 
@@ -94,6 +103,9 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='https://www.youtube.com/watch?v=fju9ii8YsGs' target='_blank' rel='nofollow'>Derek Banas' Learn JS In One Video </a>
 *   <a href='https://www.youtube.com/watch?v=O8wwnhdkPE4'>Derek Banas' Object Oriented JavaScript</a>
 *   <a href='https://www.youtube.com/watch?v=YMvzfQSI6pQ'>JavaScript Fundamentals for Absolute Beginners 2018</a>
+*   <a href='https://mva.microsoft.com/en-us/training-courses/javascript-fundamentals-for-absolute-beginners-14194'>Microsoft Virtual Academy - JavaScript Fundamentals For Absolute Beginners</a>
+*   <a href='https://watchandcode.com/p/practical-javascript'>Watch and Code - Practical JavaScript</a>
+
 
 ## Books
 
