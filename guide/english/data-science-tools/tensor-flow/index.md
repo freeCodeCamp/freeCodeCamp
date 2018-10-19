@@ -18,6 +18,7 @@ for the purposes of conducting machine learning and deep neural networks researc
 system is general enough to be applicable in a wide variety of other domains as well.
 
 For more information, visit the <a href='https://github.com/tensorflow' target='_blank' rel='nofollow'>TensorFlow Github page</a>
+And Also visit the homepage of TensorFlow <a href = "https://www.tensorflow.org/" target='_blank' rel='nofollow'>TensorFlow Home Page</a>
 
 ## Lab
 <a href="https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/TensorFlow/TensorFlow.md">TensorFlow</a>
