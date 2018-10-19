@@ -8,8 +8,12 @@ Divide and Conquer |  (Introduction)
 Like Greedy and Dynamic Programming, Divide and Conquer is an algorithmic paradigm. A typical Divide and Conquer algorithm solves a problem using following three steps.
 
 1. Divide: Break the given problem into subproblems of same type.
+This step involves breaking the problem into smaller sub-problems. Sub-problems should represent a part of the original problem. This step generally takes a recursive approach to divide the problem until no sub-problem is further divisible. At this stage, sub-problems become atomic in nature but still represent some part of the actual problem.
+
 2. Conquer: Recursively solve these subproblems.
+   This step receives a lot of smaller sub-problems to be solved. Generally, at this level, the problems are considered 'solved' on        their own.
 3. Combine: Appropriately combine the answers.
+   When the smaller sub-problems are solved, this stage recursively combines them until they formulate a solution of the original          problem. This algorithmic approach works recursively and conquer & merge steps works so close that they appear as one.
 
 Following are some standard algorithms that are Divide and Conquer algorithms.
 
