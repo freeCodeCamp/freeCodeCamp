@@ -1,5 +1,8 @@
-##localeTitle: undefined
- HTTP
+---
+title: HTTP
+localeTitle: HTTP
+---
+## HTTP
 
 Node.js tiene un conjunto de módulos incorporados que puede utilizar sin ninguna otra instalación. De manera similar, el **módulo HTTP** contiene un conjunto de funciones que se requieren para transferir datos a través del Protocolo de transferencia de hipertexto (HTTP).
 
