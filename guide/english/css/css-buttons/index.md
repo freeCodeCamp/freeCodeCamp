@@ -104,6 +104,22 @@ button {
 }
 ```
 
+### Button with Gradient Background
+
+To add gradient background to a button. 
+
+```
+button{
+background: #5c9885;
+    background: #5c9885;
+    background: -moz-linear-gradient(45deg, #5c9885 27%, #4e8e9d 49%, #2989d8 100%, #207cca 100%, #2989d8 100%);
+    background: -webkit-linear-gradient(45deg, #5c9885 27%,#4e8e9d 49%,#2989d8 100%,#207cca 100%,#2989d8 100%);
+    background: linear-gradient(45deg, #5c9885 27%,#4e8e9d 49%,#2989d8 100%,#207cca 100%,#2989d8 100%);
+}
+```
+
+The colors used are for demo purpose. You can use your own colors for your button by replacing the color codes in the code above.
+
 ### Button Click Animation
 
 To animate a button on click use 'button:active':
