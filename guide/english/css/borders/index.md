@@ -83,8 +83,7 @@ p {
 
 ### Border Color
 
-Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout
-of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types.
+Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout of your website. Border colors can be any color defined by RGB, RGBa, hexadecimal, or key terms. Below is an example of each of these types.
 
 Example:
 ```css
@@ -108,7 +107,7 @@ p {
 
 ### Border-Radius
 The `border-radius` property allows the corners of a border to be rounded. This is done by providing a size for
-how much the border is to be rounded. Size can be in px or %.
+how much the border is to be rounded. Size are commonly in px or %, but any valid CSS unit will work.
 ```css 
   border-radius: 25px;
 ```
