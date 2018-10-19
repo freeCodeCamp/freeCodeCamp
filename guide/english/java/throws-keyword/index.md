@@ -27,4 +27,12 @@ class Testthrows1{
   }  
 }  
 ```
+Multiple exceptions can also be thrown at the same time
+
+***Example:***
+```java
+void n()throws IOException, InterruptedException{  
+    m();
+  } 
+```  
 
