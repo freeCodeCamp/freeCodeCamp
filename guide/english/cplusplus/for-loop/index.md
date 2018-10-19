@@ -24,7 +24,8 @@ for ( init; condition;) {
    increment;
 }
 ```
-It is also allowed to ignore the init variables. For example :
+It is also allowed to ignore the init variables
+we can also write the for loop by skipping one or more of its three statements (initialization, condition, propagation). For example :
 ```
 int a = 1;
 for (; a <= 10 ;)
