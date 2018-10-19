@@ -19,7 +19,7 @@ The background-size property specifies the size of the background images. You ca
 Note: If using pixel or percentage for length and you only specify one value, 
 the second one will be set to auto by default.
 
-To set this property on multiple background images separate values by comma:
+To set this property on multiple background images, separate the values by a comma:
 ```css
 .multiple {
     background-image: url(1.png), url(2.png);
