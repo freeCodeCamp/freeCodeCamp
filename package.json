@@ -13,7 +13,7 @@
     "test-ci": "npm test",
     "test:client": "cd ./client && npm test && cd ../",
     "test:curriculum": "echo 'Warning: TODO - Define Testing.'",
-    "test:guide-directorys": "node ./tools/scripts/ci/ensure-guide-page-naming.js",
+    "test:guide-directories": "node ./tools/scripts/ci/ensure-guide-page-naming.js",
     "test:server": "echo 'Warning: TODO - Define Testing.'",
     "test:tools": "jest ./tools",
     "start-develop": "node ./tools/scripts/start-develop.js"
