@@ -4,12 +4,11 @@ localeTitle: Propriedade HTML Dom Innerhtml
 ---
 ## Propriedade HTML Dom Innerhtml
 
-O `innerHTML` prop retorna o conteúdo HTML dentro de um elemento selecionado e também permite definir um novo conteúdo HTML.
+A propriedade `innerHTML` retorna o conteúdo HTML dentro de um elemento selecionado e também permite definir um novo conteúdo HTML.
 
-**_OBTER O CONTEÚDO DO ELEMENTO_**
+**OBTER O CONTEÚDO DO ELEMENTO**
 
 ```html
-
 <div id="demo"> 
   <p>Demo</p> 
  </div> 
@@ -20,7 +19,7 @@ var element = document.getElementById("demo");
  console.log(element.innerHTML) //logs <p>Demo</p> 
 ```
 
-**_CONTEÚDO DO ELEMENTO DO ELEMENTO_**
+**CONTEÚDO DO ELEMENTO DO ELEMENTO**
 
 ```html
 
@@ -41,7 +40,7 @@ O HTML agora será como
  </div> 
 ```
 
-**_CONSIDERAÇÕES DE SEGURANÇA_**
+**CONSIDERAÇÕES DE SEGURANÇA**
 
 O valor definido como `innerHTML` deve vir de fontes confiáveis, pois o JavaScript colocará qualquer coisa dentro desse elemento e será executado como HTML simples.
 
