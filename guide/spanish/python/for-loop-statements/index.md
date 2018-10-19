@@ -24,6 +24,13 @@ list_of_tuples = [(1,2), (3,4)]
   print("a:", a, "b:", b) 
 ```
 
+Salida:
+ ```python
+a: 1 b: 2
+a: 3 b: 4
+```
+
+
 Por otro lado, puedes hacer un bucle sobre cualquier cosa que sea iterable. Puedes llamar a una función o usar una lista literal.
 
 ```python
@@ -35,6 +42,17 @@ for person in load_persons():
 for character in ["P", "y", "t", "h", "o", "n"]: 
   print("Give me a '{}'!".format(character)) 
 ```
+
+Salida:
+ ```python
+Give me a 'P'!
+Give me a 'y'!
+Give me a 't'!
+Give me a 'h'!
+Give me a 'o'!
+Give me a 'n'!
+```
+
 
 Algunas formas en que se utilizan los bucles For:
 
