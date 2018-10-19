@@ -1,0 +1,37 @@
+---
+Titel: ID Selector
+---
+
+## ID Selector
+Der CSS ID-Selektor wendet Styles auf ein bestimmtes HTML-Element an. Der CSS-ID-Selektor muss mit dem ID-Attribut eines HTML-Elements übereinstimmen. 
+Im Gegensatz zu Klassen, die auf mehrere Elemente innerhalb einer Website angewendet werden können, kann eine bestimmte ID nur auf ein einzelnes Element innerhalb einer Website angewendet werden. 
+Die CSS-ID überschreibt die Eigenschaften der CSS-Klasse.
+Um ein Element mit einer bestimmten ID auszuwählen, schreiben Sie ein Hash (#)-Zeichen, gefolgt von der ID des Elements.
+
+### Syntax
+```css
+#specified_id { /* styles */ }
+```
+Sie können den ID-Selektor mit anderen Arten von Selektoren kombinieren, um ein sehr spezifisches Element zu gestalten.
+```css
+section#about:hover { color: blue; }
+
+div.classname#specified_id { color: green; }
+```
+### Hinweis zu IDs
+ID sollte beim Styling möglichst vermieden werden. Da es eine hohe Spezifität hat und nur überschrieben werden kann, wenn Sie Inline-Stile verwenden oder Styles in ```<style>``` hinzufügen. Das Gewicht der ID überschriebt Klassenselektoren und Typselektoren.
+
+Denken Sie daran, dass der ID-Selektor mit dem ID-Attribut eines HTML-Elements übereinstimmen muss.
+```html
+<div id="specified_id"><!-- content --></div>
+```
+
+### Specificity 
+ID-Selektoren haben eine hohe Spezifität, die es schwierig macht, sie zu übersteuern. Klassen haben eine viel geringere Spezifität und sind im Allgemeinen der bevorzugte Weg, um Elemente zu gestalten, um Spezifitätsprobleme zu vermeiden. [Spezifität auf MDN](https://developer.mozilla.org/de-DE/docs/Web/CSS/Specificity) 
+
+#### Mehr Informationen:
+<a href="https://www.freecodecamp.org/challenges/set-the-id-of-an-element" target="_blank">freeCodeCamp Challenge - Set the ID of an Element</a>
+
+<a href="https://www.freecodecamp.org/challenges/use-an-id-attribute-to-style-an-element"  target="_blank">freeCodeCamp Challenge - Use an ID Attribute to Style an Element</a>
+
+<a href="https://developer.mozilla.org/de-DE/docs/Web/CSS/ID_selectors" target="_blank">MDN</a>
