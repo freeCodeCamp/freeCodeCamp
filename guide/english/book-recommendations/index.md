@@ -60,6 +60,9 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+<i>Data Structures and Algorithms Made Easy: Data Structures and Algorithmic Puzzles</i>
+- [Amazon](https://www.amazon.com/Data-Structures-Algorithms-Made-Easy/dp/819324527X)
+- ISBN-13: 978-8193245279
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
