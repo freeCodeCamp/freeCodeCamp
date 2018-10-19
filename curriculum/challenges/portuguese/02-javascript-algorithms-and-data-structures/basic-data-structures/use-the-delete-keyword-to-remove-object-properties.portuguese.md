@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a palavra-chave delete para remover propriedades do objeto
 ---
 
-## Description
-<section id="description"> Agora você sabe quais são os objetos e seus recursos e vantagens básicos. Em resumo, eles são armazenamentos de valor-chave que fornecem uma maneira flexível e intuitiva de estruturar dados <strong><em>e</em></strong> fornecem um tempo de pesquisa muito rápido. Durante o restante desses desafios, descreveremos várias operações comuns que você pode executar em objetos, para que você possa se sentir confortável ao aplicar essas estruturas de dados úteis em seus programas. Nos desafios anteriores, adicionamos e modificamos os pares de valores-chave de um objeto. Aqui, veremos como podemos <em>remover</em> um par de valores-chave de um objeto. Vamos revisitar nosso exemplo de objeto de <code>foods</code> uma última vez. Se quiséssemos remover a chave <code>apples</code> , poderíamos removê-la usando a palavra-chave <code>delete</code> seguinte forma: <blockquote> delete foods.apples; </blockquote></section>
+## Descrição
+<section id="description"> Agora você sabe quais são os objetos e seus recursos e vantagens básicas. Em resumo, eles são armazenamentos de valor-chave que fornecem uma maneira flexível e intuitiva de estruturar dados <strong><em>e</em></strong> fornecem um tempo de pesquisa muito rápido. Durante o restante desses desafios, descreveremos várias operações comuns que você pode executar em objetos, para que você possa se sentir confortável ao aplicar essas estruturas de dados úteis em seus programas. Nos desafios anteriores, adicionamos e modificamos os pares de valores-chave de um objeto. Aqui, veremos como podemos <em>remover</em> um par de valores-chave de um objeto. Vamos revisitar nosso exemplo de objeto de <code>foods</code> uma última vez. Se quiséssemos remover a chave <code>apples</code> , poderíamos removê-la usando a palavra-chave <code>delete</code> seguinte forma: <blockquote> delete foods.apples; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a palavra-chave delete para remover as chaves <code>oranges</code> , <code>plums</code> e <code>strawberries</code> do objeto <code>foods</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -55,7 +55,7 @@ console.log(foods);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
