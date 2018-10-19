@@ -316,3 +316,5 @@ Check out the below resources to dive deeper. There are links for each type of d
 - [Angular Attribute Directives](https://angular.io/guide/attribute-directives)
 
 - [Angular CLI](https://cli.angular.io)
+
+So this is how it works!
