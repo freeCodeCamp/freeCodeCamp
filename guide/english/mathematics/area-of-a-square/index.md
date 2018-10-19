@@ -52,11 +52,10 @@ Find the area of a square given the perimeter:
 
 To find the area of a square given the perimeter, simply start by dividing the given perimeter by 4. Why 4? Because a square has four (4) sides. Dividing it by 4 would give you the length of one side. Now square the known side. To square, multiply it by itself once. Once you get the result, convert it to squared units; by adding a ² to the answer.
 
-Ex: Perimeter: 20
+Example: If the perimeter of any square if 20m then find the area of that square.
 
-20 / 4 = 5
-5 x 5 = 25
-25 = 25²
+Side of square=20/4=5m
+Area=(side)^2=5m x 5m = 25m^2
 
 #### More Information:
 
