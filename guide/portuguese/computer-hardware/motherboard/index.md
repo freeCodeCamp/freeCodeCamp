@@ -1,7 +1,3 @@
-Types of Motherboards. Motherboards come in different sizes, known as form factors. The most common motherboard form factor is ATX. The different types of ATX are known as micro-ATX (sometimes shown as µATX, mini-ATX, FlexATX, EATX, WATX, nano-ATX, pico-ATX, and mobileATX).localeTitle: Motherboard
----
-## título: Motherboard
-
 ## Motherboard
 
 A placa-mãe é a camada de conexão que permite que os componentes de um computador interajam entre si. A placa-mãe normalmente tem conexões para memória de acesso aleatório (RAM), um disco rígido, uma unidade de processamento gráfico (GPU) e uma unidade de processamento central (CPU). Nos desktops, a placa-mãe é uma placa física à qual todos esses componentes estão conectados. No entanto, em laptops, a placa-mãe normalmente possui alguns desses componentes integrados devido às limitações de espaço dos laptops.
