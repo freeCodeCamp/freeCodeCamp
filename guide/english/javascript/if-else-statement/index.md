@@ -56,16 +56,23 @@ if (condition) {
 ```
 
 **Using** `else if`:
-
 ```javascript
-if (x < 10)
-    return "Small number";
-else if (x < 50)
-    return "Medium number";
-else if (x < 100)
-    return "Large number";
-else {
-    flag = 1;
-    return "Invalid number";
-}
+    // Categorising any number x as a small, medium, or large number  
+    if (x < 10)
+        return "Small number";
+    else if (x < 50)
+        return "Medium number";
+    else if (x < 100)
+        return "Large number";
+    else {
+        flag = 1;
+        return "Invalid number";
+    }
 ```
+
+**Using** `if` **alone**:
+```javascript
+    // This function can also act as a Boolean
+    if (x < 30) {
+        return "true";
+    }
