@@ -1,7 +1,8 @@
 ---
 title: Hello World
 localeTitle: Hola Mundo
----# Hola Mundo
+---
+# Hola Mundo
 
 Para escribir un texto en la consola usamos `Console.WriteLine()` . Este método toma una cadena como entrada.
 
@@ -10,17 +11,17 @@ Para escribir un texto en la consola usamos `Console.WriteLine()` . Este método
 ```csharp
 using System; 
  
- namespace HelloWorld 
+ namespace HolaMundo 
  { 
-    class Hello 
+    class Hola 
     { 
         static void Main() 
         { 
-            // Write "Hello World!" on console 
-            Console.WriteLine("Hello World!"); 
+            // Escribir "Hola Mundo!" en la consola 
+            Console.WriteLine("Hola Mundo!"); 
  
-            // Keep the console window open in debug mode. 
-            Console.WriteLine("Press any key to exit."); 
+            // Manten la ventana de la consola abierta en modo depuración. 
+            Console.WriteLine("Pulsa cualquier tecla para salir."); 
             Console.ReadKey(); 
         } 
     } 
@@ -29,8 +30,8 @@ using System;
 
 ## Salida:
 
-```sh
-> Hello World! 
- > Press any key to exit. 
+```
+> Hola Mundo! 
+ > Pulsa cualquier tecla para salir. 
 
 ```
