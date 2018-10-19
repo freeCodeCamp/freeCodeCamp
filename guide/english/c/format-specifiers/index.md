@@ -74,6 +74,14 @@ int main()
 Output:
 f
 
+An address (or pointer) : %p
+#include<stdio.h>
+int main()
+{ int a;
+  printf("%p",&a);
+}
+Output: Address of variable a
+
 String printing : %s
 
 #include <stdio.h> 
