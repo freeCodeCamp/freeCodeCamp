@@ -25,12 +25,12 @@ Will automatically evaluate to...
 
 The optional tag specifications for the most common HTML5 tags are as follows:
 
-- An `html` element's start tag may be omitted if the first thing inside the `html` element is not a comment.
-- An `html` element's end tag may be omitted if the `html` element is not immediately followed by a comment.
+- An `html` element's start tag may be omitted if the first thing inside the `html` element is not a comment (<!--comment> ...).
+- An `html` element's end tag may be omitted if the `html` element is not immediately followed by a comment (<!--comment> ...).
 - A `head` element's start tag may be omitted if the element is empty, or if the first thing inside the `head` element is an element.
-- A `head` element's end tag may be omitted if the `head` element is not immediately followed by a space character or a comment.
+- A `head` element's end tag may be omitted if the `head` element is not immediately followed by a space character or a comment (<!--comment> ...).
 - A `body` element's start tag may be omitted if the element is empty, or if the first thing inside the `body` element is not a space character or a comment, except if the first thing inside the `body` element is a `meta`, `link`, `script`, `style`, or `template` element.
-- A `body` element's end tag may be omitted if the body element is not immediately followed by a comment.
+- A `body` element's end tag may be omitted if the body element is not immediately followed by a comment (<!--comment> ...).
 
 ### More Information
 
