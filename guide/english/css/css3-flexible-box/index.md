@@ -28,7 +28,9 @@ To get a complete understanding of Flexbox, read <a href="https://medium.freecod
 
 For an interactive guide go through <a href="https://medium.freecodecamp.org/the-ultimate-guide-to-flexbox-learning-through-examples-8c90248d4676" target="_blank" rel="nofollow">The Ultimate Guide to Flexbox — Learning Through Examples</a>
 
-Both of these are great resources by Ohans Emmanuel. 
+Both of these are great resources by Ohans Emmanuel.
+
+A great visual guide to Flexbox is provided by <a href="https://medium.freecodecamp.org/@js_tut" target="_blank" rel="nofollow">JavaScript Teacher</a> on the FreeCodeCamp Medium page: <a href="https://medium.freecodecamp.org/the-complete-illustrated-flexbox-tutorial-d35c085dbf35" target="_blank" rel="nofollow">The Complete Illustrated Flexbox Tutorial</a>.
 
 Yet another great visual guide that is in-depth but easy to follow can be found in <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow"> A Guide to Flexbox</a> by <a href="https://css-tricks.com" target="_blank" rel="nofolow">CSS-Tricks</a>
 
