@@ -2,7 +2,7 @@
 title: Symbols
 localeTitle: Simbolos
 ---
-## Simbolos
+## Símbolos
 
 Las entidades de símbolo HTML son caracteres que no están representados en los teclados de un usuario. Muchos símbolos matemáticos, científicos y de moneda. no están presentes en un teclado normal; por lo tanto, para agregar dichos símbolos a una página usando HTML, se puede usar el nombre de la entidad HTML. Es importante tener en cuenta que estos no afectarán al código html en sí, y siempre se interpretarán como texto. Por ejemplo, si quisiéramos escribir <div> como texto en una página web, es posible que necesitemos usar estas entidades de símbolos.
 
