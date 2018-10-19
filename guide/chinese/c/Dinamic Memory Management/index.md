@@ -1,8 +1,8 @@
 ---
-title: Dinamic Memory Management
-localeTitle: Dinamic内存管理
+title: Dynamic Memory Management
+localeTitle: Dynamic内存管理
 ---
-# Dinamic内存管理
+# Dynamic内存管理
 
 有时您需要在堆中分配内存空间，也称为dinamic内存。当您在编译期间不知道数据结构（如数组）的大小时，这非常有用。
 
@@ -36,7 +36,7 @@ localeTitle: Dinamic内存管理
  } 
 ```
 
-正如您所看到的，为了在dinamic内存中分配空间，您需要知道指针在C中的工作方式。 这里的魔术函数是`malloc` ，它将作为输出返回一个void指针（它是一个指向未知数据类型区域的指针）到我们刚刚分配的新内存空间。 让我们看看如何逐步使用此功能：
+正如您所看到的，为了在dynamic内存中分配空间，您需要知道指针在C中的工作方式。 这里的魔术函数是`malloc` ，它将作为输出返回一个void指针（它是一个指向未知数据类型区域的指针）到我们刚刚分配的新内存空间。 让我们看看如何逐步使用此功能：
 
 ## 在运行时分配数组
 
