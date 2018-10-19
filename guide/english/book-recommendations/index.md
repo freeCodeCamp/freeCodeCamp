@@ -4,6 +4,15 @@ title: Books to Read for Programmers
 
 ### List of Books
 
+## Beginners
+*HTML & CSS Design and Build Websites* by Jon Duckett
+- http://www.htmlandcssbook.com/
+- ISBN-13: 978-1118008188
+
+*JavaScript & jQuery Interactive Front-End Web Development* by Jon Duckett
+- http://javascriptbook.com/
+- ISBN-13: 978-1118531648
+
 ## General
 
 *Automate the Boring Stuff With Python* by Al Sweigart
