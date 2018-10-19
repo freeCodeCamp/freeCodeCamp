@@ -66,6 +66,25 @@ There are a few important things that are different here. First, `stdbool.h` has
 
 Within the parenthesis of the if statement is something new, too: `n == 3`. This is a comparison between `n` and the number 3. `==` is the comparison operator, and is one of several comparison opertations in C.
 
+## Ternary operator
+A different notation that replace the if-else statement is the ternary operator.  Have a look at the following code written with the  if-else statement:
+
+```
+if (a > b) {
+    result = x;
+}
+else {
+    result = y;
+}
+```
+
+This code can be rewritten into a single line using the ternary operator as follow:
+
+```
+result = a > b ? x : y;
+```
+A general formula for this operator can be written as `condition ? true : false;`
+
 ## Nested if-else
 The if-else statement allows a choice to be made between two possible alternatives. Sometimes a choice must be made between more than two possibilities. For example the sign function in mathematics returns -1 if the argument is less than zero, returns +1 if the argument is greater than zero and returns zero if the argument is zero. The following C++ statement implements this function:
 
