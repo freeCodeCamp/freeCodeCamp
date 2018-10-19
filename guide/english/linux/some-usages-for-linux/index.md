@@ -11,6 +11,7 @@ title: Some Usages for Linux
 *   Linux is used to host websites or apps. Linux-based web hosts like 'Dreamhost' are used to host your personal RSS reader with Tiny Tiny RSS, or personal Dropbox clone with OwnCloud.
 *   Home automation can be made possible with Linux along with a small computer like a Raspberry Pi. It can be used to control home with Siri, mount a Google Calendar tablet on wall, set up a home surveillance system, control blinds and air conditioner, stream music , build a digital photo frame, build a sunrise alarm clock amd many more.
 *   Pakistan is using Linux in many of its public schools and colleges and plans to ultimately run it on all of its government computer systems
+*   New York Stock Exchange (NYSC) which provides means for buyers and sellers in order to trade shares of stock in companies registered for public trading relies solely on Linux.
 *   The Sony Playstation 3 gaming console had previously made it possible to run Linux on a seperate hard drive partion. Scientific entities networked together consoles for powerful clusters. <a href='https://en.wikipedia.org/wiki/PlayStation_3_cluster' target='_blank' rel='nofollow'>The United States Air Force Research Laboratory</a> assembled a super computer by cluster 1760 Playstation 3 Consoles.
 *   Linux is in space. Ubuntu is used at the International Space Station. <a href='https://news.softpedia.com/news/Ubuntu-Used-on-the-International-Space-Station-to-Control-Rover-Back-on-Earth-454101.shtml' target='_blank' rel='nofollow'> Read more </a>
 
