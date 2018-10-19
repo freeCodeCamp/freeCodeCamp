@@ -1,5 +1,5 @@
 ---
-title: Create a dummy file with a specific size
+title: Create file with specific size
 ---
 
 ## How to create dummy files with a specific size using the "dd" command:
