@@ -71,7 +71,11 @@ Virtual box supports a wide variety of Operating systems:
    - OS/2
    - OpenBSD
  
-
+ 
+ Getting Fancy
+ -Virtual box is open source which means that other products have built on top of Virtual box. For example, you can get Andriod virtual machines.
+ -You can also get Virtual box addons that will tailor to your Virtual box needs. Genymotion is a very good example of an Andriod virtual machine addon.
+ -You can also get extentions for Virtual box which alows you to do different things with Virtual box like [Virtual box Guest Additions](http://download.virtualbox.org/virtualbox/)
 
 #### More Information:
 
