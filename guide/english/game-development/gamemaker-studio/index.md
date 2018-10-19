@@ -13,6 +13,14 @@ Each game needs at least one room which is used for both menus and levels, and t
 
 GameMaker Studio 2 released on 2 November 2016. 
 
+### Product Licenses:
+GameMaker offers a variety of different products, each one with its own perks: 
+* **Trial** <br/>Free version of GameMaker Studio, this license doesn't expire. Designed to learn about game design and GameMaker.
+* **Creator** <br/>Full version of GameMaker Studio, 12 month license. Allow to publish to Mac or Windows desktop.
+* **Developer** <br/>Enable publishing to all platforms, except PS4/Xbox One/Nintendo Switch. Permanent license.
+* **Console** <br/> Enable publishing to all platforms, including consoles. 12-Month license.
+* **Education** <br/>License for education purpose, like schools or colleges.
+
 ### Supported Platforms:
 * Microsoft Windows
 * macOS
@@ -42,3 +50,4 @@ PlayStation Portable and Raspberry Pi support was demonstrated but not released.
 * [Wikipedia] https://en.wikipedia.org/wiki/GameMaker_Studio<br>
 * [YoYo Games (publisher)] https://www.yoyogames.com/gamemaker<br>
 * [GameMaker: Studio | Documentation] https://docs.yoyogames.com/<br>
+* [GameMaker: Studio | Product & Price] https://www.yoyogames.com/get<br>
