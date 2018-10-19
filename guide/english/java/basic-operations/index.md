@@ -6,7 +6,7 @@ title: Basic Operations
 Java supports the following operations on variables:
 
 *   __Arithmetic__ : `Addition (+)`, `Subtraction (-)`, `Multiplication (*)`, `Division (/)`, `Modulus (%)`,`Increment (++)`,`Decrement (--)`.
-*   __String concatenation__: `+` can be used for String concatenation, but subtraction `-` on a String is not a valid operation.
+*   __String concatenation__: `+` can be used for String concatenation(join two or more strings), but subtraction `-` on a String is not a valid operation.
 *   __Relational__: `Equal to (==)`, `Not Equal to (!=)`, `Greater than (>)`, `Less than (<)`, `Greater than or equal to (>=)`, `Less than or equal to (<=)`
 *   __Bitwise__: `Bitwise And (&)`, `Bitwise Or (|)`, `Bitwise XOR (^)`, `Bitwise Compliment (~)`, `Left shift (<<)`, `Right Shift (>>)`, `Zero fill right shift (>>>)`
 *   __Logical__: `Logical And (&&)`, `Logical Or (||)`, `Logical Not (!)`
