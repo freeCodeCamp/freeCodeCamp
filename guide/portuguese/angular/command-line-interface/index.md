@@ -18,26 +18,26 @@ Reconheça que `ng` é o bloco de construção básico da CLI. Todos os seus com
 
 #### Comandos Principais
 
-*   ng novo
+*   ng new
     
-*   ng servir
+*   ng serve
     
-*   ng gerar
+*   ng generate
     
-*   ng construir
+*   ng build
     
 *   ng update
     
 
 Os termos-chave para cada um deles são bastante reveladores. Juntos, eles compõem o que você precisa para começar a trabalhar com o Angular. Claro, existem muitos mais. Todos os comandos são descritos na [documentação do GitHub da CLI 1](https://github.com/angular/angular-cli/wiki#additional-commands) . Você provavelmente descobrirá que os comandos listados acima cobrirão as bases necessárias.
 
-#### ng novo
+#### ng new
 
 `ng new` cria um _novo_ sistema de arquivos Angular. Este é um processo surreal. Por favor, navegue para um local de arquivo desejável para a _nova_ geração de aplicativos. Digite este comando da seguinte maneira, substituindo `[name-of-app]` pelo que você quiser: `ng new [name-of-app]` .
 
 Um sistema de arquivos sob a pasta `[name-of-app]` deve aparecer. Sinta-se livre para explorar o que está dentro. Tente não fazer alterações ainda. Tudo o que você precisa para executar seu primeiro aplicativo Angular vem empacotado juntos nesse sistema de arquivos gerado.
 
-#### ng servir
+#### ng serve
 
 Para obter o aplicativo em execução, o comando `ng serve` deve ser executado na pasta `[name-of-app]` . Qualquer lugar dentro da pasta serve. A CLI Angular deve reconhecer que está dentro de um ambiente gerado com `ng new` . Ele será executado desde esta condição. Vá em frente e tente: `ng serve` .
 
@@ -45,7 +45,7 @@ O aplicativo é executado na porta 4200 por padrão. Você pode visualizar o apl
 
 Ok, o aplicativo é executado. Espero que funcione, mas você precisa saber o que está acontecendo sob o capô. Consulte novamente o sistema de arquivos `[name-of-app]` . Navegue pelo `[name-of-app] -> src -> app` . Aí reside os arquivos responsáveis ​​pelo que você viu no `localhost:4200` .
 
-#### ng gerar
+#### ng generate
 
 Os arquivos `.component` definem um componente Angular incluindo sua lógica ( `.ts` ), estilo ( `.css` ), layout ( `.html` ) e teste ( `.spec.ts` ). O `app.module.ts` se destaca particularmente. Juntos, esses dois grupos de arquivos trabalham juntos como `component` e `module` . O `component` e o `module` são dois exemplos separados de esquemas angulares. Os esquemas classificam os diferentes blocos de código _gerados_ por _finalidade_ `ng generate` .
 
@@ -55,7 +55,7 @@ Quanto ao `ng generate` , este comando pode gerar esqueletos para cada um dos [e
 
 Você pode ver que o `ng generate` agiliza o [código padrão](https://en.wikipedia.org/wiki/Boilerplate_code) do Angular. `ng generate` também liga as coisas. Os esquemas criados no contexto de um sistema de arquivos Angular conectam-se ao módulo raiz do sistema. Nesse caso, seria o arquivo `app.module.ts` dentro de `[name-of-app -> src -> app]` .
 
-#### ng construir
+#### ng build
 
 Angular é uma ferramenta de front end. O CLI realiza suas operações em nome do front end. `ng serve` cuida da configuração do servidor de backend. Isso mantém o desenvolvimento inteiramente focado no front end. Dito isto, conectar seu próprio back-end ao aplicativo Angular também deve ser possível.
 
