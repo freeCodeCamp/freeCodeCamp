@@ -49,6 +49,46 @@ You can store an array directly into another array by using the format below:
 `int [] nameOfArray = new nameOfArray[4] {2,9,56,1280};`
 `int [] nameOfSecondArray = nameOfArray;`
 
+## Jagged Arrays
+
+Jagged arrays contain elements that are arrays itself. Example of declaration and initialization of jagged array:
+
+```csharp
+int[][] array = new int[2][];
+```
+
+Each element of jagged array can contains array of different length, ex:
+
+```csharp
+array[0] = new int[2];
+array[1] = new int[4];
+
+array[0][0] = 1;
+array[0][1] = 2;
+ 
+array[1][0] = 1;
+array[1][1] = 2;
+array[1][2] = 3;
+array[1][3] = 4;
+```
+As you see the array contains 2 other arrays which respectively contain 2 and 4 elements. Above code can be written shorter by using different format:
+
+```csharp
+int[][] array =
+{
+    new int[] {1,2},
+    new int[] {1,2,3,4}
+};
+```
+
+It's important to remember that types of subarrays must be the same as type of main array. To access specific element of jagged array you should use `array[x][y]` syntax where x is an index of main array which indicates subarray and y is index of subarray which indicates element within that subarray.
+
+```csharp
+Console.Write(array[0][0]); // Displays 1 (first element of first subarray)
+Console.Write(array[1][2]); // Displays 3 (third element of second subarray)
+Console.Write(array[1][0]); // Displays 1 (first element of second subarray)
+```
+
 ## Advantages
 
 * Can be easily accessed in a random manner
