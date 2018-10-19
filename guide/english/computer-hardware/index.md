@@ -20,7 +20,7 @@ A graphics processing unit (GPU) is a specialized electronic circuit designed to
 ### Storage (SSD or HDD)
 The Solid State Drive (SSD) or Hard Disk Drive (HDD) are used to store information on the computer. It retains the memory even after loss of power.
   
-![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  
+![SSD](https://images10.newegg.com/NeweggImage/ProductImage/20-147-373-09.jpg)  ![HDD](https://www.seagate.com/www-content/product-content/barracuda-fam/barracuda-new/images/barracuda-performance-powerhouse-drive-image-364X516.png)
   
 ### Memory (RAM)
 Random-access memory (RAM) is a form of computer data storage which stores data and machine code currently being used. A random-access memory device allows data items to be read or written in almost the same amount of time irrespective of the physical location of data inside the memory.
