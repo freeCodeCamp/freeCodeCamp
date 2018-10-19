@@ -51,4 +51,4 @@ var jsonObject = JSON.parse(localStorage.getItem('jsonObjectString'));
 
 #### Mais Informações:
 
-[MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) [Rochas HTML5](https://www.html5rocks.com/en/features/storage) [Escolas W3](https://www.w3schools.com/html/html5_webstorage.asp)
+[MDN - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) [HTML5Rocks](https://www.html5rocks.com/en/features/storage) [W3Schools](https://www.w3schools.com/html/html5_webstorage.asp)
