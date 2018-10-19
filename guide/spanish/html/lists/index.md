@@ -2,7 +2,7 @@
 title: Lists
 localeTitle: Liza
 ---
-# Liza
+# Listas
 
 Las listas se utilizan para mostrar elementos. Hay 3 tipos de listas.
 
