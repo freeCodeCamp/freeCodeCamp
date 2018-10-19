@@ -17,3 +17,4 @@ If there are no assignments, then it is considered Unsatisfiable.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+- [Prof Jeff Ullman's The Satisfiability Problem slides](http://infolab.stanford.edu/~ullman/ialc/spr10/slides/pnp2.pdf)
