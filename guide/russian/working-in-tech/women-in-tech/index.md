@@ -24,3 +24,4 @@ localeTitle: Женщины в технике
 
 *   [Почему в технике так мало женщин? Истина за памяткой Google](https://www.theguardian.com/lifeandstyle/2017/aug/08/why-are-there-so-few-women-in-tech-the-truth-behind-the-google-memo)
 *   [Эллен Пао: Что-нибудь действительно изменилось для женщин в технике?](https://www.nytimes.com/2017/09/16/opinion/sunday/ellen-pao-sexism-tech.html)
+*   [Why For Women-By Women tech needs to exist](https://you.women2.com/why-for-women-by-women-tech-needs-to-exist-85a7a6ae6901)
