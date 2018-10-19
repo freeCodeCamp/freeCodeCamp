@@ -10,8 +10,7 @@ You could just embed the React library in your webpage like so<sup>2</sup>:
 
 Smart programmers want to take the more practical and productive way: [Create React App](https://github.com/facebookincubator/create-react-app)
 ```bash
-npm install -g create-react-app
-create-react-app my-app
+npx create-react-app my-app
 
 cd my-app
 npm start
