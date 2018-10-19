@@ -2,10 +2,10 @@
 title: 10 Simple and Useful Linux Commands
 ---
 # 10 Simple and Useful Linux Commands
-The commands listed here are basic, and will help you get started quickly. But they’re also powerful, and they’ll continue to be useful as your Linux expertise expands.
-1. `echo` This takes the text you give it and sends it somewhere—back to the screen, to a file, or to another command. By default it echoes back to the screen, unless used with redirection `>` 
-Example: `echo "hello!"`
-Example 2: `echo "Hello world" > hello.txt`
+The commands listed here are basic, and will help you get started with the linux terminal quickly. Although they’re basic, they're also powerful, and they’ll continue to be useful as your Linux expertise expands.
+1. `echo` Example 1: This takes the text you give it and sends it somewhere—back to the screen, to a file, or to another command.Example 2: By default it echoes back to the screen, unless used with redirection `>` 
+Example 1 re: `echo "hello!"`
+Example 2 re: `echo "Hello world" > hello.txt`
 1. `cat` To display the contents of a text file, just type `cat myfile`.
 1. `find` It does what it says, and it’s good at it. Use it to locate files by path, size, date, owner and a bunch of other useful filters. Example: `find . -type f -mtime -1h # List files in this directory modified in the past hour`.
 1. `date` Just type date when you want to know what time it is. Example: `date "+It's %l:%m%p on %A"`. Use it in a script to name files according to the current date.
