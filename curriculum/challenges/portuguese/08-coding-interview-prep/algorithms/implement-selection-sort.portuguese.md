@@ -3,17 +3,17 @@ id: 587d8259367417b2b2512c85
 title: Implement Selection Sort
 challengeType: 1
 videoUrl: ''
-localeTitle: Implementar o tipo de seleção
+localeTitle: Implementar ordenação por seleção
 ---
 
-## Descrição
+## Description
 <section id="description"> Aqui vamos implementar a ordenação por seleção. A ordenação por seleção funciona selecionando o valor mínimo em uma lista e trocando-o pelo primeiro valor da lista. Em seguida, ele inicia na segunda posição, seleciona o menor valor na lista restante e o troca com o segundo elemento. Ele continua percorrendo a lista e trocando elementos até atingir o final da lista. Agora a lista está ordenada. A ordenação por seleção tem complexidade de tempo quadrática em todos os casos. <strong>Instruções</strong> : Escreva uma função <code>selectionSort</code> que recebe um array de inteiros como entrada e retorna um array desses números inteiros ordenados do menor para o maior. <strong>Nota:</strong> <br> Estamos chamando essa função 'por trás dos panos'; o array de teste que estamos usando está comentado no editor. Tente logar o <code>array</code> para ver seu algoritmo de ordenação em ação! </section>
 
-## Instruções
+## Instructions
 <section id="instructions">
 </section>
 
-## Testes
+## Tests
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Desafio
+## Challenge Seed
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ function selectionSort(array) {
 </div>
 
 
-### Após o Teste
+### After test
 <div id='js-teardown'>
 
 ```js
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solução
+## Solution
 <section id='solution'>
 
 ```js
