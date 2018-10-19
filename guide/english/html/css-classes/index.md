@@ -12,7 +12,7 @@ When writing HTML, you can add classes to an element. Just add the attribute `cl
 <p>is a popular catchphrase that <span class="super-man">Super Man</span> often said.</p>
 ```
 
-You can then style these elements with CSS. Classes are referenced with period (.) before them in CSS, but you should not put periods in your HTML.
+You can then style these elements with CSS. Classes are referenced with a period (.) before them in CSS, but you should not put periods in your HTML.
 
 ```css
 .super-man {
