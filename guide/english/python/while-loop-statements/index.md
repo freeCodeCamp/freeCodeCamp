@@ -48,6 +48,33 @@ Line-by-Line Explanation of the above CODE:
 9. Since the variable days is equal to 1 which is less than 7 so the while loop is executed again.
 10. It goes on again and again and when the console prints 'Today is Sunday' the variable days is now equal to 7 and the while loop stops executing. 
 
+The condition after the "while" is similar to an "if" statement.  Because of this, "else" can be used.  Let's add an else statement to the above code:
+
+```python
+days = 0    
+week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+while days < 7:
+   print("Today is " + week[days])
+   days += 1
+else:
+   print("And we start all over again!")
+```
+
+Notice that else is not indented, but on the same level as while, but the statement(s) -- there can be more than one -- are indented.
+
+The code will run exactly as above, but when days is no longer < 7, the else statement will execute, resulting in the following output:
+
+```
+Today is Monday
+Today is Tuesday
+Today is Wednesday
+Today is Thursday
+Today is Friday
+Today is Saturday
+Today is Sunday
+And we start all over again!
+```
+
 #### More Information:
 
 - <a href='https://docs.python.org/3/reference/compound_stmts.html#the-while-statement' target='_blank' rel='nofollow'>Python `while` statement documentation</a>
