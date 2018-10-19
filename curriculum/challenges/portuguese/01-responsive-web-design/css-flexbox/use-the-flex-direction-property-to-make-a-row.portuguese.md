@@ -7,12 +7,12 @@ localeTitle: Use a propriedade flex-direction para criar uma linha
 ---
 
 ## Description
-<section id="description"> Adicionando <code>display: flex</code> a um elemento o transforma em um contêiner flexível. Isso torna possível alinhar quaisquer filhos desse elemento em linhas ou colunas. Você faz isso adicionando a propriedade <code>flex-direction</code> ao item pai e configurando-a para *row* ou *column*. A criação de uma linha alinhará os filhos horizontalmente e a criação de uma coluna alinhará os filhos verticalmente.
-Outras opções para <code>flex-direction</code> são  *row-reverse* (linha reversa) e column-reverse (coluna reversa).
-<strong>Nota</strong> <br> O valor padrão da propriedade <code>flex-direction</code> é *row*. </section>
+<section id="description"> Adicionando <code>display: flex</code> a um elemento o transforma em um contêiner flexível. Isso torna possível alinhar quaisquer filhos desse elemento em linhas ou colunas. Você faz isso adicionando a propriedade <code>flex-direction</code> ao item pai e configurando-a para <code>row</code> ou <code>column</code>. A criação de uma linha alinhará os filhos horizontalmente e a criação de uma coluna alinhará os filhos verticalmente.
+Outras opções para <code>flex-direction</code> são  <code>row-reverse</code> (linha reversa) e <code>column-reverse</code> (coluna reversa).
+<strong>Nota</strong> <br> O valor padrão da propriedade <code>flex-direction</code> é <code>row</code>. </section>
 
 ## Instructions
-<section id="instructions"> Adicione a propriedade CSS <code>flex-direction</code> ao elemento <code>#box-container</code> e atribua a ela um valor de *row-reverse*. </section>
+<section id="instructions"> Adicione a propriedade CSS <code>flex-direction</code> ao elemento <code>#box-container</code> e atribua a ela um valor de <code>row-reverse</code>. </section>
 
 ## Tests
 <section id='tests'>
