@@ -138,10 +138,10 @@ Options can be passed via data attributes or JavaScript. For data attributes, ap
 
 Some frequently used options are:
 
-* interval
-* pause
-* ride
-* wrap
+* interval: specifies how long to wait in miliseconds before going to the next slide.
+* pause: if set to false, the carousel will not pause when the mouse hovers over it.
+* ride: if set to true, the carousel autoplays after the user clicks through the first slide.
+* wrap: if set to false, the carousel pauses at the last item.
 
 ## Additional Details
 - [Bootstrap Carousel](https://getbootstrap.com/docs/4.0/components/carousel/)
