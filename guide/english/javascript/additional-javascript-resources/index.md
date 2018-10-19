@@ -15,6 +15,7 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='http://www.codeconquest.com/blog/top-50-websites-to-learn-javascript/' target='_blank' rel='nofollow'>The 50 Best Websites to Learn JavaScript</a>
 *   <a href='https://www.codementor.io/community/topic/javascript' target='_blank' rel='nofollow'>Codementor JavaScript tutorial</a> 
 *   <a href='http://youmightnotneedjquery.com/' target='_blank' rel='nofollow'>You Might Not Need jQuery</a>
+*   <a href='https://www.udemy.com/the-complete-web-developer-in-2018/' target='_blank' rel='nofollow'>Udemy - The Complete Web Developer in 2018: Zero to Mastery [Sections 10-12 inclusive]</a>
 
 ## References
 
