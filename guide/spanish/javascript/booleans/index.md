@@ -100,3 +100,4 @@ No utilice un objeto booleano en lugar de un primitivo booleano.
 
 *   [Objeto booleano](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)
 *   [Objeto booleano](https://docs.oracle.com/javase/7/docs/api/java/lang/Boolean.html)
+*   [Variables booleanas en js](https://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=793:declarar-variables-javascript-inicializarlas-tipo-booleano-y-valores-true-y-false-metodo-tostring-cu01115e&catid=78&Itemid=206)
