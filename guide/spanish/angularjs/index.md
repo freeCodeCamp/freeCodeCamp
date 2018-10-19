@@ -4,27 +4,27 @@ localeTitle: AngularJS
 ---
 ## AngularJS
 
-AngularJS (versiones 1.x) es un marco de JavaScript de front-end de código abierto. AngularJS extiende HTML para desarrollar front-ends ricos y poderosos. Reduce el uso repetitivo del código HTML. Esta repetición se puede evitar utilizando las directivas proporcionadas por AngularJS que ahorra Mucho tiempo y esfuerzo.
+AngularJS (versiones 1.x) es un _framework_ de JavaScript de front-end de código abierto. AngularJS extiende HTML para desarrollar front-ends más completos y poderosos. Reduce el uso repetitivo de código HTML. Esta repetición se puede evitar utilizando las directivas proporcionadas por AngularJS ahorrando tiempo y esfuerzo.
 
-**Instalar** :
+**Instalar**:
+
+### Utilizando NPM 
 
 npm:
 
-\`\` \`shell npm instalar angular
-```
+`npm install angular`
+
 HTML: 
-```
 
-html
-```
-bower: 
-```
+`<script src="/node_modules/angular/angular.js"></script>`
 
-cáscara instalación de la caja angular
-```
+### Utilizando Bower 
+
+bower:
+
+`bower install angular`
+
 HTML: 
-```
 
-html
+`<script src="/bower_components/angular/angular.js"></script>`
 
-\`\` \`
