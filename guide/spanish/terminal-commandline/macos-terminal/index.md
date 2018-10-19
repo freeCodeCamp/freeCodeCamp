@@ -60,3 +60,23 @@ cp ~/Desktop/test.txt ~/Documents
 Usa la siguiente sintaxis para borrar un archivo
 
 **rm _#PATH_ TO _FILE_**
+
+### Detecta que proceso esta usando el puerto que quieres usar
+`lsof -i :<PORT>`
+
+### Termina el proceso que esta usando el puerto que quires usar
+`kill <PID>`
+
+# iTerm2
+
+iTerm2 es una alternativa al Terminal de Mac OS. iTerm2 trae nuevas funcionalidades como:
+
+* Paneles divididos
+* Ventana de teclas de acceso rápido
+* Busqueda
+* Autocompletar
+* Historia de pegados
+* Configurabilidad
+* y muchas [mas](https://www.iterm2.com/features.html)
+
+iTerm2 se puede descargar de la [pagina web oficial](https://www.iterm2.com/downloads.html). Additional documentation can be found [here](https://www.iterm2.com/documentation.html).
