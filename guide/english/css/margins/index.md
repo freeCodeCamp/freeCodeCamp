@@ -42,6 +42,9 @@ The margin property in CSS defines the outermost portion of the box model, creat
 ## Collapsing margins
 Vertical margins on different elements that touch each other (thus have no content, padding, or borders separating them) will collapse, forming a single margin that is equal to the greater of the adjoining margins. This does not happen on horizontal margins (left and right), only vertical (top and bottom).
 
+## Negative Margins
+Negative margin values are valid.
+
 ## Browser Support
 It is effectively supported in all browsers (since IE6+, Firefox 2+, Chrome 1+ etc)
 
