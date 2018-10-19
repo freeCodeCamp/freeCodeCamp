@@ -13,9 +13,22 @@ The steps to use docker-compose are
 ```
 ```
 2)create a docker-compose yml file to run the services
+  
+  Contents of a sample docker-compose.yml are as below:
+  
+    version: '2'
+    services:
+      example1:
+          image: exampleimage1 
+          environment:
+          - 'EXAMPLE_ENV_PARAM=eg1'
 ```
 ```
 3)use docker-compose up to start the sevices specified in docker-compose.yml file
+
+    For example, considering the sample docker-compose.yml in step 2 aboev, we can run example1 service as
+    
+    docker-compose up example1
 ```
 
 #### Basic commands in docker-compose
