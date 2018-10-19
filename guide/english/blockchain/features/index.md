@@ -14,7 +14,7 @@ In this article, we are going to explore the key characteristic features of Bloc
 When something is controlled by a central authority, where the power to make decision lies in the hands of the apex of the management, such system is called a Centralized System. Banks, for example, are a centralized system, where it's the responsibility of the Governor to make decisions.
 
 On the contrary, when the power is vested in the hands of the people or the users, such system is said to be a Decentralized System.
-The peer to peer network, Torrent, for example is a decentralised system, where the user has complete control.
+The peer to peer network, Torrent, for example is a decentralised system, where the user has complete control. There are many advantages to decentralized systems including increased security, reduced reliance on trusted intermediaries, and lower costs associated with malicious actors or accidental data loss.
 
 ![Decentralized Systems](https://raw.githubusercontent.com/Vagisha16/Hw3/master/blockchain_article_pic.jpg)
 
@@ -22,15 +22,16 @@ The peer to peer network, Torrent, for example is a decentralised system, where 
 
 > Blockchains use distributed Ledger Technology (DLT) to store and access the data around.
 
-When something is stored on a Distributed Ledger, multiple copies of it are made across the network at the same time. Unlike traditional databases, distributed ledger do not have a central database or administration functionality.
+When something is stored on a Distributed Ledger, multiple copies of it are made across the network at the same time. Unlike traditional databases, distributed ledger do not have a central database or administration functionality. This means that all participates in the 
+network must come to a consensus on the current state of the ledger, including the entire history of transactions that preceding it.
 
 ![Distributed Ledger](https://qph.fs.quoracdn.net/main-qimg-2e24c4949a63eefa9bbab1773e185cdd)
 
-When applied in a decentralized system like Blockchain, each user has a copy of the ledger and participates in the transaction verification. This gives Blockchain the property of Immutability and ensures security. Since, the data is distributed, there is no centralized version of the data for the hackers to corrupt. The data and the records are public and easily verifiable. This also eliminates single point of Failure.
+When applied in a decentralized system like Blockchain, each user has a copy of the ledger and participates in the transaction verification. This gives Blockchain the property of Immutability and ensures security. Since, the data is distributed, there is no centralized version of the data for the hackers to corrupt. The data and the records are public and easily verifiable. This also eliminates single point of failure.
 
 #### _* Secure Ecosystem (Cryptographic Hash)_
 
-BlockTech uses the concepts like Proof of Work and Hash encryption to ensure security and immutability. Proof of work involves several people around the world using computational algorithm to try and find the appropriate hash value that satisfies a predefined condition regarding the hash value.
+BlockTech uses the concepts like Proof of Work and Hash encryption to ensure security and immutability. Proof of work involves several people around the world using computational algorithms to try and find the appropriate hash value that satisfies a predefined condition regarding the hash value. In order to tamper with data on the blockchain, a malicious actor would need to have more computational power than all the rest of the honest miners combined.
 
 ![Hashing](https://raw.githubusercontent.com/Vagisha16/Hw3/master/Hash.png)
 
