@@ -14,7 +14,7 @@ The team must also foster mutual respect througout every member of the team. An 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
-Atlassian's primer article on Scrum [here.](https://www.atlassian.com/agile/scrum) 
+- Atlassian's primer article on Scrum [here.](https://www.atlassian.com/agile/scrum) 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
 
