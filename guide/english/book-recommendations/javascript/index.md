@@ -33,3 +33,4 @@ A collection of articles covering the basics (core language and working with a b
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
+- JavaScript free PDF at this [repository](https://github.com/transidai1705/javascript-ebooks)
