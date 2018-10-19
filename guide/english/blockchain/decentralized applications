@@ -1,0 +1,9 @@
+Decentralized applications (dApps) are computer programs or applications developed to run on the P2P or dentralized network. There are dApps that work with blockchains (example: Ethereum) and those that do not (example: Bitorrent). These applications are designed not to have single points of failure and are resistant to various forms of disruption or attacks.
+
+Blockchain based decentralized applications rely on trustless consensus protocols to verify and append transactions to a shared ledger. Entities that provide the computing power to sustain these dApps usually earn a reward in the form of network tokens or cryptocurrencies. 
+
+dApps are open source projects and they are autonomously managed.
+
+References:
+1. [BlockchainHub: Decentralized Applications – dApps](https://blockchainhub.net/decentralized-applications-dapps/)
+2. [Wikipedia: Decentralized application](https://en.wikipedia.org/wiki/Decentralized_application)
