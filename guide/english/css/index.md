@@ -22,3 +22,5 @@ Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www
 The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how the same html can be styled to look totally unique.
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
+
+When you're practice and working with CSS, you can refer to this [CSS reference](https://cssreference.io/) to help you along the way if you're unsure about a property. A great tool for helping visualize what each CSS property does.
