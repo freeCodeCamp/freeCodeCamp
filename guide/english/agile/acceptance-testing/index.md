@@ -11,65 +11,41 @@ In software development, user acceptance testing (UAT) - also called beta testin
 There are various forms of acceptance testing:
 
 > - User acceptance Testing
->
 > - Business acceptance Testing
->
 > - Alpha Testing
->
 > - Beta Testing
 
 ## Acceptance Criteria
 Acceptance criteria are defined on the basis of the following attributes
 
 > - Functional Correctness and Completeness
->
 > - Data Integrity
->
 > - Data Conversion
->
 > - Usability
->
 > - Performance
->
 > - Timeliness
->
 > - Confidentiality and Availability
->
 > - Installability and Upgradability
->
 > - Scalability
->
 > - Documentation
 
-## Acceptance Test Plan - Attributes
+# Acceptance Test Plan - Attributes
 The acceptance test activities are carried out in phases. Firstly, the basic tests are executed, and if the test results are satisfactory then the execution of more complex scenarios are carried out.
 
 The Acceptance test plan has the following attributes:
 
 > - Introduction
->
 > - Acceptance Test Category
->
 > - Operation Environment
->
 > - Approach
->
 > - Feature to be tested
->
 > - Feature not to be tested
->
 > - Responsibilities
->
 > - Test case ID
->
 > - Test Title
->
 > - Test Objective
->
 > - Test Procedure
->
 > - Test Schedule
->
 > - Resources
 
 The acceptance test activities are designed to reach at one of the conclusions:
@@ -84,15 +60,10 @@ The acceptance test activities are designed to reach at one of the conclusions:
 The Acceptance test Report has the following attributes:
 
 > - Report Identifier
->
 > - Summary of Results
->
 > - Variations
->
 > - Recommendations
->
 > - Summary of To-DO List
->
 > - Approval Decision
 
 Acceptance Testing focuses on checking if the developed software meets all the requirements. Its main purpose is to check if the solution developed meets the user expectations.
