@@ -10,6 +10,12 @@ One of the best books on JavaScript. A must for both, beginners and intermediate
 - [E-book](https://eloquentjavascript.net/)(free)
 - [Amazon](https://www.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
 
+### JavaScript and JQuery: Interactive Front-End Web Development
+
+This book is a must for anyone wanting a smooth introduction to JS. Although not free, it's a worthy investment.
+- [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/ref=sr_1_1?ie=UTF8&qid=1539944907&sr=8-1&keywords=jon+duckett+javascript+and+jquery)
+
+
 #### You Don't Know JS
 
 Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript.
