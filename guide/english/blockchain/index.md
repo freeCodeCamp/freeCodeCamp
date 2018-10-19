@@ -39,3 +39,7 @@ As of 2016, blockchain 2.0 implementations continue to require an off-chain orac
 * [Blockchain academic papers](https://github.com/decrypto-org/blockchain-papers)
 * [Blockchain Resources](https://github.com/BlockchainDevs/CryptocurrencyAwesome/blob/master/README.md)
 
+###### Coursses
+
+[Udemy Blockchain Course](https://www.udemy.com/learn-blockchain-technology-in-java)
+
