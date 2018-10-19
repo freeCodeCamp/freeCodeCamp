@@ -11,6 +11,14 @@ The Blender software is cross-platform that runs on Windows, Linux and Mac.Blend
 
 Blender is free and open source software, released under the  *GNU General Public License (GPL)**.
 
+#Performance Considerations by Hardware Improvements
+
+1. First You Must install more system memory.
+2. Then upgrade your CPU to a multi-core/multiprocessor.
+3. And upgrade your OpenGL video drivers.
+4. So now get faster memory, up to your PC's motherboard limit.
+5. End check on your blender project and use or set up a render farm using all available PCs in your house, or use a render farm
+
 #### More Information: 
 
 * [Blender Official Website](https://www.blender.org)
