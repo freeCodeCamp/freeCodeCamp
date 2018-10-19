@@ -1,8 +1,8 @@
 ---
 title: Design Patterns
-localeTitle: Padrões de design
+localeTitle: Padrões de desenho
 ---
-## Padrões de design
+## Padrões de desenho
 
 Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freeCodeCamp/guide/blob/master/src/pages/design-patterns/index.md) .
 
