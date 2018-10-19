@@ -6,7 +6,7 @@ title: CSS Custom Properties
 CSS custom properties are also referred to as CSS variables. As of October 2018, CSS custom properties are still an experimental technology. Consider [browser support](https://developer.mozilla.org/en-US/docs/Web/CSS/--*#Browser_compatibility) before using the feature in production. 
 
 ### Declaring Custom Properties
-Within a selector, custom properties are declared using two hyphens (--) and the name, followed by the value. The value can be simple, such as a color (RGB, hexcode, etc.) or size (using pixel, em, rem, etc.), or it can be more complex, like a dropshadow definition. See the examples below.
+Within a selector, custom properties are declared using two hyphens (--) and the name, followed by the value. The value can be simple, such as a color (RGB, hex code, etc.) or size (using pixel, em, rem, etc.), or it can be more complex, like a drop shadow definition. See the examples below.
 ```css
 :root {
   --firstVariable: red;
