@@ -242,6 +242,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+*Hacking: The Art of Exploitation, 2nd Edition
+- https://www.amazon.com/Hacking-Art-Exploitation-Jon-Erickson/dp/1593271441
+- ISBN 1-59327-007-0
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
