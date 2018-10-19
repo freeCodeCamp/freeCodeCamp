@@ -162,7 +162,7 @@ Screen-readers and other assistive technologies render a top-to-bottom represent
 
 DOM stands for Document Object Model and is the tree-like structure of your website's HTML elements. All your HTML elements are nodes that hierarchically interlink based on the HTML tags you use and JavaScript. Screen-readers use this DOM tree to work with your HTML code.
 
-If you put your element at the top of your element, it will show up at the top of your DOM tree as well. therefore, the screen-reader will put it at the top as well, even if you move it to the bottom of the page using CSS.  
+If you put your element at the top of your element, it will show up at the top of your DOM tree as well. Therefore, the screen-reader will put it at the top as well, even if you move it to the bottom of the page using CSS.  
 
 So a final tip I want to give you all is to pay attention to the order of your HTML, not just your finished website with CSS added in. Does it still make sense without CSS? Great!
 
