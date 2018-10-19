@@ -48,7 +48,7 @@ Conditional Comments are only recognised by Internet Explorer Version 5 through 
 
 ### IE Conditional Comments
 
-These comments are only available in Internet Explorer and can be used up to IE9. In the current times, there is a good change you will never see them, but it is good to know about their existance. Conditional Comments are a way to serve a different experience for different client browsers. For example:
+These comments are only available in Internet Explorer and can be used up to IE9. In the current times, there is a good chance you will never see them, but it is good to know about their existence. Conditional Comments are a way to serve a different experience for different client browsers. For example:
 
 ```html
 <!--[if lt IE 9]> <p>Your browser is lower then IE9</p> <![endif]-->     
