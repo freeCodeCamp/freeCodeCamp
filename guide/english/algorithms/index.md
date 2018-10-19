@@ -58,3 +58,7 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work..
+
+B-Search Algorithm:
+Optimize searching algorithm
+
