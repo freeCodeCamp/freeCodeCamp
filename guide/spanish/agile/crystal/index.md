@@ -4,7 +4,7 @@ localeTitle: Cristal
 ---
 ## Cristal
 
-Es una metodología que es un enfoque muy adaptable y liviano para el desarrollo de software. Es una familia de metodologías ágiles en la que se incluyen Crystal Clear, Crystal Yellow, Crystal Orange y otros. Cuál de ellos tiene un atributo único impulsado por muchos factores, como el tamaño del equipo, la importancia del sistema y las prioridades del proyecto. Lo que establece que cada proyecto puede necesitar un conjunto diferente de prácticas, reglas y procesos de acuerdo con las características únicas del proyecto. Todos ellos fueron desarrollados por Alistair Cockburn en la década de 1990.
+Es una metodología con un enfoque muy adaptable y liviano para el desarrollo de software. Es una familia de metodologías ágiles en la que se incluyen Crystal Clear, Crystal Yellow, Crystal Orange y otros. Cada uno de ellos tiene un atributo único impulsado por muchos factores, como el tamaño del equipo, la importancia del sistema y las prioridades del proyecto. Lo que establece que cada proyecto puede necesitar un conjunto diferente de prácticas, reglas y procesos de acuerdo con las características únicas del proyecto. Todos ellos fueron desarrollados por Alistair Cockburn en la década de 1990.
 
 Según él, las caras del cristal se definen como Metodología, técnicas y políticas.
 
