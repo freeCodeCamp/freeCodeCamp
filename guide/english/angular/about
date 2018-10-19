@@ -1,0 +1,5 @@
+# What is it?
+
+**AngularJS** is an open-source front-end web application framework based off JavaScript. Mainly maintained by Google and a community of individuals and businesses, it strives to address a plethora of challenges that one may occur when developing single-page applications.
+
+AngularJS aims to simplify not only the development and testing of such single-page applications, but also the components frequently used in rich Internet applications. It does this by providing a framework for client-side model-view-controller (MVC) and model-view-viewmodel (MVVM) architectures.
