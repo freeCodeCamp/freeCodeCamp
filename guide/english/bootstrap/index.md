@@ -78,8 +78,13 @@ themes that build on the Bootstrap framework to provide a more customized and st
 
 #### Bootstrap Resources: 
 [Bootstrap's offical blog](http://blog.getbootstrap.com/)
+
 [Bootstrap site inspiration](http://expo.getbootstrap.com/)
+
 [Showcase of sites built using Bootstrap](http://builtwithbootstrap.com/)
+
 [HTML linter for projects using Bootstrap](https://github.com/twbs/bootlint)
+
 [Design elements and code snippets for Bootstrap](https://bootsnipp.com/)
+
 [Code, theme, and add-on resources for Bootstrap](http://expo.getbootstrap.com/resources/)
