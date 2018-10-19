@@ -10,7 +10,7 @@ Sometimes, some of the hackathons send out acceptances in batches. If you apply 
 
 2.  **Don't be afraid.** 
 
-I recently competed in my first hackathon, and I was completely scared with a major case of <a href='https://guide.freecodecamp.org/working-in-tech/imposter-syndrome/' target='_blank' rel='nofollow'>imposter syndrome</a>. The key for hackathons is to just got for it without any fear, you are indeed a great asset to a team.
+I recently competed in my first hackathon, and I was completely scared with a major case of <a href='https://guide.freecodecamp.org/working-in-tech/imposter-syndrome/' target='_blank' rel='nofollow'>imposter syndrome</a>. The key for hackathons is to just go for it without any fear, you are indeed a great asset to a team.
 
 3.  **Just keep pushing.** 
 
