@@ -15,7 +15,7 @@ Here's an example of a link that sends users to freeCodeCamp's home page:
 <a href="www.freecodecamp.org">Click here to go to freeCodeCamp!</a>
 ```
 
-Notice that the attribute name (`href`) and value ("www.freeCodeCamp.org") are separated with an equals sign, and quotes surround the value.
+Notice that the attribute name (`href`) and value ("www.freeCodeCamp.org") are separated with an equals sign, and the quotes surround the value.
 
 There are many different HTML attributes, but most of them only work on certain HTML elements. For example, the `href` attribute won't work if it's placed in an opening `<h1>` tag.
 
