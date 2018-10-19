@@ -1,10 +1,10 @@
 ---
 title: If Elif Else Statements
-localeTitle: 如果Elif Else声明
+localeTitle: If/Elif/Else声明语句
 ---
-## 如果Elif Else声明
+## If/Elif/Else声明语句
 
-`if` / `elif` / `else`结构是控制程序流的常用方法，允许您根据某些数据的值执行特定的代码块。如果关键字`if`后面的条件计算为`true` ，则代码块将执行： 请注意，在条件检查之前和之后不使用括号，如同其他语言一样。
+`if` / `elif` / `else`结构是控制程序流的常用方法，允许您根据某些数据的值（true/false）执行特定的代码块。如果关键字`if`后面的条件计算为`true` ，则代码块将执行： 请注意，在判断条件的语句之前和之后不使用括号，如同其他语言一样。
 
 ```python
 if True: 
@@ -18,7 +18,7 @@ x = 5
   print("The condition was true!") #this statement executes 
 ```
 
-如果条件为`false` ，您可以选择添加将执行的`else`响应：
+如果条件为`false` ，您可以选择添加在if代码块之后执行的`else`响应：
 
 ```python
 if not True: 
@@ -38,7 +38,7 @@ y = 3
   print("The condition wasn't true!") #this statement executes 
 ```
 
-_请注意， `else`关键字后面没有条件 - 它捕获条件为`false`所有情况_
+_请注意， `else`关键字后面没有条件 - 它执行条件为if代码块未执行的所有情况_
 
 可以通过在初始`if`语句之后包含一个或多个`elif`检查来检查多个条件，但只执行一个条件：
 
@@ -55,11 +55,11 @@ z = 7
   print("Neither will I!") #this statement does not execute 
 ```
 
-_请注意，只有第一个计算为`true`条件才会执行。即使`z > 6`为`true` ， `if/elif/else`块`if/elif/else`在第一个真实条件之后终止。这意味着只有在没有条件`true`的情况下才会执行`else` 。_
+_请注意，只有第一个计算为`true`条件才会执行。即使`z > 6`为`true` ， `if/elif/else`块`if/elif/else`在第一个真实条件之后终止。这意味着只有在else之前没有条件为`true`的情况下才会执行`else` 。_
 
 我们还可以创建嵌套if用于决策。在此之前请参阅前面的href ='https：//guide.freecodecamp.org/python/code-blocks-and-indentation'target ='\_ blank'rel ='nofollow'>缩进指南。
 
-让我们举个例子来找一个偶数也大于'10'的数字
+让我们举个例子来找既是一个偶数也大于'10'的数字
 ```
 python 
  x = 34 
