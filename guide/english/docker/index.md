@@ -34,3 +34,8 @@ sh get-docker.sh
 * For more on containerization, checkout [Search IT Operations](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization)
 * A Docker 101 course [Docker 101](https://github.com/docker/labs/tree/master/beginner/)
 
+##### Books
+* The Docker Book
+* Docker in Action
+* Docker: The Complete Introduction To Using Docker Containers Today
+* Docker in Practice
