@@ -11,6 +11,8 @@ Java comments are not executed by compiler and interpreter.
 
 
 ### Types of Java Comments
+Java Comments
+The java comments are statements that are not executed by the compiler and interpreter. The comments can be used to provide information or explanation about the variable, method, class or any statement. It can also be used to hide program code for specific time.
 
 #### 1. Single Line Comment
 
