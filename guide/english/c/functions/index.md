@@ -95,7 +95,7 @@ Ideally, you'll always pass into your functions as parameters, but you may not a
 
 ## Recursion in C
 When function is called within the same function, it is known as recursion in C. The function which calls the same function, is known as recursive function.
-```
+```C
 int factorial (int n)
 {
     if ( n < 0)
