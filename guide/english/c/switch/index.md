@@ -22,6 +22,11 @@ switch (n)
     case constant2:
         // code to be executed if n is equal to constant2;
         break;
+    
+    case constant3:
+    case constant4:
+        // code to be executed if n is either equal to constant3 or constant4
+        break;
         .
         .
         .
@@ -76,6 +81,43 @@ int main() {
 -> Enter two operands: 32.5
 -> 12.4
 -> 32.5 - 12.4 = 20.1
+```
+
+## Example
+
+The below code depicts how to handle switch case when single piece of code runs for multiple values.
+
+```c
+#include <stdio.h>
+
+int main()
+{
+    for (int i=1; i<=4; i++) {
+        switch (i) {
+            case 1:
+              printf("Hello World 1\n");
+              break;
+            
+            case 2:
+            case 3:
+              printf("Hello World 2 or 3\n");
+              break;
+            
+            case 4:
+              printf("Hello World 4\n");
+              break;
+        }
+    }
+
+    return 0;
+}
+```
+## Output
+```c
+Hello World 1
+Hello World 2 or 3
+Hello World 2 or 3
+Hello World 4
 ```
 
 ## Review : Switch vs if else
