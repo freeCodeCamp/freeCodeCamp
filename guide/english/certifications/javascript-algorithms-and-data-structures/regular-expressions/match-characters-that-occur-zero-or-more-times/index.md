@@ -28,7 +28,7 @@ regexPlus.test(phrase); // returns true
 regexStar.test(phrase); // returns true
 ```
 
-## Solution:
+### Solution:
 
 ```js
 let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
