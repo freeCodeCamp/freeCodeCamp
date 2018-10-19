@@ -12,7 +12,7 @@ We can say if a1,a2,a3,....,an are in GP then
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{a_{2}}{a_{1}}&space;=&space;\frac{a_{3}}{a_{2}}=...\frac{a_{n}}{a_{n-1}}&space;=&space;r" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{a_{2}}{a_{1}}&space;=&space;\frac{a_{3}}{a_{2}}=...\frac{a_{n}}{a_{n-1}}&space;=&space;r" title="\frac{a_{2}}{a_{1}} = \frac{a_{3}}{a_{2}}=...\frac{a_{n}}{a_{n-1}} = r" /></a>
 
-# r is known as common ratio of GP.
+<a href="https://www.codecogs.com/eqnedit.php?latex=\boldsymbol{r}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\boldsymbol{r}" title="\boldsymbol{r}" /></a> is known as common ratio of GP.
  
  if a is the first term then GP can be written as <a href="https://www.codecogs.com/eqnedit.php?latex=a,ar,ar^{2},...,ar^{n-1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?a,ar,ar^{2},...,ar^{n-1}" title="a,ar,ar^{2},...,ar^{n-1}" /></a>
 
