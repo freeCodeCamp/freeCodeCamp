@@ -69,7 +69,6 @@ tests:
 ## Solution
 <section id='solution'>
 
-```js
-// solution required
-```
+<label><input type="text" placeholder-"e.g.,John" required/></label>
+
 </section>
