@@ -10,8 +10,9 @@
     </tr>
 </table>
 
-# Contribution Guidelines
+<h1 dir="rtl"> إرشادات المساهمة</h1>
 
-Hello 👋 !
-
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+<p dir="rtl">مرحبا!</p>
+<p dir="rtl">freeCodeCamp.org ممكن بفضل الآلاف من المتطوعين الطيبين مثلك. نحن ممتنون لمساهماتكم ، ونحن متحمسون للترحيب بكم على متن السفينة.</p>
+<p dir="rtl">نحن نطبق بصرامة <a href="https://www.freecodecamp.org/code-of-conduct">"القواعد السلوكية"</a> الخاصة بنا. خذ لحظة لقراءتها. انها فقط 196 كلمة طويلة.</p>
+<p dir="rtl">مساهمة سعيدة 🎉!</p>
