@@ -64,7 +64,14 @@ function gcd(a, b) {
     return gcd(b, (a % b));
 }
 ```
-
+Python Code to Perform GCD 
+```Python
+def gcd(a,b):
+    if b == 0:
+        return(a)
+    else:
+        return(gcd(b,a%b))
+ ```
 You can also use the Euclidean Algorithm to find GCD of more than two numbers.
 Since, GCD is associative, the following operation is valid- `GCD(a,b,c) == GCD(GCD(a,b), c)`
 
