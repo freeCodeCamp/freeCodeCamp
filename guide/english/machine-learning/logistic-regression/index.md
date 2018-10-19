@@ -27,6 +27,9 @@ J(θ)=(1/m)∑Cost(hθ(x(i)),y(i)) , where summation is from i=1 to m.
 
 Cost(hθ(x),y)=−log(hθ(x))           if y = 1
 Cost(hθ(x),y)=−log(1−hθ(x))         if y = 0
+
+
+Refer to this article for clearing your basics https://www.analyticsvidhya.com/blog/2017/06/a-comprehensive-guide-for-linear-ridge-and-lasso-regression/
 #### Predictions using logistic regression:
 Logistic regression models the probability of the default class(i.e. the first class).
 You can classify results given by : 
