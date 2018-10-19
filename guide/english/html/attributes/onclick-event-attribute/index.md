@@ -4,7 +4,7 @@ title: Onclick Event Attribute
 
 ## Onclick Event Attribute
 
-When the element is clicked fires a event. 
+When the element is clicked fires an event. 
 
 It works just like the *onclick method* or `addEventListener('click')` to the element.
 
@@ -37,3 +37,4 @@ Using raw JavaScript onclick attribute:
 #### More Information:
 
 - [MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/GlobalEventHandlers/onclick)
+- [W3 Schools](https://www.w3schools.com/jsref/event_onclick.asp)
