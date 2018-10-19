@@ -13,6 +13,7 @@ React is used for building user interfaces - what the user sees on their screen 
 - It's efficient: React computes the minimal set of changes necessary to keep your DOM up-to-date. 
 - It's flexible: React allows the user to render one or many components to the browser.
 - And it's compatible: React works well with many popular libraries and frameworks.
+- Concept of virtual DOM is so effective.
 
 ## Why learn React?
 
