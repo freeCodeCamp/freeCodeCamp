@@ -4,7 +4,7 @@ title: State
 
 # State
 
-State is the place where the data comes from. 
+Data in react can come from two places: props or state. Props are inherited from the parent and are immutable, i.e. they cannot change. State, on the other hand, is created by the component itself and *can* change. The state can be initialized with hard-coded data or come from props (but never assign unchanging props to state!).
 
 We should always try to make our state as simple as possible and minimize the number of stateful components. If we have, for example, ten components that need data from the state, we should create one container component that will keep the state for all of them.
 
