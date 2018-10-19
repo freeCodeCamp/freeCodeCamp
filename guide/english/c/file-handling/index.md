@@ -71,6 +71,8 @@ C provides a number of build-in function to perform basic file operation
   
   **w+**  **-**   **opens a file in both reading and writing mode**
   
+  **b**  **-**   **opens a file in binary mode**
+  
   Here's an  example of reading and writing data to a file
   
   ```c
