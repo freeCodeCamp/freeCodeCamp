@@ -164,5 +164,32 @@ On a small screen (such as a phone or tablet) the navbar is going to take up too
   </div>
 </nav>
 
+### Bootstrap 4.1 new class for collapsibl NavBar
+<!-- class .navbar-ecpand-lg denotes that the breakpoint for the collapse of NavBar-->
+<!-- There are some other breakpoints can be implemente using .navbar-ecpand-sm .navbar-ecpand-md .navbar-ecpand-xl-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 #### More Information:
 [BootStrap navbar documentation](https://getbootstrap.com/docs/4.0/components/navbar/)
