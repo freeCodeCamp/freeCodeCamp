@@ -4,9 +4,9 @@ localeTitle: Sessões
 ---
 ## Sessões
 
-As sessões são um recurso em PHP que permite armazenar o lado do servidor de dados sobre um usuário. Quando uma sessão é configurada, um cookie do navegador é configurado, o qual identifica o usuário para o PHP, para que o PHP saiba quais variáveis ​​do lado do servidor devem ser acessadas.
+As sessões são um recurso em PHP que permite armazenar, do lado do servidor, dados sobre um usuário. Quando uma sessão é configurada, um cookie do navegador é definido, o qual identifica o usuário no PHP, para que o PHP saiba quais variáveis do lado do servidor devem ser acessadas.
 
-### Começando uma sessão
+### Iniciando uma sessão
 
 Em cada página que você deseja acessar a sessão, você precisará iniciar (ou carregar) a sessão. Para fazer isso, execute a função `session_start()` que carrega o PHP Session System.
 
@@ -15,13 +15,13 @@ Em cada página que você deseja acessar a sessão, você precisará iniciar (ou
  session_start(); 
 ```
 
-Por favor, note que ao usar sessões baseadas em cookies, session\_start () deve ser chamado antes de produzir qualquer coisa para o navegador. qualquer outra coisa resultará em um erro.
+Note que ao usar sessões baseadas em cookies, session\_start () deve ser chamado antes de gerar qualquer informação (output) para o navegador. Executando esse método após a geração de informação resultará em um erro.
 
 ### Acessando e configurando dados em uma sessão
 
-A `$_SESSION['key']` é um tipo especial de array (usando um cookie de navegador para determinar qual sessão acessar).
+A variavel `$_SESSION['key']` faz parte de um tipo especial de array (usando um cookie de navegador para determinar qual sessão acessar).
 
-No exemplo abaixo, você vê que a escolha do tema do usuário está definida como o tema número um.
+No exemplo abaixo, você vê que a escolha do tema do usuário está definida como o tema (themechoice) número um.
 
 ```PHP
 <?php 
@@ -39,7 +39,7 @@ Acessar uma variável de sessão é semelhante a definir uma. Simplesmente inclu
 
 ### Removendo uma Sessão
 
-Para remover uma sessão do sistema, execute o seguinte código PHP. Ele irá desconfigurar as variáveis ​​da sessão e apagá-lo do sistema.
+Para remover uma sessão do sistema, execute o seguinte código PHP. Ele irá desconfigurar as variáveis da sessão e apagá-la do sistema.
 
 ```PHP
 <?php 
@@ -49,11 +49,11 @@ Para remover uma sessão do sistema, execute o seguinte código PHP. Ele irá de
 
 ### Sessões são temporárias
 
-É importante não tratar uma sessão como armazenamento permanente. Eles são limpos de tempos em tempos pelo desenvolvedor, sempre que o aplicativo é movido para um novo servidor host, pelo próprio aplicativo (por exemplo, um botão de logout) e até mesmo durante a manutenção do servidor. Para armazenamento a longo prazo de dados, certifique-se de usar um banco de dados.
+É importante não tratar uma sessão como armazenamento permanente. Elas podem ser limpadas de tempos em tempos pelo desenvolvedor, sempre que o aplicativo é movido para um novo host de servidor, pelo próprio aplicativo (por exemplo, um botão de logout) e até mesmo durante a manutenção do servidor. Para armazenamento dos dados a longo prazo, utilize um banco de dados.
 
 ### Segurança
 
-Por último, mas não menos importante, é importante usar sessões php com segurança. Leia nosso artigo sobre [aquisição de identificadores de](/php/security/session-identifier-acquirement) [sessão](/php/security/session-hijacking) e [sequestro de sessão](/php/security/session-hijacking) para obter mais informações.
+Por último, mas não menos importante, é importante usar sessões php com segurança. Leia nosso artigo sobre [Obtenção de Identificadores de Sessão](/php/security/session-identifier-acquirement) e [Sequestro de Sessão](/php/security/session-hijacking) para obter mais informações.
 
 #### Mais Informações:
 
