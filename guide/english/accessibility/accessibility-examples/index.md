@@ -50,5 +50,6 @@ This ensures that the link is only visible to sighted users when the link is in 
 These CSS styles hide the link by default and only display the link when it is receiving keyboard focus. For more information visit the [a11yproject](http://a11yproject.com/posts/how-to-hide-content) and this [blog post](http://hugogiraudel.com/2016/10/13/css-hide-and-seek/).
 
 
-### Accessible Tables
-### Accessible Tabs
+### [Accessible Tables](https://developer.mozilla.org/en-US/docs/Learn/HTML/Tables/Advanced#Tables_for_visually_impaired_users)
+### [Accessible Tabs](https://simplyaccessible.com/article/danger-aria-tabs/)
+[More practice with accessible tabs](https://codepen.io/svinkle/pen/edmDF)
