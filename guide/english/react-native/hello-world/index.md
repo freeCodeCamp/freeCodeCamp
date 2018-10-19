@@ -37,3 +37,5 @@ AppRegistry.registerComponent(‘AwesomeProject’, () => App);
 ```
 
 To render the code to the screen, instead of opening the page in a browser, you use a special `AppRegistry.registerComponent()` method provided by React Native to render the app to a mobile device.
+
+Usually, some react native developer seperate between the real component ( `class App extends ...` ) and `AppRegistry.registerComponent()` metho, by putting the component in another file. 
