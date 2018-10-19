@@ -53,8 +53,60 @@ Note: Always specific a default cursor at the end incase the specified cursor is
 .custom-cursor {
   cursor: url(cursor-image.png),auto;
 }
-```
 
+## Example
+
+```html
+<html>
+   <head>
+   </head>
+   
+   <body>
+      <p>Move the mouse over the words to see the cursor change:</p>
+      
+      <div style = "cursor:auto">Auto</div>
+      <div style = "cursor:crosshair">Crosshair</div>
+      <div style = "cursor:default">Default</div>
+      
+      <div style = "cursor:pointer">Pointer</div>
+      <div style = "cursor:move">Move</div>
+      <div style = "cursor:e-resize">e-resize</div>
+      <div style = "cursor:ne-resize">ne-resize</div>
+      <div style = "cursor:nw-resize">nw-resize</div>
+      
+      <div style = "cursor:n-resize">n-resize</div>
+      <div style = "cursor:se-resize">se-resize</div>
+      <div style = "cursor:sw-resize">sw-resize</div>
+      <div style = "cursor:s-resize">s-resize</div>
+      <div style = "cursor:w-resize">w-resize</div>
+      
+      <div style = "cursor:text">text</div>
+      <div style = "cursor:wait">wait</div>
+      <div style = "cursor:help">help</div>
+   </body>
+</html> 
+```
+## Output
+   Move the mouse over the words to see the cursor change:
+   
+```html
+Auto
+Crosshair
+Default
+Pointer
+Move
+e-resize
+ne-resize
+nw-resize
+n-resize
+se-resize
+sw-resize
+s-resize
+w-resize
+text
+wait
+help
+```
 #### More Information:
 * Check the above cursor values in action: <a href='https://codepen.io/chriscoyier/pen/uCwfB' target='_blank' rel='nofollow'>codepen</a>
 * Mozilla Developer Network: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/cursor' target='_blank' rel='nofollow'>MDN</a>
