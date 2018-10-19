@@ -39,7 +39,7 @@ Watch the video demonstration or follow the steps below it:
 
     > All stubs will be in an index.md file
 
-2. Click the <kbd>Edit this file</kbd> pencil icon and make your changes to the file in GitHub-flavored Markdown.
+2. Click the <kbd> Edit this file</kbd> pencil icon and make your changes to the file in GitHub-flavored Markdown.
 
     > If the icon is greyed out and giving you the warning "You must be on a branch to make or propose changes to this file", then you are likely on another person's tree. At the top left of the page, there is a drop down box which says "Tree: #######". Click on the drop down and change the branch to "master". The pencil icon should now be clickable.
 
