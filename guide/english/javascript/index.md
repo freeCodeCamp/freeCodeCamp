@@ -3,7 +3,7 @@ title: JavaScript
 ---
 
 ## JavaScript
-JavaScript is the most widely used scripting language on Earth. And it has the largest library ecosystem of any programming language.
+JavaScript is the most widely used programming language on Earth. And it has the largest library ecosystem of any programming language. JavaScript, together with HTML and CSS is one of the big three when it comes learning frontend development.
 
 JavaScript is the core language of the web, and the only programming language that can run in all major web browsers.
 
@@ -15,6 +15,8 @@ If you want to learn more about the JavaScript language, and why it's so widely 
 or watch this [inspiring video from Preethi Kasireddy](https://www.youtube.com/watch?v=VqiEhZYmvKk).
 
 ## Standalone JavaScript engines
+A standalone engine is a program which executes code without having to use any other sources for execution. In this case, it executes Javascript. Most browsers have their own way of dealing with Javascript.
+
 Mozilla's SpiderMonkey, the first JavaScript engine ever written, currently used in Mozilla Firefox.
 V8, Google's JavaScript engine, used in Google Chrome.
 
@@ -31,5 +33,5 @@ Mozilla also offers Rhino, an implementation of JavaScript built in Java, typica
 WebKit (except for the Chromium project) implements the JavaScriptCore engine.
 
 ## JavaScript Frameworks
-Most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
+Most frequently used JavaScript [Frameworks](https://skillcrush.com/2018/07/23/what-is-a-javascript-framework/) are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
 For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
