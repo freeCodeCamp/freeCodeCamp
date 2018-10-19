@@ -3,8 +3,18 @@ title: Make Circular Images with a border-radius
 ---
 ## Make Circular Images with a border-radius
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/make-circular-images-with-a-border-radius/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
-
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+We need to give our cat photo a ```border-radius``` of ```50%```.
+
+### Solution
+
+In class ```smaller-image``` add a ```border-radius``` of ```50%```:
+
+```css
+  .smaller-image {
+    width: 100px;
+    border-radius: 50%;
+  }
+```
+
+This class already assigned to our ```img``` element and making it perfectly circular.
