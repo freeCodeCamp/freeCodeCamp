@@ -5,7 +5,7 @@ title: Books on JavaScript
 
 *Eloquent JavaScript*
 
-One of the best books on JavaScript. A must for both, beginners and intermediate programmers, who code in JavaScript. The best part is that the e-book is available for free.
+One of the best books on JavaScript. A must for both, beginners and intermediate programmers, who code in JavaScript. The best part is that the e-book is available for free.This book is important for improvement.
 
 - [E-book](https://eloquentjavascript.net/)(free)
 - [Amazon](https://www.amazon.com/gp/product/1593275846/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1593275846&linkCode=as2&tag=marijhaver-20&linkId=VPXXXSRYC5COG5R5)
