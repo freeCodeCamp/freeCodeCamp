@@ -100,6 +100,6 @@ Creando y Editando Desafíos:
 
 1. [Guía de Diseño de Desafíos](style-guide-for-curriclum-challenges.md) - como crear y formatear desafíos
 
-2. [Tipos de desafíos](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - que significa el valor numerico de 'challengeType' (enum).
+2. [Tipos de desafíos](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - significado del valor numérico de 'challengeType' (enum).
 
 3. [Contribuyendo a freeCodeCamp - Escribiendo Pruebas de Desafío en ES6](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - un video siguiendo a [Ethan Arrowood](https://twitter.com/ArrowoodTech) mientras contribuye a la version antigua del currículo 
