@@ -3,8 +3,14 @@ title: Add Borders Around Your Elements
 ---
 ## Add Borders Around Your Elements
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/basic-css/add-borders-around-your-elements/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+To add a custom border around any HTML element, these three properties are used as shown below.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+```CSS
+.className {
+    border-width: 10px;  /*sets the width/thickness of border to 10 pixels*/
+    border-color: pink;  /*sets the color of the border to pink*/
+    border-style: solid; /*sets the style of the border to solid line type*/
+ }
+```
+The same className should be used as the value for class attribute of the HTML element which has to be styled.
+Good Luck!
