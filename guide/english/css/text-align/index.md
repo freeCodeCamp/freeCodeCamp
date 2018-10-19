@@ -26,9 +26,9 @@ The `text-align` property is specified as a single keyword chosen from the list 
 
 **Block Alignment Values (non-standard syntax)**:
 
-`text-align: -moz-center;`
+`text-align: -moz-center;` It will center the text and the image.
 
-`text-align: -webkit-center;`
+`text-align: -webkit-center;` It will center the text and the image.
 
 **Global Values**:
 
