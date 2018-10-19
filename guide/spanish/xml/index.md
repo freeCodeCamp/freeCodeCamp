@@ -58,7 +58,7 @@ A continuación se presenta la simplicidad causada por XML:
 
 Y su principal logro fue que se convirtió en una Recomendación del W3C desde febrero de 1998.
 
-### Más información
+### Aprender XML
 
-*   [Introducción a XML](https://developer.mozilla.org/en-US/docs/XML_introduction)
-*   [Introducción a XML](https://www.w3schools.com/xml/xml_whatis.asp)
+*   [Documentación por Mozilla](https://developer.mozilla.org/en-US/docs/XML_introduction)
+*   [Documentación por w3schools](https://www.w3schools.com/xml/xml_whatis.asp)
