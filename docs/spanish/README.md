@@ -10,7 +10,7 @@
     </tr>
 </table>
 
-# Documentation Quick Reference
+# Documentación de referencia rápida
 
 ¡Hola 👋 !
 
