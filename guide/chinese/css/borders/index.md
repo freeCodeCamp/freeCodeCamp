@@ -1,14 +1,14 @@
 ---
 title: Border Property
-localeTitle: 边境财产
+localeTitle: 边框属性
 ---
-## 边境财产
+## 边框属性
 
 ## CSS边框
 
 我们个人最喜欢的CSS属性允许您完全自定义HTML元素周围出现的边框。使用HTML，过去不可能在元素周围放置边框，除了表格。与HTML的过时方法相比，CSS Borders可以让您创建清晰，自定义的边框样式，而且工作量很少。
 
-`border`简写属性在一个声明中设置所有边框属性。 \`\`\`CSS 边框：1px solid＃000;
+`border`简写属性在一个声明中设置所有边框属性。 \`\`\`CSS 边框：1px solid ＃000;
 ```
 The properties that can be set, are (in order): 
  1. `border-style` 
