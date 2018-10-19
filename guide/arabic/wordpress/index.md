@@ -12,3 +12,5 @@ WordPress هو نظام إدارة محتوى مجاني ومفتوح المصد
 
 *   [WordPress Codex: الدليل عبر الإنترنت](https://codex.wordpress.org/)
 *   [ورد كود المرجع](https://developer.wordpress.org/reference/)
+*   تعلم wordpress شرح بالعربية 
+*    [هنا](http://www.egylearn.com/learn-wordpress/)
