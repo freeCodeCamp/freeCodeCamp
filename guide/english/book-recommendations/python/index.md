@@ -69,3 +69,5 @@ You'll learn many of the first princliples for data science tools and how algori
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
 
 Please feel free to add more that you have found useful!
+- [Python for Everybody: Exploring Data in Python 3 by Charles Severance]
+(http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf)
