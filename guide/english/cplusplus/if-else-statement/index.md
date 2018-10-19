@@ -170,8 +170,7 @@ int main()
 
 	return 0;
 }
-```
-
+``` 
 #### Output
 ```
 Enter first number:
@@ -180,6 +179,8 @@ Enter second number:
 86
 Number 2 is greater.
 ```
+
+
 
 * Note that the program will only check the 'else if' condition when the initial 'if' condition is not satisfied. And if neither of these conditions are satisfied, the last 'else' block gets executed which prints the statement: "Both the numbers are equal.". 
 
@@ -190,3 +191,4 @@ Number 2 is greater.
 **Happy Coding ! :)**
 
  **Feel free to ask any queries on freeCodeCamp.org's GitHub page or [the freeCodeCamp.org Forum](https://forum.freecodecamp.org/)**.
+
