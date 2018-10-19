@@ -7,7 +7,7 @@ videoUrl: 'https://scrimba.com/c/cRkpDhB'
 
 ## Description
 <section id='description'>
-We just proved that browsers read CSS from top to bottom. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last.
+We just proved that browsers read CSS from top to bottom in order of their declaration. That means that, in the event of a conflict, the browser will use whichever CSS declaration came last. Notice that if we even had put <code>blue-text</code> before <code>pink-text</code> in our <code>h1</code> element's classes, it would still look at the declaration order and not the order of their use!
 But we're not done yet. There are other ways that you can override CSS. Do you remember id attributes?
 Let's override your <code>pink-text</code> and <code>blue-text</code> classes, and make your <code>h1</code> element orange, by giving the <code>h1</code> element an id and then styling that id.
 </section>
