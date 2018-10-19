@@ -41,6 +41,7 @@ The BuildBox game engine is basically for developing hypercasual games.
 - CryEngine
 - Unreal Engine
 - Unity Game Engine
+- Quake-Engine
 - Game Maker
 - Construct 2 or 3
 - Twine
@@ -59,6 +60,7 @@ The BuildBox game engine is basically for developing hypercasual games.
 * [libGDX Framework](https://libgdx.badlogicgames.com/)
 * [OpenGL Framework](https://www.opengl.org/)
 * [Construct Game Engine](https://www.scirra.com/)
+* [Quake-Engine](https://github.com/id-Software/Quake)
 * [Game Maker Engine](https://www.yoyogames.com/gamemaker)
 * [Unity3D Engine](https://unity3d.com/pt)
 * [Unreal Engine](https://www.unrealengine.com/en-US/what-is-unreal-engine-4)
