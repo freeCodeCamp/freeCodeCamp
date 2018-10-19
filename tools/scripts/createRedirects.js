@@ -1,3 +1,4 @@
+//constant 
 const apiPlaceholderRE = /#\{\{API\}\}/g;
 const homePlaceholderRE = /#\{\{HOME\}\}/g;
 const forumPlacehilderRE = /#\{\{FORUM\}\}/g;
