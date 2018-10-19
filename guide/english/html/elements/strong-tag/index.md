@@ -26,10 +26,6 @@ tag ie., there are no specific attributes for <**strong**> tag.
 |Opera|Yes|
 |Safari|Yes|
 
-#### More Information:
-[https://www.techonthenet.com/html/elements/strong_tag.php](https://www.techonthenet.com/html/elements/strong_tag.php)<br>
-[https://www.w3schools.com/tags/tag_strong.asp](https://www.w3schools.com/tags/tag_strong.asp)
-=======
 The `<strong>` tag is used to give importance to text in an HTML document. This can be done by wrapping the text you would like to be emphasized in an `<strong>` tag. Most browsers will render text wrapped in an `<strong>` tag as bold.
 
 Note: The `<strong>` tag should not be used to stylistically bold text.
@@ -46,5 +42,6 @@ Note: The `<strong>` tag should not be used to stylistically bold text.
   
 #### More Information:
 - [em tag: w3schools](https://www.w3schools.com/tags/tag_strong.asp)
+- [em tag: techonthenet](https://www.techonthenet.com/html/elements/strong_tag.php)
 
 
