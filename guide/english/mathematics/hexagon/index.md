@@ -3,9 +3,13 @@ title: Hexagon
 ---
 ## Hexagon
 
-A hexagon is a polygon with six sides. The sum of the internal angles totals 720°. In a regular hexagon, each individual angle measures 120°.
+A hexagon is a polygon with six sides. Each internal angle in a regular polygon is 120°. Since there are 6 internal angles, the sum of the internal angles totals 720°. In addition, each exterior angle of a regular polygon is 60°, so the sum of the exterior angles is 360°.
 
 <img src=https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Hexagon_1.svg/2000px-Hexagon_1.svg.png  alt="a regular hexagon" height="150" />
+
+### Regular vs Irregular Hexagons
+You can tell if a hexagon is regular or irregular based on the angles. If the interior angles are all congruent (120° each), then the hexagon is regular. If the interior angles don't meet this requirement, then the hexagon is irregular. Additionally, you can tell by the shape of the hexagon. If it is concave, it is irregular. If it is convex, it may or may not be regular, and you would have to check the angles.
+
 
 ### Area
 The formula for the area of a regular hexagon with side length `s` is:
