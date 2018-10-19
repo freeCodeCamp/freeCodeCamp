@@ -49,6 +49,11 @@ predictions2 = model2.predict(data_test)
 print(predictions2)
 ```
 
+Reference
+https://en.wikipedia.org/wiki/Random_forest
+https://databricks.com/blog/2015/01/21/random-forests-and-boosting-in-mllib.html
+https://github.com/apache/spark/blob/v1.6.2/mllib/src/main/scala/org/apache/spark/mllib/tree/RandomForest.scala
+
 #### More Information:
 - <a href='https://www.wikiwand.com/en/Random_forest' target='_blank' rel='nofollow'>Random Forests (Wikipedia)</a>
 - <a href='https://www.analyticsvidhya.com/blog/2014/06/introduction-random-forest-simplified/' target='_blank' rel='nofollow'>Introduction to Random Forests - Simplified</a>
