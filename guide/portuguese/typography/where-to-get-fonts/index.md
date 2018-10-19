@@ -62,6 +62,10 @@ Você está feito! Você tem novas fontes para o seu site.
 *   [Esquilo fonte](http://fontsquirrel.com)
 *   [DaFont](http://www.dafont.com)
 *   [1001 Fontes Gratuitas](http://www.1001freefonts.com)
+*   [Behance](https://www.behance.net)
+*   [MyFonts](https://www.myfonts.com/)
+*   [FontFreak](https://www.fontfreak.com/)
+*   [Creative Market](https://creativemarket.com/fonts)
 
 #### Mais Informações:
 
