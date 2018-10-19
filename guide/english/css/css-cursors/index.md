@@ -47,7 +47,7 @@ The cursor property specifies the type of cursor to be displayed when you hover 
 ![alt text](http://www.javascripter.net/faq/24_cursor_styles.gif "CSS Cursors")
 
 You can also set an image as the cursor. 
-Note: Always specific a default cursor at the end incase the specified cursor is unavailable.
+Note: Always specify a default cursor at the end incase the specified cursor is unavailable.
 
 ```
 .custom-cursor {
