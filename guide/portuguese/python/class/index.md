@@ -23,11 +23,11 @@ class ClassName:
  
  #### Class Objects: 
  
- Class objects support two kinds of operations: attribute references and instantiation. 
+ Objetos de Classe suportam dois tipo de operações: referência de atributo e instanciação. 
  
- Attribute references use the standard syntax used for all attribute references in Python: `obj.name`. 
- Valid attribute names are all the names that were in the class's namespace when the class object was created. 
- So, if the class definition looked like this: 
+ Referências de atributos usam a sintaxe padrão usada para todas as referências de atributos no Python: `obj.name`. 
+ Os nomes de atributos válidos são todos os nomes que estavam no namespace da classe quando o objeto da classe foi criado.
+ Então, se a definição da classe for assim:
 ```
 
 python class MyClass: "" "Um exemplo simples de classe" "" i = 12345
@@ -37,31 +37,31 @@ def f(self):
 ```
 
 ```
-Then `MyClass.i` and `MyClass.f` are valid attribute references, returning an integer and a function object, respectively. 
- Class attributes can also be assigned to, so you can change the value of `MyClass.i` by assignment. `__doc__` is also a valid attribute, returning the docstring belonging to the class: `"A simple example class"`. 
+Então `MyClass.i` e `MyClass.f` são referências válidas de atributos, retornando um inteiro e um objeto de função, respectivamente. 
+Atributos de classe também podem ser atribuídos, para que você possa alterar o valor de `MyClass.i` por designação. `__doc__` também é um atributo válido, retornando os docstring pertencente à classe: `"A simple example class"`. 
  
- Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class): 
+Instanciação de classe usa notação de função. Apenas finge que o objeto de classe é uma função sem parâmetros que retorna uma nova instância da classe. Por exemplo (assumindo a classe acima): 
 ```
 
 python x = MyClass ()
 ```
-Creates a new instance of the class and assigns this object to the local variable x. 
+Cria uma nova instância da classe e atribui esse objeto à variável local x. 
  
- The instantiation operation (“calling” a class object) creates an empty object. 
- Many classes like to create objects with instances customized to a specific initial state. 
- Therefore a class may define a special method named __init__(), like this: 
+ A operação de instanciação (“chamando” um objeto de classe) cria um objeto vazio. 
+ Muitas classes gostam de criar objetos com instâncias personalizadas para um estado inicial específico. 
+ Portanto, uma classe pode definir um método especial chamado __init__(), assim: 
 ```
 
 python def **init** (self): self.data = \[\]
 ```
-When a class defines an `__init__()` method, class instantiation automatically invokes `__init__()` for the newly-created class instance. 
- So in this example, a new, initialized instance can be obtained by: 
+Quando uma classe define um método `__init__()`, instanciação de classe invoca automaticamente `__init__()` para a instância de classe recém-criada.
+Portanto, neste exemplo, uma nova instância inicializada pode ser obtida: 
 ```
 
 python x = MyClass ()
 ```
-Of course, the `__init__()` method may have arguments for greater flexibility. 
- In that case, arguments given to the class instantiation operator are passed on to `__init__()`. For example, 
+Naturalmente, o método `__init__()` pode ter argumentos para maior flexibilidade. 
+Nesse caso, argumentos dados ao operador de instanciação de classe são passados para `__init__()`. Por exemplo, 
 ```
 
 python Complexo de classe: def **init** (self, realpart, imagpart): self.r = realpart self.i = imagpart …
