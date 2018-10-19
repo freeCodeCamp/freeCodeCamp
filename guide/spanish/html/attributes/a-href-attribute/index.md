@@ -4,7 +4,7 @@ localeTitle: Un atributo de Href
 ---
 ## Un atributo de Href
 
-El atributo `<a href>` refiere a un destino proporcionado por un enlace. La `a` etiqueta (ancla) está muerto sin el `<href>` atributo. A veces, en su flujo de trabajo, no desea un enlace en vivo o aún no sabrá el destino del enlace. En este caso, es útil establecer el atributo `href` en `"#"` para crear un enlace muerto. El atributo `href` se puede usar para vincular archivos locales o archivos en Internet.
+El atributo `<a href>` refiere a un destino proporcionado por un enlace. La etiqueta `a` (ancla) está muerta sin el atributo `<href>`. En tu flujo de trabajo, en algún momento no deseas un enlace vivo o no sabes todavía el destino del enlace. En este caso, es útil establecer el atributo `href` en `"#"` para crear un enlace muerto. El atributo `href` se puede usar para vincular archivos locales o archivos en Internet.
 
 Por ejemplo:
 
@@ -12,12 +12,12 @@ Por ejemplo:
 
 <html> 
   <head> 
-    <title>Href Attribute Example</title> 
+    <title>Ejemplo de atributo href</title> 
   </head> 
   <body> 
-    <h1>Href Attribute Example</h1> 
+    <h1>Ejemplo de atributo href</h1> 
       <p> 
-        <a href="https://www.freecodecamp.org/contribute/">The freeCodeCamp Contribution Page</a> shows you how and where you can contribute to freeCodeCamp's community and growth. 
+        <a href="https://www.freecodecamp.org/contribute/">La página de contribución freeCodeCamp</a> te muestra cómo y dónde puedes contribuir a la comunidad y al crecimiento de freeCodeCamp. 
       </p> 
     </h1> 
   </body> 
@@ -34,25 +34,25 @@ El atributo `<a href>` es compatible con todos los navegadores.
 
 ```html
 
-<a href="#">This is a dead link</a> 
- <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a> 
- <a href="https://html.com/attributes/a-href/">more with a href attribute</a> 
+<a href="#">Esto es un enlace muerto</a> 
+<a href="https://www.freecodecamp.org">Esto es un enlace vivo a freeCodeCamp</a> 
+<a href="https://html.com/attributes/a-href/">Otro ejemplo con un atributo href</a> 
 ```
 
-### Anclajes en página
+### Anclajes en la página
 
-También es posible establecer un ancla a cierto lugar de la página. Para hacer esto, primero debe colocar una pestaña en la ubicación de la página con la etiqueta y el atributo necesario "nombre" con cualquier descripción de palabra clave, como esta:
+También es posible establecer un ancla a un lugar determinado de la página. Para hacerlo, primero debes colocar una pestaña en la ubicación de la página con la etiqueta y el atributo necesario `name` con cualquier descripción de palabra clave, así:
 
 ```html
 
-<a name="top"></a> 
+<a name="arriba"></a> 
 ```
 
-No se requiere ninguna descripción entre etiquetas. Después de eso, puede colocar un enlace que conduce a este ancla en cualquier lugar de la misma página. Para hacer esto, debe usar la etiqueta con el atributo necesario "href" con el símbolo # (marcado) y la descripción de la palabra clave del ancla, como esto:
+No se requiere ninguna descripción entre etiquetas. Después de eso, puedes colocar un enlace que conduzca a este ancla en cualquier lugar de la misma página. Para hacer esto, debe usar la etiqueta con el atributo necesario `rhref` con el símbolo `#` (sostenido) y una pequeña descripción, en palabras clave, del ancla, así:
 
 ```html
 
-<a href="#top">Go to Top</a> 
+<a href="#arriba">Ir arriba</a> 
 ```
 
 ### Enlaces de imagen
@@ -74,7 +74,7 @@ El `<a href="#">` también puede aplicarse a imágenes y otros elementos HTML.
 
 ```html
 
-<base href="https://www.freecodecamp.org/a-href/">This gives a base url for all further urls on the page</a> 
- <link href="style.css">This is a live link to an external stylesheet</a> 
+<base href="https://www.freecodecamp.org/a-href/">Esto otorga una url base para todas las próximas urls en la página</a> 
+<link href="style.css">Esto es un enlace vivo a una hoja de estilos externa</a> 
 
 ```
