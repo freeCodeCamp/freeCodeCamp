@@ -86,3 +86,41 @@ typedef union{
 * When you create a pointer to a structure using the `&` operator you can use the special `->` infix operator to deference it. This is very used for example when working with linked lists in C
 * The new defined type can be used just as other basic types for almost everything. Try for example to create an array of type `student` and see how it works.
 * Structs can be copied or assigned but you can not compare them!
+
+Another Way for user defined data type is:
+Enumeration (or enum) in C
+Enumeration (or enum) is a user defined data type in C. It is mainly used to assign names to integral constants, the names make a program easy to read and maintain.
+enum State {Working = 1, Failed = 0}; 
+The keyword ‘enum’ is used to declare new enumeration types in C and C++. Following is an example of enum declaration.
+
+// The name of enumeration is "flag" and the constant
+// are the values of the flag. By default, the values
+// of the constants are as follows:
+// constant1 = 0, constant2 = 1, constant3 = 2 and 
+// so on.
+enum flag{constant1, constant2, constant3, ....... };
+Variables of type enum can also be defined. They can be defined in two ways:
+
+// In both of the below cases, "day" is 
+// defined as the variable of type week. 
+
+enum week{Mon, Tue, Wed};
+enum week day;
+
+// Or
+
+enum week{Mon, Tue, Wed}day;
+
+// An example program to demonstrate working 
+// of enum in C 
+#include<stdio.h> 
+  
+enum week{Mon, Tue, Wed, Thur, Fri, Sat, Sun}; 
+  
+int main() 
+{ 
+    enum week day; 
+    day = Wed; 
+    printf("%d",day); 
+    return 0; 
+}  
