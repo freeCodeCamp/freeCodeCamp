@@ -39,3 +39,4 @@ Not all motherboards or CPUs can handle ECC memory; however, it also is rarely a
 * [DDR4 SDRAM](https://en.wikipedia.org/wiki/DDR4_SDRAM)
 * [Types of RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 * [Laptop Memory Buyer's Guide](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
+* [ECC Memory](https://en.wikipedia.org/wiki/ECC_memory)
