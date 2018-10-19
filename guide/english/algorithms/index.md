@@ -17,6 +17,15 @@ There are certain requirements that an algorithm must abide by:
 
 Some common types of algorithms include sorting algorithms, search algorithms, and compression algorithms. Classes of algorithms include Graph, Dynamic Programming, Sorting, Searching, Strings, Math, Computational Geometry, Optimization, and Miscellaneous. Although technically not a class of algorithms, Data Structures are often grouped with them. 
 
+There are different approaches used for writing an algorithm depending on the type of problem
+<ol>
+  <li>Brute force Approach: A straightforward approach to solving a problem,usually directly based on the problem statement and definitions of the concepts involved.</li>
+  <li>Divide and Conquer Approach: This approach works by recursively breaking down a problem into two or more sub-problems of the same or realted type,until these become simple enough to be solved directly.</li>
+  <li>Decrease and Conquer Approach: This technique works by dividing a given problem into subproblem,finding the solutions to that subproblem,and finally extending solution of subproblem to arrive at the solution of original problem.</li>
+  <li>Greedy Technique: Greedy approach solves a given problem by making a local optimal choice at each step which will lead to a globally-optimal solution.</li>
+  <li>Backtracking: Backtracking can be defined as technique for solving problems recursively by trying to find a solution incrementally i.e. step by step and by removing those solutions that fail to satisfy the constraints of the problem at any point of time. </li>
+  <li>Dynamic Programming: It is a technique for solving a complex problem by breaking it into subproblems in a recursive manner.This technique differs from divide and conquer approach by recording the results of subproblems in a table and uses those table results to arrive at the solution of original problem.</li>
+
 ### Efficiency
 
 Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today, have to be operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time .
