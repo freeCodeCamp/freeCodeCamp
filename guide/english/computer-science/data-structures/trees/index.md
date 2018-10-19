@@ -91,6 +91,20 @@ struct node
     };
 
 ```
+### Code for node creation
+createNode() returns a new node with the given data and NULL left and right pointers.
+
+``` c++
+struct node* newNode(int element) 
+{ 
+  struct node* temp = (node*)malloc(sizeof(node));      //Allocate memeory for temp node
+  temp->data = element;                                 // Assign element to temp 
+  temp->left = NULL;                                    // Initialize left child as NULL 
+  temp->right = NULL;                                   // Initialize right child as NULL
+  return temp; 
+} 
+```
+
 #### More Information:
 
 * [CMU lesson notes](http://www.cs.cmu.edu/~clo/www/CMU/DataStructures/Lessons/lesson4_1.htm)
