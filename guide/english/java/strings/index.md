@@ -183,3 +183,4 @@ The result will be:
 My
 ```
 
+please add some more string operation and also show how memory is allocated in pool and heap memory area.
