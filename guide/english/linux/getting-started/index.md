@@ -3,10 +3,18 @@ title: Getting Started
 ---
 ## Choosing a distribution.
 
-There are various types of Linux distributions to choose from nowadays, choosing one is a major concern in the currently Linux world. Taking in consideration easy to use OSs, the top dogs in this category are:
-Ubuntu - Derivative of the stable Debian system, Ubuntu thrives in the a easy to use and up to date environment.
-Mint - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution remind of Windows, this can be a nice characteristic for users comming from Windows. 
-Trisquel - A distribution  derived from Ubuntu that focuses on only utilizing fully free software, avoiding proprietary software. Trisquel is endorsed by the Free Software Foundation (FSF).
+There are various types of Linux distributions to choose from nowadays, choosing one is a major concern in the Linux world. Taking in consideration easy to use OSs, the top dogs in this category are:
+* [Ubuntu](https://www.ubuntu.com/) - Derivative of the stable Debian system, Ubuntu thrives in the a easy to use and up to date environment.
+* [Mint](https://linuxmint.com/) - Based on Ubuntu and Debian, this OS has great features like Ubuntu's PPA compatibility, the apt package manager. The base mint distribution remind of Windows, this can be a nice characteristic for users comming from Windows. 
+* [Trisquel](https://trisquel.info/) - A distribution  derived from Ubuntu that focuses on only utilizing fully free software, avoiding proprietary software. Trisquel is endorsed by the Free Software Foundation (FSF).
+
+Some other choices include:
+* [CentOS](https://www.centos.org/) - Based off of Red Hat Enterprise Linux. Community supported and stable.
+* [Fedora](https://getfedora.org/) - Created by the Red Hat company to run newer packages than the stable enterprise releases. Community supported. 
+* [Debian](https://www.debian.org/) - Created with completely free software. Many popular, "easy to use" derivatives are based off of Debian.
+* [Arch](https://www.archlinux.org/) - An extremely customizable distribution. Not recommended for beginners.
+* [Gentoo](https://www.gentoo.org/)
+* [Suse](https://www.suse.com/)
 
 ## Installing.
 
