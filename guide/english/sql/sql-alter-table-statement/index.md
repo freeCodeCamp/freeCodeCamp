@@ -6,6 +6,8 @@ title: SQL Alter Table Statement
 ## Introduction
 
 This guide will introduce you to and attempt to explain some of the basics of the SQL alter table functions within a relational database.
+If some scripts do not work, please check the exact spelling or add a USE statement for the database if necessary.
+
 **IMPORTANT Safety Tip:  ALWAYS backup your data before making changes!**
 
 We will be using MySQL for all examples throughout this freeCodeCamp SQL guide. The reasons for selecting MySQL are 1) it is very commonly used on websites for the backend database, 2) it's free, and is fun and easy to use.
@@ -40,4 +42,5 @@ You can also use the alter table workbench tool. Just RIGHT click on the table y
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/alter_table05.JPG?raw=true)
 
 There is much more that can be done, check the manual of your database management software to learn more.
+
 
