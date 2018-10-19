@@ -22,6 +22,10 @@ Graphical User Interface. A GUI will allow you to interact with a program by poi
 ## Header Files
 Header files are files containing function declarations that are defined in other source files. These are typically 'included' at the top of a source file.
 
+## High-Level language
+A high-level language is written using symbols and words just like English hence allowing programers to write machine independent code. It
+can be easy to read , write and maintain.
+
 ## IDE
 Integrated Development Environment. This is mostly an editor but includes tools to check syntax, format code style, compile, and debug a program, which makes writing code easier.
 
