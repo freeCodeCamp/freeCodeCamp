@@ -10,30 +10,30 @@ Um dos significados dessa palavra é o método MoSCoW - uma técnica de prioriza
 
 ## Priorização dos requisitos MoSCoW
 
-Todos os requisitos são importantes, mas eles são priorizados para oferecer os maiores e mais imediatos benefícios comerciais no início. Inicialmente, os desenvolvedores tentarão entregar todos os requisitos Deve ter, Dever e Poder, mas os requisitos Deve e Poder serão os primeiros a serem removidos se a escala de tempo da entrega parecer ameaçada.
+Todos os requisitos são importantes, mas eles são priorizados para oferecer os maiores e mais imediatos benefícios comerciais no início. Inicialmente, os desenvolvedores tentarão entregar todos os requisitos Must have (Deve ter), Sould have (Deveria ter) e Could have (Poderia ter), mas os requisitos Should e Could serão os primeiros a serem removidos se a escala de tempo da entrega parecer ameaçada.
 
 O simples significado inglês das categorias de priorização tem valor em fazer com que os clientes entendam melhor o impacto da definição de uma prioridade, em comparação com alternativas como Alta, Média e Baixa.
 
 As categorias são geralmente entendidas como:
 
-## Deve ter
+## Must Have (Deve ter)
 ```
-Requirements labeled as Must have are critical to the current delivery timebox in order for it to be a success. If even one Must have requirement is not included, the project delivery should be considered a failure. MUST can also be considered an acronym for the Minimum Usable SubseT. 
-```
-
-## Deveria
-```
-Requirements labeled as Should have are important but not necessary for delivery in the current delivery timebox. While Should have requirements can be as important as Must have, they are often not as time-critical or there may be another way to satisfy the requirement, so that it can be held back until a future delivery timebox. 
+Os requisitos rotulados como Must Have são críticos para o timebox de entrega atual para que seja um sucesso. Se um requisito não tiver sido incluído, a entrega do projeto deve ser considerada uma falha. (nota: os requisitos podem ser rebaixados de Must Have, de acordo com todas as partes interessadas relevantes; por exemplo, quando novos requisitos são considerados mais importantes). MUST também pode ser considerado um acrônimo para o Minimum Usable SubseT (Subconjunto mínimo utilizável).
 ```
 
-## Poderia ter
+## Should Have (Deveria ter)
 ```
-Requirements labeled as Could have are desirable but not necessary, and could improve user experience or customer satisfaction for little development cost. These will typically be included if time and resources permit. 
+Os requisitos rotulados como Should Have são importantes, mas não são necessários para entrega no timebox de entrega atual. Embora os requisitos Should Have são tão importantes quanto os requisitos Must Have, eles geralmente não são tão críticos quanto o tempo, ou pode haver outra maneira de satisfazer o requisito, de modo que ele possa ser retido até um timebox de entrega futuro.
 ```
 
-## Não terá
+## Could Have (Poderia ter)
 ```
-Requirements labeled as Won't have have been agreed by stakeholders as the least-critical, lowest-payback items, or not appropriate at that time. As a result, Won't have requirements are not planned into the schedule for the next delivery timebox. Won't have requirements are either dropped or reconsidered for inclusion in a later timebox. 
+Os requisitos rotulados como Could Have são desejáveis, mas não necessários, e podem melhorar a experiência do usuário ou a satisfação do cliente por um pequeno custo de desenvolvimento. Estes serão tipicamente incluídos se o tempo e os recursos permitirem.
+```
+
+## Won't have (Não terá)
+```
+Requisitos rotulados como Won't Have tem sido acordados pelas partes interessadas como os itens menos críticos e de menor retorno, ou não são apropriados naquele momento. Como resultado, os requisitos Won't Have não serão planejados no cronograma do próximo timebox de entrega. Os requisitos Won't Have serão eliminados ou reconsiderados para inclusão em um timebox posterior. (Nota: ocasionalmente, o termo Would Like (Gostaria de ter) é usado; no entanto, esse uso está incorreto, pois esta última prioridade está claramente afirmando que algo está fora do escopo da entrega).
 ```
 
 O MoSCoW é um método de granulação grossa para priorizar (categorizar) os itens do Backlog do Produto (ou requisitos, casos de uso, histórias do usuário ... dependendo da metodologia usada). MoSCoW é frequentemente usado com timeboxing, onde um prazo é fixado de modo que o foco deve estar nos requisitos mais importantes. O termo MoSCoW em si é um acrônimo derivado da primeira letra de cada uma das quatro categorias de priorização (deve ter, deve ter, pode ter e não terá):
