@@ -41,3 +41,4 @@ Putting together, these resources are good enough to kick start your journey wit
 
 [Actuator (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
 
+[Reddit Robotics community](https://www.reddit.com/r/robotics/)
