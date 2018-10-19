@@ -5,7 +5,7 @@ title: goto as a powerful utility
 # Intro to the use of goto and labels
 
 goto is one of the most powerful yet highly underrated piece of logic in c++. Crazy amount of optimization can be achieved using goto, provided it is used properly.
-It does that which it is named as. It goes to the mentioned occurence of the next label,wherever may it be.
+It does that which it is named as. It goes to the mentioned occurence of the next label, wherever may it be.
 
 # Terminology
 
@@ -23,4 +23,4 @@ goto is something that transcends all loops.To be clearer on this point, here is
 
 https://code.sololearn.com/cI4qqQA8W2q3
 
-However, care must be taken to use goto very carefully, especially in early days of coding as it can lead to crazy issues, if not understood well enough.
+However, care must be taken to use goto very carefully, especially in early days of coding as it can lead to crazy issues, if not understood well enough. Many programmers frown upon the usage of goto, as using it can create code that is challenging to navigate and debug. This type of code is called spaghetti code. 
