@@ -65,3 +65,21 @@ const EnhancedComponent = logProps(InputComponent);
 In conclusion function composition enables reusability of functionality at a very high level. If the functions are structured well it enables developers to created new behavior based upon existing behavior.
 
 It also increases readability of implementations. Instead of nesting functions you can cleary chain functions and create higher order functions with meaningful names.
+
+The Function() Constructor
+JavaScript has an built-in function constructor.
+Functions can also be defined with a built-in JavaScript function constructor called Function().
+Step 1:
+```
+<script>
+var myFunction = new Function("a", "b", "return a * b");
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+```
+Step 2:
+```
+<script>
+var myFunction = function (a, b) {return a * b}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+```
