@@ -177,3 +177,4 @@ Closures are useful for capturing new instances of private variables contained i
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures' target='_blank' rel='nofollow'>MDN</a>
 <br />
 <a href='https://medium.freecodecamp.org/lets-learn-javascript-closures-66feb44f6a44' target='_blank' rel='nofollow'>Javascript Closures</a>
+<a href='https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8' target='_blank' rel='nofollow'>I never understood javascript closure</a>
