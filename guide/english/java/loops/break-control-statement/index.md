@@ -3,6 +3,26 @@ title: Break Control Statement
 ---
 # Break Control Statement
 
+Break is generally used to terminate the execution of the loop or to get out of a switch case. It helps in preventing unnecssary CPU time wastage and gives more efficient performance of a program. 
+In switch case, at the end of each case, we use break statement to terminate the execution of switch and transfer the control to the statement next to the end of entire switch cases.
+
+```java
+//switch case
+int c = 1;
+switch(c)
+{
+    //1st case
+    case 1: System.out.println("The value of c is "+c);
+            System.out.println("This is first switch case");
+            break; //This will prevent the execution of statement futher inside the switch, 
+                    //otherwise case 2 would also have been executed
+    //2nd case
+    case 2: System.out.println("This is second switch case with value "+c);
+            break;
+ }
+ System.out.println("This is outside switch case");//Control is transferred here as it executes the break statement
+ ```
+            
 Terminates the loop and starts the execution of the code that immediately follows the loop. If you have nested loops, the `break` statement will only end the loop in which it is placed.
 
 ```java
