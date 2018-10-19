@@ -40,6 +40,15 @@ So you've covered the basics of Python?  You're now ready to discover the in-dep
 - ISBN-10: 0596158106
 - ISBN-13: 978-0596158101
 
+#### Python Cookbook: Recipes for Mastering Python 3
+
+If you need help writing programs in Python 3, or want to update older Python 2 code, this book is just the ticket. Packed with practical recipes written and tested with Python 3.3, this unique cookbook is for experienced Python programmers who want to focus on modern tools and idioms.
+
+- [Amazon](https://www.amazon.in/Python-Cookbook-Recipes-Mastering-ebook/dp/B00DQV4GGY)
+- [O'Reilly](http://shop.oreilly.com/product/0636920027072.do)
+- ISBN-10: 1449340377
+- ISBN-13: 978-1449340377
+
 #### Data Science from Scratch: First Principles with Python
 
 You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
