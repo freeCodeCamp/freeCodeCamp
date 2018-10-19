@@ -1,0 +1,18 @@
+The Metasploit Project is a computer security project that provides information about security vulnerabilities and aids in penetration testing and IDS signature development.
+
+Its best-known sub-project is the open source[2] Metasploit Framework, a tool for developing and executing exploit code against a remote target machine. Other important sub-projects include the Opcode Database, shellcode archive and related research.
+
+The Metasploit Project is well known for its anti-forensic and evasion tools, some of which are built into the Metasploit Framework.
+
+The basic steps for exploiting a system using the Framework include:
+
+Choosing and configuring an exploit (code that enters a target system by taking advantage of one of its bugs; about 900 different exploits for Windows, Unix/Linux and Mac OS X systems are included);
+Optionally checking whether the intended target system is susceptible to the chosen exploit;
+Choosing and configuring a payload (code that will be executed on the target system upon successful entry; for instance, a remote shell or a VNC server);
+Choosing the encoding technique so that the intrusion-prevention system (IPS) ignores the encoded payload;
+Executing the exploit.
+This modular approach – allowing the combination of any exploit with any payload – is the major advantage of the Framework. It facilitates the tasks of attackers, exploit writers and payload writers.
+
+Metasploit runs on Unix (including Linux and Mac OS X) and on Windows. The Metasploit Framework can be extended to use add-ons in multiple languages.
+
+To choose an exploit and payload, some information about the target system is needed, such as operating system version and installed network services. This information can be gleaned with port scanning and OS fingerprinting tools such as Nmap. Vulnerability scanners such as Nexpose, Nessus, and OpenVAS can detect target system vulnerabilities. Metasploit can import vulnerability scanner data and compare the identified vulnerabilities to existing exploit modules for accurate exploitation.[9]
