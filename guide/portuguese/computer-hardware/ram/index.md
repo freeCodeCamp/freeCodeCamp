@@ -27,3 +27,4 @@ A taxa de velocidade do seu módulo de RAM é uma expressão da sua taxa de tran
 *   [Tipos de RAM](http://www.computermemoryupgrade.net/types-of-computer-memory-common-uses.html)
 *   [Guia do comprador da memória do portátil](https://www.lifewire.com/laptop-memory-buyers-guide-833024)
 *   [Wikipédia](https://en.wikipedia.org/wiki/Random-access_memory) .
+Adicionar memoria de mobile
