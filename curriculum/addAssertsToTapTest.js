@@ -17,6 +17,7 @@ function addAssertsToTapTest(tapTest) {
   assert.isString = createIsAssert(tapTest, _.isString);
   assert.isNumber = createIsAssert(tapTest, _.isNumber);
   assert.isUndefined = createIsAssert(tapTest, _.isUndefined);
+  assert.isNaN = createIsAssert(tapTest, _.isNaN);
 
   assert.deepEqual = tapTest.deepEqual;
   assert.equal = tapTest.equal;

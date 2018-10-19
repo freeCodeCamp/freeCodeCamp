@@ -1,14 +1,19 @@
 /* eslint-disable no-eval, no-process-exit, no-unused-vars */
 
-import { Observable } from 'rx';
-import tape from 'tape';
+const { Observable } = require('rx');
+const tape = require('tape');
+const { flatten } = require('lodash');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
-import getChallenges from './getChallenges';
+const { getChallengesForLang } = require('./getChallenges');
 
-import MongoIds from './mongoIds';
-import ChallengeTitles from './challengeTitles';
-import addAssertsToTapTest from './addAssertsToTapTest';
-import { validateChallenge } from './schema/challengeSchema';
+const MongoIds = require('./mongoIds');
+const ChallengeTitles = require('./challengeTitles');
+const addAssertsToTapTest = require('./addAssertsToTapTest');
+const { validateChallenge } = require('./schema/challengeSchema');
+
+const { LOCALE: lang } = process.env;
 
 // modern challengeType
 const modern = 6;
@@ -94,15 +99,19 @@ function evaluateTest(
   /* eslint-enable no-unused-vars */
   try {
     (() => {
-      return eval(
-        head + '\n' + solution + '\n' + tail + '\n' + test.testString
-      );
+      const evalString =
+        head + '\n' + solution + '\n' + tail + '\n' + `
+        const testResult = eval(test.testString);
+        if (typeof testResult === 'function') {
+          testResult(() => code);
+        }`;
+      return eval(evalString);
     })();
   } catch (e) {
-    console.log(head + '\n' + solution + '\n' + tail + '\n' + test.testString);
-    console.log(e);
+    // console.log(head + '\n' + solution + '\n' + tail + '\n' + test.testString);
+    // console.log(e);
     tapTest.fail(e);
-    process.exit(1);
+    // process.exit(1);
   }
 }
 
@@ -119,7 +128,10 @@ function createTest({
   mongoIds.check(id, title);
   challengeTitles.check(title);
 
-  solutions = solutions.filter(solution => !!solution);
+  const noSolution = new RegExp('// solution required');
+  solutions = solutions.filter(solution => (
+    !!solution && !noSolution.test(solution)
+  ));
   tests = tests.filter(test => !!test);
 
   // No support for async tests
@@ -133,12 +145,11 @@ function createTest({
           : challengeTestSource
     );
   }
-  const { head, tail } = Object.keys(files)
-    .map(key => files[key])
+  const { head, tail } = files
     .reduce(
       (result, file) => ({
-        head: result.head + ';' + file.head.join('\n'),
-        tail: result.tail + ';' + file.tail.join('\n')
+        head: result.head + ';' + file.head,
+        tail: result.tail + ';' + file.tail
       }),
       { head: '', tail: '' }
     );
@@ -189,18 +200,24 @@ function createTest({
     });
 }
 
-Observable.from(getChallenges())
-  .do(({ challenges }) => {
-    challenges.forEach(challenge => {
-      const result = validateChallenge(challenge);
-      if (result.error) {
-        console.log(result.value);
-        throw new Error(result.error);
-      }
-    });
+Observable.fromPromise(getChallengesForLang(lang || 'english'))
+  .flatMap(curriculum => {
+    const allChallenges = Object.keys(curriculum)
+    .map(key => curriculum[key].blocks)
+    .reduce((challengeArray, superBlock) => {
+      const challengesForBlock = Object.keys(superBlock).map(
+        key => superBlock[key].challenges
+      );
+      return [...challengeArray, ...flatten(challengesForBlock)];
+    }, []);
+    return Observable.from(allChallenges);
   })
-  .flatMap(challengeSpec => {
-    return Observable.from(challengeSpec.challenges);
+  .do(challenge => {
+    const result = validateChallenge(challenge);
+    if (result.error) {
+      console.log(result.value);
+      throw new Error(result.error);
+    }
   })
   .filter(({ challengeType }) => challengeType !== modern)
   .flatMap(challenge => {

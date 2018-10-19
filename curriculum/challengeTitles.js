@@ -1,4 +1,4 @@
-import _ from 'lodash';
+const _ = require('lodash');
 
 class ChallengeTitles {
   constructor() {
@@ -23,4 +23,4 @@ class ChallengeTitles {
   }
 }
 
-export default ChallengeTitles;
+module.exports = ChallengeTitles;
