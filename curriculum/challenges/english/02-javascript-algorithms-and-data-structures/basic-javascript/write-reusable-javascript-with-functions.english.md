@@ -11,7 +11,7 @@ Here's an example of a function:
 <blockquote>function functionName() {<br>&nbsp;&nbsp;console.log("Hello World");<br>}</blockquote>
 You can call or <dfn>invoke</dfn> this function by using its name followed by parentheses, like this:
 <code>functionName();</code>
-Each time the function is called it will print out the message <code>"Hello World"</code> on the dev console. All of the code between the curly braces will be executed every time the function is called.
+All of the code between the curly braces will be executed every time the function is called. That would mean each time the function is called it will print out the message <code>"Hello World"</code> on the dev console.
 </section>
 
 ## Instructions
