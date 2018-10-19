@@ -1,3 +1,24 @@
+# How to install VIM
+
+### Ubuntu
+
+```
+sudo apt-get update
+sudo apt-get install vim
+```
+
+### Mac OS
+Step 1: Install homebrew from http://brew.sh .
+
+Step 2: Open terminal and type in the following command
+```
+brew install vim
+```
+step 3: Restart your shell by typing
+```
+exec -l $SHELL
+```
+
 ---
 title: Macros
 ---
