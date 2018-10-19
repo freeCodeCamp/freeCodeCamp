@@ -71,7 +71,17 @@ También pueden provenir de programas externos, y en el caso de la mayoría de l
 
 Vea a continuación los comandos más comunes.
 
-| Comando | Uso | | -------- | ----------------------------------------- | | `cd` cambiar directorio actual | | `ls` | lista de archivos en el directorio actual | | `mv` | mover archivos y directorios | | `man` | abrir documentación de comando | | `mkdir` | hacer un directorio | | `rmdir` | borrar un director | | `touch` | crear un archivo vacío | | `rm` | eliminar archivos | | `ln` | crear enlaces a archivos y directorios | | `chown` cambiar propiedad de archivos y directorios | | `chmod` cambiar permisos | | `find` | localizar archivos | | `cat` | escribe archivos a la salida estándar | | `less` | Permite el desplazamiento de entrada estándar | | `grep` | buscar coincidencias en texto plano | | `diff` | Mostrar diferencias entre archivos | | `passwd` cambia tu contraseña |
+| Comando | Uso |
+| -------- | ----------------------------------------- |
+| `cd` | cambiar directorio actual |
+| `ls` | lista de archivos en el directorio actual |
+| `mv` | mover archivos y directorios |
+| `man` | abrir documentación de comando |
+| `mkdir` | hacer un directorio |
+| `rmdir` | borrar un director |
+| `touch` | crear un archivo vacío |
+| `rm` | eliminar archivos |
+| `ln` | crear enlaces a archivos y directorios | | `chown` cambiar propiedad de archivos y directorios | | `chmod` cambiar permisos | | `find` | localizar archivos | | `cat` | escribe archivos a la salida estándar | | `less` | Permite el desplazamiento de entrada estándar | | `grep` | buscar coincidencias en texto plano | | `diff` | Mostrar diferencias entre archivos | | `passwd` cambia tu contraseña |
 
 #### Obteniendo ayuda
 
