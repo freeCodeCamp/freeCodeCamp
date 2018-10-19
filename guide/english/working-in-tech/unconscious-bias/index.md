@@ -29,7 +29,9 @@ It was also found in various studies that that even the order of questions in a 
 
 Unconscious bias is far more prevalent than conscious prejudice and often incompatible with one’s conscious values. Certain scenarios can activate unconscious attitudes and beliefs. For example, biases may be more prevalent when multi-tasking or working under time pressure.  
   
-Unconscious bias can influence decisions in recruitment, promotion and performance management. It could be discriminatory when the unconscious bias relates to a protected characteristic.  
+Unconscious bias can influence decisions in recruitment, promotion and performance management. It could be discriminatory when the unconscious bias relates to a protected characteristic. Many prominent organisations, such as the Royal Society of England, have taken steps to bring attention to the negative effects of unconcious bias in recruitment and promotion activity.<sup>6</sup>
+
+Tackling unconcious bias has become a cornerstone of the Equality, Diversity and Inclusion (EDI) strategies of scientific organisations and higher education Institutions in the United Kingdom and is a requirment of the Athena Swan Charter.<sup>7</sup>
 
 #### More Information:
 1. [Navarro, Renee MD. "What is unconscious bias?" *University of California, San Francisco.* Accessed: October 20, 2017](https://diversity.ucsf.edu/resources/unconscious-bias)
@@ -38,3 +40,5 @@ Unconscious bias can influence decisions in recruitment, promotion and performan
 4. ["What is Unconscious Bias" University of California, San Francisco
 Office of Diversity and Outreach. Accessed: October 15, 2017.](https://diversity.ucsf.edu/resources/unconscious-bias)
 5. ["Unconscious Bias" acas.org.uk Accessed: October 15, 2017.](http://www.acas.org.uk/index.aspx?articleid=5433)
+6. ["Understanding unconcious bias" Royalsociety.org Accessed: October 19, 2018.] (https://royalsociety.org/topics-policy/publications/2015/unconscious-bias/)
+7. ["Unconscious Bias" ecu.ac.uk Accessed: October 2018.] (https://www.ecu.ac.uk/)
