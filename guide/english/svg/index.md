@@ -3,7 +3,7 @@ title: SVG
 ---
 ## SVG
 
-SVG or Scalable Vector Graphics is a web standard for defining vector-based graphics in web pages. Based on XML the SVG standard provides markup to describe paths, shapes, and text within a viewport. The markup can be embedded directly into HTML for display or saved to a `.svg` file and inserted like any other image. You can write SVG by hand, but more complicated graphics can be designed in vector graphics editors such as Illustrator or InkScape and exported to SVG files or code.
+SVG or Scalable Vector Graphics is a web standard for defining vector-based graphics in web pages. Based on XML, the SVG standard provides markup to describe paths, shapes, and text within a viewport. The markup can be embedded directly into HTML for display or saved to a `.svg` file and inserted like any other image. You can write SVG by hand, but more complicated graphics can be designed in vector graphics editors such as Illustrator or InkScape and exported to SVG files or code.
 
 ## SVG Basics
 Developers start an SVG graphic with the `<svg>` tag and XML namespace like so:
@@ -51,16 +51,16 @@ The `<path />` element defines a vector path in the viewport. The path is define
 
 The following commands can be used to create your path:
 
-M = move to
-L = line to
-H = horizontal line to
-V = vertical line to
-Z = close path
-C = (cubic bezier) curve to
-S = smooth curve to
-Q = quadratic bezier curve to
-T = smooth quadratic bezier curve to
-A = arc
+M = move to   
+L = line to   
+H = horizontal line to  
+V = vertical line to  
+Z = close path  
+C = (cubic bezier) curve to  
+S = smooth curve to  
+Q = quadratic bezier curve to  
+T = smooth quadratic bezier curve to  
+A = arc  
 
 ### The canvas element
 
@@ -140,7 +140,7 @@ There are a few tools available to create SVG in the form of a drawing program.
 - <a href='https://www.inkscape.org/' target='_blank' rel='nofollow'>Inkscape</a> - It is an open source tool for state-of-the-art vector drawing with an easy to use graphical interface.
 - <a href='https://www.adobe.com/products/illustrator/' target='_blank' rel='nofollow'>Adobe Illustrator</a> - Adobe Illustrator is a commercial tool for Vector Imagery.
 
-For more tools, refer to <a href='https://https://www.w3.org/Graphics/SVG/WG/wiki/Implementations' target='_blank' rel='nofollow'>W3C list of tools that supports SVG</a>
+For more tools, refer to <a href='https://www.w3.org/Graphics/SVG/WG/wiki/Implementations' target='_blank' rel='nofollow'>W3C list of tools that supports SVG</a>
 
 ## Why you should use SVGs
 
