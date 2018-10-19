@@ -17,6 +17,15 @@ After some modifications, Angular 4.0 was released on Dec-2016. Angular 4 is bac
  
 We can add Angular either by referencing the sources available or downloading the framework.
 
+**Install using Angular CLI**
+
+npm install -g @angular/cli
+ng new app-name
+cd app-name
+ng serve
+
+For more information follow the link https://cli.angular.io/
+
 **Link To Source**:
 
 AngularJS: We can add AngularJS(Angular 1.x versions) by referencing the Content Delivery Network from Google.
