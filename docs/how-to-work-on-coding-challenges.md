@@ -2,13 +2,13 @@
 
 ### Changing on GitHub
 
-Each challenge is stored in it's own markdown file. That makes it easy to edit challenges right from within GitHub.
+Each challenge is stored in its own markdown file. That makes it easy to edit challenges right from within GitHub.
 
 You can make a change without having anything running on your local system.
 
 After you find the file you want to modify within the GitHub interface, click the pencil icon to start editing the file. This will automatically create a fork of the project, if you don't have one already.
 
-You can also clone the project and edit locally on you computer. For help with that, read the main [contributing guide](/CONTRIBUTING.md).
+You can also clone the project and edit locally on your computer. For help with that, read the main [contributing guide](/CONTRIBUTING.md).
 
 ### Challenge Template
 
@@ -20,7 +20,7 @@ id: Unique identifier (alphanumerical, MongoDB _id)
 title: Challenge Title
 challengeType: 0
 guideUrl: 'url of guide article'
-videoUrl: 'url of video explaination'
+videoUrl: 'url of video explanation'
 ---
 
 ## Description
@@ -45,7 +45,7 @@ Instructions about what exactly needs to be done.
 <div id='js-seed'>
 
 ```js
-Code desplayed in the editor by default.
+Code displayed in the editor by default.
 ```
 
 </div>
