@@ -32,3 +32,5 @@ finally {
 // block of code to be executed after try block ends
 }
 ```
+Advantage of Exception Handling
+The core advantage of exception handling is to maintain the normal flow of the application. An exception normally disrupts the normal flow of the application that is why we use exception handling.
