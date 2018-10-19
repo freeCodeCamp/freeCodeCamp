@@ -29,6 +29,16 @@ if (condition) {
 
 Observe que o `else` e `else if` seções não forem necessárias, enquanto `if` for obrigatório.
 
+Voçê pode omitir as chaves "{}" caso o bloco `if` contenha apenas uma instrução, o mesmo se aplica para `else if` e `else`:
+```
+if ( condition )
+    // Instruction
+else if ( condition )
+    // Instruction
+else
+    // Instruction
+```
+
 ## Exemplo
 ```
 #include <stdio.h> 
