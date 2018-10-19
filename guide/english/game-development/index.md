@@ -41,16 +41,17 @@ The BuildBox game engine is basically for developing hypercasual games.
 - CryEngine
 - Unreal Engine
 - Unity Game Engine
-- Game Maker
+- GameMaker Studio
+- RPG Maker
+- Marmalade SDK
+- Cocos2d-x
+- MonoGame
 - Construct 2 or 3
 - Twine
 - Source
 - Frostbite
 - Buildbox
 - Godot Engine
-
-
-
 
 ### More Information
 
