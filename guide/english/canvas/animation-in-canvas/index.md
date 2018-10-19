@@ -3,6 +3,21 @@ title: Animation
 ---
 ## Animation in Canvas
 
+Cycling through the following workflow as a best practice when creating animations in canvas.
+
+#### 1. Clear the canvas
+Unless the shapes you'll be drawing fill the complete canvas (for instance a backdrop image), you need to clear any shapes that have been drawn previously. The easiest way to do this is using the clearRect() method.
+
+#### 2. Save the canvas state
+If you're changing any setting (such as styles, transformations, etc.) which affect the canvas state and you want to make sure the original state is used each time a frame is drawn, you need to save that original state.
+
+#### 3. Draw animated shapes
+The step where you do the actual frame rendering.
+
+#### 4. Restore the canvas state
+If you've saved the state, restore it before drawing a new frame.
+
+
 To animate things in `canvas`, use `window.requestAnimationFrame` to set up a draw loop.
 
 ```js
