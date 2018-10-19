@@ -47,24 +47,25 @@ if (condition) {
 
 **Using** `if...else`:
 ```javascript
-    // If x=5 z=7 and q=42. If x is not 5 then z=19.
-    if (x == 5) {
+    // If x=5 then z=7 and q=42 else z=19.
+    if (x === 5) {
       z = 7;
-      q = 42
-    else
+      q = 42;
+    }else{
       z = 19;
+    }
 ```
 
 **Using** `else if`:
 
 ```javascript
-if (x < 10)
+if (x < 10){
     return "Small number";
-else if (x < 50)
+}else if (x < 50){
     return "Medium number";
-else if (x < 100)
+}else if (x < 100){
     return "Large number";
-else {
+}else {
     flag = 1;
     return "Invalid number";
 }
