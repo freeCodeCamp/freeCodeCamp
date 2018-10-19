@@ -3,16 +3,8 @@ title: Geometric Series
 ---
 ## Geometric Series
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/geometric-series/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-A A geometric progression is a sequence of numbers, whose first term is non zero and each term is obtained by multiplying its proceding term by a constant quantity. This constant quantity is called common ratio of the GP.
+A geometric progression is a sequence of numbers, whose first term is non zero and each term is obtained by multiplying its proceding term by a constant quantity. This constant quantity is called common ratio of the GP.
 
 The sum of this progression is called geometric series.
 
@@ -41,8 +33,11 @@ Let a be the first term, r be the common ratio and l be the last term of a GP, t
  
  and <a href="https://www.codecogs.com/eqnedit.php?latex=S_{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?S_{n}" title="S_{n}" /></a> is not defined for r=1
 
+# Geometric Mean
  
- 
+if we insert geometric mean between two numbers  <a href="https://www.codecogs.com/eqnedit.php?latex=n_{1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n_{1}" title="n_{1}" /></a> and <a href="https://www.codecogs.com/eqnedit.php?latex=n_{2}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n_{2}" title="n_{2}" /></a> , then 
+
+Geometric mean = <a href="https://www.codecogs.com/eqnedit.php?latex=\sqrt{n_{1}*n_{2}}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sqrt{n_{1}*n_{2}}" title="\sqrt{n_{1}*n_{2}}" /></a>
  
  
  
