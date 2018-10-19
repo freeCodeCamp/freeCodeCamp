@@ -42,4 +42,13 @@ int main () {
 > Item on index 2 is 3
 > Item on index 3 is 4
 ```
-
+*for loops are very useful when we know the range of the numbers to print*
+#include<iostream>
+using namespace std;
+int main()
+   {
+   int i;
+   for(i=0;i<4;i++)
+   cout<<i;
+   }
+   *print numbers:0 1 2 3 *       
