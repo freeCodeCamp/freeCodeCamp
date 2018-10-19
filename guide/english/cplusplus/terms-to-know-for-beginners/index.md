@@ -129,14 +129,24 @@ It should be noted that while comments do add an extra level of readability to o
 
 As you may notice, the comments are ignored during program execution and do not show up on checking the output of the program.
  
-#### Operators 
-* Operators allow you to compare two or more expressions
+## Operators 
+#### Variable Designation
+* `*` Dereference
+* `&` Address (of operand)
+#### Compare two or more expressions
 * `==` equal to
 * `!=`  not equal to
 * `<` less than
 * `>` greater than
 * `<=` less than or equal to
 * `>=` greater than or equal to
+* `||` Logical OR
+* `&&` Logical AND
+#### Assigns the right expression/value to the left variable/pointer
+* `=` Assignment
+* `+= , -=` Addition/subtraction assignment
+* `*= , /=` Multiplication/Division assignment
+
 
 ```cpp
     (7==5); 
