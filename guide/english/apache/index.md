@@ -9,7 +9,7 @@ Apache runs on 67% of all webservers in the world. It is fast, reliable, and sec
 
 ### Installation
 
-#### On Ubuntu
+#### On Ubuntu & Debian
 ```
 sudo apt install apache2
 ```
