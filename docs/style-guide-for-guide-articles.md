@@ -185,7 +185,7 @@ And here is even more that should be cited from another source.<sup>2</sup>
 2. [Purdue OWL Staff. "MLA Works Cited: Electronic Sources." *Purdue Online Writing Lab.* October 12, 2017. Accessed: October 20, 2017.](https://owl.english.purdue.edu/owl/resource/747/08/)
 ```
 
-You can check out the Purdue link above to see how to properly cite web sources (they even show how to cite tweets!).
+You can check out the [Purdue link referenced above](https://owl.english.purdue.edu/owl/resource/747/08/) to see how to properly cite web sources (they even show how to cite tweets!).
 
 Typically, an attribution has a structure like the following:
 
