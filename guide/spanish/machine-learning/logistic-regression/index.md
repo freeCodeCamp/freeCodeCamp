@@ -14,13 +14,21 @@ La regresión logística modela la probabilidad de que Y, la variable de respues
 
 En la regresión logística, hθ (x) es una función sigmoide, por lo tanto hθ (x) = g (θ'x). g (θ'x) = 1/1 + e ^ (- θ'x)
 
-Nota: θ 'es θ transposición.
+La función logística es un una función apropiad desarrollada por estadísticos para clasificar, lo que siempre resultará en un valor entre 0 o 1 dependiendo de los valores de entrada  y pesos (que son **θ** en esta ecuación).
+
+Nota: θ' es la transpuesta de θ.
+
+** La transpuesta es usada para poder multiplicarla por el vector de atributos. Esto será más fácil de comprender una vez entre en más profundidad en conceptos de Álgebra Lineal** 
 
 #### Función de costo
-
+La función de coste es una medida de como de lejos se encuentra nuestra función hipotética de la observada.
 La función de costo utilizada para la regresión logística es:
 
 J (θ) = (1 / m) ∑Cost (hθ (x (i)), y (i)), donde la suma es de i = 1 a m.
+
+Donde hθ(x) es igual al valor hipotético calculado de acuerdo con los atributos y pesos que son calculados y balanceados empleando un algoritmo como, por ejemplo, descenso del gradiente. y es el valor correspondiente del dataset de observación.
+
+Aquí, la función de coste no es una función sigmoide, en su lugar se emplean dos funciones logarítmicas que funcionan más eficientemente sin penalizar los algoritmos de aprendizaje empleados.
 
 Costo (hθ (x), y) = - log (hθ (x)) si y = 1 Costo (hθ (x), y) = - log (1 − hθ (x)) si y = 0
 
@@ -46,7 +54,8 @@ Aquí se hacen múltiples clasificadores binarios (N \* N (N-1) / 2 donde N = no
 
 #### Aplicaciones de regresión logística:
 
-1) Clasificar el correo como spam o no spam. 2) Para determinar la presencia o ausencia de cierta enfermedad como el cáncer según los síntomas y otros datos médicos. 3) Clasificar imágenes basadas en datos de píxeles.
+1) Clasificar el correo como spam o no spam. 2) Para determinar la presencia o ausencia de cierta enfermedad como el cáncer según los síntomas y otros datos médicos como benigno o maligno. 3) Clasificar imágenes basadas en datos de píxeles.
+
 
 #### Suposiciones de regresión logística
 
