@@ -30,6 +30,7 @@ Computer science is categorized into several fields. The following are among the
   - Distributed Systems
   - Operating Systems
   - Database Systems
+- Networking
 
 ##More Information
 * [Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
