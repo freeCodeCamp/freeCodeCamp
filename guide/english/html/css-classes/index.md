@@ -69,3 +69,5 @@ You can see the result of the above code [here](https://codepen.io/Tlandis/pen/R
 - [css-tricks](https://css-tricks.com/how-css-selectors-work/)
 - [How to Code in HTML5 and CSS3](http://howtocodeinhtml.com/chapter7.html)
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class)
+
+#My changes
