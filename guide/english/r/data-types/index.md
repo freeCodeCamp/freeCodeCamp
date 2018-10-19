@@ -45,7 +45,7 @@ title: Data Types in R
 
 
 ## Vector
- It is a sequence of data elements of the same basic type. For example:
+ Vectors are sequences of data elements of the same basic type. For example:
 
 	> o <- c(1,2,5.3,6,-2,4)                             	 # Numeric vector
 	> p <- c("one","two","three","four","five","six")    	 # Character vector
@@ -57,7 +57,7 @@ title: Data Types in R
 
 	
 ## Matrix
- It is a two-dimensional rectangular data set. The components in a matrix also must be of the same basic type like vector. For example:
+ A matrix is a two-dimensional rectangular data set. The components in a matrix must be of the same basic type. For example:
 
 	> m = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE)
 	> m
@@ -67,7 +67,7 @@ title: Data Types in R
 
 
 ## Data Frame
- It is more general than a matrix, in that different columns can have different basic data types. For example:
+ A data frame is more general than a matrix, in that different columns can have different basic data types. For example:
 
 	> d <- c(1,2,3,4)
 	> e <- c("red", "white", "red", NA)
@@ -84,7 +84,7 @@ title: Data Types in R
 
 
 ## Lists
- It is an R-object which can contain many different types of elements inside it like vectors, functions and even another list inside it. For example:
+ Lists are R-objects which can contain many different types of elements inside them like vectors, functions and even another list. For example:
 
 	> list1 <- list(c(2,5,3),21.3,sin)
 	> list1
