@@ -2,10 +2,9 @@
 title: Computer Hardware
 ---
 ## Computer Hardware
+Computer Hardware is the lifeblood of everything electronic in our hands, the hardware in a computer is minituarized and make up your cell phone, iPad and much more. In this section, we explore the various hardware in modern computers. 
 
-In this section, we explore the various hardware components of modern computers. 
-
-## Parts of a Personal Computer
+## Parts of a Personal Computer (PC)
 
 ### Central Processing Unit (CPU)
 A Central Processing Unit (CPU) is the electronic circuitry within a computer that carries out the instructions of a computer program by performing the basic arithmetic, logical, control and input/output (I/O) operations specified by the instructions.
