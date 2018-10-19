@@ -81,6 +81,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// Solución requerida
 ```
 </section>
