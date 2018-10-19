@@ -30,3 +30,4 @@ This statement will deallocate the memory previously allocated. C does not come 
 * Allocating memory allows objects to exist beyond the scope of the current block.
 * C passes by value instead of reference. Using malloc to assign memory, and then pass the pointer to another function, is more efficient than having the function recreate the structure.
 
+add this line.
