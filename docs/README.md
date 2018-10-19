@@ -8,6 +8,7 @@
         <td><a href="/docs/russian/README.md"> русский </a></td>
         <td><a href="/docs/portuguese/README.md"> Português </a></td>
         <td><a href="/docs/spanish/README.md"> Español </a></td>
+        <td><a href="/docs/Bengali/README.md"> বাংলা </a></td>
     </tr>
 </table>
 
