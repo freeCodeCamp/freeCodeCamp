@@ -20,7 +20,8 @@ The agile software development places its emphasis on four core values.
 There are many different flavors of agile, including Scrum and Extreme Programming.
 
 ![Various methods present in Agile testing or Agile Testing Methodologies](https://www.guru99.com/images/11-2014/agile_Processesv1_2.png)
-
+[agile testing methodology vs waterfall appraoch](https://phpleague.wordpress.com/2015/04/02/agile-vs-waterfall/)
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+
