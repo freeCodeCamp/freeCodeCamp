@@ -241,6 +241,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
+ 
+ My changes.
+ For embedded system programming 
+ [Amazon]https://www.amazon.com/8051-Microcontroller-Embedded-Systems-Software/dp/8178085747/ref=sr_1_3?ie=UTF8&qid=1539974356&sr=8-3&keywords=the+8051+microcontroller+and+embedded+systems
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
