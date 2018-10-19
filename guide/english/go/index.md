@@ -82,3 +82,7 @@ alloy dev
   [Go Playground](https://play.golang.org/)
 
 Learning how to install go on your local machine is important, but if want to start playing with go right in your browser, then Go Playground is the perfect sandbox to get started right away! To learn more about the Go Playground see their article titled [Inside the Go Playground](https://blog.golang.org/playground)
+
+### Other Resources
+
+[Introducing Go by O'Reilly](http://shop.oreilly.com/product/0636920046516.do)
