@@ -73,14 +73,14 @@ echo 'I like '. $bikes['not my favorite']
 Would produce the following output:
 
 ```
-I like BWM
+I like Yamaha
 ```
 
 ## Pitfalls
 
 When working with arrays, there are a few important things to keep in mind:
 
-1) A comma after the last element is optional.
+1) A comma after the last element is optional. If you added, there will be no error shown.
 2) Named keys must be escaped to be accessed (i.e. $bikes[not my favorite] would not work).
 
 For more information, please see [PHP: Arrays](http://php.net/manual/en/language.types.array.php)
