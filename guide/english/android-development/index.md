@@ -46,13 +46,23 @@ If you don't know, Kotlin was development by JetBrains, the company behind one o
 
 Because Kotlin generates Java bytecode, you can use your favorite Java frameworks and libraries in Kotlin and your Java friends can also use any Kotlin framework you develop.
 
+###### Develop Android & iOS Apps Using Flutter
+
+[Official Docs](https://flutter.io)
+If you are just a beginner in Android Developement. You can directly start learning Flutter (According to official docs flutter is a SDK for building high-performance, high-fidelity, apps for iOS and Android) using a single codebase. Flutter team made a statement that Flutter is now production ready. Flutter uses Dart programming language for building Apps.
+*Few Advantages of using flutter for developing Apps for iOS and Android:*
+
+1. Create Android and iOS apps using a single codebase.
+2. Saves lots of time and effort.
+3. Increase Productivity.
+
 ### Practice
 
 [Codelabs for Boosting up Skills](https://codelabs.developers.google.com)
 
 ### Google Developer Console
 
-[Google Developer Console](https://developer.android.com/distribute/console/)
+[Google Developer Console For Publishing Your App In Google Play Store](https://developer.android.com/distribute/console/)
 
 ### Courses
 
