@@ -1,9 +1,13 @@
 ---
 title: Download and Install Ubuntu Desktop
 ---
+## What is Ubuntu?
+
+Ubuntu is a free and open-source operating system and Linux distribution based on Debian. Ubuntu is very command based and may satisfy any of your command based needs. Ubuntu Desktop is used by many developer because of its amazing Graphics User Interface (GUI) and its command line abilities. Read below to find out how to get Ubuntu for free!
+
 A quick tutorial showcasing how to install Ubuntu.
 
-## Steps:
+## Download and Install:
 
 You can download the latest version of Ubuntu Desktop <a href='http://www.ubuntu.com/download/desktop' target='_blank' rel='nofollow'>here</a>.  
 If you need any help with installing the operating system <a href='http://www.ubuntu.com/download/desktop/install-ubuntu-desktop' target='_blank' rel='nofollow'>this</a> tutorial by Ubuntu will help you out. If you want to dual boot your computer with Windows and Ubuntu checkout <a href='https://help.ubuntu.com/community/WindowsDualBoot' target='_blank' rel='nofollow'>this</a> helpful article.
