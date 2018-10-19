@@ -1,0 +1,41 @@
+---
+Titel: Hover Selektor
+---
+## Hover Selektor
+
+Der CSS `:hover` Selektor ist eine von vielen Pseudo-Klassen, die zum Style von Elementen verwendet werden. 
+
+Der :hover selector wird verwendet, um Elemente auszuwählen, wenn Sie mit der Maus darüber fahren.
+
+Der :hover selector kann auf allen Elementen verwendet werden, nicht nur auf Links.
+
+Verwenden Sie den :link selector, um Links zu unbesuchten Seiten zu gestalten, den :visited selector, um Links zu besuchten Seiten zu gestalten, und den :active selector, um den aktiven Link zu gestalten.
+
+Hinweis: :hover MUSS nach :link und :visited (falls vorhanden) in der CSS-Definition kommen, um zu funktionieren!
+
+CSS Syntax
+:hover {
+    css declarations;
+}
+Der Hover-Selektor wendet die in der Regel angegebenen Styles nur dann an, wenn das Element in den Hover-Zustand übergeht.
+In diesem Fall fährt der Benutzer mit der Maus über das Element.
+
+```css
+button {
+  color: white;
+  background-color: green;
+}
+
+button:hover {
+  background-color: white;
+  border: 2px solid green;
+  color: green;
+}
+```
+Im obigen Beispiel ist das normale Styling der Schaltfläche weißer Text auf einer grünen Schaltfläche. 
+Wenn ein Benutzer mit der Maus über die Schaltfläche fährt, wird die Regel mit dem Selektor `:hover` aktiv und der Stil der Schaltfläche ändert sich.
+
+#### Mehr Informationen:
+<a href='https://developer.mozilla.org/de-DE/docs/Web/CSS/Pseudo-classes' target='_blank' rel='nofollow'>MDN `:hover` Docs</a>
+
+You can find many more pseudo-classes in this article on Mozillia's <a href='https://developer.mozilla.org/de-DE/docs/Web/CSS/Pseudo-classes' target='_blank' rel='nofollow'>MDN Pseudo-classes Docs</a>.
