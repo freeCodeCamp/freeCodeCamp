@@ -77,3 +77,7 @@ Virtual box supports a wide variety of Operating systems:
 
 * [virtualbox.org](https://www.virtualbox.org)
 * [How to setup a local linux environement with vagrant](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77)
+
+My Change
+
+Virtual box provides an innovative way to do proof of concept
