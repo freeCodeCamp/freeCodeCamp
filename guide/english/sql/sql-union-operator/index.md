@@ -9,7 +9,7 @@ For this guide we'll discuss the UNION Operator section of the SQL statement.
 
 The UNION Operator is used to combine the results of multiple select statements into one result set.
 
-The SQL statements must have the same number of columns in their Select Statement.
+The SQL statements must have the same number of columns in their Select Statements, and the data types of those columns must also be equivalent.
 
 ### Basic Example
 
@@ -62,7 +62,7 @@ Output
 
 ## SQL UNION ALL Operator
 
-The UNION ALL operator is an extension to UNION operator where it should result you a A+B of rows in the ouptput assuming A and B is your input, in simple terms UNION ALL doesn't deduplicate.
+The UNION ALL operator is an extension of the UNION operator that results in A+B of rows in the ouptput assuming A and B are your inputs. The primary difference in UNION ALL is that it doesn't deduplicate rows from A+B. If a given input from A also exists in B, then both occurrences are returned.
 
 
 ### Basic Syntax
