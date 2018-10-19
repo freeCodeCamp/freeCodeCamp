@@ -14,43 +14,41 @@ Google lanzó la versión inicial de AngularJS el 20 de octubre de 2010. El lanz
 
 Después de algunas modificaciones, Angular 4.0 fue lanzado en diciembre de 2016. Angular 4 es compatible con versiones anteriores de Angular 2.0. La biblioteca HttpClient es una de las características de Angular 4.0. El lanzamiento de Angular 5 se realizó el 1 de noviembre de 2017. El soporte para aplicaciones web progresivas fue una de las mejoras en Angular 4.0. El lanzamiento de Angular 6 fue en mayo de 2018. La última versión estable es [6.1.9](https://blog.angular.io/angular-v6-1-now-available-typescript-2-9-scroll-positioning-and-more-9f1c03007bb6)
 
-**Instalar** :
+**Instalar**:
 
 Podemos agregar Angular haciendo referencia a las fuentes disponibles o descargando el marco.
 
-**Enlace a la fuente** :
+**Enlace a la fuente**:
 
 AngularJS: Podemos agregar AngularJS (versiones Angular 1.x) haciendo referencia a la red de entrega de contenido de Google.
 
 ```html
-
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
 ```
 
-Descargar / instalar: podemos descargar el framework con npm, Bower o compositor
+Descargar/instalar: Podemos descargar el framework con npm, Bower o composer
 
-**Angular 1.x** :
+**Angular 1.x**:
 
 npm
 
-\`\` \`shell npm instalar angular
+```shell 
+npm instalar angular
 ```
-Then add a `<script>` to your `index.html`: 
+Después añadir `<script>` al `index.html`: 
+
+```html
+<script src="/node_modules/angular/angular.js"></script>
 ```
 
-html
-```
 bower 
+```shell
+bower install angular
 ```
-
-cáscara instalación de la caja angular
+Después añadir `<script>` al `index.html`: 
+```html
+<script src="/bower_components/angular/angular.js"></script>
 ```
-Then add a `<script>` to your `index.html`: 
-```
-
-html
-
-\`\` \`
 
 Para obtener más información sobre la documentación, consulte el sitio oficial de [AngularJS](https://docs.angularjs.org/api)
 
