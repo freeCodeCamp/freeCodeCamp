@@ -19,7 +19,7 @@ title: Bash Less
  ```
  
  ### Options used while viewing a file
- * `ctrl^c` - Exit viewing.
+ * `q` - Exit viewing.
  * `shift^g` - Navigate to the bottom of the file.
  * `g` - Navigate to the top of the file.
  * `/` - Search down from current screen. Note you have to type some text and hit enter to complete the search.
