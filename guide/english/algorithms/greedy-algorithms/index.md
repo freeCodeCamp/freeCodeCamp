@@ -80,6 +80,7 @@ Greedy Algorithms help us solve a lot of different kinds of problems. Stay tuned
 2. Minimum Spanning Tree Problem in a Graph.
 3. Huffman Encoding Problem.
 4. K Centers Problem
+5. Activity Selection Problem
 
 #### More Information:
 <a href="https://www.youtube.com/watch?v=HzeK7g8cD0Y" target="_blank">
