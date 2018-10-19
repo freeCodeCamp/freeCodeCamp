@@ -9,7 +9,7 @@ condition ? expr1 : expr2
 
 ## Description
 
-If condition is true, the operator resolves to the value of expr1; otherwise, it resolves to the value of expr2. 
+If condition is true, the operator returns to the value of expr1; otherwise, it returns to the value of expr2. 
 
 For example, to display a different message based on the value of the isMember variable, you could use this statement:
 
