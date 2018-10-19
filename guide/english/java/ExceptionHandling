@@ -61,3 +61,4 @@ In Java exceptions under Error and RuntimeException classes are unchecked except
 					   
 					                                    unchecked
 
+Reference : https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/
