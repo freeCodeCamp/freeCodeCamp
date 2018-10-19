@@ -56,7 +56,7 @@ Give me a 'n'!
 Some ways in which For loops are used: 
 
 **Iterate over the range() function**
-
+If you do need to iterate over a sequence of numbers, the built-in function range() comes in handy.
 ```python
 for i in range(10):
     print(i)
