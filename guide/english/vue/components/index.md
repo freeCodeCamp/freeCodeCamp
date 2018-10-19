@@ -31,7 +31,10 @@ Vue.component('feature-card', {
         {{ featureDescription }}
       </p>
     </div>
-  `
+  `,
+  data: data: {
+  el: 0
+  }
 });
 ```
 
@@ -84,3 +87,34 @@ Once a prop is registered, you can pass data to it as a custom attribute, like t
 <blog-post title="Blogging with Vue"></blog-post>
 <blog-post title="Why Vue is so fun"></blog-post>
 ```
+
+### Reusing Components
+Components can be reused as many times as you want:
+
+```html
+<div id="components-demo">
+  <blog-post></blog-post>
+  <blog-post></blog-post>
+  <blog-post></blog-post>
+</div>
+```
+
+### "data" Must Be a Function
+When we defined the <blog-post> component, you may have noticed that data wasn’t directly provided an object, like this:
+
+```javascript
+data: {
+  el: 0
+}
+```
+
+Instead, a component’s data option must be a function, so that each instance can maintain an independent copy of the returned data object:
+
+```javascript
+data: function () {
+  return {
+    el: 0
+  }
+}
+```
+
