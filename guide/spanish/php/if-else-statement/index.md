@@ -4,11 +4,11 @@ localeTitle: Declaración if-else
 ---
 ## Introducción
 
-Si / Else es una declaración condicional donde, según la veracidad de una condición, se realizarán acciones diferentes.
+If / Else es una declaración condicional donde, según la veracidad de una condición, se realizarán acciones diferentes.
 
 > **Nota: los** paréntesis `{}` solo son necesarios si la condición tiene más de una declaración de acción.
 
-## Si declaración
+## Declaración de IF
 ```
   if (condition){ 
     statement1; 
@@ -18,7 +18,7 @@ Si / Else es una declaración condicional donde, según la veracidad de una cond
 
 > **Nota:** la sentencia `else` es opcional.
 > 
-> ## Declaración Si / Else
+> ## Declaración de If / Else
 ```
   if (condition){ 
     statement1; 
@@ -30,7 +30,7 @@ Si / Else es una declaración condicional donde, según la veracidad de una cond
   } 
 ```
 
-## Declaración Si / Elseif / Else
+## Declaración If / Elseif / Else
 ```
   if (condition){ 
     statement1; 
