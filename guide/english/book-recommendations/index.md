@@ -147,6 +147,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
+*How to Win Friends & Influence People*
+- [Amazon](https://www.amazon.com/gp/product/0671027034/ref=dbs_a_def_rwt_bibl_vppi_i0)
+- ISBN-13: 978-0671027032
+
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
