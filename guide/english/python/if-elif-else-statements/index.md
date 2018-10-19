@@ -67,7 +67,7 @@ Let's take an example of finding a number which is even and also greater than '1
 ```
 python 
 x = 34
-if x %  2 == 0:  # this is how you create a comment and now, checking for even.
+if x %  2 == 0:  # this is how you create a comment and now, checking if number is even.
   if x > 10:
     print("This number is even and is greater than 10")
   else:
