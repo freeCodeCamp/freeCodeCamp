@@ -56,6 +56,14 @@ Sometimes the script won't be executed, and the above command will return an err
 zach@marigold:~$ chmod u+x myBashScript.sh
 ````
 And then execute the script.
+## Script Example
+If you execute this script it is going to print out your name.
+```
+#!/usr/bin/env bash
+NAME="John"  
+echo  "Hello $NAME!"
+```
+
 ### More Information:
 
 * Wikipedia: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
