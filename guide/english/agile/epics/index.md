@@ -6,7 +6,7 @@ An epic is a large user story that cannot be delivered as defined within a singl
 
 There is no standard form to represent epics. Some teams use the familiar user story formats (As A, I want, So That or In Order To, As A, I want) while other teams represent the epics with a short phrase.
 
-* While the stories that comprise an epic may be completed independently, their business value isn’t realized until the entire epic is complete
+* While the stories that comprise an epic may be completed independently, their business value isn’t realized until the entire epic is complete.
 
 ### Epic Example
 In an application what helps freelance painters track their projects, a possible epic could be.
