@@ -10,7 +10,7 @@ CSS allows for developers to control how web pages look by "styling" the HTML st
 
 CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https://www.w3.org/).
 
-You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
+You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript) or a nice [animation](http://www.wifeo.com/code/27-pure-css3-animation.html#1123).
 
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
 
