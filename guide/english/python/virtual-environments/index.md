@@ -54,6 +54,9 @@ lsvirtualenv
 Before you can start using the environment you need to activate it:
 ```
 source my-env/bin/activate
+
+In a windows environment, you can use the following command:
+.\scripts\activate
 ```
 
 This ensures that only packages under `my-env/` are used.
