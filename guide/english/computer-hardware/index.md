@@ -33,7 +33,7 @@ A case is used to house all the components of a computer.
 ![Case](https://images-na.ssl-images-amazon.com/images/I/41Wq97Jk20L._SL500_AC_SS350_.jpg)  
   
 ### Power Supply
-A power supply is an electronic device that supplies electric energy to an electrical load.
+A power supply is an electronic device that supplies electric energy to an electrical load that powers all components of the computer.
  
  ![Power Supply](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/SFX_PC-PSU_Delta_IMG_9760.JPG/620px-SFX_PC-PSU_Delta_IMG_9760.JPG)
  
