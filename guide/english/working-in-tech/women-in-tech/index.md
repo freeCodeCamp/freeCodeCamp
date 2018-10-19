@@ -29,10 +29,20 @@ The worst thing you can do is to sell yourself short if you want something take 
 ### A non-exhaustive list of global women in tech initiatives:
 
 - [PyLadies](https://www.pyladies.com/)
+  An international mentorship group with a focus on helping more women become active participants and leaders in the Python open-source community.
 - [R-Ladies](https://rladies.org/)
+  A worldwide organization whose mission is to promote gender diversity in the R Community by encouraging, inspiring, and empowering people of genders currently underrepresented in the R community.
 - [Django Girls](https://djangogirls.org/)
+  A non-profit organization and a community that empowers and helps women to organize free, one-day programming workshops by providing tools, resources and support.
 - [Rails Girls](http://railsgirls.com/)
+  A global, non-profit volunteer community whose aim is to give tools and a community for women to understand technology and to build their ideas. Hosts Ruby-on-Rails-specific coding workshops for girls. 
 - [Girls Who Code](https://girlswhocode.com/)
+  Girls Who Code is a nonprofit organization which aims to support and increase the number of women in computer science. 
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
-
-
+  A 501(c)3 educational non-profit whose mission is to offer free coding education to 1 million women by 2020. 
+- [Women Who Codes](https://www.womenwhocode.com)
+  Women Who Code is an global non-profit with a set of programs for engineers to reach the careers we want. 
+- [MotherCoders](http://www.mothercoders.org)
+  MotherCoders offers an eight-week tech camp focusing on helping mothers enter tech careers.
+- [Ada Developers Academy](https://adadevelopersacademy.org/)
+  Ada is a free females-only developer academy lasting 11 months based in Seattle, WA. 
