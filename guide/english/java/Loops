@@ -1,0 +1,35 @@
+#Loops in java
+In programming languages, loops are used to execute a set of instructions/functions repeatedly when some conditions become true. There are three types of loops in java.
+
+* for loop
+* while loop
+* do-while loop
+
+
+**Java For Loop
+The Java for loop is used to iterate a part of the program several times. If the number of iteration is fixed, it is recommended to use for loop.
+
+There are three types of for loops in java.
+
+***Simple For Loop
+***For-each or Enhanced For Loop
+***Labeled For Loop
+
+
+*Java Simple For Loop
+A simple for loop is the same as C/C++. We can initialize the variable, check condition and increment/decrement value. It consists of four parts:
+
+Initialization: It is the initial condition which is executed once when the loop starts. Here, we can initialize the variable, or we can use an already initialized variable. It is an optional condition.
+Condition: It is the second condition which is executed each time to test the condition of the loop. It continues execution until the condition is false. It must return boolean value either true or false. It is an optional condition.
+Statement: The statement of the loop is executed each time until the second condition is false.
+Increment/Decrement: It increments or decrements the variable value. It is an optional condition.
+
+*Java for-each Loop
+The for-each loop is used to traverse array or collection in java. It is easier to use than simple for loop because we don't need to increment value and use subscript notation.
+
+It works on elements basis not index. It returns element one by one in the defined variable.
+
+*Java Labeled For Loop
+We can have a name of each Java for loop. To do so, we use label before the for loop. It is useful if we have nested for loop so that we can break/continue specific for loop.
+
+Usually, break and continue keywords breaks/continues the innermost for loop only.
