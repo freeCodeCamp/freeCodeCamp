@@ -13,7 +13,7 @@ Regular expressions are made up of two parts - the `pattern` and the `flags` (op
 
 The use of alphanumeric (A-Z, a-z, 0-9) characters makes for a straightforward match. However, the real power of regular expressions comes with character classes. 
 
-Say, for example, you want to all the places a string that has a number from 0-9. Rather than explicitly calling out `/[0-9]/`, you can use the special character class of `/\d/`. The backslash escapes the `d` character (so don't match the letter `d`), but instead uses the special matching abilities of `\d`.
+For example, you want only number in a string. Rather than explicitly calling out `/[0-9]/`, you can use the special character class of `/\d/`. The backslash escapes the `d` character to represent digits or numbers.
 
 This same principle applies to non-numeric characters, white space, and other broad matching groups. Regular expressions can become even more sophisticated with the use of certain modifiers, such as the `+` character.
 
