@@ -32,6 +32,8 @@ int main () {
     for (int i = 0; i < 5; i++) {
     	printf("Item on index %d is %d\n", i, array[i]);
     }
+    
+    return 0;
 }
 ```
 
