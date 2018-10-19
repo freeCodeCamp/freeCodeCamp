@@ -1,7 +1,7 @@
-<table>
+﻿<table>
     <tr>
         <!-- Do not translate this table -->
-        <td> Read these guidelines in </td>
+        <td> Read these guidelines using </td>
         <td><a href="/CONTRIBUTING.md"> English </a></td>
         <td><a href="/docs/arabic/CONTRIBUTING.md"> عربى </a></td>
         <td><a href="/docs/chinese/CONTRIBUTING.md"> 中文 </a></td>
@@ -12,6 +12,8 @@
 </table>
 
 # Contribution Guidelines
+
+Hello 👋!
 
 Hello 👋!
 
