@@ -4,7 +4,7 @@ title: HTML
 
 # HTML
 
-HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to 1) create links to other documents, 2) structure the content in our document, and 3) ascribe context and meaning to the content of our document.
+HyperText Markup Language (HTML) is a markup language used to construct online documents and is the foundation of most websites today. A markup language like HTML allows us to 1.) create links to other documents, 2.) structure the content in our document, and 3.) ascribe context and meaning to the content of our document.
  
 An HTML document has two aspects to it. It contains structured information (Markup), and text-links (HyperText) to other documents. We structure our pages using [HTML elements](#). They are constructs of the language providing [structure](#) and [meaning](#) in our document for the browser and the [<anchor>](#) element links to other documents across the internet.
  
@@ -14,7 +14,7 @@ HTML5 is the latest version, or specification, of HTML. The World Wide Web Conso
  
 HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to provided meaning to our document, it wasn't until HTML5s' introduction of [semantic elements](#) that its' potential was realized.
 
-## A simple example of HTML Document
+## A simple example of HTML Document:
 
 ```html
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ h1: The element defines a large heading
 
 p: The element defines a paragraph
 
-### HTML Versions
+### HTML Versions:
 
 Since the early days of the web, there have been many versions of HTML
 
@@ -58,7 +58,7 @@ Since the early days of the web, there have been many versions of HTML
 |XHTML|2000|
 |HTML5|2014|
 
-#### Other Resources
+#### Other Resources:
 
 - [HTML Elements](https://guide.freecodecamp.org/html/elements)
 - [Semantic HTML](https://guide.freecodecamp.org/html/html5-semantic-elements)
