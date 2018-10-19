@@ -5,6 +5,9 @@ title: Anaconda
 Anaconda easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.
 Anaconda as a package manager helps you find and install packages. If you need a package that requires a different version of Python, you do not need to switch to a different environment manager, because Anaconda is also an environment manager. With just a few commands, you can set up a totally separate environment to run that different version of Python, while continuing to run your usual version of Python in your normal environment.
 
+**Anaconda Cloud** is a package management service by Anaconda where you can find, access, store and share public and private notebooks, environments, and conda and PyPI packages. Cloud hosts useful Python packages, notebooks and environments for a wide variety of applications. You do not need to log in or to have a Cloud account, to search for public packages, download and install them.
+
+You can build new packages using the Anaconda Client command line interface (CLI), then manually or automatically upload the packages to Cloud.
 
 ## Overview
 
