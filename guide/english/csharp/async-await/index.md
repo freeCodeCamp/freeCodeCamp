@@ -14,7 +14,7 @@ To learn more about using the promise model to handle asynchrony, check out this
 
 ## Examples
 
-1. Submit Form to the Server
+#### Example 1. Submit Form to the Server
 
 ```csharp
 private readonly string url = "http://localhost:3000/api/submit";
@@ -32,7 +32,7 @@ SubmitButton.Clicked += async (object, event) =>
 }
 ```
 
-2. "Latches" Synchronizer
+#### Example 2. "Latches" Synchronizer
 
 ```csharp
 public async Task<int> CalcDamage(Player player)
