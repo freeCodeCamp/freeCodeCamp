@@ -5,9 +5,9 @@ title: Template Literals
 ## Template Literals
 
 ## Introduction:
-When we want to use variable to make a string, it becomes very painful as we have to use + sign to concatenate and keep track of quotes.
+When we want to use one or more variables to make a string, it becomes very painful as we have to use + sign to concatenate the variables and keep track of quotes.
 
-Now with ES6,We can make  string using backticks and using placeholders which are indicated with dollar sign and curly braces, like ${expression } .
+Now with ES6, we can make a string using backticks and using placeholders which are indicated with dollar sign and curly braces, like ${expression} .
 ```javascript
 const name='John';
 const city='London';
@@ -15,8 +15,8 @@ const city='London';
 Older Style:
 const sentence ='My name is '+ name +'. I live in '+city.
 ES6 way:
-const sentence = `My name is ${name}. I live in ${city}`;
-Here ${name} and ${city}are going to be interpolated by the variable name and city respectively.
+const sentence = `My name is ${name}. I live in ${city}.`;
+Here ${name} and ${city} are going to be interpolated by the variable name and city respectively.
 ```
 ## MultiLine Strings:
 Older style:
@@ -27,7 +27,7 @@ const multipleLineString= "We have \
 multiple lines \
 here";
 ```
-Now when we want to create a mutiline string, we can make use of template strings.We can surround our string with backticks. This approach is extremely helpful when we want to create some dynamic html markup.
+Now when we want to create a mutiline string, we can make use of template strings. We can surround our string with backticks. This approach is extremely helpful when we want to create some dynamic html markup.
 ```javascript
 const htmlMarkup = `
 <html>
@@ -60,7 +60,7 @@ const data = {name: 'John', city: 'London', birthyear: 1900};
 const markup = `<div>${data.name} lives in ${data.city}. ${data.birthyear ? `<div>He was born in the year ${data.birthyear}</div>`:''}</div>`;
 ```
 
-In the example above, if birthyear is defined, then div with contents  "He was born in the year" is generated otherwise there would be no div created.
+In the example above, if birthyear is defined, then div with contents "He was born in the year" is generated otherwise there would be no div created.
 
 We can also call functions inside the template strings.
 
