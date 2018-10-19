@@ -21,6 +21,7 @@ These thoughts are fairly common if you struggle with imposter syndrome:
 * "I will be ridiculed and fired when people realize I am not as smart as I portrayed myself as being." (fears failure)
 * "My IQ is not high enough to work here." (doubts inherent ability)
 * "I need more training to feel like I deserve to be here."
+* "I do not have the needed experience for this role."
 
 
 Imposter Syndrome may prevent you from reaching out when you need help, thus slowing your progression. Please do reach out on the forum or the chatroom!
