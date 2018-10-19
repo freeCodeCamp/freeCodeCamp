@@ -58,6 +58,11 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 
 [Udacity Android Nanodegree Program](https://udacity.com/course/android-developer-nanodegree-by-google--nd801)
 
+### Books
+
+[Head First Android Development](https://www.amazon.in/Head-First-Android-Development-Griffiths/dp/1449362184)
+[Android Application Development All-In-One for Dummies, 2ed](https://www.amazon.in/Android-Application-Development-All-Dummies/dp/1118027701)
+
 ### Developing Android Apps
 
 The best part of learning Android is that many of the courses and material available out there online are free.
