@@ -2,7 +2,7 @@
 title: Ruby Arrays
 localeTitle: Ruby Arrays
 ---
-## Ruby Arrays (arramjos)
+## Ruby Arrays (arranjos)
 
 Um Array(arranjo) representa uma lista de valores. Os valores individuais são freqüentemente chamados de "elementos" do Array(arranjo). Para fazer um array em Ruby, use colchetes e separe os valores com vírgulas:
 
