@@ -28,3 +28,4 @@ A [get started](https://socket.io/get-started/chat/) guide can also be found on 
 More information about Socket.io and it's documentation can be found at:
 - [Socket.io](https://socket.io/)
 - [Socket.io Documentation](https://socket.io/docs/)
+- [Zeit Chat Example](https://zeit.co/docs/examples/chat)
