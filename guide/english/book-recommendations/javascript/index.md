@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### JavaScript: The Definitive Guide
+
+A great reference book for building JavaScript applications.
+
+- [Amazon](https://www.amazon.com/JavaScript-Definitive-Guide-David-Flanagan/dp/0596101996)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
