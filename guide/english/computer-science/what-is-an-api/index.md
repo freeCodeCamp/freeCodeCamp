@@ -57,6 +57,15 @@ In the example above, a developer made a request for the current weather at a sp
 
 Generally, before using an API from service, you will be required to register your app or open an account with the service. You will then be given a unique key / token / secret / code which acts as a form of authentication. The service will know who is requesting the information. For example, it is not uncommon for services to offer free API calls to indie developers, but require payments if the number of API calls you make in a period of time exceeds their threshold. Tokens can also be revoked if the service determines that the APIs have been abused, so it is important to check the terms and conditions. These tokens should be kept secret.
 
+For example, this is the API call for Dropbox to [list folders](https://www.dropbox.com/developers/documentation/http/documentation#sharing-list_folders).
+```
+curl -X POST https://api.dropboxapi.com/2/sharing/list_folders \
+    --header "Authorization: Bearer <access_token>" \
+    --header "Content-Type: application/json" \
+    --data "{\"limit\": 100,\"actions\": []}"
+```
+Without an access token obtained from Dropbox, the API call will not work.
+
 #### More Information:
 * [API for non-programmers](https://schoolofdata.org/2013/11/18/web-apis-for-non-programmers/)
 * [Wikipedia](https://en.wikipedia.org/wiki/Application_programming_interface)
