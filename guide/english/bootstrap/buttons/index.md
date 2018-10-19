@@ -25,7 +25,7 @@ You can also use bootstrap buttons with the `<a>` and `<input>` elements as show
 <input class="btn btn-primary" type="submit" value="Submit">
 
 #### Bootstrap Button Class List:
-This is a list of the CSS classes that bootstrap provides for buttons.
+These are CSS classes provided for Bootstrap buttons.
 
 `.btn` This is bootstrap's basic button.
 
