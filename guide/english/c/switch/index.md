@@ -78,6 +78,34 @@ int main() {
 -> 32.5 - 12.4 = 20.1
 ```
 
+## Multiple similar possibilities
+
+```c
+switch (x) {
+    case consta1: // leave case blank, without break statement.
+    .
+    .
+    .
+    case constaN:
+        // code to be executed if x is any number in range of a1-aN
+        break;
+
+    case constb1: // leave case blank, without break statement.
+    .
+    .
+    .
+    case constbN: 
+        // code to be executed if x is any number in range of b1-bN
+        break;
+        .
+        .
+        .
+    default:
+        // code to be executed if n doesn't match any constant
+}
+```
+
+
 ## Review : Switch vs if else
 * Check the Testing Expression: An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests expressions based only on a single integer, enumerated value, or String object.
 * Switch better for Multi way branching: When compiler compiles a switch statement, it will inspect each of the case constants and create a “jump table” that it will use for selecting the path of execution depending on the value of the expression. Therefore, if we need to select among a large group of values, a switch statement will run much faster than the equivalent logic coded using a sequence of if-elses. The compiler can do this because it knows that the case constants are all the same type and simply must be compared for equality with the switch expression, while in case of if expressions, the compiler has no such knowledge.
