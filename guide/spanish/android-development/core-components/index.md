@@ -1,7 +1,8 @@
 ---
 title: Android core components
 localeTitle: Componentes básicos de Android
----# Componentes básicos de Android
+---
+# Componentes básicos de Android
 
 Los componentes principales son los elementos esenciales de una aplicación para Android. Cada uno de ellos tiene su propio propósito y ciclo de vida, pero no todos son independientes. Son:
 
@@ -12,7 +13,9 @@ Los componentes principales son los elementos esenciales de una aplicación para
 
 ## [Ocupaciones](https://developer.android.com/guide/components/activities/)
 
-Una _actividad_ es un componente que tiene una interfaz de usuario y representa una sola pantalla. Una aplicación puede tener múltiples actividades, cada una de ellas puede ser un punto de entrada a la aplicación para el usuario o para el sistema (la actividad de una aplicación que desea abrir otra actividad que pertenece a la misma aplicación o a otra diferente).
+Una _actividad_ es un componente que tiene una interfaz de usuario y representa una sola pantalla. Una aplicación puede tener múltiples actividades, cada una de ellas puede ser un punto de entrada a la aplicación para el usuario o para el sistema (la actividad de una aplicación que desea abrir otra actividad que pertenece a la misma aplicación o a otra diferente). Cada Actividad está a su vez compuesta por diferentes elementos. 
+
+Primeramente, una actividad tendrá un layout o diseño(https://developer.android.com/guide/topics/ui/declaring-layout/) que le dará forma. Una actividad puede contener uno o más diseños dependiendo de la estructura que queramos darle a la actividad. Dentro de un diseño encontrarás diferentes elementos que dan forma a la misma. Desde Botones, Cuadros de Texto, Editables, etc. Cada uno de ellos tiene sus características y una funcionalidad únicos.
 
 ## [Servicios](https://developer.android.com/guide/components/services)
 
