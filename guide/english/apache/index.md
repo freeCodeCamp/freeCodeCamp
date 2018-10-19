@@ -21,3 +21,9 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+
+#### By installing XAMPP 
+```
+XAMPP is a famous open source, cross platform web server solution software package.
+It comes with Apache web server, MySQL and PHP installed on your local machine.
+```
