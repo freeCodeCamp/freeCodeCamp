@@ -132,5 +132,7 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 - Acceptance testing can also validate if a completed epic/story/task fulfills the defined acceptance criteria. In contrast to definition of done, this criteria can cover specific business cases that the team wants to solve. This provides a good measurement of work quality.
 
+- In an Agile project, acceptance test cases can be crafted by product owners as pat of a user story. But this is not true in all cases, so a BA - Business Analyst (or someone with those skills) will frame the acceptance test cases together with the product owner and developers to ensure quality and consistency.  
+
 #### More Information:
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
