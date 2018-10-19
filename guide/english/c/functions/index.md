@@ -18,7 +18,7 @@ int main(void) {
 
     int result = divides(first, second);
 
-    printf("first divided by second is %i\n", result);
+    printf("first divided by second is %d\n", result);
 
     return 0;
 }
@@ -80,8 +80,8 @@ This code starts with an if statement that checks if `a` is greater than `b`. In
 
 With that, the conditions for a being greater than b, and b being greater than a, have been accounted for. However, if a equals b, the function still won't have returned anything. For that reason, we return a (a is equal to b, so we could return either).
 
-## A word on 'scope'
-Scope is a thing to be aware of. It refers to the areas in your code where a variable is accessible. When you pass a variable to a function, the function gets its own copy to use. This means that adjusting the variable in the function will not adjust it anywhere else. Similarly, if you haven't passed a variable to a function, it doesn't have it and can't use it.
+## A word on 'scope'                                                                    
+Scope refers to the areas in your code where a variable is accessible. When you pass a variable to a function, the function gets its own copy to use. This means that adjusting the variable in the function will not adjust it anywhere else. Similarly, if you haven't passed a variable to a function, it doesn't have it and can't use it.
 
 You may have observed a similar issue with things like if statements and any of the loops. If you declare a variable within brackets, it won't be accessible outside of those brackets. This is true for functions in the same way, but there are some ways to get around it:
 * Make a global variable by declaring it outside of any functions
