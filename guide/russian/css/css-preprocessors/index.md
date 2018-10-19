@@ -43,8 +43,8 @@ SASS @if ширина (тело)> 500px { цвет фона: синий; } else 
 
 SASS: http://sass-lang.com/
 
-МЕНЬШЕ: http://lesscss.org/
+LESS: http://lesscss.org/
 
-Стилус: http://stylus-lang.com/
+Stylus: http://stylus-lang.com/
 
 MDN Страница: https://developer.mozilla.org/en-US/docs/Glossary/CSS\_preprocessor
