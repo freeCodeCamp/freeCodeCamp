@@ -11,7 +11,7 @@ With that practical focus in mind, let’s talk about the requirements for our c
 **Table of Contents**
 
 - [Proper nouns](#proper-nouns)
-- [The 2 minute rule](#the-2-minute-rule)
+- [The 2-minute rule](#the-2-minute-rule)
 - [Modularity](#modularity)
 - [Naming challenges](#naming-challenges)
 - [Writing tests](#writing-tests)
@@ -29,7 +29,7 @@ Proper nouns should use correct capitalization when possible. Below is a list of
 
 Front-end development (adjective form with a dash) is when you're working on the front end (noun form with no dash). The same goes with "back end", "full stack", and many other compound terms.
 
-## The 2 minute rule
+## The 2-minute rule
 
 Each challenge should be solvable within 120 seconds  by a native English speaker who has completed the challenges leading up to it. This includes the amount of time it takes to read the directions, understand the seeded code, write their own code, and get all the tests to pass.
 
@@ -37,7 +37,7 @@ If it takes longer than two minutes to complete the challenge, you have two opti
 - simplify the challenge, or
 - split the challenge into two challenges.
 
-The 2 minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
+The 2-minute rule forces you, the challenge designer, to make your directions concise, your seed code clear, and your tests straight-forward.
 
 We have JavaScript events that track how long it takes for campers to solve challenges and we can use them to identify challenges that need to be simplified or split.
 
