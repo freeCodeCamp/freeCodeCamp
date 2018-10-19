@@ -12,7 +12,7 @@ Como diz a Wikipedia, "O processamento de linguagem natural (NLP) é um subcampo
 ```
           *Spam detection 
           *Part of Speech Tagging 
-          *Named Entity Recognition 
+          *Reconhecimento de Entidades Nomeadas
 ```
 
 #### 2\. Intermediário ou fazendo um bom progresso
