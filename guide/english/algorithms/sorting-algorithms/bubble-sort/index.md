@@ -159,7 +159,48 @@ def swap( A, x, y ):
   tmp = A[x]
   A[x] = A[y]
   A[y] = tmp
+```
+### Example in C
+```C
+include <stdio.h>
 
+void swap(int *ptra ,int *ptrb)
+{
+	int temp = *ptra;
+	*ptra = *ptrb;
+	*ptrb = temp;
+}
+
+void bubble_sort(int s[] , int n)
+{
+	int i , j;
+
+	for(i = 1 ;  i <= n ; i++)
+	{
+		for(j = n-1 ; j >= i ; j--)
+		{
+			if(s[j] < s[j-1])
+			{
+				swap(&s[j],&s[j-1]);
+			}
+			else
+				continue;
+		}
+	}
+}
+
+int main(void)
+{
+	int s[] = {5,4,2,1,6,3};
+	bubble_sort(s,6);
+
+	for(int i = 0 ; i < 6 ; i++)
+	{
+		printf("%d ",s[i]);
+	}
+	printf("\n");
+	return 0;
+}
 ```
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
