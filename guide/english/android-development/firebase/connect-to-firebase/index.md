@@ -41,4 +41,6 @@ Reading a combination of all three will enable you to setup the product, which i
 
 **If You Encounter Gradle Sync**
 Try To Change The Firebase-core Version or Firebase-database version
+Add credentials of your android app to firebase project if you implement firebase manually
+
 
