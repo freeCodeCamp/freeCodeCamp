@@ -60,3 +60,5 @@ For more information visit [MDN](https://developer.mozilla.org/en-US/docs/Web/CS
 [Opacity CSS property at CSS-Tricks](https://css-tricks.com/almanac/properties/o/opacity/)
 
 Browser support: <a href= 'https://caniuse.com/#search=opacity' target= '_blank' rel= 'nofollow'>caniuse</a>
+
+good attrabite and good lookanfeel
