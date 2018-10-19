@@ -82,6 +82,10 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
 
+*21st Century C: C Tips from the New School*
+- [Amazon] (https://www.amazon.com/21st-Century-Tips-New-School/dp/1449327141)
+- ISBN-13: 978-1449327149
+
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
