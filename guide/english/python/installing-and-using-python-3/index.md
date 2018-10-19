@@ -5,6 +5,9 @@ title: Installing and Using Python 3
 ## Installing Python 3
 You can download Python from this official <a href='https://www.python.org/downloads/' target='_blank' rel='nofollow'>link</a>. Based on your OS (Windows or Linux or OSX), you might want to install Python 3 following <a href='http://docs.python-guide.org/en/latest/starting/installation/' target='_blank' rel='nofollow'>these instructions</a>.
 
+## Installing Python 3 on Windows
+You need to add Python to the path of your computer so that you can use it from command line . You can go to this <a href='https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe' target='_blank' rel='nofollow'>link(64 bit)</a> to add python directly to your path 
+
 ## Using Virtual Environments
 It is always a great idea to <a href='https://en.wikipedia.org/wiki/Sandbox_(computer_security)' target='_blank' rel='nofollow'>sandbox</a> your Python installation; and keeping it separate from your _System Python_. The _System Python_ is the path to Python interpreter, which is used by other modules installed along with your OS.
 
