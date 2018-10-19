@@ -1,5 +1,5 @@
 ---
-title: Components
+Title: Components
 ---
 
 # Components
