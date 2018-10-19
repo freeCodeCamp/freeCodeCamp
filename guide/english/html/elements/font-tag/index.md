@@ -21,3 +21,4 @@ An example:
 #### More Information:
 * [MDN - HTML font tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/font)
 * [MDN - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
+* [Font tag on w3schools](https://www.w3schools.com/tags/tag_font.asp)
