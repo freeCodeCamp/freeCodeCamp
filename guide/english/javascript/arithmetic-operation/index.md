@@ -1,7 +1,7 @@
 ---
 title: Arithmetic Operation
 ---
-JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` and `%`. The operators are for addition, subtraction, multiplication, division and remainder respectively.
+JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` and `%`. The operators are for addition, subtraction, multiplication, division and remainder (modulo) respectively.
 
 ## Addition
 
@@ -18,7 +18,7 @@ JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` 
     5 + "foo"      // concatenates the string and the number and returns "5foo"
     "foo" + "bar"  // concatenates the strings and returns "foobar"
 
-_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_(' target='_blank' rel='nofollow'>increment</a>) operator that is a great shortcut when you're adding numbers by 1.
+_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_(--' target='_blank' rel='nofollow'>increment</a>) operator that is a great shortcut when you're adding numbers by 1.
 
 ## Subtraction
 
@@ -70,7 +70,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     5 / "foo"            // returns NaN (Not a Number)
     Infinity / Infinity  // returns NaN
 
-## Remainder
+## Remainder (modulo)
 
 **Syntax**
 
