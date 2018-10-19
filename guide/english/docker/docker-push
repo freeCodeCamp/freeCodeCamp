@@ -1,0 +1,13 @@
+Docker push
+
+
+Docker push uploads docker images to DockerHub
+
+For example: 
+
+docker push rhel
+
+To verify
+
+Use docker images
+
