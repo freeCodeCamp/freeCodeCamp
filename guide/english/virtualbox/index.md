@@ -6,14 +6,10 @@ title: VirtualBox
 
 VirtualBox is an open source Virtual Machine program from Oracle. It allows users to virtually install many operating systems on virtual drives, including Windows, BSD, Linux, Solaris, etc. 
 
-# Installation
-VirtualBox can be downloaded here: 
-[VirtualBox Downloads](https://www.virtualbox.org/wiki/Downloads)
-
 # Setup
 - Sometimes you may need to enable virtualization from your bios settings
 
-- To set up your first Virtual Machine, download the .iso file from your desired Operating System site. 
+- To set up your first Virtual Machine, visit the [downloads](https://www.virtualbox.org/wiki/Downloads) page and select the package needed for your system. 
 
 - Next you will hit the "New" button in VirtualBox, and name your VM with any name you like. 
 
