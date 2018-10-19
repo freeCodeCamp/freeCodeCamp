@@ -78,3 +78,18 @@ The output of both of the above codes should be:
 ```c
 3
 ```
+complex ternary operator
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+int a=10,b=20,c=0;
+int max;
+max=(a>b?(b>c?a:c):(b>c?b:c));
+printf("%d",max);
+getch();
+return 0;
+}
+
+
