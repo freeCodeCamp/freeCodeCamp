@@ -58,3 +58,7 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work..
+
+[Power of Recursive](https://docs.google.com/document/d/1tz05M-TEvrBXBp_b-9S23kGsJKAC6L7lM3H2P87LulA/edit?usp=sharing)
+
+This is an article about using recursive experience and you can contribute to adding material.
