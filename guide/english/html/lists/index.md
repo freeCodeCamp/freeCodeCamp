@@ -19,9 +19,9 @@ The direct children of ordered and unordered lists must be list items. Each list
 An ordered list is written as
 ```HTML
 <ol>
-  <li>January</li>
-  <li>February</li>
-  <li>March</li>
+  <li> January </li>
+  <li> February </li>
+  <li> March </li>
 </ol>
 ```
 and is displayed as:
