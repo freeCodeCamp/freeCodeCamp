@@ -41,6 +41,16 @@ VirtualBox可以在这里下载： [VirtualBox下载](https://www.virtualbox.org
     
     访问 [VirtualBox手册](https://www.virtualbox.org/manual/UserManual.html) ，提供有关使用和配置计算机的更多信息。
     
+# 解決安裝虛擬機之後 使用體驗不佳的問題
+
+*   安裝完虛擬機之後，可能會出現畫面不流暢，無法共用檔案等功能，那是因為沒有安裝相關工具的緣故。
+
+*   在功能表列點擊"裝置" -> "安裝Guest Additinos"
+
+*   找尋虛擬電腦中新出現的光碟機，點擊裡面的安裝檔 依照指示進行操作。若要安裝3D加速須將windows先進入安全模式
+
+*   完成後重開機即可
+    
 
 Oracle VM VirtualBox是一款功能强大的跨平台虚拟化产品，适用于企业或个人用途。 VirtualBox可以作为GNU通用公共许可证（GPL）版本2下的开源软件免费获得。
 
