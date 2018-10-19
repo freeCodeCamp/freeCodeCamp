@@ -3,7 +3,7 @@ title: Strings
 ---
 # Strings
 
-Strings are sequences of characters. In Java, a `String` is an `Object`. Strings should not be confused with `char` as characters are literally 1 value rather than a sequence of characters. You can still use 1 value within a String, however it is preferred to use `char` when you are checking for 1 character.
+Strings are sequences of characters. In Java, a `String` is an `Object`. Strings should not be confused with `char` as characters are literally 1 value rather than a sequence of characters. You can still use 1 value within a String however, it is preferred to use `char` when you are checking for 1 character. String object can also be called as a series of char objects. 
 
 ```java
 String course = "FCC";
