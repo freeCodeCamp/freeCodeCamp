@@ -16,7 +16,7 @@
 
 感谢像你这样的数千名志愿者，freeCodeCamp.org。我们感谢您的贡献，我们很高兴欢迎您的光临。
 
-我们严格执行[“行为准则”]（https://www.freecodecamp.org/code-of-conduct）。花一点时间阅读它。它只有196个字。
+我们严格执行[“行为准则”](https://www.freecodecamp.org/code-of-conduct)。花一点时间阅读它。它只有196个字。
 
 快乐贡献🎉！
 
