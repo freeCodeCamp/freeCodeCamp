@@ -252,6 +252,9 @@ The Mythical Man-Month: Essays on Software Engineering
 *   [الأمازون ابتسامة](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 *   ISBN-13: 978-0201835953
 
+_كتاب الجافا سكربت_
+*   [درايف]https://docs.google.com/viewerng/viewer?url=http://download-pdf-ebooks.online/files/download-pdf-ebooks.org-1494103866Ze5J8.pdf&hl=ar
+
 تم تصنيف هذه القائمة من سلاسل رسائل مقترحة متعددة على Reddit و Stackoverflow.
 
 لا تتردد في إضافة المزيد التي وجدتها مفيدة!
