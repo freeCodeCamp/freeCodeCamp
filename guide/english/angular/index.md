@@ -13,7 +13,7 @@ After some modifications, Angular 4.0 was released on Dec-2016. Angular 4 is bac
 
 **Install**:
  
-The easiest way to install Angualr is through the (CLI project)[https://cli.angular.io/] this tool allows the creation of new projects and generating components/services/modules etc to a standard the Angular team consider to be best practices.
+The easiest way to install Angualr is through the [CLI project](https://cli.angular.io/) this tool allows the creation of new projects and generating components/services/modules etc to a standard the Angular team consider to be best practices.
 
 ```shell
 npm install -g @angular/cli
@@ -25,5 +25,5 @@ cd example-app
 ng serve
 ```
 
-For more information regarding the documentation, refer to the official docs for the (CLI)[https://cli.angular.io/] or (Angular documentation)[https://angular.io/docs]
+For more information regarding the documentation, refer to the official docs for the [CLI](https://cli.angular.io/) or [Angular documentation](https://angular.io/docs)
 *Note : Please refer the Angular documentation for the updated information.*
