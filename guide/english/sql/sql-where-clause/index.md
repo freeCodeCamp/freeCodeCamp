@@ -6,7 +6,7 @@ title: SQL Where Clause
 
 ### `WHERE` Clause (and/or, `IN`, `BETWEEN`, and `LIKE`)
 
-The `WHERE` clause is used to limit the number of rows returned.  
+The `WHERE` clause is used to filter the number of rows returned.  
 
 In this case all five of these will be used is a some what ridiculous `WHERE` clause. 
 
@@ -33,7 +33,7 @@ select studentID, FullName, sat_score, rcd_updated from student;
 9 rows in set (0.00 sec)
 ```
 
-Rows will be presented that....
+We 'd like to apply the following filters:
 
 * `WHERE` Student IDs are between 1 and 5 (inclusive) 
 * `OR` studentID = 8 
