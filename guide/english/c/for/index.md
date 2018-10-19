@@ -19,7 +19,8 @@ The `for` loop consists of 3 sections, the initialization section, a specific co
 
 The initialization statement is executed only once. Then, the test expression is evaluated. If the test expression is false (0), for loop is terminated. But if the test expression is true (nonzero), codes inside the body of for loop is executed and the update expression is updated. This process repeats until the test expression is false.
 
-The for loop is commonly used when the number of iterations is known.
+The for loop can be used for known or unknown iteration,not necessary to add condition like i<5,you can also add array[i]!='\0'
+for character array,or i<n where n is an integer input integer taken from user...
 
 ## Example
 ```c
