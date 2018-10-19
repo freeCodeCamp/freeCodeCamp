@@ -16,6 +16,8 @@ The first argument is the file you want to move, and the second is the location 
 Commonly used options:
 - `-f` to force move them and overwrite files without checking with the user.
 - `-i` to prompt confirmation before overwriting files.
+- `-n` do not overwrite an existing file
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Mv)
+* [Man pages](http://man7.org/linux/man-pages/man1/mv.1.html)
