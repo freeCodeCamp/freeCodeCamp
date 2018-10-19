@@ -10,3 +10,4 @@ Some examples of these tools:
 - DevOps tools
 - Build tools
 - Package managers
+- In-Browser Dev Tools Console
