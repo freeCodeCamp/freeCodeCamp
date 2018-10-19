@@ -12,7 +12,7 @@ There are a lot of conferences that like having speakers who are earlier in thei
 
 ## Start Small
 
-If you are interested in public speaking/giving a tech talk, you can start small. Many communities have meetup groups for a wide range of technologies. You could give a lightning talk (a short talk, usually 5 minutes) version of the talk you want to propose elsewhere. 
+If you are interested in public speaking/giving a tech talk, you can start small. Many communities have meetup groups for a wide range of technologies. You could give a lightning talk (a short talk, usually 5 minutes) version of the talk you want to propose elsewhere. You could also ask your friends/peers if you could practice your speech on them. This way you are still starting small but you have people that you know instead of complete strangers. This can ease your mind and help you practice at the same time. 
 
 ## Create an Outline
 
