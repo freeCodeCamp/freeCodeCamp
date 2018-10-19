@@ -58,6 +58,13 @@ def sum(a, b):
 result = sum(1, 2)
 # result = 3
 ```
+It's important to note that if there is any code within the function after the `return` value, it can't be reached.
+
+```python
+def sum(a, b):
+  return a + b
+  print("This print action will never be reached")
+```
 
 You can define default values for the parameters, that way Python will interpretate that the value of that parameter is the default one if none is given.
 
