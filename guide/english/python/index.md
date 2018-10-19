@@ -169,3 +169,4 @@ Free Code Camp has some great resources. The web is a big place, there's plenty 
 * Developer's Guide to Python: https://devguide.python.org/
 * Learn Python the Hard Way book: https://learnpythonthehardway.org/python3/
 * Introduction to Python Programming: https://www.udacity.com/course/introduction-to-python--ud1110
+* Core Python Programming (2nd Edition): http://index-of.es/Python/Core.Python.Programming.2nd.Edition.Wesley.Chun.2006.pdf
