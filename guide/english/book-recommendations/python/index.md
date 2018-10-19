@@ -38,7 +38,7 @@ So you've covered the basics of Python?  You're now ready to discover the in-dep
 - [Amazon](https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
 - [O'Reilly](http://shop.oreilly.com/product/9780596158118.do)
 - ISBN-10: 0596158106
-- ISBN-13: 978-0596158101
+- ISBN-13: 978-0596158101O'Reilly
 
 #### Data Science from Scratch: First Principles with Python
 
@@ -67,5 +67,6 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
+-  book Think Python: How to Think Like a Computer Scientist is available in HTML form for free on the web (http://greenteapress.com/thinkpython/html/index.html)
 
 Please feel free to add more that you have found useful!
