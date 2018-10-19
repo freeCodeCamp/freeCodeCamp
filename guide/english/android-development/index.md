@@ -46,6 +46,10 @@ If you don't know, Kotlin was development by JetBrains, the company behind one o
 
 Because Kotlin generates Java bytecode, you can use your favorite Java frameworks and libraries in Kotlin and your Java friends can also use any Kotlin framework you develop.
 
+### Guides
+
+[Reddit Guides and Resources](https://www.reddit.com/r/androiddev/wiki/index)
+
 ### Practice
 
 [Codelabs for Boosting up Skills](https://codelabs.developers.google.com)
