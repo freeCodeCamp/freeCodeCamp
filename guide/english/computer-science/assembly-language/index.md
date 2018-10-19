@@ -20,6 +20,7 @@ Assembly language is primarily used in the following situations:
 * There is a need to use CPU instructions not available in higher-level languages. 
 * There is no high-level language to program a certain types of processors.
 * Implementing a compiler for a higher level language on a new ISA. 
+* Used for testing purposes
 ![Image of Levels of Code](https://raw.githubusercontent.com/colbybanbury/assemblyPicture/master/Screenshot%20from%202017-10-14%2014-03-06.png)
 
 #### More Information:
