@@ -25,6 +25,7 @@ Lastly, learn to integrate 3rd party libraries and Firebase services to add func
 ### Official Documentation
 
 [Google Developers Guide for Android](https://developer.android.com/training/index.html)
+[Android High Performance Programming](https://www.amazon.com/Android-Performance-Programming-Enrique-Lopez/dp/1785288954)
 
 #### Java vs. Kotlin
 
