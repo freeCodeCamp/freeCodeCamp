@@ -9,13 +9,13 @@ videoUrl: ''
 localeTitle: Estenda um conjunto de estilos CSS para outro elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> O Sass possui um recurso chamado <code>extend</code> que facilita a obtenção das regras de CSS de um elemento e a criação delas em outro. Por exemplo, o bloco abaixo de regras CSS <code>.panel</code> uma classe <code>.panel</code> . Tem uma <code>background-color</code> , <code>height</code> e <code>border</code> . <blockquote> .painel{ <br> cor de fundo: vermelho; <br> altura: 70 px; <br> borda: 2px verde sólido; <br> } </blockquote> Agora você quer outro painel chamado <code>.big-panel</code> . Ele tem as mesmas propriedades de base que o <code>.panel</code> , mas também precisa de <code>width</code> e <code>font-size</code> . É possível copiar e colar as regras CSS iniciais de <code>.panel</code> , mas o código se torna repetitivo à medida que você adiciona mais tipos de painéis. A diretiva <code>extend</code> é uma maneira simples de reutilizar as regras escritas para um elemento e depois adicionar mais para outra: <blockquote> .big-panel { <br> @extend .panel; <br> largura: 150px; <br> tamanho da fonte: 2em; <br> } </blockquote> O <code>.big-panel</code> terá as mesmas propriedades que o <code>.panel</code> , além dos novos estilos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Faça uma aula <code>.info-important</code> que <code>.info</code> e também tenha uma <code>background-color</code> definida como magenta. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Seed do desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,7 +66,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
