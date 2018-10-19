@@ -141,6 +141,9 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
 
+*Learn python the Hard way*
+-[Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888/ref=sr_1_1?ie=UTF8&qid=1539967268&sr=8-1&keywords=learn+python+the+hard+way)
+-ISBN-13: 978-0134692883
 ## Soft Skills
 
 *Soft Skills: The software developer's life manual*
