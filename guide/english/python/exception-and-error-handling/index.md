@@ -28,6 +28,10 @@ error:
 cannot concatenate 'str' and 'int' objects
 ```
 
+## Above All Else
+
+Always refer back to your code to prevent easily avoidable errors caused from typos or improper indentation. Remember that structure can be very important within Python.
+
 More Information:
 
 Errors and Exceptions <a href='https://docs.python.org/2/tutorial/errors.html' target='_blank' rel='nofollow'>documentation</a>.
