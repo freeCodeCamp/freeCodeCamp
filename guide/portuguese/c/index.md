@@ -14,9 +14,9 @@ Os objetivos deste curso são ensinar a linguagem C para iniciantes. Idealmente,
 
 ## O que é C?
 
-C é uma linguagem de programação de uso geral inventada por Dennis Ritchie entre 1969 e 1973 no Bell Labs. Desde então, ele tem sido usado para criar coisas como o Linux Kernel, que permite que o software interaja com o hardware em sistemas operacionais baseados em Linux. Ele pode fazer isso e outras operações de baixo nível, porque ele foi projetado para ficar muito próximo do código da máquina e, ao mesmo tempo, ser legível por humanos. Por isso, fornece acesso direto à memória e ao hardware do computador. Isso torna muito útil em aplicativos de hardware e robótica, onde é importante ter acesso a esses recursos rapidamente. C, como outras linguagens de baixo nível, requer compilação. O processo de compilação pega o código C que pode ser lido por uma pessoa e transforma-o em código que pode ser lido e executado por um computador. A compilação requer um compilador, que pode ser usado a partir da linha de comando ou pode ser usado em um IDE.
+C é uma linguagem de programação de uso geral inventada por Dennis Ritchie entre 1969 e 1973 no Bell Labs. Desde então, ele tem sido usado para criar coisas como o Linux Kernel, que permite que o software interaja com o hardware em sistemas operacionais baseados em Linux. Ele pode fazer isso e outras operações de baixo nível, porque ele foi projetado para ficar muito próximo do código da máquina e, ao mesmo tempo, ser legível por humanos. Por isso, fornece acesso direto à memória e ao hardware do computador. Isso o torna muito útil em aplicativos de hardware e robótica, onde é importante ter acesso a esses recursos rapidamente. C, como outras linguagens de baixo nível, requer compilação. O processo de compilação pega o código C que pode ser lido por uma pessoa e transforma-o em código que pode ser lido e executado por um computador. A compilação requer um compilador, que pode ser usado a partir da linha de comando ou pode ser usado em um IDE.
 
-Se você preferir usar a linha de comando, considere o `gcc` . Ele pode ser encontrado por padrão nos sistemas operacionais GNU + Linux e no Mac, e é fácil de obter no Windows. Para iniciantes, no entanto, ter um IDE pode ser mais confortável. Considere CodeBlocks ou Xcode se você estiver interessado em poder escrever e executar código a partir de uma GUI.
+Se você preferir usar a linha de comando, considere o `gcc` . Ele pode ser encontrado por padrão nos sistemas operacionais GNU + Linux e no Mac, e é fácil de obter no Windows. Para iniciantes, no entanto, ter um IDE pode ser mais confortável. Considere CodeBlocks ou Xcode se você estiver interessado em poder escrever e executar código a partir de uma GUI (*Graphical User Interface* ou, Interface Gráfica do Usuário).
 
 Agora que você tem esse histórico, vamos começar com nosso programa 'Hello, World'. "Hello, World" é uma forma tradicional de começar com uma linguagem: mostra que podemos escrever código e executá-lo, por isso é um bom começo!
 
@@ -58,7 +58,7 @@ Isso pode não fazer muito sentido agora, mas você aprenderá mais sobre isso q
 
 Finalmente, há os colchetes: `{` e `}` . Estes marcam o começo e o fim da função. A chave aberta ( `{` ) marca o início e a chave fechada ( `}` ) marca o fim. Tudo entre os dois está dentro da função.
 
-Agora vamos ver a carne do programa:
+Agora vamos ver o miolo do programa:
 
 ```C
     printf("Hello, World!\n"); 
