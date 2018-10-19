@@ -24,3 +24,5 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+
+FreeCodeCamp is a great way to learn to code!
