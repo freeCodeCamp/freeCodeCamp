@@ -15,6 +15,10 @@ Additionally, doctypes for HTML 4.01 required the declaration of either `strict`
 
 In contrast, the declaration of HTML5 `DOCTYPE` is much simpler: it no longer requires a reference to DTDs as it is no longer based on SGML. See the examples below for a comparison between HTML 4.01 and HTML5 `DOCTYPE`s.
 
+Browser Support
+Element			google chrome		internet explorer   mozilla firefox   opera mini
+<!DOCTYPE>	Yes	            Yes                	Yes	              Yes	         
+
 ### Examples
 
 Doctype syntax for HTML5 and beyond:
