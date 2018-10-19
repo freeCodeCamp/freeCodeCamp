@@ -1,5 +1,5 @@
 ---
-title: What is Minecraft Forge?
+<h1> What is Minecraft Forge? </h1>
 ---
 
 If you are reading this article you probably already know Minecraft. We use Forge to manipulate the game Minecraft to make it do what we want. This could be anything, ranging from new cool creatures to entire new systems in the game. 
