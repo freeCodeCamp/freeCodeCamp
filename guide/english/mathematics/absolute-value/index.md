@@ -13,6 +13,9 @@ It can be defined as,
 
 Here you can see that in the graph of y = |x|, if -2 is input in to the function, 2 is the result. This is because -2 has a distance of 2 from zero. The absolute value of a number can never be negative. 
 
+For complex numbers, this is also referred to as the *modulus*. If z=a+bi, where a=Re{z} and b=Im{z}, then |z|=sqrt(a^2+b^2)
+![i](https://1.bp.blogspot.com/-a9-goSuDZpY/VdtnQqPMRXI/AAAAAAAABbA/3U519TdTKgU/s400/modulo%2Bnumero%2Bcomplejo.png)
+
 ### Examples
 
 * **Simplify |-5|**
