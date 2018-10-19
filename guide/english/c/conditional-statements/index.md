@@ -229,3 +229,12 @@ printf("%.1lf / %.1lf = %.1lf",firstNumber, secondNumber, firstNumber/firstNumbe
 Finally, the break statement ends the switch statement.
 
 If break statement is not used, all cases after the correct case is executed. 
+
+### More Information
+For more information,visit the following links
+
+https://www.dotnettricks.com/learn/c/conditional-statements-if-else-switch-ladder
+
+https://www.programiz.com/c-programming/c-if-else-statement
+
+http://www.tutorialspoint.com/ansi_c/c_control_statements.htm
