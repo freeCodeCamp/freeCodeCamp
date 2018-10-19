@@ -12,6 +12,9 @@ Each table row is defined with the `<tr>` tag. Inside a row there may be table h
 
 A more complex HTML table may also include `<caption>`, `<col>`, `<colgroup>`, `<thead>`, `<tfoot>`, and `<tbody>` elements in it.
 
+Below is an HTML TABLE video tutorial which you can help
+<a href="https://www.youtube.com/watch?v=BczLWImAmBk">HTML TABLE</a>
+
 ### Simple Table Example
 ```html
 <table style="width:100%">
@@ -91,7 +94,6 @@ Result:
 	    </tr>
 	  </tbody>
 	</table>
-
 
 #### More Information:
 
