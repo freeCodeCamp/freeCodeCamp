@@ -2,72 +2,72 @@
 title: Accessibility Basics
 localeTitle: Conceptos básicos de accesibilidad
 ---
-> "Las Artes Oscuras son muchas, variadas, siempre cambiantes y eternas. Luchar contra ellas es como luchar contra un monstruo con muchas cabezas, que, cada vez que se corta un cuello, brota una cabeza aún más feroz e inteligente que antes. Estás luchando contra eso. el cual es fijo, mutante, indestructible ".
+> "Las Artes Oscuras son numerosas, variadas, cambiantes e ilimitadas. Combatirlas es como luchar contra un monstruo de muchas cabezas al que cada vez que se le corta una, le nace otra aún más feroz e inteligente que la anterior. Estan combatiendo algo versátil, mudable e indestructible."
 > 
-> \--Profesor Severus Snape, Harry Potter Series
+> \--Profesor Severus Snape, saga de Harry Potter
 
-El rol de la accesibilidad en el desarrollo es esencialmente entender la perspectiva y las necesidades del usuario, y saber que la web y las aplicaciones son una solución para las personas con discapacidades.
+El rol de la accesibilidad en el desarrollo es entender la perspectiva y las necesidades del usuario, y saber que la web y las aplicaciones son una solución para las personas con discapacidades.
 
-En esta época, se inventan cada vez más nuevas tecnologías para facilitar la vida de los desarrolladores, así como de los usuarios. Hasta qué punto esto es bueno, es un debate para otro momento, por ahora basta con decir que la caja de herramientas de un desarrollador, especialmente un desarrollador web, está tan cambiante como las llamadas "artes oscuras" según nuestro amigo. Snape.
+En nuestra era, se inventan cada vez más tecnologías para facilitar tanto la vida de los desarrolladores, como la de los usuarios. Hasta qué punto esto es bueno, es un debate para otro momento. Por ahora basta con decir que la caja de herramientas de un desarrollador, especialmente de un desarrollador web, cambia tanto como las llamadas "artes oscuras" según nuestro amigo, Snape.
 
-Una herramienta en esa caja de herramientas debe ser la accesibilidad. Es una herramienta que, idealmente, debería usarse en uno de los primeros pasos para escribir cualquier forma de contenido web. Sin embargo, esta herramienta a menudo no está tan bien presentada en la caja de herramientas de la mayoría de los desarrolladores. Esto podría deberse a un simple caso de no saber que existe incluso en casos extremos, como no preocuparse por ello.
+La accesibilidad es una de las herramientas de esa caja de herramientas que, idealmente, debería usarse en uno de los primeros pasos para escribir cualquier tipo de contenido web. Sin embargo, esta herramienta a menudo brilla por su ausencia en la caja de herramientas de la mayoría de los desarrolladores. Esto podría deberse a un simple caso de desconocimiento o, en casos extremos, de absoluta despreocupación. 
 
-En mi vida como usuario, y más tarde como desarrollador, que se beneficia de la accesibilidad en cualquier forma de contenido, he visto ambos extremos de ese espectro. Si estás leyendo este artículo, supongo que estás en una de las siguientes categorías:
+En mi vida como usuario, y más tarde como desarrollador que se beneficia de la accesibilidad en cualquier forma de contenido, he visto ambos extremos de ese espectro. Si estás leyendo este artículo, supongo que estás en una de las siguientes categorías:
 
-*   Usted es un desarrollador web novato y le gustaría saber más sobre accesibilidad.
-*   Eres un desarrollador web experimentado y has perdido tu camino (más sobre esto más adelante)
-*   Usted siente que hay una obligación legal del trabajo y necesita aprender más sobre ello.
+*   Eres un desarrollador web novato y te gustaría saber más sobre accesibilidad.
+*   Eres un desarrollador web experimentado y has perdido tu camino (esto se tratará más adelante)
+*   Sientes que hay una obligación legal del trabajo y necesitas aprender más sobre ello.
 
-Si cae fuera de estas categorías bastante amplias, por favor hágamelo saber. Siempre me gusta escuchar de las personas que leen sobre lo que escribo. Implementar la accesibilidad afecta a todo el equipo, desde los colores elegidos por el diseñador, la copia escrita por el redactor publicitario, y hasta usted, el desarrollador.
+Si no estás dentro de ninguna de estas categorías, por favor, házmelo saber. Siempre me gusta escuchar a mis lectores. Implementar la accesibilidad afecta a todo el equipo: al diseñador que elige los colores, al redactor publicitario que escribe la copia e incluso a ti, el desarrollador.
 
-## Entonces, ¿qué es la accesibilidad de todos modos?
+## Entonces, ¿qué es la accesibilidad?
 
-La accesibilidad en sí misma es un término un tanto engañoso a veces, especialmente si el inglés es su segundo idioma. A veces se le conoce como diseño inclusivo.
+La accesibilidad en sí misma es un término un tanto engañoso a veces, especialmente si el inglés es tu segundo idioma. A veces se conoce como diseño inclusivo.
 
-Si su sitio está en Internet, accesible a cualquier persona con un navegador web, en un sentido, ese sitio web es accesible para todos con un navegador web.
+Si tu sitio está en Internet, accesible a cualquier persona con un navegador web, en un sentido, ese sitio web es accesible para todos con un navegador web.
 
-Pero, ¿es todo el contenido de su sitio web realmente legible, utilizable y comprensible para todos? ¿No hay umbrales que impidan a ciertas personas 'acceder' a toda la información que está exponiendo?
+Pero, ¿es todo el contenido de tu sitio web realmente legible, útil y comprensible para todos? ¿No hay umbrales que impidan a ciertas personas 'acceder' a toda la información que se expone?
 
 Podrías hacerte preguntas como las siguientes:
 
-*   Si agrega información que solo está contenida en un archivo de audio, ¿puede una persona sorda obtener esa información?
-*   Si denota una parte importante de su sitio web con un color determinado, ¿lo sabrá una persona que no conoce los colores?
-*   Si agrega imágenes en su sitio web que transmiten información importante, ¿cómo lo sabrá una persona ciega o con baja visión?
-*   Si desea navegar por la aplicación con el teclado o la boquilla, ¿será posible y predecible?
-*   ¿Su aplicación asume la orientación del dispositivo y qué sucede si el usuario no puede cambiarlo físicamente?
-*   ¿Hay aspectos perdonados de su solicitud para alguien que podría necesitar más tiempo para completar un formulario?
-*   ¿Su aplicación aún funciona (mejora progresiva) suponiendo que JavaScript no se carga a tiempo?
-*   Incluso puede ir tan lejos como para decir, si su sitio web tiene muchos recursos, ¿podrá alguien con una conexión lenta o irregular leer su contenido?
+*   Si hay información que solo está contenida en un archivo de audio, ¿puede una persona sorda obtener esa información?
+*   Si destacas una parte importante del sitio web con un color determinado, ¿lo podrá distinguir una persona daltónica?
+*   Si hay imágenes en que transmiten información importante, ¿cómo lo sabrá una persona ciega o con visión baja?
+*   Si desean navegar por la aplicación con un teclado o un mouth-stick, ¿será posible y predecible?
+*   ¿La aplicación interpreta la orientación del dispositivo? ¿qué sucede si el usuario no puede cambiarlo físicamente?
+*   ¿Se agota el tiempo de espera de la solicitud de los formularios para alguien que podría necesitar más tiempo?
+*   ¿Tu aplicación aún funciona (mejora progresiva) suponiendo que JavaScript no se carga a tiempo?
+*   Incluso puedes ir tan lejos como para decir, si tu sitio web tiene muchos recursos, ¿podrá alguien con una conexión lenta o irregular leer el contenido?
 
-Aquí es donde la accesibilidad entra en juego. La accesibilidad básicamente implica hacer que su contenido sea tan amigable, tan fácil de 'acceder' como sea posible para la mayor cantidad de personas. Esto incluye a las personas sordas, con baja visión, ciegas, disléxicas, silenciadas, con una conexión lenta, sin color, con epilepsia, fatiga mental, edad, limitaciones físicas, etc.
+Aquí es donde la accesibilidad entra en juego. La accesibilidad básicamente implica hacer que el contenido sea tan amigable, tan fácil de 'acceder' como sea posible para la mayor cantidad de personas. Esto incluye a las personas sordas, con visión baja, ciegas, disléxicas, silenciadas, con una conexión lenta, daltónicas, con epilepsia, fatiga mental, edad, limitaciones físicas, etc.
 
 ## ¿Por qué implementar la accesibilidad?
 
-Puede pensar que la accesibilidad no se aplica a usted ni a sus usuarios, ¿por qué implementarla? ¿Qué haría una persona ciega con una herramienta de edición de fotos?
+Puedes pensar que la accesibilidad no te afecta ni a tus usuarios, así que... ¿por qué implementarla? ¿Qué haría una persona ciega con una herramienta de edición de fotos?
 
-La verdad es que tienes razón hasta cierto punto. Si ha investigado meticulosamente a los usuarios y ha excluido cualquier posibilidad de que cierto grupo de personas visite su sitio web, la prioridad para atender a ese grupo de personas disminuye bastante.
+La verdad es que tienes razón hasta cierto punto. Si has investigado meticulosamente a los usuarios y has excluido cualquier posibilidad de que cierto grupo de personas visite tu sitio web, la prioridad para atender a ese grupo de personas disminuye bastante.
 
-Sin embargo, hacer esta investigación es clave para defender realmente dicha declaración. ¿Sabías que había [jugadores ciegos?](http://audiogames.net) e incluso [los fotógrafos ciegos?](http://peteeckert.com/) . ¿Quizás sabías que los [músicos pueden ser sordos](http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians) ?
+Sin embargo, hacer esta investigación es primordial para defender realmente dicha declaración. ¿Sabías que hay [jugadores ciegos?](http://audiogames.net) ¿e incluso [fotógrafos ciegos](http://peteeckert.com/)? ¿Y que los [músicos pueden ser sordos](http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians)?
 
-Si lo hiciste, bien por ti. Si no, supongo que esto lleva a mi punto de partida más a casa.
+Si lo sabías, bien por ti. Si no, supongo que esto lleva todavía más a mi punto de partida.
 
-La imagen se complica aún más cuando observamos la legislación que realmente lo obliga a hacer que ciertos sitios web y aplicaciones web sean accesibles. Un buen ejemplo es la [sección 508](http://jimthatcher.com/webcourse1.htm) con sede en los Estados Unidos. En este momento, esta ley se refiere principalmente a organizaciones gubernamentales, sitios web del sector público, etc. Sin embargo, las leyes cambian.
+La imagen se complica aún más cuando observamos la legislación que realmente obliga a hacer que ciertos sitios web y aplicaciones web sean accesibles. Un buen ejemplo es la [sección 508](http://jimthatcher.com/webcourse1.htm) con sede en los Estados Unidos. En estos momentos, esta ley se refiere principalmente a organizaciones gubernamentales, sitios web del sector público, etc. Sin embargo, las leyes cambian.
 
-El año pasado, los sitios web de las aerolíneas se incluyeron en esta lista, lo que significa que incluso en Europa, los desarrolladores de sitios web de las aerolíneas se apresuraron a hacer que su contenido sea accesible. No hacerlo puede dar a su compañía una multa de literalmente decenas de miles de dólares por cada día que el problema no se resuelva.
+El año pasado, los sitios web de las aerolíneas se incluyeron en esta lista, lo que significa que incluso en Europa, los desarrolladores de sitios web de las aerolíneas se apresuraron a hacer que su contenido fuera accesible. No hacerlo puede suponer una multa a su compañía de literalmente decenas de miles de dólares por cada día en que el problema no se haya resuelto.
 
-Hay variaciones en esta legislación en todo el mundo, algunas más severas y abarcadoras que otras. El no saber sobre este hecho no hace que la demanda desaparezca, tristemente.
+Hay variaciones de esta legislación en todo el mundo, algunas más severas e integrales que otras. Por desgracia, el desconocimiento no exime de cumplir la ley. 
 
-## Ok, entonces la accesibilidad es un gran problema. Ahora, ¿cómo lo implementamos?
+## Bien, entonces la accesibilidad es un gran problema. Ahora, ¿cómo lo implementamos?
 
-Esa pregunta, lamentablemente, es más difícil de responder de lo que parece. La cita de Harry Potter en la parte superior está ahí por una razón, y no es que yo sea un ávido lector de Fantasía.
+Esa pregunta, lamentablemente, es más difícil de responder de lo que parece. La cita de Harry Potter en la parte superior está ahí por una razón y no es que yo sea un ávido lector de fantasía.
 
-Como dije anteriormente, la accesibilidad es importante para un grupo grande de personas diferentes, cada una con sus propias necesidades. Hacer que su sitio web funcione para todos, literalmente, es una tarea grande y continua.
+Como dije, la accesibilidad es importante para un grupo grande de personas diferentes, cada una con sus propias necesidades. Hacer que tu sitio web funcione para todos, literalmente, es una tarea enorme y continua.
 
-Para aportar un poco de método a la locura, se redactaron las Pautas de Accesibilidad al Contenido Web o [WCAG](https://www.wuhcag.com/web-content-accessibility-guidelines/) . Este documento contiene una serie de criterios que puede utilizar para verificar su sitio web. Por ahora, cubriré algunos de los conceptos básicos más importantes aquí. Te señalaré las frutas bajas, por así decirlo. En artículos posteriores, discutiré técnicas más avanzadas como \[WAI-ARIA\], que es importante para aplicaciones basadas en JavaScript.
+Para aportar un poco de método a la locura, se redactaron las Pautas de Accesibilidad al Contenido Web o [WCAG](https://www.wuhcag.com/web-content-accessibility-guidelines/). Este documento contiene una serie de criterios que puedes utilizar para verificar tu sitio web. Por ahora, cubriré algunos de los conceptos básicos más importantes aquí. Te enseñaré dónde están las frutas de las ramas más bajas, por así decirlo. En artículos posteriores, discutiré técnicas más avanzadas como \[WAI-ARIA\], que es importante para aplicaciones basadas en JavaScript.
 
 ### Hablar como los nativos
 
-La especificación HTML es un documento que describe cómo se debe usar el lenguaje para crear sitios web. Las tecnologías de asistencia, como los lectores de pantalla, los programas de reconocimiento de voz, etc. conocen este documento. Sin embargo, los desarrolladores web a menudo no lo son, o al menos no lo suficiente, y piensan que algo como esto está bien:
+La especificación HTML es un documento que describe cómo se debe usar el lenguaje para crear sitios web. Las tecnologías de asistencia, como los lectores de pantalla, los programas de reconocimiento de voz, etc., conocen este documento. Sin embargo, los desarrolladores web a menudo no lo son, o al menos no lo suficiente, y piensan que algo como esto está bien:
 
 ```html
 
@@ -78,7 +78,7 @@ La especificación HTML es un documento que describe cómo se debe usar el lengu
     <span class="clickable-with-JavaScript">English</span> 
 ```
 
-¿Adivina qué? Los tres de estos elementos rompen varios criterios de WCAG y, por lo tanto, no son accesibles en absoluto.
+¿Adivinas qué? Tres de estos elementos rompen varios criterios de WCAG y, por lo tanto, no son accesibles en absoluto.
 
 El primer elemento rompe el llamado 'nombre, rol, valor-criterio', que establece que todos los elementos en una página web deben exponer su nombre, su rol (botón similar) y su valor (como el contenido de un campo de edición) a las tecnologías asistivas. Este div realmente no proporciona ninguno de los tres, haciéndolo invisible para los lectores de pantalla.
 
