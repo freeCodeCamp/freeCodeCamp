@@ -54,3 +54,4 @@ For more information visit:
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
 - [W3C Candidate Recommendation Document](https://www.w3.org/TR/css-variables/)
 - [Browser Support](https://caniuse.com/#feat=css-variables)
+- [A Practical Guide to CSS Variables(SitePoint)](https://www.sitepoint.com/practical-guide-css-variables-custom-properties/)
