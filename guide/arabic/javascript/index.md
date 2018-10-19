@@ -33,3 +33,4 @@ Node.js ، مبنية على قمة V8 ، منصة تعمل على تمكين ا
 ## أطر JavaScript
 
 أكثر الأطر استخدامًا لجافا سكريبت هي React JS، Angular JS، Create JS، jQuery، nodeJS etc. لمزيد من التفاصيل اتبع هذا [الرابط](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/) .
+رابط لقناة يوتيوب مفيدة في تعلم الجافا سكريبت: https://www.youtube.com/watch?v=yQaAGmHNn9s
