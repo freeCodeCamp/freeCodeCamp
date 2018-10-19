@@ -18,6 +18,8 @@ Um ciclo de instrução para uma CPU é chamado de ciclo de busca e decodificaç
 
 Talvez o problema mais comum que afeta a CPU seja o resfriamento inadequado. CPUs são os principais geradores de calor em sistemas de computador. Devido à sua natureza, eles geralmente estão localizados sob o ventilador do computador. Existem várias maneiras de reduzir o calor em um computador, com os dois principais sistemas sendo ventiladores de ar ou sistemas de refrigeração líquida. A manutenção adequada do calor e o hardware adicional podem permitir que uma CPU adequadamente configurada tenha um desempenho melhor do que o avaliado pelo fabricante do chip (também conhecido como "Overclocking").
 
+Vale ressaltar também a aplicação de microcontroladores em sistemas embarcados, muito em alta devido a demanda de mercado, onde apenas um único chip é o sistema computacional responsável por gerir os recursos de I/O e suas respostas. Suas aplicações são das mais diversas desde a aeronáutica, medicina, indústria, automação residencial e muitas outras.
+
 **Função**
 
 Um microprocessador é um chip de silício contendo milhões de transistores microscópicos. Este chip funciona como o cérebro do computador. Ele processa as instruções ou operações contidas em programas de computador executáveis. Em vez de tirar instruções diretamente do disco rígido, o processador recebe suas instruções da memória. Isso aumenta muito a velocidade do computador.
