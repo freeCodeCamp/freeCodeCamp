@@ -62,3 +62,14 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
+A few extensions that make your life easier and more interesting while using Visual Studio Code are:
+* <a href="https://gitlens.amod.io/" target="_blank" rel="nofollow">GitLens</a> - it helps visualize the code authorship.
+* <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vs-keybindings" target="_blank" rel="nofollow">Visual Studio Keymap</a> - in case you switched to VS Code from Visual Studio.
+* <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank" rel="nofollow">Debugger for Chrome</a> - if, obviously, you are using Google Chrome browser too.
+* <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag" target="_blank" rel="nofollow">Auto Close tag</a> - automatically adds HTML/XML close tag
+* <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag" target="_blank" rel="nofollow">Auto rename tag</a> - automatically rename paired HTML/XML tag.
+* <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="nofollow">ESLint</a>
+* <a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" rel="nofollow">Path Intellisense</a> - autocompletes filenames.
+* <a href="https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight" target="_blank" rel="nofollow">TODO highlight</a> - Highlight TODO, FIXME and other annotations within your code
+* <a href="https://marketplace.visualstudio.com/search?term=snippets&target=VSCode&category=All%20categories&sortBy=Relevance" target="_blank" rel="nofollow">Code Snippets</a> - snippets for anything you need
+
