@@ -22,3 +22,6 @@ When thinking about possible stories, it is also important to consider "mis-user
 #### More Information:
 - <a href='https://www.mountaingoatsoftware.com/agile/user-stories' target='_blank' rel='nofollow'>Mountain Goat Software Guide to User Stories</a>
 - <a href='http://www.romanpichler.com/blog/10-tips-writing-good-user-stories/' target='_blank' rel='nofollow'>Roman Pichler Guide to User Stories</a>
+- <a href='https://www.betteruserstories.com/' target='_blank' rel='nofollow'>User Stories Video Training by Mike Cohn</a>
+- <a href='https://blog.easyagile.com/how-to-write-good-user-stories-in-agile-software-development-d4b25356b604' target='_blank' rel='nofollow'>How to Write Good User Stories in Agile Software Development</a>
+- <a href='https://www.coursera.org/lecture/uva-darden-getting-started-agile/coaching-for-better-user-stories-EV2FE' target='_blank' rel='nofollow'>Coursera course for better User Stories</a>
