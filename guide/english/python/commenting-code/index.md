@@ -15,6 +15,11 @@ Python does not include a formal way to write multiline comments. Each line of a
     # This is the first line of a multiline comment.
     # This is the second line.
 ```
+Alternatively you could use `'\'\'` to write a a comment that spans multiple lines to avoid having to use the `#`.
+For example:
+```python
+    '''This is a multi-line comment, everything inside the three apostrophes will be regarded by python as a comment and ignored when running a program'''```
+
 Another type of comment is the **docstring**, documented in <a href='https://www.python.org/dev/peps/pep-0257/' target='_blank' rel='nofollow'>`PEP 257`</a>. Docstrings are a specific type of comment that becomes the `__doc__` attribute.
 
 For a string literal to be a docstring, it must start and end with `\"\"\"` and be the first statement of the module, function, class, or method definition it is documenting:
