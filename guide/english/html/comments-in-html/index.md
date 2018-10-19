@@ -11,12 +11,11 @@ Comments are started with `<!--` and ended with `-->`, and can span multiple lin
 
 ### Example
 ```html
-
 <!-- You can comment out a large number of lines like this.
-Author: xyz
-Date: xx/xx/xxxx
-Purpose: abc
-Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR
+  Author: xyz
+  Date: xx/xx/xxxx
+  Purpose: abc
+  Read more: https://html.com/tags/comment-tag/#ixzz4vtZHu5uR
 -->
 <!DOCTYPE html>
 <html>
