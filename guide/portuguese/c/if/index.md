@@ -7,10 +7,10 @@ localeTitle: E se
 A instrução if executa diferentes blocos de código com base nas condições.
 ```
 if (condition) { 
-    // Do something when `condition` is true 
+    // Faça alguma coisa quando `condition` é verdadeiro.
  } 
  else { 
-    // Do something when `condition` is false 
+    // Faça alguma coisa quando `condition` é falso.
  } 
 ```
 
