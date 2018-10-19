@@ -119,4 +119,5 @@ The ```div``` will show up as 3 inches wide, and the ```border``` on the ```div`
 * [MDN Web Docs - CSS Units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Values_and_units)
 * [Web Design Tutorials]('https://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573)
 * [HTML Help on CSS Units](http://www.htmlhelp.com/reference/css/units.html)
+* [W3Schools](https://www.w3schools.com/cssref/css_units.asp)
 
