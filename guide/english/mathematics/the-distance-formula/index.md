@@ -3,13 +3,20 @@ title: The Distance Formula
 ---
 ## The Distance Formula
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/the-distance-formula/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The distance formula gives us the (Euclidean)-distance between two points in a space of any dimension like 1D, 2D, 3D _etc_.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+#### One Dimensional Space
+The distance between two points A=x1 and B=x2 in 1D-space is given by
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?\left\lvert&space;x_1-x_2&space;\right\rvert" title="\left\lvert x_1-x_2 \right\rvert" /></p>
+
+#### Two Dimensional Space
+The distance between two points A=(x1,y1) and B=(x2,y2) in 2D-space is given by
+
+<p align="center"><img src="https://latex.codecogs.com/gif.latex?\sqrt{(x_1-x_2)^2&plus;(y_1-y_2)^2}" title="\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}" /></p>
+
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+https://brilliant.org/wiki/distance-formula/
 
 
