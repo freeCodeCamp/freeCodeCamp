@@ -4,7 +4,7 @@ title: Passing pointers to funtions
 
 # Passing pointers to funtions
 C allows passing a pointer to a function. To achieve this, simply declare the parameters as pointer type.
-This way of passing references to functions is useful when you want to modify variables that are out of the scope of that function.
+This way of passing references to functions is useful when you want to modify variables that are out of the scope of that function and also solves the problem of returning multiple values as the reference and not the actual value of the variable is passed.
 
 ```C
 // incorrect implementation of swap
