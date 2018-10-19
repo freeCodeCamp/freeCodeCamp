@@ -44,6 +44,8 @@ Let's say you have a C++ file called `helloWorld.cpp` ...
 It is as simple as clicking the build and run buttons, they will create a file in the project folder.
 ![img](https://i.imgur.com/FwZuFGy.png)
 
+Besides CodeBlocks, Microsoft Visual Studio is also a good alternative to consider.
+
 #### Using Command Prompt
 1. Open a Developer Command Prompt - For this step, you will need to have Microsoft Visual Studio or some other IDE that 
 enables you to compile your program from the command line. You can also search online for C++ compilers.
