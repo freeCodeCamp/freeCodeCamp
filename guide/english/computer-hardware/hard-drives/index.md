@@ -4,7 +4,7 @@ title: Storage Drives
 
 ## Hard Disk Drives (HDD)
 
-Hard drives are permanent storage devices for computers. There are several types of hard drives: traditional magnetic disks, new-generation, solid-state disks or hybrid disks which contain both SSD and magnetic storage.
+[Hard drives](https://en.wikipedia.org/wiki/Hard_disk_drive) are permanent storage devices for computers. There are several types of hard drives: traditional magnetic disks, new-generation, solid-state disks or hybrid disks which contain both SSD and magnetic storage.
 
 Traditional hard disks use magnetic needles and rotating magnetized platters to store data. Due to these moving parts, hard drives are easily damaged by drops and/or shocks. The motor that rotates the platters also consumes a lot of power, and yet no other storage method is as affordable for large volumes of storage.
 
