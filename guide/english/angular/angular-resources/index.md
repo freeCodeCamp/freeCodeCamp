@@ -43,3 +43,7 @@ A collection of helpful Angular resources
 
 * <a href='https://alligator.io/angular/' target='_blank' rel='nofollow'>Alligator.io</a>
 * <a href='https://blog.angularindepth.com/tagged/angular' target='_blank' rel='nofollow'>Angular In Depth</a>
+
+## Quick Introduction to Angular 6
+
+* <a href='https://coursetro.com/posts/code/154/Angular-6-Tutorial---Learn-Angular-6-in-this-Crash-Course' target='_blank' rel='nofollow'>Hands on introduction angular 6 concepts</a>
