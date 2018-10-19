@@ -9,6 +9,14 @@ Apache runs on 67% of all webservers in the world. It is fast, reliable, and sec
 
 ### Installation
 
+#### On Windows
+
+- Go to [Apache](https://www.apachelounge.com/download/) official to download its binary files. 
+
+- Then unpack downloaded files to Drive C.
+
+
+
 #### On Ubuntu
 ```
 sudo apt install apache2
