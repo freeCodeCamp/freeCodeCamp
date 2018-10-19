@@ -60,6 +60,13 @@ This ensures that only packages under `my-env/` are used.
 
 You will notice that the name of the environment is shown on the left of the prompt. This way you can see which is the active environment.
 
+(my-env) [vbox@vbox-linux bin]$ 
+(my-env) [vbox@vbox-linux bin]$ python -V
+Python 3.6.6
+(my-env) [vbox@vbox-linux bin]$ pip -V
+pip 18.1 from /home/vbox/Desktop/py36env/lib64/python3.6/site-packages/pip (python 3.6)
+(my-env) [vbox@vbox-linux bin]$
+
 ### Install Packages
 
 You can install packages one by one, or by setting a `requirements.txt` file for your project.
