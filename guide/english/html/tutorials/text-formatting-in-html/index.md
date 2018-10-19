@@ -31,10 +31,10 @@ Normal, <small>small</small>, normal, <small>small</small>!
 ``` 
 
 ### Marked
-Element `<mark>` makes your text marked - in different words, it makes your text highlighted. You can use it to tell readers that is one of important things in your article. For example:
+Element `<mark>` makes your text marked - in other words, it makes your text highlighted. You can use it to tell your readers that it is an important thing in your article. For example:
 
 ``` 
-HTML is full of things and <mark>it's our journey</mark> to get known them better!
+HTML is full of things and <mark>it's our journey</mark> to get know them better!
 ``` 
 
 ### Deleted 
