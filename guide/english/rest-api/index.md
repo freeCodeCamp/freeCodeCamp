@@ -57,7 +57,7 @@ REST was developed to provide a uniform interface for
       For example, `Countries/1/capital` suggests a one-to-one relationship between a country and a capital city. This means a country can only have one capital. This type of relationship means that one row relates only to one row in another table (one country, one capital in two different tables). This type of relationship is not common and is often used to break up the amount of data in one row of a table.
       
   - **One-to-Many** Mapping
-  
+
        For example, `Tickets/145/messages/4` suggests one-to-many relationship between `tickets` and `messages`. Meaning `1` ticket has `N` messages. Message isn't standalone resource. You can't have `/messages/4`.
 
   - **Many to Many** Mapping
