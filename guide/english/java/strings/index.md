@@ -183,3 +183,5 @@ The result will be:
 My
 ```
 
+#### More Information:
+- [Oracle Java Docs :The Class String](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html#jls-4.3.3)
