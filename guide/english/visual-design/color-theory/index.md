@@ -5,7 +5,7 @@ title: Color Theory
 
 Color Theory is a practical application of mixing colors and using color to achieve a specific visual effect.
 
-Colors are used in all sorts of ways.
+Colors are used in a multitude of ways.
 
 The choice of colors in visual display is often constrained by hardware, software running on the hardware, limitations of the human eye and variations on how humans perceive color.
 
