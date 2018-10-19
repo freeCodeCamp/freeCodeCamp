@@ -3,13 +3,12 @@ title: Scientific Calculator
 ---
 ## Scientific Calculator
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/tools/calculators/scientific-calculator/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Scientific calculator is just an extention to a basic calculator and can be used for various purposes. There is no fixed set of operations that a scientific calculator can perform infact it can get variably complex based on the use case. Generally, scientific calculators are used to quickly access certain mathematical functions, especially those which will take complex calculations even with a standard calculator.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Some good online scientific calculators to use on the go:
+* Simply type "scientific calculator" in Google and hit enter
+* [Desmos Scientific Calculator](https://www.desmos.com/scientific)
+* [Wolfram Alpha](https://www.wolframalpha.com/tour/): A whole engine for computing answers
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
+To know more about scientific calculator: [Wiki on scientific calculator](https://en.wikipedia.org/wiki/Scientific_calculator)
