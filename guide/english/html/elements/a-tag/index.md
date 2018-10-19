@@ -29,7 +29,9 @@ It is also possible to determine the target of the `<a>` tag. This is done using
 `_self`: Opens the link in same frame (default behaviour).
 `_parent`: Opens the link in the parent frame, for example when the user clicks a link in an iframe.
 `_top`: Opens the link in the full body of the window.
-`framename`: Opens the link in the specified frame.
+`framename`: Opens the link in the specified frame. 
+
+An inline frame is used to embed another document within the current HTML document.
 
 #### Example:
 
