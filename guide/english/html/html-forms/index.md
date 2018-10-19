@@ -28,6 +28,7 @@ Code example:
     <input type="text" name="username" id="username">
     <label for="password">Password:</label>
     <input type="password" name="password" id="password">
+    <input type = "submit" value = "Submit" >
     <input type="radio" name="gender" value="male">Male<br>
     <input type="radio" name="gender" value="female">Female<br>
     <input type="radio" name="gender" value="other">Other
