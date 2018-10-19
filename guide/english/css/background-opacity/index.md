@@ -46,7 +46,7 @@ OR
 Alternatively you can use a transparent rgba value like this:
 ```css
 
-.class-name{
+.class-name {
   background-color: rgba(0,0,0,.5);
   }
  ```
