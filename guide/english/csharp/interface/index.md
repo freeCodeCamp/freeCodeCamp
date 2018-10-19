@@ -27,7 +27,7 @@ An Interface can not :
 ---
 
 Using interfaces allows us to change our implementation in our project without breaking other parts,
-and only have to change the one place where the object is created.
+and only have to change the one place where the object is created. As interfacesdoes not implement any logic with in itself, it is a great tool for programmers to program against a type rather than a concrete object. Which is very useful to keeping a code loosely coupled. This behavior of interfaces made them imparative for implementation of Design patterns.
 
 Interface Example:
 ```csharp
@@ -38,6 +38,7 @@ public Interface IUserFavoriteFood
 }
 ```
 ---
+
 Interface inheritance and implementation:
 ```csharp
 public class UserHungry : IUserFavoriteFood
