@@ -8,13 +8,11 @@ Python can easily be used for small, large, online and offline projects. The bes
 Below are a few examples of what Python will let you do:
 
 ##### Web Development:
-You can use Python to create web applications on many levels of complexity. There are many excellent Python web frameworks, including Pyramid, Django and Flask, to name
-a few.
+You can use Python to create web applications on many levels of complexity. There are many excellent Python web frameworks, including Pyramid, Django and Flask, to name a few.
 
 ##### Data Science / Analysis:
 
-Python is the leading language of choice for many data scientists. Python has grown in popularity within the field due to the availability of many excellent libraries
-focused on data analysis (for example NumPy and Pandas) and data visualisation (for example Matplotlib and Seaborn). Python really made Data crunching
+Python is the leading language of choice for many data scientists. Python has grown in popularity within the field due to the availability of many excellent libraries focused on data analysis (for example NumPy and Pandas) and data visualisation (for example Matplotlib and Seaborn). Python really made Data crunching
 fun thanks to the wide selection of libraries available. Ipython with JupyterLab is another form of Python that improves the usage of Python in the field of data science.
 
 ##### Automation:
@@ -52,23 +50,23 @@ Here's a <a href='https://www.python.org/about/apps/' target='_blank' rel='nofol
 
 #### Python is generally used for 
 
-* Web & Internet Development
-* Educational Advancment
-* Scientific Studies/Computing
+* Web & internet development
+* Educational advancment
+* Scientific studies/computing
 * Desktop development
-* Numeric Computing
+* Numeric computing
 * Software development
-* Business Application development
-* Machine Learning
+* Business application development
+* Machine learning
 * IOT
-* Game Development
-* Rapid Prototyping
-* Browser Automation
+* Game development
+* Rapid prototyping
+* Browser automation
 * Data analysis
 * Scraping data from websites
-* Image Processing
+* Image processing
 ## Why python has got such a wide range of usage?
-* Python  has got many packages to work with, some ranging for aerospace research to mathematics. 
+* Python has got many packages to work with, some ranging for aerospace research to mathematics. 
 *Secondly for choosing to be a part of the open source community.
   Yes! Python is Open-source. 
   * For it's simple and elegant syntax.
