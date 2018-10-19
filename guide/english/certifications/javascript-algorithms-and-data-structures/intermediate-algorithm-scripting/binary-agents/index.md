@@ -128,13 +128,13 @@ Make sure that each time you transcode a character from binary to decimal, you r
 ## ![:rotating_light:](https://forum.freecodecamp.com/images/emoji/emoji_one/rotating_light.png?v=3 ":rotating_light:") Advanced Code Solution:
 ```javascript
     function binaryAgent(str) {
-      return String.fromCharCode(...str.split(" ").map(function(char){ return parseInt(char, 2); }));
+      return String.fromCharCode(...str.split(" ").map(binaryWord => parseInt(binaryWord, 2)));
     }
 
     // test here
     binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");
 ```
-![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/CLnp/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/repls/ContentMiserlySweepsoftware' target='_blank' rel='nofollow'>Run Code</a>
 
 # Code Explanation
 
