@@ -40,6 +40,7 @@ data consist of a set of training examples. In supervised learning, each example
 3. <a href='https://www.udemy.com/data-science-and-machine-learning-with-python-hands-on/' target='_blank' rel='nofollow'>Data Science and Machine Learning with Python - Hands On!</a>
 4. <a href='http://ciml.info/' target='_blank' rel='nofollow'>Machine Learning</a>
 5. <a href='https://www.edx.org/course/the-analytics-edge' target='_blank' rel='nofollow'>The Analytics Edge - Taught by: MIT</a>
+6. <a href='https://www.youtube.com/playlist?list=PLE6Wd9FR--EdyJ5lbFl8UuGjecvVw66F6' target='_blank' rel='nofollow'>Machine Learning - Taught by: Nando De Freitas</a>
 
 #### Video Resources:
 
