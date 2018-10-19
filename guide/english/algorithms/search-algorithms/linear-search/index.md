@@ -118,6 +118,18 @@ int linearSearch(int[] arr, int element)
 }
 
 ```
+### Example in C
+```C
+int search(int s[] , int n , int item)
+{
+        for(int i = 0 ; i < n ; i++)
+        {
+                if(*(s+i) == item )
+                        return 1     // If Element Found
+        }
+        return -1  //If Element Not Found
+}
+```
         
 ## Global Linear Search
 
