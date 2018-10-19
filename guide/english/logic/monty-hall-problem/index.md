@@ -26,3 +26,4 @@ Yes, it is possible that Door 1 had the car all along and Monty tricked you. Tha
 
 #### More Information:
 - Monty Hall problem article: [Wikipedia](https://en.wikipedia.org/wiki/Monty_Hall_problem)
+- Video by niansenx on Youtube: [The Monty Hall Problem](https://www.youtube.com/watch?v=mhlc7peGlGg)
