@@ -3,7 +3,7 @@ title: Linear Regression
 ---
 ## Linear Regression
 
-Linear Regression is a **discriminative** machine learning algorithm to relate the dependent variable, i.e ‘Y’ on the independent variables i.e ‘Xi‘. Unlike generative models, it does not allow the user to generate samples from the distribution of X and Y. Linear regression is a **supervised** learning algorithm, i.e labelled dataset is needed to train it for the model to be able to make predictions on its own.
+[Linear Regression](https://masmlblog.wordpress.com/2017/10/31/the-linear-regression-algorithm/) is a **discriminative** machine learning algorithm to relate the dependent variable, i.e ‘Y’ on the independent variables i.e ‘Xi‘. Unlike generative models, it does not allow the user to generate samples from the distribution of X and Y. Linear regression is a **supervised** learning algorithm, i.e labelled dataset is needed to train it for the model to be able to make predictions on its own.
 
 Linear regression is a type of regression, or one of the several regression techniques which are used to find the best fitting line for the given set of points in the given dataset.
 Linear regression helps us predict score of a variable X from the scores on other variables Y. When the variables Y are plotted, linear regression finds the best-fitting straight line through the points. The best-fitting line is called a regression line.
