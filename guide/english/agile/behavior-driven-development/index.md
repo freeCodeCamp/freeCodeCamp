@@ -60,3 +60,6 @@ Along with it are some Benefites:
 * Wiki on <a href='https://en.wikipedia.org/wiki/Behavior-driven_development' target='_blank' rel='nofollow'>BDD</a>
 * A well-known Behavior Driven Development (BDD) framework is [Cucumber](https://cucumber.io/). Cucumber supports many programming languages and can be integrated with a number of frameworks; for example, [Ruby on Rails](http://rubyonrails.org/), [Spring Framework](http://spring.io/) and [Selenium](http://www.seleniumhq.org/)
 * https://inviqa.com/blog/bdd-guide
+* Ebook on the [Discovery Phase of BDD](https://leanpub.com/bddbooks-discovery)
+* Dan North about [What's in a story](https://dannorth.net/whats-in-a-story/)
+* Automation Panda on [Writing good Gherkin](https://automationpanda.com/2017/01/30/bdd-101-writing-good-gherkin/)
