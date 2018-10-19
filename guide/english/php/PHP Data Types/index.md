@@ -10,6 +10,7 @@ Each data type requires different amounts of memory and has some specific operat
  ### PHP Data Types
  
 PHP supports the the following data types:
+
  1.`Integers` − are whole numbers, without a decimal point, like 515.
  
  2.`Doubles` − are floating-point numbers, like 3.159 or 149.1.
