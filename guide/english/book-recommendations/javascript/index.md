@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### A Smarter Way to Learn JavaScript: The new approach that uses technology to cut your effort in half
+
+This book is designed for beginners and contains lots of code exercises at the end of each chapter. With this book, "you will spend two to three more times practicing than reading." -Mark Meyers (author) 
+
+- [Amazon](https://www.amazon.com/Smarter-Way-Learn-JavaScript-technology-ebook/dp/B00H1W9I6C/ref=sr_1_4?ie=UTF8&qid=1539962050&sr=8-4&keywords=javascript+book)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
