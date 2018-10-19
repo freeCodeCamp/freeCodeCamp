@@ -102,7 +102,7 @@ Java لغة آمنة تمامًا لأنها لا تسمح بتشغيل برنا
  Hello, World 
 ` 
 
-مبروك! تم تشغيل برنامج Java الأول بنجاح. هنا نحن فقط طباعة سلسلة تمريره إلى API `System.out.println` . سنقوم بتغطية جميع المفاهيم في الكود ، لكننا نرحب [بإلقاء نظرة عن كثب](https://docs.oracle.com/javase/tutorial/getStarted/application/) ! إذا كان لديك أي شك أو تحتاج إلى مساعدة إضافية ، فلا تتردد في الاتصال بنا في أي وقت في [Gitter Chatroom](https://gitter.im/FreeCodeCamp/java) !
+مبروك! تم تشغيل برنامج، Java الأول بنجاح. هنا نحن فقط طباعة سلسلة تمريره إلى API `System.out.println` . سنقوم بتغطية جميع المفاهيم في الكود ، لكننا نرحب [بإلقاء نظرة عن كثب](https://docs.oracle.com/javase/tutorial/getStarted/application/) ! إذا كان لديك أي شك أو تحتاج إلى مساعدة إضافية ، فلا تتردد في الاتصال بنا في أي وقت كان [Gitter Chatroom](https://gitter.im/FreeCodeCamp/java) !
 
 ## كابل بيانات
 
