@@ -83,3 +83,5 @@ Color names take only 140 values, while RGB and HEX values have 16,777,216 possi
 [W3 Draft Documentation](https://drafts.csswg.org/css-color-3/#color)
 
 [MDN | CSS colors](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
+
+[Color Picker](https://www.w3schools.com/colors/colors_picker.asp) - A very useful tool helpful in picking colors.
