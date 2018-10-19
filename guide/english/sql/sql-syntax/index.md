@@ -10,6 +10,8 @@ This guide provides a basic, high level description of the syntax for SQL statem
 
 SQL is an international standard (ISO), but you will find many differences between implementations. This guide uses MySQL as an example. If you use one of the many other Relational Database Managers (DBMS) you'll need to check the manual for that DBMS if needed.
 
+Some functions ('now()') may not work everywhere. Please try to transfer the script examples to your databases.
+
 ### What we will cover
 
 * Use (sets what database the statement will use)
