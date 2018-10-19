@@ -5,7 +5,7 @@ title: Satisfiability
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
-A formula P is considered **satisfiable** if it is **sometimes** true for some assignment of true/false to the variables.
+A formula P is considered **satisfiable** if it is **sometimes** true for some assignment of true/false to the variables. The concept is used when meeting a Boolean formula.
 
 Example:
   - x ^ y : is Satisfiable with x = T, y = T
