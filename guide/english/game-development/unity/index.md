@@ -53,7 +53,7 @@ Unity formerly supported 7 other platforms including its own Unity Web Player.
 
 Unity Web Player was a browser plugin that was supported in Windows and OS X only, which has been deprecated in favor of WebGL.
 
-Unity is the engine used by Rust, Kerbal Space Program, and Cup Head.
+Unity is the engine used by Rust, Kerbal Space Program, Cup Head, and Monument Valley.
 
 #### More Information: 
 
