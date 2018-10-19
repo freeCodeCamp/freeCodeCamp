@@ -4,7 +4,7 @@ localeTitle: Renderização Declarativa
 ---
 ## Instalação
 
-Antes de começarmos, há algumas maneiras de usar o Vue.js, ou seja, via CDN e via instalação. Para uma primeira experiência, é mais fácil usar o CDN.
+Antes de começarmos, há algumas maneiras de usar o Vue.js, ou seja, via CDN e via instalação. Para uma primeira experiência, é mais fácil utilizar o CDN.
 
 Para desenvolvimento, use isto:
 
@@ -26,9 +26,9 @@ Como mencionado anteriormente, você também pode instalar o `vue-cli` , mas iss
 
 ## Renderização Declarativa
 
-O Vue.js é uma ótima ferramenta para criar páginas dinâmicas e uma primeira maneira de entrar tocar com isso é o que é chamado de renderização declarativa.
+O Vue.js é uma ótima ferramenta para criar páginas dinâmicas e uma primeira maneira de entrar em contato com isso é o que chamamos de renderização declarativa.
 
-O uso do termo "declarativo" pretende endireitar esse conceito para linguagens declarativas, como SQL: você pede algo, não está implícito qualquer implementação. O Vue.js permite declarar quais dados você deseja processado, simplesmente como isso:
+O uso do termo "declarativo" pretende deixar mais estrito esse conceito para linguagens declarativas, como SQL: você pede algo, não está implícito qualquer implementação. O Vue.js permite declarar quais dados você deseja que seja renderizar, simplesmente como isso:
 
 ```html
 
@@ -46,11 +46,11 @@ let app = new Vue({
  }); 
 ```
 
-Com esses snipets, você está dizendo ao Vue para processar dinamicamente o que está armazenado dentro da variável de `message` . E a diversão: sempre que a `message` é alterada, O Vue.js consegue recarregar essa parte específica do DOM e você vê o mudança.
+Com esses _snipets_ você está dizendo ao Vue para processar dinamicamente o que está armazenado dentro da variável `message`. E o legal: sempre que a propriedade `message` é alterada, o Vue.js consegue recarregar essa parte específica do DOM e você vê o mudança.
 
-Se você quiser experimentar essa reatividade, abra o console e altere o valor de `app.message` para, digamos, `"Hello from console"` . Você notou a mudança na a página?
+Se você quiser experimentar essa reatividade, abra o console e altere o valor de `app.message` para, digamos, `"Hello from console"`. Você notou a mudança na a página?
 
-O `{{ ... }}` é a sintaxe desse comportamento: gerar o valor de uma variável ou de uma expressão. Por exemplo, este também é um uso válido e resultará em `hello` :
+O `{{ ... }}` é a sintaxe para esse comportamento: mostrar o valor de uma variável ou de uma expressão. O exemplo abaixo também é um uso válido e resultará em `hello` :
 
 ```html
 
@@ -59,7 +59,7 @@ O `{{ ... }}` é a sintaxe desse comportamento: gerar o valor de uma variável o
  </div> 
 ```
 
-Há casos em que o que queremos é definir um atributo usando o aplicativo do Vue. variável. Você pode pensar que a mesma sintaxe se aplica, mas o Vue tem algo específico para isso, o que chamamos de "ligação".
+Há casos em que o que queremos é definir um atributo usando nossa propriedade do Vue. Você pode pensar que a mesma sintaxe se aplica, mas o Vue tem algo específico para isso, o que chamamos de "vinculo" (_binding_).
 
 ```html
 
