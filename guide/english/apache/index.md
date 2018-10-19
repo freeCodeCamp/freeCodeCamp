@@ -21,3 +21,8 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+### on fedora
+```
+sudo yum -y install httpd
+```
+
