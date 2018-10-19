@@ -117,6 +117,11 @@ Each corner of `border-radius` can be adjusted. The order is top, bottom, left, 
   border-radius: 15% 10px 30% 5px;
 ```
 
+More complex border-radius values are available. This is done using a slash (/) between horizontal and vertical values.
+```css
+  border-radius: 10px/50px;
+```
+
 ### Border: All in One
 
 While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code.
