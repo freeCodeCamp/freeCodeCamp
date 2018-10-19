@@ -24,24 +24,30 @@ Form contains control elements which are wrapped around ```<form></form>``` tags
 Code example:
 ```html
 <form>
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username">
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
-    <input type="radio" name="gender" value="male">Male<br>
-    <input type="radio" name="gender" value="female">Female<br>
-    <input type="radio" name="gender" value="other">Other
-    <input list="Options">
-    <datalist id="Options">
+   <label for="username">Username:</label>
+   <input type="text" name="username" id="username">
+   <br>
+   <label for="password">Password:</label>
+   <input type="password" name="password" id="password">
+   <br>
+   <input type="radio" name="gender" value="male">Male<br>
+   <input type="radio" name="gender" value="female">Female<br>
+   <input type="radio" name="gender" value="other">Other
+   <input list="Options">
+   <datalist id="Options">
       <option value="Option1">
       <option value="Option2">
       <option value="Option3">
-    </datalist> 
-    <input type="submit" value="Submit">
-    <input type="color">
-    <input type="checkbox" name="correct" value="correct">Correct
+   </datalist>
+   <br>
+   <input type="color">
+   <br>
+   <input type="checkbox" name="correct" value="correct">Correct
+   <br>
+   <input type="submit" value="Submit">
 </form>
 ```
+![Screenshot of Code Above](https://i.imgur.com/r0br52L.png "Screenshot of Code Above")
 
 Other elements that form can contain:
 
