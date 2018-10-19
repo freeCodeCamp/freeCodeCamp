@@ -11,7 +11,7 @@ Cooling devices are available for individual parts on the computer. The two most
 
 * Passive Systems - Usually consist of a heat sink or a heat conductive metal attached to the component. Passive cooling works by providing a larger surface to adsorb and dissipate the heat.
 * Active Systems - Add a fan to the heat sink and you are actively removing heat. The cooling fan can be dynamically adjusted to the load of the CPU or graphics card on most motherboards.
-* Liquid Cooling - High performance computers can benefit from a liquid cooled system. These types of systems circulate a liquid between the hot components and a cooling radiator.
+* Liquid Cooling - High performance computers can benefit from a liquid cooled system. These types of systems circulate a liquid between the hot components and a cooling radiator. 
 
 ## Environmental Considerations
 
@@ -23,3 +23,4 @@ Room ventilation - Locate the computer where it is neutral to the rooms environm
 * Cable Management = Having a rat's nest of cables can block airflow and make your computer hotter. It is reccomended to take some time to cable manage after building a computer, because it can increase the lifespan of your computer in the future.
 
 [Wikipedia - Article on computer cooling](https://en.wikipedia.org/wiki/Computer_cooling)
+[TechRepublic - Why is it important to keep your computer cool?](https://www.techrepublic.com/article/why-is-it-important-to-keep-your-computer-cool/)
