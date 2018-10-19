@@ -1,5 +1,5 @@
 ---
-title: Acceptance Testing
+tittrêsle: Acceptance Testing
 localeTitle: Teste de aceitação
 ---
 ## Teste de aceitação
@@ -8,13 +8,13 @@ Teste de aceitação, uma técnica de teste executada para determinar se o siste
 
 Existem várias formas de teste de aceitação:
 
-\-> Teste de aceitação do usuário
+\->um Teste de aceitação do usuário
 
-\-> Teste de aceitação de negócios
+\->dois Teste de aceitação de negócios
 
-\-> Teste Alfa
+\->três Teste Alfa
 
-\-> Testes Beta
+\->quatro Testes Beta
 
 # Critérios de aceitação
 
