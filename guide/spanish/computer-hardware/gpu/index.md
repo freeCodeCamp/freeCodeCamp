@@ -33,32 +33,46 @@ Las GPU se modelaron originalmente en el concepto de canalización de gráficos.
 ### 0ª generación
 
 La placa "Reality Engine" de Silicon Graphics Inc. (SGI) marcó el inicio del hardware de GPU y la tubería de gráficos. Pero la tecnología aún dependía de la CPU para la primera mitad. Además, la velocidad estaba limitada a una ejecución de un píxel por ciclo de reloj. El motor utiliza OpenGL, una programación de aplicaciones 2D / 3D ampliamente utilizada.
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/SGI-re2-ge10v.jpg/220px-SGI-re2-ge10v.jpg" alt="Reality Engine" title="Reality Engine">
+
 
 ### 1ª Generación
 
 El "3dfx Voodoo" (1996) evolucionó como uno de los primeros verdaderos aceleradores 3D para juegos. Manejaba el mapeado de texturas, la rasterización y el búfer z, pero la CPU todavía tenía que hacer transformaciones de vértice.
+<img src="https://tferi.hu/cikkek/videocard13.jpg" alt="Vodoo" title="3dfx Voodoo">
+
 
 ### 2ndGeneration
 
 Este es el punto en el que se lanzó al mercado común la primera GPU verdadera, la "GeForce 256" de NVIDIA. Las GPU del puerto de gráficos acelerados (AGP) de esta generación ofrecían nuevas funciones como la multitimpresión, la transformación de la geometría del hardware, los mapas de luz y la iluminación. Las tuberías tradicionales se conocían como una tubería de "función fija", porque una vez que el desarrollador envió datos gráficos a la tubería de la GPU, los datos no se podían cambiar.
+<img src="https://cdn.videocardz.net/cache/18200040c7e7e8ed83b18878d3ae0cb7-1200x900.jpg" alt="GeForce256" title="GeForce256">
+
 
 ### 3ra generacion
 
 Con esta generación de CPU, surgió la canalización programable. Ahora las partes previamente no programables podrían ser programadas por los programadores. En 2001, NVIDIA lanzó la GeForce3.
+<img src="https://prohardver.hu/dl/cnt/2003-08/253/cards/ti200.jpg" alt="3 Ti200" title="GeForce3 Ti200">
+
 
 ### 4ª generación
 
 Con el comienzo del siglo XXI, las primeras "tarjetas gráficas totalmente programables" llegaron a los consumidores. NVIDIA GeForce FX, ATI Radeon 9700 estuvieron entre los primeros. Estas GPU podrían realizar operaciones por píxel junto con sombreadores de píxeles y vértices programables. Pero, se necesitaron hardware dedicados separados para el sombreado de vértices y el procesamiento de sombreadores de píxeles.
+<img src="http://vgamuseum.info/images/zaatharen/ati/Radeon9700_fhq.jpg" alt="9700" title="ATI Radeon 9700">
+
 
 ### 5ª generación
 
 Las GPU evolucionaron y avanzaron a su velocidad máxima y las GPU de esta generación fueron las primeras en utilizar el bus PCI-express. Se introdujeron múltiples buffers de renderizado, soporte de 64 bits, acceso a texturas, etc., junto con un aumento en la memoria de la GPU.
+<img src="https://images.pcworld.com/news/graphics/117070-2209P058_1B.jpg" alt="Geforce and Ati" title="ATI Radeon X600 XT and Nvidia 6800 GT">
+
 
 ### 6ª generación
 
 En 2006, el lanzamiento de la GPU de la serie GeForce 8 de NVIDIA revolucionó el alcance y la industria de la GPU, al introducir la GPU como procesadores masivamente paralelos. Fue el primero en tener sombreadores "unificados" y "programables" o, en otras palabras, un procesador unificado programable. Unificado significa que todos los procesos de canalización de gráficos se ejecutaron en un solo procesador y no se requiere una unidad externa para ninguna etapa. Los componentes básicos de la arquitectura de GPU unificada se describen a continuación.
 
 Desde el lanzamiento de las GPU NVidia de la serie 9XX, el aumento del rendimiento entre generaciones solo mejoró. Desde el 980Ti al 1080Ti y al recién lanzado 208Tis, el rendimiento se ha más que duplicado. AMD también comenzó a producir mejores GPU como el RX 580 y el Vega 64, aunque esto todavía no está cerca del nivel de Nvidia. Recientemente, Nvidia lanzó una nueva línea de GPU llamada RTX que incluye las tarjetas de gama alta como 2080Ti, 2080 y 2070. RTX significa "Trazado de rayos", que es una técnica de renderización utilizada para generar imágenes a través del trazado de la trayectoria de la luz. en una escena
+<img src="https://prod.scorptec.com.au/35/461/74299/163470_large.jpg" alt="RTX 2080Ti" title="Asus RTX1080 Ti">
+
 
 ## Componentes básicos de la arquitectura GPU unificada
 
