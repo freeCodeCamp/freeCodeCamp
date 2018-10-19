@@ -14,7 +14,7 @@ Para saber mais sobre o Python, confira estas páginas em python.org:
 
 ## Python 2 ou Python 3
 
-*   As duas versões são semelhantes, com o conhecimento de uma mudança para escrever código para o outro é fácil.
+*   As duas versões são semelhantes. Conhecendo uma versão, a curva de aprendizado para a outra é simples.
 *   [Python 2 ou Python 3](https://wiki.python.org/moin/Python2orPython3)
     *   [O Python 2.x não será mantido após 2020.](https://www.python.org/dev/peps/pep-0373/)
     *   3.x está em desenvolvimento ativo. Isso significa que todas as melhorias recentes na biblioteca padrão, por exemplo, só estão disponíveis por padrão no Python 3.x.
