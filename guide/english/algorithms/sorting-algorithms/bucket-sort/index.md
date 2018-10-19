@@ -49,3 +49,5 @@ void bucketSort(float[] a,int n)
 - [Wikipedia](https://en.wikipedia.org/wiki/Bucket_sort)
 
 - [GeeksForGeeks](http://www.geeksforgeeks.org/bucket-sort-2/)
+
+- [Hacker Earth](https://www.hackerearth.com/practice/algorithms/sorting/bucket-sort/tutorial/)
