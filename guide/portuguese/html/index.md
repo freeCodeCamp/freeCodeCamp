@@ -8,11 +8,11 @@ O HyperText Markup Language (HTML) é uma linguagem de marcação usada para con
 
 Um documento HTML tem dois aspectos para isso. Ele contém informações estruturadas (Marcação) e links de texto (HyperText) para outros documentos. Nós estruturamos nossas páginas usando [elementos HTML](#) . São construções da linguagem que fornecem [estrutura](#) e [significado](#) em nosso documento para o navegador e para o elemento links para outros documentos em toda a internet.
 
-A internet foi originalmente criada para armazenar e apresentar documentos estáticos (imutáveis). Os aspectos do HTML discutidos acima foram vistos perfeitamente nesses documentos que não tinham design e estilo. Eles apresentaram informações estruturadas que continham links para outros documentos.
+A internet foi originalmente criada para armazenar e apresentar documentos estáticos (as páginas não eram dinâmicas). Os aspectos do HTML discutidos acima foram vistos perfeitamente nesses documentos que não tinham design e estilo. Eles apresentaram informações estruturadas que continham links para outros documentos.
 
 HTML5 é a versão mais recente ou especificação de HTML. O World Wide Web Consortium (W3C) é a organização responsável pelo desenvolvimento de padrões para a World Wide Web, incluindo aqueles para HTML. À medida que as páginas da Web e os aplicativos da Web se tornam mais complexos, o W3C atualiza os padrões do HTML.
 
-HTML5 introduz uma série de elementos semânticos. Embora tenhamos discutido HTML ajudou a fornecer significado para o nosso documento, não foi até a introdução de [elementos semânticos](#) do HTML5 que seu potencial foi realizado.
+HTML5 introduz uma série de elementos semânticos. O HTML ajudou a fornecer significado para o nosso documento, mas foi com a introdução de [elementos semânticos](#) do HTML5 que seu potencial foi realizado.
 
 ## Um exemplo simples de documento HTML
 
