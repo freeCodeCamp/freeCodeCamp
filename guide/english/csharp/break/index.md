@@ -4,7 +4,7 @@ title: Break statement
 
 # Break statement
 
-The `break` statement terminates the enclosing loop or switch statement in which it appears. The control is passed to the statement that follows the loop or the switch block.
+The `break` statement terminates the enclosing loop or switch statement in which it appears. The control is passed to the statement that follows the loop or the switch block. Break is commonly one of the used jump statements.
 
 In the first example, when the value of i is 3, the break statement is executed, which causes the execution of the loop to be terminated.
 
