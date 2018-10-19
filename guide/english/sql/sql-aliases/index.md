@@ -59,3 +59,19 @@ This results in output as below.
 +-------------+------------+-----------+-----------------+--------------+
 
 ```
+
+Benefits of aliases :- 
++-------------+-------------------------+-----------------+---------------------------------+-----------------+-------------+----------+
+|  CustomerID	| CustomerName	          | ContactName	   |             Address              |    City	        |  PostalCode | Country  |
++-------------+-------------------------+-----------------+---------------------------------+-----------------+-------------+----------+
+      1	        Ana Trujillo 	              Ana Trujillo	     Avda. de la Constitución 2222	    México D.F.	     05021	     Mexico
+      2	        Antonio Moreno Taquería	    Antonio Moreno	   Mataderos 2312	                    México D.F.	     05023	     Mexico 
+      3         Around the Horn	           Thomas Hardy	         120 Hanover Sq.	                London	         WA1 1DP	    UK
+      
+      
+SQL statement creates an alias named "Address" that combine four columns (Address, PostalCode, City and Country):
+SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
+FROM Customers;
+
+It will Combine 4 column to make 1 complete address of any or all user's.
+
