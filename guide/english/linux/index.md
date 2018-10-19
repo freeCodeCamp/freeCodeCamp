@@ -38,6 +38,7 @@ Popular distributions of Linux include:
 * CentOS
 * RHEL
 * Arch Linux
+* Kali Linux
 
 Package types are split between higher-level distributions, with Debian (.deb) and Red Hat (.rpm) being two of the most commonly used,
 however there are others including Pacman (used for Arch Linux) and PetGet (Puppy Linux).
@@ -46,4 +47,8 @@ Linux distributions also come in all shapes and size and most if not all offer t
 as a 'Live CD' environment or even directly via USB if your motherboard supports booting from USB.
 
 For more facts about Linux, read Quincy Larson's article [Linux is 25. Yay! Let’s celebrate with 25 stunning facts about Linux](https://medium.freecodecamp.org/linux-is-25-yay-lets-celebrate-with-25-rad-facts-about-linux-c8d8ac30076d).
+
+## [Distro Kali Linux](https://docs.google.com/document/d/1Qm4TibbPc0TRuzYZcGIitfHcB2Uy-of17BtKI3sPKhA/edit?usp=sharing)
+
+This is a feature on "kali linux" for those who want to contribute please add.
 
