@@ -4,7 +4,7 @@ title: Scanning
 # Scanning
 
 ## Introduction
-Network Scanning refers to a set of procedures for indentifying hosts, posts and services on a network.
+Network Scanning refers to a set of procedures for identifying hosts, posts and services on a network.
 
 Scanning activities can involve checking for open ports on a network, banner grabbing, and creating network diagrams.
 
