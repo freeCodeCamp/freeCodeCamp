@@ -63,6 +63,10 @@ console.log(fixedValue); // Should print 4
 <section id='solution'>
 
 ```js
-// solution required
+var fixedValue = 4
+
+function incrementer() {
+  return fixedValue + 1
+}
 ```
 </section>
