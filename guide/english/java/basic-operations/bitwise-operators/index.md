@@ -58,4 +58,29 @@ The unsigned right shift operator >>> shifts zero into the leftmost position.
     c = a >>> 2;      /* 15 = 0000 1111 : Zero fill right shift*/
       
 ```
+
+CHALLENGE:
+
+How do I get the negative of a number use only bitwise operations?
+
+Let do an example:
+
+4: 0100
+
+Complement:
+~0100 = 1011 = 11
+
+Add 1:
+  1011
+ +   1
+ ______
+   1100
+   
+1100 = -4!
+
+You can compute the negative of a number by using the complement and addition:
+
+~n + 1
+
+
 **FOR FURTHER INFORMATION:** <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html">Click Here</a>
