@@ -235,4 +235,10 @@ Output:
 
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#for-statements' target='_blank' rel='nofollow'>Python3 for loop documentation</a>
 
+++++++++++++++++++++++++=================================++++++++++++++++++++++++
+My ChAnges:
+in th example code of **Iterate over a list using inline loop function**
+line 214
+UPPERCASE is printed as a keyword highlighted in blue!!.
+While it should be a variable.
 
