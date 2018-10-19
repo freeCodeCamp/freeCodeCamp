@@ -73,7 +73,7 @@ int main () { // Single line for loop for (int a = 10; a <20; a = a + 1) cout <<
 
 return 0; } \`\` \`
 
-Isso geraria a mesma saída do programa anterior. ou seja Saída: Valor de a: 10 Valor de um: 11 Valor de: 12 Valor de: 13 Valor de a: 14 Valor de: 15 Valor de um: 16 Valor de: 17 Valor de um: 18 Valor de um: 19
+Isso geraria a mesma saída do programa anterior. ou seja Saída: Valor de a: 10 Valor de a: 11 Valor de a: 12 Valor de a: 13 Valor de a: 14 Valor de a: 15 Valor de a: 16 Valor de a: 17 Valor de a: 18 Valor de a: 19
 ```
 ## Explicação 
  Na etapa de inicialização, a é inicializado como a = 10. O loop então verifica a expressão da condição, por exemplo, a<20, que no caso é verdade, como 10<20 (para a primeira iteração). Agora, o corpo do loop é executado e nos temos a saída "Valor de a: 10". Então, a expressão de atualização é executa, e no caso adiciona 1 à variável 'a', e o valor é atualizado para 11, e os mesmos passos são seguidos (como acima) até que o valor de 'a' seja menor que 20, por exemplo, 19.
