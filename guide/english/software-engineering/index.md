@@ -22,3 +22,36 @@ In this age where software can be used maliciously to steal information or do ha
 - <a href='https://github.com/kilimchoi/engineering-blogs' target='_blank' rel='nofollow'>Curated List of Engineering Blogs</a>
 - <a href='http://www.acm.org/about/se-code' target='_blank' rel='nofollow'>Software Engineering Code of Ethics and Professional Practice</a>
 - <a href='https://en.wikipedia.org/wiki/Software_engineering' rel='nofollow'>Wikipedia Article</a>
+
+Definition: Software engineering is a detailed study of engineering to the design, development and maintenance of software. Software engineering was introduced to address the issues of low-quality software projects. Problems arise when a software generally exceeds timelines, budgets, and reduced levels of quality. It ensures that the application is built consistently, correctly, on time and on budget and within requirements. The demand of software engineering also emerged to cater to the immense rate of change in user requirements and environment on which application is supposed to be working. 
+
+Description: A software product is judged by how easily it can be used by the end-user and the features it offers to the user. An application must score in the following areas:- 
+
+1) Operational: -This tells how good a software works on operations like budget , usability, efficiency, correctness ,functionality , dependability , security and safety. 
+
+2) Transitional: - Transitional is important when an application is shifted from one platform to another. So, portability, reusability and adaptability come in this area. 
+
+3) Maintenance: - This specifies how good a software works in the changing environment. Modularity, maintainability, flexibility and scalability come in maintenance part. 
+
+Software Development Lifecycle or SDLC is a series of stages in software engineering to develop proposed software application, such as: 
+
+1) Communication 
+
+2) Requirement Gathering 
+
+3) Feasibility Study 
+
+4) System Analysis 
+
+5) Software Design 
+
+6) Coding 
+
+7) Testing 
+
+8) Integration 
+
+9) Implementation 
+
+10) Operations and maintenance 
+- <a href='https://economictimes.indiatimes.com/definition/software-engineering' rel='nofollow'>Economic times of india</a>
