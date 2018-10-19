@@ -109,3 +109,7 @@ To get custom colors to use in CSS, you might find a color picker helpful. Some 
 <a href="https://addons.mozilla.org/en-US/firefox/addon/colorzilla/" target="_blank">ColorZilla add-on for Firefox</a><br>
 <a href="http://www.colorhexa.com/" target="_blank">Explore different Hex colors</a><br>
 <a href="https://webaim.org/resources/contrastchecker/" target="_blank">WebAIM Color Contrast Checker</a>
+<a href="https://coolors.co/" target="_blank">Coolors</a>: A simple color scheme generator that gives you two months of skillshare classes for free.
+<a href="http://colormind.io/" target="_blank">Colormind.</a> "A color scheme generator that uses deep learning to generate colors based on images, movies, and popular art."
+From the colormind website.
+<a href="https://duotone.shapefactory.co/" target="_blank">Duotone</a>: A website where you can get images that have a spotify sort of look to them. You can use your own images, or use images from unsplash, which is where it's pulling images from.
