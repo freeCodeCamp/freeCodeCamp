@@ -23,6 +23,15 @@ Azure provides a wealth of different environment types across the board includin
 
 There are varying levels of machine 'sizes' to choose from, ranging from simple barebone low spec machines all the way up multi-GPU and multi-CPU based heavy hitting boxes.
 
+### Cloud Services - Many services offer free tiers for up to 12 months
+* Virtual Machines
+* Web apps
+* Cosmos DB (NoSQL)
+* IOT Hub (Quickly and easily fire up an environent to test your IOT project)
+* DevOps Projects (Multiple optios to quickly get up and running with a CI/CD project)
+* AKS (Azure Kubernetes Service)
+Link of all current Azure services - https://azure.microsoft.com/en-us/services/
+
 #### More Information:
 * <a href='https://en.wikipedia.org/wiki/Microsoft_Azure' target='_blank' rel='nofollow'>Wikipedia</a>
 * <a href='https://azure.microsoft.com/en-us/' target='_blank' rel='nofollow'>Microsoft Azure</a>
