@@ -7,7 +7,7 @@ CSS Buttons are a great way to add functional design features to your page.
 
 * You can style any clickable button (HTML `<button>` element)
 
-`<button>Click Me</button>`
+`<button>Click Me</button>`  or `<input type="button" value="Click me">`
 
 * The default button looks like the following:
 
