@@ -4,9 +4,9 @@ title: Imposter Syndrome
 
 ## Imposter Syndrome
 
-Imposter Syndrome is a feeling of _being a fraud_ or _not being good enough_ to get the job done. Common among software engineers, developers and designers working in tech companies, especially those not coming from a traditional tech background. People suffering from imposter syndrome have a sense of inadequacy and insecurity concerning their ability to make a contribution at the workplace. In reality, they may be perfectly capable of and do contribute successfully to their tasks.
+Imposter Syndrome is a feeling of _being a fraud_ or _not being good enough_ to get the job done. Common among software engineers, developers and designers working in tech companies, especially those not coming from a traditional tech background. People suffering from imposter syndrome have a sense of inadequacy and insecurity about their ability to contribute to the workplace. In reality, they may be perfectly capable of and do contribute successfully to their tasks.
 
-Imposter Syndrome is very common among software engineers or developers who are new to the role and lack the experience of some of their co-workers. Throughout various industries, imposter syndrome is very common with highly successful people. Studies have found the two out of five 'successful' people consider themselves frauds/imposters while other studies have shown that up to 70% of people experience imposter syndrome as one point in time or another.
+Imposter Syndrome is very common among software engineers or developers who are new to the role and lack the experiences of some of their co-workers. Throughout various industries, imposter syndrome is very common with highly successful people. Studies have found the two out of five 'successful' people consider themselves frauds/imposters while other studies have shown that up to 70% of people experience imposter syndrome at some time or another.
 
 If you suffer from imposter syndrome you may have a sense of inadequacy or insecurity about your ability to contribute. In reality, you may be perfectly capable and do contribute to your tasks.
 
