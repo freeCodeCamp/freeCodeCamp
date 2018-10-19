@@ -40,3 +40,4 @@ Solutions include:-
 
 #### More Information:
 https://www.wikiwand.com/en/Dining_philosophers_problem
+YouTube Video by Easy Engineering Classes: https://youtu.be/WX95OfXVtZQ
