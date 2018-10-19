@@ -10,6 +10,8 @@ CSS allows for developers to control how web pages look by "styling" the HTML st
 
 CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https://www.w3.org/).
 
+You can write CSS inline, or on a seperate file, traditionally called "stylesheet.css"
+
 You can build some pretty amazing things in CSS alone, such as this pure-CSS [Minesweeper game](https://codepen.io/bali_balo/pen/BLJONk) (which uses no JavaScript).
 
 ![](https://cdn-images-1.medium.com/max/800/1*GFcKk9KxqHAnWa1ECcKDOQ.png)
