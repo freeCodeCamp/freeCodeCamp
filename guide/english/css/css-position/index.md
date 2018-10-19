@@ -12,6 +12,9 @@ The position property specifies the type of positioning method used for an eleme
 .fixed          { position: fixed; }
 .absolute       { position: absolute; }
 ```
+Elements with the poisiton property can be literally positioned by getting top, right, bottom and left values. Relative positioning will position the element according to the viewport and absolute positioning will position the element according to the parent element with the position:relative property. 
+
+It's important to know that an element with position:relative property will still preserve the space it takes at it's original position when it's moved, however an element with position:absolute property will not.
 
 ### More Information:
 
