@@ -42,3 +42,5 @@ _Note: Do not include the dot in the HTML Class Attribute, referring to the clas
 #### More Information:
 [Fontawesome Cheatsheet](http://fontawesome.io/cheatsheet/)
 
+
+My changes
