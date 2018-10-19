@@ -5,7 +5,7 @@ title: Conditional Statements
 Conditional Statements are also known as Branching Statements. They are so called because the program chooses to follow one branch or another.
 
 ## 1. if statement
-This is the most simple form of the conditional statements. It consists of a Boolean expression followed by one or more statements. If the Boolean expression evaluates to **true**, then the block of code inside the 'if' statement will be executed. If the Boolean expression evaluates to **false**, then the first set of code after the end of the 'if' statement (after the closing curly brace) will be executed.
+This is the most simple form of the conditional statements. It consists of a Boolean expression followed by one or more statements. If the Boolean expression evaluates to **true**, then the block of code inside the 'if' statement will be executed. If the Boolean expression evaluates to **false**, then the first set of code after the termination of the 'if' statement (after the closing curly brace) will be executed.
 
 C programming language **_assumes any non-zero and non-null values as true_** and if it is **_either zero or null, then it is assumed as false_** value.
 
