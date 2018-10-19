@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Gerar uma matriz de todas as chaves de objeto com Object.keys ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Também podemos gerar um array que contém todas as chaves armazenadas em um objeto usando o método <code>Object.keys()</code> e passando um objeto como argumento. Isso retornará uma matriz com strings representando cada propriedade no objeto. Novamente, não haverá uma ordem específica para as entradas na matriz. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Termine de gravar a função <code>getArrayOfUsers</code> para que ela retorne uma matriz contendo todas as propriedades no objeto que ela recebe como argumento. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -67,7 +67,7 @@ console.log(getArrayOfUsers(users));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
