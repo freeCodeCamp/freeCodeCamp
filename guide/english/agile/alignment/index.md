@@ -12,4 +12,5 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+How to git for newbie 
+<a href='http://rogerdudler.github.io/git-guide/index.vi.html' target='_blank' rel='nofollow'>Click here</a>
