@@ -104,6 +104,10 @@ title: Books to Read for Programmers
 
 ## Java
 
+*Introduction to Java Programming and Data Structures, Comprehensive Version (11th Edition)* by Y. Daniel Liang
+- [Amazon Smile](https://smile.amazon.com/Introduction-Programming-Structures-Comprehensive-Version/dp/0134670949)
+- ISBN-13: 978-0134670942
+
 *Head First Java* by Kathy Sierra and Bert Bates
 - [Amazon Smile](https://smile.amazon.com/Head-First-Java-Kathy-Sierra/dp/0596009208)
 - ISBN-13: 978-0596009205
