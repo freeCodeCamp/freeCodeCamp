@@ -101,6 +101,8 @@ If everything has gone well, you should see `Hello, World!` printed to the scree
 <a href='http://www.codeblocks.org/downloads/26' target='_blank' rel='nofollow'>Codeblocks can be downloaded from here.</a>
 Make a new program with `file` -> `new` -> `file`, select C/C++ source, select C as your language, and then copy over the helloworld.c text that you read through earlier. Compile and run the code with `Build` -> `Build and Run`.
 
+#### Compilation and running from the command line with TURBO C++
+[Turbo C++ can be downloaded from here](https://developerinsider.co/download-turbo-c-for-windows-7-8-8-1-and-windows-10-32-64-bit-full-screen)
 
 #### Compilation and running C with Xcode
 [Xcode can be downloaded from here.](https://developer.apple.com/xcode/)
