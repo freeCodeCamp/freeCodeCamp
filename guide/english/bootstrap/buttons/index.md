@@ -83,7 +83,7 @@ It is possible to also have outlined buttons rather than fully colored in ones. 
 
 `<button type="button" class="btn btn-outline-primary">Primary</button>`
 
-Outlined buttons are a part of Bootstrap since version 4, please be sure that you are using the right version if you are unable to get them work.
+Outlined buttons are a part of Bootstrap since version 4, please be sure that you are using the right version if you are unable to get them to work.
 
 _Note: Do not include the dot in the HTML Class Attribute, referring to the classes with a dot is only used when adjusting the classes in CSS._
 
