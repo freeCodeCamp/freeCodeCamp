@@ -42,3 +42,6 @@ Vamos por un enfoque en capas porque es fácil diseñar capas independientes con
 *   _**Capa 6 - Capa de presentación:**_ la capa de presentación formatea los datos que se presentarán a la capa de aplicación.
     
 *   _**Capa 7 - Capa de la aplicación:**_ la capa de la aplicación sirve como ventana para que los usuarios y los procesos de la aplicación accedan a los servicios de red.
+
+
+* _**Nota:**_ debido estas capas son de referencia del modelo OSI, se debe tener en cuenta que en el modelo real (TCP/IP) las capas Aplicación, Presentación y Sesión son tenidas en cuenta como una sola (aplicación), y las capas fisica y enlace de datos, tambien son tomadas como una sola...
