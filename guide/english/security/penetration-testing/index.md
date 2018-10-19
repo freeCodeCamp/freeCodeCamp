@@ -53,6 +53,10 @@ Before doing a penetration test, it is recommended that you put down the scope o
 - Your company has a VPN or any other remote access techniques and you want to test that particular point.
 - Your application has webservers with databases, so you might want to get it tested for SQL injection attacks which is one of the most crucial tests on a webserver. In addition, you can check if your webserver is immune to DoS attacks.
 
+## Penetration testing tools
+
+The most flexible and powerful tool used for penetration testing is **kali** linux operating system .With the kali linux os pentration tester gets a  flexible platform to perform the panoply of penetration task such as enumerating a target,identifying vulnerabilities,and exploiting targets in a networked environment 
+
 ## Quick Tips
 
 Before going ahead with a penetration test, you should keep the following points in mind −
