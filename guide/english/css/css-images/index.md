@@ -41,3 +41,9 @@ img {
 ##### Datatypes
 <a title="The <image> CSS data type represents a 2D image. There are two kinds of images: plain images, typically referenced using a URL, and dynamically-generated images, like those generated with <gradient> or element(). Images can be used with numerous CSS properties, such as background-image, border-image, content, list-style-image, and cursor." href="/en-US/docs/Web/CSS/image"><code>&lt;image&gt;</code></a>
 <a title="The documentation about this has not yet been written; please consider contributing!" href="/en-US/docs/Web/CSS/uri"><code>&lt;uri&gt;</code></a>
+     
+### Useful Tools:
+- [Unsplash](https://unsplash.com/)
+- [Startup Stock Photos](http://startupstockphotos.com/)
+- [The Stocks](http://thestocks.im/)
+- [ISO Republic](https://isorepublic.com/)
