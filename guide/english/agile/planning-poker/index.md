@@ -27,7 +27,7 @@ A moderator should try to avoid confirmation bias.
 
 Things worth mentioning:
 - Estimations are not comparable between teams, as every team has its own scala.
-- Estimations should include everything that needs to be done in order for a piece of work to be done: designing, coding, testing, communicating, code reviews (+ all possible risks)
+- Estimations should include everything that needs to be done in order for a piece of work to be done: designing, coding, testing, communicating, code reviews (+ all possible risks).
 - The value of using planning poker is in the resulting discussions, as they reveal different views on a possible implementation
 
 ### More Information:
