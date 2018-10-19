@@ -9,13 +9,13 @@ videoUrl: ''
 localeTitle: Armazenar dados com variáveis ​​Sass
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma característica do Sass que é diferente do CSS é usar variáveis. Eles são declarados e configurados para armazenar dados, semelhantes ao JavaScript. Em JavaScript, as variáveis ​​são definidas usando as palavras-chave <code>let</code> e <code>const</code> . No Sass, as variáveis ​​começam com um <code>$</code> seguido pelo nome da variável. Aqui estão alguns exemplos: <blockquote> $ main-fonts: Arial, sans-serif; <br> $ títulos-cor: verde; <br><br> // Para usar variáveis: <br> h1 { <br> font-family: $ main-fonts; <br> cor: $ títulos-cor; <br> } </blockquote> Um exemplo em que as variáveis ​​são úteis é quando um número de elementos precisa ter a mesma cor. Se essa cor for alterada, o único local para editar o código é o valor da variável. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma variável <code>$text-color</code> e defina-a como vermelha. Em seguida, altere o valor da propriedade <code>color</code> para o <code>.blog-post</code> e <code>h2</code> para a variável <code>$text-color</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Seed do desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -72,7 +72,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
