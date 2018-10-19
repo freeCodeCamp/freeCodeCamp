@@ -32,3 +32,4 @@ Things worth mentioning:
 
 ### More Information:
 - Planning poker video: <a href='https://www.youtube.com/watch?v=MrIZMuvjTws' target='_blank' rel='nofollow'>YouTube</a>
+- Planning Poker Tool for Scrum Teams: <a href='https://www.planningpoker.com/' target='_blank' rel='nofollow'>PlanningPoker.com</a>
