@@ -48,6 +48,26 @@ copy the code below and paste it into src/App.js
 
   export default App;
 ```
+OR
+```javascript
+  import React, { Component } from 'react';
+
+  class App extends Component{
+    constructor(props) {
+      super(props);
+    }
+
+    render(){
+      return(
+        <div>
+          <p>Hello World !!</p>
+        </div>
+      );
+    }
+  }
+
+  export default App;
+```
 If we check the index.js file in the src folder, we find that the above App.js is called into index.js and then rendered. 
 
 ```javascript
