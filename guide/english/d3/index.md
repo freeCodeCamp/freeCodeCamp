@@ -51,6 +51,10 @@ There are over 20,000+ **D3.js** examples you could learn from, but you never kn
 
 -  https://github.com/d3/
 
+### Books
+
+[Interactive Data Visualization for the Web](http://shop.oreilly.com/product/0636920026938.do)
+
  ### Resources
 
 - https://en.wikipedia.org/wiki/D3.js
