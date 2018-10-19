@@ -7,7 +7,13 @@ We have seen how to use `import` statements to `import` various modules and to u
 
 Third party modules add so much more functionality to Python. Now we would learn how to install these modules so that we can use those in our programs.
 
-The simplest way is to use `pip`
+The simplest way is to use `pip`'
+
+## Installing PIP 
+If you’re using Python 2.7.9 (or greater) or Python 3.4 (or greater), then PIP comes installed with Python by default. If you’re using an older version of Python, you’ll need to install pip
+
+Go to this <a href ="https://bootstrap.pypa.io/get-pip.py">Link </a> . Copy the code and save it in a text file and save it as 'get-pip.py' and run the code
+
 
     pip install <module_name>
 
