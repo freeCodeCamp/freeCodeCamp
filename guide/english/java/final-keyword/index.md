@@ -3,7 +3,7 @@ title: Final
 ---
 
 ## final
-You use the `final` keyword to mark a variable constant, so that it can be assigned only once. So you must initialize a final variable with a value. If its not initialized (when declared, inside Constructor or inside static blocks), compile time error will occur.
+You use the `final` keyword to make a variable’s reference constant. A constant variable can only be declared and initialized, which means that the final variable’s reference can not be changed once set. A final variable also has special rules about initialization. If you assign a class variable as final, you can only initialize in the declaration statement and the static block, making it constant the throughout the whole program. If it is a instance variable, you can only initialize in the declaration statement, the instance initialization block, and the constructor, making it constant throughout the object. If it is a local variable, you may initialize it anywhere after it is declared but before the method ends, making it constant after it’s initialized for however long the method last. Lastly, if it is a parameter variable then the value that is passed in may not be changed, making it constant for however long the method lasts. The reference and value of a variable are different for objects, but the same for primitive types.
 
 ***Example:***
 ```java
