@@ -27,6 +27,15 @@ Supervised learning is the machine learning task of inferring a function from su
 data consist of a set of training examples. In supervised learning, each example is a pair consisting of an input object
 (typically a vector) and a desired output value (also called the supervisory signal). Further, the supervised learning can be taken as 2 paradigm, classification and regression.
 
+### Unsupervised learning
+
+Unsupervised learning is the class of machine learning algorithm used to draw inferences from datasets consisting of input data without labeled responses. In unsupervised learning algorithm datapoints have unknown outcome. Unsupervised learning are of two types.
+
+1.Clustering :- Identify unknown structure in data.
+
+2.Dimensionality Reduction :- Use structural characteristics to simplify data.
+
+
 #### Basic flowchart/steps for supervised learning
 1. Collect training set.
 2. Divide training set into input object (features) and output object (classes or value)
