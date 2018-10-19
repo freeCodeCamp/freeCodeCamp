@@ -63,3 +63,11 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 The best part of learning Android is that many of the courses and material available out there online are free.
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
+
+### Android Studio
+    
+    Android Studio is the official integrated development environment (IDE) for Google's Android operating system, built on JetBrains' IntelliJ IDEA software and designed specifically for Android development.To develop Android apps first you should know how to use Android Stuio and features it contains.
+    To learn in detail about Android Studio,please refer these links:
+    https://developer.android.com/studio/intro/
+    https://www.youtube.com/watch?v=F-k5gwz_91o
+    
