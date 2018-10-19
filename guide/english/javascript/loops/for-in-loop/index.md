@@ -1,7 +1,7 @@
 ---
 title: For...In Loop
 ---
-The `for...in` statement iterates over the enumerable properties of an object, in arbitrary order. For each distinct property, statements can be executed.
+The `for...in` statement iterates over the enumerable properties of an object, in an arbitrary order. For each distinct property, statements can be executed.
 
     for (variable in object) {
     ...
@@ -17,14 +17,14 @@ The `for...in` statement iterates over the enumerable properties of an object, i
 ## Examples
 
     // Initialize object.
-    a = { "a": "Athens", "b": "Belgrade", "c": "Cairo" }
+    var a = { "a": "Athens", "b": "Belgrade", "c": "Cairo" };
 
     // Iterate over the properties.
-    var s = ""
+    var s = "";
     for (var key in a) {
         s += key + ": " + a[key];
         s += "<br />";
-        }
+    }
     document.write (s);
 
     // Output:
@@ -66,6 +66,6 @@ The `for...in` statement iterates over the enumerable properties of an object, i
     //   b
     //   c
 
-# Ohter Resources:
+# Other Resources:
 * [MDN link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 * [MSDN link](https://msdn.microsoft.com/library/55wb2d34.aspx)
