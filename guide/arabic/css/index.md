@@ -23,3 +23,4 @@ CSS هو اختصار لـ Cascading Style Sheets. تم ابتكارها لأو�
 يعد موقع [CSS Zen Garden](http://www.csszengarden.com/) مثالًا رائعًا على كيفية تصميم نفس تنسيق html لتبدو فريدة تمامًا.
 
 لتوضيح قوة CSS ، تحقق من [الأنواع في القطع](http://species-in-pieces.com/#) .
+رابط لقناة على موقع Udemy، مفيدة جدّا: https://www.udemy.com/html-and-css-for-beginners-crash-course-learn-fast-easy/learn/v4/overview?fbclid=IwAR1FeGB3Lp8rRNQbZ50y1pzjGVN99cvQaQR1oMO4WiWTVJd5yt2SpMejGLY
