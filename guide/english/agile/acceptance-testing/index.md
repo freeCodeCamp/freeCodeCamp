@@ -134,3 +134,4 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 #### More Information:
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
+Acceptance testing is written so as to check if the  requirement of the software have been met and also to see how do these project perform on real world application
