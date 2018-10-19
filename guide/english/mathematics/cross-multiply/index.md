@@ -3,13 +3,13 @@ title: Cross Multiply
 ---
 ## Cross Multiply
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/cross-multiply/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+### How to cross Multiply
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+You start with two fractions that are equal to each other. You take the numerator of the of the first fraction and multiply it to the denominator of the second fraction, and you take the denominator of the of the first fraction and multiply it to the numerator of the second fraction. Then simplify to get the missing x value.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+Example:
 
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
+(4/3) = (x/3)
+12 = 3x
+x = 4
 
