@@ -33,7 +33,7 @@ Using `easy_install` is also simple. The syntax is:
 
     easy_install <module_name>
 
-However, `pip` is more popular than using `easy_install`.
+However, `pip` is more popular than using `easy_install`, and `easy_install` is <a href='https://github.com/pypa/setuptools/issues/581'> deprecated</a>.
 
 
 **Note:** On some systems where both Python 2 & Python 3 is installed, `pip` and `pip3` will do different things. `pip` installs the Python 2 version of the package, and `pip3` will install the Python 3 version of the package. For more information on the difference between Python 2 & 3, see [this](https://guide.freecodecamp.org/python/python-2-vs-python-3) guide. 
