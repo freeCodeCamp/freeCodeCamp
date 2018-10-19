@@ -189,3 +189,5 @@ Remember, if the superclass does not have any constructors defined, you don't ha
 If no other constructors are defined, then Java invokes the default super class constructor (_even if not defined explicitly_).
 
 Congrats, now you know all about Inheritance! Read more about advanced ways to inherit things in Abstract Classes and [Interfaces](//forum.freecodecamp.com/t/java-docs-interfaces)!
+
+Now we may wonder what is the point of having an interface if they also allow classes to implement their methods as they are extended in inheritance. Say a class extends two parent classes that have the same method, so here the child class will not know which function to implement. Whereas if the parent class just gives the method signature, then the child class will have to implement the parent functions thereby eliminating ambiguity.
