@@ -15,7 +15,7 @@ else {
 }
 ```
 
-When `condition` is true, code inside the `if` section executes, otherwise `else` executes. Sometimes you would need to add a second condition. For readability, you should use a `else if` rather than nesting `if` statements.
+When the `condition` is true, the code inside the `if` section executes, otherwise the code after the `else` section executes. Sometimes you would need to add a second condition. For readability, you should use a `else if` statement with some code rather than nesting `if` statements.
 
 ```
 if (condition) {
