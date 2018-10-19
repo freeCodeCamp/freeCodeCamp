@@ -5,7 +5,7 @@ title: For Loop
 
 ```javascript
 for ([initialization]); [condition]; [final-expression]) {
-   // statement
+   // run code here
 }
 ```
 
@@ -42,6 +42,7 @@ When indexing over an array many times it is easy to exceed the bounds of the ar
 ```
 
 There are two ways to fix this code. Set the condition to either `i < arr.length` or `i <= arr.length - 1`
+
 
 ### Examples
 
