@@ -33,3 +33,4 @@ Firebase main features are grouped to 3 categories:
 - [Firebase](https://firebase.google.com/)
 - [Wikipedia](https://en.wikipedia.org/wiki/Firebase)
 - [Here](https://firebase.google.com/docs/samples/) you can find examples of how to use Firebase in your projects.
+My Changes
