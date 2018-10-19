@@ -18,3 +18,4 @@ Templates are prebuilt toolkits that make spinning up a new web page a breeze. I
 * [Wrap Bootstrap](https://wrapbootstrap.com/)
 * [Wow Slider](http://wowslider.com/posts/35-top-free-bootstrap-templates-2016-95.html)
 * [Bootstrap Made](https://bootstrapmade.com/)
+* [Bootswatch](https://bootswatch.com/)
