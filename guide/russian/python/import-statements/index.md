@@ -13,7 +13,7 @@ localeTitle: Операции импорта Python
 
 ## Использование стандартных библиотек
 
-Пример. Подробно вы можете прочитать о методах / функциях всех стандартных библиотек в официальных документах Python.
+Пример. Подробно вы можете прочитать о методах и функциях всех стандартных библиотек в официальных документах Python. ( https://docs.python.org/3/ )
 ```
 import time 
  for i in range(100): 
@@ -42,8 +42,8 @@ import time
 
 ## Использование сторонних модулей
 
-Модули сторонних разработчиков не поставляются в комплекте с python, но мы должны установить его извне с помощью менеджеров пакетов, таких как [`pip`](https://bootstrap.pypa.io/get-pip.py) и [`easy install`](https://bootstrap.pypa.io/ez_setup.py)
-```
+Модули сторонних разработчиков не поставляются в комплекте с python, но мы можем установить его извне с помощью менеджеров пакетов, таких как [`pip`](https://bootstrap.pypa.io/get-pip.py) и [`easy install`](https://bootstrap.pypa.io/ez_setup.py)
+```# Например - "pip install requests" - установка модуля "requests"
 # To make http requests 
  import requests 
  rq = requests.get(target_url) 
