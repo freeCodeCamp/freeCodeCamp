@@ -97,7 +97,12 @@ Since writing the whole code for a website is not really practical/feasible for 
  * [Symfony](https://symfony.com/)
  * [Zend](http://www.zend.com/)
  * [CakePHP](https://cakephp.org/)
- 
+ * [FuelPHP](https://fuelphp.com/)
+ * [Slim](https://www.slimframework.com/)
+ * [Yii 2](https://www.yiiframework.com/)
+ * [CodeIgniter](https://codeigniter.com//)
+
+
 ## Documentation
 
 PHP is [well documented](http://php.net/docs.php). The [official docs](http://php.net/manual/en/) include examples on almost every function reference guide, as well as user comments.
