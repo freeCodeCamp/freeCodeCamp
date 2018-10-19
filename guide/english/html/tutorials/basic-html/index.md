@@ -26,3 +26,5 @@ Structure of a basic HTML file:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
 
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a>
+<a href="https://www.w3schools.com" target="_blank">w3schools</a>
