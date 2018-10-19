@@ -25,6 +25,6 @@ th, td {
  
  -  [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_boxes/Styling_tables)
  -  [w3schools](https://www.w3schools.com/css/css_table.asp)
-
+ -  [CSS Tricks](https://css-tricks.com/complete-guide-table-element/)
 
 
