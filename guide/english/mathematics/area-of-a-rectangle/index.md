@@ -3,7 +3,7 @@ title: Area of a Rectangle
 ---
 ## Area of a Rectangle
 
-The area of a rectangle can be calculated by multiplying the lengths of the two perpendicular sides together.
+The area of a rectangle can be calculated by multiplying the lengths of the two perpendicular sides together, being the length and width.
 
 `Area = a x b`
 
