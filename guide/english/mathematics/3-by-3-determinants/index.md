@@ -226,3 +226,4 @@ Consider the same example as in method 2: matrix, which we will call B:
  * [Determinant of a Matrix](https://www.mathsisfun.com/algebra/matrix-determinant.html) on MathIsFun
  * [3x3 Determinant calculator](http://www.wolframalpha.com/widgets/view.jsp?id=7fcb0a2c0f0f41d9f4454ac2d8ed7ad6)
  * [Determinant](https://en.wikipedia.org/wiki/Determinant) on Wikipedia
+ * [Determinant](http://mathworld.wolfram.com/Determinant.html) on Wolfram MathWord
