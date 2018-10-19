@@ -20,7 +20,7 @@ eg.
       float f = l;	//no explicit type casting required
 ```
 ***2.  Explicit Typecasting***
-When we assign a larger type value to a variable of smaller type, then we need to perform explicit type casting.
+When we assign a larger type value to a variable of smaller type, then we need to perform explicit type casting This is a way of letting the compiler know that we mean to do a specific narrowing typecast. If we don't specify, the compiler will generate an error.
 eg.
 ```java
       double d = 100.04;
