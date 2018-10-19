@@ -178,3 +178,5 @@ In combination with Bootstrap's predefined grid classes to align labels and grou
 ```
     
 ![Horizontal Form](https://github.com/TroyB12/Pictures/blob/master/Horizontal%20Form.PNG)
+
+responsiveness
