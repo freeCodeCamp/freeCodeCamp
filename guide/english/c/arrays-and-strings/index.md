@@ -165,6 +165,7 @@ char *strtok(char *str, const char *delim);
 # Before you go on...
 ## A Review
 * Arrays are collections of variables.
+* Arrays can store same data types only. A integer array will not be able to store chars in it.
 * Arrays have separate positions that can be declared with brackets, and accessed with square brackets.
 * Strings are arrays too, but we can treat them a little differently: they can be declared using double quotes, and printed using %s.
 * Strings have their own library, `string.h`, which has some handy functions to use.
