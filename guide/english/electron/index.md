@@ -31,6 +31,7 @@ Some apps built using Electron include:
 * [Slack](https://slack.com/) (A messaging app for teams)
 * [Discord](https://discordapp.com) (A popular messaging app for gamers)
 * [Github Desktop](https://desktop.github.com/) (Official Github Desktop Client)
+* [WordPress Desktop](https://apps.wordpress.com/desktop/) (A Common Website Creator)
 
 ### Boilerplates
 - [Electron and React](https://github.com/electron-react-boilerplate/electron-react-boilerplate)
