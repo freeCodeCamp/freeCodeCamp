@@ -62,3 +62,12 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
+## <a href='https://www.jetbrains.com/phpstorm/' target='_blank' rel='nofollow'>PHP Storm</a>
+
+PhpStorm deeply understands your code.
+
+* Major frameworks supported
+* All PHP tools
+* Front-end technologies included
+* Built-in developer tools
+* PhpStorm = WebStorm + PHP + DB/SQL
