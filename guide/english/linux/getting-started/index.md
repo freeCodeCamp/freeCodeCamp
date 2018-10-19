@@ -22,17 +22,24 @@ Linux's terminal is not to be feared, actually it is quite easy to use with some
 
 In Debian/Ubuntu and derivatives, the shortcut to open the cli (Comman Line Interface) is "Ctrl + Alt + T". Let's open the terminal and try some commands.
 
-cd (Change Directory) - The cd command is one of the commands you will use the most at the command line in linux. It allows you to change your working directory. You use it to move around within the hierarchy of your file system.
+1)cd (Change Directory) - The cd command is one of the commands you will use the most at the command line in linux. It allows you to change your working directory. You use it to move around within the hierarchy of your file system.
 
 ```unix
 cd
 ```
-
 Using the cd command alone will change the current directory to your user home directory, located in "/home/username" as in "/home/mark".
 
-ls (List) - This command list the content in the current directory. It can be also used to list file information.
+2)pwd (print working directory) - The pwd command is displays your current directory.
+
+```unix
+pwd
+```
+Its output appears this way "/home/username"
+
+3)ls (List) - This command list the content in the current directory. It can be also used to list file information.
 
 ```unix
 ls
 ```
 Now we can see our directories in our home.
+
