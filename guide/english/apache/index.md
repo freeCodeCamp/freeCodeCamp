@@ -21,3 +21,4 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+please add my line as a contribution
