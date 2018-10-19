@@ -50,3 +50,25 @@ Once that’s done, Let’s start off by generating a new project based on the �
   ionic serve
 ```
 
+### Ionic 4 Beta:
+The latest release of Ionic is [Ionic 4](https://blog.ionicframework.com/announcing-ionic-4-beta/) (still in beta although now pretty much stable as of October 2018). Having completly re-written all there Angular components as web compoents (see seperate freeCodeCamp guide), Ionic is now platform agnostic with the ability to use Anguar, Vue, React, or plain js.
+
+To use Ionic 4 make sure you have the latest version of the Ionic CLI:
+```shell
+npm i -g ionic
+```
+
+and use the type arguments
+```shell
+ionic start MyFirstIonic4App tabs --type=angular
+cd MyFirstIonic4App
+ionic serve
+```
+
+Ionic 4's CLI now uses Angular's CLI for its building and Routing. For other frameworks see the quickstarts:
+
+- [Ionic Angular](https://github.com/ionic-team/ionic/tree/master/angular)
+
+- [Ionic Vue](https://github.com/ionic-team/ionic/blob/master/vue/README.md)
+
+- [Ionic React](https://github.com/ionic-team/ionic/tree/master/react)
