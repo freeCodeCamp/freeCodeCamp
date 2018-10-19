@@ -57,11 +57,21 @@ int main(void) {
     int my_array[] = {1, 1, 2, 3, 5, 7, 12};
 
     for(int count = 0; count < 7; count++) {
-        printf("%i, \n", my_array[count]);
+        printf("%i\n", my_array[count]);
     }
 
     return 0;
 }
+```
+Output will be, 
+```C
+1
+1
+2
+3
+5
+7
+12
 ```
 
 ## Strings
@@ -89,62 +99,59 @@ Another thing C makes easier for us is the printing of strings. Rather than forc
 int main(void) {
     char hello_world[] = "Hello, World!\n";
     printf("%s", hello_world);
-
     return 0;
 }
 ```
-
 ### Playing with Strings
 Printing strings is easy, but other operations are slightly more complex. Thankfully, the `string.h` library has some helpful functions to use for a number of situations.
 #### Copying: `strcpy`
-`strcpy` (from 'string copy') copies a string. For example, this code snippet will copy the contents of the string `second` into the string `first`:
+`strcpy` (from 'string copy') copies a string. For example, this code snippet will copy the contents of the string variable `second` into the string variable `first`:
 ```C
-strpy(first, second);
+strcpy(first, second);
 ```
 Here is an example of how manual implementation of the strcpy function looks like: 
-
+```C
 void copy_string(char [] first_string, char [] second_string) 
 { 
-    int i; 
-     
-    for(i = 0; first_string[i] != '\0'; i++) 
+    int i;
+    for(i = 0; second_string[i] != '\0'; i++) 
     { 
         first_string[i] = second_string[i]; 
     } 
-} 
-
+}
+```
 #### Concatenate: `strcat`
 `strcat` (from 'string concatenate') will concatenate a string, meaning it will take the contents of one string and place it on the end of another string. In this example, the contents of `second` will be concatenated onto `first`:
 ```C
 strcat(first, second);
 ```
-Here is an example of manual implementation of fuction strcat:
-
+Here is an example of manual implementation of function strcat:
+```C
 void string_concatenate(char [] s1, char [] s2)
 {
     int i = strlen(s1), j;
-    for(int j = 0; s2[j]; j++, i += 1)
+    for(j = 0; s2[j]; j++, i += 1)
     {
         s1[i] = s2[j];
     }
 }
-
-#### Get length: `strlen`
+```
+#### Length: `strlen`
 `strlen` (from 'string length') will return an integer value corresponding to the length of the string. In this example, an integer called `string_length` will be assigned the length of `my_string`:
 ```C
 string_length = strlen(my_string);
 ```
-Here is an manual implementation of fuction strlen:
-
+Here is an manual implementation of function strlen:
+```C
 int string_length(char [] string)
 {
     int i;
     
-    for(int i = 0; string[i]; i++);
+    for(i = 0; string[i]; i++);
     
     return i;
 }
-
+```
 #### Compare: `strcmp`
 `strcmp` (from 'string compare') compares two strings. The integer value it returns is 0 if they are the same, but it will also return negative if the value of the first (by adding up characters) is less than the value of the second, and positive if the first is greater than the second. Take a look at an example of how this might be used:
 ```C
@@ -156,10 +163,41 @@ if(!strcmp(first, second)){
 ```
 Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
 
+#### Compare 'n' bytes: `strncmp`
+`strncmp` compares two strings for 'n' characters. The integer value it returns is 0 if they are the same, but it will also return negative if the value of the first (by adding up characters) is less than the value of the second, and positive if the first is greater than the second. Take a look at an example of how this might be used:
+```C
+if(!strncmp(first, second, 4)){
+    printf("These strings are the same!\n");
+} else {
+    printf("These strings are not the same!\n");
+}
+```
+If the first string is `wires` and the second string is `wired`, the above snippet would still print `These strings are the same!` comparing first 4 characters. 
+
+Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
+
 #### Split a string: `strtok`
 `strtok` (from 'string token') breaks a string into a series of tokens using a  delimiter. In this example, strtok breaks  string str into a series of tokens using the delimiter delim:
 ```C
 char *strtok(char *str, const char *delim);
+```
+Let's see an example of how this being used:
+```C
+void ParseInput(char [] input)
+{
+    char *delim="|", *token;
+    
+    token=strtok(input,delim);
+    printf("Code - %s\n",*token);
+    
+    token=strtok(NULL, delim);
+    printf("Desc - %s\n",*token);
+}
+```
+Output of the above execution for input string `US|United States` would be,
+```C
+Code - US
+Desc - United States
 ```
 
 # Before you go on...
