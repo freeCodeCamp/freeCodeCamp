@@ -79,7 +79,7 @@ localeTitle: Учебники по JavaScript и другие ресурсы
 
 ## Блоги
 
-*   [Перфекция убивает](http://perfectionkills.com)
+*   [Совершенство убивает](http://perfectionkills.com)
 *   [2ality](http://www.2ality.com/)
 *   [Коллекция JS на Medium](https://medium.com/the-javascript-collection)
 *   [Дэвид Уолш](https://davidwalsh.name/)
@@ -93,6 +93,7 @@ localeTitle: Учебники по JavaScript и другие ресурсы
 
 *   [Дерек Банас учит JS в одном видео](https://www.youtube.com/watch?v=fju9ii8YsGs)
 *   [Объектно-ориентированный JavaScript Derek Banas](https://www.youtube.com/watch?v=O8wwnhdkPE4)
+*   [Основы JavaScript для Абсолютных Новичков 2018](https://www.youtube.com/watch?v=YMvzfQSI6pQ)
 
 ## книги
 
