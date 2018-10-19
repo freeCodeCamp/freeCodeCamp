@@ -37,6 +37,17 @@ It is the sorting algorithm which relies on the concept how to sorted arrays are
 
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
+#### Practise for placements
+There are many sites helpful for practising for placements.The best ones are:
+1)HackerRank
+2)HackerEarth
+3)Codechef
+4)LeetCode
+5)Interviewbit
+6)GeeksforGeeks
+
+
+
 ### Further Resources
 
 [Intro to Algorithms | Crash Course: Computer Science](https://www.youtube.com/watch?v=rL8X2mlNHPM)
@@ -58,3 +69,5 @@ This is also a really good open source project that helps you visualize algorith
 [Infographic on how Machine Learning Algorithms Work](https://www.boozallen.com/content/dam/boozallen_site/sig/pdf/infographic/how-do-machines-learn.pdf)
 
 This infographic shows you how unsupervised and supervised machine learning algorithms work..
+
+
