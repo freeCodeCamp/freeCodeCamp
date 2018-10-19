@@ -147,6 +147,61 @@ vector<int> Graph::DFS(int s){
 }
 ```
 
+### Implementation of DFS in Java
+```Java
+import java.util.*;
+
+public class BFS {
+    /* The method takes an adjacency matrix where 1 denotes an edge between i and j.
+     * n - number of nodes in the graph.
+     * m - number of edges in the graph.
+     */
+    void Map<Integer, List<Integer>> createAdjList(int[][] edges, int n, int m) {
+        Map<Integer, List<Integer>> adjList = new HashMap<Integer, List<Integer>>();
+        
+        for (int i = 1; i <= n; i++) {
+            adjList.put(i, new LinkedList<Integer>());
+        }
+        
+        for (int i = 0; i < m; i++) {
+            List<Integer> ls = adjList.get(edges[i][0]);
+            ls.add(edges[i][1]);
+            ls = adjList.get(edges[i][1]);
+            ls.add(edges[i][0]);
+        }
+        return adjList;
+    }
+    /* s     - starting node for bfs.
+     * edges - edge array which stores the edges.
+     * n     - number of nodes in the graph.
+     * m     - number of edges in the graph.
+     */
+    void bfs(int n, int m, int[][] edges, int s) {
+        // Create an adjacency list from the adjacency matrix edges.
+        Map<Integer, List<Integer>> adjList = createAdjList(edges, n, m);
+        boolean visited[] = new boolean[n+1];
+        Queue<Integer> q = new LinkedList<Integer>();
+        
+        q.add(s);
+        visited[s] = true;
+        System.out.println("BFS traversal of the graph");
+        while (!q.isEmpty()) {
+            int currNode = q.remove();
+            Iterator<Integer> it = adjList.get(currNode).iterator();
+            
+            System.out.println(currNode + "->");
+            while (it.hasNext()) {
+                int neighbor = (Integer)it.next();
+                if (visited[neighbor] == false) {
+                    visited[neighbor] = true;
+                    q.add(neighbor);
+                }
+            }
+        }
+    }
+}
+```
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
