@@ -54,7 +54,7 @@ Los comentarios condicionales solo son reconocidos por la versión 5 de Internet
 
 ### Comentarios Condicionales de IE
 
-Estos comentarios solo están disponibles en Internet Explorer y pueden usarse hasta IE9. En los tiempos actuales, hay un buen cambio que nunca los verás, pero es bueno saber acerca de su existencia. Los comentarios condicionales son una forma de ofrecer una experiencia diferente para diferentes navegadores de clientes. Por ejemplo:
+Estos comentarios solo están disponibles en Internet Explorer y pueden usarse hasta IE9. En los tiempos actuales, hay un buen cambio que nunca los verás, pero es bueno saber acerca de su existencia. Los comentarios condicionales son una forma de ofrecer una experiencia diferente para cada navegador web. Por ejemplo:
 
 ```html
 
