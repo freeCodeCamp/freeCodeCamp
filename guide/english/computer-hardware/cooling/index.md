@@ -5,6 +5,8 @@ Your computer contains many parts that generate heat. Excessive heat can cause y
 
 ## Case Cooling
 Case cooling can be a combination of a well ventilated case and the use of fans to circulate air within the case. Most cases come with at least one fan. This is the minimum configuration. For best results, there be at least two fans in the case. One is as an intake to draw in cold air while the other is an exhaust to expel hot air. There are many different types of fans and configurations. Cable management also plays a huge part in cooling the system. Bad cable management and tangled wires disrupt airflow and cause dust to accumulate inside the case.
+<img src="http://www.extremetech.com/wp-content/uploads/2012/05/Air-flow.png" alt="CaseCooling" title="Case Cooling">
+
 
 ## Components Cooling
 Cooling devices are available for individual parts on the computer. The two most common are coolers for CPU's and graphics cards. There are generally two types of component cooling systems, active and passive.
