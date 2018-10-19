@@ -23,7 +23,9 @@ The value ```name="Faisal Arkan"``` will be assigned to ```{props.name}``` from 
 
 ### Other ways to declare components
 
-There are many ways to declare components when using React.js, but there are two kinds of components, ***stateless*** components and ***stateful*** components.
+There are many ways to declare components when using React.js, but there are two kinds of components, ***stateless*** components and ***stateful*** components. 
+
+These can also be referred to as ***Class*** and ***Functional*** components.  ***Class*** components use the keyword ```class``` and contain things like ```state``` and other helper functions.  They refer to their props using the ```this``` keyword.  ***Functional*** components are just that, Javascript arrow functions that are exported as components.  These cannot have their own state and also don't use the keyword ```this``` when referring to any props passed down to them.
 
 ### Stateful
 
