@@ -18,3 +18,4 @@ In modern communication systems, the quality of information exchange is determin
 - [Wolfram MathWorld](http://mathworld.wolfram.com/MonteCarloMethod.html)
 - [Minitab article - Monte Carlo is not as difficult as you think](http://blog.minitab.com/blog/understanding-statistics/monte-carlo-is-not-as-difficult-as-you-think)
 - [Monte Carlo Algorithm (4:41)](https://www.youtube.com/watch?v=Q2-FH36LuT0)
+- [Introduction to Monte Carlo Simulation](https://www.youtube.com/watch?v=pDExObTMHTs)
