@@ -40,6 +40,7 @@ The `list` constructor can also be used to create a `list`:
 >>> print(list_from_iterable)
 ['H', 'e', 'l', 'l', 'o', ' ', 'c', 'a', 'm', 'p', 'e', 'r', 's', '!']
 ```
+Lists can also be nested within another list.
 
 **Accessing elements of a `list`:**
 ```shell
