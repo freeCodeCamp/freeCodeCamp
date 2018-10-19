@@ -13,7 +13,8 @@ Hue is a term where to add black or white pigments would result in a shade of sa
 
 Color is what the eye is stimulated by the reflection of light on a given object or image. 
 
-Color is the elment of 
+Color is the element of art that is produced when light, striking an object, is reflected back to the eye.[1] There are three properties to color. The first is hue, which simply means the name we give to a color (red, yellow, blue, green, etc.). The second property is intensity, which refers to the vividness of the color. A color's intensity is sometimes referred to as its "colorfulness", its "saturation", its "purity" or its "strength".The third and final property of color is its value, meaning how light or dark it is.
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
