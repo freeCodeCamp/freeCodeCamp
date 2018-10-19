@@ -1,4 +1,6 @@
-
+---
+title: Return Early Pattern for Functions
+---
 ## Return Early Pattern for Functions
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
@@ -9,7 +11,7 @@ Here’s a setup:
 // Setup
 function abTest(a, b) {
   // Only change code below this line
-  
+
   // Only change code above this line
   return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
 }
@@ -27,7 +29,7 @@ We add in body of function simple ```if``` statement, which, under the condition
   }
 ```
 
-Now, if ```a``` or ```b``` are less than ```0``` - function exit with a value of ```undefined```, in other cases - 
+Now, if ```a``` or ```b``` are less than ```0``` - function exit with a value of ```undefined```, in other cases -
 
 ```javascript
  return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));
@@ -35,7 +37,7 @@ Now, if ```a``` or ```b``` are less than ```0``` - function exit with a value of
 ```
 
   Here’s a full solution:
-  
+
    ```javascript
    // Setup
 function abTest(a, b) {
@@ -43,7 +45,7 @@ function abTest(a, b) {
   if (a < 0 || b < 0) {
     return undefined;
   }
- 
+
   // Only change code above this line
 
   return Math.round(Math.pow(Math.sqrt(a) + Math.sqrt(b), 2));

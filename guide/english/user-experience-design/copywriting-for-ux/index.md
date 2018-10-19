@@ -1,12 +1,12 @@
 ---
-Copywriting for UX/UI
+title: Copywriting for UX/UI
 ---
 
 ##Copywriting for UX/UI
 
 ###What is it?
-To put it simply UX writing is a conversation with your audience. UX writing is the process of writing copy for user-facing touchpoints. 
-This must come first naturally even before wire-frames. Words are often the best starting points for creating your intital layout designs. 
+To put it simply UX writing is a conversation with your audience. UX writing is the process of writing copy for user-facing touchpoints.
+This must come first naturally even before wire-frames. Words are often the best starting points for creating your intital layout designs.
 Usually designers and writers need to work in unison as to get the message, tone, voice and language just right. Every word and space
 inbetween should speak to the intended user like a good friend. Boring cannot be in your vocabulary unless your product calls for it
 (Portfolio Management?). A good writer can put a fund, modern touch onto anything.
