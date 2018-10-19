@@ -165,7 +165,7 @@ for(var i=0; i < watchList.length; i++){
 
 // Add your code above this line
 
-console.log(rating);
+console.log(JSON.stringify(rating));
 ```
 
 </div>
@@ -178,6 +178,11 @@ console.log(rating);
 <section id='solution'>
 
 ```js
-// solution required
+var rating = watchList.map(function(movie) {
+  return {
+    title: movie["Title"],
+    rating: movie["imdbRating"]
+  }
+})
 ```
 </section>
