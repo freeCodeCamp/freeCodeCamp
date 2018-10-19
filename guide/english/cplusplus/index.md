@@ -103,3 +103,5 @@ Download Link : [Download Here](http://www.codeblocks.org/downloads/26)
 Other alternatives could be visual studio, using a compiler or an online IDE such as Cloud9 or repl.it
 
 Link #2 for Mac : [Download for Mac #2 here](https://developer.apple.com/xcode/)
+
+Recommended IDE for Linux users (Eclipse): http://www.eclipse.org/downloads/
