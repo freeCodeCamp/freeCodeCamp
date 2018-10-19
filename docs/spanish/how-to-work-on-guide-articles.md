@@ -1,6 +1,6 @@
 # Cómo trabajar en artículo de la Guía
 
-Con tu yuda, podemos crear un herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar en los próximos años. 💛
+Con tu ayuda, podemos crear un herramienta de referencia accesible que ayudará a millones de personas que están aprendiendo a programar en los próximos años. 💛
 
 Puedes:
 
@@ -10,17 +10,17 @@ Puedes:
 ## Pasos para crear y editar artículos de la Guía
 
 1. 🍴 [Fork este repositorio](https://github.com/freeCodeCamp/freeCodeCamp#fork-destination-box)
-2. 👀️ Sgiue las normas de controbución expuestas a continuación.
-3. 🔧 Propón cambios asombrosos!
+2. 👀️ Sigue las normas de contribución expuestas a continuación.
+3. 🔧 Propóne cambios asombrosos!
 4. 📖 Lee la [guía de buenas prácticas de estilo](/docs/style-guide-for-guide-articles).
-5. 👉 [Haz una Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
+5. 👉 [Haz un Pull Request](https://github.com/freeCodeCamp/freeCodeCamp/compare)
 6. 🎉 Consigue que aprueben tu Pull request - Éxito!
 
-O siemplement [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
+O simplemente [crea un tema](https://github.com/freeCodeCamp/freeCodeCamp/issues) - toda pequeña ayuda cuenta! 😊
 
 ### [Sigue estas recomendaciones de nuestra guía de estilo para crear un artículo atractivo](/docs/style-guide-for-guide-articles.md)
 
-### Crear Pull Request para propoenr cambios
+### Crear Pull Request para proponer cambios
 
 Hay dos formas de proponer cambios en el repositorio tras editar o añadir un articulo:
 
@@ -35,7 +35,7 @@ Mira este vídeo de demostración o sigue los siguientes pasos:
 
 ![GIF showing the GitHub interface steps](#)
 
-1. Ve a la carpets **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
+1. Ve a la carpeta **"páginas"** (situado en [`guide`](/guide)) donde encontrarás el artículo raiz que quieras editar.
 
     > Todas las raíces estarán en un archivo index.md
 
