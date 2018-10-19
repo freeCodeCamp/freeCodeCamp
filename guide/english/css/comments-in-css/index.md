@@ -22,7 +22,7 @@ The comment syntax in CSS works for both single and multi-line comments. You can
     }
 ```
 
-By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future for you or another developper. 
+By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future for you or another developer. 
 It’s good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand for someone who didn't write the code. 
 
 You can also make your comments more readable by stylizing it.  
@@ -32,7 +32,7 @@ You can also make your comments more readable by stylizing it.
 ***
 * SECTION FOR H2 STYLE 
 ***
-* A paragraph where I give informations
+* A paragraph where I give information
 * about everything that someone who reads the code
 * but didn't write it would need to know.
 * The asterisk around the paragraph make it more readable.
