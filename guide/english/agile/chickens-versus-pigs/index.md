@@ -22,3 +22,6 @@ guarantee the project is delivered as efficiently as possible.
 
 <a href='http://www.agilejedi.com/chickenandpig'>Agile Jedi: The Story of the Chicken and Pig</a>  
 <a href='https://en.wikipedia.org/wiki/The_Chicken_and_the_Pig'>Wikipedia: The Chicken and the Pig</a>
+
+External links
+[Chicken and Pig Cartoon - ImplementingScrum.com](http://www.implementingscrum.com/2006/09/11/the-classic-story-of-the-pig-and-chicken/)
