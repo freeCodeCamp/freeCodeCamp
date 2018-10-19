@@ -3,7 +3,7 @@ title: Carousel
 ---
 ## Carousel
 
-Carousel is a slideshow component for cycling through elements like images or slides of text.
+Carousel is slideshow component for cycling through elements like images or slides of text.
 It provides a dynamic way of representing large amount of data (text or images) by sliding or cycling through, in a smooth fashion
 
 Sample Code of Image Slider is below :
