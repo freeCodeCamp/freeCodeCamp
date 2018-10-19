@@ -81,17 +81,17 @@ var x = false;
 不要使用Boolean对象将非布尔值转换为布尔值。相反，使用布尔值作为函数来执行此任务：
 
 ```javascript
-var x = Boolean(expression);     // preferred 
- var x = new Boolean(expression); // don't use 
+var x = Boolean(expression);     // 这是首选 
+ var x = new Boolean(expression); // 不要使用此代码
 ```
 
 如果指定任何对象（包括值为false的Boolean对象）作为Boolean对象的初始值，则新的Boolean对象的值为true。
 
 ```javascript
-var myFalse = new Boolean(false);   // initial value of false 
- var g = new Boolean(myFalse);       // initial value of true 
+var myFalse = new Boolean(false);   // 这是最初的 false 值
+ var g = new Boolean(myFalse);       // 这是最初的 true 值
  var myString = new String('Hello'); // string object 
- var s = new Boolean(myString);      // initial value of true 
+ var s = new Boolean(myString);      // 这是最初的 true 值
 ```
 
 不要使用布尔对象代替布尔基元。
