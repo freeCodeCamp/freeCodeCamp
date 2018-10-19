@@ -9,7 +9,8 @@ In programmer speak, `scope` is the **current context of execution**. Confused? 
 
     var baz = function () {
       var bar = 'Hi, I am bar too!';
-        console.log(foo);
+        console.log(foo); //Hi, I am fool!
+        console.log(bar); //Hi, I am bar too!
     }
 
     baz(); // Hi, I am foo!
