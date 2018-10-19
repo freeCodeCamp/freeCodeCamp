@@ -39,6 +39,12 @@ freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is becaus
 
 ### Further Resources
 
+[Algorithms Specialization](https://www.coursera.org/specializations/algorithms)
+This specialization is an introduction to algorithms for
+learners with at least a little programming experience. The specialization is rigorous but
+emphasizes the big picture and conceptual understanding over low-level implementation and
+mathematical details.
+
 [Intro to Algorithms | Crash Course: Computer Science](https://www.youtube.com/watch?v=rL8X2mlNHPM)
 
 This video gives an accessible and lively introduction to algorithms focusing on sorting and graph search algorithms. 
