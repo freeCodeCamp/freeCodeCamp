@@ -16,6 +16,7 @@ Unlike other languages, C does not know the data type it is allocating memory fo
 ```C
 arrayPtr = (int *)malloc(10 * sizeof(int));
 ```
+The reason we are typecasting the value returned by malloc is because by default it's return type is void.
 This statement used malloc to set aside memory for an array of 10 integers. As sizes can change between computers, it's important to use the sizeof() function to calculate the size on the current computer.  
 
 Any memory allocated during the program's execution will need to be freed before the program closes. To `free` memory, we can use the free() function
