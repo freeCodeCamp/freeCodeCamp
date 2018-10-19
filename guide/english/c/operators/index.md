@@ -217,3 +217,38 @@ with higher precedence will be evaluated first.
 - Conditional `?:`
 - Assignment `= += -= *= /= %= >>= <<= &= ^= |=`
 - Comma `,`
+
+## 7. Conditional Operators
+
+## Syntax
+   ```conditionalExpression ? expression1 : expression2```
+   
+The conditional operator works as follows:
+
+The first expression conditionalExpression is evaluated first. This expression evaluates to 1 if it's true and evaluates to 0 if it's false.
+1.If conditionalExpression is true, expression1 is evaluated.
+2.If conditionalExpression is false, expression2 is evaluated.
+
+## Example
+```c
+#include <stdio.h>
+int main(){
+   char February;
+   int days;
+   printf("If this year is leap year, enter 1. If not enter any integer: ");
+   scanf("%c",&February);
+
+   // If test condition (February == 'l') is true, days equal to 29.
+   // If test condition (February =='l') is false, days equal to 28. 
+   days = (February == '1') ? 29 : 28;
+
+   printf("Number of days in February = %d",days);
+   return 0;
+}
+```
+## Output
+
+```
+If this year is leap year, enter 1. If not enter any integer: 1
+Number of days in February = 29
+```
