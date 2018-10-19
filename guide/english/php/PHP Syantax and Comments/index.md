@@ -27,7 +27,7 @@ In PHP, comments can be made by two ways either single-lined or multi-lined.
 The code snippet given below explains multiple ways of commenting:
 
 ```shell
-<?
+<?php
    // This is a single-line comment
 
     # This is also a single-line comment
