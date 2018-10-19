@@ -152,32 +152,39 @@ for(it=v.begin(); it!=v.end(); ++it)
 
 Existem diferentes maneiras de percorrer um vetor e acessar seu conteúdo. Os seguintes formulários são equivalentes, o primeiro envolve o uso de uma expressão baseada em intervalo (desde C ++ 11), o segundo usa iteradores e o último é uma iteração baseada em índice.
 
-\`\` \`cpp
+```cpp
 
-# incluir
 
-# incluir
+// Primeiro declare o vetor 
+std :: vector myVector {1, 2, 3, 4, 5}; // a é um vetor de 5 ints: 1, 2, 3, 4 e 5
 
-// Primeiro declare o vetor std :: vector myVector {1, 2, 3, 4, 5}; // a é um vetor de 5 ints: 1, 2, 3, 4 e 5
+// Usando um loop baseado em intervalo (desde C ++ 11) 
+for (int element: myVector) 
+{
+   // Lê como "para cada elemento no myVector" 
+   std :: cout << "O elemento é" << element << std :: endl; 
+}
 
-// Usando um loop baseado em intervalo (desde C ++ 11) for (int element: myVector) {// Lê como "para cada elemento no myVector" std :: cout << "O elemento é" << element << std :: endl; }
+// Usando um iterador 
+std :: vector :: iterador; 
+// Declara o iterador 
+for (it = myVector.begin (); it! = myVector.end (); ++ ele) 
+{ 
+   std :: cout << "O elemento é" << \* ele << std :: endl; 
+   // Dereference o iterador para acessar seus dados 
+}
 
-// Usando um iterador std :: vector :: iterador; // Declara o iterador for (it = myVector.begin (); it! = myVector.end (); ++ ele) { std :: cout << "O elemento é" << \* ele << std :: endl; // Dereference o iterador para acessar seus dados }
-
-// Usando índices para (std :: vector :: size\_type i = 0; i! = myVector.size (); i ++) { std :: cout << "O elemento é" << myVector \[i\] << std :: endl; // Dereference o iterador para acessar seus dados }
+// Usando índices 
+for (std :: vector :: size\_type i = 0; i! = myVector.size (); i ++) 
+{
+   std :: cout << "O elemento é" << myVector \[i\] << std :: endl; 
+   // Dereference o iterador para acessar seus dados 
+}
 ```
 ### Sorting A Vector In Ascending Order 
  Sorting a vector based on ascending order can be done with the help of Sort() in C++. 
+
 ```
-
-cpp
-
-# incluir
-
-# incluir
-
-# incluir
-
 usando namespace std;
 
 int main () {
@@ -186,8 +193,10 @@ vetor v {10, 5, 82, 69, 64, 70, 3, 42, 28, 0}; sort (v.begin (), v.end ());
 
 cout << "Conteúdo do vetor classificado em ordem crescente: \\ n"; para (int e: v) { cout << e << ""; }
 
-return 0; }
+return 0; 
+}
 ```
+
 ### Sorting Vector In Descending Order 
  Sorting Vector in descending order can be done with the help of third argument namely greater<int>() in Sort() in C++. 
 ```
