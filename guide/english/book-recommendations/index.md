@@ -50,6 +50,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392
 
+*Head First HTML and CSS by Eric Freeman, Elisabeth Robson
+-[Amazon Smile](https://www.amazon.com/Head-First-HTML-CSS-Standards-Based-ebook/dp/B00AF57GAW)
+-ISBN-13: 059610197X
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
