@@ -22,3 +22,6 @@ guarantee the project is delivered as efficiently as possible.
 
 <a href='http://www.agilejedi.com/chickenandpig'>Agile Jedi: The Story of the Chicken and Pig</a>  
 <a href='https://en.wikipedia.org/wiki/The_Chicken_and_the_Pig'>Wikipedia: The Chicken and the Pig</a>
+
+Sports
+The fable also is used as an analogy for levels of commitment to a game, team etc. For example, variations of this quote have been attributed to football coach Mike Leach who said, on the officials in the 2007 Tech-Texas game in Austin: "It's a little like breakfast; you eat ham and eggs. As coaches and players, we're like the ham. You see, the chicken's involved but the pig's committed. We're like the pig, they're like the chicken. They're involved, but everything we have rides on this.
