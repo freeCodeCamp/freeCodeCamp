@@ -21,6 +21,10 @@ The comment syntax in CSS works for both single and multi-line comments. You can
         clear: both;
     }
 ```
+## Keyboard Shortcut
+
+You can use the universal shortcut Command + / on Mac, or Ctrl + / on most other devices to speed this process up.  Simply highlight the intended comment section, and performing the shortcut.  
+
 
 By using CSS comments to make your stylesheets more readable, the CSS will be easier to maintain in the future for you or another developper. 
 It’s good practice to use CSS comments to help identify parts of any stylesheet that might be difficult to understand for someone who didn't write the code. 
