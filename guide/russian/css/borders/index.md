@@ -8,109 +8,154 @@ localeTitle: Пограничная недвижимость
 
 Наш любимый CSS-атрибут позволяет полностью настраивать границы, которые появляются вокруг элементов HTML. С HTML было невозможно разместить границу вокруг элемента, за исключением таблицы. CSS Borders позволяет создавать четкие, настраиваемые стили границ с очень небольшой работой по сравнению с устаревшими методами HTML.
 
-Свойство `border` shorthand устанавливает все свойства границы в одном объявлении. \`\` \`CSS border: 1px solid # 000;
+Универсальное свойство `border` устанавливает все типы границы в одном объявлении (толщину, стиль и цвет границы вокруг элемента). 
+
+.class {
+ border: 1px solid #000;
+}
 ```
-The properties that can be set, are (in order): 
+Свойства, которые могут быть установлены (по порядку). 
  1. `border-style` 
  2. `border-width` 
  3. `border-color` 
  4. `border-radius` 
+ ```
+Не имеет значения, отсутствует ли одно из приведенных выше значений, например:
+
+.class {
+ border: solid red;
+}
+```
+Вышеприведенный код является также валидным.
  
- It does not matter if one of the values above are missing, for example: 
+ ### Стили свойства `border` 
+ 
+ Свойство `border-style` задает широкий диапазон различных типов границ.
+ 
+ - `dotted` - Устанавливает точечно-пунктирную границу. 
+ - `dashed` - Устанавливает линейно-пунктирную границу. 
+ - `solid` - Устанавливает сплошную границу. 
+ - `double` - Устанавливает двойную границу. 
+ - `groove` - Устанавливает трёхгранную границу. Эффект зависит от значения цвета границы.
+ - `ridge` - Устанавливает трехмерную ребристую границу. Эффект зависит от значения цвета границы.
+ - `inset` - Устанавливает трехмерную внутреннюю границу. Эффект зависит от значения цвета границы.
+ - `outset` - Устанавливает трехмерную внешнюю границу. Эффект зависит от значения цвета границы. 
+ - `none` - Устанавливает отсутствие границы. 
+ - `hidden` - Устанавливает скрытую границу. 
+ 
+ На основе выбранного вами свойства эти стили могут быть несовместимы.
+ Вы можете стилизовать каждую сторону отдельно:
 ```
 
-CSS граница: сплошной красный;
+.class {
+ border-top-style: solid;
+ border-left-style: dotted;
+ border-right-style: dashed;
+ border-bottom-style: double;
+}
 ```
-The above code is also valid CSS. 
- 
- ### Border Styles 
- 
- The `border-style` property sets a wide range of different types of borders. 
- 
- The various values are: 
- - `dotted` - Sets a dotted border. 
- - `dashed` - Sets a dashed border. 
- - `solid` - Sets a solid border. 
- - `double` - Sets a double border. 
- - `groove` - Sets a 3D grooved border. 
- - `ridge` - Sets a 3D ridged border. 
- - `inset` - Sets a 3D inset border. 
- - `outset` - Sets a 3D outset border. 
- - `none` - Sets no border. 
- - `hidden` - Sets a hidden border. 
- 
- Based on the property you choose, these styles can be mismatched. 
- You can style each side seperately: 
+Или вы можете сразу их скомпоновать:
 ```
 
-CSS border-top-style: solid; border-left-style: пунктир; border-right-style: пунктир; border-bottom-style: double;
+.class {
+ border-style: solid dotted dashed;
+ }
 ```
-Or you can style them all at once: 
-```
-
-CSS border-style: сплошная пунктирная пунктирная;
-```
-As shown, the border property allows you to select different sections of it. [top, bottom, left, right] 
+Как видно, свойство border позволяет вам выбирать различные его направления. [верх, низ, лево, право]
  
- ### Border Width 
+ ### Толщина границы
  
- To alter the thickness of your border use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must 
- define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined 
- values: thin, medium, or thick. 
+ Задает толщину границы одновременно на всех сторонах элемента или индивидуально для каждой стороны. Способ изменения толщины зависит от числа значений.
+  Примечание: Вы должны определить стиль границы для её отображения.
+ Ширина может быть задана как определенный размер (in px, pt, cm, em, и т.д.) или с использованием одного из трех предопределенных значений: `thin`, `medium`, or `thick`.
  
- Example: 
+ Пример: 
 ```
 
-CSS
-
-table { border-width: 7px; border-style: outset; } td { border-width: medium; border-style: outset; } p { border-width: thick; border-style: solid; }
-```
-### Border Color 
+table {
+ border-width: 7px;
+ border-style: outset;
+}
  
- Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout 
- of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types. 
+td {
+ border-width: medium;
+ border-style: outset;
+}
+
+p {
+ border-width: thick;
+ border-style: solid;
+}
+```
+### Цвет границы 
  
- Example: 
-```
-
-CSS
-
-table { border-color: rgb( 100, 100, 255); border-style: dashed; } td { border-color: #FFBD32; border-style: ridge; } p { border-color: blue; border-style: solid; }
-```
-### Border-Radius 
- The `border-radius` property allows the corners of a border to be rounded. This is done by providing a size for 
- how much the border is to be rounded. Size can be in px or %. 
-```
-
-CSS border-radius: 25px;
-```
-Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right. 
-```
-
-CSS border-radius: 15% 10px 30% 5px;
-```
-### Border: All in One 
+ Теперь приступим к творческому аспекту границ CSS! С помощью атрибута `border-color` вы сможете создавать настраиваемые границы, чтобы соответствовать стилю вашего веб-сайта. Цвета границ могут быть любого цвета, определенного RGB, шестнадцатеричным или ключевым термином. Ниже приведен пример каждого из этих типов.
  
- While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code. 
- 
- Example: 
+ Пример: 
 ```
 
-CSS
+table {
+ border-color: rgb( 100, 100, 255);
+ border-style: dashed;
+}
 
-p { border: 20px outset blue; } h4 { border: 5px solid; } h5 { border: dotted; }
+td {
+ border-color: #FFBD32;
+ border-style: ridge;
+}
 
-\`\` \`
+p {
+ border-color: blue;
+ border-style: solid;
+}
+```
+### Скругление границы
+ Свойство `border-radius` позволяет округлить углы границы. Это делается путем определения размера для округления границы. Размер может быть указан в `in`, `px` или `%`.
+ Пример:
+```
+
+.class {
+ border-radius: 25px;
+}
+```
+Каждый угол `border-radius` можно определить по отдельности. Порядок: верхний, нижний, левый, правый.
+ Пример:
+```
+
+.class {
+ border-radius: 15% 10px 30% 5px;
+}
+```
+### Border: все значения одной записью 
+ 
+ CSS позволяет веб-разработчику быть очень специфичным в стилизации границ, но иногда легче создавать единую запись, которая содержит все в одной строке кода.
+ 
+ Пример: 
+```
+
+p {
+ border: 20px outset blue;
+}
+
+h4 {
+ border: 5px solid;
+}
+
+h5 {
+ border: dotted;
+}
+
+
 
 ### Дополнительная информация:
 
+*   [CSS Borders](https://www.w3schools.com/css/css_border.asp)
 *   [Документация MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/border)
 *   [Радиус рамки CSS3](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
 
 ### Другие атрибуты границы
 
-*   «border-radius» - это может установить радиус границы.
-*   «border-spacing» - это может установить интервал между текстом и границей.
-*   'border-image' - устанавливает изображение как границу.
+*   `border-spacing` - это может установить интервал между текстом и границей.
+*   `border-image` - устанавливает изображение как границу.
 
 Поддержка браузера: IE6 +
