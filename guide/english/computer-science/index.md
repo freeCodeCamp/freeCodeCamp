@@ -37,3 +37,7 @@ Computer science is categorized into several fields. The following are among the
 * [CS50](https://cs50.harvard.edu) : A free, introduction to computer science course, taught by David J. Malan and staff at Harvard & Yale Universities.
 * [Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
 
+My changes.
+ Computer science also have complier design, embedded system, assembly languages, language processor and other. 
+ So computer science is different from software engineering as software engineering is more focus on software development but computer    science have 50% theoretical part too it also depends with subject you choses .
+
