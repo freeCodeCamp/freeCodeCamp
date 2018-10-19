@@ -9,13 +9,13 @@ videoUrl: ''
 localeTitle: Aplicar um estilo até que uma condição seja satisfeita com @while
 ---
 
-## Description
+## Descrição
 <section id="description"> A diretiva <code>@while</code> é uma opção com funcionalidade semelhante ao JavaScript <code>while</code> loop. Cria regras de CSS até que uma condição seja atendida. O <code>@for</code> challenge deu um exemplo para criar um sistema de grade simples. Isso também pode funcionar com <code>@while</code> . <blockquote> $ x: 1; <br> @ while $ x &lt;13 { <br> .col - # {$ x} {width: 100% / 12 * $ x;} <br> $ x: $ x + 1; <br> } </blockquote> Primeiro, defina uma variável <code>$x</code> e defina-a como 1. Em seguida, use a diretiva <code>@while</code> para criar o sistema de grade, <i>enquanto</i> <code>$x</code> é menor que 13. Depois de definir a regra CSS para <code>width</code> , <code>$x</code> é incrementado em 1 para evitar Loop infinito. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>@while</code> para criar uma série de classes com diferentes <code>font-sizes</code> . Deve haver 10 classes diferentes de <code>text-1</code> a <code>text-10</code> . Em seguida, defina <code>font-size</code> para 5 px multiplicado pelo número do índice atual. Certifique-se de evitar um loop infinito! </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -51,7 +51,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Seed do desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -82,7 +82,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
