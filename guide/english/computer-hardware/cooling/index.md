@@ -22,4 +22,15 @@ Room ventilation - Locate the computer where it is neutral to the rooms environm
 * Placement next to other computers - Locating the computer away from other equipment allows air to flow in and out of the computer. Placement close to other equipment can constrict air flow and increase heat.
 * Cable Management = Having a rat's nest of cables can block airflow and make your computer hotter. It is reccomended to take some time to cable manage after building a computer, because it can increase the lifespan of your computer in the future.
 
+## Thermal Paste
+Thermal paste is a thermally conductive compound which is used as an interface between the CPU and the heatsink itself. Thermal paste trys to eliminate the amount of air gapes or space inbetween the heatsink and CPU in order to maxamize the amount of heat transfer in between the two.
+### Types of Thermal Paste
+Thermal paste comes in differnt varieties which have different amounts of thermal conductivity. From least to greatest thermal conductivity, here are the different types of thermal compound: 
+* Silicon Carbide
+* Zinc Oxide
+* Boron nitride
+* Aluminum nitride
+* Silver
+* Diamond
+
 [Wikipedia - Article on computer cooling](https://en.wikipedia.org/wiki/Computer_cooling)
