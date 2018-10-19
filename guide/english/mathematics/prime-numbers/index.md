@@ -3,7 +3,7 @@ title: Prime Numbers
 ---
 ## Prime Numbers
 
-A prime number is any number greater than 1 that can only be divided evenly by 1 or itself. If it can be divided by another number, then it is a composite number.
+A prime number is any number greater than 1 that can only be divided evenly by 1 or itself. If it can be divided by another number, then it is a composite number. The property of being prime is called primality. According to Wikipedia, there are infinitely many prime numbers, and there is no known simple formula to determine if a number is prime.
 
 Examples:
 
