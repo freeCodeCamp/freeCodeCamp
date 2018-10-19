@@ -26,6 +26,11 @@ There are many tools and online resources that can help you to ensure that your 
    A GitHub app that checks your pull requests for accessibility issues.
 
 
+- **<a href='https://www.boia.org/w3c-tools-services-a11y ' target='_blank' rel='nofollow'>Website Accessibility Checker</a>**
+
+   A website that checks the site is accessible according to the W3C Accessibility Guidelines.
+
+
 ### Color Contrast
 
 - **<a href='http://colorsafe.co' target='_blank' rel='nofollow'>Color Safe Palette Generator</a>**
