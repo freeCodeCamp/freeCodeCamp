@@ -162,9 +162,9 @@ localeTitle: الثعبان
 
 Free Code Camp لديه بعض الموارد الرائعة. تعد الويب مكانًا كبيرًا ، وهناك الكثير لاستكشافه:
 
-*   كتاب ممارسة بيثون: http://anandology.com/python-practice-book/index.html
-*   فكر في بايثون: http://greenteapress.com/thinkpython/html/index.html
-*   بيثون للأعمال العملية: http://pbpython.com/
+*   كتاب لممارس بايثون: http://anandology.com/python-practice-book/index.html
+*   فكر في لغة برمجة البايثون: http://greenteapress.com/thinkpython/html/index.html
+*   بايثون للأعمال العملية: http://pbpython.com/
 *   دورة أخرى: https://realpython.com/؟utm _source = fsp & utm_ medium = promo & utm\_campaign = bestresources
 *   عام: https://www.fullstackpython.com/
 *   تعلم الأساسيات: https://www.codecademy.com/learn/learn-python
