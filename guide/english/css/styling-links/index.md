@@ -75,5 +75,9 @@ a:active {
 } 
 ```
 
+#### More Information:
+ 
+ -  [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links)
+ -  [w3schools](https://www.w3schools.com/css/css_table.asp)
 
 
