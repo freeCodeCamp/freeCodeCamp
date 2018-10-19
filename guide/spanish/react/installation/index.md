@@ -6,7 +6,7 @@ localeTitle: Instalación
 
 ### Creando un nuevo proyecto React
 
-Simplemente puedes insertar la biblioteca React en tu página web como en 2 :
+Simplemente puedes insertar la biblioteca React en tu página web de esta forma<sup>2</sup>:
 
 ```html
 
@@ -25,9 +25,9 @@ npm install -g create-react-app
 
 Esto configurará su entorno de desarrollo para que pueda usar las últimas funciones de JavaScript, proporcionar una experiencia de desarrollador agradable y optimizar su aplicación para la producción.
 
-`npm start` iniciará un servidor de desarrollo que permite la recarga en vivo 3 .
+`npm start` iniciará un servidor de desarrollo que permite la visualización de los cambios en tiempo real<sup>3</sup>.
 
-Una vez que termine su proyecto y esté listo para implementar su aplicación en producción, puede usar `npm run build` para crear una compilación optimizada de su aplicación en la carpeta de `build` .
+Una vez que termine su proyecto y esté listo para implementar su aplicación en producción, puede usar `npm run build` para crear una compilación optimizada de su aplicación en la carpeta `build` .
 
 #### Enlaces utiles
 
@@ -35,4 +35,4 @@ Una vez que termine su proyecto y esté listo para implementar su aplicación en
 
 #### Fuentes
 
-[1\. El tutorial React sobre la instalación](https://reactjs.org/docs/installation.html) [2\. Enlace a la biblioteca de JavaScript React minimal en cdnjs.org](https://cdnjs.com/libraries/react) [3\. comando de inicio npm](https://docs.npmjs.com/cli/start)
+[1\. El tutorial React sobre la instalación](https://reactjs.org/docs/installation.html) [2\. Enlace a la biblioteca de JavaScript React minimal en cdnjs.org](https://cdnjs.com/libraries/react) [3\. Comando "npm start"](https://docs.npmjs.com/cli/start)
