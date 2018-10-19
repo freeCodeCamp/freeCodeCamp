@@ -11,7 +11,7 @@ if (condition) {
 	// Do something when `condition` is true
 }
 else {
-	// Do something when `condition` is false
+	// Do something when original if `condition` is false
 }
 ```
 
@@ -22,7 +22,7 @@ if (condition) {
 	// Do something if `condition` is true
 }
 else if (anotherCondition) {
-	// Do something if `anotherCondition` is ture
+	// Do something if `anotherCondition` is true
 }
 else {
 	// Do something if `condition` AND `anotherCondition` is false
