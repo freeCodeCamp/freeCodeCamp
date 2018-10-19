@@ -30,6 +30,15 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+
+#### MDN JavaScript Guide
+
+A JavaScript Guide at the Mozilla Developer Network that shows how to use the language.
+
+- [Online](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+
+
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
