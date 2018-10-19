@@ -19,7 +19,7 @@ There are only a few values that will be coerced to false:
 - false (not really coerced as it already is false)
 - null
 - undefined
-- NaN
+- NaN (stands for "Not a number")
 - 0
 - '' or "" (empty string)
 
