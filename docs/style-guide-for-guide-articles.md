@@ -121,6 +121,17 @@ Use Markdown style links in your articles to link to other websites.
 > becomes
 > `https://example.com/a-long/url/to-a-webpage/`
 
+## List
+
+You can make an unordered list by preceding one or more lines of text with - or *
+To order your list, precede each line with a number.
+
+```markdown
+    - Hello user!
+    * Hey there!
+
+```
+
 ## Images
 
 For including images, if they aren't already hosted somewhere else on the web, you will need to put them online yourself using a platform like [Imgur](https://imgur.com/) or [Flickr](https://www.flickr.com). You can also host images by committing them to a git repository and pushing it to GitHub. Then you can right-click the image and copy its URL.

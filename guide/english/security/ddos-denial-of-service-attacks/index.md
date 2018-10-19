@@ -41,8 +41,6 @@ Protocol attacks include SYN floods, Ping of Death, fragmented packet attacks, S
 
 * **Industrial IOT Attacks based on DDoS** - The attacker analyses the communication network and sniffs the packets using packet capturing tools. After deep packet inspection, the attacker checks the command frame which can stop the data transmission and crafts the packets to disrupt the Industrial control systems. Various protocols like IEEE C37.118.2, Modbus, and DNP3 are vulnerable. The [Blackenergy 3 Malware](https://en.wikipedia.org/wiki/December_2015_Ukraine_power_grid_cyberattack) is a recent example of this kind of attack.
 
-
-
 ### Application Layer Attacks
 Application Layer Attacks include Slowloris, Zero-day DDoS attacks, DDoS attacks that target Apache, Windows or OpenBSD vulnerabilities and more. Here the goal is to crash the web server. The attack magnitude is measured in Requests per Second.
 
