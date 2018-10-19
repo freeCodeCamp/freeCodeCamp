@@ -4,11 +4,11 @@ localeTitle: Fondo
 ---
 ## Fondo
 
-La propiedad de fondo le permite usar imágenes y colores para crear fondos para sus páginas web.
+La propiedad de fondo (background) te permite usar imágenes y colores para crear fondos para tus páginas web.
 
 ### Color de fondo
 
-La propiedad de color de fondo le permite elegir el color de su elemento. Este puede ser el fondo de toda la página o el fondo de una sección de su página.
+La propiedad de color de fondo te permite elegir el color de tu elemento. Éste puede ser el fondo de toda la página o el fondo de una sección de tu página.
 
 *   Un elemento es una pieza de HTML, como un encabezado o un párrafo en una página web.
 
@@ -22,7 +22,7 @@ Este es un ejemplo de cómo configurar el color de fondo para una página web en
 
 ![fullbackground](https://user-images.githubusercontent.com/26467304/31036038-845567f2-a538-11e7-8e6c-8a52bb0d44b8.png)
 
-Aquí hay un ejemplo de configuración de los colores para dos elementos. Esto establecerá el fondo del encabezado. a morado y el resto de la página a azul.
+Aquí hay un ejemplo de configuración de los colores para dos elementos. Esto establecerá el fondo del encabezado al color morado y el resto de la página a azul.
 
 ```css
   body { 
@@ -43,7 +43,7 @@ En CSS el color se puede definir de tres maneras:
 
 ### Imágenes de fondo
 
-Puede utilizar la propiedad de imagen de fondo para establecer una imagen como fondo para un elemento. La imagen se repite de forma predeterminada para que cubra todo el elemento.
+Puedes utilizar la propiedad de imagen de fondo para establecer una imagen como fondo para un elemento. La imagen se repite de forma predeterminada para que cubra todo el elemento.
 
 ```css
 body { 
@@ -53,7 +53,7 @@ body {
 
 ![imagen](https://user-images.githubusercontent.com/26467304/31036366-eb1fc260-a539-11e7-835d-e3f935a22c86.png)
 
-También puede vincular imágenes o gifs que encuentre en línea usando su enlace (es decir, desde Google Images, una búsqueda).
+También puedes vincular imágenes o gifs que encuentres en línea usando su enlace (por ejemplo una búsqueda desde Google Images).
 
 ```css
 body { 
@@ -63,7 +63,7 @@ body {
 
 ### Imagen de fondo - la propiedad de repetición
 
-La imagen de fondo se repite tanto verticalmente (arriba y abajo) como horizontalmente (a través de la página web) de forma predeterminada. Puede usar la propiedad de repetición de fondo para repetir la imagen vertical u horizontalmente.
+La imagen de fondo se repite tanto verticalmente (arriba y abajo) como horizontalmente (a través de la página web) de forma predeterminada. Puedes usar la propiedad de repetición de fondo para repetir la imagen vertical u horizontalmente.
 
 Aquí hay un ejemplo que repite la imagen verticalmente.
 
@@ -76,7 +76,7 @@ body {
 
 ![vertical](https://user-images.githubusercontent.com/26467304/31039770-8962c7a6-a54e-11e7-9d25-4fb09760d219.PNG)
 
-Puede repetir la imagen horizontalmente configurando la propiedad de repetición de fondo en "repetir-x".
+Puedes repetir la imagen horizontalmente configurando la propiedad de repetición de fondo en "repetir-x".
 
 ```css
 body { 
@@ -85,7 +85,7 @@ body {
  } 
 ```
 
-También puede usar la propiedad de repetición de fondo para configurar una imagen para que no se repita.
+También puedes usar la propiedad de repetición de fondo para configurar una imagen para que no se repita.
 
 ```css
 body { 
@@ -98,7 +98,7 @@ body {
 
 ### Imagen de fondo - La propiedad de posición
 
-Puede usar la propiedad de posición para especificar dónde se ubicará su imagen en una página web.
+Puedes usar la propiedad de posición para especificar dónde se ubicará tu imagen en una página web.
 
 ```css
 body { 
@@ -112,7 +112,7 @@ body {
 
 ### Imagen de fondo - La posición fija
 
-Puede utilizar la propiedad de adjuntos de fondo para establecer una imagen en una posición fija. Una posición fija hace que una imagen no se desplace con el resto de la página.
+Puedes utilizar la propiedad de adjuntos de fondo para establecer una imagen en una posición fija. Una posición fija hace que una imagen no se desplace con el resto de la página.
 
 ```css
 body { 
@@ -127,7 +127,7 @@ body {
 
 ### Gradientes de fondo
 
-Un degradado es una transición entre dos o más colores y se puede usar a través de CSS similar a una imagen de fondo.
+Un degradado es una transición entre dos o más colores y se puede usar a través de CSS como una imagen de fondo.
 
 La sintaxis de un fondo degradado puede ser bastante compleja y, a menudo, todavía se usa con prefijos de proveedores debido a las inconsistencias entre los navegadores compatibles.
 
@@ -135,7 +135,7 @@ El [Colorzilla Gradient Editor](http://www.colorzilla.com/gradient-editor/) es u
 
 ### Fondo - La propiedad de taquigrafía
 
-Puede escribir las propiedades de fondo en una sola línea. Esto se llama la propiedad taquigrafía.
+Puedes escribir las propiedades de fondo en una sola línea. Esto se llama la propiedad taquigrafía.
 
 ```css
 body { 
@@ -143,7 +143,7 @@ body {
  } 
 ```
 
-Puede omitir las propiedades que no necesita al usar la propiedad abreviada, pero las propiedades debe ser utilizado en un cierto orden. El orden es:
+Puedes omitir las propiedades que no necesitas al usar la propiedad abreviada, pero las propiedades deben ser utilizadas en un cierto orden. El orden es:
 
 *   color
 *   imagen
@@ -153,7 +153,7 @@ Puede omitir las propiedades que no necesita al usar la propiedad abreviada, per
 
 ### Múltiples imágenes de fondo
 
-Puede especificar varias imágenes de fondo en una sola propiedad de fondo.
+Puedes especificar varias imágenes de fondo en una sola propiedad de fondo.
 
 ```css
 body { 
@@ -161,15 +161,15 @@ body {
  } 
 ```
 
-La primera imagen (o gradiente) especificada es la más arriba, la segunda viene después, y así sucesivamente. Si uno de los elementos no es correcto debido a su URL o su sintaxis, el navegador ignorará toda la línea.
+La primera imagen (o gradiente) especificada es la de más arriba, la segunda viene después, y así sucesivamente. Si uno de los elementos no es correcto debido a su URL o su sintaxis, el navegador ignorará toda la línea.
 
 ### Algunas propiedades básicas de fondo de CSS
 
 Las propiedades de fondo de CSS se utilizan para definir los efectos de fondo para los elementos.
 
-Propiedades de fondo CSS: color de fondo imagen de fondo repetición de fondo fondo adjunto posición de fondo
+Propiedades de fondo CSS: color de fondo, imagen de fondo, repetición de fondo, fondo adjunto, posición de fondo
 
-Puede consultar el siguiente enlace a las escuelas W3 para obtener más información sobre antecedentes y temas relacionados en CSS. [Referencia de fondo a W3](https://www.w3schools.com/css/css_background.asp)
+Puedes consultar el siguiente enlace a las escuelas W3 para obtener más información sobre antecedentes y temas relacionados en CSS. [Referencia de fondo a W3](https://www.w3schools.com/css/css_background.asp)
 
 ### Otros recursos
 
