@@ -2,7 +2,7 @@
 title: Algorithms
 ---
 
-## Algorithms
+Alt-Algorithms
 
 In computer science, an algorithm is an unambiguous specification of how to solve a class of problems. Algorithms can perform calculations, data processing and automated reasoning tasks.
 
@@ -17,33 +17,33 @@ There are certain requirements that an algorithm must abide by:
 
 Some common types of algorithms include sorting algorithms, search algorithms, and compression algorithms. Classes of algorithms include Graph, Dynamic Programming, Sorting, Searching, Strings, Math, Computational Geometry, Optimization, and Miscellaneous. Although technically not a class of algorithms, Data Structures are often grouped with them. 
 
-### Efficiency
+Alt-Efficiency
 
 Algorithms are most commonly judged by their efficiency and the amount of computing resources they require to complete their task. A common way to evaluate an algorithm is to look at its time complexity. This shows how the running time of the algorithm grows as the input size grows. Since the algorithms today, have to be operate on large data inputs, it is essential for our algorithms to have a reasonably fast running time .
 
-### Sorting Algorithms
+Alt-Sorting Algorithms
 
 Sorting algorithms come in various flavors depending on your necessity.
 Some, very common and widely used are:
 
-#### Quick Sort
+Alt-Quick Sort
 
 There is no sorting discussion which can finish without quick sort. The basic concept is in the link below.
-[Quick Sort](http://me.dt.in.th/page/Quicksort/)
+[Quick Sort](http://me.dt.in.th/page/Quicksort/"Understanding Quick Short")
 
-#### Merge Sort
+Alt-Merge Sort
 It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
-[Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
+[Merge Sort](https://www.geeksforgeeks.org/merge-sort/"Detailed about merge short")
 
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
 
-### Further Resources
+Alt-Further Resources
 
-[Intro to Algorithms | Crash Course: Computer Science](https://www.youtube.com/watch?v=rL8X2mlNHPM)
+[Intro to Algorithms | Crash Course: Computer Science](https://www.youtube.com/watch?v=rL8X2mlNHPM "Algorithm lectures")
 
 This video gives an accessible and lively introduction to algorithms focusing on sorting and graph search algorithms. 
 
-[What is an Algorithm and Why Should you Care? | Khan Academy](https://www.youtube.com/watch?v=CvSOaYi89B4)
+[What is an Algorithm and Why Should you Care? | Khan Academy](https://www.youtube.com/watch?v=CvSOaYi89B4 "Khan Academy")
 
 This video introduces algorithms and briefly discusses some high profile uses of them. 
 
