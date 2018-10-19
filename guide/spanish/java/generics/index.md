@@ -77,3 +77,4 @@ import java.util.ArrayList;
 Tenga en cuenta que dentro de los corchetes angulares al nombrar la clase, puede asegurarse de que el tipo Genérico sea algo que usted quiere. Por ejemplo, si desea asegurarse de que el tipo pueda leerse como una forma de cadena, debería ir `<T extends String>` .
 
 Tenga en cuenta que la letra `T` es un marcador de posición, se podría utilizar el nombre que se quiera, siempre y cuando se use el mismo durante toda la clase.
+
