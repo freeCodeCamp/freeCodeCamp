@@ -115,8 +115,7 @@ REST was developed to provide a uniform interface for
 
 
 ### **Further reading**
-[How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
 
-[The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
-
-[HTTP status codes](https://httpstatuses.com/)
+* [How to Design Great APIs - Parse Developer Day 2013](https://www.youtube.com/watch?v=qCdpTji8nxo)
+* [The never-ending REST API design debate by Guillaume Laforge](https://www.youtube.com/watch?v=48azd2VqtP0)
+* [HTTP status codes](https://httpstatuses.com/)
