@@ -134,3 +134,6 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 #### More Information:
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
+<!-- Please Read Before Writing -->
+- [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=-xwiT9yrkVg)
+
