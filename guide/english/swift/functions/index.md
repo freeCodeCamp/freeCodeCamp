@@ -26,7 +26,7 @@ Functions do not require any input parameters or return types. However this requ
  ```
 ## Nested Functions
 
-If a function exists inside the body of another function, it's called nested function. It should be noted that, inner functions can be only called and used inside the enclosing function (outer function).
+If a function exists inside the body of another function, it's called nested function. It should be noted that inner functions can be only called and used inside the enclosing function (outer function).
 
 Example 1: Nested function without return values
 
@@ -41,7 +41,7 @@ func outputMessageByGreeting(_ message: String) {
 outputMessageByGreeting("Jack")
 ```
 
-When you run the program, the output will be:
+When you run the program the output will be:
 
 ```Swift
 Hello! Jack
