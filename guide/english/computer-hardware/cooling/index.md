@@ -1,6 +1,9 @@
 ---
 title: Cooling Systems
 ---
+
+![Computer Cooling](https://upload.wikimedia.org/wikipedia/commons/c/c6/ARCTIC_Accelero_Xtreme_Plus_II.JPG)
+
 Your computer contains many parts that generate heat. Excessive heat can cause your computer to behave erratically or its hardware to fail prematurely. The more you overclock the graphics or the CPU, the hotter the computer will run. Cooling systems assure that your computer is stable and you extend the life of your investment.
 
 ## Case Cooling
