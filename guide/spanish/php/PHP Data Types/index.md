@@ -1,13 +1,15 @@
 ---
 title: PHP Data Types
 localeTitle: Tipos de datos PHP
----### Tipos de datos
+---
+### Tipos de datos
 
 Cada variable en un lenguaje de programación tiene un tipo de datos asociado. Cada tipo de datos requiere diferentes cantidades de memoria y tiene algunas operaciones específicas que se pueden realizar sobre él.
 
 \### Tipos de datos PHP
 
-PHP soporta los siguientes tipos de datos: 1. `Integers` : son números enteros, sin un punto decimal, como 515.
+PHP soporta los siguientes tipos de datos: 
+1\. `Integers` : son números enteros, sin un punto decimal, como 515.
 
 2\. `Doubles` - son números de punto flotante, como 3.159 o 149.1.
 
