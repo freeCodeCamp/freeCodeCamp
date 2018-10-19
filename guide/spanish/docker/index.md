@@ -34,3 +34,4 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 *   Para descargar y documentación, visite el sitio oficial de docker: el [sitio oficial de Docker](https://www.docker.com)
 *   Para más información sobre la contenedorización, consulte [Operaciones de TI de búsqueda.](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization)
 *   Un Docker 101 curso [Docker 101](https://github.com/docker/labs/tree/master/beginner/)
+*   Conceptos básicos y primeros pasos [Primeros pasos](https://www.muylinux.com/2016/04/19/tutorial-docker/)
