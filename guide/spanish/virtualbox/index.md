@@ -75,3 +75,4 @@ La caja virtual es compatible con una amplia variedad de sistemas operativos:
 
 *   [virtualbox.org](https://www.virtualbox.org)
 *   [Cómo configurar un entorno local de Linux con vagrant](https://medium.com/@JohnFoderaro/how-to-set-up-a-local-linux-environment-with-vagrant-163f0ba4da77)
+*   [Cómo instalar Guest Additions](https://docs.oracle.com/cd/E36500_01/E36502/html/qs-guest-additions.html)
