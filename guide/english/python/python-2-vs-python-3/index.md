@@ -59,3 +59,4 @@ This article uses Python 3 to set up the web-frameworks in your development envi
 
 #### More Information:
 - <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or 3 Article</a>
+- <a href='https://hackaday.com/2018/08/15/stop-using-python-2-what-you-need-to-know-about-python-3/' target='_blank' rel='nofollow'>What you need to know about Python 3 </a>
