@@ -4,7 +4,7 @@ title: Build a JavaScript Calculator
 challengeType: 3
 isRequired: true
 videoUrl: ''
-localeTitle: Создайте калькулятор JavaScript
+localeTitle: Создайте калькулятор на JavaScript
 ---
 
 ## Description

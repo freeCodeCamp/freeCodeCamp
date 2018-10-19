@@ -25,7 +25,7 @@ Happy contributing 🎉!
 
 You can choose to contribute to any area that interests you:
 
-1. [Contribute to this open source codebase.](#contribute-to-this-open-source-codebase). Help editing [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
+1. [Contribute to this open source codebase](#contribute-to-this-open-source-codebase). Help editing [guide articles](https://guide.freecodecamp.org/), [coding challenges](https://learn.freecodecamp.org/), or fix bugs on the learning platform.
 
 2. Help campers on our [public forum](https://www.freecodecamp.org/forum/). [Answer their coding questions](https://www.freecodecamp.org/forum/?max_posts=1) or [give them feedback on their coding projects](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1)
 
@@ -51,7 +51,7 @@ You can help us:
 
 Guide articles help you get a quick understanding of a technology concept. These are short, plain-English explanations that you can read before going on to more in-depth resources.
 
-You can find an [example article about HTML Anchor Elements here](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/client/src/pages/guide/english/html/elements/a-tag/index.md).
+You can find an [example article about HTML Anchor Elements here](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/html/elements/a-tag/index.md).
 
 **What can I write an article about?**
 
