@@ -23,7 +23,7 @@ Also on the contrary of the component state, that can be manipulated as needed, 
 
 It's value cannot be changed by the component. 
 
-## Proptypes available
+## PropTypes available
 
 Bellow is a code example with the different validators provided by the package, and how to inject them in the component.
 

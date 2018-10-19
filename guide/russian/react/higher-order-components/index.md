@@ -1,12 +1,12 @@
 ---
 title: Higher-Order Components
-localeTitle: Компоненты более высокого порядка
+localeTitle: Higher-Order Components
 ---
-## Компоненты более высокого порядка
+## Higher-Order Components
 
-В реакторе **компонент более** высокого **порядка** (HOC) - это функция, которая принимает компонент и возвращает новый компонент. Программисты используют HOC для обеспечения **повторного использования компонентной логики** .
+В React ***Higher-Order Components*** (HOC) - это функция, которая принимает компонент и возвращает новый компонент. Программисты используют HOC для обеспечения **повторного использования компонентной логики** .
 
-Если вы использовали Redux - х `connect` , вы уже работали с более высоким порядком компонентами.
+Если вы использовали Redux `connect`, то это значит, что вы уже работали с Higher-Order Components.
 
 Основная идея:
 
@@ -15,13 +15,11 @@ const EnhancedComponent = enhance(WrappedComponent);
 ```
 
 Куда:
-
-*   `enhance` - это компонент `enhance` высокого порядка;
-*   `WrappedComponent` - это компонент, который вы хотите улучшить; а также
-*   `EnhancedComponent` - это новый компонент.
+  * `enhance` - это Higher-Order Component;
+  * `WrappedComponent` - это компонент, который вы хотите улучшить; а также
+  * `EnhancedComponent` - это новый компонент.
 
 Это может стать телом `enhance` HOC:
-
 ```jsx
 function enhance(WrappedComponent) { 
   return class extends React.Component { 
@@ -40,14 +38,13 @@ function enhance(WrappedComponent) {
  } 
 ```
 
-В этом случае `React.Component` `enhance` возвращает **анонимный класс,** который расширяет `React.Component` . Этот новый компонент выполняет три простых элемента:
+В этом случае `React.Component` `enhance` возвращает **anonymous class** который расширяет `React.Component` . Этот новый компонент выполняет три простых действия:
 
-*   Оказание `WrappedComponent` в элементе `div` ;
-*   Передача собственных реквизитов для `WrappedComponent` ; а также
-*   Внедрение дополнительной поддержки для `WrappedComponent` .
+  * Отрисовывание `WrappedComponent` в элементе `div` ;
+  * Передача собственных реквизитов для `WrappedComponent` ; а также
+  * Внедрение дополнительной поддержки для `WrappedComponent` .
 
 HOC - это всего лишь образец, который использует силу композиционной природы Реакта. **Они добавляют функции к компоненту** . С ними вы можете многое сделать!
 
 ## Другие источники
-
-*   [React docs: Компоненты более высокого порядка](https://reactjs.org/docs/higher-order-components.html)
+* [React docs: Компоненты более высокого порядка](https://reactjs.org/docs/higher-order-components.html)

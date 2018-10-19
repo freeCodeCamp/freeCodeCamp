@@ -1,7 +1,8 @@
 ---
 title: React TypeChecking with PropTypes
-localeTitle: React TypeChecking with PropTypes
----## Реакция PropTypes
+localeTitle: React TypeChecking с помошью PropTypes
+---
+## React PropTypes
 
 Они служат в качестве метода проверки типов, поскольку приложение имеет тенденцию к росту, при этом очень большая база ошибок, как правило, исправляется с использованием этой функции.
 
@@ -15,17 +16,18 @@ localeTitle: React TypeChecking with PropTypes
 npm install --save prop-types 
 ```
 
-После этого на самом деле действителен целый ряд валидаторов, которые могут быть использованы для обеспечения того, чтобы данные, которые разработчик собирался получить. Когда отображается недопустимое значение, в консоли JavaScript появится предупреждение.
+После этого, на самом деле, доступен целый ряд валидаторов, которые могут быть использованы для обеспечения того, чтобы данные, получаемы разработчиком верны.
+Когда отображается недопустимое значение, в консоли JavaScript появится предупреждение.
 
 Обратите внимание, что по соображениям производительности определенные PropTypes проверяются только в режиме разработки.
 
-Также, напротив, состояние компонента, которое можно манипулировать по мере необходимости, эти реквизиты только для чтения.
+Также, напротив, состояние компонента, которое можно манипулировать по мере необходимости, эти props только для чтения.
 
-Это значение не может быть изменено компонентом.
+Это значение не может быть изменено компонентой.
 
-## Доступны профили
+## Доступные PropTypes
 
-Bellow - пример кода с различными валидаторами, предоставляемыми пакетом, и как их вставлять в компонент.
+Ниже пример кода с различными валидаторами, предоставляемыми пакетом, и пример как их добавлять в компоненту.
 
 ```javascript
 import PropTypes from 'prop-types'; 
@@ -41,8 +43,7 @@ import PropTypes from 'prop-types';
  } 
  
  MyComponent.propTypes = { 
-  // A prop that is a specific JS primitive. By default, these 
-  // are all optional. 
+  // prop, который описывает примитивные типы данных в JS. По умолчинаию они необязательны
   optionalArray: PropTypes.array, 
   optionalBool: PropTypes.bool, 
   optionalFunc: PropTypes.func, 
@@ -51,45 +52,44 @@ import PropTypes from 'prop-types';
   optionalString: PropTypes.string, 
   optionalSymbol: PropTypes.symbol, 
  
-  // Anything that can be rendered: numbers, strings, elements or an array 
-  // (or fragment) containing these types. 
+  // Все что может быть отрисовано: числа, строки, элементы или массивы 
+  // или fragment, содержащий эти типы данных. 
   optionalNode: PropTypes.node, 
  
-  // A React element as a PropType 
+  // React элемент в качестве PropType 
   optionalElement: PropTypes.element, 
  
-  // Declaring that a prop is an instance of a class. This uses 
-  // JS's instanceof operator. 
+  // Определение того что prop это экзампляр класса. Для этого нужно использовать 
+  // JS's instanceof оператор. 
   optionalMessage: PropTypes.instanceOf(AnotherComponent), 
  
-  // You can ensure that your prop is limited to specific values by treating 
-  // it as an enum. 
+  // Вы можете ограничить prop определив конкретное значание для него
   optionalEnum: PropTypes.oneOf(['News', 'Photos']), 
  
-  // An object that could be one of many types 
+  // Объект определенный как несколько различных типов 
   optionalUnion: PropTypes.oneOfType([ 
     PropTypes.string, 
     PropTypes.number, 
     PropTypes.instanceOf(AnotherComponent) 
   ]), 
  
-  // An array of a certain type 
+  // Массив с элементами определенного типа 
   optionalArrayOf: PropTypes.arrayOf(PropTypes.number), 
  
-  // An object with property values of a certain type 
+  // Объект с элементами определенного типа 
   optionalObjectOf: PropTypes.objectOf(PropTypes.number), 
  
-  // An object taking on a particular shape 
+  // Объект с определенной формой 
   optionalObjectWithShape: PropTypes.shape({ 
     color: PropTypes.string, 
     fontSize: PropTypes.number 
   }), 
  
-  // You can chain any of the above with `isRequired` to make sure a warning 
-  // is shown if the prop isn't provided. 
+  // Вы можете добавить в цепочке определение ключевое слово `isRequired`,
+  // чтобы быть уверенным что будет показано предупреждение, что prop отсутсвует
   requiredFunc: PropTypes.func.isRequired, 
  
-  // A value of any data type 
+  // Любой тип данных 
   requiredAny: PropTypes.any.isRequired, 
  }; 
 ```
@@ -104,20 +104,20 @@ import PropTypes from 'prop-types';
 
 ```javascript
 import React,{Component} from 'react'; 
- import PropTypes from 'prop-types'; 
- class MyComponent extends Component{ 
-    constructor(props){ 
-        super(props); 
-    } 
-    render(){ 
-        return ( 
-            <h3>Hello, {this.props.name}</h3> 
-        ); 
-    } 
- } 
- MyComponent.defaultProps = { 
+import PropTypes from 'prop-types'; 
+class MyComponent extends Component{ 
+  constructor(props){ 
+    super(props); 
+  } 
+  render(){ 
+    return ( 
+      <h3>Hello, {this.props.name}</h3> 
+    ); 
+  } 
+} 
+MyComponent.defaultProps = { 
   name: 'Stranger' 
- }; 
+}; 
 ```
 
 Для получения дополнительной информации о PropTypes и других документах в React.

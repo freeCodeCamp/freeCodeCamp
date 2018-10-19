@@ -1,10 +1,10 @@
 ---
 title: Render Props Component
-localeTitle: Компонент рендеринга реквизита
+localeTitle: Рендеринг props компонент
 ---
-## Компонент рендеринга реквизита
+## Рендеринг props компонент
 
-Рендеринг реквизита - это передовая модель React, но так просто!
+Рендеринг props - это передовая модель React, да, так просто!
 
 ### пример
 
@@ -13,7 +13,7 @@ localeTitle: Компонент рендеринга реквизита
 ```jsx
 import React, { PureComponent } from "react"; 
  
- class Toggle extends PureComponent { 
+class Toggle extends PureComponent { 
   state = { 
     on: false 
   }; 
@@ -31,12 +31,12 @@ import React, { PureComponent } from "react";
       toggle: this.toggle 
     }); 
   } 
- } 
+} 
  
- export default Toggle; 
+export default Toggle; 
 ```
 
-Этот компонент Toggle возвращает его состояние `state.on` и функцию toggle. Который может быть использован в его дочерних компонентах.
+Этот компонент Toggle возвращает состояние его дочерних элементов `state.on` и функцию toggle. Которые могут быть использованы в его дочерних компонентах.
 
 Этот Toggle можно использовать следующим образом:
 
@@ -48,11 +48,11 @@ import React, { PureComponent } from "react";
       {on && <h1>I can be toggled on or off!</h1>} 
     </Fragment> 
   )} 
- </Toggle> 
+</Toggle> 
 ```
 
-Как вы можете видеть, функция переключения может использоваться дочерней кнопкой Button для переключения некоторого содержимого. if on is true, h1-tag будет отображаться иначе.
+Как вы можете заметить, функция переключения может использоваться дочерней кнопкой Button для переключения некоторого содержимого. if on is true, h1-tag будет отображаться иначе.
 
 ## Другие источники
 
-*   [Реагировать на документы: Render реквизит](https://reactjs.org/docs/render-props.html)
+* [React docs: Render реквизит](https://reactjs.org/docs/render-props.html)

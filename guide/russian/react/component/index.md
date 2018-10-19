@@ -1,28 +1,30 @@
 ---
 title: React - Components
-localeTitle: Реакция - Компоненты
+localeTitle: React - Компоненты
 ---
-## Реакция - Компоненты
+## React - Компоненты
 
-Компоненты могут повторно использоваться в реакции.js. Вы можете ввести значение в реквизиты, как указано ниже:
+Компоненты могут повторно использоваться в react.js. Вы можете ввести значение в props, как указано ниже:
 
 ```jsx
-function Welcome(props) { 
-  return <h1>Hello, {props.name}</h1>; 
- } 
- 
- const element = <Welcome name="Faisal Arkan" />; 
- ReactDOM.render( 
-  element, 
-  document.getElementById('root') 
- ); 
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+
+const element = <Welcome name="Faisal Arkan" />;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
 ```
 
-`name="Faisal Arkan"` даст значение в `{props.name}` из `function Welcome(props)` и возвращающего компонента, который дал значение по `name="Faisal Arkan"` , после чего реакция отобразит элемент в html.
+Значение `name="Faisal Arkan"` будет присвоено `{props.name}` из функции `function Welcome(props)` и вернет компоненты,
+который даст значение `name="Faisal Arkan"` , после чего react отобразит элемент в html.
 
 ### Другие способы объявления компонентов
 
-Существует много способов объявления компонентов при использовании React.js, но есть два вида компонентов, компоненты **_без_** учета **_состояния и_** компоненты с **_состоянием_** .
+Существует много способов объявления компонентов при использовании React.js,
+но есть два вида компонентов, компоненты ***stateless*** и компоненты ***stateful***.
 
 ### Stateful
 
@@ -50,28 +52,28 @@ class Cat extends React.Component {
  } 
 ```
 
-### Безстоящие компоненты
+### Stateless
 
-#### Функциональные компоненты (функция стрелок от ES6)
+#### Функциональные компоненты (Arrow Function из стандарта ES6)
 
 ```jsx
-const Cat = props => { 
-  return ( 
-    <div> 
-      <h1>{props.name}</h1> 
-      <p>{props.color}</p> 
-    </div>; 
-  ); 
- }; 
+const Cat = props => {
+  return (  
+    <div>
+      <h1>{props.name}</h1>
+      <p>{props.color}</p>
+    </div>;
+  );
+};
+
 ```
 
 #### Неявные возвращаемые компоненты
 
 ```jsx
 const Cat = props => 
-  <div> 
-    <h1>{props.name}</h1> 
-    <p>{props.color}</p> 
-  </div>; 
-
+  <div>
+    <h1>{props.name}</h1>
+    <p>{props.color}</p>
+  </div>;
 ```

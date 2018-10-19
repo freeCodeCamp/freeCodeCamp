@@ -36,5 +36,5 @@ babel-polyfill is used for older browsers compatibility.
 
 </html>
  ```
- If this code is saved with the html file extension (helloReact.html)it can be opened in a web browser
+ If this code is saved with the html file extension (helloReact.html) it can be opened in a web browser
  it will run React and Babel.
