@@ -41,7 +41,7 @@ Adding the JavaScript elements of Bootstrap is similar with `<script>` elements 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 ```
-_Note: These are only examples and may change without notice. Please refer to a CDN for current links to include in your project._
+_Note: These are only examples and may change without notice. Please refer to a CDN for current links to include in your project. You can find the latest CDN links _<a href='https://www.bootstrapcdn.com/' target='_blank' rel='nofollow'>here</a>_._
 
 ##### Download/Install
 
