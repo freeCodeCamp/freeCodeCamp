@@ -103,6 +103,8 @@ An Acceptance Test tests that the code performs as expected i.e. produces the ex
 
 An Acceptance Test are used to test relatively bigger functional blocks of software aka Features.
 
+In agile development, an acceptance test confirms that an story is complete by matching a user action scenario with a desired outcome.
+
 ### Example
 You have created a page that requires the user to first enter their name in a dialog box before they can see the content. You have a list of invited users, so any other users will be returned an error.
 
