@@ -22,6 +22,8 @@ If you face any error go to settings later to solve it.
 
 Lastly, learn to integrate 3rd party libraries and Firebase services to add functionality to your app. It would be helpful if you go through the official documentation for each component.
 
+
+
 ### Official Documentation
 
 [Google Developers Guide for Android](https://developer.android.com/training/index.html)
