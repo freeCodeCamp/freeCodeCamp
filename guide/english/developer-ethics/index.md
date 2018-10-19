@@ -39,3 +39,5 @@ To date, since most software developers do not belong to – and are not governe
 * [CSE 302 - Professional Ethics for Computer Science] (http://www3.cs.stonybrook.edu/~mueller/teaching/cse302/) – outline and study materials for a course given in the Computer Science department at Stony Brook University's College of Engineering and Applied Sciences.
 
 * [A Very Short History of Computer Ethics] (https://web.archive.org/web/20080418122849/http://www.southernct.edu/organizations/rccs/resources/research/introduction/bynum_shrt_hist.html) – article from the Summer 2000 issue of the American Philosophical Association’s Newsletter on Philosophy and Computing
+
+* [Death to Bullshit] (http://deathtobullshit.com/) – A manifesto and blog by Brad Frost to respect people and their time, respect your craft, be sincere, and create genuinely useful things.
