@@ -10,7 +10,7 @@ localeTitle: Comprobar botones de radio y casillas de verificación por defecto
 <section id="description"> Puede configurar una casilla de verificación o un botón de opción para que se marque de forma predeterminada utilizando el atributo <code>checked</code> . Para hacer esto, simplemente agregue la palabra &quot;marcado&quot; al interior de un elemento de entrada. Por ejemplo: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Configure el primero de sus <code>radio buttons</code> y el primero de sus <code>checkboxes</code> de <code>checkboxes</code> para que ambos estén marcados de forma predeterminada. </section>
+<section id="instructions"> Configure el primero de sus <code>radio buttons</code> y el primero de sus <code>checkboxes</code> para que ambos estén marcados de forma predeterminada. </section>
 
 ## Tests
 <section id='tests'>
