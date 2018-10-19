@@ -24,3 +24,5 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+
+Add "What is AGILE?" link for more information. https://www.cprime.com/resources/what-is-agile-what-is-scrum/
