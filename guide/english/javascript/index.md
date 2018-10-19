@@ -3,7 +3,7 @@ title: JavaScript
 ---
 
 ## JavaScript
-JavaScript is the most widely used scripting language on Earth. And it has the largest library ecosystem of any programming language.
+Creaed by Brendan Eich in May of 1995, JavaScript is the most widely used scripting language on Earth. And it has the largest library ecosystem of any programming language.
 
 JavaScript is the core language of the web, and the only programming language that can run in all major web browsers.
 
