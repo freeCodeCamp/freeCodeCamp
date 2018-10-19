@@ -4,7 +4,7 @@ title: RAM
 ## RAM
 
 RAM stands for random-access memory, alternatively referred to as **main memory**, **primary memory**, or **system memory**. It is a piece of computer hardware where the data that your computer is currently working on is stored.<br>
-Unlike hard drives, RAM is a volatile memory and requires power to keep the data accessible. If the computer is turned off, all data contained in RAM is lost. New users often confuse RAM with disk drive space. See [memory definition](https://www.computerhope.com/jargon/m/memory.htm) for a comparison between memory and storage.<br>
+Unlike hard drives, RAM is a volatile memory and requires power to keep the data accessible. If the computer is turned off, all data contained in RAM is lost. New users often confuse RAM with disk drive space. See [memory definition](https://www.computerhope.com/jargon/m/memory.htm) for a comparison between memory and storage.<br> However, there are different use-cases like virtual memory where some portion of disk is allocated for the memory to support large applications which cant fit in RAM. Also there is something called RAM-disk where a portion of RAM is allocated for disk so that the access for those disk files is very fast.
 
 #### Types of RAM:
 
