@@ -9,7 +9,7 @@ color for all of its sides.
 The most approached implementation of the algorithm is a stack-based recursive function.
 
 ### Working:
-The problem is pretty simple and usually follows these steps:
+The problem is pretty simple and usually follows these steps-
 
 1. Take the position of the starting point and the boundary color.
 2. Decide wether you want to go in 4 directions (N, S, W, E) or 8 directions (N, S, W, E, NW, NE, SW, SE).
