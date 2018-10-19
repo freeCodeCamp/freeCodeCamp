@@ -3,11 +3,17 @@ title: Gitignore
 ---
 ## Gitignore
 
-The `.gitignore` file is a text file that tells Git which files or folders to ignore in a project.
+The `.gitignore` file is a text file that tells Git which files or folders to ignore in a project. If you make any changes in this ignored file, then it will not be displayed on your [`git status`](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/git/git-status/index.md) command
 
-A local `.gitignore` file is usually placed in the root directory of a project. You can also create a global `.gitignore` file and any entries in that file will be ignored in all of your Git repositories.
+A local `.gitignore` file is usually placed in the root directory of a project. However, if your project has multiple modules, then you may maintain a separate `.gitignore` file for each of the modules. You can also create a global `.gitignore` file and any entries in that file will be ignored in all of your Git repositories.
 
 To create a local `.gitignore` file, create a text file and name it `.gitignore` (remember to include the `.` at the beginning). Then edit this file as needed. Each new line should list an additional file or folder that you want Git to ignore.
+
+Note: While creating the `.gitignore` file from your Windows explorer, you might get an error like this:
+![gitignore file creation error in Windows](gitignore-file-creation-error-windows.png)
+
+One way to circumvent this issue is to create this `.gitignore` file using `notepad.exe`. Open Notepad and then select File -> Save As -> Write `.gitignore` and choose "All Files" as the type. Then it will create the `.gitignore` file for you.
+
 
 The entries in this file can also follow a matching pattern.
 
