@@ -1,8 +1,8 @@
 ---
 title: Accessibility
-localeTitle: доступность
+localeTitle: Доступность
 ---
-## доступность
+## Доступность
 
 **Доступность в Интернете означает, что люди с ограниченными возможностями могут пользоваться Интернетом** .
 
@@ -24,4 +24,5 @@ Copyright © 2005 [World Wide Web Consortium](http://www.w3.org) , ( [MIT](http:
 
 ### Дополнительная информация:
 
-[w3.org введение в доступность.](https://www.w3.org/WAI/intro/accessibility.php) [Проект A11Y](http://a11yproject.com/)
+* [w3.org введение в доступность.](https://www.w3.org/WAI/intro/accessibility.php) 
+* [Проект A11Y](http://a11yproject.com/)
