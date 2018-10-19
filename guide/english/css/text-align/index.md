@@ -44,3 +44,4 @@ The `text-align` property is specified as a single keyword chosen from the list 
 - <a href='https://www.w3.org/TR/css-text-3/#justification' target='_blank' rel='nofollow'>CSS3 Spec</a>
 - <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/text-align' target='_blank' rel='nofollow'>MDN Web Docs</a>
 - <a href='https://css-tricks.com/almanac/properties/t/text-align/' target='_blank' rel='nofollow'>CSS Tricks</a>
+- <a href='https://www.w3schools.com/cssref/pr_text_text-align.asp' target='_blank' rel='nofollow'>W3Schools</a>
