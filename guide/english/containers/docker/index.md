@@ -7,7 +7,7 @@ title: Docker
 
 A common use case would be to package an app and all it's requirements in a container. The container can then be used during development, passed to quality assurance/testing, and on to production/operations. This eliminates the "works on my machine" mentality, as the container effectively _is_ the machine, no matter what actual hardware it may be running on.
 
-After you are done setting up your computer and installig docker, you can simply test your Docker by running command:
+After you are done setting up your computer and installing docker, you can simply test your Docker by running command:
 
 ```shell
 $ docker run hello-world
