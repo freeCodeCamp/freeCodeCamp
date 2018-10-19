@@ -18,9 +18,14 @@ Disponible como descargas gratuitas y abierto a las contribuciones de los usuari
 
 Los editores pagados necesitan un pago único o están basados ​​en suscripciones. Pero, las versiones de prueba están disponibles para probar el software antes de comprometerse a comprar. Si resulta ser un estudiante, muchas veces, hay descuentos disponibles a través de un correo electrónico o identificación del estudiante.
 
-### Campo de golf:
+### Editores para móvil
 
-*   [Pixlr Editor](https://pixlr.com/editor/) - Gratis | Navegador
-*   [Gimp](https://www.gimp.org/) - Gratis | Descargar | Fuente abierta
-*   [Photoshop](https://www.adobe.com/products/photoshop.html) - Prueba gratis | Pagado
-*   [Photoshop Express](https://www.photoshop.com/products/photoshopexpress) - Gratis | Móvil
+Disponible como aplicaciones gratituas o de pago para telefonos móviles (Android/iOS/Windows Phone,etc).
+
+
+### Ejemplos:
+
+*   [Pixlr Editor](https://pixlr.com/editor/) - Gratis | Editores de aplicaciones Web
+*   [Gimp](https://www.gimp.org/) - Gratis | Editores de código abierto
+*   [Photoshop](https://www.adobe.com/products/photoshop.html) - Prueba gratis | Editores de pagado
+*   [Photoshop Express](https://www.photoshop.com/products/photoshopexpress) - Gratis | Editores para móvil
