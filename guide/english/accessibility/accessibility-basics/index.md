@@ -47,7 +47,7 @@ You may think that accessibility doesn't apply to you or to your users, so why i
 
 The truth is, you're right to a certain degree. If you have done meticulous user research and have excluded any chance of a certain group of people visiting your website, the priority for catering to that group of people diminishes quite a bit.
 
-However, doing this research is key in actually defending such a statement. Did you know there were <a href='http://audiogames.net' target='_blank' rel='nofollow'>blind gamers?</a> and even <a href='http://peteeckert.com/' target='_blank' rel='nofollow'>blind photographers?</a>. Perhaps you knew <a href='http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians' target='_blank' rel='nofollow'>musicians can be deaf</a>?
+However, doing this research is key in actually defending such a statement. Did you know there were <a href='http://audiogames.net' target='_blank' rel='nofollow'>blind gamers?</a> and even <a href='http://peteeckert.com/' target='_blank' rel='nofollow'>blind photographers?</a> Perhaps you knew <a href='http://mentalfloss.com/article/25750/roll-over-beethoven-6-modern-deaf-musicians' target='_blank' rel='nofollow'>musicians can be deaf</a>?
 
 If you did, good for you. If not, I guess this drives my point home all the more.
 
@@ -124,7 +124,7 @@ The text should provide the context and information that is an alternative to se
 
 ### I can't read your scrawl, son
 
-Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people who's eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
+Even people who don't wear glasses and have no problem with their eyesight at all benefit from an easy to read font and proper contrast. I'm sure you would cringe if you had to fill in a form where light yellow, hopelessly loopy letters are placed on a white background. For people whose eyesight is not as good, like your grandma, for example, this becomes hopelessly worse.
 
 The WCAG has contrast ratios for smaller and larger letters and there's plenty of tools out there to check if the contrast ratios are strong enough. The information and tooling is there, go use it.
 
