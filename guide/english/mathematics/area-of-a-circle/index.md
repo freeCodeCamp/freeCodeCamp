@@ -67,7 +67,7 @@ Area of circle =  <i>C</i><sup>2</sup></span> / 4 * <span class="texhtml"><span 
 A "Real World" Example:-
 
 Example: Max is building a house. The first step is to drill holes and fill them with concrete.
-The holes are 0.4 m wide and 1 m deep, how much concrete should Max order for each hole?
+The holes are 0.4 m wide and 1 m deep, how much concrete should Max order for each hole? To answer this question, we need to calculate the volume of the holes (think of the holes as cylinders).
 
 The holes are circular (in cross section) because they are drilled out using an auger.
 The diameter is 0.4m, so the Area is:
