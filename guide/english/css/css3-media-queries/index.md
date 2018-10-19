@@ -11,8 +11,7 @@ of the mobile version. You may think that with some scalable sizes ( %, vw or vh
 for some very basic design, but certainly not for more common or complex pages!
 
 When designing your page for smaller devices, you will focus on the main content. On a bigger screen, you will have to adapt some font-sizes, margins,
-paddings and so on in order to keep your site comfortable and readable, but you will also want/need to add more content, the ones you did not judge
-fundamental, and fill in the space created by the screen size.
+paddings and so on in order to keep your site comfortable and readable. You will also likely want to add more content and fill in the space created by the screen size.
 
 The thought process should be:
 1. Which content to show?
@@ -62,7 +61,7 @@ Beyond the core uses of media queries for mobile-first web design shown above, m
       /* ... */
     }
 ```
-2. Allowing for more graceful zooming in for the minorly visually impaired, such as many elderly people.
+2. Allowing for more graceful zooming in for those with minor visual impairments, such as many elderly people.
 3. Allowing smoother experiences for those who prefer or need less animation to read a page.
 ```css
     @media (prefers-reduced-motion: reduce) {
