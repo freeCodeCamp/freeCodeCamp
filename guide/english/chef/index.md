@@ -15,6 +15,9 @@ title: Chef
 #### Chef Configuration
 ![Image Title](https://regmedia.co.uk/2015/10/07/chef_configuration_management.jpg)
 
+#### Chef Logo 
+![Image Title](https://www.google.com/imgres?imgurl=https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Chef_logo.svg/2000px-Chef_logo.svg.png&imgrefurl=https://en.wikipedia.org/wiki/Chef_(software)&h=2140&w=2000&tbnid=vLGQl34au6TomM:&q=chef+language&tbnh=160&tbnw=149&usg=AI4_-kQvmNKEt3eAGltF7-Eg5Fk8bCBlAw&vet=12ahUKEwjimobT8ZLeAhVQQq0KHWlJDhcQ9QEwAHoECAsQBg..i&docid=inZxXPb3JaopdM&sa=X&ved=2ahUKEwjimobT8ZLeAhVQQq0KHWlJDhcQ9QEwAHoECAsQBg)
+
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
