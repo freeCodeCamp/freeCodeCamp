@@ -1,5 +1,5 @@
 ---
-title: Java
+# Java
 ---
 
 **What is Java?**
