@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comprobar por todos o ninguno
 ---
 
-## Description
+## Descripción
 <section id="description"> A veces, los patrones que desea buscar pueden tener partes que pueden o no existir. Sin embargo, puede ser importante verificarlos de todas formas. Puede especificar la posible existencia de un elemento con un signo de interrogación, <code>?</code> . Esto comprueba si hay cero o uno de los elementos anteriores. Puede pensar que este símbolo dice que el elemento anterior es opcional. Por ejemplo, hay ligeras diferencias entre el inglés americano y el británico y puede usar el signo de interrogación para que coincida con ambas ortografías. <blockquote> Deje american = &quot;color&quot;; <br> let british = &quot;color&quot;; <br> Deje rainbowRegex = / colou? r /; <br> rainbowRegex.test (americano); // Devuelve true <br> rainbowRegex.test (británico); // Devuelve true </blockquote></section>
 
-## Instructions
+## Instruciones
 <section id="instructions"> Cambie el regex <code>favRegex</code> para que coincida con la versión del inglés americano (favorito) y del inglés británico (favorito) de la palabra. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -30,14 +30,14 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafío
 <section id='challengeSeed'>
 
 <div id='js-seed'>
 
 ```js
 let favWord = "favorite";
-let favRegex = /change/; // Change this line
+let favRegex = /change/; // Modifica esta linea
 let result = favRegex.test(favWord);
 
 ```
@@ -48,10 +48,10 @@ let result = favRegex.test(favWord);
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
