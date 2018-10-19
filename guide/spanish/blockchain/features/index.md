@@ -1,5 +1,5 @@
 ---
-  title : Features of BlockTech
+title: Features of BlockTech
 localeTitle: Características de BlockTech
 ---
 ## Características de la tecnología Blockchain

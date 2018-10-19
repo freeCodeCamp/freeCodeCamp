@@ -1,5 +1,8 @@
-# localeTitle: undefined
-Rroteador ect para iniciantes
+---
+title: React Router
+localeTitle: React Router
+---
+# React Router ect para iniciantes
 
 # Instalação
 
@@ -22,7 +25,7 @@ Para o nosso projeto, vamos supor que o site será apoiado por um servidor dinâ
 # Declaração de Importação
 
 ```javascript
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'; 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 ```
 
 ## IndexRoute e links
@@ -36,11 +39,11 @@ Dos docs:
 A principal maneira de permitir que os usuários naveguem pelo seu aplicativo.  irá renderizar uma tag âncora totalmente acessível com a href apropriada. Para fazer isso, vamos primeiro criar um componente Nav. Nosso componente Nav conterá componentes `<Link>` , e ficará assim:
 
 ```javascript
-const Nav = () => ( 
-  <div> 
-    <Link to='/'>Home</Link>&nbsp; 
-    <Link to='/address'>Address</Link> 
-  </div> 
- ) 
+const Nav = () => (
+  <div>
+    <Link to='/'>Home</Link>&nbsp;
+    <Link to='/address'>Address</Link>
+  </div>
+ )
 
 ```

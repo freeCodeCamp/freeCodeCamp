@@ -1,9 +1,13 @@
+---
+title: Useful commands for Docker
+---
 # Useful commands for Docker
+
 - Docker is mainly used for run programs on server side.
 - Companies customize their OS before use. They don't require many things like GUI.
 -  Less program means less RAM used and more security.
 	- More features means more chances to hack, more vulnerabilities.
-- We use OS to run program. Docker gives us an environment to run our program. 
+- We use OS to run program. Docker gives us an environment to run our program.
 
 ## Installing docker-engine
 ### For  Redhat OS
@@ -11,15 +15,15 @@
 	```
 	[docker]
 	baseurl = https://yum.dockerproject.org/repo/main/centos/7
-	gpgcheck=0 
+	gpgcheck=0
 	```
 - Then, install **docker-engine**
 `$ yum install docker-engine`
- 
+
  ###  Start the services of docker
  `$ systemctl restart docker`
  It starts the docker server.
- 
+
 ### See all the images available in docker
 `$ docker images`
 The default _docker images_ will show all top level images, their repository and tags, and their size.
@@ -32,7 +36,7 @@ It loads an image or repository from a tar archive (even if compressed with gzip
 
 ### Docker run reference
 - Docker runs processes in isolated containers.
-- A container is a process which runs on a host. The host may be local or remote. 
+- A container is a process which runs on a host. The host may be local or remote.
 - When an operator executes `docker run`, the container process that runs is isolated in that it has its own file system, its own networking, and its own isolated process tree separate from the host.
 
 ### Run or start a new OS
@@ -67,8 +71,8 @@ press _ctrl + p + q_
 
 ### Stop all running OSs
 ```
-$ docker ps -q //shows id of every running OS 
-$ docker stop  $(docker ps -q) 
+$ docker ps -q //shows id of every running OS
+$ docker stop  $(docker ps -q)
 ```
 
 ### Permanently remove a container
@@ -77,7 +81,7 @@ $ docker stop  $(docker ps -q)
 ### Permanently Remove all the stopped containers
 `$ docker rm $(docker ps -a -q)`
 - This command will delete all stopped containers.
-- The command `docker ps -a -q` will return all existing container IDs and pass them to the `rm` command which will delete them. 
+- The command `docker ps -a -q` will return all existing container IDs and pass them to the `rm` command which will delete them.
 - Any running containers will not be deleted.
 
 ### Remove containers while running (forcefully)
@@ -91,19 +95,19 @@ $ docker stop  $(docker ps -q)
 ### Copy a file in container
 `$ docker cp /root/form.txt  myconatiner:/`
 This command will copy a file form.txt from the base system to the specified container.
- 
+
 ### Download docker images
 [docker hub](http://hub.docker.com) - All the available docker images can be downloaded from this URL.
 
 ### Check different versions of OS that are available
 ```
 $ docker search ubuntu //search
-$ docker pull ubuntu:17.10 //downlaod required version 
+$ docker pull ubuntu:17.10 //downlaod required version
 ```
 
 ## Docker Storage
 
-### Basic Storage types 
+### Basic Storage types
 1.	**Empheral disk (temporary)** – OS removal will remove data (like windows C drive)
 2.	**Persistent disk (permanent)** -  OS removal will not erase data (like windows D drive)
     - **-v** gives persistent storage. OS removal will not remove data.
@@ -112,7 +116,7 @@ $ docker pull ubuntu:17.10 //downlaod required version
 Docker by default takes space from **/** drive of host system to store data. Overall **/** drive amount of storage docker can use.
 
 ### Give separate space to a docker container
-- Make a partition, format it and mount in base system. 
+- Make a partition, format it and mount in base system.
 Let the partition created is **mypart**
 - Then, run following command
 `$ docker run –it -v /mypart:/data centos`

@@ -1,5 +1,5 @@
 ---
-  title: Tableau
+title: Tableau
 localeTitle: 表
 ---
 # 画面
