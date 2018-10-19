@@ -33,11 +33,7 @@ Putting together, these resources are good enough to kick start your journey wit
 
 ### More Information:
 
-[Robots (Wikipedia.org)](https://en.wikipedia.org/wiki/Robot)
-
-[Robotics (Wikipedia.org)](https://en.wikipedia.org/wiki/Robotics)
-
-[Sensors (electronicshub.org)](https://www.electronicshub.org/different-types-sensors/)
-
-[Actuator (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
-
+- [Robots (Wikipedia.org)](https://en.wikipedia.org/wiki/Robot)
+- [Robotics (Wikipedia.org)](https://en.wikipedia.org/wiki/Robotics)
+- [Sensors (electronicshub.org)](https://www.electronicshub.org/different-types-sensors/)
+- [Actuator (Wikipedia.org)](https://en.wikipedia.org/wiki/Actuator)
