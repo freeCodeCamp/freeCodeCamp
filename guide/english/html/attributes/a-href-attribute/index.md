@@ -57,7 +57,7 @@ The `<a href="#">` may also be applied to images and other HTML elements.
 ### Example
 
 ```html
-<a href="#"><img itemprop="image" style="height: 90px;" src="http://www.chatbot.chat/assets/images/header-bg_y.jpg" alt="picture">  </a>
+<a href="#"><img itemprop="image" style="height: 90px;" src="http://www.chatbot.chat/assets/images/header-bg_y.jpg" alt="picture"></a>
 
 ```
 ### Example
