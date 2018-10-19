@@ -71,7 +71,7 @@ The structure of the card can be enhanced by the addition of a header and a foot
 ```html
 <div class="card">
 <!-- content of the card goes here -->
-  <img src="picture.jpg" alt="Picture" class="card-img-top">
+  <img src="dog.jpg" alt="Brown Dog" class="card-img-top">
 <!-- this content is displayed over the image, which is now in the background and covers the whole element -->
   <div class="card-img-overlay">Overlay content</div>
 </div>
