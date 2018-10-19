@@ -12,3 +12,12 @@ Two main benefits of Continuous Deployment include an earlier return on investme
 
 Other benefits to Continuous Deployment include improved code quality due to less bugs making it to production, more reliable code releases and a much lower time to market.
 
+Continuous Deployment Tools:
+These tools allow you to put together an entire pipeline CI/CD pipeline to allow for a proper continuous deployment ennviroment.
+
+Jenkins - http://Jenkins.io
+Azure DevOps - https://azure.microsoft.com/en-us/services/devops/
+AWS CodeDeploy - https://aws.amazon.com/codedeploy/
+
+These are just a few.  The following article lists many more.
+https://dzone.com/articles/21-automated-deployment-tools-you-should-know
