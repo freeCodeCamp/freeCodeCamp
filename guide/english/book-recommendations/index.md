@@ -85,11 +85,11 @@ title: Books to Read for Programmers
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
-- https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell
+- [Amazon] (https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell)
 - ISBN-13: 978-1491927069
 
 *Pro C# 7: With .NET and .NET Core Paperback – Nov 21 2017* by Andrew Troelsen (Author), Philip Japikse (Author)
-- https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
+- [Amazon] (https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen)
 - ISBN-13: 978-1484230176
 
 ## Coding Interview
@@ -150,7 +150,7 @@ title: Books to Read for Programmers
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
-- https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM
+- [Amazon] (https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM)
 - (ISBN 1976112524).
 
 *Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
@@ -210,7 +210,7 @@ title: Books to Read for Programmers
 - ISBN-13: 978-5800083125
 
 *Dynamic Programming for Coding Interviews: A Bottom-Up approach to problem solving*
-- [Amazon Smile](https://smile.amazon.in/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP)
+- [Amazon Smile](https://www.amazon.com/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP/ref=dp_kinw_strp_1)
 - ISBN-13: 978-1946556691
 
 *GATE 2019 Computer Science and Information Technology*
@@ -232,11 +232,12 @@ title: Books to Read for Programmers
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
 - [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
+
 *Oracle® Database Notes for Professionals*
-https://books.goalkicker.com/OracleDatabaseBook/
+- https://books.goalkicker.com/OracleDatabaseBook/
 
 *Pro PHP Programming - Peter MacIntyre*
-[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+- [Amazon](https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
 
 *Mastering Linux Shell Scripting by Andrew Mallett*
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
