@@ -19,3 +19,6 @@ Here is an even simpler way to create a 1MB file:
 ```
 dd if=/dev/zero of=file_name.txt bs=1MB count=1
 ```
+Warning!
+
+"dd" can be very dangerous, it can destroy all your data if used in a wrong way, always check your commands twice!
