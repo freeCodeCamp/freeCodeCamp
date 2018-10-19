@@ -168,3 +168,37 @@ char *strtok(char *str, const char *delim);
 * Arrays have separate positions that can be declared with brackets, and accessed with square brackets.
 * Strings are arrays too, but we can treat them a little differently: they can be declared using double quotes, and printed using %s.
 * Strings have their own library, `string.h`, which has some handy functions to use.
+
+
+
+##Character manipulation
+example  using upper and lower function
+
+#include<stdio.h>
+#include<conio.h>
+#include<ctype.h>
+int main()
+{
+	char ch;
+	char upper,lower;
+	printf("enter the charter");
+	scanf("\n%c",&ch);
+	if(ch>='a'&& ch<='z')
+	{
+		upper=toupper(ch);
+		printf("%c",upper);
+	}
+	else if(ch>='A'&&ch<='Z')
+	{
+		lower=tolower(ch);
+		printf("%c",&lower);
+	}
+	else
+	{
+		printf("it is not alpbet");
+	}
+	getch();
+	return 0;
+
+}
+
