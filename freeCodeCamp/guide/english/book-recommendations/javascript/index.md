@@ -33,3 +33,9 @@ A collection of articles covering the basics (core language and working with a b
 A very fun and easy book for beginners. 
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
+*Head First Javascript*
+
+A very fun and interactive book with lots of examples. Perfect for beginners. 
+
+- [Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X/ref=sr_1_1?s=books&ie=UTF8&qid=1539951707&sr=1-1&keywords=head+first+javascript)
