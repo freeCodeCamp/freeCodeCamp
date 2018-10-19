@@ -18,6 +18,15 @@ In the above example, "Times New Roman" is the <family-name> of the font, while 
 mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
 family names are serif, sans-serif, monospace, cursive, fantasy, system-ui.
 
+### Importing a font from Google
+If you want to use a font that is not downloaded on your computer, you can import one from [fonts.google.com](https://fonts.google.com/).
+
+```css
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+```
+
+Then you can use the font that you have imported (in this example, 'Lobster') in your code as normal.
+
 ### Font style
 The `font-style` property can be used to specify italic text.
 
