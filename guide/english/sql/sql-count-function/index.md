@@ -20,7 +20,7 @@ select studentID, FullName, programOfStudy, sat_score from student; -- all recor
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/count01.JPG?raw=true)
 
-This SQL statement provides a count of all rows.  Note that you can give the resulting COUNT column a name using "AS".
+This SQL statement provides a count of all rows.  Note that you can give the resulting COUNT column a SQL Alias using "AS".
 
 ```sql
 select count(*) AS studentCount from student; -- count of all records
