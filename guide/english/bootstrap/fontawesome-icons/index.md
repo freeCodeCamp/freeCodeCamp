@@ -12,7 +12,7 @@ In the `<head>` of your html include a reference to Font Awesome.
 ```html
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 ```
-Using fontawesome is same as using Glyphicon. 
+Fontawesome usage is the same as that of Glyphicon. 
 
 Simply create `<i>` or `<span>` tag and apply the CSS Prefix `fa` and the icon's name.  A code example has been provided below.
 
