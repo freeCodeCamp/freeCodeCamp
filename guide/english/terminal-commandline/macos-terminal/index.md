@@ -33,6 +33,7 @@ Command | Usage
 pwd | Print Working Directory (Where Am I? )
 ls | List contents of current directory
 mkdir | Create a new directory
+take | Create a new directory and cd into it
 touch | Create a new file
 cp| Copy a file 
 rm | Remove a file 
@@ -45,6 +46,8 @@ Some of the aforementioned commands aren't clear without examples. Below are a f
 #### Making a Directory
 
 ```mkdir #YOUR-NEW-FOLDER-NAME-HERE```
+Or
+```take #YOUR-NEW-FOLDER-NAME-HERE```
 
 #### Making a File 
 
