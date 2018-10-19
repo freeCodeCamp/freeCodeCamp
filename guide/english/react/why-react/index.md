@@ -10,6 +10,8 @@ React.js is not a full fledged Javascript framework like Angular.js or other pop
 
 Since React makes use of a _Virtual DOM_, it can selectively update portions of the page as needed rather than always having to complete an entire page reload. In many cases, not updating the entire DOM will save considerably on performance. Moreover, many of the built-in functions (such as Lifecycle functions) also have performance benefits as they often help to check if a re-render is even needed to begin with.
 
+Declaritive code make easy for debugging
+
 ### Low learning curve
 Of the major frontend "frameworks" available, React has a relatively low barrier to entry and has a quick ramp up time. In addition, React's official documentation is extremely clear and provide many examples for most of the common use cases. 
 
