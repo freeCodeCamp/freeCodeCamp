@@ -9,16 +9,28 @@ JavaScript provides the user with five arithmetic operators: `+`, `-`, `*`, `/` 
 
 `a + b`
 
+**Caution**
+<br>
+The `+` serves as an arithmetic operator and for concatenating strings. Take extra caution when dealing with numbers versus string data types.
+
+If `a` and `b` data types are both numbers, their value will add.
+<br>
+If `a` is a number and `"b"` is a string, their value will concatenate into a string.
+<br>
+If `"a"` and `"b"` are both strings, their value will concatenate into a string.
+
 **Usage**
 
     2 + 3          // returns 5
+    5 + "3"        // returns "53"
+    "10" + "40"    // returns "1040"
     true + 2       // interprets true as 1 and returns 3
     false + 5      // interprets false as 0 and returns 5
     true + "bar"   // concatenates the boolean value and returns "truebar"
     5 + "foo"      // concatenates the string and the number and returns "5foo"
     "foo" + "bar"  // concatenates the strings and returns "foobar"
 
-_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_(' target='_blank' rel='nofollow'>increment</a>) operator that is a great shortcut when you're adding numbers by 1.
+_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_(' target='_blank' rel='nofollow'>increment</a> operator that is a great shortcut when you're adding numbers by 1.
 
 ## Subtraction
 
@@ -34,7 +46,7 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     true - 3   // interprets true as 1 and returns -2
     5 - "foo"  // returns NaN (Not a Number)
 
-_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--' target='_blank' rel='nofollow'>decrement</a>) operator that is a great shortcut when you're subtracting numbers by 1.
+_Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Decrement_(--' target='_blank' rel='nofollow'>decrement</a> operator that is a great shortcut when you're subtracting numbers by 1.
 
 ## Multiplication
 
