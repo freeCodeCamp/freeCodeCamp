@@ -17,4 +17,15 @@ El encabezado UDP se compone de los siguientes cuatro campos:
 *   Suma de comprobación (16 bits): Se utiliza para la comprobación de errores del encabezado y los datos. Opcional.
     
 
-#### Más información:
+#### Más informacion
+
+         16 bits               16 bits
+ <--------------------> <-------------------->
+
+ +---------------------+---------------------+
+ |     puerto origen   |   puerto destino    |
+ +-------------------------------------------+
+ |        Longitud     | suma de comprobacion|
+ +---------------------+---------------------+
+ |           Datos de la trama               |
+ +-------------------------------------------+
