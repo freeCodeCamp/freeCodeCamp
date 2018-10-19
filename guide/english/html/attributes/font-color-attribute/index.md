@@ -14,7 +14,7 @@ This attribute is used to set a color to the text enclosed in a ```<font>``` tag
 This attribute is not supported in HTML5. Instead, this [freeCodeCamp article](https://guide.freecodecamp.org/css/colors) specifies a CSS method, which can be used.
 
 ### Note:
-A color can also be specified using a 'hex code' or an 'rgb code', instead of using a name.
+A color can also be specified using a 'hex code' or an 'rgb code', instead of using a name. For more information on RGB color model, [see here](https://en.wikipedia.org/wiki/RGB_color_model). For more information on hex code, [see here](https://en.wikipedia.org/wiki/Hexadecimal).
  
 ### Example:
 1. Color name attribute
