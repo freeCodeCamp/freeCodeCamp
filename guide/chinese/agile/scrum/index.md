@@ -26,6 +26,7 @@ Scrum是敏捷伞下的方法之一。它起源于“scrummage”，这是橄榄
 *   产品负责人（PO）：管理层唯一负责任的人员。 PO决定进出Product Backlog的内容。
 *   交付团队：他们需要按照产品积压中的PO设置的任务工作，并在sprint结束时提供所需的可分发性。
 *   Scrum Master： - Scrum Master必须严格遵守Scrum指南，让团队了解在遵循Scrum时遵守Scrum指南的必要性。 Scrum Master的工作是确保所有Scrum仪式按时进行，并按照scrum指南由所有必需的人员参与。 SM必须确保每日Scrum定期进行并由团队积极参与。
+*   注意：Scrum Master 不是主管
 
 #### 更多信息：
 
