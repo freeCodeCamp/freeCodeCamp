@@ -199,9 +199,13 @@ sizeof()	               Returns the size of a variable.	                    size
 ? :	                    Conditional Expression.	                              If Condition is true ? then value X : otherwise value Y
 
 
-## 6. Operator precedence in C
+## 6. Operator precedence and associativity in C
 Operators with the highest precedence appear at the top of the list. Within an expression, operators
-with higher precedence will be evaluated first.
+with higher precedence will be evaluated first. When two or more operators of the same precedence is
+present in an expression, then the associativity of the operator tells us the order in which the operators
+must be evaluated. The associativity in the given list is from left to right i.e, operators in the left are
+evaluated first. 
+
 - Postfix `() [] -> . ++ --`
 - Unary `+ - ! ~ ++ -- (type)* & sizeof`
 - Multiplicative `* / %`
