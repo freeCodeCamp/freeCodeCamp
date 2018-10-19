@@ -144,7 +144,7 @@ Similarly a 3D array can also be made. It can be visualised as a cuboid instead 
 int a=2, b=3, c=4;
 int[][][] a=new int[a][b][c];
 ```
-In a similar manner, one can an array of as many dimensions as he/she wishes to but visualizing an array of more than 3 dimensions is difficult to visualize in a particular way.
+In a similar manner, one can an array of as many dimensions as he/she wishes to but visualizing an array of more than 3 dimensions is difficult to visualize in a particular way. Tip: Arrays like this can be quite confusing to beginners, so if you are planning to use this be ready to make a visual representation either in your head or on pen and paper
 
 ### Jagged Arrays
 Jagged arrays are multi-dimensional arrays that have a set number of rows but a varying number of columns. Jagged arrays are used to conserve memory use of the array. Here is a code example:
