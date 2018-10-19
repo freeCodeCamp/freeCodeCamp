@@ -21,6 +21,8 @@ Most used options:
 * `-l`, List in long format
 * `-G`, enable colorized output.
 * `-s`, List File Size.
+* `-lh`, Shows sizes in human readable format
+* `-lS`, Displays file size in order, will display big in size first
 
 ### Example:
 
