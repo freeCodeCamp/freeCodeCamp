@@ -30,7 +30,7 @@ public class Car implements Vehicle {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItd/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CItd/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Now, there is a **ground rule** : The Class must implement **all** of the methods in the Interface. The methods must have _the exact same_ signature (name, parameters and exceptions) as described in the interface. The class _does not_ need to declare the fields though, only the methods.
 
