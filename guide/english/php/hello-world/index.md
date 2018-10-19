@@ -5,11 +5,6 @@ title: PHP - Hello World
 
 PHP scripts are executed on the server.
 
-Before you continue you should have a basic understanding of the following:
-
-### HTML
-### CSS
-### JavaScript
 PHP files can contain Text, HTML, CSS, JavaScript, and PHP code.
 A PHP script is executed on the server, and the plain HTML result is sent back to the browser.
 
@@ -35,9 +30,11 @@ Below, we have an example of a simple PHP file, with a PHP script that uses a bu
 <body>
 
 <?php
-echo "My first PHP script!";
+echo "Hello World!";
 ?>
 
 </body>
 </html>
 ```
+
+Obviously it seems weird that we are writting a Hello World message with PHP instead of just using HTML. PHP can handle dynamic contents. For example outputting the username, database query results and so on.
