@@ -4,14 +4,14 @@ title: Add Different Padding to Each Side of an Element
 challengeType: 0
 guideUrl: 'https://russian.freecodecamp.org/guide/certificates/add-different-padding-to-each-side-of-an-element'
 videoUrl: ''
-localeTitle: Добавление различной прокладки к каждой стороне элемента
+localeTitle: Добавьте разные внутренние отступы к каждой стороне элемента
 ---
 
 ## Description
-<section id="description"> Иногда вам нужно настроить элемент таким образом, чтобы на каждой его стороне было различное количество <code>padding</code> . CSS позволяет вам управлять <code>padding</code> всех четырех отдельных сторон элемента с помощью свойств <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> и <code>padding-left</code> . </section>
+<section id="description"> Иногда вам нужно настроить элемент таким образом, чтобы на каждой его стороне было различное количество внутренних отступов - <code>padding</code> . CSS позволяет вам управлять <code>padding</code> всех четырех отдельных сторон элемента с помощью свойств <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> и <code>padding-left</code> . </section>
 
 ## Instructions
-<section id="instructions"> Дайте синей коробке <code>padding</code> <code>40px</code> на ее верхней и левой стороне, но только <code>20px</code> на ее нижней и правой стороне. </section>
+<section id="instructions"> Задайте синей коробке <code>padding</code> <code>40px</code> на ее верхней и левой стороне, но только <code>20px</code> на ее нижней и правой стороне. </section>
 
 ## Tests
 <section id='tests'>
