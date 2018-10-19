@@ -7,6 +7,8 @@ The Central Processing Unit (CPU) serves as the "brain" of a computer, allowing 
 
 CPUs are integrated circuits, which are complex circuits embedded on a single chip. They include registers, which store single values, and input/output pins. These pins allow them to talk to the rest of the computer. Due to the continued advancement of CPU technology, many computers today utilize a multi-processing unit. Multi-processors are single chips that contain two or more CPUs or "Cores" that allow for increased processing capabilities.    
 
+What a cpu looks like:https://images.google.com/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F1%2F1b%2FCpu.jpg&imgrefurl=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ACpu.jpg&docid=qsh6mqVKhdPxyM&tbnid=rVkMF5e3fWRKnM&vet=1&w=1984&h=1488
+
 CPU speeds are measured in gigahertz (GHz). For every gigahertz of speed, a CPU can perform one billion instructions in a second. These instructions are very simple, such as "add two numbers" or "move this variable to this location." To see this in action, read about <a href='https://en.wikipedia.org/wiki/Assembly_language'>assembly language</a>.
 
 Gigahertz is not the only determining factor in the actual speed of a processor, as different processors with the same gigahertz speed (also known as clock speed) may perform real-world tasks at different speeds due to using different sets of instructions to perform these tasks. These instruction sets are called CPU architectures.
@@ -26,7 +28,7 @@ A microprocessor is a silicon chip containing millions of microscopic transistor
 
 <b> Manufacturers of computer microprocessors </b>
   
-There are two primary manufacturers of computer microprocessors. Intel and Advanced Micro Devices (AMD) lead the market in terms of speed and quality. Intel's desktop CPUs include Celeron, Pentium and Core. AMD's desktop processors include Sempron, Athlon and Phenom. Intel makes Celeron M, Pentium M and Core mobile processors for notebooks. AMD makes mobile versions of its Sempron and Athlon, as well as the Turion mobile processor which comes in Ultra and Dual-Core versions. Both companies make both single-core and multi-core processors.
+There are two primary manufacturers of computer microprocessors. Intel and Advanced Micro Devices (AMD) lead the market in terms of speed and quality. Intel's desktop CPUs include Celeron, Pentium,Core,and Xeon. AMD's desktop processors include Sempron, Athlon and Phenom. Intel makes Celeron M, Pentium M and Core mobile processors for notebooks. AMD makes mobile versions of its Sempron and Athlon, as well as the Turion mobile processor which comes in Ultra and Dual-Core versions. Both companies make both single-core and multi-core processors.
 
 
 <b> Manufacturers of mobile microprocessors </b>
