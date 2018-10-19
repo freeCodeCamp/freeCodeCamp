@@ -4,6 +4,7 @@ title: Functions in C++
 ## Definition:
 
 A function is a group of statements that together perform a task. Every C++ program has at least one function, which is `main()`.
+The simplest C++ program consists of just the `main()` function. 
 
 A function declaration tells the compiler about a function's name, return type, and parameters. A function definition provides the actual body of the function.
 One must always make sure, before using a function in the program, the function is defined.
