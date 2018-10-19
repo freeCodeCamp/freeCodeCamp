@@ -168,3 +168,21 @@ The reason for C not checking the indexing bound is simple: C is an efficient la
 
 - When you try to access the last element of the array. Suppose the length of the array A be 4 and while accessing the last element as
 A[4] will return an error, as the the indexing starts from 0.
+
+## Array in C with loop
+we can insert elements into the array using a loop and then print it .
+Here I am inserting element and printing elements from the loop using a ffor loop
+```C
+int array1[10];
+printf("Entering Elements to the array \n");
+for(int i=0;i<10;i++)
+{
+    scanf("%d",&array1[i]);
+}
+printf("\n Printing the elements of the array \n");
+for(int i=9;i>=10;i--)
+{
+    printf("%d \n",array1[i]);
+}
+```
+Using an loop we can perform recurssive task with less codes. 
