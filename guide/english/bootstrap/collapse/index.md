@@ -8,6 +8,10 @@ Collapse is a plugin that helps you hide or reveal elements using a smooth anima
 
 Bootstrap collapse is provided as seperate plugin called collapse.js, which means it can be used outside the bootstrap environment. The plugin itself can be found here http://getbootstrap.com/2.0.4/javascript.html#collapse.
 
+
+
+
+
 Bootstrap collapse can be used with a couple of elements, a button, anchor tag or panel. To use collapse you need at least two elements, one element will control the hide or reveal state of the other element. 
 
 The collapse plugin works by changing the class on the collapsible element. There are three possible classes:
