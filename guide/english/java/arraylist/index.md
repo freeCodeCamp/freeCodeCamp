@@ -6,12 +6,12 @@ title: ArrayList
   
   The *Collection framework* consists of all interfaces and classes that can hold a set of values (similar to [arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)). **ArrayList** is a class that is in this hierarchy and known as a _**Collection object**_. It implements the *List* interface which in turn implements the *Collection* interface. This *Collection* interface can be found in the `java.util` package. You will need to import this package.
   
-  import java.util.ArrayList;  //it would more efficient.
+  ```java import java.util.ArrayList;  //is more efficient than importing all of java.util```
   
-  always import specific package that saves memory size and works in less time
+  Always import the most specific package in order to save memory size and performance time.
   
   
-  ArrayList is a class that is used to create dynamic arrays. It is slower than regular arrays but allows for a lot of manipulation. It can be initialized to have a specific size or it will have a default size of 10 units. 
+  `ArrayList` is a class that is used to create dynamic arrays. It is slower than regular arrays but allows for a lot of manipulation. It should be initialized to have a specific size or it will have the default size of 10 units. 
   
   
   ```java
@@ -28,41 +28,41 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
   An ArrayList is dynamic, meaning it will grow in size if required and similarly shrink in size if elements are deleted from it. This is what makes it better to use than normal arrays.
   
-  To clear/delete all elements from ArrayList
+  To clear/delete all elements from ArrayList:
   ```java
   variable.clear();
   ```
   
-  we can delete existing element from the list
+  We can delete a specific element from the list:
   ```java
   variable_name.remove(index_number);
   ```
   
-  to access existing element from the list
+  To access an element from the list:
   ```java
   variable_name.get(index_number);
   ```
    
-   we can modify the existing element too
-   ```java
-   variable_name.set(index_number,element);
+  We can modify the existing element too:
+  ```java
+  variable_name.set(index_number,element);
   ```
   
-  we can reverse the order of elements in Array-list.
+  We can reverse the order of elements in the ArrayList:
   import java.util.Collections // package
   ```java
   Collections.reverse(variable_name);
   ```
   
- Sort the collection // in ascending order
- ```java
+  Sort the collection in ascending order:
+  ```java
   Collections.sort(variable_name);
   ```
   
-   for sorting in decending order
-   ```java
+  Sort in decending order:
+  ```java
   Collections.reverseOrder());
- ```
+  ```
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
