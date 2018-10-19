@@ -74,6 +74,20 @@ print(list_str)
 ```
 List of fruits: Apple, Banana, Pear
 ```
+### Convert an integer to 8-bit binary
+
+### Input
+
+```python
+num = 42
+
+print(f'The binary of {num} is {num:08b}')
+```
+
+### Output
+```
+The binary of 42 is 00101010
+```
 
 ### Sources
 https://www.python.org/dev/peps/pep-0498/
