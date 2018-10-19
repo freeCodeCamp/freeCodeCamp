@@ -4,7 +4,7 @@
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": false;
   },
   "properties": {},
   "validations": [],
