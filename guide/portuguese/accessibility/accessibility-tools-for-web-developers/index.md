@@ -33,7 +33,10 @@ Existem muitas ferramentas e recursos on-line que podem ajudá-lo a garantir que
 7.  **[AccessLint](https://www.accesslint.com)**
     
     Um aplicativo do GitHub que verifica seus pedidos de pull para problemas de acessibilidade.
-    
+
+8.  **[DaSilva](http://www.dasilva.org.br/)**
+
+    Um validador em português que verifica problemas de acessibilidade em um determinado site, a partir de sua URL.
 
 * * *
 
