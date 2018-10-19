@@ -202,26 +202,31 @@ int main()
 
   // note the result of sizeof() may vary depending on the type of machine.
   ```
-- `&`  Address Operator - Gives the address of a variable.
+- `&`  Address Operator, Gives the address of a variable.
   ```C
   int a;
   &a;  // result an address such as 860328156
   ```
-- `*`  Value at Address Operator - gives the value at an address.
+- `*`  Value at Address Operator, gives the value at an address.
   ```C
   int a = 50;
   int *b = &a;
   &a; // result is the address of 'a' such as 1152113732
   *b; // result is 50, the value stored at the address
   ```
-
-Operator	               Description	                                        Example
-sizeof()	               Returns the size of a variable.	                    sizeof(a), where a is integer, will return 4.
-&	                    Returns the address of a variable.	                    &a; returns the actual address of the variable.
-*	                    Pointer to a variable.	                              *a;
-? :	                    Conditional Expression.	                              If Condition is true ? then value X : otherwise value Y
-
-
+- `? :`  Ternery Operator, simplifies a typical if-else conditional.  condition ? value_if_true : value_if_false 
+  ```C
+  // a typical if-else statement in c
+  if (a > b) {
+     result = x;
+  }
+  else {
+     result = y;
+  }
+  // can be rewritten with the ternary operator as
+  result = a > b ? x : y;
+  ```
+  
 ## 6. Operator precedence in C
 Operators with the highest precedence appear at the top of the list. Within an expression, operators
 with higher precedence will be evaluated first.
