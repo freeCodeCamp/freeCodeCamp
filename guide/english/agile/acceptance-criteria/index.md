@@ -22,3 +22,18 @@ Consider the following situation: when accepting the user story the Product Owne
 Nomad8 provides an [FAQ on Acceptance Criteria](https://nomad8.com/acceptance_criteria/)
 
 Leading Agile on [Acceptance Criteria](https://www.leadingagile.com/2014/09/acceptance-criteria/)
+
+!!!! My changes !!!
+
+****Acceptance Criteria
+
+Acceptance Criteria are really important.  Unfortunately, We often overlook or undervalue it as an aspect of the iterative planning process. It is super important because projects succeed or fail based on the ability of the team to meet their customers documented and perceived acceptance criteria. 
+
+Clearly we define the criteria up front, avoid surprises at the end of a sprint, or release, and ensure a higher level of customer satisfaction.  In other words we’re able to answer these two important questions: Did we build the right product? And, Did we build the product right???
+
+Acceptance criteria define when a work item is complete and working as expected. Express criteria clearly, in simple language the customer would use, without ambiguity regarding the expected outcome. 
+
+This sets our testers up for success, since they will be taking our criteria and translating them into automated test cases to run as part of our continuous integration build.
+
+Microsoft Press defines Acceptance Criteria as “Conditions that a software product must satisfy to be accepted by a user, customer or other stakeholder.” Google defines them as “Pre-established standards or requirements a product or project must meet.”
+
