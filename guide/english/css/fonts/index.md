@@ -7,16 +7,14 @@ The CSS font properties define the font family, weight, size, variant, line heig
 ### Font family
 The font family of a text is simply set by using the `font-family` property.
 
-It works with a *fallback* system, if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. 
+It works with a *fallback* system, if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. Use either single quotes (') or double quotes (").
 
 ```css
 p {
     font-family: "Times New Roman", Times, serif;   
 }
 ```
-In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback
-mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic
-family names are serif, sans-serif, monospace, cursive, fantasy, system-ui.
+In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback mechanism for preserving style if the family-name is unavailable. A generic name should always be the last item in the list of font family names. Generic family names are serif, sans-serif, monospace, cursive, fantasy, system-ui.
 
 ### Font style
 The `font-style` property can be used to specify italic text.
