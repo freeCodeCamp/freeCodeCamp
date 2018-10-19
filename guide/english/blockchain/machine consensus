@@ -1,0 +1,13 @@
+Machine consensus is a computer science protocol to reliably and securely build decentralised databases on a peer-to-peer network where the transaction creators are not explicitly known. The protocol or algorithm decides if a transaction is valid and should be appended to a distributed ledger or blockchain.
+
+Machine consensus algorithms need to be robustly designed to overcome crash and Byzantine failures. The key requirememts of these protocols include:
+* Agreement: All valid transactions must agree on the same value
+* Weak Validity: For each valid transaction, its output must be the input of another valid transaction
+* Strong Validity: All valid transactions when provided the same input value must generate the same output value
+* Termination: All transactions must settle on an output value
+
+In addition, machine consensus algorithms need to be fault, attack and collusion resistant.
+
+References:
+1. [Wikipedia: Consensus (computer science)](https://en.wikipedia.org/wiki/Consensus_(computer_science))
+2. [Wikipedia: Byzantine Fault Tolerance](https://en.wikipedia.org/wiki/Byzantine_fault_tolerance)
