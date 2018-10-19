@@ -20,7 +20,7 @@ for i in range(5):
  ```
  
 #### Example with optional additional arguments
-The first argument, *start*, is the starting number of the sequence.
+The first argument, *start*, is the starting number of the sequence. It defaults to 0 if only one number is start is not specified.
 
 The second argument, *stop*, means to generate numbers up to, but not including this number.
 
