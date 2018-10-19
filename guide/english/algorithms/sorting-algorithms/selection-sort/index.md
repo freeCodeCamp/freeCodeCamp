@@ -17,6 +17,11 @@ But, how would you write the code for finding the index of the second smallest v
 
 * An easy way is to notice that the smallest value has already been swapped into index 0, so the problem reduces to finding the smallest element in the array starting at index 1.
 
+## Complexity
+
+| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
+| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
+| **Selection sort**    | n<sup>2</sup>   | n<sup>2</sup>       | n<sup>2</sup>       | 1         | No        |           |
 
 ### Implementation in C/C++
 
