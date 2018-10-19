@@ -36,7 +36,7 @@ of frameworks, that's why professional developers use python for making most sec
 Python is one of the best languages suited for machine learning, deep learning and data analytics with a stronghold in all of them.
 
 There are specialized languages best suited for various role such as R and MATLAB but when it comes to overlapping fields of applications python wins hands down due to
-its flexibility and rapid prototyping and availability of libraries.
+its flexibility and rapid prototyping and availability of libraries. It is also has consistent syntax and is similar to the human language.
 
 #### Telegram Bots Development
 You can use Python and some Python-libraries for developing your own <a href='https://core.telegram.org/bots' target="_blank" rel="nofollow">Telegram Bots</a>
