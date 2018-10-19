@@ -13,6 +13,7 @@ There are a few really helpful arguments to aid this:
 - `/` is the root of your system to reach core folders, such as `system`, `users`, etc.
 - `~` is the home directory, usually the path `/users/username`. Move back to folders referenced relative to this path by including it at the start of your path, for example `~/projects`.
 - `-` can be used to move to the previous directory. For example, you are in `/A`, then cd to `/B`, use `cd -` and you are back to `/A`
+- `~[number]` will cd to that entry from the output of `dirs` directories can be pushed on poped to the 'dirs' stack using `pushd` and `popd` respectively.
 - Typing only `cd` will move to the home directory works same as `cd ~`
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Cd_(command))
