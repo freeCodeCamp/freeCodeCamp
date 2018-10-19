@@ -21,13 +21,13 @@ You have to add the following CSS property to achieve the transparency levels.
 OR
 
 .class-name {
-  opacity:1.0;
+  opacity:1;
 }
 ```
 **Translucent**
 ```css
 .class-name {
-  opacity:0.5;
+  opacity:.5;
 }
 Opacity value can be anything between 0 and 1;
 ```
@@ -40,7 +40,7 @@ Opacity value can be anything between 0 and 1;
 OR
 
 .class-name {
-  opacity:0.0;
+  opacity:0;
 }
 ```
 Alternatively you can use a transparent rgba value like this:
@@ -50,6 +50,21 @@ Alternatively you can use a transparent rgba value like this:
   background-color: rgba(0,0,0,.5);
   }
  ```
+Transparent Hover Effect
+The opacity property is often used together with the :hover selector to change the opacity on mouse-over:
+
+img {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+img:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+
+
 The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) quals 50%. We use this method to add transparency to an element without affecting the content inside.
 
 [A codepen example to show background opacity ranges](https://codepen.io/lvcoulter/full/dVrwmK/)
