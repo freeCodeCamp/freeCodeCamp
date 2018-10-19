@@ -47,6 +47,7 @@ title: Operators
      int b = a--; // postfix operator; a = 6, b = 7
      int c = --a; // prefix operator; a = 5, c = 5
      ```
+```C     
 // C Program to demonstrate the working of arithmetic operators
 #include <stdio.h>
 int main()
@@ -70,7 +71,7 @@ int main()
 
     return 0;
 }
-
+```
 ## 2. Relational Operators
 
 - `==` Equal - true when the two operands are equal
@@ -189,17 +190,29 @@ int main()
   a %= 5; // equivalent to a = a % 5 = 21 % 5 = 1
   ```
 
-## 6. Misc Operators, sizeof() & ternary
+## 6. Misc Operators, sizeof(), Address, Value at Address and Ternary
 
 - `sizeof()`  Returns the amount of memory allocated.
   ```C
-  int a = 21;
+  int a;
   sizeof(a);  // result is 4
 
-  double b = 21.21;
+  double b;
   sizeof(b);  // result is 8
 
   // note the result of sizeof() may vary depending on the type of machine.
+  ```
+- `&`  Address Operator - Gives the address of a variable.
+  ```C
+  int a;
+  &a;  // result an address such as 860328156
+  ```
+- `*`  Value at Address Operator - gives the value at an address.
+  ```C
+  int a = 50;
+  int *b = &a;
+  &a; // result is the address of 'a' such as 1152113732
+  *b; // result is 50, the value stored at the address
   ```
 
 Operator	               Description	                                        Example
