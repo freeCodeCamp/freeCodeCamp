@@ -30,6 +30,11 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+###Head First Javascript Programming
+
+   The Head Frist books series by Eric Freeman and Elisabeth Robson cover a variety of programming topics in a beginner freindly manner. This installment on Javascript is no exception. It is available hard copy and provides exercises to master the basics and understand the nature of programming. 
+   -[Amazon](https://www.amazon.com/Head-First-JavaScript-Programming-Brain-Friendly/dp/144934013X)
+   
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
