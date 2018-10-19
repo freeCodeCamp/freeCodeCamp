@@ -17,6 +17,8 @@ There are various forms of acceptance testing:
 > - Alpha Testing
 >
 > - Beta Testing
+>
+> - Black Box Testing
 
 ## Acceptance Criteria
 Acceptance criteria are defined on the basis of the following attributes
@@ -134,3 +136,4 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 #### More Information:
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
+
