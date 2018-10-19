@@ -13,7 +13,7 @@ Gigahertz is not the only determining factor in the actual speed of a processor,
 
 Most modern CPUs use a 64-bit architecture, which means they use 64 bit long memory adresses. Older CPUs used 32-bit, 16-bit, and even 8-bit architectures. The largest number a 64-bit CPU can store is 18,446,744,073,709,552,000. A CPPU need memory adresses to get specified values from the RAM. If we call the length of the memory adresses n, 2^n is the amount of memory cells a CPU can adress.
 
-An instruction cycle for a CPU is called the fetch-decode-execute cycle - where the computer retrieves a instruction from its memory, deetermines which instruction it fetched and what it does, and then carries out said instrucitons.
+An instruction cycle for a CPU is called the fetch-decode-execute cycle - where the computer retrieves a instruction from its memory, determines which instruction it fetched and what it does, and then carries out said instrucitons.
 
 Perhaps the most common issue affecting the CPU is inadequate cooling. CPUs are the main generators of heat in computer systems. Due to their nature, they are typically located under the computer fan. There are various ways of reducing heat in a computer with the two main systems being air fans or liquid cooling systems. Proper heat maintenance and additional hardware can allow a properly configured CPU to perform better than rated by the chip manufacturer (aka "Overclocking"). Note that chips must be unlocked in order to have the ablility to be overclocked.
 
