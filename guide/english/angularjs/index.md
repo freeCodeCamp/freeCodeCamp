@@ -30,3 +30,6 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+## Books
+
+[AngularJS by O'Reilly](http://shop.oreilly.com/product/0636920028055.do)
