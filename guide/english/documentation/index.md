@@ -13,6 +13,10 @@ It may become an extremely important idea to make a habit out of commenting your
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
+Even though the code itself should always be self explanatory, it is often good to have a document along with the code files that describes it into more detail. The idea of such a document is not only to cover the technical parts so that contributors are able to add or change the code but also for people wanting to use the program. For that reason, it is for example good to have a guide on how to use the created program and some examples along with it. Documents become especially important for bigger projects since it can be a lot more time consuming and complicated to understand a program by just reading its code compared to an explanatory document. 
+If the program uses already existing material such as libraries or is based on some other projects, it is always a good idea to mention those in the document since it is part of the foundation.
+
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
