@@ -18,6 +18,7 @@ The html5 doctype `<!DOCTYPE html>` is a required preamble used to inform the br
     </body>
 </html>
 ```
+[Here is a video on the topic](https://www.youtube.com/watch?v=-nzV5MlFIkM&t=1s)
 
 #### More Information:
 
