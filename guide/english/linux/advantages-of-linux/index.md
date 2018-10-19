@@ -11,7 +11,7 @@ Software is only as good as the support its given. Imagine this: a piece of soft
 
 ## Lightweight.
 
-Linux's requirements for running on a system are much lower than that of Windows or Mac. With the right Linux distribution a user can have a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
+Linux's requirements for running on a system are much lower than that of Windows or Mac. The right Linux distribution can allow a modest setup and Linux will give the system value. Disk space and memory footprint can also be lower too. Some distributions are suitable for CPUs dating back to the Pentium family, others have a requirement of as little as 128MB of RAM and around the same amount for disk space!
 
 ## Heavily documented for beginners and advanced users alike.
 
