@@ -209,15 +209,17 @@ Se você clicar na tag head, poderemos ver nossas bibliotecas de scripts incluí
 
 ou
 
-[!["Assista](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI)
-
-[
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI" target="_blank">
+  <img src="http://img.youtube.com/vi/100pKUE3OPI/0.jpg" alt="Assista ao vídeo" width="500" height="375" border="10" />
+</a>
 
 ### Recapitular
 
 Então, vamos fazer uma rápida recapitulação. Na nossa tag head pegamos as tags de script para React, ReactDOM e Babel. Estas são as ferramentas que nosso navegador precisa em seus metadados para ler nosso código React e JSX em específico. Em seguida, localizamos a posição no DOM em que desejamos inserir nosso React, criando um elemento div com o ID de "app". Em seguida, criamos uma tag de script para inserir nosso código React. Usamos o método ReactDOM.render () que leva dois argumentos. O "o quê" do conteúdo do React, neste caso o nosso JSX, e o segundo argumento é o "where" em que você deseja inserir o conteúdo do React no DOM. Neste caso, é o local com o id de "app".
 
-](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI)
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI" target="_blank">
+  <img src="http://img.youtube.com/vi/100pKUE3OPI/0.jpg" alt="Assista ao vídeo" width="500" height="375" border="10" />
+</a>
 
 [Como alternativa ao JSX, você pode usar o compilador ES6 e Javascript como o Babel.](http://www.youtube.com/watch?feature=player_embedded&v=100pKUE3OPI) [https://babeljs.io/](https://babeljs.io/)
 
