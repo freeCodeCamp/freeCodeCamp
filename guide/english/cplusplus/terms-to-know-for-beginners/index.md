@@ -18,6 +18,8 @@ title: IDE and Printing different text
 
 Now, install the IDE and try changing the text from the program in the last article.
 
+There are also online IDE's available such as https://www.codiva.io/
+
 ### Changing text on C++
 
 * To change text ,change what's typed in the `""` after `cout<<`
@@ -148,4 +150,4 @@ This evaluates to false
 ```
 This evaluates to true
 
-<a href='https://repl.it/L4ox' target='_blank' rel='nofollow'>A summation of all the print statements used in this article. Feel free to tweak around woth the code ! :) </a>
+<a href='https://repl.it/L4ox' target='_blank' rel='nofollow'>A summation of all the print statements used in this article. Feel free to tweak around with the code ! :) </a>
