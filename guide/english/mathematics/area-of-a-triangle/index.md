@@ -5,7 +5,7 @@ title: Area of a Triangle
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 ## Area of a Triangle
 
-A triangle is a three sided, two dimensional polygon. There are two methods to determine the area.
+A triangle is a three sided, two dimensional polygon. There are two methods to determine the area. SI unit of Area(A) is 	Square metre [m2]
 
 ### Method 1
 The area of a triangle can be calculated by multiplying 0.5 to the base length to the perpendicular height.
