@@ -13,20 +13,20 @@ O SQL é um padrão internacional (ISO), mas você encontrará muitas diferença
 ### O que vamos cobrir
 
 *   Use (define qual banco de dados a instrução usará)
-*   Selecionar e cláusulas
-*   Onde Cláusula (e / ou, IN, Entre, LIKE)
-*   Ordenar por (ASC, DESC)
-*   Agrupar por e tendo
+*   Cláusulas Select e From
+*   Cláusula Where (and / or, IN, Between, LIKE)
+*   Order By (ASC, DESC)
+*   Group By e Having
 
-### Como usar isso
+### Como usar Use
 
-Isso é usado para selecionar o banco de dados que contém as tabelas para suas instruções SQL:
+Use é usado para selecionar o banco de dados que contém as tabelas para suas instruções SQL:
 
 ```sql
-use fcc_sql_guides_database; -- select the guide sample database 
+use fcc_sql_guides_database; -- select the guide sample database
 ```
 
-### Selecionar e cláusulas
+### Cláusulas Select e From
 
 A parte Select é normalmente usada para determinar quais colunas dos dados você deseja mostrar nos resultados. Há também opções que você pode usar para mostrar dados que não são uma coluna da tabela.
 
@@ -39,11 +39,11 @@ Este exemplo mostra duas colunas selecionadas da tabela "student" e duas colunas
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/syntax01.JPG)
 
-### Onde Cláusula (e / ou, IN, Entre e LIKE)
+### Cláusula Where (and / or, IN, Between e LIKE)
 
 A cláusula WHERE é usada para limitar o número de linhas retornadas.
 
-Neste caso, todos os cinco destes serão utilizados é uma cláusula Where ridiculous.
+Neste caso, todos os cinco destes será utilizada uma tanto ridícula cláusula Where.
 
 Compare esse resultado com a instrução SQL acima para seguir essa lógica.
 
@@ -68,7 +68,7 @@ O exemplo a seguir é semelhante, mas especifica ainda que, se algum aluno tiver
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/syntax02.JPG)
 
-### Ordenar por (ASC, DESC)
+### Order By (ASC, DESC)
 
 Order By nos dá uma maneira de classificar o conjunto de resultados por um ou mais dos itens na seção SELECT. Aqui está a mesma lista acima, mas classificada pelo nome completo dos alunos. A ordem de classificação padrão é ascendente (ASC), mas para classificar na ordem oposta (descendente) você usa DESC, como no exemplo abaixo:
 
@@ -84,7 +84,7 @@ Order By nos dá uma maneira de classificar o conjunto de resultados por um ou m
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/syntax03.JPG)
 
-### Agrupar por e ter
+### Group By e Having
 
 O Group By nos dá uma maneira de combinar linhas e agregar dados. A cláusula Having é como a cláusula Where acima, exceto que ela age nos dados agrupados.
 
