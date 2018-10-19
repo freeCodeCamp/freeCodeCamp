@@ -69,6 +69,32 @@ Bootstrap comes with predefined grid classes for your use in markup. See more de
 
 - Version 4.0 added Sass and flexbox support
 
+
+#### Make hide or visible a div using Bootstrap 4.1
+Some new classes are introduced in Bootstrap 4.1 for hide or make visible any componenet.
+   Perspective     =    Classes
+   -----------       --------------
+* `hidden-xs-down` = `d-none d-sm-block`
+* `hidden-sm-down` = `d-none d-md-block`
+* `hidden-md-down` = `d-none d-lg-block`
+* `hidden-lg-down` = `d-none d-xl-block`
+* `hidden-xl-down` = `d-none` (always hidden)
+* `hidden-xs-up` = `d-none` (always hidden)
+* `hidden-sm-up` = `d-sm-none`
+* `hidden-md-up` = `d-md-none`
+* `hidden-lg-up` = `d-lg-none`
+* `hidden-xl-up` = `d-xl-none`
+* `hidden-xs` (only) = `d-none d-sm-block` (same as `hidden-xs-down`)
+* `hidden-sm` (only) = `d-block d-sm-none d-md-block`
+* `hidden-md` (only) = `d-block d-md-none d-lg-block`
+* `hidden-lg` (only) = `d-block d-lg-none d-xl-block`
+* `hidden-xl` (only) = `d-block d-xl-none`
+* `visible-xs` (only) = `d-block d-sm-none`
+* `visible-sm` (only) = `d-none d-sm-block d-md-none`
+* `visible-md` (only) = `d-none d-md-block d-lg-none`
+* `visible-lg` (only) = `d-none d-lg-block d-xl-none`
+* `visible-xl` (only) = `d-none d-xl-block`
+
 #### More Information:
 
 Bootstrap has thorough documentation with many <a href='https://getbootstrap.com/docs/4.0/examples/' target='_blank' rel='nofollow'>examples</a> and an <a href='https://getbootstrap.com/docs/4.0/getting-started/introduction/' target='_blank' rel='nofollow'>HTML template for getting started</a> (this template only has script included; it does not contain a set up of the grid system if that's what you're looking for). 
