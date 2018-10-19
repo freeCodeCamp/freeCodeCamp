@@ -20,3 +20,51 @@ This command will globally install the `TSLint` package using `npm`, a popular p
 ```bash
 npm i -g tslint
 ```
+
+### Configuring TSLint Rules
+
+By default TSLint is looking in the root directory for a .tslint.json file containing the rules to apply.
+
+```json
+{
+  "rules": {
+    "curly": true,
+    "eofline": false,
+    "align": [true, "parameters"],
+    "class-name": true,
+    "indent": [true, "spaces"],
+    "max-line-length": [true, 150],
+    "no-consecutive-blank-lines": [true],
+    "no-trailing-whitespace": true,
+    "no-duplicate-variable": true,
+    "no-var-keyword": true,
+    "no-empty": true,
+    "no-unused-expression": true,
+    "no-use-before-declare": true,
+    "no-var-requires": true,
+    "no-require-imports": true,
+    "one-line": [true,
+      "check-else",
+      "check-whitespace",
+      "check-open-brace"],
+    "quotemark": [true,
+      "single",
+      "avoid-escape"],
+    "semicolon": [true, "always"],
+    "typedef-whitespace": [true, {
+      "call-signature": "nospace",
+      "index-signature": "nospace",
+      "parameter": "nospace",
+      "property-declaration": "nospace",
+      "variable-declaration": "nospace"
+    }],
+    "whitespace": [true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"]
+  }
+}
+
+For more details about the different rules see  <a href='https://palantir.github.io/tslint/rules/' target='_blank' rel='nofollow'>TSLint
