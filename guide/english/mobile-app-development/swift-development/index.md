@@ -46,4 +46,4 @@ This is my curated list of awesome Swift and iOS Resources for becoming a self-t
 
 #### Youtube Playlists
 
-* [Swift Advanced Object Oriented Programming](https://www.youtube.com/playlist?list=PL8btZwalbjYmZwMwqeeAZKHsQ81GxiuaD)
+* [Swift Skills Updates](https://www.youtube.com/channel/UCuP2vJ6kRutQBfRmdcI92mA/videos)
