@@ -9,6 +9,8 @@ An Array is used to store a collection of similar data types.
 Arrays always start with the index of 0 and are instantiated to a set number of indexes. 
 All the variables in the array must be of the same type, declared at instantiation.
 
+Simply, think arrays as a wall full of empty square boxes that you can fill data in and grab data back from a specific box or even change and manipulate what is inside of that box.
+
 **Syntax:**
 
 ```java
