@@ -13,6 +13,16 @@ REST was developed to provide a uniform interface for
  - Manipulation of resources
  - Self descriptive messages
  - Using Hypermedia as the Engine of Application State (HATEOS)
+ 
+###Some Detailed Explanation
+REST is not an architecture, but a set of design criteria.
+Resource-Oriented Architecture (ROA) is a RESTful
+architecture that provides a commonsense set of rules and a
+step-by-step procedure for designing RESTful Web services
+following these design criteria. Each resource has a name
+(i.e. a URI) and a representation, and it may be linked to other
+resources via hyperlinks.
+
 
 ### Best Practices
 
