@@ -45,6 +45,8 @@ Or…
 
 **This task will require 25 development hours for completion.**
 
+In addition, we also need to consider several other factors which can directly or indirectly influence the estimations.
+
 ### More Information:
 
 - [Agile Constraints](http://www.brighthubpm.com/agile/50212-the-agile-triangle-value-quality-and-constraints/)
