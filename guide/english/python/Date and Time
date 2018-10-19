@@ -1,0 +1,43 @@
+from datetime import datetime
+
+https://docs.python.org/3/library/datetime.html
+
+
+
+
+Date and time example:
+
+
+import time
+import datetime
+
+print "Time in seconds since the epoch: %s" %time.time()
+print "Current date and time: " , datetime.datetime.now()
+print "Or like this: " ,datetime.datetime.now().strftime("%y-%m-%d-%H-%M")
+
+
+print "Current year: ", datetime.date.today().strftime("%Y")
+print "Month of year: ", datetime.date.today().strftime("%B")
+print "Week number of the year: ", datetime.date.today().strftime("%W")
+print "Weekday of the week: ", datetime.date.today().strftime("%w")
+print "Day of year: ", datetime.date.today().strftime("%j")
+print "Day of the month : ", datetime.date.today().strftime("%d")
+print "Day of week: ", datetime.date.today().strftime("%A")
+
+
+
+Output
+
+
+Time in seconds since the epoch: 	1349271346.46
+Current date and time:  		2012-10-03 15:35:46.461491
+Or like this: 				12-10-03-15-35
+Current year:  				2012
+Month of year:  			October
+Week number of the year:  		40
+Weekday of the week:  			3
+Day of year:  				277
+Day of the month :  			03
+Day of week:  				Wednesday
+
+
