@@ -24,7 +24,7 @@ From earlier, you should recall that `int` allows us to store integer values. Af
 
 The next line is `double my_second_variable = 983.9`. The similar structure from before should make it clear that you're telling the computer to create a variable called 'my_second_variable' that can hold `double` values, and that you want it to be set to 983.9.
 
-The actual name of the variable isn't important. It can be whatever you want, as long as it isn't any of the words that C has reserved for the actual language, and it can only include numbers and letters, never any spaces.The variable name cannot start with a number. By convention, C uses clear variable names that substitute underscores for spaces. The variable could also be camelCase, like this:
+The actual name of the variable isn't important. It can be whatever you want, as long as it isn't any of the words that C has reserved for the actual language, and it can only include numbers and letters, never any spaces. The variable name cannot start with a number. By convention, C uses clear variable names that substitute underscores for spaces. The variable could also be camelCase, like this:
 ```C
 double myFirstVariable = 983.9
 ```
@@ -56,7 +56,7 @@ In order to print a variable, you must have a format specifier, and then a varia
 ```C
     printf("%i and %f", my_first_variable, my_second_variable);
 ```
-In order to scan a variable, you must have a format specifier, and then the address of the  variable(denoted by adding '&' sign before the variable name) to be taken as input. Several format specifiers can be together in the same scanf(), as well:
+In order to scan a variable, you must have a format specifier, and then the address of the  variable (denoted by adding '&' sign before the variable name) to be taken as input. Several format specifiers can be together in the same scanf(), as well:
 ```C
     scanf("%i and %f", &my_first_variable, &my_second_variable);
 ```
