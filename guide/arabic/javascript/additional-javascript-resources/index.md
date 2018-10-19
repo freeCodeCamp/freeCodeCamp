@@ -93,6 +93,7 @@ localeTitle: دروس JavaScript وموارد أخرى
 
 *   [ديريك Banas 'تعلم شبيبة في واحد فيديو](https://www.youtube.com/watch?v=fju9ii8YsGs)
 *   [Derek Banas 'Object Oriented JavaScript](https://www.youtube.com/watch?v=O8wwnhdkPE4)
+*   [Net ninja javascript](https://www.youtube.com/watch?v=qoSksQ4s_hg&list=PL4cUxeGkcC9i9Ae2D9Ee1RvylH38dKuET)
 
 ## كتب
 
