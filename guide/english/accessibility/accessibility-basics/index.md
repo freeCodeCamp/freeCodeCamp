@@ -179,7 +179,7 @@ I have told you about accessibility, what it is, what it's not and why it's impo
 I have also given you the basics, the very basics, of getting accessibility right. These basics are however very powerful and can make your life a lot easier when coding for accessibility.  
 
 If we talk in FCC terms, you should keep these in mind while doing the HTML/CSS curriculum as well as the JavaScript curriculum.  
-In subsequent articles, I will touch on a number of more notch topics. A number of questions I will answer are:
+In subsequent articles, I will touch on a number of more top notch topics. A number of questions I will answer are:
 
 *   Adding structured headings sounds like a good idea, but they don't fit in my design. What do I do?
 *   Is there a way for me to write content only screen-readers and other assistive technologies see?
