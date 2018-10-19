@@ -17,3 +17,5 @@ Just one command to get started:
 ```terminal
 $ npm install bulma
 ```
+
+Read more about Bulma (here)[http://bulma.io/documentation/overview/start/]
