@@ -175,6 +175,36 @@ int binarySearch(int a[], int l, int r, int x) {
    return -1; 
 } 
 ```
+### Another Example in C
+int BinarySearch(int array[], int lb,int ub,int n)    /* lb is lower bound of array (usually 0),
+                                                         ub is the upper bound of array(length of array),                                                                                                                                                                        
+                                                         n is the number to be searched*/
+{                                                     // Binary Search is for a Sorted Array
+int flag=0;
+int first= lb;     // first is for first element
+int last= ub-1;    // last is for last element
+while(last>first)
+{
+  int mid=(first+last)/2;
+  if(array[mid]<n)
+  {
+    first=mid-1;
+  }
+  else if(array[mid]>n)
+  {
+    last=mid+1;
+  }
+  else if(array[mid]==n)
+  {
+    flag=1;
+    break;
+  }
+}
+if(flag==1)
+  printf("Number found");
+else
+  printf("Number not found");
+}
 
 ### C/C++ implementation
 
