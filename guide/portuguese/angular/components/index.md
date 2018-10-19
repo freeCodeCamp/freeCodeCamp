@@ -6,25 +6,25 @@ localeTitle: Componentes
 
 #### Motivação
 
-Angular contém muitos _esquemas_ para criação de aplicativos. Componentes são um desses esquemas. Eles abrangem uma única unidade de lógica relacionada a uma única parte do aplicativo. Os componentes costumam se associar a outros esquemas para operar com mais eficiência.
+Angular contém muitos _esquemas_ para criação de aplicativos. Componentes são um desses esquemas. Eles abrangem uma única unidade de lógica relacionada a uma única parte da aplicação. Os componentes costumam trabahar com outros esquemas para operar com mais eficiência.
 
-Entre todos os esquemas, os componentes tendem a consumir mais do que os fornecidos. Enquanto outros esquemas como diretivas, canais e serviços oferecem utilidade, os componentes utilizam. Eles são responsáveis ​​pela interface do aplicativo, portanto, faz sentido porque o utilitário consumir.
+Entre todos os esquemas, os componentes tendem a consumir mais do que fornecer. Enquanto outros esquemas como diretivas, _pipes_  e serviços fornecem utilidades que os componentes utilizam. Componentes são responsáveis pela interface do aplicativo, portanto, faz sentido porque consumir utilidades.
 
-Componentes simplificam o aplicativo. A lógica de afunilamento em uma única seção da interface visível é seu objetivo principal. Para criar aplicativos passo a passo, você deve criar componente por componente. Componentes agem como blocos de construção angular afinal.
+Componentes simplificam o aplicativo. Afunilar a lógica em uma única seção da interface visível é seu objetivo principal. Para criar aplicativos passo a passo, você deve criar componente por componente. Componentes agem como blocos de construção no Angular afinal.
 
 #### Introdução aos componentes
 
-Como mencionado, os componentes consomem utilidade (serviços / recursos). Eles estão entre lógica de negócios e apresentação para produzir uma unidade coesa. Angular atribui vários mecanismos para cada componente. Esses anexos identificam uma classe como um componente e definem seus recursos padrão.
+Como mencionado, os componentes consomem utilidade (serviços / recursos). Eles estão entre lógica de negócios e apresentação para produzir uma unidade coesa. Angular incorpora vários mecanismos para cada componente. Esses mecanismos identificam uma classe como um componente e definem seus recursos padrões.
 
-Angular deve reconhecer componentes quando se deparar com eles. Para fazer isso, `@Component` deve decorar todas as classes destinadas a ser um componente. Os decoradores indicam ao Angular o que é a classe.
+Angular deve reconhecer componentes quando se deparar com eles. Para fazer isso, o decorador `@Component` deve estar presente acima de todas as classes destinadas a ser um componente. Os decoradores indicam ao Angular o que é a classe.
 
-No caso de um componente, ele deve saber como interagir com seu injetor, conectar-se com um modelo, puxar de uma lista de estilos, encapsular seus estilos e assim por diante. Angular cuida da maioria dos requisitos de baixo nível. Os desenvolvedores ainda precisam configurar o comportamento de um componente, importar suas dependências e estender sua lógica.
+No caso de um componente, ele deve saber como interagir com seu injetor, conectar-se com um modelo, importar e encapsular seus estilos e assim por diante. Angular cuida da maioria dos requisitos de baixo nível. Os desenvolvedores ainda precisam configurar o comportamento de um componente, importar suas dependências e estender sua lógica.
 
-Para todas essas coisas, temos a classe do componente. A turma mantém tudo relativamente uniforme. Ele encapsula a lógica de negócios do componente.
+Para todas essas coisas, temos a classe do componente. A classe mantém tudo relativamente uniforme. Ele encapsula a lógica de negócios do componente.
 
 #### Classe de componente e metadados
 
-Vá em frente e instale a [interface de linha de comando (CLI) Angular](https://cli.angular.io) . Você pode aprender mais sobre isso [neste artigo](https://guide.freecodecamp.org/angular/command-line-interface) . O comando CLI `ng generate component [name-of-component]` produz o seguinte.
+Vá em frente e instale a [Interface de Linha de Comando (ou CLI) do Angular](https://cli.angular.io) . Você pode aprender mais sobre isso [neste artigo](https://guide.freecodecamp.org/angular/command-line-interface) . O comando `ng generate component [nome-do-componente]` produz o seguinte na aplicação.
 
 ```typescript
 import { Component, OnInit } from '@angular/core'; 
@@ -41,36 +41,36 @@ import { Component, OnInit } from '@angular/core';
  } 
 ```
 
-Este é o esqueleto básico do qual todos os grandes componentes se originam. O decorador `@Component` é a parte mais importante. Sem isso, o exemplo acima se torna uma classe genérica. Angular confia em decoradores para discernir o tipo esquemático de uma classe.
+Este é o esqueleto básico do qual todos os grandes componentes se originam. O decorador `@Component` é a parte mais importante. Sem isso, o exemplo acima se torna uma classe genérica. Angular depende de decoradores para discernir o tipo esquemático de uma classe.
 
-`@Component` recebe metadados como um único objeto. Decoradores são apenas funções JavaScript sob o capô. Eles aceitam argumentos como o objeto de metadados. O objeto de metadados configura as dependências básicas de um componente. Cada campo desempenha um papel.
+`@Component` recebe metadados como um único objeto. Decoradores por baixo dos panos são apenas funções JavaScript. Eles aceitam argumentos como o objeto de metadados. O objeto de metadados configura as dependências básicas de um componente. Cada campo desempenha um papel.
 
-*   `selector:` informa ao Angular para associar o componente a um determinado elemento no HTML do modelo do aplicativo.
+*   `selector:` informa ao Angular para associar o componente a um determinado elemento no HTML.
     
 *   `templateUrl:` aceita a localização do arquivo HTML do modelo do componente (é onde os dados são exibidos).
     
-*   `styleUrls:` aceita uma matriz de locais de arquivo de folha de estilo (strings). Essas folhas de estilo têm como alvo o modelo atribuído ao componente.
+*   `styleUrls:` aceita uma matriz de locais de arquivo de folha de estilo (strings). Essas folhas de estilo têm como alvo o seletor atribuído ao componente.
     
 
-Pense nos metadados como uma grande bolha de configuração. O decorador faz isso para gerar os dados específicos do componente. O decorador _decora_ a classe subjacente com dados necessários para o comportamento de sua classe. Uma classe de _componente_ que é.
+Pense nos metadados como uma grande bolha de configuração. O decorador faz isso para gerar os dados específicos do componente. O decorador _decora_ a classe abaixo dele com os dados necessários para o comportamento de sua classe. Uma classe de _componente_ como deve ser.
 
-A assinatura da classe exporta por padrão para que o componente possa ser importado. `ngOnInit` também é implementado. `implements` diz à classe para definir certos métodos de acordo com a definição da interface. `ngOnInit` é um gancho do ciclo de vida.
+A assinatura da classe á exporta por padrão para que o componente possa ser importado. `ngOnInit` também é implementado. `implements` diz à classe para definir certos métodos de acordo com a definição da interface. `ngOnInit` é um gancho do ciclo de vida.
 
 #### Ciclo de Vida do Componente e Detecção de Alterações
 
 Os componentes usam todos os tipos de ferramentas, serviços e recursos. Um dos principais recursos disponíveis para os componentes são os ganchos do ciclo de vida. Uma explicação para cada gancho existe [neste artigo](https://guide.freecodecamp.org/angular/lifecycle-hooks) .
 
-Há oito no total e todos servem como funções de temporização. Eles executam condicionalmente à medida que o componente transita de estado para estado via [detecção de mudança](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f) . Esse processo acontece constantemente na árvore de componentes. Ele procura por alterações nos dados que merecem uma nova renderização do modelo.
+Há oito no total e todos servem como funções de temporização. Eles executam condicionalmente à medida que o componente transita de estado para estado via [detecção de mudança](https://blog.angularindepth.com/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f) . Esse processo acontece constantemente na árvore de componentes. Ele procura por alterações nos dados que merecem uma nova renderização no template.
 
 Hora de seguir em frente. Por favor, consulte os artigos acima mencionados para obter mais informações sobre o ciclo de vida do componente. Isso merece muito mais explicações.
 
 #### Dados de componentes
 
-Dados conduz tudo. Componentes não são exceção. Componentes encapsulam todos os seus dados. Para receber dados externamente, um componente deve declará-lo explicitamente. Essa forma de privacidade impede que as informações entrem em conflito na árvore de componentes.
+Dados conduz tudo. Componentes não são exceções. Componentes encapsulam todos os seus dados. Para receber dados externamente, um componente deve declará-lo explicitamente. Essa forma de privacidade impede que as informações entrem em conflito na árvore de componentes.
 
-Os dados determinam o que é exibido da classe do componente para o modelo. Quaisquer atualizações nos dados da classe irão (ou pelo menos devem) atualizar a exibição do modelo.
+Os dados determinam o que é exibido da classe do componente para o template. Quaisquer atualizações nos dados da classe irão (ou pelo menos devem) atualizar a exibição do mesmo no template.
 
-Os componentes geralmente inicializam um conjunto de membros (ou variáveis) que armazenam dados. Eles são usados ​​em toda a lógica da classe de componentes por conveniência. Essa informação alimenta a lógica resultante do modelo e seu comportamento. Veja o exemplo a seguir.
+Os componentes geralmente inicializam um conjunto de membros (ou variáveis) que armazenam dados. Eles são usados em toda a lógica da classe de componentes por conveniência. Essa informação alimenta a lógica resultante do modelo e seu comportamento. Veja o exemplo a seguir.
 
 ```typescript
 // ./components/example/example.component.ts 
@@ -120,9 +120,9 @@ Os componentes geralmente inicializam um conjunto de membros (ou variáveis) que
 
 Observe as formas como o componente interage com seus dados. Primeiro, ele busca de `../../data/posts.data` antes de começar a encaminhá-lo ao modelo para exibição.
 
-Os dados aparecem em todo o modelo. Dentro das chaves duplas, o valor de uma variável é mapeado da classe do componente para as chaves. O `*ngFor` loop no array de classes `allPosts` . Clicar no botão remove um elemento específico de `allPosts` por seu índice. Você pode até mudar o `username` de `username` mais alto, digitando na caixa de entrada.
+Os dados aparecem em todo o template. Dentro das chaves duplas, o valor de uma variável é mapeado da classe do componente para as chaves. O `*ngFor` faz um loop no array de classes `allPosts`. Clicar no botão remove um elemento específico de `allPosts` por seu índice. Você pode até mudar o `username` de `username` mais alto, digitando na caixa de entrada.
 
-As interações acima alteram os dados da classe do componente, o que, por sua vez, atualiza o HTML do modelo do componente. Os componentes fornecem a lógica de backbone que facilita o fluxo de dados. O modelo HTML torna esses dados legíveis para o usuário.
+As interações acima alteram os dados da classe do componente, o que, por sua vez, atualiza o HTML do modelo do componente. Os componentes fornecem a lógica de _backbone_ que facilita o fluxo de dados. O modelo HTML torna esses dados legíveis para o usuário.
 
 #### Modelo de componente
 
