@@ -5,6 +5,7 @@ export default class HTML extends React.Component {
   render() {
     return (
       <html id='__fcc-html' {...this.props.htmlAttributes} lang='en'>
+      //head section starts here
         <head>
           <meta charSet='utf-8' />
           <meta content='ie=edge' httpEquiv='x-ua-compatible' />
@@ -21,6 +22,7 @@ export default class HTML extends React.Component {
           />
           {this.props.headComponents}
         </head>
+      // head section ends here
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
