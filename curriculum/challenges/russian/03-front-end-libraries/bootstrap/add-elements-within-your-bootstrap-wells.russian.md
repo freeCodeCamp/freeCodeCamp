@@ -3,11 +3,11 @@ id: bad87fee1348bd9aec908849
 title: Add Elements within Your Bootstrap Wells
 challengeType: 0
 videoUrl: ''
-localeTitle: Добавить элементы внутри ваших бутстрапов
+localeTitle: Добавить элементы внутрь бутстрап-ячеек
 ---
 
 ## Description
-<section id="description"> Теперь у нас есть несколько элементов <code>div</code> на каждом столбце нашей строки. Это настолько глубоко, что нам нужно идти. Теперь мы можем добавить элементы <code>button</code> . Гнездо три <code>button</code> элементы внутри каждого из <code>well</code> <code>div</code> элементов. </section>
+<section id="description"> Теперь у нас есть несколько элементов <code>div</code> на каждом столбце нашей строки. Это настолько глубоко, что нам нужно идти дальше. Теперь мы можем добавить элементы <code>button</code> . Место для трёх <code>button</code> элементов внутри каждого из наших <code>div</code> элементов с классом <code>well</code> . </section>
 
 ## Instructions
 undefined
