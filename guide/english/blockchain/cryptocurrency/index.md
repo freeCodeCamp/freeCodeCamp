@@ -13,6 +13,30 @@ Unlike normal currency, cryptocurrency can be exchanged as fractions. For exampl
 
 If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
 
+Altcoins or "Alternative coins" are the alternative cryptocurrencies launched after the success of Bitcoin. Altcoins promote themselves as better substitutes to Bitcoin. The success of Bitcoin as the first peer-to-peer digital currency paved the way for many to follow.
+
+Although the list is constantly changing, the top 10 Altcoins (contenders of Bitcoin) are:
+
+-Ethereum
+
+-Ripple
+
+-Litecoin
+
+-Dash
+
+-NEM
+
+-Ethereum Classic
+
+-Monero
+
+-Zcash
+
+-Decred: Decentralized credit
+
+-PIVX: Private Instant Verified Transactions
+
 #### More Information:
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
 [Ultimate Guide to Cryptocurrency](https://blockgeeks.com/guides/what-is-cryptocurrency)
