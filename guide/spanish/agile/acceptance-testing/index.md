@@ -8,13 +8,13 @@ Pruebas de aceptación, una técnica de prueba realizada para determinar si el s
 
 Hay varias formas de pruebas de aceptación:
 
-\-> Pruebas de aceptación del usuario
+\->uno. Pruebas de aceptación del usuario
 
-\-> Pruebas de aceptación de negocios
+\->dos. Pruebas de aceptación de negocios
 
-\-> Pruebas alfa
+\->tres. Pruebas alfa
 
-\-> Prueba Beta
+\->cuatro. Prueba Beta
 
 # Criterios de aceptación
 
