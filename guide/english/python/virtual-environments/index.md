@@ -67,6 +67,7 @@ Python 3.6.6
 pip 18.1 from /home/vbox/Desktop/py36env/lib64/python3.6/site-packages/pip (python 3.6)
 (my-env) [vbox@vbox-linux bin]$
 
+ If for some reason, you are not seeing this, even if you are inside a virtual env; you can try doing one of the things mentioned here ('https://stackoverflow.com/questions/1871549/determine-if-python-is-running-inside-virtualenv').
 ### Install Packages
 
 You can install packages one by one, or by setting a `requirements.txt` file for your project.
