@@ -17,3 +17,4 @@ It's main attributes are the following:
 
 - [Vuejs Homepage](https://vuejs.org/)
 - [GitHub Repo](https://github.com/vuejs/vue/)
+- [Comparison with other frameworks](https://vuejs.org/v2/guide/comparison.html)
