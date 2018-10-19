@@ -70,6 +70,17 @@ The terminal `collect` operation collects the stream as a list of strings.
 
 This is only one use of the Streams API used in Java 8. There are many other applications of streams utilizing other operations as seen here in the
  [documentation](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html).
+ 
+ # Method Reference
+
+We can use method by `::`  as an alternative to lambdas ad it makes the code more readable
+we can use `::` instead of `->`, when we want to access a function with a class name i.e. a static function
+
+Syntax is <class_name>::<method_name>
+
+or with an instance of the class like this
+<instance_name>::<method_name>
+
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
