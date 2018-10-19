@@ -63,3 +63,4 @@ public int getNumber() {
     return this.number;
 }
 ```
+Getters and setters are so important that some some integrated development environments allow the methods to be generated automatically. They also prevent the possible need of making fields public, which can cause unforseen issues when the caller alters these fields. 
