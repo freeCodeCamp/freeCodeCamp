@@ -242,6 +242,13 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+# Design Patterns
+
+https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/
+
+https://www.amazon.com/Head-First-Design-Patterns-Brain-Friendly/dp/0596007124
+
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
