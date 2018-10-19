@@ -275,9 +275,9 @@ In Full Binary Tree, number of leaf nodes is equal to number of internal nodes p
 Complete Binary Tree: A Binary Tree is complete Binary Tree if all levels are completely filled except possibly the last level and the last level has all keys as left as possible
  
                18
-           /       \  
-         15         30  
-        /  \        /  \
-      40    50    100   40
-     /  \   /
-    8   7  9 
+            /      \  
+           15      30  
+          / \     /  \
+         40 50  100  40
+        / \ /
+       8  7 9 
