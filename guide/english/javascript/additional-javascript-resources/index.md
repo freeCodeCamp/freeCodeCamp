@@ -35,6 +35,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='http://c9.io' target='_blank' rel='nofollow'>C9 (_IDE_, _pair programming_)</a>
 *   <a href='http://www.objectplayground.com/' target='_blank' rel='nofollow'>Object Playground (_visualize objects_)</a>
 *   <a href='http://plnkr.co' target='_blank' rel='nofollow'>Plunker</a>
+*   <a href='https://babeljs.io/repl' target='_blank' rel='nofollow'>Babel</a>
 
 ## Challenges
 
