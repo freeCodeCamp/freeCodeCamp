@@ -18,7 +18,7 @@ Disponible como descargas gratuitas y abierto a las contribuciones de los usuari
 
 Los editores pagados necesitan un pago único o están basados ​​en suscripciones. Pero, las versiones de prueba están disponibles para probar el software antes de comprometerse a comprar. Si resulta ser un estudiante, muchas veces, hay descuentos disponibles a través de un correo electrónico o identificación del estudiante.
 
-### Campo de golf:
+### Enlaces:
 
 *   [Pixlr Editor](https://pixlr.com/editor/) - Gratis | Navegador
 *   [Gimp](https://www.gimp.org/) - Gratis | Descargar | Fuente abierta
