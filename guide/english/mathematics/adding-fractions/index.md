@@ -52,3 +52,6 @@ Consider fractions <span class="fraction"><sup>5</sup>⁄<sub>6</sub></span> and
 <pre>  <span class="fraction"><sup>5</sup>⁄<sub>6</sub></span> + <span class="fraction"><sup>5</sup>⁄<sub>15</sub></span> = <span class="fraction"><sup>7</sup>⁄<sub>6</sub></span> </pre>
 
 <span class="fraction"><sup>7</sup>⁄<sub>6</sub></span> is equivalent to 1 and <span class="fraction"><sup>1</sup>⁄<sub>6</sub></span>
+
+#### More Information:
+<a href='https://www.purplemath.com/modules/fraction4.htm "Adding Fractions"' target='_blank' rel='nofollow'>Adding Fractions</a>
