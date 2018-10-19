@@ -24,6 +24,10 @@ What is Unsupervised Learning?
 
 Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don't necessarily know the effect of the variables.
 
+#### Example (for understanding):
+
+Suppose you wanted someone to differentiate between an apple and a banana. With unsupervised Learning, you give him a batch of apples and bananas and it will guess which part contains apples and which part contains bananas. It does not need to say, "This is an apple." So you do not need to specify the kind of answer you want, as it will detect the groups of elements. It is up to you now to call the group with whatever name you want to. [Inspired by: Thomas Abot](https://triskell.github.io/2016/11/13/Supervised-Learning-and-Unsupervised-Learning.html)
+
 Types:
 
 Clustering: Is used for exploratory data analysis to find hidden patterns or grouping in data. Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.
