@@ -12,3 +12,4 @@ Alguns exemplos dessas ferramentas:
 *   Ferramentas DevOps
 *   Construir ferramentas
 *   Gerenciadores de pacotes
+*   Ferramentas de desenvolvedor em navegadores
