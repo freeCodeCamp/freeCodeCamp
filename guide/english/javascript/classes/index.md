@@ -178,6 +178,6 @@ class Person {
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
+[Using classes in JS](https://www.digitalocean.com/community/tutorials/understanding-classes-in-javascript)
 
 
