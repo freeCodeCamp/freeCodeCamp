@@ -1,99 +1,98 @@
 ---
 title: Border Property
-localeTitle: Propiedad de la frontera
+localeTitle: Propiedad de borde
 ---
-## Propiedad de la frontera
+## Propiedad de borde
 
 ## CSS Border
 
-Nuestro atributo personal favorito de CSS, le permite personalizar completamente los bordes que aparecen alrededor de los elementos HTML. Con HTML, solía ser imposible colocar un borde alrededor de un elemento, excepto la tabla. Los bordes de CSS le permiten crear estilos de bordes personalizados y nítidos con muy poco trabajo, en comparación con los métodos anticuados de HTML.
+Nuestro atributo personal favorito de CSS, permite personalizar completamente los bordes que aparecen alrededor de los elementos HTML. Con HTML, solía ser imposible colocar un borde alrededor de un elemento, excepto en la tabla. Los bordes de CSS te permiten crear estilos de bordes personalizados y nítidos con muy poco trabajo, en comparación con los métodos anticuados de HTML.
 
 La propiedad abreviada de `border` establece todas las propiedades de borde en una declaración. \`\` \`css borde: 1px sólido # 000;
 ```
-The properties that can be set, are (in order): 
+Las propiedades que pueden utilizarse son (en orden): 
  1. `border-style` 
  2. `border-width` 
  3. `border-color` 
  4. `border-radius` 
  
- It does not matter if one of the values above are missing, for example: 
+ No importa si falta alguno de los valores de arriba, por ejemplo: 
 ```
 
 css borde: rojo sólido;
 ```
-The above code is also valid CSS. 
+El código de arriba también es CSS válido. 
  
- ### Border Styles 
+ ### Estilo de Borde  
  
- The `border-style` property sets a wide range of different types of borders. 
+ La propiedad `border-style` (estilo de borde) establece el tipo de borde. Hay varios tipos de borde que puedes utilizar. 
  
- The various values are: 
- - `dotted` - Sets a dotted border. 
- - `dashed` - Sets a dashed border. 
- - `solid` - Sets a solid border. 
- - `double` - Sets a double border. 
- - `groove` - Sets a 3D grooved border. 
- - `ridge` - Sets a 3D ridged border. 
- - `inset` - Sets a 3D inset border. 
- - `outset` - Sets a 3D outset border. 
- - `none` - Sets no border. 
- - `hidden` - Sets a hidden border. 
+ Los valores pueden ser: 
+ - `dotted` - Establece un borde punteado. 
+ - `dashed` - Establece un borde de guiones. 
+ - `solid` - Establece un borde sólido. 
+ - `double` - Establece un borde de doble ancho. 
+ - `groove` - Establece un borde acanalado en 3D. 
+ - `ridge` - Establece un borde en relieve 3D. 
+ - `inset` - Establece un borde cóncavo en 3D. 
+ - `outset` - Establece un borde saliente en 3D. 
+ - `none` - Establece que no hay borde. 
+ - `hidden` - Establece un borde oculto. 
  
- Based on the property you choose, these styles can be mismatched. 
- You can style each side seperately: 
+ Basado en la propiedad que elijas estos estilos pueden no coincidir. 
+ Puedes darle un borde diferente a cada lado del elemento: 
 ```
 
-css estilo de borde superior: sólido; estilo de borde izquierdo: punteado; estilo de borde derecho: punteado; estilo de borde inferior: doble;
+css border-top-style: 'solid'; border-left-style: 'dotted'; border-right-style: 'dotted'; border-bottom-style: 'double';
 ```
-Or you can style them all at once: 
+O puedes estilizarlos todos a la vez: 
 ```
 
-css estilo de borde: punteado sólido con puntos dobles;
+css border-style: dotted solid double dashed;
 ```
-As shown, the border property allows you to select different sections of it. [top, bottom, left, right] 
+Aquí queda demostrado que la propiedad de borde permite seleccionar sus diferentes secciones. [superior, inferios, izquierda , derecha] 
  
- ### Border Width 
+ ### Grosor del Borde 
  
- To alter the thickness of your border use the border-width attribute. You may use key terms or exact values to define the border width. Note: You must 
- define a border-style for the border to show up. The width can be set as a specific size (in px, pt, cm, em, etc) or by using one of the three pre-defined 
- values: thin, medium, or thick. 
+ Para alterar el grosor del borde debes usar el atributo border-width. Puedes utilizar las palabras clave o valores exactos para definir el grosor del borde. Nota: Debes definir un estilo de borde (border-style) para poder aplicarle el grosor y que se vea.  
+ El grosor puede ser un tamaño específico (en px, pt, cm, em, etc) o también se puede usar uno de los tres valores predeterminados: 
  
- Example: 
+ thin (delgado), medium (medio), or thick (grueso). 
+ 
+ Ejemplo: 
 ```
 
 css
 
 table { border-width: 7px; border-style: outset; } td { border-width: medium; border-style: outset; } p { border-width: thick; border-style: solid; }
 ```
-### Border Color 
+### Color del Borde 
  
- Now for the creative aspect of CSS Borders! With the use of the border-color attribute, you will be able to create customized borders to fit the flow and layout 
- of your website. Border colors can be any color defined by RGB, hexadecimal, or key terms. Below is an example of each of these types. 
+¡Ahora viene el aspecto creativo de los bordes de CSS! Usando el atributo border-color puedes creat bordes personalizados que encajen el flujo y el diseño de tu página web. El color del borde puede ser cualquier color definido con RGB, hexadecimal, o palabras clave. A continuación hay un ejemplo para cada una de las opciones. 
  
- Example: 
+ Ejemplo: 
 ```
 
 css
 
 table { border-color: rgb( 100, 100, 255); border-style: dashed; } td { border-color: #FFBD32; border-style: ridge; } p { border-color: blue; border-style: solid; }
 ```
-### Border-Radius 
- The `border-radius` property allows the corners of a border to be rounded. This is done by providing a size for 
- how much the border is to be rounded. Size can be in px or %. 
+### Radio del Borde 
+ La propiedad `border-radius` te permite redondear las esquinas de un borde. Ésto se hace al establecer un tamaño que indique cuanto se quiere redondear el borde. Este tamaño puede estar en px o %. 
 ```
 
-css radio del borde: 25px;
+css border-radius: 25px;
 ```
-Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right. 
+Puedes ajustar cada lado del borde usando `border-radius`. El orden es superior, inferior, izquierda, derecha. 
 ```
 
-css radio del borde: 15% 10px 30% 5px;
+css border-radius: 15% 10px 30% 5px;
 ```
-### Border: All in One 
+### Borde Todo en Uno 
  
- While it is nice that CSS allows a web developer to be very specific in creating a customized border, sometimes it is just easier and less of a headache to create a uniform border, all in single line of CSS code. 
+ Es excelente que CSS permita al desarrollador ser tan específico como quiera al crear un borde personalizado, aunque a veces es más fácil crear un borde uniforme en una sola línea de código CSS. 
  
- Example: 
+ Ejemplo: 
 ```
 
 css
