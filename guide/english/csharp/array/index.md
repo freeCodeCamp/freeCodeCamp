@@ -40,6 +40,34 @@ You can assign multiple values at once while declaring the array using the forma
 
 The will assign the value of 5 into element [0], 17 into element [1], 19 into element [2] and 92 into element [3].
 
+<table>
+  
+  <tr>
+    <th>Position</th>
+    <th>Element</th>
+  </tr>
+  <tr>
+    <td>[0]</td>
+    <td>5</td> 
+  </tr>
+  
+  <tr>
+    <td>[1]</td>
+    <td>17</td> 
+  </tr>
+  
+  <tr>
+    <td>[2]</td>
+    <td>19</td> 
+  </tr>
+  
+  <tr>
+    <td>[3]</td>
+    <td>92</td> 
+  </tr>
+  
+</table>
+
 You can declare, initilise and assign values in the array all at once by using the format below:
 
 `dataType [] nameOfArray = new nameOfArray[numberOfElements] {value1,value2,value3,value4};`
