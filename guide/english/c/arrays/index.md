@@ -45,7 +45,7 @@ Here you have created an `array` of `ints`(Integers), called `arr`. This array h
 ```C
 datatype name[number of elements] 
 ```
-The first element of this array is `1`, the second is `2` etc.
+The elements in this array are whatever values you choose to store. The values stored will replace the "number of elements" section.
 
 ```C
 int brr[] = {78, 65};
