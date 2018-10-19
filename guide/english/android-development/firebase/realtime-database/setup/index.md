@@ -52,3 +52,4 @@ In the docs, 'compile' is used but that is deprecated and replaced by 'implement
 The second line comes from the Google [docs](https://firebase.google.com/docs/database/android/start/) on setting up realtime db in Android Studio.
 <br>
 If it is actually redundant to add both, please correct this article. 
+Check dependencies in case of errors
