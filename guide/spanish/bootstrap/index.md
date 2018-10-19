@@ -1,8 +1,8 @@
 ---
 title: Bootstrap
-localeTitle: Oreja
+localeTitle: Bootstrap
 ---
-## Oreja
+## Bootstrap
 
 Bootstrap es un framework de front-end popular para el desarrollo web. Contiene componentes pre-construidos y elementos de diseño para estilizar el contenido HTML. Los navegadores modernos como Chrome, Firefox, Opera, Safari e Internet Explorer son compatibles con Bootstrap.
 
@@ -31,7 +31,9 @@ Hay dos opciones principales para agregar Bootstrap a su proyecto web. Puede enl
 
 Puede agregar Bootstrap CSS utilizando un elemento `<link>` dentro del `<head>` de su página web que hace referencia a una Red de entrega de contenido (CDN):
 
-`<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">`
+```html
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+```
 
 Agregar los elementos de JavaScript de Bootstrap es similar a los elementos `<script>` que normalmente se colocan en la parte inferior de su ' etiqueta Es posible que deba incluir algunas dependencias primero. Preste especial atención al orden indicado:
 
@@ -44,17 +46,21 @@ Agregar los elementos de JavaScript de Bootstrap es similar a los elementos `<sc
 
 _Nota: Estos son solo ejemplos y pueden cambiar sin previo aviso. Consulte un CDN para los enlaces actuales que se incluirán en su proyecto._
 
-##### Descargar / Instalar
+##### Descargar/Instalar
 
 Puede descargar e instalar los archivos de origen de Bootstrap con Bower, Composer, Meteor o npm. Esto permite un mayor control y la opción de incluir o excluir módulos según sea necesario.
 
-`npm install bootstrap`
+```shell
+npm install bootstrap
+```
 
-`gem 'bootstrap', '~> 4.1.3'`
+```shell
+gem 'bootstrap', '~> 4.1.3'
+```
 
 \_Nota: Estos son solo ejemplos y pueden cambiar sin previo aviso. Consulte el \_ [sitio web Bootstrap](https://getbootstrap.com/) \_ para ver los enlaces más actualizados.
 
-#### El sistema de rejilla Bootstrap
+#### El sistema de rejilla (_grid_) Bootstrap
 
 El sistema de cuadrícula es un primer sistema de flexbox para dispositivos móviles para crear rápidamente diseños de todas las formas y tamaños adecuados para todos los dispositivos. Se basa en un diseño de 12 columnas y tiene varios niveles, uno para cada rango de consulta de medios.
 
@@ -79,4 +85,9 @@ Además, puedes encontrar tanto [gratuitos](https://bootswatch.com/) como de [pa
 
 #### Recursos Bootstrap:
 
-[Blog oficial de Bootstrap](http://blog.getbootstrap.com/) [Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/) [Escaparate de sitios construidos utilizando Bootstrap.](http://builtwithbootstrap.com/) [Linter HTML para proyectos usando Bootstrap](https://github.com/twbs/bootlint) [Elementos de diseño y fragmentos de código para Bootstrap](https://bootsnipp.com/) [Código, tema y recursos complementarios para Bootstrap](http://expo.getbootstrap.com/resources/)
+[Blog oficial de Bootstrap](http://blog.getbootstrap.com/) 
+[Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/) 
+[Escaparate de sitios construidos utilizando Bootstrap.](http://builtwithbootstrap.com/) 
+[Linter HTML para proyectos usando Bootstrap](https://github.com/twbs/bootlint) 
+[Elementos de diseño y fragmentos de código para Bootstrap](https://bootsnipp.com/) 
+[Código, tema y recursos complementarios para Bootstrap](http://expo.getbootstrap.com/resources/)
