@@ -58,3 +58,7 @@ El aprendizaje supervisado es la tarea de aprendizaje automático de inferir una
 ## Laboratorio
 
 [Creación de aplicaciones inteligentes con Azure Machine Learning Studio](https://github.com/Microsoft/computerscience/blob/master/Labs/AI%20and%20Machine%20Learning/Azure%20Machine%20Learning/Azure%20Machine%20Learning%20(Node).md)
+
+
+## new change for tshirt
+NEw change
