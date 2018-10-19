@@ -217,3 +217,24 @@ with higher precedence will be evaluated first.
 - Conditional `?:`
 - Assignment `= += -= *= /= %= >>= <<= &= ^= |=`
 - Comma `,`
+
+#example of relational operators
+
+#include<stdio.h>
+#include<conio.h>
+int main()     //here is a entry point
+{
+int age; // age is a variable which is intger type
+printf("enter your age for vote:");
+scanf("%d",&age);  //user enter his age
+if(age>=18)
+{
+printf("you are eligeable for voting")
+}else
+{
+printf("you are not eligiable for voting");
+}
+getch();  //it is used hold the output screen
+return 0;
+}
+
