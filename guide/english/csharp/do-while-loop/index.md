@@ -34,7 +34,7 @@ Console.WriteLine("Bye!");
 > Bye!
 ```
 ## Do while loop - Input check example
-As mentioned above `do while`  loop executes blocks of codes until the expressions condition is false. In this example we are going to ask the user to enter a Student mark and we will be checking if the mark entered is not an invalid mark if the mark is invalid we will prompt the user to re-enter the mark again until they enter a valid mark. In this example students can have only a mark between 0 and 100.
+As mentioned above `do while`  loop executes blocks of codes until the expression condition is false. In this example we are going to ask the user to enter a Student mark and we will be checking if the mark entered is not an invalid mark if the mark is invalid we will prompt the user to re-enter the mark again until they enter a valid mark. In this example students can have only a mark between 0 and 100.
 
 ## Example
 ```
