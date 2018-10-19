@@ -2,6 +2,9 @@
 title: Linux
 localeTitle: Linux
 ---
+
+# Linux
+
 ![](https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg)
 
 Linux es un nombre que denota ampliamente una familia de distribuciones de sistemas operativos de software libre y de código abierto construidas alrededor de Linux núcleo. El componente definitorio de una distribución de Linux es el kernel de Linux, un kernel de sistema operativo lanzado por primera vez el 17 de septiembre. 1991 por Linus Torvalds. Muchas distribuciones de Linux usan la palabra "Linux" en su nombre. La Free Software Foundation usa el nombre GNU / Linux para referirse a la familia de sistemas operativos, así como a distribuciones específicas, para enfatizar que la mayoría de las distribuciones de Linux no son solo el kernel de Linux, y que tienen en común no solo el kernel, sino también numerosas utilidades y bibliotecas, una gran proporción de los cuales son del proyecto GNU.
@@ -27,3 +30,7 @@ Los tipos de paquetes se dividen entre distribuciones de nivel superior, con Deb
 Las distribuciones de Linux también vienen en todas las formas y tamaños, y la mayoría, si no todas, ofrecen la posibilidad de ejecutarse directamente a través de CD / DVD en lo que se conoce como un entorno de 'Live CD' o incluso directamente a través de USB si su placa base admite el arranque desde USB.
 
 Para más información sobre Linux, lea el artículo de Quincy Larson, [Linux es 25. ¡Yay! Celebremos con 25 hechos sorprendentes sobre Linux](https://medium.freecodecamp.org/linux-is-25-yay-lets-celebrate-with-25-rad-facts-about-linux-c8d8ac30076d) .
+
+#### Páginas interesantes
+
+*   [DistroWatch](https://distrowatch.com/) : información/reviews de distribuciones Linux
