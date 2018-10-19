@@ -3,11 +3,11 @@ id: 587d7b85367417b2b2512b3a
 title: Catch Arguments Passed in the Wrong Order When Calling a Function
 challengeType: 1
 videoUrl: ''
-localeTitle: Argumentos de captura passados ​​na ordem errada ao chamar uma função
+localeTitle: Capturar argumentos passados na ordem errada ao chamar uma função
 ---
 
 ## Description
-<section id="description"> Continuando a discussão sobre as funções de chamada, o próximo bug a ser observado é quando os argumentos de uma função são fornecidos na ordem incorreta. Se os argumentos forem tipos diferentes, como uma função esperando uma matriz e um inteiro, isso provavelmente causará um erro de tempo de execução. Se os argumentos forem do mesmo tipo (todos os inteiros, por exemplo), a lógica do código não fará sentido. Certifique-se de fornecer todos os argumentos necessários, na ordem correta, para evitar esses problemas. </section>
+<section id="description"> Continuando a discussão sobre as funções de chamada, o próximo bug a ser observado é quando os argumentos de uma função são fornecidos na ordem incorreta. Se os argumentos forem tipos diferentes, como uma função esperando uma matriz e um inteiro, isso provavelmente causará um erro na altura da execução. Se os argumentos forem do mesmo tipo (todos os inteiros, por exemplo), a lógica do código não fará sentido. Certifique-se de fornecer todos os argumentos necessários, na ordem correta, para evitar esses problemas. </section>
 
 ## Instructions
 <section id="instructions"> A função <code>raiseToPower</code> gera uma base para um expoente. Infelizmente, ele não é chamado corretamente - corrija o código para que o valor da <code>power</code> seja o esperado 8. </section>
@@ -17,9 +17,9 @@ localeTitle: Argumentos de captura passados ​​na ordem errada ao chamar uma 
 
 ```yml
 tests:
-  - text: 'Seu código deve fixar a <code>power</code> variável de modo que seja igual a 2 elevado à 3ª potência, e não 3 elevado à 2ª potência.'
+  - text: 'Seu código deve fixar a variável <code>power</code> de modo que seja igual a 2 elevado à potência 3, e não 3 elevado à potência 2.'
     testString: 'assert(power == 8, "Your code should fix the variable <code>power</code> so it equals 2 raised to the 3rd power, not 3 raised to the 2nd power.");'
-  - text: Seu código deve usar a ordem correta dos argumentos para a chamada de função <code>raiseToPower</code> .
+  - text: Seu código deve usar a ordem correta dos argumentos para a chamada da função <code>raiseToPower</code>.
     testString: 'assert(code.match(/raiseToPower\(\s*?base\s*?,\s*?exp\s*?\);/g), "Your code should use the correct order of the arguments for the <code>raiseToPower</code> function call.");'
 
 ```
@@ -53,6 +53,6 @@ console.log(power);
 <section id='solution'>
 
 ```js
-// solution required
+// solução requerida
 ```
 </section>
