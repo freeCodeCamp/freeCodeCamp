@@ -133,6 +133,14 @@ The next section is a boolean condition that will be checked for true or false, 
 
 The final section is referred to as the 'increment/decrement'. Its job is to perform some operation every loop - usually adding or subtracting from the initial variable - after the code within the brackets has been run through. In this case, it's just adding one to the count. This is the most common way for the increment to be used, because it lets you keep count of how many times you've run through a for loop.
 
+An infinite loop is also possible in the for loop. An infinite for loop has absolutely no items in the paranthesis except for the two semi colons.
+
+```C
+for(;;) {
+    printf("This will also get printed forever unless the program is stopped!");
+}
+```
+
 ### Syntax Comparison
 ```
 
