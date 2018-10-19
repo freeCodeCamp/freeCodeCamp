@@ -19,4 +19,4 @@ NOTE: If you're reporting a security issue, don't create a GitHub issue. Instead
 * Operating System: 
 
 
-**If possible, add a screenshot here (you can drag and drop, png, jpg, gif, etc. in this box):**
+**If possible, please add a screenshot here (you can drag and drop, png, jpg, gif, etc. in this box):**
