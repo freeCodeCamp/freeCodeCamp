@@ -42,17 +42,17 @@ This will create the file `~/.gitignore_global`. Now you can edit that file the 
 
 ## Removing Files From Git Tracking
 
-Occasionally, you may forget to add a particular file or folder you do not want to track to your `.gitignore` file. Or you may have forgotten to set up a `.gitignore` file altogether. Here's how to fix those situations, but before you do, make sure your changes have been committed, including your updated `.gitignore` file.
+Occasionally, you may forget to add a particular file or folder you do not want to track to your `.gitignore` file. Or you may have forgotten to set up a `.gitignore` file altogether. Here's how to fix those situations, but before you do, commit your changes, including your updated `.gitignore` file.
 
 ### Removing a Single File
 
-'I forgot to ignore that scratch file!' you say. It happens. And the mistake is as easily resolved as it was made.
+'I forgot to ignore that scratch file!' you say. It happens. And you can fix the mistake as easily as you made it.
 
 ```bash
 git rm --cached /path/to/my/file
 ```
 
-The command `rm` tells Git to remove what you specify. However, in this case, you are adding `--cached`, which tells Git to just remove the item from Git's index, and not your filesystem. If you run `git status` at this point, Git will report that your file is being deleted. Don't worry. It is only being deleted from Git, and not your filesystem. Commit that change and then look for yourself.
+The command `rm` tells Git to remove what you specify. However, in this case, you are adding `--cached`, which tells Git to just remove the item from Git's index, and not your filesystem. If you run `git status` at this point, Git will report that your file is being deleted. Don't worry. This will only delete it from Git, and not your filesystem. Commit that change and then look for yourself.
 
 ### Removing a Folder
 
@@ -76,9 +76,9 @@ git commit -m 'fix .gitignore'
 
 Not the cleanest commit history, but your repo will be sparklingly clean. A little more was going on here. First, you removed `.`, which represents everything. Since `git rm` can be unforgiving, perhaps you should run it, or any of these commands, with the `-n` option, like `git rm -r -n --cached .` in this case. Or use the `--dry-run` option, which is the long hand version telling Git to just report what it is going to do without taking any action. For now, run it without the `dry-run` options.
 
-Now everything has been removed from your repo. Time to add it back in, minus what your edited `.gitignore` file will omit. That's what our `git add .` line does for you.
+Congratulations, you removed everything from your repo. Time to add it back in, minus what your edited `.gitignore` file will omit. That's what our `git add .` line does for you.
 
-Once again, commit your changes, as you see in the last command, with whatever message you feel is necessary. The commit itself won't look very nice in this case. You did remove and add everything, for what it's worth. But your repository will be in the clean state you had intended all along.
+Commit your changes with whatever message you feel is necessary. The commit itself won't look very nice in this case. You did remove and add everything, for what it's worth. But your repository will be in the clean state you had intended all along.
 
 ### More Information:
 - Git documentation: <a href='https://git-scm.com/docs/gitignore' target='_blank' rel='nofollow'>gitignore</a>
