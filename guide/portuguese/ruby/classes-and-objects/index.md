@@ -6,15 +6,15 @@ localeTitle: Classes e Objetos
 
 ### Objetos em Ruby
 
-Vamos rapidamente examinar os objetos Ruby. No mundo real, objetos podem ser qualquer coisa, incluindo um carro, computador ou até mesmo um humano. Cada um desses objetos tem um estado e comportamentos.
+Vamos examinar rapidamente os objetos Ruby. No mundo real, objetos podem ser qualquer coisa, incluindo um carro, computador ou até mesmo um ser humano. Cada um desses objetos tem um estado e comportamentos.
 
-Considerando um carro, seu estado poderia ser descrito como seu modelo, marca e cor. O comportamento do carro pode estar girando, buzinando ou freando.
+Considerando um carro, seu estado poderia ser descrito como seu modelo, marca e cor. O comportamento do carro pode ser estar virando, buzinando ou freando.
 
 Um objeto em Ruby tem características muito semelhantes. Objetos Ruby também possuem um estado e comportamento. Em Ruby Objects, o estado é armazenado em variáveis ​​de instância e o comportamento é armazenado em funções.
 
 ### Classes em Ruby
 
-Uma classe é basicamente um modelo de programa. Este modelo define as `properties` iniciais usando `instance variables` . Novamente, também existem novamente `behaviors` definidos na forma de funções.
+Uma classe é basicamente um modelo de programa. Este modelo define as `propriedade` iniciais usando `variávies de instâcia` . Novamente, também existem novamente `comportamentos` definidos na forma de funções.
 
 Uma nova instância de uma classe é criada usando o método `initialize` de uma classe.
 
@@ -50,11 +50,11 @@ Agora, para criar uma instância dessa classe, você só precisa chamar a funç�
 mazda3 = Car.new('Mazda', 'Mazda3', 'White') 
 ```
 
-Isso é ótimo, mas às vezes você pode precisar alterar alguns desses atributos! A maioria desses atributos neste exemplo seria estática. Ainda assim, imagine que você decidiu fazer uma nova pintura. Como você faria para atualizar o estado dessa instância do objeto `Car` ?
+Isso é ótimo, mas às vezes você pode precisar alterar alguns desses atributos! A maioria desses atributos neste exemplo seriam estáticos. Ainda assim, imagine que você decidiu fazer uma nova pintura. Como você faria para atualizar o estado dessa instância do objeto `Car` ?
 
 ### Modificando o Estado da Instância
 
-Felizmente, é bastante simples atualizar o estado de um objeto. Primeiro, precisaríamos de um método `setter` ! Ruby define as configurações **getter** e **setter** como `attr_reader` e `attr_accessor` respectivamente. Para as configurações de getter e setter em um determinado atributo, você também pode usar apenas `attr_accessor` .
+Felizmente, é bastante simples atualizar o estado de um objeto. Primeiro, precisaríamos de um método `setter` ! O Ruby define as configurações **getter** e **setter** como `attr_reader` e `attr_accessor` respectivamente. Para as configurações de getter e setter em um determinado atributo, você também pode usar apenas `attr_accessor` .
 
 Para demonstrar isso, modifiquei o objeto Car anterior com essas configurações recém-definidas.
 
@@ -102,7 +102,7 @@ irb(main):023:0> c = Car.new('Mazda', 'Mazda3', 'White')
  Did you mean?  make 
 ```
 
-Visualizando a saída anterior do `irb` , você pode ver que cada uma das variáveis ​​da instância é legível. Podemos escrever para `@color` , mas acabamos causando uma exceção `NoMethodError` quando tentamos gravar no `@make` . Isto é porque `@make` foi definido apenas usando um `attr_reader` , então `make=` não está definido.
+Visualizando a saída anterior do `irb` , você pode ver que cada uma das variáveis ​​da instância é legível. Podemos escrever no `@color` , mas acabamos causando uma exceção `NoMethodError` quando tentamos gravar no `@make` . Isto é porque `@make` foi definido apenas usando um `attr_reader` , então `make=` não está definido.
 
 ### Recursos
 
