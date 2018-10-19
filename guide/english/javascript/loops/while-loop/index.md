@@ -40,3 +40,25 @@ _condition:_ Here, condition is a Boolean expression which is evaluated before e
         9
 
 *Source: [While Loop - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)*
+
+***Infinite Loops***
+
+An infinite loop occurs when the condition provided is never false.  Infinite loops cause all sorts of problems, such as crushing your browser, taking up large amounts of memory, crashing your computer, etc.  Be careful when writing loops, that you always specify an ending, or break to the loop.  
+
+## Example:
+        var i = 0
+        while (i > -1) {
+        console.log(i);
+        }
+        
+        Output:
+        true
+        true
+        true
+        true
+        true
+        true
+        true
+        ∞
+        
+*Source: Colt Steele's "The Web Developer Bootcamp" on Udemy.com, Section 9-107.  
