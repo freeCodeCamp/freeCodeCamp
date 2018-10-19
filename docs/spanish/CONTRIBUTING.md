@@ -15,7 +15,7 @@
 
 Hola 👋!
 
-freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Nos emocionados por tus contribuciones y nos complace darte la bienvenida a bordo.
+freeCodeCamp.org es posible gracias a miles de voluntarios amables como tú. Somos emocionados por tus contribuciones y nos complace darte la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómate un momento para leerlo. No es muy largo.
 
