@@ -102,6 +102,8 @@ Creates a hyperlink to direct visitors to another page or resource.
 ```html
 <a href="#">...</a>
 ```
+## Marquee Tag
+The <marquee> tag is a container tag of HTML is implemented for creating scrollable text or images within a web page from either left to right or vice versa, or top to bottom or vice versa. But this tag has been deprecated in the new version of HTML, i.e., HTML 5.
 
 ## Other Resources
 
