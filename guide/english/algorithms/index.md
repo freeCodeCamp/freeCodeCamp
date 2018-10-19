@@ -31,6 +31,9 @@ Some, very common and widely used are:
 There is no sorting discussion which can finish without quick sort. The basic concept is in the link below.
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
+#### Insertion Sort
+Insertion sort is a comparison-based algorithm that builds a final sorted array one element at a time. It iterates through an input array and removes one element per iteration, finds the place the element belongs in the array, and then places it there.
+
 #### Merge Sort
 It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
