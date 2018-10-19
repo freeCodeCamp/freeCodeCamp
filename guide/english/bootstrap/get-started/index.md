@@ -25,5 +25,21 @@ You will also need to add the following between the `body` tags in your code. Wi
     <p>Bootstrap is now working on this page</p>
 </div>
 
+### Installing Bootstrap with a Package Manager
+
+A popular package manager is NPM or Node Package Manager. You will need to install Node.js, which includes the Node Package Manager.
+Visit [Node.js](https://nodejs.org/en/) and download the necessary files based on your OS, and then install it.
+
+Once installed and setup, open up the command line or console, and type the following in the the project folder you wish to use Bootrap with. At the time of writing this will install bootstrap version 4.0.0
+
+```html
+npm install bootstrap@4.0.0 --save
+```
+Once this command is finished downloading and installing Bootstrap 4, there will be a new folder called node_modules within your project folder.
+
+* /bootstrap which contains the CSS and Sass version of our files.
+* /jquery which is used by Bootstrap in various components.
+* /tether which is a library for element positioning.
+
 #### More Information
 * [Bootstrap's official website](http://getbootstrap.com/getting-started/)
