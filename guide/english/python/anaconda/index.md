@@ -1,5 +1,5 @@
 ---
-title: Anaconda
+#**Anaconda**
 ---
 **Anaconda** is a package manager, environment manager and Python distribution with a collection of numerous packages. Anaconda is platform-agnostic, so you can use it whether you are on Windows, macOS or Linux.
 Anaconda easily creates, saves, loads and switches between environments on your local computer. It was created for Python programs, but it can package and distribute software for any language.
