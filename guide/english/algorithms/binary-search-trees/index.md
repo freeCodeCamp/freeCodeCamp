@@ -24,6 +24,9 @@ The BST is built up on the idea of the <a href='https://guide.freecodecamp.org/a
 - Insert: insert a node in the tree.
 - Search: Searches for a node in the tree.
 - Delete: deletes a node from the tree.
+- Inorder: in-order traversal of the tree.
+- Preorder: pre-order traversal of the tree.
+- Postorder: post-order traversal of the tree.
 
 #### Create
 Initially an empty tree without any nodes is created. The variable/identifier which must point to the root node is initialized with a `NULL` value.
@@ -254,6 +257,55 @@ int treeSize(struct node* node)
         return 0;
     else
         return 1+(treeSize(node->left) + treeSize(node->right));
+}
+```
+
+#### Traversal
+There are 3 kinds of traversals that are done typically over a binary search tree. All these traversals have a somewhat common way of going over the nodes of the tree. 
+##### In-order
+This traversal first goes over the left subtree of the root node, then accesses the current node, followed by the right subtree of the current node. The code represents the base case too, which says that an empty tree is also a binary search tree.
+```
+void inOrder(struct node* root) {
+        // Base case
+        if (root == null) {
+                return;
+        }
+        // Travel the left sub-tree first.
+        inOrder(root.left);
+        // Print the current node value
+        printf("%d ", root.data);
+        // Travel the right sub-tree next.
+        inOrder(root.right);
+}
+```
+##### Pre-order
+This traversal first accesses the current node value, then traverses the left and right sub-trees respectively. 
+```
+void preOrder(struct node* root) {
+        if (root == null) {
+                return;
+        }
+        // Print the current node value
+        printf("%d ", root.data);
+        // Travel the left sub-tree first.
+        preOrder(root.left);
+        // Travel the right sub-tree next.
+        preOrder(root.right);
+}
+```
+##### Post-order
+This traversal puts the root value at last, and goes over the left and right sub-trees first. The relative order of the left and right sub-trees remain the same. Only the position of the root changes in all the above mentioned traversals.
+```
+void postOrder(struct node* root) {
+        if (root == null) {
+                return;
+        }
+        // Travel the left sub-tree first.
+        postOrder(root.left);
+        // Travel the right sub-tree next.
+        postOrder(root.right);
+        // Print the current node value
+        printf("%d ", root.data);
 }
 ```
 
