@@ -11,6 +11,8 @@ Cryptocurrency is a subset of digital currency, which acts as a medium of exchan
 
 Unlike normal currency, cryptocurrency can be exchanged as fractions. For example, transactions can amount to 0.00007 BTC or even lower.
 
+Even though cryptocurrency had its hype , it is still in very early stages.
+
 If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
 
 #### More Information:
