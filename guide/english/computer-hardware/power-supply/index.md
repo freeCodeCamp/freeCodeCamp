@@ -5,6 +5,7 @@ title: Power Supply
 
 A Power Supply Unit (PSU) supplies power to a computer. It converts AC power into steady low-voltage DC power for the internal components. 
 
+Always buy a high quality power supply even if it is more expensive, cheap ones are tend to destroy your computer in case of a failure!
 
 A PSU is usually not user serviceable. For your safety, it is wise to never open a power supply unit.
 #### More Information:
