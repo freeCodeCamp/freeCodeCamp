@@ -49,6 +49,11 @@ When starting out with linux, there are some basic commands everyone should know
  14. **cp** - copy files and directories
 - Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
 
+ 15. **ln** - link LINKNAME to TARGET file/directory
+- Link is pointer which connects file name to actual bytes of data on the disk. More than one link can point on the same data.
+- Use `ln` to create a link to targeted file with linkname. Link to target is created in current working directory. By default ln creates [hard link](http://www.linfo.org/hard_link.html) and requires existance of TARGET file/directory. If we add `-s`(--symbolic) to the command, [symbolic link](https://www.computerhope.com/jargon/s/symblink.htm) will be created.
+
+
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
