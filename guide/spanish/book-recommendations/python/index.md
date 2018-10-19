@@ -6,17 +6,17 @@ localeTitle: Libros en lenguaje de programación Python
 
 _Piense Python 2e_
 
-*   Gratis (libro electrónico) que cubre los conceptos básicos de Python. Es amigable para los principiantes y es una necesidad para las personas que son nuevas en la programación.
-*   [Amazonas](https://www.amazon.com/gp/product/1491939362/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1491939362&linkCode=as2&tag=greenteapre01-20&linkId=XCU5FNNNMXRHDD7X)
+*   Libro electrónico gratuito que cubre los conceptos básicos de Python. Es amigable para los principiantes y es una necesidad para las personas que son nuevas en programación.
+*   [Amazon](https://www.amazon.com/gp/product/1491939362/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=1491939362&linkCode=as2&tag=greenteapre01-20&linkId=XCU5FNNNMXRHDD7X)
 *   ISBN-13: 978-1491939369
 *   [Sitio web](http://greenteapress.com/wp/think-python-2e/)
-*   [E-libro](http://greenteapress.com/thinkpython2/html/index.html) (gratis)
+*   [Libro electrónico](http://greenteapress.com/thinkpython2/html/index.html) (gratis)
 
 _Aprende Python 3 de la manera difícil_
 
-*   Libro pagado (libro electrónico gratuito disponible) que cubre los conceptos básicos de python. Está diseñado para que comiences con el lenguaje Python y te familiarices con su sintaxis y funcionamiento al momento de completar el libro.
+*   Libro que cubre los conceptos básicos de python. Está diseñado para que comiences con el lenguaje Python y te familiarices con su sintaxis y funcionamiento al momento de completar el libro (puede comprar el libro físico aunque el libro electrónico es gratuito).
     
-*   [Amazonas](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
+*   [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
     
 *   ISBN-13: 978-0134692883
     
@@ -24,7 +24,7 @@ _Aprende Python 3 de la manera difícil_
     
 *   [Sitio web](https://learnpythonthehardway.org/) (Comprar al creador | Incluye lecciones en video)
     
-*   [E-libro](https://learnpythonthehardway.org/python3/) (gratis)
+*   [Libro electrónico](https://learnpythonthehardway.org/python3/) (gratis)
     
 *   [Programación funcional en Python por David Mertz \[OREILLY\] \[GRATIS\]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
     
@@ -37,8 +37,8 @@ _Aprende Python 3 de la manera difícil_
 
 _Black Hat Python: Programación en Python para hackers y pentesters_
 
-*   [Sonrisa de amazon](https://smile.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/)
+*   [Amazon Smile](https://smile.amazon.com/Black-Hat-Python-Programming-Pentesters/dp/1593275900/)
     
 *   ISBN-10: 1593275900
     
-    Por favor, siéntase libre de agregar más que haya encontrado útil!
+    Por favor, siéntase libre de agregar más libros que haya encontrado útiles!
