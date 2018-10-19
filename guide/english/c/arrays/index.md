@@ -69,6 +69,9 @@ In this example `var` is going to store the value `1`.
 
 * Some texts refer to one-dimensional arrays as vectors, two-dimensional arrays as matrices, and use the general term arrays when the number of dimensions is unspecified or unimportant.
 
+## Meaning Of Arr[i]
+* We will code Arr[i] now,you know when you alloacte space for array it occupies continuously so here (Arr) is nothing but address of first element..
+*the symbol [] means just dereference given address so now,a[i] mean that go to the position a+i in array,which is the address of i th  position,and dereferenc it...it will be value at i th position...
 
 ## Multi-dimensional Arrays in C
 
