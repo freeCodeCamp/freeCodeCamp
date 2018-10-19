@@ -50,6 +50,10 @@ UAT checks that everything works properly and that there are no crashes. Those o
 * [AgileUAT: A Framework for User Acceptance Testing
 based on User Stories and Acceptance Criteria](http://research.ijcaonline.org/volume120/number10/pxc3903533.pdf)
 
+* [Software Development Lifecycle](https://www.utest.com/articles/user-acceptance-testing-and-its-need-in-the-software-development-lifecycle)
+
+* [User Acceptance Testing – How To Do It Right!](https://usersnap.com/blog/user-acceptance-testing-right)
+
 
 #### More Information:
 https://en.wikipedia.org/wiki/Acceptance_testing
