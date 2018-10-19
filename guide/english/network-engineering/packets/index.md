@@ -7,6 +7,8 @@ A packet is a basic unit of communication over a digital network. A packet is al
 
 Packet switched networks are generally more efficient compared to circuit switched networks. Circuit switched network needs to reserve resources for the duration of communication. Packet switched networks can send packets on demand.
 
+In a simple way you can think of a packet as a packet filled with information & data. As you browse the internet you make a request to the server which that packet contains that you request that specific data from them. In reply, if you are allowed by the server you will receive a packet containing the data you wanted. 
+
 In the OSI model, packets correspond to layer 3, the Network Layer.
   
 ## Structure of a Data Packet
