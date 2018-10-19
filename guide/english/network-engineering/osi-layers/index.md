@@ -25,15 +25,15 @@ We go for a layered approach because it is easy to design independent layers wit
 In the diagram above, you would notice that the upper layers of the protocol (Application - Transport), the sender's and receiver's layers are directly connected via arrows. This is because these layers are not aware of intermediate devices that are used to transport data (such as switches and routers). These layers appear to communicate directly with each other.
 
 * _**Unit of Data:**_
-In the diagram above, to the extreme left is the unit of data that is used in each of the layer. The transport layer (and the layers below it) have a unique name for the unit of data being transferred from sender to receiver. 
+In the diagram above, to the extreme left is the unit of data that is used in each of the layers. The transport layer (and the layers below it) have a unique name for the unit of data being transferred from sender to receiver. 
 
 ### **Functions of Layers**
 
-* _**Layer 1 - Physical Layer:**_  The physical layer is the lowest of the OSI Layers and the most complex. This is because of the undelying hardware technologies used. The function of this layer is to define how the bit stream will be transmitted rather than the logical data packet. It deals with defining which frequency will the bit be transmitted on, what kind of modulation will be used, how the bits will be grouped and other low lying physical parameters needed for transmission of bits.
+* _**Layer 1 - Physical Layer:**_  The physical layer is the lowest of the OSI Layers and the most complex. This is because of the underlying hardware technologies used. The function of this layer is to define how the bit stream will be transmitted rather than the logical data packet. It deals with defining which frequency will the bit be transmitted on, what kind of modulation will be used, how the bits will be grouped and other low lying physical parameters needed for transmission of bits.
 
 * _**Layer 2 - Data Link Layer:**_ The data link layer is responsible for transferring data to adjacent devices on the same Local Area Network (LAN). This layer also has provisions to make sure that error-free data is being passed on to the higher layers from the physical layer. Hence, it contains error detection and correction mechanisms to ensure the integrity of data is maintained. Data at this layer is commonly referred to as a "frame". The transmission of frames at layer 2 is known as "switching", and is the common function of a Network Switch.
 
-* _**Layer 3 - Network Layer:**_ The network layer is responsible for forwarding packets to other networks. Usually a network is divided into multiple subnets and the network layer with the help of routers forwards packets between such networks to establish a Wide Area Network (WAN). 
+* _**Layer 3 - Network Layer:**_ The network layer is responsible for forwarding packets to other networks. Usually, a network is divided into multiple subnets and the network layer with the help of routers forwards packets between such networks to establish a Wide Area Network (WAN). 
 
 * _**Layer 4 - Transport Layer:**_ The transport layer ensures that messages are delivered error-free, in sequence, and with no losses or duplications. It relieves the higher layer protocols from any concern with the transfer of data between them and their peers.
 
