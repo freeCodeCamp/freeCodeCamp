@@ -51,3 +51,8 @@ Input/Output device is any hardware used by a human operator or other systems to
 A computer monitor is an output device which displays information in pictorial form.
   
 ![Monitor](https://assets.pcmag.com/media/images/523934-dell-ultrasharp-34-curved-monitor-u3417w.jpg?thumb=y)
+
+### Speakers
+A computer speaker is a hardware device that connects to a computer to generate sound. The signal used to produce the sound that comes from a computer speaker is created by the computer's sound card. 
+  
+![Speakers](https://icdn5.digitaltrends.com/image/audioengine-a5-plus-both-offset-right-low-1500x1000.jpg)
