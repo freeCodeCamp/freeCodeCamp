@@ -35,21 +35,35 @@ GPUs were originally modeled on the concept of graphics pipeline. Graphics pipel
 
 ### 0th Generation
 "Reality Engine" board by Silicon Graphics Inc.(SGI) marked the onset of GPU hardware and the graphics pipeline. But the technology was still dependent upon CPU for the first half. Also, the speed was limited to one pixel execution per clock cycle. The engine use OpenGL, a widely used 2D/3D application programming.
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/SGI-re2-ge10v.jpg/220px-SGI-re2-ge10v.jpg" alt="Reality Engine" title="Reality Engine">
+
 ### 1stGeneration
 The "3dfx Voodoo" (1996) evolved as one of the first true 3D-accelerator for games. It handled texture mapping, rasterization, and z-buffering but the CPU still had to do vertex transformations.
+<img src="https://tferi.hu/cikkek/videocard13.jpg" alt="Vodoo" title="3dfx Voodoo">
+
 ### 2ndGeneration
 This is the point when the first-ever true GPU, NVIDIA's "GeForce 256" was released in the common market. The GPUs of this generation's used Accelerated Graphics Port(AGP), offered new functions like multi-texturing, hardware geometry transform, light maps, and lighting. The traditional pipelines were known as a "fixed function" pipeline, because once the developer sent graphics data into the GPU's pipeline, the data could not be changed.
+<img src="https://cdn.videocardz.net/cache/18200040c7e7e8ed83b18878d3ae0cb7-1200x900.jpg" alt="GeForce256" title="GeForce256">
+
 ### 3rd Generation
 With this generation of CPUs, programmable pipelining came into existence. Now the previously non-programmable parts could be programmed by programmers. In 2001, NVIDIA released the GeForce3.
+<img src="https://prohardver.hu/dl/cnt/2003-08/253/cards/ti200.jpg" alt="3 Ti200" title="GeForce3 Ti200">
+
 ### 4th Generation
 With the beginning of 21st century, the first "fully programmable graphics cards" had reached the consumers. NVIDIA GeForce FX, ATI Radeon 9700 were among the first. These GPUs could do per-pixel operations along with pixel shaders and programmable vertex. But, separate dedicated hardwares were needed for vertex shader and pixel shader processing.
+<img src="http://vgamuseum.info/images/zaatharen/ati/Radeon9700_fhq.jpg" alt="9700" title="ATI Radeon 9700">
+
 ### 5th Generation
 GPUs were evolving and advancing at it's peak rate and this generation GPUs were the first to utilize PCI-express bus. Multiple rendering buffers, 64-bit support, texture access etc. were introduced, along with increase in GPU memory.
+<img src="https://images.pcworld.com/news/graphics/117070-2209P058_1B.jpg" alt="Geforce and Ati" title="ATI Radeon X600 XT and Nvidia 6800 GT">
+
 ### 6th Generation
 In 2006, the release of NVIDIA's GeForce 8 series GPU revolutionized the GPU industry and reach, by introducing the GPU as massively parallel processors. It was the first to have "unified" and "programmable" shaders or, in other words, programmable unified processor. Unified means all the processes of graphics pipeline were executed on a single processor and no external unit is required for any stage. Basic Unified GPU architecture components are discussed below.
 
 Since the release of the 9XX series NVidia GPUs, the performance increase between generations only got better. From the 980Ti to the 1080Ti and the newly launched 208Tis, performance has more than doubled. AMD also started to produce better GPUs like the RX 580 and Vega 64, although this is still nowhere near Nvidia's level.
 Just recently, Nvidia launched a new line of GPUs titled RTX which includes the higher-end cards like 2080Ti, 2080, and 2070. RTX stands for "Ray Tracing", which is a rendering technique used in generating images though tracing the path of light in a scene. The more "Rays" or light created, the more accurate the graphic image quality will be, as it is more optimized to enhance lighting effects and shadows.
+<img src="https://prod.scorptec.com.au/35/461/74299/163470_large.jpg" alt="RTX 2080Ti" title="Asus RTX1080 Ti">
+
 
 
 ## Basic Unified GPU Architecture Components
