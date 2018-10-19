@@ -1,7 +1,7 @@
 ---
 title: B Trees
 ---
-## B Trees
+## B Trees the tree
 
 # Introduction
 
