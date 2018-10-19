@@ -8,58 +8,71 @@ Várias propriedades são fornecidas pelo CSS para alterar a aparência do texto
 
 #### Cor do texto
 
-\`\` \`html
-
-Este é um exemplo de propriedade de texto CSS.
+``` html
+<html>
+  <body>
+    <p>This is an example of CSS text property.</p>
+  </body>
+</html>
 ```
-``` css 
- p { 
-    color:red; 
- } 
+``` css
+p {
+    color:red;
+ }
 ```
 
 No exemplo acima, a `color` do texto do elemento `<p>` é alterada para vermelho. Você também pode especificar a cor como valores RGB, valores HLS e códigos hexadecimais (para obter mais informações sobre cores, clique [aqui](https://guide.freecodecamp.org/css/colors) ).
 
 #### Alinhamento de texto
 
-`text-align` propriedade `text-align` é usada para definir o alinhamento horizontal do texto. Pode levar valores à `left` , à `right` , ao `center` e `justify` . \`\` \`css p { texto-alinhar: centro; }
+`text-align` propriedade `text-align` é usada para definir o alinhamento horizontal do texto. Pode levar valores à `left` , à `right` , ao `center` e `justify`.
+``` css
+p {
+    text-align: center;
+ }
 ```
-Here the text is aligned to the `center` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align)).When `text-align` is set to `justify`,each line is stretched so that every line has equal width, and the left and right margins are straight ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align_all)). 
+Aqui o texto e alinhado `center` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align)). Quando `text-align` e definido para `justify`, cada linha e esticada para que cada linha tenha a mesma largura, e as margens da esquerda e direita são a retas ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-align_all)).
  
- #### Text Decoration 
+ #### Decoração de texto
+``` css
+p {
+    text-decoration: underline;
+}
 ```
+A propriedade `text-decoration` e usada para remover decorações do texto. O valor `text-decoration: none;` e geralmente utilizado para remover o sublinhado dos links. Outras `text-decorations` incluem `overline`, `line-through`, e `underline` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration)).
+ 
+ #### Transformação de texto 
+``` css
+p {
+    text-transform: capitalize;
+}
+```
+A propriedade `text-transform` e usada para converter todo o texto para `uppercase`, `lowercase` ou para `capitilize` cada palavra ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform)). 
 
-css p { text-decoration: sublinhado; }
-```
-The `text-decoration` property is used to set or remove decorations from text. The value `text-decoration: none;` is often used to remove underlines from links. Other `text-decorations` include `overline`,`line-through`,and `underline` ([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-decoration)). 
+ #### Espaçamento das letras 
  
- #### Text Tranformation 
+ A propriedade `letter-spacing` define o espaco entre os caracters em um texto. 
+``` css
+p {
+    letter-spacing: 5px;
+}
 ```
-
-css p { text-transform: capitalize; }
-```
-The `text-transform` property is used to convert the entire text to `uppercase`,`lowercase` or to `capitilize` each word([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform)). 
+#### Altura da Linha 
  
- #### Letter Spacing 
+ A propriedade `line-height` define o espaço entre duas linhas de texto.
+``` css
+p {
+    line-height: 5px;
+}
+```
+#### Espaçamento de Palavra 
  
- The `letter-spacing` property sets the space between characters in a text. 
+ A `word-spacing` define o espaco entre as palavras de um texto. 
+``` css
+p {
+    word-spacing: 5px;
+}
 ```
-
-css p { espaçamento entre letras: 5px; }
-```
-#### Line Height 
- 
- The `line-height` property sets the space between two lines of text. 
-```
-
-css p { Altura da linha: 5 px; }
-```
-#### Word Spacing 
- 
- The `word-spacing` sets the space between words in a text. 
-```
-
-css p { espaçamento entre palavras: 5px; } \`\` \`
 
 #### Mais Informações:
 
