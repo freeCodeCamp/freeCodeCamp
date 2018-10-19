@@ -23,3 +23,5 @@ I've found <a href='https://github.com/cassidoo/getting-a-gig' target='_blank' r
 ## Pro tip:
 
 Like in any other industry or field, the hardest part is actually getting started. Do not worry too much and take action instead - the results will be mesmerizing.
+
+Also, if you're new to coding, don't immediately focus on your salary, but focus on finding a job where you can improve your coding skills and up your game. The rest will follow.
