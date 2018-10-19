@@ -28,7 +28,7 @@ Windows doesn't come with Python, the installer and instructions can be found <a
 
 ## Python Interpreter
 
-The Python interpreter is what is used to run Python scripts.
+The Python interpreter is used to run Python scripts.
 
 If it is available and in Unix shell’s search path makes it possible to start it by typing the command `python` followed by the script name will invoke the interpreter and run the script.
 
