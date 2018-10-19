@@ -15,6 +15,8 @@ Additionally, doctypes for HTML 4.01 required the declaration of either `strict`
 
 In contrast, the declaration of HTML5 `DOCTYPE` is much simpler: it no longer requires a reference to DTDs as it is no longer based on SGML. See the examples below for a comparison between HTML 4.01 and HTML5 `DOCTYPE`s.
 
+NOTE: If you must use <!DOCTYPE html> in a html file you won't be able to use some html tags again, possibly beacue they are deprecated so it's cool to take note of every upgrade because sometimes it can be a pain in the ass when your codes doesn't work.
+
 ### Examples
 
 Doctype syntax for HTML5 and beyond:
