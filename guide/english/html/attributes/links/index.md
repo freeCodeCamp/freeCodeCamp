@@ -16,11 +16,13 @@ You use an ```code <a>``` tag or anchor element to define your link, which also 
 <a href="https://guide.freecodecamp.org">the freeCodeCamp Guide</a>
 ```
 
-If you'd like your link to open in a new tab, you'll use the ```code target``` attribute along with the ```code "_blank"``` value inside your opening ```code <a>``` tag. That looks like this:
+The target attribute can be used to tell the browser where to open the link.The target attribute can be used to tell the browser where to open the link.  If you'd like your link to open in a new tab, you'll use the ```code target``` attribute along with the ```code "_blank"``` value inside your opening ```code <a>``` tag. That looks like this:
 
 ```html
 <a href="https://guide.freecodecamp.org" target="_blank">the freeCodeCamp Guide</a>
 ```
+
+Other values of the target attribute include ```code "_self"``` to open the linked document in the same frame, ```code "_parent"``` to open it in the parent frame, ```code "_top"``` Opens the linked document in the full body of the window and ```code "_targetframe"``` Opens the linked document in a named targetframe.
 
 When you need to guide users to a specific part of your webpage, let's assume the very bottom, you first need to assign the hash ```code #``` symbol to the ```code href``` attribute, like this
 
