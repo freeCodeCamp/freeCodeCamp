@@ -13,6 +13,7 @@ const loopback = spawn(
   ['./api-server', '&&', 'node development-entry.js'],
   spawnOpts
 );
+
 const gatsby = spawn('cd', ['./client', '&&', 'npm run develop'], spawnOpts);
 
 let cleanupCalled = false;
