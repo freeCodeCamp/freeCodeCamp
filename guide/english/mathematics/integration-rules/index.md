@@ -25,6 +25,18 @@ As with differentiation, we use a variety of rules when integrating functions. B
 
 &int;[f(x) - g(x)]dx = &int;f(x)dx - &int;g(x)dx
 
+**Physical Calculus Rules:**
+
+&int; v dt = x + C, where x is the displacement and v is the velocity
+
+&int; a dt = v + C, where v is the velocity and a is the acceleration
+
+a = <sup>d</sup>&frasl;<sub>dx</sub>(0.5v<sup>2</sup>) where a is the acceleration, and v is the velocity
+
+&int; a dx = 0.5v<sup>2</sup>
+
+a + C = 0.5v<sup>2</sup>
+
 #### More Information:
 [Basic Rules with Examples](http://archive.learnhigher.ac.uk/resources/files/Numeracy/Integration_webversion.pdf)
 
