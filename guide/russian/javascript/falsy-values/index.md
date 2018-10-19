@@ -19,17 +19,17 @@ if (!variable) {
 ## Общие примеры
 
 ```javascript
-var string = ""; // <-- falsy 
- 
- var filledString = "some string in here"; // <-- truthy 
- 
- var zero = 0; // <-- falsy 
- 
- var numberGreaterThanZero // <-- truthy 
- 
- var emptyArray = []; // <-- truthy, we'll explore more about this next 
- 
- var emptyObject = {}; // <-- truthy 
+const string = ""; // <-- falsy
+
+const filledString = "some string in here"; // <-- truthy
+
+const zero = 0; // <-- falsy
+
+const numberGreaterThanZero; // <-- falsy
+
+const emptyArray = []; // <-- truthy, we'll explore more about this next
+
+const emptyObject = {}; // <-- truthy
 ```
 
 ## Развлечения с массивами
