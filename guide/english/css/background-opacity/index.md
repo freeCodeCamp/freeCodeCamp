@@ -47,7 +47,7 @@ Alternatively you can use a transparent rgba value like this:
 ```css
 
 .class-name{
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,255,0,0.3);
   }
  ```
 The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) quals 50%. We use this method to add transparency to an element without affecting the content inside.
