@@ -12,4 +12,4 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+For more clear understanding of the theorem, do watch https://www.youtube.com/watch?v=9Os0o3wzS_I
