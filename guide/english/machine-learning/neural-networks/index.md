@@ -50,7 +50,7 @@ There's an awesome tool to help you grasp the idea of neural networks without an
 
 The most common Neural Networks used today fall into the [deep learning](https://github.com/freeCodeCamp/guides/blob/master/src/pages/machine-learning/deep-learning/index.md) category. Deep learning is the process of chaining multiple layers of neurons to allow a network to create increasingly abstract mappings between input and output vectors. Deep neural networks will most commonly use [back propogation](https://github.com/freeCodeCamp/guides/blob/master/src/pages/machine-learning/backpropagation/index.md) in order to converge upon the most accurate mapping.
 
-The second most common form of neural networks is nueroevolution. In this system multiple neural networks are randomly generated as initial guesses. Then multiple generations of combining the accurate most networks and random permutations are used to converge upon a more accurate mapping. 
+The second most common form of neural networks is neuroevolution. In this system multiple neural networks are randomly generated as initial guesses. Then multiple generations of combining the accurate most networks and random permutations are used to converge upon a more accurate mapping. 
 
 ### Types of Neural Networks
 - Recurrent Neural Network (RNN)
