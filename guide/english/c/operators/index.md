@@ -47,30 +47,32 @@ title: Operators
      int b = a--; // postfix operator; a = 6, b = 7
      int c = --a; // prefix operator; a = 5, c = 5
      ```
-// C Program to demonstrate the working of arithmetic operators
+ 
+ C Program to demonstrate the working of arithmetic operators
+```C
 #include <stdio.h>
 int main()
 {
     int a = 9,b = 4, c;
-    
+
     c = a+b;
     printf("a+b = %d \n",c);
 
     c = a-b;
     printf("a-b = %d \n",c);
-    
+
     c = a*b;
     printf("a*b = %d \n",c);
-    
+
     c=a/b;
     printf("a/b = %d \n",c);
-    
+
     c=a%b;
     printf("Remainder when a divided by b = %d \n",c);
-    
+
     return 0;
 }
-
+```
 ## 2. Relational Operators
 
 - `==` Equal - true when the two operands are equal
