@@ -75,6 +75,8 @@ Car car = new Vehicle(); // ERROR
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYB/0' target='_blank' rel='nofollow'>Run Code</a>
 
+NOTE: It might seem counter-intuitive but your child class will have more "features" or functionality than your parent class, hence you cannot instantiate a car object by calling it's parent (vehicle) constructor.
+
 Since you can reference a Java subclass as a superclass instance, you can easily cast an instance of a subclass object to a superclass instance. It is possible to cast a superclass object into a subclass type, but _only if the object is really an instance of the subclass_. So keep this in mind :
 
 ```java
