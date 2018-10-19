@@ -3,7 +3,7 @@ title: GPU
 ---
 ## GPU
 
-GPU stands for Graphics Processing Unit. The majority of computers use these to render videos or play video games.
+GPU stands for Graphics Processing Unit. Although they are not nessesary for a computer to function, many computers have a dedicated graphics card for better performence rendering videos or playing video games.
 
 A GPU is like a CPU but has different strengths and weaknesses. CPUs are very good at running a couple of tasks very quickly. GPUs are much better at running many tasks at the same time, but slower. A typical GPU can have more than 10,000 tasks running, but to run so many tasks at the same time they must share memory and other resources. GPUs usually run very repetitive tasks over and over to save the CPU from wasting time. Some CPUs have built-in GPUs, but having a separate GPU is almost always more powerful.
 
