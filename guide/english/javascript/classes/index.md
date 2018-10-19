@@ -27,7 +27,7 @@ Like in any other programming language, you can now use the `class` keyword to c
 This is not supported in older browsers and was introduced in ECMAScript 2015.
 
 ```javascript
-class Person {
+class President {
     constructor(firstName, lastName) {
         this._firstName = firstName;
         this._lastName = lastName;
