@@ -52,7 +52,7 @@ This is pretty straightforward, because this is such a simple function. `a` is d
 
 So to recap what this function does- it gets two integers, divides them, and gives them back to whatever called it.
 
-###Parameters of a function
+### Parameters of a function
 Parameters are used to pass arguements to the function.
 Their are two types of parameters:
 Parameter Written In Function Definition is Called “Formal Parameter”.
