@@ -29,6 +29,8 @@ System.out.println(obj1 == obj3) // false
 System.out.println(obj2 == obj3) // false
 ```
 
+The `==` operator is completely different from `=`, which is not an operator at all and is used for assignment.
+
 ## The `.equals()` Method
 
 The built-in `Object` class in Java, which all other classes automatically extend, contains a number of helpful built-in methods. One such method is `equals()`, which takes another object as its argument and returns whether the two objects should be considered "equal" according to the relevant logic for that class.
