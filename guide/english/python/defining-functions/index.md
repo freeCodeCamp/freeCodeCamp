@@ -3,6 +3,16 @@ title: Python Defining Functions
 ---
 <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python Docs</a>
 
+### Basic structure of a python function define
+       
+       >>> def function_name(arguments):
+       ...      ''' docstring'''
+       ...      statement(\s)
+
+
+
+### Example 
+
 We can create a function that writes the Fibonacci series to an arbitrary boundary:
 
     >>> def fib(n):    # write Fibonacci series up to n
