@@ -12,7 +12,7 @@ just the Linux kernel, and that they have in common not only the kernel, but als
 of which are from the GNU project. 
 
 ### GNU
-The GNU operating system is a complete free software system, upward-compatible with Unix. GNU stands for “GNU's Not Unix”.
+GNU stands for “GNU's Not Unix”. The GNU operating system is a complete free software system, upward-compatible with Unix. 
 The project to develop the GNU system is called the “GNU Project”. The GNU Project was conceived in 1983 as a way of bringing back the cooperative spirit that prevailed in the computing community in earlier days—to make cooperation possible once again by removing the obstacles to cooperation imposed by the owners of proprietary software. *The GNU operating system and the Linux kernel are separate software projects that do complementary jobs. Typically they are packaged in a GNU/Linux distribution, and used together*. More at [Overview of GNU system](https://www.gnu.org/gnu/gnu-linux-faq.en.html#why)
 
 The development of Linux is one of the most prominent examples of free and open-source software collaboration. The underlying source
