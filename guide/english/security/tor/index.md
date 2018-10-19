@@ -23,6 +23,11 @@ Tor has gotten a lot of negative attention because of its criminal use case. Cri
 Edward Snowden, the NSA whistleblower, has mentioned Tor favorably as a very well put-together program. Famously, an internal NSA memo that was leaked referred to it as "the king of high-secure, low-latency internet anonymity There are no contenders to the throne in waiting".
 
 Tor has many other usecases. Journalists reporting from areas where their lives may be endangered by the nature of the stories they are breaking, whistleblowers, and people living in oppressive regimes all fit into Tor's more benign usecases, along with anyone more interested in online anonymity. This is important because everyday things cause us to lose more and more of what little privacy we have left, things like TOR ensure a brighter future.
+## Steps in TOR connectivity:
+* At the startup of the TOR browser, the browser then communicate with a TOR nodes directory Server.
+* The directory server then provides the user's browser with a list of TOR nodes
+* The user enters in the URL for the desired .onion site and the TOR browser routes the traffic through a series of nodes
+* The last node connects to the .onion server.From that point on,all the traffic is re-routed back through nodes to the user's browser 
 
 #### More Information:
 
