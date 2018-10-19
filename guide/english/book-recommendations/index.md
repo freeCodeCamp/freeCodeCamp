@@ -129,7 +129,13 @@ title: Books to Read for Programmers
 
 *JavaScript and JQuery: Interactive Front-End Web Development*
 - [Amazon Smile](https://smile.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647/?pldnSite=1)
-- ISBN-13: 978-1118531648 
+- ISBN-13: 978-1118531648
+
+## Node.js
+
+ *Beginning Node.js*
+ -[Amazon](https://www.amazon.com/Beginning-Node-js-Basarat-Syed-ebook/dp/B01JFUD1X8/ref=sr_1_1?ie=UTF8&qid=1539929353&sr=8-1&keywords=beginning-Node-js-Basarat-Syed)
+ - ISBN-13: 978-1484201886
 
 ## Python
 
