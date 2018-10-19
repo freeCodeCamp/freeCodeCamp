@@ -18,6 +18,10 @@ Here you can see that in the graph of y = |x|, if -2 is input in to the function
 * **Simplify |-5|**
 
   |-5| = 5
+  
+* **Simplify |-2 + -2|**
+
+  |-2 + -2| = |-4| = 4
 
 * **Simplify |0(5)|**
 
