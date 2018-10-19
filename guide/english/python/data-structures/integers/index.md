@@ -145,3 +145,5 @@ If a prefixed string and base 0 is used, the created integer object will use the
     4
     >>> int('0o100', 0)
     64
+   
+   int (signed integers) − They are often called just integers or ints, are positive or negative whole numbers with no decimal point.
