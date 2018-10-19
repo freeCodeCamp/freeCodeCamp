@@ -42,7 +42,7 @@ tesla.start();
 tesla.stop();
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJXz/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJXz/0' target='_blank' rel='nofollow'>Run Code</a>
 
 But, does the parent class have the methods of the child? No, it doesn't.
 
@@ -73,7 +73,7 @@ Although, the opposite is not possible :
 Car car = new Vehicle(); // ERROR
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYB/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYB/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Since you can reference a Java subclass as a superclass instance, you can easily cast an instance of a subclass object to a superclass instance. It is possible to cast a superclass object into a subclass type, but _only if the object is really an instance of the subclass_. So keep this in mind :
 
@@ -87,7 +87,7 @@ Vehicle v = bike; // upcasting, no problem here.
 Car car3 = (Car)bike; // Compilation Error : as bike is NOT a instance of Car
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYM/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYM/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Now you know how to share code through a parent-child relationship. But, what if, you do not like the implementation of a particular method in the child class and want to write a new one for it? What do you do then?
 
@@ -112,7 +112,7 @@ Car car = new Car();
 car.start(); // "Car start code"
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYZ/1' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJYZ/1' target='_blank' rel='nofollow'>Run Code</a>
 
 So, it's pretty simple to override methods in the subclass. Although, there is a _catch_. Only that superclass method with the _exact same method signature_ as the subclass method will be overriden. That means the subclass method definition must have the exact same name, same number and type of parameters, and in the exact same sequence. Thus, `public void start(String key)` would not override `public void start()`.
 
@@ -144,7 +144,7 @@ Car car = new Car();
 car.run(); // "Vehicle start code"
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJY4/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJY4/0' target='_blank' rel='nofollow'>Run Code</a>
 
 **N.B.** : Although you can call the parent method by using a `super` call, you cannot go up the inheritance hierarchy with chained `super` calls.
 
@@ -182,7 +182,7 @@ public class Car extends Vehicle {
 }
 ```
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJY8/0' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CJY8/0' target='_blank' rel='nofollow'>Run Code</a>
 
 Remember, if the superclass does not have any constructors defined, you don't have to call it explicitely in the subclass. Java handles that internally for you! Invocation to `super` constructor is done in the case when the super class is to be called with any other constructor other than the _default constructor_.
 
