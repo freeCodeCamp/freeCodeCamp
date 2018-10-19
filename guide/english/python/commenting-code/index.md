@@ -1,7 +1,9 @@
 ---
 title: Python Commenting Code
 ---
-Comments are used to annotate, describe, or explain code that is complex or difficult to understand. Python will intentionally ignore comments when it compiles to bytecode by the interpreter. <a href='https://www.python.org/dev/peps/pep-0008/#comments' target='_blank' rel='nofollow'>`PEP 8`</a> has a section dealing with comments.They also increases the readablity of code by adding easy and descriptive language for better understanding.
+Comments are used to annotate, describe, or explain code that is complex or difficult to understand. Python will intentionally ignore comments when it compiles to bytecode by the interpreter. The Python Style Guide, <a href='https://www.python.org/dev/peps/pep-0008/#comments' target='_blank' rel='nofollow'>`PEP 8`</a>, has a section dealing with comments. Comments also increase the readablity of code by adding easy and descriptive language for better understanding.
+
+Comments should be readable and make sense within the context of the code. Comments that contradict the code are worse than no comments. Always make a priority of keeping the comments up-to-date when the code changes! Comments should also be complete sentences.
 
 **Block** and **inline** comments start with a `#`, followed by a space before the comment:
 
@@ -17,7 +19,7 @@ Python does not include a formal way to write multiline comments. Each line of a
 ```
 Another type of comment is the **docstring**, documented in <a href='https://www.python.org/dev/peps/pep-0257/' target='_blank' rel='nofollow'>`PEP 257`</a>. Docstrings are a specific type of comment that becomes the `__doc__` attribute.
 
-For a string literal to be a docstring, it must start and end with `\"\"\"` and be the first statement of the module, function, class, or method definition it is documenting:
+For a string literal to be a docstring, it must start and end with `"""` and be the first statement of the module, function, class, or method definition it is documenting:
 
 ```python
     class SomeClass():
