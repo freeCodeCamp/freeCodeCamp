@@ -63,11 +63,11 @@ title: Books to Read for Programmers
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
-- [Amazon](https://www.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
+- [Amazon Smile](https://smile.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
 - ISBN-13: 978-1593273897
 
 *Learning the bash Shell: Unix Shell Programming by Cameron Newham*
-- [Amazon](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
+- [Amazon Smile](https://smile.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
 - ISBN-13: 978-0596009656
 
 ## C-lang
@@ -79,17 +79,17 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0131103628
 
 *A Book on C: Programming in C*
-- [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
+- [Amazon Smile](https://smile.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 - ISBN-13: 978-0201183993
 
 ## C#
 
 *C# 6.0 in a Nutshell: The Definitive Reference 6th Edition* by Joseph Albahari  (Author), Ben Albahari (Author)
-- https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell
+- [Amazon Smile](https://smile.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell)
 - ISBN-13: 978-1491927069
 
 *Pro C# 7: With .NET and .NET Core Paperback – Nov 21 2017* by Andrew Troelsen (Author), Philip Japikse (Author)
-- https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
+- [Amazon Smile](https://smile.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen)
 - ISBN-13: 978-1484230176
 
 ## Coding Interview
@@ -150,7 +150,7 @@ title: Books to Read for Programmers
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
-- https://www.amazon.in/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM
+- [Amazon Smile](https:smile.amazon.com/dp/B075CX7T6G/ref=cm_sw_r_cp_awdb_t1_-7ESBbZ43CCBM)
 - (ISBN 1976112524).
 
 *Code: The Hidden Language of Computer Hardware and Software (Developer Best Practices) *
@@ -210,7 +210,7 @@ title: Books to Read for Programmers
 - ISBN-13: 978-5800083125
 
 *Dynamic Programming for Coding Interviews: A Bottom-Up approach to problem solving*
-- [Amazon Smile](https://smile.amazon.in/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP)
+- [Amazon Smile](https://smile.amazon.com/Dynamic-Programming-Coding-Interviews-Bottom-Up-ebook/dp/B06XZ61CMP)
 - ISBN-13: 978-1946556691
 
 *GATE 2019 Computer Science and Information Technology*
@@ -226,20 +226,20 @@ title: Books to Read for Programmers
 - ISBN-13: 978-0321117427
 
 *The Mythical Man-Month: Essays on Software Engineering*
-- [Amazon Smile](https://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
+- [Amazon Smile](https://smile.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
 - ISBN-13: 978-0201835953
 
 *Deep Learning by Ian Goodfellow, Yoshua Bengio, Aaron Courville*
-- [Amazon](https://www.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
+- [Amazon Smile](https://smile.amazon.com/Deep-Learning-Adaptive-Computation-Machine/dp/0262035618)
 - ISBN: 978-0262035613
 *Oracle® Database Notes for Professionals*
 https://books.goalkicker.com/OracleDatabaseBook/
 
 *Pro PHP Programming - Peter MacIntyre*
-[Amazon]https://www.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG
+[Amazon Smile](https://smile.amazon.com/Pro-PHP-Programming-Peter-MacIntyre-ebook/dp/B005PZ09AG)
 
 *Mastering Linux Shell Scripting by Andrew Mallett*
-- [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
+- [Amazon Smile](https://smile.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
