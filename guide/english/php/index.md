@@ -68,9 +68,8 @@ sudo apt install apache2 libapache2-mod-php
 ```
 
 Or you can also install PHP, MySQL & Web-server all by installing 
-```
-<a href="https://www.apachefriends.org/download.html" target="_blank">XAMPP</a> (free and open-source cross-platform web server solution stack package)
-```
+
+<a href="https://www.apachefriends.org/download.html" target="_blank">XAMPP</a> (free and open-source cross-platform web server solution stack package) 
 or similar packages like <a href="http://www.wampserver.com/en/" target="_blank">WAMP</a>
 
 
