@@ -26,8 +26,6 @@ In HTML, ordered and unordered lists are similar in both usage and styling. Use 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
-## Other Resources
 * [The unordered list `<ul>`](https://github.com/freeCodeCamp/guides/blob/master/src/pages/html/elements/ul-tag/index.md)
 * [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol)
 
