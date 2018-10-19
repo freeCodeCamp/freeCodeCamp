@@ -33,3 +33,8 @@ A collection of articles covering the basics (core language and working with a b
 A very fun and easy book for beginners. 
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+*A Smarter Way to Learn JavaScript: The new approach that uses technology to cut your effort in half*
+
+Learning JavaScript is hell because of two problems.
+I remove the problems, and you start having fun.
+- [Amazon].(https://www.amazon.com/Smarter-Way-Learn-JavaScript-technology-ebook/dp/B00H1W9I6C)
