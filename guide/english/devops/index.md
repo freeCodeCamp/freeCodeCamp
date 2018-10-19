@@ -22,3 +22,5 @@ This section contains links to learning DevOps through a MOOC experience. Course
 
 ### Lab
 <a href="https://github.com/Microsoft/TechnicalCommunityContent/tree/master/DevOps">DevOps</a>
+### Culture
+Most efficient culture
