@@ -2,21 +2,21 @@
 title: Ruby Arrays
 localeTitle: Ruby Arrays
 ---
-## Ruby Arrays
+## Ruby Arrays (arramjos)
 
-Uma matriz representa uma lista de valores. Os valores individuais são freqüentemente chamados de "elementos" da matriz. Para fazer um array em Ruby, use colchetes e separe os valores com vírgulas:
+Um Array(arranjo) representa uma lista de valores. Os valores individuais são freqüentemente chamados de "elementos" do Array(arranjo). Para fazer um array em Ruby, use colchetes e separe os valores com vírgulas:
 
 ```ruby
 my_array = [1, 2, 3, 4, 5] 
 ```
 
-Esse primeiro exemplo é uma matriz de números, mas uma matriz Ruby pode conter valores de diferentes tipos, até mesmo outras matrizes:
+Esse primeiro exemplo é um array de números, mas um Array Ruby pode conter valores de diferentes tipos, até mesmo outras arrays:
 
 ```ruby
 mixed_array = [5, "Hello World", true, [1,2,3]] 
 ```
 
-Você pode acessar os elementos de uma matriz com colchetes e índices numéricos. Observe que o primeiro elemento está no índice 0, não 1:
+Você pode acessar os elementos de um array com colchetes e índices numéricos. Observe que o primeiro elemento está no índice 0, não 1:
 
 ```ruby
 mixed_array[0] # 5 
@@ -31,13 +31,13 @@ mixed_array.length # 3
  [].length # 0 
 ```
 
-Você pode verificar o primeiro elemento de uma matriz com o `first` método:
+Você pode verificar o primeiro elemento de um array com o método `first`:
 
 ```ruby
 mixed_array.first # 5 
 ```
 
-Você pode verificar o último elemento de uma matriz com o `last` método:
+Você pode verificar o último elemento de um array com o método `last`:
 
 ```ruby
 mixed_array.last # true 
