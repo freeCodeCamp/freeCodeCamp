@@ -40,7 +40,7 @@ CSS frameworks like [Bootstrap](https://www.getbootstrap.com/), [Material Design
 In this example, `col-md-9` and `col-sm-6` set the width of the `<div>` tag based on whether the screen is small or medium.
 
 ```html
-<div class="col-12 col-md-6"></div>
+<div class="col-12 col-md-9 col-sm-6"></div>
 ```
 
 The Bootstrap framework divides a row into twelve columns. In the above example, the `<div>` will spread across either nine or six of them. The grid system, pictured below, is fundamental to how Bootstrap eases responsive design.
