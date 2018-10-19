@@ -3,8 +3,7 @@
 ---
 
 # Tableau
-Tableau is a data visualization software for business intelligence. Tableau is a commerically available thought the Tableau Software foundation. Capabilites include highly interactive visualizations, mapping capabilites, and dashbaords. A roboust community for tableau visualizations exists online, where many individauls publically publish their dashboards. 
-
+Tableau is a data visualization software for business intelligence. Tableau is a commerically available thought the Tableau Software foundation. Capabilites include highly interactive visualizations, mapping capabilites, and dashbaords. A roboust community for tableau visualizations exists online, where many individauls publically publish their dashboards. For a data science beginner it is the the most relieving thing that Tableau is so easy to use as it doesn't require any coding knowledge. Just do a drag-n-drop and your visualization is ready.
 # Getting Started with Tableau Public
 If you want to learn Tableau on your own, it's possible to get a free license for the public version of Tableau. Not only can this allow you to import your own datasets into Tableau and create visualizations, but you can also publish these dashboards online and add to your public portfolio. 
 - Link: https://public.tableau.com/en-us/s/
