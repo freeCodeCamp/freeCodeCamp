@@ -112,6 +112,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)
 - ISBN-13: 978-0134685991
 
+*Big Java Late Objects, Enhanced eText by Cay S. Horstmann*
+- [Amazon](https://www.amazon.ca/Big-Java-Early-Objects-6th-ebook/dp/B01AKSZ8XA)
+- ISBN-13: 9781119330455 
+
 ## JavaScript
 
 *You Don't Know JS (book series)*
@@ -140,6 +144,10 @@ title: Books to Read for Programmers
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
 - ISBN-13: 978-0132678209
+
+*Python for Everyone, 2nd edition*
+- [Wiley](https://www.wiley.com/en-us/Python+for+Everyone%2C+2nd+Edition-p-9781119186656)
+- ISBN-13: 978-1-119-18665-6
 
 ## Soft Skills
 
