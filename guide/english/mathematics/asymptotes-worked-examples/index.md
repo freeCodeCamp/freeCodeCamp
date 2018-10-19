@@ -3,11 +3,12 @@ title: Asymptotes Worked Examples
 ---
 ## Asymptotes Worked Examples
 
-Asymptotes of a curve is defined as a line, such that as the curve goes to infinity it will tend to meet that line.
+Asymptotes is the line of a curve as it approaches infinity, but never crosses the line indefinately.
 
 Example,
 Take the curve of f(x) = (1/x)
-![img](https://qph.fs.quoracdn.net/main-qimg-c5be56e1b5d297b9995615a47707f52b.webp)
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Hyperbola_one_over_x.svg/1600px-Hyperbola_one_over_x.svg.png)
+Figure 1: curve of f(x) = (1/x)
 
 Here you can see that the lines x = 0 and y = 0 tends to meet the curve at infinity.
 
