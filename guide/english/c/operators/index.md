@@ -192,15 +192,15 @@ int main()
 ## 6. Misc Operators, sizeof() & ternary
 
 - `sizeof()`  Returns the amount of memory allocated.
-```C
-int a = 21;
-sizeof(a);  // result is 4
+  ```C
+  int a = 21;
+  sizeof(a);  // result is 4
 
-double b = 21.21;
-sizeof(b);  // result is 8
+  double b = 21.21;
+  sizeof(b);  // result is 8
 
-// note the result of sizeof() may vary depending on the type of machine.
-```
+  // note the result of sizeof() may vary depending on the type of machine.
+  ```
 
 Operator	               Description	                                        Example
 sizeof()	               Returns the size of a variable.	                    sizeof(a), where a is integer, will return 4.
