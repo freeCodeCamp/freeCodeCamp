@@ -35,10 +35,8 @@ You can use Anaconda or Pip to install Jupyter notebook.
 For an in-depth explaination, refer to the official guide 
 <a href='https://jupyter.readthedocs.io/en/latest/install.html'> here.</a>
 
-Jupyter notebooks automatically come with the distribution. You'll be able to use notebooks from the default environment.
-
-To install Jupyter notebooks in a conda environment: `conda install jupyter notebook`
-
+Jupyter notebooks automatically come with the distribution. You'll be able to use notebooks from the default environment.<br>
+To install Jupyter notebooks in a conda environment: `conda install jupyter notebook`<br>
 To install Jupyter notebooks with pip: `pip install jupyter notebook`
 
 #### More Information:
