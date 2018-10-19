@@ -36,6 +36,11 @@ El currículo de freeCodeCamp enfatiza fuertemente la creación de algoritmos. E
 
 ### Recursos adicionales
 
+[Preintroduccion a los algoritmos | Curso Completo: Ingenieria Informatica UTN](https://www.youtube.com/watch?v=ZdYDprqq9n0&list=PLfvyG2RxJZsYuOysWEF3wWoUbsPmmRfL0)
+Este video es para aquellos que desean adquirir un curso gratuito, a nivel universitario, accesible para aquellos que nunca han programado y/o desean programar desde cero.
+Recomendado.
+
+
 [Introducción a los algoritmos | Curso intensivo: Informática](https://www.youtube.com/watch?v=rL8X2mlNHPM)
 
 Este video ofrece una introducción accesible y animada a los algoritmos que se centran en los algoritmos de clasificación y búsqueda de gráficos.
