@@ -6,10 +6,10 @@ videoUrl: ''
 localeTitle: Escribir funciones de flecha de orden superior
 ---
 
-## Description
+## Descripción
 <section id="description"> Es hora de que veamos cuán poderosas son las funciones de flecha al procesar datos. Las funciones de flecha funcionan realmente bien con funciones de orden superior, como <code>map()</code> , <code>filter()</code> y <code>reduce()</code> , que toman otras funciones como argumentos para procesar colecciones de datos. Lee el siguiente código: <blockquote> FBPosts.filter (función (publicación) { <br> volver post.thumbnail! == null &amp;&amp; post.shares&gt; 100 &amp;&amp; post.likes&gt; 500; <br> }) </blockquote> Hemos escrito esto con <code>filter()</code> para al menos hacerlo de alguna manera legible. Ahora compárelo con el siguiente código que usa la sintaxis de la función de flecha en su lugar: <blockquote> FBPosts.filter ((post) =&gt; post.thumbnail! == null &amp;&amp; post.shares&gt; 100 &amp;&amp; post.likes&gt; 500) </blockquote> Este código es más breve y realiza la misma tarea con menos líneas de código. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Use la sintaxis de la función de flecha para calcular el cuadrado de solo los enteros positivos (los números decimales no son enteros) en la matriz <code>realNumberArray</code> y almacene la nueva matriz en la variable <code>squaredIntegers</code> . </section>
 
 ## Tests
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Desafío
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,10 +60,10 @@ console.log(squaredIntegers);
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
