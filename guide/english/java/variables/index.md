@@ -53,3 +53,5 @@ You can find out more in the sections linked below.
 # Other Resources
 * <a href='https://guide.freecodecamp.org/java/data-types' target='_blank' rel='nofollow'>Data Types</a>
 * <a href='https://guide.freecodecamp.org/java/classes-and-objects' target='_blank' rel='nofollow'>Classes and Objects</a>
+
+- [Oracle Java Docs :Variables](https://docs.oracle.com/javase/specs/jls/se7/html/jls-4.html)
