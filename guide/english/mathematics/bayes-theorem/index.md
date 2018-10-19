@@ -3,13 +3,13 @@ title: Bayes Theorem
 ---
 ## Bayes Theorem
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/bayes-theorem/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Bayes' theorem  play an important part in statistics. It can be derived from the basic conditional probability. Bayes' theorem tells that, for two events A and B, the probability of both happening is given by,
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+        P(B/A) = {P(A/B)*P(B)}/P(A) & P(A/B) = {P(B/A)*P(A)}/P(B)
+        
+Where P(A/B) is the probability of A if we already know that B has occurred and is known as likelihood, P(B) is known as prior probability and P(B/A)is posterior probability.
 
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
