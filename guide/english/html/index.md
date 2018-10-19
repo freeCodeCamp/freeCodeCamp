@@ -25,11 +25,11 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 <body>
 
   <h1>My First h1 Heading</h1>
-  <h2>My First h1 Heading</h2>
-  <h3>My First h1 Heading</h3>
-  <h4>My First h1 Heading</h4>
-  <h5>My First h1 Heading</h5>
-  <h6>My First h1 Heading</h6>
+  <h2>My First h2 Heading</h2>
+  <h3>My First h3 Heading</h3>
+  <h4>My First h4 Heading</h4>
+  <h5>My First h5 Heading</h5>
+  <h6>My First h6 Heading</h6>
   <p>My first paragraph.</p>
 
 </body>
