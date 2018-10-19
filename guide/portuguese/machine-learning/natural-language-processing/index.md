@@ -17,7 +17,7 @@ Como diz a Wikipedia, "O processamento de linguagem natural (NLP) é um subcampo
 
 #### 2\. Intermediário ou fazendo um bom progresso
 ```
-          *Sentiment analysis 
+          *Análise de Sentimentos 
           *Coreference resolution 
           *Word sense disambiguation 
           *Parsing 
