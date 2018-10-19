@@ -14,7 +14,7 @@ There are six freeCodeCamp certificates:
 - APIs and Microservices
 - Information Security and Quality Assurance
 
-Each certificate curriculum should take approximately 300 hours to complete and includes 5 required projects, while other challenges are optional.
+Each certificate curriculum should take approximately 300 hours to complete and includes 5 required projects, while other challenges are optional.It's mandatory to complete the 5 projects which should pass all the test required to achieve certification.
 
 ### The Full Stack Development Certificate
 
