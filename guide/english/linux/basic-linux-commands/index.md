@@ -49,6 +49,23 @@ When starting out with linux, there are some basic commands everyone should know
  14. **cp** - copy files and directories
 - Use 'cp' to copy a file or a direcotry with files inside it to another location using command 'cp CURRENT_FILE-LOCATION DESTINATION_FOLDER'. Add '-r' flag to copy a directory that is not empty. 
 
+ 15. **man** -Show manual for command
+ -Use 'man' to see manual of any commmand,it will how different ways given command can be used.
+ Example -man ls
+ 
+ 16. **ps** -Show active processes
+ -Use ps to to see running processes,and their process id's..
+ Example- ps
+ 
+ 17 **history**
+ -Use history to see previously entered commands
+ Example-history
+ 
+ 18 **grep**
+ -use grep to find out files containg specific keyword
+ Example history | grep ls =>it will show all commanda from history containing ls
+ 
+ 
 ### Useful Resources for Practice:
 - [JSLinux](https://bellard.org/jslinux/vm.html?url=https://bellard.org/jslinux/buildroot-x86.cfg): Run the terminal inside your browser. Great for practice.
 - [LearnShell](https://www.learnshell.org/): Interactive Linux shell (terminal) tutorials.
