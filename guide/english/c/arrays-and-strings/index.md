@@ -63,6 +63,14 @@ int main(void) {
     return 0;
 }
 ```
+## Address Calculation
+In C, an array is stored in row major form. Suppose an arrar int A[10] is declared. It will be stored as shown below:
+```C
+ A[0]  A[1]  A[2]  A[3]  A[4]  A[5]  A[6]  A[7]  A[8]  A[9] 
+ ```
+ Hence, address for the ith element of the array can be calculated as follows:
+ 
+ `Address of A[i] = Base Address + i*(size of data type)`
 
 ## Strings
 Arrays are sets of variables, and strings are sets of characters. As a result, we can represent strings with an array. You _can_ declare something in the same way as before, but you'll need to place '\0' as one of your values (more on that in a minute!):
