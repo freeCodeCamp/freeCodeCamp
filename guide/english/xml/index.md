@@ -54,6 +54,11 @@ The following are areas that can be simiplified with XML:
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
+### Book for working with xml using python.
+* Python and Xml- Amazing Book to process xml using python [Amazon] (https://www.udemy.com/r-basics/)
+* ISBN-10: 0596001282 
+* ISBN-13: 978-0596001285
+
 ### More information
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
