@@ -1,0 +1,14 @@
+
+Nmap is a free and popular network scanning tool that runs in a command line. Nmap can help you find active hosts on your network, see what ports those hosts are listening on, or even help determine what operating system a host may be running. Nmap is a fast way to identify devices on your network or help secure servers by determining open ports.
+
+
+Sample nmap commands
+
+`nmap 192.168.0.1` will scan the host at 192.168.0.1 for open ports
+
+`nmap 192.168.0.1/24` will scan the entire subnet for active hosts
+
+`nmap 192.168.0.1 -O` will try to perform operating system detection for this host (note: this command must be run with admin privileges)
+
+
+For additional information including download information, please visit nmap.org.
