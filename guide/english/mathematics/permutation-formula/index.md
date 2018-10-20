@@ -3,11 +3,9 @@ title: Permutation Formula
 ---
 ## Permutation Formula
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/permutation-formula/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The number of Permutations is the number of ways in which a set of things can be arranged. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+![image](http://www.statisticslectures.com/images/permutations1.gif)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
