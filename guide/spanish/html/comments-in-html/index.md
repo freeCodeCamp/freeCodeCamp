@@ -58,9 +58,9 @@ Estos comentarios solo están disponibles en Internet Explorer y pueden usarse h
 
 ```html
 
-<!--[if lt IE 9]> <p>Your browser is lower then IE9</p> <![endif]--> 
- <!--[if IE 9]> <p>Your browser is IE9</p> <![endif]--> 
- <!--[if gt IE 9]> <p>Your browser is greater then IE9</p> <![endif]--> 
+<!--[if lt IE 9]> <p>Si tu navegador es mas bajo de IE9</p> <![endif]--> 
+ <!--[if IE 9]> <p>Si tu navegador es IE9</p> <![endif]--> 
+ <!--[if gt IE 9]> <p>Si tu navegador es mas major de IE9</p> <![endif]--> 
 ```
 
 [Sobre los comentarios condicionales.](https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx)
