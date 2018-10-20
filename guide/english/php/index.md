@@ -107,3 +107,5 @@ PHP is [well documented](http://php.net/docs.php). The [official docs](http://ph
 - [Tizag.com PHP Tutorial](http://www.tizag.com/phpT/): still-relevant tutorials for getting started with PHP
 - [Awesome PHP](https://github.com/ziadoz/awesome-php): a curated list of PHP libraries, resources, and "shiny things"
 - [Laracasts.com](https://laracasts.com/): a membership website to learn web application development with PHP
+
+My changes
