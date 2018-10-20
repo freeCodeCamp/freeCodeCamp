@@ -18,11 +18,13 @@ Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript.
 - [Kindle Version, Amazon](https://www.amazon.com/You-Dont-Know-Js-Book/dp/B01AY9P0P6)
 
 *JavaScript: The Good Parts*
+
 Book by the "grandfather" of JavaScript, Douglas Crockford. He discusses both the "good" and "bad" parts of JavaScript.
 
 - [Amazon](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
 
 *JavaScript: Info*
+
 A collection of articles covering the basics (core language and working with a browser) as well as advanced topics with concise explanations. Available as an e-book with pay and also as an online tutorial.
 
 - [Online](https://javascript.info/)
@@ -33,3 +35,10 @@ A collection of articles covering the basics (core language and working with a b
 A very fun and easy book for beginners. 
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
+*JavaScript For Cats*
+
+A beginner-friendly book covering JavaScript fundamentals, with dozens of references to cats. 
+
+- [Online](http://jsforcats.com/)
+- [Github](https://github.com/maxogden/javascript-for-cats)
