@@ -12,4 +12,6 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
+<a href='https://www.browserling.com/tools/prime-numbers' target='_blank' rel='nofollow'>Browserling's Prime Numbers Generator</a>
 
+<a href='https://www.numberempire.com/primenumbers.php' target='_blank' rel='nofollow'>NumberEmpire's Prime Number Generator and Checker</a>
