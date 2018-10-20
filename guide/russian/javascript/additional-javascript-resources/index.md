@@ -37,13 +37,14 @@ localeTitle: Учебники по JavaScript и другие ресурсы
 *   [Объектная игровая площадка ( _визуализация объектов_ )](http://www.objectplayground.com/)
 *   [Plunker](http://plnkr.co)
 
-## проблемы
+## Проблемы
 
 *   [Code Wars](http://codewars.com)
 *   [Рейтинг Хакер](https://hackerrank.com)
 *   [Кодирование игры](http://codingame.com)
 *   [CodeFights](https://codefights.com/home)
 *   [ES6 Katas](http://es6katas.org)
+*   [Hackreactor(https://www.hackreactor.com/prep-programs)
 
 ## Учебники
 
