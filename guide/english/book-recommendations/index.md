@@ -2,6 +2,7 @@
 title: Books to Read for Programmers
 ---
 
+### Note: Amazon links should redirect to Smile.amazon so that donations can be made!
 ### List of Books
 
 ## General
