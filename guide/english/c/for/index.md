@@ -2,6 +2,19 @@
 title: For Loop
 ---
 
+#Loop for Beginners
+<br>
+So what is a loop ??
+It is like a circle that is you follow the same path, it's like a cycle.
+In programming we use loops to perform same set of operations and steps over and over again ,See the example below:
+
+You want to disply a simple statement "Hello World"
+now display it for two times you may write the code again two times ok done.
+Suppose you want to display it Hundred times:
+You can't write the program for hundred times so you use loop and set it to repeat for hundred times that's it done .
+Using loops in programming saves your time and perform repeatative tasks easily.
+
+
 # For Loop
 
 The `for` loop executes a block of code until a specified condition is false. Use `while` loops when the number of iterations are variable, otherwise use `for` loops. A common use of `for` loops are array iterations. 
