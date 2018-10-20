@@ -5,9 +5,9 @@ title: Template Literals
 ## Template Literals
 
 ## Introduction:
-When we want to use variable to make a string, it becomes very painful as we have to use + sign to concatenate and keep track of quotes.
+When we want to use one or more variables to make a string, it becomes very painful as we have to use the + sign to concatenate and keep track of quotes.
 
-Now with ES6,We can make  string using backticks and using placeholders which are indicated with dollar sign and curly braces, like ${expression } .
+Now with ES6, we can make a string using backticks and using placeholders which are indicated with dollar sign and curly braces, like ${expression}.
 ```javascript
 const name='John';
 const city='London';
