@@ -8,11 +8,16 @@
 # -------------------------------------------------
 
 # -------------------------------------------------
-# All files except markdown are owned by dev team
+# All files are owned by dev team
 # -------------------------------------------------
 
 * @freecodecamp/dev-team
-*.md
+
+# -------------------------------------------------
+# All files (junk or markdown) in guide is ignored
+# by dev team
+# -------------------------------------------------
+/guide/*
 
 # -------------------------------------------------
 # All files in the root are owned by dev team
