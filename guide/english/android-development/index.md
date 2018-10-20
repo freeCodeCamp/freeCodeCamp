@@ -63,3 +63,7 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 The best part of learning Android is that many of the courses and material available out there online are free.
 The link to the basic course is here - [Developing Android Apps](https://udacity.com/course/new-android-fundamentals--ud851).
 The link to the advanced course is here - [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855). 
+
+### Code Samples
+
+It is good to check out code samples and projects for your learning process. There are many code samples in web. Surely, you can check out several of them and increase your learning process. Of course, you can try to write new one after check. Here is a link for this [Samples | Android Developers](https://developer.android.com/samples/).
