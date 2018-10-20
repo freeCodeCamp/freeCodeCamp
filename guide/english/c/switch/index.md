@@ -78,6 +78,69 @@ int main() {
 -> 32.5 - 12.4 = 20.1
 ```
 
+##   C program to enter weekday number(1-7) and out put day name  ## 
+
+#include <stdio.h>
+
+int main()
+{
+    int week;
+    
+    printf("Enter week number(1-7): ");
+    scanf("%d", &week);
+    
+    switch(week)
+    {
+        case 1: 
+            printf("Monday");
+            break;
+        case 2: 
+            printf("Tuesday");
+            break;
+        case 3: 
+            printf("Wednesday");
+            break;
+        case 4: 
+            printf("Thursday");
+            break;
+        case 5: 
+            printf("Friday");
+            break;
+        case 6: 
+            printf("Saturday");
+            break;
+        case 7: 
+            printf("Sunday");
+            break;
+        default: 
+            printf("Invalid input! Please enter week number between 1-7.");
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Review : Switch vs if else
 * Check the Testing Expression: An if-then-else statement can test expressions based on ranges of values or conditions, whereas a switch statement tests expressions based only on a single integer, enumerated value, or String object.
 * Switch better for Multi way branching: When compiler compiles a switch statement, it will inspect each of the case constants and create a “jump table” that it will use for selecting the path of execution depending on the value of the expression. Therefore, if we need to select among a large group of values, a switch statement will run much faster than the equivalent logic coded using a sequence of if-elses. The compiler can do this because it knows that the case constants are all the same type and simply must be compared for equality with the switch expression, while in case of if expressions, the compiler has no such knowledge.
