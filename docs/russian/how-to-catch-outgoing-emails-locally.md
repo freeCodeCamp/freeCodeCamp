@@ -95,15 +95,15 @@ mailhog
 Теперь вы должны увидеть экран, подобный указанному ниже:
 
 
-![MailHog Скриншот 1](images/mailhog/1.jpg)
+![MailHog Screenshot 1](https://github.com/freeCodeCamp/freeCodeCamp/raw/master/docs/images/mailhog/1.jpg)
 
 Когда ваша установка freeCodeCamp отправит электронное письмо, вы увидите как оно появится здесь, как показано ниже:
 
-![MailHog Скриншот 2](images/mailhog/2.jpg)
+![MailHog Screenshot 2](https://github.com/freeCodeCamp/freeCodeCamp/raw/master/docs/images/mailhog/2.jpg)
 
 Откройте почту. Там вам должны быть видны две вкладки, где вы можете просмотреть содержимое - простой текст и источник. Убедитесь, что вы находитесь на вкладке с простым текстом.
 
-![MailHog Скриншот 3](images/mailhog/3.jpg)
+![MailHog Screenshot 3](https://github.com/freeCodeCamp/freeCodeCamp/raw/master/docs/images/mailhog/3.jpg)
 
 Любые ссылки в письме должны быть кликабельны.
 
