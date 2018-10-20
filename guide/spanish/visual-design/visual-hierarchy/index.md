@@ -29,3 +29,4 @@ Herramientas para crear una jerarquía visual: [blog de Design School](https://d
 Estudio de caso - Mejora de una página con jerarquía visual: [blog](http://blog.formedfunction.com/post/3029763425/on-visual-hierarchy)
 
 Añadiendo jerarquía visual: [medio](https://medium.com/designed-thought/8-ways-to-add-visual-hierarchy-8820be73218a/)
+
