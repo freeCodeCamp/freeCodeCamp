@@ -156,6 +156,15 @@ if(!strcmp(first, second)){
 ```
 Notice the `!`, which is needed because this function returns 0 if they are the same. Placing the exclamation point here will make that comparison return true.
 
+Or
+you can do it the following way if you found the `!` strange
+```C
+if(strcmp(first, second) == 0){
+    printf("These strings are the same!\n");
+} else {
+    printf("These strings are not the same!\n");
+}
+```
 #### Split a string: `strtok`
 `strtok` (from 'string token') breaks a string into a series of tokens using a  delimiter. In this example, strtok breaks  string str into a series of tokens using the delimiter delim:
 ```C
