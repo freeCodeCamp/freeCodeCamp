@@ -57,7 +57,7 @@ HTML BLOCK:
 
 <img src="logo.png" alt="MyLogo" class="center">
 
-------------------------------------------------------------------------
+
 CSS BLOCK:
 
 .center {
