@@ -42,7 +42,7 @@ So you've covered the basics of Python?  You're now ready to discover the in-dep
 
 #### Data Science from Scratch: First Principles with Python
 
-You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
+You'll learn many of the first principles for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural language processing, network analysis, MapReduce and databases.
 
 - [O'Reilly](http://shop.oreilly.com/product/0636920033400.do)
 - [Amazon](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
