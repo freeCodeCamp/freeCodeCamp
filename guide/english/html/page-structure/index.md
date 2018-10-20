@@ -26,6 +26,8 @@ To create your pages in `HTML`, you need to know how to structure a page in `HTM
 
 1. Between the `<body>` and `</ body>` tags the page content is placed, which is what is displayed in the browser.
 
+* Many developers use indentation for neatness and it makes it much easier for the developer to know which tags are nested inside of other tags
+
 ### Changes in HTML5
 
 #### Introduction of semantic tags
