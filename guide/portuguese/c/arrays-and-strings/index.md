@@ -75,7 +75,7 @@ Qualquer número inteiro pode ser colocado entre colchetes para obter uma posiç
  } 
 ```
 
-## Cordas
+## Strings
 
 Arrays são conjuntos de variáveis ​​e strings são conjuntos de caracteres. Como resultado, podemos representar strings com uma matriz. Você _pode_ declarar algo da mesma maneira que antes, mas você precisa colocar '\\ 0' como um dos seus valores (mais sobre isso em um minuto!):
 
@@ -97,7 +97,7 @@ Seqüências de caracteres em C são terminadas em null, o que significa que ela
 
 Claro, não há nenhum botão 'nulo' no seu teclado, mas você ainda precisa digitá-lo de alguma forma. Isso é o que o \\ 0 faz. Sempre que o compilador C vir \\ 0, ele inserirá um caractere nulo. É exatamente como \\ n imprime uma nova linha.
 
-### Imprimindo cordas
+### Imprimindo strings
 
 Outra coisa que C facilita para nós é a impressão de strings. Em vez de forçar você a imprimir cada caractere na matriz, basta usar o especificador de formato% s e tratar a string como se fosse um valor `int` ou `double` . Aqui está um exemplo do programa hello world, desde o começo, um pouco mais complicado com strings:
 
@@ -112,7 +112,7 @@ Outra coisa que C facilita para nós é a impressão de strings. Em vez de forç
  } 
 ```
 
-### Brincando com cordas
+### Brincando com strings
 
 Imprimir strings é fácil, mas outras operações são um pouco mais complexas. Felizmente, a biblioteca `string.h` tem algumas funções úteis para usar em diversas situações.
 
