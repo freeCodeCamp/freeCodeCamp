@@ -5,7 +5,7 @@ title: Books on Haskell
  
 #### Learn You a Haskell for Great Good!: A Beginner's Guide
 
-One of the best books for beginners diving into the world of Haskell. This book is full of useful illustrations to aid your learning with a touch of humor to make this functional programming lanuage fun.
+One of the best books for beginners diving into the world of Haskell. This book is full of useful illustrations to aid your learning with a touch of humor to make this functional programming language fun.
  
  And yes, the e-book is free!
 - [Website](http://learnyouahaskell.com/)
