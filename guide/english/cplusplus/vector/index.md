@@ -212,6 +212,7 @@ int main()
 ```
 ### Sorting Vector In Descending Order
 Sorting Vector in descending order can be done with the help of third argument namely greater<int>() in Sort() in C++.
+    
 ``` cpp
 #include <iostream>
 #include <vector>
@@ -222,6 +223,27 @@ int main(){
  
  vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
  sort(v.begin(), v.end(), greater<int>());
+ 
+ cout << "Vector Contents Sorted In Ascending Order:\n";
+ for(int e : v){
+ cout << e << " ";
+ }
+ 
+ return 0;
+}
+```
+An alternative way to do this.
+
+``` cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main(){
+ 
+ vector<int> v{ 10, 5, 82, 69, 64, 70, 3, 42, 28, 0 };
+ sort(v.rbegin(), v.rend());
  
  cout << "Vector Contents Sorted In Ascending Order:\n";
  for(int e : v){
