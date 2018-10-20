@@ -17,9 +17,11 @@ You have to add the following CSS property to achieve the transparency levels.
 .class-name {
   opacity:1;
 }
+```
 
 OR
 
+```css
 .class-name {
   opacity:1.0;
 }
@@ -36,16 +38,17 @@ Opacity value can be anything between 0 and 1;
 .class-name {
   opacity:0;
 }
+```
 
 OR
 
+```css
 .class-name {
   opacity:0.0;
 }
 ```
 Alternatively you can use a transparent rgba value like this:
 ```css
-
 .class-name{
   background-color: rgba(0,0,0,.5);
   }
