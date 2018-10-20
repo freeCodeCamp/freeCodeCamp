@@ -242,6 +242,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+*Artificial Intelligence: A Modern Approach*
+- [Amazon](https://www.amazon.com/Artificial-Intelligence-Modern-Approach-3rd/dp/0136042597/)
+- ISBN-13: 978-1292153964
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
