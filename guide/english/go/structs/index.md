@@ -3,11 +3,40 @@ title: Go Structs
 ---
 ## Go Structs
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/go/structs/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+A struct is a collection of fields. 
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+```go
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	fmt.Println(Vertex{1, 2})
+}
+
+// Displays {1, 2}
+```
+
+Struct fields are accessible using a dot. 
+
+```go
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v.X)
+}
+
+// Displays 4
+```
+
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+* [A Tour of Go](https://tour.golang.org/moretypes/2)
