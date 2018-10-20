@@ -435,7 +435,7 @@ Follow these steps:
 
 ## Get your PR accepted
 
-
+FreeCodeCamp is AWESOME!
 
 ## Getting Help
 
