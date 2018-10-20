@@ -73,6 +73,31 @@ As with the class selector, this can also be used in combination with a tag name
 $("h1#headline").css("font-size", "2em");
 ```
 
+### Descendant Selector
+A space is considered a descendant selector, i.e. if you try to select `AB`, it will match *elements that match A and B*, whereas `A B` will match *elements matching B which are descendants of elements matching A*.
+
+The following example will select a `<button>` element with ID `submit-btn` and class `enabled`.
+```html
+<button id="submit-btn" class="enabled">Submit</button>
+```
+```javascript
+$("#submit-btn.enabled").on("click", function() {
+	alert("Submit button clicked");
+});
+```
+
+The example below will select a `<button>` element with class `enabled` which is a descendant of a `<div>` element with ID `submit-div`.
+```html
+<div id="submit-div">
+	<button class="enabled">Submit</button>
+</div>
+```
+```javascript
+$("#submit-div .enabled").on("click", function() {
+	alert("Submit button clicked");
+});
+```
+
 ### Selectors that act as filters
 There are also selectors that act as filters - they will usually start with colons. For example, the `:first` selector selects the element that is the first child of its parent. Here's an example of an unordered list with some list items. The jQuery selector below the list selects the first `<li>` element in the list--the "One" list item--and then uses the `.css` method to turn the text green.
 
