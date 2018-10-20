@@ -31,7 +31,7 @@ Linux has driver support for NTFS and HFS+ filesystems (used by Windows and Macs
 
 ## Better hardware support.
 
-For other OSs, usually a user would have to go to the manufacturer's website to get driver support for different types of hardware. The Linux kernel supports a majority of hardware automatically via plug-and-play (largely in part because of the open source community). Some manufacturers also develop Linux versions of their proprietary drivers which could be easilly installed via the software repository of a distribution or by manually installing the provided binaries.
+For other OSs, usually a user would have to go to the manufacturer's website to get driver support for different types of hardware. The Linux kernel supports a majority of hardware automatically via plug-and-play (largely in part because of the open source community). Some manufacturers also develop Linux versions of their proprietary drivers which could be easilly installed via the software repository of a distribution or by manually installing the provided binaries. With most Linux distributions, you can even get a server version which is minimal and only has a terminal interface
 
 ## Software Availability/Compatibility.
 
