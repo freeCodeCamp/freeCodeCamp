@@ -12,12 +12,12 @@ Por ejemplo:
 
 <html> 
   <head> 
-    <title>Href Attribute Example</title> 
+    <title>Ejemplo del Atributo Href</title> 
   </head> 
   <body> 
-    <h1>Href Attribute Example</h1> 
+    <h1>Ejemplo del Atributo Href</h1> 
       <p> 
-        <a href="https://www.freecodecamp.org/contribute/">The freeCodeCamp Contribution Page</a> shows you how and where you can contribute to freeCodeCamp's community and growth. 
+        <a href="https://www.freecodecamp.org/contribute/">Pagina de Contribucion de freeCodeCamp</a> Te muestra como y donde puedes contribuir a la comunidad y al crecimiento de freeCodeCamp. 
       </p> 
     </h1> 
   </body> 
@@ -34,9 +34,9 @@ El atributo `<a href>` es compatible con todos los navegadores.
 
 ```html
 
-<a href="#">This is a dead link</a> 
- <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a> 
- <a href="https://html.com/attributes/a-href/">more with a href attribute</a> 
+<a href="#">Este es un enlace muerto</a> 
+ <a href="https://www.freecodecamp.org">Este es un enlace activo a freeCodeCamp</a> 
+ <a href="https://html.com/attributes/a-href/">otro mas con el atributo href</a> 
 ```
 
 ### Anclajes en página
@@ -52,7 +52,7 @@ No se requiere ninguna descripción entre etiquetas. Después de eso, puede colo
 
 ```html
 
-<a href="#top">Go to Top</a> 
+<a href="#top">Ir al Inicio</a> 
 ```
 
 ### Enlaces de imagen
@@ -63,7 +63,7 @@ El `<a href="#">` también puede aplicarse a imágenes y otros elementos HTML.
 
 ```html
 
-<a href="#"><img itemprop="image" style="height: 90px;" src="http://www.chatbot.chat/assets/images/header-bg_y.jpg" alt="picture">  </a> 
+<a href="#"><img itemprop="image" style="height: 90px;" src="http://www.chatbot.chat/assets/images/header-bg_y.jpg" alt="imagen">  </a> 
 ```
 
 ### Ejemplo
@@ -74,7 +74,7 @@ El `<a href="#">` también puede aplicarse a imágenes y otros elementos HTML.
 
 ```html
 
-<base href="https://www.freecodecamp.org/a-href/">This gives a base url for all further urls on the page</a> 
- <link href="style.css">This is a live link to an external stylesheet</a> 
+<base href="https://www.freecodecamp.org/a-href/">Este te da una url base para todas las url subsecuentes en esta página</a> 
+ <link href="style.css">Este es un enlace activo a una hoja de estilos externa (external stylesheet)</a> 
 
 ```
