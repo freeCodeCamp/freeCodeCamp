@@ -17,3 +17,9 @@ It's main attributes are the following:
 
 - [Vuejs Homepage](https://vuejs.org/)
 - [GitHub Repo](https://github.com/vuejs/vue/)
+- [vue-router](https://router.vuejs.org/)
+- [vuex](https://vuex.vuejs.org/)
+
+## Other Resources
+
+- [Vuetify](https://vuetifyjs.com/en/) a Material Design Framework for Vue
