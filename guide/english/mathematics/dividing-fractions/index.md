@@ -21,7 +21,7 @@ Here are the steps to divide two fractions,
 
 1. Take the reciprocal of the divisor. To take a reciprocal of a fraction, interchange the numerator and denominator of that fraction. The reciprocal of <span class="fraction"><sup>6</sup>⁄<sub>7</sub></span> is <span class="fraction"><sup>7</sup>⁄<sub>6</sub></span>
 
-2. Multiply the dividend with the reciprocal of the divisor
+2. Multiply the dividend with the reciprocal of the divisor (denominator by denominator, numerator by numerator)
 
 <pre> <span class="fraction"><sup>2</sup>⁄<sub>3</sub></span> &divide; <span class="fraction"><sup>6</sup>⁄<sub>7</sub></span> = <span class="fraction"><sup>2</sup>⁄<sub>3</sub></span> &times; <span class="fraction"><sup>7</sup>⁄<sub>6</sub></span> = <span class="fraction"><sup>7</sup>⁄<sub>9</sub></span> </pre>
 
