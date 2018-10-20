@@ -39,7 +39,7 @@ The one big difference between containers and VMs is that containers *share* the
 
 ## Orchestration
 
-There are several container orchestration frameworks leveraged in production: docker-swarm and kubernetes
+There are several container orchestration frameworks leveraged in production: docker-swarm and kubernetes.
 
 ## List of container providers
 
