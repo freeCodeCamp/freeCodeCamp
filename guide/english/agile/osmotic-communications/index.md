@@ -9,3 +9,5 @@ In agile project, team members usually co-located, any discussion among some of 
 #### More Information:
 https://www.projectmanagement.com/wikis/295442/Osmotic-Communications
 http://agilemodeling.com/essays/communication.htm
+
+My changes.
