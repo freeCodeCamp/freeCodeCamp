@@ -23,7 +23,7 @@ Example: You can read about the methods/functions of all the standard libraries 
 
     # To calculate the execution time of a part of program
     import time
-    start = time.time()
+    start = time.time() # Takes a snapshot of the system's current time in seconds 
     # code here
     end = time.time()
     print('Execution time:' , end-start)
@@ -38,7 +38,7 @@ Example: You can read about the methods/functions of all the standard libraries 
 
 ## Using third party Modules
 
-Third party modules don't come bundled with python , but we have to install it externally using package managers like <a href='https://bootstrap.pypa.io/get-pip.py' target='_blank' rel='nofollow'>`pip`</a> and <a href='https://bootstrap.pypa.io/ez_setup.py' target='_blank' rel='nofollow'>`easy install`</a>
+Sometimes third party modules does not come bundled with python, but we have to install it externally using package managers like <a href='https://bootstrap.pypa.io/get-pip.py' target='_blank' rel='nofollow'>`pip`</a>, <a href='https://bootstrap.pypa.io/ez_setup.py' target='_blank' rel='nofollow'>`easy install`</a> and  <a href='https://github.com/pypa/pipenv' target='_blank' rel='nofollow'>`pipenv`</a>.
 
     # To make http requests
     import requests
@@ -51,7 +51,7 @@ Find out more about python-requests module <a href='http://docs.python-requests.
 
 Files/Modules in the same project can be imported just by their name. import also supports relative references to files/modules as shown below:
 
-    # to relatively import a file in adjacent module
+    # To import a file within a project from "adjacent module"
     import '../adjacent_module/file_to_import'
     
 However, as a good practice, it is recommended not to use relative paths in imports.
@@ -95,5 +95,12 @@ Now we want to use the functions that we just created in `prime_functions.py` so
 ## Sorting Imports
 
 Good practice is to sort `import` modules in three groups - standard library imports, related third-party imports, and local imports.  Within each group it is sensible to sort alphabetically by module name. You can find [more information in PEP8](https://www.python.org/dev/peps/pep-0008/?#imports).
+
+```
+# Order of importing modules
+import time # Standard library modules
+from package import calculate_duration # Related third-party modules
+from package.sibling import example # Local modules within the project
+```
 
 One of the most important thing for Python language is legibility, and alphabetically sorting modules are quicker to read and search. Also it is easier to verify that something is imported, and avoid duplicated imports.
