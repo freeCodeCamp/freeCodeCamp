@@ -39,6 +39,21 @@ or the property `transition-timing-function`
 `ease-in-out` - specifies a transition effect with a slow start and end
 `cubic-bezier(n,n,n,n)` - lets you define your own values in a cubic-bezier function
 
+### Transition Delay
+
+Setting a transition delay determines when the transition will start.
+
+```css
+transition-delay: 1s;
+```
+
+
+### Transition Shorthand
+
+```css
+transition: <property> <duration> <timing-function> <delay>;
+```
+
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
