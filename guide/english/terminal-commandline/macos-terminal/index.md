@@ -74,6 +74,9 @@ Use the following syntax to delete a file
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
 
+### Previewing file
+    If you would like to preview a file, type the command line: cat <name of document> and you would be able to preview a text document through the terminal.
+
 # iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
