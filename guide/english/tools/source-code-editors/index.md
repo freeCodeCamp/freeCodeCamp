@@ -17,7 +17,7 @@ each have their own subtleties. Further research may help find the one that's
 right for you. The following editors are all cross-platform and  
 free to use or evaluate.
 
-## <a href='https://www.sublimetext.com/' target='_blank' rel='nofollow'>Sublime Text</a> ![Sublime Text Icon](//discourse-user-assets.s3.amazonaws.com/original/2X/1/1249e18855b9c9ef177e636e6c4e308b4877bf2d.png)
+## <a href='https://www.sublimetext.com/' target='_blank' rel='nofollow'>Sublime Text</a> ![Sublime Text Icon](https://discourse-user-assets.s3.amazonaws.com/original/2X/1/1249e18855b9c9ef177e636e6c4e308b4877bf2d.png)
 
 ![Sublime Text Screenshot](//discourse-user-assets.s3.amazonaws.com/original/2X/6/63f774c31a7b1a439bcef9d11e95463b6998310e.png)
 
@@ -44,13 +44,13 @@ to find and install through the Extension Manager.
 
 Atom is an <a href='https://github.com/atom/atom' target='_blank' rel='nofollow'>open source</a> editor, developed  
 by <a href='https://github.com/' target='_blank' rel='nofollow'>GitHub</a>. Like Sublime Text, Atom is quite popular.  
-It is very configurable ("hackable", as they say) but advanced features may  
-be overwhelming to new users. There is also plenty of <a href='http://readwrite.com/2014/05/20/github-atom-5-tips-getting-started-tutorial-corey-johnson/' target='_blank' rel='nofollow'>helpful</a> <a href='http://flight-manual.atom.io/' target='_blank' rel='nofollow'>documentation</a>  
+It is very configurable ("hackable", as they say) but advanced features may be overwhelming to new users. There is also plenty of <a href='http://readwrite.com/2014/05/20/github-atom-5-tips-getting-started-tutorial-corey-johnson/' target='_blank' rel='nofollow'>helpful</a> <a href='http://flight-manual.atom.io/' target='_blank' rel='nofollow'>documentation</a>  
 
 <a href='http://stackoverflow.com/search?q=atom' target='_blank' rel='nofollow'>availble</a> online.
 
-
-## <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>Visual Studio Code</a> ![Visual Studio Code Icon](https://i.imgur.com/b4vFsKa.png)
+## <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>Visual Studio Code</a> 
+## <a href='https://code.visualstudio.com/' target='_blank' rel='nofollow'>Visual Studio Code</a> 
+<img src="https://i.imgur.com/b4vFsKa.png" height="20%" width="20%">
 
 ![Visual Studio Code Screenshot](https://code.visualstudio.com/home/home-screenshot-mac-lg.png)
 
