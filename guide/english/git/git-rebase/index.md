@@ -61,11 +61,10 @@ pick 5186a9f <message for this commit>
 # However, if you remove everything, the rebase will be aborted.
 #
 # Note that empty commits are commented out
-#
-# When rebase is stopped, use `git rebase --continue` until rebase is successful
 ```
 
 - Enter `esc` followed by `:wq` to save and quit.
+- When rebase is stopped, make the necessary adjustments, then use `git rebase --continue` until rebase is successful
 - If it rebases successfully then you need to force push your changes with `git push -f` to add the rebased version to your github repo.
 - If there is a merge conflict, there are a number of ways to fix this, including following the suggestions in [this guide](https://help.github.com/enterprise/2.11/user/articles/resolving-a-merge-conflict-using-the-command-line/). One way is to open the files in a text editor and delete the parts of the code you do not want. Then use `git add <file name>` followed by `git rebase --continue`. You can skip over the conflicted commit by entering `git rebase --skip`, exit the git rebase by entering `git rebase --abort` in your console.
 
