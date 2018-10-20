@@ -99,7 +99,7 @@ for (int i = 0;i<=1000;i=i+2)
 * The difference in first program and second is the increment part. Rest of code is same. This program will print 0 and
    then add 2 to it and print 2 on console and so on upto value of i becomes equal to 1000.
    
-   Our final program to print even numbers from 0 to 1000 will look like this.
+   Our next program to print even numbers from 0 to 1000 will look like this.
    
  ``` c++
  #include<iostream>
@@ -113,3 +113,21 @@ int main()
 	return 0;
 }
  ```
+Another type of for loop is the Enhanced For Loop. With the enhanced for loop, we can call a group of elements in a different way. The following example iterates through the array, a, and prints out each number. 
+
+ ``` c++
+ #include<iostream>
+using namespace std;
+int main()
+{
+        int a[5] = {1, 2, 3, 4, 5};
+	for (int &i : a)
+	{
+	  cout << i << endl;
+	}
+	return 0;
+}
+ ```
+
+
+ 
