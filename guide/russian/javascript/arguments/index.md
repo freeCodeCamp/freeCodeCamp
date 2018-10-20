@@ -35,8 +35,8 @@ var args = Array.from(arguments)
 
 ```javascript
 function getGrades() {
-    var args = Array.prototype.slice.call(arguments, 1, 3);
-    return args;
+  var args = Array.prototype.slice.call(arguments, 1, 3);
+  return args;
 }
 
 // Теперь выведем это!
@@ -66,8 +66,8 @@ console.log(getGrades(90, 100, 75, 40, 89, 95));
 ```javascript
 var args = []; // Пустой массив, сперва.
 for (var i = 0; i <arguments.length; i ++) { 
- args.push(arguments[i]) 
- } // Теперь «args» - это массив, содержащий ваши аргументы. 
+  args.push(arguments[i]) 
+} // Теперь «args» - это массив, содержащий ваши аргументы. 
  ```
 
 Для получения дополнительной информации по вопросам оптимизации:  
@@ -79,19 +79,19 @@ for (var i = 0; i <arguments.length; i ++) {
 
 ```javascript
 function getIntoAnArgument() { 
-    var args = arguments.slice(); 
-    args.forEach(function(arg) { 
-        console.log(arg); 
-    }); 
- } 
+  var args = arguments.slice(); 
+  args.forEach(function(arg) { 
+    console.log(arg); 
+  }); 
+} 
 ```
 
 Эту функцию можно заменить в ES6:
 
 ```
 function getIntoAnArgument(...args) { 
-    args.forEach(arg => console.log(arg)); 
- } 
+  args.forEach(arg => console.log(arg)); 
+} 
 ```
 
 Обратите внимание, что мы также использовали стрелочную функцию для сокращения обратного вызова forEach!
@@ -99,7 +99,8 @@ function getIntoAnArgument(...args) {
 Объект arguments недоступен внутри тела стрелочной функции.
 
 Параметр rest всегда должен быть последним аргументом в определении вашей функции.  
-```function getIntoAnArgument(arg1, arg2, arg3, ...restOfArgs /*no more arguments allowed here*/) {
-    //function body 
-    }
+```
+function getIntoAnArgument(arg1, arg2, arg3, ...restOfArgs /*no more arguments allowed here*/) {
+  //function body 
+}
 ```
