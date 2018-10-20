@@ -127,3 +127,5 @@ Encuentra bibliotecas de javascript en [http://jster.net](http://jster.net)
 *   [Luz funcional js](https://github.com/getify/Functional-Light-JS)
     
     Este libro pretende ser un compañero útil para cualquiera que desee (re) descubrir las múltiples facetas de JavaScript. Desde los conceptos básicos de la programación hasta el desarrollo web front-end y back-end, se cubren muchos temas de manera simple y accesible. No se necesitan conocimientos previos!
+    
+    
