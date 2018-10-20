@@ -96,3 +96,4 @@ This article uses information from the <a href='https://github.com/progit/progit
 ### More Information: <a name="more-information"></a>
 - For downloads, documentation, and a browser-based tutorial: <a href='https://git-scm.com/' target='_blank' rel='nofollow'>Git official website</a>
 - Most useful commands when you're in bad GIT situation: <a href='http://ohshitgit.com/' target='_blank' rel='nofollow'>Oh shit, git!</a>
+- Host websites free using github: <a href='https://medium.com/@svinkle/publish-and-share-your-own-website-for-free-with-github-2eff049a1cb5' target='_blank' rel='nofollow'> Medium Tutorial</a>
