@@ -9,6 +9,10 @@ title: Kotlin
  It serves as a replacement for Java and runs on the JVM. It has been in development for close to 6 years and it hit 1.0 just a year ago. 
  
  The developer community has embraced Kotlin to such an extent that Google announced first class support for the language for Android Development at <a href='https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/'>Google I/O 2017</a>.
+ 
+ It's fastest growing Programming Language in the GitHub Community.
+ <a href='https://content.techgig.com/Kotlin-tops-the-list-of-fastest-growing-language-by-number-of-contributors-on-GitHub/articleshow/66281168.cms?utm_source=TG_batch&utm_medium=email&utm_campaign=digest_news_2018-10-20&date=2018-10-19&auth_login=OW5LN0xzeXJhZXZsWnNLakxDUzVpZkRsejI1TytkaWNZemdyczBleFZwOHdKSkF0S3RkSi9kekNRdmhqek9MVno0TUUxUTgyWGVOc0ZldXU3V2M1Wmc9PQ==&&etoken=dmlrYXNzYXZhZGlAZ21haWwuY29t&activity_name=NDM3MDIw&template_type=0'> Blog </a>
+ 
 
 
 ## Version
