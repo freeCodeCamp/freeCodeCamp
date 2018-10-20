@@ -55,4 +55,5 @@ This implies that depending on the browser, the experience can change.
 3. [Introduction to Progressive Web Apps - MDN Web Docs] (https://developer.mozilla.org/en-US/docs/Web/Apps/Progressive/Introduction)
 4. [Hume, Dean. Alan. "Progressive Web Apps: Live book](https://livebook.manning.com/#!/book/progressive-web-apps/about-this-book/)
 5. [Hofmann, Simon. "The Road to PWA - Part 1"] (https://blog.simon-hofmann.org/pwa/js/2018/05/07/road-to-pwa01.html)
+6. [PWA Rocks! - List of Progressive Web Apps] (https://pwa.rocks/) 
 
