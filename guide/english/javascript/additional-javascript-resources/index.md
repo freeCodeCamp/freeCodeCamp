@@ -100,6 +100,9 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='https://www.manning.com/books/secrets-of-the-javascript-ninja' target='_blank' rel='nofollow'>Secrets of the JavaScript Ninja</a>
 *   <a href='http://pjabook.com/' target='_blank' rel='nofollow'>Programming JavaScript Applications</a>
 *   <a href='http://shop.oreilly.com/product/0636920025245.do' target='_blank' rel='nofollow'>Maintainable JavaScript</a>
+    
+    A book written by a former Yahoo front-end developer. Intended to show best practices, tips, and techniques for group programming.
+
 *   <a href='http://addyosmani.com/resources/essentialjsdesignpatterns/book/' target='_blank' rel='nofollow'>Learning JavaScript Design Patterns</a>
 *   <a href='https://github.com/airbnb/javascript' target='_blank' rel='nofollow'>Airbnb JavaScript Style Guide</a>
 *   <a href='http://usejsdoc.org/' target='_blank' rel='nofollow'>JSDoc</a>
