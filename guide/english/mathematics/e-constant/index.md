@@ -12,6 +12,8 @@ E is a constant which we can use to observe the behavior of exponential function
 Furthermore, the inverse of e^x is ln(x), the base logarithmic function. 
 OF particular importance, ln(e) = 1.
 
+E is also equivalent to continuous compounding - basically the fastest rate of growth in nature.  You could have a savings account and have the interest compounded yearly, quarterly, monthly, weekly, or by the day.  If you keep making the interval smaller you will find out that the the maximum interest earned through continuous compounding that a $1 can grow to is $2.718.
+
 http://www.mathsisfun.com/numbers/e-eulers-number.html
 #### More Information:
 More information about e, exponential, and logarithmic functions can be found [here](https://www.khanacademy.org/tag/natural-logarithm-and-e)
