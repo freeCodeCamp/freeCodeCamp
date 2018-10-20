@@ -178,3 +178,6 @@ In combination with Bootstrap's predefined grid classes to align labels and grou
 ```
     
 ![Horizontal Form](https://github.com/TroyB12/Pictures/blob/master/Horizontal%20Form.PNG)
+
+## More Information:
+[Bootstrap Forms](https://getbootstrap.com/docs/4.1/components/forms/)
