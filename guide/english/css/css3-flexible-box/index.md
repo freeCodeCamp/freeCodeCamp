@@ -36,4 +36,7 @@ Yet another great visual guide that is in-depth but easy to follow can be found 
 
 1. <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow">Coyier, Chris. "A Complete Guide to Flexbox" CSS-Tricks. Last updated on September 28, 2017.</a>
 
+### Exercises
+I suggest working out while playing the game [Flexbox Froggy](http://flexboxfroggy.com)- [Guide](https://github.com/thomaspark/flexboxfroggy)
+
 
