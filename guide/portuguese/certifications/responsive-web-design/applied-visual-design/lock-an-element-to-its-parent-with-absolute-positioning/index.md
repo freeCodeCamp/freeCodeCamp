@@ -4,6 +4,12 @@ localeTitle: Bloqueie um Elemento ao seu Pai com Posicionamento Absoluto
 ---
 ## Bloqueie um Elemento ao seu Pai com Posicionamento Absoluto
 
-Este é um esboço. [Ajude nossa comunidade a expandi-lo](https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/responsive-web-design/applied-visual-design/lock-an-element-to-its-parent-with-absolute-positioning/index.md) .
+A propriedade Position: relative que faz o elemento ter um comportamento diferente do fluxo normal do documento e por sua vez faz com que outros elementos adjacentes o ignorem. Para bloquear um elemento em relação ao contentor 'pai' devemos utilizar o Position: absolute.
 
-[Este guia de estilo rápido ajudará a garantir que sua solicitação de recebimento seja aceita](https://github.com/freecodecamp/guides/blob/master/README.md) .
+Ao indicar que a sua posição fica absoluta ao contentor 'pai' estamos a bloquear o elemento no lugar em relação ao seu contentor pai.
+
+Depois através de propriedades de posicionamento CSS pode-se ajustar a posição do elemento para cima, baixo para a esquerda e direita.
+
+O posicionamento absoluto vai bloquear o elemento com base ao antepassado mais próximo. Se se esquecer de adicionar a regra ao contentor pai, o browser vai continuar a procurar a ligação com um elemento que possua a propriedade relativa e por fim irá assumir o padrão da tag body.
+
+
