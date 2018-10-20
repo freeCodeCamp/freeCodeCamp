@@ -21,6 +21,11 @@ Most used options:
 * `-l`, List in long format
 * `-G`, enable colorized output.
 * `-s`, List File Size.
+* `-R`, list subdirectories recursively
+* `-S`, sort by file size, largest first
+* `-t`, sort by modification time, newest first
+
+
 
 ### Example:
 
