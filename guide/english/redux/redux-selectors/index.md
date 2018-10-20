@@ -81,9 +81,9 @@ Also it would impact the performance of the application, because the mapStateToP
 
 To solve the problem above a selector function is going to be created.
 
-As per good practices, this function should be near the reducer
+As per good practices, this function should be near the reducer.
 
-Expanding the example above, now the reducer would be something like the code bellow.
+Expanding the example above, now the reducer would be something like the code bellow:
 
 ```javascript
  // reducer
@@ -104,7 +104,7 @@ Expanding the example above, now the reducer would be something like the code be
  }
 ```
 
-And the component would look like something like this
+And the component would look like something like this:
 ```javascript
     import React, { Component } from "react";
     import {connect} from "react-redux";
