@@ -62,3 +62,6 @@ This will execute the same lines of code if myColor is either Red or Blue.
 
 ### Sources:
 - 1 https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/switch
+
+# Hint:
+Switch is more efficient than if-else blocks in most cases. 
