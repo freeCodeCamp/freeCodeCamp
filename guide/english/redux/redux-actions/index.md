@@ -30,6 +30,6 @@ You might try [redux-actions](https://github.com/redux-utilities/redux-actions) 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 [Actions-Redux Offical Docs](https://redux.js.org/basics/actions)
-[redux-actions](https://github.com/redux-utilities/redux-actions) github project page
+[redux-actions](https://github.com/redux-utilities/redux-actions) github project page.
 
 
