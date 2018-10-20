@@ -97,6 +97,27 @@ Once you've got it compiled, run the following command:
 
 If everything has gone well, you should see `Hello, World!` printed to the screen.
 
+### Compilation in Linux/Unix
+```shell
+make helloworld
+```
+Or
+```shell
+gcc -o helloworld helloworld.c
+``` 
+As in above, run
+```shell
+./helloworld
+```
+Or the most basic one
+```shell
+gcc helloworld.c
+```
+And run
+```shell
+./a.out
+```
+
 #### Compilation and running C with CodeBlocks
 <a href='http://www.codeblocks.org/downloads/26' target='_blank' rel='nofollow'>Codeblocks can be downloaded from here.</a>
 Make a new program with `file` -> `new` -> `file`, select C/C++ source, select C as your language, and then copy over the helloworld.c text that you read through earlier. Compile and run the code with `Build` -> `Build and Run`.
