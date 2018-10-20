@@ -18,6 +18,10 @@ Python has many ways of input and output operations. Some of the output operatio
 Python provides the simplest way to produce output to the screen. 
 ```python
 print "Python is a powerful language.","It is easy to learn."
+(Python 2.x)
+
+print("Python is a powerful language.","It is easy to learn.")
+(Python 3.x)
 ```
 Output: 
 ```
