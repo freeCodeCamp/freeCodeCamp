@@ -6,6 +6,9 @@ title: Planning Poker
 ### Introduction
 Planning poker is an estimation and planning technique in the Agile development model. It is used to estimate the development effort  required for a [user story](../user-stories/index.md) or a feature. 
 
+### When to engage in Planning Poker
+Planning Poker is usually done once per interation/sprint. Because the number of issues/user stories could be added to the backlog over time, therefore, most teams will find it helpful to conduct a planning session (which could involve planning poker) once per iteration/sprint. Usually this is done a few days before the end of the iteration/sprint and immediately following a daily standup, since the whole team is present at that time anyway.
+
 ### Process
 The planning poker is done for one user story at a time.
 
