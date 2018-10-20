@@ -3,7 +3,7 @@ title: SQL Avg Function
 ---
 ## SQL Average (AVG) Function
 
-"Average" is an Aggregate (Group By) Function. It's used to calculate the average of a numeric column from the set of rows returned by a SQL statement.
+"Average" (`AVG`) is an aggregate (Group By) function. It's used to calculate the average of a numeric column from the set of rows returned by a SQL statement.  The `DISTINCT` option can be used to return the average of all distinct values.
 
 Here is the syntax for using the function:
 
