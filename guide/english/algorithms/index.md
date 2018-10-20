@@ -2,6 +2,11 @@
 title: Algorithms
 ---
 
+#Algorithm(Absolut Beginners)
+<br>
+In simple english algorithm is like a set of instructions or a step by step procedure given to perform a operation ora task.
+Not all coders/programmers can directly solve a real-time problem first the problem is broken down a proper algorithm is defined and then the programer writes a code based on the algorithm .Once an algorithm is derived it's like a formula you can code in any language based on it that is also one of the main advantage of algorithm it plays an important role in Software Industry requires thinking skills and mathematics.
+
 ## Algorithms
 
 In computer science, an algorithm is an unambiguous specification of how to solve a class of problems. Algorithms can perform calculations, data processing and automated reasoning tasks.
