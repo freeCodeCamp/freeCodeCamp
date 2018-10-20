@@ -13,4 +13,11 @@ title: Books on Swift
  
  ####More Information:
  <--! Add some awesome books you think will be helpful to others -->
+
+*iOS Apprentice - 7th Edition*
  
+ -For Who? Beginners
+ -Covers: Tutorial based guide to iOS development
+ -Where? Purchase eBook or PDF on RayWenderlich.com. Paperbook available on Amazon.
+ -(https://store.raywenderlich.com/products/ios-apprentice)
+
