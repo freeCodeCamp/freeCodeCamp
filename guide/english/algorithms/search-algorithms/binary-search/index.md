@@ -137,6 +137,24 @@ function binary_search(a, v) {
 }
 ```
 
+### Example in JavaScript
+
+Recursive approach
+
+```javascript
+function binarySearch(arr, target, start=0, stop=(arr.length-1)) {
+  let midPoint = Math.floor(((stop-start)/2) + start); // Find the mdiPoint
+  if(start-stop>0){
+      if (arr[midPoint] === target) //Element found
+          return midPoint; // Return the index
+      if (arr[midPoint] < target) //Element is in the right half
+          return binarySearch(arr, target, midPoint+1, stop); //Search the right half
+      return binarySearch(arr, target, start, midPoint); //Element is in the left half so search the left half
+  }
+  return "Element not found";
+}
+```
+
 ### Ruby implementation
 
 ```ruby
