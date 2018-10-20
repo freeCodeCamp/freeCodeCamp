@@ -10,7 +10,7 @@ localeTitle: Комментарий HTML
 <section id="description"> Помните, что для того, чтобы начать комментарий, вам нужно использовать <code>&lt;!--</code> и для завершения комментария, вам нужно использовать <code>--&gt;</code> Здесь вам нужно будет закончить комментарий до того, как начнется ваш элемент <code>h2</code> . </section>
 
 ## Instructions
-<section id="instructions"> Комментируйте свой элемент <code>h1</code> и ваш элемент <code>p</code> , но не ваш элемент <code>h2</code> . </section>
+<section id="instructions"> Вы можете комментровать элементы <code>h1</code> и <code>p</code> , но не элемент <code>h2</code> . </section>
 
 ## Tests
 <section id='tests'>
