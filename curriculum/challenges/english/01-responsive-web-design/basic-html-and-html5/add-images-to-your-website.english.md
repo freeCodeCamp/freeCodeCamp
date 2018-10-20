@@ -22,7 +22,7 @@ Let's add an <code>alt</code> attribute to our <code>img</code> example above:
 ## Instructions
 <section id='instructions'>
 Let's try to add an image to our website:
-Insert an <code>img</code> tag, before the <code>h2</code> element.
+Insert an <code>img</code> tag, after the <code>main</code> element.
 Now set the <code>src</code> attribute so that it points to this url:
 <code>https://bit.ly/fcc-relaxing-cat</code>
 Finally don't forget to give your image an <code>alt</code> text.

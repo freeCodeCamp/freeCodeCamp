@@ -63,6 +63,9 @@ var magic = function() {
 <section id='solution'>
 
 ```js
-// solution required
+const magic = () => {
+  "use strict";
+  return new Date();
+};
 ```
 </section>
