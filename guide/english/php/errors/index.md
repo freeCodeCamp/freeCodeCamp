@@ -11,3 +11,6 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+
+#semi sensitive case in php
+php is programming language who have semi sensitive case, so sometimes you will get error if you "typo" when you write the program
