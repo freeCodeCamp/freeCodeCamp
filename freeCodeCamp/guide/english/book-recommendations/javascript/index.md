@@ -1,5 +1,6 @@
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")title: Books on 
 ---
-title: Books on JavaScript
+JavaScript
 ---
  ### List of Books
 
@@ -33,3 +34,4 @@ A collection of articles covering the basics (core language and working with a b
 A very fun and easy book for beginners. 
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
