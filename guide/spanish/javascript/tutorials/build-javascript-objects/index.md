@@ -25,4 +25,4 @@ var cat = new Object();
  cat.enemies = ["Water", "Dogs"]; 
 ```
 
-En la forma de Constructor, usamos la `new` palabra clave junto con `Object` (con mayúscula 'O') para crear una nueva instancia de objeto. Luego, usamos la notación de puntos para asignar los nombres de propiedad y los valores del objeto.
+En la forma de Constructor, usamos la palabra clave `new` junto con `Object` (con mayúscula 'O') para crear una nueva instancia de objeto. Luego, usamos la notación de puntos para asignar los nombres de propiedad y los valores del objeto.
