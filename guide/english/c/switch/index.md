@@ -4,7 +4,7 @@ title: Switch Case
 
 # Switch Case
 
-The switch statement is like a set of `if statements`.
+The switch statement is like a set of `if-else statements`.
 
 It's a list of possibilities, with an action for each possibility, and an optional default action, in case nothing else evaluates to true.
 
@@ -32,7 +32,7 @@ switch (n)
 
 ## Example
 
-Using a switch statement over multiple if/else statements can contribute to more speed and readability.
+Using a switch statement over multiple if-else statements can contribute to more speed and readability.
 
 ```c
 # include <stdio.h>
