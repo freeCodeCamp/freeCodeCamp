@@ -13,6 +13,11 @@ When x=pi, Euler's Formula gives the beautiful identity invovling pi, e, and i.
 
 A famous joke for mathematicians is "How many mathematicians does it take to change a light bulb?" and answers "-e^(ipi)" 
 Can you tell what the answer is?
+
+This is often used when dealing with complex numbers in exponential form. 
+
+![img](https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Euler%27s_formula.png/300px-Euler%27s_formula.png)
+
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
