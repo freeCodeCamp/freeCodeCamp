@@ -1,7 +1,8 @@
 ---
 title: Ternary Operator
 localeTitle: Operador Ternário
----## Operador Ternário
+---
+## Operador Ternário
 
 Os programadores usam operadores ternários em C para tomar decisões em lugar de declarações condicionais, **se** e **mais** . O operador ternário é um operador que leva três argumentos. O primeiro argumento é um argumento de comparação, o segundo é o resultado em uma comparação verdadeira e o terceiro é o resultado em uma comparação falsa. Se isso ajudar você pode pensar no operador como uma forma abreviada de escrever uma instrução if-else.
 
@@ -10,10 +11,12 @@ Aqui está um exemplo simples de tomada de decisão usando **if** e **else** :
 ```c
 int a = 10, b = 20, c; 
  
- if (a < b) { 
+ if (a < b) 
+ { 
     c = a; 
  } 
- else { 
+ else 
+ { 
     c = b; 
  } 
  
@@ -52,13 +55,19 @@ O operador ternário também pode ser aninhado da mesma forma que as instruçõe
 
 ```c
 int a = 1, b = 2, ans; 
- if (a == 1) { 
-    if (b == 2) { 
+ if (a == 1) 
+ { 
+    if (b == 2) 
+    { 
         ans = 3; 
-    } else { 
+    } 
+    else 
+    { 
         ans = 5; 
     } 
- } else { 
+ } 
+ else 
+ { 
     ans = 0; 
  } 
  printf ("%d\n", ans); 
