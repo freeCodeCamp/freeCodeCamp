@@ -9,27 +9,28 @@ Una matriz en PHP es en realidad un mapa ordenado. Un mapa es un tipo que asocia
 Aquí hay un ejemplo:
 ```
 <?php 
- // array without keys 
- $bikes = array("Suzuki","BMW","Yamaha"); 
- echo "I like " . $bikes[0] . ", " . $bikes[1] . " and " . $bikes[2] . "."; 
+ // array sin claves 
+ $motos = array("Suzuki","BMW","Yamaha"); 
+ echo "Me gustan las motos " . $motos[0] . ", " . $motos[1] . " y " . $motos[2] . "."; // Salida: Me gustan las motos Suzuki, BMW y Yamaha 
  ?> 
 ```
 
-PHP array tiene muchas funciones para trabajar. Aquí está toda la lista ordenada: [Funciones](https://www.w3schools.com/php/php_ref_array.asp)
+Un array en PHP tiene muchas funciones con las que puede trabajar. Aquí está toda la lista ordenada: [Funciones](https://www.w3schools.com/php/php_ref_array.asp)
 
 ## Matrices asociativas
 
-Las matrices de PHP se pueden utilizar como clave y valor como mapa. Se puede acceder por clave también.
+Las matrices de PHP se pueden utilizar como clave y valor como mapa, en cuyo caso se denominan matrices asociativas o arrays asociativos. En estos tipos se puede acceder a los valores almacenados a través de su clave.
 
 Aquí hay un ejemplo simple:
 ```
 <?php 
  $array = array( 
-    "foo" => "bar", 
-    "bar" => "foo", 
+    "foo" => "bar", // Asignamos el valor "bar" a la clave "foo"
+    "bar" => "foo", // Asignamos el valor "foo" a la clave "bar"
  ); 
  
- echo $array['bar']; 
+ echo $array['bar']; // Salida: foo
+ echo $array['foo']; // Salida: bar
 ```
 
 Que tengas un buen día, feliz codificación !!!
