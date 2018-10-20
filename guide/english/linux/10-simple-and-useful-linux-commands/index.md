@@ -53,5 +53,8 @@ more command allows quickly view file and shows details in percentage. You can p
 10. `cp` Command
 Copy file from source to destination preserving same mode.
 
+11. 'ifconfig' command
+ifconfig allows you to see the addresses associated with each TCP/IP interface on your machine, or manipulate the state of the interface. A definite must have for any tech or SysAdmin
+r
 Here are the list of commands frequently used by adiminstrator.
 This is not a complete but it’s a compact list of commands to refer when needed. 
