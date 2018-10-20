@@ -25,7 +25,7 @@ int main()
 }
 ```
 
-#### The Output of this program will simply be :
+#### The Output of this program will be:
 
 ```
 Hello World!
@@ -41,8 +41,8 @@ Now, let's break down the code:
 using namespace std;
 ```
 
-* The first line tells the computer to use the "iostream" header file for this specific program . A header file is a seperate file with prewritten C++ code. There are many other header files which are requireed for a specific program to run properly. Some of them are : math , vector and string. Header files are generally represented by a ".h" extension (you don't need to add .h when including C++ standard library files)
-* `iostream` stands for input-output stream . The "iostream" file contains code for allowing the computer to take input and generate an output, using the C++ language.
+* The first line tells the computer to use the "iostream" header file for this specific program. A header file is a separate file with prewritten C++ code. There are many other header files which are required for a specific program to run properly. For example, math, vector, string, etc. Header files are generally represented by a ".h" extension, when including standard library header files you don't include the ".h" extension.
+* The `iostream` header contains the public interface for the input-output stream from the standard library. The "iostream" file contains code for allowing the computer to take input and generate an output, using the C++ language.
 * The second line tells the computer to use the standard namespace which includes features of standard C++. You could write this program without this line, but you'd have to use `std::cout` instead of `cout` and `std::endl` instead of `endl` on line 4. It makes the code more readable and our lives as programmers easier.
 
 #### Line 3 and 4
@@ -52,7 +52,7 @@ int main()
 {
 ```
 
-* C++ starts execution of a program from the -main function- `int main()` . During execution , the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
+* C++ starts execution of a program from the -main function- `int main()` . During execution, the computer starts running the code from every line from `{`(opening bracket) till `}`(closing bracket)
   **NOTE : Every function starts with an opening curly brace "{" and ends with a closing curly brace "}".**
 * Line 4 indicates the start of the main() function. 
 
@@ -64,20 +64,20 @@ int main()
 }
 ```
 
-* The word `cout` in C++ is used to output. 
-* It is followed by `<<` , the _insertion operator_ . 
-* Whatever is in the double quotes `""` is printed . Certain special characters have a different syntax for print statements   
-* Now to print any other kind of data , you have to  add `<<` .
+* The word `cout` in C++ is used to stream data to standard output. 
+* It is followed by `<<` , the _insertion operator_. 
+* Whatever is in the double quotes `""` is printed. Certain special characters have a different syntax for print statements   
+* Now to print any other kind of data, you have to  add `<<`.
 
-***Challenge: Try to change Hello World to any other sentence or word(s). What will be the output ?***
+***Challenge: Change Hello World to another sentence. What will be the output?***
 
-* `endl` is a reserved word when using the C++ language to **end this line and go to the next line during output** .   - _cout stands for "console output"_
-* Finally, finish the command with a semicolon `;`.
+* `endl` is another symbol from the iostream library which means to **end this line and go to the next line during output** .   - _cout stands for "console output"_
+* Finally, finish the statement with a semicolon `;`.
 
-**NOTE : Every command except the main function definition and the #include directive needs to be ended by the semicolon. Without a ";" , you may encounter an error.**
+**NOTE : Every statement except the main function definition and the #include directive needs to be ended by the semicolon. Without a ";", you may encounter a compiler error.**
 
 * `return 0;` safely terminates the current function i.e. 'main()' in this case and since no function follows after 'main()' the program is terminated. 
-* Don't forget to tell the computer that this is end of the main() function. To do this , you add the closing curly brace "}". You will encounter an error before program execution if you do not include the **}** .
+* Don't forget to tell the computer that this is end of the main() function. To do this , you add the closing curly brace "}". You will encounter compiler error before program execution if you do not include the **}** .
 
 ### The code should look something like this:
 
