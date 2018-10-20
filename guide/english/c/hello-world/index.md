@@ -8,7 +8,7 @@ To write on console you can use the function `printf()` contained in the library
 
  ```C
  #include <stdio.h>
-
+//printf is for output
  int main(void)
  {
 
