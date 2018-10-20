@@ -39,3 +39,5 @@ process.on('exit', cleanUp);
 process.on('SIGINT', cleanUp);
 process.on('SIGUSR1', cleanUp);
 process.on('SIGUSR2', cleanUp);
+
+#Cleanliness is next to Godliness
