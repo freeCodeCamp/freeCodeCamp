@@ -3,13 +3,24 @@ title: Features of BlockTech
 ---
 ## Features of Blockchain Technology
 
-Blockchain is almost always used in lieu of Bitcoin and cryptocurrency. However, there are many other places this technology can be used.  And we are beginning to barely scratch the surface of it. With all the hype around it, we know, the Blockchain Technology (BlockTech) is going to be huge. But what makes it unique?
+The blockchain word refers to the data validation system used by the bitcoin network.
+This is a p2p network of computers of global reach, and that for several years has become the most powerful in the world in computing capacity.
 
-In this article, we are going to explore the key characteristic features of BlockTech.
+It's purpose is to keep a distributed transaction log, thus guaranteeing its resilience and absence of errors.
+To achieve this, it uses a system of incentives and economic penalties not supported in any currency or external variable, but in parameters of the network such as reward, difficulty of calculation, cost of securing the validation equipment (also called miners), price of electricity and others.
+
+ These qualities of the network make bitcoin the currency of the bitcoin payment network, created by a person or group of people, (and I say this because the true identity of the creator is unknown) who frequented the cryptography forums with the alias of satoshi nakamoto; is only the first available application of this technology, and allows us to think of it as what the full-time speaker and lecturer @aantonop, has defined the fifth internet protocol ---- The trust protocol of value transfer or Trust, because at the end of everything that represents money or value today but a mere abstraction that represents trust.
+ 
+Blockchain is a decentralized technology, for design needs, because the purpose with which it was created was to offer an alternative to the current economic system, based on the FIAT money, created through debt and financial leverage, let's put ourselves in context year 2008 - beginning of the economic crisis.
+
+Another sinequanone condition is that it be open source, and I will try to develop this.
+
+ Bitcoin from now on BTC, it is not a company, where you need to open a user account with password and password, in fact in the BTC network there are no people in charge of its development or of any tasks, it works by the mechanics of the projects and the philosophy of the OPEN code, this means that anyone can read the code, so if you execute it, you are already joining its network and accepting its rules because this means executing its code, this is the reason that it must necessarily be Open Source.
+ 
+Also like any open source project, it allows you to improve it and forke it if you do not agree with something, it is the rest of the users of the network who, with the execution of your code, will give you or take away your authority or acceptance.h.
 
 #### _* Decentralized System_
 
-> Blockchain is a Decentralized Technology, by design.
 
 When something is controlled by a central authority, where the power to make decision lies in the hands of the apex of the management, such system is called a Centralized System. Banks, for example, are a centralized system, where it's the responsibility of the Governor to make decisions.
 
