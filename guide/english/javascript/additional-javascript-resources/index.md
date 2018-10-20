@@ -68,6 +68,8 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
     A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
 *   <a href='http://brackets.io' target='_blank' rel='nofollow'>Brackets</a>
+
+    A text editor made with web designers and front-end developers in mind. Features include: inline editing, live preview, and preprocessor support.   
 *   <a href='http://atom.io' target='_blank' rel='nofollow'>Atom</a>
 
     Open source text editor made by GitHub.
