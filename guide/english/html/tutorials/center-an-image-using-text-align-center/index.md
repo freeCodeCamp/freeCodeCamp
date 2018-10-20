@@ -52,6 +52,25 @@ Since the `text-align` property only applies to block-level elements, you place 
 </html>
 ```
 
+------------------------------------------------------------------------
+HTML BLOCK:
+
+<img src="logo.png" alt="MyLogo" class="center">
+
+------------------------------------------------------------------------
+CSS BLOCK:
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+Note: Do not set width to 100%.
+------------------------------------------------------------------------
+
+
 **Demo:** [Codepen](https://codepen.io/aravindio/pen/PJMXbp)
 
 ## Documentation
