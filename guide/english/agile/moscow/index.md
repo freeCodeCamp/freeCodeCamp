@@ -39,6 +39,7 @@ The term MoSCoW itself is an acronym derived from the first letter of each of fo
 By prioritizing in this way, a common definition of the project can be reached and stakeholders' expectations set accordingly. Note That MoSCoW is a bit lax about how to distinguish the category of an item and when something will be done, if not in this timebox.
 
 #### More Information:
+[Agile business] https://www.agilebusiness.org/content/moscow-prioritisation-0
 
 [Wikipedia](https://en.wikipedia.org/wiki/MoSCoW_method)
 
