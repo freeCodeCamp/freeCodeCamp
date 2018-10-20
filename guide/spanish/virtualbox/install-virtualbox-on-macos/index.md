@@ -29,3 +29,6 @@ Cuando ves la pantalla similar con la siguiente imagen. Puede hacer clic en sigu
 Una vez que la instalación haya finalizado, puede abrir VirtualBox en el "Launchpad". O busca `VirtualBox` en Spotlight.
 
 ![Launchpad con VirtualBox](https://i.imgur.com/hsEjqfm.png)
+
+###Final
+Felicidades ahora puede disfrutar de todas las funcionalidades de virtualbox y descubrir cientos de sistemas operativos nuevos en su mac.
