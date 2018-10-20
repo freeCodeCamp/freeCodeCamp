@@ -102,6 +102,28 @@ $ python3.5
  If the implementation is hard to explain, it's a bad idea. 
  If the implementation is easy to explain, it may be a good idea. 
  Namespaces are one honking great idea -- let's do more of those! 
+ 优美胜于丑陋，显明胜于隐含。
+ 简单胜于复杂，复杂胜于繁复。
+ 扁平胜于嵌套，稀疏胜于密集。
+ 可读性会起作用。
+ 即使要为了实用性而牺牲纯粹性，
+ 特例也并不特殊到足以破坏常规。
+ 除非你想明白无误地保持沉默，
+ 否则就永远不要悄悄放过错误。
+ 面对模棱两可，
+ 拒绝猜的诱惑。
+ 做任何事情总该有一个，
+ 而且最好只有一个明显的方式，
+ 尽管那种方式起初并不见得明显，
+ 但是谁叫你不是荷兰人[1]。
+ 虽然一直不做经常要好过匆忙去做，
+ 但是现在就做还是要好过一直不做。
+ 如果实现方法很难以解释，那一定是个坏主意；
+ 如果实现方法很容易解释，那也许是个好注意。
+ 名字空间就是一个呱呱叫的好主意。
+ 现在就让我们多多动手体验这些吧。
+
+ [1]python发明人Guido van Rossum是荷兰人。
 ```
 
 ## Python的优点和缺点
