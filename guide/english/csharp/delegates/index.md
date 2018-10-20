@@ -61,3 +61,63 @@ You can then assign this to the delegate variable and invoke it like a function.
 ## More information
 
 Read more about delegates [here](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/).
+
+
+## Predicates
+
+A predicate is also a delegate. It represents a method that contains a set of criteria and checks whether the passed parameter meets those criteria or not. A predicate delegate methods must take one input parameter and it then returns a boolean value - true or false.
+
+Predicates can be extremely useful if we want to check for something and expect a boolean answer, especially when using them in other functions (predicate is still a delegate so we can pass it as an argument) like ` public T Find (Predicate<T> match) `  
+
+## Examples
+
+Example using lambda expression:
+```csharp
+    Predicate<string> LengthIsGreaterThan5 = (x) => (x.Length > 5); 
+    
+	Console.WriteLine(LengthIsGreaterThan5("Sample")); // returns True
+```
+
+This predicate could also be rewritten using delegate keyword:
+```csharp
+    Predicate<string> LengthIsGreaterThan5 = delegate(string x) { return x.Length > 5; };
+    
+    Console.WriteLine(LengthIsGreaterThan5("Sample")); // returns True
+```
+
+## More information about predicates
+
+Read more about predicates [here](http://www.tutorialsteacher.com/csharp/csharp-predicate).
+
+
+## Func
+
+`Func` is a generic delegate. It has zero or more input parameters and one out parameter. The last parameter is considered as an out parameter. For example, a Func delegate that takes one input parameter and one out parameter is defined in the System namespace as below:
+`public delegate TResult Func<in T, out TResult>(T arg);`
+
+## Examples
+
+Example using lambda expression:
+```csharp
+    Func<double, double> Squared = (num) => (num * num); // input will be double, output will be double
+	Console.WriteLine(Squared(5)); // return 25
+```
+
+Func delegate could also be assigned like a regular delegate:
+```csharp
+    static int Sum(int x, int y)
+    {
+        return x + y;
+    }
+
+    static void Main(string[] args)
+    {
+        Func<int,int, int> add = Sum;
+
+        Console.WriteLine(add(10, 10)); // returns 20
+    }
+```
+
+## More information about Func
+
+Read more about Func [here](http://www.tutorialsteacher.com/csharp/csharp-func-delegate).
