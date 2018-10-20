@@ -46,6 +46,7 @@ These days there are a variety of deep learning frameworks that allow you specif
 * <a href="http://www.deeplearningbook.org">Deep Learning Textbook</a> 
 * <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep Learning</a>
 * <a href="https://github.com/freeCodeCamp/guides/blob/master/src/pages/machine-learning/neural-networks/index.md">FreeCodeCamp Guide to Neural Networks</a>
+* [Stanford's CS231N](http://vision.stanford.edu/teaching/cs231n/syllabus.html)
 * <a href="http://image-net.org/">Imagenet</a>
 * <a href="https://adeshpande3.github.io/adeshpande3.github.io/A-Beginner's-Guide-To-Understanding-Convolutional-Neural-Networks/">A Beginner's Guide To Understanding Convolutional Neural Networks</a>
 * <a href="https://www.youtube.com/playlist?list=PLjJh1vlSEYgvGod9wWiydumYl8hOXixNu">Deep Learning SIMPLIFIED - DeepLearning.TV</a>
