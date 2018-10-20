@@ -46,7 +46,8 @@ This implies that depending on the browser, the experience can change.
 
 ### Demo
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/esfi7ZLibmk" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+[![Demo on Progressive Web App](http://img.youtube.com/vi/esfi7ZLibmk/0.jpg)](https://www.youtube.com/watch?v=esfi7ZLibmk "Demo on Progressive Web App")
+
 
 ### References
 
