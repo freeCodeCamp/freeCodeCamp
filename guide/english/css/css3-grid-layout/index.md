@@ -13,3 +13,6 @@ Though Grid Layout isn't fully supported by all browsers, it's the most advanced
 - [YouTube - CSS Grid Playlist](https://www.youtube.com/watch?v=FEnRpy9Xfes&list=PLbSquHt1VCf1x_-1ytlVMT0AMwADlWtc1)
 
 More info about browser support can be read at <a href="https://caniuse.com/#feat=css-grid" target="_blank">https://caniuse.com</a>.
+
+#### Execirses
+I suggest working out while playing the game [Grid Garden](https://cssgridgarden.com) - [Guide](https://github.com/thomaspark/gridgarden).
