@@ -2,7 +2,7 @@
 title: Arguments
 localeTitle: аргументы
 ---
-Объект arguments - это **объект, подобный массиву** _(в том, что структура объекта аналогична структуре массива, однако он не должен рассматриваться как массив, поскольку он обладает всеми функциональными возможностями объекта), в_ котором хранятся все аргументы, которые вы передается функции и, в частности, принадлежит этой функции. Если вы должны были передать 3 аргумента функции, скажем, `storeNames()` , эти 3 аргумента будут храниться внутри объекта с **аргументами,** и это будет выглядеть так, когда мы передадим аргументы `storeNames("Mulder", "Scully", "Alex Krycek")` к нашей функции:
+Объект arguments - это **объект, подобный массиву** _(в том, что структура объекта аналогична структуре массива, однако он не должен рассматриваться как массив, поскольку он обладает всеми функциональными возможностями объекта), в_ котором хранятся все аргументы, которые вы передается функции и, в частности, принадлежит этой функции. Если вы должны были передать 3 аргумента функции, скажем, `storeNames()` , эти 3 аргумента будут храниться внутри объекта с **аргументами,** и это будет выглядеть так тогда, когда мы передадим аргументы `storeNames("Mulder", "Scully", "Alex Krycek")` в нашу функцию:
 
 *   Сначала мы объявляем функцию и возвращаем объект arguments.
 
@@ -23,7 +23,7 @@ If you want to know more about this, such as converting it to an array or the op
 
 Javascript var args = Array.prototype.slice.call (аргументы);
 
-// или способ es6: var args = Array.from (аргументы)
+// или способ ES6: var args = Array.from (аргументы)
 ```
 Since **slice()** has two (the parameter **end** is optional) parameters, you can grab a certain portion of the arguments by specifying (using the _slice.call()_ method renders these two parameters optional, not just _end_) the beginning and the ending of your portion; check out the following code: 
 ```
