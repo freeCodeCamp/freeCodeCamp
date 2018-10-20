@@ -1,5 +1,5 @@
 ---
-title:Switch Statement
+title: Switch Statement
 localeTitle: undefined
 ---
 Uma instrução switch permite que uma variável seja testada quanto à igualdade em relação a uma lista de valores. Cada valor é chamado de caso e a variável que está sendo ativada é verificada para cada caso.

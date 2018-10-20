@@ -1,9 +1,9 @@
 ---
-  title : Features of BlockTech
+title: Features of BlockTech
 ---
 ## Features of Blockchain Technology
 
-Blockchain is almost always used in lieu of Bitcoin and cryptocurrency. However, there are many other places this technology can be used.  And we are beginning to barely scratch the surface of it. With all the hype around it, we know, the Blockchain Technology (BlockTech) is going to be huge. But what makes it unique?  
+Blockchain is almost always used in lieu of Bitcoin and cryptocurrency. However, there are many other places this technology can be used.  And we are beginning to barely scratch the surface of it. With all the hype around it, we know, the Blockchain Technology (BlockTech) is going to be huge. But what makes it unique?
 
 In this article, we are going to explore the key characteristic features of BlockTech.
 

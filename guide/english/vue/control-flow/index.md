@@ -109,3 +109,19 @@ app.list.push("something else");
 ```
 
 As expected, the page rendered now has our brand new item!
+
+### Accessing current index in loops
+
+`v-for` also supports an optional second argument for the index of the current item:
+
+```html
+<div id="app">
+  <ul>
+    <li v-for="(item, index) in items">
+      {{ index }}: {{ item }}
+    </li>
+  </ul>
+</div>
+```
+This way, we can use `index` to style the first, last or even/odd list elements differently, or apply extra logic to our component.
+

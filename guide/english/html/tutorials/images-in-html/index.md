@@ -10,7 +10,8 @@ To insert an image you define the source and an alternative text wich is display
 
 `src` - This attribute provides the url to image present either on your desktop/laptop or to be included from some other website. Remember the link provided should not be broken otherwise the image will not be produced on your webpage.
 
-`alt` - This attribute is used to overcome the problem of broken image or incapability of your browser to not being able to produce image on webpage. This attribute as name suggests provide "alternative" to image which is some text describing the image
+`alt` - This attribute is used to overcome the problem of broken image or incapability of your browser to not being able to produce image on webpage. This attribute as name suggests provide "alternative" to image which is some text describing the image.
+
 
 ## Example
 
@@ -38,7 +39,12 @@ To insert an image you define the source and an alternative text wich is display
 <img src="URL of the Image" alt="Descriptive Title" style="width: 100px; height: 150px;"/>
 ```
 
-#### More Information
+Here's an example to make a rounded image:
+```html
+<img src="URL of the Image" alt="Descriptive Title" style="border-radius: 50%;"/>
+```
+
+### More Information
 
 - See the freeCodeCamp page on the `<img>` tag [here](https://guide.freecodecamp.org/html/elements/img-tag)
 - To get more details on images in HTML, check out the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Img)
