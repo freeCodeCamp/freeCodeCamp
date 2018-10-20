@@ -28,6 +28,7 @@ The worst thing you can do is to sell yourself short if you want something take 
 
 ### A non-exhaustive list of global women in tech initiatives:
 
+- [ChickTech] (https://chicktech.org/)
 - [PyLadies](https://www.pyladies.com/)
 - [R-Ladies](https://rladies.org/)
 - [Django Girls](https://djangogirls.org/)
