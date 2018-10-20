@@ -25,4 +25,8 @@ Structure of a basic HTML file:
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-
+The <!DOCTYPE html> declaration defines this document to be HTML5
+The <html> element is the root element of an HTML page
+The <head> element contains meta information about the document
+The <title> element specifies a title for the document
+The <body> element contains the visible page content
