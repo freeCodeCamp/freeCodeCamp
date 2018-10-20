@@ -279,7 +279,7 @@ a = [1,2,3,4,5]
  #Is 12 not in list a? 
  print 12 not in a # prints True 
  
- str = "Hello World" 
+ str = ("Hello World") 
  
  #Does the string str contain World? 
  print "World" in str # prints True 
