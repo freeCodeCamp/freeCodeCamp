@@ -8,7 +8,7 @@ title: Mac OS Terminal
 Most of the time users interact through a Graphical User Interface to interact with the computer. You use the mouse to point and click to open, move, or create new files or open applications. But, you can also use the Terminal Application to interact with your machine through written commands. When you use the terminal, it allows you to dig deeper and customize in a way not possible through the GUI. 
 
 ### Opening the Terminal and Navigating Directories
-Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. it shoudl have the computer's name (ABC's Macbook), followed by the User name (ABC), and then a '$.' If you are in the root directory, the last character will be a '#.'
+Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. it should have the computer's name (ABC's Macbook), followed by the User name (ABC), and then a '$.' If you are in the root directory, the last character will be a '#.'
 
 To see what directory you are working in, just type the command 
 
@@ -44,7 +44,7 @@ Some of the aforementioned commands aren't clear without examples. Below are a f
 
 #### Making a Directory
 
-```mkdir #YOUR-NEW-FOLDER-NAME-HERE```
+```mkdir YOUR-NEW-FOLDER-NAME-HERE```
 
 #### Making a File 
 
@@ -66,7 +66,13 @@ For example, if we have a file, _'test.txt'_ that is stored in our _/Desktop_ di
 
 Use the following syntax to delete a file 
 
-**rm _#PATH_TO_FILE_**
+**rm _PATH_TO_FILE_**
+
+For example, if you want to delete the test file you created above, your command line should like like this:
+
+``` rm test.txt```
+
+  **Note:** Removing files this way is permanent, deleted files will skip the trash completely, leaving you with few options for file recovery. Always be careful when using this command and back up your machine frequently! 
 
 #### Detect which process is using the port you want to use
 ``` lsof -i :<PORT> ```
