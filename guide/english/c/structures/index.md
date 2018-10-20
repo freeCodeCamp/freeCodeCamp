@@ -61,3 +61,4 @@ int main(void)
 ```
 ### More Information  
 https://www.tutorialspoint.com/cprogramming/c_structures.htm
+https://www.geeksforgeeks.org/structures-c/
