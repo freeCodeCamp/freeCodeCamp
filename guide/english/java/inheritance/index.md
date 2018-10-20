@@ -3,10 +3,10 @@ title: Inheritance
 ---
 # Inheritance
 
-Java inheritance refers to the ability of a Java Class to `inherit` the properties from some other Class. Think of it like a child inheriting properties from its parents, the concept is very similar to that. In Java lingo, it is also called _extend_-ing a class. Some simple things to remember :
+Java inheritance refers to the ability of a Java Class to `inherit` the properties from some other Class. This means that properties from one class can extend to another class without the repetition of code. It is good practice to use inheritance, which is simply a form of software reuse. Think of it like a child inheriting properties from its parents. In Java lingo, it is also called _extend_-ing a class. Some simple things to remember :
 
-*   The Class that extends or inherits is called a **subclass**
-*   The Class that is being extended or inherited is called a **superclass**
+*   The Class that extends or inherits is called a **subclass** (Example Classes: Spoons, Forks, Chopsticks)
+*   The Class that is being extended or inherited is called a **superclass** (Example Classes: Utensils)
 
 Thus, inheritance gives Java the cool capability of _re-using_ code, or sharing code between classes!
 
