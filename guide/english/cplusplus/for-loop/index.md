@@ -131,3 +131,6 @@ Output:
 4
 5
 ```
+
+# Practical Advice
+A good practice is to use a for-loop when you know the amount of iterations. 
