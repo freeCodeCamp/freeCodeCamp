@@ -12,7 +12,7 @@ It is one of the four commands that prompts network interaction by Git. By defau
 
 `git pull` fetches (`git fetch`) the new commits and merges <a href='https://guide.freecodecamp.org/git/git-merge' target='_blank' rel='nofollow'>(`git merge`)</a> these into your local branch.
 
-This command's syntax is as follows:
+This commands syntax is as follows:
 
 ```shell
 # General format
@@ -40,7 +40,6 @@ Thus, you should *always commit your changes in a branch before pulling* new com
 
 - [Using `git pull`](#using-git-pull)
 - [Distributed Version Control](#distributed-version-control)
-- [`git fetch` + `git merge`](#git-fetch-plus-git-merge)
 - [`git pull` in IDEs](#git-pull-in-IDEs)
 
 ### Using git pull
@@ -70,27 +69,15 @@ The four network commands are:
 
 When working with Git, it can feel like there are lots of copies of the same code floating all over the place. There are different versions of the same file on each branch. And, different copies of the same branches on every developer's computer and on the remote. To keep track of this, Git uses something called **remote tracking branches**. 
 
-If you execute `git branch --all` within a Git repository, remote tracking branches appear in red. These are read-only copies of the code as it appears on the remote. ( When was the last network interaction that would have brought information locally? Remember when this information was last updated. The information in the remote tracking branches reflects the information from that interaction.) 
+If you execute `git branch --all` within a Git repository, remote tracking branches appear in red. These are read-only copies of the code as it appears on the remote.
 
 With **remote tracking branches**, you can work in Git on several branches without network interaction.  Every time you execute `git pull` or `git fetch` commands, you update **remote tracking branches**.
 
-### git fetch plus git merge
-
-`git pull` is a combination command, equal to `git fetch` + `git merge`. 
-
-#### git fetch
-On its own, `git fetch` updates all the remote tracking branches in local repository. No changes are actually reflected on any of the local working branches. 
-
-#### git merge
-Without any arguments, `git merge` will merge the corresponding remote tracking branch to the local working branch. 
-
-#### git pull
-`git fetch` updates remote tracking branches. `git merge` updates the current branch with the corresponding remote tracking branch. Using `git pull`, you get both parts of these updates. But, this means that if you are checked out to `feature` branch and you execute `git pull`, when you checkout to `master`, any new updates will not be included. Whenever you checkout to another branch that may have new changes, it's always a good idea to execute `git pull`. 
 
 ### git pull in IDEs
 Common language in other IDES may not include the word `pull`. If you look out for the words `git pull` but don't see them, look for the word `sync` instead. 
 
-### fethcing a remote PR (Pull Request) in to local repo
+### fetching a remote PR (Pull Request) in to local repo
 For purposes of reviewing and such, PRs in remote should be fetched to the local repo. You can use `git fetch` command as follows to achieve this.
 
 `git fetch origin pull/ID/head:BRANCHNAME`
