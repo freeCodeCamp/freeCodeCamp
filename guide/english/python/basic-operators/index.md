@@ -300,9 +300,11 @@ Please note that two values when equal, need not imply they are identical.
 a = 3
 b = 3  
 c = 4
+d = 5
 print a is b # prints True
 print a is not b # prints False
 print a is not c # prints True
+print d is not c # prints True
 
 x = 1
 y = x
