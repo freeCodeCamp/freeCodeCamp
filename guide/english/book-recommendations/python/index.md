@@ -13,6 +13,16 @@ title: Books on Python Programming Language
 - [Amazon](https://www.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
  
+#### Invent Your Own Computer Games with Python, 4E
+  
+  Learn how to program in python by building your own games. Teaches you key programming and math concepts that will help you take your   game programming to the next level.
+  
+- [Website](https://inventwithpython.com/)
+- [E-book](https://inventwithpython.com/invent4thed/) (free)
+- [Amazon](https://www.amazon.com/gp/product/1593277954/)
+- ISBN-13: 978-1593277956
+- ISBN-10: 1593277954
+
 #### Learn Python 3 the Hard Way
 
 Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
@@ -22,7 +32,6 @@ Paid (Free ebook available) book which covers the basics of python. It's designe
 - [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
-
 
 #### Black Hat Python: Python Programming for Hackers and Pentesters
 
