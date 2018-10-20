@@ -45,6 +45,7 @@ else
 #### Example
 ```C
 int a = 300;
+//int is an integer
 if(a < 200)
 {
     printf("a is less than 200\n");
