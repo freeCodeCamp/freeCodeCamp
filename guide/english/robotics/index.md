@@ -3,6 +3,13 @@ title: Robotics
 ---
 ## Robotics
 
+"The three laws:
+1.) A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+2.) A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
+3.) A robot must protect its own existence as long as such protection does not conflict with the First or Second Laws."
+"Handbook of Robotics, 56th Edition, 2058 A.D."
+
+
 Robotics is about the systems that make up robots. There is no universally applicable definition of a robot. One generally accepted definition is: _A robot is a programmable physical machine that follows the sense, think, act paradigm_. More specifically, a robot needs to sense its environment, use that information as an input to make decisions and then act accordingly. Each system in this paradigm is often a study in itself. There are a multitude of varieties of robot types and component systems. Each robot usually is dedicated to a set of processes with clear objectives.
 
 ### Sense
