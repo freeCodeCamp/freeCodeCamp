@@ -12,7 +12,7 @@ A função `sort()` ordena os valores de um array em ordem alfabética / numéri
 
 ```PHP
 <?php 
- $freecodecamp = array("free", "code", "camp"); 
+ $freecodecamp = ["free", "code", "camp"]; 
  sort($freecodecamp); 
  print_r($freecodecamp); 
 ```
@@ -34,7 +34,7 @@ As funções `rsort()` ordenam os valores de uma matriz em ordem alfabética / n
 
 ```PHP
 <?php 
- $freecodecamp = array("free", "code", "camp"); 
+ $freecodecamp = ["free", "code", "camp"]; 
  rsort($freecodecamp); 
  print_r($freecodecamp); 
 ```
@@ -56,7 +56,7 @@ A função `asort()` ordena um array associativo, por seus valores, em ordem alf
 
 ```PHP
 <?php 
- $freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp"); 
+ $freecodecamp = ["zero" => "free", "one" => "code", "two" => "camp"]; 
  asort($freecodecamp); 
  print_r($freecodecamp); 
 ```
@@ -78,7 +78,7 @@ A função `ksort()` ordena um array associativo, por suas teclas, em ordem alfa
 
 ```PHP
 <?php 
- $freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp"); 
+ $freecodecamp = ["zero" => "free", "one" => "code", "two" => "camp"]; 
  ksort($freecodecamp); 
  print_r($freecodecamp); 
 ```
@@ -100,7 +100,7 @@ A função `arsort()` ordena um array associativo, pelos seus valores, em ordem 
 
 ```PHP
 <?php 
- $freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp"); 
+ $freecodecamp = ["zero" => "free", "one" => "code", "two" => "camp"]; 
  arsort($freecodecamp); 
  print_r($freecodecamp); 
 ```
@@ -122,7 +122,7 @@ A função `krsort()` ordena um array associativo, por meio de suas teclas em or
 
 ```PHP
 <?php 
- $freecodecamp = array("zero"=>"free", "one"=>"code", "two"=>"camp"); 
+ $freecodecamp = ["zero" => "free", "one" => "code", "two" => "camp"]; 
  krsort($freecodecamp); 
  print_r($freecodecamp); 
 ```
