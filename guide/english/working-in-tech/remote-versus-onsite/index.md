@@ -34,3 +34,4 @@ Larger companies may have a different version of the "in-between", where they ha
 
 Quincy Larson on The Economics of Working Remotely: [Medium](https://medium.freecodecamp.org/the-economics-of-working-remotely-28d4173e16e2)
 
+-nomadlist (https://nomadlist.com/)
