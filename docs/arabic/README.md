@@ -1,22 +1,3 @@
-<table>
-    <tr>
-        <td> Read these guidelines in </td>
-        <td><a href="/CONTRIBUTING.md"> English </a></td>
-        <td><a href="/docs/chinese/README.md"> 中文 </a></td>
-        <td><a href="/docs/russian/README.md"> русский </a></td>
-        <td><a href="/docs/arabic/README.md"> عربى </a></td>
-        <td><a href="/docs/spanish/README.md"> Español </a></td>
-        <td><a href="/docs/portuguese/README.md"> Português </a></td>
-    </tr>
-</table>
-
-# Documentation Quick Reference
-
-Hello 👋 !
-
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
-
-
 
 <table>
     <tr>
@@ -31,7 +12,6 @@ These instructions have not been translated yet. Please check this issue for det
     </tr>
 </table>
 
-# Documentation Quick Reference
 # مرجع مختصر للمستندات
 
 السلام عليكم !
@@ -47,7 +27,6 @@ freecodecamp.org
 
 ---
 
-## Quick references articles
 ## مقالات مرجعية ختصرة
 
 1. [كيفية العمل على المقالات الاسترشادية.](how-to-work-on-guide-articles.md)
@@ -55,18 +34,16 @@ freecodecamp.org
 3. [كيفية العمل على  Freecodecamp  على جهازك الخاص.](how-to-setup-freecodecamp-locally.md)
 4. [كيفية الحصول على رسائل البريد الالكتروني الخارجية على جهازك الخاص.](how-to-catch-outgoing-emails-locally.md)
 
-## Style guides
+
 ## قواعد استرشادية لنمط المشاركات
 
 1. [قواعد استرشادية لكيفية كتابة مقالات استرشادية.](style-guide-for-guide-articles.md)
 2. [قواعد استرشادية لكيفية كتابة تحديات برمجية.](style-guide-for-curriculum-challenges.md)
 
-## Quick commands reference when working locally
+
 ## مرجع مختصر للأوامر المستخدمة عند العمل على جهازك الخاص
 
 مجموعة من الأوامر اللتي ستحتاجها عند العمل على جهازك الخاص دون الاتصال بالانترنت 
-A quick reference to the commands that you will need, when working locally.
-
 
 
 
