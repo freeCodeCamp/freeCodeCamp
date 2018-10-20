@@ -112,6 +112,10 @@ p {
 }
 ```
 
+### Font Library
+[Google Font](https://fonts.google.com/) gives you a wide library of fonts which you can select from and use it on your website or mobile app.
+Read here on how to get started: [How to get started](https://developers.google.com/fonts/docs/getting_started)
+
 #### More Information:
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
 - [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
