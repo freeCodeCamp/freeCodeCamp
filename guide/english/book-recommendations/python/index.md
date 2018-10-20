@@ -1,9 +1,10 @@
 ---
-title: Books on Python Programming Language
+# Books on Python Programming Language
 ---
  
  ### List of Books
  
+ ![Think Python 2e](https://images-na.ssl-images-amazon.com/images/I/51CxdWNJ%2BOL._SX379_BO1,204,203,200_.jpg)
  #### Think Python 2e
  
  A free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
@@ -12,7 +13,8 @@ title: Books on Python Programming Language
 - [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
 - [Amazon](https://www.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
- 
+ --------
+ ![Learn Python 3 the Hard Way](https://images-na.ssl-images-amazon.com/images/I/516A35U3A6L._SX382_BO1,204,203,200_.jpg)
 #### Learn Python 3 the Hard Way
 
 Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
@@ -22,15 +24,16 @@ Paid (Free ebook available) book which covers the basics of python. It's designe
 - [Amazon](https://www.amazon.com/Learn-Python-Hard-Way-Introduction/dp/0134692888)
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
-
-
+----------
+![Black Hat Python](https://images-na.ssl-images-amazon.com/images/I/51O-GzoZi5L._SX376_BO1,204,203,200_.jpg)
 #### Black Hat Python: Python Programming for Hackers and Pentesters
 
 Explore the darker side of Python and discover how to write network sniffers, manipulate packets, infect virtual machines and more.
 
 - [Amazon](https://www.amazon.co.uk/Black-Hat-Python-Programming-Pentesters/dp/1593275900)
 - ISBN-10: 1593275900
-
+-------
+![Programming Python](https://images-na.ssl-images-amazon.com/images/I/51ovFaPaLjL._SX379_BO1,204,203,200_.jpg)
 #### Programming Python
 
 So you've covered the basics of Python?  You're now ready to discover the in-depth tutorials which cover the advanced programming aspects of Python. These include system administration, GUIs and the web.  Understand how Python is used in databases, networking, front-end scripting layers and more.
@@ -39,7 +42,8 @@ So you've covered the basics of Python?  You're now ready to discover the in-dep
 - [O'Reilly](http://shop.oreilly.com/product/9780596158118.do)
 - ISBN-10: 0596158106
 - ISBN-13: 978-0596158101
-
+-------
+![Data Science from Scratch](https://images-na.ssl-images-amazon.com/images/I/51dZW9t3GeL._SX379_BO1,204,203,200_.jpg)
 #### Data Science from Scratch: First Principles with Python
 
 You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
@@ -48,19 +52,23 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Amazon](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
+--------
+![Automate The Boring Stuff with Python](https://images-na.ssl-images-amazon.com/images/I/517XL4pO6jL._SX376_BO1,204,203,200_.jpg)
 
-*Automate The Boring Stuff With Python*
+#### Automate The Boring Stuff With Python
 - Great book for beginners. Has interesting projects to practice Python.
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
+--------
+![Python crach course 2e](https://images-na.ssl-images-amazon.com/images/I/51F48HFHq6L._SX376_BO1,204,203,200_.jpg)
 
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
+#### Python crash course 2e (note that 3e is going to be published on April 2019)
 - Paid book which gives concrete introduction to both programming and Python by the creation of projects.
 - [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
-
+---------
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
