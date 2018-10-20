@@ -64,8 +64,4 @@ You can see the result of the above code [here](https://codepen.io/Tlandis/pen/R
 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-- [CSS Class Selector, w3 schools](https://www.w3schools.com/cssref/sel_class.asp)
-- [HTML Classes, w3 Schools](https://www.w3schools.com/html/html_classes.asp)
-- [css-tricks](https://css-tricks.com/how-css-selectors-work/)
-- [How to Code in HTML5 and CSS3](http://howtocodeinhtml.com/chapter7.html)
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class)
+My Changes
