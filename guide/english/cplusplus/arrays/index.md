@@ -40,3 +40,7 @@ x = numbers[0]; // = 1. [0] == first position
 numbers[2] = 55; // Sets the third position (3) to the new number 55
 //numbers[] is now: {1, 2, 55, 4, 5}
 ```
+### What is the difference between arrays and pointers?
+```An array is a collection of variables of similar data type that are stored in contiguous memory locations whereas the pointer is a variable that stores the memory address of another variable i.e. a pointer is a variable that points to the location of another variable.
+```
+
