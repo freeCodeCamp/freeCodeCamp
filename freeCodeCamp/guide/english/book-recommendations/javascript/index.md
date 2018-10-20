@@ -33,3 +33,9 @@ A collection of articles covering the basics (core language and working with a b
 A very fun and easy book for beginners. 
 
 - [Amazon](https://www.amazon.com/JavaScript-JQuery-Interactive-Front-End-Development/dp/1118531647)
+
+*Simply JavaScript: Everything You Need to Learn Javascript from Scratch*
+
+A clear book easy to read and perfect for people who are learning Javascript alone.
+
+- [Amazon](https://www.amazon.com/Simply-JavaScript-Everything-Learn-Scratch/dp/0980285801)
