@@ -110,6 +110,7 @@ Some of the principles that influenced the design of Python are included as an E
 #### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
 2. It is a slow language. So, a very bad language to use for developing general algorithms.
+3. It consumes a lot of memory and hence not suitable for memory intensive tasks.
 
 ## Documentation
 
