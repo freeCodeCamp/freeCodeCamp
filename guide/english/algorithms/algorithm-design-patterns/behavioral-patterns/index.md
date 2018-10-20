@@ -27,4 +27,4 @@ Examples of this type of design pattern include:
 17. **Visitor pattern**: A way to separate an algorithm from an object.
 
 ### Sources
-[https://en.wikipedia.org/wiki/Behavioral_pattern](https://en.wikipedia.org/wiki/Behavioral_pattern)
+[Behavioral patterns - Wikipedia](https://en.wikipedia.org/wiki/Behavioral_pattern)
