@@ -11,6 +11,22 @@ We start from the source vertex. Let the current vertex be u and its adjacent ve
 
 Priority Queue is often used to meet this last requirement in the least amount of time. Below is an implementation of the same idea using priority queue in Java.
 
+# Sudo Code
+
+1. Set the distance value for initial vertex to zero, and all other vertices in the graph to
+   infinity.
+ 
+2. Mark all vertices as non-finalized and set the initial vertex as current.
+ 
+3. For current, consider all its non-finalized neighbors and, using current's distance,
+   recalculate their distances from initial vertex. If this distance is less than the
+   previously recorded distance, overwrite it. This is called the relaxation condition.
+ 
+4. Once all neighbors of current have been considered, mark current as finalized. A
+   finalized vertex won't be checked again. Its distance value is optimal.
+
+5. Set current to the next non-finalized vertex in the graph with the smallest distance.
+
 ```java
 import java.util.*;
 public class Dijkstra {
