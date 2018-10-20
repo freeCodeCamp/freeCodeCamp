@@ -10,7 +10,7 @@ Condicionais em PHP são escritos usando o `if` , `elseif` , `else` sintaxe. O u
 
 ```PHP
 <?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
  } 
 ```
@@ -19,9 +19,9 @@ Condicionais em PHP são escritos usando o `if` , `elseif` , `else` sintaxe. O u
 
 ```PHP
 <?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
- } elseif ($_GET['name'] = "freecodecampguide"){ 
+ } elseif ($_GET['name'] == "freecodecampguide"){ 
   echo "You viewed the freeCodeCamp Guide Page!"; 
  } 
 ```
@@ -30,9 +30,9 @@ Condicionais em PHP são escritos usando o `if` , `elseif` , `else` sintaxe. O u
 
 ```PHP
 <?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
- } elseif ($_GET['name'] = "freecodecampguide"){ 
+ } elseif ($_GET['name'] == "freecodecampguide"){ 
   echo "You viewed the freeCodeCamp Guide Page!"; 
  } else { 
   echo "You viewed a page that does not exist yet!"; 
