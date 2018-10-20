@@ -249,3 +249,6 @@ As an alternative to JSX, you can use ES6 and Javascript's compiler like Babel. 
 ### Sources
 
 1. ["Developer Survey Results 2017."](https://insights.stackoverflow.com/survey/2017#technology-most-loved-dreaded-and-wanted-frameworks-libraries-and-other-technologies) <em>Stack Overflow.</em> Accessed: October 28, 2017.
+
+
+My Changes  
