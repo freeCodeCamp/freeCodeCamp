@@ -2,6 +2,12 @@
 title: 3 by 3 Determinants
 ---
 ## 3 by 3 Determinants
+3x3 determinants are a value that can be calculated by the values in a matrix. It is also known as the scaling factor of the linear transformation that the matrix represents.
+When a 3x3 matrix and its rows are comprised of three vectors, the determinant of this 3x3 matrix is the volume of the parallelepiped that is made up of these three vectors.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Determinant_parallelepiped.svg/950px-Determinant_parallelepiped.svg.png" width="400">
+
+## Calculation
 ### Method 1
 Consider the following matrix, which we will call A:
 
