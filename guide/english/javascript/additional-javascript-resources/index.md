@@ -64,6 +64,10 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
     Visual Studio Code includes built-in support for IntelliSense code completion, rich semantic code understanding and navigation, and code refactoring. It comes with a built-in debugger and git support and has a plethora of extensions.
     
+    <a href='https://code.visualstudio.com/insiders/' target='_blank' rel='nofollow'>Visual Studio Code Insiders</a>
+    
+    Insiders has the most recent code pushes and may lead to the occasional broken build.New builds at least everyday with features, bug fixes, and other recently closed issues.Insiders installs next to the Stable build, allowing you to use either independently.
+    
 *   <a href='https://www.jetbrains.com/webstorm/' target='_blank' rel='nofollow'>Webstorm</a>
 
     A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
