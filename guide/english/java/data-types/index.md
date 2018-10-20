@@ -111,6 +111,17 @@ double data type is a double-precision 64-bit [IEEE 754 floating point](http://s
 
     Example: double d1 = 123.400778;
 
+### Casting
+    It is also important to note that it is possible to store different data types into one another. However, you would have to let the compiler know that you have acknoledge the possible loss of data by casting the variable.  
+    
+    For example: 
+    double d = 1.23
+    
+    int i = (int)d; 
+    
+    System.out.println(i);
+    Output: 1
+    
 ## Character:
 
 We use this data type to store characters. This is not the same as the char in C/C++. Java uses a `UNICODE`, internationally accepted character set. Char in Java is 16­bits long while that in C/C++ is 8­bits.
