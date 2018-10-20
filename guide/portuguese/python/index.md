@@ -6,6 +6,8 @@ localeTitle: Python
 
 [Python](https://www.python.org) é uma linguagem de programação de uso geral que é tipificada, interpretada e conhecida dinamicamente por sua facilidade de leitura com excelentes princípios de design.
 
+A linguagem foi criada no final da década de 80 por Guido Van Rossum que queria elaborar uma linguagem intermediária, entre o C e o Shell Script.
+
 Para saber mais sobre o Python, confira estas páginas em python.org:
 
 [O que é o Python?](https://www.python.org/doc/essays/blurb/)
