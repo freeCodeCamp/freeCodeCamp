@@ -5,6 +5,9 @@ title: Books to Read for Programmers
 ### List of Books
 
 ## General
+*Just for Fun: The Story of an Accidental Revolutionary* by Linus Torvalds, David Diamond.
+[Amazon](https://www.amazon.com/Just-Fun-Story-Accidental-Revolutionary/dp/0066620732)
+- ISBN-13: 978-0066620732
 
 *Automate the Boring Stuff With Python* by Al Sweigart
 - http://automatetheboringstuff.com/
