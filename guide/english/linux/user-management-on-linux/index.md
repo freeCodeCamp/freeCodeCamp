@@ -1,7 +1,7 @@
 ---
 title: User management on Linux
 ---
-#### Note: To run a command as `sudo` you must have sudo user account (Administrator)
+#### Note: To run a command as `sudo` you must have a sudo user account (Administrator). This can be changed by editing the sudoers file. 
 
 ## How to Create a User
 
