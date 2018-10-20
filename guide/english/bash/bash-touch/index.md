@@ -24,3 +24,5 @@ touch -r file1 file2
 
 ### More Information:
 * [Man pages](http://man7.org/linux/man-pages/man1/touch.1.html)
+
+Bash is my favorite CL!
