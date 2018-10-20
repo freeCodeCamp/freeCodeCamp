@@ -19,6 +19,7 @@ If you would prefer to use the command line, consider `gcc`. It can be found by 
 
 Now that you have that background, let's start with our 'Hello, World' program. 'Hello, World' is a traditional way of getting started with a language: it shows that we can write code and make it run, so it's a good place to start!
 
+This is the very simple programming code.
 ## Hello world in C
 
 ```C
@@ -26,7 +27,8 @@ Now that you have that background, let's start with our 'Hello, World' program. 
 
 int main(void)
 {
-    printf("hello, world\n");
+    printf("Hello World!\n");
+    printf("This is the simple c programming code\n ")
     return 0;
 }
 ```
@@ -57,7 +59,7 @@ Finally, there are the brackets: `{` and `}`. These mark the beginning and end o
 Now let's look at the meat of the program:
 
 ```C
-    printf("Hello, World!\n");
+    printf("Hello  World!\n");
 ```
 
 `printf` is a function that takes text and prints it to the screen. The parenthesis indicates what information we want the `printf` function to take and print to the screen. We show that this is a string we want printed by surrounding it in quotes "like this".
