@@ -1,6 +1,14 @@
 ---
 title: Arrays
 ---
+
+#What is an Array?
+<br>
+So an array is basically a collection of different variables of same data type , So why Array?
+Well here's a simple example :
+Suppose you write a program to store marks of a student then you create a int variable.
+Well if you want to store marks of some fifty students you cannot create some fifty new variables it is not only a waste of time but you are also wasting a lot of memory and computing time which is very valuable.So we define a simple array  variable which is capable of storing differnt variables of the same data type.
+
 # Arrays in C
 ## Problems
 Before trying to explain what arrays are, let's look at the code where we want to print 10 numbers given by the user in reverse order.
