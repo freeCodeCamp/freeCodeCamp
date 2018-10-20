@@ -54,6 +54,14 @@ p {
 
 The `text-transform` property is used to convert the entire text to `uppercase`,`lowercase` or to `capitilize` each word([example](https://www.w3schools.com/css/tryit.asp?filename=trycss_text-transform)).
 
+#### Text Indentation
+
+``` css
+p {
+    text-indent: 100px;
+}
+```
+
 #### Letter Spacing
 
 The `letter-spacing` property sets the space between characters in a text.
