@@ -25,4 +25,4 @@ Examples of Structural Patterns include:
 15. **Proxy pattern** a class functioning as an interface to another thing.
 
 ### Sources
-[https://en.wikipedia.org/wiki/Structural_pattern](https://en.wikipedia.org/wiki/Structural_pattern)
+[Structural patterns - Wikipedia](https://en.wikipedia.org/wiki/Structural_pattern)
