@@ -61,6 +61,11 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
 
+*Python Playground*
+- Great book with a variety of projects for programmers of all skill levels
+-[Amazon]https://www.amazon.com/Python-Playground-Projects-Curious-Programmer/dp/1593276044/ref=sr_1_1?ie=UTF8&qid=1540000409&sr=8-1&keywords=python+playground
+- ISBN-13: 978-1-59327-604-1
+
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
@@ -69,3 +74,5 @@ You'll learn many of the first princliples for data science tools and how algori
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
 
 Please feel free to add more that you have found useful!
+
+
