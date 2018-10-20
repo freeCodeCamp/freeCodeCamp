@@ -10,7 +10,7 @@ The HREF attribute gets the exact meaning of a link depending on the element tha
 ### Examples:
 Link to Google's Homepage:
 
-  -> The text "Visit Google's Homepage acts like the link to the Homepage
+  -> The text "Visit Google's Homepage" acts like the link to the Homepage
   
 ```html
 <a href="https://www.google.com">Visit Google’s Homepage</a>
@@ -47,5 +47,5 @@ Tags that use HREF:
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
-<a href='https://tomayko.com/blog/2008/wtf-is-an-href-anyway' target='_blank' rel='nofollow'>WTF is a href anyway</a>
+<a href='https://tomayko.com/blog/2008/wtf-is-an-href-anyway' target='_blank' rel='nofollow'>WTF is a href anyway</a><br>
 <a href='https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/href' target='_blank' rel='nofollow'>MDN</a>
