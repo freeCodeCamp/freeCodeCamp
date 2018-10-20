@@ -39,6 +39,10 @@ A collection of helpful Angular resources
 *	<a href='https://ultimateangular.com/' target='_blank' rel='nofollow'>Ultimate Angular - Todd Motto</a>
 * <a href='https://www.udemy.com/the-complete-guide-to-angular-2/' target='_blank' rel='nofollow'>Angular 6 (formerly Angular 2) - The Complete Guide($)  Maximilian Schwarzmüller </a>
 
+### Podcasts
+
+*	<a href='https://devchat.tv/adv-in-angular/' target='_blank' rel='nofollow'>Adventures in Angular</a>
+
 ## Blogs
 
 * <a href='https://alligator.io/angular/' target='_blank' rel='nofollow'>Alligator.io</a>
