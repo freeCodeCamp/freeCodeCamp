@@ -70,7 +70,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='http://brackets.io' target='_blank' rel='nofollow'>Brackets</a>
 *   <a href='http://atom.io' target='_blank' rel='nofollow'>Atom</a>
 
-    Open source text editor made by GitHub.
+    Atom is an open source text editor made by GitHub. It features embedded Git Control and numerous customization options.
     
 *   <a href='https://www.sublimetext.com/' target='_blank' rel='nofollow'>Sublime Text</a>
 
