@@ -10,12 +10,12 @@ for ([initialization]); [condition]; [final-expression]) {
  } 
 ```
 
-El javascript `for` declaración consta de tres expresiones y una declaración:
+La declaración `for` en javascript, consta de tres expresiones y una declaración:
 
 ## Descripción
 
-*   inicialización - Ejecutar antes de la primera ejecución en el bucle. Esta expresión se usa comúnmente para crear contadores. Las variables creadas aquí están sujetas al bucle. Una vez que el bucle ha terminado su ejecución se destruyen.
-*   condición: expresión que se comprueba antes de la ejecución de cada iteración. Si se omite, esta expresión se evalúa como verdadera. Si se evalúa como verdadero, se ejecuta la instrucción del bucle. Si se evalúa como falso, el bucle se detiene.
+*   inicialización - Se evalua antes de la primera ejecución en el bucle. Esta expresión se usa comúnmente para crear contadores. Las variables creadas aquí están sujetas al bucle. Una vez que el bucle ha terminado su ejecución se destruyen.
+*   condición: expresión que se comprueba antes de la ejecución de cada iteración (repetición). Si se omite, esta expresión se evalúa como verdadera. Si se evalúa como verdadero, se ejecuta la instrucción del bucle. Si se evalúa como falso, el bucle se detiene.
 *   expresión-final: expresión que se ejecuta después de cada iteración. Generalmente se usa para incrementar un contador. Pero también se puede usar para disminuir un contador.
 *   sentencia - Código a repetir en el bucle.
 
