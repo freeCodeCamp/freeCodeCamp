@@ -51,3 +51,7 @@ localeTitle: Алгоритмы
 [Алгоритм визуализатора](http://algo-visualizer.jasonpark.me)
 
 Это также очень хороший проект с открытым исходным кодом, который помогает вам визуализировать алгоритмы.
+
+#### Дополнительная информация:
+
+[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
