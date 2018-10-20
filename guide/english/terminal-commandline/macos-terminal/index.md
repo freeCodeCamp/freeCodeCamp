@@ -74,6 +74,8 @@ Use the following syntax to delete a file
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
 
+### Openning note pade
+    If you would like to open a notepad in terminal, type the command line: nano <name of the document>
 # iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
