@@ -26,6 +26,8 @@ Computers store data and files on hard drives for later use. Because hard drives
 
 Data stored in RAM is said to be fleeting whereas data written out to a hard drive is persistent. Meaning if the power suddenly goes out, any data that was in RAM is lost and will not be there after power is restored and the computer is booted back up. However data that was written to the hard drive will be there when power is restored. For this reason, modern operating systems and applications will periodically write session and application related data that's currently in RAM out to the hard drive. This way if the power goes out, only 10 minutes of data entered in a newly created spreadsheet that was being worked on for 3 hours preceding the power outage and not yet saved to the hard drive. These files are usually denoted with a tilde~ and can be found in a temporary or temp directory or possibly located in a 'blind directory' whose contents are referred to as hidden files.
 
+![HDD](https://cdn.pixabay.com/photo/2013/07/12/19/16/hdd-154463_960_720.png)
+
 ## Solid State Drives (SSD)
 Solid State Drives uses integrated circuits to store data. Therefore, an SSD has no moving parts like the HDD. This makes them less prone to physical shocks, run silently, and have faster read/write times thanks to not needing to locate the data physically.
 
@@ -33,8 +35,12 @@ SSDs are commonly used as boot drives or storage for the most used applications 
 
 While most Hard Drives use either a SATA or SAS connector Solid State Drives often use other connections that can handle higher bandwidth and lower latencies, with the most notable being PCI Express (PCI-e) where form factors such as M.2 or U.2 dominate. Though other form factors are available, such as Intel's 'Yard stick' form factor or PCI-e cards that look quite similar to a low end graphics card.
 
+![SSD](http://icons.iconarchive.com/icons/thvg/slick-drives/256/SSD-Drive-icon.png)
+
 ## Solid State Hard Drives (SSHD) a.k.a Hybrid Drives
 Solid State Hard Drives fill a specific gap inbetween Solid State Drives and traditional hard drives.  It combines the relative affordable cost of cheap magnetic storage in traditional drives and pairs it with a smaller capacity Solid State Drive with the intent of using the SSD portion to cache frequently used data to increase performance over a plain traditional hard drive at a marginal cost. Hence the combination of the two technologies creates a "hybrid device" that is cost effectively but still is able to benenfit from the high performance of SSD drives primarily for low intensity workloads that mostly utilize read requests from the drive.
+
+![SSHD](https://product-images.www8-hp.com/digmedialib/prodimg/lowres/c04620122.png)
 
 #### More Information:
 
