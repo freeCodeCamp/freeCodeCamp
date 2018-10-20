@@ -13,5 +13,5 @@ To find the X intercept(s), set ```y = 0``` and solve the equation for x.
 
 To find the Y intercept, set ```x = 0``` and solve the equation for y. 
 
-As an example, the X and Y intercepts have been solved for a typical line in the form ```y = mx + b```.
+As an example, the X and Y intercepts have been solved for a typical line in the form ```y = mx + b```. B is the y intercept.
 ![An image demonstrating finding the x and y intercepts for a typical line in the form of y = mx + b . The Y intercept is equal to b and the X intercept is equal to negative b divided by m](https://raw.githubusercontent.com/hayleycd/images/master/solve_intercepts.jpeg)
