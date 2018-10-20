@@ -32,7 +32,7 @@ There is no sorting discussion which can finish without quick sort. The basic co
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
 #### Merge Sort
-It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here-
+It is the sorting algorithm which relies on the concept how to sorted arrays are merged to give one sorted arrays. Read more about it here- (having efficiency O(nlogn))
 [Merge Sort](https://www.geeksforgeeks.org/merge-sort/)
 
 freeCodeCamp's curriculum heavily emphasizes creating algorithms. This is because learning algorithms is a good way to practice programming skills. Interviewers most commonly test candidates on algorithms during developer job interviews.
