@@ -56,18 +56,15 @@ Now, the array is already sorted, but our algorithm does not know if it is compl
 ### Example in JavaScript
 ```js
 let arr = [1, 4, 7, 45, 7,43, 44, 25, 6, 4, 6, 9];
-let sorted = false
 
-while(!sorted) {
-  sorted = true
-  for(var i=0; i < arr.length; i++) {
-    if(arr[i] < arr[i-1]) {
-      let temp = arr[i];
-      arr[i] = arr[i-1];
-      arr[i-1] = temp;
-      sorted = false;
+for(let i=0;i<arr.length ;i++){
+    for(let j=0;j<arr.length - 1 -i ;j++){
+        if (arr[j]>arr[j+1]){
+            arr[j]=arr[j]+arr[j+1];
+            arr[j+1]=arr[j]-arr[j+1];
+            arr[j]=arr[j]-arr[j+1];
+        }
     }
-  }
 }
 ```
 ### Example in Java.
@@ -153,13 +150,8 @@ def bubblesort( A ):
   for i in range( len( A ) ):
     for k in range( len( A ) - 1, i, -1 ):
       if ( A[k] < A[k - 1] ):
-        swap( A, k, k - 1 )
+        A[k],A[k-1] = A[k-1],A[k] //Swapping the numbers
  
-def swap( A, x, y ):
-  tmp = A[x]
-  A[x] = A[y]
-  A[y] = tmp
-
 ```
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
