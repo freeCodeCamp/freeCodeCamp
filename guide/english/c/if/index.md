@@ -62,3 +62,50 @@ int main () {
 -> a is not less than 5!
 -> Value of a is : 100
 ```
+
+
+## more if examples
+
+
+
+
+// two input number and get out put odd or even //
+
+
+
+
+#include<stdio.h>
+
+int main()
+
+
+{
+int x;
+
+printf("enter the number \n");
+
+scanf("%d",&x);
+
+if(x/2==0)
+printf("even");
+
+else
+    
+printf("odd");
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
