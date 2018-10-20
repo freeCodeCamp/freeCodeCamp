@@ -29,4 +29,5 @@ The 5 main phases of the DSDM development cycle are:
 You can read the following links to find out more.
 - <a href='https://www.agilebusiness.org/what-is-dsdm'> Agile Business - What is DSDM?
 - <a href='https://en.wikipedia.org/wiki/Dynamic_systems_development_method'> Wikipedia - Dynamic Systems Development Method
+- <a href='https://agilekrc.com/resource/168/what-dsdm-and-8-principles'>agilekrc - What is DSDM and the principles
 
