@@ -3,13 +3,14 @@ title: Finding Slope from Graph
 ---
 ## Finding Slope from Graph
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/mathematics/finding-slope-from-graph/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The slope from a graph measure the rate of change of the function represented by the graph. In it's simplest form, the slope can be calculated by dividing the change in the y-axis by the change in the x-axis. This can be done by choosing two points on the graph. From those two points, the slope can be calulated as such:
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+![image](https://www.ducksters.com/kidsmath/slope_equation.gif)
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+The rate of change (slope) of a function, is also known as the Derivative of a function. This is an extremely useful metric to calculate, and can be used to find minimum and maximum values that are helpful for things such as optimization.
+
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+<a href="https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/mathematics/derivatives/index.md">More Information on Derivatives</a>
 
 
