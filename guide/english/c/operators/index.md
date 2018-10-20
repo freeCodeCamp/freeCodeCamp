@@ -4,7 +4,7 @@ title: Operators
 # Operators in C
 
 ## 1. Arithmetic Operators
-- `+` Adds to operands (values) 
+- `+` Adds two operands (values) 
      ```C
      int a = 6;
      int c = a + 1; // c = 7
