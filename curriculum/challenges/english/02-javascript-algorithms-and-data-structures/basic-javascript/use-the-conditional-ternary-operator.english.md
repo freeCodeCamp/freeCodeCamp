@@ -61,6 +61,8 @@ checkEqual(1, 2);
 <section id='solution'>
 
 ```js
-// solution required
+function checkEqual(a, b) {
+  return a === b ? true : false;
+}
 ```
 </section>

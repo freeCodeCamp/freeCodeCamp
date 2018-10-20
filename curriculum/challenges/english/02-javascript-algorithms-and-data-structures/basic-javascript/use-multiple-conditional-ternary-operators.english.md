@@ -59,6 +59,8 @@ checkSign(10);
 <section id='solution'>
 
 ```js
-// solution required
+function checkSign(num) {
+  return (num > 0) ? 'positive' : (num < 0) ? 'negative' : 'zero';
+}
 ```
 </section>
