@@ -70,6 +70,19 @@ const Cat = props => {
 
 ```
 
+If your only need some certain properties from the props. You can also destructure your props using ES6 syntax to make your code cleaner. 
+
+```jsx
+const Cat = ({ name, color }) => {
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>{color}</p>
+    </div>
+  )
+}
+```
+
 #### Implicit Return Components
 
 ```jsx
