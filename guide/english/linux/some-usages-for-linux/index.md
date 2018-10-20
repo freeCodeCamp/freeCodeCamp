@@ -7,6 +7,7 @@ title: Some Usages for Linux
 *   The White House powers their web servers using <a href='https://en.wikipedia.org/wiki/Red_Hat' target='_blank' rel='nofollow'>Red Hat Linux</a> and <a href='https://en.wikipedia.org/wiki/Apache_HTTP_Server' target='_blank' rel='nofollow'>Apache</a>.
 *   The US Department of Defense (DoD) uses Linux to run their nuclear submarine fleet.
 *   You can automate everything in your home with just a Raspberry PI.
+*   You can breathe new life into an aging machine with Linux.
 *   The US Navy uses Linux for ground control software.
 *   Linux is used to host websites or apps. Linux-based web hosts like 'Dreamhost' are used to host your personal RSS reader with Tiny Tiny RSS, or personal Dropbox clone with OwnCloud.
 *   Home automation can be made possible with Linux along with a small computer like a Raspberry Pi. It can be used to control home with Siri, mount a Google Calendar tablet on wall, set up a home surveillance system, control blinds and air conditioner, stream music , build a digital photo frame, build a sunrise alarm clock amd many more.
