@@ -1,8 +1,8 @@
 ---
 title: For Loop
-localeTitle: Para loop
+localeTitle: For loop
 ---
-# Para loop
+# For loop
 
 O loop `for` executa um bloco de código até que uma condição especificada seja falsa. Use `while` laços quando o número de iterações são variáveis, de outro modo utilizar `for` lacetes. Um uso comum de loops `for` são iterações de array.
 
