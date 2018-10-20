@@ -147,6 +147,19 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
+## SQL 
+*SQL: The Complete Reference*
+- [Amazon](https://www.amazon.com/SQL-Complete-Reference-James-Groff/dp/0071592555/ref=sr_1_1?ie=UTF8&qid=1499289165&sr=8-1&keywords=SQL%3A+The+Complete+Reference%2C+3rd+Edition)
+- ISBN-13: 978-0071592550
+
+*Learning SQL: Master SQL Fundamentals*
+- [Amazon](https://www.amazon.com/Learning-SQL-Master-Fundamentals/dp/0596520832/ref=sr_1_1?ie=UTF8&qid=1499289327&sr=8-1&keywords=Learning+SQL%3A+Master+SQL+Fundamentals)
+- ISBN-13: 978-0596520830
+
+*T-SQL Fundamentals*
+- [Amazon](https://www.amazon.com/T-SQL-Fundamentals-3rd-Itzik-Ben-Gan/dp/150930200X)
+- ISBN-13: 978-1509302000
+
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
