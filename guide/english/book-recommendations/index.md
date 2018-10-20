@@ -70,6 +70,12 @@ title: Books to Read for Programmers
 - [Amazon](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
 - ISBN-13: 978-0596009656
 
+## Bitcoin
+
+*Mastering Bitcoin: Programming the Open Blockchain* by Andreas M. Antonopoulos
+- Read it on [Github](https://github.com/bitcoinbook/bitcoinbook)
+- [Amazon](https://www.amazon.com/Mastering-Bitcoin-Programming-Open-Blockchain/dp/1491954388/ref=sr_1_3?ie=UTF8&qid=1540066198&sr=8-3&keywords=mastering+bitcoin)
+
 ## C-lang
 *C Notes for Professionals book
 -https://books.goalkicker.com/CBook/
