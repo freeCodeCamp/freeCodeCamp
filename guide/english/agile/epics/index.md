@@ -12,3 +12,9 @@ There is no standard form to represent epics. Some teams use the familiar user s
 In an application what helps freelance painters track their projects, a possible epic could be.
 
 Paul the Painter would like an easier way to manage his projects and provide his client with accurate changes and also bill them.
+
+#### More Information:
+<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+<a href='https://www.atlassian.com/agile/project-management/epics'>Agile Epics: Definition, Examples, & Templates</a>  
+
