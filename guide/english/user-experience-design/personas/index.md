@@ -43,6 +43,21 @@ An end goal is the action users take to complete a goal. End goals motivate all 
 ### Scenario
 Scenarios is a description of how users would use a product to accomplish an end goal. These situations define when, where, and how this event would take place. You write these scenarios from the perspective of the user.
 
+### Examples of user personas
+One important distinction to make is between a user persona, such as “Ara the Accountant”, and the document or deliverable in which that persona might be described and recorded for reference. While the piece of paper is a useful aide-memoire, and a shared point of reference for a team, ultimately what is important is the profile of the user we’re designing for.
+
+It’s not a good use of user personas to limit our engagement with them to a quick  sense-check against these write-ups. As we heard Alan Cooper explain above, what is really crucial is to understand the persona deeply, and to be able to put yourself in their shoes as a user of your product.   
+
+You could use headings like these to get you started:
+
+Fictional name: e.g. David the Director. This serves as shorthand, so that when you’re designing or discussing with a team, you can refer to a persona by name.
+
+Job title and profession: e.g. Managing Director, International Accountancy firm.
+
+Photograph from stock image: being able to put a face to the name will help you to integrate user personas into your process more fully.
+
+Age and other relevant demographic information: e.g. Age 52, married, 3 children, lives in a 5-bedroom house in the suburbs, drives an SUV. 
+
 #### More Information:
 
 - <a href="https://www.usability.gov/how-to-and-tools/methods/personas.html" target='_blank' rel='nofollow'>Personas - usability.gov</a>
