@@ -227,7 +227,7 @@ Hey @username
 So I'd love to be able to merge your changes but it looks like there is an error with the Travis CI build. ⚠️
 
 Once you resolve these issues, I will be able to review your PR and merge it. 😊
-
+```
 Em português:
 ```markdown
 Olá @username
@@ -274,7 +274,7 @@ git pull upstream master
 If you're using a GUI, you can simply `Add a new remote...` and use the link `git://github.com/freeCodeCamp/freeCodeCamp.git` from above.
 
 Once you sync your fork and pass the build, I will be able to review your PR and merge it. 😊
-
+``````
 Em português:
 ``````markdown
 Olá @username
