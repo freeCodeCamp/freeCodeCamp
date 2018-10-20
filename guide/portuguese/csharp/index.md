@@ -4,7 +4,7 @@ localeTitle: C #
 ---
 ## C #
 
-C Sharp, mais comumente chamado de "C #", é uma linguagem de programação orientada a objetos e de uso geral. O C # foi desenvolvido por Anders Hejlsberg e sua equipe de desenvolvimento na Microsoft e atualmente está na versão 7.0.
+C Sharp, mais comumente chamado de "C #", é uma linguagem de programação orientada a objetos e de uso geral. O C # foi desenvolvido por Anders Hejlsberg e sua equipe de desenvolvimento na Microsoft e atualmente está na versão 7.0. Surgiu em julho de 2000.
 
 C # tem suas raízes na família de linguagens C. Ele herda a maioria de seus recursos de C, C ++ e Java. Por esse motivo, os programadores familiarizados com esses idiomas podem ser capazes de obter velocidade com o C # em um período de tempo menor.
 
