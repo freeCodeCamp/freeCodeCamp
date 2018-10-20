@@ -13,7 +13,8 @@ Easy to use, Wordpress offers an easy solution for both web developers and non-w
 Just to a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
 * Has a blog built-in and ready to go whenever applicable. 
-* Has plugins, which extend functionality to WordPress sites. 
+* Has plugins, which extend functionality to WordPress sites.
+* Has mobile app (Android and iOS), which can be used to post and manage their Wordpress webpage.
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
