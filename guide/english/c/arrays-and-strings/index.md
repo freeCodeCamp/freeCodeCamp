@@ -130,7 +130,7 @@ void string_concatenate(char [] s1, char [] s2)
 }
 
 #### Get length: `strlen`
-`strlen` (from 'string length') will return an integer value corresponding to the length of the string. In this example, an integer called `string_length` will be assigned the length of `my_string`:
+`strlen` (from 'string length') will return an integer value corresponding to the length of the string. Even though all strings are terminated with a \0 character, it will not be included in the count (so the length "hello" is indeed 5 and not 6). In this example, an integer called `string_length` will be assigned the length of `my_string`:
 ```C
 string_length = strlen(my_string);
 ```
