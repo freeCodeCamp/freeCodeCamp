@@ -19,7 +19,7 @@ To understand how computers work, you don't need to know every single part of th
 
 - A CPU socket - the actual CPU is directly soldered onto the socket. Since high speed CPUs generate a lot of heat, there are heat sinks and mounting points for fans right next to the CPU socket.
   Take note that CPUs only support a single socket type so it mus match with the motherboards socket to work. Socket types usually change every few generations and it also varies per label(consumer-grade CPUs, HEDT, server CPUs)
-- A power connector to distribute power to the CPU and other components.
+- A power connector to distribute power to the CPU and other components. Note: If your Computer never make it to the post screen, check the 4 pin power connector near the CPU. Much likely it may have been disconnected.
 - Slots for the system's main memory, typically in the form of DRAM chips.
 - A chip forms an interface between the CPU, the main memory and other components. On many types of motherboards, this is referred to as the Northbridge. This chip also contains a large heat sink. In recent years, features of the Northbridge have been increasingly integrated into the CPU itself.
 - A second chip controls the input and output (I/O) functions. It is not connected directly to the CPU but to the Northbridge. This I/O controller is referred to as the Southbridge. The Northbridge and Southbridge combined are referred to as the chipset.
