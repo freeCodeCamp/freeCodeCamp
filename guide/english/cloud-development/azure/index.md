@@ -27,3 +27,8 @@ There are varying levels of machine 'sizes' to choose from, ranging from simple 
 * <a href='https://en.wikipedia.org/wiki/Microsoft_Azure' target='_blank' rel='nofollow'>Wikipedia</a>
 * <a href='https://azure.microsoft.com/en-us/' target='_blank' rel='nofollow'>Microsoft Azure</a>
 * <a href='https://docs.microsoft.com/en-us/learn/' target='_blank' rel='nofollow'>Microsoft Learn</a>
+
+#### Courses
+
+* <a href='https://academy.techcommunity.microsoft.com/pathways/learningpath/d157520a-7541-4bda-bf79-42a12a0cc621' target='_blank' rel='nofollow'>Microsoft Ignite 2017: Cloud App Development on Azure - Intermediate</a>
+<a href='https://academy.techcommunity.microsoft.com/pathways/learningpath/d1fd2f77-00b8-4674-a994-3cb38c85b723' target='_blank' rel='nofollow'>Microsoft Ignite 2017: Open Source on Azure – Intermediate</a>
