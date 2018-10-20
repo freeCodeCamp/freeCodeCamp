@@ -13,7 +13,8 @@ Implicit or unconscious bias happens by our brains making incredibly quick judgm
 Unconscious bias is far more prevalent than conscious prejudice and often incompatible with one’s conscious values. Certain scenarios can activate unconscious attitudes and beliefs. For example, biases may be more prevalent when multi-tasking or working under time pressure.<sup>4</sup>
 
 If you are working in a [hybrid remote team](https://github.com/freeCodeCamp/guides/src/pages/working-in-tech/remote-versus-onsite/index.md) then there may be an unconscious bias at play depending on where someone sits. For example, people hang out with colleagues physically (the literal 'water cooler' moment) in a different way to how they do via Slack. Strong teams and leaders are aware of this and choose to [follow certain protocols](https://viewpoints.matrixpartners.com/how-to-support-remote-work-by-removing-unconscious-bias-7a974f953410) work to minimize its effects.
-
+  
+  Sampling bias: In statistics, sampling bias is a bias in which a sample is collected in such a way that some members of the intended population are less likely to be included than others. It results in a biased sample, a non-random sample[1] of a population (or non-human factors) in which all individuals, or instances, were not equally likely to have been selected.
 #### Project Implicit:
 
 There are many factors that can give you an unconcious bias, such as:
