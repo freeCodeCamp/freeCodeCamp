@@ -1,7 +1,13 @@
 ---
 title: Lists
 ---
-**TODO: `list` basic info**
+Lists is one of the most common Python data structures you will encounter while programming in Python along with dictionary, tuple or set. 
+
+It is an ordered mutable collection, this means that you store data in different postions in a list. 
+
+Besides that due to list being *mutable*, you are allowed to make changes to the value of a list without affecting the order of positions within the list.
+
+The position of a list is called "Index", which starts from `0` whenever you plan to access or change the values of a list. 
 
 [Python Docs - Lists](https://docs.python.org/3/library/stdtypes.html#lists)
 
@@ -42,6 +48,9 @@ The `list` constructor can also be used to create a `list`:
 ```
 
 **Accessing elements of a `list`:**
+
+Do note that the first element of a list will always starts with `0` 
+
 ```shell
 >>> my_list = [1, 2, 9, 16, 25]
 >>> print(my_list)
@@ -91,6 +100,8 @@ Also, we can do this:
 >>>print(a, b, c)
 2 [4, 6, 8] 10
 ```
+### List Manipulation
+
 **Reverse a `list`:**
 ```shell
 >>> my_list = [1, 2, 9, 16, 25]
