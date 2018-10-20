@@ -18,14 +18,14 @@ localeTitle: Añadir comentarios en JSX
 
 ```yml
 tests:
-  - text: La constante <code>JSX</code> debe devolver un elemento <code>div</code> .
-    testString: 'assert(JSX.type === "div", "The constant <code>JSX</code> should return a <code>div</code> element.");'
+  - text: La constante <code>JSX</code> debe devolver un elemento <code>div</code>.
+    testString: 'assert(JSX.type === "div", "La constante <code>JSX</code> debe devolver un elemento <code>div</code>");'
   - text: El <code>div</code> debe contener una etiqueta <code>h1</code> como el primer elemento.
-    testString: 'assert(JSX.props.children[0].type === "h1", "The <code>div</code> should contain an <code>h1</code> tag as the first element.");'
+    testString: 'assert(JSX.props.children[0].type === "h1", "El <code>div</code> debe contener una etiqueta <code>h1</code> como el primer elemento.");'
   - text: El <code>div</code> debe contener una etiqueta <code>p</code> como el segundo elemento.
-    testString: 'assert(JSX.props.children[1].type === "p", "The <code>div</code> should contain a <code>p</code> tag as the second element.");'
+    testString: 'assert(JSX.props.children[1].type === "p", "El <code>div</code> debe contener una etiqueta <code>p</code> como el segundo elemento.");'
   - text: El <code>JSX</code> debe incluir un comentario.
-    testString: 'getUserInput => assert(getUserInput("index").includes("/*") && getUserInput("index").includes("*/"), "The <code>JSX</code> should include a comment.");'
+    testString: 'getUserInput => assert(getUserInput("index").includes("/*") && getUserInput("index").includes("*/"), "El <code>JSX</code> debe incluir un comentario.");'
 
 ```
 
@@ -64,6 +64,12 @@ console.info('after the test');
 <section id='solution'>
 
 ```js
-// solution required
+const JSX = (
+<div>
+  <h1>This is a block of JSX</h1>
+  { /* this is a JSX comment */ }
+  <p>Here's a subtitle</p>
+</div>);
 ```
+
 </section>
