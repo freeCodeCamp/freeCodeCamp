@@ -16,6 +16,9 @@ function oldOne() {
 const newOne = () => {
  console.log("Hello World..!");
 }
+
+// Or on one line
+const newOne = () => console.log("Hello World..!");
 ```
 
 The new syntax may be confusing a little bit. But I will try to explain the syntax.
