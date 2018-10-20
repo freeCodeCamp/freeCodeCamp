@@ -246,7 +246,7 @@ if tree = nil
 return 1 + Size(tree.left) + Size(tree.right)
 ```
 
-#### Here is the code in C++
+#### Here is the clean and easy to understand code in C++
 ```
 int treeSize(struct node* node)
 {
