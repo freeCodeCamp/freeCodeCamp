@@ -10,7 +10,7 @@ title: Bash touch
 touch [options] filename
 ```
 
-Creates empty file if not exists or modify times of existing files to current time.
+Creates empty file if none exists or modifies times of existing files to current time.
 
 Commonly used options:
 - `-t` change timestamp to specific date ((YYYYMMDDHHMM.SS)) instead of current time.
