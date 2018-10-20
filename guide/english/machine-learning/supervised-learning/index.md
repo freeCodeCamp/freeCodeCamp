@@ -28,6 +28,13 @@ Price as a function of size is a continuous output, so this is a regression prob
 
 #### Example 2:
 
+> Given an image of a person's face, recognize the facial emotion of the person.
+
+Here the given input image has to be classified into discrete classes i.e. Happy, Sad, Neutral, Fear, Angry and Disgust.
+This problem can be solved  using Convolution Neural Network (A Deep Learning Model).
+
+#### Example 3:
+
 (a) Regression - For continuous-response values. For example given a picture of a person, we have to predict their age on the basis of the given picture
 
 (b) Classification - for categorical response values, where the data can be separated into specific “classes”. For example given a patient with a tumor, we have to predict whether the tumor is malignant or benign.
