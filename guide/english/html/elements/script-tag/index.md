@@ -36,5 +36,10 @@ Script tags are loaded into your HTML in-order and syncronously so it is usually
   </script>
 </body>
 ```
+Definition and Usage
+The <script> tag is used to define a client-side script (JavaScript).
+Common uses for JavaScript are image manipulation, form validation, and dynamic changes of content.
+
+Note: If the "src" attribute is present, the <script> element must be empty.
 
 You can see the official documentation for the script element on the [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)
