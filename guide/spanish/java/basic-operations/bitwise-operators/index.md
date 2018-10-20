@@ -43,19 +43,19 @@ El operador de cambio a la derecha sin signo >>> cambia de cero a la posición m
 ### Ejemplo de operadores bitwise:
 
 ```java
-    int a = 60;          /* 60 = 0011 1100 represents 60 in binary*/ 
+    int a = 60;          /* 60 = 0011 1100 significa 60 en binary*/ 
     int b = 13;          /* 13 = 0000 1101 */ 
     int c = 0; 
  
     c = a & b;        /* 12 = 0000 1100 */ 
     c = a | b;        /* 61 = 0011 1101 */ 
     c = a ^ b;        /* 49 = 0011 0001 */ 
-    c = ~a;           /*-61 = 1100 0011  :Invert all bits */ 
+    c = ~a;           /*-61 = 1100 0011  :cambiar todos los bits a sus opuestos*/ 
  
     // shift operators : zeros are shifted in to replace the discarded bits 
-    c = a << 2;       /* 240 = 1111 0000 : Shift left 2 bits*/ 
+    c = a << 2;       /* 240 = 1111 0000 : mover todo a la izquierda por 2 bits*/ 
     c = a >> 2;       /* 15 = 1111 */ 
-    c = a >>> 2;      /* 15 = 0000 1111 : Zero fill right shift*/ 
+    c = a >>> 2;      /* 15 = 0000 1111 : poner 0 en los espacios vacíos */ 
 ```
 
 **PARA MÁS INFORMACIÓN:** [Haga clic aquí](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html)
