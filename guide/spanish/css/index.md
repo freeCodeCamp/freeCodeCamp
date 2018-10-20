@@ -3,6 +3,7 @@ title: Cascading Style Sheets (CSS)
 localeTitle: Hojas de estilo en cascada (CSS)
 ---
 ### Hojas de estilo en cascada (CSS)
+![Logo CSS](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/CSS.3.svg/171px-CSS.3.svg.png)
 
 CSS es un acrónimo de Cascading Style Sheets. Fue inventado por primera vez en 1996 y ahora es una característica estándar de todos los principales navegadores web.
 
