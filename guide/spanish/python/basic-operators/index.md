@@ -274,20 +274,20 @@ Un operador de membresía se utiliza para identificar la membresía en cualquier
 a = [1,2,3,4,5] 
  
  #Is 3 in the list a? 
- print 3 in a # prints True 
+ print(3 in a) # prints True 
  
  #Is 12 not in list a? 
- print 12 not in a # prints True 
+ print 12(not in a) # prints True 
  
  str = "Hello World" 
  
  #Does the string str contain World? 
- print "World" in str # prints True 
+ print("World" in str) # prints True 
  
  #Does the string str contain world? (note: case sensitive) 
- print "world" in str # prints False 
+ print("world" in str) # prints False 
  
- print "code" not in str # prints True 
+ print("code" not in str) # prints True 
 ```
 
 #### Operadores de Identidad
