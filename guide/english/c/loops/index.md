@@ -212,7 +212,16 @@ Throughout this page, you've read that the code 'within the brackets' is what ge
 while(true)
     printf("hello, world! \n");
 ```
-In cases like this, C will treat the next line as the only content that needs to be looped. C ignores whitespace, so that indent is just there for clarity. Only that one line will be treated as though it is in the loop, and this is a property that if statements, for loops, and while loops all share. Because the whitespace is ignored, the placement doesn't matter: it could be on the same line, the next line, or 300 lines and two spaces down as long as there's no other lines of code in between. This feature can make your code look a bit cleaner when you only have one line of code to run in a statement.
+In cases like this, C will treat the next line as the only content that needs to be looped. C ignores whitespace, so that indent is just there for clarity. Only that one line will be treated as though it is in the loop, and this is a property that if statements, for loops, and while loops, among other functions, all share. Because the whitespace is ignored, the placement doesn't matter: it could be on the same line, the next line, or 300 lines and two spaces down as long as there's no other lines of code in between. This feature can make your code look a bit cleaner when you only have one line of code to run in a statement. However choosing to do so can lead to a common bug known as optimistic indentation.
+
+### Optimistic Indentation
+Consider the following code.
+```C
+while(true)
+    printf("hello, world! \n");
+    printf("my name is John! \n");
+```
+Imagine you had written a while loop that contained only the first line of the loop, so you decided to omit the brackets. Then later on, you changed your mind and decide you want to add another line. At first the loop looks okay, but the second line is actually not part of the loop! This is because only the line immediately after the loop declaration is considered part of the loop if the brackets are left out. The optimistic indentation made the loop appear correct, when it isn't actually doing what it's supposed to do.
 
 ## Semicolons instead of brackets
 If there are no brackets, the compiler will look only at the next line and have that be the content of the loop. Semicolons tell the compiler that a line is over. With these things combined, we can have C wait until something becomes true. Let's say we have a method called `is_button_pressed` that returns false if a button is not pressed, and true if a button is pressed:
