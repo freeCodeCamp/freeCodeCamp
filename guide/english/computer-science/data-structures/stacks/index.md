@@ -19,7 +19,7 @@ Implementation of a stack is possible using either arrays or linked lists. The f
 
 Why do we use Stacks?
 
---> The Stack ( LIFO - Last in first out) establish and order in which your elements are inserted and removed from a collection. You can use an Array or a Linked List as the Storage structure to implement the Stack or the Queue pattern. This help us operate on data with comparatively less ambiguity.
+-> The Stack ( LIFO - Last in first out) establish and order in which your elements are inserted and removed from a collection. You can use an Array or a Linked List as the Storage structure to implement the Stack or the Queue pattern. This help us operate on data with comparatively less ambiguity.
 
 
 
