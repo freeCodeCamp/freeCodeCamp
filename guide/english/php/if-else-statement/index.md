@@ -100,6 +100,13 @@ Also there is an alternative syntax for control structures
   else
     statement5;
 ~~~~
+
+## Alternative syntax
+
+if ($a == 5)
+  statement1;
+endif;
+
 For more information check out the following link:
 <a href='http://php.net/manual/en/control-structures.alternative-syntax.php' target='_blank' rel='nofollow'>PHP Alternative syntax for control structures</a>
 
