@@ -22,6 +22,9 @@ localeTitle: 每日站立和每日Scrum
 
 https://www.youtube.com/watch?v=\_3VIC8u1UV8
 
+
 ### 更多信息：
 
 站立会议： [维基百科](https://en.wikipedia.org/wiki/Stand-up_meeting)
+
+Mountain goat software: [每日Scrum](https://www.mountaingoatsoftware.com/agile/scrum/meetings/daily-scrum)
