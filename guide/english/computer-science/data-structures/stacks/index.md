@@ -16,6 +16,14 @@ Some basics operations of stack are:
 
 Implementation of a stack is possible using either arrays or linked lists. The following is a simple array implementation of the stack data structure with its most common operations.
 
+
+Why do we use Stacks?
+
+--> The Stack ( LIFO - Last in first out) establish and order in which your elements are inserted and removed from a collection. You can use an Array or a Linked List as the Storage structure to implement the Stack or the Queue pattern. This help us operate on data with comparatively less ambiguity.
+
+
+
+
 ```C++
 //Stack implementation using array in C++
 //You can also include<stack> and then use the C++ STL Library stack class.
