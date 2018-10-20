@@ -38,6 +38,8 @@ First is the `#include`:
 #include <stdio.h> // This is called preprocessor directives
 ```
 This is an instruction to the compiler to find and include a set of header files. Header files contain additional code that we can use. In this case, the compiler has been instructed to include `<stdio.h>`, which contains all kinds of useful functions like `printf()`. We can also write it as `#include"stdio.h"`. We'll get into detail about what functions are later, but for now just remember that a function is a collection of code that we can use.
+####Difference between #include<stdio.h> and #include"stdio.h"
+#include"stdio.h" is used to find specified header file located anywhere in the memory whereas #include<stdio.h> is not capable of finding specified header file from anywhere in the memory it is only able to find header file in the bin folder.
 
 ```C
 int main(void)
