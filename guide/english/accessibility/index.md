@@ -25,6 +25,7 @@ from which we get the [WAI-ARIA](https://developer.mozilla.org/en-US/docs/Learn/
 Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, ARIA attempts to make web apps, especially those developed with javascript and
 AJAX, more accessible. 
 
+<strong>Alt-text</strong>
 The use of images and graphics on websites can decrease accessibility for those with visual impairments. However, this doesn't mean designers should avoid
 using these visual elements. When used correctly, visual elements can convey the appropriate look and feel to users without disabilities and should be used
 to do so. In order to use these elements appropriately, web designers must use alt text to communicate the message of these elements to those who cannot see
@@ -32,7 +33,8 @@ them. Alt text should be short and to the point--generally [no more than five to
 graphic is used to convey information that exceeds the limitations of alt text, that information should also exist as web text in order to be read by screen
 readers. [Learn more about alt text](https://webaim.org/techniques/alttext/).
 
-Just like Alt text is for people who are visually impaired, transcripts of the audio are for the people who cannot listen. Providing a written document or a transcript of what is being spoken accessible to people who are hard of hearing.
+<strong>Transcripts and subtitles</strong>
+Just like Alt text can help people who are visually impaired, transcripts of audio material can be helpful for people who are Deaf or hard of hearing. It is good practice to provide a written document or a transcript for any audio material to help make it accessible to people who cannot listen to it. Similarly, videos with audio tracls should include subtitles. These accessibility features also benefit anyone viewing the material in a situation where it is not convenient for them to listen to audio, and anyone who may find the content easier to understand when presented both as audio and text, for example people who are not native speakers of the language.
 
 Copyright &copy; 2005 <a href="http://www.w3.org" shape="rect">World Wide Web Consortium</a>, (<a href="http://www.csail.mit.edu/" shape="rect">MIT</a>, <a href="http://www.ercim.org" shape="rect">ERCIM</a>, <a href="http://www.keio.ac.jp" shape="rect">Keio</a>,<a href="http://ev.buaa.edu.cn" shape="rect">Beihang</a>). http://www.w3.org/Consortium/Legal/2015/doc-license
 
