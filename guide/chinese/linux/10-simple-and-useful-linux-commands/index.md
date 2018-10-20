@@ -12,7 +12,7 @@ localeTitle: 10个简单实用的Linux命令
 4.  `date`： 这个命令可以快速显示和修改系统的日期和时间。如果想用这个命令修改时间，我们需要进入管理者模式，即`sudo date %l:%m:%p`。时间显示的示例是 `date "+It's %l:%m:%p on %A"` 。在脚本中，我们可以使用它根据当前日期命名文件。
 5.  `ls`：这个命令将显示我们现在所处在的系统文件夹中的全部子文件。将`ls`与一些有用的命令组合以按日期和大小显示和排序目录内容。它还为您提供了许多格式化输出的选项。
 6.  `pwd`：这个命令相当于在问“我在哪里？”，然后系统将显示我们现在所处在的系统的文件地址。Linux本身是无情的，所以在您决定删除某些文件前最好先看清楚地址。
-7.  `mail`： Linux的邮件程序并不好看，但它确实很有帮助。这个命令可以让您可以在一个命令中创建消息并添加文本，收件人和附件。示例： `echo "We're having a great time." | mail -s "Wish you were here!" -A postcard.png -t mom@example.com`
+7.  `mail`： Linux的邮件程序并不好看，但它确实很有用。这个命令可以让您可以在一个命令中创建消息并添加文本，收件人和附件。示例： `echo "We're having a great time." | mail -s "Wish you were here!" -A postcard.png -t mom@example.com`
 8.  `cut`：您可以用它分隔字符串或者过滤掉某些字段。示例： `echo "this, that, and the other" | cut -d, -f2 # "that"`
 9.  `grep`：如果您需要查找包含特定字符串的文本行，请使用grep。示例： `grep 'root' /etc/passwd # root:x:0:0:root:/root:/bin/bash`
 10.  `sed`：我们可以使用sed查找并更改一段文本中的子字符串。示例： `echo "this, that, and the other" | sed 's/that/those/' # "this, those, and the other"`
