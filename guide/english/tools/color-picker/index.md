@@ -31,3 +31,5 @@ You can check common examples of color picker tools below.
 * [Ambiance Color Palettes](http://ambiance.somethingjustlikethis.com/)
 
 * [Instant Eyedropper](http://www.instant-eyedropper.com/)
+
+* [ColorSnapper2](https://colorsnapper.com/)
