@@ -18,6 +18,7 @@ A collection of helpful Angular resources
 ### Courses
 
 *	<a href='https://egghead.io/browse/frameworks/angularjs' target='_blank' rel='nofollow'>Egghead.io AngularJS Courses ($)</a>
+*	<a href='https://www.coursera.org/learn/single-page-web-apps-with-angularjs' target='_blank' rel='nofollow'>Single Page Web Applications with AngularJS</a>
 
 ## Angular 2.x+
 
