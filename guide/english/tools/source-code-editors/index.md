@@ -62,3 +62,4 @@ Its main features are:
 *   Build-in Git - Review diffs, stage files, make commits, push and pull, all available in the editor.
 *   Extensions - Install extensions to add new languages, themes, debuggers, and connect additional services.
 
+[If you're looking to customize VS Code crazily] (https://github.com/viatsko/awesome-vscode)
