@@ -27,6 +27,7 @@ Now install it on your computer. For help in installation refer to reference sec
  * [edX -allows to audit course for free but certification is paid.](https://www.edx.org/learn/r-programming)
  * [Advanced R](https://adv-r.hadley.nz/)
  * [RSeek](http://rseek.org/)
+ * [Udemy](https://www.udemy.com/r-basics/)
  
  ## Reference
  * [Installing R on Windows](http://youtu.be/Ohnk9hcxf9M)
