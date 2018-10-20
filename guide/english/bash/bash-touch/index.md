@@ -4,13 +4,13 @@ title: Bash touch
 
 ## Bash command: touch
 
-**Change timestamps of files.**
+**Changes timestamps of files.**
 
 ```
 touch [options] filename
 ```
 
-Creates empty file if not exists or modify times of existing files to current time.
+Creates an empty file with that filename if none exists, or changes the "Last Modified" date of an existing file to the current date and time.
 
 Commonly used options:
 - `-t` change timestamp to specific date ((YYYYMMDDHHMM.SS)) instead of current time.
