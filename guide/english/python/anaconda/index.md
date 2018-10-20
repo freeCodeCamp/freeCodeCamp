@@ -29,6 +29,9 @@ letter of the option. So ``--name`` and ``-n`` are the same, and
 For full usage of each command, including abbreviations, see
 [Command reference](https://conda.io/docs/commands.html).
 
+
+**Miniconda** is a small, bootstrap version of Anaconda that includes only conda, Python, the packages they depend on and a small number of other useful packages, including pip, zlib and a few others. Use the conda install command to install 720+ additional conda packages from the Anaconda repository.
+
 ### Sources
 1. [Anaconda Documentation](https://docs.anaconda.com/)
 2. [Conda Documentation](https://conda.io/docs/)
