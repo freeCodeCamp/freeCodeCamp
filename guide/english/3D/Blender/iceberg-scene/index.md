@@ -12,3 +12,5 @@ To make the cube look like water, mix the following shaders:
 *Mix Shader :	Factor = 0.500
 *Translucent BSDF Shader :	Color ~= 2B9489 (a bit dark greenish blue)
 *Transparent BSDF Shader :	Color ~= 3173C0 (bluish)
+
+my changes
