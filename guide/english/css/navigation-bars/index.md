@@ -3,7 +3,7 @@ title: Navigation Bars
 ---
 ## Navigation Bars
 
-Navigation bars are a very important element to any website. They provide the main method of navigation by providing a main list of links to a user. There are many methods to creating a navigation bar. The easiest way to create a navigation bar is to use an unordered list and style it with CSS.
+Navigation bars are a very important element to any website. They provide the primary method of navigation by presenting a list of links to a user. There are many methods to creating a navigation bar. The easiest way to create a navigation bar is to use an unordered list and style it with CSS.
 
 Navigation Bars are mostly made up of `<ul>` lists that are horizontally arranged and styled.
 
