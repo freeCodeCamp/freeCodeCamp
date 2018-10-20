@@ -90,4 +90,4 @@ _Note: Do not include the dot in the HTML Class Attribute, referring to the clas
 #### More Information: 
 * <a href='https://getbootstrap.com/docs/4.1/components/buttons/' target='_blank' rel='nofollow'>Bootstrap Buttons documentation</a>
 * <a href='https://getbootstrap.com/docs/4.1/components/button-group/' target='_blank' rel='nofollow'>Bootstrap Button Group documentation</a>
-* [Bootstrap Get Started](https://guide.freecodecamp.org/bootstrap/get-started)
+* [Bootstrap Get Started](/bootstrap/get-started)
