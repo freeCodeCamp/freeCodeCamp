@@ -13,3 +13,5 @@ There are few commonly used arguments:
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
+
+Be very careful while using this command, please take a backup of the file/dir unless you want to remove it completely.
