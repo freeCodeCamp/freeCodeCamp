@@ -14,9 +14,9 @@ NOTE: If you're reporting a security issue, don't create a GitHub issue. Instead
 
 
 **Tell us about your browser and operating system:**
-* Browser Name: 
-* Browser Version: 
-* Operating System: 
+* Browser Name: Google
+* Browser Version:69.0.3497.100-1 
+* Operating System: Ubuntu
 
 
 **If possible, add a screenshot here (you can drag and drop, png, jpg, gif, etc. in this box):**
