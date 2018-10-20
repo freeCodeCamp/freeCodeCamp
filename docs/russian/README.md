@@ -39,11 +39,11 @@
 
 | команда | описание |
 | ------- | ----------- |
-| `npm run bootstrap` | Bootstraps the different services |
-| `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
-| `npm run develop` | Starts the freeCodeCamp API Server and Client Apps |
-| `npm test` |  Run all JS tests in the system, including client, server, lint and challenge tests |
-| `npm run test:client` | Run the client test suite |
-| `npm run test:curriculum` | Run the curriculum test suite |
-| `npm run test:server` | Run the server test suite |
-| `npm run commit` | An interactive tool to help you build a good commit message |
+| `npm run bootstrap` | Загружает различные сервисы |
+| `npm run seed` | Парсит файлы с отметкой о проблемах и вставляет их в MongoDB |
+| `npm run develop` | Запускает сервер API и клиентские приложения freeCodeCamp |
+| `npm test` |  Запускайте все тесты JS в системе, включая тесты клиентов, сервера, линта и тесты задач |
+| `npm run test:client` | Запустить клиентский набор тестов |
+| `npm run test:curriculum` | Запуск набора тестов учебных программ |
+| `npm run test:server` | Запуск набора тестов сервера |
+| `npm run commit` | Интерактивный инструмент, который поможет вам создать хорошее сообщение о коммите |
