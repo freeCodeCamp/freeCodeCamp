@@ -6,6 +6,8 @@ title: Python
 
 <a href='https://www.python.org' target='_blank' rel='nofollow'>Python</a> is a general purpose programming language which is dynamically typed, interpreted, and known for its easy readability with great design principles.
 
+Python was created by Guido Von Rossum,who currently works for Google. The TV Show Monty Python's Flying Circus inspired Guido to name this computer language as Python.
+
 To learn more about Python, check out these pages on python.org:
 
 <a href='https://www.python.org/doc/essays/blurb/' target='_blank' rel='nofollow'>What is Python?</a>
