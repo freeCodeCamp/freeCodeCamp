@@ -18,3 +18,8 @@ Choose Azure DevOps Services when you want quick setup, maintenance-free operati
 
 ### Resources
 * [Microsoft Azure - Azure DevOps](https://azure.microsoft.com/services/devops)
+
+### Courses
+* [Microsoft Professional Program in DevOps](https://www.edx.org/microsoft-professional-program-devops)
+* [DevOps - The Big Picture](https://www.pluralsight.com/courses/devops-big-picture)
+* [DevOps Fundamentals with Azure](https://www.udemy.com/devops-fundamentals-with-azure/)
