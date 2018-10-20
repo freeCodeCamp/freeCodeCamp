@@ -34,6 +34,7 @@ pwd | Print Working Directory (Where Am I? )
 ls | List contents of current directory
 mkdir | Create a new directory
 touch | Create a new file
+nano | (One way to) edit a file
 cp| Copy a file 
 rm | Remove a file 
 rm -rf | Remove a directory 
@@ -50,7 +51,13 @@ Some of the aforementioned commands aren't clear without examples. Below are a f
 
 ``` touch YOUR-FILE-NAME.JS```
 
-You can make a file with any extension you choose. As long as it is in an a format accepted by the folder or machine.
+```touch``` creates or opens a file and then closes without editing it. You can make a file with any extension you choose as long as it is in an a format accepted by the folder or machine.
+
+#### Editing a File 
+
+```nano YOUR-FILE-NAME.JS```
+
+```nano``` is a text editor that runs natively within Terminal and comes pre-installed with Mac OS.
 
 #### Copying a File 
 
@@ -64,9 +71,9 @@ For example, if we have a file, _'test.txt'_ that is stored in our _/Desktop_ di
 
 #### Deleting a File 
 
-Use the following syntax to delete a file 
+Use the following syntax to delete a file: rm _#PATH_TO_FILE_
 
-**rm _#PATH_TO_FILE_**
+```rm ~/Desktop/test.txt```
 
 #### Detect which process is using the port you want to use
 ``` lsof -i :<PORT> ```
