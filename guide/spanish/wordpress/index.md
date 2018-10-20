@@ -3,6 +3,7 @@ title: WordPress
 localeTitle: WordPress
 ---
 # WordPress
+![Logo Wordpress](https://upload.wikimedia.org/wikipedia/commons/a/ae/WordPress.svg)
 
 WordPress es un sistema de gestión de contenido gratuito y de código abierto basado en PHP y MySQL. Las características incluyen una arquitectura de complementos y un sistema de plantillas. Es más asociado con los blogs, pero admite otros tipos de contenido web, como listas de correo y foros más tradicionales, galerías de medios y tiendas en línea.
 
