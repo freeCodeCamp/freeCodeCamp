@@ -73,7 +73,10 @@ Use the following syntax to delete a file
 
 #### Terminate the process which uses the port you want to use
 ``` kill <PID> ```
-
+#### Transfering a file 
+    If you would like to transfer a file from the terminal to downloadable link, use the command line:
+        transfer <name of document>
+    A url would be generated. Afterwards, copy and paste the url to a web browser, which will then take you to site where            you can download the file.  
 # iTerm2
 
 iTerm2 is an alternative to the legacy terminal in Mac OS. iTerm2 brings some new features such as:
