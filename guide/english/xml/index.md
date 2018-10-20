@@ -54,7 +54,7 @@ The following are areas that can be simiplified with XML:
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
-### More information
+### More information can be found here:
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
 * [Introduction to XML](https://www.w3schools.com/xml/xml_whatis.asp)
