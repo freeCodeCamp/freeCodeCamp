@@ -10,19 +10,19 @@ title: Combinations and Permutations
   
   This is an example of a permutation. A permutation is the number of different ordered possibilities that can occur in a given situation. A permutation can be with or without repetition, as can a combination. If we say that there is a permutation for n things with r possibilities, the formulae will be:
   
-  #####**With Repetition:**
-  n^r
+**With Repetition:**
+ <a href="https://www.codecogs.com/eqnedit.php?latex=n^r" target="_blank"><img src="https://latex.codecogs.com/gif.latex?n^r" title="n^r" /></a>
   
-  #####**Without Repetition:**
-  n\!/(n-r)\!
+**Without Repetition:**
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{&space;n!}{(n-r)!}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{&space;n!}{(n-r)!}" title="\frac{ n!}{(n-r)!}" /></a>
   
   Returning to the problem at the top, what if they were sitting in three identical chairs instead of having rankings? This is an example of a combination. In a combination, order doesn't matter. Therefore, every permutation of the same combination has to be eliminated. This creates two more formulae:
   
-  #####**With Repetition:**
-  (r+n-1)\!/(r\!(n-1)\!)
+**With Repetition:**
+ <a href="https://www.codecogs.com/eqnedit.php?latex=\frac{(r&plus;n-1)!}{r!(n-1)!}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{(r&plus;n-1)!}{r!(n-1)!}" title="\frac{(r+n-1)!}{r!(n-1)!}" /></a>
   
-  #####**Without Repetition:**
-  n\!/(r\!(n-r)\!)
+**Without Repetition:**
+<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{n!}{r!(n-r)!}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{n!}{r!(n-r)!}" title="\frac{n!}{r!(n-r)!}" /></a>
   
   
 ###Sources
