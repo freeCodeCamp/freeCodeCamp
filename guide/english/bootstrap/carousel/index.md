@@ -144,6 +144,6 @@ Some frequently used options are:
 * wrap
 
 ## Additional Details
-- [Bootstrap Carousel](https://getbootstrap.com/docs/4.0/components/carousel/)
+[Bootstrap Carousel](https://getbootstrap.com/docs/4.1/components/carousel/)
 
 
