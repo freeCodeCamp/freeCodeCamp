@@ -51,7 +51,7 @@ Hex codes are expressed in this format: #000000, which would be the color black 
 
 These three pairs each express a value for the amount of red, green and blue in a particular color. Taking the hexcode color #AA11BB, AA is the amount of red, 11 the amount of green, and BB the amount of blue. 0 is the lowest value of a color while f is the highest value.
 
-Hex codes are case insensitive, meaning that #FFFFFF and #ffffff would be the same color: white.
+Hex codes are case insensitive, meaning that #FFFFFF and #ffffff would be the same color: white.For colors that all six characters are the same, you can put only #FFF and you will get the same color as the six character input
 
 Additionally, there are 16,777,216 possible color combinations using hexcode.
 
