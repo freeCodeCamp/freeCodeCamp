@@ -8,33 +8,35 @@ title: Mac OS Terminal
 Most of the time users interact through a Graphical User Interface to interact with the computer. You use the mouse to point and click to open, move, or create new files or open applications. But, you can also use the Terminal Application to interact with your machine through written commands. When you use the terminal, it allows you to dig deeper and customize in a way not possible through the GUI. 
 
 ### Opening the Terminal and Navigating Directories
-Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. it shoudl have the computer's name (ABC's Macbook), followed by the User name (ABC), and then a '$.' If you are in the root directory, the last character will be a '#.'
+Your terminal exists in the Applications directory. Open your Terminal app. You should see a prompt in the terminal window. It should have the computer's name (ABC's Macbook), followed by the User name (ABC), and then a '$'. If you are in the root directory, the last character will be a '#'.
 
-To see what directory you are working in, just type the command 
+To see what directory you are working in, just type the command: 
 
 ```pwd```
 
-pwd stands for "Print Working Directory." Directory is another word for folder. 
+```pwd``` stands for "Print Working Directory". Directory is another word for folder. 
 
-If you want to list the contents of your directory use the command: 
+If you want to list the contents of your directory, use the command: 
 
 ```ls```
 
-To switch to a new directory you use the command: 
+To switch to a new directory you, use the command: 
 
 ```cd```
 
-which stands for change directory. 
+```cd``` stands for "Change Directory". ```cd``` is then followed by the directory's name you wish to switch into.  
 
 Here is a list of common commands:
 
 Command | Usage
 ------------ | -------------
-pwd | Print Working Directory (Where Am I? )
+pwd | Print Working Directory (Shows the path that you are in.)
 ls | List contents of current directory
 mkdir | Create a new directory
+rmdir | Remove directory
 touch | Create a new file
 cp| Copy a file 
+mv | Rename a file/directory
 rm | Remove a file 
 rm -rf | Remove a directory 
 
@@ -44,13 +46,13 @@ Some of the aforementioned commands aren't clear without examples. Below are a f
 
 #### Making a Directory
 
-```mkdir #YOUR-NEW-FOLDER-NAME-HERE```
+```mkdir folder_name```
 
 #### Making a File 
 
-``` touch YOUR-FILE-NAME.JS```
+``` touch file_name.js```
 
-You can make a file with any extension you choose. As long as it is in an a format accepted by the folder or machine.
+You can make a file with any extension you choose. As long as it is in a format accepted by the folder or machine.
 
 #### Copying a File 
 
@@ -64,7 +66,7 @@ For example, if we have a file, _'test.txt'_ that is stored in our _/Desktop_ di
 
 #### Deleting a File 
 
-Use the following syntax to delete a file 
+Use the following syntax to delete a file. 
 
 **rm _#PATH_TO_FILE_**
 
