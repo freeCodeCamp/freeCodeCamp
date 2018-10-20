@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 pool:
-  vmImage: 'Ubuntu 18.10'
+  vmImage: 'Ubuntu 16.04'
 
 steps:
 - task: NodeTool@0
