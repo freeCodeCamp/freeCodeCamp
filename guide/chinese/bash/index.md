@@ -56,7 +56,7 @@ zach@marigold:~$ chmod u+x myBashScript.sh
 
 ### 更多信息：
 
-*   维基百科：https：//en.wikipedia.org/wiki/Bash _（Unix_ shell）
-*   tldp.org Bash指南：http：//tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2
-*   gnu.org Bash手册：https：//www.gnu.org/software/bash/manual/html _node / index.html #SEC_内容
-*   Shell脚本教程入门：https：//www.shellscript.sh/
+*   维基百科：https://en.wikipedia.org/wiki/Bash_(Unix_shell）
+*   tldp.org Bash指南：http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc2
+*   gnu.org Bash手册：https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_内容
+*   Shell脚本教程入门：https://www.shellscript.sh/
