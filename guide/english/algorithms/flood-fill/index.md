@@ -63,7 +63,7 @@ and start checking the other adiacent squares.
 Going south we will get to point (5,4) and the function runs again.
 
 
-### Excercise problem
+### Exercise problem
 
 I always considered that solving a (or more) problem/s using a newly learned algorithm is the best way to fully understand
 the concept.
