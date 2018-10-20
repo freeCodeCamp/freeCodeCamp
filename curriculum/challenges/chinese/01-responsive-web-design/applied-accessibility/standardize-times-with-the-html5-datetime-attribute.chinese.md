@@ -7,7 +7,7 @@ localeTitle: 使用HTML5 datetime属性标准化Times
 ---
 
 ## Description
-<section id="description">继续使用日期主题，HTML5还引入了<code>time</code>元素和<code>datetime</code>属性来标准化时间。这是一个可以在页面上包装日期或时间的内联元素。该日期的有效格式由<code>datetime</code>属性保存。这是辅助设备访问的值。它通过陈述标准化版本的时间来避免混淆，即使它是在文本中以非正式或口语方式编写的。以下是一个例子： <code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code> </section>
+<section id="description">继续日期這主题，HTML5还引入了<code>time</code>元素和<code>datetime</code>属性来标准化时间。这是一个可以在页面上包装日期或时间的内嵌元素。该日期的有效格式由<code>datetime</code>属性保存。这是辅助设备访问的值。它通过陈述标准化版本的时间来避免混淆，即使它是在文本中以非正式或口语方式编写的。以下是一个例子： <code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code> </section>
 
 ## Instructions
 <section id="instructions">露营猫的真人快打调查结果在！在文本“9月15日星期四&lt;sup&gt; th &lt;/ sup&gt;”周围包装一个<code>time</code>标记，并为其设置“2016-09-15”添加<code>datetime</code>属性。 </section>
