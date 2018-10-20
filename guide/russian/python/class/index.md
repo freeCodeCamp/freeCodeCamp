@@ -21,13 +21,13 @@ class ClassName:
     <statement-N> 
  ``` 
  
- #### Class Objects: 
+ #### Объекты класса: 
  
- Class objects support two kinds of operations: attribute references and instantiation. 
+ Объекты класса поддерживают два вида операций: ссылки на атрибуты и экземпляр.
  
- Attribute references use the standard syntax used for all attribute references in Python: `obj.name`. 
- Valid attribute names are all the names that were in the class's namespace when the class object was created. 
- So, if the class definition looked like this: 
+ В ссылках атрибутов используется стандартный синтаксис, используемый для всех ссылок на атрибуты в Python: `obj.name`.
+ Допустимые имена атрибутов - это все имена, которые были в пространстве имен класса при создании объекта класса.
+ Итак, если определение класса выглядит так:
 ```
 
 питон класс MyClass: «" Простой примерный класс "" " i = 12345
