@@ -4,11 +4,11 @@ title: LINQ
 
 # LINQ (Language Integrated Query)
 
-LINQ (Language Integrated Query) is a Microsoft programming model and methodology that essentially adds formal query capabilities into Microsoft .NET-based programming languages. LINQ offers a compact, expressive, and intelligible syntax for manipulating data. The real value of LINQ comes from its ability to apply the same query to an SQL database, a DataSet, a list, a dictionary, etc.
+LINQ (Language Integrated Query) is a Microsoft programming model and methodology that essentially adds formal query capabilities into Microsoft .NET-based programming languages. LINQ offers a compact, expressive, and intelligible syntax for manipulating data. The real value of LINQ comes from its ability to apply the same query to a SQL database, DataSet, List, Dictionary, and more.
 
 ## Example
 
-LINQ can be used to filter, transform, search data and a lot more of complex tasks. Let's say we have the following list of objects:
+LINQ can be used to filter, transform, and search data. Let's say we have the following list of objects:
 
 ```csharp
 var fruits = new List<Fruit>() {
@@ -35,7 +35,7 @@ var qntRed = fruits.Where(Color == "Red").Count(); // 2
 var yellowFruits = fruits.Where(f => f.Color == "Yellow").ToList(); // { Pineapple, Mango }
 
 // Orders list by quantity from most to less
-var orderedFruits = fruits.OrderByDescending(f => f.Quantity).ToList(); // {Grape, Strawberry, Orange, Apple, Mango, Pineapple}
+var orderedFruits = fruits.OrderByDescending(f => f.Quantity).ToList(); // { Grape, Strawberry, Orange, Apple, Mango, Pineapple }
 
 // Sum the quantity of fruits
 var quantity = fruits.Sum(f => f.Quantity); // 53
@@ -46,7 +46,7 @@ var hasGreen = fruits.Any(f => f.Color == "Green"); // false
 // Group fruits by color into a dictionary
 var fruitsByColor = fruits.GroupBy(g => g.Color).ToDictionary(k => k.Key, v => v.ToList()); // Dictionary of list of fruits by color
 
-// linq operations can be concatenated and are not performed as long as data is needed
+// LINQ operations can be concatenated and are not performed as long as data is needed
 var logs = new List<Log>;
 
 if (filterBySeverity)
