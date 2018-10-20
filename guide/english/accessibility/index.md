@@ -26,8 +26,8 @@ Where WAI tackles the semantics of html to more easily nagivate the DOM Tree, AR
 AJAX, more accessible. 
 
 The use of images and graphics on websites can decrease accessibility for those with visual impairments. However, this doesn't mean designers should avoid
-using these visual elements. When used correctly, visual elements can convey the appropriate look and feel to users without disabilities and should be used
-to do so. In order to use these elements appropriately, web designers must use alt text to communicate the message of these elements to those who cannot see
+using these visual elements. When used correctly, visual elements can convey the appropriate look and feel to users without disabilities.
+In order to use these elements appropriately, web designers must use alt text to communicate the message of these elements to those who cannot see
 them. Alt text should be short and to the point--generally [no more than five to 15 words](https://www.thoughtco.com/writing-great-alt-text-3466185). If a
 graphic is used to convey information that exceeds the limitations of alt text, that information should also exist as web text in order to be read by screen
 readers. [Learn more about alt text](https://webaim.org/techniques/alttext/).
