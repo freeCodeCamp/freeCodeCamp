@@ -167,5 +167,9 @@ Output:
 [ 0 | 1 | 2 | 3 | 4 ]  
 [ 0 | 1 | 2 | 3 | 4 ]  
 
+### Array Vs ArrayList
+The main different between the Array and the ArrayList is Array is a fixed length and the ArrayList is variable length. 
+
+
 #### More Information:
 * Source: <a href='https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html' target='_blank' rel='nofollow'>Java Arrays</a>
