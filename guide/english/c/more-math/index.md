@@ -25,7 +25,15 @@ There are a lot of situations where you want to take a number and either go up o
 3: a--;
 4: --a;
 ```
-Both the examples at 1 and 2 will increase the value of a by one. Both of the examples at 3 and 4 will decrease the value of a by one. However, 1 does not do quite the same thing as 2, and 3 does not do quite the same thing as 4. Pre-fix operators are called this because the operation is a prefix (2 and 4 are our prefix operators). This acts slightly differently from our post-fix operators at 1 and 3. Pre-fix operators perform the operation, then return the value. Post-fix operators return the value, then perform the incrementation.
+Both the examples at 1 and 2 will increase the value of a by one. Both of the examples at 3 and 4 will decrease the value of a by one. However, 1 does not do quite the same thing as 2, and 3 does not do quite the same thing as 4. Pre-fix operators are called this because the operation is a prefix (2 and 4 are our prefix operators). This acts slightly differently from our post-fix operators at 1 and 3. Pre-fix operators perform the operation, then return the value. Post-fix operators return the value, then perform the incrementation. You can see the effects of this difference here:
+
+```C
+int a = 1; 
+int b = ++a; // b = 2, a = 2
+
+int c = 1;
+int d = c++; //c = 2, d = 1 
+```
 
 ### Unary plus and minus
 In the normal math you're used to, you use a '-' in front of a number or variable, and that makes the number or variable negative. If the number or variable is already negative, it becomes positive.
