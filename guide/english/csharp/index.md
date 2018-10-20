@@ -49,6 +49,7 @@ This creates a new book object that we can use to manipulate data and store it i
 11. Record Type
 12. Minimizing OUT
 13. Non-'NULL' able reference type
+14. Discards
 
 You can use C# to create Windows client applications, XML Web services, distributed components, client-server applications, database applications, and much more.
 
