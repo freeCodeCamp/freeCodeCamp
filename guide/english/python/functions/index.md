@@ -2,14 +2,13 @@
 title: Functions
 ---
 ## Functions
-
-A function allows you to define a reusable block of code that can be executed many times within your program. 
-
-Functions allow you to create more modular and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) solutions to complex problems.
-
 While Python already provides many built-in functions such as `print()` and `len()`, you can also define your own functions to use within your projects.
 
-One of the great advantages of using functions in your code is that it reduces the overall number of lines of code in your project.
+Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
+
+By using functions, it allows you to create more modular and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) solutions to complex problems.
+
+One of the key advantages of using functions in your code is that it reduces the overall number of lines of code in your project, which allows you to define a reusable block of code that can be executed many times within your program. 
 
 ### Syntax
 
@@ -42,11 +41,7 @@ def multiply(val1, val2):
 multiply(3, 5)  # prints 15 to the console
 ```
 
-Functions are blocks of code that can be reused simply by calling the function. This enables simple, elegant code reuse without explicitly re-writing sections of code. This makes code both more readable, makes for easier debugging, and limits typing errors. 
-
-Functions in Python are created using the `def` keyword, followed by a function name and function parameters inside parentheses.
-
-A function always returns a value,The `return` keyword is used by the function to return a value, if you don't want to return any value, the default value `None` will returned. 
+Function always returns a value,The `return` keyword is used by the function to return a value. If you do not want to return any values in a function a default value `None` will be returned. 
 
 The function name is used to call the function, passing the needed parameters inside parentheses.
 
@@ -59,7 +54,7 @@ result = sum(1, 2)
 # result = 3
 ```
 
-You can define default values for the parameters, that way Python will interpretate that the value of that parameter is the default one if none is given.
+Default values could be define as the function's parameters as show below. The Python interpreter will treat the parameter as the default value if none is supplied when using the function.
 
 ```python
 def sum(a, b=3):
