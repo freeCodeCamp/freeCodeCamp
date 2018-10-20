@@ -27,7 +27,7 @@ Popular AWS services include:
 * Databases including both SQL and NoSQL
 * S3 (Simple Storage Service)
 * SQS (Simple Queue Service)
-* Games development via the Amazon Lumberyard game development engine and subsequent hosting platform.
+* Games development via the Amazon Lumberyard game development engine and subsequent hosting platform
 * DynamoDB (Amazon Dynamo Data Base)
 * CloudWatch (Metrics and Alarms)
 * CodeDeploy (Deployments)  
@@ -42,7 +42,7 @@ The tiers are:
 * Foundational
 * Associate
 * Professional
-For every role there are those three tiers.
+For every role there are those three tiers
 
 These roles include:
 * Architect
