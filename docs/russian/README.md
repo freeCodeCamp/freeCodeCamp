@@ -11,35 +11,33 @@
     </tr>
 </table>
 
-# Documentation Quick Reference
+# Краткая справочная документация
 
-Hello 👋 !
+Привет 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+Этот каталог содержит всю документацию о внесении вклада в freeCodeCamp.org
 
-This directory contains all of the documentation on contributing to freeCodeCamp.org
-
-## [If you are getting started, start by reading this first.](/CONTRIBUTING.md)
+## [Если вы начинающий, сначала прочтите это.](/CONTRIBUTING.md)
 
 ---
 
-## Quick references articles
+## Краткие справочные статьи
 
-1. How to work on Guide articles.
-2. How to work on Coding Challenges.
-3. How to setup freeCodeCamp locally.
-4. How to catch outgoing emails locally.
+1. [Как работать над статьями руководства.](/how-to-work-on-guide-articles.md)
+2. [Как работать над задачами по кодированию.](/how-to-work-on-coding-challenges.md)
+3. [Как настроить freeCodeCamp локально.](/how-to-setup-freecodecamp-locally.md)
+4. [Как поймать исходящие электронные письма локально.](/how-to-catch-outgoing-emails-locally.md)
 
-## Style guides
+## Руководство по стилю
 
-1. Style guide for creating guide articles.
-2. Style guide for creating coding challenges.
+1. Руководство по стилю для создания руководств.
+2. Руководство по стилю для создания задач с кодированием.
 
-## Quick commands reference when working locally
+## Ссылка на быстрые команды при работе локально
 
-A quick reference to the commands that you will need, when working locally.
+Быстрая ссылка на команды, которые вам понадобятся при работе на локальном компьютере.
 
-| command | description |
+| команда | описание |
 | ------- | ----------- |
 | `npm run bootstrap` | Bootstraps the different services |
 | `npm run seed` | Parse all the challenge markdown files and inserts them into MongoDB. |
