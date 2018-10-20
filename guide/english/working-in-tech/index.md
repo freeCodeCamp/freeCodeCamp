@@ -35,7 +35,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 Hooked: How to Build Habit-Forming Products: amzn.to/2bVG5AQ
 
-"Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg http://amzn.to/2igRgoq
+"Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1539996815&sr=1-1
 
 To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
 
