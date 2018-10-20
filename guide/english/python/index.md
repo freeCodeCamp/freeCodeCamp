@@ -26,6 +26,8 @@ Most *nix based operating systems come with Python installed (usually Python 2, 
 
 Windows doesn't come with Python, the installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>
 
+Linux operating systems come with different versions of Python pre-installed. However to install Python 3.x on Linux, follow this <a href='https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html' target='_blank' rel='nofollow'>link</a>
+
 ## Python Interpreter
 
 The Python interpreter is what is used to run Python scripts.
@@ -110,6 +112,7 @@ Some of the principles that influenced the design of Python are included as an E
 #### Cons
 1. Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
 2. It is a slow language. So, a very bad language to use for developing general algorithms.
+3. Python is dynamically typed, so the errors in code only show up after running an application.
 
 ## Documentation
 
@@ -145,9 +148,9 @@ The <a href='https://docs.python.org/3/library/functions.html#print' target='_bl
     >>> print("Hello world!")
     Hello world!
 
-A function is called when the name of the function is followed by `()`. For the Hello world! example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters the defaults are used.
+A function is called when the name of the function is followed by `()`. For the Hello world! example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters, default values are used.
 
-The argument that we called the `print` function with is a `str` object or _string_, one of Python's <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>_built-in types_</a>.
+The argument that we called the `print` function with is a `str` object or _string_, one of Python's <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>_built-in data types_</a>.
 Also the most important thing about python is that you don't have to specify the data type while declaring a variable, python's compiler
 will do that itself based on the type of value assigned.
 
