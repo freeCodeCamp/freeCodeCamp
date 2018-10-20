@@ -115,7 +115,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 We welcome pull requests from members of the freeCodeCamp community and from veteran developers alike! Please follow [these steps](CONTRIBUTING.md) to contribute.
 
-### License
+### License 
 
 Copyright (c) 2018 freeCodeCamp.
 
