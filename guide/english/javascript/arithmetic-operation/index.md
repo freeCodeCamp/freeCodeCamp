@@ -87,9 +87,13 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 
 **Syntax**
 
-`a++ or ++a`
+`a++ or ++a` "++" can be written on either side of the variable you want to increment
 
 **Usage**
+    
+    var num = 5;
+    num++;
+    // num will now be equal to 6
     
     // Postfix
     x = 3;  // declare a variable 
@@ -103,9 +107,13 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
 
 **Syntax**
 
-`a-- or --a`
+`a-- or --a` Like when you are incrementing, "--" can be written on either side of the variable you want to decrement
 
 **Usage**
+    
+    var num = 5;
+    num--;
+    // num will now be equal to 4
     
     // Postfix
     x = 3;  // declare a variable 
