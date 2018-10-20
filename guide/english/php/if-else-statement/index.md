@@ -90,9 +90,19 @@ For instance:
 
 ## Ternary Operators
 
-Another important option to consider when using short If/Else statements is the ternary operator.
+Another option to consider when using short If/Else statements is the ternary operator.
 
-Also there is an alternative syntax for control structures
+For instance:
+
+```
+<?php
+
+$var = (condition) ? (value if true) : (value if false);
+```
+
+## Alternative If/Else Syntax
+
+There is also an alternative syntax for control structures
 ~~~~
   if (condition1):
     statement1;
