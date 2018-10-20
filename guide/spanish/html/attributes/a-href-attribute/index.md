@@ -4,7 +4,7 @@ localeTitle: Un atributo de Href
 ---
 ## Un atributo de Href
 
-El atributo `<a href>` refiere a un destino proporcionado por un enlace. La `a` etiqueta (ancla) está muerto sin el `<href>` atributo. A veces, en su flujo de trabajo, no desea un enlace en vivo o aún no sabrá el destino del enlace. En este caso, es útil establecer el atributo `href` en `"#"` para crear un enlace muerto. El atributo `href` se puede usar para vincular archivos locales o archivos en Internet.
+El atributo `<a href>` se refiere a un destino proporcionado por un enlace. La etiqueta `a` (ancla) no tiene validez sin el atributo `<href>`. A veces, en tu flujo de trabajo, no deseas un enlace activo o aún no sabes el destino del enlace. En este caso, es útil establecer el atributo `href` en `"#"` para crear un enlace muerto. El atributo `href` se puede usar para vincular archivos locales o archivos en Internet.
 
 Por ejemplo:
 
@@ -17,7 +17,7 @@ Por ejemplo:
   <body> 
     <h1>Href Attribute Example</h1> 
       <p> 
-        <a href="https://www.freecodecamp.org/contribute/">The freeCodeCamp Contribution Page</a> shows you how and where you can contribute to freeCodeCamp's community and growth. 
+        <a href="https://www.freecodecamp.org/contribute/">Pagina de contribucion de freeCodeCamp</a> Te muestra como y donde puedes contribuir a la comunidad y al crecimiento de freeCodeCamp. 
       </p> 
     </h1> 
   </body> 
@@ -34,9 +34,9 @@ El atributo `<a href>` es compatible con todos los navegadores.
 
 ```html
 
-<a href="#">This is a dead link</a> 
- <a href="https://www.freecodecamp.org">This is a live link to freeCodeCamp</a> 
- <a href="https://html.com/attributes/a-href/">more with a href attribute</a> 
+<a href="#">Este es un enlace muerto</a> 
+ <a href="https://www.freecodecamp.org">Este es un enclace activo a freeCodeCamp</a> 
+ <a href="https://html.com/attributes/a-href/">otro con un atributo href</a> 
 ```
 
 ### Anclajes en página
