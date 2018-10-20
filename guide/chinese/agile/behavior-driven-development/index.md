@@ -22,25 +22,23 @@ BDD的核心是重新思考这些问题自然产生的单元测试和验收测�
 
 例
 ```
-Story: Returns go to stock 
+故事: 貨返庫存 
  
- As a store owner 
- In order to keep track of stock 
- I want to add items back to stock when they're returned. 
+  身為商店的經營者， 
+ 為了及時追蹤庫存， 
+ 我希望商品在被退還後回到庫存 
  
- Scenario 1: Refunded items should be returned to stock 
- Given that a customer previously bought a black sweater from me 
- And I have three black sweaters in stock. 
- When he returns the black sweater for a refund 
- Then I should have four black sweaters in stock. 
+ 情況 1: 退貨商品須回歸庫存 
+ 假設一位顧客向我買了一件黑色外套，
+ 而庫存仍有三件黑色外套； 
+ 當他退貨退款後， 
+ 則我的庫存應有四件黑色外套 
  
- Scenario 2: Replaced items should be returned to stock 
- Given that a customer previously bought a blue garment from me 
- And I have two blue garments in stock 
- And three black garments in stock. 
- When he returns the blue garment for a replacement in black 
- Then I should have three blue garments in stock 
- And two black garments in stock. 
+ 情況 2: 替換商品須回到庫存 
+ 假設顧客向我買了一件藍色衣物 
+ 而我庫存有兩件藍色衣物 和三件黑色衣物 
+ 當他退還了藍色而改買黑色衣物
+ 則我的庫存應分別有三件藍色衣物以及兩件黑色衣物
 ```
 
 除此之外还有一些好处：
