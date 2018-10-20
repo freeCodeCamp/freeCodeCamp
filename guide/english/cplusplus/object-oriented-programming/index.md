@@ -2,6 +2,9 @@
 title: Object Oriented Programming using C++
 ---
 
+## Motivation
+Before OOP, systems were developed in C using a data-driven programming approch. In which to develop the system the analyst tries to figure out the functionalities that are working in a sytem but it was not the most effective way for maintaining the system. A theory was presented to develop a system by identifiying the nouns in a system rather than the functionalitie and this theory was implemented in programming using OOP.
+
 ## Object Oriented Programming using C++
 
 Object oriented programming, OOP for short, aims to implement real world entities like inheritance, hiding and polymorphism in programming. The main aim of OOP is to bind together the data and the functions that operates on them so that no other part of code can access this data except that function.
