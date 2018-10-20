@@ -64,5 +64,6 @@ _D3_ \* не вводит новое визуальное представлен
     
 *   https://davidwalsh.name/learning-d3
     
+*   https://towardsdatascience.com/interactive-data-visualization-with-d3-js-43fc3428a27e
 
 * * *
