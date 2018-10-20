@@ -172,4 +172,5 @@ class Svm (object):
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 <a href='http://scikit-learn.org/stable/modules/svm.html' target='_blank' rel='nofollow'>Scikit-learn SVM</a>
-
+### svm in octave language:
+<a href='https://github.com/tjaskula/Coursera/tree/master/Machine%20Learning/Week%207/machine-learning-ex6/ex6'></a>
