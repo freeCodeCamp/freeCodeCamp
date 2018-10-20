@@ -74,6 +74,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
     
 *   <a href='https://www.sublimetext.com/' target='_blank' rel='nofollow'>Sublime Text</a>
 
+    Sublime Text is a cross-platform editor featuring a Python API. Free to download and evaluate, but requires a license for continued use.
 ## Blogs
 
 *   <a href='http://perfectionkills.com' target='_blank' rel='nofollow'>Perfection Kills</a>
