@@ -2,11 +2,11 @@
 title: A React Environment Using a Remote Code Repository
 localeTitle: Un entorno React utilizando un repositorio de código remoto
 ---
-Esta es la forma de crear un entorno React no de producción utilizando un repositorio de código remoto. Usaremos cdnjs.cloudflare.com 16.0.0 reaccionar, reaccionar-dom y babel-standalone 6.26.0 para lograr esto. babel-polyfill se usa para compatibilidad con navegadores antiguos.
+Esta es la forma de crear un entorno React no de producción utilizando un repositorio de código remoto. Usaremos cdnjs.cloudflare.com 16.0.0 react, react-dom y babel-standalone 6.26.0 para lograr esto. babel-polyfill se usa para compatibilidad con navegadores antiguos.
 
 \`\` \`html
 
-   Hola reaccionar
+   Hola react
 
 ReactDOM.render( <h1>Hello React</h1>, document.getElementById('helloreact'));
 
