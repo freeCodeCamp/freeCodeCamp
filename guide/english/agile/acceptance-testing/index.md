@@ -19,7 +19,7 @@ There are various forms of acceptance testing:
 > - Beta Testing
 
 ## Acceptance Criteria
-Acceptance criteria are defined on the basis of the following attributes
+Acceptance criteria are defined on the basis of the following attributes:
 
 > - Functional Correctness and Completeness
 >
