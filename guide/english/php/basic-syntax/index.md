@@ -101,3 +101,18 @@ echo "My boat is " . $coLOR . "<br>";
 </body>
 </html>
 ````
+
+# changes ; to :
+sometimes when you use php syntax and html, you need to changes ; to :
+example
+<?php if(isset($_SESSION['username'])): ?>
+  <li>
+    <a class="nav-link" href="<?php echo site_url('blog/add/'); ?> ">+ Tambah Artikel</a>
+  </li>
+<?php else: ?>
+  <li>
+    <a class="nav-link" href="<?php echo site_url('blog/login'); ?> ">Login</a>
+  </li>
+<?php endif; ?>
+
+if you use ; in first it will error cause program think there is end program, so you must use :
