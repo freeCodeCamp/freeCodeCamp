@@ -55,7 +55,21 @@ title: Data Types in R
 	[1] "one"   "two"   "three" "four"  "five"  "six"
 	[1]  TRUE  TRUE FALSE  TRUE FALSE
 
-	
+## Factor
+ Factor is a data structure that works on vectors and are used to group a predefined, finite set of values.
+ 
+ They are used widely in statistical modelling.
+ 
+ They are stored as integers and have labels associated with them.
+ 
+        > val <- c("winter","summer","monsoon","spring","autumn")
+        > seasons <- factor(val)
+        > seasons
+        > nlevels(seasons)
+        [1] winter  summer  monsoon spring  autumn 
+        Levels: autumn monsoon spring summer winter
+        [1] 5
+
 ## Matrix
  It is a two-dimensional rectangular data set. The components in a matrix also must be of the same basic type like vector. For example:
 
