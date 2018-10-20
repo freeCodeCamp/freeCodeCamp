@@ -7,7 +7,14 @@ localeTitle: استخدم HTML5 لطلب حقل
 ---
 
 ## Description
-<section id="description"> يمكنك طلب حقول نموذج محددة بحيث لا يتمكن المستخدم من إرسال النموذج الخاص بك حتى يقوم بملئها. على سبيل المثال ، إذا أردت إنشاء حقل إدخال نص مطلوب ، فيمكنك فقط إضافة السمة <code>required</code> داخل عنصر <code>input</code> ، مثل: <code>&lt;input type=&quot;text&quot; required&gt;</code> </section>
+<section id="description">
+ يمكنك طلب حقول نموذج محددة بحيث لا يتمكن المستخدم من إرسال النموذج الخاص بك حتى يقوم بملئها. على سبيل المثال ، إذا أردت إنشاء حقل إدخال نص مطلوب ، فيمكنك فقط إضافة السمة <code>required</code> 
+داخل عنصر
+ <code>input</code> 
+
+ مثل: <code>&lt;input type=&quot;text&quot; required&gt;</code> 
+</section>
+
 
 ## Instructions
 <section id="instructions"> اجعل <code>input</code> النص الخاص بك حقلًا <code>required</code> ، بحيث لا يمكن للمستخدم إرسال النموذج بدون إكمال هذا الحقل. ثم حاول إرسال النموذج دون إدخال أي نص. انظر كيف يعلمك نموذج HTML5 أن هذا الحقل مطلوب؟ </section>
