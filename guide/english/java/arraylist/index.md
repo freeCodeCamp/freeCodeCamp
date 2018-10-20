@@ -68,5 +68,8 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
   So when it comes down to choosing between the two - if speed is critical then Vectors should be considered, otherwise ArrayLists are better when it comes to storing large number of elements and accessing them efficiently.
 
+### Different between Array and the ArrayList
+The main different between the Array and the ArrayList is Array is a fixed length and the ArrayList is variable length. 
+
 ## More Information
 - [ArrayList Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html)
