@@ -4,7 +4,7 @@ title: Java
 
 **What is Java?**
 
-<a href='https://www.oracle.com/java/index.html' target='_blank' rel='nofollow'>Java</a> is a programming language developed by <a href='https://en.wikipedia.org/wiki/Sun_Microsystems' target='_blank' rel='nofollow'>Sun Microsystems</a> in 1995, which got later acquired by <a href='http://www.oracle.com/index.html' target='_blank' rel='nofollow'>Oracle</a>. It's now a full platform with lots of standard APIs, open source APIs, tools, huge developer community and is used to build the most trusted enterprise solutions by big and small companies alike. <a href='https://www.android.com/' target='_blank' rel='nofollow'>Android</a> application development is done fully with Java and its ecosystem. To know more about Java, read <a href='https://java.com/en/download/faq/whatis_java.xml' target='_blank' rel='nofollow'>this</a> and <a href='http://tutorials.jenkov.com/java/what-is-java.html' target='_blank' rel='nofollow'>this</a>.
+<a href='https://www.oracle.com/java/index.html' target='_blank' rel='nofollow'>Java</a> is an object-oriented programming language developed by <a href='https://en.wikipedia.org/wiki/Sun_Microsystems' target='_blank' rel='nofollow'>Sun Microsystems</a> in 1995, which got later acquired by <a href='http://www.oracle.com/index.html' target='_blank' rel='nofollow'>Oracle</a>. It's now a full platform with lots of standard APIs, open source APIs, tools, a huge developer community, and is used to build the most trusted enterprise solutions by big and small companies alike. <a href='https://www.android.com/' target='_blank' rel='nofollow'>Android</a> application development is done fully with Java and its ecosystem. To know more about Java, read <a href='https://java.com/en/download/faq/whatis_java.xml' target='_blank' rel='nofollow'>this</a> and <a href='http://tutorials.jenkov.com/java/what-is-java.html' target='_blank' rel='nofollow'>this</a>.
 
 ## Version
 
@@ -18,7 +18,7 @@ Java is also divided into several "Editions" :
 
 ## Installation : JDK or JRE ?
 
-Download the latest Java binaries from the <a href='http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html' target='_blank' rel='nofollow'>official website</a>. Here you may face a question, which one to download, JDK or JRE? JRE stands for Java Runtime Environment, which is the platform dependent Java Virtual Machine to run Java codes, and JDK stands for Java Development Kit, which consists of most of the development tools, most importantly the compiler `javac`, and also the JRE. So, for an average user JRE would be sufficient, but since we would be developing with Java, we would download the JDK.
+Download the latest Java binaries from the <a href='http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html' target='_blank' rel='nofollow'>official website</a>. Here you may be faced with a question: which one should I download, JDK or JRE? JRE stands for Java Runtime Environment, which is the platform dependent Java Virtual Machine to run Java codes. JDK stands for Java Development Kit, which consists of most of the development tools, most importantly the compiler `javac`, and also the JRE. So, for an average user JRE would be sufficient, but since we would be developing with Java, we would download the JDK.
 
 ## Platform specific installation instructions
 
@@ -76,7 +76,7 @@ Verify Java has been properly installed in your system by opening Command Prompt
 
 ## JVM
 
-Ok now since we are done with the installations, let's begin to understand first the nitty gritty of the Java ecosystem. Java is an <a href='http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language' target='_blank' rel='nofollow'>interpreted and compiled</a> language, that is the code we write gets compiled to bytecode and interpreted to run . We write the code in .java files, Java compiles them into <a href='https://en.wikipedia.org/wiki/Java_bytecode' target='_blank' rel='nofollow'>bytecodes</a> which are run on a Java Virtual Machine or JVM for execution. These bytecodes typically has a .class extension.
+Ok now since we are done with the installations, let's begin to understand first the nitty gritty of the Java ecosystem. Java is an <a href='http://stackoverflow.com/questions/1326071/is-java-a-compiled-or-an-interpreted-programming-language' target='_blank' rel='nofollow'>interpreted and compiled</a> language, that is the code we write gets compiled to bytecode and interpreted to run. We write the code in .java files, Java compiles them into <a href='https://en.wikipedia.org/wiki/Java_bytecode' target='_blank' rel='nofollow'>bytecodes</a> which are run on a Java Virtual Machine or JVM for execution. These bytecodes typically has a .class extension.
 
 Java is a pretty secure language as it doesn't let your program run directly on the machine. Instead, your program runs on a Virtual Machine called JVM. This Virtual Machine exposes several APIs for low level machine interactions you can make, but other than that you cannot play with machine instructions explicitely. This adds a huge bonus of security.
 

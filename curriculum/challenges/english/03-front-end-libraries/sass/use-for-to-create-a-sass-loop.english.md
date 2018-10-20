@@ -10,7 +10,7 @@ challengeType: 0
 ## Description
 <section id='description'>
 The <code>@for</code> directive adds styles in a loop, very similar to a <code>for</code> loop in JavaScript.
-<code>@for</code> is used in two ways: "start through end" or "start to end". The main difference is that "start to end" <em>excludes</em> the end number, and "start through end" <em>includes</em> the end number.
+<code>@for</code> is used in two ways: "start through end" or "start to end". The main difference is that the "start <b>to</b> end" <em>excludes</em> the end number as part of the count, and "start <b>through</b> end" <em>includes</em> the end number as part of the count.
 Here's a start <b>through</b> end example:
 <blockquote>@for $i from 1 through 12 {<br>&nbsp;&nbsp;.col-#{$i} { width: 100%/12 * $i; }<br>}</blockquote>
 The <code>#{$i}</code> part is the syntax to combine a variable (<code>i</code>) with text to make a string. When the Sass file is converted to CSS, it looks like this:

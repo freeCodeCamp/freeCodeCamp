@@ -1,5 +1,5 @@
 ---
-title:While-loop
+title: While-loop
 ---
 
 A while loop statement repeatedly executes a target statement as long as a given condition is true.
@@ -18,7 +18,7 @@ Example:
 ```C++
 #include <iostream>
 using namespace std;
- 
+
 int main () {
    // Local variable declaration:
    int a = 10;
@@ -28,7 +28,7 @@ int main () {
       cout << "value of a: " << a << endl;
       a++;
    }
- 
+
    return 0;
 }
 ```

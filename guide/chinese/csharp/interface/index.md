@@ -1,5 +1,5 @@
 ---
-title : Interface 
+title: Interface
 localeTitle: 接口
 ---
 * * *
@@ -29,11 +29,11 @@ localeTitle: 接口
 接口示例：
 
 ```csharp
-public Interface IUserFavoriteFood 
- { 
-  void AddFood(); 
-  Task<User> EatFavoriteFood(int id); 
- } 
+public Interface IUserFavoriteFood
+ {
+  void AddFood();
+  Task<User> EatFavoriteFood(int id);
+ }
 ```
 
 * * *
@@ -41,19 +41,19 @@ public Interface IUserFavoriteFood
 接口继承和实现：
 
 ```csharp
-public class UserHungry : IUserFavoriteFood 
- { 
-  public AddFood() 
-  { 
-    // Implementation: 
-    // A method to add food. 
-  } 
- 
-  public Task<User> EatFavoriteFood(int id) 
-  { 
-    // Implementation: 
-    // A method to Eat food by id. 
-  } 
- } 
+public class UserHungry : IUserFavoriteFood
+ {
+  public AddFood()
+  {
+    // Implementation:
+    // A method to add food.
+  }
+
+  public Task<User> EatFavoriteFood(int id)
+  {
+    // Implementation:
+    // A method to Eat food by id.
+  }
+ }
 
 ```

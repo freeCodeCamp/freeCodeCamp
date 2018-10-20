@@ -13,7 +13,7 @@ function oldOne() {
 }
 
 // New Syntax
-var newOne = () => {
+const newOne = () => {
  console.log("Hello World..!");
 }
 ```
@@ -21,10 +21,10 @@ var newOne = () => {
 The new syntax may be confusing a little bit. But I will try to explain the syntax.
 There are two parts of the syntax.
 
-1. var newOne = ()
+1. const newOne = ()
 2. => {}
 
-The first part is just declaring a variable and assigning the function (i.e) () to it. It just says the variable is actually a function.
+The first part is just declaring a variable and assigning the function (i.e) () to it. It just says the variable is actually a function. The `const` keyword is used to indicate that the function won't be reassigned. Refer [this](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/guide/english/javascript/es6/let-and-const/index.md) to learn more about `const` and `let`.
 
 Then the second part is declaring the body part of the function. The arrow part with the curly braces defines the body part.
 
