@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semilla del Desafío
 <section id='challengeSeed'>
 
 <div id='html-seed'>
