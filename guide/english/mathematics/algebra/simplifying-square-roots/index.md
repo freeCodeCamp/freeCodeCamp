@@ -24,5 +24,5 @@ Using &radic;49 as an example:
 
 #### More Information:
 
-* [Wikihow, simplifying a square root](https://www.wikihow.com/Simplify-a-Square-Root)
-* [Khan Academy](https://www.khanacademy.org/math/algebra/rational-exponents-and-radicals/alg1-simplify-square-roots/a/simplifying-square-roots-review)
+* [Wikihow, on simplifying a square root](https://www.wikihow.com/Simplify-a-Square-Root)
+* [Khan Academy, a slightly different approach](https://www.khanacademy.org/math/algebra/rational-exponents-and-radicals/alg1-simplify-square-roots/a/simplifying-square-roots-review)
