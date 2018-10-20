@@ -269,7 +269,7 @@ The idea behind animating the host component is pretty much the same as animatin
 
 #### Conclusion
 
-This covers the basics of animating with Angular. Angular makes setting up animations very easy using the Angular CLI. Getting started with your first animation only requires a single component class. Remember, animations scope to the component’s template. Export your transitions array from a separate file if you plan to use it across multiple components.
+This covers the basics of animating with Angular. Angular makes setting up animations very easy using the Angular CLI. Getting started with your first animation only requires a single component class. Remember, animations scope to the component’s template. Export your transitions array from a separate file if you plan to use it across multiple components. Learning Angular will be a powerful tool to encounter the future with.
 
 Every animation utility/method exports from `@angular/animations`. They all work together to provide a robust system of animation inspired from CSS. There are more methods beyond what this article could cover.
 
