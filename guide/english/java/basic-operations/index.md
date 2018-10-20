@@ -16,6 +16,9 @@ Java supports the following operations on variables:
 While most of the operations are self-explanatory, the Conditional (Ternary) Operator works as follows:
 
 `expression that results in boolean output ? return this value if true : return this value if false;`
+The Assignment operators (`+=`, `-=`, `*=`, `/=`, `%=`, `<<=`, `>>=`, `&=`, `^=`, `|=`) are just a short form which can be extended. 
+Example: 
+(a += b) do the same thing what (a = a + b) do! 
 
 Example:
 True Condition:
