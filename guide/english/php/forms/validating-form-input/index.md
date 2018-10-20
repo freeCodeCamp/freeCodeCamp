@@ -11,3 +11,8 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
+#validating form with codeiniter
+in codeigniter you can set rule for validating form input
+example
+        $this->form_validation->set_rules('title', 'Judul', 'required');
+firstly make this form validation set rules and choose what form you want make rules (title), and then rules for validation. in here i use required 
