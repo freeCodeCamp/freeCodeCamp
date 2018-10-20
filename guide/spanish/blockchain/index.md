@@ -36,6 +36,7 @@ A partir de 2016, las implementaciones de blockchain 2.0 continúan requiriendo 
 
 *   [¿WTF es el blockchain?](https://hackernoon.com/wtf-is-the-blockchain-1da89ba19348)
 *   [Blockchain: la revolución para la que no estamos preparados](https://medium.freecodecamp.org/blockchain-is-our-first-22nd-century-technology-d4ad45fca2ce)
+*   [¿Qué es el blockchain? (Resumen)](https://www.youtube.com/watch?v=l2QAy1kKI94)
 *   [Cómo el blockchain está cambiando dinero y negocio | Don Tapscott (video de YouTube)](https://www.youtube.com/watch?v=Pl8OlkkwRpc)
 *   [Introducción a Bitcoin, Ethereum y Smart Contratos](https://github.com/WizardOfAus/WizardsEthereumWorkshop)
 *   [Trabajos académicos blockchain](https://github.com/decrypto-org/blockchain-papers)
