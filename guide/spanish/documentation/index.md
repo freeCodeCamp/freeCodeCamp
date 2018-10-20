@@ -11,3 +11,5 @@ Puede convertirse en una idea extremadamente importante hacer un hábito de come
 ![Un ejemplo de comentar en el mundo real.](https://cdn-images-1.medium.com/max/1620/1*Pyxsc7Uixbitv5myywaA_Q.jpeg)
 
 #### Más información:
+
+![Documentar, de manera ágil, pero documentar](http://www.javiergarzas.com/2010/03/documentacion-agil.html)
