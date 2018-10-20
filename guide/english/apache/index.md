@@ -21,3 +21,7 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+#### On macOS (Using Homebrew)
+```
+brew install httpd
+```
