@@ -9,7 +9,11 @@ For this guide we'll discuss the UNION Operator section of the SQL statement.
 
 The UNION Operator is used to combine the results of multiple select statements into one result set.
 
-The SQL statements must have the same number of columns in their Select Statement.
+The SQL statements must have the same number of columns in their Select Statement. 
+The columns data types and their position in each Select statement should match. 
+Each Select statement should have the same number of columns.
+
+The above three statements are applicable to all SET Operators in SQL.
 
 ### Basic Example
 
