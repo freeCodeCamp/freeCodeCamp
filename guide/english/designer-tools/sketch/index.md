@@ -22,6 +22,7 @@ Sketch is designed to build digital products rather than editing photos and prin
 
 ### Useful Plugins for Sketch
 
+- [Sketch Plugin Manager - Helps you keep your plugins up-to-date and allows you to browse through and install from directory of plugins available in Github](https://mludowise.github.io/Sketch-Plugin-Manager/)
 - [Zeplin - Generates and exports design assets and style guides](https://zeplin.io/)
 - [Sketch IconFont - Helps you easily insert and manage icons from icon fonts](https://github.com/keremciu/sketch-iconfont)
 - [Mirr.io - Preview prototypes in any browser in any device from Sketch](https://mirr.io/)
