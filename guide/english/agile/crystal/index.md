@@ -28,4 +28,5 @@ It takes different strokes to move the world, and according to Crystal, it takes
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
-[Wikiversity Article] https://en.wikiversity.org/wiki/Crystal_Methods
+* [Wikiversity Article] https://en.wikiversity.org/wiki/Crystal_Methods
+* [SCRUMstudy - What is Crystal] http://blog.scrumstudy.com/what-is-crystal/
