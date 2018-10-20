@@ -6,6 +6,8 @@ localeTitle: HTML
 
 O HyperText Markup Language (HTML) é uma linguagem de marcação usada para construir documentos on-line e é a base da maioria dos sites atualmente. Uma linguagem de marcação como HTML nos permite 1) criar links para outros documentos, 2) estruturar o conteúdo em nosso documento e 3) atribuir contexto e significado ao conteúdo de nosso documento.
 
+A linguagem foi criada no ano de 1990 baseada em uma outra linguagem chamada SGML. A diferença entre elas é que o HTML permite a ligação de páginas. Nos seus primeiros cinco anos, sofreu muitas alterações e era controlada pela CERN e IETF. Após 1995, passou a ser controlada pela entidade que regula os padrões da Web chamada W3C fundada em Agosto de 1994.
+
 Um documento HTML tem dois aspectos para isso. Ele contém informações estruturadas (Marcação) e links de texto (HyperText) para outros documentos. Nós estruturamos nossas páginas usando [elementos HTML](#) . São construções da linguagem que fornecem [estrutura](#) e [significado](#) em nosso documento para o navegador e para o elemento links para outros documentos em toda a internet.
 
 A internet foi originalmente criada para armazenar e apresentar documentos estáticos (imutáveis). Os aspectos do HTML discutidos acima foram vistos perfeitamente nesses documentos que não tinham design e estilo. Eles apresentaram informações estruturadas que continham links para outros documentos.
