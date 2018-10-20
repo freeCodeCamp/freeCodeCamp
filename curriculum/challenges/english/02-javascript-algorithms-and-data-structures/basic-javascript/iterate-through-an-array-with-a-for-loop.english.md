@@ -28,7 +28,7 @@ tests:
   - text: You should use a <code>for</code> loop to iterate through <code>myArr</code>
     testString: 'assert(code.match(/for\s*\(/g).length > 1 && code.match(/myArr\s*\[/), "You should use a <code>for</code> loop to iterate through <code>myArr</code>");'
   - text: Do not set <code>total</code> to 20 directly
-    testString: 'assert(!code.match(/total[\s\+\-]*=\s*[^0].*;?/g), "Do not set <code>total</code> to 20 directly");'
+    testString: 'assert(!code.match(/total[\s+-]=\s([^0]|0[xbo]?\d+)/g), "Do not set <code>total</code> to 20 directly");'
 
 ```
 
