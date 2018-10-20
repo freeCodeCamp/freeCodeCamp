@@ -81,3 +81,5 @@ The above code creates a file *output.txt* and add content *New content added* t
 * [Node.js API](https://nodejs.org/api/fs.html#fs_file_system)
 * [W3 Schools](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
 
+NodeJs is very handy at creating react-app.
+
