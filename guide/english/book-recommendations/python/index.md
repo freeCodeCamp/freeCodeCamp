@@ -46,7 +46,7 @@ You'll learn many of the first princliples for data science tools and how algori
 
 - [O'Reilly](http://shop.oreilly.com/product/0636920033400.do)
 - [Amazon](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X)
-- ISBN-10: 149190142X
+- ISBN-10: 149190142X-
 - ISBN-13: 978-1491901427
 
 *Automate The Boring Stuff With Python*
@@ -60,6 +60,15 @@ You'll learn many of the first princliples for data science tools and how algori
 - [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
+
+
+### Python 3 for Absolute Beginners
+- Amazing Book to start with python for beginners.
+- [Amazon](https://www.amazon.in/Python-Absolute-Beginners-Tim-Hall/dp/1430216328)
+- ISBN-10: 9781430216322
+- ISBN-13: 978-1430216322
+
+
 
 #### Other Resources
 
