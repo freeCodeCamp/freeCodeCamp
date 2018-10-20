@@ -38,7 +38,7 @@ padding: 5px 1em 0 1em;
 ## Where in box model
 The padding property in CSS defines the innermost portion of the box model, creating space around an element's content, inside of any defined margins and/or borders.
 
-![The CSS Box Model](https://www.w3.org/TR/css3-box/box.png)
+![The CSS Box Model](https://i.imgur.com/S0QPDi4.png)
 
 
 ## Browser Support
