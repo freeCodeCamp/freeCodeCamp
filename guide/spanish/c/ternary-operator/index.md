@@ -11,10 +11,12 @@ Aquí hay un ejemplo simple de toma de decisiones usando **if** y **else** :
 ```c
 int a = 10, b = 20, c; 
  
- if (a < b) { 
+ if (a < b) 
+ { 
     c = a; 
  } 
- else { 
+ else
+ { 
     c = b; 
  } 
  
@@ -53,13 +55,19 @@ El operador ternario se puede anidar también igual que las instrucciones anidad
 
 ```c
 int a = 1, b = 2, ans; 
- if (a == 1) { 
-    if (b == 2) { 
+ if (a == 1) 
+ { 
+    if (b == 2) 
+    { 
         ans = 3; 
-    } else { 
+    }
+    else 
+    { 
         ans = 5; 
     } 
- } else { 
+ } 
+ else 
+ { 
     ans = 0; 
  } 
  printf ("%d\n", ans); 
