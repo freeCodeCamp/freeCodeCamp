@@ -3,7 +3,7 @@ title: CSS3 Backgrounds
 ---
 ## CSS3 Backgrounds
 
-The CSS `background` shorthand property is used to define multiples properties like :
+The CSS `background` shorthand property is used to define multiple properties such as :
 
 `background-color`, `background-image`, `background-repeat`, `background-attachment` and `background-position`
 
@@ -17,8 +17,8 @@ The `background-color` property specifies the background color of an element.
 
 ### Background Image
 
-The `background-image` property specifies an image to use as background of an element.
-By default, the image repeat itself to covers the entire surface of the element.
+The `background-image` property specifies an image to use as background for an element.
+By default, the image repeats itself to cover the entire surface of the element.
 
 ```css
    background-image: url("GitHub-Mark.png");
@@ -34,7 +34,7 @@ If you want to set an axis, like X axis, use `background-repeat` property type:
    background-repeat: repeat-x;
 ```
 
-But sometimes you don't want to have your background on all the surface, you've to specify it by typing:
+But sometimes you don't want to have your background cover the whole surface, you have to specify this by typing:
 
 ```css
    background-image: url("GitHub-Mark.png");
