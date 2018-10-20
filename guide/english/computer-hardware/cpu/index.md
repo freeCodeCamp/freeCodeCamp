@@ -3,6 +3,8 @@ title: CPU
 ---
 ## CPU
 
+![CPU](https://upload.wikimedia.org/wikipedia/commons/d/d8/ABasicComputer.gif)
+
 The Central Processing Unit (CPU) serves as the "brain" of a computer, allowing it to perform essential computational tasks.
 
 CPUs are integrated circuits, which are complex circuits embedded on a single chip. They include registers, which store single values, and input/output pins. These pins allow them to talk to the rest of the computer. Due to the continued advancement of CPU technology, many computers today utilize a multi-processing unit. Multi-processors are single chips that contain two or more CPUs or "Cores" that allow for increased processing capabilities.    
