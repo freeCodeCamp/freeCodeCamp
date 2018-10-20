@@ -40,6 +40,16 @@ So you've covered the basics of Python?  You're now ready to discover the in-dep
 - ISBN-10: 0596158106
 - ISBN-13: 978-0596158101
 
+#### Head First Python: A Brain-Friendly Guide 2nd Edition
+ 
+  For a complete beginner guide to dive into python.You’ll quickly grasp Python’s fundamentals, working with the built-in data structures and functions. Then you’ll move on to building your very own webapp, exploring database management, exception handling, and data wrangling. If you’re intrigued by what you can do with context managers, decorators, comprehensions, and generators, it’s all here. This second edition is a complete learning experience that will help you become a bonafide Python 
+
+-[Amazon](https://www.amazon.com/Programming-Python-Powerful-Object-Oriented/dp/0596158106)
+- [O'Reilly](http://shop.oreilly.com/product/0636920003434.do)
+- ISBN-10: 9781491919538
+- ISBN-13: 978-1491919538
+
+
 #### Data Science from Scratch: First Principles with Python
 
 You'll learn many of the first princliples for data science tools and how algorithms work by implementing these from scratch.  If you have an aptitude for maths and some coding skills, you'll have a crash course in Python that includes the basics of algebra, statistics, and probability.  You'll learn how to implement models such as k-nearest Neighbors, Naive Bayes, linear and logistic regression, decision trees, neural networks and clustering. Discover recommender systems, natural lanuage processing, network analysis, MapReduce and databases.
