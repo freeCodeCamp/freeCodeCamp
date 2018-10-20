@@ -33,3 +33,6 @@ WebKit (except for the Chromium project) implements the JavaScriptCore engine.
 ## JavaScript Frameworks
 Most frequently used JavaScript Frameworks are React JS, Angular JS, Create JS, jQuery, nodeJS etc. 
 For details follow this [link](https://javascriptreport.com/the-ultimate-guide-to-javascript-frameworks/).
+
+#method for learning javascript
+its great idea for make code editor simulation for making people know about program. but i think making web game with javascript will trigger other for learning about javascript too
