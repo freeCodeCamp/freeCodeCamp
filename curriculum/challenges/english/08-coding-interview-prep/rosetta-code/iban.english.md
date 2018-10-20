@@ -29,18 +29,18 @@ Write a function that takes IBAN string as parameter. If it is valid return true
 tests:
   - text: <code>isValid</code> should be a function.
     testString: assert(typeof isValid=='function','<code>isValid</code> should be a function.');
-  - text: <code>isValid("'+tests[0]+'")</code> should return a boolean.
-    testString: assert(typeof isValid(tests[0])=='boolean','<code>isValid("'+tests[0]+'")</code> should return a boolean.');
-  - text: <code>isValid("'+tests[0]+'")</code> should return <code>true</code>.
-    testString: assert.equal(isValid(tests[0]),true,'<code>isValid("'+tests[0]+'")</code> should return <code>true</code>.');
-  - text: <code>isValid("'+tests[1]+'")</code> should return <code>false</code>.
-    testString: assert.equal(isValid(tests[1]),false,'<code>isValid("'+tests[1]+'")</code> should return <code>false</code>.');
-  - text: <code>isValid("'+tests[2]+'")</code> should return <code>false</code>.
-    testString: assert.equal(isValid(tests[2]),false,'<code>isValid("'+tests[2]+'")</code> should return <code>false</code>.');
-  - text: <code>isValid("'+tests[3]+'")</code> should return <code>false</code>.
-    testString: assert.equal(isValid(tests[3]),false,'<code>isValid("'+tests[3]+'")</code> should return <code>false</code>.');
-  - text: <code>isValid("'+tests[4]+'")</code> should return <code>true</code>.
-    testString: assert.equal(isValid(tests[4]),true,'<code>isValid("'+tests[4]+'")</code> should return <code>true</code>.');
+  - text: <code>isValid("GB82 WEST 1234 5698 7654 32")</code> should return a boolean.
+    testString: assert(typeof isValid('GB82 WEST 1234 5698 7654 32')=='boolean','<code>isValid("GB82 WEST 1234 5698 7654 32")</code> should return a boolean.');
+  - text: <code>isValid("GB82 WEST 1234 5698 7654 32")</code> should return <code>true</code>.
+    testString: assert.equal(isValid('GB82 WEST 1234 5698 7654 32'),true,'<code>isValid("GB82 WEST 1234 5698 7654 32")</code> should return <code>true</code>.');
+  - text: <code>isValid("GB82 WEST 1.34 5698 7654 32")</code> should return <code>false</code>.
+    testString: assert.equal(isValid('GB82 WEST 1.34 5698 7654 32'),false,'<code>isValid("GB82 WEST 1.34 5698 7654 32")</code> should return <code>false</code>.');
+  - text: <code>isValid("GB82 WEST 1234 5698 7654 325")</code> should return <code>false</code>.
+    testString: assert.equal(isValid('GB82 WEST 1234 5698 7654 325'),false,'<code>isValid("GB82 WEST 1234 5698 7654 325")</code> should return <code>false</code>.');
+  - text: <code>isValid("GB82 TEST 1234 5698 7654 32")</code> should return <code>false</code>.
+    testString: assert.equal(isValid('GB82 TEST 1234 5698 7654 32'),false,'<code>isValid("GB82 TEST 1234 5698 7654 32")</code> should return <code>false</code>.');
+  - text: <code>isValid("SA03 8000 0000 6080 1016 7519")</code> should return <code>true</code>.
+    testString: assert.equal(isValid('SA03 8000 0000 6080 1016 7519'),true,'<code>isValid("SA03 8000 0000 6080 1016 7519")</code> should return <code>true</code>.');
 
 ```
 
@@ -55,16 +55,6 @@ tests:
 function isValid (iban) {
   // Good luck!
 }
-```
-
-</div>
-
-
-### After Test
-<div id='js-teardown'>
-
-```js
-console.info('after the test');
 ```
 
 </div>
