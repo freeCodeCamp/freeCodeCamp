@@ -11,6 +11,9 @@ This section will focus on various aspects of working in tech. We will discuss t
 
 The field of computer security is growing at a rapid rate every year, in a report done recently it is estimated that by 2021 their will be 3.5 million jobs unfilled. The demand is due to the increase in cyber attacks and with how much data is being created everyday, data is so valuable nowadays and it needs to be kept secure and safe.
 
+The field of Computer security has a wide variety of opportunities. There are two primary approaches to a career in Information Security (Info-Sec). Red Team which focuses on testing and preparing users and businesses for an attack without the potential loss or harm to their environment from a real attack. Blue Team focuses on defense and making sure that attackers are kept at bay.  
+
+For More Information:(https://www.cybrary.it/2015/02/red-team-vs-blue-team-review/)
 ### Examples of Tech related jobs
 - Software Developer
 - Computer Systems Analyst
