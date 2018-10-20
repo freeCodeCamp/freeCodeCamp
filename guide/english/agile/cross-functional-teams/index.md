@@ -18,11 +18,11 @@ Each member offers an alternative perspective to the problem and potential solut
 
 * improve co-ordination and integration
 
-* work accross orgnisational boundaries
+* work across organizational boundaries
 
 * improve efficiency of the team by increasing productivity
 
-* Achieve customer satisfaction by working for the same goal
+* Achieve customer satisfaction by working toward the same goal
 
 Some researchers have viewed cross-functional interactions as cooperative or competitive in nature, while others have argued that organization’s functional areas are often forced to compete and cooperate simultaneously with one another (“coopetition”) and it is critical to understand how these complex relationships interplay and affect firm performance.
 
