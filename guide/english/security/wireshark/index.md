@@ -6,7 +6,7 @@ title: Wireshark
 Wireshark is an open source network analyzer application that is available for Linux, macOS and Windows. It allows you to "sniff" [packets](../../network-engineering/packets/) being sent to and from different nodes on a network.
 
 #### Why use Wireshark?
-Wireshark is a powerful tool, you might use it to:
+Wireshark is a powerful tool you can use to:
 + Learn about how different protocols are used in networking
 + Troubleshoot network problems
 + Analyze traffic going through your network
