@@ -4,7 +4,7 @@ title: Stakeholders
 ## Stakeholders
 
 The Stakeholders are the people that will benefit from your project. It is up to the Product Owner to understand the outcome required by the Stakeholders, and to communicate that need to the Delivery Team.
-Stakeholders may be made up from any of the following
+Stakeholders may be made up from any of the following:
 - Users
 - Customers
 - Managers
@@ -12,7 +12,7 @@ Stakeholders may be made up from any of the following
 
 Their participation in the project is essential for success.
 
-For example, when your team is performing the Sprint Review meetings, the demonstration of the project is for the stakeholders, and their feedback is captured and added to the backlog.
+For example, when your team is performing the Sprint Review meetings, the demonstration of the project is for the stakeholders, and their feedback is captured and added to the backlog. It is important to include the stakeholders in the Sprint Review meetings so that you know that the product you are building is what the stakeholders want and allows you to make changes if needed earlier in the cycle. 
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
