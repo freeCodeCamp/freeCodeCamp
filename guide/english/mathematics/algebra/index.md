@@ -18,3 +18,4 @@ Linear algebra: the study of vector spaces and linear mappings.
 #### Resources:  
 [Definition](https://www.merriam-webster.com/dictionary/algebra)  
 [Wolfram Mathworld](http://mathworld.wolfram.com/Algebra.html)
+[Brilliant](https://brilliant.org/courses/#math-foundational)
