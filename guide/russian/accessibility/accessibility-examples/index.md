@@ -61,6 +61,9 @@ localeTitle: Примеры доступности
 
 Эти стили CSS скрывают ссылку по умолчанию и отображают только ссылку, когда она получает фокус клавиатуры. Для получения дополнительной информации посетите [a11yproject](http://a11yproject.com/posts/how-to-hide-content) и этот [пост в блоге](http://hugogiraudel.com/2016/10/13/css-hide-and-seek/) .
 
+### Дополнительная информация:
+[MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility)
+
 ### Доступные таблицы
 
 ### Доступные вкладки
