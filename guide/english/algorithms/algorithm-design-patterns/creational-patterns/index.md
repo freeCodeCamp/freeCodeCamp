@@ -18,4 +18,4 @@ Five well-known design patterns that are parts of creational patterns are:
 5. **Singleton pattern**, which ensures that a class only has one instance, and provides a global point of access to it.
 
 ### Sources 
-[https://en.wikipedia.org/wiki/Creational_pattern](https://en.wikipedia.org/wiki/Creational_pattern)
+[Creational patterns - Wikipedia](https://en.wikipedia.org/wiki/Creational_pattern)
