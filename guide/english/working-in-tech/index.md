@@ -23,11 +23,11 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 ### Books
 
-[About Face: The Essentials of Interaction Design](https://amzn.to/2uwtugk)
+[About Face: The Essentials of Interaction Design](https://www.amazon.com/About-Face-Essentials-Interaction-Design-dp-1118766571/dp/1118766571/ref=mt_paperback?_encoding=UTF8&me=&qid=)
 
-[Thinking in Systems: A Primer](https://amzn.to/2u6FbJF)
+[Thinking in Systems: A Primer](https://www.amazon.com/gp/product/1603580557/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=mickensblo-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1603580557&linkId=f9df029ccb3158b5a5eb6b1727ceb4fa)
 
-[Thinking, Fast and Slow](https://amzn.to/2tnnlTN)
+[Thinking, Fast and Slow](https://www.amazon.com/gp/product/0374533555/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=mickensblo-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=0374533555&linkId=9289d11500e230bc095973d5fb34766f)
 
 [Learn You a Haskell for Great Good!](https://amzn.to/2veOjdv)
 
@@ -35,7 +35,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 
 Hooked: How to Build Habit-Forming Products: amzn.to/2bVG5AQ
 
-"Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg http://amzn.to/2igRgoq
+"Lean In: Women, Work, and the Will to Lead" by Sheryl Sandberg https://www.amazon.com/Lean-Women-Work-Will-Lead/dp/0385349947/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1539996815&sr=1-1
 
 To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading
 
