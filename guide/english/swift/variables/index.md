@@ -38,6 +38,6 @@ To test if your variables has the correct value, use `print()`.
   // This prints 50
 ```
 
-#### More Information:
+## More Information
 
 * [The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID310)

@@ -1,9 +1,9 @@
 ---
 title: View Controllers
 ---
-## View Controllers
+# View Controllers
 
-This is an example of what a basic view in Swift looks like. 
+This is an example of what a basic view in Swift looks like.
 
  ```Swift
   import UIKit
@@ -18,6 +18,11 @@ This is an example of what a basic view in Swift looks like.
       }  
   }
  ```
+
 1. Loads view after the controller loads.
 2. Overrides the UIViewController class. This is a necessary step for any view controller.
 3. Sets background color to white.
+
+## More Information
+
+- [Apple Documentation](https://developer.apple.com/documentation/uikit/view_controllers)
