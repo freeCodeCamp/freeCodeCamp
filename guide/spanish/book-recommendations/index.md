@@ -73,7 +73,17 @@ _Cracking the Coding Interview: 150 Preguntas y soluciones de programación_ por
 *   [Sonrisa de amazon](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 *   ISBN-13: 978-0984782802
 
-## Sonido metálico
+## BASH
+
+*La línea de comando de Linux: Una Introducción Completa 1ra Edición por William E. Shotts Jr*
+- [Amazon](https://www.amazon.com/The-Linux-Command-Line-Introduction/dp/1593273894)
+- ISBN-13: 978-1593273897
+
+*Aprendiendo la Shell de BASH: Programación de la Shell de  Unix por Cameron Newham*
+- [Amazon](https://www.amazon.com/Learning-bash-Shell-Programming-Nutshell/dp/0596009658)
+- ISBN-13: 978-0596009656
+
+## Lenguaje C
 
 _El lenguaje de programación C_ por Brian W. Kernighan y Dennis M. Ritchie
 
@@ -82,8 +92,18 @@ _El lenguaje de programación C_ por Brian W. Kernighan y Dennis M. Ritchie
 
 _Un libro sobre C: Programación en C_
 
-*   [Amazonas](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
+*   [Amazon](https://www.amazon.com/Book-Programming-4th-Al-Kelley/dp/0201183994/ref=cm_cr_arp_d_bdcrb_top?ie=UTF8)
 *   ISBN-13: 978-0201183993
+
+## C#
+
+*C# 6.0 en Resúmen: La Referencia Definitiva 6ta Edición* por Joseph Albahari  (Autor), Ben Albahari (Autor)
+- https://www.amazon.com/C-6-0-Nutshell-Definitive-Reference/dp/1491927062/ref=sr_1_2?s=books&ie=UTF8&qid=1539643378&sr=1-2&keywords=C%23+6.0+in+a+nutshell
+- ISBN-13: 978-1491927069
+
+*Pro C# 7: Con .NET y .NET Core – Nov 21 2017* por Andrew Troelsen (Autor), Philip Japikse (Autor)
+- https://www.amazon.com/Pro-NET-Core-Andrew-Troelsen/dp/1484230175/ref=sr_1_1?s=books&ie=UTF8&qid=1539643534&sr=1-1&keywords=Pro-NET-Core-Andrew-Troelsen
+- ISBN-13: 978-1484230176
 
 ## Entrevista de codificación
 
