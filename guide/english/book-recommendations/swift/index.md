@@ -4,7 +4,7 @@ title: Books on Swift
 
  ### List of Books
  
- *App Development with Swift - Swift 4 Edition*
+ #### App Development with Swift - Swift 4 Edition
  
  -For Who? Beginners, Intermediates
  -Covers: iOS development tools, basic programming concepts and industry best practices
