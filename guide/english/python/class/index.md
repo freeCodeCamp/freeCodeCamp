@@ -97,6 +97,15 @@ x = Foo()
 x.__privatenum  # gives following error : 'Foo' object has no attribute '__privatenum'
  
 ```
-
-
+### self referentiable classes 
+'''
+class a:
+    def __init__(self,m):
+        self.k=m
+    def compare(self,obj):
+        return self.k=obj.k
+f = a(10)
+g = a(10)
+print(f.compare(g))
+'''
 
