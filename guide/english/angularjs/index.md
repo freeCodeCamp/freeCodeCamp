@@ -30,3 +30,6 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+
+**Getting Started: Building your own App**:
+https://docs.angularjs.org/tutorial
