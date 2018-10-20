@@ -5,16 +5,16 @@ title: SQL Create Table
 
 ## Introduction
 
-This guide is an overview to the basics of the SQL `CREATE TABLE` functions. 
+This guide is a basic overview of the SQL `CREATE TABLE` function. 
 
-We will be using MySQL for all examples throughout these freeCodeCamp SQL guides. MySQL is a used frequently on websites for the backend database, 2) it's free, and is fun and easy to use.
+We will be using MySQL for all examples throughout this freeCodeCamp SQL guide because MySQL is commonly used for many websites' backend database and is free, fun, and easy to use.
 
 ## Covered in this Guide
 
 * Creating a schema, the container for all our database objects.
 * Create a table so we have something to alter. 
-* Creating a table by importing a CSV file and altering that table
-* Creating a table using the MySQL workbench tool
+* Creating a table by importing a CSV file and altering that table.
+* Creating a table using the MySQL workbench tool.
 
 We do most of this work with SQL statements in the MySQL workbench scripting tool.  We will also see how to Create a table using the workbench interface instead of with SQL statements.
 
@@ -50,17 +50,17 @@ We’ll create a Student Table.
 
 The steps will be: 
 
-1. make sure we don’t have the table already 
+1. Ensure we don’t have the table already.
 
 
 
 
-2. create the table 
-3. insert the test data.
+2. Create the table.
+3. Insert test data.
 
-* Data Types: the student name is a character field limited to 90 characters
-* The student ID is a number (integer) (range of -2147483648 to 2147483647). This will be the primary key for the table and will auto increment when a record is added.
-* There will also be two "time-stamp" fields to play with as well
+* Data Types: the student name is a character field limited to 90 characters.
+* The student ID is a number (specifically, an integer, with a range of -2147483648 to 2147483647). This will be the primary key for the table and will auto-increment when a record is added.
+* There will also be two "time-stamp" fields to play with.
 
 Create statement and display of results from execution;
 
@@ -119,7 +119,7 @@ You’ll see completion status, review and click FINISH
 
 ## Other Material
 
-There lots more detail to cover this topic so install MySQL and have fun!
+There is a lot more detail to cover, so install MySQL and have fun!
 
 ### Where to get MySQL
 
