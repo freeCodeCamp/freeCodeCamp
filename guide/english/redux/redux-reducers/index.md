@@ -30,7 +30,7 @@ Now to make changes to the state you use a reducer. Here is an example code of a
  }
 
 ```
-What this todoReducer is doing is that it takes in the current state and the action that was triggered and then returns a new state. Here we used the es6 default parameter syntax to assign a default value to the state array. The action object for the above reducer may look like the following:
+What this todoReducer is doing is that it takes in the current state and the action that was triggered and then returns a new state. Here we used the ES6 default parameter syntax to assign a default value to the state array. The action object for the above reducer may look like the following:
 ```javascript
 {
  type: 'ADD_TODO',
