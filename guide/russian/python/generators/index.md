@@ -14,29 +14,29 @@ def my_generator():
     yield 'world' 
     yield '!' 
  
- for item in my_generator(): 
+for item in my_generator(): 
     print(item) 
  
- # output: 
- # hello 
- # world 
- # ! 
+# output: 
+# hello 
+# world 
+# ! 
 ```
 
 Как и другие итераторы, генераторы могут быть переданы `next` функции для извлечения следующего элемента. Когда генератор не имеет больше значений, `StopIteration` ошибка `StopIteration` .
 
 ```python
 g = my_generator() 
- print(next(g)) 
- # 'hello' 
- print(next(g)) 
- # 'world' 
- print(next(g)) 
- # '!' 
- print(next(g)) 
- # Traceback (most recent call last): 
- #   File "<stdin>", line 1, in <module> 
- # StopIteration 
+print(next(g)) 
+# 'hello' 
+print(next(g)) 
+# 'world' 
+print(next(g)) 
+# '!' 
+print(next(g)) 
+# Traceback (most recent call last): 
+#   File "<stdin>", line 1, in <module> 
+# StopIteration 
 ```
 
 Генераторы особенно полезны, когда вам нужно создать большой набор значений, но им не нужно сохранять их все в памяти одновременно. Например, если вам нужно напечатать первые миллионы чисел фибоначчи, вы обычно возвращаете список из миллиона значений и перебираете список для печати каждого значения. Однако с генератором вы можете возвращать каждое значение по одному за раз:
@@ -49,7 +49,7 @@ def fib(n):
         yield a 
         a, b = b, a + b 
  
- for x in fib(1000000): 
+for x in fib(1000000): 
     print(x) 
 ```
 
