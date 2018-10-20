@@ -56,6 +56,18 @@ Sometimes the script won't be executed, and the above command will return an err
 zach@marigold:~$ chmod u+x myBashScript.sh
 ````
 And then execute the script.
+
+## Running bash commands as "Root" (Sudo)
+Sometimes, running certain commands in bash will return in an error letting you know you don't have the proper permissions to execute it. This means the command requires elevated permissions to run. This can be achieved, through the "Sudo" command. Users can be granted special "sudoer" permissions through a file located at ```/etc/sudoers```. To run sudo, you simply need to prepend it to the front of the command you're running. It will then ask you for your password to validate that you're authorized to run this command as well as to verify that you are intending to run it as "root". Running a command as root means you are running it with the highest permissions available on the system with no restrictions.
+
+An example of a sudo command might look something like this:
+
+```
+$sudo apt update
+[sudo] password for user:
+Get:1 http://deb.parrotsec.org/parrot parrot InRelease [14.6 kB]
+```
+
 ### More Information:
 
 * Wikipedia: https://en.wikipedia.org/wiki/Bash_(Unix_shell)
