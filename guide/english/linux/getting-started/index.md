@@ -36,3 +36,5 @@ ls (List) - This command list the content in the current directory. It can be al
 ls
 ```
 Now we can see our directories in our home.
+
+There are further commands in the book "The Linux Command Line" By William Shotts which you can download for free here:http://linuxcommand.org/tlcl.php.
