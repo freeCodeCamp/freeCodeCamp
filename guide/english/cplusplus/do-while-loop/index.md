@@ -3,7 +3,7 @@ title: do while loop
 ---
 ## Do While Loop
 
-The `do while loop` is almost the same as the while loop. The `do while loop` has the following form:
+The `do while loop` is almost the same as the while loop except the code is executed once before checking the expression. The `do while loop` has the following form:
 ```cpp
 do 
 {
