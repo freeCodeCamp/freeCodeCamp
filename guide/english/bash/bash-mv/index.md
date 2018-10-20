@@ -4,11 +4,15 @@ title: Bash mv
 
 ## Bash command: mv
 
-**Moves files and folders.**
+The mv command is used to move files and folders.
 
+### Usage
+
+ ```bash
+mv [options] Source Dest
 ```
-mv source target
-mv source ... directory
+```bash
+mv [options] Source Directory
 ```
 
 The first argument is the file you want to move, and the second is the location to move it to. It can also be used to rename a file, by inputting 2 file names as parameters, like so: `mv originalFilename.txt newFilename.txt`
@@ -19,3 +23,4 @@ Commonly used options:
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Mv)
+* [SS64](https://ss64.com/bash/mv.html)
