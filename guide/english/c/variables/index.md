@@ -103,3 +103,5 @@ We get `15.300000`. So, say we just want two places after the decimal to give us
 * Variables are created in the following format: `datatype variable_name = number`.
 * Format specifiers allow for variables to be printed.
 * The equals sign `=` allows for values to be assigned to variables.
+
+My Changes
