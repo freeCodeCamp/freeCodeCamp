@@ -248,7 +248,29 @@ int main(void)
     return 0;
 }
 ```
+# Void Pointers
+Void pointers are pointers that have no specific data type associated with them, meaning they can hold the address of any type of variable. They are very commonly used when writing generic functions and when using `malloc` (which returns a void pointer that should be casted). 
+```c
+#include <stdlib.h>
+void GenericSwap(void *a, void *b, size_t length)
+{
+    char *tmp = (char*)malloc(sizeof(char)*length);
+    memcpy(tmp, a, length);
+    memcpy(a, b, length);
+    memcpy(b, tmp, length);
+    free(tmp);
+}
 
+int main(void)
+{
+    //usage
+    int a = 3;
+    int b = 5;
+    GenericSwap(&a, &b, sizeof(int));
+    
+    return 0;
+}
+```
 # Before you go on...
 ## A review
 * Pointers are variables, but instead of storing a value, they store a memory location.
