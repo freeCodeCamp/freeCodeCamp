@@ -3,6 +3,7 @@ title: HTML
 localeTitle: HTML
 ---
 # HTML
+![Logo Html](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/2000px-HTML5_logo_and_wordmark.svg.png)
 
 El lenguaje de marcado de hipertexto (HTML) es un lenguaje de marcado utilizado para construir documentos en línea y es la base de la mayoría de los sitios web de la actualidad. Los lenguajes de marcado como HTML nos permiten 1) crear enlaces a otros documentos, 2) estructurar el contenido de nuestro documento y 3) atribuir contexto y significado al contenido de nuestro documento.
 
