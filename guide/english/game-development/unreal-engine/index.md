@@ -26,11 +26,19 @@ Unreal has gone through 4 major revisions. Although some code is common between 
   Released in 2015 and targets PC, PlayStation 4, Xbox One, Mac OS X, iOS, Android, many VR systems, Linux, SteamOS, and HTML5, and the editor can run on Windows, OS X and Linux. Unreal Script has been removed and replaced with dynamically reloaded C++ modules, and a more advanced visual scripting interface called Blueprints.
   
 ### Popular Games made in Unreal
+- Ashen
 - Batman Arkham City
 - Mass Effect
 - Bioshock
+- BioShock 2
 - Borderlands
 - Gears of War
+- Spec Ops: The Line
+- Disney's Brother Bear
+- Clive Barker's Undying
+- Deus Ex- Spec Ops: The Line
+- Enslaved: Odyssey to the West
+- Adventure Pinball: Forgotten Island
 
 #### More Information:
 
