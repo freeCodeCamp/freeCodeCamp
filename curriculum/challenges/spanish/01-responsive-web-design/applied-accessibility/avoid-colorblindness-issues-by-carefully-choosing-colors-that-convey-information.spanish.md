@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Evite los problemas de daltonismo al elegir cuidadosamente los colores que transmiten información
 ---
 
-## Description
+## Descripción
 <section id="description"> Existen varias formas de daltonismo. Éstos pueden ir desde una reducida sensibilidad hacia cierta longitud de onda luminosa hasta la incapacidad de distinguir el color por completo. La forma más común es una sensibilidad reducida para detectar el color verde. Por ejemplo, si dos colores verdes similares son el color de primer plano y de fondo de su contenido, es posible que un usuario daltónico no pueda distinguirlos. Los colores similares pueden considerarse vecinos en la rueda de colores, y esas combinaciones deben evitarse cuando se transmite información importante. <strong>Nota</strong> <br> Algunas herramientas de selección de color en línea incluyen simulaciones visuales de cómo aparecen los colores para diferentes tipos de daltonismo. Éstos son recursos en línea excelentes, además de las calculadoras de comprobación de contraste. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Camper Cat está probando diferentes estilos para un botón importante, pero el color <code>background-color</code> amarillo ( <code>#FFFF33</code> ) y el color de texto verde ( <code>#33FF33</code> ) son tonalidades vecinas <code>#33FF33</code> en la rueda de colores y prácticamente indistinguibles algunos usuarios daltónicos. <code>#33FF33</code> <code>color</code> . (Su luminosidad similar también falla la comprobación del nivel de contraste). Cambie el <code>color</code> del texto a azul oscuro ( <code>#003366</code> ) para resolver ambos problemas. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semilla del Desafío
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -55,7 +55,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
