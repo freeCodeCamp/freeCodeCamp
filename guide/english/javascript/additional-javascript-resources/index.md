@@ -1,6 +1,7 @@
 ---
 title: JavaScript Tutorials and Other Resources
 ---
+*   <a href='https://www.udemy.com/the-complete-javascript-course/' target='_blank' rel='nofollow' >The Complete Javascript Course</a>
 *   <a href='http://jsforcats.com/' target='_blank' rel='nofollow'>JavaScript for Cats</a>
 *   <a href='https://javascript.info/' target='_blank' rel='nofollow'>The Modern JavaScript Tutorial</a>
 *   <a href='https://github.com/DrBoolean/mostly-adequate-guide' target='_blank' rel='nofollow'>Professor Frisby's Mostly Adequate Guide to Functional Programming</a>
