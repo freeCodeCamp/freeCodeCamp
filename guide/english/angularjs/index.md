@@ -32,4 +32,5 @@ HTML:
 ```
 
 **Getting Started: Building your own App**:
-https://docs.angularjs.org/tutorial
+
+[Angular JS App Tutorial](https://docs.angularjs.org/tutorial)
