@@ -1,6 +1,10 @@
 ---
 title: Extensible Markup Language (XML)
+
 ---
+## History of xml
+    Extensible Markup Languages (XML) history begins with the development of Standardised Generalised Markup Language (SGML) by Charles Goldfarb, along with Ed Mosher and Ray Lorie in the 1970s while working at IBM (Anderson, 2004).
+    Grab more on https://ccollins.wordpress.com/2008/03/03/a-brief-history-of-xml/
 ## Extensible Markup Language (XML)
 
   XML stands for eXtensible Markup Language. It is extensible, because it does not use a predefined set of tags for identifying structural components, instead, it provides a mechanism for defining such sets of tags. The main purpose of the language is to share the data. Unlike HTML, in XML there is no predefined set of tags and tags specify meaning, rather than the presentation.
