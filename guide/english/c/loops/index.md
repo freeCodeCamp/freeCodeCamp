@@ -32,7 +32,7 @@ int main(void) {
         ++my_number;
     }
 
-    printf("my_number = %i", my_number);
+    printf("my_number = %d", my_number);
 
     return 0;
 }
@@ -59,7 +59,7 @@ int main(void) {
         ++my_number;
     }
 
-    printf("my_number = %i", my_number);
+    printf("my_number = %d", my_number);
 
     return 0;
 }
@@ -87,7 +87,7 @@ int main(void){
         a++
     } while(a == -123);
 
-    printf("%i\n", a);
+    printf("%d\n", a);
 
     return 0;
 }
@@ -118,7 +118,7 @@ int main(void) {
         result = result + a;
     }
 
-    printf("a times b is %i\n", result);
+    printf("a times b is %d\n", result);
 
     return 0;
 }
