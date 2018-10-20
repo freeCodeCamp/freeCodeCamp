@@ -283,3 +283,42 @@ Most of the time, pointer and array accesses can be treated as acting the same, 
     a++; /*illegal*/ 
 ```
 
+####Void Pointer, changes by F. Mugaviri
+A void pointer is a pointer variable declared using the reserved word in C ‘void’.
+Lets illustrate this with a void pointer declaration below:
+```c
+void  *ptr; 
+```
+A pointer variable with the keyword ```void```is a general purpose pointer variable. 
+The pointer can hold an address of any variable of any data type (```int, char```...etc).
+As illustrated earlier on, the * operator serves its own purpose.
+But in the case of a void pointer we need to typecast the pointer variable to dereference it mainly because a void pointer has no specific data type associated with it. 
+There is no other way the compiler can tell what type of data is pointed to by the void pointer. 
+So to take the data pointed to by a void pointer we typecast it with the correct type of the data that is held inside the void pointer's location. 
+Below is an example to illustrate how a void pointer coild be used in a program:
+```c
+#include<stdio.h>
+void main(){
+    int a = 10;
+    float b = 35.75;
+    void *ptr; // Declaration of a void pointer
+    ptr = &a; // Assigning address of integer to void pointer.
+    printf("The value of integer variable is = %d",*( (int*) ptr) );// (int*)ptr - is ype typecasting, to point to an int type. Where as *((int*)ptr) dereferences the typecasted void pointer variable.
+}
+```
+The output becomes
+```c
+The value of integer variable is= 10
+```
+A void pointer can be useful if the programmer is not sure about the data type of data inputted by the end user. 
+In such a case the programmer can use a void pointer to point to the location of the unknown data type. 
+The program can be set in such a way to ask the user to inform the type of data and type casting can be performed according to the information inputted by the user.
+Also, another important point you should keep in mind about void pointers is that – pointer arithmetic can not be performed in a void pointer. 
+Example:
+```c
+    void *ptr;
+    int a;
+    ptr=&a;
+    ptr++; // This statement is invalid and will result in an error because 'ptr' is a void pointer variable.
+```
+
