@@ -3,18 +3,25 @@ title: Features of BlockTech
 localeTitle: Características de BlockTech
 ---
 ## Características de la tecnología Blockchain
+La tecnologia blockchain o de cadena de bloques en nuestro idioma castellano, hace referencia el sistema de validacion de datos que usa la red bitcoin .
+Esta es una red de p2p de computadores de alcance global, y que desde hace varios años se ha convertido en la mas poderosa del planeta en capacidad de computo.
+Su proposito es mantener un registro de transacciones distribuido , garantizando de esta manera su resiliencia y ausencia de errores.
+Para conseguir esto , emplea un sistema de incentivos y penalizaciones economicas no apoyadas en ninguna moneda o variable externa, sino en parametros de la red tales como recompensa , dificultad de computo , coste de amrtizacion de los equipos de validacion (tambien llamados mineros), precio de la electricidad y otros .
 
-Blockchain se usa casi siempre en lugar de Bitcoin y cryptocurrency. Sin embargo, hay muchos otros lugares donde se puede utilizar esta tecnología. Y apenas estamos empezando a arañar la superficie. Sabemos que con la tecnología Blockchain (BlockTech) va a ser enorme. ¿Pero qué lo hace único?
+Estas cualidaes de la red hacen que bitcoin la moneda, de la red de pagos bitcoin , creada por una persona o grupo de personas,(y digo esto porque se desconoce la verdadera identidad del creador) que frecuentaban los foros de criptografia con el alias de satoshi  nakamoto; sea tan solo la primera aplicacion disponible de esta tecnologia, y nos permita pensar en ella como lo que el orador y conferenciante a tiempo completo @aantonop, a definido el quinto protocolo de internet ---- El trust protocolo de transferencia de valor o de confianza, porque al final de todo que representa el dinero o el valor hoy dia sino una mera abstraccion que representa la confianza .
+
 
 En este artículo, vamos a explorar las características clave de BlockTech.
 
 #### _\* Sistema descentralizado_
 
-> Blockchain es una tecnología descentralizada, por diseño.
+> Blockchain es una tecnología descentralizada, por necesidades de diseño, porque el fin con el que fue creada fue el de ofrecer una alternativa a el sistema economico actual, basado en el dinero FIAT , creado a traves de deuda y de apalancamiento financiero, pongamonos en contexto año 2008 --inicio de la crisis economica.
+Otra condicion sinequanone es que sea de codigo abierto, e intentare desarrollar esto.
 
-Cuando algo está controlado por una autoridad central, donde el poder para tomar una decisión está en manos del ápice de la administración, dicho sistema se denomina Sistema Centralizado. Los bancos, por ejemplo, son un sistema centralizado, donde el Gobernador es responsable de tomar decisiones.
+Bitcoin en adelante BTC, no es una compañia, donde necesites abrir una cuenta de usuario con password y contraseña, de hecho en la red BTC no hay personas encargadas de su desarrollo o de cuales quiera tareas sea, funciona por la mecanica de los proyectos y la filosofia del codigo ABIERTO, esto quiere decir que cualquiera puede leer el codigo, con lo que si lo ejecutas, ya estas uniendote a su red y aceptando sus reglas pues esto significa ejecutar su codigo, esta es la razon de que necesariamente tenga que ser codigo abierto.
 
-Por el contrario, cuando el poder está en manos de las personas o los usuarios, se dice que dicho sistema es un sistema descentralizado. La red de igual a igual, Torrent, por ejemplo, es un sistema descentralizado, donde el usuario tiene el control completo.
+Tambien como todo proyecto de codigo abierto, te permite mejorarlo y forkearlo si no estas de acuerdo con algo, son el resto de usuarios de la red los que con la ejecucion de tu codigo , te daran o te quitaran autoridad o aceptacion.
+
 
 ![Sistemas descentralizados](https://raw.githubusercontent.com/Vagisha16/Hw3/master/blockchain_article_pic.jpg)
 
