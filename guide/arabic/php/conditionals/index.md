@@ -9,7 +9,7 @@ localeTitle: الشرطية
 ### إذا
 
  `<?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
  } 
 ` 
@@ -17,9 +17,9 @@ localeTitle: الشرطية
 ### ELSEIF
 
  `<?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
- } elseif ($_GET['name'] = "freecodecampguide"){ 
+ } elseif ($_GET['name'] == "freecodecampguide"){ 
   echo "You viewed the freeCodeCamp Guide Page!"; 
  } 
 ` 
@@ -27,9 +27,9 @@ localeTitle: الشرطية
 ### آخر
 
  `<?php 
- if ($_GET['name'] = "freecodecamp"){ 
+ if ($_GET['name'] == "freecodecamp"){ 
   echo "You viewed the freeCodeCamp Page!"; 
- } elseif ($_GET['name'] = "freecodecampguide"){ 
+ } elseif ($_GET['name'] == "freecodecampguide"){ 
   echo "You viewed the freeCodeCamp Guide Page!"; 
  } else { 
   echo "You viewed a page that does not exist yet!"; 
