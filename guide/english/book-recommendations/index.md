@@ -147,6 +147,16 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
 
+## Web Development & Design
+
+*Web Design with HTML, CSS, JavaScript and jQuery Set by Jon Duckett*
+-[Amazon Smile] (https://www.amazon.com/gp/product/1119038634/ref=dbs_a_def_rwt_hsch_vapi_taft_p1_i0)
+-ISBN-13: 978-1119038634
+
+*Web Development and Design Foundations with HTML5 (9th Edition) by Terry Felke-Morris*
+-[Amazon Smile] (https://www.amazon.com/Development-Design-Foundations-Computer-Science/dp/0134801148/ref=dp_ob_title_bk)
+-ISBN-13: 978-0134801148
+
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
