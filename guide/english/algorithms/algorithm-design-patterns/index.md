@@ -7,7 +7,7 @@ In software engineering, a design pattern is a general repeatable solution to a 
 
 Design patterns can speed up the development process by providing tested, proven development paradigms.
 
-This patterns are divided in three major categories:
+These patterns are divided in three major categories:
 
 ### Creational patterns
 
