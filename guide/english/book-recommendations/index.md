@@ -139,7 +139,11 @@ title: Books to Read for Programmers
 
 *Core Python Applications Programming (3rd Edition) by Wesley J Chun*
 - [Amazon Smile](https://smile.amazon.com/Core-Python-Applications-Programming-3rd/dp/0132678209)
-- ISBN-13: 978-0132678209
+- ISBN-13: 978-0132678209 
+
+*Sams Teach Yourself Python in 24 Hours 2nd Edition 
+- https://www.amazon.com/Python-Hours-Sams-Teach-Yourself/dp/0672336871 
+- ISBN-13: 978-0672336874 
 
 ## Soft Skills
 
