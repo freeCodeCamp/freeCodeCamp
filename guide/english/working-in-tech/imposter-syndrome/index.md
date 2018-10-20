@@ -37,6 +37,7 @@ More great resources to help you know more about Imposter Syndrome and some tips
 
 * [American Psychological Association - Feel Like a Fraud?](http://www.apa.org/gradpsych/2013/11/fraud.aspx)
 * [TED Talks - Fighting Imposter Syndrome](https://www.ted.com/playlists/503/fighting_impostor_syndrome)
+* [TED Talks - What is Imposter Syndrome and How Can You Combat It?] (https://www.ted.com/talks/elizabeth_cox_what_is_imposter_syndrome_and_how_can_you_combat_it?language=en)
 * [Quartz - Is imposter syndrome a sign of greatness?](https://qz.com/606727/is-imposter-syndrome-a-sign-of-greatness/)
 * [HTTP203 - Imposter Syndrome](https://www.youtube.com/watch?v=VNr1Kb07aME)
 * [Ada Initiative - Is Impostor Syndrome keeping women out of open technology and culture?](https://adainitiative.org/2013/08/28/is-impostor-syndrome-keeping-women-out-of-open-technology-and-culture/)
