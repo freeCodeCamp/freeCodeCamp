@@ -25,7 +25,7 @@ If this displays a page showing your PHP installation related information then i
 However, if your server does not support PHP, you must:
 install a web server
 install PHP
-install a database, such as MySQ.
+install a database, such as MySQL, MSSQL etc.
 
 ### More information
 The official PHP website (PHP.net) has installation instructions for PHP: http://php.net/manual/en/install.php
