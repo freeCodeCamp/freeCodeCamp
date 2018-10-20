@@ -51,6 +51,20 @@ Finally, Install the package
 ```
 $ sudo apt-get install ansible
 ```
+### Installation with the Python Package Manager "pip"
+Ansible can also be installed in your production or Python virtual environment with pip.
+
+Install Ansible with pip by running:
+```
+sudo pip install ansible
+```
+To install Ansible in a Python virtual environment make sure the environment is activated and run:
+```
+pip install ansible
+```
+
+For more information:
+[Latest Release Via Pip](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#latest-releases-via-pip)
 
 A significant benefit of using Ansible is that it uses SSH (Secure SHell) by default, and the modules can reside on any machine (computer) not requiring servers, daemons or databases.
 
