@@ -314,7 +314,7 @@ a = 3
  print z is 1 # prints True 
  print z is x # prints True 
  
- str1 = "FreeCodeCamp" 
+ str1 = ("FreeCodeCamp") 
  str2 = "FreeCodeCamp" 
  
  print str1 is str2 # prints True 
