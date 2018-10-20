@@ -4,6 +4,8 @@ title: Storage Drives
 
 ## Hard Disk Drives (HDD)
 
+![HDD](https://upload.wikimedia.org/wikipedia/commons/6/60/Harddrive_platters.jpg)
+
 Hard drives are permanent storage devices for computers. There are several types of hard drives: traditional magnetic disks, new-generation, solid-state disks or hybrid disks which contain both SSD and magnetic storage.
 
 Traditional hard disks use magnetic needles and rotating magnetized platters to store data. Due to these moving parts, hard drives are easily damaged by drops and/or shocks. The motor that rotates the platters also consumes a lot of power, and yet no other storage method is as affordable for large volumes of storage.
@@ -27,6 +29,8 @@ Computers store data and files on hard drives for later use. Because hard drives
 Data stored in RAM is said to be fleeting whereas data written out to a hard drive is persistent. Meaning if the power suddenly goes out, any data that was in RAM is lost and will not be there after power is restored and the computer is booted back up. However data that was written to the hard drive will be there when power is restored. For this reason, modern operating systems and applications will periodically write session and application related data that's currently in RAM out to the hard drive. This way if the power goes out, only 10 minutes of data entered in a newly created spreadsheet that was being worked on for 3 hours preceding the power outage and not yet saved to the hard drive. These files are usually denoted with a tilde~ and can be found in a temporary or temp directory or possibly located in a 'blind directory' whose contents are referred to as hidden files.
 
 ## Solid State Drives (SSD)
+![SSD](https://upload.wikimedia.org/wikipedia/commons/6/65/Embedded_World_2014_SSD.jpg)
+
 Solid State Drives uses integrated circuits to store data. Therefore, an SSD has no moving parts like the HDD. This makes them less prone to physical shocks, run silently, and have faster read/write times thanks to not needing to locate the data physically.
 
 SSDs are commonly used as boot drives or storage for the most used applications and files on a system. This is because even though prices have dropped in recent years, SSDs are still more expensive than a traditional hard drive when considering cost per unit of storage. Thus, HDDs are still used for bulk data such as entertainment media (pictures, videos, music) and in data centers or server farms. Though here it is common for the Hard Drives to be accelerated with an SSD.
