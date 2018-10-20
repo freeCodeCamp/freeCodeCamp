@@ -28,6 +28,19 @@ if (true) {
 console.log(c); // 10
 console.log(a); // 50
 ```
+Differences to var
+
+Hoisting
+let variables are not initialized until their definition is evaluated
+
+```
+function action() {
+  console.log(a); // undefined
+  console.log(b); // ReferenceError
+  var a = 1;
+  let b = 2;
+}
+```
 
 ## Const
 
