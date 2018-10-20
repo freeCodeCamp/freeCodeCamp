@@ -36,9 +36,19 @@ You will do an insertion similar to a normal Binary Search Tree insertion. After
   - If there is an imbalance in right child of right subtree, then you perform a left rotation.  
   - If there is an imbalance in right child of left subtree, then you perform a right-left rotation.  
  
+### Why AVL Trees?
+ 
+Most of the BST(Binary Search Tree) operations (e.g., search, max, min, insert, delete.. etc) take O(h) time where h is the height of the BST. The cost of these operations may become O(n) for a skewed Binary tree. If we make sure that height of the tree remains O(Logn) after every insertion and deletion, then we can guarantee an upper bound of O(Logn) for all these operations.
+ 
+The height of an AVL tree is always O(Logn) where n is the number of nodes in the tree (See [this](https://people.csail.mit.edu/alinush/6.006-spring-2014/avl-height-proof.pdf) for proof).
 
 #### More Information:
+
 [YouTube - AVL Tree](https://www.youtube.com/watch?v=7m94k2Qhg68)
+
+[Wikipedia - AVL Tree](https://en.wikipedia.org/wiki/AVL_tree)
+
+### Analysis:
 
 An AVL tree is a self-balancing binary search tree.
 An AVL tree is a binary search tree which has the following properties:
@@ -61,3 +71,13 @@ In RR Rotation every node moves one position to right from the current position.
 The LR Rotation is combination of single left rotation followed by single right rotation. In LR Rotation, first every node moves one position to left then one position to right from the current position.
 ->Right Left Rotation (RL Rotation)
 The RL Rotation is combination of single right rotation followed by single left rotation. In RL Rotation, first every node moves one position to right then one position to left from the current position.
+
+### Comparison of AVL Tree with Red Black Tree:
+
+The AVL tree and Red Black Tree are self-balancing search trees. These are useful to get all basic operations done in O(log n) time, where n is the number of nodes in the tree. The AVL trees are more balanced compared to Red-Black Trees, but they may cause more rotations during insertion and deletion. So if your application involves many frequent insertions and deletions, then Red Black trees should be preferred. And if the insertions and deletions are less frequent and search is the more frequent operation, then AVL tree should be preferred over [Red Black Tree](https://guide.freecodecamp.org/algorithms/red-black-trees).
+
+#### Practice Problems:
+
+[Hackerrank - AVL Tree](https://www.hackerrank.com/challenges/self-balancing-tree/problem)
+
+[GeeksForGeeks - AVL Tree](https://www.geeksforgeeks.org/practice-questions-height-balancedavl-tree/)
