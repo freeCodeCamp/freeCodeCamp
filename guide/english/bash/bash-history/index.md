@@ -1,3 +1,4 @@
+---
 title: Bash History
 ---
 ## History
