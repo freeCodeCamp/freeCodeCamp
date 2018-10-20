@@ -4,7 +4,7 @@ title: C++
 # Hello World! - Your First C++ Program
 
 ## What is C++?
-
+* C++ was created by Bjarne Stroustrup at Bell Labs since 1979.
 * C++ is a general purpose programming language which has been used since the 1990's
 * It was designed by Bjarne Stroustrup under with the name "C with classes".
 * It is a version of C that includes Object-Oriented elements, including classes and functions.
