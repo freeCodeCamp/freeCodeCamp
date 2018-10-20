@@ -12,10 +12,12 @@ Here's a simple decision-making example using **if** and **else**:
 ```c
 int a = 10, b = 20, c;
 
-if (a < b) {
+if (a < b) 
+{
     c = a;
 }
-else {
+else 
+{
     c = b;
 }
 
@@ -54,12 +56,17 @@ The ternary operator can be nested too same like nested if-else statements. Cons
 ```c
 int a = 1, b = 2, ans;
 if (a == 1) {
-    if (b == 2) {
+    if (b == 2) 
+    {
         ans = 3;
-    } else {
+    } 
+    else 
+    {
         ans = 5;
     }
-} else {
+} 
+else 
+{
     ans = 0;
 }
 printf ("%d\n", ans);
