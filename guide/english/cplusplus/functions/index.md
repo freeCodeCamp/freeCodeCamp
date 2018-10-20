@@ -50,8 +50,45 @@ int max(int num1, int num2)
 int res;
 res=max(5,10);
 
-// if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2);
+// if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2). It is demostrated in following code:
+
+void max(int num1, int num2)        // Return type is void because the function returns nothing
+{
+   // local variable declaration
+   int result;
+ 
+   if (num1 > num2)
+      result = num1;
+   else
+      result = num2;
+ 
+   cout << result; 
+}
+## calling a function:
+
+int res;
+max(5,10);
+
 ```
+
+Also note that it is not necessary to make a function with parameters, we can also make functions without parameters
+like
+
+```
+int test()     // Function without parameter
+{
+   // code goes here
+}
+
+// In main you can call it like:
+int val = test();
+
+// or simply
+test();
+
+```
+
+One important thing to note is that parameter types have no relation with return type.
 
 ## Why are functions important?
 
