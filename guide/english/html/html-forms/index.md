@@ -71,3 +71,5 @@ The form tag can also have an attribute named "target" which specifies where the
 
 The action attribute defines the action to be performed when the form is submitted.
 Normally, the form data is sent to a web page at the Script URL when the user clicks on the submit button. If the action attribute is omitted, the action is set to the current page.
+
+Forms can have either method or post attribute.
