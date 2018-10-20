@@ -10,7 +10,7 @@ Aqui está um exemplo:
 ```
 <?php 
  // array without keys 
- $bikes = array("Suzuki","BMW","Yamaha"); 
+ $bikes = ["Suzuki","BMW","Yamaha"]; 
  echo "I like " . $bikes[0] . ", " . $bikes[1] . " and " . $bikes[2] . "."; 
  ?> 
 ```
@@ -24,10 +24,10 @@ Matrizes PHP podem ser usadas como chave e valor como mapa. Pode ser acessado pe
 Aqui está um exemplo simples:
 ```
 <?php 
- $array = array( 
+ $array = [ 
     "foo" => "bar", 
     "bar" => "foo", 
- ); 
+ ]; 
  
  echo $array['bar']; 
 ```
