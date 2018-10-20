@@ -7,7 +7,7 @@ Blender is a free and open source 3D creation suite. It's used for modeling, cre
 
 The Blender software is cross-platform that runs on Windows, Linux and Mac.Blender is supported by The Blender Foundation a community from around the world. Developers, animators, scientists, experts and even hobbyists that empowers the softwares development by constantly maintaining, fixing and making new features for a suitable and more responsive user experience.
 
-Blender is free and open source software, released under the  *GNU General Public License (GPL)**.
+Blender is free and open source software, released under the  **_GNU General Public License (GPL)_**.
 
 #### More Information:
 
