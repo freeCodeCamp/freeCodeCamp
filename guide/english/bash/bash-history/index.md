@@ -12,4 +12,4 @@ A common use case for history is to recall and repeat a previous used sequence o
 
 ### More information
 * [gnu.org](https://www.gnu.org/software/bash/manual/html_node/Bash-History-Builtins.html) (online manual page)
-*[rootusers.com](https://www.rootusers.com/17-bash-history-command-examples-in-linux/) (common usage examples)
+* [rootusers.com](https://www.rootusers.com/17-bash-history-command-examples-in-linux/) (common usage examples)
