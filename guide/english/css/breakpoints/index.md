@@ -8,7 +8,7 @@ becoming active.
 
 Generally, you specify a breakpoint when you want to re-adapt the website's layout to the browser viewport's size; mostly, to the viewport's width.
 
-For example, if your website content looks great on a narrow viewport (like on a smart-phone browser), but it starts to look bad on bigger screens (e.g. maybe the fonts' size are too small and difficult to read), then you might want to introduce a new breakpoint for bigger screens that makes the fonts bigger:
+For example, if your website content looks great on a narrow viewport (like on a smart-phone browser), but it starts to look bad on bigger screens (e.g. maybe the fonts' sizes are too small and difficult to read), then you might want to introduce a new breakpoint for bigger screens that makes the fonts bigger:
 
 CSS Breakpoints can be considered to be the heart of responsive webdesign because they define how the content behaves or is arranged at
 a different device width/scale allowing you to show the best possible layout to the user.
