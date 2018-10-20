@@ -48,6 +48,7 @@ SELECT DISTINCT programOfStudy FROM student;
  +------------------+ 
  3 rows in set (0.00 sec) 
 ```
+En ciertas bases de datos es aceptada también la cláusula UNIQUE, como por ejemplo ORACLE, la cual tiene la misma funcionalidad del DISTINCT.
 
 Al igual que con todas estas cosas de SQL, hay MUCHO MÁS que lo que está en esta guía introductoria.
 
