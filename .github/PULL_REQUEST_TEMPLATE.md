@@ -1,4 +1,4 @@
-<!-- Please follow this checklist and put an x in each of the boxes, like this: [x]. It will ensure that our team takes your pull request seriously. -->
+<!-- Please follow this checklist and put an x in each of the boxes, like this: [x]. It will ensure that our team takes your pull request seriously LOL. -->
 
 - [ ] I have read [freeCodeCamp's contribution guidelines](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/CONTRIBUTING.md).
 - [ ] My pull request has a descriptive title (not a vague title like `Update index.md`)
