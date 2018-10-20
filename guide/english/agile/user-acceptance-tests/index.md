@@ -16,7 +16,7 @@ One of the final steps in software testing is user acceptance testing (UAT). UAT
 UAT checks that everything works properly and that there are no crashes. Those of the intended audience should complete the testing; this could be comprised of many people involved from the process and anyone who is able to test before going live.  The feedback from this testing is forwarded to the development team for any specific changes.
   
 
-#### Why do we need UAT
+#### Why do we need UAT?
 
 * Requirement changes might not have communicated to the developers
 
@@ -25,7 +25,7 @@ UAT checks that everything works properly and that there are no crashes. Those o
 * Some logic or business process may need user's attention
 
 
-#### What is required before we start UAT
+#### What is required before we start UAT?
 
 * Complete requriement is signed off and is available as documented
 
