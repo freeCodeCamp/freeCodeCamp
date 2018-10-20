@@ -55,6 +55,10 @@ This is a set of examples that shows each type of panel. The CSS Class is displa
 <div class="panel panel-body"> This is a panel with the danger panel style.</div>
 </div>
 
+For v4.0.0 components like
+Panels, thumbnails, and wells are Dropped entirely for the new card component.
+
 ### More Information
 
 - [Bootstrap dropdown documentation](https://getbootstrap.com/docs/4.0/components/dropdowns/)
+- [Bootstrap v4.0.0 Migration Panels](https://getbootstrap.com/docs/4.1/migration/#panels/)
