@@ -53,6 +53,13 @@ for(auto vec_it = vec.begin(); vec_it != vec.end(); it++){
     // inside the vector, vec_it must be dereferenced using '*'
     std::cout << *it << '\n';
 }
+/*Instead of using a vector iterator to show the elements of a vector, we can simplify the for loop like this*/
+int i;
+for(i=0;i<vec.size();i++)
+{
+cout<<vec[i]<<'\n';
+}
+
 /*  Output
     1
     2
