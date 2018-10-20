@@ -100,7 +100,7 @@ Boom. Suddenly, all these elements are now perfectly accessible, just by using n
 
 A bit earlier, I touched upon a screen-reader's hotkeys to jump from heading to heading. There are in fact many hotkeys like this to quickly jump to the nearest table, form field, link etc. Making sure these headings are actually in logical places is therefore a good practice and really decreases your assistive technology users' stress levels, which is good if you want visitors to keep coming back to your website.
 
-Also remember that headings are hierarchical. If you use an h2, make sure the h3's that follow it actually have something to do with that h2\. Don't put an h3 for contact details under your h2 for recent blog posts. A good analogy here is a book with chapters, that have subsections. You wouldn't put a section on baking cookies in the middle of a chapter on preparing vegetables ...or ...you wouldn't... right?
+Also remember that headings are hierarchical. If you use an h2, make sure the h3's that follow it actually have something to do with that h2\. Don't put an h3 for contact details under your h2 for recent blog posts. A good analogy here is a book with chapters, that have subsections. You wouldn't put a section on baking cookies in the middle of a chapter on preparing vegetables...  or... you wouldn't... right?
 
 ### What's the alternative?
 
