@@ -30,6 +30,46 @@ the output sequence.
   
 ```
 ### Implementation
+
+C Implementation:
+```c
+#define RANGE 100000
+void countSort(int arr[], int n)
+{
+    // The output array that will store sorted arr
+    int output[n];
+    
+    // Create a Count array to store the count 
+    // of each value from 0 to RANGE
+    int Count[RANGE+1];
+    // Initialize count of each value as 0
+    for(int i = 0; i < n; i++)
+        Count[i]=0;
+    
+    // Store count of each value
+    for(int i = 0; i < n; i++) 
+        Count[arr[i]]++;
+        
+    // Change Count[i] so that Count[i] now contains 
+    // actual position of this value in output array 
+    for(int i = 1; i <= RANGE; i++) 
+        Count[i] += Count[i-1]; 
+  
+    // Build the output array 
+    for(int i = 0; i < n; i++) 
+    { 
+        output[Count[arr[i]] - 1] = arr[i]; 
+        Count[arr[i]]--; 
+    } 
+  
+    // Copy the output array to arr, so that 
+    // arr now contains values in sorted order 
+    for (int i = 0; i < n; i++) 
+        arr[i] = output[i];
+}
+```
+
+Java Script Implementation:
 ```js
 let numbers = [1, 4, 1, 2, 7, 5, 2];
 let count = [];
@@ -53,4 +93,24 @@ for (i=0; i < numbers.length; i++) {
 }
 ```
 
+### Analysis:
 
+1. Time Complexity: O(n+k) where n is the number of elements in input array and k is the range of input.
+
+2. Auxiliary Space: O(n+k)
+
+3. Counting sort is efficient if the range of input data is not significantly greater than the number of objects to be          sorted. Consider the situation where the input sequence is between range 1 to 10K and the data is 10, 5, 10K, 5K.
+
+4. It is not a comparison based sorting. It running time complexity is O(n) with space proportional to the range of data.
+
+5. It is often used as a sub-routine to another sorting algorithm like [radix sort](https://guide.freecodecamp.org/algorithms/sorting-algorithms/radix-sort).
+
+6. Counting sort uses a partial hashing to count the occurrence of the data object in O(1).
+
+7. Counting sort can be extended to work for negative inputs also.
+
+### For more information:
+
+1. [Wikipedia - Counting Sort](https://en.wikipedia.org/wiki/Counting_sort)
+
+2. [MIT Open Course Ware](https://www.youtube.com/watch?v=Nz1KZXbghj8)
