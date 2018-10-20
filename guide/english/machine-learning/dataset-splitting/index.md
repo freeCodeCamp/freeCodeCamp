@@ -32,6 +32,7 @@ Your accuracy in predicting the test set is the accuracy of your ML algorithm.
 ### Visual representation of Train/Test Split and Cross-Validation
 
 ![alt text](https://cdn-images-1.medium.com/max/1600/1*4G__SV580CxFj78o9yUXuQ.png "Data Splitting")
+[Image from Joseph Nelson article](https://towardsdatascience.com/train-test-split-and-cross-validation-in-python-80b61beca4b6)
 
 #### More Information:
  - [AWS ML Doc](http://docs.aws.amazon.com/machine-learning/latest/dg/splitting-the-data-into-training-and-evaluation-data.html)
