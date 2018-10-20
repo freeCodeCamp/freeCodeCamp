@@ -84,7 +84,7 @@ If you're running Mac or GNU+Linux, you've already got GCC installed.
 
 In order to run your C program, it needs to be compiled. In order to compile from the command line using gcc, run the following command from your terminal:
 ```shell
-gcc -o helloworld ./helloworld.c
+gcc helloworld.c
 ```
 `gcc` is the Gnu C Compiler, and it will compile the C file we give it into a program that can be run by your computer.
 
@@ -92,7 +92,7 @@ gcc -o helloworld ./helloworld.c
 
 Once you've got it compiled, run the following command:
 ```shell
-./helloworld
+./a.out
 ```
 
 If everything has gone well, you should see `Hello, World!` printed to the screen.
