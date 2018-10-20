@@ -109,7 +109,7 @@ Here is the truth table for the OR operator
 | T  | F  | T  |
 | T  | T  | F  |
 
-Just like above the OR operator operates on two variables, notice that the only time the OR operator evaluates to True is when `x` & `y` negate eachother.
+Just like above the OR operator operates on two variables, notice that the only time the OR operator evaluates to False is when both `x` & `y` are False.
 
 Let's do one more, let's do the table for the Negation, this operates on one value instead of two
 
