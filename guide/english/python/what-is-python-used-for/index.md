@@ -1,5 +1,5 @@
 ---
-title: What Is Python Used for
+title: What is Python used for?
 ---
 
 ## What Is Python Used for
