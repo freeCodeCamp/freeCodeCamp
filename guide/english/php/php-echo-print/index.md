@@ -82,3 +82,13 @@ print "Study PHP at " . $txt2 . "<br>";
 print $x + $y;
 ?>
 ```
+
+Apart from above two ways, there are two different ways.
+
+# print_r
+
+Unlike print, print_r accepts values other than string like arrays objects etc.
+
+# var_dump
+
+var_dump also outputs the type of value it prints.
