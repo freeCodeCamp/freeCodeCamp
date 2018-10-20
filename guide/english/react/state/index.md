@@ -102,3 +102,6 @@ When only a limited number of fields in the state object is required, object des
 - [React - State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
 - [React - Lifting State Up](https://reactjs.org/docs/lifting-state-up.html)
 - [React Native - State Up](https://facebook.github.io/react-native/docs/state.html)
+
+
+My changes.
