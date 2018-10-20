@@ -22,13 +22,13 @@ Find the sum of all numbers, less than n, whereas 1000 <= n <= 1000000, which ar
 ```yml
 tests:
   - text: <code>doubleBasePalindromes(1000)</code> should return 1772.
-    testString: 'assert(doubleBasePalindromes(1000) == 1772, "<code>doubleBasePalindromes(1000)</code> should return 1772.");'
+    testString: assert(doubleBasePalindromes(1000) == 1772, '<code>doubleBasePalindromes(1000)</code> should return 1772.');
   - text: <code>doubleBasePalindromes(50000)</code> should return 105795.
-    testString: 'assert(doubleBasePalindromes(50000) == 105795, "<code>doubleBasePalindromes(50000)</code> should return 105795.");'
+    testString: assert(doubleBasePalindromes(50000) == 105795, '<code>doubleBasePalindromes(50000)</code> should return 105795.');
   - text: <code>doubleBasePalindromes(500000)</code> should return 286602.
-    testString: 'assert(doubleBasePalindromes(500000) == 286602, "<code>doubleBasePalindromes(500000)</code> should return 286602.");'
+    testString: assert(doubleBasePalindromes(500000) == 286602, '<code>doubleBasePalindromes(500000)</code> should return 286602.');
   - text: <code>doubleBasePalindromes(1000000)</code> should return 872187.
-    testString: 'assert(doubleBasePalindromes(1000000) == 872187, "<code>doubleBasePalindromes(1000000)</code> should return 872187.");'
+    testString: assert(doubleBasePalindromes(1000000) == 872187, '<code>doubleBasePalindromes(1000000)</code> should return 872187.');
 
 ```
 

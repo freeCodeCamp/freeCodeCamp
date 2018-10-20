@@ -21,9 +21,9 @@ Set <code>someAdjective</code> and append it to <code>myStr</code> using the <co
 ```yml
 tests:
   - text: <code>someAdjective</code> should be set to a string at least 3 characters long
-    testString: 'assert(typeof someAdjective !== "undefined" && someAdjective.length > 2, "<code>someAdjective</code> should be set to a string at least 3 characters long");'
+    testString: assert(typeof someAdjective !== 'undefined' && someAdjective.length > 2, '<code>someAdjective</code> should be set to a string at least 3 characters long');
   - text: Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator
-    testString: 'assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0, "Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator");'
+    testString: assert(code.match(/myStr\s*\+=\s*someAdjective\s*/).length > 0, 'Append <code>someAdjective</code> to <code>myStr</code> using the <code>+=</code> operator');
 
 ```
 
@@ -54,7 +54,20 @@ var myStr = "Learning to code is ";
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+(function(){
+  var output = [];
+  if(typeof someAdjective === 'string') {
+    output.push('someAdjective = "' + someAdjective + '"');
+  } else {
+    output.push('someAdjective is not a string');
+  }
+  if(typeof myStr === 'string') {
+    output.push('myStr = "' + myStr + '"');
+  } else {
+    output.push('myStr is not a string');
+  }
+  return output.join('\n');
+})();
 ```
 
 </div>
