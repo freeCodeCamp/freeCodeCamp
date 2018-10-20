@@ -13,6 +13,13 @@ for element in array do
  end 
 ```
 
+for循环也可以利用Range的方式来执行，1..10 代表 1~10 包含 10，1...10 代表 1~10 不包含 10:
+```
+for element in 1..10
+  puts element
+end
+```
+
 在Ruby中有许多不同的方法可以执行for循环或循环，另一个例子是：
 ```
 element.each do |element| 
