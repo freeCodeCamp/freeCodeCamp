@@ -5,7 +5,7 @@ title: Destructuring
 The destructuring assignment syntax is a way to "unpack" values from arrays, properties from objects, or any other iterable, into distinct variables.
 Since ```Arrays``` and ```Objects``` are the most commonly data structures used in JavaScript then the usage of destructuring can be extremely handy for data manipulation and code clarity.
 
-## Array Desctructuring
+## Array Destructuring
 Given the array below
 ``` javascript
 const fruits = ['apple', 'banana', 'orange', 'tangerine'];
@@ -68,7 +68,7 @@ const { name: fruitName, color: fruitColor } = { name: 'banana', color: 'yellow'
 ```
 
 ## Combined Destructuring
-With all the above in mind we can use combination of these rules to apply desctructuring in more complex case like arrays of objects. Given the array below:
+With all the above in mind we can use combination of these rules to apply destructuring in more complex case like arrays of objects. Given the array below:
 ``` javascript
 const fruits = [
   {name:'apple', color:'red'},
@@ -105,4 +105,4 @@ Now we managed to make the api of the function more clear and also we don't need
 #### More Information:
 <a href='https://developer.mozilla.org/el/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment' target='_blank' rel='nofollow'>MDN Docs</a>
 
-More on <a href='https://javascript.info/destructuring-assignment' target='_blank' rel='nofollow'>Desctructuring</a>
+More on <a href='https://javascript.info/destructuring-assignment' target='_blank' rel='nofollow'>Destructuring</a>
