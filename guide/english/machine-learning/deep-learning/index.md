@@ -44,6 +44,7 @@ These days there are a variety of deep learning frameworks that allow you specif
 
 ### More Information:
 * <a href="http://www.deeplearningbook.org">Deep Learning Textbook</a> 
+*< a href = "https://www.edx.org/professional-certificate/ibm-deep-learning">Deep Learning-edX</a>
 * <a href="https://en.wikipedia.org/wiki/Deep_learning">Deep Learning</a>
 * <a href="https://github.com/freeCodeCamp/guides/blob/master/src/pages/machine-learning/neural-networks/index.md">FreeCodeCamp Guide to Neural Networks</a>
 * <a href="http://image-net.org/">Imagenet</a>
