@@ -3,9 +3,9 @@
 - [ ] I have read [freeCodeCamp's contribution guidelines](https://github.com/freeCodeCamp/freeCodeCamp/blob/master/CONTRIBUTING.md).
 - [ ] My pull request has a descriptive title (not a vague title like `Update index.md`)
 - [ ] My pull request targets the `master` branch of freeCodeCamp.
-- [ ] None of my changes are plagiarized from another source without proper attribution.
+- [ ] None of my changes are plagiarized from another source.
 - [ ] My article does not contain shortened URLs or affiliate links.
 
-If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.
+If your pull request closes showing a GitHub issue, replace the XXXXX below with the issue number.
 
 Closes #XXXXX
