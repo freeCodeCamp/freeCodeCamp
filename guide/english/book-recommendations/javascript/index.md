@@ -24,11 +24,16 @@ Book by the "grandfather" of JavaScript, Douglas Crockford. He discusses both th
 - [Amazon](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742)
 
 #### JavaScript: Info
-
 A collection of articles covering the basics (core language and working with a browser) as well as advanced topics with concise explanations. Available as an e-book with pay and also as an online tutorial.
 
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
+
+#### The definitive Node.js handbook
+
+This book written by Flavio Copes gives a beginner friendly description of Node and helps with all the reqquired fundamentals to help you become a world-class Node.js developer.
+
+Available in  PDF, ePub and mobi format for free.    [Download](https://pages.convertkit.com/5fdd03a386/1b1a570eeb)
 
 #### Other Resources
 
