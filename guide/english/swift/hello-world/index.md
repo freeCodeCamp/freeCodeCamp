@@ -4,7 +4,7 @@ title: Hello World Swift
 
  ## Hello World
 
-Only we have to add the method `print("Hello World")` (from the library UIKit) to the function `viewDidLoad()` of the class `ViewController:
+We only have to add the method `print("Hello World")` (from the library UIKit) to the function `viewDidLoad()` of the class `ViewController:
 
  ```Swift
  import UIKit
