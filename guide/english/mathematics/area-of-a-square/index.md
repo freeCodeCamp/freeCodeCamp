@@ -58,6 +58,9 @@ Ex: Perimeter: 20
 5 x 5 = 25
 25 = 25²
 
+
+Another way to think of the area of a square is to think of it as two seperate right trangles with equal base and height lengths. For example, if you know how to find the area of the triangles (if b = base and h = height, then the formula is .5b/h), you can do that for each triangle and add them together, getting the total area of a sqaure.
+
 #### More Information:
 
 - <a href='https://en.wikipedia.org/wiki/Square#Perimeter_and_area' target='_blank' rel='nofollow'>Wikipedia: Square</a>
