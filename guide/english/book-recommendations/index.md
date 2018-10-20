@@ -50,6 +50,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392
 
+*The Phoenix Project: A Novel about IT, DevOps, and Helping Your Business Win - Gene Kim
+- [Amazon Link](https://www.amazon.com/Phoenix-Project-DevOps-Helping-Business/dp/1942788290/ref=dp_ob_title_bk)
+- ISBN-13: 978-1942788294
+
 ## Algorithms
 
 *Introduction to Algorithms, 3rd Edition (MIT Press)* by Thomas H. Cormen and Charles E. Leiserson
