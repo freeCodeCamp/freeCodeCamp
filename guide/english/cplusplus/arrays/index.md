@@ -22,6 +22,10 @@ int numbers [5] = {};
 int numbers [] = {1, 2, 3, 4, 5};
 //Note that here the number of values defines the size of the array.
 //In the examples above, the size was fixed beforehand
+
+//Initializing all the elements of an array to zero:
+int numbers[10] = {0};
+//Note that this method can only be used for initializing all the members of an array to zero.
 ```
 ## Types Of Arrays
 There are two types of array based on way, we declare it.
