@@ -1,6 +1,14 @@
 ---
 title: Setting up Firebase Realtime Database
 ---
+#What is a Realtime Database?(Beginners)
+<br>
+Well I think most of you already know it, Here as suggested buy the name itself it's a realtime information being modified and acessed,
+So what's the use of this firebase specifically that too in Android what are it's advantages ??
+<br>
+Suppose you wanted to create any app displaying real-time or updatable inforamtion your need to maintain a server amd a database and you also need to learn some other programming languages and tools but with the help of Firebase by following the steps below you can easily set up your database and maintain your app seamlessly with some other benifits provided buy firebase like Crash Analytics and some other tools helpful to you and the entire setup is free upto a certain requests per day and from then on you can adopt to a pay as you go system.
+<br>
+The mai adavantage of this is that you no need to change the code of your whole app you can set-up the database just by adding a few lines of code to your existing app.
 
 # Prerequisites
 1. The latest version of Android Studio
