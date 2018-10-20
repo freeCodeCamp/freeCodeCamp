@@ -249,6 +249,29 @@ int main(void)
 }
 ```
 
+# Pointer Arithmetic
+
+A pointer in c is an address or a memory location, which is a numeric value. This allows one to perform arithmetic operations on a pointer. 
+
+The only valid arithmetic operations applicable on pointers are:
+  * Addition of integer to a pointer
+  * Subtraction of integer to a pointer
+  * Subtracting one pointer from another of the same type
+
+Consider that ptr is an integer pointer which points to the address 1000. 
+
+```c
+// pointer to data type int: Assume 32-bit integer
+ptr++; // or ++ptr;
+```
+
+After the operation, the ptr will point to memory location 1004 because the size of the int data type is 4 bytes.
+
+```c
+// Expression:
+ptr++;
+// is evaluated: ptr++ => ptr + 1 => 1000 + 1*4 => 1004
+
 # Before you go on...
 ## A review
 * Pointers are variables, but instead of storing a value, they store a memory location.
