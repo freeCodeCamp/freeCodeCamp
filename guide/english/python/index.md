@@ -14,7 +14,7 @@ To learn more about Python, check out these pages on python.org:
 <a href='https://docs.python.org/3/faq/general.html' target='_blank' rel='nofollow'>Python FAQ</a>.
 
 
-*   The two versions are similar, with knowledge of one switching to writing code for the other is easy.
+*   The two versions are similar. With knowledge of one, switching to writing code for the other is easy.
 *   <a href='https://wiki.python.org/moin/Python2orPython3' target='_blank' rel='nofollow'>Python 2 or Python 3</a>
     *   <a href='https://www.python.org/dev/peps/pep-0373/' target='_blank' rel='nofollow'>Python 2.x will not be maintained past 2020.</a> 
     * 3.x is under active development. This means that all recent standard library improvements, for example, are only available by default in Python 3.x.
@@ -24,7 +24,7 @@ To learn more about Python, check out these pages on python.org:
 
 Most *nix based operating systems come with Python installed (usually Python 2, Python 3 in more recent ones). Replacing the system Python is not recommended and may cause problems. However, different versions of Python can be safely installed alongside the system Python. See <a href='https://docs.python.org/3/using/index.html' target='_blank' rel='nofollow'>Python Setup and Usage</a>.
 
-Windows doesn't come with Python, the installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>.
+Python doesn't ship with Windows. The installer and instructions can be found <a href='https://docs.python.org/3/using/windows.html' target='_blank' rel='nofollow'>here</a>.
 
 Linux operating systems come with different versions of Python pre-installed. However to install Python 3.x on Linux, follow this <a href='https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-linux-python.html' target='_blank' rel='nofollow'>link</a>
 
@@ -32,7 +32,7 @@ Linux operating systems come with different versions of Python pre-installed. Ho
 
 The Python interpreter is used to run Python scripts.
 
-If it is available and in Unix shell’s search path makes it possible to start it by typing the command `python` followed by the script name will invoke the interpreter and run the script.
+If it is available and in Unix shell’s search path, it is possible to start it by typing the command `python`, followed by the script name. This will invoke the interpreter and run the script.
 
 `hello_campers.py`
 
@@ -40,12 +40,12 @@ If it is available and in Unix shell’s search path makes it possible to start 
 print('Hello campers!')
 ```
 
-From terminal:
+From the terminal:
 
     $ python hello_campers.py
     Hello campers!
 
-When multiple versions of Python are installed, calling them by version is possible depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked like:
+When multiple versions of Python are installed, calling them by version is possible, depending on the install configuration. In the Cloud9 IDE custom environment, they can be invoked like this:
 
     $ python --version
     Python 2.7.6
@@ -113,7 +113,7 @@ Some of the principles that influenced the design of Python are included as an E
 6. There are multiple libraries available for Python, like numpy, pandas, etc., to make doing complex operations easy!
 
 ### Cons
-- Being open source, many different ways have developed over the year for same function. This sometimes, creates chaos for others to read someone else code.
+- Being open source, many different ways have developed over the years for the same function. This sometimes creates chaos for others to read someone else's code.
 - It is a slow language. So, a very bad language to use for developing general algorithms.
 - Python is dynamically typed, so the errors in code only show up after running an application.
 - Python is not the best langauge to use if your project requires efficient memory management.
@@ -145,7 +145,7 @@ Going back to the docs, we can read about the <a href='https://docs.python.org/3
 
     print(*objects, sep=' ', end='\n', file=sys.stdout, flush=False)
 
-The built-in functions are listed in alphabetical order. The name is followed by a parenthesized list of formal parameters with optional default values. Under that is a short description of the function and its parameters are given and occasionally an example.
+The built-in functions are listed in alphabetical order. The name is followed by a parenthesized list of formal parameters with optional default values. Under that is a short description of the function and its parameters are given. Occasionally, an example is provided.
 
 The <a href='https://docs.python.org/3/library/functions.html#print' target='_blank' rel='nofollow'>`print`</a> function in Python 3 replaces the <a href='https://docs.python.org/2/reference/simple_stmts.html#print' target='_blank' rel='nofollow'>`print`</a> statement in Python 2.
 
@@ -155,7 +155,7 @@ The <a href='https://docs.python.org/3/library/functions.html#print' target='_bl
 A function is called when the name of the function is followed by `()`. For the 'Hello, World!' example, the print function is called with a string as an argument for the first parameter. For the rest of the parameters, default values are used.
 
 The argument that we called the `print` function with is a `str` object or _string_, one of Python's [_built-in data types_](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str).
-Also the most important thing about python is that you don't have to specify the data type while declaring a variable, python's compiler will do that itself based on the type of value assigned.
+Also the most important thing about python is that you don't have to specify the data type while declaring a variable Python's compiler will do that itself, based on the type of value assigned.
 
 The `objects` parameter is prefixed with a `*`, which indicates that the function will take an arbitrary number of arguments for that parameter.
 
