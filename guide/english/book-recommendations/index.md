@@ -14,7 +14,7 @@ title: Books to Read for Programmers
 - https://mitpress.mit.edu/sicp/
 - ISBN-13: 978-0262510875
 
-*Clean Code: A Handbook of Agile Software Crafstmanship* by Robert C. Martin
+*Clean Code: A Handbook of Agile Software Craftsmanship* by Robert C. Martin
 - [Amazon Smile](https://smile.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882?sa-no-redirect=1)
 - ISBN-13: 978-0132350884
 
@@ -169,7 +169,7 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
 - ISBN-13: 978-1593276034
 
-*Computer Science Distilled: Learn the art of solving computaitonal problems by Wladston Ferreira Filho*
+*Computer Science Distilled: Learn the art of solving computational problems by Wladston Ferreira Filho*
 - [Amazon Smile](https://smile.amazon.com/Computer-Science-Distilled-Computational-Problems/dp/0997316020)
 - ISBN-13: 978-0-9773160-2-5
 
