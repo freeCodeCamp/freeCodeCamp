@@ -1,7 +1,8 @@
 ---
 title: Ternary Operator
 localeTitle: 三元运算符
----## 三元运算符
+---
+## 三元运算符
 
 程序员在C中使用三元运算符来代替条件语句**if**和**else**进行决策。 三元运算符是一个带三个参数的运算符。第一个参数是比较参数，第二个参数是真实比较的结果，第三个参数是错误比较的结果。如果有帮助，您可以将运算符视为编写if-else语句的缩短方式。
 
@@ -10,10 +11,12 @@ localeTitle: 三元运算符
 ```c
 int a = 10, b = 20, c; 
  
- if (a < b) { 
+ if (a < b) 
+ { 
     c = a; 
  } 
- else { 
+ else 
+ { 
     c = b; 
  } 
  
@@ -52,13 +55,19 @@ int a = 10, b = 20, c;
 
 ```c
 int a = 1, b = 2, ans; 
- if (a == 1) { 
-    if (b == 2) { 
+ if (a == 1) 
+ { 
+    if (b == 2) 
+    { 
         ans = 3; 
-    } else { 
+    } 
+    else 
+    { 
         ans = 5; 
     } 
- } else { 
+ } 
+ else 
+ { 
     ans = 0; 
  } 
  printf ("%d\n", ans); 
