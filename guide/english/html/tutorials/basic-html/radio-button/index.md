@@ -7,6 +7,11 @@ title: Radio Button
 ```html
 <!DOCTYPE html>
 <html>
+  
+<head>
+  <title></title>
+</head>
+
 <body>
 
 <form action="/action_page.php">
