@@ -15,6 +15,9 @@ Python does not include a formal way to write multiline comments. Each line of a
     # This is the first line of a multiline comment.
     # This is the second line.
 ```
+
+Although there is no simple multiline comment like `{ }` in Pascal or the commonly used `\* *\` format, many editors have an option for easy multiline commenting. For example, Atom and Pycharm have `Ctrl-/` to easily comment or remove comments on multiple selected lines.
+
 Another type of comment is the **docstring**, documented in <a href='https://www.python.org/dev/peps/pep-0257/' target='_blank' rel='nofollow'>`PEP 257`</a>. Docstrings are a specific type of comment that becomes the `__doc__` attribute.
 
 For a string literal to be a docstring, it must start and end with `\"\"\"` and be the first statement of the module, function, class, or method definition it is documenting:
@@ -33,3 +36,5 @@ For a string literal to be a docstring, it must start and end with `\"\"\"` and 
 ```
 
 String literals that start and end with `"""` that are not docstrings (not the first statement), can be used for multiline strings. They will not become `__doc__` attributes. If they are not assigned to a variable, they will not generate bytecode. There is some discussion about using them as multiline comments found <a href='http://stackoverflow.com/questions/7696924/multiline-comments-in-python' target='_blank' rel='nofollow'>here</a>.
+
+According to <a href='https://www.python.org/dev/peps/pep-0008/'>PEP 8</a>, the definitive Python style guide, start these comments with the `"""`, and end them with `"""` **on a line of its own**.
