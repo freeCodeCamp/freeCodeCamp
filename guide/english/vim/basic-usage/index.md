@@ -4,10 +4,10 @@ title: Basic Usage
 ## VIM Basic Usage
   
 ### Open File
-- Run vim or vi and open the given filename.
+- Run "vim" or "vi" followed by either the name of an existing file you wish to edit or a new file you wish to create.
 
 ### Insert Mode
-- Once opening the page enter I and you will see the text "Insert Mode" at the bottom of your screen. From here you can make any changes you want to the text of your file.
+- Once you are in the editor, press the "I" key to enter "Insert Mode", as verified at the bottom of your screen. This mode will allow you to enter and edit the file's contents. 
 
 ### Save File
 - :w
@@ -34,4 +34,4 @@ title: Basic Usage
 
 ## About Vim
 
-Vim is a text editor intended to be used in a CLI (command line interface) environment. It is highly configurable and built with efficiency in mind, without the need of a mouse or a graphical interface. It was built to be an improved version of the UNIX editor 'VI', or VI improved. That being said, VIM also has a GUI (Graphical User Interface) version named GVIM that shares the same core functionality as VIM but allows users additional feature such as additional menu and tool bars.
+Vim is a text editor intended to be used in a CLI (command line interface) environment. It is highly configurable and built with efficiency in mind, without the need of a mouse or a graphical interface. It was built to be an improved version of the UNIX editor 'VI', or VI iMproved. That being said, VIM also has a GUI (Graphical User Interface) version, named GVIM, that shares the same core functionality as VIM but provides users additional features such as additional menu and tool bars.
