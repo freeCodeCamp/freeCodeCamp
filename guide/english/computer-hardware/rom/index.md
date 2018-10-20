@@ -13,6 +13,15 @@ In the early days of modern computers, one of the most common ROM chips used was
 #### CD-ROM
 The CD-ROM is a type of compact disc storage object that requires the use of an optical laser to read the data off the disc. The devices used to read the data house the lasers and are called CD-ROM Drives. The disc itself is generally created in a factory and once made, is read only. This is in contrast to the CD-R (compact disc recordables) medium which has the additional ability to hold new data.
 
+#### Programmable Read-Only Memory (PR-ROM)
+This type of ROM can be re-programmed by using a special device called a PROM programmer. Generally, a PROM can only be changed/updated once.
+
+#### Erasable Programmable Read-Only Memory (EP-ROM)
+This type of ROM can have its contents erased by ultraviolet light and then reprogrammed by an RPROM programmer. This procedure can be carried out many times; however, the constant erasing and rewriting will eventually render the chip useless.
+
+#### Electrically Erasable Programmable Read-Only Memory (EEPROM)
+This type of ROM works in a similar way to Flash memory in that it can its contents can be 'flashed' for erasure ad then written to without having to remove the chip from its environment. EEPROMs are used to store a computer system's BIOS, and can be updated without returning the unit to the factory. In many cases, BIOS updates can be carried out by computer users wishing a BIOS update.
+
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
@@ -20,3 +29,4 @@ The CD-ROM is a type of compact disc storage object that requires the use of an 
 - [Read-only memory](https://en.wikipedia.org/wiki/Read-only_memory)
 - [BIOS](https://en.wikipedia.org/wiki/BIOS)
 - [CD-ROM](https://en.wikipedia.org/wiki/CD-ROM)
+- [Types of ROM](https://www.sqa.org.uk/e-learning/FirstLine01CD/page_24.htm)
