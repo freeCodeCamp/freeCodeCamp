@@ -16,7 +16,7 @@ Use glyphicons in text, navigation, buttons, forms, or toolbars.
 ```
 
 ## Note
-Bootstrap 4 dropped Glyphicons. You can use <a href='http://fontawesome.io/icons/' target='_blank' rel='nofollow'>Font Awesome Icons</a> instead.
+Bootstrap 4 dropped Glyphicons. You can use <a href='http://fontawesome.io/icons/' target='_blank' rel='nofollow'>Font Awesome Icons</a> instead. Still Bootstrap rules over all!
 
 #### More Information:
 <a href='https://getbootstrap.com/docs/3.3/components/#glyphicons' target='_blank' rel='nofollow'>Official Bootstrap 3 docs on Glyphicons</a>
