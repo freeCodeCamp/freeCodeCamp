@@ -13,6 +13,8 @@ In the early days of modern computers, one of the most common ROM chips used was
 #### CD-ROM
 The CD-ROM is a type of compact disc storage object that requires the use of an optical laser to read the data off the disc. The devices used to read the data house the lasers and are called CD-ROM Drives. The disc itself is generally created in a factory and once made, is read only. This is in contrast to the CD-R (compact disc recordables) medium which has the additional ability to hold new data.
 
+The DVD-ROM is similar to a CD-ROM however it allows more storage to be used. 
+
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
