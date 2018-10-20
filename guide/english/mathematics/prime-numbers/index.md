@@ -13,6 +13,10 @@ Examples:
 
 The first ten prime numbers are: 2, 3, 5, 7, 11, 13, 17, 19, 23, and 29.
 
+![alt text](https://cdn.britannica.com/04/183104-004-DC24F17A.jpg)
+
+**This is a chart with the first 100 natural numbers, indicating which are prime and which are composite.**
+
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 <!-- Please add any articles you think might be helpful to read before writing the article -->
