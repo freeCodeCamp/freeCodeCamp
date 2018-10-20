@@ -104,7 +104,11 @@ for (int i = 1; i <= 5; i++)
 
 * #### Use const, pass by value/reference when suitable. This will help with saving memory.
 
+* #### Use proper indentations, so that it is easy to read and debug the code, for you, as well as for others.
+
 * #### Write const in caps, datatypes starting with T and variables in lower case.
+
+
 
 ```cpp
 const int MAX= 100;             //Constant
