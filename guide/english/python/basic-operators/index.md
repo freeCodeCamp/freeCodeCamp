@@ -148,7 +148,7 @@ Consider a = 2 (in binary notation, 10) and b = 3 (in binary notation, 11) for t
   <tr>
     <td align="center">>></td>
     <td>Performs a bitwise right shift. Shifts the bits of left operand, right by the number of bits specified as the right operand </td> 
-    <td>a >> b = 0<br>Binary: 00000010 >> 00000011 = 0</td>
+    <td>a >> b = 0<br>Binary: 00000010 >> 00000011 = 00000000</td>
   </tr>
   <tr>
     <td align="center"><<</td>
