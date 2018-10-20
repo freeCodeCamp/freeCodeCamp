@@ -17,6 +17,7 @@ Una Unidad de Procesamiento Central (CPU) es el circuito electrónico dentro de 
 ### Tarjetas de expansión (por ejemplo, GPU)
 
 Una unidad de procesamiento de gráficos (GPU) es un circuito electrónico especializado diseñado para manipular y alterar rápidamente la memoria para acelerar la creación de imágenes en un búfer de cuadros destinado a la salida a un dispositivo de visualización.
+Otra de las caracteristicas de las GPUs, es la capacidad de realizar operaciones de punto flotante, lo que las hace utiles para tareas reiterativas y de calculo; un ejemplo es el creciente uso de estas para minar Criptomonedas en incluso realizar simulaciones en interligencia artificial y machine learning. 
 
 ![Nvidia Titan XP](https://cdn.arstechnica.net/wp-content/uploads/2017/04/nvidia-titan-x.jpg)
 
