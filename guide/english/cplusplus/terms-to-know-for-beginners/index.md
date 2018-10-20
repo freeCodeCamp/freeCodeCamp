@@ -148,4 +148,4 @@ This evaluates to false
 ```
 This evaluates to true
 
-<a href='https://repl.it/L4ox' target='_blank' rel='nofollow'>A summation of all the print statements used in this article. Feel free to tweak around woth the code ! :) </a>
+<a href='https://repl.it/L4ox' target='_blank' rel='nofollow'>A summation of all the print statements used in this article. Feel free to tweak around with the code ! :) </a>
