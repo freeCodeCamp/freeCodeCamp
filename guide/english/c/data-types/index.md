@@ -103,7 +103,7 @@ A pointer of type void * represents the address of an object, but not its type. 
 
 
 # Before you go on...
-## A review
+## A review to note
 * The actual abilities of C data types depend on the hardware. As a result, minimum sizes are defined for the data types.
 * Floating point numbers will allow you to have decimals, while integer numbers won't.
 * We have some options for our integer values:
