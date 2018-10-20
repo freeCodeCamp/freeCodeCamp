@@ -82,3 +82,14 @@ Last but not least it's important to use php sessions securely. Read our article
 
 #### More Information:
 * <a href="https://secure.php.net/manual/en/book.session.php">php.net session manual</a>
+
+# library session in codeigniter
+codeigniter have library session who help us for making session
+it have 2 main session like flashdata and temp_data
+a) flash data is session data that will only be available for the next request, and then automatically cleared.
+b) tempdata is session data with a specific expiration time. After the value expires, or the session expires or is deleted, the value is automatically removed.
+
+To mark an existing item as “tempdata”, simply pass its key and expiry time (in seconds!) to the mark_as_temp() method:
+
+// 'item' will be erased after 300 seconds
+$this->session->mark_as_temp('item', 300);
