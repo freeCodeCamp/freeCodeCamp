@@ -22,6 +22,20 @@ $bikes = array('Suzuki','BMW','Yamaha');
 
 $bikes = ['Suzuki', 'BMW', 'Yamaha'];
 ```
+## Types
+
+Arrays are basically of two types in PHP
+
+1. Numeric: Numeric arrays have numeric index.
+    Ex: $num = array( 1, 2, 3, 4, 5);
+
+2. Associative: Associative arrays have string index.
+    Ex: $details = array( 
+        "name" => "Dev", 
+        "mob" => "846843643864", 
+        "email" => "dev@gmail.com", 
+    );
+```
 
 ## Key => Value
 
@@ -36,7 +50,6 @@ $bikes = [
     'not my favorite' => 'Yamaha'
 ];
 ```
-
 ## Accessing Items
 
 Items within an array can be accessed by their corresponding key, or location within the array.
