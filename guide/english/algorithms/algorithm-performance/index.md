@@ -2,28 +2,22 @@
 title: Algorithm Performance
 ---
 
-In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
-A function's limiting behavior is how the function acts as it tends towards a particular value and in big-O notation it is usually as it trends towards infinity.  
+In mathematics, big-O notation is used to describe and compare the _limiting behavior_ of a function.  
+Limiting behavior is how the function acts as it approaches a arbitrary value (usually towards infinity).  
 In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
+In algorithm design, we usually use big-O to see how bad or good an algorithm will perform at its worst. Since the worst case may be super rare, we sometimes use the average performance instead.
 
-in algorithm design we usualy use big-O notation because we can see how bad or good an algorithm will work in worst mode. but keep that in mind it isn't always the case because the worst case may be super rare and in those cases we calculate average case. for now lest's disscus big-O notation.
+In big-O notation, typical mathematical logic is used.
 
-In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
+NOTE: x^2 is equivalent to x * x or 'x-squared'
 
-A function's limiting behavior is how the function acts as it trends towards a particular value and in big-O notation it is usually as it trends towards infinity.  
-
-In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
-
-NOTE: x^2 is equivalent to x * x or 'x-squared']
-
-For example we say that x = O(x^2) for all x > 1 or in other words, x^2 is an upper bound on x and therefore it grows faster.  
+We can say that x = O(x^2) for all x > 1 or in other words, x^2 is an upper bound of the function x and therefore it grows faster.  
 The symbol of a claim like x = O(x^2) for all x > _n_ can be substituted with x <= x^2 for all x > _n_ where _n_ is the minimum number that satisfies the claim, in this case 1.  
 
 Effectively, we say that a function f(x) that is O(g(x)) grows slower than g(x) does.
 
-
-Comparitively, in computer science and software development we can use big-O notation in order to describe the efficiency of algorithms via its time and space complexity.
+We can use big-O notation to describe the efficiency of algorithms via its time and space complexity.
 
 **Space Complexity** of an algorithm refers to its memory footprint with respect to the input size.
 
