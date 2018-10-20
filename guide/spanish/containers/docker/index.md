@@ -8,6 +8,9 @@ localeTitle: Estibador
 
 Un caso de uso común sería empaquetar una aplicación y todos sus requisitos en un contenedor. El contenedor se puede utilizar durante el desarrollo, pasar al control de calidad / pruebas y a la producción / operaciones. Esto elimina la mentalidad de "funciona en mi máquina", ya que el contenedor _es_ efectivamente la máquina, sin importar en qué hardware real se esté ejecutando.
 
+Docker podria ser descrito como una abstraccion de las aplicaciones, asi como una maquina virtual es una abstraccion del hardware de una computadora/servidor. Docker funciona, en principio, utilizando caracteristicas de aislamiento de recursos del kernel de linux, lo cual permite independencia de los contenedores, eliminando la necesidad de hacer varias instancias de maquinas virtuales.
+Docker es una iniciativa de Codigo abierto que gana cade vez mas popularidad por la versatilidad que ofrece, ademas de su atractivo para el modelo de microservicios.
+
 Una vez que haya terminado de configurar su computadora y de instalar la ventana acoplable, simplemente puede probar su Docker ejecutando el comando:
 
 ```shell
