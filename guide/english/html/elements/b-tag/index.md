@@ -8,7 +8,7 @@ Formerly used to bold text the `<b>` tag is now known as the 'Bring Attention To
 
 Most browsers will display text in bold type but you should not use it for this purpose, instead use CSS `font-weight` property for purely visual display reasons.  If you wish to signify the elements content are of special importance use the `<strong>` tag instead.
 
-An appropriate use case is drawing attention to keywords in a text. 
+An appropriate use of case is drawing attention to keywords in a text. 
 
 ### Example:
 ```html
