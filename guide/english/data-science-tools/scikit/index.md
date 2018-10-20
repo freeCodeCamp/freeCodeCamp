@@ -9,6 +9,15 @@ Scikit-learn is a popular open-source machine learning library for Python, built
 To install scikit-learn in a conda environment: `conda install scikit-learn` <br>
 To install scikit-learn with pip: `pip install scikit-learn`
 
+## Popular models provided by scikit-learn
+*Clustering
+*Ensemble Methods
+*Support Vector Machines
+*Nearest Neighbors
+*Naive Bayes 
+*Decision Trees
+*Neural Networks
+
 ## References
 
 Scikit-learn main page: http://scikit-learn.org/stable/
