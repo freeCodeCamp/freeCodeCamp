@@ -8,6 +8,7 @@
         <td><a href="/docs/portuguese/CONTRIBUTING.md"> Português </a></td>
         <td><a href="/docs/russian/CONTRIBUTING.md"> русский </a></td>
         <td><a href="/docs/spanish/CONTRIBUTING.md"> Español </a></td>
+        <td><a href="docs/Bengali/CONTRIBUTING.md"> বাংলা </a></td>
     </tr>
 </table>
 
@@ -80,6 +81,7 @@ You can help us translate our Guide articles and Coding challenges for a languag
 - [Arabic (عربى)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/arabic)
 - [Spanish (Español)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/spanish)
 - [Portuguese (Português)](https://github.com/freeCodeCamp/freeCodeCamp/tree/master/curriculum/challenges/portuguese)
+- [Bengali ( বাংলা )](https://github.com/freeCodeCamp/tree/master/curriculum/challenges/Bengali)
 
 We would love your help in improving the quality of these translations. Millions of people use the English language version of freeCodeCamp.org, and we expect millions more to use these translated versions as well.
 
