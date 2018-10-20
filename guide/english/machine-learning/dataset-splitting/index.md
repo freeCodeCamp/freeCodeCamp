@@ -29,6 +29,10 @@ The Test set is the final dataset you touch (typically ~20% of your data).
 It is the source of truth.
 Your accuracy in predicting the test set is the accuracy of your ML algorithm.
 
+### Visual representation of Train/Test Split and Cross-Validation
+
+![alt text](https://cdn-images-1.medium.com/max/1600/1*4G__SV580CxFj78o9yUXuQ.png "Data Splitting")
+
 #### More Information:
  - [AWS ML Doc](http://docs.aws.amazon.com/machine-learning/latest/dg/splitting-the-data-into-training-and-evaluation-data.html)
  - [A good stackoverflow post](https://stackoverflow.com/questions/13610074/is-there-a-rule-of-thumb-for-how-to-divide-a-dataset-into-training-and-validatio)
