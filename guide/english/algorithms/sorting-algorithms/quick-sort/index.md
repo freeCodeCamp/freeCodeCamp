@@ -3,7 +3,7 @@ title: Quick Sort
 ---
 ## Quick Sort
 
-Quick sort is an efficient divide and conquer sorting algorithm. Average case time complexity of Quick Sort is O(nlog(n)) with worst case time complexity being O(n^2).
+Quick sort is an efficient divide and conquer sorting algorithm. Average case time complexity of Quick Sort is O(nlog(n)) with worst case time complexity being O(n^2). Specifically, the worst case is when the the array is reversely sorted and the two pivots are the smallest and largest values in the array.
 
 The steps involved in Quick Sort are:
 - Choose an element to serve as a pivot, in this case, the last element of the array is the pivot.
