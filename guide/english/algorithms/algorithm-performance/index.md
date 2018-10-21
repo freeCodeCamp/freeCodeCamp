@@ -7,7 +7,7 @@ A function's limiting behavior is how the function acts as it tends towards a pa
 In short, big-O notation is used to describe the growth or decline of a function, usually with respect to another function.
 
 
-in algorithm design we usualy use big-O notation because we can see how bad or good an algorithm will work in worst mode. but keep that in mind it isn't always the case because the worst case may be super rare and in those cases we calculate average case. for now lest's disscus big-O notation.
+In algorithm design we usualy use big-O notation because we can see how bad or good an algorithm will work in worst mode. but keep that in mind it isn't always the case because the worst case may be super rare and in those cases we calculate average case. for now lest's disscus big-O notation.
 
 In mathematics, big-O notation is a symbolism used to describe and compare the _limiting behavior_ of a function.  
 
