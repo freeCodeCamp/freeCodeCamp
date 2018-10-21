@@ -19,7 +19,7 @@ Assignment operators, as the name suggests, assign (or re-assign) values to a va
     let initialVar = 5;   // Variable initialization requires the use of an assignment operator
 
     let newVar = 5;
-    newVar = 6;   // Variable values can be modified using an assignment operator
+    newVar = 5;   // Variable values can be modified using an assignment operator
 
 ## Variations
 
