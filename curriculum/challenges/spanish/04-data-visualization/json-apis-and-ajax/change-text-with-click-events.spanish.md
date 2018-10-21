@@ -7,7 +7,7 @@ localeTitle: Cambiar texto con click eventos
 ---
 
 ## Description
-<section id="description"> Cuando ocurre el evento de clic, puede usar JavaScript para actualizar un elemento HTML. Por ejemplo, cuando un usuario hace clic en el botón &quot;Obtener mensaje&quot;, cambia el texto del elemento con el <code>message</code> clase para que diga &quot;Aquí está el mensaje&quot;. Esto funciona agregando el siguiente código dentro del evento click: <code>document.getElementsByClassName(&#39;message&#39;)[0].textContent=&quot;Here is the message&quot;;</code> </section>
+<section id="description"> Cuando ocurre el evento de clic, puede usar JavaScript para actualizar un elemento HTML. Por ejemplo, cuando un usuario hace clic en el botón &quot;Obtener mensaje&quot;, cambia el texto del elemento con el <code>message</code> clase para que diga &quot;Aquí está el mensaje&quot;. Esto funciona agregando el siguiente código dentro del evento click: <code>document.getElementsByClassName(&#39;message&#39;)[0].textContent=&quot;Aquí está el mensaje&quot;;</code> </section>
 
 ## Instructions
 <section id="instructions"> Agregue código dentro del controlador de eventos <code>onclick</code> para cambiar el texto dentro del elemento del <code>message</code> para que diga &quot;Aquí está el mensaje&quot;. </section>
@@ -18,7 +18,7 @@ localeTitle: Cambiar texto con click eventos
 ```yml
 tests:
   - text: Su código debe usar el método <code>document.getElementsByClassName</code> para seleccionar el elemento con <code>message</code> clase y establecer su <code>textContent</code> de <code>textContent</code> en la cadena dada.
-    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?("|")Here is the message\2/g), "Your code should use the <code>document.getElementsByClassName</code> method to select the element with class <code>message</code> and set its <code>textContent</code> to the given string.");'
+    testString: 'assert(code.match(/document\.getElementsByClassName\(\s*?("|")message\1\s*?\)\[0\]\.textContent\s*?=\s*?("|")Aquí está el mensaje\2/g), "Tu código debe usar el método <code>document.getElementsByClassName</code> para seleccionar los elementos de la clase <code>message</code> y establecer su <code>textContent</code> al string requerido.");'
 
 ```
 
@@ -33,10 +33,10 @@ tests:
 <script>
   document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('getMessage').onclick=function(){
-      // Add your code below this line
+      // Agrega tu código debajo de esta línea
 
 
-      // Add your code above this line
+      // Agrega tu código arriba de esta línea
     }
   });
 </script>
@@ -68,11 +68,11 @@ tests:
 </style>
 <h1>Cat Photo Finder</h1>
 <p class="message box">
-  The message will go here
+  Aquí va el mensaje
 </p>
 <p>
   <button id="getMessage">
-    Get Message
+    Obtener Mensaje
   </button>
 </p>
 
@@ -88,6 +88,6 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+// solución requerida
 ```
 </section>
