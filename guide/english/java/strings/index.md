@@ -9,7 +9,7 @@ Strings are sequences of characters. In Java, a `String` is an `Object`. Strings
 String course = "FCC";
 System.out.println(course instanceof Object);
 ```
-
+//Javanaitor!
 Output:
 ```
 true
