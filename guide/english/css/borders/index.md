@@ -140,4 +140,4 @@ h5 { border: dotted; }
 - 'border-spacing' - This can set spacing between the text and border. 
 - 'border-image' - This sets an image as border. 
 
-Browser Support: IE6+
+Browser Support: Internet Explorer 6 (or newer)
