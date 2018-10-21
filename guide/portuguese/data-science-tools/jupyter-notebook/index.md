@@ -13,7 +13,7 @@ Você pode usá-lo para:
 *   limpeza de dados e transformação
 *   simulação numérica
 *   modelagem estatística
-*   Visualização de dados
+*   visualização de dados
 *   aprendizado de máquina
 
 ![](https://github.com/indianmoody/images/blob/master/guide_fcc/guides_jupyter_snap.jpeg) Veja seus resultados à medida que você avança passo a passo. Assim como nesta imagem.
@@ -35,10 +35,6 @@ Um kernel é um programa que executa e faz a introspecção do código do usuár
 ## Instalação
 
 Você pode usar o Anaconda ou o Pip para instalar o notebook Jupyter. Para os passos a seguir, consulte o guia oficial [Aqui.](https://jupyter.readthedocs.io/en/latest/install.html)
-
-#### Mais Informações:
-
-\=======
 
 ### Características
 
@@ -69,9 +65,9 @@ Seus dois principais componentes são os núcleos e um painel.
 
 ### Kernels
 
-Um kernel é um programa que executa e faz a introspecção do código do usuário. O Jupyter Notebook App possui um kernel para o código Python, mas também existem kernels disponíveis para outras linguagens de programação.
+Um kernel é um programa que executa e faz a introspecção do código do usuário. O Jupyter Notebook App possui um kernel para o código Python, mas também existem kernels disponíveis para outras linguagens.
 
-### painel de controle
+### Painel de controle
 
 O painel do aplicativo não apenas mostra os documentos do bloco de anotações que você criou e pode reabrir, mas também pode ser usado para gerenciar os kernels: você pode quais deles estão sendo executados e desligá-los, se necessário.
 
