@@ -48,9 +48,11 @@ int max(int num1, int num2)
 ## calling a function:
 
 int res;
-res=max(5,10);
+res=max(5,10);       // if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2);
+cout << res << endl;
 
-// if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2);
+OUTPUT
+10
 ```
 
 ## Why are functions important?
