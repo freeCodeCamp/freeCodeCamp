@@ -48,4 +48,29 @@ Here is a program to illustrate instanecof operator:
        
  ```
  
+ ### Modulus(%)
+ 
+ How modulus works is it gets the remainder. For example:
+ ```java
+ 
+    int x = 8;
+    int y = 3;
+    int z;
+    
+    z = x % y;
+    System.out.print(z);
+    
+ ```
+ The output would be 2, this is because 8 / 3 = 2 R2
+ 
+ Another example:
+ ```java
+ 
+    int x = 10, y = 7, z;
+    
+    z = x % y;
+    System.out.print(z);
+ ```
+ The output would be 3
+ 
 
