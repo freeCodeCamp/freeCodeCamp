@@ -13,6 +13,7 @@ Git's branching functionality lets you create new branches of a project to test 
 - [Rename a Branch](#rename-a-branch)
 - [Delete a Branch](#delete-a-branch)
 - [Compare Branches](#compare-branches)
+- [Update a Branch from Remote](#update-branch-from-remote)
 - [Help with Git Branch](#help-with-git-branch)
 - [More Information](#more-information)
 
@@ -100,6 +101,24 @@ git diff FIRST-BRANCH..SECOND-BRANCH
 You'll see colored output for the changes between branches. For all lines that have changed, the `SECOND-BRANCH` version will be a green line starting with a "+", and the `FIRST-BRANCH` version will be a red line starting with a "-". If you don't want Git to display two lines for each change, you can use the `--color-words` option. Instead, Git will show one line with deleted text in red, and added text in green.
 
 If you want to see a list of all the branches that are completely merged into your current branch (in other words, your current branch includes all the changes of the other branches that are listed), run the command `git branch --merged`.
+
+
+### Update a Branch from Remote <a name="update-branch-from-remote"></a>
+
+# To update a local branch from remote:
+```shell
+git stash (optional, to save local changes which differs from the remote repository if any) 
+```
+
+# If you weren't already on my_local_branch branch:
+```shell
+git checkout my_local_branch 
+```
+
+# Finally pull from the remote branch
+```shell
+git pull
+```
 
 ### Help with Git Branch <a name="help-with-git-branch"></a>
 If you forget how to use an option, or want to explore other functionality around the `git branch` command, you can run any of these commands:
