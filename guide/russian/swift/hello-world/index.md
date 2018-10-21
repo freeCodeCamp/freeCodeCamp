@@ -1,26 +1,18 @@
 ---
 title: Hello World Swift
-localeTitle: Hello World Swift
+localeTitle: Доброе утро, страна! Swift
 ---
-\## Привет, мир
+## Доброе утро, страна!
 
-Только нам нужно добавить метод `print("Hello World")` (из библиотеки UIKit) в функцию `viewDidLoad()` класса \`ViewController:
+[Repl.it](https://repl.it/languages/swift) предлагает онлайн интерактивную среду для Swift - Read-Eval-Print loop.
+Просто пройдите по ссылке указанной выше и вызовите функцию print  
 
-\`\` \`Swift импортировать UIKit
-
-class ViewController: UIViewController {
 ```
-override func viewDidLoad() { 
-    super.viewDidLoad() 
-    // Do any additional setup after loading the view, typically from a nib. 
- 
-    print("Hello World") 
- 
- } 
+print("Доброе утро, страна!")
 ```
 
-} \`\` \`
 
-\## Выход: \`\` \`
+## Вывод: 
 
-> Привет мир \`\` \`
+>
+Доброе утро, страна!
