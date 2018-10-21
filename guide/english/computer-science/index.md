@@ -38,4 +38,7 @@ Computer science is categorized into several fields. The following are among the
 * [Khan Academy](https://www.khanacademy.org/computing/computer-science) : A deep dive into algorithms, cryptography, introductory computing, and much more.
 * [CS50](https://cs50.harvard.edu) : A free, introduction to computer science course, taught by David J. Malan and staff at Harvard & Yale Universities.
 * [Visualization of Data Structures](http://www.cs.usfca.edu/~galles/JavascriptVisual/Algorithms.html)
+David J. Malan (/meɪlɛn/) is Gordon McKay Professor of the Practice of Computer Science at Harvard University.[1][2] Malan is best known for teaching Computer Science 50 (known as CS50)[3][4][5][6] which is the largest course at both Harvard and Yale University and the largest Massive Open Online Course (MOOC) at edX with lectures being viewed by over a million people on the edX platform up to 2017.[7][8]
+
+Malan is a member of faculty in the Harvard John A. Paulson School of Engineering and Applied Sciences where his research interests include cybersecurity,[9][10] digital forensics, botnets,[11] computer science education, distance learning, collaborative learning, and computer-assisted instruction.[12][13] Malan is also an active member of the SIGCSE community,[14][4][15] a Special Interest Group (SIG) concerned with Computer Science Education (CSE) organised by the Association for Computing Machinery (ACM).
 
