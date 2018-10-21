@@ -12,6 +12,10 @@ When an account receives money it can automatically distribute it to others.
 This is entirely transparent so all the nodes(miners) can see what logic is being executed.
 
 
+## Oracles
+Smart contracts exist in the blockchain network and is not able to access data outside, in which the oracle comes into play. In order for the smart contract to proceed, there must be a "thing" that gives a true or flase value for the smart contract to proceed. The oracle serves as that agent that find and verifies information for the smart contract to check for the conditions in a secure manner.
+
+
 ## Blockchain Technologies
 
 Two of the most common technologies used are :
