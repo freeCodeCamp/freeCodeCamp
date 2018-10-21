@@ -1,5 +1,5 @@
 ---
-title: Red Black Trees
+title: Dynamic Programming
 ---
 
 # Dynamic Programming
