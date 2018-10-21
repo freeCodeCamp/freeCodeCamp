@@ -191,4 +191,6 @@ The reasons are as follow.
 In first two cases, we are comparing undefined with 0 and as mentioned above in comparison undefined gets converted to NaN. NaN is a special value which always return false when compared with any number and that's why we got false as output in first two cases.
 For third statement, reason is same as mentioned for "null". In equality check "null/undefined" are only equal to each other and not equal to anything else. Hence (undefined == 0) -> false. 
 
-
+You can determine the type of a variable or a value with the typeof operator, as follows:
+typeof 3 // returns 'number'
+typeof '3' // returns 'string'
