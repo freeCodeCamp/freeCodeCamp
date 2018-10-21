@@ -113,3 +113,6 @@ fr1 = Friend("Nilesh","Bharti","Bihar")
 fr1.show()
 ```
 
+
+**More info:**
+- [Python Classes](https://docs.python.org/3/tutorial/classes.html)
