@@ -18,7 +18,7 @@ true
 You can create a String Object in the following ways:
 
 1. `String str = "I am a String"; //as a String literal`
-1. `String str = "I am a " + "String"; //as a constant expression`
+1. `String str = "I" + " am" + " a" + " String"; //as a constant expression (note that spaces are in the quotes)`
 1. `String str = new String("I am a String"); //as a String Object using the constructor`
 
 You might be thinking: What's the difference between the three?
