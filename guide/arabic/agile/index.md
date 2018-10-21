@@ -17,3 +17,4 @@ localeTitle: ذكي
 ### معلومات اكثر
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+654
