@@ -45,6 +45,7 @@ switch( <integer / String / Enum > ){
         <statements> 
  } 
 ```
+Observação: A estrutura Switch não utiliza uma expressão como parâmetro, apenas um valor. Portanto, não se pode fazer comparações, por exemplo.
 
 Nota: O fluxo do programa `falls through` no próximo `case` se a instrução de `break` estiver faltando. Por exemplo, digamos que você diga o padrão 'Olá' para todos no escritório, mas você é mais gentil com a garota que senta ao seu lado e soa irritada com seu chefe. A maneira de representar seria algo como:
 
