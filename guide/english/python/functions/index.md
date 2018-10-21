@@ -127,5 +127,18 @@ result = s(1, 2)
   print(double(4))  # prints 8
   ```
 - Python interprets the function block only when the function is called and not when the function is defined.So even if the function definition block contains some sort of error,the python interpretar will point that out only when the function is called. 
+In Python, a function is not restricted in returning just a single value, it can return any number of values.
+For example:
+
+    def square_two_numbers_simultaneously(a,b):
+	   a=a**2
+	   b=b**2
+	   return a,b
+    a=12
+    b=13
+    result_a,result_b=square_two_numbers_simultaneously(a,b)
+    print(result_a,result_b)
+    #The above line of code will print: 144,169 by returning two values from square_two_numbers_sumulaneously function.
+
 ### More Information:
 - <a href='https://docs.python.org/3/tutorial/controlflow.html#defining-functions' target='_blank' rel='nofollow'>Python 3 Docs: Defining Functions</a>
