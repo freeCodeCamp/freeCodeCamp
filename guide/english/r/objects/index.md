@@ -42,3 +42,10 @@ Second, a name cannot use some special symbols, like  `^,  !,  $,  @,  +,  -,  /
 <a href='https://cran.r-project.org/manuals.html' target='_blank' rel='nofollow'>Official Docs</a>
 <a href='https://www.r-bloggers.com/classes-and-objects-in-r/' target='_blank' rel='nofollow'>Objects in R by r-bloggers</a>
 <a href='https://cran.r-project.org/doc/manuals/r-release/R-lang.html' target='_blank' rel='nofollow'>CRAN</a>
+
+## Changes
+You can assign a value to objects like
+1. a = 5
+2. 5 -> a
+3. a <- 5
+all three are same
