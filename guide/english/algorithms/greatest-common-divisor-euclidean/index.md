@@ -65,6 +65,29 @@ function gcd(a, b) {
 }
 ```
 
+Python Code to Perform GCD using Recursion
+```Python
+def gcd(a, b):
+  if b == 0:
+    return a:
+  else:
+    return gcd(b, (a % b))
+```
+
+Java Code to Perform GCD using Recursion
+```Java
+static int gcd(int a, int b)
+{
+  if(b == 0)
+  {
+    return a;
+  }
+  return gcd(b, a % b);
+}
+
+```
+
+
 You can also use the Euclidean Algorithm to find GCD of more than two numbers.
 Since, GCD is associative, the following operation is valid- `GCD(a,b,c) == GCD(GCD(a,b), c)`
 
