@@ -41,6 +41,7 @@ Solid State Hard Drives fill a specific gap inbetween Solid State Drives and tra
 * [Wikipedia - Hard Disk Drive](https://en.wikipedia.org/wiki/Hard_disk_drive)
 * [Wikipedia - Flying height](https://en.wikipedia.org/wiki/Flying_height)
 * [Wikipedia - Computer data storage](https://en.wikipedia.org/wiki/Computer_data_storage)
+* [Techopedia - Hard Disk Drive](https://www.techopedia.com/definition/5288/hard-disk-drive)
 * [PCMag - SSD vs. HDD: What's the Difference?](https://www.pcmag.com/article2/0,2817,2404258,00.asp)
 * [Digital Trends - SSD vs. HDD](https://www.digitaltrends.com/computing/solid-state-drives-vs-hard-disk-drives)
 * [IOMeter Project](http://www.iometer.org)
