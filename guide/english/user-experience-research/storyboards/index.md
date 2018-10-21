@@ -13,5 +13,5 @@ Storyboarding is a great technique when attempting to develop or or explain an e
 
 #### More Information:
 
-* To learn more about storyboarding, you visit this [link](https://uxplanet.org/storyboarding-in-ux-design-b9d2e18e5fab?gi=84d3b1dc4704) 
+* Storyboarding <a href='https://uxplanet.org/storyboarding-in-ux-design-b9d2e18e5fab?gi=84d3b1dc4704'>Storyboarding</a>
 * [Wikipedia](https://en.wikipedia.org/wiki/Storyboard)
