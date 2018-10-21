@@ -19,6 +19,11 @@ select field1, testField
 from table1
 where testField between min and max
 ```
+```
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2
+```
 
 Here is an example using the student table and the WHERE clause:
  
@@ -32,6 +37,9 @@ select studentID, FullName, studentID
 from student
 where studentID between 2 and 7;
 ```
+--Example
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/between01.JPG?raw=true)
 
@@ -47,5 +55,18 @@ group by Candidate, Office_Sought, Election_Year
 having sum(Total_$) between 3000000 and 18000000
 order by sum(Total_$) desc; 
 ```
+Not Between
+SELECT * FROM Products
+WHERE Price NOT BETWEEN 10 AND 20;
+
+Between Dates Example
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN #01/07/1996# AND #31/07/1996#;
+
+or
+
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+
 
 ![image-1](https://github.com/SteveChevalier/guide-images/blob/master/between02.JPG?raw=true)
