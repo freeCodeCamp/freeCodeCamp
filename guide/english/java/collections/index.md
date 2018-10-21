@@ -93,7 +93,7 @@ Output:
 
 **Retrieve elements from the list**
 ```java
-intList.get(3); // Returns element at index 3 i.e. 2.
+intList.get(3); // Returns element at index 3 i.e. 2. Complexity of get is O(n).
 
 intList.getFirst(); // Get the first element i.e. 3.
 
