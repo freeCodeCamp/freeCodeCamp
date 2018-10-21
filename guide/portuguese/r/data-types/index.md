@@ -17,6 +17,10 @@ Escalar refere-se a uma quantidade atômica que pode conter apenas um valor por 
     
     > um <- "1"; b <- "2,5" a; b \[1\] "1" \[1\] "2,5" a + b Erro em um argumento + b: não numérico para operador binário classe A) \[1\] "personagem" class (como.numeric (a)) \[1\] "numérico" classe (como.character (x)) \[1\] "personagem"
     
+    
+# Vetores, Matrizes e Listas no R
+
+Uma curiosidade da linguagem R é que diferentemente de linguagens como Python e Java os seus vetores e listas começam do índice 1 ao invés de 0, sejam elas colunas no caso de matrizes ou apenas linhas no caso de vetores.
 
 ## Vetor
 
@@ -31,6 +35,15 @@ Escalar refere-se a uma quantidade atômica que pode conter apenas um valor por 
  [1]  TRUE  TRUE FALSE  TRUE FALSE 
 ```
 
+### Como acessar valores específicos em Vetores no R?
+
+Em um vetor você pode acessar um valor especificando o nome da variavel e entre colchetes o índice do valor. Por exemplo:
+```
+> vetor1 <- c(2,4,7)
+> vetor1[1]
+[1] 2
+```
+
 ## Matriz
 
 É um conjunto de dados retangular bidimensional. Os componentes em uma matriz também devem ser do mesmo tipo básico, como vetor. Por exemplo:
@@ -40,6 +53,29 @@ Escalar refere-se a uma quantidade atômica que pode conter apenas um valor por 
  >[,1] [,2] [,3] 
  [1,] "a"  "a"  "b" 
  [2,] "c"  "b"  "a" 
+```
+
+### Como acessar valores, linhas ou colunas específicas em Matrizes no R?
+
+Em uma matriz você pode acessar um valor utilizando o nome da variável e em colchetes colocar uma virgula: <code>[,]</code>. Do lado esquerdo será preciso especificar a linha do valor desejado e do lado direito a coluna do valor desejado. Por exemplo:
+```
+> m = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE) 
+> m[1,2]
+[1] "a"
+```
+
+Para acessar somente uma linha, é preciso especificar apenas a linha desejada que fica do lado esquerdo da virgula. Por exemplo:
+```
+> m = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE) 
+> m[1,]
+[1] "a"
+```
+
+Para acessar somente uma coluna, é preciso especificar apenas a coluna desejada que fica do lado direito da virgula. Por exemplo:
+```
+> m = matrix( c('a','a','b','c','b','a'), nrow = 2, ncol = 3, byrow = TRUE) 
+> m[,1]
+[1] "a"
 ```
 
 ## Quadro de dados
