@@ -8,7 +8,7 @@ Em suma, o sistema de grade Bootstrap ajuda você a criar layouts responsivos, �
 
 As linhas são grupos horizontais de colunas, com um máximo de 12 colunas por linha. Dentro de cada linha, o conteúdo é colocado dentro das colunas e pode variar entre 1 a 12 colunas.
 
-O Bootstrap tem cinco tipos diferentes de camadas de grade: Extra pequeno, Pequeno, Médio, Grande e Extra grande, há um ponto de interrupção definido para cada um desses níveis de grade.
+O Bootstrap tem cinco tipos diferentes de camadas de grade: Extra pequeno, Pequeno, Médio, Grande e Extra grande, há um ponto de interrupção definido para cada um desses níveis de grade. Cada tipo é baseado no tamanho da tela do usuário.
 
 O Bootstrap usa pixels para definir os pontos de interrupção da camada da grade, as diferentes larguras da janela de visualização que atuam como pontos de interrupção para as camadas da grade são:
 
