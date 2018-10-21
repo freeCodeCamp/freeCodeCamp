@@ -2,7 +2,7 @@
 title: React
 localeTitle: Reaccionar
 ---
-# Reaccionar
+# React
 
 React es una biblioteca de JavaScript para construir interfaces de usuario. Fue votado como el más querido en la categoría "Marcos, bibliotecas y otras tecnologías" de la Encuesta de desarrolladores 2017 de Stack Overflow. 1
 
@@ -14,7 +14,7 @@ React se utiliza para crear interfaces de usuario, lo que el usuario ve en su pa
 *   Es eficiente: React calcula el conjunto mínimo de cambios necesarios para mantener actualizado su DOM.
 *   Y es flexible: React trabaja con las bibliotecas y los marcos que ya conoce.
 
-## ¿Por qué aprender reaccionar?
+## ¿Por qué aprender React?
 
 1.  React implica una composición que es un montón de componentes que envuelven las funcionalidades en un contenedor encapsulado. Muchos sitios web populares utilizan React implementando el patrón arquitectónico MVC. Facebook (Parcialmente), Instagram (Completamente), Khan Academy (Parcialmente), Codecademy (Parcialmente), New York Times (Parcialmente), Yahoo Mail (Completamente), la nueva aplicación de galería de fotos y videos de Dropbox (completamente) son los sitios web populares conocidos utilizar React. ¿Cómo se construyen estas grandes aplicaciones utilizando React? La respuesta simple es construir pequeñas aplicaciones o componentes. Ejemplo:
 
@@ -49,7 +49,7 @@ const Component2 = () => {
 3.  Flujo de datos unidireccional. La interfaz de usuario en React es en realidad la función del estado que significa que a medida que el estado se actualiza, también actualiza la interfaz de usuario. Así que nuestra interfaz de usuario avanza a medida que cambia el estado.
     
 
-## Ventajas de reaccionar
+## Ventajas de React
 
 Algunas razones para usar React son:
 
@@ -105,7 +105,7 @@ Esto resultará en el siguiente código:
  </html> 
 ```
 
-Podemos rellenar el título de "¡Hora de reaccionar!".
+Podemos rellenar el título de "¡Hora de React!".
 
 Este contenido no aparecerá en su página web. Cualquier cosa en la sección principal del archivo HTML serán metadatos que nuestro navegador usará para interpretar nuestro código en la sección del cuerpo. Este título será lo que aparece en la pestaña de nuestra página, no en realidad en la página.
 
