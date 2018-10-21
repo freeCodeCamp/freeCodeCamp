@@ -31,6 +31,12 @@ Explore the darker side of Python and discover how to write network sniffers, ma
 - [Amazon](https://www.amazon.co.uk/Black-Hat-Python-Programming-Pentesters/dp/1593275900)
 - ISBN-10: 1593275900
 
+#### Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers
+
+Another peek into the darker world of python.
+
+-[Amazon](https://www.amazon.com/Violent-Python-Cookbook-Penetration-Engineers/dp/1597499579)
+
 #### Programming Python
 
 So you've covered the basics of Python?  You're now ready to discover the in-depth tutorials which cover the advanced programming aspects of Python. These include system administration, GUIs and the web.  Understand how Python is used in databases, networking, front-end scripting layers and more.
