@@ -76,3 +76,4 @@ const multiplesOf3and5 = (number) => {
 this is a good source now, the solutions to project euler
 finally learning on this thing. persistance is the key to any learning
 heres's the final one for hacktober fest, 
+always an ignorant, always the jon snow. 
