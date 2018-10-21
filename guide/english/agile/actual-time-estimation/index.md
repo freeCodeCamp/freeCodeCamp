@@ -47,7 +47,8 @@ Or…
 
 ### More Information:
 
-- [Agile Constraints](http://www.brighthubpm.com/agile/50212-the-agile-triangle-value-quality-and-constraints/)
+- [Agile Constraints](http://www.brighthubpm.com/agile/50212-the-agile-triangle-value-quality-and-constraints/) 
 
-- [How do you estimate on an Agile project?](http://info.thoughtworks.com/rs/thoughtworks2/images/twebook-perspectives-estimation_1.pdf)
+- [How do you estimate on an Agile project?](http://info.thoughtworks.com/rs/thoughtworks2/images/twebook-perspectives-estimation_1.pdf)  
+- [The secrets behind story points and agile estimation](https://www.atlassian.com/agile/project-management/estimation)
 
