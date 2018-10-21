@@ -50,5 +50,6 @@ HTML5 offers new semantic elements that define the different parts of a web page
 #### More Information:
 
 - [W3 Schools - Layout](https://www.w3schools.com/html/html_layout.asp)
+- [Tutorialspoint](https://www.tutorialspoint.com/html/html_layouts.htm)
 - [CodeMentorTeam](https://www.codementor.io/codementorteam/4-different-html-css-layout-techniques-to-create-a-site-85i9t1x34) - Layout Techniques to Create a Site
 
