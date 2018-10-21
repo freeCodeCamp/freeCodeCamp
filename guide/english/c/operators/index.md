@@ -27,6 +27,9 @@ title: Operators
      int b = 4;
      int c = a / b; // c = 2
      ```
+     NOTE: In c=a/b , if we declare c as a float then also the '/' will give int output. For e.g- in float c= 0.7/2 will give zero.
+           To get the output as a float we need to explicitly type cast any of the operand as float. For e.g- int c=0.7/(float)2 will 
+           give 0.35 .
 - `%` Gives the remainder after an integer division
      ```C
      int a = 8;
