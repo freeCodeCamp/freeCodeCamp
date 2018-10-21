@@ -53,3 +53,9 @@ Any comparison based sorting algorithm must make at least nLog2n comparisons to 
 
 ### Algorithmic Paradigm
 Merge Sort and Quick Sort are based on Divide and Conquer Algorithm
+
+### Array Sorting Algorithms [Time Complexity	Space Complexity]
+Reference-style: 
+![alt text][cheatsheet]
+
+[cheatsheet]: https://github.com/piyushbajaj0704/Coding-Practices/blob/master/Sorting%20Algorithms%20Time%20and%20space%20Complexity.png?raw=true "Sorting algorithms complexity"
