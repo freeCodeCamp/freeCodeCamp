@@ -86,6 +86,11 @@ tests:
 <section id='solution'>
 
 ```js
-// solution required
+  .blue-box {
+    background-color: blue;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+  }
 ```
 </section>
