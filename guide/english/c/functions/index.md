@@ -105,6 +105,11 @@ int factorial (int n)
     return (n * factorial (n -1));
 }   
 ```
+We can define the steps of recursion as follows : 
+1. Base Case : A recursive function must have a terminating condition at which the function will stop calling itself i.e. the    base case. 
+2. Recursive Call : The recursive function will recursively invoke itself on the smaller version of problem.
+3. Small Calculation : Generally we perform small calculaion in each recursive call. This can be done before or after the new    recursive call.
+Bonus : Recursion can be seen as principle of mathematical induction in mathematics.
 
 # Before you go on...
 ## A review
