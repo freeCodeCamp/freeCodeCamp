@@ -61,8 +61,13 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
    for sorting in decending order
    ```java
-  Collections.reverseOrder());
+  Collections.sort(variable_name, Collections.reverseOrder());
  ```
+  
+  to append the specified element to end of this list
+  ```java
+  variable_name.add(element);
+  ```
   
   An ArrayList allows us to randomly access elements. ArrayList is similar to *Vector* in a lot of ways. But it is faster than Vectors. The main thing to note is that - Vectors are faster than arrays but ArrayLists are not. 
   
