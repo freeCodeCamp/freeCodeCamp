@@ -30,3 +30,4 @@ HTML:
 ```html
 <script src="/bower_components/angular/angular.js"></script>
 ```
+please share some steps about how to install angualr in pc and how we have start...
