@@ -228,6 +228,9 @@ Output:
 ['THIS', 'IS', 'AWESOME', 'SHINNING', 'STAR']
 >
 ```
+A interesting fact is that for loop is a bit faster compared to while loop in python. Because in for loop range/xrange is used which is implemented in C(in python's library) whereas in while loop we make use of some incremental statement specifically at the end of sentence like (i+=1) which is interpreted. Thus for loop is faster than while loop. Reference:
+https://stackoverflow.com/questions/869229/why-is-looping-over-range-in-python-faster-than-using-a-while-loop
+
 
 #### More Information:
 
