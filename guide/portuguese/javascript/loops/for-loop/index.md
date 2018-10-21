@@ -10,16 +10,16 @@ for ([initialization]); [condition]; [final-expression]) {
  } 
 ```
 
-O javascript `for` instrução consiste em três expressões e uma declaração:
+A instrução `for` do JavaScript consiste de três expressões e uma declaração:
 
 ## Descrição
 
-*   Inicialização - Executar antes da primeira execução no loop. Esta expressão é comumente usada para criar contadores. As variáveis ​​criadas aqui estão no escopo do loop. Uma vez terminado o loop, sua execução é destruída.
-*   condição - Expressão que é verificada antes da execução de cada iteração. Se omitido, esta expressão é avaliada como verdadeira. Se for avaliado como true, a instrução do loop será executada. Se for avaliado como falso, o loop será interrompido.
-*   expressão final - Expressão executada após cada iteração. Geralmente usado para incrementar um contador. Mas pode ser usado para diminuir um contador também.
-*   statement - Código a ser repetido no loop
+*   [initialization] - Definido antes da primeira execução no loop. Esta expressão é comumente usada para criar contadores. As variáveis ​​criadas aqui estão no escopo do loop. Uma vez terminado o loop, sua execução é destruída.
+*   [condition] - Expressão que é verificada antes da execução de cada iteração. Se omitida esta expressão é avaliada como `true`. Se for avaliada como `true`, a instrução do loop será executada. Se for avaliada como `false`, o loop será interrompido.
+*   [final-expression] - Expressão executada após cada iteração. Geralmente usado para incrementar um contador. Mas pode ser usado para diminuir um contador também.
+*   //statement - Código a ser repetido no loop
 
-qualquer uma dessas três expressões ou a declaração pode ser omitida. For loops são comumente usados ​​para contar um certo número de iterações para repetir uma instrução. Use uma instrução `break` para sair do loop antes que a expressão de condição seja avaliada como falsa.
+Qualquer uma dessas três expressões ou a declaração pode ser omitida. For loops são comumente usados ​​para contar um certo número de iterações para repetir uma instrução. Use uma instrução `break` para sair do loop antes que a expressão de condição seja avaliada como falsa.
 
 ## Armadilhas Comuns
 
