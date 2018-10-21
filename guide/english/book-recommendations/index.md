@@ -146,7 +146,9 @@ title: Books to Read for Programmers
 *Soft Skills: The software developer's life manual*
 - [Amazon Smile](https://smile.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397?pldnSite=1)
 - ISBN-13: 9781617292392 
-
+*Clean Code: Handbook of Agile Software Craftsmanship by: Robert C. Martin*
+- [Amazon](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+- ISBN-13: 978-0132350884 
 ## Other
 
 *Hacking: Ultimate Hacking Guide: Hacking For Beginners And Tor Browser
