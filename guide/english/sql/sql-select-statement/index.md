@@ -2,7 +2,7 @@
 title: SQL Select Statement
 ---
 
-## SQL Select Statement
+# SQL Select Statement
 
 ## Select and From clauses
 
@@ -31,6 +31,8 @@ from student;
 +-----------+-------------------+------------+------------------------+
 9 rows in set (0.00 sec)
 ```
+**_NOTE: TO SIMPLY SELECT ALL THE DATA FROM THE TABLE YOU CAN ALSO USE THE "*" OPERATOR.  
+FOR eg. SELECT * from <table_name>_**
 
 *As with all of these SQL things there is MUCH MORE to them than what's in this introductory guide.  
 
