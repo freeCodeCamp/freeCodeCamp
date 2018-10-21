@@ -61,3 +61,7 @@ In RR Rotation every node moves one position to right from the current position.
 The LR Rotation is combination of single left rotation followed by single right rotation. In LR Rotation, first every node moves one position to left then one position to right from the current position.
 ->Right Left Rotation (RL Rotation)
 The RL Rotation is combination of single right rotation followed by single left rotation. In RL Rotation, first every node moves one position to right then one position to left from the current position.
+
+Application of AVL Trees
+
+AVL trees are beneficial in the cases where you are designing some database where insertions and deletions are not that frequent but you have to frequently look-up for the items present in there.
