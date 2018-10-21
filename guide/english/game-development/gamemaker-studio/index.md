@@ -7,7 +7,7 @@ GameMaker Studio, previously known as GameMaker, is a cross-platform game develo
 using drag and drop action sequences or a scripting language known as Game Maker Language (GML).
 
 ### Overview:
-GameMaker allows it's users to create and prototype games quickly without the need to learn a programming language. GameMaker games usually
+GameMaker allows its users to create and prototype games quickly without the need to learn a programming language. GameMaker games usually
 consists of at least 3 things: sprites (images & animations), objects (logic & interactivity) and rooms (screens & levels). 
 Each game needs at least one room which is used for both menus and levels, and the transitioning between each.
 
