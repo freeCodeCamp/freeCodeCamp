@@ -52,7 +52,7 @@ To know about how to install Ruby through package managers, installers and sourc
 
 ## IRB
 
-IRB stands for Interactive Ruby Shell. The abbreviation irb comes from the fact that the filename extension for Ruby is ".rb", although interactive Ruby files do not have an extension of ".irb". The program is launched from a command line and allows the execution of Ruby commands with an immediate response, experimenting in real-time. It features command history, line editing capabilities, and job control, and is able to communicate directly as a shell script over the Internet and interact with a live server. It was developed by Keiju Ishitsuka.
+IRB stands for Interactive Ruby Shell. The abbreviation irb comes from the fact that the filename extension for Ruby is ".rb", although interactive Ruby files do not have an extension of ".irb". The program is launched from a command line and allows the execution of Ruby commands with an immediate response, experimenting in real-time. It features command history, line editing capabilities, and job control, and is able to communicate directly as a shell script over the Internet and interact with a live server. Interactive Ruby Shell is a great way to explore the Ruby language and quickly test scripts. It was developed by Keiju Ishitsuka.
 
 ```shell
     irb
