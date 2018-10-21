@@ -11,6 +11,7 @@ cp [options] source target
  Commonly used options:
  * `-p` (preserve) - used to preserve time of the last data modification, time of last access, ownership, and permissions of the source for the target
 * `-R or -r` (recursive) - used to recursively copy directories
+* `-n` - do not overwrite an  existing  file 
  ### Examples
  #### Copy a file
  ```bash
