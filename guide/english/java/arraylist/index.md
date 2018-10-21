@@ -6,9 +6,9 @@ title: ArrayList
   
   The *Collection framework* consists of all interfaces and classes that can hold a set of values (similar to [arrays](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)). **ArrayList** is a class that is in this hierarchy and known as a _**Collection object**_. It implements the *List* interface which in turn implements the *Collection* interface. This *Collection* interface can be found in the `java.util` package. You will need to import this package.
   
-  import java.util.ArrayList;  //it would more efficient.
+  import java.util.ArrayList;  //it would be more efficient.
   
-  always import specific package that saves memory size and works in less time
+  Always import specific packages that save memory size and work in less time.
   
   
   ArrayList is a class that is used to create dynamic arrays. It is slower than regular arrays but allows for a lot of manipulation. It can be initialized to have a specific size or it will have a default size of 10 units. 
@@ -30,22 +30,22 @@ Since ArrayList implements *List*, an ArrayList can be created using the followi
   
   To clear/delete all elements from ArrayList
   ```java
-  variable.clear();
+  variableName.clear();
   ```
   
   we can delete existing element from the list
   ```java
-  variable_name.remove(index_number);
+  variableName.remove(index_number);
   ```
   
   to access existing element from the list
   ```java
-  variable_name.get(index_number);
+  variableName.get(index_number);
   ```
    
    we can modify the existing element too
    ```java
-   variable_name.set(index_number,element);
+   variableName.set(index_number,element);
   ```
   
   we can reverse the order of elements in Array-list.
