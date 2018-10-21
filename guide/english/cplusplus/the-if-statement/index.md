@@ -4,6 +4,9 @@ title: C++ If Statement
 
 # The IF statement.
 
+**What is an If statement?**
+An `if` statement is a function that checks a parameter, and if it proves true, executes the code associated with it.
+
 **What does an if statement do?**
 
 * The `if` statement evaluates the test expression present inside the parenthesis.
@@ -18,13 +21,13 @@ title: C++ If Statement
     // Block of statements if test expression is True
   }
 ```
-If there is only one statement after the if statement the '{ }' are not necessarily required . But if there are more number of statements after if statement, then it is mandatory to put all those statements in '{}'.
+If there is only one statement to be executed after the if statement, the brackets{} are not necessarily required. But if there is more than one statement to be executed once the condition proves true, then it is mandatory to put all those statements in brackets{}.
 
 If the value of the test expression is **true**, then the block of
 code inside the if statement is executed.
 
 If the value of the test expression is **false**, then the block of
-code inside the if statement is skipped and your code continues.
+code inside the if statement is skipped and the compiler continues from the next line of code.
 
 Example `if` statement:
 
@@ -98,8 +101,7 @@ This is the output when the number entered is negative.
 
 _CONGRATULATIONS . This is the end of the article on the IF statement_ 
  
- **Good Luck to all of you** 
+ **Good Luck, and Happy Coding ! :)** 
  
- **Happy Coding ! :)**
  
  **Feel free to ask any queries on FreeCodeCamp's GitHub page or [FreeCodeCamp's Forum .](https://forum.freecodecamp.org/)**
