@@ -42,4 +42,11 @@ int main () {
 > Item on index 2 is 3
 > Item on index 3 is 4
 ```
-
+a=1;
+for(;a<=5;a++)
+{
+printf("%d",a);
+}
+#output
+12345
+This is a form of for loop in which varaible can be declared outside of the loop still the loop executes
