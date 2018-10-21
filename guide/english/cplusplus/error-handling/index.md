@@ -33,6 +33,20 @@ int main()
    cout << "After catch (Will be executed) \n";
    return 0;
 }
+Note: There is also a way to catch all types of exceptions, irrespective of its type. It is written using catch(...).See the example below to understand it better.
+eg. int main(){
+
+    try  { 
+       throw 15; 
+    } 
+    catch (char *a)  {                       // Catches char type of exception
+        cout << "Caught Exception" << a; 
+    } 
+    catch (...)  {                           //Catches an int type of exception, even though there is no explicit catch block to handle 
+        cout << "Exception Handled" << endl;    such exception
+    } 
+    return 0; 
+}
 ```
 
 # Before you go on...
