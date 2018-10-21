@@ -11,6 +11,8 @@ While Python already provides many built-in functions such as `print()` and `len
 
 One of the great advantages of using functions in your code is that it reduces the overall number of lines of code in your project.
 
+example: if you have 10 lines of code occuring 10 times in your project then put that 10 lines in a function and this thing will make your code more shorter and code reusable.
+
 ### Syntax
 
 In Python, a function definition has the following features:
