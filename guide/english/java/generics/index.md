@@ -79,3 +79,14 @@ you want. For example, if you wanted to make sure the type can be read as a form
 
 Note that the letter `T` is a placeholder, you could make that anything you like, as long as you use the same one 
 throughout the class.
+
+
+The syntax to create your own Generic methods would be as follows.
+
+public class GenericMethod {
+
+	public static <T> void printObject(T t){
+		System.out.println(t.toString());
+	}
+  
+}
