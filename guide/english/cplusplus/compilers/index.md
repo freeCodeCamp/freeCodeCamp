@@ -87,6 +87,9 @@ Some common flags is :
 2. -std=c++11 : use c++11 instead of c++98 which is defaulted.
 3. -Wall: prompt some warning about some common mistakes which can bug your program.
 4. -Wextra: prompt some extra warning.
+5. -pedanctic: this option causes gcc to issue warnings in such cases
+6. -pedantic-errors: this option converts such diagnostic warnings into errors that will cause compilation to fail at such points
+7. -ansi: check your code with any other ANSI standard compiler
 ____________
 
 There are a number of different types of compilers. The two listed are the two that are usually packaged with the Windows
