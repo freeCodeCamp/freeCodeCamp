@@ -84,8 +84,8 @@ j) `.modal-footer` class styles the footer of the modal.
 #### More Information : 
 <a href='https://bootstrapbay.com/blog/working-bootstrap-modal/' target='_blank' rel='nofollow'>Bootstrap Modal</a>
 
-If you want to explore ****Bootstrap 4.0 Latest (Alpha version)**** :
-<a href='https://getbootstrap.com/docs/4.0/components/modal/' target='_blank' rel='nofollow'>Bootstrap Modal v4.0</a>
+If you want to explore ****Bootstrap 4.1 Latest **** :
+<a href='https://getbootstrap.com/docs/4.1/components/modal/' target='_blank' rel='nofollow'>Bootstrap Modal v4.0</a>
 
 
 
