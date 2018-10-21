@@ -48,4 +48,14 @@ Here is a program to illustrate instanecof operator:
        
  ```
  
+Example for showing the difference between Arithmetic Addition and String Concatenation:
+
+```java
+   Sysytem.out.println(90 + 9);  /* here the output is 99 ,when both the operands of + operator are numeric type then it will perform Arithmetic Addition and result of Arithmetic addition is Numeric type */
+   
+```java
+   System.out.println("90"+9);  // here the output is 909
+   System.out.println("9"+"90"); // here the output is 990
+   /* when any one or both the operands of + operator are String type then it will perform String Concatenation and result
+    of String Concatenation is String type */   
 
