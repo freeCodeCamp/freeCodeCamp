@@ -31,6 +31,6 @@
 ## المساهمة في هذا المصدر المفتوح مصدر
 
 ### البحث وكتابة وتحديث مقالاتنا الإرشادية
-
+ 
 
 These instructions have been translated partially. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
