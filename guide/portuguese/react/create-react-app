@@ -1,0 +1,20 @@
+#O que é create-react-app?
+O React exige muitas configurações para que o desenvolvedor possa começar a trabalhar com ele. Tendo isso em mente a equipe do Facebook decidiu criar uma solução que já realize tudo de forma automática.
+
+##Instalação
+
+Antes de utilizar precisamos fazer a sua instalação. É interessante que isso seja feito de forma global.
+
+`npm install -g create-react-app`
+
+Após isso podemos então criar o nosso projeto
+
+`
+npx create-react-app meu-projeto
+cd meu-projeto
+npm start
+`
+
+No código acima criamos o projeto, acessamos sua pasta e iniciamos a aplicação.
+
+###Mais informações em: https://github.com/facebook/create-react-app
