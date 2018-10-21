@@ -2,12 +2,12 @@
 title: Icons
 ---
 
+_Note: Bootstrap's Glyphicons icon is not avalable on bootstrap V4, they remain available for bootstrap V3. See the article: Fontawesome Icons for Bootstrap_
+
 ## Icons
 
 The Bootstrap framework provides you Glyphicons for icon.
 Bootstrap doesn’t include an icon library by default, but it has a handful of recommendations for you to choose from. While most icon sets include multiple file formats, we prefer SVG implementations for their improved accessibility and vector support.
-
-
 
 ### How to use
 
