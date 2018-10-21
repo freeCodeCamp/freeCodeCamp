@@ -11,6 +11,7 @@ if (testExpression) {
    // statements
 }
 ```
+![alt text](https://github.com/AmilaIndika789/Images/blob/master/If.png "If statement flow diagram")
 
 ## A Simple Example
 Let's look at an example of this in action:
@@ -38,6 +39,8 @@ Also new in the above example is that 'if' statement. If the statement within th
 
 ## If-else
 In the 'If-else' statement, If the statement within the parenthesis is true, the code within the brackets of the 'if' statement will be executed and if the statement within the parenthesis is false, the code within the brackets of the 'else' statement will be executed.
+
+![alt text](https://github.com/AmilaIndika789/Images/blob/master/If-else.png "If-else flow diagram")
 
 Of course, that example wasn't very useful, because true is always true. Here's another one that's a bit more practical:
 
@@ -78,6 +81,9 @@ else
    else
       sign = 1;
 ```
+
+![alt text](https://github.com/AmilaIndika789/Images/blob/master/Nested-If.png "Nested-if flow diagram")
+
 This is an if-else statement in which the statement following the else is itself an if-else statement. If x is less than zero then sign is set to -1, however if it is not less than zero the statement following the else is executed. In that case if x is equal to zero then sign is set to zero and otherwise it is set to 1.
 Novice programmers often use a sequence of if statements rather than use a nested if-else statement. That is they write the above in the logically equivalent form:
 
