@@ -3,6 +3,8 @@ title: Acceptance Criteria
 ---
 ## Acceptance Criteria
 
+Acceptance Criteria is a specific list of conditions that must be met before a user story is considered complete. It reflects the completion of the user story to all involved in the development lifecycle. 
+
 The User Story, as an item in your backlog, is a placeholder for a conversation. In this conversation,
 the Product Owner and the Delivery Team reach an understanding on the desired outcome.
 
