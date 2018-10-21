@@ -15,4 +15,7 @@ If you want to learn Tableau on your own, it's possible to get a free license fo
 ### Links:
   * [Tableau Website](https://www.tableau.com)
   * [Tableau Public Gallery](https://public.tableau.com/en-us/s/gallery)
+  * [Tableau Learning](https://www.tableau.com/learn/training)
+  * [Tutorialspoint](https://www.tutorialspoint.com/tableau/)
+  * [Tutorial Gateway](https://www.tutorialgateway.org/tableau/)
 
