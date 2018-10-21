@@ -36,4 +36,6 @@ Motherboards come in different sizes, known as form factors. The most common mot
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 * <a href='https://www.computerhope.com/jargon/m/mothboar.htm' target='_blank' rel='nofollow'>Motherboard</a>
+* [Parts of a Motherboard and Their Function](https://turbofuture.com/computers/the-motherboard-components)
 * <a href='https://en.wikipedia.org/wiki/Chipset' target='_blank' rel='nofollow'>Chipset (wikipedia)</a>
+
