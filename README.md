@@ -25,7 +25,7 @@ Our full stack web development curriculum is completely free and self-paced. We 
 
 freeCodeCamp.org offers several free developer certifications. Each of these certifications involves building 5 required web app projects, along with hundreds of optional coding challenges to help you prepare for those projects. We estimate that each certification will take a beginning programmer around 300 hours to earn.
 
-Each of these 30 projects in the freeCodeCamp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before you submit it.
+Each of these 30 projects in the free Code Camp.org curriculum has its own agile user stories and automated tests. These help you build up your project incrementally, and ensure you've fulfilled all the user stories before you submit it.
 
 You can pull in these test suites through [freeCodeCamp's CDN](https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js). This means you can build these projects on websites like CodePen and Glitch - or even on your local computer's development environment.
 
@@ -37,7 +37,7 @@ Here are our six core certifications:
 
 #### 1. Responsive Web Design Certification
 
-- Basic HTML and HTML5
+- Basic HTML and HTML5 php
 - Basic CSS
 - Applied Visual Design
 - Applied Accessibility
