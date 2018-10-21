@@ -1,6 +1,8 @@
 ---
 title: Giving a Conference Talk
 ---
+# Giving a Conference Talk
+
 
 Speaking at a tech conference or community meetup can be a great way to accelerate your career. It gives you a chance to share something you have learned and is a great way to challenge yourself technically. Speaking at a conference is also an opportunity to meet interesting people within the tech community. 
 
