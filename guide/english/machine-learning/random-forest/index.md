@@ -49,6 +49,18 @@ predictions2 = model2.predict(data_test)
 print(predictions2)
 ```
 
+### Advantages of Random Forests
+
+- It generally does not overfit too badly, and it is very easy to stop it from overfitting.
+- It has few, if any, `statistical assumptions`. It does not assume that your data is normally distributed, the relationship is linear, or you have specified interactions.
+- It requires very few pieces of feature engineering.
+
+### Disadvantages of Random Forests
+
+- It doesnot work well on image data.
+- It is a predictive modeling tool and not a descriptive tool. That means, if you are looking for a description of the relationships in your data, other approaches would be preferred.
+
+
 #### More Information:
 - <a href='https://www.wikiwand.com/en/Random_forest' target='_blank' rel='nofollow'>Random Forests (Wikipedia)</a>
 - <a href='https://www.analyticsvidhya.com/blog/2014/06/introduction-random-forest-simplified/' target='_blank' rel='nofollow'>Introduction to Random Forests - Simplified</a>
