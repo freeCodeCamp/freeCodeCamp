@@ -13,6 +13,11 @@ The position property specifies the type of positioning method used for an eleme
 .absolute       { position: absolute; }
 ```
 
+* Static: Is always positioned in within the natural flow of the page.  
+* Relative: Is moved relative from its normal position.  
+* Sticky: Is placed based on the scroll, and jumps from it's relative position to it's scroll position when it is scrolled past in a document.  
+* Fixed: Removed from the flow of the document, and is fixed to a point in the viewpoint, regardless of scrolling.  
+* Absolute: Removed from the flow of the document.  
 ### More Information:
 
 MDN Documentation: <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/position' target='_blank' rel='nofollow'>MDN</a>
