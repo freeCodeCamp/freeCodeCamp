@@ -14,3 +14,6 @@ This is how you print to the console:
 Also You can print an error log in the console with this code:
 
     console.error('I am an error!')
+    
+**Further Reading**    
+You can see few other `console` methods from <a href="https://developer.mozilla.org/en-US/docs/Web/API/Console" target="_blank">here</a> and use them as per your requirements
