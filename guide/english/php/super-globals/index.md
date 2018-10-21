@@ -3,10 +3,12 @@ title: Super Globals
 ---
 ## Super Globals
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/php/super-globals/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Superglobals are built-in variables that are always available in all scopes.
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
-
+Some of the superglobals are:
+1. $_SESSION
+2. $_POST
+3. $_GET
 <!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
 
 #### More Information:
