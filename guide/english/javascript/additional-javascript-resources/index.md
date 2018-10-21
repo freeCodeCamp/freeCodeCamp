@@ -4,10 +4,10 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='http://jsforcats.com/' target='_blank' rel='nofollow'>JavaScript for Cats</a>
 *   <a href='https://javascript.info/' target='_blank' rel='nofollow'>The Modern JavaScript Tutorial</a>
 *   <a href='https://github.com/DrBoolean/mostly-adequate-guide' target='_blank' rel='nofollow'>Professor Frisby's Mostly Adequate Guide to Functional Programming</a>
-*   <a href='http://www.eloquentjavascript.net' target='_blank' rel='nofollow'>Eloquent Javascript</a> (<a href='https://watchandcode.com/courses/eloquent-javascript-the-annotated-version' target='_blank' rel='nofollow'>_annotated_</a>)
-*   <a href='http://speakingjs.com/es5/' target='_blank' rel='nofollow'>Speaking Javascript</a>
+*   <a href='http://www.eloquentjavascript.net' target='_blank' rel='nofollow'>Eloquent JavaScript</a> (<a href='https://watchandcode.com/courses/eloquent-javascript-the-annotated-version' target='_blank' rel='nofollow'>_annotated_</a>)
+*   <a href='http://speakingjs.com/es5/' target='_blank' rel='nofollow'>Speaking JavaScript</a>
 *   <a href='http://exploringjs.com/es6/' target='_blank' rel='nofollow'>Exploring ES6</a>
-*   <a href='https://www.youtube.com/watch?v=Bv_5Zv5c-Ts' target='_blank' rel='nofollow'>Udemy - Javascript Understanding the Weird Parts (_first 3.5 hrs_)</a>
+*   <a href='https://www.youtube.com/watch?v=Bv_5Zv5c-Ts' target='_blank' rel='nofollow'>Udemy - JavaScript Understanding the Weird Parts (_first 3.5 hrs_)</a>
 *   <a href="https://www.youtube.com/playlist?list=PL0zVEGEvSaeEd9hlmCXrk5yUyqUag-n84">Functional programming in JavaScript</a>
 *   <a href='https://www.educative.io/collection/5679346740101120/5720605454237696?authorName=Arnav%20Aggarwal' target='_blank' rel='nofollow'>Introduction to JavaScript: First Steps</a>
 *   <a href='https://www.youtube.com/watch?v=v2ifWcnQs6M&index=1&list=PL62E185BB8577B63D' target='_blank' rel='nofollow'>Douglas Crockford's Videos</a>
@@ -23,7 +23,7 @@ title: JavaScript Tutorials and Other Resources
 *   <a href='http://www.ecma-international.org/publications/standards/Ecma-262.htm' target='_blank' rel='nofollow'>ECMA-262</a>
 *   <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript' target='_blank' rel='nofollow'>Mozilla Developer Network (MDN)</a>
 
-Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nofollow'>http://jster.net</a>
+Find JavaScript libraries at <a href='http://jster.net' target='_blank' rel='nofollow'>http://jster.net</a>
 
 ## Quick JavaScript
 
@@ -56,7 +56,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='http://coderbyte.com' target='_blank' rel='nofollow'>Coderbyte</a>
 *   <a href='http://exercism.io' target='_blank' rel='nofollow'>Exercism</a>
 *   <a href='https://javascript30.com/' target='_blank' rel='nofollow'>JavaScript30</a>
-*   <a href='https://www.javascript.com/' target='_blank' rel='nofollow'>Javascript.com (Pluralsight)</a>
+*   <a href='https://www.javascript.com/' target='_blank' rel='nofollow'>JavaScript.com (Pluralsight)</a>
 
 ## Editors
 
@@ -70,7 +70,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
     
 *   <a href='https://www.jetbrains.com/webstorm/' target='_blank' rel='nofollow'>Webstorm</a>
 
-    A full-feature IDE for Javascript, including code completion and support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
+    A full-feature IDE for JavaScript, including code completion and support for live linting, version control, and testing. Made by Jet Brains and modelled after their IntelliJ Java IDE.
 *   <a href='http://brackets.io' target='_blank' rel='nofollow'>Brackets</a>
 *   <a href='http://atom.io' target='_blank' rel='nofollow'>Atom</a>
 
@@ -107,19 +107,19 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='http://addyosmani.com/resources/essentialjsdesignpatterns/book/' target='_blank' rel='nofollow'>Learning JavaScript Design Patterns</a>
 *   <a href='https://github.com/airbnb/javascript' target='_blank' rel='nofollow'>Airbnb JavaScript Style Guide</a>
 *   <a href='http://usejsdoc.org/' target='_blank' rel='nofollow'>JSDoc</a>
-*   <a href='https://leanpub.com/javascriptallongesix/read' target='_blank' rel='nofollow'>Javascript Allonge Six</a>
+*   <a href='https://leanpub.com/javascriptallongesix/read' target='_blank' rel='nofollow'>JavaScript Allonge Six</a>
 *   <a href='https://github.com/getify/You-Dont-Know-JS' target='_blank' rel='nofollow'>You Don't Know JS</a>
     
     6 books on JavaScript by Kyle Simpson. From beginner to advanced. 
     
-*   <a href='http://www.eloquentjavascript.net' target='_blank' rel='nofollow'>Eloquent Javascript</a>  
+*   <a href='http://www.eloquentjavascript.net' target='_blank' rel='nofollow'>Eloquent JavaScript</a>  
 
-    Fantastic, thorough introduction to the basics and features of Javascript, complete with in-browser interactive code
+    Fantastic, thorough introduction to the basics and features of JavaScript, complete with in-browser interactive code
     
 
 *   <a href='https://github.com/DrBoolean/mostly-adequate-guide' target='_blank' rel='nofollow'>Professor Frisby's Mostly Adequate Guide to Functional Programming</a>  
 
-    Quite in-depth guide to Functional Programming in Javascript
+    Quite in-depth guide to Functional Programming in JavaScript
     
 *   <a href='https://github.com/bpesquet/thejsway' target='_blank' rel='nofollow'>The JavaScript Way</a>
 
