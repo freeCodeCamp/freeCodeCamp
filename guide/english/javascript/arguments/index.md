@@ -97,5 +97,22 @@ The rest parameter must always come as the last argument in your function defini
         //function body
     }```   
 
+### Overloading functions
 
+If you create a referance to the same function name with different numbers of argument you can have different functions with the same name based on the argument number. An example of this would be, if you made a distance function that could use 2 vectors arguments or 2 points in 4 arguments as 2 x's and 2 y's:
+```javascript
 
+    function newVector(x, y) {
+        var out = {};
+        out.x=x;
+        out.y=y;
+        return out;
+    }
+    function dist(a, b){
+        return Math.sqrt((a.x-b.x)^2+(a.y-b.y)^2);
+    }
+    function dist(ax, ay, bx, by){
+        return Math.sqrt((ax-bx)^2+(ay-by)^2);
+    }
+```
+Both functions can be used to find the distance between the two point in the same program. This is only one possiple use for overloading you goal in programing is to find ways to use this.
