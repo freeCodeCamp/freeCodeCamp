@@ -5,7 +5,7 @@ title: Python Bool Function
 
 ## Arguments
 
-It takes one argument, `x`. `x` is converted using the standard <a href='https://docs.python.org/3/library/stdtypes.html#truth' target='_blank' rel='nofollow'>Truth Testing Procedure</a>.
+It takes one argument, `x`. `x` is converted using the standard <a href='https://docs.python.org/3/library/stdtypes.html#truth' target='_blank' rel='nofollow'>Truth Testing Procedure</a>. You should keep in mind that some values are considered "truthy" or "falsy" even though they aren't thought of in this way in plain English.
 
 ## Return Value
 
