@@ -23,7 +23,6 @@ Paid (Free ebook available) book which covers the basics of python. It's designe
 - ISBN-13: 978-0134692883
 - ISBN-10: 0134692888
 
-
 #### Black Hat Python: Python Programming for Hackers and Pentesters
 
 Explore the darker side of Python and discover how to write network sniffers, manipulate packets, infect virtual machines and more.
@@ -64,6 +63,8 @@ You'll learn many of the first princliples for data science tools and how algori
 #### Other Resources
 
 - [Functional Programming in Python by David Mertz [OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/functional-programming-python.pdf)
+- [Python for Everybody : Exploring data using python 3] [FREE]
+(http://do1.dr-chuck.com/pythonlearn/EN_us/pythonlearn.pdf)
 - [Python in Education by Nicholas H. Tollervey[OREILLY] [FREE]](https://www.oreilly.com/programming/free/files/python-in-education.pdf)
 - [How to think like a Computer Scientist by Allen Downey[V 2.0.17] [FREE]](http://greenteapress.com/thinkpython/thinkpython.pdf)
 - [A Byte of Python[FREE]](https://python.swaroopch.com)
