@@ -8,22 +8,22 @@ Bash (abreviatura de Bourne Again SHell) es un shell de Unix y un intérprete de
 
 Muchas cosas que se pueden hacer con el sistema operativo Linux se pueden hacer a través de la línea de comandos. Algunos ejemplos son…
 
-*   Editando archivos
+*   Editar archivos.
 *   Ajuste del volumen del sistema operativo.
-*   Obtención de páginas web desde internet.
-*   Automatiza el trabajo que haces todos los días.
+*   Obtención de páginas web desde la internet.
+*   Automatizar el trabajo de todos los días.
 
 Puede leer más sobre bash [aquí](https://www.gnu.org/software/bash/) , a través de la [Documentación GNU](https://www.gnu.org/software/bash/manual/html_node/index.html#SEC_Contents) , y a través de la [guía tldp](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html#toc10) .
 
-## Usando bash en la línea de comando (Linux, OS X)
+## Usando bash en la línea de comandos (Linux, OS X)
 
-Puede comenzar a usar bash en la mayoría de los sistemas operativos Linux y OS X abriendo un terminal. Consideremos un ejemplo simple de hola mundo. Abra su terminal y escriba la siguiente línea (todo después del signo $):
+Puede comenzar a usar bash en la mayoría de los sistemas operativos Linux y OS X abriendo un terminal. Consideremos un ejemplo simple de Hello world!. Abra su terminal y escriba la siguiente línea (todo después del signo $):
 ```
 zach@marigold:~$ echo "Hello world!" 
  Hello world! 
 ```
 
-Como puede ver, usamos el comando echo para imprimir la cadena "¡Hola mundo!" a la terminal.
+Como puede ver, usamos el comando echo para imprimir la cadena "Hello world!" en el terminal.
 
 ## Escribiendo un guión de bash
 
