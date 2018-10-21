@@ -42,6 +42,17 @@ list(izip([1, 2, 3], ['a', 'b', 'c']))
 # Output
 # [(1, 'a'),(2, 'b'),(3, 'c')]
 ```
+### compress()
+
+It make an iterator that filters elements from data returning only those that have a corresponding element in selectors that evaluates to True. Stops when either the data or selectors iterables has been exhausted.
+
+```py
+import itertools
+itertools.compress('ABCDEF', [1,0,1,0,1,1]) 
+
+# Output
+# A C E F
+```
 
 Combinatoric iterators:
 
@@ -59,14 +70,3 @@ combinations_with_replacement('ABCD', 2)	 	                                     
 
 
 Source:https://docs.python.org/3/library/itertools.html
-
-##Changes
-
-###compress()
-It make an iterator that filters elements from data returning only those that have a corresponding element in selectors that evaluates to True. Stops when either the data or selectors iterables has been exhausted.
-
-import itertools as i
-i.compress('ABCDEF', [1,0,1,0,1,1]) 
---> A C E F
-
-Sourse : https://docs.python.org/2/library/itertools.html
