@@ -6,15 +6,15 @@ localeTitle: Ética del desarrollador
 
 La ética del desarrollador describe el campo de la ética cuando se aplica al comportamiento de los desarrolladores de software.
 
-Según la [Enciclopedia de Filosofía de Internet](http://www.iep.utm.edu/ethics/) , el campo de la ética (o filosofía moral) implica "sistematizar, defender y recomendar conceptos de lo correcto y lo incorrecto".
+Según la [Enciclopedia de filosofía de Internet](http://www.iep.utm.edu/ethics/) , el campo de la ética (o filosofía moral) implica "sistematizar, defender y recomendar conceptos de lo correcto y lo incorrecto".
 
 A lo largo de los años, varias organizaciones e individuos han intentado codificar la ética de los desarrolladores en una variedad de juramentos, promesas y códigos de conducta.
 
 Ejemplos incluyen:
 
-*   [**El Estándar Internacional para el Desarrollo de Software Profesional y la Responsabilidad Ética**](http://seeri.etsu.edu/TheSECode.htm) por parte del Grupo de Trabajo Conjunto IEEE-CS / ACM sobre Ética de la Ingeniería de Software y Prácticas Profesionales
+*   [**El estándar internacional para el desarrollo de software profesional y la responsabilidad ética**](http://seeri.etsu.edu/TheSECode.htm) por parte del Grupo de Trabajo Conjunto IEEE-CS / ACM sobre Ética de la Ingeniería de Software y Prácticas Profesionales
     
-*   [**Los Diez Mandamientos de Ética Informática**](http://computerethicsinstitute.org/publications/tencommandments.html) por el Instituto de Ética Informática
+*   [**Los diez mandamientos de ética informática**](http://computerethicsinstitute.org/publications/tencommandments.html) por el Instituto de Ética Informática
     
 *   [**El compromiso del profesional de la computación**](http://pledge-of-the-computing-professional.org/home-page/the-oath)
     
@@ -24,7 +24,7 @@ Ejemplos incluyen:
     
 *   [**La promesa de "nunca más"**](http://neveragain.tech)
     
-*   [**Código de Ética de la ACM**](http://www.acm.org/about-acm/acm-code-of-ethics-and-professional-conduct)
+*   [**Código de ética de la ACM**](http://www.acm.org/about-acm/acm-code-of-ethics-and-professional-conduct)
     
 
 Los temas comunes que aparecen a lo largo de estos ejemplos incluyen un compromiso con la honestidad, la integridad y la imparcialidad.
