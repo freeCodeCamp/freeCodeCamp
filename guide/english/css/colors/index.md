@@ -90,7 +90,10 @@ h2 {
  color: #FA8072; //salmon 
 }
 ```
+h2{
+color:#999999;//hidden black
 
+}
 You can also add an alpha value, or transparency to colors. Transparency allows text to be overlaid on an image and stil have the image partially viewable through the text, or can be used to change the shade of the colour if no other elements are in front or behind the text. Use `rgba()` or `hsla()` and fill in your color values. The alpha value goes last and is a percent converted to a decimal. (For example, 20% is 0.2, 75% is 0.75, etc.)
 
 ```css
