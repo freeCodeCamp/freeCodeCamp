@@ -17,7 +17,7 @@ x = 5
 if x > 4:
   print("The condition was true!") #this statement executes
 ```
-> **Tips** : You can use **1** as alternative to **True** and **0** as an alternative to **False**
+> **Tips** : You can use any number or string or character as alternative to **True** and only **0** and **None** as an alternative to **False**
 
 _Example_:
 ```python
@@ -99,6 +99,4 @@ Output
 True
 >
 ```
-##Changes
-> **Tips** : You can use any number or string or character as alternative to **True** and only **0** and **None** as an alternative to **False**
 
