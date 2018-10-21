@@ -116,7 +116,7 @@ intList.pop(); // Removes and returns the last element of the list.
 **Remove elements from the list**
 
 ```java
-intList.remove(3); // Removes the element at index 3 of the list
+intList.remove(3); // Removes the element at index 3 of the list. COmplexity of remove is O(1).
 
 intList.removeFirst(); // Removes first element of the list
 
