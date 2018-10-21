@@ -16,4 +16,4 @@ Hay muchos sabores diferentes de ágil, incluyendo Scrum y Programación Extrema
 
 ### Más información
 
-[Página de inicio de Agile Alliance](https://www.agilealliance.org/)
+[Página de inicio de Agile Alliance](https://www.agilealliance.org/)fsdfsdf
