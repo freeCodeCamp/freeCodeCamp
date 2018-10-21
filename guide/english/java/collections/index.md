@@ -68,7 +68,7 @@ Note: All collections in Java have been converted to generic types since JDK 1.5
 **Add elements to the list**
 
 ```java
-intList.add(new Integer(1)); // Add 1 to the end.
+intList.add(new Integer(1)); // Add 1 to the end. Complexity of insert is O(1).
 
 intList.add(2); // This works as Java provides autoboxing and unboxing of primitive datatypes and their respective wrapper classes.
 
