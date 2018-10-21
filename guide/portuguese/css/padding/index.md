@@ -4,7 +4,7 @@ localeTitle: Preenchimento
 ---
 # Preenchimento
 
-A propriedade CSS de `padding` define a área de preenchimento em todos os quatro lados de um elemento. Essa propriedade pode ser usada para gerar espaço ao redor do conteúdo (dentro da borda). É uma abreviação para definir todos os acolchoamentos individuais de uma só vez: `padding-top` , `padding-right` , `padding-bottom` e `padding-left` . Os valores são definidos no sentido horário.
+A propriedade CSS de `padding` define a área de preenchimento em todos os quatro lados de um elemento, como uma borda interna do bloco do elemento. Essa propriedade pode ser usada para gerar espaço ao redor do conteúdo (dentro da borda). É uma abreviação para definir todos os acolchoamentos individuais de uma só vez: `padding-top` , `padding-right` , `padding-bottom` e `padding-left` . Os valores são definidos no sentido horário.
 
 Os valores de preenchimento são definidos usando comprimentos ou porcentagens ou `inherit` palavra-chave e não podem aceitar valores negativos. O valor inicial ou padrão para todas as propriedades de preenchimento é 0. Embora você possa usar a palavra-chave `inherit` mas não pode ser usado junto com um valor de comprimento.
 
