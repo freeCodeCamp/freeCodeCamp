@@ -44,6 +44,23 @@ docker-compose -f docker-compose.yml --build -d
 docker-compose -f docker-compose.yml down
 ```
 
+#### Sample Docker Compose File
+```
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "8081:5000"
+    depends_on:
+      - db
+    container_name: 'web'
+
+  db:
+    image: "postgres"
+    container_name: 'postgres'
+```
+
 #### More Information:
 - [More information on Docker-compose]
 (https://docs.docker.com/compose/)
