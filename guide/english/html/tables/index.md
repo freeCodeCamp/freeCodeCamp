@@ -93,6 +93,13 @@ Result:
 	</table>
 
 
+
+## Adding a border to a Table
+
+If you do not specify a border for the table, it will be displayed without borders. 
+
+A border is set using the CSS border property. In CSS you cange the size, style, and color of the border of a table. 
+
 #### More Information:
 
 <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table' target='_blank' rel='nofollow'>MDN Article on the HTML <table> tag</a>
