@@ -4,8 +4,7 @@ title: Voice
 
 ## Voice
 
-Speech recognition allows users affected by accessibility difficulties (such as permanent visual impairment or temporary impairment while driving) the ability to navigate content on a website or input text data (such as a form). 
-
+Speech recognition allows the physically(visually) impaired users to smoothly navigate through the web and browse the required content without any hinderance.
 Speech synthesis provides websites the ability to provide information to users by reading text.
 
 
@@ -59,8 +58,8 @@ recognition.start();
 
 ### Alexa
 
-Alexa is Amazon’s cloud-based voice service available on tens of millions of devices from Amazon and third-party device manufacturers. With Alexa, you can build natural voice experiences that offer customers a more intuitive way to interact with the technology they use every day.
-It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news.
+Alexa is Amazon’s cloud-based virtual assitant enabled with voice command interface.It is available on tens of millions of devices from Amazon and third-party device manufacturers. With Alexa, you can build natural voice experiences that offer customers a more intuitive way to interact with the daily used technology.
+It is capable of performing numerous tasks for the user. Few of those being -voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing information related to weather, traffic, sports , and news related to other real-time happenings around the globe.
 
 # Amazon Echo Device Range
 - Amazon Echo
