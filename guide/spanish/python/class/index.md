@@ -21,13 +21,13 @@ class ClassName:
     <statement-N> 
  ``` 
  
- #### Class Objects: 
+ #### Objetos clase: 
  
- Class objects support two kinds of operations: attribute references and instantiation. 
+ Las clases soportan dos tipos de operaciones: referencia a atributos y instanciacion
  
- Attribute references use the standard syntax used for all attribute references in Python: `obj.name`. 
- Valid attribute names are all the names that were in the class's namespace when the class object was created. 
- So, if the class definition looked like this: 
+ Para hacer referencias a atributos de una clase se usa la sintaxis estandar usada por Python para todas las referencias de atributos `objeto.nombre_atributo`
+ Los nombres de atributos válidos son todos aquellos nombres que esten el espacio de nombre de la clase cuando la clase es creada.
+ Entonces, si la definición de clases es como sigue: 
 ```
 
 pitón clase MyClass: "" "Una clase de ejemplo simple" "" i = 12345
@@ -37,8 +37,8 @@ def f(self):
 ```
 
 ```
-Then `MyClass.i` and `MyClass.f` are valid attribute references, returning an integer and a function object, respectively. 
- Class attributes can also be assigned to, so you can change the value of `MyClass.i` by assignment. `__doc__` is also a valid attribute, returning the docstring belonging to the class: `"A simple example class"`. 
+Entonces `MyClass.i` y `MyClass.f` son referencias a atributos válidos, que retornan un entero y una función del objeto, respectivamente. 
+ Los atributos de una clase también se le pueden asignar datos, entonces uno puede cambiar los valores, por ejemplo, de `MyClass.i` a tráves de una asignación. `__doc__` es un atributo válido también, retornando un string que explica cual es la utilidad de la clase: `"A simple example class"`. 
  
  Class instantiation uses function notation. Just pretend that the class object is a parameterless function that returns a new instance of the class. For example (assuming the above class): 
 ```
