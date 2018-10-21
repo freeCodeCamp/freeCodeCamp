@@ -4,6 +4,7 @@ title: Hello World C
 
  ## Hello World
 
+Probably the first line of text that everyone prints out on the console when one begins his/her remarkable jouney of this endless programming world.
 To write on console you can use the function `printf()` contained in the library `include <stdio.h>`
 
  ```C
@@ -12,7 +13,7 @@ To write on console you can use the function `printf()` contained in the library
  int main(void)
  {
 
-     printf("hello, world\n");  //lines starting with this are called comments..
+     printf("Hello World!\n");  //lines starting with this are called comments..
 
      return 0;
  }
@@ -27,5 +28,5 @@ To write on console you can use the function `printf()` contained in the library
 
  ## Output:
  ```
- >Hello World
+ >Hello World!
  ```
