@@ -12,7 +12,7 @@ localeTitle: CSS按钮
 
 ![Default Button Style](https://image.ibb.co/kCweAm/button.png "默认按钮样式")
 
-## 造型按钮
+## 设计按钮
 
 您可以更改按钮的多个属性以更改其外观。
 
@@ -47,7 +47,7 @@ button {
 
 ### 按钮文字大小
 
-要更改按钮的文本字体大小，请使用font-size属性：
+要更改按钮的文字大小，请使用font-size属性：
 
 `button {font-size: 20px;}`
 
@@ -77,7 +77,7 @@ button {
 
 ![Rounded Buttons](https://image.ibb.co/cfH00m/button_bradius.png "圆形按钮")
 
-### 可怜的按钮
+### 悬停按钮
 
 要在将鼠标移到按钮上时更改按钮的样式，请使用：hover选择器：
 ```
@@ -87,7 +87,7 @@ button:hover {
  } 
 ```
 
-![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "可怜的按钮")
+![Hoverable Buttons](https://image.ibb.co/hxQnfm/button_hover.png "悬停按钮")
 
 要确定悬停效果的速度，请使用属性`transition-duration` 。
 
