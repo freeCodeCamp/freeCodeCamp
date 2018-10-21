@@ -6,8 +6,8 @@ JavaFX is a graphics framework created by Sun Microsystems used for developing r
 
 ## Development Tools
 
-### Gulon SceneBuilder
-Gulon Scene Builder is an application used for user interface (UI) design in JavaFX. The application uses drag-and-drop for rapid UI design that allows you to visualize the interface you are creating while designing it.
+### Gluon SceneBuilder
+Gluon Scene Builder is an application used for user interface (UI) design in JavaFX. The application uses drag-and-drop for rapid UI design that allows you to visualize the interface you are creating while designing it.
 
 #### Screeenshots:
 ![Scene Builder UI](https://i.imgur.com/3d9SqBR.png)
@@ -21,7 +21,7 @@ FXML is an XML-based markup language used for defining structures in JavaFX. The
         <Button text="Sign In"/> // Nested inside the HBox is a Button object with the text 'Sign In'
 </HBox>
 ```
-### Gulon Scenic View   
+### Gluon Scenic View   
 Scenic View is an application designed to show the current state of your JavaFX application. Scenic View enables you to debug the graphic elements in your application in real time, including changing various values.
 
 ### References:
