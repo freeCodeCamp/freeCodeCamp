@@ -57,6 +57,12 @@ By default `git push` will trigger the `--verify` toggle.  This means that git w
 git push --no-verify
 ```
 
+### Points to Note
+
+`git push --force` should be used very carefully. This command basically overrides the remote repository with any code that you have in the local. In the meanwhile if anyone else had commited to the remote repository then their code will be completely overwritten. 
+
+In some cases it makes sense to use force push to get the job done. But always evaluate the risks before running a force push command.
+
 
 ### More Information:
 - [Git documentation - push](https://git-scm.com/docs/git-push)
