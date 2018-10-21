@@ -16,6 +16,8 @@ The return value would be a positive number. Even if complex number is passed, i
 print(abs(3.4)) # prints 3.4
 print(abs(-6)) # prints 6
 print(abs(3 + 4j)) # prints 5.0, because |3 + 4j| = 5
+complex = (3 - 4j) # you can also use variable 
+print(abs(complex)) # prints 5.0 
 ```
 
 <a href='https://repl.it/CL8k/0' target='_blank' rel='nofollow'>🚀 Run Code</a>
