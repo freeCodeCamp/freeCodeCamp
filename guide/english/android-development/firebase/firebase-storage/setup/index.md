@@ -49,3 +49,48 @@ Firebase Quickstart-Android [android-sample](https://github.com/firebase/quickst
 ## Note
 Google now deprecated 'compile' and in place of that you need to use 'implementation'.
 
+
+##Changes
+---
+title: Setting up Firebase Messaging (Push Notification)
+---
+
+# Setting up Firebase Push Notification
+
+## Prerequisites
+1. The latest version of Android Studio
+2. Have connected with Firebase manually or via Firebase Assistant (See [Connecting to Firebase](guide/src/pages/android-development/firebase/connecting-to-firebase)). 
+
+It is recommended that you do this so as to not be confused by partial instructions related to this in the docs mentioned below. 
+
+## Setting it up with Android Studio
+
+After adding Firebase to your project, you will need to add extra dependencies and do some other things in order to setup 
+the Firebase Messaging. There are following documentation about this:
+
+* [Firebase](https://firebase.google.com/products/cloud-messaging/)
+
+There may be chance of confusion in that documentation or if you are new to firebase then you may face little bit hard to understand it. 
+So follow the belows steps carefully:
+
+
+**Add Gradle Dependencies**
+
+In your app-level build.gradle file, add the following
+
+```java
+dependencies {
+	compile 'com.google.firebase:firebase-core:16.0.0'
+    compile 'com.google.firebase:firebase-messaging:17.0.0'
+    }
+```
+## Installation of Firebase Android SDK, permissions and setup code
+Detailed instructions for these can be found [here](https://firebase.google.com/docs/android/setup).
+
+## Sample Projects from Firebase Developers
+You can follow up these samples from Firebase developers to get started Firebase Messaging
+Firebase Quickstart-Android [android-sample](https://github.com/firebase/quickstart-android/tree/master/messaging) 
+
+## Note If you use Android Studio 2.X then use 'compile' in gradle files and if you use version 3.X use 'implementation'
+because google now deprecated 'compile' and in place of that you need to use 'implementation'.
+
