@@ -310,7 +310,7 @@ int binarySearch(int[] arr, int start, int end, int element)
 {
     while(start <= end)
     {
-        int mid = ( start + end ) / 2;
+        int mid = start + ( end - start ) / 2;
         if(arr[mid] == element)
             return mid;
         if(arr[mid] < element)
@@ -325,7 +325,7 @@ int binarySearch(int[] arr, int start, int end, int element)
 // Recursive Approach in Java
 int binarySearch(int[] arr, int start,int end , int element)
 {
-    int mid = ( start + end ) / 2;
+    int mid = start + ( end - start ) / 2;
     if(arr[mid] ==  element)
         return mid;
     if(arr[mid] < element)
