@@ -99,5 +99,6 @@ Output
 True
 >
 ```
-
+##Changes
+> **Tips** : You can use any number or string or character as alternative to **True** and only **0** and **None** as an alternative to **False**
 
