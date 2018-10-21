@@ -49,3 +49,5 @@ Deadlock can arise if four conditions hold simultaneously.
 #### More information :
 - [Deadlock](https://en.wikipedia.org/wiki/Deadlock)
 - [Operating System | Process Management | Deadlock Introduction](https://www.geeksforgeeks.org/operating-system-process-management-deadlock-introduction/)
+
+##Mychanges
