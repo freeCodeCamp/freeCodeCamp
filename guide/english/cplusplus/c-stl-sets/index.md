@@ -49,5 +49,8 @@ set <int>::iterator it;
 for(it=s.begin(); it!=s.end(); ++it)
   cout<<*it;
 ```
-
-
+Functions associated with Set:
+```c++
+begin() – Returns an iterator to the first element in the set
+end() – Returns an iterator to the theoretical element that follows last element in the set
+```
