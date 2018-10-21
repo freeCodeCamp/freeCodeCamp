@@ -36,7 +36,7 @@ Popular distributions of Linux include:
 * Ubuntu
 * Linux Mint
 * CentOS
-* RHEL
+* Fedora
 * Arch Linux
 
 Package types are split between higher-level distributions, with Debian (.deb) and Red Hat (.rpm) being two of the most commonly used,
