@@ -22,3 +22,4 @@ Another suggestion for beginners is W3C's [Starting with HTML + CSS](https://www
 The site [CSS Zen Garden](http://www.csszengarden.com/) is a great example how the same html can be styled to look totally unique.
 
 For a demonstration of the power of CSS, check out [Species In Pieces](http://species-in-pieces.com/#).
+Les feuilles de style en cascade, généralement appelées CSS de l'anglais Cascading Style Sheets, forment un langage informatique qui décrit la présentation des documents HTML et XML
