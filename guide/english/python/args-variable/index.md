@@ -42,4 +42,5 @@ softFunc('one', 'two', 'three', 'infinity')
 # tuple filled with provided arguments is created
 
 # Conclusion softFunc is a more flexible/dynamic verson of a hardFunc
+As we saw python support dynamic typing.
 ```
