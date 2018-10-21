@@ -15,5 +15,5 @@ It's main attributes are the following:
 
 ### More Information
 
-- [Vuejs Homepage](https://vuejs.org/)
+- [Vue.js official guide](https://vuejs.org/v2/guide/)
 - [GitHub Repo](https://github.com/vuejs/vue/)
