@@ -44,6 +44,15 @@ df.tail()
 ```
 This will show the last 5 rows of the data frame.
 
+To see the data types of each column in your dataframe, use the 'dtypes' method:
+```python
+df.dtypes()
+```
+To get statistical summaries of each column in your dataframe, use the 'describe' method:
+```python
+df.describe()
+```
+
 ## Subsetting: Getting a column by name
 A data frame can be subset in many ways. One of the simplest is getting a single column. For instance, if the data frame `df` contains a column named `age`, we can extract it as follows:
 ```python
