@@ -13,6 +13,8 @@ representing the Unicode code of the character.
 100
 >>> ord('1')
 49
+>>> ord('a')
+97
 ```
 
 ## chr function
