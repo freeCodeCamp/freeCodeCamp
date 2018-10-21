@@ -33,11 +33,6 @@ sudo ufw status
 
 Step 5: Check if its working, visit http://localhost:80
 
-### Resources for reference:
-
-- [Nginx - Official Documentation - Beginner's Guid](http://nginx.org/en/docs/beginners_guide.html)
-- [Digital Ocean - How to install Linux, Nginx, MySql, PHP LEMP stack on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04)
-
 ## Setting up Nginx to serve static content
 
 We can use Nginx to serve static files in a directory very easily with only a few lines of configuration.
@@ -55,3 +50,8 @@ Step 3. If confuguration changes were made, you must reload Nginx
 `sudo nginx -s reload` OR `sudo systemctl restart nginx`
 
 Step 4. Browse to the location opened by Nginx (in our example localhost:80) and voila!
+
+## Resources for reference:
+
+- [Nginx - Official Documentation - Beginner's Guid](http://nginx.org/en/docs/beginners_guide.html)
+- [Digital Ocean - How to install Linux, Nginx, MySql, PHP LEMP stack on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-in-ubuntu-16-04)
