@@ -79,7 +79,7 @@ Usar uma instrução switch em várias instruções if / else pode contribuir pa
  -> 32.5 - 12.4 = 20.1 
 ```
 
-## Revisão: alternar vs se mais
+## Revisão: Switch vs if else
 
 *   Verifique a Expressão de Teste: Uma instrução if-then-else pode testar expressões com base em intervalos de valores ou condições, enquanto uma instrução switch testa expressões com base apenas em um único número inteiro, valor enumerado ou objeto String.
 *   Alternar melhor para ramificação Multi-way: Quando o compilador compila uma instrução switch, ele inspecionará cada uma das constantes de caso e criará uma “tabela de salto” que será usada para selecionar o caminho de execução, dependendo do valor da expressão. Portanto, se precisarmos selecionar entre um grande grupo de valores, uma instrução switch será executada muito mais rapidamente que a lógica equivalente codificada usando uma sequência de ifs-elses. O compilador pode fazer isso porque sabe que as constantes de caso são todas do mesmo tipo e simplesmente devem ser comparadas para igualdade com a expressão de troca, enquanto no caso de expressões if, o compilador não possui tal conhecimento.
