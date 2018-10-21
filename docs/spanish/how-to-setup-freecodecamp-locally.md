@@ -46,9 +46,9 @@ Una vez tengas los requisitos previos instalados, necesitas preparar tu entorno 
 
 ['Clonar'](https://help.github.com/articles/cloning-a-repository/) es un paso donde tu **descargas** una copia de un repositorio tuyo o de alguien más desde una localización remota (`remote`). En tu caso, esta localización remota es tu propio `fork` del repositorio de freeCodeCamp, que debería estar disponible en `https://github.com/TU_NOMBRE_DE_USUARIO/freeCodeCamp`.
 
-Ejecuta estos comandos en tu maquina local:
+Ejecuta estos comandos en tu máquina local:
 
-1. Abre una terminal en el directorio d etus proyectos
+1. Abre una terminal en el directorio de tus proyectos
 
     _p.e.: `/tudirectoriodeproyectos/`_
 
@@ -58,7 +58,7 @@ Ejecuta estos comandos en tu maquina local:
     git clone https://github.com/TU_NOMBRE_DE_USUARIO/freeCodeCamp
     ```
 
-Este comando descargará el repositorio entero de freeCodeCamp a tu directorio de proyectos.
+Este comando descarga el repositorio entero de freeCodeCamp a tu directorio de proyectos.
 
 ## Configura el `upstream` al repositorio principal
 
