@@ -3,7 +3,7 @@ title: Comments in Java
 ---
 ## Comments in Java
 
-Comments in java are like real life post-it notes used to display some information, which other programmers or developers can read and understand.
+Comments in java are like real life post-it notes. They're used to display information, which other programmers or developers can read and understand. Comments promote collaboration and are good to use in long-term projects.
 
 It is good practice to add comments to your code, especially when working with a team or at a company. This helps future developers or teammates to know what is going on more easily when they look at your code. Comments make your code more neat and organized.
 
@@ -22,7 +22,7 @@ To create a single line comment just add two `//` forward slashes before the tex
 
 #### 2. Multi Line Comment
 
-To Create a Multi line comment wrap the lines in between `/*` line goes here `*/`
+To Create a Multi line comment wrap the lines in between `/*` line goes here `*/`. The all code between the pair of characters will cease to function.
 
 ```java
 public class MyFirstJava {  
