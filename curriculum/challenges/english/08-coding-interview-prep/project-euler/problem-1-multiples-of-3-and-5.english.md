@@ -71,3 +71,6 @@ const multiplesOf3and5 = (number) => {
 ```
 
 </section>
+
+
+this is a good source now, the solutions to project euler
