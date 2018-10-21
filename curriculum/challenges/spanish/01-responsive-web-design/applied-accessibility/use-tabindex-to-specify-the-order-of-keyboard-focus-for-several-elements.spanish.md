@@ -38,17 +38,17 @@ tests:
 ```html
 <body>
   <header>
-    <h1>Even Deeper Thoughts with Master Camper Cat</h1>
+    <h1>Pensamientos aun más profundos con el Maestro Camper Cat</h1>
     <nav>
       <ul>
-        <li><a href="">Home</a></li>
+        <li><a href="">Inicio</a></li>
         <li><a href="">Blog</a></li>
-        <li><a href="">Training</a></li>
+        <li><a href="">Entrenamiento</a></li>
       </ul>
     </nav>
   </header>
   <form>
-    <label for="search">Search:</label>
+    <label for="search">Búsqueda:</label>
 
 
     <input type="search" name="search" id="search">
@@ -56,13 +56,13 @@ tests:
 
 
   </form>
-  <h2>Inspirational Quotes</h2>
+  <h2>Frases Inspiracionales</h2>
   <blockquote>
-    <p>&ldquo;There's no Theory of Evolution, just a list of creatures I've allowed to live.&rdquo;<br>
+    <p>&ldquo;No hay Teoría de la Evolución, sólo una lista de criaturas a las que he dejado vivir.&rdquo;<br>
     - Chuck Norris</p>
   </blockquote>
   <blockquote>
-    <p>&ldquo;Wise men say forgiveness is divine, but never pay full price for late pizza.&rdquo;<br>
+    <p>&ldquo;Los hombres sabios dicen que el perdón es divino, pero nunca pagan el precio completo de una pizza que llega tarde.&rdquo;<br>
     - TMNT</p>
   </blockquote>
   <footer>&copy; 2018 Camper Cat</footer>
