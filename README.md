@@ -104,7 +104,7 @@ We also have 3 legacy certifications from our 2015 curriculum, which are still a
 
 This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
-Our community also has:
+Our community also has :
 
 - a super active [forum](https://www.freecodecamp.org/forum)
 - thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
