@@ -10,8 +10,15 @@
     </tr>
 </table>
 
-# Contribution Guidelines
+# إرشادات المساهمة
 
-Hello 👋 !
 
-These instructions have not been translated yet. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
+مرحبا 👋 !
+توجد  هذه المنصة  بفضل الآلاف من المتطوعين, نحن ممتنون لمساهماتكم ، ونحن متحمسون للترحيب بكم على متن السفينة
+
+نحن نفرض بصرامة اتخاذ لحظة لقراءة ["القواعد السلوكية"](https://www.freecodecamp.org/code-of-conduct)
+. انها بطول 196 كلمة فقط .
+
+
+
+These instructions have been translated partially. Please check this issue for details: [`#18312`](https://github.com/freeCodeCamp/freeCodeCamp/issues/18312)
