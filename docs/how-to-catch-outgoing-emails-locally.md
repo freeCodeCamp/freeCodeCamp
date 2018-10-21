@@ -10,13 +10,13 @@ Some of the email workflows, like updating a user's email, requires the back-end
 
 How you install and run MailHog is dependent upon your OS
 
-- [Installing MailHog on macOS](#installing-mailhog-on-macos)
+- [Installing MailHog on macOS](#installing-mailhog-on-mac os)
 - [Installing MailHog on Windows](#installing-mailhog-on-windows)
 - [Installing MailHog on Linux](#installing-mailhog-on-linux)
 
 ### Installing MailHog on macOS
 
-Here is how to set up MailHog on macOS with [Homebrew](https://brew.sh/):
+Here is how to set up MailHog on mac OS with [Homebrew](https://brew.sh/):
 
 ```bash
 brew install mailhog
