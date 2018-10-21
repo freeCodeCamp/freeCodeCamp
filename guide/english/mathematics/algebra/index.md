@@ -3,7 +3,8 @@ title: Algebra
 ---
 ## Algebra  
 
-Algebra is a broad section of mathematics focused on manipulating constants and variables in equations, 
+Algebra is a very important skill needed for programming.
+It's a broad section of mathematics focused on manipulating constants and variables in equations, 
 in which letters representing numbers are combined according to the rules of arithmetic. 
 The main branches of algebra are listed below.
 Elementary algebra: an introduction to these ideas. Covers the solution of polynomial equations in one or more variables and basic properties of functions and graphs.
