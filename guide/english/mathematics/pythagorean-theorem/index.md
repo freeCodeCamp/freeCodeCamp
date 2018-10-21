@@ -16,4 +16,8 @@ c<sup>2</sup> = a<sup>2</sup> + b<sup>2</sup>
 Whenever you are given two sides of a right triangle, you can calculate the third one using the Pythagorean Theorem.
 
 #### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
+
+<a href = "https://www.khanacademy.org/math/basic-geo/basic-geometry-pythagorean-theorem">Khan Academy Pythagorean Theorem</a>
+
+
+<a href = "https://en.wikipedia.org/wiki/Pythagorean_theorem">Wikipedia Pythagorean Theorem</a>
