@@ -14,10 +14,10 @@ ICMP packets for IPv4 may not exceed 576 bytes in length, including headers.
 ##### Type [8-bits]
   * Type field refers to the type of ICMP message
   * Some useful ICMP types include:
-    * 8 - Echo Request
-    * 0 - Echo Reply
-    * 3 - Destination Unreachable
-    * 5 - Redirect Message
+    * `8` - Echo Request
+    * `0` - Echo Reply
+    * `3` - Destination Unreachable
+    * `5` - Redirect Message
     
 ##### Code [8-bits]
   * Code field provides additional details for the ICMP message
