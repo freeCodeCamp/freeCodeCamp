@@ -3,11 +3,23 @@ title: ICMP Header
 ---
 ## ICMP Header Format
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/network-engineering/icmp-header/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+Below is the ICMP header format according to [RFC792](https://tools.ietf.org/html/rfc792):
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+![ICMP Header](https://i.imgur.com/W3amiIr.png)
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+##### Type
+  * Type field refers to the type of ICMP message
+  * Some useful ICMP types include:
+    * 8 - Echo Request
+    * 0 - Echo Reply
+    * 3 - Destination Unreachable
+    * 5 - Redirect Message
+    
+##### Code
+  * Code field provides additional details for the ICMP message
+  * Example of some useful codes for Type 3 Destination Unreachable Request:
+  
+  
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
