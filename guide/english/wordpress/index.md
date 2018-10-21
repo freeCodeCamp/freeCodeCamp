@@ -14,6 +14,8 @@ Just to a few advantages of WordPress:
 * Users are able to manage their Wordpress webpage from any computer
 * Has a blog built-in and ready to go whenever applicable. 
 * Has plugins, which extend functionality to WordPress sites. 
+* Has continous updates that occur every 3-4 months. 
+* SEO compatible so that the sites can be found easier. 
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
@@ -22,3 +24,4 @@ Whether its page transitions or a customized contact form, WordPress users are o
 
 - [WordPress Codex: the online manual](https://codex.wordpress.org/)
 - [WordPress Code Reference](https://developer.wordpress.org/reference/)
+- [Advantages of WordPress](https://www.fastwebhost.com/blog/top-advantages-of-wordpress-in-2018/)
