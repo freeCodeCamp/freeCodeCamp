@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Boo quem
 ---
 
-## Description
+## Descrição
 <section id="description"> Verifique se um valor é classificado como um primitivo booleano. Retornar verdadeiro ou falso. Primitivos booleanos são os valores verdadeiro e falso. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente programação em par. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -44,7 +44,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ booWho(null);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
