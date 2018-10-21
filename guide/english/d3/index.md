@@ -52,7 +52,7 @@ There are over 20,000+ **D3.js** examples you could learn from, but you never kn
 -  https://github.com/d3/
 
  ### Resources
-
+(Website) https://d3js.org/
 - https://en.wikipedia.org/wiki/D3.js
 - https://en.wikipedia.org/wiki/Document_Object_Model
 - http://blockbuilder.org/search
