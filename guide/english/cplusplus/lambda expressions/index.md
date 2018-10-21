@@ -111,10 +111,10 @@ void func5(std::vector<double>& v, const double& epsilon) {
 ```
 
 You can capture by both reference and value, which you can specift using ```&``` and ```=``` respectively:
-..*```[&epsilon]``` capture by reference
-..*```[&]``` captures all variables used in the lambda by reference
-..*```[=]``` captures all variables used in the lambda by value
-..*```[&, epsilon]``` captures variables like with ```[&]```, but epsilon by value
-..*```[=, &epsilon]``` captures variables like with ```[=]```, but epsilon by reference
+  * ``` [&epsilon]``` capture by reference
+  * ``` [&]``` captures all variables used in the lambda by reference
+  * ``` [=]``` captures all variables used in the lambda by value  
+  * ``` [&, epsilon]``` captures variables like with ```[&]```, but epsilon by value
+  * ``` [=, &epsilon]``` captures variables like with ```[=]```, but epsilon by reference
 
 The generated ```operator()``` is ```const``` by default, with the implication that captures will be ```const``` when you access them by default. This has the effect that each call with the same input would produce the same result, however you can mark the lambda as ```muteable``` to request that the ```operator()``` that is produced is not ```const```.
