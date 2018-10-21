@@ -1,16 +1,25 @@
 ---
 title: View Controllers
-localeTitle: Контроллеры просмотра
+localeTitle: View Controllers
 ---
-## Контроллеры просмотра
+## View Controllers
 
-Это пример того, как выглядит основной вид в Swift.
+Это пример того, как выглядит простой ViewController в Swift.
 
-\`\` \`Swift импортировать UIKit
+ ```Swift
+  import UIKit
 
-class ViewController: UIViewController { // 1 override func viewDidLoad () { // 2 super.viewDidLoad () // 3 view.backgroundColor = .white }  
-} \`\` \`
+  class ViewController: UIViewController {
+      // 1
+      override func viewDidLoad() {
+          // 2
+          super.viewDidLoad()
+          // 3
+          view.backgroundColor = .white
+      }  
+  }
+ ```
 
-1.  Просмотр нагрузки после загрузки контроллера.
-2.  Переопределяет класс UIViewController. Это необходимый шаг для любого контроллера вида.
+1.  Метод viewDidLoad вызывается после загрузки ViewController.
+2.  Вызов метода viewDidLoad базового класса UIViewController. Это необходимый шаг для любого ViewController.
 3.  Устанавливает цвет фона на белый.
