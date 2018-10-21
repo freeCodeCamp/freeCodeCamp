@@ -12,8 +12,8 @@ If the index passed to the pop() method is not in the range, it throws IndexErro
  ```py
 cities = ['New York', 'Dallas', 'San Antonio', 'Houston', 'San Francisco'];
 
-print "City popped is : ", cities.pop()
-print "City at index 2 is  : ", cities.pop(2)
+print("City popped is : ", cities.pop())
+print("City at index 2 is  : ", cities.pop(2))
  ```
  
  #### Output
