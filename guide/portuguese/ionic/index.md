@@ -31,7 +31,7 @@ A maior parte de um aplicativo iônico será escrita em HTML, Javascript e CSS. 
 ### Gerenciador de pacotes Node.js (npm)
 
 \`\` \`  
-sudo apt-get instala npm
+sudo apt-get install npm
 ```
 ### Ionic 2 and cordova 
 ```
