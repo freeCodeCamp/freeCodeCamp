@@ -34,6 +34,20 @@ data consist of a set of training examples. In supervised learning, each example
 4. Decide which algorithm will you be applying, SVM, deep net, etc
 5. Run the algorithm on training set and use the model for predictions
 
+### Data preprocessing techniques in machine learning
+The major preprocesing techniques in machine learning includes: 
+1. Data transformation - Transforming data in one to other form for further processing
+2. Feature scaling of the features by using mean and standard deviation.
+3. Feature optimization
+4. Normalization of features
+5. Eliminating feature redundancy
+6. Avoiding suspicious coincidence 
+7. Data reduction
+8. Data transformation
+9. Data aggregation
+10. Data sampling
+
+
 #### Courses:
 1. <a href='https://www.udacity.com/course/intro-to-machine-learning--ud120?autoenroll=true' target='_blank' rel='nofollow'>Intro to Machine Learning</a>
 2. <a href='https://www.coursera.org/learn/machine-learning' target='_blank' rel='nofollow'>Machine Learning - Taught by:  Andrew Ng</a>
