@@ -20,6 +20,7 @@ The field of computer security is growing at a rapid rate every year, in a repor
 - Network Administrator
 - Support Desk Engineer
 - Security Engineer
+- Product Owner/Manager
 
 ### Books
 
