@@ -14,6 +14,8 @@ HTML5 is the latest version, or specification, of HTML. The World Wide Web Conso
  
 HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to provided meaning to our document, it wasn't until HTML5s' introduction of [semantic elements](#) that its' potential was realized.
 
+HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages.
+
 ## A simple example of HTML Document
 
 ```html
@@ -25,6 +27,7 @@ HTML5 Introduces a host of semantic elements. Though we discussed HTML helped to
 <body>
 
   <h1>My First Heading</h1>
+  <h2>My Second Heading</h2>
   <p>My first paragraph.</p>
 
 </body>
