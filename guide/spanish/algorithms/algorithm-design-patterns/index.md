@@ -12,7 +12,7 @@ Estos patrones se dividen en tres categorías principales:
 
 ### Patrones creacionales
 
-Estos son patrones de diseño que tratan con los mecanismos de creación de objetos, tratando de crear objetos de una manera adecuada a la situación. La forma básica de creación de objetos podría provocar problemas de diseño o una mayor complejidad al diseño. Los patrones de diseño creacional resuelven este problema controlando de alguna manera la creación de este objeto.
+Estos son patrones de diseño que trabajan con los mecanismos de creación de objetos, tratando de crear objetos de una manera adecuada a la situación. La forma básica de creación de objetos podría provocar problemas de diseño o una mayor complejidad al diseño. Los patrones de diseño creacional resuelven este problema controlando de alguna manera la creación de este objeto.
 
 ### Patrones estructurales
 
