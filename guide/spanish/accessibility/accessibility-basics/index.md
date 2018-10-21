@@ -67,7 +67,7 @@ Para aportar un poco de método a la locura, se redactaron las Pautas de Accesib
 
 ### Hablar como los nativos
 
-La especificación HTML es un documento que describe cómo se debe usar el lenguaje para crear sitios web. Las tecnologías de asistencia, como los lectores de pantalla, los programas de reconocimiento de voz, etc., conocen este documento. Sin embargo, los desarrolladores web a menudo no lo son, o al menos no lo suficiente, y piensan que algo como esto está bien:
+La especificación HTML es un documento que describe cómo se debe usar el lenguaje para crear sitios web. Las tecnologías de asistencia, como los lectores de pantalla, los programas de reconocimiento de voz, etc., conocen este documento. Sin embargo, los desarrolladores web a menudo no, o al menos no lo suficiente, y piensan que algo como esto está bien:
 
 ```html
 
@@ -88,8 +88,8 @@ El tercer elemento podría ser, por ejemplo, un elemento en el que un usuario pu
 
 Spans y divs no son elementos. Están destinados a contener otros elementos, no a ser elementos en sí mismos. Puedes arreglar esto de dos maneras:
 
-*   Puede agregar manualmente atributos ARIA a los elementos anteriores. Este es un tema avanzado y fuera del alcance de este artículo.
-*   O, simplemente puede hacer esto:
+*   Puedes agregar manualmente atributos ARIA a los elementos anteriores. Este es un tema avanzado y fuera del alcance de este artículo.
+*   O, simplemente, hacer esto:
 
 ```html
 
@@ -100,49 +100,49 @@ Spans y divs no son elementos. Están destinados a contener otros elementos, no 
     <a href="JavascriptThing">English</a> 
 ```
 
-Auge. De repente, todos estos elementos ahora son perfectamente accesibles, solo mediante el uso de HTML nativo. HTML de la forma en que estaba destinado a ser utilizado, en otras palabras.
+¡Zas! De repente, todos estos elementos son perfectamente accesibles, solo mediante el uso de HTML nativo, en otras palabras, HTML de la forma en la que estaba destinado a ser usado.
 
-### Una fundación no puede soportar sin estructura.
+### Los cimientos no aguantan sin una buena estructura.
 
-Un poco antes, toqué las teclas de acceso rápido de un lector de pantalla para saltar de un encabezado a otro. De hecho, hay muchas teclas de acceso rápido como esta para saltar rápidamente a la tabla más cercana, campo de formulario, enlace, etc. Asegurarse de que estos encabezados estén realmente en lugares lógicos es una buena práctica y realmente disminuye los niveles de estrés de los usuarios de la tecnología de asistencia, lo cual es bueno Si quieres que los visitantes sigan regresando a tu sitio web.
+Un poco antes, os he hablado de las teclas de acceso rápido de un lector de pantalla para saltar de un encabezado a otro. De hecho, hay muchas teclas de acceso rápido como esta para saltar rápidamente a la tabla más cercana, al campo de formulario, al enlace, etc. Asegurarse de que estos encabezados estén realmente en lugares lógicos es una buena práctica y realmente disminuye los niveles de estrés de los usuarios de la tecnología de asistencia, lo cual es bueno si quieres que los visitantes sigan volviendo a tu sitio web.
 
-También recuerda que los encabezados son jerárquicos. Si usas un h2, asegúrate de que los h3 que lo siguen tengan algo que ver con ese h2. No coloque un h3 para detalles de contacto debajo de su h2 para publicaciones de blog recientes. Una buena analogía aquí es un libro con capítulos, que tienen subsecciones. No pondría una sección sobre cómo hornear galletas en medio de un capítulo sobre la preparación de verduras ... o ... no lo haría ... ¿verdad?
+Recuerda que los encabezados son jerárquicos. Si usas un h2, asegúrate de que los h3 que lo siguen tengan algo que ver con ese h2. No coloques un h3 para detalles de contacto debajo de un h2 para publicaciones de blog recientes. Una buena analogía aquí es un libro con capítulos, que tienen subsecciones. No pondrías una sección sobre cómo hornear galletas en medio de un capítulo sobre la preparación de verduras... Porque no lo harías, ¿no?
 
-### ¿Cuál es la alternativa?
+### ¿Cuándo usar el atributo alt?
 
-Las imágenes en un sitio web son excelentes. Añaden una nueva capa a su contenido, realmente pueden hacer que la experiencia de los visitantes de su sitio sea mucho más inmersiva y, en general, se vea bien entre todo ese texto. Una imagen puede decir más que mil palabras, ¿verdad?
+Las imágenes en un sitio web son excelentes. Añaden una nueva capa a su contenido, realmente pueden hacer que la experiencia de los visitantes de tu sitio sea mucho más inmersiva y, en general, tenga un buen aspecto entre tanto texto. Una imagen puede decir más que mil palabras, ¿verdad?
 
-Ciertamente. Es decir, si puedes verlos. En la especificación HTML5, un atributo img siempre debe tener un atributo alt. Este atributo está pensado como una alternativa a la imagen en caso de que no se pueda ver. Esto sería cierto para los visitantes ciegos de su sitio web, pero también cuando su imagen no se pueda cargar por algún motivo. Por lo tanto, no agregar una etiqueta alt a un atributo img no solo rompe la accesibilidad, sino que va en contra de la especificación HTML5.
+Por supuesto. Es decir, si puedes verlas. En la especificación HTML5, un atributo img siempre debe tener un atributo alt. Este atributo está pensado como una alternativa a la imagen en caso de que no se pueda ver. Esto sería cierto para los visitantes ciegos del sitio web, pero también cuando la imagen no se pueda cargar por algún motivo. Por lo tanto, no agregar una etiqueta alt a un atributo img no solo rompe la accesibilidad, sino que va en contra de la especificación HTML5.
 
-Imploro a cualquier desarrollador web que se sorprenda haciendo esto para comerse el sombrero de su programador y trabajar en Windows 95 exclusivamente durante una semana. Después de que se acabe el tiempo, escribe un ensayo sobre lo que has aprendido de esta prueba para que pueda reírme durante mi café de la tarde.
+Imploro a cualquier desarrollador web que descubra que no lo hace, que engulla su sumbrero de programador y trabaje exclusivamente en Windows 95 durante una semana. Transcurrido el tiempo, que escriba un ensayo sobre lo que ha aprendido de esta prueba para que pueda reírme durante el café de la tarde.
 
-Ahora, hay una advertencia aquí. Los atributos Alt son obligatorios según la especificación HTML5, pero no es obligatorio rellenarlos. `<img src="awesome-image.jpg", alt="">` es un código HTML5 legal.
+Ahora bien, te advierto una cosa; los atributos alt son obligatorios según la especificación HTML5, pero no es obligatorio rellenarlos. `<img src="awesome-image.jpg", alt="">` es un código HTML5 legal.
 
-¿Debería por lo tanto llenar las etiquetas alt para todas las imágenes? Depende de la imagen, de verdad. Para las imágenes de fondo, la respuesta suele ser no, pero de todos modos debería usar CSS.
+¿Debería por lo tanto llenar las etiquetas alt para todas las imágenes? Depende de la imagen, la verdad. Para las imágenes de fondo, la respuesta suele ser no, pero de todos modos deberías usar CSS para este tipo de imágenes.
 
-Para imágenes puramente decorativas que no tienen información en absoluto, básicamente tiene la libertad de elegir. O bien poner algo útil y descriptivo o nada en absoluto.
+Para imágenes puramente decorativas que no tienen información en absoluto, básicamente tienes la libertad de elegir. O bien poner algo útil y descriptivo o nada en absoluto.
 
-Para las imágenes que contienen información, como un folleto, un mapa, un gráfico, etc., no agregue saltos de texto alternativos WCAG a menos que proporcione una alternativa textual. Este suele ser un atributo alternativo, pero también puede ser un bloque de texto justo debajo o al lado de la imagen.
+Para las imágenes que contienen información, como un folleto, un mapa, un gráfico, etc., no usar el atributo alt no seguiría los criterios WCAG a menos que proporcionaras una alternativa textual. Este suele ser un atributo alt, pero también puede ser un bloque de texto justo debajo o al lado de la imagen.
 
-Para imágenes de texto, el texto se puede incluir en el atributo alt o se puede ofrecer de alguna manera alternativa. El problema es que agregar la alternativa textual en la misma página básicamente haría que el mismo contenido se muestre dos veces para las personas que pueden ver la imagen, por lo que el atributo alt es mejor en este caso.
+Para imágenes de texto, el texto se puede incluir en el atributo alt o se puede ofrecer de alguna manera alternativa. El problema es que agregar la alternativa textual en la misma página, básicamente haría que el mismo contenido se muestre dos veces para las personas que pueden ver la imagen, por lo que el atributo alt suele ser una mejor opción en este caso.
 
-El texto debe proporcionar el contexto y la información que es una alternativa para ver la imagen. Simplemente no es suficiente escribir "imagen de globos aerostáticos": ¿por qué hay imágenes de globos allí? Si la imagen está estilizada o transmite un significado emocional, esto puede incluirse.
+El texto debe proporcionar el contexto y la información para funcionar como alternativa a ver la imagen. Simplemente no es suficiente escribir "imagen de globos aerostáticos": ¿por qué hay imágenes de globos allí? Si la imagen está estilizada o transmite un significado emocional, esto puede incluirse.
 
-### No puedo leer tu garabato hijo
+### No puedo leer tu letra, hijo
 
-Incluso las personas que no usan gafas y no tienen ningún problema con la vista se benefician de una fuente fácil de leer y un contraste adecuado. Estoy seguro de que te estremecerías si tuvieras que rellenar un formulario en el que las letras de color amarillo claro y sin remedio se colocan sobre un fondo blanco. Para las personas cuya vista no es tan buena, como su abuela, por ejemplo, esto se vuelve irremediablemente peor.
+Incluso las personas que no usan gafas y no tienen ningún problema con la vista se benefician de una fuente fácil de leer y un contraste adecuado. Estoy seguro de que te estremecerías si tuvieras que rellenar un formulario con letras amarillo claro sobre un fondo blanco. Para las personas cuya vista no es tan buena, como tu abuela, por ejemplo, esto se vuelve irremediablemente peor.
 
-La WCAG tiene relaciones de contraste para letras más pequeñas y más grandes y hay muchas herramientas para verificar si las relaciones de contraste son lo suficientemente fuertes. La información y las herramientas están ahí, ve y úsala.
+La WCAG tiene relaciones de contraste para letras más pequeñas y más grandes y hay muchas herramientas para verificar si las relaciones de contraste son lo suficientemente fuertes. La información y las herramientas están ahí, ve y úsalas.
 
-Un buen lugar para comenzar a verificar el contraste de color es mediante el uso del [verificador de](https://webaim.org/resources/contrastchecker/) contraste de color [WebAIM](https://webaim.org/resources/contrastchecker/) .
+Un buen lugar para comenzar a verificar el contraste de color es mediante el uso del [verificador de contrastes de color de WebAIM](https://webaim.org/resources/contrastchecker/).
 
-### Qué hace este botón?
+### ¿Qué hace este botón?
 
-Mientras estamos en el tema de los formularios, echemos un vistazo rápido a la etiqueta de `input` . Este pequeño es algo importante.
+Ya que hablamos de formularios, echemos un vistazo rápido a la etiqueta de `input` . Este pequeñajo es de lo más importante.
 
-Cuando coloca algunos campos de entrada en una página web, puede usar etiquetas para ... bueno ... etiquetarlos. Sin embargo, ponerlos uno al lado del otro no es suficiente. El atributo que desea es el atributo for, que toma el ID de un campo de entrada posterior. De esta manera, las tecnologías de asistencia saben qué etiqueta asociar con qué campo de formulario.
+Cuando añades algunos campos de entrada en una página web, puedes usar etiquetas para ... bueno ... etiquetarlos. Sin embargo, ponerlos uno al lado del otro no es suficiente. El atributo que necesitas es el atributo for, que toma el ID de un campo de entrada posterior. De esta manera, las tecnologías de asistencia saben qué etiqueta asociar con qué campo de formulario.
 
-Supongo que la mejor manera de ilustrar esto es dando un ejemplo:
+Supongo que la mejor manera de ilustrar esto es con un ejemplo:
 
 ```html
 
@@ -151,48 +151,48 @@ Supongo que la mejor manera de ilustrar esto es dando un ejemplo:
     <input type='text' id='username'> 
 ```
 
-Esto hará que, por ejemplo, un lector de pantalla diga "nombre de usuario, campo de edición de texto", en lugar de solo informar el "campo de edición de texto" y requiera que el usuario busque una etiqueta. Esto también ayuda realmente a las personas que usan software de reconocimiento de voz.
+Esto hará que, por ejemplo, un lector de pantalla diga "nombre de usuario, campo de edición de texto", en lugar de solo decir "campo de edición de texto" y requiera que el usuario busque una etiqueta. Esto ayuda mucho a las personas que usan software de reconocimiento de voz.
 
-### Eso es una tarea difícil
+### Eso son palabras mayores
 
-Tomemos un pequeño descanso. Quiero que veas una página web muy bien diseñada. Puede ser cualquier página. Vamos, voy a esperar.
+Tomemos un pequeño descanso. Quiero que veas una página web muy bien diseñada. Puede ser cualquier página. Vamos, te espero.
 
-¿Espalda? Vale genial. Ahora, mira la página de nuevo, pero desactiva todos los CSS. ¿Todavía se ve bien? ¿El contenido de la página aún está en un orden lógico? Si es así, genial. Has encontrado una página con una estructura HTML decente. (Una forma de ver fácilmente una página sin CSS es cargar el sitio en la [Herramienta de evaluación de accesibilidad web WAVE](http://wave.webaim.org) de WebAIM. Luego, haga clic en la pestaña "Sin estilos" para verla sin estilos).
+¿Ya has vuelto? Vale, genial. Ahora, mira la página de nuevo, pero desactiva todos los CSS. ¿Todavía se ve bien? ¿El contenido de la página aún está en un orden lógico? Si es así, genial, has encontrado una página con una estructura HTML decente. (Una forma de ver fácilmente una página sin CSS es cargar el sitio en la [herramienta de evaluación de accesibilidad web WAVE](http://wave.webaim.org) de WebAIM. Luego, accede a la pestaña "sin estilos" para verla sin estilos).
 
-Si no, genial. Ahora tiene una impresión de lo que tengo que enfrentar a diario cuando me encuentro con un sitio web mal estructurado.
+Si no ha sido así, genial. Ahora te haces a la idea de lo que tengo que ver a diario cuando me encuentro con un sitio web mal estructurado.
 
-Revelación completa: tiendo a maldecir cuando esto sucede. Ruidosamente. Con vigor.
+Honestamente: tiendo a maldecir cuando esto sucede. Ruidosamente. Con vigor.
 
-¿Por qué esto es tan importante? Lo explicaré.
+¿Por qué es tan importante esto? Te lo explico.
 
-_¡Alerta de spoiler!_ Para aquellos que solo han cubierto el plan de estudios HTML / CSS hasta ahora, vamos a avanzar un poco.
+_¡Alerta de spoiler!_ Para aquellos que solo han cubierto el plan de estudios HTML/CSS hasta ahora, vamos a avanzar un poco.
 
-Los lectores de pantalla y otras tecnologías de asistencia representan una representación completa de una página web basada en el DOM de su sitio web. Todo el CSS posicional se ignora en esta versión de la página web.
+Los lectores de pantalla y otras tecnologías de asistencia muestran una representación completa de una página web basada en el DOM de su sitio web. Todo el CSS posicional se ignora en esta versión de la página web.
 
-DOM significa Document Object Model y es la estructura en forma de árbol de los elementos HTML de su sitio web. Todos sus elementos HTML son nodos que se vinculan jerárquicamente en función de las etiquetas HTML que utiliza y JavaScript. Los lectores de pantalla usan este árbol DOM para trabajar con su código HTML.
+DOM significa Document Object Model y es la estructura en forma de árbol de los elementos HTML del sitio web. Todos los elementos HTML son nodos que se vinculan jerárquicamente en función de las etiquetas HTML que se utiliza y JavaScript. Los lectores de pantalla usan este árbol DOM para trabajar con su código HTML.
 
-Si coloca su elemento en la parte superior de su elemento, también se mostrará en la parte superior de su árbol DOM. por lo tanto, el lector de pantalla también lo colocará en la parte superior, incluso si lo mueve hacia la parte inferior de la página utilizando CSS.
+Si colocas un elemento en la parte superior de otro elemento, también se mostrará en la parte superior del árbol DOM. Por lo tanto, el lector de pantalla también lo colocará en la parte superior, incluso si lo mueves hacia la parte inferior de la página utilizando CSS.
 
-Por lo tanto, un consejo final que quiero darles todo es prestar atención al orden de su HTML, no solo a su sitio web terminado con CSS agregado. ¿Sigue teniendo sentido sin CSS? ¡Estupendo!
+Por lo tanto, un consejo final que quiero daros a todos es prestar atención al orden de tu HTML, no solo al sitio web final con su CSS. ¿Sigue teniendo sentido sin CSS? ¡Estupendo!
 
-Oh ... no lo hace? En ese caso ... es posible que algún día escuches una maldición apagada en una brisa fría mientras caminas afuera. Eso es muy probable que sea yo, visitando su sitio web.
+Oh, ¿no lo tiene? En ese caso ... es posible que algún día oigas una maldición apagada en la brisa fría mientras caminas por la calle. Y es muy probable que sea yo, visitando tu sitio web.
 
-En ese caso realmente solo tengo dos palabras para ti. A menudo he escuchado esas mismas dos palabras dirigidas a mí cuando escribí un código incorrecto y es con gran placer que les digo: "¡váyanse a arreglar!"
+En ese caso, en realidad, solo tengo dos palabras para ti. A menudo he escuchado esas mismas dos palabras dirigidas a mí cuando escribí un código incorrecto y es con gran placer que te digo: "¡Ve y arréglalo!"
 
 ### Contraste de color
 
-El contraste de color debe ser un mínimo de 4.5: 1 para texto normal y 3: 1 para texto grande. "Texto grande" se define como texto que tiene al menos 18 puntos (24px) o 14 puntos (18.66px) y negrita. [Comprobador de Contraste](https://webaim.org/resources/contrastchecker/)
+El contraste de color debe ser un mínimo de 4.5: 1 para texto normal y 3: 1 para texto grande. "Texto grande" definido como texto que tiene al menos 18 puntos (24px) o 14 puntos (18.66px) y negrita [Comprobador de Contraste](https://webaim.org/resources/contrastchecker/).
 
 ## Conclusión
 
-Le he contado sobre la accesibilidad, qué es, qué no es y por qué es importante.
+He hablado sobre accesibilidad, qué es, qué no es y por qué es importante.
 
-También te he dado lo básico, lo más básico, de hacer que la accesibilidad sea correcta. Sin embargo, estos elementos básicos son muy poderosos y pueden hacer su vida mucho más fácil al codificar la accesibilidad.
+También te he dado lo básico, lo más básico, para hacer que la accesibilidad sea correcta. Sin embargo, estos elementos aunque básicos, son muy poderosos y pueden hacerte la vida mucho más fácil al codificar la accesibilidad.
 
-Si hablamos en términos de la FCC, debe tener esto en cuenta al realizar el plan de estudios HTML / CSS, así como el plan de estudios de JavaScript.  
+Si hablamos en términos de FCC, debes tener esto en cuenta al realizar el plan de estudios HTML/CSS, así como el plan de estudios de JavaScript.  
 En los artículos posteriores, abordaré varios temas más de primera clase. Una serie de preguntas que voy a responder son:
 
-*   Agregar encabezados estructurados suena como una buena idea, pero no encajan en mi diseño. ¿Qué debo hacer?
+*   Agregar encabezados estructurados suena bien, pero no encaja en mi diseño. ¿Qué hago?
 *   ¿Hay alguna manera de escribir contenido que solo vean los lectores de pantalla y otras tecnologías de asistencia?
 *   ¿Cómo hago accesibles los componentes personalizados de JavaScript?
 *   ¿Qué herramientas hay, además de las pruebas de usuario inclusivas, que pueden usarse para desarrollar la experiencia más sólida y accesible para el grupo más grande de usuarios?
