@@ -46,11 +46,16 @@ int max(int num1, int num2)
    return result; 
 }
 ## calling a function:
-
+int main()
+{
 int res;
 res=max(5,10);
-
+cout<<res;
+}
 // if the function returns a value, assign it to that variable, else just call it like function(arg1,arg2);
+// if the function is created on another .cpp file than the main function, then you need to call it in the main.cpp file.
+// In order to do that you simply have to write "int max(int, int);" in the main.cpp file.
+   
 ```
 
 ## Why are functions important?
