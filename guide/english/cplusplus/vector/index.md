@@ -233,3 +233,50 @@ int main(){
 ```
 
 You can also sort in descending using lamda like the one above.
+
+### Finding an element in a ```std::vector```
+Before C++11:
+```c++
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main()
+{
+    std::vector<std::string> vec = { "free", "code", "camp", "is", "the", "best" };
+    std::vector<std::string>::iterator search = std::find(vec.begin(), vec.end(), "best");
+    if(search != vec.end())
+    {
+        std::cout << "Element found! \n";
+    }
+    else
+    {
+        std::cout << "Element not found :( \n";
+    }
+}
+```
+
+After C++11:
+```c++
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main()
+{
+    std::vector<std::string> vec = { "free", "code", "camp", "is", "the", "best" };
+	
+    // instead of std::vector<std::string>::iterator you can use auto
+    auto search = std::find(std::begin(vec), std::end(vec), "best");
+    // you can use lambda expression for check the vector stored the element we search
+    auto isContain = [](auto v) -> bool {
+        return (std::find(std::begin(v), std::end(v), "best") != std::end(v)) ? true : false;
+    };
+    
+    if(search != std::end(vec)) std::cout << "Element found \n";
+    else std::cout << "Element not found :( \n";
+
+    if(isContain(vec)) std::cout << "Element found \n";
+    else std::cout << "Element not found :( \n";
+}
+```
