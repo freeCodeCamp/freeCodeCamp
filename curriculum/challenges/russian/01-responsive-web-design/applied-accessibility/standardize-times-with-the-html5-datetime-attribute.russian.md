@@ -7,17 +7,17 @@ localeTitle: Стандартизировать время с атрибутом
 ---
 
 ## Description
-<section id="description"> Продолжая тему даты, HTML5 также представил элемент <code>time</code> вместе с атрибутом <code>datetime</code> для стандартизации времени. Это встроенный элемент, который может привязывать дату или время на странице. Действительный формат этой даты <code>datetime</code> атрибутом <code>datetime</code> . Это значение, доступное с помощью вспомогательных устройств. Это помогает избежать путаницы, заявляя стандартизированную версию времени, даже если она написана неформальным или разговорным образом в тексте. Вот пример: <code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code> </section>
+<section id='description'> Продолжая тему даты, HTML5 также представил элемент <code>time</code> вместе с атрибутом <code>datetime</code> для стандартизации времени. Это встроенный элемент, который может привязывать дату или время на странице. Действительный формат этой даты хранится с помощью атрибута <code>datetime</code>. Это значение, доступное с помощью вспомогательных устройств. Это помогает избежать путаницы, указывая стандартизированную версию времени, даже если она написана неформальным или разговорным образом в тексте. Вот пример: <code>&lt;p&gt;Master Camper Cat officiated the cage match between Goro and Scorpion &lt;time datetime=&quot;2013-02-13&quot;&gt;last Wednesday&lt;/time&gt;, which ended in a draw.&lt;/p&gt;</code> </section>
 
 ## Instructions
-<section id="instructions"> Результаты опроса Camter Cat&#39;s Mortal Kombat в! Обведите тег <code>time</code> вокруг текста «Четверг, 15 сентября &lt;sup&gt; th &lt;/ sup&gt;» и добавьте к нему атрибут <code>datetime</code> установленный в «2016-09-15». </section>
+<section id='instructions'> Результаты опроса Camper Cat уже здесь! Обведите тег <code>time</code> вокруг текста «Четверг, 15 сентября &lt;sup&gt; th &lt;/ sup&gt;» и добавьте к нему атрибут <code>datetime</code> установленный в «2016-09-15». </section>
 
 ## Tests
 <section id='tests'>
 
 ```yml
 tests:
-  - text: 'Ваши теги <code>time</code> должны обтекать текст «Четверг, 15 сентября &lt;sup&gt; th &lt;/ sup&gt;».'
+  - text: 'Ваши теги <code>time</code> должны оборачивать текст «Четверг, 15 сентября &lt;sup&gt; th &lt;/ sup&gt;».'
     testString: 'assert($("time").text().match(/Thursday, September 15th/g), "Your <code>time</code> tags should wrap around the text "Thursday, September 15&lt;sup&gt;th&lt;/sup&gt;".");'
   - text: Ваш тег <code>time</code> должен иметь атрибут <code>datetime</code> который не является пустым.
     testString: 'assert($("time").attr("datetime"), "Your <code>time</code> tag should have a <code>datetime</code> attribute that is not empty.");'
@@ -52,15 +52,15 @@ tests:
     <section>
       <h3>Comments:</h3>
       <article>
-        <p>Posted by: Sub-Zero on <time datetime="2016-08-13T20:01Z">August 13<sup>th</sup></time></p>
+        <p>Posted by: Sub-Zero on <time datetime='2016-08-13T20:01Z'>August 13<sup>th</sup></time></p>
         <p>Johnny Cage better be there, I'll finish him!</p>
       </article>
       <article>
-        <p>Posted by: Doge on <time datetime="2016-08-15T08:12Z">August 15<sup>th</sup></time></p>
+        <p>Posted by: Doge on <time datetime='2016-08-15T08:12Z'>August 15<sup>th</sup></time></p>
         <p>Wow, much combat, so mortal.</p>
       </article>
       <article>
-        <p>Posted by: The Grim Reaper on <time datetime="2016-08-16T00:00Z">August 16<sup>th</sup></time></p>
+        <p>Posted by: The Grim Reaper on <time datetime='2016-08-16T00:00Z'>August 16<sup>th</sup></time></p>
         <p>Looks like I'll be busy that day.</p>
       </article>
     </section>
