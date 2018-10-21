@@ -77,7 +77,7 @@ if (x) {
 }
 ```
 
-Do not use a Boolean object to convert a non-boolean value to a boolean value. Instead, use Boolean as a function to perform this task:
+Do not use a Boolean object(Constructor) to convert a non-boolean value to a boolean value. Instead, use Boolean as a function to perform this task:
 
 ```javascript
 var x = Boolean(expression);     // preferred
@@ -93,7 +93,7 @@ var myString = new String('Hello'); // string object
 var s = new Boolean(myString);      // initial value of true
 ```
 
-Do not use a Boolean object in place of a Boolean primitive.
+Do not use a `Boolean object` in place of a Boolean primitive.
 
 ### Resources
 
