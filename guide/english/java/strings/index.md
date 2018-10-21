@@ -70,8 +70,7 @@ public class StringExample{
 ```
 
 #### Comparing Strings 
-If you want to compare the value of two String variables, you can't use ==. This is due to the fact that this will compare the references of the variables
-and not the values that are linked to them. To compare the stored values of the Strings you use the method equals.
+If you want to compare the value of two String variables, you can't use ==. Using == compares the references "str" and "str2" rather than "Hello world" and "Hello world". To compare the stored values of the Strings you use the method "equals".
 
 ```java
 boolean equals(Object obj)
