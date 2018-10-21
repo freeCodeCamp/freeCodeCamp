@@ -34,7 +34,19 @@ The options for `MODE` are:
 - `--mixed`: resets the index but not the working tree and reports what has not been updated
 - `--hard`: resets the index and working tree. Any changes to tracked files in the working tree since `commit` are discarded
 - `--merge`: resets the index and updates the files in the working tree that are different between `commit` and HEAD, but keeps those which are different between the index and working tree 
-- `--keep`: resets index entries and updates files in the working tree that are different between `commit` and HEAD. If a file that is different between `commit` and HEAD has local changes, the reset is aborted
+- `--keep`: resets index entries and updates files in the working tree that are different between `commit` and HEAD. If a file that is different between `commit` and HEAD has local changes, the reset is aborted.
+
+
+### Permanently remove few commits from remote branch:
+
+```shell
+git reset --hard <last_working_commit_id>
+```
+
+Make the changes and commit your code
+```shell
+git push --force
+```
 
 ### More Information:
 - [Git reset documentation](https://git-scm.com/docs/git-reset)
