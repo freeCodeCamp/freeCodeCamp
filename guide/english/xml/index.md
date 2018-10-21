@@ -1,7 +1,7 @@
 ---
 title: Extensible Markup Language (XML)
 ---
-## Extensible Markup Language (XML)
+# Extensible Markup Language (XML)
 
   XML stands for eXtensible Markup Language. It is extensible, because it does not use a predefined set of tags for identifying structural components, instead, it provides a mechanism for defining such sets of tags. The main purpose of the language is to share the data. Unlike HTML, in XML there is no predefined set of tags and tags specify meaning, rather than the presentation.
   
@@ -54,7 +54,8 @@ The following are areas that can be simiplified with XML:
 
 And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
 
-### More information
+## More information
 
 * [XML Introduction](https://developer.mozilla.org/en-US/docs/XML_introduction)
 * [Introduction to XML](https://www.w3schools.com/xml/xml_whatis.asp)
+* [Video Resources](https://www.youtube.com/watch?v=cqszz_OfAFQ&list=PLC1322B5A0180C946)
