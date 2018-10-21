@@ -13,3 +13,31 @@ This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/
 - [pointer-events on MDN web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events)
 - [Scalable Vector Graphics 1.1 specification (recommendation)](https://www.w3.org/TR/SVG11/interact.html#PointerEventsProperty)
 - [Can I use: CSS pointer-events property](https://caniuse.com/#feat=pointer-events)
+
+## Hover tags
+
+hover selector tag  is use to select elements when you mouse over it.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: yellow;
+} 
+</style>
+</head>
+<body>
+
+<p>Mouse over and click the link: <a href="https://www.github.com.com">Github</a></p>
+
+</body>
+</html>
