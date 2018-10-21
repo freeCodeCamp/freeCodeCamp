@@ -5,7 +5,7 @@ const commonREs = require('../../utils/regEx');
 const readDir = require('../../utils/readDir');
 
 const { isAStubRE } = commonREs;
-const pagesDir = path.resolve(__dirname, '../../src/pages/guide/english/');
+const pagesDir = path.resolve(__dirname, '../../../guide/english/');
 
 function withGuidePrefix(str) {
   return `/guide${str}`;

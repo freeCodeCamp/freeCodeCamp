@@ -38,7 +38,7 @@ How many Strong Achilles numbers are there below 1018?
 ```yml
 tests:
   - text: <code>euler302()</code> should return 1170060.
-    testString: 'assert.strictEqual(euler302(), 1170060, "<code>euler302()</code> should return 1170060.");'
+    testString: assert.strictEqual(euler302(), 1170060, '<code>euler302()</code> should return 1170060.');
 
 ```
 

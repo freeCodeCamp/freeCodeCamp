@@ -41,7 +41,7 @@ Find Σf(k3) for 1 ≤ k ≤ 2×106.
 ```yml
 tests:
   - text: <code>euler343()</code> should return 269533451410884200.
-    testString: 'assert.strictEqual(euler343(), 269533451410884200, "<code>euler343()</code> should return 269533451410884200.");'
+    testString: assert.strictEqual(euler343(), 269533451410884200, '<code>euler343()</code> should return 269533451410884200.');
 
 ```
 
