@@ -34,7 +34,7 @@ Once you have the prerequisites installed, you need to prepare your development 
 
 3. Install a code editor of your choice.
 
-    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are some great free and open source code editors.
+    We highly recommend using [VS Code](https://code.visualstudio.com/) or [Atom](https://atom.io/). These are great and free open source code editors.
 
 4. Setup linting for your code editor.
 
@@ -196,7 +196,7 @@ Start the MongoDB server in a separate terminal
     ```
 
 > ProTip:
-> You can avoid having to start MongoDB every time, by installing it as a background service.
+> To avoid having to start MongoDB every time, install it as a background service.
 > You can [learn more about it in their documentation for your OS](https://docs.mongodb.com/manual/administration/install-community/)
 
 ### Seeding the database
