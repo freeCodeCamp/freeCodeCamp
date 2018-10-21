@@ -123,5 +123,7 @@ Convergence is assured since the algorithm is guaranteed to increase the likelih
 * [Clustering Algorithms: From Start To State Of The Art](https://www.toptal.com/machine-learning/clustering-algorithms)
 * [Cluster Analysis: Basic Concepts and Algorithms](https://www-users.cs.umn.edu/~kumar/dmbook/ch8.pdf)
 * [K-means Clustering](https://www.datascience.com/blog/k-means-clustering)
+* [K-means Clustering Part 2 (math-heavy)](https://www.datacamp.com/community/tutorials/k-means-clustering-python)
+* [DBSCAN Clustering](https://www.datacamp.com/community/tutorials/dbscan-macroscopic-investigation-python)
 * [Expectation-Maximization Algorithm](https://www.cs.utah.edu/~piyush/teaching/EM_algorithm.pdf)
 * [Using K-Means Clustering with Python](https://code.likeagirl.io/finding-dominant-colour-on-an-image-b4e075f98097)
