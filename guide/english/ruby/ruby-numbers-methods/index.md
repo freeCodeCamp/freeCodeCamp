@@ -43,7 +43,7 @@ Use `.next` to return the next consecutive <a href='https://ruby-doc.org/core-2.
     -4.next #=> -3
 ```
 
-## <a href='https://ruby-doc.org/core-1.8.7/Integer.html#method-i-pred' target='_blank' rel='nofollow'>Pred</a>:
+## <a href='https://ruby-doc.org/core-1.8.7/Integer.html#method-i-pred' target='_blank' rel='nofollow'>Predecessor</a>:
 
 Use `.pred` to return the previous consecutive <a href='https://ruby-doc.org/core-2.2.0/Integer.html' target='_blank' rel='nofollow'>**integer**</a>.
 ```Ruby
