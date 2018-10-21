@@ -25,11 +25,11 @@ Change the <code>background-color</code> property of the <code>orange</code>, <c
 ```yml
 tests:
   - text: The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.
-    testString: 'assert($(".orange").css("background-color") == "rgb(255, 125, 0)", "The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.");'
+    testString: assert($('.orange').css('background-color') == 'rgb(255, 125, 0)', 'The <code>div</code> element with class <code>orange</code> should have a <code>background-color</code> of orange.');
   - text: The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.
-    testString: 'assert($(".cyan").css("background-color") == "rgb(0, 255, 255)", "The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.");'
+    testString: assert($('.cyan').css('background-color') == 'rgb(0, 255, 255)', 'The <code>div</code> element with class <code>cyan</code> should have a <code>background-color</code> of cyan.');
   - text: The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.
-    testString: 'assert($(".raspberry").css("background-color") == "rgb(255, 0, 125)", "The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.");'
+    testString: assert($('.raspberry').css('background-color') == 'rgb(255, 0, 125)', 'The <code>div</code> element with class <code>raspberry</code> should have a <code>background-color</code> of raspberry.');
 
 ```
 

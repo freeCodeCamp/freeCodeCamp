@@ -34,7 +34,7 @@ Find F(11 111 111) mod 1 000 000 993.
 ```yml
 tests:
   - text: <code>euler468()</code> should return 852950321.
-    testString: 'assert.strictEqual(euler468(), 852950321, "<code>euler468()</code> should return 852950321.");'
+    testString: assert.strictEqual(euler468(), 852950321, '<code>euler468()</code> should return 852950321.');
 
 ```
 

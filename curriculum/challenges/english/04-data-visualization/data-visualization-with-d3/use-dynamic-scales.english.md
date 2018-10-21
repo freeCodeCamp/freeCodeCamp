@@ -28,11 +28,11 @@ Use the <code>yScale</code> variable to create a linear y-axis scale. The domain
 ```yml
 tests:
   - text: The text in the <code>h2</code> should be 30.
-    testString: 'assert(output == 30 && $("h2").text() == "30", "The text in the <code>h2</code> should be 30.");'
-  - text: 'The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.'
-    testString: 'assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]), "The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.");'
-  - text: 'The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.'
-    testString: 'assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]), "The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.");'
+    testString: assert(output == 30 && $('h2').text() == '30', 'The text in the <code>h2</code> should be 30.');
+  - text: The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.
+    testString: assert(JSON.stringify(yScale.domain()) == JSON.stringify([0, 411]), 'The <code>domain()</code> of yScale should be equivalent to <code>[0, 411]</code>.');
+  - text: The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.
+    testString: assert(JSON.stringify(yScale.range()) == JSON.stringify([470, 30]), 'The <code>range()</code> of yScale should be equivalent to <code>[470, 30]</code>.');
 
 ```
 
