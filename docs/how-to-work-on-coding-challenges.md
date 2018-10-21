@@ -6,7 +6,9 @@ Each challenge is stored in it's own markdown file. That makes it easy to edit c
 
 You can make a change without having anything running on your local system.
 
-After you find the file you want to modify within the GitHub interface, click the pencil icon to start editing the file. This will automatically create a fork of the project, if you don't have one already.
+After you find the file you want to modify within the GitHub interface, click on the pencil icon to start editing the file. This will automatically create a fork of the project, if you don't have one already.
+
+Forking will create a exact copy of that project in your repository.
 
 You can also clone the project and edit locally on you computer. For help with that, read the main [contributing guide](/CONTRIBUTING.md).
 
