@@ -21,3 +21,6 @@ Q-Learning Diferença Temporal (TD) Redes Adversariais Profundas
 ## Casos de uso:
 
 Algumas aplicações dos algoritmos de aprendizado por reforço são jogos de tabuleiro de computador (Chess, Go), mãos robóticas e carros autônomos.
+
+## Mais informações
+[Netflix AlphaGO Trailer](https://www.youtube.com/watch?v=8tq1C8spV_g)
