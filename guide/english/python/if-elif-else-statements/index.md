@@ -40,6 +40,14 @@ if y > 4:
   print("I won't print!") #this statement does not execute
 else:
   print("The condition wasn't true!") #this statement executes
+  
+a = 2
+b = 3
+
+if a < b:
+  print(a)
+else:
+  print(b)
 ```
 
 *Note that there is no condition following the `else` keyword - it catches all situations where the condition was `False`*
