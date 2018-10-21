@@ -60,6 +60,10 @@ title: Books to Read for Programmers
 - [Amazon Smile](https://smile.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/098478280X)
 - ISBN-13: 978-0984782802
 
+*Algorithms to Live By: The Computer Science of Human Decisions* by Brian Christian
+- [Amazon](https://www.amazon.co.uk/Algorithms-Live-Computer-Science-Decisions/dp/0007547994/ref=sr_1_1?ie=UTF8&qid=1540127695&sr=8-1&keywords=algorithms+to+live+by)
+- ISBN-13: 978-0-00-754799-9
+
 ## BASH
 
 *The Linux Command Line: A Complete Introduction 1st Edition by William E. Shotts Jr*
