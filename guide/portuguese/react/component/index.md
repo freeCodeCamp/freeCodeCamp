@@ -1,8 +1,8 @@
 ---
 title: React - Components
-localeTitle: Reagir - Componentes
+localeTitle: React - Componentes
 ---
-## Reagir - Componentes
+## React - Componentes
 
 Componentes são reutilizáveis ​​em react.js. Você pode injetar valor em adereços como dado abaixo:
 
