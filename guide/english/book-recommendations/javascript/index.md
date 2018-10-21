@@ -30,6 +30,10 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### Secrets of the JavaScript ninja (2e)
+ Targeted to at least intermediate JS programmers, this book covers in depth features of Javascript in ES6 version (among other subjects).
+- [Amazon](https://www.amazon.com/Secrets-JavaScript-Ninja-Second-Resig/dp/1617292850)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
