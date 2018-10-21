@@ -1,7 +1,7 @@
 ---
-Titel: Hintergrund Deckkraft
+Titel: background-opacity
 ---
-## Hintergrund Deckkraft
+## background-opacity
 
 Die Deckkrafteigenschaft gibt die Transparenz eines Elements an, d.h. den Grad, bis zu dem der Inhalt hinter dem Element sichtbar ist.
 
