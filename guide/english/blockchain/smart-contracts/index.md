@@ -18,3 +18,4 @@ Two of the most common technologies used are :
 - Ethereum
 - Hyperledger
 
+Solidity is a contract-oriented, high-level language for implementing smart contracts.
