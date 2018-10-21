@@ -79,4 +79,9 @@ Además, puedes encontrar tanto [gratuitos](https://bootswatch.com/) como de [pa
 
 #### Recursos Bootstrap:
 
-[Blog oficial de Bootstrap](http://blog.getbootstrap.com/) [Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/) [Escaparate de sitios construidos utilizando Bootstrap.](http://builtwithbootstrap.com/) [Linter HTML para proyectos usando Bootstrap](https://github.com/twbs/bootlint) [Elementos de diseño y fragmentos de código para Bootstrap](https://bootsnipp.com/) [Código, tema y recursos complementarios para Bootstrap](http://expo.getbootstrap.com/resources/)
+- [Blog oficial de Bootstrap](http://blog.getbootstrap.com/)
+- [Inspiración del sitio Bootstrap](http://expo.getbootstrap.com/)
+- [Escaparate de sitios construidos utilizando Bootstrap.](http://builtwithbootstrap.com/)
+- [Linter HTML para proyectos usando Bootstrap](https://github.com/twbs/bootlint)
+- [Elementos de diseño y fragmentos de código para Bootstrap](https://bootsnipp.com/)
+- [Código, tema y recursos complementarios para Bootstrap](http://expo.getbootstrap.com/resources/)
