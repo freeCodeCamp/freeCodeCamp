@@ -1,0 +1,22 @@
+NETWORKING DEVICES
+
+Networking devices are equipments that process the packet flow through the network and make decisions regarding packet forwarding.
+
+Hub is one of the earliest network devices. A hub is an unintelligent device. It consists of a single collision and broadcast domain. 
+It can be used to connect multiple devices together in a layer 2 domain.
+ 
+
+Switch is the intelligent version of a hub. It is also used to connect multiple devices in a layer 2 network. 
+However, it separates the collision domain, creating a separate one for each port. By default, it has a single broadcast domain. 
+However, using the concept of VLANs, you can create multiple broadcast domains. 
+It stores the mac address table which stores information contains entries which map each mac address to a port from which it was learnt.
+ 
+Router is a layer 3 device. It connects different networks and make decisions regarding packet routing.
+It divides both collision and broadcast domains. 
+It stores the ARP table which contains entries regarding the IP addresses and the mac address associated with it.
+
+
+There is another major network device called firewall. It is a security device, used for filtering packets. 
+Security zones can be created with this device and rules can be put in place regarding what traffic should be allowed into these zones.
+ 
+
