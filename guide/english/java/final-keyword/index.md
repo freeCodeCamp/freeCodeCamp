@@ -56,3 +56,4 @@ class Honda1 extends Bike{
 
 Output will be-
  Output:Compile Time Error
+ *In Interface variables are by default public static final declared by compiler.
