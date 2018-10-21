@@ -85,6 +85,21 @@ int linear_search(int arr[],int n,int num)
    return -1; 
 }
 ```
+### Example in C++
+
+```c++
+// Recursive approach
+int linear_search(int arr[],int n,int num) // n is length of array
+{
+        if(n == 0) // Base case.
+        return -1;
+        
+        if(ar[n-1] == num)
+        return n-1;
+        
+        return linear_search(arr,n-1,num);
+}
+```
 
 ### Example in Python
 ```python
