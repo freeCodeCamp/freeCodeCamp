@@ -4,15 +4,21 @@ localeTitle: Docker
 ---
 ## Docker
 
-O Docker é uma plataforma aberta para criar, enviar e executar aplicativos distribuídos. Está escrito em Go. Foi lançado pela primeira vez em 2013 e é desenvolvido pela Docker, Inc.
+O Docker é uma plataforma aberta para criar e executar aplicativos distribuídos. Ele coloca em prática a [arquitetura de microserviços](https://www.thoughtworks.com/pt/insights/blog/microservices-nutshell "Artigo da ThoughtWorks"). [Foi escrito em Go](https://pt.slideshare.net/jpetazzo/docker-and-go-why-did-we-decide-to-write-docker-in-go), e lançado pela primeira vez em 2013 e é desenvolvido pela Docker, Inc.
 
-O Docker é usado para executar pacotes chamados "contêineres". Os contêineres são isolados uns dos outros e do sistema operacional. Eles são mais leves que as máquinas virtuais, pois não usam a máquina host para executar um sistema operacional.
+O conceito de containers não começou de fato com o Docker.  A ideia foi iniciada no começo da década de 2000, e teve diversas outras iniciativas, como: Virtuozzo, VServer, OpenVZ e LXC.
 
-Containerization, que é uma maneira de implementar e executar aplicativos, executa serviços isolados que são executados nativamente no kernel do Linux. A memória pode ser definida manualmente para cada contêiner no Docker.
+O Docker é usado para executar pacotes chamados "contêineres". Os contêineres são isolados uns dos outros e do sistema operacional. Eles são mais leves que as máquinas virtuais, pois não precisam executar um boot completo do sistema operacional. No lugar disso, fazem uso do kernel do sistema operacional host.
+
+A técnica de _containerization_, que nada mais é do que uma maneira executar aplicativos, cria espaços isolados de memória, através do uso de recursos especiais do sistema operacional, como [cgroups](https://access.redhat.com/documentation/pt-br/red_hat_enterprise_linux/6/html/resource_management_guide/ch01 "Link da RedHat") e [kernel names spaces](https://escotilhalivre.wordpress.com/2015/08/12/namespaces/ "Kernel Namespaces"). A memória pode ser definida manualmente para cada contêiner no Docker.
+
+Apesar de ter sido concebido primariamente para Linux, o Docker está amplamente disponível atualmente para outros sistemas operacionais, incluindo Windows e macOS.  
 
 O Docker é usado para simplificar configurações e garantir um fluxo contínuo e suave de integração e implantação. Contêineres específicos podem ser especificados para ambientes de desenvolvimento, preparação e produção. Uma implementação real de um contêiner em produção, de acordo com o manual do Docker, é executá-lo como um serviço, usando o arquivo `docker-compose.yml` para configuração. Este é um arquivo YAML que define como os contêineres do Docker devem se comportar na produção.
 
 Uma das maiores vantagens do Docker é que ele pode ser usado por uma equipe que usa diferentes sistemas operacionais para criar projetos sem precisar se preocupar com conflitos de software.
+
+Para uma visão geral de Docker, seu histórico, componentes e uma comparação com o conceito tradicional de virtualização, [veja este link](https://pt.slideshare.net/superharley/docker-um-capitulo-parte "SlideShare").
 
 ### Instalação
 
@@ -31,6 +37,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh
 
 #### Mais Informações:
 
-*   Para download e documentação, verifique o site oficial do [docker](https://www.docker.com) : Site oficial do [Docker](https://www.docker.com)
-*   Para mais informações sobre conteinerização, faça o checkout [Search IT Operations](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization)
-*   Um Docker 101 de [Docker 101](https://github.com/docker/labs/tree/master/beginner/)
+*   Para download e documentação, verifique o site oficial do [docker](https://www.docker.com) : Site oficial do [Docker](https://www.docker.com);
+*   Para mais informações sobre conteinerização, faça o checkout [Search IT Operations](https://searchitoperations.techtarget.com/definition/application-containerization-app-containerization);
+*   Um Docker 101 de [Docker 101](https://github.com/docker/labs/tree/master/beginner/);
+*   [Série "A B C Docker"](https://itharley.com/a-b-c-docker-capitulo-1/ "Blog itHarley").
