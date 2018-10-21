@@ -2,7 +2,7 @@
 title: Logical Operators and If Statements
 localeTitle: Operadores lógicos e se declarações
 ---
-# Se as declarações em C
+# As declarações de If em C
 
 A capacidade de alterar o comportamento de uma parte do código baseada em determinadas informações no ambiente é conhecida como fluxo de código condicional. Às vezes, você deseja que seu código seja executado de acordo com determinadas condições. Em tal situação, podemos usar instruções If. Também é conhecida como declaração de tomada de decisão, uma vez que toma a decisão com base em determinada expressão (ou em determinada condição). Se a expressão for avaliada como verdadeira, o bloco de código dentro da instrução 'if' será executado. Se a expressão for avaliada como false, o primeiro conjunto de códigos após o término da instrução 'if' (após a chave de fechamento) será executado.Uma expressão é uma expressão que possui operadores relacionais e / ou lógicos operando em variáveis ​​booleanas. . Uma expressão é avaliada como verdadeira ou falsa.
 
