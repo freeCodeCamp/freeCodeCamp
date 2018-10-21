@@ -23,7 +23,7 @@ do
 {
     System.out.print (iter_DoWhile + " ");
 
-    // Increment the counter
+    // Increment the variable's value
     iter_DoWhile++;
 }
 while (iter_DoWhile < 10);
