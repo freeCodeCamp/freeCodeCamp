@@ -16,4 +16,4 @@ Agile подчеркивает, спрашивая конечных пользо
 
 ### Больше информации
 
-[Домашняя страница Agile Alliance](https://www.agilealliance.org/)
+[Домашняя страница Agile Alliance](https://www.agilealliance.org/)dsfgdfgrgcdsg
