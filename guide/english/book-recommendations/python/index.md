@@ -3,7 +3,7 @@ title: Books on Python Programming Language
 ---
  
  ### List of Books
- 
+  
  #### Think Python 2e
  
  A free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
@@ -12,6 +12,14 @@ title: Books on Python Programming Language
 - [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
 - [Amazon](https://www.amazon.com/gp/product/1491939362)
 - ISBN-13: 978-1491939369
+
+### Get Programming: Learn to code with Python
+
+Great for complete beginners from a completely different area of knowledge, and is very easy to read as it doesn't contain lots of jargon. Includes lots of practical, easy to understand examples. Written by Dr. Ana Bell, a lecturer in the Electrical Engineering and Computer Science department at MIT who teaches introductory computer science courses in Python.
+
+- [Website](https://www.manning.com/books/get-programming) (Two purchasing options, either eBook or combo)
+- [Amazon](https://www.amazon.com/Get-Programming-Learn-code-Python/dp/1617293784)
+- ISBN-13: 978-1617293788
  
 #### Learn Python 3 the Hard Way
 
