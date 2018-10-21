@@ -7,6 +7,9 @@ title: Dunning Kruger Effect
 ### Wikipedia's Definition
 In the field of psychology, the **Dunning–Kruger** effect is a cognitive bias wherein people of low ability suffer from illusory superiority, mistakenly assessing their cognitive ability as greater than it is. The cognitive bias of illusory superiority derives from the metacognitive inability of low-ability persons to recognize their own ineptitude.
 
+<img src='https://www.xonitek.com/wp-content/uploads/2014/09/Dunning-Kruger-Effect.jpg>
+*Dunning Kruger curve*
+
 ### Why does it matter in Software Development?
 
 
