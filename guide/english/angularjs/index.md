@@ -4,7 +4,7 @@ title: AngularJS
 ## AngularJS
 
 AngularJS (versions 1.x) is an open source front-end JavaScript framework. AngularJS extends HTML to develop rich and powerful front-ends. 
-It reduces the repetitive use of HTML code. This repetition can be avoided by using the directives provided by AngularJS which saves 
+It reduces the repetitive use of HTML code. This repetition can be avoided by using the directives provided by AngularJS which save 
 much time and effort.
 
 **Install**:
