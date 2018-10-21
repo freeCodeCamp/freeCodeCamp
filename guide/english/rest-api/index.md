@@ -5,7 +5,7 @@ title: Rest API Design
 
 ### History
 REST stands for **Re**presentational **S**tate **T**ransfer protocol. Roy Fielding defined REST in his Phd dissertation in year 2000.
- 
+
 ### What is it?
 REST was developed to provide a uniform interface for
 
@@ -18,7 +18,7 @@ REST was developed to provide a uniform interface for
 
  - #### Basics
 
-|   Method	|  http://api.co/v2/cars  	| http://api.co/v2/cars/1234   	|   	
+|   Method	|  http://api.co/v2/cars  	| http://api.co/v2/cars/1234   	|
 |---	|---	|---	|
 |   GET	|   List all the cars	|   Retrieve an individual car	|
 |   POST	|  Create a new car  	|  Error   	|
@@ -35,19 +35,19 @@ REST was developed to provide a uniform interface for
 - #### Singular or Plural?
     Use correct grammer for declaration
 
-    **Avoid** `/person/145` 
+    **Avoid** `/person/145`
 
     **Prefer** `/people/154` Assume to return 154th person from list of people
 
 - #### Use casing
-  Use anyone of the below patterns and be **consistent!**  
+  Use anyone of the below patterns and be **consistent!**
 
 
-  | Case Styles        | Example          | 
+  | Case Styles        | Example          |
   | ------------- |-------------|
-  | **UpperCamelCase**      | `http://api.fintech.cp/DailyTransactions/Today` | 
-  | **lowerCamelCase**      | `http://api.fintech.cp/dailyTransactions/today`      |  
-  | **snake_case**    | `http://api.fintech.cp/daily_transactions/today`      | 
+  | **UpperCamelCase**      | `http://api.fintech.cp/DailyTransactions/Today` |
+  | **lowerCamelCase**      | `http://api.fintech.cp/dailyTransactions/today`      |
+  | **snake_case**    | `http://api.fintech.cp/daily_transactions/today`      |
 
 - #### **Relationships and Resources**
 
@@ -61,7 +61,7 @@ REST was developed to provide a uniform interface for
       For example, `/usergroups/345/users/56` suggests select 345th user group and get user with id 56. However, one user might be in multiple `usergroups` i.e. `/usergroups/209/users/56` is also valid. In such case so for seperating the depedant resource `users` into a seperate endpoint like `/users/56` and provide resource linking in `/usergroups/209/users/56`
 
 - #### **API Parameters**
- 
+
    - **PATH** :  *required* to access the resource E.g. `/cars`, `/fruits`
 
    - **Query Parameters** : *optional* filter the list E.g. `/cars?type=SUV&year=2010`
@@ -72,12 +72,12 @@ REST was developed to provide a uniform interface for
 
  - #### HTTP Status Codes
 
- Use correct status codes 
- 
-  | Codes        | Meaning           | 
+ Use correct status codes
+
+  | Codes        | Meaning           |
   | ------------- |:-------------:|
-  | 1xx | Request received and understood. | 
-  | 2xx | Action requested by client was received, understood and requested. | 
+  | 1xx | Request received and understood. |
+  | 2xx | Action requested by client was received, understood and requested. |
   | 3xx | Client must take additional action to complete the request. Most of these status codes are used in URL Redirection. |
   | 4xx | Intended for situations where it seems the error was caused by the client. |
   | 5xx | The server failed to fulfil a request. |
@@ -93,12 +93,18 @@ REST was developed to provide a uniform interface for
   - **202 - Accepted**
 
       Use this if the task is huge to run. Tell the client, it has accepted the request and will/is process/processing
-      No payload is returned 
+      No payload is returned
 
-  -   **204 - No content**
+  - **204 - No content**
 
       Used when deleted `DELETE cars/124`
       Returns no content. But can also return `200 OK` if API intends to send the deleted resource for further processing.
+
+  The useful **3xx**!
+
+    - **304 - Not Modified**
+
+      Useful status code to tell you that the browser saw no change in delta from the file it just received and the one it had cached, so it used the cached version instead.
 
   The dangerous **5xx** resources!
 
@@ -110,7 +116,7 @@ REST was developed to provide a uniform interface for
 
   `DELETE /cars/MH09234`
 
-  returns `4xx` or message 
+  returns `4xx` or message
   `Expecting int car id /car/id got string car/MH09234 `
 
 
