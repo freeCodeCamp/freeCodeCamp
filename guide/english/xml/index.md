@@ -7,6 +7,7 @@ title: Extensible Markup Language (XML)
   
  ## Syntax of XML
   XML syntax refers to the rules that determine how an XML application can be written. The XML syntax is very straight forward, and this    makes XML very easy to learn.
+  
   XML documents must contain one root element that is the parent of all other elements:
   
 ```
@@ -31,7 +32,7 @@ In this example 'note' is the root element.
  
   
   * Advantages of using XML:
-    * Simplicity - XML documents are ordinary text files that can be created and edited with any text editor.
+    * Simplicity - XML documents are ordinary text files that can be created and edited with any text editor
     * Vendor independence
     * Platform independence
     * Extensive infrastructure
@@ -40,19 +41,21 @@ In this example 'note' is the root element.
    * Verbose and cumbersome syntax
    * Highly inefficient storage  
 
-In Computer Language, eXtensible Markup Language(XML) is that which defines a set or block of Rules which are later used for Encoding documents in such a Format which is both Machine and Human Readable.
+As a markup language, Extensible Markup Language(XML) defines a set or block of rules which are later used for encoding documents in a format which is both machine and human-readable.
 
-There is a main thing between XML and HTML which makes them different from each other. It is that XML was designed to carry a particular information and focuses on that informaion only. And HTML focuses on displaying that particular Information like design and all these stuff regarding the information.
+The main difference between XML and HTML is that XML was designed to store and transport information (data) and focuses on that information only. 
 
-Also XML does not uses a predefined tags as used by HTML. It uses user defined tags.
+HTML was designed to display information and focuses on how this information is presented or looks.
+
+Also XML does not use predefined tags like those used by HTML. The author defines the tags used in an XML document.
 
 The following are areas that can be simiplified with XML: 
-1. data sharing
-2. data transport
-3. platform changes
-4. data availability
+1. Data sharing
+2. Data transport
+3. Platform changes
+4. Data availability
 
-And it's main achievement was that it became a W3C Recommendation as early as in February 1998.
+XML became a W3C Recommendation as early as February 1998.
 
 ### More information
 
