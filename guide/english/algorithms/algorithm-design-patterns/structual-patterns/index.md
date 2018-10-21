@@ -26,3 +26,5 @@ Examples of Structural Patterns include:
 
 ### Sources
 [https://en.wikipedia.org/wiki/Structural_pattern](https://en.wikipedia.org/wiki/Structural_pattern)
+
+Adding algorithm design pattern structural pattern.
