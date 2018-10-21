@@ -27,3 +27,5 @@ Business/Product Intuition - Interpret and communicate results to non-technical 
 6 - Validate Model
 7 - Deploy Model
 8 - Evalute or Monitor Results
+
+##Mychanges
