@@ -242,6 +242,9 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+*HTML and CSS: Design and Build Websites by Jon Duckett*
+- [Amazon](https://www.amazon.co.uk/HTML-CSS-Design-Build-Websites/dp/1118008189/ref=sr_1_2?ie=UTF8&qid=1540122500&sr=8-2&keywords=html+and+css)
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
