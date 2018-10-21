@@ -25,6 +25,7 @@ That is when the user hovers over the element with their mouse.
 button {
   color: white;
   background-color: green;
+  transform: all .5s linear;
 }
 
 button:hover {
@@ -36,6 +37,8 @@ button:hover {
 
 In the example above, the button's normal styling is white text on a green button. 
 When a user hovers over the button with their mouse the rule with the `:hover` selector will become active and the button's style will change.
+
+The transform property animates the transition from non-hover to hover state.
 
 #### More Information:
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes' target='_blank' rel='nofollow'>MDN `:hover` Docs</a>
