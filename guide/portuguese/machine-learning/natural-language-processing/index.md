@@ -45,7 +45,7 @@ Como diz a Wikipedia, "O processamento de linguagem natural (NLP) é um subcampo
 
 ### Bibliotecas Popularmente Usadas
 ```
-            *NLTK, the most widely-mentioned NLP library for Python. 
+        *NLTK, the most widely-mentioned NLP library for Python. 
         *SpaCy, an industrial-strength NLP library built for performance. 
         *Gensim, a library for document similarity analysis. 
         *TextBlob, a user-friendly and intuitive NLTK interface. 
