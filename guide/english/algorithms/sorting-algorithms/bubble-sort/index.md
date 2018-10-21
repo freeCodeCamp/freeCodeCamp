@@ -131,6 +131,27 @@ void bubblesort(int arr[], int n)
 	bubblesort(arr,n-1);	//Recursion for remaining array
 }
 ```
+### Example in C++
+```c++
+// Iterative Implementation
+void bubblesort(int arr[], int n)
+{
+	
+	for(int i=0;i<n-1;i++)	//After this pass the largest element will move to its desired location.
+	{
+                for(int j=i+1; j<n; ++j)
+                {
+		        if(arr[i]>arr[j])
+		        {
+			        int temp=arr[i];
+			        arr[i]=arr[j];
+			        arr[j]=temp;		        
+		        }
+                }
+	}
+        return;
+}
+```
 ### Example in Swift
 ```swift
 func bubbleSort(_ inputArray: [Int]) -> [Int] {
