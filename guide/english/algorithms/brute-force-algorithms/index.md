@@ -11,6 +11,10 @@ Another example: 5 digit password, in the worst case scenario would take 10<sup>
 
 The time complexity of brute force is <b> O(n*m) </b>. So, if we were to search for a string of 'n' characters in a string of 'm' characters using brute force, it would take us n * m tries.
 
+Application of Brute Force
+
+Brute Force Algorithm is not the most preferable algorithm because of the amount of time it takes for execution. The logic of Brute Force Algorithm is simple and understandable but because of the time consumption, it is not preferred over other possible algorithms for the problem. It is used to explain the simplest logic to beginners.
+
 #### More Information:
 
 <a href="https://en.wikipedia.org/wiki/Brute-force_search"> Wikipedia </a>
