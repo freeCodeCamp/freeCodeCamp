@@ -15,3 +15,7 @@ But, how will it arrive at the apartment? Every apartment has there own unique a
 ## Basics of Socket Programming
 
 Socket programming is a way of connecting two nodes on a network to communicate with each other. One socket(node) listens on a particular port at an IP, while other socket reaches out to the other to form a connection. Server forms the listener socket while client reaches out to the server.
+
+
+## Excellent Resource for Network Programming in C
+One of the most helpful resources available for learning about network programming in C is [Beej's guide to Network Programming](https://beej.us/guide/bgnet/). It provides a fundamental description of ports, sockets and client-server architectures.
