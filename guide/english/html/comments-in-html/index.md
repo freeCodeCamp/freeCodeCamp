@@ -38,7 +38,7 @@ Conditional Comments are only recognised by Internet Explorer Version 5 through 
 <!DOCTYPE html>
 <html>
 	<body>
-		<!--[if IE 9]>
+		<!--[if IE 9]-->
     			<h1>FreeCodeCamp web</h1>
 			<p>FreeCodeCamp is an open-source project that needs your help</p>	
 		<![endif]-->
