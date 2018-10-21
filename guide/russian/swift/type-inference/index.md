@@ -1,10 +1,10 @@
 ---
 title: Type Inference
-localeTitle: Вывод типа
+localeTitle: Вывод типов
 ---
-## Вывод типа
+## Вывод типов
 
-Swift использует вывод типа. Поэтому, если вы напишете какой-то код, например, код в приведенном ниже примере, довольно очевидно, что каждый тип.
+Swift использует механизм вывода типов. Например, вы напишете код приведенный ниже. Довольно очевидно, где какой тип использован.
 
 #### Пример:
 
@@ -14,16 +14,16 @@ Swift использует вывод типа. Поэтому, если вы н
     let isAwesome: Bool = true 
 ```
 
-Таким образом, мы можем очистить код, чтобы он выглядел как пример ниже, и Swift может вывести тип для использования.
+Мы можем улучшить код и убрать явное указание типа, чтобы он выглядел как пример ниже. Swift может вывести тип, который будет использован, если задано присваемое значение.
 
 #### Пример:
 
 ```swift
-    let iPhone = “iPhone”       // Inferred as String 
-    let yearIntroduced = 2007   // Inferred as Int 
-    let isAwesome = true        // Inferred as Bool 
+    let iPhone = “iPhone”       // Выведен как String 
+    let yearIntroduced = 2007   // Выведен как Int 
+    let isAwesome = true        // Выведен как Bool 
 ```
 
 #### Дополнительная информация:
 
-*   [Быстрый язык программирования](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID322)
+*   [Язык программирования Swift](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID322)
