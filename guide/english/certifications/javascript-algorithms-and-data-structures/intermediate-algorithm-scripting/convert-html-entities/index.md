@@ -71,7 +71,10 @@ title: Convert HTML Entities
 ```
 ### Code Explanation:
 
-Explain solution here and add any relevant links
+*   Assign **temp** to `str.split('')`, which creates an array containing each individual character in the passed in string.
+*   Pass each character in the newly created array into a `switch()` statement.
+*   Replace the HTML entities with their corresponding HTML entity string (i.e. `'&'` becomes `'&amp;'` in line 51)
+*   `temp.join('')` converts the array of characters into a string to be returned.
 
 #### Relevant Links
 
@@ -96,7 +99,10 @@ Explain solution here and add any relevant links
 
 ### Code Explanation:
 
-Explain solution here and add any relevant links
+*   **str** is assigned to a new version of **str** that will contain the original string with all HTML entities converted
+*   The **first parameters** in `replace()` contains a regular expression that matches all instances of each HTML entity in **str**
+*   Replace all those instances with the corresponding HTML strings given in the **second parameter** of `replace()`
+*   Finally, the new **str** is returned
 
 #### Relevant Links
 
