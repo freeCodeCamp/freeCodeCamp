@@ -9,6 +9,16 @@ Popular choices for Public Cloud providers are Amazon Web Services, Microsoft Az
 
 Many modern websites and big data efforts are said to be developed in the Cloud, meaning they are operating in some of these massive shared datacenters.
 
+## Different Layers of Cloud
+### SaaS
+Software as a service, this layer executes and hosts working applications over the cloud for end users on a pay per use basis and remotely assesible. Example google drive, gmail, etc.
+
+### PaaS
+Platform as a service, this layer provides a platform for the developers to develop their application for the end users on the cloud. Example Google Apps Engine, Microsoft Azure, etc.
+
+### IaaS
+Infrastructure as a service, this layer provides virtualized resources like CPU, memory storage etc that are used for hosting an application on the cloud on a pay per use basis. Example Amazon EC2, IBM Blue Cloud, etc.
+
 #### More Information:
 
 [Getting Started with AWS](https://aws.amazon.com/getting-started/)
