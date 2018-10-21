@@ -3,7 +3,7 @@ title: R
 ---
 
 ## What is R?
-R is an open source programming language and software environment for statistical computing and graphics. It is one of the primary languages used by data scientists and statisticians alike. It is supported by the R Foundation for Statistical Computing and a large community of open source developers. Since R utilized a command line interface, there can be a steep learning curve for some individuals who are used to using GUI focused programs such as SPSS and SAS so extensions to R such as RStudio can be highly beneficial. Since R is an open source program and freely available, there can a large attraction for academics whose access to statistical programs are regulated through their association to various colleges or universities.
+R is an open source programming language and software environment for statistical computing and graphics. It is one of the primary languages used by data scientists and statisticians alike. It is supported by the R Foundation for Statistical Computing and a large community of open source developers. Since R utilized a command line interface, there can be a steep learning curve for some individuals who are used to using GUI focused programs such as SPSS and SAS so extensions to R such as RStudio can be highly beneficial. Since R is an open source program and freely available, there can a large attraction for academics whose access to statistical programs are regulated through their association to various colleges or universities. Most of the data scientists prefer R language.
 
 
 ## Installations
