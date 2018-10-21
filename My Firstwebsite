@@ -1,0 +1,88 @@
+<html>
+<head>
+<title> THIS is my first website</title>
+<style>
+
+body{
+     background-color:lightyellow
+	 }
+	 </style>
+	 </head>
+	 <body>
+	 <h1 align="left" style="color:red"><font size="10"> TVS</font size> </h1>
+<h1 style="color:blue" align="center"><b><i><font size="8"><u> <ul>OMSHIVAM ENTERPRISES TVS AGENCY</ul></u></font size></i></b></h1>
+           <h2 style="color:blue" align="center"><u>KAILHAT CHUNAR MIRZAPUR</u></h2>
+		   <hr>	
+<p style="color:red"><b><i><font size="5"> This is a  TVS Agency.Where you can purchase any type of TVS bikes.</font size></i></b></p>
+<hr>
+<marquee direction="up">
+<p style="color:blue"  ><b><i><font size="30">TVS&nbsp;&nbsp;TVS&nbsp;&nbsp;TVS&nbsp;&nbsp;TVS&nbsp;&nbsp;TVS&nbsp;&nbsp;TVS&nbsp;&nbsp;TVS&nbsp;&nbsp;TVS&nbsp;&nbsp;TVS&nbsp;&nbsp;&nbsp;TVS&nbsp;</font size></i></b></p> 
+</marquee>
+<hr>
+<p style="color:red"><u> THIS IS THE COLLECTION OF BIKE</u> </p>
+<marquee direction="right">
+<figure>
+<img src="tvs pic 2.jpg">
+<figure caption>
+  <p style="color:red"><font size="5"> TVS XL100 </font size> </p>
+  <a href="tvs6.html"> CLICK ON THIS FOR DETAILS </a>
+  </marquee>
+</figure caption>
+<img src="tvs pic 1.jpg">
+<figure caption>
+<p style="color:red"><font size="5">STARCITY PLUS</font size> </p>
+<a href="tvs7.html"> CLICK ON THIS FOR DETAILS </a>
+</figure caption>
+<marquee direction="right">
+<img src="tvs pic 3.jpg">
+<figure caption>
+<p style="color:red"><font size="5">REDON</font size> </p>
+<a href="tvs8.html"> CLICK ON THIS FOR DEATAILS </figure caption>
+</marquee>
+<img src="tvs pic 4.jpg">
+<figure caption>
+<p style="color:red"><font size="5"> STARSPORT</font size></p>
+</a href="tvs9.html"> CLICK ON THIS FPR  DETAILS </a>
+</figure caption>
+<marquee direction="right">
+<img src="tvs pic 5.jpg">
+<figure caption>
+<p style="color:red"><font size="5"> APACHE </font size></p>
+<a href="tvs10.html"> CLICK ON THIS LINK FOR DETAILS </a>
+</figure caption>
+</marquee>
+</figure>
+<hr>
+<hr>
+<p style="color:blue"><font size="5"><b> COUSTMER DETAILS:</b></font size></p>
+<form>
+<ul>
+<li>
+<p style="color:red">COUSTMER NAME-<input type="text"></p></li>
+<li>
+<p style="color:red"> MOBILE NO.-&nbsp;&nbsp;&nbsp;<input type="text"></p></li>
+<li>
+<p style="color:red"> EMAIL ADDRESS<input type="email"></p>
+</li>
+<li>
+<p style="color:red">BIKE COLLECTION</p>
+</li>
+</ul>
+<p> 
+<select style="color:red">
+       <option style="color:red"> TVS APACHE</font size></option>
+	   <option style="color:red"> TVS SPORT </option>
+	   <option style="color:red"> TVS XL-100 </option>
+	   <option style="color:red"> TVS REDON </option>
+	   <option style="color:red"> TVS STAR CITY PLUS </option>
+	   </select>
+	   <input type="submit" value="click here">
+	   <ul>
+	   <li>
+	  <p style="color:red"> COLOR OF THE BIKE</p>
+	   </li>
+	   <p style="color:red">SELECT COLOR <input type="color">
+		</ul>
+		<hr>
+     </body>
+</html>
