@@ -111,7 +111,7 @@ class App extends Component{
  */
 const mapStateToProps=state=>{
     return {
-        ArrayValue:state.example.exapleArray,
+        ArrayValue:state.example.exampleArray,
         StringMessage:state.example.exampleString,
         bookApploggedIn:state.example.exampleBool,
         ObjectValue:state.example.exampleObject
