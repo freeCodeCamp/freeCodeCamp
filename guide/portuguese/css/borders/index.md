@@ -10,24 +10,24 @@ Nosso atributo CSS favorito, permite que você personalize completamente as bord
 
 A propriedade abreviada de `border` define todas as propriedades da borda em uma declaração. \`\` \`css borda: 1px sólido # 000;
 ```
-The properties that can be set, are (in order): 
- 1. `border-style` 
- 2. `border-width` 
+As propriedades que podem ser definidas são(em ordem): 
+ 1. `border-width` 
+ 2. `border-style`
  3. `border-color` 
  4. `border-radius` 
  
- It does not matter if one of the values above are missing, for example: 
+ Não importa se um dos valores acima são omitidos, por exemplo: 
 ```
 
-css borda: vermelho sólido;
+css border: red solid;
 ```
-The above code is also valid CSS. 
+O código acima também é valido em CSS. 
  
- ### Border Styles 
+ ### Estilos de borda
  
- The `border-style` property sets a wide range of different types of borders. 
+ A propriedade `border-style` define um estilo entre um conjunto amplo de estilo de bordas. 
  
- The various values are: 
+ Os vários valroes são: 
  - `dotted` - Sets a dotted border. 
  - `dashed` - Sets a dashed border. 
  - `solid` - Sets a solid border. 
