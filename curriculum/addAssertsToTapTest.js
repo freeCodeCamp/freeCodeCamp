@@ -12,6 +12,7 @@ function createIsAssert(tapTest, isThing) {
 function addAssertsToTapTest(tapTest) {
   const assert = tapTest.assert;
 
+  assert.isTrue = createIsAssert(tapTest, v => v === true);
   assert.isArray = createIsAssert(tapTest, _.isArray);
   assert.isBoolean = createIsAssert(tapTest, _.isBoolean);
   assert.isString = createIsAssert(tapTest, _.isString);

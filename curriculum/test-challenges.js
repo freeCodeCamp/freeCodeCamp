@@ -16,28 +16,28 @@ const { validateChallenge } = require('./schema/challengeSchema');
 
 const { LOCALE: lang } = process.env;
 
-// modern challengeType
-const modern = 6;
+const { challengeTypes } = require('../client/utils/challengeTypes');
 
 let mongoIds = new MongoIds();
 let challengeTitles = new ChallengeTitles();
 
-function evaluateTest(
+function checkSyntax(test, tapTest) {
+  try {
+    // eslint-disable-next-line
+    new vm.Script(test.testString);
+    tapTest.pass(test.text);
+  } catch (e) {
+    tapTest.fail(e);
+  }
+}
+
+function evaluateHtmlJsTest(
   solution,
   assert,
-  react,
-  redux,
-  reactRedux,
-  head,
-  tail,
+  files,
   test,
   tapTest
 ) {
-  /* NOTE: Provide dependencies for React/Redux challenges
-               * and configure testing environment
-               */
-  let React, ReactDOM, Redux, ReduxThunk, ReactRedux, Enzyme, document;
-
   // Fake Deep Equal dependency
   const DeepEqual = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
@@ -57,7 +57,7 @@ function evaluateTest(
     return o;
   };
 
-  const sandbox = {
+  let sandbox = {
     assert,
     code: solution,
     DeepEqual,
@@ -65,107 +65,133 @@ function evaluateTest(
     test: test.testString
   };
 
-  if (react || redux || reactRedux) {
-    // Provide dependencies, just provide all of them
-    React = require('react');
-    ReactDOM = require('react-dom');
-    Redux = require('redux');
-    ReduxThunk = require('redux-thunk');
-    ReactRedux = require('react-redux');
-    Enzyme = require('enzyme');
-    const Adapter15 = require('enzyme-adapter-react-15');
-    Enzyme.configure({ adapter: new Adapter15() });
-
-    /* Transpile ALL the code
-                 * (we may use JSX in head or tail or tests, too): */
-    const transform = require('babel-standalone').transform;
-    const options = { presets: ['es2015', 'react'] };
-
-    head = transform(head, options).code;
-    solution = transform(solution, options).code;
-    tail = transform(tail, options).code;
-    test = transform(test, options).code;
-
+  if (files.html) {
+    const { head, tail } = files.html;
     const { JSDOM } = require('jsdom');
-    // Mock DOM document for ReactDOM.render method
-    const jsdom = new JSDOM(`<!doctype html>
-                  <html>
-                    <body>
-                      <div id="challenge-node"></div>
-                    </body>
-                  </html>
-                `);
-    const { window } = jsdom;
-
-    // Mock DOM for ReactDOM tests
-    document = window.document;
-    global.window = window;
-    global.document = window.document;
+    const jsdom = new JSDOM(`
+      <!doctype html>
+      <html>
+        ${head}
+        ${solution}
+        ${tail}
+      </html>
+    `);
+    const jQuery = require('jquery')(jsdom.window);
+    sandbox = {
+      ...sandbox,
+      window: jsdom.window,
+      document: jsdom.window.document,
+      $: jQuery
+    };
   }
 
-  /* eslint-enable no-unused-vars */
-
-  // No support for async tests
-  const isAsync = s => s.includes('(async () => ');
+  let scriptString = '';
+  if (files.js) {
+    const { head, tail } = files.js;
+    scriptString = head + '\n' + solution + '\n' + tail + '\n';
+  }
 
   try {
-    if (!!solution && !isAsync(test.testString)) {
-      const context = vm.createContext(sandbox);
-      const scriptString =
-        head + '\n' + solution + '\n' + tail + '\n' + `
-        const testResult = eval(test);
-        if (typeof testResult === 'function') {
-          testResult(() => code);
-        }`;
-      const script = new vm.Script(scriptString);
-      script.runInContext(context);
-    } else {
-      // For tests without a solution or async tests only check syntax
-      // eslint-disable-next-line
-      new vm.Script(test.testString);
-      tapTest.pass(test.text);
-    }
+    const context = vm.createContext(sandbox);
+    scriptString += `
+      const testResult = eval(test);
+      if (typeof testResult === 'function') {
+        testResult(() => code);
+      }`;
+    const script = new vm.Script(scriptString);
+    script.runInContext(context);
   } catch (e) {
-    // console.log(head + '\n' + solution + '\n' + tail + '\n' + test.testString);
+    // console.log(scriptString);
     // console.log(e);
     tapTest.fail(e);
     // process.exit(1);
   }
 }
 
+function evaluateReactReduxTest() {
+  /* NOTE: Provide dependencies for React/Redux challenges
+               * and configure testing environment
+               */
+  // let React, ReactDOM, Redux, ReduxThunk, ReactRedux, Enzyme, document;
+
+  // if (react || redux || reactRedux) {
+  //   // Provide dependencies, just provide all of them
+  //   React = require('react');
+  //   ReactDOM = require('react-dom');
+  //   Redux = require('redux');
+  //   ReduxThunk = require('redux-thunk');
+  //   ReactRedux = require('react-redux');
+  //   Enzyme = require('enzyme');
+  //   const Adapter15 = require('enzyme-adapter-react-15');
+  //   Enzyme.configure({ adapter: new Adapter15() });
+
+  //   /* Transpile ALL the code
+  //                * (we may use JSX in head or tail or tests, too): */
+  //   const transform = require('babel-standalone').transform;
+  //   const options = { presets: ['es2015', 'react'] };
+
+  //   head = transform(head, options).code;
+  //   solution = transform(solution, options).code;
+  //   tail = transform(tail, options).code;
+  //   test = transform(test, options).code;
+
+  //   const { JSDOM } = require('jsdom');
+  //   // Mock DOM document for ReactDOM.render method
+  //   const jsdom = new JSDOM(`<!doctype html>
+  //                 <html>
+  //                   <body>
+  //                     <div id="challenge-node"></div>
+  //                   </body>
+  //                 </html>
+  //               `);
+  //   const { window } = jsdom;
+
+  //   // Mock DOM for ReactDOM tests
+  //   document = window.document;
+  //   global.window = window;
+  //   global.document = window.document;
+  // }
+
+  /* eslint-enable no-unused-vars */
+
+  // No support for async tests
+  // const isAsync = s => s.includes('(async () => ');
+
+  // try {
+  //   if (!isAsync(test.testString)) {
+  //     const context = vm.createContext(sandbox);
+  //     const scriptString =
+  //       head + '\n' + solution + '\n' + tail + '\n' + `
+  //       const testResult = eval(test);
+  //       if (typeof testResult === 'function') {
+  //         testResult(() => code);
+  //       }`;
+  //     const script = new vm.Script(scriptString);
+  //     script.runInContext(context);
+  //   } else {
+  //     // For async tests only check syntax
+  //     // eslint-disable-next-line
+  //     new vm.Script(test.testString);
+  //     tapTest.pass(test.text);
+  //   }
+  // } catch (e) {
+  //   console.log(head + '\n' + solution + '\n' + tail + '\n' + test.testString);
+  //   // console.log(e);
+  //   tapTest.fail(e);
+  //   // process.exit(1);
+  // }
+}
+
 function createTest({
   title,
   id = '',
+  challengeType,
   tests = [],
   solutions = [],
-  files = [],
-  react = false,
-  redux = false,
-  reactRedux = false
+  files = []
 }) {
   mongoIds.check(id, title);
   challengeTitles.check(title);
-
-  const noSolution = new RegExp('// solution required');
-  solutions = solutions.filter(solution => (
-    !!solution && !noSolution.test(solution)
-  ));
-  tests = tests.filter(test => !!test.testString);
-
-  let type;
-  const hasSolution = solutions.length > 0;
-  if (!hasSolution) {
-    type = 'missing';
-    solutions = [''];
-  }
-
-  const { head, tail } = files.reduce(
-    (result, file) => ({
-      head: result.head + ';' + file.head,
-      tail: result.tail + ';' + file.tail
-    }),
-    { head: '', tail: '' }
-  );
 
   // if title starts with [word] [number], for example `Problem 5`,
   // tap-spec does not recognize it as test suite.
@@ -175,40 +201,73 @@ function createTest({
     title = `${match[1]}#${match[2]}`;
   }
 
-  const plan = tests.length * solutions.length;
-  return Observable.fromCallback(tape)(title)
-    .doOnNext(
-      tapTest => (plan ? tapTest.plan(plan) : tapTest.end())
-    )
-    .flatMap(tapTest => {
-      if (plan === 0) {
-        return Observable.just({
-          title,
-          type: 'missing'
-        });
-      }
+  const testSuite = Observable.fromCallback(tape)(title);
 
+  tests = tests.filter(test => !!test.testString);
+  if (tests.length === 0) {
+    return testSuite.flatMap(tapTest => {
+      tapTest.end();
+      return Observable.just(title);
+    });
+  }
+
+  const noSolution = new RegExp('// solution required');
+  solutions = solutions.filter(solution => (
+    !!solution && !noSolution.test(solution)
+  ));
+
+  const skipTests = challengeType !== challengeTypes.html &&
+    challengeType !== challengeTypes.js &&
+    challengeType !== challengeTypes.bonfire &&
+    challengeType !== challengeTypes.zipline;
+
+  // For problems without a solution, check only the syntax of the tests.
+  if (solutions.length === 0 || skipTests) {
+    return testSuite.flatMap(tapTest => {
+      tapTest.plan(tests.length);
+      tests.forEach(test => {
+        checkSyntax(test, tapTest);
+      });
+      return Observable.just(title);
+    });
+  }
+
+  const exts = Array.from(new Set(files.map(({ ext }) => ext)));
+  const groupedFiles = exts.reduce((result, ext) => {
+    const file = files.filter(file => file.ext === ext ).reduce(
+      (result, file) => ({
+        head: result.head + ';' + file.head,
+        tail: result.tail + ';' + file.tail
+      }),
+      { head: '', tail: '' }
+    );
+    return {
+      ...result,
+      [ext]: file
+    };
+  }, {});
+
+  const plan = tests.length * solutions.length;
+  return testSuite
+    .flatMap(tapTest => {
+      tapTest.plan(plan);
       return (
         Observable.just(tapTest)
           .map(addAssertsToTapTest)
           .doOnNext(assert => {
             solutions.forEach(solution => {
               tests.forEach(test => {
-                evaluateTest(
+                evaluateHtmlJsTest(
                   solution,
                   assert,
-                  react,
-                  redux,
-                  reactRedux,
-                  head,
-                  tail,
+                  groupedFiles,
                   test,
                   tapTest
                 );
               });
             });
           })
-          .map(() => ({ title, type }))
+          .ignoreElements()
       );
     });
 }
@@ -232,24 +291,16 @@ Observable.fromPromise(getChallengesForLang(lang || 'english'))
       throw new Error(result.error);
     }
   })
-  .filter(({ challengeType }) => challengeType !== modern)
   .flatMap(challenge => {
     return createTest(challenge);
   })
-  .map(({ title, type }) => {
-    if (type === 'missing') {
-      return title;
-    }
-    return false;
-  })
-  .filter(title => !!title)
   .toArray()
   .subscribe(
     noSolutions => {
       if (noSolutions) {
         console.log(
-          '# These challenges have no solutions\n- [ ] ' +
-            noSolutions.join('\n- [ ] ')
+          `# These challenges have no solutions (${noSolutions.length})\n` +
+          '- [ ] ' + noSolutions.join('\n- [ ] ')
         );
       }
     },
