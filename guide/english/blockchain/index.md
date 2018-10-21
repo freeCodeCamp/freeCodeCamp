@@ -26,8 +26,20 @@ The words block and chain were used separately in Satoshi Nakamoto's original pa
 
 As of 2016, blockchain 2.0 implementations continue to require an off-chain oracle to access any "external data or events based on time or market conditions to interact with the blockchain."
 
+## Issues
+Whilst blockchain technology is undoubtedly elegant, there are several problems that its presence brings, the main one being use my malicious third parties. Due to the extremely secure nature of blockchain, its technologies are often used by criminals to carry out transactions, which are impossible for governments to track.
+
+An unavoidable issue with the security of the system itself is the so-called "51% attack" whereby if more than half of the nodes on the network are issuing false ledgers, the "lie" becomes truth. This means that the global network has to constantly be monitored to make sure that nobody can gain this kind of influence.
+
+Another issue is its lack of regulation, or a central authority backing its currencies, which in the past has lead to huge increases in speculation, and ultimately crashes. An example of this, is the huge surge in the value of bitcoin, the poster child of blockchain, which after surging to a new high in January 2018, fell by around 75% by August of the same year. This left many eager speculators ruined. However, this is not an inherent problem with the technology itself, being more a reflection of peoples desires to get rich quick than the evil of blockchain.
+
+A final issue is the political connotations of the technology. Since the network is effectively community run, there can be disagreements as to changes being implemented, and how the network is run on a day-to-day basis. This can sometimes lead to 'forks' in the network, whereby splinter groups form their own currencies.
+
+
 #### Sources
 1. [Bettina Warburg, "How the blockchain will radically transform the economy", *TED Talks*, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
+2.[Nathaniel Popper and Su-Hyun Lee, "After the Bitcoin Boom: Hard Lessons for Cryptocurrency Investors", *The New York Times*, August 20, 2018](https://www.nytimes.com/2018/08/20/technology/cryptocurrency-investor-losses.html)
+3.[Nolan Bauerle, "What are Blockchain's Issues and Limitations?", *coindesk"](https://www.coindesk.com/information/blockchains-issues-limitations/)
 
 
 ##### More information
