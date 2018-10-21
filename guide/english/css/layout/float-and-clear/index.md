@@ -70,6 +70,17 @@ div {
 ![clear footer image](https://github.com/jamal-pb95/guides/blob/master/assets/clearedfooter.png "clear footer image")
 Source: CSS-TRICS
 
+### Clearfix
+If you float two child elements within a parent container, the parent requires a clearfix to wrap around both elements. Without a clearfix, the parent is unable to clear its child elements.
+```
+div:after {
+    clear: both;
+    display: table;
+    content: "";
+}
+```
+Source: CSS TRICKS (https://css-tricks.com/snippets/css/clear-fix/)
+
 ### Additional Resources:
 - MDN CSS: [Float](https://developer.mozilla.org/en-US/docs/Web/CSS/float) & [Clear](https://developer.mozilla.org/en-US/docs/Web/CSS/clear)
 - [W3Schools tutorials](https://www.w3schools.com/css/css_float.asp)
