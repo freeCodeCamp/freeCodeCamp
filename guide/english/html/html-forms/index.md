@@ -24,6 +24,8 @@ Form contains control elements which are wrapped around ```<form></form>``` tags
 Code example:
 ```html
 <form>
+    <label for="number">Number:</label>
+    <input type="number" name="number" id="number">
     <label for="username">Username:</label>
     <input type="text" name="username" id="username">
     <label for="password">Password:</label>
