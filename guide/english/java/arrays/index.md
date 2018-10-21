@@ -169,3 +169,23 @@ Output:
 
 #### More Information:
 * Source: <a href='https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html' target='_blank' rel='nofollow'>Java Arrays</a>
+```
+
+### Self-expanding arrays
+
+In this section, I will show how to do self-expanding arrays if under some circumstances that you have an assignment which prevented you from using arraylist.
+
+```java
+    public void expandArray() {//expands the array automatically w/o using arraylist
+        int arraylength = studentList.length;
+        Student[] newStudentList = new Student[arraylength + 1];
+        for (int i = 0; i < studentList.length; i++) {
+            newStudentList[i] = studentList[i];
+        }
+        newStudentList[arraylength] = new Student();
+        studentList = newStudentList;
+    }//end of expandArray
+    
+    So what this does it when the old array is full, it creates a new array that is larger than the previous one, copies it over and deletes the old array.
+```
+
