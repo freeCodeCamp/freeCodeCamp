@@ -48,6 +48,10 @@ Line-by-Line Explanation of the above CODE:
 9. Since the variable days is equal to 1 which is less than 7 so the while loop is executed again.
 10. It goes on again and again and when the console prints 'Today is Sunday' the variable days is now equal to 7 and the while loop stops executing. 
 
+## Infinite Loops:
+
+As previously noted, a 'while' loop will run until the conditional logic is false. Because of this, it is important to  set a "false" condition within the executable code. If no false is included, the while loop will run infinitely. Use caution when setting logic parameters to prevent the infinite loop unless that is the desired output. 
+
 #### More Information:
 
 - <a href='https://docs.python.org/3/reference/compound_stmts.html#the-while-statement' target='_blank' rel='nofollow'>Python `while` statement documentation</a>
