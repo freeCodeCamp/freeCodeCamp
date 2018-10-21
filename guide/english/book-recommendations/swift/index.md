@@ -13,4 +13,5 @@ title: Books on Swift
  
  ####More Information:
  <--! Add some awesome books you think will be helpful to others -->
- 
+ - Swift Language - this book gives you enough information to start writing code in Swift.
+ [https://carlosicaza.com/swiftbooks/SwiftLanguage.pdf]
