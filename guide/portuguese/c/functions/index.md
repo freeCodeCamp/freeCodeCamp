@@ -4,7 +4,7 @@ localeTitle: Funções
 ---
 # Funções em C
 
-Às vezes, você tem um pedaço de código que precisa ser usado várias vezes, mas em horários e locais diferentes em seu código. Você pode copiá-lo e colá-lo várias vezes, mas essa não é uma ótima solução: seu tamanho de arquivo acaba sendo maior, seu código é mais difícil de depurar e seu código é mais difícil de ler. Em vez disso, use uma função: funções são como mini-programas que existem dentro do seu código. Você pode passar variáveis ​​para usar, e eles podem retornar dados.
+Às vezes, você tem um pedaço de código que precisa ser usado várias vezes, mas em momentos e locais diferentes em seu código. Você pode copiá-lo e colá-lo várias vezes, mas essa não é uma ótima solução: seu tamanho de arquivo acaba sendo maior, seu código é mais difícil de depurar e seu código é mais difícil de ler. Em vez disso, use uma função: funções são como mini-programas que existem dentro do seu código. Você pode passar variáveis a serem usadas, e elas podem retornar dados.
 
 ## Um exemplo
 
@@ -29,7 +29,7 @@ Aqui está um exemplo simples de uma função que divide dois números. Não é 
  } 
 ```
 
-Observe que, como `main` , as `divides` têm um formato similar. Isso é porque `main` também é uma função - é apenas especial porque C procura primeiro. `divides` também vem antes do `main` . Isso é importante porque as chamadas `main` `divides` . Chamar uma função significa que seu código está sendo usado. O código deve ser compilado antes de ser usado, e C compila linha por linha a partir do topo, então para que uma função seja chamada, ela deve ser escrita antes de ser chamada como neste exemplo. Se `divides` vieram depois de `main` , ele falharia porque o compilador não sabe que as `divides` ainda existem. Você também pode usar um protótipo de função antes de main para permitir que você coloque `divides` após main. Um protótipo de função é idêntico à função com as mesmas variáveis ​​e tipo de retorno, exceto que os colchetes são omitidos e substituídos por um ponto-e-vírgula da seguinte forma:
+Observe que, como `main` , as `divides` têm um formato similar. Isso é porque `main` também é uma função - é apenas especial porque C procura primeiro. `divides` também vem antes do `main` . Isso é importante porque `main` chama `divides` . Chamar uma função significa que seu código está sendo usado. O código deve ser compilado antes de ser usado, e C compila linha por linha a partir do topo, então para que uma função seja chamada, ela deve ser escrita antes de ser chamada como neste exemplo. Se `divides` vieram depois de `main` , ele falharia porque o compilador não sabe que as `divides` ainda existem. Você também pode usar um protótipo de função antes de main para permitir que você coloque `divides` após main. Um protótipo de função é idêntico à função com as mesmas variáveis ​​e tipo de retorno, exceto que os colchetes são omitidos e substituídos por um ponto-e-vírgula da seguinte forma:
 
 ```C
 int divides(int a, int b); 
@@ -59,7 +59,7 @@ return a / b;
 
 Isto é bastante simples, porque esta é uma função tão simples. `a` é dividido por `b` e esse valor é retornado. Você viu `return` antes na função `main` , mas agora, em vez de encerrar nosso programa, ele finaliza o método e fornece o valor para qualquer nome que tenha sido chamado.
 
-Então, para recapitular o que essa função faz, obtém dois inteiros, os divide e os devolve ao que quer que seja chamado.
+Então, para recapitular o que essa função faz: recebe dois inteiros, os divide e os devolve ao que quer que seja chamado.
 
 ### Parâmetros de uma função
 

@@ -1,10 +1,10 @@
 ---
 title: If
-localeTitle: E se
+localeTitle: Se
 ---
-# E se
+# Se
 
-A instrução if executa diferentes blocos de código com base nas condições.
+A instrução if executa diferentes blocos de código com base em condições.
 ```
 if (condition) { 
     // Do something when `condition` is true 
@@ -14,7 +14,7 @@ if (condition) {
  } 
 ```
 
-Quando a `condition` é verdadeira, o código dentro da seção `if` executado, caso `else` executado. Às vezes você precisaria adicionar uma segunda condição. Para facilitar a leitura, você deve usar uma instrução `else if` vez de aninhar `if` .
+Quando a `condition` é verdadeira, o código dentro da seção `if` é executado, caso contrário `else` executa. Às vezes você precisaria adicionar uma segunda condição. Para facilitar a leitura, você deve usar uma instrução `else if` ao invés de aninhar um `if` .
 ```
 if (condition) { 
     // Do something if `condition` is true 
@@ -27,7 +27,7 @@ if (condition) {
  } 
 ```
 
-Observe que o `else` e `else if` seções não forem necessárias, enquanto `if` for obrigatório.
+Observe que as seções `else` e `else if` não são necessárias, enquanto `if` é obrigatório.
 
 ## Exemplo
 ```
