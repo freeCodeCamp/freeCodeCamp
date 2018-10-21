@@ -21,9 +21,9 @@ Find the largest palindrome made from the product of two <code>n</code>-digit nu
 ```yml
 tests:
   - text: <code>largestPalindromeProduct(2)</code> should return 9009.
-    testString: 'assert.strictEqual(largestPalindromeProduct(2), 9009, "<code>largestPalindromeProduct(2)</code> should return 9009.");'
+    testString: assert.strictEqual(largestPalindromeProduct(2), 9009, '<code>largestPalindromeProduct(2)</code> should return 9009.');
   - text: <code>largestPalindromeProduct(3)</code> should return 906609.
-    testString: 'assert.strictEqual(largestPalindromeProduct(3), 906609, "<code>largestPalindromeProduct(3)</code> should return 906609.");'
+    testString: assert.strictEqual(largestPalindromeProduct(3), 906609, '<code>largestPalindromeProduct(3)</code> should return 906609.');
 
 ```
 

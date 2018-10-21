@@ -28,9 +28,9 @@ Use destructuring to obtain the average temperature for tomorrow from the input 
 ```yml
 tests:
   - text: <code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>
-    testString: 'assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, "<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>");'
+    testString: assert(getTempOfTmrw(AVG_TEMPERATURES) === 79, '<code>getTempOfTmrw(AVG_TEMPERATURES)</code> should be <code>79</code>');
   - text: destructuring with reassignment was used
-    testString: 'getUserInput => assert(getUserInput("index").match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),"destructuring with reassignment was used");'
+    testString: getUserInput => assert(getUserInput('index').match(/\{\s*tomorrow\s*:\s*tempOfTomorrow\s*}\s*=\s*avgTemperatures/g),'destructuring with reassignment was used');
 
 ```
 
@@ -68,6 +68,19 @@ console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
 <section id='solution'>
 
 ```js
-// solution required
+const AVG_TEMPERATURES = {
+  today: 77.5,
+  tomorrow: 79
+};
+
+function getTempOfTmrw(avgTemperatures) {
+  "use strict";
+  // change code below this line
+  const {tomorrow:tempOfTomorrow} = avgTemperatures; // change this line
+  // change code above this line
+  return tempOfTomorrow;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
 ```
 </section>

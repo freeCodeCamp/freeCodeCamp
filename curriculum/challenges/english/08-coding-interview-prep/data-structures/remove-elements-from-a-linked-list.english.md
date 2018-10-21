@@ -25,13 +25,13 @@ The <code>length</code> of the list should decrease by one every time an element
 ```yml
 tests:
   - text: Your <code>LinkedList</code> class should have a <code>remove</code> method.
-    testString: 'assert((function(){var test = new LinkedList(); return (typeof test.remove === "function")}()), "Your <code>LinkedList</code> class should have a <code>remove</code> method.");'
+    testString: assert((function(){var test = new LinkedList(); return (typeof test.remove === 'function')}()), 'Your <code>LinkedList</code> class should have a <code>remove</code> method.');
   - text: Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.remove("cat"); return test.head().element === "dog"}()), "Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.head().element === 'dog'}()), 'Your <code>remove</code> method should reassign <code>head</code> to the second node when the first node is removed.');
   - text: Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog"); test.remove("cat"); return test.size() === 1})(), "Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog'); test.remove('cat'); return test.size() === 1})(), 'Your <code>remove</code> method should decrease the <code>length</code> of the linked list by one for every node removed.');
   - text: Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.
-    testString: 'assert((function(){var test = new LinkedList(); test.add("cat"); test.add("dog");test.add("kitten"); test.remove("dog"); return test.head().next.element === "kitten"})(), "Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.");'
+    testString: assert((function(){var test = new LinkedList(); test.add('cat'); test.add('dog');test.add('kitten'); test.remove('dog'); return test.head().next.element === 'kitten'})(), 'Your <code>remove</code> method should reassign the reference of the previous node of the removed node to the removed node&apos;s <code>next</code> reference.');
 
 ```
 

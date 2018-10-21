@@ -29,7 +29,7 @@ Find S(20 000 000) mod 108.
 ```yml
 tests:
   - text: <code>euler337()</code> should return 85068035.
-    testString: 'assert.strictEqual(euler337(), 85068035, "<code>euler337()</code> should return 85068035.");'
+    testString: assert.strictEqual(euler337(), 85068035, '<code>euler337()</code> should return 85068035.');
 
 ```
 

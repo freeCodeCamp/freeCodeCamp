@@ -24,13 +24,13 @@ challengeType: 5
 ```yml
 tests:
   - text: <code>accumulator</code> is a function.
-    testString: 'assert(typeof accumulator === "function", "<code>accumulator</code> is a function.");'
+    testString: assert(typeof accumulator === 'function', '<code>accumulator</code> is a function.');
   - text: <code>accumulator(0)</code> should return a function.
-    testString: 'assert(typeof accumulator(0) === "function", "<code>accumulator(0)</code> should return a function.");'
+    testString: assert(typeof accumulator(0) === 'function', '<code>accumulator(0)</code> should return a function.');
   - text: <code>accumulator(0)(2)</code> should return a number.
-    testString: 'assert(typeof accumulator(0)(2) === "number", "<code>accumulator(0)(2)</code> should return a number.");'
-  - text: 'Passing in the values 3, -4, 1.5, and 5 should return 5.5.'
-    testString: 'assert(testFn(5) === 5.5, "Passing in the values 3, -4, 1.5, and 5 should return 5.5.");'
+    testString: assert(typeof accumulator(0)(2) === 'number', '<code>accumulator(0)(2)</code> should return a number.');
+  - text: Passing in the values 3, -4, 1.5, and 5 should return 5.5.
+    testString: assert(testFn(5) === 5.5, 'Passing in the values 3, -4, 1.5, and 5 should return 5.5.');
 
 ```
 
@@ -54,7 +54,11 @@ function accumulator (sum) {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+const testFn = typeof accumulator(3) === 'function' && accumulator(3);
+if (testFn) {
+  testFn(-4);
+  testFn(1.5);
+}
 ```
 
 </div>
