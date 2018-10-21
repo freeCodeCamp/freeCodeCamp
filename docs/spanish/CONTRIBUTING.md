@@ -15,7 +15,7 @@
 
 Hola 👋!
 
-freeCodeCamp.org es posible gracias a miles de voluntarios amables como usted. Nos emocionamos por sus contribuciones y nos complace darle la bienvenida a bordo.
+freeCodeCamp.org es posible gracias a miles de voluntarios amables como usted. Estamos muy agardecidos por sus contribuciones y nos complace darle la bienvenida a bordo.
 
 Cumplimos estrictamente nuestro ["Código de conducta"](https://www.freecodecamp.org/code-of-conduct). Tómese un momento para leerlo. No es muy largo.
 
@@ -31,7 +31,7 @@ Puede optar por contribuir a un área de su interés:
 
 2. Ayude a los campistas en nuestro [foro público](https://www.freecodecamp.org/forum/).
 
-    - ❓ Ayuda a los campistas como [respondiendo sus preguntas.](https://www.freecodecamp.org/forum/?max_posts=1).
+    - ❓ Ayuda a los campistas [respondiendo sus preguntas.](https://www.freecodecamp.org/forum/?max_posts=1).
     - 💬 [Dar retroalimentación](https://www.freecodecamp.org/forum/c/project-feedback?max_posts=1) en proyectos camper.
 
 3. Ayúdenos a agregar subtítulos en nuestro [canal de YouTube](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ/videos).
