@@ -49,17 +49,42 @@ You'll learn many of the first princliples for data science tools and how algori
 - ISBN-10: 149190142X
 - ISBN-13: 978-1491901427
 
-*Automate The Boring Stuff With Python*
-- Great book for beginners. Has interesting projects to practice Python.
+#### Automate The Boring Stuff With Python
+
+Great book for beginners. Has interesting projects to practice Python.
+
 - [Amazon](https://www.amazon.com/gp/product/1593275994/)
 - ISBN-10: 1593275994
 - ISBN-13: 978-1593275990
 
-*Python crash course 2e* (note that 3e is going to be published on April 2019)
-- Paid book which gives concrete introduction to both programming and Python by the creation of projects.
+#### Python Crash Course 2e 
+
+(Note that 3e is going to be published on April 2019)
+Paid book which gives concrete introduction to both programming and Python by the creation of projects.
+
 - [Amazon](https://www.amazon.fr/Python-Crash-Course-Hands-Project-Based/dp/1593276036/ref=sr_1_1?ie=UTF8&qid=1539459730&sr=8-1&keywords=python+crash+course)
 - ISBN-10: 1593276036
 - ISBN-13: 978-1593276034
+
+#### Practical Programming, 2nd Edition
+
+Ebook $25
+An Introduction to Computer Science Using Python 3. Written by Paul Gries, Jennifer Campbell and Jason Montojo. This textbook is used in the University of Toronto's course, *Learn to Program: The Fundamentals*, taught by Paul Gries and Jennifer Campbell, and is offered on Coursera online.
+
+- [O'Reilly](https://www.oreilly.com/library/view/practical-programming-2nd/9781941222485/)
+- [Amazon](https://www.amazon.com/Practical-Programming-Introduction-Pragmatic-Programmers/dp/1937785459)
+- [Publisher: Pragmatic Bookshelf](https://pragprog.com/book/gwpy2/practical-programming)
+- ISBN-13: 978-1-93778-545-1
+
+#### Python for Everybody
+
+Free from publisher in all formats
+Exploring Data Using Python 3, by Charles R. Severance. This textbook is used Severence's *Programming for Everybody* series of courses titled *Programming for Everybody* by The University of Michigan, offered through Coursera online.
+
+- [Amazon](https://www.amazon.com/Python-Everybody-Exploring-Data/dp/1530051126)
+- [Website: Python for Everybody](https://www.py4e.com/book.php)
+- ISBN-10: 9781530051120
+- ISBN-13: 978-1530051120
 
 #### Other Resources
 
