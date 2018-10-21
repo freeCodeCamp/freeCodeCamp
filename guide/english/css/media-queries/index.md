@@ -27,4 +27,22 @@ Here is an example of a media query that sets the size of body text on a phone s
 
 This media query stipulates that for screen sizes up to 450 pixels in width, the body text should display in a 12px font size.
 
+Media queries can set also for a `min-width` (often used in responsive web design with a mobile-first approach) and for a space between different sizes.
+
+```css
+@media screen and (min-width: 768px) {
+ body {
+   font-size: 14px;
+ }
+}
+```
+
+```css
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+   font-size: 14px;
+  }
+}
+```
+
 Media queries can be helpful in [responsive web design](https://guide.freecodecamp.org/html/responsive-web-design).
