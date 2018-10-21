@@ -32,7 +32,7 @@ Para permitir que los usuarios no videntes accedan al contenido principal de tu 
 
 3.  Oculta el enlace "omitir navegación" por defecto. Esto garantiza que el enlace solo sea visible para los usuarios videntes cuando el enlace está enfocado.
 
-*   Crea una clase para el enlace que se puede diseñar con CSS. En mi ejemplo he añadido la clase de `skip-link` .
+*   Crea una clase para el enlace que pueda diseñarse con CSS. En mi ejemplo he añadido la clase de `skip-link`.
 
 ```css
 .skip-link { 
@@ -59,8 +59,8 @@ Para permitir que los usuarios no videntes accedan al contenido principal de tu 
  } 
 ```
 
-Estos estilos CSS ocultan el enlace de manera predeterminada y solo muestran el enlace cuando recibe el enfoque del teclado. Para obtener más información, visite el [a11yproject](http://a11yproject.com/posts/how-to-hide-content) y esta [publicación de blog](http://hugogiraudel.com/2016/10/13/css-hide-and-seek/) .
+Estos estilos CSS ocultan el enlace de manera predeterminada y solo lo muestran cuando el teclado los enfoca. Para obtener más información, visita el proyecto [a11yproject](http://a11yproject.com/posts/how-to-hide-content) y esta [publicación de blog](http://hugogiraudel.com/2016/10/13/css-hide-and-seek/).
 
-### Mesas accesibles
+### Tablas accesibles
 
 ### Pestañas accesibles
