@@ -37,7 +37,12 @@ Though you can't ignore the condition, because empty condition is defaulted as f
 
 ### init
 This step allows you to declare and initialize any loop control variables. This step is performed first and only once.  
-Note that the variables declared in init can only be used inside the brackets of the for loop.
+Note that the variables declared in init can only be used inside the brackets of the for loop.We can use multiple initialisation
+statements of same data types in a for loop. Multiple initialisation of different data types is not considered in c++ ,as different data types are separated with ; the compiler could not differntiate between the type of variable with a comma.
+eg 1: for(i=0,j=0;i<15;i++);//single data type
+eg 2:char a=65;
+     for(int i=0;i<5;a++)   //for different data types
+
 
 ### condition
 Next the condition is evaluated. If it holds true, the body of the loop is executed. If it holds false, the body of the loop does not execute and flow of control jumps to the next iteration(repetition of a process).
@@ -131,3 +136,4 @@ Output:
 4
 5
 ```
+
