@@ -3,14 +3,14 @@ id: 587d7b7d367417b2b2512b1d
 title: ' Iterate Through the Keys of an Object with a for...in Statement'
 challengeType: 1
 videoUrl: ''
-localeTitle: Iterar a través de las claves de un objeto con una for ... in Statement
+localeTitle: Iterar a través de las claves de un objeto con for ... in
 ---
 
 ## Description
-<section id="description"> A veces es posible que deba recorrer todas las claves dentro de un objeto. Esto requiere una sintaxis específica en JavaScript llamada <dfn>for ... in</dfn> statement. Para el objeto de nuestros <code>users</code> , esto podría verse como: <blockquote> para (dejar usuario en usuarios) { <br> console.log (usuario); <br> }; <br><br> // logs: <br> Alan <br> Jeff <br> Sarah <br> Ryan </blockquote> En esta declaración, definimos una variable de <code>user</code> y, como puede ver, esta variable se restableció durante cada iteración de cada una de las claves del objeto a medida que la declaración se desplazaba a través del objeto, lo que daba como resultado que el nombre de cada usuario se imprimiera en la consola. <strong>NOTA:</strong> <br> Los objetos no mantienen un orden para las claves almacenadas como lo hacen las matrices; por lo tanto, una posición de las teclas en un objeto, o el orden relativo en el que aparece, es irrelevante cuando se hace referencia o se accede a esa tecla. </section>
+<section id="description"> Es posible que en alguna ocasión deba recorrer todas las claves dentro de un objeto. Esto requiere una sintaxis específica en JavaScript llamada <dfn>for ... in</dfn> statement. Para el objeto de nuestros <code>users</code> , esto podría verse como: <blockquote> for (let user in users) { <br> console.log (usuario); <br> }; <br><br> // logs: <br> Alan <br> Jeff <br> Sarah <br> Ryan </blockquote> En esta declaración, definimos una variable <code>user</code> y, como puede ver, esta variable se restableció durante cada iteración de cada una de las claves del objeto a medida que la declaración se desplazaba a través del objeto, lo que daba como resultado que el nombre de cada usuario se imprimiera en la consola. <strong>NOTA:</strong> <br> Los objetos no mantienen un orden para las claves almacenadas como lo hacen las matrices; por lo tanto, una posición de las claves en un objeto, o el orden relativo en el que aparece, es irrelevante cuando se hace referencia o se accede a esa clave. </section>
 
 ## Instructions
-<section id="instructions"> Hemos definido una función, <code>countOnline</code> ; use una instrucción <dfn>for ... in</dfn> dentro de esta función para recorrer los usuarios en el objeto de los <code>users</code> y devolver el número de usuarios cuya propiedad en <code>online</code> está establecida en <code>true</code> . </section>
+<section id="instructions"> Hemos definido una función, <code>countOnline</code> ; use una instrucción <dfn>for ... in</dfn> dentro de esta función para recorrer los usuarios en el objeto <code>users</code> y devolver el número de usuarios cuya propiedad <code>online</code> está definida como <code>true</code> . </section>
 
 ## Tests
 <section id='tests'>

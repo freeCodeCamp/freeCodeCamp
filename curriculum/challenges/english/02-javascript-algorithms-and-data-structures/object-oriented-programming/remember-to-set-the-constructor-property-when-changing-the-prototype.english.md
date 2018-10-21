@@ -23,7 +23,7 @@ Define the <code>constructor</code> property on the <code>Dog</code> <code>proto
 ```yml
 tests:
   - text: <code>Dog.prototype</code> should set the <code>constructor</code> property.
-    testString: 'assert(Dog.prototype.constructor === Dog, "<code>Dog.prototype</code> should set the <code>constructor</code> property.");'
+    testString: assert(Dog.prototype.constructor === Dog, '<code>Dog.prototype</code> should set the <code>constructor</code> property.');
 
 ```
 

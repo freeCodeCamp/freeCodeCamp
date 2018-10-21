@@ -28,8 +28,8 @@ Give your answer as comma separated integers, without any whitespaces.
 
 ```yml
 tests:
-  - text: '<code>euler175()</code> should return 1, 13717420, 8.'
-    testString: 'assert.strictEqual(euler175(), 1, 13717420, 8, "<code>euler175()</code> should return 1, 13717420, 8.");'
+  - text: <code>euler175()</code> should return 1, 13717420, 8.
+    testString: assert.strictEqual(euler175(), 1, 13717420, 8, '<code>euler175()</code> should return 1, 13717420, 8.');
 
 ```
 

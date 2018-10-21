@@ -21,9 +21,9 @@ The given markup would work well as a two-column layout, with the <code>section<
 ```yml
 tests:
   - text: The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.
-    testString: 'assert($("#left").css("float") == "left", "The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.");'
+    testString: assert($('#left').css('float') == 'left', 'The element with id <code>left</code> should have a <code>float</code> value of <code>left</code>.');
   - text: The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.
-    testString: 'assert($("#right").css("float") == "right", "The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.");'
+    testString: assert($('#right').css('float') == 'right', 'The element with id <code>right</code> should have a <code>float</code> value of <code>right</code>.');
 
 ```
 

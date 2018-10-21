@@ -28,7 +28,7 @@ Make the item with the class <code>item5</code> consume the last two columns of 
 ```yml
 tests:
   - text: <code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.
-    testString: 'assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), "<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.");'
+    testString: assert(code.match(/.item5\s*?{[\s\S]*grid-column\s*?:\s*?2\s*?\/\s*?4\s*?;[\s\S]*}/gi), '<code>item5</code> class should have a <code>grid-column</code> property that has the value of <code>2 / 4</code>.');
 
 ```
 
