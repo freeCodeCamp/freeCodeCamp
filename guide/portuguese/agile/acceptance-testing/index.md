@@ -131,3 +131,4 @@ O teste de aceitação também pode validar se uma epopéia / história / tarefa
 #### Mais Informações:
 
 *   [Conselho Internacional de Qualificações para Testes de Software](http://www.istqb.org/)
+minhas mudanças.
