@@ -6,7 +6,7 @@ localeTitle: Noções básicas de acessibilidade
 > 
 > \- Professor Severo Snape, Série Harry Potter
 
-O papel da acessibilidade no desenvolvimento é essencialmente entender a perspectiva e as necessidades do usuário e saber que a Web e os aplicativos são uma solução para pessoas com deficiências.
+O papel da acessibilidade no desenvolvimento é essencialmente entender a perspectiva e as necessidades do usuário e saber que a Web e os aplicativos são uma solução para pessoas com necessidades especiais.
 
 Hoje em dia, mais e mais novas tecnologias são inventadas para tornar a vida dos desenvolvedores, assim como dos usuários, mais fácil. Até que ponto isso é uma coisa boa é um debate para outro momento, por enquanto é o suficiente para dizer que a caixa de ferramentas de um desenvolvedor, especialmente um desenvolvedor web, está tão em constante mudança quanto as chamadas "artes das trevas" estão de acordo com nosso amigo. Snape
 
@@ -57,9 +57,9 @@ No ano passado, sites de companhias aéreas foram incluídos nesta lista, o que 
 
 Há variações nessa legislação em todo o mundo, algumas mais severas e abrangentes do que outras. Não saber sobre esse fato não faz com que a ação desapareça, infelizmente.
 
-## Ok, a acessibilidade é um grande negócio. Agora, como vamos implementá-lo?
+## Ok, a acessibilidade é um grande negócio. Agora, como vamos implementá-la?
 
-Essa pergunta, infelizmente, é mais difícil de responder do que parece. A citação de Harry Potter no topo está lá por uma razão, e não é meu ser um ávido leitor de fantasia.
+Essa pergunta, infelizmente, é mais difícil de responder do que parece. A citação de Harry Potter no topo está lá por uma razão, e não é meu ser um ávido leitor de ficção.
 
 Como afirmei acima, a acessibilidade é importante para um grande grupo de pessoas diferentes, cada uma com suas próprias necessidades. Fazer o seu site trabalhar para literalmente todo mundo é uma grande tarefa em andamento.
 
@@ -78,7 +78,7 @@ A especificação HTML é um documento que descreve como o idioma deve ser usado
     <span class="clickable-with-JavaScript">English</span> 
 ```
 
-Adivinha? Todos esses três elementos quebram vários critérios de WCAG e, portanto, não são acessíveis.
+Advinhe? Todos esses três elementos quebram vários critérios de WCAG e, portanto, não são acessíveis.
 
 O primeiro elemento quebra o chamado "nome, papel, valor" critério, que afirma que todos os elementos em uma página da Web devem expor seu nome, sua função (como botão) e seu valor (como o conteúdo de um campo de edição) para tecnologias assistivas. Este div realmente não fornece nenhum dos três, tornando-o invisível para os leitores de tela.
 
@@ -100,7 +100,7 @@ Spans e divs são não-elementos. Eles são destinados a conter outros elementos
     <a href="JavascriptThing">English</a> 
 ```
 
-Estrondo. De repente, todos esses elementos agora estão perfeitamente acessíveis, apenas usando HTML nativo. HTML do jeito que deveria ser usado, em outras palavras.
+Incrível. De repente, todos esses elementos agora estão perfeitamente acessíveis, apenas usando HTML nativo. HTML do jeito que deveria ser usado, em outras palavras.
 
 ### Uma fundação não pode ficar sem estrutura
 
@@ -114,7 +114,7 @@ Imagens em um site são ótimas. Eles adicionam uma nova camada ao seu conteúdo
 
 Certamente. Isto é, se você puder vê-los. Na especificação HTML5, um atributo img deve sempre ter um atributo alt. Este atributo é uma alternativa para a imagem no caso de não poder ser visto. Isso seria verdadeiro para visitantes cegos do seu site, mas também quando a imagem não puder ser carregada por algum motivo. Portanto, não adicionar uma tag alt a um atributo img não apenas quebra a acessibilidade, mas também vai contra a especificação HTML5.
 
-Eu imploro a qualquer desenvolvedor web que se pegue fazendo isso para comer o chapéu de seu programador e trabalhar no Windows 95 exclusivamente por uma semana. Depois que o tempo acabar, escreva um ensaio sobre o que você aprendeu com essa provação para que eu possa rir durante o meu café da tarde.
+Eu peço a qualquer desenvolvedor web que se pegue fazendo isso para comer o chapéu de seu programador e trabalhar no Windows 95 exclusivamente por uma semana. Depois que o tempo acabar, escreva um ensaio sobre o que você aprendeu com essa provação para que eu possa rir durante o meu café da tarde.
 
 Agora, há uma ressalva aqui. Alt-atributos são obrigatórios de acordo com as especificações HTML5, mas não é obrigatório preenchê-los. `<img src="awesome-image.jpg", alt="">` é, portanto, código HTML5 legal.
 
@@ -157,7 +157,7 @@ Isso fará com que, por exemplo, um leitor de tela diga "nome de usuário, campo
 
 Vamos dar uma pequena pausa. Eu quero que você vá olhar para uma página da web muito bem projetada. Pode ser qualquer página. Vá em frente, vou esperar.
 
-Costas? OK ótimo. Agora, olhe a página novamente, mas desabilite todos os CSS. Ainda parece bom? O conteúdo da página ainda está em ordem lógica? Se assim for, ótimo. Você encontrou uma página com estrutura HTML decente. (Uma maneira de visualizar facilmente uma página sem CSS é carregar o site na [Ferramenta de Avaliação de Acessibilidade na Web WAVE](http://wave.webaim.org) do WebAIM. Em seguida, clique na guia "Sem Estilos" para vê-la sem estilos.)
+Volte? OK ótimo. Agora, olhe a página novamente, mas desabilite todos os CSS. Ainda parece bom? O conteúdo da página ainda está em ordem lógica? Se assim for, ótimo. Você encontrou uma página com estrutura HTML decente. (Uma maneira de visualizar facilmente uma página sem CSS é carregar o site na [Ferramenta de Avaliação de Acessibilidade na Web WAVE](http://wave.webaim.org) do WebAIM. Em seguida, clique na guia "Sem Estilos" para vê-la sem estilos.)
 
 Se não, ótimo. Agora você tem uma impressão do que eu tenho que lidar diariamente quando me deparo com um site mal estruturado.
 
