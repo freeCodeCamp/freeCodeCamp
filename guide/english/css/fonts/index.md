@@ -112,6 +112,9 @@ p {
 }
 ```
 
+#### Google Fonts
+Google Fonts (https://fonts.google.com) is a great place to go to get fonts that are not offered usually. 
+
 #### More Information:
 - [MND - CSS Font](https://developer.mozilla.org/en-US/docs/Web/CSS/font)
 - [W3 Schools - CSS Font](https://www.w3schools.com/css/css_font.asp)
