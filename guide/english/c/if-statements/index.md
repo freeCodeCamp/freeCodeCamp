@@ -91,6 +91,16 @@ if (x > 0)
 ```
 This version is not recommended since it does not make it clear that only one of the assignment statements will be executed for a given value of x. Also it is inefficient since all three conditions are always tested.
 
+The above case can also be written as :
+   if (x < 0)
+      sign = -1;
+   else if (x == 0)
+      sign = 0;
+   else
+      sign = 1;
+     
+   Note: else if is checked if if is false.
+
 ## Comparison Operators
 Operator Name               |  Usage    | Operator Result
 ----------------------------|:---------:|-----------------
