@@ -6,7 +6,7 @@ title: Acceptance Testing
 
 Acceptance testing, a testing technique performed to determine whether or not the software system has met the requirement specifications. The main purpose of this test is to evaluate the system's compliance with the business requirements and verify if it is has met the required criteria for delivery to end users.
 
-In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the "real world" by the intended audience.In engineering and its various subdisciplines acceptance testing is a test conducted to determine if the requirements of a specification or contract are met. 
+In software development, user acceptance testing (UAT) - also called beta testing, application testing, and end user testing - is a phase of software development in which the software is tested in the "real world" by the intended audience.In engineering and its various subdisciplines acceptance testing is a test conducted to determine if the requirements of a specification or contract are met.
 
 There are various forms of acceptance testing:
 
@@ -17,6 +17,27 @@ There are various forms of acceptance testing:
 > - Alpha Testing
 >
 > - Beta Testing
+
+## List of acceptance-testing frameworks
+
+> - Concordion, Specification by example (SbE) framework
+    > - Concordion.NET, acceptance testing in .NET
+> - Cucumber, a behavior-driven development (BDD) acceptance test framework
+    > - Capybara, Acceptance test framework for Ruby web applications
+    > - Behat, BDD acceptance framework for PHP
+    > - Lettuce, BDD acceptance framework for Python
+> - Fabasoft app.test for automated acceptance tests
+> - Framework for Integrated Test (Fit)
+    > - FitNesse, a fork of Fit
+> - iMacros
+> - ItsNat Java Ajax web framework with built-in, server based, functional web testing capabilities.
+> - Mocha, a popular web acceptance test framework based on Javascript and Node.js
+> - Ranorex
+> - Robot Framework
+> - Selenium
+> - Specification by example (Specs2)
+> - Watir
+> - Gauge (software)
 
 ## Acceptance Criteria
 Acceptance criteria are defined on the basis of the following attributes
@@ -106,7 +127,7 @@ An Acceptance Test are used to test relatively bigger functional blocks of softw
 ### Example
 You have created a page that requires the user to first enter their name in a dialog box before they can see the content. You have a list of invited users, so any other users will be returned an error.
 
-There are multiple scenarios here such as: 
+There are multiple scenarios here such as:
 - Every time you load the page, you need to enter your name.
 - If your name is in the list, the dialog will disappear and you will see the article.
 - If your name is not in the list, the dialog box will show an error.
@@ -128,7 +149,7 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 - A good way of defining which acceptance tests should be written is to add acceptance criteria to a user story. With acceptance criteria, you can define when a user story is ready to deploy and the issue completed to your wishes.
 
-- In an Agile project it is important for the team to have acceptance criteria defined for all user stories. The Acceptance Testing work will use the defined criteria for evaluating the delivered functionality. When a story can pass all acceptance criteria it is complete. 
+- In an Agile project it is important for the team to have acceptance criteria defined for all user stories. The Acceptance Testing work will use the defined criteria for evaluating the delivered functionality. When a story can pass all acceptance criteria it is complete.
 
 - Acceptance testing can also validate if a completed epic/story/task fulfills the defined acceptance criteria. In contrast to definition of done, this criteria can cover specific business cases that the team wants to solve. This provides a good measurement of work quality.
 
