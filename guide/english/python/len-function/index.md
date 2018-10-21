@@ -1,11 +1,11 @@
 ---
 title: Python Len Function
 ---
-`len()` is a built-in function in Python 3\. This method returns the length (the number of items) of an object. It takes one argument `x`.
+`len(x)` is a built-in function in Python 3\. This method returns the number of items (the length) within an object.
 
 ## Arguments
 
-It takes one argument, `x`. This argument may be a sequence (such as a string, bytes, tuple, list, or range) or a collection (such as a dictionary, set, or frozen set).
+It takes one argument, `x`. This argument may be a sequence (such as a string, bytes, tuple, list, or range), a collection (such as a dictionary, set, or frozen set) or any object that has a defined `__len__(self)` function.
 
 ## Return Value
 
@@ -24,7 +24,16 @@ This function returns the number of elements in the argument which is passed to 
 
     dict1 = {'name': 'John', 'age': 4, 'score': 45} # dictionary
     print(len(dict1)) # prints 3 as there are 3 key and value pairs in the dict1
+    
+    class Len_Example:
+        def __len__(self):
+            print("Hello World!")
+            return 22
+            
+    object = Len_Example()
+    object_length = len(object) # sets object length to 22 and prints "Hello World!"
+    print(object_length) # prints 22
 
-![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CUmt/15' target='_blank' rel='nofollow'>Run Code</a>
+![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/@kingtheoden/SizzlingNaiveBotany' target='_blank' rel='nofollow'>Run Code</a>
 
 <a href='https://docs.python.org/3/library/functions.html#len' target='_blank' rel='nofollow'>Official Docs</a>
