@@ -14,3 +14,4 @@ The main feature that separates Adobe Illustrator from Photoshop is the use of v
 - [Introduction to Flat Design](https://design.tutsplus.com/tutorials/10-top-tips-on-creating-flat-design-graphics--cms-25888)
 - [Creating flat icons using illustrator](https://design.tutsplus.com/tutorials/create-a-set-of-flat-precious-gems-icons-in-adobe-illustrator--vector-26188)
 - [Illustrator tutorials](https://helpx.adobe.com/illustrator/tutorials.html)
+- [The Complete Beginners Guide To Adobe Illustrator | Tutorial Overview & Breakdown](https://www.youtube.com/watch?v=IBouhf4seWQ)
