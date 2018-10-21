@@ -43,6 +43,15 @@ You can flip a sequence by using the `[::-1]` slice notation:
 
     a = [1, 2, 3, 4, 5, 6]
     print(a[::-1])    # prints [6, 5, 4, 3, 2, 1]
+    
+    
+You can rotate any list by using slicing with ease:
+    
+    a=[1,2,5,7,9]
+    To rotate a list by 2 positions:
+       print(a[-2:]+a[:-2])
+    Similarly, to rotate list by n positions: 
+        a=a[-n:]+a[:-n]
 
 <a href='https://docs.python.org/3/library/functions.html#slice' target='_blank' rel='nofollow'>Official Documentation</a>
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":rocket:") <a href='https://repl.it/CT5h' target='_blank' rel='nofollow'>Run Code</a>
