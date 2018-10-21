@@ -34,7 +34,7 @@ Note:  represents the floor function.
 ```yml
 tests:
   - text: <code>euler316()</code> should return 542934735751917760.
-    testString: 'assert.strictEqual(euler316(), 542934735751917760, "<code>euler316()</code> should return 542934735751917760.");'
+    testString: assert.strictEqual(euler316(), 542934735751917760, '<code>euler316()</code> should return 542934735751917760.');
 
 ```
 

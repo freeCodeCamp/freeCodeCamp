@@ -24,13 +24,13 @@ The code editor now shows all your Redux and React code from the past several ch
 ```yml
 tests:
   - text: The <code>AppWrapper</code> should render.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("AppWrapper").length === 1; })(), "The <code>AppWrapper</code> should render.");'
-  - text: 'The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.'
-    testString: 'getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput("index").replace(/\s/g,"").includes("<Providerstore={store}>"); })(), "The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').length === 1; })(), 'The <code>AppWrapper</code> should render.');
+  - text: The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.
+    testString: getUserInput => assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return getUserInput('index').replace(/\s/g,').includes('<Providerstore={store}>'); })(), 'The <code>Provider</code> wrapper component should have a prop of <code>store</code> passed to it, equal to the Redux store.');
   - text: <code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("AppWrapper").find("DisplayMessages").length === 1; })(), "<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.");'
-  - text: 'The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.'
-    testString: 'assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find("div").length === 1 && mockedComponent.find("h2").length === 1 && mockedComponent.find("button").length === 1 && mockedComponent.find("ul").length === 1; })(), "The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.");'
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('AppWrapper').find('DisplayMessages').length === 1; })(), '<code>DisplayMessages</code> should render as a child of <code>AppWrapper</code>.');
+  - text: The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.
+    testString: assert((function() { const mockedComponent = Enzyme.mount(React.createElement(AppWrapper)); return mockedComponent.find('div').length === 1 && mockedComponent.find('h2').length === 1 && mockedComponent.find('button').length === 1 && mockedComponent.find('ul').length === 1; })(), 'The <code>DisplayMessages</code> component should render an h2, input, button, and <code>ul</code> element.');
 
 ```
 
@@ -74,7 +74,7 @@ class DisplayMessages extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ",
+      input: '',
       messages: []
     }
     this.handleChange = this.handleChange.bind(this);
@@ -88,7 +88,7 @@ class DisplayMessages extends React.Component {
   submitMessage() {
     const currentMessage = this.state.input;
     this.setState({
-      input: ",
+      input: '',
       messages: this.state.messages.concat(currentMessage)
     });
   }
@@ -129,7 +129,7 @@ class AppWrapper extends React.Component {
 <div id='jsx-teardown'>
 
 ```js
-console.info('after the test');
+ReactDOM.render(<AppWrapper />, document.getElementById('root'))
 ```
 
 </div>
@@ -171,7 +171,7 @@ class DisplayMessages extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: ",
+      input: '',
       messages: []
     }
  this.handleChange = this.handleChange.bind(this);
@@ -185,7 +185,7 @@ class DisplayMessages extends React.Component {
   submitMessage() {
     const currentMessage = this.state.input;
     this.setState({
-      input: ",
+      input: '',
       messages: this.state.messages.concat(currentMessage)
     });
   }

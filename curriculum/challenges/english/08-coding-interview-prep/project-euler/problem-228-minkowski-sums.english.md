@@ -42,7 +42,7 @@ How many sides does S1864 + S1865 + … + S1909 have?
 ```yml
 tests:
   - text: <code>euler228()</code> should return 86226.
-    testString: 'assert.strictEqual(euler228(), 86226, "<code>euler228()</code> should return 86226.");'
+    testString: assert.strictEqual(euler228(), 86226, '<code>euler228()</code> should return 86226.');
 
 ```
 
