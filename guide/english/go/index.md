@@ -26,7 +26,7 @@ $ brew install golang
 
 #####  Add Environment variables:
 
-First, you'll need to tell Go the location of your workspace.
+First, you will need to tell Go the location of your workspace.
 
 We'll add some environment variables into shell config. One of does files located at your home directory bash_profile, bashrc or .zshrc (for Oh My Zsh Army)
 
