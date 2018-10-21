@@ -15,9 +15,10 @@ for ( init; condition; increment ) {
 }
 ```
 
-The `for` loop consists of 3 sections, the initialization section, a specific condition and the incremental or decremental operation section. These 3 sections control the `for` loop.
+The `for` loop consists of 3 parts, the initialization expression,conditional expression and the incremental or decremental expression. These 3 sections control the `for` loop.These 3 parts can be omitted, but the semicolon(;) is necessary.
 
 The initialization statement is executed only once. Then, the test expression is evaluated. If the test expression is false (0), for loop is terminated. But if the test expression is true (nonzero), codes inside the body of for loop is executed and the update expression is updated. This process repeats until the test expression is false.
+Multiple initialisation,condition and increment can be used.eg:  for(i=0,j=1;j<10,i<20;i++,j++){}
 
 The for loop is commonly used when the number of iterations is known.
 
