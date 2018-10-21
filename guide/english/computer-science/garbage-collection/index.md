@@ -12,7 +12,7 @@ Garbage collection is the process in which programs try to free up memory space 
 As said above, every programming language has their own way of GC. In C programming, developers need to take care of memory allocation and deallocation using malloc() and dealloc() functions. But, in case of C# developers no need to take care of GC and it's not recommended as well.    
  
  #### How memory allocation happening?
- In C#, memory allocation of objects are happened in managed heap. which takes care by CLR (common language runtime). Memory allocation for the heap is done through win32 dll in OS as like in the C. But, In C objects are placed in memory where ever the free space suits the size of object. And, the memory mapping is woks based on Linkedlist concepts. In C#, memory allocation for heap is happening in linear manner. like one after another. 
+ In C#, memory allocation of objects happens in a managed heap. which takes care by CLR (common language runtime). Memory allocation for the heap is done through win32 dll in OS as like in the C. But, In C objects are placed in memory where ever the free space suits the size of object. And, the memory mapping is woks based on Linkedlist concepts. In C#, memory allocation for heap is happening in linear manner. like one after another. 
  
 Whenever a new object is being created. A memory is allocated in the heap and the pointer moved to next memory address. Memory allocation in C# is faster than the C. Since, in C the memory need to search and allocate for the object. so it will take a bit higher time than C#.
  
