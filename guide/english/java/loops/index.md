@@ -3,8 +3,9 @@ title: Loops
 ---
 # Loops
 
-Whenever you need to execute a block of code multiple times, a loop will often
-come in handy.
+Whenever you need to execute a block of code multiple times, a loop will often come in handy.
+For loops are used to repeat steps unconditionally unlike while loops which are based upon another variable.
+For loops store a counter when they are declared.
 
 Java has 4 types of loops:
 * [While Loop](loops/while-loop)
