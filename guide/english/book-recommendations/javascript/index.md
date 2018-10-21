@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### The Principles of Object-Oriented JavaScript
+
+Book by front-end consultant Nicholas C.Zakas that covers JavaScript's Object-Oriented Methodology
+
+- [Amazon](https://www.amazon.com/Principles-Object-Oriented-JavaScript-Nicholas-Zakas-ebook/dp/B00I87B1H8)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
