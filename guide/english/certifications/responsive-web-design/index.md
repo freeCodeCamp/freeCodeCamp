@@ -8,6 +8,8 @@ Responsive web design (RWD) is an approach to web design that makes web pages re
 
 #### Overview
 
+This certificate curriculum should take approximately 300 hours to complete and includes 5 required projects, while other challenges are optional.
+
 There are seven themes in this curriculum:
 
 - [Basic HTML and HTML5](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5/)
@@ -24,8 +26,7 @@ There are seven themes in this curriculum:
 
 - [CSS Grid](https://learn.freecodecamp.org/responsive-web-design/css-grid/)
 
-
-This certificate curriculum should take approximately 300 hours to complete and includes 5 required projects, while other challenges are optional.
+**Projects:** Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
 #### More Information:
 - [HTML Responsive Web Design](https://www.w3schools.com/html/html_responsive.asp)
