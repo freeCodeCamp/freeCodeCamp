@@ -249,6 +249,18 @@ int main(void)
 }
 ```
 
+## Null Pointer
+Consider following line 
+```c
+int  *p ;
+```
+We have created a pointer which contain garbage value. In order dereference it, we will read value stored at the garbage address and this can lead to unexpected result such as segmentation faults. Hence we should never leave a pointer uninitialized and instead initialize it to NULL, to avoid unexpected results.
+```c
+int *p = NULL; // NULL is a constant with value 0
+int *q = 0; // same as above
+```
+
+,
 # Before you go on...
 ## A review
 * Pointers are variables, but instead of storing a value, they store a memory location.
