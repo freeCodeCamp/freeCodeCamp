@@ -16,6 +16,7 @@ Some famous web services include
 * Google Cloud Datastore - DBaaS providing a document-oriented database.
 * Cloud Pub/Sub - a service for publishing and subscribing to data streams and messages. Applications can communicate via Pub/Sub, without direct integration between the applications themselves.
 * Google Storage - IaaS providing RESTful online file and object storage.
+* Google Cloud Dataproc - Managed Apache Spark and Apache Hadoop service.
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
