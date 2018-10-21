@@ -4,24 +4,24 @@ localeTitle: Ejemplos de accesibilidad
 ---
 ## Ejemplos de accesibilidad en la aplicación práctica
 
-Estoy escribiendo esta breve guía para proporcionar ejemplos prácticos de cómo implementar la accesibilidad en los sitios web. La accesibilidad no se enfatizó en la escuela ni se enfatiza lo suficiente en el mundo real del desarrollo web. Espero que este artículo, junto con muchos otros, aliente a los desarrolladores a crear sitios accesibles a partir de ahora. Siempre me ha ayudado a obtener ejemplos prácticos de cómo hacer las cosas. Entonces, esta guía se centrará en ejemplos del mundo real que he encontrado en mi vida cotidiana como desarrollador web.
+Estoy escribiendo esta breve guía para proporcionar ejemplos prácticos de cómo implementar la accesibilidad en los sitios web. La accesibilidad no se enfatizó en la escuela ni se enfatiza lo suficiente en el mundo real del desarrollo web. Espero que este artículo, junto con muchos otros, aliente a los desarrolladores a crear sitios accesibles a partir de ahora. Siempre me ha ayudado ver ejemplos prácticos de cómo hacer las cosas. Entonces, esta guía se centrará en ejemplos del mundo real que he encontrado en mi vida cotidiana como desarrollador web.
 
-### Saltando la navegación
+### Pasar de la navegación
 
-Para que los usuarios no videntes tengan una experiencia agradable en su sitio web, necesitan poder acceder al contenido de forma rápida y eficiente. Si nunca ha experimentado un sitio web a través de un lector de pantalla, recomiendo hacerlo. Es la mejor manera de probar con qué facilidad se puede navegar un sitio para usuarios no videntes. NVDA es una muy buena aplicación de lector de pantalla que se proporciona de forma gratuita. Pero si usa el lector de pantalla y le resulta útil, considere hacer una donación al equipo de desarrollo. El lector de pantalla se puede descargar desde [nvaccess.org](https://www.nvaccess.org/download/) .
+Para que los usuarios no videntes tengan una experiencia agradable en tu sitio web, necesitan poder acceder al contenido de forma rápida y eficiente. Si nunca has navegado por un sitio web a través de un lector de pantalla, recomiendo que lo hagas. Es la mejor manera de probar con qué facilidad pueden navegar los usuarios invidentes por tu sitio web. NVDA es una muy buena aplicación de lector de pantalla y puedes obtenerla de forma gratuita. Pero si usas el lector de pantalla y te resulta útil, considera hacer una donación al equipo de desarrollo. El lector de pantalla se puede descargar desde [nvaccess.org](https://www.nvaccess.org/download/).
 
-Para permitir que los usuarios no videntes se salten al contenido principal de un sitio y eviten navegar por todos los enlaces de navegación principales:
+Para permitir que los usuarios no videntes accedan al contenido principal de tu sitio y no tengan que navegar por cada uno de los enlaces de navegación principales:
 
-1.  Cree un "vínculo de omisión de navegación" que viva directamente debajo de la etiqueta del `body` apertura.
+1.  Crea un enlace de "omitir navegación" que aparezca directamente debajo de la apertura de la etiqueta `body`.
 
 ```html
 
 <a tabindex="0" class="skip-link" href="#main-content">Skip to Main Content</a> 
 ```
 
-`tabindex="0"` se agrega para asegurar que el enlace se `tabindex="0"` en el teclado en todos los navegadores. Se puede encontrar más información sobre la accesibilidad del teclado en [webaim.org](https://webaim.org/techniques/keyboard/tabindex) .
+`tabindex="0"` se agrega para asegurar que el enlace es accesible por teclado en todos los navegadores. Se puede encontrar más información sobre la accesibilidad del teclado en [webaim.org](https://webaim.org/techniques/keyboard/tabindex).
 
-2.  El enlace "omitir navegación" debe asociarse con la etiqueta html principal en el documento de su página web mediante la etiqueta de identificación.
+2.  El enlace "omitir navegación" debe asociarse con la etiqueta html principal en el documento de tu página web mediante la etiqueta de identificación.
 
 ```html
 
