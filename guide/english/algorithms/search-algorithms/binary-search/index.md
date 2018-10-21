@@ -18,6 +18,7 @@ Because we know that names in the phonebook are sorted alphabetically, we could 
 4. Repeat until you find the name or there are no more pages left in the phonebook
 
 Time complexity: As we dispose off one part of the search case during every step of binary search, and perform the search operation on the other half, this results in a worst case time complexity of *O*(*log<sub>2</sub>N*).
+The best case occurs when the element to be found is in the middle of the list. The best case time complexity is *O*(*1*).
 
 Space complexity: Binary search takes constant or *O*(*1*) space meaning that we don't do any input size related  variable defining.
 
