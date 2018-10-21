@@ -9,6 +9,8 @@ This list was created by compiling common issue and questions when working on th
 
 3.  Use the chrome javascript debugger console in conjunction with something like the netbeans IDE or sublime text to write your code. Both are free to download. The freeCodeCamp code editor is great but you can get a lot more feedback on your code's behaviour by using chrome's JS debugger and a bunch of **console.log(myVariableGoesHere);**
 
+4. Use your resources. Stack overflow is your friend, and so is Google. However, don't limit yourself to just non-human resources. Sometimes talking about your code to a real person is enough to get you back on track, or spur some new ideas.
+
 References
 
 *   <a href='https://developer.chrome.com/devtools/docs/console' target='_blank' rel='nofollow'>Chrome Console</a>
