@@ -64,3 +64,6 @@ For the CSS part :
 
 #### More Information:
 For more deatils on CSS Animations, please visit [Mozilla Developer Network Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+
+For tips on CSS Animations:
+- http://webdesignerwall.com/tutorials/easy-css-animation-using-keyframes
