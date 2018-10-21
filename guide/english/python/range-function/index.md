@@ -2,7 +2,7 @@
 title: Range Method
 ---
 # Range Function
-If you do need to iterate over a sequence of numbers, the built-in function range() comes in handy. It generates arithmetic progressions:
+If you need to iterate over a sequence of numbers, the built-in function range() comes in handy. It generates arithmetic progressions:
 
 #### Example Usage
  ```py
@@ -20,6 +20,10 @@ for i in range(5):
  ```
  
 #### Example with optional additional arguments
+ ```py
+ # A range function call.
+range(start, stop, step)
+ ```
 The first argument, *start*, is the starting number of the sequence.
 
 The second argument, *stop*, means to generate numbers up to, but not including this number.
