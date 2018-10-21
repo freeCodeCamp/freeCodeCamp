@@ -2,11 +2,13 @@
 title: SQL Where Clause
 ---
 
-## SQL Where Clause
+# SQL Where Clause
 
 ### `WHERE` Clause (and/or, `IN`, `BETWEEN`, and `LIKE`)
 
-The `WHERE` clause is used to limit the number of rows returned.  
+The `WHERE` clause is used to limit the number of rows returned.
+
+In simpler terms, 'WHERE' clause is used to filter the data with one or more than one conditions provided by user.
 
 In this case all five of these will be used is a some what ridiculous `WHERE` clause. 
 
@@ -33,12 +35,33 @@ select studentID, FullName, sat_score, rcd_updated from student;
 9 rows in set (0.00 sec)
 ```
 
-Rows will be presented that....
+To present the rows....
 
 * `WHERE` Student IDs are between 1 and 5 (inclusive) 
 * `OR` studentID = 8 
 
-Here's an updated query, where any record that has an SAT score that's in this list (1000, 1400) will not be presented:
+```sql
+
+select  studentID, FullName, sat_score, recordUpdated
+from    student
+where   (studentID between 1 and 5 or studentID = 8);
+```
+
+```text
++-----------+----------------------+-----------+---------------------+
+| studentID | FullName             | sat_score | rcd_updated         |
++-----------+----------------------+-----------+---------------------+
+|         1 | Monique Davis        |       400 | 2017-08-16 15:34:50 |
+|         2 | Teri Gutierrez       |       800 | 2017-08-16 15:34:50 |
+|         3 | Spencer Pautier      |      1000 | 2017-08-16 15:34:50 |
+|         4 | Louis Ramsey         |      1200 | 2017-08-16 15:34:50 |
+|         5 | Alvin Greene         |      1200 | 2017-08-16 15:34:50 |
+|         8 | Donald D. Chamberlin |      2400 | 2017-08-16 15:35:33 |
++-----------+----------------------+-----------+---------------------+
+6 rows in set (0.00 sec)
+```
+
+Here's an updated query, where any record that has an SAT score that's in this list (1000, 1400) will not be presented in addition to the above conditions:
 
 ```sql
 
