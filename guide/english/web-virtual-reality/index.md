@@ -28,7 +28,8 @@ This section contains articles related to Virtual Reality Application Developmen
 ## Examples of Various Virtual Reality Creations
 
 * The starry night Stereo VR experience - https://youtu.be/G7Dt9ziemYA
-* Being inside a Van Gogh painting - https://gfycat.com/SimpleImaginaryIberianmidwifetoad 
+* Being inside a Van Gogh painting - https://gfycat.com/SimpleImaginaryIberianmidwifetoad
+* Water slide VR experience - https://www.youtube.com/watch?v=QKm-SOOMC4c
 
 ## A few companies making tools for VR on the Web
 
