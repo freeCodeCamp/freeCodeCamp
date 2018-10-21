@@ -4,7 +4,7 @@ title: For Loop
 
 # For Loop
 
-The `for` loop executes a block of code until a specified condition is false. Use `while` loops when the number of iterations are variable, otherwise use `for` loops. A common use of `for` loops are array iterations. 
+The `for` loop executes a block of code until a specified condition is false. Use `while` loops when the number of iterations are variable or if we know only the terminating condition, otherwise use `for` loops. A common use of `for` loops are array iterations. 
 It is also known as an 'entry-controlled loop' since the condition is checked before the next iteration. Another example of an 'entry-controlled loop' is a while loop. 
 
 ## Syntax of For Loop
@@ -42,4 +42,33 @@ int main () {
 > Item on index 2 is 3
 > Item on index 3 is 4
 ```
+## Example of While loop and do while loop.
+   
+   In a while loop first the condition is checked and then the statement block is executed but in do-while loop first the 
+   statement block is executed and then condition is checked.
+   
+   # e.g-
+   #include<stdio.h>
+   
+   int main(){
+      int i=1;
+      printf("while loop prints :");
+      while(i<10){
+         printf("%d ",i);
+         i++;
+      }
+      i=1;
+      printf("\n do while loop prints :");
+      
+      do{
+         printf("%d",i);
+         i++;
+      }while(i<10)
+    }
+    
+    ## output :
+    While loop prints :1 2 3 4 5 6 7 8 9
+    do while loop prints :1 2 3 4 5 6 7 8 9 10
+      
+   
 
