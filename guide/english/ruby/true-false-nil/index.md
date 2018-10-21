@@ -52,6 +52,17 @@ hats[5].nil?
 
 Every object in Ruby has a boolean value, meaning it is considered either true or false in a boolean context. Those considered true in this context are "truthy" and those considered false are "falsey." In Ruby, <em>only</em> `false` and `nil` are "falsey," everything else is "truthy."
 
+Quick tip: Add a !! prefix to any object and you get its "truthiness". 
+For example: 
+```
+# 1st example
+foo = "Ruby!"
+!!foo = true
+
+# 2nd example
+bar = {}.nil?
+!!bar = false
+```
 
 <h3>Other Resources</h3>
 * https://ruby-doc.org/core-2.3.0/TrueClass.html
