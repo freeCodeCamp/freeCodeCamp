@@ -14,7 +14,7 @@ Tensorflow allows developers to concentrate more on the logic of the application
 * [TensorFlow GitHub Repository](https://github.com/tensorflow)
 * [Wikipedia—TensorFlow](https://en.wikipedia.org/wiki/TensorFlow)
 
-#### Other machine learning libraries similar to Tensorflow:
+#### Other machine learning libraries similar to TensorFlow:
 * [PyTorch](https://pytorch.org)
 * [Keras](https://keras.io/)
 * [Caffe](http://caffe.berkeleyvision.org/)
