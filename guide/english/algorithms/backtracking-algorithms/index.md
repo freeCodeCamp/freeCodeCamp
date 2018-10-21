@@ -6,6 +6,14 @@ title: Backtracking Algorithms
 
 Backtracking is a general algorithm for finding all (or some) solutions to some computational problems, notably constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons each partial candidate *("backtracks")* as soon as it determines that the candidate cannot possibly be completed to a valid solution.
 
+Application of Backtracking
+
+Examples where backtracking can be used to solve puzzles or problems include:
+
+1) Puzzles such as eight queens puzzle, crosswords, verbal arithmetic, Sudoku [nb 1], and Peg Solitaire.
+2) Combinatorial optimization problems such as parsing and the knapsack problem.
+3) Logic programming languages such as Icon, Planner and Prolog, which use backtracking internally to generate answers.
+
 ### Example Problem (The Knight’s tour problem)
 
    *The knight is placed on the first block of an empty board and, moving according to the rules of chess, must visit each square exactly once.*
