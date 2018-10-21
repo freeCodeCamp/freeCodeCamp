@@ -2,7 +2,13 @@
 title: Agile
 ---
 ## Agile
+Emphasis, aka italics, with *asterisks* or _underscores_.
 
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~
 Agile software development is a collection of methodologies used to manage teams of developers. It advocates adaptive planning, evolutionary development, early delivery, and continuous improvement, and it encourages rapid and flexible response to change. People and communication are considered more important than tools and processes.
 
 Agile emphasizes asking end users what they want, and frequently showing them demos of the product as it is developed. This stands in contrast to the "Waterfall" approach, specification-driven development, and what Agile practitioners call "Big Up-Front Design." In these approaches, the features are planned out and budgeted before development starts. 
@@ -24,3 +30,6 @@ There are many different flavors of agile, including Scrum and Extreme Programmi
 ### More information
 
 [Agile Alliance's Homepage](https://www.agilealliance.org/)
+[arbitrary case-insensitive reference text]: https://www.mozilla.org
+[1]: http://slashdot.org
+[link text itself]: http://www.reddit.com
