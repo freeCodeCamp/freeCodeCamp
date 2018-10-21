@@ -17,6 +17,13 @@ Just to a few advantages of WordPress:
 
 Whether its page transitions or a customized contact form, WordPress users are only a few clicks away from success and a beautiful website.
 
+The following are some of the popular and useful plugins in WordPress:
+- Yoast SEO
+- JetPack
+- W3 Total Cache
+- Akismet 
+- Mailchimp etc
+
 
 ### More Information
 
