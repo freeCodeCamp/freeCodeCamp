@@ -7,7 +7,7 @@ title: D3
 
 ![D3.js Logo](https://i2.wp.com/pbiswas101.files.wordpress.com/2018/07/d3.jpg?w=312&h=161)
 
-**D3.js** helps you visualize data by combining powerful visualization and interaction techniques with a data-driven approach to DOM manipulation. It also provides full capabilities of modern browsers by designing the right visual interface for your data.
+**D3.js** Helps you visualize data by combining powerful visualization and interaction techniques with a data-driven approach to DOM manipulation. It also provides full capabilities of modern browsers by designing the right visual interface for your data.
 
 **D3.js** version 1.0.0 was released back in 18 February 2011.
 
@@ -16,7 +16,7 @@ title: D3
 *D3** does not introduce a new visual representation. Unlike **Processing**, **Raphaël**, or **Protovis**, *D3's* vocabulary of graphical marks comes directly from web standards: HTML, SVG, and CSS - https://d3js.org/
 
 ###### Get Started
-There are over 20,000+ **D3.js** examples you could learn from, but you never know how approachable any given one will be! So, the question is - how do you build up your visualization from first principles? As you've probably seen, D3's API is massive, so lets call out a few of the utilities that will be particularly helpful early on:
+There are over 20,000+ **D3.js** examples you could learn from, but you never know how approachable any given one will be! So, the question is - how do you build up your visualization from first principles? As you have probably seen, D3's API is massive, so lets call out a few of the utilities that will be particularly helpful early on:
 
 - **d3-scale**
 
