@@ -41,7 +41,7 @@ Ionic Framework is a CSS framework that allows you to style your screens to look
 
 ### React Native
 
-React Native is a front end development framework that contains a lot of the building block elements for Android/iOS development and is a different kind of magic from Apache Cordova
+React Native is a front end development framework that contains a lot of the building block elements for Android/iOS development and is a different kind of magic from Apache Cordova. React Native lets you build native mobile apps using JavaScript. It uses the same design as React, letting you compose a rich mobile UI from declarative components.
 
 ### NativeScript
 
