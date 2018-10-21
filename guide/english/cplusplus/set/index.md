@@ -91,5 +91,17 @@ Contents of myset after removal of elements less than 30 : 	30	65	80
 Contents of the modified set:		30	65
   ```
   
+  # unorderd_set 
+  In this the keys are not stored in an orderly fashion. It uses hash table so it is not possible to maintain order.
+  It is faster than set.
+  Some functions to manipulate un_ordered set are :
+  insert()
+  find()
+  size()
+  empty()
+  It is avialable under header file with same name.
+  
   ### Sources
  1. [Geeks for Geeks](https://www.geeksforgeeks.org/set-in-cpp-stl/) 
+ 2. [Geeks for Geeks](https://www.geeksforgeeks.org/unorderd_set-in-cpp-stl/) 
+ 
