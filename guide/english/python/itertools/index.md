@@ -7,9 +7,9 @@ Some examples of itertool functions include but not limited to: chain(), imap(),
 
 ### Iterators terminating on the shortest input sequence:
 
-### chain()
+#### chain()
 
-The chain() function takes several iterators as arguments and returns a single iterator that produces the contents of all of them as though they came from one sequence.
+The `chain()` function takes several iterators as arguments and returns a single iterator that produces the contents of all of them as though they came from one sequence.
 
 ```py
 import itertools
@@ -19,9 +19,9 @@ list(itertools.chain([1, 2], [3, 4]))
 # [1, 2, 3, 4]
 ```
 
-### islice()
+#### islice()
 
-The islice() function returns an iterator which returns selected items from the input iterator, by index. It takes the same arguments as the slice operator for lists: start, stop, and step. Start and stop are optional.
+The `islice()` function returns an iterator which returns selected items from the input iterator, by index. It takes the same arguments as the slice operator for lists: start, stop, and step. Start and stop are optional.
 
 ```py
 import itertools
@@ -31,9 +31,9 @@ list(itertools.islice(count(), 5))
 # [0,1, 2, 3, 4]
 ```
 
-### izip()
+#### izip()
 
-izip() returns an iterator that combines the elements of several iterators into tuples. It works like the built-in function zip(), except that it returns an iterator instead of a list.
+`izip()` returns an iterator that combines the elements of several iterators into tuples. It works like the built-in function `zip()`, except that it returns an iterator instead of a list.
 
 ```py
 import itertools
@@ -45,9 +45,9 @@ list(izip([1, 2, 3], ['a', 'b', 'c']))
 
 ### Combinatoric iterators
 
-### product()
+#### product()
 
-product() returns a Cartesian product, equivalent to a nested for-loop. In comparison, the usual zip() function, which returns the convolution.
+`product()` returns a Cartesian product, equivalent to a nested for-loop. In comparison, the usual `zip()` function, which returns the convolution.
 
 ```py
 from itertools import product
