@@ -24,17 +24,17 @@ Esto es esencial, por que de esta manera puedes trabajar en tu propia copia de f
 
 ## Preparando el entorno de desarrollo
 
-Una vez tengas los requisitos previos instalados, necesitas preparar tu entorno de desarrollo. Esto és común en muchos flujos de trabajo de desarrollo, y solo deberás hacerlo una vez.
+Una vez tengas los requisitos previos instalados, necesitas preparar tu entorno de desarrollo. Esto es común en muchos flujos de trabajo de desarrollo, y solo deberás hacerlo una vez.
 
 **Sigue estos pasos para tener tu entorno de desarrollo listo:**
 
-1. Instala [Git](https://git-scm.com/) o tu cliente Git preferido, si aún no tienes ningúno. Actualiza a la última versión, la versión que viene por defecto en algunos sistemas operativos puede no estar del todo actualizada.
+1. Instala [Git](https://git-scm.com/) o tu cliente Git preferido, si aún no tienes ninguno. Actualiza a la última versión, la versión que viene por defecto en algunos sistemas operativos puede no estar del todo actualizada.
 
 2. (Opcional pero recomendado) [Configurar una clave SSH (ENG)](https://help.github.com/articles/generating-an-ssh-key/) para GitHub
 
-3. Instalar un editor de codigo.
+3. Instalar un editor de código.
 
-    Nosotros recomendamos usar [VS Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Són buenas opciones de editores de código gratuitas y de codigo abierto.
+    Nosotros recomendamos usar [VS Code](https://code.visualstudio.com/) o [Atom](https://atom.io/). Son buenas opciones de editores de código gratuitas y de código abierto.
 
 4. Configurar el _linting_ para tu editor de código.
 
