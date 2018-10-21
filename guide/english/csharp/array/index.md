@@ -31,7 +31,7 @@ You can assign a value into an element directly by using the format below:
 
 `nameOfArray[2] = 50;`
 
-The will assign the value of 50 directly into element [2]
+Code above will assign the value of 50 directly into element [2]
 
 
 You can assign multiple values at once while declaring the array using the format below:
