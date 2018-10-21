@@ -13,3 +13,5 @@ The basic advantage of XP is that the whole process is visible and accountable. 
 #### More Information:
 
 <a href='http://www.extremeprogramming.org/rules.html' target='_blank' rel='nofollow'>Rules of Extreme Programming</a>
+<a href='https://dzone.com/articles/extreme-programming-values-principles-and-practice'>Comprehensive breakdown of XP</a>
+<a href='http://manifesto.softwarecraftsmanship.org/'>Manifesto of Software Craftsmanship</a>
