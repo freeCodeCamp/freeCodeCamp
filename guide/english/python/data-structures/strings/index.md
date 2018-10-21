@@ -19,8 +19,15 @@ Python allows `str` objects, or _strings_, to be expressed in a few different wa
         Traceback (most recent call last):
                 File "<stdin>", line 1, in <module>
         TypeError: 'str' object does not support item assignment
+Now, since strings are immutable, the concern about modifying a string occurs in our mind. So we can do it this way:
         
-
+        >>> foo="my string"
+        >>> foo_list_form=list(foo)
+        >>> foo_list_form[0]="a"
+        >>> foo=''.join(foo_list_form)
+        >>> print(foo)
+        ay string # The required output
+        
 ## Reference:
 
 <a href='https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str' target='_blank' rel='nofollow'>Text Sequence Type _str_</a>
