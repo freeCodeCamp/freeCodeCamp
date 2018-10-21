@@ -22,6 +22,9 @@ Assembly language is primarily used in the following situations:
 * Implementing a compiler for a higher level language on a new ISA. 
 ![Image of Levels of Code](https://raw.githubusercontent.com/colbybanbury/assemblyPicture/master/Screenshot%20from%202017-10-14%2014-03-06.png)
 
+Link to PDF of MIPS Assembly Language Green Sheet:
+https://inst.eecs.berkeley.edu/~cs61c/resources/MIPS_Green_Sheet.pdf
+
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 
