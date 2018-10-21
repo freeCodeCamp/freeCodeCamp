@@ -52,6 +52,9 @@ Alternatively you can use a transparent rgba value like this:
  ```
 The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) quals 50%. We use this method to add transparency to an element without affecting the content inside.
 
+We have to keep in mind that opacity added to body for example will affect all the children. 
+So to make your main background transparent we have to set up  a ,,div'' with z-index on top layer to not affacte nothing in it.
+
 [A codepen example to show background opacity ranges](https://codepen.io/lvcoulter/full/dVrwmK/)
 
 
