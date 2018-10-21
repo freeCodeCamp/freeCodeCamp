@@ -1,6 +1,6 @@
 ---
 title: Why React
-localeTitle: Por que reagir
+localeTitle: Por que React
 ---
 ## Por que o React.js?
 
