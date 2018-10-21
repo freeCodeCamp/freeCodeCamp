@@ -8,8 +8,9 @@ title: Bash rm
 
 There are few commonly used arguments:
 
-- `r` , means to recursively delete all the folders inside a directory.
-- `f` , means to forcefully delete anything folder or file.
+- `-r` , means to recursively delete all the folders inside a directory.
+- `-f` , means to forcefully delete anything folder or file.
+- `-v` , to list all the files being deleted.
 
 ### More Information:
 * [Wikipedia](https://en.wikipedia.org/wiki/Rm_(Unix))
