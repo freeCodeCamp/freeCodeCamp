@@ -134,7 +134,7 @@ Our community moderators [triage](https://en.wikipedia.org/wiki/Software_bug#Bug
 
 You should go through **`Help Wanted`** or **`first timers welcome`** issues for quick lookup of what is available for you to work on. These are up for grabs and you do not need a go ahead before working on these.
 
-If these issues lack clarity on what needs to be done, feel free ask questions in the comments.
+If these issues lack clarity on what needs to be done, feel free to ask questions in the comments.
 
 **I found a typo, should I report an issue before I can make a pull request?**
 
