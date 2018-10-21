@@ -86,7 +86,12 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 *   <a href='https://davidwalsh.name/' target='_blank' rel='nofollow'>David Walsh</a>
 *   <a href='http://superherojs.com/' target='_blank' rel='nofollow'>superheroJS</a>
 
+## Newsletters
 
+* https://javascriptweekly.com/
+* https://js.libhunt.com/
+* https://weekly.bestofjs.org/
+* https://javascriptkicks.com/
 
 ## Podcasts
 *   <a href='https://devchat.tv/js-jabber' target='_blank' rel='nofollow'>JS Jabber</a>
