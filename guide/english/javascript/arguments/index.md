@@ -51,7 +51,7 @@ console.log(getGrades(90, 100, 75, 40, 89, 95));
 
 ### Optimization issues with Array.slice()
 
-There is a little problem, it's not recommended to use slice in the arguments object (optimization reasons)...
+There is a little problem; it's not recommended to use slice in the arguments object (optimization reasons)...
 
 > **Important**: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object.
 > 

@@ -43,7 +43,7 @@ sizeof(int)
 ```
 Let's start from `sizeof`. The `malloc` needs to know how much space allocate for your data. In fact a `int` variable will use less storage space then a `double` one.
 It is generally not safe to assume the size of any datatype. For example, even though most implementations of C and C++ on 32-bit systems define type int to be four octets, this size may change when code is ported to a different system, breaking the code.
-`sizeof` as it's name suggests generates the size of a variable or datatype.
+`sizeof` as its name suggests generates the size of a variable or datatype.
 
 ```C
 arrayPointer = (int*) malloc(sizeof(int) * arrayDimension);

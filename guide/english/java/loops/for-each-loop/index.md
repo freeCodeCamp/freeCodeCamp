@@ -60,7 +60,7 @@ It is important to note that making changes to the iterating variable for enhanc
 
 
 Enhanced for loops can also be used with multidimensional arrays or other Java collections.
-An example of it's usage with multidimenisonal arrays are shown below:
+An example of its usage with multidimenisonal arrays are shown below:
 
 ```java
 int number_list_new[][]={  {  0,  1, 2},

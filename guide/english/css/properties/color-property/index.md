@@ -59,7 +59,7 @@ h1{
 ## CSS Color Properties explained
 
 * Colors by Name:
-    - These are pretty self explanatory. Each color is represented by it's name.
+    - These are pretty self explanatory. Each color is represented by its name.
 
 * Hexadecimal:
     - These colors are represented by hex triplets. 

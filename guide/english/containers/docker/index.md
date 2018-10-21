@@ -5,7 +5,7 @@ title: Docker
 
 [Docker](https://www.docker.com/) is a widely-used container platform available for Linux, Windows, and Mac, as well as cloud providers like AWS and Azure.
 
-A common use case would be to package an app and all it's requirements in a container. The container can then be used during development, passed to quality assurance/testing, and on to production/operations. This eliminates the "works on my machine" mentality, as the container effectively _is_ the machine, no matter what actual hardware it may be running on.
+A common use case would be to package an app and all its requirements in a container. The container can then be used during development, passed to quality assurance/testing, and on to production/operations. This eliminates the "works on my machine" mentality, as the container effectively _is_ the machine, no matter what actual hardware it may be running on.
 
 After you are done setting up your computer and installig docker, you can simply test your Docker by running command:
 

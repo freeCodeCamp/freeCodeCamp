@@ -46,7 +46,7 @@ typedef struct{
 point image_dimension = {640,480};
 ```
 
-Or if you prefer to set it's values following a different order:
+Or if you prefer to set its values following a different order:
 
 ```C
 point img_dim = { .y = 480, .x = 640 };

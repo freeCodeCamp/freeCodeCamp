@@ -11,7 +11,7 @@ It can automatically assign items to _areas_, size and resize them, take care of
 
 - You can easily have a 12-column grid with one line of CSS. `grid-template-columns: repeat(12, 1fr)`
 - Grid lets you move things in any direction. Unlike Flex, where you can move items either horizontally (`flex-direction: row`) or vertically (`flex-direction: column`) - not both at the same time, Grid lets you move any _grid item_ to any predefined _grid area_ on the page. The items you move do not have to be adjacent.
-- With CSS Grid, you can **change the order of HTML elements using only CSS**. Move something from top to the right, move elements that were in footer to the sidebar etc. Instead of moving the `<div>` from `<footer>` to `<aside>` in the HTML, you can just change it's placement with `grid-area` in the CSS stylesheet.
+- With CSS Grid, you can **change the order of HTML elements using only CSS**. Move something from top to the right, move elements that were in footer to the sidebar etc. Instead of moving the `<div>` from `<footer>` to `<aside>` in the HTML, you can just change its placement with `grid-area` in the CSS stylesheet.
 
 ### Grid vs. Flex
 

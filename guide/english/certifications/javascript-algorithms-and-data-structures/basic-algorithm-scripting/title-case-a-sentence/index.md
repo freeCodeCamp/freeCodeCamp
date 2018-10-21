@@ -62,7 +62,7 @@ We have to return a sentence with title case. This means that the first letter w
 
 We are modifying the `replaceAt` function using prototype to facilitate the use of the program.
 
-Split the string by white spaces, and create a variable to track the updated title. Then we use a loop to turn turn the first character of the word to uppercase and the rest to lowercase. by creating concatenated string composed of the whole word in lowercase with the first character replaced by it's uppercase.
+Split the string by white spaces, and create a variable to track the updated title. Then we use a loop to turn turn the first character of the word to uppercase and the rest to lowercase. by creating concatenated string composed of the whole word in lowercase with the first character replaced by its uppercase.
 
 #### Relevant Links
 

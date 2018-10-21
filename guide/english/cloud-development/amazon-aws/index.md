@@ -37,7 +37,7 @@ Popular AWS services include:
 * Amazon Alexa development area
 
 #### AWS Certifications 
-AWS offers many different certifications for it's practitioners. There are different tiers to AWS certs as well as role-based certifications. 
+AWS offers many different certifications for its practitioners. There are different tiers to AWS certs as well as role-based certifications. 
 The tiers are:
 * Foundational
 * Associate
