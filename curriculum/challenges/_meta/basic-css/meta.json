@@ -10,7 +10,7 @@
   "challengeOrder": [
     [
       "bad87fee1348bd9aedf08803",
-      "Change the Color of Text"
+      "Change Text Color"
     ],
     [
       "bad87fee1348bd9aedf08805",
@@ -22,15 +22,15 @@
     ],
     [
       "bad87fee1348bd9aefe08806",
-      "Style Multiple Elements with a CSS Class"
+      "Style Multiple Elements with same CSS Class"
     ],
     [
       "bad87fee1348bd9aedf08806",
-      "Change the Font Size of an Element"
+      "Change Font Size of an Element"
     ],
     [
       "bad87fee1348bd9aede08807",
-      "Set the Font Family of an Element"
+      "Set an Elements Font Family"
     ],
     [
       "bad87fee1348bd9aedf08807",
@@ -50,43 +50,43 @@
     ],
     [
       "bad87fee1348bd9aedf08814",
-      "Add Rounded Corners with border-radius"
+      "Use border-radius to Add Rounded Corners"
     ],
     [
       "bad87fee1348bd9aedf08815",
-      "Make Circular Images with a border-radius"
+      "Use border-radius to Make Circular Images"
     ],
     [
       "bad87fed1348bd9aede07836",
-      "Give a Background Color to a div Element"
+      "Set a div Elements Background Color"
     ],
     [
       "bad87eee1348bd9aede07836",
-      "Set the id of an Element"
+      "Set an Elements id"
     ],
     [
       "bad87dee1348bd9aede07836",
-      "Use an id Attribute to Style an Element"
+      "Use id Attribute to Style an Element"
     ],
     [
       "bad88fee1348bd9aedf08825",
-      "Adjust the Padding of an Element"
+      "Adjust Elements Padding"
     ],
     [
       "bad87fee1348bd9aedf08822",
-      "Adjust the Margin of an Element"
+      "Adjust Elemets Margin"
     ],
     [
       "bad87fee1348bd9aedf08823",
-      "Add a Negative Margin to an Element"
+      "Add a Negative Margin to Element"
     ],
     [
       "bad87fee1348bd9aedf08824",
-      "Add Different Padding to Each Side of an Element"
+      "Add Different Padding to Each Side of Element"
     ],
     [
       "bad87fee1248bd9aedf08824",
-      "Add Different Margins to Each Side of an Element"
+      "Add Different Margins to Each Side of Element"
     ],
     [
       "bad87fee1348bd9aedf08826",
@@ -94,7 +94,7 @@
     ],
     [
       "bad87fee1348bd9afdf08726",
-      "Use Clockwise Notation to Specify the Margin of an Element"
+      "Use Clockwise Notation to Specify the Margin of Element"
     ],
     [
       "58c383d33e2e3259241f3076",
@@ -154,7 +154,7 @@
     ],
     [
       "5a9d725e424fe3d0e10cad10",
-      "Use CSS Variables to change several elements at once"
+      "Use CSS Variables to change several elements at same time"
     ],
     [
       "5a9d726c424fe3d0e10cad11",
