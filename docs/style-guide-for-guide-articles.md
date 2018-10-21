@@ -64,6 +64,16 @@ For example, the following Markdown
     ```
 ```
 
+
+example 2
+```markdown
+  ```html
+  <div class="awesome" id="more-awesome">
+  <p>Hello Geeks<p>
+  </div>
+  ```
+    
+
 will output the following code block with `HTML` syntax highlighting since we indicated the language `html` after the ```.
 
 ```html
