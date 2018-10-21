@@ -162,7 +162,8 @@ def swap( A, x, y ):
 
 ```
 ### Example in PHP
-```
+```php
+
 function bubble_sort($arr) {
     $size = count($arr)-1;
     for ($i=0; $i<$size; $i++) {
@@ -176,6 +177,15 @@ function bubble_sort($arr) {
     }
     return $arr;// return the sorted array
 }
+
+$arr = array(1,3,2,8,5,7,4,0);
+print("Before sorting");
+print_r($arr);
+
+$arr = bubble_sort($arr);
+print("After sorting by using bubble sort");
+print_r($arr);
+
 ```
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
