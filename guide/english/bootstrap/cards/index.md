@@ -85,3 +85,6 @@ The structure of the card can be enhanced by the addition of a header and a foot
   </div>
 </div>
 <!--You must set the image height on all cards -->
+
+If you want to explore ****Bootstrap 4.1 Latest **** :
+<a href='https://getbootstrap.com/docs/4.1/components/card/' target='_blank' rel='nofollow'>Bootstrap Card v4.1</a>
