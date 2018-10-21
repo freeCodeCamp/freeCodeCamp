@@ -38,6 +38,9 @@ En el ejemplo anterior, hay dos campos de entrada que le piden al usuario que in
 
 [Youtube](https://www.youtube.com/watch?v=qJ9ZkxmVf5s)
 
-## Entrada
+## Tipos de Entrada
 
-La etiqueta HTML `<input>` es de muchos tipos para ingresar datos. Algunos de ellos son: Tipo: Texto (este es el tipo más común que se utiliza para crear cuadros de texto generales) Tipo: Contraseña (este tipo se utiliza para la creación de contraseñas de contraseña) Tipo: Oculto (este es un tipo especial de entrada que no se muestra al usuario pero se usa para pasar información de una página a otra mientras se usa la etiqueta)
+La etiqueta HTML `<input>` es de muchos tipos para ingresar datos. Muchos de estos tipos cambian la visualización del texto introducido por parte del usuario. Algunos de estos tipos son: 
++ Tipo: Texto (este es el tipo más común que se utiliza para crear cuadros de texto generales)
++ Tipo: Contraseña (este tipo se utiliza para la creación de contraseñas de contraseña)
++ Tipo: Oculto (este es un tipo especial de entrada que no se muestra al usuario pero se usa para pasar información de una página a otra mientras se usa la etiqueta)
