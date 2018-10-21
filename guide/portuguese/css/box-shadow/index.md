@@ -20,11 +20,12 @@ Uma sombra de caixa pode ser descrita com várias propriedades, incluindo:
     } 
   ``` 
  * #### inset (default: none) 
- If not specified, the shadow is assumed to be a drop shadow (as if the box were raised above the content). 
- The presence of the `inset` keyword changes the shadow to one inside the frame 
+ se não especificada, a sombra é considerada como uma sombra externa (como se o elemento estivesse sobre o conteúdo)
+ A presença da propriedade `inset`muda a sombra para dentro do elemento.
+
  
  * #### offset-x offset-y 
- These are two `length` values to set the shadow offset. <offset-x> specifies the horizontal distance. Negative values place the shadow to the left of the element. `offset-y` specifies the vertical distance. Negative values place the shadow above the element. See `length` for possible units. 
+ Existem dois valores `length` para definir a posição da sombra. <offset-x> especifica a distancia horizontal. Valores negativos colocam a sombra à esquerda do elemento. `offset-y` especifica a distancia vertical. Valores engativos colocam a sombra acima do elemento. Veja `length` para possíveis unidades.
  
  * #### blur-radius (default: 0) 
  This is a third `length` value. The larger this value, the bigger the blur, so the shadow becomes bigger and lighter. Negative values are not allowed. If not specified, it will be 0 (the shadow's edge is sharp). 
