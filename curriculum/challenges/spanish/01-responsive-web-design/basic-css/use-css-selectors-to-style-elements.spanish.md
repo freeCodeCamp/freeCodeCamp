@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Usar los selectores de CSS para elementos de estilo
 ---
 
-## Description
+## Descripción
 <section id="description"> Con CSS, hay cientos de <code>properties</code> de CSS que puedes usar para cambiar la apariencia de un elemento en tu página. Cuando ingresó <code>&lt;h2 style=&quot;color: red&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> , estaba diseñando ese elemento <code>h2</code> individual con <code>inline CSS</code> , que significa <code>Cascading Style Sheets</code> . Esa es una forma de especificar el estilo de un elemento, pero hay una mejor manera de aplicar <code>CSS</code> . En la parte superior de tu código, crea un bloque de <code>style</code> como este: <blockquote> &lt;estilo&gt; <br> &lt;/style&gt; </blockquote> Dentro de ese bloque de estilo, puede crear un <code>CSS selector</code> para todos los elementos <code>h2</code> . Por ejemplo, si desea que todos los elementos <code>h2</code> sean rojos, debe agregar una regla de estilo que se vea así: <blockquote> &lt;estilo&gt; <br> h2 {color: rojo;} <br> &lt;/style&gt; </blockquote> Tenga en cuenta que es importante tener llaves de apertura y cierre ( <code>{</code> y <code>}</code> ) alrededor de las reglas de estilo de cada elemento. También debe asegurarse de que la definición de estilo de su elemento se encuentre entre las etiquetas de estilo de apertura y de cierre. Finalmente, asegúrese de agregar un punto y coma al final de cada una de las reglas de estilo de su elemento. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Borre el atributo de estilo del elemento <code>h2</code> y, en su lugar, cree un bloque de <code>style</code> CSS. Agrega el CSS necesario para convertir todos los elementos <code>h2</code> azul. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -40,22 +40,22 @@ tests:
 ```html
 <h2 style="color: red">CatPhotoApp</h2>
 <main>
-  <p>Click here to view more <a href="#">cat photos</a>.</p>
+  <p>Haga clic aquí para ver más <a href="#">fotos de gatos</a>.</p>
 
   <a href="#"><img src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
 
   <div>
-    <p>Things cats love:</p>
+    <p>Cosas que los gatos aman:</p>
     <ul>
-      <li>cat nip</li>
-      <li>laser pointers</li>
-      <li>lasagna</li>
+      <li>pellizco de gato</li>
+      <li>punteros laser</li>
+      <li>lasaña</li>
     </ul>
-    <p>Top 3 things cats hate:</p>
+    <p>3 cosas que odian los gatos:</p>
     <ol>
-      <li>flea treatment</li>
-      <li>thunder</li>
-      <li>other cats</li>
+      <li>tratamiento de pulgas</li>
+      <li>trueno</li>
+      <li>otros gatos</li>
     </ol>
   </div>
 
@@ -78,7 +78,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Usa RGB para mezclar colores
 ---
 
-## Description
+## Descripción
 <section id="description"> Al igual que con el código hexadecimal, puede mezclar colores en RGB utilizando combinaciones de diferentes valores. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Reemplace los códigos hexadecimales en nuestro elemento de <code>style</code> con sus valores RGB correctos. <table class="table table-striped"><tbody><tr><th> Color </th><th> RGB </th></tr><tr><td> Azul </td><td> <code>rgb(0, 0, 255)</code> </td> </tr><tr><td> rojo </td><td> <code>rgb(255, 0, 0)</code> </td> </tr><tr><td> Orquídea </td><td> <code>rgb(218, 112, 214)</code> </td> </tr><tr><td> Tierra de siena </td><td> <code>rgb(160, 82, 45)</code> </td> </tr></tbody></table></section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -59,13 +59,13 @@ tests:
   }
 </style>
 
-<h1 class="red-text">I am red!</h1>
+<h1 class="red-text">Estoy rojo!</h1>
 
-<h1 class="orchid-text">I am orchid!</h1>
+<h1 class="orchid-text">Estoy orquídea!</h1>
 
-<h1 class="sienna-text">I am sienna!</h1>
+<h1 class="sienna-text">Estoy siena!</h1>
 
-<h1 class="blue-text">I am blue!</h1>
+<h1 class="blue-text">Estoy azul!</h1>
 
 ```
 
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

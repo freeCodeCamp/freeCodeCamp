@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Usar la notación de las agujas del reloj para especificar el margen de un elemento
 ---
 
-## Description
+## Descripción
 <section id="description"> Intentemos esto de nuevo, pero con <code>margin</code> esta vez. En lugar de especificar individualmente las propiedades <code>margin-top</code> , <code>margin-right</code> , <code>margin-bottom</code> y <code>margin-left</code> un elemento, puede especificarlas todas en una línea, como esta: <code>margin: 10px 20px 10px 20px;</code> Estos cuatro valores funcionan como un reloj: arriba, derecha, abajo, izquierda, y producirán exactamente el mismo resultado que utilizando las instrucciones de margen específicas para cada lado. </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Use la <code>Clockwise Notation</code> para dar al elemento con la clase de <code>blue-box</code> un margen de <code>40px</code> en su lado superior e izquierdo, pero solo <code>20px</code> en su lado inferior y derecho. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js

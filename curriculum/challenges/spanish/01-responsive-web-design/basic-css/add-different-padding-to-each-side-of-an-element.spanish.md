@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Añadir diferente relleno a cada lado de un elemento
 ---
 
-## Description
+## Descripción
 <section id="description"> A veces querrá personalizar un elemento para que tenga diferentes cantidades de <code>padding</code> en cada uno de sus lados. CSS le permite controlar el <code>padding</code> de los cuatro lados individuales de un elemento con las propiedades <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> y <code>padding-left</code> . </section>
 
-## Instructions
+## Instrucciones
 <section id="instructions"> Dale a la caja azul un <code>padding</code> de <code>40px</code> en su lado superior e izquierdo, pero solo <code>20px</code> en su lado inferior y derecho. </section>
 
-## Tests
+## Pruebas
 <section id='tests'>
 
 ```yml
@@ -84,7 +84,7 @@ tests:
 
 </section>
 
-## Solution
+## Solución
 <section id='solution'>
 
 ```js
