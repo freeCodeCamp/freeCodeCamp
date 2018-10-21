@@ -96,6 +96,9 @@ Also, we can do this:
 >>> my_list = [1, 2, 9, 16, 25]
 >>> print(my_list[::-1])
 [25, 16, 9, 2, 1]
+>>> my_list2 = [1, 2, 9, 16, 25]
+>>> print(list(reversed(my_list2)))
+[25, 16, 9, 2, 1]
 ```
 **Slice a `list`:**
 ```shell
