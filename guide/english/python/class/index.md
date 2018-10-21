@@ -95,6 +95,8 @@ class Foo:
 Now if we try to access __privatenum outside the class we will get error:
 x = Foo()
 x.__privatenum  # gives following error : 'Foo' object has no attribute '__privatenum'
+
+However, if you want to access any private variable outside class you can do that by using getter and setter methods.
  
 ```
 
