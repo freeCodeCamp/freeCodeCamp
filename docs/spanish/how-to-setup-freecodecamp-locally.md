@@ -41,3 +41,56 @@ Una vez tengas los requisitos previos instalados, necesitas preparar tu entorno 
     deberías tener [ESLint corriendo en tu editor](http://eslint.org/docs/user-guide/integrations.html), y él se encargará de marcar cualquier cosa que no encaje con la [Guia de estilos de freeCodeCamp](http://forum.freecodecamp.org/t/free-code-camp-javascript-style-guide/19121).
 
     > Por favor no ignores ningún error de _linting_. los errores están para **ayudarte** y para asegurar una base de código simple y limpio.
+
+## Clonar tu copia de freeCodeCamp
+
+['Clonar'](https://help.github.com/articles/cloning-a-repository/) es un paso donde tu **descargas** una copia de un repositorio tuyo o de alguien más desde una localización remota (`remote`). En tu caso, esta localización remota es tu propio `fork` del repositorio de freeCodeCamp, que debería estar disponible en `https://github.com/TU_NOMBRE_DE_USUARIO/freeCodeCamp`.
+
+Ejecuta estos comandos en tu maquina local:
+
+1. Abre una terminal en el directorio d etus proyectos
+
+    _p.e.: `/tudirectoriodeproyectos/`_
+
+2. Clona tu fork de freeCodeCamp, sustituyendo `TU_NOMBRE_DE_USUARIO` por tu usuario de GitHub
+
+    ```shell
+    git clone https://github.com/TU_NOMBRE_DE_USUARIO/freeCodeCamp
+    ```
+
+Este comando descargará el repositorio entero de freeCodeCamp a tu directorio de proyectos.
+
+## Configura el `upstream` al repositorio principal
+
+Ahora que has descargado la copia de tu fork, es necesario configurar un `upstream`.
+
+Como hemos mencionado anteriormente, el repositorio principal en `https://github.com/freeCodeCamp/freeCodeCamp` se suele llamar repositorio `upstream`. Tu fork en `https://github.com/TU_NOMBRE_DE_USUARIO/freeCodeCamp` se suele llamar repositorio `origin`.
+
+Es necesario apuntar tu copia local hacia el `upstream` además del `origin`. Esto se hace para que puedas sincronizar los cambios del repositorio principal. De esta manera no tendrás que hacer fork y clonar el repositorio una y otra vez.
+
+1. Accede al nuevo directorio freeCodeCamp:
+
+    ```shell
+    cd freeCodeCamp
+    ```
+
+2. Añade el repositorio principal de freeCodeCamp al remote:
+
+    ```shell
+    git remote add upstream https://github.com/freeCodeCamp/freeCodeCamp.git
+    ```
+
+3. Comprueba que la configuración sea la correcta:
+
+    ```shell
+    git remote -v
+    ```
+
+    La salida de este comando debería ser algo como:
+
+    ```shell
+    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (fetch)
+    origin    https://github.com/YOUR_USER_NAME/freeCodeCamp.git (push)
+    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (fetch)
+    upstream    https://github.com/freeCodeCamp/freeCodeCamp.git (push)
+    ```
