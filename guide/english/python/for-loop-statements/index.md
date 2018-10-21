@@ -21,12 +21,17 @@ list_of_tuples = [(1,2), (3,4)]
 
 for a, b in list_of_tuples:
   print("a:", a, "b:", b)
+  
+list_integers = [1, 2 , 3, 4 ]
+for i in list_integers:
+  print(i, end=" ") # output = 1 2 3 4
 ```
 Output:
 
 ```python
 a: 1 b: 2
 a: 3 b: 4
+
 ```
 
 
