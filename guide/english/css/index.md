@@ -6,7 +6,7 @@ title: Cascading Style Sheets (CSS)
 
 CSS is an acronym for Cascading Style Sheets. It was first invented in 1996, and is now a standard feature of all major web browsers.
 
-CSS allows for developers to control how web pages look by "styling" the HTML structure of that page.
+CSS allows developers to control how web pages look by "styling" the HTML structure of that page.
 
 CSS specifications are maintained by the [World Wide Web Consortium (W3C)](https://www.w3.org/).
 
