@@ -29,6 +29,13 @@ A resnet-152 model looks like this (Don't worry if you don't understand it. It's
 
 
 Google had its own neural network architecture that won the Imagenet challenged in 2014. Which can be seen in a <a href="https://adeshpande3.github.io/assets/GoogleNet.gif">gif here in more detail</a>.
+### Basic fundamentals of deep Learning for Computer Vision
+The application of deep learning in computer vision has been increasing rapidly on daily activities. Some of the applications include face detection , pedestrian tracking, traffic surveillance , surveillance in home. These are some of the many applications that are being used on daily basis. The need for proper accuracy and also real time processing are some of the major challenges that are facing currently. 
+
+There are two major stages in this work : Training and deployment , where the dataset is given to the network for training and is being tested and used for any particular application mentioned. The major work involved in this is identifying the pattern and to have enough data that exemplies the pattern in this.
+
+Basic principles : There are 4 basic principles involved forward propogation, learning rate , weights adjustment during the backward propogation , loss function and the process is repeated.
+
 
 
 ### How to implement your own?
