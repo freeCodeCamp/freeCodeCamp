@@ -6,7 +6,7 @@ title: Books on Python Programming Language
  
  #### Think Python 2e
  
- A free (E-book) which covers the basics of Python. It's beginner friendly and a must for people who are new to programming!
+ A free E-book which covers the basics of Python. It's a 'must read' for the absolute beginners to programming!
  
 - [Website](http://greenteapress.com/wp/think-python-2e/)
 - [E-book](http://greenteapress.com/thinkpython2/html/index.html)(free)
@@ -15,7 +15,7 @@ title: Books on Python Programming Language
  
 #### Learn Python 3 the Hard Way
 
-Paid (Free ebook available) book which covers the basics of python. It's designed to get you started with python language and become familiar with its syntax and workings by the time you complete the book. 
+Paid (Free ebook available) book which covers the basics of python. It's designed in a way for the beginners to acquire the in depth knowledge of the python programming language and also giving them a hands on experience to code in python by the time the read the whole book. It starts with a complete ABC of python starting with the knowledge of syntax foe writing statements and functions and then scaling up to the level to write a hundred line code. The book is a definite choice for people of all skill levels - from beginners to geeks!
 
 - [Website](https://learnpythonthehardway.org/) (Buy from the creator | Includes video lessons)
 - [E-book](https://learnpythonthehardway.org/python3/) (free)
