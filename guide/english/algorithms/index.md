@@ -28,7 +28,7 @@ Some, very common and widely used are:
 
 #### Quick Sort
 
-There is no sorting discussion which can finish without quick sort. The basic concept is in the link below.
+There is no sorting discussion which can finish without quick sort. The basic concept is in the link.
 [Quick Sort](http://me.dt.in.th/page/Quicksort/)
 
 #### Merge Sort
