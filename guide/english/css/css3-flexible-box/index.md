@@ -36,4 +36,6 @@ Yet another great visual guide that is in-depth but easy to follow can be found 
 
 1. <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="nofolow">Coyier, Chris. "A Complete Guide to Flexbox" CSS-Tricks. Last updated on September 28, 2017.</a>
 
+#### More Resources
+- [Wes Bos - Free Flexbox Course](https://flexbox.io/)
 
