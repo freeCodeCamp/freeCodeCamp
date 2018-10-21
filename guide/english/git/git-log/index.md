@@ -114,7 +114,7 @@ There are may other options you could use in combination with ```--graph```. Cou
 
 The ```--grep``` flag enables you to search for commit messages that match a regular expression `<regexp>`. Use it in combination with `-i` option for case-insensitive searches:
 
-```git log -i --grep=component```
+```git log --oneline -i --grep=component```
 
 The output would be similar to:
 
