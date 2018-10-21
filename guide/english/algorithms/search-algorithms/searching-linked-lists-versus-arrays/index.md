@@ -17,3 +17,35 @@ It completely depends on the use case for whether arrays or linked lists are bet
 
 ### More Information:
 - A Programmer's Approach of Looking at Linked List vs Array: <a href='http://www.geeksforgeeks.org/programmers-approach-looking-array-vs-linked-list/' target='_blank' rel='nofollow'>Geeks for Geeks</a>
+
+Java Program implementing LinkedLists
+```
+  public class LinkedListNode<T>
+  {
+       T data;
+       LinkedListNode<T> next;
+       
+       public LinkedListNode(T data)
+       {
+          this.data = data;
+          this.next = null;
+       }
+  }
+```
+
+Java Program implementing linear search in LinkedLists having Integer data
+```
+  public boolean isElementPresent(LinkedListNode<Integer> head, int num)
+  {
+      while(head != null)
+      {
+        if(head.data == num)
+        {
+            return true;
+        }
+        head = head.next;
+      }
+      return true;   
+  }
+```
+
