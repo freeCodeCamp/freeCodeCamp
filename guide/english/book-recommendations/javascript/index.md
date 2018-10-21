@@ -30,6 +30,12 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### Understanding ECMAScript 6: The Definitive Guide for JavaScript Developers
+
+ A complete guide to the object types, syntax, and other exciting changes that ECMAScript 6 brings to JavaScript.  Indispensable on your journey to master the latest in JavaScript.
+
+-[amazon](https://www.amazon.com/Understanding-ECMAScript-Definitive-JavaScript-Developers/dp/1593277571)
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
