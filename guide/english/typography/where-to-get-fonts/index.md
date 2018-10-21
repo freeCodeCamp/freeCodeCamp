@@ -55,6 +55,7 @@ You're done! You successfully have new fonts for your site.
 * [Font Squirrel](http://fontsquirrel.com)
 * [DaFont](http://www.dafont.com)
 * [1001 Free Fonts](http://www.1001freefonts.com)
+* [Adobe Typekit](https://fonts.adobe.com/fonts)
 
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
