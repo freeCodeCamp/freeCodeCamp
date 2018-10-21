@@ -99,7 +99,7 @@ Another filtering selector, `:contains(text)`, selects elements that have a cert
 $("p:contains('World')").css("color", "yellow");
 ```
 
-Similarly, the `:last` selector selects the element that is the last child of its parent. The JQuery selector below selects the last `<li>` element in the list--the "Three" list item--and then uses the `.css` method to turn the text yellow.
+Similarly, the `:last` selector selects the element that is the last child of its parent. The jQuery selector below selects the last `<li>` element in the list--the "Three" list item--and then uses the `.css` method to turn the text yellow.
 
 `$("li:last").css("color", "yellow");`
 
