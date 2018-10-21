@@ -4,7 +4,7 @@ title: Bash
 
 ## What is Bash?
 
-<a>Bash</a> (short for Bourne Again SHell) is a Unix shell, and a command language interpreter. A shell is simply a macro processor that executes commands. It's the most widely used shell packaged by default for most Linux distributions, and a successor for the Korn shell (ksh) and the C shell (csh).
+<a>Bash</a> (short for Born Again SHell) is a Unix shell, and a command language interpreter. A shell is simply a macro processor that executes commands. It's the most widely used shell packaged by default for most Linux distributions, and a successor for the Korn shell (ksh) and the C shell (csh).
 
 Many things that can be done Linux operating system can be done via command line. Some examples are...
 * Editing files
@@ -38,7 +38,7 @@ echo "Hello world!"
 It's worth noting that first line of the script starts with `#!`. It is a special directive which Unix treats differently. 
 
 #### Why did we use #!/bin/bash at the beginning of the script file? 
-That is because it is a convention to let the interactive shell know what kind of interpreter to run for the program that follows. The first line tells Unix that the file is to be executed by /bin/bash. This is the standard location of the Bourne shell on just about every Unix system. Adding #!/bin/bash as the first line of your script, tells the OS to invoke the specified shell to execute the commands that follow in the script.
+That is because it is a convention to let the interactive shell know what kind of interpreter to run for the program that follows. The first line tells Unix that the file is to be executed by /bin/bash. This is the standard location of the Born shell on just about every Unix system. Adding #!/bin/bash as the first line of your script, tells the OS to invoke the specified shell to execute the commands that follow in the script.
 `#!` is often referred to as a "hash-bang", "she-bang" or "sha-bang".
 Though it is only executed if you run your script as an executable. For example, when you type `./scriptname.extension`, it will look at the top line to find out the interpreter, whereas, running the script as `bash scriptname.sh`, first line is ignored. 
 
