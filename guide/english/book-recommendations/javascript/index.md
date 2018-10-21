@@ -17,6 +17,14 @@ Six book series by Kyle Simpson. In-depth series on every aspect of JavaScript.
 - [Github](https://github.com/getify/You-Dont-Know-JS)(free)
 - [Kindle Version, Amazon](https://www.amazon.com/You-Dont-Know-Js-Book/dp/B01AY9P0P6)
 
+#### Speaking JavaScript
+
+A more advanced book for programmers, written by a programmer (Dr. Axel Rauschmayer). Has introduction, background of JavaScript, in-depth explanation, and contains chapter on tips, tools, libraries.
+
+- [Online](http://speakingjs.com/es5/)(free)
+- [Amazon](https://www.amazon.com/Speaking-JavaScript-Depth-Guide-Programmers-ebook/dp/B00INES03O)
+- [More about JavaScript from author of the book](http://2ality.com/)
+
 #### JavaScript: The Good Parts
 
 Book by the "grandfather" of JavaScript, Douglas Crockford. He discusses both the "good" and "bad" aspects of JavaScript.
