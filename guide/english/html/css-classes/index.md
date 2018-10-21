@@ -28,7 +28,7 @@ You can also declare more than one class to your element, like:
 
 ```html
 
-<div class="ironMan alfred">
+<div class="iron-man alfred">
  We're going to save you.
 </div>
 
@@ -38,7 +38,7 @@ Then in your css file:
 
 ```css
 
-.ironMan{
+.iron-man{
   color:red;
 }
 
@@ -48,11 +48,11 @@ Then in your css file:
 
 ```
 
-**Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man").
+**Note:** Class names are traditionally all lowercase, with each word in a multi-word class name separated by hyphens (e.g. "super-man"). However, you may also use "camel case" as seen below with "spiderMan."
 
 You can also combine classes in the same line:
 ```css
-.superMan .spiderMan {
+.super-man .spiderMan {
   color: red;
   background-color: blue;
 }
