@@ -49,4 +49,9 @@ To see the full list, visit: https://talkpython.fm/episodes/show/130/10-books-py
 * [The Complete Software Developer's Career Guide](https://simpleprogrammer.com/products/careerguide/)
 
 ### Podcasts
-[10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+
+* [10 Books Python Developers should be reading - talkpython.fm](https://talkpython.fm/episodes/show/130/10-books-python-developers-should-be-reading)
+
+* [Command Line Heroes - Red Hat](https://www.redhat.com/en/command-line-heroes)
+
+* [Learn to Code With Me - Laurence Bradford](https://learntocodewith.me/podcast/)
