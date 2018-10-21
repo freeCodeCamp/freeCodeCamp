@@ -8,7 +8,7 @@ Some of the email workflows, like updating a user's email, requires the back-end
 
 ## Installing MailHog
 
-How you install and run MailHog is dependent upon your OS
+How you install and run MailHog is dependent upon your OS:
 
 - [Installing MailHog on macOS](#installing-mailhog-on-macos)
 - [Installing MailHog on Windows](#installing-mailhog-on-windows)
