@@ -10,12 +10,12 @@ localeTitle: Комментарии в CSS
 
 ```css
     /* 
-        This is 
-        a multi-line 
-        comment 
+        Это
+        многострочный
+        комментарий
     */ 
  
-    /* This is a single line comment*/ 
+    /* Это комментарий для одной строки*/ 
     .group:after { 
         content: ""; 
         display: table; 
