@@ -17,9 +17,9 @@ Uma das grandes vantagens de usar funções em seu código é que ele reduz o n�
 No Python, uma definição de função possui os seguintes recursos:
 
 1.  A palavra-chave `def`
-2.  um nome de função
-3.  parantesia '()' e dentro dos parâmetros de entrada da parantesia, embora os parâmetros de entrada sejam opcionais.
-4.  um cólon ':'
+2.  um nome da função
+3.  parênteses '()' e dentro dos parênteses, os parâmetros de entrada, embora os parâmetros de entrada sejam opcionais.
+4.  um cólon (dois pontos) ':'
 5.  algum bloco de código para executar
 6.  uma declaração de retorno (opcional)
 
@@ -45,9 +45,9 @@ No Python, uma definição de função possui os seguintes recursos:
 
 Funções são blocos de código que podem ser reutilizados simplesmente chamando a função. Isso permite a reutilização de código simples e elegante sem reescrever explicitamente seções de código. Isso torna o código mais legível, facilita a depuração e limita os erros de digitação.
 
-Funções em Python são criadas usando a palavra-chave `def` , seguida por um nome de função e parâmetros de função dentro de parênteses.
+Funções em Python são criadas usando a palavra-chave `def` , seguida pelo um nome da função e os parâmetros desta dentro de parênteses.
 
-Uma função sempre retorna um valor. A palavra-chave `return` é usada pela função para retornar um valor, se você não quiser retornar nenhum valor, o valor padrão `None` será retornado.
+Uma função sempre retorna um valor. A palavra-chave `return` é usada pela função para retornar um determinado valor. Se você não retornar nenhum valor, o valor padrão `None` será retornado.
 
 O nome da função é usado para chamar a função, passando os parâmetros necessários dentro de parênteses.
 
@@ -60,7 +60,7 @@ O nome da função é usado para chamar a função, passando os parâmetros nece
  # result = 3 
 ```
 
-Você pode definir valores padrão para os parâmetros, assim o Python irá interpretar que o valor desse parâmetro é o padrão se nenhum for dado.
+Você pode definir valores padrão para os parâmetros, assim o Python irá interpretar que o valor desse parâmetro é o padrão se nenhum for dado. Isso são argumentos default.
 
 ```python
 def sum(a, b=3): 
@@ -107,7 +107,7 @@ s = sum
     
     ```
     
-*   O bloco de código que a função executará inclui todas as instruções recuadas dentro da função.
+*   O bloco de código que a função executará inclui todas as instruções recuadas, aninhadas, identadas dentro da função.
     
     ```python
     def myFunc(): 
