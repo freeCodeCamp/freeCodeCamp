@@ -445,7 +445,7 @@ There might be an error in the console of your browser or in Bash / Terminal / C
 
 ### Troubleshooting
 
-If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly, you may try the following troubleshooting steps at least once:
+If the app launches but you are encountering errors with the UI itself, for example if fonts are not being loaded or if the code editor is not displaying properly or there is some misbalance between the words, you may try the following troubleshooting steps at least once:
 
 ```shell
 # Remove all installed node modules
@@ -463,3 +463,4 @@ npm run seed
 # Re-start the application
 npm run develop
 ```
+Hope this will help you figure out the problem
