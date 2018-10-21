@@ -21,6 +21,15 @@ Polynomial features are possibly computationally expensive and may slow down run
 Rather than adding more polynomial features, add "landmarks" against which you test the proximity of other datapoints.
 Each member of the training set is a landmark.
 A kernel is the "similarity function" that measures how close an input is to a certain marker.
+There are several kernel(similarity) functions available such as gaussian, polynomial, string, chi-square etc.
+
+The most widely used kernels are linear and gaussian kernel.
+
+The gaussian kernel is defined as: f= exp(-||x-l||^2/(2*sigma^2)) 
+
+where x is training example, l is landmark, sigma is a constant which is to be manually chosen. The notation ||x-l|| is the eucledian distance between x and l.
+
+if l is nearly equal to x: f nearly equal to 1 otherwise zero.
 
 ### Large Margin Classifier
 An SVM will find the line (or hyperplane in the more general case) that splits the data with the largest margin.
