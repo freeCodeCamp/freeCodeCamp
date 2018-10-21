@@ -77,6 +77,10 @@ function hello() {
 }
 hello();
 ```
-
+Additionally, if a line includes:
+```javascript
+//TODO
+```
+followed by an objective, action or, feature, it refers to a change or addition that has been planned by another programmer.
 #### More Information:
 * <a href='https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript' target='_blank' rel='nofollow'>How To Write Comments in JavaScript</a>
