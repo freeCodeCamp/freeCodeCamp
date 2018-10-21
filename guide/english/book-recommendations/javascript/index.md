@@ -30,6 +30,9 @@ A collection of articles covering the basics (core language and working with a b
 - [Online](https://javascript.info/)
 - [E-book](https://javascript.info/ebook)
 
+#### Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript
+David Herman elaborates on 68 specific does and don't of JavaScript, providing deep insight into coding best practices and the language itself.
+
 #### Other Resources
 
 - A selection of online free resources; including e-books for JavaScript are available at [JS Books](https://jsbooks.revolunet.com/)
