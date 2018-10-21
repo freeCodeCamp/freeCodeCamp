@@ -38,11 +38,11 @@ Then in your css file:
 
 ```css
 
-.ironMan{
-  color:red;
+.ironMan {
+  color: red;
 }
 
-.alfred{
+.alfred {
   background-color: black;
 }
 
