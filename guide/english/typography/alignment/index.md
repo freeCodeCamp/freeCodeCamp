@@ -35,7 +35,7 @@ Can be used for:
 
 `text-align: center;`
 
-Use centered text to pull readers' eyes to points of emphasis (e.g., headings, page titles, footers). Do not use centered text for long blocks of text, as it is extremely exhausting to read.
+Use centered text to pull the readers' eyes to points of emphasis (e.g., headings, page titles, footers). Do not use centered text for long blocks of text, as it is extremely exhausting to read.
 
 Can be used for:
 * Headings
@@ -50,7 +50,7 @@ Can be used for:
 
 `text-align: justify;`
 
-Full-justified text is tricky to recommend for body text, as large gaps can appear between words in some lines. However, skilled desgigners can make beautiful use of it.
+Full-justified text is tricky to recommend for body text, as large gaps can appear between words in some lines. However, skilled designers can make beautiful use of it.
 
 Can be used for:
 * Captions
