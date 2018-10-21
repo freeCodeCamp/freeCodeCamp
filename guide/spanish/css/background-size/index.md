@@ -17,7 +17,7 @@ La propiedad de tamaño de fondo especifica el tamaño de las imágenes de fondo
  .percentage {background-size: 50% 50%;} 
 ```
 
-Para establecer esta propiedad en varias imágenes de fondo, valores separados por comas:
+Para establecer esta propiedad en varias imágenes de fondo separe los valores utilizando comas:
 
 ```css
 .multiple { 
