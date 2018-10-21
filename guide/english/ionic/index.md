@@ -35,11 +35,12 @@ The bulk of an Ionic app will be written in HTML, Javascript, and CSS. Ionic als
   sudo apt-get install npm
 ```
   
-### Ionic 2 and cordova
+### Ionic 4 and cordova
 
 ```
   sudo npm install -g ionic cordova
 ```
+
   
 ### Now sit back and relax, give it some time to finish, it can take several minutes depending on your internet connection.
 Once that’s done, Let’s start off by generating a new project based on the “blank” template
