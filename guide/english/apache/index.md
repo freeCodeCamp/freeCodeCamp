@@ -21,3 +21,7 @@ sudo yum install httpd
 ```
 pacman -S apache
 ```
+
+### More information
+
+* [Getting Started with Apache HTTP Server Version 2.5](https://httpd.apache.org/docs/trunk/getting-started.html)
