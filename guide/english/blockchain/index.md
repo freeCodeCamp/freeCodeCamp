@@ -26,8 +26,12 @@ The words block and chain were used separately in Satoshi Nakamoto's original pa
 
 As of 2016, blockchain 2.0 implementations continue to require an off-chain oracle to access any "external data or events based on time or market conditions to interact with the blockchain."
 
+#### Byzantine Fault Tolerance
+Imagine the scenario where there is an empire and there are three generals with their respective armies at different positions. All of them must attack in order to win the fight or they can choose to retreat. Their only means of communications are through pigeon posts. But there is a problem, the generals can't trust each other or ensure that the message has not been corrupted along the way. How do they solve this problem? Blockchain essentially does so by listening to information broadcasted by other people, reaching to a consensus of which information is deemed true. As such, this model asssumes that the amount of "traitors" do not exceed more than 1/3 of the entire network.
+
 #### Sources
 1. [Bettina Warburg, "How the blockchain will radically transform the economy", *TED Talks*, December 8, 2016](https://youtu.be/RplnSVTzvnU?t=213)
+2. Brian Curran, "What is Practical Byzantine Fault Tolerance? Complete Beginner’s Guide", October 21, 2018 (https://blockonomi.com/practical-byzantine-fault-tolerance/)
 
 
 ##### More information
