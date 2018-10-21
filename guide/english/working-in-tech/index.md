@@ -1,7 +1,7 @@
 ---
 title: Working in Tech
 ---
-## Working in Tech
+### Working in Tech
 
 A wide variety of technology-related fields such as web development, design, data science, and product management are often lumped into the catch-all term "tech."
 
