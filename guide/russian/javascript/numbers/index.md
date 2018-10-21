@@ -1,10 +1,10 @@
 ---
 title: Numbers
-localeTitle: чисел
+localeTitle: Числа
 ---
-## чисел
+## Числа
 
-Реализация в JavaScript `number` с базируется на `IEEE 754` стандарта, который часто называют «плавающей точкой» .
+Реализация в JavaScript `number` базируется на стандарте `IEEE 754`, который часто называют «плавающей точкой» .
 
 [Ссылка на Википедию IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) [IEEE 754 Двухточечная визуализация с плавающей точкой](http://bartaz.github.io/ieee754-visualization/)
 
