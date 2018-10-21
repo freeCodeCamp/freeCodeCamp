@@ -161,6 +161,22 @@ def swap( A, x, y ):
   A[y] = tmp
 
 ```
+### Example in PHP
+```
+function bubble_sort($arr) {
+    $size = count($arr)-1;
+    for ($i=0; $i<$size; $i++) {
+        for ($j=0; $j<$size-$i; $j++) {
+            $k = $j+1;
+            if ($arr[$k] < $arr[$j]) {
+                // Swap elements at indices: $j, $k
+                list($arr[$j], $arr[$k]) = array($arr[$k], $arr[$j]);
+            }
+        }
+    }
+    return $arr;// return the sorted array
+}
+```
 ### More Information
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 - [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
