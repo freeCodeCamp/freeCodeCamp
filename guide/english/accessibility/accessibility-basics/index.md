@@ -5,7 +5,7 @@ title: Accessibility Basics
 >
 > --Professor Severus Snape, Harry Potter Series
 
-
+//Basically I am doing this for a shirt
 Accessibility's role in development is essentially understanding the user's perspective and needs, and knowing that the web, and applications are a solution for people with disabilities.
 
 In this day and age, more and more new technologies are invented to make the life of developers, as well as users, easier. To what degree this is a good thing is a debate for another time, for now it's enough to say the toolbox of a developer, especially a web developer, is as ever-changing as the so called "dark arts" are according to our friend Snape.
