@@ -34,6 +34,10 @@ public class Car implements Vehicle {
 
 Now, there is a **ground rule** : The Class must implement **all** of the methods in the Interface. The methods must have _the exact same_ signature (name, parameters and exceptions) as described in the interface. The class _does not_ need to declare the fields though, only the methods.
 
+## Functional Interface
+
+Conceptually, a functional interface has exactly one abstract method. Since default methods have an implementation, they are not abstract. If an interface declares an abstract method overriding one of the public methods of java.lang.Object, that also does not count toward the interface's abstract method count since any implementation of the interface will have an implementation from java.lang.Object or elsewhere.
+
 ## Instances of an Interface
 
 Once you create a Java Class which `implements` any Interface, the object instance can be referenced as an instance of the Interface. This concept is similar to that of Inheritance instantiation.
