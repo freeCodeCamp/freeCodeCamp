@@ -21,3 +21,24 @@ It is important to understand that smelly code works, but is not of good quality
 * [Code Smells on Jeff Atwood's Blog (Coding Horror)](https://blog.codinghorror.com/code-smells/)
 * [Code Smells on Ward Cunningham's C2 Wiki](http://wiki.c2.com/?CodeSmell)
 * [Martin Fowler - Code Smell](https://martinfowler.com/bliki/CodeSmell.html)
+
+#### Examples:
+
+class Animal {
+  private int numberOfLegs;
+  ...
+    public getNumberOfLegs() {
+      return numberOfLegs;
+    }
+}
+class Cat extends Animal {
+  public getNumberOfLegs() {
+    super.getNumberOfLegs();
+  }
+}
+class GoldFish extends Animal {
+  ...
+    public getNumberOfLegs() {
+      throw NotImplementedException();
+    }
+}
