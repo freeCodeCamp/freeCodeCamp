@@ -67,6 +67,13 @@ The `box-shadow` property can take up to six values:
 ```
 ![Box-shadow examples](https://raw.githubusercontent.com/nawnaw7/FCC-guides-CSS3-shadows-images/master/CSS3%20Shadow%20Effects%20Images/box-shadows.png)
 
+##### Box Shadow As A Border
+You can also use the `box-shadow` property to create a border around an element. This allows you to have more control over the border style of an element, rather than using the `border` property:
+```css
+.div {
+        box-shadow: 0 0 0 3px #000 inset;
+}
+```
 
 #### More Information:
 * <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow?v=b' target='_blank' rel='nofollow'>MDN web docs</a>
