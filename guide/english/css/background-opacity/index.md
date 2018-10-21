@@ -52,6 +52,18 @@ Alternatively you can use a transparent rgba value like this:
  ```
 The example above sets the background to be black with 50% opacity. The last value of an rgba value is the alpha value. An alpha value of 1 equals 100%, and 0.5 (.5 for short) quals 50%. We use this method to add transparency to an element without affecting the content inside.
 
+**Hex Alpha**
+
+```css
+
+.class-name {
+  background: #00ff0080;
+ }
+ ```
+ The example above sets the background with a 50% opacity using hex alpha code. The alpha digit is the last two numbers `80`. The formats are sometimes referred to as #RRGGBBAA and #RGBA and the the AA part is a hex representation of 0-100. For example the hex alpha code of 0% is `00` and the hex alpha code of 100% is `FF`.
+[A codepen example to show hex alpha values](https://codepen.io/chriscoyier/pen/XjbzAW)
+ 
+
 [A codepen example to show background opacity ranges](https://codepen.io/lvcoulter/full/dVrwmK/)
 
 
