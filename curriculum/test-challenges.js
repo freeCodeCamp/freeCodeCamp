@@ -1,8 +1,9 @@
-/* eslint-disable no-eval, no-process-exit, no-unused-vars */
+/* eslint-disable no-process-exit, no-unused-vars */
 
 const { Observable } = require('rx');
 const tape = require('tape');
 const { flatten } = require('lodash');
+const vm = require('vm');
 const path = require('path');
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
@@ -32,8 +33,6 @@ function evaluateTest(
   test,
   tapTest
 ) {
-  let code = solution;
-
   /* NOTE: Provide dependencies for React/Redux challenges
                * and configure testing environment
                */
@@ -56,6 +55,14 @@ function evaluateTest(
       }
     });
     return o;
+  };
+
+  const sandbox = {
+    assert,
+    code: solution,
+    DeepEqual,
+    DeepFreeze,
+    test: test.testString
   };
 
   if (react || redux || reactRedux) {
@@ -97,16 +104,27 @@ function evaluateTest(
   }
 
   /* eslint-enable no-unused-vars */
+
+  // No support for async tests
+  const isAsync = s => s.includes('(async () => ');
+
   try {
-    (() => {
-      const evalString =
+    if (!!solution && !isAsync(test.testString)) {
+      const context = vm.createContext(sandbox);
+      const scriptString =
         head + '\n' + solution + '\n' + tail + '\n' + `
-        const testResult = eval(test.testString);
+        const testResult = eval(test);
         if (typeof testResult === 'function') {
           testResult(() => code);
         }`;
-      return eval(evalString);
-    })();
+      const script = new vm.Script(scriptString);
+      script.runInContext(context);
+    } else {
+      // For tests without a solution or async tests only check syntax
+      // eslint-disable-next-line
+      new vm.Script(test.testString);
+      tapTest.pass(test.text);
+    }
   } catch (e) {
     // console.log(head + '\n' + solution + '\n' + tail + '\n' + test.testString);
     // console.log(e);
@@ -132,41 +150,38 @@ function createTest({
   solutions = solutions.filter(solution => (
     !!solution && !noSolution.test(solution)
   ));
-  tests = tests.filter(test => !!test);
+  tests = tests.filter(test => !!test.testString);
 
-  // No support for async tests
-  const isAsync = s => s.includes('(async () => ');
-  if (isAsync(tests.join(''))) {
-    console.log(`Replacing Async Tests for Challenge ${title}`);
-    tests = tests.map(
-      challengeTestSource =>
-        isAsync(challengeTestSource)
-          ? "assert(true, 'message: great');"
-          : challengeTestSource
-    );
-  }
-  const { head, tail } = files
-    .reduce(
-      (result, file) => ({
-        head: result.head + ';' + file.head,
-        tail: result.tail + ';' + file.tail
-      }),
-      { head: '', tail: '' }
-    );
-  const plan = tests.length;
-  if (!plan) {
-    return Observable.just({
-      title,
-      type: 'missing'
-    });
+  let type;
+  const hasSolution = solutions.length > 0;
+  if (!hasSolution) {
+    type = 'missing';
+    solutions = [''];
   }
 
+  const { head, tail } = files.reduce(
+    (result, file) => ({
+      head: result.head + ';' + file.head,
+      tail: result.tail + ';' + file.tail
+    }),
+    { head: '', tail: '' }
+  );
+
+  // if title starts with [word] [number], for example `Problem 5`,
+  // tap-spec does not recognize it as test suite.
+  const titleRe = new RegExp('^([a-z]+\\s+)(\\d+.*)$', 'i');
+  const match = titleRe.exec(title);
+  if (match) {
+    title = `${match[1]}#${match[2]}`;
+  }
+
+  const plan = tests.length * solutions.length;
   return Observable.fromCallback(tape)(title)
     .doOnNext(
-      tapTest => (solutions.length ? tapTest.plan(plan) : tapTest.end())
+      tapTest => (plan ? tapTest.plan(plan) : tapTest.end())
     )
     .flatMap(tapTest => {
-      if (solutions.length <= 0) {
+      if (plan === 0) {
         return Observable.just({
           title,
           type: 'missing'
@@ -176,8 +191,6 @@ function createTest({
       return (
         Observable.just(tapTest)
           .map(addAssertsToTapTest)
-          /* eslint-disable no-unused-vars */
-          // assert and code used within the eval
           .doOnNext(assert => {
             solutions.forEach(solution => {
               tests.forEach(test => {
@@ -195,7 +208,7 @@ function createTest({
               });
             });
           })
-          .map(() => ({ title }))
+          .map(() => ({ title, type }))
       );
     });
 }
