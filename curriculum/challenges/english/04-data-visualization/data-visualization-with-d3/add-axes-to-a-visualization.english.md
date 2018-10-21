@@ -31,11 +31,11 @@ The scatter plot now has an x-axis. Create a y-axis in a variable named <code>yA
 ```yml
 tests:
   - text: Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.
-    testString: 'assert(code.match(/\.axisLeft\(yScale\)/g), "Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.");'
-  - text: 'The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).'
-    testString: 'assert($("g").eq(1).attr("transform").match(/translate\(60\s*?,\s*?0\)/g), "The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).");'
+    testString: assert(code.match(/\.axisLeft\(yScale\)/g), 'Your code should use the <code>axisLeft()</code> method with <code>yScale</code> passed as the argument.');
+  - text: The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).
+    testString: assert($('g').eq(1).attr('transform').match(/translate\(60\s*?,\s*?0\)/g), 'The y-axis <code>g</code> element should have a <code>transform</code> attribute to translate the axis by (60, 0).');
   - text: Your code should call the <code>yAxis</code>.
-    testString: 'assert(code.match(/\.call\(yAxis\)/g), "Your code should call the <code>yAxis</code>.");'
+    testString: assert(code.match(/\.call\(yAxis\)/g), 'Your code should call the <code>yAxis</code>.');
 
 ```
 

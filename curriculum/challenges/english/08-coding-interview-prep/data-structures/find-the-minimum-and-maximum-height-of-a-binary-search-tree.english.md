@@ -23,21 +23,21 @@ Instructions: Write two methods for our binary tree: <code>findMinHeight</code> 
 ```yml
 tests:
   - text: The <code>BinarySearchTree</code> data structure exists.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() }; return (typeof test == "object")})(), "The <code>BinarySearchTree</code> data structure exists.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() }; return (typeof test == 'object')})(), 'The <code>BinarySearchTree</code> data structure exists.');
   - text: The binary search tree has a method called <code>findMinHeight</code>.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMinHeight == "function")})(), "The binary search tree has a method called <code>findMinHeight</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMinHeight == 'function')})(), 'The binary search tree has a method called <code>findMinHeight</code>.');
   - text: The binary search tree has a method called <code>findMaxHeight</code>.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMaxHeight == "function")})(), "The binary search tree has a method called <code>findMaxHeight</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.findMaxHeight == 'function')})(), 'The binary search tree has a method called <code>findMaxHeight</code>.');
   - text: The binary search tree has a method called <code>isBalanced</code>.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; return (typeof test.isBalanced == "function")})(), "The binary search tree has a method called <code>isBalanced</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; return (typeof test.isBalanced == 'function')})(), 'The binary search tree has a method called <code>isBalanced</code>.');
   - text: The <code>findMinHeight</code> method returns the minimum height of the tree.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMinHeight !== "function") { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMinHeight() == 1); })(), "The <code>findMinHeight</code> method returns the minimum height of the tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMinHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMinHeight() == 1); })(), 'The <code>findMinHeight</code> method returns the minimum height of the tree.');
   - text: The <code>findMaxHeight</code> method returns the maximum height of the tree.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== "function") { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMaxHeight() == 5); })(), "The <code>findMaxHeight</code> method returns the maximum height of the tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return (test.findMaxHeight() == 5); })(), 'The <code>findMaxHeight</code> method returns the maximum height of the tree.');
   - text: An empty tree returns a height of <code>-1</code>.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== "function") { return false; }; return (test.findMaxHeight() == -1); })(), "An empty tree returns a height of <code>-1</code>.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.findMaxHeight !== 'function') { return false; }; return (test.findMaxHeight() == -1); })(), 'An empty tree returns a height of <code>-1</code>.');
   - text: The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.
-    testString: 'assert((function() { var test = false; if (typeof BinarySearchTree !== "undefined") { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== "function") { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced(); })(), "The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.");'
+    testString: assert((function() { var test = false; if (typeof BinarySearchTree !== 'undefined') { test = new BinarySearchTree() } else { return false; }; if (typeof test.isBalanced !== 'function') { return false; }; test.add(4); test.add(1); test.add(7); test.add(87); test.add(34); test.add(45); test.add(73); test.add(8); return test.isBalanced(); })(), 'The <code>isBalanced</code> method returns true if the tree is a balanced binary search tree.');
 
 ```
 
@@ -69,7 +69,36 @@ function BinarySearchTree() {
 <div id='js-teardown'>
 
 ```js
-console.info('after the test');
+BinarySearchTree.prototype = {
+    add: function(value) {
+        var node = this.root;
+        if (node == null) {
+          this.root = new Node(value);
+          return;
+        } else {
+            function searchTree(node) {
+                if (value < node.value) {
+                    if (node.left == null) {
+                        node.left = new Node(value);
+                        return;
+                    } else if (node.left != null) {
+                        return searchTree(node.left)
+                    };
+                } else if (value > node.value) {
+                    if (node.right == null) {
+                        node.right = new Node(value);
+                        return;
+                    } else if (node.right != null) {
+                        return searchTree(node.right);
+                    };
+                } else {
+                    return null;
+                };
+            };
+            return searchTree(node);
+        };
+    }
+};
 ```
 
 </div>
