@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Melhore a acessibilidade do campo de formulário com o elemento label
 ---
 
-## Description
+## Descrição
 <section id="description"> Melhorar a acessibilidade com marcação HTML semântica aplica-se ao uso de nomes de tag apropriados e de atributos. Os próximos desafios abrangem alguns cenários importantes usando atributos em formulários. A <code>label</code> rotula o texto para um item de controle de formulário específico, geralmente o nome ou rótulo para uma escolha. Isso vincula o significado ao item e torna a forma mais legível. O atributo <code>for</code> em uma tag <code>label</code> associa explicitamente esse <code>label</code> ao controle de formulário e é usado pelos leitores de tela. Você aprendeu sobre os botões de opção e seus rótulos em uma lição na seção HTML básico. Nessa lição, envolvemos o elemento de entrada do botão de opção dentro de um elemento de <code>label</code> junto com o texto da etiqueta para tornar o texto clicável. Outra maneira de conseguir isso é usando o atributo <code>for</code> conforme explicado nesta lição. O valor do atributo <code>for</code> deve ser o mesmo que o valor do atributo <code>id</code> do controle de formulário. Aqui está um exemplo: <blockquote> &lt;form&gt; <br> &lt;label for = &quot;name&quot;&gt; Nome: &lt;/ label&gt; <br> &lt;input type = &quot;text&quot; id = &quot;nome&quot; name = &quot;nome&quot;&gt; <br> &lt;/ form&gt; <br></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O Camper Cat espera muito interesse em seus posts inteligentes e quer incluir um formulário de inscrição por e-mail. Adicione um atributo <code>for</code> no <code>label</code> e-mail que corresponda ao <code>id</code> em seu campo de <code>input</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,7 +73,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 296: Bissetriz Angular e Tangente'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dado é um triângulo de lados inteiros ABC com BC ≤ AC ≤ AB.k é a bissetriz angular de ângulo ACB.m é a tangente em C ao círculo circunscrito de ABC.n é uma linha paralela a m até B. A intersecção de n ek é chamado E. <p> Quantos triângulos ABC com perímetro não superior a 100.000 existem de tal forma que BE possui comprimento integral? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler296();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

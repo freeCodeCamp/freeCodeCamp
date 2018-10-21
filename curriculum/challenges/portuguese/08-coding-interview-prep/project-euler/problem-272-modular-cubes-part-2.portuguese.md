@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 272: Cubos Modulares, parte 2'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para um número positivo n, defina C (n) como o número dos inteiros x, para o qual 1 <p> Quando n = 91, existem 8 valores possíveis para x, a saber: 9, 16, 22, 29, 53, 74, 79, 81. Assim, C (91) = 8. </p><p> Encontre a soma dos números positivos n≤1011 para os quais C (n) = 242. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler272();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

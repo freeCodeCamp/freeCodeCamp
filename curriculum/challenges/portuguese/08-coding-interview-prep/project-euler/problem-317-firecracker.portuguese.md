@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 317: Foguete'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um foguete explode a uma altura de 100 m acima do nível do solo. Ela se divide em um grande número de fragmentos muito pequenos, que se movem em todas as direções; todos eles têm a mesma velocidade inicial de 20 m / s. <p> Assumimos que os fragmentos se movem sem resistência do ar, em um campo gravitacional uniforme com g = 9,81 m / s2. </p><p> Encontre o volume (em m3) da região através da qual os fragmentos se movem antes de chegar ao solo. Dê sua resposta arredondada para quatro casas decimais. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler317();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

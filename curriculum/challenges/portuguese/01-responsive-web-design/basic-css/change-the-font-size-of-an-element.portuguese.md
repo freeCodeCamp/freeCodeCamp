@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alterar o tamanho da fonte de um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> O tamanho da fonte é controlado pela propriedade CSS do <code>font-size</code> da <code>font-size</code> , assim: <blockquote> h1 { <br> tamanho da fonte: 30px; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dentro da mesma tag <code>&lt;style&gt;</code> que contém sua classe <code>red-text</code> , crie uma entrada para <code>p</code> elementos e configure o <code>font-size</code> da <code>font-size</code> para 16 pixels ( <code>16px</code> ). </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,7 +76,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

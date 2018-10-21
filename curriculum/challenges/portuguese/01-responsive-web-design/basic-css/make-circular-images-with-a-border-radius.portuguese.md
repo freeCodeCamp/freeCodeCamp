@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Faça imagens circulares com um raio de borda
 ---
 
-## Description
+## Descrição
 <section id="description"> Além dos pixels, você também pode especificar o <code>border-radius</code> da <code>border-radius</code> usando uma porcentagem. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dê a sua foto de gato um <code>border-radius</code> de <code>border-radius</code> de <code>50%</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -99,7 +99,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 35: Primários Circulares'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número, 197, é chamado de primo circular porque todas as rotações dos dígitos: 197, 971 e 719 são elas próprias primárias. Existem treze primos abaixo de 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79 e 97. Quantos primos circulares estão abaixo de n, enquanto 100 &lt;= n &lt; = 1000000? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ circularPrimes(1000000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

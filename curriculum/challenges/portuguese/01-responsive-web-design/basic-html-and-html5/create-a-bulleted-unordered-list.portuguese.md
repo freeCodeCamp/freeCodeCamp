@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar uma lista não ordenada com marcadores
 ---
 
-## Description
+## Descrição
 <section id="description"> O HTML possui um elemento especial para criar <code>unordered lists</code> ou listas de estilo de ponto de marcador. As listas não ordenadas começam com um elemento <code>&lt;ul&gt;</code> abertura, seguido por qualquer número de elementos <code>&lt;li&gt;</code> . Finalmente, listas não ordenadas fecham com um <code>&lt;/ul&gt;</code> Por exemplo: <blockquote> &lt;ul&gt; <br> &lt;li&gt; leite &lt;/ li&gt; <br> &lt;li&gt; queijo &lt;/ li&gt; <br> &lt;/ ul&gt; </blockquote> criaria uma lista de estilo de ponto de bala de &quot;leite&quot; e &quot;queijo&quot;. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Remova os dois últimos elementos <code>p</code> e crie uma lista não ordenada de três coisas que os gatos adoram na parte inferior da página. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -54,7 +54,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

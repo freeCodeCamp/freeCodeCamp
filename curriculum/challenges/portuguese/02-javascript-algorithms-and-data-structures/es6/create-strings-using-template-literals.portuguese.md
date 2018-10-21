@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar strings usando modelos literais
 ---
 
-## Description
+## Descrição
 <section id="description"> Um novo recurso do ES6 é o <dfn>literal</dfn> do <dfn>modelo</dfn> . Este é um tipo especial de string que facilita a criação de strings complexas. Literais de modelo permitem criar strings de várias linhas e usar recursos de interpolação de strings para criar strings. Considere o código abaixo: <blockquote> const pessoa = { <br> nome: &quot;Zodíaco Hasbro&quot;, <br> idade: 56 anos <br> }; <br><br> // Template literal com multi-linha e interpolação de string <br> const greeting = `Olá, meu nome é $ {person.name}! <br> Tenho $ {person.age} anos de idade. <br><br> console.log (saudação); // prints <br> // Olá, meu nome é Zodíaco Hasbro! <br> // Eu tenho 56 anos. <br></blockquote> Muitas coisas aconteceram lá. Em primeiro lugar, o exemplo usa backticks ( <code>`</code> ), não aspas ( <code>&#39;</code> ou <code>&quot;</code> ), para envolver a string. Em segundo lugar, observe que a string é multilinha, tanto no código quanto na saída. Isso salva a inserção <code>\n</code> dentro de strings. A sintaxe <code>${variable}</code> usada acima é um marcador de posição. Basicamente, você não precisará mais usar a concatenação com o operador <code>+</code> Para adicionar variáveis ​​a strings, basta soltar a variável em uma string de template e envolvê-la com <code>${</code> e <code>}</code> . da mesma forma, você pode incluir outras expressões em sua string literal, por exemplo <code>${a + b}</code> . Esta nova forma de criar strings lhe dá mais flexibilidade para criar cordas robustas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a sintaxe literal de modelo com backticks para exibir cada entrada da matriz de <code>failure</code> do objeto de <code>result</code> . Cada entrada deve ser agrupada dentro de um elemento <code>li</code> com o <code>text-warning</code> atributo de classe e listada no <code>resultDisplayArray</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,7 +64,7 @@ const resultDisplayArray = makeList(result.failure);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

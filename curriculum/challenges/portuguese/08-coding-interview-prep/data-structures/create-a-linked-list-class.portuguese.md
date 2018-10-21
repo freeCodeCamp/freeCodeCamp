@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar uma classe de lista vinculada
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos criar uma classe de <code>linked list</code> . Cada lista encadeada deve começar com algumas propriedades básicas: uma <code>head</code> (o primeiro item na sua lista) e uma <code>length</code> (número de itens na sua lista). Às vezes, você verá implementações de listas vinculadas que incorporam uma <code>tail</code> para o último elemento da lista, mas, por enquanto, vamos continuar com essas duas. Sempre que adicionamos um elemento à lista vinculada, nossa propriedade <code>length</code> deve ser incrementada em um. Nós queremos ter uma maneira de adicionar itens à nossa lista vinculada, então o primeiro método que vamos criar é o método <code>add</code> . Se a nossa lista estiver vazia, adicionar um elemento à nossa lista encadeada é bastante simples: apenas envolvemos esse elemento em uma classe <code>Node</code> e atribuímos esse nó à <code>head</code> de nossa lista encadeada. Mas e se a nossa lista já tiver um ou mais membros? Como adicionamos um elemento à lista? Lembre-se de que cada nó em uma lista vinculada possui uma propriedade <code>next</code> . Para adicionar um nó à lista, encontre o último nó na lista e aponte a <code>next</code> propriedade do último nó em nosso novo nó. (Dica: você sabe que chegou ao final de uma lista vinculada quando a <code>next</code> propriedade de um nó é <code>null</code> .) </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva um método add que atribua o primeiro nó que você envia para a lista vinculada ao <code>head</code> ; depois disso, sempre que adicionar um nó, cada nó deve ser referenciado pela <code>next</code> propriedade do nó anterior. Nota A <code>length</code> da sua lista deve aumentar em um sempre que um elemento é adicionado à lista vinculada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,7 +68,7 @@ function LinkedList() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

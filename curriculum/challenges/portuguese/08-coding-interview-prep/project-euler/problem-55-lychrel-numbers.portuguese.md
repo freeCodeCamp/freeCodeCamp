@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 55: Números Lychrel'
 ---
 
-## Description
+## Descrição
 <section id="description"> Se tomarmos 47, inverta e adicione 47 + 74 = 121, que é palíndromo. Nem todos os números produzem palíndromos tão rapidamente. Por exemplo, 349 + 943 = 1292, 1292 + 2921 = 4213 4213 + 3124 = 7337 Ou seja, 349 levou três iterações para chegar a um palíndromo. Embora ninguém tenha provado isso ainda, acredita-se que alguns números, como o 196, nunca produzem um palíndromo. Um número que nunca forma um palíndromo através do processo reverso e adicionar é chamado de número Lychrel. Devido à natureza teórica destes números, e para o propósito deste problema, assumiremos que um número é Lychrel até prova em contrário. Além disso, você está informado de que, para cada número abaixo de dez mil, ele (i) se tornará um palíndromo em menos de cinquenta iterações, ou, (ii) ninguém, com todo o poder computacional que existe, conseguiu até agora mapeá-lo para um palíndromo. De fato, 10677 é o primeiro número a ser mostrado para requerer mais de cinquenta iterações antes de produzir um palíndromo: 4668731596684224866951378664 (53 iterações, 28 dígitos). Surpreendentemente, existem números palíndricos que são, eles próprios, números de Lychrel; O primeiro exemplo é 4994. Quantas Lychrel números estão lá abaixo <code>num</code> ? NOTA: Redação foi modificada ligeiramente em 24 de abril de 2007 para enfatizar a natureza teórica dos números Lychrel. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ countLychrelNumbers(10000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

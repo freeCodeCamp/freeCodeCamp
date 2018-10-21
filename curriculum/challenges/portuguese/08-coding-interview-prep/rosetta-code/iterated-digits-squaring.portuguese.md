@@ -6,15 +6,15 @@ videoUrl: ''
 localeTitle: Dígitos iterados em quadratura
 ---
 
-## Description
+## Descrição
 <section id="description"> Se você adicionar o quadrado dos dígitos de um número Natural (um número inteiro maior que zero), você sempre terminará com 1 ou 89: <pre> 15 -&gt; 26 -&gt; 40 -&gt; 16 -&gt; 37 -&gt; 58 -&gt; 89
 7 -&gt; 49 -&gt; 97 -&gt; 130 -&gt; 10 -&gt; 1 </pre> Escreva uma função que use um número como parâmetro e retorne 1 ou 89 depois de executar o processo mencionado. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -40,7 +40,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ function iteratedSquare (n) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

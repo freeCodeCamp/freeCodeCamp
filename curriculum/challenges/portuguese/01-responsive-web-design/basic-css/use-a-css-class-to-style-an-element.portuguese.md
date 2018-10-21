@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use uma classe CSS para estilizar um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> Classes são estilos reutilizáveis ​​que podem ser adicionados a elementos HTML. Aqui está um exemplo de declaração de classe CSS: <blockquote> &lt;style&gt; <br> .blue-text { <br> cor azul; <br> } <br> &lt;/ style&gt; </blockquote> Você pode ver que criamos uma classe CSS chamada <code>blue-text</code> na tag <code>&lt;style&gt;</code> . Você pode aplicar uma classe a um elemento HTML como este: <code>&lt;h2 class=&quot;blue-text&quot;&gt;CatPhotoApp&lt;/h2&gt;</code> Observe que no seu elemento de <code>style</code> CSS, os nomes de classe começam com um ponto. No atributo de classe dos elementos HTML, o nome da classe não inclui o período. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dentro do seu elemento de <code>style</code> , altere o seletor <code>h2</code> para <code>.red-text</code> e atualize o valor da <code>blue</code> de <code>blue</code> para <code>red</code> . Dê ao seu elemento <code>h2</code> o atributo <code>class</code> com um valor <code>&#39;red-text&#39;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -82,7 +82,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

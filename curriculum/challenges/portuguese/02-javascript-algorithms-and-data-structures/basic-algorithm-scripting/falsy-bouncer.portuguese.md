@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Bouncer Falsy
 ---
 
-## Description
+## Descrição
 <section id="description"> Remova todos os valores falsos de uma matriz. Os valores falsos em JavaScript são <code>false</code> , <code>null</code> , <code>0</code> , <code>&quot;&quot;</code> , <code>undefined</code> e <code>NaN</code> . Dica: tente converter cada valor em um booleano. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ bouncer([7, "ate", "", false, 9]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

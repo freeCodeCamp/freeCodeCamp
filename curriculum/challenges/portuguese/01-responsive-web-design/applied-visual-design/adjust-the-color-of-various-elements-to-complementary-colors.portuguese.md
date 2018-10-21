@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Ajuste a cor de vários elementos para cores complementares
 ---
 
-## Description
+## Descrição
 <section id="description"> O desafio Complementary Colours mostrou que cores opostas na roda de cores podem fazer a outra parecer mais vibrante quando colocadas lado a lado. No entanto, o forte contraste visual pode ser chocante se for usado em excesso em um site e, às vezes, dificultar a leitura do texto se ele for colocado em um plano de fundo de cores complementares. Na prática, uma das cores geralmente é dominante e o complemento é usado para chamar a atenção visual para determinado conteúdo da página. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Esta página usará um tom de cerceta ( <code>#09A7A1</code> ) como a cor dominante, e seu complemento laranja ( <code>#FF790E</code> ) para destacar visualmente os botões de inscrição. Altere a <code>background-color</code> de segundo plano do <code>header</code> e do <code>footer</code> de preto para a cor da cerceta. Em seguida, altere a <code>color</code> texto <code>h2</code> para marcar também. Finalmente, mude a <code>background-color</code> de fundo do <code>button</code> para a cor laranja. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -83,7 +83,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

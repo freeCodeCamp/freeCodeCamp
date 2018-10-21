@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Divide um decimal por outro com JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora vamos dividir um decimal por outro. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o valor <code>0.0</code> para que o <code>quotient</code> seja igual a <code>2.2</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

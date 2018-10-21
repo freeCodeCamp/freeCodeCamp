@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> É possível escrever cinco como uma soma de exatamente seis maneiras diferentes: 4 + 1 3 + 2 3 + 1 + 1 2 + 2 + 1 2 + 1 + 1 + 1 1 + 1 + 1 + 1 + 1 Quantos diferentes maneiras pode cem ser escrito como uma soma de pelo menos dois inteiros positivos? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler76();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

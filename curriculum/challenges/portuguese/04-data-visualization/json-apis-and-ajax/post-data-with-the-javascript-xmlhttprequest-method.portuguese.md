@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Postar dados com o método JavaScript XMLHttpRequest
 ---
 
-## Description
+## Descrição
 <section id="description"> Nos exemplos anteriores, você recebeu dados de um recurso externo. Você também pode enviar dados para um recurso externo, desde que esse recurso suporte solicitações AJAX e você saiba o URL. O método <code>XMLHttpRequest</code> do JavaScript também é usado para postar dados em um servidor. Aqui está um exemplo: <blockquote> req = new XMLHttpRequest (); <br> req.open (&quot;POST&quot;, url, true); <br> req.setRequestHeader (&#39;Content-Type&#39;, &#39;text / plain&#39;); <br> req.onreadystatechange = function () { <br> if (req.readyState == 4 &amp;&amp; req.status == 200) { <br> document.getElementsByClassName (&#39;message&#39;) [0] .innerHTML = req.responseText; <br> } <br> }; <br> req.send (userName); </blockquote> Você já viu vários desses métodos antes. Aqui, o método <code>open</code> inicializa a solicitação como um &quot;POST&quot; para a URL fornecida do recurso externo e usa o booleano <code>true</code> para torná-lo assíncrono. O método <code>setRequestHeader</code> define o valor de um cabeçalho de solicitação HTTP, que contém informações sobre o remetente e a solicitação. Deve ser chamado após o método <code>open</code> , mas antes do método <code>send</code> . Os dois parâmetros são o nome do cabeçalho e o valor a ser definido como o corpo desse cabeçalho. Em seguida, o ouvinte de evento <code>onreadystatechange</code> manipula uma alteração no estado da solicitação. Um <code>readyState</code> de 4 significa que a operação está completa e um <code>status</code> de 200 significa que foi uma solicitação bem-sucedida. O HTML do documento pode ser atualizado. Finalmente, o método <code>send</code> envia a solicitação com o valor <code>userName</code> , que foi dado pelo usuário no campo de <code>input</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Atualize o código para criar e enviar uma solicitação &quot;POST&quot;. Em seguida, digite seu nome na caixa de entrada e clique em &quot;Enviar mensagem&quot;. Sua função AJAX substituirá &quot;Responder pelo servidor estará aqui&quot;. com a resposta do servidor. Neste caso, é o seu nome acrescentado com &quot;ama gatos&quot;. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -99,7 +99,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

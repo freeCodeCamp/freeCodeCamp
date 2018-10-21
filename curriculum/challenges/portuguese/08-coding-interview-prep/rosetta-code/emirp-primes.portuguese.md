@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Bônus do Emirp
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Um emirp (primo soletrado para trás) são primos que quando invertidos (em sua representação decimal) são primos diferentes. </p><p> Escreva uma função que deve ser capaz de: Mostrar os primeiros <b>n</b> eprimes numbers.Show os números eprimes em um range.Show o número de eprimes em um range.Show o <b>n <sup>º</sup></b> número eprimes. </p><p> A função deve ter dois parâmetros. O primeiro receberá <b>n</b> ou o intervalo como um array. O segundo receberá um booleano, que especifica se a função retorna o eprimes como um array ou um único número (o número de primos no intervalo ou o <b><sup>enésimo tempo</sup></b> ). De acordo com os parâmetros, a função deve retornar um array ou um número. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ function emirps(n) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

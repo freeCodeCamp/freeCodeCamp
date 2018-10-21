@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use o provedor para conectar o Redux para reagir
 ---
 
-## Description
+## Descrição
 <section id="description"> No último desafio, você criou um repositório Redux para manipular a matriz de mensagens e criou uma ação para adicionar novas mensagens. A próxima etapa é fornecer acesso React ao armazenamento Redux e as ações necessárias para despachar atualizações. O React Redux fornece seu pacote <code>react-redux</code> para ajudar a realizar essas tarefas. O React Redux fornece uma pequena API com dois recursos principais: <code>Provider</code> e <code>connect</code> . Outro desafio abrange a <code>connect</code> . O <code>Provider</code> é um componente wrapper do React Redux que envolve seu aplicativo React. Este wrapper permite que você acesse as funções de <code>store</code> e <code>dispatch</code> do Redux em toda a árvore de componentes. <code>Provider</code> leva dois adereços, o armazenamento Redux e os componentes filhos do seu aplicativo. Definir o <code>Provider</code> para um componente de aplicativo pode ser assim: <blockquote> &lt;Loja do provedor = {store}&gt; <br> &lt;App /&gt; <br> &lt;/ Provedor&gt; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código agora mostra todo o seu código Redux e React dos últimos desafios. Inclui o repositório, as ações e o componente <code>DisplayMessages</code> do Redux. A única peça nova é o componente <code>AppWrapper</code> na parte inferior. Use este componente de nível superior para renderizar o <code>Provider</code> partir do <code>ReactRedux</code> e passe o repositório do Redux como prop. Em seguida, renderize o componente <code>DisplayMessages</code> como um filho. Quando terminar, você verá o componente React renderizado na página. <strong>Nota:</strong> React Redux está disponível como uma variável global aqui, então você pode acessar o Provider com notação de ponto. O código no editor tira proveito disso e o configura para um <code>Provider</code> constante para você usar no método de renderização <code>AppWrapper</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -132,7 +132,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

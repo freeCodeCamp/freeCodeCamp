@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 348: Soma de um quadrado e um cubo'
 ---
 
-## Description
+## Descrição
 <section id="description"> Muitos números podem ser expressos como a soma de um quadrado e um cubo. Alguns deles em mais de um sentido. <p> Considere os números palíndricos que podem ser expressos como a soma de um quadrado e um cubo, ambos maiores que 1, de exatamente 4 maneiras diferentes. Por exemplo, 5229225 é um número palíndromo e pode ser expresso exatamente de 4 maneiras diferentes: 22852 + 203 22232 + 663 18102 + 1253 11972 + 1563 </p><p> Encontre a soma dos cinco menores números palíndricos. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler348();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

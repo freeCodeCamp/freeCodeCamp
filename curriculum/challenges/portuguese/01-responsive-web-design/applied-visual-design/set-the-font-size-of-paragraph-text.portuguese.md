@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Definir o tamanho da fonte do texto de parágrafo
 ---
 
-## Description
+## Descrição
 <section id="description"> A propriedade <code>font-size</code> em CSS não está limitada a cabeçalhos, ela pode ser aplicada a qualquer elemento que contenha texto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o valor da propriedade de <code>font-size</code> da <code>font-size</code> para o parágrafo para 16px para torná-lo mais visível. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -47,7 +47,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

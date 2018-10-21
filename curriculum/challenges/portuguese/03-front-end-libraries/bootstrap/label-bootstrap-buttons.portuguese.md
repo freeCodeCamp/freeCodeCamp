@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Botões de bootstrap de etiqueta
 ---
 
-## Description
+## Descrição
 <section id="description"> Assim como rotulamos nossos poços, queremos rotular nossos botões. Dê a cada texto do seu elemento de <code>button</code> que corresponda ao seletor do seu <code>id</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -71,7 +71,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Como usar estratégias de passaporte
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . No arquivo index.pug fornecido, existe realmente um formulário de login. Ele foi anteriormente oculto por causa do javascript in-line <code>if showLogin</code> com o formulário recuado após ele. Antes de showLogin como uma variável nunca foi definida, ela nunca renderiza o bloco de código que contém o formulário. Vá em frente e no res.render para essa página, adicione uma nova variável ao objeto <code>showLogin: true</code> . Quando você atualiza sua página, você deve ver o formulário! Este formulário é configurado para <b>POST</b> on <em>/ login,</em> então é nesse local que devemos configurar para aceitar o POST e autenticar o usuário. Para este desafio, você deve adicionar a rota / login para aceitar uma solicitação POST. Para autenticar nesta rota, você precisa adicionar um middleware para fazer isso antes de enviar uma resposta. Isto é feito simplesmente passando outro argumento com o middleware antes de sua <code>function(req,res)</code> com sua resposta! O middleware a ser usado é <code>passport.authenticate(&#39;local&#39;)</code> . <em>O passport.authenticate</em> também pode ter algumas opções como um argumento como: <code>{ failureRedirect: &#39;/&#39; }</code> que é incrivelmente útil, então não deixe de adicioná-lo também. Como resposta após usar o middleware (que será chamado apenas se o middleware de autenticação passar) deve ser redirecionar o usuário para <em>/ profile</em> e essa rota deve renderizar a view &#39;profile.pug&#39;. Se a autenticação foi bem sucedida, o objeto do usuário será salvo no <em>req.user</em> . Agora, neste ponto, se você digitar um nome de usuário e senha no formulário, ele deve redirecionar para a home page <em>/</em> e no console do seu servidor deve ser &#39;Usuário {USERNAME} tentou fazer o login.&#39; já que atualmente não podemos fazer login de um usuário que não está registrado. Envie sua página quando achar que está certo. Se você estiver com erros, confira o projeto concluído até este ponto <a href="https://gist.github.com/JosephLivengood/8a335d1a68ed9170da02bb9d8f5b71d5">aqui</a> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,12 +27,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

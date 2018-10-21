@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Adicionar eixos a uma visualização
 ---
 
-## Description
+## Descrição
 <section id="description"> Outra maneira de melhorar o gráfico de dispersão é adicionar um eixo xe um eixo y. D3 tem dois métodos <code>axisLeft()</code> e <code>axisBottom()</code> para renderizar os eixos y e x, respectivamente. (Axes é a forma plural do eixo). Aqui está um exemplo para criar o eixo x baseado no <code>xScale</code> nos desafios anteriores: <code>const xAxis = d3.axisBottom(xScale);</code> O próximo passo é renderizar o eixo na tela do SVG. Para fazer isso, você pode usar um componente SVG geral, o elemento <code>g</code> . O <code>g</code> representa o grupo. Ao contrário de <code>rect</code> , <code>circle</code> e <code>text</code> , um eixo é apenas uma linha reta quando é renderizado. Porque é uma forma simples, usando <code>g</code> obras. A última etapa é aplicar um atributo <code>transform</code> para posicionar o eixo na tela do SVG no lugar certo. Caso contrário, a linha seria renderizada ao longo da borda da tela do SVG e não seria visível. O SVG suporta diferentes tipos de <code>transforms</code> , mas o posicionamento de um eixo precisa ser <code>translate</code> . Quando é aplicado ao elemento <code>g</code> , ele move todo o grupo para cima e para baixo pelos valores dados. Aqui está um exemplo: <blockquote> const xAxis = d3.axisBottom (xScale); <br><br> svg.append (&quot;g&quot;) <br> .attr (&quot;transformar&quot;, &quot;traduzir (0,&quot; + (h - preenchimento) + &quot;)&quot;) <br> .call (xAxis); </blockquote> O código acima coloca o eixo x na parte inferior da tela do SVG. Então é passado como um argumento para o método <code>call()</code> . O eixo y funciona da mesma maneira, exceto que o argumento de <code>translate</code> está no formato (x, 0). Como <code>translate</code> é uma string no método <code>attr()</code> acima, você pode usar a concatenação para incluir valores de variáveis ​​para seus argumentos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O gráfico de dispersão agora possui um eixo x. Crie um eixo y em uma variável chamada <code>yAxis</code> usando o método <code>axisLeft()</code> . Em seguida, renderize o eixo usando um elemento <code>g</code> . Certifique-se de usar um atributo <code>transform</code> para converter o eixo pela quantidade de unidades de preenchimento à direita e 0 unidades abaixo. Lembre-se de <code>call()</code> o eixo. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -110,7 +110,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

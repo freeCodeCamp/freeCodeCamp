@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Animar elementos continuamente usando uma contagem de animação infinita
 ---
 
-## Description
+## Descrição
 <section id="description"> Os desafios anteriores cobriam como usar algumas das propriedades de animação e a regra <code>@keyframes</code> . Outra propriedade de animação é a <code>animation-iteration-count</code> , que permite controlar quantas vezes você deseja percorrer a animação. Aqui está um exemplo: <code>animation-iteration-count: 3;</code> Nesse caso, a animação será interrompida após a execução 3 vezes, mas é possível fazer a animação ser executada continuamente definindo esse valor como infinito. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Para manter a bola quicando à direita em um loop contínuo, altere a propriedade <code>animation-iteration-count</code> para infinita. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -72,7 +72,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

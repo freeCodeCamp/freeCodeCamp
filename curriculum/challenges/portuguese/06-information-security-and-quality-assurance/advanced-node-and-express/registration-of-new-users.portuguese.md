@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Registro de novos usuários
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Agora precisamos permitir que um novo usuário em nosso site registre uma conta. No res.render da página inicial, adicione uma nova variável ao objeto transmitido ao <code>showRegistration: true</code> . Quando você atualiza sua página, você deve ver o formulário de registro que já foi criado no seu arquivo index.pug! Este formulário é configurado para <b>POST</b> on <em>/ register,</em> então é nesse local que devemos configurar para aceitar o POST e criar o objeto de usuário no banco de dados. A lógica da rota de registro deve ser a seguinte: Registrar o novo usuário&gt; Autenticar o novo usuário&gt; Redirecionar para / profile A lógica da etapa 1, registrando o novo usuário, deve ser a seguinte: Consultar banco de dados com um comando findOne&gt; se usuário é retornado então ele existe e redirecionar de volta para casa <em>ou</em> se o usuário é indefinido e não ocorre nenhum erro, em seguida, &#39;insertOne&#39; no banco de dados com o nome de usuário e senha e, enquanto não ocorrer erros, em seguida, chamar <em>próximo</em> a ir para o passo 2, autenticando a nova usuário, para o qual já escrevemos a lógica em nossa rota de POST / login. <pre> app.route (&#39;/ register&#39;)
   .post ((req, res, next) =&gt; {
       db.collection (&#39;users&#39;). findOne ({username: req.body.username}, função (err, user) {
@@ -34,10 +34,10 @@ localeTitle: Registro de novos usuários
     }
 ); </pre> Envie sua página quando achar que está certo. Se você estiver com erros, confira o projeto concluído até este ponto <a href="https://gist.github.com/JosephLivengood/6c47bee7df34df9f11820803608071ed">aqui</a> . </section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -57,12 +57,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

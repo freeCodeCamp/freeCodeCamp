@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar uma classe para destino com seletores jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Nem todas as classes precisam ter o CSS correspondente. Às vezes criamos classes apenas com o propósito de selecionar esses elementos mais facilmente usando jQuery. Dê a cada um dos seus elementos de <code>button</code> o <code>target</code> da turma. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -59,7 +59,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

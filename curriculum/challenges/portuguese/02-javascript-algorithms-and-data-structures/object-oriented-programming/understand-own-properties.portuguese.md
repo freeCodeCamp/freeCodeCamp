@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Compreenda as propriedades próprias
 ---
 
-## Description
+## Descrição
 <section id="description"> No exemplo a seguir, o construtor <code>Bird</code> define duas propriedades: <code>name</code> e <code>numLegs</code> : <blockquote> função Bird (name) { <br> this.name = nome; <br> this.numLegs = 2; <br> } <br><br> vamos pato = novo pássaro (&quot;Donald&quot;); <br> deixe canário = novo pássaro (&quot;Tweety&quot;); </blockquote> <code>name</code> e <code>numLegs</code> são chamados de propriedades <code>own</code> , porque são definidos diretamente no objeto da instância. Isso significa que <code>duck</code> e <code>canary</code> cada um tem sua própria cópia separada dessas propriedades. Na verdade, cada instância do <code>Bird</code> terá sua própria cópia dessas propriedades. O código a seguir adiciona todos os <code>own</code> propriedades de <code>duck</code> para a matriz <code>ownProps</code> : <blockquote> deixe ownProps = []; <br><br> para (deixe a propriedade no pato) { <br> if (duck.hasOwnProperty (propriedade)) { <br> ownProps.push (propriedade); <br> } <br> } <br><br> console.log (ownProps); // imprime [&quot;nome&quot;, &quot;numLegs&quot;] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione as <code>own</code> propriedades do <code>canary</code> ao array <code>ownProps</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ let ownProps = [];
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use Destructuring Assignment para atribuir variáveis ​​de matrizes
 ---
 
-## Description
+## Descrição
 <section id="description"> O ES6 torna os arrays de desestruturação tão fáceis quanto os objetos de desestruturação. Uma diferença fundamental entre o operador de propagação e a desestruturação de matriz é que o operador de distribuição descompacta todo o conteúdo de uma matriz em uma lista separada por vírgulas. Conseqüentemente, você não pode escolher quais elementos você deseja atribuir às variáveis. Destructuring uma matriz nos permite fazer exatamente isso: <blockquote> const [a, b] = [1, 2, 3, 4, 5, 6]; <br> console.log (a, b); // 1, 2 </blockquote> A variável <code>a</code> é atribuída ao primeiro valor da matriz e <code>b</code> é atribuído ao segundo valor da matriz. Também podemos acessar o valor em qualquer índice em uma matriz com desestruturação usando vírgulas para alcançar o índice desejado: <blockquote> const [a, b ,,, c] = [1, 2, 3, 4, 5, 6]; <br> console.log (a, b, c); // 1, 2, 5 </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use atribuição desestruturação para trocar os valores de <code>a</code> e <code>b</code> para que <code>a</code> recebe o valor armazenado em <code>b</code> e <code>b</code> recebe o valor armazenado em <code>a</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ console.log(b); // should be 8
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

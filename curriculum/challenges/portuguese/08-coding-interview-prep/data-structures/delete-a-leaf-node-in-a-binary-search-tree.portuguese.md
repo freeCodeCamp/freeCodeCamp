@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Excluir um nó de folha em uma árvore de pesquisa binária
 ---
 
-## Description
+## Descrição
 <section id="description"> Este é o primeiro de três desafios em que implementaremos uma operação mais difícil em árvores de pesquisa binária: exclusão. A exclusão é difícil porque a remoção de nós quebra os links na árvore. Esses links devem ser cuidadosamente restabelecidos para garantir que a estrutura da árvore binária seja mantida. Para algumas exclusões, isso significa que a árvore deve ser reorganizada. Em geral, você encontrará um dos três casos ao tentar excluir um nó: Nó Folha: O destino a excluir tem zero filhos. Um filho: o destino a excluir tem apenas um filho. Dois Filhos: O alvo a deletar tem dois nós filhos. Remover um nó de folha é fácil, nós simplesmente o removemos. Excluir um nó com um filho também é relativamente fácil, basta removê-lo e vinculá-lo ao filho do nó que excluímos. A remoção de um nó com dois filhos é mais difícil, no entanto, porque isso cria dois nós-filhos que precisam ser reconectados à árvore pai. Vamos ver como lidar com este caso no terceiro desafio. Além disso, você precisa estar ciente de alguns casos extremos ao manipular a exclusão. E se a árvore estiver vazia? E se o nó a excluir for o nó raiz? E se houver apenas dois elementos na árvore? Por enquanto, vamos lidar com o primeiro caso em que excluímos um nó de folha. Instruções: Crie um método em nossa árvore binária chamada <code>remove</code> . Vamos construir a lógica para nossa operação de exclusão aqui. Primeiro, você desejará criar uma função dentro de remove que encontre o nó que estamos tentando excluir na árvore atual. Se o nó não estiver presente na árvore, <code>remove</code> deve retornar <code>null</code> . Agora, se o nó de destino for um nó folha sem filhos, a referência pai a ele deverá ser definida como <code>null</code> . Isso efetivamente exclui o nó da árvore. Para fazer isso, você terá que acompanhar o pai do nó que estamos tentando excluir também. Também será útil criar uma maneira de rastrear o número de filhos que o nó de destino possui, pois isso determinará em qual caso nossa exclusão pertence. Vamos lidar com o segundo e terceiro casos nos próximos desafios. Boa sorte! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

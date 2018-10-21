@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Usar área de grade sem criar um modelo de áreas
 ---
 
-## Description
+## Descrição
 <section id="description"> A propriedade de <code>grid-area</code> você aprendeu no último desafio pode ser usada de outra maneira. Se sua grade não tiver um modelo de áreas para referência, você pode criar uma área em tempo real para que um item seja colocado assim: <blockquote> item1 {grid-area: 1/1/2/4; } </blockquote> Isso está usando os números de linha que você aprendeu anteriormente para definir onde a área para este item será. Os números no exemplo acima representam esses valores: <blockquote> área de grade: linha horizontal para iniciar em / linha vertical para iniciar em / linha horizontal para terminar em / linha vertical para terminar em; </blockquote> Assim, o item no exemplo consumirá as linhas entre as linhas 1 e 2 e as colunas entre as linhas 1 e 4. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Usando a propriedade <code>grid-area</code> , coloque o elemento com a classe <code>item5</code> entre a terceira e a quarta linhas horizontais e entre a primeira e a quarta linhas verticais. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -72,7 +72,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

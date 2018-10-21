@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 122: Exponenciação eficiente'
 ---
 
-## Description
+## Descrição
 <section id="description"> A maneira mais ingênua de calcular o n15 requer catorze multiplicações: n × n × ... × n = n15 Mas usando um método &quot;binário&quot; você pode computá-lo em seis multiplicações: n × n = n2n2 × n2 = n4n4 × n4 = n8n8 × n4 = n12n12 × n2 = n14n14 × n = n15 No entanto, ainda é possível calculá-lo em apenas cinco multiplicações: n × n = n2n2 × n = n3n3 × n3 = n6n6 × n6 = n12n12 × n3 = n15 Vamos definir m (k) ser o número mínimo de multiplicações para calcular nk; por exemplo m (15) = 5. Para 1 ≤ k ≤ 200, encontre ∑ m (k). </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler122();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

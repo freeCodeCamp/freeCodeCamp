@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Escrever funções de seta de ordem superior
 ---
 
-## Description
+## Descrição
 <section id="description"> É hora de vermos como as funções de flecha são poderosas ao processar dados. As funções de seta funcionam muito bem com funções de ordem superior, como <code>map()</code> , <code>filter()</code> e <code>reduce()</code> , que tomam outras funções como argumentos para o processamento de coleções de dados. Leia o seguinte código: <blockquote> FBPosts.filter (function (post) { <br> return post.thumbnail! == null &amp;&amp; post.shares&gt; 100 &amp;&amp; post.likes&gt; 500; <br> }) </blockquote> Nós escrevemos isso com <code>filter()</code> para pelo menos torná-lo um pouco legível. Agora, compare-o ao seguinte código que usa a sintaxe da função de seta: <blockquote> FBPosts.filter ((post) =&gt; post.thumbnail! == null &amp;&amp; post.shares&gt; 100 &amp;&amp; post.likes&gt; 500) </blockquote> Esse código é mais sucinto e realiza a mesma tarefa com menos linhas de código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a sintaxe da função de seta para calcular o quadrado de apenas os inteiros positivos (os números decimais não são inteiros) na matriz <code>realNumberArray</code> e armazene a nova matriz na variável <code>squaredIntegers</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ console.log(squaredIntegers);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

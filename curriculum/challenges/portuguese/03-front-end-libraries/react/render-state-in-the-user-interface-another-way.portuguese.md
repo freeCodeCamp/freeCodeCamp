@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Estado de renderização na interface do usuário Outra maneira
 ---
 
-## Description
+## Descrição
 <section id="description"> Existe outra maneira de acessar o <code>state</code> em um componente. No método <code>render()</code> , antes da instrução de <code>return</code> , você pode escrever JavaScript diretamente. Por exemplo, você poderia declarar funções, acessar dados do <code>state</code> ou <code>props</code> , executar cálculos nesses dados e assim por diante. Em seguida, você pode atribuir dados a variáveis ​​às quais você tem acesso na declaração de <code>return</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> No método de renderização <code>MyComponent</code> , defina uma <code>const</code> chamada <code>name</code> e defina-a como igual ao valor do nome no <code>state</code> do componente. Como você pode escrever JavaScript diretamente nessa parte do código, não é necessário incluir essa referência entre chaves. Em seguida, na instrução de retorno, renderize esse valor em uma tag <code>h1</code> usando o <code>name</code> da variável. Lembre-se, você precisa usar a sintaxe JSX (chaves para JavaScript) na declaração de retorno. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -74,7 +74,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

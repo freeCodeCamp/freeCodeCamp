@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Especifique o Número Exato de Correspondências
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode especificar o número inferior e superior de padrões com <code>quantity specifiers</code> usando chaves. Às vezes você só quer um número específico de correspondências. Para especificar um certo número de padrões, basta ter esse número entre as chaves. Por exemplo, para corresponder apenas à palavra <code>&quot;hah&quot;</code> com a letra <code>a</code> <code>3</code> vezes, seu regex seria <code>/ha{3}h/</code> . <blockquote> deixe A4 = &quot;haaaah&quot;; <br> deixe A3 = &quot;haaah&quot;; <br> seja A100 = &quot;h&quot; + &quot;a&quot; .repetição (100) + &quot;h&quot;; <br> deixe multipleHA = / ha {3} h /; <br> multipleHA.test (A4); // Retorna falso <br> multipleHA.test (A3); // Retorna true <br> multipleHA.test (A100); // Retorna falso </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o regex <code>timRegex</code> para coincidir com a palavra <code>&quot;Timber&quot;</code> somente quando tiver quatro letras <code>m</code> &#39;s. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ let result = timRegex.test(timStr);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

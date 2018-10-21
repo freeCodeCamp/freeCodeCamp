@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 358: números cíclicos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um número cíclico com n dígitos tem uma propriedade muito interessante: quando é multiplicado por 1, 2, 3, 4, ... n, todos os produtos têm exatamente os mesmos dígitos, na mesma ordem, mas rodados de forma circular ! <p> O menor número cíclico é o número de 6 dígitos 142857: 142857 × 1 = 142857 142857 × 2 = 285714 142857 × 3 = 428571 142857 × 4 = 571428 142857 × 5 = 714285 142857 × 6 = 857142 </p><p> O próximo número cíclico é 0588235294117647 com 16 dígitos: 0588235294117647 × 1 = 0588235294117647 0588235294117647 × 2 = 1176470588235294 0588235294117647 × 3 = 1764705882352941 ... 0588235294117647 × 16 = 9411764705882352 </p><p> Observe que, para números cíclicos, os zeros à esquerda são importantes. </p><p> Existe apenas um número cíclico para o qual os onze dígitos mais à esquerda são 00000000137 e os cinco dígitos mais à direita são 56789 (isto é, tem o formato 00000000137 ... 56789 com um número desconhecido de dígitos no meio). Encontre a soma de todos os seus dígitos. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler358();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

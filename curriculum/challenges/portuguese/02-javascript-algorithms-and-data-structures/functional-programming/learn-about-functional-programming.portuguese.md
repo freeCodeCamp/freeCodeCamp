@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Aprenda sobre a programação funcional
 ---
 
-## Description
+## Descrição
 <section id="description"> A programação funcional é um estilo de programação em que as soluções são funções simples e isoladas, sem nenhum efeito colateral fora do escopo da função. <code>INPUT -&gt; PROCESS -&gt; OUTPUT</code> A programação funcional é sobre: ​​1) Funções isoladas - não há dependência do estado do programa, que inclui variáveis ​​globais que estão sujeitas a alterações. 2) Funções puras - a mesma entrada sempre dá a mesma saída 3) Funções com efeitos colaterais limitados - quaisquer alterações, ou mutações, ao estado do programa fora da função são cuidadosamente controladas </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Os membros do freeCodeCamp adoram chá. No editor de código, os <code>prepareTea</code> e <code>getTea</code> funções já estão definidos para você. Chame a função <code>getTea</code> para obter 40 xícaras de chá para a equipe e armazene-as na variável <code>tea4TeamFCC</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -70,7 +70,7 @@ console.log(tea4TeamFCC);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a propriedade text-transform para tornar o texto maiúsculo
 ---
 
-## Description
+## Descrição
 <section id="description"> A propriedade <code>text-transform</code> em CSS é usada para alterar a aparência do texto. É uma maneira conveniente de garantir que o texto em uma página da Web seja exibido de forma consistente, sem a necessidade de alterar o conteúdo de texto dos elementos HTML reais. A tabela a seguir mostra como os diferentes valores de <code>text-transform</code> alteram o texto de exemplo &quot;Transform me&quot;. <table class="table table-striped"><thead><tr><th> Valor </th><th> Resultado </th></tr></thead><tbody><tr><td> <code>lowercase</code> </td> <td> &quot;me transformar&quot; </td></tr><tr><td> <code>uppercase</code> </td> <td> &quot;TRANSFORME-ME&quot; </td></tr><tr><td> <code>capitalize</code> </td> <td> &quot;Transforme-me&quot; </td></tr><tr><td> <code>initial</code> </td> <td> Use o valor padrão </td></tr><tr><td> <code>inherit</code> </td> <td> Use o valor de <code>text-transform</code> do elemento pai </td></tr><tr><td> <code>none</code> </td> <td> <strong>Padrão:</strong> use o texto original </td></tr></tbody></table></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Transforme o texto do <code>h4</code> em maiúsculo usando a propriedade <code>text-transform</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -87,7 +87,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

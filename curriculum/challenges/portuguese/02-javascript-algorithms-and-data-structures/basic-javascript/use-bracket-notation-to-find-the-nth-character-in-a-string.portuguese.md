@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a notação de suporte para localizar o caractere Nth em uma seqüência de caracteres
 ---
 
-## Description
+## Descrição
 <section id="description"> Você também pode usar a <dfn>notação de colchetes</dfn> para obter o caractere em outras posições dentro de uma string. Lembre-se de que os computadores começam a contar a <code>0</code> , portanto, o primeiro caractere é, na verdade, o caractere zeroth. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Vamos tentar definir <code>thirdLetterOfLastName</code> para igualar a terceira letra da variável <code>lastName</code> usando a notação de colchetes. <strong>Sugestão</strong> <br> Tente observar a declaração da variável <code>secondLetterOfFirstName</code> se você ficar preso. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

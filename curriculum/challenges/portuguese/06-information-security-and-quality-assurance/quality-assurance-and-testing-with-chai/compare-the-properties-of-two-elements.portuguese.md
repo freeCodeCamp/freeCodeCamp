@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Compare as propriedades de dois elementos
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .isAbove () =&gt; a&gt; b, .isAtMost () =&gt; a &lt;= b </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,12 +33,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

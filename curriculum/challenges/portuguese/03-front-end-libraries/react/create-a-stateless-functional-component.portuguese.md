@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Criar um componente funcional sem estado
 ---
 
-## Description
+## Descrição
 <section id="description"> Componentes são o núcleo do React. Tudo no React é um componente e aqui você aprenderá como criar um. Existem duas maneiras de criar um componente React. A primeira maneira é usar uma função JavaScript. Definir um componente dessa maneira cria um <em>componente funcional sem estado</em> . O conceito de estado em um aplicativo será abordado em desafios posteriores. Por enquanto, pense em um componente sem estado como um que pode receber dados e processá-los, mas não gerencia ou rastreia alterações nesses dados. (Abordaremos a segunda maneira de criar um componente React no próximo desafio.) Para criar um componente com uma função, basta escrever uma função JavaScript que retorne JSX ou <code>null</code> . Uma coisa importante a notar é que React requer que o nome da sua função comece com uma letra maiúscula. Aqui está um exemplo de um componente funcional sem estado que atribui uma classe HTML no JSX: <blockquote> // Depois de ser transpilado, o &lt;div&gt; terá uma classe CSS de &#39;customClass&#39; <br> const DemoComponent = function () { <br> Retorna ( <br> &lt;div className = &#39;customClass&#39; /&gt; <br> ); <br> }; </blockquote> Como um componente JSX representa o HTML, você pode colocar vários componentes juntos para criar uma página HTML mais complexa. Essa é uma das principais vantagens da arquitetura de componentes que o React fornece. Ele permite que você componha sua interface do usuário de vários componentes separados e isolados. Isso facilita a criação e manutenção de interfaces de usuário complexas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem uma função chamada <code>MyComponent</code> . Complete esta função para que ela retorne um único elemento <code>div</code> que contenha alguma cadeia de texto. <strong>Nota:</strong> O texto é considerado um filho do elemento <code>div</code> , portanto, você não poderá usar uma tag de fechamento automático. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -59,7 +59,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

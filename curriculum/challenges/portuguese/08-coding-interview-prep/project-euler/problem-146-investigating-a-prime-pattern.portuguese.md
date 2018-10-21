@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 146: Investigando um Padrão Prime'
 ---
 
-## Description
+## Descrição
 <section id="description"> O menor inteiro positivo n para o qual os números n2 + 1, n2 + 3, n2 + 7, n2 + 9, n2 + 13 e n2 + 27 são primos consecutivos é 10. A soma de todos esses inteiros n é inferior a um milhão é 1242490. <p> Qual é a soma de todos esses inteiros abaixo de 150 milhões? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler146();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

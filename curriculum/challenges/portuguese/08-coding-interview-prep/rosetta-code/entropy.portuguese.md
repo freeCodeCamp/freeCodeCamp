@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Entropia
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Calcule a entropia de Shannon H de uma determinada string de entrada. </p><p> Dada a variável aleatória discreta $ X $ que é uma cadeia de $ N $ &quot;símbolos&quot; (caracteres totais) consistindo de $ n $ caracteres diferentes (n = 2 para binário), a entropia de Shannon de X em bits / símbolo é: </p><p> $ H_2 (X) = - \ sum_ {i = 1} ^ n \ frac {count_i} {N} \ log_2 \ left (\ frac {count_i} {N} \ right) $ </p><p> onde $ count_i $ é a contagem do caractere $ n_i $. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ function entropy (s) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

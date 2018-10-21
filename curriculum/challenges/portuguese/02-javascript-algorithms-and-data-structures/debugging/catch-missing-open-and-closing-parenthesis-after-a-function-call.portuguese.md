@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Pegar falta abrir e fechar parêntese após uma chamada de função
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando uma função ou método não aceita nenhum argumento, você pode esquecer de incluir os parênteses de abertura e fechamento (vazios) ao chamá-lo. Muitas vezes o resultado de uma chamada de função é salvo em uma variável para outro uso em seu código. Esse erro pode ser detectado registrando-se valores de variáveis ​​(ou seus tipos) no console e vendo que um está configurado para uma referência de função, em vez do valor esperado que a função retorna. As variáveis ​​no exemplo a seguir são diferentes: <blockquote> function myFunction () { <br> retorno &quot;Você balança!&quot;; <br> } <br> vamos varOne = myFunction; // configurado para igualar uma função <br> deixe varTwo = myFunction (); // configurado para igualar a string &quot;You rock!&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrija o código para que o <code>result</code> da variável seja definido para o valor retornado da chamada da função <code>getNine</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ console.log(result);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

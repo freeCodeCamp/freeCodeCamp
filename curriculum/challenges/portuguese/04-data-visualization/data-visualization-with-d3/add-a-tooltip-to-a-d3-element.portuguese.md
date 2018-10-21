@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Adicionar uma dica de ferramenta a um elemento D3
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma dica de ferramenta mostra mais informações sobre um item em uma página quando o usuário passa o mouse sobre esse item. Existem várias maneiras de adicionar uma dica de ferramenta a uma visualização. Esse desafio usa o elemento de <code>title</code> SVG. pares de <code>title</code> com o método <code>text()</code> para adicionar dinamicamente dados às barras. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Anexe um elemento de <code>title</code> sob cada nó <code>rect</code> . Em seguida, chame o método <code>text()</code> com uma função de retorno de chamada para que o texto exiba o valor dos dados. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -44,7 +44,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -102,7 +102,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

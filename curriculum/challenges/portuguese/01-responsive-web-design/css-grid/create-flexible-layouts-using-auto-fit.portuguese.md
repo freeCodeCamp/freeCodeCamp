@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar layouts flexíveis usando o ajuste automático
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>auto-fit</code> funciona quase de forma idêntica ao <code>auto-fill</code> . A única diferença é que, quando o tamanho do contêiner excede o tamanho de todos os itens combinados, o <code>auto-fill</code> continua inserindo linhas ou colunas vazias e empurra seus itens para o lado, enquanto o <code>auto-fit</code> recolhe essas linhas ou colunas vazias e estende seus itens para ajuste o tamanho do recipiente. <strong>Nota</strong> <br> Se o seu contêiner não conseguir encaixar todos os itens em uma linha, ele será transferido para um novo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Na segunda grade, use o <code>auto-fit</code> com <code>repeat</code> para preencher a grade com colunas que tenham uma largura mínima de <code>60px</code> <code>1fr</code> e máxima de 1 <code>1fr</code> . Em seguida, redimensione a pré-visualização para ver a diferença. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -87,7 +87,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

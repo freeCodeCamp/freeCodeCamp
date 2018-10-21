@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entendendo as Diferenças entre o FreeCodeCamp e o Console do Navegador
 ---
 
-## Description
+## Descrição
 <section id="description"> Você deve ter notado que alguns desafios do freeCodeCamp JavaScript incluem seu próprio console. Este console se comporta de maneira um pouco diferente do console do navegador usado no último desafio. O desafio a seguir destina-se a destacar algumas das diferenças entre o console freeCodeCamp e o console do navegador. Primeiro, o console do navegador. Quando você carrega e executa um arquivo JavaScript comum em seu navegador, as instruções <code>console.log()</code> imprimem exatamente o que você diz para imprimir no console do navegador o número exato de vezes que você solicitou. Em seu editor de texto no navegador, o processo é um pouco diferente e pode ser confuso no início. Os valores passados ​​para o <code>console.log()</code> no bloco do editor de texto executam cada conjunto de testes, bem como mais uma vez para qualquer chamada de função que você tenha em seu código. Isso se presta a um comportamento interessante e pode atrapalhar você no início, porque um valor registrado que você espera ver apenas uma vez pode ser impresso várias vezes, dependendo do número de testes e dos valores sendo passados ​​para esses testes. Se você quiser ver apenas sua saída única e não precisar se preocupar em executar os ciclos de teste, use <code>console.clear()</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>console.log()</code> para imprimir as variáveis ​​no código onde indicado. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ let outputOne = "Try to get this to log only once to the browser console";
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

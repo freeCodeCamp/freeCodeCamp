@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Teste se um valor está abaixo ou pelo menos tão grande quanto outro
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .isBelow () =&gt; a &lt;b, .isAtLeast =&gt; a&gt; = b </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,12 +33,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

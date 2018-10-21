@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Começando pelo número 1 e indo para a direita no sentido horário, forma-se uma espiral de 5 por 5 como segue: 21 22 23 24 25 20 7 8 9 10 19 6 1 2 11 18 5 4 3 12 17 16 15 14 13 Pode-se verificar que a soma dos números nas diagonais é 101. Qual é a soma dos números nas diagonais em uma por n espiral formada da mesma maneira? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ spiralDiagonals(1001);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

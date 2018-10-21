@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Teste se um valor cai dentro de um intervalo específico
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . .proximadamente .proximadamente (real, esperado, alcance, [mensagem]) real = esperado +/- alcance Escolha o intervalo mínimo (3º parâmetro) para fazer o teste sempre passar deve ser menor que 1 </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,12 +29,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

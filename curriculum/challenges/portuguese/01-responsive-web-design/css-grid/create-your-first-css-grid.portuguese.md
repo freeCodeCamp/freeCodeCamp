@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Crie sua primeira grade CSS
 ---
 
-## Description
+## Descrição
 <section id="description"> Transforme qualquer elemento HTML em um contêiner de grade definindo sua propriedade de <code>display</code> como <code>grid</code> . Isso permite que você use todas as outras propriedades associadas ao CSS Grid. <strong>Nota</strong> <br> No CSS Grid, o elemento pai é referido como o <dfn>contêiner</dfn> e seus filhos são chamados de <dfn>itens</dfn> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a exibição do div com a classe de <code>container</code> para <code>grid</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -64,7 +64,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Manipular matrizes com unshift ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Não apenas você pode <code>shift</code> elementos do início de um array, você também pode <code>unshift</code> elementos para o início de um array, isto é, adicionar elementos na frente do array. <code>.unshift()</code> funciona exatamente como <code>.push()</code> , mas em vez de adicionar o elemento no final da matriz, <code>unshift()</code> adiciona o elemento no início da matriz. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione <code>[&quot;Paul&quot;,35]</code> ao início da variável <code>myArray</code> usando <code>unshift()</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

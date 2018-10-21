@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Use comentários para esclarecer o código
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando começarmos a usar o jQuery, modificaremos os elementos HTML sem precisar alterá-los em HTML. Vamos nos certificar de que todos saibam que não devem modificar nada desse código diretamente. Lembre-se de que você pode começar um comentário com <code>&lt;!--</code> e terminar um comentário com <code>--&gt;</code> Adicionar um comentário na parte superior do seu HTML que diz <code>Only change code above this line.</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,7 +67,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

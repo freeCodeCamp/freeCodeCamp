@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 123: Resíduos quadrados principais'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja pn o nono primo: 2, 3, 5, 7, 11, ..., e seja r o resto quando (pn − 1) n + (pn + 1) n é dividido por pn2. Por exemplo, quando n = 3, p3 = 5 e 43 + 63 = 280 ≡ 5 mod 25. O menor valor de n para o qual o restante excede 109 é 7037. Encontre o menor valor de n para o qual o restante excede primeiro 1010 </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler123();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

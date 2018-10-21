@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 241: Quocientes de Perfeição'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para um inteiro positivo n, seja σ (n) a soma de todos os divisores de n, portanto, σ (6) = 1 + 2 + 3 + 6 = 12. <p> Um número perfeito, como você provavelmente sabe, é um número com σ (n) = 2n. </p><p> Vamos definir o quociente de perfeição de um inteiro positivo asp (n) = σ (n) n. Encontre a soma de todos os inteiros positivos n ≤ 1018 para os quais p (n) tem a forma k + 1⁄2, onde k é um inteiro. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler241();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

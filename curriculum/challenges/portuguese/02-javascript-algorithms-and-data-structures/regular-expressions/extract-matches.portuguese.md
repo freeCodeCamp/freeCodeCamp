@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Extrair correspondências
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, você só verifica se um padrão existe ou não em uma string. Você também pode extrair as correspondências reais encontradas com o método <code>.match()</code> . Para usar o método <code>.match()</code> , aplique o método em uma string e passe o regex dentro dos parênteses. Aqui está um exemplo: <blockquote> &quot;Olá, mundo!&quot;. Match (/ Hello /); <br> // Retorna [&quot;Olá&quot;] <br> vamos ourStr = &quot;Expressões regulares&quot;; <br> vamos ourRegex = / expressões /; <br> ourStr.match (ourRegex); <br> // Retorna [&quot;expressões&quot;] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Aplique o método <code>.match()</code> para extrair a <code>coding</code> palavras. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let result = extractStr; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

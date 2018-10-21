@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 279: Triângulos com lados integrais e um ângulo integral'
 ---
 
-## Description
+## Descrição
 <section id="description"> Quantos triângulos existem com lados integrais, pelo menos um ângulo integral (medido em graus) e um perímetro que não exceda 108? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler279();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

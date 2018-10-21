@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Adicionando uma opção padrão em instruções de troca
 ---
 
-## Description
+## Descrição
 <section id="description"> Em uma instrução <code>switch</code> , você pode não conseguir especificar todos os valores possíveis como instruções <code>case</code> . Em vez disso, você pode adicionar a instrução <code>default</code> que será executada se nenhuma instrução <code>case</code> correspondente for encontrada. Pense nisso como a final <code>else</code> declaração em um <code>if/else</code> cadeia. Uma declaração <code>default</code> deve ser o último caso. <blockquote> switch (num) { <br> valor do caso1: <br> statement1; <br> pausa; <br> valor do caso2: <br> statement2; <br> pausa; <br> ... <br> padrão: <br> defaultStatement; <br> pausa; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva uma instrução switch para definir a <code>answer</code> para as seguintes condições: <br> <code>&quot;a&quot;</code> - &quot;maçã&quot; <br> <code>&quot;b&quot;</code> - &quot;pássaro&quot; <br> <code>&quot;c&quot;</code> - &quot;gato&quot; <br> <code>default</code> - &quot;stuff&quot; </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,7 +66,7 @@ switchOfStuff(1);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

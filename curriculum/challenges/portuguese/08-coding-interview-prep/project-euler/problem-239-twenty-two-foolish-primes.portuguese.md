@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 239: Vinte e dois Primes Tolos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um conjunto de discos numerados de 1 a 100 são colocados em uma linha em ordem aleatória. <p> Qual é a probabilidade de termos um desarranjo parcial de tal forma que exatamente 22 discos de números primos sejam encontrados longe de suas posições naturais? (Qualquer número de discos não primos também pode ser encontrado dentro ou fora de suas posições naturais.) </p><p> Dê sua resposta arredondada para 12 lugares atrás do ponto decimal no formulário 0.abcdefghijkl. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler239();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Achado não é roubado
 ---
 
-## Description
+## Descrição
 <section id="description"> Crie uma função que examine uma matriz (primeiro argumento) e retorne o primeiro elemento da matriz que passa por um teste de verdade (segundo argumento). Se nenhum elemento passar no teste, retorne indefinido. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ findElement([1, 2, 3, 4], num => num % 2 === 0);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

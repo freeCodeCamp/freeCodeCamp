@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Excluir suas funções do jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Essas animações foram legais no começo, mas agora elas estão meio que distraindo. Exclua todas as três funções do jQuery da função <code>document ready function</code> , mas deixe a <code>document ready function</code> intacta. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -82,7 +82,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

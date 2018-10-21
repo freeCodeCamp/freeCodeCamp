@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Data discordia
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Converta uma data determinada do <a href="https://en.wikipedia.org/wiki/Gregorian calendar" title="wp: calendário gregoriano">calendário gregoriano</a> para o <a href="https://en.wikipedia.org/wiki/Discordian calendar" title="wp: calendário discordiano">calendário discordiano</a> . </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ function discordianDate (date) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

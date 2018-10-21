@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder a todos os não-números
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio mostrou como procurar dígitos usando o atalho <code>\d</code> com letra minúscula <code>d</code> . Você também pode pesquisar por não-dígitos usando um atalho semelhante que use um <code>D</code> maiúsculo. O atalho para procurar caracteres não dígitos é <code>\D</code> Isso é igual à classe de caracteres <code>[^0-9]</code> , que procura um único caractere que não seja um número entre zero e nove. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a classe de caractere abreviada para não dígitos <code>\D</code> para contar quantos não-dígitos estão em títulos de filme. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ let result = numString.match(noNumRegex).length;
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

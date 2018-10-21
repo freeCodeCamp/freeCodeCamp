@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Uma empresa decide que, sempre que o Natal cai no domingo, eles darão aos seus empregados todos os feriados extra pagos para que, juntamente com feriados, os trabalhadores não precisem trabalhar na semana seguinte (entre 25 de dezembro e 1 de janeiro). </p><p> Tarefa: </p><p> Escreva uma função que tenha um ano inicial e um ano final e retorne uma matriz de todos os anos em que o dia 25 de dezembro será um domingo. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

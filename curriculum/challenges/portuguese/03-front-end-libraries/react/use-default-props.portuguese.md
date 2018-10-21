@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use Adereços Padrão
 ---
 
-## Description
+## Descrição
 <section id="description"> Reagir também tem uma opção para definir adereços padrão. Você pode atribuir props padrão a um componente como uma propriedade no próprio componente e React atribui o prop padrão, se necessário. Isso permite que você especifique o valor de um objeto propício se nenhum valor for explicitamente fornecido. Por exemplo, se você declarar <code>MyComponent.defaultProps = { location: &#39;San Francisco&#39; }</code> , você definiu um local de localização definido como a cadeia <code>San Francisco</code> , a menos que você especifique o contrário. React atribui props padrão se os props forem indefinidos, mas se você passar <code>null</code> como o valor de um prop, ele permanecerá <code>null</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código mostra um componente <code>ShoppingCart</code> . Definir props padrão neste componente que especificam os <code>items</code> prop com um valor de <code>0</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

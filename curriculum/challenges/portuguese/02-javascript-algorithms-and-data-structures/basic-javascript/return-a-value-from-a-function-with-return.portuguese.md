@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Retornar um valor de uma função com retorno
 ---
 
-## Description
+## Descrição
 <section id="description"> Podemos passar valores para uma função com <dfn>argumentos</dfn> . Você pode usar uma instrução de <code>return</code> para enviar um valor de volta de uma função. <strong>Exemplo</strong> <blockquote> function plusThree (num) { <br> return num + 3; <br> } <br> var resposta = mais três (5); // 8 </blockquote> <code>plusThree</code> aceita um <dfn>argumento</dfn> para <code>num</code> e retorna um valor igual a <code>num + 3</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma função <code>timesFive</code> que aceite um argumento, multiplique por <code>5</code> e retorne o novo valor. Veja a última linha no editor para um exemplo de como você pode testar sua função <code>timesFive</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.log(minusSeven(10));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

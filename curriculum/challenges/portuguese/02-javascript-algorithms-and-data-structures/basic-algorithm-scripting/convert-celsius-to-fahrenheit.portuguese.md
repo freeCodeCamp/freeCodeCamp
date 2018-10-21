@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Converter Celsius para Fahrenheit
 ---
 
-## Description
+## Descrição
 <section id="description"> O algoritmo para converter de Celsius para Fahrenheit é a temperatura em Celsius vezes <code>9/5</code> , mais <code>32</code> . Você recebe uma variável <code>celsius</code> representando uma temperatura em Celsius. Use a variável <code>fahrenheit</code> já definida e atribua a temperatura Fahrenheit equivalente à temperatura Celsius especificada. Use o algoritmo mencionado acima para ajudar a converter a temperatura Celsius em Fahrenheit. Não se preocupe muito com as declarações de função e retorno, pois elas serão abordadas em desafios futuros. Por enquanto, use apenas operadores que você já aprendeu. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ convertToF(30);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

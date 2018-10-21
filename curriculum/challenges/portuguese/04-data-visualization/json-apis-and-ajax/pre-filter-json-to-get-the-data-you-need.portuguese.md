@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Pré-filtre JSON para obter os dados de que você precisa
 ---
 
-## Description
+## Descrição
 <section id="description"> Se você não quiser renderizar todas as fotos de gatos que você recebe da FreeCodeCamp Cat Photo API, é possível pré-filtrar o JSON antes de fazer um loop por ele. Dado que os dados JSON são armazenados em uma matriz, você pode usar o método <code>filter</code> para filtrar o gato cuja chave &quot;id&quot; tem um valor de 1. Aqui está o código para fazer isso: <blockquote> json = json.filter (function (val) { <br> retorno (val.id! == 1); <br> }); </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o código para <code>filter</code> os dados do json para remover o gato com o valor &quot;id&quot; de 1. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -99,7 +99,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

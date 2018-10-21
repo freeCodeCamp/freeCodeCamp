@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a propriedade skewX da transformação de CSS para inclinar um elemento ao longo do eixo X
 ---
 
-## Description
+## Descrição
 <section id="description"> A próxima função da propriedade <code>transform</code> é <code>skewX()</code> , que inclina o elemento selecionado ao longo de seu eixo X (horizontal) em um determinado grau. O código a seguir inclina o elemento de parágrafo em -32 graus ao longo do eixo X. <blockquote> p { <br> transformar: skewX (-32deg); <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Incline o elemento com o ID do <code>bottom</code> em 24 graus ao longo do eixo X usando a propriedade <code>transform</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -56,7 +56,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

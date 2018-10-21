@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 439: Soma da soma dos divisores'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja d (k) a soma de todos os divisores de k. Definimos a função S (N) = ∑1≤i≤N ∑1≤j≤Nd (i · j). Por exemplo, S (3) = d (1) + d (2) + d (3) + d (2) + d (4) + d (6) + d (3) + d (6) + d ( 9) = 59. <p> Você está dado que S (103) = 563576517282 e S (105) mod 109 = 215766508. Encontre S (1011) mod 109. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler439();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

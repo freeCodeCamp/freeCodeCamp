@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o método Some para verificar se todos os elementos em uma matriz atendem a um critério
 ---
 
-## Description
+## Descrição
 <section id="description"> O método <code>some</code> funciona com arrays para verificar se <em>algum</em> elemento passa por um teste específico. Retorna um valor booleano - <code>true</code> se algum dos valores atender aos critérios, <code>false</code> se não. Por exemplo, o código a seguir verificaria se algum elemento na matriz de <code>numbers</code> é menor que 10: <blockquote> números var = [10, 50, 8, 220, 110, 11]; <br> numbers.some (function (currentValue) { <br> return currentValue &lt;10; <br> }); <br> // Retorna true </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método <code>some</code> dentro da função <code>checkPositive</code> para verificar se algum elemento em <code>arr</code> é positivo. A função deve retornar um valor booleano. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ checkPositive([1, 2, 3, -4, 5]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

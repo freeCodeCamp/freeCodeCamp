@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 281: Coberturas de Pizza'
 ---
 
-## Description
+## Descrição
 <section id="description"> Você é dado uma pizza (círculo perfeito) que foi cortado em m · n partes iguais e você quer ter exatamente um topping em cada fatia. <p> Seja f (m, n) o número de maneiras que você pode ter coberturas na pizza com m coberturas diferentes (m ≥ 2), usando cada cobertura em exatamente n fatias (n ≥ 1). Reflexões são consideradas distintas, rotações não são. </p><p> Assim, por exemplo, f (2,1) = 1, f (2,2) = f (3,1) = 2 e f (3,2) = 16. f (3,2) é mostrado abaixo: </p><p> Encontre a soma de todos f (m, n) tal que f (m, n) ≤ 1015. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler281();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

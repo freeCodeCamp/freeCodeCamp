@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 258: Uma seqüência de Fibonacci retardada'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma sequência é definida como: <p> gk = 1, para 0 ≤ k ≤ 1999 gk = gk-2000 + gk-1999, para k ≥ 2000. Encontre gk mod 20092010 para k = 1018. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler258();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Gerar alfabeto ASCII de letras minúsculas
 ---
 
-## Description
+## Descrição
 <section id="description"> Escreva uma função para gerar uma matriz de caracteres ASCII em minúsculas, para um determinado intervalo. Por exemplo: para o intervalo de 1 a 4, a função deve retornar <code>[&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

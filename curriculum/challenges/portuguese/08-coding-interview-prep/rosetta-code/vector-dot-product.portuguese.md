@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Produto de ponto de vetor
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Um vetor é definido como tendo três dimensões como representadas por uma coleção ordenada de três números: (X, Y, Z). </p><p> Tarefa: </p><pre> <code>Write a function that takes any numbers of vectors (arrays) as input and computes their dot product.</code> </pre><p> Sua função deve retornar <code>null</code> em entradas inválidas (isto é, vetores de diferentes comprimentos). </p><p></p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ function dotProduct() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

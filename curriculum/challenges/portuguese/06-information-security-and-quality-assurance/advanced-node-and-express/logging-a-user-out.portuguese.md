@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Como desconectar um usuário
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Criar a lógica de logout é fácil. A rota deve apenas não autenticar o usuário e redirecionar para a home page, em vez de renderizar qualquer visualização. No passaporte, não autenticar um usuário é tão fácil quanto apenas chamar <code>req.logout();</code> antes de redirecionar. <pre> app.route (&#39;/ logout&#39;)
   .get ((req, res) =&gt; {
       req.logout ();
@@ -17,11 +17,11 @@ localeTitle: Como desconectar um usuário
     .send (&#39;Não encontrado&#39;);
 }); </pre> Envie sua página quando achar que está certo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,12 +35,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Executar testes funcionais em terminais da API usando o Chai-HTTP II
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . Substitua assert.fail (). Teste o status e a resposta de texto. Faça o teste passar. Enviar seu nome na consulta anexando? Name = <your_name> , o endpoint com responde com &#39;olá <your_name> &#39;. </your_name></your_name></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,12 +29,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

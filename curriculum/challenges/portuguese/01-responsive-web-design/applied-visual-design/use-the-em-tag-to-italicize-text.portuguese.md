@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o tag em para colocar em itálico
 ---
 
-## Description
+## Descrição
 <section id="description"> Para enfatizar o texto, você pode usar a tag <code>em</code> . Isso exibe o texto em itálico, pois o navegador aplica o CSS de <code>font-style: italic;</code> de <code>font-style: italic;</code> para o elemento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Enrole uma tag <code>em</code> torno do conteúdo da tag de parágrafo para dar ênfase. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,7 +79,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

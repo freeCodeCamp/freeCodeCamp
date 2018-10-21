@@ -9,14 +9,14 @@ videoUrl: ''
 localeTitle: Entradas de texto de estilo como controles de formulário
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode adicionar o ícone Font Awesome do <code>fa-paper-plane</code> adicionando <code>&lt;i class=&quot;fa fa-paper-plane&quot;&gt;&lt;/i&gt;</code> dentro do elemento de <code>button</code> submit. Dê ao campo de entrada de texto do seu formulário uma classe de <code>form-control</code> de <code>form-control</code> . Dê ao botão de envio do seu formulário as classes <code>btn btn-primary</code> . Também dê a este botão o ícone Font Awesome do <code>fa-paper-plane</code> . Todos os elementos textuais de <code>&lt;input&gt;</code> , <code>&lt;textarea&gt;</code> e <code>&lt;select&gt;</code> com a classe <code>.form-control</code> têm uma largura de 100%. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -121,7 +121,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

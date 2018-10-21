@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Crie uma barra para cada ponto de dados no conjunto
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio adicionou apenas um retângulo ao elemento <code>svg</code> para representar uma barra. Aqui, você combinará o que aprendeu até agora sobre formas <code>data()</code> , <code>enter()</code> e SVG para criar e anexar um retângulo para cada ponto de dados no <code>dataset</code> . Um desafio anterior mostrou o formato de como criar e anexar um <code>div</code> para cada item no <code>dataset</code> : <blockquote> d3.select (&quot;body&quot;). selectAll (&quot;div&quot;) <br> .data (conjunto de dados) <br> .entrar() <br> .append (&quot;div&quot;) </blockquote> Existem algumas diferenças trabalhando com elementos <code>rect</code> vez de <code>divs</code> . Os <code>rects</code> devem ser anexados a um elemento <code>svg</code> , não diretamente ao <code>body</code> . Além disso, você precisa dizer ao D3 onde colocar cada <code>rect</code> dentro da área <code>svg</code> . O posicionamento da barra será coberto no próximo desafio. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use os métodos <code>data()</code> , <code>enter()</code> e <code>append()</code> para criar e anexar um <code>rect</code> para cada item no <code>dataset</code> . As barras devem exibir todas em cima umas das outras, isso será corrigido no próximo desafio. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -71,7 +71,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

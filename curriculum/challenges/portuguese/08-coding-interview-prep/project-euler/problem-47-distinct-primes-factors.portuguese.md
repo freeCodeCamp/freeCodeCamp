@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 47: Fatores primos distintos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os dois primeiros números consecutivos que possuem dois fatores primos distintos são: <div style="padding-left: 4em;"> 14 = 2 × 7 </div><div style="padding-left: 4em;"> 15 = 3 × 5 </div> Os primeiros três números consecutivos a ter três fatores primos distintos são: <div style="padding-left: 4em;"> 644 = 2² × 7 × 23 </div><div style="padding-left: 4em;"> 645 = 3 × 5 × 43 </div><div style="padding-left: 4em;"> 646 = 2 × 17 × 19 </div> Encontre os primeiros quatro inteiros consecutivos para ter quatro fatores primos distintos cada. Qual é o primeiro desses números? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ distinctPrimeFactors(4, 4);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

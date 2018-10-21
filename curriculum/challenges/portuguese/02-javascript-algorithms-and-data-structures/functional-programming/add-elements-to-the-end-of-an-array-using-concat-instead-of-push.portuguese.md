@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar elementos ao final de um array usando concat Em vez de push
 ---
 
-## Description
+## Descrição
 <section id="description"> A programação funcional é toda sobre a criação e uso de funções não mutantes. O último desafio introduziu o método <code>concat</code> como uma maneira de combinar matrizes em um novo sem alterar os arrays originais. Compare <code>concat</code> no método <code>push</code> . <code>Push</code> adiciona um item ao final do mesmo array em que é chamado, o que modifica esse array. Aqui está um exemplo: <blockquote> var arr = [1, 2, 3]; <br> arr.push ([4, 5, 6]); <br> // arr é alterado para [1, 2, 3, [4, 5, 6]] <br> // Não é a maneira funcional de programação </blockquote> <code>Concat</code> oferece uma maneira de adicionar novos itens ao final de um array sem nenhum efeito colateral mutante. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a função <code>nonMutatingPush</code> para que use a <code>concat</code> para adicionar <code>newItem</code> ao final do <code>original</code> vez de <code>push</code> . A função deve retornar uma matriz. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ nonMutatingPush(first, second);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

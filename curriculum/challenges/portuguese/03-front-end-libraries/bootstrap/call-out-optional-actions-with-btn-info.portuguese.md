@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Chame as ações opcionais com btn-info
 ---
 
-## Description
+## Descrição
 <section id="description"> O Bootstrap vem com várias cores pré-definidas para botões. A classe <code>btn-info</code> é usada para chamar a atenção para ações opcionais que o usuário pode executar. Crie um novo botão Bootstrap em nível de bloco abaixo do botão &quot;Curtir&quot; com o texto &quot;Info&quot;, e adicione as classes <code>btn-info</code> e <code>btn-block</code> do Bootstrap a ele. Observe que esses botões ainda precisam das classes <code>btn</code> e <code>btn-block</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -104,7 +104,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

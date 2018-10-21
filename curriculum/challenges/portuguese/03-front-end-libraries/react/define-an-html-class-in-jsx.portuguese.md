@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Definir uma classe HTML no JSX
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que você está se sentindo confortável escrevendo JSX, talvez esteja se perguntando como isso difere do HTML. Até agora, pode parecer que HTML e JSX são exatamente os mesmos. Uma diferença fundamental no JSX é que você não pode mais usar a <code>class</code> word para definir classes HTML. Isso ocorre porque a <code>class</code> é uma palavra reservada em JavaScript. Em vez disso, o JSX usa <code>className</code> . Na verdade, a convenção de nomenclatura para todos os atributos HTML e referências de eventos no JSX se torna camelCase. Por exemplo, um evento de clique no JSX é <code>onClick</code> , em vez de <code>onclick</code> . Da mesma forma, <code>onchange</code> se torna <code>onChange</code> . Embora esta seja uma diferença sutil, é importante ter em mente seguir em frente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Aplique uma classe de <code>myDiv</code> ao <code>div</code> fornecido no código JSX. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -55,7 +55,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

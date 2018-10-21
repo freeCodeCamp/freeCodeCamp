@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use && para uma condicional mais concisa
 ---
 
-## Description
+## Descrição
 <section id="description"> As instruções if / else funcionaram no último desafio, mas há uma maneira mais concisa de alcançar o mesmo resultado. Imagine que você esteja rastreando várias condições em um componente e queira que diferentes elementos sejam renderizados dependendo de cada uma dessas condições. Se você escrever muito <code>else if</code> instruções retornarem UIs ligeiramente diferentes, você poderá repetir o código, o que deixa margem para erros. Em vez disso, você pode usar o operador <code>&amp;&amp;</code> lógico para executar a lógica condicional de uma maneira mais concisa. Isso é possível porque você deseja verificar se uma condição é <code>true</code> e, se estiver, retornar alguma marcação. Aqui está um exemplo: <code>{condition &amp;&amp; &lt;p&gt;markup&lt;/p&gt;}</code> Se a <code>condition</code> for <code>true</code> , a marcação será retornada. Se a condição for <code>false</code> , a operação retornará imediatamente <code>false</code> após avaliar a <code>condition</code> e não retornar nada. Você pode incluir essas instruções diretamente no seu JSX e agrupar várias condições, escrevendo <code>&amp;&amp;</code> após cada uma delas. Isso permite que você lide com uma lógica condicional mais complexa em seu método <code>render()</code> sem repetir muito código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Resolva o exemplo anterior novamente, de modo que o <code>h1</code> só processe se <code>display</code> for <code>true</code> , mas use o operador <code>&amp;&amp;</code> logical em vez de uma instrução <code>if/else</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -77,7 +77,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

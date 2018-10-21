@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Gerenciar atualizações com métodos de ciclo de vida
 ---
 
-## Description
+## Descrição
 <section id="description"> Outro método de ciclo de vida é o <code>componentWillReceiveProps()</code> que é chamado sempre que um componente recebe novos props. Esse método recebe os novos props como um argumento, que geralmente é escrito como <code>nextProps</code> . Você pode usar esse argumento e comparar com <code>this.props</code> e executar ações antes das atualizações do componente. Por exemplo, você pode chamar <code>setState()</code> localmente antes que a atualização seja processada. Outro método é <code>componentDidUpdate()</code> e é chamado imediatamente depois que um componente é renderizado novamente. Observe que renderização e montagem são consideradas coisas diferentes no ciclo de vida do componente. Quando uma página é carregada pela primeira vez, todos os componentes são montados e é onde os métodos como <code>componentWillMount()</code> e <code>componentDidMount()</code> são chamados. Depois disso, conforme o estado muda, os componentes se re-renderizam. O próximo desafio cobre isso com mais detalhes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O componente filho <code>Dialog</code> recebe <code>message</code> de seu pai, o componente <code>Controller</code> . Escreva o método <code>componentWillReceiveProps()</code> no componente <code>Dialog</code> e faça com que ele registre <code>this.props</code> e <code>nextProps</code> no console. Você precisará passar <code>nextProps</code> como um argumento para esse método e, embora seja possível nomear qualquer coisa, nomeie-o em <code>nextProps</code> , <code>nextProps</code> aqui. Em seguida, adicione <code>componentDidUpdate()</code> no componente <code>Dialog</code> e registre uma instrução que diz que o componente foi atualizado. Esse método funciona de maneira semelhante ao <code>componentWillUpdate()</code> , que é fornecido para você. Agora clique no botão para alterar a mensagem e assistir ao console do seu navegador. A ordem das instruções do console mostra a ordem em que os métodos são chamados. <strong>Nota:</strong> Você precisará gravar os métodos de ciclo de vida como funções normais e não como funções de seta para passar nos testes (também não há vantagem em escrever métodos de ciclo de vida como funções de seta). </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -91,7 +91,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

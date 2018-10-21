@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o operador de propagação para avaliar matrizes no local
 ---
 
-## Description
+## Descrição
 <section id="description"> O ES6 introduz o <dfn>operador spread</dfn> , que nos permite expandir matrizes e outras expressões em locais onde vários parâmetros ou elementos são esperados. O código ES5 abaixo usa <code>apply()</code> para calcular o valor máximo em uma matriz: <blockquote> var arr = [6, 89, 3, 45]; <br> var maximus = Math.max.apply (null, arr); // retorna 89 </blockquote> Nós tivemos que usar <code>Math.max.apply(null, arr)</code> porque <code>Math.max(arr)</code> retorna <code>NaN</code> . <code>Math.max()</code> espera argumentos separados por vírgula, mas não uma matriz. O operador de spread torna essa sintaxe muito melhor para ler e manter. <blockquote> const arr = [6, 89, 3, 45]; <br> const maximus = Math.max (... arr); // retorna 89 </blockquote> <code>...arr</code> retorna um array descompactado. Em outras palavras, ele <em>espalha</em> o array. No entanto, o operador de propagação só funciona no local, como em um argumento para uma função ou em um literal de matriz. O código a seguir não funcionará: <blockquote> const spreaded = ... arr; // lançará um erro de sintaxe </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Copie todo o conteúdo de <code>arr1</code> em outro array <code>arr2</code> usando o operador spread. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ console.log(arr2);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

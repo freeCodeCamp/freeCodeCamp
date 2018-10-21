@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Escopo Local e Funções
 ---
 
-## Description
+## Descrição
 <section id="description"> Variáveis ​​que são declaradas dentro de uma função, assim como os parâmetros da função, possuem escopo <dfn>local</dfn> . Isso significa que eles só são visíveis dentro dessa função. Aqui está uma função <code>myTest</code> com uma variável local chamada <code>loc</code> . <blockquote> function myTest () { <br> var loc = &quot;foo&quot;; <br> console.log (loc); <br> } <br> meu teste(); // registra &quot;foo&quot; <br> console.log (loc); // loc não está definido </blockquote> <code>loc</code> não está definido fora da função. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Declare uma variável local <code>myVar</code> dentro de <code>myLocalScope</code> . Execute os testes e siga as instruções comentadas no editor. <strong>Sugestão</strong> <br> Atualizando a página pode ajudar se você ficar preso. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -87,7 +87,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

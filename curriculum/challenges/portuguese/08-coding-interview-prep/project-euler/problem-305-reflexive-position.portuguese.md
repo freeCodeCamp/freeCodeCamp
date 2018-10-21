@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 305: Posição Reflexiva'
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos chamar S a cadeia (infinita) que é feita pela concatenação dos inteiros positivos consecutivos (a partir de 1) escritos na base 10. Assim, S = 1234567891011121314151617181920212223242 ... <p> É fácil ver que qualquer número irá aparecer um número infinito de vezes em S. </p><p> Vamos chamar f (n) a posição inicial da enésima ocorrência de n em S. Por exemplo, f (1) = 1, f (5) = 81, f (12) = 271 e f (7780) = 111111365. </p><p> Encontre ∑f (3k) para 1≤k≤13. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler305();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

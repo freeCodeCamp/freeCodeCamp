@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Adicionar um efeito de foco a um elemento D3
 ---
 
-## Description
+## Descrição
 <section id="description"> É possível adicionar efeitos que destacam uma barra quando o usuário passa sobre ela com o mouse. Até agora, o estilo dos retângulos é aplicado com os métodos internos D3 e SVG, mas você também pode usar CSS. Você define a classe CSS nos elementos SVG com o método <code>attr()</code> . Em seguida, a pseudo-classe <code>:hover</code> para sua nova classe contém as regras de estilo para qualquer efeito de foco. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método <code>attr()</code> para adicionar uma classe de <code>bar</code> a todos os elementos <code>rect</code> . Isso altera a cor de <code>fill</code> da barra para marrom quando você passa o mouse sobre ela. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -83,7 +83,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

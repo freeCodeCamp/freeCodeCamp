@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Conte para trás com um loop for
 ---
 
-## Description
+## Descrição
 <section id="description"> Um loop for também pode contar para trás, desde que possamos definir as condições certas. Para contar para trás por dois, precisaremos alterar nossa <code>initialization</code> , <code>condition</code> e <code>final-expression</code> . Vamos começar em <code>i = 10</code> e fazer um loop enquanto <code>i &gt; 0</code> . Diminuiremos <code>i</code> por 2 cada loop com <code>i -= 2</code> . <blockquote> var ourArray = []; <br> para (var i = 10; i&gt; 0; i- = 2) { <br> ourArray.push (i); <br> } </blockquote> <code>ourArray</code> agora conterá <code>[10,8,6,4,2]</code> . Vamos alterar nossa <code>initialization</code> e <code>final-expression</code> para que possamos contar para trás por dois por números ímpares. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Empurre os números ímpares de 9 a 1 para <code>myArray</code> usando um loop <code>for</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

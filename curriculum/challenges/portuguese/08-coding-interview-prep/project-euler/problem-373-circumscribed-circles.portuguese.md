@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 373: círculos circunscritos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Cada triângulo tem um círculo circunscrito que passa pelos três vértices. Considere todos os triângulos de lados inteiros para os quais o raio do círculo circunscrito também é integral. <p> Seja S (n) a soma dos raios dos círculos circunscritos de todos esses triângulos para os quais o raio não excede n. </p><p> S (100) = 4950 e S (1200) = 1653605. </p><p> Encontre S (107). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler373();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

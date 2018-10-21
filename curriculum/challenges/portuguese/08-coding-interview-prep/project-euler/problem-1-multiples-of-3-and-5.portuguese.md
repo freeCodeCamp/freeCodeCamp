@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 1: Múltiplos de 3 e 5'
 ---
 
-## Description
+## Descrição
 <section id="description"> Se listarmos todos os números naturais abaixo de 10 que são múltiplos de 3 ou 5, obtemos 3, 5, 6 e 9. A soma desses múltiplos é 23. Encontre a soma de todos os múltiplos de 3 ou 5 abaixo do parâmetro fornecido. <code>number</code> valor. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ multiplesOf3and5(1000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

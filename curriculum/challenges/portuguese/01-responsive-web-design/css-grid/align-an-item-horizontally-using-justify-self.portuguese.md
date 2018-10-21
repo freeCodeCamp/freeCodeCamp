@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alinhar um item horizontalmente usando justify-self
 ---
 
-## Description
+## Descrição
 <section id="description"> Em CSS Grid, o conteúdo de cada item está localizado em uma caixa que é referida como uma <dfn>célula</dfn> . Você pode alinhar a posição do conteúdo dentro de sua célula horizontalmente usando a propriedade <code>justify-self</code> em um item da grade. Por padrão, essa propriedade tem um valor de <code>stretch</code> , o que fará com que o conteúdo preencha toda a largura da célula. Essa propriedade CSS Grid aceita outros valores também: <code>start</code> : alinha o conteúdo à esquerda da célula, <code>center</code> : alinha o conteúdo no centro da célula, <code>end</code> : alinha o conteúdo à direita da célula. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a propriedade <code>justify-self</code> para centralizar o item com a classe <code>item2</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,7 +73,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alterar a posição dos elementos sobrepostos com a propriedade z-index
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando os elementos são posicionados para se sobreporem, o elemento vindo posteriormente na marcação HTML aparecerá, por padrão, no topo dos outros elementos. No entanto, a propriedade <code>z-index</code> pode especificar a ordem de como os elementos são empilhados uns sobre os outros. Ele deve ser um número inteiro (ou seja, um número inteiro e não um decimal), e valores mais altos para a propriedade <code>z-index</code> de um elemento o movem mais alto na pilha do que aqueles com valores mais baixos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione uma propriedade <code>z-index</code> ao elemento com o nome da <code>first</code> classe (o retângulo vermelho) e defina-o como um valor de 2, de forma que cubra o outro elemento (retângulo azul). </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,7 +62,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

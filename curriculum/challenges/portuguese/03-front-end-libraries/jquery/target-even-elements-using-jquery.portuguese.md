@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Alvo mesmo elementos usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Você também pode segmentar elementos com base em suas posições usando <code>:odd</code> ou <code>:even</code> seletores <code>:even</code> . Note que o jQuery é zero-indexado, o que significa que o primeiro elemento em uma seleção tem uma posição 0. Isso pode ser um pouco confuso, pois, intuitivamente <code>:odd</code> seleciona o segundo elemento (posição 1), quarto elemento (posição 3) , e assim por diante. Aqui está como você iria direcionar todos os elementos ímpares com a classe <code>target</code> e dar-lhes classes: <code>$(&quot;.target:odd&quot;).addClass(&quot;animated shake&quot;);</code> Tente selecionar todos os elementos do mesmo <code>target</code> e dar a eles as classes de <code>animated</code> e <code>shake</code> . Lembre-se que <strong>até</strong> se refere à posição dos elementos com um sistema baseado em zero em mente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,7 +84,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

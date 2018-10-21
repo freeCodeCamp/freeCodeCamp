@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Verificar se um elemento está presente em uma árvore de pesquisa binária
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que temos uma noção geral do que é uma árvore de pesquisa binária, vamos falar sobre isso com um pouco mais de detalhes. As árvores de pesquisa binária fornecem tempo logarítmico para as operações comuns de pesquisa, inserção e exclusão no caso médio e tempo linear no pior dos casos. Por que é isso? Cada uma dessas operações básicas nos obriga a encontrar um item na árvore (ou no caso de inserção para encontrar onde ele deve ir) e por causa da estrutura em árvore em cada nó pai que estamos ramificando para a esquerda ou direita e efetivamente excluindo metade do tamanho da árvore restante. Isso torna a pesquisa proporcional ao logaritmo do número de nós na árvore, o que cria um tempo logarítmico para essas operações no caso médio. Ok, mas e o pior dos casos? Bem, considere a construção de uma árvore a partir dos seguintes valores, adicionando-os da esquerda para a direita: <code>10</code> , <code>12</code> , <code>17</code> , <code>25</code> . Seguindo nossas regras para uma árvore de pesquisa binária, adicionaremos <code>12</code> à direita de <code>10</code> , <code>17</code> à direita desta e <code>25</code> à direita desta. Agora nossa árvore se assemelha a uma lista encadeada e atravessá-la para encontrar <code>25</code> exigiria que percorrêssemos todos os itens de maneira linear. Assim, o tempo linear no pior dos casos. O problema aqui é que a árvore está desequilibrada. Veremos um pouco mais sobre o que isso significa nos desafios a seguir. Instruções: Neste desafio, vamos criar um utilitário para a nossa árvore. Escreva um método <code>isPresent</code> que <code>isPresent</code> um valor inteiro como entrada e retorne um valor booleano para a presença ou ausência desse valor na árvore de pesquisa binária. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

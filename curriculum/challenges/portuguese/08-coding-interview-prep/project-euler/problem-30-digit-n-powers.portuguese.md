@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 30: Potências Digitais'
 ---
 
-## Description
+## Descrição
 <section id="description"> Surpreendentemente, existem apenas três números que podem ser escritos como a soma de quatro potências dos seus dígitos: 1634 = 1 <sup>4</sup> + 6 <sup>4</sup> + 3 <sup>4</sup> + 4 <sup>4</sup> 8208 = 8 <sup>4</sup> + 2 <sup>4</sup> + 0 <sup>4</sup> + 8 <sup>4</sup> 9474 = 9 <sup>4</sup> + 4 <sup>4</sup> + 7 <sup>4</sup> + 4 <sup>4</sup> Como 1 = 1 <sup>4</sup> não é uma soma que não está incluída. A soma desses números é 1634 + 8208 + 9474 = 19316. Encontre a soma de todos os números que podem ser escritos como a soma de n potências de seus dígitos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ digitnPowers(5);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

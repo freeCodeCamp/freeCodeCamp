@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Combine vários redutores
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando o estado do seu aplicativo começa a ficar mais complexo, pode ser tentador dividir o estado em várias partes. Em vez disso, lembre-se do primeiro princípio do Redux: todo o estado do aplicativo é mantido em um único objeto de estado na loja. Portanto, o Redux fornece a composição do redutor como uma solução para um modelo de estado complexo. Você define vários redutores para manipular diferentes partes do estado de sua aplicação e, então, compõe esses redutores juntos em um redutor de raiz. O redutor de raiz é então passado para o método <code>createStore()</code> do Redux. Para nos permitir combinar vários redutores juntos, o Redux fornece o método <code>combineReducers()</code> . Esse método aceita um objeto como um argumento no qual você define propriedades que associam chaves a funções específicas do redutor. O nome que você dá às chaves será usado pelo Redux como o nome do pedaço de estado associado. Normalmente, é uma boa prática criar um redutor para cada estado de aplicativo quando eles são distintos ou exclusivos de alguma forma. Por exemplo, em um aplicativo de anotações com autenticação de usuário, um redutor pode manipular a autenticação enquanto outro manipula o texto e as anotações que o usuário está enviando. Para tal aplicação, podemos escrever o método <code>combineReducers()</code> desta forma: <blockquote> const rootReducer = Redux.combineReducers ({ <br> auth: authenticationReducer, <br> notas: notesReducer <br> }); </blockquote> Agora, as <code>notes</code> principais conterão todo o estado associado às nossas anotações e <code>notesReducer</code> manipuladas pelo nosso <code>notesReducer</code> . É assim que vários redutores podem ser compostos para gerenciar um estado de aplicativo mais complexo. Neste exemplo, o estado mantido no repositório do Redux seria, então, um único objeto contendo as propriedades <code>auth</code> e <code>notes</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Existem as <code>counterReducer()</code> e <code>authReducer()</code> fornecidas no editor de código, junto com um repositório Redux. Termine de escrever a função <code>rootReducer()</code> usando o método <code>Redux.combineReducers()</code> . Atribua <code>counterReducer</code> a uma chave chamada <code>count</code> e <code>authReducer</code> a uma chave chamada <code>auth</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -81,7 +81,7 @@ const store = Redux.createStore(rootReducer);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

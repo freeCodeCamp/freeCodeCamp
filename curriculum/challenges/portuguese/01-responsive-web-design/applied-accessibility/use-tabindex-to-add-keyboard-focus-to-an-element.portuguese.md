@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use tabindex para adicionar foco do teclado a um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> O atributo <code>tabindex</code> HTML possui três funções distintas relacionadas ao foco do teclado de um elemento. Quando está em uma tag, indica que o elemento pode ser focado. O valor (um inteiro que é positivo, negativo ou zero) determina o comportamento. Determinados elementos, como links e controles de formulário, recebem automaticamente o foco do teclado quando um usuário é direcionado por uma página. Está na mesma ordem em que os elementos vêm na marcação de fonte HTML. Essa mesma funcionalidade pode ser fornecida a outros elementos, como <code>div</code> , <code>span</code> e <code>p</code> , colocando-se um <code>tabindex=&quot;0&quot;</code> neles. Aqui está um exemplo: <code>&lt;div tabindex=&quot;0&quot;&gt;I need keyboard focus!&lt;/div&gt;</code> <strong>Observação</strong> <br> Um valor de <code>tabindex</code> negativo (tipicamente -1) indica que um elemento é focalizável, mas não é alcançável pelo teclado. Esse método geralmente é usado para trazer o foco ao conteúdo de forma programática (como quando um <code>div</code> usado para uma janela pop-up é ativado) e está além do escopo desses desafios. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A Camper Cat criou uma nova pesquisa para coletar informações sobre seus usuários. Ele sabe que os campos de entrada recebem automaticamente o foco do teclado, mas ele quer ter certeza de que seus usuários de teclado pausem nas instruções enquanto navegam pelos itens. Adicione um atributo <code>tabindex</code> à tag <code>p</code> e defina seu valor como &quot;0&quot;. Bônus - usando <code>tabindex</code> também ativa a pseudo-classe CSS <code>:focus</code> para trabalhar na tag <code>p</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -88,7 +88,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

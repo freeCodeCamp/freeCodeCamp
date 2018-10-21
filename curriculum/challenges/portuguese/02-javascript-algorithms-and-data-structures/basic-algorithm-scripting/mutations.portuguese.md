@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Mutações
 ---
 
-## Description
+## Descrição
 <section id="description"> Retorna true se a string no primeiro elemento da matriz contiver todas as letras da string no segundo elemento da matriz. Por exemplo, <code>[&quot;hello&quot;, &quot;Hello&quot;]</code> , deve retornar true porque todas as letras na segunda string estão presentes na primeira, ignorando o caso. Os argumentos <code>[&quot;hello&quot;, &quot;hey&quot;]</code> devem retornar false porque a string &quot;hello&quot; não contém um &quot;y&quot;. Por último, <code>[&quot;Alien&quot;, &quot;line&quot;]</code> , deve retornar true porque todas as letras em &quot;line&quot; estão presentes em &quot;Alien&quot;. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ mutation(["hello", "hey"]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

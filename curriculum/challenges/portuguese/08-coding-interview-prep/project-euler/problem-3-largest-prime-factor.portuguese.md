@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 3: Maior fator primordial'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os fatores primos de 13195 são 5, 7, 13 e 29. Qual é o maior fator primo do <code>number</code> dado? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ largestPrimeFactor(13195);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Implementar o tipo de seleção
 ---
 
-## Description
+## Descrição
 <section id="description"> Aqui vamos implementar a classificação de seleção. A classificação de seleção funciona selecionando o valor mínimo em uma lista e trocando-o pelo primeiro valor da lista. Em seguida, ele inicia na segunda posição, seleciona o menor valor na lista restante e o troca com o segundo elemento. Ele continua percorrendo a lista e trocando elementos até atingir o final da lista. Agora a lista está classificada. A classificação de seleção tem complexidade de tempo quadrática em todos os casos. <strong>Instruções</strong> : Escreva uma <code>selectionSort</code> que leva uma matriz de inteiros como entrada e retorna uma matriz desses números inteiros na ordem classificada de menor para maior. <strong>Nota:</strong> <br> Estamos chamando essa função dos bastidores; a matriz de teste que estamos usando é comentada no editor. Tente registrar a <code>array</code> para ver seu algoritmo de classificação em ação! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

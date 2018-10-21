@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 187: Semiprimes'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um composto é um número que contém pelo menos dois fatores primos. Por exemplo, 15 = 3 × 5; 9 = 3 x 3; 12 = 2 × 2 × 3. <p> Há dez compostos abaixo de trinta contendo precisamente dois fatores primos, não necessariamente distintos: 4, 6, 9, 10, 14, 15, 21, 22, 25, 26. </p><p> Quantos inteiros compostos, n &lt;108, têm precisamente dois fatores primos, não necessariamente distintos? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler187();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

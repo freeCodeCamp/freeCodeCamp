@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 386: Comprimento máximo de um antichain'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja n um inteiro e S (n) o conjunto de fatores de n. <p> Um subconjunto A de S (n) é chamado de antichain de S (n) se A contiver apenas um elemento ou se nenhum dos elementos de A dividir qualquer um dos outros elementos de A. </p><p> Por exemplo: S (30) = {1, 2, 3, 5, 6, 10, 15, 30} {2, 5, 6} não é um antichain de S (30). {2, 3, 5} é um antichain de S (30). </p><p> Seja N (n) o comprimento máximo de um antichain de S (n). </p><p> Encontre ΣN (n) para 1 ≤ n ≤ 108 </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler386();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

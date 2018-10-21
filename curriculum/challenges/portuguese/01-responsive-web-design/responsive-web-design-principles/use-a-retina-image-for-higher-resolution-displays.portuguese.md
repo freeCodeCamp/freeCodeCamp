@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use uma imagem de retina para exibições de maior resolução
 ---
 
-## Description
+## Descrição
 <section id="description"> A maneira mais simples de fazer com que suas imagens apareçam &quot;retina&quot; (e otimizá-las para exibições de retina) é definir seus valores de <code>width</code> e <code>height</code> como apenas metade do que o arquivo original é. Aqui está um exemplo de uma imagem que usa apenas metade da altura e largura originais: <blockquote> &lt;style&gt; <br> img {altura: 250px; largura: 250px; } <br> &lt;/ style&gt; <br> &lt;img src = &quot;coolPic500x500&quot; alt = &quot;Uma imagem excelente&quot;&gt; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina a <code>width</code> e a <code>height</code> da tag <code>img</code> para metade de seus valores originais. Nesse caso, a <code>height</code> original e a <code>width</code> original são de 200 px. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -46,7 +46,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

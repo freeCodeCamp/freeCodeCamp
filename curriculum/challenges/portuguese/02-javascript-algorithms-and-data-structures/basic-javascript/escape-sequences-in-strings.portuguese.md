@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Seqüências de escape em seqüências de caracteres
 ---
 
-## Description
+## Descrição
 <section id="description"> Aspas não são os únicos caracteres que podem ser <dfn>escapados</dfn> dentro de uma string. Há dois motivos para usar caracteres de escape: o primeiro é permitir que você use caracteres que talvez não fossem capazes de digitar, como um backspace. Segundo, permitir que você represente várias aspas em uma string sem que o JavaScript interprete erroneamente o que você quer dizer. Nós aprendemos isso no desafio anterior. <table class="table table-striped"><thead><tr><th> Código </th><th> Saída </th></tr></thead><tbody><tr><td> <code>\&#39;</code> </td> <td> citação única </td></tr><tr><td> <code>\&quot;</code> </td> <td> citação dupla </td></tr><tr><td> <code>\\</code> </td> <td> barra invertida </td></tr><tr><td> <code>\n</code> </td> <td> nova linha </td></tr><tr><td> <code>\r</code> </td> <td> retorno de carro </td></tr><tr><td> <code>\t</code> </td> <td> aba </td></tr><tr><td> <code>\b</code> </td> <td> backspace </td></tr><tr><td> <code>\f</code> </td> <td> feed de formulário </td></tr></tbody></table> <em>Observe que a própria barra invertida deve ter o escape para ser exibida como uma barra invertida.</em> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Atribuir as seguintes três linhas de texto para a única variável <code>myStr</code> usando seqüências de escape. <blockquote> Primeira linha <br> \Segunda linha <br> ThirdLine </blockquote> Você precisará usar seqüências de escape para inserir caracteres especiais corretamente. Você também precisará seguir o espaçamento como aparece acima, sem espaços entre seqüências de escape ou palavras. Aqui está o texto com as seqüências de escape escritas. <q>FirstLine <code>newline</code> <code>tab</code> <code>backslash</code> SecondLine <code>newline</code> ThirdLine</q> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

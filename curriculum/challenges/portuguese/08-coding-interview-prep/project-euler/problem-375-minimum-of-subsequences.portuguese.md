@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 375: Mínimo de Subsequências'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja Sn uma sequência inteira produzida com o seguinte gerador de números pseudo-aleatórios: S0 = 290797 Sn + 1 = Sn2 mod 50515093 <p> Seja A (i, j) o mínimo dos números Si, Si + 1, ..., Sj para i ≤ j. Seja M (N) = ΣA (i, j) para 1 ≤ i ≤ j ≤ N. Podemos verificar que M (10) = 432256955 e M (10.000) = 3264567774119. </p><p> Encontre M (2 000 000 000). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler375();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

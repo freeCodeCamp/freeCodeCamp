@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comparação com o menor que o operador
 ---
 
-## Description
+## Descrição
 <section id="description"> O operador <dfn>menor que</dfn> ( <code>&lt;</code> ) compara os valores de dois números. Se o número à esquerda for menor que o número à direita, ele retornará <code>true</code> . Caso contrário, retorna <code>false</code> . Como o operador de igualdade, o operador <dfn>menor que</dfn> converte tipos de dados durante a comparação. <strong>Exemplos</strong> <blockquote> 2 &lt;5 // verdadeiro <br> &#39;3&#39; &lt;7 // verdadeiro <br> 5 &lt;5 // falso <br> 3 &lt;2 // falso <br> &#39;8&#39; &lt;4 // falso </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o operador <code>less than</code> às linhas indicadas para que as instruções de retorno façam sentido. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ testLessThan(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

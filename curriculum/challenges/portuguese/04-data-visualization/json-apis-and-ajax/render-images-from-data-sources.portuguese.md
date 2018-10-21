@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Renderizar imagens de fontes de dados
 ---
 
-## Description
+## Descrição
 <section id="description"> Os últimos desafios mostraram que cada objeto no array JSON contém uma chave <code>imageLink</code> com um valor que é o URL da imagem de um gato. Quando você está circulando por esses objetos, você pode usar essa propriedade <code>imageLink</code> para exibir essa imagem em um elemento <code>img</code> . Aqui está o código que faz isso: <code>html += &quot;&lt;img src = &#39;&quot; + val.imageLink + &quot;&#39; &quot; + &quot;alt=&#39;&quot; + val.altText + &quot;&#39;&gt;&quot;;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione código para usar os <code>imageLink</code> e <code>altText</code> propriedades em uma <code>img</code> tag. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -96,7 +96,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

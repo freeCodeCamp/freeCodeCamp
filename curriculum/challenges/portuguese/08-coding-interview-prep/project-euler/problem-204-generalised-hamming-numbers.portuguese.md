@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 204: Números de Hamming Generalizados'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um número de Hamming é um número positivo que não tem fator primo maior que 5. Assim, os primeiros números de Hamming são 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 15. Existem 1105 números de Hamming. não superior a 108. <p> Chamaremos um número positivo de um número de Hamming generalizado do tipo n, se não tiver um fator primo maior que n. Portanto, os números de Hamming são os números generalizados de Hamming do tipo 5. </p><p> Quantos números generalizados de Hamming do tipo 100 existem que não excedem 109? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler204();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

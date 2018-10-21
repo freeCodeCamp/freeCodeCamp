@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar poços de bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Bootstrap tem uma classe chamada <code>well</code> que pode criar uma sensação visual de profundidade para suas colunas. Aninhe um elemento <code>div</code> com a classe <code>well</code> dentro de cada um dos seus elementos <code>col-xs-6</code> <code>div</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -55,7 +55,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

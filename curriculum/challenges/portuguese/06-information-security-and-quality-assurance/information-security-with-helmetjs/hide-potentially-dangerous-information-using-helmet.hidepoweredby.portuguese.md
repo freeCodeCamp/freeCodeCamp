@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Ocultar informações potencialmente perigosas usando helmet.hidePoweredBy ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a> . Os hackers podem explorar vulnerabilidades conhecidas no Express / Node se perceberem que seu site é ativado pelo Express. X-Powered-By: Express é enviado em todas as solicitações provenientes do Express por padrão. O middleware helmet.hidePoweredBy () removerá o cabeçalho X-Powered-By. Você também pode definir explicitamente o cabeçalho para outra coisa, para expulsar as pessoas. eg app.use (helmet.hidePoweredBy ({setTo: &#39;PHP 4.2.0&#39;})) </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,12 +25,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

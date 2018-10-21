@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 380: Mazes incríveis!'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um labirinto m × n é uma grade retangular m × n com paredes colocadas entre as células da grade, de modo que exista exatamente um caminho do quadrado superior esquerdo até qualquer outro quadrado. A seguir, exemplos de um labirinto 9 × 12 e um labirinto 15 × 20: <p> Seja C (m, n) o número de labirintos distintos m × n. Labirintos que podem ser formados por rotação e reflexão de outro labirinto são considerados distintos. </p><p> Pode-se verificar que C (1,1) = 1, C (2,2) = 4, C (3,4) = 2415 e C (9,12) = 2,5720e46 (em notação científica arredondada para 5 significantes dígitos). Encontre C (100.500) e escreva sua resposta em notação científica, arredondada para 5 dígitos significativos. </p><p> Ao dar sua resposta, use um e minúsculo para separar mantissa e expoente. Por exemplo, se a resposta for 1234567891011, o formato da resposta será 1.2346e12. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler380();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

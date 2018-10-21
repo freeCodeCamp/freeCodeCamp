@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use RGB para misturar cores
 ---
 
-## Description
+## Descrição
 <section id="description"> Assim como com o código hexadecimal, você pode misturar cores em RGB usando combinações de valores diferentes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Substitua os códigos hexadecimais em nosso elemento de <code>style</code> por seus valores RGB corretos. <table class="table table-striped"><tbody><tr><th> Cor </th><th> RGB </th></tr><tr><td> Azul </td><td> <code>rgb(0, 0, 255)</code> </td> </tr><tr><td> Vermelho </td><td> <code>rgb(255, 0, 0)</code> </td> </tr><tr><td> Orquídea </td><td> <code>rgb(218, 112, 214)</code> </td> </tr><tr><td> Sienna </td><td> <code>rgb(160, 82, 45)</code> </td> </tr></tbody></table></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

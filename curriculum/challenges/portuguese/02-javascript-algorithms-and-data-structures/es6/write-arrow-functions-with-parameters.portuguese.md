@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Escrever funções de seta com parâmetros
 ---
 
-## Description
+## Descrição
 <section id="description"> Assim como uma função normal, você pode passar argumentos para as funções de seta. <blockquote> // duplica o valor de entrada e retorna <br> const doubler = (item) =&gt; item * 2; </blockquote> Você pode passar mais de um argumento em funções de seta também. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Reescreva a função <code>myConcat</code> que anexa o conteúdo de <code>arr2</code> a <code>arr1</code> para que a função use a sintaxe da função de seta. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ console.log(myConcat([1, 2], [3, 4, 5]));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

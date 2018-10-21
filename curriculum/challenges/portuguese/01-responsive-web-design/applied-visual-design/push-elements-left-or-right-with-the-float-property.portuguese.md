@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Empurre os elementos para a esquerda ou para a direita com a propriedade float
 ---
 
-## Description
+## Descrição
 <section id="description"> A próxima ferramenta de posicionamento não usa a <code>position</code> , mas define a propriedade <code>float</code> de um elemento. Os elementos flutuantes são removidos do fluxo normal de um documento e enviados para a <code>left</code> ou para a <code>right</code> do elemento pai que o contém. É comumente usado com a propriedade <code>width</code> para especificar quanto espaço horizontal o elemento flutuante requer. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O dado marcação iria funcionar bem como um layout de duas colunas, com as <code>section</code> e <code>aside</code> elementos próximos uns dos outros. Dê ao item <code>#left</code> um <code>float</code> da <code>left</code> e o item <code>#right</code> um <code>float</code> da <code>right</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,7 +70,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

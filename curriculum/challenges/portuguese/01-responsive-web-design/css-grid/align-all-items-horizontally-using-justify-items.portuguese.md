@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alinhar todos os itens horizontalmente usando justificar itens
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes, você quer que todos os itens do seu CSS Grid compartilhem o mesmo alinhamento. Você pode usar as propriedades aprendidas anteriormente e alinhá-las individualmente ou pode alinhar todas de uma vez na horizontal usando <code>justify-items</code> no contêiner de grade. Essa propriedade pode aceitar todos os mesmos valores que você aprendeu nos dois desafios anteriores, a diferença é que ela moverá <b>todos</b> os itens da grade para o alinhamento desejado. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use essa propriedade para centralizar todos os nossos itens horizontalmente. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -69,7 +69,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

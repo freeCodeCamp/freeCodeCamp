@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Remover itens de uma matriz com pop () e shift ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Tanto <code>push()</code> quanto <code>unshift()</code> possuem métodos correspondentes que são quase opostos funcionais: <code>pop()</code> e <code>shift()</code> . Como você deve ter adivinhado agora, em vez de adicionar, <code>pop()</code> <em>remove</em> um elemento do final de um array, enquanto <code>shift()</code> remove um elemento do começo. A principal diferença entre <code>pop()</code> e <code>shift()</code> e seus primos <code>push()</code> e <code>unshift()</code> , é que nenhum método recebe parâmetros, e cada um só permite que um array seja modificado por um único elemento por vez. Vamos dar uma olhada: <blockquote> deixe saudações = [&#39;o que está acontecendo?&#39;, &#39;olá&#39;, &#39;até mais!&#39;]; <br><br> greetings.pop (); <br> // agora é igual a [&#39;whats up?&#39;, &#39;olá&#39;] <br><br> greetings.shift (); <br> // agora é igual a [&#39;olá&#39;] </blockquote> Nós também podemos retornar o valor do elemento removido com um dos métodos como este: <blockquote> deixe popped = greetings.pop (); <br> // retorna &#39;olá&#39; <br> // saudações agora é igual a [] </blockquote></section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ console.log(popShift(['challenge', 'is', 'not', 'complete']));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

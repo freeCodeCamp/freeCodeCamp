@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Dividir uma string em uma matriz usando o método de divisão
 ---
 
-## Description
+## Descrição
 <section id="description"> O método <code>split</code> divide uma string em uma matriz de strings. É necessário um argumento para o delimitador, que pode ser um caractere a ser usado para dividir a cadeia ou uma expressão regular. Por exemplo, se o delimitador for um espaço, você obterá uma matriz de palavras e, se o delimitador for uma cadeia vazia, você obterá uma matriz de cada caractere na cadeia. Aqui estão dois exemplos que dividem uma string por espaços, depois outra por dígitos usando uma expressão regular: <blockquote> var str = &quot;Olá mundo&quot;; <br> var bySpace = str.split (&quot;&quot;); <br> // Define bySpace para [&quot;Hello&quot;, &quot;World&quot;] <br><br> var otherString = &quot;How9are7you2today&quot;; <br> var byDigits = otherString.split (/ \ d /); <br> // Define byDigits como [&quot;How&quot;, &quot;are&quot;, &quot;you&quot;, &quot;today&quot;] </blockquote> Como as strings são imutáveis, o método <code>split</code> facilita o trabalho com elas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método <code>split</code> dentro da função <code>splitify</code> para dividir <code>str</code> em uma matriz de palavras. A função deve retornar a matriz. Observe que as palavras nem sempre são separadas por espaços e a matriz não deve conter pontuação. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ splitify("Hello World,I-am code");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

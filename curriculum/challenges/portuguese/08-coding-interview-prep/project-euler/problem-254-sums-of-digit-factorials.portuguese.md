@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 254: Soma dos Fatoriais de Dígito'
 ---
 
-## Description
+## Descrição
 <section id="description"> Defina f (n) como a soma dos fatoriais dos dígitos de n. Por exemplo, f (342) = 3! + 4! + 2! = 32. <p> Defina sf (n) como a soma dos dígitos de f (n). Então sf (342) = 3 + 2 = 5. </p><p> Defina g (i) para ser o menor inteiro positivo n tal que sf (n) = i. Embora sf (342) seja 5, sf (25) também é 5, e pode ser verificado que g (5) é 25. </p><p> Defina sg (i) como a soma dos dígitos de g (i). Então sg (5) = 2 + 5 = 7. </p><p> Além disso, pode ser verificado que g (20) é 267 e ∑ sg (i) para 1 ≤ i ≤ 20 é 156. </p><p> O que é ∑ sg (i) para 1 ≤ i ≤ 150? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler254();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

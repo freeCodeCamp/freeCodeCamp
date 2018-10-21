@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Estado de renderização na interface do usuário
 ---
 
-## Description
+## Descrição
 <section id="description"> Depois de definir o estado inicial de um componente, você pode exibir qualquer parte dele na interface do usuário processada. Se um componente for stateful, ele sempre terá acesso aos dados no <code>state</code> em seu método <code>render()</code> . Você pode acessar os dados com <code>this.state</code> . Se você quiser acessar um valor de estado dentro do <code>return</code> do método de renderização, inclua o valor entre chaves. <code>State</code> é um dos recursos mais poderosos dos componentes do React. Ele permite que você acompanhe dados importantes no seu aplicativo e renderize uma interface do usuário em resposta a alterações nesses dados. Se seus dados forem alterados, sua interface do usuário será alterada. O React usa o que é chamado de DOM virtual, para acompanhar as alterações nos bastidores. Quando atualiza os dados do estado, ele aciona uma nova renderização dos componentes usando esses dados - incluindo os componentes filhos que receberam os dados como um prop. Reagir atualiza o DOM real, mas somente quando necessário. Isso significa que você não precisa se preocupar em alterar o DOM. Você simplesmente declara como deve ser a interface do usuário. Observe que, se você tornar um componente com estado, nenhum outro componente está ciente de seu <code>state</code> . Seu <code>state</code> é completamente encapsulado ou local para esse componente, a menos que você passe dados de estado para um componente filho como <code>props</code> . Essa noção de <code>state</code> encapsulado é muito importante, pois permite que você escreva determinada lógica e, em seguida, tenha essa lógica contida e isolada em um lugar em seu código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> No editor de código, o <code>MyComponent</code> já é stateful. Defina uma tag <code>h1</code> no método de renderização do componente, que renderiza o valor do <code>name</code> do estado do componente. <strong>Nota:</strong> O <code>h1</code> só deve renderizar o valor do <code>state</code> e nada mais. No JSX, qualquer código que você escrever com chaves <code>{ }</code> será tratado como JavaScript. Então, para acessar o valor do <code>state</code> apenas coloque a referência entre chaves. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -69,7 +69,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

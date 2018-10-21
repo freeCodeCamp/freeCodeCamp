@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Aprenda como as tags de script e o trabalho pronto para documentos
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora estamos prontos para aprender o jQuery, a ferramenta JavaScript mais popular de todos os tempos. Antes de começarmos a usar o jQuery, precisamos adicionar algumas coisas ao nosso HTML. Primeiro, adicione um elemento de <code>script</code> no topo da sua página. Certifique-se de fechá-lo na linha seguinte. Seu navegador executará qualquer JavaScript dentro de um elemento de <code>script</code> , incluindo jQuery. Dentro do seu elemento de <code>script</code> , adicione este código: <code>$(document).ready(function() {</code> ao seu <code>script</code> . Em seguida, feche-o na seguinte linha (ainda dentro do seu elemento de <code>script</code> ) com: <code>});</code> Aprenderemos mais sobre <code>functions</code> mais tarde. O importante é saber que o código inserido nessa <code>function</code> será executado assim que o navegador carregar sua página. Isso é importante porque, sem a <code>document ready function</code> , seu código pode ser executado antes de seu HTML ser renderizado, o que causaria bugs. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,7 +67,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

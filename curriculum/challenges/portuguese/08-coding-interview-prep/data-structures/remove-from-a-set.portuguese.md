@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Remover de um conjunto
 ---
 
-## Description
+## Descrição
 <section id="description"> Neste exercício, vamos criar uma função de exclusão para o nosso conjunto. A função deve ser nomeada <code>this.remove</code> . Esta função deve aceitar um valor e verificar se existe no conjunto. Em caso afirmativo, remova esse valor do conjunto e retorne true. Caso contrário, retorne falso. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,7 +66,7 @@ function Set() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

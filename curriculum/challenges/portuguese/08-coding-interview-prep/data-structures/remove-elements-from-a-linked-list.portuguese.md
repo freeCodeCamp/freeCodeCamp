@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Remover elementos de uma lista vinculada
 ---
 
-## Description
+## Descrição
 <section id="description"> O próximo método importante que qualquer implementação de uma lista vinculada precisará é um método <code>remove</code> . Esse método deve pegar o elemento que queremos remover como argumento e, em seguida, pesquisar a lista para localizar e remover o nó que contém esse elemento. Sempre que removemos um nó de uma lista vinculada, é importante que não tornemos o restante da lista acidentalmente órfão. Lembre-se de que a <code>next</code> propriedade de cada nó aponta para o nó que o segue na lista. Se estamos removendo o elemento do meio, digamos, que vai querer se certificar de que temos uma ligação a partir do nó anterior desse elemento <code>next</code> propriedade para o elemento do meio <code>next</code> da propriedade (que é o próximo nó na lista!) Isto pode parecer realmente confuso, então vamos voltar ao exemplo da linha de conga, então temos um bom modelo conceitual. Imagine-se em uma fila de conga, e a pessoa diretamente à sua frente deixa a linha. A pessoa que acabou de sair da linha não tem mais as mãos em ninguém na fila - e você não tem mais as mãos na pessoa que saiu. Você dá um passo à frente e coloca as mãos na próxima pessoa que vê. Se o elemento que desejamos remover é o elemento <code>head</code> , reatribuímos a <code>head</code> ao segundo nó da lista encadeada. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva um método <code>remove</code> que use um elemento e remova-o da lista vinculada. Nota O <code>length</code> da lista deve diminuir em um a cada vez que um elemento é removido da lista vinculada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -85,7 +85,7 @@ function LinkedList() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

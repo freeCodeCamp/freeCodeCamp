@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Crie uma variável CSS personalizada
 ---
 
-## Description
+## Descrição
 <section id="description"> Para criar uma variável CSS, basta dar um <code>name</code> a ela com <code>two dashes</code> à frente e atribuir um <code>value</code> como este: <blockquote> - pele de pinguim: cinza; </blockquote> Isso criará uma variável chamada <code>--penguin-skin</code> e atribuirá a ela o valor de <code>gray</code> . Agora você pode usar essa variável em outro lugar no seu CSS para alterar o valor de outros elementos para cinza. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Na classe <code>penguin</code> , crie um nome de variável <code>--penguin-skin</code> e dê a ele um valor de <code>gray</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -236,7 +236,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

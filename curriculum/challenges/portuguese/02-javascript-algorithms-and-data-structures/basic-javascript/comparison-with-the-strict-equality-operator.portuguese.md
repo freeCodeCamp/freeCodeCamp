@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comparação com o operador Strict Equality
 ---
 
-## Description
+## Descrição
 <section id="description"> A igualdade estrita ( <code>===</code> ) é a contrapartida do operador de igualdade ( <code>==</code> ). No entanto, ao contrário do operador de igualdade, que tenta converter os dois valores sendo comparados a um tipo comum, o operador de igualdade estrita não executa uma conversão de tipo. Se os valores que estão sendo comparados tiverem tipos diferentes, eles serão considerados desiguais e o operador de igualdade estrita retornará false. <strong>Exemplos</strong> <blockquote> 3 === 3 // verdadeiro <br> 3 === &#39;3&#39; // false </blockquote> No segundo exemplo, <code>3</code> é um tipo <code>Number</code> e <code>&#39;3&#39;</code> é um tipo <code>String</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o operador de igualdade estrito na instrução <code>if</code> para que a função retorne &quot;Equal&quot; quando <code>val</code> for estritamente igual a <code>7</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ testStrict(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

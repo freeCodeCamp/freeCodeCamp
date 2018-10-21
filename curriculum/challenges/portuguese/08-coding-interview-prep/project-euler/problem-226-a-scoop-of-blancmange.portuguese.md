@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 226: uma colher de Blancmange'
 ---
 
-## Description
+## Descrição
 <section id="description"> A curva de manjar é o conjunto de pontos (x, y) tais que 0 ≤ x ≤ 1 e, onde s (x) = a distância de x ao inteiro mais próximo. <p> A área sob a curva de manjar é igual a ½, mostrada em rosa no diagrama abaixo. </p><p> Seja C o círculo com centro (¼, ½) e raio ¼, mostrado em preto no diagrama. </p><p> Que área sob a curva de manjar branco é delimitada por C? Dê sua resposta arredondada para oito casas decimais na forma 0.abcdefgh </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler226();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

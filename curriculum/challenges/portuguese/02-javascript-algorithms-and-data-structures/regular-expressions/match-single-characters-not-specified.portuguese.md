@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Combinar Caracteres Únicos Não Especificados
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, você criou um conjunto de caracteres que deseja corresponder, mas também pode criar um conjunto de caracteres que não deseja corresponder. Esses tipos de conjuntos de caracteres são chamados de <code>negated character sets</code> . Para criar um <code>negated character set</code> , coloque um caractere de <code>caret</code> ( <code>^</code> ) após o colchete de abertura e antes dos caracteres que você não deseja corresponder. Por exemplo, <code>/[^aeiou]/gi</code> combina todos os caracteres que não são uma vogal. Note que os personagens gostam <code>.</code> <code>!</code> , <code>[</code> , <code>@</code> , <code>/</code> E espaço em branco são combinados - o personagem vogal negada só definir exclui os caracteres de vogais. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie um único regex que corresponda a todos os caracteres que não sejam um número ou uma vogal. Lembre-se de incluir os sinalizadores apropriados na regex. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let result = myRegex; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

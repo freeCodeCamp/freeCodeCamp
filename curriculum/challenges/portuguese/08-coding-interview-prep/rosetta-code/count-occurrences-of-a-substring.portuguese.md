@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Contar ocorrências de uma substring
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Crie uma função ou mostre uma função interna para contar o número de ocorrências não sobrepostas de uma substring dentro de uma string. </p><p> A função deve levar dois argumentos: </p> o primeiro argumento sendo a string a ser pesquisada, e o segundo, uma substring a ser pesquisada. <p> Deve retornar uma contagem inteira. </p><p> A correspondência deve render o maior número de correspondências não sobrepostas. </p><p> Em geral, isso significa essencialmente correspondência da esquerda para a direita ou da direita para a esquerda. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

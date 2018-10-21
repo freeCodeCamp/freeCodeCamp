@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Melhore a acessibilidade do gráfico com a figura Element
 ---
 
-## Description
+## Descrição
 <section id="description"> O HTML5 introduziu o elemento <code>figure</code> , juntamente com a <code>figcaption</code> relacionada. Usados ​​em conjunto, esses itens envolvem uma representação visual (como uma imagem, diagrama ou gráfico) junto com sua legenda. Isso proporciona um aumento de acessibilidade duplo por meio do conteúdo relacionado ao agrupamento semanticamente e fornece uma alternativa em texto que explica a <code>figure</code> . Para visualizações de dados, como gráficos, a legenda pode ser usada para observar brevemente as tendências ou conclusões para usuários com deficiências visuais. Outro desafio abrange como mover uma versão da tabela dos dados do gráfico para fora da tela (usando CSS) para usuários de leitores de tela. Aqui está um exemplo - note que o <code>figcaption</code> vai dentro da <code>figure</code> tags e pode ser combinado com outros elementos: <blockquote> &lt;figure&gt; <br> &lt;img src = &quot;roundhouseDestruction.jpeg&quot; alt = &quot;Foto do Camper Cat executando um roundhouse kick&quot;&gt; <br> &lt;br&gt; <br> &lt;figcaption&gt; <br> Mestre Camper Cat demonstra a forma correta de um chute circular. <br> &lt;/ figcaption&gt; <br> &lt;/ figure&gt; <br></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Camper Cat está trabalhando duro para criar um gráfico de barras empilhadas mostrando a quantidade de tempo por semana para treinar em furtividade, combate e armas. Ajude-o a estruturar melhor sua página, alterando a tag <code>div</code> ele usou para uma tag <code>figure</code> e a tag <code>p</code> que circunda a legenda para uma tag <code>figcaption</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -90,7 +90,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

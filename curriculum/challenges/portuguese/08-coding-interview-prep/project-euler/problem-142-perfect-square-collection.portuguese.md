@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 142: Coleção Quadrada Perfeita'
 ---
 
-## Description
+## Descrição
 <section id="description"> Encontre o menor x + y + z com inteiros x&gt; y&gt; z&gt; 0 tal que x + y, x - y, x + z, x - z, y + z, y - z são todos quadrados perfeitos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler142();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

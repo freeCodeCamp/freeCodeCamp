@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Dê aos Irmãos Elementos um Atributo de Chave Única
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio mostrou como o método <code>map</code> é usado para renderizar dinamicamente um número de elementos com base na entrada do usuário. No entanto, houve uma peça importante que faltava nesse exemplo. Quando você cria uma matriz de elementos, cada um precisa de um atributo- <code>key</code> definido como um valor exclusivo. O React usa essas chaves para acompanhar quais itens são adicionados, alterados ou removidos. Isso ajuda a tornar o processo de re-renderização mais eficiente quando a lista é modificada de alguma forma. Observe que as chaves precisam ser únicas entre os elementos irmãos, elas não precisam ser globalmente exclusivas em seu aplicativo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem um array com algumas estruturas front-end e um componente funcional sem estado chamado <code>Frameworks()</code> . <code>Frameworks()</code> precisa mapear a matriz para uma lista não ordenada, como no último desafio. Termine de escrever o retorno de chamada do <code>map</code> para retornar um elemento <code>li</code> para cada estrutura na matriz <code>frontEndFrameworks</code> . Desta vez, certifique-se de atribuir a cada <code>li</code> um atributo- <code>key</code> , definido como um valor único. Normalmente, você quer tornar a chave algo que identifique exclusivamente o elemento que está sendo renderizado. Como último recurso, o índice de matriz pode ser usado, mas normalmente você deve tentar usar uma identificação exclusiva. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -76,7 +76,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

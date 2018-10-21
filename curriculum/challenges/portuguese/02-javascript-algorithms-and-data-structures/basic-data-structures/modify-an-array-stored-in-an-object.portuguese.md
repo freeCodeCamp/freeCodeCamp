@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Modificar uma matriz armazenada em um objeto
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora você viu todas as operações básicas para objetos JavaScript. Você pode adicionar, modificar e remover pares de valores-chave, verificar se existem chaves e iterar sobre todas as chaves em um objeto. À medida que você continua aprendendo JavaScript, você verá aplicativos ainda mais versáteis de objetos. Além disso, as lições opcionais de estruturas de dados avançadas, mais adiante no currículo, também abrangem os objetos ES6 <dfn>Map</dfn> e <dfn>Set</dfn> , que são semelhantes aos objetos comuns, mas fornecem alguns recursos adicionais. Agora que você aprendeu as noções básicas de arrays e objetos, você está totalmente preparado para começar a lidar com problemas mais complexos usando JavaScript! </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dê uma olhada no objeto que fornecemos no editor de código. O objeto de <code>user</code> contém três chaves. A chave de <code>data</code> contém cinco chaves, uma das quais contém uma matriz de <code>friends</code> . A partir disso, você pode ver como os objetos são flexíveis como estruturas de dados. Nós começamos a escrever uma função <code>addFriend</code> . Termine de escrevê-lo para que ele use um objeto de <code>user</code> e adicione o nome do argumento de <code>friend</code> à matriz armazenada em <code>user.data.friends</code> e retorne essa matriz. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -70,7 +70,7 @@ console.log(addFriend(user, 'Pete'));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

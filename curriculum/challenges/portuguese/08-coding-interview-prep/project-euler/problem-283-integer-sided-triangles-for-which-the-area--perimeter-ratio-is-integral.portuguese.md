@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 283: Triângulos de lados inteiros para os quais a relação área * perímetro é integral'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere o triângulo com os lados 6, 8 e 10. Pode ser visto que o perímetro e a área são ambos iguais a 24. Portanto, a relação área / perímetro é igual a 1. Considere também o triângulo com os lados 13, 14 e 15. O perímetro é igual a 42, enquanto a área é igual a 84. Portanto, para este triângulo, a relação área / perímetro é igual a 2. <p> Encontre a soma dos perímetros de todos os triângulos de lados inteiros para os quais as proporções área / perímetro são iguais a inteiros positivos não excedendo 1000. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler283();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

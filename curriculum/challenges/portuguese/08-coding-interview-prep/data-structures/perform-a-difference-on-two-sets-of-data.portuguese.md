@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Realize uma diferença em dois conjuntos de dados
 ---
 
-## Description
+## Descrição
 <section id="description"> Neste exercício, vamos realizar uma diferença em dois conjuntos de dados. Vamos criar um método na nossa estrutura de dados <code>Set</code> chamada <code>difference</code> . Uma diferença de conjuntos deve comparar dois conjuntos e retornar os itens presentes no primeiro conjunto que estão ausentes no segundo. Este método deve ter outro <code>Set</code> como argumento e retornar a <code>difference</code> dos dois conjuntos. Por exemplo, se <code>setA = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code> e <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;d&#39;,&#39;e&#39;]</code> , a diferença de setA e setB é: <code>setA.difference(setB) = [&#39;c&#39;]</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -101,7 +101,7 @@ function Set() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

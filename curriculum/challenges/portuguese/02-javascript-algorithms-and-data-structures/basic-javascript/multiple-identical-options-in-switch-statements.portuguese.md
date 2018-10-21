@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Múltiplas Opções Idênticas em Instruções de Comutação
 ---
 
-## Description
+## Descrição
 undefined
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva uma instrução switch para definir a <code>answer</code> para os seguintes intervalos: <br> <code>1-3</code> - &quot;baixo&quot; <br> <code>4-6</code> - &quot;Mid&quot; <br> <code>7-9</code> - <strong>Nota</strong> &quot;Alta&quot; <br> Você precisará ter uma declaração de <code>case</code> para cada número no intervalo. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -44,7 +44,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -71,7 +71,7 @@ sequentialSizes(1);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

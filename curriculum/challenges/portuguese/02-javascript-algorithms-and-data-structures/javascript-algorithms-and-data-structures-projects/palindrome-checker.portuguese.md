@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Verificador de palíndromo
 ---
 
-## Description
+## Descrição
 <section id="description"> Retorna <code>true</code> se a string especificada for um palíndromo. Caso contrário, retorne <code>false</code> . Um <dfn>palíndromo</dfn> é uma palavra ou frase que é grafada da mesma maneira tanto para frente quanto para trás, ignorando pontuação, caixa e espaçamento. <strong>Nota</strong> <br> Você precisará remover <strong>todos os caracteres não alfanuméricos</strong> (pontuação, espaços e símbolos) e transformar tudo no mesmo caso (maiúsculas ou minúsculas) para verificar se há palíndromos. Nós vamos passar seqüências de caracteres com formatos variados, como <code>&quot;racecar&quot;</code> , <code>&quot;RaceCar&quot;</code> e <code>&quot;race CAR&quot;</code> entre outros. Também passaremos strings com símbolos especiais, como <code>&quot;2A3*3a2&quot;</code> , <code>&quot;2A3 3a2&quot;</code> e <code>&quot;2_A3*3#A2&quot;</code> . Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -50,7 +50,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,7 +73,7 @@ palindrome("eye");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

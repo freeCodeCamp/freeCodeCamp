@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder caracteres que ocorrem uma ou mais vezes
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes, você precisa corresponder a um caractere (ou grupo de caracteres) que aparece uma ou mais vezes seguidas. Isso significa que ocorre pelo menos uma vez e pode ser repetido. Você pode usar o caractere <code>+</code> para verificar se é esse o caso. Lembre-se, o personagem ou padrão deve estar presente consecutivamente. Ou seja, o personagem tem que repetir um após o outro. Por exemplo, <code>/a+/g</code> encontraria uma correspondência em <code>&quot;abc&quot;</code> e retornaria <code>[&quot;a&quot;]</code> . Por causa do <code>+</code> , ele também encontraria uma única correspondência em <code>&quot;aabc&quot;</code> e retornaria <code>[&quot;aa&quot;]</code> . Se fosse em vez verificando a string <code>&quot;abab&quot;</code> , ele iria encontrar duas partidas e retornar <code>[&quot;a&quot;, &quot;a&quot;]</code> porque os <code>a</code> personagens não estão em uma linha - há um <code>b</code> entre eles. Finalmente, como não há <code>&quot;a&quot;</code> na string <code>&quot;bcd&quot;</code> , ele não encontrará uma correspondência. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Você quer encontrar correspondências quando a letra <code>s</code> ocorre uma ou mais vezes em <code>&quot;Mississippi&quot;</code> . Escreva um regex que use o sinal <code>+</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let result = difficultSpelling.match(myRegex);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

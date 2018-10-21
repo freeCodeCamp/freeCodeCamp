@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Escapando citações literais em cordas
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando você está definindo uma string, você deve começar e terminar com uma aspa simples ou dupla. O que acontece quando você precisa de uma citação literal: <code>&quot;</code> ou <code>&#39;</code> ? Interior de sua corda Em JavaScript, você pode <dfn>escapar de</dfn> uma citação de considerá-lo como um fim de citação corda, colocando uma <dfn>barra invertida</dfn> ( <code>\</code> ) em frente à cotação. <code>var sampleStr = &quot;Alan said, \&quot;Peter is learning JavaScript\&quot;.&quot;;</code> Isso sinaliza para o JavaScript que a seguinte citação não é o fim da string, mas deve aparecer dentro da string. Então, se você fosse imprimir isso no console, você teria: <code>Alan said, &quot;Peter is learning JavaScript&quot;.</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <dfn>barras invertidas</dfn> para atribuir uma string à variável <code>myStr</code> , de modo que, se você fosse imprimi-la no console, veria: <code>I am a &quot;double quoted&quot; string inside &quot;double quotes&quot;.</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

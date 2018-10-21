@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Crie números decimais com JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Podemos também armazenar números decimais em variáveis. Números decimais às vezes são chamados de números de <dfn>ponto flutuante</dfn> ou <dfn>flutuantes</dfn> . <strong>Nota</strong> <br> Nem todos os números reais podem ser representados com precisão em <dfn>ponto flutuante</dfn> . Isso pode levar a erros de arredondamento. <a href="https://en.wikipedia.org/wiki/Floating_point#Accuracy_problems" target="_blank">Detalhes aqui</a> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma variável <code>myDecimal</code> e dê a ela um valor decimal com uma parte fracionária (por exemplo, <code>5.7</code> ). </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

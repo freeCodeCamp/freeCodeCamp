@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 undefined
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ smallestMult(20);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

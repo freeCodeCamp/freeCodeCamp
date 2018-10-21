@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use Dot Notation para acessar as propriedades de um objeto
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio criou um <code>object</code> com várias <code>properties</code> , agora você verá como acessar os valores dessas <code>properties</code> . Aqui está um exemplo: <blockquote> vamos pato = { <br> nome: &quot;Aflac&quot;, <br> numLegs: 2 <br> }; <br> console.log (duck.name); <br> // Imprime &quot;Aflac&quot; no console </blockquote> A notação de ponto é usada no nome do <code>object</code> , <code>duck</code> , seguida do nome da <code>property</code> , <code>name</code> , para acessar o valor de &quot;Aflac&quot;. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Imprima as duas <code>properties</code> do objeto de <code>dog</code> abaixo em seu console. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let dog = {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

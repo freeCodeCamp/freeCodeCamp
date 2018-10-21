@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 276: Triângulos Primitivos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere os triângulos com lados inteiros a, b e c com ≤ b ≤ c. Um triângulo de lados inteiros (a, b, c) é chamado primitivo se mdc (a, b, c) = 1. Quantos triângulos primitivos de lados inteiros existem com um perímetro que não excede 10 000 000? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler276();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 178: Números de Passo'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere o número 45656. Pode ser visto que cada par de dígitos consecutivos de 45656 tem uma diferença de um. Um número para o qual cada par de dígitos consecutivos tem uma diferença de um é chamado de número de etapa. Um número pandigital contém todos os dígitos decimais de 0 a 9 pelo menos uma vez. <p> Quantos números de passos pandigitais são menores que 1040? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler178();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

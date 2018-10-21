@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use uma variável CSS personalizada
 ---
 
-## Description
+## Descrição
 <section id="description"> Depois de criar sua variável, você pode atribuir seu valor a outras propriedades CSS referenciando o nome que você deu a ela. <blockquote> fundo: var (- pinguim-pele); </blockquote> Isso mudará o plano de fundo de qualquer elemento que você esteja direcionando para cinza porque esse é o valor da variável <code>--penguin-skin</code> . Observe que os estilos não serão aplicados, a menos que os nomes das variáveis ​​sejam uma correspondência exata. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Aplique a variável <code>--penguin-skin</code> na propriedade <code>background</code> das classes <code>penguin-top</code> , <code>penguin-bottom</code> , <code>right-hand</code> <code>left-hand</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -255,7 +255,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

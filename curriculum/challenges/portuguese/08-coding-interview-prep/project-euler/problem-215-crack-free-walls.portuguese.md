@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 215: Paredes sem rachaduras'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere o problema de construir uma parede de tijolos 2x1 e 3x1 (dimensões horizontal × vertical) de tal forma que, para maior resistência, os espaços entre os tijolos adjacentes horizontalmente nunca se alinhem em camadas consecutivas, ou seja, nunca formar um &quot;corredor&quot; crack &quot;. <p> Por exemplo, a seguinte parede 9 × 3 não é aceitável devido à rachadura em execução mostrada em vermelho: </p><p> Existem oito maneiras de formar uma parede 9 × 3 livre de rachaduras, escrita W (9,3) = 8. </p><p> Calcule W (32,10). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler215();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

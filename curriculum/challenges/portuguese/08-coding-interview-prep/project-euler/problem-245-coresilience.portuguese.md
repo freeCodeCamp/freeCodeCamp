@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 245: Coresiliência'
 ---
 
-## Description
+## Descrição
 <section id="description"> Chamaremos uma fração que não pode ser cancelada por uma fração resiliente. Além disso, definiremos a resiliência de um denominador, R (d), como a razão de suas frações adequadas que são resilientes; por exemplo, R (12) = 4⁄11. <p> A resiliência de um número d&gt; 1 é então φ (d) d - 1, onde φ é a função totiente de Euler. Definimos ainda a coresiliência de um número n&gt; 1 como C (n) = n - φ (n) n - 1. A coresiliência de um primo p é C (p) = 1p - 1. Encontre a soma de todos os inteiros compostos 1 &lt;n ≤ 2 × 1011, para o qual C (n) é uma fração unitária. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler245();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

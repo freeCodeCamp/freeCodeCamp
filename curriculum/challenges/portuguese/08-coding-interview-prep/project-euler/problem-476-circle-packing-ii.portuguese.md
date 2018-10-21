@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja R (a, b, c) a área máxima coberta por três círculos não sobrepostos dentro de um triângulo com os comprimentos de aresta a, b e c. Seja S (n) o valor médio de R (a, b, c) sobre todos os tripletos inteiros (a, b, c) tal que 1 ≤ a ≤ b ≤ c &lt;a + b ≤ n Você recebe S (2 ) = R (1, 1, 1) ≈ 0,31998, S (5) ≈ 1,25899. Encontre S (1803) arredondado para 5 casas decimais atrás do ponto decimal. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler476();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

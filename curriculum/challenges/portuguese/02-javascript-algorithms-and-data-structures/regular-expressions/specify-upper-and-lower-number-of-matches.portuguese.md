@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Especifique o Número Superior e Inferior de Correspondências
 ---
 
-## Description
+## Descrição
 <section id="description"> Lembre-se de usar o sinal de mais <code>+</code> para procurar um ou mais caracteres e o asterisco <code>*</code> para procurar zero ou mais caracteres. Estes são convenientes, mas às vezes você quer combinar um certo intervalo de padrões. Você pode especificar o número inferior e superior de padrões com <code>quantity specifiers</code> . Os especificadores de quantidade são usados ​​com chaves ( <code>{</code> e <code>}</code> ). Você coloca dois números entre as chaves - para o número inferior e superior de padrões. Por exemplo, para corresponder apenas a letra <code>a</code> aparecer entre <code>3</code> e <code>5</code> vezes na seqüência de <code>&quot;ah&quot;</code> , o seu regex seria <code>/a{3,5}h/</code> . <blockquote> deixe A4 = &quot;aaaah&quot;; <br> deixe A2 = &quot;aah&quot;; <br> vamos multipleA = / a {3,5} h /; <br> multipleA.test (A4); // Retorna true <br> multipleA.test (A2); // Retorna falso </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o regex <code>ohRegex</code> para corresponder apenas de <code>3</code> a <code>6</code> letras <code>h</code> na palavra <code>&quot;Oh no&quot;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ let result = ohRegex.test(ohStr);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

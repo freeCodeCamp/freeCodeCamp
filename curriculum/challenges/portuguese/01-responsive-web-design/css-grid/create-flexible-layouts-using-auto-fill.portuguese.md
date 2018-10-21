@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar layouts flexíveis usando o preenchimento automático
 ---
 
-## Description
+## Descrição
 <section id="description"> A função de repetição vem com uma opção chamada <dfn>preenchimento automático</dfn> . Isso permite que você insira automaticamente quantas linhas ou colunas desejar, dependendo do tamanho do container. Você pode criar layouts flexíveis ao combinar o <code>auto-fill</code> com <code>minmax</code> . Na visualização, as <code>grid-template-columns</code> são configuradas como <blockquote> repeat (preenchimento automático, minmax (60px, 1fr)); </blockquote> Quando o contêiner muda de tamanho, essa configuração continua inserindo colunas de 60px e esticando-as até que possa inserir outra. <strong>Nota</strong> <br> Se o seu contêiner não conseguir encaixar todos os itens em uma linha, ele será transferido para um novo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Na primeira grade, use <code>auto-fill</code> com <code>repeat</code> para preencher a grade com colunas com largura mínima de <code>60px</code> <code>1fr</code> e máxima de <code>1fr</code> . Em seguida, redimensione a visualização para ver a ação de preenchimento automático. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -86,7 +86,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

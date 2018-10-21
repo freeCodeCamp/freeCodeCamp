@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Otimizar Re-Renders com shouldComponentUpdate
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, se algum componente receber um novo <code>state</code> ou novos <code>props</code> , ele se renderiza novamente e a todos os seus filhos. Isso geralmente está bem. Mas o React fornece um método de ciclo de vida que você pode chamar quando os componentes filhos receberem novos <code>state</code> ou <code>props</code> e declarar especificamente se os componentes devem ser atualizados ou não. O método é <code>shouldComponentUpdate()</code> e leva <code>nextProps</code> e <code>nextState</code> como parâmetros. Esse método é uma maneira útil de otimizar o desempenho. Por exemplo, o comportamento padrão é que seu componente seja renderizado novamente quando receber novos <code>props</code> , mesmo que os <code>props</code> não tenham sido alterados. Você pode usar <code>shouldComponentUpdate()</code> para evitar isso, comparando os <code>props</code> . O método deve retornar um valor <code>boolean</code> que informa ao React se deve ou não atualizar o componente. Você pode comparar os props atuais ( <code>this.props</code> ) com os próximos props ( <code>nextProps</code> ) para determinar se você precisa atualizar ou não e retornar <code>true</code> ou <code>false</code> acordo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O método <code>shouldComponentUpdate()</code> é adicionado em um componente chamado <code>OnlyEvens</code> . Atualmente, este método retorna <code>true</code> então o <code>OnlyEvens</code> re-renderiza toda vez que recebe novos <code>props</code> . Modifique o método para que <code>OnlyEvens</code> atualizado somente se o <code>value</code> de seus novos suportes for par. Clique no botão <code>Add</code> e observe a ordem dos eventos no console do seu navegador enquanto os outros ganchos do ciclo de vida são acionados. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -97,7 +97,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

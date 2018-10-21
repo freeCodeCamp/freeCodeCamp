@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 321: Trocando Contadores'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma linha horizontal composta por 2n + 1 quadrados tem n contadores vermelhos colocados em uma extremidade e n contadores azuis na outra extremidade, sendo separados por um único quadrado vazio no centro. Por exemplo, quando n = 3. <p> Um contador pode se mover de um quadrado para o próximo (slide) ou pode saltar sobre outro contador (salto) desde que o quadrado ao lado do contador esteja desocupado. </p><p> Seja M (n) o número mínimo de movimentos / ações para reverter completamente as posições dos contadores coloridos; isto é, mova todos os contadores vermelhos para a direita e todos os contadores azuis para a esquerda. Pode ser verificado M (3) = 15, que também é um número triangular. </p><p> Se criarmos uma sequência baseada nos valores de n para os quais M (n) é um número triangular, então os primeiros cinco termos seriam: 1, 3, 10, 22 e 63, e sua soma seria 99. </p><p> Encontre a soma dos primeiros quarenta termos desta sequência. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler321();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

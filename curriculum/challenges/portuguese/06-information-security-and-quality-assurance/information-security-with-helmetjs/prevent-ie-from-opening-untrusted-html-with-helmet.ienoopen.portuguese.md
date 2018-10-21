@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Impedir o IE de abrir HTML não confiável com helmet.ieNoOpen ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a> . Alguns aplicativos da Web servirão HTML não confiável para download. Algumas versões do Internet Explorer, por padrão, abrem esses arquivos HTML no contexto do seu site. Isso significa que uma página HTML não confiável pode começar a fazer coisas ruins no contexto de suas páginas. Este middleware define o cabeçalho X-Download-Options como noopen. Isso impedirá que os usuários do IE executem downloads no contexto do site confiável. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,12 +25,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

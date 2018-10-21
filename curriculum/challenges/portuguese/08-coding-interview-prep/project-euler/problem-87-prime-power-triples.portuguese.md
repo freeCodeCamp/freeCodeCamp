@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 87: Potência Prime triplica'
 ---
 
-## Description
+## Descrição
 <section id="description"> O menor número expressável como a soma de um quadrado primário, um cubo primo e uma quarta potência primitiva é 28. De fato, há exatamente quatro números abaixo de cinquenta que podem ser expressos de tal maneira: 28 = 22 + 23 + 24 33 = 32 + 23 + 24 49 = 52 + 23 + 24 47 = 22 + 33 + 24 Quantos números abaixo de cinquenta milhões podem ser expressos como a soma de um quadrado primário, um cubo primo e um quarto poder primário? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler87();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

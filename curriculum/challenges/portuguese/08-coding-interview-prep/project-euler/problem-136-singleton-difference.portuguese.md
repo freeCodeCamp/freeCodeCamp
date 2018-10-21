@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 136: Diferença Singleton'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os inteiros positivos, x, y e z são termos consecutivos de uma progressão aritmética. Dado que n é um inteiro positivo, a equação, x2 - y2 - z2 = n, tem exatamente uma solução quando n = 20: 132 - 102 - 72 = 20 De fato, há vinte e cinco valores de n abaixo de cem para os quais a equação tem uma solução única. Quantos valores de n menos de cinquenta milhões têm exatamente uma solução? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler136();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

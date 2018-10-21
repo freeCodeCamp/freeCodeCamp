@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Existem exatamente dez maneiras de selecionar três de cinco, 12345: 123, 124, 125, 134, 135, 145, 234, 235, 245 e 345. Em combinatória, usamos a notação, 5C3 = 10. Em geral, <p> nCr = n! r! (n − r)! , onde r ≤ n, n! = n × (n − 1) × ... × 3 × 2 × 1 e 0! = 1 </p><p> Não é até n = 23, que um valor excede um milhão: 23C10 = 1144066. Quantos, não necessariamente distintos, valores de nCr, para 1 ≤ n ≤ 100, são maiores que um milhão? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ combinatoricSelections(1000000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

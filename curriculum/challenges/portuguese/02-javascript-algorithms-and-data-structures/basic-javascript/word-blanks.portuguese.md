@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Blanks da palavra
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora usaremos nosso conhecimento de strings para criar um jogo de palavras estilo &quot; <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> &quot; que estamos chamando de &quot;Word Blanks&quot;. Você criará uma frase &quot;Preencha os espaços em branco&quot; (opcionalmente engraçada). Em um jogo &quot;Mad Libs&quot;, você recebe frases com algumas palavras ausentes, como substantivos, verbos, adjetivos e advérbios. Você então preenche as partes que faltam com palavras de sua escolha de uma forma que a sentença completa faça sentido. Considere esta frase - &quot;Foi realmente <strong>____</strong> , e nós <strong>____</strong> nós mesmos <strong>____</strong> &quot;. Esta frase tem três partes faltando - um adjetivo, um verbo e um advérbio, e podemos adicionar palavras de nossa escolha para completá-lo. Podemos então atribuir a frase completa a uma variável da seguinte forma: <blockquote> var sentença = &quot;Foi realmente&quot; + &quot;quente&quot; + &quot;, e nós&quot; + &quot;rimos&quot; + &quot;nós mesmos&quot; + &quot;bobos.&quot;; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Neste desafio, fornecemos a você um substantivo, um verbo, um adjetivo e um advérbio. Você precisa formar uma frase completa usando palavras de sua escolha, juntamente com as palavras que fornecemos. Você precisará usar o operador de concatenação de strings <code>+</code> para construir uma nova string, usando as variáveis ​​fornecidas: <code>myNoun</code> , <code>myAdjective</code> , <code>myVerb</code> e <code>myAdverb</code> . Você então atribuirá a string formada à variável de <code>result</code> . Você também precisará considerar espaços em sua string, para que a frase final tenha espaços entre todas as palavras. O resultado deve ser uma frase completa. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,7 +61,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

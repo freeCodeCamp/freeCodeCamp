@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Facilitar a navegação do leitor de tela com o cabeçalho Landmark
 ---
 
-## Description
+## Descrição
 <section id="description"> O próximo elemento HTML5 que adiciona significado semântico e melhora a acessibilidade é a tag de <code>header</code> . Ele é usado para envolver informações introdutórias ou links de navegação para sua tag pai e funciona bem em torno do conteúdo que é repetido na parte superior em várias páginas. <code>header</code> compartilha o recurso de ponto de referência incorporado que você viu com o <code>main</code> , permitindo que as tecnologias de assistência naveguem rapidamente para esse conteúdo. <strong>Nota</strong> <br> <code>header</code> é destinado para uso na tag <code>body</code> do seu documento HTML. Isso é diferente do elemento <code>head</code> , que contém o título da página, meta informações etc. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Camper Cat está escrevendo alguns ótimos artigos sobre treinamento ninja, e quer adicionar uma página para eles em seu site. Altere a <code>div</code> superior que atualmente contém o <code>h1</code> para uma tag de <code>header</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,7 +70,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

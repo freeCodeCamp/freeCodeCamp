@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entenda a imutabilidade da corda
 ---
 
-## Description
+## Descrição
 <section id="description"> Em JavaScript, os valores <code>String</code> são <dfn>imutáveis</dfn> , o que significa que eles não podem ser alterados depois de criados. Por exemplo, o código a seguir: <blockquote> var myStr = &quot;Bob&quot;; <br> myStr [0] = &quot;J&quot;; </blockquote> não pode alterar o valor de <code>myStr</code> para &quot;Job&quot;, porque o conteúdo de <code>myStr</code> não pode ser alterado. Observe que isso <em>não</em> significa que <code>myStr</code> não possa ser alterado, apenas que os caracteres individuais de uma <dfn>string literal</dfn> não podem ser alterados. A única maneira de alterar <code>myStr</code> seria atribuí-lo com uma nova string, assim: <blockquote> var myStr = &quot;Bob&quot;; <br> myStr = &quot;Job&quot;; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrija a atribuição para <code>myStr</code> para que ela contenha o valor de string de <code>Hello World</code> usando a abordagem mostrada no exemplo acima. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

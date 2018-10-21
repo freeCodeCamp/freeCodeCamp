@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Segmente o mesmo elemento com vários seletores jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora você conhece três maneiras de segmentar elementos: por tipo: <code>$(&quot;button&quot;)</code> , por classe: <code>$(&quot;.btn&quot;)</code> e por id <code>$(&quot;#target1&quot;)</code> . Embora seja possível adicionar várias classes em uma única chamada <code>.addClass()</code> , vamos incluí-las no mesmo elemento de <em>três maneiras distintas</em> . Usando <code>.addClass()</code> , adicione somente uma classe por vez ao mesmo elemento, de três maneiras diferentes: Adicione a classe <code>animated</code> a todos os elementos com o <code>button</code> type. Adicione a classe <code>shake</code> a todos os botões com a classe <code>.btn</code> . Adicione a classe <code>btn-primary</code> ao botão com id <code>#target1</code> . <strong>Nota</strong> <br> Você deve segmentar apenas um elemento e adicionar apenas uma classe por vez. No total, seus três seletores individuais acabarão adicionando as três classes <code>shake</code> , <code>animated</code> e <code>btn-primary</code> a <code>#target1</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,7 +81,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 167: Investigando sequências de Ulam'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para dois inteiros positivos aeb, a seqüência de Ulam U (a, b) é definida por U (a, b) 1 = a, U (a, b) 2 = b e para k&gt; 2, U (a, b ) k é o menor inteiro maior que U (a, b) (k-1), que pode ser escrito exatamente de uma maneira como a soma de dois membros anteriores distintos de U (a, b). Por exemplo, a sequência U (1,2) começa com 1, 2, 3 = 1 + 2, 4 = 1 + 3, 6 = 2 + 4, 8 = 2 + 6, 11 = 3 + 8; 5 não pertence a ele porque 5 = 1 + 4 = 2 + 3 tem duas representações como a soma de dois membros anteriores, da mesma forma 7 = 1 + 6 = 3 + 4. Encontre ∑U (2,2n + 1) k para 2 ≤ n ≤ 10, onde k = 1011. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler167();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

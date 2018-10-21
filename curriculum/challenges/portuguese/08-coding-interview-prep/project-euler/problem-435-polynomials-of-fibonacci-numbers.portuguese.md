@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 435: Polinômios de números de Fibonacci'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os números de Fibonacci {fn, n ≥ 0} são definidos recursivamente como fn = fn-1 + fn-2 com casos de base f0 = 0 e f1 = 1. Defina os polinômios {Fn, n ≥ 0} como Fn (x) = ∑fixi para 0 ≤ i ≤ n. Por exemplo, F7 (x) = x + x2 + 2x3 + 3x4 + 5x5 + 8x6 + 13x7 e F7 (11) = 268357683. Seja n = 1015. Encontre a soma [∑0≤x≤100 Fn (x)] mod 1307674368000 (= 15!). </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler435();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

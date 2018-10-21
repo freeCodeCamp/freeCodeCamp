@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 200: Encontre o 200º sqube à prova de prime contendo a sub-string contígua "200"'
 ---
 
-## Description
+## Descrição
 <section id="description"> Nós definiremos um sqube como um número da forma, p2q3, onde p e q são primos distintos. Por exemplo, 200 = 5223 ou 120072949 = 232613. <p> Os primeiros cinco squbes são 72, 108, 200, 392 e 500. </p><p> Curiosamente, 200 é também o primeiro número para o qual você não pode alterar nenhum dígito para fazer um primo; nós chamaremos esses números, à prova de chumbo. O próximo escopo à prova de primos que contém a subcadeia contígua &quot;200&quot; é 1992008. </p><p> Encontre o 200º sqube à prova de prime contendo a sub-string contígua &quot;200&quot;. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler200();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

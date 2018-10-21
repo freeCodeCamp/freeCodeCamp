@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Conecte o Redux ao aplicativo de mensagens
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que você entendeu como usar a <code>connect</code> para conectar o React ao Redux, você pode aplicar o que aprendeu ao seu componente React que lida com mensagens. Na última lição, o componente que você conectou ao Redux chamava-se <code>Presentational</code> , e isso não era arbitrário. Este termo <i>geralmente</i> se refere aos componentes React que não estão diretamente conectados ao Redux. Eles são simplesmente responsáveis ​​pela apresentação da interface do usuário e fazem isso como uma função dos objetos que recebem. Por outro lado, os componentes do contêiner estão conectados ao Redux. Normalmente, eles são responsáveis ​​por despachar ações para o armazenamento e, freqüentemente, passar o estado do armazenamento para componentes filhos como acessórios. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem todo o código que você escreveu nesta seção até agora. A única mudança é que o componente React é renomeado para <code>Presentational</code> . Crie um novo componente mantido em uma constante chamada <code>Container</code> que usa <code>connect</code> para conectar o componente <code>Presentational</code> ao Redux. Em seguida, no <code>AppWrapper</code> , renderize o componente React Redux <code>Provider</code> . Passe <code>Provider</code> ao <code>store</code> Redux como prop e renderize <code>Container</code> como um filho. Depois que tudo estiver configurado, você verá o aplicativo de mensagens renderizado para a página novamente. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -152,7 +152,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

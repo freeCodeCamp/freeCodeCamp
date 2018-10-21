@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Ordenar uma matriz em ordem alfabética usando o método de classificação
 ---
 
-## Description
+## Descrição
 <section id="description"> O método de <code>sort</code> classifica os elementos de uma matriz de acordo com a função de retorno de chamada. Por exemplo: <blockquote> function ascendingOrder (arr) { <br> return arr.sort (função (a, b) { <br> return a - b; <br> }); <br> } <br> ascendingOrder ([1, 5, 2, 3, 4]); <br> // Retorna [1, 2, 3, 4, 5] <br><br> função reverseAlpha (arr) { <br> return arr.sort (função (a, b) { <br> return a &lt;b; <br> }); <br> } <br> reverseAlpha ([&#39;l&#39;, &#39;h&#39;, &#39;z&#39;, &#39;b&#39;, &#39;s&#39;]); <br> // Retorna [&#39;z&#39;, &#39;s&#39;, &#39;l&#39;, &#39;h&#39;, &#39;b&#39;] </blockquote> Nota: É recomendável fornecer uma função de retorno de chamada para especificar como classificar os itens da matriz. O método de classificação padrão do JavaScript é pelo valor do ponto Unicode da sequência, que pode retornar resultados inesperados. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método <code>sort</code> na função <code>alphabeticalOrder</code> para classificar os elementos de <code>arr</code> em ordem alfabética. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ alphabeticalOrder(["a", "d", "c", "a", "z", "g"]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

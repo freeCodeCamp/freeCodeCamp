@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alterar o protótipo para um novo objeto
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora você tem adicionado propriedades ao <code>prototype</code> individualmente: <blockquote> Bird.prototype.numLegs = 2; </blockquote> Isso se torna tedioso depois de mais do que algumas propriedades. <blockquote> Bird.prototype.eat = function () { <br> console.log (&quot;nom nom nom&quot;); <br> } <br><br> Bird.prototype.describe = function () { <br> console.log (&quot;Meu nome é&quot; + this.name); <br> } </blockquote> Uma maneira mais eficiente é definir o <code>prototype</code> para um novo objeto que já contém as propriedades. Desta forma, as propriedades são adicionadas de uma só vez: <blockquote> Bird.prototype = { <br> numLegs: 2, <br> eat: function () { <br> console.log (&quot;nom nom nom&quot;); <br> } <br> describe: function () { <br> console.log (&quot;Meu nome é&quot; + this.name); <br> } <br> }; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione a propriedade <code>numLegs</code> e os dois métodos <code>eat()</code> e <code>describe()</code> ao <code>prototype</code> de <code>Dog</code> definindo o <code>prototype</code> para um novo objeto. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ Dog.prototype = {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

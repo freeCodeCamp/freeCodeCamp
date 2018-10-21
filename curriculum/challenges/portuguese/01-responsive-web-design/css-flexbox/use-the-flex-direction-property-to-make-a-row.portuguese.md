@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a propriedade flex-direction para criar uma linha
 ---
 
-## Description
+## Descrição
 <section id="description"> Adicionando <code>display: flex</code> para um elemento o transforma em um contêiner flexível. Isso torna possível alinhar quaisquer filhos desse elemento em linhas ou colunas. Você faz isso adicionando a propriedade <code>flex-direction</code> ao item pai e configurando-o para linha ou coluna. A criação de uma linha alinhará os filhos horizontalmente e a criação de uma coluna alinhará os filhos verticalmente. Outras opções para <code>flex-direction</code> são reversão de linha e reversão de coluna. <strong>Nota</strong> <br> O valor padrão da propriedade <code>flex-direction</code> é row. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o <code>flex-direction</code> propriedade CSS ao elemento <code>#box-container</code> e atribua a ele um valor de reversão de linha. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,7 +62,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

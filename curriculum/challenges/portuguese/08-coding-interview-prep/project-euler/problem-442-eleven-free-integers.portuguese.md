@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 442: Inteiros sem onze'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um inteiro é chamado onze-free se sua expansão decimal não contiver qualquer substring representando uma potência de 11, exceto 1. <p> Por exemplo, 2404 e 13431 são onze livres, enquanto 911 e 4121331 não são. </p><p> Seja E (n) o n-ésimo inteiro sem onze positivo. Por exemplo, E (3) = 3, E (200) = 213 e E (500 000) = 531563. </p><p> Encontre E (1018). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler442();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

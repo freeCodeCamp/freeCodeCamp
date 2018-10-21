@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a tag u para sublinhar o texto
 ---
 
-## Description
+## Descrição
 <section id="description"> Para sublinhar o texto, você pode usar a tag <code>u</code> . Isso é freqüentemente usado para significar que uma seção de texto é importante, ou algo para lembrar. Com a tag <code>u</code> , o navegador aplica o CSS de <code>text-decoration: underline;</code> para o elemento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Embrulhe a tag <code>u</code> apenas em torno do texto &quot;Ph.D. students&quot;. <strong>Nota</strong> <br> Tente evitar usar a tag <code>u</code> quando puder ser confundida com um link. As tags de âncora também têm uma formatação sublinhada padrão. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,7 +79,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

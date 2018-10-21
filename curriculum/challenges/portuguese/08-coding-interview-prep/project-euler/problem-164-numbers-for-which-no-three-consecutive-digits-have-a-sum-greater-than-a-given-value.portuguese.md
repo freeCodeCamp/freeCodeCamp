@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 164: Números para os quais não há três dígitos consecutivos com uma soma maior que um determinado valor'
 ---
 
-## Description
+## Descrição
 <section id="description"> Quantos números de 20 dígitos n (sem nenhum zero inicial) existem, de modo que não há três dígitos consecutivos de n que tenham uma soma maior que 9? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler164();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

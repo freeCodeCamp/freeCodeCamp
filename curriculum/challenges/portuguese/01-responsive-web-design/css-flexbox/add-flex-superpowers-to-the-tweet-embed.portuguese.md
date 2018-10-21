@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Adicione Superpotências Flex ao Tweet Incorporado
 ---
 
-## Description
+## Descrição
 <section id="description"> À direita está o tweet incorporado que será usado como exemplo prático. Alguns dos elementos ficariam melhores com um layout diferente. O último desafio demonstrou a <code>display: flex</code> . Aqui você a adicionará a vários componentes no tweet incorporado para começar a ajustar seu posicionamento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione a propriedade CSS <code>display: flex</code> para todos os itens a seguir - observe que os seletores já estão configurados no CSS:
 <code>header</code>, <code>.profile-name</code> do cabeçalho, <code>.follow-btn</code> do cabeçalho, <code>h3</code> e <code>h4</code> do cabeçalho, <code>footer</code>, e <code>.stats</code> do rodapé. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -141,7 +141,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

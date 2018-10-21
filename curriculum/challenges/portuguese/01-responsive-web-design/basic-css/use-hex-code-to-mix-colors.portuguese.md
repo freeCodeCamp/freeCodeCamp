@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o código hexadecimal para misturar cores
 ---
 
-## Description
+## Descrição
 <section id="description"> Para revisar, os códigos hexadecimais usam 6 dígitos hexadecimais para representar as cores, dois para os componentes vermelho (R), verde (G) e azul (B). Destas três cores puras (vermelho, verde e azul), podemos variar as quantidades de cada uma para criar mais de 16 milhões de outras cores! Por exemplo, laranja é vermelho puro, misturado com verde e não azul. Em código hexadecimal, isso se traduz em ser <code>#FFA500</code> . O dígito <code>0</code> é o menor número no código hexadecimal e representa uma completa ausência de cor. O dígito <code>F</code> é o número mais alto no código hexadecimal e representa o brilho máximo possível. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Substitua as palavras de cor em nosso elemento de <code>style</code> com seus códigos hexadecimais corretos. <table class="table table-striped"><tbody><tr><th> Cor </th><th> Código hexadecimal </th></tr><tr><td> Trapaceiro azul </td><td> <code>#1E90FF</code> </td> </tr><tr><td> Verde </td><td> <code>#00FF00</code> </td> </tr><tr><td> laranja </td><td> <code>#FFA500</code> </td> </tr><tr><td> Vermelho </td><td> <code>#FF0000</code> </td> </tr></tbody></table></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

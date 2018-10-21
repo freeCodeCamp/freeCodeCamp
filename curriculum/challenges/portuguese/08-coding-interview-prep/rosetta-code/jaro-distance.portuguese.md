@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Distância Jaro
 ---
 
-## Description
+## Descrição
 <section id="description"> A distância Jaro é uma medida de similaridade entre duas seqüências. Quanto maior a distância Jaro para duas strings, mais similares são as strings. A pontuação é normalizada de tal forma que <b>0</b> equivale a nenhuma semelhança e <b>1</b> é uma correspondência exata. Definição A distância Jaro \ (d_j \) de duas strings dadas \ (s_1 \) e \ (s_2 \) é \ begin {align} d_j = \ begin {casos} 0 &amp; &amp; \ text {if} m = 0 \\\ \ {\ frac {1} {3}} \ left ({\ frac {m} {| s_ {1} |}} + {\ frac {m} {| s_ {2} |}} + {\ frac { mt} {m}} \ right) &amp; &amp; \ text {caso contrário} \ end {cases} \ end {align} Onde: <ul><li> \ (m \) é o número de <i>caracteres correspondentes</i> ; </li><li> \ (t \) é metade do número de <i>transposições</i> . </li></ul> Dois caracteres de \ (s_1 \) e \ (s_2 \), respectivamente, são considerados <i>correspondentes</i> somente se forem iguais e não mais que \ (\ left \ lfloor \ frac {\ max (| s_1 |, | s_2 |)} {2} \ right \ rfloor-1 \). Cada caractere de \ (s_1 \) é comparado com todos os caracteres correspondentes em \ (s_2 \). O número de caracteres correspondentes (mas de ordem de seqüência diferente) dividido por 2 define o número de <i>transposições</i> . <b>Exemplo</b> Dadas as strings \ (s_1 \) <i>DWAYNE</i> e \ (s_2 \) <i>DUANE</i> encontramos: <ul><li> \ (m = 4 \) </li><li> \ (| s_1 | = 6 \) </li><li> \ (| s_2 | = 5 \) </li><li> \ (t = 0 \) </li></ul> Encontramos uma pontuação Jaro de: \ (d_j = \ frac {1} {3} \ left (\ frac {4} {6} + \ frac {4} {5} + \ frac {4-0} {4} \ right) = 0,822 \). Escreva uma função a que use duas strings como parâmetros e retorne a distância Jaro associada. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

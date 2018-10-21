@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Aninhar uma matriz dentro de outra matriz
 ---
 
-## Description
+## Descrição
 <section id="description"> Você também pode aninhar matrizes dentro de outras matrizes, como este: <code>[[&quot;Bulls&quot;, 23], [&quot;White Sox&quot;, 45]]</code> . Isso também é chamado <dfn>de matriz multidimensional <dfn>.</dfn></dfn> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma matriz aninhada chamada <code>myArray</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

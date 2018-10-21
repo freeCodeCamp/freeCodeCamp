@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Encontre a palavra mais longa em uma string
 ---
 
-## Description
+## Descrição
 <section id="description"> Retorna o tamanho da palavra mais longa na frase fornecida. Sua resposta deve ser um número. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

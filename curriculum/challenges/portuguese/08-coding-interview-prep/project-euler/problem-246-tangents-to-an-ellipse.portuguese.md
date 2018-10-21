@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 246: Tangentes para uma elipse'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma definição para uma elipse é: Dado um círculo c com centro M e raio r e um ponto G tal que d (G, M) <p> A construção dos pontos da elipse é mostrada abaixo. </p><p> São dados os pontos M (-2000,1500) e G (8000,1500). Dado é também o círculo c com o centro M e o raio 15000. O lugar geométrico dos pontos equidistantes de G e c formam uma elipse e. De um ponto P para fora e as duas tangentes t1 e t2 para a elipse são desenhadas. Deixe os pontos em que t1 e t2 tocarem a elipse ser R e S. </p><p> Para quantos pontos de rede P é o ângulo RPS maior que 45 graus? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler246();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

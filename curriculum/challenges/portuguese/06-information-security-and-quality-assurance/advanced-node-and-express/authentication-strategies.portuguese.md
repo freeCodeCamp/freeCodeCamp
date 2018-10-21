@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Estratégias de Autenticação
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Uma estratégia é uma maneira de autenticar um usuário. Você pode usar uma estratégia para permitir que os usuários se autentiquem com base em informações salvas localmente (se você fizer com que elas se registrem primeiro) ou em vários provedores, como o Google ou o Github. Para este projeto, vamos criar uma estratégia local. Para ver uma lista das centenas de estratégias, visite o site Passports <a href="http://passportjs.org/">aqui</a> . Adicione o <em>passport-local</em> como uma dependência e adicione-o ao seu servidor da seguinte forma: <code>const LocalStrategy = require(&#39;passport-local&#39;);</code> Agora você terá que dizer ao passport para <b>usar</b> um objeto LocalStartegy instanciado com algumas configurações definidas. Certifique-se de que isso e tudo a partir deste ponto é encapsulado na conexão com o banco de dados, pois depende dele! <pre> passport.use (novo LocalStrategy (
   função (nome de usuário, senha, feito) {
     db.collection (&#39;users&#39;). findOne ({username: username}, função (err, user) {
@@ -19,11 +19,11 @@ localeTitle: Estratégias de Autenticação
   }
 )); </pre> Isso está definindo o processo a ser tomado quando tentamos autenticar alguém localmente. Primeiro, ele tenta encontrar um usuário em nosso banco de dados com o nome de usuário inserido, depois verifica se a senha corresponde e, finalmente, se não houver erros que verifiquemos, como uma senha incorreta, o objeto users será retornado e eles serão exibidos. autenticado. Muitas estratégias são configuradas usando diferentes configurações, em geral é fácil configurá-lo com base no README desse repositório de estratégias. Um bom exemplo disso é a estratégia do Github, onde não precisamos nos preocupar com um nome de usuário ou senha, porque o usuário será enviado para a página de autenticação do Github para autenticar e, desde que esteja logado e concordar, o Github retorna seu perfil para nos usar. Na próxima etapa, vamos configurar como chamar a estratégia de autenticação para validar um usuário com base nos dados do formulário! Envie sua página quando achar que está correta até o momento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,12 +37,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

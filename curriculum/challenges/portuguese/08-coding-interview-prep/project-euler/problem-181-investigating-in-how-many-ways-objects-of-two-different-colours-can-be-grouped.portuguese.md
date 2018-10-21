@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 181: Investigando em quantas maneiras objetos de duas cores diferentes podem ser agrupados'
 ---
 
-## Description
+## Descrição
 <section id="description"> Possuindo três objetos pretos B e um objeto branco W, eles podem ser agrupados de 7 formas como: (BBBW) (B, BBW) (B, B, BW) (B, B, B, W) (B, BB, W (BBB, W) (BB, BW) De quantas maneiras podem ser agrupados sessenta objetos pretos B e quarenta objetos brancos? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler181();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

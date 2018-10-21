@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Manipular Arrays Com pop ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Outra maneira de alterar os dados em uma matriz é com a função <code>.pop()</code> . <code>.pop()</code> é usado para &quot;pop&quot; um valor fora do final de uma matriz. Podemos armazenar esse valor &quot;popped off&quot;, atribuindo-o a uma variável. Em outras palavras, <code>.pop()</code> remove o último elemento de uma matriz e retorna esse elemento. Qualquer tipo de entrada pode ser &quot;popped&quot; fora de um array - números, strings, até matrizes aninhadas. <blockquote> <code>var threeArr = [1, 4, 6]; <br> var oneDown = threeArr.pop(); <br> console.log(oneDown); // Returns 6 <br> console.log(threeArr); // Returns [1, 4]</code> </blockquote> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a função <code>.pop()</code> para remover o último item de <code>myArray</code> , atribuindo o valor &quot;popped off&quot; ao <code>removedFromMyArray</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,7 +61,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

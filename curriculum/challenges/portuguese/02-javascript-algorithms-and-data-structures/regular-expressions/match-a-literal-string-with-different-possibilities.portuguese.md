@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Combine uma seqüência literal com diferentes possibilidades
 ---
 
-## Description
+## Descrição
 <section id="description"> Usando regexes como <code>/coding/</code> , você pode procurar o padrão <code>&quot;coding&quot;</code> em outra string. Isso é poderoso para pesquisar strings únicas, mas é limitado a apenas um padrão. Você pode pesquisar vários padrões usando a <code>alternation</code> ou o operador <code>OR</code> : <code>|</code> . Este operador corresponde aos padrões antes ou depois dele. Por exemplo, se você quisesse combinar <code>&quot;yes&quot;</code> ou <code>&quot;no&quot;</code> , o regex desejado é <code>/yes|no/</code> . Você também pode pesquisar mais do que apenas dois padrões. Você pode fazer isso adicionando mais padrões com mais operadores <code>OR</code> separando-os, como <code>/yes|no|maybe/</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Complete o regex <code>petRegex</code> para combinar com os pets <code>&quot;dog&quot;</code> , <code>&quot;cat&quot;</code> , <code>&quot;bird&quot;</code> ou <code>&quot;fish&quot;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ let result = petRegex.test(petString);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

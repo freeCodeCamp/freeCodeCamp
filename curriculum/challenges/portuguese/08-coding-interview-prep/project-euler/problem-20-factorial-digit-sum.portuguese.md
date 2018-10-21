@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 20: soma do dígito fatorial'
 ---
 
-## Description
+## Descrição
 <section id="description"> <var>n</var> ! significa <var>n</var> × ( <var>n</var> - 1) × ... × 3 × 2 × 1 Por exemplo, 10! = 10 × 9 × ... × 3 × 2 × 1 = 3628800, <br> e a soma dos dígitos no número 10! é 3 + 6 + 2 + 8 + 8 + 0 + 0 = 27. Encontre a soma dos dígitos <var>n</var> ! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ sumFactorialDigits(100);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

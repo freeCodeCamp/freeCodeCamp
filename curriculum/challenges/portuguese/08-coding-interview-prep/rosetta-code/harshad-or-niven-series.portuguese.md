@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Série Harshad ou Niven
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Os números de <a href="http://mathworld.wolfram.com/HarshadNumber.html" title="link: http://mathworld.wolfram.com/HarshadNumber.html">Harshad</a> ou Niven são inteiros positivos ≥ 1 que são divisíveis pela soma de seus dígitos. </p><p> Por exemplo, 42 é um <a href="http://rosettacode.org/wiki/oeis:A005349" title="oeis: A005349">número de Harshad,</a> pois 42 é divisível por (4 + 2) sem resto. </p> Suponha que a série seja definida como os números em ordem crescente. Tarefa: <p> Implemente uma função para gerar membros sucessivos da sequência de Harshad. </p><p> Use-o para listar os primeiros vinte membros da sequência e listar o primeiro número de Harshad maior que 1000. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

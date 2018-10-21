@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 14: Maior Sequência Collatz'
 ---
 
-## Description
+## Descrição
 <section id="description"> A sequência iterativa a seguir é definida para o conjunto de inteiros positivos: <div style="padding-left: 4em;"> <var>n</var> → <var>n</var> / 2 ( <var>n</var> é par) </div><div style="padding-left: 4em;"> <var>n</var> → 3 <var>n</var> + 1 ( <var>n</var> é ímpar) </div> Usando a regra acima e começando com 13, geramos a seguinte sequência: <div style="text-align: center;"> 13 → 40 → 20 → 10 → 5 → 16 → 8 → 4 → 2 → 1 </div> Pode ser visto que esta sequência (começando em 13 e terminando em 1) contém 10 termos. Embora ainda não tenha sido provado (Problema de Collatz), acredita-se que todos os números iniciais terminem em 1. Qual número inicial, abaixo do <code>limit</code> dado, produz a cadeia mais longa? NOTA: Uma vez que a cadeia comece, os termos podem ultrapassar um milhão. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ longestCollatzSequence(14);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

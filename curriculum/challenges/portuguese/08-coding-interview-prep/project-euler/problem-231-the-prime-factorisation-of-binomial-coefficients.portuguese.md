@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 231: A fatoração primária dos coeficientes binomiais'
 ---
 
-## Description
+## Descrição
 <section id="description"> O coeficiente binomial 10C3 = 120. 120 = 23 × 3 × 5 = 2 × 2 × 2 × 3 × 5, e 2 + 2 + 2 + 3 + 5 = 14. Portanto, a soma dos termos na fatoração primária de 10C3 é 14. <p> Encontre a soma dos termos na fatoração primária de 20000000C15000000. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler231();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

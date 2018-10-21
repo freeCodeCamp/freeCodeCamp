@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Crie uma lista ordenada
 ---
 
-## Description
+## Descrição
 <section id="description"> O HTML tem outro elemento especial para criar <code>ordered lists</code> ou listas numeradas. As listas ordenadas começam com um elemento <code>&lt;ol&gt;</code> abertura, seguido por qualquer número de elementos <code>&lt;li&gt;</code> . Finalmente, listas ordenadas fecham com um <code>&lt;/ol&gt;</code> Por exemplo: <blockquote> &lt;ol&gt; <br> &lt;li&gt; Garfield &lt;/ li&gt; <br> &lt;li&gt; Sylvester &lt;/ li&gt; <br> &lt;/ ol&gt; </blockquote> criaria uma lista numerada de &quot;Garfield&quot; e &quot;Sylvester&quot;. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma lista ordenada das 3 principais coisas que os gatos mais odeiam. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -40,7 +40,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,7 +70,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

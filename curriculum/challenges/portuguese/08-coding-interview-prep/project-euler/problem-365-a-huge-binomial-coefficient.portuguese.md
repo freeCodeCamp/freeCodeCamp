@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 365: Um enorme coeficiente binomial'
 ---
 
-## Description
+## Descrição
 <section id="description"> O coeficiente binomial C (1018,109) é um número com mais de 9 bilhões (9 × 109) dígitos. <p> Seja M (n, k, m) o coeficiente binomial C (n, k) módulo m. </p><p> Calcule ∑M (1018,109, p <em>q</em> r) para 1000 &lt;p &lt;q &lt;r &lt;5000 e p, q, r primo. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler365();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

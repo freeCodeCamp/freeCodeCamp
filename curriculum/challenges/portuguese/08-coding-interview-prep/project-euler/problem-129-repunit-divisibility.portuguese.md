@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 129: Repartição da divisibilidade'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um número consistindo inteiramente de um é chamado de repunit. Vamos definir R (k) para ser uma repunidade de comprimento k; por exemplo, R (6) = 111111. Dado que n é um inteiro positivo e GCD (n, 10) = 1, pode ser mostrado que sempre existe um valor, k, para o qual R (k) é divisível por n e seja A (n) o menor desses valores de k; por exemplo, A (7) = 6 e A (41) = 5. O menor valor de n para o qual A (n) excede primeiro dez é 17. Encontre o menor valor de n para o qual A (n) excede primeiro um milhão. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler129();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

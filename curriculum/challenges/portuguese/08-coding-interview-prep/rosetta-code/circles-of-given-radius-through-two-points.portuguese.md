@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Círculos de raio dado através de dois pontos
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Dados dois pontos em um plano e um raio, geralmente dois círculos de raio dado podem ser traçados através dos pontos. </p> Exceções: Um raio de zero deve ser tratado como nunca descrevendo círculos (exceto no caso em que os pontos são coincidentes). Se os pontos são coincidentes, então um número infinito de círculos com o ponto em sua circunferência pode ser desenhado, a menos que o raio seja igual a zero também, o que colapsa os círculos em um ponto. Se os pontos formarem um diâmetro, retorne um único círculo. Se os pontos estiverem muito distantes, nenhum círculo poderá ser desenhado. Tarefa: Implemente uma função que leve dois pontos e um raio e retorne os dois círculos através desses pontos. Para cada círculo resultante, forneça as coordenadas para o centro de cada círculo arredondado para quatro dígitos decimais. Retorne cada coordenada como uma matriz e coordene como uma matriz de matrizes. Para casos de borda, retorne o seguinte: Se os pontos estiverem no diâmetro, retorne um ponto. Se o raio também for zero, retorne <code>&quot;Radius Zero&quot;</code> . Se os pontos forem coincidentes, devolva <code>&quot;Coincident point. Infinite solutions&quot;</code> . Se os pontos estiverem mais afastados do que o diâmetro, retorne <code>&quot;No intersection. Points further apart than circle diameter&quot;</code> . Entradas de amostra: <pre> p1 p2 r
 0,1234, 0,9876 0,8765, 0,2345 2,0
 0,0000, 2,0000 0,0000, 0,0000 1,0
@@ -15,11 +15,11 @@ localeTitle: Círculos de raio dado através de dois pontos
 0,1234, 0,9876 0,1234, 0,9876 0,0
 </pre> Ref: <a href="http://mathforum.org/library/drmath/view/53027.html" title="link: http://mathforum.org/library/drmath/view/53027.html">Encontrar o centro de um círculo de 2 pontos e raio</a> do fórum de matemática @ Drexel </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,7 +68,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

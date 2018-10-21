@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Centralizar um elemento horizontalmente usando a propriedade de margem
 ---
 
-## Description
+## Descrição
 <section id="description"> Outra técnica de posicionamento é centralizar um elemento de bloco horizontalmente. Uma maneira de fazer isso é definir sua <code>margin</code> para um valor de auto. Este método também funciona para imagens. As imagens são elementos embutidos por padrão, mas podem ser alteradas para elementos de bloco quando você define a propriedade de <code>display</code> para bloquear. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Centralize o <code>div</code> na página adicionando uma propriedade de <code>margin</code> com um valor de auto. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,7 +48,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

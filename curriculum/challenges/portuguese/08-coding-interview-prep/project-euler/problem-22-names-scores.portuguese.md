@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 22: pontuações dos nomes'
 ---
 
-## Description
+## Descrição
 <section id="description"> Usando <code>names</code> , um array contendo mais de cinco mil nomes, comece classificando-o em ordem alfabética. Em seguida, calculando o valor alfabético para cada nome, multiplique esse valor por sua posição alfabética na lista para obter uma pontuação de nome. Por exemplo, quando a lista é classificada em ordem alfabética, COLIN, que vale 3 + 15 + 12 + 9 + 14 = 53, é o 938º nome da lista. Então, o COLIN obteria uma pontuação de 938 × 53 = 49714. Qual é o total de todas as pontuações de nome no arquivo? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ const names = ['MARY','PATRICIA','LINDA','BARBARA','ELIZABETH','JENNIFER','MARIA
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

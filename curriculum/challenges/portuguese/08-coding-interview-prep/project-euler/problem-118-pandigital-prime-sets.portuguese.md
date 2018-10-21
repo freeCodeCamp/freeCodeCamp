@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 118: conjuntos primos Pandigital'
 ---
 
-## Description
+## Descrição
 <section id="description"> Usando todos os dígitos de 1 a 9 e concatenando-os livremente para formar inteiros decimais, conjuntos diferentes podem ser formados. Curiosamente, com o conjunto {2,5,47,89,631}, todos os elementos que pertencem a ele são primos. Quantos conjuntos distintos contendo cada um dos dígitos de um a nove, exatamente uma vez, contêm apenas elementos primos? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler118();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

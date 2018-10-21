@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 19: contando os domingos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Você recebe as seguintes informações, mas talvez prefira pesquisar por si mesmo. <ul><li> 1 de janeiro de 1900 foi uma segunda-feira. </li><li> Trinta dias tem setembro <br> Abril, junho e novembro. <br> Todo o resto tem trinta e um, <br> Salvando fevereiro sozinho, <br> Que tem vinte e oito, chova ou faça sol. <br> E nos anos bissextos, vinte e nove. </li><li> Um ano bissexto ocorre em qualquer ano divisível por 4, mas não em um século, a menos que seja divisível por 400. </li> Quantos domingos caíram no primeiro dia do mês durante o século XX (1º de janeiro de 1901 a 31 de dezembro de 2000)? </ul></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ countingSundays(1943, 1946);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

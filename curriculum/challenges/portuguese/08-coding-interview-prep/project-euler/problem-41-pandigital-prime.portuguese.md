@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 41: Pandigital prime'
 ---
 
-## Description
+## Descrição
 <section id="description"> Devemos dizer que um número de <i>n</i> dígitos é pandigital se faz uso de todos os dígitos de 1 a <i>n</i> exatamente uma vez. Por exemplo, 2143 é um pandigital de 4 dígitos e também é primo. Qual é o maior prime pandigital de <i>n-</i> comprimento que existe? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ pandigitalPrime(7);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

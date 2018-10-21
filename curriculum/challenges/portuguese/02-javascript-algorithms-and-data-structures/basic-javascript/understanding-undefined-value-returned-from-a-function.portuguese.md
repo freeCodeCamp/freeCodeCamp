@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entendendo o valor indefinido retornado de uma função
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma função pode incluir a declaração de <code>return</code> , mas não precisa. No caso de a função não ter uma instrução de <code>return</code> , quando você a chama, a função processa o código interno, mas o valor retornado é <code>undefined</code> . <strong>Exemplo</strong> <blockquote> var sum = 0; <br> function addSum (num) { <br> soma = soma + num; <br> } <br> var returnedValue = addSum (3); // sum será modificado, mas o valor retornado é indefinido </blockquote> <code>addSum</code> é uma função sem uma declaração de <code>return</code> . A função irá alterar a variável global <code>sum</code> mas o valor retornado da função é <code>undefined</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma função <code>addFive</code> sem nenhum argumento. Essa função adiciona 5 à variável <code>sum</code> , mas seu valor retornado é <code>undefined</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

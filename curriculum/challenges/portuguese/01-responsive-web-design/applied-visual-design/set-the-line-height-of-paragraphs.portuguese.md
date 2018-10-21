@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Definir a altura da linha de parágrafos
 ---
 
-## Description
+## Descrição
 <section id="description"> O CSS oferece a propriedade <code>line-height</code> para alterar a altura de cada linha em um bloco de texto. Como o nome sugere, ele altera a quantidade de espaço vertical que cada linha de texto recebe. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione uma propriedade de <code>line-height</code> à tag <code>p</code> e defina-a para 25px. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,7 +48,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

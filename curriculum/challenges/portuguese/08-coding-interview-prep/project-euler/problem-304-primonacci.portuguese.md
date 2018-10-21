@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Questão 304: Primonacci'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para qualquer inteiro positivo n, a função next_prime (n) retorna o menor número primo p tal que p&gt; n. <p> A sequência a (n) é definida por: a (1) = next_prime (1014) e a (n) = next_prime (a (n-1)) para n&gt; 1. </p><p> A seqüência de fibonacci f (n) é definida por: f (0) = 0, f (1) = 1 e f (n) = f (n-1) + f (n-2) para n&gt; 1. </p><p> A seqüência b (n) é definida como f (a (n)). </p><p> Encontre ∑b (n) para 1≤n≤100 000. Dê a sua resposta mod 1234567891011. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler304();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

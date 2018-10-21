@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Combine uma matriz em uma seqüência de caracteres usando o método de associação
 ---
 
-## Description
+## Descrição
 <section id="description"> O método de <code>join</code> é usado para unir os elementos de uma matriz para criar uma string. É necessário um argumento para o delimitador usado para separar os elementos da matriz na cadeia. Aqui está um exemplo: <blockquote> var arr = [&quot;Olá&quot;, &quot;Mundo&quot;]; <br> var str = arr.join (&quot;&quot;); <br> // Define str como &quot;Hello World&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método <code>join</code> (entre outros) dentro da função <code>sentensify</code> para fazer uma sentença a partir das palavras na string <code>str</code> . A função deve retornar uma string. Por exemplo, &quot;Eu-como-Star-Wars&quot; seria convertido para &quot;Eu gosto de Star Wars&quot;. Para este desafio, não use o método <code>replace</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ sentensify("May-the-force-be-with-you");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

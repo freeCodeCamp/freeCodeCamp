@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Use um intervalo para segmentar elementos in-line
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode usar extensões para criar elementos in-line. Lembra quando usamos a classe <code>btn-block</code> para fazer o botão preencher a linha inteira? <button class="btn" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">Botão normal Botão</button> <button class="btn btn-block" style="background-color: rgb(0, 100, 0);  color: rgb(255, 255, 255);">btn-block</button> Isso ilustra a diferença entre um elemento &quot;inline&quot; e um elemento &quot;block&quot;. Usando o elemento de <code>span</code> linha, você pode colocar vários elementos na mesma linha e até mesmo estilizar diferentes partes da mesma linha de maneira diferente. Aninhe a palavra &quot;amor&quot; em seu elemento &quot;Coisas que os gatos adoram&quot; abaixo em um elemento de <code>span</code> . Em seguida, <code>span</code> a classe <code>text-danger</code> para tornar o texto vermelho. Veja como você faria isso com o elemento &quot;As 3 principais coisas que os gatos odeiam&quot;: <code>&lt;p&gt;Top 3 things cats &lt;span class=&quot;text-danger&quot;&gt;hate:&lt;/span&gt;&lt;/p&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -101,7 +101,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

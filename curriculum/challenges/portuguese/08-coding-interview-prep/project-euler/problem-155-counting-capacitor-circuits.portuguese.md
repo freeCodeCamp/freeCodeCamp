@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 155: Contando os Circuitos do Capacitor'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um circuito elétrico usa capacitores exclusivamente idênticos com o mesmo valor C. <p> Os capacitores podem ser conectados em série ou em paralelo para formar sub-unidades, que podem então ser conectadas em série ou em paralelo com outros capacitores ou outras subunidades para formar sub-unidades maiores, e assim por diante até um circuito final. Usando este procedimento simples e até n capacitores idênticos, podemos fazer circuitos com diferentes capacitâncias totais. Por exemplo, usando até n = 3 capacitores de 60 F cada, podemos obter os seguintes 7 valores distintos de capacitância total: </p><p> Se denotarmos por D (n) o número de valores de capacitância total distintos que podemos obter ao usar até n capacitores de valor igual e o procedimento simples descrito acima, temos: D (1) = 1, D (2) = 3 , D (3) = 7 ... Encontre D (18). Lembrete: Ao conectar capacitores C1, C2 etc em paralelo, a capacitância total é CT = C1 + C2 + ..., </p><p> enquanto ao conectá-los em série, a capacitância total é dada por: </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler155();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

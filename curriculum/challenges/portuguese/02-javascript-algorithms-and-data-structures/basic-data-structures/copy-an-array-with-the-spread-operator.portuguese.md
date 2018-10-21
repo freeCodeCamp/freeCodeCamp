@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Copiar uma matriz com o operador de propagação
 ---
 
-## Description
+## Descrição
 <section id="description"> Enquanto <code>slice()</code> nos permite ser seletivo sobre quais elementos de um array copiar, entre várias outras tarefas úteis, o novo <dfn>operador spread</dfn> do ES6 nos permite copiar facilmente <em>todos</em> os elementos de um array, em ordem, com uma sintaxe simples e altamente legível. A sintaxe de propagação simplesmente se parece com isso: <code>...</code> Na prática, podemos usar o operador de propagação para copiar uma matriz da seguinte forma: <blockquote> let thisArray = [verdadeiro, verdadeiro, indefinido, falso, nulo]; <br> deixe thatArray = [... thisArray]; <br> // thatArray é igual a [verdadeiro, verdadeiro, indefinido, falso, nulo] <br> // thisArray permanece inalterado e é idêntico a thatArray </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Nós definimos uma função, <code>copyMachine</code> que pega <code>arr</code> (um array) e <code>num</code> (um número) como argumentos. A função deve retornar uma nova matriz composta de um <code>num</code> cópias de <code>arr</code> . Nós fizemos a maior parte do trabalho para você, mas ainda não funciona bem. Modifique a função usando a sintaxe de propagação para que ela funcione corretamente (dica: outro método que já abordamos pode ser útil aqui!). </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ console.log(copyMachine([true, false, true], 2));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

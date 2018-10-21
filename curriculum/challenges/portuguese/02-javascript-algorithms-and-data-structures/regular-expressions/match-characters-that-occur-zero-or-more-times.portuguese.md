@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder caracteres que ocorrem zero ou mais vezes
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio usou o sinal de mais <code>+</code> para procurar caracteres que ocorrem uma ou mais vezes. Há também uma opção que corresponde a caracteres que ocorrem zero ou mais vezes. O personagem para fazer isso é o <code>asterisk</code> ou <code>star</code> : <code>*</code> . <blockquote> deixe soccerWord = &quot;gooooooooal!&quot;; <br> deixe gPhrase = &quot;pressentimento&quot;; <br> deixe ophrase = &quot;sobre a lua&quot;; <br> deixe irRegex = / go * /; <br> soccerWord.match (goRegex); // Retorna [&quot;goooooooo&quot;] <br> gPhrase.match (goRegex); // Retorna [&quot;g&quot;] <br> oPhrase.match (goRegex); // Retorna nulo </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie um regex <code>chewieRegex</code> que use o caractere <code>*</code> para corresponder a todos os caracteres <code>&quot;a&quot;</code> superiores e inferiores em <code>chewieQuote</code> . Seu regex não precisa de sinalizadores e não deve corresponder a nenhuma das outras citações. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ let result = chewieQuote.match(chewieRegex);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

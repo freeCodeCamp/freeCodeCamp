@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 370: triângulos geométricos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos definir um triângulo geométrico como um triângulo de lados inteiros com lados a ≤ b ≤ c para que seus lados formem uma progressão geométrica, ou seja, b2 = a · c. <p> Um exemplo de tal triângulo geométrico é o triângulo com os lados a = 144, b = 156 e c = 169. </p><p> Existem 861805 triângulos geométricos com perímetro ≤ 106. </p><p> Quantos triângulos geométricos existem com perímetro ≤ 2,5 · 1013? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler370();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Mapa do estado para adereços
 ---
 
-## Description
+## Descrição
 <section id="description"> O componente <code>Provider</code> permite que você forneça o <code>state</code> e o <code>dispatch</code> para seus componentes React, mas você deve especificar exatamente qual estado e ações você deseja. Dessa forma, você garante que cada componente tenha acesso apenas ao estado de que precisa. Você consegue isso criando duas funções: <code>mapStateToProps()</code> e <code>mapDispatchToProps()</code> . Nessas funções, você declara quais partes do estado deseja ter acesso e quais ações criadores precisa ser capaz de enviar. Uma vez que estas funções estão no lugar, você verá como usar o Reagir Redux <code>connect</code> método para conectá-los aos seus componentes em um outro desafio. <strong>Nota:</strong> Nos bastidores, o React Redux usa o método <code>store.subscribe()</code> para implementar o <code>mapStateToProps()</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma função <code>mapStateToProps()</code> . Essa função deve usar o <code>state</code> como um argumento e, em seguida, retornar um objeto que mapeie esse estado para nomes de propriedade específicos. Essas propriedades se tornarão acessíveis ao seu componente por meio de <code>props</code> . Como este exemplo mantém todo o estado do aplicativo em um único array, você pode passar todo esse estado para o seu componente. Crie uma propriedade de <code>messages</code> no objeto que está sendo retornado e defina-a como <code>state</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -49,7 +49,7 @@ const state = [];
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

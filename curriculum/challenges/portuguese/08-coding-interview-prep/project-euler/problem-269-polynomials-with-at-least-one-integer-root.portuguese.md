@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 269: Polinômios com pelo menos uma raiz inteira'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma raiz ou zero de um polinômio P (x) é uma solução para a equação P (x) = 0. Defina Pn como o polinômio cujos coeficientes são os dígitos de n. Por exemplo, P5703 (x) = 5x3 + 7x2 + 3. <p> Podemos ver que: Pn (0) é o último dígito de n, Pn (1) é a soma dos dígitos de n, Pn (10) é n próprio.Defina Z (k) como o número de inteiros positivos, n , não excedendo k para o qual o polinômio Pn tem pelo menos uma raiz inteira. </p><p> Pode ser verificado que Z (100 000) é 14696. </p><p> O que é Z (1016)? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler269();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

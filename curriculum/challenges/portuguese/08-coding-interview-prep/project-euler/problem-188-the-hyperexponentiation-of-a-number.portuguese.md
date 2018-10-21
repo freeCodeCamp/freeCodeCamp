@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 188: A hiperexponenciação de um número'
 ---
 
-## Description
+## Descrição
 <section id="description"> A hiperexponenciação ou tetração de um número a por um inteiro positivo b, denotado por ↑↑b ou ba, é recursivamente definido por: a a 1 = a, a ↑↑ (k + 1) = a (a ↑↑ k ). <p> Assim, temos, por exemplo, 3 ↑↑ 2 = 33 = 27, portanto, 3 ↑↑ 3 = 327 = 7625597484987 e 3 ↑↑ 4 é aproximadamente 103,6383346400240996 * 10 ^ 12. Encontre os últimos 8 dígitos de 1777 a 1855. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler188();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

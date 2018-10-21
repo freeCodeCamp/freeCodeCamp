@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Tamanho suas imagens
 ---
 
-## Description
+## Descrição
 <section id="description"> CSS tem uma propriedade chamada <code>width</code> que controla a largura de um elemento. Assim como com fontes, usaremos <code>px</code> (pixels) para especificar a largura da imagem. Por exemplo, se quiséssemos criar uma classe CSS chamada <code>larger-image</code> que fornecesse elementos HTML com uma largura de 500 pixels, usaríamos: <blockquote> &lt;style&gt; <br> .larger-image { <br> largura: 500px; <br> } <br> &lt;/ style&gt; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma classe chamada <code>smaller-image</code> e use-a para redimensionar a imagem para que ela tenha apenas 100 pixels de largura. <strong>Nota</strong> <br> Devido às diferenças na implementação do navegador, talvez você precise estar com zoom de 100% para passar nos testes deste desafio. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -88,7 +88,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

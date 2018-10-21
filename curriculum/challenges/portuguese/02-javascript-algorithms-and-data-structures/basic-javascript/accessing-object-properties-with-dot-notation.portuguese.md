@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Acessando propriedades de objeto com notação de ponto
 ---
 
-## Description
+## Descrição
 <section id="description"> Há duas maneiras de acessar as propriedades de um objeto: notação de ponto ( <code>.</code> ) E notação de colchetes ( <code>[]</code> ), semelhante a uma matriz. A notação de pontos é o que você usa quando sabe o nome da propriedade que está tentando acessar antecipadamente. Aqui está uma amostra de uso de notação de ponto ( <code>.</code> ) Para ler a propriedade de um objeto: <blockquote> var myObj = { <br> prop1: &quot;val1&quot;, <br> prop2: &quot;val2&quot; <br> }; <br> var prop1val = myObj.prop1; // val1 <br> var prop2val = myObj.prop2; // val2 </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Leia os valores de propriedade de <code>testObj</code> usando a notação de ponto. Defina a variável <code>hatValue</code> igual ao <code>hat</code> propriedade do objeto e defina a variável <code>shirtValue</code> igual à <code>shirt</code> propriedade do objeto. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,7 +66,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Segmentar o pai de um elemento usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Cada elemento HTML possui um elemento <code>parent</code> do qual <code>inherits</code> propriedades. Por exemplo, o elemento <code>h3</code> <code>jQuery Playground</code> tem o elemento pai de <code>&lt;div class=&quot;container-fluid&quot;&gt;</code> , que por sua vez tem o <code>body</code> pai. jQuery tem uma função chamada <code>parent()</code> que permite que você acesse o pai do elemento que você selecionou. Aqui está um exemplo de como você usaria a função <code>parent()</code> se você quisesse dar ao elemento pai do elemento <code>left-well</code> uma cor de fundo de blue: <code>$(&quot;#left-well&quot;).parent().css(&quot;background-color&quot;, &quot;blue&quot;)</code> Forneça ao pai do elemento <code>#target1</code> uma cor de fundo em vermelho. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -82,7 +82,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

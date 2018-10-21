@@ -12,7 +12,7 @@ localeTitle: Crie um campo de texto
 ## Instruções
 <section id="instructions"> Crie um elemento de <code>input</code> do tipo <code>text</code> abaixo de cada uma das suas listas. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml

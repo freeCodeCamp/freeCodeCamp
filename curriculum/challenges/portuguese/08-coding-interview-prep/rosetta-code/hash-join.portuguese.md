@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Junção de hash
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Uma <a href="https://en.wikipedia.org/wiki/Join_(SQL)#Inner_join" title="wp: Join_ (SQL) #Inner_join">junção interna</a> é uma operação que combina duas tabelas de dados em uma tabela, com base em valores de coluna correspondentes. A maneira mais simples de implementar essa operação é o algoritmo de <a href="https://en.wikipedia.org/wiki/Nested loop join" title="wp: Junção de loop aninhada">junção de loop aninhado</a> , mas uma alternativa mais escalável é o algoritmo de <a href="https://en.wikipedia.org/wiki/hash join" title="wp: junção de hash">junção de hash</a> . </p><p> Implemente o algoritmo &quot;hash join&quot; e demonstre que ele passa no caso de teste listado abaixo. </p><p> Você deve representar as tabelas como estruturas de dados que parecem naturais em sua linguagem de programação. </p><p> O algoritmo &quot;hash join&quot; consiste em duas etapas: </p> Fase de hash: cria um <a href="https://en.wikipedia.org/wiki/Multimap" title="wp: Multimap">multimap</a> de uma das duas tabelas, mapeando de cada valor de coluna de junção para todas as linhas que o contêm. O multimap deve suportar uma pesquisa baseada em hash que é melhor que uma busca linear simples, porque esse é o ponto principal desse algoritmo. Idealmente, devemos criar o multimap para a tabela menor, minimizando assim o tempo de criação e o tamanho da memória. Fase de junção: escaneie a outra tabela e encontre linhas correspondentes olhando no multimap criado anteriormente. <p> No pseudocódigo, o algoritmo poderia ser expresso da seguinte maneira: </p><pre> seja A = a primeira tabela de entrada (ou, idealmente, a maior)
 seja B = a segunda tabela de entrada (ou, idealmente, a menor)
 deixe j <sub>A</sub> = o ID da coluna de junção da tabela A
@@ -21,11 +21,11 @@ para cada linha a na tabela A:
     coloque a linha c na tabela C <p></p>
 </pre> Caso de teste <p> Entrada </p><table><tbody><tr><td style="padding: 4px; margin: 5px;"><table style="border:none; border-collapse:collapse;"><tbody><tr><td style="border:none"> <i>A =</i> </td><td style="border:none"><table><tbody><tr><th style="padding: 4px; margin: 5px;"> Era </th><th style="padding: 4px; margin: 5px;"> Nome </th></tr><tr><td style="padding: 4px; margin: 5px;"> 27 </td><td style="padding: 4px; margin: 5px;"> Jonas </td></tr><tr><td style="padding: 4px; margin: 5px;"> 18 </td><td style="padding: 4px; margin: 5px;"> Alan </td></tr><tr><td style="padding: 4px; margin: 5px;"> 28 </td><td style="padding: 4px; margin: 5px;"> Glória </td></tr><tr><td style="padding: 4px; margin: 5px;"> 18 </td><td style="padding: 4px; margin: 5px;"> Popeye </td></tr><tr><td style="padding: 4px; margin: 5px;"> 28 </td><td style="padding: 4px; margin: 5px;"> Alan </td></tr></tbody></table></td><td style="border:none; padding-left:1.5em;" rowspan="2"></td><td style="border:none"> <i>B =</i> </td><td style="border:none"><table><tbody><tr><th style="padding: 4px; margin: 5px;"> Personagem </th><th style="padding: 4px; margin: 5px;"> Nêmesis </th></tr><tr><td style="padding: 4px; margin: 5px;"> Jonas </td><td style="padding: 4px; margin: 5px;"> Baleias </td></tr><tr><td style="padding: 4px; margin: 5px;"> Jonas </td><td style="padding: 4px; margin: 5px;"> Aranhas </td></tr><tr><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Fantasmas </td></tr><tr><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Zumbis </td></tr><tr><td style="padding: 4px; margin: 5px;"> Glória </td><td style="padding: 4px; margin: 5px;"> Buffy </td></tr></tbody></table></td></tr><tr><td style="border:none"> <i>j <sub>A</sub> =</i> </td><td style="border:none"> <i><code>Name</code> (coluna 1)</i> </td><td style="border:none"> <i>j <sub>B</sub> =</i> </td><td style="border:none"> <i><code>Character</code> (isto é, coluna 0)</i> </td></tr></tbody></table></td><td style="padding: 4px; margin: 5px;"></td></tr></tbody></table><p> Saída </p><table><tbody><tr><th style="padding: 4px; margin: 5px;"> A.Age </th><th style="padding: 4px; margin: 5px;"> Um nome </th><th style="padding: 4px; margin: 5px;"> B.Caracter </th><th style="padding: 4px; margin: 5px;"> B.Nemesis </th></tr><tr><td style="padding: 4px; margin: 5px;"> 27 </td><td style="padding: 4px; margin: 5px;"> Jonas </td><td style="padding: 4px; margin: 5px;"> Jonas </td><td style="padding: 4px; margin: 5px;"> Baleias </td></tr><tr><td style="padding: 4px; margin: 5px;"> 27 </td><td style="padding: 4px; margin: 5px;"> Jonas </td><td style="padding: 4px; margin: 5px;"> Jonas </td><td style="padding: 4px; margin: 5px;"> Aranhas </td></tr><tr><td style="padding: 4px; margin: 5px;"> 18 </td><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Fantasmas </td></tr><tr><td style="padding: 4px; margin: 5px;"> 18 </td><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Zumbis </td></tr><tr><td style="padding: 4px; margin: 5px;"> 28 </td><td style="padding: 4px; margin: 5px;"> Glória </td><td style="padding: 4px; margin: 5px;"> Glória </td><td style="padding: 4px; margin: 5px;"> Buffy </td></tr><tr><td style="padding: 4px; margin: 5px;"> 28 </td><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Fantasmas </td></tr><tr><td style="padding: 4px; margin: 5px;"> 28 </td><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Alan </td><td style="padding: 4px; margin: 5px;"> Zumbis </td></tr></tbody></table><p></p><p></p><p> A ordem das linhas na tabela de saída não é significativa. </p><p> Se você estiver usando matrizes numericamente indexadas para representar as linhas da tabela (em vez de se referir a colunas por nome), você poderia representar as linhas de saída na forma <code style="white-space:nowrap">[[27, &quot;Jonah&quot;], [&quot;Jonah&quot;, &quot;Whales&quot;]]</code> . </p><hr></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,7 +66,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

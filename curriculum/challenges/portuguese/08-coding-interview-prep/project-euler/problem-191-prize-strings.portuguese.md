@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 191: cordas do prêmio'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma escola particular oferece recompensas em dinheiro para crianças com boa frequência e pontualidade. Se estiverem ausentes por três dias consecutivos ou atrasados ​​em mais de uma ocasião, perdem o prêmio. <p> Durante um período de n dias, uma cadeia trinária é formada para cada criança, consistindo de L&#39;s (atrasado), O&#39;s (no tempo) e A&#39;s (ausente). </p><p> Embora haja oitenta e uma cordas trinárias para um período de 4 dias que pode ser formado, exatamente quarenta e três cordas levariam a um prêmio: </p><p> OOOO OOOL OOOL OO OO OO OO OO OO OO OO OO OO OO OO OO OO OO OO OO OO OO OOL OOLO OOLA O OOOO OLAO OOOO AOOO AOOA AOOL AOAO AOAA AOAL AOOL AOLO AOOA AOOA AAOL AALO AOOA AOOA ALAO ALAA AOOA LOOO A LOAA A LAO A LAOA </p><p> Quantas strings &quot;prêmio&quot; existem em um período de 30 dias? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler191();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

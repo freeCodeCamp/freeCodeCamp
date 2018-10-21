@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a notação de suporte para localizar o último caractere em uma string
 ---
 
-## Description
+## Descrição
 <section id="description"> Para obter a última letra de uma string, você pode subtrair uma da extensão da string. Por exemplo, se <code>var firstName = &quot;Charles&quot;</code> , você pode obter o valor da última letra da string usando <code>firstName[firstName.length - 1]</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a <dfn>notação de colchetes</dfn> para encontrar o último caractere na variável <code>lastName</code> . <strong>Sugestão</strong> <br> Tente ver a declaração da variável <code>lastLetterOfFirstName</code> se você ficar preso. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

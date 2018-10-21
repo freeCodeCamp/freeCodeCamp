@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 112: números saltitantes'
 ---
 
-## Description
+## Descrição
 <section id="description"> Trabalhando da esquerda para a direita, se nenhum dígito for ultrapassado pelo dígito à esquerda, é chamado um número crescente; por exemplo, 134468. Da mesma forma, se nenhum dígito for excedido pelo dígito à direita, será chamado número decrescente; por exemplo, 66420. Devemos chamar um número inteiro positivo que não esteja aumentando nem diminuindo um número &quot;saltitante&quot;; por exemplo, 155349. Claramente não pode haver números saltitantes abaixo de cem, mas pouco mais da metade dos números abaixo de um milhar (525) são saltitantes. De fato, o número mínimo para o qual a proporção de números saltantes primeiro chega a 50% é 538. Surpreendentemente, os números saltitantes se tornam cada vez mais comuns e, quando alcançamos 21780, a proporção de números saltitantes é igual a 90%. Encontre o menor número para o qual a proporção de números saltantes é exatamente 99%. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler112();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

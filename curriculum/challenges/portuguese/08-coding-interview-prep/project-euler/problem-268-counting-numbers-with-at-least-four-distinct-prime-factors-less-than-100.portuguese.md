@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 268: Contando números com pelo menos quatro fatores primos distintos menores que 100'
 ---
 
-## Description
+## Descrição
 <section id="description"> Pode-se verificar que existem 23 inteiros positivos menores que 1000 que são divisíveis por pelo menos quatro primos distintos menores que 100. <p> Encontre quantos inteiros positivos menores que 1016 são divisíveis por pelo menos quatro primos distintos menores que 100. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler268();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

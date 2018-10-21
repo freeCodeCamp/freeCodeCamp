@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 447: Retractions C'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para cada inteiro n&gt; 1, a família de funções fn, a, b é definida por fn, a, b (x) ≡ax + b mod n para a, b, x inteiro e 0 <p> F (N) = ∑R (n) para 2≤n≤N. F (107) ≡638042271 (mod. 1 000 000 007). </p><p> Encontre F (1014) (mod 1 000 000 007). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler447();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use uma instrução de troca para lidar com várias ações
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode dizer ao repositório do Redux como lidar com vários tipos de ação. Digamos que você esteja gerenciando a autenticação do usuário em sua loja Redux. Você deseja ter uma representação de estado para quando os usuários estão conectados e quando estão desconectados. Você representa isso com um único objeto de estado com a propriedade <code>authenticated</code> . Você também precisa de criadores de ações que criem ações correspondentes ao login do usuário e ao logout do usuário, juntamente com os próprios objetos de ação. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem uma loja, ações e criadores de ações configurados para você. Preencha a função <code>reducer</code> para lidar com várias ações de autenticação. Use uma instrução <code>switch</code> JavaScript no <code>reducer</code> para responder a diferentes eventos de ação. Este é um padrão padrão na reducção de redutores Redux. A instrução switch deve alternar <code>action.type</code> e retornar o estado de autenticação apropriado. <strong>Nota:</strong> Neste ponto, não se preocupe com a imutabilidade do estado, já que é pequeno e simples neste exemplo. Para cada ação, você pode retornar um novo objeto - por exemplo, <code>{authenticated: true}</code> . Além disso, não esqueça de escrever um caso <code>default</code> na instrução switch que retorne o <code>state</code> atual. Isso é importante porque, depois que seu aplicativo tiver vários redutores, todos eles serão executados a qualquer momento em que um envio de ação for feito, mesmo quando a ação não estiver relacionada a esse redutor. Nesse caso, você deseja certificar-se de retornar o <code>state</code> atual. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -73,7 +73,7 @@ const logoutUser = () => {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

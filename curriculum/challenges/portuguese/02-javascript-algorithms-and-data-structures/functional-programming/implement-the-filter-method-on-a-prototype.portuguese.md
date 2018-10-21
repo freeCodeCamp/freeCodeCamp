@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Implementar o método de filtro em um protótipo
 ---
 
-## Description
+## Descrição
 <section id="description"> Isso nos ensinaria muito sobre o método de <code>filter</code> se tentarmos implementar uma versão dele que se comporta exatamente como <code>Array.prototype.filter()</code> . Pode usar um loop <code>for</code> ou <code>Array.prototype.forEach()</code> . Nota: Uma função pura pode alterar as variáveis ​​locais definidas dentro do seu escopo, embora seja preferível evitar isso também. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva seu próprio <code>Array.prototype.myFilter()</code> , que deve se comportar exatamente como <code>Array.prototype.filter()</code> . Você pode usar um loop <code>for</code> ou o método <code>Array.prototype.forEach()</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ var new_s = s.myFilter(function(item){
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

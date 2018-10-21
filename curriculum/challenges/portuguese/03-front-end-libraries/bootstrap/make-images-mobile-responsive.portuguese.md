@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Tornar as imagens móveis responsivas
 ---
 
-## Description
+## Descrição
 <section id="description"> Primeiro, adicione uma nova imagem abaixo da existente. Configure seu atributo <code>src</code> para <code>https://bit.ly/fcc-running-cats</code> . Seria ótimo se essa imagem pudesse ser exatamente a largura da tela do nosso telefone. Felizmente, com o Bootstrap, tudo o que precisamos fazer é adicionar a classe <code>img-responsive</code> à sua imagem. Faça isso e a imagem deve caber perfeitamente na largura da sua página. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -104,7 +104,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

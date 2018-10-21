@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder números e letras do alfabeto
 ---
 
-## Description
+## Descrição
 <section id="description"> Usar o hífen ( <code>-</code> ) para corresponder a um intervalo de caracteres não está limitado a letras. Ele também funciona para corresponder a um intervalo de números. Por exemplo, <code>/[0-5]/</code> corresponde a qualquer número entre <code>0</code> e <code>5</code> , incluindo <code>0</code> e <code>5</code> . Além disso, é possível combinar um intervalo de letras e números em um único conjunto de caracteres. <blockquote> deixe jennyStr = &quot;Jenny8675309&quot;; <br> deixe myRegex = / [a-z0-9] / ig; <br> // combina todas as letras e números em jennyStr <br> jennyStr.match (myRegex); </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie um único regex que corresponda a um intervalo de letras entre <code>h</code> <code>s</code> e um intervalo de números entre <code>2</code> e <code>6</code> . Lembre-se de incluir os sinalizadores apropriados na regex. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let result = myRegex; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

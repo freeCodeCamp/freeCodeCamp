@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Lookahead positivo e negativo
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>Lookaheads</code> são padrões que dizem ao JavaScript para olhar em frente na sua string para verificar padrões mais adiante. Isso pode ser útil quando você deseja pesquisar vários padrões na mesma sequência. Existem dois tipos de <code>lookaheads</code> : <code>positive lookahead</code> e <code>negative lookahead</code> . Uma <code>positive lookahead</code> procurará garantir que o elemento no padrão de pesquisa esteja presente, mas não corresponderá a ele. Um lookahead positivo é usado como <code>(?=...)</code> onde o <code>...</code> é a parte requerida que não é correspondida. Por outro lado, um <code>negative lookahead</code> procurará garantir que o elemento no padrão de pesquisa não esteja lá. Um lookahead negativo é usado como <code>(?!...)</code> onde o <code>...</code> é o padrão que você não deseja estar lá. O restante do padrão será retornado se a parte lookahead negativa não estiver presente. Lookaheads são um pouco confusos, mas alguns exemplos vão ajudar. <blockquote> let quit = &quot;qu&quot;; <br> deixe noquit = &quot;qt&quot;; <br> deixe quRegex = / q (? = u) /; <br> deixe qRegex = / q (?! u) /; <br> quit.match (quRegex); // Retorna [&quot;q&quot;] <br> noquit.match (qRegex); // Retorna [&quot;q&quot;] </blockquote> Um uso mais prático de <code>lookaheads</code> é verificar dois ou mais padrões em uma string. Aqui está um verificador de senha (ingenuamente) simples que procura entre 3 e 6 caracteres e pelo menos um número: <blockquote> let password = &quot;abc123&quot;; <br> vamos checkPass = / (? = \ w {3,6}) (? = \ D * \ d) /; <br> checkPass.test (senha); // Retorna true </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>lookaheads</code> no <code>pwRegex</code> para corresponder senhas com mais de 5 caracteres e dois dígitos consecutivos. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ let result = pwRegex.test(sampleWord);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

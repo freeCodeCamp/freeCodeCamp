@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 297: representação da aldeia de carrapatos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Cada novo termo na seqüência de Fibonacci é gerado adicionando os dois termos anteriores. Começando com 1 e 2, os primeiros 10 termos serão: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89. <p> Todo inteiro positivo pode ser escrito exclusivamente como uma soma de termos não consecutivos da seqüência de Fibonacci. Por exemplo, 100 = 3 + 8 + 89. Essa soma é chamada de representação de Zeckendorf do número. </p><p> Para qualquer inteiro n&gt; 0, seja z (n) o número de termos na representação de Zeckendorf de n. Assim, z (5) = 1, z (14) = 2, z (100) = 3 etc. Também, para 0 &lt;n &lt;106, z (n) = 7894453. </p><p> Encontre ∑ z (n) para 0 &lt;n &lt;1017. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler297();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

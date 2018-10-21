@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Aninhar muitos elementos em um único elemento div
 ---
 
-## Description
+## Descrição
 <section id="description"> O elemento <code>div</code> , também conhecido como um elemento de divisão, é um contêiner de propósito geral para outros elementos. O elemento <code>div</code> é provavelmente o elemento HTML mais usado de todos. Assim como qualquer outro elemento de não fechamento automático, você pode abrir um elemento <code>div</code> com <code>&lt;div&gt;</code> e fechá-lo em outra linha com <code>&lt;/div&gt;</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Aninhe suas &quot;Coisas que os gatos adoram&quot; e &quot;Coisas que os gatos odeiam&quot; listam todas em um único elemento <code>div</code> . Dica: Tente colocar a sua abertura <code>div</code> tag acima de suas &quot;coisas gatos adoram&quot; <code>p</code> elemento e seu fechamento <code>div</code> tag após o seu fechamento <code>ol</code> tag para que ambas as listas estão dentro de uma <code>div</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -74,7 +74,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

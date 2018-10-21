@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use Spread e Notes para Integração do Conjunto ES5 ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Você se lembra do operador do spread ES6 <code>...</code> ? <code>...</code> pode levar objetos iteráveis ​​no ES6 e transformá-los em matrizes. Vamos criar um conjunto e verificar a função de propagação. <blockquote> var set = new Set ([1,2,3]); <br> var setToArr = [... set] <br> console.log (setToArr) // retorna [1, 2, 3] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Neste exercício, passaremos um objeto set para a função <code>checkSet</code> . Deve retornar uma matriz contendo os valores do conjunto. Agora você aprendeu com sucesso como usar o objeto ES6 <code>Set()</code> , bom trabalho! </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -44,7 +44,7 @@ function checkSet(set){
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

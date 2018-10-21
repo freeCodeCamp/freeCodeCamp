@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 189: Tri-coloração de uma grade triangular'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere a seguinte configuração de 64 triângulos: <p> Desejamos colorir o interior de cada triângulo com uma das três cores: vermelho, verde ou azul, para que não haja dois triângulos vizinhos da mesma cor. Essa coloração deve ser chamada válida. Aqui, dois triângulos são considerados vizinhos se eles compartilham uma borda. Nota: se eles compartilham apenas um vértice, eles não são vizinhos. </p><p> Por exemplo, aqui está uma coloração válida da grade acima: </p><p> Uma coloração C &#39;que é obtida de uma coloração C por rotação ou reflexão é considerada distinta de C, a menos que as duas sejam idênticas. </p><p> Quantas cores válidas distintas existem para a configuração acima? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler189();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

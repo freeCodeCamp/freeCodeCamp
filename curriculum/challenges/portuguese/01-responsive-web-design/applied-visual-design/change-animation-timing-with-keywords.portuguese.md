@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alterar o tempo de animação com palavras-chave
 ---
 
-## Description
+## Descrição
 <section id="description"> Em animações CSS, a propriedade <code>animation-timing-function</code> controla a rapidez com que um elemento animado é modificado ao longo da duração da animação. Se a animação for um carro passando do ponto A para o ponto B em um determinado momento (sua <code>animation-duration</code> ), a <code>animation-timing-function</code> diz como o carro acelera e desacelera ao longo do percurso da unidade. Há várias palavras-chave predefinidas disponíveis para opções populares. Por exemplo, o valor padrão é a <code>ease</code> , que começa devagar, acelera no meio e, em seguida, desacelera no final. Outras opções incluem a <code>ease-out</code> , que é rápida no começo, depois desacelera, <code>ease-in</code> , que é lenta no começo, depois acelera no final, ou <code>linear</code> , o que aplica uma velocidade de animação constante. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Para os elementos com id de <code>ball1</code> e <code>ball2</code> , adicione uma propriedade de <code>animation-timing-function</code> a cada um e defina <code>#ball1</code> como <code>linear</code> e <code>#ball2</code> para <code>ease-out</code> . Observe a diferença entre como os elementos se movem durante a animação, mas terminam juntos, pois eles compartilham a mesma <code>animation-duration</code> de <code>animation-duration</code> de 2 segundos. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Problema ABC
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Você recebe uma coleção de blocos ABC (por exemplo, blocos alfabéticos de infância). Existem 20 blocos com duas letras em cada bloco. Um alfabeto completo é garantido entre todos os lados dos blocos. A coleção de amostras de blocos: </p><p> (BO) </p><p> (XK) </p><p> (DQ) </p><p> (CP) </p><p> (N / D) </p><p> (GT) </p><p> (RÉ) </p><p> (TG) </p><p> (QD) </p><p> (FS) </p><p> (JW) </p><p> (HU) </p><p> (VI) </p><p> (A) </p><p> (OB) </p><p> (ER) </p><p> (FS) </p><p> (LY) </p><p> (PC) </p><p> (ZM) </p><p> Algumas regras para ter em mente: </p> Quando uma letra em um bloco é usada, esse bloco não pode ser usado novamente. A função deve ser insensível a maiúsculas e minúsculas. <p> Implemente uma função que use uma string (palavra) e determine se a palavra pode ser escrita com a coleção de blocos especificada. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

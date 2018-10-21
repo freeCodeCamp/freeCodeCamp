@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 169: Explorando o número de maneiras diferentes que um número pode ser expresso como uma soma de potências de 2'
 ---
 
-## Description
+## Descrição
 <section id="description"> Defina f (0) = 1 e f (n) como sendo o número de maneiras diferentes n podem ser expressas como uma soma de potências inteiras de 2 usando cada poder não mais do que duas vezes. Por exemplo, f (10) = 5, pois há cinco maneiras diferentes de expressar 10: 1 + 1 + 8 1 + 1 + 4 + 41 + 1 + 2 + 2 + 4 2 + 4 + 4 2 + 8 O que é f (1025) </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler169();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

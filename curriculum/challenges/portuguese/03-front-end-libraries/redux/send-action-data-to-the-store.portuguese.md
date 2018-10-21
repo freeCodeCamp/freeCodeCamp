@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Enviar dados de ação para a loja
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora você aprendeu como despachar ações para a loja Redux, mas até agora essas ações não continham nenhuma informação além de um <code>type</code> . Você também pode enviar dados específicos junto com suas ações. Na verdade, isso é muito comum porque as ações geralmente se originam de alguma interação do usuário e tendem a carregar alguns dados com elas. A loja Redux geralmente precisa saber sobre esses dados. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Há um <code>notesReducer()</code> básico e um criador de ação <code>addNoteText()</code> definidos no editor de código. Conclua o corpo da função <code>addNoteText()</code> para que ele retorne um objeto de <code>action</code> . O objeto deve incluir uma propriedade de <code>type</code> com um valor de <code>ADD_NOTE</code> e também uma propriedade de <code>text</code> definida como os dados da <code>note</code> transmitidos para o criador da ação. Quando você chama o criador de ações, você passa informações de notas específicas que você pode acessar para o objeto. Em seguida, termine de escrever a instrução <code>switch</code> no <code>notesReducer()</code> . Você precisa adicionar um caso que manipule as ações <code>addNoteText()</code> . Este caso deve ser acionado sempre que houver uma ação do tipo <code>ADD_NOTE</code> e deve retornar a propriedade <code>text</code> na <code>action</code> entrada como o novo <code>state</code> . A ação é despachada na parte inferior do código. Quando terminar, execute o código e observe o console. Isso é tudo o que é necessário para enviar dados específicos da ação para a loja e usá-los quando você atualizar o <code>state</code> loja. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -65,7 +65,7 @@ console.log(store.getState());
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

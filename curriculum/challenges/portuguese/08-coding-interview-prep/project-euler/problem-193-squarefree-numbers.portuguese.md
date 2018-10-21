@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 193: números Squarefree'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um inteiro positivo n é chamado de quadrado livre, se nenhum quadrado de um primo divide n, assim 1, 2, 3, 5, 6, 7, 10, 11 são quadrados, mas não 4, 8, 9, 12. <p> Quantos números quadrados estão abaixo de 250? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler193();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

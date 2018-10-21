@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Faça uma pessoa
 ---
 
-## Description
+## Descrição
 <section id="description"> Preencha o construtor de objeto com os seguintes métodos abaixo: <blockquote> getFirstName () getLastName () getFullName () setFirstName (primeiro) setLastName (last) setFullName (firstAndLast) </blockquote> Execute os testes para ver a saída esperada para cada método. Os métodos que aceitam um argumento devem aceitar apenas um argumento e ele deve ser uma string. Esses métodos devem ser os únicos meios disponíveis de interação com o objeto. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -47,7 +47,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,7 +72,7 @@ bob.getFullName();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

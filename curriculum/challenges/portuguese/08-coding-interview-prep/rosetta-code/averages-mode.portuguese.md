@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Modo de médias
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva um programa para encontrar o valor do <a href="https://en.wikipedia.org/wiki/Mode (statistics)" title="wp: Mode (estatísticas)">modo</a> de uma coleção. </p><p> O caso em que a coleção está vazia pode ser ignorado. É preciso ter cuidado para lidar com o caso em que o modo não é exclusivo. </p><p> Se não for apropriado ou possível suportar uma coleção geral, use um vetor (matriz), se possível. Se não for apropriado ou possível suportar um tipo de valor não especificado, use números inteiros. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

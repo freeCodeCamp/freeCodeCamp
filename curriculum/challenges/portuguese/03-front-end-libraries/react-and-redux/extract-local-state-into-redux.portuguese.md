@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Extrair o estado local no Redux
 ---
 
-## Description
+## Descrição
 <section id="description"> Você está quase pronto! Lembre-se que você escreveu todo o código do Redux para que o Redux pudesse controlar o gerenciamento de estado do seu aplicativo de mensagens do React. Agora que o Redux está conectado, você precisa extrair o gerenciamento de estado do componente <code>Presentational</code> para o Redux. Atualmente, você tem o Redux conectado, mas está lidando com o estado localmente no componente <code>Presentational</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> No componente <code>Presentational</code> , primeiro, remova a propriedade <code>messages</code> no <code>state</code> local. Essas mensagens serão gerenciadas pelo Redux. Em seguida, modifique o método <code>submitMessage()</code> para que ele <code>submitNewMessage()</code> partir <code>this.props</code> e passe a entrada de mensagem atual do <code>state</code> local como um argumento. Como você removeu as <code>messages</code> do estado local, remova também a propriedade <code>messages</code> da chamada para <code>this.setState()</code> aqui. Finalmente, modifique o método <code>render()</code> para que ele mapeie as mensagens recebidas de <code>props</code> ao invés de <code>state</code> . Depois que essas alterações forem feitas, o aplicativo continuará a funcionar da mesma forma, exceto que o Redux gerencia o estado. Este exemplo também ilustra como um componente pode ter <code>state</code> local: seu componente ainda rastreia a entrada do usuário localmente em seu próprio <code>state</code> . Você pode ver como o Redux fornece uma estrutura de gerenciamento de estado útil sobre o React. Você conseguiu o mesmo resultado usando apenas o estado local do React, e isso geralmente é possível com aplicativos simples. No entanto, à medida que seus aplicativos se tornam maiores e mais complexos, o mesmo acontece com o gerenciamento do estado, e esse é o problema que o Redux resolve. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -159,7 +159,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

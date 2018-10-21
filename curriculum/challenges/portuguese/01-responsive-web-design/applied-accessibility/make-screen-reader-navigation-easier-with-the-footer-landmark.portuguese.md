@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Torne a navegação do leitor de tela mais fácil com o rodapé Landmark
 ---
 
-## Description
+## Descrição
 <section id="description"> Semelhante ao <code>header</code> e <code>nav</code> , o elemento de <code>footer</code> tem um recurso de referência integrado que permite que dispositivos de assistência naveguem rapidamente até ele. É usado principalmente para conter informações de direitos autorais ou links para documentos relacionados que geralmente ficam na parte inferior de uma página. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A página de treinamento da Camper Cat está fazendo um bom progresso. Altere a <code>div</code> ele usou para envolver suas informações de direitos autorais na parte inferior da página em um elemento de <code>footer</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,7 +77,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

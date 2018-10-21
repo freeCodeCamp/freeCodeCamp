@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Remover itens de um conjunto no ES6
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos praticar itens de remoção de um conjunto ES6 usando o método <code>delete</code> . Primeiro, crie um conjunto ES6 <code>var set = new Set([1,2,3]);</code> Agora, remova um item do seu conjunto com o método de <code>delete</code> . <blockquote> set.delete (1); <br> console.log ([... set]) // deve retornar [2, 3] <blockquote></blockquote></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Agora, crie um conjunto com os números inteiros 1, 2, 3, 4 e 5. Remova os valores 2 e 5 e, em seguida, retorne o conjunto. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ function checkSet(){
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

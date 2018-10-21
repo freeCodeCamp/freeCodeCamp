@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Incrementar um número com JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode facilmente <dfn>incrementar</dfn> ou adicionar um a uma variável com o operador <code>++</code> . <code>i++;</code> é o equivalente de <code>i = i + 1;</code> <strong>Nota</strong> <br> A linha inteira se torna <code>i++;</code> , eliminando a necessidade do sinal de igual. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o código para usar o operador <code>++</code> em <code>myVar</code> . <strong>Sugestão</strong> <br> Saiba mais sobre <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Increment_()" target="_blank">operadores aritméticos - Incremento (++)</a> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

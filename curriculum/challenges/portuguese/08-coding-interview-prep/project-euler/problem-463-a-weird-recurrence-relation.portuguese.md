@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 463: Uma estranha relação de recorrência'
 ---
 
-## Description
+## Descrição
 <section id="description"> A função $ f $ é definida para todos os inteiros positivos da seguinte forma: $ f (1) = 1 $ $ f (3) = 3 $ $ f (2n) = f (n) $ $ f (4n + 1) = 2f (2n + 1) - f (n) $ $ f (4n + 3) = 3f (2n + 1) - 2f (n) $ <p> A função $ S (n) $ é definida como $ \ sum_ {i = 1} ^ {n} f (i) $. $ S (8) = 22 $ e $ S (100) = 3604 $. Encontre $ S (3 ^ {37}) $. Dê os últimos 9 dígitos da sua resposta. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler463();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

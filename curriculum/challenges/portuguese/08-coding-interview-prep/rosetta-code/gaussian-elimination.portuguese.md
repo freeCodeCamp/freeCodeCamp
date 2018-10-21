@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Eliminação gaussiana
 ---
 
-## Description
+## Descrição
 <section id="description"> Escreva uma função para resolver \ (Ax = b \) usando eliminação de Gauss e então substituição para trás. \ (A \) sendo uma matriz \ (n \ times n \). Além disso, \ (x \) e \ (b \) são \ (n \) por 1 vetores. Para melhorar a precisão, use o pivotamento parcial e o dimensionamento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

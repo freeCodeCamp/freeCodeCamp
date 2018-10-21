@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 78: partições de moeda'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja p (n) o número de maneiras diferentes em que n moedas podem ser separadas em pilhas. Por exemplo, cinco moedas podem ser separadas em pilhas de sete maneiras diferentes, então p (5) = 7. <p> OO OO OO OO OO OO OO OO OO OO OO OO OO OO OO OO OO </p><p> Encontre o menor valor de n para o qual p (n) é divisível por um milhão. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler78();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

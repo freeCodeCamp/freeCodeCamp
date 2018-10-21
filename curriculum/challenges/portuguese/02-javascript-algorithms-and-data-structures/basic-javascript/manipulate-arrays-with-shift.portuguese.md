@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Manipular Matrizes Com Deslocamento ()
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>pop()</code> sempre remove o último elemento de um array. E se você quiser remover o primeiro? É aí que <code>.shift()</code> . Funciona exatamente como o <code>.pop()</code> , exceto que ele remove o primeiro elemento em vez do último. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a função <code>.shift()</code> para remover o primeiro item de <code>myArray</code> , atribuindo o valor &quot; <code>removedFromMyArray</code> off&quot; ao <code>removedFromMyArray</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

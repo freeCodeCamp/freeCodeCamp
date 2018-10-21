@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 152: Escrevendo uma metade como uma soma de quadrados inversos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Existem várias maneiras de escrever o número 1/2 como uma soma de quadrados inversos usando inteiros distintos. Por exemplo, os números {2,3,4,5,7,12,15,20,28,35} podem ser usados: <p> De fato, usando apenas números inteiros entre 2 e 45 inclusive, existem exatamente três maneiras de fazê-lo, sendo os dois restantes: {2,3,4,6,7,9,10,20,28,35,36,45 } e {2,3,4,6,7,9,12,15,28,30,35,36,45}. Quantas maneiras existem para escrever o número 1/2 como uma soma de quadrados inversos usando inteiros distintos entre 2 e 80 inclusive? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler152();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

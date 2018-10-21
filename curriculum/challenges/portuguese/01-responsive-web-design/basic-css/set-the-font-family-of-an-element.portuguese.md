@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Definir a família de fontes de um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode definir qual fonte um elemento deve usar, usando a propriedade <code>font-family</code> . Por exemplo, se você quiser definir a fonte do elemento <code>h2</code> como <code>sans-serif</code> , use o seguinte CSS: <blockquote> h2 { <br> font-family: sem serifa; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Faça com que todos os seus elementos <code>p</code> usem a fonte <code>monospace</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

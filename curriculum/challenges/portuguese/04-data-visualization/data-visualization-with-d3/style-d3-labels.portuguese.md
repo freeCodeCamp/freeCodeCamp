@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Etiquetas do estilo D3
 ---
 
-## Description
+## Descrição
 <section id="description"> Os métodos D3 podem adicionar estilos aos rótulos da barra. O atributo de <code>fill</code> define a cor do texto para um nó de <code>text</code> . O método <code>style()</code> define regras CSS para outros estilos, como &quot;font-family&quot; ou &quot;font-size&quot;. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina o <code>font-size</code> da <code>font-size</code> dos elementos de <code>text</code> para 25px e a cor do texto para vermelho. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -79,7 +79,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

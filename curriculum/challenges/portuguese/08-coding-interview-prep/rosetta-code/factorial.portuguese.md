@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Fatorial
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva uma função para retornar o fatorial de um número. </p><p> Fatorial de um número é dado por: </p> n! = n * (n-1) * (n-2) * ..... * 1 <p> Por exemplo: 3! = 3 * 2 * 1 = 6 4! = 4 * 3 * 2 * 1 = 24 </p><p> Nota: 0! = 1 </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

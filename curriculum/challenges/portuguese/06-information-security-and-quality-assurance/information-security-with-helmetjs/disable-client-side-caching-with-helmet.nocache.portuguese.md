@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Desativar o cache do cliente com helmet.noCache ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a> . Se você está lançando uma atualização para o seu site, e quer que os usuários sempre baixem a versão mais recente, você pode (tentar) desativar o cache no navegador do cliente. Pode ser útil no desenvolvimento também. O armazenamento em cache tem benefícios de desempenho, que você perderá, portanto, use essa opção somente quando houver uma necessidade real. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,12 +25,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

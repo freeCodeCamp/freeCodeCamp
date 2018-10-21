@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 38: múltiplos Pandigital'
 ---
 
-## Description
+## Descrição
 <section id="description"> Pegue o número 192 e multiplique-o por 1, 2 e 3: 192 × 1 = 192 192 × 2 = 384 192 × 3 = 576 Ao concatenar cada produto, obtemos o valor 1 a 9 pandigital, 192384576. Chamaremos 192384576 o produto concatenado de 192 e (1, 2, 3). O mesmo pode ser alcançado começando com 9 e multiplicando por 1, 2, 3, 4 e 5, dando o pandigital, 918273645, que é o produto concatenado de 9 e (1, 2, 3, 4, 5). Qual é o maior número de 9 dígitos pandigital de 1 a 9 que pode ser formado como o produto concatenado de um inteiro com (1, 2, ..., <var>n</var> ) onde <var>n</var> &gt; 1? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ pandigitalMultiples();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

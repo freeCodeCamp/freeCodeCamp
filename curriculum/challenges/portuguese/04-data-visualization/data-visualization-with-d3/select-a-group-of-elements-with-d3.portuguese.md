@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Selecione um grupo de elementos com D3
 ---
 
-## Description
+## Descrição
 <section id="description"> O D3 também possui o método <code>selectAll()</code> para selecionar um grupo de elementos. Ele retorna uma matriz de nós HTML para todos os itens no documento que correspondem à string de entrada. Aqui está um exemplo para selecionar todas as tags de âncora em um documento: <code>const anchors = d3.selectAll(&quot;a&quot;);</code> Como o método <code>select()</code> , <code>selectAll()</code> suporta o encadeamento de métodos, e você pode usá-lo com outros métodos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Selecione todas as tags <code>li</code> no documento e altere seu texto para &quot;item de lista&quot; encadeando o método <code>.text()</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -59,7 +59,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

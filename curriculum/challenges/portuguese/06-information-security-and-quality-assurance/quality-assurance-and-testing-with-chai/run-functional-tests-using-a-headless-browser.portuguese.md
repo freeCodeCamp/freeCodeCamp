@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Executar testes funcionais usando um navegador sem cabeçalho
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . Nos próximos desafios, vamos simular a interação humana com uma página usando um dispositivo chamado &#39;Headless Browser&#39;. Um navegador sem cabeçalho é um navegador da web sem interface gráfica com o usuário. Esses tipos de ferramentas são particularmente úteis para testar páginas da Web, pois são capazes de renderizar e entender HTML, CSS e JavaScript da mesma maneira que um navegador faria. Para esses desafios, estamos usando o Zombie.JS. É um navegador leve que é totalmente baseado em JS, sem depender de binários adicionais para serem instalados. Esse recurso faz com que seja utilizável em um ambiente como o Glitch. Existem muitas outras opções (mais poderosas). <br> Olhe para os exemplos no código para as instruções do exercício Siga a ordem de afirmações, nós confiamos nele. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,12 +33,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

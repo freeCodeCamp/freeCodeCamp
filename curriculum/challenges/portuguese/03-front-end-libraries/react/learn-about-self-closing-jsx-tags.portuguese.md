@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Aprenda sobre tags JSX de fecho automático
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, você viu como o JSX difere do HTML de uma maneira fundamental com o uso de <code>className</code> vs. <code>class</code> para definir classes HTML. Outra maneira importante pela qual o JSX difere do HTML é a ideia da tag de fechamento automático. Em HTML, quase todas as tags têm uma tag de abertura e fechamento: <code>&lt;div&gt;&lt;/div&gt;</code> ; a tag de fechamento sempre tem uma barra antes do nome da tag que você está fechando. No entanto, há instâncias especiais em HTML chamadas &quot;tags de fechamento automático&quot; ou tags que não exigem uma tag de abertura e de fechamento antes que outra tag possa ser iniciada. Por exemplo, a tag de quebra de linha pode ser escrita como <code>&lt;br&gt;</code> ou como <code>&lt;br /&gt;</code> , mas nunca deve ser escrita como <code>&lt;br&gt;&lt;/br&gt;</code> , uma vez que não contém nenhum conteúdo. No JSX, as regras são um pouco diferentes. Qualquer elemento JSX pode ser gravado com uma tag de fechamento automático e todos os elementos devem ser fechados. A tag de quebra de linha, por exemplo, deve sempre ser escrita como <code>&lt;br /&gt;</code> para ser um JSX válido que pode ser transpilado. Um <code>&lt;div&gt;</code> , por outro lado, pode ser escrito como <code>&lt;div /&gt;</code> ou <code>&lt;div&gt;&lt;/div&gt;</code> . A diferença é que na primeira versão da sintaxe não há como incluir nada no <code>&lt;div /&gt;</code> . Você verá em desafios posteriores que essa sintaxe é útil ao renderizar componentes React. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrija os erros no editor de código para que ele seja um JSX válido e transpile com êxito. Certifique-se de não alterar nenhum conteúdo. Você só precisa fechar as tags onde elas são necessárias. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -61,7 +61,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

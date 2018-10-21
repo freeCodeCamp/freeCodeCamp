@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Alterar estilos com base em dados
 ---
 
-## Description
+## Descrição
 <section id="description"> D3 é sobre visualização e apresentação de dados. É provável que você queira alterar o estilo dos elementos com base nos dados. Você pode usar uma função de retorno de chamada no método <code>style()</code> para alterar o estilo de diferentes elementos. Por exemplo, você pode querer colorir um ponto de dados azul se tiver um valor menor que 20 e vermelho caso contrário. Você pode usar uma função de retorno de chamada no método <code>style()</code> e incluir a lógica condicional. A função de retorno de chamada usa o parâmetro <code>d</code> para representar o ponto de dados: <blockquote> selection.style (&quot;cor&quot;, (d) =&gt; { <br> / * Lógica que retorna a cor com base em uma condição * / <br> }); </blockquote> O método <code>style()</code> não se limita a definir a <code>color</code> - também pode ser usado com outras propriedades CSS. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o método <code>style()</code> ao código no editor para definir a <code>color</code> dos elementos <code>h2</code> condicionalmente. Escreva a função de retorno de chamada, portanto, se o valor dos dados for menor que 20, ele retornará &quot;vermelho&quot;, caso contrário, retornará &quot;verde&quot;. <strong>Nota</strong> <br> Você pode usar a lógica if-else ou o operador ternário. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,7 +73,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

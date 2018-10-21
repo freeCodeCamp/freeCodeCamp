@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 457: Um módulo polinomial o quadrado de um primo'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja f (n) = n2 - 3n - 1. Seja p um primo. Seja R (p) o menor inteiro positivo n tal que f (n) mod p2 = 0 se tal inteiro n existir, caso contrário, R (p) = 0. <p> Seja SR (L) ∑R (p) para todos os primos que não excedam L. </p><p> Encontre SR (107). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler457();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

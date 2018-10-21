@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 63: contagens de dígitos poderosas'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número de 5 dígitos, 16807 = 75, também é uma quinta potência. Da mesma forma, o número de 9 dígitos, 134217728 = 89, é um nono poder. Quantos números inteiros positivos de n dígitos existem, que também são uma enésima potência? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler63();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Código de Golfe
 ---
 
-## Description
+## Descrição
 <section id="description"> No jogo de <a href="https://en.wikipedia.org/wiki/Golf" target="_blank">golfe,</a> cada buraco tem um <code>par</code> significa o número médio de <code>strokes</code> um golfista deve fazer para afundar a bola em um buraco para completar a jogada. Dependendo de quão longe acima ou abaixo <code>par</code> seus <code>strokes</code> são, há um apelido diferente. Sua função receberá argumentos <code>par</code> e <code>strokes</code> . Retorna a string correta de acordo com esta tabela que lista os traços em ordem de prioridade; topo (maior) para baixo (menor): <table class="table table-striped"><thead><tr><th> Traços </th><th> Retorna </th></tr></thead><tbody><tr><td> 1 </td><td> &quot;Buraco-em-um!&quot; </td></tr><tr><td> &lt;= par - 2 </td><td> &quot;Águia&quot; </td></tr><tr><td> par - 1 </td><td> &quot;Passarinho&quot; </td></tr><tr><td> par </td><td> &quot;Par&quot; </td></tr><tr><td> par + 1 </td><td> &quot;Bogey&quot; </td></tr><tr><td> par + 2 </td><td> &quot;Bogey Duplo&quot; </td></tr><tr><td> &gt; par + 3 </td><td> &quot;Ir para casa!&quot; </td></tr></tbody></table> <code>par</code> e <code>strokes</code> serão sempre numéricos e positivos. Nós adicionamos uma matriz de todos os nomes para sua conveniência. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -45,7 +45,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -71,7 +71,7 @@ golfScore(5, 4);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

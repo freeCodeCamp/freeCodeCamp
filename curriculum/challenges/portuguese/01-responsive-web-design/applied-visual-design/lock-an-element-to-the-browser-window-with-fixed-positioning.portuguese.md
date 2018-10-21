@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Bloquear um elemento para a janela do navegador com posicionamento fixo
 ---
 
-## Description
+## Descrição
 <section id="description"> O próximo esquema de layout que o CSS oferece é a posição <code>fixed</code> , que é um tipo de posicionamento absoluto que bloqueia um elemento relativo à janela do navegador. Semelhante ao posicionamento absoluto, é usado com as propriedades de deslocamento CSS e também remove o elemento do fluxo normal do documento. Outros itens não mais &quot;percebem&quot; onde estão posicionados, o que pode exigir alguns ajustes de layout em outro lugar. Uma diferença fundamental entre as posições <code>fixed</code> e <code>absolute</code> é que um elemento com uma posição fixa não se move quando o usuário rola. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A barra de navegação no código é rotulada com um id de <code>navbar</code> . Altere sua <code>position</code> para <code>fixed</code> e compense 0 pixels a partir da <code>top</code> e 0 pixels a partir da <code>left</code> . Observe o (falta de) impacto na posição <code>h1</code> , ele não foi empurrado para baixo para acomodar a barra de navegação e precisaria ser ajustado separadamente. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

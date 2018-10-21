@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Inverta uma árvore binária
 ---
 
-## Description
+## Descrição
 <section id="description"> Aqui vamos criar uma função para inverter uma árvore binária. Dada uma árvore binária, queremos produzir uma nova árvore que seja equivalente à imagem espelhada dessa árvore. Executar uma travessia dentro da ordem em uma árvore invertida irá explorar os nós na ordem reversa quando comparado com a travessia dentro da árvore original. Escreva um método para fazer isso chamado <code>invert</code> em nossa árvore binária. Chamar esse método deve inverter a estrutura da árvore atual. Idealmente, gostaríamos de fazer isso no local em tempo linear. Ou seja, apenas visitamos cada nó uma vez e modificamos a estrutura de árvore existente à medida que avançamos, sem usar nenhuma memória adicional. Boa sorte! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comparação com o Operador Estrito da Desigualdade
 ---
 
-## Description
+## Descrição
 <section id="description"> O operador de desigualdade restrita ( <code>!==</code> ) é o oposto lógico do operador de igualdade estrito. Significa &quot;estritamente não igual&quot; e retorna <code>false</code> onde a igualdade estrita retornaria <code>true</code> e <em>vice-versa</em> . A desigualdade estrita não converte tipos de dados. <strong>Exemplos</strong> <blockquote> 3! == 3 // false <br> 3! == &#39;3&#39; // true <br> 4! == 3 // verdadeiro </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o <code>strict inequality operator</code> à instrução <code>if</code> para que a função retorne &quot;Not Equal&quot; quando <code>val</code> não for estritamente igual a <code>17</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ testStrictNotEqual(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

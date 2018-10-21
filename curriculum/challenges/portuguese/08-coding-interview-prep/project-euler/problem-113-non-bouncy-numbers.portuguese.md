@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 113: números não saltantes'
 ---
 
-## Description
+## Descrição
 <section id="description"> Trabalhando da esquerda para a direita, se nenhum dígito for ultrapassado pelo dígito à esquerda, é chamado um número crescente; por exemplo, 134468. Da mesma forma, se nenhum dígito for excedido pelo dígito à direita, será chamado número decrescente; por exemplo, 66420. Devemos chamar um número inteiro positivo que não esteja aumentando nem diminuindo um número &quot;saltitante&quot;; por exemplo, 155349. À medida que n aumenta, a proporção de números saltitantes abaixo de n aumenta de modo que haja apenas 12951 números abaixo de um milhão que não são saltitantes e apenas 277032 números não saltitantes abaixo de 1010. Quantos números abaixo de um googol (10100 ) não são saltitantes? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler113();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

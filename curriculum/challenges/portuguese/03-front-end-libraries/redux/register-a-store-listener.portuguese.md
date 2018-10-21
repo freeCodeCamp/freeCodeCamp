@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Registrar um ouvinte da loja
 ---
 
-## Description
+## Descrição
 <section id="description"> Outro método que você tem acesso no objeto de <code>store</code> do Redux é o <code>store.subscribe()</code> . Isso permite que você assine as funções do ouvinte na loja, que são chamadas sempre que uma ação é despachada na loja. Um uso simples para esse método é inscrever uma função em sua loja que simplesmente registra uma mensagem toda vez que uma ação é recebida e a loja é atualizada. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva uma função de retorno de chamada que aumente a <code>count</code> variáveis ​​globais toda vez que a loja receber uma ação e passe essa função para o método <code>store.subscribe()</code> . Você verá que <code>store.dispatch()</code> é chamado três vezes seguidas, passando cada vez diretamente em um objeto de ação. Observe a saída do console entre os despachos de ação para ver as atualizações acontecerem. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -79,7 +79,7 @@ count = 0;
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

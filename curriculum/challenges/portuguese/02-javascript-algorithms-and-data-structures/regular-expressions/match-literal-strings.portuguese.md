@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Combinar cordas literais
 ---
 
-## Description
+## Descrição
 <section id="description"> No último desafio, você pesquisou a palavra <code>&quot;Hello&quot;</code> usando a expressão regular <code>/Hello/</code> . Essa regex procurou por uma correspondência literal da string <code>&quot;Hello&quot;</code> . Aqui está outro exemplo em busca de uma correspondência literal da string <code>&quot;Kevin&quot;</code> : <blockquote> deixe testStr = &quot;Olá, meu nome é Kevin.&quot;; <br> deixe testRegex = / Kevin /; <br> testRegex.test (testStr); <br> // Retorna true </blockquote> Qualquer outra forma de <code>&quot;Kevin&quot;</code> não será igual. Por exemplo, o regex <code>/Kevin/</code> não coincidirá com <code>&quot;kevin&quot;</code> ou <code>&quot;KEVIN&quot;</code> . <blockquote> vamos wrongRegex = / kevin /; <br> wrongRegex.test (testStr); <br> // Retorna falso </blockquote> Um desafio futuro mostrará como combinar esses outros formulários também. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Complete o regex <code>waldoRegex</code> para encontrar <code>&quot;Waldo&quot;</code> na string <code>waldoIsHiding</code> com uma correspondência literal. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let result = waldoRegex.test(waldoIsHiding);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

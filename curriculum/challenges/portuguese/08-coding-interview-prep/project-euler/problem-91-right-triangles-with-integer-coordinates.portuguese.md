@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 91: Triângulos retos com coordenadas inteiras'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os pontos P (x1, y1) e Q (x2, y2) são plotados em coordenadas inteiras e unidos à origem, O (0,0), para formar ΔOPQ. <p> Existem exactamente catorze triângulos que contêm um ângulo recto que pode ser formado quando cada coordenada se situa entre 0 e 2 inclusive; isto é, 0 ≤ x1, y1, x2, y2 ≤ 2. </p><p> Dado que 0 ≤ x1, y1, x2, y2 ≤ 50, quantos triângulos retângulos podem ser formados? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler91();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

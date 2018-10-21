@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a tag forte para tornar o texto em negrito
 ---
 
-## Description
+## Descrição
 <section id="description"> Para tornar o texto em negrito, você pode usar a tag <code>strong</code> . Isso costuma ser usado para chamar a atenção para o texto e simbolizar que é importante. Com a tag <code>strong</code> , o navegador aplica o CSS de <code>font-weight: bold;</code> para o elemento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Embrulhe uma tag <code>strong</code> torno da &quot;Universidade de Stanford&quot; dentro da tag <code>p</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,7 +81,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

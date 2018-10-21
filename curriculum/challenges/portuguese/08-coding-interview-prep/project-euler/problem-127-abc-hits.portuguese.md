@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 127: abc-hits'
 ---
 
-## Description
+## Descrição
 <section id="description"> O radical de n, rad (n), é o produto de fatores primos distintos de n. Por exemplo, 504 = 23 × 32 × 7, então rad (504) = 2 × 3 × 7 = 42. Devemos definir o trio de inteiros positivos (a, b, c) para ser um acerto de abc se: GCD ( a, b) = GCD (a, c) = GCD (b, c) = 1 a &lt;ba + b = c rad (abc) &lt;c Por exemplo, (5, 27, 32) é um abc-hit, porque : GCD (5, 27) = GCD (5, 32) = GCD (27, 32) = 1 5 &lt;27 5 + 27 = 32 rad (4320) = 30 &lt;32 Acontece que as ocorrências de abc são bastante raras e existem apenas trinta e um abc-hits para c &lt;1000, com ∑c = 12523. Encontre ∑c para c &lt;120000. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler127();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

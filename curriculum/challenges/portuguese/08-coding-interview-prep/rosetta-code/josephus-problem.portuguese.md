@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Problema Josephus
 ---
 
-## Description
+## Descrição
 <section id="description"> <a href="https://en.wikipedia.org/wiki/Josephus problem">O problema de Josefo</a> é um enigma matemático com uma descrição sombria: prisioneiros de $ n $ estão de pé em um círculo, numerados sequencialmente de $ 0 $ a $ n-1 $. Um carrasco caminha ao longo do círculo, partindo do prisioneiro de US $ 0, removendo cada prisioneiro de $ k $ e matando-o. À medida que o processo continua, o círculo se torna cada vez menor, até restar apenas um prisioneiro, que é então libertado. Por exemplo, se houver $ n = 5 $ prisioneiros e $ k = 2 $, a ordem em que os prisioneiros são mortos (vamos chamá-la de &quot;sequência de mortes&quot;) será 1, 3, 0 e 4, e o sobrevivente será # 2. Dado qualquer <big>$ n, k&gt; 0 $</big> , descubra qual prisioneiro será o último sobrevivente. Em um desses incidentes, havia 41 prisioneiros e a cada <sup>3º</sup> prisioneiro estava sendo morto ( <big>$ k = 3 $</big> ). Entre eles havia um esperto nome Josephus, que resolveu o problema, permaneceu na posição de sobrevivente e continuou a contar a história. Qual número ele era? Escreva uma função que tome o número inicial de prisioneiros e &#39;k&#39; como parâmetro e retorne o número do prisioneiro que sobrevive. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ function josephus (init, kill) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Implementar mapa em um protótipo
 ---
 
-## Description
+## Descrição
 <section id="description"> Como você viu aplicando <code>Array.prototype.map()</code> , ou simplesmente <code>map()</code> anteriormente, o método <code>map</code> retorna um array do mesmo tamanho daquele em que foi chamado. Também não altera o array original, desde que a função de retorno de chamada não altere. Em outras palavras, o <code>map</code> é uma função pura e sua saída depende unicamente de suas entradas. Além disso, é necessária outra função como argumento. Isso nos ensinaria muito sobre o <code>map</code> para tentar implementar uma versão dele que se comporta exatamente como o <code>Array.prototype.map()</code> com um loop <code>for</code> ou <code>Array.prototype.forEach()</code> . Nota: Uma função pura pode alterar as variáveis ​​locais definidas dentro do seu escopo, embora seja preferível evitar isso também. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva seu próprio <code>Array.prototype.myMap()</code> , que deve se comportar exatamente como <code>Array.prototype.map()</code> . Você pode usar um loop <code>for</code> ou o método <code>forEach</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ var new_s = s.myMap(function(item){
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

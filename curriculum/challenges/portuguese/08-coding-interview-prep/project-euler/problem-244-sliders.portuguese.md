@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 244: Sliders'
 ---
 
-## Description
+## Descrição
 <section id="description"> Você provavelmente conhece o jogo Fifteen Puzzle. Aqui, em vez de azulejos numerados, temos sete telhas vermelhas e oito azulejos azuis. Um movimento é denotado pela inicial maiúscula da direção (Esquerda, Direita, Cima, Baixo) na qual o ladrilho é deslizado, por exemplo, partindo da configuração (S), pela sequência LULUR nós alcançamos a configuração (E): <p> (S), (E) </p><p> Para cada caminho, sua soma de verificação é calculada por (pseudocódigo): </p><p> soma de verificação = 0 soma de verificação = (soma de verificação × 243 + m1) mod 100 000 007 soma de verificação = (soma de verificação × 243 + m2) mod 100 000 007… soma de verificação = (soma de verificação × 243 + mn) mod 100 000 007 onde mk é o valor ASCII de a k-ésima letra na sequência de movimentos e os valores ASCII dos movimentos são: </p><p> L76R82U85D68 </p><p> Para a sequência LULUR dada acima, a soma de verificação seria 19761398. Agora, partindo da configuração (S), encontre todas as maneiras mais curtas de alcançar a configuração (T). </p><p> (S), (T) </p><p> Qual é a soma de todas as somas de verificação dos caminhos com comprimento mínimo? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler244();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

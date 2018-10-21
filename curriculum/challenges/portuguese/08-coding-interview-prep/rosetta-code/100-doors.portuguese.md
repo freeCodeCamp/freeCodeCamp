@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 100 portas
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Existem 100 portas em uma fila que estão todas fechadas inicialmente. Você faz 100 passes pelas portas. Na primeira vez, visite cada porta e &#39;ative&#39; a porta (se a porta estiver fechada, abra-a; se estiver aberta, feche-a). Na segunda vez, visite apenas todas as segundas portas (ou seja, porta nº 2, nº 4, nº 6, ...) e alterne-a. Na terceira vez, visite todas as 3as portas (por exemplo, porta # 3, # 6, # 9, ...), etc., até visitar apenas a 100ª porta. </p><p> Implemente uma função para determinar o estado das portas após a última passagem. Retorne o resultado final em uma matriz, com apenas o número da porta incluído na matriz, se estiver aberto. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

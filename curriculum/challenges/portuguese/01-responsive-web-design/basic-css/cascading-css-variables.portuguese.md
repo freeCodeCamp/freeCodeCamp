@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Variáveis ​​CSS em cascata
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando você cria uma variável, ela fica disponível para você usar dentro do elemento no qual você a cria. Ele também fica disponível dentro de qualquer elemento aninhado dentro dele. Esse efeito é conhecido como <dfn>cascata</dfn> . Por causa da cascata, as variáveis ​​CSS são geralmente definidas no elemento <dfn>: root</dfn> . <code>:root</code> é um seletor de <dfn>pseudo-classe</dfn> que combina com o elemento raiz do documento, geralmente o <code></code> elemento. Ao criar suas variáveis ​​em <code>:root</code> , elas estarão disponíveis globalmente e poderão ser acessadas de qualquer outro seletor posteriormente na folha de estilos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina uma variável chamada <code>--penguin-belly</code> no seletor <code>:root</code> e dê a ela o valor de <code>pink</code> . Você pode, então, ver como o valor irá cair em cascata para alterar o valor para rosa, em qualquer lugar em que a variável for usada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -241,7 +241,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

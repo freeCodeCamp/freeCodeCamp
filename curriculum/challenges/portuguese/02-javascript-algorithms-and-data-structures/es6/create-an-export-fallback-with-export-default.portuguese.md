@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar um retorno de exportação com padrão de exportação
 ---
 
-## Description
+## Descrição
 <section id="description"> Na lição de <code>export</code> , você aprendeu sobre a sintaxe conhecida como <dfn>exportação nomeada</dfn> . Isso permitiu que você disponibilizasse várias funções e variáveis ​​para uso em outros arquivos. Há outra sintaxe de <code>export</code> você precisa conhecer, conhecida como <dfn>padrão de exportação</dfn> . Normalmente, você usará essa sintaxe se apenas um valor estiver sendo exportado de um arquivo. Também é usado para criar um valor de fallback para um arquivo ou módulo. Aqui está um exemplo rápido de <code>export default</code> : <blockquote> função padrão de exportação add (x, y) { <br> return x + y; <br> } </blockquote> Nota: Como <code>export default</code> é usado para declarar um valor de fallback para um módulo ou arquivo, você pode ter apenas um valor como uma exportação padrão em cada módulo ou arquivo. Além disso, você não pode usar <code>export default</code> com <code>var</code> , <code>let</code> ou <code>const</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A seguinte função deve ser o valor de fallback para o módulo. Por favor, adicione o código necessário para fazer isso. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ window.exports = function(){};
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

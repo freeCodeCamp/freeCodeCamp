@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 106: Soma especial do subconjunto: meta-testes'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja S (A) a soma dos elementos no conjunto A de tamanho n. Vamos chamá-lo de um conjunto especial de soma se para quaisquer dois subconjuntos separados, não-vazios, B e C, as seguintes propriedades são verdadeiras: S (B) ≠ S (C); isto é, somas de subconjuntos não podem ser iguais. Se B contiver mais elementos que C, então S (B)&gt; S (C). Para este problema, vamos assumir que um dado conjunto contém n elementos estritamente crescentes e já satisfaz a segunda regra. Surpreendentemente, dos 25 pares de subconjuntos possíveis que podem ser obtidos de um conjunto para o qual n = 4, apenas 1 desses pares precisa ser testado para igualdade (primeira regra). Da mesma forma, quando n = 7, apenas 70 dos 966 pares de subconjuntos precisam ser testados. Para n = 12, quantos dos 261625 pares de subconjuntos que podem ser obtidos precisam ser testados quanto à igualdade? NOTA: Esse problema está relacionado ao problema 103 e ao problema 105. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler106();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

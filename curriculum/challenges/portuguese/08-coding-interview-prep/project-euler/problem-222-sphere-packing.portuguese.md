@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 222: Embalagem de Esferas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Qual é o comprimento do tubo mais curto, de raio interno de 50mm, que pode conter totalmente 21 bolas de raios 30mm, 31mm, ..., 50mm? <p> Dê sua resposta em micrômetros (10-6 m) arredondados para o número inteiro mais próximo. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler222();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

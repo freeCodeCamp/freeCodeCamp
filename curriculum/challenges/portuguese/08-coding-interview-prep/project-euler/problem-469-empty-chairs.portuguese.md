@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Em uma sala N cadeiras são colocadas em torno de uma mesa redonda. Cavaleiros entram na sala um por um e escolhem aleatoriamente uma cadeira vazia disponível. Para ter espaço suficiente, os cavaleiros sempre deixam pelo menos uma cadeira vazia entre eles. <p> Quando não há cadeiras adequadas, a fração C das cadeiras vazias é determinada. Também definimos E (N) como o valor esperado de C. Podemos verificar que E (4) = 1/2 e E (6) = 5/9. </p><p> Encontre E (1018). Dê sua resposta arredondada para quatorze casas decimais na forma 0.abcdefghijklmn. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler469();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 9: trigêmeo pitagórico especial'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um trigêmeo pitagórico é um conjunto de três números naturais, <var>um</var> &lt; <var>b</var> &lt; <var>c</var> , para o qual, <div style="text-align: center;"> <var>a</var> <sup>2</sup> + <var>b</var> <sup>2</sup> = <var>c</var> <sup>2</sup> </div> Por exemplo, 3 <sup>2</sup> + 4 <sup>2</sup> = 9 + 16 = 25 = 5 <sup>2</sup> . Existe exatamente um tripleto pitagórico para o qual <var>a</var> + <var>b</var> + <var>c</var> = 1000. Encontre o produto <var>abc</var> tal que <var>a</var> + <var>b</var> + <var>c</var> = <code>n</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ specialPythagoreanTriplet(1000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Matriz zig-zag
 ---
 
-## Description
+## Descrição
 <section id="description"> Um array &quot;zig-zag&quot; é um arranjo quadrado dos primeiros inteiros $ N ^ 2 $, onde os números aumentam sequencialmente conforme você zigue-zague ao longo das <a href="https://en.wiktionary.org/wiki/antidiagonal">anti-diagonais da matriz</a> . Por exemplo, dado &quot;&#39;5&quot;&#39;, produza este array: <pre> 0 1 5 6 14
  2 4 7 13 15
  3 8 12 16 21
@@ -14,11 +14,11 @@ localeTitle: Matriz zig-zag
 10 18 19 23 24
 </pre> Escreva uma função que tome o tamanho da matriz zig-zag e retorne a matriz correspondente como matriz bidimensional. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -40,7 +40,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

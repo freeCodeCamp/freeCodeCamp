@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Ficar na fila
 ---
 
-## Description
+## Descrição
 <section id="description"> Na Ciência da Computação, uma <dfn>fila</dfn> é uma <dfn>Estrutura de Dados</dfn> abstrata, na qual os itens são mantidos em ordem. Novos itens podem ser adicionados na parte de trás da <code>queue</code> e itens antigos são retirados da frente da <code>queue</code> . Escreva uma função <code>nextInLine</code> que recebe um array ( <code>arr</code> ) e um número ( <code>item</code> ) como argumentos. Adicione o número ao final da matriz e remova o primeiro elemento da matriz. A função <code>nextInLine</code> deve então retornar o elemento que foi removido. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -97,7 +97,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

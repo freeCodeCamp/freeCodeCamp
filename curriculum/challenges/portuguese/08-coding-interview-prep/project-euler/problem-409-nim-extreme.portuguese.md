@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 409: Nim Extreme'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja n um inteiro positivo. Considere posições nim onde: Existem pilhas não vazias. Cada pilha tem tamanho menor que 2n. Não há duas pilhas do mesmo tamanho. Seja W (n) o número de posições vencedoras que satisfaçam as condições acima (uma posição é vencedora se o primeiro jogador tiver uma estratégia vencedora). Por exemplo, W (1) = 1, W (2) = 6, W (3) = 168, W (5) = 19764360 e W (100) mod. 1 000 000 007 = 384777056. <p> Encontre W (10 000 000) mod 1 000 000 007. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler409();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

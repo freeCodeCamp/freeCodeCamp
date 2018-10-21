@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 174: Contando o número de lâminas quadradas "vazias" que podem formar um, dois, três ... arranjos distintos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos definir uma lâmina quadrada para ser um contorno quadrado com um &quot;buraco&quot; quadrado de modo que a forma possua simetria vertical e horizontal. Dado oito azulejos, é possível formar uma lâmina de uma só maneira: 3x3 quadrados com um buraco 1x1 no meio. No entanto, usando trinta e dois ladrilhos, é possível formar duas lâminas distintas. <p> Se t representa o número de peças usadas, digamos que t = 8 é do tipo L (1) e t = 32 é do tipo L (2). Seja N (n) o número de t ≤ 1000000 tal que t é o tipo L (n); por exemplo, N (15) = 832. O que é ∑ N (n) para 1 ≤ n ≤ 10? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler174();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

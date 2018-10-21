@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Armazenando Valores com o Operador de Atribuição
 ---
 
-## Description
+## Descrição
 <section id="description"> Em JavaScript, você pode armazenar um valor em uma variável com o operador de <dfn>atribuição</dfn> . <code>myVariable = 5;</code> Isso atribui o valor <code>Number</code> <code>5</code> a <code>myVariable</code> . A atribuição sempre vai da direita para a esquerda. Tudo à direita do operador <code>=</code> é resolvido antes que o valor seja atribuído à variável à esquerda do operador. <blockquote> myVar = 5; <br> myNum = myVar; </blockquote> Isso atribui <code>5</code> para <code>myVar</code> e, em seguida, resolve <code>myVar</code> para <code>5</code> novamente e atribui a <code>myNum</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Atribua o valor <code>7</code> à variável <code>a</code> . Atribuir o conteúdo de <code>a</code> para variável <code>b</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,7 +72,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

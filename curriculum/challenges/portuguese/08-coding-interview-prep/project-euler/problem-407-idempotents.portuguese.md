@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 407: Idempotents'
 ---
 
-## Description
+## Descrição
 <section id="description"> Se calcularmos a2 mod 6 para 0 ≤ a ≤ 5 obtemos: 0,1,4,3,4,1. <p> O maior valor de um tal que a2 ≡ um mod 6 é 4. Vamos chamar M (n) o maior valor de um &lt;n tal que a2 ≡ a (mod n). Então M (6) = 4. </p><p> Encontre ∑M (n) para 1 ≤ n ≤ 107. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler407();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

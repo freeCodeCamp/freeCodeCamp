@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use * para importar tudo de um arquivo
 ---
 
-## Description
+## Descrição
 <section id="description"> Suponha que você tenha um arquivo que você deseja importar todo o seu conteúdo para o arquivo atual. Isso pode ser feito com a sintaxe <dfn>import *</dfn> . Aqui está um exemplo onde o conteúdo de um arquivo chamado <code>&quot;math_functions&quot;</code> é importado para um arquivo no mesmo diretório: <blockquote> import * como myMathModule de &quot;math_functions&quot;; <br> myMathModule.add (2,3); <br> myMathModule.subtract (5,3); </blockquote> E quebrando esse código: <blockquote> import * como object_with_name_of_your_choice de &quot;file_path_goes_here&quot; <br> object_with_name_of_your_choice.imported_function </blockquote> Você pode usar qualquer nome após a <code>import * as</code> parte da declaração. Para utilizar esse método, é necessário um objeto que receba os valores importados. A partir daqui, você usará a notação de ponto para chamar seus valores importados. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O código abaixo requer o conteúdo de um arquivo, <code>&quot;capitalize_strings&quot;</code> , encontrado no mesmo diretório, importado. Adicione a instrução de <code>import *</code> apropriada ao topo do arquivo, usando o objeto fornecido. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ lowercase: str => str.toLowerCase()
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

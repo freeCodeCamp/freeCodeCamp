@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Bloqueie um Elemento ao seu Pai com Posicionamento Absoluto
 ---
 
-## Description
+## Descrição
 <section id="description"> A próxima opção para a propriedade CSS <code>position</code> é <code>absolute</code> , que bloqueia o elemento no lugar em relação ao seu contêiner pai. Ao contrário da posição <code>relative</code> , isso remove o elemento do fluxo normal do documento, portanto, os itens adjacentes o ignoram. As propriedades de deslocamento CSS (superior ou inferior e esquerda ou direita) são usadas para ajustar a posição. Uma nuance com o posicionamento absoluto é que ele vai ser bloqueado em relação ao seu antepassado mais próximo <em>posicionado.</em> Se você esquecer de adicionar uma regra de posição ao item pai (isso geralmente é feito usando <code>position: relative;</code> ), o navegador continuará procurando a cadeia e, por fim, assumirá o padrão da tag body. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Bloqueie o elemento <code>#searchbar</code> no canto superior direito de seu pai de <code>section</code> , declarando sua <code>position</code> como <code>absolute</code> . Dê-lhe compensações <code>top</code> e <code>right</code> de 50 pixels cada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,7 +63,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Mude uma matriz declarada com const
 ---
 
-## Description
+## Descrição
 <section id="description"> A declaração <code>const</code> tem muitos casos de uso no JavaScript moderno. Alguns desenvolvedores preferem atribuir todas as variáveis ​​usando <code>const</code> por padrão, a menos que saibam que precisarão reatribuir o valor. Apenas nesse caso, eles usam <code>let</code> . No entanto, é importante entender que objetos (incluindo matrizes e funções) atribuídos a uma variável usando <code>const</code> ainda são mutáveis. A utilização da declaração <code>const</code> impede apenas a reatribuição do identificador de variáveis. <blockquote> &quot;use strict&quot;; <br> const s = [5, 6, 7]; <br> s = [1, 2, 3]; // lança erro, tentando atribuir um const <br> s [2] = 45; // funciona exatamente como faria com uma matriz declarada com var ou let <br> console.log (s); // retorna [5, 6, 45] </blockquote> Como você pode ver, você pode alterar o próprio objeto <code>[5, 6, 7]</code> e a variável <code>s</code> ainda apontará para a matriz alterada <code>[5, 6, 45]</code> . Como todas as matrizes, os elementos da matriz em <code>s</code> são mutáveis, mas porque <code>const</code> foi usado, você não pode usar o identificador variável <code>s</code> para apontar para uma matriz diferente usando o operador de atribuição. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Uma matriz é declarada como <code>const s = [5, 7, 2]</code> . Altere a matriz para <code>[2, 5, 7]</code> usando várias atribuições de elementos. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ editInPlace();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

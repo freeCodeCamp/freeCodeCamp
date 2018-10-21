@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Gerenciar Estado Localmente Primeiro
 ---
 
-## Description
+## Descrição
 <section id="description"> Aqui você terminará de criar o componente <code>DisplayMessages</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Primeiro, no método <code>render()</code> , faça o componente renderizar um elemento de <code>input</code> , elemento de <code>button</code> e elemento <code>ul</code> . Quando o elemento de <code>input</code> é alterado, ele deve acionar um método <code>handleChange()</code> . Além disso, o elemento de <code>input</code> deve renderizar o valor da <code>input</code> que está no estado do componente. O elemento <code>button</code> deve acionar um método <code>submitMessage()</code> quando é clicado. Em segundo lugar, escreva esses dois métodos. O método <code>handleChange()</code> deve atualizar a <code>input</code> com o que o usuário está digitando. O método <code>submitMessage()</code> deve concatenar a mensagem atual (armazenada na <code>input</code> ) para a matriz de <code>messages</code> no estado local e limpar o valor da <code>input</code> . Finalmente, use o <code>ul</code> para mapear a matriz de <code>messages</code> e renderizá-la na tela como uma lista de elementos <code>li</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -79,7 +79,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

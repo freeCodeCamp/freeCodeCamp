@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Correspondência de letras do alfabeto
 ---
 
-## Description
+## Descrição
 <section id="description"> Você viu como é possível usar <code>character sets</code> para especificar um grupo de caracteres a serem correspondidos, mas isso é muita digitação quando você precisa corresponder a um grande intervalo de caracteres (por exemplo, todas as letras do alfabeto). Felizmente, há um recurso embutido que torna isso simples e curto. Dentro de um <code>character set</code> , você pode definir um intervalo de caracteres para corresponder usando um caractere de <code>hyphen</code> : <code>-</code> . Por exemplo, para corresponder letras minúsculas de <code>a</code> até <code>e</code> você usaria <code>[ae]</code> . <blockquote> deixe catStr = &quot;cat&quot;; <br> deixe batStr = &quot;bat&quot;; <br> let matStr = &quot;mat&quot;; <br> deixe bgRegex = / [ae] em /; <br> catStr.match (bgRegex); // Retorna [&quot;gato&quot;] <br> batStr.match (bgRegex); // Retorna [&quot;bat&quot;] <br> matStr.match (bgRegex); // Retorna nulo </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corresponder todas as letras da string <code>quoteSample</code> . <strong>Nota</strong> <br> Certifique-se de combinar as letras <strong>maiúsculas</strong> e minúsculas <strong><strong>.</strong></strong> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let result = alphabetRegex; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Execute o cérebro ****
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva uma função para implementar um interpretador do Brain ****. A função terá uma string como parâmetro e deve retornar uma string como saída. Mais detalhes são fornecidos abaixo: </p><p> O RCBF é um conjunto de compiladores e intérpretes da <a href="http://rosettacode.org/wiki/Brainf***" title="Brainf ***">Brainf ***</a> escritos para o Rosetta Code em vários idiomas. </p><p> Abaixo estão os links para cada uma das versões do RCBF. </p><p> Uma implementação só precisa implementar corretamente as seguintes instruções: </p><p> {| </p><p> !Comando </p><p> !Descrição </p><p> | - </p><p> | style = &quot;text-align: center&quot; | <code>&gt;</code> || Mova o ponteiro para a direita </p><p> | - </p><p> | style = &quot;text-align: center&quot; | <code>&lt;</code> || Mova o ponteiro para a esquerda </p><p> | - </p><p> | style = &quot;text-align: center&quot; | <code>+</code> || Incrementar a célula de memória sob o ponteiro </p><p> | - </p><p> | style = &quot;text-align: center&quot; | <code>-</code> || Decrementar a célula de memória sob o ponteiro </p><p> | - </p><p> | style = &quot;text-align: center&quot; | <code>.</code> || Saída do caractere representado pela célula no ponteiro </p><p> | - </p><p> | style = &quot;text-align: center&quot; | <code>,</code> || Insira um caractere e armazene-o na célula no ponteiro </p><p> | - </p><p> | style = &quot;text-align: center&quot; | <code>[</code> || Saltar após a correspondência <code>]</code> se a célula abaixo do ponteiro for 0 </p><p> | - </p><p> | style = &quot;text-align: center&quot; | <code>]</code> || Pular de volta para a correspondência <code>[</code> se a célula abaixo do ponteiro for diferente de zero </p><p> |} </p><p> Qualquer tamanho de célula é permitido, o suporte EOF ( <u>E</u> nd- <u>O</u> - <u>F</u> ile) é opcional, assim como se você tem memória limitada ou ilimitada. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -124,7 +124,7 @@ let bye='++++++++++[>+>+++>++++>+++++++>++++++++>+++++++++>++++++++++>++++++++++
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

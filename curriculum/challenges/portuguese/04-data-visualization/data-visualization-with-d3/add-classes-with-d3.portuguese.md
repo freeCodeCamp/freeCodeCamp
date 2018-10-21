@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Usar muitos estilos inline em elementos HTML é difícil de gerenciar, mesmo para aplicativos menores. É mais fácil adicionar uma classe a elementos e estilizar essa classe uma vez usando regras CSS. D3 possui o método <code>attr()</code> para adicionar qualquer atributo HTML a um elemento, incluindo um nome de classe. O método <code>attr()</code> funciona da mesma maneira que <code>style()</code> faz. Leva valores separados por vírgula e pode usar uma função de retorno de chamada. Aqui está um exemplo para adicionar uma classe de &quot;container&quot; a uma seleção: <code>selection.attr(&quot;class&quot;, &quot;container&quot;);</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o método <code>attr()</code> ao código no editor e coloque uma classe de <code>bar</code> nos elementos <code>div</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,7 +66,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

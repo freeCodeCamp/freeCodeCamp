@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Construindo Strings com Variáveis
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes você precisará construir uma string, estilo <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank">Mad Libs</a> . Usando o operador de concatenação ( <code>+</code> ), você pode inserir uma ou mais variáveis ​​em uma string que está construindo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Definir <code>myName</code> para uma string igual ao seu nome e construir <code>myStr</code> com <code>myName</code> entre as seqüências de caracteres <code>&quot;My name is &quot;</code> e <code>&quot; and I am well!&quot;</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

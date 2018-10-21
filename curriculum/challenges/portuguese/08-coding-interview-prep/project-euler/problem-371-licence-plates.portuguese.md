@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 371: Placas de matrícula'
 ---
 
-## Description
+## Descrição
 <section id="description"> As placas de Oregon consistem em três letras seguidas por um número de três dígitos (cada dígito pode ser de [0..9]). Enquanto dirige para trabalhar, Seth joga o seguinte jogo: Sempre que os números de duas matrículas vistas em sua viagem somam 1000, é uma vitória. <p> Por exemplo, o MIC-012 e o HAN-988 são uma vitória e o RYU-500 e o SET-500 também. (contanto que ele os veja na mesma viagem). </p><p> Encontre o número esperado de pratos que ele precisa para vencer. Dê sua resposta arredondada para 8 casas decimais atrás do ponto decimal. </p><p> Nota: Assumimos que cada placa de identificação vista tem a mesma probabilidade de ter qualquer número de três dígitos. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler371();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

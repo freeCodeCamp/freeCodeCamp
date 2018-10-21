@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use Destructuring Assignment com o Operador Descanso para Reatribuir Elementos da Matriz
 ---
 
-## Description
+## Descrição
 <section id="description"> Em algumas situações envolvendo a desestruturação de matriz, podemos querer coletar o restante dos elementos em uma matriz separada. O resultado é semelhante ao <code>Array.prototype.slice()</code> , conforme mostrado abaixo: <blockquote> const [a, b, ... arr] = [1, 2, 3, 4, 5, 7]; <br> console.log (a, b); // 1, 2 <br> console.log (arr); // [3, 4, 5, 7] </blockquote> Variáveis <code>a</code> e <code>b</code> levar o primeiro e segundo valores da matriz. Depois disso, por causa da presença do operador resto, <code>arr</code> recebe resto dos valores sob a forma de uma matriz. O elemento restante só funciona corretamente como a última variável na lista. Como em, você não pode usar o operador de descanso para capturar um subarray que deixa de fora o último elemento da matriz original. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use atribuição desestruturação com o operador de descanso para realizar uma eficaz <code>Array.prototype.slice()</code> de modo que <code>arr</code> é um sub-matriz da matriz original <code>source</code> com os dois primeiros elementos omitidos. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ console.log(source); // should be [1,2,3,4,5,6,7,8,9,10];
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

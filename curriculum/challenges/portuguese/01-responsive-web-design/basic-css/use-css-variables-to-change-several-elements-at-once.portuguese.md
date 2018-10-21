@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use as variáveis ​​CSS para alterar vários elementos de uma só vez
 ---
 
-## Description
+## Descrição
 <section id="description"> <dfn>Variáveis ​​CSS</dfn> são uma maneira poderosa de alterar várias propriedades de estilo CSS de uma só vez, alterando apenas um valor. Siga as instruções abaixo para ver como a alteração de apenas três valores pode alterar o estilo de muitos elementos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Na classe <code>penguin</code> , altere o valor de <code>black</code> para <code>gray</code> , o valor de <code>gray</code> para <code>white</code> e o valor <code>yellow</code> para <code>orange</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -243,7 +243,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

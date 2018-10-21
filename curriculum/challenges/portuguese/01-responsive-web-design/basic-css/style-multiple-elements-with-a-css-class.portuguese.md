@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Estilo vários elementos com uma classe CSS
 ---
 
-## Description
+## Descrição
 <section id="description"> As classes permitem que você use os mesmos estilos CSS em vários elementos HTML. Você pode ver isso aplicando sua classe de <code>red-text</code> ao primeiro elemento <code>p</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -85,7 +85,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

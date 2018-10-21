@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Acessar matrizes multi-dimensionais com índices
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma maneira de pensar em uma matriz <dfn>multidimensional</dfn> é como uma <em>matriz de matrizes</em> . Quando você usa colchetes para acessar sua matriz, o primeiro conjunto de colchetes refere-se às entradas na matriz mais externa (o primeiro nível) e cada par adicional de colchetes refere-se ao próximo nível de entradas internas. <strong>Exemplo</strong> <blockquote> var arr = [ <br> [1,2,3], <br> [4,5,6], <br> [7,8,9], <br> [[10,11,12], 13, 14] <br> ]; <br> arr [3]; // é igual a [[10,11,12], 13, 14] <br> arr [3] [0]; // é igual a [10,11,12] <br> arr [3] [0] [1]; // é igual a 11 </blockquote> <strong>Nota</strong> <br> Não deve haver espaços entre o nome da matriz e os colchetes, como <code>array [0][0]</code> e até mesmo esta <code>array [0] [0]</code> não é permitida. Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Usando a notação de colchetes, selecione um elemento em <code>myArray</code> , de forma que <code>myData</code> seja igual a <code>8</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

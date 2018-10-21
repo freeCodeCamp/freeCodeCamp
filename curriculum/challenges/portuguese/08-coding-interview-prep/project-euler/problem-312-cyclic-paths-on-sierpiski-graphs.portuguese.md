@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 312: Caminhos cíclicos nos gráficos de Sierpiński'
 ---
 
-## Description
+## Descrição
 <section id="description"> - Um gráfico de Sierpiński da ordem 1 (S1) é um triângulo equilátero. - Sn + 1 é obtido de Sn posicionando três cópias de Sn para que cada par de cópias tenha um canto comum. <p> Seja C (n) o número de ciclos que passam exatamente uma vez através de todos os vértices de Sn. Por exemplo, C (3) = 8 porque oito desses ciclos podem ser desenhados em S3, como mostrado abaixo: </p><p> Pode-se verificar também que: C (1) = C (2) = 1 C (5) = 71328803586048 C (10.000) mod 108 = 37652224 C (10.000) mod 138 = 617720485 </p><p> Encontre C (C (C (10.000))) mod 138. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler312();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

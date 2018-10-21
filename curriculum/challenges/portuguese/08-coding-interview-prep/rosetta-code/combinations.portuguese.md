@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Combinações
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Dados inteiros não negativos <big>m</big> e <big>n</big> , geram todas as <a href="http://mathworld.wolfram.com/Combination.html" title="link: http://mathworld.wolfram.com/Combination.html">combinações</a> de tamanho <big>m</big> dos inteiros de <big>0</big> (zero) a <big>n-1</big> na ordem classificada (cada combinação é classificada e a tabela inteira é classificada). </p> Exemplo: <p> <big>3</big> pente <big>5</big> é: </p><pre> 0 1 2
 0 1 3
 0 1 4
@@ -19,11 +19,11 @@ localeTitle: Combinações
 2 3 4
 </pre></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,7 +66,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

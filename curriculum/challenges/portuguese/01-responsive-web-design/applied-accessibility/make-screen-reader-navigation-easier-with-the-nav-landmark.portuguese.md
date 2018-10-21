@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Torne a navegação do leitor de tela mais fácil com o marco de navegação
 ---
 
-## Description
+## Descrição
 <section id="description"> O elemento <code>nav</code> é outro item HTML5 com o recurso de marco incorporado para facilitar a navegação do leitor de tela. Esta tag destina-se a envolver os links principais de navegação na sua página. Se houver links de sites repetidos na parte inferior da página, não será necessário marcar aqueles com uma tag de <code>nav</code> também. Usar um <code>footer</code> (coberto no próximo desafio) é suficiente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O Camper Cat incluiu links de navegação no topo de sua página de treinamento, mas os envolveu em uma <code>div</code> . Altere o <code>div</code> para uma tag de <code>nav</code> para melhorar a acessibilidade em sua página. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,7 +76,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

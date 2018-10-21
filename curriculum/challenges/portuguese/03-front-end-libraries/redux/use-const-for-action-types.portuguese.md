@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use const para tipos de ação
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma prática comum ao trabalhar com o Redux é atribuir tipos de ação como constantes somente leitura e, então, referenciar essas constantes onde quer que elas sejam usadas. Você pode refatorar o código com o qual está trabalhando para gravar os tipos de ação como declarações <code>const</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Declare <code>LOGIN</code> e <code>LOGOUT</code> como valores <code>const</code> e atribua-os às cadeias <code>&#39;LOGIN&#39;</code> e <code>&#39;LOGOUT&#39;</code> , respectivamente. Em seguida, edite o <code>authReducer()</code> e os criadores de ações para fazer referência a essas constantes em vez de valores de string. <strong>Nota:</strong> Geralmente, é uma convenção escrever constantes em todas as letras maiúsculas, e esta também é uma prática padrão no Redux. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -96,7 +96,7 @@ const logoutUser = () => {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

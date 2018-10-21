@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Criar um componente React
 ---
 
-## Description
+## Descrição
 <section id="description"> A outra maneira de definir um componente React é com a sintaxe da <code>class</code> ES6. No exemplo a seguir, <code>Kitten</code> estende <code>React.Component</code> : <blockquote> classe Kitten estende React.Component { <br> construtor (props) { <br> super (adereços); <br> } <br><br> render () { <br> Retorna ( <br> &lt;h1&gt; Hi &lt;/ h1&gt; <br> ); <br> } <br> } </blockquote> Isso cria uma classe ES6 <code>Kitten</code> que estende a classe <code>React.Component</code> . Portanto, a classe <code>Kitten</code> agora tem acesso a muitos recursos úteis do React, como ganchos do estado local e do ciclo de vida. Não se preocupe se você ainda não estiver familiarizado com esses termos, eles serão abordados em maiores detalhes em desafios posteriores. Observe também que a classe <code>Kitten</code> possui um <code>constructor</code> definido dentro dela que chama <code>super()</code> . Ele usa <code>super()</code> para chamar o construtor da classe pai, neste caso, <code>React.Component</code> . O construtor é um método especial usado durante a inicialização de objetos criados com a palavra-chave <code>class</code> . É uma boa prática chamar o <code>constructor</code> um componente com <code>super</code> e passar <code>props</code> para ambos. Isso garante que o componente seja inicializado corretamente. Por enquanto, saiba que é padrão para este código ser incluído. Logo você verá outros usos para o construtor, bem como <code>props</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> <code>MyComponent</code> é definido no editor de código usando a sintaxe de classe. Termine de escrever o método de <code>render</code> para que ele retorne um elemento <code>div</code> que contenha um <code>h1</code> com o texto <code>Hello React!</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

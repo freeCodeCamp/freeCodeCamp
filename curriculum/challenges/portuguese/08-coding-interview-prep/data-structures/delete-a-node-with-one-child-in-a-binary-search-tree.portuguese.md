@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Excluir um nó com um filho em uma árvore de pesquisa binária
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que podemos deletar nós de folha vamos para o segundo caso: deletar um nó com um filho. Para este caso, digamos que temos uma árvore com os seguintes nós 1 - 2 - 3, onde 1 é a raiz. Para deletar 2, nós simplesmente precisamos fazer a referência correta em 1 ponto para 3. Mais geralmente para deletar um nó com apenas um filho, nós fazemos a referência do pai do nó o próximo nó na árvore. Instruções: Fornecemos algum código em nosso método <code>remove</code> que realiza as tarefas do último desafio. Encontramos o destino para excluir e seu pai e definimos o número de filhos que o nó de destino possui. Vamos adicionar o próximo caso aqui para os nós de destino com apenas um filho. Aqui, teremos que determinar se o único filho é uma ramificação esquerda ou direita na árvore e, em seguida, definir a referência correta no pai para apontar para esse nó. Além disso, vamos considerar o caso em que o destino é o nó raiz (isso significa que o nó pai será <code>null</code> ). Sinta-se à vontade para substituir todo o código inicial com o seu próprio, desde que ele passe nos testes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -112,7 +112,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

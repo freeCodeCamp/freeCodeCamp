@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 379: contagem múltipla menos comum'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja f (n) o número de casais (x, y) com inteiros positivos xey, x ≤ y e o mínimo múltiplo comum de x e y igual a n. <p> Seja g a função somativa de f, ie: g (n) = ∑ f (i) para 1 ≤ i ≤ n. </p><p> Você é dado que g (106) = 37429395. </p><p> Encontre g (1012). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler379();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

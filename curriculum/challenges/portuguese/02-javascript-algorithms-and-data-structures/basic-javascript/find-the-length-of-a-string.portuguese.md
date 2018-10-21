@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Encontre o comprimento de uma string
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode encontrar o comprimento de um valor de <code>String</code> escrevendo <code>.length</code> após a variável de string ou string literal. <code>&quot;Alan Peter&quot;.length; // 10</code> Por exemplo, se <code>var firstName = &quot;Charles&quot;</code> uma variável <code>var firstName = &quot;Charles&quot;</code> , poderemos descobrir quanto tempo a string <code>&quot;Charles&quot;</code> está usando a propriedade <code>firstName.length</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a propriedade <code>.length</code> para contar o número de caracteres na variável <code>lastName</code> e atribuí-la a <code>lastNameLength</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

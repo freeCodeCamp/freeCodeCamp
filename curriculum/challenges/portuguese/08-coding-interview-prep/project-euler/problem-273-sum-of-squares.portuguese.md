@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 273: Soma dos Quadrados'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere equações da forma: a2 + b2 = N, 0 ≤ a ≤ b, a, beN inteiro. <p> Para N = 65 existem duas soluções: a = 1, b = 8 e a = 4, b = 7. Chamamos S (N) a soma dos valores de uma de todas as soluções de a2 + b2 = N, 0 ≤ a ≤ b, a, beN inteiro. Assim, S (65) = 1 + 4 = 5. Encontre ∑S (N), para todos os N inteiros, divisíveis apenas por primos da forma 4k + 1 com 4k + 1 &lt;150. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler273();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Inverter elementos SVG
 ---
 
-## Description
+## Descrição
 <section id="description"> Você deve ter notado que o gráfico de barras estava de cabeça para baixo ou invertido. Isso ocorre porque o SVG usa coordenadas (x, y). No SVG, o ponto de origem das coordenadas está no canto superior esquerdo. Uma coordenada <code>x</code> de 0 coloca uma forma na borda esquerda da área SVG. Uma coordenada <code>y</code> de 0 coloca uma forma na borda superior da área SVG. Valores <code>x</code> altos empurram o retângulo para a direita. Valores maiores <code>y</code> empurram o retângulo para baixo. Para tornar as barras com o lado direito para cima, você precisa mudar a maneira como a coordenada <code>y</code> é calculada. Ele precisa considerar tanto a altura da barra quanto a altura total da área SVG. A altura da área SVG é 100. Se você tiver um ponto de dados de 0 no conjunto, você deseja que a barra inicie na parte inferior da área SVG (não no topo). Para fazer isso, a coordenada <code>y</code> precisa de um valor de 100. Se o valor do ponto de dados fosse 1, você começaria com uma coordenada <code>y</code> de 100 para definir a barra na parte inferior. Então você precisa considerar a altura da barra de 1, então a coordenada <code>y</code> final seria 99. A coordenada <code>y</code> que é <code>y = heightOfSVG - heightOfBar</code> colocaria as barras com o lado direito para cima. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a função de retorno de chamada para o atributo <code>y</code> para definir as barras com o lado direito para cima. Lembre-se que a <code>height</code> da barra é 3 vezes o valor de dados <code>d</code> . <strong>Nota</strong> <br> Em geral, a relação é <code>y = h - m * d</code> , onde <code>m</code> é a constante que escala os pontos de dados. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -85,7 +85,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

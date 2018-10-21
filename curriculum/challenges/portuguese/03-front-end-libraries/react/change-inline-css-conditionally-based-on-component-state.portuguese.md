@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Alterar Inline CSS Condicionalmente Baseado no Estado do Componente
 ---
 
-## Description
+## Descrição
 <section id="description"> Neste ponto, você viu vários aplicativos de renderização condicional e o uso de estilos in-line. Aqui está mais um exemplo que combina esses dois tópicos. Você também pode processar CSS condicionalmente com base no estado de um componente React. Para fazer isso, você verifica uma condição e, se essa condição for atendida, você modifica o objeto de estilos atribuído aos elementos JSX no método de renderização. Esse paradigma é importante para entender, porque é uma mudança dramática da abordagem mais tradicional de aplicar estilos modificando elementos DOM diretamente (o que é muito comum com jQuery, por exemplo). Nessa abordagem, você deve acompanhar quando os elementos são alterados e também manipular diretamente a manipulação real. Pode tornar-se difícil acompanhar as alterações, tornando a sua interface do usuário imprevisível. Quando você define um objeto de estilo com base em uma condição, descreve como a interface do usuário deve ser uma função do estado do aplicativo. Há um fluxo claro de informações que só se move em uma direção. Este é o método preferido ao escrever aplicativos com o React. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código possui um componente de entrada controlado simples com uma borda estilizada. Você deseja estilizar essa borda em vermelho se o usuário digitar mais de 15 caracteres de texto na caixa de entrada. Adicione uma condição para verificar isso e, se a condição for válida, defina o estilo de borda de entrada como <code>3px solid red</code> . Você pode experimentá-lo digitando o texto na entrada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -86,7 +86,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

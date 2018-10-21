@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Importar uma fonte do Google
 ---
 
-## Description
+## Descrição
 <section id="description"> Além de especificar fontes comuns que são encontradas na maioria dos sistemas operacionais, também podemos especificar fontes da Web não padrão e personalizadas para uso em nosso site. Existem várias fontes para fontes da web na internet, mas, para este exemplo, vamos nos concentrar na biblioteca de fontes do Google. <a href="https://fonts.google.com/" target="_blank">O Google Fonts</a> é uma biblioteca gratuita de fontes da Web que você pode usar no seu CSS fazendo referência ao URL da fonte. Então, vamos em frente e importar e aplicar uma fonte do Google (note que, se o Google está bloqueado em seu país, você precisará pular este desafio). Para importar uma fonte do Google, copie o (s) tipo (s) de fonte da biblioteca do Google Fonts e cole-o no HTML. Para este desafio, vamos importar a fonte <code>Lobster</code> . Para fazer isso, copie o snippet de código a seguir e cole-o na parte superior do editor de código (antes do elemento de <code>style</code> abertura): <code>&lt;link href=&quot;https://fonts.googleapis.com/css?family=Lobster&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;</code> Agora você pode usar a fonte <code>Lobster</code> no seu CSS usando <code>Lobster</code> como FAMILY_NAME, como no exemplo a seguir: <br> <code>font-family: FAMILY_NAME, GENERIC_NAME;</code> . O GENERIC_NAME é opcional e é uma fonte substituta caso a outra fonte especificada não esteja disponível. Isso é coberto no próximo desafio. Nomes de família fazem distinção entre maiúsculas e minúsculas e precisam ser agrupados entre aspas se houver um espaço no nome. Por exemplo, você precisa de citações para usar a fonte <code>&quot;Open Sans&quot;</code> , mas não para usar a fonte <code>Lobster</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma regra CSS <code>font-family</code> que use a fonte <code>Lobster</code> e garanta que ela será aplicada ao seu elemento <code>h2</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -87,7 +87,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

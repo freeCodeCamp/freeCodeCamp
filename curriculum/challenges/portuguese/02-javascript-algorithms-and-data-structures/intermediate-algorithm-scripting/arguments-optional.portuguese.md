@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Argumentos Opcional
 ---
 
-## Description
+## Descrição
 <section id="description"> Crie uma função que some dois argumentos juntos. Se apenas um argumento for fornecido, retorne uma função que espera um argumento e retorne a soma. Por exemplo, <code>addTogether(2, 3)</code> deve retornar <code>5</code> e <code>addTogether(2)</code> deve retornar uma função. Chamar essa função retornada com um único argumento retornará a soma: <code>var sumTwoAnd = addTogether(2);</code> <code>sumTwoAnd(3)</code> retorna <code>5</code> . Se um dos argumentos não for um número válido, retorne indefinido. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ addTogether(2,3);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

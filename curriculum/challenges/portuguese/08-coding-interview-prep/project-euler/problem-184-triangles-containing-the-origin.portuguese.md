@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 184: Triângulos contendo a origem'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere o conjunto Ir de pontos (x, y) com coordenadas inteiras no interior do círculo com raio r, centralizado na origem, ou seja, x2 + y2 &lt;r2. Para um raio de 2, I2 contém os nove pontos (0,0), (1,0), (1,1), (0,1), (-1,1), (-1,0), ( -1, -1), (0, -1) e (1, -1). Existem oito triângulos com todos os três vértices em I2 que contêm a origem no interior. Dois deles são mostrados abaixo, os outros são obtidos por rotação. <p> Para um raio de 3, existem 360 triângulos contendo a origem no interior e tendo todos os vértices em I3 e para I5 o número é 10600. </p><p> Quantos triângulos existem contendo a origem no interior e tendo todos os três vértices em I105? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler184();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

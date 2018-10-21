@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Adicionar estilos inline em React
 ---
 
-## Description
+## Descrição
 <section id="description"> Você deve ter notado no último desafio que havia várias outras diferenças de sintaxe dos estilos inline em HTML, além do atributo <code>style</code> definido para um objeto JavaScript. Primeiro, os nomes de certas propriedades de estilo CSS usam o caso camel. Por exemplo, o último desafio definiu o tamanho da fonte com <code>fontSize</code> vez de <code>font-size</code> de <code>font-size</code> . Palavras hifenizadas como <code>font-size</code> são uma sintaxe inválida para as propriedades do objeto JavaScript, portanto, o React usa o caso camel. Como regra, todas as propriedades de estilo hifenizadas são escritas usando o caso camel no JSX. Todas as unidades de comprimento de propriedade (como <code>height</code> , <code>width</code> e <code>height</code> <code>fontSize</code> ) são consideradas como <code>px</code> menos que especificado de outra forma. Se você quiser usá- <code>em</code> , por exemplo, você coloca o valor e as unidades entre aspas, como <code>{fontSize: &quot;4em&quot;}</code> . Além dos valores de comprimento que são padrão para <code>px</code> , todos os outros valores de propriedade devem ser agrupados entre aspas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Se você tiver um grande conjunto de estilos, poderá atribuir um <code>object</code> estilo a uma constante para manter seu código organizado. Descomente os <code>styles</code> constantes e declare um <code>object</code> com três propriedades de estilo e seus valores. Dê ao <code>div</code> uma cor de <code>&quot;purple&quot;</code> , um tamanho de fonte de <code>40</code> e uma borda de <code>&quot;2px solid purple&quot;</code> . Em seguida, defina o atributo <code>style</code> igual à constante de <code>styles</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -69,7 +69,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

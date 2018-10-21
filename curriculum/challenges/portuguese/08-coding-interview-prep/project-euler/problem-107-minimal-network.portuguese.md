@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 107: Rede Mínima'
 ---
 
-## Description
+## Descrição
 <section id="description"> A seguinte rede não direcionada consiste em sete vértices e doze arestas com um peso total de 243. <p> A mesma rede pode ser representada pela matriz abaixo. ABCDEFG A-161221 --- B16--1720-- C12--28-31- D211728-181923 E-20-18--11 F - 3119--27 G --- 231127- No entanto, é possível otimizar a rede removendo algumas arestas e ainda garantir que todos os pontos da rede permaneçam conectados. A rede que alcança a economia máxima é mostrada abaixo. Ele tem um peso de 93, representando uma economia de 243 - 93 = 150 da rede original. </p><p> Usando o network.txt (clique direito e &#39;Save Link / Target As ...&#39;), um arquivo de texto de 6K contendo uma rede com quarenta vértices, e dado em forma de matriz, encontra a economia máxima que pode ser obtida removendo as arestas redundantes garantindo que a rede permaneça conectada. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler107();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

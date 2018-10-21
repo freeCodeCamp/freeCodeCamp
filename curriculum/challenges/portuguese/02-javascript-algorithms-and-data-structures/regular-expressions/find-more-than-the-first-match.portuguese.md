@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Encontre mais do que o primeiro jogo
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, você só conseguiu extrair ou pesquisar um padrão uma vez. <blockquote> deixe testStr = &quot;Repetir, Repetir, Repetir&quot;; <br> vamos ourRegex = / Repeat /; <br> testStr.match (ourRegex); <br> // Retorna [&quot;Repetir&quot;] </blockquote> Para pesquisar ou extrair um padrão mais de uma vez, você pode usar o sinalizador <code>g</code> . <blockquote> vamos repeatRegex = / Repeat / g; <br> testStr.match (repeatRegex); <br> // Retorna [&quot;Repetir&quot;, &quot;Repetir&quot;, &quot;Repetir&quot;] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Usando o regex <code>starRegex</code> , encontre e extraia ambas as palavras <code>&quot;Twinkle&quot;</code> da string <code>twinkleStar</code> . <strong>Nota</strong> <br> Você pode ter vários sinalizadores no seu regex como <code>/search/gi</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ let result = twinkleStar; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

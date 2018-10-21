@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 381: fatorial (primo-k)'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para um primo p let S (p) = (∑ (pk)!) Mod (p) para 1 ≤ k ≤ 5. <p> Por exemplo, se p = 7, (7-1)! + (7-2)! + (7-3)! + (7-4)! + (7-5)! = 6! + 5! + 4! + 3! + 2! = 720 + 120 + 24 + 6 + 2 = 872. Como 872 mod (7) = 4, S (7) = 4. </p><p> Pode-se verificar que ∑S (p) = 480 para 5 ≤ p &lt;100. </p><p> Encontre ∑S (p) para 5 ≤ p &lt;108. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler381();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Torne o movimento mais natural usando uma curva Bezier
 ---
 
-## Description
+## Descrição
 <section id="description"> Este desafio anima um elemento para replicar o movimento de uma bola que está sendo malabarizada. Desafios anteriores cobriram os <code>linear</code> e <code>ease-out</code> curvas de Bezier cúbicos, no entanto não representa o movimento malabarismo com precisão. Você precisa personalizar uma curva de Bezier para isso. A <code>animation-timing-function</code> faz um loop automaticamente em cada quadro-chave quando a <code>animation-iteration-count</code> é definida como infinita. Como existe um conjunto de regras de quadros-chave no meio da duração da animação (a <code>50%</code> ), isso resulta em duas progressões de animação idênticas no movimento para cima e para baixo da bola. A seguinte curva cúbica de Bezier simula um movimento de malabarismo: <code>cubic-bezier(0.3, 0.4, 0.5, 1.6);</code> Observe que o valor de y2 é maior que 1. Embora a curva cúbica de Bezier seja mapeada em um sistema de coordenadas 1 por 1 e só possa aceitar valores x de 0 a 1, o valor y pode ser definido como números maiores que um. Isso resulta em um movimento de salto que é ideal para simular a bola de malabarismo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o valor da <code>animation-timing-function</code> de <code>animation-timing-function</code> do elemento com o ID de <code>green</code> para uma função de <code>cubic-bezier</code> com os valores x1, y1, x2, y2 definidos respectivamente para 0,311, 0,441, 0,444, 1,649. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

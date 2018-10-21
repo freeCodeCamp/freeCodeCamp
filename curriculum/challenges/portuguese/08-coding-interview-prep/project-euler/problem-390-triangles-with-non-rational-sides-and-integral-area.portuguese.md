@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 390: Triângulos com lados não racionais e área integral'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere o triângulo com lados √5, √65 e √68. Pode ser mostrado que este triângulo tem área 9. <p> S (n) é a soma das áreas de todos os triângulos com lados √ (1 + b2), √ (1 + c2) e √ (b2 + c2) (para inteiros positivos b e c) que têm uma área integral não superior a n. </p><p> O triângulo do exemplo tem b = 2 e c = 8. </p><p> S (106) = 18018206. </p><p> Encontre S (1010). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler390();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

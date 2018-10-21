@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Seqüência Farey
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva uma função que retorne a seqüência Farey de ordem n. A função deve ter um parâmetro que seja n. Deve retornar a seqüência como um array. Leia o seguinte para mais detalhes: </p><p> A <a href="https://en.wikipedia.org/wiki/Farey sequence" title="wp: seqüência de Farey">sequência Farey</a> F <sub>n</sub> de ordem n é a sequência de frações completamente reduzidas entre 0 e 1 que, quando em termos mais baixos, têm denominadores menores ou iguais a n, organizadas em ordem crescente de tamanho. </p><p> A seqüência Farey às vezes é incorretamente chamada de série Farey. </p><p> Cada seqüência de Farey: </p><p> :: * começa com o valor 0, denotado pela fração $ \ frac {0} {1} $ </p><p> :: * termina com o valor 1, denotado pela fração $ \ frac {1} {1} $. </p><p> As sequências Farey das ordens 1 a 5 são: </p><p> $ {\ bf \ it {F}} _ 1 = \ frac {0} {1}, \ frac {1} {1} $ </p><p></p><p> $ {\ bf \ it {F}} _ 2 = \ frac {0} {1}, \ frac {1} {2}, \ frac {1} {1} $ </p><p></p><p> $ {\ bf \ it {F}} _ 3 = \ frac {0} {1}, \ frac {1} {3}, \ frac {1} {2}, \ frac {2} {3}, \ frac {1} {1} $ </p><p></p><p> $ {\ bf \ it {F}} _ 4 = \ frac {0} {1}, \ frac {1} {4}, \ frac {1} {3}, \ frac {1} {2}, \ frac {2} {3}, \ frac {3} {4}, \ frac {1} {1} $ </p><p></p><p> $ {\ bf \ it {F}} _ 5 = \ frac {0} {1}, \ frac {1} {5}, \ frac {1} {4}, \ frac {1} {3}, \ frac {2} {5}, \ frac {1} {2}, \ frac {3} {5}, \ frac {2} {3}, \ frac {3} {4}, \ frac {4} {5 }, \ frac {1} {1} $ </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ function farey (n) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

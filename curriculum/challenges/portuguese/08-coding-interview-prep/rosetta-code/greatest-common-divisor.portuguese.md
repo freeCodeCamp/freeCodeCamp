@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Maior divisor comum
 ---
 
-## Description
+## Descrição
 <section id="description"> Escreva uma função que retorne o maior divisor comum de dois inteiros. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ function gcd(a, b) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 211: soma quadrada do divisor'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para um inteiro positivo n, seja σ2 (n) a soma dos quadrados de seus divisores. Por exemplo, σ2 (10) = 1 + 4 + 25 + 100 = 130. Encontre a soma de todos n, 0 &lt;n &lt;64.000.000 tais que σ2 (n) é um quadrado perfeito. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler211();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

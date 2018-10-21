@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Extraia a lógica de estado para Redux
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que você terminou o componente React, você precisa mover a lógica que está executando localmente em seu <code>state</code> para o Redux. Este é o primeiro passo para conectar o simples aplicativo React ao Redux. A única funcionalidade do seu aplicativo é adicionar novas mensagens do usuário a uma lista não ordenada. O exemplo é simples para demonstrar como o React e o Redux funcionam juntos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Primeiro, defina um tipo de ação &#39;ADD&#39; e configure-o para um const <code>ADD</code> . Em seguida, defina um criador de ação <code>addMessage()</code> que cria a ação para adicionar uma mensagem. Você precisará passar uma <code>message</code> para este criador de ações e incluir a mensagem na <code>action</code> retornada. Em seguida, crie um redutor chamado <code>messageReducer()</code> que manipule o estado das mensagens. O estado inicial deve ser igual a um array vazio. Esse redutor deve adicionar uma mensagem à matriz de mensagens contidas no estado ou retornar o estado atual. Finalmente, crie sua loja Redux e passe o redutor. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -51,7 +51,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

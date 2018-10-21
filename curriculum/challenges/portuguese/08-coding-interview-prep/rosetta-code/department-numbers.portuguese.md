@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Números de departamento
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Existe uma cidade altamente organizada que decidiu atribuir um número a cada um dos seus departamentos: </p> Departamento de polícia Departamento de saneamento Corpo de bombeiros <p> Cada departamento pode ter um número entre 1 e 7 (inclusive). </p><p> Os três números de departamento devem ser únicos (diferentes uns dos outros) e devem somar o número 12. </p><p> O chefe da polícia não gosta de números ímpares e quer ter um número par para o seu departamento. </p> Tarefa: <p> Escreva um programa que produza todas as combinações válidas: </p><p> [2, 3, 7] </p><p> [2, 4, 6] </p><p> [2, 6, 4] </p><p> [2, 7, 3] </p><p> [4, 1, 7] </p><p> [4, 2, 6] </p><p> [4, 3, 5] </p><p> [4, 5, 3] </p><p> [4, 6, 2] </p><p> [4, 7, 1] </p><p> [6, 1, 5] </p><p> [6, 2, 4] </p><p> [6, 4, 2] </p><p> [6, 5, 1] </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

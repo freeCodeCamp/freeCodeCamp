@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Manipular matrizes com push ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma maneira fácil de anexar dados ao final de um array é por meio da função <code>push()</code> . <code>.push()</code> recebe um ou mais <dfn>parâmetros</dfn> e os &quot;empurra&quot; para o final do array. <blockquote> var arr = [1,2,3]; <br> arr.push (4); <br> // arr é agora [1,2,3,4] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Empurre <code>[&quot;dog&quot;, 3]</code> para o final da variável <code>myArray</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Índice de Equilíbrio
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Um índice de equilíbrio de uma sequência é um índice na sequência de tal forma que a soma dos elementos em índices mais baixos é igual à soma dos elementos em índices mais altos. </p><p> Por exemplo, em uma sequência <big>$ A $</big> : </p><p> :::: <big>$ A_0 = -7 $</big> </p><p> :::: <big>$ A_1 = 1 $</big> </p><p> :::: <big>$ A_2 = 5 $</big> </p><p> :::: <big>$ A_3 = 2 $</big> </p><p> :::: <big>$ A_4 = -4 $</big> </p><p> :::: <big>$ A_5 = 3 $</big> </p><p> :::: <big>$ A_6 = 0 $</big> </p><p> 3 é um índice de equilíbrio porque: </p><p> :::: <big>$ A_0 + A_1 + A_2 = A_4 + A_5 + A_6 $</big> </p><p> 6 é também um índice de equilíbrio, porque: </p><p> :::: <big>$ A_0 + A_1 + A_2 + A_3 + A_4 + A_5 = 0 $</big> </p><p> (soma de zero elementos é zero) </p><p> 7 não é um índice de equilíbrio, porque não é um índice válido de sequência <big>$ A $</big> . </p><p> Escreva uma função que, dada uma seqüência, retorne seus índices de equilíbrio (se houver). </p><p> Suponha que a sequência seja muito longa. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

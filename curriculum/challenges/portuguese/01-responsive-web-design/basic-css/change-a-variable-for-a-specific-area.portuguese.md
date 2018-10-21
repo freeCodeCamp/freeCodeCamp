@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alterar uma variável para uma área específica
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando você cria suas variáveis ​​em <code>:root</code> elas definem o valor dessa variável para toda a página. Você pode então sobrescrever essas variáveis ​​definindo-as novamente dentro de um elemento específico. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o valor de <code>--penguin-belly</code> para <code>white</code> na classe dos <code>penguin</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -243,7 +243,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 108: Reciprocais Diofantinos I'
 ---
 
-## Description
+## Descrição
 <section id="description"> Na seguinte equação x, y e n são inteiros positivos. 1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n</var> Para <var>n</var> = 4 existem exatamente três soluções distintas: 1/5 + 1/20 = 1/4 <br> 1/6 + 1/12 = 1/4 <br> 1/8 + 1/8 = 1/4 Qual é o menor valor de <var>n</var> para o qual o número de soluções distintas excede mil? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ diophantineOne();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

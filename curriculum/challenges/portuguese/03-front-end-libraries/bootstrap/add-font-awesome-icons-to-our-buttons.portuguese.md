@@ -9,14 +9,14 @@ videoUrl: ''
 localeTitle: Adicione ícones de fonte impressionante aos nossos botões
 ---
 
-## Description
+## Descrição
 <section id="description"> Font Awesome é uma conveniente biblioteca de ícones. Esses ícones são gráficos vetoriais, armazenados no formato de arquivo <code>.svg</code> . Esses ícones são tratados como fontes. Você pode especificar seu tamanho usando pixels e eles assumirão o tamanho da fonte de seus elementos HTML pai. Você pode incluir o Font Awesome em qualquer aplicativo adicionando o seguinte código ao topo do seu HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css&quot; integrity=&quot;sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+&quot; crossorigin=&quot;anonymous&quot;&gt;</code> Neste caso, nós já adicionamos para você nesta página nos bastidores. O elemento <code>i</code> foi originalmente usado para criar outros elementos em itálico, mas agora é comumente usado para ícones. Você pode adicionar as classes Font Awesome ao elemento <code>i</code> para transformá-lo em um ícone, por exemplo: <code>&lt;i class=&quot;fa fa-info-circle&quot;&gt;&lt;/i&gt;</code> Observe que o elemento <code>span</code> também é aceitável para uso com ícones . Use Font Awesome para adicionar um ícone de <code>thumbs-up</code> ao seu botão like, dando a ele um elemento <code>i</code> com as classes <code>fa</code> e <code>fa-thumbs-up</code> ; não se esqueça de manter o texto &quot;Like&quot; ao lado do ícone. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -106,7 +106,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

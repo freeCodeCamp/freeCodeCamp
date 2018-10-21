@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Compor Reagir Componentes
 ---
 
-## Description
+## Descrição
 <section id="description"> Como os desafios continuam a usar composições mais complexas com componentes React e JSX, há um ponto importante a ser observado. A renderização de componentes de classe de estilo ES6 dentro de outros componentes não é diferente de renderizar os componentes simples que você usou nos últimos desafios. Você pode renderizar elementos JSX, componentes funcionais stateless e componentes de classe ES6 em outros componentes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> No editor de código, o componente <code>TypesOfFood</code> já está renderizando um componente chamado <code>Vegetables</code> . Além disso, há o componente <code>Fruits</code> do último desafio. Nest dois componentes dentro de <code>Fruits</code> - primeiro <code>NonCitrus</code> e, em seguida, <code>Citrus</code> . Ambos os componentes são fornecidos para você em segundo plano. Em seguida, aninhe o componente de classe <code>Fruits</code> no componente <code>TypesOfFood</code> , abaixo do cabeçalho <code>h1</code> e acima de <code>Vegetables</code> . O resultado deve ser uma série de componentes aninhados, que usa dois tipos de componentes diferentes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -138,7 +138,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

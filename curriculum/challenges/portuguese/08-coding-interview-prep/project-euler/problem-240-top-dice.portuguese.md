@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 240: Dados Principais'
 ---
 
-## Description
+## Descrição
 <section id="description"> Existem 1111 maneiras pelas quais cinco dados de 6 lados (lados numerados de 1 a 6) podem ser rolados de modo que os três primeiros somam 15. Alguns exemplos são: <p> D1, D2, D3, D4, D5 = 4,3,6,3,5 </p><p> D1, D2, D3, D4, D5 = 4,3,3,5,6 </p><p> D1, D2, D3, D4, D5 = 3,3,3,6,6 </p><p> D1, D2, D3, D4, D5 = 6,6,3,3,3 </p><p> De quantas maneiras podem ser rolados vinte dados de 12 faces (lados numerados de 1 a 12) para que a soma dos dez primeiros seja de 70? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler240();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

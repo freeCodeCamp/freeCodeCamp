@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 209: Lógica Circular'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma tabela de verdade binária k-input é um mapa de k bits de entrada (dígitos binários, 0 [falso] ou 1 [verdadeiro]) para 1 bit de saída. Por exemplo, as tabelas verdadeiras binárias de 2 entradas para as funções lógicas AND e XOR são: <p> x y x y000010100111x y x XOR y000011101110Quantas tabelas verdadeiras binárias de 6 entradas, τ, satisfazem a fórmula </p><p> τ (a, b, c, d, e, f) AND τ (b, c, d, e, f, a XOR (b AND c)) = 0 para todas as entradas de 6 bits (a, b, c, d, e, f)? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler209();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

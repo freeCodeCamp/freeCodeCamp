@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 176: Triângulos retos que compartilham um cateto'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os quatro triângulos retangulares com lados (9,12,15), (12,16,20), (5,12,13) ​​e (12,35,37) todos têm um dos lados mais curtos (catheti) iguais para 12. Pode ser mostrado que nenhum outro triângulo de ângulos retos com lados inteiros existe com um dos catheti igual a 12. Encontre o menor inteiro que pode ser o comprimento de um cateto de exatamente 47547 triângulos retângulos de lados inteiros diferentes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler176();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Problema Babbage
 ---
 
-## Description
+## Descrição
 <section id="description"><p> <a href="https://en.wikipedia.org/wiki/Charles_Babbage" title="wp: Charles_Babbage">Charles Babbage</a> , olhando para os problemas que seu Mecanismo Analítico poderia resolver, deu o seguinte exemplo: </p><blockquote> Qual é o menor inteiro positivo cujo quadrado termina nos dígitos 269.696? </blockquote><p> - Babbage, carta a Lord Bowden, 1837; veja Hollingdale e Tootill, <i>Electronic Computers</i> , segunda edição, 1970, p. 125 </p><p> Ele pensou que a resposta poderia ser 99.736, cujo quadrado é 9.947.269.696; mas ele não podia ter certeza. </p><p> A tarefa é descobrir se Babbage teve a resposta certa. </p><p> Implemente uma função para retornar o inteiro mais baixo que satisfaça o problema Babbage. Se Babbage estava certo, devolva o número de Babbage. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

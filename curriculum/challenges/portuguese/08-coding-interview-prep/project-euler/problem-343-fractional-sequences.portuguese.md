@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 343: Seqüências Fracionárias'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para qualquer inteiro positivo k, uma sequência finita ai das frações xi / yi é definida por: a1 = 1 / k e ai = (xi-1 + 1) / (yi-1-1) reduzida para os termos mais baixos para i&gt; 1 . Quando ai atinge algum inteiro n, a sequência pára. (Isto é, quando yi = 1.) Defina f (k) = n. Por exemplo, para k = 20: <p> 1/20 → 2/19 → 3/18 = 1/6 → 2/5 → 3/4 → 4/3 → 5/2 → 6/1 = 6 </p><p> Então f (20) = 6. </p><p> Também f (1) = 1, f (2) = 2, f (3) = 1 e Σf (k3) = 118937 para 1 ≤ k ≤ 100. </p><p> Encontre Σf (k3) para 1 ≤ k ≤ 2 × 106. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler343();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

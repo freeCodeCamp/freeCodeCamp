@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 418: Factorização Tripla'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja n um inteiro positivo. Um inteiro triplo (a, b, c) é chamado triplo de fatoração de n se: 1 ≤ a ≤ b ≤ c a · b · c = n. <p> Defina f (n) para ser a + b + c para o triplo de fatoração (a, b, c) de n que minimiza c / a. Pode-se mostrar que esse triplo é único. </p><p> Por exemplo, f (165) = 19, f (100100) = 142 e f (20!) = 4034872. </p><p> Encontre f (43!). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler418();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

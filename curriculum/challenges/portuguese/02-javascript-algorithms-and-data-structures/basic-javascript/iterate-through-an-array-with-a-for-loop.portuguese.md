@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Iterar por meio de uma matriz com um loop for
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma tarefa comum em JavaScript é fazer uma iteração no conteúdo de uma matriz. Uma maneira de fazer isso é com um loop <code>for</code> . Este código irá mostrar cada elemento da array <code>arr</code> para o console: <blockquote> var arr = [10,9,8,7,6]; <br> para (var i = 0; i &lt;arr.length; i ++) { <br> console.log (arr [i]); <br> } </blockquote> Lembre-se que os Arrays possuem numeração baseada em zero, o que significa que o último índice do array é length - 1. Nossa <dfn>condição</dfn> para este loop é <code>i &lt; arr.length</code> , que para quando <code>i</code> tiver comprimento - 1. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Declare e inicialize um <code>total</code> variáveis ​​para <code>0</code> . Use um loop <code>for</code> para adicionar o valor de cada elemento da matriz <code>myArr</code> ao <code>total</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

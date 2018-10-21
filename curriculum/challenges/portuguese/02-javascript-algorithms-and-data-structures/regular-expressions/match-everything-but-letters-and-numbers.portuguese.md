@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: 'Combine tudo, mas letras e números'
 ---
 
-## Description
+## Descrição
 <section id="description"> Você aprendeu que pode usar um atalho para corresponder a alfanuméricos <code>[A-Za-z0-9_]</code> usando <code>\w</code> . Um padrão natural que você pode querer pesquisar é o oposto de alfanuméricos. Você pode procurar o oposto do <code>\w</code> com <code>\W</code> Note que o padrão oposto usa uma letra maiúscula. Este atalho é o mesmo que <code>[^A-Za-z0-9_]</code> . <blockquote> deixe shortHand = / \ W /; <br> deixar números = &quot;42%&quot;; <br> vamos sentenciar = &quot;Codificação!&quot;; <br> numbers.match (shortHand); // Retorna [&quot;%&quot;] <br> sentence.match (shortHand); // Retorna [&quot;!&quot;] <br></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a classe de caractere abreviada <code>\W</code> para contar o número de caracteres não alfanuméricos em várias aspas e cadeias de caracteres. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ let result = quoteSample.match(nonAlphabetRegex).length;
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

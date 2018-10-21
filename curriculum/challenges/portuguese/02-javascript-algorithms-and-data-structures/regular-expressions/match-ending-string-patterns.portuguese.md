@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Padrões de Sequência de Correspondência Final
 ---
 
-## Description
+## Descrição
 <section id="description"> No último desafio, você aprendeu a usar o caractere de <code>caret</code> para procurar padrões no início das seqüências de caracteres. Há também uma maneira de procurar padrões no final das strings. Você pode pesquisar o final das strings usando o caractere de <code>dollar sign</code> <code>$</code> no final da regex. <blockquote> deixe theEnding = &quot;Esta é uma história sem fim&quot;; <br> deixe storyRegex = / story $ /; <br> storyRegex.test (theEnding); <br> // Retorna true <br> deixe noEnding = &quot;Às vezes uma história terá que terminar&quot;; <br> storyRegex.test (noEnding); <br> // Retorna falso <br></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o caractere de âncora ( <code>$</code> ) para combinar com a string <code>&quot;caboose&quot;</code> no final do <code>caboose</code> string. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let result = lastRegex.test(caboose);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Substituir Declarações de Classe por Atributos de ID de Estilo
 ---
 
-## Description
+## Descrição
 <section id="description"> Acabamos de provar que os navegadores lêem CSS de cima para baixo. Isso significa que, no caso de um conflito, o navegador usará a última declaração CSS. Mas ainda não terminamos. Existem outras maneiras de substituir o CSS. Você se lembra de atributos id? Vamos substituir suas classes de <code>blue-text</code> <code>pink-text</code> <code>blue-text</code> e tornar seu elemento <code>h1</code> laranja, dando um id ao elemento <code>h1</code> e, em seguida, estilizando esse id. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dê ao seu elemento <code>h1</code> o atributo <code>id</code> do <code>orange-text</code> . Lembre-se, os estilos de id são assim: <code>&lt;h1 id=&quot;orange-text&quot;&gt;</code> Deixe as classes de <code>pink-text</code> <code>blue-text</code> <code>pink-text</code> em seu elemento <code>h1</code> . Crie uma declaração CSS para o seu ID de <code>orange-text</code> em seu elemento de <code>style</code> . Aqui está um exemplo do que isso parece: <blockquote> # brown-text { <br> cor marrom; <br> } </blockquote> Nota: Não importa se você declara este CSS acima ou abaixo da classe pink-text, já que o atributo id sempre terá precedência. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,7 +65,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

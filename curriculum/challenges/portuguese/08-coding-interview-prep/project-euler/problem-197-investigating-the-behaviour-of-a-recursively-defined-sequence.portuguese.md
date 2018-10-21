@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 197: Investigando o comportamento de uma sequência definida recursivamente'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dado é a função f (x) = ⌊230.403243784-x2⌋ × 10-9 (⌊ ⌋ é a função floor), a seqüência un é definida por u0 = -1 e un + 1 = f (un). <p> Encontre un + un + 1 para n = 1012. Dê sua resposta com 9 dígitos após o ponto decimal. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler197();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

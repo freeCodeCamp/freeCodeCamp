@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 388: Linhas Distintas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere todos os pontos da rede (a, b, c) com 0 ≤ a, b, c ≤ N. <p> A partir da origem O (0,0,0) todas as linhas são desenhadas para os outros pontos da rede. Seja D (N) o número de linhas distintas. </p><p> Você é dado que D (1 000 000) = 831909254469114121. </p><p> Encontre D (1010). Dê como sua resposta os primeiros nove dígitos seguidos dos últimos nove dígitos. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler388();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

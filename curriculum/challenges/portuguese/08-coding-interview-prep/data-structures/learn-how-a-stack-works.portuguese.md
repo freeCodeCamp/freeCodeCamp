@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Aprenda como funciona uma pilha
 ---
 
-## Description
+## Descrição
 <section id="description"> Você provavelmente está familiarizado com a pilha de livros em sua mesa. Você provavelmente usou o recurso de desfazer de um editor de texto. Você provavelmente também está acostumado a apertar o botão Voltar do seu telefone para voltar para a visualização anterior no seu aplicativo. Você sabe o que todos eles têm em comum? Todos eles armazenam os dados de uma maneira que você possa percorrer para trás. O livro mais alto na pilha foi o que foi colocado lá por último. Se você remover o livro do topo de sua pilha, exporia o livro que foi colocado antes do último livro e assim por diante. Se você pensar sobre isso, em todos os exemplos acima, você está recebendo o tipo de serviço <dfn>Last-In-First-Out</dfn> . Vamos tentar imitar isso com o nosso código. Esse esquema de armazenamento de dados é chamado de <dfn>pilha</dfn> . Em particular, nós teríamos que implementar o método <code>push()</code> que empurra objetos JavaScript no topo da pilha; e o método <code>pop()</code> , que remove o objeto JavaScript que está no topo da pilha no momento atual. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Aqui temos uma pilha de trabalhos de casa representados como um array: <code>&quot;BIO12&quot;</code> está na base, e <code>&quot;PSY44&quot;</code> está no topo da pilha. Modifique a matriz dada e trate-a como uma <code>stack</code> usando os métodos JavaScript mencionados acima. Remova o elemento superior <code>&quot;PSY44&quot;</code> da pilha. Em seguida, adicione <code>&quot;CS50&quot;</code> para ser o novo elemento superior da pilha. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,7 +47,7 @@ var homeworkStack = ["BIO12","HIS80","MAT122","PSY44"];
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

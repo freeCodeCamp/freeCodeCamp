@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a notação no sentido horário para especificar o preenchimento de um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> Em vez de especificar as propriedades <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> e <code>padding-left</code> individualmente, você pode especificá-las todas em uma linha, como: <code>padding: 10px 20px 10px 20px;</code> Esses quatro valores funcionam como um relógio: superior, direita, inferior, esquerda e produzirão exatamente o mesmo resultado que o uso das instruções de preenchimento específicas do lado. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use Notação no sentido horário para dar à classe &quot;.blue-box&quot; um <code>padding</code> de <code>40px</code> no lado superior e esquerdo, mas apenas <code>20px</code> no lado inferior e direito. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -82,7 +82,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

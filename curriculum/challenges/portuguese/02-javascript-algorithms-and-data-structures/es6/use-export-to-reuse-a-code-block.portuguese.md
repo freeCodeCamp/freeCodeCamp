@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a exportação para reutilizar um bloco de código
 ---
 
-## Description
+## Descrição
 <section id="description"> No desafio anterior, você aprendeu sobre a <code>import</code> e como ela pode ser aproveitada para importar pequenas quantidades de código de arquivos grandes. Para que isso funcione, no entanto, devemos utilizar uma das instruções que acompanham a <code>import</code> , conhecida como <dfn>exportação</dfn> . Quando queremos que algum código - uma função ou uma variável - seja utilizável em outro arquivo, devemos exportá-lo para importá-lo em outro arquivo. Como a <code>import</code> , a <code>export</code> é um recurso sem navegador. O que se segue é o que nos referimos como uma <dfn>exportação nomeada</dfn> . Com isso, podemos importar qualquer código que exportarmos para outro arquivo com a sintaxe de <code>import</code> você aprendeu na última lição. Aqui está um exemplo: <blockquote> const capitalizeString = (string) =&gt; { <br> return string.charAt (0) .toUpperCase () + string.slice (1); <br> } <br> export {capitalizeString} // Como exportar funções. <br> export const foo = &quot;bar&quot;; // Como exportar variáveis. </blockquote> Como alternativa, se você quiser compactar todas as suas declarações de <code>export</code> em uma linha, poderá adotar essa abordagem: <blockquote> const capitalizeString = (string) =&gt; { <br> return string.charAt (0) .toUpperCase () + string.slice (1); <br> } <br> const foo = &quot;bar&quot;; <br> export {capitalizeString, foo} </blockquote> Qualquer abordagem é perfeitamente aceitável. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Abaixo estão duas variáveis ​​que eu quero disponibilizar para outros arquivos para usar. Utilizando a primeira maneira que demonstrei <code>export</code> , exporte as duas variáveis. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ window.exports = function(){};
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

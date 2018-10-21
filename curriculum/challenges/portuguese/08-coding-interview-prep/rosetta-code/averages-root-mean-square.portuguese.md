@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Médias-Root mean square
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Calcule o <a href="https://en.wikipedia.org/wiki/Root mean square" title="wp: Root mean square">quadrado médio</a> da <a href="https://en.wikipedia.org/wiki/Root mean square" title="wp: Root mean square">raiz</a> dos números de 1 a 10, inclusive. </p><p> A raiz quadrada média também é conhecida por suas iniciais RMS (ou rms) e como a média quadrática. </p><p> O RMS é calculado como a média dos quadrados dos números, de raiz quadrada: </p><p> <big>$$ x _ {\ mathrm {rms}} = \ sqrt {{{x_1} ^ 2 + {x_2} ^ 2 + \ cdots + {x_n} ^ 2} \ over n}. $$</big> </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

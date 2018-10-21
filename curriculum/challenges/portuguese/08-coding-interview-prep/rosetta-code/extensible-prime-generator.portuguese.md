@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Gerador principal extensível
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva um gerador de números primos, em ordem, que se ajustará automaticamente para acomodar a geração de qualquer primo razoavelmente alto. </p> O gerador deve ser capaz de: Mostrar o primeiro <b>n</b> nobre numbers.Show os números primos em um range.Show o número de primos em um range.Show o <b><sup>enésimo</sup></b> número primo. <p> A função deve ter dois parâmetros. O primeiro receberá <b>n</b> ou o intervalo como um array. O segundo receberá um booleano, que especifica se a função retorna os números primos como uma matriz ou um número único (o número de números primos, na gama ou o <b><sup>n-ésimo</sup></b> primo). De acordo com os parâmetros, a função deve retornar um array. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ function primeGenerator (num, showPrimes) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

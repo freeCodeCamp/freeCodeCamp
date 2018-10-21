@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 267: Bilionário'
 ---
 
-## Description
+## Descrição
 <section id="description"> Você tem uma oportunidade única de investimento. Começando com £ 1 de capital, você pode escolher uma proporção fixa, f, do seu capital para apostar em um sorteio de moeda regular repetidamente por 1000 tiros. Seu retorno é o dobro de sua aposta por cara e você perde sua aposta por caudas. Por exemplo, se f = 1/4, para o primeiro lance você aposta £ 0,25, e se o cara subir você ganha £ 0,5 e então tem £ 1,5. Então você aposta £ 0,375 e se o segundo lance for coroa, você tem £ 1,125. Escolhendo f para maximizar suas chances de ter pelo menos £ 1.000.000.000 após 1.000 flips, qual é a chance de você se tornar um bilionário? Todos os cálculos são considerados exatos (sem arredondamento), mas dê sua resposta arredondada para 12 dígitos atrás do ponto decimal na forma 0.abcdefghijkl. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler267();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use grid-row para controlar o espaçamento
 ---
 
-## Description
+## Descrição
 <section id="description"> Claro, você pode fazer itens consumirem várias linhas, assim como você pode com colunas. Você define as linhas horizontais que deseja que um item inicie e pare ao usar a propriedade da <code>grid-row</code> grade em um item da grade. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Faça com que o elemento com a classe <code>item5</code> consuma as duas últimas linhas. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,7 +73,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Remover um item de uma matriz
 ---
 
-## Description
+## Descrição
 <section id="description"> Hora de praticar a remoção de itens de uma matriz. O operador de spread também pode ser usado aqui. Outros métodos JavaScript úteis incluem <code>slice()</code> e <code>concat()</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O redutor e o criador de ações foram modificados para remover um item de uma matriz com base no índice do item. Termine de gravar o redutor para que uma nova matriz de estado seja retornada com o item no índice específico removido. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -62,7 +62,7 @@ const store = Redux.createStore(immutableReducer);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Crie matrizes multidimensionais complexas
 ---
 
-## Description
+## Descrição
 <section id="description"> Impressionante! Você acabou de aprender uma tonelada sobre arrays! Esta foi uma visão geral de alto nível, e há muito mais a aprender sobre como trabalhar com matrizes, muitas das quais você verá em seções posteriores. Mas antes de pensar em <dfn>objetos</dfn> , vamos dar mais uma olhada e ver como as matrizes podem se tornar um pouco mais complexas do que as que vimos nos desafios anteriores. Uma das características mais poderosas quando se pensa em matrizes como estruturas de dados, é que as matrizes podem conter, ou mesmo serem completamente compostas por outras matrizes. Vimos matrizes que contêm matrizes em desafios anteriores, mas que são bem simples. No entanto, os arrays podem conter uma profundidade infinita de arrays que podem conter outros arrays, cada um com seus próprios níveis arbitrários de profundidade, e assim por diante. Dessa forma, um array pode se tornar muito rapidamente uma estrutura de dados muito complexa, conhecida como array <dfn>multidimensional</dfn> ou aninhado. Considere o seguinte exemplo: <blockquote> vamos nestedArray = [// top, ou primeiro nível - o array mais externo <br> [&#39;deep&#39;], // uma matriz dentro de uma matriz, 2 níveis de profundidade <br> [ <br> [&#39;deep&#39;], [&#39;deep&#39;] // 2 arrays aninhados 3 níveis de profundidade <br> ] <br> [ <br> [ <br> [&#39;deepest&#39;], [&#39;deepest&#39;] // 2 arrays aninhados em 4 níveis de profundidade <br> ] <br> [ <br> [ <br> [&#39;deepest-est?&#39;] // uma matriz aninhada a 5 níveis de profundidade <br> ] <br> ] <br> ] <br> ]; </blockquote> Embora esse exemplo possa parecer complicado, esse nível de complexidade não é inédito, ou mesmo incomum, ao lidar com grandes quantidades de dados. No entanto, ainda podemos acessar com facilidade os níveis mais profundos de um array neste complexo com a notação de colchetes: <blockquote> console.log (nestedArray [2] [1] [0] [0] [0]); <br> // logs: deepest? </blockquote> E agora que sabemos onde estão esses dados, podemos redefini-los se precisarmos: <blockquote> nestedArray [2] [1] [0] [0] [0] = &#39;ainda mais profundo&#39;; <br><br> console.log (nestedArray [2] [1] [0] [0] [0]); <br> // agora registra: mais fundo ainda </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Nós definimos uma variável, <code>myNestedArray</code> , definida como igual a um array. Modifique <code>myNestedArray</code> , usando qualquer combinação de <dfn>strings</dfn> , <dfn>números</dfn> e <dfn>booleanos</dfn> para elementos de dados, de modo que tenha exatamente cinco níveis de profundidade (lembre-se, a matriz mais externa é nível 1). Em algum lugar no terceiro nível, incluir a string <code>&#39;deep&#39;</code> , no quarto nível, incluir a string <code>&#39;deeper&#39;</code> , e no quinto nível, incluir a string <code>&#39;deepest&#39;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ let myNestedArray = [
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 251: Trigêmeos Cardano'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um trio de inteiros positivos (a, b, c) é chamado de Tripleto Cardano se satisfizer a condição: <p> Por exemplo, (2,1,5) é um Cardano Triplet. </p><p> Existem 149 Cardano Trigêmeos para os quais a + b + c ≤ 1000. </p><p> Descubra quantas Cardplas Triplets existem, de modo que a + b + c ≤ 110.000.000. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler251();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

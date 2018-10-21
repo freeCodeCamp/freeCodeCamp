@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> O cubo, 41063625 (3453), pode ser permutado para produzir dois outros cubos: 56623104 (3843) e 66430125 (4053). De fato, 41063625 é o menor cubo que tem exatamente três permutações de seus dígitos que também são cubo. Encontre o menor cubo para o qual exatamente cinco permutações de seus dígitos são cubo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler62();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

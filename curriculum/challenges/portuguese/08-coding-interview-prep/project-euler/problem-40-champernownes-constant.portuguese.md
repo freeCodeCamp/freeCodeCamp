@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 40: constante de Champernowne'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma fração decimal irracional é criado pela concatenação dos inteiros positivos: <span style="display: block; text-align: center;">0,12345678910 <b style="color: red;">1</b> 112131415161718192021 ...</span> Pode ser visto que o <sup>12º</sup> dígito da parte fracionária é 1. Se <i>d <sub>n</sub></i> representa o <i>n</i> <sup>th</sup> dígitos da parte fracionária, encontrar o valor da seguinte expressão. <span style="display: block; text-align: center;">d <sub>1</sub> × d <sub>10</sub> × d <sub>100</sub> × d <sub>1000</sub> × d <sub>10000</sub> × d <sub>100000</sub> × d <sub>1000000</sub></span> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ champernownesConstant(100);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

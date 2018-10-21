@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Encontre a altura mínima e máxima de uma árvore de pesquisa binária
 ---
 
-## Description
+## Descrição
 <section id="description"> No último desafio, descrevemos um cenário em que uma árvore pode se desequilibrar. Para entender o conceito de equilíbrio, vamos dar uma olhada em outra propriedade da árvore: altura. Altura em uma árvore representa a distância do nó raiz a qualquer nó de folha fornecido. Caminhos diferentes em uma estrutura de árvore altamente ramificada podem ter diferentes alturas, mas para uma determinada árvore haverá uma altura mínima e máxima. Se a árvore estiver balanceada, esses valores serão diferenciados no máximo por um. Isso significa que, em uma árvore balanceada, todos os nós foliares existem dentro do mesmo nível ou, se não estiverem no mesmo nível, estão no máximo um nível à parte. A propriedade do equilíbrio é importante para as árvores porque é o que determina a eficiência das operações das árvores. Como explicamos no último desafio, enfrentamos a pior complexidade do tempo para árvores altamente desequilibradas. Árvores de autoequilíbrio são comumente usadas para explicar esse problema em árvores com conjuntos de dados dinâmicos. Exemplos comuns incluem árvores AVL, árvores vermelhas e pretas e árvores B. Todas essas árvores contêm lógica interna adicional que reequilibra a árvore quando inserções ou exclusões criam um estado de desequilíbrio. Nota: Uma propriedade semelhante à altura é depth, que se refere a quanto um determinado nó é do nó raiz. Instruções: Escreva dois métodos para nossa árvore binária: <code>findMinHeight</code> e <code>findMaxHeight</code> . Esses métodos devem retornar um valor inteiro para a altura mínima e máxima dentro de uma determinada árvore binária, respectivamente. Se o nó estiver vazio, vamos atribuir uma altura de <code>-1</code> (esse é o caso base). Finalmente, adicione um terceiro método <code>isBalanced</code> que retorna <code>true</code> ou <code>false</code> dependendo se a árvore está balanceada ou não. Você pode usar os dois primeiros métodos que acabou de escrever para determinar isso. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,7 +73,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

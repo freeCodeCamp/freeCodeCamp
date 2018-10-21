@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Código cinza
 ---
 
-## Description
+## Descrição
 <section id="description"> <a href="https://en.wikipedia.org/wiki/Gray code">O código cinza</a> é uma forma de codificação binária em que as transições entre números consecutivos diferem em apenas um bit. Essa é uma codificação útil para reduzir os riscos de dados de hardware com valores que mudam rapidamente e / ou se conectam a hardware mais lento como entradas. Também é útil para gerar entradas para os <a href="https://en.wikipedia.org/wiki/Karnaugh map">mapas de Karnaugh</a> , da esquerda para a direita ou de cima para baixo. Crie uma função para codificar um número e decodificar um número do código Gray. A função deve ter 2 parâmetros. O primeiro seria um booleano. A função deve codificar para true e decodificar para false. O segundo parâmetro seria o número a ser codificado / decodificado. Exibe as representações binárias normais, as representações do código Gray e os valores decodificados do código Gray para todos os números binários de 5 bits (0 a 31 inclusive, não sendo necessário 0). Existem muitos códigos Gray possíveis. O seguinte codifica o que é chamado de &quot;código cinza refletido por binário&quot;. <br> Codificação (MSB é bit 0, b é binário, g é o código Gray): <code><br> if b[i-1] = 1 <br> <span style="padding-left:1em">g[i] = not b[i]</span> <br> else <br> <span style="padding-left:1em">g[i] = b[i]</span> <br></code> Ou: <br> <code>g = b xor (b logically right shifted 1 time)</code> <br> Decodificação (MSB é bit 0, b é binário, g é o código Gray): <br> <code>b[0] = g[0] <br> for other bits: <br> b[i] = g[i] xor b[i-1] <br></code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ function gray(enc, number) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

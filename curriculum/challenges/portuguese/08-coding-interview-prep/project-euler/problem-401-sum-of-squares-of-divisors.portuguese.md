@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 401: Soma dos quadrados dos divisores'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os divisores de 6 são 1,2,3 e 6. A soma dos quadrados desses números é 1 + 4 + 9 + 36 = 50. <p> Deixe sigma2 (n) representar a soma dos quadrados dos divisores de n. Assim sigma2 (6) = 50. </p><p> Deixe SIGMA2 representar a função somativa de sigma2, ou seja, SIGMA2 (n) = ∑sigma2 (i) para i = 1 a n. Os primeiros 6 valores do SIGMA2 são: 1,6,16,37,63 e 113. </p><p> Encontre SIGMA2 (1015) módulo 109. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler401();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

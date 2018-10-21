@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Sequência de Hofstadter Q
 ---
 
-## Description
+## Descrição
 <section id="description"><p> A <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Q_sequence" title="wp: Hofstadter_sequence # Hofstadter_Q_sequence">sequência Hofstadter Q</a> é definida como: </p><p> $ Q (1) = Q (2) = 1, \\ Q (n) = Q \ big (nQ (n-1) \ grande) + Q \ big (nQ (n-2)), \ quad n&gt; 2. $ </p><p> Ele é definido como a <a href="http://rosettacode.org/wiki/Fibonacci sequence" title="Seqüência de Fibonacci">sequência de Fibonacci</a> , mas enquanto o próximo termo na seqüência de Fibonacci é a soma dos dois termos anteriores, na seqüência Q os dois termos anteriores informam o quão longe voltar na seqüência Q para encontrar os dois números. para somar para fazer o próximo termo da sequência. </p> Tarefa: Implementar a equação de Seqüência de Hofstadter Q em JavaScript </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

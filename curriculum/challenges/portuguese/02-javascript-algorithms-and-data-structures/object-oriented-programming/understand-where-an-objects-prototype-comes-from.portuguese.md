@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entenda de onde o protótipo de um objeto vem
 ---
 
-## Description
+## Descrição
 <section id="description"> Assim como as pessoas herdam genes de seus pais, um objeto herda seu <code>prototype</code> diretamente da função construtora que o criou. Por exemplo, aqui o construtor <code>Bird</code> cria o objeto <code>duck</code> : <blockquote> função Bird (name) { <br> this.name = nome; <br> } <br><br> vamos pato = novo pássaro (&quot;Donald&quot;); </blockquote> <code>duck</code> herda seu <code>prototype</code> da função de construtor <code>Bird</code> . Você pode mostrar esse relacionamento com o método <code>isPrototypeOf</code> : <blockquote> Bird.prototype.isPrototypeOf (pato); <br> // retorna verdadeiro </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>isPrototypeOf</code> para verificar o <code>prototype</code> do <code>beagle</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let beagle = new Dog("Snoopy");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

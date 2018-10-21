@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 24: permutações Lexicográficas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma permutação é um arranjo ordenado de objetos. Por exemplo, 3124 é uma permutação possível dos dígitos 1, 2, 3 e 4. Se todas as permutações estiverem listadas numericamente ou alfabeticamente, chamamos de ordem lexicográfica. As permutações lexicográficas de 0, 1 e 2 são: <div style="text-align: center;"> 012 021 102 120 201 210 </div> O que é o <var>enésimo</var> permutação lexicographic dos dígitos 0, 1, 2, 3, 4, 5, 6, 7, 8 e 9? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ lexicographicPermutations(999999);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

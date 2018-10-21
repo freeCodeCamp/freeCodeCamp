@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Eu antes E exceto depois de C
 ---
 
-## Description
+## Descrição
 <section id="description"> A frase <a href="https://en.wikipedia.org/wiki/I before E except after C">&quot;Eu antes de E, exceto depois de C&quot;</a> é um mnemônico amplamente conhecido que deveria ajudar quando soletrar palavras inglesas. Usando as palavras fornecidas, verifique se as duas subcláusulas da frase são plausíveis individualmente: <ol><li style="margin-bottom: 5px;"> <i>&quot;Eu antes de E quando não precedido por C&quot;.</i> </li><li> <i>&quot;E antes de eu quando precedido por C&quot;.</i> </li></ol> Se ambas as sub-frases forem plausíveis, então a frase original pode ser considerada plausível. Escreva uma função que aceite uma palavra e verifique se a palavra segue esta regra. A função deve retornar true se seguir a regra, caso contrário, false. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ function IBeforeExceptC (word) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

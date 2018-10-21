@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Obtenha o JSON com o método JavaScript XMLHttpRequest
 ---
 
-## Description
+## Descrição
 <section id="description"> Você também pode solicitar dados de uma fonte externa. É aqui que entram as APIs. Lembre-se de que as APIs - ou Interfaces de Programação de Aplicativos - são ferramentas que os computadores usam para se comunicarem entre si. Você aprenderá a atualizar o HTML com os dados que obtemos das APIs usando uma tecnologia chamada AJAX. A maioria das APIs da web transfere dados em um formato chamado JSON. JSON significa JavaScript Object Notation. A sintaxe JSON é muito semelhante à notação literal do objeto JavaScript. O JSON tem propriedades de objeto e seus valores atuais, entre um <code>{</code> e um <code>}</code> . Essas propriedades e seus valores são geralmente chamados de &quot;pares de valor-chave&quot;. No entanto, o JSON transmitido por APIs é enviado como <code>bytes</code> e seu aplicativo o recebe como uma <code>string</code> . Estes podem ser convertidos em objetos JavaScript, mas eles não são objetos JavaScript por padrão. O método <code>JSON.parse</code> analisa a sequência e constrói o objeto JavaScript descrito por ela. Você pode solicitar o JSON da Cat Photo API do freeCodeCamp. Aqui está o código que você pode colocar no seu evento de clique para fazer isso: <blockquote> req = new XMLHttpRequest (); <br> req.open (&quot;GET&quot;, &#39;/ json / cats.json&#39;, true); <br> req.send (); <br> req.onload = function () { <br> json = JSON.parse (req.responseText); <br> document.getElementsByClassName (&#39;message&#39;) [0] .innerHTML = JSON.stringify (json); <br> }; </blockquote> Aqui está uma revisão do que cada peça está fazendo. O objeto JavaScript <code>XMLHttpRequest</code> possui várias propriedades e métodos usados ​​para transferir dados. Primeiro, uma instância do objeto <code>XMLHttpRequest</code> é criada e salva na variável <code>req</code> . Em seguida, o método <code>open</code> inicializa uma solicitação - este exemplo está solicitando dados de uma API, portanto, é uma solicitação &quot;GET&quot;. O segundo argumento para <code>open</code> é o URL da API da qual você está solicitando dados. O terceiro argumento é um valor booleano em que <code>true</code> faz dele uma solicitação assíncrona. O método <code>send</code> envia o pedido. Finalmente, o manipulador de eventos <code>onload</code> analisa os dados retornados e aplica o método <code>JSON.stringify</code> para converter o objeto JavaScript em uma string. Essa sequência é inserida como o texto da mensagem. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Atualize o código para criar e enviar uma solicitação &quot;GET&quot; para a FreeCodeCamp Cat Photo API. Em seguida, clique no botão &quot;Obter mensagem&quot;. Sua função AJAX substituirá o texto &quot;A mensagem irá para cá&quot; pela saída JSON bruta da API. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -94,7 +94,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Escrever declarações concisas de objetos literais usando campos simples
 ---
 
-## Description
+## Descrição
 <section id="description"> O ES6 adiciona algum suporte legal para definir facilmente os literais de objeto. Considere o seguinte código: <blockquote> const getMousePosition = (x, y) =&gt; ({ <br> x: x, <br> y: y <br> }); </blockquote> <code>getMousePosition</code> é uma função simples que retorna um objeto contendo dois campos. ES6 fornece o açúcar sintático para eliminar a redundância de ter que escrever <code>x: x</code> . Você pode simplesmente escrever <code>x</code> uma vez, e ele será convertido em <code>x: x</code> (ou algo equivalente) sob o capô. Aqui está a mesma função acima reescrita para usar esta nova sintaxe: <blockquote> const getMousePosition = (x, y) =&gt; ({x, y}); </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use campos simples com literais de objeto para criar e retornar um objeto <code>Person</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ console.log(createPerson("Zodiac Hasbro", 56, "male")); // returns a proper obje
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

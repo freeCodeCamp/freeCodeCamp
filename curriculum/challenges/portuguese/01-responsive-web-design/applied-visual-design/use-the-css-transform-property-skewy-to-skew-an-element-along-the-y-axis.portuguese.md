@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a propriedade CSS Transform Property skewY para inclinar um elemento ao longo do eixo Y
 ---
 
-## Description
+## Descrição
 <section id="description"> Dado que a função <code>skewX()</code> inclina o elemento selecionado ao longo do eixo X em um determinado grau, não é surpresa que a propriedade <code>skewY()</code> incline um elemento ao longo do eixo Y (vertical). </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Incline o elemento com o ID de <code>top</code> -10 graus ao longo do eixo Y usando a propriedade <code>transform</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -57,7 +57,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

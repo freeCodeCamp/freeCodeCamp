@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Macaco Robusto
 ---
 
-## Description
+## Descrição
 <section id="description"> Escreva uma função que divide um array (primeiro argumento) em grupos com o tamanho do <code>size</code> (segundo argumento) e os retorna como um array bidimensional. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ chunkArrayInGroups(["a", "b", "c", "d"], 2);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

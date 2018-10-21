@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Aplicar o estilo padrão do botão de inicialização
 ---
 
-## Description
+## Descrição
 <section id="description"> Bootstrap tem outra classe de botões chamada <code>btn-default</code> . Aplique as classes <code>btn-default</code> <code>btn</code> e <code>btn-default</code> a cada um dos seus elementos de <code>button</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,7 +62,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

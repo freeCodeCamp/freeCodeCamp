@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use Array.map () para renderizar elementos dinamicamente
 ---
 
-## Description
+## Descrição
 <section id="description"> A renderização condicional é útil, mas você pode precisar que seus componentes renderizem um número desconhecido de elementos. Muitas vezes, na programação reativa, um programador não tem como saber qual é o estado de um aplicativo até o tempo de execução, porque muito depende da interação do usuário com esse programa. Os programadores precisam escrever seu código para lidar corretamente com esse estado desconhecido antes do tempo. O uso do <code>Array.map()</code> no React ilustra esse conceito. Por exemplo, você cria um aplicativo &quot;To Do List&quot; simples. Como programador, você não tem como saber quantos itens um usuário pode ter em sua lista. Você precisa configurar seu componente para <em><strong>renderizar dinamicamente</strong></em> o número correto de elementos da lista muito antes de alguém usar o programa decidir que hoje é dia da lavanderia. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem a maior parte do componente <code>MyToDoList</code> configurado. Algum deste código deve parecer familiar se você tiver concluído o desafio do formulário controlado. Você notará uma área de <code>textarea</code> e um <code>button</code> , juntamente com alguns métodos que rastreiam seus estados, mas nada é renderizado para a página ainda. Dentro do <code>constructor</code> , crie um objeto <code>this.state</code> e defina dois estados: <code>userInput</code> deve ser inicializado como uma string vazia e <code>toDoList</code> deve ser inicializado como uma matriz vazia. Em seguida, exclua o comentário no método <code>render()</code> ao lado da variável <code>items</code> . Em seu lugar, mapeie a matriz <code>toDoList</code> armazenada no estado interno do componente e renderize dinamicamente um <code>li</code> para cada item. Tente digitar a string <code>eat, code, sleep, repeat</code> na área de <code>textarea</code> , clicar no botão e ver o que acontece. <strong>Nota:</strong> Você pode saber que todos os elementos filho irmãos criados por uma operação de mapeamento como essa precisam ser fornecidos com um atributo- <code>key</code> exclusivo. Não se preocupe, este é o tópico do próximo desafio. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -101,7 +101,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

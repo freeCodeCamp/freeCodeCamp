@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Escreva um contador com Redux
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora você aprendeu todos os princípios fundamentais do Redux! Você viu como criar ações e criadores de ações, criar uma loja Redux, despachar suas ações contra a loja e criar atualizações de estado com redutores puros. Você já viu como gerenciar o estado complexo com a composição do redutor e lidar com ações assíncronas. Esses exemplos são simplistas, mas esses conceitos são os princípios centrais do Redux. Se você os entende bem, você está pronto para começar a construir seu próprio aplicativo Redux. Os próximos desafios abrangem alguns detalhes sobre a imutabilidade do <code>state</code> , mas primeiro, aqui está uma análise de tudo que você aprendeu até agora. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Nesta lição, você implementará um contador simples com o Redux do zero. O básico é fornecido no editor de código, mas você terá que preencher os detalhes! Use os nomes que são fornecidos e definem <code>incAction</code> e <code>decAction</code> criadores de ação, o <code>counterReducer()</code> , <code>INCREMENT</code> e <code>DECREMENT</code> tipos de ação, e, finalmente, a Redux <code>store</code> . Quando terminar, você poderá despachar as ações <code>INCREMENT</code> ou <code>DECREMENT</code> para incrementar ou decrementar o estado mantido na <code>store</code> . Boa sorte construindo seu primeiro app Redux! </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -60,7 +60,7 @@ const store = null; // define the Redux store here, passing in your reducers
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

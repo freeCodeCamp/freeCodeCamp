@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Tornar o código mais reutilizável com esta palavra-chave
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio introduziu um <code>method</code> ao objeto <code>duck</code> . <code>duck.name</code> notação de pontos <code>duck.name</code> para acessar o valor da propriedade <code>name</code> na declaração de retorno: <code>sayName: function() {return &quot;The name of this duck is &quot; + duck.name + &quot;.&quot;;}</code> Embora seja um válido maneira de acessar a propriedade do objeto, há uma armadilha aqui. Se o nome da variável for alterado, qualquer código que faça referência ao nome original também precisará ser atualizado. Em uma definição de objeto curta, isso não é um problema, mas se um objeto tiver muitas referências a suas propriedades, haverá uma chance maior de erro. Uma maneira de evitar esses problemas é com a palavra-chave <code>this</code> : <blockquote> vamos pato = { <br> nome: &quot;Aflac&quot;, <br> numLegs: 2, <br> sayName: function () {return &quot;O nome deste pato é&quot; + this.name + &quot;.&quot;;} <br> }; </blockquote> <code>this</code> é um tópico profundo, e o exemplo acima é apenas uma maneira de usá-lo. No contexto atual, <code>this</code> se refere ao objeto ao qual o método está associado: <code>duck</code> . Se o nome do objeto for alterado para <code>mallard</code> , não será necessário encontrar todas as referências para o <code>duck</code> no código. Isso torna o código reutilizável e mais fácil de ler. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique o método <code>dog.sayLegs</code> para remover quaisquer referências ao <code>dog</code> . Use o exemplo do <code>duck</code> para orientação. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ dog.sayLegs();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

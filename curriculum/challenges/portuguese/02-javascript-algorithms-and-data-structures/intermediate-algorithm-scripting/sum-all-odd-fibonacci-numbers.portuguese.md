@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Soma todos os números impares de Fibonacci
 ---
 
-## Description
+## Descrição
 <section id="description"> Dado um inteiro positivo <code>num</code> , retornar a soma de todos os números de Fibonacci impares que são menor ou igual a <code>num</code> . Os dois primeiros números da sequência de Fibonacci são 1 e 1. Cada número adicional na sequência é a soma dos dois números anteriores. Os primeiros seis números da seqüência de Fibonacci são 1, 1, 2, 3, 5 e 8. Por exemplo, <code>sumFibs(10)</code> deve retornar <code>10</code> porque todos os números de Fibonacci ímpares menores ou iguais a <code>10</code> são 1, 1, 3 e 5. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ sumFibs(4);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

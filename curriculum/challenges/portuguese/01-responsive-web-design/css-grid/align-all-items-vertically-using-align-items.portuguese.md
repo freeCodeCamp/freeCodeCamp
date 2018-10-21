@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alinhar todos os itens verticalmente usando itens de alinhamento
 ---
 
-## Description
+## Descrição
 <section id="description"> Usar a propriedade <code>align-items</code> em um contêiner de grade definirá o alinhamento vertical para todos os itens em nossa grade. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use agora para mover todos os itens para o final de cada célula. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -69,7 +69,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

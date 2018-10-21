@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 453: quadriláteros de treliça'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um quadrilátero simples é um polígono que possui quatro vértices distintos, não possui ângulos retos e não se auto-intercepta. <p> Seja Q (m, n) o número de quadriláteros simples cujos vértices são pontos de rede com coordenadas (x, y) satisfazendo 0 ≤ x ≤ me 0 ≤ y ≤ n. </p><p> Por exemplo, Q (2, 2) = 94, como pode ser visto abaixo: </p><p> Pode-se verificar também que Q (3, 7) = 39590, Q (12, 3) = 309000 e Q (123, 45) = 70542215894646. </p><p> Encontre Q (12345, 6789) mod 135707531. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler453();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

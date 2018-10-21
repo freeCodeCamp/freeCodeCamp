@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Crie um objeto JavaScript básico
 ---
 
-## Description
+## Descrição
 <section id="description"> Pense em coisas que as pessoas veem todos os dias, como carros, lojas e pássaros. Estes são todos os <code>objects</code> : coisas tangíveis que as pessoas podem observar e interagir. Quais são algumas qualidades desses <code>objects</code> ? Um carro tem rodas. Lojas vendem itens. Pássaros têm asas. Essas qualidades ou <code>properties</code> definem o que constitui um <code>object</code> . Observe que <code>objects</code> semelhantes compartilham as mesmas <code>properties</code> , mas podem ter valores diferentes para essas <code>properties</code> . Por exemplo, todos os carros têm rodas, mas nem todos os carros têm o mesmo número de rodas. <code>Objects</code> em JavaScript são usados ​​para modelar objetos do mundo real, dando-lhes <code>properties</code> e comportamento como suas contrapartes do mundo real. Aqui está um exemplo usando esses conceitos para criar um <code>object</code> <code>duck</code> : <blockquote> vamos pato = { <br> nome: &quot;Aflac&quot;, <br> numLegs: 2 <br> }; </blockquote> Este <code>object</code> <code>duck</code> tem dois pares de propriedade / valor: um <code>name</code> de &quot;Aflac&quot; e um <code>numLegs</code> de 2. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie um <code>object</code> <code>dog</code> com as propriedades <code>name</code> e <code>numLegs</code> e configure-as para uma string e um número, respectivamente. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let dog = {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

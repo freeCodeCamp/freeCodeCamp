@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use uma consulta de mídia para alterar uma variável
 ---
 
-## Description
+## Descrição
 <section id="description"> Variáveis ​​CSS podem simplificar a maneira como você usa as consultas de mídia. Por exemplo, quando a tela é menor ou maior que o ponto de interrupção da consulta de mídia, você pode alterar o valor de uma variável e aplicar seu estilo onde quer que ela seja usada. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> No seletor <code>:root</code> da <code>media query</code> , altere-o para que <code>--penguin-size</code> seja redefinido e tenha um valor de <code>200px</code> . Além disso, redefina <code>--penguin-skin</code> e dê a ele um valor de <code>black</code> . Em seguida, redimensione a visualização para ver essa alteração em ação. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -271,7 +271,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

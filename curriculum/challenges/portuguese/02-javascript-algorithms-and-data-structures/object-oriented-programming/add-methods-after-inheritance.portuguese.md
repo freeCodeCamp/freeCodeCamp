@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar métodos após herança
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma função construtora que herda seu objeto de <code>prototype</code> de uma função construtora de <code>supertype</code> pode ainda ter seus próprios métodos além de métodos herdados. Por exemplo, <code>Bird</code> é um construtor que herda seu <code>prototype</code> de <code>Animal</code> : <blockquote> function Animal () {} <br> Animal.prototype.eat = function () { <br> console.log (&quot;nom nom nom&quot;); <br> }; <br> função Bird () {} <br> Bird.prototype = Object.create (Animal.prototype); <br> Bird.prototype.constructor = Pássaro; </blockquote> Além do que é herdado do <code>Animal</code> , você deseja adicionar um comportamento exclusivo aos objetos <code>Bird</code> . Aqui, <code>Bird</code> receberá uma função <code>fly()</code> . Funções são adicionadas ao <code>prototype</code> <code>Bird&#39;s</code> mesma forma que qualquer função construtora: <blockquote> Bird.prototype.fly = function () { <br> console.log (&quot;Estou voando!&quot;); <br> }; </blockquote> Agora instâncias de <code>Bird</code> terão os métodos <code>eat()</code> e <code>fly()</code> : <blockquote> vamos pato = novo pássaro (); <br> duck.eat (); // imprime &quot;nom nom&quot; <br> duck.fly (); // imprime &quot;Estou voando!&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione todo o código necessário para que o objeto <code>Dog</code> herde de <code>Animal</code> e o construtor de <code>prototype</code> <code>Dog&#39;s</code> esteja configurado para Dog. Em seguida, adicione um método <code>bark()</code> ao objeto <code>Dog</code> para que o <code>beagle</code> possa <code>eat()</code> e <code>bark()</code> . O método <code>bark()</code> deve imprimir &quot;Woof!&quot; para o console. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ beagle.bark(); // Should print "Woof!"
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

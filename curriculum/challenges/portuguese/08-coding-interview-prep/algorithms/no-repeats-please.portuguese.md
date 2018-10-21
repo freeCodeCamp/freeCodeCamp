@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Não repete por favor
 ---
 
-## Description
+## Descrição
 <section id="description"> Retorna o número total de permutações da string fornecida que não tem letras consecutivas repetidas. Suponha que todos os caracteres na string fornecida sejam exclusivos. Por exemplo, <code>aab</code> deve retornar 2 porque tem 6 permutações totais ( <code>aab</code> , <code>aab</code> , <code>aba</code> , <code>aba</code> , <code>baa</code> , <code>baa</code> ), mas apenas 2 delas ( <code>aba</code> e <code>aba</code> ) não têm a mesma letra (neste caso <code>a</code> ) recorrente. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -43,7 +43,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ permAlone('aab');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

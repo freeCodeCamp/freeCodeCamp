@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar uma lista duplamente vinculada
 ---
 
-## Description
+## Descrição
 <section id="description"> Todas as listas vinculadas que criamos até agora são listas vinculadas individualmente. Aqui, criaremos uma <dfn>lista duplamente vinculada</dfn> . Como o nome indica, os nós em uma lista duplamente vinculada têm referências ao nó seguinte e anterior na lista. Isso nos permite percorrer a lista em ambas as direções, mas também requer mais memória a ser usada, porque cada nó deve conter uma referência adicional ao nó anterior na lista. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Nós fornecemos um objeto <code>Node</code> e iniciamos o nosso <code>DoublyLinkedList</code> . Vamos adicionar dois métodos à nossa lista duplamente vinculada chamada <code>add</code> e <code>remove</code> . O <code>add</code> método deve adicionar o elemento dado à lista, enquanto a <code>remove</code> método deve remover todas as ocorrências de um determinado elemento da lista. Tenha cuidado para lidar com possíveis casos de borda ao escrever esses métodos, como exclusões para o primeiro ou último elemento. Além disso, remover qualquer item em uma lista vazia deve retornar <code>null</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,7 +72,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

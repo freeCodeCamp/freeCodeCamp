@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use o middleware para manipular ações assíncronas
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, esses desafios evitaram discutir ações assíncronas, mas são uma parte inevitável do desenvolvimento da web. Em algum momento, você precisará chamar endpoints assíncronos em seu aplicativo Redux, então, como você lida com esses tipos de solicitações? O Redux fornece middleware projetado especificamente para esse propósito, chamado middleware Redux Thunk. Aqui está uma breve descrição de como usar isso com o Redux. Para incluir o middleware Redux Thunk, você o passa como um argumento para <code>Redux.applyMiddleware()</code> . Esta declaração é então fornecida como um segundo parâmetro opcional para a função <code>createStore()</code> . Dê uma olhada no código na parte inferior do editor para ver isso. Em seguida, para criar uma ação assíncrona, você retorna uma função no criador de ações que toma o <code>dispatch</code> como um argumento. Dentro dessa função, você pode despachar ações e executar solicitações assíncronas. Neste exemplo, uma solicitação assíncrona é simulada com uma chamada <code>setTimeout()</code> . É comum despachar uma ação antes de iniciar qualquer comportamento assíncrono para que o estado do seu aplicativo saiba que alguns dados estão sendo solicitados (esse estado pode exibir um ícone de carregamento, por exemplo). Em seguida, depois de receber os dados, você despacha outra ação que transporta os dados como uma carga juntamente com informações de que a ação foi concluída. Lembre-se de que você está passando o <code>dispatch</code> como um parâmetro para esse criador de ações especiais. Isto é o que você usará para despachar suas ações, você simplesmente passa a ação diretamente para despachar e o middleware cuida do resto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva ambos os dispatches no criador de ações <code>handleAsync()</code> . Dispatch <code>requestingData()</code> antes do <code>setTimeout()</code> (a chamada da API simulada). Em seguida, depois de receber os dados (pretendidos), despache a ação <code>receivedData()</code> , passando esses dados. Agora você sabe como lidar com ações assíncronas no Redux. Tudo o resto continua a se comportar como antes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -94,7 +94,7 @@ const store = Redux.createStore(
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

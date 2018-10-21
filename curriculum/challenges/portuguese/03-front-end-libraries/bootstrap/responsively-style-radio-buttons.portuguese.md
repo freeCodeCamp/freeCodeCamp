@@ -9,14 +9,14 @@ videoUrl: ''
 localeTitle: Botões de rádio de estilo responsivo
 ---
 
-## Description
+## Descrição
 <section id="description"> Você também pode usar classes <code>col-xs-*</code> do Bootstrap em elementos de <code>form</code> ! Dessa forma, nossos botões de rádio serão espalhados uniformemente pela página, independentemente da largura da resolução da tela. Aninhe os dois botões de opção em um elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Então aninhe cada um deles dentro de um elemento <code>&lt;div class=&quot;col-xs-6&quot;&gt;</code> . <strong>Nota:</strong> Como lembrete, os botões de opção são elementos de <code>input</code> do tipo <code>radio</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -104,7 +104,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

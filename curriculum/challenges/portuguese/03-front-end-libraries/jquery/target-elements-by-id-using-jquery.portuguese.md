@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Elementos de destino por id usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Você também pode segmentar elementos por seus atributos id. Primeiro, direcione seu elemento <code>button</code> com o id <code>target3</code> usando o seletor <code>$(&quot;#target3&quot;)</code> . Note que, assim como com as declarações CSS, você digita um <code>#</code> antes do nome do id. Em seguida, use a função <code>.addClass()</code> do jQuery para adicionar as classes <code>animated</code> e <code>fadeOut</code> . Aqui está como você faria o elemento <code>button</code> com o id <code>target6</code> fade out: <code>$(&quot;#target6&quot;).addClass(&quot;animated fadeOut&quot;)</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -77,7 +77,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

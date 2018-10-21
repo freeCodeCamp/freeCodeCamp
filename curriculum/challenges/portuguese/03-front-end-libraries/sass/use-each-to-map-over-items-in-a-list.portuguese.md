@@ -9,13 +9,13 @@ videoUrl: ''
 localeTitle: Use @each para mapear itens em uma lista
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio mostrou como o <code>@for</code> diretiva usa um valor inicial e final para fazer um loop em um determinado número de vezes. O Sass também oferece a diretiva <code>@each</code> que faz um loop sobre cada item em uma lista ou mapa. Em cada iteração, a variável é atribuída ao valor atual da lista ou do mapa. <blockquote> @each $ color em azul, vermelho, verde { <br> . # {$ color} -text {color: $ color;} <br> } </blockquote> Um mapa tem uma sintaxe ligeiramente diferente. Aqui está um exemplo: <blockquote> $ colors: (color1: azul, color2: vermelho, color3: verde); <br><br> @ cada tecla $, $ cor em $ cores { <br> . # {$ color} -text {color: $ color;} <br> } </blockquote> Observe que a variável <code>$key</code> é necessária para referenciar as chaves no mapa. Caso contrário, o CSS compilado teria <code>color1</code> , <code>color2</code> ... nele. Ambos os exemplos de código acima são convertidos no seguinte CSS: <blockquote> .blue-text { <br> cor azul; <br> } <br><br> .red-text { <br> cor vermelha; <br> } <br><br> .green-text { <br> cor verde; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva uma diretiva <code>@each</code> que passe por uma lista: <code>blue, black, red</code> e atribua cada variável a uma classe <code>.color-bg</code> , onde a parte &quot;color&quot; muda para cada item. Cada classe deve definir a <code>background-color</code> da respectiva cor. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -61,7 +61,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

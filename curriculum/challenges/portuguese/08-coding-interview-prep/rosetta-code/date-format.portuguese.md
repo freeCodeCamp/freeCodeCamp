@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Formato de data
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Retornar uma matriz com a data atual nos formatos: </p><p> - 2007-11-23 e </p><p> - domingo, 23 de novembro de 2007 </p><p> Exemplo de saída: <code>[&#39;2007-11-23&#39;, &#39;Sunday, November 23, 2007&#39;]</code> </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

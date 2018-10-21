@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Construa objetos JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode ter ouvido o termo <code>object</code> antes. Os objetos são semelhantes aos <code>arrays</code> , exceto que, em vez de usar índices para acessar e modificar seus dados, você acessa os dados em objetos por meio do que são chamados de <code>properties</code> . Os objetos são úteis para armazenar dados de maneira estruturada e podem representar objetos do mundo real, como um gato. Aqui está um objeto cat de amostra: <blockquote> var cat = { <br> &quot;nome&quot;: &quot;Bigodes&quot;, <br> &quot;pernas&quot;: 4, <br> &quot;coroa&quot;: 1, <br> &quot;inimigos&quot;: [&quot;Água&quot;, &quot;Cães&quot;] <br> }; </blockquote> Neste exemplo, todas as propriedades são armazenadas como strings, como - <code>&quot;name&quot;</code> , <code>&quot;legs&quot;</code> e <code>&quot;tails&quot;</code> . No entanto, você também pode usar números como propriedades. Você pode até mesmo omitir as aspas para propriedades de string de palavra única, da seguinte maneira: <blockquote> var anotherObject = { <br> make: &quot;Ford&quot;, <br> 5: &quot;cinco&quot;, <br> &quot;modelo&quot;: &quot;foco&quot; <br> }; </blockquote> No entanto, se o seu objeto tiver alguma propriedade que não seja de string, o JavaScript será automaticamente convertido em typecast como string. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie um objeto que represente um cão chamado <code>myDog</code> que contenha as propriedades <code>&quot;name&quot;</code> (uma string), <code>&quot;legs&quot;</code> , <code>&quot;tails&quot;</code> e <code>&quot;friends&quot;</code> . Você pode definir essas propriedades de objeto para quaisquer valores desejados, desde que <code>&quot;name&quot;</code> seja uma cadeia, <code>&quot;legs&quot;</code> e <code>&quot;tails&quot;</code> sejam números e <code>&quot;friends&quot;</code> seja uma matriz. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -71,7 +71,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

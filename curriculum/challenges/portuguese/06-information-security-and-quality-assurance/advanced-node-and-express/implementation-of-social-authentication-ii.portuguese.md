@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Implementação da Autenticação Social II
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-socialauth/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-socialauth/">GitHub</a> . A última parte da configuração da autenticação do Github é criar a estratégia em si. Para isso, você precisará adicionar a dependência de &#39;passport-github&#39; ao seu projeto e requerê-lo como GithubStrategy como <code>const GitHubStrategy = require(&#39;passport-github&#39;).Strategy;</code> . Para configurar a estratégia do Github, você precisa dizer ao <b>passport</b> para <b>usar</b> um <b>GithubStrategy</b> instanciado, que aceita 2 argumentos: Um objeto (contendo <em>clientID</em> , <em>clientSecret</em> e <em>callbackURL</em> ) e uma função a ser chamada quando um usuário é autenticado com sucesso, o que determinaremos se o usuário for novo e quais campos salvar inicialmente no objeto de banco de dados do usuário. Isso é comum em muitas estratégias, mas algumas podem exigir mais informações, conforme descrito no README do github dessa estratégia específica. Por exemplo, o Google também exige um <em>escopo</em> que determine o tipo de informação que sua solicitação está pedindo e peça ao usuário que aprove esse acesso. A atual estratégia que estamos implementando tem seu uso descrito <a>aqui</a> , mas estamos passando por tudo isso aqui no freeCodeCamp! Veja como sua nova estratégia deve olhar neste ponto: <pre> passport.use (new GitHubStrategy ({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
@@ -18,11 +18,11 @@ localeTitle: Implementação da Autenticação Social II
   }
 )); </pre> Sua autenticação ainda não será bem-sucedida e, na verdade, lançará um erro, sem a lógica do banco de dados e o retorno de chamada, mas você deverá registrar no seu console seu perfil do Github, se tentar! Envie sua página quando achar que está certo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,12 +38,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

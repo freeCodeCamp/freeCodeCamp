@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Impedir a mutação de objetos
 ---
 
-## Description
+## Descrição
 <section id="description"> Como visto no desafio anterior, a declaração <code>const</code> sozinha não protege seus dados da mutação. Para garantir que seus dados não sejam alterados, o JavaScript fornece uma função <code>Object.freeze</code> para impedir a mutação de dados. Quando o objeto estiver congelado, você não poderá mais adicionar, atualizar ou excluir propriedades dele. Qualquer tentativa de alterar o objeto será rejeitada sem erro. <blockquote> deixe obj = { <br> nome: &quot;FreeCodeCamp&quot;, <br> revisão: &quot;Awesome&quot; <br> }; <br> Object.freeze (obj); <br> obj.review = &quot;mau&quot;; // será ignorado. Mutação não permitida <br> obj.newProp = &quot;Teste&quot;; // será ignorado. Mutação não permitida <br> console.log (obj); <br> // {name: &quot;FreeCodeCamp&quot;, resenha: &quot;Awesome&quot;} </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Neste desafio, você usará <code>Object.freeze</code> para impedir que constantes matemáticas sejam alteradas. Você precisa congelar o objeto <code>MATH_CONSTANTS</code> para que ninguém seja capaz de alterar o valor de <code>PI</code> , adicionar ou excluir propriedades. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ const PI = freezeObj();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

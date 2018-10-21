@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Números de Taxicab
 ---
 
-## Description
+## Descrição
 <section id="description"> Um <a href="https://en.wikipedia.org/wiki/Hardy–Ramanujan number" title="wp: Hardy – Ramanujan number">número de táxi</a> (a definição que está sendo usada aqui) é um inteiro positivo que pode ser expresso como a soma de dois cubos positivos em mais de uma maneira. O primeiro número de táxi é 1729, que é: 1 <sup>3</sup> + 12 <sup>3</sup> e 9 <sup>3</sup> + 10 <sup>3</sup> . Números de táxi também são conhecidos como: * números de táxi * números de táxi-táxi * números de táxi * números Hardy-Ramanujan Tarefa: Escreva uma função que retorna os números mais baixos N táxis. Para cada um dos números de táxi, mostre o número e seus cubos constituintes. Veja também: [http://oeis.org/A001235 A001235 números de táxis] na Enciclopédia On-Line de Seqüências Inteiras. <a href="http://mathworld.wolfram.com/Hardy-RamanujanNumber.html">Número Hardy-Ramanujan</a> no MathWorld. <a href="http://mathworld.wolfram.com/TaxicabNumber.html">Número do táxi</a> no MathWorld. <a href="https://en.wikipedia.org/wiki/Taxicab_number">número do táxi</a> na Wikipedia. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Estilize o elemento do corpo do HTML
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora vamos começar de novo e falar sobre herança de CSS. Toda página HTML possui um elemento <code>body</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Podemos provar que o elemento do <code>body</code> existe aqui, dando-lhe uma <code>background-color</code> de <code>background-color</code> de preto. Podemos fazer isso adicionando o seguinte ao nosso elemento de <code>style</code> : <blockquote> body { <br> cor de fundo: preto; <br> } </blockquote></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -46,7 +46,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

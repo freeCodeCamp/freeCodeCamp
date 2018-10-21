@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o método de redução para analisar dados
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>Array.prototype.reduce()</code> , ou simplesmente <code>reduce()</code> , é a mais geral de todas as operações de array em JavaScript. Você pode resolver quase qualquer problema de processamento de matriz usando o método <code>reduce</code> . Este não é o caso dos métodos <code>filter</code> e <code>map</code> , pois eles não permitem a interação entre dois elementos diferentes da matriz. Por exemplo, se você quiser comparar elementos da matriz ou adicioná-los juntos, o <code>filter</code> ou o <code>map</code> não poderão processá-los. O método <code>reduce</code> permite formas mais gerais de processamento de array, e é possível mostrar que tanto o <code>filter</code> quanto o <code>map</code> podem ser derivados como uma aplicação especial de <code>reduce</code> . No entanto, antes de chegarmos lá, vamos praticar o uso de <code>reduce</code> primeiro. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A variável <code>watchList</code> contém uma matriz de objetos com informações sobre vários filmes. Use <code>reduce</code> para encontrar a classificação média do IMDB dos filmes <strong>dirigidos por Christopher Nolan</strong> . Lembre-se de desafios anteriores de como <code>filter</code> dados e <code>map</code> -los para extrair o que você precisa. Talvez seja necessário criar outras variáveis, mas salve a média final na variável <code>averageRating</code> . Observe que os valores de classificação são salvos como sequências no objeto e precisam ser convertidos em números antes de serem usados ​​em qualquer operação matemática. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -166,7 +166,7 @@ console.log(averageRating);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

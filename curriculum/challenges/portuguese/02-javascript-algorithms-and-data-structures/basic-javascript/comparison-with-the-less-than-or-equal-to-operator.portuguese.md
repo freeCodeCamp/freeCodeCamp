@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comparação com o menor ou igual ao operador
 ---
 
-## Description
+## Descrição
 <section id="description"> O operador <code>less than or equal to</code> ( <code>&lt;=</code> ) compara os valores de dois números. Se o número à esquerda for menor ou igual ao número à direita, ele retornará <code>true</code> . Se o número à esquerda for maior que o número à direita, ele retornará <code>false</code> . Como o operador de igualdade, <code>less than or equal to</code> converte tipos de dados. <strong>Exemplos</strong> <blockquote> 4 &lt;= 5 // verdadeiro <br> &#39;7&#39; &lt;= 7 // verdadeiro <br> 5 &lt;= 5 // verdadeiro <br> 3 &lt;= 2 // falso <br> &#39;8&#39; &lt;= 4 // falso </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o operador <code>less than or equal to</code> das linhas indicadas para que as instruções de retorno façam sentido. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ testLessOrEqual(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

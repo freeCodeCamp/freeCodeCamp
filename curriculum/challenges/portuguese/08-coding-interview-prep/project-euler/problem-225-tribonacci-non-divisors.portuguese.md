@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 225: Não divisores de Tribonacci'
 ---
 
-## Description
+## Descrição
 <section id="description"> A sequência 1, 1, 1, 3, 5, 9, 17, 31, 57, 105, 193, 355, 653, 1201 ... é definida por T1 = T2 = T3 = 1 e Tn = Tn-1 + Tn -2 + Tn-3. <p> Pode ser mostrado que 27 não divide quaisquer termos dessa sequência. Na verdade, 27 é o primeiro número ímpar com essa propriedade. </p><p> Encontre o 124º número ímpar que não divide quaisquer termos da sequência acima. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler225();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

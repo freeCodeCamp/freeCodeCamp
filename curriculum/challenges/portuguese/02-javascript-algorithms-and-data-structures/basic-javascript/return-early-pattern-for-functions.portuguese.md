@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Retorna o padrão inicial para funções
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando uma instrução de <code>return</code> é atingida, a execução da função atual é interrompida e o controle retorna ao local de chamada. <strong>Exemplo</strong> <blockquote> function myFun () { <br> console.log (&quot;Olá&quot;); <br> return &quot;mundo&quot;; <br> console.log (&quot;byebye&quot;) <br> } <br> myFun (); </blockquote> O acima saídas &quot;Olá&quot; para o console, retorna &quot;World&quot;, mas <code>&quot;byebye&quot;</code> nunca é saída, porque a função sai na declaração de <code>return</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique a função <code>abTest</code> modo que, se <code>a</code> ou <code>b</code> forem menores que <code>0</code> a função sairá imediatamente com um valor <code>undefined</code> . <strong>Sugestão</strong> <br> Lembre-se de que <a href="http://www.freecodecamp.org/challenges/understanding-uninitialized-variables" target="_blank"><code>undefined</code> é uma palavra-chave</a> , não uma string. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ abTest(2,2);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

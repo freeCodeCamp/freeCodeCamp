@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar pares de valor-chave a objetos JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Em sua forma mais básica, os objetos são apenas coleções de <dfn>pares de valores-chave</dfn> ou, em outras palavras, partes de dados mapeados para identificadores exclusivos que chamamos de <dfn>propriedades</dfn> ou <dfn>chaves</dfn> . Vamos dar uma olhada em um exemplo muito simples: <blockquote> deixar FCC_User = { <br> nome de usuário: &#39;awesome_coder&#39;, <br> seguidores: 572, <br> pontos: 1741, <br> concluídosProjetos: 15 <br> }; </blockquote> O código acima define um objeto chamado <code>FCC_User</code> que possui quatro <dfn>propriedades</dfn> , cada uma <code>FCC_User</code> para um valor específico. Se quisermos saber o número de <code>followers</code> <code>FCC_User</code> tem, podemos acessar essa propriedade escrevendo: <blockquote> deixe userData = FCC_User.followers; <br> // userData é igual a 572 </blockquote> Isso é chamado de <dfn>notação de ponto</dfn> . Alternativamente, também podemos acessar a propriedade com colchetes, da seguinte forma: <blockquote> deixe userData = FCC_User [&#39;followers&#39;] <br> // userData é igual a 572 </blockquote> Observe que, com a <dfn>notação de colchetes</dfn> , incluímos <code>followers</code> entre aspas. Isso ocorre porque os colchetes realmente nos permitem passar uma variável para ser avaliada como um nome de propriedade (dica: tenha isso em mente para mais tarde!). Se tivéssemos passado <code>followers</code> sem as aspas, o mecanismo JavaScript teria tentado avaliá-lo como uma variável, e um <code>ReferenceError: followers is not defined</code> teria sido lançado. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Usando a mesma sintaxe, também podemos <em><strong>adicionar novos</strong></em> pares de valores-chave a objetos. Criamos um objeto de <code>foods</code> com três entradas. Adicione mais três entradas: <code>bananas</code> com um valor de <code>13</code> , <code>grapes</code> com um valor de <code>35</code> e <code>strawberries</code> com um valor de <code>27</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.log(foods);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

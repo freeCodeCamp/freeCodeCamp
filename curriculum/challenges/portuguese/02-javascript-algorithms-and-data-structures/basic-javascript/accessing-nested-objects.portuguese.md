@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Acessando Objetos Aninhados
 ---
 
-## Description
+## Descrição
 <section id="description"> As subpropriedades dos objetos podem ser acessadas encadeando a notação de pontos ou colchetes. Aqui está um objeto aninhado: <blockquote> var ourStorage = { <br> &quot;escrivaninha&quot;: { <br> &quot;gaveta&quot;: &quot;grampeador&quot; <br> } <br> &quot;gabinete&quot;: { <br> &quot;gaveta superior&quot;: { <br> &quot;folder1&quot;: &quot;um arquivo&quot;, <br> &quot;folder2&quot;: &quot;segredos&quot; <br> } <br> &quot;gaveta de fundo&quot;: &quot;refrigerante&quot; <br> } <br> }; <br> ourStorage.cabinet [&quot;gaveta de cima&quot;]. folder2; // &quot;segredos&quot; <br> ourStorage.desk.drawer; // &quot;agrafador&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Acesse o objeto <code>myStorage</code> e atribua o conteúdo da propriedade <code>glove box</code> à variável <code>gloveBoxContents</code> . Use a notação de colchetes para propriedades com um espaço em seus nomes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,7 +64,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

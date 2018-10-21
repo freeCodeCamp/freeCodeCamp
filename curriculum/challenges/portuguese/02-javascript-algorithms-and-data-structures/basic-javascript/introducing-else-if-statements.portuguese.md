@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Apresentando Else If Statements
 ---
 
-## Description
+## Descrição
 <section id="description"> Se você tiver várias condições que precisam ser tratadas, você pode encadear instruções <code>if</code> junto com <code>else if</code> statements. <blockquote> if (num&gt; 15) { <br> return &quot;Maior que 15&quot;; <br> } else if (num &lt;5) { <br> return &quot;Menor do que 5&quot;; <br> } outro { <br> return &quot;entre 5 e 15&quot;; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Converta a lógica para usar <code>else if</code> statements. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ testElseIf(7);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

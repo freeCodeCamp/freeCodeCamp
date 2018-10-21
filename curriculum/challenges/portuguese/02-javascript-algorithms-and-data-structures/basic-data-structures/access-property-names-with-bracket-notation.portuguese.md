@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Acessar nomes de propriedades com notação de suporte
 ---
 
-## Description
+## Descrição
 <section id="description"> No primeiro desafio de objeto, mencionamos o uso da notação de colchetes como uma forma de acessar valores de propriedade usando a avaliação de uma variável. Por exemplo, imagine que nosso objeto de <code>foods</code> esteja sendo usado em um programa para uma caixa registradora de supermercado. Temos alguma função que define o <code>selectedFood</code> e queremos verificar o nosso objeto de <code>foods</code> para a presença desse alimento. Isso pode parecer com: <blockquote> let selectedFood = getCurrentFood (scannedItem); <br> let inventory = foods [selectedFood]; </blockquote> Esse código avaliará o valor armazenado na variável <code>selectedFood</code> e retornará o valor dessa chave no objeto <code>foods</code> , ou <code>undefined</code> se não estiver presente. A notação de colchetes é muito útil porque às vezes as propriedades do objeto não são conhecidas antes do tempo de execução ou precisamos acessá-las de uma maneira mais dinâmica. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Nós definimos uma função, <code>checkInventory</code> , que recebe um item varrido como argumento. Retorna o valor atual da chave <code>scannedItem</code> no objeto <code>foods</code> . Você pode assumir que apenas chaves válidas serão fornecidas como um argumento para verificar <code>checkInventory</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,7 +64,7 @@ console.log(checkInventory("apples"));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Tamanho do conjunto
 ---
 
-## Description
+## Descrição
 <section id="description"> Neste exercício, vamos criar uma função de tamanho para o nosso conjunto. Essa função deve ser nomeada <code>this.size</code> e deve retornar o tamanho da coleção. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,7 +73,7 @@ function Set() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

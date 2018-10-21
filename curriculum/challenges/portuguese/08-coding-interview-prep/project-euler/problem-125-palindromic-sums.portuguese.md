@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 125: somas palindrômicos'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número palindrômico 595 é interessante porque pode ser escrito como a soma de quadrados consecutivos: 62 + 72 + 82 + 92 + 102 + 112 + 122. Há exatamente onze palíndromos abaixo de um mil que podem ser escritos como somas quadradas consecutivas, e a soma desses palíndromos é 4164. Observe que 1 = 02 + 12 não foi incluído, pois esse problema está relacionado aos quadrados de números inteiros positivos. Encontre a soma de todos os números menores que 108 que são palíndromos e podem ser escritos como a soma de quadrados consecutivos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler125();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

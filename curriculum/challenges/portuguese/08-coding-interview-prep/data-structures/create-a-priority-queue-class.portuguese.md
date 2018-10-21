@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar uma classe de fila de prioridade
 ---
 
-## Description
+## Descrição
 <section id="description"> Neste desafio você estará criando uma Fila de Prioridades. Uma Fila Prioritária é um tipo especial de Fila no qual os itens podem ter informações adicionais que especificam sua prioridade. Isso poderia ser simplesmente representado com um inteiro. A prioridade do item substituirá a ordem de veiculação para determinar se os itens da sequência são retirados da fila. Se um item com uma prioridade mais alta for enfileirado após os itens com prioridade mais baixa, o item com prioridade mais alta será retirado antes de todos os outros. Por exemplo, vamos imaginar que temos uma fila de prioridades com três itens: <code>[[&#39;kitten&#39;, 2], [&#39;dog&#39;, 2], [&#39;rabbit&#39;, 2]]</code> Aqui o segundo valor (um inteiro) representa a prioridade do item. . Se enfileirarmos <code>[&#39;human&#39;, 1]</code> com uma prioridade de <code>1</code> (assumindo que prioridades mais baixas recebem precedência), ele seria o primeiro item a ser retirado. A coleção seria assim: <code>[[&#39;human&#39;, 1], [&#39;kitten&#39;, 2], [&#39;dog&#39;, 2], [&#39;rabbit&#39;, 2]]</code> . Nós começamos a escrever um <code>PriorityQueue</code> no editor de código. Você precisará adicionar um método de <code>enqueue</code> para adicionar itens com prioridade, um método de <code>dequeue</code> para remover itens, um método de <code>size</code> para retornar o número de itens na fila, um método de <code>front</code> para retornar o elemento na frente da fila e finalmente, um método <code>isEmpty</code> que retornará <code>true</code> se a fila estiver vazia ou <code>false</code> se não estiver. O <code>enqueue</code> deve aceitar itens com o formato mostrado acima ( <code>[&#39;human&#39;, 1]</code> ), em que <code>1</code> representa a prioridade. O <code>dequeue</code> deve retornar apenas o item atual, não sua prioridade. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,7 +61,7 @@ function PriorityQueue () {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

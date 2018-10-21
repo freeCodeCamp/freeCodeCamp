@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 372: Lápis de Raios'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja R (M, N) o número de pontos de rede (x, y) que satisfazem M <p> Nota: representa a função floor. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler372();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: 'Pegar parênteses, suportes, chaves e citações não fechadas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Outro erro de sintaxe a ter em conta é que todos os parênteses, parênteses, chaves e cotações de abertura têm um par de fecho. Esquecer uma parte tende a acontecer quando você está editando um código existente e inserindo itens com um dos tipos de par. Além disso, tome cuidado ao aninhar blocos de código em outros, como adicionar uma função de retorno de chamada como um argumento para um método. Uma maneira de evitar esse erro é, assim que o caractere de abertura for digitado, incluir imediatamente a correspondência de fechamento, em seguida, mova o cursor de volta entre eles e continue a codificação. Felizmente, a maioria dos editores de código modernos gera a segunda metade do par automaticamente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrigir os dois erros de par no código. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -44,7 +44,7 @@ console.log(`Sum of array values is: ${arraySum}`);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

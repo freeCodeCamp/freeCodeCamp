@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Algoritmo de desbaste de Zhang-Suen
 ---
 
-## Description
+## Descrição
 <section id="description"> Este é um algoritmo usado para afinar uma imagem em preto e branco, ou seja, um bit por pixel. Por exemplo, com uma imagem de entrada de: <pre> ##############################
  ##################################
  #####################################
@@ -59,11 +59,11 @@ Escreva uma rotina para realizar o desbaste de Zhang-Suen em uma matriz de image
 </p>
 </pre></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -81,7 +81,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -127,7 +127,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

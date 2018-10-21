@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 80: Expansão Digital da Raiz Quadrada'
 ---
 
-## Description
+## Descrição
 <section id="description"> É bem sabido que se a raiz quadrada de um número natural não é um inteiro, então é irracional. A expansão decimal de tais raízes quadradas é infinita sem qualquer padrão de repetição. A raiz quadrada de dois é 1,41421356237309504880 ..., e a soma digital dos primeiros cem dígitos decimais é 475. Para os primeiros cem números naturais, encontre o total das somas digitais dos primeiros cem dígitos decimais para todos os dígitos. raízes quadradas irracionais. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler80();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

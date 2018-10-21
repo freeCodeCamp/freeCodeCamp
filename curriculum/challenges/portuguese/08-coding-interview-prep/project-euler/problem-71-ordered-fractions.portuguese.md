@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere a fração n / d, onde n e d são inteiros positivos. Se n <d 1="" 2="" 3="" 4="" 5="" 6="" 7="" 8="" and="" hcf(n,d)="1," it="" is="" called="" a="" reduced="" proper="" fraction.="" if="" we="" list="" the="" set="" of="" fractions="" for="" d="" ≤="" in="" ascending="" order="" size,="" get:="" 8,="" 7,="" 6,="" 5,="" 4,="" 3,="" 2,="" can="" be="" seen="" that="" fraction="" immediately="" to="" left="" 7.="" by="" listing="" 1,000,000="" find="" numerator="" &#x3C;="" section=""><h2> Instruções </h2><section id="instructions"></section><h2> Testes </h2><section id="tests"><pre> <code class="language-yml">tests: - text: &lt;code&gt;euler71()&lt;/code&gt; should return 428570. testString: &#39;assert.strictEqual(euler71(), 428570, &quot;&lt;code&gt;euler71()&lt;/code&gt; should return 428570.&quot;);&#39;</code> </pre></section><h2> Semente do Desafio </h2><section id="challengeSeed"><div id="js-seed"><pre> <code class="language-js">function euler71() { // Good luck! return true; } euler71();</code> </pre></div></section><h2> Solução </h2><section id="solution"><pre> <code class="language-js">// solution required</code> </pre></section></d></section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,7 +45,7 @@ euler71();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

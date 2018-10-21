@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar intervalos mais rápidos com lacuna de grade
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>grid-gap</code> é uma propriedade abreviada para <code>grid-row-gap</code> e <code>grid-column-gap</code> dos dois desafios anteriores que é mais conveniente de usar. Se <code>grid-gap</code> tiver um valor, ele criará uma lacuna entre todas as linhas e colunas. No entanto, se houver dois valores, ele usará o primeiro para definir o intervalo entre as linhas e o segundo valor para as colunas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o <code>grid-gap</code> para introduzir um intervalo de <code>10px</code> entre as linhas e um intervalo de <code>20px</code> entre as colunas. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,7 +67,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

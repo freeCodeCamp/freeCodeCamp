@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 322: coeficientes binomiais divisíveis por 10'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja T (m, n) o número dos coeficientes binomiais iCn que são divisíveis por 10 para n ≤ i &lt;m (i, m e n são inteiros positivos). Você é dado que T (109, 107-10) = 989697000. <p> Encontre T (1018, 1012-10). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler322();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Pegar Uso Misto de Citações Únicas e Duplas
 ---
 
-## Description
+## Descrição
 <section id="description"> O JavaScript permite o uso de aspas simples (&quot;) e dupla (&quot; &quot;) para declarar uma string. Decidir qual usar geralmente se resume a preferência pessoal, com algumas exceções. Ter duas opções é ótimo quando uma string tem contrações ou outra pedaço de texto que está entre aspas. Só tome cuidado para não fechar a string muito cedo, o que causa um erro de sintaxe. Aqui estão alguns exemplos de citações de mixagem: <blockquote> // Estes estão corretos: <br> const grouchoContraction = &quot;Eu tive uma noite perfeitamente maravilhosa, mas não foi isso.&quot;; <br> const quoteInString = &quot;Groucho Marx uma vez disse: &#39;Cite-me dizendo que fui mal citado.&#39;&quot;; <br> // Isso está incorreto: <br> const uhOhGroucho = &#39;Eu tive uma noite perfeitamente maravilhosa, mas não foi isso&#39;; </blockquote> Claro, não há problema em usar apenas um estilo de citações. Você pode escapar as aspas dentro da string usando o caractere de escape barra invertida (\): <blockquote> // Corrigir o uso das mesmas citações: <br> const allSameQuotes = &#39;Eu tive uma noite perfeitamente maravilhosa, mas não foi isso&#39;; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrija a string de forma que ela use aspas diferentes para o valor <code>href</code> ou escape das existentes. Mantenha as aspas duplas ao redor da string inteira. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -43,7 +43,7 @@ console.log(innerHtml);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

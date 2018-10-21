@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Pratique a comparação de valores diferentes
 ---
 
-## Description
+## Descrição
 <section id="description"> Nos dois últimos desafios, aprendemos sobre o operador de igualdade ( <code>==</code> ) e o operador de igualdade estrito ( <code>===</code> ). Vamos fazer uma revisão rápida e praticar o uso desses operadores um pouco mais. Se os valores que estão sendo comparados não forem do mesmo tipo, o operador de igualdade executará uma conversão de tipo e, em seguida, avaliará os valores. No entanto, o operador de igualdade estrita irá comparar tanto o tipo de dados quanto o valor como está, sem converter um tipo para o outro. <strong>Exemplos</strong> <blockquote> 3 == &#39;3&#39; // retorna verdadeiro porque o JavaScript executa conversão de tipo de string para number <br> 3 === &#39;3&#39; // retorna falso porque os tipos são diferentes e o tipo de conversão não é executado </blockquote> <strong>Nota</strong> <br> Em JavaScript, você pode determinar o tipo de uma variável ou um valor com o operador <code>typeof</code> , da seguinte maneira: <blockquote> typeof 3 // retorna &#39;number&#39; <br> typeof &#39;3&#39; // retorna &#39;string&#39; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A função <code>compareEquality</code> no editor compara dois valores usando o <code>equality operator</code> . Modifique a função para que ela retorne &quot;Equal&quot; somente quando os valores forem estritamente iguais. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ compareEquality(10, "10");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Definir dinamicamente as coordenadas para cada barra
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio criou e anexou um retângulo ao elemento <code>svg</code> para cada ponto no <code>dataset</code> para representar uma barra. Infelizmente, eles estavam todos empilhados uns sobre os outros. O posicionamento de um retângulo é manipulado pelos atributos <code>x</code> e <code>y</code> . Eles dizem ao D3 onde começar a desenhar a forma na área <code>svg</code> . O último desafio definiu cada um deles para 0, então cada barra foi colocada no canto superior esquerdo. Para um gráfico de barras, todas as barras devem ficar no mesmo nível vertical, o que significa que o valor <code>y</code> permanece o mesmo (em 0) para todas as barras. O valor <code>x</code> , no entanto, precisa ser alterado à medida que você adiciona novas barras. Lembre-se de que valores <code>x</code> maiores empurram os itens mais para a direita. Conforme você percorre os elementos da matriz no <code>dataset</code> , o valor x deve aumentar. O método <code>attr()</code> em D3 aceita uma função de retorno de chamada para definir dinamicamente esse atributo. A função de retorno de chamada leva dois argumentos, um para o próprio ponto de dados (geralmente <code>d</code> ) e um para o índice do ponto de dados na matriz. O segundo argumento para o índice é opcional. Aqui está o formato: <blockquote> selection.attr (&quot;propriedade&quot;, (d, i) =&gt; { <br> / * <br> * d é o valor do ponto de dados <br> * i é o índice do ponto de dados na matriz <br> * / <br> }) </blockquote> É importante observar que você NÃO precisa gravar um loop <code>for</code> ou usar <code>forEach()</code> para iterar os itens no conjunto de dados. Lembre-se de que o método <code>data()</code> analisa o conjunto de dados e qualquer método vinculado após <code>data()</code> ser executado uma vez para cada item no conjunto de dados. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a função de retorno de chamada do atributo <code>x</code> para que ele retorne os tempos de índice 30. <strong>Nota</strong> <br> Cada barra tem uma largura de 25, aumentando assim cada valor <code>x</code> em 30 acrescenta algum espaço entre as barras. Qualquer valor maior que 25 funcionaria neste exemplo. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -85,7 +85,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

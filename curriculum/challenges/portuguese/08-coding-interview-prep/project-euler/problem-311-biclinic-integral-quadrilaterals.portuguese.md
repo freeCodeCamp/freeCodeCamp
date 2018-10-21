@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 311: Quadrilaterais Integrais Biclínicos'
 ---
 
-## Description
+## Descrição
 <section id="description"> O ABCD é um quadrilátero convexo de lados inteiros com 1 ≤ AB &lt;BC &lt;CD &lt;AD. BD tem comprimento inteiro. O é o ponto médio do BD. AO tem comprimento inteiro. Vamos chamar ABCD de um quadrilátero integral biclínico se AO = CO ≤ BO = DO. <p> Por exemplo, o seguinte quadrilátero é um quadrilátero integral biclínico: AB = 19, BC = 29, CD = 37, AD = 43, BD = 48 e AO = CO = 23. </p><p> Seja B (N) o número de quadriláteros integrais biclínicos distintos ABCD que satisfazem AB2 + BC2 + CD2 + AD2 ≤ N. Podemos verificar que B (10 000) = 49 e B (1 000 000) = 38239. </p><p> Encontre B (10 000 000 000). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler311();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

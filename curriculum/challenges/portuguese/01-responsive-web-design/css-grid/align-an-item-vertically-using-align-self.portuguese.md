@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alinhar um item verticalmente usando auto-alinhamento
 ---
 
-## Description
+## Descrição
 <section id="description"> Assim como você pode alinhar um item horizontalmente, há uma maneira de alinhar um item verticalmente também. Para fazer isso, você usa a propriedade <code>align-self</code> em um item. Esta propriedade aceita todos os mesmos valores que <code>justify-self</code> do último desafio. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Alinhar o item com a classe <code>item3</code> verticalmente no <code>end</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,7 +73,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

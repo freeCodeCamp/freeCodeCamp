@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Substituir estilos no CSS subseqüente
 ---
 
-## Description
+## Descrição
 <section id="description"> Nossa classe &quot;texto rosa&quot; anulou a declaração CSS do elemento do <code>body</code> ! Nós acabamos de provar que nossas classes irão sobrescrever o CSS do elemento <code>body</code> . Então, a próxima questão lógica é: o que podemos fazer para substituir nossa classe de <code>pink-text</code> ? </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma classe CSS adicional chamada <code>blue-text</code> que dá um elemento a cor azul. Certifique-se de que esteja abaixo da sua declaração de classe de <code>pink-text</code> . Aplique a classe de <code>blue-text</code> ao seu elemento <code>h1</code> , além de sua classe de <code>pink-text</code> , e vamos ver qual deles ganha. A aplicação de vários atributos de classe a um elemento HTML é feita com um espaço entre eles como este: <code>class=&quot;class1 class2&quot;</code> Nota: Não importa qual ordem as classes estão listadas no elemento HTML. No entanto, a ordem das declarações de <code>class</code> na seção <code>&lt;style&gt;</code> é o que é importante. A segunda declaração sempre terá precedência sobre a primeira. Porque <code>.blue-text</code> é declarado em segundo lugar, ele substitui os atributos de <code>.pink-text</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -56,7 +56,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

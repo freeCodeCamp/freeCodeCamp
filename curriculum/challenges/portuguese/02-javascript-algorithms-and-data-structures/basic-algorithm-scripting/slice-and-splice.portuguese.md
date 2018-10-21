@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Fatia e Splice
 ---
 
-## Description
+## Descrição
 <section id="description"> Você recebe dois arrays e um índice. Use a <code>slice</code> métodos de matriz e <code>splice</code> para copiar cada elemento da primeira matriz na segunda matriz, em ordem. Comece inserindo elementos no índice <code>n</code> do segundo array. Retorna a matriz resultante. As matrizes de entrada devem permanecer as mesmas após a execução da função. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -66,7 +66,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

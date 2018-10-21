@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 183: Produto Máximo de Peças'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja N um inteiro positivo e seja N dividido em k partes iguais, r = N / k, de modo que N = r + r + ... + r. Seja P o produto dessas partes, P = r × r × ... × r = rk. <p> Por exemplo, se 11 é dividido em cinco partes iguais, 11 = 2,2 + 2,2 + 2,2 + 2,2 + 2,2, então P = 2,25 = 51,53632. </p><p> Seja M (N) = Pmax para um dado valor de N. </p><p> Acontece que o máximo para N = 11 é encontrado dividindo onze em quatro partes iguais, o que leva a Pmax = (11/4) 4; isto é, M (11) = 14641/256 = 57.19140625, que é um decimal de terminação. </p><p> No entanto, para N = 8, o máximo é obtido dividindo-o em três partes iguais, portanto, M (8) = 512/27, que é um decimal sem terminação. </p><p> Seja D (N) = N se M (N) for um decimal sem terminação e D (N) = -N se M (N) for um decimal de terminação. </p><p> Por exemplo, ΣD (N) para 5 ≤ N ≤ 100 é 2438. </p><p> Encontre ΣD (N) para 5 ≤ N ≤ 10000. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler183();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

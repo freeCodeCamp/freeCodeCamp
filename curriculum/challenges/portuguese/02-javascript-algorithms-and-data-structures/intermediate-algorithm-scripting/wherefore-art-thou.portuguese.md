@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Portanto és
 ---
 
-## Description
+## Descrição
 <section id="description"> Crie uma função que examine uma matriz de objetos (primeiro argumento) e retorne uma matriz de todos os objetos que possuem pares de nome e valor correspondentes (segundo argumento). Cada nome e par de valores do objeto de origem deve estar presente no objeto da coleção, se for para ser incluído na matriz retornada. Por exemplo, se o primeiro argumento for <code>[{ first: &quot;Romeo&quot;, last: &quot;Montague&quot; }, { first: &quot;Mercutio&quot;, last: null }, { first: &quot;Tybalt&quot;, last: &quot;Capulet&quot; }]</code> , e o segundo argumento é <code>{ last: &quot;Capulet&quot; }</code> , então você deve retornar o terceiro objeto da matriz (o primeiro argumento), porque contém o nome e seu valor, que foi passado como segundo argumento. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: 
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

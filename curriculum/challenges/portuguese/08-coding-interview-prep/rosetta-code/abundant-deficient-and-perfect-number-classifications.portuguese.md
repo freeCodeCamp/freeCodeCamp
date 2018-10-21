@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Classificações numéricas abundantes, deficientes e perfeitas'
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Estes definem três classificações de inteiros positivos baseados em seus <a href="http://rosettacode.org/wiki/Proper divisors" title="Divisores apropriados">divisores apropriados</a> . </p><p> Seja $ P (n) $ a soma dos divisores apropriados de n onde os divisores apropriados são todos inteiros positivos n diferentes de n em si. </p><p> Se <code>P(n) &lt; n</code> então n é classificado como &quot;deficiente&quot; </p><p> Se <code>P(n) === n</code> então n é classificado como &quot;perfeito&quot; </p><p> Se <code>P(n) &gt; n</code> então n é classificado como &quot;abundante&quot; </p><p> Exemplo: </p><p> 6 tem divisores apropriados de 1, 2 e 3. </p><p> 1 + 2 + 3 = 6, então 6 é classificado como um número perfeito. </p><p> Implemente uma função que calcule quantos dos inteiros de 1 a 20.000 (inclusive) estão em cada uma das três classes. Emita o resultado como um array no seguinte formato <code>[deficient, perfect, abundant]</code> . </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

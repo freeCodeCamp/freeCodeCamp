@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Defina o protótipo da criança para uma instância do pai
 ---
 
-## Description
+## Descrição
 <section id="description"> No desafio anterior, você viu o primeiro passo para herdar o comportamento do <code>supertype</code> (ou pai) <code>Animal</code> : criar uma nova instância de <code>Animal</code> . Esse desafio abrange a próxima etapa: definir o <code>prototype</code> do <code>subtype</code> (ou filho) - nesse caso, <code>Bird</code> - para ser uma instância de <code>Animal</code> . <blockquote> Bird.prototype = Object.create (Animal.prototype); </blockquote> Lembre-se que o <code>prototype</code> é como a &quot;receita&quot; para criar um objeto. De certa forma, a receita de <code>Bird</code> agora inclui todos os &quot;ingredientes&quot; chave do <code>Animal</code> . <blockquote> vamos pato = novo pássaro (&quot;Donald&quot;); <br> duck.eat (); // imprime &quot;nom nom&quot; </blockquote> <code>duck</code> herda todas as propriedades do <code>Animal</code> , incluindo o método de <code>eat</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique o código para que as instâncias de <code>Dog</code> herdem de <code>Animal</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ beagle.eat();  // Should print "nom nom nom"
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

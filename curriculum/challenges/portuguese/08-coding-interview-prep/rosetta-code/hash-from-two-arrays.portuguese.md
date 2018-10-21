@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Hash de duas matrizes
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Usando duas Matrizes de igual comprimento, crie um objeto Hash onde os elementos de uma matriz (as chaves) são vinculados aos elementos da outra (os valores) </p> Tarefa relacionada: <a href="http://rosettacode.org/wiki/Associative arrays/Creation" title="Matrizes Associativas / Criação">Matrizes Associativas / Criação</a> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,7 +64,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

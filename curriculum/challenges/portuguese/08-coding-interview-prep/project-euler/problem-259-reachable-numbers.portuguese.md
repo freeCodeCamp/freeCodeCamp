@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 259: Números Acessíveis'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um inteiro positivo será chamado alcançável se puder resultar de uma expressão aritmética que obedeça às seguintes regras: <p> Usa os dígitos de 1 a 9, nessa ordem e exatamente uma vez cada. Quaisquer dígitos sucessivos podem ser concatenados (por exemplo, usando os dígitos 2, 3 e 4 obtemos o número 234). Apenas as quatro operações aritméticas binárias usuais (adição, subtração, multiplicação e divisão) são permitidas. Cada operação pode ser usada quantas vezes quiser ou não. Unário menos não é permitido. Qualquer número de parênteses (possivelmente aninhados) pode ser usado para definir a ordem das operações. Por exemplo, 42 é alcançável, uma vez que (1/23) <em>((4</em> 5) -6) * (78-9) = 42. </p><p> Qual é a soma de todos os inteiros positivos alcançáveis? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler259();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

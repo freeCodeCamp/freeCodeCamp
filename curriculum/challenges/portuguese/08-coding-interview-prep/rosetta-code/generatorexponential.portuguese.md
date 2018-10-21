@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: GeneratorExponential
 ---
 
-## Description
+## Descrição
 <section id="description"> Um gerador é uma entidade executável (como uma função ou procedimento) que contém um código que produz uma sequência de valores, um de cada vez, de modo que cada vez que você chama o gerador, o próximo valor na sequência é fornecido. Geralmente, os geradores são construídos em cima de corrotinas ou objetos, de modo que o estado interno do objeto é tratado &quot;naturalmente&quot;. Os geradores são frequentemente usados ​​em situações em que uma sequência é potencialmente infinita e onde é possível construir o próximo valor da sequência com apenas um estado mínimo. Escreva uma função que use geradores para gerar quadrados e cubos. Crie um novo gerador que filtre todos os cubos do gerador de quadrados. A função deve retornar o valor \ (n ^ {th} \) do gerador filtrado. Por exemplo, para \ (n = 7 \), a função deve retornar 81 como a seqüência seria 4,9,16,25,36,49,81. Aqui 64 é filtrado, pois é um cubo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ function exponentialGenerator (n) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

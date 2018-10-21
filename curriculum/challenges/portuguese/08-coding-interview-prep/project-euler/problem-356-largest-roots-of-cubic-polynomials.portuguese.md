@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 356: maiores raízes de polinômios cúbicos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja a maior raiz real de um polinômio g (x) = x3 - 2n · x2 + n. Por exemplo, a2 = 3.86619826 ... <p> Encontre os últimos oito dígitos de. </p><p> Nota: representa a função floor. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler356();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

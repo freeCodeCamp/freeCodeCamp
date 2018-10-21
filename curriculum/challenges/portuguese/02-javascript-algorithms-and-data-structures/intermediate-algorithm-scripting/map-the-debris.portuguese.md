@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Mapeie os detritos
 ---
 
-## Description
+## Descrição
 <section id="description"> Retorna uma nova matriz que transforma a altitude média dos elementos em seus períodos orbitais (em segundos). A matriz conterá objetos no formato <code>{name: &#39;name&#39;, avgAlt: avgAlt}</code> . Você pode ler sobre períodos orbitais <a href="http://en.wikipedia.org/wiki/Orbital_period" target="_blank">na Wikipedia</a> . Os valores devem ser arredondados para o número inteiro mais próximo. O corpo que está sendo orbitado é a Terra. O raio da terra é 6367.4447 quilômetros, e o valor de GM da terra é 398600.4418 km <sup>3</sup> s <sup>-2</sup> . Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

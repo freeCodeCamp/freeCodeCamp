@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comente o HTML
 ---
 
-## Description
+## Descrição
 <section id="description"> Lembre-se que para começar um comentário, você precisa usar <code>&lt;!--</code> e para finalizar um comentário, você precisa usar <code>--&gt;</code> Aqui você precisa terminar o comentário antes do seu elemento <code>h2</code> começar. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Comente seu elemento <code>h1</code> e seu elemento <code>p</code> , mas não seu elemento <code>h2</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -54,7 +54,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

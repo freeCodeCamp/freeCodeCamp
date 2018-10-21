@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Use uma escala pré-definida para colocar elementos
 ---
 
-## Description
+## Descrição
 <section id="description"> Com as escalas configuradas, é hora de mapear o gráfico de dispersão novamente. As escalas são como funções de processamento que transformam os dados x e y em valores que se ajustam e renderizam corretamente na tela do SVG. Eles mantêm os dados dentro da área de plotagem da tela. Você define os valores de atributo de coordenadas para uma forma SVG com a função de dimensionamento. Isso inclui os atributos <code>x</code> e <code>y</code> para elementos <code>rect</code> ou <code>text</code> , ou <code>cx</code> e <code>cy</code> para <code>circles</code> . Aqui está um exemplo: <blockquote> forma <br> .attr (&quot;x&quot;, (d) =&gt; xScale (d [0])) </blockquote> Escalas definem atributos de coordenadas de forma para colocar os pontos de dados na tela do SVG. Você não precisa aplicar escalas quando exibir o valor dos dados reais, por exemplo, no método <code>text()</code> para uma dica de ferramenta ou um rótulo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>xScale</code> e <code>yScale</code> para posicionar as formas de <code>circle</code> e <code>text</code> na tela do SVG. Para os <code>circles</code> , aplique as escalas para definir os atributos <code>cx</code> e <code>cy</code> . Dê-lhes um raio de 5 unidades também. Para os elementos de <code>text</code> , aplique as escalas para definir os atributos <code>x</code> e <code>y</code> . As etiquetas devem ser deslocadas para a direita dos pontos. Para fazer isso, adicione 10 unidades ao valor de dados x antes de passá-lo para o <code>xScale</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -68,7 +68,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -138,7 +138,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

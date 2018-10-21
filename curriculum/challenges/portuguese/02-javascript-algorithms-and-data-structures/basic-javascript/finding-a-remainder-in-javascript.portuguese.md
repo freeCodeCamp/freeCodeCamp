@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Encontrando um Restante em JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> O operador <code>%</code> <dfn>restante</dfn> fornece o restante da divisão de dois números. <strong>Exemplo</strong> <blockquote> 5% 2 = 1 porque <br> Math.floor (5/2) = 2 (Quociente) <br> 2 * 2 = 4 <br> 5 - 4 = 1 (restante) </blockquote> <strong>Uso</strong> <br> Na matemática, um número pode ser verificado para ser par ou ímpar, verificando o restante da divisão do número por <code>2</code> . <blockquote> 17% 2 = 1 (17 é Ímpar) <br> 48% 2 = 0 (48 é mesmo) </blockquote> <strong>Nota</strong> <br> O operador <dfn>restante</dfn> é algumas vezes incorretamente chamado de operador &quot;módulo&quot;. É muito semelhante ao módulo, mas não funciona corretamente com números negativos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina o <code>remainder</code> igual ao restante de <code>11</code> dividido por <code>3</code> usando o operador <dfn>restante</dfn> ( <code>%</code> ). </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

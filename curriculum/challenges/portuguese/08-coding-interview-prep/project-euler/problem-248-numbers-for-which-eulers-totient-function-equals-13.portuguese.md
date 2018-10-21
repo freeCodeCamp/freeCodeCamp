@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 248: Números para os quais a função totiente de Euler é igual a 13!'
 ---
 
-## Description
+## Descrição
 <section id="description"> O primeiro número n para o qual φ (n) = 13! é 6227180929. Encontre o 150.000º número. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler248();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

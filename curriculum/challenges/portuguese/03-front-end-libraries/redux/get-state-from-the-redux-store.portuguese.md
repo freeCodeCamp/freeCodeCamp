@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Obtenha o estado da loja Redux
 ---
 
-## Description
+## Descrição
 <section id="description"> O objeto de armazenamento Redux fornece vários métodos que permitem interagir com ele. Por exemplo, você pode recuperar o <code>state</code> atual mantido no objeto de armazenamento Redux com o método <code>getState()</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O código do desafio anterior é reescrito de maneira mais concisa no editor de código. Use <code>store.getState()</code> para recuperar o <code>state</code> do <code>store</code> e atribua isso a uma nova variável <code>currentState</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -47,7 +47,7 @@ const store = Redux.createStore(
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

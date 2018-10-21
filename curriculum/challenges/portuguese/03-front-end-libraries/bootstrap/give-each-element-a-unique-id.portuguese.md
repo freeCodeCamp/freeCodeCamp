@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Dê a cada elemento um id único
 ---
 
-## Description
+## Descrição
 <section id="description"> Também queremos usar o jQuery para segmentar cada botão por seu ID exclusivo. Dê a cada um dos seus botões um ID único, começando com <code>target1</code> e terminando com <code>target6</code> . Certifique-se de que <code>target1</code> para <code>target3</code> esteja em <code>#left-well</code> e <code>target4</code> para <code>target6</code> em <code>#right-well</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -71,7 +71,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

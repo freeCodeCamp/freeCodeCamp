@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Compreensão dos valores booleanos
 ---
 
-## Description
+## Descrição
 <section id="description"> Outro tipo de dados é o <dfn>booleano</dfn> . <code>Booleans</code> podem ser apenas um de dois valores: <code>true</code> ou <code>false</code> . Eles são basicamente pequenos comutadores on-off, em que <code>true</code> é &quot;on&quot; e <code>false</code> é &quot;off&quot;. Esses dois estados são mutuamente exclusivos. <strong>Nota</strong> <br> Valores <code>Boolean</code> nunca são escritos com aspas. As <code>strings</code> <code>&quot;true&quot;</code> e <code>&quot;false&quot;</code> não são <code>Boolean</code> e não têm significado especial em JavaScript. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique a função <code>welcomeToBooleans</code> para que ela retorne <code>true</code> vez de <code>false</code> quando o botão de execução for clicado. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

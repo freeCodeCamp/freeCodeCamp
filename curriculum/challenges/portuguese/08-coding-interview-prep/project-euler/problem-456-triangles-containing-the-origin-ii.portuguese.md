@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 456: Triângulos contendo a origem II'
 ---
 
-## Description
+## Descrição
 <section id="description"> Defina: xn = (1248n mod 32323) - 16161yn = (8421n mod 30103) - 15051 Pn = {(x1, y1), (x2, y2), ..., (xn, yn)} <p> Por exemplo, P8 = {(-14913, -6630), (-10161, 5625), (5226, 11896), (8340, -10778), (15852, -5203), (-15165, 11295), (- 1427, -14495), (12407, 1060)}. </p><p> Seja C (n) o número de triângulos cujos vértices estão em Pn que contêm a origem no interior. </p><p> Exemplos: C (8) = 20 C (600) = 8950634 C (40 000) = 2666610948988 </p><p> Encontre C (2 000 000). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler456();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

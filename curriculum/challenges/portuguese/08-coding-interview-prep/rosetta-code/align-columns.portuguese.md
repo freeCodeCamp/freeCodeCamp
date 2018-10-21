@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Alinhar colunas
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Dado um arquivo de texto de muitas linhas, onde os campos dentro de uma linha são delineados por um único caractere <code>$</code> , escreva um programa que alinhe cada coluna de campos garantindo que as palavras em cada coluna sejam separadas por pelo menos um espaço. Além disso, permita que cada palavra em uma coluna seja justificada à esquerda, justificada à direita ou justificada pelo centro em sua coluna. </p><p> Use o seguinte texto para testar seus programas: </p><pre> Dado $ a $ text $ file $ de $ many $ lines
 onde $ fields $ dentro de $ a $ line $
 $ $ $ $ $ $ $ single $ &#39;dollar&#39; $ character
@@ -19,11 +19,11 @@ justificado, $ certo $ justificado
 ou $ center $ justificado $ dentro de $ sua coluna $.
 </pre><p> Observe que: </p> As linhas de texto de entrada de exemplo podem, ou não, ter caracteres em dólares finais. Todas as colunas devem compartilhar o mesmo alinhamento. Caracteres de espaço consecutivos produzidos adjacentes ao final das linhas são insignificantes para os propósitos da tarefa. O texto de saída será visualizado em uma fonte com espaçamento único em um editor de texto simples ou terminal básico. O espaço mínimo entre colunas deve ser calculado a partir do texto e não codificado. Não é um requisito adicionar caracteres separadores entre colunas ou em volta delas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -80,7 +80,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

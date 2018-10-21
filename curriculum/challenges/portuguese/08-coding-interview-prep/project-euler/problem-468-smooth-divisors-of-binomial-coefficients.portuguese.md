@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 468: divisores suaves de coeficientes binomiais'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um inteiro é chamado B-smooth se nenhum de seus fatores primos for maior que B. <p> Seja SB (n) o maior divisor de suavidade B de n. Exemplos: S1 (10) = 1 S4 (2100) = 12 S17 (2496144) = 5712 </p><p> Defina F (n) = ∑1≤B≤n ∑0≤r≤n SB (C (n, r)). Aqui, C (n, r) indica o coeficiente binomial. Exemplos: F (11) = 3132 F (1 111) mod 1 000 000 993 = 706036312 F (111 111) mod 1 000 000 993 = 22156169 </p><p> Encontre F (11 111 111) mod 1 000 000 993. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler468();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entenda as diferenças entre importar e exigir
 ---
 
-## Description
+## Descrição
 <section id="description"> No passado, a função <code>require()</code> seria usada para importar as funções e o código em arquivos e módulos externos. Embora seja prático, isso apresenta um problema: alguns arquivos e módulos são bastante grandes e você pode precisar apenas de determinados códigos desses recursos externos. O ES6 nos fornece uma ferramenta muito útil, conhecida como <dfn>importação</dfn> . Com ele, podemos escolher quais partes de um módulo ou arquivo carregar em um determinado arquivo, economizando tempo e memória. Considere o seguinte exemplo. Imagine que <code>math_array_functions</code> tenha cerca de 20 funções, mas eu só preciso de um, <code>countItems</code> , no meu arquivo atual. A antiga abordagem <code>require()</code> me forçaria a trazer todas as 20 funções. Com essa nova sintaxe de <code>import</code> , posso trazer apenas a função desejada, assim: <blockquote> import {countItems} de &quot;math_array_functions&quot; </blockquote> Uma descrição do código acima: <blockquote> import {function} de &quot;file_path_goes_here&quot; <br> // Também podemos importar variáveis ​​da mesma maneira! </blockquote> Existem algumas maneiras de escrever uma declaração de <code>import</code> , mas o acima é um caso de uso muito comum. <strong>Nota</strong> <br> O espaço em branco ao redor da função dentro das chaves é uma prática recomendada - facilita a leitura da declaração de <code>import</code> . <strong>Nota</strong> <br> As lições desta seção tratam de recursos que não são do navegador. <code>import</code> , e as declarações que introduzimos no restante dessas lições, não funcionarão diretamente em um navegador. No entanto, podemos usar várias ferramentas para criar código a partir disso para que funcione no navegador. <strong>Nota</strong> <br> Na maioria dos casos, o caminho do arquivo requer um <code>./</code> antes dele; caso contrário, o nó procurará no diretório <code>node_modules</code> primeiro tentando carregá-lo como uma dependência. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione a declaração de <code>import</code> apropriada que permitirá que o arquivo atual use a função <code>capitalizeString</code> . O arquivo onde esta função reside é chamado <code>&quot;string_functions&quot;</code> , e está no mesmo diretório que o arquivo atual. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ capitalizeString: str => str.toUpperCase()
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

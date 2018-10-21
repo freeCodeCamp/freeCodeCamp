@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Operações elementares
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Implemente operações básicas de matriz matricial e matricial escalar. </p><p> Implemento: </p><p> ::* Adição </p><p> :: * subtração </p><p> :: multiplicação </p><p> :: * divisão </p><p> :: * exponenciação </p><p> O primeiro parâmetro será a operação a ser executada, por exemplo: &quot;m_add&quot; para adição de matriz e &quot;s_add&quot; para adição escalar. O segundo e terceiro parâmetros serão as matrizes nas quais as operações serão realizadas. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ function operation (op, arr1, arr2) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

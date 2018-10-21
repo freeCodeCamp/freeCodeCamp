@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use o componentDidMount do método do ciclo de vida
 ---
 
-## Description
+## Descrição
 <section id="description"> A maioria dos desenvolvedores da Web, em algum momento, precisa chamar um ponto de extremidade da API para recuperar dados. Se você está trabalhando com o React, é importante saber onde realizar essa ação. A prática recomendada com o React é colocar chamadas de API ou qualquer chamada para o seu servidor no método de ciclo de vida <code>componentDidMount()</code> . Esse método é chamado depois que um componente é montado no DOM. Qualquer chamada para <code>setState()</code> aqui irá disparar uma nova renderização do seu componente. Quando você chamar uma API nesse método e definir seu estado com os dados retornados pela API, ela acionará automaticamente uma atualização assim que você receber os dados. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Há uma chamada de API falsa em <code>componentDidMount()</code> . Ele define o estado após 2,5 segundos para simular a chamada de um servidor para recuperar dados. Este exemplo solicita o total de usuários ativos atuais para um site. No método render, renderize o valor de <code>activeUsers</code> no <code>h1</code> . Veja o que acontece na pré-visualização e sinta-se à vontade para alterar o tempo limite para ver os diferentes efeitos. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -74,7 +74,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

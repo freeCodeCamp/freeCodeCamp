@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 39: Triângulos retos inteiros'
 ---
 
-## Description
+## Descrição
 <section id="description"> Se p é o perímetro de um triângulo de ângulo reto com lados de comprimento integral, {a, b, c}, existem exatamente três soluções para p = 120. {20,48,52}, {24,45,51}, { 30,40,50} Para qual valor de p ≤ n, o número de soluções é maximizado? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ intRightTriangles(1000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

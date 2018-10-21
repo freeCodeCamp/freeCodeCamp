@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entendendo a sensibilidade do caso em variáveis
 ---
 
-## Description
+## Descrição
 <section id="description"> Em JavaScript, todas as variáveis ​​e nomes de função diferenciam maiúsculas de minúsculas. Isso significa que a capitalização é importante. <code>MYVAR</code> não é o mesmo que <code>MyVar</code> nem <code>myvar</code> . É possível ter várias variáveis ​​distintas com o mesmo nome, mas diferentes invólucros. É altamente recomendável que, por motivos de clareza, você <em>não</em> use esse recurso de idioma. <h4> Melhor pratica </h4> Escreva nomes de variáveis ​​em JavaScript no <dfn>camelCase</dfn> . No <dfn>camelCase</dfn> , os nomes de variáveis ​​com várias palavras têm a primeira palavra em minúsculas e a primeira letra de cada palavra subsequente é maiúscula. <strong>Exemplos:</strong> <blockquote> var someVariable; <br> var anotherVariableName; <br> var thisVariableNameIsSoLong; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique as declarações e atribuições existentes para que seus nomes usem o <dfn>camelCase</dfn> . <br> Não crie novas variáveis. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ tITLEcASEoVER = 9000;
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Dividir sua linha de bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que temos um Bootstrap Row, vamos dividi-lo em duas colunas para abrigar nossos elementos. Crie dois elementos <code>div</code> na sua linha, ambos com a classe <code>col-xs-6</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -49,7 +49,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

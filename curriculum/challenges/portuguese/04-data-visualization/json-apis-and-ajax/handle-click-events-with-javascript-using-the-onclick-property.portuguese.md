@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Manipular eventos de clique com JavaScript usando a propriedade onclick
 ---
 
-## Description
+## Descrição
 <section id="description"> Você quer que seu código seja executado somente quando a página terminar de carregar. Para esse propósito, você pode anexar um evento JavaScript ao documento chamado <code>DOMContentLoaded</code> . Aqui está o código que faz isso: <blockquote> document.addEventListener (&#39;DOMContentLoaded&#39;, function () { <br><br> }); </blockquote> Você pode implementar manipuladores de eventos que vão dentro da função <code>DOMContentLoaded</code> . Você pode implementar um manipulador de eventos <code>onclick</code> que é acionado quando o usuário clica no elemento com o ID <code>getMessage</code> , adicionando o seguinte código: <blockquote> document.getElementById (&#39;getMessage&#39;). onclick = function () {}; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione um manipulador de eventos click dentro da função <code>DOMContentLoaded</code> para o elemento com o id de <code>getMessage</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,7 +84,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

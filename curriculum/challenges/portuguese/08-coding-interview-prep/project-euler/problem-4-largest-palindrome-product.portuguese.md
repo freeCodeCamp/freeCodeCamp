@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 4: Maior produto de palíndromo'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um número palíndromo lê os dois lados da mesma maneira. O maior palíndromo feito a partir do produto de dois números de 2 dígitos é 9009 = 91 × 99. Encontre o maior palíndromo feito com o produto de dois números <code>n</code> dígitos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ largestPalindromeProduct(3);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

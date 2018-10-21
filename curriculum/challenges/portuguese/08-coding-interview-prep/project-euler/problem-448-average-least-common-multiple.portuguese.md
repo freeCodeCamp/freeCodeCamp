@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 448: Múltiplo menos comum comum'
 ---
 
-## Description
+## Descrição
 <section id="description"> A função lcm (a, b) indica o menor múltiplo comum de a e b. Seja A (n) a média dos valores de lcm (n, i) para 1≤i≤n. Por exemplo: A (2) = (2 + 2) / 2 = 2 e A (10) = (10 + 10 + 30 + 20 + 10 + 30 + 70 + 40 + 90 + 10) / 10 = 32. <p> Seja S (n) = ∑A (k) para 1≤k≤n. S (100) = 122726. </p><p> Encontre S (99999999019) mod 999999017. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler448();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

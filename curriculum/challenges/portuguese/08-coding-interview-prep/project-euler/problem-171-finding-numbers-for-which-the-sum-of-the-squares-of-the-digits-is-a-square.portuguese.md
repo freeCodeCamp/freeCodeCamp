@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 171: Encontrar números para os quais a soma dos quadrados dos dígitos é um quadrado'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para um inteiro positivo n, seja f (n) a soma dos quadrados dos dígitos (na base 10) de n, por exemplo, f (3) = 32 = 9, f (25) = 22 + 52 = 4 + 25 = 29, f (442) = 42 + 42 + 22 = 16 + 16 + 4 = 36 Encontre os últimos nove dígitos da soma de todos n, 0 &lt;n &lt;1020, tal que f (n) é um quadrado perfeito. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler171();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

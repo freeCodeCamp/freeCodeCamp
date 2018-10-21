@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Modificar um objeto aninhado em um objeto
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora vamos dar uma olhada em um objeto um pouco mais complexo. As propriedades do objeto podem ser aninhadas em uma profundidade arbitrária e seus valores podem ser qualquer tipo de dados suportados pelo JavaScript, incluindo matrizes e até mesmo outros objetos. Considere o seguinte: <blockquote> deixe nestedObject = { <br> id: 28802695164, <br> data: &#39;31 de dezembro de 2016&#39;, <br> data: { <br> total de usuários: 99, <br> online: 80, <br> Status online: { <br> ativo: 67, <br> de distância: 13 <br> } <br> } <br> }; </blockquote> <code>nestedObject</code> tem três chaves exclusivas: <code>id</code> , cujo valor é um número, <code>date</code> cujo valor é uma string e <code>data</code> , cujo valor é um objeto que possui outro objeto aninhado dentro dele. Embora as estruturas possam se tornar rapidamente complexas, ainda podemos usar as mesmas notações para acessar as informações de que precisamos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Aqui nós definimos um objeto, <code>userActivity</code> , que inclui outro objeto aninhado dentro dele. Você pode modificar as propriedades nesse objeto aninhado da mesma maneira que modificou as propriedades no último desafio. Defina o valor da chave <code>online</code> para <code>45</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ console.log(userActivity);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

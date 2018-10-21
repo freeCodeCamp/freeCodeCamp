@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Retornar os maiores números em matrizes
 ---
 
-## Description
+## Descrição
 <section id="description"> Devolve um array que consiste no maior número de cada sub-array fornecido. Para simplificar, a matriz fornecida conterá exatamente quatro sub-matrizes. Lembre-se, você pode percorrer uma matriz com um loop for simples e acessar cada membro com a sintaxe de array <code>arr[i]</code> . Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 85
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

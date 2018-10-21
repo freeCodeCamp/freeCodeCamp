@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Converter entidades HTML
 ---
 
-## Description
+## Descrição
 <section id="description"> Converta os caracteres <code>&amp;</code> , <code>&lt;</code> , <code>&gt;</code> , <code>&quot;</code> (aspas duplas) e <code>&#39;</code> (apóstrofo), em uma string para as entidades HTML correspondentes. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se ficar preso. Tente emparelhar o programa. próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ convertHTML("Dolce & Gabbana");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

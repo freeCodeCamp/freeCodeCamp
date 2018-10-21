@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 288: um enorme fatorial'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para qualquer primo p o número N (p, q) é definido por N (p, q) = ∑n = 0 até q Tn * pn com Tn gerado pelo seguinte gerador de números aleatórios: <p> S0 = 290797 Sn + 1 = Sn2 mod 50515093 Tn = mod. </p><p> Seja Nfac (p, q) o fatorial de N (p, q). Seja NF (p, q) o número de fatores p em Nfac (p, q). </p><p> Você recebe o NF (3.10.000) mod 320 = 624955285. </p><p> Encontrar NF (61,107) mod 6110 </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler288();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

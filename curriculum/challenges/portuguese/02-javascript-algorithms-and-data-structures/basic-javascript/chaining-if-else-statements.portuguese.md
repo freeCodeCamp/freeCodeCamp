@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Encadeamento Se Mais Declarações
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>if/else</code> instruções podem ser encadeadas para lógica complexa. Aqui está o <dfn>pseudocódigo</dfn> de várias instruções encadeadas <code>if</code> / <code>else if</code> : <blockquote> if ( <em>condição1</em> ) { <br> <em>statement1</em> <br> } else if ( <em>condição2</em> ) { <br> <em>statement2</em> <br> } else if ( <em>condição3</em> ) { <br> <em>statement3</em> <br> . . . <br> } outro { <br> <em>statementN</em> <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva encadeado <code>if</code> / <code>else if</code> instruções preencherem as seguintes condições: <code>num &lt; 5</code> - return &quot;Tiny&quot; <br> <code>num &lt; 10</code> - retorna &quot;Pequeno&quot; <br> <code>num &lt; 15</code> - return &quot;Medium&quot; <br> <code>num &lt; 20</code> - retorna &quot;Grande&quot; <br> <code>num &gt;= 20</code> - retornar &quot;Enorme&quot; </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -48,7 +48,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,7 +73,7 @@ testSize(7);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

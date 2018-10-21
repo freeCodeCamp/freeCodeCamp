@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Definir a cabeça e o corpo de um documento HTML
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode adicionar outro nível de organização em seu documento HTML dentro das tags <code>html</code> com os elementos <code>head</code> e <code>body</code> . Qualquer marcação com informações sobre sua página entraria na tag <code>head</code> . Então, qualquer marcação com o conteúdo da página (o que é exibido para um usuário) entraria na tag <code>body</code> . Elementos de metadados, como <code>link</code> , <code>meta</code> , <code>title</code> e <code>style</code> , normalmente entram no elemento <code>head</code> . Aqui está um exemplo de layout de uma página: <blockquote> &lt;! DOCTYPE html&gt; <br> &lt;html&gt; <br> &lt;cabeça&gt; <br> &lt;! - elementos de metadados -&gt; <br> &lt;/ head&gt; <br> &lt;body&gt; <br> &lt;! - conteúdo da página -&gt; <br> &lt;/ body&gt; <br> &lt;/ html&gt; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Edite a marcação para que haja uma <code>head</code> e um <code>body</code> . O elemento <code>head</code> deve incluir apenas o <code>title</code> , e o elemento <code>body</code> deve incluir apenas o <code>h1</code> e o <code>p</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -57,7 +57,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

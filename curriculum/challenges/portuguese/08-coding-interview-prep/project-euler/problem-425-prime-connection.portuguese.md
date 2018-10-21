@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 425: Conexão Prime'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dois números positivos A e B são considerados conectados (denotados por &quot;A ↔ B&quot;) se uma dessas condições for válida: (1) A e B têm o mesmo comprimento e diferem em exatamente um dígito; por exemplo, 123 ↔ 173. (2) Adicionar um dígito à esquerda de A (ou B) torna B (ou A); por exemplo, 23 ↔ 223 e 123 ↔ 23. <p> Chamamos um par primo de P a 2 se existe uma cadeia de primos conectados entre 2 e P e nenhum primo na cadeia excede P. </p><p> Por exemplo, 127 é um parente de 2. Uma das cadeias possíveis é mostrada abaixo: 2 ↔ 3 ↔ 13 ↔ 113 ↔ 103 ↔ 107 ↔ 127 Entretanto, 11 e 103 não são parentes de 2. </p><p> Seja F (N) a soma dos primos ≤ N que não são parentes de 2. Podemos verificar que F (103) = 431 e F (104) = 78728. </p><p> Encontre F (107). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler425();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

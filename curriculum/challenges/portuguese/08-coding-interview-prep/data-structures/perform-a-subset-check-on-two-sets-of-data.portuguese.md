@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Executar uma verificação de subconjunto em dois conjuntos de dados
 ---
 
-## Description
+## Descrição
 <section id="description"> Neste exercício, vamos realizar um teste de subconjunto em dois conjuntos de dados. Vamos criar um método na nossa estrutura de dados <code>Set</code> chamado <code>subset</code> . Isto irá comparar o primeiro conjunto, contra o segundo e se o primeiro conjunto estiver totalmente contido dentro do Segundo, então ele retornará verdadeiro. Por exemplo, se <code>setA = [&#39;a&#39;,&#39;b&#39;]</code> e <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;]</code> , o subconjunto de setA e setB é: <code>setA.subset(setB)</code> deve ser <code>true</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -120,7 +120,7 @@ function Set() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

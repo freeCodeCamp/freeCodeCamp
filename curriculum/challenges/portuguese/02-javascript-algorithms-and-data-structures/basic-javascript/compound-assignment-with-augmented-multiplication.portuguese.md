@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Atribuição Composta Com Multiplicação Aumentada
 ---
 
-## Description
+## Descrição
 <section id="description"> O operador <code>*=</code> multiplica uma variável por um número. <code>myVar = myVar * 5;</code> irá multiplicar <code>myVar</code> por <code>5</code> . Isso pode ser reescrito como: <code>myVar *= 5;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Converta as atribuições de <code>a</code> , <code>b</code> e <code>c</code> para usar o operador <code>*=</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,7 +64,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Declarar Variáveis ​​de Cadeia
 ---
 
-## Description
+## Descrição
 <section id="description"> Anteriormente, usamos o código <code>var myName = &quot;your name&quot;;</code> <code>&quot;your name&quot;</code> é chamado <dfn>literal de</dfn> <dfn>string</dfn> . É uma string porque é uma série de zero ou mais caracteres entre aspas simples ou duplas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie duas novas variáveis ​​de <code>string</code> : <code>myFirstName</code> e <code>myLastName</code> e atribua a elas os valores de seu primeiro e último nome, respectivamente. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

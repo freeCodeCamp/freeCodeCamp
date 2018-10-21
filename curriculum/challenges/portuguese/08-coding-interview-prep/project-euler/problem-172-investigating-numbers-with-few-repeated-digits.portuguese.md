@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 172: Investigando números com poucos dígitos repetidos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Quantos números de 18 dígitos n (sem zeros à esquerda) existem de tal forma que nenhum dígito ocorre mais de três vezes em n? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler172();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

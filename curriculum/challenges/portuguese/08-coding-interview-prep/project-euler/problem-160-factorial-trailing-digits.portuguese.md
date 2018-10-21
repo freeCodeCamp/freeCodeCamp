@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 160: Dígitos Fatoriais'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para qualquer N, seja f (N) os últimos cinco dígitos antes dos zeros à direita em N !. Por exemplo, 9! = 362880 f (9) = 36288 10! = 3628800 f (10) = 36288 20! = 2432902008176640000 so f (20) = 17664 Encontre f (1.000.000.000.000) </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler160();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

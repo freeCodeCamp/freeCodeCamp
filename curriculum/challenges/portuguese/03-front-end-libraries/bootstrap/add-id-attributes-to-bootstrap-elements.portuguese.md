@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Adicionar atributos de identificação a elementos do bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Lembre-se de que, além dos atributos de classe, você pode atribuir a cada um dos seus elementos um atributo <code>id</code> . Cada ID deve ser exclusivo para um elemento específico e usado apenas uma vez por página. Vamos dar um id único para cada um dos nossos elementos <code>div</code> da classe <code>well</code> . Lembre-se que você pode dar a um elemento um id como este: <code>&lt;div class=&quot;well&quot; id=&quot;center-well&quot;&gt;</code> Dê ao poço à esquerda o id da <code>left-well</code> . Dê o bem à direita, o id da <code>right-well</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -61,7 +61,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

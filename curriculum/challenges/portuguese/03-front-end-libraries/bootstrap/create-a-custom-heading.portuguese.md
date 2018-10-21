@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar um título personalizado
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos fazer um simples rumo para o nosso aplicativo Cat Photo, colocando o título e a imagem relaxante do gato na mesma linha. Lembre-se, o Bootstrap usa um sistema de grade responsivo, o que facilita colocar elementos em linhas e especificar a largura relativa de cada elemento. A maioria das classes do Bootstrap pode ser aplicada a um elemento <code>div</code> . Aninhe sua primeira imagem e seu elemento <code>h2</code> em um único elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Aninhe seu elemento <code>h2</code> dentro de uma <code>&lt;div class=&quot;col-xs-8&quot;&gt;</code> e sua imagem em uma <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> para que eles estejam na mesma linha. Observe como a imagem é agora apenas o tamanho certo para caber ao longo do texto? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -100,7 +100,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

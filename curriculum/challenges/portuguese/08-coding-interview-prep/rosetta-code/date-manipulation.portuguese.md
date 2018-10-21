@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Manipulação de data
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Dada uma string de data em EST, imprima a data fornecida como uma string com 12 horas adicionadas ao tempo. </p><p> O fuso horário deve ser preservado. </p><p> Exemplo de entrada: </p><p> <code>&quot;March 7 2009 7:30pm EST&quot;</code> </p> <p> Exemplo de saída: </p><p> <code>&quot;March 8 2009 7:30am EST&quot;</code> </p> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,7 +64,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

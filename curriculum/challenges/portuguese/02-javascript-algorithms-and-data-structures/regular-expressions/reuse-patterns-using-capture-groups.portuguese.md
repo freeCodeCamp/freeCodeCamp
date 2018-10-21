@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Reutilizar padrões usando grupos de captura
 ---
 
-## Description
+## Descrição
 <section id="description"> Alguns padrões que você procura irão ocorrer várias vezes em uma string. É um desperdício repetir manualmente esse regex. Existe uma maneira melhor de especificar quando você tem várias substrings de repetição em sua string. Você pode pesquisar substrings de repetição usando <code>capture groups</code> . Parênteses, <code>(</code> e <code>)</code> , são usados ​​para encontrar substrings de repetição. Você coloca o regex do padrão que será repetido entre os parênteses. Para especificar onde essa sequência de repetição aparecerá, use uma barra invertida ( <code>\</code> ) e, em seguida, um número. Esse número começa em 1 e aumenta com cada grupo de captura adicional usado. Um exemplo seria <code>\1</code> para corresponder ao primeiro grupo. O exemplo abaixo corresponde a qualquer palavra que ocorre duas vezes separada por um espaço: <blockquote> let repeatStr = &quot;regex regex&quot;; <br> deixe o repeatRegex = / (\ w +) \ s \ 1 /; <br> repeatRegex.test (repeatStr); // Retorna true <br> repeatStr.match (repeatRegex); // Retorna [&quot;regex regex&quot;, &quot;regex&quot;] </blockquote> Usar o método <code>.match()</code> em uma string retornará uma matriz com a string correspondente, junto com seu grupo de captura. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>capture groups</code> em <code>reRegex</code> para corresponder números que são repetidos apenas três vezes em uma cadeia, cada um separado por um espaço. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ let result = reRegex.test(repeatNum);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

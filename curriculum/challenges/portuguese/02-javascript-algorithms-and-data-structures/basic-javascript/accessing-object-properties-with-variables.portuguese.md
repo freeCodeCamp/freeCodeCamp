@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Acessando propriedades de objetos com variáveis
 ---
 
-## Description
+## Descrição
 <section id="description"> Outro uso da notação de colchetes em objetos é acessar uma propriedade que é armazenada como o valor de uma variável. Isso pode ser muito útil para iterar pelas propriedades de um objeto ou ao acessar uma tabela de pesquisa. Aqui está um exemplo de uso de uma variável para acessar uma propriedade: <blockquote> var dogs = { <br> Fido: &quot;Mutt&quot;, Hunter: &quot;Doberman&quot;, Snoopie: &quot;Beagle&quot; <br> }; <br> var myDog = &quot;Caçador&quot;; <br> var myBreed = cachorros [myDog]; <br> console.log (myBreed); // &quot;Doberman&quot; </blockquote> Outra maneira de usar esse conceito é quando o nome da propriedade é coletado dinamicamente durante a execução do programa, da seguinte maneira: <blockquote> var someObj = { <br> propName: &quot;John&quot; <br> }; <br> function propPrefix (str) { <br> var s = &quot;prop&quot;; <br> return s + str; <br> } <br> var someProp = propPrefix (&quot;Nome&quot;); // someProp agora contém o valor &#39;propName&#39; <br> console.log (someObj [someProp]); // &quot;John&quot; </blockquote> Observe que <em>não</em> usamos aspas ao redor do nome da variável ao usá-lo para acessar a propriedade porque estamos usando o <em>valor</em> da variável, não o <em>nome</em> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a variável <code>playerNumber</code> para procurar o player <code>16</code> em <code>testObj</code> usando a notação de colchetes. Em seguida, atribua esse nome à variável do <code>player</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,7 +69,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

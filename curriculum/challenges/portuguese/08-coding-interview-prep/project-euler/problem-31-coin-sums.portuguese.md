@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 31: somas de moeda'
 ---
 
-## Description
+## Descrição
 <section id="description"> Na Inglaterra, a moeda é composta de libras, libras e moedas, e há oito moedas em circulação: 1p, 2p, 5p, 10p, 20p, 50p, £ 1 (100p) e £ 2 (200p). É possível fazer £ 2 da seguinte maneira: 1 × 1 + 1 × 50p + 2 × 20p + 1 × 5p + 1 × 2p + 3 × 1p De quantas maneiras diferentes podem ser feitas (£) usando qualquer número de moedas? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ coinSums(200);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

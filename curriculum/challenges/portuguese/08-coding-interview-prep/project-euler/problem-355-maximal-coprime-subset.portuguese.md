@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 355: subconjunto de coprime máximo'
 ---
 
-## Description
+## Descrição
 <section id="description"> Defina Co (n) como a soma máxima possível de um conjunto de elementos mutuamente co-primos de {1, 2, ..., n}. Por exemplo, Co (10) é 30 e atinge o máximo no subconjunto {1, 5, 7, 8, 9}. <p> Você está dado que Co (30) = 193 e Co (100) = 1356. </p><p> Encontre Co (200000). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler355();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

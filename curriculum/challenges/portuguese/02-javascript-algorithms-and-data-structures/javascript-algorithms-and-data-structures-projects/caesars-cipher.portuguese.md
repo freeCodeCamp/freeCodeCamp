@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Cifra Caesars
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma das <dfn>cifras</dfn> mais simples e mais conhecidas é uma <code>Caesar cipher</code> , também conhecida como <code>shift cipher</code> . Em uma <code>shift cipher</code> os significados das letras são alterados por um determinado valor. Um uso moderno comum é a cifra <a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a> , onde os valores das letras são deslocados para 13 lugares. Assim &#39;A&#39; ↔ &#39;N&#39;, &#39;B&#39; ↔ &#39;O&#39; e assim por diante. Escreva uma função que tenha uma string codificada em <a href="https://en.wikipedia.org/wiki/ROT13" target="_blank">ROT13</a> como entrada e retorne uma string decodificada. Todas as letras serão maiúsculas. Não transforme qualquer caractere não alfabético (ou seja, espaços, pontuação), mas passe-os adiante. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ rot13("SERR PBQR PNZC");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

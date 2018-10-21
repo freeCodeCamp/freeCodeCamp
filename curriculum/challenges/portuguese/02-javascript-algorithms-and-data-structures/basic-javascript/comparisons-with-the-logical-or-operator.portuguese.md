@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comparações com o lógico ou operador
 ---
 
-## Description
+## Descrição
 <section id="description"> O <dfn>lógico ou</dfn> operador ( <code>||</code> ) retorna <code>true</code> se qualquer um dos <dfn>operandos</dfn> for <code>true</code> . Caso contrário, retorna <code>false</code> . O <dfn>lógico ou</dfn> operador é composto de dois símbolos de pipe ( <code>|</code> ). Isso geralmente pode ser encontrado entre as teclas Backspace e Enter. O padrão abaixo deve parecer familiar a partir de waypoints anteriores: <blockquote> if (num&gt; 10) { <br> return &quot;não&quot;; <br> } <br> if (num &lt;5) { <br> return &quot;não&quot;; <br> } <br> return &quot;Sim&quot;; </blockquote> retornará &quot;Sim&quot; somente se <code>num</code> for entre <code>5</code> e <code>10</code> (5 e 10 incluídos). A mesma lógica pode ser escrita como: <blockquote> if (num&gt; 10 || num &lt;5) { <br> return &quot;não&quot;; <br> } <br> return &quot;Sim&quot;; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Combine as duas declarações <code>if</code> em uma declaração que retorne <code>&quot;Outside&quot;</code> se <code>val</code> não estiver entre <code>10</code> e <code>20</code> , inclusive. Caso contrário, retorne <code>&quot;Inside&quot;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -74,7 +74,7 @@ testLogicalOr(15);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

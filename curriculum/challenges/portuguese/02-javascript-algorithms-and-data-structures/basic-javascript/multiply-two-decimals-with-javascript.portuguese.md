@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Multiplique dois decimais com JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Em JavaScript, você também pode realizar cálculos com números decimais, como números inteiros. Vamos multiplicar dois decimais juntos para obter seu produto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o valor <code>0.0</code> para que o produto seja igual a <code>5.0</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use uma expressão ternária para renderização condicional
 ---
 
-## Description
+## Descrição
 <section id="description"> Antes de passar para as técnicas de renderização dinâmica, há uma última maneira de usar condicionais JavaScript internos para renderizar o que você deseja: o <em><strong>operador ternário</strong></em> . O operador ternário é frequentemente utilizado como um atalho para instruções <code>if/else</code> em JavaScript. Eles não são tão robustos quanto as tradicionais declarações <code>if/else</code> , mas são muito populares entre os desenvolvedores do React. Uma razão para isso é devido ao modo como o JSX é compilado, <code>if/else</code> instruções <code>if/else</code> não puderem ser inseridas diretamente no código JSX. Você deve ter percebido isso há alguns anos atrás - quando uma declaração <code>if/else</code> era necessária, estava sempre <em>fora</em> da declaração de <code>return</code> . Expressões ternárias podem ser uma excelente alternativa se você quiser implementar uma lógica condicional no seu JSX. Lembre-se de que um operador ternário possui três partes, mas você pode combinar várias expressões ternárias juntas. Aqui está a sintaxe básica: <blockquote> condição? expressionIfTrue: expressionIfFalse </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código possui três constantes definidas no método <code>render()</code> do componente <code>CheckUserAge</code> . Eles são chamados de <code>buttonOne</code> , <code>buttonTwo</code> e <code>buttonThree</code> . Cada uma delas é atribuída a uma expressão simples de JSX representando um elemento de botão. Primeiro, inicialize o estado de <code>CheckUserAge</code> com <code>input</code> e <code>userAge</code> ambos configurados para valores de uma string vazia. Depois que o componente estiver renderizando informações para a página, os usuários devem ter uma maneira de interagir com ele. Na instrução de <code>return</code> do componente, configure uma expressão ternária que implemente a seguinte lógica: quando a página carregar pela primeira vez, renderize o botão de envio, <code>buttonOne</code> , na página. Em seguida, quando um usuário digitar sua idade e clicar no botão, processe um botão diferente com base na idade. Se um usuário digitar um número menor que <code>18</code> , renderize <code>buttonThree</code> . Se um usuário digitar um número maior ou igual a <code>18</code> , <code>buttonTwo</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -104,7 +104,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

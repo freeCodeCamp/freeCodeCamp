@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Crie uma forma mais complexa usando CSS e HTML
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma das formas mais populares do mundo é a forma do coração, e neste desafio você criará um usando CSS puro. Mas primeiro, você precisa entender os pseudo-elementos <code>::before</code> e <code>::after</code> . Esses pseudo-elementos são usados ​​para adicionar algo antes ou depois de um elemento selecionado. No exemplo a seguir, um pseudoelemento <code>::before</code> é usado para adicionar um retângulo a um elemento com o <code>heart</code> da classe: <blockquote> .heart :: before { <br> conteúdo: &quot;&quot;; <br> cor de fundo: amarelo; <br> raio de fronteira: 25%; <br> posição: absoluta; <br> altura: 50 px; <br> largura: 70px; <br> top: -50px; <br> esquerda: 5px; <br> } </blockquote> Para que os pseudo-elementos <code>::before</code> e <code>::after</code> funcionem corretamente, eles devem ter uma propriedade de <code>content</code> definida. Essa propriedade geralmente é usada para adicionar itens como uma foto ou texto ao elemento selecionado. Quando os pseudoelementos <code>::before</code> e <code>::after</code> são usados ​​para criar formas, a propriedade <code>content</code> ainda é necessária, mas é definida como uma string vazia. No exemplo acima, o elemento com a classe <code>heart</code> possui um pseudoelemento <code>::before</code> que produz um retângulo amarelo com <code>height</code> e <code>width</code> de 50px e 70px, respectivamente. Este retângulo tem cantos arredondados devido ao seu raio de 25% e está posicionado absolutamente a 5px da <code>left</code> e 50px acima da <code>top</code> do elemento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Transforme o elemento na tela em um coração. No <code>heart::after</code> selector, mude a <code>background-color</code> para pink e o <code>border-radius</code> para 50%. Em seguida, segmente o elemento com o <code>heart</code> da classe (apenas <code>heart</code> ) e preencha a propriedade <code>transform</code> . Use a função <code>rotate()</code> com -45 graus. ( <code>rotate()</code> funciona da mesma forma que <code>skewX()</code> e <code>skewY()</code> ). Finalmente, no <code>heart::before</code> selector, defina sua propriedade <code>content</code> para uma string vazia. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

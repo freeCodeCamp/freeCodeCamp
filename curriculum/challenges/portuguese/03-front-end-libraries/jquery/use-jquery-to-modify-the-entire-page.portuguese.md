@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Use jQuery para modificar a página inteira
 ---
 
-## Description
+## Descrição
 <section id="description"> Acabamos de brincar com nosso playground da jQuery. Vamos derrubá-lo! O jQuery também pode segmentar o elemento <code>body</code> . Veja como faríamos todo o corpo desaparecer: <code>$(&quot;body&quot;).addClass(&quot;animated fadeOut&quot;);</code> Mas vamos fazer algo mais dramático. Adicione as classes <code>animated</code> e <code>hinge</code> ao elemento do <code>body</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,7 +81,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

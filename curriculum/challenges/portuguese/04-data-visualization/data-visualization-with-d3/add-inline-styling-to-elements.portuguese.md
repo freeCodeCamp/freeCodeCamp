@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Adicionar estilo inline aos elementos
 ---
 
-## Description
+## Descrição
 <section id="description"> D3 permite adicionar estilos CSS inline em elementos dinâmicos com o método <code>style()</code> . O método <code>style()</code> usa um par de valores-chave separados por vírgulas como argumento. Aqui está um exemplo para definir a cor do texto da seleção para azul: <code>selection.style(&quot;color&quot;,&quot;blue&quot;);</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o método <code>style()</code> ao código no editor para fazer com que todo o texto exibido tenha uma <code>font-family</code> de <code>font-family</code> de <code>verdana</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -59,7 +59,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

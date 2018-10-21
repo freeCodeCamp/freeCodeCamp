@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 44: números do Pentágono'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os números pentagonais são gerados pela fórmula, P <sub>n</sub> = <var>n</var> (3 <var>n</var> −1) / 2. Os primeiros dez números pentagonais são: <span style="display: block; text-align: center;">1, 5, 12, 22, 35, 51, 70, 92, 117, 145, ...</span> Pode-se ver que P <sub>4</sub> + P <sub>7</sub> = 22 + 70 = 92 = P <sub>8</sub> . No entanto, sua diferença, 70 - 22 = 48, não é pentagonal. Encontre o par de números pentagonais, P <sub>j</sub> e P <sub>k</sub> , cuja soma e diferença são pentagonais e D = | P <sub>k</sub> - P <sub>j</sub> | é minimizado; qual é o valor de D? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ pentagonNumbers();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

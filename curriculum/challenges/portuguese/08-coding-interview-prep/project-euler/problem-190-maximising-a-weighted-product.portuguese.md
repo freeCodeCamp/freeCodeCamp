@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 190: Maximizando um Produto Ponderado'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja Sm = (x1, x2, ..., xm) a m-tupla de números reais positivos com x1 + x2 + ... + xm = m para os quais Pm = x1 * x22 * ... * xmm é maximizado . <p> Por exemplo, pode ser verificado que [P10] = 4112 ([] é a função da parte inteira). </p><p> Encontre Σ [Pm] para 2 ≤ m ≤ 15. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler190();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

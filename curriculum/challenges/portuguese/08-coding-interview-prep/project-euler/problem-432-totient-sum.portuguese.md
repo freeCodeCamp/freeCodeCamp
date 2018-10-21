@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja S (n, m) = ∑φ (n × i) para 1 ≤ i ≤ m. (φ é a função totiente de Euler) Você recebe o S (510510,106) = 45480596821125120. <p> Encontre S (510510,1011). Dê os últimos 9 dígitos da sua resposta. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler432();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

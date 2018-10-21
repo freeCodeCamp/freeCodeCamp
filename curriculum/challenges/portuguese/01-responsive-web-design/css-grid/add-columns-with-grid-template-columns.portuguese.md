@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar colunas com colunas de modelo de grade
 ---
 
-## Description
+## Descrição
 <section id="description"> Simplesmente criar um elemento de grade não te leva muito longe. Você precisa definir a estrutura da grade também. Para adicionar algumas colunas à grade, use a propriedade <code>grid-template-columns</code> em um contêiner de grade, conforme demonstrado abaixo: <blockquote> .container { <br> display: grade; <br> grid-template-columns: 50px 50px; <br> } </blockquote> Isso dará à sua grade duas colunas com 50 pixels de largura cada. O número de parâmetros fornecidos para a propriedade <code>grid-template-columns</code> indica o número de colunas na grade e o valor de cada parâmetro indica a largura de cada coluna. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dê ao contêiner de grade três colunas com <code>100px</code> largura cada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,7 +65,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

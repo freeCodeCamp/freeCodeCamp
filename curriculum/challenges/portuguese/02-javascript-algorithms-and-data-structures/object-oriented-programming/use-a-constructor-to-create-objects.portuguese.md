@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use um construtor para criar objetos
 ---
 
-## Description
+## Descrição
 <section id="description"> Aqui está o construtor <code>Bird</code> do desafio anterior: <blockquote> função Bird () { <br> this.name = &quot;Albert&quot;; <br> this.color = &quot;azul&quot;; <br> this.numLegs = 2; <br> // &quot;this&quot; dentro do construtor sempre se refere ao objeto que está sendo criado <br> } <br><br> deixe blueBird = new Bird (); </blockquote> Observe que o <code>new</code> operador é usado ao chamar um construtor. Isso diz ao JavaScript para criar uma nova <code>instance</code> do <code>Bird</code> chamada <code>blueBird</code> . Sem o <code>new</code> operador, <code>this</code> dentro do construtor não apontaria para o objeto recém-criado, dando resultados inesperados. Agora <code>blueBird</code> tem todas as propriedades definidas dentro do construtor <code>Bird</code> : <blockquote> blueBird.name; // =&gt; Albert <br> blueBird.color; // =&gt; azul <br> blueBird.numLegs; // =&gt; 2 </blockquote> Assim como qualquer outro objeto, suas propriedades podem ser acessadas e modificadas: <blockquote> blueBird.name = &#39;Elvira&#39;; <br> blueBird.name; // =&gt; Elvira </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o construtor <code>Dog</code> da última lição para criar uma nova instância de <code>Dog</code> , atribuindo-a a um <code>hound</code> variável. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,7 +47,7 @@ function Dog() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

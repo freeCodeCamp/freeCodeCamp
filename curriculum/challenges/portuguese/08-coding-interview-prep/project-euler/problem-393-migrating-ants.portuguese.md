@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 393: Migrando Formigas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma grade n × n de quadrados contém n2 formigas, uma formiga por quadrado. Todas as formigas decidem se mover simultaneamente para um quadrado adjacente (geralmente 4 possibilidades, exceto para formigas na borda da grade ou nos cantos). Nós definimos f (n) como o número de maneiras que isso pode acontecer sem quaisquer formigas que terminem no mesmo quadrado e sem quaisquer duas formigas cruzando a mesma borda entre dois quadrados. <p> Você recebe f (4) = 88. Encontre f (10). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler393();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

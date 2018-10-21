@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Crie um formulário controlado
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio mostrou que o React pode controlar o estado interno de certos elementos como <code>input</code> e área de <code>textarea</code> , o que os torna componentes controlados. Isso se aplica também a outros elementos de formulário, incluindo o elemento de <code>form</code> HTML regular. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O componente <code>MyForm</code> é configurado com um <code>form</code> vazio com um manipulador de envio. O manipulador de envio será chamado quando o formulário for enviado. Adicionamos um botão que envia o formulário. Você pode ver que ele tem o <code>type</code> configurado para <code>submit</code> indicando que é o botão que controla o formulário. Adicione o elemento de <code>input</code> no <code>form</code> e defina seu <code>value</code> e os atributos <code>onChange()</code> como o último desafio. Você deve, em seguida, completar o <code>handleSubmit</code> método para que ele define a propriedade estado do componente <code>submit</code> ao valor de entrada atual no local de <code>state</code> . <strong>Nota:</strong> Você também deve chamar <code>event.preventDefault()</code> no manipulador de envio, para evitar o comportamento de envio de formulário padrão que atualizará a página da web. Finalmente, crie uma tag <code>h1</code> após o <code>form</code> que renderiza o valor de <code>submit</code> do <code>state</code> do componente. Você pode então digitar o formulário e clicar no botão (ou pressionar enter), e você deverá ver sua entrada renderizada para a página. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -92,7 +92,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

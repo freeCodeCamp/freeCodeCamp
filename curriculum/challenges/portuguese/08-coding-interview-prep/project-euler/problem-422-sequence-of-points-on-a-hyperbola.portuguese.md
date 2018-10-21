@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: 'Problema 422: Sequência de pontos em uma hipérbole'
 ---
 
-## Description
+## Descrição
 undefined
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,7 +45,7 @@ euler422();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

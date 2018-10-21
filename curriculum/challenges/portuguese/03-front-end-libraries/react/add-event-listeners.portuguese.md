@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Adicionar ouvintes de eventos
 ---
 
-## Description
+## Descrição
 <section id="description"> O método <code>componentDidMount()</code> também é o melhor local para anexar qualquer ouvinte de evento que você precise adicionar para funcionalidade específica. O React fornece um sistema de eventos sintéticos que envolve o sistema de eventos nativo presente nos navegadores. Isso significa que o sistema de eventos sintéticos se comporta exatamente da mesma maneira, independentemente do navegador do usuário - mesmo que os eventos nativos possam se comportar de maneira diferente entre diferentes navegadores. Você já usou alguns desses manipuladores de eventos sintéticos, como <code>onClick()</code> . O sistema de eventos sintéticos do React é ótimo para usar na maioria das interações que você gerencia em elementos DOM. No entanto, se você deseja anexar um manipulador de eventos aos objetos de documento ou janela, é necessário fazer isso diretamente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Anexe um ouvinte de evento no método <code>componentDidMount()</code> para eventos <code>keydown</code> e faça com que esses eventos acionem o retorno de chamada <code>handleKeyPress()</code> . Você pode usar <code>document.addEventListener()</code> que considera o evento (entre aspas) como o primeiro argumento e o retorno de chamada como o segundo argumento. Em seguida, em <code>componentWillUnmount()</code> , remova esse mesmo ouvinte de evento. Você pode passar os mesmos argumentos para <code>document.removeEventListener()</code> . É uma boa prática usar esse método de ciclo de vida para fazer qualquer limpeza nos componentes do React antes que eles sejam desmontados e destruídos. A remoção de ouvintes de eventos é um exemplo de uma dessas ações de limpeza. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -89,7 +89,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

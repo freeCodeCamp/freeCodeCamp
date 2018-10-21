@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Escopo global vs. local em funções
 ---
 
-## Description
+## Descrição
 <section id="description"> É possível ter variáveis <dfn>locais</dfn> e <dfn>globais</dfn> com o mesmo nome. Quando você faz isso, a variável <code>local</code> tem precedência sobre a variável <code>global</code> . Neste exemplo: <blockquote> var someVar = &quot;Chapéu&quot;; <br> function myFun () { <br> var someVar = &quot;Head&quot;; <br> return someVar; <br> } </blockquote> A função <code>myFun</code> retornará <code>&quot;Head&quot;</code> porque a versão <code>local</code> da variável está presente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione uma variável local à função <code>myOutfit</code> para substituir o valor de <code>outerWear</code> por <code>&quot;sweater&quot;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ myOutfit();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

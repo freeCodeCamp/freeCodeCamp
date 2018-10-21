@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Definir o tamanho da fonte para vários elementos de cabeçalho
 ---
 
-## Description
+## Descrição
 <section id="description"> A propriedade <code>font-size</code> é usada para especificar o tamanho do texto em um determinado elemento. Essa regra pode ser usada para vários elementos para criar consistência visual de texto em uma página. Nesse desafio, você definirá os valores de todas as tags <code>h1</code> a <code>h6</code> para equilibrar os tamanhos dos títulos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"><ul><li> Defina o <code>font-size</code> da <code>font-size</code> da tag <code>h1</code> para 68 px. </li><li> Defina o <code>font-size</code> da <code>font-size</code> da tag <code>h2</code> para 52px. </li><li> Defina o <code>font-size</code> da <code>font-size</code> da tag <code>h3</code> para 40px. </li><li> Defina o <code>font-size</code> da <code>font-size</code> da tag <code>h4</code> para 32px. </li><li> Defina o <code>font-size</code> da <code>font-size</code> da tag <code>h5</code> para 21px. </li><li> Defina o <code>font-size</code> da <code>font-size</code> da tag <code>h6</code> para 14px. </li></ul></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,7 +63,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

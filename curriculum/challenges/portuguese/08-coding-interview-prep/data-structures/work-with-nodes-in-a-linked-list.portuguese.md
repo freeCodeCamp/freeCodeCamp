@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Trabalhar com nós em uma lista vinculada
 ---
 
-## Description
+## Descrição
 <section id="description"> Outra estrutura de dados comum que você encontrará na ciência da computação é a <dfn>lista encadeada</dfn> . Uma lista encadeada é uma coleção linear de elementos de dados, chamados &#39;nós&#39;, cada um dos quais aponta para o próximo. Cada <dfn>nó</dfn> de uma lista vinculada contém duas informações importantes: o próprio <code>element</code> e uma referência ao próximo <code>node</code> . Imagine que você está em uma fila de conga. Você tem as mãos na próxima pessoa na linha, e a pessoa atrás de você tem as mãos em você. Você pode ver a pessoa à sua frente, mas eles estão bloqueando a visão das outras pessoas à frente na fila. Um nó é como uma pessoa em uma fila de conga: eles sabem quem são e só podem ver a próxima pessoa na fila, mas não estão cientes das outras pessoas à frente ou atrás delas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Em nosso editor de código, criamos dois nós, <code>Kitten</code> e <code>Puppy</code> , e conectamos manualmente o nó <code>Kitten</code> ao nó <code>Puppy</code> . Crie um nó <code>Cat</code> and <code>Dog</code> e adicione-os manualmente à linha. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ console.log(Kitten.next);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

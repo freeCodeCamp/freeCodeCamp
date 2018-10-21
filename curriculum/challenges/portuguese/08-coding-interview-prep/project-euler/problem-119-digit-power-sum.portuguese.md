@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 119: soma de poder de dígito'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número 512 é interessante porque é igual à soma de seus dígitos aumentados para alguma potência: 5 + 1 + 2 = 8 e 83 = 512. Outro exemplo de um número com essa propriedade é 614656 = 284. Vamos definir um ser o enésimo termo desta sequência e insistir que um número deve conter pelo menos dois dígitos para ter uma soma. Você recebe a2 = 512 e a10 = 614656. Encontre a30. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler119();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

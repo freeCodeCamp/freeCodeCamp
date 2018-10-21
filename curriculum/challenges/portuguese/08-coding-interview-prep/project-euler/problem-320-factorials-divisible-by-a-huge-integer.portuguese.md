@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 320: Factorials divisíveis por um inteiro enorme'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja N (i) o menor inteiro n tal que n! é divisível por (i!) 1234567890 <p> Seja S (u) = ∑N (i) para 10 ≤ i ≤ u. </p><p> S (1000) = 614538266565663. </p><p> Encontre S (1 000 000) mod 1018. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler320();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

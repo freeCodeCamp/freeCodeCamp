@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar um conjunto de botões de rádio
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode usar <code>radio buttons</code> de <code>radio buttons</code> para perguntas nas quais deseja que o usuário só forneça uma resposta dentre várias opções. Botões de rádio são um tipo de <code>input</code> . Cada um dos seus botões de opção pode ser aninhado em seu próprio elemento de <code>label</code> . Ao envolver um elemento de <code>input</code> dentro de um elemento de <code>label</code> , ele associará automaticamente a entrada do botão de opção ao elemento de rótulo em torno dele. Todos os botões de opção relacionados devem ter o mesmo atributo de <code>name</code> para criar um grupo de botões de opção. Ao criar um grupo de rádio, a seleção de um único botão de opção desmarcará automaticamente os outros botões dentro do mesmo grupo, garantindo que apenas uma resposta seja fornecida pelo usuário. Aqui está um exemplo de um botão de opção: <blockquote> &lt;label&gt; <br> &lt;input type = &quot;radio&quot; name = &quot;interior-exterior&quot;&gt; Interior <br> &lt;/ label&gt; </blockquote> É considerado uma boa prática definir um atributo <code>for</code> no elemento <code>label</code> , com um valor que corresponda ao valor do atributo <code>id</code> do elemento <code>input</code> . Isso permite que tecnologias assistivas criem um relacionamento vinculado entre o rótulo e o elemento de <code>input</code> filho. Por exemplo: <blockquote> &lt;label for = &quot;indoor&quot;&gt; <br> &lt;input id = &quot;indoor&quot; type = &quot;rádio&quot; name = &quot;interior-exterior&quot;&gt; Interior <br> &lt;/ label&gt; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione um par de botões de opção ao formulário, cada um aninhado em seu próprio elemento de rótulo. Deve-se ter a opção de <code>indoor</code> e o outro deve ter a opção de <code>outdoor</code> . Ambos devem compartilhar o atributo <code>name</code> de <code>indoor-outdoor</code> para criar um grupo de rádio. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -74,7 +74,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

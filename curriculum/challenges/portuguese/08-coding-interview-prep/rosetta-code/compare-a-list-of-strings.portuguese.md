@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Compare uma lista de strings
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Dada uma <a href="https://en.wikipedia.org/wiki/List_(abstract_data_type)" title="wp: List_ (abstract_data_type)">lista</a> arbitrariamente de muitas strings, implemente uma função para cada uma das seguintes condições: </p> teste se todos são lexicamente iguais se todas as seqüências de caracteres forem lexicamente menores do que a seguinte (ou seja, se a lista está em ordem crescente) </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -47,7 +47,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -79,7 +79,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

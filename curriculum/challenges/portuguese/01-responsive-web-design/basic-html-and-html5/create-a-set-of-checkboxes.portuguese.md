@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar um conjunto de caixas de seleção
 ---
 
-## Description
+## Descrição
 <section id="description"> Os formulários geralmente usam <code>checkboxes</code> de <code>checkboxes</code> para perguntas que podem ter mais de uma resposta. Caixas de seleção são um tipo de <code>input</code> Cada uma de suas caixas de seleção pode ser aninhada em seu próprio elemento de <code>label</code> . Ao envolver um elemento de <code>input</code> dentro de um elemento de <code>label</code> , ele associará automaticamente a entrada da caixa de seleção ao elemento de rótulo que a envolve. Todas as entradas da caixa de seleção relacionadas devem ter o mesmo atributo de <code>name</code> . É considerada a melhor prática definir explicitamente o relacionamento entre uma <code>input</code> caixa de seleção e seu <code>label</code> correspondente <code>label</code> definindo o atributo <code>for</code> no elemento <code>label</code> para corresponder ao atributo <code>id</code> do elemento de <code>input</code> associado. Aqui está um exemplo de uma caixa de seleção: <code>&lt;label for=&quot;loving&quot;&gt;&lt;input id=&quot;loving&quot; type=&quot;checkbox&quot; name=&quot;personality&quot;&gt; Loving&lt;/label&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione ao seu formulário um conjunto de três caixas de seleção. Cada caixa de seleção deve estar aninhada em seu próprio elemento <code>label</code> . Todos os três devem compartilhar o atributo do <code>name</code> da <code>personality</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,7 +70,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

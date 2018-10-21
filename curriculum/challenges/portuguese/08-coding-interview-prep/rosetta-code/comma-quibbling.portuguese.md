@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Vírgula, quibbling'
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Comma quibbling é uma tarefa originalmente definida por Eric Lippert em seu <a href="http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx" title="link: http://blogs.msdn.com/b/ericlippert/archive/2009/04/15/comma-quibbling.aspx">blog</a> . </p> Tarefa: <p> Escreva uma função para gerar uma saída de string que é a concatenação de palavras de entrada de uma lista / sequência onde: </p> Uma entrada sem palavras produz a sequência de saída de apenas os dois caracteres de chave &quot;{}&quot;. Uma entrada de apenas uma palavra, por exemplo, [&quot;ABC&quot;], produz a string de saída da palavra dentro das duas chaves, por exemplo, &quot;{ABC}&quot;. Uma entrada de duas palavras, por exemplo, [&quot;ABC&quot;, &quot;DEF&quot;], produz a string de saída das duas palavras dentro das duas chaves, com as palavras separadas pela string &quot;e&quot;, por exemplo, &quot;{ABC e DEF}&quot;. Uma entrada de três ou mais palavras, por exemplo, [&quot;ABC&quot;, &quot;DEF&quot;, &quot;G&quot;, &quot;H&quot;], produz a string de saída de todas menos a última palavra separada por &quot;,&quot; com a última palavra separada por &quot;e &quot;e tudo dentro de chaves; por exemplo, &quot;{ABC, DEF, G e H}&quot;. <p> Teste sua função com as seguintes séries de entradas mostrando sua saída aqui nesta página: </p> [] # (Sem palavras de entrada). [&quot;ABC&quot;] [&quot;ABC&quot;, &quot;DEF&quot;] [&quot;ABC&quot;, &quot;DEF&quot;, &quot;G&quot;, &quot;H&quot;] <p> Nota: Suponha que as palavras sejam sequências não vazias de caracteres maiúsculos para esta tarefa. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

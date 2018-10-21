@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Abrigue nossa página dentro de um div de container-fluido de Bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora, vamos garantir que todo o conteúdo da sua página seja responsivo para dispositivos móveis. Vamos aninhar seu elemento <code>h3</code> dentro de um elemento <code>div</code> com a classe <code>container-fluid</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -45,7 +45,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

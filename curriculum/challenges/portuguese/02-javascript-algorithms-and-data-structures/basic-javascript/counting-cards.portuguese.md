@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Contando Cartões
 ---
 
-## Description
+## Descrição
 <section id="description"> No jogo de cassino Blackjack, um jogador pode ganhar uma vantagem sobre a casa, mantendo o controle do número relativo de cartas altas e baixas remanescentes no baralho. Isso é chamado <a href="https://en.wikipedia.org/wiki/Card_counting" target="_blank">de contagem de cartão</a> . Ter mais cartas altas restantes no baralho favorece o jogador. Cada cartão recebe um valor de acordo com a tabela abaixo. Quando a contagem é positiva, o jogador deve apostar alto. Quando a contagem é zero ou negativa, o jogador deve apostar baixo. <table class="table table-striped"><thead><tr><th> Mudança de contagem </th><th> Postais </th></tr></thead><tbody><tr><td> +1 </td><td> 2, 3, 4, 5, 6 </td></tr><tr><td> 0 </td><td> 7, 8, 9 </td></tr><tr><td> -1 </td><td> 10, &#39;J&#39;, &#39;Q&#39;, &#39;K&#39;, &#39;A&#39; </td></tr></tbody></table> Você vai escrever uma função de contagem de cartões. Ele receberá um parâmetro de <code>card</code> , que pode ser um número ou uma sequência, e incrementará ou decrementará a variável de <code>count</code> global de acordo com o valor da carta (consulte a tabela). A função retornará uma string com a contagem atual e a string <code>Bet</code> se a contagem for positiva ou <code>Hold</code> se a contagem for zero ou negativa. A contagem atual e a decisão do jogador ( <code>Bet</code> ou <code>Hold</code> ) devem ser separadas por um único espaço. <strong>Exemplo de saída</strong> <br> <code>-3 Hold</code> <br> <code>5 Bet</code> <strong>dica de</strong> <code>5 Bet</code> <br> NÃO redefina a <code>count</code> para 0 quando o valor for 7, 8 ou 9. <br> NÃO retorne um array. <br> NÃO inclua aspas (simples ou dupla) na saída. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ cc(2); cc(3); cc(7); cc('K'); cc('A');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

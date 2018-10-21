@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 249: soma subconjunto Prime'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja S = {2, 3, 5, ..., 4999} o conjunto de números primos menores que 5000. Encontre o número de subconjuntos de S, cuja soma de elementos é um número primo. Digite os 16 dígitos mais à direita como sua resposta. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler249();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

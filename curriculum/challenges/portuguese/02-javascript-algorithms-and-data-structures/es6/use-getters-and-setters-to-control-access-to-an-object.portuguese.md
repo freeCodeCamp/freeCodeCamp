@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use getters e setters para controlar o acesso a um objeto
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode obter valores de um objeto e definir um valor de uma propriedade dentro de um objeto. Estes são chamados classicamente de <dfn>getters</dfn> e <dfn>setters</dfn> . As funções do Getter destinam-se a simplesmente retornar (obter) o valor da variável privada de um objeto ao usuário sem que o usuário acesse diretamente a variável privada. As funções de setter destinam-se a modificar (definir) o valor da variável privada de um objeto com base no valor passado para a função de setter. Essa alteração pode envolver cálculos ou mesmo sobrescrever completamente o valor anterior. <blockquote> livro escolar { <br> construtor (autor) { <br> this._author = autor; <br> } <br> // getter <br> obter escritor () { <br> devolve this._author; <br> } <br> // setter <br> set writer (updatedAuthor) { <br> this._author = updatedAuthor; <br> } <br> } <br> const lol = novo livro (&#39;anônimo&#39;); <br> console.log (lol.writer); // anônimo <br> lol.writer = &#39;wut&#39;; <br> console.log (lol.writer); // wut </blockquote> Observe a sintaxe que estamos usando para invocar o getter e setter - como se eles não fossem mesmo funções. Getters e setters são importantes porque ocultam detalhes internos de implementação. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a palavra-chave <code>class</code> para criar uma classe Thermostat. O construtor aceita a temperatura Fahrenheit. Agora crie <code>getter</code> e <code>setter</code> na classe, para obter a temperatura na escala Celsius. Lembre-se que <code>C = 5/9 * (F - 32)</code> e <code>F = C * 9.0 / 5 + 32</code> , onde F é o valor da temperatura na escala Fahrenheit, e C é o valor da mesma temperatura na escala Celsius. Para implementar isso, você estaria acompanhando a temperatura dentro da classe em uma escala - Fahrenheit ou Celsius. Este é o poder de getter ou setter - você está criando uma API para outro usuário, que obteria o resultado correto, não importando qual deles você rastreie. Em outras palavras, você está abstraindo os detalhes da implementação do consumidor. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ temp = thermos.temperature; // 26 in C
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

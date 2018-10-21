@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Fatores de um inteiro
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva uma função que retorne os fatores de um inteiro positivo. </p><p> Esses fatores são os inteiros positivos pelos quais o número que está sendo fatorado pode ser dividido para produzir um resultado inteiro positivo. </p> /// </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

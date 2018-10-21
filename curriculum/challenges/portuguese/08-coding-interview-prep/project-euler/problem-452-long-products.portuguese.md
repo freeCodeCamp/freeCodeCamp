@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 452: Produtos Longos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Defina F (m, n) como o número de n-tuplas de inteiros positivos para os quais o produto dos elementos não excede m. F (10, 10) = 571. F (106, 106) mod. 1 234 567 891 = 252903833. Determinar F (109, 109) mod. 1 234 567 891. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler452();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

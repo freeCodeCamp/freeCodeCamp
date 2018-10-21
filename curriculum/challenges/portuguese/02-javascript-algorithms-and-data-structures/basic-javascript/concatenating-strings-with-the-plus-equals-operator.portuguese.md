@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Concatenando Strings com o Operador Plus Equals
 ---
 
-## Description
+## Descrição
 <section id="description"> Também podemos usar o operador <code>+=</code> para <dfn>concatenar</dfn> uma string no final de uma variável de string existente. Isso pode ser muito útil para quebrar uma longa cadeia ao longo de várias linhas. <strong>Nota</strong> <br> Cuidado com os espaços. A concatenação não adiciona espaços entre as sequências concatenadas, portanto, você precisará adicioná-las você mesmo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie <code>myStr</code> em várias linhas concatenando essas duas strings: <code>&quot;This is the first sentence. &quot;</code> e <code>&quot;This is the second sentence.&quot;</code> usando o operador <code>+=</code> . Use o operador <code>+=</code> semelhante ao mostrado no editor. Comece atribuindo a primeira string ao <code>myStr</code> , em seguida, adicione a segunda string. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

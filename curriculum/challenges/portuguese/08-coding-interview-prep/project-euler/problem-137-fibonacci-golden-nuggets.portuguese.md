@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 137: pepitas de ouro Fibonacci'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere a série polinomial infinita AF (x) = xF1 + x2F2 + x3F3 + ..., onde Fk é o k-ésimo termo na seqüência de Fibonacci: 1, 1, 2, 3, 5, 8, ...; isto é, Fk = Fk − 1 + Fk − 2, F1 = 1 e F2 = 1. Para este problema, estaremos interessados ​​em valores de x para os quais AF (x) é um inteiro positivo. Surpreendentemente AF (1/2) = (1/2) .1 + (1/2) 2.1 + (1/2) 3.2 + (1/2) 4.3 + (1/2) 5.5 + ... <p> = 1/2 + 1/4 + 2/8 + 3/16 + 5/32 + ... </p><p> = 2 Os valores correspondentes de x para os primeiros cinco números naturais são mostrados abaixo. </p><p> xAF (x) −2−11 1/22 (√13−2) / 33 (√89−5) / 84 (√34−3) / 55 </p><p> Nós chamaremos AF (x) uma pepita de ouro se x for racional, porque eles se tornam cada vez mais raros; por exemplo, a décima pepita de ouro é 74049690. Encontre a 15ª pepita de ouro. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler137();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

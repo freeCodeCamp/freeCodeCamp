@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Concatenando Strings com Operador Plus
 ---
 
-## Description
+## Descrição
 <section id="description"> Em JavaScript, quando o operador <code>+</code> é usado com um valor <code>String</code> , ele é chamado de operador de <dfn>concatenação</dfn> . Você pode construir uma nova string a partir de outras strings, <dfn>concatenando</dfn> -as juntas. <strong>Exemplo</strong> <blockquote> &#39;Meu nome é Alan,&#39; concordo &#39;. </blockquote> <strong>Nota</strong> <br> Cuidado com os espaços. A concatenação não adiciona espaços entre as sequências concatenadas, portanto, você precisará adicioná-las você mesmo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Construa <code>myStr</code> partir das strings <code>&quot;This is the start. &quot;</code> E <code>&quot;This is the end.&quot;</code> usando o operador <code>+</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

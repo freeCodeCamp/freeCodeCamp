@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Iterar sobre todas as propriedades
 ---
 
-## Description
+## Descrição
 <section id="description"> Você já viu dois tipos de propriedades: propriedades <code>own</code> e propriedades de <code>prototype</code> . <code>Own</code> propriedades <code>Own</code> são definidas diretamente na própria instância do objeto. E as propriedades do <code>prototype</code> são definidas no <code>prototype</code> . <blockquote> função Bird (name) { <br> this.name = nome; // possui propriedade <br> } <br><br> Bird.prototype.numLegs = 2; // propriedade protótipo <br><br> vamos pato = novo pássaro (&quot;Donald&quot;); </blockquote> Aqui está como você adiciona as <code>own</code> propriedades do <code>duck</code> às propriedades <code>ownProps</code> e <code>prototype</code> do array ao array <code>prototypeProps</code> : <blockquote> deixe ownProps = []; <br> deixe prototypeProps = []; <br><br> para (deixe a propriedade no pato) { <br> if (duck.hasOwnProperty (propriedade)) { <br> ownProps.push (propriedade); <br> } outro { <br> prototypeProps.push (propriedade); <br> } <br> } <br><br> console.log (ownProps); // imprime [&quot;nome&quot;] <br> console.log (prototypeProps); // imprime [&quot;numLegs&quot;] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione todas as propriedades <code>own</code> do <code>beagle</code> ao array <code>ownProps</code> . Adicione todas as propriedades de <code>prototype</code> do <code>Dog</code> ao <code>prototypeProps</code> da matriz. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ let prototypeProps = [];
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

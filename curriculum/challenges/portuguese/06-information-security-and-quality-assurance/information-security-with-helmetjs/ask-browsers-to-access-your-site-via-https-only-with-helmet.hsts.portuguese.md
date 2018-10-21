@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Peça aos navegadores que acessem seu site via HTTPS somente com helmet.hsts ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a> . A Segurança de Transporte Rígido HTTP (HSTS) é uma política de segurança da Web que ajuda a proteger sites contra ataques de downgrade de protocolo e sequestro de cookies. Se o seu site pode ser acessado via HTTPS, você pode pedir aos navegadores do usuário para evitar o uso de HTTP inseguro. Ao definir o cabeçalho Strict-Transport-Security, você indica aos navegadores que usem HTTPS para as solicitações futuras em um período de tempo especificado. Isso funcionará para as solicitações após a solicitação inicial. Configure helmet.hsts () para usar HTTPS nos próximos 90 dias. Passe o objeto de configuração {maxAge: timeInMilliseconds, force: true}. Glitch já tem hsts habilitado. Para sobrescrever suas configurações, você precisa definir o campo &quot;force&quot; como true no objeto de configuração. Vamos interceptar e restaurar o cabeçalho Glitch, depois de inspecioná-lo para teste. Nota: A configuração de HTTPS em um site personalizado requer a aquisição de um domínio e um certificado SSL / TSL. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,12 +27,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 443: sequência do GCD'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja g (n) uma sequência definida da seguinte forma: g (4) = 13, g (n) = g (n-1) + mdc (n, g (n-1)) para n&gt; 4. <p> Os primeiros valores são: </p><pre> <code>n4567891011121314151617181920... g(n)1314161718272829303132333451545560...</code> </pre><p> Você está dado que g (1 000) = 2524 e g (1 000 000) = 2624152. </p><p> Encontre g (1015). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler443();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

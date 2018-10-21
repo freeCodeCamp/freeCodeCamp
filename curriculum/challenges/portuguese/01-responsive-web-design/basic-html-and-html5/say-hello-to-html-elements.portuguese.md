@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Diga Olá para elementos HTML
 ---
 
-## Description
+## Descrição
 <section id="description"> Bem-vindo aos desafios de codificação HTML do freeCodeCamp. Eles orientarão você pelo desenvolvimento da Web, passo a passo. Primeiro, você começará construindo uma página da web simples usando HTML. Você pode editar o <code>code</code> em seu <code>code editor</code> , que é incorporado a esta página da web. Você vê o código no seu editor de código que diz <code>&lt;h1&gt;Hello&lt;/h1&gt;</code> ? Isso é um <code>element</code> HTML. A maioria dos elementos HTML possui uma <code>opening tag</code> e uma <code>closing tag</code> . As tags de abertura são assim: <code>&lt;h1&gt;</code> tags de fechamento são assim: <code>&lt;/h1&gt;</code> A única diferença entre as tags de abertura e fechamento é a barra após o colchete de abertura de uma tag de fechamento. Cada desafio tem testes que você pode executar a qualquer momento clicando no botão &quot;Executar testes&quot;. Quando você passar em todos os testes, você será solicitado a enviar sua solução e passar para o próximo desafio de codificação. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Para passar no teste deste desafio, altere o texto do elemento <code>h1</code> para dizer &quot;Olá mundo&quot;. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -40,7 +40,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

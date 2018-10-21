@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Ajustar a margem de um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> A <code>margin</code> um elemento controla a quantidade de espaço entre a <code>border</code> um elemento e os elementos adjacentes. Aqui, podemos ver que a caixa azul e a caixa vermelha estão aninhadas dentro da caixa amarela. Note que a caixa vermelha tem uma <code>margin</code> maior que a caixa azul, fazendo parecer menor. Quando você aumenta a <code>margin</code> da caixa azul, ela aumenta a distância entre a borda e os elementos adjacentes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a <code>margin</code> da caixa azul para corresponder à da caixa vermelha. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,7 +78,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

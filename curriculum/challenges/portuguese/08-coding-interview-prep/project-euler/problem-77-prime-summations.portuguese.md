@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 77: Summações Principais'
 ---
 
-## Description
+## Descrição
 <section id="description"> É possível escrever dez como a soma dos primos de exatamente cinco maneiras diferentes: 7 + 3 5 + 5 5 + 3 + 2 3 + 3 + 2 + 2 2 + 2 + 2 + 2 + 2 Qual é o primeiro valor que pode ser escrito como a soma de primos em mais de cinco mil maneiras diferentes? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler77();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

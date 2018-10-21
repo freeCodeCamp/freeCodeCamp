@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Crie um elemento JSX complexo
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio foi um exemplo simples de JSX, mas o JSX também pode representar HTML mais complexo. Uma coisa importante a saber sobre o JSX aninhado é que ele deve retornar um único elemento. Esse elemento pai único envolveria todos os outros níveis de elementos aninhados. Por exemplo, vários elementos JSX escritos como irmãos sem elemento wrapper pai não serão transpilados. Veja um exemplo: <b>JSX válido:</b> <blockquote> &lt;div&gt; <br> &lt;p&gt; Parágrafo um &lt;/ p&gt; <br> &lt;p&gt; Parágrafo dois &lt;/ p&gt; <br> &lt;p&gt; Parágrafo 3 &lt;/ p&gt; <br> &lt;/ div&gt; </blockquote> <b>JSX inválido:</b> <blockquote> &lt;p&gt; Parágrafo um &lt;/ p&gt; <br> &lt;p&gt; Parágrafo dois &lt;/ p&gt; <br> &lt;p&gt; Parágrafo 3 &lt;/ p&gt; <br></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina uma nova constante <code>JSX</code> que renderize uma <code>div</code> que contenha os seguintes elementos em ordem: Uma <code>h1</code> , uma <code>p</code> e uma lista não ordenada que contém três itens <code>li</code> . Você pode incluir qualquer texto que desejar em cada elemento. <strong>Nota:</strong> Ao renderizar vários elementos como este, você pode agrupá-los entre parênteses, mas isso não é estritamente necessário. Observe também que esse desafio usa uma tag <code>div</code> para envolver todos os elementos filhos em um único elemento pai. Se você remover o <code>div</code> , o JSX não será mais transpelado. Lembre-se disso, pois isso também será aplicado quando você retornar elementos JSX nos componentes do React. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -57,7 +57,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

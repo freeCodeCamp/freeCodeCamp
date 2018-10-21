@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use o operador de propagação em matrizes
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma solução do ES6 para ajudar a impor a imutabilidade do estado no Redux é o operador de spread: <code>...</code> O operador de spread tem uma variedade de aplicações, uma das quais é adequada ao desafio anterior de produzir um novo array a partir de um array existente. Essa é uma sintaxe relativamente nova, mas comumente usada. Por exemplo, se você tem um array <code>myArray</code> e escreve: <code>let newArray = [...myArray];</code> <code>newArray</code> é agora um clone de <code>myArray</code> . Ambas as matrizes ainda existem separadamente na memória. Se você executar uma mutação como <code>newArray.push(5)</code> , <code>myArray</code> não será alterado. O <code>...</code> efetivamente <i>distribui</i> os valores em <code>myArray</code> em uma nova matriz. Para clonar uma matriz, mas adicionar valores adicionais na nova matriz, você poderia escrever <code>[...myArray, &#39;new value&#39;]</code> . Isso retornaria uma nova matriz composta dos valores em <code>myArray</code> e a string <code>&#39;new value&#39;</code> como o último valor. A sintaxe de propagação pode ser usada várias vezes na composição da matriz como essa, mas é importante observar que ela faz apenas uma cópia superficial da matriz. Ou seja, apenas fornece operações de matriz imutável para matrizes unidimensionais. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o operador de propagação para retornar uma nova cópia de estado quando uma tarefa for adicionada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -64,7 +64,7 @@ const store = Redux.createStore(immutableReducer);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

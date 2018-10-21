@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Crie um novo middleware
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Como em qualquer usuário pode apenas ir para / perfil se eles autenticados ou não, digitando o URL. Queremos evitar isso verificando se o usuário é autenticado antes de renderizar a página de perfil. Este é o exemplo perfeito de quando criar um middleware. O desafio aqui é criar a função de middleware <code>ensureAuthenticated(req, res, next)</code> , que verificará se um usuário é autenticado chamando os passaportes isAuthenticated na <em>solicitação,</em> que por sua vez verifica se <em>req.user</em> deve ser definido. Se é então <em>next ()</em> deve ser chamado, caso contrário, podemos apenas responder à solicitação com um redirecionamento para a nossa página inicial para login. Uma implementação deste middleware é: <pre> function ensureAuthenticated (req, res, next) {
   if (req.isAuthenticated ()) {
       return next ();
@@ -17,11 +17,11 @@ localeTitle: Crie um novo middleware
        res.render (process.cwd () + &#39;/ views / pug / profile&#39;);
   }); </pre> Envie sua página quando achar que está certo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,12 +35,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

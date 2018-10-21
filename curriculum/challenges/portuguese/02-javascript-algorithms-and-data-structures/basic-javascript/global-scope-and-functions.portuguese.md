@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Âmbito global e funções
 ---
 
-## Description
+## Descrição
 <section id="description"> Em JavaScript, o <dfn>escopo</dfn> se refere à visibilidade das variáveis. Variáveis ​​definidas fora de um bloco de funções possuem escopo <dfn>Global</dfn> . Isso significa que eles podem ser vistos em qualquer lugar no seu código JavaScript. As variáveis ​​que são usadas sem a palavra-chave <code>var</code> são criadas automaticamente no escopo <code>global</code> . Isso pode criar consequências indesejadas em outro lugar no seu código ou ao executar uma função novamente. Você deve sempre declarar suas variáveis ​​com <code>var</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Usando <code>var</code> , declare uma variável <code>global</code> <code>myGlobal</code> fora de qualquer função. Inicialize com um valor de <code>10</code> . Dentro da função <code>fun1</code> , atribua <code>5</code> a <code>oopsGlobal</code> <strong><em>sem</em></strong> usar a palavra-chave <code>var</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -100,7 +100,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

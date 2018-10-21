@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Torres de hanoi
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Resolva o problema <a href="https://en.wikipedia.org/wiki/Towers_of_Hanoi" title="wp: Towers_of_Hanoi">das Torres de Hanói</a> . </p><p> Sua solução deve aceitar o número de discos como os primeiros parâmetros e três strings usadas para identificar cada uma das três pilhas de discos, por exemplo, <code>towerOfHanoi(4, &#39;A&#39;, &#39;B&#39;, &#39;C&#39;)</code> . A função deve retornar um array de arrays contendo a lista de movimentos, source -&gt; destination. Por exemplo, a matriz <code>[[&#39;A&#39;, &#39;C&#39;], [&#39;B&#39;, &#39;A&#39;]]</code> indica que o primeiro movimento foi mover um disco da pilha A para C, e o segundo movimento foi mover um disco disco da pilha B para A. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

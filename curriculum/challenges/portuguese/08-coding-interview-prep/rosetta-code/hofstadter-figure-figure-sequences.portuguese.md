@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Sequências Figura-Figura de Hofstadter
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Essas duas seqüências de inteiros positivos são definidas como: </p><p> <big>$$ R (1) = 1 \; \ S (1) = 2 \\ R (n) = R (n-1) + S (n-1), \ quad n&gt; 1.</big> </p><p> A sequência <big>$ S (n) $</big> é ainda definida como a sequência de inteiros positivos não presentes em <big>$ R (n) $</big> . </p><p> Seqüência <big>$ R $</big> começa: </p><p> 1, 3, 7, 12, 18, ... </p><p> Seqüência <big>$ S $</big> começa: </p><p> 2, 4, 5, 6, 8, ... </p> Tarefa: Crie duas funções chamadas ffr e ffs que, quando fornecidas, retornam R (n) ou S (n), respectivamente (observe que R (1) = 1 e S (1) = 2 para evitar erros entre-um). . Nenhum valor máximo para n deve ser assumido. <a href="http://oeis.org/A005228" title="link: http://oeis.org/A005228">A005228</a> e <a href="http://oeis.org/A030124" title="link: http://oeis.org/A030124">A030124 de</a> Sloane. <a href="http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html" title="link: http://mathworld.wolfram.com/HofstadterFigure-FigureSequence.html">Wolfram MathWorld</a> Wikipedia: <a href="https://en.wikipedia.org/wiki/Hofstadter_sequence#Hofstadter_Figure-Figure_sequences" title="wp: Hofstadter_sequence # Hofstadter_Figure-Figure_sequences">Sequências de figura-figura de Hofstadter</a> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -47,7 +47,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -78,7 +78,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

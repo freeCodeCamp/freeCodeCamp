@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar uma linha horizontal usando o elemento hr
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode usar a tag <code>hr</code> para adicionar uma linha horizontal na largura de seu elemento contido. Isso pode ser usado para definir uma alteração no tópico ou para separar visualmente grupos de conteúdo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione uma tag <code>hr</code> abaixo do <code>h4</code> que contém o título do cartão. <strong>Nota</strong> <br> Em HTML, <code>hr</code> é uma tag de fechamento automático e, portanto, não precisa de uma tag de fechamento separada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

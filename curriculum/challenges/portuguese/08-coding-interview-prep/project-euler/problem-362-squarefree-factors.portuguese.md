@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 362: Fatores Squarefree'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere o número 54. 54 pode ser fatorado de 7 maneiras distintas em um ou mais fatores maiores que 1: 54, 2 × 27, 3 × 18, 6 × 9, 3 × 3 × 6, 2 × 3 × 9 e 2 × 3 × 3 × 3. Se exigirmos que os fatores sejam todos livres de quadratura, restam apenas dois caminhos: 3 × 3 × 6 e 2 × 3 × 3 × 3. <p> Vamos chamar Fsf (n) o número de maneiras que n podem ser fatoradas em um ou mais fatores livres de quadrado maiores que 1, então Fsf (54) = 2. </p><p> Seja S (n) ∑Fsf (k) para k = 2 a n. </p><p> S (100) = 193. </p><p> Encontre S (10 000 000 000). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler362();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

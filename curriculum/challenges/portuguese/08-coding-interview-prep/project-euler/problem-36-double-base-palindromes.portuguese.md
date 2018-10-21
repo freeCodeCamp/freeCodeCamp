@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 36: Palíndromos de base dupla'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número decimal, 585 = 10010010012 (binário), é palíndromo em ambas as bases. Encontre a soma de todos os números, menor que n, enquanto 1000 &lt;= n &lt;= 1000000, que são palíndromos na base 10 e na base 2. (Observe que o número palíndromo, em qualquer base, pode não incluir zeros à esquerda). </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ doubleBasePalindromes(1000000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

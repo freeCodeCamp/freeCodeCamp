@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: 9 bilhões de nomes de Deus o inteiro
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Esta tarefa é uma variação do <a href="https://en.wikipedia.org/wiki/The Nine Billion Names of God#Plot_summary" title="wp: Os nove bilhões de nomes de Deus # Plot_summary">conto de Arthur C. Clarke</a> . </p><p> (Os solucionadores devem estar cientes das conseqüências de completar essa tarefa.) </p><p> Em detalhes, para especificar o que se entende por “nome”: </p><p> O inteiro 1 tem 1 nome “1”. </p><p> O inteiro 2 tem 2 nomes “1 + 1” e “2”. </p><p> O inteiro 3 tem 3 nomes “1 + 1 + 1”, “2 + 1” e “3”. </p><p> O inteiro 4 tem 5 nomes “1 + 1 + 1 + 1”, “2 + 1 + 1”, “2 + 2”, “3 + 1”, “4”. </p><p> O inteiro 5 tem 7 nomes “1 + 1 + 1 + 1 + 1”, “2 + 1 + 1 + 1”, “2 + 2 + 1”, “3 + 1 + 1”, “3 + 2”, &quot;4 + 1&quot;, &quot;5&quot;. </p><p> Isso pode ser visualizado da seguinte forma: </p><pre> 1
         1 1
       1 1 1
@@ -15,11 +15,11 @@ localeTitle: 9 bilhões de nomes de Deus o inteiro
 1 3 3 2 1 1
 </pre><p> Onde a linha $ n $ corresponde ao inteiro $ n $, e cada coluna $ C $ na linha $ m $ da esquerda para a direita corresponde ao número de nomes que começam com $ C $. </p><p> Opcionalmente, observe que a soma da $ n $ -th row $ P (n) $ é a <a href="http://mathworld.wolfram.com/PartitionFunctionP.html" title="link: http://mathworld.wolfram.com/PartitionFunctionP.html">função de partição inteira</a> . </p> Tarefa <p> Implemente uma função que retorne a soma da linha $ n $ -th. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -43,7 +43,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ function numberOfNames (num) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

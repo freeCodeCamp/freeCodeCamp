@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Ditch CSS personalizado para Bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Podemos limpar nosso código e tornar nosso Cat Photo App mais convencional usando os estilos internos do Bootstrap em vez dos estilos personalizados que criamos anteriormente. Não se preocupe - haverá tempo suficiente para personalizar o nosso CSS mais tarde. Exclua as declarações CSS <code>.red-text</code> , <code>p</code> e <code>.smaller-image</code> de seu elemento <code>style</code> para que as únicas declarações deixadas em seu elemento <code>style</code> sejam <code>h2</code> e <code>thick-green-border</code> . Em seguida, exclua o elemento <code>p</code> que contém um link inativo. Em seguida, remova a classe de <code>red-text</code> do seu elemento <code>h2</code> e substitua-a <code>text-primary</code> classe Bootstrap <code>text-primary</code> . Por fim, remova a classe &quot;small-image&quot; do seu primeiro elemento <code>img</code> e substitua-a <code>img-responsive</code> classe <code>img-responsive</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -116,7 +116,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

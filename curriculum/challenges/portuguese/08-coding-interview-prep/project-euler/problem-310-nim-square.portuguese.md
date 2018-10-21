@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 310: Nim Square'
 ---
 
-## Description
+## Descrição
 <section id="description"> Alice e Bob jogam o jogo Nim Square. Nim Square é como o normal Nim, mas os jogadores só podem remover um número quadrado de pedras de uma pilha. O número de pedras nos três montes é representado pelo triplo ordenado (a, b, c). Se 0≤a≤b≤c≤29, o número de posições perdidas para o próximo jogador é 1160. <p> Encontre o número de posições perdidas para o próximo jogador se 0≤a≤b≤c≤100 000. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler310();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

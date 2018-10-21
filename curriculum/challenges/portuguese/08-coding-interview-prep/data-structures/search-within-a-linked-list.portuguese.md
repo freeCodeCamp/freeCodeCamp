@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Pesquisar em uma lista vinculada
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos adicionar alguns métodos mais úteis à nossa classe de lista vinculada. Não seria útil se pudéssemos dizer se a nossa lista estava vazia ou não, como nas nossas classes <code>Stack</code> e <code>Queue</code> ? Também devemos encontrar elementos específicos em nossa lista vinculada. Atravessar estruturas de dados é algo com o qual você vai querer praticar bastante! Vamos criar um método <code>indexOf</code> que <code>indexOf</code> um <code>element</code> como argumento e retorne o <code>index</code> desse elemento na lista vinculada. Se o elemento não for encontrado na lista vinculada, retorne <code>-1</code> . Vamos também implementar um método que faça o oposto: um método <code>elementAt</code> que usa um <code>index</code> como um argumento e retorna o <code>element</code> no <code>index</code> fornecido. Se nenhum <code>element</code> for encontrado, retorne <code>undefined</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva um método <code>isEmpty</code> que verifique se a lista vinculada está vazia, um método <code>indexOf</code> que retorna o <code>index</code> de um determinado elemento e um <code>elementAt</code> que retorna um <code>element</code> em um determinado <code>index.</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -102,7 +102,7 @@ function LinkedList() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

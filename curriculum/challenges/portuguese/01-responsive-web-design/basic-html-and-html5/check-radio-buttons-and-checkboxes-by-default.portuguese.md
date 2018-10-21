@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Verificar botões de rádio e caixas de seleção por padrão
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode definir uma caixa de seleção ou um botão de opção para ser verificado por padrão usando o atributo <code>checked</code> . Para fazer isso, basta adicionar a palavra &quot;checked&quot; ao interior de um elemento de entrada. Por exemplo: <code>&lt;input type=&quot;radio&quot; name=&quot;test-name&quot; checked&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina o primeiro de seus <code>radio buttons</code> e a primeira das suas <code>checkboxes</code> de <code>checkboxes</code> para ambos ser marcada por padrão. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -69,7 +69,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

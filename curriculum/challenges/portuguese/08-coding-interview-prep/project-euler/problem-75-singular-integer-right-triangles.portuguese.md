@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 75: Triângulos retos inteiros singulares'
 ---
 
-## Description
+## Descrição
 <section id="description"> Acontece que 12 cm é o menor comprimento de fio que pode ser dobrado para formar um triângulo de ângulo direito com lados inteiros exatamente de uma maneira, mas há muitos outros exemplos. 12 cm: (3,4,5) 24 cm: (6,8,10) 30 cm: (5,12,13) ​​36 cm: (9,12,15) 40 cm: (8,15,17) 48 cm: (12,16,20) Em contraste, alguns comprimentos de fio, como 20 cm, não podem ser dobrados para formar um triângulo de ângulo direito com lados inteiros, e outros comprimentos permitem que mais de uma solução seja encontrada; por exemplo, usando 120 cm, é possível formar exatamente três diferentes triângulos de ângulo reto de lados inteiros. 120 cm: (30,40,50), (20,48,52), (24,45,51) Dado que L é o comprimento do fio, para quantos valores de L ≤ 1.500.000 podem exatamente um inteiro lado direito triângulo de ângulo ser formado? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler75();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

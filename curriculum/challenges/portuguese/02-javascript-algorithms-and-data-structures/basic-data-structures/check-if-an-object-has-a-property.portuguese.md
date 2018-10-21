@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Verificar se um objeto tem uma propriedade
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora podemos adicionar, modificar e remover chaves de objetos. Mas e se apenas quiséssemos saber se um objeto tem uma propriedade específica? O JavaScript nos fornece duas maneiras diferentes de fazer isso. Um usa o método <code>hasOwnProperty()</code> e o outro usa a palavra-chave <code>in</code> . Se tivermos um objeto <code>users</code> com uma propriedade de <code>Alan</code> , poderemos verificar sua presença de uma das seguintes maneiras: <blockquote> users.hasOwnProperty (&#39;Alan&#39;); <br> &#39;Alan&#39; nos usuários; <br> // ambos retornam true </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Criamos um objeto, <code>users</code> , com alguns usuários e uma função <code>isEveryoneHere</code> , à qual passamos o objeto <code>users</code> como um argumento. Termine de escrever esta função para que ela retorne <code>true</code> somente se o objeto <code>users</code> contiver todos os quatro nomes, <code>Alan</code> , <code>Jeff</code> , <code>Sarah</code> e <code>Ryan</code> , como chaves, e <code>false</code> caso contrário. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,7 +69,7 @@ console.log(isEveryoneHere(users));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

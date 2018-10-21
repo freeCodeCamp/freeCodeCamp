@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Caixa registradora
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>checkCashRegister()</code> função de gaveta de caixa registradora <code>checkCashRegister()</code> que aceita o preço de compra como primeiro argumento ( <code>price</code> ), pagamento como o segundo argumento ( <code>cash</code> ) e gaveta com dinheiro ( <code>cid</code> ) como o terceiro argumento. <code>cid</code> é um array 2D listando a moeda disponível. A função <code>checkCashRegister()</code> deve sempre retornar um objeto com uma chave de <code>status</code> e uma chave de <code>change</code> . Retornar <code>{status: &quot;INSUFFICIENT_FUNDS&quot;, change: []}</code> se a gaveta do caixa for menor que a alteração devida ou se você não puder devolver a alteração exata. Retornar <code>{status: &quot;CLOSED&quot;, change: [...]}</code> com gaveta do caixa como o valor para a <code>change</code> da chave, se for igual à alteração devida. Caso contrário, retorne <code>{status: &quot;OPEN&quot;, change: [...]}</code> , com a alteração devida em moedas e faturas, classificada na ordem mais alta para a mais baixa, como o valor da chave de <code>change</code> . Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. <table class="table table-striped"><tbody><tr><th> Unidade monetária </th><th> Montante </th></tr><tr><td> Centavo </td><td> US $ 0,01 (PENNY) </td></tr><tr><td> Níquel </td><td> US $ 0,05 (NICKEL) </td></tr><tr><td> Centavo </td><td> US $ 0,1 (DIME) </td></tr><tr><td> Trimestre </td><td> US $ 0,25 (TRIMESTRE) </td></tr><tr><td> Dólar </td><td> US $ 1 (DÓLAR) </td></tr><tr><td> Cinco dólares </td><td> US $ 5 (cinco) </td></tr><tr><td> Dez dólares </td><td> US $ 10 (DEZ) </td></tr><tr><td> Vinte dólares </td><td> US $ 20 (VINTE) </td></tr><tr><td> Cem dólares </td><td> US $ 100 (cem) </td></tr></tbody></table></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,7 +69,7 @@ checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], [
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

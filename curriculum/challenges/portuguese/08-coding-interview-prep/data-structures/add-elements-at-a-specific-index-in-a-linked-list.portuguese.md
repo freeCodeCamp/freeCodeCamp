@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Adicionar elementos em um índice específico em uma lista vinculada
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos criar um método addAt (index, element) que adiciona um elemento em um determinado índice. Assim como removemos elementos em um determinado índice, precisamos acompanhar o currentIndex à medida que percorremos a lista vinculada. Quando o currentIndex corresponde ao índice fornecido, precisaríamos reatribuir a próxima propriedade do nó anterior para fazer referência ao novo nó adicionado. E o novo nó deve referenciar o próximo nó no currentIndex. Voltando ao exemplo da linha de conga, uma nova pessoa quer entrar na linha, mas ele quer se juntar ao meio. Você está no meio da linha, então tire as mãos da pessoa à sua frente. A nova pessoa se aproxima e coloca as mãos sobre a pessoa que você teve uma vez, e agora você tem as mãos na nova pessoa. Instruções Crie um método addAt (index, element) que adiciona um elemento em um determinado índice. Retornar false se um elemento não puder ser adicionado. Nota Lembre-se de verificar se o índice fornecido é negativo ou maior que o comprimento da lista vinculada. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -83,7 +83,7 @@ function LinkedList() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

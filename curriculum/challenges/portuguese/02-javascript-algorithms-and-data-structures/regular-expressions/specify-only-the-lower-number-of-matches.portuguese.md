@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Especifique apenas o menor número de correspondências
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode especificar o número inferior e superior de padrões com <code>quantity specifiers</code> usando chaves. Às vezes você só quer especificar o menor número de padrões sem limite superior. Para especificar apenas o menor número de padrões, mantenha o primeiro número seguido por uma vírgula. Por exemplo, para corresponder apenas à string <code>&quot;hah&quot;</code> com a letra <code>a</code> aparecer pelo menos <code>3</code> vezes, seu regex seria <code>/ha{3,}h/</code> . <blockquote> deixe A4 = &quot;haaaah&quot;; <br> seja A2 = &quot;haah&quot;; <br> seja A100 = &quot;h&quot; + &quot;a&quot; .repetição (100) + &quot;h&quot;; <br> vamos multipleA = / ha {3,} h /; <br> multipleA.test (A4); // Retorna true <br> multipleA.test (A2); // Retorna falso <br> multipleA.test (A100); // Retorna true </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o regex <code>haRegex</code> para coincidir com a palavra <code>&quot;Hazzah&quot;</code> apenas quando tiver quatro ou mais letras <code>z</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ let result = haRegex.test(haStr);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

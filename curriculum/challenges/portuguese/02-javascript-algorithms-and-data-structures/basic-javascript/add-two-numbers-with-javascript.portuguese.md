@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicione dois números com JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>Number</code> é um tipo de dados em JavaScript que representa dados numéricos. Agora vamos tentar adicionar dois números usando JavaScript. O JavaScript usa o símbolo <code>+</code> como operação de adição quando colocado entre dois números. <strong>Exemplo</strong> <blockquote> myVar = 5 + 10; // atribuído 15 </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere <code>0</code> para que a soma seja igual a <code>20</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

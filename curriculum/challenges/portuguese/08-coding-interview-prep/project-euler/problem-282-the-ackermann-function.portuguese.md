@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 282: A função Ackermann'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para inteiros não negativos m, n, a função Ackermann A (m, n) é definida da seguinte forma: <p> Por exemplo, A (1, 0) = 2, A (2, 2) = 7 e A (3, 4) = 125. </p><p> Encontre A (n, n) e dê sua resposta mod 148. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler282();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

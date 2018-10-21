@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Alterar dinamicamente a altura de cada barra
 ---
 
-## Description
+## Descrição
 <section id="description"> A altura de cada barra pode ser definida para o valor do ponto de dados na matriz, semelhante a como o valor <code>x</code> foi definido dinamicamente. <blockquote> selection.attr (&quot;propriedade&quot;, (d, i) =&gt; { <br> / * <br> * d é o valor do ponto de dados <br> * i é o índice do ponto de dados na matriz <br> * / <br> }) </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a função de retorno de chamada para o atributo <code>height</code> para retornar os tempos de valor de dados 3. <strong>Nota</strong> <br> Lembre-se de que multiplicar todos os pontos de dados pela mesma constante escala os dados (como aumentar o zoom). Isso ajuda a ver as diferenças entre os valores das barras neste exemplo. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -85,7 +85,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

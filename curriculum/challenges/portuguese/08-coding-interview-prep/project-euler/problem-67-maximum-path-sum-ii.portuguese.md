@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: 'Problema 67: soma do caminho máximo II'
 ---
 
-## Description
+## Descrição
 <section id="description"> Começando no topo do triângulo abaixo e movendo-se para números adjacentes na linha abaixo, o total máximo de cima para baixo é 23. 37 4 2 4 6 8 5 9 3 Ou seja, 3 + 7 + 4 + 9 = 23 Encontre o total máximo de cima para baixo em triangle.txt (clique direito e &#39;Salvar Link / Destino Como ...&#39;), um arquivo de texto de 15K contendo um triângulo com cem linhas. NOTA: Esta é uma versão muito mais difícil do Problema 18. Não é possível tentar todas as rotas para resolver este problema, pois existem 299 ao todo! Se você pudesse verificar um trilhão (1012) rotas a cada segundo, levaria mais de vinte bilhões de anos para verificar todas elas. Existe um algoritmo eficiente para resolvê-lo. o) </section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,7 +45,7 @@ euler67();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder espaço em branco
 ---
 
-## Description
+## Descrição
 <section id="description"> Os desafios até agora cobriram letras correspondentes do alfabeto e números. Você também pode combinar o espaço em branco ou os espaços entre as letras. Você pode procurar espaços em branco usando <code>\s</code> , que é um <code>s</code> minúsculo. Esse padrão não apenas corresponde ao espaço em branco, mas também ao retorno de carro, à guia, ao feed de formulário e aos novos caracteres de linha. Você pode pensar nisso como semelhante à classe de caracteres <code>[ \r\t\f\n\v]</code> . <blockquote> let whiteSpace = &quot;Espaço em branco. Espaço em branco em todo lugar!&quot; <br> deixe spaceRegex = / \ s / g; <br> whiteSpace.match (spaceRegex); <br> // Retorna [&quot;&quot;, &quot;&quot;] <br></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o regex <code>countWhiteSpace</code> para procurar vários caracteres de espaço em branco em uma string. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ let result = sample.match(countWhiteSpace);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

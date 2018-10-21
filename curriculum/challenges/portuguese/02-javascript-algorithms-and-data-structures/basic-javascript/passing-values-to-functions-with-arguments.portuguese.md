@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Passando Valores para Funções com Argumentos
 ---
 
-## Description
+## Descrição
 <section id="description"> <dfn>Parâmetros</dfn> são variáveis ​​que atuam como espaços reservados para os valores que devem ser inseridos em uma função quando ela é chamada. Quando uma função é definida, ela é tipicamente definida junto com um ou mais parâmetros. Os valores reais que são inseridos (ou <dfn>&quot;passados&quot;</dfn> ) em uma função quando são chamados são conhecidos como <dfn>argumentos</dfn> . Aqui está uma função com dois parâmetros, <code>param1</code> e <code>param2</code> : <blockquote> function testFun (param1, param2) { <br> console.log (param1, param2); <br> } </blockquote> Então podemos chamar <code>testFun</code> : <code>testFun(&quot;Hello&quot;, &quot;World&quot;);</code> Nós passamos dois argumentos, <code>&quot;Hello&quot;</code> e <code>&quot;World&quot;</code> . Dentro da função, <code>param1</code> será igual a &quot;Hello&quot; e <code>param2</code> será igual a &quot;World&quot;. Note que você poderia chamar <code>testFun</code> novamente com diferentes argumentos e os parâmetros assumiriam o valor dos novos argumentos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"><ol><li> Crie uma função chamada <code>functionWithArgs</code> que aceita dois argumentos e produz sua soma no console dev. </li><li> Chame a função com dois números como argumentos. </li></ol></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -88,7 +88,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

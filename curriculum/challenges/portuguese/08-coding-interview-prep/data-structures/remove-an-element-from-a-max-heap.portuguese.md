@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Remover um elemento de um heap máximo
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que podemos adicionar elementos à nossa pilha, vamos ver como podemos remover elementos. A remoção e a inserção de elementos requerem lógica semelhante. Em um heap máximo, você geralmente deseja remover o maior valor, portanto, isso envolve simplesmente extraí-lo da raiz de nossa árvore. Isso vai quebrar a propriedade heap da nossa árvore, então devemos restabelecê-la de alguma forma. Normalmente, para um heap máximo, isso é feito da seguinte maneira: Mova o último elemento do heap para a posição raiz. Se um dos filhos da raiz for maior que ele, troque a raiz pelo filho de maior valor. Continue trocando até que o pai seja maior que os dois filhos ou você alcance o último nível na árvore. Instruções: Adicione um método ao nosso heap máximo chamado remove. Esse método deve retornar o maior valor que foi adicionado ao nosso heap máximo e removê-lo do heap. Ele também deve reordenar o heap para que a propriedade heap seja mantida. Depois de remover um elemento, o próximo elemento remanescente no heap deve se tornar a raiz. Adicione seu método de inserção novamente aqui também. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ var MaxHeap = function() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

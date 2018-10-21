@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 271: Cubos Modulares, parte 1'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para um número positivo n, defina S (n) como a soma dos inteiros x, para os quais 1 <p> Quando n = 91, existem 8 valores possíveis para x, a saber: 9, 16, 22, 29, 53, 74, 79, 81. Assim, S (91) = 9 + 16 + 22 + 29 + 53 + 74 + 79 + 81 = 363. </p><p> Encontre S (13082761331670030). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler271();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

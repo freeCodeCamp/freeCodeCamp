@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Aplicar programação funcional para converter seqüências de caracteres em URL Slugs
 ---
 
-## Description
+## Descrição
 <section id="description"> Os últimos vários desafios cobriram uma série de métodos úteis de matriz e string que seguem os princípios de programação funcional. Também aprendemos sobre <code>reduce</code> , que é um método poderoso usado para reduzir problemas a formulários mais simples. Das médias de computação à classificação, qualquer operação de matriz pode ser obtida aplicando-a. Lembre-se de que o <code>map</code> e o <code>filter</code> são casos especiais de <code>reduce</code> . Vamos combinar o que aprendemos para resolver um problema prático. Muitos sites de gerenciamento de conteúdo (CMS) têm os títulos de uma postagem adicionados a parte do URL para propósitos de bookmarking simples. Por exemplo, se você escrever um post do Medium intitulado &quot;Stop Using Reduce&quot;, é provável que o URL tenha alguma forma de string de título nele (&quot;... / stop-using-reduce&quot;). Você já deve ter notado isso no site freeCodeCamp. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Preencha a função <code>urlSlug</code> para que ela converta um <code>title</code> string e retorne a versão hifenizada para o URL. Você pode usar qualquer um dos métodos abordados nesta seção e não usar <code>replace</code> . Aqui estão os requisitos: A entrada é uma string com espaços e palavras com título de caixa A saída é uma string com os espaços entre as palavras substituídas por um hífen ( <code>-</code> ) A saída deve ser todas letras maiúsculas A saída não deve ter espaços </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

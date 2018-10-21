@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Apresentando Else Statements
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando uma condição para uma declaração <code>if</code> for verdadeira, o bloco de código que a segue é executado. E quando essa condição é falsa? Normalmente nada aconteceria. Com uma instrução <code>else</code> , um bloco de código alternativo pode ser executado. <blockquote> if (num&gt; 10) { <br> return &quot;Maior que 10&quot;; <br> } outro { <br> return &quot;10 ou menos&quot;; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Combine as instruções <code>if</code> em uma única instrução <code>if/else</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,7 +69,7 @@ testElse(4);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

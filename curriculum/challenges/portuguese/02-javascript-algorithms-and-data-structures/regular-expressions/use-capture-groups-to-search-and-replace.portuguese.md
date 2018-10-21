@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use grupos de captura para pesquisar e substituir
 ---
 
-## Description
+## Descrição
 <section id="description"> Pesquisando é útil. No entanto, você pode tornar a pesquisa ainda mais poderosa quando ela também altera (ou substitui) o texto que você corresponde. Você pode pesquisar e substituir texto em uma string usando <code>.replace()</code> em uma string. As entradas para <code>.replace()</code> são primeiro o padrão regex que você deseja procurar. O segundo parâmetro é a string para substituir a correspondência ou uma função para fazer alguma coisa. <blockquote> vamos wrongText = &quot;O céu é prateado.&quot;; <br> vamos silverRegex = / silver /; <br> wrongText.replace (silverRegex, &quot;blue&quot;); <br> // Retorna &quot;O céu é azul.&quot; </blockquote> Você também pode acessar grupos de captura na sequência de substituição com sinais de cifrão ( <code>$</code> ). <blockquote> &quot;Code Camp&quot; .replace (/ (\ w +) \ s (\ w +) /, &#39;$ 2 $ 1&#39;); <br> // Retorna &quot;Camp Code&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva um regex para que ele procure pela string <code>&quot;good&quot;</code> . Em seguida, atualize a variável <code>replaceText</code> para substituir <code>&quot;good&quot;</code> por <code>&quot;okey-dokey&quot;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,7 +47,7 @@ let result = huhText.replace(fixRegex, replaceText);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

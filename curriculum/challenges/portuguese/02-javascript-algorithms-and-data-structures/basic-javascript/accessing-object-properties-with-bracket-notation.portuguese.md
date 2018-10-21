@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Acessando propriedades de objeto com notação de suporte
 ---
 
-## Description
+## Descrição
 <section id="description"> A segunda maneira de acessar as propriedades de um objeto é a notação de colchetes ( <code>[]</code> ). Se a propriedade do objeto que você está tentando acessar tiver um espaço em seu nome, você precisará usar a notação de colchetes. No entanto, você ainda pode usar a notação de colchetes nas propriedades do objeto sem espaços. Aqui está uma amostra de uso da notação de colchetes para ler a propriedade de um objeto: <blockquote> var myObj = { <br> &quot;Space Name&quot;: &quot;Kirk&quot;, <br> &quot;Mais espaço&quot;: &quot;Spock&quot;, <br> &quot;NoSpace&quot;: &quot;USS Enterprise&quot; <br> }; <br> myObj [&quot;nome do espaço&quot;]; // Kirk <br> myObj [&#39;More Space&#39;]; // Spock <br> myObj [&quot;NoSpace&quot;]; // USS Enterprise </blockquote> Observe que os nomes de propriedade com espaços neles devem estar entre aspas (simples ou dupla). </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Leia os valores das propriedades <code>&quot;an entree&quot;</code> e <code>&quot;the drink&quot;</code> de <code>testObj</code> usando a notação de colchetes e atribua-os a <code>entreeValue</code> e <code>drinkValue</code> respectivamente. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

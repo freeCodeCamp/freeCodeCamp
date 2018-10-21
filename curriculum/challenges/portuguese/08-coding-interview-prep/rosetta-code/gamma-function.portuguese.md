@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Função gama
 ---
 
-## Description
+## Descrição
 <section id="description"> Implemente um algoritmo (ou mais) para calcular a função <a href="https://en.wikipedia.org/wiki/Gamma function">Gamma</a> ($ \ Gamma $) (somente no campo real). A função Gamma pode ser definida como: <div style="padding-left: 4em;"> <big><big>$ \ Gamma (x) = \ displaystyle \ int_0 ^ \ infty t ^ {x-1} e ^ {- t} dt $</big></big> </div></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

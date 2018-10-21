@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Remover elementos de uma lista vinculada por índice
 ---
 
-## Description
+## Descrição
 <section id="description"> Antes de passarmos para outra estrutura de dados, vamos obter alguns dos últimos passos de prática com listas vinculadas. Vamos escrever um método <code>removeAt</code> que remova o <code>element</code> em um determinado <code>index</code> . O método deve ser chamado de <code>removeAt(index)</code> . Para remover um <code>element</code> em um determinado <code>index</code> , precisaremos manter uma contagem em execução de cada nó à medida que nos movemos ao longo da lista vinculada. Uma técnica comum usada para percorrer os elementos de uma lista vinculada envolve um <dfn>&#39;runner&#39;</dfn> ou sentinel que &#39;aponta&#39; nos nós que seu código está comparando. No nosso caso, a partir da <code>head</code> da nossa lista, começamos com um <code>currentIndex</code> variável que começa em <code>0</code> . O <code>currentIndex</code> deve incrementar em um para cada nó que passamos. Assim como nosso método <code>remove(element)</code> , precisamos ter cuidado para não deixar o restante da nossa lista órfão quando removemos o nó em nosso método removeAt (index). Mantemos nossos nós contíguos, certificando-nos de que o nó que tenha referência ao nó removido tenha uma referência ao próximo nó. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva um <code>removeAt(index)</code> que remova e retorne um nó em um determinado <code>index</code> . O método deve retornar <code>null</code> se o <code>index</code> fornecido for negativo ou maior que ou igual ao <code>length</code> da lista vinculada. Nota Lembre-se de manter a contagem do <code>currentIndex</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -102,7 +102,7 @@ function LinkedList() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

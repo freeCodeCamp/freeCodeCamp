@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Faça links mortos usando o símbolo Hash
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes você quer adicionar <code>a</code> elementos para o seu site antes que você sabe onde eles vão ligar. Isso também é útil quando você está alterando o comportamento de um link usando <code>JavaScript</code> , sobre o qual aprenderemos mais tarde. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O valor atual do atributo <code>href</code> é um link que aponta para &quot;http://freecatphotoapp.com&quot;. Substitua o valor do atributo <code>href</code> por um <code>#</code> , também conhecido como um símbolo de hash, para criar um link inativo. Por exemplo: <code>href=&quot;#&quot;</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,7 +48,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

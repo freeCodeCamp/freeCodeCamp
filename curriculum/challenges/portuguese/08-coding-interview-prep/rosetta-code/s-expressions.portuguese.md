@@ -6,16 +6,16 @@ videoUrl: ''
 localeTitle: Expressões S
 ---
 
-## Description
+## Descrição
 <section id="description"><p> <a href="https://en.wikipedia.org/wiki/S-Expression" title="wp: expressão S">Expressões S</a> são uma maneira conveniente de analisar e armazenar dados. </p> Tarefa: <p> Escreva um leitor / analisador simples para S-Expressions que lida com strings, inteiros e flutuantes entre aspas e sem aspas. </p><p> A função deve ler uma única S-Expression aninhada de uma string e retorná-la como uma matriz (aninhada). </p><p> As novas linhas e outros espaços em branco podem ser ignorados, a menos que estejam contidos em uma cadeia de caracteres entre aspas. </p><p> “ <tt>()</tt> ” Strings entre aspas não são interpretadas, mas tratadas como parte da string. </p><p> Manipular citações com escape dentro de uma string é opcional; assim, “ <tt>(foo bar)</tt> ” talvez tratada como uma string “ <tt>foo” bar</tt> ”, ou como um erro. </p><p> Para isso, o leitor não precisa reconhecer “ <tt>\</tt> ” para escapar, mas deve, além disso, reconhecer números se a linguagem tiver tipos de dados apropriados. </p><p> Observe que, com a exceção de “ <tt>()”</tt> ”(“ <tt>\</tt> ”se houver suporte a escape) e espaço em branco, não há caracteres especiais, e qualquer outra coisa é permitida sem aspas. </p><p> O leitor deve poder ler a seguinte entrada </p><p></p><pre> ((dados &quot;dados cotados&quot; 123 4.5)
     (dados (! @ # (4.5) &quot;(mais&quot; &quot;dados)&quot;)))
 </pre><p></p><p> e transformá-lo em uma estrutura de dados nativa. (veja as implementações de <a href="http://rosettacode.org/wiki/#Pike" title="#Pique">Pike</a> , <a href="http://rosettacode.org/wiki/#Python" title="#Python">Python</a> e <a href="http://rosettacode.org/wiki/#Ruby" title="#Rubi">Ruby</a> para exemplos de estruturas de dados nativas.) </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

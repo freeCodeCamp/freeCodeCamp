@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 120: Restos Quadrados'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja r o resto quando (a − 1) n + (a + 1) n é dividido por a2. Por exemplo, se a = 7 en = 3, então r = 42: 63 + 83 = 728 ≡ 42 mod 49. E como n varia, também será r, mas para a = 7 verifica-se que rmax = 42. Para 3 ≤ a ≤ 1000, encontre ∑ rmax. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler120();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

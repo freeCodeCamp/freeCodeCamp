@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Faça tipografia responsiva
 ---
 
-## Description
+## Descrição
 <section id="description"> Em vez de usar <code>em</code> ou <code>px</code> para dimensionar texto, você pode usar unidades de viewport para tipografia responsiva. As unidades de viewport, como porcentagens, são unidades relativas, mas são baseadas em itens diferentes. As unidades de porta de visualização são relativas às dimensões da janela de visualização (largura ou altura) de um dispositivo e as porcentagens são relativas ao tamanho do elemento de contêiner pai. As quatro unidades de viewport diferentes são: <ul><li> <code>vw: 10vw</code> seria 10% da largura da janela de visualização. </li><li> <code>vh: 3vh</code> seria 3% da altura da viewport. </li><li> <code>vmin: 70vmin</code> seria 70% da dimensão menor da viewport (altura vs. largura). </li><li> <code>vmax: 100vmax</code> seria 100% da dimensão maior da viewport (altura vs. largura). </li></ul></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina a <code>width</code> da tag <code>h2</code> para 80% da largura da viewport e a <code>width</code> do parágrafo como 75% da dimensão menor da viewport. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -47,7 +47,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

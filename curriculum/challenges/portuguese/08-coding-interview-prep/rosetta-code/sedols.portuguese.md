@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: SEDOLs
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Para cada lista de números de <a href="https://en.wikipedia.org/wiki/SEDOL" title="wp: SEDOL">SEDOLs</a> de 6 dígitos, calcule e anexe o dígito da soma de verificação. </p><p> Isto é, dada a string de entrada à esquerda, sua função deve retornar a string correspondente à direita: </p><pre> <code>&lt;pre&gt; 710889 =&gt; 7108899 B0YBKJ =&gt; B0YBKJ7 406566 =&gt; 4065663 B0YBLH =&gt; B0YBLH2 228276 =&gt; 2282765 B0YBKL =&gt; B0YBKL9 557910 =&gt; 5579107 B0YBKR =&gt; B0YBKR5 585284 =&gt; 5852842 B0YBKT =&gt; B0YBKT7 B00030 =&gt; B000300 &lt;/pre&gt;</code> </pre><p> Verifique também se cada entrada está formada corretamente, especialmente com relação aos caracteres válidos permitidos em uma string SEDOL. Sua função deve retornar <code>null</code> em entrada inválida. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ function sedol (input) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

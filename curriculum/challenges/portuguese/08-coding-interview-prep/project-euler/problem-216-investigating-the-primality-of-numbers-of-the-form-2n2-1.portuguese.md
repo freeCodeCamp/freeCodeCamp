@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 216: Investigando a primalidade dos números da forma 2n2-1'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere os números t (n) da forma t (n) = 2n2-1 com n&gt; 1. Os primeiros números são 7, 17, 31, 49, 71, 97, 127 e 161. Acontece que apenas 49 = 7 * 7 e 161 = 7 * 23 não são primos. Para n ≤ 10000 existem 2202 números t (n) que são primos. <p> Quantos números t (n) são primos para n ≤ 50.000.000? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler216();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entenda a cadeia de protótipos
 ---
 
-## Description
+## Descrição
 <section id="description"> Todos os objetos em JavaScript (com algumas exceções) possuem um <code>prototype</code> . Além disso, o próprio <code>prototype</code> um objeto é um objeto. <blockquote> função Bird (name) { <br> this.name = nome; <br> } <br><br> typeof Bird.prototype; // =&gt; objeto </blockquote> Como um <code>prototype</code> é um objeto, um <code>prototype</code> pode ter seu próprio <code>prototype</code> ! Nesse caso, o <code>prototype</code> do <code>Bird.prototype</code> é <code>Object.prototype</code> : <blockquote> Object.prototype.isPrototypeOf (Bird.prototype); <br> // retorna verdadeiro </blockquote> Como isso é útil? Você pode lembrar o método <code>hasOwnProperty</code> de um desafio anterior: <blockquote> vamos pato = novo pássaro (&quot;Donald&quot;); <br> duck.hasOwnProperty (&quot;name&quot;); // =&gt; true </blockquote> O método <code>hasOwnProperty</code> é definido em <code>Object.prototype</code> , que pode ser acessado por <code>Bird.prototype</code> , que pode ser acessado por <code>duck</code> . Este é um exemplo da cadeia de <code>prototype</code> . Nesta cadeia de <code>prototype</code> , <code>Bird</code> é o <code>supertype</code> de <code>duck</code> , enquanto <code>duck</code> é o <code>subtype</code> . <code>Object</code> é um <code>supertype</code> para <code>Bird</code> e <code>duck</code> . <code>Object</code> é um <code>supertype</code> para todos os objetos em JavaScript. Portanto, qualquer objeto pode usar o método <code>hasOwnProperty</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique o código para mostrar a cadeia de protótipos correta. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ Dog.prototype.isPrototypeOf(beagle);  // => true
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

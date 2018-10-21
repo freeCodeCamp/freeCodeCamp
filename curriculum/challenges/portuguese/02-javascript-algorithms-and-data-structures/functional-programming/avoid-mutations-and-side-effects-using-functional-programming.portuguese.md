@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Evite Mutações e Efeitos Colaterais Usando Programação Funcional
 ---
 
-## Description
+## Descrição
 <section id="description"> Se você ainda não descobriu, o problema no desafio anterior era com a chamada de <code>splice</code> na função <code>tabClose()</code> . Infelizmente, a <code>splice</code> altera a matriz original em que é chamada, portanto, a segunda chamada a ela usou uma matriz modificada e gerou resultados inesperados. Este é um pequeno exemplo de um padrão muito maior - você chama uma função em uma variável, matriz ou um objeto, e a função altera a variável ou algo no objeto. Um dos principais princípios da programação funcional é não mudar as coisas. Mudanças levam a bugs. É mais fácil evitar erros sabendo que suas funções não alteram nada, incluindo os argumentos da função ou qualquer variável global. O exemplo anterior não teve operações complicadas, mas o método de <code>splice</code> alterou o array original e resultou em um bug. Lembre-se que na programação funcional, mudar ou alterar coisas é chamado de <code>mutation</code> , e o resultado é chamado de <code>side effect</code> . Uma função, idealmente, deveria ser uma <code>pure function</code> , o que significa que não causa efeitos colaterais. Vamos tentar dominar essa disciplina e não alterar nenhuma variável ou objeto em nosso código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Preencha o código para o <code>incrementer</code> função para que ele retorne o valor da variável global <code>fixedValue</code> aumentado em um. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ console.log(fixedValue); // Should print 4
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

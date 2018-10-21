@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a função parseInt com uma base
 ---
 
-## Description
+## Descrição
 <section id="description"> A função <code>parseInt()</code> analisa uma string e retorna um inteiro. É preciso um segundo argumento para o radix, que especifica a base do número na string. O radix pode ser um inteiro entre 2 e 36. A chamada de função se parece com: <code>parseInt(string, radix);</code> E aqui está um exemplo: <code>var a = parseInt(&quot;11&quot;, 2);</code> A variável radix diz que &quot;11&quot; está no sistema binário, ou base 2. Este exemplo converte a string &quot;11&quot; em um inteiro 3. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>parseInt()</code> na função <code>convertToInteger</code> para converter um número binário em um inteiro e <code>convertToInteger</code> -lo. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ convertToInteger("10011");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

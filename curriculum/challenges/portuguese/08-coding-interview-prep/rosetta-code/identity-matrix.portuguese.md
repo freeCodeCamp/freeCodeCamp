@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Matriz de identidade
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma <i>matriz de identidade</i> é uma matriz quadrada de tamanho \ (n \ times n \), onde os elementos da diagonal são todos <b>1</b> s (uns), e todos os outros elementos são todos <b>0</b> s (zeros). \ begin {bmatrix} 1 &amp; 0 &amp; 0 \ cr 0 &amp; 1 &amp; 0 \ cr 0 &amp; 0 &amp; 1 \ cr \ end {bmatrix} Escreva uma função que tenha um número &#39;n&#39; como parâmetro e retorne a matriz de identidade de ordem nx n. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,7 +61,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

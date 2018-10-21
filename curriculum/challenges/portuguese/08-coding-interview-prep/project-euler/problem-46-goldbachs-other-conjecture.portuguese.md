@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Foi proposto por Christian Goldbach que cada número composto ímpar pode ser escrito como a soma de um primo e duas vezes por quadrado. 9 = 7 + 2 × 1 <sup>2</sup> 15 = 7 + 2 × 2 <sup>2</sup> 21 = 3 + 2 × 3 <sup>2</sup> 25 = 7 + 2 × 3 <sup>2</sup> 27 = 19 + 2 × 2 <sup>2</sup> 33 = 31 + 2 × 1 <sup>2</sup> Acende que a conjectura era falsa. Qual é o menor compósito ímpar que não pode ser escrito como a soma de um primo e duas vezes por quadrado? </section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,7 +45,7 @@ goldbachsOtherConjecture();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

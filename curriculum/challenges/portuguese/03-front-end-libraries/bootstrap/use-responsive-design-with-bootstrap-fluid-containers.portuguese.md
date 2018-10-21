@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Use Design Responsivo com Containers Fluidos do Bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Na seção HTML5 e CSS do freeCodeCamp, criamos um aplicativo Cat Photo. Agora vamos voltar a isso. Desta vez, vamos estilizá-lo usando o popular framework CSS responsivo do Bootstrap. O Bootstrap vai descobrir a largura da sua tela e responder redimensionando seus elementos HTML - daí o nome <code>Responsive Design</code> . Com design responsivo, não há necessidade de projetar uma versão móvel do seu site. Ficará bem em dispositivos com telas de qualquer largura. Você pode adicionar o Bootstrap a qualquer aplicativo adicionando o seguinte código ao topo do seu HTML: <code>&lt;link rel=&quot;stylesheet&quot; href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css&quot; integrity=&quot;sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u&quot; crossorigin=&quot;anonymous&quot;/&gt;</code> Neste caso, nós já adicionamos para você nesta página nos bastidores. Observe que usar <code>&gt;</code> ou <code>/&gt;</code> para fechar a tag de <code>link</code> é aceitável. Para começar, devemos aninhar todo o nosso HTML (exceto a tag de <code>link</code> e o elemento de <code>style</code> ) em um elemento <code>div</code> com a classe <code>container-fluid</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -98,7 +98,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

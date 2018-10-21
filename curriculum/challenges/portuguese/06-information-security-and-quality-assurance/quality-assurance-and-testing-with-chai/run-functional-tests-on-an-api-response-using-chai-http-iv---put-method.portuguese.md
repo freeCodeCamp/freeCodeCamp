@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Executar testes funcionais em uma resposta da API usando o método Chai-HTTP IV - PUT
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-mochachai/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-mochachai/">GitHub</a> . Este exercício é semelhante ao anterior. Olhe para os detalhes. Enviar {sobrenome: &#39;da Verrazzano&#39;}. Substitua assert.fail () e faça o teste passar. Verifique por 1) status, 2) tipo, 3) body.name, 4) body.surname Siga a ordem de afirmação acima, nós confiamos nele. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,12 +33,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

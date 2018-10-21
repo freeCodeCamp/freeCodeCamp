@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Copiar um objeto com Object.assign
 ---
 
-## Description
+## Descrição
 <section id="description"> Os últimos vários desafios trabalharam com matrizes, mas existem maneiras de ajudar a impor a imutabilidade do estado quando o estado é um <code>object</code> também. Uma ferramenta útil para manipular objetos é o utilitário <code>Object.assign()</code> . <code>Object.assign()</code> pega um objeto de destino e objetos de origem e mapeia propriedades dos objetos de origem para o objeto de destino. Todas as propriedades correspondentes são substituídas por propriedades nos objetos de origem. Esse comportamento é comumente usado para fazer cópias superficiais de objetos, passando um objeto vazio como o primeiro argumento seguido pelo objeto (s) que você deseja copiar. Aqui está um exemplo: <code>const newObject = Object.assign({}, obj1, obj2);</code> Isto cria <code>newObject</code> como um novo <code>object</code> , que contém as propriedades que existem actualmente no <code>obj1</code> e <code>obj2</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O estado e as ações do Redux foram modificados para manipular um <code>object</code> para o <code>state</code> . Edite o código para retornar um novo objeto de <code>state</code> para ações com o tipo <code>ONLINE</code> , que define a propriedade <code>status</code> como <code>online</code> . Tente usar <code>Object.assign()</code> para completar o desafio. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -70,7 +70,7 @@ const store = Redux.createStore(immutableReducer);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 93: Expressões Aritméticas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Usando cada um dos dígitos do conjunto {1, 2, 3, 4}, exatamente uma vez, e fazendo uso das quatro operações aritméticas (+, -, *, /) e colchetes / parênteses, é possível formar diferentes alvos inteiros positivos. Por exemplo, 8 = (4 * (1 + 3)) / 2 14 = 4 * (3 + 1/2) 19 = 4 * (2 + 3) - 1 36 = 3 * 4 * (2 + 1) Nota que concatenações dos dígitos, como 12 + 34, não são permitidas. Usando o set, {1, 2, 3, 4}, é possível obter trinta e um números alvos diferentes, dos quais 36 é o máximo, e cada um dos números 1 a 28 pode ser obtido antes de encontrar o primeiro não expressável. número. Encontre o conjunto de quatro dígitos distintos, um &lt;b &lt;c &lt;d, para o qual o conjunto mais longo de inteiros positivos consecutivos, 1 a n, pode ser obtido, dando sua resposta como uma string: abcd. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler93();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

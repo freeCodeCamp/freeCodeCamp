@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Largue
 ---
 
-## Description
+## Descrição
 <section id="description"> Dado o arranjo <code>arr</code> , percorra e remova cada elemento começando do primeiro elemento (o índice 0) até que a função <code>func</code> retorne <code>true</code> quando o elemento iterado passar por ele. Em seguida, retorne o restante da matriz quando a condição for satisfeita, caso contrário, o <code>arr</code> deverá ser retornado como uma matriz vazia. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ dropElements([1, 2, 3], function(n) {return n < 3; });
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

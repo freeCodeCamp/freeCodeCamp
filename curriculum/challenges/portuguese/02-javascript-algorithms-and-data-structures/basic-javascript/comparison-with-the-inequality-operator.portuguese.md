@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comparação com o operador Inequality
 ---
 
-## Description
+## Descrição
 <section id="description"> O operador de desigualdade ( <code>!=</code> ) É o oposto do operador de igualdade. Significa &quot;Não igual&quot; e retorna <code>false</code> onde a igualdade retornaria <code>true</code> e <em>vice-versa</em> . Como o operador de igualdade, o operador de desigualdade converterá tipos de dados de valores durante a comparação. <strong>Exemplos</strong> <blockquote> 1! = 2 // verdadeiro <br> 1! = &quot;1&quot; // false <br> 1! = &#39;1&#39; // false <br> 1! = Verdadeiro // falso <br> 0! = Falso // falso </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o operador de desigualdade <code>!=</code> Na instrução <code>if</code> para que a função retorne &quot;Not Equal&quot; quando <code>val</code> não for equivalente a <code>99</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ testNotEqual(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Retornar parte de uma matriz usando o método de fatia
 ---
 
-## Description
+## Descrição
 <section id="description"> O método <code>slice</code> retorna uma cópia de certos elementos de um array. Pode levar dois argumentos, o primeiro dá o índice de onde começar a fatia, o segundo é o índice de onde terminar a fatia (e é não-inclusivo). Se os argumentos não forem fornecidos, o padrão é começar no início da matriz até o final, o que é uma maneira fácil de fazer uma cópia da matriz inteira. O método de <code>slice</code> não altera o array original, mas retorna um novo. Aqui está um exemplo: <blockquote> var arr = [&quot;gato&quot;, &quot;cachorro&quot;, &quot;tigre&quot;, &quot;zebra&quot;]; <br> var newArray = arr.slice (1, 3); <br> // Define newArray para [&quot;Dog&quot;, &quot;Tiger&quot;] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método de <code>slice</code> na função <code>sliceArray</code> para retornar parte do array <code>anim</code> dado os índices <code>endSlice</code> e <code>beginSlice</code> fornecidos. A função deve retornar uma matriz. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ sliceArray(inputAnim, 1, 3);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

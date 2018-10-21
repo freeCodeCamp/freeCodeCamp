@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 290: Assinatura Digital'
 ---
 
-## Description
+## Descrição
 <section id="description"> Quantos inteiros 0 ≤ n &lt;1018 têm a propriedade que a soma dos dígitos de n é igual à soma dos dígitos de 137n? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler290();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

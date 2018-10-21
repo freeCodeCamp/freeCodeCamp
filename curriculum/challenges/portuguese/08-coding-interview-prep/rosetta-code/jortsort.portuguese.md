@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: JortSort
 ---
 
-## Description
+## Descrição
 <section id="description"> O jortSort é um conjunto de ferramentas de classificação que faz com que o usuário faça o trabalho e garanta a eficiência, porque você não precisa fazer a classificação novamente. Foi originalmente apresentado por Jenn &quot;Moneydollars&quot; Schiffer no prestigiado <a href="https://www.youtube.com/watch?v=pj4U_W0OFoE">JSConf</a> . jortSort é uma função que usa um único array de objetos comparáveis ​​como argumento. Em seguida, ele classifica a matriz em ordem crescente e compara a matriz classificada à matriz originalmente fornecida. Se as matrizes combinam (ou seja, a matriz original já foi classificada), a função retorna true. Se as matrizes não corresponderem (ou seja, a matriz original não foi classificada), a função retornará false. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

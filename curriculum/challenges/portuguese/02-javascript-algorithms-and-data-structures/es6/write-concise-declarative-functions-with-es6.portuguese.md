@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Escrever funções declarativas concisas com o ES6
 ---
 
-## Description
+## Descrição
 <section id="description"> Ao definir funções dentro de objetos no ES5, precisamos usar a <code>function</code> palavra-chave da seguinte forma: <blockquote> const pessoa = { <br> nome: &quot;Taylor&quot;, <br> sayHello: function () { <br> return &quot;Olá! Meu nome é $ {this.name} .`; <br> } <br> }; </blockquote> Com ES6, você pode remover a palavra-chave da <code>function</code> e dois pontos ao definir funções em objetos. Aqui está um exemplo dessa sintaxe: <blockquote> const pessoa = { <br> nome: &quot;Taylor&quot;, <br> diga olá() { <br> return &quot;Olá! Meu nome é $ {this.name} .`; <br> } <br> }; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Refatorar a função <code>setGear</code> dentro da <code>bicycle</code> do objeto para usar a sintaxe abreviada descrita acima. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ console.log(bicycle.gear);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

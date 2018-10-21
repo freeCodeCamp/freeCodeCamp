@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a propriedade justify-content no Tweet Incorporar
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio mostrou um exemplo da propriedade <code>justify-content</code> . Para a incorporação do tweet, essa propriedade pode ser aplicada para alinhar os itens no elemento <code>.profile-name</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione a propriedade CSS <code>justify-content</code> ao elemento <code>.profile-name</code> do cabeçalho e defina o valor para qualquer uma das opções do último desafio. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -128,7 +128,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

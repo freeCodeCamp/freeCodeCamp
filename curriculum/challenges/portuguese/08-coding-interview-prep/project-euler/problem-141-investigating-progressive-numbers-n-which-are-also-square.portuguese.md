@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 141: Investigando números progressivos, n, que também são quadrados'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um inteiro positivo, n, é dividido por d e o quociente e o resto são q e r, respectivamente. Além disso, d, q e r são termos inteiros positivos consecutivos em uma sequência geométrica, mas não necessariamente nessa ordem. Por exemplo, 58 dividido por 6 tem o quociente 9 e o restante 4. Também pode ser visto que 4, 6, 9 são termos consecutivos em uma sequência geométrica (proporção comum 3/2). Nós chamaremos esses números, n, progressivos. Alguns números progressivos, como 9 e 10404 = 1022, também são quadrados perfeitos. A soma de todos os quadrados perfeitos progressivos abaixo de cem mil é 124657. Encontre a soma de todos os quadrados perfeitos progressivos abaixo de um trilhão (1012). </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler141();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a sintaxe de classe para definir uma função de construtor
 ---
 
-## Description
+## Descrição
 <section id="description"> O ES6 fornece uma nova sintaxe para ajudar a criar objetos, usando a <dfn>classe de</dfn> palavras-chave. Isso deve ser notado, que a sintaxe da <code>class</code> é apenas uma sintaxe, e não uma implementação baseada em classe completa do paradigma orientado a objetos, diferente de linguagens como Java, Python ou Ruby etc. No ES5, geralmente definimos um construtor função e use a <code>new</code> palavra-chave para instanciar um objeto. <blockquote> var SpaceShuttle = function (targetPlanet) { <br> this.targetPlanet = targetPlanet; <br> } <br> var zeus = new SpaceShuttle (&#39;Jupiter&#39;); </blockquote> A sintaxe da classe simplesmente substitui a criação da função construtora: <blockquote> classe SpaceShuttle { <br> construtor (targetPlanet) { <br> this.targetPlanet = targetPlanet; <br> } <br> } <br> const zeus = novo SpaceShuttle (&#39;Jupiter&#39;); </blockquote> Observe que a palavra-chave <code>class</code> declara uma nova função, e um construtor foi adicionado, o qual seria invocado quando <code>new</code> é chamado - para criar um novo objeto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a palavra-chave <code>class</code> e escreva um construtor apropriado para criar a classe <code>Vegetable</code> . O <code>Vegetable</code> permite criar um objeto vegetal, com um <code>name</code> propriedade, para ser passado ao construtor. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.log(carrot.name); // => should be 'carrot'
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

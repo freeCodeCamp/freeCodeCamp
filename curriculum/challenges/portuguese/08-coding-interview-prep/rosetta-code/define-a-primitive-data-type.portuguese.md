@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Definir um tipo de dados primitivo
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Defina um tipo que se comporta como um inteiro, mas tem um valor válido mais baixo de 1 e um valor válido mais alto de 10. </p> Erros: Se você tentar instanciar um <code>Num</code> com um valor fora de 1 a 10, deverá lançar um erro <code>TypeError</code> com uma mensagem de erro <code>&#39;Out of range&#39;</code> . Se você tentar instanciar um <code>Num</code> com um valor que não seja um número, ele deve lançar um <code>TypeError</code> com uma mensagem de erro <code>&#39;Not a Number&#39;</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -51,7 +51,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -70,7 +70,7 @@ function Num (n) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

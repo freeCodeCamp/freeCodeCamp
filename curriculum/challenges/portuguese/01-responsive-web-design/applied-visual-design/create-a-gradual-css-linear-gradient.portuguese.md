@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar um gradiente linear de CSS gradual
 ---
 
-## Description
+## Descrição
 <section id="description"> A aplicação de uma cor nos elementos HTML não se limita a um matiz plano. O CSS fornece a capacidade de usar transições de cores, também conhecidas como gradientes, em elementos. Isso é acessado através da função <code>linear-gradient()</code> da propriedade <code>background</code> . Aqui está a sintaxe geral: <code>background: linear-gradient(gradient_direction, color 1, color 2, color 3, ...);</code> O primeiro argumento especifica a direção a partir da qual a transição de cor começa - pode ser declarada como um grau, em que 90deg faz um gradiente vertical e 45deg é inclinado como uma barra invertida. Os argumentos a seguir especificam a ordem das cores usadas no gradiente. Exemplo: <code>background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use um <code>linear-gradient()</code> para o <code>background</code> do elemento <code>div</code> e defina-o a partir de uma direção de 35 graus para alterar a cor de <code>#CCFFFF</code> para <code>#FFCCCC</code> . <strong>Nota</strong> <br> Embora existam outras maneiras de especificar um valor de cor, como <code>rgb()</code> ou <code>hsl()</code> , use valores hexadecimais para esse desafio. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -52,7 +52,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar uma fila circular
 ---
 
-## Description
+## Descrição
 <section id="description"> Neste desafio você estará criando uma Fila Circular. Uma fila circular é basicamente uma fila que grava no final de uma coleção e começa a escrever no próprio início da coleção. Este é o tipo de estrutura de dados tem algumas aplicações úteis em determinadas situações. Por exemplo, uma fila circular pode ser usada para streaming de mídia. Quando a fila está cheia, os novos dados de mídia simplesmente começam a substituir os dados antigos. Uma boa maneira de ilustrar esse conceito é com uma matriz: <blockquote> [1, 2, 3, 4, 5] <br> ^ Leia @ 0 <br> ^ Escreva @ 0 </blockquote> Aqui, a leitura e a gravação estão na posição <code>0</code> . Agora a fila recebe 3 novos registros <code>a</code> , <code>b</code> e <code>c</code> . Nossa fila agora parece com: <blockquote> [a, b, c, 4, 5] <br> ^ Leia @ 0 <br> ^ Escreva @ 3 </blockquote> Como o cabeçote de leitura lê, ele pode remover valores ou mantê-los: <blockquote> [nulo, nulo, nulo, 4, 5] <br> ^ Leia @ 3 <br> ^ Escreva @ 3 </blockquote> Quando a gravação chega ao final da matriz, volta ao início: <blockquote> [f, null, null, d, e] <br> ^ Leia @ 3 <br> ^ Escreva @ 1 </blockquote> Essa abordagem requer uma quantidade constante de memória, mas permite que arquivos de tamanho muito maior sejam processados. Instruções: Neste desafio, vamos implementar uma fila circular. A fila circular deve fornecer métodos de <code>enqueue</code> e de <code>dequeue</code> que permitem ler e gravar na fila. A classe em si também deve aceitar um número inteiro que você possa usar para especificar o tamanho da fila ao criá-la. Nós escrevemos a versão inicial desta classe para você no editor de código. Quando você enfileira itens na fila, o ponteiro de gravação deve avançar e retornar ao início assim que chegar ao final da fila. Da mesma forma, o ponteiro de leitura deve avançar conforme você desencaixa itens. O ponteiro de escrita não deve passar pelo ponteiro de leitura (nossa classe não permitirá que você sobrescreva dados que você ainda não tenha lido) e o ponteiro de leitura não deve ser capaz de avançar dados passados ​​que você escreveu. Além disso, o método de <code>enqueue</code> deve retornar o item que você enfileirou se tiver êxito e, caso contrário, retornará <code>null</code> . Da mesma forma, quando você desenfileirar um item, ele deve ser retornado e, se não for possível, você deve retornar <code>null</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -80,7 +80,7 @@ class CircularQueue {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

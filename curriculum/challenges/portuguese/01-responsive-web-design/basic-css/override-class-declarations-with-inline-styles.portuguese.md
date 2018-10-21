@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Substituir declarações de classe com estilos in-line
 ---
 
-## Description
+## Descrição
 <section id="description"> Por isso, provamos que as declarações de ID substituem as declarações de classe, independentemente de onde elas são declaradas no CSS do elemento de <code>style</code> . Existem outras maneiras de substituir o CSS. Você se lembra de estilos inline? </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use um <code>inline style</code> para tentar tornar nosso elemento <code>h1</code> branco. Lembre-se de que os estilos de linha se parecem com isso: <code>&lt;h1 style=&quot;color: green;&quot;&gt;</code> Deixe as classes de <code>pink-text</code> <code>blue-text</code> <code>pink-text</code> em seu elemento <code>h1</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -64,7 +64,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

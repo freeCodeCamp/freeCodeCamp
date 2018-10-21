@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Reverse uma lista duplamente vinculada
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos criar mais um método para nossa lista duplamente vinculada chamada reverse, que inverte a lista no lugar. Uma vez que o método é executado, a cabeça deve apontar para a cauda anterior e a cauda deve apontar para a cabeça anterior. Agora, se atravessarmos a lista da cabeça para a cauda, ​​devemos encontrar os nós em ordem inversa em relação à lista original. Tentando reverter uma lista vazia deve retornar null. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,7 +69,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar novas propriedades a um objeto JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode adicionar novas propriedades a objetos JavaScript existentes da mesma maneira que você os modificaria. Veja como adicionaríamos uma propriedade <code>&quot;bark&quot;</code> ao <code>ourDog</code> : <code>ourDog.bark = &quot;bow-wow&quot;;</code> ou <code>ourDog[&quot;bark&quot;] = &quot;bow-wow&quot;;</code> Agora, quando avaliarmos o nosso <code>ourDog.bark</code> , vamos pegar o latido dele, &quot;bow-wow&quot;. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione uma propriedade <code>&quot;bark&quot;</code> ao <code>myDog</code> e configure-a para um som de cachorro, como &quot;woof&quot;. Você pode usar a notação de pontos ou colchetes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,7 +68,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

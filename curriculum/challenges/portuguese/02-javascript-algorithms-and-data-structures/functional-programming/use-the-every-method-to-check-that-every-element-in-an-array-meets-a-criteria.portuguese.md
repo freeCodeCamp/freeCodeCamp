@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o método Every para verificar se todos os elementos em uma matriz atendem a um critério
 ---
 
-## Description
+## Descrição
 <section id="description"> O método <code>every</code> funciona com arrays para verificar se <em>cada</em> elemento passa por um teste específico. Retorna um valor booleano - <code>true</code> se todos os valores atendem aos critérios, <code>false</code> se não. Por exemplo, o código a seguir verificaria se cada elemento na matriz de <code>numbers</code> é menor que 10: <blockquote> números var = [1, 5, 8, 0, 10, 11]; <br> numbers.every (function (currentValue) { <br> return currentValue &lt;10; <br> }); <br> // Retorna falso </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método <code>every</code> dentro da função <code>checkPositive</code> para verificar se todos os elementos em <code>arr</code> são positivos. A função deve retornar um valor booleano. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ checkPositive([1, 2, 3, -4, 5]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

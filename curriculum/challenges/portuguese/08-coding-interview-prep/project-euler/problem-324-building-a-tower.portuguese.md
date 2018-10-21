@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 324: Construindo uma torre'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja f (n) o número de maneiras de preencher uma torre 3 × 3 × n com blocos de 2 × 1 × 1. Você tem permissão para girar os blocos da maneira que quiser; no entanto, rotações, reflexões, etc. da própria torre são contadas como distintas. Por exemplo (com q = 100000007): f (2) = 229, f (4) = 117805, f (10) mod q = 96149360, f (103) mod q = 24806056, f (106) mod q = 30808124. <p> Encontre f (1010000) mod 100000007. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler324();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

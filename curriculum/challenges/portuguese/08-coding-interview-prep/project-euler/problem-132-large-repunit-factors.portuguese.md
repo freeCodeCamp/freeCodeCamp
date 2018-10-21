@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 132: Grandes fatores repostos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um número consistindo inteiramente de um é chamado de repunit. Vamos definir R (k) para ser uma repunidade de comprimento k. Por exemplo, R (10) = 1111111111 = 11 × 41 × 271 × 9091, e a soma desses fatores primos é 9414. Encontre a soma dos primeiros quarenta fatores primos de R (109). </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler132();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

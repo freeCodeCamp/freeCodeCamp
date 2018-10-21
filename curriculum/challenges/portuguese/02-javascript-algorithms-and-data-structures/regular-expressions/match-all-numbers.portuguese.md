@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder todos os números
 ---
 
-## Description
+## Descrição
 <section id="description"> Você aprendeu atalhos para padrões de string comuns, como alfanuméricos. Outro padrão comum é procurar apenas dígitos ou números. O atalho para procurar caracteres de dígitos é <code>\d</code> , com um <code>d</code> minúsculo. Isso é igual à classe de caracteres <code>[0-9]</code> , que procura um único caractere de qualquer número entre zero e nove. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a classe de caractere abreviada <code>\d</code> para contar quantos dígitos estão em títulos de filmes. Números escritos (&quot;seis&quot; em vez de 6) não contam. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ let result = numString.match(numRegex).length;
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 451: inversos modulares'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere o número 15. Existem oito números positivos menores que 15, que são coprimos para 15: 1, 2, 4, 7, 8, 11, 13, 14. Os inversos modulares desses números módulo 15 são: 1, 8, 4 13, 2, 11, 7, 14 porque 1 * 1 mod 15 = 1 2 * 8 = 16 mod 15 = 1 4 * 4 = 16 mod 15 = 1 7 * 13 = 91 mod 15 = 1 11 * 11 = 121 mod 15 = 1 14 * 14 = 196 mod 15 = 1 <p> Seja I (n) o maior número positivo m menor que n-1, de modo que o inverso modular do módulo n seja igual a si mesmo. Então eu (15) = 11. Também eu (100) = 51 e eu (7) = 1. </p><p> Encontre ∑I (n) para 3≤n≤2 · 107 </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler451();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

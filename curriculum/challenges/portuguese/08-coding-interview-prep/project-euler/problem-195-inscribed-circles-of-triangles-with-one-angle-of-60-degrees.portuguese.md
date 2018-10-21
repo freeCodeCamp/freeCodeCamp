@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 195: Círculos inscritos de triângulos com um ângulo de 60 graus'
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos chamar um triângulo de lados inteiros com exatamente um ângulo de 60 graus e um triângulo de 60 graus. Seja r o raio do círculo inscrito desse triângulo de 60 graus. Existem 1234 triângulos de 60 graus para os quais r ≤ 100. Seja T (n) o número de triângulos de 60 graus para os quais r ≤ n, T (100) = 1234, T (1000) = 22767 e T ( 10000) = 359912. <p> Encontre T (1053779). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler195();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

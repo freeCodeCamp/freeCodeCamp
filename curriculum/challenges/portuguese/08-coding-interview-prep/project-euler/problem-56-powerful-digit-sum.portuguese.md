@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Um googol (10100) é um número massivo: um seguido por cem zeros; 100100 é quase inimaginavelmente grande: um seguido por duzentos zeros. Apesar de seu tamanho, a soma dos dígitos em cada número é apenas 1. Considerando números naturais da forma, ab, onde a, b &lt;100, qual é a soma digital máxima? </section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -45,7 +45,7 @@ euler56();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

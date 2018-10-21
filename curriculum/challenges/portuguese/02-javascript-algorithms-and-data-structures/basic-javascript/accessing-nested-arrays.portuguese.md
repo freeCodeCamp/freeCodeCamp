@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Acessando matrizes aninhadas
 ---
 
-## Description
+## Descrição
 <section id="description"> Como vimos nos exemplos anteriores, os objetos podem conter tanto objetos aninhados quanto matrizes aninhadas. Semelhante ao acesso a objetos aninhados, a notação de colchetes da Array pode ser encadeada para acessar matrizes aninhadas. Aqui está um exemplo de como acessar uma matriz aninhada: <blockquote> var ourPets = [ <br> { <br> animalTipo: &quot;gato&quot;, <br> nomes: [ <br> &quot;Meowzer&quot;, <br> &quot;Fofo&quot;, <br> &quot;Kit-Cat&quot; <br> ] <br> } <br> { <br> animalTipo: &quot;cachorro&quot;, <br> nomes: [ <br> &quot;Local&quot;, <br> &quot;Bowser&quot;, <br> &quot;Frankie&quot; <br> ] <br> } <br> ]; <br> ourPets [0] .nomes [1]; // &quot;Fofo&quot; <br> ourPets [1] .nomes [0]; // &quot;Local&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Recuperar a segunda árvore da variável <code>myPlants</code> usando ponto de objeto e notação de colchetes de matriz. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -73,7 +73,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

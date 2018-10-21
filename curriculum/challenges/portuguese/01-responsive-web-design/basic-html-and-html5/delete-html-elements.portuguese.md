@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Excluir elementos HTML
 ---
 
-## Description
+## Descrição
 <section id="description"> Nosso telefone não tem muito espaço vertical. Vamos remover os elementos desnecessários para que possamos começar a construir o nosso CatPhotoApp. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Exclua seu elemento <code>h1</code> para simplificar nossa visualização. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,7 +48,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

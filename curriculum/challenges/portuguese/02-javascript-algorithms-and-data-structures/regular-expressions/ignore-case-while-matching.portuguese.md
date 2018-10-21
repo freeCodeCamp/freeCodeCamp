@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Ignorar maiúsculas e minúsculas durante a correspondência
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, você observou as expressões regulares para fazer correspondências literais de strings. Mas, às vezes, você pode querer também combinar diferenças entre casos. Caso (ou, às vezes, letra maiúscula) é a diferença entre letras maiúsculas e minúsculas. Exemplos de maiúsculas são <code>&quot;A&quot;</code> , <code>&quot;B&quot;</code> e <code>&quot;C&quot;</code> . Exemplos de letras minúsculas são <code>&quot;a&quot;</code> , <code>&quot;b&quot;</code> e <code>&quot;c&quot;</code> . Você pode combinar os dois casos usando o que é chamado de flag. Existem outras bandeiras, mas aqui você se concentrará na bandeira que ignora maiúsculas e minúsculas - o sinalizador <code>i</code> . Você pode usá-lo anexando-o ao regex. Um exemplo de usar esse sinalizador é <code>/ignorecase/i</code> . Este regex pode coincidir com as strings <code>&quot;ignorecase&quot;</code> , <code>&quot;igNoreCase&quot;</code> e <code>&quot;IgnoreCase&quot;</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva um regex <code>fccRegex</code> para combinar com <code>&quot;freeCodeCamp&quot;</code> , não importa o caso. Seu regex não deve corresponder a nenhuma abreviação ou variação com espaços. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ let result = fccRegex.test(myString);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

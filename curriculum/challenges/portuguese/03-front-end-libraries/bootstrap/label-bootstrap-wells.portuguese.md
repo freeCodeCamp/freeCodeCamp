@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Rótulo Bootstrap Wells
 ---
 
-## Description
+## Descrição
 <section id="description"> Por uma questão de clareza, vamos rotular ambos os nossos poços com os seus ids. Acima do seu lado esquerdo, dentro do elemento <code>div</code> <code>col-xs-6</code> , adicione um elemento <code>h4</code> com o texto <code>#left-well</code> . Acima do seu lado direito, dentro do elemento <code>div</code> <code>col-xs-6</code> , adicione um elemento <code>h4</code> com o texto <code>#right-well</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,7 +67,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

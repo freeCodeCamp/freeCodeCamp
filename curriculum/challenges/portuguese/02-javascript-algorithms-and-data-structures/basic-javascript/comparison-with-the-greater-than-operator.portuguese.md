@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comparação com o operador Maior que
 ---
 
-## Description
+## Descrição
 <section id="description"> O operador maior que ( <code>&gt;</code> ) compara os valores de dois números. Se o número à esquerda for maior que o número à direita, ele retornará <code>true</code> . Caso contrário, retorna <code>false</code> . Como o operador de igualdade, maior que o operador converterá tipos de dados de valores durante a comparação. <strong>Exemplos</strong> <blockquote> 5&gt; 3 // verdadeiro <br> 7&gt; &#39;3&#39; // verdadeiro <br> 2&gt; 3 // falso <br> &#39;1&#39;&gt; 9 // falso </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o operador <code>greater than</code> às linhas indicadas para que as instruções de retorno façam sentido. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ testGreaterThan(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

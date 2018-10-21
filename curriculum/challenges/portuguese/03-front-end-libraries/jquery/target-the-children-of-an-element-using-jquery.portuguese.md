@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Segmente os filhos de um elemento usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando os elementos HTML são colocados um nível abaixo do outro, eles são chamados <code>children</code> desse elemento. Por exemplo, os elementos de botão neste desafio com o texto &quot;# target1&quot;, &quot;# target2&quot; e &quot;# target3&quot; são todos <code>children</code> do elemento <code>&lt;div class=&quot;well&quot; id=&quot;left-well&quot;&gt;</code> . jQuery tem uma função chamada <code>children()</code> que permite que você acesse os filhos de qualquer elemento selecionado. Aqui está um exemplo de como você usaria a função <code>children()</code> para dar aos filhos do seu elemento de <code>left-well</code> a cor <code>blue</code> : <code>$(&quot;#left-well&quot;).children().css(&quot;color&quot;, &quot;blue&quot;)</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dê a todas as crianças do seu elemento do <code>right-well</code> a cor laranja. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,7 +78,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

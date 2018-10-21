@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 21: números amigáveis'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja d ( <var>n</var> ) definido como a soma dos divisores apropriados de <var>n</var> (números menores que <var>n</var> que se dividem igualmente em <var>n</var> ). Se d ( <var>a</var> ) = <var>b</var> e d ( <var>b</var> ) = <var>a</var> , onde <var>a</var> ≠ <var>b</var> , então <var>a</var> e <var>b</var> são um par amigável e cada <var>um</var> de <var>a</var> e <var>b</var> são chamados de números amigáveis. Por exemplo, os divisores apropriados de 220 são 1, 2, 4, 5, 10, 11, 20, 22, 44, 55 e 110; portanto d (220) = 284. Os divisores apropriados de 284 são 1, 2, 4, 71 e 142; so d (284) = 220. Avalie a soma de todos os números amigáveis ​​sob <var>n</var> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ sumAmicableNum(10000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

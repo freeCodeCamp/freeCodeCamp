@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 291: Panaitopol Primes'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um número primo p é chamado de primo de Panaitopol se para alguns inteiros positivosx e y. <p> Descubra quantos primos de Panaitopol têm menos de 5 × 1015. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler291();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

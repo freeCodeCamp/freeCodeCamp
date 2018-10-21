@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Argumentos de captura passados ​​na ordem errada ao chamar uma função
 ---
 
-## Description
+## Descrição
 <section id="description"> Continuando a discussão sobre as funções de chamada, o próximo bug a ser observado é quando os argumentos de uma função são fornecidos na ordem incorreta. Se os argumentos forem tipos diferentes, como uma função esperando uma matriz e um inteiro, isso provavelmente causará um erro de tempo de execução. Se os argumentos forem do mesmo tipo (todos os inteiros, por exemplo), a lógica do código não fará sentido. Certifique-se de fornecer todos os argumentos necessários, na ordem correta, para evitar esses problemas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A função <code>raiseToPower</code> gera uma base para um expoente. Infelizmente, ele não é chamado corretamente - corrija o código para que o valor da <code>power</code> seja o esperado 8. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ console.log(power);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

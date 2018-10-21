@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Aprenda sobre cores terciárias
 ---
 
-## Description
+## Descrição
 <section id="description"> Monitores de computador e telas de dispositivos criam cores diferentes combinando quantidades de luz vermelha, verde e azul. Isso é conhecido como o modelo de cores aditivo RGB na teoria moderna de cores. Vermelho (R), verde (G) e azul (B) são chamados de cores primárias. A mistura de duas cores primárias cria as cores secundárias ciano (G + B), magenta (R + B) e amarelo (R + G). Você viu essas cores no desafio Complementary Colours. Essas cores secundárias são o complemento da cor primária não usada em sua criação e são opostas à cor primária na roda de cores. Por exemplo, a magenta é feita com vermelho e azul e é o complemento para verde. Cores terciárias são o resultado da combinação de uma cor primária com um de seus vizinhos de cor secundária. Por exemplo, vermelho (primário) e amarelo (secundário) fazem laranja. Isso adiciona mais seis cores a uma roda de cores simples para um total de doze. Existem vários métodos de seleção de cores diferentes que resultam em uma combinação harmoniosa no design. Um exemplo que pode usar cores terciárias é chamado de esquema de cores complementar dividido. Esse esquema começa com uma cor base e, em seguida, emparelha-o com as duas cores adjacentes ao seu complemento. As três cores fornecem contraste visual forte em um design, mas são mais sutis do que usar duas cores complementares. Aqui estão três cores criadas usando o esquema de complemento de divisão: <table class="table table-striped"><thead><tr><th> Cor </th><th> Código hexadecimal </th></tr></thead><thead></thead><tbody><tr><td> laranja </td><td> # FF7D00 </td></tr><tr><td> ciano </td><td> # 00FFFF </td></tr><tr><td> framboesa </td><td> # FF007D </td></tr></tbody></table></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a propriedade <code>background-color</code> das classes <code>orange</code> , <code>cyan</code> e <code>raspberry</code> para suas respectivas cores. Certifique-se de usar os códigos hexadecimais como laranja e framboesa não são nomes de cores reconhecidas pelo navegador. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -70,7 +70,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 135: as mesmas diferenças'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dados os inteiros positivos, x, ye z são termos consecutivos de uma progressão aritmética, o menor valor do inteiro positivo, n, para o qual a equação, x2 - y2 - z2 = n, tem exatamente duas soluções é n = 27: 342 - 272 - 202 = 122 - 92 - 62 = 27 Acontece que n = 1155 é o menor valor que tem exatamente dez soluções. Quantos valores de n menos de um milhão têm exatamente dez soluções distintas? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler135();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

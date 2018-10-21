@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Onde eu pertenço
 ---
 
-## Description
+## Descrição
 <section id="description"> Retorna o índice mais baixo no qual um valor (segundo argumento) deve ser inserido em uma matriz (primeiro argumento) depois de ter sido classificado. O valor retornado deve ser um número. Por exemplo, <code>getIndexToIns([1,2,3,4], 1.5)</code> deve retornar <code>1</code> porque é maior que <code>1</code> (índice 0), mas menor que <code>2</code> (índice 1). Da mesma forma, <code>getIndexToIns([20,3,5], 19)</code> deve retornar <code>2</code> porque, uma vez que a matriz foi classificada, ela será semelhante a <code>[3,5,20]</code> e <code>19</code> será menor que <code>20</code> (índice 2) e maior que <code>5</code> ( índice 1). Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -56,7 +56,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -77,7 +77,7 @@ getIndexToIns([40, 60], 50);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

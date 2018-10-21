@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Combinar Padrões de Cordas Iniciais
 ---
 
-## Description
+## Descrição
 <section id="description"> Desafios anteriores mostraram que expressões regulares podem ser usadas para procurar um número de correspondências. Eles também são usados ​​para procurar padrões em posições específicas em strings. Em um desafio anterior, você usou o caractere <code>caret</code> ( <code>^</code> ) dentro de um <code>character set</code> para criar um <code>negated character set</code> no formato <code>[^thingsThatWillNotBeMatched]</code> . Fora de um <code>character set</code> , o <code>caret</code> é usado para procurar padrões no início das seqüências de caracteres. <blockquote> deixe firstString = &quot;Ricky é o primeiro e pode ser encontrado&quot;; <br> deixe firstRegex = / ^ Ricky /; <br> firstRegex.test (firstString); <br> // Retorna true <br> vamos notFirst = &quot;Você não pode encontrar Ricky agora.&quot;; <br> firstRegex.test (notFirst); <br> // Retorna falso </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o caractere de <code>caret</code> em um regex para localizar <code>&quot;Cal&quot;</code> apenas no início da string <code>rickyAndCal</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ let result = calRegex.test(rickyAndCal);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Testando Objetos para Propriedades
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes é útil verificar se a propriedade de um determinado objeto existe ou não. Podemos usar o método de objetos <code>.hasOwnProperty(propname)</code> para determinar se esse objeto possui o nome da propriedade. <code>.hasOwnProperty()</code> retorna <code>true</code> ou <code>false</code> se a propriedade for encontrada ou não. <strong>Exemplo</strong> <blockquote> var myObj = { <br> cartola&quot;, <br> fundo: &quot;calça&quot; <br> }; <br> myObj.hasOwnProperty (&quot;top&quot;); // verdade <br> myObj.hasOwnProperty (&quot;middle&quot;); // false </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique a função <code>checkObj</code> para testar <code>myObj</code> for <code>checkProp</code> . Se a propriedade for encontrada, retorne o valor dessa propriedade. Caso contrário, retorne <code>&quot;Not Found&quot;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ checkObj("gift");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

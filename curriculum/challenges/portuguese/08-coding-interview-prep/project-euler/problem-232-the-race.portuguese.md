@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 232: A Corrida'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dois jogadores compartilham uma moeda imparcial e se revezam para jogar &quot;A Corrida&quot;. No turno do Jogador 1, ele joga a moeda uma vez: se surgir Heads, ele marca um ponto; se aparecer Tails, ele não ganha nada. No turno do Jogador 2, ela escolhe um inteiro positivo T e joga a moeda T vezes: se surgir todas as Cabeças, ela pontua 2T-1 pontos; caso contrário, ela não pontua nada. Jogador 1 vai primeiro. O vencedor é o primeiro a 100 ou mais pontos. <p> A cada turno, o Jogador 2 seleciona o número T de lançamentos de moedas que maximiza a probabilidade de sua vitória. </p><p> Qual é a probabilidade de que o Jogador 2 vença? </p><p> Dê sua resposta arredondada para oito casas decimais na forma 0.abcdefgh. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler232();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 208: Caminhadas Robô'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um robô se move em uma série de um quinto arcos circulares (72 °), com a livre escolha de um arco no sentido horário ou anti-horário para cada degrau, mas sem virar no local. <p> Um dos 70932 possíveis caminhos fechados de 25 arcos a partir do norte é </p><p> Dado que o robô começa a se deparar com o Norte, quantas viagens de 70 arcos de comprimento pode levar para que ele retorne, após o arco final, à sua posição inicial? (Qualquer arco pode ser percorrido várias vezes.) </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler208();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Adicionar rótulos aos elementos D3
 ---
 
-## Description
+## Descrição
 <section id="description"> O D3 permite rotular um elemento gráfico, como uma barra, usando o elemento de <code>text</code> SVG. Como o elemento <code>rect</code> , um elemento de <code>text</code> precisa ter os atributos <code>x</code> e <code>y</code> , para colocá-lo na tela do SVG. Também precisa acessar os dados para exibir esses valores. A D3 oferece um alto nível de controle sobre como você rotula suas barras. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O código no editor já vincula os dados a cada novo elemento de <code>text</code> . Primeiro, anexe os nós de <code>text</code> ao <code>svg</code> . Em seguida, adicione atributos para as coordenadas <code>x</code> e <code>y</code> . Eles devem ser calculados da mesma maneira que os <code>rect</code> , exceto que o valor <code>y</code> para o <code>text</code> deve fazer com que o rótulo fique 3 unidades acima da barra. Finalmente, use o método D3 <code>text()</code> para definir o rótulo igual ao valor do ponto de dados. <strong>Nota</strong> <br> Para o rótulo ficar mais alto que a barra, decida se o valor <code>y</code> do <code>text</code> deve ser 3 maior ou 3 menor que o valor <code>y</code> da barra. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -90,7 +90,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Atualizar a Altura de um Elemento Dinamicamente
 ---
 
-## Description
+## Descrição
 <section id="description"> Os desafios anteriores cobriam como exibir dados de uma matriz e como adicionar classes CSS. Você pode combinar essas lições para criar um gráfico de barras simples. Há duas etapas para isso: 1) Criar uma <code>div</code> para cada ponto de dados na matriz 2) Dar a cada <code>div</code> uma altura dinâmica, usando uma função de retorno de chamada no método <code>style()</code> que define a altura igual ao valor dos dados. definir um estilo usando uma função de retorno de chamada: <code>selection.style(&quot;cssProperty&quot;, (d) =&gt; d)</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o método <code>style()</code> ao código no editor para definir a propriedade <code>height</code> para cada elemento. Use uma função de retorno de chamada para retornar o valor do ponto de dados com a string &quot;px&quot; adicionada a ele. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,7 +81,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

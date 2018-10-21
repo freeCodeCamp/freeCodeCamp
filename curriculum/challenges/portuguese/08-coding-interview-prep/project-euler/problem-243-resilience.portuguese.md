@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 243: Resiliência'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma fração positiva cujo numerador é menor que seu denominador é chamada de fração própria. Para qualquer denominador, d, haverá d - 1 frações apropriadas; por exemplo, com d = 12: 1/12, 2/12, 3/12, 4/12, 5/12, 6/12, 7/12, 8/12, 9/12, 10/12, 11 / 12 <p> Chamaremos uma fração que não pode ser cancelada por uma fração resiliente. Além disso, definiremos a resiliência de um denominador, R (d), como a razão de suas frações adequadas que são resilientes; por exemplo, R (12) = 4/11. De fato, d = 12 é o menor denominador com resiliência R (d) &lt;4/10. </p><p> Encontre o menor denominador d, tendo uma resiliência R (d) &lt;15499/94744. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler243();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Implementar classificação rápida
 ---
 
-## Description
+## Descrição
 <section id="description"> Aqui, vamos passar para um algoritmo de classificação intermediário: quick sort. A classificação rápida é uma abordagem eficiente e recursiva de divisão e conquista para classificar uma matriz. Nesse método, um valor dinâmico é escolhido no array original. A matriz é então particionada em dois submatrizes de valores menores e maiores que o valor de pivô. Em seguida, combinamos o resultado de chamar recursivamente o algoritmo de ordenação rápida em ambas as sub-matrizes. Isso continua até que o caso base de uma matriz vazia ou de item único seja atingido, o que retornamos. O desenrolar das chamadas recursivas nos devolve o array ordenado. A classificação rápida é um método de classificação muito eficiente, fornecendo, em média, o desempenho <i>O (nlog (n))</i> . Também é relativamente fácil de implementar. Esses atributos o tornam um método de classificação popular e útil. <strong>Instruções:</strong> Escreva uma função <code>quickSort</code> que <code>quickSort</code> uma matriz de números inteiros como entrada e retorne uma matriz desses números inteiros na ordem classificada de menor para maior. Embora a escolha do valor de pivot seja importante, qualquer pivô serve para nossos propósitos aqui. Por simplicidade, o primeiro ou último elemento pode ser usado. <strong>Nota:</strong> <br> Estamos chamando essa função dos bastidores; a matriz de teste que estamos usando é comentada no editor. Tente registrar a <code>array</code> para ver seu algoritmo de classificação em ação! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

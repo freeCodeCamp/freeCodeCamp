@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 466: Termos distintos em uma tabela de multiplicação'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja P (m, n) o número de termos distintos em uma tabela de multiplicação m × n. <p> Por exemplo, uma tabela de multiplicação 3 × 4 tem esta aparência: </p><p> × 12341 12342 24683 36912 </p><p> Existem 8 termos distintos {1,2,3,4,6,8,9,12}, portanto P (3,4) = 8. </p><p> Você está dado que: P (64,64) = 1263, P (12.345) = 1998, e P (32,1015) = 13826382602124302. </p><p> Encontre P (64,1016). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler466();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

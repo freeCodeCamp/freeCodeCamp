@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Lista de compras
 ---
 
-## Description
+## Descrição
 <section id="description"> Crie uma lista de compras na variável <code>myList</code> . A lista deve ser um array multidimensional contendo vários sub-arrays. O primeiro elemento em cada sub-array deve conter uma string com o nome do item. O segundo elemento deve ser um número representando a quantidade, ou seja, <code>[&quot;Chocolate Bar&quot;, 15]</code> Deve haver pelo menos 5 sub-arrays na lista. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

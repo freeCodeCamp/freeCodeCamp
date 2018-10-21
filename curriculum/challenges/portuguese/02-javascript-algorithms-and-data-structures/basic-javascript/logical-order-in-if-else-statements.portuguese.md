@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Ordem lógica em outras declarações
 ---
 
-## Description
+## Descrição
 <section id="description"> Ordem é importante em <code>if</code> , <code>else if</code> declarações. A função é executada de cima para baixo, então você vai querer ter cuidado com a afirmação que vem primeiro. Tome estas duas funções como um exemplo. Aqui está o primeiro: <blockquote> função foo (x) { <br> if (x &lt;1) { <br> return &quot;menos de um&quot;; <br> } else if (x &lt;2) { <br> return &quot;menos de dois&quot;; <br> } outro { <br> return &quot;Maior que ou igual a dois&quot;; <br> } <br> } </blockquote> E o segundo apenas muda a ordem das declarações: <blockquote> barra de funções (x) { <br> if (x &lt;2) { <br> return &quot;menos de dois&quot;; <br> } else if (x &lt;1) { <br> return &quot;menos de um&quot;; <br> } outro { <br> return &quot;Maior que ou igual a dois&quot;; <br> } <br> } </blockquote> Embora essas duas funções pareçam quase idênticas, se passarmos um número para ambas, obteremos saídas diferentes. <blockquote> foo (0) // &quot;Menos que um&quot; <br> bar (0) // &quot;menos de dois&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a ordem da lógica na função para que ela retorne as instruções corretas em todos os casos. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ orderMyLogic(7);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

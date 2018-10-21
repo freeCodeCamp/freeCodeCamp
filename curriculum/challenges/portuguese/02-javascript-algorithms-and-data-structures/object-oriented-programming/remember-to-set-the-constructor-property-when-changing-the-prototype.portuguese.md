@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Lembre-se de definir a propriedade do construtor ao alterar o protótipo
 ---
 
-## Description
+## Descrição
 <section id="description"> Há um efeito colateral crucial de configurar manualmente o <code>prototype</code> para um novo objeto. Ele apagou a propriedade do <code>constructor</code> ! O código no desafio anterior imprimiria o seguinte para <code>duck</code> : <blockquote> console.log (duck.constructor) <br> // imprime &quot;indefinido&quot; - Oops! </blockquote> Para corrigir isso, sempre que um protótipo for definido manualmente para um novo objeto, lembre-se de definir a propriedade do <code>constructor</code> : <blockquote> Bird.prototype = { <br> construtor: Bird, // define a propriedade do construtor <br> numLegs: 2, <br> eat: function () { <br> console.log (&quot;nom nom nom&quot;); <br> } <br> describe: function () { <br> console.log (&quot;Meu nome é&quot; + this.name); <br> } <br> }; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina a propriedade do <code>constructor</code> no <code>prototype</code> <code>Dog</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ Dog.prototype = {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

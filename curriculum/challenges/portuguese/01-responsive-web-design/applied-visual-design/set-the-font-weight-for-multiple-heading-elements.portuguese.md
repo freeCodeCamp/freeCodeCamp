@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Definir o peso da fonte para vários elementos de título
 ---
 
-## Description
+## Descrição
 <section id="description"> Você define o <code>font-size</code> da <code>font-size</code> de cada tag de cabeçalho no último desafio, aqui você ajusta o <code>font-weight</code> da <code>font-weight</code> . A propriedade <code>font-weight</code> define a espessura ou a espessura dos caracteres em uma seção do texto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"><ul><li> Defina o <code>font-weight</code> da <code>font-weight</code> da tag <code>h1</code> para 800. </li><li> Defina o <code>font-weight</code> da <code>font-weight</code> da tag <code>h2</code> para 600. </li><li> Defina o <code>font-weight</code> da <code>font-weight</code> da tag <code>h3</code> para 500. </li><li> Defina o <code>font-weight</code> da <code>font-weight</code> da tag <code>h4</code> para 400. </li><li> Defina o <code>font-weight</code> da <code>font-weight</code> da tag <code>h5</code> para 300. </li><li> Defina o <code>font-weight</code> da <code>font-weight</code> da tag <code>h6</code> para 200. </li></ul></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,7 +81,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

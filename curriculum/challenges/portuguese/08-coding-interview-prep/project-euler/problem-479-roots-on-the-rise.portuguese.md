@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 479: Raízes em Ascensão'
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos ak, bk e ck representam as três soluções (números reais ou complexos) para a expressão 1 / x = (k / x) 2 (k + x2) - kx. <p> Por exemplo, para k = 5, vemos que {a5, b5, c5} é aproximadamente {5,727244, -0,363622 + 2,057397i, -0,363622-2,057397i}. </p><p> Seja S (n) = Σ (ak + bk) p (bk + ck) p (ck + ak) p para todos os inteiros p, k tal que 1 ≤ p, k ≤ n. </p><p> Curiosamente, S (n) é sempre um inteiro. Por exemplo, S (4) = 51160. </p><p> Encontre S (106) módulo 1 000 000 007. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler479();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

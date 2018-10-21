@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Faça um Heartbeat CSS usando uma Contagem de Animação Infinita
 ---
 
-## Description
+## Descrição
 <section id="description"> Aqui está mais um exemplo de animação contínua com a propriedade <code>animation-iteration-count</code> que usa o coração que você projetou em um desafio anterior. A animação de um segundo de duração da pulsação consiste em duas partes animadas. Os elementos de <code>heart</code> (incluindo <code>:before</code> e <code>:after</code> peças) são animados para alterar o tamanho usando a propriedade <code>transform</code> , e o <code>div</code> fundo é animado para alterar sua cor usando a propriedade <code>background</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Mantenha o coração batendo adicionando a propriedade <code>animation-iteration-count</code> para as classes <code>back</code> e <code>heart</code> e definindo o valor como infinito. O <code>heart:before</code> e <code>heart:after</code> seletores não precisarem de nenhuma propriedade de animação. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -110,7 +110,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

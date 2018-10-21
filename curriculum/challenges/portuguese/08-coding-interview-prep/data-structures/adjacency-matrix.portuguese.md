@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Matriz de adjacência
 ---
 
-## Description
+## Descrição
 <section id="description"> Outra maneira de representar um gráfico é colocá-lo em uma <dfn>matriz de adjacência</dfn> . Uma <dfn>matriz de adjacência</dfn> é uma <dfn>matriz</dfn> bidimensional (2D) onde cada matriz aninhada tem o mesmo número de elementos que a matriz externa. Em outras palavras, é uma matriz ou grade de números, onde os números representam as arestas. Zeros significa que não há vantagem ou relacionamento. <blockquote> 1 2 3 <br> ------ <br> 1 | 0 1 1 <br> 2 | 1 0 0 <br> 3 | 1 0 0 </blockquote> Acima está um gráfico muito simples, não direcionado, no qual você tem três nós, onde o primeiro nó está conectado ao segundo e terceiro nó. <strong>Nota</strong> : Os números na parte superior e esquerda da matriz são apenas rótulos para os nós. Abaixo está uma implementação JavaScript da mesma coisa. <blockquote> var adjMat = [ <br> [0, 1, 1] <br> [1, 0, 0] <br> [1, 0, 0] <br> ]; </blockquote> Ao contrário de uma lista de adjacências, cada &quot;linha&quot; da matriz deve ter o mesmo número de elementos que os nós no gráfico. Aqui temos uma matriz de três por três, o que significa que temos três nós em nosso gráfico. Um gráfico direcionado seria semelhante. Abaixo está um gráfico onde o primeiro nó tem uma borda apontando para o segundo nó e, em seguida, o segundo nó tem uma borda apontando para o terceiro nó. <blockquote> var adjMatDirected = [ <br> [0, 1, 0] <br> [0, 0, 1] <br> [0, 0, 0] <br> ]; </blockquote> Gráficos também podem ter <dfn>pesos</dfn> em suas bordas. Até agora, temos arestas <dfn>não ponderadas</dfn> onde apenas a presença e a falta de aresta é binária ( <code>0</code> ou <code>1</code> ). Você pode ter pesos diferentes dependendo do seu aplicativo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma matriz de adjacência de um gráfico não direcionado com cinco nós. Essa matriz deve estar em uma matriz multidimensional. Esses cinco nós têm relações entre o primeiro e o quarto nó, o primeiro e o terceiro nó, o terceiro e o quinto nó e o quarto e o quinto nó. Todos os pesos de borda são um. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ var adjMatUndirected = [
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Adicionar comentários no JSX
 ---
 
-## Description
+## Descrição
 <section id="description"> JSX é uma sintaxe que é compilada em JavaScript válido. Às vezes, por questões de legibilidade, você pode precisar adicionar comentários ao seu código. Como a maioria das linguagens de programação, o JSX tem seu próprio jeito de fazer isso. Para colocar comentários dentro do JSX, use a sintaxe <code>{/* */}</code> para envolver o texto do comentário. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem um elemento JSX semelhante ao que você criou no último desafio. Adicione um comentário em algum lugar dentro do elemento <code>div</code> fornecido, sem modificar os elementos <code>h1</code> ou <code>p</code> existentes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -60,7 +60,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

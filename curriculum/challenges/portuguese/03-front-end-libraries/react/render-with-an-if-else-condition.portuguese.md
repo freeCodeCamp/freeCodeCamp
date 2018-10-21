@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Renderizar com uma condição If-else
 ---
 
-## Description
+## Descrição
 <section id="description"> Outra aplicação de usar o JavaScript para controlar sua exibição renderizada é amarrar os elementos que são renderizados a uma condição. Quando a condição é verdadeira, uma exibição é renderizada. Quando é falsa, é uma visão diferente. Você pode fazer isso com uma instrução <code>if/else</code> padrão no método <code>render()</code> de um componente React. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> MyComponent contém um <code>boolean</code> em seu estado que controla se você deseja exibir algum elemento na interface do usuário ou não. O <code>button</code> alterna o estado desse valor. Atualmente, ele processa a mesma interface do usuário todas as vezes. Reescreva o método <code>render()</code> com uma instrução <code>if/else</code> para que, se a <code>display</code> for <code>true</code> , você retorne a marcação atual. Caso contrário, retorne a marcação sem o elemento <code>h1</code> . <strong>Nota:</strong> Você deve escrever um <code>if/else</code> para passar nos testes. O uso do operador ternário não passará aqui. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -78,7 +78,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

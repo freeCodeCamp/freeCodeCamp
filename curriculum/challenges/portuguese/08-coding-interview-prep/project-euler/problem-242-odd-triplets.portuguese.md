@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 242: trigêmeos ímpares'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dado o conjunto {1,2, ..., n}, definimos f (n, k) como o número de seus subconjuntos de elementos k com uma soma ímpar de elementos. Por exemplo, f (5,3) = 4, pois o conjunto {1,2,3,4,5} tem quatro subconjuntos de 3 elementos com uma soma ímpar de elementos, ou seja: {1,2,4}, { 1,3,5}, {2,3,4} e {2,4,5}. <p> Quando todos os três valores n, k e f (n, k) são ímpares, dizemos que eles formam um tripleto ímpar [n, k, f (n, k)]. </p><p> Existem exatamente cinco tripletos ímpares com n ≤ 10, a saber: [1,1, f (1,1) = 1], [5,1, f (5,1) = 3], [5,5, f (5,5) = 1], [9,1, f (9,1) = 5] e [9,9, f (9,9) = 1]. </p><p> Quantos odd-triplets existem com n ≤ 1012? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler242();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Criar uma entrada controlada
 ---
 
-## Description
+## Descrição
 undefined
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem o esqueleto de um componente chamado <code>ControlledInput</code> para criar um elemento de <code>input</code> controlado. O <code>state</code> do componente já foi inicializado com uma propriedade de <code>input</code> que contém uma cadeia vazia. Este valor representa o texto que um usuário digita no campo de <code>input</code> . Primeiro, crie um método chamado <code>handleChange()</code> que tenha um parâmetro chamado <code>event</code> . Quando o método é chamado, ele recebe um objeto de <code>event</code> que contém uma cadeia de texto do elemento de <code>input</code> . Você pode acessar essa string com <code>event.target.value</code> dentro do método. Atualize a propriedade de <code>input</code> do <code>state</code> do componente com essa nova cadeia. No método render, crie o elemento de <code>input</code> acima da tag <code>h4</code> . Adicione um atributo de <code>value</code> que seja igual à propriedade de <code>input</code> do <code>state</code> do componente. Em seguida, adicione um manipulador de eventos <code>onChange()</code> ao método <code>handleChange()</code> . Quando você digita na caixa de entrada, esse texto é processado pelo método <code>handleChange()</code> , definido como a propriedade de <code>input</code> no <code>state</code> local e renderizado como o valor na caixa de <code>input</code> na página. O <code>state</code> componente é a única fonte de verdade em relação aos dados de entrada. Por último, mas não menos importante, não se esqueça de adicionar as ligações necessárias no construtor. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -77,7 +77,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

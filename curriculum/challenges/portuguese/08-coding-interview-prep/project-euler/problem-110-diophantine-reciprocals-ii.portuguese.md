@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 110: Reciprocais Diofantinos II'
 ---
 
-## Description
+## Descrição
 <section id="description"> Na seguinte equação x, y e n são inteiros positivos. 1 / <var>x</var> + 1 / <var>y</var> = 1 / <var>n</var> Pode ser verificado que quando <var>n</var> = 1260 existem 113 soluções distintas e este é o menor valor de <var>n</var> para o qual o número total de soluções distintas excede cem. Qual é o menor valor de <var>n</var> para o qual o número de soluções distintas excede quatro milhões? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ diophantineTwo();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

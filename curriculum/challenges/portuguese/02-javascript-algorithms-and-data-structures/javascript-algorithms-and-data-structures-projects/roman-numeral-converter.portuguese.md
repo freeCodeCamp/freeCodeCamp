@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Conversor Numeral Romano
 ---
 
-## Description
+## Descrição
 <section id="description"> Converta o número fornecido em um numeral romano. Todas as respostas dos <a href="http://www.mathsisfun.com/roman-numerals.html" target="_blank">números romanos</a> devem ser fornecidas em maiúsculas. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -76,7 +76,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -96,7 +96,7 @@ convertToRoman(36);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 235: Uma sequência geométrica aritmética'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dada é a sequência aritmética-geométrica u (k) = (900-3k) rk-1. Seja s (n) = Σk = 1 ... nu (k). <p> Encontre o valor de r para o qual s (5000) = -600.000.000.000. </p><p> Dê sua resposta arredondada para 12 lugares atrás do ponto decimal. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler235();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

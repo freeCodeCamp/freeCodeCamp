@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Seqüência de Fibonacci
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Adicione uma função para gerar o <big><sup>n-ésimo</sup></big> número de Fibonacci. </p> /// <p> O <big><sup>n-ésimo</sup></big> número de Fibonacci é dada por: /// </p><p> F <sub>n</sub> = F <sub>n-1</sub> + F <sub>n-2</sub> </p> /// <p> Os dois primeiros termos da série são 0, 1. </p> /// <p> Assim, a série é: 0, 1, 1, 2, 3, 5, 8, 13 ... </p> /// </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ function fibonacci(n) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

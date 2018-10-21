@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Elementos de destino por classe usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Você vê como fizemos todos os seus elementos de <code>button</code> saltarem? Nós os selecionamos com <code>$(&quot;button&quot;)</code> , então adicionamos algumas classes CSS a eles com <code>.addClass(&quot;animated bounce&quot;);</code> . Você acabou de usar a função <code>.addClass()</code> do jQuery, que permite adicionar classes aos elementos. Primeiro, vamos direcionar seus <code>div</code> elementos com a classe <code>well</code> , usando o <code>$(&quot;.well&quot;)</code> selector. Observe que, assim como com as declarações CSS, você digita um <code>.</code> antes do nome da turma. Em seguida, use a função <code>.addClass()</code> do jQuery para adicionar as classes <code>animated</code> e <code>shake</code> . Por exemplo, você pode criar todos os elementos com a trepidação <code>text-primary</code> da classe adicionando o seguinte à sua <code>document ready function</code> para o <code>document ready function</code> : <code>$(&quot;.text-primary&quot;).addClass(&quot;animated shake&quot;);</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -73,7 +73,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

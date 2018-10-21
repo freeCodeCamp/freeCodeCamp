@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar direção visual desvanecendo um elemento da esquerda para a direita
 ---
 
-## Description
+## Descrição
 <section id="description"> Para este desafio, você mudará a <code>opacity</code> de um elemento animado para que ele se desvanece gradualmente ao atingir o lado direito da tela. Na animação exibida, o elemento redondo com o fundo gradiente se move para a direita pela marca de 50% da animação, conforme a regra <code>@keyframes</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Segmente o elemento com o id da <code>ball</code> e adicione a propriedade de <code>opacity</code> definida como 0.1 a <code>50%</code> , para que o elemento se desvanece à medida que se desloca para a direita. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -67,7 +67,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

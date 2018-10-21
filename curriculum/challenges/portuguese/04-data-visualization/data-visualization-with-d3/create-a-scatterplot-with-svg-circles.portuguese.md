@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Criar um gráfico de dispersão com círculos SVG
 ---
 
-## Description
+## Descrição
 <section id="description"> Um gráfico de dispersão é outro tipo de visualização. Geralmente, ele usa círculos para mapear pontos de dados, que possuem dois valores cada. Estes valores amarrar à <code>x</code> e <code>y</code> eixos, e são utilizados para posicionar o círculo na visualização. O SVG tem uma marca <code>circle</code> para criar a forma do círculo. Funciona muito parecido com os elementos <code>rect</code> que você usou para o gráfico de barras. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use os métodos <code>data()</code> , <code>enter()</code> e <code>append()</code> para vincular o <code>dataset</code> de <code>dataset</code> a novos elementos de <code>circle</code> que são anexados à tela do SVG. <strong>Nota</strong> <br> Os círculos não estarão visíveis porque ainda não definimos os atributos deles. Nós vamos fazer isso no próximo desafio. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -74,7 +74,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

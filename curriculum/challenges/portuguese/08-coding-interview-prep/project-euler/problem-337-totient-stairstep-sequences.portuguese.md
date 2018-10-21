@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Problema 337 totiente sequências Stairstep
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja {a1, a2, ..., an} uma sequência inteira de tamanho n tal que: a1 = 6 para todo 1 ≤ i &lt;n: φ (ai) &lt;φ (ai + 1) &lt;ai &lt;ai + 11 Seja S (N) o número de tais sequências com um ≤ N. Por exemplo, S (10) = 4: {6}, {6, 8}, {6, 8, 9} e {6, 10}. Podemos verificar que S (100) = 482073668 e S (10 000) mod 108 = 73808307. <p> Encontre S (20 000 000) mod 108. </p><p> 1 φ denota a função totiente de Euler. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler337();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

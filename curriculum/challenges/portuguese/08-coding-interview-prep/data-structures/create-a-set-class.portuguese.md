@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar uma classe de conjunto
 ---
 
-## Description
+## Descrição
 <section id="description"> Nos próximos exercícios, vamos criar uma função para emular uma estrutura de dados chamada &quot;Set&quot;. Um conjunto é como uma matriz, mas não pode conter valores duplicados. O uso típico de um conjunto é simplesmente verificar a presença de um item. Isso pode ser implementado com um objeto, por exemplo: <blockquote> var set = new Object (); <br> set.foo = true; <br> // Veja se foo existe em nosso conjunto: <br> console.log (set.foo) // true </blockquote> Nos próximos exercícios, vamos construir um conjunto completo a partir do zero. Para este exercício, crie uma função que irá adicionar um valor à nossa coleção de conjuntos, desde que o valor ainda não exista no conjunto. Por exemplo: <blockquote> this.add = function (element) { <br> // algum código para agregar valor ao conjunto <br> } </blockquote> A função deve retornar <code>true</code> se o valor for adicionado com sucesso e, caso contrário, <code>false</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ function Set() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

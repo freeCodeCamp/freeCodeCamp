@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 158: Explorando cadeias para as quais apenas um caractere aparece lexicograficamente após seu vizinho à esquerda'
 ---
 
-## Description
+## Descrição
 <section id="description"> Tomando três letras diferentes das 26 letras do alfabeto, podem ser formadas cadeias de caracteres de comprimento três. Os exemplos são &#39;abc&#39;, &#39;hat&#39; e &#39;zyx&#39;. Quando estudamos esses três exemplos, vemos que, para &#39;abc&#39;, dois caracteres aparecem lexicograficamente após o vizinho à esquerda. Para &#39;hat&#39; existe exatamente um caractere que vem lexicograficamente depois do vizinho à esquerda. Para &#39;zyx&#39;, há zero caracteres que aparecem lexicograficamente após o vizinho à esquerda. Ao todo, existem 10400 strings de comprimento 3, para as quais exatamente um caractere aparece lexicograficamente após seu vizinho à esquerda. Consideramos agora strings de n ≤ 26 caracteres diferentes do alfabeto. Para cada n, p (n) é o número de cadeias de comprimento n para as quais exatamente um caractere aparece lexicograficamente após seu vizinho à esquerda. Qual é o valor máximo de p (n)? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler158();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

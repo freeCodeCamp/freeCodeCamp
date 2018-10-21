@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o método map para extrair dados de uma matriz
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, aprendemos a usar funções puras para evitar efeitos colaterais em um programa. Além disso, vimos que o valor em ter uma função depende apenas de seus argumentos de entrada. Este é apenas o começo. Como o próprio nome sugere, a programação funcional é centrada em torno de uma teoria de funções. Faz sentido poder passá-los como argumentos para outras funções e retornar uma função de outra função. Funções são consideradas <code>First Class Objects</code> em JavaScript, o que significa que elas podem ser usadas como qualquer outro objeto. Eles podem ser salvos em variáveis, armazenados em um objeto ou passados ​​como argumentos de função. Vamos começar com algumas funções de matriz simples, que são métodos no protótipo de objeto de matriz. Neste exercício, estamos vendo o <code>Array.prototype.map()</code> , ou simplesmente <code>map</code> . Lembre-se de que o método <code>map</code> é uma maneira de iterar sobre cada item em uma matriz. Ele cria uma nova matriz (sem alterar a original) depois de aplicar uma função de retorno de chamada a todos os elementos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O array <code>watchList</code> contém objetos com informações sobre vários filmes. Use o <code>map</code> para extrair o título e a classificação de <code>watchList</code> e salvar o novo array na variável de <code>rating</code> . O código no editor usa atualmente um loop <code>for</code> para fazer isso, substitua a funcionalidade de loop pela sua expressão de <code>map</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -169,7 +169,7 @@ console.log(rating);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

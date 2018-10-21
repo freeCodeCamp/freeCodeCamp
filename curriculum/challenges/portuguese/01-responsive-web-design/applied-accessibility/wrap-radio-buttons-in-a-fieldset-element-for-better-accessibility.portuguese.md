@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Enrole os botões de rádio em um elemento fieldset para uma melhor acessibilidade
 ---
 
-## Description
+## Descrição
 <section id="description"> O próximo tópico do formulário aborda a acessibilidade dos botões de opção. Cada escolha é dada uma <code>label</code> com um <code>for</code> atributo amarrar ao <code>id</code> do item correspondente, abrangidos no último desafio. Como os botões de rádio geralmente vêm em um grupo onde o usuário deve escolher um, há uma maneira de mostrar semanticamente que as opções fazem parte de um conjunto. A tag <code>fieldset</code> envolve todo o agrupamento de botões de rádio para conseguir isso. Ele geralmente usa uma <code>legend</code> para fornecer uma descrição para o agrupamento, que é lido pelos leitores de tela para cada opção no elemento <code>fieldset</code> . O wrapper <code>fieldset</code> e a tag <code>legend</code> não são necessários quando as opções são auto-explicativas, como uma seleção de gênero. Usando um <code>label</code> com a <code>for</code> atributo para cada botão de rádio é suficiente. Aqui está um exemplo: <blockquote> &lt;form&gt; <br> &lt;fieldset&gt; <br> &lt;legend&gt; Escolha um destes três itens: &lt;/ legend&gt; <br> &lt;input id = &quot;one&quot; type = &quot;rádio&quot; nome = &quot;itens&quot; valor = &quot;um&quot;&gt; <br> &lt;label for = &quot;one&quot;&gt; Choice One &lt;/ label&gt; &lt;br&gt; <br> &lt;input id = &quot;two&quot; type = &quot;rádio&quot; name = &quot;itens&quot; valor = &quot;dois&quot;&gt; <br> &lt;label for = &quot;two&quot;&gt; Escolha dois &lt;/ label&gt; &lt;br&gt; <br> &lt;input id = &quot;three&quot; type = &quot;rádio&quot; name = &quot;itens&quot; valor = &quot;três&quot;&gt; <br> &lt;label for = &quot;three&quot;&gt; Escolha Três &lt;/ label&gt; <br> &lt;/ fieldset&gt; <br> &lt;/ form&gt; <br></blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O Camper Cat quer informações sobre o nível ninja de seus usuários quando eles se inscrevem em sua lista de e-mail. Ele é adicionado um conjunto de botões de rádio, e aprendemos de nossa última lição usar tags de etiquetas com <code>for</code> atributos para cada escolha. Vai o gato do campista! No entanto, seu código ainda precisa de ajuda. Altere a tag <code>div</code> redor dos botões de opção para uma tag de <code>fieldset</code> e altere a tag <code>p</code> dentro dela para uma <code>legend</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -90,7 +90,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

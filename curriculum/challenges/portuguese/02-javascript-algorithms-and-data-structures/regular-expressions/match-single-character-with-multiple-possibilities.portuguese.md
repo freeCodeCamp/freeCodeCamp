@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder personagem único com várias possibilidades
 ---
 
-## Description
+## Descrição
 <section id="description"> Você aprendeu como combinar padrões literais ( <code>/literal/</code> ) e caractere curinga ( <code>/./</code> ). Esses são os extremos de expressões regulares, onde se encontram correspondências exatas e o outro combina tudo. Existem opções que são um equilíbrio entre os dois extremos. Você pode procurar por um padrão literal com alguma flexibilidade com <code>character classes</code> . As classes de caracteres permitem que você defina um grupo de caracteres que deseja corresponder colocando-os dentro de colchetes ( <code>[</code> e <code>]</code> ). Por exemplo, você quer combinar <code>&quot;bag&quot;</code> , <code>&quot;big&quot;</code> e <code>&quot;bug&quot;</code> mas não <code>&quot;bog&quot;</code> . Você pode criar o regex <code>/b[aiu]g/</code> para fazer isso. O <code>[aiu]</code> é a classe de caracteres que corresponde apenas aos caracteres <code>&quot;a&quot;</code> , <code>&quot;i&quot;</code> ou <code>&quot;u&quot;</code> . <blockquote> deixe bigStr = &quot;grande&quot;; <br> vamos bagStr = &quot;bag&quot;; <br> deixe bugStr = &quot;bug&quot;; <br> deixe bogStr = &quot;bog&quot;; <br> deixe bgRegex = / b [aiu] g /; <br> bigStr.match (bgRegex); // Retorna [&quot;grande&quot;] <br> bagStr.match (bgRegex); // Retorna [&quot;bag&quot;] <br> bugStr.match (bgRegex); // Retorna [&quot;bug&quot;] <br> bogStr.match (bgRegex); // Retorna nulo </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use uma classe de caractere com vogais ( <code>a</code> , <code>e</code> , <code>i</code> , <code>o</code> , <code>u</code> ) em seu regex <code>vowelRegex</code> para encontrar todas as vogais na string <code>quoteSample</code> . <strong>Nota</strong> <br> Certifique-se de combinar as vogais maiúsculas e minúsculas. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ let result = vowelRegex; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> Os divisores apropriados de um número são todos os divisores excluindo o próprio número. Por exemplo, os divisores apropriados de 28 são 1, 2, 4, 7 e 14. Como a soma desses divisores é igual a 28, chamamos de número perfeito. Curiosamente, a soma dos divisores apropriados de 220 é 284 e a soma dos divisores apropriados de 284 é 220, formando uma cadeia de dois números. Por essa razão, 220 e 284 são chamados de um par amigável. Talvez menos conhecidas sejam as cadeias mais longas. Por exemplo, começando com 12496, formamos uma cadeia de cinco números: 12496 → 14288 → 15472 → 14536 → 14264 (→ 12496 → ...) Como essa cadeia retorna ao ponto inicial, ela é chamada de cadeia amigável. Encontre o menor membro da cadeia amigável mais longa, sem elemento superior a um milhão. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler95();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

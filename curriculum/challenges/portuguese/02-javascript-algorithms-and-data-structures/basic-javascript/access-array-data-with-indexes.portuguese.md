@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Dados de Matriz de Acesso com Índices
 ---
 
-## Description
+## Descrição
 <section id="description"> Podemos acessar os dados dentro de matrizes usando <code>indexes</code> . Os índices de matriz são escritos na mesma notação de colchetes usada pelas cadeias, exceto que, em vez de especificar um caractere, eles estão especificando uma entrada na matriz. Como as strings, as matrizes usam indexação <dfn>baseada em zero</dfn> , portanto, o primeiro elemento em uma matriz é o elemento <code>0</code> . <strong>Exemplo</strong> <blockquote> var array = [50,60,70]; <br> array [0]; // é igual a 50 <br> var data = array [1]; // é igual a 60 </blockquote> <strong>Nota</strong> <br> Não deve haver espaços entre o nome da matriz e os colchetes, como <code>array [0]</code> . Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma variável chamada <code>myData</code> e configure-a para igualar o primeiro valor de <code>myArray</code> usando a notação de colchetes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

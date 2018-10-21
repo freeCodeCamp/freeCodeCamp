@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Alterar a cor de um elemento SVG
 ---
 
-## Description
+## Descrição
 <section id="description"> As barras estão na posição correta, mas todas são da mesma cor preta. O SVG tem uma maneira de alterar a cor das barras. No SVG, uma forma <code>rect</code> é colorida com o atributo de <code>fill</code> . Ele suporta códigos hexadecimais, nomes de cores e valores de rgb, além de opções mais complexas, como gradientes e transparência. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione um método <code>attr()</code> para definir o &quot;preenchimento&quot; de todas as barras para a cor &quot;navy&quot;. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -68,7 +68,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

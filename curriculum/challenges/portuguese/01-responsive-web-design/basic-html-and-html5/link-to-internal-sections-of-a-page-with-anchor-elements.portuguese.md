@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Vincular a seções internas de uma página com elementos âncora
 ---
 
-## Description
+## Descrição
 <section id="description"> Os elementos âncora também podem ser usados ​​para criar links internos para pular para diferentes seções dentro de uma página da Web. Para criar um link interno, atribua o atributo <code>href</code> um link a um símbolo de hash <code>#</code> mais o valor do atributo de <code>id</code> para o elemento que você deseja vincular internamente, geralmente mais abaixo na página. Em seguida, você precisa adicionar o mesmo atributo <code>id</code> ao elemento ao qual está vinculando. Um <code>id</code> é um atributo que descreve exclusivamente um elemento. Abaixo está um exemplo de um link de âncora interna e seu elemento de destino: <blockquote> &lt;a href=&quot;#contacts-header&quot;&gt; Contatos &lt;/a&gt; <br> ... <br> &lt;h2 id = &quot;contatos-cabeçalho&quot;&gt; Contatos &lt;/ h2&gt; </blockquote> Quando os usuários clicam no link Contatos, eles são levados para a seção da página da Web com o elemento de cabeçalho <b>Contatos</b> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere seu link externo para um link interno alterando o atributo <code>href</code> para &quot;#footer&quot; e o texto de &quot;cat photos&quot; para &quot;Jump to Bottom&quot;. Remova o atributo <code>target=&quot;_blank&quot;</code> da tag de âncora, pois isso faz com que o documento vinculado seja aberto em uma nova guia da janela. Em seguida, adicione um atributo <code>id</code> com o valor &quot;footer&quot; ao elemento <code>&lt;footer&gt;</code> na parte inferior da página. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -64,7 +64,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

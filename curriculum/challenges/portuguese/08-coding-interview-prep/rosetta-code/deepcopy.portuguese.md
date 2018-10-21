@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Deepcopy
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Escreva uma função que retorna uma cópia profunda de um determinado objeto. </p><p> A cópia não deve ser o mesmo objeto que foi fornecido. </p><p> Esta tarefa não testará para: </p> Objetos com propriedades que são funções Objetos de data ou objeto com propriedades que são Objetos de data RegEx ou objeto com propriedades que são objetos RegEx Cópia de protótipo </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

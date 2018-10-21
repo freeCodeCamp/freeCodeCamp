@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar um título de bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora vamos construir algo do zero para praticar nossas habilidades em HTML, CSS e Bootstrap. Construiremos um playground da jQuery, que logo usaremos em nossos desafios da jQuery. Para começar, crie um elemento <code>h3</code> , com o texto <code>jQuery Playground</code> . <code>h3</code> cor ao elemento <code>h3</code> com a classe Bootstrap <code>text-primary</code> ao <code>text-primary</code> e centralize-o com a classe Bootstrap do <code>text-center</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -48,7 +48,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

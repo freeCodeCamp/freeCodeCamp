@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Palavra Fibonacci
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva uma função para retornar as palavras de Fibonacci até N. O N. será fornecido como um parâmetro para a função. A função deve retornar uma matriz de objetos. Os objetos devem estar no formato: {N: 1, Comprimento: 1, Entropia: 0, Word: &#39;1&#39;}. Mais detalhes são fornecidos abaixo: </p><p> O Fibonacci Word pode ser criado de uma maneira análoga à seqüência de Fibonacci <a href="http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf" title="link: http://hal.archives-ouvertes.fr/docs/00/36/79/72/PDF/The_Fibonacci_word_fractal.pdf">como descrito aqui</a> : </p><p> Definir F_Word <sub>1</sub> como 1 </p><p> Definir F_Word <sub>2</sub> como 0 </p><p> Formulário F_Word <sub>3</sub> como F_Word <sub>2</sub> concatenado com F_Word <sub>1,</sub> ou seja: 01 </p><p> Form F_Word <sub>n</sub> como F_Word <sub>n-1</sub> concatenado com F_word <sub>n-2</sub> </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

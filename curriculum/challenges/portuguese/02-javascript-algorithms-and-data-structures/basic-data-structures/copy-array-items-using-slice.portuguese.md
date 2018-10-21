@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Copiar itens de matriz usando slice ()
 ---
 
-## Description
+## Descrição
 <section id="description"> O próximo método que abordaremos é <code>slice()</code> . <code>slice()</code> , em vez de modificar uma matriz, copia ou <em>extrai</em> um determinado número de elementos para uma nova matriz, deixando a matriz em que é chamada intocada. <code>slice()</code> usa apenas dois parâmetros - o primeiro é o índice no qual iniciar a extração e o segundo é o índice no qual interromper a extração (a extração ocorrerá até, mas não incluindo o elemento nesse índice). Considere isto: <blockquote> let weatherConditions = [&#39;chuva&#39;, &#39;neve&#39;, &#39;granizo&#39;, &#39;granizo&#39;, &#39;claro&#39;]; <br><br> deixe todaysWeather = weatherConditions.slice (1, 3); <br> // todaysWeather é igual a [&#39;snow&#39;, &#39;sleet&#39;]; <br> // weatherConditions ainda é igual a [&#39;rain&#39;, &#39;snow&#39;, &#39;sleet&#39;, &#39;hail&#39;, &#39;clear&#39;] <br></blockquote> Na verdade, criamos uma nova matriz extraindo elementos de uma matriz existente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Definimos uma função, <code>forecast</code> , que usa um array como argumento. Modifique a função usando <code>slice()</code> para extrair informações da matriz de argumentos e retornar uma nova matriz que contenha os elementos <code>&#39;warm&#39;</code> e <code>&#39;sunny&#39;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

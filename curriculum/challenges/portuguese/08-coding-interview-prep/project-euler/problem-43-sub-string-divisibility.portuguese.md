@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 43: Divisibilidade de subcadeia'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número, 1406357289, é um número pandigital de 0 a 9, porque é composto de cada um dos dígitos de 0 a 9 em alguma ordem, mas também possui uma propriedade de divisibilidade de subcadeia bastante interessante. Seja d1 o primeiro dígito, d2 o segundo dígito e assim por diante. Desta forma, notamos o seguinte: d2d3d4 = 406 é divisível por 2 d3d4d5 = 063 é divisível por 3 d4d5d6 = 635 é divisível por 5 d5d6d7 = 357 é divisível por 7 d6d7d8 = 572 é divisível por 11 d7d8d9 = 728 é divisível por 13 d8d9d10 = 289 é divisível por 17 Encontre os números de todos os números de 0 a 9 pandigital com esta propriedade. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ substringDivisibility();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

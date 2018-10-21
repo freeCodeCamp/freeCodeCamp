@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 2: Mesmo os números de Fibonacci'
 ---
 
-## Description
+## Descrição
 <section id="description"> Cada novo termo na seqüência de Fibonacci é gerado adicionando os dois termos anteriores. Começando com 1 e 2, os primeiros 10 termos serão: <div style="text-align: center;"> 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ... </div> Ao considerar os termos na seqüência de Fibonacci cujos valores não excedem o termo <code>n</code> , encontre a soma dos termos de valor par. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ fiboEvenSum(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

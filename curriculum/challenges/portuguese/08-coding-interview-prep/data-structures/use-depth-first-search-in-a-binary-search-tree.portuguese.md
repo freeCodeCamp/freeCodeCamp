@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Use a primeira pesquisa de profundidade em uma árvore de pesquisa binária
 ---
 
-## Description
+## Descrição
 <section id="description"> Sabemos como pesquisar uma árvore de pesquisa binária por um valor específico. Mas e se quisermos apenas explorar a árvore inteira? Ou se nós não temos uma árvore ordenada e precisamos apenas procurar por um valor? Aqui introduziremos alguns métodos de travessia de árvores que podem ser usados ​​para explorar estruturas de dados de árvores. A primeira é a pesquisa em profundidade. Na pesquisa em profundidade, uma determinada subárvore é explorada o mais profundamente possível antes que a pesquisa continue em outra subárvore. Existem três maneiras pelas quais isso pode ser feito: Em ordem: Comece a pesquisa no nó mais à esquerda e termine no nó mais à direita. Pré-encomenda: explore todas as raízes antes das folhas. Pós-ordem: explore todas as folhas antes das raízes. Como você pode imaginar, você pode escolher diferentes métodos de busca, dependendo do tipo de dados que sua árvore está armazenando e do que você está procurando. Para uma árvore de pesquisa binária, uma passagem in-order retorna os nós na ordem classificada. Instruções: Aqui nós iremos criar estes três métodos de busca em nossa árvore de busca binária. A pesquisa em profundidade é uma operação inerentemente recursiva que continua a explorar outras subárvores, desde que os nós filhos estejam presentes. Depois de entender esse conceito básico, você pode simplesmente reorganizar a ordem na qual você explora os nós e subárvores para produzir qualquer uma das três pesquisas acima. Por exemplo, na pesquisa de pós-ordem, gostaríamos de recorrer a um nó de folha antes de começarmos a retornar qualquer um dos nós, enquanto que na pesquisa de pré-ordem, gostaríamos de retornar os nós primeiro e continuar recursando. descendo a árvore. Defina os métodos <code>inorder</code> , <code>preorder</code> e <code>postorder</code> na nossa árvore. Cada um desses métodos deve retornar uma matriz de itens que representam o percurso da árvore. Certifique-se de retornar os valores inteiros em cada nó da matriz, não os próprios nós. Finalmente, retorne <code>null</code> se a árvore estiver vazia. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -43,7 +43,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -77,7 +77,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

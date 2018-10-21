@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Crie uma escala linear com D3
 ---
 
-## Description
+## Descrição
 <section id="description"> A barra e o gráfico de dispersão mapeiam os dados plotados diretamente na tela do SVG. No entanto, se a altura de uma barra ou um dos pontos de dados fosse maior que os valores de altura ou largura do SVG, ela sairia da área SVG. Na D3, existem escalas para ajudar a traçar dados. <code>Scales</code> são funções que informam ao programa como mapear um conjunto de pontos de dados brutos para os pixels da tela do SVG. Por exemplo, digamos que você tenha uma tela SVG de tamanho 100x500 e deseja plotar o Produto Interno Bruto (PIB) para vários países. O conjunto de números estaria na faixa de bilhões ou trilhões de dólares. Você fornece a D3 um tipo de escala para informar como colocar os grandes valores do PIB nessa área de 100 x 500. É improvável que você planeje dados brutos como estão. Antes de plotar, você define a escala para todo o seu conjunto de dados, de modo que os valores <code>x</code> e <code>y</code> ajustem à largura e altura da tela. O D3 possui vários tipos de escala. Para uma escala linear (geralmente usada com dados quantitativos), existe o método D3 <code>scaleLinear()</code> : <code>const scale = d3.scaleLinear()</code> Por padrão, uma escala usa o relacionamento de identidade. O valor da entrada é o mesmo que o valor da saída. Um desafio separado cobre como mudar isso. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere a variável de <code>scale</code> para criar uma escala linear. Em seguida, defina a variável de <code>output</code> para a escala chamada com um argumento de entrada de 50. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -60,7 +60,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

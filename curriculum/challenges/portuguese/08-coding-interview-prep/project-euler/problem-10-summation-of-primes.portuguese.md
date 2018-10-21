@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 10: Soma dos primos'
 ---
 
-## Description
+## Descrição
 <section id="description"> A soma dos primos abaixo de 10 é 2 + 3 + 5 + 7 = 17. Encontre a soma de todos os primos abaixo de n. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ primeSummation(2000000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

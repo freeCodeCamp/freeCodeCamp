@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar uma linha de bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora vamos criar uma linha do Bootstrap para nossos elementos in-line. Crie um elemento <code>div</code> abaixo da tag <code>h3</code> , com uma classe de <code>row</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -50,7 +50,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

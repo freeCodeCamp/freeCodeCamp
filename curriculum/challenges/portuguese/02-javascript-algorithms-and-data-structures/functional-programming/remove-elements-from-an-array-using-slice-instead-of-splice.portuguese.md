@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Remover elementos de um array usando slice Em vez de splice
 ---
 
-## Description
+## Descrição
 <section id="description"> Um padrão comum ao trabalhar com matrizes é quando você deseja remover itens e manter o restante da matriz. JavaScript oferece o método <code>splice</code> para isso, que leva argumentos para o índice de onde começar a remover itens e, em seguida, o número de itens a serem removidos. Se o segundo argumento não for fornecido, o padrão será remover itens até o final. No entanto, o método de <code>splice</code> altera o array original em que é chamado. Aqui está um exemplo: <blockquote> var cities = [&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;, &quot;Londres&quot;, &quot;Berlim&quot;]; <br> towns.splice (3, 1); // Retorna &quot;Londres&quot; e apaga da matriz de cidades <br> // cidades é agora [&quot;Chicago&quot;, &quot;Delhi&quot;, &quot;Islamabad&quot;, &quot;Berlin&quot;] </blockquote> Como vimos no último desafio, o método <code>slice</code> não altera o array original, mas retorna um novo que pode ser salvo em uma variável. Lembre-se de que o método de <code>slice</code> usa dois argumentos para os índices começarem e terminarem a fatia (o final não é inclusivo) e retorna esses itens em uma nova matriz. Usar o método de <code>slice</code> , em vez de <code>splice</code> ajuda a evitar efeitos colaterais de alteração de matriz. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Reescreva a função <code>nonMutatingSplice</code> usando <code>slice</code> vez de <code>splice</code> . Ele deve limitar o array de <code>cities</code> fornecidas a um comprimento de 3 e retornar um novo array com apenas os três primeiros itens. Não mude o array original fornecido para a função. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ nonMutatingSplice(inputCities);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

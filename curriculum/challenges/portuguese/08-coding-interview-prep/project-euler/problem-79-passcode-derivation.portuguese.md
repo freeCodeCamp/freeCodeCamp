@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 79: derivação de código de acesso'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um método de segurança comum usado para serviços bancários on-line é solicitar ao usuário três caracteres aleatórios de uma senha. Por exemplo, se a senha era 531278, eles podem solicitar o segundo, terceiro e quinto caracteres; a resposta esperada seria: 317. O arquivo de texto, keylog.txt, contém 50 tentativas de login bem-sucedidas. Dado que os três caracteres são sempre solicitados em ordem, analise o arquivo para determinar a senha secreta mais curta possível de comprimento desconhecido. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler79();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

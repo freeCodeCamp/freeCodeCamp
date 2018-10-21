@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 389: Dados Platônicos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um único dado imparcial de 4 faces é lançado e seu valor, T, é anotado. Dados imparciais de 6 faces são lançados e seus pontos são somados. A soma, C, é anotada. Dados imparciais de 8 faces são lançados e suas pontuações são somadas. A soma, O, é anotada. Dados imparciais de 12 faces são lançados e suas pontuações são somadas. A soma, D, é anotada. Dados imparciais de 20 faces são lançados e suas pontuações são somadas. A soma, eu, é anotada. Encontre a variância de I e dê sua resposta arredondada para 4 casas decimais. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler389();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

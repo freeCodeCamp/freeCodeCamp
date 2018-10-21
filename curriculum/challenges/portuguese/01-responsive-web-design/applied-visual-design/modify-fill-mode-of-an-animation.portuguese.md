@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Modificar o modo de preenchimento de uma animação
 ---
 
-## Description
+## Descrição
 <section id="description"> Isso é ótimo, mas não funciona direito ainda. Observe como a animação é redefinida após a passagem de <code>500ms</code> , fazendo com que o botão retorne à cor original. Você quer que o botão fique em destaque. Isso pode ser feito configurando a propriedade <code>animation-fill-mode</code> como <code>forwards</code> . O <code>animation-fill-mode</code> especifica o estilo aplicado a um elemento quando a animação termina. Você pode configurá-lo assim: <code>animation-fill-mode: forwards;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina a propriedade de <code>animation-fill-mode</code> do <code>button:hover</code> para <code>forwards</code> para que o botão permaneça realçado quando um usuário passar por cima dele. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -60,7 +60,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

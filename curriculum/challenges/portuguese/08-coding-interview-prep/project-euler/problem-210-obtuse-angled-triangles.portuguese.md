@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 210: Triângulos Angulares Obturados'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere o conjunto S (r) de pontos (x, y) com coordenadas inteiras satisfazendo | x | + | y ​​| ≤ r. Seja O o ponto (0,0) e C o ponto (r / 4, r / 4). Seja N (r) o número de pontos B em S (r), de forma que o triângulo OBC tenha um ângulo obtuso, isto é, o maior ângulo α satisfaça 90 ° &lt;α &lt;180 °. Então, por exemplo, N (4) = 24 e N (8) = 100. <p> O que é N (1.000.000.000)? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler210();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

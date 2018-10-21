@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Avaliar coeficientes binomiais
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva uma função para calcular o coeficiente binomial para o valor dado de n e k. </p><p> Esta fórmula é recomendada: </p> $ \ binom {n} {k} = \ frac {n!} {(nk)! k!} = \ frac {n (n-1) (n-2) \ ldots (n-k + 1)} { k (k-1) (k-2) \ ldots 1} $ </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ function binom (n, k) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use vários operadores condicionais (ternários)
 ---
 
-## Description
+## Descrição
 <section id="description"> No desafio anterior, você usou um único <code>conditional operator</code> . Você também pode encadeá-los para verificar várias condições. A função a seguir usa if, else if e else para verificar várias condições: <blockquote> function findGreaterOrEqual (a, b) { <br> if (a === b) { <br> return &quot;aeb são iguais&quot;; <br> } <br> mais se (a&gt; b) { <br> return &quot;a é maior&quot;; <br> } <br> outro { <br> return &quot;b é maior&quot;; <br> } <br> } </blockquote> A função acima pode ser reescrita usando múltiplos <code>conditional operators</code> : <blockquote> function findGreaterOrEqual (a, b) { <br> retorno (a == b)? &quot;aeb são iguais&quot;: (a&gt; b)? &quot;a é maior&quot;: &quot;b é maior&quot;; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use vários <code>conditional operators</code> na função <code>checkSign</code> para verificar se um número é positivo, negativo ou zero. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ checkSign(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

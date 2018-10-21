@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use um gradiente linear CSS para criar um elemento distribuído
 ---
 
-## Description
+## Descrição
 <section id="description"> A função de <code>repeating-linear-gradient()</code> é muito semelhante ao <code>linear-gradient()</code> com a principal diferença que repete o padrão de gradiente especificado. <code>repeating-linear-gradient()</code> aceita uma variedade de valores, mas para simplificar, você trabalhará com um valor de ângulo e valores de parada de cor neste desafio. O valor do ângulo é a direção do gradiente. As paradas de cores são como valores de largura que marcam onde uma transição ocorre e são fornecidas com uma porcentagem ou um número de pixels. No exemplo demonstrado no editor de código, o gradiente começa com a cor <code>yellow</code> em 0 pixels, que se mistura com a segunda cor <code>blue</code> a 40 pixels de distância do início. Como a próxima parada de cor também é de 40 pixels, o gradiente muda imediatamente para a terceira cor <code>green</code> , que se mistura com o quarto valor de cor <code>red</code> , a 80 pixels do início do gradiente. Para este exemplo, é útil pensar nas paradas de cores como pares, onde cada duas cores se mesclam. <code>0px [yellow -- blend -- blue] 40px [green -- blend -- red] 80px</code> Se cada dois valores de parada de cor forem da mesma cor, a mesclagem não é perceptível porque está entre a mesma cor, seguida por uma transição difícil para a próxima cor, então você acaba com listras. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Faça listras alterando o <code>repeating-linear-gradient()</code> para usar um ângulo de gradiente de <code>45deg</code> , depois defina as duas primeiras cores para <code>yellow</code> e, finalmente, a segunda cor para <code>black</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -68,7 +68,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

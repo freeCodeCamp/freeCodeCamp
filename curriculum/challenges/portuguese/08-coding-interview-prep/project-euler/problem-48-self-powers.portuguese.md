@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> A série, 1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 10 <sup>10</sup> = 10405071317. Encontre os dez últimos dígitos da série, 1 <sup>1</sup> + 2 <sup>2</sup> + 3 <sup>3</sup> + ... + 1000 <sup>1000</sup> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ selfPowers(1000, 10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

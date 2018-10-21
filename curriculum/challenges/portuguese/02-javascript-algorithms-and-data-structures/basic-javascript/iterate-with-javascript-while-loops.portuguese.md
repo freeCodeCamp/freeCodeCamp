@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Iterar com loops While de JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode executar o mesmo código várias vezes usando um loop. O primeiro tipo de loop vamos aprender é chamado de &quot; <code>while</code> &quot; laço porque ele é executado &quot;enquanto&quot; uma condição especificada for verdadeira e pára uma vez que a condição já não é verdade. <blockquote> var ourArray = []; <br> var i = 0; <br> enquanto (i &lt;5) { <br> ourArray.push (i); <br> i ++; <br> } </blockquote> Vamos tentar fazer um loop while funcionar empurrando valores para um array. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Empurrar os números de 0 a 4 para <code>myArray</code> usando uma <code>while</code> loop. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Alterar a apresentação de um gráfico de barras
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio criou um gráfico de barras, mas há algumas alterações de formatação que podem melhorá-lo: 1) Adicione espaço entre cada barra para separá-las visualmente, o que é feito adicionando uma margem ao CSS para a classe de <code>bar</code> 2) Aumentar a altura das barras para melhor mostrar a diferença de valores, o que é feito multiplicando o valor por um número para dimensionar a altura </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Primeiro, adicione uma <code>margin</code> de 2px à classe de <code>bar</code> na tag de <code>style</code> . Em seguida, altere a função de retorno de chamada no método <code>style()</code> para que ele retorne um valor 10 vezes o valor dos dados originais (mais o &quot;px&quot;). <strong>Nota</strong> <br> Multiplicar cada ponto de dados pela <em>mesma</em> constante apenas altera a escala. É como aumentar o zoom e isso não altera o significado dos dados subjacentes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -83,7 +83,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

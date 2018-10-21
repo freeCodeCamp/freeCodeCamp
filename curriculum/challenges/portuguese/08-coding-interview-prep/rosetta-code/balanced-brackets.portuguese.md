@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Suportes equilibrados
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Determine se uma string gerada de colchetes é balanceada; isto é, se consiste inteiramente de pares de parênteses de abertura / fechamento (nessa ordem), nenhum dos quais errar. </p> Exemplos: <p class="rosetta__paragraph"> (vazio) verdadeiro </p><p class="rosetta__paragraph"> <code>[]</code> verdadeiro </p><p class="rosetta__paragraph"> <code>][</code> falso </p><p class="rosetta__paragraph"> <code>[][]</code> verdadeiro </p><p class="rosetta__paragraph"> <code>][][</code> falso </p><p class="rosetta__paragraph"> <code>[]][[]</code> falso </p><p class="rosetta__paragraph"> <code>[[[[]]]]</code> verdadeiro </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -61,7 +61,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -88,7 +88,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

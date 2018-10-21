@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 100: Probabilidade Arranjada'
 ---
 
-## Description
+## Descrição
 <section id="description"> Se uma caixa contém vinte e um discos coloridos, compostos por quinze discos azuis e seis discos vermelhos, e dois discos foram retirados aleatoriamente, pode-se ver que a probabilidade de se obter dois discos azuis, P (BB) = (15/21 ) × (14/20) = 1/2. O próximo arranjo, para o qual há exatamente 50% de chance de pegar dois discos azuis ao acaso, é uma caixa contendo 85 discos azuis e trinta e cinco discos vermelhos. Ao encontrar o primeiro arranjo para conter mais de 1012 = 1.000.000.000.000 discos no total, determine o número de discos azuis que a caixa conteria. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler100();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

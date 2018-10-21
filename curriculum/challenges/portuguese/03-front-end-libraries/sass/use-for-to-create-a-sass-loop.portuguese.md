@@ -9,13 +9,13 @@ videoUrl: ''
 localeTitle: Use @for para criar um loop Sass
 ---
 
-## Description
+## Descrição
 <section id="description"> O <code>@for</code> diretiva adiciona estilos em um loop, muito semelhante a um loop <code>for</code> em JavaScript. <code>@for</code> é usado de duas maneiras: &quot;início a fim&quot; ou &quot;início a fim&quot;. A principal diferença é que o &quot;início ao fim&quot; <em>exclui</em> o número final e &quot;início até o fim&quot; <em>inclui</em> o número final. Aqui está um começo <b>até o</b> final do exemplo: <blockquote> @ para $ i de 1 a 12 { <br> .col - # {$ i} {width: 100% / 12 * $ i; } <br> } </blockquote> A parte <code>#{$i}</code> é a sintaxe para combinar uma variável ( <code>i</code> ) com texto para criar uma string. Quando o arquivo Sass é convertido em CSS, é assim: <blockquote> .col-1 { <br> largura: 8,33333%; <br> } <br><br> .col-2 { <br> largura: 16,6667%; <br> } <br><br> ... <br><br> .col-12 { <br> largura: 100%; <br> } </blockquote> Esta é uma maneira poderosa de criar um layout de grade. Agora você tem doze opções para larguras de coluna disponíveis como classes CSS. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva uma diretiva <code>@for</code> que tenha uma variável <code>$j</code> que vai de 1 <b>a</b> 6. Ela deve criar 5 classes chamadas <code>.text-1</code> para <code>.text-5</code> onde cada uma tem um <code>font-size</code> configurado para 10px multiplicado pelo índice. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -63,7 +63,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

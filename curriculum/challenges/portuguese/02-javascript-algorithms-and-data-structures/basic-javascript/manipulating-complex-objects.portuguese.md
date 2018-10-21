@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Manipulando Objetos Complexos
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes você pode querer armazenar dados em uma <dfn>estrutura de dados</dfn> flexível. Um objeto JavaScript é uma maneira de lidar com dados flexíveis. Eles permitem combinações arbitrárias de <dfn>strings</dfn> , <dfn>números</dfn> , <dfn>booleanos</dfn> , <dfn>matrizes</dfn> , <dfn>funções</dfn> e <dfn>objetos</dfn> . Aqui está um exemplo de uma estrutura de dados complexa: <blockquote> var ourMusic = [ <br> { <br> &quot;artista&quot;: &quot;Daft Punk&quot;, <br> &quot;title&quot;: &quot;Homework&quot;, <br> &quot;release_year&quot;: 1997, <br> &quot;formatos&quot;: [ <br> &quot;CD&quot;, <br> &quot;Cassete&quot;, <br> &quot;LP&quot; <br> ] <br> &quot;gold&quot;: true <br> } <br> ]; </blockquote> Esta é uma matriz que contém um objeto dentro. O objeto possui vários <dfn>metadados</dfn> sobre um álbum. Ele também possui uma matriz de <code>&quot;formats&quot;</code> aninhados. Se você quiser adicionar mais registros de álbuns, poderá fazer isso adicionando registros à matriz de nível superior. Objetos retêm dados em uma propriedade, que possui um formato de valor-chave. No exemplo acima, <code>&quot;artist&quot;: &quot;Daft Punk&quot;</code> é uma propriedade que tem uma chave de <code>&quot;artist&quot;</code> e um valor de <code>&quot;Daft Punk&quot;</code> . <a href="http://www.json.org/" target="_blank">JavaScript Object Notation</a> ou <code>JSON</code> é um formato de intercâmbio de dados relacionado usado para armazenar dados. <blockquote> { <br> &quot;artista&quot;: &quot;Daft Punk&quot;, <br> &quot;title&quot;: &quot;Homework&quot;, <br> &quot;release_year&quot;: 1997, <br> &quot;formatos&quot;: [ <br> &quot;CD&quot;, <br> &quot;Cassete&quot;, <br> &quot;LP&quot; <br> ] <br> &quot;gold&quot;: true <br> } </blockquote> <strong>Nota</strong> <br> Você precisará colocar uma vírgula após cada objeto na matriz, a menos que seja o último objeto na matriz. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione um novo álbum ao array <code>myMusic</code> . Adicione strings de <code>artist</code> e <code>title</code> , <code>release_year</code> number e uma matriz de <code>formats</code> de strings. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -40,7 +40,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -77,7 +77,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

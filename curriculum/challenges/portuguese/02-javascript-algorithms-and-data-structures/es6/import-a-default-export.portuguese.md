@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Importar uma exportação padrão
 ---
 
-## Description
+## Descrição
 <section id="description"> No último desafio, você aprendeu sobre <code>export default</code> e seus usos. É importante observar que, para importar uma exportação padrão, você precisa usar uma sintaxe de <code>import</code> diferente. No exemplo a seguir, temos uma função, <code>add</code> , que é a exportação padrão de um arquivo, <code>&quot;math_functions&quot;</code> . Aqui está como importá-lo: <blockquote> import add de &quot;math_functions&quot;; <br> adicionar (5,4); // retornará 9 </blockquote> A sintaxe difere em um local de chave - o valor importado, <code>add</code> , não é cercado por chaves, <code>{}</code> . Ao contrário dos valores exportados, o método primário de importar uma exportação padrão é simplesmente escrever o nome do valor após a <code>import</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> No código a seguir, por favor, importe a exportação padrão, <code>subtract</code> , do arquivo <code>&quot;math_functions&quot;</code> , encontrado no mesmo diretório que este arquivo. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ return a - b;
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

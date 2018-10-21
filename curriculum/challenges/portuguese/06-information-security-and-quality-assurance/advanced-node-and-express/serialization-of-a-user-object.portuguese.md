@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Serialização de um objeto de usuário
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Serialização e desserialização são conceitos importantes em relação à autenticação. Serializar um objeto significa converter seu conteúdo em uma pequena <em>chave</em> essencialmente que pode ser desserializada no objeto original. Isso é o que nos permite saber quem se comunicou com o servidor sem ter que enviar os dados de autenticação como nome de usuário e senha em cada solicitação para uma nova página. Para configurá-lo corretamente, precisamos ter uma função de serialização e uma função de desserialização. No passaporte, criamos estes com <code>passport.serializeUser( OURFUNCTION )</code> e <code>passport.deserializeUser( OURFUNCTION )</code> O serializeUser é chamado com 2 argumentos, o objeto de usuário completo e um retorno de chamada usado pelo passaporte. Retornado no retorno de chamada deve ser uma chave única para identificar esse usuário, o mais fácil de usar sendo os usuários _id no objeto como deveria ser único, uma vez que gerou pelo MongoDb. Da mesma forma, o deserializeUser é chamado com essa chave e também uma função de retorno de chamada para o passaporte, mas, desta vez, precisamos pegar essa chave e retornar o objeto completo do usuário ao retorno de chamada. Para fazer uma busca de consulta por um Mongo _id você terá que criar <code>const ObjectID = require(&#39;mongodb&#39;).ObjectID;</code> e, em seguida, para usá-lo, você chama <code>new ObjectID(THE_ID)</code> . Certifique-se de adicionar o MongoDB como uma dependência. Você pode ver isso nos exemplos abaixo: <pre> passport.serializeUser ((user, done) =&gt; {
    done (null, user._id);
  }); </pre><br><pre> passport.deserializeUser ((id, done) =&gt; {
@@ -18,11 +18,11 @@ localeTitle: Serialização de um objeto de usuário
         );
     }); </pre> NOTA: Este deserializeUser irá lançar um erro até que nós configuremos o BD na próxima etapa então comente todo o bloco e apenas chame <code>done(null, null)</code> na função deserializeUser. Envie sua página quando achar que está certo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -40,12 +40,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 42: Números de triângulos codificados'
 ---
 
-## Description
+## Descrição
 <section id="description"> O enésimo termo da seqüência de números triangulares é dado por, tn = ½n (n + 1); então os primeiros dez números do triângulo são: 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ... Convertendo cada letra em uma palavra para um número correspondente à sua posição alfabética e adicionando esses valores nós formamos um valor de palavra. Por exemplo, o valor da palavra para SKY é 19 + 11 + 25 = 55 = t10. Se o valor da palavra é um número triangular, então devemos chamar a palavra uma palavra triangular. Usando palavras array de n-length, quantas são palavras triangulares? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ codedTriangleNumbers(1786);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

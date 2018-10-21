@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Dar sentido de links usando texto de link descritivo
 ---
 
-## Description
+## Descrição
 <section id="description"> Os usuários de leitores de tela têm opções diferentes para o tipo de conteúdo que o dispositivo lê. Isso inclui pular para (ou sobre) elementos de referência, pular para o conteúdo principal ou obter um resumo de página dos títulos. Outra opção é apenas ouvir os links disponíveis em uma página. Os leitores de tela fazem isso lendo o texto do link ou o que está entre as tags âncora ( <code>a</code> ). Ter uma lista de links &quot;clique aqui&quot; ou &quot;leia mais&quot; não é útil. Em vez disso, você deve usar um texto breve, mas descritiva nos <code>a</code> tags para proporcionar mais significado para esses usuários. </section>
 
-## Instructions
+## Instruções
 undefined
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -50,7 +50,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

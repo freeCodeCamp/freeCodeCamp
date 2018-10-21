@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use typeof para verificar o tipo de uma variável
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode usar <code>typeof</code> para verificar a estrutura de dados ou o tipo de uma variável. Isso é útil na depuração ao trabalhar com vários tipos de dados. Se você acha que está adicionando dois números, mas um é na verdade uma string, os resultados podem ser inesperados. Erros de tipo podem espreitar em cálculos ou chamadas de função. Tenha cuidado, especialmente quando você está acessando e trabalhando com dados externos na forma de um objeto JavaScript Object Notation (JSON). Aqui estão alguns exemplos usando <code>typeof</code> : <blockquote> console.log (tipo de &quot;&quot;); // produz &quot;string&quot; <br> console.log (tipo 0); // produz &quot;número&quot; <br> console.log (typeof []); // produz &quot;objeto&quot; <br> console.log (typeof {}); // produz &quot;objeto&quot; </blockquote> O JavaScript reconhece seis tipos de dados primitivos (imutáveis): <code>Boolean</code> , <code>Null</code> , <code>Undefined</code> , <code>Number</code> , <code>String</code> e <code>Symbol</code> (novo com ES6) e um tipo para itens mutáveis: <code>Object</code> . Observe que, em JavaScript, as matrizes são tecnicamente um tipo de objeto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione duas instruções <code>console.log()</code> para verificar o <code>typeof</code> cada uma das duas variáveis <code>seven</code> e <code>three</code> no código. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -47,7 +47,7 @@ console.log(seven + three);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Como colocar um perfil juntos
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-advancednode/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-advancednode/">GitHub</a> . Agora que podemos garantir que o usuário que acessa o <em>/ profile</em> seja autenticado, podemos usar as informações contidas em &#39;req.user&#39; em nossa página! Vá em frente e passe o objeto contendo o <em>nome de usuário</em> variável igual a &#39;req.user.username&#39; para o método de renderização da visualização de perfil. Em seguida, vá para a visualização &#39;profile.pug&#39; e adicione a linha <code>h2.center#welcome Welcome, #{username}!</code> criando o elemento h2 com a classe &#39;center&#39; e id &#39;welcome&#39; contendo o texto &#39;Welcome&#39; e o nome de usuário! Também no perfil, adicione um link para <em>/ logout</em> . Essa rota hospedará a lógica para não autenticar um usuário. <code>a(href=&#39;/logout&#39;) Logout</code> Envie sua página quando achar que está certo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,12 +25,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

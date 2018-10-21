@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 351: Pomares Hexagonais'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um pomar hexagonal de ordem n é uma rede triangular composta de pontos dentro de um hexágono regular com o lado n. O seguinte é um exemplo de um pomar hexagonal de ordem 5: <p> Destacam-se em verde os pontos que estão escondidos do centro por um ponto mais próximo a ele. Pode ser visto que para um pomar hexagonal de ordem 5, 30 pontos estão escondidos do centro. </p><p> Seja H (n) o número de pontos ocultos do centro em um pomar hexagonal de ordem n. </p><p> H (5) = 30. H (10) = 138. H (1 000) = 1177848. </p><p> Encontre H (100 000 000). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler351();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

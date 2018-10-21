@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 266: Raiz Pseudo-Quadrada'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os divisores de 12 são: 1,2,3,4,6 e 12. O maior divisor de 12 que não excede a raiz quadrada de 12 é 3. Devemos chamar o maior divisor de um inteiro n que não exceda o raiz quadrada de n a raiz quadrada pseudo (PSR) de n. Pode ser visto que PSR (3102) = 47. <p> Seja p o produto dos primos abaixo de 190. Encontre PSR (p) mod 1016. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler266();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

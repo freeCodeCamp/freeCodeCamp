@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Crie um gráfico usando CSS
 ---
 
-## Description
+## Descrição
 <section id="description"> Ao manipular diferentes seletores e propriedades, você pode criar formas interessantes. Um dos mais fáceis de tentar é uma forma de lua crescente. Para este desafio, você precisa trabalhar com a propriedade <code>box-shadow</code> que define a sombra de um elemento, juntamente com a propriedade <code>border-radius</code> que controla a redondeza dos cantos do elemento. Você criará um objeto redondo e transparente com uma sombra nítida ligeiramente deslocada para o lado - a sombra será a forma da lua que você vê. Para criar um objeto redondo, a propriedade <code>border-radius</code> deve ser definida para um valor de 50%. Você pode lembrar de um desafio anterior que a propriedade <code>box-shadow</code> usa valores para <code>offset-x</code> , <code>offset-y</code> , <code>blur-radius</code> <code>spread-radius</code> , <code>blur-radius</code> <code>spread-radius</code> e um valor de cor nessa ordem. Os valores de <code>spread-radius</code> e <code>blur-radius</code> <code>spread-radius</code> são opcionais. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Manipule o elemento quadrado no editor para criar a forma da lua. Primeiro, altere a <code>background-color</code> para transparente e defina a propriedade <code>border-radius</code> para 50% para criar a forma circular. Finalmente, altere a propriedade <code>box-shadow</code> para definir o <code>offset-x</code> como 25px, o <code>offset-y</code> como 10px, <code>blur-radius</code> como 0, <code>spread-radius</code> como 0 e cor como azul. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,7 +62,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

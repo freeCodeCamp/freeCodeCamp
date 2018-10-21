@@ -9,14 +9,14 @@ videoUrl: ''
 localeTitle: Caixas de Seleção de Estilo Responsivamente
 ---
 
-## Description
+## Descrição
 <section id="description"> Você também pode usar classes <code>col-xs-*</code> do Bootstrap em elementos de <code>form</code> ! Dessa forma, nossas caixas de seleção serão distribuídas uniformemente pela página, independentemente da largura da resolução da tela. Aninhe todas as três caixas de seleção em um elemento <code>&lt;div class=&quot;row&quot;&gt;</code> . Em seguida, aninhe cada um deles em um elemento <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -111,7 +111,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Title Case a Sentence
 ---
 
-## Description
+## Descrição
 <section id="description"> Retorna a string fornecida com a primeira letra de cada palavra em maiúscula. Certifique-se de que o restante da palavra esteja em letras minúsculas. Para o propósito deste exercício, você também deve capitalizar palavras de conexão como &quot;o&quot; e &quot;de&quot;. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ titleCase("I'm a little tea pot");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

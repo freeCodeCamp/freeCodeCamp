@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 179: Divisores positivos consecutivos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Encontre o número de inteiros 1 &lt;n &lt;107, para o qual n e n + 1 têm o mesmo número de divisores positivos. Por exemplo, 14 tem os divisores positivos 1, 2, 7, 14 e 15 tem 1, 3, 5, 15. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler179();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use Destignucturing Assignment para passar um objeto como um parâmetro de função
 ---
 
-## Description
+## Descrição
 <section id="description"> Em alguns casos, você pode desestruturar o objeto em um argumento de função em si. Considere o código abaixo: <blockquote> const profileUpdate = (profileData) =&gt; { <br> const {nome, idade, nacionalidade, localização} = profileData; <br> // faz algo com essas variáveis <br> } </blockquote> Isso efetivamente destrói o objeto enviado para a função. Isso também pode ser feito no local: <blockquote> const profileUpdate = ({nome, idade, nacionalidade, localização}) =&gt; { <br> / * faz algo com esses campos * / <br> } </blockquote> Isso remove algumas linhas extras e faz nosso código parecer limpo. Isso tem o benefício adicional de não ter que manipular um objeto inteiro em uma função; somente os campos necessários são copiados dentro da função. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a atribuição de desestruturação dentro do argumento para a <code>half</code> da função para enviar apenas <code>max</code> e <code>min</code> dentro da função. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,7 +64,7 @@ console.log(half(stats)); // should be 28.015
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

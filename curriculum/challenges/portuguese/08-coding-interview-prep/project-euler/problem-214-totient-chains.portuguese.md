@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Problema 214 Chains totiente
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja tot função totiente de Euler, isto é, para um número natural n, φ (n) é o número de k, 1 ≤ k ≤ n, para o qual mdc (k, n) = 1. <p> Ao iterar φ, cada inteiro positivo gera uma cadeia decrescente de números terminando em 1. Por exemplo, se começarmos com 5, a sequência 5,4,2,1 é gerada. Aqui está uma lista de todas as cadeias com comprimento 4: </p><p> 5,4,2,1 7,6,2,1 8,4,2,1 9,6,2,1 10,4,2,1 12,4,2,1 14,6,2,1 18 6,2,1 </p><p> Apenas duas dessas cadeias começam com um primo, sua soma é 12. </p><p> Qual é a soma de todos os primos com menos de 40000000 que geram uma cadeia de comprimento 25? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler214();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

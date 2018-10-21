@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 82: Soma do caminho: três maneiras'
 ---
 
-## Description
+## Descrição
 <section id="description"> NOTA: Este problema é uma versão mais desafiadora do Problema 81. A soma mínima do caminho na matriz 5 por 5 abaixo, iniciando em qualquer célula na coluna da esquerda e terminando em qualquer célula na coluna da direita, e somente movendo para cima, para baixo e à direita, está indicado em vermelho e negrito; a soma é igual a 994. <p> $$ \ begin {pmatrix} 131 &amp; 673 &amp; \ color {red} {234} &amp; \ color {red} {103} e \ color {red} {18} \ \ color {red} {201} &amp; \ color { vermelho} {96} &amp; \ color {red} {342} &amp; 965 &amp; 150 \ 630 &amp; 803 &amp; 746 &amp; 422 &amp; 111 \ 537 &amp; 699 &amp; 497 &amp; 121 &amp; 956 \ 805 &amp; 732 &amp; 524 &amp; 37 &amp; 331 \ end {pmatrix} $$ </p><p> Encontre a soma do caminho mínimo, em matrix.txt (clique com o botão direito e &quot;Salvar Link / Destino como ...&quot;), um arquivo de texto de 31K contendo uma matriz de 80 por 80, da coluna da esquerda para a coluna da direita. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler82();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

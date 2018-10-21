@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use Seletores de Atributo para Elementos de Estilo
 ---
 
-## Description
+## Descrição
 <section id="description"> Você tem dado atributos de <code>id</code> ou <code>class</code> aos elementos que você deseja estilizar especificamente. Eles são conhecidos como seletores de ID e classe. Existem outros Seletores de CSS que você pode usar para selecionar grupos personalizados de elementos para estilizar. Vamos trazer o CatPhotoApp novamente para praticar o uso de CSS Selectors. Para este desafio, você usará o seletor de atributo <code>[attr=value]</code> para estilizar as caixas de seleção no CatPhotoApp. Esse seletor corresponde e estiliza elementos com um valor de atributo específico. Por exemplo, o código abaixo altera as margens de todos os elementos com o <code>type</code> atributo e um valor correspondente de <code>radio</code> : <blockquote> [type = &#39;radio&#39;] { <br> margem: 20px 0px 20px 0px; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Usando o seletor de atributo <code>type</code> , tente dar às caixas de seleção em CatPhotoApp uma margem superior de 10px e uma margem inferior de 15px. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -105,7 +105,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use o estado para alternar um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode usar o <code>state</code> em aplicativos React de maneiras mais complexas do que o que você viu até agora. Um exemplo é monitorar o status de um valor e renderizar a UI condicionalmente com base nesse valor. Existem várias maneiras diferentes de fazer isso, e o editor de código mostra um método. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> <code>MyComponent</code> tem uma propriedade de <code>visibility</code> que é inicializada como <code>false</code> . O método render retorna uma visualização se o valor da <code>visibility</code> for true e uma visualização diferente se for false. Atualmente, não há como atualizar a propriedade de <code>visibility</code> no <code>state</code> do componente. O valor deve alternar entre verdadeiro e falso. Há um manipulador de cliques no botão que aciona um método de classe chamado <code>toggleVisibility()</code> . Defina este método para que o <code>state</code> de <code>visibility</code> alternado para o valor oposto quando o método for chamado. Se a <code>visibility</code> for <code>false</code> , o método a define como <code>true</code> e vice-versa. Por fim, clique no botão para ver a renderização condicional do componente com base em seu <code>state</code> . <strong>Dica:</strong> não se esqueça de ligar a palavra-chave <code>this</code> ao método no construtor! </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -82,7 +82,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

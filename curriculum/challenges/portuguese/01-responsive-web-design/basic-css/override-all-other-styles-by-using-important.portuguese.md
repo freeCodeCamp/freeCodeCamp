@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Substituir todos os outros estilos usando Importante
 ---
 
-## Description
+## Descrição
 <section id="description"> Yay! Acabamos de provar que os estilos inline irão substituir todas as declarações CSS no seu elemento <code>style</code> . Mas espere. Há uma última maneira de substituir o CSS. Este é o método mais poderoso de todos. Mas antes de fazermos isso, vamos falar sobre o motivo pelo qual você deseja substituir o CSS. Em muitas situações, você usará bibliotecas CSS. Estes podem substituir acidentalmente o seu próprio CSS. Então, quando você absolutamente precisa ter certeza de que um elemento tem CSS específico, você pode usar <code>!important</code> Vamos voltar à nossa declaração de classe de <code>pink-text</code> . Lembre-se de que nossa classe de <code>pink-text</code> foi substituída por declarações de classe, declarações de id e estilos inline subsequentes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Vamos adicionar a palavra-chave <code>!important</code> para a declaração de cor do elemento de texto rosa para ter 100% de certeza de que o elemento <code>h1</code> será rosa. Um exemplo de como fazer isso é: <code>color: red !important;</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,7 +66,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

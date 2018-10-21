@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Crie uma classe de pilha
 ---
 
-## Description
+## Descrição
 <section id="description"> Na última seção, falamos sobre o que é uma pilha e como podemos usar uma matriz para representar uma pilha. Nesta seção, criaremos nossa própria classe de pilha. Embora você possa usar matrizes para criar pilhas, às vezes é melhor limitar a quantidade de controle que temos com nossas pilhas. Além do método <code>push</code> e <code>pop</code> , as pilhas possuem outros métodos úteis. Vamos adicionar um método <code>peek</code> , <code>isEmpty</code> e <code>clear</code> a nossa classe stack. Instruções Escreva um método <code>push</code> que empurre um elemento para o topo da pilha, um método <code>pop</code> que remova o elemento na parte superior da pilha, um método de <code>peek</code> que examine o primeiro elemento na pilha, um método <code>isEmpty</code> que verifique se o elemento pilha está vazia e um método <code>clear</code> que remove todos os elementos da pilha. Normalmente as pilhas não têm isso, mas adicionamos um método auxiliar de <code>print</code> que o console registra na coleção. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ function Stack() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

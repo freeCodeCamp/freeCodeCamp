@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Use o Bootstrap Grid para colocar elementos lado a lado
 ---
 
-## Description
+## Descrição
 <section id="description"> O Bootstrap usa um sistema de grade responsivo de 12 colunas, o que facilita colocar elementos em linhas e especificar a largura relativa de cada elemento. A maioria das classes do Bootstrap pode ser aplicada a um elemento <code>div</code> . O Bootstrap possui diferentes atributos de largura de coluna, dependendo do tamanho da tela do usuário. Por exemplo, os telefones têm telas estreitas e os laptops têm telas mais amplas. Tomemos por exemplo a classe <code>col-md-*</code> do Bootstrap. Aqui, <code>md</code> significa médio e <code>*</code> é um número que especifica quantas colunas o elemento deve ter. Nesse caso, a largura da coluna de um elemento em uma tela de tamanho médio, como um laptop, está sendo especificada. No Cat Photo App que estamos criando, usaremos <code>col-xs-*</code> , onde <code>xs</code> significa extra pequeno (como uma tela extra-pequena para celular), e <code>*</code> é o número de colunas que especificam quantas colunas a largura elemento deve ser. Coloque os botões <code>Like</code> , <code>Info</code> e <code>Delete</code> lado a lado aninhando todos os três dentro de um elemento <code>&lt;div class=&quot;row&quot;&gt;</code> , então cada um deles dentro de um elemento <code>&lt;div class=&quot;col-xs-4&quot;&gt;</code> . A classe de <code>row</code> é aplicada a uma <code>div</code> e os próprios botões podem ser aninhados nela. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -106,7 +106,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

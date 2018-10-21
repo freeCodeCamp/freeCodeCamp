@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 378: Triângulos Triângulos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja T (n) o n-ésimo número do triângulo, então T (n) = <p> n (n + 1) 2 </p><p> . </p><p> Seja dT (n) o número de divisores de T (n). Por exemplo: T (7) = 28 e dT (7) = 6. </p><p> Seja Tr (n) o número de triplas (i, j, k) tal que 1 ≤ i &lt;j &lt;k ≤ n e dT (i)&gt; dT (j)&gt; dT (k). Tr (20) = 14, Tr (100) = 5772 e Tr (1000) = 11174776. </p><p> Encontre Tr (60 000 000). Dê os últimos 18 dígitos da sua resposta. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler378();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

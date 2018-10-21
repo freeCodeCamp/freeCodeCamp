@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: HTML sem comentário
 ---
 
-## Description
+## Descrição
 <section id="description"> Comentar é uma maneira de deixar comentários para outros desenvolvedores em seu código sem afetar a saída resultante que é exibida para o usuário final. Comentar também é uma maneira conveniente de tornar o código inativo sem ter que excluí-lo completamente. Comentários em HTML começam com <code>&lt;!--</code> e terminam com um <code>--&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Descomente seus elementos <code>h1</code> , <code>h2</code> e <code>p</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -52,7 +52,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

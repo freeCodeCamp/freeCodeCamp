@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 454: Recíprocos Diofantinos III'
 ---
 
-## Description
+## Descrição
 <section id="description"> Na seguinte equação x, y e n são inteiros positivos. <p> 1x + 1y = 1n </p><p> Para um limite L, definimos F (L) como o número de soluções que satisfazem x &lt;y ≤ L. </p><p> Podemos verificar que F (15) = 4 e F (1000) = 1069. Encontre F (1012). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler454();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

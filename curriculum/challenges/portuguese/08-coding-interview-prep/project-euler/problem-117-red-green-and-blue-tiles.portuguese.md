@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 117: Telhas Vermelha, Verde e Azul'
 ---
 
-## Description
+## Descrição
 <section id="description"> Usando uma combinação de ladrilhos quadrados pretos e ladrilhos retangulares escolhidos de: ladrilhos vermelhos medindo duas unidades, ladrilhos verdes medindo três unidades e ladrilhos azuis medindo quatro unidades, é possível ladrilhar uma fileira medindo cinco unidades de comprimento em exatamente quinze maneiras diferentes. <p> Quantas maneiras pode uma fileira medindo cinquenta unidades de comprimento ser revestida? NOTA: Isso está relacionado ao problema 116. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler117();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

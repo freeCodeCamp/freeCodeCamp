@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a notação no sentido horário para especificar a margem de um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos tentar de novo, mas com <code>margin</code> dessa vez. Em vez de especificar as propriedades <code>margin-top</code> , <code>margin-right</code> , <code>margin-bottom</code> e <code>margin-left</code> individualmente, você pode especificá-las todas em uma linha, assim: <code>margin: 10px 20px 10px 20px;</code> Esses quatro valores funcionam como um relógio: superior, direita, inferior, esquerda e produzirão exatamente o mesmo resultado que o uso das instruções de margem específicas do lado. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>Clockwise Notation</code> para dar ao elemento com a classe <code>blue-box</code> uma margem de <code>40px</code> no lado superior e esquerdo, mas apenas <code>20px</code> no lado inferior e direito. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use HTML5 para exigir um campo
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode exigir campos de formulário específicos para que o usuário não possa enviar seu formulário até que ele os preencha. Por exemplo, se você quiser tornar um campo de entrada de texto obrigatório, basta adicionar o atributo <code>required</code> ao seu elemento de <code>input</code> , da seguinte forma: <code>&lt;input type=&quot;text&quot; required&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Faça o seu texto <code>input</code> um campo <code>required</code>, de modo que o usuário não pode enviar o formulário sem concluir este campo. Em seguida, tente enviar o formulário sem inserir nenhum texto. Veja como o seu formulário HTML5 avisa que o campo é obrigatório </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,7 +62,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

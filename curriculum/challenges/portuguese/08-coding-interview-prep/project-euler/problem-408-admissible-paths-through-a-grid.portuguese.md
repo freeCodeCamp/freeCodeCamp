@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 408: caminhos admissíveis através de uma grade'
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos chamar um ponto de malha (x, y) inadmissível se x, y e x + y forem todos quadrados perfeitos positivos. Por exemplo, (9, 16) é inadmissível, enquanto (0, 4), (3, 1) e (9, 4) não são. <p> Considere um caminho do ponto (x1, y1) para o ponto (x2, y2) usando apenas as etapas unitárias norte ou leste. Vamos chamar esse caminho admissível se nenhum dos seus pontos intermediários for inadmissível. </p><p> Seja P (n) o número de caminhos admissíveis de (0, 0) a (n, n). Pode-se verificar que P (5) = 252, P (16) = 596994440 e P (1000) mod 1 000 000 007 = 341920854. </p><p> Encontre P (10 000 000) mod 1 000 000 007. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler408();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

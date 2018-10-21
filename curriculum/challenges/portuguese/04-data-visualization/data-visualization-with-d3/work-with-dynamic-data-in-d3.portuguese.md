@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Trabalhar com dados dinâmicos no D3
 ---
 
-## Description
+## Descrição
 <section id="description"> Os dois últimos desafios abrangem os fundamentos da exibição de dados dinamicamente com o D3 usando os métodos <code>data()</code> e <code>enter()</code> . Esses métodos usam um conjunto de dados e, juntamente com o método <code>append()</code> , criam um novo elemento DOM para cada entrada no conjunto de dados. No desafio anterior, você criou um novo elemento <code>h2</code> para cada item na matriz do <code>dataset</code> , mas todos continham o mesmo texto, &quot;Novo Título&quot;. Isso é porque você não fez uso dos dados que estão vinculados a cada um dos elementos <code>h2</code> . O método D3 <code>text()</code> pode ter uma string ou uma função de callback como um argumento: <code>selection.text((d) =&gt; d)</code> No exemplo acima, o parâmetro <code>d</code> se refere a uma única entrada no dataset que uma seleção é ligada para. Usando o exemplo atual como contexto, o primeiro elemento <code>h2</code> é ligado a 12, o segundo elemento <code>h2</code> é ligado a 31, o terceiro elemento <code>h2</code> é ligado a 22 e assim por diante. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o método <code>text()</code> para que cada elemento <code>h2</code> exiba o valor correspondente da matriz do <code>dataset</code> com um único espaço e &quot;USD&quot;. Por exemplo, o primeiro cabeçalho deve ser &quot;12 USD&quot;. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -72,7 +72,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

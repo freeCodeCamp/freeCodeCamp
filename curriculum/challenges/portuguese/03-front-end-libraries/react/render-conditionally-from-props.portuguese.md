@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Render condicionalmente de adereços
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, você viu como usar <code>if/else</code> , <code>&amp;&amp;,</code> <code>null</code> e o operador ternário ( <code>condition ? expressionIfTrue : expressionIfFalse</code> ) para tomar decisões condicionais sobre o que renderizar e quando. No entanto, há um tópico importante a ser discutido que permite combinar qualquer um ou todos esses conceitos com outro recurso poderoso do React: adereços. Usar adereços para renderizar condicionalmente o código é muito comum com os desenvolvedores do React - isto é, eles usam o valor de um determinado objeto para tomar decisões automaticamente sobre o que renderizar. Nesse desafio, você configurará um componente filho para tomar decisões de renderização com base em adereços. Você também usará o operador ternário, mas poderá ver como vários outros conceitos abordados nos últimos desafios podem ser úteis nesse contexto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem dois componentes parcialmente definidos para você: um pai chamado <code>GameOfChance</code> e um filho chamado <code>Results</code> . Eles são usados ​​para criar um jogo simples em que o usuário pressiona um botão para ver se ele ganha ou perde. Primeiro, você precisará de uma expressão simples que retorne aleatoriamente um valor diferente toda vez que for executada. Você pode usar <code>Math.random()</code> . Esse método retorna um valor entre <code>0</code> (inclusive) e <code>1</code> (exclusivo) sempre que é chamado. Portanto, para probabilidades de 50/50, use <code>Math.random() &gt; .5</code> em sua expressão. Estatisticamente falando, essa expressão retornará <code>true</code> 50% do tempo e <code>false</code> os outros 50%. Na linha 30, substitua o comentário por essa expressão para completar a declaração da variável. Agora você tem uma expressão que pode ser usada para tomar uma decisão aleatória no código. Em seguida, você precisa implementar isso. Renderize o componente <code>Results</code> como um filho de <code>GameOfChance</code> e passe a <code>expression</code> como um prop chamado <code>fiftyFifty</code> . No componente <code>Results</code> , escreva uma expressão ternária para renderizar o texto <code>&quot;You win!&quot;</code> ou <code>&quot;You lose!&quot;</code> baseado no <code>fiftyFifty</code> que está sendo passado de <code>GameOfChance</code> . Por fim, verifique se o método <code>handleClick()</code> está contando corretamente cada turno, para que o usuário saiba quantas vezes eles foram reproduzidos. Isso também serve para informar ao usuário que o componente foi realmente atualizado caso ganhe ou perca duas vezes seguidas. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -101,7 +101,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

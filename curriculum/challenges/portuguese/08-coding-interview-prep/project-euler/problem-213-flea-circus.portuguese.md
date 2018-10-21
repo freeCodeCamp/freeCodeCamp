@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 213: Circo das Pulgas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma grade de quadrados 30 × 30 contém 900 pulgas, inicialmente uma pulga por quadrado. Quando um sino é tocado, cada pulga salta para um quadrado adjacente aleatoriamente (geralmente 4 possibilidades, exceto para pulgas na borda da grade ou nos cantos). <p> Qual é o número esperado de quadrados desocupados após 50 toques do sino? Dê sua resposta arredondada para seis casas decimais. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler213();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

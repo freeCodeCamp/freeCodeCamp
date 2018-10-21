@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use um atributo id para estilizar um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma coisa legal sobre os atributos <code>id</code> é que, como nas classes, você pode estilizá-los usando CSS. No entanto, um <code>id</code> não é reutilizável e deve ser aplicado apenas a um elemento. Um <code>id</code> também tem uma maior especificidade (importância) do que uma classe, portanto, se ambos forem aplicados ao mesmo elemento e tiverem estilos conflitantes, os estilos do <code>id</code> serão aplicados. Aqui está um exemplo de como você pode pegar seu elemento com o atributo <code>id</code> de <code>cat-photo-element</code> e dar a ele a cor de fundo verde. Em seu elemento de <code>style</code> : <blockquote> # cat-photo-element { <br> cor de fundo: verde; <br> } </blockquote> Note que dentro do seu elemento de <code>style</code> , você sempre faz referência a classes colocando um <code>.</code> na frente de seus nomes. Você sempre faz referência a ids colocando um <code>#</code> na frente de seus nomes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Tente dar o seu formulário, que agora tem o atributo <code>id</code> de <code>cat-photo-form</code> , um fundo verde. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -107,7 +107,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

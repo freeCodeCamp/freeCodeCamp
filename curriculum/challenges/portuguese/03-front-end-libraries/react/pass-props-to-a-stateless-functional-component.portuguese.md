@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Passe Adereços a um Componente Funcional Stateless
 ---
 
-## Description
+## Descrição
 <section id="description"> Os desafios anteriores cobriram muito sobre a criação e composição de elementos JSX, componentes funcionais e componentes de classe de estilo ES6 no React. Com esta base, é hora de olhar para outro recurso muito comum em React: <b>props</b> . No React, você pode passar props ou propriedades para componentes filho. Digamos que você tenha um componente <code>App</code> que renderize um componente filho chamado <code>Welcome</code> que é um componente funcional sem estado. Você pode passar <code>Welcome</code> um <code>user</code> propriedade escrevendo: <blockquote> &lt;App&gt; <br> &lt;Usuário de boas-vindas = &#39;Mark&#39; /&gt; <br> &lt;/ App&gt; </blockquote> Você usa <strong>atributos HTML personalizados aos</strong> quais o React fornece suporte para passar o <code>user</code> da propriedade ao componente <code>Welcome</code> . Como <code>Welcome</code> é um componente funcional sem estado, ele tem acesso a esse valor da seguinte forma: <blockquote> const Welcome = (props) =&gt; &lt;h1&gt; Olá, {props.user}! &lt;/ h1&gt; </blockquote> É padrão chamar este valor <code>props</code> e ao lidar com componentes funcionais sem estado, você basicamente o considera como um argumento para uma função que retorna JSX. Você pode acessar o valor do argumento no corpo da função. Com componentes de classe, você verá que isso é um pouco diferente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Existem componentes <code>Calendar</code> e <code>CurrentDate</code> no editor de código. Ao renderizar <code>CurrentDate</code> partir do componente <code>Calendar</code> , passe uma propriedade de <code>date</code> atribuída à data atual do objeto <code>Date</code> do JavaScript. Em seguida, acesse este <code>prop</code> no componente <code>CurrentDate</code> , mostrando seu valor dentro das tags <code>p</code> . Observe que, para valores <code>prop</code> a serem avaliados como JavaScript, eles devem ser colocados entre chaves, por exemplo <code>date={Date()}</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -81,7 +81,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

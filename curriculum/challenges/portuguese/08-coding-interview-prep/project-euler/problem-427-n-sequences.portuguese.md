@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 427: sequências-n'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma seqüência de inteiros S = {si} é chamada de n-sequência se ela possui n elementos e cada elemento si satisfaz 1 ≤ si ≤ n. Assim, existem n sequências n distintas no total. Por exemplo, a seqüência S = {1, 5, 5, 10, 7, 7, 7, 2, 3, 7} é uma seqüência de 10. <p> Para qualquer sequência S, seja L (S) o comprimento da maior subsequência contígua de S com o mesmo valor. Por exemplo, para a sequência dada S acima, L (S) = 3, por causa dos três 7s consecutivos. </p><p> Seja f (n) = ∑ L (S) para todas as seqüências n S. </p><p> Por exemplo, f (3) = 45, f (7) = 1403689 e f (11) = 481496895121. </p><p> Encontre f (7 500 000) mod 1 000 000 009. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler427();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

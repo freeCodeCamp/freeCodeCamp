@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 413: Números de um filho'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dizemos que um número positivo de d dígitos (sem zeros à esquerda) é um número de filho único se exatamente uma de suas sub-cadeias é divisível por d. <p> Por exemplo, 5671 é um número de um dígito de 4 dígitos. Entre todas as suas sub-seqüências 5, 6, 7, 1, 56, 67, 71, 567, 671 e 5671, apenas 56 é divisível por 4. Da mesma forma, 104 é um número de um dígito de três dígitos porque apenas 0 é divisível por 3. 1132451 é um número de um dígito de 7 dígitos porque apenas 245 é divisível por 7. </p><p> Seja F (N) o número de números de um filho menor que N. Podemos verificar que F (10) = 9, F (103) = 389 e F (107) = 277674. </p><p> Encontre F (1019). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler413();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

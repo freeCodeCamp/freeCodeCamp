@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entenda Unidades Absolutas versus Unidades Relativas
 ---
 
-## Description
+## Descrição
 <section id="description"> Os últimos vários desafios definem a margem ou preenchimento de um elemento com pixels ( <code>px</code> ). Os pixels são um tipo de unidade de comprimento, que é o que informa ao navegador como dimensionar ou espaçar um item. Além do <code>px</code> , o CSS tem várias opções de unidades de comprimento diferentes que você pode usar. Os dois tipos principais de unidades de comprimento são absolutos e relativos. Unidades absolutas se ligam a unidades físicas de comprimento. Por exemplo, <code>in</code> e <code>mm</code> referem-se a polegadas e milímetros, respectivamente. Unidades de comprimento absoluto se aproximam da medida real em uma tela, mas há algumas diferenças dependendo da resolução de uma tela. Unidades relativas, como <code>em</code> ou <code>rem</code> , são relativas a outro valor de comprimento. Por exemplo, <code>em</code> se baseia no tamanho da fonte de um elemento. Se você usá-lo para definir a própria propriedade <code>font-size</code> , ela será relativa ao <code>font-size</code> da <code>font-size</code> do pai. <strong>Nota</strong> <br> Existem várias opções de unidades relativas que estão ligadas ao tamanho da janela de visualização. Eles são abordados na seção Princípios de design da Web responsivo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione uma propriedade <code>padding</code> ao elemento com a classe <code>red-box</code> e defina-a como <code>1.5em</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,7 +76,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

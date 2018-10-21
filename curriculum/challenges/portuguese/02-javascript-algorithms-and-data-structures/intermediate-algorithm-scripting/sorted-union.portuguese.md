@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: União ordenada
 ---
 
-## Description
+## Descrição
 <section id="description"> Escreva uma função que usa dois ou mais arrays e retorna um novo array de valores exclusivos na ordem dos arrays fornecidos originalmente. Em outras palavras, todos os valores presentes em todos os arrays devem ser incluídos em sua ordem original, mas sem duplicatas no array final. Os números únicos devem ser classificados por ordem original, mas o array final não deve ser classificado em ordem numérica. Verifique os testes de asserção para exemplos. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

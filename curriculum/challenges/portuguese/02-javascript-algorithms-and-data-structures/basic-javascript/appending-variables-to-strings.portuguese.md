@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Anexando variáveis ​​a seqüências de caracteres
 ---
 
-## Description
+## Descrição
 <section id="description"> Assim como podemos construir uma string sobre várias linhas a partir de <dfn>literais</dfn> de string, também podemos anexar variáveis ​​a uma string usando o operador mais igual ( <code>+=</code> ). </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina <code>someAdjective</code> e anexe-o ao <code>myStr</code> usando o operador <code>+=</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

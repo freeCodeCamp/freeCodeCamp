@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Pesquisa de perfil
 ---
 
-## Description
+## Descrição
 <section id="description"> Temos uma variedade de objetos representando pessoas diferentes em nossas listas de contatos. Uma função <code>lookUpProfile</code> que leva <code>name</code> e uma propriedade ( <code>prop</code> ) como argumentos foi pré-escrita para você. A função deve verificar se <code>name</code> é o <code>firstName</code> um contato real e se a propriedade fornecida ( <code>prop</code> ) é uma propriedade desse contato. Se ambos forem verdadeiros, retorne o &quot;valor&quot; dessa propriedade. Se o <code>name</code> não corresponder a nenhum contato, retorne <code>&quot;No such contact&quot;</code> Se <code>prop</code> não corresponder a nenhuma propriedade válida de um contato que corresponda ao <code>name</code> , retorne <code>&quot;No such property&quot;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -87,7 +87,7 @@ lookUpProfile("Akira", "likes");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

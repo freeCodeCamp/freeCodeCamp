@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Emparelhamento de ADN
 ---
 
-## Description
+## Descrição
 <section id="description"> O fio de DNA está faltando o elemento de emparelhamento. Pegue cada caractere, obtenha seu par e retorne os resultados como uma matriz 2d. <a href="http://en.wikipedia.org/wiki/Base_pair" target="_blank">Pares de bases</a> são um par de AT e CG. Corresponde o elemento ausente ao caractere fornecido. Retorna o caractere fornecido como primeiro elemento em cada array. Por exemplo, para a entrada GCG, retorne [[&quot;G&quot;, &quot;C&quot;], [&quot;C&quot;, &quot;G&quot;], [&quot;G&quot;, &quot;C&quot;]]. O caractere e seu par são emparelhados em um array, e todos os arrays são agrupados em um array de encapsulamento. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ pairElement("GCG");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

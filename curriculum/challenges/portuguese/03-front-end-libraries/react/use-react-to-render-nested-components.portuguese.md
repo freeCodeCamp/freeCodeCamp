@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use Reagir para Renderizar Componentes Aninhados
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio mostrou uma maneira simples de compor dois componentes, mas há muitas maneiras diferentes de compor componentes com o React. A composição de componentes é um dos poderosos recursos do React. Quando você trabalha com o React, é importante começar a pensar na interface do usuário em termos de componentes, como o exemplo de aplicativo no último desafio. Você divide sua interface do usuário em seus blocos de construção básicos e essas peças se tornam os componentes. Isso ajuda a separar o código responsável pela interface do usuário do código responsável por manipular a lógica do seu aplicativo. Isso pode simplificar bastante o desenvolvimento e a manutenção de projetos complexos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Existem dois componentes funcionais definidos no editor de código, chamados <code>TypesOfFruit</code> e <code>Fruits</code> . Pegue o componente <code>TypesOfFruit</code> e componha-o, ou <em>aninhe</em> -o, dentro do componente <code>Fruits</code> . Em seguida, pegue o componente <code>Fruits</code> e aninhe-o no componente <code>TypesOfFood</code> . O resultado deve ser um componente filho, aninhado dentro de um componente pai, que está aninhado dentro de um componente pai próprio! </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -94,7 +94,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

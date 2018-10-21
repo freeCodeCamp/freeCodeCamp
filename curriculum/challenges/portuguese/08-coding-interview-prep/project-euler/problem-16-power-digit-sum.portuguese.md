@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 16: soma do dígito de potência'
 ---
 
-## Description
+## Descrição
 <section id="description"> 2 <sup>15</sup> = 32768 e a soma de seus dígitos é 3 + 2 + 7 + 6 + 8 = 26. Qual é a soma dos dígitos do <sup><code>exponent</code></sup> do número 2? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ powerDigitSum(15);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

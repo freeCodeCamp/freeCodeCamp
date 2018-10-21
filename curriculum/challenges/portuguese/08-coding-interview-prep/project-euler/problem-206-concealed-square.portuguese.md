@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 206: Quadrado Escondido'
 ---
 
-## Description
+## Descrição
 <section id="description"> Encontre o inteiro positivo único cujo quadrado tem a forma 1_2_3_4_5_6_7_8_9_0, onde cada “_” é um dígito único. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler206();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 349: Formiga de Langton'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma formiga se move em uma grade regular de quadrados coloridos ou pretos ou brancos. A formiga é sempre orientada em uma das direções cardeais (esquerda, direita, para cima ou para baixo) e se move de quadrado para quadrado adjacente de acordo com as seguintes regras: - se estiver em um quadrado preto, inverte a cor do quadrado para branco, gira 90 graus no sentido anti-horário e avança um quadrado. - se estiver em um quadrado branco, ele inverte a cor do quadrado para preto, gira 90 graus no sentido horário e avança um quadrado. <p> Começando com uma grade que é totalmente branca, quantos quadrados são pretos após 1018 movimentos da formiga? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler349();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Diminuir a opacidade de um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> A propriedade de <code>opacity</code> no CSS é usada para ajustar a opacidade ou, inversamente, a transparência de um item. <blockquote> Um valor de 1 é opaco, o que não é transparente. <br> Um valor de 0,5 é metade transparente. <br> Um valor de 0 é completamente transparente. </blockquote> O valor fornecido será aplicado ao elemento inteiro, seja uma imagem com alguma transparência ou as cores de primeiro plano e plano de fundo para um bloco de texto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina a <code>opacity</code> das tags de âncora como 0.7 usando a classe de <code>links</code> para selecioná-las. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,7 +84,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

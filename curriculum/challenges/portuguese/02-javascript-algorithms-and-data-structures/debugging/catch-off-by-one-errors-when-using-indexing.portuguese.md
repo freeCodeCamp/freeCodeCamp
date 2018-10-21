@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Catch Off One erros ao usar a indexação
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>Off by one errors</code> (às vezes chamado de OBOE) surge quando você está tentando direcionar um índice específico de uma cadeia ou matriz (para dividir ou acessar um segmento), ou quando o loop sobre os índices deles. A indexação JavaScript começa em zero, não em um, o que significa que o último índice é sempre um menor que o comprimento do item. Se você tentar acessar um índice igual ao comprimento, o programa poderá lançar um erro de referência &quot;índice fora do intervalo&quot; ou imprimir <code>undefined</code> . Quando você usa métodos string ou array que usam intervalos de índice como argumentos, é útil ler a documentação e entender se eles são inclusivos (o item no índice fornecido é parte do que é retornado) ou não. Aqui estão alguns exemplos de erros: <blockquote> let alphabet = &quot;abcdefghijklmnopqrstuvwxyz&quot;; <br> vamos len = alphabet.length; <br> para (let i = 0; i &lt;= len; i ++) { <br> // faz um loop muitas vezes no final <br> console.log (alfabeto [i]); <br> } <br> para (let j = 1; j &lt;len; j ++) { <br> // faz um loop muito poucas vezes e erra o primeiro caractere no índice 0 <br> console.log (alfabeto [j]); <br> } <br> para (let k = 0; k &lt;len; k ++) { <br> // Goldilocks aprova - isso é apenas certo <br> console.log (alfabeto [k]); <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrija os dois erros de indexação na seguinte função para que todos os números de 1 a 5 sejam impressos no console. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ countToFive();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Remover itens usando splice ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Ok, aprendemos como remover elementos do início e do fim de arrays usando <code>shift()</code> e <code>pop()</code> , mas e se quisermos remover um elemento de algum lugar no meio? Ou remover mais de um elemento de uma só vez? Bem, é aí que <code>splice()</code> entra. <code>splice()</code> nos permite fazer exatamente isso: <strong>remover qualquer número de elementos consecutivos</strong> de qualquer lugar em um array. <code>splice()</code> pode levar até 3 parâmetros, mas por enquanto, vamos nos concentrar apenas no primeiro 2. Os dois primeiros parâmetros de <code>splice()</code> são inteiros que representam índices, ou posições, do array que <code>splice()</code> está sendo chamado a. E lembre-se, as matrizes são <em>indexadas com zero</em> , portanto, para indicar o primeiro elemento de uma matriz, usaríamos <code>0</code> . O primeiro parâmetro do <code>splice()</code> representa o índice no array do qual começar a remover elementos, enquanto o segundo parâmetro indica o número de elementos a serem deletados. Por exemplo: <blockquote> vamos array = [&#39;hoje&#39;, &#39;foi&#39;, &#39;não&#39;, &#39;so&#39;, &#39;ótimo&#39;]; <br><br> array.splice (2, 2); <br> // remove 2 elementos começando com o terceiro elemento <br> // array agora é igual a [&#39;today&#39;, &#39;was&#39;, &#39;great&#39;] </blockquote> <code>splice()</code> não apenas modifica o array que está sendo chamado, mas também retorna um novo array contendo o valor dos elementos removidos: <blockquote> deixe array = [&#39;eu&#39;, &#39;sou&#39;, &#39;sentindo&#39;, &#39;realmente&#39;, &#39;feliz&#39;]; <br><br> deixe newArray = array.splice (3, 2); <br> // newArray é igual a [&#39;really&#39;, &#39;happy&#39;] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Nós definimos uma função, <code>sumOfTen</code> , que usa um array como argumento e retorna a soma dos elementos do array. Modifique a função, usando <code>splice()</code> , para que ela retorne um valor de <code>10</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

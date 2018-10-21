@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Colocar itens em áreas de grade usando a propriedade de área de grade
 ---
 
-## Description
+## Descrição
 <section id="description"> Depois de criar um modelo de áreas para seu contêiner de grade, conforme mostrado no desafio anterior, você pode colocar um item em sua área personalizada fazendo referência ao nome que você deu a ele. Para fazer isso, você usa a propriedade de <code>grid-area</code> em um item como este: <blockquote> .item1 {grid-area: cabeçalho; } </blockquote> Isso permite que a grade saiba que você deseja que a classe <code>item1</code> vá para a área denominada <code>header</code> . Nesse caso, o item usará a linha superior inteira porque essa linha inteira é nomeada como a área do cabeçalho. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Coloque um elemento com a classe <code>item5</code> na área de <code>footer</code> usando a propriedade <code>grid-area</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,7 +76,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

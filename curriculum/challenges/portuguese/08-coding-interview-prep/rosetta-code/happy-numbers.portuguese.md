@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Números felizes
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Um número feliz é definido pelo seguinte processo: </p><p> Começando com qualquer número inteiro positivo, substitua o número pela soma dos quadrados de seus dígitos e repita o processo até que o número seja igual a 1 (onde permanecerá), ou faça um loop infinitamente em um ciclo que não inclua 1. Esses números para os quais este processo termina em 1 são números felizes, enquanto aqueles que não terminam em 1 são números infelizes. </p><p> Implemente uma função que retorne true se o número for feliz ou false, se não for. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -49,7 +49,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ function happy (number) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

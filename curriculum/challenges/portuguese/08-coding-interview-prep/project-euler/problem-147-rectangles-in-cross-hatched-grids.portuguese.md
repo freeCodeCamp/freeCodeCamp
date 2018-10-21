@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 147: Retângulos em grades hachuradas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Em uma grade reticulada de 3x2, um total de 37 retângulos diferentes poderia estar dentro dessa grade, conforme indicado no esboço. <p> Existem 5 redes menores que 3x2, sendo importantes as dimensões vertical e horizontal, ou seja, 1x1, 2x1, 3x1, 1x2 e 2x2. Se cada um deles é hachurado, o seguinte número de diferentes retângulos pode ser situado dentro dessas redes menores: 1x1: 1 2x1: 4 3x1: 8 1x2: 4 2x2: 18 </p><p> Adicionando-os ao 37 da grade de 3x2, um total de 72 retângulos diferentes poderia estar situado dentro de redes 3x2 e menores. </p><p> Quantos retângulos diferentes poderiam estar situados dentro de grades de 47x43 e menores? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler147();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use Destructuring Assignment para atribuir variáveis ​​de objetos aninhados
 ---
 
-## Description
+## Descrição
 <section id="description"> Podemos similarmente desestruturar objetos <em>aninhados</em> em variáveis. Considere o seguinte código: <blockquote> const a = { <br> início: {x: 5, y: 6}, <br> end: {x: 6, y: -9} <br> }; <br> const {início: {x: startX, y: startY}} = a; <br> console.log (startX, startY); // 5, 6 </blockquote> No exemplo acima, a variável <code>start</code> recebe o valor de <code>a.start</code> , que também é um objeto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a atribuição de desestruturação para obter o <code>max</code> de <code>forecast.tomorrow</code> e atribuí-lo a <code>maxOfTomorrow</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

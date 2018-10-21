@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Introdução ao Currying e Aplicação Parcial
 ---
 
-## Description
+## Descrição
 <section id="description"> A <code>arity</code> de uma função é o número de argumentos requeridos. <code>Currying</code> uma função significa converter uma função de N <code>arity</code> em N funções de <code>arity</code> 1. Em outras palavras, ela reestrutura uma função, de modo que recebe um argumento, depois retorna outra função que recebe o próximo argumento, e assim por diante. Aqui está um exemplo: <blockquote> // Função sem curry <br> function unCurried (x, y) { <br> return x + y; <br> } <br><br> // Função curry <br> função curry (x) { <br> função de retorno (y) { <br> return x + y; <br> } <br> } <br> curry (1) (2) // Retorna 3 </blockquote> Isso é útil em seu programa se você não puder fornecer todos os argumentos para uma função de uma só vez. Você pode salvar cada chamada de função em uma variável, que conterá a referência da função retornada que recebe o próximo argumento quando estiver disponível. Aqui está um exemplo usando a função <code>curried</code> no exemplo acima: <blockquote> // Chame uma função curry em partes: <br> var funcForY = curry (1); <br> console.log (funcForY (2)); // Imprime 3 </blockquote> Da mesma forma, <code>partial application</code> pode ser descrita como aplicando alguns argumentos a uma função por vez e retornando outra função que é aplicada a mais argumentos. Aqui está um exemplo: <blockquote> // Função imparcial <br> função imparcial (x, y, z) { <br> return x + y + z; <br> } <br> var partialFn = impartial.bind (isso, 1, 2); <br> partialFn (10); // Retorna 13 </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Preencha o corpo da função <code>add</code> para usar o currying para adicionar os parâmetros <code>x</code> , <code>y</code> e <code>z</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ add(10)(20)(30);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

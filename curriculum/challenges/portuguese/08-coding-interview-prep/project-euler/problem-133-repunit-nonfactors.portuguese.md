@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 133: Não Fatores Repunit'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um número consistindo inteiramente de um é chamado de repunit. Vamos definir R (k) para ser uma repunidade de comprimento k; por exemplo, R (6) = 111111. Vamos considerar as republicações da forma R (10n). Embora R (10), R (100) ou R (1000) não sejam divisíveis por 17, R (10000) é divisível por 17. No entanto, não há valor de n para o qual R (10n) irá dividir por 19. De fato, é notável que 11, 17, 41 e 73 sejam os únicos quatro primos abaixo de cem que podem ser um fator de R (10n). Encontre a soma de todos os primos abaixo de cem mil que nunca serão um fator de R (10n). </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler133();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

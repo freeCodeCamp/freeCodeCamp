@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 340: Função Maluca'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para inteiros fixos a, b, c, defina a função maluca F (n) da seguinte maneira: F (n) = n - c para todo n&gt; b F (n) = F (a + F (a + F) F (a + n)))) para todo n ≤ b. <p> Além disso, defina S (a, b, c) =. </p><p> Por exemplo, se a = 50, b = 2000 e c = 40, então F (0) = 3240 e F (2000) = 2040. Também, S (50, 2000, 40) = 5204240. </p><p> Encontre os últimos 9 dígitos de S (217, 721, 127). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler340();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Melhore a acessibilidade do conteúdo de áudio com o elemento de áudio
 ---
 
-## Description
+## Descrição
 <section id="description"> O elemento de <code>audio</code> do HTML5 fornece significado semântico quando ele envolve o som ou o conteúdo do fluxo de áudio na sua marcação. O conteúdo de áudio também precisa de uma alternativa em texto para ser acessível a pessoas surdas ou com deficiência auditiva. Isso pode ser feito com um texto próximo na página ou um link para uma transcrição. A tag de <code>audio</code> suporta o atributo <code>controls</code> . Isso mostra a reprodução, a pausa e outros controles padrão do navegador e suporta a funcionalidade do teclado. Este é um atributo booleano, o que significa que não precisa de um valor, sua presença na tag ativa a configuração. Aqui está um exemplo: <blockquote> &lt;audio id = &quot;meowClip&quot; controla&gt; <br> &lt;fonte src = &quot;audio / meow.mp3&quot; type = &quot;audio / mpeg&quot; /&gt; <br> &lt;source src = &quot;audio / meow.ogg&quot; tipo = &quot;audio / ogg&quot; /&gt; <br> &lt;/ audio&gt; <br></blockquote> <strong>Nota</strong> <br> O conteúdo multimídia geralmente tem componentes visuais e auditivos. Ele precisa de legendas sincronizadas e uma transcrição para que os usuários com deficiências visuais e / ou auditivas possam acessá-lo. Geralmente, um desenvolvedor da Web não é responsável pela criação das legendas ou transcrição, mas precisa saber para incluí-las. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Hora de fazer uma pausa na Camper Cat e conhecer Zersiax (@zersiax), um defensor da acessibilidade e usuário de leitor de tela. Para ouvir um clipe do seu leitor de tela em ação, adicione um elemento de <code>audio</code> após o <code>p</code> . Inclua o atributo <code>controls</code> . Em seguida, coloque uma tag de <code>source</code> dentro das tags de <code>audio</code> com o atributo <code>src</code> definido como &quot;https://s3.amazonaws.com/freecodecamp/screen-reader.mp3&quot; e <code>type</code> atributo definido como &quot;audio / mpeg&quot;. <strong>Nota</strong> <br> O clipe de áudio pode soar rápido e difícil de entender, mas essa é uma velocidade normal para os usuários do leitor de tela. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -62,7 +62,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Agentes Binários
 ---
 
-## Description
+## Descrição
 <section id="description"> Retorna uma frase traduzida em inglês da string binária passada. A cadeia binária será separada por espaços. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 0110
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

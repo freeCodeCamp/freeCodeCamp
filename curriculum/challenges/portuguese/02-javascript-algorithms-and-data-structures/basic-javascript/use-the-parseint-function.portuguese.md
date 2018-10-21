@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a função parseInt
 ---
 
-## Description
+## Descrição
 <section id="description"> A função <code>parseInt()</code> analisa uma string e retorna um inteiro. Aqui está um exemplo: <code>var a = parseInt(&quot;007&quot;);</code> A função acima converte a string &quot;007&quot; em um inteiro 7. Se o primeiro caractere da string não puder ser convertido em um número, ele retornará <code>NaN</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>parseInt()</code> na função <code>convertToInteger</code> para converter a string de entrada <code>str</code> em um inteiro e retorná-lo. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ convertToInteger("56");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

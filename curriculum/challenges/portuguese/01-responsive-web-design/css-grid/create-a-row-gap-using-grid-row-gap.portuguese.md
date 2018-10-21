@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar um intervalo de linhas usando intervalo de linhas de grade
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode adicionar uma lacuna entre as linhas de uma grade usando <code>grid-row-gap</code> da mesma maneira que adicionou uma lacuna entre as colunas no desafio anterior. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma lacuna para as linhas com <code>5px</code> altura. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -68,7 +68,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

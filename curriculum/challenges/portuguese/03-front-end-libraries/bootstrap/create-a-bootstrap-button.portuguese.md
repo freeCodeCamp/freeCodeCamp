@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Crie um botão de bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> O Bootstrap tem seus próprios estilos para elementos de <code>button</code> , que parecem muito melhores que os simples HTML. Crie um novo elemento de <code>button</code> abaixo da sua foto grande de gatinho. Dê-lhe as classes <code>btn</code> e <code>btn-default</code> , assim como o texto de &quot;Like&quot;. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -102,7 +102,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

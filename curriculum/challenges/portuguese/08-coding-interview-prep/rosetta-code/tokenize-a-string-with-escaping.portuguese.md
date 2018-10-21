@@ -6,15 +6,15 @@ videoUrl: ''
 localeTitle: Tokenize uma string com escape
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Escreva uma função ou programa que pode dividir uma string em cada ocorrência não escapada de um caractere separador. </p><p> Deve aceitar três parâmetros de entrada: </p> A <b>string</b> O <b>caractere separador</b> O <b>caractere de escape</b> <p> Deve produzir uma lista de strings. </p><p> Regras para divisão: </p> Os campos que foram separados pelos separadores, tornam-se os elementos da lista de saída. Campos vazios devem ser preservados, mesmo no início e no final. <p> Regras para escapar: </p> &quot;Escapeado&quot; significa precedido por uma ocorrência do caractere de escape que ainda não escapou. Quando o caractere de escape precede um caractere que não tem significado especial, ele ainda conta como um escape (mas não faz nada de especial). Cada ocorrência do caractere de escape que foi usado para escapar de algo não deve se tornar parte da saída. <p> Demonstre que sua função satisfaz o seguinte caso de teste: </p><pre> um ^ | uno || tres ^^^^ | quatro ^^^ | ^ cuatro | </pre> e usando <pre> | </pre> como um separador e <pre> ^ </pre> como caractere de escape, sua função deve gerar o seguinte array: <p></p><pre> [&#39;one | uno&#39;, &quot;, &#39;three ^^&#39;, &#39;quatro ^ | quatro&#39;,&quot;]
   </pre></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

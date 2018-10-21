@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Inicializando Variáveis ​​com o Operador de Atribuição
 ---
 
-## Description
+## Descrição
 <section id="description"> É comum <dfn>inicializar</dfn> uma variável com um valor inicial na mesma linha que é declarada. <code>var myVar = 0;</code> Cria uma nova variável chamada <code>myVar</code> e atribui a ela um valor inicial de <code>0</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina uma variável <code>a</code> com <code>var</code> e inicialize-a com um valor de <code>9</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Problema de par mais próximo
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Forneça uma função para encontrar os dois pontos mais próximos entre um conjunto de pontos dados em duas dimensões, ou seja, para resolver o problema do <a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Problema de par de pontos mais próximo">par de pontos mais Próximo</a> no caso planar. </p><p> A solução direta é um algoritmo O (n <sup>2</sup> ) (que podemos chamar de algoritmo de força bruta); o pseudo-código (usando índices) poderia ser simplesmente: </p><pre> bruteForceClosestPair de P (1), P (2), ... P (N)
 se N &lt;2 então
   retorno ∞
@@ -56,11 +56,11 @@ outro
 fim se
 </pre> Referências e outras leituras: <a href="https://en.wikipedia.org/wiki/Closest pair of points problem" title="wp: Problema de par de pontos mais próximo">Problema de par de pontos</a> <a href="http://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html" title="link: http://www.cs.mcgill.ca/~cs251/ClosestPair/ClosestPairDQ.html">mais próximo Par mais próximo (McGill)</a> <a href="http://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf" title="link: http://www.cs.ucsb.edu/~suri/cs235/ClosestPair.pdf">Par mais próximo (UCSB)</a> <a href="http://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf" title="link: http://classes.cec.wustl.edu/~cse241/handouts/closestpair.pdf">Par mais próximo (WUStL)</a> <a href="http://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt" title="link: http://www.cs.iupui.edu/~xkzou/teaching/CS580/Divide-and-conquer-closestPair.ppt">Par mais próximo (IUPUI)</a> <p> Para a entrada, esperar o argumento a ser uma matriz de pontos (objectos) com <code>x</code> e <code>y</code> membros do conjunto de números. Para a saída, retorne um objeto contendo os pares chave: valor para <code>distance</code> e <code>pair</code> (isto é, o par de dois pontos mais próximos). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -80,7 +80,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -118,7 +118,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

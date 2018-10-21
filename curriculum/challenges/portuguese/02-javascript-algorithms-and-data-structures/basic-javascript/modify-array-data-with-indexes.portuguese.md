@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Modificar dados de matriz com índices
 ---
 
-## Description
+## Descrição
 <section id="description"> Ao contrário das strings, as entradas das matrizes são <dfn>mutáveis</dfn> e podem ser alteradas livremente. <strong>Exemplo</strong> <blockquote> var ourArray = [50,40,30]; <br> ourArray [0] = 15; // é igual a [15,40,30] </blockquote> <strong>Nota</strong> <br> Não deve haver espaços entre o nome da matriz e os colchetes, como <code>array [0]</code> . Embora JavaScript seja capaz de processar isso corretamente, isso pode confundir outros programadores lendo seu código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique os dados armazenados no índice <code>0</code> de <code>myArray</code> para um valor de <code>45</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

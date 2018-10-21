@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Prove o Botão Bootstrap Color Rainbow
 ---
 
-## Description
+## Descrição
 <section id="description"> A classe <code>btn-primary</code> é a cor principal que você usará no seu aplicativo. É útil para destacar as ações que você deseja que o usuário faça. Substitua a classe <code>btn-default</code> do Bootstrap por <code>btn-primary</code> no seu botão. Observe que esse botão ainda precisará das classes <code>btn</code> e <code>btn-block</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -102,7 +102,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

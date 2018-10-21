@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Criar uma estrutura de dados do mapa
 ---
 
-## Description
+## Descrição
 <section id="description"> Os próximos desafios cobrirão mapas e tabelas de hash. Mapas são estruturas de dados que armazenam pares de valores-chave. Em JavaScript, eles estão disponíveis para nós como objetos. Mapas fornecem pesquisa rápida de itens armazenados com base em valores-chave e são estruturas de dados muito comuns e úteis. Instruções: Vamos praticar um pouco criando nosso próprio mapa. Como os objetos JavaScript fornecem uma estrutura de mapa muito mais eficiente do que qualquer coisa que possamos escrever aqui, isso se destina principalmente a um exercício de aprendizado. No entanto, os objetos JavaScript nos fornecem apenas determinadas operações. E se quiséssemos definir operações personalizadas? Use o objeto <code>Map</code> fornecido aqui como um wrapper em torno de um <code>object</code> JavaScript. Crie os seguintes métodos e operações no objeto Map: <ul><li> <code>add</code> aceita um par de <code>key, value</code> para adicionar ao mapa. </li><li> <code>remove</code> aceita uma chave e remove a <code>key, value</code> associada <code>key, value</code> par de <code>key, value</code> </li><li> <code>get</code> aceita uma <code>key</code> e retorna o <code>value</code> armazenado </li><li> <code>has</code> aceita uma <code>key</code> e retorna <dfn>verdadeiro</dfn> se a chave existir ou <dfn>falso,</dfn> se isso não acontece. </li><li> <code>values</code> retorna uma matriz de todos os valores no mapa </li><li> <code>size</code> retorna o número de itens no mapa </li><li> <code>clear</code> esvazia o mapa </li></ul></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ var Map = function() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

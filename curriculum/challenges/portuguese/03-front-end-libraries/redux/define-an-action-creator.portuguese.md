@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Definir um criador de ações
 ---
 
-## Description
+## Descrição
 <section id="description"> Depois de criar uma ação, o próximo passo é enviar a ação para o repositório Redux para que ela possa atualizar seu estado. No Redux, você define criadores de ações para realizar isso. Um criador de ações é simplesmente uma função JavaScript que retorna uma ação. Em outras palavras, criadores de ações criam objetos que representam eventos de ação. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Defina uma função denominada <code>actionCreator()</code> que retorna o objeto de <code>action</code> quando chamado. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -48,7 +48,7 @@ const action = {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

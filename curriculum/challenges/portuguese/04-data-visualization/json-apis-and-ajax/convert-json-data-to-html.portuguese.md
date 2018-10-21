@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Converter dados JSON em HTML
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que você está obtendo dados de uma API JSON, é possível exibi-los no HTML. Você pode usar um método <code>forEach</code> para percorrer os dados, pois os objetos photo do cat são mantidos em um array. Ao chegar em cada item, você pode modificar os elementos HTML. Primeiro, declare uma variável html com <code>var html = &quot;&quot;;</code> . Em seguida, percorra o JSON, adicionando HTML à variável que encapsula os nomes das chaves em tags <code>strong</code> , seguida do valor. Quando o loop terminar, você o renderiza. Aqui está o código que faz isso: <blockquote> json.forEach (function (val) { <br> var keys = Object.keys (val); <br> html + = &quot;&lt;div class = &#39;cat&#39;&gt;&quot;; <br> keys.forEach (função (chave) { <br> html + = &quot;&lt;strong&gt;&quot; + chave + &quot;&lt;/ strong&gt;:&quot; + val [tecla] + &quot;&lt;br&gt;&quot;; <br> }); <br> html + = &quot;&lt;/ div&gt; &lt;br&gt;&quot;; <br> }); </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione um método <code>forEach</code> para fazer um loop pelos dados JSON e crie os elementos HTML para exibi-los. Aqui está um exemplo de JSON <blockquote> [ <br> { <br> &quot;id&quot;: 0, <br> &quot;imageLink&quot;: &quot;https://s3.amazonaws.com/freecodecamp/funny-cat.jpg&quot;, <br> &quot;altText&quot;: &quot;Um gato branco usando um capacete verde em forma de melão na cabeça.&quot;, <br> &quot;codeNames&quot;: [&quot;Juggernaut&quot;, &quot;Sra. Wallace&quot;, &quot;Buttercup&quot; <br> ] <br> } <br> ] </blockquote></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -97,7 +97,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

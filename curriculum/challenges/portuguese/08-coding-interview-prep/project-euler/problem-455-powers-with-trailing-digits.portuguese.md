@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 455: Poderes com Dígitos de Arrasto'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja f (n) o maior inteiro positivo x menor que 109, de modo que os últimos 9 dígitos de nx formem o número x (incluindo os zeros à esquerda), ou zero, se não existir tal número inteiro. <p> Por exemplo: </p><p> f (4) = 411728896 (4411728896 = ... 490411728896) f (10) = 0 f (157) = 743757 (157743757 = ... 567000743757) Σf (n), 2 ≤ n ≤ 103 = 442530011399 Localizar Σf (n ), 2 ≤ n ≤ 106. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler455();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

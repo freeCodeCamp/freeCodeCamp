@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Refatorar variáveis ​​globais com funções
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, vimos dois princípios distintos para a programação funcional: 1) Não altere uma variável ou objeto - crie novas variáveis ​​e objetos e os retorne, se necessário, a partir de uma função. 2) Declarar argumentos de função - qualquer cálculo dentro de uma função depende apenas dos argumentos e não de qualquer objeto ou variável global. Adicionar um a um número não é muito interessante, mas podemos aplicar esses princípios ao trabalhar com matrizes ou objetos mais complexos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Refatorar (reescrever) o código para que a matriz global <code>bookList</code> não seja alterada dentro de nenhuma função. A função <code>add</code> deve adicionar o <code>bookName</code> dado ao final de um array. A função <code>remove</code> deve remover o <code>bookName</code> dado de uma matriz. Ambas as funções devem retornar um array, e quaisquer novos parâmetros devem ser adicionados antes do <code>bookName</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -77,7 +77,7 @@ console.log(bookList);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

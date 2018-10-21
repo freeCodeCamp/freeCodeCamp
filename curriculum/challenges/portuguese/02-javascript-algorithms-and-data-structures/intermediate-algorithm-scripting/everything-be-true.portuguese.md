@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Tudo ser verdadeiro
 ---
 
-## Description
+## Descrição
 <section id="description"> Verifique se o predicado (segundo argumento) é <dfn>válido</dfn> em todos os elementos de uma coleção (primeiro argumento). Em outras palavras, você recebe uma coleção de objetos. O predicado <code>pre</code> será uma propriedade do objeto e você precisa retornar <code>true</code> se o seu valor é <code>truthy</code> . Caso contrário, retorne <code>false</code> . Em JavaScript, <code>truthy</code> valores são valores que traduzem a <code>true</code> quando avaliada em um contexto booleano. Lembre-se, você pode acessar as propriedades do objeto através da notação de ponto ou da notação <code>[]</code> . Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "ma
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

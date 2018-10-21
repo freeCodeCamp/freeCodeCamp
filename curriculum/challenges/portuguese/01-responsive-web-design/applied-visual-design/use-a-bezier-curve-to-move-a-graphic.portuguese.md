@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use uma curva de Bezier para mover um gráfico
 ---
 
-## Description
+## Descrição
 <section id="description"> Um desafio anterior discutiu a palavra <code>ease-out</code> chave <code>ease-out</code> que descreve uma alteração de animação que acelera primeiro e depois desacelera no final da animação. À direita, a diferença entre a palavra <code>ease-out</code> chave <code>ease-out</code> (para o elemento azul) e <code>linear</code> palavra-chave <code>linear</code> (para o elemento vermelho) é demonstrada. Progressões semelhantes de animação para a palavra <code>ease-out</code> chave <code>ease-out</code> podem ser obtidas usando uma função de curva Bezier cúbica personalizada. Em geral, a alteração dos pontos de ancoragem <code>p1</code> e <code>p2</code> impulsiona a criação de diferentes curvas de Bezier, que controlam como a animação progride no tempo. Aqui está um exemplo de uma curva de Bezier usando valores para imitar o estilo <code>animation-timing-function: cubic-bezier(0, 0, 0.58, 1);</code> Lembre-se de que todas as funções de <code>cubic-bezier</code> começam com <code>p0</code> em (0, 0) e terminam em <code>p3</code> em (1, 1). Neste exemplo, a curva se move mais rapidamente através do eixo Y (começa em 0, vai para <code>p1</code> y valor de 0, então vai para <code>p2</code> y valor de 1) do que se move pelo eixo X (0 para iniciar, então 0 para <code>p1</code> , até 0,58 para <code>p2</code> ). Como resultado, a alteração no elemento animado progride mais rapidamente que o tempo da animação para esse segmento. No final da curva, a relação entre a alteração nos valores x e y se inverte - o valor y se move de 1 para 1 (sem alteração), e os valores x se deslocam de 0,58 para 1, fazendo com que a animação mude mais lentamente em comparação com a duração da animação. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Para ver o efeito dessa curva de Bézier em ação, altere a <code>animation-timing-function</code> de <code>animation-timing-function</code> do elemento com ID de <code>red</code> para uma função de <code>cubic-bezier</code> com valores de x1, y1, x2, y2 definidos como 0, 0, 0,58, 1 Isso fará com que ambos os elementos progridam através da animação da mesma forma. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

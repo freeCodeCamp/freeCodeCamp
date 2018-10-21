@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Excluir propriedades de um objeto JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Também podemos excluir propriedades de objetos como este: <code>delete ourDog.bark;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Exclua a propriedade <code>&quot;tails&quot;</code> do <code>myDog</code> . Você pode usar a notação de pontos ou colchetes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -70,7 +70,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

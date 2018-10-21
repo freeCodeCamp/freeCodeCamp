@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Execute um algoritmo de Markov
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Crie um interpretador para um <a href="https://en.wikipedia.org/wiki/Markov algorithm" title="wp: algoritmo de Markov">Algoritmo de Markov</a> . </p><p> Regras tem a sintaxe: </p><p><ruleset> :: = (( <comment> | <rule> ) <newline> +) * </newline></rule></comment></ruleset></p><p><comment> :: = # { <any character=""> } </any></comment></p><p><rule> :: = <pattern><whitespace> -&gt; <whitespace> [.] <replacement></replacement></whitespace></whitespace></pattern></rule></p><p><whitespace> :: = ( <tab> | <space> ) [ <whitespace> ] </whitespace></space></tab></whitespace></p><p> Existe uma regra por linha. </p><p> Se houver um <b>.</b> (período) presente antes do <replacement> , então esta é uma regra de terminação, caso em que o intérprete deve parar a execução. </replacement></p><p> Um conjunto de regras consiste em uma sequência de regras, com comentários opcionais. </p><p> <big><big>Conjuntos de regras</big></big> </p><p> Use os seguintes testes nas entradas: </p> Conjunto de regras 1: <pre> Este arquivo de regras é extraído da Wikipedia:
 http://en.wikipedia.org/wiki/Markov_AlgorithmA -&gt; apple
 B -&gt; saco
@@ -65,11 +65,11 @@ estado C, símbolo 1 =&gt; escrever 1, mover para a esquerda, halt0C1 -&gt; H01
 1C1 -&gt; H11
 </pre><p> Este conjunto de regras deve virar </p><p> <code>000000A000000</code> </p> <p> para dentro </p><p> <code>00011H1111000</code> </p> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -91,7 +91,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -109,7 +109,7 @@ function markov (rules,test) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

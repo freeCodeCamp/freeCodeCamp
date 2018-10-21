@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 29: Poderes distintos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere todas as combinações inteiras de ab para 2 ≤ a ≤ 5 e 2 ≤ b ≤ 5: 22 = 4, 23 = 8, 24 = 16, 25 = 32 32 = 9, 33 = 27, 34 = 81, 35 = 243 42 = 16, 43 = 64, 44 = 256, 45 = 1024 52 = 25, 53 = 125, 54 = 625, 55 = 3125 Se eles são então colocados em ordem numérica, com qualquer repetição removida, obtemos a seguinte seqüência de 15 termos distintos: 4, 8, 9, 16, 25, 27, 32, 64, 81, 125, 243, 256, 625, 1024, 3125 Quantos termos distintos estão na sequência gerada por ab para 2 ≤ a ≤ n e 2 ≤ b ≤ n? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ distinctPowers(30);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

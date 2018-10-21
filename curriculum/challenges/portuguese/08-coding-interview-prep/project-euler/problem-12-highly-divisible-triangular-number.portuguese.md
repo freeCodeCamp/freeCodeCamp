@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 12: Número triangular altamente divisível'
 ---
 
-## Description
+## Descrição
 <section id="description"> A seqüência de números do triângulo é gerada pela adição dos números naturais. Então o número do 7º triângulo seria 1 + 2 + 3 + 4 + 5 + 6 + 7 = 28. Os primeiros dez termos seriam: <div style="text-align: center;"> 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ... </div> Vamos listar os fatores dos primeiros sete números do triângulo: <div style="padding-left: 4em;"> <b>1:</b> 1 </div><div style="padding-left: 4em;"> <b>3:</b> 1, 3 </div><div style="padding-left: 4em;"> <b>6:</b> 1, 2, 3, 6 </div><div style="padding-left: 4em;"> <b>10:</b> 1, 2, 5, 10 </div><div style="padding-left: 4em;"> <b>15:</b> 1, 3, 5, 15 </div><div style="padding-left: 4em;"> <b>21:</b> 1, 3, 7, 21 </div><div style="padding-left: 4em;"> <b>28:</b> 1, 2, 4, 7, 14, 28 </div> Podemos ver que 28 é o primeiro número do triângulo a ter mais de cinco divisores. Qual é o valor do primeiro número do triângulo para ter mais de <code>n</code> divisores? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ divisibleTriangleNumber(500);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

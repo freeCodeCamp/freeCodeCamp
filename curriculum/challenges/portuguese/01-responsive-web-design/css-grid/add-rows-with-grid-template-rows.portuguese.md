@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Adicionar linhas com linhas de modelo de grade
 ---
 
-## Description
+## Descrição
 <section id="description"> A grade que você criou no último desafio definirá o número de linhas automaticamente. Para ajustar as linhas manualmente, use a propriedade <code>grid-template-rows</code> da mesma maneira que você usou <code>grid-template-columns</code> no desafio anterior. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione duas linhas à grade com 50 <code>50px</code> altura cada. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -66,7 +66,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Divide um número por outro com JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Nós também podemos dividir um número por outro. JavaScript usa o símbolo <code>/</code> para divisão. <p> <strong>Exemplo</strong> </p><blockquote> myVar = 16/2; // atribuído 8 </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere <code>0</code> para que o <code>quotient</code> seja igual a <code>2</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

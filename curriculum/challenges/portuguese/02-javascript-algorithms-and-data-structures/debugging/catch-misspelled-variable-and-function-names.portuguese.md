@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Capturar nomes de variáveis ​​e variáveis ​​com erros ortográficos
 ---
 
-## Description
+## Descrição
 <section id="description"> Os métodos <code>console.log()</code> e <code>typeof</code> são as duas principais formas de verificar valores intermediários e tipos de saída do programa. Agora é hora de entrar nos formulários comuns que os bugs tomam. Um problema no nível da sintaxe com o qual os tipificadores rápidos podem se compor é o humilde erro de ortografia. Caracteres transpostos, ausentes ou mal capitalizados em uma variável ou nome de função terão o navegador procurando por um objeto que não existe - e reclamam na forma de um erro de referência. Os nomes de variáveis ​​e funções JavaScript diferenciam maiúsculas de minúsculas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrija os dois erros de ortografia no código para que o cálculo <code>netWorkingCapital</code> funcione. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ console.log(`Net working capital is: ${netWorkingCapital}`);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

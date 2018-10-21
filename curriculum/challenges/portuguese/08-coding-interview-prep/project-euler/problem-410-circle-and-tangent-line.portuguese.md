@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 410: Linha Circular e Tangente'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja C o círculo com raio r, x2 + y2 = r2. Escolhemos dois pontos P (a, b) e Q (-a, c) para que a linha passando por P e Q seja tangente a C. <p> Por exemplo, o quadrigêmeo (r, a, b, c) = (2, 6, 2, -7) satisfaz essa propriedade. </p><p> Seja F (R, X) o número dos quadrigêmeos inteiros (r, a, b, c) com essa propriedade e com 0 &lt;r ≤ R e 0 &lt;a ≤ X. </p><p> Podemos verificar que F (1, 5) = 10, F (2, 10) = 52 e F (10, 100) = 3384. Encontre F (108, 109) + F (109, 108). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler410();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

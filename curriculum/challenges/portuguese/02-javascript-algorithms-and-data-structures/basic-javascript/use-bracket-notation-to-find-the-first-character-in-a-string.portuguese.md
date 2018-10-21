@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a notação de suporte para localizar o primeiro caractere em uma seqüência de caracteres
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>Bracket notation</code> é uma maneira de obter um caractere em um <code>index</code> específico em uma cadeia de caracteres. A maioria das linguagens de programação modernas, como o JavaScript, não começa a contar como um ser humano. Eles começam em 0. Isso é chamado de indexação <dfn>baseada</dfn> em <dfn>zero</dfn> . Por exemplo, o caractere no índice 0 na palavra &quot;Charles&quot; é &quot;C&quot;. Então, se <code>var firstName = &quot;Charles&quot;</code> , você pode obter o valor da primeira letra da string usando <code>firstName[0]</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a <dfn>notação de colchetes</dfn> para localizar o primeiro caractere na variável <code>lastName</code> e atribuí-lo a <code>firstLetterOfLastName</code> . <strong>Sugestão</strong> <br> Tente observar a declaração da variável <code>firstLetterOfFirstName</code> se você ficar preso. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,7 +61,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

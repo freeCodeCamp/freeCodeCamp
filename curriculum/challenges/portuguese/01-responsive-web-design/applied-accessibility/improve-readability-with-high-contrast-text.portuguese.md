@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Melhore a legibilidade com texto de alto contraste
 ---
 
-## Description
+## Descrição
 <section id="description"> O baixo contraste entre as cores do primeiro plano e do plano de fundo pode dificultar a leitura do texto. Contraste suficiente melhora a legibilidade do seu conteúdo, mas o que exatamente significa &quot;suficiente&quot;? As Diretrizes de Acessibilidade ao Conteúdo da Web (WCAG) recomendam pelo menos uma taxa de contraste de 4,5 para 1 para o texto normal. A relação é calculada comparando os valores relativos de luminância de duas cores. Isso varia de 1: 1 para a mesma cor, ou sem contraste, para 21: 1 para branco contra preto, o contraste mais forte. Existem muitas ferramentas de verificação de contraste disponíveis on-line que calculam essa proporção para você. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A escolha de texto cinza claro em um fundo branco feita pelo Camper Cat para seu recente post no blog tem uma relação de contraste de 1,5: 1, dificultando a leitura. Altere a <code>color</code> do texto do cinza atual ( <code>#D3D3D3</code> ) para um cinza mais escuro ( <code>#636363</code> ) para melhorar a taxa de contraste para 6: 1. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -59,7 +59,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Escreva um contador simples
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode criar um componente com estado mais complexo combinando os conceitos abordados até o momento. Isso inclui a inicialização do <code>state</code> , a criação de métodos que definem o <code>state</code> e a atribuição de manipuladores de clique para acionar esses métodos. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O componente <code>Counter</code> registra um valor de <code>count</code> no <code>state</code> . Existem dois botões que chamam os métodos <code>increment()</code> e <code>decrement()</code> . Escreva esses métodos para que o valor do contador seja incrementado ou diminuído em 1 quando o botão apropriado for clicado. Além disso, crie um método <code>reset()</code> para que, ao clicar no botão de reinicialização, a contagem seja definida como 0. <strong>Nota:</strong> Certifique-se de não modificar os <code>classNames</code> das <code>classNames</code> dos botões. Além disso, lembre-se de adicionar as ligações necessárias para os métodos recém-criados no construtor. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -80,7 +80,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

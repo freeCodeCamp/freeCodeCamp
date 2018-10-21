@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar equilíbrio visual usando a propriedade text-align
 ---
 
-## Description
+## Descrição
 <section id="description"> Esta seção do currículo se concentra no design visual aplicado. O primeiro grupo de desafios baseia-se no layout do cartão para mostrar vários princípios fundamentais. O texto geralmente é uma grande parte do conteúdo da web. CSS tem várias opções de como alinhá-lo com a propriedade <code>text-align</code> . <code>text-align: justify;</code> faz com que todas as linhas de texto, exceto a última linha, atendam às bordas esquerda e direita da caixa de linha. <code>text-align: center;</code> centraliza o texto <code>text-align: right;</code> alinhar à direita o texto E <code>text-align: left;</code> (o padrão) alinha à esquerda o texto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Alinhe o texto da tag <code>h4</code> , que diz &quot;Google&quot;, ao centro. Em seguida, justifique a tag de parágrafo que contém informações sobre como o Google foi fundado. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -74,7 +74,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Encontre um ou mais criminosos em uma caçada
 ---
 
-## Description
+## Descrição
 <section id="description"> Hora de fazer uma pausa e testar suas novas habilidades de redação de regex. Um grupo de criminosos escapou da prisão e fugiu, mas você não sabe quantos. No entanto, você sabe que eles ficam juntos quando estão perto de outras pessoas. Você é responsável por encontrar todos os criminosos de uma só vez. Aqui está um exemplo para revisar como fazer isso: O regex <code>/z+/</code> corresponde à letra <code>z</code> quando aparece uma ou mais vezes seguidas. Ele encontraria correspondências em todas as seguintes strings: <blockquote> &quot;z&quot; <br> &quot;zzzzzz&quot; <br> &quot;ABCzzzz&quot; <br> &quot;zzzzABC&quot; <br> &quot;abczzzzzzzzzzzzzzzzzzzzzabc&quot; </blockquote> Mas ele não encontra correspondências nas strings a seguir, pois não há caracteres da letra <code>z</code> : <blockquote> &quot;&quot; <br> &quot;ABC&quot; <br> &quot;abcabc&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva um regex <code>greedy</code> que encontre um ou mais criminosos dentro de um grupo de outras pessoas. Um criminoso é representado pela letra maiúscula <code>C</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.log(matchedCriminals);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

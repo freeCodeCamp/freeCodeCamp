@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Adicionar cantos arredondados com raio de borda
 ---
 
-## Description
+## Descrição
 <section id="description"> Sua foto de gato atualmente tem cantos afiados. Podemos arredondar esses cantos com uma propriedade CSS chamada <code>border-radius</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Você pode especificar um <code>border-radius</code> com pixels. Dê ao seu gato uma foto <code>border-radius</code> de 10 <code>10px</code> . Nota: este desafio permite múltiplas soluções possíveis. Por exemplo, você pode adicionar <code>border-radius</code> à classe <code>.smaller-image</code> <code>.thick-green-border</code> ou à classe <code>.smaller-image</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -99,7 +99,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Avise seus usuários de uma ação perigosa com perigo-btn
 ---
 
-## Description
+## Descrição
 <section id="description"> O Bootstrap vem com várias cores pré-definidas para botões. A classe <code>btn-danger</code> é a cor do botão que você usará para notificar os usuários de que o botão executa uma ação destrutiva, como a exclusão de uma foto de gato. Crie um botão com o texto &quot;Delete&quot; e dê a classe <code>btn-danger</code> . Observe que esses botões ainda precisam das classes <code>btn</code> e <code>btn-block</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -105,7 +105,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

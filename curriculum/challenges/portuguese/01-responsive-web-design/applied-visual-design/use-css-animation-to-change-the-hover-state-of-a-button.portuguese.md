@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use animação CSS para alterar o estado de foco de um botão
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode usar CSS <code>@keyframes</code> para alterar a cor de um botão em seu estado de foco. Veja um exemplo de como alterar a largura de uma imagem no hover: <blockquote> &lt;style&gt; <br> img: hover { <br> nome da animação: largura; <br> duração da animação: 500ms; <br> } <br><br> Largura @keyframes { <br> 100% { <br> Largura: 40px; <br> } <br> } <br> &lt;/ style&gt; <br><br> &lt;img src = &quot;https://bit.ly/smallgooglelogo&quot; alt = &quot;Logotipo do Google&quot; /&gt; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Observe que <code>ms</code> significa milissegundos, em que 1000ms é igual a 1s. Use CSS <code>@keyframes</code> para alterar a <code>background-color</code> de fundo do elemento <code>button</code> , de modo que ele se torne <code>#4791d0</code> quando um usuário passar por cima dele. A regra <code>@keyframes</code> deve ter apenas uma entrada para <code>100%</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -58,7 +58,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

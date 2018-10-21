@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Adicionar atributos aos elementos do círculo
 ---
 
-## Description
+## Descrição
 <section id="description"> O último desafio criou os elementos do <code>circle</code> para cada ponto no <code>dataset</code> e os anexou à tela do SVG. Mas o D3 precisa de mais informações sobre a posição e o tamanho de cada <code>circle</code> para exibi-los corretamente. Um <code>circle</code> no SVG tem três atributos principais. Os atributos <code>cx</code> e <code>cy</code> são as coordenadas. Eles dizem ao D3 onde posicionar o <em>centro</em> da forma na tela do SVG. O raio (atributo <code>r</code> ) fornece o tamanho do <code>circle</code> . Assim como o <code>rect</code> <code>y</code> coordenar, o <code>cy</code> atributo para um <code>circle</code> é medido a partir do topo da tela SVG, não de baixo. Todos os três atributos podem usar uma função de retorno de chamada para definir seus valores dinamicamente. Lembre-se de que todos os métodos encadeados após <code>data(dataset)</code> executados uma vez por item no <code>dataset</code> . O parâmetro <code>d</code> na função de retorno de chamada se refere ao item atual no <code>dataset</code> , que é uma matriz para cada ponto. Você usa a notação de colchetes, como <code>d[0]</code> , para acessar os valores nessa matriz. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione os atributos <code>cx</code> , <code>cy</code> e <code>r</code> aos elementos do <code>circle</code> . O valor <code>cx</code> deve ser o primeiro número da matriz para cada item no <code>dataset</code> . O valor <code>cy</code> deve ser baseado no segundo número do array, mas certifique-se de mostrar o gráfico com o lado direito para cima e não invertido. O valor de <code>r</code> deve ser 5 para todos os círculos. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -46,7 +46,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -97,7 +97,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

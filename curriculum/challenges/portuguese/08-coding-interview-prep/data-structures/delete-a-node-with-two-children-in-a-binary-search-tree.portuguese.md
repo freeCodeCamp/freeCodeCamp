@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Excluir um nó com dois filhos em uma árvore de pesquisa binária
 ---
 
-## Description
+## Descrição
 <section id="description"> A remoção de nós que possuem dois filhos é o caso mais difícil de implementar. Remover um nó como este produz duas subárvores que não estão mais conectadas à estrutura de árvore original. Como podemos reconectá-los? Um método é encontrar o menor valor na subárvore direita do nó de destino e substituir o nó de destino por esse valor. Selecionar a substituição dessa maneira garante que ela seja maior que cada nó na subárvore esquerda, ela se torna o novo pai, mas também menos que cada nó na subárvore direita, ele se torna o novo pai de. Uma vez feita a substituição, o nó de substituição deve ser removido da subárvore direita. Até mesmo essa operação é complicada, porque a substituição pode ser uma folha ou ela mesma pode ser a mãe de uma subárvore direita. Se for uma folha, devemos remover a referência de seus pais para ela. Caso contrário, deve ser o filho certo do alvo. Nesse caso, devemos substituir o valor de destino pelo valor de substituição e fazer com que o destino faça referência ao filho certo da substituição. Instruções: Vamos terminar nosso método <code>remove</code> manipulando o terceiro caso. Nós fornecemos alguns códigos novamente para os dois primeiros casos. Adicione algum código agora para manipular nós de destino com dois filhos. Quaisquer casos de limites a ter em conta? E se a árvore tiver apenas três nós? Quando terminar, isso concluirá nossa operação de exclusão para árvores de pesquisa binária. Bom trabalho, este é um problema muito difícil! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -130,7 +130,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

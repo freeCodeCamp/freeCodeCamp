@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 85: Contando Retângulos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Contando com cuidado, pode-se ver que uma grade retangular de 3 por 2 contém dezoito retângulos: <p> Embora não exista uma grade retangular que contenha exatamente dois milhões de retângulos, encontre a área da grade com a solução mais próxima. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler85();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

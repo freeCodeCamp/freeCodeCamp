@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Definir estado com this.setState
 ---
 
-## Description
+## Descrição
 <section id="description"> Os desafios anteriores cobriram o <code>state</code> componente e como inicializar o estado no <code>constructor</code> . Há também uma maneira de alterar o <code>state</code> do componente. React fornece um método para atualizar o <code>state</code> componente chamado <code>setState</code> . Você chama o método <code>setState</code> dentro de sua classe de componentes da seguinte forma: <code>this.setState()</code> , passando um objeto com pares de valor-chave. As chaves são suas propriedades de estado e os valores são os dados de estado atualizados. Por exemplo, se estivéssemos armazenando um <code>username</code> no estado e queríamos atualizá-lo, ficaria assim: <blockquote> this.setState ({ <br> nome de usuário: &#39;Lewis&#39; <br> }); </blockquote> React espera que você nunca modifique o <code>state</code> diretamente, em vez disso, sempre use <code>this.setState()</code> quando ocorrerem mudanças de estado. Além disso, você deve observar que o React pode agrupar várias atualizações de estado para melhorar o desempenho. O que isto significa é que as atualizações de estado através do método <code>setState</code> podem ser assíncronas. Há uma sintaxe alternativa para o método <code>setState</code> , que fornece uma maneira de contornar esse problema. Isso raramente é necessário, mas é bom manter isso em mente! Por favor, consulte a <a target="_blank" href="https://facebook.github.io/react/docs/state-and-lifecycle.html">documentação</a> do <a target="_blank" href="https://facebook.github.io/react/docs/state-and-lifecycle.html">React</a> para mais detalhes. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Existe um elemento de <code>button</code> no editor de código que possui um manipulador <code>onClick()</code> . Esse manipulador é acionado quando o <code>button</code> recebe um evento de clique no navegador e executa o método <code>handleClick</code> definido no <code>MyComponent</code> . No método <code>handleClick</code> , atualize o <code>state</code> do componente usando <code>this.setState()</code> . Defina a propriedade <code>name</code> no <code>state</code> para igualar a string <code>React Rocks!</code> . Clique no botão e veja a atualização do estado renderizado. Não se preocupe se você não entender completamente como o código do manipulador de cliques funciona neste momento. Está coberto nos próximos desafios. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -76,7 +76,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

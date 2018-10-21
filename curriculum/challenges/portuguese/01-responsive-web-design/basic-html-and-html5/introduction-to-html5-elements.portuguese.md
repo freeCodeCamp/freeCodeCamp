@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Introdução aos elementos HTML5
 ---
 
-## Description
+## Descrição
 <section id="description"> O HTML5 introduz mais tags HTML descritivas. Estes incluem <code>header</code> , <code>footer</code> , <code>nav</code> , <code>video</code> , <code>article</code> , <code>section</code> e outros. Essas tags facilitam a leitura do seu HTML, além de ajudar na Otimização do Mecanismo de Pesquisa (SEO) e na acessibilidade. A tag HTML5 <code>main</code> ajuda os mecanismos de pesquisa e outros desenvolvedores a encontrar o conteúdo principal de sua página. <strong>Nota</strong> <br> Muitas das novas tags HTML5 e seus benefícios são abordados na seção Acessibilidade Aplicada. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie um segundo elemento <code>p</code> após o elemento <code>p</code> existente com o seguinte texto ipsum gatinho: <code>Purr jump eat the grass rip the couch scratched sunbathe, shed everywhere rip the couch sleep in the sink fluffy fur catnip scratched.</code> Enrole os parágrafos com uma tag <code>main</code> abertura e fechamento. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -54,7 +54,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

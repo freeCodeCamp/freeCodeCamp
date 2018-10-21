@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Triângulos Heronianos
 ---
 
-## Description
+## Descrição
 <section id="description"><p> <a href="https://en.wikipedia.org/wiki/Heron&#x27;s formula" title="wp: fórmula de Heron">A fórmula do herói</a> para a área de um triângulo, dada a extensão de seus três lados <big>a,</big> <big>b</big> e <big>c,</big> é dada por: </p><p> <big>$$ A = \ sqrt {s (sa) (sb) (sc)}, $$</big> </p><p> onde <big>s</big> é metade do perímetro do triângulo; isso é, </p><p> <big>$$ s = \ frac {a + b + c} {2}. $$</big> </p><p> <a href="http://www.had2know.com/academics/heronian-triangles-generator-calculator.html" title="link: http://www.had2know.com/academics/heronian-triangles-generator-calculator.html">Os triângulos de Heronian</a> são triângulos cujos lados e área são todos inteiros. </p><p> Um exemplo é o triângulo com os lados 3, 4 e 5 cuja área é 6 (e cujo perímetro é 12). </p><p> Note que qualquer triângulo cujos lados são todos um múltiplo inteiro de 3, 4, 5; como 6, 8, 10, também será um triângulo de Heroniano. </p><p> Definir um triângulo Heroniano Primitivo como um triângulo Heroniano onde o maior divisor comum </p><p> dos três lados é 1 (unidade). </p><p> Isso excluirá, por exemplo, o triângulo 6, 8, 10. </p> Tarefa: <p> Implemente uma função baseada na fórmula de Herói, que retorna os primeiros <code><sub>n th</sub></code> triângulos ordenados em uma matriz de matrizes. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Segmentar um filho específico de um elemento usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Você viu porque os atributos id são tão convenientes para a segmentação com seletores jQuery. Mas você nem sempre tem ids legais para trabalhar. Felizmente, o jQuery tem alguns outros truques para direcionar os elementos certos. O jQuery usa CSS Selectors para segmentar elementos. O seletor de <code>target:nth-child(n)</code> CSS permite selecionar todos os enésimos elementos com a classe de destino ou tipo de elemento. Veja como você daria ao terceiro elemento em cada poço a classe de rejeição: <code>$(&quot;.target:nth-child(3)&quot;).addClass(&quot;animated bounce&quot;);</code> Faça o segundo filho em cada um dos seus elementos do poço saltar. Você deve selecionar os filhos dos elementos com a classe de <code>target</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,7 +84,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

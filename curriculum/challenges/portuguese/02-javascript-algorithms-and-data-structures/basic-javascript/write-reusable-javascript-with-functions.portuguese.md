@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Escreva JavaScript reutilizável com funções
 ---
 
-## Description
+## Descrição
 <section id="description"> Em JavaScript, podemos dividir nosso código em partes reutilizáveis ​​chamadas <dfn>funções</dfn> . Aqui está um exemplo de uma função: <blockquote> function functionName () { <br> console.log (&quot;Hello World&quot;); <br> } </blockquote> Você pode chamar ou <dfn>invocar</dfn> esta função usando seu nome seguido de parênteses, assim: <code>functionName();</code> Cada vez que a função é chamada, ela imprimirá a mensagem <code>&quot;Hello World&quot;</code> no console de desenvolvimento. Todo o código entre as chaves será executado toda vez que a função for chamada. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"><ol><li> Crie uma função chamada <code>reusableFunction</code> que imprima <code>&quot;Hi World&quot;</code> no console dev. </li><li> Chame a função. </li></ol></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -87,7 +87,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Use appendTo para mover elementos com jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora vamos tentar mover elementos de uma <code>div</code> para outra. jQuery tem uma função chamada <code>appendTo()</code> que permite selecionar elementos HTML e anexá-los a outro elemento. Por exemplo, se quiséssemos mover bem o <code>target4</code> da direita para a esquerda, <code>$(&quot;#target4&quot;).appendTo(&quot;#left-well&quot;);</code> : <code>$(&quot;#target4&quot;).appendTo(&quot;#left-well&quot;);</code> Mova seu elemento <code>target2</code> seu <code>target2</code> da <code>left-well</code> para o da <code>right-well</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -76,7 +76,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 37: Príncipes Truncáveis'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número 3797 tem uma propriedade interessante. Sendo o próprio primo, é possível remover continuamente dígitos da esquerda para a direita e permanecer primos em cada estágio: 3797, 797, 97 e 7. Da mesma forma, podemos trabalhar da direita para a esquerda: 3797, 379, 37 e 3. Encontre a soma dos únicos primos n (8 &lt;= n &lt;= 11) que são ambos truncáveis ​​da esquerda para a direita e da direita para a esquerda. NOTA: 2, 3, 5 e 7 não são considerados primos truncáveis. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ truncatablePrimes(11);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

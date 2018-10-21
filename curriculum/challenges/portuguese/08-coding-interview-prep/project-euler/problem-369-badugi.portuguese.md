@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 369: Badugi'
 ---
 
-## Description
+## Descrição
 <section id="description"> Em um baralho padrão de 52 cartas, um conjunto de 4 cartas é um Badugi se ele contiver 4 cartas sem pares e sem duas cartas do mesmo naipe. <p> Seja f (n) o número de maneiras de escolher n cartas com um subconjunto de 4 cartas que seja um Badugi. Por exemplo, há 2598960 maneiras de escolher cinco cartas de um baralho de 52 cartas padrão, das quais 514800 contêm um subconjunto de 4 cartas que é um Badugi, então f (5) = 514800. </p><p> Encontre ∑f (n) para 4 ≤ n ≤ 13. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler369();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 17: Contagem de números'
 ---
 
-## Description
+## Descrição
 <section id="description"> Se os números de 1 a 5 forem escritos em palavras: um, dois, três, quatro, cinco, então há 3 + 3 + 5 + 4 + 4 = 19 letras usadas no total. Se todos os números de 1 a determinado <code>limit</code> fossem escritos em palavras, quantas letras seriam usadas? <b>NOTA:</b> Não conte espaços ou hífens. Por exemplo, 342 (trezentos e quarenta e dois) contém 23 letras e 115 (cento e quinze) contém 20 letras. O uso de &quot;e&quot; ao escrever números está em conformidade com o uso britânico. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ numberLetterCounts(5);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

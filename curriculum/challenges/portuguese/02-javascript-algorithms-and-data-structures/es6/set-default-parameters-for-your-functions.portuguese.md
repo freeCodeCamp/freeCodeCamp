@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Definir parâmetros padrão para suas funções
 ---
 
-## Description
+## Descrição
 <section id="description"> Para nos ajudar a criar funções mais flexíveis, o ES6 introduz <dfn>parâmetros padrão</dfn> para funções. Confira este código: <blockquote> saudação de função (name = &quot;Anonymous&quot;) { <br> return &quot;Olá&quot; + nome; <br> } <br> console.log (saudação (&quot;John&quot;)); // Olá john <br> console.log (saudação ()); // Hello Anonymous </blockquote> O parâmetro padrão entra em ação quando o argumento não é especificado (é indefinido). Como você pode ver no exemplo acima, o <code>name</code> do parâmetro receberá seu valor padrão <code>&quot;Anonymous&quot;</code> quando você não fornecer um valor para o parâmetro. Você pode adicionar valores padrão para quantos parâmetros desejar. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique o <code>increment</code> função adicionando parâmetros padrão para que ele adicione 1 a um <code>number</code> se o <code>value</code> não for especificado. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ console.log(increment(5)); // returns 6
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 173: Usando até um milhão de peças quantas lâminas quadradas "vazias" podem ser formadas?'
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos definir uma lâmina quadrada para ser um contorno quadrado com um &quot;buraco&quot; quadrado de modo que a forma possua simetria vertical e horizontal. Por exemplo, usando exatamente trinta e dois quadrados, podemos formar duas lâminas quadradas diferentes: <p> Com cem ladrilhos, e não necessariamente usando todos os ladrilhos ao mesmo tempo, é possível formar quarenta e uma lâminas quadradas diferentes. Usando até um milhão de telhas quantas lâminas quadradas diferentes podem ser formadas? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler173();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

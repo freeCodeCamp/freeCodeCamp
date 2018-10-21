@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 116: Azulejos vermelhos, verdes ou azuis'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma fileira de cinco ladrilhos quadrados pretos deve ter um número de seus ladrilhos substituídos por ladrilhos oblongos coloridos escolhidos de vermelho (comprimento dois), verde (comprimento três) ou azul (comprimento quatro). Se as telhas vermelhas forem escolhidas, existem exatamente sete maneiras de fazer isso. <p> Se as telhas verdes forem escolhidas, existem três maneiras. </p><p> E se azulejos azuis são escolhidos, existem duas maneiras. </p><p> Assumindo que as cores não podem ser misturadas, há 7 + 3 + 2 = 12 maneiras de substituir as telhas pretas em uma fileira medindo cinco unidades de comprimento. Quantas maneiras diferentes as telhas pretas em uma fileira, medindo cinquenta unidades de comprimento, podem ser substituídas se as cores não puderem ser misturadas e pelo menos uma peça colorida tiver que ser usada? NOTA: Isso está relacionado ao problema 117. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler116();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

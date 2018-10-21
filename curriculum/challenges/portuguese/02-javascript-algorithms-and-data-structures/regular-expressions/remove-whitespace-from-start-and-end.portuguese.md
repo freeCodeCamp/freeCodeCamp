@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Remova o espaço em branco do início e do fim
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes, caracteres em branco ao redor de strings não são desejados, mas estão lá. O processamento típico de strings é remover o espaço em branco no início e no final dele. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva um regex e use os métodos de string apropriados para remover os espaços em branco no início e no final das strings. <strong>Nota</strong> <br> O método <code>.trim()</code> funcionaria aqui, mas você precisará concluir esse desafio usando expressões regulares. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ let result = hello; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

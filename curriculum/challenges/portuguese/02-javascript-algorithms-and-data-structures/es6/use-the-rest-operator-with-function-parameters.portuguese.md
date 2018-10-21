@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o operador de descanso com parâmetros de função
 ---
 
-## Description
+## Descrição
 <section id="description"> Para nos ajudar a criar funções mais flexíveis, o ES6 introduz o <dfn>operador de descanso</dfn> para parâmetros de função. Com o operador de descanso, você pode criar funções que levam um número variável de argumentos. Esses argumentos são armazenados em uma matriz que pode ser acessada posteriormente de dentro da função. Confira este código: <blockquote> function howMany (... args) { <br> return &quot;Você passou&quot; + args.length + &quot;arguments.&quot;; <br> } <br> console.log (howMany (0, 1, 2)); // Você passou 3 argumentos <br> console.log (howMany (&quot;string&quot;, nulo, [1, 2, 3], {})); // Você passou 4 argumentos. </blockquote> O operador de descanso elimina a necessidade de verificar a matriz <code>args</code> e nos permite aplicar <code>map()</code> , <code>filter()</code> e <code>reduce()</code> na matriz de parâmetros. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique a <code>sum</code> da função para que ela use o operador rest e funcione da mesma maneira com qualquer número de parâmetros. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -55,7 +55,7 @@ console.log(sum(1, 2, 3)); // 6
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

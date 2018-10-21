@@ -9,14 +9,14 @@ videoUrl: ''
 localeTitle: Alinhe os elementos do formulário de forma responsável com o Bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora vamos pegar sua <code>input</code> formulário e seu <code>button</code> submissão na mesma linha. Faremos isso da mesma forma que temos anteriormente: usando um elemento <code>div</code> com a <code>row</code> da classe e outros elementos <code>div</code> dentro dele usando a classe <code>col-xs-*</code> . Aninhe a <code>input</code> texto do seu formulário e o <code>button</code> enviar dentro de uma <code>div</code> com a <code>row</code> da turma. Aninhe a <code>input</code> texto do seu formulário dentro de uma div com a classe de <code>col-xs-7</code> . Aninhe o <code>button</code> envio do seu formulário em um <code>div</code> com a classe <code>col-xs-5</code> . Este é o último desafio que vamos fazer para o nosso aplicativo Cat Photo por enquanto. Esperamos que você tenha gostado de aprender o Font Awesome, o Bootstrap e o design responsivo! </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -121,7 +121,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 92: Correntes de dígitos quadrados'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma cadeia numérica é criada adicionando continuamente o quadrado dos dígitos em um número para formar um novo número até que seja visto antes. Por exemplo, 44 ​​→ 32 → 13 → 10 → 1 → 1 85 → 89 → 145 → 42 → 20 → 4 → 16 → 37 → 58 → 89 Portanto, qualquer cadeia que chegue em 1 ou 89 ficará presa em um loop sem fim. O que é mais surpreendente é que CADA número inicial chegará a 1 ou 89. Quantos números iniciais abaixo de dez milhões chegarão a 89? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler92();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

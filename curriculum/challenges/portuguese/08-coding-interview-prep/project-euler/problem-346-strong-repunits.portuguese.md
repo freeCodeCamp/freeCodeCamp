@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 346: Repunções Fortes'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número 7 é especial, porque 7 é 111 escrito na base 2 e 11 escrito na base 6 (ou seja, 710 = 116 = 1112). Em outras palavras, 7 é uma repunidade em pelo menos duas bases b&gt; 1. <p> Devemos chamar um inteiro positivo com essa propriedade de um forte repunit. Pode-se verificar que existem 8 repunas fortes abaixo de 50: {1,7,13,15,21,31,40,43}. Além disso, a soma de todas as repunas fortes abaixo de 1000 é igual a 15864. </p><p> Encontre a soma de todas as repunções fortes abaixo de 1012. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler346();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

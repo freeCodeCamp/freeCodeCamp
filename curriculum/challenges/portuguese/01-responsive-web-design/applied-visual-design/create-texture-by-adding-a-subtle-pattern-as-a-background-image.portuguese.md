@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar textura adicionando um padrão sutil como imagem de plano de fundo
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma maneira de adicionar textura e interesse a um plano de fundo e destacá-lo é adicionar um padrão sutil. A chave é o equilíbrio, já que você não quer que o fundo se destaque muito e tire o primeiro plano. A propriedade <code>background</code> suporta a função <code>url()</code> para vincular a uma imagem da textura ou padrão escolhido. O endereço do link é colocado entre aspas entre parênteses. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Usando o url de <code>https://i.imgur.com/MJAkxbh.png</code> , defina o <code>background</code> de toda a página com o seletor de <code>body</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -44,7 +44,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

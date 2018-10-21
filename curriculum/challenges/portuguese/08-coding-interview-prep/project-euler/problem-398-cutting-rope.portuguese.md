@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 398: Corda Cortante'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dentro de uma corda de comprimento n, n-1 pontos são colocados com a distância 1 um do outro e dos pontos finais. Entre esses pontos, escolhemos aleatoriamente m-1 pontos e cortamos a corda nesses pontos para criar m segmentos. <p> Seja E (n, m) o comprimento esperado do segundo segmento mais curto. Por exemplo, E (3, 2) = 2 e E (8, 3) = 16/7. Observe que se vários segmentos tiverem o mesmo comprimento mais curto, o comprimento do segundo segmento mais curto será definido como o mesmo que o menor comprimento. </p><p> Encontre E (107, 100). Dê sua resposta arredondada para 5 casas decimais atrás do ponto decimal. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler398();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

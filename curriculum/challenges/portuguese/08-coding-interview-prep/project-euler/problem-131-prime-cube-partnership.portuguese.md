@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 131: parceria de cubo principal'
 ---
 
-## Description
+## Descrição
 <section id="description"> Existem alguns valores primos, p, para os quais existe um inteiro positivo, n, tal que a expressão n3 + n2p é um cubo perfeito. Por exemplo, quando p = 19, 83 + 82 × 19 = 123. O que talvez seja mais surpreendente é que para cada primo com essa propriedade o valor de n é único, e há apenas quatro primos abaixo de cem. Quantos primos abaixo de um milhão têm essa propriedade notável? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler131();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

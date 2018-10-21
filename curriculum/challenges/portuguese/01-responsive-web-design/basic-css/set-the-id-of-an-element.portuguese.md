@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Definir o id de um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> Além das classes, cada elemento HTML também pode ter um atributo <code>id</code>. Há vários benefícios em usar os atributos <code>id</code>: você pode usar um <code>id</code> para estilizar um único elemento e, posteriormente, aprenderá que pode usá-los para selecionar e modificar elementos específicos com JavaScript. Atributos <code>id</code> devem ser exclusivos. Os navegadores não reforçam isso, mas é uma prática recomendada amplamente aceita. Então, por favor, não dê a mais de um elemento o mesmo atributo <code>id</code>. Veja um exemplo de como você atribui ao elemento <code>h2</code> o id de <code>cat-photo-app</code>: <code>&lt;h2 id=&quot;cat-photo-app&quot;&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dê ao seu elemento <code>form</code> o id <code>cat-photo-form</code>. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -101,7 +101,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

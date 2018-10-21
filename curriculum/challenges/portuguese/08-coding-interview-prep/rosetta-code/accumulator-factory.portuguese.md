@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Fábrica de acumuladores
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Crie uma função que use um único argumento (numérico) e retorne outra função que seja um acumulador. A função de acumulador retornada, por sua vez, também recebe um único argumento numérico e retorna a soma de todos os valores numéricos transmitidos até então para esse acumulador (incluindo o valor inicial passado quando o acumulador foi criado). </p><p> Regras: </p><p> Não use variáveis ​​globais. </p><p> Dica: </p><p> Os fechamentos salvam o estado externo. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -57,7 +57,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

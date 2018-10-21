@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 26: Ciclos Recíprocos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma fração unitária contém 1 no numerador. A representação decimal das frações unitárias com os denominadores 2 a 10 é dada: <div style="padding-left: 4em; display: inline-grid; grid-template-rows: auto; row-gap: 7px;"><div> <sup><sub>2/1</sub></sup> = 0,5 </div><div> <sup><sub>3/1</sub></sup> = 0. (3) </div><div> <sup><sub>4/1</sub></sup> = 0,25 </div><div> <sup><sub>5/1</sub></sup> = 0,2 </div><div> <sup><sub>1/6</sub></sup> = 0,1 (6) </div><div> <sup><sub>7/1</sub></sup> = 0. (142857) </div><div> <sup><sub>1/8</sub></sup> = 0,125 </div><div> <sup><sub>9/1</sub></sup> = 0. (1) </div><div> <sup><sub>10/01</sub></sup> = 0,1 </div></div> Onde 0,1 (6) significa 0,166666 ... e tem um ciclo recorrente de 1 dígito. Pode ver-se que <sup><sub>1/7</sub></sup> tem um ciclo repetitivo de 6 dígitos. Encontre o valor de <var>d</var> &lt; <var>n</var> para o qual <sup>1</sup> / <sub>d</sub> contém o ciclo recorrente mais longo em sua parte de fração decimal. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ reciprocalCycles(1000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

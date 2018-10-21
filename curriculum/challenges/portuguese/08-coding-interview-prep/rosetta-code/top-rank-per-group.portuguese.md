@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Melhor classificação por grupo
 ---
 
-## Description
+## Descrição
 <section id="description"> Tarefa: <p> Encontre os primeiros N dados classificados em cada grupo, onde N é fornecido como um parâmetro. O nome da classificação e o grupo também são fornecidos como parâmetro. </p> Dados os seguintes dados: <pre> [
   {nome: &#39;Tyler Bennett&#39;, id: &#39;E10297&#39;, salário: 32000, departamento: &#39;D101&#39;},
   {nome: &#39;John Rappl&#39;, id: &#39;E21437&#39;, salário: 47000, departamento: &#39;D050&#39;},
@@ -31,11 +31,11 @@ localeTitle: Melhor classificação por grupo
 ];
 </pre> pode-se classificar o filme mais bem classificado em cada gênero chamando <code>topRankPerGroup(1, data, &#39;genre&#39;, &#39;rating&#39;)</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -59,7 +59,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -86,7 +86,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

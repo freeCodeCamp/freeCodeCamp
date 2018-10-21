@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar uma lacuna de coluna usando a lacuna da coluna de grade
 ---
 
-## Description
+## Descrição
 <section id="description"> Até agora, nas grades que você criou, as colunas foram todas apertadas umas contra as outras. Às vezes você quer uma lacuna entre as colunas. Para adicionar uma lacuna entre as colunas, use a propriedade <code>grid-column-gap</code> seguinte forma: <blockquote> intervalo de coluna de grade: 10px; </blockquote> Isso cria 10px de espaço vazio entre todas as nossas colunas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dê as colunas na grade uma lacuna de <code>20px</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -68,7 +68,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a tag s para rasurar texto
 ---
 
-## Description
+## Descrição
 <section id="description"> Para raspar o texto, que é quando uma linha horizontal corta os caracteres, você pode usar a tag <code>s</code> . Isso mostra que uma seção do texto não é mais válida. Com a tag <code>s</code> , o navegador aplica o CSS da <code>text-decoration: line-through;</code> de <code>text-decoration: line-through;</code> para o elemento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Envolva a tag <code>s</code> torno de &quot;Google&quot; dentro da tag <code>h4</code> e, em seguida, adicione a palavra Alphabet ao lado dela, que não deve ter a formatação strikethrough. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -81,7 +81,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

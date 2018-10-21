@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Gerar números inteiros aleatórios dentro de um intervalo
 ---
 
-## Description
+## Descrição
 <section id="description"> Em vez de gerar um número aleatório entre zero e um dado número, como fizemos antes, podemos gerar um número aleatório que esteja dentro de um intervalo de dois números específicos. Para fazer isso, definiremos um número mínimo <code>min</code> e um número máximo <code>max</code> . Aqui está a fórmula que vamos usar. Tome um momento para lê-lo e tente entender o que este código está fazendo: <code>Math.floor(Math.random() * (max - min + 1)) + min</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Crie uma função chamada <code>randomRange</code> que <code>randomRange</code> um intervalo <code>myMin</code> e <code>myMax</code> e retorne um número aleatório que seja maior ou igual a <code>myMin</code> e seja menor ou igual a <code>myMax</code> , inclusive. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -71,7 +71,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

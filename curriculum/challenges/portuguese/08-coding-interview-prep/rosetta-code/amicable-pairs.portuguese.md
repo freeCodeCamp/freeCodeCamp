@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Pares amigáveis
 ---
 
-## Description
+## Descrição
 <section id="description"> Dois inteiros $ N $ e $ M $ são considerados <a href="https://en.wikipedia.org/wiki/Amicable numbers" title="wp: números amigáveis">pares amigáveis</a> se $ N \ neq M $ e a soma dos <a href="http://rosettacode.org/wiki/Proper divisors" title="Divisores apropriados">divisores apropriados</a> de $ N $ ($ \ mathrm {sum} (\ mathrm {propDivs} (N)) $) $ = M $ assim como $ \ mathrm {sum} (\ mathrm {propDivs} (M)) = N $. Exemplo: 1184 e 1210 são um par amigável, com divisores apropriados: 1, 2, 4, 8, 16, 32, 37, 74, 148, 296, 592 e 1, 2, 5, 10, 11, 22, 55, 110, 121, 242, 605, respectivamente. Tarefa: Calcule e mostre aqui os pares Amicáveis ​​abaixo de 20.000 (são oito). Tarefas relacionadas <a href="http://rosettacode.org/wiki/Proper divisors" title="Divisores apropriados">Divisores adequados Classificação</a> <a href="http://rosettacode.org/wiki/Abundant, deficient and perfect number classifications" title="Classificações numéricas abundantes, deficientes e perfeitas">abundante, deficiente e perfeita dos números Classificações da</a> <a href="http://rosettacode.org/wiki/Aliquot sequence classifications" title="Classificações de sequências de alíquotas">sequência das frações</a> e sua classificação amigável. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

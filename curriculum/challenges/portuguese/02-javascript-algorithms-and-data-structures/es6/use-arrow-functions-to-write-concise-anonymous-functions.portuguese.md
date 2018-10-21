@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use as funções de seta para escrever funções anônimas concisas
 ---
 
-## Description
+## Descrição
 <section id="description"> Em JavaScript, geralmente não precisamos nomear nossas funções, especialmente ao passar uma função como um argumento para outra função. Em vez disso, criamos funções inline. Não precisamos nomear essas funções porque não as reutilizamos em nenhum outro lugar. Para conseguir isso, geralmente usamos a seguinte sintaxe: <blockquote> const myFunc = function () { <br> const myVar = &quot;valor&quot;; <br> return myVar; <br> } </blockquote> ES6 nos fornece o açúcar sintático para não ter que escrever funções anônimas dessa maneira. Em vez disso, você pode usar a <strong>sintaxe da função de seta</strong> : <blockquote> const myFunc = () =&gt; { <br> const myVar = &quot;valor&quot;; <br> return myVar; <br> } </blockquote> Quando não há corpo da função e apenas um valor de retorno, a sintaxe da função de seta permite omitir o <code>return</code> da palavra-chave, bem como os colchetes ao redor do código. Isso ajuda a simplificar funções menores em instruções de uma linha: <blockquote> const myFunc = () =&gt; &quot;valor&quot; </blockquote> Este código ainda retornará <code>value</code> por padrão. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Reescreva a função atribuída à variável <code>magic</code> que retorna um novo <code>Date()</code> para usar a sintaxe da função de seta. Também certifique-se de que nada seja definido usando a palavra-chave <code>var</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ var magic = function() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

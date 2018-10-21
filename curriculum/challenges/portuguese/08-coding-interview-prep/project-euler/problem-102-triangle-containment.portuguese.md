@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 102: Contenção do Triângulo'
 ---
 
-## Description
+## Descrição
 <section id="description"> Três pontos distintos são traçados aleatoriamente em um plano cartesiano, para os quais -1000 ≤ x, y ≤ 1000, de modo que um triângulo é formado. Considere os dois triângulos seguintes: A (-340,495), B (-153, -910), C (835, -947) X (-175,41), Y (-421, -714), Z (574, - 645) Pode-se verificar que o triângulo ABC contém a origem, enquanto o triângulo XYZ não. Usando triângulos.txt (clique direito e &#39;Salvar Link / Destino Como ...&#39;), um arquivo de texto de 27K contendo as coordenadas de mil triângulos &quot;aleatórios&quot;, encontrará o número de triângulos para os quais o interior contém a origem. NOTA: Os dois primeiros exemplos no arquivo representam os triângulos no exemplo acima. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler102();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Crie uma classe de fila
 ---
 
-## Description
+## Descrição
 <section id="description"> Como pilhas, as filas são uma coleção de elementos. Mas, ao contrário das pilhas, as filas seguem o princípio FIFO (First-In First-Out). Os elementos adicionados a uma fila são colocados na cauda ou no final da fila, e somente o elemento na frente da fila pode ser removido. Poderíamos usar uma matriz para representar uma fila, mas, assim como as pilhas, queremos limitar a quantidade de controle que temos sobre nossas filas. Os dois métodos principais de uma classe de fila são o enfileiramento e o método de desenfileiramento. O método de enfileiramento envia um elemento para o final da fila, e o método de desenfileiramento remove e retorna o elemento na frente da fila. Outros métodos úteis são os métodos front, size e isEmpty. Instruções Escreva um método de enfileiramento que empurre um elemento para o final da fila, um método de desenfileiramento que remova e retorne o elemento frontal, um método frontal que nos permita ver o elemento frontal, um método de tamanho que mostre o comprimento e um método isEmpty. para verificar se a fila está vazia. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ function Queue () {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

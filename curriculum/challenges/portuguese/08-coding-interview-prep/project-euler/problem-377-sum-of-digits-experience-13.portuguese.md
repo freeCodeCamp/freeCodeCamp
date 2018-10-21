@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 377: Soma dos dígitos, experiência 13'
 ---
 
-## Description
+## Descrição
 <section id="description"> Existem 16 inteiros positivos que não têm um zero em seus dígitos e que têm uma soma digital igual a 5, a saber: 5, 14, 23, 32, 41, 113, 122, 131, 212, 221, 311, 1112, 1121, 1211, 2111 e 11111. Sua soma é 17891. <p> Seja f (n) a soma de todos os inteiros positivos que não tenham zero em seus dígitos e tenham uma soma digital igual a n. </p><p> Encontre $ \ displaystyle \ sum_ {i = 1} ^ {17} f (13 ^ i) $. Dê os últimos 9 dígitos como sua resposta. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler377();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

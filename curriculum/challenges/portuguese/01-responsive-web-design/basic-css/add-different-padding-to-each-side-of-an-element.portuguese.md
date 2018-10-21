@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Adicionar preenchimento diferente a cada lado de um elemento
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes, você desejará personalizar um elemento para que ele tenha diferentes quantidades de <code>padding</code> em cada um dos seus lados. O CSS permite controlar o <code>padding</code> de todos os quatro lados individuais de um elemento com as propriedades <code>padding-top</code> , <code>padding-right</code> , <code>padding-bottom</code> e <code>padding-left</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Dê à caixa azul um <code>padding</code> de <code>40px</code> no lado superior e esquerdo, mas apenas <code>20px</code> no lado inferior e direito. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,7 +84,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

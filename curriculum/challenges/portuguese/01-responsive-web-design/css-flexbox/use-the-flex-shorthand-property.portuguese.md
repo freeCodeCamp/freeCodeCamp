@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a propriedade flexível de taquigrafia
 ---
 
-## Description
+## Descrição
 <section id="description"> Existe um atalho disponível para definir várias propriedades flexíveis de uma só vez. As propriedades <code>flex-grow</code> , <code>flex-shrink</code> e <code>flex-basis</code> podem ser todas juntas usando a propriedade <code>flex</code> . Por exemplo, <code>flex: 1 0 10px;</code> irá definir o item para <code>flex-grow: 1;</code> <code>flex-shrink: 0;</code> e <code>flex-basis: 10px;</code> . As configurações de propriedade padrão são <code>flex: 0 1 auto;</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o <code>flex</code> propriedade CSS a ambos <code>#box-1</code> e <code>#box-2</code> . Dê <code>#box-1</code> os valores para que seu <code>flex-grow</code> seja 2, sua <code>flex-shrink</code> seja 2 e sua <code>flex-basis</code> seja 150px. Dê <code>#box-2</code> os valores para que seu <code>flex-grow</code> seja 1, sua <code>flex-shrink</code> seja 1 e sua <code>flex-basis</code> seja 150px. Esses valores farão com que <code>#box-1</code> cresça para preencher o espaço extra com o dobro da taxa de <code>#box-2</code> quando o container for maior que 300px e encolherá com o dobro da taxa de <code>#box-2</code> quando o container for menor que 300px. 300px é o tamanho combinado dos valores de <code>flex-basis</code> das duas caixas. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -65,7 +65,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

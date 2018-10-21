@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: E combinador
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Na <a href="https://en.wikipedia.org/wiki/Functional programming" title="wp: programação funcional">programação funcional</a> estrita e no <a href="https://en.wikipedia.org/wiki/lambda calculus" title="wp: lambda calculus">cálculo lambda</a> , as funções (expressões lambda) não têm estado e só podem referir-se a argumentos de funções delimitadoras. Isso exclui a definição usual de uma função recursiva em que uma função é associada ao estado de uma variável e o estado dessa variável é usado no corpo da função. </p><p> O <a href="http://mvanier.livejournal.com/2897.html">combinador Y</a> é ele próprio uma função sem estado que, quando aplicada a outra função sem estado, retorna uma versão recursiva da função. O combinador Y é o mais simples da classe de tais funções, chamadas <a href="https://en.wikipedia.org/wiki/Fixed-point combinator" title="wp: combinador de ponto fixo">combinadores de ponto fixo</a> . </p> Tarefa: <pre> <code>Define the stateless Y combinator function and use it to compute &lt;a href=&quot;https://en.wikipedia.org/wiki/Factorial&quot; title=&quot;wp: factorial&quot;&gt;factorial&lt;/a&gt;.</code> </pre><p> <code>factorial(N)</code> já é dada a você. Veja também <a href="http://vimeo.com/45140590">Jim Weirich: Adventures in Functional Programming</a> . </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -35,7 +35,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,7 +69,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

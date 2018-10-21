@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Substituir Adereços Padrão
 ---
 
-## Description
+## Descrição
 <section id="description"> A capacidade de definir props padrão é um recurso útil no React. A maneira de substituir os props padrão é definir explicitamente os valores prop para um componente. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O componente <code>ShoppingCart</code> agora renderiza um <code>Items</code> filho. Esse componente <code>Items</code> tem uma <code>quantity</code> prop padrão definida para o inteiro <code>0</code> . Substitua o prop padrão, passando um valor de <code>10</code> para <code>quantity</code> . <strong>Nota:</strong> Lembre <strong>-</strong> se de que a sintaxe para adicionar um suporte a um componente é semelhante à forma como você adiciona atributos HTML. No entanto, como o valor da <code>quantity</code> é um número inteiro, ele não será colocado entre aspas, mas deverá ser colocado em chaves. Por exemplo, <code>{100}</code> . Essa sintaxe diz ao JSX para interpretar o valor dentro das chaves diretamente como JavaScript. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -70,7 +70,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

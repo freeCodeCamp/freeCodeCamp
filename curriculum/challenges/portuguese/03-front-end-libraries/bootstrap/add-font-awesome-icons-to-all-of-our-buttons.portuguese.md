@@ -9,14 +9,14 @@ videoUrl: ''
 localeTitle: Adicionar ícones de fonte impressionante para todos os nossos botões
 ---
 
-## Description
+## Descrição
 <section id="description"> Font Awesome é uma conveniente biblioteca de ícones. Esses ícones são gráficos vetoriais, armazenados no formato de arquivo <code>.svg</code> . Esses ícones são tratados como fontes. Você pode especificar seu tamanho usando pixels e eles assumirão o tamanho da fonte de seus elementos HTML pai. Use Font Awesome para adicionar um ícone de <code>info-circle</code> de informações ao seu botão de informações e um ícone de <code>trash</code> ao seu botão de exclusão. Nota: O elemento <code>span</code> é uma alternativa aceitável ao elemento <code>i</code> para as instruções abaixo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -104,7 +104,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

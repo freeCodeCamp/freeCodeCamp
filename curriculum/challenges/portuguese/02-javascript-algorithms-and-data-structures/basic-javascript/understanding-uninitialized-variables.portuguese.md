@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Noções básicas sobre variáveis ​​não inicializadas
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando variáveis ​​JavaScript são declaradas, elas possuem um valor inicial de <code>undefined</code> . Se você fizer uma operação matemática em uma variável <code>undefined</code> , seu resultado será <code>NaN</code> que significa <dfn>&quot;Não é um número&quot;</dfn> . Se você concatenar uma string com uma variável <code>undefined</code> , você receberá uma <dfn>string</dfn> literal de <code>&quot;undefined&quot;</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Inicialize as três variáveis <code>a</code> , <code>b</code> e <code>c</code> com <code>5</code> , <code>10</code> e <code>&quot;I am a&quot;</code> respectivamente, para que elas não sejam <code>undefined</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

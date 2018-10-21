@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 114: Contando Combinações de Blocos I'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma fileira medindo sete unidades de comprimento tem blocos vermelhos com um comprimento mínimo de três unidades colocadas, de modo que quaisquer dois blocos vermelhos (que podem ter comprimentos diferentes) são separados por pelo menos um quadrado preto. Existem exatamente dezessete maneiras de fazer isso. <p> Quantas maneiras uma fileira medindo cinquenta unidades de comprimento pode ser preenchida? NOTA: Embora o exemplo acima não se presta à possibilidade, em geral é permitido misturar tamanhos de bloco. Por exemplo, em uma fileira de oito unidades de comprimento, você pode usar vermelho (3), preto (1) e vermelho (4). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler114();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

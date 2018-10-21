@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Use a primeira pesquisa em largura em uma árvore de pesquisa binária
 ---
 
-## Description
+## Descrição
 <section id="description"> Aqui introduziremos outro método de travessia de árvore: pesquisa em largura. Em contraste com os métodos de pesquisa em profundidade do último desafio, a pesquisa em amplitude explora todos os nós em um determinado nível dentro de uma árvore antes de continuar para o próximo nível. Normalmente, as filas são utilizadas como estruturas de dados auxiliares no projeto de algoritmos de pesquisa em amplitude. Neste método, começamos adicionando o nó raiz a uma fila. Em seguida, iniciamos um loop no qual desenfileiramos o primeiro item da fila, o adicionamos a uma nova matriz e, em seguida, inspecionamos suas subárvores secundárias. Se seus filhos não forem nulos, eles serão enfileirados. Esse processo continua até que a fila esteja vazia. Instruções: Vamos criar um método de pesquisa <code>levelOrder</code> em nossa árvore chamada <code>levelOrder</code> . Esse método deve retornar uma matriz contendo os valores de todos os nós da árvore, explorados de uma maneira abrangente. Certifique-se de retornar os valores na matriz, não os próprios nós. Um nível deve ser percorrido da esquerda para a direita. Em seguida, vamos escrever um método semelhante chamado <code>reverseLevelOrder</code> que realiza a mesma pesquisa, mas na direção inversa (direita para esquerda) em cada nível. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -71,7 +71,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

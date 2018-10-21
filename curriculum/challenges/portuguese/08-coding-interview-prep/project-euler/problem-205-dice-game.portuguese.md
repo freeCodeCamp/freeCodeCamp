@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 205: Jogo de Dados'
 ---
 
-## Description
+## Descrição
 <section id="description"> Pedro tem nove dados de quatro lados (piramidais), cada um com rostos numerados de 1, 2, 3, 4. Colin tem seis dados de seis lados (cúbicos), cada um com rostos numerados 1, 2, 3, 4, 5, 6. <p> Peter e Colin rolam seus dados e comparam os totais: as vitórias totais mais altas. O resultado é um empate se os totais forem iguais. </p><p> Qual é a probabilidade de que o Piramidal Pete vença o Colin Cúbico? Dê sua resposta arredondada para sete casas decimais na forma 0.abcdefg </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler205();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

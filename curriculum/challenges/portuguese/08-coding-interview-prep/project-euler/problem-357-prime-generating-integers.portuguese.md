@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 357: Prime gerando inteiros'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere os divisores de 30: 1,2,3,5,6,10,15,30. Pode ser visto que para cada divisor d de 30, d + 30 / d é primo. <p> Encontre a soma de todos os inteiros positivos n não excedendo 100.000.000, de tal forma que para cada divisor d de n, d + n / d é primo. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler357();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Especifique como as fontes devem ser degradadas
 ---
 
-## Description
+## Descrição
 <section id="description"> Existem várias fontes padrão disponíveis em todos os navegadores. Essas famílias de fontes genéricas incluem <code>monospace</code> , <code>serif</code> e <code>sans-serif</code> Quando uma fonte não está disponível, você pode dizer ao navegador para &quot;degradar&quot; a outra fonte. Por exemplo, se você quiser que um elemento use a fonte <code>Helvetica</code> , mas se degrada na fonte <code>sans-serif</code> quando a <code>Helvetica</code> não estiver disponível, especifique-o da seguinte maneira: <blockquote> p { <br> família de fontes: Helvetica, sans-serif; <br> } </blockquote> Os nomes das famílias de fontes genéricas não diferenciam maiúsculas de minúsculas. Além disso, eles não precisam de aspas porque são palavras-chave CSS. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Para começar, aplique a fonte <code>monospace</code> ao elemento <code>h2</code> , para que agora ela tenha duas fontes - <code>Lobster</code> e <code>monospace</code> . No último desafio, você importou a fonte <code>Lobster</code> usando a tag de <code>link</code> . Agora comente a importação da fonte <code>Lobster</code> (usando os comentários HTML que você aprendeu antes) do Google Fonts para que ela não esteja mais disponível. Observe como seu elemento <code>h2</code> degrada para a fonte <code>monospace</code> . <strong>Nota</strong> <br> Se você tem a fonte Lobster instalada no seu computador, você não verá a degradação porque o seu navegador é capaz de encontrar a fonte. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -92,7 +92,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

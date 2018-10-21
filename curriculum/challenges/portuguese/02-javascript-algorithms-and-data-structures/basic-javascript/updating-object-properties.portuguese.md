@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Atualizando Propriedades do Objeto
 ---
 
-## Description
+## Descrição
 <section id="description"> Depois de criar um objeto JavaScript, você poderá atualizar suas propriedades a qualquer momento, da mesma forma que atualizaria qualquer outra variável. Você pode usar a notação de pontos ou colchetes para atualizar. Por exemplo, vamos dar uma olhada no <code>ourDog</code> : <blockquote> var ourDog = { <br> &quot;nome&quot;: &quot;Camper&quot;, <br> &quot;pernas&quot;: 4, <br> &quot;coroa&quot;: 1, <br> &quot;amigos&quot;: [&quot;tudo!&quot;] <br> }; </blockquote> Desde que ele é um cão particularmente feliz, vamos mudar seu nome para &quot;Happy Camper&quot;. Aqui está como nós atualizamos a propriedade do nome do objeto: <code>ourDog.name = &quot;Happy Camper&quot;;</code> or <code>ourDog[&quot;name&quot;] = &quot;Happy Camper&quot;;</code> Agora, quando avaliamos <code>ourDog.name</code> , em vez de obter &quot;Camper&quot;, obteremos seu novo nome, &quot;Happy Camper&quot;. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Atualize a <code>myDog</code> do nome do objeto <code>myDog</code> . Vamos mudar o nome dela de &quot;Coder&quot; para &quot;Happy Coder&quot;. Você pode usar a notação de pontos ou colchetes. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,7 +68,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

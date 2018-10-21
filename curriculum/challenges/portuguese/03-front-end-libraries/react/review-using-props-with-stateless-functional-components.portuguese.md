@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Rever usando adereços com componentes funcionais sem estado
 ---
 
-## Description
+## Descrição
 <section id="description"> Exceto pelo último desafio, você passou a adotar componentes funcionais sem estado. Esses componentes agem como funções puras. Eles aceitam adereços como entrada e retornam a mesma visão toda vez que passam os mesmos adereços. Você pode estar se perguntando qual é o estado e o próximo desafio irá abordá-lo com mais detalhes. Antes disso, aqui está uma revisão da terminologia para componentes. Um <em>componente funcional sem estado</em> é qualquer função que você escreve que aceita props e retorna JSX. Um <em>componente sem estado</em> , por outro lado, é uma classe que estende o <code>React.Component</code> , mas não usa o estado interno (coberto no próximo desafio). Finalmente, um <em>componente com estado</em> é qualquer componente que mantenha seu próprio estado interno. Você pode ver componentes stateful referidos simplesmente como componentes ou componentes React. Um padrão comum é tentar minimizar o estado de estado e criar componentes funcionais sem estado sempre que possível. Isso ajuda a conter seu gerenciamento de estado em uma área específica de seu aplicativo. Por sua vez, isso melhora o desenvolvimento e a manutenção do seu aplicativo, facilitando o acompanhamento de como as alterações no estado afetam seu comportamento. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O editor de código tem um componente <code>CampSite</code> que processa um componente <code>Camper</code> como um filho. Defina o componente <code>Camper</code> e atribua a ele props padrão de <code>{ name: &#39;CamperBot&#39; }</code> . Dentro do componente <code>Camper</code> , renderize qualquer código que você queira, mas tenha certeza de ter um elemento <code>p</code> que inclua apenas o valor do <code>name</code> que é passado como um <code>prop</code> . Finalmente, defina <code>propTypes</code> no componente <code>Camper</code> para exigir que o <code>name</code> seja fornecido como um prop e verifique se ele é do tipo <code>string</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -80,7 +80,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

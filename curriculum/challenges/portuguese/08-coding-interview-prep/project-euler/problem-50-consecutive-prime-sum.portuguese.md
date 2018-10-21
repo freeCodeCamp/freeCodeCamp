@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: ''
 ---
 
-## Description
+## Descrição
 <section id="description"> O primo 41, pode ser escrito como a soma de seis primos consecutivos: 41 = 2 + 3 + 5 + 7 + 11 + 13 Esta é a soma mais longa de primos consecutivos que adiciona a um primo abaixo de cem. A soma mais longa de primos consecutivos abaixo de um mil que adiciona a um primo contém 21 termos e é igual a 953. Qual primo, abaixo de um milhão, pode ser escrito como a soma dos primos mais consecutivos? </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ consecutivePrimeSum(1000000);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

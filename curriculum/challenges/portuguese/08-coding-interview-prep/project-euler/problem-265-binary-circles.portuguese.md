@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 265: Círculos Binários'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os dígitos binários 2N podem ser colocados em um círculo, de modo que todas as subseqüências de N dígitos no sentido horário sejam distintas. <p> Para N = 3, dois arranjos circulares são possíveis, ignorando as rotações: </p><p> Para o primeiro arranjo, as subseqüências de 3 dígitos, no sentido horário, são: 000, 001, 010, 101, 011, 111, 110 e 100. </p><p> Cada arranjo circular pode ser codificado como um número pela concatenação dos dígitos binários começando com a subsequência de todos os zeros como os bits mais significativos e prosseguindo no sentido horário. Os dois arranjos para N = 3 são assim representados como 23 e 29: 00010111 2 = 23 00011101 2 = 29 </p><p> Chamando S (N) a soma das representações numéricas únicas, podemos ver que S (3) = 23 + 29 = 52. </p><p> Encontre S (5). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler265();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

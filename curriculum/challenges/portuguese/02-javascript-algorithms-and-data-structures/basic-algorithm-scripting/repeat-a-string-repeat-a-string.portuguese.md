@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Repetir uma String Repetir uma String
 ---
 
-## Description
+## Descrição
 <section id="description"> Repetir uma string <code>str</code> (primeiro argumento) para <code>num</code> times (segundo argumento). Retorna uma string vazia se <code>num</code> não for um número positivo. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -59,7 +59,7 @@ repeatStringNumTimes("abc", 3);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

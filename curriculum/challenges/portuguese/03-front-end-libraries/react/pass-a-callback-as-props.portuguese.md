@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Passar um retorno de chamada como adereços
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode passar o <code>state</code> como props para componentes filhos, mas você não está limitado a passar dados. Você também pode passar funções de manipulador ou qualquer método definido em um componente React para um componente filho. É assim que você permite que componentes filho interajam com seus componentes pai. Você passa métodos para uma criança como se fosse um adereço regular. É atribuído um nome e você tem acesso a esse nome de método sob <code>this.props</code> no componente filho. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Existem três componentes descritos no editor de código. O <code>MyApp</code> componente é o pai que irá processar os <code>GetInput</code> e <code>RenderInput</code> componentes filhos. Adicione o componente <code>GetInput</code> ao método de renderização em <code>MyApp</code> , em seguida, passe-o a uma <code>input</code> denominada <code>input</code> <code>inputValue</code> do <code>state</code> de <code>MyApp</code> . Também crie um prop chamado <code>handleChange</code> e passe o manipulador de entrada <code>handleChange</code> para ele. Em seguida, adicione <code>RenderInput</code> ao método render em <code>MyApp</code> , crie um prop chamado <code>input</code> e passe o <code>inputValue</code> do <code>state</code> para ele. Quando terminar, você poderá digitar o campo de <code>input</code> no componente <code>GetInput</code> , que chama o método handler em seu pai por meio de props. Isso atualiza a entrada no <code>state</code> do pai, que é passado como acessório para os dois filhos. Observe como os dados fluem entre os componentes e como a única fonte de verdade permanece como o <code>state</code> do componente pai. É verdade que este exemplo é um pouco inventado, mas deve servir para ilustrar como dados e retornos de chamada podem ser passados ​​entre os componentes do React. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -109,7 +109,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

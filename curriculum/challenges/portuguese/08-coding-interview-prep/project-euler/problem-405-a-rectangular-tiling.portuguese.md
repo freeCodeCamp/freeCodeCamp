@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 405: Uma telha retangular'
 ---
 
-## Description
+## Descrição
 <section id="description"> Desejamos delimitar um retângulo cujo comprimento é duas vezes a largura. Seja T (0) a telha que consiste em um único retângulo. Para n&gt; 0, seja T (n) obtido de T (n-1) substituindo todas as peças da seguinte maneira: <p> A animação a seguir demonstra as inclinações T (n) para n de 0 a 5: </p><p> Seja f (n) o número de pontos onde quatro peças se encontram em T (n). Por exemplo, f (1) = 0, f (4) = 82 ef (109) mod 177 = 126897180. </p><p> Encontre f (10k) para k = 1018, dê sua resposta modulo 177. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler405();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

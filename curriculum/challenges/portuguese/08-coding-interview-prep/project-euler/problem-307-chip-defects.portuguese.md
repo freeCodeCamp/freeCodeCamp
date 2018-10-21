@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 307: Defeitos no Chip'
 ---
 
-## Description
+## Descrição
 <section id="description"> Os defeitos k são distribuídos aleatoriamente entre n chips de circuitos integrados produzidos por uma fábrica (qualquer número de defeitos pode ser encontrado em um chip e cada defeito é independente de outros defeitos). <p> Seja p (k, n) a probabilidade de haver um chip com pelo menos 3 defeitos. Por exemplo, p (3,7) x 0,0204081633. </p><p> Encontre p (20 000, 1 000 000) e dê a sua resposta arredondada para 10 casas decimais na forma 0.abcdefghij </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler307();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

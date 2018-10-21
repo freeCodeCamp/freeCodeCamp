@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Texto Central com Bootstrap
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora que estamos usando o Bootstrap, podemos centralizar nosso elemento de título para torná-lo melhor. Tudo o que precisamos fazer é adicionar o <code>text-center</code> da classe ao nosso elemento <code>h2</code> . Lembre-se que você pode adicionar várias classes ao mesmo elemento, separando cada uma delas com um espaço, como este: <code>&lt;h2 class=&quot;red-text text-center&quot;&gt;your text&lt;/h2&gt;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -99,7 +99,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder Personagens Não-Brancos
 ---
 
-## Description
+## Descrição
 <section id="description"> Você aprendeu sobre a pesquisa de espaço em branco usando <code>\s</code> , com um <code>s</code> minúsculo. Você também pode pesquisar tudo, exceto o espaço em branco. Procure por espaços não brancos usando <code>\S</code> , que é um <code>s</code> maiúsculo. Esse padrão não corresponderá a espaço em branco, retorno de carro, guia, feed de formulário e novos caracteres de linha. Você pode pensar que é semelhante à classe de caracteres <code>[^ \r\t\f\n\v]</code> . <blockquote> let whiteSpace = &quot;Espaço em branco. Espaço em branco em todo lugar!&quot; <br> deixe nonSpaceRegex = / \ S / g; <br> whiteSpace.match (nonSpaceRegex) .length; // retorna 32 </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere o <code>countNonWhiteSpace</code> da regex para procurar vários caracteres que não sejam espaços em branco em uma string. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -32,7 +32,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ let result = sample.match(countNonWhiteSpace);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

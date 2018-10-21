@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Corresponder todas as letras e números
 ---
 
-## Description
+## Descrição
 <section id="description"> Usando classes de caracteres, você conseguiu pesquisar todas as letras do alfabeto com <code>[az]</code> . Esse tipo de classe de caracteres é comum o suficiente para que haja um atalho para ele, embora inclua alguns caracteres extras também. A classe de caractere mais próxima em JavaScript para corresponder ao alfabeto é <code>\w</code> . Este atalho é igual a <code>[A-Za-z0-9_]</code> . Essa classe de caracteres corresponde a letras maiúsculas e minúsculas mais números. Note que esta classe de caracteres também inclui o caractere de sublinhado ( <code>_</code> ). <blockquote> let longHand = / [A-Za-z0-9 _] + /; <br> deixe shortHand = / \ w + /; <br> deixe números = &quot;42&quot;; <br> deixe varNames = &quot;important_var&quot;; <br> longHand.test (números); // Retorna true <br> shortHand.test (números); // Retorna true <br> longHand.test (varNames); // Retorna true <br> shortHand.test (varNames); // Retorna true </blockquote> Essas classes de caracteres de atalho também são conhecidas como <code>shorthand character classes</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a classe de caractere abreviada <code>\w</code> para contar o número de caracteres alfanuméricos em várias aspas e cadeias de caracteres. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -52,7 +52,7 @@ let result = quoteSample.match(alphabetRegexV2).length;
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

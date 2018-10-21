@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 221: Inteiros de Alexandria'
 ---
 
-## Description
+## Descrição
 <section id="description"> Chamaremos um inteiro positivo A um &quot;inteiro alexandrino&quot;, se existirem inteiros p, q, r tais que: <pre> <code> A = p · q · r    and 1A</code> </pre><p> = </p><pre> <code> 1p</code> </pre><p> + </p><pre> <code> 1q</code> </pre><p> + </p><pre> <code> 1r</code> </pre><p> Por exemplo, 630 é um inteiro alexandrino (p = 5, q = −7, r = −18). De fato, 630 é o 6º inteiro alexandrino, sendo os 6 primeiros inteiros de Alexandria 6, 42, 120, 156, 420 e 630. </p><p> Encontre o 150000º inteiro alexandrino. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler221();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

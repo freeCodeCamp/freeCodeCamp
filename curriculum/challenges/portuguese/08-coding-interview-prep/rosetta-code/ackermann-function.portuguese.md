@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Função Ackermann
 ---
 
-## Description
+## Descrição
 <section id="description"><p> A função Ackermann é um exemplo clássico de uma função recursiva, notável principalmente porque não é uma função recursiva primitiva. Ela cresce muito rapidamente em valor, assim como o tamanho de sua árvore de chamadas. </p><p> A função Ackermann é geralmente definida da seguinte forma: </p> $$ A (m, n) = \ begin {casos} n + 1 &amp; \ mbox {if} m = 0 \\ A (m-1, 1) e \ mbox {if} m&gt; 0 \ mbox {e} n = 0 \\ A (m-1, A (m, n-1)) e \ mbox {if} m&gt; 0 \ mbox {e} n&gt; 0. \ end {cases} $$ <p> Seus argumentos nunca são negativos e sempre terminam. Escreva uma função que retorne o valor de $ A (m, n) $. Precisão arbitrária é preferida (já que a função cresce tão rapidamente), mas não é necessária. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -51,7 +51,7 @@ function ack (m, n) {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

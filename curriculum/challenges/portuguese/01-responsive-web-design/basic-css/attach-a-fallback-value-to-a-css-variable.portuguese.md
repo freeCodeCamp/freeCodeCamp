@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Anexar um valor de fallback a uma variável CSS
 ---
 
-## Description
+## Descrição
 <section id="description"> Ao usar sua variável como um valor de propriedade CSS, você pode anexar um valor de fallback para o qual o navegador reverterá se a variável fornecida for inválida. <strong>Nota:</strong> Esse fallback não é usado para aumentar a compatibilidade do navegador e não funcionará nos navegadores IE. Em vez disso, ele é usado para que o navegador tenha uma cor para exibir se não puder encontrar sua variável. Veja como você faz isso: <blockquote> fundo: var (- pinguim-pele, preto); </blockquote> Isso definirá o plano de fundo para preto se sua variável não foi definida. Observe que isso pode ser útil para depuração. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Parece que há um problema com as variáveis ​​fornecidas para as <code>.penguin-top</code> e <code>.penguin-bottom</code> . Em vez de corrigir o erro de digitação, adicione um valor de fallback de <code>black</code> à propriedade <code>background</code> das <code>.penguin-top</code> e <code>.penguin-bottom</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -245,7 +245,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

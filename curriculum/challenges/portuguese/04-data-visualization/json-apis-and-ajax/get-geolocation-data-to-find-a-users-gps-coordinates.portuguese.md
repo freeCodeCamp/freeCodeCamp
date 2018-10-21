@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Obter dados de localização geográfica para localizar coordenadas de GPS de um usuário
 ---
 
-## Description
+## Descrição
 <section id="description"> Outra coisa legal que você pode fazer é acessar a localização atual do seu usuário. Cada navegador possui um navegador integrado que pode fornecer essas informações. O navegador obterá a longitude e a latitude atuais do usuário. Você verá um aviso para permitir ou bloquear este site de saber sua localização atual. O desafio pode ser concluído de qualquer forma, desde que o código esteja correto. Ao selecionar Permitir, você verá o texto no telefone de saída alterado para sua latitude e longitude. Aqui está o código que faz isso: <blockquote> if (navigator.geolocation) { <br> navigator.geolocation.getCurrentPosition (function (position) { <br> document.getElementById (&#39;data&#39;). innerHTML = &quot;latitude:&quot; + position.coords.latitude + &quot;&lt;br&gt; longitude:&quot; + position.coords.longitude; <br> }); <br> } </blockquote> Primeiro, verifica se o objeto <code>navigator.geolocation</code> existe. Em caso afirmativo, o método <code>getCurrentPosition</code> nesse objeto é chamado, o que inicia uma solicitação assíncrona para a posição do usuário. Se a solicitação for bem-sucedida, a função de retorno de chamada no método será executada. Essa função acessa os valores do objeto de <code>position</code> para latitude e longitude usando a notação de ponto e atualiza o HTML. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione o código de exemplo dentro das tags de <code>script</code> para verificar a localização atual de um usuário e inseri-lo no HTML. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -55,7 +55,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

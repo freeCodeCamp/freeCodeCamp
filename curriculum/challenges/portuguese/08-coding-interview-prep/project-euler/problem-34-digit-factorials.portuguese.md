@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 34: Fatoriais de Dígito'
 ---
 
-## Description
+## Descrição
 <section id="description"> 145 é um número curioso, como 1! + 4! + 5! = 1 + 24 + 120 = 145. Encontre os números e a soma dos números que são iguais à soma do fatorial de seus dígitos. Nota: como 1! = 1 e 2! = 2 não são somas que não estão incluídas. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ digitFactorial();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

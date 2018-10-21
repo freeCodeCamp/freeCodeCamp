@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 97: Grande não primo de Mersenne'
 ---
 
-## Description
+## Descrição
 <section id="description"> O primeiro primo conhecido que excedeu um milhão de dígitos foi descoberto em 1999 e é um primo de Mersenne da forma 26972593−1; contém exatamente 2.098.960 dígitos. Posteriormente, foram encontrados outros primos de Mersenne, da forma 2p − 1, que contêm mais dígitos. No entanto, em 2004, foi encontrado um primo maciço não-Mersenne que contém 2,357,207 dígitos: 28433 × 27830457 + 1. Encontre os dez últimos dígitos desse número primo. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler97();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

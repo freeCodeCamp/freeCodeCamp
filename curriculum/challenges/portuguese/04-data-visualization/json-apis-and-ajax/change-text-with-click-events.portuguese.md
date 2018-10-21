@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Alterar texto com eventos de clique
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando o evento click acontece, você pode usar o JavaScript para atualizar um elemento HTML. Por exemplo, quando um usuário clica no botão &quot;Obter mensagem&quot;, ele altera o texto do elemento com a <code>message</code> da classe para dizer &quot;Aqui está a mensagem&quot;. Isso funciona adicionando o seguinte código dentro do evento click: <code>document.getElementsByClassName(&#39;message&#39;)[0].textContent=&quot;Here is the message&quot;;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Adicione código dentro do manipulador de eventos <code>onclick</code> para alterar o texto dentro do elemento da <code>message</code> para dizer &quot;Aqui está a mensagem&quot;. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -84,7 +84,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Tenha cuidado ao reinicializar variáveis ​​dentro de um loop
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes é necessário salvar informações, incrementar contadores ou redefinir variáveis ​​dentro de um loop. Uma questão potencial é quando as variáveis ​​devem ser reinicializadas e não são, ou vice-versa. Isso é particularmente perigoso se você acidentalmente redefinir a variável que está sendo usada para a condição do terminal, causando um loop infinito. A impressão de valores de variáveis ​​em cada ciclo do loop usando <code>console.log()</code> pode revelar o comportamento de bugs relacionado à redefinição ou ao não redefinir uma variável. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A seguinte função deve criar um array bidimensional com <code>m</code> linhas e <code>n</code> colunas de zeros. Infelizmente, ele não está produzindo a saída esperada porque a variável de <code>row</code> não está sendo reinicializada (definida para uma matriz vazia) no loop externo. Corrigir o código para que ele retorne uma matriz de zeros 3x2 correta, que se parece com <code>[[0, 0], [0, 0], [0, 0]]</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -62,7 +62,7 @@ console.log(matrix);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

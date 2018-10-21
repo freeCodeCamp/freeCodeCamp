@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 303: Múltiplos com dígitos pequenos'
 ---
 
-## Description
+## Descrição
 <section id="description"> Para um inteiro positivo n, defina f (n) como o múltiplo menos positivo de n que, escrito na base 10, usa apenas dígitos ≤ 2. Assim f (2) = 2, f (3) = 12, f (7) = 21, f (42) = 210, f (89) = 1121222. Além disso, . <p> Encontrar . </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler303();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

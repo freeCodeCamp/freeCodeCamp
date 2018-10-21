@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Realizar uma interseção em dois conjuntos de dados
 ---
 
-## Description
+## Descrição
 <section id="description"> Neste exercício, vamos realizar uma interseção em dois conjuntos de dados. Vamos criar um método na nossa estrutura de dados <code>Set</code> chamada <code>intersection</code> . Uma interseção de conjuntos representa todos os valores comuns a dois ou mais conjuntos. Este método deve ter outro <code>Set</code> como argumento e retornar a <code>intersection</code> dos dois conjuntos. Por exemplo, se <code>setA = [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]</code> e <code>setB = [&#39;a&#39;,&#39;b&#39;,&#39;d&#39;,&#39;e&#39;]</code> , a interseção de setA e setB é: <code>setA.intersection(setB) = [&#39;a&#39;, &#39;b&#39;]</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -90,7 +90,7 @@ function Set() {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

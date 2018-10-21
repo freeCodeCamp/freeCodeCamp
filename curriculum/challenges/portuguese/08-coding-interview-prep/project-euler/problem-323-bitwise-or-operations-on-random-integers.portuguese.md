@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 323: operações OR ou bit-a-bit em números inteiros aleatórios'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja y0, y1, y2, ... uma seqüência de inteiros não-aleatórios de 32 bits (isto é, 0 ≤ yi &lt;232, todos os valores igualmente prováveis). Para a seqüência xi, a seguinte recursão é dada: x0 = 0 e xi = xi-1 | yi-1, para i&gt; 0. (| é o operador bitwise-OR) Pode-se ver que eventualmente haverá um índice N tal que xi = 232 -1 (um padrão de bits de todos) para todos os i ≥ N. <p> Encontre o valor esperado de N. Dê sua resposta arredondada para 10 dígitos após o ponto decimal. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler323();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

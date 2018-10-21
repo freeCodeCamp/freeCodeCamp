@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Subtrair um número de outro com JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Nós também podemos subtrair um número de outro. JavaScript usa o símbolo <code>-</code> para subtração. <p> <strong>Exemplo</strong> </p><blockquote> myVar = 12 - 6; // atribuído 6 </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere <code>0</code> para que a diferença seja <code>12</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

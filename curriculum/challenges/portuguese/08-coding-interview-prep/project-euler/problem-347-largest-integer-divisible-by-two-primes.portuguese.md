@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 347: Maior número inteiro divisível por dois primos'
 ---
 
-## Description
+## Descrição
 <section id="description"> O maior inteiro ≤ 100 que é divisível apenas pelos dois primos 2 e 3 é 96, como 96 = 32 * 3 = 25 * 3. Para dois primos distintos p e q seja M (p, q, N) o maior número inteiro positivo ≤N divisível por ambos p e q e M (p, q, N) = 0 se tal número inteiro positivo não existir. <p> Por exemplo, M (2,3,100) = 96. M (3,5,100) = 75 e não 90 porque 90 é divisível por 2, 3 e 5. Também M (2,73,100) = 0 porque não existe um inteiro positivo ≤ 100 que seja divisível por ambos 2 e 73. </p><p> Seja S (N) a soma de todos os M distintos (p, q, N). S (100) = 2262. </p><p> Encontre S (10 000 000). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler347();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

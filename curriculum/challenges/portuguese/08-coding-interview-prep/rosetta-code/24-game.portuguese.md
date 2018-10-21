@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 24 jogo
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Implemente uma função que tenha uma sequência de quatro dígitos como argumento, com cada dígito de 1 ──► 9 (inclusive) com repetições permitidas e retorne uma expressão aritmética que avalie o número 24. Se essa solução não existir, retorne &quot; nenhuma solução existe. &quot; </p><p> Regras: </p> Somente os seguintes operadores / funções são permitidos: multiplicação, divisão, adição, subtração A divisão deve usar ponto flutuante ou aritmética racional, etc, para preservar os remanescentes. Formar vários números de dígitos a partir dos dígitos fornecidos não é permitido. (Então, uma resposta de 12 + 12 quando dado 1, 2, 2 e 1 está errado). A ordem dos dígitos quando fornecidos não precisa ser preservada. <p> Exemplo de entradas: </p> <code>solve24(&quot;4878&quot;);</code> <code>solve24(&quot;1234&quot;);</code> <code>solve24(&quot;6789&quot;);</code> <code>solve24(&quot;1127&quot;);</code> <p> Exemplo de saídas (strings): </p> <code>(7-8/8)*4</code> <code>3*1*4*2</code> <code>(6*8)/(9-7)</code> <code>(1+7)*(2+1)</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

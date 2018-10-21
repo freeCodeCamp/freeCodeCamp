@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 166: Criss Cross'
 ---
 
-## Description
+## Descrição
 <section id="description"> Uma grade 4x4 é preenchida com dígitos d, 0 ≤ d ≤ 9. <p> Pode ser visto que na grade </p><p> 6 3 3 0 5 0 4 3 0 7 1 4 1 2 4 5 </p><p> a soma de cada linha e cada coluna tem o valor 12. Além disso, a soma de cada diagonal é também 12. </p><p> De quantas maneiras você pode preencher uma grade 4x4 com os dígitos d, 0 ≤ d ≤ 9 para que cada linha, cada coluna e ambas as diagonais tenham a mesma soma? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler166();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

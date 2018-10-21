@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Redefinir uma propriedade de construtor herdado
 ---
 
-## Description
+## Descrição
 <section id="description"> Quando um objeto herda seu <code>prototype</code> de outro objeto, ele também herda a propriedade do construtor do <code>supertype</code> . Aqui está um exemplo: <blockquote> função Bird () {} <br> Bird.prototype = Object.create (Animal.prototype); <br> vamos pato = novo pássaro (); <br> duck.constructor // function Animal () {...} </blockquote> Mas <code>duck</code> e todos os exemplos de <code>Bird</code> deveriam mostrar que eles foram construídos por <code>Bird</code> e não por <code>Animal</code> . Para fazer isso, você pode definir manualmente <code>Bird&#39;s</code> propriedade de construtor do <code>Bird</code> para o objeto <code>Bird</code> : <blockquote> Bird.prototype.constructor = Pássaro; <br> duck.constructor // function Bird () {...} </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrija o código para que <code>duck.constructor</code> e <code>beagle.constructor</code> retornem seus respectivos construtores. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ let beagle = new Dog();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

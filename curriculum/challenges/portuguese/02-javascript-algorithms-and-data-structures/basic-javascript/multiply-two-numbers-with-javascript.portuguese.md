@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Multiplique dois números com JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Nós também podemos multiplicar um número por outro. JavaScript usa o símbolo <code>*</code> para multiplicação de dois números. <p> <strong>Exemplo</strong> </p><blockquote> myVar = 13 * 13; // atribuído 169 </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere <code>0</code> para que o produto seja igual a <code>80</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

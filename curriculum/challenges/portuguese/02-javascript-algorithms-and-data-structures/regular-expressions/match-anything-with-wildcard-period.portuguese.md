@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Combinar qualquer coisa com o período curinga
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes você não conhece (ou não precisa) os caracteres exatos em seus padrões. Pensar em todas as palavras que combinam, digamos, um erro ortográfico levaria muito tempo. Felizmente, você pode economizar tempo usando o caractere curinga: <code>.</code> O caractere curinga <code>.</code> irá corresponder a qualquer caractere. O curinga também é chamado de <code>dot</code> e <code>period</code> . Você pode usar o caractere curinga como qualquer outro caractere na regex. Por exemplo, se você quisesse combinar <code>&quot;hug&quot;</code> , <code>&quot;huh&quot;</code> , <code>&quot;hut&quot;</code> e <code>&quot;hum&quot;</code> , você pode usar o regex <code>/hu./</code> para combinar todas as quatro palavras. <blockquote> humStr = &quot;Vou cantarolar uma canção&quot;; <br> deixe hugStr = &quot;Bear hug&quot;; <br> vamos huRegex = /hu./; <br> humStr.match (huRegex); // Retorna [&quot;hum&quot;] <br> hugStr.match (huRegex); // Retorna [&quot;abraço&quot;] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Complete o regex <code>unRegex</code> para que ele corresponda às strings <code>&quot;run&quot;</code> , <code>&quot;sun&quot;</code> , <code>&quot;fun&quot;</code> , <code>&quot;pun&quot;</code> , <code>&quot;nun&quot;</code> e <code>&quot;bun&quot;</code> . Seu regex deve usar o caractere curinga. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -60,7 +60,7 @@ let result = unRegex.test(exampleStr);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

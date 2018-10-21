@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 383: Comparação de Divisibilidade entre Factorials'
 ---
 
-## Description
+## Descrição
 <section id="description"> Seja f5 (n) o maior inteiro x para o qual 5x divide n. Por exemplo, f5 (625000) = 7. <p> Seja T5 (n) o número de inteiros i que satisfazem f5 ((2 · i-1)!) &lt;2 · f5 (i!) E 1 ≤ i ≤ n. Pode ser verificado que T5 (103) = 68 e T5 (109) = 2408210. </p><p> Encontre o T5 (1018). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler383();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

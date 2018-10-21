@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Selecionando a partir de muitas opções com instruções de troca
 ---
 
-## Description
+## Descrição
 <section id="description"> Se você tiver muitas opções para escolher, use uma instrução <code>switch</code> . Uma instrução <code>switch</code> testa um valor e pode ter várias instruções <code>case</code> que definem vários valores possíveis. As declarações são executadas a partir do primeiro valor do <code>case</code> correspondente até que uma <code>break</code> seja encontrada. Aqui está um exemplo de <dfn>pseudocódigo</dfn> : <blockquote> switch (num) { <br> valor do caso1: <br> statement1; <br> pausa; <br> valor do caso2: <br> statement2; <br> pausa; <br> ... <br> case valueN: <br> statementN; <br> pausa; <br> } </blockquote> valores de <code>case</code> são testados com igualdade estrita ( <code>===</code> ). A <code>break</code> diz ao JavaScript para parar de executar instruções. Se a <code>break</code> for omitida, a próxima instrução será executada. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva uma instrução switch que teste <code>val</code> e configure a <code>answer</code> para as seguintes condições: <br> <code>1</code> - &quot;alfa&quot; <br> <code>2</code> - &quot;beta&quot; <br> <code>3</code> - &quot;gama&quot; <br> <code>4</code> - &quot;delta&quot; </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,7 +61,7 @@ caseInSwitch(1);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

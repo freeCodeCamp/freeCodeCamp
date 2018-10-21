@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o método filter para extrair dados de uma matriz
 ---
 
-## Description
+## Descrição
 <section id="description"> Outra função de matriz útil é <code>Array.prototype.filter()</code> ou simplesmente <code>filter()</code> . O método de <code>filter</code> retorna uma nova matriz que é no máximo tão longa quanto a matriz original, mas geralmente tem menos itens. <code>Filter</code> não altera o array original, assim como o <code>map</code> . Ele recebe uma função de retorno de chamada que aplica a lógica dentro do retorno de chamada em cada elemento da matriz. Se um elemento retornar true com base nos critérios da função de retorno de chamada, ele será incluído na nova matriz. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> A variável <code>watchList</code> contém uma matriz de objetos com informações sobre vários filmes. Use uma combinação de <code>filter</code> e <code>map</code> para retornar uma nova matriz de objetos com apenas chaves de <code>title</code> e <code>rating</code> , mas onde <code>imdbRating</code> é maior ou igual a 8.0. Observe que os valores de classificação são salvos como strings no objeto e você pode convertê-los em números para executar operações matemáticas neles. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -166,7 +166,7 @@ console.log(filteredList);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

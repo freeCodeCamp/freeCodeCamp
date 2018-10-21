@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 247: Quadrados sob uma hipérbole'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere a região restrita por 1 ≤ x e 0 ≤ y ≤ 1 / x. <p> Seja S1 o maior quadrado que possa caber sob a curva. Seja S2 o maior quadrado que couber na área restante e assim por diante. Deixe o índice de Sn ser o par (esquerda, abaixo) indicando o número de quadrados à esquerda de Sn e o número de quadrados abaixo de Sn. </p><p> O diagrama mostra alguns desses quadrados rotulados por número. S2 tem um quadrado à esquerda e nenhum abaixo, então o índice de S2 é (1,0). Pode ser visto que o índice de S32 é (1,1) como é o índice de S50. 50 é o maior n para o qual o índice de Sn é (1,1). </p><p> Qual é o maior n para o qual o índice de Sn é (3,3)? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler247();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

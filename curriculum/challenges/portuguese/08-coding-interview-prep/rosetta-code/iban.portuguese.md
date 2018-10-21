@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: IBAN
 ---
 
-## Description
+## Descrição
 <section id="description"> O <a href="https://en.wikipedia.org/wiki/International_Bank_Account_Number">Número Internacional de Conta Bancária (IBAN)</a> é um meio internacionalmente acordado de identificar contas bancárias através das fronteiras nacionais com um risco reduzido de propagação de <a href="https://en.wikipedia.org/wiki/Transcription_error">erros de transcrição</a> . O IBAN é composto por até 34 caracteres alfanuméricos: <ul><li> primeiro o código de duas letras ISO 3166-1 alpha-2 </li><li> depois dois dígitos de verificação e </li><li> finalmente, um Número Básico de Conta Bancária (BBAN) específico do país. </li></ul> Os dígitos de verificação permitem uma verificação de integridade do número da conta bancária para confirmar sua integridade antes mesmo de enviar uma transação. Escreva uma função que tome a string IBAN como parâmetro. Se for válido, retorne verdadeiro. Caso contrário, retorne falso. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -37,7 +37,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -63,7 +63,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

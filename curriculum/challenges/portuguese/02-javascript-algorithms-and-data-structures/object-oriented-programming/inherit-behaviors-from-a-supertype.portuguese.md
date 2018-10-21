@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Herdar Comportamentos de um Supertipo
 ---
 
-## Description
+## Descrição
 <section id="description"> No desafio anterior, você criou um <code>supertype</code> chamado <code>Animal</code> que definia comportamentos compartilhados por todos os animais: <blockquote> function Animal () {} <br> Animal.prototype.eat = function () { <br> console.log (&quot;nom nom nom&quot;); <br> }; </blockquote> Este e o próximo desafio cobrirão como reutilizar <code>Animal&#39;s</code> métodos <code>Animal&#39;s</code> dentro de <code>Bird</code> e <code>Dog</code> sem defini-los novamente. Ele usa uma técnica chamada <code>inheritance</code> . Esse desafio cobre o primeiro passo: criar uma instância do <code>supertype</code> (ou pai). Você já conhece uma maneira de criar uma instância de <code>Animal</code> usando o <code>new</code> operador: <blockquote> let animal = new Animal (); </blockquote> Existem algumas desvantagens ao usar essa sintaxe para <code>inheritance</code> , que são muito complexas para o escopo desse desafio. Em vez disso, aqui está uma abordagem alternativa sem essas desvantagens: <blockquote> let animal = Object.create (Animal.prototype); </blockquote> <code>Object.create(obj)</code> cria um novo objeto e define <code>obj</code> como o novo <code>prototype</code> do objeto. Lembre-se de que o <code>prototype</code> é como a &quot;receita&quot; para criar um objeto. Ao definir o <code>prototype</code> de <code>animal</code> a ser <code>Animal&#39;s</code> <code>prototype</code> , você está efetivamente dando a <code>animal</code> instância a mesma &quot;receita&quot; como qualquer outra instância do <code>Animal</code> . <blockquote> animal.eat (); // imprime &quot;nom nom&quot; <br> animal instanceof Animal; // =&gt; true </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use <code>Object.create</code> para criar duas instâncias de <code>Animal</code> chamado <code>duck</code> e <code>beagle</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -61,7 +61,7 @@ beagle.eat(); // Should print "nom nom nom"
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

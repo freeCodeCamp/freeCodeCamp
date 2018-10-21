@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Renderizar um componente de classe para o DOM
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode se lembrar de usar a API ReactDOM em um desafio anterior para renderizar elementos JSX no DOM. O processo de renderização dos componentes do React será muito semelhante. Os últimos desafios se concentraram em componentes e composição, então a renderização foi feita para você nos bastidores. No entanto, nenhum código do React que você escrever será renderizado no DOM sem fazer uma chamada para a API do ReactDOM. Aqui está uma atualização da sintaxe: <code>ReactDOM.render(componentToRender, targetNode)</code> . O primeiro argumento é o componente Reagir que você deseja renderizar. O segundo argumento é o nó DOM em que você deseja renderizar esse componente. Os componentes React são passados ​​para <code>ReactDOM.render()</code> um pouco diferente dos elementos JSX. Para elementos JSX, você passa o nome do elemento que deseja renderizar. No entanto, para os componentes do React, você precisa usar a mesma sintaxe como se estivesse renderizando um componente aninhado, por exemplo, <code>ReactDOM.render(&lt;ComponentToRender /&gt;, targetNode)</code> . Você usa essa sintaxe para componentes de classe ES6 e componentes funcionais. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Ambos os componentes <code>Fruits</code> e <code>Vegetables</code> são definidos para você nos bastidores. Renderize os dois componentes como filhos do componente <code>TypesOfFood</code> , em seguida, <code>TypesOfFood</code> para o DOM. Existe um <code>div</code> com <code>id=&#39;challenge-node&#39;</code> disponível para você usar. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -104,7 +104,7 @@ const Vegetables = () => {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

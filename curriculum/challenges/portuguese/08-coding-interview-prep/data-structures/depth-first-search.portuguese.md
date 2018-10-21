@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Pesquisa de Profundidade-Primeiro
 ---
 
-## Description
+## Descrição
 <section id="description"> Semelhante à <dfn>pesquisa em largura</dfn> , aqui aprenderemos sobre outro algoritmo de travessia de gráfico chamado <dfn>de busca em profundidade</dfn> . Enquanto a pesquisa por largura inicial pesquisa comprimentos de aresta incrementais longe do nó de origem, <dfn>a pesquisa em profundidade</dfn> primeiro desce um caminho de arestas o máximo possível. Uma vez que atinja uma extremidade de um caminho, a pesquisa retrocederá até o último nó com um caminho de borda não visitado e continuará pesquisando. Visualmente, isso é o que o algoritmo está fazendo, onde o nó superior é o ponto inicial da pesquisa. <img class="img-responsive" src="https://camo.githubusercontent.com/aaad9e39961daf34d967c616edeb50abf3bf1235/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f372f37662f44657074682d46697273742d5365617263682e676966"> Uma saída simples desse algoritmo é uma lista de nós que podem ser alcançados de um determinado nó. Portanto, ao implementar esse algoritmo, você precisará acompanhar os nós que você visita. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Escreva uma função <code>dfs()</code> que tenha um <code>graph</code> matriz de adjacência não <code>graph</code> e uma <code>root</code> rótulo de nó como parâmetros. O rótulo do nó será apenas o valor numérico do nó entre <code>0</code> e <code>n - 1</code> , onde <code>n</code> é o número total de nós no gráfico. Sua função deve produzir uma matriz de todos os nós acessíveis pela <code>root</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -64,7 +64,7 @@ console.log(dfs(exDFSGraph, 3));
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

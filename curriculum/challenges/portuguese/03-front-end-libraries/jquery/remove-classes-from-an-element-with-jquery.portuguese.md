@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Remover classes de um elemento com jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Da mesma forma que você pode adicionar classes a um elemento com a função <code>addClass()</code> do jQuery, você pode removê-los com a função <code>removeClass()</code> do jQuery. Veja como você faria isso para um botão específico: <code>$(&quot;#target2&quot;).removeClass(&quot;btn-default&quot;);</code> Vamos remover a classe <code>btn-default</code> de todos os nossos elementos de <code>button</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -78,7 +78,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

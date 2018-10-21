@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 284: Quadrados Estáveis'
 ---
 
-## Description
+## Descrição
 <section id="description"> O número de 3 dígitos 376 no sistema de numeração decimal é um exemplo de números com a propriedade especial que seu quadrado termina com os mesmos dígitos: 3762 = 141376. Vamos chamar um número com essa propriedade um quadrado fixo. <p> Quadrados firmes também podem ser observados em outros sistemas de numeração. No sistema de numeração da base 14, o número de 3 dígitos c37 é também um quadrado fixo: c372 = aa0c37, e a soma dos seus dígitos é c + 3 + 7 = 18 no mesmo sistema numérico. As letras a, b, c e d são usadas para os 10, 11, 12 e 13 dígitos respectivamente, de maneira similar ao sistema de numeração hexadecimal. </p><p> Para 1 ≤ n ≤ 9, a soma dos dígitos de todos os quadrados fixos de n dígitos no sistema de numeração da base 14 é 2d8 (582 decimal). Quadrados firmes com 0 iniciais não são permitidos. </p><p> Encontre a soma dos dígitos de todos os quadrados fixos de n dígitos no sistema de numeração da base 14 para 1 ≤ n ≤ 10000 (decimal) e forneça sua resposta no sistema base 14 usando letras minúsculas, quando necessário. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler284();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

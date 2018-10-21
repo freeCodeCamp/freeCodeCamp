@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o código hexadecimal abreviado
 ---
 
-## Description
+## Descrição
 <section id="description"> Muitas pessoas se sentem oprimidas pelas possibilidades de mais de 16 milhões de cores. E é difícil lembrar o código hexadecimal. Felizmente, você pode encurtá-lo. Por exemplo, o código hexadecimal vermelho <code>#FF0000</code> pode ser encurtado para <code>#F00</code> . Essa forma abreviada fornece um dígito para vermelho, um dígito para verde e um dígito para azul. Isso reduz o número total de cores possíveis para cerca de 4.000. Mas os navegadores interpretarão <code>#FF0000</code> e <code>#F00</code> exatamente como a mesma cor. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Vá em frente, tente usar os códigos hexadecimais abreviados para colorir os elementos corretos. <table class="table table-striped"><tbody><tr><th> Cor </th><th> Código hexadecimal curto </th></tr><tr><td> Ciano </td><td> <code>#0FF</code> </td> </tr><tr><td> Verde </td><td> <code>#0F0</code> </td> </tr><tr><td> Vermelho </td><td> <code>#F00</code> </td> </tr><tr><td> Fúcsia </td><td> <code>#F0F</code> </td> </tr></tbody></table></section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -38,7 +38,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

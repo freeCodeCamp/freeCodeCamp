@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Retornando valores booleanos de funções
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode se lembrar de <a href="waypoint-comparison-with-the-equality-operator" target="_blank">Comparação com o Operador de Igualdade</a> que todos os operadores de comparação retornam um valor booleano <code>true</code> ou <code>false</code> . Às vezes as pessoas usam uma instrução if / else para fazer uma comparação, como esta: <blockquote> função isEqual (a, b) { <br> if (a === b) { <br> retorno verdadeiro; <br> } outro { <br> retorna falso; <br> } <br> } </blockquote> Mas há uma maneira melhor de fazer isso. Como <code>===</code> retorna <code>true</code> ou <code>false</code> , podemos retornar o resultado da comparação: <blockquote> função isEqual (a, b) { <br> return a === b; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Corrigir a função <code>isLess</code> para remover as instruções <code>if/else</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ isLess(10, 15);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

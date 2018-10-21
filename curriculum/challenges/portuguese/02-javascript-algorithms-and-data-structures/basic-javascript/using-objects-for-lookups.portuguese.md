@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Usando objetos para pesquisas
 ---
 
-## Description
+## Descrição
 <section id="description"> Objetos podem ser considerados como armazenamento de chave / valor, como um dicionário. Se você tiver dados tabulares, poderá usar um objeto para &quot;pesquisar&quot; valores em vez de uma instrução <code>switch</code> ou uma cadeia <code>if/else</code> . Isso é mais útil quando você sabe que seus dados de entrada estão limitados a um determinado intervalo. Aqui está um exemplo de uma pesquisa simples de alfabeto reverso: <blockquote> var alpha = { <br> 1: &quot;Z&quot;, <br> 2: &quot;Y&quot;, <br> 3: &quot;X&quot;, <br> 4: &quot;W&quot;, <br> ... <br> 24: &quot;C&quot;, <br> 25: &quot;B&quot;, <br> 26: &quot;A&quot; <br> }; <br> alfa [2]; // &quot;Y&quot; <br> alfa [24]; // &quot;C&quot; <br><br> valor var = 2; <br> alfa [valor]; // &quot;Y&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Converta a instrução switch em um objeto chamado <code>lookup</code> . Use-o para procurar <code>val</code> e atribuir a string associada à variável de <code>result</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -40,7 +40,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -86,7 +86,7 @@ phoneticLookup("charlie");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

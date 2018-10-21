@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 475: festival de música'
 ---
 
-## Description
+## Descrição
 undefined
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler475();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

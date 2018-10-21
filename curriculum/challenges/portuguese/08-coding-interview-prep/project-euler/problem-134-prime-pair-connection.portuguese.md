@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 134: Conexão do par principal'
 ---
 
-## Description
+## Descrição
 <section id="description"> Considere os primos consecutivos p1 = 19 e p2 = 23. Pode-se verificar que 1219 é o menor número de tal forma que os últimos dígitos são formados por p1 enquanto também são divisíveis por p2. De fato, com exceção de p1 = 3 e p2 = 5, para cada par de primos consecutivos, p2&gt; p1, existem valores de n para os quais os últimos dígitos são formados por p1 en é divisível por p2. Seja S o menor desses valores de n. Encontre ∑ S para cada par de primos consecutivos com 5 ≤ p1 ≤ 1000000. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler134();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

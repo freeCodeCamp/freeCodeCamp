@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Atribuição com um valor retornado
 ---
 
-## Description
+## Descrição
 <section id="description"> Se você se lembrar de nossa discussão sobre <a href="javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator" target="_blank">Armazenando Valores com o Operador de Atribuição</a> , tudo à direita do sinal de igual será resolvido antes de o valor ser atribuído. Isso significa que podemos pegar o valor de retorno de uma função e atribuí-la a uma variável. Suponha que tenhamos pré-definido uma <code>sum</code> funções que adiciona dois números juntos, então: <code>ourSum = sum(5, 12);</code> chamará a função <code>sum</code> , que retorna um valor de <code>17</code> e atribui à variável <code>ourSum</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Chame a função <code>processArg</code> com um argumento de <code>7</code> e atribua seu valor de retorno à variável <code>processed</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

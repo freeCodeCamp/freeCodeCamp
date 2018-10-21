@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use a notação de suporte para localizar o caractere N-para-último em uma seqüência de caracteres
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode usar o mesmo princípio que acabamos de usar para recuperar o último caractere em uma string para recuperar o caractere de enésima a última. Por exemplo, você pode obter o valor da terceira para a última letra da string <code>var firstName = &quot;Charles&quot;</code> usando <code>firstName[firstName.length - 3]</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use a <dfn>notação de colchetes</dfn> para localizar o penúltimo caractere na string <code>lastName</code> . <strong>Sugestão</strong> <br> Tente observar a declaração da variável <code>thirdToLastLetterOfFirstName</code> se você ficar preso. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -58,7 +58,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

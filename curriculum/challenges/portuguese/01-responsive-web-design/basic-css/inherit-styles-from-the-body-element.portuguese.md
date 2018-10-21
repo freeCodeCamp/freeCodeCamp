@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Herdar estilos do elemento do corpo
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora provamos que toda página HTML tem um elemento <code>body</code> , e que seu elemento <code>body</code> também pode ser estilizado com CSS. Lembre-se, você pode estilizar seu elemento <code>body</code> como qualquer outro elemento HTML, e todos os seus outros elementos herdarão os estilos de seu <code>body</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Primeiro, crie um elemento <code>h1</code> com o texto <code>Hello World</code> Então, vamos dar a todos os elementos da sua página a cor <code>green</code> adicionando <code>color: green;</code> à declaração de estilo do elemento do seu <code>body</code> . Finalmente, dê ao seu <code>body</code> elemento font-family of <code>monospace</code> adicionando <code>font-family: monospace;</code> à declaração de estilo do elemento do seu <code>body</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -36,7 +36,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -57,7 +57,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

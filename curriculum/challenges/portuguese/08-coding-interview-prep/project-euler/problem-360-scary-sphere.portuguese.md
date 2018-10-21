@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 360: Esfera Assustadora'
 ---
 
-## Description
+## Descrição
 <section id="description"> Dados dois pontos (x1, y1, z1) e (x2, y2, z2) no espaço tridimensional, a distância de Manhattan entre esses pontos é definida como | x1-x2 | + | y1-y2 | + | z1-z2 |. <p> Seja C (r) uma esfera com raio re centro na origem O (0,0,0). Seja I (r) o conjunto de todos os pontos com coordenadas inteiras na superfície de C (r). Seja S (r) a soma das distâncias de Manhattan de todos os elementos de I (r) com a origem O. </p><p> Por exemplo S (45) = 34518. </p><p> Encontre S (1010). </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler360();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

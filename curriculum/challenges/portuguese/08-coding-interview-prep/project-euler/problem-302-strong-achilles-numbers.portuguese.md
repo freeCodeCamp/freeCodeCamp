@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 302: Números Fortes de Aquiles'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um inteiro positivo n é poderoso se p2 é um divisor de n para todo fator primo p em n. <p> Um inteiro positivo n é uma potência perfeita se n puder ser expresso como uma potência de outro inteiro positivo. </p><p> Um inteiro positivo n é um número de Aquiles se n for poderoso, mas não um poder perfeito. Por exemplo, 864 e 1800 são números de Aquiles: 864 = 25 · 33 e 1800 = 23 · 32 · 52. </p><p> Devemos chamar um inteiro positivo S um número de Aquiles Forte se S e φ (S) forem números de Aquiles.1 Por exemplo, 864 é um número de Aquiles Forte: φ (864) = 288 = 25 · 32. No entanto, 1800 não é um número de Aquiles Forte porque: 1800 (1800) = 480 = 25 · 31 · 51. </p><p> Existem 7 números de Aquiles Fortes abaixo de 104 e 656 abaixo de 108. </p><p> Quantos números fortes de Aquiles estão abaixo de 1018? </p><p> 1 φ denota a função totiente de Euler. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler302();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

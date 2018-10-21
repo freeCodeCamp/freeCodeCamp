@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar grades dentro de grades
 ---
 
-## Description
+## Descrição
 <section id="description"> Transformar um elemento em uma grade afeta apenas o comportamento de seus descendentes diretos. Então, transformando um descendente direto em uma grade, você tem uma grade dentro de uma grade. Por exemplo, definindo as propriedades <code>display</code> e <code>grid-template-columns</code> do elemento com a classe <code>item3</code> , você cria uma grade em sua grade. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Transforme o elemento com a classe <code>item3</code> em uma grade com duas colunas com uma largura de <code>auto</code> e <code>1fr</code> usando <code>1fr</code> <code>display</code> e <code>grid-template-columns</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -99,7 +99,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

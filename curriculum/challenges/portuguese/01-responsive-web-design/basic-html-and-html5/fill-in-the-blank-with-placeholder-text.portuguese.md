@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Preencha o espaço em branco com texto de espaço reservado
 ---
 
-## Description
+## Descrição
 <section id="description"> Os desenvolvedores Web usam tradicionalmente o <code>lorem ipsum text</code> como texto de espaço reservado. O texto &quot;lorem ipsum&quot; é retirado aleatoriamente de uma passagem famosa de Cícero da Roma Antiga. O texto Lorem ipsum tem sido usado como texto de espaço reservado por tipógrafos desde o século XVI, e essa tradição continua na web. Bem, 5 séculos é tempo suficiente. Já que estamos construindo um CatPhotoApp, vamos usar algo chamado <code>kitty ipsum text</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Substitua o texto dentro de seu elemento <code>p</code> com as primeiras palavras deste kitty texto ipsum: <code>Kitty ipsum dolor sit amet, shed everywhere shed everywhere stretching attack your ankles chase the red dot, hairball run catnip eat the grass sniff.</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -44,7 +44,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

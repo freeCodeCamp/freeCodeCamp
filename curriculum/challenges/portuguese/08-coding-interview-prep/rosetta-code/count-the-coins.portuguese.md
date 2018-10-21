@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Conte as moedas
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Existem quatro tipos de moedas comuns na moeda <a href="https://en.wikipedia.org/wiki/United_States" title="link: https://en.wikipedia.org/wiki/United_States">dos EUA</a> : </p> quartos (25 centavos) centavos (10 centavos) níquel (5 centavos) e centavos (1 centavo) <p> Existem seis maneiras de fazer alterações por 15 centavos: </p> Um centavo e um níquel Um centavo e 5 centavos 3 níqueis 2 níqueis e 5 centavos Um níquel e 10 centavos 15 centavos Tarefa: <p> Implementar uma função para determinar quantas maneiras existem para fazer alterações para um dólar usando essas moedas comuns? (1 dólar = 100 centavos). </p> Referência: <a href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52" title="link: http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_Temp_52">um algoritmo do MIT Press</a> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -27,7 +27,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ function countCoins () {
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

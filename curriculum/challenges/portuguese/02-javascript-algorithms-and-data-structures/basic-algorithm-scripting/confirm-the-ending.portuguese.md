@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Confirme o final
 ---
 
-## Description
+## Descrição
 <section id="description"> Verifique se uma string (primeiro argumento, <code>str</code> ) termina com a string de destino (segundo argumento, <code>target</code> ). Esse desafio <em>pode</em> ser resolvido com o método <code>.endsWith()</code> , que foi introduzido no ES2015. Mas, para o propósito deste desafio, gostaríamos que você usasse um dos métodos de substring JavaScript. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -46,7 +46,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -68,7 +68,7 @@ confirmEnding("Bastian", "n");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

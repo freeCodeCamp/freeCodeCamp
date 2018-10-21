@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Combine duas matrizes usando o método concat
 ---
 
-## Description
+## Descrição
 <section id="description"> <code>Concatenation</code> significa unir itens de ponta a ponta. O JavaScript oferece o método <code>concat</code> para cadeias de caracteres e matrizes que funcionam da mesma maneira. Para matrizes, o método é chamado em um, em seguida, outro array é fornecido como o argumento para <code>concat</code> , que é adicionado ao final do primeiro array. Ele retorna um novo array e não altera os arrays originais. Aqui está um exemplo: <blockquote> [1, 2, 3] .concat ([4, 5, 6]); <br> // Retorna uma nova matriz [1, 2, 3, 4, 5, 6] </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método <code>concat</code> na função <code>nonMutatingConcat</code> para concatenar <code>attach</code> ao final do <code>original</code> . A função deve retornar o array concatenado. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ nonMutatingConcat(first, second);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

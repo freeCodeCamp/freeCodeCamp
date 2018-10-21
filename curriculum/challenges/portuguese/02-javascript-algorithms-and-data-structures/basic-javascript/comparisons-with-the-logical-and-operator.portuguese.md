@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Comparações com o Logical And Operator
 ---
 
-## Description
+## Descrição
 <section id="description"> Às vezes você precisará testar mais de uma coisa de cada vez. O <dfn>lógico e o</dfn> operador ( <code>&amp;&amp;</code> ) retornam <code>true</code> se e somente se os <dfn>operandos</dfn> à esquerda e à direita dele forem verdadeiros. O mesmo efeito pode ser obtido aninhando uma instrução if dentro de outra se: <blockquote> if (num&gt; 5) { <br> if (num &lt;10) { <br> return &quot;Sim&quot;; <br> } <br> } <br> return &quot;não&quot;; </blockquote> só retornará &quot;Sim&quot; se <code>num</code> for maior que <code>5</code> e menor que <code>10</code> . A mesma lógica pode ser escrita como: <blockquote> if (num&gt; 5 &amp;&amp; num &lt;10) { <br> return &quot;Sim&quot;; <br> } <br> return &quot;não&quot;; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Combine as duas instruções if em uma instrução que retornará <code>&quot;Yes&quot;</code> se <code>val</code> for menor ou igual a <code>50</code> e maior ou igual a <code>25</code> . Caso contrário, retornará <code>&quot;No&quot;</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -72,7 +72,7 @@ testLogicalAnd(10);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Use Array.filter () para filtrar dinamicamente uma matriz
 ---
 
-## Description
+## Descrição
 <section id="description"> O método de matriz de <code>map</code> é uma ferramenta poderosa que você usará frequentemente ao trabalhar com o React. Outro método relacionado ao <code>map</code> é <code>filter</code> , que filtra o conteúdo de um array com base em uma condição e retorna um novo array. Por exemplo, se você tiver uma matriz de usuários que todos tenham uma propriedade <code>online</code> que pode ser configurada como <code>true</code> ou <code>false</code> , você poderá filtrar apenas os usuários on-line escrevendo: <code>let onlineUsers = users.filter(user =&gt; user.online);</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> No editor de código, o <code>state</code> <code>MyComponent</code> é inicializado com uma matriz de usuários. Alguns usuários estão online e outros não. Filtre a matriz para ver apenas os usuários on-line. Para fazer isso, primeiro use <code>filter</code> para retornar um novo array contendo apenas os usuários cuja propriedade <code>online</code> é <code>true</code> . Em seguida, na variável <code>renderOnline</code> , mapeie sobre a matriz filtrada e retorne um elemento <code>li</code> para cada usuário que contenha o texto de seu <code>username</code> de <code>username</code> . Certifique-se de incluir uma <code>key</code> única também, como nos últimos desafios. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -33,7 +33,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -101,7 +101,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

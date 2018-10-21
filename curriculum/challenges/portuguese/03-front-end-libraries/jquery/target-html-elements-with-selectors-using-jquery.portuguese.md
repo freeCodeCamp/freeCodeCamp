@@ -8,14 +8,14 @@ videoUrl: ''
 localeTitle: Alvo de elementos HTML com seletores usando jQuery
 ---
 
-## Description
+## Descrição
 <section id="description"> Agora temos uma <code>document ready function</code> . Agora vamos escrever nossa primeira declaração jQuery. Todas as funções do jQuery começam com um <code>$</code> , geralmente chamado de <code>dollar sign operator</code> , ou <code>bling</code> . Muitas vezes, o jQuery seleciona um elemento HTML com um <code>selector</code> e faz algo com esse elemento. Por exemplo, vamos fazer todos os seus elementos de <code>button</code> saltarem. Basta adicionar este código dentro da função pronta para o seu documento: <code>$(&quot;button&quot;).addClass(&quot;animated bounce&quot;);</code> Observe que já incluímos a biblioteca jQuery e a biblioteca Animate.css em segundo plano para que você possa usá-las no editor. Então você está usando o jQuery para aplicar a classe de <code>bounce</code> do Animate.css aos seus elementos de <code>button</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -31,7 +31,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -75,7 +75,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

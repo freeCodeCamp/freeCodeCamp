@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Pesquisar e substituir
 ---
 
-## Description
+## Descrição
 <section id="description"> Realize uma busca e substitua a frase usando os argumentos fornecidos e retorne a nova sentença. Primeiro argumento é a sentença para realizar a pesquisa e substituir. Segundo argumento é a palavra que você estará substituindo (antes). Terceiro argumento é o que você estará substituindo o segundo argumento com (depois). <strong>Nota</strong> <br> Preserve o caso do primeiro caractere na palavra original quando for substituí-lo. Por exemplo, se você pretende substituir a palavra &quot;Livro&quot; pela palavra &quot;cachorro&quot;, ele deve ser substituído por &quot;Cão&quot;. Lembre-se de usar a opção <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Ler-pesquisar-perguntar</a> se ficar preso. Tente emparelhar o programa. Escreva seu próprio código. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -34,7 +34,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -54,7 +54,7 @@ myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped");
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

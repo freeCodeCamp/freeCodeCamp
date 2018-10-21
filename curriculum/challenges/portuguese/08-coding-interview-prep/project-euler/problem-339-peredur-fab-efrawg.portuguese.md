@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 339: Efrawg fab de Peredur'
 ---
 
-## Description
+## Descrição
 <section id="description"> &quot;E ele veio em direção a um vale, através do qual corria um rio; e as fronteiras do vale eram arborizadas, e em cada lado do rio havia prados nivelados. E de um lado do rio ele viu um rebanho de ovelhas brancas, e por outro lado, um rebanho de ovelhas negras e sempre que uma das ovelhas brancas berrava, uma das ovelhas negras se cruzava e se tornava branca, e quando uma das ovelhas negras berrava, uma das ovelhas brancas se cruzava e ficava preta. &quot;en.wikisource.org <p> Inicialmente, cada rebanho consiste em n ovinos. Cada ovelha (independentemente da cor) tem a mesma probabilidade de ser a próxima ovelha a balir. Depois que uma ovelha chora e uma ovelha do outro rebanho passa, Peredur pode remover um número de ovelhas brancas para maximizar o número final esperado de ovelhas negras. Seja E (n) o número final esperado de ovelhas negras se Peredur usar uma estratégia ótima. </p><p> Você está dado que E (5) = 6,871346 arredondado para 6 lugares atrás do ponto decimal. Encontre E (10.000) e dê sua resposta arredondada para 6 lugares atrás do ponto decimal. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler339();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

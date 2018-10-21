@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Substituindo se outras cadeias com o interruptor
 ---
 
-## Description
+## Descrição
 <section id="description"> Se você tiver muitas opções para escolher, uma instrução <code>switch</code> pode ser mais fácil de gravar do que muitas instruções encadeadas <code>if</code> / <code>else if</code> . Os seguintes: <blockquote> if (val === 1) { <br> answer = &quot;a&quot;; <br> } else if (val === 2) { <br> answer = &quot;b&quot;; <br> } outro { <br> answer = &quot;c&quot;; <br> } </blockquote> pode ser substituído por: <blockquote> interruptor (val) { <br> caso 1: <br> answer = &quot;a&quot;; <br> pausa; <br> caso 2: <br> answer = &quot;b&quot;; <br> pausa; <br> padrão: <br> answer = &quot;c&quot;; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Altere as instruções encadeadas <code>if</code> / <code>else if</code> para uma instrução <code>switch</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -42,7 +42,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -79,7 +79,7 @@ chainToSwitch(7);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

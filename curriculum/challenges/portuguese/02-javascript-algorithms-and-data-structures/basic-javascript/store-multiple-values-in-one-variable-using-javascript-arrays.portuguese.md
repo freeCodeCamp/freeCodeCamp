@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Armazenar vários valores em uma variável usando matrizes JavaScript
 ---
 
-## Description
+## Descrição
 <section id="description"> Com variáveis ​​de <code>array</code> JavaScript, podemos armazenar vários dados em um só lugar. Você inicia uma declaração de matriz com um colchete de abertura, termina com um colchete de fechamento e coloca uma vírgula entre cada entrada, assim: <code>var sandwich = [&quot;peanut butter&quot;, &quot;jelly&quot;, &quot;bread&quot;]</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Modifique o novo array <code>myArray</code> para que contenha uma <code>string</code> e um <code>number</code> (nessa ordem). <strong>Sugestão</strong> <br> Consulte o código de exemplo no editor de texto, se você ficar preso. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -56,7 +56,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

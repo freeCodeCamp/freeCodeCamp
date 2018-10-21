@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Criar e adicionar a conjuntos no ES6
 ---
 
-## Description
+## Descrição
 undefined
 
-## Instructions
+## Instruções
 <section id="instructions"> Para este exercício, retorne um conjunto com os seguintes valores: <code>1, 2, 3, &#39;Taco&#39;, &#39;Cat&#39;, &#39;Awesome&#39;</code> </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -49,7 +49,7 @@ checkSet();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

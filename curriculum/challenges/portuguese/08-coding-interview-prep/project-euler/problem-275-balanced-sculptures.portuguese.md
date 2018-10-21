@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 275: Esculturas Equilibradas'
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos definir uma escultura balanceada de ordem n da seguinte forma: Um polyomino composto de n + 1 telhas conhecidas como os blocos (n telhas) e o plinto (telha restante); o plinto tem seu centro na posição (x = 0, y = 0); os blocos têm coordenadas y maiores que zero (então o plinto é o único bloco mais baixo); o centro de massa de todos os blocos, combinado, tem coordenada x igual a zero. Ao contar as esculturas, quaisquer arranjos que são simplesmente reflexos sobre o eixo y, não são contados como distintos. Por exemplo, as 18 esculturas balanceadas da ordem 6 são mostradas abaixo; observe que cada par de imagens espelhadas (sobre o eixo y) é contado como uma escultura: <p> Existem 964 esculturas balanceadas de ordem 10 e 360505 de ordem 15. Como muitas esculturas balanceadas estão na ordem de 18? </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler275();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

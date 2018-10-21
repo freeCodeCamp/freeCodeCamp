@@ -7,14 +7,14 @@ videoUrl: ''
 localeTitle: Diff Two Arrays
 ---
 
-## Description
+## Descrição
 <section id="description"> Compare dois arrays e retorne um novo array com todos os itens encontrados apenas em um dos dois arrays, mas não em ambos. Em outras palavras, retorne a diferença simétrica das duas matrizes. Lembre-se de usar <a href="http://forum.freecodecamp.org/t/how-to-get-help-when-you-are-stuck/19514" target="_blank">Read-Search-Ask</a> se você ficar preso. Tente emparelhar o programa. Escreva seu próprio código. <strong>Nota</strong> <br> Você pode retornar o array com seus elementos em qualquer ordem. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -54,7 +54,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -76,7 +76,7 @@ diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

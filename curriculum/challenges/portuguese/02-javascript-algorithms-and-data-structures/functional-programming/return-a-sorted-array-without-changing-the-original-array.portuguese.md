@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Retornar uma matriz classificada sem alterar a matriz original
 ---
 
-## Description
+## Descrição
 <section id="description"> Um efeito colateral do método de <code>sort</code> é que ele altera a ordem dos elementos no array original. Em outras palavras, ele transforma o array no lugar. Uma maneira de evitar isso é primeiro concatenar uma matriz vazia para a que está sendo classificada (lembre-se de que a <code>concat</code> retorna uma nova matriz) e, em seguida, execute o método de <code>sort</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o método de <code>sort</code> na função <code>nonMutatingSort</code> para classificar os elementos de uma matriz em ordem crescente. A função deve retornar uma nova matriz e não alterar a variável <code>globalArray</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -53,7 +53,7 @@ nonMutatingSort(globalArray);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

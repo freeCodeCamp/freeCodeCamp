@@ -7,13 +7,13 @@ videoUrl: ''
 localeTitle: Passar o estado como adereços aos componentes filhos
 ---
 
-## Description
+## Descrição
 <section id="description"> Você viu muitos exemplos que passaram por adereços a elementos filho JSX e componentes filho React em desafios anteriores. Você pode estar se perguntando de onde esses adereços vêm. Um padrão comum é ter um componente stateful contendo o <code>state</code> importante para o seu aplicativo, que renderiza os componentes filhos. Você deseja que esses componentes tenham acesso a algumas partes desse <code>state</code> , que são passadas como adereços. Por exemplo, talvez você tenha um componente de <code>App</code> que renderize uma <code>Navbar</code> , entre outros componentes. Em seu <code>App</code> , você tem um <code>state</code> que contém muitas informações do usuário, mas a <code>Navbar</code> só precisa acessar o nome de usuário do usuário para poder exibi-lo. Você passa esse pedaço de <code>state</code> para o componente <code>Navbar</code> como um prop. Esse padrão ilustra alguns paradigmas importantes no React. O primeiro é o <em>fluxo de dados unidirecional</em> . O estado flui em uma direção para baixo da árvore dos componentes do seu aplicativo, do componente pai com preservação de estado para componentes filhos. Os componentes filho recebem apenas os dados de estado necessários. A segunda é que os aplicativos stateful complexos podem ser divididos em apenas alguns, ou talvez um único componente com estado. O resto de seus componentes simplesmente recebe o estado do pai como props e renderiza uma UI daquele estado. Ele começa a criar uma separação em que o gerenciamento de estado é tratado em uma parte do código e a renderização da UI em outra. Este princípio de separar a lógica de estado da lógica da IU é um dos princípios-chave da React. Quando é usado corretamente, facilita muito o gerenciamento de projetos de aplicativos complexos e com monitoração de estado. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> O componente <code>MyApp</code> é stateful e renderiza um componente <code>Navbar</code> como um filho. Passe a propriedade <code>name</code> em seu <code>state</code> até o componente filho e, em seguida, mostre o <code>name</code> na tag <code>h1</code> que faz parte do método de renderização <code>Navbar</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -29,7 +29,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='jsx-seed'>
@@ -80,7 +80,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

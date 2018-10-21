@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Acessar os dados JSON de uma API
 ---
 
-## Description
+## Descrição
 <section id="description"> No desafio anterior, você viu como obter dados JSON da FreeCodeCamp Cat Photo API. Agora, você examinará mais de perto os dados retornados para entender melhor o formato JSON. Lembre-se de algumas notações em JavaScript: <blockquote> [] -&gt; colchetes representam uma matriz <br> {} -&gt; colchetes encaracolados representam um objeto <br> &quot;&quot; -&gt; Aspas duplas representam uma string. Eles também são usados ​​para nomes de chaves no JSON </blockquote> Compreender a estrutura dos dados que uma API retorna é importante porque influencia a maneira como você recupera os valores necessários. À direita, clique no botão &quot;Obter Mensagem&quot; para carregar o JSON da API do FreeCodeCamp Cat Photo no HTML. O primeiro e último caractere que você vê nos dados JSON são colchetes <code>[ ]</code> . Isso significa que os dados retornados são uma matriz. O segundo caractere nos dados JSON é um colchete <code>{</code> cruzado, que inicia um objeto. Olhando de perto, você pode ver que existem três objetos separados. Os dados JSON são uma matriz de três objetos, onde cada objeto contém informações sobre uma foto de gato. Você aprendeu anteriormente que os objetos contêm &quot;pares de valores-chave&quot; separados por vírgulas. No exemplo Cat Photo, o primeiro objeto tem <code>&quot;id&quot;:0</code> onde &quot;id&quot; é uma chave e 0 é seu valor correspondente. Da mesma forma, existem chaves para &quot;imageLink&quot;, &quot;altText&quot; e &quot;codeNames&quot;. Cada objeto de foto de gato tem essas mesmas chaves, mas com valores diferentes. Outro par &quot;chave-valor&quot; interessante no primeiro objeto é <code>&quot;codeNames&quot;:[&quot;Juggernaut&quot;,&quot;Mrs. Wallace&quot;,&quot;ButterCup&quot;]</code> . Aqui &quot;codeNames&quot; é a chave e seu valor é uma matriz de três strings. É possível ter matrizes de objetos, bem como uma chave com uma matriz como um valor. Lembre-se de como acessar dados em matrizes e objetos. Os arrays usam a notação de colchetes para acessar um índice específico de um item. Os objetos usam a notação entre colchetes ou pontos para acessar o valor de uma determinada propriedade. Aqui está um exemplo que imprime o &quot;altText&quot; da primeira foto do gato - note que os dados JSON analisados ​​no editor são salvos em uma variável chamada <code>json</code> : <blockquote> console.log (json [0] .altText); <br> // Prints &quot;Um gato branco usando um capacete verde em forma de melão na cabeça.&quot; </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Para o gato com o &quot;id&quot; de 2, imprima para o console o segundo valor na matriz <code>codeNames</code> . Você deve usar a notação de colchetes e pontos no objeto (que é salvo na variável <code>json</code> ) para acessar o valor. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -91,7 +91,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

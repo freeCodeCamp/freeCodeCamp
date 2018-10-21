@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use .has e .size em um conjunto ES6
 ---
 
-## Description
+## Descrição
 <section id="description"> Vamos examinar os métodos .has e .size disponíveis no objeto Conjunto ES6. Primeiro, crie um conjunto ES6 <code>var set = new Set([1,2,3]);</code> O método .has verificará se o valor está contido no conjunto. <code>var hasTwo = set.has(2);</code> O método .size retornará um inteiro representando o tamanho do Set <code>var howBig = set.size;</code> </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Neste exercício, passaremos um array e um valor para a função checkSet (). Sua função deve criar um conjunto ES6 a partir do argumento da matriz. Encontre se o conjunto contém o argumento de valor. Encontre o tamanho do conjunto. E retorne esses dois valores em uma matriz. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -24,7 +24,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -48,7 +48,7 @@ checkSet([ 1, 2, 3], 2); // Should return [ true, 3 ]
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

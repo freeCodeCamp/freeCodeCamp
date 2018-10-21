@@ -8,13 +8,13 @@ videoUrl: ''
 localeTitle: Adicionar rótulos aos círculos de plotagem de dispersão
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode adicionar texto para criar rótulos para os pontos em um gráfico de dispersão. O objetivo é exibir os valores separados por vírgulas dos primeiros campos ( <code>x</code> ) e segundos ( <code>y</code> ) de cada item no <code>dataset</code> . As <code>text</code> nós precisamos <code>x</code> e <code>y</code> atributos para posicioná-la na tela SVG. Nesse desafio, o valor <code>y</code> (que determina a altura) pode usar o mesmo valor que o <code>circle</code> usa para seu atributo <code>cy</code> . O valor <code>x</code> pode ser um pouco maior que o valor <code>cx</code> do <code>circle</code> , portanto, o rótulo fica visível. Isso empurrará o rótulo para a direita do ponto plotado. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Rotule cada ponto no gráfico de dispersão usando os elementos de <code>text</code> . O texto do rótulo deve ser os dois valores separados por uma vírgula e um espaço. Por exemplo, o rótulo para o primeiro ponto é &quot;34, 78&quot;. Defina o atributo <code>x</code> para que ele seja 5 unidades a mais que o valor usado para o atributo <code>cx</code> no <code>circle</code> . Defina o atributo <code>y</code> da mesma maneira que é usado para o valor de <code>cy</code> no <code>circle</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -46,7 +46,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -104,7 +104,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

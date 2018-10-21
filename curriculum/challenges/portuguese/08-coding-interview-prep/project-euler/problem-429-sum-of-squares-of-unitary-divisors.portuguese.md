@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: 'Problema 429: Soma dos quadrados dos divisores unitários'
 ---
 
-## Description
+## Descrição
 <section id="description"> Um divisor unitário d de um número n é um divisor de n que possui a propriedade gcd (d, n / d) = 1. Os divisores unitários de 4! = 24 são 1, 3, 8 e 24. A soma de seus quadrados é 12 + 32 + 82 + 242 = 650. <p> Seja S (n) a soma dos quadrados dos divisores unitários de n. Assim S (4!) = 650. </p><p> Encontre S (100 000 000!) Módulo 1 000 000 009. </p></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,7 +25,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ euler429();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

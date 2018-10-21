@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Geral FizzBuzz
 ---
 
-## Description
+## Descrição
 <section id="description"> Escreva uma versão generalizada do <a href="http://rosettacode.org/wiki/FizzBuzz">FizzBuzz</a> que funcione para qualquer lista de fatores, junto com suas palavras. Esta é basicamente uma implementação &quot;fizzbuzz&quot; onde as regras do jogo são fornecidas ao usuário. Crie uma função para implementar isso. A função deve ter dois parâmetros. O primeiro será um array com as regras do FizzBuzz. Por exemplo: <code>[ [3,&quot;Fizz&quot;] , [5,&quot;Buzz&quot;] ]</code> . Isso indica que o <code>Fizz</code> deve ser impresso se o número for um múltiplo de 3 e o Google <code>Buzz</code> se for um múltiplo de 5. Se for um múltiplo de ambos, as sequências devem ser concatenadas na ordem especificada na matriz. Neste caso, <code>FizzBuzz</code> se o número é um múltiplo de 3 e 5. O segundo parâmetro é o número para o qual a função deve retornar uma string como indicado acima. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -41,7 +41,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -67,7 +67,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

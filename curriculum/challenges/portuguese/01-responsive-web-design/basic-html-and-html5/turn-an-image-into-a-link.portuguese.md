@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Transforme uma imagem em um link
 ---
 
-## Description
+## Descrição
 <section id="description"> Você pode criar elementos em links aninhando-os em um elemento <code>a</code>. Aninhe sua imagem em um elemento<code>a</code>. Aqui está um exemplo: <code>&lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;https://bit.ly/fcc-running-cats&quot; alt=&quot;Three kittens running towards the camera.&quot;&gt;&lt;/a&gt;</code> Lembre-se de usar <code>#</code> como seu <code>a</code> elemento <code>href</code> propriedade, a fim de transformá-lo em um link morto. </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Coloque o elemento de imagem existente dentro de um elemento de âncora. Depois de fazer isso, passe o mouse sobre sua imagem com o cursor. O ponteiro normal do cursor deve se tornar o ponteiro de clique do link. A foto agora é um link. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -28,7 +28,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='html-seed'>
@@ -52,7 +52,7 @@ tests:
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

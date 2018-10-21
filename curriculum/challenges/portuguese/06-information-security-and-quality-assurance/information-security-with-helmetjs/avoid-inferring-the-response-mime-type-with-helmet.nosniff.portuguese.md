@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Evite Inferir o Tipo MIME de Resposta com helmet.noSniff ()
 ---
 
-## Description
+## Descrição
 <section id="description"> Como lembrete, este projeto está sendo construído sobre o seguinte projeto inicial no <a href="https://glitch.com/#!/import/github/freeCodeCamp/boilerplate-infosec/">Glitch</a> , ou clonado a partir do <a href="https://github.com/freeCodeCamp/boilerplate-infosec/">GitHub</a> . Os navegadores podem usar o conteúdo ou o sniffing MIME para se adaptar a diferentes tipos de dados provenientes de uma resposta. Eles substituem os cabeçalhos Content-Type para adivinhar e processar os dados. Embora isso possa ser conveniente em alguns cenários, também pode levar a alguns ataques perigosos. Este middleware define o cabeçalho X-Content-Type-Options para nosniff. Isso instrui o navegador a não ignorar o Content-Type fornecido. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -25,12 +25,12 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

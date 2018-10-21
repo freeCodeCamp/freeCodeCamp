@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Usando o método de teste
 ---
 
-## Description
+## Descrição
 <section id="description"> Expressões regulares são usadas em linguagens de programação para corresponder partes de strings. Você cria padrões para ajudá-lo a fazer essa correspondência. Se você quiser encontrar a palavra <code>&quot;the&quot;</code> na string <code>&quot;The dog chased the cat&quot;</code> , você pode usar a seguinte expressão regular: <code>/the/</code> . Observe que as marcas de aspas não são necessárias na expressão regular. O JavaScript tem várias maneiras de usar regexes. Uma maneira de testar um regex é usando o método <code>.test()</code> . O método <code>.test()</code> pega o regex, aplica-o a uma string (que é colocada dentro dos parênteses) e retorna <code>true</code> ou <code>false</code> se o padrão encontrar algo ou não. <blockquote> deixe testStr = &quot;freeCodeCamp&quot;; <br> deixe testRegex = / Code /; <br> testRegex.test (testStr); <br> // Retorna true </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Aplique o regex <code>myRegex</code> na string <code>myString</code> usando o método <code>.test()</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -44,7 +44,7 @@ let result = myRegex; // Change this line
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

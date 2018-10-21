@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Entenda a Expressão de Função Imediatamente Invocada (IIFE)
 ---
 
-## Description
+## Descrição
 <section id="description"> Um padrão comum em JavaScript é executar uma função assim que ela é declarada: <blockquote> (function () { <br> console.log (&quot;Chirp, chirp!&quot;); <br> }) (); // esta é uma expressão de função anônima que é executada imediatamente <br> // Saídas &quot;Chirp, chirp!&quot; imediatamente </blockquote> Note que a função não tem nome e não é armazenada em uma variável. Os dois parênteses () no final da expressão da função fazem com que ela seja imediatamente executada ou chamada. Esse padrão é conhecido como uma <code>immediately invoked function expression</code> ou <code>IIFE</code> . </section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Reescreva a função <code>makeNest</code> e remova sua chamada, em vez disso, é uma <code>immediately invoked function expression</code> ( <code>IIFE</code> ) anônima <code>immediately invoked function expression</code> . </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -26,7 +26,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -46,7 +46,7 @@ makeNest();
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

@@ -6,7 +6,7 @@ videoUrl: ''
 localeTitle: Quebra de linha
 ---
 
-## Description
+## Descrição
 <section id="description"><p> Ainda hoje, com fontes proporcionais e layouts complexos, ainda há casos em que você precisa quebrar o texto em uma coluna especificada. A tarefa básica é envolver um parágrafo de texto de maneira simples. Exemplo de texto: </p><pre> Quebra de texto usando um algoritmo mais sofisticado, como o algoritmo Knuth e Plass TeX.
 Se o seu idioma fornecer isso, você receberá crédito extra fácil
 mas você &quot;deve referenciar documentação&quot; indicando que o algoritmo
@@ -17,11 +17,11 @@ deve referenciar documentação indicando que o algoritmo é algo melhor
 do que um simples algoritmo de tamanho mínimo.
 </pre></section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -43,7 +43,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -69,7 +69,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

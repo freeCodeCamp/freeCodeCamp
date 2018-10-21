@@ -6,14 +6,14 @@ videoUrl: ''
 localeTitle: Maior soma subsequencial
 ---
 
-## Description
+## Descrição
 <section id="description"> Dada uma seqüência de inteiros, encontre uma subsequência contínua que maximize a soma de seus elementos, isto é, os elementos de nenhuma outra subsequência única somam um valor maior que este. Uma subsequência vazia é considerada como tendo a soma de \ (0 \); Assim, se todos os elementos são negativos, o resultado deve ser a seqüência vazia. </section>
 
-## Instructions
+## Instruções
 <section id="instructions">
 </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -39,7 +39,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -65,7 +65,7 @@ console.info('after the test');
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js

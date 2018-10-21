@@ -6,13 +6,13 @@ videoUrl: ''
 localeTitle: Use o operador condicional (ternário)
 ---
 
-## Description
+## Descrição
 <section id="description"> O <dfn>operador condicional</dfn> , também chamado de <dfn>operador ternário</dfn> , pode ser usado como uma expressão if-else de uma linha. A sintaxe é: <code>condition ? statement-if-true : statement-if-false;</code> A função a seguir usa uma instrução if-else para verificar uma condição: <blockquote> function findGreater (a, b) { <br> if (a&gt; b) { <br> return &quot;a é maior&quot;; <br> } <br> outro { <br> return &quot;b é maior&quot;; <br> } <br> } </blockquote> Isso pode ser reescrito usando o <code>conditional operator</code> : <blockquote> function findGreater (a, b) { <br> devolve a&gt; b? &quot;a é maior&quot;: &quot;b é maior&quot;; <br> } </blockquote></section>
 
-## Instructions
+## Instruções
 <section id="instructions"> Use o <code>conditional operator</code> na função <code>checkEqual</code> para verificar se dois números são iguais ou não. A função deve retornar true ou false. </section>
 
-## Tests
+## Testes
 <section id='tests'>
 
 ```yml
@@ -30,7 +30,7 @@ tests:
 
 </section>
 
-## Challenge Seed
+## Semente do Desafio
 <section id='challengeSeed'>
 
 <div id='js-seed'>
@@ -50,7 +50,7 @@ checkEqual(1, 2);
 
 </section>
 
-## Solution
+## Solução
 <section id='solution'>
 
 ```js
