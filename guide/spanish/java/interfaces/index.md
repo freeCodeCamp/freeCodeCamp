@@ -40,11 +40,11 @@ Ahora, hay una **regla básica** : la Clase debe implementar **todos** los méto
 Una vez que cree una Clase Java que `implements` cualquier Interfaz, se puede hacer referencia a la instancia del objeto como una instancia de la Interfaz. Este concepto es similar al de la instanciación de herencia.
 
 ```java
-// following our previous example 
+// siguiendo nuestro ejemplo anterior
  
  Vehicle tesla = new Car(); 
  
- tesla.start(); // starting engine ... 
+ tesla.start(); // empezando el motor  ... 
 ```
 
 Una interfaz **no puede** contener métodos de un constructor, por lo tanto, no **puede** crear una instancia de una interfaz en sí misma. Debe crear una instancia de alguna clase que implemente una interfaz para hacer referencia a ella. Piense en las interfaces como un formulario de contrato en blanco, o una plantilla.
@@ -62,7 +62,7 @@ class Truck implements Vehicle {
  } 
  
  class Starter { 
-    // static method, can be called without instantiating the class 
+    // método estático, puede ser llamado sin instanciar la clase. 
     public static void startEngine(Vehicle vehicle) { 
         vehicle.start(); 
     } 
@@ -71,8 +71,8 @@ class Truck implements Vehicle {
  Vehicle tesla = new Car(); 
  Vehicle tata = new Truck(); 
  
- Starter.startEngine(tesla); // starting engine ... 
- Starter.startEngine(tata); // starting truck engine ... 
+ Starter.startEngine(tesla); // empezando el motor ... 
+ Starter.startEngine(tata); // empezando el motor del camión ... 
 ```
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/CItm/0)
@@ -93,13 +93,13 @@ public interface GPS {
  
  public class Smartphone implements GPS,Radio { 
     public void getCoordinates() { 
-        // return some coordinates 
+        // devolver algunas coordenadas
     } 
     public void startRadio() { 
-      // start Radio 
+      // empieza Radio
     } 
     public void stopRadio() { 
-        // stop Radio 
+        // detene Radio
     } 
  } 
 ```
@@ -125,8 +125,8 @@ Afortunadamente, Java 8 ahora nos proporciona métodos `default` para interfaces
 public interface GPS { 
     public void getCoordinates(); 
     default public void getRoughCoordinates() { 
-        // implementation to return coordinates from rough sources 
-        // such as wifi & mobile 
+        // Implementación para devolver coordenadas de fuentes aproximadas.
+        // como wifi y mobile 
         System.out.println("Fetching rough coordinates..."); 
     } 
  } 
@@ -138,20 +138,20 @@ public interface GPS {
  
  public class Smartphone implements GPS,Radio { 
     public void getCoordinates() { 
-        // return some coordinates 
+        // devolver algunas coordenadas 
     } 
     public void startRadio() { 
-      // start Radio 
+      // empieza Radio 
     } 
     public void stopRadio() { 
-        // stop Radio 
+        // detene Radio 
     } 
  
-    // no implementation of getRoughCoordinates() 
+    // sin implementación de getRoughCoordinates() 
  } 
  
  Smartphone motoG = new Smartphone(); 
- motog.getRoughCoordinates(); // Fetching rough coordinates... 
+ motog.getRoughCoordinates(); // Obteniendo coordenadas aproximadas... 
 ```
 
 ![:rocket:](//forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=2 ":cohete:") [Ejecutar código](https://repl.it/CItp/0)
@@ -216,8 +216,8 @@ interface MusicPlayer {
  class Main { 
   public static void main(String[] args) { 
     Smartphone motoG = new Smartphone(); 
-    MusicPlayer.commercial("Motorola"); // Called on interface not on implementing class 
-    // motoG.commercial("Motorola"); // This would cause a compilation error 
+    MusicPlayer.commercial("Motorola"); // Llamado en la interfaz no en la clase de implementación
+    // motoG.commercial("Motorola"); // Esto provoca un error de compilación.
   } 
  } 
 ```
