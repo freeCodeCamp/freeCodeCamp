@@ -44,6 +44,7 @@ Here are our six core certifications:
 - Responsive Web Design Principles
 - CSS Flexbox
 - CSS Grid <br />
+  <br />
   **Projects**: Tribute Page, Survey Form, Product Landing Page, Technical Documentation Page, Personal Portfolio Webpage
 
 #### 2. JavaScript Algorithms and Data Structures Certification
@@ -56,6 +57,7 @@ Here are our six core certifications:
 - Algorithm Scripting
 - Object Oriented Programming
 - Functional Programming <br />
+  <br />
   **Projects**: Palindrome Checker, Roman Numeral Converter, Caesars Cipher, Telephone Number Validator, Cash Register
 
 #### 3. Front End Libraries Certification
@@ -66,12 +68,14 @@ Here are our six core certifications:
 - React
 - Redux
 - React and Redux <br />
+  <br />
   **Projects**: Random Quote Machine, Markdown Previewer, Drum Machine, JavaScript Calculator, Pomodoro Clock
 
 #### 4. Data Visualization Certification
 
 - Data Visualization with D3
 - JSON APIs and Ajax <br />
+  <br />
   **Projects**: Bar Chart, Scatterplot Graph, Heat Map, Choropleth Map, Treemap Diagram
 
 #### 5. APIs and Microservices Certification
@@ -79,6 +83,7 @@ Here are our six core certifications:
 - Managing Packages with Npm
 - Basic Node and Express
 - MongoDB and Mongoose <br />
+  <br />
   **Projects**: Timestamp Microservice, Request Header Parser, URL Shortener, Exercise Tracker, File Metadata Microservice
 
 #### 6. Information Security and Quality Assurance Certification
@@ -86,6 +91,7 @@ Here are our six core certifications:
 - Information Security with HelmetJS
 - Quality Assurance and Testing with Chai
 - Advanced Node and Express <br />
+  <br />
   **Projects**: Metric-Imperial Converter, Issue Tracker, Personal Library, Stock Price Checker, Anonymous Message Board
 
 #### Full Stack Development Certification
@@ -106,11 +112,11 @@ This code is running live at [freeCodeCamp.org](https://www.freecodecamp.org).
 
 Our community also has:
 
-- a super active [forum](https://www.freecodecamp.org/forum)
-- thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
+- A super active [forum](https://www.freecodecamp.org/forum)
+- Thousands of [local study groups](https://study-group-directory.freecodecamp.org/) around the world, where you can code together in person
 - Medium's [largest technical publication](https://medium.freecodecamp.org)
 - A popular [YouTube channel](https://youtube.com/freecodecamp)
-- and a comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
+- A comprehensive [guide to thousands of programming topics](https://guide.freecodecamp.org/)
 
 ### [Join our community here](https://www.freecodecamp.org/signin).
 
@@ -128,7 +134,7 @@ Please don't create GitHub issues for security issues. Instead, please send an e
 
 ### License
 
-Copyright (c) 2018 freeCodeCamp.org
+Copyright © 2018 freeCodeCamp.org
 
 The content of this repository bound by the following licenses:
 
