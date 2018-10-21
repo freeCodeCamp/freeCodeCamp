@@ -7,10 +7,10 @@ localeTitle: 'Используйте обозначение по часовой 
 ---
 
 ## Description
-<section id="description"> Давайте попробуем это снова, но с <code>margin</code> этот раз. Вместо того, чтобы указывать свойства <code>margin-top</code> , <code>margin-right</code> , <code>margin-bottom</code> и <code>margin-left</code> отдельно, вы можете указать их все в одной строке, например: <code>margin: 10px 20px 10px 20px;</code> Эти четыре значения работают как часы: верхний, правый, нижний, левый и будут давать тот же результат, что и при использовании боковых спецификаций полей. </section>
+<section id="description"> Давайте попробуем это снова, но с <code>margin</code> в этот раз. Вместо того, чтобы указывать свойства <code>margin-top</code> , <code>margin-right</code> , <code>margin-bottom</code> и <code>margin-left</code> отдельно, вы можете указать их все в одной строке, например: <code>margin: 10px 20px 10px 20px;</code> Эти четыре значения работают как часы: верхний, правый, нижний, левый и будут давать тот же результат, что и при использовании отдельных margin свойств. </section>
 
 ## Instructions
-<section id="instructions"> Используйте <code>Clockwise Notation</code> чтобы дать элементу класс <code>blue-box</code> край <code>40px</code> на его верхней и левой сторонах, но только 20 <code>20px</code> на нижней и правой стороне. </section>
+<section id="instructions"> Используйте <code>Clockwise Notation</code> чтобы дать элементу класса <code>blue-box</code> margin <code>40px</code> на его верхней и левой сторонах, и только 20 <code>20px</code> на нижней и правой стороне. </section>
 
 ## Tests
 <section id='tests'>
