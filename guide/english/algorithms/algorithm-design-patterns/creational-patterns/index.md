@@ -19,3 +19,5 @@ Five well-known design patterns that are parts of creational patterns are:
 
 ### Sources 
 1. [Gamma, Erich; Helm, Richard; Johnson, Ralph; Vlissides, John (1995). Design Patterns. Massachusetts: Addison-Wesley. p. 81. ISBN 978-0-201-63361-0. Retrieved 2015-05-22.](http://www.pearsoned.co.uk/bookshop/detail.asp?item=171742)
+
+Algorithm design pattern creational pattern changes.
