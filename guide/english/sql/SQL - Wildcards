@@ -1,0 +1,38 @@
+SQL Wildcard Characters
+A wildcard character is used to substitute any other character(s) in a string.
+
+Wildcard characters are used with the SQL LIKE operator. The LIKE operator is used in a WHERE clause to search for a specified pattern in a column. 
+
+There are two wildcards used in conjunction with the LIKE operator:
+
+% - The percent sign represents zero, one, or multiple characters
+_ - The underscore represents a single character
+
+    LIKE Operator	                          Description
+WHERE CustomerName LIKE 'a%'	    Finds any values that starts with "a"
+WHERE CustomerName LIKE '%a'	    Finds any values that ends with "a"
+WHERE CustomerName LIKE '%or%'	  Finds any values that have "or" in any position
+WHERE CustomerName LIKE '_r%'	    Finds any values that have "r" in the second position
+WHERE CustomerName LIKE 'a_%_%'	  Finds any values that starts with "a" and are at least 3 characters in length
+WHERE ContactName LIKE 'a%o'	    Finds any values that starts with "a" and ends with "o"
+
+Example
+
+SELECT * FROM Customers
+WHERE City LIKE 'ber%'; -- search for city starting with ber
+
+SELECT * FROM Customers
+WHERE City LIKE '%es%'; -- City containing the pattern "es"
+
+SELECT * FROM Customers
+WHERE City LIKE '[bsp]%'; --selects all customers with a City starting with "b", "s", or "p"
+
+SELECT * FROM Customers
+WHERE City LIKE '[a-c]%'; --selects all customers with a City starting with "a", "b", or "c"
+
+SELECT * FROM Customers
+WHERE City LIKE '[!bsp]%'; --select all customers with a City NOT starting with "b", "s", or "p"
+
+SELECT * FROM Customers
+WHERE City NOT LIKE '[bsp]%'; --select all customers with a City NOT starting with "b", "s", or "p"
+
