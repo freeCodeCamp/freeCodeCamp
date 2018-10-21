@@ -28,3 +28,4 @@ BSD includes a 'Jails' system which is somewhat analogous to Linux Containers --
 
 [Comparison of BSD operating systems (Wikipedia.org)](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems)
 
+[What is FreeBSD (Techopedia.com)] (https://www.techopedia.com/definition/3509/freebsd)
