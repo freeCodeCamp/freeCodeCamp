@@ -41,6 +41,16 @@ if (condition) {
 }
 ```
 
+## Ternary Operators
+A ternary operator simplifies and shortens an if/else statement using the following syntax:
+
+```javascript
+(condition) ? /* process if true */ : /* process if false */ 
+```
+
+If the condition is true, the code following the '?' will run. Otherwise, if the condition is false, the code following ':' will run.
+
+
 <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else' target='_blank' rel='nofollow'>MDN link</a> | <a href='https://msdn.microsoft.com/en-us/library/85yyde5c.aspx' target='_blank' rel='nofollow'>MSDN link</a>
 
 ## Examples
@@ -68,4 +78,10 @@ else {
     flag = 1;
     return "Invalid number";
 }
+```
+
+**Using** ternary operators:
+
+```javascript
+(x > 2) ? return "Greater than 2" : return "Less than or equal to 2"
 ```
