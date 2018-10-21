@@ -3,7 +3,7 @@ title: Control Flow
 ---
 # Control Flow
 
-Control flow statements are exactly what the term means. They are statements that alter execution flow based on decisions, loops and branching so that the program can conditionally execute blocks of code.
+Control flow statements are exactly what the term means. They are statements that alter execution flow based on decisions, loops and branching so that the program can conditionally execute blocks of code.By default the control flow is sequential.Instructions are executed in the order they are written.Conditional control flow transfers the flow of control on the basis of one ore more instructions.Iterations are special cases of conditional control flow , where a segment of code is executed one ore more times based on the condition.
 
 Primarily, Java has the following constructs for flow control:
 
