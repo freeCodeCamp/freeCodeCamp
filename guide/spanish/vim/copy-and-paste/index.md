@@ -18,10 +18,11 @@ Las teclas utilizadas para tirar y pegar en Vim son:
 *   `d` para cortar
 *   `dd` para cortar una linea entera
 *   `"` cortar o tirar a un registro
+*   `v` Entrar en el modo visual
 
 ### Proceso de copiar
 
-Para tirar o cortar, escriba `y` o `d` , seguido de un 'objeto de texto'. Estos describen la cantidad de texto que se debe copiar o eliminar. Por ejemplo, `yw` copia una palabra y `d$` elimina del cursor al final de la línea. También se pueden usar ambos en modo visual, presionando `v` y moviendo el cursor y luego presionando `d` borra todo el texto dentro de la selección.
+Para tirar o cortar, escriba `y` o `d` , seguido de un 'objeto de texto'. Estos describen la cantidad de texto que se debe copiar o eliminar. Por ejemplo, `yw` copia una palabra y `d$` elimina del cursor al final de la línea. También se pueden usar ambos en modo visual, presionando `v` y moviendo el cursor y luego presionando `d` borra todo el texto dentro de la selección. Tambien puede entrar en el modo visual, seleccionando el texto que quiere copiar, luego utilizando 'y' y 'p' para copiar y pegar.
 
 ### Registros
 
