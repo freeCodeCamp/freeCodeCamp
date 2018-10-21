@@ -15,6 +15,9 @@ npm install -g create-react-app
 
 create-react-app my-app
 
+or, on npm 5.2+,
+  npx create-react-app my-app
+
 cd my-app
 npm start
 ```
