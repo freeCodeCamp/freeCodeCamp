@@ -114,6 +114,19 @@ _Hint:_ There is a handy <a href='https://developer.mozilla.org/en-US/docs/Web/J
     // Prefix
     var a = 2;
     b = --a; // a = 1, b = 1
+    
+## Exponentiation
+
+**Syntax**
+
+`a ** b`
+
+**Usage**
+    
+    3 ** 2;           // returns 9
+    3 ** 0;           // returns 1
+    3 ** -Infinity;   // returns 0
+    
 _!Important!_ As you can see, you **cannot** perform any sort of operations on `Infinity`.
 
 Source: The amazing <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators' target='_blank' rel='nofollow'>MDN</a>.
