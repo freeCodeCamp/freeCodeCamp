@@ -16,15 +16,15 @@
 
 Cada desafio está guardado em seu próprio arquivo markdown. Isso torna fácil editar os desafios diretamente de dentro do GitHub.
 
-Você pode fazer mudanças sem ter nada rodando em seu sistema local. 
+Você pode fazer mudanças sem ter que usar nada no seu sistema local. 
 
-Depois que encontrar o arquivo que deseja modificar pela interface do GitHub, clique no ícone de lápis para começar a editar. Isto ira criar um fork do projeto automaticamente, se você já não tem um.
+Depois de encontrar o arquivo que deseja modificar na interface do GitHub, clique no ícone de lápis para começar a editar. Isto irá criar um fork do projeto automaticamente, se você já não tem um.
 
 Você também pode clonar o projeto e editar localmente no seu computador. Para ajuda com isso, leia o artigo [Orientações de Contribuição](/docs/portuguese/CONTRIBUTING.md).
 
 ### Modelo de Desafio
 
-Aqui um modelo de como é um arquivo markdown do desafio.
+Aqui está um modelo de um arquivo markdown de desafio.
 
 
 ````md
@@ -103,4 +103,4 @@ Criando e Editando Desafios:
 
 2. [Tipos de Desafio](https://github.com/freeCodeCamp/learn/blob/a5cb25704168aa37f59a582f0bb5a19b7bd89b46/utils/challengeTypes.js) - o que o número do tipo de desafio significa (enum).
 
-3. [Contributing to FreeCodeCamp - Writing ES6 Challenge Tests](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo acompanhando [Ethan Arrowood](https://twitter.com/ArrowoodTech) enquanto ele contribui com uma versão antiga do currículo.
+3. [Contributindo para o FreeCodeCamp - Escrevendo testes para os desafios em ES6 (en)](https://www.youtube.com/watch?v=iOdD84OSfAE#t=2h49m55s) - um vídeo acompanhando [Ethan Arrowood](https://twitter.com/ArrowoodTech) enquanto ele contribui com uma versão antiga do currículo.
