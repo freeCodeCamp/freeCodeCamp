@@ -103,9 +103,31 @@ return "No such contact";
 ### Code explanation
 This works as the last example but uses the `in` operator to look for `prop` instead of the `hasOwnProperty()` method.
 
+## ![:sunflower:](https://forum.freecodecamp.com/images/emoji/emoji_one/sunflower.png?v=3 ":sunflower:") Alternative code solution #2:
+
+ (Using Multiple Conditional (Ternary) Operators)
+ 
+ ```js
+   function lookUpProfile(name, prop){
+// Only change code below this line
+    for (var i = 0; i < contacts.length; i++) {
+        if (contacts[i].firstName === name) {
+            return (prop in contacts[i]) ? contacts[i][prop] :
+            "No such property";
+            }
+    }
+// Only change code above this line
+return "No such contact";
+}
+```
+![:rocket:](https://forum.freecodecamp.com/images/emoji/emoji_one/rocket.png?v=3 ":rocket:") <a href='https://repl.it/@greggubarev/Profile-Lookup' target='_blank' rel='nofollow'>Run Code</a>
+
+### Code explanation
+This works as the last example but uses the multiple conditional (ternary) operator instead of the `if/else` statement.
 
 ### Resources
 
 - ["Iterate with JavaScript For Loops" - *fCC's challenge*](https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-for-loops/)
  - ["Object.prototype.hasOwnProperty()" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
 - ["in operator" - *MDN JavaScript reference*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in)
+* <a href='https://learn.freecodecamp.org/javascript-algorithms-and-data-structures/basic-javascript/use-multiple-conditional-ternary-operators/' target='_blank' rel='nofollow'>Use Multiple Conditional (Ternary) Operators</a>
