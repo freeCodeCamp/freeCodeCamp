@@ -50,7 +50,7 @@ Puoi aiutarci:
 
 **Cosa sono gli articoli Guida?**
 
-Gli articoli guida ti aiutano a comprendere rapidamente il concetto di tecnologia. Queste sono brevi spiegazioni in un inglese semplice che è possibile leggere prima di passare a risorse più approfondite.
+Gli articoli guida ti aiutano a comprendere rapidamente il concetto di tecnologia. Queste sono brevi spiegazioni in un italiano semplice che è possibile leggere prima di passare a risorse più approfondite.
 
 Puoi trovare un [articolo di esempio sugli elementi HTML qui](./client/src/pages/html/elements/index.md).
 
