@@ -13,6 +13,11 @@ Docker is used to simplify configurations, and ensure a smooth continuous integr
 
 One of Docker's biggest advantages is that it can be used by a team using different operateing systems to build projects without needing to worry about software conflicts.
 
+### Version
+Docker has primarily 2 versions:
+* Docker CE (used widely across open source internet)
+* Docker EE (used primarily bhy enterprises)
+
 ### Installation
 
 * Ubuntu: `sudo apt install docker`
