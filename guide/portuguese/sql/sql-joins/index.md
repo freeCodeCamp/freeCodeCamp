@@ -21,16 +21,16 @@ A instrução JOIN poderia ser apenas JOIN ou INNER JOIN, que são os mesmos, ou
 
 ### Tipos diferentes de JOIN
 
-*   (JUNÇÃO INTERNA
+*   (INNER) JOIN
 *   Retorna registros que possuem valores correspondentes nas duas tabelas
-*   À ESQUERDA (EXTERIOR)
+*   LEFT (OUTER) JOIN
 *   Retorna todos os registros da tabela da esquerda e os registros correspondentes da tabela da direita
-*   À DIREITA (EXTERIOR)
+*   RIGHT (OUTER) JOIN
 *   Retorna todos os registros da tabela da direita e os registros correspondentes da tabela da esquerda
-*   FULL (EXTERIOR) JUNTAR
+*   FULL (OUTER) JOIN
 *   Retorna todos os registros quando há uma correspondência na tabela esquerda ou direita
 
-### Junte-se
+### Join
 
 A tabela do aluno estará na cláusula FROM, portanto, será uma tabela inicial ou LEFT.
 
