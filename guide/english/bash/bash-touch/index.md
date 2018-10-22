@@ -24,3 +24,19 @@ touch -r file1 file2
 
 ### More Information:
 * [Man pages](http://man7.org/linux/man-pages/man1/touch.1.html)
+
+-----
+Title:Bash command Touch
+-----
+**What's touch?**
+
+The touch command is the easiest way to create new, empty files. It is also used to change the timestamps (i.e., dates and times of the most recent access and modification) on existing files and directories.
+
+**Touch Command Options:**
+
+-a, change the access time only
+-c, if the file does not exist, do not create it
+-d, update the access and modification times
+-m, change the modification time only
+-r, use the access and modification times of file
+-t, creates a file using a specified time
