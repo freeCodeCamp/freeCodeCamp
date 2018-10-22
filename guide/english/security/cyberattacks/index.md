@@ -44,4 +44,4 @@ no one can be 100% that their data is secure.
 * DNS Poisoning
 * E-mail Spoofing
 * KRACK (Key Reinstallation Attack)
-
+* Birthday attack
