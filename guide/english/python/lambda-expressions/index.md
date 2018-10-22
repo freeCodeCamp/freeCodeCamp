@@ -47,6 +47,16 @@ lambda_func(4) # Returns True
 my_dict = {"A": 1, "B": 2, "C": 3}
 sorted(my_dict, key=lambda x: my_dict[x]%3) # Returns ['C', 'A', 'B']
 ```
+
+### Passing lambda as fuction parameter
+```py
+def apply(x, y, fun):
+  return fun(x, y)
+  
+res = apply(3, 5, lambda x, y: x + y)
+print(res) # Output: 8
+```
+
 ### Use-case
 
 Let's say you want to filter out odd numbers from a `list`. You could use a `for` loop:
