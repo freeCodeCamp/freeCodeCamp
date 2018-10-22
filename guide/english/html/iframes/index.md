@@ -49,6 +49,16 @@ Any `<a>` link can target the content of an `<iframe>` element. Rather than redi
 ```
 
 This example will show a blank `<iframe>` initially, but when you click the link above it will redirect the `<iframe>` to show a YouTube video.
+<div class="images">
+  <h1>Images</h1>
+  <p>Since a lot of people have issues and don't know how to insert a picture on a <i>web page</i>, I decided to show you how to do it.
+    <p><img src="https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2015/01/Blog_Learn-to-code.jpg" alt="code picture" width="800" height="534" /></p>
+  <p>This is the easiest way to put a picture on a web page.However, you can also use <q>figure</q> element.Let's try:</p>
+  <firgure>
+    <p><img src="https://i.kinja-img.com/gawker-media/image/upload/s--vv79lYUc--/c_scale,f_auto,fl_progressive,q_80,w_800/v9rciwgxfbozbezevrpp.jpg" alt="code picture" width="800" height="450" />
+    <figcaption>This is just a code picture.</figcaption>
+   </figure>
+</div>
 
 ### Javascript and Iframes
 Documents embedded in an `<iframe>` can run JavaScript within their own context (without affecting the parent webpage) as normal.
