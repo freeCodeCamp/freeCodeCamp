@@ -1,6 +1,6 @@
 ---
-Title: Data Types
-العنوان: أنواع البيانات
+title: Data Types
+localeTitle: أنواع البيانات
 ---
 # أنواع البيانات
 
