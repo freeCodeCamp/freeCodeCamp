@@ -24,7 +24,7 @@ RGB stands for "Red", "Green" and "Blue" and we can also assign colors by typing
 
 The values range from 0 to 255 and in our example we see that only the first value is 255 while the other two are set to 0. That means that there is only red in our value and the respective element will be colored red. An RGB value of (0, 0, 0) would give black and a value of (255, 255, 255) would give white.<br>
 
-It is impossible to try to memorize each color code and for that reason there numerous tools online for picking the colors you want for your projects. For example: https://www.w3schools.com/colors/colors_picker.asp or http://htmlcolorcodes.com/color-picker/.
+It is impossible to try to memorize each color code and for that reason there are numerous tools online for picking the colors you want for your projects. For example: https://www.w3schools.com/colors/colors_picker.asp or http://htmlcolorcodes.com/color-picker/.
 
 ```css
 p {
