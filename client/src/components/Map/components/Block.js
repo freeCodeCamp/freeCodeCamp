@@ -110,11 +110,15 @@ export class Block extends PureComponent {
   render() {
     const { completedChallenges, challenges, isExpanded, intro } = this.props;
     const { blockName } = challenges[0].fields;
+    let completedCount = 0;
     const challengesWithCompleted = challenges.map(challenge => {
       const { id } = challenge;
       const isCompleted = completedChallenges.some(
         completedId => id === completedId
       );
+      if (isCompleted) {
+        completedCount ++;
+      }
       return { ...challenge, isCompleted };
     });
     return (
@@ -122,6 +126,10 @@ export class Block extends PureComponent {
         <div className='map-title' onClick={this.handleBlockClick}>
           <Caret />
           <h5>{blockName}</h5>
+          <div className="map-title-completed">
+            <span>{this.renderCheckMark(completedCount===challengesWithCompleted.length)}</span>
+            <span >{`${completedCount}/${challengesWithCompleted.length}`}</span>
+          </div>
         </div>
         <ul>
           {isExpanded
