@@ -13,6 +13,7 @@ Padding values are set using lengths or percentages or `inherit` keyword, and ca
     padding: [padding-top] || [padding-right] || [padding-bottom] || [padding-left];
 }
 ```
+**my-notes: in order to memorize how is works you can think of it as a clock that goes clock wise first he go to top then right then bottom and finally left.
 
 This property may be specified using one, two, three, or four values.
 - When one value is specified, it applies the same padding to all four sides.
