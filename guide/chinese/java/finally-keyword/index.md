@@ -10,13 +10,13 @@ localeTitle: 最后
 
 ```java
 try { 
-   // Normal execution path 
+   // 正常代码执行
    throw new EmptyStackException(); 
  } catch (ExampleException ee) { 
-   //  deal with the ExampleException 
+   //  对 ExampleException 进行处理
  } finally { 
-   // This optional section is executed upon termination of any of the try or catch blocks above, 
-   //  except when System.exit() is called in "try" or "catch" blocks; 
+   // 这块不是必须有的，在以上try或catch执行完最后就会执行, 
+   //  除非在"try" 或 "catch" 块有 System.exit(); 
  } 
 
 ```
