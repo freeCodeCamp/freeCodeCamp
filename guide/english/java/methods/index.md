@@ -105,4 +105,5 @@ public class Car {
 }
 ```
 
+
 The `Car` class and the `Car(String model, int numberOfWheels)` method have to have the same name in order for java to know that it is the constructor. Now anytime you instantiate a new `Car` instance with the `new` keyword you will need to call this constructor and pass in the needed data.
