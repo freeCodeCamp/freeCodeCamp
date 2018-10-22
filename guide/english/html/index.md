@@ -41,9 +41,11 @@ title: The element specifies a title for the document
 
 body: The element contains the visible page content
 
-h1: The element defines a large heading
+h1-h6: The heading elements range in size with h1 being the largest and h6 being the smallest 
 
 p: The element defines a paragraph
+
+section: defines a new section and keeps the code organized
 
 ### HTML Versions
 
