@@ -1,7 +1,7 @@
 ---
 title: Vue
 ---
-## Introduction
+## Vue.js Introduction
 
 Vue.js is a progressive framework for building user interfaces.
 It's core is focused on only the "view" layer and can be easily intergrated with existing libraries and projects.
@@ -17,3 +17,5 @@ It's main attributes are the following:
 
 - [Vuejs Homepage](https://vuejs.org/)
 - [GitHub Repo](https://github.com/vuejs/vue/)
+- [News — Vue.js](https://news.vuejs.org/)
+- [Vue.js Showcase - Made With Vue.js](https://madewithvuejs.com/)
