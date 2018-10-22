@@ -7,13 +7,13 @@ title: Cryptocurrency
 >
 > – Satoshi Nakamoto, 09 January 2009, announcing Bitcoin on SourceForge.
 
-Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as crypto-currency because of the utilization of cryptography in securing its transactions. Some examples of cryptocurrencies include Bitcoin, LiteCoin, Dash, Ethereum, and Ripple. Bitcoin is currently the most popular. With cryptocurriencies trustless and anonymous transactions become possible since it does not involve any third party - there is no central bank. 
+Cryptocurrency is a subset of digital currency, which acts as a medium of exchange amongst two parties. It is known as "cryptocurrency" because it typically utilizes cryptography to secure transactions. Some examples of popular cryptocurrencies include Bitcoin, LiteCoin, Dash, Ethereum, and Ripple. Bitcoin is widely regarded as the first and most popular cryptocurrency. With cryptocurriencies, trustless and anonymous or pseudonymous transactions become possible since transactions typically do not involve any third parties, such as central banks. Cryptocurrency can be exchanged as fractions not possible with traditional currency. For example, Bitcoin transactions can amount to 0.00007 BTC or even lower.
 
-Cryptocurrency can be exchanged as fractions not possible with traditional currency. For example, transactions can amount to 0.00007 BTC or even lower.
+If you wish to earn Bitcoin (or certain other cryptocurrencies) through mining, it can be done by devoting electricity and graphical processing hardware to solve mathematical problems that validate network transactions. Bitcoin and many other blockchain technologies use the concept ofan  irreversible cryptographic hash function, which consists of guessing a random number to solve the transaction validation problem. This requires one or more machines with high processing power to solve these problems. Computers with high-end GPUs (such as the Nivida GTX 1080) are also able to solve these hashes effectively. This form of network validation is known as [Proof-of-Work](https://en.wikipedia.org/wiki/Proof-of-work_system). 
 
-If you want to earn bitcoins through mining, it can be done through solving mathematical proof-of-work problems that validate transactions. Blockchain uses the concept of irreversible cryptographic hash function which consists of guessing a random number (usually less than a certain value) to solve the problem for transaction validation. You will require machines with high processing power to be able to solve these problems (for example Fast-Hash One or CoinTerra TerraMiner IV). Computer's with a high end Graphics Card installed (such as the Nivida GTX 1080) are also able to solve these hashes effectively. 
+Another form of network validation is [Proof-of-Stake](https://en.wikipedia.org/wiki/Proof-of-stake). Proof-of-Stake is more energy efficient than Proof-of-Work as it does not require much computational power, but it has some advanced technical disadvantages that mining avoids.  
 
-Some people invest in cryptocurrency on exchanges such as Binance, Bitrex, or Coinbase. The market peeked in January of 2018. 
+Some people invest in cryptocurrencies on exchanges such as Binance, Bitrex, or Coinbase.
 
 #### More Information:
 [Cryptocurrency](https://en.wikipedia.org/wiki/Cryptocurrency)    
