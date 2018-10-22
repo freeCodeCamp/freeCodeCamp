@@ -26,7 +26,7 @@ When starting out with linux, there are some basic commands everyone should know
 - Removes the directory that follows the command. `rmdir folder1` will delete the directory named folder1 if it exists.
 
  7. **rm** - remove   
-- This command removes files, not directories. `rm file.txt` will remove the file named file.txt as long as it exists and is in the current directory.
+- This command removes files, not directories. `rm file.txt` will remove the file named file.txt as long as it exists and is in the current directory. Add '-r' flag to remove a directory that is not empty,'-f' ignore nonexistent files, never prompt.
 
  8. **touch** - creates file   
 - The touch command is used to create a file. It can be anything, from an empty txt file to an empty zip file. 'touch new.txt' will create a new file with name new.
