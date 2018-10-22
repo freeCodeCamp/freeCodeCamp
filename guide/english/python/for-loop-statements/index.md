@@ -121,6 +121,26 @@ thank you
 [2, 3]
 >
 ```
+**Iterate over characters in a string**
+```python
+for char in "How fun!":
+  print("Current char: "+char)
+```
+Output:
+
+```
+>
+Current char: H
+Current char: o
+Current char: w
+Current char:  
+Current char: f
+Current char: u
+Current char: n
+Current char: !
+>
+```
+
 
 **Iterate over keys in a dictionary (aka hashmap)**
 
