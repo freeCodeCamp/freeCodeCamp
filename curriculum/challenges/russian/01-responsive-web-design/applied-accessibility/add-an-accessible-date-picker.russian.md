@@ -47,11 +47,11 @@ tests:
         <p>Tell us the best date for the competition</p>
         <label for="pickdate">Preferred Date:</label>
 
-        <!-- Add your code below this line -->
+        <!-- Добавьте ваш код под этой линией -->
 
 
 
-        <!-- Add your code above this line -->
+        <!-- Добавьте ваш код над этой линией -->
 
         <input type="submit" name="submit" value="Submit">
       </form>
