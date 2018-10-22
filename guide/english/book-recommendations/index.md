@@ -242,6 +242,10 @@ https://books.goalkicker.com/OracleDatabaseBook/
 - [Amazon](https://www.amazon.com/Mastering-Linux-Scripting-Andrew-Mallett/dp/1784396974/)
 - ISBN-13: 978-1784396978
 
+*The Object-Oriented Thought Process by Matt Weisfield*
+- [Amazon](https://www.amazon.com/Object-Oriented-Thought-Process-Developers-Library/dp/0321861272)
+- ISBN-13: 978-0321861276
+
 This list was compiled from multiple suggestion threads on Reddit and Stackoverflow. 
 
 Please feel free to add more that you have found useful!
