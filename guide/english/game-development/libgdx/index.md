@@ -11,7 +11,7 @@ LibGDX supports both 2d and 3d game development, and is written in Java. In addi
 
 #### Additional Information:
 
-https://github.com/libgdx/libgdx/wiki<br>
-https://libgdx.badlogicgames.com/<br>
-https://www.reddit.com/r/libgdx/<br>
-https://libgdx.info/<br>
+https://github.com/libgdx/libgdx/wiki
+https://libgdx.badlogicgames.com/
+https://www.reddit.com/r/libgdx/
+https://libgdx.info/
