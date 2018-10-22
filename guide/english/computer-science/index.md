@@ -3,7 +3,7 @@ title: Computer Science
 ---
 # Computer Science
 
-Computer Science is the study of computers and the concepts that make computers possible. It is a scientific approach to computation and its applications. This includes the study of the structure, expression, and algorithms that underlie the manipulation of data.
+Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers.It is a scientific approach to computation and its applications. This includes the study of the structure, expression, and algorithms that underlie the manipulation of data.
 
 Much of computer science was pioneered in the latter half of the 20th century.
 
@@ -17,6 +17,11 @@ Computer science is categorized into several fields. The following are among the
   - Complexity Theory
   - Formal Methods
   - Distributed Algorithms
+- Hardware
+- Networking
+- Graphics
+- programming lanuages
+- software engineering
 - <a href="https://en.wikipedia.org/wiki/Computer_security">Security</a>
   - Cryptography<br>
 - <a href="https://en.wikipedia.org/wiki/Artificial_intelligence">Artificial Intelligence</a>
