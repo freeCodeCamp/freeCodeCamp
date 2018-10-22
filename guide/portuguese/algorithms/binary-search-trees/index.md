@@ -8,18 +8,18 @@ localeTitle: Árvores de busca binária
 
 Uma árvore é uma estrutura de dados composta de nós que possui as seguintes características:
 
-1.  Cada árvore tem um nó raiz (no topo) tendo algum valor.
+1.  Cada árvore tem um nó raiz (no topo) quem possui algum valor.
 2.  O nó raiz tem zero ou mais nós filhos.
-3.  Cada nó filho possui zero ou mais nós filhos e assim por diante. Isso cria uma subárvore na árvore. Cada nó tem sua própria subárvore, composta de seus filhos e filhos, etc. Isso significa que cada nó sozinho pode ser uma árvore.
+3.  Cada nó filho possui zero ou mais nós filhos e assim por diante. Isso cria uma subárvore na árvore. Cada nó tem sua própria subárvore, composta de seus filhos e filhos, etc. Isso significa que cada nó pode ser uma árvore.
 
 Uma árvore de pesquisa binária (BST) adiciona essas duas características:
 
-1.  Cada nó tem um máximo de até dois filhos.
-2.  Para cada nó, os valores de seus nós descendentes à esquerda são menores que os do nó atual, que por sua vez é menor que os nós descendentes à direita (se houver).
+1.  Cada nó tem no máximo dois filhos.
+2.  Para cada nó, os valores dos nós descendentes à esquerda são menores que os valores do nó atual, que por sua vez é menor que os nós descendentes à direita (se houver).
 
-O BST é construído com base na idéia do algoritmo de [busca binária](https://guide.freecodecamp.org/algorithms/search-algorithms/binary-search) , que permite a rápida pesquisa, inserção e remoção de nós. A maneira como eles são configurados significa que, em média, cada comparação permite que as operações pule cerca de metade da árvore, de modo que cada pesquisa, inserção ou exclusão leve o tempo proporcional ao logaritmo do número de itens armazenados na árvore, `O(log n)` No entanto, algumas vezes o pior caso pode acontecer, quando a árvore não está balanceada e a complexidade do tempo é `O(n)` para todas as três dessas funções. É por isso que as árvores de auto-equilíbrio (AVL, vermelho-preto, etc.) são muito mais eficazes do que o BST básico.
+O BST é baseado na idéia do algoritmo de [busca binária](https://guide.freecodecamp.org/algorithms/search-algorithms/binary-search) , que permite a rápida pesquisa, inserção e remoção de nós. A maneira como eles são configurados significa que, em média, cada comparação permite que as operações pule cerca de metade da árvore, de modo que cada pesquisa, inserção ou exclusão leve o tempo proporcional ao logaritmo do número de itens armazenados na árvore, `O(log n)`. No entanto, algumas vezes o pior caso pode acontecer. O pior caso é quando a árvore não está balanceada e a complexidade do tempo é `O(n)` para todas as três dessas funções mencionadas acima. É por isso que as árvores de auto-equilíbrio (AVL, vermelho-preto, etc.) são muito mais eficazes do que o BST básico.
 
-**Exemplo de cenário de pior caso:** Isso pode acontecer quando você continua adicionando nós que são _sempre_ maiores que o nó antes (é pai), o mesmo pode acontecer quando você sempre adiciona nós com valores menores que seus pais.
+**Exemplo de cenário de pior caso:** Isso pode acontecer quando você continua adicionando nós que são _sempre_ maiores que o nó dos seus pais; o mesmo pode acontecer quando você sempre adiciona nós com valores menores que seus pais.
 
 ### Operações básicas em um BST
 
@@ -34,15 +34,15 @@ Inicialmente, uma árvore vazia sem nós é criada. A variável / identificador 
 
 #### Pesquisa
 
-Você sempre começa a pesquisar na árvore no nó raiz e desce a partir daí. Você compara os dados em cada nó com o que você está procurando. Se o nó comparado não corresponder, então você vai para o filho direito ou para o filho esquerdo, o que depende do resultado da comparação a seguir: Se o nó que você está procurando for menor do que aquele com o qual você estava comparando, você prossegue para a criança esquerda, caso contrário (se for maior) você vai para a criança certa. Por quê? Como o BST é estruturado (conforme sua definição), o filho certo é sempre maior que o pai e o filho esquerdo é sempre menor.
+Você sempre começa a pesquisar na árvore no nó raiz e desce a partir daí. Você compara os dados em cada nó com o que você está procurando. Se o nó comparado não corresponder, então você vai para o filho direito ou para o filho esquerdo, dependendo do resultado da comparação a seguir: se o nó que você está procurando for menor do que aquele com o qual você estava comparando, você prossegue para a criança esquerda, caso contrário (se for maior) você vai para a criança certa. Por quê? Como o BST é estruturado (conforme sua definição), o filho à direita é sempre maior do que o pai e o filho à esquerda é sempre menor do que o pai.
 
 #### Inserir
 
-É muito semelhante à função de pesquisa. Você começa novamente na raiz da árvore e desce recursivamente, procurando o lugar certo para inserir nosso novo nó, da mesma forma como explicado na função de busca. Se um nó com o mesmo valor já estiver na árvore, você poderá optar por inserir a duplicata ou não. Algumas árvores permitem duplicatas, outras não. Depende da implementação certa.
+É muito semelhante à função de pesquisa. Você começa novamente na raiz da árvore e desce recursivamente, procurando o lugar certo para inserir o novo nó, da mesma forma como explicado na função de busca. Se um nó com o mesmo valor já estiver na árvore, você poderá optar por inserir a duplicata ou não. Algumas árvores permitem duplicatas, outras não. Tudo depende da especificação.
 
 #### Eliminação
 
-Existem 3 casos que podem acontecer quando você está tentando excluir um nó. Se tiver,
+Existem 3 casos que podem acontecer quando você está tentando excluir um nó. Se o nó possuir,
 
 1.  Nenhuma subárvore (sem filhos): Esta é a mais fácil. Você pode simplesmente excluir o nó, sem precisar de ações adicionais.
 2.  Uma subárvore (um filho): você precisa garantir que depois que o nó for excluído, seu filho será conectado ao pai do nó excluído.
