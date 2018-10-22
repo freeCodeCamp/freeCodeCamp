@@ -79,7 +79,7 @@ Documentation reference: <a href='http://www.cplusplus.com/reference/cmath/' tar
 >>> math.sqrt(9)      //takes only positive roots into consideration
 3.0
 >>> math.pi           //you can also utilize mathematical consonants like pi and e
-3.141592653589793
+3.1415926535897932
 >>> math.radians(90)  //converts degrees to radians
 1.5707963267948966
 ```
@@ -106,7 +106,7 @@ The `math` module can also be imported as follows, and the usage difference is i
 >>> sqrt(4)
 2.0
 >>> pi
-3.141592653589793
+3.1415926535897932
 
 ```
 
