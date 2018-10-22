@@ -6,7 +6,7 @@ The will-change property allows you to tell the browser what manipulations will 
 
 ```css
 .container {
-will-change: transform;
+  will-change: transform;
 }
 ```
 

@@ -7,11 +7,11 @@ The CSS font properties define the font family, weight, size, variant, line heig
 ### Font family
 The font family of a text is simply set by using the `font-family` property.
 
-It works with a *fallback* system, if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes. 
+It works with a *fallback* system, if your browser does not support the first font, it tries with the next one and so on. If the name of the font is more than one word it must be surrounded by quotes.
 
 ```css
 p {
-    font-family: "Times New Roman", Times, serif;   
+  font-family: "Times New Roman", Times, serif;   
 }
 ```
 In the above example, "Times New Roman" is the <family-name> of the font, while "serif" is the <generic-name>. Generic names are used as a fallback
@@ -29,15 +29,15 @@ This property has 3 values:
 
 ```css
 .normal {
-    font-style: normal;
-} 
+  font-style: normal;
+}
 
 .italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .oblique {
-    font-style: oblique;
+  font-style: oblique;
 }
 ```
 
@@ -53,19 +53,19 @@ There are different types of font size values:
 
 ```css
 .with-pixels {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .with-ems {
-    font-size: 0.875em;
+  font-size: 0.875em;
 }
 
 .with-absolute {
-    font-size: large;
+  font-size: large;
 }
 
 .with-percentage {
-    font-size: 80%;
+  font-size: 80%;
 }
 ```
 
@@ -74,7 +74,7 @@ The `font-weight`property specifies the weight (or boldness) of the font. Accept
 
 ```css
 p {
-   font-weight: bold
+  font-weight: bold
 }
 ```
 
@@ -97,7 +97,7 @@ p.small {
 ```
 
 ### Font shorthand property
-Font properties can be specified with the shorthand font. 
+Font properties can be specified with the shorthand font.
 It takes as value (in this order):
 - font-style (optional)
 - font-variant (optional)

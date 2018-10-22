@@ -8,12 +8,12 @@ CSS Border
 
 Our personal favorite CSS attribute, allow you to completely customize the borders that appear around HTML elements. With HTML, it used to be impossible to place a border around an element, except for the table. CSS Borders let you create crisp, customized border styles with very little work, compared to the antiquated methods of HTML.
 
-The `border` shorthand property sets all the border properties in one declaration. 
-```css 
+The `border` shorthand property sets all the border properties in one declaration.
+```css
   border: 1px solid #000;
 ```
 
-The properties that can be set, are (in order): 
+The properties that can be set, are (in order):
 1. `border-style`
 2. `border-width`
 3. `border-color`
@@ -21,7 +21,7 @@ The properties that can be set, are (in order):
 
 It does not matter if one of the values above are missing, for example:
 
-```css 
+```css
   border: solid red;
 ```
 The above code is also valid CSS.
@@ -35,14 +35,14 @@ The various values are:
 - `dashed` - Sets a dashed border.
 - `solid` - Sets a solid border.
 - `double` - Sets a double border.
-- `groove` - Sets a 3D grooved border. 
-- `ridge` - Sets a 3D ridged border. 
-- `inset` - Sets a 3D inset border. 
+- `groove` - Sets a 3D grooved border.
+- `ridge` - Sets a 3D ridged border.
+- `inset` - Sets a 3D inset border.
 - `outset` - Sets a 3D outset border.
 - `none` - Sets no border.
 - `hidden` - Sets a hidden border.
 
-Based on the property you choose, these styles can be mismatched. 
+Based on the property you choose, these styles can be mismatched.
 You can style each side seperately:
 ```css
   border-top-style: solid;
@@ -109,11 +109,11 @@ p {
 ### Border-Radius
 The `border-radius` property allows the corners of a border to be rounded. This is done by providing a size for
 how much the border is to be rounded. Size can be in px or %.
-```css 
+```css
   border-radius: 25px;
 ```
 Each corner of `border-radius` can be adjusted. The order is top, bottom, left, right.
-```css 
+```css
   border-radius: 15% 10px 30% 5px;
 ```
 
@@ -124,8 +124,8 @@ While it is nice that CSS allows a web developer to be very specific in creating
 Example:
 ```css
 <style type="text/css">
-p { border: 20px outset blue; } 
-h4 { border: 5px solid; } 
+p { border: 20px outset blue; }
+h4 { border: 5px solid; }
 h5 { border: dotted; }
 </style>
 ```
@@ -136,8 +136,8 @@ h5 { border: dotted; }
 - [CSS3 Border Radius](https://guide.freecodecamp.org/css/css3-borders-rounded-corners)
 
 ### Other Border Attributes
-- 'border-radius' - This can set radius of the border. 
-- 'border-spacing' - This can set spacing between the text and border. 
-- 'border-image' - This sets an image as border. 
+- 'border-radius' - This can set radius of the border.
+- 'border-spacing' - This can set spacing between the text and border.
+- 'border-image' - This sets an image as border.
 
 Browser Support: IE6+

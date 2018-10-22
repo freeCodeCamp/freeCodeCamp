@@ -30,15 +30,15 @@ Examples:
 For repeating the image both horizontally and vertically
 ```css
 body {
-    background-image:url(smiley.gif);
-    background-repeat:repeat;
+  background-image:url(smiley.gif);
+  background-repeat:repeat;
 }
 ```
 For repeat the image horizontally
 ```css
 body {
-    background-image:url(smiley.gif);
-    background-repeat:repeat-x;
+  background-image:url(smiley.gif);
+  background-repeat:repeat-x;
 }
 ```
 

@@ -12,7 +12,7 @@ The CSS `background` shorthand property is used to define multiples properties l
 The `background-color` property specifies the background color of an element.
 
 ```css
-   background-color : #F00;
+  background-color : #F00;
 ```
 
 ### Background Image
@@ -21,7 +21,7 @@ The `background-image` property specifies an image to use as background of an el
 By default, the image repeat itself to covers the entire surface of the element.
 
 ```css
-   background-image: url("GitHub-Mark.png");
+ background-image: url("GitHub-Mark.png");
 ```
 
 ### Background Image - Repetition
@@ -30,25 +30,25 @@ By default, the `background-image` property repeats on the X and Y axis.
 If you want to set an axis, like X axis, use `background-repeat` property type:
 
 ```css
-   background-image: url("GitHub-Mark.png");
-   background-repeat: repeat-x;
+  background-image: url("GitHub-Mark.png");
+  background-repeat: repeat-x;
 ```
 
 But sometimes you don't want to have your background on all the surface, you've to specify it by typing:
 
 ```css
-   background-image: url("GitHub-Mark.png");
-   background-repeat: no-repeat;
+  background-image: url("GitHub-Mark.png");
+  background-repeat: no-repeat;
 ```
 
 ### Background Image - Position
 
-You can specify the position of the background by typing : 
+You can specify the position of the background by typing :
 
 ```css
-   background-image: url("GitHub-Mark.png");
-   background-repeat: no-repeat;
-   background-position : left bottom;
+  background-image: url("GitHub-Mark.png");
+  background-repeat: no-repeat;
+  background-position : left bottom;
 ```
 
 It will set you background at the bottom left of the element.
@@ -58,10 +58,10 @@ It will set you background at the bottom left of the element.
 If you want to have a background image which will not scroll with the rest of the page, you can use `background-attachement` property:
 
 ```css
-   background-image: url("GitHub-Mark.png");
-   background-repeat: no-repeat;
-   background-position: left bottom;
-   background-attachment: fixed;
+  background-image: url("GitHub-Mark.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-attachment: fixed;
 ```
 
 ### Shorthand property
@@ -69,7 +69,7 @@ If you want to have a background image which will not scroll with the rest of th
 You can pass all the properties in one super-property `background` :
 
 ```css
-   background: #F00 url("GitHub-Mark.png") no-repeat fixed left bottom;
+  background: #F00 url("GitHub-Mark.png") no-repeat fixed left bottom;
 ```
 
 When you use the shorthand property, you have to respect this order:
@@ -83,7 +83,7 @@ When you use the shorthand property, you have to respect this order:
 It doesn't matter if one property is missing, as long as you respect the order:
 
 ```css
-   background: url("GitHub-Mark.png") no-repeat left bottom;
+  background: url("GitHub-Mark.png") no-repeat left bottom;
 ```
 
 This will work even if the color and the attachment are missing.

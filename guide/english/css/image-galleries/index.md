@@ -10,24 +10,24 @@ You can use CSS to create you own image galleries.
 <head>
 <style>
 div.gallery {
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    width: 180px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
 }
 
 div.gallery:hover {
-    border: 1px solid #777;
+  border: 1px solid #777;
 }
 
 div.gallery img {
-    width: 100%;
-    height: 150px;
+  width: 100%;
+  height: 150px;
 }
 
 div.desc {
-    padding: 15px;
-    text-align: center;
+  padding: 15px;
+  text-align: center;
 }
 </style>
 </head>
@@ -69,4 +69,3 @@ div.desc {
 #### More Information:
 <!-- Please add any articles you think might be helpful to read before writing the article -->
 https://www.w3schools.com/css/css_image_gallery.asp
-

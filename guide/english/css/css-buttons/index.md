@@ -108,7 +108,7 @@ button {
 
 To animate a button on click use 'button:active':
 
-```
+```css
 .button {
   display: inline-block;
   padding: 15px 25px;
@@ -136,4 +136,3 @@ To animate a button on click use 'button:active':
 #### More Information:
 * https://www.w3schools.com/css/css3_buttons.asp
 * https://www.w3schools.com/howto/howto_css_animate_buttons.asp
-
