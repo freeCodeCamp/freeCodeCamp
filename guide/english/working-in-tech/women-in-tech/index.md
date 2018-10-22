@@ -33,6 +33,9 @@ The worst thing you can do is to sell yourself short if you want something take 
 - [Django Girls](https://djangogirls.org/)
 - [Rails Girls](http://railsgirls.com/)
 - [Girls Who Code](https://girlswhocode.com/)
+- [Kode With Klossy](https://www.kodewithklossy.com/)
 - [1 Million Women To Tech](https://1millionwomentotech.com/)
 - [Women Who Code](https://www.womenwhocode.com/)
-
+- [Women TechMakers](https://www.womentechmakers.com/)
+- [Rewriting The Code](https://rewritingthecode.org/)
+- [Ladies Storm Hackathon FB Group](https://www.facebook.com/groups/LadiesStormHackathons/)
