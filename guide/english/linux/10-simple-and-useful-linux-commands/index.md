@@ -15,7 +15,7 @@ Example 2: `echo "Hello world" > hello.txt`
 1. `cut` When you have a string with separators in it, use `cut` to filter out certain fields. Example: `echo "this, that, and the other" | cut -d, -f2 # "that"`
 1. `grep` To find lines of text that contain a certain string, use grep. Example: `grep 'root' /etc/passwd # root:x:0:0:root:/root:/bin/bash`
 1. `sed` Use sed to find and change a substring in a piece of text. Example: `echo "this, that, and the other" | sed 's/that/those/' # "this, those, and the other"`
-1. `shutdown` use shut down the system and turn off the power. Example: `shutdown -h now`shuts down system immediately. `shutdown -h +5` shuts down system after five minutes.
+1. `shutdown` use shut down the System and turn off the power. Example: `shutdown -h now`shuts down system immediately. `shutdown -h +5` shuts down system after five minutes.
 
 Use these commands in scripts and at the command line. They're all very powerful commands, and Linux's man page has a lot more information about each one.
 
@@ -39,7 +39,7 @@ who command simply return user name, date, time and host information. who comman
 whoami command print the name of current user. You can also use “who am i” command to display the current user. If you are logged in as a root using sudo command “whoami” command return root as current user. Use “who am i” command if you want to know the exact user logged in.
 
 6. `ls` Command
-ls command display list of files in human readable format.
+"ls" command display list of files in human readable format.
 
 7. `crontab` Command
 List schedule jobs for current user with crontab command and -l option.
@@ -55,3 +55,5 @@ Copy file from source to destination preserving same mode.
 
 Here are the list of commands frequently used by adiminstrator.
 This is not a complete but it’s a compact list of commands to refer when needed. 
+
+[ FreeCodeCamp ]
