@@ -3,12 +3,16 @@ title: Basic HTML
 ---
 ## Basic HTML
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/html/tutorials/basic-html/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+The basic structure of HTML always starts with a document type declaration: ```<!DOCTYPE html>```
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+You will need to add the ```<html>``` tag after the document type and close it with a ```</html>``` tag. This will be your actual HTML document.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
-Structure of a basic HTML file:
+The first element you will insert in your HTML will be the ```<head>``` tag that will contain all metadata from the website such as it's title, styles, links and others. This element needs to be closed with a ```</head>``` tag.
+
+The visible part of your HTML lies within the tag ```<body>``` which will be inside the ```<html>``` tag and will also need to be closed with a ```</body>``` tag.
+
+
+Below you can see the structure of a basic HTML file:
 
 ```html
 <!doctype html>
@@ -22,7 +26,3 @@ Structure of a basic HTML file:
   </body>
 </html>  
 ```
-#### More Information:
-<!-- Please add any articles you think might be helpful to read before writing the article -->
-
-
