@@ -18,6 +18,21 @@ Notice, unlike JavaScript, we **have** to define the return type of any method w
 
 Each method has a signature, which is the combination of the data type, the name, and the number of arguments the method takes. In `public static void main` the method does not have a specified data type and instead uses `void` to declare that no data is returned. In a method named `public static double ave(double val, double val)` the data type is "double" (0.0), the name is "ave" (average) and the method takes 2 arguments. Each method **must** have a unique signature.
 
+A 4 simple steps to design a good method:
+1/ Specify: this step is to specify the REQUIREMENTS, MODIFIES, and EFFECTS of a method. 
+            REQUIREMENTS will be the conditions that needed to be met prior provoking the method
+            MODIFIES will indicate what is changed by method
+            EFFECTS will indicate the visible changes that the method is going to make 
+
+2/ Usage scenario: this step is to predict and think ahead of all the situations that the method is going to be used in so we can design    good tests prior to implementation of the method
+
+3/ Testing: We need to design tests that will specify inputs and outputs of a scnenario a method is used in. 
+            The tests can either fail or pass before the implementation of the method but need to all pass after the implementation of               the method.
+            
+ 4/ Implementation: This step is the actual implementation of the method and we have to implement it until all tests are passed.
+ 
+ NOTE: It is actually tempting to implement the method before the testing step and in reality it is sometimes easier to implement the method and write tests to make sure the method is doing what we wanted. 
+
 ```java
 public class Car {
     private String name;
