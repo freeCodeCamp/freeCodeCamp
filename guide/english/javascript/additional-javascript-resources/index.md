@@ -103,6 +103,7 @@ Find javascript libraries at <a href='http://jster.net' target='_blank' rel='nof
 
 *   <a href='https://www.manning.com/books/secrets-of-the-javascript-ninja' target='_blank' rel='nofollow'>Secrets of the JavaScript Ninja</a>
 *   <a href='http://pjabook.com/' target='_blank' rel='nofollow'>Programming JavaScript Applications</a>
+*   <a href='https://www.amazon.com/Effective-JavaScript-Specific-Software-Development/dp/0321812182' target='_blank' rel='nofollow'>Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</a>
 *   <a href='http://shop.oreilly.com/product/0636920025245.do' target='_blank' rel='nofollow'>Maintainable JavaScript</a>
 *   <a href='http://addyosmani.com/resources/essentialjsdesignpatterns/book/' target='_blank' rel='nofollow'>Learning JavaScript Design Patterns</a>
 *   <a href='https://github.com/airbnb/javascript' target='_blank' rel='nofollow'>Airbnb JavaScript Style Guide</a>
