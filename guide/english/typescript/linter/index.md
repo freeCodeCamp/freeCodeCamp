@@ -20,3 +20,9 @@ This command will globally install the `TSLint` package using `npm`, a popular p
 ```bash
 npm i -g tslint
 ```
+
+### Configuring TSLint
+
+After installing TSLint, the next step is to configure it to your own needs.
+
+Check out how to <a href='https://palantir.github.io/tslint/develop/custom-rules/' target='_blank' rel='nofollow'>make a configuration file </a> with the selection of <a href='https://palantir.github.io/tslint/rules/' target='_blank' rel='nofollow'>predefined rules.</a>
