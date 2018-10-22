@@ -1,6 +1,8 @@
 ---
-# Linux
+title: Linux
 ---
+
+# Linux
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg">
 
