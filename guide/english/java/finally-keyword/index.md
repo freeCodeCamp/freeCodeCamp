@@ -31,3 +31,5 @@ try {
 ```
 
 The above code works fine even though the catch statement is not used.
+
+Note : if program exits (ie. System.exit() or process aborts ) , finally block will not be executed
