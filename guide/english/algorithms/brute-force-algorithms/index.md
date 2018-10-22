@@ -7,9 +7,18 @@ Brute Force Algorithms refers to a programming style that does not include any s
 
 A classic example is the traveling salesman problem (TSP). Suppose a salesman needs to visit 10 cities across the country. How does one determine the order in which cities should be visited such that the total distance traveled is minimized? The brute force solution is simply to calculate the total distance for every possible route and then select the shortest one. This is not particularly efficient because it is possible to eliminate many possible routes through clever algorithms. 
 
-Another example: 5 digit password, in the worst case scenario would take 10<sup>5</sup> tries to crack.
+ Example 2: 5 digit password, in the worst case scenario would take 10<sup>5</sup> tries to crack.
 
 The time complexity of brute force is <b> O(n*m) </b>. So, if we were to search for a string of 'n' characters in a string of 'm' characters using brute force, it would take us n * m tries.
+
+
+Example 3: Computing an (a > 0, n a nonnegative integer) based on the definition of exponentiation
+
+an = a* a* a* …. * a
+The brute force algorithm requires n-1 multiplications.
+The recursive algorithm for the same problem, based on the observation that an = an/2 * an/2 requires Θ(log(n)) operations.
+
+Example 4: Computing n! based on the definition n! = 1*2*3*…*n The algorithm requires Θ (n) operations.
 
 #### More Information:
 
