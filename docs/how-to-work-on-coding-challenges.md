@@ -2,7 +2,7 @@
 
 ### Changing on GitHub
 
-Each challenge is stored in it's own markdown file. That makes it easy to edit challenges right from within GitHub.
+Each challenge is stored in its own markdown file. That makes it easy to edit challenges right from within GitHub.
 
 You can make a change without having anything running on your local system.
 
