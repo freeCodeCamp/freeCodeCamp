@@ -27,7 +27,7 @@ tests:
     testString: assert($("input[placeholder]").length > 0, 'Add a <code>placeholder</code> attribute to the existing text <code>input</code> element.');
   - text: Set the value of your placeholder attribute to "cat photo URL".
     testString: assert($("input") && $("input").attr("placeholder") && $("input").attr("placeholder").match(/cat\s+photo\s+URL/gi), 'Set the value of your placeholder attribute to "cat photo URL".');
-  - text: The finished <code>input</code> element should have valid syntax.
+  - text: The finished <code>input</code> element should have valid syntax. Remember that <code>input</code> elements are self-closing.
     testString: assert($("input[type=text]").length > 0 && code.match(/<input((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[\^'">\s]+))?)+\s*|\s*)\/?>/gi), 'The finished <code>input</code> element should have valid syntax.');
 
 ```
