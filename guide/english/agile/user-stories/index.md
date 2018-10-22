@@ -6,7 +6,7 @@ User stories are part of an agile approach that helps shift the focus from writi
 User stories are typically written using the following pattern:
 #### As a [ type of user ], I want [ some goal ] so that [ some reason or need ]
 
-User stories should be written in non-technical terms from the perspective of the user. The story should emphasize the need of the user, and not the how. There should be no solution provided in the user story.
+User stories should be written in non-technical terms from the perspective of the user. The story should emphasize the need of the user, and not the how. Each story should include acceptance criteria to make clear, if the story is done.  There should be no solution provided in the user story. 
 
 One common mistake that is made when writing user stories is writing from the perspective of the developer or the solution. Be sure to state the goal and the need, and the functional requirements come later.
 
