@@ -3,13 +3,13 @@ title: Android Development
 ---
 # Android Development
 
-Android apps can be a great, fun way to get into the world of programming. Officially programmers can use Java, Kotlin, or C++ to develop for Android, and though there may be API restrictions, using tools, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
+Android apps can be a great, fun way to get into the world of programming. Officially, programmers can use Java, Kotlin, or C++ to develop for Android, and though there may be API restrictions, using tools, developers can use a large number of languages, including JavaScript, C, or assembly, and the possibilities are endless.
 
 From simple games and utility apps to full-blown music players, there are many opportunities to create something meaningful with Android. The Android developer community is widespread, and the documentation and resources online are easy to find, so that you can tackle any issue you're facing.
 
 There is definitely a learning curve to get used to the Android framework, however once you understand the core components that make up the app, the rest will come naturally.
 
-The learning curve involved in Android has a relatively smaller slope as compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here](https://source.android.com/) 
+The learning curve involved in Android has a relatively smaller slope compared to learning other technologies such as NodeJS. It is also relatively easier to understand and make contributions towards AOSP hosted by Google. The project can be found [here](https://source.android.com/) 
 
 ## Getting started
 Check out the guides in this folder to learn about the 4 [core components](core-components/index.md) that make up an Android app and how you can get started with a sample app, and then delve into the more advanced topics such as fragments and the Gradle build system. Then check out the material design specifications guide as well to learn how to make your apps beautiful and user friendly.
@@ -32,9 +32,9 @@ Ever since Google announced Kotlin as the official language for Android developm
 
 ##### Beginners in Android Development Should Start With Java
 
-The first and foremost thing is that Android development is not everything; as a programmer, you may be starting your career with Android development, but if you start with a well-established language like Java, you become a part of the bigger Java community and market, which directly means more job opportunities.
+First and foremost is that Android development is not everything; as a programmer, you may be starting your career with Android development, but if you start with a well-established language like Java, you become a part of the bigger Java community and market, which directly means more job opportunities.
 
-The second and more important thing is that there is a huge community of Java programmers, which means you can find answers when you are stuck. This is very important because, as a beginner, you will face a lot of technical problems and you might not know where to head when you are stuck. When you search Google with a Java problem, you are bound to get answers; the same cannot be said for Kotlin, which is still a new programming language.
+The second, and more important thing, is that there is a huge community of Java programmers, which means you can find answers when you are stuck. This is very important because, as a beginner, you will face a lot of technical problems and you might not know where to head when you are stuck. When you search Google with a Java problem, you are bound to get answers; the same cannot be said for Kotlin, which is still a new programming language.
 
 ###### Java Programmers Should Learn Kotlin
 
@@ -57,6 +57,8 @@ Because Kotlin generates Java bytecode, you can use your favorite Java framework
 ### Courses
 
 [Udacity Android Nanodegree Program](https://udacity.com/course/android-developer-nanodegree-by-google--nd801)
+
+[Udemy The Complete Android Kotlin Developer Course](https://www.udemy.com/the-complete-kotlin-developer-course/)
 
 ### Developing Android Apps
 
