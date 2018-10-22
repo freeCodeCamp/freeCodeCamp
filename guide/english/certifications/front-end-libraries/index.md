@@ -3,7 +3,7 @@ title: Front End Libraries
 ---
 ## Front End Libraries
 
-A Front End library is a file or a piece of pre-written code that is helpful to the user by reducing the time consumed.
+A Front End library is a file or a piece of pre-written code that is helpful to the user by reducing the time consumed. It's important to become familiar with Front End Libraries. 
 
 These code libraries help their users to minimize their time in writing long lines of code, and increase their productivity. For example- Front end libraries like [Bootstrap](https://getbootstrap.com/) provide a framework for users to build upon and reduces the time consumed, while allowing flexibility to the user.
 
