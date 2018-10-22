@@ -62,3 +62,26 @@ int main () {
 -> a is not less than 5!
 -> Value of a is : 100
 ```
+
+
+
+------------------------------------------------------------------------------------
+Example :- Sometimes we need to check multiple conditons,so intead of making nested if(it means if statments have another if module in it)we can use this way.Multiple condition checking in one If statment using "&&" which stands for "AND".
+#include<stdio.h>
+
+
+int main()
+{
+int a=10;
+ //used to clear the screeen.
+if(a>0 && a<20){
+ printf("Value is less than 20");
+ }
+ else
+  {
+   printf("Value is greater than 20");
+   }
+  
+
+return 0;
+}
