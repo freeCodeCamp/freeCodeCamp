@@ -1,6 +1,8 @@
 ---
-# Books on JavaScript
+title: Books on JavaScript
 ---
+# Books on JavaScript
+
  ### List of Books
 
 #### Eloquent JavaScript
