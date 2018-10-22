@@ -16,10 +16,10 @@ It has an in-built version control system, like Git, which allows designers to d
 * Strong Typography and Vector Graphic Tools
 * It has a Multiplayer Mode which makes collaboration a breeze
 * Easy integration with Zeplin and Avocode for exporting your designs
+* In-built prototyping - no need to export to another tool
+* Easy link-sharing of mockups and prototypes
 
-The Figma UI is very easy* to use for beginners. If you have been a former Sketch user, you will feel home in no time. 
-
-*If you have not used Sketch before, it might take a while for you to familiarise.
+The Figma UI is designed to make transition from Sketch or the Adobe Creative Cloud realtively painless. Using familiar hotkeys, tool iconography, and usage patterns, you can get up to speed quickly. 
 
 #### More Information
 
