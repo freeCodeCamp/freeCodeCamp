@@ -8,7 +8,7 @@ At its heart, a barebones computer (aka a stored program computer) is nothing bu
 
 Humans interact with computers using **Programs**. A program is simply a sequence of opcodes provided to the computer along with data that is necessary for executing the opcodes. 
 
-For example,
+**Example** :-
 ```
 ADD 10, 20  // ADD is the Opcode 
             // and 10, 20 are the two operands(data) 
