@@ -65,7 +65,7 @@ _Подсказка:_ есть удобный [декремент](https://devel
 **использование**
 ```
 3 / 2                // returns 1.5 
- 3.0 / 2/0            // returns 1.5 
+ 3.0 / 2.0            // returns 1.5 
  3 / 0                // returns Infinity 
  3.0 / 0.0            // returns Infinity 
  -3 / 0               // returns -Infinity 
