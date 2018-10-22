@@ -4,7 +4,7 @@ title: Data Types in C
 # Data Types in C
 There are several different ways to store data in C, and they are all unique from each other. The types of data that information can be stored as are called data types. C is much less forgiving about data types than other languages. As a result, it's important to make sure that you understand the existing data types, their abilities, and their limitations.
 
-One quirk of C's data types is that they depend entirely on the hardware that you're running your code on. An `int` on your laptop will be smaller than an `int` on a supercomputer, so knowing the limitations of the hardware you're working on is important. This is also why the data types are defined as being minimums- an `int` value, as you will learn, is at minimum -32767 to 32767: on certain machines, it will be able to store even more values that this.
+One quirk of C's data types is that they depend entirely on the hardware that you're running your code on. An `int` on your laptop will be smaller than an `int` on a supercomputer, so knowing the limitations of the hardware you're working on is important. This is also why the data types are defined as being minimums- an `int` value, as you will learn, is at minimum -32,767 to 32,767: on certain machines, it will be able to store even more values that this.
 
 There are two categories that we can break this into: integers, and floating point numbers. Integers are whole numbers. They can be positive, negative, or zero. Numbers like -321, 497, 19345, and -976812 are all perfectly valid integers, but 4.5 is not because 4.5 is not a whole number.
 
@@ -25,7 +25,7 @@ The amount of memory that a single `int` takes depends on the hardware. However,
 Like all of these other data types, there is an `unsigned` variant that can be used. The `unsigned int` can be positive and zero but not negative, so it can store values from 0 to 65,535, or more depending on hardware.
 
 #### Short integers: `short`
-This doesn't get used often, but it's good to know that it exists. Like int, it can store -32768 to 32767. Unlike int, however, this is the extent of its ability. Anywhere you can use `short`, you can use `int`.
+This doesn't get used often, but it's good to know that it exists. Like `int`, it can store -32,768 to 32,767. Unlike `int`, however, this is the extent of its ability. Anywhere you can use `short`, you can use `int`.
 
 #### Longer integers: `long`
 The `long` data type stores integers like `int`, but gives a wider range of values at the cost of taking more memory. Long stores at least 32 bits, giving it a range of -2,147,483,648 to 2,147,483,647. Alternatively, use `unsigned long` for a range of 0 to 4,294,967,295.
@@ -46,7 +46,7 @@ The `long long` data type is overkill for just about every application, but C wi
 ## Picking the right data type
 C makes pick the data type, and makes us be very specific and intentional about the way that we do this. This gives you a lot of power over your code, but it's important to pick the right one.
 
-In general, you should pick the minimum for your task. If you know you'll be counting from integer 1 to 10, you don't need a long and you don't need a double. If you know that you will never have negative values, look into using the `unsigned` variants of the data types. By providing this functionality rather than doing it automatically, C is able to produce very light and efficient code. However, it's up to you as the programmer to understand the abilities and limitations, and choose accordingly.
+In general, you should pick the minimum for your task. If you know you'll be counting from integer 1 to 10, you don't need a `long` and you don't need a `double`. If you know that you will never have negative values, look into using the `unsigned` variants of the data types. By providing this functionality rather than doing it automatically, C is able to produce very light and efficient code. However, it's up to you as the programmer to understand the abilities and limitations, and choose accordingly.
 
 We can use the sizeof() operator to check the size of a variable. See the following C program for the usage of the various data types:
 
