@@ -132,5 +132,8 @@ You can write Acceptance Tests for each of these sub-features of the bigger dial
 
 - Acceptance testing can also validate if a completed epic/story/task fulfills the defined acceptance criteria. In contrast to definition of done, this criteria can cover specific business cases that the team wants to solve. This provides a good measurement of work quality.
 
+- Acceptance testing is a test conducted to determine if the requirements of a specification or contract are met. It may involve chemical tests, physical tests, or performance tests
+
 #### More Information:
 - [International Software Testing Qualifications Board](http://www.istqb.org/)
+
