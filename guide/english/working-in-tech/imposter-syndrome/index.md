@@ -42,5 +42,6 @@ More great resources to help you know more about Imposter Syndrome and some tips
 * [Ada Initiative - Is Impostor Syndrome keeping women out of open technology and culture?](https://adainitiative.org/2013/08/28/is-impostor-syndrome-keeping-women-out-of-open-technology-and-culture/)
 * [DEV - Overcoming Impostor Syndrome](https://dev.to/kathryngrayson/overcoming-impostor-syndrome-apg)
 * [FastCompany - Types of imposter syndrome and how to beat them](https://www.fastcompany.com/40421352/the-five-types-of-impostor-syndrome-and-how-to-beat-them)
-* [Startup Bros - 21 Proven Ways to Overcome Imposter Syndrom](https://startupbros.com/21-ways-overcome-impostor-syndrome/)
+* [Startup Bros - 21 Proven Ways to Overcome Imposter Syndrome](https://startupbros.com/21-ways-overcome-impostor-syndrome/)
 * [NY Times - Learning How to Deal with the Imposter Syndrome](https://www.nytimes.com/2015/10/26/your-money/learning-to-deal-with-the-impostor-syndrome.html)
+* [Medium - 3 Ways to Outsmart Imposter Syndrome](https://medium.com/the-mission/3-ways-to-outsmart-imposter-syndrome-400aa3baa5c3)
