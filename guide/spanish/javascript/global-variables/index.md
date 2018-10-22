@@ -35,7 +35,7 @@ var dog = “Fluffy”;
  console.log(window.dog); //Fluffy 
 ```
 
-Es una buena práctica minimizar variables globales. Dado que se puede acceder a la variable en cualquier parte del programa, pueden causar un comportamiento extraño.
+Esta es una práctica muy eficaz para minimizar variables globales. Dado que se puede acceder a la variable en cualquier parte del programa, pueden causar un comportamiento extraño.
 
 Referencias:
 
@@ -50,9 +50,9 @@ Información adicional:
 
 El alcance de las variables de JavaScript es global o local. Las variables globales se declaran FUERA de la función y su valor es accesible / modificable en todo el programa.
 
-SIEMPRE debe usar **var** para declarar sus variables (para hacerlas localmente) de lo contrario, se instalará GLOBALLY
+SIEMPRE se deberia de usar **var** para declarar sus variables (para que aparezcan localmente) de lo contrario, se instalará GLOBALLY(GLOBALMENTE)
 
-Tenga cuidado con las variables globales porque son arriesgadas. La mayoría de las veces debes usar cierres para declarar tus variables. Ejemplo:
+Tenga cuidado con las variables globales porque son riesgosas. La mayoría de las veces debes usar cierres para declarar tus variables. Ejemplo:
 
 ```javascript
     (function(){ 
