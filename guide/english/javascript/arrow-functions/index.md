@@ -42,6 +42,9 @@ const multiplyBy2 = x => x * 2;
 
 // combined with the ternary operator, but note it's not a looker! 
 const addOrMultiply = (x, y, mathOperator) => mathOperator.toLowerCase() === 'add' ? x + y : x * y;
+
+// to use implicit return with an object wrap it in parens
+const animalsObject = ({genera, species}, genus) => ({ speciesInGenus: species.filter(x => x.genus === genus) })
 ```
 
 ### A simplified `this`
