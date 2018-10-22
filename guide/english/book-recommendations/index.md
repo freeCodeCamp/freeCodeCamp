@@ -8,7 +8,7 @@ title: Books to Read for Programmers
 
 *Automate the Boring Stuff With Python* by Al Sweigart
 - http://automatetheboringstuff.com/
-- ISBN-13: 978-1593275990
+- [ISBN-13: 978-1593275990] (https://en.wikipedia.org/wiki/Special:BookSources?isbn=9781593275990)
 
 *Structure and Interpretation of Computer Programs* by Harold Abelson, Gerald Jay Sussman, and Julie Sussman
 - https://mitpress.mit.edu/sicp/
