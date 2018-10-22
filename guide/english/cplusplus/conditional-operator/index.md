@@ -24,6 +24,7 @@ else
     expression-2;
   }
 ```
+As an aside, if the expression under the conditional statement is only 1 line, curly braces are not necessary. However, it is recommended to use them to get in the habit.
 
 The above code however can be used to check more than just two conditions in the following way/syntax:
 ```cpp
