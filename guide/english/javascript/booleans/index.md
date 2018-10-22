@@ -36,6 +36,7 @@ var d = 0
 var e = 1
 var f = 2
 var g = null
+var h = undefined
 
 console.log(a || b); // 'word'
 console.log(c || a); // true
@@ -46,6 +47,7 @@ console.log(d || g); // null
 console.log(g || d); // 0
 console.log(a && c); // true
 console.log(c && a); // 'word'
+console.log(h && f); // undefined
 ```
 As you can see, the *or* operator checks the first operand. If this is true or truthy, it returns it immediately (which is why we get 'word' in the first case & true in the second case). If it is not true or truthy, it returns the second operand (which is why we get 'word' in the third case). 
 
@@ -72,8 +74,12 @@ This behavior does not apply to Boolean primitives. For example, the condition i
 
 ```javascript
 var x = false;
+var y = a;
 if (x) {
   // this code is not executed
+}
+else y {
+//print y value
 }
 ```
 
