@@ -1,0 +1,6 @@
+Hyperledger business blockchain frameworks are used to build enterprise blockchains for a consortium of organizations. They are different than public ledgers like the Bitcoin blockchain and Ethereum. The Hyperledger frameworks include:
+
+- An append-only distributed ledger
+- A consensus algorithm for agreeing to changes in the ledger
+- Privacy of transactions through permissioned access
+- Smart contracts to process transaction requests.
