@@ -23,3 +23,10 @@ Browsers, such as screen readers for disabled users, can use this element to det
 
 #### More Information:
 - <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav' target='_blank' rel='nofollow'>MDN</a>
+<div class="links">
+  <h1>Links</h1>
+  <p>You can also use <nav> element for external links, such as:</p>
+  <nav>
+    <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+  </nav>
+  
