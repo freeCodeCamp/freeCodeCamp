@@ -23,6 +23,16 @@
   border-bottom: 1px solid #e2e2e2;
 }
 
+.map-title > h5 {
+  margin-bottom: 0;
+}
+
+.map-title-completed {
+  margin-left: auto;
+  width: 90px;
+  padding-left: 20px;
+}
+
 .map-title > svg {
   width: 14px;
   margin-right: 5px;
