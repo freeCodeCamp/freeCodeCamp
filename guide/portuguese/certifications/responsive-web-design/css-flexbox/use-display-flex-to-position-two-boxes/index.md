@@ -1,6 +1,6 @@
 ---
 title: "Use display: flex to Position Two Boxes"
-localeTitle: "Use display
+localeTitle: "Use display: flex to Position Two Boxes"
 ---
 ## Use display: flex para posicionar duas caixas
 
@@ -11,8 +11,8 @@ Este desafio é definir o primeiro de três etapas ao usar o Flexbox. Você prec
 Exemplo:
 
 ```CSS
-#main-container { 
-    display: flex; 
- } 
+#main-container {
+    display: flex;
+ }
 
 ```

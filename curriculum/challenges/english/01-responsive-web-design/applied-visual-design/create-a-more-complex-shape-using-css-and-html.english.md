@@ -25,14 +25,14 @@ Finally, in the <code>heart::before</code> selector, set its <code>content</code
 
 ```yml
 tests:
-  - text: 'The <code>background-color</code> property of the <code>heart::after</code> selector should be pink.'
-    testString: 'assert(code.match(/\.heart::after\s*?{\s*?background-color\s*?:\s*?pink\s*?;/gi), "The <code>background-color</code> property of the <code>heart::after</code> selector should be pink.");'
-  - text: 'The <code>border-radius</code> of the <code>heart::after</code> selector should be 50%.'
-    testString: 'assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2, "The <code>border-radius</code> of the <code>heart::after</code> selector should be 50%.");'
+  - text: The <code>background-color</code> property of the <code>heart::after</code> selector should be pink.
+    testString: assert(code.match(/\.heart::after\s*?{\s*?background-color\s*?:\s*?pink\s*?;/gi), 'The <code>background-color</code> property of the <code>heart::after</code> selector should be pink.');
+  - text: The <code>border-radius</code> of the <code>heart::after</code> selector should be 50%.
+    testString: assert(code.match(/border-radius\s*?:\s*?50%/gi).length == 2, 'The <code>border-radius</code> of the <code>heart::after</code> selector should be 50%.');
   - text: The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.
-    testString: 'assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi), "The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.");'
-  - text: 'The <code>content</code> of the <code>heart::before</code> selector should be an empty string.'
-    testString: 'assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|")\1\s*?;/gi), "The <code>content</code> of the <code>heart::before</code> selector should be an empty string.");'
+    testString: assert(code.match(/transform\s*?:\s*?rotate\(\s*?-45deg\s*?\)/gi), 'The <code>transform</code> property for the <code>heart</code> class should use a <code>rotate()</code> function set to -45 degrees.');
+  - text: The <code>content</code> of the <code>heart::before</code> selector should be an empty string.
+    testString: assert(code.match(/\.heart::before\s*?{\s*?content\s*?:\s*?("|')\1\s*?;/gi), 'The <code>content</code> of the <code>heart::before</code> selector should be an empty string.');
 
 ```
 
