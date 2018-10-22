@@ -21,7 +21,7 @@ class ClassName:
     <statement-N> 
  ``` 
  
- #### Class Objects: 
+ #### Объекты Класса: 
  
  Class objects support two kinds of operations: attribute references and instantiation. 
  
