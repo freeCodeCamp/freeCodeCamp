@@ -72,7 +72,7 @@ while(!sorted) {
 ```
 ### Example in Java.
 ```java
-public class bubble-sort {
+public class bubbleSort {
     static void sort(int[] arr) {
         int n = arr.length;
         int temp = 0;
