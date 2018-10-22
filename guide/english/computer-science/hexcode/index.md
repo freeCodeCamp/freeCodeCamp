@@ -16,11 +16,11 @@ In programming, we prefix hexadecimal constants with `0x`, with some exceptions.
 
 ### Examples and explanation
 ```
-0x1        ==        1
-0xF        ==        15
-0xFF       ==        255
-0xFFF      ==        4095
-0x1000     ==        4096
+0x1        ==        1       ==   1*16^0
+0xF        ==        15      ==   15*16^0
+0xFF       ==        255     ==   15*16^1 + 15*16^0
+0xFFF      ==        4095    ==   15*16^2 + 15*16^1 + 15*16^0
+0x1000     ==        4096    ==   1*16^3 + 0*16^2 + 0*16^1 + 0*16^0
 ```
 
 In the standard base 10 system, each column represents increasing powers of 10, 
