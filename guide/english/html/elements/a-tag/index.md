@@ -37,6 +37,7 @@ It is also possible to determine the target of the `<a>` tag. This is done using
   <a href= "https://guide.freecodecamp.org/" target="_blank">freeCodeCamp</a>
 ```
 <a href= "https://guide.freecodecamp.org/" target="_blank">freeCodeCamp</a><br>
+<a href = "https://www.youtube.com/" target="_blank">Youtube</a><br>
 This link is created in the same way as the example code block suggests. Click it to see how it works.
 #### More Information:
 
