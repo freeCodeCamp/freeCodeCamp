@@ -46,9 +46,8 @@ The loop above runs infinitely because every time i approaches 49, it is set to 
 But a program stuck in such a loop will keep using computer resources indefinitely. This is undesirable, and is a type of 'run-time error'.
 
 
-/*My Changes
-##Infinite Loop by opposite iteration##
-Another example For Infinite Loop can be seen elow:
+#### h4 Infinite Loop by opposite iteration
+Another example For Infinite Loop can be seen below:
 ```java
 for(int i=0;i<=10;i--)
     System.out.println(i);
@@ -66,8 +65,21 @@ while(i>=1)
 }
 ```
 
-So, the iteration condition is also important for programmer as one silly mistake can make the whole loop infinite.
-*/
+Here, i will always be greater than 1, so the program will be in infinite loop as i is always incremented, not decremented
+
+To prevent the error, programmers use a break statement to break out of the loop. The break executes only under a particular condition. Use of a selection statement like if-else ensures the same.
+
+```java
+while (true)
+{
+    // do something
+    
+    if(conditionToEndLoop == true)
+        break;
+    
+    // do more
+}
+```
 
 
 
