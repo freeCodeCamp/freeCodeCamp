@@ -6,7 +6,8 @@ title: Git
 
 Git is an open source distributed version control system created in 2005 by Linus Torvalds and others from the Linux development community. Git can work with many types of projects, but it's most commonly used for software source code.
 
-Version control is a system that keeps track of changes to a file or group of files over time. When you have a history of these changes, it lets you find specific versions later, compare changes between versions, recover files you may have deleted, or revert files to previous versions.
+Version control is a system that keeps track of changes to a file or group of files over time.Version Control: software tool(s) that enable
+the management of changes to source code. When you have a history of these changes, it lets you find specific versions later, compare changes between versions, recover files you may have deleted, or revert files to previous versions.
 
 A *distributed* version control system means that different users maintain their own repositories of a project, instead of working from one central repository. Users automatically have full file tracking abilities and the project's complete version history without needing access to a central server or network.
 
